@@ -1,0 +1,220 @@
+{
+  "id": "deck-ap-hu-li-105278",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "champion": "Ahri, Inquisitive",
+  "player": "黑喵",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 286,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 5
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 7
+    }
+  ],
+  "battlefields": [
+    "Startipped Peak",
+    "The Dreaming Tree",
+    "Void Gate"
+  ],
+  "sideboard": [
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 22,
+    "gearCount": 1,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ap-hu-li-105278"
+}

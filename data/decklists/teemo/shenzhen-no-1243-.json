@@ -1,0 +1,220 @@
+{
+  "id": "deck-mo-gu-106233",
+  "legend": "Teemo, Swift Scout",
+  "legendId": null,
+  "champion": "Teemo, Scout",
+  "player": "钦珩-南博万",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1243,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Dropboarder",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ornn, Forge God",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Temporal Portal",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Gust",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Bandle Tree",
+    "Hallowed Tomb",
+    "Power Nexus"
+  ],
+  "sideboard": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 15,
+    "spellCount": 20,
+    "gearCount": 4,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-mo-gu-106233"
+}

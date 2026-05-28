@@ -1,0 +1,183 @@
+{
+  "id": "suzhou-regional-144-",
+  "legend": "Leblanc, Deceiver",
+  "champion": "LeBlanc, Fragmented",
+  "player": "秋夜",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 144,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Smoke and Mirrors",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Mind": 5,
+    "Order": 7
+  },
+  "battlefields": [
+    "Dusk Rose Lab",
+    "Forbidding Waste",
+    "Windswept Hillock"
+  ],
+  "sideDeck": [
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Atakhan",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 24,
+    "spellCount": 14,
+    "gearCount": 2
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-dao-mei-153163"
+}

@@ -1,0 +1,192 @@
+{
+  "id": "deck-xiang-xin-zi-ji-106763",
+  "legend": "Lucian, Purifier",
+  "legendId": null,
+  "champion": "Lucian, Merciless",
+  "player": "神切",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1776,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Qiyana, Victorious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Tryndamere, Barbarian",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Boneshiver",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Relentless Pursuit",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury/body"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Forge of the Fluft",
+    "Sunken Temple",
+    "The Dreaming Tree"
+  ],
+  "sideboard": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 14,
+    "gearCount": 9,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-xiang-xin-zi-ji-106763"
+}

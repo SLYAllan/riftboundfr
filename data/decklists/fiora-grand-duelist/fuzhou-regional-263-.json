@@ -1,0 +1,211 @@
+{
+  "id": "fuzhou-regional-263-",
+  "legend": "Fiora, Grand Duelist",
+  "champion": "Fiora, Worthy",
+  "player": "大七",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 263,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Warmog's Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Call to Glory",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Monastery of Hirana",
+    "Sunken Temple",
+    "The Dreaming Tree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Cannon Barrage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Marching Orders",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 20,
+    "spellCount": 13,
+    "gearCount": 7
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-fu-li-ji-61527"
+}

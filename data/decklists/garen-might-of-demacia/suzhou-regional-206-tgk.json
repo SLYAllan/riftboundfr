@@ -1,0 +1,197 @@
+{
+  "id": "suzhou-regional-206-tgk",
+  "legend": "Garen, Might of Demacia",
+  "champion": "Garen, Rugged",
+  "player": "TGK-天恩/天遣",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 206,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Garen, Rugged",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Altar of Memories",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Recruit the Vanguard",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Divine Judgment",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forgotten Monument",
+    "Sigil of the Storm"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 4,
+    "spellCount": 26,
+    "gearCount": 10
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-gai-lun-zan-lia-zai-chong-yi-ci-153225"
+}

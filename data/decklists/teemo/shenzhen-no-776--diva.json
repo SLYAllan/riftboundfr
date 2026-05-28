@@ -1,0 +1,188 @@
+{
+  "id": "deck-amoris-105768",
+  "legend": "Teemo, Swift Scout",
+  "legendId": null,
+  "champion": "Teemo, Strategist",
+  "player": "白泽-Diva",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 776,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Seal of Discord",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 12
+    }
+  ],
+  "battlefields": [
+    "Bandle Tree",
+    "Fortified Position",
+    "The Candlelit Sanctum"
+  ],
+  "sideboard": [
+    {
+      "name": "Fight or Flight",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 14,
+    "spellCount": 21,
+    "gearCount": 4,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-amoris-105768"
+}

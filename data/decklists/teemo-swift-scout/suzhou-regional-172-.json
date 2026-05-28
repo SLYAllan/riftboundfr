@@ -1,0 +1,211 @@
+{
+  "id": "suzhou-regional-172-",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Scout",
+  "player": "云殇雨寂",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 172,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Blastcone Fae",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Pyke, Returned",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "Dusk Rose Lab",
+    "Seat of Power"
+  ],
+  "sideDeck": [
+    {
+      "name": "Existential Dread",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Isolate",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 18,
+    "gearCount": 5
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ti-mo-153191"
+}

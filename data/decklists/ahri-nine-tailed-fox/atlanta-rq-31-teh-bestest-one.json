@@ -1,0 +1,191 @@
+{
+  "id": "atlanta-rq-31-teh-bestest-one",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "champion": "Ahri, Inquisitive",
+  "player": "Teh Bestest One",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 31,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "B",
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Feral Strength",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 3,
+      "role": "draw"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 10,
+      "role": "flex"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 6,
+      "role": "flex"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Grove of the God-Willow",
+    "Marai Spire"
+  ],
+  "sideDeck": [
+    {
+      "name": "Disarming Rake",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "flex"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    }
+  ],
+  "notes": ""
+}

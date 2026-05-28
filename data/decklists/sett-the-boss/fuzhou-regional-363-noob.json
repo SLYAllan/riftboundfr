@@ -1,0 +1,204 @@
+{
+  "id": "fuzhou-regional-363-noob",
+  "legend": "Sett, The Boss",
+  "champion": "Sett, Kingpin",
+  "player": "Noob丶红领巾狗头",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 363,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Sett, Kingpin",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "order"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sea Monkey",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Kinkou Monk",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Sett, Kingpin",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "order"
+    },
+    {
+      "name": "Carnivorous Snapvine",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Fae Dragon",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Warmog's Armor",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Showstopper",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Here to Help",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Call to Glory",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Monastery of Hirana",
+    "Navori Fighting Pit",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 20,
+    "spellCount": 16,
+    "gearCount": 4
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-jing-tian-yi-quan-61627"
+}

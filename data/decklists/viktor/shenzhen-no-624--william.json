@@ -1,0 +1,213 @@
+{
+  "id": "deck-cs-wei-105616",
+  "legend": "Viktor, Herald of the Arcane",
+  "legendId": null,
+  "champion": "Viktor, Innovator",
+  "player": "闪电家、William",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 624,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Honest Broker",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Shen, Kinkou",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Blood Money",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Back to Back",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Mind Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "The Arena's Greatest",
+    "Trifarian War Camp",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Stupefy",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Back to Back",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 14,
+    "spellCount": 23,
+    "gearCount": 2,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-cs-wei-105616"
+}

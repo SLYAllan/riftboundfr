@@ -1,0 +1,204 @@
+{
+  "id": "fuzhou-regional-228-linek",
+  "legend": "Draven, Glorious Executioner",
+  "champion": "Draven, Vanquisher",
+  "player": "Linekа•教練",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 228,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Draven, Vanquisher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Overzealous Fan",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Battering Ram",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Seal of Discord",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Scrapheap",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 9,
+    "Fury": 3
+  },
+  "battlefields": [
+    "Minefield",
+    "The Candlelit Sanctum",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Bushwhack",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 16,
+    "gearCount": 7
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-wen-lai-da-fa-shi-61492"
+}

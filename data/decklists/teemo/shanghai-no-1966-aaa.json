@@ -1,0 +1,178 @@
+{
+  "id": "deck-ti-mu11-1-31879",
+  "legend": "Teemo, Swift Scout",
+  "legendId": null,
+  "champion": "Teemo, Scout",
+  "player": "AAA",
+  "tournament": "Shanghai National Open",
+  "date": "2025-11-02",
+  "placement": 1966,
+  "playerCount": 2048,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Kai'Sa, Evolutionary",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Guerilla Warfare",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind/chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Promising Future",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 4
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 8
+    }
+  ],
+  "battlefields": [
+    "Reaver's Row",
+    "The Candlelit Sanctum",
+    "Zaun Warrens"
+  ],
+  "sideboard": [
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 20,
+    "gearCount": 2,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ti-mu11-1-31879"
+}

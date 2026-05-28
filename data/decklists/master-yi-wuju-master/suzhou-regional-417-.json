@@ -1,0 +1,204 @@
+{
+  "id": "suzhou-regional-417-",
+  "legend": "Master Yi, Wuju Master",
+  "champion": "Master Yi, Tempered",
+  "player": "清蒸双鱼",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 417,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Master Yi, Tempered",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Gemhand Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Wuju Apprentice",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Herald of Spring",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Poppy, Paragon",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Voracious Gromp",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Arachnoid Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Master Yi, Unstoppable",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Combat Experience",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Concentrate",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Amateur Recital",
+    "Gardens of Becoming",
+    "Reckoner's Arena"
+  ],
+  "sideDeck": [
+    {
+      "name": "Repulse",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 20,
+    "spellCount": 17,
+    "gearCount": 3
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-xin-jian-sheng-153436"
+}

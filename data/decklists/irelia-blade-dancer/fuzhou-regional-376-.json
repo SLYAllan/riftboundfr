@@ -1,0 +1,190 @@
+{
+  "id": "fuzhou-regional-376-",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "温柔一刀",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 376,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Overzealous Fan",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Draven, Audacious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Calm": 5,
+    "Chaos": 7
+  },
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Obelisk of Power",
+    "The Dreaming Tree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 14,
+    "spellCount": 21,
+    "gearCount": 5
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-dao-mei-gai-61640"
+}

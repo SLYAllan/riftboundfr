@@ -1,0 +1,204 @@
+{
+  "id": "fuzhou-regional-199-",
+  "legend": "Lux, Lady of Luminosity",
+  "champion": "Lux, Crownguard",
+  "player": "咩啊",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 199,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lux, Crownguard",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Zaun Punk",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Blood Money",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Falling Comet",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Grand Strategem",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Recruit the Vanguard",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Ravenbloom Conservatory",
+    "The Papertree",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Energy Conduit",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Divine Judgment",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 10,
+    "spellCount": 28,
+    "gearCount": 2
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-wo-guang-61463"
+}

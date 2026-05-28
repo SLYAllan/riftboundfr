@@ -1,0 +1,199 @@
+{
+  "id": "deck-jinx-loose-cannon-122323",
+  "legend": "Jinx, Loose Cannon",
+  "legendId": null,
+  "champion": "Jinx, Demolitionist",
+  "player": "Jason h",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-25",
+  "placement": 21,
+  "playerCount": 1832,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Overzealous Fan",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Minefield",
+    "The Arena's Greatest",
+    "Zaun Warrens"
+  ],
+  "sideboard": [
+    {
+      "name": "Factory Recall",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 23,
+    "spellCount": 15,
+    "gearCount": 1,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-jinx-loose-cannon-122323"
+}

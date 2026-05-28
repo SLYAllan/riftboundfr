@@ -1,0 +1,199 @@
+{
+  "id": "deck-1-105989",
+  "legend": "Azir, Emperor of the Sands",
+  "legendId": null,
+  "champion": "Azir, Sovereign",
+  "player": "Konnaze",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 999,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Doran's Shield",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eye of the Herald",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Brutalizer",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Sacred Shears",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Guards!",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Arise!",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm/order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Ornn's Forge",
+    "Trifarian War Camp",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 0,
+    "spellCount": 24,
+    "gearCount": 15,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-1-105989"
+}

@@ -1,0 +1,149 @@
+{
+  "id": "deck-la-ji-dui-8253",
+  "legend": "Jinx, Loose Cannon",
+  "legendId": null,
+  "champion": "Jinx, Demolitionist",
+  "player": "Jump",
+  "tournament": "Guangzhou Regional Open (Full)",
+  "date": "2025-08-24",
+  "placement": 494,
+  "playerCount": 506,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Chemtech Enforcer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Legion Rearguard",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Yasuo, Windrider",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Seal of Discord",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "The Syren",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Reaver's Row",
+    "Targon's Peak",
+    "Zaun Warrens"
+  ],
+  "sideboard": [],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 19,
+    "spellCount": 15,
+    "gearCount": 5,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-la-ji-dui-8253"
+}

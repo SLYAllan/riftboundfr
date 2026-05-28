@@ -1,0 +1,213 @@
+{
+  "id": "deck-leona-radiant-dawn-94377",
+  "legend": "Leona, Radiant Dawn",
+  "legendId": null,
+  "champion": "Leona, Determined",
+  "player": "Straw Hat Skaarl",
+  "tournament": "Las Vegas Regional Qualifier",
+  "date": "2026-03-01",
+  "placement": 565,
+  "playerCount": 1670,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Ornn, Blacksmith",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Darius, Executioner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "order"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Brutalizer",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 5
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 7
+    }
+  ],
+  "battlefields": [
+    "The Arena's Greatest",
+    "Trifarian War Camp",
+    "Veiled Temple"
+  ],
+  "sideboard": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Rune Prison",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 23,
+    "spellCount": 7,
+    "gearCount": 9,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-leona-radiant-dawn-94377"
+}

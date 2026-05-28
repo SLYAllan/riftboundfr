@@ -1,0 +1,220 @@
+{
+  "id": "deck-xiong-de-li-liang-106104",
+  "legend": "Volibear, Relentless Storm",
+  "legendId": null,
+  "champion": "Volibear, Furious",
+  "player": "呼噜噜小怪兽",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1114,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Carnivorous Snapvine",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Magma Wurm",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Assembly Rig",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Get Excited!",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Stormbringer",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury/body"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Aspirant's Climb",
+    "Obelisk of Power",
+    "Sigil of the Storm"
+  ],
+  "sideboard": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Carnivorous Snapvine",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 13,
+    "spellCount": 21,
+    "gearCount": 5,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-xiong-de-li-liang-106104"
+}

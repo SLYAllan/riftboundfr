@@ -1,0 +1,192 @@
+{
+  "id": "deck-ni-li-161086",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "champion": "Ahri, Alluring",
+  "player": "幻守卡牌·绿鲤鱼",
+  "tournament": "S3 Xi'an Regional Open",
+  "date": "2026-05-24",
+  "placement": 320,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Mutated Mouser",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eager Apprentice",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Blue Sentinel",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Alpha Wildclaw",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Hallowed Tomb",
+    "Ravenbloom Conservatory"
+  ],
+  "sideboard": [
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Ahri, Inquisitive",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 23,
+    "gearCount": 0,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ni-li-161086"
+}

@@ -1,0 +1,185 @@
+{
+  "id": "deck-yao-ji-160823",
+  "legend": "Leblanc, Deceiver",
+  "legendId": null,
+  "champion": "LeBlanc, Fragmented",
+  "player": "Ai.神切.幻影",
+  "tournament": "S3 Xi'an Regional Open",
+  "date": "2026-05-24",
+  "placement": 57,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind/order"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Mind Rune",
+      "quantity": 5
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 7
+    }
+  ],
+  "battlefields": [
+    "Dusk Rose Lab",
+    "Forbidding Waste",
+    "Windswept Hillock"
+  ],
+  "sideboard": [
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind/order"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 25,
+    "spellCount": 14,
+    "gearCount": 0,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-yao-ji-160823"
+}

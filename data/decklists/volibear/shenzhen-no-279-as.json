@@ -1,0 +1,199 @@
+{
+  "id": "deck-lan-xiong-105271",
+  "legend": "Volibear, Relentless Storm",
+  "legendId": null,
+  "champion": "Volibear, Furious",
+  "player": "As凉藤",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 279,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Carnivorous Snapvine",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Miss Fortune, Captain",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Magma Wurm",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Disintegrate",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Aspirant's Climb",
+    "Obelisk of Power",
+    "Sigil of the Storm"
+  ],
+  "sideboard": [
+    {
+      "name": "Get Excited!",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Disintegrate",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Stormbringer",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "fury/body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 19,
+    "gearCount": 3,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-lan-xiong-105271"
+}

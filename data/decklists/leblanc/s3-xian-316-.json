@@ -1,0 +1,164 @@
+{
+  "id": "deck-ji-zhan-jiang-hai-ke-si-161082",
+  "legend": "Leblanc, Deceiver",
+  "legendId": null,
+  "champion": "LeBlanc, Everywhere at Once",
+  "player": "海克斯-骑士",
+  "tournament": "S3 Xi'an Regional Open",
+  "date": "2026-05-24",
+  "placement": 316,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ruined Rex",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Mind Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Black Flame Altar",
+    "Dusk Rose Lab",
+    "Windswept Hillock"
+  ],
+  "sideboard": [
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 27,
+    "spellCount": 9,
+    "gearCount": 3,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ji-zhan-jiang-hai-ke-si-161082"
+}

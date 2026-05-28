@@ -1,0 +1,234 @@
+{
+  "id": "deck-di-er-dan-zhong-zhu-sha-jie-rong-guang-106017",
+  "legend": "Kai'sa, Daughter of the Void",
+  "legendId": null,
+  "champion": "Kai'Sa, Survivor",
+  "player": "霍普EZ",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1027,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Plundering Poro",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Premonition",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Fury Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Obelisk of Power",
+    "Targon's Peak",
+    "Void Gate"
+  ],
+  "sideboard": [
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Angle Shot",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Icathian Rain",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "fury/mind"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 20,
+    "spellCount": 18,
+    "gearCount": 1,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-di-er-dan-zhong-zhu-sha-jie-rong-guang-106017"
+}

@@ -1,0 +1,185 @@
+{
+  "id": "deck-zhong-su-nu-qiang1-2-21963",
+  "legend": "Miss Fortune, Bounty Hunter",
+  "legendId": null,
+  "champion": "Miss Fortune, Buccaneer",
+  "player": "FG",
+  "tournament": "Shanghai City Challenge",
+  "date": "2025-11-23",
+  "placement": 121,
+  "playerCount": 128,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Kraken Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Warwick, Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Scrapheap",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Bullet Time",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body/chaos"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Obelisk of Power",
+    "Targon's Peak",
+    "Void Gate"
+  ],
+  "sideboard": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Morbid Return",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Possession",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 18,
+    "spellCount": 18,
+    "gearCount": 3,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-zhong-su-nu-qiang1-2-21963"
+}

@@ -1,0 +1,213 @@
+{
+  "id": "deck-lan-wei-106174",
+  "legend": "Viktor, Herald of the Arcane",
+  "legendId": null,
+  "champion": "Viktor, Innovator",
+  "player": "无蚊梯",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1184,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Jayce, Man of Progress",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Cloth Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Garbage Grabber",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "The Zero Drive",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Blood Money",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Falling Comet",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Mind Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Treasure Hoard",
+    "Veiled Temple",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Machine Evangel",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 8,
+    "spellCount": 24,
+    "gearCount": 7,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-lan-wei-106174"
+}

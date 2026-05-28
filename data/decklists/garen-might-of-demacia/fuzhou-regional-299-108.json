@@ -1,0 +1,190 @@
+{
+  "id": "fuzhou-regional-299-108",
+  "legend": "Garen, Might of Demacia",
+  "champion": "Garen, Commander",
+  "player": "收容所108·萧梦辛",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 299,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Garen, Commander",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Noxian Drummer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Corina Veraza",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Eye of the Herald",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Body": 4,
+    "Order": 8
+  },
+  "battlefields": [
+    "The Grand Plaza",
+    "Trifarian War Camp",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Shen, Kinkou",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Azir, Sovereign",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Darius, Executioner",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 18,
+    "gearCount": 6
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-chong-feng-61563"
+}

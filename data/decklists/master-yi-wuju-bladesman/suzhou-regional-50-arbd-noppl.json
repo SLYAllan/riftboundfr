@@ -1,0 +1,204 @@
+{
+  "id": "suzhou-regional-50-arbd-noppl",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Tempered",
+  "player": "ARBD-Noppl",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 50,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Master Yi, Tempered",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Altar to Unity",
+    "Grove of the God-Willow",
+    "Star Spring"
+  ],
+  "sideDeck": [
+    {
+      "name": "Repulse",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Peerless",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 18,
+    "spellCount": 19,
+    "gearCount": 3
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-jjjjjs-153070"
+}

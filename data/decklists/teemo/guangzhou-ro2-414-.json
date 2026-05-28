@@ -1,0 +1,163 @@
+{
+  "id": "deck-ti-mo-8173",
+  "legend": "Teemo, Swift Scout",
+  "legendId": null,
+  "champion": "Teemo, Scout",
+  "player": "抛瓦",
+  "tournament": "Guangzhou Regional Open (Full)",
+  "date": "2025-08-24",
+  "placement": 414,
+  "playerCount": 506,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Mother",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Guerilla Warfare",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind/chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Bandle Tree",
+    "Hallowed Tomb",
+    "Zaun Warrens"
+  ],
+  "sideboard": [],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 18,
+    "spellCount": 21,
+    "gearCount": 0,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ti-mo-8173"
+}

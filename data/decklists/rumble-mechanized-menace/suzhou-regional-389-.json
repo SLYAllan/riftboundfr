@@ -1,0 +1,218 @@
+{
+  "id": "suzhou-regional-389-",
+  "legend": "Rumble, Mechanized Menace",
+  "champion": "Rumble, Hotheaded",
+  "player": "厌末",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 389,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Forecaster",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Bubble Bot",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Dangerous Duo",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Rumble, Scrapper",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Breakneck Mech",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Cloth Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Experimental Hexplate",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Garbage Grabber",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Trifarian War Camp",
+    "Vilemaw's Lair",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Keeper of Masks",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Mischievous Marai",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Chakram Dancer",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Towering Pairofant",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 23,
+    "spellCount": 14,
+    "gearCount": 3
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-lb-153408"
+}

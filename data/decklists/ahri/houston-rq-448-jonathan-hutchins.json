@@ -1,0 +1,178 @@
+{
+  "id": "deck-ahri-nine-tailed-fox-32268",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "champion": "Ahri, Inquisitive",
+  "player": "Jonathan Hutchins",
+  "tournament": "Houston Regional Qualifier",
+  "date": "2025-12-07",
+  "placement": 448,
+  "playerCount": 1347,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Sprite Mother",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Grove of the God-Willow",
+    "The Dreaming Tree",
+    "Trifarian War Camp"
+  ],
+  "sideboard": [
+    {
+      "name": "Rune Prison",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Fox-Fire",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "calm/mind"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Mega-Mech",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 23,
+    "gearCount": 0,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ahri-nine-tailed-fox-32268"
+}

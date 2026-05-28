@@ -1,0 +1,183 @@
+{
+  "id": "suzhou-regional-537-",
+  "legend": "Leblanc, Deceiver",
+  "champion": "LeBlanc, Fragmented",
+  "player": "那还说啥呢",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 537,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ruined Rex",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Mind": 4,
+    "Order": 8
+  },
+  "battlefields": [
+    "Dusk Rose Lab",
+    "Forbidding Waste",
+    "Windswept Hillock"
+  ],
+  "sideDeck": [
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 25,
+    "spellCount": 15,
+    "gearCount": 0
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-yao-ji-wang-153556"
+}

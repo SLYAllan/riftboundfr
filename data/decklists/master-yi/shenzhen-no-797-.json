@@ -1,0 +1,206 @@
+{
+  "id": "deck-quan-guo-jian-sheng-105789",
+  "legend": "Master Yi, Wuju Bladesman",
+  "legendId": null,
+  "champion": "Master Yi, Honed",
+  "player": "食饭唔俾钱",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 797,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Cannon Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Primal Strength",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Calm Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Forge of the Fluft",
+    "Obelisk of Power",
+    "The Dreaming Tree"
+  ],
+  "sideboard": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Cannon Barrage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Primal Strength",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 12,
+    "spellCount": 21,
+    "gearCount": 6,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-quan-guo-jian-sheng-105789"
+}

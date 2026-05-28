@@ -1,0 +1,171 @@
+{
+  "id": "deck-ji-guang-lun-zi-ma-105670",
+  "legend": "Sivir, Battle Mistress",
+  "legendId": null,
+  "champion": "Sivir, Mercenary",
+  "player": "FG",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 678,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Mindsplitter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Strike Down",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Gentlemen's Duel",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forgotten Monument",
+    "Minefield"
+  ],
+  "sideboard": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 3,
+    "spellCount": 28,
+    "gearCount": 8,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ji-guang-lun-zi-ma-105670"
+}

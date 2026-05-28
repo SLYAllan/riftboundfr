@@ -1,0 +1,218 @@
+{
+  "id": "fuzhou-regional-93-",
+  "legend": "Draven, Glorious Executioner",
+  "champion": "Draven, Vanquisher",
+  "player": "草席 皮蛋",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 93,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Draven, Vanquisher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Overzealous Fan",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Pouty Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Spinning Axe",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Obelisk of Power",
+    "Reaver's Row",
+    "Targon's Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Draven, Vanquisher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Draven, Audacious",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 22,
+    "spellCount": 14,
+    "gearCount": 4
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-bao-ke-meng-gao-shou-yong-chuang-fu-wen-61357"
+}

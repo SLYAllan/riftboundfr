@@ -1,0 +1,211 @@
+{
+  "id": "suzhou-regional-121-hbg",
+  "legend": "Diana, Scorn of the Moon",
+  "champion": "Diana, Lunari",
+  "player": "HBG.孜然",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 121,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Diana, Lunari",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Moonfall",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Ravenbloom Conservatory",
+    "Targon's Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "Acceptable Losses",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 23,
+    "gearCount": 0
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-yue-153142"
+}

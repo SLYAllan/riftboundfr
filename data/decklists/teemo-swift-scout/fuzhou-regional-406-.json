@@ -1,0 +1,204 @@
+{
+  "id": "fuzhou-regional-406-",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Scout",
+  "player": "霜降",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 406,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ornn, Forge God",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "mind"
+    },
+    {
+      "name": "Cloth Armor",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Spirit Wheel",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Bandle Tree",
+    "Ornn's Forge"
+  ],
+  "sideDeck": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 15,
+    "spellCount": 16,
+    "gearCount": 9
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-aoentm-61670"
+}

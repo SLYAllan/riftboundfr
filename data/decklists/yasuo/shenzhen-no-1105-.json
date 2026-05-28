@@ -1,0 +1,241 @@
+{
+  "id": "deck-zhong-ban-106095",
+  "legend": "Yasuo, Unforgiven",
+  "legendId": null,
+  "champion": "Yasuo, Remorseful",
+  "player": "小北",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1105,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Overzealous Fan",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Fae Porter",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Gust",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Back-Alley Bar",
+    "Rockfall Path",
+    "Targon's Peak"
+  ],
+  "sideboard": [
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Fae Porter",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Yasuo, Windrider",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 14,
+    "spellCount": 17,
+    "gearCount": 8,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-zhong-ban-106095"
+}

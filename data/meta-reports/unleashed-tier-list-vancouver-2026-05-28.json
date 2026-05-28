@@ -1,0 +1,78 @@
+{
+  "source": "https://riftbound.gg/riftbound-meta-tier-list-best-decks-for-unleashed-heading-to-vancouver/",
+  "author": "Den",
+  "date": "2026-05-28",
+  "set": "Unleashed",
+  "context": "Pre-Vancouver Regional Qualifier",
+  "tournamentsUsed": [
+    "Suzhou Regional Open",
+    "Sydney Regional Qualifier",
+    "Xi'an Regional Open",
+    "CCS Riftbound Invitational #3",
+    "15 tournaments with 64-128 players (2 weeks)"
+  ],
+  "tierDefinitions": {
+    "1": "Expected top cut performer and potential winner in high-stakes tournaments",
+    "2": "Top cut contender, but not expected to win it all",
+    "3": "Competitive pick with experienced pilot, combining good understanding of legend and tournament metagame",
+    "4": "Competitive sparks here and there, when draws align or in right environment",
+    "5": "Best-of cards are worth good money"
+  },
+  "tierList": {
+    "1": [
+      { "legend": "Irelia", "performance": "Top 2 Suzhou / Wins Sydney / Top 4 Xi'an", "results64": "1 Win / 7 Top 8" },
+      { "legend": "Diana", "performance": "Top 32 Suzhou / Top 4 Sydney / Top 2 Xi'an", "results64": "3 Win / 10 Top 8" },
+      { "legend": "Master Yi (Origins/Bladesman)", "performance": "Wins Suzhou / Top 16 Sydney / Top 16 Xi'an", "results64": "2 Win / 24 Top 8" },
+      { "legend": "LeBlanc", "performance": "Top 64 Suzhou / Top 8 Sydney / Top 8 Xi'an", "results64": "3 Win / 11 Top 8" }
+    ],
+    "2": [
+      { "legend": "Vex", "performance": "Top 16 Suzhou / Top 4 Sydney / Top 8 Xi'an", "results64": "4 Top 8" },
+      { "legend": "Sivir", "performance": "Top 4 Suzhou / Top 2 Sydney / Top 32 Xi'an", "results64": "7 Top 8" },
+      { "legend": "Azir", "performance": "Top 64 Suzhou / Top 32 Sydney / Wins Xi'an", "results64": "8 Top 8" },
+      { "legend": "Miss Fortune", "performance": "Top 16 Suzhou / Top 64 Sydney / Top 32 Xi'an", "results64": "2 Win / 3 Top 8" },
+      { "legend": "Ezreal", "performance": "Top 8 Suzhou / Top 32 Sydney / Top 32 Xi'an", "results64": "3 Top 8" },
+      { "legend": "Fiora", "performance": "Top 32 Suzhou / Top 32 Sydney / Top 32 Xi'an", "results64": "1 Win / 7 Top 8" },
+      { "legend": "Kha'Zix", "performance": "Top 16 Suzhou / Top 64 Sydney / Top 16 Xi'an", "results64": "No Results" }
+    ],
+    "3": [
+      { "legend": "Teemo", "performance": "Top 64 Suzhou / Top 8 Sydney / Top 64 Xi'an", "results64": "1 Top 8" },
+      { "legend": "Draven", "performance": "Top 64 Suzhou / Top 16 Sydney / Top 64 Xi'an", "results64": "3 Top 8" },
+      { "legend": "Poppy", "performance": "Top 4 Suzhou / Top 32 Sydney / Top 256 Xi'an", "results64": "1 Top 8" },
+      { "legend": "Annie", "performance": "Top 32 Suzhou / Top 32 Sydney / Top 128 Xi'an", "results64": "1 Win" },
+      { "legend": "Sett", "performance": "Top 128 Suzhou / Top 16 Sydney / Top 64 Xi'an", "results64": "1 Win" },
+      { "legend": "Viktor", "performance": "Top 64 Suzhou / Top 32 Sydney / Top 64 Xi'an", "results64": "1 Win / 2 Top 8" },
+      { "legend": "Lillia", "performance": "Top 32 Suzhou / Top 64 Sydney / Top 64 Xi'an", "results64": "1 Top 8" },
+      { "legend": "Rengar", "performance": "Top 128 Suzhou / Top 16 Sydney / Top 64 Xi'an", "results64": "No Results" },
+      { "legend": "Kai'Sa", "performance": "Top 16 Suzhou / Top 128 Sydney / Top 128 Xi'an", "results64": "3 Top 8" },
+      { "legend": "Ornn", "performance": "Top 64 Suzhou / Top 64 Sydney / Top 128 Xi'an", "results64": "No Results" },
+      { "legend": "Vi", "performance": "Top 128 Suzhou / Top 128 Sydney / Top 64 Xi'an", "results64": "No Results" },
+      { "legend": "Lux", "performance": "Top 64 Suzhou / Top 256 Sydney / Top 64 Xi'an", "results64": "No Results" }
+    ],
+    "4": [
+      { "legend": "Pyke", "performance": "Top 16 Suzhou / Top 128 Sydney / Top 256 Xi'an", "results64": "No Results" },
+      { "legend": "Rek'Sai", "performance": "Top 16 Suzhou / Top 256 Sydney / Top 256 Xi'an", "results64": "2 Top 8" },
+      { "legend": "Darius", "performance": "Top 256 Suzhou / Top 256 Sydney / Top 16 Xi'an", "results64": "1 Top 8" },
+      { "legend": "Volibear", "performance": "Top 128 Suzhou / Top 128 Sydney / Top 128 Xi'an", "results64": "No Results" },
+      { "legend": "Lucian", "performance": "Top 256 Suzhou / Top 64 Sydney / Top 128 Xi'an", "results64": "No Results" },
+      { "legend": "Master Yi (Unleashed/Wuju Master)", "performance": "Top 256 Suzhou / Top 64 Sydney / Top 128 Xi'an", "results64": "No Results" }
+    ],
+    "5": [
+      { "legend": "Ahri" }, { "legend": "Garen" }, { "legend": "Leona" },
+      { "legend": "Yasuo" }, { "legend": "Lee Sin" }, { "legend": "Jinx" },
+      { "legend": "Jax" }, { "legend": "Rumble" }, { "legend": "Renata Glasc" },
+      { "legend": "Jhin" }, { "legend": "Ivern" }
+    ]
+  },
+  "keyObservations": [
+    "Aurora (Dazzling Aurora OGN-160) decks posted weakest performance at Xi'an as field adapted with gear removal in main deck",
+    "Gear removal cards now maindecked: Salvage (OGN-224), Turn to Dust (UNL-070), Adaptatron (OGN-056)",
+    "Sivir dropped from Top 2 Sydney to Top 32 Xi'an — Aurora being targeted",
+    "Poppy from Top 4 Suzhou to Top 256 Xi'an — Aurora punished",
+    "Irelia cemented as #1 legend with 4 top 8 at Xi'an",
+    "Diana rising fast — finalist Xi'an, dominates smaller events",
+    "LeBlanc joined Tier 1 — traditional build proving viable after peculiar Sydney list",
+    "Master Yi failing to top 8 in 2 of 3 regionals despite popularity",
+    "Azir surprise winner at Xi'an — needs to prove it wasn't a fluke",
+    "Vancouver dilemma: build anti-Aurora or build anti-Irelia/Diana/Yi/LeBlanc"
+  ]
+}

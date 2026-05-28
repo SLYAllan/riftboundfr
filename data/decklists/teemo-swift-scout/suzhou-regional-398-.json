@@ -1,0 +1,225 @@
+{
+  "id": "suzhou-regional-398-",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Scout",
+  "player": "鲜虾鱼板面",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 398,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Windsinger",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Pyke, Returned",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Acceptable Losses",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Bone Skewer",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "Ravenbloom Conservatory",
+    "The Candlelit Sanctum"
+  ],
+  "sideDeck": [
+    {
+      "name": "Acceptable Losses",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 16,
+    "spellCount": 22,
+    "gearCount": 2
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ti-mo-153417"
+}

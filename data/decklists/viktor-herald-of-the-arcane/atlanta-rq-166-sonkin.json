@@ -1,0 +1,177 @@
+{
+  "id": "atlanta-rq-166-sonkin",
+  "legend": "Viktor, Herald of the Arcane",
+  "champion": "Viktor, Leader",
+  "player": "Sonkin",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 166,
+  "set": "Spiritforged",
+  "archetype": "control",
+  "tier": "B",
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "draw"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "flex"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "flex"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 7,
+      "role": "equipment"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 6,
+      "role": "flex"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Jayce, Man of Progress",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "The Arena's Greatest",
+    "Void Gate",
+    "Treasure Hoard"
+  ],
+  "sideDeck": [
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    }
+  ],
+  "notes": ""
+}

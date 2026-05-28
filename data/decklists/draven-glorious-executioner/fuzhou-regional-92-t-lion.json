@@ -1,0 +1,190 @@
+{
+  "id": "fuzhou-regional-92-t-lion",
+  "legend": "Draven, Glorious Executioner",
+  "champion": "Draven, Vanquisher",
+  "player": "Tаlion",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 92,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Draven, Vanquisher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Battering Ram",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Seal of Discord",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Scrapheap",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 11,
+    "Fury": 1
+  },
+  "battlefields": [
+    "Obelisk of Power",
+    "Trifarian War Camp",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Annie, Stubborn",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 21,
+    "spellCount": 12,
+    "gearCount": 7
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-tong-dao-pa-xing-zhe-61356"
+}

@@ -1,0 +1,192 @@
+{
+  "id": "deck-nu-qiang-106798",
+  "legend": "Miss Fortune, Bounty Hunter",
+  "legendId": null,
+  "champion": "Miss Fortune, Captain",
+  "player": "Wmxz",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1811,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Mindsplitter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Called Shot",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Bullet Time",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body/chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Factory Recall",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fading Memories",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 5,
+    "spellCount": 29,
+    "gearCount": 5,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-nu-qiang-106798"
+}

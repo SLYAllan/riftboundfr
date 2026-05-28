@@ -1,0 +1,239 @@
+{
+  "id": "suzhou-regional-221-",
+  "legend": "Jinx, Loose Cannon",
+  "champion": "Jinx, Rebel",
+  "player": "三杯蛇",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 221,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Jinx, Rebel",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Grim Apothecary",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Rengar, Unseen",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Draven, Showboat",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Seal of Rage",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 5,
+    "Fury": 7
+  },
+  "battlefields": [
+    "Rockfall Path",
+    "The Arena's Greatest",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Temptation",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 23,
+    "spellCount": 11,
+    "gearCount": 6
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-626-153240"
+}

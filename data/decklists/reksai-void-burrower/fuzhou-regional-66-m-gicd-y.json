@@ -1,0 +1,211 @@
+{
+  "id": "fuzhou-regional-66-m-gicd-y",
+  "legend": "Reksai, Void Burrower",
+  "champion": "Rek'Sai, Breacher",
+  "player": "梦之星MаgicDаy",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 66,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Void Hatchling",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Immortal Phoenix",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Undertitan",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Seal of Rage",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Sun Disc",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Void Rush",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Rockfall Path",
+    "The Candlelit Sanctum",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Blood Rush",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 19,
+    "spellCount": 17,
+    "gearCount": 4
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-wa-lai-da-61330"
+}

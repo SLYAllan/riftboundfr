@@ -1,0 +1,234 @@
+{
+  "id": "deck-nu-qiang-31207",
+  "legend": "Miss Fortune, Bounty Hunter",
+  "legendId": null,
+  "champion": "Miss Fortune, Captain",
+  "player": "大魔王",
+  "tournament": "Shanghai National Open",
+  "date": "2025-11-02",
+  "placement": 1283,
+  "playerCount": 2048,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Anivia, Primal",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Soulgorger",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Bullet Time",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body/chaos"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Confront",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Primal Strength",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Possession",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Aspirant's Climb",
+    "Obelisk of Power",
+    "Sigil of the Storm"
+  ],
+  "sideboard": [
+    {
+      "name": "Bullet Time",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "body/chaos"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Confront",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fading Memories",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Soulgorger",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 10,
+    "spellCount": 21,
+    "gearCount": 8,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-nu-qiang-31207"
+}

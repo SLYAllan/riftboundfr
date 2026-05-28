@@ -1,0 +1,220 @@
+{
+  "id": "deck-wei-161398",
+  "legend": "Vex, Gloomist",
+  "legendId": null,
+  "champion": "Vex, Apathetic",
+  "player": "极触感.蕾",
+  "tournament": "S3 Xi'an Regional Open",
+  "date": "2026-05-24",
+  "placement": 624,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mutated Mouser",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Trevor Snoozebottom",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Tianna Crownguard",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Existential Dread",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Chaos Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Hallowed Tomb",
+    "The Papertree",
+    "Trifarian War Camp"
+  ],
+  "sideboard": [
+    {
+      "name": "Bone Skewer",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Flurry of Feathers",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Alpha Wildclaw",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 19,
+    "spellCount": 18,
+    "gearCount": 2,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-wei-161398"
+}

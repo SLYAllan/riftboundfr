@@ -1,0 +1,171 @@
+{
+  "id": "deck-dong-feng-kuai-di-7661",
+  "legend": "Jinx, Loose Cannon",
+  "legendId": null,
+  "champion": "Jinx, Demolitionist",
+  "player": "荼家军古灵",
+  "tournament": "Chongqing Regional Open (Full)",
+  "date": "2025-09-07",
+  "placement": 400,
+  "playerCount": 507,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Chemtech Enforcer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Flame Chompers",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Immortal Phoenix",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Jinx, Demolitionist",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Seal of Rage",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Sun Disc",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Super Mega Death Rocket!",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury/chaos"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Chaos Rune",
+      "quantity": 3
+    },
+    {
+      "name": "Fury Rune",
+      "quantity": 9
+    }
+  ],
+  "battlefields": [
+    "Reaver's Row",
+    "Void Gate",
+    "Zaun Warrens"
+  ],
+  "sideboard": [
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Fight or Flight",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 24,
+    "spellCount": 9,
+    "gearCount": 6,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-dong-feng-kuai-di-7661"
+}

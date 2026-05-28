@@ -1,0 +1,239 @@
+{
+  "id": "fuzhou-regional-312-z",
+  "legend": "Kai'sa, Daughter of the Void",
+  "champion": "Kai'Sa, Survivor",
+  "player": "果冻Z",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 312,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Ravenborn Tome",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Assembly Rig",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Shakedown",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Icathian Rain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Obelisk of Power",
+    "The Papertree",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Premonition",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Icathian Rain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 12,
+    "spellCount": 24,
+    "gearCount": 4
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ka-shabo3-61576"
+}

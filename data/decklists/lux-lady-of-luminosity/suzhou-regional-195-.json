@@ -1,0 +1,190 @@
+{
+  "id": "suzhou-regional-195-",
+  "legend": "Lux, Lady of Luminosity",
+  "champion": "Lux, Crownguard",
+  "player": "无刀客",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 195,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lux, Crownguard",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Frigid Jewel",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Falling Comet",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 11,
+    "spellCount": 21,
+    "gearCount": 8
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-dao-qian-nu-153214"
+}

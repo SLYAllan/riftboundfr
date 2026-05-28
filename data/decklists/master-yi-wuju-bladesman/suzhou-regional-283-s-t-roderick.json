@@ -1,0 +1,225 @@
+{
+  "id": "suzhou-regional-283-s-t-roderick",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Tempered",
+  "player": "S.T.Roderick",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 283,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Master Yi, Tempered",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Blood Rose",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Here to Help",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Amateur Recital",
+    "Star Spring",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 18,
+    "spellCount": 18,
+    "gearCount": 4
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-xing-chen-jian-shengv3-8b-153302"
+}

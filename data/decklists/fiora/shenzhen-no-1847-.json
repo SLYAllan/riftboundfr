@@ -1,0 +1,177 @@
+{
+  "id": "deck-123-106834",
+  "legend": "Fiora, Grand Duelist",
+  "legendId": null,
+  "champion": "Fiora, Worthy",
+  "player": "东轩",
+  "tournament": "S2 Shenzhen National Open",
+  "date": "2026-03-22",
+  "placement": 1847,
+  "playerCount": 2048,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pit Rookie",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Veteran Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Peerless",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Dauntless Vanguard",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Laurent Duelist",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Royal Guard",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Yone, Blademaster",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Jaull-Fish",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Warmog's Armor",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sacred Shears",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body/order"
+    },
+    {
+      "name": "Show of Strength",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Strike Down",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 6
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 6
+    }
+  ],
+  "battlefields": [
+    "Ornn's Forge",
+    "Sunken Temple",
+    "Veiled Temple"
+  ],
+  "sideboard": [],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 19,
+    "spellCount": 10,
+    "gearCount": 10,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-123-106834"
+}

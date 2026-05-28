@@ -1,0 +1,8 @@
+riftboundfrance.fr {
+	reverse_proxy app:3000
+	encode gzip
+}
+
+www.riftboundfrance.fr {
+	redir https://riftboundfrance.fr{uri} permanent
+}

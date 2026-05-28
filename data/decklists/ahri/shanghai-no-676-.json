@@ -1,0 +1,227 @@
+{
+  "id": "deck-xiang-xin-ji-ban-30604",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "champion": "Ahri, Inquisitive",
+  "player": "不善言辞的小张同学",
+  "tournament": "Shanghai National Open",
+  "date": "2025-11-02",
+  "placement": 676,
+  "playerCount": 2048,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eager Apprentice",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Jeweled Colossus",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Block",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Rune Prison",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Fox-Fire",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm/mind"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 5
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 7
+    }
+  ],
+  "battlefields": [
+    "The Candlelit Sanctum",
+    "The Dreaming Tree",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Mask of Foresight",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Fox-Fire",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "calm/mind"
+    },
+    {
+      "name": "Sprite Mother",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 20,
+    "gearCount": 2,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-xiang-xin-ji-ban-30604"
+}

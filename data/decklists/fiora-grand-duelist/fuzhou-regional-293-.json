@@ -1,0 +1,190 @@
+{
+  "id": "fuzhou-regional-293-",
+  "legend": "Fiora, Grand Duelist",
+  "champion": "Fiora, Worthy",
+  "player": "淘金巢.倚剑吟风",
+  "tournament": "Fuzhou Regional",
+  "date": "2026-01-15",
+  "placement": 293,
+  "playerCount": 800,
+  "set": "Spiritforged",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Call to Glory",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    }
+  ],
+  "runes": {
+    "Body": 5,
+    "Order": 7
+  },
+  "battlefields": [
+    "Sunken Temple",
+    "The Candlelit Sanctum",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 23,
+    "spellCount": 12,
+    "gearCount": 5
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-wu-dijjking-61557"
+}

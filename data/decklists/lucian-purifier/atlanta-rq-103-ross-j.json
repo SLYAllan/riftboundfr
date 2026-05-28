@@ -1,0 +1,191 @@
+{
+  "id": "atlanta-rq-103-ross-j",
+  "legend": "Lucian, Purifier",
+  "champion": "Lucian, Merciless",
+  "player": "Ross J",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 103,
+  "set": "Spiritforged",
+  "archetype": "aggro",
+  "tier": "A",
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Warmog's Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 1,
+      "role": "equipment"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "tech"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Confront",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Pouty Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Relentless Pursuit",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Skyfall of Areion",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 4,
+      "role": "equipment"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Fury": 5
+  },
+  "battlefields": [
+    "Zaun Warrens",
+    "Sunken Temple",
+    "Forge of the Fluft"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "flex"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    }
+  ],
+  "notes": ""
+}

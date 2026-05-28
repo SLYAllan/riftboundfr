@@ -1,0 +1,206 @@
+{
+  "id": "deck-mai-se-161369",
+  "legend": "Sett, The Boss",
+  "legendId": null,
+  "champion": "Sett, Brawler",
+  "player": "KLG.Snail",
+  "tournament": "S3 Xi'an Regional Open",
+  "date": "2026-05-24",
+  "placement": 595,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Irresistible Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Kinkou Monk",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Soraka, Wanderer",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "order"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Showstopper",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "body/order"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Call to Glory",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Order Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Trifarian War Camp",
+    "Valley of Idols",
+    "Vilemaw's Lair"
+  ],
+  "sideboard": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Atakhan",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 19,
+    "gearCount": 3,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-mai-se-161369"
+}

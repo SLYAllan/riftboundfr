@@ -1,0 +1,192 @@
+{
+  "id": "deck-lee-sin-blind-monk-115143",
+  "legend": "Lee Sin, Blind Monk",
+  "legendId": null,
+  "champion": "Lee Sin, Centered",
+  "player": "Pay Eighthundred",
+  "tournament": "Lille Regional Qualifier",
+  "date": "2026-04-18",
+  "placement": 78,
+  "playerCount": 1949,
+  "set": "Spiritforged",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "calm"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Body Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Calm Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Monastery of Hirana",
+    "Sunken Temple"
+  ],
+  "sideboard": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Janna, Savior",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 14,
+    "spellCount": 17,
+    "gearCount": 8,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-lee-sin-blind-monk-115143"
+}

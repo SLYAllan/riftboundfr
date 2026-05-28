@@ -1,0 +1,199 @@
+{
+  "id": "deck-a-li-suo-na-30788",
+  "legend": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "champion": "Ahri, Inquisitive",
+  "player": "鸽堕",
+  "tournament": "Shanghai National Open",
+  "date": "2025-11-02",
+  "placement": 861,
+  "playerCount": 2048,
+  "set": "Origins",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eager Apprentice",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Seal of Focus",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Block",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Rune Prison",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Fox-Fire",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm/mind"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    }
+  ],
+  "runes": [
+    {
+      "name": "Calm Rune",
+      "quantity": 7
+    },
+    {
+      "name": "Mind Rune",
+      "quantity": 5
+    }
+  ],
+  "battlefields": [
+    "Grove of the God-Willow",
+    "The Dreaming Tree",
+    "Windswept Hillock"
+  ],
+  "sideboard": [
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Rune Prison",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Spirit's Refuge",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 17,
+    "spellCount": 20,
+    "gearCount": 2,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-a-li-suo-na-30788"
+}

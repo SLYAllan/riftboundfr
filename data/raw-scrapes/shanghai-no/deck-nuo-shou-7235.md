@@ -1,0 +1,282 @@
+1. [Home](https://riftdecks.com/)
+2. [Riftbound Meta](https://riftdecks.com/legends/constructed)
+3. [Darius, Hand of Noxus](https://riftdecks.com/legends/constructed/darius-hand-of-noxus)
+4. 诺手
+
+# 诺手 by 留白
+
+"诺手" decklist by 留白. 479th at Shanghai National Open by Riot Games / Shining Soul on 2025-11-02
+
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Darius, Hand of Noxus](https://riftdecks.com/legends/constructed/darius-hand-of-noxus) [Fury Order](https://riftdecks.com/riftbound-metagame/constructed/fury-order) [留白](https://riftdecks.com/riftbound-decks?player=%E7%95%99%E7%99%BD&deck_type=all) [Shanghai National Open](https://riftdecks.com/riftbound-tournaments/shanghai-national-open-tournament-decks-52) [Riftbound Decks](https://riftdecks.com/)
+
+**![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)诺手**
+**, a deck by [留白](https://riftdecks.com/riftbound-decks?player=%E7%95%99%E7%99%BD&deck_type=all)**
+
+479th at
+Shanghai National Open 2048 players on
+2025-11-02
+
+[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
+\|
+64 Cards \|
+
+
+
+## Text Decklist
+
+[Bookmark](https://riftdecks.com/riftbound-metagame/deck-nuo-shou-7235#) Similar Decks
+
+Export this Deck
+
+
+![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-302-298_cropped.png)![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-027-298_cropped.png)![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-028-298_cropped.png)
+
+|     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Darius, Hand of Noxus](https://riftdecks.com/cards/details-darius-hand-of-noxus) | $0.25 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Darius, Trifarian](https://riftdecks.com/cards/details-darius-trifarian) | $1.15 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (21) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **2** | [Daring Poro](https://riftdecks.com/cards/details-daring-poro) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **2** | [Pouty Poro](https://riftdecks.com/cards/details-pouty-poro) | $0.14 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Soaring Scout](https://riftdecks.com/cards/details-soaring-scout) | $0.15 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Vi, Destructive](https://riftdecks.com/cards/details-vi-destructive) | $0.54 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Immortal Phoenix](https://riftdecks.com/cards/details-immortal-phoenix) | $8.49 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Kai'Sa, Survivor](https://riftdecks.com/cards/details-kaisa-survivor) | $51.24 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Noxus Hopeful](https://riftdecks.com/cards/details-noxus-hopeful) | $0.34 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vayne, Hunter](https://riftdecks.com/cards/details-vayne-hunter) | $0.45 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Darius, Trifarian](https://riftdecks.com/cards/details-darius-trifarian) | $1.15 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Draven, Showboat](https://riftdecks.com/cards/details-draven-showboat) | $0.45 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Scrapyard Champion](https://riftdecks.com/cards/details-scrapyard-champion) | $0.12 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong) | $1.87 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (6) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Seal of Rage](https://riftdecks.com/cards/details-seal-of-rage) | $12.44 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sun Disc](https://riftdecks.com/cards/details-sun-disc) | $0.27 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (12) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Cleave](https://riftdecks.com/cards/details-cleave) | $0.18 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Cull the Weak](https://riftdecks.com/cards/details-cull-the-weak) | $0.34 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Falling Star](https://riftdecks.com/cards/details-falling-star) | $3.99 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.94 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Salvage](https://riftdecks.com/cards/details-salvage) | $3.85 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Shakedown](https://riftdecks.com/cards/details-shakedown) | $0.38 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Void Seeker](https://riftdecks.com/cards/details-void-seeker) | $0.22 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Reckoner's Arena](https://riftdecks.com/cards/details-reckoners-arena) | $0.14 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Candlelit Sanctum](https://riftdecks.com/cards/details-the-candlelit-sanctum) | $0.26 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Zaun Warrens](https://riftdecks.com/cards/details-zaun-warrens) | $0.22 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **7** | [Fury Rune](https://riftdecks.com/cards/details-fury-rune) | $0.10 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.15 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (8) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Legion Rearguard](https://riftdecks.com/cards/details-legion-rearguard) | $0.10 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Salvage](https://riftdecks.com/cards/details-salvage) | $3.85 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Leona, Determined](https://riftdecks.com/cards/details-leona-determined) | $0.48 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Noxian Guillotine](https://riftdecks.com/cards/details-noxian-guillotine) | $1.14 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Imperial Decree](https://riftdecks.com/cards/details-imperial-decree) | $0.70 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+|  |  |
+
+Buy this deck
+
+![](https://riftdecks.com/img/logos/tcg_player.png)$243.53
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x1
+
+![](https://riftdecks.com/img/cards/riftbound//OGN/ogn-221-298_full.png)
+
+## Visual Decklist
+
+Deck Style
+
+Grouped
+
+Horizontal
+
+Grid
+
+Download Image
+
+
+![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)
+
+Top512
+
+诺手
+
+
+**by 留白**
+
+Shanghai National Open
+
+@ Riot Games / Shining Soul 2025-11-02
+
+2048 Players
+
+![](https://static.riftdecks.com/images/organization_logos/8d47f017-3bb2-4f8b-a170-beea550f9bb0.png)
+
+x1
+
+[![Darius, Hand of Noxus](https://riftdecks.com/img/cards/riftbound//OGN/ogn-302-298_full.png)](https://riftdecks.com/cards/details-darius-hand-of-noxus)
+
+x7
+
+[![Fury Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-007a-298_full.png)](https://riftdecks.com/cards/details-fury-rune)
+
+x5
+
+[![Order Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-214a-298_full.png)](https://riftdecks.com/cards/details-order-rune)
+
+x1
+
+[![Reckoner's Arena](https://riftdecks.com/img/cards/riftbound//OGN/ogn-286-298_full.png)](https://riftdecks.com/cards/details-reckoners-arena)
+
+x1
+
+[![The Candlelit Sanctum](https://riftdecks.com/img/cards/riftbound//OGN/ogn-291-298_full.png)](https://riftdecks.com/cards/details-the-candlelit-sanctum)
+
+x1
+
+[![Zaun Warrens](https://riftdecks.com/img/cards/riftbound//OGN/ogn-298-298_full.png)](https://riftdecks.com/cards/details-zaun-warrens)
+
+x1
+
+[![Darius, Trifarian](https://riftdecks.com/img/cards/riftbound//OGN/ogn-027-298_full.png)](https://riftdecks.com/cards/details-darius-trifarian)
+
+x2
+
+[![Daring Poro](https://riftdecks.com/img/cards/riftbound//OGN/ogn-210-298_full.png)](https://riftdecks.com/cards/details-daring-poro)
+
+x2
+
+[![Pouty Poro](https://riftdecks.com/img/cards/riftbound//OGN/ogn-013-298_full.png)](https://riftdecks.com/cards/details-pouty-poro)
+
+x2
+
+[![Soaring Scout](https://riftdecks.com/img/cards/riftbound//OGN/ogn-216-298_full.png)](https://riftdecks.com/cards/details-soaring-scout)
+
+x2
+
+[![Vi, Destructive](https://riftdecks.com/img/cards/riftbound//OGN/ogn-036-298_full.png)](https://riftdecks.com/cards/details-vi-destructive)
+
+x2
+
+[![Immortal Phoenix](https://riftdecks.com/img/cards/riftbound//OGN/ogn-037-298_full.png)](https://riftdecks.com/cards/details-immortal-phoenix)
+
+x3
+
+[![Kai'Sa, Survivor](https://riftdecks.com/img/cards/riftbound//OGN/ogn-039a-298_full.png)](https://riftdecks.com/cards/details-kaisa-survivor)
+
+x3
+
+[![Noxus Hopeful](https://riftdecks.com/img/cards/riftbound//OGN/ogn-012-298_full.png)](https://riftdecks.com/cards/details-noxus-hopeful)
+
+x1
+
+[![Vayne, Hunter](https://riftdecks.com/img/cards/riftbound//OGN/ogn-035-298_full.png)](https://riftdecks.com/cards/details-vayne-hunter)
+
+x1
+
+[![Darius, Trifarian](https://riftdecks.com/img/cards/riftbound//OGN/ogn-027-298_full.png)](https://riftdecks.com/cards/details-darius-trifarian)
+
+x1
+
+[![Draven, Showboat](https://riftdecks.com/img/cards/riftbound//OGN/ogn-028-298_full.png)](https://riftdecks.com/cards/details-draven-showboat)
+
+x1
+
+[![Scrapyard Champion](https://riftdecks.com/img/cards/riftbound//OGN/ogn-020-298_full.png)](https://riftdecks.com/cards/details-scrapyard-champion)
+
+x1
+
+[![Brynhir Thundersong](https://riftdecks.com/img/cards/riftbound//OGN/ogn-026-298_full.png)](https://riftdecks.com/cards/details-brynhir-thundersong)
+
+x3
+
+[![Seal of Rage](https://riftdecks.com/img/cards/riftbound//OGN/ogn-040-298_full.png)](https://riftdecks.com/cards/details-seal-of-rage)
+
+x3
+
+[![Sun Disc](https://riftdecks.com/img/cards/riftbound//OGN/ogn-021-298_full.png)](https://riftdecks.com/cards/details-sun-disc)
+
+x2
+
+[![Cleave](https://riftdecks.com/img/cards/riftbound//OGN/ogn-004-298_full.png)](https://riftdecks.com/cards/details-cleave)
+
+x1
+
+[![Cull the Weak](https://riftdecks.com/img/cards/riftbound//OGN/ogn-209-298_full.png)](https://riftdecks.com/cards/details-cull-the-weak)
+
+x1
+
+[![Falling Star](https://riftdecks.com/img/cards/riftbound//OGN/ogn-029-298_full.png)](https://riftdecks.com/cards/details-falling-star)
+
+x3
+
+[![Hidden Blade](https://riftdecks.com/img/cards/riftbound//OGN/ogn-213-298_full.png)](https://riftdecks.com/cards/details-hidden-blade)
+
+x1
+
+[![Salvage](https://riftdecks.com/img/cards/riftbound//OGN/ogn-224-298_full.png)](https://riftdecks.com/cards/details-salvage)
+
+x1
+
+[![Shakedown](https://riftdecks.com/img/cards/riftbound//OGN/ogn-033-298_full.png)](https://riftdecks.com/cards/details-shakedown)
+
+x3
+
+[![Void Seeker](https://riftdecks.com/img/cards/riftbound//OGN/ogn-024-298_full.png)](https://riftdecks.com/cards/details-void-seeker)
+
+## Sideboard
+
+x2
+
+[![Legion Rearguard](https://riftdecks.com/img/cards/riftbound//OGN/ogn-010-298_full.png)](https://riftdecks.com/cards/details-legion-rearguard)
+
+x2
+
+[![Salvage](https://riftdecks.com/img/cards/riftbound//OGN/ogn-224-298_full.png)](https://riftdecks.com/cards/details-salvage)
+
+x1
+
+[![Leona, Determined](https://riftdecks.com/img/cards/riftbound//OGN/ogn-238a-298_full.png)](https://riftdecks.com/cards/details-leona-determined)
+
+x2
+
+[![Noxian Guillotine](https://riftdecks.com/img/cards/riftbound//OGN/ogn-254-298_full.png)](https://riftdecks.com/cards/details-noxian-guillotine)
+
+x1
+
+[![Imperial Decree](https://riftdecks.com/img/cards/riftbound//OGN/ogn-221-298_full.png)](https://riftdecks.com/cards/details-imperial-decree)
+
+## Deck Stats
+
+| types |
+| --- |
+| battlefield | 5% (3) | 5% |
+| gear | 10% (6) | 10% |
+| legend | 2% (1) | 2% |
+| rune | 19% (12) | 19% |
+| spell | 27% (17) | 27% |
+| unit | 40% (25) | 40% |
+| cmc |
+| 0 | 30% (19) | 30% |
+| 1 | 4% (2) | 4% |
+| 2 | 35% (22) | 35% |
+| 3 | 8% (5) | 8% |
+| 4 | 16% (10) | 16% |
+| 5 | 8% (5) | 8% |
+| 6 | 2% (1) | 2% |
+| domains |
+| colorless | 5% (3) | 5% |
+| fury | 68% (43) | 68% |
+| order | 33% (21) | 33% |

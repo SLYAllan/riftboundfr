@@ -1,0 +1,64 @@
+{
+  "title": "Pre-Regionals (Unleashed, Mai 2026)",
+  "date": "2026-05-13",
+  "set": "Unleashed",
+  "context": "Basé principalement sur les City Challenges chinois (presque 1 mois de données). L'Occident n'a que 2 semaines. Premier Regional = Sydney.",
+  "tierList": {
+    "tier1": [
+      { "legend": "Master Yi, Wuju Bladesman", "performance": "4 Wins / 35 Top 8", "notes": "Dominant depuis 3 semaines. Ability fantastique early. Ambush + hold." },
+      { "legend": "Irelia, Blade Dancer", "performance": "6 Wins / 21 Top 8", "notes": "Plus de wins que toute autre légende. Build inchangé depuis Spiritforged." },
+      { "legend": "Diana, Scorn of the Moon", "performance": "3 Wins / 13 Top 8", "notes": "Meilleure nouvelle légende. Chaos+Mind = million de possibilités." },
+      { "legend": "LeBlanc, Deceiver", "performance": "2 Wins / 14 Top 8", "notes": "Challenge: trouver des wrinkles. OGN-234 + SFD-177 émergent." },
+      { "legend": "Fiora, Grand Duelist", "performance": "1 Win / 11 Top 8", "notes": "Spectaculaire semaine 1 (Baited Hook), stabilisée depuis." }
+    ],
+    "tier2": [
+      { "legend": "Miss Fortune, Bounty Hunter", "performance": "1 Win / 4 Top 8", "notes": "Aurora deck en croissance." },
+      { "legend": "Sivir, Battle Mistress", "performance": "6 Top 8", "notes": "Aurora deck — builds similaires à MF." },
+      { "legend": "Sett, The Boss", "performance": "2 Wins", "notes": "Anomalie: 2 wins, 0 autre top cut. Ceiling élevé, difficile à piloter." },
+      { "legend": "Vex, Gloomist", "performance": "5 Top 8", "notes": "Meilleur départ pour un hold strategy depuis le début de Riftbound." },
+      { "legend": "Rengar, Pridestalker", "performance": "5 Top 8", "notes": "Perd du momentum. Ambush moins efficace quand l'adversaire connaît." },
+      { "legend": "Draven, Glorious Executioner", "performance": "5 Top 8", "notes": "0 carte Unleashed dans le deck. Limité à long terme." },
+      { "legend": "Azir, Emperor of the Sands", "performance": "1 Win / 2 Top 8", "notes": "Win en tournoi occidental. Equipment stable." }
+    ],
+    "tier3": [
+      { "legend": "Kai'sa, Daughter of the Void", "performance": "4 Top 8", "notes": "Probablement meilleure en Occident (tempo builds)." },
+      { "legend": "Ezreal, Prodigal Explorer", "performance": "1 Win / 1 Top 8", "notes": "Uniquement en Occident. 0 résultat en Chine." },
+      { "legend": "Kha'Zix, Voidreaver", "performance": "3 Top 8", "notes": "Pas encore trouvé sa liste raffinée." },
+      { "legend": "Viktor, Herald of the Arcane", "performance": "3 Top 8", "notes": "Historiquement struggle en BO3." },
+      { "legend": "Annie, Dark Child", "performance": "3 Top 8", "notes": "Meilleur track record en Occident." },
+      { "legend": "Leona, Radiant Dawn", "performance": "3 Top 8", "notes": "9 cartes Unleashed uniques = encore en recherche de build." },
+      { "legend": "Lillia, Bashful Bloom", "performance": "2 Top 8", "notes": "A commencé fort, perd du momentum. Signe négatif." }
+    ],
+    "tier4": [
+      { "legend": "Master Yi, Wuju Master", "performance": "1 Top 8" },
+      { "legend": "Ornn, Fire Below the Mountain", "performance": "1 Top 8" },
+      { "legend": "Rek'Sai, Void Burrower", "performance": "1 Top 8" },
+      { "legend": "Teemo, Swift Scout", "performance": "1 Top 8" },
+      { "legend": "Yasuo, Unforgiven", "performance": "1 Top 8" },
+      { "legend": "Garen, Might of Demacia", "performance": "1 Top 8" }
+    ],
+    "tier5": [
+      { "legend": "Vi" }, { "legend": "Poppy" }, { "legend": "Pyke" },
+      { "legend": "Volibear" }, { "legend": "Jhin" }, { "legend": "Ahri" },
+      { "legend": "Lucian" }, { "legend": "Jax" }, { "legend": "Darius" },
+      { "legend": "Jinx" }, { "legend": "Lux" }, { "legend": "Lee Sin" },
+      { "legend": "Rumble" }, { "legend": "Renata Glasc" }, { "legend": "Ivern" }
+    ]
+  },
+  "keyObservations": [
+    "Chine joue Unleashed depuis presque 1 mois vs ~2 semaines pour l'Occident",
+    "Sydney (Australie) = premier point de rencontre des deux métas",
+    "OGN-160 (Aurora) monte en puissance — Sivir et MF utilisent des builds quasi identiques",
+    "Ezreal = invisible en Chine, gagnant en Occident — différence régionale massive",
+    "Master Yi et Irelia sont les favoris clairs pour Sydney",
+    "Définitions des tiers expliquées dans l'article"
+  ],
+  "tierDefinitions": {
+    "tier1": "Top cut performer et gagnant potentiel. Résultats multiples.",
+    "tier2": "Performeur solide, souvent en contention pour le top cut, mais tombe court de gagner.",
+    "tier3": "Compétitif avec un pilote expérimenté + bonne connaissance du méta tournoi.",
+    "tier4": "Top cut rare. Peut compétir quand les étoiles s'alignent.",
+    "tier5": "Aucun top cut enregistré sur les 2 dernières semaines."
+  },
+  "sourceUrl": "https://riftbound.gg/riftbound-meta-tier-list-best-decks-for-unleashed-heading-into-regional-qualifiers/"
+}

@@ -1,0 +1,191 @@
+{
+  "id": "atlanta-rq-499-dawsome",
+  "legend": "Viktor, Herald of the Arcane",
+  "champion": "Viktor, Leader",
+  "player": "Dawsome",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 499,
+  "set": "Spiritforged",
+  "archetype": "control",
+  "tier": "B",
+  "domains": [
+    "Order",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "draw"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "flex"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "flex"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 6,
+      "role": "flex"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 4,
+      "role": "equipment"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Order": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "The Arena's Greatest",
+    "Void Gate",
+    "Treasure Hoard"
+  ],
+  "sideDeck": [
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 4,
+      "role": "equipment"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    }
+  ],
+  "notes": ""
+}

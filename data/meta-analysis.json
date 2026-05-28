@@ -1,0 +1,4533 @@
+{
+  "totalDecks": 1302,
+  "uniqueLegends": 42,
+  "legendAnalyses": [
+    {
+      "legend": "Irelia, Blade Dancer",
+      "deckCount": 130,
+      "domains": [
+        "Calm",
+        "Chaos"
+      ],
+      "champions": {
+        "Irelia, Fervent": 130
+      },
+      "avgUnits": 10.4,
+      "avgSpells": 21.9,
+      "avgGears": 6.4,
+      "avgTotal": 39,
+      "core": [
+        "Stellacorn Herder (96%, avg 2.9x, Unit)",
+        "Guardian Angel (93%, avg 2.5x, Gear)",
+        "Boots of Swiftness (98%, avg 2.4x, Gear)",
+        "Charm (98%, avg 2.3x, Spell)",
+        "Defiant Dance (99%, avg 3x, Spell)",
+        "Defy (100%, avg 2.7x, Spell)",
+        "En Garde (98%, avg 2.4x, Spell)",
+        "Discipline (100%, avg 3x, Spell)",
+        "Not So Fast (96%, avg 1.7x, Spell)",
+        "Ride the Wind (93%, avg 2x, Spell)"
+      ],
+      "standard": [
+        "Tideturner (75%, avg 2.5x, Unit)",
+        "Stacked Deck (66%, avg 2.1x, Spell)"
+      ],
+      "flex": [
+        "Lonely Poro (55%, avg 2.4x, Unit)",
+        "Irelia, Fervent (30%, avg 1.1x, Unit)",
+        "Zhonya's Hourglass (57%, avg 1.6x, Gear)",
+        "Rebuke (39%, avg 1.4x, Spell)",
+        "Adaptatron (53%, avg 1x, Unit)",
+        "Flash (45%, avg 1.3x, Spell)",
+        "Fizz, Trickster (32%, avg 1x, Unit)",
+        "Gust (37%, avg 1.1x, Spell)",
+        "Scuttle Crab (52%, avg 2.8x, Unit)",
+        "Star-Crossed (48%, avg 1.6x, Spell)"
+      ],
+      "tech": [
+        "The Syren (28%, avg 1.1x, Gear)",
+        "Heart of Dark Ice (22%, avg 1.1x, Gear)",
+        "Sneaky Deckhand (18%, avg 2.6x, Unit)",
+        "Hard Bargain (22%, avg 1.1x, Spell)",
+        "Find Your Center (14%, avg 2.8x, Spell)",
+        "Vex, Cheerless (12%, avg 1.3x, Unit)",
+        "Draven, Audacious (25%, avg 1.6x, Unit)",
+        "Fight or Flight (17%, avg 2.3x, Spell)",
+        "Edge of Night (15%, avg 1.3x, Gear)",
+        "Vex, Apathetic (25%, avg 1.2x, Unit)"
+      ],
+      "topBattlefields": [
+        "Sunken Temple (87%)",
+        "Targon's Peak (72%)",
+        "Abandoned Hall (52%)",
+        "The Dreaming Tree (18%)",
+        "Obelisk of Power (17%)",
+        "Aspirant's Climb (14%)",
+        "Ravenbloom Conservatory (10%)",
+        "Zaun Warrens (10%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 3,
+          "player": "Vincent N",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 3,
+          "player": "Krowz",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 3,
+          "player": "EDG",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 3,
+          "player": "HаruKаze",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 4,
+          "player": "紫禁·麻袋·Sdubby",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Master Yi, Wuju Bladesman",
+      "deckCount": 112,
+      "domains": [
+        "Body",
+        "Calm"
+      ],
+      "champions": {
+        "Master Yi, Honed": 58,
+        "Master Yi, Tempered": 54
+      },
+      "avgUnits": 16.7,
+      "avgSpells": 17.8,
+      "avgGears": 4.4,
+      "avgTotal": 39,
+      "core": [
+        "Zhonya's Hourglass (90%, avg 2.7x, Gear)",
+        "Charm (99%, avg 2.9x, Spell)",
+        "Defy (99%, avg 2.8x, Spell)",
+        "Discipline (98%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "First Mate (76%, avg 2.6x, Unit)",
+        "En Garde (85%, avg 2.3x, Spell)",
+        "Punch First (62%, avg 2.3x, Spell)",
+        "Tasty Faefolk (73%, avg 2.5x, Unit)"
+      ],
+      "flex": [
+        "Clockwork Keeper (36%, avg 2.7x, Unit)",
+        "Lonely Poro (60%, avg 3x, Unit)",
+        "Whiteflame Protector (48%, avg 2.2x, Unit)",
+        "Challenge (46%, avg 1.7x, Spell)",
+        "Guardian Angel (47%, avg 2x, Gear)",
+        "Sabotage (40%, avg 1.3x, Spell)",
+        "Find Your Center (39%, avg 2.9x, Spell)",
+        "Stalwart Poro (30%, avg 2.9x, Unit)",
+        "Deadbloom Predator (36%, avg 2.7x, Unit)",
+        "Scuttle Crab (44%, avg 2.9x, Unit)",
+        "Rengar, Trophy Hunter (44%, avg 3x, Unit)",
+        "Vilemaw (46%, avg 2.2x, Unit)"
+      ],
+      "tech": [
+        "Stellacorn Herder (15%, avg 2.5x, Unit)",
+        "Irelia, Fervent (12%, avg 2.1x, Unit)",
+        "Ruin Runner (22%, avg 2.5x, Unit)",
+        "Thwonk! (15%, avg 1.1x, Spell)",
+        "Akshan, Mischievous (23%, avg 1.4x, Unit)",
+        "Trinity Force (21%, avg 1.7x, Gear)",
+        "Confront (21%, avg 1.8x, Spell)",
+        "Not So Fast (21%, avg 1.4x, Spell)",
+        "Rune Prison (14%, avg 1.3x, Spell)",
+        "Qiyana, Victorious (21%, avg 2.2x, Unit)",
+        "Pit Rookie (23%, avg 2.6x, Unit)",
+        "Primal Strength (19%, avg 1.2x, Spell)",
+        "Catalyst of Aeons (29%, avg 2.8x, Spell)",
+        "Dazzling Aurora (14%, avg 3x, Gear)",
+        "Mobilize (13%, avg 2.4x, Spell)",
+        "Wind Wall (16%, avg 1.4x, Spell)",
+        "Back Off (16%, avg 1.4x, Spell)"
+      ],
+      "topBattlefields": [
+        "Vilemaw's Lair (52%)",
+        "Star Spring (43%)",
+        "Obelisk of Power (34%)",
+        "Grove of the God-Willow (32%)",
+        "Startipped Peak (29%)",
+        "Aspirant's Climb (20%)",
+        "Sigil of the Storm (14%)",
+        "Treasure Hoard (13%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 2,
+          "player": "Unknown",
+          "tournament": "Chongqing Regional Open"
+        },
+        {
+          "placement": 2,
+          "player": "Unknown",
+          "tournament": "Guangzhou Regional Open"
+        },
+        {
+          "placement": 2,
+          "player": "Challenger TCG",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 2,
+          "player": "Sean B",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 4,
+          "player": "Unknown",
+          "tournament": "Chongqing Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Kai'sa, Daughter of the Void",
+      "deckCount": 110,
+      "domains": [
+        "Fury",
+        "Mind"
+      ],
+      "champions": {
+        "Kai'Sa, Survivor": 110
+      },
+      "avgUnits": 18.8,
+      "avgSpells": 20,
+      "avgGears": 0.2,
+      "avgTotal": 39,
+      "core": [
+        "Watchful Sentry (96%, avg 2.8x, Unit)",
+        "Lecturing Yordle (93%, avg 2.3x, Unit)",
+        "Thousand-Tailed Watcher (100%, avg 2.8x, Unit)",
+        "Hextech Ray (99%, avg 2.9x, Spell)",
+        "Retreat (95%, avg 2.4x, Spell)",
+        "Stupefy (100%, avg 3x, Spell)",
+        "Falling Star (100%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Pouty Poro (79%, avg 2.1x, Unit)",
+        "Noxus Hopeful (88%, avg 2.5x, Unit)",
+        "Darius, Trifarian (78%, avg 2.7x, Unit)",
+        "Time Warp (89%, avg 1.7x, Spell)",
+        "Cleave (75%, avg 2.7x, Spell)",
+        "Void Seeker (63%, avg 1.8x, Spell)",
+        "Icathian Rain (70%, avg 1.4x, Spell)",
+        "Ravenbloom Student (75%, avg 2.9x, Unit)"
+      ],
+      "flex": [
+        "Smoke Screen (55%, avg 1.5x, Spell)",
+        "Progress Day (35%, avg 1.3x, Spell)",
+        "Singularity (33%, avg 2x, Spell)",
+        "Kai'Sa, Survivor (37%, avg 1.2x, Unit)"
+      ],
+      "tech": [
+        "Plundering Poro (28%, avg 2.8x, Unit)",
+        "Ferrous Forerunner (25%, avg 2x, Unit)",
+        "Bellows Breath (21%, avg 1.3x, Spell)",
+        "Get Excited! (10%, avg 1x, Spell)",
+        "Piercing Light (18%, avg 2.4x, Spell)",
+        "Rocket Barrage (14%, avg 1.2x, Spell)",
+        "Legion Rearguard (10%, avg 1.7x, Unit)",
+        "Brynhir Thundersong (10%, avg 1.2x, Unit)",
+        "Mega-Mech (15%, avg 1.6x, Unit)"
+      ],
+      "topBattlefields": [
+        "Void Gate (72%)",
+        "The Dreaming Tree (52%)",
+        "Reaver's Row (28%)",
+        "Zaun Warrens (23%)",
+        "The Arena's Greatest (21%)",
+        "Startipped Peak (20%)",
+        "Targon's Peak (13%)",
+        "Vilemaw's Lair (13%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 1,
+          "player": "Unknown",
+          "tournament": "Chongqing Regional Open"
+        },
+        {
+          "placement": 1,
+          "player": "Unknown",
+          "tournament": "Guangzhou Regional Open"
+        },
+        {
+          "placement": 1,
+          "player": "DNZ念",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 3,
+          "player": "Unknown",
+          "tournament": "Chongqing Regional Open"
+        },
+        {
+          "placement": 3,
+          "player": "Unknown",
+          "tournament": "Guangzhou Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Draven, Glorious Executioner",
+      "deckCount": 80,
+      "domains": [
+        "Chaos",
+        "Fury"
+      ],
+      "champions": {
+        "Draven, Showboat": 38,
+        "Draven, Vanquisher": 41,
+        "Draven, Audacious": 1
+      },
+      "avgUnits": 20.4,
+      "avgSpells": 12.7,
+      "avgGears": 4.5,
+      "avgTotal": 39,
+      "core": [
+        "Noxus Hopeful (94%, avg 2.9x, Unit)",
+        "Spinning Axe (96%, avg 2.7x, Gear)",
+        "Stacked Deck (100%, avg 3x, Spell)",
+        "Rebuke (98%, avg 1.9x, Spell)"
+      ],
+      "standard": [
+        "Overzealous Fan (83%, avg 2.8x, Unit)",
+        "Tideturner (83%, avg 2.5x, Unit)",
+        "Kai'Sa, Survivor (79%, avg 2.9x, Unit)",
+        "Darius, Trifarian (73%, avg 2.8x, Unit)",
+        "Brynhir Thundersong (70%, avg 1.6x, Unit)",
+        "Ferrous Forerunner (75%, avg 2.3x, Unit)",
+        "Falling Star (75%, avg 1.7x, Spell)",
+        "Hard Bargain (81%, avg 1.2x, Spell)",
+        "Ride the Wind (80%, avg 1.5x, Spell)",
+        "Treasure Hunter (60%, avg 2.8x, Unit)"
+      ],
+      "flex": [
+        "Cleave (36%, avg 1.7x, Spell)",
+        "Switcheroo (43%, avg 1.2x, Spell)",
+        "Fight or Flight (51%, avg 2.8x, Spell)"
+      ],
+      "tech": [
+        "Gem Jammer (13%, avg 2.4x, Unit)",
+        "Rek'Sai, Breacher (25%, avg 2x, Unit)",
+        "Flash (20%, avg 1.5x, Spell)",
+        "Piercing Light (16%, avg 1.6x, Spell)",
+        "Beast Below (13%, avg 1x, Unit)",
+        "Pouty Poro (18%, avg 2.5x, Unit)",
+        "Blood Rush (11%, avg 1.2x, Spell)",
+        "Traveling Merchant (26%, avg 2.8x, Unit)",
+        "Vi, Destructive (13%, avg 1x, Unit)",
+        "Ezreal, Prodigy (23%, avg 3x, Unit)",
+        "Fizz, Trickster (20%, avg 1.4x, Unit)",
+        "Battering Ram (21%, avg 3x, Unit)",
+        "Rhasa the Sunderer (23%, avg 2.6x, Unit)",
+        "Seal of Discord (23%, avg 2.8x, Gear)",
+        "Scrapheap (23%, avg 2.8x, Gear)",
+        "Last Rites (10%, avg 1x, Gear)",
+        "Called Shot (23%, avg 3x, Spell)",
+        "Mindsplitter (29%, avg 1.2x, Unit)",
+        "Edge of Night (23%, avg 1.1x, Gear)",
+        "Bushwhack (18%, avg 1.6x, Spell)",
+        "Nocturne, Horrifying (10%, avg 2.5x, Unit)",
+        "Evelynn, Entrancing (10%, avg 1.4x, Unit)"
+      ],
+      "topBattlefields": [
+        "Targon's Peak (66%)",
+        "Zaun Warrens (55%)",
+        "Obelisk of Power (50%)",
+        "Reaver's Row (35%)",
+        "Treasure Hoard (21%)",
+        "Aspirant's Climb (20%)",
+        "The Candlelit Sanctum (10%)",
+        "The Arena's Greatest (9%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 1,
+          "player": "Samdsherman",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 2,
+          "player": "Koko l",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 2,
+          "player": "TTA",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 2,
+          "player": "CTCG Koko Lopez",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 3,
+          "player": "Collin",
+          "tournament": "Las Vegas Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Viktor, Herald of the Arcane",
+      "deckCount": 48,
+      "domains": [
+        "Mind",
+        "Order"
+      ],
+      "champions": {
+        "Viktor, Leader": 39,
+        "Viktor, Innovator": 9
+      },
+      "avgUnits": 14.7,
+      "avgSpells": 21.7,
+      "avgGears": 2.1,
+      "avgTotal": 39,
+      "core": [
+        "Cull the Weak (98%, avg 3x, Spell)",
+        "Hidden Blade (98%, avg 3x, Spell)",
+        "Imperial Decree (94%, avg 2.4x, Spell)",
+        "Singularity (92%, avg 2.3x, Spell)"
+      ],
+      "standard": [
+        "Faithful Manufactor (63%, avg 2.3x, Unit)",
+        "Thousand-Tailed Watcher (83%, avg 2.4x, Unit)",
+        "Bellows Breath (71%, avg 2.8x, Spell)",
+        "Stupefy (75%, avg 2.8x, Spell)",
+        "Wages of Pain (65%, avg 3x, Spell)"
+      ],
+      "flex": [
+        "Honest Broker (46%, avg 2.8x, Unit)",
+        "Lecturing Yordle (44%, avg 2x, Unit)",
+        "Xin Zhao, Vigilant (44%, avg 2.7x, Unit)",
+        "Riptide Rex (35%, avg 1.7x, Unit)",
+        "Salvage (46%, avg 1.3x, Spell)",
+        "Consult the Past (42%, avg 1.8x, Spell)"
+      ],
+      "tech": [
+        "Daring Poro (25%, avg 2.6x, Unit)",
+        "Card Sharp (17%, avg 2x, Unit)",
+        "Pickpocket (25%, avg 2.7x, Unit)",
+        "Facebreaker (21%, avg 1.5x, Spell)",
+        "Time Warp (19%, avg 1x, Spell)",
+        "Plundering Poro (27%, avg 1.5x, Unit)",
+        "Jayce, Man of Progress (23%, avg 2.8x, Unit)",
+        "Vanguard Armory (25%, avg 2.7x, Gear)",
+        "Blood Money (21%, avg 2.2x, Spell)",
+        "Drag Under (10%, avg 2.2x, Spell)",
+        "Seal of Unity (19%, avg 2.7x, Gear)",
+        "Glasc Mixologist (15%, avg 1.1x, Unit)",
+        "Vengeance (15%, avg 1.3x, Spell)",
+        "Soaring Scout (27%, avg 2.9x, Unit)",
+        "Sprite Mother (29%, avg 1.9x, Unit)",
+        "Machine Evangel (27%, avg 2x, Unit)",
+        "Grand Strategem (25%, avg 2.1x, Spell)",
+        "Vanguard Captain (25%, avg 2.7x, Unit)",
+        "Retreat (13%, avg 1.7x, Spell)",
+        "Falling Comet (15%, avg 1.3x, Spell)",
+        "Shen, Kinkou (10%, avg 1.6x, Unit)",
+        "Sprite Fountain (19%, avg 2.4x, Gear)",
+        "Shadow's Call (19%, avg 2.6x, Spell)",
+        "Deadly Flourish (15%, avg 2.1x, Spell)",
+        "Safety Inspector (13%, avg 2.5x, Unit)",
+        "Sprite Burst (10%, avg 2x, Spell)",
+        "Blastcone Fae (17%, avg 1.6x, Unit)",
+        "Spectral Matron (10%, avg 1.4x, Unit)"
+      ],
+      "topBattlefields": [
+        "Treasure Hoard (50%)",
+        "The Arena's Greatest (46%)",
+        "Void Gate (40%)",
+        "Trifarian War Camp (38%)",
+        "Ravenbloom Conservatory (29%)",
+        "Vilemaw's Lair (29%)",
+        "Forbidding Waste (17%)",
+        "Veiled Temple (10%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 2,
+          "player": "得不到的番茄",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 3,
+          "player": "云也会失重",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 4,
+          "player": "Ghosterdriver",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 6,
+          "player": "Unknown",
+          "tournament": "Guangzhou Regional Open"
+        },
+        {
+          "placement": 13,
+          "player": "🉐",
+          "tournament": "Shanghai City Challenge"
+        }
+      ]
+    },
+    {
+      "legend": "Sett, The Boss",
+      "deckCount": 45,
+      "domains": [
+        "Body",
+        "Order"
+      ],
+      "champions": {
+        "Sett, Kingpin": 7,
+        "Sett, Brawler": 38
+      },
+      "avgUnits": 18.4,
+      "avgSpells": 17.2,
+      "avgGears": 3.1,
+      "avgTotal": 39,
+      "core": [
+        "Pit Rookie (93%, avg 3x, Unit)",
+        "First Mate (93%, avg 2.5x, Unit)",
+        "Fiora, Victorious (91%, avg 2.8x, Unit)",
+        "Sabotage (91%, avg 1.7x, Spell)",
+        "Showstopper (96%, avg 2.9x, Spell)",
+        "Challenge (96%, avg 2.4x, Spell)",
+        "Call to Glory (91%, avg 2.4x, Spell)"
+      ],
+      "standard": [
+        "Punch First (67%, avg 2x, Spell)",
+        "Hidden Blade (89%, avg 2.4x, Spell)"
+      ],
+      "flex": [
+        "Cithria of Cloudfield (42%, avg 2.7x, Unit)",
+        "Sea Monkey (56%, avg 2.2x, Unit)",
+        "Akshan, Mischievous (40%, avg 1.3x, Unit)",
+        "Kinkou Monk (49%, avg 1.5x, Unit)",
+        "Fae Dragon (47%, avg 2.1x, Unit)",
+        "Arena Bar (40%, avg 1.8x, Gear)",
+        "Repulse (38%, avg 1.1x, Spell)",
+        "Vi, Peacekeeper (42%, avg 1.6x, Unit)",
+        "Sacrifice (49%, avg 2.3x, Spell)",
+        "Shepherd's Heirloom (42%, avg 2.6x, Gear)"
+      ],
+      "tech": [
+        "Lucian, Merciless (24%, avg 2.9x, Unit)",
+        "Deathgrip (18%, avg 1.3x, Spell)",
+        "Warmog's Armor (27%, avg 1.6x, Gear)",
+        "Ruin Runner (11%, avg 2x, Unit)",
+        "Qiyana, Victorious (24%, avg 2.2x, Unit)",
+        "Sett, Kingpin (27%, avg 1.7x, Unit)",
+        "Sett, Brawler (22%, avg 1.4x, Unit)",
+        "Primal Strength (18%, avg 1.5x, Spell)",
+        "Karma, Channeler (11%, avg 2.4x, Unit)",
+        "Wallop (24%, avg 1.7x, Spell)",
+        "Divine Judgment (11%, avg 1.6x, Spell)",
+        "Irresistible Faefolk (11%, avg 3x, Unit)",
+        "Salvage (22%, avg 1x, Spell)",
+        "Master Yi, Tempered (13%, avg 1.5x, Unit)",
+        "Poppy, Paragon (18%, avg 1.4x, Unit)",
+        "Grim Resolve (27%, avg 1.8x, Spell)",
+        "Kinkou Initiate (22%, avg 1.9x, Unit)",
+        "Soaring Scout (13%, avg 2.7x, Unit)",
+        "Facebreaker (11%, avg 1.2x, Spell)"
+      ],
+      "topBattlefields": [
+        "Monastery of Hirana (89%)",
+        "Sunken Temple (58%)",
+        "Valley of Idols (29%)",
+        "Grove of the God-Willow (27%)",
+        "The Dreaming Tree (27%)",
+        "Windswept Hillock (20%)",
+        "Aspirant's Climb (9%)",
+        "Trifarian War Camp (9%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 7,
+          "player": "Collin K",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 7,
+          "player": "CTCG Collin K",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 35,
+          "player": "Kensho",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 35,
+          "player": "Kensho",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 53,
+          "player": "🉐",
+          "tournament": "Shanghai City Challenge"
+        }
+      ]
+    },
+    {
+      "legend": "Ahri, Nine-Tailed Fox",
+      "deckCount": 43,
+      "domains": [
+        "Calm",
+        "Mind"
+      ],
+      "champions": {
+        "Ahri, Inquisitive": 31,
+        "Ahri, Alluring": 12
+      },
+      "avgUnits": 16.2,
+      "avgSpells": 19.7,
+      "avgGears": 2.7,
+      "avgTotal": 39,
+      "core": [
+        "Thousand-Tailed Watcher (98%, avg 2.3x, Unit)",
+        "Defy (98%, avg 2.5x, Spell)",
+        "Discipline (91%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Ravenbloom Student (74%, avg 2.8x, Unit)",
+        "Charm (67%, avg 1.9x, Spell)",
+        "Stupefy (60%, avg 2.7x, Spell)"
+      ],
+      "flex": [
+        "Lecturing Yordle (30%, avg 1.9x, Unit)",
+        "Blitzcrank, Impassive (44%, avg 1.5x, Unit)",
+        "Zhonya's Hourglass (56%, avg 2x, Gear)",
+        "Desert's Call (44%, avg 2.7x, Spell)",
+        "Feral Strength (35%, avg 2.5x, Spell)",
+        "Meditation (30%, avg 1.9x, Spell)",
+        "Thwonk! (42%, avg 2.1x, Spell)",
+        "Find Your Center (30%, avg 2x, Spell)",
+        "Singularity (37%, avg 1.3x, Spell)",
+        "Time Warp (42%, avg 1.4x, Spell)",
+        "Eager Apprentice (35%, avg 2.6x, Unit)",
+        "Sona, Harmonious (44%, avg 2.6x, Unit)",
+        "Block (30%, avg 1.4x, Spell)",
+        "Not So Fast (51%, avg 1.6x, Spell)",
+        "Emperor's Divide (56%, avg 1.7x, Spell)",
+        "Stalwart Poro (30%, avg 2.5x, Unit)",
+        "En Garde (30%, avg 2.4x, Spell)",
+        "Vilemaw (33%, avg 1.5x, Unit)",
+        "Back Off (42%, avg 2.2x, Spell)"
+      ],
+      "tech": [
+        "Lonely Poro (19%, avg 2.9x, Unit)",
+        "Irelia, Fervent (26%, avg 2x, Unit)",
+        "Tasty Faefolk (28%, avg 2.3x, Unit)",
+        "Stellacorn Herder (19%, avg 2.9x, Unit)",
+        "Plundering Poro (12%, avg 2.6x, Unit)",
+        "Disarming Rake (19%, avg 1x, Unit)",
+        "Janna, Savior (16%, avg 1.4x, Unit)",
+        "Clockwork Keeper (26%, avg 2x, Unit)",
+        "Consult the Past (26%, avg 2x, Spell)",
+        "Fox-Fire (16%, avg 1x, Spell)",
+        "Retreat (19%, avg 1.8x, Spell)",
+        "Wind Wall (16%, avg 1.1x, Spell)",
+        "Sunlit Guardian (12%, avg 1.8x, Unit)",
+        "Cloth Armor (12%, avg 1.6x, Gear)",
+        "Scuttle Crab (23%, avg 2.6x, Unit)",
+        "Blue Sentinel (26%, avg 2.5x, Unit)",
+        "Mutated Mouser (23%, avg 2.7x, Unit)",
+        "Frigid Jewel (12%, avg 2.4x, Gear)",
+        "Hwei, Brooding Painter (12%, avg 2.6x, Unit)",
+        "Rune Prison (12%, avg 1.4x, Spell)"
+      ],
+      "topBattlefields": [
+        "Grove of the God-Willow (56%)",
+        "Ravenbloom Conservatory (28%)",
+        "Trifarian War Camp (28%)",
+        "The Dreaming Tree (23%)",
+        "The Papertree (16%)",
+        "Aspirant's Climb (14%)",
+        "Startipped Peak (14%)",
+        "Star Spring (12%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 12,
+          "player": "会飞DE面包",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 31,
+          "player": "Teh Bestest One",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 31,
+          "player": "Teh Bestest One",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 35,
+          "player": "N0000000000o",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 48,
+          "player": "Blunder",
+          "tournament": "Bologna Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Fiora, Grand Duelist",
+      "deckCount": 41,
+      "domains": [
+        "Body",
+        "Order"
+      ],
+      "champions": {
+        "Fiora, Victorious": 25,
+        "Fiora, Worthy": 16
+      },
+      "avgUnits": 18,
+      "avgSpells": 14.9,
+      "avgGears": 5.5,
+      "avgTotal": 39,
+      "core": [
+        "Punch First (90%, avg 2.4x, Spell)",
+        "Riposte (100%, avg 2.7x, Spell)"
+      ],
+      "standard": [
+        "Pit Rookie (78%, avg 2.9x, Unit)",
+        "Unsung Hero (78%, avg 2.9x, Unit)",
+        "First Mate (76%, avg 2.4x, Unit)",
+        "Sett, Brawler (66%, avg 2.6x, Unit)",
+        "B.F. Sword (78%, avg 2.9x, Gear)",
+        "Challenge (85%, avg 2.3x, Spell)",
+        "Hidden Blade (83%, avg 2.4x, Spell)",
+        "Call to Glory (66%, avg 2.1x, Spell)",
+        "Akshan, Mischievous (78%, avg 1.3x, Unit)"
+      ],
+      "flex": [
+        "Spectral Matron (41%, avg 2.2x, Unit)",
+        "Doran's Blade (46%, avg 1.9x, Gear)",
+        "Sabotage (51%, avg 1.6x, Spell)",
+        "Deathgrip (37%, avg 1.5x, Spell)",
+        "Sea Monkey (46%, avg 2.4x, Unit)",
+        "Fiora, Victorious (32%, avg 2.5x, Unit)",
+        "Kinkou Monk (34%, avg 1.9x, Unit)",
+        "Harnessed Dragon (54%, avg 2.1x, Unit)",
+        "Rift Herald (39%, avg 2.4x, Unit)",
+        "Elder Dragon (44%, avg 1.9x, Unit)",
+        "Sacrifice (37%, avg 1.7x, Spell)"
+      ],
+      "tech": [
+        "Salvage (17%, avg 1x, Spell)",
+        "Baited Hook (17%, avg 2.3x, Gear)",
+        "Lucian, Merciless (20%, avg 2.8x, Unit)",
+        "Forge of the Future (12%, avg 2.6x, Gear)",
+        "Shepherd's Heirloom (24%, avg 2.5x, Gear)",
+        "Dazzling Aurora (15%, avg 3x, Gear)",
+        "Flurry of Blades (12%, avg 2x, Spell)",
+        "Mobilize (12%, avg 3x, Spell)",
+        "Ashe, Focused (20%, avg 1.1x, Unit)",
+        "Grim Resolve (22%, avg 2x, Spell)",
+        "Kinkou Initiate (12%, avg 2.6x, Unit)",
+        "Vi, Peacekeeper (15%, avg 1.7x, Unit)",
+        "Rengar, Trophy Hunter (24%, avg 1.9x, Unit)",
+        "Divining Shells (12%, avg 2.8x, Gear)"
+      ],
+      "topBattlefields": [
+        "Monastery of Hirana (71%)",
+        "Sunken Temple (66%)",
+        "Trifarian War Camp (41%)",
+        "Valley of Idols (34%)",
+        "Aspirant's Climb (15%)",
+        "Sigil of the Storm (12%)",
+        "Vilemaw's Lair (7%)",
+        "Seat of Power (7%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 11,
+          "player": "Levente P",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 23,
+          "player": "Jin L",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 30,
+          "player": "火箭喵",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 32,
+          "player": "Vendorty",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 44,
+          "player": "Haris V",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Miss Fortune, Bounty Hunter",
+      "deckCount": 40,
+      "domains": [
+        "Body",
+        "Chaos"
+      ],
+      "champions": {
+        "Miss Fortune, Captain": 38,
+        "Miss Fortune, Buccaneer": 2
+      },
+      "avgUnits": 7.7,
+      "avgSpells": 24.9,
+      "avgGears": 6.3,
+      "avgTotal": 39.2,
+      "core": [
+        "Dazzling Aurora (93%, avg 3x, Gear)",
+        "Gust (90%, avg 2.7x, Spell)",
+        "Sabotage (93%, avg 2.2x, Spell)",
+        "Stacked Deck (100%, avg 3x, Spell)",
+        "Mobilize (90%, avg 3x, Spell)",
+        "Catalyst of Aeons (90%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Mindsplitter (80%, avg 2.7x, Unit)",
+        "Last Rites (60%, avg 2x, Gear)",
+        "Bullet Time (65%, avg 1.8x, Spell)",
+        "Invert Timelines (73%, avg 1.3x, Spell)"
+      ],
+      "flex": [
+        "Volibear, Imposing (48%, avg 1.8x, Unit)",
+        "Challenge (57%, avg 2.2x, Spell)",
+        "Fight or Flight (48%, avg 2.8x, Spell)",
+        "Hard Bargain (43%, avg 1.5x, Spell)",
+        "Deadbloom Predator (40%, avg 2.8x, Unit)",
+        "Confront (33%, avg 2.2x, Spell)",
+        "Baron Nashor (30%, avg 2.1x, Unit)",
+        "Elder Dragon (43%, avg 2.9x, Unit)",
+        "Scryer's Bloom (43%, avg 2.8x, Gear)",
+        "Flurry of Blades (43%, avg 2.8x, Spell)",
+        "Lunar Boon (43%, avg 2.8x, Spell)"
+      ],
+      "tech": [
+        "Called Shot (13%, avg 3x, Spell)",
+        "Punch First (25%, avg 2x, Spell)",
+        "Soulgorger (15%, avg 1.2x, Unit)",
+        "Pack of Wonders (18%, avg 2x, Gear)",
+        "Scrapheap (13%, avg 2.2x, Gear)",
+        "Treasure Trove (15%, avg 2.7x, Gear)",
+        "Mountain Drake (13%, avg 2x, Unit)",
+        "Unyielding Spirit (13%, avg 1.6x, Spell)",
+        "Rebuke (25%, avg 1.3x, Spell)",
+        "Fading Memories (18%, avg 1.6x, Spell)",
+        "Primal Strength (15%, avg 2x, Spell)",
+        "Ride the Wind (28%, avg 1.8x, Spell)",
+        "Abandon (28%, avg 1x, Spell)",
+        "Heedless Resurrection (28%, avg 1.4x, Spell)",
+        "The Harrowing (25%, avg 1x, Spell)",
+        "Possession (15%, avg 1.2x, Spell)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (93%)",
+        "Sigil of the Storm (90%)",
+        "Obelisk of Power (45%)",
+        "Vilemaw's Lair (30%)",
+        "Forgotten Monument (13%)",
+        "The Papertree (8%)",
+        "Trapping Grounds (5%)",
+        "Targon's Peak (5%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 2,
+          "player": "Sebiqqqqqqqqqqqq",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 5,
+          "player": "FG",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 7,
+          "player": "王小鸭",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 15,
+          "player": "Trinity John",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 17,
+          "player": "Sam Martinez",
+          "tournament": "Houston Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Sivir, Battle Mistress",
+      "deckCount": 39,
+      "domains": [
+        "Body",
+        "Chaos"
+      ],
+      "champions": {
+        "Sivir, Mercenary": 39
+      },
+      "avgUnits": 6,
+      "avgSpells": 22.3,
+      "avgGears": 10.6,
+      "avgTotal": 39,
+      "core": [
+        "Last Rites (100%, avg 1.8x, Gear)",
+        "Sabotage (100%, avg 2.5x, Spell)",
+        "Stacked Deck (100%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Mindsplitter (85%, avg 1.8x, Unit)",
+        "Treasure Trove (90%, avg 2.9x, Gear)",
+        "Dazzling Aurora (87%, avg 3x, Gear)",
+        "Challenge (69%, avg 1.9x, Spell)",
+        "Mobilize (82%, avg 3x, Spell)",
+        "Catalyst of Aeons (87%, avg 3x, Spell)",
+        "Gust (82%, avg 2.7x, Spell)",
+        "Elder Dragon (74%, avg 3x, Unit)",
+        "Scryer's Bloom (74%, avg 2.7x, Gear)",
+        "Flurry of Blades (64%, avg 2.6x, Spell)",
+        "Lunar Boon (72%, avg 2.6x, Spell)"
+      ],
+      "flex": [
+        "Pack of Wonders (38%, avg 1.6x, Gear)",
+        "Punch First (44%, avg 2x, Spell)",
+        "Invert Timelines (51%, avg 1.4x, Spell)"
+      ],
+      "tech": [
+        "Deadbloom Predator (15%, avg 2.5x, Unit)",
+        "Boots of Swiftness (15%, avg 1.2x, Gear)",
+        "Rebuke (21%, avg 1x, Spell)",
+        "Ride the Wind (18%, avg 2x, Spell)",
+        "Called Shot (18%, avg 3x, Spell)",
+        "Fight or Flight (18%, avg 2.1x, Spell)",
+        "Traveling Merchant (13%, avg 3x, Unit)",
+        "Ezreal, Prodigy (13%, avg 3x, Unit)",
+        "Fizz, Trickster (13%, avg 2x, Unit)",
+        "Rhasa the Sunderer (13%, avg 2.8x, Unit)",
+        "Seal of Discord (13%, avg 2.8x, Gear)",
+        "Scrapheap (13%, avg 2x, Gear)",
+        "Confront (10%, avg 1.5x, Spell)",
+        "On the Hunt (13%, avg 1x, Spell)",
+        "Abandon (21%, avg 1x, Spell)",
+        "Heedless Resurrection (28%, avg 1.4x, Spell)",
+        "Hard Bargain (15%, avg 1.3x, Spell)",
+        "Fading Memories (10%, avg 1.5x, Spell)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (90%)",
+        "Sigil of the Storm (87%)",
+        "Forgotten Monument (38%)",
+        "Vilemaw's Lair (36%)",
+        "Obelisk of Power (18%)",
+        "Zaun Warrens (13%)",
+        "The Papertree (10%)",
+        "The Candlelit Sanctum (5%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 9,
+          "player": "NoVeggies",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 10,
+          "player": "XTacio",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 12,
+          "player": "NoVeggies",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 28,
+          "player": "星游",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 48,
+          "player": "华蓝-火稚鲲",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Annie, Dark Child",
+      "deckCount": 36,
+      "domains": [
+        "Chaos",
+        "Fury"
+      ],
+      "champions": {
+        "Annie, Stubborn": 36
+      },
+      "avgUnits": 19.6,
+      "avgSpells": 16.4,
+      "avgGears": 2.2,
+      "avgTotal": 38.9,
+      "core": [
+        "Traveling Merchant (100%, avg 2.9x, Unit)",
+        "Kai'Sa, Survivor (97%, avg 2.9x, Unit)",
+        "Stacked Deck (100%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Cleave (78%, avg 2.7x, Spell)",
+        "Flash (86%, avg 2.7x, Spell)",
+        "Rebuke (78%, avg 1.8x, Spell)",
+        "Ride the Wind (86%, avg 2.3x, Spell)",
+        "Pouty Poro (69%, avg 2.6x, Unit)",
+        "Fight or Flight (67%, avg 2.5x, Spell)",
+        "Sneaky Deckhand (67%, avg 2.8x, Unit)"
+      ],
+      "flex": [
+        "Tideturner (50%, avg 2.1x, Unit)",
+        "Rengar, Pouncing (36%, avg 2.3x, Unit)",
+        "Noxus Hopeful (58%, avg 2.3x, Unit)",
+        "Ferrous Forerunner (39%, avg 2.8x, Unit)",
+        "Long Sword (42%, avg 1.7x, Gear)",
+        "Hard Bargain (44%, avg 1.4x, Spell)",
+        "Scrapheap (47%, avg 2.8x, Gear)",
+        "Darius, Trifarian (50%, avg 2.3x, Unit)",
+        "Vi, Destructive (58%, avg 2.4x, Unit)",
+        "Gust (44%, avg 1.9x, Spell)",
+        "Void Seeker (47%, avg 2.2x, Spell)"
+      ],
+      "tech": [
+        "Overzealous Fan (19%, avg 2.3x, Unit)",
+        "Rek'Sai, Breacher (19%, avg 2.7x, Unit)",
+        "Ezreal, Prodigy (14%, avg 2.4x, Unit)",
+        "Falling Star (19%, avg 1.1x, Spell)",
+        "Switcheroo (14%, avg 1.4x, Spell)",
+        "Invert Timelines (17%, avg 1.3x, Spell)",
+        "Vayne, Hunter (17%, avg 1.5x, Unit)",
+        "Vex, Apathetic (14%, avg 1.6x, Unit)",
+        "Abandon (14%, avg 1.2x, Spell)",
+        "Star-Crossed (11%, avg 2x, Spell)"
+      ],
+      "topBattlefields": [
+        "Zaun Warrens (89%)",
+        "The Arena's Greatest (72%)",
+        "The Dreaming Tree (53%)",
+        "Seat of Power (31%)",
+        "Minefield (14%)",
+        "Startipped Peak (11%)",
+        "Reaver's Row (11%)",
+        "Obelisk of Power (8%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 1,
+          "player": "Kyle B",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 1,
+          "player": "Dhawally",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 1,
+          "player": "Prismаticismism",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 3,
+          "player": "Zent",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 4,
+          "player": "Prymor",
+          "tournament": "Houston Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Azir, Emperor of the Sands",
+      "deckCount": 36,
+      "domains": [
+        "Calm",
+        "Order"
+      ],
+      "champions": {
+        "Azir, Sovereign": 36
+      },
+      "avgUnits": 1.6,
+      "avgSpells": 22.6,
+      "avgGears": 14.9,
+      "avgTotal": 39.1,
+      "core": [
+        "Doran's Shield (100%, avg 3x, Gear)",
+        "Eye of the Herald (97%, avg 3x, Gear)",
+        "Brutalizer (100%, avg 3x, Gear)",
+        "B.F. Sword (100%, avg 2.9x, Gear)",
+        "Defy (97%, avg 2.5x, Spell)",
+        "Discipline (97%, avg 2.9x, Spell)",
+        "Hidden Blade (97%, avg 2.9x, Spell)",
+        "Arise! (100%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Deathgrip (78%, avg 2.2x, Spell)",
+        "Desert's Call (81%, avg 2.4x, Spell)",
+        "Salvage (75%, avg 1.2x, Spell)",
+        "Guards! (89%, avg 2.2x, Spell)",
+        "Charm (78%, avg 1.6x, Spell)",
+        "Cull the Weak (67%, avg 2x, Spell)"
+      ],
+      "flex": [
+        "Guardian Angel (39%, avg 1.6x, Gear)",
+        "Sacred Shears (36%, avg 2x, Gear)",
+        "En Garde (33%, avg 1.7x, Spell)",
+        "Vi, Peacekeeper (39%, avg 1.6x, Unit)",
+        "Soul Sword (53%, avg 2.4x, Gear)",
+        "Shadow's Call (44%, avg 1.6x, Spell)"
+      ],
+      "tech": [
+        "Facebreaker (22%, avg 1x, Spell)",
+        "Not So Fast (28%, avg 1x, Spell)",
+        "Azir, Sovereign (11%, avg 1x, Unit)",
+        "Sacrifice (22%, avg 2.3x, Spell)",
+        "Back Off (14%, avg 1x, Spell)",
+        "Scuttle Crab (11%, avg 1.8x, Unit)",
+        "Ashe, Focused (17%, avg 1.3x, Unit)"
+      ],
+      "topBattlefields": [
+        "Trifarian War Camp (83%)",
+        "Hall of Legends (67%)",
+        "Ornn's Forge (61%)",
+        "Vilemaw's Lair (25%)",
+        "Seat of Power (19%)",
+        "The Arena's Greatest (19%)",
+        "Vaults of Helia (8%)",
+        "Sunken Temple (6%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 1,
+          "player": "Pedro B",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 1,
+          "player": "Ai",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 13,
+          "player": "Rocklho",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 24,
+          "player": "Joyspace\\_Lzyy",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 27,
+          "player": "Rocklho",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Diana, Scorn of the Moon",
+      "deckCount": 36,
+      "domains": [
+        "Chaos",
+        "Mind"
+      ],
+      "champions": {
+        "Diana, Lunari": 36
+      },
+      "avgUnits": 15.4,
+      "avgSpells": 22.2,
+      "avgGears": 1.4,
+      "avgTotal": 39,
+      "core": [
+        "Ravenbloom Student (94%, avg 3x, Unit)",
+        "Tideturner (94%, avg 2.6x, Unit)",
+        "Hwei, Brooding Painter (97%, avg 3x, Unit)",
+        "Gust (97%, avg 2.4x, Spell)",
+        "Stacked Deck (100%, avg 3x, Spell)",
+        "Stupefy (100%, avg 3x, Spell)",
+        "Ride the Wind (100%, avg 2.4x, Spell)",
+        "Moonfall (100%, avg 2.6x, Spell)",
+        "Star-Crossed (100%, avg 2.1x, Spell)"
+      ],
+      "standard": [
+        "Fizz, Trickster (89%, avg 1.6x, Unit)",
+        "Vex, Apathetic (86%, avg 1.8x, Unit)",
+        "Flash (89%, avg 1.9x, Spell)",
+        "Hard Bargain (67%, avg 1.1x, Spell)",
+        "Thousand-Tailed Watcher (61%, avg 1.5x, Unit)"
+      ],
+      "flex": [
+        "Plundering Poro (47%, avg 1.8x, Unit)",
+        "Vex, Cheerless (58%, avg 1.7x, Unit)",
+        "Acceptable Losses (50%, avg 1.6x, Spell)",
+        "The Syren (31%, avg 1x, Gear)",
+        "Last Rites (33%, avg 1x, Gear)",
+        "Eclipse (53%, avg 1.5x, Spell)",
+        "Abandon (50%, avg 1.2x, Spell)"
+      ],
+      "tech": [
+        "Smoke Screen (25%, avg 1.3x, Spell)",
+        "Turn to Dust (28%, avg 1.2x, Spell)",
+        "Rebuke (14%, avg 1x, Spell)",
+        "Switcheroo (22%, avg 1.3x, Spell)",
+        "Traveling Merchant (17%, avg 1.8x, Unit)",
+        "Kha'Zix, Mutating Horror (11%, avg 2.5x, Unit)",
+        "Frigid Jewel (17%, avg 1.8x, Gear)",
+        "Retreat (22%, avg 1.4x, Spell)",
+        "Bellows Breath (17%, avg 1.3x, Spell)",
+        "Wages of Pain (11%, avg 1.5x, Spell)"
+      ],
+      "topBattlefields": [
+        "Abandoned Hall (81%)",
+        "Ravenbloom Conservatory (58%)",
+        "Targon's Peak (50%)",
+        "Frozen Fortress (31%)",
+        "The Academy (14%)",
+        "Startipped Peak (11%)",
+        "Star Spring (8%)",
+        "Rockfall Path (8%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 2,
+          "player": "放逐之刃",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 9,
+          "player": "火星",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 15,
+          "player": "不凡",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 42,
+          "player": "灵花祭",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 69,
+          "player": "火星",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Ezreal, Prodigal Explorer",
+      "deckCount": 33,
+      "domains": [
+        "Chaos",
+        "Mind"
+      ],
+      "champions": {
+        "Ezreal, Prodigy": 33
+      },
+      "avgUnits": 11.7,
+      "avgSpells": 22.9,
+      "avgGears": 4.2,
+      "avgTotal": 38.9,
+      "core": [
+        "Fizz, Trickster (100%, avg 2.5x, Unit)",
+        "Thousand-Tailed Watcher (91%, avg 1.9x, Unit)",
+        "Bellows Breath (91%, avg 2.4x, Spell)",
+        "Stacked Deck (100%, avg 3x, Spell)",
+        "Stupefy (100%, avg 3x, Spell)",
+        "Wages of Pain (97%, avg 2.8x, Spell)"
+      ],
+      "standard": [
+        "Gust (76%, avg 2.1x, Spell)",
+        "Rebuke (61%, avg 1.9x, Spell)",
+        "Arcane Shift (85%, avg 1.9x, Spell)"
+      ],
+      "flex": [
+        "Ravenbloom Student (58%, avg 2.9x, Unit)",
+        "Mindsplitter (58%, avg 1.6x, Unit)",
+        "Hard Bargain (52%, avg 1.1x, Spell)",
+        "Smoke Screen (36%, avg 1.3x, Spell)",
+        "Singularity (52%, avg 1.2x, Spell)",
+        "Rhasa the Sunderer (42%, avg 1.9x, Unit)",
+        "Seal of Discord (39%, avg 2.9x, Gear)",
+        "Called Shot (33%, avg 3x, Spell)",
+        "Frigid Touch (58%, avg 1.4x, Spell)",
+        "Pack of Wonders (42%, avg 2.9x, Gear)",
+        "Treasure Trove (42%, avg 2.6x, Gear)",
+        "Bewitching Spirit (39%, avg 2.9x, Unit)",
+        "Star-Crossed (39%, avg 2.7x, Spell)",
+        "Deadly Flourish (33%, avg 2.1x, Spell)"
+      ],
+      "tech": [
+        "Plundering Poro (27%, avg 2.9x, Unit)",
+        "Card Sharp (24%, avg 2.6x, Unit)",
+        "Vex, Cheerless (24%, avg 2.3x, Unit)",
+        "Retreat (24%, avg 1.6x, Spell)",
+        "Morbid Return (15%, avg 1x, Spell)",
+        "Ride the Wind (12%, avg 1x, Spell)",
+        "Ezreal, Prodigy (21%, avg 1.7x, Unit)",
+        "Last Rites (21%, avg 1x, Gear)",
+        "Fight or Flight (12%, avg 2.8x, Spell)",
+        "Downwell (12%, avg 1x, Spell)",
+        "Acceptable Losses (18%, avg 1.2x, Spell)",
+        "Switcheroo (12%, avg 1x, Spell)",
+        "The List (18%, avg 2x, Gear)",
+        "Vex, Apathetic (27%, avg 1.7x, Unit)",
+        "Eclipse (21%, avg 1.1x, Spell)",
+        "Turn to Dust (24%, avg 1.4x, Spell)"
+      ],
+      "topBattlefields": [
+        "Sigil of the Storm (73%)",
+        "Aspirant's Climb (55%)",
+        "Void Gate (52%)",
+        "Frozen Fortress (33%)",
+        "Marai Spire (18%)",
+        "Obelisk of Power (15%)",
+        "Targon's Peak (12%)",
+        "The Dreaming Tree (9%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 1,
+          "player": "Alanzq1",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 4,
+          "player": "Mateusz J",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 4,
+          "player": "CTG Alаnzq",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 8,
+          "player": "TheManLandRft",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 8,
+          "player": "Alanzq1",
+          "tournament": "Las Vegas Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Leblanc, Deceiver",
+      "deckCount": 32,
+      "domains": [
+        "Mind",
+        "Order"
+      ],
+      "champions": {
+        "LeBlanc, Fragmented": 26,
+        "LeBlanc, Everywhere at Once": 6
+      },
+      "avgUnits": 23.5,
+      "avgSpells": 14.1,
+      "avgGears": 1.4,
+      "avgTotal": 39,
+      "core": [
+        "Soaring Scout (100%, avg 3x, Unit)",
+        "Watchful Sentry (97%, avg 2.9x, Unit)",
+        "Vi, Peacekeeper (91%, avg 1.8x, Unit)",
+        "Sacrifice (94%, avg 2.4x, Spell)",
+        "Hidden Blade (91%, avg 2.5x, Spell)",
+        "Mirror Image (97%, avg 2.5x, Spell)",
+        "Thousand-Tailed Watcher (94%, avg 1.9x, Unit)"
+      ],
+      "standard": [
+        "Honest Broker (66%, avg 2.2x, Unit)",
+        "Karthus, Eternal (81%, avg 2.8x, Unit)",
+        "Glasc Mixologist (88%, avg 2.9x, Unit)",
+        "Ruined Rex (75%, avg 2.4x, Unit)",
+        "Cull the Weak (84%, avg 2.6x, Spell)",
+        "Deathgrip (72%, avg 2.3x, Spell)"
+      ],
+      "flex": [
+        "LeBlanc, Fragmented (47%, avg 1.5x, Unit)",
+        "Salvage (44%, avg 1.5x, Spell)",
+        "Black Rose Dignitary (56%, avg 2.3x, Unit)",
+        "Rift Herald (50%, avg 2.3x, Unit)"
+      ],
+      "tech": [
+        "Seal of Unity (22%, avg 2.4x, Gear)",
+        "Smoke Screen (16%, avg 1.8x, Spell)",
+        "Harnessed Dragon (28%, avg 2.1x, Unit)",
+        "Baited Hook (16%, avg 2.8x, Gear)",
+        "Hwei, Brooding Painter (19%, avg 2.2x, Unit)",
+        "Lillia, Fae Fawn (16%, avg 2.2x, Unit)",
+        "Sprite Fountain (13%, avg 2x, Gear)",
+        "Bellows Breath (16%, avg 1.2x, Spell)",
+        "Smoke and Mirrors (25%, avg 2.3x, Spell)",
+        "Atakhan (25%, avg 1.1x, Unit)",
+        "Carrion Dredger (16%, avg 2x, Unit)",
+        "Stupefy (13%, avg 3x, Spell)",
+        "The Ruination (13%, avg 1.3x, Spell)",
+        "Facebreaker (16%, avg 1.2x, Spell)"
+      ],
+      "topBattlefields": [
+        "Windswept Hillock (97%)",
+        "Dusk Rose Lab (91%)",
+        "Forbidding Waste (66%)",
+        "Star Spring (25%)",
+        "Aspirant's Climb (6%)",
+        "Black Flame Altar (6%)",
+        "Grove of the God-Willow (3%)",
+        "Treasure Hoard (3%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 6,
+          "player": "DWT-阿龙",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 11,
+          "player": "LineKa·黑天使",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 12,
+          "player": "云羽",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 17,
+          "player": "LineKa·健一",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 23,
+          "player": "LineKa·Pokuey",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Teemo, Swift Scout",
+      "deckCount": 31,
+      "domains": [
+        "Chaos",
+        "Mind"
+      ],
+      "champions": {
+        "Teemo, Scout": 24,
+        "Teemo, Strategist": 7
+      },
+      "avgUnits": 17.1,
+      "avgSpells": 18.6,
+      "avgGears": 3.1,
+      "avgTotal": 39,
+      "core": [
+        "Stacked Deck (94%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Tideturner (77%, avg 2.3x, Unit)",
+        "Thousand-Tailed Watcher (68%, avg 2x, Unit)",
+        "Ride the Wind (68%, avg 2x, Spell)",
+        "Consult the Past (68%, avg 2.3x, Spell)",
+        "Gust (65%, avg 2.2x, Spell)",
+        "Stupefy (61%, avg 2.8x, Spell)"
+      ],
+      "flex": [
+        "Ember Monk (45%, avg 2.6x, Unit)",
+        "Nocturne, Horrifying (35%, avg 3x, Unit)",
+        "Edge of Night (48%, avg 1.9x, Gear)",
+        "Guerilla Warfare (48%, avg 1.3x, Spell)",
+        "Rebuke (39%, avg 1.3x, Spell)",
+        "Switcheroo (58%, avg 2.1x, Spell)",
+        "Sprite Call (32%, avg 2.4x, Spell)",
+        "Ravenbloom Student (42%, avg 3x, Unit)",
+        "Fight or Flight (52%, avg 2.6x, Spell)",
+        "Traveling Merchant (48%, avg 2.8x, Unit)",
+        "Dr. Mundo, Expert (45%, avg 2.2x, Unit)",
+        "Invert Timelines (32%, avg 2.2x, Spell)",
+        "Star-Crossed (39%, avg 1.7x, Spell)"
+      ],
+      "tech": [
+        "Teemo, Strategist (29%, avg 2.1x, Unit)",
+        "Lecturing Yordle (23%, avg 1.7x, Unit)",
+        "Hard Bargain (29%, avg 1x, Spell)",
+        "Time Warp (16%, avg 1x, Spell)",
+        "Fizz, Trickster (26%, avg 1.8x, Unit)",
+        "Retreat (29%, avg 2x, Spell)",
+        "Singularity (26%, avg 1.1x, Spell)",
+        "Card Sharp (16%, avg 2.6x, Unit)",
+        "Ezreal, Prodigy (13%, avg 3x, Unit)",
+        "Pit Crew (13%, avg 3x, Unit)",
+        "Seal of Discord (16%, avg 2.6x, Gear)",
+        "Cull (13%, avg 3x, Gear)",
+        "Called Shot (13%, avg 3x, Spell)",
+        "Boots of Swiftness (13%, avg 1x, Gear)",
+        "Wages of Pain (19%, avg 2x, Spell)",
+        "Scrapheap (26%, avg 2x, Gear)",
+        "Teemo, Scout (23%, avg 1.3x, Unit)",
+        "Sprite Mother (13%, avg 1.5x, Unit)",
+        "Flash (23%, avg 1.1x, Spell)",
+        "Rhasa the Sunderer (13%, avg 2.3x, Unit)",
+        "Pyke, Returned (23%, avg 2.6x, Unit)",
+        "Vex, Apathetic (23%, avg 2x, Unit)",
+        "Hwei, Brooding Painter (16%, avg 3x, Unit)",
+        "Baron Nashor (16%, avg 1.4x, Unit)",
+        "Windsinger (19%, avg 2.2x, Unit)",
+        "Sprite Fountain (16%, avg 2.8x, Gear)",
+        "Evelynn, Entrancing (16%, avg 2.4x, Unit)",
+        "Treasure Hunter (13%, avg 2.3x, Unit)",
+        "Convergent Mutation (13%, avg 1.8x, Spell)"
+      ],
+      "topBattlefields": [
+        "Bandle Tree (74%)",
+        "Zaun Warrens (52%)",
+        "The Candlelit Sanctum (23%)",
+        "Grove of the God-Willow (19%)",
+        "The Dreaming Tree (19%)",
+        "Startipped Peak (13%)",
+        "The Arena's Greatest (13%)",
+        "Star Spring (13%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 4,
+          "player": "淘金巢",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 7,
+          "player": "Unknown",
+          "tournament": "Guangzhou Regional Open"
+        },
+        {
+          "placement": 9,
+          "player": "梁公正",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 15,
+          "player": "Emm",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 19,
+          "player": "Nashun",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Leona, Radiant Dawn",
+      "deckCount": 28,
+      "domains": [
+        "Calm",
+        "Order"
+      ],
+      "champions": {
+        "Leona, Determined": 19,
+        "Leona, Zealot": 9
+      },
+      "avgUnits": 15.5,
+      "avgSpells": 18.2,
+      "avgGears": 4.7,
+      "avgTotal": 39,
+      "core": [
+        "Defy (96%, avg 2.7x, Spell)",
+        "Discipline (96%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Zhonya's Hourglass (64%, avg 2.2x, Gear)",
+        "Emperor's Divide (64%, avg 1.9x, Spell)",
+        "Call to Glory (79%, avg 2.5x, Spell)",
+        "Zenith Blade (71%, avg 2.3x, Spell)",
+        "Fiora, Victorious (61%, avg 2.4x, Unit)",
+        "Hidden Blade (64%, avg 2x, Spell)",
+        "Vi, Peacekeeper (64%, avg 2.5x, Unit)",
+        "Back Off (64%, avg 2.9x, Spell)"
+      ],
+      "flex": [
+        "Lonely Poro (46%, avg 2.8x, Unit)",
+        "Leona, Determined (32%, avg 2x, Unit)",
+        "Leona, Zealot (36%, avg 1.5x, Unit)",
+        "Guardian Angel (46%, avg 2.4x, Gear)",
+        "B.F. Sword (32%, avg 2x, Gear)",
+        "Not So Fast (50%, avg 1.5x, Spell)",
+        "Thwonk! (39%, avg 1.7x, Spell)",
+        "Scuttle Crab (54%, avg 3x, Unit)",
+        "Vex, Mocking (46%, avg 2x, Unit)",
+        "Charm (39%, avg 1.7x, Spell)",
+        "Salvage (32%, avg 1.6x, Spell)"
+      ],
+      "tech": [
+        "Sona, Harmonious (29%, avg 2.4x, Unit)",
+        "Stellacorn Herder (25%, avg 2.9x, Unit)",
+        "Blitzcrank, Impassive (11%, avg 1x, Unit)",
+        "Clockwork Keeper (11%, avg 2.3x, Unit)",
+        "Facebreaker (18%, avg 1.6x, Spell)",
+        "Rune Prison (18%, avg 2.2x, Spell)",
+        "Harnessed Dragon (11%, avg 1.7x, Unit)",
+        "Janna, Savior (11%, avg 1.7x, Unit)",
+        "Unsung Hero (18%, avg 2.8x, Unit)",
+        "Cull the Weak (11%, avg 1.3x, Spell)",
+        "Deathgrip (11%, avg 1.7x, Spell)",
+        "Nami, Headstrong (29%, avg 2.1x, Unit)",
+        "Honeyfruit (14%, avg 2.3x, Gear)",
+        "Heart of Dark Ice (14%, avg 1.8x, Gear)",
+        "Honest Broker (29%, avg 2.1x, Unit)",
+        "Ashe, Focused (25%, avg 1.3x, Unit)",
+        "Vilemaw (29%, avg 1.6x, Unit)",
+        "Shepherd's Heirloom (11%, avg 1.7x, Gear)",
+        "Heroic Charge (14%, avg 1.3x, Spell)",
+        "Divine Judgment (11%, avg 1.3x, Spell)",
+        "Carrion Dredger (21%, avg 2.8x, Unit)",
+        "Crimson Pigeons (11%, avg 1.7x, Unit)",
+        "Irelia, Fervent (14%, avg 2.3x, Unit)",
+        "Sacrifice (11%, avg 1.3x, Spell)"
+      ],
+      "topBattlefields": [
+        "Sunken Temple (68%)",
+        "Monastery of Hirana (61%)",
+        "Grove of the God-Willow (21%)",
+        "Obelisk of Power (14%)",
+        "Trifarian War Camp (14%)",
+        "Targon's Peak (11%)",
+        "Star Spring (11%)",
+        "Amateur Recital (11%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 63,
+          "player": "战歌",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 66,
+          "player": "逆转 懒人疗程",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 146,
+          "player": "窥瞳",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 234,
+          "player": "Daniel C",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 255,
+          "player": "丹柯",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Vex, Gloomist",
+      "deckCount": 25,
+      "domains": [
+        "Calm",
+        "Chaos"
+      ],
+      "champions": {
+        "Vex, Apathetic": 25
+      },
+      "avgUnits": 16.4,
+      "avgSpells": 17.6,
+      "avgGears": 5,
+      "avgTotal": 39,
+      "core": [
+        "Evelynn, Entrancing (92%, avg 2.4x, Unit)",
+        "Defy (100%, avg 2.8x, Spell)",
+        "Discipline (96%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Mutated Mouser (88%, avg 2.5x, Unit)",
+        "Tideturner (60%, avg 2.3x, Unit)",
+        "Sona, Harmonious (64%, avg 2.4x, Unit)",
+        "Boots of Swiftness (68%, avg 2.1x, Gear)",
+        "Charm (88%, avg 1.9x, Spell)",
+        "Switcheroo (84%, avg 1.8x, Spell)",
+        "Back Off (76%, avg 2.4x, Spell)",
+        "Star-Crossed (72%, avg 1.7x, Spell)",
+        "Edge of Night (68%, avg 2.2x, Gear)"
+      ],
+      "flex": [
+        "Overzealous Fan (56%, avg 2.4x, Unit)",
+        "Disarming Rake (36%, avg 1.2x, Unit)",
+        "Gust (32%, avg 1.1x, Spell)",
+        "Sneaky Deckhand (36%, avg 2.7x, Unit)",
+        "Zhonya's Hourglass (52%, avg 1.6x, Gear)",
+        "Last Rites (44%, avg 1x, Gear)",
+        "Stacked Deck (44%, avg 2.2x, Spell)",
+        "Blitzcrank, Impassive (32%, avg 1.4x, Unit)",
+        "Emperor's Divide (36%, avg 1.3x, Spell)",
+        "Existential Dread (44%, avg 1.9x, Spell)",
+        "Not So Fast (36%, avg 1.6x, Spell)",
+        "Teemo, Scout (32%, avg 1.1x, Unit)"
+      ],
+      "tech": [
+        "Fizz, Trickster (16%, avg 1.3x, Unit)",
+        "Pyke, Returned (12%, avg 1.7x, Unit)",
+        "Shadow (28%, avg 1.6x, Unit)",
+        "Hard Bargain (28%, avg 1.1x, Spell)",
+        "Ride the Wind (12%, avg 1.3x, Spell)",
+        "Irelia, Fervent (24%, avg 2.8x, Unit)",
+        "En Garde (28%, avg 2.9x, Spell)",
+        "Scuttle Crab (28%, avg 2x, Unit)",
+        "Vilemaw (28%, avg 1.3x, Unit)",
+        "Seal of Focus (12%, avg 1.7x, Gear)",
+        "Treasure Hunter (12%, avg 2x, Unit)",
+        "Seal of Discord (12%, avg 1.7x, Gear)",
+        "Stalwart Poro (20%, avg 2x, Unit)",
+        "Blast Cone (20%, avg 1.6x, Gear)",
+        "Bone Skewer (24%, avg 1.7x, Spell)",
+        "Allay, Eager Admirer (16%, avg 1.3x, Unit)",
+        "Trevor Snoozebottom (12%, avg 2x, Unit)",
+        "Abandon (20%, avg 1.6x, Spell)",
+        "Block (12%, avg 1x, Spell)",
+        "Draven, Audacious (16%, avg 1.8x, Unit)"
+      ],
+      "topBattlefields": [
+        "Startipped Peak (64%)",
+        "Fortified Position (44%)",
+        "Amateur Recital (28%)",
+        "Abandoned Hall (24%)",
+        "Grove of the God-Willow (24%)",
+        "The Papertree (20%)",
+        "Bandle Tree (20%)",
+        "Trifarian War Camp (12%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 5,
+          "player": "卡殿",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 53,
+          "player": "GH-嘿然",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 67,
+          "player": "LineKa·Mufasa",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 84,
+          "player": "WRB",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 118,
+          "player": "淘金巢",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Lucian, Purifier",
+      "deckCount": 23,
+      "domains": [
+        "Body",
+        "Fury"
+      ],
+      "champions": {
+        "Lucian, Merciless": 22,
+        "Lucian, Gunslinger": 1
+      },
+      "avgUnits": 16.4,
+      "avgSpells": 11.6,
+      "avgGears": 10.2,
+      "avgTotal": 38.9,
+      "core": [
+        "First Mate (100%, avg 2.9x, Unit)",
+        "Kai'Sa, Survivor (96%, avg 3x, Unit)",
+        "Doran's Blade (96%, avg 2.4x, Gear)",
+        "Punch First (100%, avg 2.2x, Spell)",
+        "Relentless Pursuit (100%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Gem Jammer (61%, avg 2.5x, Unit)",
+        "Brynhir Thundersong (70%, avg 1.9x, Unit)",
+        "Long Sword (78%, avg 2.3x, Gear)",
+        "Skyfall of Areion (78%, avg 2.4x, Gear)",
+        "Trinity Force (78%, avg 2.9x, Gear)",
+        "Sabotage (70%, avg 1.7x, Spell)",
+        "Ruin Runner (78%, avg 2.2x, Unit)",
+        "Challenge (83%, avg 2.6x, Spell)"
+      ],
+      "flex": [
+        "Pouty Poro (39%, avg 2.8x, Unit)",
+        "Confront (52%, avg 2.4x, Spell)",
+        "Lucian, Merciless (39%, avg 1.9x, Unit)",
+        "Hexdrinker (30%, avg 1.4x, Gear)",
+        "Akshan, Mischievous (48%, avg 1.3x, Unit)",
+        "Boneshiver (48%, avg 2x, Gear)",
+        "Piercing Light (30%, avg 1.9x, Spell)"
+      ],
+      "tech": [
+        "Pit Rookie (17%, avg 2.3x, Unit)",
+        "Ferrous Forerunner (26%, avg 2.2x, Unit)",
+        "Warmog's Armor (17%, avg 1.5x, Gear)",
+        "Falling Star (17%, avg 2x, Spell)",
+        "Legion Rearguard (26%, avg 2.5x, Unit)",
+        "Noxus Hopeful (22%, avg 2.4x, Unit)",
+        "Irresistible Faefolk (22%, avg 3x, Unit)",
+        "Kinkou Initiate (17%, avg 2.3x, Unit)",
+        "Rengar, Unseen (13%, avg 1.7x, Unit)",
+        "Repulse (22%, avg 1.4x, Spell)"
+      ],
+      "topBattlefields": [
+        "Forge of the Fluft (87%)",
+        "Sunken Temple (83%)",
+        "The Candlelit Sanctum (35%)",
+        "Obelisk of Power (35%)",
+        "Zaun Warrens (22%)",
+        "Windswept Hillock (13%)",
+        "Reckoner's Arena (9%)",
+        "Monastery of Hirana (4%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 18,
+          "player": "Lorenzo Di Cola",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 33,
+          "player": "Dęamon",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 33,
+          "player": "Dęamon",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 56,
+          "player": "Daemon XGG",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 79,
+          "player": "TCGN OtterZocker",
+          "tournament": "Lille Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Ornn, Fire Below the Mountain",
+      "deckCount": 23,
+      "domains": [
+        "Calm",
+        "Mind"
+      ],
+      "champions": {
+        "Ornn, Forge God": 23
+      },
+      "avgUnits": 10.2,
+      "avgSpells": 11.3,
+      "avgGears": 17.4,
+      "avgTotal": 39,
+      "core": [
+        "Poro Snax (91%, avg 2.8x, Gear)",
+        "Defy (96%, avg 2.1x, Spell)"
+      ],
+      "standard": [
+        "Pit Crew (70%, avg 2.8x, Unit)",
+        "Thousand-Tailed Watcher (61%, avg 2.1x, Unit)",
+        "Seal of Focus (83%, avg 2.5x, Gear)",
+        "Guardian Angel (87%, avg 2.6x, Gear)",
+        "Shurelya's Requiem (74%, avg 1x, Gear)",
+        "Charm (65%, avg 1.3x, Spell)",
+        "Consult the Past (70%, avg 2.3x, Spell)"
+      ],
+      "flex": [
+        "Lonely Poro (35%, avg 2.6x, Unit)",
+        "Cloth Armor (30%, avg 2.3x, Gear)",
+        "Sterak's Gage (30%, avg 2.9x, Gear)",
+        "Svellsongur (57%, avg 2.4x, Gear)",
+        "World Atlas (43%, avg 2.3x, Gear)",
+        "Wind Wall (35%, avg 1.5x, Spell)",
+        "Azir, Ascendant (30%, avg 1.9x, Unit)",
+        "Zhonya's Hourglass (30%, avg 2x, Gear)",
+        "Not So Fast (57%, avg 2.2x, Spell)",
+        "Scuttle Crab (52%, avg 2.8x, Unit)",
+        "Brutalizer (43%, avg 2.6x, Gear)",
+        "Sprite Fountain (52%, avg 3x, Gear)",
+        "Sprite Burst (43%, avg 2.1x, Spell)",
+        "Sprite Mother (35%, avg 2.3x, Unit)",
+        "Seal of Insight (43%, avg 1.9x, Gear)",
+        "Forgefire Cape (48%, avg 1x, Gear)"
+      ],
+      "tech": [
+        "Bellows Breath (13%, avg 2x, Spell)",
+        "Tianna Crownguard (22%, avg 2.2x, Unit)",
+        "Doran's Shield (26%, avg 2.7x, Gear)",
+        "Emperor's Divide (22%, avg 1.6x, Spell)",
+        "Meditation (26%, avg 2x, Spell)",
+        "Ornn, Forge God (22%, avg 1.4x, Unit)",
+        "Rabadon's Deathcrown (17%, avg 1x, Gear)",
+        "Discipline (22%, avg 3x, Spell)",
+        "Singularity (17%, avg 2x, Spell)",
+        "Time Warp (22%, avg 1.2x, Spell)",
+        "Dropboarder (13%, avg 2.3x, Unit)",
+        "Vilemaw (13%, avg 1.3x, Unit)",
+        "Stupefy (13%, avg 2.7x, Spell)",
+        "Heart of Dark Ice (17%, avg 1.3x, Gear)",
+        "Flurry of Feathers (13%, avg 1.3x, Spell)",
+        "Premonition (22%, avg 1.8x, Spell)"
+      ],
+      "topBattlefields": [
+        "Treasure Hoard (52%)",
+        "Dusk Rose Lab (43%)",
+        "The Arena's Greatest (39%)",
+        "Ornn's Forge (35%)",
+        "Aspirant's Climb (30%)",
+        "Obelisk of Power (22%)",
+        "The Papertree (17%)",
+        "Rockfall Path (17%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 54,
+          "player": "Lunasky",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 121,
+          "player": "C+",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 124,
+          "player": "Angelo L",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 124,
+          "player": "Angelo L",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 201,
+          "player": "QW",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Volibear, Relentless Storm",
+      "deckCount": 23,
+      "domains": [
+        "Body",
+        "Fury"
+      ],
+      "champions": {
+        "Volibear, Furious": 22,
+        "Volibear, Imposing": 1
+      },
+      "avgUnits": 17.2,
+      "avgSpells": 19.2,
+      "avgGears": 2.6,
+      "avgTotal": 39,
+      "core": [
+        "Kadregrin the Infernal (100%, avg 3x, Unit)",
+        "Challenge (96%, avg 2.5x, Spell)"
+      ],
+      "standard": [
+        "Dazzling Aurora (70%, avg 3x, Gear)",
+        "Sabotage (83%, avg 2.4x, Spell)",
+        "Confront (65%, avg 2.8x, Spell)",
+        "Mobilize (87%, avg 3x, Spell)",
+        "Catalyst of Aeons (65%, avg 3x, Spell)",
+        "Stormbringer (70%, avg 1.8x, Spell)",
+        "Sky Splitter (83%, avg 2.8x, Spell)"
+      ],
+      "flex": [
+        "Ferrous Forerunner (52%, avg 2.6x, Unit)",
+        "Deadbloom Predator (57%, avg 2.9x, Unit)",
+        "Punch First (48%, avg 1.5x, Spell)",
+        "Falling Star (39%, avg 2x, Spell)",
+        "Minotaur Reckoner (35%, avg 2.9x, Unit)",
+        "Herald of Scales (39%, avg 3x, Unit)",
+        "Blazing Scorcher (39%, avg 3x, Unit)",
+        "Dune Drake (35%, avg 2.6x, Unit)",
+        "Direwing (35%, avg 2.6x, Unit)",
+        "Show of Strength (35%, avg 2.9x, Spell)",
+        "Gentle Gemdragon (39%, avg 2.9x, Unit)",
+        "Elder Dragon (57%, avg 2.7x, Unit)",
+        "Flurry of Blades (43%, avg 2x, Spell)",
+        "Dragonsoul Sage (30%, avg 3x, Unit)"
+      ],
+      "tech": [
+        "Volibear, Imposing (17%, avg 1x, Unit)",
+        "Get Excited! (17%, avg 1.8x, Spell)",
+        "Void Seeker (17%, avg 1.8x, Spell)",
+        "Carnivorous Snapvine (26%, avg 1.8x, Unit)",
+        "Anivia, Primal (26%, avg 1.3x, Unit)",
+        "Magma Wurm (26%, avg 1x, Unit)",
+        "Rengar, Trophy Hunter (22%, avg 2.8x, Unit)",
+        "Unyielding Spirit (13%, avg 1.3x, Spell)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (100%)",
+        "Sigil of the Storm (74%)",
+        "Obelisk of Power (30%)",
+        "Forgotten Monument (26%)",
+        "Vilemaw's Lair (22%)",
+        "Sunken Temple (13%)",
+        "Frozen Fortress (13%)",
+        "The Papertree (4%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 30,
+          "player": "Juanfra Mateo",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 41,
+          "player": "Antyn V",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 41,
+          "player": "Antyn V",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 47,
+          "player": "Florin Cristian Loghin",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 87,
+          "player": "E3TCG",
+          "tournament": "Las Vegas Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Jinx, Loose Cannon",
+      "deckCount": 22,
+      "domains": [
+        "Chaos",
+        "Fury"
+      ],
+      "champions": {
+        "Jinx, Demolitionist": 8,
+        "Jinx, Rebel": 14
+      },
+      "avgUnits": 19.3,
+      "avgSpells": 12.7,
+      "avgGears": 6.4,
+      "avgTotal": 39,
+      "core": [
+        "Traveling Merchant (91%, avg 3x, Unit)"
+      ],
+      "standard": [
+        "Noxus Hopeful (68%, avg 2.8x, Unit)",
+        "Stacked Deck (86%, avg 2.9x, Spell)",
+        "Seal of Discord (64%, avg 2.9x, Gear)",
+        "Super Mega Death Rocket! (77%, avg 1.5x, Spell)"
+      ],
+      "flex": [
+        "Overzealous Fan (36%, avg 2.3x, Unit)",
+        "Tideturner (50%, avg 2.5x, Unit)",
+        "Hard Bargain (32%, avg 1x, Spell)",
+        "Rebuke (59%, avg 1.7x, Spell)",
+        "Ride the Wind (45%, avg 2.1x, Spell)",
+        "Ezreal, Prodigy (50%, avg 2.8x, Unit)",
+        "Fizz, Trickster (59%, avg 1.8x, Unit)",
+        "Battering Ram (50%, avg 2.9x, Unit)",
+        "Rhasa the Sunderer (59%, avg 2.5x, Unit)",
+        "Scrapheap (41%, avg 2.7x, Gear)",
+        "Last Rites (59%, avg 1.2x, Gear)",
+        "Called Shot (45%, avg 3x, Spell)",
+        "Bushwhack (36%, avg 1.8x, Spell)",
+        "Fight or Flight (45%, avg 2.2x, Spell)",
+        "Nocturne, Horrifying (41%, avg 2.8x, Unit)",
+        "Switcheroo (45%, avg 1.5x, Spell)"
+      ],
+      "tech": [
+        "Vi, Destructive (23%, avg 2.4x, Unit)",
+        "Rek'Sai, Breacher (14%, avg 2.3x, Unit)",
+        "Kai'Sa, Survivor (14%, avg 2.7x, Unit)",
+        "Ferrous Forerunner (23%, avg 2x, Unit)",
+        "Boots of Swiftness (27%, avg 1.2x, Gear)",
+        "Cleave (23%, avg 3x, Spell)",
+        "Falling Star (14%, avg 1.3x, Spell)",
+        "Doran's Ring (23%, avg 2x, Gear)",
+        "Chemtech Enforcer (27%, avg 2.5x, Unit)",
+        "Invert Timelines (14%, avg 1.7x, Spell)",
+        "Piercing Light (23%, avg 1.4x, Spell)",
+        "Jinx, Rebel (14%, avg 1.3x, Unit)",
+        "Blood Rush (18%, avg 2.3x, Spell)",
+        "Flame Chompers (14%, avg 3x, Unit)",
+        "Darius, Trifarian (14%, avg 2.7x, Unit)",
+        "Edge of Night (14%, avg 1x, Gear)",
+        "Vex, Apathetic (23%, avg 2x, Unit)",
+        "Sun Disc (14%, avg 1.7x, Gear)",
+        "Gust (18%, avg 2x, Spell)",
+        "Sneaky Deckhand (14%, avg 1.7x, Unit)",
+        "Star-Crossed (23%, avg 1.4x, Spell)",
+        "Pyke, Dockside Butcher (18%, avg 2.3x, Unit)",
+        "Seal of Rage (18%, avg 3x, Gear)",
+        "Long Sword (14%, avg 2.7x, Gear)"
+      ],
+      "topBattlefields": [
+        "Zaun Warrens (95%)",
+        "Minefield (50%)",
+        "The Candlelit Sanctum (41%)",
+        "The Arena's Greatest (32%)",
+        "Obelisk of Power (14%)",
+        "Forge of the Fluft (14%)",
+        "Rockfall Path (14%)",
+        "Windswept Hillock (5%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 21,
+          "player": "Jason h",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 21,
+          "player": "Jason h",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 36,
+          "player": "Eric",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 37,
+          "player": "Viktor Penelski",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 42,
+          "player": "Daniel Zidenberg",
+          "tournament": "Bologna Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Lee Sin, Blind Monk",
+      "deckCount": 22,
+      "domains": [
+        "Body",
+        "Calm"
+      ],
+      "champions": {
+        "Lee Sin, Centered": 20,
+        "Lee Sin, Ascetic": 2
+      },
+      "avgUnits": 14.4,
+      "avgSpells": 19.2,
+      "avgGears": 4.6,
+      "avgTotal": 38.9,
+      "core": [
+        "Defy (100%, avg 2.8x, Spell)",
+        "Discipline (100%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "First Mate (73%, avg 2.6x, Unit)",
+        "Irelia, Fervent (64%, avg 2.3x, Unit)",
+        "Zhonya's Hourglass (73%, avg 2.5x, Gear)",
+        "Charm (77%, avg 2.4x, Spell)",
+        "Punch First (73%, avg 2.7x, Spell)",
+        "Challenge (82%, avg 2.6x, Spell)"
+      ],
+      "flex": [
+        "Lonely Poro (50%, avg 3x, Unit)",
+        "Stalwart Poro (36%, avg 2.6x, Unit)",
+        "Lucian, Merciless (41%, avg 3x, Unit)",
+        "Doran's Blade (41%, avg 2.1x, Gear)",
+        "Desert's Call (50%, avg 2.1x, Spell)",
+        "Not So Fast (41%, avg 1.8x, Spell)",
+        "Guardian Angel (36%, avg 2.3x, Gear)",
+        "Sabotage (32%, avg 1.1x, Spell)",
+        "Emperor's Divide (36%, avg 1.3x, Spell)",
+        "Back Off (45%, avg 1.5x, Spell)"
+      ],
+      "tech": [
+        "Clockwork Keeper (18%, avg 1.3x, Unit)",
+        "Ruin Runner (14%, avg 3x, Unit)",
+        "Trinity Force (14%, avg 3x, Gear)",
+        "En Garde (23%, avg 1.8x, Spell)",
+        "Primal Strength (14%, avg 1x, Spell)",
+        "Pit Rookie (23%, avg 2.4x, Unit)",
+        "Sunlit Guardian (18%, avg 2.3x, Unit)",
+        "Qiyana, Victorious (14%, avg 3x, Unit)",
+        "Wizened Elder (23%, avg 1.6x, Unit)",
+        "Tasty Faefolk (18%, avg 2.3x, Unit)",
+        "Deadbloom Predator (18%, avg 1.5x, Unit)",
+        "Find Your Center (27%, avg 3x, Spell)",
+        "Dragon's Rage (18%, avg 1.3x, Spell)",
+        "Rengar, Trophy Hunter (14%, avg 2x, Unit)",
+        "Lee Sin, Centered (14%, avg 1x, Unit)",
+        "Vilemaw (27%, avg 2x, Unit)",
+        "Scuttle Crab (27%, avg 1.8x, Unit)",
+        "Nidalee, Cat Form (14%, avg 2x, Unit)",
+        "Grim Resolve (18%, avg 2.3x, Spell)",
+        "Akshan, Mischievous (18%, avg 1.5x, Unit)",
+        "Sett, Brawler (18%, avg 1.3x, Unit)",
+        "Wallop (14%, avg 1.7x, Spell)",
+        "Elder Dragon (14%, avg 3x, Unit)",
+        "Dazzling Aurora (14%, avg 3x, Gear)",
+        "Mobilize (14%, avg 2.3x, Spell)",
+        "Catalyst of Aeons (14%, avg 3x, Spell)",
+        "Flurry of Blades (14%, avg 2.3x, Spell)",
+        "Whiteflame Protector (14%, avg 1.7x, Unit)",
+        "Wind Wall (14%, avg 1x, Spell)"
+      ],
+      "topBattlefields": [
+        "Monastery of Hirana (82%)",
+        "Sunken Temple (64%)",
+        "Grove of the God-Willow (18%)",
+        "Zaun Warrens (14%)",
+        "The Dreaming Tree (14%)",
+        "Obelisk of Power (14%)",
+        "Aspirant's Climb (14%)",
+        "Sigil of the Storm (14%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 33,
+          "player": "酷猫-Hugu",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 52,
+          "player": "Jeff Jones",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 72,
+          "player": "Troy",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 72,
+          "player": "Troy",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 78,
+          "player": "Pay Eighthundred",
+          "tournament": "Lille Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Yasuo, Unforgiven",
+      "deckCount": 21,
+      "domains": [
+        "Calm",
+        "Chaos"
+      ],
+      "champions": {
+        "Yasuo, Windrider": 12,
+        "Yasuo, Remorseful": 9
+      },
+      "avgUnits": 14.8,
+      "avgSpells": 18.3,
+      "avgGears": 5.6,
+      "avgTotal": 38.9,
+      "core": [
+        "Defy (100%, avg 2.7x, Spell)",
+        "En Garde (100%, avg 2.3x, Spell)",
+        "Discipline (100%, avg 3x, Spell)",
+        "Ride the Wind (95%, avg 2.2x, Spell)"
+      ],
+      "standard": [
+        "Tideturner (62%, avg 2x, Unit)",
+        "Stellacorn Herder (71%, avg 2.7x, Unit)",
+        "Zhonya's Hourglass (76%, avg 1.9x, Gear)"
+      ],
+      "flex": [
+        "Lonely Poro (43%, avg 2.3x, Unit)",
+        "Treasure Hunter (33%, avg 2.6x, Unit)",
+        "Guardian Angel (48%, avg 2.1x, Gear)",
+        "Boots of Swiftness (48%, avg 1.8x, Gear)",
+        "Charm (38%, avg 2x, Spell)",
+        "Fight or Flight (43%, avg 2.1x, Spell)",
+        "Not So Fast (52%, avg 1.5x, Spell)",
+        "Rebuke (33%, avg 1.1x, Spell)",
+        "Irelia, Fervent (38%, avg 2.3x, Unit)",
+        "Stacked Deck (57%, avg 2.6x, Spell)",
+        "Flash (48%, avg 1.1x, Spell)",
+        "Traveling Merchant (48%, avg 2.5x, Unit)",
+        "Mask of Foresight (52%, avg 2.4x, Gear)",
+        "Vex, Apathetic (38%, avg 2.1x, Unit)",
+        "Star-Crossed (33%, avg 1.3x, Spell)"
+      ],
+      "tech": [
+        "Sona, Harmonious (19%, avg 2.3x, Unit)",
+        "Draven, Audacious (14%, avg 1.7x, Unit)",
+        "Heart of Dark Ice (19%, avg 1.5x, Gear)",
+        "Feral Strength (14%, avg 2x, Spell)",
+        "Wielder of Water (19%, avg 2.5x, Unit)",
+        "Rhasa the Sunderer (29%, avg 2x, Unit)",
+        "Gust (29%, avg 1.2x, Spell)",
+        "Teemo, Scout (14%, avg 1.3x, Unit)",
+        "Edge of Night (24%, avg 1x, Gear)",
+        "Last Breath (24%, avg 1x, Spell)",
+        "Hard Bargain (24%, avg 1.4x, Spell)",
+        "Switcheroo (19%, avg 1.5x, Spell)",
+        "Scuttle Crab (29%, avg 2.3x, Unit)",
+        "Adaptatron (24%, avg 1.2x, Unit)",
+        "Kha'Zix, Mutating Horror (29%, avg 2.2x, Unit)",
+        "Back Off (29%, avg 1.3x, Spell)",
+        "Pyke, Returned (24%, avg 1.8x, Unit)",
+        "Whiteflame Protector (19%, avg 1x, Unit)",
+        "Tasty Faefolk (14%, avg 1.7x, Unit)",
+        "Find Your Center (24%, avg 2.6x, Spell)",
+        "Nocturne, Horrifying (19%, avg 3x, Unit)",
+        "Kayn, Unleashed (19%, avg 2x, Unit)",
+        "The Syren (14%, avg 1x, Gear)",
+        "Mystic Poro (14%, avg 3x, Unit)"
+      ],
+      "topBattlefields": [
+        "The Dreaming Tree (38%)",
+        "Targon's Peak (29%)",
+        "Back-Alley Bar (29%)",
+        "Zaun Warrens (24%)",
+        "Rockfall Path (24%)",
+        "Forbidding Waste (24%)",
+        "The Candlelit Sanctum (24%)",
+        "Sunken Temple (19%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 18,
+          "player": "Boris S",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 64,
+          "player": "GhaelWinds",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 73,
+          "player": "破天巨爱",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 92,
+          "player": "Luigi Amato",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 103,
+          "player": "藏宝 神切 不宅啊",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Jax, Grandmaster at Arms",
+      "deckCount": 20,
+      "domains": [
+        "Body",
+        "Calm"
+      ],
+      "champions": {
+        "Jax, Unmatched": 19,
+        "Jax, Unrelenting": 1
+      },
+      "avgUnits": 13.8,
+      "avgSpells": 16,
+      "avgGears": 9,
+      "avgTotal": 39,
+      "core": [
+        "Brutalizer (90%, avg 2.9x, Gear)",
+        "Guardian Angel (95%, avg 2.7x, Gear)",
+        "Defy (100%, avg 2.5x, Spell)",
+        "Challenge (100%, avg 2.7x, Spell)",
+        "Counter Strike (95%, avg 2.7x, Spell)",
+        "Discipline (90%, avg 2.6x, Spell)"
+      ],
+      "standard": [
+        "Lonely Poro (65%, avg 2.7x, Unit)",
+        "First Mate (80%, avg 2.5x, Unit)",
+        "Lucian, Merciless (75%, avg 2.3x, Unit)",
+        "Akshan, Mischievous (80%, avg 1.7x, Unit)",
+        "Punch First (80%, avg 1.6x, Spell)",
+        "Not So Fast (80%, avg 1.7x, Spell)"
+      ],
+      "flex": [
+        "Stellacorn Herder (45%, avg 2.6x, Unit)",
+        "Irelia, Fervent (40%, avg 1.9x, Unit)",
+        "Ruin Runner (45%, avg 1.3x, Unit)",
+        "Doran's Blade (35%, avg 1.6x, Gear)",
+        "Boneshiver (45%, avg 1.9x, Gear)",
+        "Aphelios, Exalted (40%, avg 2.1x, Unit)",
+        "Warmog's Armor (50%, avg 2.5x, Gear)",
+        "Charm (35%, avg 1.7x, Spell)",
+        "Sabotage (55%, avg 1.2x, Spell)"
+      ],
+      "tech": [
+        "Clockwork Keeper (20%, avg 2.3x, Unit)",
+        "Desert's Call (20%, avg 2.3x, Spell)",
+        "Pit Rookie (10%, avg 2.5x, Unit)",
+        "Scuttle Crab (25%, avg 2.4x, Unit)",
+        "Kinkou Initiate (15%, avg 2.3x, Unit)",
+        "Elder Dragon (15%, avg 2.7x, Unit)",
+        "Zhonya's Hourglass (20%, avg 2.3x, Gear)",
+        "Trinity Force (15%, avg 1.7x, Gear)",
+        "Dazzling Aurora (10%, avg 3x, Gear)",
+        "Flurry of Blades (10%, avg 2.5x, Spell)",
+        "Mobilize (10%, avg 2.5x, Spell)",
+        "Back Off (10%, avg 1x, Spell)",
+        "Find Your Center (10%, avg 2.5x, Spell)",
+        "Catalyst of Aeons (15%, avg 3x, Spell)",
+        "Vilemaw (25%, avg 1.8x, Unit)",
+        "Rengar, Trophy Hunter (25%, avg 1.8x, Unit)",
+        "Fiora, Peerless (15%, avg 1x, Unit)"
+      ],
+      "topBattlefields": [
+        "Sunken Temple (75%)",
+        "Monastery of Hirana (35%)",
+        "The Dreaming Tree (35%)",
+        "Ornn's Forge (35%)",
+        "Aspirant's Climb (30%)",
+        "Rockfall Path (20%)",
+        "Targon's Peak (10%)",
+        "Amateur Recital (10%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 7,
+          "player": "Theverybestgamer",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 25,
+          "player": "Luca De Angelis",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 35,
+          "player": "Bubo",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 102,
+          "player": "Jimbo in limbo",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 102,
+          "player": "Jimbo in limbo",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Lux, Lady of Luminosity",
+      "deckCount": 20,
+      "domains": [
+        "Mind",
+        "Order"
+      ],
+      "champions": {
+        "Lux, Crownguard": 20
+      },
+      "avgUnits": 8.9,
+      "avgSpells": 25.2,
+      "avgGears": 4.9,
+      "avgTotal": 39,
+      "core": [],
+      "standard": [
+        "Jayce, Man of Progress (60%, avg 2.5x, Unit)",
+        "Vanguard Armory (65%, avg 2.8x, Gear)",
+        "Bellows Breath (70%, avg 2.4x, Spell)",
+        "Stupefy (80%, avg 2.4x, Spell)",
+        "Cull the Weak (85%, avg 2.8x, Spell)",
+        "Salvage (75%, avg 1.5x, Spell)",
+        "Wages of Pain (65%, avg 2.8x, Spell)",
+        "Drag Under (75%, avg 2.8x, Spell)",
+        "Falling Comet (80%, avg 2.6x, Spell)",
+        "Imperial Decree (75%, avg 2.5x, Spell)",
+        "Singularity (85%, avg 2.7x, Spell)",
+        "Time Warp (75%, avg 1.3x, Spell)"
+      ],
+      "flex": [
+        "Plundering Poro (35%, avg 2.7x, Unit)",
+        "Card Sharp (30%, avg 2.3x, Unit)",
+        "Thousand-Tailed Watcher (35%, avg 1.9x, Unit)",
+        "Garbage Grabber (50%, avg 1x, Gear)",
+        "Forge of the Future (50%, avg 2.7x, Gear)",
+        "Progress Day (50%, avg 1.7x, Spell)",
+        "Soaring Scout (30%, avg 3x, Unit)",
+        "Watchful Sentry (30%, avg 2.7x, Unit)",
+        "Sprite Burst (50%, avg 2.4x, Spell)",
+        "The Ruination (50%, avg 1.9x, Spell)",
+        "Shadow's Call (30%, avg 1.8x, Spell)"
+      ],
+      "tech": [
+        "Blood Money (15%, avg 1.3x, Spell)",
+        "Daring Poro (10%, avg 2.5x, Unit)",
+        "Harnessed Dragon (10%, avg 1.5x, Unit)",
+        "Hidden Blade (20%, avg 1.8x, Spell)",
+        "Consult the Past (15%, avg 1x, Spell)",
+        "Blast of Power (10%, avg 2.5x, Spell)",
+        "Recruit the Vanguard (15%, avg 2.7x, Spell)",
+        "Unchecked Power (10%, avg 2.5x, Spell)",
+        "Deadly Flourish (25%, avg 2.8x, Spell)",
+        "Lecturing Yordle (10%, avg 2.5x, Unit)",
+        "Frigid Jewel (10%, avg 2.5x, Gear)",
+        "Honest Broker (20%, avg 3x, Unit)",
+        "Ekko, Recurrent (25%, avg 2.4x, Unit)",
+        "Retreat (15%, avg 1x, Spell)",
+        "Sacrifice (20%, avg 2.3x, Spell)",
+        "Chemtech Cask (15%, avg 1.7x, Gear)",
+        "Ashe, Focused (15%, avg 1.7x, Unit)",
+        "Seal of Unity (10%, avg 1x, Gear)",
+        "Ravenbloom Student (10%, avg 2.5x, Unit)",
+        "Sprite Queen (10%, avg 2x, Unit)",
+        "Seal of Insight (10%, avg 2.5x, Gear)",
+        "Sprite Fountain (10%, avg 2.5x, Gear)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (75%)",
+        "Vilemaw's Lair (45%)",
+        "The Grand Plaza (35%)",
+        "Sigil of the Storm (35%)",
+        "Veiled Temple (30%)",
+        "Void Gate (25%)",
+        "The Papertree (15%)",
+        "Forbidding Waste (10%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 46,
+          "player": "北京泽萱-www",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 65,
+          "player": "DongD",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 66,
+          "player": "白给",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 67,
+          "player": "Vekx3r",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 71,
+          "player": "ROG",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Reksai, Void Burrower",
+      "deckCount": 19,
+      "domains": [
+        "Fury",
+        "Order"
+      ],
+      "champions": {
+        "Draven, Showboat": 1,
+        "Rek'Sai, Breacher": 17,
+        "Rek'Sai, Swarm Queen": 1
+      },
+      "avgUnits": 21.7,
+      "avgSpells": 13.6,
+      "avgGears": 3.7,
+      "avgTotal": 39,
+      "core": [
+        "Noxus Hopeful (100%, avg 2.8x, Unit)",
+        "Void Rush (95%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Falling Star (74%, avg 2.6x, Spell)",
+        "Undertitan (63%, avg 2.7x, Unit)",
+        "Cull the Weak (89%, avg 2.6x, Spell)",
+        "Hidden Blade (79%, avg 2.2x, Spell)"
+      ],
+      "flex": [
+        "Brynhir Thundersong (42%, avg 1.6x, Unit)",
+        "Ferrous Forerunner (42%, avg 2x, Unit)",
+        "Daring Poro (42%, avg 2.6x, Unit)",
+        "Void Hatchling (42%, avg 2.4x, Unit)",
+        "Faithful Manufactor (42%, avg 2.5x, Unit)",
+        "Battering Ram (32%, avg 2.5x, Unit)",
+        "Honest Broker (58%, avg 2.9x, Unit)",
+        "Soaring Scout (58%, avg 2.6x, Unit)",
+        "Vi, Destructive (37%, avg 1.1x, Unit)",
+        "Immortal Phoenix (42%, avg 3x, Unit)",
+        "Seal of Rage (47%, avg 2.9x, Gear)",
+        "Sun Disc (47%, avg 1.6x, Gear)",
+        "Piercing Light (53%, avg 2.1x, Spell)",
+        "Long Sword (32%, avg 1.5x, Gear)"
+      ],
+      "tech": [
+        "Pouty Poro (16%, avg 2.3x, Unit)",
+        "Rek'Sai, Breacher (26%, avg 1.4x, Unit)",
+        "Kai'Sa, Survivor (11%, avg 2x, Unit)",
+        "Darius, Trifarian (26%, avg 2x, Unit)",
+        "Cleave (21%, avg 2.5x, Spell)",
+        "Trifarian Gloryseeker (11%, avg 2.5x, Unit)",
+        "Vanguard Captain (26%, avg 2.8x, Unit)",
+        "Void Drone (16%, avg 3x, Unit)",
+        "Seal of Unity (26%, avg 3x, Gear)",
+        "Rally the Troops (16%, avg 2x, Spell)",
+        "Salvage (21%, avg 1.5x, Spell)",
+        "Vengeance (11%, avg 1.5x, Spell)",
+        "Drag Under (16%, avg 1.7x, Spell)",
+        "Draven, Vanquisher (21%, avg 2.3x, Unit)",
+        "Deathgrip (21%, avg 1.8x, Spell)",
+        "Blood Rush (16%, avg 2.3x, Spell)",
+        "Rengar, Pouncing (21%, avg 1.8x, Unit)",
+        "Trusty Ramhound (16%, avg 2.7x, Unit)",
+        "Xin Zhao, Vigilant (16%, avg 1.7x, Unit)",
+        "Carrion Dredger (16%, avg 3x, Unit)",
+        "Inferna (21%, avg 2.5x, Unit)",
+        "Vi, Peacekeeper (16%, avg 1.7x, Unit)",
+        "Hextech Ray (11%, avg 2x, Spell)"
+      ],
+      "topBattlefields": [
+        "The Arena's Greatest (84%)",
+        "The Candlelit Sanctum (63%)",
+        "Zaun Warrens (37%)",
+        "Trifarian War Camp (32%)",
+        "Veiled Temple (16%)",
+        "Targon's Peak (11%)",
+        "Rockfall Path (11%)",
+        "Aspirant's Climb (5%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 34,
+          "player": "XTacio",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 49,
+          "player": "Vouz",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 59,
+          "player": "Stephane S",
+          "tournament": "Lille Regional Qualifier"
+        },
+        {
+          "placement": 78,
+          "player": "Raqqoon",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 90,
+          "player": "Chris R",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Rumble, Mechanized Menace",
+      "deckCount": 19,
+      "domains": [
+        "Fury",
+        "Mind"
+      ],
+      "champions": {
+        "Rumble, Hotheaded": 16,
+        "Rumble, Scrapper": 3
+      },
+      "avgUnits": 23.4,
+      "avgSpells": 12.9,
+      "avgGears": 2.1,
+      "avgTotal": 39.1,
+      "core": [
+        "Forecaster (100%, avg 2.9x, Unit)",
+        "Gem Jammer (100%, avg 2.8x, Unit)",
+        "Bubble Bot (100%, avg 2.9x, Unit)",
+        "Rumble, Hotheaded (95%, avg 1.8x, Unit)",
+        "Ferrous Forerunner (100%, avg 2.9x, Unit)"
+      ],
+      "standard": [
+        "Plundering Poro (79%, avg 2.3x, Unit)",
+        "Thousand-Tailed Watcher (84%, avg 2.4x, Unit)",
+        "Breakneck Mech (89%, avg 1.5x, Unit)",
+        "Long Sword (63%, avg 1.9x, Gear)",
+        "Stupefy (89%, avg 2.8x, Spell)",
+        "Falling Star (74%, avg 1.9x, Spell)",
+        "Rumble, Scrapper (74%, avg 1.9x, Unit)",
+        "Danger Zone (68%, avg 1.4x, Spell)",
+        "Singularity (63%, avg 1.8x, Spell)"
+      ],
+      "flex": [
+        "Kai'Sa, Survivor (47%, avg 2.1x, Unit)",
+        "Darius, Trifarian (42%, avg 1.6x, Unit)",
+        "Cloth Armor (42%, avg 1.5x, Gear)",
+        "Piercing Light (42%, avg 1.8x, Spell)",
+        "Production Surge (47%, avg 2.2x, Spell)",
+        "Brynhir Thundersong (47%, avg 1.3x, Unit)",
+        "Cleave (42%, avg 2x, Spell)",
+        "Retreat (47%, avg 1.8x, Spell)"
+      ],
+      "tech": [
+        "Mega-Mech (26%, avg 1.6x, Unit)",
+        "Smoke Screen (26%, avg 1.6x, Spell)",
+        "Dangerous Duo (16%, avg 2x, Unit)",
+        "Sun Disc (11%, avg 1.5x, Gear)",
+        "Blood Rush (11%, avg 2x, Spell)",
+        "Angle Shot (21%, avg 1.5x, Spell)",
+        "Bellows Breath (21%, avg 1.3x, Spell)",
+        "Time Warp (16%, avg 1x, Spell)",
+        "Frigid Touch (16%, avg 1.3x, Spell)",
+        "Consult the Past (26%, avg 1.8x, Spell)",
+        "Thermo Beam (16%, avg 1x, Spell)",
+        "Void Seeker (16%, avg 2.3x, Spell)",
+        "Scrapyard Champion (11%, avg 1x, Unit)",
+        "Noxus Hopeful (16%, avg 2.3x, Unit)",
+        "Falling Comet (16%, avg 1.7x, Spell)"
+      ],
+      "topBattlefields": [
+        "Vilemaw's Lair (58%)",
+        "Trifarian War Camp (47%)",
+        "Obelisk of Power (32%)",
+        "Zaun Warrens (26%)",
+        "Minefield (26%)",
+        "Seat of Power (16%)",
+        "Grove of the God-Willow (16%)",
+        "The Papertree (16%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 93,
+          "player": "Andre A",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 93,
+          "player": "Nacho Gonzalez",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 93,
+          "player": "Andre A",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 220,
+          "player": "Klimczur",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 239,
+          "player": "Tukayu",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Darius, Hand of Noxus",
+      "deckCount": 17,
+      "domains": [
+        "Fury",
+        "Order"
+      ],
+      "champions": {
+        "Darius, Trifarian": 16,
+        "Darius, Executioner": 1
+      },
+      "avgUnits": 22.4,
+      "avgSpells": 11.5,
+      "avgGears": 4.7,
+      "avgTotal": 39,
+      "core": [
+        "Hidden Blade (100%, avg 2.7x, Spell)"
+      ],
+      "standard": [
+        "Honest Broker (82%, avg 2.8x, Unit)",
+        "Noxus Hopeful (88%, avg 2.7x, Unit)",
+        "Ferrous Forerunner (65%, avg 1.9x, Unit)",
+        "Deathgrip (65%, avg 1.5x, Spell)"
+      ],
+      "flex": [
+        "Trifarian Gloryseeker (47%, avg 2.9x, Unit)",
+        "Vanguard Captain (53%, avg 3x, Unit)",
+        "Spectral Matron (47%, avg 2.9x, Unit)",
+        "Seal of Unity (47%, avg 3x, Gear)",
+        "Baited Hook (41%, avg 3x, Gear)",
+        "Rally the Troops (47%, avg 3x, Spell)",
+        "Brynhir Thundersong (35%, avg 1.7x, Unit)",
+        "Cull the Weak (35%, avg 2.7x, Spell)",
+        "Soaring Scout (35%, avg 2.7x, Unit)",
+        "Kai'Sa, Survivor (35%, avg 2.5x, Unit)",
+        "Falling Star (53%, avg 2x, Spell)"
+      ],
+      "tech": [
+        "Trusty Ramhound (18%, avg 2x, Unit)",
+        "Xin Zhao, Vigilant (24%, avg 3x, Unit)",
+        "Glasc Mixologist (29%, avg 1.6x, Unit)",
+        "Draven, Audacious (12%, avg 3x, Unit)",
+        "Grand Strategem (24%, avg 1.3x, Spell)",
+        "Rek'Sai, Breacher (29%, avg 2.2x, Unit)",
+        "Draven, Showboat (18%, avg 3x, Unit)",
+        "Pouty Poro (18%, avg 2.7x, Unit)",
+        "Call to Glory (12%, avg 3x, Spell)",
+        "Fiora, Victorious (18%, avg 1.7x, Unit)",
+        "Vayne, Hunter (12%, avg 1.5x, Unit)",
+        "Long Sword (29%, avg 2x, Gear)",
+        "Cleave (18%, avg 2x, Spell)",
+        "Salvage (29%, avg 2x, Spell)",
+        "Noxian Guillotine (18%, avg 1.3x, Spell)",
+        "Daring Poro (12%, avg 2x, Unit)",
+        "Darius, Trifarian (12%, avg 1.5x, Unit)",
+        "Rengar, Pouncing (18%, avg 1.7x, Unit)",
+        "Blood Rush (29%, avg 1.6x, Spell)",
+        "Vengeance (18%, avg 1.7x, Spell)",
+        "Legion Rearguard (12%, avg 2.5x, Unit)",
+        "Piercing Light (12%, avg 2x, Spell)",
+        "Inferna (12%, avg 2x, Unit)",
+        "Vi, Peacekeeper (18%, avg 2.3x, Unit)",
+        "Shadow's Call (24%, avg 2.5x, Spell)",
+        "Carrion Dredger (29%, avg 2.4x, Unit)",
+        "Gem Jammer (18%, avg 2.7x, Unit)",
+        "Ashe, Focused (18%, avg 1.7x, Unit)",
+        "Blighted Battleaxe (18%, avg 2.7x, Gear)",
+        "Sacrifice (29%, avg 1.6x, Spell)",
+        "Tactical Retreat (12%, avg 2x, Spell)",
+        "Immortal Phoenix (12%, avg 3x, Unit)",
+        "Undying Legion (12%, avg 2.5x, Unit)",
+        "Seal of Rage (18%, avg 2.3x, Gear)",
+        "Unsung Hero (12%, avg 2.5x, Unit)",
+        "B.F. Sword (12%, avg 1.5x, Gear)"
+      ],
+      "topBattlefields": [
+        "Trifarian War Camp (53%)",
+        "Zaun Warrens (53%)",
+        "Seat of Power (47%)",
+        "The Arena's Greatest (41%)",
+        "Monastery of Hirana (29%)",
+        "Grove of the God-Willow (12%)",
+        "Vilemaw's Lair (12%)",
+        "Sunken Temple (12%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 14,
+          "player": "流浪巫妖",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 20,
+          "player": "电气-Rex",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 28,
+          "player": "Grant W",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 28,
+          "player": "Grant W",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 53,
+          "player": "Vicent S",
+          "tournament": "Lille Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Lillia, Bashful Bloom",
+      "deckCount": 17,
+      "domains": [
+        "Calm",
+        "Mind"
+      ],
+      "champions": {
+        "Lillia, Fae Fawn": 17
+      },
+      "avgUnits": 11.4,
+      "avgSpells": 22.1,
+      "avgGears": 5.6,
+      "avgTotal": 39,
+      "core": [
+        "Thousand-Tailed Watcher (94%, avg 2.8x, Unit)",
+        "Sprite Fountain (100%, avg 2.9x, Gear)",
+        "Charm (94%, avg 1.9x, Spell)",
+        "Defy (100%, avg 2.9x, Spell)",
+        "Discipline (94%, avg 2.9x, Spell)",
+        "Smoke and Mirrors (100%, avg 2.8x, Spell)",
+        "Sprite Burst (100%, avg 2.8x, Spell)"
+      ],
+      "standard": [
+        "Plundering Poro (88%, avg 2.9x, Unit)",
+        "Ravenbloom Student (88%, avg 3x, Unit)",
+        "En Garde (76%, avg 2.2x, Spell)",
+        "Stupefy (88%, avg 2.8x, Spell)",
+        "Lilting Lullaby (82%, avg 1.4x, Spell)",
+        "Unchecked Power (82%, avg 2x, Spell)",
+        "Heart of Dark Ice (88%, avg 2x, Gear)"
+      ],
+      "flex": [],
+      "tech": [
+        "Hwei, Brooding Painter (24%, avg 2.5x, Unit)",
+        "Irelia, Fervent (18%, avg 2x, Unit)",
+        "Emperor's Divide (18%, avg 1.7x, Spell)",
+        "Scuttle Crab (29%, avg 2.6x, Unit)",
+        "Disarming Rake (12%, avg 1x, Unit)",
+        "Mask of Foresight (29%, avg 2.2x, Gear)",
+        "Singularity (24%, avg 1.5x, Spell)",
+        "Tasty Faefolk (18%, avg 2x, Unit)",
+        "Rocket Barrage (18%, avg 1.3x, Spell)",
+        "Janna, Savior (12%, avg 1.5x, Unit)",
+        "Not So Fast (18%, avg 1x, Spell)",
+        "Back Off (12%, avg 1.5x, Spell)",
+        "Retreat (12%, avg 2x, Spell)"
+      ],
+      "topBattlefields": [
+        "Dusk Rose Lab (82%)",
+        "Forbidding Waste (59%)",
+        "Seat of Power (53%)",
+        "Black Flame Altar (47%)",
+        "The Arena's Greatest (41%)",
+        "Zaun Warrens (6%)",
+        "Veiled Temple (6%)",
+        "Rockfall Path (6%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 44,
+          "player": "Wei（酷猫）",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 123,
+          "player": "北京泽萱— q",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 148,
+          "player": "EDG",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 217,
+          "player": "ARBD-白板",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 242,
+          "player": "荠",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Rengar, Pridestalker",
+      "deckCount": 15,
+      "domains": [
+        "Body",
+        "Fury"
+      ],
+      "champions": {
+        "Rengar, Pouncing": 2,
+        "Rengar, Trophy Hunter": 12,
+        "Rengar, Unseen": 1
+      },
+      "avgUnits": 24.9,
+      "avgSpells": 12.8,
+      "avgGears": 1.3,
+      "avgTotal": 39,
+      "core": [
+        "Thrill of the Hunt (100%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Inferna (73%, avg 3x, Unit)",
+        "Irresistible Faefolk (73%, avg 3x, Unit)",
+        "Pit Rookie (67%, avg 2.4x, Unit)",
+        "Grim Apothecary (60%, avg 2.3x, Unit)",
+        "Nidalee, Cat Form (67%, avg 2.8x, Unit)",
+        "Noxus Hopeful (67%, avg 2.7x, Unit)",
+        "Rengar, Trophy Hunter (60%, avg 1.9x, Unit)",
+        "Punch First (60%, avg 2x, Spell)",
+        "Sabotage (67%, avg 1.5x, Spell)",
+        "Challenge (87%, avg 2.2x, Spell)"
+      ],
+      "flex": [
+        "First Mate (47%, avg 1.9x, Unit)",
+        "Kinkou Initiate (47%, avg 2.4x, Unit)",
+        "Pyke, Dockside Butcher (47%, avg 2x, Unit)",
+        "Rengar, Pouncing (33%, avg 1.6x, Unit)",
+        "Kai'Sa, Survivor (53%, avg 2.6x, Unit)",
+        "Darius, Trifarian (33%, avg 2.2x, Unit)",
+        "Ferrous Forerunner (47%, avg 1.6x, Unit)",
+        "Brynhir Thundersong (53%, avg 1.5x, Unit)",
+        "Repulse (33%, avg 1.6x, Spell)",
+        "Confront (33%, avg 2x, Spell)"
+      ],
+      "tech": [
+        "Pakaa Cub (13%, avg 1x, Unit)",
+        "Carnivorous Snapvine (13%, avg 1x, Unit)",
+        "Cleave (20%, avg 1.7x, Spell)",
+        "Determined Sentry (13%, avg 2.5x, Unit)",
+        "Herald of Scales (20%, avg 3x, Unit)",
+        "Blazing Scorcher (20%, avg 2.3x, Unit)",
+        "Direwing (20%, avg 2.3x, Unit)",
+        "Gentle Gemdragon (20%, avg 3x, Unit)",
+        "Kadregrin the Infernal (27%, avg 2.8x, Unit)",
+        "Elder Dragon (27%, avg 2.5x, Unit)",
+        "Dazzling Aurora (13%, avg 3x, Gear)",
+        "Flurry of Blades (27%, avg 1.8x, Spell)",
+        "Mobilize (27%, avg 3x, Spell)",
+        "Show of Strength (13%, avg 2.5x, Spell)",
+        "Catalyst of Aeons (20%, avg 3x, Spell)",
+        "Sky Splitter (13%, avg 3x, Spell)",
+        "Dragonsoul Sage (13%, avg 2.5x, Unit)",
+        "Unyielding Spirit (13%, avg 1.5x, Spell)",
+        "Seal of Strength (13%, avg 2.5x, Gear)",
+        "Fresh Beans (20%, avg 2.3x, Gear)",
+        "Akshan, Mischievous (13%, avg 1x, Unit)",
+        "Here to Help (13%, avg 1.5x, Spell)",
+        "Void Seeker (13%, avg 3x, Spell)",
+        "Fiora, Peerless (20%, avg 1.3x, Unit)"
+      ],
+      "topBattlefields": [
+        "Star Spring (60%)",
+        "Emperor's Dais (53%)",
+        "The Arena's Greatest (40%)",
+        "Sunken Temple (27%)",
+        "Aspirant's Climb (27%)",
+        "Seat of Power (20%)",
+        "Forbidding Waste (13%)",
+        "Forgotten Monument (13%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 64,
+          "player": "福州晖宸土豆揍bob",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 73,
+          "player": "DFL",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 75,
+          "player": "嘟嘟",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 184,
+          "player": "Ayin",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 268,
+          "player": "燕五",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Garen, Might of Demacia",
+      "deckCount": 12,
+      "domains": [
+        "Body",
+        "Order"
+      ],
+      "champions": {
+        "Garen, Commander": 5,
+        "Garen, Rugged": 7
+      },
+      "avgUnits": 7.8,
+      "avgSpells": 23.1,
+      "avgGears": 8,
+      "avgTotal": 39,
+      "core": [
+        "Dazzling Aurora (100%, avg 3x, Gear)",
+        "Mobilize (100%, avg 3x, Spell)",
+        "Catalyst of Aeons (100%, avg 3x, Spell)"
+      ],
+      "standard": [
+        "Harnessed Dragon (75%, avg 2.8x, Unit)",
+        "Forge of the Future (83%, avg 2.7x, Gear)",
+        "Vanguard Armory (67%, avg 2.6x, Gear)",
+        "Sabotage (75%, avg 1.9x, Spell)",
+        "Confront (83%, avg 2.8x, Spell)"
+      ],
+      "flex": [
+        "Deadbloom Predator (50%, avg 2.8x, Unit)",
+        "Punch First (33%, avg 1.8x, Spell)",
+        "Cull the Weak (50%, avg 2.5x, Spell)",
+        "Rally the Troops (50%, avg 2.3x, Spell)",
+        "Imperial Decree (42%, avg 1.6x, Spell)",
+        "Challenge (42%, avg 1.8x, Spell)",
+        "Salvage (33%, avg 1.5x, Spell)",
+        "Divine Judgment (33%, avg 2.5x, Spell)",
+        "Elder Dragon (50%, avg 3x, Unit)",
+        "Flurry of Blades (33%, avg 3x, Spell)",
+        "Shadow's Call (42%, avg 2x, Spell)",
+        "Tactical Retreat (33%, avg 1.8x, Spell)",
+        "Sacrifice (33%, avg 2.3x, Spell)"
+      ],
+      "tech": [
+        "Altar of Memories (17%, avg 2x, Gear)",
+        "Deathgrip (17%, avg 1x, Spell)",
+        "Drag Under (25%, avg 2.3x, Spell)",
+        "Corina Veraza (25%, avg 2.7x, Unit)",
+        "Volibear, Imposing (25%, avg 1x, Unit)",
+        "Hidden Blade (25%, avg 2.7x, Spell)",
+        "Repulse (17%, avg 2x, Spell)",
+        "Unyielding Spirit (17%, avg 1x, Spell)",
+        "Rift Herald (25%, avg 3x, Unit)",
+        "Blood Money (17%, avg 2x, Spell)",
+        "The Ruination (17%, avg 2x, Spell)",
+        "Recruit the Vanguard (17%, avg 3x, Spell)",
+        "Divining Shells (17%, avg 3x, Gear)",
+        "Rengar, Trophy Hunter (17%, avg 2x, Unit)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (100%)",
+        "Sigil of the Storm (75%)",
+        "Forgotten Monument (50%)",
+        "Obelisk of Power (33%)",
+        "The Papertree (25%)",
+        "Amateur Recital (8%)",
+        "The Grand Plaza (8%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 48,
+          "player": "Ai",
+          "tournament": "Shanghai City Challenge"
+        },
+        {
+          "placement": 115,
+          "player": "猫岛巡礼-鹭灯",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 156,
+          "player": "Tee Thebeau",
+          "tournament": "Houston Regional Qualifier"
+        },
+        {
+          "placement": 158,
+          "player": "旋木时光的藻",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 362,
+          "player": "Duality",
+          "tournament": "Las Vegas Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Renata Glasc, Chem-Baroness",
+      "deckCount": 12,
+      "domains": [
+        "Mind",
+        "Order"
+      ],
+      "champions": {
+        "Renata Glasc, Mastermind": 10,
+        "Renata Glasc, Industrialist": 2
+      },
+      "avgUnits": 15.4,
+      "avgSpells": 18.8,
+      "avgGears": 4,
+      "avgTotal": 39,
+      "core": [
+        "Plundering Poro (92%, avg 2.9x, Unit)",
+        "Hidden Blade (100%, avg 2.8x, Spell)",
+        "Hostile Takeover (92%, avg 2.5x, Spell)",
+        "Time Warp (92%, avg 1.8x, Spell)"
+      ],
+      "standard": [
+        "Honest Broker (75%, avg 2.9x, Unit)",
+        "Card Sharp (83%, avg 2.2x, Unit)",
+        "Cull the Weak (75%, avg 2.1x, Spell)",
+        "Wages of Pain (75%, avg 2.4x, Spell)"
+      ],
+      "flex": [
+        "Thousand-Tailed Watcher (58%, avg 2x, Unit)",
+        "Blood Money (42%, avg 1.8x, Spell)",
+        "Salvage (58%, avg 1.1x, Spell)",
+        "Shen, Kinkou (42%, avg 2x, Unit)",
+        "Ekko, Recurrent (42%, avg 1.6x, Unit)",
+        "Ornn, Forge God (50%, avg 3x, Unit)",
+        "Trove Golem (42%, avg 1.6x, Unit)",
+        "Stupefy (50%, avg 2.8x, Spell)",
+        "Consult the Past (33%, avg 2.3x, Spell)",
+        "Singularity (58%, avg 2.1x, Spell)",
+        "Jayce, Man of Progress (42%, avg 2.8x, Unit)",
+        "Vanguard Armory (42%, avg 3x, Gear)",
+        "Bellows Breath (33%, avg 2.3x, Spell)",
+        "Imperial Decree (33%, avg 1.8x, Spell)"
+      ],
+      "tech": [
+        "Pit Crew (17%, avg 2.5x, Unit)",
+        "Unchecked Power (17%, avg 1x, Spell)",
+        "Cloth Armor (25%, avg 1x, Gear)",
+        "Deathgrip (25%, avg 1.3x, Spell)",
+        "Ravenbloom Student (17%, avg 2.5x, Unit)",
+        "Forecaster (17%, avg 2x, Unit)",
+        "Lecturing Yordle (17%, avg 2x, Unit)",
+        "World Atlas (25%, avg 2x, Gear)",
+        "Forge of the Future (25%, avg 2.3x, Gear)",
+        "Garbage Grabber (17%, avg 1.5x, Gear)",
+        "Sprite Fountain (25%, avg 3x, Gear)",
+        "Shadow's Call (17%, avg 2x, Spell)",
+        "Vi, Peacekeeper (17%, avg 1.5x, Unit)",
+        "Watchful Sentry (17%, avg 2x, Unit)"
+      ],
+      "topBattlefields": [
+        "Treasure Hoard (58%)",
+        "The Arena's Greatest (50%)",
+        "Vilemaw's Lair (42%)",
+        "Power Nexus (25%)",
+        "Veiled Temple (25%)",
+        "Windswept Hillock (17%)",
+        "Trifarian War Camp (17%)",
+        "Forgotten Monument (8%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 91,
+          "player": "DWT-二麻",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 183,
+          "player": "JustSR",
+          "tournament": "Bologna Regional Qualifier"
+        },
+        {
+          "placement": 218,
+          "player": "Ryujin Shin",
+          "tournament": "Las Vegas Regional Qualifier"
+        },
+        {
+          "placement": 327,
+          "player": "无形之刃",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 356,
+          "player": "Anthony B",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Master Yi, Wuju Master",
+      "deckCount": 11,
+      "domains": [
+        "Body",
+        "Calm"
+      ],
+      "champions": {
+        "Master Yi, Tempered": 11
+      },
+      "avgUnits": 16.1,
+      "avgSpells": 19.3,
+      "avgGears": 3.6,
+      "avgTotal": 39,
+      "core": [
+        "Gemhand Hunter (91%, avg 3x, Unit)",
+        "Wuju Apprentice (91%, avg 3x, Unit)",
+        "Master Yi, Unstoppable (100%, avg 2.7x, Unit)",
+        "Zhonya's Hourglass (91%, avg 2.8x, Gear)",
+        "Defy (100%, avg 3x, Spell)",
+        "Grim Resolve (91%, avg 2.6x, Spell)",
+        "Back Off (91%, avg 2.1x, Spell)"
+      ],
+      "standard": [
+        "Scuttle Crab (82%, avg 2x, Unit)",
+        "Herald of Spring (73%, avg 2.1x, Unit)",
+        "Voracious Gromp (82%, avg 2.4x, Unit)",
+        "Punch First (82%, avg 2x, Spell)",
+        "Discipline (82%, avg 3x, Spell)",
+        "Skyward Strike (64%, avg 2x, Spell)",
+        "Concentrate (82%, avg 2.4x, Spell)"
+      ],
+      "flex": [
+        "Emperor's Divide (45%, avg 1.6x, Spell)",
+        "Alpha Strike (55%, avg 1.8x, Spell)",
+        "Flurry of Feathers (36%, avg 1x, Spell)",
+        "Whiteflame Protector (45%, avg 1.8x, Unit)"
+      ],
+      "tech": [
+        "Hunter's Machete (27%, avg 1.7x, Gear)",
+        "Arachnoid Horror (27%, avg 2x, Unit)",
+        "Vilemaw (27%, avg 1.7x, Unit)",
+        "Sabotage (27%, avg 1.7x, Spell)",
+        "Not So Fast (18%, avg 1.5x, Spell)",
+        "Akshan, Mischievous (18%, avg 1.5x, Unit)",
+        "Poppy, Paragon (18%, avg 1x, Unit)",
+        "Challenge (18%, avg 2x, Spell)",
+        "Meditation (18%, avg 2x, Spell)",
+        "Forgotten Signpost (18%, avg 1x, Gear)"
+      ],
+      "topBattlefields": [
+        "Gardens of Becoming (100%)",
+        "Reckoner's Arena (100%)",
+        "Amateur Recital (55%)",
+        "Forgotten Monument (9%)",
+        "Rockfall Path (9%)",
+        "Fortified Position (9%)",
+        "Aspirant's Climb (9%)",
+        "Hallowed Tomb (9%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 112,
+          "player": "KaCha",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 156,
+          "player": "一个好名字",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 246,
+          "player": "孟老鳖",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 275,
+          "player": "神夜·神機百煉",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 281,
+          "player": "夜阑",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Vi, Piltover Enforcer",
+      "deckCount": 11,
+      "domains": [
+        "Fury",
+        "Order"
+      ],
+      "champions": {
+        "Vi, Hotheaded": 1,
+        "Vi, Peacekeeper": 9,
+        "Vi, Destructive": 1
+      },
+      "avgUnits": 19.7,
+      "avgSpells": 13.6,
+      "avgGears": 5.6,
+      "avgTotal": 39,
+      "core": [
+        "Hextech Gauntlets (100%, avg 2.9x, Gear)",
+        "Hidden Blade (100%, avg 2.1x, Spell)"
+      ],
+      "standard": [
+        "Carrion Dredger (73%, avg 2.5x, Unit)",
+        "Gem Jammer (64%, avg 2.3x, Unit)",
+        "Kai'Sa, Survivor (82%, avg 2x, Unit)",
+        "Rengar, Unseen (82%, avg 2.1x, Unit)",
+        "Ashe, Focused (82%, avg 1.4x, Unit)",
+        "Brynhir Thundersong (73%, avg 1x, Unit)",
+        "Deathgrip (64%, avg 2x, Spell)",
+        "Falling Star (73%, avg 1.9x, Spell)",
+        "Tactical Retreat (73%, avg 1.6x, Spell)",
+        "Cleave (73%, avg 1.9x, Spell)",
+        "Against the Odds (64%, avg 1.3x, Spell)"
+      ],
+      "flex": [
+        "Honest Broker (55%, avg 2.7x, Unit)",
+        "Jhin, Murderous Artist (55%, avg 2.3x, Unit)",
+        "Long Sword (45%, avg 1.4x, Gear)",
+        "Vault Breaker (45%, avg 1.6x, Spell)",
+        "Cull the Weak (36%, avg 2x, Spell)",
+        "Upstage Comedy (45%, avg 1x, Spell)",
+        "Unsung Hero (45%, avg 2.4x, Unit)",
+        "Ferrous Forerunner (45%, avg 2x, Unit)",
+        "B.F. Sword (45%, avg 2x, Gear)",
+        "Blighted Battleaxe (36%, avg 1.8x, Gear)",
+        "Inferna (36%, avg 1.8x, Unit)",
+        "Sacrifice (45%, avg 1.6x, Spell)",
+        "Sky Splitter (45%, avg 2x, Spell)",
+        "Fiora, Victorious (36%, avg 2.8x, Unit)",
+        "Noxus Hopeful (45%, avg 2.2x, Unit)"
+      ],
+      "tech": [
+        "Hextech Ray (18%, avg 1.5x, Spell)",
+        "Salvage (27%, avg 1x, Spell)",
+        "Vengeance (27%, avg 1x, Spell)",
+        "Rumble, Hotheaded (18%, avg 3x, Unit)",
+        "Minotaur Reckoner (18%, avg 1.5x, Unit)",
+        "Angle Shot (18%, avg 1.5x, Spell)",
+        "Pouty Poro (18%, avg 2.5x, Unit)",
+        "Vi, Destructive (18%, avg 1x, Unit)",
+        "Seal of Rage (18%, avg 2x, Gear)",
+        "Vi, Peacekeeper (18%, avg 1x, Unit)",
+        "Lotus Trap (18%, avg 1x, Spell)",
+        "Rek'Sai, Breacher (18%, avg 2.5x, Unit)"
+      ],
+      "topBattlefields": [
+        "Rockfall Path (45%)",
+        "Trapping Grounds (36%)",
+        "Vilemaw's Lair (36%)",
+        "Forbidding Waste (27%)",
+        "Forge of the Fluft (27%)",
+        "Zaun Warrens (27%)",
+        "Sunken Temple (27%)",
+        "Frozen Fortress (18%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 47,
+          "player": "猫岛巡礼",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 336,
+          "player": "闪电家",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 352,
+          "player": "GIT-晔啊晔",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 371,
+          "player": "闪电家 ⚡️空心菜",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 385,
+          "player": "大橘大李",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Pyke, Bloodharbor Ripper",
+      "deckCount": 10,
+      "domains": [
+        "Chaos",
+        "Fury"
+      ],
+      "champions": {
+        "Pyke, Returned": 1,
+        "Pyke, Dockside Butcher": 9
+      },
+      "avgUnits": 19.3,
+      "avgSpells": 15.1,
+      "avgGears": 4.6,
+      "avgTotal": 39,
+      "core": [
+        "Treasure Hunter (90%, avg 3x, Unit)",
+        "Stacked Deck (100%, avg 2.9x, Spell)",
+        "Falling Star (100%, avg 2.5x, Spell)",
+        "Star-Crossed (90%, avg 1.9x, Spell)"
+      ],
+      "standard": [
+        "Tideturner (80%, avg 2x, Unit)",
+        "Noxus Hopeful (70%, avg 2.9x, Unit)",
+        "Darius, Trifarian (70%, avg 1.4x, Unit)",
+        "Baron Nashor (60%, avg 1.3x, Unit)",
+        "Treasure Trove (70%, avg 2.9x, Gear)",
+        "Ride the Wind (70%, avg 1.3x, Spell)",
+        "Switcheroo (80%, avg 1.1x, Spell)",
+        "Fizz, Trickster (80%, avg 2.5x, Unit)",
+        "Vex, Apathetic (70%, avg 1.6x, Unit)",
+        "Bewitching Spirit (60%, avg 3x, Unit)"
+      ],
+      "flex": [
+        "Kai'Sa, Survivor (50%, avg 2.2x, Unit)",
+        "Ferrous Forerunner (30%, avg 2x, Unit)",
+        "Mindsplitter (50%, avg 1.6x, Unit)",
+        "Detonate (40%, avg 2.3x, Spell)",
+        "Gust (50%, avg 1.8x, Spell)",
+        "Rebuke (40%, avg 2x, Spell)",
+        "Windsinger (30%, avg 2.7x, Unit)",
+        "Beast Below (30%, avg 2x, Unit)",
+        "The List (40%, avg 1.8x, Gear)",
+        "Pack of Wonders (50%, avg 2x, Gear)",
+        "Cleave (40%, avg 1.8x, Spell)",
+        "Death from Below (50%, avg 1.2x, Spell)",
+        "Downwell (50%, avg 1.4x, Spell)",
+        "Void Seeker (30%, avg 1.3x, Spell)"
+      ],
+      "tech": [
+        "Edge of Night (20%, avg 1.5x, Gear)",
+        "Traveling Merchant (20%, avg 3x, Unit)",
+        "Rhasa the Sunderer (20%, avg 2.5x, Unit)",
+        "Seal of Discord (10%, avg 3x, Gear)",
+        "Last Rites (10%, avg 1x, Gear)",
+        "Invert Timelines (20%, avg 2x, Spell)",
+        "Sharkling (10%, avg 2x, Unit)",
+        "Acceptable Losses (20%, avg 1x, Spell)",
+        "Fading Memories (10%, avg 1x, Spell)",
+        "Vi, Destructive (10%, avg 1x, Unit)",
+        "Ezreal, Prodigy (20%, avg 2.5x, Unit)",
+        "Blood Rush (10%, avg 2x, Spell)",
+        "Hard Bargain (10%, avg 1x, Spell)",
+        "Heedless Resurrection (10%, avg 1x, Spell)",
+        "Evelynn, Entrancing (10%, avg 2x, Unit)",
+        "Blighted Battleaxe (10%, avg 2x, Gear)",
+        "Flash (10%, avg 1x, Spell)",
+        "Pyke, Dockside Butcher (10%, avg 1x, Unit)",
+        "Brynhir Thundersong (10%, avg 1x, Unit)",
+        "Teemo, Scout (10%, avg 1x, Unit)"
+      ],
+      "topBattlefields": [
+        "Ripper's Bay (100%)",
+        "Aspirant's Climb (50%)",
+        "Forbidding Waste (40%)",
+        "Veiled Temple (30%)",
+        "Zaun Warrens (30%)",
+        "Void Gate (10%)",
+        "Minefield (10%)",
+        "Vilemaw's Lair (10%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 183,
+          "player": "暗雪",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 226,
+          "player": "Fane",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 263,
+          "player": "BrH",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 267,
+          "player": "大白",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 303,
+          "player": "旋木时光的link",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Khazix, Voidreaver",
+      "deckCount": 9,
+      "domains": [
+        "Body",
+        "Chaos"
+      ],
+      "champions": {
+        "Kha'Zix, Mutating Horror": 9
+      },
+      "avgUnits": 19.2,
+      "avgSpells": 18.6,
+      "avgGears": 1.2,
+      "avgTotal": 39,
+      "core": [
+        "Punch First (100%, avg 1.9x, Spell)",
+        "Grim Resolve (100%, avg 2.7x, Spell)",
+        "Void Assault (100%, avg 2.9x, Spell)"
+      ],
+      "standard": [
+        "Demacian Diplomat (78%, avg 3x, Unit)",
+        "Irresistible Faefolk (89%, avg 2.8x, Unit)",
+        "Vex, Apathetic (67%, avg 2.2x, Unit)",
+        "Rengar, Trophy Hunter (78%, avg 2.3x, Unit)",
+        "Sabotage (78%, avg 2x, Spell)",
+        "Ride the Wind (78%, avg 1.9x, Spell)",
+        "Stacked Deck (89%, avg 2.5x, Spell)"
+      ],
+      "flex": [
+        "Tideturner (56%, avg 1.6x, Unit)",
+        "First Mate (56%, avg 2.2x, Unit)",
+        "Fizz, Trickster (56%, avg 1.8x, Unit)",
+        "Akshan, Mischievous (33%, avg 1.7x, Unit)",
+        "Challenge (44%, avg 1.5x, Spell)",
+        "Star-Crossed (44%, avg 2.3x, Spell)",
+        "Abandon (56%, avg 1.2x, Spell)",
+        "Rebuke (44%, avg 1.3x, Spell)",
+        "Switcheroo (44%, avg 1.3x, Spell)",
+        "Nidalee, Cat Form (56%, avg 2.4x, Unit)",
+        "Qiyana, Victorious (33%, avg 2.3x, Unit)",
+        "Hard Bargain (56%, avg 1x, Spell)",
+        "Mister Root (33%, avg 2.7x, Unit)",
+        "Repulse (33%, avg 1x, Spell)"
+      ],
+      "tech": [
+        "Sinister Poro (11%, avg 2x, Unit)",
+        "Pit Rookie (11%, avg 2x, Unit)",
+        "Insightful Investigator (22%, avg 2x, Unit)",
+        "Master Yi, Tempered (11%, avg 2x, Unit)",
+        "Fae Dragon (11%, avg 2x, Unit)",
+        "Edge of Night (22%, avg 1.5x, Gear)",
+        "Flash (11%, avg 1x, Spell)",
+        "Evelynn, Entrancing (22%, avg 1x, Unit)",
+        "Treasure Hunter (22%, avg 2.5x, Unit)",
+        "Kha'Zix, Mutating Horror (11%, avg 2x, Unit)",
+        "Gust (22%, avg 3x, Spell)",
+        "Lucian, Merciless (11%, avg 3x, Unit)",
+        "Yasuo, Windrider (11%, avg 2x, Unit)",
+        "Last Rites (11%, avg 2x, Gear)",
+        "Conscription (11%, avg 2x, Spell)",
+        "Ruin Runner (11%, avg 1x, Unit)",
+        "Sett, Brawler (22%, avg 2x, Unit)",
+        "Invert Timelines (11%, avg 2x, Spell)",
+        "Kinkou Initiate (11%, avg 2x, Unit)",
+        "Pyke, Returned (11%, avg 2x, Unit)",
+        "Yone, Blademaster (11%, avg 1x, Unit)",
+        "Arachnoid Horror (11%, avg 2x, Unit)",
+        "Draven, Audacious (11%, avg 2x, Unit)",
+        "Spirit Wheel (22%, avg 2x, Gear)",
+        "Existential Dread (11%, avg 1x, Spell)",
+        "Isolate (11%, avg 2x, Spell)",
+        "Traveling Merchant (11%, avg 1x, Unit)",
+        "Boneshiver (11%, avg 2x, Gear)"
+      ],
+      "topBattlefields": [
+        "Monastery of Hirana (89%)",
+        "Forbidding Waste (78%)",
+        "Star Spring (78%)",
+        "Grove of the God-Willow (11%)",
+        "Sunken Temple (11%)",
+        "Targon's Peak (11%)",
+        "Zaun Warrens (11%)",
+        "The Arena's Greatest (11%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 10,
+          "player": "Ai",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 18,
+          "player": "Zugo",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 172,
+          "player": "墨染\\_京城第一纨绔",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 214,
+          "player": "GIT-马力",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 293,
+          "player": "苍蓝•族昌和",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Ivern, Green Father",
+      "deckCount": 7,
+      "domains": [
+        "Calm",
+        "Order"
+      ],
+      "champions": {
+        "Ivern, Nurturer": 3,
+        "Ivern, Friend to All": 4
+      },
+      "avgUnits": 22.1,
+      "avgSpells": 16.9,
+      "avgGears": 0,
+      "avgTotal": 39,
+      "core": [
+        "Mutated Mouser (100%, avg 2.6x, Unit)",
+        "Frisky Hunter (100%, avg 2.7x, Unit)"
+      ],
+      "standard": [
+        "Stalwart Poro (86%, avg 2.2x, Unit)",
+        "Trusty Ramhound (86%, avg 2.7x, Unit)",
+        "Loyal Poro (71%, avg 1.8x, Unit)",
+        "Ultrasoft Poro (71%, avg 1.8x, Unit)",
+        "Ivern, Friend to All (71%, avg 1.2x, Unit)",
+        "Vilemaw (71%, avg 1.2x, Unit)",
+        "Charm (86%, avg 1.5x, Spell)",
+        "Defy (86%, avg 3x, Spell)",
+        "Discipline (71%, avg 2.6x, Spell)",
+        "Emperor's Divide (71%, avg 1.8x, Spell)",
+        "Hidden Blade (71%, avg 2.2x, Spell)",
+        "Back Off (86%, avg 2x, Spell)",
+        "Daisy! (71%, avg 2x, Unit)"
+      ],
+      "flex": [
+        "Vi, Peacekeeper (43%, avg 2.3x, Unit)",
+        "Grand Strategem (57%, avg 1.5x, Spell)",
+        "Stalking Wolf (57%, avg 1.5x, Unit)",
+        "Friendship (57%, avg 2.5x, Spell)",
+        "Flurry of Feathers (57%, avg 2.3x, Spell)",
+        "Soaring Scout (57%, avg 1.3x, Unit)",
+        "Meditation (43%, avg 1x, Spell)",
+        "Ivern, Nurturer (43%, avg 2.3x, Unit)",
+        "Starhound (43%, avg 1x, Unit)"
+      ],
+      "tech": [
+        "Scuttle Crab (29%, avg 1x, Unit)",
+        "Salvage (29%, avg 1.5x, Spell)",
+        "Shadow's Call (29%, avg 1.5x, Spell)",
+        "Not So Fast (29%, avg 1.5x, Spell)",
+        "Thwonk! (29%, avg 1.5x, Spell)",
+        "Cull the Weak (29%, avg 1.5x, Spell)",
+        "Daring Poro (14%, avg 1x, Unit)",
+        "Lonely Poro (14%, avg 3x, Unit)",
+        "Crimson Pigeons (14%, avg 3x, Unit)",
+        "Galio, Indefatigable (14%, avg 1x, Unit)",
+        "Yuumi, Magical Cat (14%, avg 2x, Unit)",
+        "Ashe, Focused (14%, avg 1x, Unit)",
+        "Tactical Retreat (14%, avg 2x, Spell)",
+        "Nami, Headstrong (14%, avg 3x, Unit)",
+        "Azir, Sovereign (14%, avg 3x, Unit)",
+        "Blitzcrank, Impassive (14%, avg 2x, Unit)",
+        "Deathgrip (14%, avg 1x, Spell)"
+      ],
+      "topBattlefields": [
+        "Forbidding Waste (71%)",
+        "Vaults of Helia (71%)",
+        "Vilemaw's Lair (71%)",
+        "Rockfall Path (43%)",
+        "Zaun Warrens (14%)",
+        "Treasure Hoard (14%)",
+        "Aspirant's Climb (14%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 90,
+          "player": "TDF·贞德士泥鸭",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 233,
+          "player": "E1egy",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 279,
+          "player": "Atomic",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 314,
+          "player": "闲逛的小火把",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 463,
+          "player": "河豚",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Jhin, Virtuoso",
+      "deckCount": 7,
+      "domains": [
+        "Fury",
+        "Mind"
+      ],
+      "champions": {
+        "Jhin, Meticulous Killer": 7
+      },
+      "avgUnits": 15.6,
+      "avgSpells": 21.9,
+      "avgGears": 1.6,
+      "avgTotal": 39,
+      "core": [
+        "Plundering Poro (100%, avg 2.7x, Unit)",
+        "Thousand-Tailed Watcher (100%, avg 2.1x, Unit)",
+        "Sprite Burst (100%, avg 2.4x, Spell)",
+        "Time Warp (100%, avg 1.6x, Spell)"
+      ],
+      "standard": [
+        "Pouty Poro (71%, avg 2x, Unit)",
+        "Jhin, Meticulous Killer (86%, avg 1.7x, Unit)",
+        "Noxus Hopeful (71%, avg 2.6x, Unit)",
+        "Consult the Past (71%, avg 2.2x, Spell)",
+        "Curtain Call (86%, avg 2.8x, Spell)",
+        "Deadly Flourish (86%, avg 2.7x, Spell)",
+        "Rocket Barrage (86%, avg 2.2x, Spell)",
+        "Progress Day (86%, avg 2.2x, Spell)",
+        "Singularity (86%, avg 2x, Spell)",
+        "Unchecked Power (71%, avg 1x, Spell)"
+      ],
+      "flex": [
+        "Watchful Sentry (57%, avg 3x, Unit)",
+        "Hextech Anomaly (43%, avg 1.3x, Gear)",
+        "Stupefy (43%, avg 2x, Spell)",
+        "Downstage Dramatics (57%, avg 3x, Spell)",
+        "Frigid Touch (43%, avg 1x, Spell)",
+        "Square Up (57%, avg 1x, Spell)",
+        "Ekko, Recurrent (43%, avg 2.7x, Unit)",
+        "Ravenbloom Student (43%, avg 2x, Unit)",
+        "Brynhir Thundersong (57%, avg 1.5x, Unit)"
+      ],
+      "tech": [
+        "Bellows Breath (14%, avg 1x, Spell)",
+        "Piercing Light (29%, avg 1.5x, Spell)",
+        "Battering Ram (14%, avg 3x, Unit)",
+        "Seal of Insight (29%, avg 2x, Gear)",
+        "Falling Comet (14%, avg 2x, Spell)",
+        "Immortal Phoenix (14%, avg 1x, Unit)",
+        "Vi, Destructive (14%, avg 1x, Unit)",
+        "Pyke, Dockside Butcher (14%, avg 1x, Unit)",
+        "Towering Pairofant (14%, avg 1x, Unit)",
+        "Sprite Fountain (29%, avg 1x, Gear)",
+        "Sun Disc (14%, avg 1x, Gear)",
+        "Retreat (14%, avg 1x, Spell)",
+        "Upstage Comedy (14%, avg 1x, Spell)",
+        "Gem Jammer (14%, avg 1x, Unit)",
+        "Kai'Sa, Survivor (14%, avg 2x, Unit)",
+        "Cleave (14%, avg 3x, Spell)",
+        "Falling Star (14%, avg 1x, Spell)",
+        "Blind Fury (14%, avg 1x, Spell)"
+      ],
+      "topBattlefields": [
+        "Frozen Fortress (71%)",
+        "Forgotten Library (57%)",
+        "Aspirant's Climb (43%)",
+        "Rockfall Path (43%)",
+        "Void Gate (29%)",
+        "Forbidding Waste (29%)",
+        "Sigil of the Storm (14%)",
+        "Treasure Hoard (14%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 153,
+          "player": "QW-zor",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 187,
+          "player": "小窝-心音",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 234,
+          "player": "Tree",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 249,
+          "player": "赛高",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 422,
+          "player": "TGK-TENET",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Poppy, Keeper of the Hammer",
+      "deckCount": 7,
+      "domains": [
+        "Body",
+        "Order"
+      ],
+      "champions": {
+        "Poppy, Paragon": 7
+      },
+      "avgUnits": 11.4,
+      "avgSpells": 21.4,
+      "avgGears": 6.1,
+      "avgTotal": 39,
+      "core": [
+        "Sacrifice (100%, avg 2.4x, Spell)"
+      ],
+      "standard": [
+        "Harnessed Dragon (71%, avg 2.6x, Unit)",
+        "Rift Herald (71%, avg 2.4x, Unit)",
+        "Elder Dragon (71%, avg 3x, Unit)",
+        "Forge of the Future (71%, avg 2.8x, Gear)",
+        "Dazzling Aurora (71%, avg 3x, Gear)",
+        "Flurry of Blades (71%, avg 3x, Spell)",
+        "Mobilize (71%, avg 3x, Spell)",
+        "Shadow's Call (71%, avg 2.2x, Spell)",
+        "Catalyst of Aeons (71%, avg 2.8x, Spell)",
+        "Divine Judgment (71%, avg 1.6x, Spell)"
+      ],
+      "flex": [
+        "Sabotage (43%, avg 1.3x, Spell)",
+        "Confront (57%, avg 3x, Spell)",
+        "Cull the Weak (57%, avg 2.8x, Spell)",
+        "The Ruination (57%, avg 1.8x, Spell)",
+        "Rengar, Trophy Hunter (43%, avg 1.7x, Unit)",
+        "Shepherd's Heirloom (43%, avg 2.3x, Gear)",
+        "Challenge (43%, avg 2x, Spell)"
+      ],
+      "tech": [
+        "Carrion Dredger (14%, avg 1x, Unit)",
+        "Demacian Diplomat (14%, avg 2x, Unit)",
+        "Dragonsoul Sage (14%, avg 3x, Unit)",
+        "First Mate (29%, avg 2.5x, Unit)",
+        "Akshan, Mischievous (29%, avg 1x, Unit)",
+        "Fiora, Victorious (29%, avg 2x, Unit)",
+        "Vi, Peacekeeper (29%, avg 1.5x, Unit)",
+        "Voracious Gromp (14%, avg 2x, Unit)",
+        "Ruin Runner (14%, avg 2x, Unit)",
+        "Trinity Force (14%, avg 2x, Gear)",
+        "Punch First (29%, avg 2x, Spell)",
+        "Unyielding Spirit (29%, avg 1.5x, Spell)",
+        "Grim Resolve (29%, avg 2.5x, Spell)",
+        "Keeper's Verdict (29%, avg 2x, Spell)",
+        "Tactical Retreat (14%, avg 3x, Spell)",
+        "Vanguard Armory (14%, avg 2x, Gear)",
+        "Rally the Troops (14%, avg 2x, Spell)",
+        "Enthralling Protector (14%, avg 3x, Unit)",
+        "Gemhand Hunter (14%, avg 3x, Unit)",
+        "Pit Rookie (14%, avg 2x, Unit)",
+        "Master Yi, Tempered (14%, avg 3x, Unit)",
+        "B.F. Sword (14%, avg 3x, Gear)",
+        "Deathgrip (14%, avg 1x, Spell)",
+        "Facebreaker (14%, avg 2x, Spell)",
+        "Hidden Blade (14%, avg 2x, Spell)",
+        "Repulse (14%, avg 3x, Spell)",
+        "Salvage (14%, avg 1x, Spell)"
+      ],
+      "topBattlefields": [
+        "Aspirant's Climb (71%)",
+        "Sigil of the Storm (71%)",
+        "Forgotten Monument (43%)",
+        "Reckoner's Arena (29%)",
+        "Star Spring (14%)",
+        "Sunken Temple (14%)",
+        "Vilemaw's Lair (14%)",
+        "Gardens of Becoming (14%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 221,
+          "player": "TUB",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 228,
+          "player": "这对嘛",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 258,
+          "player": "Shyota",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 382,
+          "player": "周哥",
+          "tournament": "S3 Xi'an Regional Open"
+        },
+        {
+          "placement": 407,
+          "player": "雪拉比",
+          "tournament": "S3 Xi'an Regional Open"
+        }
+      ]
+    },
+    {
+      "legend": "Kai'Sa, Daughter of the Void",
+      "deckCount": 6,
+      "domains": [
+        "Fury",
+        "Mind"
+      ],
+      "champions": {
+        "Kai'Sa, Survivor": 6
+      },
+      "avgUnits": 17.7,
+      "avgSpells": 19.8,
+      "avgGears": 0,
+      "avgTotal": 39,
+      "core": [
+        "Hextech Ray (100%, avg 2.8x, Spell)",
+        "Falling Star (100%, avg 3x, Spell)",
+        "Lecturing Yordle (100%, avg 2.7x, Unit)",
+        "Stupefy (100%, avg 3x, Spell)",
+        "Watchful Sentry (100%, avg 3x, Unit)",
+        "Thousand-Tailed Watcher (100%, avg 2.8x, Unit)",
+        "Plundering Poro (100%, avg 2.8x, Unit)",
+        "Noxus Hopeful (100%, avg 2.5x, Unit)",
+        "Time Warp (100%, avg 2.2x, Spell)",
+        "Ferrous Forerunner (100%, avg 2.5x, Unit)",
+        "Darius, Trifarian (100%, avg 1.5x, Unknown)"
+      ],
+      "standard": [
+        "Singularity (67%, avg 1.5x, Spell)",
+        "Piercing Light (83%, avg 1.6x, Spell)",
+        "Smoke Screen (83%, avg 1.8x, Spell)",
+        "Progress Day (83%, avg 1x, Spell)",
+        "Bellows Breath (83%, avg 1.4x, Spell)"
+      ],
+      "flex": [
+        "Pouty Poro (33%, avg 2x, Unit)",
+        "Get Excited! (50%, avg 1.7x, Spell)",
+        "Retreat (50%, avg 1x, Spell)",
+        "Gem Jammer (33%, avg 1x, Unit)",
+        "Rocket Barrage (50%, avg 1.3x, Spell)",
+        "Cleave (33%, avg 2x, Spell)"
+      ],
+      "tech": [
+        "Shakedown (17%, avg 1x, Spell)",
+        "Void Seeker (17%, avg 1x, Spell)",
+        "Forecaster (17%, avg 2x, Unit)"
+      ],
+      "topBattlefields": [
+        "Void Gate (100%)",
+        "Vilemaw's Lair (50%)",
+        "Targon's Peak (33%)",
+        "The Candlelit Sanctum (33%)",
+        "Zaun Warrens (17%)",
+        "Ravenbloom Conservatory (17%)",
+        "Seat of Power (17%)",
+        "Treasure Hoard (17%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 5,
+          "player": "Frosty",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 108,
+          "player": "FortuneNate",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 134,
+          "player": "Bill Positivity",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 175,
+          "player": "Suljib",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 260,
+          "player": "ShahPanj",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    },
+    {
+      "legend": "Rek'Sai, Void Burrower",
+      "deckCount": 4,
+      "domains": [
+        "Fury",
+        "Order"
+      ],
+      "champions": {
+        "Rek'Sai, Breacher": 4
+      },
+      "avgUnits": 24.5,
+      "avgSpells": 9.8,
+      "avgGears": 3.8,
+      "avgTotal": 39,
+      "core": [
+        "Vanguard Captain (100%, avg 3x, Unit)"
+      ],
+      "standard": [
+        "Noxus Hopeful (75%, avg 3x, Unit)",
+        "Cull the Weak (75%, avg 2.3x, Spell)",
+        "Faithful Manufactor (75%, avg 3x, Unit)",
+        "Undertitan (75%, avg 3x, Unit)",
+        "Void Rush (75%, avg 3x, Spell)",
+        "Daring Poro (75%, avg 2.7x, Unit)",
+        "Battering Ram (75%, avg 2.7x, Unit)",
+        "Ferrous Forerunner (75%, avg 2x, Unit)",
+        "Seal of Unity (75%, avg 3x, Gear)"
+      ],
+      "flex": [
+        "Honest Broker (50%, avg 3x, Unit)",
+        "Pouty Poro (50%, avg 2.5x, Unit)",
+        "Deathgrip (50%, avg 2x, Spell)",
+        "Falling Star (50%, avg 1x, Spell)",
+        "Rally the Troops (50%, avg 2x, Spell)",
+        "Hidden Blade (50%, avg 3x, Spell)",
+        "Void Drone (50%, avg 3x, Unit)"
+      ],
+      "tech": [
+        "Blood Rush (25%, avg 3x, Spell)",
+        "Legion Rearguard (25%, avg 2x, Unit)",
+        "Grand Strategem (25%, avg 1x, Spell)",
+        "Long Sword (25%, avg 1x, Gear)",
+        "Rek'Sai, Breacher (25%, avg 1x, Unknown)",
+        "B.F. Sword (25%, avg 2x, Gear)",
+        "Baited Hook (25%, avg 3x, Gear)",
+        "Bushwhack (25%, avg 1x, Spell)",
+        "Glasc Mixologist (25%, avg 3x, Unit)",
+        "Harnessed Dragon (25%, avg 3x, Unit)",
+        "Karthus, Eternal (25%, avg 3x, Unknown)",
+        "Piercing Light (25%, avg 1x, Spell)",
+        "Soaring Scout (25%, avg 3x, Unit)",
+        "Spectral Matron (25%, avg 1x, Unit)",
+        "Unsung Hero (25%, avg 1x, Unit)",
+        "Trusty Ramhound (25%, avg 2x, Unit)",
+        "Void Hatchling (25%, avg 3x, Unit)",
+        "Trifarian Gloryseeker (25%, avg 2x, Unit)",
+        "Salvage (25%, avg 1x, Spell)"
+      ],
+      "topBattlefields": [
+        "Trifarian War Camp (100%)",
+        "The Arena's Greatest (75%)",
+        "The Candlelit Sanctum (75%)",
+        "Veiled Temple (25%)",
+        "Power Nexus (25%)"
+      ],
+      "topPlacements": [
+        {
+          "placement": 90,
+          "player": "Chris R",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 147,
+          "player": "DizzyJacob2",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 198,
+          "player": "BladerMagician",
+          "tournament": "Atlanta Regional Qualifier"
+        },
+        {
+          "placement": 573,
+          "player": "Victor L",
+          "tournament": "Atlanta Regional Qualifier"
+        }
+      ]
+    }
+  ],
+  "domainPairs": [
+    {
+      "pair": "Calm/Chaos",
+      "deckCount": 176,
+      "legends": [
+        "Irelia, Blade Dancer",
+        "Vex, Gloomist",
+        "Yasuo, Unforgiven"
+      ],
+      "staples": [
+        "Defy (100%)",
+        "Discipline (99%)",
+        "Charm (89%)",
+        "En Garde (89%)",
+        "Boots of Swiftness (88%)",
+        "Not So Fast (82%)",
+        "Ride the Wind (82%)",
+        "Stellacorn Herder (80%)",
+        "Guardian Angel (75%)",
+        "Defiant Dance (73%)",
+        "Tideturner (71%)",
+        "Stacked Deck (62%)",
+        "Zhonya's Hourglass (59%)",
+        "Star-Crossed (50%)",
+        "Lonely Poro (45%)"
+      ]
+    },
+    {
+      "pair": "Body/Calm",
+      "deckCount": 165,
+      "legends": [
+        "Jax, Grandmaster at Arms",
+        "Lee Sin, Blind Monk",
+        "Master Yi, Wuju Bladesman",
+        "Master Yi, Wuju Master"
+      ],
+      "staples": [
+        "Defy (99%)",
+        "Discipline (96%)",
+        "Charm (82%)",
+        "Zhonya's Hourglass (79%)",
+        "First Mate (71%)",
+        "Punch First (67%)",
+        "En Garde (61%)",
+        "Lonely Poro (55%)",
+        "Challenge (55%)",
+        "Tasty Faefolk (52%)",
+        "Guardian Angel (49%)",
+        "Scuttle Crab (42%)",
+        "Sabotage (40%)",
+        "Vilemaw (40%)",
+        "Whiteflame Protector (38%)"
+      ]
+    },
+    {
+      "pair": "Chaos/Fury",
+      "deckCount": 148,
+      "legends": [
+        "Annie, Dark Child",
+        "Draven, Glorious Executioner",
+        "Jinx, Loose Cannon",
+        "Pyke, Bloodharbor Ripper"
+      ],
+      "staples": [
+        "Stacked Deck (98%)",
+        "Rebuke (83%)",
+        "Noxus Hopeful (80%)",
+        "Ride the Wind (76%)",
+        "Kai'Sa, Survivor (72%)",
+        "Tideturner (70%)",
+        "Hard Bargain (60%)",
+        "Darius, Trifarian (58%)",
+        "Ferrous Forerunner (55%)",
+        "Overzealous Fan (55%)",
+        "Falling Star (54%)",
+        "Traveling Merchant (53%)",
+        "Spinning Axe (52%)",
+        "Fight or Flight (51%)",
+        "Cleave (45%)"
+      ]
+    },
+    {
+      "pair": "Fury/Mind",
+      "deckCount": 142,
+      "legends": [
+        "Jhin, Virtuoso",
+        "Kai'sa, Daughter of the Void",
+        "Kai'Sa, Daughter of the Void",
+        "Rumble, Mechanized Menace"
+      ],
+      "staples": [
+        "Thousand-Tailed Watcher (98%)",
+        "Stupefy (96%)",
+        "Falling Star (92%)",
+        "Retreat (83%)",
+        "Watchful Sentry (82%)",
+        "Hextech Ray (81%)",
+        "Time Warp (80%)",
+        "Noxus Hopeful (78%)",
+        "Lecturing Yordle (77%)",
+        "Darius, Trifarian (70%)",
+        "Pouty Poro (66%)",
+        "Cleave (65%)",
+        "Ravenbloom Student (61%)",
+        "Icathian Rain (54%)",
+        "Void Seeker (51%)"
+      ]
+    },
+    {
+      "pair": "Mind/Order",
+      "deckCount": 112,
+      "legends": [
+        "Leblanc, Deceiver",
+        "Lux, Lady of Luminosity",
+        "Renata Glasc, Chem-Baroness",
+        "Viktor, Herald of the Arcane"
+      ],
+      "staples": [
+        "Cull the Weak (89%)",
+        "Hidden Blade (82%)",
+        "Thousand-Tailed Watcher (75%)",
+        "Singularity (63%)",
+        "Imperial Decree (57%)",
+        "Stupefy (55%)",
+        "Salvage (52%)",
+        "Bellows Breath (51%)",
+        "Honest Broker (50%)",
+        "Wages of Pain (48%)",
+        "Soaring Scout (46%)",
+        "Watchful Sentry (38%)",
+        "Glasc Mixologist (31%)",
+        "Sacrifice (31%)",
+        "Time Warp (31%)"
+      ]
+    },
+    {
+      "pair": "Body/Order",
+      "deckCount": 105,
+      "legends": [
+        "Fiora, Grand Duelist",
+        "Garen, Might of Demacia",
+        "Poppy, Keeper of the Hammer",
+        "Sett, The Boss"
+      ],
+      "staples": [
+        "Challenge (82%)",
+        "Hidden Blade (74%)",
+        "Pit Rookie (71%)",
+        "First Mate (71%)",
+        "Sabotage (70%)",
+        "Punch First (70%)",
+        "Call to Glory (65%)",
+        "Fiora, Victorious (53%)",
+        "Akshan, Mischievous (50%)",
+        "Sacrifice (46%)",
+        "Sea Monkey (42%)",
+        "Showstopper (41%)",
+        "Riposte (39%)",
+        "Harnessed Dragon (37%)",
+        "Sett, Brawler (35%)"
+      ]
+    },
+    {
+      "pair": "Chaos/Mind",
+      "deckCount": 100,
+      "legends": [
+        "Diana, Scorn of the Moon",
+        "Ezreal, Prodigal Explorer",
+        "Teemo, Swift Scout"
+      ],
+      "staples": [
+        "Stacked Deck (98%)",
+        "Stupefy (88%)",
+        "Gust (80%)",
+        "Fizz, Trickster (73%)",
+        "Thousand-Tailed Watcher (73%)",
+        "Ravenbloom Student (66%)",
+        "Ride the Wind (61%)",
+        "Star-Crossed (61%)",
+        "Tideturner (58%)",
+        "Hard Bargain (50%)",
+        "Vex, Apathetic (47%)",
+        "Wages of Pain (42%)",
+        "Hwei, Brooding Painter (40%)",
+        "Flash (39%)",
+        "Bellows Breath (38%)"
+      ]
+    },
+    {
+      "pair": "Body/Chaos",
+      "deckCount": 88,
+      "legends": [
+        "Khazix, Voidreaver",
+        "Miss Fortune, Bounty Hunter",
+        "Sivir, Battle Mistress"
+      ],
+      "staples": [
+        "Stacked Deck (99%)",
+        "Sabotage (94%)",
+        "Dazzling Aurora (81%)",
+        "Gust (80%)",
+        "Catalyst of Aeons (80%)",
+        "Mobilize (77%)",
+        "Mindsplitter (74%)",
+        "Last Rites (73%)",
+        "Challenge (61%)",
+        "Invert Timelines (57%)",
+        "Elder Dragon (52%)",
+        "Scryer's Bloom (52%)",
+        "Lunar Boon (51%)",
+        "Flurry of Blades (48%)",
+        "Treasure Trove (47%)"
+      ]
+    },
+    {
+      "pair": "Calm/Mind",
+      "deckCount": 83,
+      "legends": [
+        "Ahri, Nine-Tailed Fox",
+        "Lillia, Bashful Bloom",
+        "Ornn, Fire Below the Mountain"
+      ],
+      "staples": [
+        "Defy (98%)",
+        "Thousand-Tailed Watcher (87%)",
+        "Charm (72%)",
+        "Discipline (72%)",
+        "Ravenbloom Student (57%)",
+        "Stupefy (53%)",
+        "Not So Fast (46%)",
+        "Zhonya's Hourglass (39%)",
+        "Emperor's Divide (39%)",
+        "Sprite Fountain (39%)",
+        "Sprite Burst (37%)",
+        "Consult the Past (34%)",
+        "Scuttle Crab (33%)",
+        "En Garde (31%)",
+        "Singularity (29%)"
+      ]
+    },
+    {
+      "pair": "Calm/Order",
+      "deckCount": 71,
+      "legends": [
+        "Azir, Emperor of the Sands",
+        "Ivern, Green Father",
+        "Leona, Radiant Dawn"
+      ],
+      "staples": [
+        "Defy (96%)",
+        "Discipline (94%)",
+        "Hidden Blade (82%)",
+        "B.F. Sword (63%)",
+        "Charm (63%)",
+        "Salvage (54%)",
+        "Brutalizer (52%)",
+        "Doran's Shield (51%)",
+        "Arise! (51%)",
+        "Eye of the Herald (49%)",
+        "Vi, Peacekeeper (49%)",
+        "Deathgrip (45%)",
+        "Guards! (45%)",
+        "Desert's Call (42%)",
+        "Cull the Weak (41%)"
+      ]
+    },
+    {
+      "pair": "Body/Fury",
+      "deckCount": 61,
+      "legends": [
+        "Lucian, Purifier",
+        "Rengar, Pridestalker",
+        "Volibear, Relentless Storm"
+      ],
+      "staples": [
+        "Challenge (89%)",
+        "Sabotage (74%)",
+        "Punch First (70%)",
+        "Confront (52%)",
+        "Kai'Sa, Survivor (51%)",
+        "First Mate (49%)",
+        "Kadregrin the Infernal (44%)",
+        "Brynhir Thundersong (43%)",
+        "Ferrous Forerunner (41%)",
+        "Mobilize (39%)",
+        "Doran's Blade (38%)",
+        "Relentless Pursuit (38%)",
+        "Sky Splitter (34%)",
+        "Trinity Force (33%)",
+        "Long Sword (30%)"
+      ]
+    },
+    {
+      "pair": "Fury/Order",
+      "deckCount": 51,
+      "legends": [
+        "Darius, Hand of Noxus",
+        "Reksai, Void Burrower",
+        "Rek'Sai, Void Burrower",
+        "Vi, Piltover Enforcer"
+      ],
+      "staples": [
+        "Hidden Blade (88%)",
+        "Noxus Hopeful (82%)",
+        "Honest Broker (65%)",
+        "Falling Star (65%)",
+        "Cull the Weak (59%)",
+        "Ferrous Forerunner (53%)",
+        "Deathgrip (47%)",
+        "Brynhir Thundersong (43%)",
+        "Void Rush (41%)",
+        "Vanguard Captain (37%)",
+        "Soaring Scout (35%)",
+        "Long Sword (33%)",
+        "Kai'Sa, Survivor (33%)",
+        "Seal of Unity (31%)",
+        "Carrion Dredger (31%)"
+      ]
+    }
+  ],
+  "globalTopBattlefields": [
+    "Sunken Temple (20%)",
+    "Aspirant's Climb (20%)",
+    "Targon's Peak (16%)",
+    "Zaun Warrens (16%)",
+    "Obelisk of Power (15%)",
+    "Vilemaw's Lair (14%)",
+    "Sigil of the Storm (13%)",
+    "The Arena's Greatest (13%)",
+    "The Dreaming Tree (13%)",
+    "Void Gate (10%)",
+    "Monastery of Hirana (10%)",
+    "Trifarian War Camp (9%)",
+    "Grove of the God-Willow (9%)",
+    "Abandoned Hall (9%)",
+    "Star Spring (8%)"
+  ],
+  "globalTopCards": [
+    "Defy (489 decks, 38%)",
+    "Discipline (461 decks, 35%)",
+    "Stacked Deck (440 decks, 34%)",
+    "Charm (397 decks, 30%)",
+    "Thousand-Tailed Watcher (369 decks, 28%)",
+    "Ride the Wind (343 decks, 26%)",
+    "Stupefy (331 decks, 25%)",
+    "En Garde (296 decks, 23%)",
+    "Tideturner (292 decks, 22%)",
+    "Noxus Hopeful (286 decks, 22%)",
+    "Challenge (285 decks, 22%)",
+    "Zhonya's Hourglass (284 decks, 22%)",
+    "Hidden Blade (273 decks, 21%)",
+    "Sabotage (268 decks, 21%)",
+    "Guardian Angel (263 decks, 20%)",
+    "Punch First (262 decks, 20%)",
+    "Not So Fast (260 decks, 20%)",
+    "Falling Star (258 decks, 20%)",
+    "Rebuke (242 decks, 19%)",
+    "Gust (240 decks, 18%)",
+    "First Mate (230 decks, 18%)",
+    "Hard Bargain (208 decks, 16%)",
+    "Ravenbloom Student (207 decks, 16%)",
+    "Kai'Sa, Survivor (205 decks, 16%)",
+    "Lonely Poro (202 decks, 16%)",
+    "Darius, Trifarian (201 decks, 15%)",
+    "Scuttle Crab (197 decks, 15%)",
+    "Ferrous Forerunner (187 decks, 14%)",
+    "Stellacorn Herder (182 decks, 14%)",
+    "Time Warp (178 decks, 14%)"
+  ]
+}

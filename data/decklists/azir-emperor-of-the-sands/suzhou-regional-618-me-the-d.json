@@ -1,0 +1,204 @@
+{
+  "id": "suzhou-regional-618-me-the-d",
+  "legend": "Azir, Emperor of the Sands",
+  "champion": "Azir, Sovereign",
+  "player": "Meаtheаd",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 618,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Azir, Sovereign",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Doran's Shield",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eye of the Herald",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soul Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Brutalizer",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Arise!",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm"
+    }
+  ],
+  "runes": {
+    "Calm": 5,
+    "Order": 7
+  },
+  "battlefields": [
+    "Ornn's Forge",
+    "Rockfall Path",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Soul Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Flurry of Feathers",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 4,
+    "spellCount": 22,
+    "gearCount": 14
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-sha-huang-su-zhou-153637"
+}

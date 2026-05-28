@@ -1,0 +1,191 @@
+{
+  "id": "atlanta-rq-14-w-si-nsw-g",
+  "legend": "Draven, Glorious Executioner",
+  "champion": "Draven, Showboat",
+  "player": "WаsiаnSwаg",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 14,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "S",
+  "domains": [
+    "Fury",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Cleave",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "draw"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Overzealous Fan",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Spinning Axe",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Beast Below",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Targon's Peak",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    }
+  ],
+  "notes": ""
+}

@@ -1,0 +1,44 @@
+{
+  "legendName": "Vex, Gloomist",
+  "legendId": "UNL-193",
+  "domains": ["Calm", "Chaos"],
+  "set": "Unleashed",
+  "tier": 2,
+  "archetype": "Hold-control / Attrition & disruption",
+  "legendAbility": "Hold-oriented avec des outils pour ramener des unités en showdown, les renvoyer en base, ou stun les attaquants.",
+  "gameplan": {
+    "earlyGame": "Développer UNL-150 et OGN-073 (4-cost clés) sur un battlefield. Les garder en vie à tout prix.",
+    "midGame": "Utiliser les outils Calm (OGN-077, OGN-058, OGN-045) pour protéger. UNL-141 et UNL-036 en staples cheap.",
+    "lateGame": "Win condition pas encore définie — certains builds Hidden, d'autres high-cost. Le deck cherche encore l'optimal.",
+    "winCondition": "Attrition — épuiser l'adversaire via le hold continu + réponses à tout"
+  },
+  "keyCards": [
+    { "name": "UNL-150", "id": "UNL-150", "cost": 4, "role": "Unité clé #1 — très difficile à déloger d'un battlefield." },
+    { "name": "OGN-073", "id": "OGN-073", "cost": 4, "role": "Unité clé #2 — duo avec UNL-150 pour verrouiller un battlefield." },
+    { "name": "OGN-077", "id": "OGN-077", "role": "Protection d'unités — multiple copies." },
+    { "name": "OGN-058", "id": "OGN-058", "role": "Support Calm staple." },
+    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort Calm staple." },
+    { "name": "UNL-141", "id": "UNL-141", "role": "Unité cheap staple en hold strategy." },
+    { "name": "UNL-036", "id": "UNL-036", "role": "Unité cheap qui a prouvé sa valeur en hold." }
+  ],
+  "strengths": [
+    "Calm + Chaos = excellent mix support + disruption",
+    "Top 4 Sydney — performance surprise solide",
+    "Build probablement trouvé — peu de variation entre les listes chinoises et Sydney",
+    "Meilleur départ pour un hold strategy depuis le début de Riftbound"
+  ],
+  "weaknesses": [
+    "Manque de raw power pour push quand l'occasion se présente",
+    "Win condition late game pas encore définie — builds variés",
+    "Historiquement les hold legends non-Yi ne gagnent pas les tournois"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "preRegionals": "5 Top 8",
+    "regionalResults": "Top 4 Sydney (12-2-1)",
+    "sydneyStats": { "winRate": "53%", "matches": 336, "conversionRate": "20%" }
+  },
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/vex-gloomist-guide/"
+}

@@ -1,0 +1,65 @@
+{
+  "legendName": "Ahri, Nine-Tailed Fox",
+  "legendId": null,
+  "domains": ["Calm", "Mind"],
+  "set": "Unleashed",
+  "tier": 2,
+  "archetype": "Spell Control / Evasion",
+  "legendAbility": "Synergise avec les spells — génère de la valeur à chaque sort lancé, contrôle le board et finit via tempo de spells.",
+  "gameplan": {
+    "earlyGame": "Poser Ravenbloom Student et des petites unités. Accumuler des spells en main. Charm et Back Off pour tempo.",
+    "midGame": "Thousand-Tailed Watcher comme menace principale. Discipline + Defy pour protéger le board et repousser les attaques.",
+    "lateGame": "Emperor's Divide pour closer. Vilemaw et Blitzcrank en finishers alternatifs. Stupefy et Not So Fast pour contrôler.",
+    "winCondition": "Contrôle spell-heavy — submerge l'adversaire de réponses et conquiert via board advantage"
+  },
+  "keyCards": [
+    { "name": "Defy", "role": "Core — protection universelle, jouée dans 100% des builds à 2.8x avg." },
+    { "name": "Thousand-Tailed Watcher", "role": "Core — menace principale, 96% des builds." },
+    { "name": "Discipline", "role": "Standard — removal/combat trick, 88% à 3x." },
+    { "name": "Back Off", "role": "Standard — bounce/tempo, 72% à 2.2x." },
+    { "name": "Emperor's Divide", "role": "Standard — finisher spell, 72% à 1.7x." },
+    { "name": "Charm", "role": "Standard — CC signature d'Ahri, 68% à 1.7x." },
+    { "name": "Zhonya's Hourglass", "role": "Standard — protection gear, 68% à 2.2x." },
+    { "name": "Ravenbloom Student", "role": "Standard — unité early game, 64% à 2.8x." },
+    { "name": "Stupefy", "role": "Flex — disruption, 56% à 2.6x." },
+    { "name": "Vilemaw", "role": "Flex — finisher alternatif, 56% à 1.5x." },
+    { "name": "Blitzcrank, Impassive", "role": "Flex — removal sur pattes, 52% à 1.5x." },
+    { "name": "Not So Fast", "role": "Flex — counter-spell, 52% à 1.5x." }
+  ],
+  "champions": {
+    "Ahri, Inquisitive": { "usage": "76%", "role": "Champion principal — synergise avec le gameplan spell-heavy." },
+    "Ahri, Alluring": { "usage": "24%", "role": "Variante agressive — focus sur le combat et l'évasion." }
+  },
+  "topBattlefields": [
+    "Grove of the God-Willow (52%)",
+    "Ravenbloom Conservatory (24%)",
+    "Trifarian War Camp (24%)",
+    "Startipped Peak (20%)",
+    "Star Spring (20%)"
+  ],
+  "strengths": [
+    "Spell-heavy (19 spells avg) — beaucoup de réponses et de flexibilité",
+    "Charm + Back Off = tempo excellent contre les decks agressifs",
+    "Diversité de flex slots — adaptable au méta local",
+    "25 decks dans le pool, montée de T5 à T2 post-Xi'an"
+  ],
+  "weaknesses": [
+    "Peu de gears (3.4 avg) — vulnérable aux stratégies anti-spell",
+    "Core étroit (2 cartes seulement) — beaucoup de variance entre builds",
+    "Pas de Top 8 majeur encore — best placement 31st Atlanta RQ",
+    "Dépendante des matchups — moins bonne contre les decks très rapides"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "deckCount": 25,
+    "bestPlacements": [
+      { "placement": "31st", "player": "Teh Bestest One", "tournament": "Atlanta RQ" },
+      { "placement": "68th", "player": "白泽", "tournament": "S3 Xi'an Regional Open" },
+      { "placement": "76th", "player": "Brennan D", "tournament": "Atlanta RQ" }
+    ]
+  },
+  "difficulty": "Élevé",
+  "beginnerFriendly": false,
+  "sourceUrl": null,
+  "dataSource": "meta-analysis.json — 25 decklists (Xi'an + Atlanta + Sydney)"
+}

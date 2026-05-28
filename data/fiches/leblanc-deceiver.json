@@ -1,0 +1,43 @@
+{
+  "legendName": "LeBlanc, Deceiver",
+  "legendId": "UNL-199",
+  "domains": ["Mind", "Order"],
+  "set": "Unleashed",
+  "tier": 1,
+  "archetype": "Value-engine / Deathknell synergy",
+  "legendAbility": "Crée des réflexions temporaires destinées à mourir. Chaque mort trigger Deathknell = draw, runes, invocations, removals.",
+  "gameplan": {
+    "earlyGame": "Trouver UNL-172 (ressources infinies) + OGN-236 (doit être retiré avant tout Deathknell).",
+    "midGame": "Avec le duo en place, liberté totale. UNL-200 pour copier/remove. OGN-209 pour removal avec unités jetables.",
+    "lateGame": "OGN-011 pour push. UNL-176 pour hold. Variante OGN-242 en slow build (Sydney top 8).",
+    "winCondition": "Deathknell engine inarrêtable — value infinie une fois UNL-172 + OGN-236 posés"
+  },
+  "keyCards": [
+    { "name": "UNL-172", "id": "UNL-172", "role": "Backbone #1 — ne jamais manquer de ressources." },
+    { "name": "OGN-236", "id": "OGN-236", "role": "Backbone #2 — DOIT être retiré avant tout Deathknell, sinon bonus massif." },
+    { "name": "UNL-200", "id": "UNL-200", "role": "Versatile — value sur propres unités OU removal en copiant l'unité adverse." },
+    { "name": "OGN-209", "id": "OGN-209", "role": "Removal fantastique avec plein de réflexions jetables." },
+    { "name": "OGN-011", "id": "OGN-011", "role": "Closer — push pour la victoire." },
+    { "name": "UNL-176", "id": "UNL-176", "role": "Sécurisation — verrouille un battlefield." },
+    { "name": "OGN-242", "id": "OGN-242", "role": "Variante slow (Sydney) — première apparition de ce build." }
+  ],
+  "strengths": [
+    "Seule légende Deathknell — unique et difficile à cibler",
+    "Value engine inarrêtable avec UNL-172 + OGN-236",
+    "Réflexions alimentent naturellement le moteur"
+  ],
+  "weaknesses": [
+    "Synergy limite le deckbuilding",
+    "Build connu de tous — doit trouver des wrinkles (OGN-234, SFD-177 mouvement)",
+    "Conversion rate 18.2% à Sydney — en dessous des autres Tier 1"
+  ],
+  "competitiveResults": {
+    "tier": 1,
+    "preRegionals": "2 Wins / 14 Top 8",
+    "regionalResults": "Top 8 Sydney (12-3-0)",
+    "sydneyStats": { "winRate": "53%", "matches": 539, "conversionRate": "18.2%" }
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": true,
+  "sourceUrl": "https://riftbound.gg/leblanc-deceiver-guide/"
+}

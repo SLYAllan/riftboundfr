@@ -1,0 +1,177 @@
+{
+  "id": "atlanta-rq-29-keenan-x",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "Keenan X",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 29,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "S",
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "draw"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Targon's Peak",
+    "Sunken Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "notes": ""
+}

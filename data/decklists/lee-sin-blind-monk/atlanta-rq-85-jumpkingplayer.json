@@ -1,0 +1,184 @@
+{
+  "id": "atlanta-rq-85-jumpkingplayer",
+  "legend": "Lee Sin, Blind Monk",
+  "champion": "Lee Sin, Centered",
+  "player": "JumpKingPlayer",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 85,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "C",
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 4,
+      "role": "equipment"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 1,
+      "role": "tech"
+    },
+    {
+      "name": "Simian Ancestor",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Calm": 5
+  },
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Monastery of Hirana",
+    "Sunken Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 3,
+      "role": "flex"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 1,
+      "role": "tech"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Janna, Savior",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "notes": ""
+}

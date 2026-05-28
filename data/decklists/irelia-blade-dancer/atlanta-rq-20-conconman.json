@@ -1,0 +1,191 @@
+{
+  "id": "atlanta-rq-20-conconman",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "Conconman",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 20,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "S",
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "draw"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Targon's Peak",
+    "Sunken Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    }
+  ],
+  "notes": ""
+}

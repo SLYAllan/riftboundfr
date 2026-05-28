@@ -1,0 +1,198 @@
+{
+  "id": "atlanta-rq-19-nashun",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Scout",
+  "player": "Nashun",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 19,
+  "set": "Spiritforged",
+  "archetype": "midrange",
+  "tier": "B",
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Beast Below",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Black Market Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Ember Monk",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 4,
+      "role": "draw"
+    },
+    {
+      "name": "Guerilla Warfare",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "removal"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "draw"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 10,
+      "role": "flex"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    }
+  ],
+  "runes": {
+    "Chaos": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "The Candlelit Sanctum",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Acceptable Losses",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "removal"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Windsinger",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    }
+  ],
+  "notes": ""
+}

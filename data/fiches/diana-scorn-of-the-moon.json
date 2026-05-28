@@ -1,0 +1,44 @@
+{
+  "legendName": "Diana, Scorn of the Moon",
+  "legendId": "UNL-197",
+  "domains": ["Chaos", "Mind"],
+  "set": "Unleashed",
+  "tier": 1,
+  "archetype": "Aggro-tempo / Domination des showdowns + punition",
+  "legendAbility": "Contrôle le pace en dominant les showdowns early. L'adversaire est forcé de prendre des risques que Chaos-Mind punit sévèrement.",
+  "gameplan": {
+    "earlyGame": "OGN-103 + ability = machine à gagner les showdowns. Prendre le lead au scoreboard.",
+    "midGame": "UNL-080 (5-cost) — ability flexible : creuse le deck OU 8-might pour conquérir.",
+    "lateGame": "OGN-116 comme closer Mind standard. OGN-173 pour push les derniers points.",
+    "winCondition": "Lead au score + punition des risques adverses"
+  },
+  "keyCards": [
+    { "name": "OGN-103", "id": "OGN-103", "role": "Machine à showdowns early avec l'ability légende." },
+    { "name": "UNL-080", "id": "UNL-080", "cost": 5, "role": "Flexible mid game — draw ou 8-might conquérir." },
+    { "name": "OGN-116", "id": "OGN-116", "role": "Closer Mind — -3 might aux unités adverses." },
+    { "name": "OGN-169", "id": "OGN-169", "role": "Sort support early game." },
+    { "name": "OGN-095", "id": "OGN-095", "role": "Sort support early complémentaire." },
+    { "name": "UNL-128", "id": "UNL-128", "role": "Maintien de l'avance une fois en tête." },
+    { "name": "UNL-198", "id": "UNL-198", "role": "Contrôle réactif — empêche les retours." },
+    { "name": "OGN-173", "id": "OGN-173", "role": "Push final — score avant stabilisation adverse." }
+  ],
+  "strengths": [
+    "Arsenal Chaos+Mind répond à tout : contresort, removal, draw, mouvement, résurrection",
+    "Domine l'early game via showdowns",
+    "Record Unleashed de 4 City Challenge wins",
+    "Million de possibilités une fois maîtrisée"
+  ],
+  "weaknesses": [
+    "Complexité élevée — million de choix chaque tour",
+    "Moins populaire en top cut que Irelia aux gros tournois"
+  ],
+  "competitiveResults": {
+    "tier": 1,
+    "preRegionals": "3 Wins / 13 Top 8 (4 CC wins = record Unleashed)",
+    "regionalResults": "Top 4 Sydney (12-2-1)",
+    "sydneyStats": { "winRate": "56%", "matches": 353, "conversionRate": ">20%" }
+  },
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/diana-scorn-of-the-moon-guide/"
+}

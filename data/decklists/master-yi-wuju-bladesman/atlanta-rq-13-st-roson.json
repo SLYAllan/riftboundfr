@@ -1,0 +1,148 @@
+{
+  "id": "atlanta-rq-13-st-roson",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Honed",
+  "player": "Stаroson",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 13,
+  "set": "Spiritforged",
+  "archetype": "aggro-tempo",
+  "tier": "A",
+  "domains": [
+    "Calm",
+    "Body"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Fiora, Peerless",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 4,
+      "role": "equipment"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Sea Monkey",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Confront",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Body": 6
+  },
+  "battlefields": [
+    "Forge of the Fluft",
+    "Grove of the God-Willow",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [],
+  "notes": ""
+}

@@ -1,0 +1,44 @@
+{
+  "legendName": "Kha'Zix, Voidreaver",
+  "legendId": "UNL-202",
+  "domains": ["Fury", "Body"],
+  "set": "Unleashed",
+  "tier": 3,
+  "archetype": "Tempo-midrange / XP gain & conquête",
+  "legendAbility": "1re ability: buff les unités via XP gagné en combat. 2e ability: protège les unités en les renvoyant à la base après conquête — excellent pour le finish.",
+  "gameplan": {
+    "earlyGame": "UNL-150 développé sur un battlefield. UNL-210 + UNL-112 comme tandem early. Gagner des combats pour XP.",
+    "midGame": "OGN-164 buffé avec l'ability. UNL-127 pour l'XP. UNL-114, UNL-145, UNL-143, UNL-120 comme unités mid game.",
+    "lateGame": "UNL-202 + UNL-131 pour contrôler. Objectif: conquérir les deux battlefields pour 6+ points.",
+    "winCondition": "Conquête double battlefield avec l'ability qui protège les unités post-conquête"
+  },
+  "keyCards": [
+    { "name": "UNL-150", "id": "UNL-150", "cost": 4, "role": "Développé sur un battlefield — limite l'ability adverse." },
+    { "name": "OGN-164", "id": "OGN-164", "role": "Unité buffable avec l'ability." },
+    { "name": "UNL-127", "id": "UNL-127", "role": "Gain d'XP." },
+    { "name": "UNL-210", "id": "UNL-210", "role": "Tandem early avec UNL-112." },
+    { "name": "UNL-112", "id": "UNL-112", "role": "Tandem early avec UNL-210." },
+    { "name": "UNL-095", "id": "UNL-095", "role": "Sort clé — buff solide + XP potentiel." },
+    { "name": "UNL-114", "id": "UNL-114", "role": "Élément de surprise imprévisible." },
+    { "name": "UNL-202", "id": "UNL-202", "role": "Contrôle late — bon avec les unités massives." },
+    { "name": "UNL-131", "id": "UNL-131", "role": "Maintien du contrôle." }
+  ],
+  "strengths": [
+    "Double ability — buff early + protection late",
+    "Pas vu comme une menace → l'adversaire ne build pas contre Kha'Zix",
+    "Au moins 1 top 8 par semaine en City Challenges"
+  ],
+  "weaknesses": [
+    "Struggle à enforcer le style proactif — les unités early sont faibles en combat",
+    "Certains joueurs default vers OGN-160 (Aurora) ce qui signale que le core synergy lutte",
+    "UNL-202 bon avec grosses unités mais Sivir/MF font mieux le Aurora build"
+  ],
+  "competitiveResults": {
+    "tier": 3,
+    "preRegionals": "3 Top 8",
+    "sydneyStats": { "winRate": "50%", "matches": 210, "bestPlacement": "48th (9-2-2)" }
+  },
+  "difficulty": "Moyen-Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/khazix-voidreaver-guide/"
+}

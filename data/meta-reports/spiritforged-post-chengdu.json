@@ -1,0 +1,121 @@
+{
+  "id": "spiritforged-post-chengdu",
+  "title": "Spiritforged Post Chengdu Regional",
+  "set": "Spiritforged",
+  "period": "Post Fuzhou & Chengdu Regionals (China)",
+  "date": "2026-01-30",
+  "author": "Den",
+  "source": "riftbound.gg/riftbound-meta-tier-list-best-decks-for-spiritforged-post-chengdu-regional/",
+  "meta_overview": "Draven dominates Spiritforged with S-Tier status after winning both Fuzhou and Chengdu regionals. Two builds exist: Spinning Axe (midrange) and Miracle. Irelia is a clear #2 but can't close tournaments. Fiora surprises with 2 finals runs using different archetypes. Ezreal and Annie are dark horses.",
+  "key_observations": [
+    "Draven S-Tier — won both Fuzhou and Chengdu, 23.26% conversion rate with 331 picks",
+    "Draven has two viable builds: midrange (Spinning Axe) and Miracle",
+    "Irelia #2 but fails to reach finals — 16.4% conversion, lost in Top 4 and Top 8",
+    "Fiora reached finals TWICE with two different builds (midrange equipment + OGN-242)",
+    "Ezreal semi-finalist Chengdu — new Spiritforged legend with room to grow",
+    "Annie top 8 Fuzhou — stronger in China than expected",
+    "Kai'Sa declining: 5 in top 64 Fuzhou but collapsed to 1 in Chengdu",
+    "Only Fiora and Kai'Sa in top 6 are outside Chaos domain",
+    "Garen first legend to not be picked at a regional tournament"
+  ],
+  "tier_list": {
+    "s_tier": [
+      {
+        "legend": "Draven",
+        "picks": 331,
+        "top_64": 77,
+        "conversion_rate": "23.26%",
+        "key_result": "2 Wins (Fuzhou + Chengdu)"
+      }
+    ],
+    "tier_1": [
+      {
+        "legend": "Irelia",
+        "picks": 128,
+        "top_64": 21,
+        "conversion_rate": "16.4%",
+        "key_result": "Top 4"
+      },
+      {
+        "legend": "Fiora",
+        "picks": 50,
+        "top_64": 3,
+        "conversion_rate": "6%",
+        "key_result": "2 Finals (different archetypes)"
+      }
+    ],
+    "tier_2": [
+      {
+        "legend": "Ezreal",
+        "picks": 31,
+        "top_64": 3,
+        "conversion_rate": "9.68%",
+        "key_result": "Top 4 & 32"
+      },
+      {
+        "legend": "Annie",
+        "picks": 22,
+        "top_64": 3,
+        "conversion_rate": "13.64%",
+        "key_result": "Top 8 & 64"
+      },
+      {
+        "legend": "Kai'Sa",
+        "picks": 78,
+        "top_64": 6,
+        "conversion_rate": "7.69%",
+        "key_result": "Top 16 & 64"
+      },
+      {
+        "legend": "Azir",
+        "picks": 29,
+        "top_64": 2,
+        "conversion_rate": "6.90%",
+        "key_result": "Top 32 & 64"
+      },
+      {
+        "legend": "Lucian",
+        "picks": 20,
+        "top_64": 2,
+        "conversion_rate": "10%",
+        "key_result": "Top 32 & 64"
+      },
+      {
+        "legend": "Viktor",
+        "picks": 50,
+        "top_64": 3,
+        "conversion_rate": "6%",
+        "key_result": "Top 32 & 64"
+      },
+      {
+        "legend": "Sett",
+        "picks": 21,
+        "top_64": 2,
+        "conversion_rate": "9.52%",
+        "key_result": "Two Top 64"
+      }
+    ],
+    "tier_3": [
+      {"legend": "Sivir", "picks": 29, "top_64": 1, "conversion_rate": "3.45%"},
+      {"legend": "Rek'Sai", "picks": 21, "top_64": 1, "conversion_rate": "4.76%"},
+      {"legend": "Master Yi", "picks": 29, "top_64": 1, "conversion_rate": "3.45%"},
+      {"legend": "Ornn", "picks": 31, "top_64": 1, "conversion_rate": "3.23%"},
+      {"legend": "Ahri", "picks": 13, "top_64": 1, "conversion_rate": "7.69%"},
+      {"legend": "Leona", "picks": 6, "top_64": 1, "conversion_rate": "16.67%"},
+      {"legend": "Jax", "notes": "Two Top 128"},
+      {"legend": "Yasuo", "notes": "Two Top 128"},
+      {"legend": "Lux", "notes": "Two Top 128"}
+    ],
+    "tier_4": [
+      {"legend": "Miss Fortune"},
+      {"legend": "Jinx"},
+      {"legend": "Renata Glasc"},
+      {"legend": "Teemo"},
+      {"legend": "Rumble"},
+      {"legend": "Lee Sin"},
+      {"legend": "Volibear"},
+      {"legend": "Darius"},
+      {"legend": "Garen", "notes": "First legend with 0 picks at a regional"}
+    ]
+  }
+}

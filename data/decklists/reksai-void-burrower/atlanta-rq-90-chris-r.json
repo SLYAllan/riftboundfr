@@ -1,0 +1,163 @@
+{
+  "id": "atlanta-rq-90-chris-r",
+  "legend": "Rek'Sai, Void Burrower",
+  "champion": "Rek'Sai, Breacher",
+  "player": "Chris R",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 90,
+  "set": "Spiritforged",
+  "archetype": "aggro",
+  "tier": "C",
+  "domains": [
+    "Order",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Void Hatchling",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Daring Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Trifarian Gloryseeker",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Void Drone",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Battering Ram",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Undertitan",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 0,
+      "role": "equipment"
+    },
+    {
+      "name": "Void Rush",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    }
+  ],
+  "runes": {
+    "Order": 11,
+    "Fury": 1
+  },
+  "battlefields": [
+    "The Candlelit Sanctum",
+    "The Arena's Greatest",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    }
+  ],
+  "notes": ""
+}

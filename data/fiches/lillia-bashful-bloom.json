@@ -1,0 +1,46 @@
+{
+  "legendName": "Lillia, Bashful Bloom",
+  "legendId": null,
+  "domains": ["Calm", "Mind"],
+  "set": "Unleashed",
+  "tier": 3,
+  "archetype": "Value-tempo / Sprites temporaires & scaling",
+  "legendAbility": "Génère des UNL-T07 (Sprites 3-might temporaires) qui entrent ready. Les adversaires doivent choisir entre perdre leurs vraies unités contre des tokens ou laisser des conquêtes gratuites.",
+  "gameplan": {
+    "earlyGame": "Garder l'unité turn 1 hors des showdowns. Laisser l'adversaire choisir ses combats — UNL-T07 arrive bientôt.",
+    "midGame": "UNL-078 et UNL-069 génèrent des Sprites 3-might. L'adversaire perd des vraies unités contre des tokens = échange favorable.",
+    "lateGame": "OGN-116 comme closer Mind. OGN-123 + UNL-084 pour pace plus lent. Continuer à générer des Sprites.",
+    "winCondition": "Échanges asymétriques (tokens vs vraies unités) + scoring continu"
+  },
+  "keyCards": [
+    { "name": "UNL-078", "id": "UNL-078", "role": "Génère des Sprites temporaires 3-might." },
+    { "name": "UNL-069", "id": "UNL-069", "role": "Seconde source de Sprites." },
+    { "name": "OGN-116", "id": "OGN-116", "role": "Closer Mind standard." },
+    { "name": "OGN-123", "id": "OGN-123", "role": "Alternative slow win con." },
+    { "name": "UNL-084", "id": "UNL-084", "role": "Compagnon d'OGN-123 en pace lent." },
+    { "name": "OGN-058", "id": "OGN-058", "role": "Draw support." },
+    { "name": "OGN-095", "id": "OGN-095", "role": "Draw support." },
+    { "name": "UNL-083", "id": "UNL-083", "role": "Draw support." },
+    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort — protège les vraies unités." },
+    { "name": "UNL-190", "id": "UNL-190", "role": "Deny les tentatives de comeback." }
+  ],
+  "strengths": [
+    "Synergy temporaire = échanges toujours en faveur de Lillia",
+    "Sprites entrent ready = pression immédiate",
+    "Multiple top 8 chaque semaine en City Challenges"
+  ],
+  "weaknesses": [
+    "Build évident dès le début — pas flexible",
+    "Calm+Mind manque historiquement de raw power",
+    "Perd du momentum chaque semaine — signe négatif",
+    "Suit les traces d'Ahri — solide mais pas gagnante"
+  ],
+  "competitiveResults": {
+    "tier": 3,
+    "preRegionals": "2 Top 8 (1 win early puis déclin)",
+    "sydneyStats": { "winRate": "49%", "matches": 235, "bestPlacement": "33rd (10-3-0)" }
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": true,
+  "sourceUrl": "https://riftbound.gg/lillia-bashful-bloom-guide/"
+}

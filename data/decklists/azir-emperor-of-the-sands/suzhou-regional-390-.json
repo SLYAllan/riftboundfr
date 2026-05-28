@@ -1,0 +1,190 @@
+{
+  "id": "suzhou-regional-390-",
+  "legend": "Azir, Emperor of the Sands",
+  "champion": "Azir, Sovereign",
+  "player": "信鸽鸽鸽鸽鸽鸽",
+  "tournament": "Suzhou Regional",
+  "date": "2026-05-10",
+  "placement": 390,
+  "playerCount": 800,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Azir, Sovereign",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "order"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Doran's Shield",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Eye of the Herald",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Soul Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Brutalizer",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Guards!",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Arise!",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Ornn's Forge",
+    "Trifarian War Camp",
+    "Vaults of Helia"
+  ],
+  "sideDeck": [
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    }
+  ],
+  "totalCards": 64,
+  "stats": {
+    "unitCount": 3,
+    "spellCount": 22,
+    "gearCount": 15
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ni-men-de-huang-di-hui-lai-le-153409"
+}

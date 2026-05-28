@@ -1,0 +1,184 @@
+{
+  "id": "atlanta-rq-239-tukayu",
+  "legend": "Rumble, Mechanized Menace",
+  "champion": "Rumble, Hotheaded",
+  "player": "Tukayu",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 239,
+  "set": "Spiritforged",
+  "archetype": "aggro-mech",
+  "tier": "C",
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Bubble Bot",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Cloth Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "cost": 1,
+      "role": "equipment"
+    },
+    {
+      "name": "Falling Comet",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 5,
+      "role": "flex"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Forecaster",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "cost": 2,
+      "role": "equipment"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 6,
+      "role": "flex"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 7,
+      "role": "finisher"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 3,
+      "role": "draw"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "The Papertree",
+    "Void Gate",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 4,
+      "role": "draw"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 4,
+      "role": "removal"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 5,
+      "role": "removal"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 10,
+      "role": "flex"
+    }
+  ],
+  "notes": ""
+}

@@ -1,0 +1,126 @@
+{
+  "id": "spiritforged-post-vegas",
+  "title": "Spiritforged Post-Vegas Metagame",
+  "set": "Spiritforged",
+  "period": "Post Bologna & Vegas Regionals (West)",
+  "date": "2026-03-18",
+  "author": "Den",
+  "source": "riftbound.gg/riftbound-meta-tier-list-best-decks-for-spiritforged-post-vegas-metagame/",
+  "meta_overview": "Vegas confirmed Draven's dominance — all 4 semifinalists were Draven (2 Midrange, 2 Miracle). Bologna had shown control could contain Draven, but Vegas reset everything. Two Draven builds make countering nearly impossible. Ezreal won Bologna (same player also Top 8 Vegas) — steep learning curve. Miracle builds spread across Chaos domain.",
+  "key_observations": [
+    "Draven took ALL Top 4 spots in Vegas — 2 Midrange + 2 Miracle builds",
+    "62.4% win rate, 37.5% Day 2 conversion, 435 picks — dominant across every metric",
+    "Two Draven builds make the legend nearly impossible to fully counter",
+    "Bologna showed control could contain Draven, Vegas proved it was temporary",
+    "Ezreal won Bologna and Top 8 Vegas — same player both times, steep learning curve",
+    "Miracle archetype spread: any Chaos deck can play the miracle shell",
+    "Kai'Sa hurt by rise of Miracle — can remove units one by one but not all at once",
+    "Master Yi strong vs Miracle (scores early while they're slow), SFD-105 key tech",
+    "Fiora complete meltdown in West vs strong China results",
+    "Miss Fortune made finals with 38% win rate — extreme outlier"
+  ],
+  "tier_list": {
+    "tier_1": [
+      {
+        "legend": "Draven",
+        "picks": 435,
+        "day2_conversion": "37.5%",
+        "win_rate": "62.4%",
+        "key_result": "All Top 4 Vegas, Top 8 & Win"
+      },
+      {
+        "legend": "Irelia",
+        "picks": 261,
+        "day2_conversion": "25.3%",
+        "win_rate": "54.1%",
+        "key_result": "Top 4 & Top 8"
+      },
+      {
+        "legend": "Ezreal",
+        "picks": 151,
+        "day2_conversion": "16.6%",
+        "win_rate": "51%",
+        "key_result": "Win Bologna & Top 8 Vegas"
+      }
+    ],
+    "tier_2": [
+      {
+        "legend": "Kai'Sa",
+        "picks": 262,
+        "day2_conversion": "19.8%",
+        "win_rate": "50.2%",
+        "key_result": "Two Top 16"
+      },
+      {
+        "legend": "Master Yi",
+        "picks": 59,
+        "day2_conversion": "18.6%",
+        "win_rate": "53%",
+        "key_result": "Top 16 & 32"
+      },
+      {
+        "legend": "Viktor",
+        "picks": 121,
+        "day2_conversion": "13.2%",
+        "win_rate": "49.7%",
+        "key_result": "Top 4 & 32"
+      },
+      {
+        "legend": "Sivir",
+        "picks": 84,
+        "day2_conversion": "15.5%",
+        "win_rate": "48.9%",
+        "key_result": "Two Top 16"
+      },
+      {
+        "legend": "Annie",
+        "picks": 98,
+        "day2_conversion": "14.3%",
+        "win_rate": "49.2%",
+        "key_result": "Top 16"
+      },
+      {
+        "legend": "Azir",
+        "picks": 99,
+        "day2_conversion": "11.1%",
+        "win_rate": "50.9%",
+        "key_result": "Top 64 & 16"
+      },
+      {
+        "legend": "Lucian",
+        "picks": 92,
+        "day2_conversion": "14.1%",
+        "win_rate": "47.3%",
+        "key_result": "Top 32 & 64"
+      },
+      {
+        "legend": "Jax",
+        "picks": 78,
+        "day2_conversion": "6.4%",
+        "win_rate": "44.8%",
+        "key_result": "Top 32 & 8"
+      }
+    ],
+    "tier_3": [
+      {"legend": "Rek'Sai", "picks": 96, "day2_conversion": "15.8%", "win_rate": "50.1%"},
+      {"legend": "Ahri", "picks": 96, "day2_conversion": "12.5%", "win_rate": "49.3%"},
+      {"legend": "Jinx", "picks": 80, "day2_conversion": "12.5%", "win_rate": "45.4%"},
+      {"legend": "Darius", "picks": 42, "day2_conversion": "14.3%", "win_rate": "54.6%"},
+      {"legend": "Sett", "picks": 51, "day2_conversion": "13.7%", "win_rate": "50%"},
+      {"legend": "Volibear", "picks": 43, "day2_conversion": "11.6%", "win_rate": "44.9%"},
+      {"legend": "Fiora", "picks": 97, "day2_conversion": "7.2%", "win_rate": "44.7%"},
+      {"legend": "Teemo", "picks": 59, "day2_conversion": "8.5%", "win_rate": "42.4%"}
+    ],
+    "tier_4": [
+      {"legend": "Lux", "picks": 79, "day2_conversion": "6.3%", "win_rate": "44%"},
+      {"legend": "Miss Fortune", "picks": 75, "day2_conversion": "6.7%", "win_rate": "38.9%", "notes": "Made finals with 38.9% WR — extreme outlier"},
+      {"legend": "Ornn", "picks": 85, "day2_conversion": "3.4%", "win_rate": "38.1%"},
+      {"legend": "Lee Sin", "picks": 37, "day2_conversion": "5.4%", "win_rate": "44.7%"},
+      {"legend": "Rumble", "picks": 60, "day2_conversion": "1.67%", "win_rate": "43.3%"},
+      {"legend": "Yasuo", "picks": 75, "day2_conversion": "2.67%", "win_rate": "42.1%"},
+      {"legend": "Renata Glasc", "picks": 68, "day2_conversion": "2.9%", "win_rate": "37.9%"},
+      {"legend": "Garen", "picks": 23, "day2_conversion": "0%", "win_rate": "46.9%"},
+      {"legend": "Leona", "picks": 55, "day2_conversion": "0%", "win_rate": "39%"}
+    ]
+  }
+}

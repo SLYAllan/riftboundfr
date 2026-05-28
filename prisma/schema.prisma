@@ -1,0 +1,283 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Card {
+  id              String   @id
+  riftboundId     String   @unique
+  name            String
+  cleanName       String?
+  collectorNumber Int?
+  set             String
+  setName         String
+  type            String
+  supertype       String?
+  rarity          String
+  domains         String[]
+  energy          Int?
+  might           Int?
+  power           Int?
+  textRich        String?
+  textPlain       String?
+  flavorText      String?
+  imageUrl        String?
+  artist          String?
+  tags            String[]
+  alternateArt    Boolean  @default(false)
+  overnumbered    Boolean  @default(false)
+  signature       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  deckCards DeckCard[]
+
+  @@index([set])
+  @@index([type])
+  @@index([rarity])
+  @@index([name])
+  @@index([type, alternateArt])
+}
+
+model CardSet {
+  id          String   @id
+  name        String
+  setId       String   @unique
+  cardCount   Int?
+  publishedOn DateTime?
+  createdAt   DateTime @default(now())
+
+  @@map("sets")
+}
+
+model Deck {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  legendId    String
+  legendName  String
+  description String?
+  guide       String?
+  format      String   @default("constructed")
+  setTag      String   @default("Unleashed")
+  tags        String[]
+  authorName  String?
+  sourceUrl   String?
+  featured    Boolean  @default(false)
+  published   Boolean  @default(false)
+  sourceArticleId    String?
+  sourceArticle      Article? @relation(fields: [sourceArticleId], references: [id])
+  tournamentContext   String?
+  tournamentTier     String?
+  placement          String?
+  record             String?
+  playerName         String?
+  likes       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  cards DeckCard[]
+
+  @@index([legendName])
+  @@index([sourceArticleId])
+  @@index([published, tournamentContext])
+  @@index([published, tournamentContext, placement])
+  @@index([published, featured])
+  @@index([published, createdAt])
+}
+
+model DeckCard {
+  id       String @id @default(cuid())
+  deckId   String
+  cardId   String
+  quantity Int    @default(1)
+  section  String @default("main")
+
+  deck Deck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  card Card @relation(fields: [cardId], references: [id])
+
+  @@unique([deckId, cardId, section])
+  @@index([cardId])
+}
+
+model TierList {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  format      String   @default("constructed")
+  setContext  String?
+  published   Boolean  @default(false)
+  current     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  entries TierListEntry[]
+}
+
+model TierListEntry {
+  id          String  @id @default(cuid())
+  tierListId  String
+  legendId    String
+  legendName  String
+  tier        String
+  position    Int
+  comment     String?
+  deckId      String?
+
+  tierList TierList @relation(fields: [tierListId], references: [id], onDelete: Cascade)
+
+  @@index([tierListId])
+}
+
+model Article {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  excerpt     String?
+  coverImage  String?
+  category    String
+  tags        String[]
+  blocks      Json
+  tournamentName        String?
+  tournamentDate        DateTime?
+  tournamentLocation    String?
+  tournamentPlayerCount Int?
+  published   Boolean   @default(false)
+  featured    Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  decks    Deck[]
+  comments Comment[]
+
+  @@index([category])
+  @@index([published, publishedAt])
+  @@index([published, tournamentName])
+}
+
+
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  date        DateTime
+  endDate     DateTime?
+  location    String?
+  type        String
+  description String?
+  url         String?
+  published   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+}
+
+model User {
+  id            String   @id @default(cuid())
+  username      String
+  avatarUrl     String?
+  discordId     String?  @unique
+  discordName   String?
+  riotId        String?  @unique
+  riotGameName  String?
+  riotTagLine   String?
+  role          String   @default("user")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  communityDecks CommunityDeck[]
+  comments       Comment[]
+
+  @@index([discordId])
+  @@index([riotId])
+}
+
+model Comment {
+  id              String   @id @default(cuid())
+  body            String
+  userId          String
+  articleId       String?
+  communityDeckId String?
+  parentId        String?
+  upvotes         Int      @default(0)
+  downvotes       Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user          User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  article       Article?       @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  communityDeck CommunityDeck? @relation(fields: [communityDeckId], references: [id], onDelete: Cascade)
+  parent        Comment?       @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies       Comment[]      @relation("CommentReplies")
+
+  @@index([articleId, createdAt])
+  @@index([communityDeckId, createdAt])
+  @@index([parentId])
+}
+
+model CommentVote {
+  id        String @id @default(cuid())
+  userId    String
+  commentId String
+  value     Int
+
+  @@unique([userId, commentId])
+}
+
+model CommunityDeck {
+  id          String   @id @default(cuid())
+  shareCode   String   @unique
+  title       String
+  legendId    String
+  legendName  String
+  domains     String[] @default([])
+  description String?
+  guide       String?
+  authorName  String   @default("Anonyme")
+  deckCode    String
+  tags        String[] @default([])
+  isPublic    Boolean  @default(true)
+  views       Int      @default(0)
+  likes       Int      @default(0)
+  version     Int      @default(1)
+  userId      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user       User?               @relation(fields: [userId], references: [id], onDelete: SetNull)
+  deckLikes  CommunityDeckLike[]
+  comments   Comment[]
+  history    CommunityDeckVersion[]
+
+  @@index([legendName])
+  @@index([userId])
+  @@index([isPublic, createdAt])
+  @@index([isPublic, likes])
+  @@index([isPublic, views])
+}
+
+model CommunityDeckVersion {
+  id              String   @id @default(cuid())
+  communityDeckId String
+  version         Int
+  deckCode        String
+  changelog       String?
+  createdAt       DateTime @default(now())
+
+  deck CommunityDeck @relation(fields: [communityDeckId], references: [id], onDelete: Cascade)
+
+  @@index([communityDeckId, version])
+}
+
+model CommunityDeckLike {
+  id            String @id @default(cuid())
+  userId        String
+  communityDeckId String
+
+  communityDeck CommunityDeck @relation(fields: [communityDeckId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, communityDeckId])
+  @@index([communityDeckId])
+}

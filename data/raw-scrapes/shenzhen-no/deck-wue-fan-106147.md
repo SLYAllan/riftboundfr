@@ -1,0 +1,273 @@
+1. [Home](https://riftdecks.com/)
+2. [Riftbound Meta](https://riftdecks.com/legends/constructed)
+3. [Yasuo, Unforgiven](https://riftdecks.com/legends/constructed/yasuo-unforgiven)
+4. 无E烦
+
+# 无E烦 by ZL-泽北Rinehаrt
+
+"无E烦" decklist by ZL-泽北Rinehart. 1157th at S2 Shenzhen National Open by 官方赛事 on 2026-03-22
+
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Yasuo, Unforgiven](https://riftdecks.com/legends/constructed/yasuo-unforgiven) [Calm Chaos](https://riftdecks.com/riftbound-metagame/constructed/calm-chaos) [ZL-泽北Rinehаrt](https://riftdecks.com/riftbound-decks?player=ZL-%E6%B3%BD%E5%8C%97Rinehart&deck_type=all) [S2 Shenzhen National Open](https://riftdecks.com/riftbound-tournaments/s2-shenzhen-national-open-tournament-decks-6619) [Riftbound Decks](https://riftdecks.com/)
+
+**![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)无E烦**
+**, a deck by [ZL-泽北Rinehаrt](https://riftdecks.com/riftbound-decks?player=ZL-%E6%B3%BD%E5%8C%97Rinehart&deck_type=all)**
+
+1157th at
+S2 Shenzhen National Open 2048 players on
+2026-03-22
+
+[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
+\|
+64 Cards \|
+
+
+
+## Text Decklist
+
+[Bookmark](https://riftdecks.com/riftbound-metagame/deck-wue-fan-106147#) Similar Decks
+
+Export this Deck
+
+
+This deck contains banned cards.
+
+
+![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-148-221_cropped.png)![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-189-298_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-213-221_cropped.png)
+
+|     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Yasuo, Unforgiven](https://riftdecks.com/cards/details-yasuo-unforgiven) | $0.23 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Yasuo, Remorseful](https://riftdecks.com/cards/details-yasuo-remorseful) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (13) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Tideturner](https://riftdecks.com/cards/details-tideturner) | $3.41 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Treasure Hunter](https://riftdecks.com/cards/details-treasure-hunter) | $0.10 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Stellacorn Herder](https://riftdecks.com/cards/details-stellacorn-herder) | $0.67 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vex, Cheerless](https://riftdecks.com/cards/details-vex-cheerless) | $0.63 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Yasuo, Windrider](https://riftdecks.com/cards/details-yasuo-windrider) | $2.09 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **2** | [Draven, Audacious](https://riftdecks.com/cards/details-draven-audacious) | $2.99 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (11) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.24 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [The Syren](https://riftdecks.com/cards/details-the-syren) | $0.23 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Boots of Swiftness](https://riftdecks.com/cards/details-boots-of-swiftness) | $0.28 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Heart of Dark Ice](https://riftdecks.com/cards/details-heart-of-dark-ice) | $0.27 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Svellsongur](https://riftdecks.com/cards/details-svellsongur) | $9.59 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (15) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Charm](https://riftdecks.com/cards/details-charm) | $0.65 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Defy](https://riftdecks.com/cards/details-defy) | $3.16 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Discipline](https://riftdecks.com/cards/details-discipline) | $1.73 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Fight or Flight](https://riftdecks.com/cards/details-fight-or-flight) | $0.21 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Not So Fast](https://riftdecks.com/cards/details-not-so-fast) | $1.76 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind) | $0.63 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Temptation](https://riftdecks.com/cards/details-temptation) | $0.06 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Wind Wall](https://riftdecks.com/cards/details-wind-wall) | $0.67 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Ornn's Forge](https://riftdecks.com/cards/details-ornns-forge) | $0.10 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Treasure Hoard](https://riftdecks.com/cards/details-treasure-hoard) | $0.11 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Veiled Temple](https://riftdecks.com/cards/details-veiled-temple) | $0.09 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **6** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **6** | [Chaos Rune](https://riftdecks.com/cards/details-chaos-rune) | $0.16 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (8) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Defy](https://riftdecks.com/cards/details-defy) | $3.16 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Not So Fast](https://riftdecks.com/cards/details-not-so-fast) | $1.76 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $0.47 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Adaptatron](https://riftdecks.com/cards/details-adaptatron) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Kayn, Unleashed](https://riftdecks.com/cards/details-kayn-unleashed) | $0.35 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+
+Buy this deck
+
+![](https://riftdecks.com/img/logos/tcg_player.png)$62.64
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x2
+
+![](https://riftdecks.com/img/cards/riftbound//OGN/ogn-189-298_full.png)
+
+## Visual Decklist
+
+Deck Style
+
+Grouped
+
+Horizontal
+
+Grid
+
+Download Image
+
+
+![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)
+
+1157th
+
+无E烦
+
+
+**by ZL-泽北Rinehаrt**
+
+S2 Shenzhen National Open
+
+@ 官方赛事 2026-03-22
+
+2048 Players
+
+x1
+
+[![Yasuo, Unforgiven](https://riftdecks.com/img/cards/riftbound//OGN/ogn-259-298_full.png)](https://riftdecks.com/cards/details-yasuo-unforgiven)
+
+x6
+
+[![Calm Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-042-298_full.png)](https://riftdecks.com/cards/details-calm-rune)
+
+x6
+
+[![Chaos Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-166-298_full.png)](https://riftdecks.com/cards/details-chaos-rune)
+
+x1
+
+[![Ornn's Forge](https://riftdecks.com/img/cards/riftbound//SFD/sfd-213-221_full.png)](https://riftdecks.com/cards/details-ornns-forge)
+
+x1
+
+[![Treasure Hoard](https://riftdecks.com/img/cards/riftbound//SFD/sfd-220-221_full.png)](https://riftdecks.com/cards/details-treasure-hoard)
+
+x1
+
+[![Veiled Temple](https://riftdecks.com/img/cards/riftbound//SFD/sfd-221-221_full.png)](https://riftdecks.com/cards/details-veiled-temple)
+
+x1
+
+[![Yasuo, Remorseful](https://riftdecks.com/img/cards/riftbound//OGN/ogn-076a-298_full.png)](https://riftdecks.com/cards/details-yasuo-remorseful)
+
+x3
+
+[![Tideturner](https://riftdecks.com/img/cards/riftbound//OGN/ogn-199-298_full.png)](https://riftdecks.com/cards/details-tideturner)
+
+x3
+
+[![Treasure Hunter](https://riftdecks.com/img/cards/riftbound//SFD/sfd-130-221_full.png)](https://riftdecks.com/cards/details-treasure-hunter)
+
+x3
+
+[![Stellacorn Herder](https://riftdecks.com/img/cards/riftbound//SFD/sfd-048-221_full.png)](https://riftdecks.com/cards/details-stellacorn-herder)
+
+x1
+
+[![Vex, Cheerless](https://riftdecks.com/img/cards/riftbound//SFD/sfd-146-221_full.png)](https://riftdecks.com/cards/details-vex-cheerless)
+
+x1
+
+[![Yasuo, Windrider](https://riftdecks.com/img/cards/riftbound//OGN/ogn-205-298_full.png)](https://riftdecks.com/cards/details-yasuo-windrider)
+
+x2
+
+[![Draven, Audacious](https://riftdecks.com/img/cards/riftbound//SFD/sfd-148-221_full.png)](https://riftdecks.com/cards/details-draven-audacious)
+
+x3
+
+[![Mask of Foresight](https://riftdecks.com/img/cards/riftbound//OGN/ogn-060-298_full.png)](https://riftdecks.com/cards/details-mask-of-foresight)
+
+x2
+
+[![The Syren](https://riftdecks.com/img/cards/riftbound//OGN/ogn-184-298_full.png)](https://riftdecks.com/cards/details-the-syren)
+
+x2
+
+[![Boots of Swiftness](https://riftdecks.com/img/cards/riftbound//SFD/sfd-133-221_full.png)](https://riftdecks.com/cards/details-boots-of-swiftness)
+
+x3
+
+[![Heart of Dark Ice](https://riftdecks.com/img/cards/riftbound//SFD/sfd-052-221_full.png)](https://riftdecks.com/cards/details-heart-of-dark-ice)
+
+x1
+
+[![Svellsongur](https://riftdecks.com/img/cards/riftbound//SFD/sfd-059-221_full.png)](https://riftdecks.com/cards/details-svellsongur)
+
+x2
+
+[![Charm](https://riftdecks.com/img/cards/riftbound//OGN/ogn-043-298_full.png)](https://riftdecks.com/cards/details-charm)
+
+x2
+
+[![Defy](https://riftdecks.com/img/cards/riftbound//OGN/ogn-045-298_full.png)](https://riftdecks.com/cards/details-defy)
+
+x3
+
+[![Discipline](https://riftdecks.com/img/cards/riftbound//OGN/ogn-058-298_full.png)](https://riftdecks.com/cards/details-discipline)
+
+x2
+
+[![Fight or Flight](https://riftdecks.com/img/cards/riftbound//OGN/ogn-168-298_full.png)](https://riftdecks.com/cards/details-fight-or-flight)
+
+x2
+
+[![Not So Fast](https://riftdecks.com/img/cards/riftbound//SFD/sfd-045-221_full.png)](https://riftdecks.com/cards/details-not-so-fast)
+
+x2
+
+[![Ride the Wind](https://riftdecks.com/img/cards/riftbound//OGN/ogn-173-298_full.png)](https://riftdecks.com/cards/details-ride-the-wind)
+
+x1
+
+[![Temptation](https://riftdecks.com/img/cards/riftbound//SFD/sfd-129-221_full.png)](https://riftdecks.com/cards/details-temptation)
+
+x1
+
+[![Wind Wall](https://riftdecks.com/img/cards/riftbound//OGN/ogn-064-298_full.png)](https://riftdecks.com/cards/details-wind-wall)
+
+## Sideboard
+
+x1
+
+[![Defy](https://riftdecks.com/img/cards/riftbound//OGN/ogn-045-298_full.png)](https://riftdecks.com/cards/details-defy)
+
+x1
+
+[![Not So Fast](https://riftdecks.com/img/cards/riftbound//SFD/sfd-045-221_full.png)](https://riftdecks.com/cards/details-not-so-fast)
+
+x2
+
+[![Switcheroo](https://riftdecks.com/img/cards/riftbound//SFD/sfd-145-221_full.png)](https://riftdecks.com/cards/details-switcheroo)
+
+x2
+
+[![Adaptatron](https://riftdecks.com/img/cards/riftbound//OGN/ogn-056-298_full.png)](https://riftdecks.com/cards/details-adaptatron)
+
+x2
+
+[![Kayn, Unleashed](https://riftdecks.com/img/cards/riftbound//OGN/ogn-189-298_full.png)](https://riftdecks.com/cards/details-kayn-unleashed)
+
+## Deck Stats
+
+| types |
+| --- |
+| battlefield | 5% (3) | 5% |
+| gear | 18% (11) | 18% |
+| legend | 2% (1) | 2% |
+| rune | 19% (12) | 19% |
+| spell | 30% (19) | 30% |
+| unit | 29% (18) | 29% |
+| cmc |
+| 0 | 25% (16) | 25% |
+| 1 | 8% (5) | 8% |
+| 2 | 38% (24) | 38% |
+| 3 | 11% (7) | 11% |
+| 4 | 8% (5) | 8% |
+| 5 | 4% (2) | 4% |
+| 6 | 8% (5) | 8% |
+| domains |
+| calm | 50% (32) | 50% |
+| chaos | 47% (30) | 47% |
+| colorless | 5% (3) | 5% |

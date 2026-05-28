@@ -1,0 +1,141 @@
+{
+  "id": "atlanta-rq-28-grant-w",
+  "legend": "Darius, Hand of Noxus",
+  "champion": "Darius, Trifarian",
+  "player": "Grant W",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 28,
+  "set": "Spiritforged",
+  "archetype": "midrange",
+  "tier": "A",
+  "domains": [
+    "Order",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Baited Hook",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 3,
+      "role": "equipment"
+    },
+    {
+      "name": "Draven, Audacious",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 1,
+      "type": "Unit",
+      "cost": 5,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 0,
+      "role": "equipment"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 4,
+      "role": "mid_threat"
+    },
+    {
+      "name": "Trifarian Gloryseeker",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Trusty Ramhound",
+      "quantity": 2,
+      "type": "Unit",
+      "cost": 2,
+      "role": "early_unit"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 3,
+      "role": "early_unit"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Grand Strategem",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 6,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    }
+  ],
+  "runes": {
+    "Order": 8,
+    "Fury": 4
+  },
+  "battlefields": [
+    "Monastery of Hirana",
+    "Seat of Power",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [],
+  "notes": ""
+}

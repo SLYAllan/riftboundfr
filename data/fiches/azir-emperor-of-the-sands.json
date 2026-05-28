@@ -1,0 +1,48 @@
+{
+  "legendName": "Azir, Emperor of the Sands",
+  "legendId": null,
+  "domains": ["Calm", "Order"],
+  "set": "Origins",
+  "tier": 2,
+  "archetype": "Token / Equipment conquérant",
+  "legendAbility": "Jouer des equipment cards trigger l'ability — crée des Sand Soldiers tokens et développe le board.",
+  "gameplan": {
+    "earlyGame": "Développer des equipment et tokens. SFD-153 (plus de might/cost), SFD-042 (crée des tokens). Hidden cards pour protéger.",
+    "midGame": "SFD-198 comme reward pour avoir joué des gears. SFD-177 en chosen champion (Accelerate = conquête immédiate).",
+    "lateGame": "Conquérir avec tokens + equipment. SFD-163 et SFD-043 pour les derniers points.",
+    "winCondition": "Conquête continue avec une armée de Sand Soldiers équipés"
+  },
+  "keyCards": [
+    { "name": "SFD-153", "id": "SFD-153", "role": "Equipment — plus de might pour son coût." },
+    { "name": "SFD-042", "id": "SFD-042", "role": "Equipment — crée des tokens." },
+    { "name": "SFD-198", "id": "SFD-198", "cost": 6, "role": "Reward pour les gears joués — staple." },
+    { "name": "SFD-177", "id": "SFD-177", "role": "Chosen champion — Accelerate pour conquête immédiate avec tokens." },
+    { "name": "OGN-233", "id": "OGN-233", "role": "Token support." },
+    { "name": "OGN-209", "id": "OGN-209", "role": "Removal essentiel." },
+    { "name": "OGN-213", "id": "OGN-213", "role": "Removal — hidden card en réaction." },
+    { "name": "SFD-154", "id": "SFD-154", "role": "Hidden — buff de might." },
+    { "name": "SFD-043", "id": "SFD-043", "role": "Retreat les unités à la base, ready pour re-attaquer." },
+    { "name": "SFD-163", "id": "SFD-163", "role": "Push le dernier point." },
+    { "name": "UNL-039", "id": "UNL-039", "role": "Nouvel equipment Unleashed." },
+    { "name": "UNL-042", "id": "UNL-042", "role": "Stun — nouvel outil que l'adversaire doit anticiper." },
+    { "name": "UNL-173", "id": "UNL-173", "role": "Convertit une unité en cartes + rune." }
+  ],
+  "strengths": [
+    "1 Win en tournoi online occidental + 2 Top 8",
+    "Core equipment stable à travers les sets — peu de cartes à changer",
+    "Hidden cards rendent les conquêtes imprévisibles"
+  ],
+  "weaknesses": [
+    "Dépendant des equipment — vulnérable au gear removal",
+    "Peu d'unités 'réelles' — repose sur les tokens + gears",
+    "Guide Spiritforged uniquement — pas de mise à jour complète Unleashed"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "preRegionals": "1 Win / 2 Top 8",
+    "sydneyStats": { "winRate": "52%", "matches": 241, "bestPlacement": "25th (10-3-0)" }
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/azir-emperor-of-the-sands-guide/"
+}

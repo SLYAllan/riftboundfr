@@ -1,0 +1,73 @@
+{
+  "id": "lille-regional",
+  "name": "Lille Regional Qualifier",
+  "set": "Spiritforged (Post-Ban)",
+  "date": "2026-04-18",
+  "location": "Lille, France",
+  "estimated_players": 1800,
+  "source": "riftbound.gg/lille-regional-qualifier/",
+  "author": "Den",
+  "key_narrative": "First post-ban Regional. 5 different legends in top 8 across 5 domains (only Mind absent). Azir surprised by winning the whole event. Diverse top 8 compared to Vegas. Draven and Irelia still most popular but couldn't close it out.",
+  "top_8": [
+    {
+      "place": 1,
+      "legend": "Azir",
+      "record": "14-0-2",
+      "notes": "Winner. Emperor of the Sands proves he can win on the big stage."
+    },
+    {
+      "place": 2,
+      "legend": "Master Yi",
+      "record": "13-2-1",
+      "notes": "Finalist. Strong post-ban rise."
+    },
+    {
+      "place": "3-4",
+      "legend": "Draven",
+      "record": "12-2-1",
+      "notes": "Semi-finalist. Still most popular, highest conversion."
+    },
+    {
+      "place": "3-4",
+      "legend": "Annie",
+      "record": "12-2-1",
+      "notes": "Semi-finalist. First significant result since Nanjing win."
+    },
+    {
+      "place": "5-8",
+      "legend": "Irelia",
+      "record": "11-2-1",
+      "notes": "All 3 Irelia players lost in quarterfinals."
+    }
+  ],
+  "legend_stats": [
+    {"legend": "Irelia", "picks": 253, "pick_share": "15%", "day2": 70, "conversion": "28%"},
+    {"legend": "Draven", "picks": 220, "pick_share": "13%", "day2": 63, "conversion": "29%"},
+    {"legend": "Kai'Sa", "picks": 187, "pick_share": "11%", "day2": 42, "conversion": "22%"},
+    {"legend": "Viktor", "picks": 121, "pick_share": "7%", "day2": 17, "conversion": "14%"},
+    {"legend": "Master Yi", "picks": 95, "pick_share": "5%", "day2": 21, "conversion": "22%"},
+    {"legend": "Rek'Sai", "picks": 79, "pick_share": "4%", "day2": 13, "conversion": "16%"},
+    {"legend": "Fiora", "picks": 71, "pick_share": "4%", "day2": 8, "conversion": "11%"},
+    {"legend": "Ezreal", "picks": 67, "pick_share": "4%", "day2": 12, "conversion": "18%"},
+    {"legend": "Azir", "picks": 49, "pick_share": "3%", "day2": 11, "conversion": "22%"},
+    {"legend": "Lucian", "picks": 49, "pick_share": "3%", "day2": 8, "conversion": "16%"},
+    {"legend": "Sett", "picks": 44, "pick_share": "3%", "day2": 8, "conversion": "19%"},
+    {"legend": "Annie", "picks": 43, "pick_share": "2%", "day2": 11, "conversion": "26%"},
+    {"legend": "Ahri", "picks": 41, "pick_share": "2%", "day2": 2, "conversion": "5%"},
+    {"legend": "Yasuo", "picks": 40, "pick_share": "2%", "day2": 3, "conversion": "8%"},
+    {"legend": "Lux", "picks": 39, "pick_share": "2%", "day2": 4, "conversion": "10%"},
+    {"legend": "Ornn", "picks": 36, "pick_share": "2%", "day2": 0, "conversion": "0%"},
+    {"legend": "Jinx", "picks": 34, "pick_share": "2%", "day2": 5, "conversion": "15%"},
+    {"legend": "Rumble", "picks": 33, "pick_share": "2%", "day2": 1, "conversion": "3%"},
+    {"legend": "Darius", "picks": 29, "pick_share": "2%", "day2": 7, "conversion": "24%"},
+    {"legend": "Lee Sin", "picks": 27, "pick_share": "2%", "day2": 4, "conversion": "15%"},
+    {"legend": "Volibear", "picks": 26, "pick_share": "2%", "day2": 1, "conversion": "4%"},
+    {"legend": "Miss Fortune", "picks": 25, "pick_share": "2%", "day2": 2, "conversion": "8%"},
+    {"legend": "Jax", "picks": 25, "pick_share": "2%", "day2": 2, "conversion": "8%"},
+    {"legend": "Teemo", "picks": 25, "pick_share": "2%", "day2": 0, "conversion": "0%"},
+    {"legend": "Leona", "picks": 22, "pick_share": "1%", "day2": 2, "conversion": "9%"},
+    {"legend": "Garen", "picks": 20, "pick_share": "1%", "day2": 1, "conversion": "5%"},
+    {"legend": "Renata Glasc", "picks": 20, "pick_share": "1%", "day2": 0, "conversion": "0%"},
+    {"legend": "Sivir", "picks": 16, "pick_share": "1%", "day2": 2, "conversion": "13%"}
+  ]
+}

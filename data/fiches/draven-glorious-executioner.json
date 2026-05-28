@@ -1,0 +1,43 @@
+{
+  "legendName": "Draven, Glorious Executioner",
+  "legendId": null,
+  "domains": ["Chaos", "Fury"],
+  "set": "Origins",
+  "tier": 2,
+  "archetype": "Midrange explosif / Draw via combats",
+  "legendAbility": "Pioche une carte quand il gagne un combat (attaque ou défense). L'adversaire doit constamment calculer si attaquer est rentable.",
+  "gameplan": {
+    "earlyGame": "SFD-130 développe des unités sans perdre de runes. Pression rapide avec des unités 4-6 cost.",
+    "midGame": "OGN-039 + ability = draw massif. OGN-183 pour creuser le deck. Unités 4-6 cost dominent le midrange.",
+    "lateGame": "OGN-172 renvoie les grosses menaces en main adverse — scores les derniers points. OGN-192 en side deck vs control.",
+    "winCondition": "Pression midrange explosive + draw via combats gagnés = l'adversaire s'épuise"
+  },
+  "keyCards": [
+    { "name": "OGN-028", "id": "OGN-028", "role": "Chosen champion (post-ban SFD-020). 5-cost pressure tool, fort quand on score tôt." },
+    { "name": "SFD-130", "id": "SFD-130", "role": "Développe des unités quand il se déplace — runes intactes. Inarrêtable si il bouge plusieurs fois." },
+    { "name": "OGN-039", "id": "OGN-039", "role": "Draw engine." },
+    { "name": "OGN-183", "id": "OGN-183", "role": "Deck digging." },
+    { "name": "OGN-192", "id": "OGN-192", "role": "Side deck vs control — disruption main." },
+    { "name": "OGN-172", "id": "OGN-172", "role": "Renvoie les grosses unités en main — permet de scorer avant stabilisation." },
+    { "name": "OGN-289", "id": "OGN-289", "role": "Battlefield spécifique — jouer des sorts support sans perdre de tempo." },
+    { "name": "OGN-173", "id": "OGN-173", "role": "Push final combiné avec OGN-028." }
+  ],
+  "strengths": [
+    "0 carte Unleashed dans le meilleur deck — prouve la force du core Spiritforged",
+    "Ability crée un dilemme constant pour l'adversaire",
+    "Explosif en midrange — difficile à contenir"
+  ],
+  "weaknesses": [
+    "0 amélioration d'Unleashed = limité à long terme",
+    "Struggle vs grosses menaces OGN-160 — doit renvoyer avec OGN-172",
+    "N'a pas dominé le meta depuis le ban de SFD-020"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "preRegionals": "5 Top 8",
+    "sydneyStats": { "winRate": "55%", "matches": 193, "bestPlacement": "10th (11-2-0)" }
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": true,
+  "sourceUrl": "https://riftbound.gg/draven-glorious-executioner-guide/"
+}

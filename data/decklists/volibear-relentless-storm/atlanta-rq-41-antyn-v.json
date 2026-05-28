@@ -1,0 +1,170 @@
+{
+  "id": "atlanta-rq-41-antyn-v",
+  "legend": "Volibear, Relentless Storm",
+  "champion": "Volibear, Furious",
+  "player": "Antyn V",
+  "tournament": "Atlanta Regional Qualifier",
+  "date": "2026-04-29",
+  "placement": 41,
+  "set": "Spiritforged",
+  "archetype": "aurora-ramp",
+  "tier": "C",
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Void Seeker",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 3,
+      "role": "draw"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 9,
+      "role": "finisher"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 4,
+      "role": "draw"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "cost": 9,
+      "role": "equipment"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 8,
+      "role": "finisher"
+    },
+    {
+      "name": "Stormbringer",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 6,
+      "role": "removal"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "cost": 6,
+      "role": "finisher"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 1,
+      "role": "tech"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "removal"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 2,
+      "role": "draw"
+    },
+    {
+      "name": "Get Excited!",
+      "quantity": 1,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 3,
+      "type": "Spell",
+      "cost": 8,
+      "role": "flex"
+    },
+    {
+      "name": "Volibear, Imposing",
+      "quantity": 1,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "combat_trick"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "cost": 0,
+      "role": "flex"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 2,
+      "role": "flex"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Spell",
+      "cost": 1,
+      "role": "flex"
+    }
+  ],
+  "notes": ""
+}

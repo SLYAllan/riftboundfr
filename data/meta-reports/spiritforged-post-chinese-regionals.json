@@ -1,0 +1,125 @@
+{
+  "id": "spiritforged-post-chinese-regionals",
+  "title": "Spiritforged Global Release & Post Chinese Regionals",
+  "set": "Spiritforged",
+  "period": "Post 4 Chinese Regionals, Pre-Bologna/Vegas",
+  "date": "2026-02-28",
+  "author": "Den",
+  "source": "riftbound.gg/riftbound-meta-tier-list-best-decks-for-spiritforged-global-release-post-chinese-regionals/",
+  "meta_overview": "After 4 Chinese regionals, the meta settled into a cycle: Draven dominates midrange → control decks (Kai'Sa, Ezreal) adapt → Annie punishes slow control → cycle repeats. Draven dropped from S-Tier but remains #1. Kai'Sa revived with a control build in Dalian. Annie won Nanjing. West enters Spiritforged with a complex, intricate environment.",
+  "key_observations": [
+    "Draven dropped from S-Tier to Tier 1 — still #1 but can be beaten with right build",
+    "Metagame cycle: Draven midrange → Control adapts → Annie punishes control → cycle resets",
+    "Kai'Sa won Dalian with control heavy build — roller coaster performance across 4 events",
+    "Annie won Nanjing with 37.5% conversion rate (3/8 to day 2)",
+    "Ezreal consistent: top cut at all 4 Chinese regionals, finals + semis appearances",
+    "Fiora has 2 finals + top 8 but low conversion rate — wins more than metrics suggest",
+    "Sett quietly strong: 20.69% conversion over 4 regionals with only 29 picks",
+    "West expected to have different meta — Annie/Ezreal/Sivir potential risers",
+    "6 Tier 1 legends: Draven, Irelia, Kai'Sa, Annie, Ezreal, Fiora"
+  ],
+  "tier_list": {
+    "tier_1": [
+      {
+        "legend": "Draven",
+        "picks": 573,
+        "top_64": 126,
+        "conversion_rate": "21.99%",
+        "key_result": "2 Wins & Two Top 4"
+      },
+      {
+        "legend": "Irelia",
+        "picks": 238,
+        "top_64": 45,
+        "conversion_rate": "18.91%",
+        "key_result": "Two Top 4 & Two Top 8"
+      },
+      {
+        "legend": "Kai'Sa",
+        "picks": 172,
+        "top_64": 24,
+        "conversion_rate": "13.95%",
+        "key_result": "Win (Dalian) & Top 8"
+      },
+      {
+        "legend": "Annie",
+        "picks": 36,
+        "top_64": 6,
+        "conversion_rate": "16.67%",
+        "key_result": "Win (Nanjing) & Top 8"
+      },
+      {
+        "legend": "Ezreal",
+        "picks": 66,
+        "top_64": 9,
+        "conversion_rate": "13.64%",
+        "key_result": "Finals & Top 4"
+      },
+      {
+        "legend": "Fiora",
+        "picks": 117,
+        "top_64": 9,
+        "conversion_rate": "7.69%",
+        "key_result": "2 Finals & Top 8"
+      }
+    ],
+    "tier_2": [
+      {
+        "legend": "Sett",
+        "picks": 29,
+        "top_64": 6,
+        "conversion_rate": "20.69%",
+        "key_result": "Top 16 & Three Top 64"
+      },
+      {
+        "legend": "Lucian",
+        "picks": 54,
+        "top_64": 5,
+        "conversion_rate": "9.26%",
+        "key_result": "Top 16 & Two 32"
+      },
+      {
+        "legend": "Azir",
+        "picks": 65,
+        "top_64": 4,
+        "conversion_rate": "6.25%",
+        "key_result": "Finals (Nanjing) & Top 32"
+      },
+      {
+        "legend": "Viktor",
+        "picks": 89,
+        "top_64": 8,
+        "conversion_rate": "8.99%",
+        "key_result": "Two Top 32 & Two Top 64"
+      },
+      {
+        "legend": "Sivir",
+        "picks": 53,
+        "top_64": 3,
+        "conversion_rate": "5.66%",
+        "key_result": "Top 4 (Miracle build)"
+      }
+    ],
+    "tier_3": [
+      {"legend": "Master Yi", "picks": 50, "top_64": 3, "conversion_rate": "6%"},
+      {"legend": "Jax", "picks": 35, "top_64": 2, "conversion_rate": "5.71%"},
+      {"legend": "Lux", "picks": 41, "top_64": 2, "conversion_rate": "4.88%"},
+      {"legend": "Rek'Sai", "picks": 45, "top_64": 1, "conversion_rate": "2.22%"},
+      {"legend": "Leona", "picks": 26, "top_64": 1, "conversion_rate": "3.85%"},
+      {"legend": "Ahri", "picks": 34, "top_64": 1, "conversion_rate": "2.94%"},
+      {"legend": "Ornn", "picks": 64, "top_64": 1, "conversion_rate": "1.56%"}
+    ],
+    "tier_4": [
+      {"legend": "Yasuo"},
+      {"legend": "Miss Fortune"},
+      {"legend": "Renata Glasc"},
+      {"legend": "Jinx"},
+      {"legend": "Rumble"},
+      {"legend": "Darius"},
+      {"legend": "Volibear"},
+      {"legend": "Teemo"},
+      {"legend": "Lee Sin"},
+      {"legend": "Garen"}
+    ]
+  }
+}

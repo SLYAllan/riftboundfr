@@ -1,0 +1,279 @@
+1. [Home](https://riftdecks.com/)
+2. [Riftbound Meta](https://riftdecks.com/legends/constructed)
+3. [Ezreal, Prodigal Explorer](https://riftdecks.com/legends/constructed/ezreal-prodigal-explorer)
+4. 贾洛轻语
+
+# 贾洛轻语 by 永远之岚
+
+"贾洛轻语" decklist by 永远之岚. 95th at S2 Shenzhen National Open by 官方赛事 on 2026-03-22
+
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Ezreal, Prodigal Explorer](https://riftdecks.com/legends/constructed/ezreal-prodigal-explorer) [Chaos Mind](https://riftdecks.com/riftbound-metagame/constructed/chaos-mind) [永远之岚](https://riftdecks.com/riftbound-decks?player=%E6%B0%B8%E8%BF%9C%E4%B9%8B%E5%B2%9A&deck_type=all) [S2 Shenzhen National Open](https://riftdecks.com/riftbound-tournaments/s2-shenzhen-national-open-tournament-decks-6619) [Riftbound Decks](https://riftdecks.com/)
+
+**![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)贾洛轻语**
+**, a deck by [永远之岚](https://riftdecks.com/riftbound-decks?player=%E6%B0%B8%E8%BF%9C%E4%B9%8B%E5%B2%9A&deck_type=all)**
+
+95th at
+S2 Shenzhen National Open 2048 players on
+2026-03-22
+
+[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
+\|
+64 Cards \|
+
+
+
+## Text Decklist
+
+[Bookmark](https://riftdecks.com/riftbound-metagame/deck-jia-luo-qing-yu-105086#) Similar Decks
+
+Export this Deck
+
+
+This deck contains banned cards.
+
+
+![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-276-298_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-248-221_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-149a-221_cropped.png)
+
+|     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ezreal, Prodigal Explorer](https://riftdecks.com/cards/details-ezreal-prodigal-explorer) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Ezreal, Prodigy](https://riftdecks.com/cards/details-ezreal-prodigy) | $7.35 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (9) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster) | $3.80 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Pit Crew](https://riftdecks.com/cards/details-pit-crew) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Vex, Cheerless](https://riftdecks.com/cards/details-vex-cheerless) | $0.63 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Mindsplitter](https://riftdecks.com/cards/details-mindsplitter) | $4.22 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $22.87 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (8) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Seal of Discord](https://riftdecks.com/cards/details-seal-of-discord) | $15.27 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Cull](https://riftdecks.com/cards/details-cull) | $0.11 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Pack of Wonders](https://riftdecks.com/cards/details-pack-of-wonders) | $0.29 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (22) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Called Shot](https://riftdecks.com/cards/details-called-shot) | $0.16 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $1.04 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Retreat](https://riftdecks.com/cards/details-retreat) | $0.86 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Stacked Deck](https://riftdecks.com/cards/details-stacked-deck) | $7.66 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Stupefy](https://riftdecks.com/cards/details-stupefy) | $0.27 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Frigid Touch](https://riftdecks.com/cards/details-frigid-touch) | $0.12 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Rebuke](https://riftdecks.com/cards/details-rebuke) | $0.38 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Arcane Shift](https://riftdecks.com/cards/details-arcane-shift) | $2.43 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain) | $0.14 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Singularity](https://riftdecks.com/cards/details-singularity) | $1.06 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Aspirant's Climb](https://riftdecks.com/cards/details-aspirants-climb) | $0.26 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Veiled Temple](https://riftdecks.com/cards/details-veiled-temple) | $0.09 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Void Gate](https://riftdecks.com/cards/details-void-gate) | $0.22 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Chaos Rune](https://riftdecks.com/cards/details-chaos-rune) | $0.16 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (8) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Factory Recall](https://riftdecks.com/cards/details-factory-recall) | $0.14 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Morbid Return](https://riftdecks.com/cards/details-morbid-return) | $0.11 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Rebuke](https://riftdecks.com/cards/details-rebuke) | $0.38 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $0.47 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Invert Timelines](https://riftdecks.com/cards/details-invert-timelines) | $18.20 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vex, Cheerless](https://riftdecks.com/cards/details-vex-cheerless) | $0.63 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Rhasa the Sunderer](https://riftdecks.com/cards/details-rhasa-the-sunderer) | $0.82 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+|  |  |
+
+Buy this deck
+
+![](https://riftdecks.com/img/logos/tcg_player.png)$148.27
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x2
+
+![](https://riftdecks.com/img/cards/riftbound//OGN/ogn-195-298_full.png)
+
+## Visual Decklist
+
+Deck Style
+
+Grouped
+
+Horizontal
+
+Grid
+
+Download Image
+
+
+![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)
+
+95th
+
+贾洛轻语
+
+
+**by 永远之岚**
+
+S2 Shenzhen National Open
+
+@ 官方赛事 2026-03-22
+
+2048 Players
+
+x1
+
+[![Ezreal, Prodigal Explorer](https://riftdecks.com/img/cards/riftbound//SFD/sfd-248-221_full.png)](https://riftdecks.com/cards/details-ezreal-prodigal-explorer)
+
+x7
+
+[![Chaos Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-166-298_full.png)](https://riftdecks.com/cards/details-chaos-rune)
+
+x5
+
+[![Mind Rune](https://riftdecks.com/img/cards/riftbound//OGN/ogn-089a-298_full.png)](https://riftdecks.com/cards/details-mind-rune)
+
+x1
+
+[![Aspirant's Climb](https://riftdecks.com/img/cards/riftbound//OGN/ogn-276-298_full.png)](https://riftdecks.com/cards/details-aspirants-climb)
+
+x1
+
+[![Veiled Temple](https://riftdecks.com/img/cards/riftbound//SFD/sfd-221-221_full.png)](https://riftdecks.com/cards/details-veiled-temple)
+
+x1
+
+[![Void Gate](https://riftdecks.com/img/cards/riftbound//OGN/ogn-296-298_full.png)](https://riftdecks.com/cards/details-void-gate)
+
+x1
+
+[![Ezreal, Prodigy](https://riftdecks.com/img/cards/riftbound//SFD/sfd-149a-221_full.png)](https://riftdecks.com/cards/details-ezreal-prodigy)
+
+x2
+
+[![Fizz, Trickster](https://riftdecks.com/img/cards/riftbound//SFD/sfd-140-221_full.png)](https://riftdecks.com/cards/details-fizz-trickster)
+
+x3
+
+[![Pit Crew](https://riftdecks.com/img/cards/riftbound//OGN/ogn-091-298_full.png)](https://riftdecks.com/cards/details-pit-crew)
+
+x2
+
+[![Vex, Cheerless](https://riftdecks.com/img/cards/riftbound//SFD/sfd-146-221_full.png)](https://riftdecks.com/cards/details-vex-cheerless)
+
+x1
+
+[![Mindsplitter](https://riftdecks.com/img/cards/riftbound//OGN/ogn-192-298_full.png)](https://riftdecks.com/cards/details-mindsplitter)
+
+x1
+
+[![Thousand-Tailed Watcher](https://riftdecks.com/img/cards/riftbound//OGN/ogn-116-298_full.png)](https://riftdecks.com/cards/details-thousand-tailed-watcher)
+
+x3
+
+[![Seal of Discord](https://riftdecks.com/img/cards/riftbound//OGN/ogn-204-298_full.png)](https://riftdecks.com/cards/details-seal-of-discord)
+
+x3
+
+[![Cull](https://riftdecks.com/img/cards/riftbound//SFD/sfd-134-221_full.png)](https://riftdecks.com/cards/details-cull)
+
+x2
+
+[![Pack of Wonders](https://riftdecks.com/img/cards/riftbound//OGN/ogn-181-298_full.png)](https://riftdecks.com/cards/details-pack-of-wonders)
+
+x3
+
+[![Called Shot](https://riftdecks.com/img/cards/riftbound//SFD/sfd-122-221_full.png)](https://riftdecks.com/cards/details-called-shot)
+
+x3
+
+[![Bellows Breath](https://riftdecks.com/img/cards/riftbound//SFD/sfd-080-221_full.png)](https://riftdecks.com/cards/details-bellows-breath)
+
+x2
+
+[![Retreat](https://riftdecks.com/img/cards/riftbound//OGN/ogn-104-298_full.png)](https://riftdecks.com/cards/details-retreat)
+
+x3
+
+[![Stacked Deck](https://riftdecks.com/img/cards/riftbound//OGN/ogn-183-298_full.png)](https://riftdecks.com/cards/details-stacked-deck)
+
+x3
+
+[![Stupefy](https://riftdecks.com/img/cards/riftbound//OGN/ogn-095-298_full.png)](https://riftdecks.com/cards/details-stupefy)
+
+x2
+
+[![Frigid Touch](https://riftdecks.com/img/cards/riftbound//SFD/sfd-066-221_full.png)](https://riftdecks.com/cards/details-frigid-touch)
+
+x2
+
+[![Rebuke](https://riftdecks.com/img/cards/riftbound//OGN/ogn-172-298_full.png)](https://riftdecks.com/cards/details-rebuke)
+
+x1
+
+[![Arcane Shift](https://riftdecks.com/img/cards/riftbound//SFD/sfd-200-221_full.png)](https://riftdecks.com/cards/details-arcane-shift)
+
+x2
+
+[![Wages of Pain](https://riftdecks.com/img/cards/riftbound//SFD/sfd-070-221_full.png)](https://riftdecks.com/cards/details-wages-of-pain)
+
+x1
+
+[![Singularity](https://riftdecks.com/img/cards/riftbound//OGN/ogn-105-298_full.png)](https://riftdecks.com/cards/details-singularity)
+
+## Sideboard
+
+x1
+
+[![Factory Recall](https://riftdecks.com/img/cards/riftbound//SFD/sfd-135-221_full.png)](https://riftdecks.com/cards/details-factory-recall)
+
+x1
+
+[![Morbid Return](https://riftdecks.com/img/cards/riftbound//OGN/ogn-170-298_full.png)](https://riftdecks.com/cards/details-morbid-return)
+
+x1
+
+[![Rebuke](https://riftdecks.com/img/cards/riftbound//OGN/ogn-172-298_full.png)](https://riftdecks.com/cards/details-rebuke)
+
+x1
+
+[![Switcheroo](https://riftdecks.com/img/cards/riftbound//SFD/sfd-145-221_full.png)](https://riftdecks.com/cards/details-switcheroo)
+
+x1
+
+[![Invert Timelines](https://riftdecks.com/img/cards/riftbound//OGN/ogn-201-298_full.png)](https://riftdecks.com/cards/details-invert-timelines)
+
+x1
+
+[![Vex, Cheerless](https://riftdecks.com/img/cards/riftbound//SFD/sfd-146-221_full.png)](https://riftdecks.com/cards/details-vex-cheerless)
+
+x2
+
+[![Rhasa the Sunderer](https://riftdecks.com/img/cards/riftbound//OGN/ogn-195-298_full.png)](https://riftdecks.com/cards/details-rhasa-the-sunderer)
+
+## Deck Stats
+
+| types |
+| --- |
+| battlefield | 5% (3) | 5% |
+| gear | 13% (8) | 13% |
+| legend | 2% (1) | 2% |
+| rune | 19% (12) | 19% |
+| spell | 43% (27) | 43% |
+| unit | 21% (13) | 21% |
+| cmc |
+| 0 | 35% (22) | 35% |
+| 1 | 24% (15) | 24% |
+| 2 | 15% (9) | 15% |
+| 3 | 16% (10) | 16% |
+| 5 | 5% (3) | 5% |
+| 6 | 2% (1) | 2% |
+| 7 | 4% (2) | 4% |
+| 10 | 4% (2) | 4% |
+| domains |
+| chaos | 61% (39) | 61% |
+| colorless | 5% (3) | 5% |
+| mind | 38% (24) | 38% |

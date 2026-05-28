@@ -1,0 +1,65 @@
+{
+  "legendName": "Volibear, Relentless Storm",
+  "legendId": null,
+  "domains": ["Body", "Fury"],
+  "set": "Unleashed",
+  "tier": 3,
+  "archetype": "Dragon Ramp / Big Units",
+  "legendAbility": "Stratégie basée sur les dragons et les grosses unités — ramp avec Mobilize puis déploie des menaces massives.",
+  "gameplan": {
+    "earlyGame": "Herald of Scales et Blazing Scorcher comme early ramp. Punch First pour tempo. Confront pour challenger.",
+    "midGame": "Mobilize pour accélérer le mana. Gentle Gemdragon et Direwing comme menaces mid. Challenge pour forcer les trades.",
+    "lateGame": "Kadregrin the Infernal (100% core) et Elder Dragon comme finishers. Sky Splitter et Catalyst of Aeons pour board wipe.",
+    "winCondition": "Overwhelm — déploie des dragons massifs que l'adversaire ne peut pas gérer"
+  },
+  "keyCards": [
+    { "name": "Kadregrin the Infernal", "role": "Core — finisher dragon, 100% à 2.9x." },
+    { "name": "Elder Dragon", "role": "Core — menace majeure, 93% à 2.7x." },
+    { "name": "Challenge", "role": "Core — force les trades, 93% à 2.5x." },
+    { "name": "Mobilize", "role": "Standard — ramp essentiel, 86% à 3x." },
+    { "name": "Sabotage", "role": "Standard — disruption, 79% à 2x." },
+    { "name": "Sky Splitter", "role": "Standard — removal/board control, 79% à 2.6x." },
+    { "name": "Flurry of Blades", "role": "Standard — combat trick, 71% à 2x." },
+    { "name": "Gentle Gemdragon", "role": "Standard — dragon mid, 64% à 2.9x." },
+    { "name": "Confront", "role": "Standard — challenger, 64% à 2.7x." },
+    { "name": "Herald of Scales", "role": "Flex — early dragon, 57% à 3x." },
+    { "name": "Blazing Scorcher", "role": "Flex — early dragon, 57% à 3x." },
+    { "name": "Stormbringer", "role": "Flex — spell signature, 57% à 1.5x." },
+    { "name": "Punch First", "role": "Flex — removal, 57% à 1.5x." }
+  ],
+  "champions": {
+    "Volibear, Furious": { "usage": "100%", "role": "Seul champion — agression et overwhelm." }
+  },
+  "topBattlefields": [
+    "Aspirant's Climb (100%)",
+    "Sigil of the Storm (79%)",
+    "Forgotten Monument (43%)",
+    "Sunken Temple (21%)",
+    "Frozen Fortress (21%)"
+  ],
+  "strengths": [
+    "Aspirant's Climb à 100% — battlefield universel pour le deck",
+    "Kadregrin + Elder Dragon = finishers quasi-imbattables en combat",
+    "Unit-heavy (18.9 avg) avec un bon équilibre spells (18.4 avg)",
+    "Mobilize permet de jouer les gros dragons plus tôt que prévu"
+  ],
+  "weaknesses": [
+    "Très peu de gears (1.6 avg) — presque pas de protection gear",
+    "Dépendant du ramp — sans Mobilize, le deck est trop lent",
+    "Pas de Top 32 majeur — best 41st Atlanta RQ",
+    "Vulnérable au removal ciblé sur Kadregrin"
+  ],
+  "competitiveResults": {
+    "tier": 3,
+    "deckCount": 14,
+    "bestPlacements": [
+      { "placement": "41st", "player": "Antyn V", "tournament": "Atlanta RQ" },
+      { "placement": "98th", "player": "FOF 麦克阿瑟", "tournament": "S3 Xi'an Regional Open" },
+      { "placement": "106th", "player": "大喷菇", "tournament": "S3 Xi'an Regional Open" }
+    ]
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": true,
+  "sourceUrl": null,
+  "dataSource": "meta-analysis.json — 14 decklists (Xi'an + Atlanta)"
+}

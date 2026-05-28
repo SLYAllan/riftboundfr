@@ -1,0 +1,303 @@
+import { notFound } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+import { formatDate } from "@/lib/utils";
+import { ArticleBlockRenderer } from "@/components/article-block-renderer";
+import { parseDeckCode } from "@/lib/deck-code";
+import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
+import Link from "next/link";
+import type { Metadata } from "next";
+import type { ArticleBlock, DecklistCard, DeckSection } from "@/types";
+import { Calendar, MapPin, Users } from "lucide-react";
+import { getTournamentCountryCode } from "@/lib/tournament-flags";
+import { CountryBadge } from "@/components/country-badge";
+import { CommentsSection } from "@/components/comments";
+
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = await prisma.article.findUnique({ where: { slug } });
+  if (!article) return { title: "Article introuvable" };
+  return {
+    title: article.title,
+    description: article.excerpt || `${article.title} — Riftbound France`,
+    alternates: { canonical: `/articles/${slug}` },
+  };
+}
+
+function isBinaryDeckCode(code: string): boolean {
+  return !code.includes("\n") && !code.includes("==") && decodeDeck(code) !== null;
+}
+
+function toListCard(card: { id: string; name: string; imageUrl: string | null; type: string; energy: number | null; power: number | null; might: number | null; rarity: string; domains: string[]; textPlain: string | null }, quantity: number, section: DeckSection): DecklistCard {
+  return {
+    cardId: card.id,
+    name: card.name,
+    artUrl: card.imageUrl,
+    type: card.type,
+    cost: card.energy,
+    power: card.power,
+    energy: card.energy,
+    might: card.might,
+    rarity: card.rarity,
+    domains: card.domains,
+    description: card.textPlain,
+    quantity,
+    section,
+  };
+}
+
+async function resolveBinaryDeck(block: Extract<ArticleBlock, { type: "decklist" }>): Promise<{ cards: DecklistCard[]; code: string }> {
+  const decoded = decodeDeck(block.deckCode)!;
+  const allIds: string[] = [];
+  if (decoded.legend) allIds.push(decoded.legend.cardId);
+  if (decoded.champion) allIds.push(decoded.champion.cardId);
+  for (const e of [...decoded.main, ...decoded.rune, ...decoded.battlefield, ...decoded.side]) allIds.push(e.cardId);
+
+  const cards = await prisma.card.findMany({ where: { riftboundId: { in: allIds } } });
+  const cardMap = new Map(cards.map((c) => [c.riftboundId, c]));
+
+  const deckCards: DecklistCard[] = [];
+  let hasRealLegend = false;
+
+  if (decoded.legend) {
+    const c = cardMap.get(decoded.legend.cardId);
+    if (c) {
+      deckCards.push(toListCard(c, 1, "legend"));
+      if (c.type === "Legend") hasRealLegend = true;
+    }
+  }
+  if (decoded.champion) {
+    const c = cardMap.get(decoded.champion.cardId);
+    if (c) deckCards.push(toListCard(c, 1, "legend"));
+  }
+
+  if (!hasRealLegend && block.legendName) {
+    const dashName = block.legendName.replace(", ", " - ");
+    const legendCard = await prisma.card.findFirst({
+      where: {
+        type: "Legend",
+        alternateArt: false,
+        overnumbered: false,
+        signature: false,
+        OR: [
+          { name: { equals: dashName, mode: "insensitive" } },
+          { name: { equals: block.legendName, mode: "insensitive" } },
+        ],
+      },
+    });
+    if (legendCard) {
+      deckCards.unshift(toListCard(legendCard, 1, "legend"));
+    }
+  }
+
+  const sectionMap: [DeckCodeEntry[], DeckSection][] = [
+    [decoded.main, "main"],
+    [decoded.rune, "rune"],
+    [decoded.battlefield, "battlefield"],
+    [decoded.side, "side"],
+  ];
+  for (const [entries, section] of sectionMap) {
+    for (const e of entries) {
+      const c = cardMap.get(e.cardId);
+      if (c) deckCards.push(toListCard(c, e.quantity, section));
+    }
+  }
+
+  return { cards: deckCards, code: block.deckCode };
+}
+
+async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record<string, DecklistCard[]>; codes: Record<string, string> }> {
+  const decklistBlocks = blocks.filter((b): b is Extract<ArticleBlock, { type: "decklist" }> => b.type === "decklist");
+  if (decklistBlocks.length === 0) return { cards: {}, codes: {} };
+
+  const resolved: Record<string, DecklistCard[]> = {};
+  const codes: Record<string, string> = {};
+
+  const textBlocks: typeof decklistBlocks = [];
+  for (const block of decklistBlocks) {
+    if (isBinaryDeckCode(block.deckCode)) {
+      const result = await resolveBinaryDeck(block);
+      resolved[block.id] = result.cards;
+      codes[block.id] = result.code;
+    } else {
+      textBlocks.push(block);
+    }
+  }
+
+  if (textBlocks.length === 0) return { cards: resolved, codes };
+
+  const allCardNames = new Set<string>();
+  for (const block of textBlocks) {
+    const parsed = parseDeckCode(block.deckCode);
+    for (const entry of parsed.entries) {
+      allCardNames.add(entry.name.toLowerCase());
+      allCardNames.add(entry.name.replace(/ - /g, ", ").toLowerCase());
+      allCardNames.add(entry.name.replace(/, /g, " - ").toLowerCase());
+    }
+  }
+
+  const nameList = [...allCardNames];
+  const cards = await prisma.card.findMany({
+    where: {
+      OR: [
+        { name: { in: nameList, mode: "insensitive" } },
+        { cleanName: { in: nameList, mode: "insensitive" } },
+      ],
+    },
+  });
+
+  const cardByName = new Map<string, typeof cards[0]>();
+  for (const c of cards) {
+    cardByName.set(c.name.toLowerCase(), c);
+    if (c.cleanName) cardByName.set(c.cleanName.toLowerCase(), c);
+  }
+
+  const riftboundIdMap = new Map(cards.map((c) => [c.id, c.riftboundId]));
+
+  for (const block of textBlocks) {
+    const parsed = parseDeckCode(block.deckCode);
+    const deckCards: DecklistCard[] = [];
+
+    for (const entry of parsed.entries) {
+      const card = cardByName.get(entry.name.toLowerCase())
+        ?? cardByName.get(entry.name.replace(/ - /g, ", ").toLowerCase())
+        ?? cardByName.get(entry.name.replace(/, /g, " - ").toLowerCase());
+      if (card) {
+        deckCards.push(toListCard(card, entry.quantity, entry.section as DeckSection));
+      } else {
+        deckCards.push({
+          cardId: `unknown-${entry.name}`,
+          name: entry.name,
+          artUrl: null,
+          type: "Unknown",
+          rarity: "Common",
+          description: null,
+          quantity: entry.quantity,
+          section: entry.section as DeckSection,
+        });
+      }
+    }
+
+    const hasLegends = deckCards.some((c) => c.section === "legend" && c.type === "Legend");
+    if (!hasLegends && block.legendName) {
+      const dashName = block.legendName.replace(", ", " - ");
+      const prefix = block.legendName.split(",")[0].split(" - ")[0].trim();
+      let legendCard = await prisma.card.findFirst({
+        where: {
+          type: "Legend",
+          OR: [
+            { name: { equals: block.legendName, mode: "insensitive" } },
+            { name: { equals: dashName, mode: "insensitive" } },
+          ],
+        },
+      });
+      if (!legendCard) {
+        legendCard = await prisma.card.findFirst({
+          where: {
+            type: "Legend",
+            name: { startsWith: prefix, mode: "insensitive" },
+            NOT: { name: { contains: "Overnumbered" } },
+          },
+        });
+      }
+      if (legendCard && !deckCards.some((c) => c.cardId === legendCard!.id)) {
+        deckCards.unshift(toListCard(legendCard, 1, "legend" as DeckSection));
+      }
+    }
+
+    resolved[block.id] = deckCards;
+
+    const legendEntry = deckCards.find((c) => c.section === "legend" && c.type === "Legend");
+    const championEntry = deckCards.find((c) => c.section === "legend" && c.type !== "Legend");
+    const toEntry = (c: DecklistCard): DeckCodeEntry => ({
+      cardId: riftboundIdMap.get(c.cardId) ?? c.cardId,
+      quantity: c.quantity,
+    });
+    codes[block.id] = encodeDeckBase64({
+      legend: legendEntry ? toEntry(legendEntry) : null,
+      champion: championEntry ? toEntry(championEntry) : null,
+      main: deckCards.filter((c) => c.section === "main").map(toEntry),
+      rune: deckCards.filter((c) => c.section === "rune").map(toEntry),
+      battlefield: deckCards.filter((c) => c.section === "battlefield").map(toEntry),
+      side: deckCards.filter((c) => c.section === "side").map(toEntry),
+    });
+  }
+
+  return { cards: resolved, codes };
+}
+
+export default async function ArticleDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const article = await prisma.article.findUnique({ where: { slug } });
+  if (!article || !article.published) notFound();
+
+  const blocks = (article.blocks as ArticleBlock[]) ?? [];
+  const { cards: resolvedDecks, codes: deckbuilderCodes } = await resolveDecklists(blocks);
+
+  const isTournoi = article.category === "tournoi";
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt || `${article.title} — Riftbound France`,
+    datePublished: article.publishedAt?.toISOString(),
+    dateModified: article.updatedAt?.toISOString(),
+    author: { "@type": "Organization", name: "Riftbound France" },
+    publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
+    inLanguage: "fr",
+  };
+  // JSON-LD uses static data only (no user content) — safe for inline serialization
+  const jsonLdHtml = JSON.stringify(articleJsonLd);
+
+  return (
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml }} />
+      <Link href="/articles" className="text-sm text-ink-muted hover:text-arcane">&larr; Retour aux articles</Link>
+
+      <article className="mt-6">
+        <div className="flex items-center gap-2 text-xs">
+          <span className="font-semibold uppercase tracking-wider text-violet">{article.category}</span>
+          {article.publishedAt && <span className="text-ink-muted">{formatDate(article.publishedAt)}</span>}
+        </div>
+
+        <h1 className="mt-3 text-4xl font-bold leading-tight" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          {article.title}
+        </h1>
+
+        {isTournoi && (article.tournamentName || article.tournamentLocation || article.tournamentPlayerCount) && (
+          <div className="mt-4 flex flex-wrap items-center gap-4 rounded-card border border-gold/20 bg-gold/5 px-4 py-3 text-sm">
+            {article.tournamentName && (() => {
+              const cc = getTournamentCountryCode(article.tournamentName);
+              return <span className="inline-flex items-center gap-1.5 font-semibold text-gold">{cc && <CountryBadge code={cc} />} {article.tournamentName}</span>;
+            })()}
+            {article.tournamentDate && (
+              <span className="flex items-center gap-1 text-ink-secondary"><Calendar size={14} />{formatDate(article.tournamentDate)}</span>
+            )}
+            {article.tournamentLocation && (
+              <span className="flex items-center gap-1 text-ink-secondary"><MapPin size={14} />{article.tournamentLocation}</span>
+            )}
+            {article.tournamentPlayerCount && (
+              <span className="flex items-center gap-1 text-ink-secondary"><Users size={14} />{article.tournamentPlayerCount} joueurs</span>
+            )}
+          </div>
+        )}
+
+        {article.coverImage && (
+          <div className="mt-6 overflow-hidden rounded-card">
+            <img src={article.coverImage} alt="" className="w-full object-cover" />
+          </div>
+        )}
+
+        <div className="mt-8">
+          <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+        </div>
+
+        <CommentsSection articleId={article.id} />
+      </article>
+    </div>
+  );
+}

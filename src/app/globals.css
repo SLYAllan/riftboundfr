@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-rubik);
+  --font-mono: var(--font-geist-mono);
+
+  /* Canvas & Surfaces */
+  --color-canvas: #1c1c1e;
+  --color-surface: #232328;
+  --color-surface-raised: #2c2c34;
+  --color-surface-overlay: #363640;
+  --color-surface-glass: rgba(28, 28, 30, 0.85);
+
+  /* Arcane Blue */
+  --color-arcane: #0ea5e9;
+  --color-arcane-light: #38bdf8;
+  --color-arcane-dark: #0284c7;
+  --color-arcane-glow: rgba(14, 165, 233, 0.15);
+
+  /* Runic Gold */
+  --color-gold: #f59e0b;
+  --color-gold-light: #fbbf24;
+  --color-gold-dark: #d97706;
+  --color-gold-glow: rgba(245, 158, 11, 0.12);
+
+  /* Mystic Violet */
+  --color-violet: #8b5cf6;
+  --color-violet-light: #a78bfa;
+  --color-violet-dark: #7c3aed;
+
+  /* Tiers */
+  --color-tier-s: #f59e0b;
+  --color-tier-a: #ef4444;
+  --color-tier-b: #8b5cf6;
+  --color-tier-c: #0ea5e9;
+  --color-tier-d: #6b7280;
+  --color-tier-s-bg: rgba(245, 158, 11, 0.08);
+  --color-tier-a-bg: rgba(239, 68, 68, 0.08);
+  --color-tier-b-bg: rgba(139, 92, 246, 0.08);
+  --color-tier-c-bg: rgba(14, 165, 233, 0.08);
+  --color-tier-d-bg: rgba(107, 114, 128, 0.08);
+
+  /* Rarity */
+  --color-rarity-common: #9ca3af;
+  --color-rarity-rare: #0ea5e9;
+  --color-rarity-epic: #8b5cf6;
+  --color-rarity-champion: #f59e0b;
+  --color-rarity-legend: #ef4444;
+
+  /* Ink (Text) */
+  --color-ink: #f1f5f9;
+  --color-ink-secondary: #94a3b8;
+  --color-ink-muted: #64748b;
+  --color-ink-disabled: #475569;
+
+  /* Hairline (Borders) */
+  --color-hairline: rgba(148, 163, 184, 0.1);
+  --color-hairline-strong: rgba(148, 163, 184, 0.2);
+  --color-hairline-accent: rgba(14, 165, 233, 0.3);
+
+  /* Semantic */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #0ea5e9;
+
+  /* Radii */
+  --radius-card: 12px;
+  --radius-game-card: 8px;
+  --radius-feature: 24px;
+
+  /* Spacing */
+  --spacing-section: 64px;
+  --spacing-section-lg: 96px;
+  --spacing-hero: 120px;
+
+  /* Domain Colors */
+  --color-domain-fury: #ef4444;
+  --color-domain-calm: #22c55e;
+  --color-domain-mind: #3b82f6;
+  --color-domain-body: #f97316;
+  --color-domain-chaos: #8b5cf6;
+  --color-domain-order: #eab308;
+  --color-domain-sorcery: #ec4899;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  /* Shadcn overrides */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dark, :root {
+  --radius: 0.625rem;
+  --background: #1c1c1e;
+  --foreground: #f1f5f9;
+  --card: #232328;
+  --card-foreground: #f1f5f9;
+  --popover: #2c2c34;
+  --popover-foreground: #f1f5f9;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
+  --secondary: #2c2c34;
+  --secondary-foreground: #f1f5f9;
+  --muted: #363640;
+  --muted-foreground: #64748b;
+  --accent: #2c2c34;
+  --accent-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --border: rgba(148, 163, 184, 0.12);
+  --input: rgba(148, 163, 184, 0.18);
+  --ring: #0ea5e9;
+}
+
+@layer base {
+  * {
+    @apply border-hairline;
+  }
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-jakarta), sans-serif;
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-colors duration-150 ease-out;
+  }
+  .card-hover:hover {
+    border-color: var(--color-hairline-strong);
+    background-color: var(--color-surface-raised);
+  }
+  .game-card-hover {
+    @apply transition-transform duration-150 ease-out;
+  }
+  .game-card-hover:hover {
+    transform: scale(1.03);
+  }
+  .glow-blue {
+    border-color: var(--color-arcane);
+  }
+  .glow-gold {
+    border-color: var(--color-gold);
+  }
+  .glass {
+    background: var(--color-surface-glass);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.15) transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 2px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.35);
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "legendName": "Rengar, Pridestalker",
+  "legendId": null,
+  "domains": ["Body", "Fury"],
+  "set": "Origins",
+  "tier": 2,
+  "archetype": "Aggro-proactif / Ambush & pression constante",
+  "legendAbility": "Jeu très proactif — prendre le lead vite et piloter depuis cette position dominante.",
+  "gameplan": {
+    "earlyGame": "UNL-002 (3-might en attaque) bat les 2-might early. UNL-112 drag une unité + aide Ambush.",
+    "midGame": "OGN-012 et UNL-120 comme unités beefues. OGN-039 et UNL-114 pour le draw. UNL-011 gear = +1 carte/tour.",
+    "lateGame": "Si UNL-011 tient, draw infini. Push avec les Ambush units que l'adversaire ne peut pas prévoir.",
+    "winCondition": "Lead early + Ambush imprévisible + draw via UNL-011"
+  },
+  "keyCards": [
+    { "name": "OGN-012", "id": "OGN-012", "role": "Unité beefue — ancre le board." },
+    { "name": "UNL-120", "id": "UNL-120", "role": "Seconde ancre mid game." },
+    { "name": "OGN-039", "id": "OGN-039", "role": "Draw — besoin de setup pour éviter le remove." },
+    { "name": "UNL-114", "id": "UNL-114", "role": "Draw + surprise Ambush." },
+    { "name": "UNL-011", "id": "UNL-011", "role": "Gear clé — +1 carte/tour pour le reste du match. Si il tient, Rengar ne manque jamais de gaz." },
+    { "name": "UNL-002", "id": "UNL-002", "role": "3-might en attaque — bat les 2-might early." },
+    { "name": "UNL-112", "id": "UNL-112", "role": "Drag vers un battlefield + Ambush support." },
+    { "name": "UNL-106", "id": "UNL-106", "role": "Support cheap Ambush — garde l'adversaire alerte." },
+    { "name": "SFD-097", "id": "SFD-097", "role": "Buff support." },
+    { "name": "UNL-184", "id": "UNL-184", "role": "Support cheap." },
+    { "name": "UNL-021", "id": "UNL-021", "role": "Ambush 3-cost." },
+    { "name": "SFD-025", "id": "SFD-025", "role": "Ambush 3-cost alternatif." }
+  ],
+  "strengths": [
+    "Pression constante via Ambush — l'adversaire ne sait jamais le vrai might disponible",
+    "Multiple top 8 chaque semaine en City Challenges",
+    "UNL-011 comme draw engine est fantastique"
+  ],
+  "weaknesses": [
+    "Perd du momentum avec le temps — week 1 win, puis aucun événement gagné",
+    "Style proactif Body+Fury et Ambush demandent des runes ouvertes = tension constante",
+    "Joueurs expérimentés savent contrer l'Ambush = moins d'impact",
+    "Quand le core synergy struggle, default vers OGN-160 = signe de faiblesse"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "preRegionals": "1 Win (semaine 1) / 5 Top 8",
+    "sydneyStats": { "winRate": "52%", "matches": 188, "bestPlacement": "11th (11-2-0)" }
+  },
+  "difficulty": "Moyen",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/rengar-pridestalker-guide/"
+}

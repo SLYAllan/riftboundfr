@@ -1,0 +1,47 @@
+{
+  "legendName": "Master Yi, Wuju Master",
+  "legendId": null,
+  "domains": ["Body", "Calm"],
+  "set": "Unleashed",
+  "tier": 4,
+  "archetype": "Midrange off-tempo / Hunt & XP scaling",
+  "legendAbility": "Basée sur le nouveau mécanisme Hunt. Level 6: toutes les unités +1 Might. Level 11: toutes les unités entrent ready. PAS d'ability early = désavantage.",
+  "gameplan": {
+    "earlyGame": "UNL-094, UNL-040, puis UNL-113 (chosen champion). UNL-100 si on va en second — attendre le level 6. Pas d'ability = désavantage.",
+    "midGame": "UNL-095 comme staple buff/XP. OGN-045, OGN-077, OGN-058 comme support. UNL-031 et UNL-091 pour XP (pas jouables tôt).",
+    "lateGame": "UNL-059 pour 6 runes ready = objectif ultime. +1 Might global à lv6, tous ready à lv11 = overwhelming.",
+    "winCondition": "Atteindre level 11 XP → toutes les unités entrent ready avec +1 Might = impossible à contenir"
+  },
+  "keyCards": [
+    { "name": "UNL-059", "id": "UNL-059", "cost": 6, "role": "Objectif ultime — unité massive qui entre ready." },
+    { "name": "UNL-113", "id": "UNL-113", "role": "Chosen champion — doit survivre pour gagner de l'XP." },
+    { "name": "UNL-094", "id": "UNL-094", "role": "Unité early." },
+    { "name": "UNL-040", "id": "UNL-040", "role": "Unité early." },
+    { "name": "UNL-100", "id": "UNL-100", "role": "Alternative en allant second — attendre level 6." },
+    { "name": "UNL-095", "id": "UNL-095", "role": "Staple buff + XP gain." },
+    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort." },
+    { "name": "OGN-077", "id": "OGN-077", "role": "Protection." },
+    { "name": "OGN-058", "id": "OGN-058", "role": "Buff." },
+    { "name": "UNL-031", "id": "UNL-031", "role": "XP spell (mid-late seulement)." },
+    { "name": "UNL-091", "id": "UNL-091", "role": "XP spell (mid-late seulement)." }
+  ],
+  "strengths": [
+    "Level 11 reward = le plus puissant du jeu si atteint",
+    "Level 6 rend les unités plus résistantes aux dégâts",
+    "Concept exciting du nouveau mécanisme Hunt"
+  ],
+  "weaknesses": [
+    "PAS d'ability early = désavantage énorme dans un meta tempo",
+    "Riftbound a beaucoup de snowball + removals qui ignorent la taille",
+    "Deckbuilding limité — besoin d'XP agressif",
+    "Struggle à être compétitif — rare top 8"
+  ],
+  "competitiveResults": {
+    "tier": 4,
+    "preRegionals": "1 Top 8",
+    "sydneyStats": { "winRate": "45%", "matches": 88, "bestPlacement": "41st (10-3-0)" }
+  },
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/master-yi-wuju-master-guide/"
+}

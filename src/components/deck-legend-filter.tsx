@@ -1,0 +1,40 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
+import { Search } from "lucide-react";
+
+interface DeckLegendFilterProps {
+  legends: string[];
+}
+
+export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const current = searchParams.get("legend") ?? "";
+
+  function handleChange(value: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set("legend", value);
+    } else {
+      params.delete("legend");
+    }
+    router.push(`/decks?${params.toString()}`);
+  }
+
+  return (
+    <div className="relative">
+      <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted pointer-events-none" size={14} />
+      <select
+        value={current}
+        onChange={(e) => handleChange(e.target.value)}
+        className="h-9 w-full sm:w-64 rounded-lg border border-hairline-strong bg-surface pl-9 pr-3 text-sm text-ink focus:border-arcane focus:outline-none cursor-pointer appearance-none"
+      >
+        <option value="">Toutes les legendes</option>
+        {legends.map((name) => (
+          <option key={name} value={name}>{name}</option>
+        ))}
+      </select>
+    </div>
+  );
+}

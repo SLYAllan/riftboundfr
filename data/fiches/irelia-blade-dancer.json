@@ -1,0 +1,68 @@
+{
+  "legendName": "Irelia, Blade Dancer",
+  "legendId": "SFD-195",
+  "domains": ["Calm", "Order"],
+  "set": "Spiritforged",
+  "tier": 1,
+  "archetype": "Tempo-midrange / Mouvement & poussée de points",
+  "legendAbility": "Irelia utilise ses runes pour pousser des points via mouvements et attaques timing. Trop tôt = pas assez de runes. Trop tard = l'adversaire s'installe.",
+  "gameplan": {
+    "earlyGame": "Poser UNL-053 ou SFD-036 pour chercher les unités clés. Protéger les premières positions avec des sorts cheap.",
+    "midGame": "Développer UNL-150 et SFD-048 — duo mortel à 4 mana. Commencer à utiliser l'ability pour pousser des points.",
+    "lateGame": "Fermer avec SFD-057 protégé par contresorts. UNL-150 et UNL-042 pour stun les unités adverses.",
+    "winCondition": "SFD-057 protégé — push de points irrésistible une fois timing trouvé"
+  },
+  "keyCards": [
+    { "name": "Stellacorn Herder", "id": "UNL-150", "cost": 4, "role": "Duo clé — draw engine et stun. Développé à un battlefield, très difficile à déloger." },
+    { "name": "SFD-048", "id": "SFD-048", "cost": 4, "role": "Second pilier du duo 4-cost. Complémente UNL-150 parfaitement." },
+    { "name": "SFD-057", "id": "SFD-057", "cost": null, "role": "Win condition principale. Tout le deck build autour de cette carte depuis Spiritforged." },
+    { "name": "UNL-053", "id": "UNL-053", "cost": 2, "role": "Tuteur early game — cherche nos unités clés." },
+    { "name": "SFD-036", "id": "SFD-036", "cost": 2, "role": "Second tuteur pour trouver UNL-150 ou SFD-048 tôt." },
+    { "name": "UNL-042", "id": "UNL-042", "cost": null, "role": "Stun d'unités adverses — réduit le besoin de garder des runes ouvertes pour réagir." },
+    { "name": "OGS-011", "id": "OGS-011", "cost": null, "role": "Mouvement d'unités entre battlefields." },
+    { "name": "SFD-133", "id": "SFD-133", "cost": null, "role": "Mouvement alternatif." },
+    { "name": "SFD-051", "id": "SFD-051", "cost": null, "role": "Protection d'unités." },
+    { "name": "OGN-077", "id": "OGN-077", "cost": null, "role": "Protection d'unités clés." },
+    { "name": "OGN-058", "id": "OGN-058", "cost": null, "role": "Buff de might — push SFD-057." },
+    { "name": "SFD-196", "id": "SFD-196", "cost": null, "role": "Buff de might alternatif." },
+    { "name": "OGN-045", "id": "OGN-045", "cost": null, "role": "Contresort — protection cruciale." },
+    { "name": "OGN-192", "id": "OGN-192", "cost": null, "role": "Disruption — inclusion optionnelle quand le core est solide." }
+  ],
+  "strengths": [
+    "Top tier en méta midrange — son style de jeu est parfait pour ce format",
+    "Duo UNL-150 + SFD-048 extrêmement résilient",
+    "UNL-150 et UNL-042 neutralisent les grosses unités adverses",
+    "Calm domain excellent pour contrer les sorts",
+    "Deck très bien défini depuis Spiritforged — peu de mauvais builds possibles"
+  ],
+  "weaknesses": [
+    "Stratégie rigide — build autour de SFD-057, pas de plan B",
+    "Matchup Aurora (OGN-160) historiquement difficile — mais amélioré avec OGN-056 tech",
+    "Vulnérable si les unités clés sont retirées avant de pouvoir les protéger"
+  ],
+  "matchups": {
+    "favorable": ["Midrange standard", "Aggro (bloqueurs + contresorts)"],
+    "unfavorable": ["Aurora decks (OGN-160) — amélioré post-Sydney"],
+    "even": ["Diana", "LeBlanc"]
+  },
+  "competitiveResults": {
+    "tier": 1,
+    "cityChallengWins": "Plus de victoires que toute autre légende",
+    "regionalResults": "Won Sydney RQ (14-1-1), Finalist Suzhou RQ",
+    "preRegionals": "6 Wins / 21 Top 8",
+    "sydneyWinRate": "55% sur 528 matchs",
+    "sydneyConversionRate": ">20%"
+  },
+  "difficulty": "Moyen-Difficile",
+  "beginnerFriendly": false,
+  "tipsBeginners": [
+    "Ne pas utiliser l'ability trop tôt — laisser les runes s'accumuler",
+    "Garder OGN-045 pour les moments critiques, pas les sorts mineurs"
+  ],
+  "tipsAdvanced": [
+    "OGN-056 est le tech card anti-Aurora — crucial en post-Sydney",
+    "Timing de l'ability est tout — maîtriser le scoring window",
+    "Contre Aurora, UNL-042 stun les grosses unités invoquées par le gear"
+  ],
+  "sourceUrl": "https://riftbound.gg/irelia-blade-dancer-guide/"
+}

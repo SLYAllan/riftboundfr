@@ -1,0 +1,47 @@
+{
+  "legendName": "Sett, The Boss",
+  "legendId": "OGN-269",
+  "domains": ["Body", "Order"],
+  "set": "Origins",
+  "tier": 2,
+  "archetype": "Hold-oriented / Buff midrange & résilience",
+  "legendAbility": "Rappelle une unité vaincue au lieu de la laisser mourir. Value énorme si bien timé — les unités ne meurent jamais.",
+  "gameplan": {
+    "earlyGame": "Développer des unités et commencer à buff. Tour 1-2 avec des unités cheap ou SFD-113/OGN-232.",
+    "midGame": "Buff avec OGN-270 (signature), SFD-108, equipment SFD-097. Hold avec des unités massives.",
+    "lateGame": "Total de might ne fait que croître car les unités sont rappelées. OGN-282 pour draw quand un buff est disponible.",
+    "winCondition": "Accumulation de might inarrêtable — les unités reviennent toujours grâce à l'ability"
+  },
+  "keyCards": [
+    { "name": "OGN-269 (Legend)", "id": "OGN-269", "role": "Ability — rappelle les unités vaincues = value infinie." },
+    { "name": "OGN-270", "id": "OGN-270", "role": "Signature — buff un unit + contest un battlefield. Staple must-own." },
+    { "name": "OGN-164", "id": "OGN-164", "role": "Champion unit (1 copie en chosen champion)." },
+    { "name": "SFD-113", "id": "SFD-113", "role": "Unité qui veut conquérir chaque tour." },
+    { "name": "OGN-232", "id": "OGN-232", "role": "Unité qui gagne des upsides quand buffée." },
+    { "name": "SFD-108", "id": "SFD-108", "role": "Buff d'unités." },
+    { "name": "SFD-098", "id": "SFD-098", "role": "Unité qui se buff elle-même." },
+    { "name": "SFD-105", "id": "SFD-105", "role": "Immune aux sorts — parfait pour showdowns." },
+    { "name": "OGN-282", "id": "OGN-282", "role": "Draw en payant un buff — résout le manque de draw de Sett." },
+    { "name": "OGN-207", "id": "OGN-207", "role": "Support gratuit quand on a un buff à dépenser." },
+    { "name": "OGN-213", "id": "OGN-213", "role": "Removal — combo avec l'ability pour sauver l'unité ciblée = 'Draw 2'." }
+  ],
+  "strengths": [
+    "Ability = les unités ne meurent jamais, value cumulée",
+    "2 wins de tournoi — ceiling élevé en mains expertes",
+    "Body+Order ont des buffs partout, rendant l'ability facile à trigger",
+    "Sorts gratuits via le coût 'dépenser un buff'"
+  ],
+  "weaknesses": [
+    "Anomalie — 2 wins, 0 autre top cut. Légende difficile à piloter.",
+    "Pas de nouveaux outils d'Unleashed mentionnés dans le guide",
+    "Guide Spiritforged uniquement — pas de mise à jour Unleashed"
+  ],
+  "competitiveResults": {
+    "tier": 2,
+    "preRegionals": "2 Wins (City Challenges)",
+    "sydneyStats": { "winRate": "53%", "matches": 159, "bestPlacement": "9th (11-2-0)" }
+  },
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/sett-the-boss-guide/"
+}

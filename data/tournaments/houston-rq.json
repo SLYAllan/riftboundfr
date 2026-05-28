@@ -1,0 +1,56 @@
+{
+  "name": "Houston Regional Qualifier",
+  "slug": "houston-rq",
+  "date": "2025-12-07",
+  "location": "Houston, TX, USA",
+  "organizer": "UVS Games",
+  "playerCount": 1347,
+  "set": "Origins",
+  "format": "Constructed",
+  "decklistsPublished": 66,
+  "sourceUrl": "https://riftdecks.com/riftbound-tournaments/riftbound-houston-regional-qualifier-main-event-tournament-decks-613",
+  "topPlacements": [
+    { "rank": 1, "player": "Dhawally", "legend": "Annie, Dark Child", "domains": ["Chaos", "Fury"], "deckUrl": "https://riftdecks.com/riftbound-metagame/deck-annie-dark-child-32238" },
+    { "rank": 2, "player": "Challenger TCG", "legend": "Master Yi, Wuju Bladesman", "domains": ["Body", "Calm"], "deckUrl": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-32175" },
+    { "rank": 3, "player": "Zent", "legend": "Annie, Dark Child", "domains": ["Chaos", "Fury"], "deckUrl": "https://riftdecks.com/riftbound-metagame/deck-annie-dark-child-32285" },
+    { "rank": 4, "player": "Prymor", "legend": "Annie, Dark Child", "domains": ["Chaos", "Fury"], "deckUrl": "https://riftdecks.com/riftbound-metagame/deck-annie-houston-32226" }
+  ],
+  "top8": [
+    { "legend": "Annie, Dark Child", "count": 4, "domains": ["Chaos", "Fury"] },
+    { "legend": "Kai'Sa, Daughter of the Void", "count": 2, "domains": ["Fury", "Mind"] },
+    { "legend": "Master Yi, Wuju Bladesman", "count": 2, "domains": ["Body", "Calm"] }
+  ],
+  "legendBreakdown": [
+    { "legend": "Kai'Sa, Daughter of the Void", "count": 20, "pct": 30 },
+    { "legend": "Annie, Dark Child", "count": 12, "pct": 18 },
+    { "legend": "Master Yi, Wuju Bladesman", "count": 9, "pct": 13 },
+    { "legend": "Miss Fortune, Bounty Hunter", "count": 6, "pct": 9 },
+    { "legend": "Viktor, Herald of the Arcane", "count": 3, "pct": 4 },
+    { "legend": "Teemo, Swift Scout", "count": 3, "pct": 4 },
+    { "legend": "Sett, The Boss", "count": 3, "pct": 4 },
+    { "legend": "Ahri, Nine-Tailed Fox", "count": 2, "pct": 3 },
+    { "legend": "Darius, Hand of Noxus", "count": 1, "pct": 1 },
+    { "legend": "Jinx, Loose Cannon", "count": 1, "pct": 1 },
+    { "legend": "Volibear, Relentless Storm", "count": 1, "pct": 1 },
+    { "legend": "Leona, Radiant Dawn", "count": 1, "pct": 1 },
+    { "legend": "Lee Sin, Blind Monk", "count": 1, "pct": 1 },
+    { "legend": "Yasuo, Unforgiven", "count": 1, "pct": 1 },
+    { "legend": "Lux, Lady of Luminosity", "count": 1, "pct": 1 },
+    { "legend": "Garen, Might of Demacia", "count": 1, "pct": 1 }
+  ],
+  "domainBreakdown": [
+    { "domains": "Fury/Mind", "count": 20, "pct": 30 },
+    { "domains": "Chaos/Fury", "count": 13, "pct": 19 },
+    { "domains": "Body/Calm", "count": 10, "pct": 15 },
+    { "domains": "Body/Chaos", "count": 6, "pct": 9 },
+    { "domains": "Mind/Order", "count": 4, "pct": 6 },
+    { "domains": "Body/Order", "count": 4, "pct": 6 },
+    { "domains": "Chaos/Mind", "count": 3, "pct": 4 },
+    { "domains": "Calm/Mind", "count": 2, "pct": 3 },
+    { "domains": "Fury/Order", "count": 1, "pct": 1 },
+    { "domains": "Body/Fury", "count": 1, "pct": 1 },
+    { "domains": "Calm/Order", "count": 1, "pct": 1 },
+    { "domains": "Calm/Chaos", "count": 1, "pct": 1 }
+  ],
+  "metaNotes": "Kai'Sa domine le méta Origins (30%), mais Annie remporte le tournoi avec 3 des 4 places du top 4. Master Yi Body/Calm solide en 2nd place. Format très concentré : 3 legends = 61% du field."
+}

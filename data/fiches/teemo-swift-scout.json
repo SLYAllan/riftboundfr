@@ -1,0 +1,49 @@
+{
+  "legendName": "Teemo, Swift Scout",
+  "legendId": "OGN-263",
+  "domains": ["Chaos", "Mind"],
+  "set": "Origins",
+  "tier": 3,
+  "archetype": "Aggro-hold / Hidden cards & disruption",
+  "legendAbility": "Build autour des Hidden cards. Prend le lead early, puis utilise des cartes cachées pour garder l'adversaire dans le flou.",
+  "gameplan": {
+    "earlyGame": "Installer OGN-288 et OGN-280 pour hold les battlefields. OGN-121 + OGN-194 = combo early game — retire les unités adverses cheap.",
+    "midGame": "Cacher des cartes chaque tour. Disruption de la main/board via Chaos. SFD-138, OGN-094, UNL-078 pour gérer les petites unités.",
+    "lateGame": "SFD-145 pour les gros attaquants. UNL-139 + UNL-141 en combo removal. OGN-083 + OGN-264 pour refill.",
+    "winCondition": "Lead early + confusion via Hidden cards → l'adversaire prend des risques → on punit"
+  },
+  "keyCards": [
+    { "name": "OGN-288", "id": "OGN-288", "role": "Hold de battlefield." },
+    { "name": "OGN-280", "id": "OGN-280", "role": "Hold complémentaire." },
+    { "name": "OGN-121", "id": "OGN-121", "role": "Synergie avec OGN-194 — élimine les unités cheap grâce aux Hidden cards." },
+    { "name": "OGN-194", "id": "OGN-194", "role": "Combo avec OGN-121 — clé de l'early game." },
+    { "name": "SFD-138", "id": "SFD-138", "role": "Removal de petites unités." },
+    { "name": "OGN-094", "id": "OGN-094", "role": "Removal cheap." },
+    { "name": "UNL-078", "id": "UNL-078", "role": "Removal Unleashed." },
+    { "name": "SFD-145", "id": "SFD-145", "role": "Gère les gros attaquants." },
+    { "name": "UNL-139", "id": "UNL-139", "role": "Combo removal avec UNL-141." },
+    { "name": "UNL-141", "id": "UNL-141", "role": "Combo removal avec UNL-139." },
+    { "name": "OGN-083", "id": "OGN-083", "role": "Refill de main." },
+    { "name": "OGN-264", "id": "OGN-264", "role": "Refill complémentaire." }
+  ],
+  "strengths": [
+    "Top 8 Sydney — performance surprise du tournoi",
+    "Retour au Hidden synergy original avec Unleashed",
+    "L'adversaire ne sait jamais quoi attendre — Hidden crée de l'incertitude",
+    "Bon contre les decks qui planifient précisément leurs tours"
+  ],
+  "weaknesses": [
+    "44% win rate à Sydney — performance globale faible malgré le top 8",
+    "10% conversion rate — le top 8 est probablement un outlier",
+    "Difficile à évaluer — une seule bonne liste connue"
+  ],
+  "competitiveResults": {
+    "tier": 3,
+    "preRegionals": "1 Top 8",
+    "regionalResults": "Top 8 Sydney (11-2-1)",
+    "sydneyStats": { "winRate": "44%", "matches": 165, "conversionRate": "10%" }
+  },
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "sourceUrl": "https://riftbound.gg/teemo-swift-scout-guide/"
+}
