@@ -24,7 +24,7 @@ async function main() {
   console.log(`Found ${articles.length} article(s) to fix.\n`);
 
   for (const a of articles) {
-    const data: { category?: string; publishedAt?: Date } = {};
+    const data = {};
     if (a.category === "tournois") data.category = "tournoi";
     if (!a.publishedAt && a.tournamentDate) data.publishedAt = a.tournamentDate;
 
