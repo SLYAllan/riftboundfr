@@ -15,6 +15,75 @@ export const metadata: Metadata = {
   title: "Mon profil",
 };
 
+type DeckCardData = {
+  shareCode: string;
+  legendName: string;
+  title: string;
+  views: number;
+  likes: number;
+  isPublic: boolean;
+  authorName: string;
+  createdAt: Date;
+};
+
+function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor?: boolean }) {
+  const bannerUrl = getBannerUrl(deck.legendName);
+  return (
+    <Link
+      href={`/d/${deck.shareCode}`}
+      className="card-hover rounded-card border border-hairline overflow-hidden group relative"
+    >
+      <div className="relative h-28">
+        {bannerUrl ? (
+          <Image
+            src={bannerUrl}
+            alt={deck.legendName}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={75}
+          />
+        ) : (
+          <div className="absolute inset-0 bg-surface-raised" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
+        <div className="relative z-10 flex h-full flex-col justify-end p-3">
+          <div className="flex items-end justify-between gap-2">
+            <div className="min-w-0">
+              <div
+                className="text-lg font-bold leading-tight text-ink drop-shadow-md"
+                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              >
+                {deck.title}
+              </div>
+              <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
+                <span className="text-arcane drop-shadow-sm">{displayLegendName(deck.legendName)}</span>
+                {showAuthor && <span className="text-white/80 drop-shadow-sm">par {deck.authorName}</span>}
+              </div>
+            </div>
+            <div className="flex shrink-0 flex-col items-end gap-1">
+              <div className="flex items-center gap-2 text-[10px] text-white drop-shadow-md">
+                <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>
+                <span className="flex items-center gap-0.5"><Heart size={10} /> {deck.likes}</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {!deck.isPublic && (
+                  <span className="rounded bg-surface/80 px-1.5 py-0.5 text-[10px] text-white">
+                    Privé
+                  </span>
+                )}
+                <span className="text-[10px] text-white/75 drop-shadow-md">
+                  {formatDate(deck.createdAt)}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default async function ProfilPage() {
   const user = await getUserFromSession();
   if (!user) redirect("/api/auth/discord");
@@ -23,6 +92,16 @@ export default async function ProfilPage() {
     where: { userId: user.id },
     orderBy: { createdAt: "desc" },
   });
+
+  // Favoris : decks que l'utilisateur a likés (accessibles : publics ou les siens)
+  const likedRows = await prisma.communityDeckLike.findMany({
+    where: { userId: user.id },
+    include: { communityDeck: true },
+    orderBy: { id: "desc" },
+  });
+  const favoriteDecks = likedRows
+    .map((row) => row.communityDeck)
+    .filter((d) => d.isPublic || d.userId === user.id);
 
   const totalViews = decks.reduce((sum, d) => sum + d.views, 0);
   const totalLikes = decks.reduce((sum, d) => sum + d.likes, 0);
@@ -164,63 +243,41 @@ export default async function ProfilPage() {
           </div>
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {decks.map((deck) => {
-              const bannerUrl = getBannerUrl(deck.legendName);
-              return (
-                <Link
-                  key={deck.id}
-                  href={`/d/${deck.shareCode}`}
-                  className="card-hover rounded-card border border-hairline overflow-hidden group relative"
-                >
-                  <div className="relative h-28">
-                    {bannerUrl ? (
-                      <Image
-                        src={bannerUrl}
-                        alt={deck.legendName}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        quality={75}
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-surface-raised" />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
-                    <div className="relative z-10 flex h-full flex-col justify-end p-3">
-                      <div className="flex items-end justify-between gap-2">
-                        <div>
-                          <div
-                            className="text-lg font-bold leading-tight text-ink drop-shadow-md"
-                            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                          >
-                            {deck.title}
-                          </div>
-                          <div className="mt-0.5 text-xs text-arcane drop-shadow-sm">
-                            {displayLegendName(deck.legendName)}
-                          </div>
-                        </div>
-                        <div className="flex shrink-0 flex-col items-end gap-1">
-                          <div className="flex items-center gap-2 text-[10px] text-ink-muted">
-                            <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>
-                            <span className="flex items-center gap-0.5"><Heart size={10} /> {deck.likes}</span>
-                          </div>
-                          <div className="flex items-center gap-1.5">
-                            {!deck.isPublic && (
-                              <span className="rounded bg-surface/80 px-1.5 py-0.5 text-[10px] text-ink-muted">
-                                Privé
-                              </span>
-                            )}
-                            <span className="text-[10px] text-ink-disabled">
-                              {formatDate(deck.createdAt)}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+            {decks.map((deck) => (
+              <DeckCard key={deck.id} deck={deck} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Favoris */}
+      <div id="favoris" className="mt-10 scroll-mt-24">
+        <div className="flex items-center gap-2">
+          <Heart size={18} className="text-red-400" />
+          <h2
+            className="text-xl font-bold"
+            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+          >
+            Favoris
+          </h2>
+          <span className="text-sm text-ink-muted">({favoriteDecks.length})</span>
+        </div>
+
+        {favoriteDecks.length === 0 ? (
+          <div className="mt-6 rounded-card border border-hairline bg-surface p-6 text-center">
+            <p className="text-ink-muted">Vous n&apos;avez pas encore de deck en favori.</p>
+            <Link
+              href="/decks"
+              className="mt-3 inline-flex items-center gap-2 text-sm text-violet hover:underline"
+            >
+              <Heart size={14} /> Découvrir les decks de la communauté
+            </Link>
+          </div>
+        ) : (
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {favoriteDecks.map((deck) => (
+              <DeckCard key={deck.id} deck={deck} showAuthor />
+            ))}
           </div>
         )}
       </div>

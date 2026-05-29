@@ -212,7 +212,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           </div>
                           <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
                             <span className="text-arcane drop-shadow-sm">{displayLegendName(deck.legendName)}</span>
-                            <span className="text-ink-muted drop-shadow-sm">par {deck.authorName}</span>
+                            <span className="text-white/80 drop-shadow-sm">par {deck.authorName}</span>
                           </div>
                           {deck.tags.length > 0 && (
                             <div className="mt-1 flex flex-wrap gap-1">
@@ -222,12 +222,12 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             </div>
                           )}
                         </div>
-                        <div className="flex shrink-0 flex-col items-end gap-1 text-[10px] text-ink-muted">
+                        <div className="flex shrink-0 flex-col items-end gap-1 text-[10px] text-white drop-shadow-md">
                           <div className="flex items-center gap-2">
                             <span className="flex items-center gap-0.5"><Heart size={10} /> {deck.likes}</span>
                             <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>
                           </div>
-                          <span>{formatDate(deck.createdAt)}</span>
+                          <span className="text-white/75">{formatDate(deck.createdAt)}</span>
                         </div>
                       </div>
                     </div>

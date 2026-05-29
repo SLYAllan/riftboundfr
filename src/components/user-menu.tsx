@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LogOut, User as UserIcon, Layers, Shield } from "lucide-react";
+import { LogOut, User as UserIcon, Shield } from "lucide-react";
 
 interface UserData {
   id: string;
@@ -101,14 +101,6 @@ export function UserMenu() {
           >
             <UserIcon size={14} />
             Mon profil
-          </Link>
-          <Link
-            href="/profil#mes-decks"
-            onClick={() => setOpen(false)}
-            className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-secondary hover:bg-surface-raised transition-colors"
-          >
-            <Layers size={14} />
-            Mes decks
           </Link>
           <button
             onClick={logout}
