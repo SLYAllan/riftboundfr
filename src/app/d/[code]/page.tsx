@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!deck) return { title: "Deck introuvable" };
   const title = `${deck.title} — ${displayLegendName(deck.legendName)}`;
   const description = deck.description || `Deck ${deck.title} par ${deck.authorName}`;
+  const image = `/api/decklist-image?share=${code}`;
   return {
     title,
     description,
@@ -38,11 +39,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title,
       description,
       type: "article",
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [image],
     },
   };
 }

@@ -22,10 +22,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const article = await prisma.article.findUnique({ where: { slug } });
   if (!article) return { title: "Article introuvable" };
+  const description = article.excerpt || `${article.title} — Riftbound France`;
+  const image = article.coverImage || "/img/og-default.png";
   return {
     title: article.title,
-    description: article.excerpt || `${article.title} — Riftbound France`,
+    description,
     alternates: { canonical: `/articles/${slug}` },
+    openGraph: { type: "article", title: article.title, description, images: [image] },
+    twitter: { card: "summary_large_image", title: article.title, description, images: [image] },
   };
 }
 
@@ -252,8 +256,17 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
     inLanguage: "fr",
   };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://riftboundfrance.fr" },
+      { "@type": "ListItem", position: 2, name: "Articles", item: "https://riftboundfrance.fr/articles" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://riftboundfrance.fr/articles/${slug}` },
+    ],
+  };
   // JSON-LD uses static data only (no user content) — safe for inline serialization
-  const jsonLdHtml = JSON.stringify(articleJsonLd);
+  const jsonLdHtml = JSON.stringify([articleJsonLd, breadcrumbJsonLd]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">

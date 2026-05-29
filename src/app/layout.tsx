@@ -34,12 +34,14 @@ export const metadata: Metadata = {
     siteName: "Riftbound France",
     title: "Riftbound France — La référence Riftbound en français",
     description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound.",
+    images: ["/img/og-default.png"],
   },
   twitter: {
     card: "summary_large_image",
     site: "@FRRiftbound",
     title: "Riftbound France",
     description: "La référence francophone pour le TCG Riftbound.",
+    images: ["/img/og-default.png"],
   },
   robots: {
     index: true,

@@ -1,4 +1,6 @@
-export const revalidate = 3600;
+// force-dynamic: needs the card list from the DB. With `revalidate` it was
+// statically built at Docker build (no DB) -> empty card list -> deckbuilder unusable.
+export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
 import { prisma, safeQuery } from "@/lib/prisma";

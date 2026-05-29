@@ -22,7 +22,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const deck = await prisma.deck.findUnique({ where: { slug } });
   if (!deck) return { title: "Deck introuvable" };
-  return { title: `${deck.title} — ${displayLegendName(deck.legendName)}`, description: deck.description || `Decklist ${deck.title} pour le TCG Riftbound` };
+  const title = `${deck.title} — ${displayLegendName(deck.legendName)}`;
+  const description = deck.description || `Decklist ${deck.title} pour le TCG Riftbound`;
+  const image = `/api/decklist-image?slug=${slug}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/decks/${slug}` },
+    openGraph: { type: "article", title, description, images: [image] },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
 }
 
 export default async function DeckDetailPage({ params }: PageProps) {
