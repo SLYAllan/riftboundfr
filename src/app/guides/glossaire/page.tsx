@@ -1,7 +1,7 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 import type { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
+import { prisma, safeQuery } from "@/lib/prisma";
 import { GlossaireClient } from "./glossaire-client";
 
 export const metadata: Metadata = {
@@ -111,7 +111,7 @@ export default async function GlossairePage() {
     (t) => t.category === "Mécaniques" || t.category === "Timing" || t.category === "Actions"
   );
 
-  const cards = await prisma.card.findMany({
+  const cards = await safeQuery(() => prisma.card.findMany({
     where: {
       textPlain: { not: null },
       alternateArt: false,
@@ -126,7 +126,7 @@ export default async function GlossairePage() {
       might: true,
       rarity: true,
     },
-  });
+  }), []);
 
   const cardByKeyword: Record<string, { name: string; imageUrl: string | null; type: string; energy: number | null; might: number | null; rarity: string }> = {};
 

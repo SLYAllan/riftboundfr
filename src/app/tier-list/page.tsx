@@ -1,6 +1,6 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
-import { prisma } from "@/lib/prisma";
+import { prisma, safeQuery } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
@@ -13,11 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default async function TierListPage() {
-  const tierLists = await prisma.tierList.findMany({
-    where: { published: true },
-    include: { entries: { orderBy: { position: "asc" } } },
-    orderBy: { createdAt: "asc" },
-  });
+  const tierLists = await safeQuery(
+    () => prisma.tierList.findMany({
+      where: { published: true },
+      include: { entries: { orderBy: { position: "asc" } } },
+      orderBy: { createdAt: "asc" },
+    }),
+    [],
+  );
 
   if (tierLists.length === 0) {
     return (

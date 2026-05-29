@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 import Link from "next/link";
 import Image from "next/image";
@@ -95,8 +95,15 @@ const guides = [
 ];
 
 export default async function HomePage() {
-  const { tierLists, randomDecks, legendEntries } = await getHomeData();
-  const legendMap = new Map(legendEntries);
+  let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
+  let randomDecks: Awaited<ReturnType<typeof getHomeData>>["randomDecks"] = [];
+  let legendMap = new Map<string, { imageUrl: string | null; domains: string[] }>();
+  try {
+    const data = await getHomeData();
+    tierLists = data.tierLists;
+    randomDecks = data.randomDecks;
+    legendMap = new Map(data.legendEntries);
+  } catch {}
 
   return (
     <div>

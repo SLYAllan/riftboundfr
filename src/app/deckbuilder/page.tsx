@@ -1,7 +1,7 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 import { Suspense } from "react";
-import { prisma } from "@/lib/prisma";
+import { prisma, safeQuery } from "@/lib/prisma";
 import { DeckbuilderV2 } from "./deckbuilder";
 import type { Metadata } from "next";
 
@@ -86,7 +86,7 @@ async function getCards() {
 }
 
 export default async function DeckbuilderPage() {
-  const { cards, idAliases } = await getCards();
+  const { cards, idAliases } = await safeQuery(() => getCards(), { cards: [], idAliases: {} as Record<string, string> });
 
   return (
     <Suspense fallback={<div className="flex items-center justify-center h-[calc(100vh-57px)] text-ink-muted">Chargement...</div>}>

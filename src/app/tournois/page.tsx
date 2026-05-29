@@ -1,6 +1,6 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
-import { prisma } from "@/lib/prisma";
+import { prisma, safeQuery } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
 import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from "@/lib/tournament-flags";
 import { getLegendIconUrl } from "@/lib/banners";
@@ -155,7 +155,7 @@ async function getTournamentData() {
 export type TournamentData = Awaited<ReturnType<typeof getTournamentData>>[number];
 
 export default async function TournoisPage() {
-  const allTournaments = await getTournamentData();
+  const allTournaments = await safeQuery(() => getTournamentData(), []);
   const tournaments = allTournaments.filter((t) => t.deckCount > 5);
 
   const totalDecks = tournaments.reduce((sum, t) => sum + t.deckCount, 0);

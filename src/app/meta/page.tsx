@@ -1,6 +1,6 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
-import { prisma } from "@/lib/prisma";
+import { prisma, safeQuery } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
@@ -26,22 +26,24 @@ interface LegendStats {
 }
 
 export default async function MetaSnapshotPage() {
-  // Fetch all published decks
-  const decks = await prisma.deck.findMany({
-    where: { published: true },
-    select: {
-      legendName: true,
-      tournamentContext: true,
-      format: true,
-      createdAt: true,
-    },
-  });
-
-  // Fetch current tier list for tier context
-  const currentTierList = await prisma.tierList.findFirst({
-    where: { current: true, published: true },
-    include: { entries: true },
-  });
+  const [decks, currentTierList] = await safeQuery(
+    () => Promise.all([
+      prisma.deck.findMany({
+        where: { published: true },
+        select: {
+          legendName: true,
+          tournamentContext: true,
+          format: true,
+          createdAt: true,
+        },
+      }),
+      prisma.tierList.findFirst({
+        where: { current: true, published: true },
+        include: { entries: true },
+      }),
+    ]),
+    [[], null] as const,
+  );
 
   if (decks.length === 0) {
     return (
