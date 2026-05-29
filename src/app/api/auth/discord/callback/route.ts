@@ -16,8 +16,10 @@ export async function GET(req: NextRequest) {
   const state = searchParams.get("state");
   const error = searchParams.get("error");
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || req.url;
+
   if (error || !code) {
-    return NextResponse.redirect(new URL("/?auth_error=cancelled", req.url));
+    return NextResponse.redirect(new URL("/?auth_error=cancelled", siteUrl));
   }
 
   const cookieStore = await cookies();
@@ -25,7 +27,7 @@ export async function GET(req: NextRequest) {
   cookieStore.delete("discord_oauth_state");
 
   if (!savedState || savedState !== state) {
-    return NextResponse.redirect(new URL("/?auth_error=invalid_state", req.url));
+    return NextResponse.redirect(new URL("/?auth_error=invalid_state", siteUrl));
   }
 
   const clientId = process.env.DISCORD_CLIENT_ID!;
@@ -45,7 +47,7 @@ export async function GET(req: NextRequest) {
   });
 
   if (!tokenRes.ok) {
-    return NextResponse.redirect(new URL("/?auth_error=token_failed", req.url));
+    return NextResponse.redirect(new URL("/?auth_error=token_failed", siteUrl));
   }
 
   const { access_token } = await tokenRes.json();
@@ -55,7 +57,7 @@ export async function GET(req: NextRequest) {
   });
 
   if (!userRes.ok) {
-    return NextResponse.redirect(new URL("/?auth_error=user_fetch_failed", req.url));
+    return NextResponse.redirect(new URL("/?auth_error=user_fetch_failed", siteUrl));
   }
 
   const discordUser: DiscordUser = await userRes.json();
@@ -83,7 +85,7 @@ export async function GET(req: NextRequest) {
 
   const sessionToken = await createUserSession(user.id);
 
-  const res = NextResponse.redirect(new URL("/", req.url));
+  const res = NextResponse.redirect(new URL("/", siteUrl));
   res.cookies.set(getUserSessionCookieName(), sessionToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
