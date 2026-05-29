@@ -14,10 +14,19 @@ export async function POST(
   const { slug } = await params;
   const deck = await prisma.deck.findUnique({
     where: { slug },
-    select: { id: true },
+    select: { id: true, likes: true },
   });
   if (!deck) {
     return NextResponse.json({ error: "Deck introuvable" }, { status: 404 });
+  }
+
+  // Enregistre le like par utilisateur (idempotent grâce à la contrainte unique).
+  // On n'incrémente le compteur que si le like est nouveau, pour préserver les
+  // compteurs existants (decks seedés).
+  try {
+    await prisma.deckLike.create({ data: { userId: user.id, deckId: deck.id } });
+  } catch {
+    return NextResponse.json({ likes: deck.likes });
   }
 
   const updated = await prisma.deck.update({
@@ -45,6 +54,14 @@ export async function DELETE(
   });
   if (!deck) {
     return NextResponse.json({ error: "Deck introuvable" }, { status: 404 });
+  }
+
+  // Ne décrémente que si l'utilisateur avait bien un like enregistré.
+  const removed = await prisma.deckLike.deleteMany({
+    where: { userId: user.id, deckId: deck.id },
+  });
+  if (removed.count === 0) {
+    return NextResponse.json({ likes: deck.likes });
   }
 
   const updated = await prisma.deck.update({

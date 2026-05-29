@@ -9,7 +9,7 @@ async function migrate() {
     `;
     const tableNames = tables.map((t) => t.tablename);
 
-    if (!tableNames.includes("Card")) {
+    if (!tableNames.includes("Card") || !tableNames.includes("DeckLike")) {
       console.log("Tables missing, running schema push...");
       const { execSync } = await import("child_process");
       execSync("npx prisma db push --skip-generate --accept-data-loss", {

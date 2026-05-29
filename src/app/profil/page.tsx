@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 };
 
 type DeckCardData = {
-  shareCode: string;
+  href: string;
   legendName: string;
   title: string;
-  views: number;
   likes: number;
-  isPublic: boolean;
-  authorName: string;
+  views?: number;
+  isPrivate?: boolean;
+  authorName?: string | null;
   createdAt: Date;
 };
 
@@ -30,7 +30,7 @@ function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor
   const bannerUrl = getBannerUrl(deck.legendName);
   return (
     <Link
-      href={`/d/${deck.shareCode}`}
+      href={deck.href}
       className="card-hover rounded-card border border-hairline overflow-hidden group relative"
     >
       <div className="relative h-28">
@@ -58,16 +58,16 @@ function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor
               </div>
               <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
                 <span className="text-arcane drop-shadow-sm">{displayLegendName(deck.legendName)}</span>
-                {showAuthor && <span className="text-white/80 drop-shadow-sm">par {deck.authorName}</span>}
+                {showAuthor && deck.authorName && <span className="text-white/80 drop-shadow-sm">par {deck.authorName}</span>}
               </div>
             </div>
             <div className="flex shrink-0 flex-col items-end gap-1">
               <div className="flex items-center gap-2 text-[10px] text-white drop-shadow-md">
-                <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>
+                {deck.views !== undefined && <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>}
                 <span className="flex items-center gap-0.5"><Heart size={10} /> {deck.likes}</span>
               </div>
               <div className="flex items-center gap-1.5">
-                {!deck.isPublic && (
+                {deck.isPrivate && (
                   <span className="rounded bg-surface/80 px-1.5 py-0.5 text-[10px] text-white">
                     Privé
                   </span>
@@ -93,15 +93,46 @@ export default async function ProfilPage() {
     orderBy: { createdAt: "desc" },
   });
 
-  // Favoris : decks que l'utilisateur a likés (accessibles : publics ou les siens)
-  const likedRows = await prisma.communityDeckLike.findMany({
-    where: { userId: user.id },
-    include: { communityDeck: true },
-    orderBy: { id: "desc" },
-  });
-  const favoriteDecks = likedRows
-    .map((row) => row.communityDeck)
-    .filter((d) => d.isPublic || d.userId === user.id);
+  // Favoris : decks likés par l'utilisateur, depuis les deux systèmes de like
+  // (communautaires via CommunityDeckLike + officiels/tournois via DeckLike).
+  const [communityLikes, officialLikes] = await Promise.all([
+    prisma.communityDeckLike.findMany({
+      where: { userId: user.id },
+      include: { communityDeck: true },
+      orderBy: { id: "desc" },
+    }),
+    prisma.deckLike.findMany({
+      where: { userId: user.id },
+      include: { deck: true },
+      orderBy: { id: "desc" },
+    }),
+  ]);
+
+  const favoriteDecks: (DeckCardData & { likeId: string })[] = [
+    ...communityLikes
+      .filter((row) => row.communityDeck.isPublic || row.communityDeck.userId === user.id)
+      .map((row) => ({
+        likeId: row.id,
+        href: `/d/${row.communityDeck.shareCode}`,
+        legendName: row.communityDeck.legendName,
+        title: row.communityDeck.title,
+        likes: row.communityDeck.likes,
+        views: row.communityDeck.views,
+        authorName: row.communityDeck.authorName,
+        createdAt: row.communityDeck.createdAt,
+      })),
+    ...officialLikes
+      .filter((row) => row.deck.published)
+      .map((row) => ({
+        likeId: row.id,
+        href: `/decks/${row.deck.slug}`,
+        legendName: row.deck.legendName,
+        title: row.deck.title,
+        likes: row.deck.likes,
+        authorName: row.deck.playerName || row.deck.authorName,
+        createdAt: row.deck.createdAt,
+      })),
+  ].sort((a, b) => b.likeId.localeCompare(a.likeId));
 
   const totalViews = decks.reduce((sum, d) => sum + d.views, 0);
   const totalLikes = decks.reduce((sum, d) => sum + d.likes, 0);
@@ -244,7 +275,19 @@ export default async function ProfilPage() {
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {decks.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} />
+              <DeckCard
+                key={deck.id}
+                deck={{
+                  href: `/d/${deck.shareCode}`,
+                  legendName: deck.legendName,
+                  title: deck.title,
+                  likes: deck.likes,
+                  views: deck.views,
+                  isPrivate: !deck.isPublic,
+                  authorName: deck.authorName,
+                  createdAt: deck.createdAt,
+                }}
+              />
             ))}
           </div>
         )}
@@ -276,7 +319,7 @@ export default async function ProfilPage() {
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {favoriteDecks.map((deck) => (
-              <DeckCard key={deck.id} deck={deck} showAuthor />
+              <DeckCard key={deck.likeId} deck={deck} showAuthor />
             ))}
           </div>
         )}

@@ -81,6 +81,7 @@ model Deck {
   updatedAt   DateTime @updatedAt
 
   cards DeckCard[]
+  deckLikes DeckLike[]
 
   @@index([legendName])
   @@index([sourceArticleId])
@@ -280,4 +281,16 @@ model CommunityDeckLike {
 
   @@unique([userId, communityDeckId])
   @@index([communityDeckId])
+}
+
+model DeckLike {
+  id     String @id @default(cuid())
+  userId String
+  deckId String
+
+  deck Deck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, deckId])
+  @@index([deckId])
+  @@index([userId])
 }
