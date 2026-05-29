@@ -12,6 +12,7 @@ import { VersionHistory } from "./version-history";
 import { UpdateDeckButton } from "./update-deck";
 import { LikeButton } from "./like-button";
 import { VisibilityToggle } from "./visibility-toggle";
+import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { getUserFromSession } from "@/lib/session";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -132,7 +133,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
       </Link>
       <div className="mt-6">
         <h1
-          className="text-4xl font-bold"
+          className="text-3xl font-bold leading-tight sm:text-4xl"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
           {deck.title}
@@ -155,6 +156,14 @@ export default async function CommunityDeckPage({ params }: PageProps) {
               initialIsPublic={deck.isPublic}
             />
           )}
+        </div>
+        <div className="mt-3">
+          <ShareDecklistButton
+            shareCode={deck.shareCode}
+            deckTitle={deck.title}
+            legendName={displayLegendName(deck.legendName)}
+            playerName={deck.authorName}
+          />
         </div>
         {deck.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">

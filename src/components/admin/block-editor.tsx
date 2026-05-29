@@ -21,6 +21,8 @@ function emptyBlock(type: ArticleBlock["type"]): ArticleBlock {
       return { type: "sponsor_link", id: generateId(), title: "", ctaText: "En savoir plus", url: "", style: "standard", isSponsored: false };
     case "image":
       return { type: "image", id: generateId(), src: "", alt: "" };
+    case "tweet":
+      return { type: "tweet", id: generateId(), url: "", author: "", handle: "", content: "" };
     case "separator":
       return { type: "separator", id: generateId() };
   }
@@ -31,6 +33,7 @@ const blockTypeLabels: Record<ArticleBlock["type"], string> = {
   decklist: "Decklist",
   sponsor_link: "Lien sponsorise",
   image: "Image",
+  tweet: "Tweet (X)",
   separator: "Separateur",
 };
 
@@ -257,13 +260,69 @@ function ImageBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
         </div>
       </div>
-      <div>
-        <label className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
-        <input type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })}
-          className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
+          <input type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })}
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+        </div>
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Largeur</label>
+          <select value={block.width ?? "full"} onChange={(e) => onChange({ ...block, width: e.target.value === "narrow" ? "narrow" : undefined })}
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane">
+            <option value="full">Pleine largeur</option>
+            <option value="narrow">Centree (portrait/poster)</option>
+          </select>
+        </div>
       </div>
       {block.src && (
         <img src={block.src} alt={block.alt} className="max-h-40 rounded-lg object-cover" />
+      )}
+    </div>
+  );
+}
+
+function TweetBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "tweet" }>; onChange: (b: ArticleBlock) => void }) {
+  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane";
+  return (
+    <div className="space-y-3">
+      <div className="grid grid-cols-3 gap-3">
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Auteur</label>
+          <input type="text" value={block.author} onChange={(e) => onChange({ ...block, author: e.target.value })} className={inputCls} />
+        </div>
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Handle (sans @)</label>
+          <input type="text" value={block.handle} onChange={(e) => onChange({ ...block, handle: e.target.value })} className={inputCls} />
+        </div>
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Date</label>
+          <input type="text" value={block.date ?? ""} onChange={(e) => onChange({ ...block, date: e.target.value || undefined })} className={inputCls} />
+        </div>
+      </div>
+      <div>
+        <label className="block text-xs text-ink-muted mb-1">Lien vers le post (X)</label>
+        <input type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })} className={inputCls} />
+      </div>
+      <div>
+        <label className="block text-xs text-ink-muted mb-1">Contenu</label>
+        <textarea value={block.content} onChange={(e) => onChange({ ...block, content: e.target.value })} rows={4} className={inputCls} />
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Avatar (URL locale)</label>
+          <input type="text" value={block.avatar ?? ""} onChange={(e) => onChange({ ...block, avatar: e.target.value || undefined })} className={inputCls} />
+        </div>
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Image attachee (URL locale)</label>
+          <input type="text" value={block.media ?? ""} onChange={(e) => onChange({ ...block, media: e.target.value || undefined })} className={inputCls} />
+        </div>
+      </div>
+      {block.media && (
+        <div>
+          <label className="block text-xs text-ink-muted mb-1">Texte alternatif de l&apos;image</label>
+          <input type="text" value={block.mediaAlt ?? ""} onChange={(e) => onChange({ ...block, mediaAlt: e.target.value || undefined })} className={inputCls} />
+        </div>
       )}
     </div>
   );
@@ -307,6 +366,7 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
       {block.type === "decklist" && <DecklistBlockEditor block={block} onChange={onChange} />}
       {block.type === "sponsor_link" && <SponsorBlockEditor block={block} onChange={onChange} />}
       {block.type === "image" && <ImageBlockEditor block={block} onChange={onChange} />}
+      {block.type === "tweet" && <TweetBlockEditor block={block} onChange={onChange} />}
       {block.type === "separator" && <hr className="border-hairline" />}
     </div>
   );
@@ -314,7 +374,7 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
 
 function AddBlockMenu({ onAdd }: { onAdd: (type: ArticleBlock["type"]) => void }) {
   const [open, setOpen] = useState(false);
-  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "separator"];
+  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "tweet", "separator"];
   return (
     <div className="relative flex justify-center">
       <button

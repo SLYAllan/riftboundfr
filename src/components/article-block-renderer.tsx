@@ -58,7 +58,10 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }
 
           case "image":
             return (
-              <figure key={block.id} className="my-6">
+              <figure
+                key={block.id}
+                className={block.width === "narrow" ? "my-6 mx-auto max-w-sm" : "my-6 mx-auto max-w-3xl"}
+              >
                 <div className="overflow-hidden rounded-card">
                   <img src={block.src} alt={block.alt} className="w-full object-cover" />
                 </div>
@@ -66,6 +69,45 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }
                   <figcaption className="mt-2 text-center text-sm text-ink-muted">{block.caption}</figcaption>
                 )}
               </figure>
+            );
+
+          case "tweet":
+            return (
+              <div key={block.id} className="my-6 mx-auto max-w-xl">
+                <a
+                  href={block.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-card border border-hairline bg-surface-raised p-4 transition-colors hover:border-arcane/60 sm:p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    {block.avatar ? (
+                      <img src={block.avatar} alt={block.author} className="h-11 w-11 shrink-0 rounded-full object-cover" />
+                    ) : (
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-black text-white">
+                        <svg viewBox="0 0 24 24" aria-hidden className="h-5 w-5 fill-current">
+                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                      </div>
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate font-semibold text-ink">{block.author}</div>
+                      <div className="truncate text-sm text-ink-muted">@{block.handle}</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" aria-hidden className="h-5 w-5 shrink-0 fill-ink-muted">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </div>
+                  <p className="mt-3 whitespace-pre-line text-ink-secondary">{block.content}</p>
+                  {block.media && (
+                    <div className="mt-3 overflow-hidden rounded-2xl border border-hairline">
+                      <img src={block.media} alt={block.mediaAlt ?? ""} className="w-full object-cover" />
+                    </div>
+                  )}
+                  {block.date && <div className="mt-3 text-sm text-ink-muted">{block.date}</div>}
+                  <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-arcane">Voir sur X &rarr;</div>
+                </a>
+              </div>
             );
 
           case "separator":

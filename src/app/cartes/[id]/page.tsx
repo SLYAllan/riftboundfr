@@ -68,7 +68,7 @@ export default async function CardDetailPage({ params }: PageProps) {
       <div className="mt-6 grid gap-8 lg:grid-cols-[400px_1fr]">
         <div><CardImage src={card.imageUrl} alt={card.name} size="xl" priority /></div>
         <div>
-          <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <RarityBadge rarity={card.rarity} />
             <span className="rounded-full bg-violet/20 px-2.5 py-0.5 text-xs font-semibold text-violet">{card.setName}</span>

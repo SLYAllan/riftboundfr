@@ -10,6 +10,7 @@ import Link from "next/link";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
+import { ShareDecklistButton } from "@/components/share-decklist-button";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 
@@ -117,7 +118,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Link href="/decks" className="text-sm text-ink-muted hover:text-arcane">&larr; Retour aux decks</Link>
       <div className="mt-6">
-        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
+        <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
         <div className="mt-2 flex flex-wrap items-center gap-3">
           <span className="text-lg text-arcane">{displayLegendName(deck.legendName)}</span>
           <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs text-ink-secondary">{deck.format}</span>
@@ -153,8 +154,15 @@ export default async function DeckDetailPage({ params }: PageProps) {
           )}
         </div>
         {deck.description && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
-        <div className="mt-4">
+        <div className="mt-4 flex flex-wrap items-center gap-3">
           <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} />
+          <ShareDecklistButton
+            slug={deck.slug}
+            deckTitle={deck.title}
+            legendName={displayLegendName(deck.legendName)}
+            playerName={deck.playerName ?? deck.authorName ?? undefined}
+            tournamentContext={deck.tournamentContext ?? undefined}
+          />
         </div>
       </div>
 

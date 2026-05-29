@@ -115,6 +115,28 @@ export type ArticleBlock =
       src: string;
       alt: string;
       caption?: string;
+      /** "full" (default) spans the content column; "narrow" centers a portrait/poster image at a readable width. */
+      width?: "full" | "narrow";
+    }
+  | {
+      type: "tweet";
+      id: string;
+      /** Link to the original post on X. */
+      url: string;
+      /** Display name of the author, e.g. "Riot Marco". */
+      author: string;
+      /** Handle without the @, e.g. "RiotMarco_". */
+      handle: string;
+      /** Tweet body. Newlines are preserved. */
+      content: string;
+      /** Human-readable date, e.g. "29 mai 2026". */
+      date?: string;
+      /** Author profile picture URL (hosted locally to respect CSP). */
+      avatar?: string;
+      /** Attached media image URL (hosted locally). */
+      media?: string;
+      /** Alt text for the attached media. */
+      mediaAlt?: string;
     }
   | {
       type: "separator";

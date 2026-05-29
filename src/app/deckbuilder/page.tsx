@@ -89,7 +89,7 @@ export default async function DeckbuilderPage() {
   const { cards, idAliases } = await safeQuery(() => getCards(), { cards: [], idAliases: {} as Record<string, string> });
 
   return (
-    <Suspense fallback={<div className="flex items-center justify-center h-[calc(100vh-57px)] text-ink-muted">Chargement...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center h-[calc(100dvh-57px)] text-ink-muted">Chargement...</div>}>
       <DeckbuilderV2 initialCards={cards} idAliases={idAliases} />
     </Suspense>
   );

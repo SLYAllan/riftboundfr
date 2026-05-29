@@ -266,7 +266,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
           {article.publishedAt && <span className="text-ink-muted">{formatDate(article.publishedAt)}</span>}
         </div>
 
-        <h1 className="mt-3 text-4xl font-bold leading-tight" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+        <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
           {article.title}
         </h1>
 

@@ -530,7 +530,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
   ];
 
   return (
-    <div className="flex flex-col h-[calc(100vh-57px)]">
+    <div className="flex flex-col h-[calc(100dvh-57px)]">
       {/* Header */}
       <div className="shrink-0 border-b border-hairline">
         <div className="flex items-center gap-2 px-4 py-3 flex-wrap">

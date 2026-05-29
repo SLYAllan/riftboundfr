@@ -3,7 +3,9 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// Measurement ID hardcoded as the default (a GA4 ID is a public, client-side
+// value, not a secret). NEXT_PUBLIC_GA_ID can still override it if needed.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-J8D0P8V55Q";
 
 function getConsent(): boolean | null {
   if (typeof window === "undefined") return null;
