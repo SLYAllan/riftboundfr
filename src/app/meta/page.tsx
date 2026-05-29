@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { formatDate, displayLegendName } from "@/lib/utils";

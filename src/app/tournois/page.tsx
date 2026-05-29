@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
 import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from "@/lib/tournament-flags";
