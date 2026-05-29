@@ -23,13 +23,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const article = await prisma.article.findUnique({ where: { slug } });
   if (!article) return { title: "Article introuvable" };
   const description = article.excerpt || `${article.title} — Riftbound France`;
-  const image = article.coverImage || "/img/og-default.png";
+  // Les images og:image / twitter:image sont fournies par les conventions de
+  // fichiers opengraph-image.tsx / twitter-image.tsx (PNG généré à la volée,
+  // car X ne rend pas le WebP des covers).
   return {
     title: article.title,
     description,
     alternates: { canonical: `/articles/${slug}` },
-    openGraph: { type: "article", title: article.title, description, images: [image] },
-    twitter: { card: "summary_large_image", title: article.title, description, images: [image] },
+    openGraph: { type: "article", title: article.title, description },
+    twitter: { card: "summary_large_image", title: article.title, description },
   };
 }
 
