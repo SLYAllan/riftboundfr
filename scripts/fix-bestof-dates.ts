@@ -24,9 +24,12 @@ async function main() {
   console.log(`Found ${articles.length} article(s) to fix.\n`);
 
   for (const a of articles) {
-    const data = {};
-    if (a.category === "tournois") data.category = "tournoi";
-    if (!a.publishedAt && a.tournamentDate) data.publishedAt = a.tournamentDate;
+    // Built via spread so it stays valid plain JS (runnable with `node`, no tsx)
+    // AND type-checks without an annotation.
+    const data = {
+      ...(a.category === "tournois" ? { category: "tournoi" } : {}),
+      ...(!a.publishedAt && a.tournamentDate ? { publishedAt: a.tournamentDate } : {}),
+    };
 
     if (Object.keys(data).length === 0) continue;
 

@@ -28,15 +28,18 @@ interface DecklistInteractiveProps {
   deckbuilderCode?: string;
 }
 
-const sectionLabels: Record<DeckSection, string> = {
+// Keyed by string (not DeckSection) so "champion" — produced by the text deck
+// code parser — is rendered too; otherwise champion units silently disappear.
+const sectionLabels: Record<string, string> = {
   legend: "Légende",
+  champion: "Champion",
   main: "Deck Principal",
   rune: "Runes",
   battlefield: "Champs de bataille",
   side: "Réserve",
 };
 
-const sectionOrder: DeckSection[] = ["legend", "main", "rune", "battlefield", "side"];
+const sectionOrder: string[] = ["legend", "champion", "main", "rune", "battlefield", "side"];
 
 const RARITY_COLORS: Record<string, string> = {
   Common: "bg-zinc-500/20 text-zinc-400",
@@ -422,7 +425,7 @@ export function DecklistInteractive({
                         }}
                       >
                         {isBf && c.artUrl ? (
-                          <img src={c.artUrl} alt={c.name} className="w-full aspect-[5/7] rounded-game-card object-contain bg-surface-raised" />
+                          <img src={c.artUrl.includes("cmsassets.rgpub.io") ? `${c.artUrl}${c.artUrl.includes("?") ? "&" : "?"}w=400&q=75&auto=format` : c.artUrl} alt={c.name} loading="lazy" className="w-full aspect-[5/7] rounded-game-card object-contain bg-surface-raised" />
                         ) : (
                           <CardImage src={c.artUrl} alt={c.name} size="sm" />
                         )}

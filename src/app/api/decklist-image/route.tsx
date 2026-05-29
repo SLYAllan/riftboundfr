@@ -41,13 +41,29 @@ const WIDTH = 1000;
 const HEIGHT = 1000;
 
 const CARD_GAP = 6;
+const BODY_W = WIDTH - 64; // 32px horizontal padding on each side
 
-// Adaptive card sizing: bigger cards for small decks, smaller for full decks
-// (main + runes + battlefields + side) so everything fits the 1000x1000 square.
-function cardSizes(slotCount: number) {
-  if (slotCount <= 16) return { pw: 96, ph: 134, lw: 168, lh: 118 };
-  if (slotCount <= 26) return { pw: 84, ph: 117, lw: 138, lh: 97 };
-  return { pw: 74, ph: 103, lw: 120, lh: 84 };
+// Pick the LARGEST card size that still lets the whole deck (main + runes +
+// battlefields + side) fit inside the square. Maximizes legibility per deck.
+function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number) {
+  const HEADER = 178; // legend header block
+  const FOOTER = 64;
+  const SECT = 34; // section title + spacing
+  for (const pw of [132, 124, 116, 108, 100, 92, 84, 78, 72]) {
+    const ph = Math.round(pw * 1.4);
+    const lw = Math.round(pw * 1.7);
+    const lh = Math.round(pw * 1.2);
+    const cols = Math.floor((BODY_W + CARD_GAP) / (pw + CARD_GAP));
+    const bfCols = Math.max(1, Math.floor((BODY_W + CARD_GAP) / (lw + CARD_GAP)));
+    const rowH = ph + CARD_GAP;
+    let h = HEADER + FOOTER;
+    h += SECT + Math.ceil(mainN / cols) * rowH;
+    if (runeN) h += SECT + Math.ceil(runeN / cols) * rowH;
+    if (bfN) h += SECT + Math.ceil(bfN / bfCols) * (lh + CARD_GAP);
+    if (sideN) h += SECT + Math.ceil(sideN / cols) * rowH;
+    if (h <= HEIGHT) return { pw, ph, lw, lh };
+  }
+  return { pw: 72, ph: 101, lw: 122, lh: 86 };
 }
 
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
@@ -512,10 +528,13 @@ export async function GET(req: NextRequest) {
 
   const legendImgUrl = legendCards[0]?.imageUrl || null;
 
-  // Adaptive card sizes based on how much the deck contains.
-  const slotCount =
-    mainDisplayCards.length + runeCards.length + battlefieldCards.length + sideCards.length;
-  const { pw, ph, lw, lh } = cardSizes(slotCount);
+  // Largest card sizes that still fit the whole deck in the square.
+  const { pw, ph, lw, lh } = pickSizes(
+    mainDisplayCards.length,
+    runeCards.length,
+    battlefieldCards.length,
+    sideCards.length,
+  );
 
   return new ImageResponse(
     (
