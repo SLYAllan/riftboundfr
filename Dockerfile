@@ -27,6 +27,9 @@ COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 COPY migrate.mjs ./
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
+# Le user nextjs doit pouvoir écrire le cache d'images optimisées et le cache
+# de prerender/ISR (sinon EACCES sur /app/.next/cache et /app/.next/server).
+RUN mkdir -p .next/cache && chown -R nextjs:nodejs .next
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
