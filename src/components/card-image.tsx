@@ -39,7 +39,11 @@ export function CardImage({ src, alt, size = "md", className, priority }: CardIm
   // of card images per page (deck grids, articles) without choking.
   if (src.includes("cmsassets.rgpub.io")) {
     const sep = src.includes("?") ? "&" : "?";
-    const resized = `${src}${sep}w=${width * 2}&q=75&auto=format`;
+    // Aggressive resize for grid thumbnails (sm/md); crisper for large/detail
+    // views (lg/xl) so the card-detail hero stays sharp.
+    const large = size === "lg" || size === "xl";
+    const reqW = Math.round(width * (size === "xl" ? 2.5 : 2));
+    const resized = `${src}${sep}w=${reqW}&q=${large ? 90 : 72}&auto=format`;
     return (
       <Image
         src={resized}
