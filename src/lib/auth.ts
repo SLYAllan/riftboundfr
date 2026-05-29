@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import crypto from "crypto";
+import { getUserFromSession } from "@/lib/session";
 
 export const SESSION_COOKIE = "riftbound_admin";
 
@@ -23,20 +24,25 @@ function verifySignature(signed: string): boolean {
   return signed === signSession(value);
 }
 
-export async function verifyAdmin() {
-  const cookieStore = await cookies();
-  const session = cookieStore.get(SESSION_COOKIE);
-  if (!session?.value || !verifySignature(session.value)) {
-    redirect("/admin/login");
-  }
-  return true;
-}
-
-export async function isAdmin(): Promise<boolean> {
+async function isAdminByPassword(): Promise<boolean> {
   const cookieStore = await cookies();
   const session = cookieStore.get(SESSION_COOKIE);
   if (!session?.value) return false;
   return verifySignature(session.value);
+}
+
+async function isAdminByDiscord(): Promise<boolean> {
+  const user = await getUserFromSession();
+  return user?.role === "admin";
+}
+
+export async function verifyAdmin() {
+  if (await isAdmin()) return true;
+  redirect("/admin/login");
+}
+
+export async function isAdmin(): Promise<boolean> {
+  return (await isAdminByPassword()) || (await isAdminByDiscord());
 }
 
 export function checkPassword(password: string): boolean {

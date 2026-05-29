@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LogOut, User as UserIcon, Layers } from "lucide-react";
+import { LogOut, User as UserIcon, Layers, Shield } from "lucide-react";
 
 interface UserData {
   id: string;
@@ -84,6 +84,16 @@ export function UserMenu() {
               <p className="text-xs text-ink-muted truncate">@{user.discordName}</p>
             )}
           </div>
+          {user.role === "admin" && (
+            <Link
+              href="/admin"
+              onClick={() => setOpen(false)}
+              className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-gold hover:bg-surface-raised transition-colors"
+            >
+              <Shield size={14} />
+              Administration
+            </Link>
+          )}
           <Link
             href="/profil"
             onClick={() => setOpen(false)}
