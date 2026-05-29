@@ -1,4 +1,5 @@
-export const revalidate = 3600;
+// force-dynamic: queries the DB; `revalidate` froze it empty at Docker build.
+export const dynamic = "force-dynamic";
 
 import { prisma, safeQuery } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";

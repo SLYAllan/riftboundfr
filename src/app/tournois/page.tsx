@@ -1,4 +1,6 @@
-export const revalidate = 3600;
+// force-dynamic: the page queries the DB, but with `revalidate` it was
+// statically generated at Docker build (no DB) and frozen empty in prod.
+export const dynamic = "force-dynamic";
 
 import { prisma, safeQuery } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
