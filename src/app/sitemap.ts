@@ -7,16 +7,21 @@ import { slugify } from "@/lib/utils";
 const SITEMAP_LIMIT = 5000;
 
 export async function generateSitemaps() {
-  const deckCount = await prisma.deck.count({ where: { published: true } });
-  const cardCount = await prisma.card.count();
-  const totalDynamic = deckCount + cardCount;
-  const numSitemaps = Math.ceil(totalDynamic / SITEMAP_LIMIT) + 1;
-  return Array.from({ length: numSitemaps }, (_, i) => ({ id: i }));
+  try {
+    const deckCount = await prisma.deck.count({ where: { published: true } });
+    const cardCount = await prisma.card.count();
+    const totalDynamic = deckCount + cardCount;
+    const numSitemaps = Math.ceil(totalDynamic / SITEMAP_LIMIT) + 1;
+    return Array.from({ length: numSitemaps }, (_, i) => ({ id: i }));
+  } catch {
+    return [{ id: 0 }];
+  }
 }
 
 export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
 
+  try {
   if (id === 0) {
     const [articles, tournamentContexts] = await Promise.all([
       prisma.article.findMany({ where: { published: true }, select: { slug: true, updatedAt: true } }),
@@ -91,4 +96,7 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
   }));
 
   return [...cardPages, ...deckPages];
+  } catch {
+    return [{ url: baseUrl, lastModified: new Date() }];
+  }
 }
