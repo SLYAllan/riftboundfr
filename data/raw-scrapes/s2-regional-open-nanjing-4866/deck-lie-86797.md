@@ -1,0 +1,223 @@
+# 烈 by 乐河
+
+"烈" decklist by 乐河. 405th at S2 Regional Open - Nanjing by 第二赛季区域公开赛 on 2026-02-08
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+烈
+, a deck by
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![order](/img/symbols/riftbound/rune_order.png)
+
+[乐河](https://riftdecks.com/riftbound-decks?player=%E4%B9%90%E6%B2%B3&deck_type=all)
+405th at
+S2 Regional Open - Nanjing 508 players on
+2026-02-08
+
+[Constructed Constructed](https://riftdecks.com/riftbound-metagame/constructed)| 64 Cards |
+
+## Text Decklist
+
+![](/img/cards/riftbound/OGN/ogn-280-298_cropped.png)
+
+![](/img/cards/riftbound/SFD/sfd-084-221_cropped.png)
+
+![](/img/cards/riftbound/SFD/sfd-201-221_cropped.png)
+
+![]() |
+|||||
+![]() |
+1
+|
+|
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![order](/img/symbols/riftbound/rune_order.png)
+
+![](/img/symbols/riftbound/group_champion.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**1**[Renata Glasc, Mastermind](https://riftdecks.com/cards/details-renata-glasc-mastermind)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_unit.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Honest Broker](https://riftdecks.com/cards/details-honest-broker)![order](/img/symbols/riftbound/rune_order.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**3**[Plundering Poro](https://riftdecks.com/cards/details-plundering-poro)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Ravenbloom Student](https://riftdecks.com/cards/details-ravenbloom-student)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Card Sharp](https://riftdecks.com/cards/details-card-sharp)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Shen, Kinkou](https://riftdecks.com/cards/details-shen-kinkou)![order](/img/symbols/riftbound/rune_order.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Dropboarder](https://riftdecks.com/cards/details-dropboarder)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Jayce, Man of Progress](https://riftdecks.com/cards/details-jayce-man-of-progress)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_gear.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Cloth Armor](https://riftdecks.com/cards/details-cloth-armor)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Vanguard Armory](https://riftdecks.com/cards/details-vanguard-armory)![order](/img/symbols/riftbound/rune_order.png)
+
+![](/img/symbols/riftbound/group_spell.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Stupefy](https://riftdecks.com/cards/details-stupefy)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Cull the Weak](https://riftdecks.com/cards/details-cull-the-weak)![order](/img/symbols/riftbound/rune_order.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Deathgrip](https://riftdecks.com/cards/details-deathgrip)![order](/img/symbols/riftbound/rune_order.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Facebreaker](https://riftdecks.com/cards/details-facebreaker)![order](/img/symbols/riftbound/rune_order.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Hidden Blade](https://riftdecks.com/cards/details-hidden-blade)![order](/img/symbols/riftbound/rune_order.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**2**[Hostile Takeover](https://riftdecks.com/cards/details-hostile-takeover)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![order](/img/symbols/riftbound/rune_order.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Singularity](https://riftdecks.com/cards/details-singularity)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Time Warp](https://riftdecks.com/cards/details-time-warp)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_battlefields.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Grove of the God-Willow](https://riftdecks.com/cards/details-grove-of-the-god-willow)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[The Arena's Greatest](https://riftdecks.com/cards/details-the-arenas-greatest)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[The Grand Plaza](https://riftdecks.com/cards/details-the-grand-plaza)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![](/img/symbols/riftbound/group_runes.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**6**[Mind Rune](https://riftdecks.com/cards/details-mind-rune)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**6**[Order Rune](https://riftdecks.com/cards/details-order-rune)![order](/img/symbols/riftbound/rune_order.png)
+
+![](/img/symbols/riftbound/group_sideboard.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Salvage](https://riftdecks.com/cards/details-salvage)![order](/img/symbols/riftbound/rune_order.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[World Atlas](https://riftdecks.com/cards/details-world-atlas)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Rocket Barrage](https://riftdecks.com/cards/details-rocket-barrage)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Imperial Decree](https://riftdecks.com/cards/details-imperial-decree)![order](/img/symbols/riftbound/rune_order.png)
+
+Buy this deck
+
+![](/img/logos/tcg_player.png)
+
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x2
+
+![](/img/cards/riftbound//OGN/ogn-221-298_full.png)
+
+## Visual Decklist
+
+## Deck Stats
+
+| types | ||
+|---|---|---|
+| battlefield | 5% (3) |
+|
+| gear | 8% (5) |
+|
+| legend | 2% (1) |
+|
+| rune | 19% (12) |
+|
+| spell | 41% (26) |
+|
+| unit | 27% (17) |
+|
+| cmc | ||
+| 0 | 25% (16) |
+|
+| 1 | 7% (4) |
+|
+| 2 | 30% (19) |
+|
+| 3 | 11% (7) |
+|
+| 4 | 11% (7) |
+|
+| 5 | 8% (5) |
+|
+| 6 | 4% (2) |
+|
+| 7 | 5% (3) |
+|
+| 10 | 2% (1) |
+|
+| domains | ||
+| colorless | 5% (3) |
+|
+| mind | 52% (33) |
+|
+| order | 49% (31) |
+|

@@ -249,10 +249,13 @@ export default function DomainesGuidePage() {
       </section>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane/10 px-4 py-2 text-sm font-semibold text-arcane hover:bg-arcane/20">
+        <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
           Guide de deckbuilding
         </Link>
-        <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold/10 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/20">
+        <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          Méta &amp; Tier List
+        </Link>
+        <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
           Tier List actuelle
         </Link>
       </div>

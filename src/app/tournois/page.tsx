@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { prisma, safeQuery } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
-import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from "@/lib/tournament-flags";
+import { getTournamentCountryCode, getTournamentInfo, getTournamentTier, isTournamentHidden } from "@/lib/tournament-flags";
 import { getLegendIconUrl } from "@/lib/banners";
 import { TournamentList } from "@/components/tournament-list";
 import { Trophy, Swords, Users, Globe } from "lucide-react";
@@ -68,6 +68,8 @@ async function getTournamentData() {
   const tournamentMap = new Map<string, {
     name: string;
     slug: string;
+    tier: "S" | "A";
+    set: string | null;
     date: string | null;
     location: string | null;
     playerCount: number | null;
@@ -132,6 +134,8 @@ async function getTournamentData() {
     tournamentMap.set(ctx, {
       name: displayName,
       slug: slugify(ctx),
+      tier: getTournamentTier(ctx),
+      set: info?.set ?? null,
       date,
       location,
       playerCount,
@@ -148,6 +152,7 @@ async function getTournamentData() {
   }
 
   return [...tournamentMap.values()].sort((a, b) => {
+    if (a.tier !== b.tier) return a.tier === "S" ? -1 : 1; // S avant A
     if (a.date && b.date) return new Date(b.date).getTime() - new Date(a.date).getTime();
     if (a.date) return -1;
     return 1;
@@ -177,8 +182,8 @@ export default async function TournoisPage() {
         />
         <div className="relative">
           <div className="flex items-center gap-3 mb-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/10">
-              <Trophy className="text-gold" size={24} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold">
+              <Trophy className="text-white" size={24} />
             </div>
             <h1
               className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"

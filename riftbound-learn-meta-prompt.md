@@ -214,46 +214,56 @@ CHECKLIST DE VALIDATION :
 
 Les decklists sont la matière première. Plus Claude Code en voit, meilleur il devient pour en créer.
 
-**Sources prioritaires (scrappables) :**
+**Outil de scraping : Scrapeur (MCP local)**
+On utilise Scrapeur, un MCP local dans Claude Code qui bypass les 403 Cloudflare. Tout tourne en local, gratuit, pas de crédits.
+- `scrape(url)` → récupère le markdown d'une page
+- `scrape(url, render_js=true)` → force le navigateur headless si curl_cffi échoue
+- `map_urls(url)` → liste toutes les URLs d'une page
+- `crawl(url, max_pages=N, include_paths=["/path"])` → crawl massif
 
-1. **riftrank.com** — Tournois complets avec decklists
+**Sources (TOUTES accessibles via Scrapeur) :**
+
+1. **riftdecks.com** — 139 000+ decks, LA base la plus complète au monde
+   - Accessible via Scrapeur (bypass Cloudflare avec curl_cffi/JA3 Chrome)
+   - Page tournoi : `riftdecks.com/riftbound-tournaments/{slug}` (paginée avec `?page=X`)
+   - Page decklist : `riftdecks.com/riftbound-metagame/deck-{nom}-{id}`
+   - Page Legend : `riftdecks.com/legends/constructed/{legend-slug}`
+   - Inclut TOUS les tournois mondiaux (CN, EU, US, APAC)
+   - **C'est la source prioritaire pour le volume**
+
+2. **riftrank.com** — Tournois complets avec decklists
    - `/tournaments` — liste tous les tournois
    - `/tournaments/results/{id}` — résultats détaillés
    - Inclut les City Challenges chinoises (Xi'an, Beijing, Shanghai, etc.)
-   - Tester : `curl -s "https://www.riftrank.com/tournaments"`
 
-2. **riftmana.com** — Decklists filtrables
+3. **riftmana.com** — Decklists filtrables
    - `/tournaments/` — filtre par event type, Legend, placement
    - Inclut Jhin, Pyke et les nouvelles Legends Unleashed
 
-3. **mobalytics.gg** — Decklists + tier list
+4. **mobalytics.gg** — Decklists + tier list
    - `/riftbound/decks` — toutes les decklists
    - `/riftbound/tournaments/{slug}` — résultats par tournoi
 
-4. **riftboundstats.com** — 12 000+ decklists
+5. **riftboundstats.com** — 12 000+ decklists
    - `/decks` — filtrables par legend/format/placement
 
-5. **piltoverarchive.com** — Decklists communautaires
+6. **piltoverarchive.com** — Decklists communautaires
    - `/decks` — parcourir les builds
-
-**Source bloquée (403, utiliser web search comme fallback) :**
-- riftdecks.com — 139 000+ decks, la plus grosse base mais inaccessible directement
 
 ### Workflow d'enrichissement continu
 
 **IMPORTANT : ne pas se limiter au top 8.** Plus on a de decklists, meilleurs seront les patterns extraits. L'objectif est de collecter le MAXIMUM de decklists disponibles par tournoi — top 8, top 16, top 32, top 64, voire toutes les listes soumises quand elles sont publiques.
 
 ```
-1. Fetch les derniers résultats de tournoi (riftrank.com, riftmana.com, mobalytics.gg)
+1. Scraper les derniers résultats de tournoi via Scrapeur :
+   - riftdecks.com en priorité (le plus de volume)
+   - riftrank.com, riftmana.com, mobalytics.gg en complément
 2. Pour chaque tournoi récent non encore analysé :
-   a. Extraire TOUTES les decklists disponibles, pas juste le top 8 :
-      - Top 8 en priorité (les listes gagnantes)
-      - Top 16 / Top 32 (les listes compétitives)
-      - Top 64 et au-delà si dispo (le volume aide à détecter les patterns)
-      - Les listes "Best Of" par Legend (certains sites comme mobalytics les mettent en avant)
-   b. Sauvegarder chaque decklist dans data/decklists/{legend-slug}/{tournament-slug}-{placement}-{player}.json
-   c. Sauvegarder le résumé du tournoi dans data/tournaments/{slug}.json
-   d. Pour chaque decklist, enrichir la fiche Legend correspondante
+   a. map_urls(url_tournoi) ou scrape page par page (?page=1, ?page=2...)
+   b. Extraire TOUTES les URLs de decklists (pas juste le top 8)
+   c. scrape(url_decklist) pour chaque decklist → parser → sauvegarder en JSON
+   d. Sauvegarder le résumé du tournoi dans data/tournaments/{slug}.json
+   e. Pour chaque decklist, enrichir la fiche Legend correspondante
 3. Relancer l'analyse de patterns (DECKBUILDING-RULES.md) avec les nouvelles données
 4. Recompiler META-KNOWLEDGE.md
 ```
@@ -315,22 +325,30 @@ data/
 
 ### Scraping en masse — stratégie par source
 
-**riftrank.com** (meilleure source pour le volume)
-- La page `/tournaments/results/{id}` contient souvent les standings complets avec 50-100+ decklists
-- Paginer les résultats : top 8, puis top 16-32, puis top 64+
+**riftdecks.com** (source #1, accessible via Scrapeur)
+- `scrape("https://riftdecks.com/riftbound-tournaments/{slug}")` pour la page 1
+- Paginer avec `scrape("...?page=2")`, `scrape("...?page=3")` etc.
+- Ou `map_urls("https://riftdecks.com/riftbound-tournaments/{slug}")` pour lister toutes les URLs d'un coup
+- `scrape("https://riftdecks.com/riftbound-metagame/deck-{nom}-{id}")` pour chaque decklist
+- `crawl("https://riftdecks.com/riftbound-tournaments", max_pages=50, include_paths=["/riftbound-tournaments"])` pour lister tous les tournois d'un coup
 - Les City Challenges chinoises publient quasi tous les decks
+- Attendre 1-2s entre chaque scrape pour ne pas se faire bloquer
+- Si `scrape(url)` échoue, retenter avec `scrape(url, render_js=true)`
+
+**riftrank.com** (complément pour les tournois CN)
+- `scrape("https://www.riftrank.com/tournaments")` pour la liste
+- `scrape("https://www.riftrank.com/tournaments/results/{id}")` pour les résultats détaillés
 
 **mobalytics.gg** (bonne pour les "Best Of" par Legend)
-- La page `/riftbound/tournaments/{slug}` liste les "Best Of" : le meilleur résultat de chaque Legend
+- `scrape("https://mobalytics.gg/riftbound/tournaments/{slug}")` pour les "Best Of" par Legend
 - Parfait pour couvrir les Legends Tier 3-5 qui n'apparaissent pas en top 8
 
 **riftmana.com** (bonne pour filtrer)
-- Filtrer par Legend + All Placements pour avoir le max de listes
-- Filtrer par "Top 4" ou "Top 2" pour ne garder que les meilleures si on veut du quality over quantity
+- `scrape("https://riftmana.com/tournaments/")` avec filtres par Legend + placement
+- Filtrer par "Top 4" ou "Top 2" pour du quality over quantity
 
 **riftboundstats.com** (12 000+ decklists)
-- Le volume le plus important si accessible
-- Filtrer par legend + set actuel pour les données pertinentes
+- `scrape("https://www.riftboundstats.com/decks")` filtré par legend + set actuel
 
 ### Format de stockage des decklists (pour analyse de patterns)
 
@@ -614,22 +632,34 @@ Copie-colle ces prompts directement dans Claude Code selon ce que tu veux faire.
 
 ### 📥 Scraper de nouvelles decklists (maximum de volume)
 
-> Lis le prompt `riftbound-learn-meta-prompt-v2.md`. Scrape le maximum de decklists depuis les sources suivantes. Ne te limite PAS au top 8 — prends tout ce qui est dispo (top 16, 32, 64, toutes les listes publiées) :
+> Lis le prompt `riftbound-learn-meta-prompt-v2.md` et `riftbound-scraping-prompt.md`. Utilise l'outil Scrapeur (MCP) pour scraper le maximum de decklists. Ne te limite PAS au top 8 — prends tout ce qui est dispo (top 16, 32, 64, toutes les listes publiées) :
 > 
-> Sources à scraper :
-> - riftrank.com/tournaments — tous les tournois récents, paginer les résultats
-> - riftmana.com/tournaments — filtrer par Legend, prendre tous les placements
-> - mobalytics.gg/riftbound/decks — "Best Of" par Legend + decklists de tournois
-> - riftboundstats.com/decks — filtrer par set Unleashed
+> **Source prioritaire — riftdecks.com :**
+> 1. `crawl("https://riftdecks.com/riftbound-tournaments", max_pages=30, include_paths=["/riftbound-tournaments"])` pour lister les tournois récents
+> 2. Pour chaque tournoi non encore analysé, `scrape` la page du tournoi + pagine avec `?page=2`, `?page=3`... pour collecter TOUTES les URLs de decklists `deck-{nom}-{id}`
+> 3. `scrape` chaque decklist et crée le JSON dans `data/decklists/{legend-slug}/`
 >
-> Pour chaque decklist, sauvegarde un JSON dans `data/decklists/{legend-slug}/` avec le format défini dans le prompt. Mets à jour `decklists-index.json` à la fin.
+> **Sources complémentaires :**
+> - `scrape("https://www.riftrank.com/tournaments")` — tournois CN
+> - `scrape("https://mobalytics.gg/riftbound/decks")` — Best Of par Legend
+> - `scrape("https://riftmana.com/tournaments/")` — filtre par Legend/placement
+> - `scrape("https://www.riftboundstats.com/decks")` — volume
+>
+> Si `scrape(url)` échoue, retenter avec `scrape(url, render_js=true)`.
+> Attends 1-2s entre chaque scrape.
+> Mets à jour `decklists-index.json` à la fin.
 > Objectif : 20+ listes par Legend Tier 1-2, 10+ par Tier 3, tout ce qui est dispo pour le reste.
 
 ---
 
 ### 📥 Scraper un tournoi spécifique
 
-> Scrape TOUTES les decklists disponibles du tournoi [NOM DU TOURNOI] sur [SOURCE]. Pas juste le top 8 — prends le top 32 minimum, top 64+ si dispo. Sauvegarde chaque decklist dans `data/decklists/{legend-slug}/` et le résumé dans `data/tournaments/`. Mets à jour `decklists-index.json`.
+> Utilise Scrapeur pour scraper le tournoi [NOM DU TOURNOI] :
+> 1. `scrape("https://riftdecks.com/riftbound-tournaments/{slug}")` — page 1
+> 2. Pagine : `scrape("...?page=2")`, `scrape("...?page=3")`, etc. jusqu'à la dernière page
+> 3. Collecte TOUTES les URLs `deck-{nom}-{id}` (pas juste le top 8)
+> 4. `scrape` chaque decklist et crée le JSON dans `data/decklists/{legend-slug}/`
+> 5. Sauvegarde le résumé dans `data/tournaments/` et mets à jour `decklists-index.json`
 
 ---
 
@@ -689,25 +719,26 @@ Copie-colle ces prompts directement dans Claude Code selon ce que tu veux faire.
 
 ### 📝 Enrichir les connaissances méta (workflow complet)
 
-> Lis le prompt `riftbound-learn-meta-prompt-v2.md` et exécute le workflow complet :
-> 1. Scrape les derniers tournois depuis riftrank.com, riftmana.com, mobalytics.gg — prends TOUTES les decklists dispo, pas juste le top 8
-> 2. Sauvegarde chaque decklist dans `data/decklists/{legend-slug}/`
-> 3. Enrichis les fiches Legend avec les nouvelles données
-> 4. Relance l'analyse de patterns et mets à jour `DECKBUILDING-RULES.md`
-> 5. Recompile `META-KNOWLEDGE.md`
-> 6. Mets à jour `decklists-index.json`
+> Lis les prompts `riftbound-learn-meta-prompt-v2.md` et `riftbound-scraping-prompt.md`. Exécute le workflow complet avec Scrapeur :
+> 1. `crawl("https://riftdecks.com/riftbound-tournaments", max_pages=30)` pour lister les tournois récents
+> 2. Pour chaque tournoi non encore dans `data/tournaments/`, scrape TOUTES les pages + TOUTES les decklists
+> 3. Sauvegarde chaque decklist dans `data/decklists/{legend-slug}/`
+> 4. Enrichis les fiches Legend avec les nouvelles données
+> 5. Relance l'analyse de patterns et mets à jour `DECKBUILDING-RULES.md`
+> 6. Recompile `META-KNOWLEDGE.md`
+> 7. Mets à jour `decklists-index.json`
 
 ---
 
 ### 🆕 Ajouter un nouveau meta report
 
-> Un nouveau meta report est sorti : [URL]. Fetch-le, analyse-le, sauvegarde-le dans `data/meta-reports/`. Mets à jour la tier list et les observations méta dans `META-KNOWLEDGE.md`.
+> Utilise `scrape("[URL]")` pour récupérer le contenu du nouveau meta report. Analyse-le, sauvegarde-le dans `data/meta-reports/`. Mets à jour la tier list et les observations méta dans `META-KNOWLEDGE.md`.
 
 ---
 
 ### 🆕 Ajouter un nouveau guide de Legend
 
-> Un nouveau guide est sorti pour [LEGEND] : [URL]. Fetch-le, crée la fiche dans `data/fiches/{slug}.json`, et ajoute la Legend dans le META-KNOWLEDGE.md.
+> Utilise `scrape("[URL]")` pour récupérer le guide de [LEGEND]. Crée la fiche dans `data/fiches/{slug}.json` et ajoute la Legend dans le META-KNOWLEDGE.md.
 
 ---
 

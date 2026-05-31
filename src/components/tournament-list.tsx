@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { CountryBadge } from "@/components/country-badge";
@@ -9,8 +10,11 @@ import {
   Calendar,
   Swords,
   ChevronRight,
+  Search,
 } from "lucide-react";
 import type { TournamentData } from "@/app/tournois/page";
+
+const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed"] as const;
 
 const MEDAL_STYLES: Record<number, { bg: string; text: string; label: string }> = {
   1: { bg: "bg-gold/15", text: "text-gold", label: "1er" },
@@ -44,7 +48,7 @@ function TournamentRow({
           {/* Flag */}
           <div className="shrink-0">
             {tournament.countryCode && (
-              <CountryBadge code={tournament.countryCode} className="text-xs px-2 py-1" />
+              <CountryBadge code={tournament.countryCode} className="h-6 w-9" />
             )}
           </div>
 
@@ -98,7 +102,7 @@ function TournamentRow({
       {/* Top 8 inline */}
       {top8.length > 0 && (
         <div className="px-5 pb-4 -mt-1">
-          <div className="flex flex-wrap gap-1.5">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             {top8.map((deck) => {
               const medal = MEDAL_STYLES[deck.placementNum];
               return (
@@ -107,7 +111,7 @@ function TournamentRow({
                   href={`/decks/${deck.slug}`}
                   onClick={(e) => e.stopPropagation()}
                   className={cn(
-                    "group/chip inline-flex items-center gap-1.5 rounded-lg px-2 py-1 transition-colors",
+                    "group/chip flex min-w-0 items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
                     "bg-canvas/60 hover:bg-surface-raised border border-hairline/40",
                   )}
                 >
@@ -125,14 +129,14 @@ function TournamentRow({
                     <img
                       src={deck.legendIcon}
                       alt=""
-                      className="h-8 w-8 rounded object-cover shrink-0"
+                      className="h-7 w-7 rounded object-cover shrink-0"
                     />
                   )}
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-xs font-medium truncate max-w-[100px] leading-tight">
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <span className="block truncate text-xs font-medium leading-tight">
                       {deck.playerName ?? "Inconnu"}
                     </span>
-                    <span className="text-[10px] text-ink-muted truncate max-w-[100px] leading-tight hidden sm:block">
+                    <span className="hidden truncate text-[10px] leading-tight text-ink-muted sm:block">
                       {displayLegendName(deck.legendName)}
                     </span>
                   </div>
@@ -146,35 +150,115 @@ function TournamentRow({
   );
 }
 
+function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; count: number }) {
+  const bg = tier === "S" ? "bg-gold" : "bg-arcane";
+  return (
+    <div className="mb-4 flex items-center gap-2.5">
+      <span
+        className={cn(
+          "flex h-9 w-9 items-center justify-center rounded-lg text-lg font-black text-white",
+          bg,
+        )}
+        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+      >
+        {tier}
+      </span>
+      <h2
+        className="text-sm font-bold uppercase tracking-wider text-ink-secondary"
+        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+      >
+        {label}
+      </h2>
+      <span className="text-[11px] font-bold text-ink-muted">{count}</span>
+      <div className="h-px flex-1 bg-hairline" />
+    </div>
+  );
+}
+
 export function TournamentList({ tournaments }: { tournaments: TournamentData[] }) {
-  const featured = tournaments.slice(0, 3);
-  const rest = tournaments.slice(3);
+  const [setFilter, setSetFilter] = useState<string>("Tous");
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return tournaments.filter((t) => {
+      if (setFilter !== "Tous" && t.set !== setFilter) return false;
+      if (
+        q &&
+        !(t.name ?? "").toLowerCase().includes(q) &&
+        !(t.location ?? "").toLowerCase().includes(q)
+      )
+        return false;
+      return true;
+    });
+  }, [tournaments, setFilter, query]);
+
+  const sTier = filtered.filter((t) => t.tier === "S");
+  const aTier = filtered.filter((t) => t.tier === "A");
 
   return (
     <div>
-      {featured.length > 0 && (
-        <div className="space-y-3">
-          {featured.map((t) => (
-            <TournamentRow key={t.name} tournament={t} featured />
-          ))}
+      {/* Filtres */}
+      <div className="mb-10 flex flex-col gap-3 border-b border-hairline pb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-wrap gap-1.5">
+          {SET_FILTERS.map((s) => {
+            const active = setFilter === s;
+            const count = s === "Tous" ? tournaments.length : tournaments.filter((t) => t.set === s).length;
+            return (
+              <button
+                key={s}
+                type="button"
+                onClick={() => setSetFilter(s)}
+                className={cn(
+                  "rounded-lg border px-3 py-1.5 text-sm font-semibold transition-colors",
+                  active
+                    ? "border-arcane/40 text-arcane-light"
+                    : "border-transparent text-ink-secondary hover:text-ink",
+                )}
+              >
+                {s} <span className="text-ink-muted">{count}</span>
+              </button>
+            );
+          })}
         </div>
-      )}
+        <div className="relative sm:w-64">
+          <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted" />
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Rechercher un tournoi…"
+            className="w-full rounded-lg border border-hairline bg-transparent py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-hairline-accent focus:outline-none"
+          />
+        </div>
+      </div>
 
-      {rest.length > 0 && (
-        <>
-          <div className="my-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-hairline" />
-            <span className="text-xs font-bold uppercase tracking-widest text-ink-muted">
-              Tournois précédents
-            </span>
-            <div className="h-px flex-1 bg-hairline" />
-          </div>
-          <div className="space-y-2">
-            {rest.map((t) => (
-              <TournamentRow key={t.name} tournament={t} />
-            ))}
-          </div>
-        </>
+      {filtered.length === 0 ? (
+        <p className="py-12 text-center text-ink-muted">Aucun tournoi pour ce filtre.</p>
+      ) : (
+        <div className="space-y-10">
+          {sTier.length > 0 && (
+            <section>
+              <TierHeader tier="S" label="Regional Opens & Qualifiers — Europe & Chine" count={sTier.length} />
+              <div className="space-y-3">
+                {sTier.map((t) => (
+                  <TournamentRow key={t.slug} tournament={t} featured />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {aTier.length > 0 && (
+            <section>
+              <TierHeader tier="A" label="City Challenges & autres tournois" count={aTier.length} />
+              <div className="space-y-2">
+                {aTier.map((t) => (
+                  <TournamentRow key={t.slug} tournament={t} />
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
       )}
     </div>
   );

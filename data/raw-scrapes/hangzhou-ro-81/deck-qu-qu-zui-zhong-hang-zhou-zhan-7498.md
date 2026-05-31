@@ -1,0 +1,215 @@
+# 区区 最终杭州战 by YK.区区
+
+"区区 最终杭州战" decklist by YK.区区. 488th at Hangzhou Regional Open by Riot Games / Shining Soul on 2025-09-14
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+区区 最终杭州战
+, a deck by
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+[YK.区区](https://riftdecks.com/riftbound-decks?player=YK.%E5%8C%BA%E5%8C%BA&deck_type=all)
+488th at
+Hangzhou Regional Open 510 players on
+2025-09-14
+
+[Constructed Constructed](https://riftdecks.com/riftbound-metagame/constructed)| 64 Cards |
+
+## Text Decklist
+
+This deck contains banned cards.
+
+![](/img/cards/riftbound/OGN/ogn-276-298_cropped.png)
+
+![](/img/cards/riftbound/OGN/ogn-027-298_cropped.png)
+
+![](/img/cards/riftbound/OGN/ogn-109-298_cropped.png)
+
+![]() |
+|||||
+![]() |
+1
+|
+|
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_champion.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Kai'Sa, Survivor](https://riftdecks.com/cards/details-kaisa-survivor)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![](/img/symbols/riftbound/group_unit.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**3**[Darius, Trifarian](https://riftdecks.com/cards/details-darius-trifarian)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Dr. Mundo, Expert](https://riftdecks.com/cards/details-dr-mundo-expert)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_gear.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**3**[Seal of Rage](https://riftdecks.com/cards/details-seal-of-rage)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Energy Conduit](https://riftdecks.com/cards/details-energy-conduit)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Ravenborn Tome](https://riftdecks.com/cards/details-ravenborn-tome)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![](/img/symbols/riftbound/group_spell.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Hextech Ray](https://riftdecks.com/cards/details-hextech-ray)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Retreat](https://riftdecks.com/cards/details-retreat)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Stupefy](https://riftdecks.com/cards/details-stupefy)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Falling Star](https://riftdecks.com/cards/details-falling-star)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Void Seeker](https://riftdecks.com/cards/details-void-seeker)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Disintegrate](https://riftdecks.com/cards/details-disintegrate)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Falling Comet](https://riftdecks.com/cards/details-falling-comet)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Progress Day](https://riftdecks.com/cards/details-progress-day)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Singularity](https://riftdecks.com/cards/details-singularity)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**2**[Icathian Rain](https://riftdecks.com/cards/details-icathian-rain)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_battlefields.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Aspirant's Climb](https://riftdecks.com/cards/details-aspirants-climb)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Obelisk of Power](https://riftdecks.com/cards/details-obelisk-of-power)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Void Gate](https://riftdecks.com/cards/details-void-gate)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![](/img/symbols/riftbound/group_runes.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**7**[Fury Rune](https://riftdecks.com/cards/details-fury-rune)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**5**[Mind Rune](https://riftdecks.com/cards/details-mind-rune)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_sideboard.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Lecturing Yordle](https://riftdecks.com/cards/details-lecturing-yordle)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Sprite Mother](https://riftdecks.com/cards/details-sprite-mother)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Icathian Rain](https://riftdecks.com/cards/details-icathian-rain)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher)![mind](/img/symbols/riftbound/rune_mind.png)
+
+Buy this deck
+
+![](/img/logos/tcg_player.png)
+
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x1
+
+![](/img/cards/riftbound//OGN/ogn-116-298_full.png)
+
+## Visual Decklist
+
+## Deck Stats
+
+| types | ||
+|---|---|---|
+| battlefield | 5% (3) |
+|
+| gear | 13% (8) |
+|
+| legend | 2% (1) |
+|
+| rune | 19% (12) |
+|
+| spell | 44% (28) |
+|
+| unit | 19% (12) |
+|
+| cmc | ||
+| 0 | 30% (19) |
+|
+| 1 | 15% (9) |
+|
+| 2 | 5% (3) |
+|
+| 3 | 18% (11) |
+|
+| 4 | 11% (7) |
+|
+| 5 | 7% (4) |
+|
+| 6 | 10% (6) |
+|
+| 7 | 7% (4) |
+|
+| 8 | 2% (1) |
+|
+| domains | ||
+| colorless | 5% (3) |
+|
+| fury | 50% (32) |
+|
+| mind | 52% (33) |
+|

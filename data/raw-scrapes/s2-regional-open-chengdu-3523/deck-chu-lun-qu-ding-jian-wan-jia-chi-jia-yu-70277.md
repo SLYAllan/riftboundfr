@@ -1,0 +1,231 @@
+# 出轮去顶尖玩家吃甲鱼 by PPX
+
+"出轮去顶尖玩家吃甲鱼" decklist by PPX. 294th at S2 Regional Open Chengdu by 第二赛季区域公开赛 on 2026-01-25
+
+![body](/img/symbols/riftbound/rune_body.png)
+
+出轮去顶尖玩家吃甲鱼
+, a deck by
+
+![body](/img/symbols/riftbound/rune_body.png)
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+[PPX](https://riftdecks.com/riftbound-decks?player=PPX&deck_type=all)
+294th at
+S2 Regional Open Chengdu 512 players on
+2026-01-25
+
+[Constructed Constructed](https://riftdecks.com/riftbound-metagame/constructed)| 64 Cards |
+
+## Text Decklist
+
+This deck contains banned cards.
+
+![](/img/cards/riftbound/SFD/sfd-109-221_cropped.png)
+
+![](/img/cards/riftbound/OGN/ogn-039a-298_cropped.png)
+
+![](/img/cards/riftbound/SFD/sfd-113a-221_cropped.png)
+
+![]() |
+|||||
+![]() |
+1
+|
+|
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+![body](/img/symbols/riftbound/rune_body.png)
+
+![](/img/symbols/riftbound/group_champion.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Lucian, Merciless](https://riftdecks.com/cards/details-lucian-merciless)![body](/img/symbols/riftbound/rune_body.png)
+
+![](/img/symbols/riftbound/group_unit.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Buhru Captain](https://riftdecks.com/cards/details-buhru-captain)![body](/img/symbols/riftbound/rune_body.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[First Mate](https://riftdecks.com/cards/details-first-mate)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**3**[Kai'Sa, Survivor](https://riftdecks.com/cards/details-kaisa-survivor)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Minotaur Reckoner](https://riftdecks.com/cards/details-minotaur-reckoner)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Ruin Runner](https://riftdecks.com/cards/details-ruin-runner)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Dunebreaker](https://riftdecks.com/cards/details-dunebreaker)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![](/img/symbols/riftbound/group_gear.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Hexdrinker](https://riftdecks.com/cards/details-hexdrinker)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**2**[Boneshiver](https://riftdecks.com/cards/details-boneshiver)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**3**[Skyfall of Areion](https://riftdecks.com/cards/details-skyfall-of-areion)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Trinity Force](https://riftdecks.com/cards/details-trinity-force)![body](/img/symbols/riftbound/rune_body.png)
+
+![](/img/symbols/riftbound/group_spell.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Punch First](https://riftdecks.com/cards/details-punch-first)![body](/img/symbols/riftbound/rune_body.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Sabotage](https://riftdecks.com/cards/details-sabotage)![body](/img/symbols/riftbound/rune_body.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Angle Shot](https://riftdecks.com/cards/details-angle-shot)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Challenge](https://riftdecks.com/cards/details-challenge)![body](/img/symbols/riftbound/rune_body.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Confront](https://riftdecks.com/cards/details-confront)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**3**[Relentless Pursuit](https://riftdecks.com/cards/details-relentless-pursuit)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![body](/img/symbols/riftbound/rune_body.png)
+
+![](/img/symbols/riftbound/group_battlefields.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Obelisk of Power](https://riftdecks.com/cards/details-obelisk-of-power)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Rockfall Path](https://riftdecks.com/cards/details-rockfall-path)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Sigil of the Storm](https://riftdecks.com/cards/details-sigil-of-the-storm)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![](/img/symbols/riftbound/group_runes.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**7**[Body Rune](https://riftdecks.com/cards/details-body-rune)![body](/img/symbols/riftbound/rune_body.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**5**[Fury Rune](https://riftdecks.com/cards/details-fury-rune)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![](/img/symbols/riftbound/group_sideboard.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Sabotage](https://riftdecks.com/cards/details-sabotage)![body](/img/symbols/riftbound/rune_body.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Unyielding Spirit](https://riftdecks.com/cards/details-unyielding-spirit)![body](/img/symbols/riftbound/rune_body.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Angle Shot](https://riftdecks.com/cards/details-angle-shot)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Challenge](https://riftdecks.com/cards/details-challenge)![body](/img/symbols/riftbound/rune_body.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Akshan, Mischievous](https://riftdecks.com/cards/details-akshan-mischievous)![body](/img/symbols/riftbound/rune_body.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Miss Fortune, Captain](https://riftdecks.com/cards/details-miss-fortune-captain)![body](/img/symbols/riftbound/rune_body.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong)![fury](/img/symbols/riftbound/rune_fury.png)
+
+Buy this deck
+
+![](/img/logos/tcg_player.png)
+
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x1
+
+![](/img/cards/riftbound//OGN/ogn-026-298_full.png)
+
+## Visual Decklist
+
+## Deck Stats
+
+| types | ||
+|---|---|---|
+| battlefield | 5% (3) |
+|
+| gear | 18% (11) |
+|
+| legend | 2% (1) |
+|
+| rune | 19% (12) |
+|
+| spell | 27% (17) |
+|
+| unit | 32% (20) |
+|
+| cmc | ||
+| 0 | 25% (16) |
+|
+| 1 | 10% (6) |
+|
+| 2 | 22% (14) |
+|
+| 3 | 18% (11) |
+|
+| 4 | 11% (7) |
+|
+| 5 | 5% (3) |
+|
+| 6 | 10% (6) |
+|
+| 7 | 2% (1) |
+|
+| domains | ||
+| body | 66% (42) |
+|
+| colorless | 5% (3) |
+|
+| fury | 36% (23) |
+|

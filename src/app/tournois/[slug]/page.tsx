@@ -78,11 +78,10 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
       },
       orderBy: { createdAt: "desc" },
     }),
-    prisma.deck.findMany({
+    prisma.deck.groupBy({
+      by: ["legendName"],
       where: { published: true, tournamentContext: ctx, placement: { not: null } },
-      select: { legendName: true },
-      distinct: ["legendName"],
-      orderBy: { legendName: "asc" },
+      _count: { legendName: true },
     }),
     prisma.article.findMany({
       where: { published: true, NOT: { tournamentName: null } },
@@ -120,8 +119,13 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   }
 
   const decks = (() => {
+    // Si le tournoi a des résultats classés, masquer les decks best-of (placement null, issus
+    // d'articles) qui dupliqueraient les légendes. Sinon (tournoi best-of-only, ex. Sydney), les garder.
+    const hasRanked = decksRaw.some((d) => d.placement !== null);
+    const pool = hasRanked ? decksRaw.filter((d) => d.placement !== null) : decksRaw;
+
     const groups = new Map<string, typeof decksRaw>();
-    for (const d of decksRaw) {
+    for (const d of pool) {
       const key = `${d.legendName.toLowerCase()}||${d.placement ?? ""}`;
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key)!.push(d);
@@ -149,12 +153,15 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     .sort((a, b) => a.placementNum - b.placementNum);
 
   const legendCounts = new Map<string, number>();
-  for (const l of allLegendsRaw) {
-    legendCounts.set(l.legendName, (legendCounts.get(l.legendName) ?? 0) + 1);
+  for (const g of allLegendsRaw) {
+    legendCounts.set(g.legendName, g._count.legendName);
   }
   const legendNames = [...legendCounts.keys()].sort();
   const legendCountsObj = Object.fromEntries(legendCounts);
-  const totalDecks = allLegendsRaw.length;
+  // Vrai nombre de decklists classées (allLegendsRaw est distinct par légende, pas le total de decks)
+  const totalDecks = await prisma.deck.count({
+    where: { published: true, tournamentContext: ctx, placement: { not: null } },
+  });
 
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
@@ -171,7 +178,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
       <div className="mt-6 rounded-card border border-hairline bg-surface/30 p-6 sm:p-8">
         {/* Title row */}
         <div className="flex flex-wrap items-center gap-3">
-          {cc && <CountryBadge code={cc} className="text-xs px-2 py-1" />}
+          {cc && <CountryBadge code={cc} className="h-7 w-10" />}
           <h1
             className="text-3xl font-bold sm:text-4xl lg:text-5xl text-ink"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}

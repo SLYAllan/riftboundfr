@@ -1,5 +1,5 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
-> Mis à jour le 28 mai 2026. **7987 decklists analysées** — 2041 S2 Shenzhen NO + 1984 Shanghai NO + 637 Suzhou RQ + 636 S3 Xi'an RO + 511 Fuzhou RQ + 505 Beijing RO Day 2 + 501 Guangzhou RO Full + 499 Chongqing RO Full + 145 Atlanta RQ + 129 Las Vegas RQ + 128 Shanghai CC + 120 Bologna RQ + 66 Houston RQ + 63 Lille RQ + 8 Guangzhou RO (top 8) + 8 Chongqing RO (top 8) + 7 Beijing RO Day 1 + 88 Sydney/CC. 42 légendes, 12 paires de domains. 22 fiches JSON, 20 tournois JSON. DECKBUILDING-RULES.md recalculé sur 7987 decklists.
+> Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
 ## 1. Règles clés (résumé pour rédaction)
 
@@ -64,9 +64,72 @@
 - **Can't beats Can** : les effets interdisant > les effets autorisant
 - Source : `data/meta-reports/riftbound-rules-rgpub.pdf` (98 pages)
 
-## 2. Tier List — Full Dataset (Mai 2026, 7987 decklists)
+## 2. Tier List — Full Dataset (Mai 2026, 12 317 decklists)
 
-> Basée sur 7987 decklists : S2 Shenzhen NO (2041), Shanghai NO (1984), Suzhou RQ (637), S3 Xi'an RO (636), Fuzhou RQ (511), Beijing RO Day 2 (505), Guangzhou RO Full (501), Chongqing RO Full (499), Atlanta RQ (145), Las Vegas RQ (129), Shanghai CC (128), Bologna RQ (120), Houston RQ (66), Lille RQ (63), Beijing RO Day 1 (7), Guangzhou/Chongqing top 8 (16), Sydney/CC (88). Couvre Origins → Spiritforged → Unleashed.
+> Basée sur 12 317 decklists couvrant Origins → Spiritforged → Unleashed (base 7987 + 25 tournois CN Spiritforged ajoutés le 31 mai).
+
+### 2.0 Tier Spiritforged — CN data-backed (31 mai 2026, 7294 decks classés)
+
+> Calculé sur l'ensemble des decks Spiritforged **avec placement** (3 Regional Opens CN + 22 City Challenges + RQ EU/US + National Opens). Métrique : part du field + nombre de top 8 + victoires + taux de conversion.
+
+| Tier | Legend | Field % (decks) | Top 8 | Wins | Note |
+|------|--------|-----------------|-------|------|------|
+| **S** | Draven, Glorious Executioner | 21,1% (1539) | 88 | 15 | Roi incontesté — domine volume ET conversion |
+| **A** | Irelia, Blade Dancer | 12,0% (876) | 45 | 3 | Tempo, 2e deck le plus joué |
+| **A** | Kai'Sa, Daughter of the Void | 11,9% (865) | 29 | 4 | Reste T1 Fury/Mind |
+| **A** | Viktor, Herald of the Arcane | 6,1% (445) | 21 | 2 | Meilleure conversion du top tier |
+| **B** | Annie, Dark Child | 2,2% (164) | 8 | 2 | **Sleeper** — meilleur taux top 8/deck du set |
+| **B** | Fiora, Grand Duelist | 5,2% (378) | 9 | 1 | Midrange Body/Order |
+| **B** | Ezreal, Prodigal Explorer | 4,6% (333) | 9 | 1 | Won Bologna |
+| **B** | Azir, Emperor of the Sands | 3,5% (258) | 4 | 1 | Won Lille 14-0-2 |
+| **B** | Rek'Sai, Void Burrower | 2,4% (175) | 5 | 1 | Aggro tunneler |
+| **B** | Master Yi, Wuju Bladesman | 3,3% (244) | ~7 | 0 | Hold Body/Calm (seul Yi légal à Spiritforged) |
+| **C** | Sivir / Lucian / Ornn / Sett / Ahri / Jax / Lux / Miss Fortune | 1-2,5% | 1-4 | 0-1 | Compétitifs avec pilote, faible conversion |
+| **D** | Yasuo, Rumble, Teemo, Jinx, Volibear, Leona, Renata, Darius, Lee Sin, Garen | <2% | 0-1 | 0 | Populaires localement mais ~0 top 8 |
+
+**Insights clés Spiritforged CN :**
+- **Draven écrase le set** : 1 deck sur 5, 88 top 8, 15 victoires. Aucun autre n'approche.
+- **Annie = le sleeper** : 2,2% du field mais 8 top 8 + 2 wins → meilleure conversion. Counter du méta.
+- **Lucian/Yasuo/Sivir = pièges** : très joués (2,5%/1,8%/2,5%) mais convertissent mal (0-2 top 8). Populaires ≠ bons.
+- **Domaine Chaos/Fury (Draven) + Calm/Chaos (Irelia)** = colonne vertébrale du méta.
+
+### 2.1 Tier Origins — data-backed (31 mai 2026, 6 799 decks classés)
+
+> Shanghai National Open + Beijing/Guangzhou/Chongqing/Hangzhou Regional Open + City Challenges. 16 légendes (pool Origins complet).
+
+| Tier | Legend | Field % (decks) | Top 8 | Wins |
+|------|--------|-----------------|-------|------|
+| **S** | Kai'Sa, Daughter of the Void | 27,6% (1876) | 83 | 10 |
+| **S** | Master Yi, Wuju Bladesman | 23,0% (1561) | 61 | 6 |
+| **A** | Viktor, Herald of the Arcane | 11,5% (781) | 24 | 2 |
+| **A** | Sett, The Boss | 5,4% (366) | 10 | 4 |
+| **A** | Annie, Dark Child | 3,4% (233) | 10 | 1 |
+| **B** | Miss Fortune (5,6%) / Teemo (5,4%) / Ahri (4,5%) / Darius (2,6%) | — | 6-11 | 0-1 |
+| **C** | Yasuo / Jinx / Lee Sin / Volibear | 1-2,4% | 1-3 | 0-1 |
+| **D** | Leona / Lux / Garen | <1,6% | 0 | 0 |
+
+**Insight Origins** : méta à 2 têtes ultra-dominant — **Kai'Sa + Master Yi Bladesman = 50% du field** et 144 top 8 sur ~136 places. Sett surperforme (4 wins pour 5,4%).
+
+### 2.2 Tier Unleashed — data-backed (31 mai 2026, 4 501 decks classés)
+
+> 25 S3 City Challenges + Xi'an RO + Suzhou RQ + Sydney. 41 légendes — le méta le plus diversifié.
+
+| Tier | Legend | Field % (decks) | Top 8 | Wins |
+|------|--------|-----------------|-------|------|
+| **S** | Irelia, Blade Dancer | 8,0% (362) | 30 | 6 |
+| **S** | Master Yi, Wuju Master | 7,4% (333) | 30 | 1 |
+| **S** | LeBlanc, Deceiver | 7,5% (337) | 19 | 2 |
+| **S** | Diana, Scorn of the Moon | 6,5% (292) | 20 | 2 |
+| **A** | Fiora (5,9%/15) · Lillia (5,5%/11) · Sivir (2,9%/9·2W) · Sett (2,8%/8·3W) · Master Yi Bladesman (3,8%/11·3W) · Azir (4%/7) · Kai'Sa (3,6%/12) · Rengar (2,7%/5·1W) · Annie (1,5%/5·3W sleeper) | — | — | — |
+| **B** | Vex (5%/8) · Draven (2,6%/8) · Kha'Zix · Viktor · Pyke · Ezreal · Ornn | 1,7-5% | 2-8 | 0 |
+| **C** | Miss Fortune (3,3% mais 1 top8) · Ahri · Teemo · Jhin · Volibear · Vi · Poppy | 0,9-3,3% | 0-2 | 0 |
+| **D** | Lucian · Jax · Leona · Ivern · Lux · Darius · Yasuo · Jinx · Garen · Lee Sin · Rumble · Rek'Sai · Renata | <1,3% | 0-1 | 0 |
+
+**Insights Unleashed** : méta **très ouvert** (4 légendes S quasi à égalité, ~13 viables). **Irelia** reste reine (6 wins). **Master Yi Wuju Master** est le nouveau Yi méta (vs Bladesman à Origins). **Miss Fortune** = piège (3,3% du field, 1 seul top 8). Annie/Sett surperforment en conversion.
+
+### Tier List historique cross-set (Origins→Unleashed)
+
+> Détail base 7987 : Shenzhen NO (2041), Shanghai NO (1984), Suzhou RQ (637), Xi'an RO (636), Fuzhou RQ (511), Beijing/Guangzhou/Chongqing RO, Atlanta/Vegas/Bologna/Houston/Lille RQ, Sydney.
 
 ### Tier 1 — Dominants, résultats multiples
 | Legend | Domains | Decks analysés | Archetype | Résultat clé |

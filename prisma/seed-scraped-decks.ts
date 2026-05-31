@@ -75,6 +75,10 @@ async function main() {
     fs.statSync(path.join(baseDir, d)).isDirectory(),
   );
 
+  // Si des slugs sont passés en argument, ne seeder QUE les fichiers de ces tournois
+  // (évite de re-seeder les tournois existants depuis des JSON désynchronisés du DB).
+  const ONLY = process.argv.slice(2);
+
   let created = 0;
   let skipped = 0;
   let errors = 0;
@@ -83,7 +87,8 @@ async function main() {
     const dirPath = path.join(baseDir, dir);
     const files = fs
       .readdirSync(dirPath)
-      .filter((f) => f.endsWith(".json"));
+      .filter((f) => f.endsWith(".json"))
+      .filter((f) => ONLY.length === 0 || ONLY.some((s) => f.startsWith(s + "-")));
 
     for (const file of files) {
       try {

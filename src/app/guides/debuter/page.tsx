@@ -90,7 +90,7 @@ export default function GuideDebuterPage() {
             ))}
           </div>
           <div className="mt-4">
-            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet/10 px-4 py-2 text-sm font-semibold text-violet hover:bg-violet/20">
+            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
               <Hammer size={16} /> Essayer le Deckbuilder
             </Link>
           </div>
@@ -274,14 +274,48 @@ export default function GuideDebuterPage() {
           </ul>
         </section>
 
+        {/* === 10. QUELLE LÉGENDE === */}
+        <section>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Par quelle légende commencer ?</h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Une fois à l&apos;aise avec les bases, choisissez une légende dont le style vous parle. Sur le format actuel
+            (Unleashed), voici des points de départ accessibles et solides en tournoi :
+          </p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Irelia, Blade Dancer</span>
+              <p className="mt-0.5 text-xs text-ink-secondary">Tempo réactif (Calme/Ordre). La légende la plus constante du méta. Cœur de deck bien établi.</p>
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Master Yi, Wuju Master</span>
+              <p className="mt-0.5 text-xs text-ink-secondary">Corps/Calme. Gagne en puissance avec l&apos;XP. Récompense le jeu patient.</p>
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Diana, Scorn of the Moon</span>
+              <p className="mt-0.5 text-xs text-ink-secondary">Agro-tempo (Esprit/Chaos). Rapide et directe, idéale pour apprendre à mettre la pression.</p>
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
+              <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Draven, Glorious Executioner</span>
+              <p className="mt-0.5 text-xs text-ink-secondary">Agression pure (Chaos/Furie). Très fort sur le set précédent — parfait si vous aimez foncer.</p>
+            </div>
+          </div>
+          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
+            Pour le détail complet des meilleures légendes par set, consultez le{" "}
+            <Link href="/guides/meta" className="text-arcane hover:underline">guide Méta &amp; Tier List</Link>.
+          </div>
+        </section>
+
         <div className="flex flex-wrap gap-3">
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane/10 px-4 py-2 text-sm font-semibold text-arcane hover:bg-arcane/20">
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             Guide de deckbuilding
           </Link>
-          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-gold/10 px-4 py-2 text-sm font-semibold text-gold hover:bg-gold/20">
+          <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            Méta &amp; Tier List
+          </Link>
+          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             Les 6 Domaines
           </Link>
-          <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-violet/10 px-4 py-2 text-sm font-semibold text-violet hover:bg-violet/20">
+          <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:opacity-90">
             <BookOpen size={16} /> Glossaire complet
           </Link>
         </div>

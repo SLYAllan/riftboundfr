@@ -32,9 +32,9 @@ const CATEGORIES = [
 ] as const;
 
 const COLOR_CLASSES = {
-  violet: { base: "bg-violet/10 text-violet hover:bg-violet/20", active: "bg-violet/20 text-violet ring-1 ring-violet/40" },
-  arcane: { base: "bg-arcane/10 text-arcane hover:bg-arcane/20", active: "bg-arcane/20 text-arcane ring-1 ring-arcane/40" },
-  gold: { base: "bg-gold/10 text-gold hover:bg-gold/20", active: "bg-gold/20 text-gold ring-1 ring-gold/40" },
+  violet: { base: "bg-violet text-white hover:opacity-90", active: "bg-violet text-white ring-2 ring-violet/40 ring-offset-1 ring-offset-canvas" },
+  arcane: { base: "bg-arcane text-white hover:opacity-90", active: "bg-arcane text-white ring-2 ring-arcane/40 ring-offset-1 ring-offset-canvas" },
+  gold: { base: "bg-gold text-white hover:opacity-90", active: "bg-gold text-white ring-2 ring-gold/40 ring-offset-1 ring-offset-canvas" },
 };
 
 const SET_STYLES: Record<string, { badge: string; active: string }> = {
@@ -119,7 +119,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <p className="mt-2 text-ink-secondary">Decklists avec guides et explications en français.</p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
-          <Link href="/decks" className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all bg-surface-raised text-ink-secondary hover:text-ink">
+          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", !cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
             Tous
           </Link>
           {CATEGORIES.map((c) => {
@@ -324,7 +324,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           href="/decks"
           className={cn(
             "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all",
-            !cat && !setFilter ? "bg-arcane/20 text-arcane ring-1 ring-arcane/40" : "bg-surface-raised text-ink-secondary hover:text-ink",
+            !cat && !setFilter ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink",
           )}
         >
           Tous

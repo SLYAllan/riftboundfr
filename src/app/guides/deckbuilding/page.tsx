@@ -215,6 +215,22 @@ export default function GuideDeckbuildingPage() {
         </section>
 
         <section>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles légendes sont fortes en ce moment ?</h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Si vous débutez la construction, partir d&apos;une légende éprouvée évite bien des erreurs. Sur le format actuel
+            (Unleashed), quatre légendes dominent les tournois : <strong>Irelia</strong> (tempo réactif, la plus constante),
+            <strong> Master Yi, Wuju Master</strong> (montée en puissance), <strong>Diana</strong> (agro-tempo) et
+            <strong> LeBlanc</strong> (moteur d&apos;Agonie). Leurs cœurs de deck sont bien établis : copiez-les pour apprendre,
+            puis ajustez vos slots flexibles.
+          </p>
+          <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
+            <strong>Astuce :</strong> une légende peu jouée mais qui gagne souvent (comme <strong>Annie</strong> ou{" "}
+            <strong>Sett</strong>) est souvent un meilleur choix qu&apos;une légende très populaire qui ne convertit pas.
+            Le détail set par set est dans le <Link href="/guides/meta" className="underline">guide Méta &amp; Tier List</Link>.
+          </div>
+        </section>
+
+        <section>
           <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             <AlertTriangle size={20} /> Quelles erreurs éviter en deckbuilding ?
           </h2>
@@ -229,10 +245,10 @@ export default function GuideDeckbuildingPage() {
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet/10 px-4 py-2 text-sm font-semibold text-violet hover:bg-violet/20">
+          <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             <Hammer size={16} /> Créer un deck
           </Link>
-          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg bg-arcane/10 px-4 py-2 text-sm font-semibold text-arcane hover:bg-arcane/20">
+          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             Guide du débutant
           </Link>
         </div>

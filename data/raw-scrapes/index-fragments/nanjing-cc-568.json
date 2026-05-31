@@ -1,0 +1,884 @@
+[
+  {
+    "id": "deck-1-14nan-jingwkt-27631",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "Chovy",
+    "placement": 111,
+    "file": "viktor/nanjing-cc-568-111-chovy.json"
+  },
+  {
+    "id": "deck-1-27524",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "吉良吉影",
+    "placement": 3,
+    "file": "kai-sa/nanjing-cc-568-3-p.json"
+  },
+  {
+    "id": "deck-10-12bi-sai-pai-zu-27526",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "ZL卡牌-十字芯",
+    "placement": 6,
+    "file": "kai-sa/nanjing-cc-568-6-zl.json"
+  },
+  {
+    "id": "deck-10-12cheng-shi-sai-ka-sha-27565",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "Alex.L",
+    "placement": 45,
+    "file": "kai-sa/nanjing-cc-568-45-alex-l.json"
+  },
+  {
+    "id": "deck-10-7-27644",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "摸魚的花花",
+    "placement": 124,
+    "file": "kai-sa/nanjing-cc-568-124-p.json"
+  },
+  {
+    "id": "deck-2-27550",
+    "legend": "Darius, Hand of Noxus",
+    "player": "夏某",
+    "placement": 30,
+    "file": "darius/nanjing-cc-568-30-p.json"
+  },
+  {
+    "id": "deck-2-27622",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "BKM、JunTar",
+    "placement": 103,
+    "file": "viktor/nanjing-cc-568-103-bkm-juntar.json"
+  },
+  {
+    "id": "deck-3-27645",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "斑鸠",
+    "placement": 125,
+    "file": "master-yi/nanjing-cc-568-125-p.json"
+  },
+  {
+    "id": "deck-a-li-27582",
+    "legend": "Ahri, Nine-Tailed Fox",
+    "player": "清扬",
+    "placement": 63,
+    "file": "ahri/nanjing-cc-568-63-p.json"
+  },
+  {
+    "id": "deck-a-zhe-27642",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "撒旦",
+    "placement": 122,
+    "file": "kai-sa/nanjing-cc-568-122-p.json"
+  },
+  {
+    "id": "deck-ad-ka-sha-27584",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "小开",
+    "placement": 65,
+    "file": "kai-sa/nanjing-cc-568-65-p.json"
+  },
+  {
+    "id": "deck-an-ni-27570",
+    "legend": "Annie, Dark Child",
+    "player": "白衣",
+    "placement": 50,
+    "file": "annie/nanjing-cc-568-50-p.json"
+  },
+  {
+    "id": "deck-an-ni-27602",
+    "legend": "Annie, Dark Child",
+    "player": "Tapiicy",
+    "placement": 83,
+    "file": "annie/nanjing-cc-568-83-tapiicy.json"
+  },
+  {
+    "id": "deck-an-ni-27624",
+    "legend": "Annie, Dark Child",
+    "player": "赛高、三个小皇冠",
+    "placement": 105,
+    "file": "annie/nanjing-cc-568-105-p.json"
+  },
+  {
+    "id": "deck-bao-po-kuang-ren-27625",
+    "legend": "Jinx, Loose Cannon",
+    "player": "冬葉枫",
+    "placement": 106,
+    "file": "jinx/nanjing-cc-568-106-p.json"
+  },
+  {
+    "id": "deck-bi-sai-27553",
+    "legend": "Sett, The Boss",
+    "player": "阳",
+    "placement": 33,
+    "file": "sett/nanjing-cc-568-33-p.json"
+  },
+  {
+    "id": "deck-bo1-27543",
+    "legend": "Sett, The Boss",
+    "player": "万舞寒天",
+    "placement": 23,
+    "file": "sett/nanjing-cc-568-23-p.json"
+  },
+  {
+    "id": "deck-bo1-27547",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "藏宝 zjm",
+    "placement": 27,
+    "file": "kai-sa/nanjing-cc-568-27-zjm.json"
+  },
+  {
+    "id": "deck-bo1jin-ke-si-27575",
+    "legend": "Jinx, Loose Cannon",
+    "player": "核心玩家-老银",
+    "placement": 55,
+    "file": "jinx/nanjing-cc-568-55-p.json"
+  },
+  {
+    "id": "deck-bo3ka-sha-27583",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "枉昔",
+    "placement": 64,
+    "file": "kai-sa/nanjing-cc-568-64-p.json"
+  },
+  {
+    "id": "deck-chang-zhou-tiao-fei-jian-sheng-27529",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "CZU.蛾子",
+    "placement": 9,
+    "file": "master-yi/nanjing-cc-568-9-czu.json"
+  },
+  {
+    "id": "deck-cheng-shi-sai-27592",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "Awsomeken",
+    "placement": 73,
+    "file": "kai-sa/nanjing-cc-568-73-awsomeken.json"
+  },
+  {
+    "id": "deck-cheng-shi-sai-an-ni-27531",
+    "legend": "Annie, Dark Child",
+    "player": "问号",
+    "placement": 11,
+    "file": "annie/nanjing-cc-568-11-p.json"
+  },
+  {
+    "id": "deck-cheng-shi-sai-jian-sheng-27535",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "帆",
+    "placement": 15,
+    "file": "master-yi/nanjing-cc-568-15-p.json"
+  },
+  {
+    "id": "deck-cheng-shi-tiao-zhan-sai-27534",
+    "legend": "Annie, Dark Child",
+    "player": "赛高.小小",
+    "placement": 14,
+    "file": "annie/nanjing-cc-568-14-p.json"
+  },
+  {
+    "id": "deck-cheng-shi-tiao-zhan-sai-nan-jing-zhan-27542",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "小肥仔",
+    "placement": 22,
+    "file": "master-yi/nanjing-cc-568-22-p.json"
+  },
+  {
+    "id": "deck-chong-27541",
+    "legend": "Sett, The Boss",
+    "player": "柒",
+    "placement": 21,
+    "file": "sett/nanjing-cc-568-21-p.json"
+  },
+  {
+    "id": "deck-chun-tao-zi-27537",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "Pass",
+    "placement": 17,
+    "file": "master-yi/nanjing-cc-568-17-pass.json"
+  },
+  {
+    "id": "deck-da-nao-an-mo-27544",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "AFakeCat",
+    "placement": 24,
+    "file": "master-yi/nanjing-cc-568-24-afakecat.json"
+  },
+  {
+    "id": "deck-darius-1-27568",
+    "legend": "Darius, Hand of Noxus",
+    "player": "废水摇摆",
+    "placement": 48,
+    "file": "darius/nanjing-cc-568-48-p.json"
+  },
+  {
+    "id": "deck-destiny-27523",
+    "legend": "Ahri, Nine-Tailed Fox",
+    "player": "BKM-Zlep",
+    "placement": 2,
+    "file": "ahri/nanjing-cc-568-2-bkm-zlep.json"
+  },
+  {
+    "id": "deck-diao-gou-wei-ke-tuo-27632",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "赛高.离洛",
+    "placement": 112,
+    "file": "viktor/nanjing-cc-568-112-p.json"
+  },
+  {
+    "id": "deck-dui-mu-ti-mo-27532",
+    "legend": "Teemo, Swift Scout",
+    "player": "藏宝-摩托猫",
+    "placement": 12,
+    "file": "teemo/nanjing-cc-568-12-p.json"
+  },
+  {
+    "id": "deck-gogogo-27576",
+    "legend": "Sett, The Boss",
+    "player": "不呆",
+    "placement": 56,
+    "file": "sett/nanjing-cc-568-56-p.json"
+  },
+  {
+    "id": "deck-hao-ling-zhi-qi-27612",
+    "legend": "Darius, Hand of Noxus",
+    "player": "皮尔克松",
+    "placement": 93,
+    "file": "darius/nanjing-cc-568-93-p.json"
+  },
+  {
+    "id": "deck-ji-27648",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "木棉yuuki",
+    "placement": 128,
+    "file": "master-yi/nanjing-cc-568-128-yuuki.json"
+  },
+  {
+    "id": "deck-ji-guang-jian-sheng-27549",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "ZL-Ro0Ty666",
+    "placement": 29,
+    "file": "master-yi/nanjing-cc-568-29-zl-ro0ty666.json"
+  },
+  {
+    "id": "deck-ji-guang-jian-sheng-27567",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "灰",
+    "placement": 47,
+    "file": "master-yi/nanjing-cc-568-47-p.json"
+  },
+  {
+    "id": "deck-ji-guang-nu-qiang-27599",
+    "legend": "Miss Fortune, Bounty Hunter",
+    "player": "懿陌",
+    "placement": 80,
+    "file": "miss-fortune/nanjing-cc-568-80-p.json"
+  },
+  {
+    "id": "deck-ji-guang-se-ti-duo-guan-ban-27596",
+    "legend": "Sett, The Boss",
+    "player": "神奇的豆腐",
+    "placement": 77,
+    "file": "sett/nanjing-cc-568-77-p.json"
+  },
+  {
+    "id": "deck-jia-ru-guang-rong-de-jin-hua-ba-27559",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "MA",
+    "placement": 39,
+    "file": "viktor/nanjing-cc-568-39-ma.json"
+  },
+  {
+    "id": "deck-jian-nan-yi-ran-jian-chi-27552",
+    "legend": "Sett, The Boss",
+    "player": "干拌面",
+    "placement": 32,
+    "file": "sett/nanjing-cc-568-32-p.json"
+  },
+  {
+    "id": "deck-jian-ren-lang-ren-27636",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "爱你老妈",
+    "placement": 116,
+    "file": "master-yi/nanjing-cc-568-116-p.json"
+  },
+  {
+    "id": "deck-jian-sheng-27539",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "杨杨",
+    "placement": 19,
+    "file": "master-yi/nanjing-cc-568-19-p.json"
+  },
+  {
+    "id": "deck-jian-sheng-27556",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "Zero",
+    "placement": 36,
+    "file": "master-yi/nanjing-cc-568-36-zero.json"
+  },
+  {
+    "id": "deck-jian-sheng-27585",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "小神仙",
+    "placement": 66,
+    "file": "master-yi/nanjing-cc-568-66-p.json"
+  },
+  {
+    "id": "deck-jian-sheng-27614",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "成海萌奈",
+    "placement": 95,
+    "file": "master-yi/nanjing-cc-568-95-p.json"
+  },
+  {
+    "id": "deck-jian-sheng-27638",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "P4&love",
+    "placement": 118,
+    "file": "master-yi/nanjing-cc-568-118-p4-love.json"
+  },
+  {
+    "id": "deck-jie-zou-ka-sha-27548",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "核心玩家-304",
+    "placement": 28,
+    "file": "kai-sa/nanjing-cc-568-28-304.json"
+  },
+  {
+    "id": "deck-jin-ke-si-27555",
+    "legend": "Jinx, Loose Cannon",
+    "player": "苜荆棘",
+    "placement": 35,
+    "file": "jinx/nanjing-cc-568-35-p.json"
+  },
+  {
+    "id": "deck-js-27620",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "小李猫灌饼",
+    "placement": 101,
+    "file": "master-yi/nanjing-cc-568-101-p.json"
+  },
+  {
+    "id": "deck-js-27635",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "Tautau",
+    "placement": 115,
+    "file": "master-yi/nanjing-cc-568-115-tautau.json"
+  },
+  {
+    "id": "deck-jsbo1-27551",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "易得趣^-^dh9",
+    "placement": 31,
+    "file": "master-yi/nanjing-cc-568-31-dh9.json"
+  },
+  {
+    "id": "deck-ka-sha-27562",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "ZL-MacPsyduck",
+    "placement": 42,
+    "file": "kai-sa/nanjing-cc-568-42-zl-macpsyduck.json"
+  },
+  {
+    "id": "deck-ka-sha-27569",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "不凡",
+    "placement": 49,
+    "file": "kai-sa/nanjing-cc-568-49-p.json"
+  },
+  {
+    "id": "deck-ka-sha-27577",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "BKM-阿力",
+    "placement": 58,
+    "file": "kai-sa/nanjing-cc-568-58-bkm.json"
+  },
+  {
+    "id": "deck-ka-sha-27593",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "倘若天空不再哭泣",
+    "placement": 74,
+    "file": "kai-sa/nanjing-cc-568-74-p.json"
+  },
+  {
+    "id": "deck-ka-sha-27613",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "低语",
+    "placement": 94,
+    "file": "kai-sa/nanjing-cc-568-94-p.json"
+  },
+  {
+    "id": "deck-ka-sha-27616",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "五桌桌主",
+    "placement": 97,
+    "file": "kai-sa/nanjing-cc-568-97-p.json"
+  },
+  {
+    "id": "deck-ka-sha-27621",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "橘街orst",
+    "placement": 102,
+    "file": "kai-sa/nanjing-cc-568-102-orst.json"
+  },
+  {
+    "id": "deck-ka-sha-27623",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "Houmaker",
+    "placement": 104,
+    "file": "kai-sa/nanjing-cc-568-104-houmaker.json"
+  },
+  {
+    "id": "deck-ka-sha-27637",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "GAG丨水跃鱼",
+    "placement": 117,
+    "file": "kai-sa/nanjing-cc-568-117-gag.json"
+  },
+  {
+    "id": "deck-ka-sha-cheng-shi-sai-27647",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "黄昏",
+    "placement": 127,
+    "file": "kai-sa/nanjing-cc-568-127-p.json"
+  },
+  {
+    "id": "deck-ka-sha-sha-27560",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "BKM-Vita",
+    "placement": 40,
+    "file": "kai-sa/nanjing-cc-568-40-bkm-vita.json"
+  },
+  {
+    "id": "deck-ka-shabo1-27540",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "Ai.秦时听雨",
+    "placement": 20,
+    "file": "kai-sa/nanjing-cc-568-20-ai.json"
+  },
+  {
+    "id": "deck-kai-men-ka-sha-27527",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "Ai.暗华",
+    "placement": 7,
+    "file": "kai-sa/nanjing-cc-568-7-ai.json"
+  },
+  {
+    "id": "deck-kaisa-27558",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "瓦尔登湖的熊",
+    "placement": 38,
+    "file": "kai-sa/nanjing-cc-568-38-p.json"
+  },
+  {
+    "id": "deck-kasa-27574",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "TXG.夏天",
+    "placement": 54,
+    "file": "kai-sa/nanjing-cc-568-54-txg.json"
+  },
+  {
+    "id": "deck-kong-chang-an-ni-27566",
+    "legend": "Annie, Dark Child",
+    "player": "塵",
+    "placement": 46,
+    "file": "annie/nanjing-cc-568-46-p.json"
+  },
+  {
+    "id": "deck-kuai-gong-an-ni-27586",
+    "legend": "Annie, Dark Child",
+    "player": "华蓝-球球",
+    "placement": 67,
+    "file": "annie/nanjing-cc-568-67-p.json"
+  },
+  {
+    "id": "deck-lan-wei-27611",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "TT",
+    "placement": 92,
+    "file": "viktor/nanjing-cc-568-92-tt.json"
+  },
+  {
+    "id": "deck-lao-si-ji-pai-ke-meng-ka-sha-27554",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "老司机魄罗",
+    "placement": 34,
+    "file": "kai-sa/nanjing-cc-568-34-p.json"
+  },
+  {
+    "id": "deck-lei-ou-na-27563",
+    "legend": "Leona, Radiant Dawn",
+    "player": "Eric",
+    "placement": 43,
+    "file": "leona/nanjing-cc-568-43-eric.json"
+  },
+  {
+    "id": "deck-li-27573",
+    "legend": "Ahri, Nine-Tailed Fox",
+    "player": "电杆",
+    "placement": 53,
+    "file": "ahri/nanjing-cc-568-53-p.json"
+  },
+  {
+    "id": "deck-mang-seng-27588",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "命运凪",
+    "placement": 69,
+    "file": "master-yi/nanjing-cc-568-69-p.json"
+  },
+  {
+    "id": "deck-meng-duo-27606",
+    "legend": "Teemo, Swift Scout",
+    "player": "MRR",
+    "placement": 87,
+    "file": "teemo/nanjing-cc-568-87-mrr.json"
+  },
+  {
+    "id": "deck-nan-jing-27628",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "佛山第一牌手皮老八",
+    "placement": 109,
+    "file": "master-yi/nanjing-cc-568-109-p.json"
+  },
+  {
+    "id": "deck-nan-jing-wei-ke-tuo-27571",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "赛高.阿司匹林",
+    "placement": 51,
+    "file": "viktor/nanjing-cc-568-51-p.json"
+  },
+  {
+    "id": "deck-nan-jing-wei-ke-tuo-27609",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "LANSE",
+    "placement": 90,
+    "file": "viktor/nanjing-cc-568-90-lanse.json"
+  },
+  {
+    "id": "deck-nb-27640",
+    "legend": "Lee Sin, Blind Monk",
+    "player": "CZU.跳水",
+    "placement": 120,
+    "file": "lee-sin/nanjing-cc-568-120-czu.json"
+  },
+  {
+    "id": "deck-nuo-shou-27530",
+    "legend": "Darius, Hand of Noxus",
+    "player": "ZL-某种蘑菇",
+    "placement": 10,
+    "file": "darius/nanjing-cc-568-10-zl.json"
+  },
+  {
+    "id": "deck-nuo-shou-27579",
+    "legend": "Darius, Hand of Noxus",
+    "player": "Universe",
+    "placement": 60,
+    "file": "darius/nanjing-cc-568-60-universe.json"
+  },
+  {
+    "id": "deck-nuo-shou-27590",
+    "legend": "Darius, Hand of Noxus",
+    "player": "Tc",
+    "placement": 71,
+    "file": "darius/nanjing-cc-568-71-tc.json"
+  },
+  {
+    "id": "deck-nuo-shou-27591",
+    "legend": "Darius, Hand of Noxus",
+    "player": "呵呵呵",
+    "placement": 72,
+    "file": "darius/nanjing-cc-568-72-p.json"
+  },
+  {
+    "id": "deck-nuo-shou-27641",
+    "legend": "Darius, Hand of Noxus",
+    "player": "娇花不如梦",
+    "placement": 121,
+    "file": "darius/nanjing-cc-568-121-p.json"
+  },
+  {
+    "id": "deck-o-a-a-27604",
+    "legend": "Yasuo, Unforgiven",
+    "player": "AblZero",
+    "placement": 85,
+    "file": "yasuo/nanjing-cc-568-85-ablzero.json"
+  },
+  {
+    "id": "deck-qi-shou-you-er-fei-27587",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "澐歌",
+    "placement": 68,
+    "file": "kai-sa/nanjing-cc-568-68-p.json"
+  },
+  {
+    "id": "deck-san-ba-dao-27572",
+    "legend": "Darius, Hand of Noxus",
+    "player": "城西大宝贝-呸呸",
+    "placement": 52,
+    "file": "darius/nanjing-cc-568-52-p.json"
+  },
+  {
+    "id": "deck-san-kai-men-bing-xiang-27533",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "古一小月",
+    "placement": 13,
+    "file": "kai-sa/nanjing-cc-568-13-p.json"
+  },
+  {
+    "id": "deck-sha-27646",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "星野NA",
+    "placement": 126,
+    "file": "kai-sa/nanjing-cc-568-126-na.json"
+  },
+  {
+    "id": "deck-shen-qu-hua-long-yi-nian-jian-27605",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "观星不语",
+    "placement": 86,
+    "file": "kai-sa/nanjing-cc-568-86-p.json"
+  },
+  {
+    "id": "deck-sheng-wu-ka-sha-27594",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "草席.YangY",
+    "placement": 75,
+    "file": "kai-sa/nanjing-cc-568-75-yangy.json"
+  },
+  {
+    "id": "deck-shuang-yu-jian-sheng-27546",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "清蒸双鱼",
+    "placement": 26,
+    "file": "master-yi/nanjing-cc-568-26-p.json"
+  },
+  {
+    "id": "deck-tai-shen-wei-ke-te-27557",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "KUNfly",
+    "placement": 37,
+    "file": "viktor/nanjing-cc-568-37-kunfly.json"
+  },
+  {
+    "id": "deck-ti-mo-27617",
+    "legend": "Teemo, Swift Scout",
+    "player": "Tri",
+    "placement": 98,
+    "file": "teemo/nanjing-cc-568-98-tri.json"
+  },
+  {
+    "id": "deck-tian-ming-27561",
+    "legend": "Miss Fortune, Bounty Hunter",
+    "player": "BKM-老司机",
+    "placement": 41,
+    "file": "miss-fortune/nanjing-cc-568-41-bkm.json"
+  },
+  {
+    "id": "deck-tiao-fei-a-li-27603",
+    "legend": "Ahri, Nine-Tailed Fox",
+    "player": "缘幽sama",
+    "placement": 84,
+    "file": "ahri/nanjing-cc-568-84-sama.json"
+  },
+  {
+    "id": "deck-tiao-feijs-27564",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "飞机",
+    "placement": 44,
+    "file": "master-yi/nanjing-cc-568-44-p.json"
+  },
+  {
+    "id": "deck-tie-zeng-yi-27610",
+    "legend": "Lee Sin, Blind Monk",
+    "player": "奥西里斯",
+    "placement": 91,
+    "file": "lee-sin/nanjing-cc-568-91-p.json"
+  },
+  {
+    "id": "deck-timo-27615",
+    "legend": "Teemo, Swift Scout",
+    "player": "约克",
+    "placement": 96,
+    "file": "teemo/nanjing-cc-568-96-p.json"
+  },
+  {
+    "id": "deck-tm-27633",
+    "legend": "Teemo, Swift Scout",
+    "player": "小黑没了",
+    "placement": 113,
+    "file": "teemo/nanjing-cc-568-113-p.json"
+  },
+  {
+    "id": "deck-ttt-27581",
+    "legend": "Teemo, Swift Scout",
+    "player": "BKM-TUORA",
+    "placement": 62,
+    "file": "teemo/nanjing-cc-568-62-bkm-tuora.json"
+  },
+  {
+    "id": "deck-v-27589",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "水导",
+    "placement": 70,
+    "file": "viktor/nanjing-cc-568-70-p.json"
+  },
+  {
+    "id": "deck-vkt-10-12-27580",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "等天黑",
+    "placement": 61,
+    "file": "viktor/nanjing-cc-568-61-p.json"
+  },
+  {
+    "id": "deck-vkt-27608",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "BKM-白纸",
+    "placement": 89,
+    "file": "viktor/nanjing-cc-568-89-bkm.json"
+  },
+  {
+    "id": "deck-wan-hao-27578",
+    "legend": "Sett, The Boss",
+    "player": "罗亭",
+    "placement": 59,
+    "file": "sett/nanjing-cc-568-59-p.json"
+  },
+  {
+    "id": "deck-wan-hao-27607",
+    "legend": "Sett, The Boss",
+    "player": "兰箫",
+    "placement": 88,
+    "file": "sett/nanjing-cc-568-88-p.json"
+  },
+  {
+    "id": "deck-wei-27634",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "狗鱼",
+    "placement": 114,
+    "file": "viktor/nanjing-cc-568-114-p.json"
+  },
+  {
+    "id": "deck-wei-ke-tuo-27525",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "核心-阳光",
+    "placement": 4,
+    "file": "viktor/nanjing-cc-568-4-p.json"
+  },
+  {
+    "id": "deck-wei-ke-tuo-27545",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "清墨又麻了",
+    "placement": 25,
+    "file": "viktor/nanjing-cc-568-25-p.json"
+  },
+  {
+    "id": "deck-wei-ke-tuo-gai-27626",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "暗影岛第一深情",
+    "placement": 107,
+    "file": "viktor/nanjing-cc-568-107-p.json"
+  },
+  {
+    "id": "deck-wei-ke-tuo-yu-zu-27627",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "Lee",
+    "placement": 108,
+    "file": "viktor/nanjing-cc-568-108-lee.json"
+  },
+  {
+    "id": "deck-wo-shi-shui-gui-27643",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "软糖爱吃硬糖",
+    "placement": 123,
+    "file": "kai-sa/nanjing-cc-568-123-p.json"
+  },
+  {
+    "id": "deck-wu-di-de-ka-sha-27618",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "常盤坂木",
+    "placement": 99,
+    "file": "master-yi/nanjing-cc-568-99-p.json"
+  },
+  {
+    "id": "deck-xiao-yu-bao-bao-27598",
+    "legend": "Viktor, Herald of the Arcane",
+    "player": "吃啥好呢",
+    "placement": 79,
+    "file": "viktor/nanjing-cc-568-79-p.json"
+  },
+  {
+    "id": "deck-xin-ai-ni-27619",
+    "legend": "Annie, Dark Child",
+    "player": "藏宝---垃圾王",
+    "placement": 100,
+    "file": "annie/nanjing-cc-568-100-p.json"
+  },
+  {
+    "id": "deck-xu-yi-hong-quan-27538",
+    "legend": "Sett, The Boss",
+    "player": "ZL-VentoAureo",
+    "placement": 18,
+    "file": "sett/nanjing-cc-568-18-zl-ventoaureo.json"
+  },
+  {
+    "id": "deck-xu-yi-hong-quan-27639",
+    "legend": "Sett, The Boss",
+    "player": "Singa星涯",
+    "placement": 119,
+    "file": "sett/nanjing-cc-568-119-singa.json"
+  },
+  {
+    "id": "deck-ya-suo-27595",
+    "legend": "Yasuo, Unforgiven",
+    "player": "缓缓",
+    "placement": 76,
+    "file": "yasuo/nanjing-cc-568-76-p.json"
+  },
+  {
+    "id": "deck-ya-suo-27601",
+    "legend": "Yasuo, Unforgiven",
+    "player": "Jud",
+    "placement": 82,
+    "file": "yasuo/nanjing-cc-568-82-jud.json"
+  },
+  {
+    "id": "deck-yi-quan-chao-ren-27522",
+    "legend": "Sett, The Boss",
+    "player": "TXG.波波",
+    "placement": 1,
+    "file": "sett/nanjing-cc-568-1-txg.json"
+  },
+  {
+    "id": "deck-yi-quan-chao-ren-27629",
+    "legend": "Sett, The Boss",
+    "player": "阿木木",
+    "placement": 110,
+    "file": "sett/nanjing-cc-568-110-p.json"
+  },
+  {
+    "id": "deck-ying-xia-gai-ying-de-dui-ju-27600",
+    "legend": "Master Yi, Wuju Bladesman",
+    "player": "张君故",
+    "placement": 81,
+    "file": "master-yi/nanjing-cc-568-81-p.json"
+  },
+  {
+    "id": "deck-zhan-shen-dun-pai-nu-27597",
+    "legend": "Leona, Radiant Dawn",
+    "player": "白板",
+    "placement": 78,
+    "file": "leona/nanjing-cc-568-78-p.json"
+  },
+  {
+    "id": "deck-zhong-su-27528",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "BKM.RBmint",
+    "placement": 8,
+    "file": "kai-sa/nanjing-cc-568-8-bkm-rbmint.json"
+  },
+  {
+    "id": "deck-zi-yong-ka-sha-27536",
+    "legend": "Kai'Sa, Daughter of the Void",
+    "player": "BKM-叶英",
+    "placement": 16,
+    "file": "kai-sa/nanjing-cc-568-16-bkm.json"
+  }
+]

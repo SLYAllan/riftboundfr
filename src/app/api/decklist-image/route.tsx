@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 import { type NextRequest } from "next/server";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { displayLegendName } from "@/lib/utils";
@@ -459,8 +461,19 @@ function getLegendDomains(cards: CardInfo[]): string[] {
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
-  // Absolute URL to the branded export background (satori fetches it server-side).
-  const bgUrl = `${req.nextUrl.origin}/img/fond-export.png`;
+  // Branded export background — read from disk and inline as a data URI.
+  // Fetching it via req.nextUrl.origin fails in prod: behind Coolify's reverse
+  // proxy the origin is the internal container host (https://<id>:3000) which
+  // satori cannot reach ("Can't load image ... fetch failed").
+  let bgUrl: string | null = null;
+  try {
+    const bgBuf = await readFile(
+      join(process.cwd(), "public", "img", "fond-export.png"),
+    );
+    bgUrl = `data:image/png;base64,${bgBuf.toString("base64")}`;
+  } catch {
+    bgUrl = null;
+  }
   const slug = searchParams.get("slug");
   const code = searchParams.get("code");
   const shareCode = searchParams.get("share");
@@ -550,19 +563,21 @@ export async function GET(req: NextRequest) {
         }}
       >
         {/* Branded background image */}
-        <img
-          src={bgUrl}
-          width={WIDTH}
-          height={HEIGHT}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: WIDTH,
-            height: HEIGHT,
-            objectFit: "cover",
-          }}
-        />
+        {bgUrl && (
+          <img
+            src={bgUrl}
+            width={WIDTH}
+            height={HEIGHT}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: WIDTH,
+              height: HEIGHT,
+              objectFit: "cover",
+            }}
+          />
+        )}
 
         {/* Dark overlay for readability over the background */}
         <div

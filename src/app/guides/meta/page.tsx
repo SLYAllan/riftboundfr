@@ -1,0 +1,268 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { TrendingUp, AlertTriangle } from "lucide-react";
+import { CardRef } from "@/components/card-ref";
+
+export const metadata: Metadata = {
+  title: "Méta & Tier List Riftbound",
+  description:
+    "Le méta compétitif Riftbound expliqué set par set (Origines, Spiritforged, Unleashed) : meilleures légendes, archétypes, cartes qui définissent le format. Basé sur 88 tournois.",
+};
+
+type Tier = "S" | "A" | "B" | "C";
+
+const TIER_STYLE: Record<Tier, { bg: string; label: string }> = {
+  S: { bg: "bg-gold", label: "Domine le format" },
+  A: { bg: "bg-arcane", label: "Top cut régulier" },
+  B: { bg: "bg-emerald-600", label: "Viable avec un bon pilote" },
+  C: { bg: "bg-ink-muted", label: "Niche ou en déclin" },
+};
+
+type Entry = { tier: Tier; name: string; note: string };
+
+const origins: Entry[] = [
+  { tier: "S", name: "Kai'Sa, Daughter of the Void", note: "27,6 % du field, 10 victoires. A gagné le Shanghai National Open (2048 joueurs). La reine du set." },
+  { tier: "S", name: "Master Yi, Wuju Bladesman", note: "23 % du field, 6 victoires. Deck de Hold Corps/Calme qui gagne en force tour après tour." },
+  { tier: "A", name: "Viktor, Herald of the Arcane", note: "Contrôle pur (11,5 %). Toujours présent, mais ne gagne presque jamais le tournoi." },
+  { tier: "A", name: "Sett, The Boss", note: "Sous-représenté (5,4 %) mais surperforme : 4 victoires. Résistant et difficile à retirer." },
+  { tier: "A", name: "Annie, Dark Child", note: "Faible part du field mais excellente conversion. L'agro qui punit le contrôle." },
+  { tier: "B", name: "Miss Fortune · Teemo · Ahri · Darius", note: "Présents en top cut occasionnellement, sans dominer." },
+];
+
+const spiritforged: Entry[] = [
+  { tier: "S", name: "Draven, Glorious Executioner", note: "1 deck sur 5 (21 %), 88 top 8, 15 victoires. Aucune autre légende n'approche. Le roi du set." },
+  { tier: "A", name: "Irelia, Blade Dancer", note: "2e légende la plus jouée (12 %). Tempo réactif. A gagné le Shenzhen National Open." },
+  { tier: "A", name: "Kai'Sa, Daughter of the Void", note: "Reste forte (11,9 %) mais en net recul par rapport à Origines." },
+  { tier: "A", name: "Viktor, Herald of the Arcane", note: "Meilleure conversion du haut du tableau (6,1 %). 4e à Bologna." },
+  { tier: "B", name: "Annie, Dark Child", note: "Le sleeper : 2 % du field mais la meilleure conversion top 8 / deck du set. Le counter du méta." },
+  { tier: "B", name: "Azir · Ezreal · Fiora · Rek'Sai", note: "Azir a gagné Lille (14-0-2), Ezreal a gagné Bologna. Solides avec le bon pilote." },
+  { tier: "C", name: "Lucian · Yasuo · Sivir", note: "Pièges : très joués mais convertissent très mal. Populaires ≠ bons." },
+];
+
+const unleashed: Entry[] = [
+  { tier: "S", name: "Irelia, Blade Dancer", note: "8 % du field, 6 victoires. Toujours la reine, la plus constante du format." },
+  { tier: "S", name: "Master Yi, Wuju Master", note: "Le nouveau Master Yi du méta (différent du Bladesman d'Origines). 30 top 8." },
+  { tier: "S", name: "LeBlanc, Deceiver", note: "Moteur d'Agonie : tire profit de la mort de ses propres unités. 19 top 8." },
+  { tier: "S", name: "Diana, Scorn of the Moon", note: "Agro-tempo qui monte vite : finaliste de Xi'an, domine les City Challenges." },
+  { tier: "A", name: "Fiora · Lillia · Sivir · Sett · Azir · Kai'Sa · Rengar · Annie", note: "Une douzaine de légendes viables. Sett et Annie surperforment en conversion." },
+  { tier: "B", name: "Vex · Draven · Kha'Zix · Viktor · Pyke · Ezreal · Ornn", note: "Présents en top cut sans gagner. Vex est l'une des plus jouées." },
+  { tier: "C", name: "Miss Fortune", note: "Piège du format : 3,3 % du field pour un seul top 8. Le méta a maindecké le retrait d'équipement." },
+];
+
+const sets = [
+  {
+    id: "unleashed",
+    name: "Unleashed",
+    fr: "Le set actuel",
+    decks: "4 501 decks classés · 41 légendes",
+    summary:
+      "Le méta le plus ouvert de l'histoire du jeu : quatre légendes S quasi à égalité et une douzaine de decks viables. Aucune légende n'écrase le format.",
+    entries: unleashed,
+    color: "#a78bfa",
+  },
+  {
+    id: "spiritforged",
+    name: "Spiritforged",
+    fr: "Le 2e set",
+    decks: "7 294 decks classés · 29 légendes",
+    summary:
+      "Le règne de Draven. Une seule légende domine le volume ET les victoires. Le reste du méta s'organise autour d'elle (la contrer ou la copier).",
+    entries: spiritforged,
+    color: "#ef4444",
+  },
+  {
+    id: "origins",
+    name: "Origines",
+    fr: "Le 1er set",
+    decks: "6 799 decks classés · 16 légendes",
+    summary:
+      "Un méta à deux têtes : Kai'Sa et Master Yi Bladesman réunissaient à eux seuls la moitié du field. Pool de légendes restreint, méta très concentré.",
+    entries: origins,
+    color: "#22c55e",
+  },
+];
+
+const archetypes = [
+  {
+    name: "Agression",
+    desc: "Poser des unités rapides et scorer sur les deux champs de bataille avant que l'adversaire ne se stabilise. Les parties sont courtes.",
+    legends: "Draven, Annie, Rengar, Darius, Rek'Sai",
+    domains: "Furie, Corps, Chaos",
+  },
+  {
+    name: "Tempo / Midrange",
+    desc: "Garder un cran d'avance : échanger efficacement, contester les champs et convertir l'avantage en points. L'archétype le plus polyvalent.",
+    legends: "Irelia, Kai'Sa, Fiora, Sett",
+    domains: "Calme, Corps, Ordre",
+  },
+  {
+    name: "Contrôle",
+    desc: "Survivre au début de partie, neutraliser les menaces adverses, puis prendre le dessus sur la durée grâce à la pioche et aux grosses cartes.",
+    legends: "Viktor, Lux, Ezreal, Lillia",
+    domains: "Esprit, Ordre",
+  },
+  {
+    name: "Combo / Engine",
+    desc: "Assembler un moteur de valeur (Agonie, cartes face cachée, équipements) qui prend le dessus si la partie dure. Demande de l'expérience.",
+    legends: "LeBlanc, Diana, Vex",
+    domains: "Esprit, Chaos, Ordre",
+  },
+  {
+    name: "Hold / Défensif",
+    desc: "Prendre un champ de bataille et le tenir : chaque tour tenu rapporte +1 point automatique. Des unités qui grandissent et résistent.",
+    legends: "Master Yi (Bladesman), Vex",
+    domains: "Calme, Corps",
+  },
+];
+
+function TierRow({ e }: { e: Entry }) {
+  const s = TIER_STYLE[e.tier];
+  return (
+    <div className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
+      <span
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black text-white ${s.bg}`}
+        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+      >
+        {e.tier}
+      </span>
+      <div className="flex-1">
+        <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          {e.name}
+        </span>
+        <p className="mt-0.5 text-xs text-ink-secondary">{e.note}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function GuideMetaPage() {
+  return (
+    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+        Méta &amp; Tier List
+      </h1>
+      <p className="mt-2 text-lg text-ink-secondary">
+        Quelles légendes gagnent vraiment les tournois ? Ce guide résume le méta compétitif set par set,
+        les grands archétypes et les cartes qui définissent le format.
+      </p>
+
+      <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
+        <strong>D&apos;où viennent ces données ?</strong> De l&apos;analyse de <strong>88 tournois</strong> et plus de
+        18 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
+        le nombre de top 8, les victoires et le taux de conversion — pas une opinion.
+      </div>
+
+      <div className="mt-10 space-y-12">
+        <section>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            C&apos;est quoi le « méta » ?
+          </h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Le méta (pour <em>metagame</em>) désigne l&apos;ensemble des decks les plus joués et les plus performants à un
+            instant donné. Il évolue à chaque nouveau set et à chaque gros tournoi. Connaître le méta vous aide à choisir
+            une légende solide, à anticiper ce que joueront vos adversaires et à préparer votre Réserve en Bo3.
+          </p>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Riftbound compte aujourd&apos;hui <strong>trois sets</strong>. Chacun a son propre méta, car le pool de cartes
+            légales change. Le format actuel est <strong>Unleashed</strong>.
+          </p>
+        </section>
+
+        {sets.map((set) => (
+          <section key={set.id} id={set.id}>
+            <div className="flex items-center gap-3">
+              <span className="h-8 w-1.5 rounded-full" style={{ backgroundColor: set.color }} />
+              <div>
+                <h2 className="text-2xl font-semibold" style={{ color: set.color, fontFamily: "var(--font-rubik), sans-serif" }}>
+                  {set.name}
+                </h2>
+                <span className="text-xs text-ink-muted">{set.fr} · {set.decks}</span>
+              </div>
+            </div>
+            <p className="mt-3 text-sm text-ink-secondary">{set.summary}</p>
+            <div className="mt-4 space-y-2">
+              {set.entries.map((e) => (
+                <TierRow key={e.name} e={e} />
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            Les grands archétypes
+          </h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Au-delà des légendes, chaque deck appartient à une grande famille de stratégie. Identifier l&apos;archétype
+            adverse en quelques tours vous dit comment jouer la partie.
+          </p>
+          <div className="mt-4 space-y-2">
+            {archetypes.map((a) => (
+              <div key={a.name} className="rounded-lg border border-hairline bg-surface p-4">
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{a.name}</h3>
+                <p className="mt-1 text-sm text-ink-secondary">{a.desc}</p>
+                <div className="mt-2 flex flex-col gap-1 text-xs text-ink-muted sm:flex-row sm:gap-6">
+                  <span><strong className="text-ink-secondary">Légendes :</strong> {a.legends}</span>
+                  <span><strong className="text-ink-secondary">Domaines :</strong> {a.domains}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            <TrendingUp size={20} /> Les cartes qui définissent le format
+          </h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Une poignée de cartes oriente la construction de tous les decks. Les connaître, c&apos;est comprendre pourquoi
+            le méta ressemble à ce qu&apos;il est.
+          </p>
+          <div className="mt-4 space-y-2">
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> — l&apos;équipement à 9 énergie qui portait Sivir,
+              Miss Fortune et Poppy. <strong>En net déclin</strong> : le field a réagi.
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Salvage">Salvage</CardRef>, <CardRef name="Turn to Dust">Turn to Dust</CardRef> et{" "}
+              <CardRef name="Adaptatron">Adaptatron</CardRef> — du <strong>retrait d&apos;équipement joué en deck principal</strong>{" "}
+              pour punir Aurora. C&apos;est ce qui a fait chuter Sivir et Poppy.
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Defy">Defy</CardRef> — le retrait universel à 1 énergie, présent dans presque tous les decks
+              réactifs.
+            </div>
+          </div>
+          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
+            Leçon de méta : quand une carte devient trop forte (Aurora), le field s&apos;adapte en intégrant sa réponse en
+            deck principal. C&apos;est le cycle naturel du jeu compétitif.
+          </div>
+        </section>
+
+        <section>
+          <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            <AlertTriangle size={20} /> Attention aux pièges de représentation
+          </h2>
+          <p className="mt-2 text-sm text-ink-secondary">
+            Une légende beaucoup jouée n&apos;est pas forcément forte. Certaines sont populaires mais convertissent mal en
+            top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l&apos;inverse, des sleepers comme
+            <strong> Annie</strong> ou <strong>Sett</strong> sont peu joués mais gagnent au-dessus de leur poids.
+            Regardez toujours le <strong>taux de conversion</strong>, pas seulement la part du field.
+          </p>
+        </section>
+
+        <div className="flex flex-wrap gap-3">
+          <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            Voir la Tier List complète
+          </Link>
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            Guide de deckbuilding
+          </Link>
+          <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            Résultats de tournois
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

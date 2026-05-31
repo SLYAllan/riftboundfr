@@ -1,8 +1,20 @@
 # DECKBUILDING-RULES.md — Regles de construction de decks Riftbound
 
-> Mis a jour le 28 mai 2026. Base : **7987 decklists** — 2041 S2 Shenzhen NO + 1984 Shanghai NO + 637 Suzhou RQ + 636 S3 Xi'an RO + 511 Fuzhou RQ + 505 Beijing RO D2 + 501 Guangzhou RO + 499 Chongqing RO + 145 Atlanta RQ + 129 Las Vegas RQ + 128 Shanghai CC + 120 Bologna RQ + 66 Houston RQ + 63 Lille RQ + 7 Beijing RO D1 + 16 GZ/CQ top 8. 20 tournois (Origins + Spiritforged + Unleashed). 42 legendes analysees, 12 paires de domains.
+> Mis a jour le 31 mai 2026 (v3). Base : **18 652 decks sur 88 tournois**. Ajouts v3 : 25 S3 City Challenges (Unleashed) + Hangzhou RO + 21 anciennes CC Origins (+6298 decks). Repartition classes : Origins 6799 / Spiritforged 7294 / Unleashed 4501. Recalcule via scripts/analyze-meta.ts.
 >
-> **Note** : 3633 decks Origins chinois (Shanghai NO/CC, Beijing D1/D2, Guangzhou Full, Chongqing Full) — meta domine par Kai'Sa (30-38%) et Yi (20-27%). 2552 decks Spiritforged chinois (Shenzhen NO + Fuzhou RQ) — Draven domine (18-35.8%). 1802 decks Spiritforged/Unleashed occidentaux + Xi'an + Suzhou — meta diversifie. Les sections par Legend ci-dessous se basent sur le dataset complet sauf mention contraire.
+> **Meta par set** : **Origins** = duo Kai'Sa (27,6%) + Master Yi Bladesman (23%) = 50% du field. **Spiritforged** = Draven domine (21%, 88 top 8, 15 wins). **Unleashed** = ouvert (Irelia/Master Yi Master/LeBlanc/Diana en tete, ~13 viables).
+>
+> ### Confirmations Unleashed v3 (cores sur ~4500 decks)
+> - **Irelia, Blade Dancer** (10U/22,6S/6,6G) — CORE : Discipline (100%), Defy/Defiant Dance (99%), En Garde (94%), Charm/Not So Fast (92%), Boots of Swiftness + Guardian Angel (90-91%, Gear). Tempo Calm, 22+ sorts.
+> - **Diana, Scorn of the Moon** (15,5U/22,2S/1,5G) — CORE : Ride the Wind/Moonfall (99%), Stacked Deck/Stupefy (98%), Ravenbloom Student/Hwei/Gust (96%), Star-Crossed (93%). Aggro-tempo Chaos/Mind.
+> - **LeBlanc, Deceiver** (23,6U/13,5S/1,9G) — CORE : Mirror Image (98%), Soaring Scout (97%), Glasc Mixologist (94%), Watchful Sentry/Karthus (92-93%). Deathknell midrange (23+ unites).
+> - **Master Yi, Wuju Master** (17,1U/18S/3,9G) — CORE : Defy (100%), Discipline (97%), Zhonya's Hourglass (90%, Gear). Hold Body/Calm.
+>
+> ### Confirmations 31 mai (cores verrouillees sur +4327 decks Spiritforged CN)
+> - **Draven, Glorious Executioner** (1573 decks, 19,9U/14,3S/4,8G) — CORE : Rebuke (99%), Fight or Flight (94%), Overzealous Fan (92%). Aggro Chaos/Fury le plus stable du set.
+> - **Kai'Sa, Daughter of the Void** (1992 decks toutes versions, 18,8U/20S/0,3G) — CORE : Falling Star (100%), Stupefy (99%), Thousand-Tailed Watcher (99%), Hextech Ray (98%), Watchful Sentry (93%). Tempo-combo Fury/Mind, quasi zero gear.
+> - **Irelia, Blade Dancer** (1017+ decks, 9,7U/22,7S/6,7G) — CORE : Discipline (100%), Defiant Dance (99%), Defy (98%), Ride the Wind (97%), Guardian Angel (96%, Gear), En Garde + Not So Fast + Stellacorn Herder (95%), Charm (91%). Tempo a 22+ sorts, tres peu d'unites.
+> - **Pattern confirme** : les decks gagnants Spiritforged tournent autour de ~10-20 unites + 14-23 sorts ; les cores se verrouillent (90%+) sur 3-9 cartes selon la legende.
 
 ---
 

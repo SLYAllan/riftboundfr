@@ -23,6 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/debuter`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/deckbuilding`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/meta`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/guides/glossaire`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/guides/domaines`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/jouer-en-ligne`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
