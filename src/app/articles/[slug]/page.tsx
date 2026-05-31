@@ -257,21 +257,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     description: article.excerpt || `${article.title} — Riftbound France`,
     datePublished: article.publishedAt?.toISOString(),
     dateModified: article.updatedAt?.toISOString(),
-    author: { "@type": "Organization", name: "Riftbound France" },
+    author: { "@type": "Person", name: "Allan", url: "https://twitter.com/solary_allan" },
     publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
     inLanguage: "fr",
   };
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://riftboundfrance.fr" },
-      { "@type": "ListItem", position: 2, name: "Articles", item: "https://riftboundfrance.fr/articles" },
-      { "@type": "ListItem", position: 3, name: article.title, item: `https://riftboundfrance.fr/articles/${slug}` },
-    ],
-  };
-  // JSON-LD uses static data only (no user content) — safe for inline serialization
-  const jsonLdHtml = JSON.stringify([articleJsonLd, breadcrumbJsonLd]);
+  // Le BreadcrumbList est émis par le composant <Breadcrumbs/> ci-dessous (évite le doublon).
+  const jsonLdHtml = JSON.stringify(articleJsonLd).replace(/</g, "\\u003c");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -286,6 +277,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
       <article className="mt-6">
         <div className="flex items-center gap-2 text-xs">
           <span className="font-semibold uppercase tracking-wider text-violet">{article.category}</span>
+          <span className="text-ink-muted">Par Allan</span>
           {article.publishedAt && <span className="text-ink-muted">{formatDate(article.publishedAt)}</span>}
         </div>
 

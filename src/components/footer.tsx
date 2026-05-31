@@ -20,6 +20,8 @@ export function Footer() {
           <span className="text-hairline">·</span>
           <Link href="/deckbuilder" className="hover:text-ink transition-colors">Deckbuilder</Link>
           <span className="text-hairline">·</span>
+          <Link href="/a-propos" className="hover:text-ink transition-colors">À propos</Link>
+          <span className="text-hairline">·</span>
           <a href="mailto:contact@riftboundfrance.fr" className="hover:text-ink transition-colors">Contact</a>
         </div>
 
