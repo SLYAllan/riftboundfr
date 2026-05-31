@@ -7,10 +7,19 @@ import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tier List",
+  title: { absolute: "Tier List Riftbound — Meilleures Légendes (Juin 2026)" },
   description:
-    "Classement éditorial des légendes Riftbound par tier et par set. Guide français.",
+    "Tier list Riftbound mise à jour pour le Set Unleashed. Classement S/A/B/C/D de toutes les Légendes avec decklists recommandées et analyses.",
   alternates: { canonical: "/tier-list" },
+  openGraph: {
+    type: "website",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Tier List Riftbound — Meilleures Légendes (Juin 2026)",
+    description:
+      "Classement S/A/B/C/D de toutes les Légendes Riftbound (Set Unleashed) avec decklists recommandées.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 export default async function TierListPage() {
@@ -30,7 +39,7 @@ export default async function TierListPage() {
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Tier List
+          Tier List Riftbound — Les meilleures Légendes du méta
         </h1>
         <p className="mt-4 text-ink-secondary">
           Aucune tier list publiée pour le moment.
@@ -83,7 +92,7 @@ export default async function TierListPage() {
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Tier Lists
+          Tier List Riftbound — Les meilleures Légendes du méta
         </h1>
         <p className="mt-2 text-ink-secondary">
           Classement éditorial par set et global, basé sur les résultats de

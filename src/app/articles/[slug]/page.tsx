@@ -7,6 +7,7 @@ import { ArticleBlockRenderer } from "@/components/article-block-renderer";
 import { parseDeckCode } from "@/lib/deck-code";
 import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import type { ArticleBlock, DecklistCard, DeckSection } from "@/types";
 import { Calendar, MapPin, Users } from "lucide-react";
@@ -22,7 +23,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const article = await prisma.article.findUnique({ where: { slug } });
   if (!article) return { title: "Article introuvable" };
-  const description = article.excerpt || `${article.title} — Riftbound France`;
+  const rawDescription = article.excerpt || `${article.title} — Riftbound France`;
+  const description =
+    rawDescription.length > 155 ? `${rawDescription.slice(0, 152).trimEnd()}…` : rawDescription;
   // Les images og:image / twitter:image sont fournies par les conventions de
   // fichiers opengraph-image.tsx / twitter-image.tsx (PNG généré à la volée,
   // car X ne rend pas le WebP des covers).
@@ -273,7 +276,12 @@ export default async function ArticleDetailPage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml }} />
-      <Link href="/articles" className="text-sm text-ink-muted hover:text-arcane">&larr; Retour aux articles</Link>
+      <Breadcrumbs
+        items={[
+          { name: "Actualités", href: "/articles" },
+          { name: article.title, href: `/articles/${slug}` },
+        ]}
+      />
 
       <article className="mt-6">
         <div className="flex items-center gap-2 text-xs">

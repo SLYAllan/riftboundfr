@@ -6,7 +6,17 @@ import { CardRef } from "@/components/card-ref";
 export const metadata: Metadata = {
   title: "Méta & Tier List Riftbound",
   description:
-    "Le méta compétitif Riftbound expliqué set par set (Origines, Spiritforged, Unleashed) : meilleures légendes, archétypes, cartes qui définissent le format. Basé sur 88 tournois.",
+    "Le méta compétitif Riftbound set par set (Origins, Spiritforged, Unleashed) : meilleures Légendes, archétypes et cartes clés. Basé sur 88 tournois.",
+  alternates: { canonical: "/guides/meta" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Méta & Tier List Riftbound",
+    description:
+      "Le méta Riftbound set par set : meilleures Légendes, archétypes et cartes clés, sur 88 tournois.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 type Tier = "S" | "A" | "B" | "C";

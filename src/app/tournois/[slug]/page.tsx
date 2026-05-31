@@ -9,6 +9,7 @@ import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
 import { Users, MapPin, Calendar, Swords, ArrowLeft, BookOpen } from "lucide-react";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -36,9 +37,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!ctx) return { title: "Tournoi introuvable" };
   const info = getTournamentInfo(ctx);
   const name = info?.name ?? ctx;
+  const bits: string[] = [];
+  if (info?.playerCount) bits.push(`${info.playerCount} joueurs`);
+  if (info?.date) bits.push(info.date);
+  const meta = bits.length ? ` (${bits.join(", ")})` : "";
+  const title = `${name} — Tournoi Riftbound`;
+  const description = `Résultats, top 8 et decklists du tournoi Riftbound ${name}${meta}.`;
   return {
-    title: `${name} — Tournoi Riftbound`,
-    description: `Decklists et résultats du tournoi ${name}.`,
+    title,
+    description,
+    alternates: { canonical: `/tournois/${slug}` },
+    openGraph: {
+      type: "article",
+      siteName: "Riftbound France",
+      locale: "fr_FR",
+      title,
+      description,
+      images: ["/img/og-default.png"],
+    },
   };
 }
 
@@ -165,14 +181,13 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
 
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
-      {/* Back nav */}
-      <Link
-        href="/tournois"
-        className="inline-flex items-center gap-1.5 text-sm text-ink-muted hover:text-ink transition-colors"
-      >
-        <ArrowLeft size={14} />
-        Tous les tournois
-      </Link>
+      {/* Back nav + fil d'Ariane */}
+      <Breadcrumbs
+        items={[
+          { name: "Tournois", href: "/tournois" },
+          { name, href: `/tournois/${slug}` },
+        ]}
+      />
 
       {/* Hero section */}
       <div className="mt-6 rounded-card border border-hairline bg-surface/30 p-6 sm:p-8">

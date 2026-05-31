@@ -5,6 +5,15 @@ import { ExternalLink } from "lucide-react";
 export const metadata: Metadata = {
   title: "Jouer en ligne",
   description: "Comment jouer à Riftbound en ligne gratuitement avec TCG Arena et RiftAtlas.",
+  alternates: { canonical: "/guides/jouer-en-ligne" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Jouer à Riftbound en ligne — TCG Arena & RiftAtlas",
+    description: "Comment jouer à Riftbound en ligne gratuitement avec TCG Arena et RiftAtlas.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 const platforms = [

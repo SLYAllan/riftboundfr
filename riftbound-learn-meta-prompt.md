@@ -160,7 +160,7 @@ Créer un fichier `DECKBUILDING-RULES.md` en analysant TOUTES les decklists dans
    - Les **tech** (cartes présentes dans <30%, souvent 1-of) — anti-méta spécifique
    - Les **spicy** (cartes présentes dans 1-2 listes seulement) — innovations de joueurs individuels
 3. Croiser les données par paire de Domains pour trouver les staples partagés
-4. Compter les courbes de mana moyennes par archétype (sur l'ensemble des listes collectées)
+4. Compter les courbes d'énergie moyennes par archétype (sur l'ensemble des listes collectées)
 5. Analyser les sideboards pour trouver les patterns de swap
 6. Comparer les builds gagnants (top 4) vs les builds éliminés (top 32+) pour identifier ce qui fait la différence
 7. Identifier les évolutions : une carte qui passe de 20% à 80% d'inclusion en 2 semaines = trend à noter
@@ -178,7 +178,7 @@ ENTRÉE : Legend + Archétype souhaité (optionnel) + Contraintes (budget, méta
 3. SÉLECTIONNER le Champion Unit → choisir entre les 2 options (1 par Domain)
 4. AJOUTER les 3 Signatures → quasi-automatique
 5. CONSTRUIRE le core → piocher dans les staples du domain pair + les cartes clés de la Legend (depuis la fiche)
-6. AJUSTER la courbe de mana → vérifier qu'elle correspond à l'archétype visé
+6. AJUSTER la courbe d'énergie → vérifier qu'elle correspond à l'archétype visé
 7. REMPLIR les flex slots → choisir en fonction du méta ciblé (tech cards)
 8. CONSTRUIRE le Rune Deck → 12 runes, split selon le deck
 9. CHOISIR 3 Battlefields → 1 aggressif, 1 défensif, 1 polyvalent (ou selon l'archétype)
@@ -200,7 +200,7 @@ CHECKLIST DE VALIDATION :
 [ ] Max 3 signatures (même Champion tag que la Legend)
 [ ] Toutes les cartes respectent la Domain Identity (2 domains de la Legend)
 [ ] Le Chosen Champion est une Champion Unit avec le bon tag
-[ ] La courbe de mana est cohérente avec l'archétype
+[ ] La courbe d'énergie est cohérente avec l'archétype
 [ ] Le deck a un plan de jeu clair (pas un pile de bonnes cartes sans synergie)
 [ ] Le deck a des interactions de combat (pas que des unités vanilla)
 [ ] Le deck a une win condition identifiable
@@ -622,7 +622,7 @@ Copie-colle ces prompts directement dans Claude Code selon ce que tu veux faire.
 > Lis le prompt `riftbound-learn-meta-prompt-v2.md`. Ensuite :
 > 1. Lis toutes les decklists dans `data/decklists/` et celles du `META-KNOWLEDGE.md`
 > 2. Pour chaque Legend, compare toutes les listes disponibles et identifie le core (90%+), le standard (60-89%), le flex (30-59%), les tech (<30%), et les spicy (1-2 listes)
-> 3. Calcule les courbes de mana moyennes par archétype (aggro, midrange, contrôle, combo, hold)
+> 3. Calcule les courbes d'énergie moyennes par archétype (aggro, midrange, contrôle, combo, hold)
 > 4. Identifie les staples par paire de Domains
 > 5. Compare les builds gagnants (top 4) vs les éliminés (top 32+) — qu'est-ce qui différencie ?
 > 6. Génère le fichier `DECKBUILDING-RULES.md` complet avec toutes ces règles
@@ -686,7 +686,7 @@ Copie-colle ces prompts directement dans Claude Code selon ce que tu veux faire.
 > 
 > [COLLER LE DECK CODE]
 > 
-> Analyse-le : est-il légal ? La courbe de mana est-elle cohérente avec son archétype ? Quelles cartes sont core, flex, ou discutables ? Compare-le aux listes gagnantes de la même Legend. Propose des améliorations concrètes (quoi couper, quoi ajouter, pourquoi).
+> Analyse-le : est-il légal ? La courbe d'énergie est-elle cohérente avec son archétype ? Quelles cartes sont core, flex, ou discutables ? Compare-le aux listes gagnantes de la même Legend. Propose des améliorations concrètes (quoi couper, quoi ajouter, pourquoi).
 
 ---
 

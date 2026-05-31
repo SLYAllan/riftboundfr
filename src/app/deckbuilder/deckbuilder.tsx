@@ -535,7 +535,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
       <div className="shrink-0 border-b border-hairline">
         <div className="flex items-center gap-2 px-4 py-3 flex-wrap">
           <h1 className="text-lg font-bold shrink-0" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            Deck Builder
+            Deckbuilder Riftbound
           </h1>
           <input
             type="text"

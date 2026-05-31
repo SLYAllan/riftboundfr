@@ -21,19 +21,19 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Riftbound France — La référence Riftbound en français",
+    default: "Riftbound France — Tier Lists, Decks & Guides en français",
     template: "%s | Riftbound France",
   },
   description:
-    "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français.",
+    "La référence francophone Riftbound : tier lists à jour, decklists de tournois, guides débutants, résultats compétitifs et base de cartes.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   keywords: ["Riftbound", "TCG", "cartes", "decks", "tier list", "guides", "tournois", "France", "français"],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "Riftbound France",
-    title: "Riftbound France — La référence Riftbound en français",
-    description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound.",
+    title: "Riftbound France — Tier Lists, Decks & Guides en français",
+    description: "La référence francophone Riftbound : tier lists, decklists de tournois, guides et base de cartes.",
     images: ["/img/og-default.png"],
   },
   twitter: {

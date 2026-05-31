@@ -9,9 +9,19 @@ import type { Metadata } from "next";
 import type { ArticleBlock } from "@/types";
 
 export const metadata: Metadata = {
-  title: "Articles",
-  description: "News, analyses, guides et meta reports sur le TCG Riftbound.",
+  title: { absolute: "Actualités Riftbound — News, analyses méta et résultats" },
+  description:
+    "Toute l'actualité Riftbound en français : analyses de méta, résultats de tournois, guides et annonces.",
   alternates: { canonical: "/articles" },
+  openGraph: {
+    type: "website",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Actualités Riftbound — News, analyses méta et résultats",
+    description:
+      "Analyses de méta, résultats de tournois, guides et annonces Riftbound en français.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 const categoryLabels: Record<string, string> = {
@@ -52,7 +62,7 @@ export default async function ArticlesPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Articles</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Actualités Riftbound</h1>
 
       <div className="mt-4 flex flex-wrap gap-2">
         <Link

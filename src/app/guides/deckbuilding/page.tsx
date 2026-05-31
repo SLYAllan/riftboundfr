@@ -4,8 +4,19 @@ import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 
 export const metadata: Metadata = {
-  title: "Guide de deckbuilding",
-  description: "Comment construire un deck Riftbound équilibré : courbe d'énergie, ratio de cartes, domaines et stratégies.",
+  title: { absolute: "Guide Deckbuilding Riftbound — Construire son premier deck" },
+  description:
+    "Construire un deck Riftbound compétitif : choix de la Légende, du champion, signatures, courbe d'énergie et conseils de jeu.",
+  alternates: { canonical: "/guides/deckbuilding" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Guide Deckbuilding Riftbound — Construire son premier deck",
+    description:
+      "Choix de la Légende, du champion, signatures et courbe d'énergie pour construire votre deck Riftbound.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 const ratios = [
@@ -50,7 +61,7 @@ const mistakes = [
 export default function GuideDeckbuildingPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Guide de deckbuilding</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Construire son deck Riftbound</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Vous avez compris les règles de base et vous voulez construire votre propre deck ? Ce guide vous montre les bons ratios, la courbe d&apos;énergie idéale et les erreurs à éviter.
       </p>

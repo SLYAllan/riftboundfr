@@ -10,9 +10,19 @@ import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
 
 export const metadata: Metadata = {
-  title: "Base de cartes",
-  description: "Explorez toutes les cartes du TCG Riftbound avec filtres et recherche.",
+  title: { absolute: "Cartes Riftbound — Base de données complète avec filtres" },
+  description:
+    "Explorez toutes les cartes Riftbound : recherche par nom, set, type, rareté et domaine. Origins, Spiritforged et Unleashed.",
   alternates: { canonical: "/cartes" },
+  openGraph: {
+    type: "website",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Cartes Riftbound — Base de données complète avec filtres",
+    description:
+      "Recherche par nom, set, type, rareté et domaine. Origins, Spiritforged et Unleashed.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 const PER_PAGE = 48;
@@ -66,7 +76,10 @@ export default async function CartesPage({ searchParams }: PageProps) {
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Base de cartes</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Base de données des cartes Riftbound</h1>
+      <p className="mt-2 max-w-3xl text-ink-secondary">
+        Parcourez toutes les cartes du TCG Riftbound — sets Origins, Spiritforged et Unleashed. Filtrez par set, type, rareté et domaine, et consultez le texte complet et les statistiques de chaque carte en français.
+      </p>
       <div className="mt-6"><Suspense><SearchBar /></Suspense></div>
       <div className="mt-4"><Suspense><CardFilters sets={sets.map((s) => ({ setId: s.setId, name: s.name }))} /></Suspense></div>
       <div className="mt-4 flex items-center gap-2 text-sm text-ink-secondary">

@@ -7,6 +7,7 @@ import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
@@ -22,14 +23,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const deck = await prisma.deck.findUnique({ where: { slug } });
   if (!deck) return { title: "Deck introuvable" };
-  const title = `${deck.title} — ${displayLegendName(deck.legendName)}`;
-  const description = deck.description || `Decklist ${deck.title} pour le TCG Riftbound`;
+  const legend = displayLegendName(deck.legendName);
+  const title = `Deck ${deck.title}`;
+  const rawDesc =
+    deck.description ||
+    `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` — ${deck.tournamentContext}` : ""}. Guide complet : gameplan, mulligan et matchups.`;
+  const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trimEnd()}…` : rawDesc;
   const image = `/api/decklist-image?slug=${slug}`;
   return {
     title,
     description,
     alternates: { canonical: `/decks/${slug}` },
-    openGraph: { type: "article", title, description, images: [image] },
+    openGraph: { type: "article", siteName: "Riftbound France", locale: "fr_FR", title, description, images: [image] },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
@@ -125,7 +130,12 @@ export default async function DeckDetailPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/decks" className="text-sm text-ink-muted hover:text-arcane">&larr; Retour aux decks</Link>
+      <Breadcrumbs
+        items={[
+          { name: "Decks", href: "/decks" },
+          { name: deck.title, href: `/decks/${slug}` },
+        ]}
+      />
       <div className="mt-6">
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
         <div className="mt-2 flex flex-wrap items-center gap-3">

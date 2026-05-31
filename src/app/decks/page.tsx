@@ -14,9 +14,19 @@ import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Decks",
-  description: "Decklists pour le TCG Riftbound avec guides en français.",
+  title: { absolute: "Meilleurs Decks Riftbound — Decklists de tournois et guides" },
+  description:
+    "Toutes les decklists Riftbound : decks de tournois, builds compétitifs et guides pour chaque Légende. Trouvez votre prochain deck.",
   alternates: { canonical: "/decks" },
+  openGraph: {
+    type: "website",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Meilleurs Decks Riftbound — Decklists de tournois et guides",
+    description:
+      "Decklists de tournois, builds compétitifs et guides pour chaque Légende Riftbound.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 interface PageProps {
@@ -115,8 +125,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
     return (
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks</h1>
-        <p className="mt-2 text-ink-secondary">Decklists avec guides et explications en français.</p>
+        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound — Decklists compétitives</h1>
+        <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende — avec guides et explications en français.</p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
           <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", !cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
@@ -316,8 +326,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks</h1>
-      <p className="mt-2 text-ink-secondary">Decklists avec guides et explications en français.</p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound — Decklists compétitives</h1>
+      <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende — avec guides et explications en français.</p>
 
       <div className="mt-6 flex flex-wrap gap-2.5">
         <Link

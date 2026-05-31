@@ -6,8 +6,19 @@ import { prisma, safeQuery } from "@/lib/prisma";
 import { GlossaireClient } from "./glossaire-client";
 
 export const metadata: Metadata = {
-  title: "Glossaire",
-  description: "Tous les termes et mots-clés du TCG Riftbound expliqués en français. Recherche interactive, catégories et exemples de cartes.",
+  title: { absolute: "Glossaire Riftbound — Tous les termes du jeu expliqués" },
+  description:
+    "Dictionnaire complet des termes Riftbound : Conquer, Hold, Showdown, Rune, Domaine, Might et tous les keywords expliqués en français.",
+  alternates: { canonical: "/guides/glossaire" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Glossaire Riftbound — Tous les termes du jeu expliqués",
+    description:
+      "Conquer, Hold, Showdown, Rune, Domaine, Might et tous les keywords Riftbound expliqués en français.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 export type GlossaryCategory =

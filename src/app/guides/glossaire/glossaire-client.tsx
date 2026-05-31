@@ -291,7 +291,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
     <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Glossaire
+        Glossaire Riftbound
       </h1>
       <p className="mt-2 text-ink-secondary">
         Tous les mots-clés officiels et termes du TCG Riftbound expliqués en

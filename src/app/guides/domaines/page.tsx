@@ -4,8 +4,19 @@ import { DOMAIN_ICONS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
 
 export const metadata: Metadata = {
-  title: "Les 6 Domaines",
-  description: "Guide complet des 6 domaines Riftbound : Fury, Calm, Mind, Body, Chaos et Order. En français.",
+  title: { absolute: "6 Domaines Riftbound — Fury, Calm, Mind, Body, Chaos, Order" },
+  description:
+    "Découvrez les 6 domaines de Riftbound : forces, faiblesses, style de jeu et Légendes associées pour chaque couleur.",
+  alternates: { canonical: "/guides/domaines" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "6 Domaines Riftbound — Fury, Calm, Mind, Body, Chaos, Order",
+    description:
+      "Forces, faiblesses, style de jeu et Légendes associées pour chaque domaine Riftbound.",
+    images: ["/img/og-default.png"],
+  },
 };
 
 const domains = [
@@ -112,7 +123,7 @@ const domains = [
 export default function DomainesGuidePage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Les 6 Domaines</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Les 6 Domaines de Riftbound</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Chaque Légende Riftbound appartient à 2 domaines (couleurs) qui définissent quelles cartes vous pouvez jouer.
         Comprendre les domaines vous aide à choisir votre Légende et à construire votre deck.

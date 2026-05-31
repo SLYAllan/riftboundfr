@@ -108,7 +108,7 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero — Logo centered */}
-      <section className="flex justify-center px-4 pt-10 pb-6">
+      <section className="flex flex-col items-center gap-3 px-4 pt-10 pb-6">
         <Link href="/">
           <Image
             src="/logorbfr.png"
@@ -119,6 +119,12 @@ export default async function HomePage() {
             className="h-20 sm:h-28 w-auto drop-shadow-lg"
           />
         </Link>
+        <h1
+          className="text-center text-xl font-bold sm:text-2xl"
+          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+        >
+          La référence Riftbound en français
+        </h1>
       </section>
 
       {/* 3-column layout */}

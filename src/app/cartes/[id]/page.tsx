@@ -9,6 +9,7 @@ import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib
 import { isBanned } from "@/lib/banned-cards";
 import { displayLegendName } from "@/lib/utils";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -19,10 +20,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const card = await prisma.card.findUnique({ where: { riftboundId: id } });
   if (!card) return { title: "Carte introuvable" };
+  const title = `${card.name} — Carte Riftbound ${card.setName}`;
+  const base = `${card.name} est une carte ${card.type} ${card.rarity} du set ${card.setName}.`;
+  const rule = card.textPlain ? ` ${card.textPlain.replace(/\s+/g, " ").trim()}` : "";
+  const full = `${base}${rule}`;
+  const description = full.length > 155 ? `${full.slice(0, 152).trimEnd()}…` : full;
   return {
-    title: card.name,
-    description: `${card.name} — ${card.type} ${card.rarity} du set ${card.setName}`,
-    openGraph: card.imageUrl ? { images: [card.imageUrl] } : undefined,
+    title: { absolute: title },
+    description,
+    alternates: { canonical: `/cartes/${card.riftboundId}` },
+    openGraph: {
+      type: "article",
+      siteName: "Riftbound France",
+      locale: "fr_FR",
+      title,
+      description,
+      images: card.imageUrl ? [card.imageUrl] : ["/img/og-default.png"],
+    },
   };
 }
 
@@ -64,7 +78,12 @@ export default async function CardDetailPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/cartes" className="text-sm text-ink-muted hover:text-arcane">&larr; Retour aux cartes</Link>
+      <Breadcrumbs
+        items={[
+          { name: "Cartes", href: "/cartes" },
+          { name: card.name, href: `/cartes/${card.riftboundId}` },
+        ]}
+      />
       <div className="mt-6 grid gap-8 lg:grid-cols-[400px_1fr]">
         <div><CardImage src={card.imageUrl} alt={card.name} size="xl" priority /></div>
         <div>

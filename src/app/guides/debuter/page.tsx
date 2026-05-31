@@ -3,7 +3,21 @@ import Link from "next/link";
 import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS } from "@/lib/domains";
 
-export const metadata: Metadata = { title: "Guide du débutant", description: "Apprenez les règles et mécaniques du TCG Riftbound. Le guide complet pour votre première partie." };
+export const metadata: Metadata = {
+  title: { absolute: "Comment jouer à Riftbound — Guide débutant complet 2026" },
+  description:
+    "Apprenez à jouer à Riftbound : règles, domaines, construction de deck, phases de jeu et conseils pour vos premières parties.",
+  alternates: { canonical: "/guides/debuter" },
+  openGraph: {
+    type: "article",
+    siteName: "Riftbound France",
+    locale: "fr_FR",
+    title: "Comment jouer à Riftbound — Guide débutant complet 2026",
+    description:
+      "Règles, domaines, construction de deck et phases de jeu pour vos premières parties Riftbound.",
+    images: ["/img/og-default.png"],
+  },
+};
 
 const domains = [
   { name: "Fury", fr: "Furie", color: "#ef4444", desc: "Attaque rapide et dégâts directs. Foncez sur l'adversaire." },
@@ -36,7 +50,7 @@ const keywordsOther = [
 export default function GuideDebuterPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Guide du débutant</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment jouer à Riftbound — Guide débutant</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Riftbound est un jeu de cartes à collectionner dans l&apos;univers de League of Legends. Deux joueurs s&apos;affrontent pour le contrôle de champs de bataille
         et le premier à <strong>8 points</strong> gagne. Ce guide vous apprend tout ce qu&apos;il faut savoir pour jouer votre première partie.
