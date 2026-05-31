@@ -48,6 +48,12 @@ next-env.d.ts
 # database dumps (never commit — large, may contain data)
 *.sql
 
+# credentials / secrets (Google service account keys, OAuth clients) — NEVER commit
+riftbound-france-*.json
+client_secret_*.json
+*-iam.gserviceaccount.com.json
+*service-account*.json
+
 # claude code worktrees / local settings
 /.claude/worktrees/
 /.claude/settings.local.json
