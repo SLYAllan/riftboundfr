@@ -23,6 +23,17 @@ function emptyBlock(type: ArticleBlock["type"]): ArticleBlock {
       return { type: "image", id: generateId(), src: "", alt: "" };
     case "tweet":
       return { type: "tweet", id: generateId(), url: "", author: "", handle: "", content: "" };
+    case "bracket":
+      return {
+        type: "bracket",
+        id: generateId(),
+        title: "Le parcours du Top 8",
+        rounds: [
+          { name: "Quarts de finale", matches: [{ a: { player: "", legend: "", score: "2", win: true }, b: { player: "", legend: "", score: "1" } }] },
+          { name: "Demi-finales", matches: [{ a: { player: "", legend: "", score: "2", win: true }, b: { player: "", legend: "", score: "1" } }] },
+          { name: "Finale", matches: [{ a: { player: "", legend: "", score: "2", win: true }, b: { player: "", legend: "", score: "1" } }] },
+        ],
+      };
     case "separator":
       return { type: "separator", id: generateId() };
   }
@@ -34,6 +45,7 @@ const blockTypeLabels: Record<ArticleBlock["type"], string> = {
   sponsor_link: "Lien sponsorise",
   image: "Image",
   tweet: "Tweet (X)",
+  bracket: "Bracket (tournoi)",
   separator: "Separateur",
 };
 
@@ -87,6 +99,12 @@ function TextBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { t
           className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-sm focus:outline-none focus:border-arcane resize-y"
           placeholder="Contenu markdown..."
         />
+      )}
+      {!preview && (
+        <p className="mt-1.5 text-[11px] text-ink-muted">
+          Astuce : <code className="rounded bg-surface-raised px-1 text-arcane">[[Vex, Apathetic]]</code> ou{" "}
+          <code className="rounded bg-surface-raised px-1 text-arcane">[[Vex, Apathetic|Vex]]</code> affiche un aperçu de la carte au survol.
+        </p>
       )}
     </div>
   );
@@ -367,14 +385,54 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
       {block.type === "sponsor_link" && <SponsorBlockEditor block={block} onChange={onChange} />}
       {block.type === "image" && <ImageBlockEditor block={block} onChange={onChange} />}
       {block.type === "tweet" && <TweetBlockEditor block={block} onChange={onChange} />}
+      {block.type === "bracket" && <BracketBlockEditor block={block} onChange={onChange} />}
       {block.type === "separator" && <hr className="border-hairline" />}
+    </div>
+  );
+}
+
+function BracketBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "bracket" }>; onChange: (b: ArticleBlock) => void }) {
+  const [raw, setRaw] = useState(() => JSON.stringify(block.rounds, null, 2));
+  const [err, setErr] = useState<string | null>(null);
+  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane";
+  return (
+    <div className="space-y-2">
+      <label className="text-xs text-ink-muted">Titre</label>
+      <input
+        type="text"
+        value={block.title ?? ""}
+        onChange={(e) => onChange({ ...block, title: e.target.value || undefined })}
+        placeholder="Le parcours du Top 8"
+        className={inputCls}
+      />
+      <label className="text-xs text-ink-muted">Rounds (JSON)</label>
+      <textarea
+        value={raw}
+        onChange={(e) => {
+          setRaw(e.target.value);
+          try {
+            const parsed = JSON.parse(e.target.value);
+            if (!Array.isArray(parsed)) throw new Error("doit etre un tableau de rounds");
+            onChange({ ...block, rounds: parsed });
+            setErr(null);
+          } catch (ex) {
+            setErr((ex as Error).message);
+          }
+        }}
+        rows={12}
+        className="w-full px-3 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:outline-none focus:border-arcane resize-y"
+      />
+      {err && <p className="text-xs text-red-400">JSON invalide : {err}</p>}
+      <p className="text-[11px] text-ink-muted">
+        Chaque round : <code className="text-arcane">{`{ "name": "Quarts", "matches": [{ "a": {"player":"AlanZQ","legend":"Diana","score":"2","win":true}, "b": {"player":"Sam","legend":"Rengar","score":"1"} }] }`}</code>. Le dernier round affiche un 🏆 sur le gagnant.
+      </p>
     </div>
   );
 }
 
 function AddBlockMenu({ onAdd }: { onAdd: (type: ArticleBlock["type"]) => void }) {
   const [open, setOpen] = useState(false);
-  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "tweet", "separator"];
+  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "tweet", "bracket", "separator"];
   return (
     <div className="relative flex justify-center">
       <button

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { ArticleBlockRenderer } from "@/components/article-block-renderer";
+import { BestOfDeckBrowser, type BestOfEntry } from "@/components/best-of-deck-browser";
 import { parseDeckCode } from "@/lib/deck-code";
 import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
 import Link from "next/link";
@@ -240,6 +241,61 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
   return { cards: resolved, codes };
 }
 
+// Best-of articles list one deck per Legend. Instead of a long linear page we
+// render an intro + a searchable, collapsible deck browser. "Tier" heading
+// blocks are dropped (we no longer rank decks by tier inside these articles).
+function isTierHeading(content: string): boolean {
+  return /(^|\n)\s*#{1,4}\s*tier\b/i.test(content) || /^\s*tier\s*\d/i.test(content);
+}
+
+function buildBestOf(
+  blocks: ArticleBlock[],
+  resolvedDecks: Record<string, DecklistCard[]>,
+  deckbuilderCodes: Record<string, string>,
+): { intro: ArticleBlock[]; entries: BestOfEntry[]; outro: ArticleBlock[] } {
+  const intro: ArticleBlock[] = [];
+  const outro: ArticleBlock[] = [];
+  const entries: BestOfEntry[] = [];
+  let phase: "intro" | "decks" = "intro";
+  let pending: ArticleBlock[] = [];
+
+  for (const b of blocks) {
+    if (b.type === "decklist") {
+      phase = "decks";
+      let desc = pending
+        .filter((t): t is Extract<ArticleBlock, { type: "text" }> => t.type === "text" && !isTierHeading(t.content))
+        .map((t) => t.content)
+        .join("\n\n")
+        .trim()
+        .replace(/^#{1,6}\s*[^\n]*\n?/, "") // drop heading line (redundant with the accordion header)
+        .trim();
+      entries.push({
+        id: b.id,
+        legendName: b.legendName,
+        deckName: b.deckName,
+        playerName: b.playerName,
+        context: b.context,
+        description: desc || undefined,
+        cards: resolvedDecks[b.id] ?? [],
+        deckbuilderCode: deckbuilderCodes[b.id],
+      });
+      pending = [];
+      continue;
+    }
+    if (b.type === "separator") continue;
+    if (b.type === "text" && isTierHeading(b.content)) continue; // drop tier labels
+    if (b.type === "text" && /^\s*#{3}\s/.test(b.content)) {
+      phase = "decks";
+      pending.push(b);
+      continue;
+    }
+    if (phase === "intro") intro.push(b);
+    else pending.push(b);
+  }
+  outro.push(...pending.filter((b) => !(b.type === "text" && isTierHeading(b.content))));
+  return { intro, entries, outro };
+}
+
 export default async function ArticleDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const article = await prisma.article.findUnique({ where: { slug } });
@@ -249,6 +305,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
   const { cards: resolvedDecks, codes: deckbuilderCodes } = await resolveDecklists(blocks);
 
   const isTournoi = article.category === "tournoi";
+  const isBestOf = article.slug.startsWith("best-of");
+  const bestOf = isBestOf ? buildBestOf(blocks, resolvedDecks, deckbuilderCodes) : null;
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -310,7 +368,19 @@ export default async function ArticleDetailPage({ params }: PageProps) {
         )}
 
         <div className="mt-8">
-          <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+          {bestOf ? (
+            <>
+              {bestOf.intro.length > 0 && (
+                <ArticleBlockRenderer blocks={bestOf.intro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+              )}
+              <BestOfDeckBrowser entries={bestOf.entries} />
+              {bestOf.outro.length > 0 && (
+                <ArticleBlockRenderer blocks={bestOf.outro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+              )}
+            </>
+          ) : (
+            <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+          )}
         </div>
 
         <CommentsSection articleId={article.id} />

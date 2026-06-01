@@ -1,0 +1,53 @@
+{
+  "videoId": "vancouver-rq-day1",
+  "title": "Riftbound Regional Qualifier Vancouver - Day 1 (Top 8 Playoffs)",
+  "source": "local VOD",
+  "durationSec": 19974,
+  "language": "en",
+  "type": "tournament_recap",
+  "set": "Unleashed",
+  "format": "Swiss BO1 -> Top 8 BO3 single elimination",
+  "casters": ["Alex", "Silver Fuse", "the Eggman", "Ursa Day", "Brian (interviews)"],
+  "champion": { "player": "AlanZQ", "team": "CTG", "legend": "Diana, Scorn of the Moon", "note": "first ever two-time RQ champion" },
+  "runnerUp": { "player": "SamDSherman", "legend": "Rengar, Pridestalker" },
+  "top8": [
+    { "player": "AlanZQ", "legend": "Diana, Scorn of the Moon", "result": "1st" },
+    { "player": "SamDSherman", "legend": "Rengar, Pridestalker", "result": "2nd" },
+    { "player": "Dhawally", "alias": "Diwali", "legend": "Diana, Scorn of the Moon", "result": "Top 4", "note": "RQ Houston winner (ex-Annie), Toronto" },
+    { "player": "Houses Are Big", "team": "Secret Sauce", "legend": "Master Yi, Wuju Bladesman", "result": "Top 4" },
+    { "player": "Rocklho", "legend": "Azir, Emperor of the Sands", "result": "Top 8" },
+    { "player": "Baobao", "legend": "Irelia, Blade Dancer", "result": "Top 8" },
+    { "player": "Arito", "legend": "Irelia, Blade Dancer", "result": "Top 8" },
+    { "player": "SwagYOLO420", "legend": "Sivir, Battle Mistress (Aurora)", "result": "Top 8" }
+  ],
+  "bracket": {
+    "quarterfinals": [
+      "SamDSherman (Rengar) def. Rocklho (Azir)",
+      "Diwali (Diana) def. SwagYOLO420 (Sivir)",
+      "Houses Are Big (Master Yi) def. Baobao (Irelia)",
+      "AlanZQ (Diana) def. Arito (Irelia)"
+    ],
+    "semifinals": [
+      "SamDSherman (Rengar) def. Houses Are Big (Master Yi) 2-1",
+      "AlanZQ (Diana) def. Diwali (Diana) 2-1"
+    ],
+    "final": "AlanZQ (Diana) def. SamDSherman (Rengar) 2-1"
+  },
+  "bestOfs": {
+    "Draven": "Pog Chungus (Toronto)",
+    "Lillia": "Gail Wins (Secret Sauce)",
+    "Poppy": "NoVeggies (Secret Sauce)",
+    "Yi": "Houses Are Big (Secret Sauce)"
+  },
+  "keyInsights": [
+    "Only one Aurora deck in Top 8 (SwagYOLO420 Sivir), out in QF: gear hate countered Aurora and Aurelia builds.",
+    "Fury surprise: SamDSherman took a hyper-aggro non-Aurora Rengar to the final; Irresistible Faefolk was MVP card.",
+    "Vex Apathetic / Vex Cheerless was the key anti-Fury tech all weekend (stun + shuts down ambush/accelerate).",
+    "Diana confirmed top tier: two in Top 4, won the event; Stacked Deck held for precise answers, Moonfall board control, Ravenbloom Conservatory engine.",
+    "6 legends across 8 players: most diverse Top 8 so far (Diana x2, Irelia x2, Rengar, Azir, Sivir, Master Yi)."
+  ],
+  "cardsHighlighted": ["Irresistible Faefolk", "Vex Apathetic", "Thrill of the Hunt", "Kai'Sa Survivor", "Stacked Deck", "Moonfall", "Akshan", "Frigid Jewel"],
+  "decklistOverlaysCaptured": ["AlanZQ Diana", "SamDSherman Rengar", "Rocklho Azir", "SwagYOLO420 Sivir", "Dhawally Diana"],
+  "transcriptPath": "data/videos/vancouver-day1.txt",
+  "framesPath": "data/videos/vancouver-day1-frames/"
+}

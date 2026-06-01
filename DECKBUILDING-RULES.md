@@ -677,3 +677,30 @@ SORTIE : Decklist complete + guide
 - **Aurora package** : Sivir passe de 2nd Sydney a hors top 8 Xi'an — le meta s'adapte
 - **Body/Fury standalone** : toujours le domain pair le plus faible (~172 decks, ~2.5%, aucun top 4 Regional)
 - **Master Yi core package** : dominant Origins mais quasiment disparu en Spiritforged (2% Shenzhen)
+
+---
+
+## MAJ — Regional Qualifier Vancouver (31 mai 2026, Unleashed)
+
+Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champion : AlanZQ sur Diana. Finaliste : Sam D Sherman sur Rengar Fury.
+
+### Nouveau profil — Rengar, Pridestalker (Body/Fury) — Agro-contrôle
+- **Le premier build Fury à atteindre une finale de Regional en Unleashed.** Casse l'idée que Body/Fury est le domain pair le plus faible.
+- **Cœur (3x sauf mention)** : Determined Sentry, Inferna, Irresistible Faefolk, Pit Rookie, Grim Apothecary, Kinkou Initiate, Nidalee, Pyke, Kai'Sa Survivor, Thrill of the Hunt (signature). Darius 2x.
+- **Sorts** : Punch First 3x, Sabotage 2x, Challenge 2x.
+- **Champion** : Rengar Trophy Hunter (jouable depuis la champion zone, applique le buff Pride Stalker à lui-même → se protège d'un Singularity).
+- **Battlefields** : Emperor's Dais (rejoue les unités → trigger Rengar), The Arena's Greatest, Star Spring (pseudo-ganking). Runes 8 Body / 4 Fury.
+- **Carte clé / philosophie** : Irresistible Faefolk transforme l'agro pur en agro-contrôle (charm une unité adverse sur son battlefield → trade forcé → push). Pride Stalker buff non-limité par tour : empiler les unités = might en surplus. Kai'Sa Survivor = moteur de valeur (NE PAS couper). Thrill of the Hunt sert surtout à conquérir tôt puis blink ailleurs pour des points.
+- **Faiblesse** : Nidalee tend à rester coincée en main contre le contrôle ; le deck peut gas-out si l'agression est ralentie (double Vex).
+
+### Diana, Scorn of the Moon — build gagnant Vancouver (raffinement)
+- Évolutions vs Sydney : Gust passe de side à 3x main (tempo). Vex Apathetic 2x + Vex Cheerless en main (anti-Fury). Acceptable Losses + Turn to Dust = gear hate main-deck (à SIDE-OUT contre un deck sans gear comme Rengar — sinon cartes mortes).
+- Moteur : Ravenbloom Conservatory (consistance), boucle Fizz + Star-Crossed pour retuer le Hwei adverse, Stacked Deck gardé longtemps pour la réponse exacte, Moonfall removal.
+- Variante Diwali : + Frigid Jewel (gear, +2 might à la 2e pioche) + Consult the Past (draw caché, anti-gas-out). Runes ~6 Mind / 6 Chaos.
+
+### Tech & règles méta (post-Vancouver)
+- **vs Fury/Rengar** : Vex Apathetic est LA réponse (stun + blocage ambush/accelerate) ; doubler avec Vex Cheerless = verrou quasi-total. Tuer/empêcher Kai'Sa Survivor prioritaire. Hard Bargain en réponse au Thrill of the Hunt neutralise le finisher.
+- **Punch First** : LE débloqueur Fury contre les unités défensives et Vex (envoyer plus de might). À toujours respecter quand l'adversaire Body laisse 1 rune.
+- **vs Aurora** : grouper ses unités sur un même battlefield neutralise l'Elder Dragon (un seul clear) ; Turn to Dust en multiple est la tech reine. Aurora reste binaire : si le plan A ne se pose pas, pas d'outils interactifs.
+- **Playoffs = decklists ouvertes** : sideboard à information quasi-parfaite ; sortir ses cartes mortes (gear hate vs deck gearless) est impératif. Brenn/Thundersong (lock après réaction) punit les joueurs qui laissent 4+ runes ouverts (ex : Diana).
+- **Confirmation déclin Aurora** : 1 seul Aurora en Top 8 Vancouver (Sivir), sorti en quart — le gear hate généralisé referme la fenêtre, et touche aussi les Irelia/Aurelia gear.

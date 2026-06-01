@@ -57,3 +57,14 @@ client_secret_*.json
 # claude code worktrees / local settings
 /.claude/worktrees/
 /.claude/settings.local.json
+
+# Local video-analysis artifacts (kept local, too large for git)
+data/videos/*.wav
+data/videos/**/vancouver-day1-frames/
+data/videos/vancouver-day1-frames/
+data/videos/mobile/
+data/videos/vancouver-day1.json
+data/videos/vancouver-day1.srt
+data/videos/vancouver-day1.tsv
+data/videos/vancouver-day1.vtt
+data/videos/vancouver-day1.txt

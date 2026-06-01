@@ -1,0 +1,215 @@
+# Diana, Scorn of the Moon by Dhаwаlly
+
+"Diana, Scorn of the Moon" decklist by Shawn D. 4th at Riftbound Regional Qualifier - Vancouver - Final Standings by UVS Games Organized Play on 2026-05-30
+
+Diana, Scorn of the Moon
+
+![](/img/symbols/riftbound/type_legend.png)
+
+[Chaos Mind](https://riftdecks.com/riftbound-metagame/constructed/chaos-mind)
+
+[Dhаwаlly](https://riftdecks.com/riftbound-decks?player=Dhawally&deck_type=all)
+
+[Riftbound Regional Qualifier - Vancouver - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-qualifier-vancouver-final-standings-tournament-decks-11474)
+
+[Riftbound Decks](https://riftdecks.com/)
+
+![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+Diana, Scorn of the Moon
+, a deck by
+
+![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+[Dhаwаlly](https://riftdecks.com/riftbound-decks?player=Dhawally&deck_type=all)
+4th at
+Riftbound Regional Qualifier - Vancouver - Final Standings 1833 players on
+2026-05-30
+
+[Constructed Constructed](https://riftdecks.com/riftbound-metagame/constructed)| 56 Cards |
+
+## Text Decklist
+
+![](/img/cards/riftbound/UNL/unl-205-219_cropped.png)
+
+![](/img/cards/riftbound/UNL/unl-079-219_cropped.png)
+
+![](/img/cards/riftbound/UNL/unl-234-219_cropped.png)
+
+![]() |
+|||||
+![]() |
+1
+|
+|
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![](/img/symbols/riftbound/group_champion.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**1**[Diana, Lunari](https://riftdecks.com/cards/details-diana-lunari)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_unit.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Ravenbloom Student](https://riftdecks.com/cards/details-ravenbloom-student)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Tideturner](https://riftdecks.com/cards/details-tideturner)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Traveling Merchant](https://riftdecks.com/cards/details-traveling-merchant)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**2**[Vex, Apathetic](https://riftdecks.com/cards/details-vex-apathetic)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Hwei, Brooding Painter](https://riftdecks.com/cards/details-hwei-brooding-painter)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Vex, Cheerless](https://riftdecks.com/cards/details-vex-cheerless)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![](/img/symbols/riftbound/group_gear.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Frigid Jewel](https://riftdecks.com/cards/details-frigid-jewel)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_spell.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Gust](https://riftdecks.com/cards/details-gust)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Stacked Deck](https://riftdecks.com/cards/details-stacked-deck)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Stupefy](https://riftdecks.com/cards/details-stupefy)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Flash](https://riftdecks.com/cards/details-flash)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Hard Bargain](https://riftdecks.com/cards/details-hard-bargain)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Smoke Screen](https://riftdecks.com/cards/details-smoke-screen)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Turn to Dust](https://riftdecks.com/cards/details-turn-to-dust)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**2**[Moonfall](https://riftdecks.com/cards/details-moonfall)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Star-Crossed](https://riftdecks.com/cards/details-star-crossed)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Consult the Past](https://riftdecks.com/cards/details-consult-the-past)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_battlefields.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Abandoned Hall](https://riftdecks.com/cards/details-abandoned-hall)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Rockfall Path](https://riftdecks.com/cards/details-rockfall-path)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Targon's Peak](https://riftdecks.com/cards/details-targons-peak)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![](/img/symbols/riftbound/group_runes.png)
+
+![showcase](/img/symbols/riftbound/rarity_showcase.png)
+
+**7**[Chaos Rune](https://riftdecks.com/cards/details-chaos-rune)![chaos](/img/symbols/riftbound/rune_chaos.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**5**[Mind Rune](https://riftdecks.com/cards/details-mind-rune)![mind](/img/symbols/riftbound/rune_mind.png)
+
+Buy this deck
+
+![](/img/logos/tcg_player.png)
+
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x5
+
+![](/img/cards/riftbound//OGN/ogn-089a-298_full.png)
+
+## Visual Decklist
+
+## Deck Stats
+
+| types | ||
+|---|---|---|
+| battlefield | 6% (3) |
+|
+| gear | 6% (3) |
+|
+| legend | 2% (1) |
+|
+| rune | 22% (12) |
+|
+| spell | 38% (21) |
+|
+| unit | 29% (16) |
+|
+| cmc | ||
+| 0 | 29% (16) |
+|
+| 1 | 15% (8) |
+|
+| 2 | 33% (18) |
+|
+| 3 | 13% (7) |
+|
+| 4 | 6% (3) |
+|
+| 5 | 8% (4) |
+|
+| domains | ||
+| chaos | 58% (32) |
+|
+| colorless | 6% (3) |
+|
+| mind | 43% (24) |
+|

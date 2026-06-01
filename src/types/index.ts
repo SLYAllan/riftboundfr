@@ -139,9 +139,32 @@ export type ArticleBlock =
       mediaAlt?: string;
     }
   | {
+      type: "bracket";
+      id: string;
+      title?: string;
+      /** Rounds left-to-right, e.g. Quarts -> Demis -> Finale. */
+      rounds: {
+        name: string;
+        matches: {
+          a: BracketSlot;
+          b: BracketSlot;
+        }[];
+      }[];
+    }
+  | {
       type: "separator";
       id: string;
     };
+
+export interface BracketSlot {
+  player: string;
+  /** Legend / deck label shown under the player name. */
+  legend?: string;
+  /** Games won in the match (string to allow "—" for byes). */
+  score?: string;
+  /** Highlights the winner row. */
+  win?: boolean;
+}
 
 export interface DecklistCard {
   cardId: string;

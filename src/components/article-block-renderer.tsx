@@ -4,6 +4,7 @@ import type { ArticleBlock, DecklistCard } from "@/types";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { SponsorCard } from "@/components/sponsor-card";
 import { DecklistInteractive } from "@/components/decklist-interactive";
+import { TournamentBracket } from "@/components/tournament-bracket";
 
 interface ArticleBlockRendererProps {
   blocks: ArticleBlock[];
@@ -107,6 +108,13 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }
                   {block.date && <div className="mt-3 text-sm text-ink-muted">{block.date}</div>}
                   <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-arcane">Voir sur X &rarr;</div>
                 </a>
+              </div>
+            );
+
+          case "bracket":
+            return (
+              <div key={block.id} className="my-8">
+                <TournamentBracket title={block.title} rounds={block.rounds} />
               </div>
             );
 

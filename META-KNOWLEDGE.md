@@ -424,8 +424,36 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 | 10 | Sydney RQ | 16 mai 2026 | Unleashed | 1405 | — | Irelia (EDG Rico1997 14-1-1) | Sivir |
 | 11 | Suzhou RQ | 10 mai 2026 | Unleashed | ~800 | 637 | Master Yi Bladesman (燐川) | Irelia |
 | 12 | S3 Xi'an RO | 24 mai 2026 | Unleashed | 640 | 636 | Azir (墨白) | Diana |
+| 13 | Vancouver RQ | 31 mai 2026 | Unleashed | — | 6 (Top 8 castés) | Diana (AlanZQ) | Rengar (Sam D Sherman) |
 
-**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, Irelia 2 (Sydney, Shenzhen), Azir 2 (Lille, Xi'an), Ezreal 1 (Bologna), Master Yi Bladesman 1 (Suzhou)
+**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, Irelia 2 (Sydney, Shenzhen), Azir 2 (Lille, Xi'an), Ezreal 1 (Bologna), Master Yi Bladesman 1 (Suzhou), Diana 1 (Vancouver)
+
+**1er double champion de RQ de l'histoire : AlanZQ** (Bologna sur Ezreal + Vancouver sur Diana). Note : Sam D Sherman (ex-Vegas/Draven) et Diwali (ex-Houston/Annie) étaient aussi en lice pour ce statut dans le même Top 8.
+
+### Vancouver RQ Top 8 (31 mai 2026, Unleashed) — source : VOD officielle
+
+6 Légendes pour 8 joueurs (l'un des Top 8 les plus diversifiés). Détail complet : `data/videos/vancouver-day1-analysis.md` + `vancouver-day1-games-analysis.md`.
+
+| Place | Joueur | Légende | Notes |
+|-------|--------|---------|-------|
+| 1 | AlanZQ (CTG) | Diana, Scorn of the Moon | Champion. 1er double champion (Bologna+Vancouver) |
+| 2 | Sam D Sherman | Rengar, Pridestalker (Fury agro) | Deck surprise, MVP = Irresistible Faefolk |
+| T4 | Diwali (Dhawally) | Diana, Scorn of the Moon | Variante Frigid Jewel + Consult the Past ; ex-Houston |
+| T4 | Houses Are Big (Secret Sauce) | Master Yi, Wuju Bladesman | Midrange ; Akshan main, Primal Strength, Zhonya's |
+| T8 | Rocklho | Azir, Emperor of the Sands | — |
+| T8 | Baobao | Irelia, Blade Dancer | — |
+| T8 | Arito | Irelia, Blade Dancer | — |
+| T8 | SwagYOLO420 | Sivir, Battle Mistress (Aurora) | Seul Aurora du Top 8 |
+
+**Bracket** : QF — Sam>Rocklho (2-1), Diwali>SwagYOLO420 (2-0), Houses Are Big>Baobao, AlanZQ>Arito. SF — Sam>Houses Are Big (2-1), AlanZQ>Diwali (2-1, miroir Diana). **Finale — AlanZQ>Sam D Sherman (2-1)**.
+
+**Best Ofs** : Draven → Pog Chungus (Toronto) ; Lillia → Gail Wins ; Poppy → NoVeggies ; Yi → Houses Are Big. Team Secret Sauce = 3 Best Ofs.
+
+**Lecture méta** :
+- **Aurora retombe** : 1 seul en Top 8, éliminé en quart. Le gear hate (retrait des Guardian Angel, Turn to Dust, Acceptable Losses) punit Aurora ET les builds Irelia/Aurelia autour du gear.
+- **Fury ressuscité** par un pilote expert : Rengar agro-contrôle non-Aurora jusqu'en finale, porté par Irresistible Faefolk (charm + trades forcés) et Kai'Sa Survivor (moteur).
+- **Vex (Apathetic + Cheerless) = tech anti-Fury du week-end** : stun + blocage ambush/accelerate ; double Vex = verrou. Punch First reste LE débloqueur côté Fury.
+- **Diana top tier** : 2 en demi, gagne l'event. Stacked Deck gardé pour la réponse exacte, Moonfall removal, Ravenbloom Conservatory moteur de cartes, boucle Fizz + Star-Crossed pour retuer le Hwei adverse.
 
 ### Shanghai National Open (2 nov 2025, 2048 joueurs, Origins)
 

@@ -1,5 +1,45 @@
+import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { CardRef } from "@/components/card-ref";
+
+// Card-reference syntax for article prose: [[Card Name]] or [[Card Name|Label]].
+// Renders an inline CardRef (hover preview + link to the card page).
+const CARD_REF_RE = /\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g;
+
+function withCardRefs(children: ReactNode): ReactNode {
+  return Children.map(children, (child) => {
+    if (typeof child !== "string") {
+      // Recurse into element children so refs inside <strong>/<em> still work.
+      if (isValidElement(child)) {
+        const el = child as ReactElement<{ children?: ReactNode }>;
+        if (el.props?.children) {
+          return cloneElement(el, undefined, withCardRefs(el.props.children));
+        }
+      }
+      return child;
+    }
+    if (!child.includes("[[")) return child;
+    const parts: ReactNode[] = [];
+    let last = 0;
+    let match: RegExpExecArray | null;
+    let key = 0;
+    CARD_REF_RE.lastIndex = 0;
+    while ((match = CARD_REF_RE.exec(child)) !== null) {
+      if (match.index > last) parts.push(child.slice(last, match.index));
+      const name = match[1].trim();
+      const label = (match[2] ?? match[1]).trim();
+      parts.push(
+        <CardRef key={`cr-${key++}`} name={name}>
+          {label}
+        </CardRef>,
+      );
+      last = match.index + match[0].length;
+    }
+    if (last < child.length) parts.push(child.slice(last));
+    return parts;
+  });
+}
 
 // Explicit component styling so articles render with real typographic hierarchy
 // (headings, tables, lists) without depending on the Tailwind Typography plugin.
@@ -17,7 +57,7 @@ const components: Components = {
     <h4 className="mt-6 mb-2 text-lg font-semibold text-ink">{children}</h4>
   ),
   p: ({ children }) => (
-    <p className="my-4 leading-relaxed text-ink-secondary">{children}</p>
+    <p className="my-4 leading-relaxed text-ink-secondary">{withCardRefs(children)}</p>
   ),
   a: ({ href, children }) => (
     <a href={href} target={href?.startsWith("http") ? "_blank" : undefined} rel={href?.startsWith("http") ? "noopener noreferrer" : undefined} className="font-medium text-arcane underline-offset-2 hover:underline">{children}</a>
@@ -26,7 +66,7 @@ const components: Components = {
   em: ({ children }) => <em className="italic">{children}</em>,
   ul: ({ children }) => <ul className="my-4 list-disc space-y-1.5 pl-6 text-ink-secondary marker:text-ink-muted">{children}</ul>,
   ol: ({ children }) => <ol className="my-4 list-decimal space-y-1.5 pl-6 text-ink-secondary marker:text-ink-muted">{children}</ol>,
-  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  li: ({ children }) => <li className="leading-relaxed">{withCardRefs(children)}</li>,
   blockquote: ({ children }) => (
     <blockquote className="my-6 border-l-4 border-arcane/60 bg-surface-raised/40 py-1 pl-4 italic text-ink-secondary">{children}</blockquote>
   ),
@@ -47,7 +87,7 @@ const components: Components = {
     <th className="border-b border-hairline px-3 py-2.5 text-left font-semibold text-ink">{children}</th>
   ),
   td: ({ children }) => (
-    <td className="border-b border-hairline/60 px-3 py-2.5 align-top text-ink-secondary">{children}</td>
+    <td className="border-b border-hairline/60 px-3 py-2.5 align-top text-ink-secondary">{withCardRefs(children)}</td>
   ),
 };
 
