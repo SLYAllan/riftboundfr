@@ -12,6 +12,7 @@ import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
+import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 
@@ -196,6 +197,17 @@ export default async function DeckDetailPage({ params }: PageProps) {
           showExportPng
           sourceArticleSlug={deck.sourceArticle?.slug}
           deckbuilderCode={deckbuilderCode}
+        />
+      </div>
+
+      <div className="mt-6">
+        <DeckCoveragePanel
+          items={decklistCards.map((c) => ({
+            cardId: c.cardId,
+            quantity: c.quantity,
+            section: c.section,
+            name: c.name,
+          }))}
         />
       </div>
 
