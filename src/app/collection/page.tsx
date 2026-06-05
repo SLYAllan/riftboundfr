@@ -1,8 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { prisma } from "@/lib/prisma";
-import { ImportPiltover } from "@/components/collection/import-piltover";
-import { CollectionBoard, type SetInfo } from "@/components/collection/collection-board";
+import { CollectionExplorer, type CollectionCard, type SetMeta } from "@/components/collection/collection-explorer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,50 +12,52 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Ordre d'affichage des sets (principaux d'abord, promos ensuite).
 const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function CollectionPage() {
-  const [dbSets, cards] = await Promise.all([
+  const [dbSets, dbCards] = await Promise.all([
     prisma.cardSet.findMany(),
-    prisma.card.findMany({ select: { id: true, set: true } }),
+    prisma.card.findMany({
+      select: {
+        id: true,
+        riftboundId: true,
+        name: true,
+        imageUrl: true,
+        set: true,
+        setName: true,
+        type: true,
+        rarity: true,
+        domains: true,
+        collectorNumber: true,
+      },
+      orderBy: [{ set: "asc" }, { collectorNumber: "asc" }],
+    }),
   ]);
 
-  const idsBySet = new Map<string, string[]>();
-  for (const c of cards) {
-    const arr = idsBySet.get(c.set) ?? [];
-    arr.push(c.id);
-    idsBySet.set(c.set, arr);
-  }
+  const cards: CollectionCard[] = dbCards;
 
-  const sets: SetInfo[] = dbSets
-    .map((s) => {
-      const cardIds = idsBySet.get(s.setId) ?? [];
-      return {
-        set: s.setId,
-        name: s.name,
-        cardCount: s.cardCount ?? cardIds.length,
-        cardIds,
-      };
-    })
-    .filter((s) => s.cardIds.length > 0)
+  const presentSets = new Set(cards.map((c) => c.set));
+  const sets: SetMeta[] = dbSets
+    .filter((s) => presentSets.has(s.setId))
+    .map((s) => ({
+      setId: s.setId,
+      name: s.name,
+      cardCount: s.cardCount ?? cards.filter((c) => c.set === s.setId).length,
+    }))
     .sort((a, b) => {
-      const ia = SET_ORDER.indexOf(a.set);
-      const ib = SET_ORDER.indexOf(b.set);
+      const ia = SET_ORDER.indexOf(a.setId);
+      const ib = SET_ORDER.indexOf(b.setId);
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     });
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-8">
-      <h1 className="mb-2 text-2xl font-bold">Ma collection</h1>
-      <p className="mb-6 text-sm text-ink-muted">
-        Suis les cartes que tu possèdes. Sur chaque decklist et dans le deckbuilder, tu verras
-        combien de cartes il te manque pour réaliser le deck.
+    <main className="mx-auto max-w-7xl px-4 py-8">
+      <h1 className="text-2xl font-bold">Ma collection</h1>
+      <p className="mb-6 mt-1 text-sm text-ink-muted">
+        Coche les cartes que tu possèdes. Sur chaque decklist et dans le deckbuilder, tu verras
+        automatiquement combien de cartes il te manque.
       </p>
-      <div className="mb-8">
-        <ImportPiltover />
-      </div>
-      <CollectionBoard sets={sets} />
+      <CollectionExplorer cards={cards} sets={sets} />
     </main>
   );
 }

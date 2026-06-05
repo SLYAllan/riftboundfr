@@ -5,18 +5,21 @@ import { createContext, useContext, useEffect, useState, useCallback } from "rea
 interface CollectionCtx {
   quantities: Record<string, number>;
   loggedIn: boolean;
+  loading: boolean;
   setQuantity: (cardId: string, qty: number) => void;
 }
 
 const Ctx = createContext<CollectionCtx>({
   quantities: {},
   loggedIn: false,
+  loading: true,
   setQuantity: () => {},
 });
 
 export function CollectionProvider({ children }: { children: React.ReactNode }) {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/collection")
@@ -27,7 +30,8 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
           setLoggedIn(true);
         }
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setLoading(false));
   }, []);
 
   const setQuantity = useCallback((cardId: string, qty: number) => {
@@ -45,7 +49,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     }).catch(() => {});
   }, []);
 
-  return <Ctx.Provider value={{ quantities, loggedIn, setQuantity }}>{children}</Ctx.Provider>;
+  return <Ctx.Provider value={{ quantities, loggedIn, loading, setQuantity }}>{children}</Ctx.Provider>;
 }
 
 export const useCollection = () => useContext(Ctx);

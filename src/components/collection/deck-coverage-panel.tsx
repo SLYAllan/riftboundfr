@@ -29,8 +29,8 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
   useEffect(() => {
     if (!loggedIn || items.length === 0) return;
     let cancelled = false;
-    setLoading(true);
     const t = setTimeout(() => {
+      setLoading(true);
       fetch("/api/collection/coverage", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
