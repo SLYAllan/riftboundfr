@@ -74,6 +74,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const TOURNAMENT_FILTERS = [
     { ctx: "Xi'an Regional Open S3", label: "Xi'an RO S3" },
     { ctx: "RQ Sydney 2026", label: "Sydney RQ" },
+    { ctx: "RQ Vancouver 2026", label: "Vancouver RQ" },
     { ctx: "RQ Atlanta 2026", label: "Atlanta RQ" },
     { ctx: "RQ Lille 2026", label: "Lille RQ" },
     { ctx: "RQ Las Vegas 2026", label: "Las Vegas RQ" },
