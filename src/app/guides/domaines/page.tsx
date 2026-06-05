@@ -27,7 +27,7 @@ const domains = [
     philosophy: "Furie, c'est l'attaque pure. Vos unités frappent vite et fort grâce au mot-clé Assaut (bonus en attaque). Idéal pour finir les parties rapidement.",
     strengths: ["Dégâts directs avec des sorts", "Unités prêtes à agir dès leur arrivée (Accélération)", "Conquête rapide des champs de bataille", "Pression constante dès le Tour 1"],
     weaknesses: ["Peu de moyens de défendre", "Peu de pioche de cartes", "S'essouffle si la partie dure", "Vulnérable aux decks qui se préparent tranquillement"],
-    keywords: ["Accélération", "Assaut", "Gain"],
+    keywords: ["Accélération", "Assaut", "Gank"],
     playstyle: "Jouez agressivement dès le Tour 1. Posez des unités rapides, utilisez vos sorts pour éliminer les bloqueurs, et foncez sur les deux champs de bataille. Furie se marie très bien avec Corps — les deux récompensent le jeu offensif.",
     legends: [
       { name: "Draven", pair: "Chaos", desc: "Ultra agressif. Pression maximale dès les premiers tours." },

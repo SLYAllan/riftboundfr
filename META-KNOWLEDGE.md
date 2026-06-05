@@ -1141,24 +1141,32 @@ Meta top 16 : Draven 43.75% (7/16), Master Yi 18.75%, Irelia 12.5%. Annie gagne 
 | Legend | Légende | Leader permanent du joueur |
 | Champion Unit | Unité Champion | Unité spéciale déclarée avant la partie |
 | Battlefield | Champ de bataille | Zone contestée |
-| Conquer | Conquérir | Gagner le combat à un BF (+1 point) |
-| Hold | Tenir | Contrôler un BF conquis au début du tour (+1/BF) |
-| Showdown | Duel | Phase de combat |
+| Conquer | Conquête / Conquérir | Gagner le combat à un BF (+1 point) |
+| Hold | Contrôle | Contrôler un BF conquis au début du tour (+1/BF) |
+| Showdown | Combat | Étape de combat (règle 316.4). « Confrontation » = l'affrontement complet sur un BF |
 | Rune | Rune | Carte du Rune Deck générant Energy ou Power |
 | Energy | Énergie | Ressource via exhaust d'une rune |
-| Power | Puissance | Ressource via recycle d'une rune du bon domain |
-| Might | Force | Stat offensive/défensive d'une unité |
+| Power | Puissance (ressource) | Ressource via recycle d'une rune du bon domain |
+| Might | Puissance | Stat offensive/défensive d'une unité (PAS « Force ») |
 | Exhaust | Épuiser | Tourner une carte |
-| Ready | Prêt | Carte disponible |
+| Ready | Préparer | Rendre une carte de nouveau disponible |
 | Recycle | Recycler | Rune sous le deck pour du Power |
-| Domain | Domaine | Couleur (Fury/Calm/Mind/Body/Chaos/Order) |
-| Deflect | Dévié | L'adversaire paie extra pour cibler |
-| Deathknell | Glas de mort | Trigger à la mort |
-| Ganking | Embuscade | Mouvement entre BF pour attaquer |
-| Ambush | Embuscade défensive | Unité cachée révélée en défense |
+| Domain | Domaine | Furie/Calme/Esprit/Corps/Chaos/Ordre |
+| Deflect | Protection | L'adversaire paie extra pour cibler |
+| Deathknell | Agonie | Trigger à la mort |
+| Ganking | Gank | Mouvement entre BF pour attaquer (PAS « Embuscade ») |
+| Ambush | Embuscade | Jouer sur un BF où vous avez déjà des unités, même en Réaction |
 | Hunt | Chasse | Gain d'XP en combat (Unleashed) |
-| Hidden | Caché | Carte face cachée, révélable |
-| Side Deck | Side Deck | Cartes d'échange en Bo3 |
+| Hidden | Caché / Cacher | Carte face cachée, révélable |
+| Weaponmaster | Expert en armes | Attacher un équipement à coût réduit |
+| Quick-Draw | Dégainer | Équipement auto-attaché en Réaction |
+| Backline | Arrière-ligne | Reçoit les dégâts létaux en dernier |
+| Level | Niveau | Capacité à seuil d'XP |
+| Predict | Prédiction | Regarder N cartes du dessus, réordonner/recycler |
+| Trash | Défausse | Cimetière/défausse (PAS « Poubelle ») |
+| Side Deck | Réserve | Cartes d'échange en Bo3 |
+
+> Source officielle : « Règles du jeu de Riftbound » (FR, MAJ 30/03/2026), cf. `data/riftbound-rules-fr-source.md`. Mots-clés officiels = règles 805-826. « Atout » n'existe pas (seuls Action 806 et Réaction 813).
 
 ## 9. Roadmap 2026
 

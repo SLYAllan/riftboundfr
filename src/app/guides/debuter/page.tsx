@@ -39,11 +39,11 @@ const keywordsEssential = [
 
 const keywordsOther = [
   { name: "Protection", en: "Deflect", desc: "L'adversaire doit dépenser de la Puissance supplémentaire pour cibler cette carte." },
-  { name: "Gain", en: "Ganking", desc: "Cette unité peut se déplacer directement d'un champ de bataille à l'autre." },
+  { name: "Gank", en: "Ganking", desc: "Cette unité peut se déplacer directement d'un champ de bataille à l'autre." },
   { name: "Embuscade", en: "Ambush", desc: "Peut être jouée directement sur un champ de bataille où vous avez déjà des unités, même en réponse à l'adversaire." },
-  { name: "Backline", en: "Backline", desc: "L'adversaire doit éliminer toutes vos autres unités avant de pouvoir toucher celle-ci." },
+  { name: "Arrière-ligne", en: "Backline", desc: "L'adversaire doit éliminer toutes vos autres unités avant de pouvoir toucher celle-ci." },
   { name: "Légion", en: "Legion", desc: "Active un bonus si vous avez déjà joué une autre carte ce tour." },
-  { name: "Chasse", en: "Hunt", desc: "Quand cette unité conquiert ou contrôle un champ de bataille, vous gagnez de l'XP. L'XP débloque des capacités Level." },
+  { name: "Chasse", en: "Hunt", desc: "Quand cette unité conquiert ou contrôle un champ de bataille, vous gagnez de l'XP. L'XP débloque des capacités Niveau." },
   { name: "Répétition", en: "Repeat", desc: "Payez un surcoût pour exécuter l'effet du sort une seconde fois." },
 ];
 
