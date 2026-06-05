@@ -41,6 +41,31 @@ async function migrate() {
       }
       console.log("DeckLike table ready.");
     }
+
+    // Garantit la table CollectionItem (collection de cartes par utilisateur)
+    // via SQL direct — meme logique que DeckLike (CLI prisma absent du runtime).
+    if (!tableNames.includes("CollectionItem")) {
+      console.log("Creating CollectionItem table...");
+      await prisma.$executeRawUnsafe(
+        `CREATE TABLE IF NOT EXISTS "CollectionItem" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "cardId" TEXT NOT NULL, "quantity" INTEGER NOT NULL DEFAULT 0, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "CollectionItem_pkey" PRIMARY KEY ("id"))`,
+      );
+      await prisma.$executeRawUnsafe(
+        `CREATE UNIQUE INDEX IF NOT EXISTS "CollectionItem_userId_cardId_key" ON "CollectionItem"("userId", "cardId")`,
+      );
+      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_userId_idx" ON "CollectionItem"("userId")`);
+      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_cardId_idx" ON "CollectionItem"("cardId")`);
+      try {
+        await prisma.$executeRawUnsafe(
+          `ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`,
+        );
+        await prisma.$executeRawUnsafe(
+          `ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_cardId_fkey" FOREIGN KEY ("cardId") REFERENCES "Card"("id") ON DELETE RESTRICT ON UPDATE CASCADE`,
+        );
+      } catch (e) {
+        console.log("CollectionItem FK skipped:", e.message);
+      }
+      console.log("CollectionItem table ready.");
+    }
   } catch (e) {
     console.error("Migration check failed:", e.message);
   } finally {
