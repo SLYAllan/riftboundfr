@@ -15,6 +15,7 @@ import { CardBrowserV2 } from "./components/card-browser";
 import { DeckPanelV2 } from "./components/deck-panel";
 import { ImportModal } from "./components/import-modal";
 import { ExportModal } from "./components/export-modal";
+import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "./lib/export-formats";
 import { generateDeckImage } from "./lib/export-image";
@@ -159,6 +160,17 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
   const sideTotal = deck.side.reduce((s, e) => s + e.quantity, 0);
   const runeTotal = deck.rune.reduce((s, e) => s + e.quantity, 0);
   const bfTotal = deck.battlefield.reduce((s, e) => s + e.quantity, 0);
+
+  // Items pour le calcul « cartes manquantes » (toutes les sections du deck).
+  const coverageItems = useMemo(() => {
+    const out: { cardId: string; quantity: number; section: string }[] = [];
+    if (deck.legend) out.push({ cardId: deck.legend.cardId, quantity: 1, section: "legend" });
+    if (deck.champion) out.push({ cardId: deck.champion.cardId, quantity: 1, section: "legend" });
+    for (const e of deck.main) out.push({ cardId: e.cardId, quantity: e.quantity, section: "main" });
+    for (const e of deck.rune) out.push({ cardId: e.cardId, quantity: e.quantity, section: "rune" });
+    for (const e of deck.battlefield) out.push({ cardId: e.cardId, quantity: e.quantity, section: "battlefield" });
+    return out;
+  }, [deck]);
 
   const addCard = useCallback((card: CardData, toSide?: boolean) => {
     setDeck((prev) => {
@@ -658,16 +670,23 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
             }
           }}
         >
-          <DeckPanelV2
-            deck={deck}
-            onRemoveCard={removeCard}
-            onUpdateQuantity={updateQuantity}
-            onMoveCard={moveCard}
-            onApplyRunes={applyRuneSuggestions}
-            onSectionClick={handleSectionClick}
-            legendDomains={legendDomains}
-            isCompetitive={isCompetitive}
-          />
+          <div className="flex-1 overflow-hidden">
+            <DeckPanelV2
+              deck={deck}
+              onRemoveCard={removeCard}
+              onUpdateQuantity={updateQuantity}
+              onMoveCard={moveCard}
+              onApplyRunes={applyRuneSuggestions}
+              onSectionClick={handleSectionClick}
+              legendDomains={legendDomains}
+              isCompetitive={isCompetitive}
+            />
+          </div>
+          {!isEmpty && (
+            <div className="shrink-0 border-t border-hairline p-2">
+              <DeckCoveragePanel items={coverageItems} />
+            </div>
+          )}
         </div>
       </div>
 

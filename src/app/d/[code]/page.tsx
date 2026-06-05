@@ -6,6 +6,7 @@ import { displayLegendName } from "@/lib/utils";
 import { decodeDeck, encodeDeckBase64 } from "@/lib/deck-codec";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { DeckStatsPanel } from "@/components/deck-stats-panel";
+import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { CommentsSection } from "@/components/comments";
 import { CommunityDeckGuide } from "./guide-editor";
 import { VersionHistory } from "./version-history";
@@ -215,6 +216,14 @@ export default async function CommunityDeckPage({ params }: PageProps) {
         />
         <div className="space-y-4">
           <DeckStatsPanel cards={decklistCards} />
+          <DeckCoveragePanel
+            items={decklistCards.map((c) => ({
+              cardId: c.cardId,
+              quantity: c.quantity,
+              section: c.section,
+              name: c.name,
+            }))}
+          />
           <VersionHistory
             currentVersion={deck.version}
             history={deck.history.map((h) => ({
