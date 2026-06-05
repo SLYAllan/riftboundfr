@@ -3,6 +3,7 @@ import { Rubik, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Analytics, CookieBanner } from "@/components/analytics";
+import { CollectionProvider } from "@/components/collection/collection-provider";
 
 import { ServiceWorkerRegister } from "@/components/sw-register";
 import "./globals.css";
@@ -90,9 +91,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col" style={{ fontFamily: "var(--font-jakarta), sans-serif" }}>
         <Analytics />
         <ServiceWorkerRegister />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CollectionProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </CollectionProvider>
         <CookieBanner />
       </body>
     </html>

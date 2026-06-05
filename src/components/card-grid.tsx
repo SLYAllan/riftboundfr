@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CardImage } from "@/components/card-image";
 import { RarityBadge } from "@/components/rarity-badge";
+import { QuantityStepper } from "@/components/collection/quantity-stepper";
 import type { Card } from "@prisma/client";
 
 interface CardGridProps {
@@ -22,10 +23,10 @@ export function CardGrid({ cards }: CardGridProps) {
       {cards.map((card) => {
         const isBattlefield = card.type === "Battlefield";
         return (
+          <div key={card.id}>
           <Link
-            key={card.id}
             href={`/cartes/${card.riftboundId}`}
-            className="group relative"
+            className="group relative block"
           >
             {isBattlefield ? (
               <div className="relative aspect-[5/7] overflow-hidden rounded-game-card bg-surface-raised">
@@ -58,6 +59,8 @@ export function CardGrid({ cards }: CardGridProps) {
               </div>
             </div>
           </Link>
+          <QuantityStepper cardId={card.id} />
+          </div>
         );
       })}
     </div>
