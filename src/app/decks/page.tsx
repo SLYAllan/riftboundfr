@@ -589,7 +589,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                   })()}
                   <div className="relative z-10 p-3">
                     <div className="flex items-end justify-between gap-2">
-                      <div>
+                      <div className="min-w-0">
                         <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                           {displayLegendName(deck.legendName)}
                         </div>
