@@ -13,6 +13,7 @@ import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-fl
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
+import { decodeDeck } from "@/lib/deck-codec";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 
@@ -110,6 +111,49 @@ export default async function DecksPage({ searchParams }: PageProps) {
       distinct: ["legendName"],
       orderBy: { legendName: "asc" },
     });
+
+    // Couverture collection sur les bannières des decks communautaires (comme les
+    // decks officiels). On décode chaque deckCode → cartes → comparaison à la collection.
+    const comSessionUser = await getUserFromSession();
+    const comCoverage = new Map<string, { owned: number; required: number; missing: number }>();
+    if (comSessionUser && communityDecks.length) {
+      const owned = await getOwnedByName(comSessionUser.id);
+      const decodedByDeck = new Map<string, { ident: string; qty: number }[]>();
+      const allIdents = new Set<string>();
+      for (const d of communityDecks) {
+        const dec = decodeDeck(d.deckCode);
+        if (!dec) continue;
+        const entries = [
+          ...(dec.legend ? [dec.legend] : []),
+          ...(dec.champion ? [dec.champion] : []),
+          ...dec.main, ...dec.rune, ...dec.battlefield,
+        ];
+        decodedByDeck.set(d.id, entries.map((e) => ({ ident: e.cardId, qty: e.quantity })));
+        for (const e of entries) allIdents.add(e.cardId);
+      }
+      if (allIdents.size) {
+        const idents = [...allIdents];
+        const cards = await prisma.card.findMany({
+          where: { OR: [{ riftboundId: { in: idents } }, { name: { in: idents, mode: "insensitive" } }] },
+          select: { id: true, name: true, cleanName: true, riftboundId: true },
+        });
+        const byIdent = new Map<string, { id: string; name: string; cleanName: string | null }>();
+        for (const c of cards) { byIdent.set(c.riftboundId, c); byIdent.set(c.name, c); byIdent.set(c.name.toLowerCase(), c); }
+        for (const d of communityDecks) {
+          const list = decodedByDeck.get(d.id);
+          if (!list?.length) continue;
+          const deckCards: DeckCardLike[] = [];
+          for (const e of list) {
+            const c = byIdent.get(e.ident) ?? byIdent.get(e.ident.toLowerCase());
+            if (c) deckCards.push({ cardId: c.id, name: c.name, cleanName: c.cleanName, section: "main", quantity: e.qty });
+          }
+          if (deckCards.length) {
+            const t = computeDeckCoverage(owned, deckCards).totals;
+            comCoverage.set(d.id, { owned: t.owned, required: t.required, missing: t.missing });
+          }
+        }
+      }
+    }
 
     const DOMAIN_OPTIONS = ["Fury", "Calm", "Mind", "Body", "Chaos", "Order"];
     const TAG_OPTIONS = ["aggro", "contrôle", "combo", "midrange", "tempo", "budget", "compétitif"];
@@ -219,6 +263,22 @@ export default async function DecksPage({ searchParams }: PageProps) {
                       <div className="absolute inset-0 bg-surface-raised" />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
+                    {(() => {
+                      const cov = comCoverage.get(deck.id);
+                      if (!cov) return null;
+                      const ok = cov.missing === 0;
+                      return (
+                        <span
+                          className={cn(
+                            "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
+                            ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
+                          )}
+                          title={ok ? "Jouable avec ta collection" : `Il te manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                        >
+                          {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
+                        </span>
+                      );
+                    })()}
                     <div className="relative z-10 p-3">
                       <div className="flex items-end justify-between gap-2">
                         <div className="min-w-0">

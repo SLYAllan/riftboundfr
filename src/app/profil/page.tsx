@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers } from "lucide-react";
 import { ProfileActions } from "./profile-actions";
+import { DiscordAvatar } from "@/components/discord-avatar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -162,20 +163,17 @@ export default async function ProfilPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start gap-6">
         <div className="shrink-0">
-          {user.avatarUrl ? (
-            <Image
-              src={user.avatarUrl}
-              alt={user.username}
-              width={80}
-              height={80}
-              unoptimized
-              className="rounded-full border-2 border-arcane"
-            />
-          ) : (
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-raised border-2 border-hairline">
-              <Shield size={32} className="text-ink-muted" />
-            </div>
-          )}
+          <DiscordAvatar
+            src={user.avatarUrl}
+            alt={user.username}
+            size={80}
+            className="h-20 w-20 rounded-full border-2 border-arcane object-cover"
+            fallback={
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-surface-raised border-2 border-hairline">
+                <Shield size={32} className="text-ink-muted" />
+              </div>
+            }
+          />
         </div>
         <div className="flex-1">
           <h1

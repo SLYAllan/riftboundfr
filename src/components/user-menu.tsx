@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { LogOut, User as UserIcon, Shield } from "lucide-react";
+import { DiscordAvatar } from "@/components/discord-avatar";
 
 interface UserData {
   id: string;
@@ -66,13 +66,17 @@ export function UserMenu() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 rounded-lg px-2 py-1 transition-colors hover:bg-surface-raised"
       >
-        {user.avatarUrl ? (
-          <Image src={user.avatarUrl} alt="" width={28} height={28} unoptimized className="rounded-full" />
-        ) : (
-          <div className="flex h-7 w-7 items-center justify-center rounded-full bg-surface-raised">
-            <UserIcon size={14} className="text-ink-muted" />
-          </div>
-        )}
+        <DiscordAvatar
+          src={user.avatarUrl}
+          alt=""
+          size={28}
+          className="h-7 w-7 rounded-full object-cover"
+          fallback={
+            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-surface-raised">
+              <UserIcon size={14} className="text-ink-muted" />
+            </div>
+          }
+        />
         <span className="hidden text-sm font-medium text-ink sm:block">{user.username}</span>
       </button>
 

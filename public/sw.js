@@ -1,7 +1,7 @@
 /// Riftbound France — Service Worker
 /// Cache-first for static assets, network-first for pages/API
 
-const CACHE_NAME = "riftbound-fr-v2";
+const CACHE_NAME = "riftbound-fr-v3";
 const OFFLINE_URL = "/offline";
 
 // Static assets to pre-cache on install
@@ -120,12 +120,17 @@ async function networkFirstWithOfflineFallback(request) {
 
 // --- Helpers ---
 
+// Cache-first uniquement pour les assets vraiment statiques (images, polices).
+// PAS pour /_next/static ni .js/.css : ces chunks Next sont déjà hashés, le cache
+// HTTP du navigateur suffit. Les mettre en cache-first servait du CSS/JS PÉRIMÉ
+// après déploiement (cause des bugs de mise en page post-deploy). Ils passent
+// désormais en network-first (voir le handler fetch).
 function isStaticAsset(pathname) {
+  if (pathname.startsWith("/_next/static/")) return false;
   return (
-    pathname.startsWith("/_next/static/") ||
     pathname.startsWith("/icons/") ||
     pathname.startsWith("/bannieres/") ||
     pathname.startsWith("/img/") ||
-    /\.(png|jpg|jpeg|webp|svg|gif|ico|woff2?|ttf|css|js)$/i.test(pathname)
+    /\.(png|jpg|jpeg|webp|svg|gif|ico|woff2?|ttf)$/i.test(pathname)
   );
 }

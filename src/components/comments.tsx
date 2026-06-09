@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { ChevronUp, ChevronDown, MessageSquare, Send, User as UserIcon } from "lucide-react";
+import { DiscordAvatar } from "@/components/discord-avatar";
 
 interface CommentUser {
   id: string;
@@ -77,13 +77,8 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
       {/* New comment form */}
       {user ? (
         <div className="flex gap-3 mb-8">
-          {user.avatarUrl ? (
-            <Image src={user.avatarUrl} alt="" width={36} height={36} unoptimized className="rounded-full h-9 w-9 flex-shrink-0" />
-          ) : (
-            <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-surface-raised">
-              <UserIcon size={16} className="text-ink-muted" />
-            </div>
-          )}
+          <DiscordAvatar src={user.avatarUrl} alt="" size={36} className="h-9 w-9 flex-shrink-0 rounded-full object-cover"
+            fallback={<div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-surface-raised"><UserIcon size={16} className="text-ink-muted" /></div>} />
           <div className="flex-1">
             <textarea
               value={body}
@@ -200,13 +195,8 @@ function CommentThread({
         <div className="flex-1 min-w-0">
           {/* Header */}
           <div className="flex items-center gap-2 mb-1">
-            {comment.user.avatarUrl ? (
-              <Image src={comment.user.avatarUrl} alt="" width={20} height={20} unoptimized className="rounded-full" />
-            ) : (
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-surface-raised">
-                <UserIcon size={10} className="text-ink-muted" />
-              </div>
-            )}
+            <DiscordAvatar src={comment.user.avatarUrl} alt="" size={20} className="h-5 w-5 rounded-full object-cover"
+              fallback={<div className="flex h-5 w-5 items-center justify-center rounded-full bg-surface-raised"><UserIcon size={10} className="text-ink-muted" /></div>} />
             <span className="text-sm font-medium text-ink">{comment.user.username}</span>
             <span className="text-xs text-ink-muted">{timeAgo}</span>
           </div>
