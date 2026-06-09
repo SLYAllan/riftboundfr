@@ -168,6 +168,7 @@ export default async function ProfilPage() {
               alt={user.username}
               width={80}
               height={80}
+              unoptimized
               className="rounded-full border-2 border-arcane"
             />
           ) : (

@@ -42,29 +42,56 @@ async function migrate() {
       console.log("DeckLike table ready.");
     }
 
-    // Garantit la table CollectionItem (collection de cartes par utilisateur)
-    // via SQL direct — meme logique que DeckLike (CLI prisma absent du runtime).
-    if (!tableNames.includes("CollectionItem")) {
-      console.log("Creating CollectionItem table...");
+    // Schéma "collection" (classeurs) via SQL direct — le CLI prisma n'est pas
+    // dispo dans le runtime. Idempotent + met à niveau l'ancienne CollectionItem
+    // (qui n'avait pas de binderId) vers le modèle Binder/CollectionItem/WishlistItem.
+    if (!tableNames.includes("Binder")) {
+      console.log("Creating Binder table...");
       await prisma.$executeRawUnsafe(
-        `CREATE TABLE IF NOT EXISTS "CollectionItem" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "cardId" TEXT NOT NULL, "quantity" INTEGER NOT NULL DEFAULT 0, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "CollectionItem_pkey" PRIMARY KEY ("id"))`,
+        `CREATE TABLE IF NOT EXISTS "Binder" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "name" TEXT NOT NULL, "description" TEXT, "isPublic" BOOLEAN NOT NULL DEFAULT false, "shareSlug" TEXT, "color" TEXT, "position" INTEGER NOT NULL DEFAULT 0, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "Binder_pkey" PRIMARY KEY ("id"))`,
       );
-      await prisma.$executeRawUnsafe(
-        `CREATE UNIQUE INDEX IF NOT EXISTS "CollectionItem_userId_cardId_key" ON "CollectionItem"("userId", "cardId")`,
-      );
-      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_userId_idx" ON "CollectionItem"("userId")`);
-      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_cardId_idx" ON "CollectionItem"("cardId")`);
+      await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "Binder_shareSlug_key" ON "Binder"("shareSlug")`);
+      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "Binder_userId_idx" ON "Binder"("userId")`);
       try {
         await prisma.$executeRawUnsafe(
-          `ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`,
-        );
-        await prisma.$executeRawUnsafe(
-          `ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_cardId_fkey" FOREIGN KEY ("cardId") REFERENCES "Card"("id") ON DELETE RESTRICT ON UPDATE CASCADE`,
+          `ALTER TABLE "Binder" ADD CONSTRAINT "Binder_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`,
         );
       } catch (e) {
-        console.log("CollectionItem FK skipped:", e.message);
+        console.log("Binder FK skipped:", e.message);
       }
-      console.log("CollectionItem table ready.");
+      console.log("Binder table ready.");
+    }
+
+    // CollectionItem : créer si absent, sinon mettre à niveau (ajout binderId +
+    // contrainte/index binderId/cardId, suppression de l'ancien unique userId/cardId).
+    await prisma.$executeRawUnsafe(
+      `CREATE TABLE IF NOT EXISTS "CollectionItem" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "binderId" TEXT, "cardId" TEXT NOT NULL, "quantity" INTEGER NOT NULL DEFAULT 0, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "CollectionItem_pkey" PRIMARY KEY ("id"))`,
+    );
+    await prisma.$executeRawUnsafe(`ALTER TABLE "CollectionItem" ADD COLUMN IF NOT EXISTS "binderId" TEXT`);
+    await prisma.$executeRawUnsafe(`DROP INDEX IF EXISTS "CollectionItem_userId_cardId_key"`);
+    await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "CollectionItem_binderId_cardId_key" ON "CollectionItem"("binderId", "cardId")`);
+    await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_userId_idx" ON "CollectionItem"("userId")`);
+    await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_binderId_idx" ON "CollectionItem"("binderId")`);
+    await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "CollectionItem_cardId_idx" ON "CollectionItem"("cardId")`);
+    try { await prisma.$executeRawUnsafe(`ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`); } catch {}
+    try { await prisma.$executeRawUnsafe(`ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_binderId_fkey" FOREIGN KEY ("binderId") REFERENCES "Binder"("id") ON DELETE CASCADE ON UPDATE CASCADE`); } catch {}
+    try { await prisma.$executeRawUnsafe(`ALTER TABLE "CollectionItem" ADD CONSTRAINT "CollectionItem_cardId_fkey" FOREIGN KEY ("cardId") REFERENCES "Card"("id") ON DELETE RESTRICT ON UPDATE CASCADE`); } catch {}
+
+    // WishlistItem
+    if (!tableNames.includes("WishlistItem")) {
+      console.log("Creating WishlistItem table...");
+      await prisma.$executeRawUnsafe(
+        `CREATE TABLE IF NOT EXISTS "WishlistItem" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "cardId" TEXT NOT NULL, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "WishlistItem_pkey" PRIMARY KEY ("id"))`,
+      );
+      await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "WishlistItem_userId_cardId_key" ON "WishlistItem"("userId", "cardId")`);
+      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "WishlistItem_userId_idx" ON "WishlistItem"("userId")`);
+      try {
+        await prisma.$executeRawUnsafe(`ALTER TABLE "WishlistItem" ADD CONSTRAINT "WishlistItem_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`);
+        await prisma.$executeRawUnsafe(`ALTER TABLE "WishlistItem" ADD CONSTRAINT "WishlistItem_cardId_fkey" FOREIGN KEY ("cardId") REFERENCES "Card"("id") ON DELETE RESTRICT ON UPDATE CASCADE`);
+      } catch (e) {
+        console.log("WishlistItem FK skipped:", e.message);
+      }
+      console.log("WishlistItem table ready.");
     }
   } catch (e) {
     console.error("Migration check failed:", e.message);

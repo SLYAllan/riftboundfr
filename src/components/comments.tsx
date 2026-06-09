@@ -78,7 +78,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
       {user ? (
         <div className="flex gap-3 mb-8">
           {user.avatarUrl ? (
-            <Image src={user.avatarUrl} alt="" width={36} height={36} className="rounded-full h-9 w-9 flex-shrink-0" />
+            <Image src={user.avatarUrl} alt="" width={36} height={36} unoptimized className="rounded-full h-9 w-9 flex-shrink-0" />
           ) : (
             <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-surface-raised">
               <UserIcon size={16} className="text-ink-muted" />
@@ -201,7 +201,7 @@ function CommentThread({
           {/* Header */}
           <div className="flex items-center gap-2 mb-1">
             {comment.user.avatarUrl ? (
-              <Image src={comment.user.avatarUrl} alt="" width={20} height={20} className="rounded-full" />
+              <Image src={comment.user.avatarUrl} alt="" width={20} height={20} unoptimized className="rounded-full" />
             ) : (
               <div className="flex h-5 w-5 items-center justify-center rounded-full bg-surface-raised">
                 <UserIcon size={10} className="text-ink-muted" />

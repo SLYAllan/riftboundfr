@@ -67,7 +67,7 @@ export function UserMenu() {
         className="flex items-center gap-2 rounded-lg px-2 py-1 transition-colors hover:bg-surface-raised"
       >
         {user.avatarUrl ? (
-          <Image src={user.avatarUrl} alt="" width={28} height={28} className="rounded-full" />
+          <Image src={user.avatarUrl} alt="" width={28} height={28} unoptimized className="rounded-full" />
         ) : (
           <div className="flex h-7 w-7 items-center justify-center rounded-full bg-surface-raised">
             <UserIcon size={14} className="text-ink-muted" />
