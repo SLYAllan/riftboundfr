@@ -1,14 +1,24 @@
 import { NextResponse } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
-import { getCollectionMap } from "@/lib/collection-server";
+import { getCollectionMap, getBinderQuantities, getOrCreateDefaultBinder } from "@/lib/collection-server";
 
-export async function GET() {
+// GET /api/collection            → quantités totales (somme tous classeurs) cardId->qty
+// GET /api/collection?binderId=x → quantités du classeur x
+export async function GET(req: Request) {
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const binderId = new URL(req.url).searchParams.get("binderId");
+  if (binderId) {
+    const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
+    if (!binder) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    return NextResponse.json(await getBinderQuantities(binderId));
+  }
   return NextResponse.json(await getCollectionMap(user.id));
 }
 
+// POST /api/collection { binderId?, cardId, quantity } → upsert dans un classeur
 export async function POST(req: Request) {
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -20,17 +30,26 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 
+  // classeur cible : celui fourni (vérifié) ou le classeur par défaut
+  let binderId = typeof body?.binderId === "string" ? body.binderId : null;
+  if (binderId) {
+    const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
+    if (!binder) return NextResponse.json({ error: "binder_not_found" }, { status: 404 });
+  } else {
+    binderId = (await getOrCreateDefaultBinder(user.id)).id;
+  }
+
   const card = await prisma.card.findUnique({ where: { id: cardId }, select: { id: true } });
   if (!card) return NextResponse.json({ error: "card_not_found" }, { status: 404 });
 
   if (quantity === 0) {
-    await prisma.collectionItem.deleteMany({ where: { userId: user.id, cardId } });
+    await prisma.collectionItem.deleteMany({ where: { binderId, cardId } });
   } else {
     await prisma.collectionItem.upsert({
-      where: { userId_cardId: { userId: user.id, cardId } },
-      create: { userId: user.id, cardId, quantity },
+      where: { binderId_cardId: { binderId, cardId } },
+      create: { userId: user.id, binderId, cardId, quantity },
       update: { quantity },
     });
   }
-  return NextResponse.json({ ok: true, cardId, quantity });
+  return NextResponse.json({ ok: true, binderId, cardId, quantity });
 }

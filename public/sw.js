@@ -1,7 +1,7 @@
 /// Riftbound France — Service Worker
 /// Cache-first for static assets, network-first for pages/API
 
-const CACHE_NAME = "riftbound-fr-v1";
+const CACHE_NAME = "riftbound-fr-v2";
 const OFFLINE_URL = "/offline";
 
 // Static assets to pre-cache on install

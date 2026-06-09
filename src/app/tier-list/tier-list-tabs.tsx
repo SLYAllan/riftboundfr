@@ -139,6 +139,7 @@ export function TierListTabs({
                         <img
                           src={card.imageUrl}
                           alt={entry.legendName}
+                          suppressHydrationWarning
                           className={cn(
                             "h-16 w-16 rounded-lg object-cover transition-transform sm:h-20 sm:w-20",
                             "hover:scale-105 hover:shadow-lg hover:z-10",

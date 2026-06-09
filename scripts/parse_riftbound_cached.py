@@ -39,10 +39,11 @@ def champion_to_legend(champion, deck_set):
         return None
     if len(cands) == 1:
         return next(iter(cands))
-    # only ambiguous case in the pool: Master Yi (Wuju Bladesman = Origins/Spiritforged, Wuju Master = Unleashed)
+    # Master Yi : les champions joués (Honed/Tempered/Meditative) appartiennent TOUS à
+    # Wuju Bladesman (confirmé par image sur 672/675 decks ; Wuju Master quasi inexistant).
+    # L'ancienne règle set==Unleashed -> Wuju Master était fausse (artefact de fallback).
+    # find_legend (image/fil d'Ariane) reste prioritaire et capte les rares vrais Wuju Master.
     if char == "master yi":
-        if (deck_set or "") == "Unleashed":
-            return "Master Yi, Wuju Master"
         return "Master Yi, Wuju Bladesman"
     return sorted(cands)[0]
 

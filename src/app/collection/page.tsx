@@ -1,13 +1,17 @@
 export const dynamic = "force-dynamic";
 
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { CollectionExplorer, type CollectionCard, type SetMeta } from "@/components/collection/collection-explorer";
+import { getUserFromSession } from "@/lib/session";
+import { getBinders, getCollectionItems, getWishlistIds } from "@/lib/collection-server";
+import { CollectionDashboard, type DashCard, type DashSet } from "@/components/collection/collection-dashboard";
+import { MAX_BINDERS } from "@/app/api/collection/binders/route";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Ma collection Riftbound — suivi des cartes possédées" },
+  title: { absolute: "Ma collection Riftbound — classeurs, progression et valeur" },
   description:
-    "Suis ta collection de cartes Riftbound, ta progression par set et le nombre de cartes qu'il te manque pour chaque deck. Import depuis Piltover Archive.",
+    "Gère ta collection de cartes Riftbound en classeurs, suis ta progression par set, type et rareté, et repère tes cartes manquantes.",
   alternates: { canonical: "/collection" },
   robots: { index: false, follow: false },
 };
@@ -15,29 +19,43 @@ export const metadata: Metadata = {
 const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function CollectionPage() {
-  const [dbSets, dbCards] = await Promise.all([
+  const user = await getUserFromSession();
+
+  if (!user) {
+    return (
+      <main className="mx-auto max-w-7xl px-4 py-8">
+        <h1 className="text-2xl font-bold">Ma collection</h1>
+        <div className="mt-6 rounded-xl border border-hairline bg-surface-raised/40 p-8 text-center">
+          <p className="mb-4 text-ink-secondary">
+            Connecte-toi avec Discord pour gérer ta collection en classeurs et suivre ta progression.
+          </p>
+          <Link
+            href="/api/auth/discord"
+            className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-white hover:bg-arcane/90"
+          >
+            Se connecter avec Discord
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+  const [dbSets, dbCards, binders, items, wishlist] = await Promise.all([
     prisma.cardSet.findMany(),
     prisma.card.findMany({
-      select: {
-        id: true,
-        riftboundId: true,
-        name: true,
-        imageUrl: true,
-        set: true,
-        setName: true,
-        type: true,
-        rarity: true,
-        domains: true,
-        collectorNumber: true,
-      },
-      orderBy: [{ set: "asc" }, { collectorNumber: "asc" }],
+      select: { id: true, set: true, setName: true, type: true, rarity: true, domains: true },
     }),
+    getBinders(user.id),
+    getCollectionItems(user.id),
+    getWishlistIds(user.id),
   ]);
 
-  const cards: CollectionCard[] = dbCards;
+  const cards: DashCard[] = dbCards.map((c) => ({
+    id: c.id, set: c.set, setName: c.setName, type: c.type, rarity: c.rarity, domains: c.domains,
+  }));
 
   const presentSets = new Set(cards.map((c) => c.set));
-  const sets: SetMeta[] = dbSets
+  const sets: DashSet[] = dbSets
     .filter((s) => presentSets.has(s.setId))
     .map((s) => ({
       setId: s.setId,
@@ -52,12 +70,14 @@ export default async function CollectionPage() {
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="text-2xl font-bold">Ma collection</h1>
-      <p className="mb-6 mt-1 text-sm text-ink-muted">
-        Coche les cartes que tu possèdes. Sur chaque decklist et dans le deckbuilder, tu verras
-        automatiquement combien de cartes il te manque.
-      </p>
-      <CollectionExplorer cards={cards} sets={sets} />
+      <CollectionDashboard
+        cards={cards}
+        sets={sets}
+        binders={binders}
+        items={items}
+        wishlistCount={wishlist.length}
+        maxBinders={MAX_BINDERS}
+      />
     </main>
   );
 }

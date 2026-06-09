@@ -70,17 +70,13 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   const cc = getTournamentCountryCode(ctx);
   const name = info?.name ?? ctx;
 
-  const where: Record<string, unknown> = {
-    published: true,
-    tournamentContext: ctx,
-  };
-  if (legendFilter) {
-    where.legendName = { contains: legendFilter, mode: "insensitive" };
-  }
-
-  const [decksRaw, allLegendsRaw, articles] = await Promise.all([
+  // On récupère TOUS les decks du tournoi (vrais + best-of), puis on construit
+  // le pool affiché : vrais decks classés + best-of "fillers" pour les
+  // placements absents des vrais decks (ex. Lille : le top 5 n'existe qu'en
+  // best-of). Si aucun vrai deck classé (best-of only, ex. Vancouver), on garde tout.
+  const [allRaw, articles] = await Promise.all([
     prisma.deck.findMany({
-      where,
+      where: { published: true, tournamentContext: ctx },
       select: {
         id: true,
         slug: true,
@@ -93,11 +89,6 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
         sourceArticleId: true,
       },
       orderBy: { createdAt: "desc" },
-    }),
-    prisma.deck.groupBy({
-      by: ["legendName"],
-      where: { published: true, tournamentContext: ctx, placement: { not: null } },
-      _count: { legendName: true },
     }),
     prisma.article.findMany({
       where: { published: true, NOT: { tournamentName: null } },
@@ -134,30 +125,39 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     if (!playerCount) playerCount = info.playerCount ?? null;
   }
 
-  const decks = (() => {
-    // Si le tournoi a des résultats classés, masquer les decks best-of (placement null, issus
-    // d'articles) qui dupliqueraient les légendes. Sinon (tournoi best-of-only, ex. Sydney), les garder.
-    const hasRanked = decksRaw.some((d) => d.placement !== null);
-    const pool = hasRanked ? decksRaw.filter((d) => d.placement !== null) : decksRaw;
+  // Dédoublonné, cohérent avec l'affichage (sert aussi aux compteurs/total).
+  const deduped = (() => {
+    const realRanked = allRaw.filter((d) => !d.slug.startsWith("best-of-") && d.placement !== null);
+    let pool: typeof allRaw;
+    if (realRanked.length > 0) {
+      const realPlacements = new Set(realRanked.map((d) => parsePlacement(d.placement)));
+      const fillers = allRaw.filter(
+        (d) => d.slug.startsWith("best-of-") && d.placement !== null && !realPlacements.has(parsePlacement(d.placement)),
+      );
+      pool = [...realRanked, ...fillers];
+    } else {
+      pool = allRaw; // best-of only
+    }
 
-    const groups = new Map<string, typeof decksRaw>();
+    const groups = new Map<string, typeof allRaw>();
     for (const d of pool) {
       const key = `${d.legendName.toLowerCase()}||${d.placement ?? ""}`;
       if (!groups.has(key)) groups.set(key, []);
       groups.get(key)!.push(d);
     }
-
-    const kept: typeof decksRaw = [];
+    const kept: typeof allRaw = [];
     for (const group of groups.values()) {
-      if (group.length <= 1) {
-        kept.push(group[0]);
-        continue;
-      }
+      if (group.length <= 1) { kept.push(group[0]); continue; }
       const bestOf = group.find((d) => d.featured && d.sourceArticleId);
       kept.push(bestOf ?? group[0]);
     }
     return kept;
   })();
+
+  // Filtre par légende appliqué après dédup (la couverture des placements reste complète).
+  const decks = legendFilter
+    ? deduped.filter((d) => d.legendName.toLowerCase().includes(legendFilter.toLowerCase()))
+    : deduped;
 
   const sorted = decks
     .map((d) => ({
@@ -169,15 +169,12 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     .sort((a, b) => a.placementNum - b.placementNum);
 
   const legendCounts = new Map<string, number>();
-  for (const g of allLegendsRaw) {
-    legendCounts.set(g.legendName, g._count.legendName);
+  for (const d of deduped) {
+    legendCounts.set(d.legendName, (legendCounts.get(d.legendName) ?? 0) + 1);
   }
   const legendNames = [...legendCounts.keys()].sort();
   const legendCountsObj = Object.fromEntries(legendCounts);
-  // Vrai nombre de decklists classées (allLegendsRaw est distinct par légende, pas le total de decks)
-  const totalDecks = await prisma.deck.count({
-    where: { published: true, tournamentContext: ctx, placement: { not: null } },
-  });
+  const totalDecks = deduped.length;
 
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">

@@ -234,6 +234,18 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     set: "Unleashed",
     format: "Conquest",
   },
+  "S3 Tianjin Regional Open (2026-06-07)": {
+    name: "S3 Tianjin Regional Open",
+    shortName: "Tianjin RO S3",
+    countryCode: "CN",
+    city: "Tianjin",
+    location: "Tianjin, Chine",
+    playerCount: 640,
+    type: "regional",
+    date: "2026-06-07",
+    set: "Unleashed",
+    format: "Conquest",
+  },
 
   // ── 25 tournois CN Spiritforged scrapés le 31 mai (clé = tournamentContext exact, nom unique avec date) ──
   "S2 Regional Open Chengdu (2026-01-25)": { name: "S2 Regional Open Chengdu", shortName: "Chengdu RO S2", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 512, type: "regional", date: "2026-01-25", set: "Spiritforged", format: "Conquest" },

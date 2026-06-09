@@ -1,7 +1,17 @@
 export type OwnedByName = Map<string, number>;
 
-function nameKey(cleanName: string | null, name: string): string {
-  return (cleanName || name).trim().toLowerCase();
+// Clé de carte JOUABLE : on ignore le suffixe de variante/traitement entre
+// parenthèses — (Metal), (Overnumbered), (alt art)… — qui ne sont que des
+// éditions cosmétiques de la même carte. Posséder n'importe quelle impression
+// d'une carte suffit donc à la jouer dans un deck.
+function nameKey(_cleanName: string | null, name: string): string {
+  return name
+    .replace(/\s*\([^)]*\)\s*$/, "") // retire le suffixe de variante
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "") // accents
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 export function buildOwnedByName(
@@ -21,6 +31,12 @@ export interface DeckCardLike {
   section: string;
   cleanName: string | null;
   quantity: number;
+  imageUrl?: string | null;
+  rarity?: string | null;
+  type?: string | null;
+  energy?: number | null;
+  might?: number | null;
+  domains?: string[];
 }
 
 export interface CoverageEntry {
@@ -30,6 +46,12 @@ export interface CoverageEntry {
   required: number;
   owned: number;
   missing: number;
+  imageUrl?: string | null;
+  rarity?: string | null;
+  type?: string | null;
+  energy?: number | null;
+  might?: number | null;
+  domains?: string[];
 }
 
 export interface DeckCoverage {
@@ -41,17 +63,28 @@ export function computeDeckCoverage(
   owned: OwnedByName,
   deckCards: DeckCardLike[],
 ): DeckCoverage {
+  // On consomme les exemplaires possédés au fur et à mesure : si deux lignes du
+  // deck pointent vers la même carte (impressions différentes), elles puisent
+  // dans le même stock au lieu de le compter deux fois.
+  const remaining = new Map(owned);
   const entries: CoverageEntry[] = deckCards.map((dc) => {
     const key = nameKey(dc.cleanName, dc.name);
-    const have = owned.get(key) ?? 0;
-    const usableForCard = Math.min(have, dc.quantity);
+    const have = remaining.get(key) ?? 0;
+    const used = Math.min(have, dc.quantity);
+    remaining.set(key, have - used);
     return {
       cardId: dc.cardId,
       name: dc.name,
       section: dc.section,
       required: dc.quantity,
-      owned: usableForCard,
-      missing: Math.max(0, dc.quantity - have),
+      owned: used,
+      missing: Math.max(0, dc.quantity - used),
+      imageUrl: dc.imageUrl ?? null,
+      rarity: dc.rarity ?? null,
+      type: dc.type ?? null,
+      energy: dc.energy ?? null,
+      might: dc.might ?? null,
+      domains: dc.domains ?? [],
     };
   });
   const required = entries.reduce((s, e) => s + e.required, 0);

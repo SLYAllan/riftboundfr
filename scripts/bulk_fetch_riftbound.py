@@ -22,6 +22,8 @@ RAW = os.path.join(PROJECT, "data", "raw-scrapes")
 LOG = os.path.join(RAW, "bulk_fetch.log")
 
 TOURNAMENTS = [
+    # S3 Regional Opens (Unleashed)
+    ("s3-tianjin-ro-11863", "https://riftdecks.com/riftbound-tournaments/s3-tianjin-regional-open-tournament-decks-11863"),
     # S3 City Challenges (Unleashed)
     ("s3-guangzhou-cc-11454", "https://riftdecks.com/riftbound-tournaments/s3-guangzhou-city-challenge-tournament-decks-11454"),
     ("s3-shanghai-cc-10761",  "https://riftdecks.com/riftbound-tournaments/s3-shanghai-city-challenge-tournament-decks-10761"),

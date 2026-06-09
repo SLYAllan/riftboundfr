@@ -10,17 +10,17 @@ import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
 
 export const metadata: Metadata = {
-  title: { absolute: "Cartes Riftbound — Base de données complète avec filtres" },
+  title: { absolute: "Cartes Riftbound en français — base de données complète et filtres" },
   description:
-    "Explorez toutes les cartes Riftbound : recherche par nom, set, type, rareté et domaine. Origins, Spiritforged et Unleashed.",
+    "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged et Unleashed.",
   alternates: { canonical: "/cartes" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Cartes Riftbound — Base de données complète avec filtres",
+    title: "Cartes Riftbound en français — base de données complète et filtres",
     description:
-      "Recherche par nom, set, type, rareté et domaine. Origins, Spiritforged et Unleashed.",
+      "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged et Unleashed.",
     images: ["/img/og-default.png"],
   },
 };

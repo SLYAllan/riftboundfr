@@ -58,6 +58,9 @@ client_secret_*.json
 /.claude/worktrees/
 /.claude/settings.local.json
 
+# Playwright MCP debug artifacts (screenshots, console logs)
+/.playwright-mcp/
+
 # Local video-analysis artifacts (kept local, too large for git)
 data/videos/*.wav
 data/videos/**/vancouver-day1-frames/

@@ -36,6 +36,7 @@ model Card {
 
   deckCards DeckCard[]
   collectionItems CollectionItem[]
+  wishlistItems   WishlistItem[]
 
   @@index([set])
   @@index([type])
@@ -192,6 +193,8 @@ model User {
   communityDecks CommunityDeck[]
   comments       Comment[]
   collection     CollectionItem[]
+  binders        Binder[]
+  wishlist       WishlistItem[]
 
   @@index([discordId])
   @@index([riotId])
@@ -300,15 +303,49 @@ model DeckLike {
 model CollectionItem {
   id        String   @id @default(cuid())
   userId    String
+  binderId  String
   cardId    String
   quantity  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  binder Binder @relation(fields: [binderId], references: [id], onDelete: Cascade)
+  card   Card   @relation(fields: [cardId], references: [id])
+
+  @@unique([binderId, cardId])
+  @@index([userId])
+  @@index([binderId])
+  @@index([cardId])
+}
+
+model Binder {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  isPublic    Boolean  @default(false)
+  shareSlug   String?  @unique
+  color       String?
+  position    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user  User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items CollectionItem[]
+
+  @@index([userId])
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  cardId    String
+  createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   card Card @relation(fields: [cardId], references: [id])
 
   @@unique([userId, cardId])
   @@index([userId])
-  @@index([cardId])
 }

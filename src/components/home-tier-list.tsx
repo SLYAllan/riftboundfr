@@ -157,6 +157,7 @@ export function HomeTierList({
                         src={card.imageUrl}
                         alt={entry.legendName}
                         title={entry.legendName}
+                        suppressHydrationWarning
                         className="h-12 w-12 rounded-lg object-cover hover:scale-110 transition-transform"
                       />
                     ) : (

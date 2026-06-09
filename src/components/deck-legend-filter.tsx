@@ -12,6 +12,16 @@ export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
   const searchParams = useSearchParams();
   const current = searchParams.get("legend") ?? "";
 
+  // Dédup insensible à la casse : évite les doublons type "Rek'sai" / "Rek'Sai".
+  const uniqueLegends = (() => {
+    const seen = new Map<string, string>();
+    for (const name of legends) {
+      const key = name.toLowerCase();
+      if (!seen.has(key)) seen.set(key, name);
+    }
+    return [...seen.values()].sort((a, b) => a.localeCompare(b, "fr"));
+  })();
+
   function handleChange(value: string) {
     const params = new URLSearchParams(searchParams.toString());
     if (value) {
@@ -31,7 +41,7 @@ export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
         className="h-9 w-full sm:w-64 rounded-lg border border-hairline-strong bg-surface pl-9 pr-3 text-sm text-ink focus:border-arcane focus:outline-none cursor-pointer appearance-none"
       >
         <option value="">Toutes les legendes</option>
-        {legends.map((name) => (
+        {uniqueLegends.map((name) => (
           <option key={name} value={name}>{name}</option>
         ))}
       </select>

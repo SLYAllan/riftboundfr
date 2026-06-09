@@ -8,7 +8,7 @@ interface Report {
   unmatched: { variantNumber: string; name: string; raison: string }[];
 }
 
-export function ImportPiltover() {
+export function ImportPiltover({ binderId }: { binderId?: string }) {
   const [report, setReport] = useState<Report | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +21,8 @@ export function ImportPiltover() {
     setReport(null);
     try {
       const text = await file.text();
-      const res = await fetch("/api/collection/import", { method: "POST", body: text });
+      const url = binderId ? `/api/collection/import?binderId=${binderId}` : "/api/collection/import";
+      const res = await fetch(url, { method: "POST", body: text });
       if (!res.ok) {
         setError(res.status === 401 ? "Connecte-toi avec Discord d'abord." : "Échec de l'import.");
         return;

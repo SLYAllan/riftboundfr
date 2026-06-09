@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
   const cards = await prisma.card.findMany({
     where: { id: { in: valid.map((i) => i.cardId) } },
-    select: { id: true, name: true, cleanName: true },
+    select: { id: true, name: true, cleanName: true, imageUrl: true, rarity: true, type: true, energy: true, might: true, domains: true },
   });
   const byId = new Map(cards.map((c) => [c.id, c]));
 
@@ -41,6 +41,12 @@ export async function POST(req: Request) {
       section: i.section ?? "main",
       cleanName: c?.cleanName ?? null,
       quantity: i.quantity,
+      imageUrl: c?.imageUrl ?? null,
+      rarity: c?.rarity ?? null,
+      type: c?.type ?? null,
+      energy: c?.energy ?? null,
+      might: c?.might ?? null,
+      domains: c?.domains ?? [],
     };
   });
 

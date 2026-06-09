@@ -5,9 +5,10 @@ import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { getBannerUrl } from "@/lib/banners";
+import { getBinders, getCollectionMap } from "@/lib/collection-server";
 import Link from "next/link";
 import Image from "next/image";
-import { Hammer, Eye, Heart, Clock, Shield } from "lucide-react";
+import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers } from "lucide-react";
 import { ProfileActions } from "./profile-actions";
 import type { Metadata } from "next";
 
@@ -134,6 +135,16 @@ export default async function ProfilPage() {
       })),
   ].sort((a, b) => b.likeId.localeCompare(a.likeId));
 
+  // Collection : classeurs + cartes possédées + complétion globale.
+  const [binders, collectionMap, totalCards] = await Promise.all([
+    getBinders(user.id),
+    getCollectionMap(user.id),
+    prisma.card.count(),
+  ]);
+  const ownedDistinct = Object.keys(collectionMap).length;
+  const totalCopies = Object.values(collectionMap).reduce((s, v) => s + v, 0);
+  const completion = totalCards ? Math.round((ownedDistinct / totalCards) * 100) : 0;
+
   const totalViews = decks.reduce((sum, d) => sum + d.views, 0);
   const totalLikes = decks.reduce((sum, d) => sum + d.likes, 0);
   const publicDecks = decks.filter((d) => d.isPublic);
@@ -222,6 +233,35 @@ export default async function ProfilPage() {
             {totalLikes}
           </div>
           <div className="mt-1 text-xs text-ink-muted">J&apos;aime reçus</div>
+        </div>
+      </div>
+
+      {/* Ma collection */}
+      <div className="mt-6 rounded-card border border-hairline bg-surface p-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-arcane to-violet">
+              <Library size={22} className="text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Ma collection</h2>
+              <p className="text-sm text-ink-muted">
+                {ownedDistinct}/{totalCards} cartes · {totalCopies.toLocaleString("fr-FR")} exemplaires · {binders.length} classeur{binders.length > 1 ? "s" : ""}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <div className="text-2xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{completion}%</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-muted">complétion</div>
+            </div>
+            <Link href="/collection" className="inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-arcane/90">
+              <Layers size={15} /> Gérer ma collection <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+        <div className="mt-4 h-1.5 overflow-hidden rounded bg-surface-raised">
+          <div className="h-full rounded bg-gradient-to-r from-arcane to-violet" style={{ width: `${completion}%` }} />
         </div>
       </div>
 

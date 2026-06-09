@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
+import { getOrCreateDefaultBinder } from "@/lib/collection-server";
 import { parsePiltoverCsv, aggregateByCard, type PiltoverRow } from "@/lib/piltover-import";
 
 type CardVariant = {
@@ -33,6 +34,16 @@ export async function POST(req: Request) {
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
+  // classeur cible via ?binderId= (sinon classeur par défaut)
+  let binderId = new URL(req.url).searchParams.get("binderId");
+  if (binderId) {
+    const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
+    if (!binder) return NextResponse.json({ error: "binder_not_found" }, { status: 404 });
+  } else {
+    binderId = (await getOrCreateDefaultBinder(user.id)).id;
+  }
+  const bId = binderId;
+
   const text = await req.text();
   const rows = parsePiltoverCsv(text);
   const unmatched: { variantNumber: string; name: string; raison: string }[] = [];
@@ -60,12 +71,12 @@ export async function POST(req: Request) {
   await prisma.$transaction(
     aggregated.map((i) =>
       prisma.collectionItem.upsert({
-        where: { userId_cardId: { userId: user.id, cardId: i.cardId } },
-        create: { userId: user.id, cardId: i.cardId, quantity: i.quantity },
+        where: { binderId_cardId: { binderId: bId, cardId: i.cardId } },
+        create: { userId: user.id, binderId: bId, cardId: i.cardId, quantity: i.quantity },
         update: { quantity: i.quantity },
       }),
     ),
   );
 
-  return NextResponse.json({ imported: aggregated.length, rows: rows.length, unmatched });
+  return NextResponse.json({ imported: aggregated.length, rows: rows.length, unmatched, binderId: bId });
 }

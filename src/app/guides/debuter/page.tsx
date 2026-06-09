@@ -4,17 +4,17 @@ import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS } from "@/lib/domains";
 
 export const metadata: Metadata = {
-  title: { absolute: "Comment jouer à Riftbound — Guide débutant complet 2026" },
+  title: { absolute: "Règles de Riftbound : comment jouer (guide débutant en français)" },
   description:
-    "Apprenez à jouer à Riftbound : règles, domaines, construction de deck, phases de jeu et conseils pour vos premières parties.",
+    "Apprends à jouer à Riftbound : règles, déroulement d'un tour, les 6 domaines et conditions de victoire. Guide débutant complet, en français.",
   alternates: { canonical: "/guides/debuter" },
   openGraph: {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Comment jouer à Riftbound — Guide débutant complet 2026",
+    title: "Règles de Riftbound : comment jouer (guide débutant en français)",
     description:
-      "Règles, domaines, construction de deck et phases de jeu pour vos premières parties Riftbound.",
+      "Règles complètes, tour de jeu, domaines et conditions de victoire pour débuter à Riftbound.",
     images: ["/img/og-default.png"],
   },
 };

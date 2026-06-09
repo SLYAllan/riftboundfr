@@ -1,0 +1,221 @@
+# 天津 by 月月鸽鸽
+
+"天津" decklist by 月月鸽鸽. 322nd at S3 Tianjin Regional Open by 官方赛事 on 2026-06-07
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+天津
+, a deck by
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+[月月鸽鸽](https://riftdecks.com/riftbound-decks?player=%E6%9C%88%E6%9C%88%E9%B8%BD%E9%B8%BD&deck_type=all)
+322nd at
+S3 Tianjin Regional Open 640 players on
+2026-06-07
+
+[Constructed Constructed](https://riftdecks.com/riftbound-metagame/constructed)| 64 Cards |
+
+## Text Decklist
+
+![](/img/cards/riftbound/OGN/ogn-299-298_cropped.png)
+
+![](/img/cards/riftbound/OGN/ogn-039a-298_cropped.png)
+
+![](/img/cards/riftbound/SFD/sfd-216-221_cropped.png)
+
+![]() |
+|||||
+![]() |
+1
+|
+|
+
+![fury](/img/symbols/riftbound/rune_fury.png)
+
+![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_champion.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Kai'Sa, Survivor](https://riftdecks.com/cards/details-kaisa-survivor)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![](/img/symbols/riftbound/group_unit.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Ravenbloom Student](https://riftdecks.com/cards/details-ravenbloom-student)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Watchful Sentry](https://riftdecks.com/cards/details-watchful-sentry)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Lecturing Yordle](https://riftdecks.com/cards/details-lecturing-yordle)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Noxus Hopeful](https://riftdecks.com/cards/details-noxus-hopeful)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**2**[Ferrous Forerunner](https://riftdecks.com/cards/details-ferrous-forerunner)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_spell.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Hextech Ray](https://riftdecks.com/cards/details-hextech-ray)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Retreat](https://riftdecks.com/cards/details-retreat)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**3**[Stupefy](https://riftdecks.com/cards/details-stupefy)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**1**[Vault Breaker](https://riftdecks.com/cards/details-vault-breaker)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**3**[Falling Star](https://riftdecks.com/cards/details-falling-star)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Get Excited!](https://riftdecks.com/cards/details-get-excited)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Eclipse](https://riftdecks.com/cards/details-eclipse)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Right of Conquest](https://riftdecks.com/cards/details-right-of-conquest)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![rare](/img/symbols/riftbound/rarity_rare.png)
+
+**1**[Progress Day](https://riftdecks.com/cards/details-progress-day)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Singularity](https://riftdecks.com/cards/details-singularity)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Unchecked Power](https://riftdecks.com/cards/details-unchecked-power)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**3**[Time Warp](https://riftdecks.com/cards/details-time-warp)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_battlefields.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Rockfall Path](https://riftdecks.com/cards/details-rockfall-path)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Vilemaw's Lair](https://riftdecks.com/cards/details-vilemaws-lair)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**1**[Void Gate](https://riftdecks.com/cards/details-void-gate)![colorless](/img/symbols/riftbound/rune_colorless.png)
+
+![](/img/symbols/riftbound/group_runes.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**7**[Fury Rune](https://riftdecks.com/cards/details-fury-rune)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**5**[Mind Rune](https://riftdecks.com/cards/details-mind-rune)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![](/img/symbols/riftbound/group_sideboard.png)
+
+![common](/img/symbols/riftbound/rarity_common.png)
+
+**2**[Turn to Dust](https://riftdecks.com/cards/details-turn-to-dust)![mind](/img/symbols/riftbound/rune_mind.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**3**[Minotaur Reckoner](https://riftdecks.com/cards/details-minotaur-reckoner)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![uncommon](/img/symbols/riftbound/rarity_uncommon.png)
+
+**2**[Thermo Beam](https://riftdecks.com/cards/details-thermo-beam)![fury](/img/symbols/riftbound/rune_fury.png)
+
+![epic](/img/symbols/riftbound/rarity_epic.png)
+
+**1**[Unchecked Power](https://riftdecks.com/cards/details-unchecked-power)![mind](/img/symbols/riftbound/rune_mind.png)
+
+Buy this deck
+
+![](/img/logos/tcg_player.png)
+
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x1
+
+![](/img/cards/riftbound//OGN/ogn-123-298_full.png)
+
+## Visual Decklist
+
+## Deck Stats
+
+| types | ||
+|---|---|---|
+| battlefield | 5% (3) |
+|
+| legend | 2% (1) |
+|
+| rune | 19% (12) |
+|
+| spell | 43% (27) |
+|
+| unit | 33% (21) |
+|
+| cmc | ||
+| 0 | 25% (16) |
+|
+| 1 | 11% (7) |
+|
+| 2 | 21% (13) |
+|
+| 3 | 8% (5) |
+|
+| 4 | 5% (3) |
+|
+| 5 | 8% (5) |
+|
+| 6 | 11% (7) |
+|
+| 7 | 8% (5) |
+|
+| 10 | 5% (3) |
+|
+| domains | ||
+| colorless | 5% (3) |
+|
+| fury | 46% (29) |
+|
+| mind | 52% (33) |
+|

@@ -1154,3 +1154,46 @@
 16:43:45   fetched 50/64 (skip 0, fail 0)
 16:44:06   DONE chengdu-cc-141: fetched 64, skipped 0, failed 0, urls 64
 16:44:06 ALL DONE. total cached decks ~7931
+00:03:16 === s3-tianjin-ro-11863 ===
+00:03:18   meta: name=S3 Tianjin Regional Open players=640 date=2026-06-07 set=Unleashed pages=10 total=640
+00:03:19   page 1: +64 (total 64)
+00:03:21   page 2: +64 (total 128)
+00:03:23   page 3: +64 (total 192)
+00:03:25   page 4: +64 (total 256)
+00:03:27   page 5: +64 (total 320)
+00:03:29   page 6: +64 (total 384)
+00:03:31   page 7: +64 (total 448)
+00:03:33   page 8: +64 (total 512)
+00:03:35   page 9: +64 (total 576)
+00:03:37   page 10: +64 (total 640)
+00:04:13   fetched 25/640 (skip 0, fail 0)
+00:04:49   fetched 50/640 (skip 0, fail 0)
+00:05:25   fetched 75/640 (skip 0, fail 0)
+00:06:01   fetched 100/640 (skip 0, fail 0)
+00:06:37   fetched 125/640 (skip 0, fail 0)
+00:07:13   fetched 150/640 (skip 0, fail 0)
+00:07:50   fetched 175/640 (skip 0, fail 0)
+00:08:25   fetched 200/640 (skip 0, fail 0)
+00:09:02   fetched 225/640 (skip 0, fail 0)
+00:09:37   fetched 250/640 (skip 0, fail 0)
+00:10:14   fetched 275/640 (skip 0, fail 0)
+00:10:49   fetched 300/640 (skip 0, fail 0)
+00:11:26   fetched 325/640 (skip 0, fail 0)
+00:12:02   fetched 350/640 (skip 0, fail 0)
+00:12:37   fetched 375/640 (skip 0, fail 0)
+00:13:13   fetched 400/640 (skip 0, fail 0)
+00:13:50   fetched 425/640 (skip 0, fail 0)
+00:14:26   fetched 450/640 (skip 0, fail 0)
+00:15:17   fetched 475/640 (skip 0, fail 1)
+00:15:53   fetched 500/640 (skip 0, fail 1)
+00:16:29   fetched 525/640 (skip 0, fail 1)
+00:17:05   fetched 550/640 (skip 0, fail 1)
+00:17:41   fetched 575/640 (skip 0, fail 1)
+00:18:17   fetched 600/640 (skip 0, fail 1)
+00:18:53   fetched 625/640 (skip 0, fail 1)
+00:19:15   DONE s3-tianjin-ro-11863: fetched 639, skipped 0, failed 1, urls 640
+00:19:15 ALL DONE. total cached decks ~639
+00:21:10 === s3-tianjin-ro-11863 ===
+00:21:10   reuse 640 urls
+00:21:27   DONE s3-tianjin-ro-11863: fetched 0, skipped 639, failed 1, urls 640
+00:21:27 ALL DONE. total cached decks ~639

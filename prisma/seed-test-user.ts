@@ -52,10 +52,17 @@ async function main() {
   }
   const agg = aggregateByCard(resolved);
 
-  await prisma.collectionItem.deleteMany({ where: { userId: user.id } });
+  // Classeur par défaut du test user (multi-classeurs)
+  let binder = await prisma.binder.findFirst({ where: { userId: user.id }, orderBy: { createdAt: "asc" } });
+  if (!binder) {
+    binder = await prisma.binder.create({ data: { userId: user.id, name: "Ma collection", position: 0 } });
+  }
+  const binderId = binder.id;
+
+  await prisma.collectionItem.deleteMany({ where: { binderId } });
   await prisma.$transaction(
     agg.map((i) =>
-      prisma.collectionItem.create({ data: { userId: user.id, cardId: i.cardId, quantity: i.quantity } }),
+      prisma.collectionItem.create({ data: { userId: user.id, binderId, cardId: i.cardId, quantity: i.quantity } }),
     ),
   );
 

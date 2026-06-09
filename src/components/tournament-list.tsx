@@ -129,6 +129,10 @@ function TournamentRow({
                     <img
                       src={deck.legendIcon}
                       alt=""
+                      loading="lazy"
+                      decoding="async"
+                      width={28}
+                      height={28}
                       className="h-7 w-7 rounded object-cover shrink-0"
                     />
                   )}

@@ -1,5 +1,6 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
-> Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
+> Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
+> Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
 ## 1. Règles clés (résumé pour rédaction)
 
@@ -110,22 +111,22 @@
 
 **Insight Origins** : méta à 2 têtes ultra-dominant — **Kai'Sa + Master Yi Bladesman = 50% du field** et 144 top 8 sur ~136 places. Sett surperforme (4 wins pour 5,4%).
 
-### 2.2 Tier Unleashed — data-backed (31 mai 2026, 4 501 decks classés)
+### 2.2 Tier Unleashed — data-backed (8 juin 2026, 5 105 decks classés)
 
-> 25 S3 City Challenges + Xi'an RO + Suzhou RQ + Sydney. 41 légendes — le méta le plus diversifié.
+> 25 S3 City Challenges + Xi'an RO + **Tianjin RO** + Suzhou RQ + Sydney. 40 légendes — le méta le plus diversifié.
 
 | Tier | Legend | Field % (decks) | Top 8 | Wins |
 |------|--------|-----------------|-------|------|
-| **S** | Irelia, Blade Dancer | 8,0% (362) | 30 | 6 |
-| **S** | Master Yi, Wuju Master | 7,4% (333) | 30 | 1 |
-| **S** | LeBlanc, Deceiver | 7,5% (337) | 19 | 2 |
-| **S** | Diana, Scorn of the Moon | 6,5% (292) | 20 | 2 |
-| **A** | Fiora (5,9%/15) · Lillia (5,5%/11) · Sivir (2,9%/9·2W) · Sett (2,8%/8·3W) · Master Yi Bladesman (3,8%/11·3W) · Azir (4%/7) · Kai'Sa (3,6%/12) · Rengar (2,7%/5·1W) · Annie (1,5%/5·3W sleeper) | — | — | — |
-| **B** | Vex (5%/8) · Draven (2,6%/8) · Kha'Zix · Viktor · Pyke · Ezreal · Ornn | 1,7-5% | 2-8 | 0 |
-| **C** | Miss Fortune (3,3% mais 1 top8) · Ahri · Teemo · Jhin · Volibear · Vi · Poppy | 0,9-3,3% | 0-2 | 0 |
-| **D** | Lucian · Jax · Leona · Ivern · Lux · Darius · Yasuo · Jinx · Garen · Lee Sin · Rumble · Rek'Sai · Renata | <1,3% | 0-1 | 0 |
+| **S** | Master Yi, Wuju Bladesman | 11,4% (583) | 41 | 5 |
+| **S** | Irelia, Blade Dancer | 8,3% (422) | 31 | 5 |
+| **S** | LeBlanc, Deceiver | 7,1% (365) | 18 | 2 |
+| **S** | Diana, Scorn of the Moon | 6,5% (334) | 21 | 2 |
+| **A** | Fiora (5,6%/15·3W) · Lillia (5,1%/11) · Azir (3,8%/7·1W) · Kai'Sa (3,6%/11) · Sivir (2,9%/8·2W) · Sett (2,7%/8·3W) · Rengar (2,7%/5·1W) · Annie (1,5%/5·3W sleeper) | — | — | — |
+| **B** | Vex (5%/7·0W) · Viktor · Kha'Zix · Draven (2,6%/8) · Ornn · Pyke (4e Tianjin) · Ezreal | 1,7-5% | 2-8 | 0-1 |
+| **C** | Miss Fortune (3,3% mais 1 top8) · Ahri · Volibear · Jhin · Vi · Teemo · Poppy · **Rek'sai (3e Tianjin)** | 0,8-3,3% | 0-2 | 0 |
+| **D** | Leona · Ivern · Lux · Lucian · Jax · Yasuo · Jinx · Rumble · Darius · Lee Sin · Garen · Renata | <1,3% | 0-1 | 0 |
 
-**Insights Unleashed** : méta **très ouvert** (4 légendes S quasi à égalité, ~13 viables). **Irelia** reste reine (6 wins). **Master Yi Wuju Master** est le nouveau Yi méta (vs Bladesman à Origins). **Miss Fortune** = piège (3,3% du field, 1 seul top 8). Annie/Sett surperforment en conversion.
+**Insights Unleashed** : **Master Yi (Wuju Bladesman)** est le **#1 du field** (11,4 %, 583 decks) et **a gagné Tianjin** — c'est bien le Bladesman d'Origins joué en Unleashed, PAS le « Wuju Master » (légende quasi jamais jouée : ne pas confondre). **Irelia** reste T1. **Vex** = piège volume (5 % du field, 0 win). **Miss Fortune** sous-performe (3,3 %, 1 top 8). **Rek'sai** surprend (3e Tianjin) → remonte en C. Annie/Sett/Fiora surperforment en conversion. Méta très ouvert (~13 légendes viables).
 
 ### Tier List historique cross-set (Origins→Unleashed)
 
@@ -399,6 +400,18 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - **Azir** : gagnant surprise Xi'an — doit prouver que ce n'est pas un one-off.
 - **Dilemme Vancouver** : construire anti-Aurora ou anti-Irelia/Diana/Yi/LeBlanc ?
 
+### Juin 2026 — S3 Tianjin Regional Open (7 juin 2026)
+- **640 joueurs**, **638 decklists** scrapées et analysées. **40 légendes** représentées — méta toujours aussi ouvert.
+- **Top légendes par picks** : Master Yi Wuju Bladesman (79), Irelia (61), Diana (43), LeBlanc (30), Vex (28), Fiora (24), Kai'Sa (24), Azir (20), Viktor (19). (⚠️ tous les Master Yi = Wuju Bladesman ; le « Wuju Master » affiché initialement était un artefact de fallback, corrigé.)
+- **Master Yi, Wuju Bladesman win** (陈千语, Corps/Calme) — le Bladesman d'Origins, légende la plus jouée du tournoi (12,4 %), signe la victoire. Hold Body/Calm.
+- **Diana 2e** (GREY-邮差, Chaos/Esprit) — reste solidement T1, finaliste après son Top 4 de Vancouver et son Top 2 de Xi'an.
+- **Rek'sai 3e** (FSW.半岛铁盒, Fureur/Ordre) — **grosse surprise** : seulement 40 decks (0,8%) sur tout l'Unleashed mais signe un podium. Aggro tunneler Fury/Order. Remonte en tier C.
+- **Pyke 4e** (D.C环游KJ, Chaos/Fureur) — l'assassin confirme sa viabilité (tier B).
+- **Irelia double Top 8** (5e + 6e) — la plus jouée et la plus régulière, comme à chaque Regional.
+- **Diana 8e** également — deux Diana dans le Top 8.
+- **Vex = piège volume confirmé** : 28 decks (4,1%), meilleur résultat 10e, aucun Top 8. Gros pick rate, conversion nulle.
+- **Données complètes** : 638 decklists JSON dans `data/decklists/`, résumé dans `data/tournaments/s3-tianjin-ro-11863.json`. Article best-of : `/articles/best-of-tianjin-ro`.
+
 ## 6. Résultats de tournois
 
 ### Chronologie complète des Regional Qualifiers
@@ -425,8 +438,9 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 | 11 | Suzhou RQ | 10 mai 2026 | Unleashed | ~800 | 637 | Master Yi Bladesman (燐川) | Irelia |
 | 12 | S3 Xi'an RO | 24 mai 2026 | Unleashed | 640 | 636 | Azir (墨白) | Diana |
 | 13 | Vancouver RQ | 31 mai 2026 | Unleashed | — | 6 (Top 8 castés) | Diana (AlanZQ) | Rengar (Sam D Sherman) |
+| 14 | S3 Tianjin RO | 7 juin 2026 | Unleashed | 640 | 638 | Master Yi Wuju Bladesman (陈千语) | Diana (GREY-邮差) |
 
-**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, Irelia 2 (Sydney, Shenzhen), Azir 2 (Lille, Xi'an), Ezreal 1 (Bologna), Master Yi Bladesman 1 (Suzhou), Diana 1 (Vancouver)
+**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, Irelia 2 (Sydney, Shenzhen), Azir 2 (Lille, Xi'an), Ezreal 1 (Bologna), Master Yi Bladesman 2 (Suzhou, Tianjin), Diana 1 (Vancouver)
 
 **1er double champion de RQ de l'histoire : AlanZQ** (Bologna sur Ezreal + Vancouver sur Diana). Note : Sam D Sherman (ex-Vegas/Draven) et Diwali (ex-Houston/Annie) étaient aussi en lice pour ce statut dans le même Top 8.
 

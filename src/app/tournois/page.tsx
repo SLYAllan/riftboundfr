@@ -67,6 +67,20 @@ async function getTournamentData() {
     if (!decksByContext.has(ctx)) decksByContext.set(ctx, []);
     decksByContext.get(ctx)!.push(d);
   }
+  // Les decks "best-of" partagent le tournamentContext du tournoi scrapé → ils
+  // dupliquent souvent les vrais résultats. On garde les vrais decks scrapés et
+  // on N'AJOUTE les best-of QUE pour les placements absents des vrais decks
+  // (ex. Lille : le top 5 n'existe que via les best-of → sans ça le podium manque).
+  // Si aucun vrai deck (ex. Vancouver = best-of seuls), on garde tout.
+  for (const [ctx, list] of decksByContext) {
+    const real = list.filter((d) => !d.slug.startsWith("best-of-"));
+    if (real.length === 0) continue;
+    const realPlacements = new Set(real.map((d) => parsePlacement(d.placement)));
+    const fillers = list.filter(
+      (d) => d.slug.startsWith("best-of-") && !realPlacements.has(parsePlacement(d.placement)),
+    );
+    decksByContext.set(ctx, [...real, ...fillers]);
+  }
 
   const articlesByCity = new Map<string, typeof articles>();
   for (const a of articles) {

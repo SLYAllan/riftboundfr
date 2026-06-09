@@ -10,19 +10,22 @@ import { DeckLegendFilter } from "@/components/deck-legend-filter";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
 import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
+import { getUserFromSession } from "@/lib/session";
+import { getOwnedByName } from "@/lib/collection-server";
+import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Meilleurs Decks Riftbound — Decklists de tournois et guides" },
+  title: { absolute: "Decks Riftbound en français — decklists de tournois et guides" },
   description:
-    "Toutes les decklists Riftbound : decks de tournois, builds compétitifs et guides pour chaque Légende. Trouvez votre prochain deck.",
+    "Decklists Riftbound en français : decks gagnants de tournois (Regional Opens, RQ), builds compétitifs et guides par Légende.",
   alternates: { canonical: "/decks" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Meilleurs Decks Riftbound — Decklists de tournois et guides",
+    title: "Decks Riftbound en français — decklists de tournois et guides",
     description:
       "Decklists de tournois, builds compétitifs et guides pour chaque Légende Riftbound.",
     images: ["/img/og-default.png"],
@@ -72,6 +75,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const isCommunity = cat === "community";
 
   const TOURNAMENT_FILTERS = [
+    { ctx: "S3 Tianjin Regional Open (2026-06-07)", label: "Tianjin RO S3" },
     { ctx: "Xi'an Regional Open S3", label: "Xi'an RO S3" },
     { ctx: "RQ Sydney 2026", label: "Sydney RQ" },
     { ctx: "RQ Vancouver 2026", label: "Vancouver RQ" },
@@ -207,18 +211,18 @@ export default async function DecksPage({ searchParams }: PageProps) {
             {communityDecks.map((deck) => {
               const bannerUrl = getBannerUrl(deck.legendName);
               return (
-                <Link key={deck.id} href={`/d/${deck.shareCode}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
-                  <div className="relative h-28">
+                <Link key={deck.id} href={`/d/${deck.shareCode}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative flex flex-col">
+                  <div className="relative flex min-h-[7rem] flex-1 flex-col justify-end">
                     {bannerUrl ? (
                       <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
                     ) : (
                       <div className="absolute inset-0 bg-surface-raised" />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
-                    <div className="relative z-10 flex h-full flex-col justify-end p-3">
+                    <div className="relative z-10 p-3">
                       <div className="flex items-end justify-between gap-2">
                         <div className="min-w-0">
-                          <div className="text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                          <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                             {deck.title}
                           </div>
                           <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
@@ -254,6 +258,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
   const where: Record<string, unknown> = { published: true };
   if (cat === "tournoi") {
+    // Vrais decks scrapés uniquement : les copies "best-of" (featured) ont le même
+    // tournamentContext et doubleraient les résultats — elles vivent dans cat=bestof.
+    where.featured = false;
     if (tournamentFilter) {
       where.tournamentContext = tournamentFilter;
     } else {
@@ -323,6 +330,35 @@ export default async function DecksPage({ searchParams }: PageProps) {
     });
   }
 
+  // Couverture collection : pour l'utilisateur connecté, calcule possédées/requises par deck
+  // (genre 53/56). Le filtre "owned=1" ne garde que les decks 100% jouables.
+  const ownedOnly = params.owned === "1";
+  const sessionUser = await getUserFromSession();
+  const ownedOnlyActive = !!sessionUser;
+  const coverageByDeck = new Map<string, { owned: number; required: number; missing: number }>();
+  if (sessionUser && decks.length) {
+    const owned = await getOwnedByName(sessionUser.id);
+    const ids = decks.map((d) => d.id);
+    const dcs = await prisma.deckCard.findMany({
+      where: { deckId: { in: ids } },
+      select: { deckId: true, quantity: true, section: true, card: { select: { id: true, name: true, cleanName: true } } },
+    });
+    const byDeck = new Map<string, DeckCardLike[]>();
+    for (const dc of dcs) {
+      const arr = byDeck.get(dc.deckId) ?? [];
+      arr.push({ cardId: dc.card.id, name: dc.card.name, section: dc.section, cleanName: dc.card.cleanName, quantity: dc.quantity });
+      byDeck.set(dc.deckId, arr);
+    }
+    for (const d of decks) {
+      const cards = byDeck.get(d.id);
+      if (cards && cards.length > 0) {
+        const t = computeDeckCoverage(owned, cards).totals;
+        coverageByDeck.set(d.id, { owned: t.owned, required: t.required, missing: t.missing });
+      }
+    }
+    if (ownedOnly) decks = decks.filter((d) => coverageByDeck.get(d.id)?.missing === 0);
+  }
+
   const legendNames = legends.map((l) => l.legendName);
 
   return (
@@ -357,6 +393,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
             </Link>
           );
         })}
+      </div>
+
+      <div className="mt-3">
+        <Link
+          href={`/decks${(() => { const q = [!ownedOnly && "owned=1", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
+          className={cn(
+            "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+            ownedOnly ? "bg-emerald-500/20 text-emerald-400 ring-1 ring-emerald-500/40" : "bg-surface-raised text-ink-muted hover:text-ink",
+          )}
+        >
+          <Hammer size={12} /> Jouables avec ma collection
+        </Link>
+        {ownedOnly && !ownedOnlyActive && (
+          <span className="ml-2 text-xs text-ink-muted">Connecte-toi pour utiliser ce filtre.</span>
+        )}
       </div>
 
       {(!cat || cat === "tournoi" || cat === "bestof") && (
@@ -453,31 +504,62 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const style = SET_STYLES[deck.setTag];
             return (
               <Link key={deck.id} href={`/decks/${deck.slug}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
-                <div className="relative h-28">
+                <div className="relative flex flex-col justify-end" style={{ height: 128 }}>
                   {bannerUrl ? (
                     <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
                   ) : (
                     <div className="absolute inset-0 bg-surface-raised" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
-                  <div className="relative z-10 flex h-full flex-col justify-end p-3">
+                  {(() => {
+                    const cov = coverageByDeck.get(deck.id);
+                    if (!cov) return null;
+                    const ok = cov.missing === 0;
+                    return (
+                      <span
+                        className={cn(
+                          "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
+                          ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
+                        )}
+                        title={ok ? "Jouable avec ta collection" : `Il te manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                      >
+                        {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
+                      </span>
+                    );
+                  })()}
+                  <div className="relative z-10 p-3">
                     <div className="flex items-end justify-between gap-2">
                       <div>
-                        <div className="text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                        <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                           {displayLegendName(deck.legendName)}
                         </div>
-                        <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
-                          {deck.tournamentContext && (() => {
-                            const cc = getTournamentCountryCode(deck.tournamentContext);
-                            return (
-                              <span className="flex items-center gap-1 text-gold drop-shadow-sm">
-                                {cc && <CountryBadge code={cc} />}
-                                {deck.tournamentContext}
+                        <div className="mt-1 space-y-0.5 text-xs">
+                          <div className="flex items-center gap-2">
+                            {deck.tournamentTier && (
+                              <span
+                                className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-white shadow-sm ring-1 ring-white/25"
+                                style={{ backgroundColor: `var(--color-tier-${deck.tournamentTier.toLowerCase()})` }}
+                                title={`Tier ${deck.tournamentTier}`}
+                              >
+                                Tier {deck.tournamentTier}
                               </span>
-                            );
-                          })()}
-                          {deck.placement && <span className="font-semibold text-ink-secondary drop-shadow-sm">{deck.placement}</span>}
-                          {(deck.playerName || deck.authorName) && <span className="text-white/90 drop-shadow-sm">par {deck.playerName || deck.authorName}</span>}
+                            )}
+                            {deck.tournamentContext && (() => {
+                              const cc = getTournamentCountryCode(deck.tournamentContext);
+                              return (
+                                <span className="flex min-w-0 items-center gap-1 text-gold drop-shadow-sm">
+                                  {cc && <CountryBadge code={cc} />}
+                                  <span className="truncate">{deck.tournamentContext}</span>
+                                </span>
+                              );
+                            })()}
+                          </div>
+                          {(deck.placement || deck.playerName || deck.authorName) && (
+                            <div className="flex items-center gap-2">
+                              {deck.placement && <span className="shrink-0 font-semibold text-ink-secondary drop-shadow-sm">{deck.placement}</span>}
+                              {(deck.playerName || deck.authorName) && <span className="truncate text-white/90 drop-shadow-sm">par {deck.playerName || deck.authorName}</span>}
+                            </div>
+                          )}
                         </div>
                       </div>
                       <div className="flex shrink-0 items-center gap-1">
@@ -490,15 +572,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
                         {deck.featured && (
                           <span className="rounded-full bg-gold/80 px-2 py-0.5 text-[10px] font-bold text-canvas">
                             Best of
-                          </span>
-                        )}
-                        {deck.tournamentTier && (
-                          <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold",
-                            deck.tournamentTier === "S" ? "bg-arcane/90 text-white"
-                              : deck.tournamentTier === "A" ? "bg-violet/90 text-white"
-                              : "bg-surface/80 text-ink-secondary"
-                          )}>
-                            {deck.tournamentTier}
                           </span>
                         )}
                       </div>

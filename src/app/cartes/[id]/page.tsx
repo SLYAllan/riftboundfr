@@ -25,9 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const rule = card.textPlain ? ` ${card.textPlain.replace(/\s+/g, " ").trim()}` : "";
   const full = `${base}${rule}`;
   const description = full.length > 155 ? `${full.slice(0, 152).trimEnd()}…` : full;
+  // Anti index-bloat : les variantes (alt-art / overnumbered / signature) ne sont pas
+  // indexées (l'impression principale l'est) — elles partagent le même contenu jouable.
+  const isVariant = card.alternateArt || card.overnumbered || card.signature;
   return {
     title: { absolute: title },
     description,
+    robots: isVariant ? { index: false, follow: true } : undefined,
     alternates: { canonical: `/cartes/${card.riftboundId}` },
     openGraph: {
       type: "article",
