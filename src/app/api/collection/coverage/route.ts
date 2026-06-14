@@ -27,11 +27,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ loggedIn: true, coverage: { entries: [], totals: { required: 0, owned: 0, missing: 0, completionPct: 100 } } });
   }
 
+  // Les items peuvent référencer une carte par sa clé primaire (`id`, envoyée par
+  // les pages decks) ou par son `riftboundId` (le deckbuilder utilise riftboundId
+  // comme identifiant de carte). On résout les deux pour ne pas retomber sur le
+  // fallback (nom = id brut, pas d'image, 0 possédée).
+  const ids = valid.map((i) => i.cardId);
   const cards = await prisma.card.findMany({
-    where: { id: { in: valid.map((i) => i.cardId) } },
-    select: { id: true, name: true, cleanName: true, imageUrl: true, rarity: true, type: true, energy: true, might: true, domains: true },
+    where: { OR: [{ id: { in: ids } }, { riftboundId: { in: ids } }] },
+    select: { id: true, riftboundId: true, name: true, cleanName: true, imageUrl: true, rarity: true, type: true, energy: true, might: true, domains: true },
   });
-  const byId = new Map(cards.map((c) => [c.id, c]));
+  const byId = new Map<string, (typeof cards)[number]>();
+  for (const c of cards) {
+    byId.set(c.id, c);
+    byId.set(c.riftboundId, c);
+  }
 
   const deckCards: DeckCardLike[] = valid.map((i) => {
     const c = byId.get(i.cardId);
