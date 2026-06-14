@@ -36,8 +36,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         SELECT DISTINCT "tournamentContext" FROM "Deck"
         WHERE published = true AND "tournamentContext" IS NOT NULL
       `,
-      prisma.deck.findMany({ where: { published: true }, select: { slug: true, updatedAt: true }, orderBy: { id: "asc" } }),
-      prisma.card.findMany({ select: { riftboundId: true, updatedAt: true }, orderBy: { id: "asc" } }),
+      // Curation : seuls les decks à valeur SEO entrent au sitemap (best-of,
+      // guide rédigé, ou résultat de tournoi). Les decklists scrappées « brutes »
+      // restent accessibles mais ne sont plus poussées — sinon Google découvre
+      // ~19k pages fines/quasi-dupliquées qu'il refuse d'indexer (budget de crawl).
+      prisma.deck.findMany({
+        where: {
+          published: true,
+          OR: [
+            { featured: true },
+            { guide: { not: null } },
+            { tournamentContext: { not: null } },
+            { placement: { not: null } },
+          ],
+        },
+        select: { slug: true, updatedAt: true },
+        orderBy: { id: "asc" },
+      }),
+      // Anti index-bloat : on exclut les variantes (alt-art / overnumbered /
+      // signature) qui sont en `noindex` sur la page — les lister contredisait le
+      // robots et gaspillait du crawl.
+      prisma.card.findMany({
+        where: { alternateArt: false, overnumbered: false, signature: false },
+        select: { riftboundId: true, updatedAt: true },
+        orderBy: { id: "asc" },
+      }),
     ]);
 
     const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
