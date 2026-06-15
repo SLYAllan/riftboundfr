@@ -57,7 +57,8 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
 }
 
 export function makeToken(): string {
-  let t = "";
-  while (t.length < 20) t += Math.random().toString(36).slice(2);
-  return t.slice(0, 20);
+  // Token public de l'overlay OBS : aléatoire cryptographique (isomorphe Node 18+/navigateur).
+  const bytes = new Uint8Array(16);
+  crypto.getRandomValues(bytes);
+  return Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
 }
