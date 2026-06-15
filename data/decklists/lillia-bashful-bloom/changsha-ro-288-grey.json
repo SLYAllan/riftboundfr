@@ -1,0 +1,224 @@
+{
+  "id": "changsha-ro-288-grey",
+  "legend": "Lillia, Bashful Bloom",
+  "champion": "Lillia, Fae Fawn",
+  "player": "GREY-神切-亦",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 288,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lillia, Fae Fawn",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Janna, Savior",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-053"
+    },
+    {
+      "name": "Shadow Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-037"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-110"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-075"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-120"
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-060"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-078"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-052"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-046"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Lilting Lullaby",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-190"
+    },
+    {
+      "name": "Smoke and Mirrors",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-083"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-070"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    },
+    {
+      "name": "Falling Comet",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-085"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-069"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "runes": {
+    "Calm": 5,
+    "Mind": 7
+  },
+  "battlefields": [
+    "Dusk Rose Lab",
+    "Ravenbloom Conservatory",
+    "Rockfall Path"
+  ],
+  "sideDeck": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Cloth Armor",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-064"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-077"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-092"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-060"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lu-bian-yi-tiao-185576",
+  "notes": ""
+}

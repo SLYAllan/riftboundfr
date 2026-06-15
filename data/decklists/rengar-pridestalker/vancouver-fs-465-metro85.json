@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-465-metro85",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Trophy Hunter",
+  "player": "metro85",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 465,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Assembly Rig",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-019"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Confront",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-129"
+    },
+    {
+      "name": "Disposal Order",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-103"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Get Excited!",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-008"
+    },
+    {
+      "name": "Incinerate",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-003"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Thrill of the Hunt",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-184"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-024"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    },
+    {
+      "name": "Concentrate",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-091"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-014"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Smite",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-007"
+    },
+    {
+      "name": "Stare Down",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-107"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-109"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-rengar-pridestalker-170936",
+  "notes": ""
+}

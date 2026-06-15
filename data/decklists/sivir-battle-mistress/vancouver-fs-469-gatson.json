@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-469-gatson",
+  "legend": "Sivir, Battle Mistress",
+  "champion": "Sivir, Mercenary",
+  "player": "Gatson",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 469,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Sivir, Mercenary",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-192"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Scryer's Bloom",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-136"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-181"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-186"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-150"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Lunar Boon",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-125"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Fading Memories",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-180"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-192"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-147"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-sivir-battle-mistress-172048",
+  "notes": ""
+}

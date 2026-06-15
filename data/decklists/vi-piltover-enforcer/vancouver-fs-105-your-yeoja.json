@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-105-your-yeoja",
+  "legend": "Vi, Piltover Enforcer",
+  "champion": "Vi, Peacekeeper",
+  "player": "your yeoja",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 105,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Pouty Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-013"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-167"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-028"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-029"
+    },
+    {
+      "name": "Jhin, Murderous Artist",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Rengar, Unseen",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-024"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-022"
+    },
+    {
+      "name": "Hextech Gauntlets",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-188"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    }
+  ],
+  "runes": {
+    "Fury": 8,
+    "Order": 4
+  },
+  "battlefields": [
+    "Forge of the Fluft",
+    "Rockfall Path",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-021"
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-vi-piltover-enforcer-170917",
+  "notes": ""
+}

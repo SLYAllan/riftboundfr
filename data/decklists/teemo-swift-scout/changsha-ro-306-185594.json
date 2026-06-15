@@ -1,0 +1,188 @@
+{
+  "id": "changsha-ro-306-185594",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Scout",
+  "player": "无悔",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 306,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-185"
+    },
+    {
+      "name": "Pyke, Returned",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-145"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-080"
+    },
+    {
+      "name": "Frigid Jewel",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-074"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-078"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Acceptable Losses",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-179"
+    },
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-201"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Ripper's Bay",
+    "Star Spring",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-201"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-147"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-xi-huan-ti-mo-185594",
+  "notes": ""
+}

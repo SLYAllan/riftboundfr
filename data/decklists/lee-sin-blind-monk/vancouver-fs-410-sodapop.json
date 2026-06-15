@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-410-sodapop",
+  "legend": "Lee Sin, Blind Monk",
+  "champion": "Lee Sin, Centered",
+  "player": "Sodapop",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 410,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lee Sin, Centered",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-151"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-060"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-031"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-047"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    },
+    {
+      "name": "Dragon's Rage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-258"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Monastery of Hirana",
+    "Sigil of the Storm"
+  ],
+  "sideDeck": [
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-036"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-032"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-105"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lee-sin-blind-monk-171257",
+  "notes": ""
+}

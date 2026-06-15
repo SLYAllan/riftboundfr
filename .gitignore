@@ -74,3 +74,15 @@ data/videos/vancouver-day1.txt
 
 # Page guide en travail — ne pas committer/pousser
 src/app/guides/comment-jouer-irelia/
+
+# Utrecht VOD media + scraping intermediates (local only)
+data/videos/utrecht-day1.mp3
+data/videos/utrecht-day1.txt
+data/videos/utrecht-day1.srt
+data/videos/utrecht-day1.tsv
+data/videos/utrecht-day1.vtt
+data/videos/utrecht-day1.json
+data/videos/utrecht-day1-frames/
+data/videos/_*.log
+data/raw-scrapes/**/_*.log
+data/raw-scrapes/**/*.jsonl

@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-45-blade",
+  "legend": "Leblanc, Deceiver",
+  "champion": "LeBlanc, Fragmented",
+  "player": "Blade",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 45,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-216"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-152"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-236"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-165"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Ruined Rex",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-067"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-179"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-242"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-200"
+    }
+  ],
+  "runes": {
+    "Mind": 4,
+    "Order": 8
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Star Spring",
+    "Windswept Hillock"
+  ],
+  "sideDeck": [
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "LeBlanc, Everywhere at Once",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-179"
+    },
+    {
+      "name": "Atakhan",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-170"
+    }
+  ],
+  "record": "10-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-leblanc-deceiver-170927",
+  "notes": ""
+}

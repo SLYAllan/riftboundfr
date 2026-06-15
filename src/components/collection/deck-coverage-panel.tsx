@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
-import { LayoutGrid, List } from "lucide-react";
+import { LayoutGrid, List, ChevronDown } from "lucide-react";
 import { useCollection } from "@/components/collection/collection-provider";
 import { CardImage } from "@/components/card-image";
 import { CardHover } from "@/components/collection/card-hover";
@@ -22,6 +22,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
   const [coverage, setCoverage] = useState<DeckCoverage | null>(null);
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState<"grid" | "list">("grid");
+  const [open, setOpen] = useState(false);
 
   // Signature stable des items + de la collection pour limiter les appels.
   const itemsKey = useMemo(
@@ -73,16 +74,19 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
   return (
     <div className="rounded-lg border border-line bg-surface-raised/40 p-4">
       <div className="flex items-center justify-between gap-2">
-        <span className="font-semibold">Ma collection</span>
+        <button onClick={() => setOpen(!open)} className="flex items-center gap-1.5 font-semibold">
+          <ChevronDown size={14} className={`text-ink-muted transition-transform ${!open ? "-rotate-90" : ""}`} />
+          Ma collection
+        </button>
         <div className="flex items-center gap-3">
           {loading && missing === null ? (
             <span className="text-sm text-ink-muted">Calcul…</span>
           ) : missing === 0 ? (
             <span className="text-sm font-medium text-emerald-400">Deck complet ✓</span>
           ) : missing != null ? (
-            <span className="text-sm font-medium text-amber-400">Il te manque {missing} carte(s)</span>
+            <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">Il te manque {missing} carte(s)</button>
           ) : null}
-          {coverage && coverage.totals.missing > 0 && (
+          {open && coverage && coverage.totals.missing > 0 && (
             <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
               <button onClick={() => setMode("grid")} aria-label="Vue cartes"
                 className={`flex h-6 w-6 items-center justify-center rounded-md ${mode === "grid" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"}`}>
@@ -96,7 +100,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
           )}
         </div>
       </div>
-      {coverage && coverage.totals.missing > 0 && mode === "list" && (
+      {open && coverage && coverage.totals.missing > 0 && mode === "list" && (
         <ul className="mt-3 grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-2">
           {coverage.entries.filter((e) => e.missing > 0).map((e, i) => (
             <li key={`${e.cardId}-${i}`} className="flex items-center gap-2 rounded px-1.5 py-1 transition-colors hover:bg-surface-raised">
@@ -106,7 +110,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
           ))}
         </ul>
       )}
-      {coverage && coverage.totals.missing > 0 && mode === "grid" && (
+      {open && coverage && coverage.totals.missing > 0 && mode === "grid" && (
         <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3">
           {coverage.entries
             .filter((e) => e.missing > 0)

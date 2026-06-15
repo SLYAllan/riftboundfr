@@ -85,7 +85,6 @@ function TypeDistribution({ entries }: { entries: DeckEntry[] }) {
 
   return (
     <div>
-      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">Distribution par type</h5>
       <div className="space-y-1.5">
         {sorted.map(([type, count]) => (
           <div key={type} className="flex items-center gap-2">
@@ -124,7 +123,6 @@ function DomainDistribution({ entries }: { entries: DeckEntry[] }) {
 
   return (
     <div>
-      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">Distribution par domaine</h5>
       <div className="space-y-1.5">
         {sorted.map(([domain, count]) => (
           <div key={domain} className="flex items-center gap-2">
@@ -149,7 +147,8 @@ function DomainDistribution({ entries }: { entries: DeckEntry[] }) {
 }
 
 export function DeckStats({ mainDeck }: DeckStatsProps) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [dist, setDist] = useState<"type" | "domain">("type");
 
   return (
     <div className="border-b border-hairline/50">
@@ -164,10 +163,35 @@ export function DeckStats({ mainDeck }: DeckStatsProps) {
         </div>
       </button>
       {open && (
-        <div className="px-3 pb-3 space-y-4">
+        <div className="px-3 pb-3 space-y-3">
           <EnergyCurve entries={mainDeck} />
-          <TypeDistribution entries={mainDeck} />
-          <DomainDistribution entries={mainDeck} />
+          {/* Type / Domaine : un seul à la fois pour alléger le panneau */}
+          <div>
+            <div className="mb-2 inline-flex rounded-lg bg-surface-raised/60 p-0.5">
+              {([
+                ["type", "Types"],
+                ["domain", "Domaines"],
+              ] as const).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setDist(key)}
+                  className={cn(
+                    "rounded-md px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider transition-colors",
+                    dist === key
+                      ? "bg-arcane/15 text-arcane"
+                      : "text-ink-muted hover:text-ink-secondary",
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            {dist === "type" ? (
+              <TypeDistribution entries={mainDeck} />
+            ) : (
+              <DomainDistribution entries={mainDeck} />
+            )}
+          </div>
         </div>
       )}
     </div>

@@ -1,0 +1,170 @@
+{
+  "id": "vancouver-fs-290-swainy",
+  "legend": "Garen, Might of Demacia",
+  "champion": "Garen, Commander",
+  "player": "Swainy",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 290,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Garen, Commander",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGS-013"
+    },
+    {
+      "name": "Corina Veraza",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-179"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Altar of Memories",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-169"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-212"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-168"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Repulse",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-166"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Tactical Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Guards!",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-154"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Recruit the Vanguard",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-015"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forgotten Monument",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Sivir, Ambitious",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-120"
+    },
+    {
+      "name": "Anivia, Primal",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-148"
+    }
+  ],
+  "record": "5-2-1",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-garen-might-of-demacia-171216",
+  "notes": ""
+}

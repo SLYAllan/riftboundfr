@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-64-lunasky",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Strategist",
+  "player": "lunasky",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 64,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-121"
+    },
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-121"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-194"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-078"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-063"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-094"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-070"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "Startipped Peak",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "record": "10-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-teemo-swift-scout-171152",
+  "notes": ""
+}

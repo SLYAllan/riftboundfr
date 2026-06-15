@@ -1,0 +1,218 @@
+{
+  "id": "changsha-ro-165-sve",
+  "legend": "Leblanc, Deceiver",
+  "champion": "LeBlanc, Fragmented",
+  "player": "信仰.sve.线代",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 165,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-216"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-152"
+    },
+    {
+      "name": "Karthus, Eternal",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-236"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-165"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-080"
+    },
+    {
+      "name": "Ruined Rex",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-067"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-212"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Smoke and Mirrors",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-083"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-063"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-200"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Dusk Rose Lab",
+    "Windswept Hillock"
+  ],
+  "sideDeck": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-220"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-152"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-116"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-zui-hou-de-qi-ji-185450",
+  "notes": ""
+}

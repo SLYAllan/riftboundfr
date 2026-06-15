@@ -1,0 +1,218 @@
+{
+  "id": "changsha-ro-341-se-s-lt",
+  "legend": "Yasuo, Unforgiven",
+  "champion": "Yasuo, Windrider",
+  "player": "鹿见桌游-seasalt",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 341,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Yasuo, Windrider",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-205"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-053"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-052"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-056"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-048"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-225"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-146"
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-060"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-052"
+    },
+    {
+      "name": "Sterak's Gage",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-056"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-046"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Rockfall Path",
+    "Targon's Peak",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Gust",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-056"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-146"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-147"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-bu-ru-bu-xiang-185629",
+  "notes": ""
+}

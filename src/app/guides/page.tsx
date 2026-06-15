@@ -2,7 +2,11 @@ import Link from "next/link";
 import { BookOpen, Layers, BookText, Shield, Monitor, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Guides", description: "Guides pour débuter et progresser au TCG Riftbound. En français." };
+export const metadata: Metadata = {
+  title: "Guides Riftbound — Débuter, deckbuilding, méta et règles",
+  description: "Tous les guides Riftbound en français : règles pour débuter, deckbuilding, les 6 domaines, méta et tier list, glossaire et comment jouer en ligne.",
+  alternates: { canonical: "/guides" },
+};
 
 const guides = [
   { href: "/guides/debuter", icon: BookOpen, title: "Guide du débutant", description: "Règles complètes : composition de deck, phases de tour, ressources, conditions de victoire et mots-clés." },

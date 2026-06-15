@@ -1,5 +1,9 @@
 # DECKBUILDING-RULES.md — Regles de construction de decks Riftbound
 
+> Mis a jour le 15 juin 2026 (v5). Ajouts : **S3 Changsha Regional Open** (640 j., 638 decklists, intégralité du field), **RQ Vancouver** (final standings, 118 listes) et **RQ Utrecht** (top 16). Unleashed → **6 906 decks classés**. Tier lists recalculées.
+> - **Deux légendes Master Yi** (à lire sur chaque deck, jamais déduites du set) : **Wuju Bladesman** — champion *Honed*, Body/Calm hold, la dominante (~10,8% Unleashed) — et **Wuju Master** — champion *Tempered*, Body/Calm, archétype de niche (~0,4%, présent à Changsha avec 18 listes). NB : le bloc « Master Yi, Wuju Master » plus bas (core Defy/Discipline/Zhonya's) décrit en réalité le **Bladesman** (étiquetage hérité v3).
+> - Vainqueurs : Changsha = **Irelia** (tempo gear) ; Utrecht = **Azir** (Squirtle, tokens equip) ; Vancouver = **Diana** (AlanZQ). Méta Unleashed le plus ouvert à ce jour (Utrecht : 8 légendes / 8 en Top 8).
+>
 > Mis a jour le 8 juin 2026 (v4). Base : **≈19 330 decks sur 89 tournois**. Ajout v4 : **S3 Tianjin Regional Open** (Unleashed, 640 joueurs, 638 decklists) → Unleashed **5105 classes**. Tier lists Unleashed/Globale recalculees. Tianjin confirme les cores existants (**Master Yi Wuju Bladesman vainqueur** — #1 du field, PAS « Wuju Master » ; Diana 2e) ; surprises : **Rek'sai 3e** (Fury/Order aggro tunneler, remonte tier C) et **Pyke 4e** (Chaos/Fury assassin, tier B). ⚠️ Correction v4 : ~395 decks « Wuju Master » reclassés en Wuju Bladesman (artefact de fallback set, infirmé par les images de légende).
 > Mis a jour le 31 mai 2026 (v3). Base : **18 652 decks sur 88 tournois**. Ajouts v3 : 25 S3 City Challenges (Unleashed) + Hangzhou RO + 21 anciennes CC Origins (+6298 decks). Repartition classes : Origins 6799 / Spiritforged 7294 / Unleashed 4501. Recalcule via scripts/analyze-meta.ts.
 >

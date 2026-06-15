@@ -1,0 +1,176 @@
+{
+  "id": "changsha-ro-512-dys",
+  "legend": "Vi, Piltover Enforcer",
+  "champion": "Vi, Hotheaded",
+  "player": "dys",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 512,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Vi, Hotheaded",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-007"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-167"
+    },
+    {
+      "name": "Jhin, Murderous Artist",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Rengar, Unseen",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-024"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-179"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-242"
+    },
+    {
+      "name": "Hextech Gauntlets",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-188"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-014"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Forge of the Fluft",
+    "Sunken Temple",
+    "The Candlelit Sanctum"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-014"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-v-185799",
+  "notes": ""
+}

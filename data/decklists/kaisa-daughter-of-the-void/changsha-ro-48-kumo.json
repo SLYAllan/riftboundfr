@@ -1,0 +1,164 @@
+{
+  "id": "changsha-ro-48-kumo",
+  "legend": "Kai'Sa, Daughter of the Void",
+  "champion": "Kai'Sa, Survivor",
+  "player": "KUMO",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 48,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Forecaster",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-065"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-007"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-009"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-023"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-024"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-076"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-077"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-114"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "The Candlelit Sanctum",
+    "Vilemaw's Lair",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Angle Shot",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "SFD-011"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-014"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-021"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lai-ba-shang-ba-185333",
+  "notes": ""
+}

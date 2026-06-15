@@ -1,0 +1,152 @@
+{
+  "id": "changsha-ro-89-tony",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Trophy Hunter",
+  "player": "Tony",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 89,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Determined Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-111"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-002"
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-112"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "Grim Apothecary",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-021"
+    },
+    {
+      "name": "Kinkou Initiate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-097"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-028"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Thrill of the Hunt",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-184"
+    }
+  ],
+  "runes": {
+    "Body": 8,
+    "Fury": 4
+  },
+  "battlefields": [
+    "Emperor's Dais",
+    "Star Spring",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-026"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-gou-185374",
+  "notes": ""
+}

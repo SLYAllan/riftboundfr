@@ -1,0 +1,176 @@
+{
+  "id": "vancouver-fs-135-casanova",
+  "legend": "Diana, Scorn of the Moon",
+  "champion": "Diana, Lunari",
+  "player": "Casanova",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 135,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Diana, Lunari",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-079"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-080"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-146"
+    },
+    {
+      "name": "Frigid Jewel",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-074"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-136"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Moonfall",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-198"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    }
+  ],
+  "runes": {
+    "Chaos": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Targon's Peak",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Moonfall",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-198"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-147"
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-diana-scorn-of-the-moon-171504",
+  "notes": ""
+}

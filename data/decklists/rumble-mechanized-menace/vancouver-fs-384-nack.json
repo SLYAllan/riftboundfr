@@ -1,0 +1,176 @@
+{
+  "id": "vancouver-fs-384-nack",
+  "legend": "Rumble, Mechanized Menace",
+  "champion": "Rumble, Hotheaded",
+  "player": "Nack",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 384,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "SFD-026"
+    },
+    {
+      "name": "Forecaster",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-065"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-007"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
+      "name": "Bubble Bot",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-062"
+    },
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-026"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-080"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-063"
+    },
+    {
+      "name": "Deadly Flourish",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-073"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Ravenbloom Conservatory",
+    "Star Spring",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-001"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Deadly Flourish",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-073"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-rumble-mechanized-menace-171177",
+  "notes": ""
+}

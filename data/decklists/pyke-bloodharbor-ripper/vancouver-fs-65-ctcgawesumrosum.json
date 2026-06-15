@@ -1,0 +1,170 @@
+{
+  "id": "vancouver-fs-65-ctcgawesumrosum",
+  "legend": "Pyke, Bloodharbor Ripper",
+  "champion": "Pyke, Dockside Butcher",
+  "player": "CTCGAwesumRosum",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 65,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-028"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-185"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-130"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Ripper's Bay",
+    "The Arena's Greatest",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-135"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-026"
+    }
+  ],
+  "record": "10-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-pyke-bloodharbor-ripper-170996",
+  "notes": ""
+}

@@ -1,0 +1,212 @@
+{
+  "id": "changsha-ro-639-185926",
+  "legend": "Pyke, Bloodharbor Ripper",
+  "champion": "Pyke, Dockside Butcher",
+  "player": "祈光",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 639,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-028"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-185"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-130"
+    },
+    {
+      "name": "Bewitching Spirit",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-121"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Sharkling",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-006"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-192"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-181"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-186"
+    },
+    {
+      "name": "Acceptable Losses",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-179"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Detonate",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-005"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-136"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-023"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-201"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Death from Below",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-186"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-147"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forbidding Waste",
+    "Ripper's Bay"
+  ],
+  "sideDeck": [
+    {
+      "name": "Acceptable Losses",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-179"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-201"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-025"
+    },
+    {
+      "name": "Zaunite Bouncer",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-188"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-147"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-jian-sheng-da-ren-de-wan-wu-185926",
+  "notes": ""
+}

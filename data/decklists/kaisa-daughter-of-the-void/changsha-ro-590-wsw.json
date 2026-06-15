@@ -1,0 +1,200 @@
+{
+  "id": "changsha-ro-590-wsw",
+  "legend": "Kai'Sa, Daughter of the Void",
+  "champion": "Kai'Sa, Survivor",
+  "player": "wsw.三小",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 590,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Sharkling",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-006"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-026"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Garbage Grabber",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-099"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-009"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Get Excited!",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-008"
+    },
+    {
+      "name": "Premonition",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-087"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-024"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-077"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Rockfall Path",
+    "The Arena's Greatest",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-023"
+    },
+    {
+      "name": "Smite",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-007"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Icathian Rain",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-248"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-de-yu-gui-lai-185876",
+  "notes": ""
+}

@@ -1,0 +1,128 @@
+{
+  "id": "changsha-ro-50-arbd",
+  "legend": "Diana, Scorn of the Moon",
+  "champion": "Diana, No Longer Human",
+  "player": "ARBD-加州旅馆",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 50,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Diana, No Longer Human",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Diana, Lunari",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-079"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-176"
+    },
+    {
+      "name": "Diana, No Longer Human",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Frigid Touch",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-066"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
+    },
+    {
+      "name": "Crescent Strike",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-072"
+    },
+    {
+      "name": "Moonfall",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-198"
+    },
+    {
+      "name": "Deadly Flourish",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-073"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Forgotten Library",
+    "Targon's Peak",
+    "The Academy"
+  ],
+  "sideDeck": [
+    {
+      "name": "Seal of Discord",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-204"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-120"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-zhong-cun-san-bao-tian-shu-185335",
+  "notes": ""
+}

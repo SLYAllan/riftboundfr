@@ -1,0 +1,224 @@
+{
+  "id": "changsha-ro-440-185727",
+  "legend": "Vex, Gloomist",
+  "champion": "Vex, Apathetic",
+  "player": "隔壁家叔叔姓王",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 440,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
+    },
+    {
+      "name": "Mutated Mouser",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-036"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-053"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-032"
+    },
+    {
+      "name": "Nami, Headstrong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-052"
+    },
+    {
+      "name": "Trevor Snoozebottom",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-048"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-225"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-146"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-150"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "Block",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-057"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-043"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-136"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "Fortified Position",
+    "Startipped Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "En Garde",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-046"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-032"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-139"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-192"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-147"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-060"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ou-hao-chen-185727",
+  "notes": ""
+}

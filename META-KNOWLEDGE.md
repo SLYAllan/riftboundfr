@@ -412,6 +412,30 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - **Vex = piège volume confirmé** : 28 decks (4,1%), meilleur résultat 10e, aucun Top 8. Gros pick rate, conversion nulle.
 - **Données complètes** : 638 decklists JSON dans `data/decklists/`, résumé dans `data/tournaments/s3-tianjin-ro-11863.json`. Article best-of : `/articles/best-of-tianjin-ro`.
 
+### Juin 2026 — S3 Changsha Regional Open (14 juin 2026)
+- **640 joueurs**, **638 decklists** scrapées (intégralité du field) et analysées. Méta le plus ouvert vu en Chine.
+- **Top légendes par picks** : Master Yi Wuju Bladesman (74), Irelia (55), Diana (53), LeBlanc (35), Kai'Sa (21), Azir (19), Sivir (19), Pyke (19), **Master Yi Wuju Master (18)**, Kha'Zix (18), Ahri (18), Viktor (17).
+- **Deux Master Yi joués** : Wuju Bladesman (74, champion Honed, Body/Calm hold) et Wuju Master (18, champion Tempered, Body/Calm) — la variante Wuju Master représente ~3% du field à Changsha.
+- **Vainqueur : Irelia, Blade Dancer** (咕咕嘎嘎.阿门.Gambit, Calme/Chaos) — tempo gear. Diana 2e (Chaos/Esprit).
+- **Données** : 638 JSON, `data/tournaments/s3-changsha-regional-open-12102.json`. Page : `/tournois/s3-changsha-regional-open-2026-06-14`. Best-of : `/articles/best-of-changsha-ro` (41 légendes).
+
+### Mai 2026 — RQ Vancouver (final standings, 30 mai 2026)
+- **1 833 joueurs**, **118 decklists publiées** au classement final (en plus des best-of). Set Unleashed.
+- **Top 8** : 1er AlanZQ Diana (premier double champion RQ), 2e SamDSherman Rengar, 3e HousesAreBig Master Yi Bladesman, 4e Dhawally Diana, 5e Rocklho Azir, 6e Arito Irelia, 7e SwagYOLO Sivir (seul Aurora), 8e BaoBao Irelia. 6 légendes / 8 joueurs.
+- Confirme Diana T1, le gear hate + tech Vex comme réponses anti-Aurora/anti-Fury. Page : `/tournois/rq-vancouver-2026`.
+
+### Juin 2026 — RQ Utrecht (13-14 juin 2026, Europe)
+- **1 953 joueurs**, top 16 récupéré. **Top 8 = 8 légendes différentes** (méta le plus ouvert à ce jour) : Azir, Viktor, Sett, Diana, Rek'Sai, Darius, Master Yi Bladesman, Annie.
+- **Vainqueur : Squirtle (Azir, Emperor of the Sands)** — capitaine de Micelion, 2-1 en finale sur **Rednaxell (Viktor)**. **2e double champion RQ de l'histoire** (après AlanZQ), back-to-back Lille→Utrecht. Plus longue série d'invincibilité du jeu.
+- Finale = miroir de tokens (Sand Soldiers vs recruits). **Pickpocket** (side) = tech clé anti-équipement Azir. Dwali/Diwali (Diana, vainqueur Houston, top 4 Vancouver) tombe en demie sur un Sprite Fountain top-deck. Micelion : 3 en Top 8.
+- Article Top 8 : `data/articles-drafts/recap-utrecht-rq-top8.md`. Analyse VOD : `data/videos/utrecht-day1-analysis.json`. Page : `/tournois/rq-utrecht-2026`.
+
+### Synthèse Unleashed mise à jour (15 juin 2026, 6 906 decks classés)
+- Tier S : Master Yi Bladesman (10,8%), Irelia (8,7%), Diana (6,3%), LeBlanc (~6,3%).
+- Tier A : Fiora, Draven, Lillia, Azir (vainqueur Utrecht), Kai'Sa, Sivir, Sett, Rengar (finaliste Vancouver), Annie (meilleure conversion).
+- Tier B : Vex (piège volume), Viktor (finaliste Utrecht, faible conversion), Kha'Zix, Ornn, Pyke, Ezreal.
+- Master Yi Wuju Master = tier D, archétype de niche (0,4%, 28 decks classés, 1 top 8).
+
 ## 6. Résultats de tournois
 
 ### Chronologie complète des Regional Qualifiers

@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-344-silva",
+  "legend": "Fiora, Grand Duelist",
+  "champion": "Fiora, Victorious",
+  "player": "Silva",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 344,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-232"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-167"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-232"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Warmog's Armor",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-108"
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-158"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-206"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Monastery of Hirana",
+    "Sunken Temple",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Repulse",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Fiora, Peerless",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-fiora-grand-duelist-171734",
+  "notes": ""
+}

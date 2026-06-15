@@ -1,0 +1,218 @@
+{
+  "id": "changsha-ro-92-185377",
+  "legend": "Kai'Sa, Daughter of the Void",
+  "champion": "Kai'Sa, Survivor",
+  "player": "Âǐ.▓▓",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 92,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-087"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-026"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-109"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-022"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-009"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Lotus Trap",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-013"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-114"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Treasure Hoard",
+    "Void Gate",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-022"
+    },
+    {
+      "name": "Lotus Trap",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-013"
+    },
+    {
+      "name": "Smite",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-007"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-077"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-dave-wei-si-185377",
+  "notes": ""
+}

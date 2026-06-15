@@ -1,0 +1,182 @@
+{
+  "id": "vancouver-fs-127-dinobravo",
+  "legend": "Darius, Hand of Noxus",
+  "champion": "Darius, Trifarian",
+  "player": "Dinobravo",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 127,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-002"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-167"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-028"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-029"
+    },
+    {
+      "name": "Undying Legion",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-025"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-022"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-029"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-166"
+    },
+    {
+      "name": "Noxian Guillotine",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-254"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Seat of Power",
+    "Sunken Temple",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Noxian Guillotine",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-254"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": null
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-darius-hand-of-noxus-171428",
+  "notes": ""
+}

@@ -1,0 +1,152 @@
+{
+  "id": "changsha-ro-479-sololevelling",
+  "legend": "Master Yi, Wuju Master",
+  "champion": "Master Yi, Tempered",
+  "player": "SoloLevelling",
+  "tournament": "S3 Changsha Regional Open (2026-06-14)",
+  "date": "2026-06-14",
+  "placement": 479,
+  "playerCount": 640,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Master Yi, Tempered",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "UNL-113"
+    },
+    {
+      "name": "Gemhand Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-094"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-053"
+    },
+    {
+      "name": "Wuju Apprentice",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-040"
+    },
+    {
+      "name": "Herald of Spring",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-034"
+    },
+    {
+      "name": "Voracious Gromp",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-100"
+    },
+    {
+      "name": "Master Yi, Unstoppable",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-059"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Hunter's Machete",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "UNL-096"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-043"
+    },
+    {
+      "name": "Skyward Strike",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-038"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
+    },
+    {
+      "name": "Concentrate",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-091"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Calm": 5
+  },
+  "battlefields": [
+    "Gardens of Becoming",
+    "Reckoner's Arena",
+    "Targon's Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-192"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "SFD-032"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-sololevel-185766",
+  "notes": ""
+}

@@ -1,0 +1,158 @@
+{
+  "id": "vancouver-fs-12-ricemaster",
+  "legend": "Fiora, Grand Duelist",
+  "champion": "Fiora, Worthy",
+  "player": "Ricemaster",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 12,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Fiora, Victorious",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-232"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "Rift Herald",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-179"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Divining Shells",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-161"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-095"
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-158"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-095"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-206"
+    }
+  ],
+  "runes": {
+    "Body": 8,
+    "Order": 4
+  },
+  "battlefields": [
+    "Amateur Recital",
+    "Aspirant's Climb",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Repulse",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-234"
+    }
+  ],
+  "record": "11-2-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-fiora-grand-duelist-171018",
+  "notes": ""
+}

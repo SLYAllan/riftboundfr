@@ -1,0 +1,170 @@
+{
+  "id": "vancouver-fs-148-kiiro",
+  "legend": "Yasuo, Unforgiven",
+  "champion": "Yasuo, Remorseful",
+  "player": "Kiiro",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 148,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Yasuo, Remorseful",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": null
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-053"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-130"
+    },
+    {
+      "name": "Fizz, Trickster",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-048"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-060"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-052"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-045"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-046"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Star Spring",
+    "Targon's Peak",
+    "Veiled Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGS-011"
+    },
+    {
+      "name": "Isolate",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-124"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-056"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-225"
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-yasuo-unforgiven-171677",
+  "notes": ""
+}

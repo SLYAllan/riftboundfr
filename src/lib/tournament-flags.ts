@@ -246,6 +246,42 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     set: "Unleashed",
     format: "Conquest",
   },
+  "S3 Changsha Regional Open (2026-06-14)": {
+    name: "S3 Changsha Regional Open",
+    shortName: "Changsha RO S3",
+    countryCode: "CN",
+    city: "Changsha",
+    location: "Changsha, Chine",
+    playerCount: 640,
+    type: "regional",
+    date: "2026-06-14",
+    set: "Unleashed",
+    format: "Conquest",
+  },
+  "RQ Utrecht 2026": {
+    name: "Utrecht Regional Qualifier 2026",
+    shortName: "Utrecht RQ",
+    countryCode: "NL",
+    city: "Utrecht",
+    location: "Utrecht, Pays-Bas",
+    playerCount: 1953,
+    type: "regional",
+    date: "2026-06-13",
+    set: "Unleashed",
+    format: "Conquest",
+  },
+  "RQ Vancouver 2026": {
+    name: "Vancouver Regional Qualifier 2026",
+    shortName: "Vancouver RQ",
+    countryCode: "CA",
+    city: "Vancouver",
+    location: "Vancouver, Canada",
+    playerCount: 1833,
+    type: "regional",
+    date: "2026-05-30",
+    set: "Unleashed",
+    format: "Conquest",
+  },
 
   // ── 25 tournois CN Spiritforged scrapés le 31 mai (clé = tournamentContext exact, nom unique avec date) ──
   "S2 Regional Open Chengdu (2026-01-25)": { name: "S2 Regional Open Chengdu", shortName: "Chengdu RO S2", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 512, type: "regional", date: "2026-01-25", set: "Spiritforged", format: "Conquest" },
@@ -343,13 +379,11 @@ export function getTournamentInfo(tournamentContext: string): TournamentInfo | n
   return null;
 }
 
-// Tier des tournois : S = Regional Open/Qualifier européens et chinois (les plus prestigieux),
-// A = le reste (Regional US/AU, City Challenges, etc.)
-const S_TIER_COUNTRIES = new Set(["CN", "FR", "DE", "GB", "ES", "IT", "NL", "BE", "CH", "PL", "SE", "PT"]);
-
+// Tier des tournois : S = tous les Regional (Open + Qualifier, toutes régions),
+// A = le reste (City Challenges, online, etc.)
 export function getTournamentTier(tournamentContext: string): "S" | "A" {
   const info = getTournamentInfo(tournamentContext);
-  if (info && info.type === "regional" && S_TIER_COUNTRIES.has(info.countryCode)) return "S";
+  if (info && info.type === "regional") return "S";
   return "A";
 }
 

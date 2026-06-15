@@ -1,0 +1,53 @@
+{
+  "videoId": "utrecht-rq-day1",
+  "title": "Riftbound Regional Qualifier Utrecht - Day 1 (Top 8 Playoffs)",
+  "source": "local VOD (E:/ [6-14-26] Riftbound - Riftbound Regional Qualifier Utrecht - Day 1.mp4)",
+  "durationSec": 18708,
+  "language": "en",
+  "type": "tournament_recap",
+  "set": "Unleashed",
+  "format": "13 rounds Swiss -> Top 8 BO3 single elimination",
+  "transcriptModel": "openai-whisper medium (CUDA RTX 3080)",
+  "champion": { "player": "Squirtle", "team": "Mycelium (MICE)", "legend": "Azir, Emperor of the Sands", "note": "Defending European RQ champion (RQ Lille); 2nd-ever two-time RQ champion after AlanZQ; longest competitive win streak in Riftbound (casters cited ~28 series undefeated, 38-2-4 game record across 3 RQs)" },
+  "runnerUp": { "player": "Rednaxell", "legend": "Viktor, Herald of the Arcane", "note": "First RQ ever, solo from Athens/Greece, playing Viktor since Origins; underdog vs team captain Squirtle" },
+  "top8Swiss": [
+    { "seed": 1, "player": "Squirtle", "legend": "Azir, Emperor of the Sands", "record": "15-0-1" },
+    { "seed": 2, "player": "Rednaxell", "legend": "Viktor, Herald of the Arcane", "record": "13-2-1" },
+    { "seed": 3, "player": "Collin K", "team": "Challenger TCG", "legend": "Sett, The Boss", "record": "12-2-1" },
+    { "seed": 4, "player": "Dwali", "alias": "Diwali / Dhawally", "legend": "Diana, Scorn of the Moon", "record": "12-2-1", "note": "RQ Houston winner; also Top 4 at RQ Vancouver" },
+    { "seed": 5, "player": "Ramekiano", "team": "Mycelium (MICE)", "legend": "Rek'Sai, Void Burrower", "record": "11-1-2" },
+    { "seed": 6, "player": "DiamondHat", "team": "Mycelium (MICE)", "legend": "Darius, Hand of Noxus", "record": "11-2-1" },
+    { "seed": 7, "player": "Bakura", "legend": "Master Yi, Wuju Bladesman", "record": "11-2-1" },
+    { "seed": 8, "player": "Prismaticism", "legend": "Annie, Dark Child", "record": "11-3-0", "note": "Snuck into top 8 on tiebreakers (10-2 swing)" }
+  ],
+  "bracket": {
+    "quarterfinals": [
+      "Squirtle (Azir) def. Prismaticism (Annie)",
+      "Collin K (Sett) def. Bakura (Master Yi)",
+      "Rednaxell (Viktor) def. Ramekiano (Rek'Sai)",
+      "Dwali (Diana) def. DiamondHat (Darius)"
+    ],
+    "semifinals": [
+      "Squirtle (Azir) def. Collin K (Sett)",
+      "Rednaxell (Viktor) def. Dwali (Diana) 2-1"
+    ],
+    "final": "Squirtle (Azir) def. Rednaxell (Viktor) 2-1"
+  },
+  "finalPlacements": {
+    "1st": "Squirtle (Azir)",
+    "2nd": "Rednaxell (Viktor)",
+    "top4": ["Collin K (Sett)", "Dwali (Diana)"],
+    "top8": ["Prismaticism (Annie)", "Bakura (Master Yi)", "Ramekiano (Rek'Sai)", "DiamondHat (Darius)"]
+  },
+  "keyInsights": [
+    "Most diverse Top 8 to date: 8 different legends across 8 players (Azir, Viktor, Sett, Diana, Rek'Sai, Darius, Master Yi, Annie) - even more open than Vancouver (6/8).",
+    "The final was a token mirror: Azir Sand Soldiers (equipment cascade + legend ability) vs Viktor Recruits (Victor Leader death-readies, Sprite Fountain swarm).",
+    "Pickpocket out of Rednaxell's sideboard was the key tech vs Azir, stripping the 1-cost gears (BF Sword, Soul Sword, Doran's Shield, Eye of the Herald) that fuel Azir's engine.",
+    "Squirtle wins back-to-back European RQs (Lille -> Utrecht), becomes the 2nd two-time RQ champion right after AlanZQ at Vancouver, extending the longest series win streak in the game.",
+    "Underdog run: Rednaxell, first RQ, solo from Greece on a Viktor he's played since Origins, beat Rek'Sai then a near-perfect defensive Diana from Dwali (lost to a Sprite Fountain topdeck on the conquer-draw) to reach the final.",
+    "Team Mycelium (MICE) put 3 players in the Top 8 (Squirtle, Ramekiano, DiamondHat).",
+    "Casters' meta read: 'Order is the new Chaos' - Order legends (Azir, Sett) were strong; token strategies dominated the late bracket."
+  ],
+  "cardsHighlighted": ["Sand Soldier", "Azir legend ability", "Arise", "BF Sword", "Doran's Shield", "Eye of the Herald", "Death Grip", "Defy", "Victor Leader", "Sprite Fountain", "Cull the Weak", "Bellows Breath", "Stupefy", "Hidden Blade", "Salvage", "Pickpocket", "Chakram Dancer", "Imperial Decree", "Moonfall", "Stacked Deck", "Vex Apathetic"],
+  "transcriptPath": "data/videos/utrecht-day1.txt"
+}

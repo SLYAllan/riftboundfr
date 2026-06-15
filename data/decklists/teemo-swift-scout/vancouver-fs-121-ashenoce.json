@@ -1,0 +1,176 @@
+{
+  "id": "vancouver-fs-121-ashenoce",
+  "legend": "Teemo, Swift Scout",
+  "champion": "Teemo, Strategist",
+  "player": "AshenOCE",
+  "tournament": "RQ Vancouver 2026",
+  "date": "2026-05-30",
+  "placement": 121,
+  "playerCount": 1833,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 1,
+      "type": "Champion",
+      "riftboundId": "OGN-121"
+    },
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
+    },
+    {
+      "name": "Teemo, Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Teemo, Strategist",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-121"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Windsinger",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-138"
+    },
+    {
+      "name": "Sneaky Deckhand",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-176"
+    },
+    {
+      "name": "Nocturne, Horrifying",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-194"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-078"
+    },
+    {
+      "name": "Existential Dread",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-134"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Bone Skewer",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-139"
+    },
+    {
+      "name": "Guerilla Warfare",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-264"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-094"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Startipped Peak",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-172"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-139"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-147"
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-teemo-swift-scout-171455",
+  "notes": ""
+}
