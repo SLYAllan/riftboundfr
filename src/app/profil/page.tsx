@@ -201,8 +201,9 @@ export default async function ProfilPage() {
               Membre depuis {formatDate(user.createdAt)}
             </span>
           </div>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap items-center gap-3">
             <ProfileActions userId={user.id} username={user.username} riotGameName={user.riotGameName} riotTagLine={user.riotTagLine} />
+            <a href="/profil/overlay" className="inline-flex items-center gap-2 rounded-lg border border-hairline px-4 py-2 text-sm font-medium hover:border-hairline-accent">🎥 Overlay de stream</a>
           </div>
         </div>
       </div>
