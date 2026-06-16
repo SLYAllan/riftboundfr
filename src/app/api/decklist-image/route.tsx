@@ -515,8 +515,10 @@ export async function GET(req: NextRequest) {
   const legendCards = cards.filter(
     (c) => c.section === "legend" && c.type === "Legend",
   );
+  // Le champion peut arriver en section "champion" (code deck d'article) ou
+  // "legend" non-Légende (deck en base) → on reconnaît les deux, comme partout.
   const championCards = cards.filter(
-    (c) => c.section === "legend" && c.type !== "Legend",
+    (c) => (c.section as string) === "champion" || (c.section === "legend" && c.type !== "Legend"),
   );
   const mainCards = cards
     .filter((c) => c.section === "main")

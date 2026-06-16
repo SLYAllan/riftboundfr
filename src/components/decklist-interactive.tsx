@@ -41,6 +41,13 @@ const sectionLabels: Record<string, string> = {
 
 const sectionOrder: string[] = ["legend", "champion", "main", "rune", "battlefield", "side"];
 
+// Un champion arrive soit en section "champion" (code deck d'article, en-tête
+// « == Champion == »), soit en section "legend" avec un type non-Légende (deck en
+// base de données). On l'identifie de la même façon partout pour un affichage
+// cohérent : le champion s'affiche TOUJOURS dans la section « Champion ».
+const isChampionCard = (c: DecklistCard): boolean =>
+  (c.section as string) === "champion" || (c.section === "legend" && c.type !== "Legend");
+
 const RARITY_COLORS: Record<string, string> = {
   Common: "bg-zinc-500/20 text-zinc-400",
   Uncommon: "bg-green-500/20 text-green-400",
@@ -145,7 +152,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
   const exportEntries = cards.map((c) => ({
     quantity: c.quantity,
     name: c.name,
-    section: (c.section === "legend" && c.type !== "Legend" ? "champion" : c.section) as "legend" | "champion" | "main" | "rune" | "battlefield" | "side",
+    section: (isChampionCard(c) ? "champion" : c.section) as "legend" | "champion" | "main" | "rune" | "battlefield" | "side",
   }));
 
   const textCode = entriesToDeckCode(exportEntries);
@@ -167,7 +174,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
     setExporting(true);
     try {
       const legend = cards.find((c) => c.section === "legend" && c.type === "Legend");
-      const champion = cards.find((c) => c.section === "legend" && c.type !== "Legend");
+      const champion = cards.find(isChampionCard);
       const main = cards.filter((c) => c.section === "main");
       const rune = cards.filter((c) => c.section === "rune");
       const battlefield = cards.filter((c) => c.section === "battlefield");
@@ -309,7 +316,9 @@ export function DecklistInteractive({
 
   const grouped = cards.reduce(
     (acc, c) => {
-      const s = c.section || "main";
+      // Champion toujours regroupé sous « Champion », qu'il vienne en section
+      // "champion" ou "legend" (non-Légende) → affichage cohérent partout.
+      const s = isChampionCard(c) ? "champion" : (c.section || "main");
       if (!acc[s]) acc[s] = [];
       acc[s].push(c);
       return acc;
@@ -323,7 +332,7 @@ export function DecklistInteractive({
     const exportEntries = cards.map((c) => ({
       quantity: c.quantity,
       name: c.name,
-      section: (c.section === "legend" && c.type !== "Legend" ? "champion" : c.section) as "legend" | "champion" | "main" | "rune" | "battlefield" | "side",
+      section: (isChampionCard(c) ? "champion" : c.section) as "legend" | "champion" | "main" | "rune" | "battlefield" | "side",
     }));
     const textCode = entriesToDeckCode(exportEntries);
     await navigator.clipboard.writeText(textCode);
