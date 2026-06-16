@@ -220,6 +220,24 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
       }
     }
 
+    // Champion : même logique que la légende (lookup par nom), comme sur /decks.
+    const hasChampion = deckCards.some((c) => c.section === "legend" && c.type !== "Legend");
+    if (!hasChampion && block.championName) {
+      const dashChamp = block.championName.replace(", ", " - ");
+      const champCard = await prisma.card.findFirst({
+        where: {
+          OR: [
+            { name: { equals: block.championName, mode: "insensitive" } },
+            { name: { equals: dashChamp, mode: "insensitive" } },
+            { cleanName: { equals: block.championName, mode: "insensitive" } },
+          ],
+        },
+      });
+      if (champCard && !deckCards.some((c) => c.cardId === champCard.id)) {
+        deckCards.push(toListCard(champCard, 1, "legend" as DeckSection));
+      }
+    }
+
     resolved[block.id] = deckCards;
 
     const legendEntry = deckCards.find((c) => c.section === "legend" && c.type === "Legend");

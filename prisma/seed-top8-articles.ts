@@ -632,6 +632,7 @@ async function createTop8Article(
     players: number;
     set: string;
     intro: string;
+    coverImage: string;
   },
 ) {
   const existing = await prisma.article.findUnique({ where: { slug } });
@@ -663,6 +664,7 @@ async function createTop8Article(
       type: "decklist",
       id: `deck-${i}`,
       deckCode: d.deckCode,
+      championName: d.champion,
       deckName: `${d.legend} — Top 8 ${tournament.name.includes("Atlanta") ? "Atlanta" : "Sydney"}`,
       legendName: d.legend,
       playerName: d.player,
@@ -674,6 +676,7 @@ async function createTop8Article(
     data: {
       title,
       slug,
+      coverImage: tournament.coverImage,
       excerpt,
       category: "tournoi",
       tags: [
@@ -686,7 +689,7 @@ async function createTop8Article(
       blocks: blocks as any,
       published: true,
       featured: false,
-      publishedAt: new Date(),
+      publishedAt: new Date(tournament.date),
       tournamentName: tournament.name,
       tournamentDate: new Date(tournament.date),
       tournamentLocation: tournament.location,
@@ -710,6 +713,7 @@ async function main() {
       location: "Atlanta, USA",
       players: 1500,
       set: "Spiritforged",
+      coverImage: "/img/articles/atlanta.webp",
       intro: `Le **Top 8 du Regional Qualifier d'Atlanta** — le dernier Regional de la saison Spiritforged, ~1500 joueurs.
 
 **Annie** remporte le titre avec un record de **14-1-1**, sa 2e victoire en Regional. **Draven** finaliste (13-1-2) confirme sa domination — légende la plus jouée à chaque phase du tournoi. Le duo Fury/Chaos monopolise le Top 2.
@@ -734,6 +738,7 @@ Surprise : **Sett** en Top 8 malgré un win rate global de seulement 44%, prouva
       location: "Sydney, Australie",
       players: 1405,
       set: "Unleashed",
+      coverImage: "/img/articles/sydney-2.webp",
       intro: `Le **Top 8 du Regional Qualifier de Sydney** — 1405 joueurs, format Unleashed.
 
 **Irelia** remporte le titre, confirmant la domination du tempo Calm/Chaos dans ce format. La méta Sydney se distingue par une grande diversité : 6 légendes différentes en Top 8.

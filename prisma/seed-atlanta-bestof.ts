@@ -1234,6 +1234,7 @@ Voici les **28 meilleures decklists** — une par légende, au meilleur classeme
       type: "decklist",
       id: `deck-${i}`,
       deckCode: d.deckCode,
+      championName: d.champion,
       deckName: `${d.legend} — Best of Atlanta`,
       legendName: d.legend,
       playerName: d.player,
@@ -1245,6 +1246,7 @@ Voici les **28 meilleures decklists** — une par légende, au meilleur classeme
     data: {
       title: "Best of Atlanta — Toutes les légendes",
       slug: "best-of-atlanta-rq-2026",
+      coverImage: "/img/articles/atlanta.webp",
       excerpt:
         "Les meilleures decklists pour chaque légende au Regional Qualifier d'Atlanta 2026 (~1500 joueurs). Dernier Regional Spiritforged.",
       category: "tournoi",

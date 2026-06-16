@@ -1583,6 +1583,7 @@ Pour chaque legende, nous avons selectionne la liste qui a obtenu le meilleur cl
       type: "decklist",
       id: `deck-${i}`,
       deckCode: d.deckCode,
+      championName: d.champion,
       deckName: `${d.legend} — Best of Sydney`,
       legendName: d.legend,
       playerName: d.player,
@@ -1595,7 +1596,7 @@ Pour chaque legende, nous avons selectionne la liste qui a obtenu le meilleur cl
     data: {
       title: "Best of Sydney — Toutes les legendes",
       slug: "best-of-sydney-rq-2026",
-      coverImage: "/img/articles/sydney-1.webp",
+      coverImage: "/img/articles/sydney-2.webp",
       excerpt:
         "Les meilleures decklists pour chaque legende au Regional Qualifier de Sydney 2026 (1405 joueurs).",
       category: "tournoi",

@@ -94,6 +94,7 @@ export type ArticleBlock =
       deckCode: string;
       deckName: string;
       legendName: string;
+      championName?: string;
       playerName?: string;
       context?: string;
       deckId?: string;

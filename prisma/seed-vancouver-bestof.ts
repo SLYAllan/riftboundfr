@@ -1737,6 +1737,7 @@ Voici le meilleur deck de chaque légende jouée à Vancouver : pour chaque lég
       type: "decklist",
       id: `deck-${i}`,
       deckCode: d.deckCode,
+      championName: d.champion,
       deckName: `${d.legend} — Best of Vancouver`,
       legendName: d.legend,
       playerName: d.player,
