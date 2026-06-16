@@ -1,6 +1,6 @@
 {
   "id": "changsha-ro-135-185420",
-  "legend": "Kai'Sa, Daughter of the Void",
+  "legend": "Kai'sa, Daughter of the Void",
   "champion": "Kai'Sa, Survivor",
   "player": "硕鼠",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
@@ -21,22 +21,34 @@
       "riftboundId": "SFD-069"
     },
     {
-      "name": "Watchful Sentry",
+      "name": "Ravenbloom Student",
       "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-096"
     },
     {
       "name": "Lecturing Yordle",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-087"
     },
     {
-      "name": "Noxus Hopeful",
-      "quantity": 3,
+      "name": "Darius, Trifarian",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-012"
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-026"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -45,22 +57,10 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Chemtech Cask",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "SFD-063"
-    },
-    {
-      "name": "Bellows Breath",
+      "name": "Blood Rush",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-080"
-    },
-    {
-      "name": "Detonate",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "SFD-005"
+      "riftboundId": "SFD-003"
     },
     {
       "name": "Hextech Ray",
@@ -70,7 +70,7 @@
     },
     {
       "name": "Retreat",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-104"
     },
@@ -87,16 +87,34 @@
       "riftboundId": "OGN-029"
     },
     {
-      "name": "Smoke Screen",
-      "quantity": 3,
+      "name": "Piercing Light",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-093"
+      "riftboundId": "SFD-023"
     },
     {
-      "name": "Void Seeker",
+      "name": "Sprite Burst",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-024"
+      "riftboundId": "UNL-069"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
     },
     {
       "name": "Time Warp",
@@ -106,12 +124,12 @@
     }
   ],
   "runes": {
-    "Fury": 6,
-    "Mind": 6
+    "Fury": 7,
+    "Mind": 5
   },
   "battlefields": [
     "Frozen Fortress",
-    "Startipped Peak",
+    "Vilemaw's Lair",
     "Void Gate"
   ],
   "sideDeck": [
@@ -122,8 +140,20 @@
       "riftboundId": "UNL-007"
     },
     {
+      "name": "Assembly Rig",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-019"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-077"
+    },
+    {
       "name": "Thermo Beam",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-022"
     },
@@ -135,7 +165,7 @@
     },
     {
       "name": "Unchecked Power",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-123"
     }

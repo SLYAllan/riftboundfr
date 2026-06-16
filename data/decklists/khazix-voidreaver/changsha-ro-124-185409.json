@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-124-185409",
-  "legend": "Kha'Zix, Voidreaver",
-  "champion": "Kha'Zix, Mutating Horror",
+  "legend": "Khazix, Voidreaver",
+  "champion": "Kha'Zix, Evolving Hunter",
   "player": "金色之暗",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,76 +15,70 @@
   ],
   "mainDeck": [
     {
-      "name": "Demacian Diplomat",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-092"
-    },
-    {
-      "name": "Irresistible Faefolk",
+      "name": "Determined Sentry",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-112"
+      "riftboundId": "UNL-111"
     },
     {
-      "name": "Traveling Merchant",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-185"
-    },
-    {
-      "name": "First Mate",
+      "name": "Nilah, Joyful Ascetic",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-132"
+      "riftboundId": "UNL-115"
     },
     {
       "name": "Akshan, Mischievous",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-109"
     },
     {
-      "name": "Qiyana, Victorious",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-155"
-    },
-    {
-      "name": "Vex, Apathetic",
-      "quantity": 3,
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
+      "name": "Yone, Blademaster",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-120"
+      "riftboundId": "SFD-116"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-105"
     },
     {
-      "name": "Edge of Night",
-      "quantity": 2,
+      "name": "Blood Rose",
+      "quantity": 3,
       "type": "Gear",
-      "riftboundId": "SFD-139"
+      "riftboundId": "UNL-109"
+    },
+    {
+      "name": "Scryer's Bloom",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-136"
+    },
+    {
+      "name": "Boneshiver",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-118"
     },
     {
       "name": "Punch First",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-097"
     },
     {
-      "name": "Sabotage",
+      "name": "Repulse",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-156"
+      "riftboundId": "UNL-106"
     },
     {
       "name": "Stacked Deck",
@@ -93,22 +87,22 @@
       "riftboundId": "OGN-183"
     },
     {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
       "name": "Grim Resolve",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-095"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Ride the Wind",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-173"
     },
     {
       "name": "Void Assault",
@@ -122,40 +116,46 @@
     "Chaos": 5
   },
   "battlefields": [
-    "Forbidding Waste",
     "Monastery of Hirana",
-    "Star Spring"
+    "The Candlelit Sanctum",
+    "Treasure Hoard"
   ],
   "sideDeck": [
     {
-      "name": "Repulse",
+      "name": "Existential Dread",
       "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-134"
+    },
+    {
+      "name": "Repulse",
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "UNL-106"
     },
     {
-      "name": "Sabotage",
+      "name": "Unyielding Spirit",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-156"
+      "riftboundId": "OGN-145"
     },
     {
-      "name": "Switcheroo",
+      "name": "Abandon",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-145"
-    },
-    {
-      "name": "Star-Crossed",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-128"
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Akshan, Mischievous",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Yone, Blademaster",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-116"
     },
     {
       "name": "Ruin Runner",

@@ -15,46 +15,52 @@
   ],
   "mainDeck": [
     {
-      "name": "Blastcone Fae",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-097"
-    },
-    {
       "name": "Mutated Mouser",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-036"
     },
     {
-      "name": "Ravenbloom Student",
+      "name": "Plundering Poro",
       "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-103"
     },
     {
-      "name": "Stalwart Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-052"
-    },
-    {
-      "name": "Chakram Dancer",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-071"
-    },
-    {
-      "name": "Hwei, Brooding Painter",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-080"
-    },
-    {
-      "name": "Tasty Faefolk",
+      "name": "Janna, Savior",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-075"
+      "riftboundId": "SFD-053"
+    },
+    {
+      "name": "Nami, Headstrong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-052"
+    },
+    {
+      "name": "Blue Sentinel",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-073"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-067"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -64,25 +70,13 @@
     },
     {
       "name": "Vilemaw",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-060"
     },
     {
-      "name": "Forgotten Signpost",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "UNL-045"
-    },
-    {
-      "name": "Guardian Angel",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-051"
-    },
-    {
       "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
@@ -100,7 +94,7 @@
     },
     {
       "name": "Stupefy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-095"
     },
@@ -111,69 +105,81 @@
       "riftboundId": "OGN-058"
     },
     {
-      "name": "Back Off",
+      "name": "Emperor's Divide",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-042"
-    },
-    {
-      "name": "Singularity",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-105"
-    },
-    {
-      "name": "Time Warp",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-122"
-    }
-  ],
-  "runes": {
-    "Calm": 6,
-    "Mind": 6
-  },
-  "battlefields": [
-    "Amateur Recital",
-    "Star Spring",
-    "Windswept Hillock"
-  ],
-  "sideDeck": [
-    {
-      "name": "Bellows Breath",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-080"
+      "riftboundId": "SFD-043"
     },
     {
       "name": "Not So Fast",
-      "quantity": 2,
-      "type": "Sideboard",
+      "quantity": 1,
+      "type": "Spell",
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Turn to Dust",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-070"
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-093"
     },
     {
-      "name": "Disarming Rake",
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-083"
+    },
+    {
+      "name": "Singularity",
       "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "runes": {
+    "Calm": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Fortified Position",
+    "Grove of the God-Willow",
+    "Startipped Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "Disarming Rake",
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-032"
     },
     {
-      "name": "Unchecked Power",
+      "name": "Wind Wall",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-123"
+      "riftboundId": "OGN-064"
     },
     {
-      "name": "Whiteflame Protector",
+      "name": "Ahri, Alluring",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-082"
+      "riftboundId": null
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-067"
+    },
+    {
+      "name": "Alpha Wildclaw",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-057"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
     }
   ],
   "record": null,

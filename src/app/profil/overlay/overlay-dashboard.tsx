@@ -10,9 +10,11 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [battlefields, setBattlefields] = useState<string[]>([]);
   const [champs, setChamps] = useState<[string[], string[]]>([[], []]);
   const [copied, setCopied] = useState(false);
+  const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    setOrigin(window.location.origin);
     fetch("/api/legends").then((r) => r.json()).then(setLegends).catch(() => {});
     fetch("/api/battlefields").then((r) => r.json()).then(setBattlefields).catch(() => {});
   }, []);
@@ -40,7 +42,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     });
   }
 
-  const overlayUrl = `${typeof window !== "undefined" ? window.location.origin : ""}/overlay/${token}`;
+  const overlayUrl = `${origin}/overlay/${token}`;
 
   function setPlayer(i: 0 | 1, p: Partial<OverlayStateData["players"][0]>) {
     update({ players: i === 0 ? [p, {}] : [{}, p] } as never);

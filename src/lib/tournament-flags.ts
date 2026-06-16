@@ -49,7 +49,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     location: "Guangzhou, Chine",
     playerCount: 506,
     type: "regional",
-    date: "2025-08-23",
+    date: "2025-08-24",
     set: "Origins",
     format: "Conquest",
   },

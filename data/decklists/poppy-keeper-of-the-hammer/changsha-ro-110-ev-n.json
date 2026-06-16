@@ -21,50 +21,50 @@
       "riftboundId": "UNL-092"
     },
     {
-      "name": "Dragonsoul Sage",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-093"
-    },
-    {
-      "name": "Black Rose Dignitary",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-152"
-    },
-    {
-      "name": "First Mate",
+      "name": "Enthralling Protector",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-132"
+      "riftboundId": "UNL-162"
+    },
+    {
+      "name": "Gemhand Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-094"
     },
     {
       "name": "Kinkou Initiate",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-097"
     },
     {
-      "name": "Wily Newtfish",
-      "quantity": 1,
+      "name": "Master Yi, Tempered",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-108"
+      "riftboundId": "UNL-113"
     },
     {
-      "name": "Poppy, Paragon",
+      "name": "Soraka, Wanderer",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-116"
+      "riftboundId": "SFD-239"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-169"
     },
     {
       "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-120"
     },
     {
       "name": "Vi, Peacekeeper",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": null
     },
@@ -75,14 +75,38 @@
       "riftboundId": "UNL-100"
     },
     {
+      "name": "Arachnoid Horror",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-117"
+    },
+    {
+      "name": "Poppy, Defender of the Meek",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-178"
+    },
+    {
+      "name": "Blood Rose",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "UNL-109"
+    },
+    {
       "name": "Shepherd's Heirloom",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "UNL-158"
     },
     {
+      "name": "Hunter's Machete",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-096"
+    },
+    {
       "name": "Punch First",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-097"
     },
@@ -93,6 +117,12 @@
       "riftboundId": "UNL-106"
     },
     {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
       "name": "Sacrifice",
       "quantity": 1,
       "type": "Spell",
@@ -100,33 +130,51 @@
     },
     {
       "name": "Challenge",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-128"
     },
     {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
       "name": "Grim Resolve",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-095"
     },
     {
+      "name": "Here to Help",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-111"
+    },
+    {
       "name": "Keeper's Verdict",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-204"
     },
     {
-      "name": "Salvage",
+      "name": "Shadow's Call",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "UNL-165"
     },
     {
       "name": "Tactical Retreat",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Heroic Charge",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-155"
     }
   ],
   "runes": {
@@ -134,11 +182,17 @@
     "Order": 6
   },
   "battlefields": [
-    "Amateur Recital",
     "Gardens of Becoming",
-    "Sunken Temple"
+    "Grove of the God-Willow",
+    "Reckoner's Arena"
   ],
   "sideDeck": [
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-097"
+    },
     {
       "name": "Repulse",
       "quantity": 1,
@@ -146,34 +200,40 @@
       "riftboundId": "UNL-106"
     },
     {
-      "name": "Sabotage",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Unyielding Spirit",
+      "name": "Challenge",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-145"
+      "riftboundId": "OGN-128"
     },
     {
-      "name": "Salvage",
+      "name": "Confront",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-224"
+      "riftboundId": "OGN-129"
     },
     {
-      "name": "Wily Newtfish",
+      "name": "Disposal Order",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-108"
+      "riftboundId": "UNL-103"
     },
     {
-      "name": "Safety Inspector",
-      "quantity": 2,
+      "name": "Stare Down",
+      "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-164"
+      "riftboundId": "UNL-107"
+    },
+    {
+      "name": "Marching Orders",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-114"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-114"
     }
   ],
   "record": null,

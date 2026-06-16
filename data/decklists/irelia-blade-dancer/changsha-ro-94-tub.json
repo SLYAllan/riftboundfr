@@ -15,22 +15,16 @@
   ],
   "mainDeck": [
     {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-036"
+    },
+    {
       "name": "Scuttle Crab",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-053"
-    },
-    {
-      "name": "Tideturner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-199"
-    },
-    {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-056"
     },
     {
       "name": "Stellacorn Herder",
@@ -39,14 +33,26 @@
       "riftboundId": "SFD-048"
     },
     {
+      "name": "Tasty Faefolk",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-075"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
       "name": "Guardian Angel",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Gear",
       "riftboundId": "SFD-051"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
@@ -76,19 +82,13 @@
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-046"
     },
     {
-      "name": "Gust",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
-    },
-    {
       "name": "Stacked Deck",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-183"
     },
@@ -99,22 +99,16 @@
       "riftboundId": "OGN-058"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "SFD-045"
-    },
-    {
       "name": "Ride the Wind",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-173"
     },
     {
-      "name": "Star-Crossed",
-      "quantity": 2,
+      "name": "Find Your Center",
+      "quantity": 3,
       "type": "Spell",
-      "riftboundId": "UNL-128"
+      "riftboundId": "OGN-047"
     }
   ],
   "runes": {
@@ -123,51 +117,33 @@
   },
   "battlefields": [
     "Abandoned Hall",
-    "Sunken Temple",
-    "Targon's Peak"
+    "The Papertree",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-169"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "name": "Sneaky Deckhand",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Disarming Rake",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-032"
+      "riftboundId": "OGN-176"
     },
     {
       "name": "Star-Crossed",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-128"
     },
     {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-056"
-    },
-    {
-      "name": "Vex, Apathetic",
+      "name": "Vilemaw",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
-      "name": "Vex, Cheerless",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-146"
+      "riftboundId": "UNL-060"
     }
   ],
   "record": null,

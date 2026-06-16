@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Honest Broker",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-155"
-    },
-    {
       "name": "Soaring Scout",
       "quantity": 3,
       "type": "Unit",
@@ -31,6 +25,12 @@
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-152"
     },
     {
       "name": "Karthus, Eternal",
@@ -45,12 +45,6 @@
       "riftboundId": "SFD-165"
     },
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Ruined Rex",
       "quantity": 3,
       "type": "Unit",
@@ -63,16 +57,22 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Sprite Fountain",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "UNL-078"
+      "name": "Harnessed Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
     },
     {
-      "name": "Bellows Breath",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-080"
+      "name": "Rift Herald",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-179"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-242"
     },
     {
       "name": "Sacrifice",
@@ -82,7 +82,7 @@
     },
     {
       "name": "Cull the Weak",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-209"
     },
@@ -94,19 +94,13 @@
     },
     {
       "name": "Hidden Blade",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-224"
-    },
-    {
       "name": "Mirror Image",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-200"
     }
@@ -122,40 +116,34 @@
   ],
   "sideDeck": [
     {
+      "name": "Carrion Dredger",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-153"
+    },
+    {
       "name": "Salvage",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Black Rose Dignitary",
-      "quantity": 3,
+      "name": "Loyal Poro",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-152"
+      "riftboundId": "UNL-156"
     },
     {
-      "name": "Ashe, Focused",
+      "name": "Mirror Image",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-169"
+      "riftboundId": "UNL-200"
     },
     {
-      "name": "Singularity",
+      "name": "Rift Herald",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-105"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "The Ruination",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-180"
+      "riftboundId": "UNL-179"
     }
   ],
   "record": null,

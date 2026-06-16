@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-113-txg",
   "legend": "Sett, The Boss",
-  "champion": "Sett, Kingpin",
+  "champion": "Sett, Brawler",
   "player": "TXG·波波",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,16 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Cithria of Cloudfield",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-139"
-    },
-    {
-      "name": "Irresistible Faefolk",
+      "name": "Dragonsoul Sage",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-112"
+      "riftboundId": "UNL-093"
     },
     {
       "name": "Pit Rookie",
@@ -33,16 +27,28 @@
       "riftboundId": "OGN-136"
     },
     {
+      "name": "Sea Monkey",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-098"
+    },
+    {
       "name": "First Mate",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-132"
     },
     {
-      "name": "Lucian, Merciless",
+      "name": "Kinkou Initiate",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-097"
+    },
+    {
+      "name": "Akshan, Mischievous",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "SFD-109"
     },
     {
       "name": "Fiora, Victorious",
@@ -51,22 +57,16 @@
       "riftboundId": "OGN-232"
     },
     {
-      "name": "Kinkou Monk",
+      "name": "Vi, Peacekeeper",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-141"
-    },
-    {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-120"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
       "riftboundId": null
+    },
+    {
+      "name": "Karma, Channeler",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-235"
     },
     {
       "name": "Fae Dragon",
@@ -75,10 +75,16 @@
       "riftboundId": "SFD-101"
     },
     {
-      "name": "Arena Bar",
+      "name": "Warmog's Armor",
       "quantity": 2,
       "type": "Gear",
-      "riftboundId": "OGN-124"
+      "riftboundId": "SFD-108"
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "UNL-158"
     },
     {
       "name": "Punch First",
@@ -88,19 +94,25 @@
     },
     {
       "name": "Repulse",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-106"
     },
     {
       "name": "Sabotage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Showstopper",
+      "name": "Sacrifice",
       "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Showstopper",
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-270"
     },
@@ -111,22 +123,10 @@
       "riftboundId": "OGN-128"
     },
     {
-      "name": "Hidden Blade",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-213"
-    },
-    {
-      "name": "Rally the Troops",
+      "name": "Deathgrip",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-166"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "SFD-163"
     },
     {
       "name": "Call to Glory",
@@ -136,21 +136,15 @@
     }
   ],
   "runes": {
-    "Body": 7,
-    "Order": 5
+    "Body": 6,
+    "Order": 6
   },
   "battlefields": [
     "Monastery of Hirana",
     "Sunken Temple",
-    "Valley of Idols"
+    "Zaun Warrens"
   ],
   "sideDeck": [
-    {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-106"
-    },
     {
       "name": "Sabotage",
       "quantity": 1,
@@ -158,16 +152,10 @@
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Unyielding Spirit",
-      "quantity": 1,
+      "name": "Salvage",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-145"
-    },
-    {
-      "name": "Lucian, Merciless",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
+      "riftboundId": "OGN-224"
     },
     {
       "name": "Akshan, Mischievous",
@@ -176,14 +164,20 @@
       "riftboundId": "SFD-109"
     },
     {
+      "name": "B.F. Sword",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-161"
+    },
+    {
       "name": "Ashe, Focused",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "UNL-169"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-105"
     }

@@ -15,28 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Lonely Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-036"
-    },
-    {
       "name": "Scuttle Crab",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-053"
-    },
-    {
-      "name": "Tideturner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-199"
-    },
-    {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-056"
     },
     {
       "name": "Stellacorn Herder",
@@ -45,32 +27,38 @@
       "riftboundId": "SFD-048"
     },
     {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Mindsplitter",
+      "name": "Irelia, Fervent",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-192"
+      "riftboundId": "SFD-225"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-146"
+    },
+    {
+      "name": "Draven, Audacious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-148"
     },
     {
       "name": "Guardian Angel",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "SFD-051"
     },
     {
       "name": "The Syren",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-184"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
@@ -81,8 +69,14 @@
       "riftboundId": "SFD-133"
     },
     {
-      "name": "Charm",
+      "name": "Heart of Dark Ice",
       "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-052"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -94,21 +88,15 @@
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-046"
-    },
-    {
-      "name": "Stacked Deck",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-183"
     },
     {
       "name": "Discipline",
@@ -118,33 +106,21 @@
     },
     {
       "name": "Flash",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGS-011"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-045"
-    },
-    {
-      "name": "Ride the Wind",
+      "name": "Hard Bargain",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-173"
+      "riftboundId": "SFD-136"
     },
     {
-      "name": "Back Off",
-      "quantity": 1,
+      "name": "Not So Fast",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-042"
-    },
-    {
-      "name": "Star-Crossed",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-128"
+      "riftboundId": "SFD-045"
     }
   ],
   "runes": {
@@ -158,52 +134,40 @@
   ],
   "sideDeck": [
     {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-045"
+    },
+    {
       "name": "Not So Fast",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Rebuke",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-172"
-    },
-    {
-      "name": "Boots of Swiftness",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-133"
-    },
-    {
       "name": "Disarming Rake",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-032"
     },
     {
-      "name": "Edge of Night",
-      "quantity": 1,
+      "name": "Star-Crossed",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-139"
+      "riftboundId": "UNL-128"
     },
     {
-      "name": "Heart of Dark Ice",
+      "name": "Vex, Cheerless",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-052"
-    },
-    {
-      "name": "Draven, Audacious",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-148"
-    },
-    {
-      "name": "Mindsplitter",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-192"
+      "riftboundId": "SFD-146"
     }
   ],
   "record": null,

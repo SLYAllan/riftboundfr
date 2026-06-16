@@ -21,28 +21,22 @@
       "riftboundId": "SFD-036"
     },
     {
-      "name": "Pit Rookie",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-136"
-    },
-    {
       "name": "Scuttle Crab",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-053"
     },
     {
-      "name": "First Mate",
-      "quantity": 3,
+      "name": "Nidalee, Cat Form",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-132"
+      "riftboundId": "UNL-114"
     },
     {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
+      "name": "Sona, Harmonious",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-109"
+      "riftboundId": "OGN-073"
     },
     {
       "name": "Rengar, Trophy Hunter",
@@ -51,38 +45,44 @@
       "riftboundId": "UNL-120"
     },
     {
-      "name": "Ruin Runner",
+      "name": "Arachnoid Horror",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-105"
+      "riftboundId": "UNL-117"
     },
     {
-      "name": "Tasty Faefolk",
-      "quantity": 1,
+      "name": "Vilemaw",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-075"
+      "riftboundId": "UNL-060"
     },
     {
-      "name": "Whiteflame Protector",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-082"
+      "name": "Honeyfruit",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-049"
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-060"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
     {
       "name": "Charm",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
@@ -94,68 +94,68 @@
     },
     {
       "name": "Punch First",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "SFD-097"
-    },
-    {
-      "name": "Sabotage",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Challenge",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-128"
+      "riftboundId": "SFD-097"
     },
     {
       "name": "Discipline",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-058"
-    }
-  ],
-  "runes": {
-    "Body": 7,
-    "Calm": 5
-  },
-  "battlefields": [
-    "Emperor's Dais",
-    "Star Spring",
-    "Vilemaw's Lair"
-  ],
-  "sideDeck": [
-    {
-      "name": "Sabotage",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-156"
     },
     {
       "name": "Not So Fast",
       "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-192"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Amateur Recital",
+    "Star Spring",
+    "Windswept Hillock"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "SFD-032"
     },
     {
       "name": "Akshan, Mischievous",
       "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Ruin Runner",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-105"
-    },
-    {
-      "name": "Vilemaw",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-060"
     }
   ],
   "record": null,

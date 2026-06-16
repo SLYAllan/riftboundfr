@@ -15,24 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Unsung Hero",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "SFD-167"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Tasty Faefolk",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-075"
-    },
-    {
       "name": "Doran's Shield",
       "quantity": 3,
       "type": "Gear",
@@ -58,7 +40,7 @@
     },
     {
       "name": "Charm",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -69,16 +51,22 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-046"
-    },
-    {
       "name": "Sacrifice",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-031"
     },
     {
       "name": "Discipline",
@@ -93,14 +81,20 @@
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Salvage",
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Shadow's Call",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "UNL-165"
     },
     {
       "name": "Guards!",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-154"
     },
@@ -109,6 +103,12 @@
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "SFD-198"
+    },
+    {
+      "name": "Grand Strategem",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-233"
     }
   ],
   "runes": {
@@ -117,51 +117,33 @@
   },
   "battlefields": [
     "Ornn's Forge",
-    "The Arena's Greatest",
-    "Trifarian War Camp"
+    "Trifarian War Camp",
+    "Vaults of Helia"
   ],
   "sideDeck": [
     {
-      "name": "Deathgrip",
-      "quantity": 1,
+      "name": "Cull the Weak",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "SFD-163"
+      "riftboundId": "OGN-209"
     },
     {
-      "name": "Guardian Angel",
-      "quantity": 2,
+      "name": "Not So Fast",
+      "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-051"
+      "riftboundId": "SFD-045"
     },
     {
       "name": "Salvage",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Guards!",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-154"
     },
     {
       "name": "Wind Wall",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-064"
-    },
-    {
-      "name": "Ashe, Focused",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-169"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
     }
   ],
   "record": null,

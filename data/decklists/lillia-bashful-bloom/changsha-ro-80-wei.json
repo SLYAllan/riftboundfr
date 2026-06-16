@@ -15,40 +15,34 @@
   ],
   "mainDeck": [
     {
-      "name": "Keeper of Masks",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-081"
-    },
-    {
       "name": "Plundering Poro",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-069"
     },
     {
-      "name": "Ravenbloom Student",
+      "name": "Scuttle Crab",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-103"
-    },
-    {
-      "name": "Disarming Rake",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-032"
-    },
-    {
-      "name": "Janna, Savior",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-053"
+      "riftboundId": "UNL-053"
     },
     {
       "name": "Hwei, Brooding Painter",
       "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-080"
+    },
+    {
+      "name": "Irelia, Fervent",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-225"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
     },
     {
       "name": "Sprite Fountain",
@@ -58,7 +52,7 @@
     },
     {
       "name": "Charm",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -69,10 +63,10 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 1,
+      "name": "Retreat",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-046"
+      "riftboundId": "OGN-104"
     },
     {
       "name": "Stupefy",
@@ -88,7 +82,7 @@
     },
     {
       "name": "Lilting Lullaby",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-190"
     },
@@ -97,6 +91,12 @@
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-083"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
     },
     {
       "name": "Sprite Burst",
@@ -118,50 +118,44 @@
     }
   ],
   "runes": {
-    "Calm": 6,
-    "Mind": 6
+    "Calm": 5,
+    "Mind": 7
   },
   "battlefields": [
     "Black Flame Altar",
     "Dusk Rose Lab",
-    "The Arena's Greatest"
+    "Forbidding Waste"
   ],
   "sideDeck": [
     {
-      "name": "Lilting Lullaby",
+      "name": "Charm",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-190"
+      "riftboundId": "OGN-043"
     },
     {
-      "name": "Lonely Poro",
+      "name": "Brutalizer",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-036"
+      "riftboundId": "SFD-042"
     },
     {
-      "name": "Mask of Foresight",
+      "name": "Frigid Jewel",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-060"
+      "riftboundId": "UNL-074"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-042"
     },
     {
       "name": "Disarming Rake",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-032"
-    },
-    {
-      "name": "Janna, Savior",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-053"
-    },
-    {
-      "name": "LeBlanc, Everywhere at Once",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
     },
     {
       "name": "Singularity",

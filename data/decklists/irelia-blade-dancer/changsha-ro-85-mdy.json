@@ -22,7 +22,7 @@
     },
     {
       "name": "Tideturner",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-199"
     },
@@ -33,26 +33,44 @@
       "riftboundId": "SFD-140"
     },
     {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-056"
-    },
-    {
       "name": "Stellacorn Herder",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-048"
     },
     {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
       "name": "Guardian Angel",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "SFD-051"
     },
     {
-      "name": "Boots of Swiftness",
+      "name": "Honeyfruit",
       "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-049"
+    },
+    {
+      "name": "The Syren",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-184"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "SFD-133"
     },
@@ -75,40 +93,22 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-046"
-    },
-    {
-      "name": "Gust",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Stacked Deck",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-183"
-    },
-    {
       "name": "Discipline",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-058"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "SFD-045"
-    },
-    {
       "name": "Ride the Wind",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-047"
     },
     {
       "name": "Star-Crossed",
@@ -122,52 +122,34 @@
     "Chaos": 6
   },
   "battlefields": [
-    "Abandoned Hall",
-    "Sunken Temple",
-    "Targon's Peak"
+    "Emperor's Dais",
+    "Star Spring",
+    "Sunken Temple"
   ],
   "sideDeck": [
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-169"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "name": "Bewitching Spirit",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Disarming Rake",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-032"
-    },
-    {
-      "name": "Star-Crossed",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-128"
+      "riftboundId": "UNL-121"
     },
     {
       "name": "Adaptatron",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-056"
     },
     {
-      "name": "Kha'Zix, Mutating Horror",
+      "name": "Whiteflame Protector",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": null
+      "riftboundId": "OGN-082"
     }
   ],
   "record": null,

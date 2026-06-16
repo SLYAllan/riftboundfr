@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-83-klg-sn-il",
   "legend": "Azir, Emperor of the Sands",
-  "champion": "Azir, Ascendant",
+  "champion": "Azir, Sovereign",
   "player": "KLG.Snail",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -14,12 +14,6 @@
     "Order"
   ],
   "mainDeck": [
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
     {
       "name": "Doran's Shield",
       "quantity": 3,
@@ -34,7 +28,7 @@
     },
     {
       "name": "Soul Sword",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "UNL-039"
     },
@@ -45,18 +39,6 @@
       "riftboundId": "SFD-042"
     },
     {
-      "name": "Guardian Angel",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "SFD-051"
-    },
-    {
-      "name": "Shepherd's Heirloom",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "UNL-158"
-    },
-    {
       "name": "B.F. Sword",
       "quantity": 3,
       "type": "Gear",
@@ -64,7 +46,7 @@
     },
     {
       "name": "Charm",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -76,25 +58,25 @@
     },
     {
       "name": "Sacrifice",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-173"
     },
     {
       "name": "Cull the Weak",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-209"
     },
     {
       "name": "Deathgrip",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-163"
     },
     {
       "name": "Discipline",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-058"
     },
@@ -105,16 +87,10 @@
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
+      "name": "Shadow's Call",
+      "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Guards!",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-154"
+      "riftboundId": "UNL-165"
     },
     {
       "name": "Arise!",
@@ -128,17 +104,11 @@
     "Order": 5
   },
   "battlefields": [
-    "Hall of Legends",
-    "The Arena's Greatest",
-    "Trifarian War Camp"
+    "Ornn's Forge",
+    "Trifarian War Camp",
+    "Vaults of Helia"
   ],
   "sideDeck": [
-    {
-      "name": "Charm",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-043"
-    },
     {
       "name": "Cull the Weak",
       "quantity": 1,
@@ -146,28 +116,22 @@
       "riftboundId": "OGN-209"
     },
     {
-      "name": "Last Stand",
-      "quantity": 1,
+      "name": "Salvage",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "OGN-069"
+      "riftboundId": "OGN-224"
     },
     {
-      "name": "Noxian Drummer",
+      "name": "Flurry of Feathers",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-222"
+      "riftboundId": "UNL-044"
     },
     {
       "name": "Ashe, Focused",
       "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-169"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
     }
   ],
   "record": null,

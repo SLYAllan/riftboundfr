@@ -16,7 +16,7 @@
   "mainDeck": [
     {
       "name": "Honest Broker",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-155"
     },
@@ -33,28 +33,28 @@
       "riftboundId": "OGN-096"
     },
     {
+      "name": "Black Rose Dignitary",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-152"
+    },
+    {
       "name": "Karthus, Eternal",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-236"
     },
     {
-      "name": "Lecturing Yordle",
-      "quantity": 2,
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-087"
+      "riftboundId": null
     },
     {
       "name": "Glasc Mixologist",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-165"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
     },
     {
       "name": "Ruined Rex",
@@ -69,28 +69,28 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Harnessed Dragon",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-234"
-    },
-    {
-      "name": "Baited Hook",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-242"
-    },
-    {
-      "name": "Bellows Breath",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-080"
-    },
-    {
       "name": "Sacrifice",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-220"
     },
     {
       "name": "Hidden Blade",
@@ -99,16 +99,22 @@
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Mirror Image",
+      "name": "Shadow's Call",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-200"
+      "riftboundId": "UNL-165"
     },
     {
-      "name": "Imperial Decree",
-      "quantity": 2,
+      "name": "Tactical Retreat",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-221"
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Mirror Image",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-200"
     }
   ],
   "runes": {
@@ -116,16 +122,16 @@
     "Order": 8
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Trifarian War Camp",
+    "Dusk Rose Lab",
+    "Forbidding Waste",
     "Windswept Hillock"
   ],
   "sideDeck": [
     {
-      "name": "Deathgrip",
+      "name": "Facebreaker",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-163"
+      "riftboundId": "OGN-220"
     },
     {
       "name": "Salvage",
@@ -134,28 +140,28 @@
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Mirror Image",
+      "name": "Tactical Retreat",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-200"
+      "riftboundId": "UNL-175"
     },
     {
-      "name": "Vengeance",
+      "name": "LeBlanc, Fragmented",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "LeBlanc, Everywhere at Once",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": null
+    },
+    {
+      "name": "Unchecked Power",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-229"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "Dr. Mundo, Expert",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-109"
+      "riftboundId": "OGN-123"
     }
   ],
   "record": null,

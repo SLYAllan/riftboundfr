@@ -21,6 +21,12 @@
       "riftboundId": "SFD-155"
     },
     {
+      "name": "Keeper of Masks",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-081"
+    },
+    {
       "name": "Soaring Scout",
       "quantity": 3,
       "type": "Unit",
@@ -28,9 +34,15 @@
     },
     {
       "name": "Watchful Sentry",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "OGN-096"
+    },
+    {
+      "name": "Galio, Indefatigable",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-171"
     },
     {
       "name": "Karthus, Eternal",
@@ -40,27 +52,21 @@
     },
     {
       "name": "Glasc Mixologist",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-165"
     },
     {
-      "name": "Vi, Peacekeeper",
+      "name": "Zilean, Time Mage",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "UNL-086"
     },
     {
-      "name": "Ruined Rex",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-067"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
+      "name": "Commander Ledros",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-116"
+      "riftboundId": "OGN-231"
     },
     {
       "name": "Harnessed Dragon",
@@ -70,21 +76,21 @@
     },
     {
       "name": "Rift Herald",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-179"
     },
     {
-      "name": "Baited Hook",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-242"
+      "name": "Atakhan",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-170"
     },
     {
-      "name": "Sacrifice",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "UNL-173"
+      "name": "Baited Hook",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-242"
     },
     {
       "name": "Cull the Weak",
@@ -99,6 +105,24 @@
       "riftboundId": "OGN-213"
     },
     {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Tactical Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-070"
+    },
+    {
       "name": "Mirror Image",
       "quantity": 3,
       "type": "Spell",
@@ -106,11 +130,11 @@
     }
   ],
   "runes": {
-    "Mind": 4,
-    "Order": 8
+    "Mind": 5,
+    "Order": 7
   },
   "battlefields": [
-    "Star Spring",
+    "The Grand Plaza",
     "Trifarian War Camp",
     "Windswept Hillock"
   ],
@@ -122,22 +146,10 @@
       "riftboundId": "OGN-209"
     },
     {
-      "name": "Deathgrip",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-163"
-    },
-    {
-      "name": "Salvage",
+      "name": "Turn to Dust",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Black Rose Dignitary",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-152"
+      "riftboundId": "UNL-070"
     },
     {
       "name": "LeBlanc, Everywhere at Once",
@@ -146,10 +158,16 @@
       "riftboundId": null
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
+      "name": "Rumble, Scrapper",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-116"
+      "riftboundId": "SFD-089"
+    },
+    {
+      "name": "Safety Inspector",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-164"
     }
   ],
   "record": null,

@@ -15,40 +15,58 @@
   ],
   "mainDeck": [
     {
-      "name": "Soaring Scout",
+      "name": "Icevale Archer",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-216"
+      "riftboundId": "UNL-065"
     },
     {
-      "name": "Watchful Sentry",
+      "name": "Diana, Lunari",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-096"
+      "riftboundId": "UNL-079"
     },
     {
-      "name": "Black Rose Dignitary",
+      "name": "Galio, Indefatigable",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-152"
+      "riftboundId": "UNL-171"
     },
     {
-      "name": "Karthus, Eternal",
+      "name": "Lillia, Fae Fawn",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-236"
+      "riftboundId": null
     },
     {
-      "name": "Shen, Kinkou",
-      "quantity": 1,
+      "name": "Ezreal, Dashing",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-241"
+      "riftboundId": null
     },
     {
-      "name": "Glasc Mixologist",
+      "name": "Jhin, Meticulous Killer",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "SFD-165"
+      "riftboundId": "UNL-089"
+    },
+    {
+      "name": "LeBlanc, Everywhere at Once",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-080"
     },
     {
       "name": "Vi, Peacekeeper",
@@ -57,107 +75,39 @@
       "riftboundId": null
     },
     {
-      "name": "Ruined Rex",
+      "name": "Zilean, Time Mage",
       "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-086"
+    },
+    {
+      "name": "Ivern, Friend to All",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-177"
+    },
+    {
+      "name": "Poppy, Defender of the Meek",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-178"
+    },
+    {
+      "name": "Ruined Rex",
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-067"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "Harnessed Dragon",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-234"
-    },
-    {
-      "name": "Rift Herald",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-179"
-    },
-    {
-      "name": "Baited Hook",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-242"
-    },
-    {
-      "name": "Sacrifice",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "UNL-173"
-    },
-    {
-      "name": "Hidden Blade",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-213"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Mirror Image",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "UNL-200"
     }
   ],
   "runes": {
-    "Mind": 4,
-    "Order": 8
+    "Mind": 12
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Star Spring",
-    "Windswept Hillock"
+    "Abandoned Hall",
+    "Altar of Blood",
+    "Amateur Recital"
   ],
-  "sideDeck": [
-    {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "LeBlanc, Everywhere at Once",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
-      "name": "Ashe, Focused",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-169"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "The Ruination",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-180"
-    },
-    {
-      "name": "Atakhan",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-170"
-    }
-  ],
+  "sideDeck": [],
   "record": null,
   "source": "https://riftdecks.com/riftbound-metagame/deck-yu-ji-185350",
   "notes": ""

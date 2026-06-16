@@ -15,6 +15,12 @@
   ],
   "mainDeck": [
     {
+      "name": "Plundering Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
       "name": "Ravenbloom Student",
       "quantity": 3,
       "type": "Unit",
@@ -27,46 +33,64 @@
       "riftboundId": "OGN-199"
     },
     {
-      "name": "Traveling Merchant",
+      "name": "Windsinger",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-138"
+    },
+    {
+      "name": "Diana, Lunari",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-185"
+      "riftboundId": "UNL-079"
     },
     {
       "name": "Fizz, Trickster",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "SFD-140"
     },
     {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Hwei, Brooding Painter",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-080"
     },
     {
-      "name": "Baron Nashor",
+      "name": "Thousand-Tailed Watcher",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-147"
+      "riftboundId": "OGN-116"
     },
     {
-      "name": "Acceptable Losses",
-      "quantity": 2,
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-179"
+      "riftboundId": "SFD-080"
+    },
+    {
+      "name": "Existential Dread",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-134"
     },
     {
       "name": "Gust",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
     },
     {
       "name": "Stacked Deck",
@@ -81,63 +105,75 @@
       "riftboundId": "OGN-095"
     },
     {
+      "name": "Abandon",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
       "name": "Flash",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGS-011"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 2,
+      "name": "Rebuke",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-136"
+      "riftboundId": "OGN-172"
     },
     {
       "name": "Ride the Wind",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-173"
     },
     {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-063"
+    },
+    {
       "name": "Moonfall",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-198"
     },
     {
-      "name": "Star-Crossed",
-      "quantity": 2,
+      "name": "Sprite Burst",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-128"
-    },
-    {
-      "name": "Wages of Pain",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "SFD-070"
+      "riftboundId": "UNL-069"
     }
   ],
   "runes": {
-    "Chaos": 7,
-    "Mind": 5
+    "Chaos": 6,
+    "Mind": 6
   },
   "battlefields": [
     "Abandoned Hall",
     "Ravenbloom Conservatory",
-    "Targon's Peak"
+    "Zaun Warrens"
   ],
   "sideDeck": [
     {
-      "name": "Switcheroo",
+      "name": "Bellows Breath",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-145"
+      "riftboundId": "SFD-080"
     },
     {
       "name": "Turn to Dust",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "UNL-070"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-201"
     },
     {
       "name": "Star-Crossed",
@@ -146,28 +182,16 @@
       "riftboundId": "UNL-128"
     },
     {
-      "name": "Deadly Flourish",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-073"
-    },
-    {
-      "name": "Vex, Cheerless",
+      "name": "Fading Memories",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-146"
+      "riftboundId": "OGN-180"
     },
     {
-      "name": "Singularity",
+      "name": "Baron Nashor",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-105"
-    },
-    {
-      "name": "Dr. Mundo, Expert",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-109"
+      "riftboundId": "UNL-147"
     }
   ],
   "record": null,

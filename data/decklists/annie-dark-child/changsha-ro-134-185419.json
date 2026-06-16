@@ -15,40 +15,34 @@
   ],
   "mainDeck": [
     {
-      "name": "Evelynn, Entrancing",
-      "quantity": 2,
+      "name": "Tideturner",
+      "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-141"
-    },
-    {
-      "name": "Inferna",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-002"
-    },
-    {
-      "name": "Overzealous Fan",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-128"
+      "riftboundId": "OGN-199"
     },
     {
       "name": "Traveling Merchant",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-185"
     },
     {
-      "name": "Grim Apothecary",
+      "name": "Vi, Destructive",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-021"
+      "riftboundId": "OGN-036"
     },
     {
-      "name": "Rengar, Pouncing",
-      "quantity": 3,
+      "name": "Ezreal, Prodigy",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-025"
+      "riftboundId": null
+    },
+    {
+      "name": "Jhin, Murderous Artist",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
     },
     {
       "name": "Kai'Sa, Survivor",
@@ -57,50 +51,38 @@
       "riftboundId": null
     },
     {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Noxus Hopeful",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-012"
     },
     {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "OGN-026"
     },
     {
       "name": "Ferrous Forerunner",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-021"
     },
     {
-      "name": "Mindsplitter",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-192"
-    },
-    {
       "name": "Long Sword",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Gear",
       "riftboundId": "SFD-022"
     },
     {
       "name": "Blood Rush",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-003"
     },
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-169"
     },
@@ -112,7 +94,7 @@
     },
     {
       "name": "Abandon",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-131"
     },
@@ -124,80 +106,74 @@
     },
     {
       "name": "Flash",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGS-011"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Star-Crossed",
+      "name": "Heedless Resurrection",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-128"
-    }
-  ],
-  "runes": {
-    "Chaos": 7,
-    "Fury": 5
-  },
-  "battlefields": [
-    "Seat of Power",
-    "The Arena's Greatest",
-    "Zaun Warrens"
-  ],
-  "sideDeck": [
-    {
-      "name": "Blood Rush",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-003"
+      "riftboundId": "UNL-142"
     },
     {
-      "name": "Gust",
+      "name": "Rebuke",
       "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-169"
+      "type": "Spell",
+      "riftboundId": "OGN-172"
     },
     {
-      "name": "Falling Star",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-029"
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
     },
     {
       "name": "Switcheroo",
       "quantity": 1,
-      "type": "Sideboard",
+      "type": "Spell",
       "riftboundId": "SFD-145"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Minefield",
+    "Seat of Power",
+    "Treasure Hoard"
+  ],
+  "sideDeck": [
+    {
+      "name": "Acceptable Losses",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-179"
     },
     {
-      "name": "Star-Crossed",
+      "name": "Against the Odds",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-128"
+      "riftboundId": "SFD-001"
     },
     {
-      "name": "Thermo Beam",
+      "name": "Hard Bargain",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-022"
+      "riftboundId": "SFD-136"
     },
     {
-      "name": "Ferrous Forerunner",
-      "quantity": 1,
+      "name": "Rengar, Pouncing",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-021"
+      "riftboundId": "SFD-025"
     },
     {
-      "name": "Mindsplitter",
-      "quantity": 1,
+      "name": "Rhasa the Sunderer",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-192"
+      "riftboundId": "OGN-195"
     }
   ],
   "record": null,

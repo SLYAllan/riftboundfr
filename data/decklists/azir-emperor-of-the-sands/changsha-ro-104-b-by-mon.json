@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Doran's Shield",
       "quantity": 3,
       "type": "Gear",
@@ -33,16 +27,16 @@
       "riftboundId": "SFD-153"
     },
     {
-      "name": "Soul Sword",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "UNL-039"
-    },
-    {
       "name": "Brutalizer",
       "quantity": 3,
       "type": "Gear",
       "riftboundId": "SFD-042"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-212"
     },
     {
       "name": "B.F. Sword",
@@ -63,22 +57,28 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-046"
-    },
-    {
       "name": "Sacrifice",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-173"
     },
     {
       "name": "Cull the Weak",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-031"
     },
     {
       "name": "Discipline",
@@ -88,33 +88,21 @@
     },
     {
       "name": "Hidden Blade",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-213"
     },
     {
       "name": "Salvage",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-224"
     },
     {
       "name": "Shadow's Call",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-165"
-    },
-    {
-      "name": "Back Off",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-042"
-    },
-    {
-      "name": "Guards!",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-154"
+      "riftboundId": "UNL-165"
     },
     {
       "name": "Arise!",
@@ -128,46 +116,40 @@
     "Order": 6
   },
   "battlefields": [
-    "Hall of Legends",
-    "The Arena's Greatest",
-    "Trifarian War Camp"
+    "Ornn's Forge",
+    "Rockfall Path",
+    "Vaults of Helia"
   ],
   "sideDeck": [
     {
-      "name": "Guardian Angel",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "SFD-051"
-    },
-    {
       "name": "Not So Fast",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Wind Wall",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-064"
-    },
-    {
-      "name": "Ashe, Focused",
+      "name": "Allay, Eager Admirer",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-169"
+      "riftboundId": "UNL-041"
     },
     {
-      "name": "Vi, Peacekeeper",
+      "name": "Flurry of Feathers",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": null
+      "riftboundId": "UNL-044"
+    },
+    {
+      "name": "Tricksy Tentacles",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-054"
+    },
+    {
+      "name": "Undertitan",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-175"
     }
   ],
   "record": null,
