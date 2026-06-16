@@ -67,12 +67,14 @@ interface TournamentConfig {
   players: number;
   set: string;
   intro: string;
+  coverImage: string;
 }
 
 const tournaments: TournamentConfig[] = [
   {
     title: "Top 8 Houston Regional Qualifier 2025",
     slug: "top-8-houston-rq-2025",
+    coverImage: "/img/articles/houston-2.webp",
     excerpt: "Les 8 decklists du Top 8 au Regional Qualifier de Houston 2025 — 1347 joueurs, format Origins. Annie domine avec 4/8 top 8.",
     prefix: "houston-rq-",
     tournament: "Houston Regional Qualifier",
@@ -94,6 +96,7 @@ Le reste du top 8 est partagé entre **Kai'Sa** (5e et 7e) et **Master Yi** (2e 
   {
     title: "Top 8 Bologna Regional Qualifier 2026",
     slug: "top-8-bologna-rq-2026",
+    coverImage: "/img/articles/bologna-1.jpg",
     excerpt: "Les 8 decklists du Top 8 au Regional Qualifier de Bologne 2026 — 1719 joueurs, format Spiritforged. Ezreal champion (Alanzq).",
     prefix: "bologna-rq-",
     tournament: "Bologna Regional Qualifier",
@@ -114,6 +117,7 @@ Le reste du top 8 est partagé entre **Kai'Sa** (5e et 7e) et **Master Yi** (2e 
   {
     title: "Top 8 Las Vegas Regional Qualifier 2026",
     slug: "top-8-las-vegas-rq-2026",
+    coverImage: "/img/articles/lasvegas-2.webp",
     excerpt: "Les 8 decklists du Top 8 au Regional Qualifier de Las Vegas 2026 — 1670 joueurs. Draven écrase tout : TOP 5 entièrement Draven.",
     prefix: "las-vegas-rq-",
     tournament: "Las Vegas Regional Qualifier",
@@ -135,6 +139,7 @@ Points clés :
   {
     title: "Top 8 Lille Regional Qualifier 2026",
     slug: "top-8-lille-rq-2026",
+    coverImage: "/img/articles/lille.webp",
     excerpt: "Les 8 decklists du Top 8 au Regional Qualifier de Lille 2026 — 1949 joueurs, post-ban. Azir champion invaincu (14-0-2).",
     prefix: "lille-rq-",
     tournament: "Lille Regional Qualifier",
@@ -201,6 +206,7 @@ async function createTop8FromData(config: TournamentConfig) {
     data: {
       title: config.title,
       slug: config.slug,
+      coverImage: config.coverImage,
       excerpt: config.excerpt,
       category: "tournoi",
       tags: [config.slug.replace("top-8-", "").replace("-2025", "").replace("-2026", ""), "rq", "top-8", config.set.toLowerCase().split(" ")[0], "2026"],
