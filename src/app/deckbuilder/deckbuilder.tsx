@@ -124,10 +124,6 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
       const c = resolveCard(data.legend.cardId);
       if (c) newDeck.legend = cardToEntry(c);
     }
-    if (data.champion) {
-      const c = resolveCard(data.champion.cardId);
-      if (c) newDeck.main.push(cardToEntry(c));
-    }
     for (const section of ["main", "rune", "battlefield", "side"] as const) {
       for (const entry of data[section]) {
         const c = resolveCard(entry.cardId);
@@ -135,8 +131,26 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
           const actualSection = c.type === "Rune" ? "rune"
             : c.type === "Battlefield" ? "battlefield"
             : section;
-          newDeck[actualSection].push(cardToEntry(c, entry.quantity));
+          // Deux éditions différentes d'une même carte (riftboundId distincts)
+          // résolvent vers la même carte canonique → on fusionne les quantités au
+          // lieu de créer 2 entrées (sinon doublon de clé React dans le panel).
+          const existing = newDeck[actualSection].find((e) => e.cardId === c.id);
+          if (existing) existing.quantity += entry.quantity;
+          else newDeck[actualSection].push(cardToEntry(c, entry.quantity));
         }
+      }
+    }
+    // Le champion (encodé en C:) est une carte réelle du main deck. On l'ajoute
+    // TOUJOURS au main. S'il y figure déjà (codes page deck/article qui l'incluent
+    // aussi en M: à sa quantité réelle), on incrémente la quantité (+1) au lieu de
+    // créer une 2e entrée — ça évite le doublon de clé React tout en gardant le
+    // compte exact (ex. 40/40 = 39 cartes main + le champion de la section légende).
+    if (data.champion) {
+      const c = resolveCard(data.champion.cardId);
+      if (c) {
+        const existing = newDeck.main.find((e) => e.cardId === c.id);
+        if (existing) existing.quantity += 1;
+        else newDeck.main.push(cardToEntry(c));
       }
     }
 

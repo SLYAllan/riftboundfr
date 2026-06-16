@@ -223,20 +223,35 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
       }
     }
 
-    // Champion : même logique que la légende (lookup par nom), comme sur /decks.
+    // Champion : priorité au championName explicite ; sinon on DÉRIVE le champion
+    // du deck lui-même — l'unité supertype "Champion" (hors Légende) déjà présente
+    // dans la liste dont le nom correspond à la légende. Évite un champion manquant
+    // quand le code deck ne le met pas en section légende et qu'aucun championName
+    // n'est renseigné (ex. best-of Tianjin/Changsha, recap Utrecht).
     const hasChampion = deckCards.some((c) => c.section === "legend" && c.type !== "Legend");
-    if (!hasChampion && block.championName) {
-      const dashChamp = block.championName.replace(", ", " - ");
-      const champCard = await prisma.card.findFirst({
-        where: {
-          OR: [
-            { name: { equals: block.championName, mode: "insensitive" } },
-            { name: { equals: dashChamp, mode: "insensitive" } },
-            { cleanName: { equals: block.championName, mode: "insensitive" } },
-          ],
-        },
-      });
-      if (champCard && !deckCards.some((c) => c.cardId === champCard.id && c.section === "legend")) {
+    if (!hasChampion) {
+      let champCard: (typeof cards)[number] | null = null;
+      if (block.championName) {
+        const dashChamp = block.championName.replace(", ", " - ");
+        champCard = await prisma.card.findFirst({
+          where: {
+            OR: [
+              { name: { equals: block.championName, mode: "insensitive" } },
+              { name: { equals: dashChamp, mode: "insensitive" } },
+              { cleanName: { equals: block.championName, mode: "insensitive" } },
+            ],
+          },
+        });
+      }
+      if (!champCard && block.legendName) {
+        const lw = block.legendName.split(",")[0].split(" - ")[0].trim().toLowerCase();
+        const deckCardIds = new Set(deckCards.map((c) => c.cardId));
+        champCard = cards.find(
+          (c) => c.supertype === "Champion" && c.type !== "Legend"
+            && c.name.toLowerCase().startsWith(lw) && deckCardIds.has(c.id),
+        ) ?? null;
+      }
+      if (champCard && !deckCards.some((c) => c.cardId === champCard!.id && c.section === "legend")) {
         riftboundIdMap.set(champCard.id, champCard.riftboundId); // pour le deckbuilder
         deckCards.push(toListCard(champCard, 1, "legend" as DeckSection));
       }

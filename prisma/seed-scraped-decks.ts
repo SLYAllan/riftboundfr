@@ -195,10 +195,17 @@ async function main() {
           }
         }
 
+        // Les scrapes stockent les runes soit en tableau [{name:"Calm Rune",...}],
+        // soit en objet par domaine {"Calm":7,"Mind":5}. Dans le 2e cas la clé est
+        // le DOMAINE → la carte s'appelle "<Domaine> Rune", donc on suffixe " Rune"
+        // (sinon findCard("Calm") échoue et le deck se retrouve sans runes).
         const runesArr = Array.isArray(data.runes)
           ? data.runes
           : data.runes
-            ? Object.entries(data.runes).map(([name, qty]) => ({ name, quantity: qty }))
+            ? Object.entries(data.runes).map(([name, qty]) => ({
+                name: /rune$/i.test(name) ? name : `${name} Rune`,
+                quantity: qty,
+              }))
             : [];
         for (const entry of runesArr) {
           const card = findCard(entry.name);

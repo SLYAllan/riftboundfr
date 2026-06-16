@@ -76,6 +76,21 @@ async function getCards() {
     }
   }
 
+  // Les légendes éditions OPP / alt-art sont exclues du pool sélectionnable, mais
+  // certains decks seedés les référencent (ex. Master Yi "opp-019-024"). On alias
+  // ces riftboundId vers la légende canonique du même nom pour que ces decks
+  // s'importent correctement dans le deckbuilder.
+  const excludedLegends = await prisma.card.findMany({
+    where: { type: "Legend", OR: [{ set: "OPP" }, { alternateArt: true }] },
+    select: { riftboundId: true, name: true },
+  });
+  for (const c of excludedLegends) {
+    const canonical = canonicalIdByName.get(c.name);
+    if (canonical && c.riftboundId !== canonical && !idAliases[c.riftboundId]) {
+      idAliases[c.riftboundId] = canonical;
+    }
+  }
+
   return {
     cards: deduped.map((c) => ({
       id: c.riftboundId,
