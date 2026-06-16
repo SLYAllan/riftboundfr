@@ -215,7 +215,10 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
           },
         });
       }
-      if (legendCard && !deckCards.some((c) => c.cardId === legendCard!.id)) {
+      // dedup uniquement sur la section "legend" (la légende/champion peut aussi
+      // figurer en main/side — il faut quand même l'afficher en Légende/Champion).
+      if (legendCard && !deckCards.some((c) => c.cardId === legendCard!.id && c.section === "legend")) {
+        riftboundIdMap.set(legendCard.id, legendCard.riftboundId); // pour le deckbuilder
         deckCards.unshift(toListCard(legendCard, 1, "legend" as DeckSection));
       }
     }
@@ -233,7 +236,8 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
           ],
         },
       });
-      if (champCard && !deckCards.some((c) => c.cardId === champCard.id)) {
+      if (champCard && !deckCards.some((c) => c.cardId === champCard.id && c.section === "legend")) {
+        riftboundIdMap.set(champCard.id, champCard.riftboundId); // pour le deckbuilder
         deckCards.push(toListCard(champCard, 1, "legend" as DeckSection));
       }
     }
