@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-88-185373",
   "legend": "Master Yi, Wuju Bladesman",
-  "champion": "Master Yi, Tempered",
+  "champion": "Master Yi, Honed",
   "player": "三川麟介",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,58 +15,28 @@
   ],
   "mainDeck": [
     {
-      "name": "Master Yi, Tempered",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-113"
-    },
-    {
-      "name": "Lonely Poro",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "SFD-036"
-    },
-    {
-      "name": "Scuttle Crab",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-053"
-    },
-    {
-      "name": "First Mate",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-132"
-    },
-    {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-120"
-    },
-    {
-      "name": "Ruin Runner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-105"
-    },
-    {
-      "name": "Tasty Faefolk",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-075"
-    },
-    {
       "name": "Vilemaw",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-060"
     },
     {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
       "name": "Zhonya's Hourglass",
       "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
     },
     {
       "name": "Charm",
@@ -76,33 +46,21 @@
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-046"
-    },
-    {
-      "name": "Punch First",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "SFD-097"
-    },
-    {
       "name": "Sabotage",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Challenge",
-      "quantity": 1,
+      "name": "Desert's Call",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-128"
+      "riftboundId": "SFD-031"
     },
     {
       "name": "Discipline",
@@ -111,8 +69,14 @@
       "riftboundId": "OGN-058"
     },
     {
+      "name": "Meditation",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-048"
+    },
+    {
       "name": "Mobilize",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-134"
     },
@@ -124,9 +88,21 @@
     },
     {
       "name": "Back Off",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-042"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-047"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
     }
   ],
   "runes": {
@@ -134,46 +110,46 @@
     "Calm": 6
   },
   "battlefields": [
-    "Grove of the God-Willow",
-    "Star Spring",
-    "Startipped Peak"
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
     {
-      "name": "Repulse",
+      "name": "Defy",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-106"
-    },
-    {
-      "name": "Sabotage",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-156"
+      "riftboundId": "OGN-045"
     },
     {
       "name": "Unyielding Spirit",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-145"
     },
     {
-      "name": "Challenge",
+      "name": "Desert's Call",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-128"
+      "riftboundId": "SFD-031"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 2,
+      "name": "Not So Fast",
+      "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-032"
+      "riftboundId": "SFD-045"
     },
     {
-      "name": "Akshan, Mischievous",
+      "name": "Flurry of Feathers",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-044"
+    },
+    {
+      "name": "Tricksy Tentacles",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-109"
+      "riftboundId": "UNL-054"
     }
   ],
   "record": null,

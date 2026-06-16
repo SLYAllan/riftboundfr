@@ -15,14 +15,8 @@
   ],
   "mainDeck": [
     {
-      "name": "Sivir, Mercenary",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
       "name": "Mindsplitter",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-192"
     },
@@ -33,10 +27,10 @@
       "riftboundId": "UNL-118"
     },
     {
-      "name": "Scryer's Bloom",
-      "quantity": 3,
+      "name": "Pack of Wonders",
+      "quantity": 2,
       "type": "Gear",
-      "riftboundId": "UNL-136"
+      "riftboundId": "OGN-181"
     },
     {
       "name": "Treasure Trove",
@@ -45,8 +39,14 @@
       "riftboundId": "OGN-186"
     },
     {
-      "name": "Last Rites",
+      "name": "Boots of Swiftness",
       "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
       "type": "Gear",
       "riftboundId": "SFD-150"
     },
@@ -55,18 +55,6 @@
       "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-160"
-    },
-    {
-      "name": "Flurry of Blades",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-133"
-    },
-    {
-      "name": "Gust",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
     },
     {
       "name": "Sabotage",
@@ -81,10 +69,28 @@
       "riftboundId": "OGN-183"
     },
     {
+      "name": "Abandon",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
       "name": "Mobilize",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
     },
     {
       "name": "Invert Timelines",
@@ -94,7 +100,7 @@
     },
     {
       "name": "Lunar Boon",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-125"
     },
@@ -103,18 +109,6 @@
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-138"
-    },
-    {
-      "name": "Fading Memories",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-180"
-    },
-    {
-      "name": "The Harrowing",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-198"
     }
   ],
   "runes": {
@@ -124,36 +118,24 @@
   "battlefields": [
     "Aspirant's Climb",
     "Sigil of the Storm",
-    "Vilemaw's Lair"
+    "Vaults of Helia"
   ],
   "sideDeck": [
     {
-      "name": "Unyielding Spirit",
-      "quantity": 1,
+      "name": "Flurry of Blades",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "OGN-145"
+      "riftboundId": "OGN-133"
     },
     {
-      "name": "Heedless Resurrection",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-142"
-    },
-    {
-      "name": "Boots of Swiftness",
+      "name": "Punch First",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-133"
-    },
-    {
-      "name": "The Harrowing",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-198"
+      "riftboundId": "SFD-097"
     },
     {
       "name": "Baron Nashor",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "UNL-147"
     }

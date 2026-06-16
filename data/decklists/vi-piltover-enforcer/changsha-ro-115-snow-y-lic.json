@@ -15,46 +15,34 @@
   ],
   "mainDeck": [
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Carrion Dredger",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-153"
-    },
-    {
       "name": "Gem Jammer",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-007"
     },
     {
-      "name": "Honest Broker",
+      "name": "Inferna",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "SFD-155"
+      "riftboundId": "UNL-002"
+    },
+    {
+      "name": "Trifarian Gloryseeker",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-217"
     },
     {
       "name": "Trusty Ramhound",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-159"
     },
     {
-      "name": "Vi, Destructive",
+      "name": "Unsung Hero",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-036"
-    },
-    {
-      "name": "Pyke, Dockside Butcher",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-028"
+      "riftboundId": "SFD-167"
     },
     {
       "name": "Rek'Sai, Breacher",
@@ -63,34 +51,40 @@
       "riftboundId": "SFD-029"
     },
     {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
       "name": "Noxus Hopeful",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-012"
     },
     {
-      "name": "Rengar, Unseen",
+      "name": "Rumble, Hotheaded",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-024"
+      "riftboundId": "SFD-026"
     },
     {
-      "name": "Ashe, Focused",
+      "name": "Brynhir Thundersong",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-169"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "OGN-026"
     },
     {
       "name": "Ferrous Forerunner",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-021"
+    },
+    {
+      "name": "Dunebreaker",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-027"
     },
     {
       "name": "Long Sword",
@@ -105,12 +99,6 @@
       "riftboundId": "UNL-188"
     },
     {
-      "name": "B.F. Sword",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "SFD-161"
-    },
-    {
       "name": "Cleave",
       "quantity": 1,
       "type": "Spell",
@@ -118,33 +106,27 @@
     },
     {
       "name": "Sacrifice",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-173"
     },
     {
       "name": "Against the Odds",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-001"
     },
     {
-      "name": "Bushwhack",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-004"
-    },
-    {
       "name": "Deathgrip",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-163"
     },
     {
-      "name": "Falling Star",
+      "name": "Facebreaker",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-029"
+      "riftboundId": "OGN-220"
     },
     {
       "name": "Hidden Blade",
@@ -159,10 +141,16 @@
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Sky Splitter",
+      "name": "Tactical Retreat",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-014"
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
     }
   ],
   "runes": {
@@ -171,21 +159,27 @@
   },
   "battlefields": [
     "Forge of the Fluft",
-    "Trifarian War Camp",
+    "The Arena's Greatest",
     "Zaun Warrens"
   ],
   "sideDeck": [
     {
-      "name": "Against the Odds",
+      "name": "Sacrifice",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-001"
+      "riftboundId": "UNL-173"
     },
     {
-      "name": "Falling Star",
+      "name": "Deathgrip",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-029"
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Facebreaker",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-220"
     },
     {
       "name": "Salvage",
@@ -194,20 +188,8 @@
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Vengeance",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-229"
-    },
-    {
-      "name": "Vi, Hotheaded",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
       "name": "Ashe, Focused",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-169"
     },

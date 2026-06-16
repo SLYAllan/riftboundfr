@@ -15,58 +15,58 @@
   ],
   "mainDeck": [
     {
-      "name": "Kai'Sa, Survivor",
+      "name": "Gem Jammer",
       "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
+      "type": "Unit",
+      "riftboundId": "SFD-007"
+    },
+    {
+      "name": "Legion Rearguard",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-010"
     },
     {
       "name": "Plundering Poro",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-069"
     },
     {
-      "name": "Ravenbloom Student",
-      "quantity": 3,
+      "name": "Eager Apprentice",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-103"
-    },
-    {
-      "name": "Watchful Sentry",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-096"
+      "riftboundId": "OGN-084"
     },
     {
       "name": "Lecturing Yordle",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-087"
     },
     {
-      "name": "Kai'Sa, Survivor",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Noxus Hopeful",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-012"
     },
     {
-      "name": "Brynhir Thundersong",
+      "name": "Rengar, Unseen",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-026"
+      "riftboundId": "UNL-024"
     },
     {
-      "name": "Ferrous Forerunner",
+      "name": "Darius, Trifarian",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-021"
+      "riftboundId": "OGN-027"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-026"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -75,44 +75,26 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Dr. Mundo, Expert",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-109"
-    },
-    {
-      "name": "Long Sword",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-022"
-    },
-    {
       "name": "Bellows Breath",
       "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-080"
     },
     {
-      "name": "Cleave",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-004"
-    },
-    {
       "name": "Hextech Ray",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-009"
     },
     {
       "name": "Retreat",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-104"
     },
     {
       "name": "Stupefy",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-095"
     },
@@ -123,16 +105,22 @@
       "riftboundId": "OGN-029"
     },
     {
-      "name": "Lotus Trap",
+      "name": "Frigid Touch",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-013"
+      "riftboundId": "SFD-066"
     },
     {
-      "name": "Turn to Dust",
-      "quantity": 1,
+      "name": "Smite",
+      "quantity": 3,
       "type": "Spell",
-      "riftboundId": "UNL-070"
+      "riftboundId": "UNL-007"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-070"
     },
     {
       "name": "Progress Day",
@@ -141,57 +129,33 @@
       "riftboundId": "OGN-114"
     },
     {
-      "name": "Singularity",
+      "name": "Icathian Rain",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-105"
+      "riftboundId": "OGN-248"
     },
     {
       "name": "Time Warp",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-122"
     }
   ],
   "runes": {
-    "Fury": 7,
-    "Mind": 5
+    "Fury": 6,
+    "Mind": 6
   },
   "battlefields": [
-    "Treasure Hoard",
-    "Void Gate",
-    "Zaun Warrens"
+    "Star Spring",
+    "The Arena's Greatest",
+    "Void Gate"
   ],
   "sideDeck": [
     {
-      "name": "Retreat",
-      "quantity": 1,
+      "name": "Blood Rush",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-104"
-    },
-    {
-      "name": "Long Sword",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-022"
-    },
-    {
-      "name": "Lotus Trap",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-013"
-    },
-    {
-      "name": "Smite",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-007"
-    },
-    {
-      "name": "Turn to Dust",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-070"
+      "riftboundId": "SFD-003"
     },
     {
       "name": "Rocket Barrage",
@@ -200,8 +164,14 @@
       "riftboundId": "SFD-077"
     },
     {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-022"
+    },
+    {
       "name": "Ferrous Forerunner",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-021"
     },

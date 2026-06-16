@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-76-dodo",
   "legend": "Teemo, Swift Scout",
-  "champion": "Teemo, Strategist",
+  "champion": "Teemo, Scout",
   "player": "Dodo",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,28 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Teemo, Strategist",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "OGN-121"
-    },
-    {
-      "name": "Evelynn, Entrancing",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-141"
-    },
-    {
-      "name": "Teemo, Scout",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Teemo, Strategist",
+      "name": "Ravenbloom Student",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-121"
+      "riftboundId": "OGN-103"
     },
     {
       "name": "Tideturner",
@@ -45,40 +27,82 @@
       "riftboundId": "OGN-199"
     },
     {
-      "name": "Windsinger",
+      "name": "Traveling Merchant",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "SFD-138"
+      "riftboundId": "OGN-185"
     },
     {
-      "name": "Sneaky Deckhand",
+      "name": "Fizz, Trickster",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Vex, Apathetic",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-176"
+      "riftboundId": null
     },
     {
-      "name": "Nocturne, Horrifying",
-      "quantity": 3,
+      "name": "Hwei, Brooding Painter",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-194"
+      "riftboundId": "UNL-080"
     },
     {
       "name": "Baron Nashor",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-147"
     },
     {
-      "name": "Sprite Fountain",
-      "quantity": 3,
+      "name": "Frigid Jewel",
+      "quantity": 2,
       "type": "Gear",
-      "riftboundId": "UNL-078"
+      "riftboundId": "UNL-074"
     },
     {
-      "name": "Existential Dread",
+      "name": "The Syren",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-184"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Edge of Night",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-139"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-150"
+    },
+    {
+      "name": "Gust",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-134"
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
     },
     {
       "name": "Abandon",
@@ -87,64 +111,46 @@
       "riftboundId": "UNL-131"
     },
     {
-      "name": "Bone Skewer",
-      "quantity": 2,
+      "name": "Hard Bargain",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-139"
+      "riftboundId": "SFD-136"
     },
     {
-      "name": "Guerilla Warfare",
+      "name": "Isolate",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-264"
+      "riftboundId": "UNL-124"
     },
     {
       "name": "Ride the Wind",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-173"
     },
     {
-      "name": "Switcheroo",
-      "quantity": 3,
+      "name": "Star-Crossed",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-145"
-    },
-    {
-      "name": "Sprite Call",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-094"
+      "riftboundId": "UNL-128"
     },
     {
       "name": "Consult the Past",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-083"
-    },
-    {
-      "name": "Singularity",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-105"
     }
   ],
   "runes": {
-    "Chaos": 6,
-    "Mind": 6
+    "Chaos": 7,
+    "Mind": 5
   },
   "battlefields": [
-    "Grove of the God-Willow",
-    "Startipped Peak",
-    "The Arena's Greatest"
+    "Minefield",
+    "Ripper's Bay",
+    "Star Spring"
   ],
   "sideDeck": [
-    {
-      "name": "Rebuke",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-172"
-    },
     {
       "name": "Turn to Dust",
       "quantity": 2,
@@ -152,14 +158,14 @@
       "riftboundId": "UNL-070"
     },
     {
-      "name": "Edge of Night",
+      "name": "Mindsplitter",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-139"
+      "riftboundId": "OGN-192"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-116"
     },
@@ -168,6 +174,12 @@
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-123"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-109"
     }
   ],
   "record": null,

@@ -1305,10 +1305,27 @@ Voici les **28 meilleures decklists** — une par légende, au meilleur classeme
     // Set setTag to Spiritforged via raw query
     await prisma.$executeRaw`UPDATE "Deck" SET "setTag" = 'Spiritforged' WHERE id = ${deck.id}`;
 
+    const seen = new Set<string>();
+    // Légende + champion (le deckCode n'a pas de section legend/champion)
+    const legForCard = (await prisma.card.findFirst({ where: { type: "Legend", name: { equals: d.legend, mode: "insensitive" } } })) ?? legendCard;
+    if (legForCard) {
+      await prisma.deckCard.create({ data: { deckId: deck.id, cardId: legForCard.id, quantity: 1, section: "legend" } });
+      seen.add(`${legForCard.id}:legend`);
+    }
+    const champDash = d.champion.replace(/, /g, " - ");
+    const champCard = await prisma.card.findFirst({ where: { OR: [
+      { name: { equals: d.champion, mode: "insensitive" } },
+      { name: { equals: champDash, mode: "insensitive" } },
+      { cleanName: { equals: d.champion, mode: "insensitive" } },
+      { cleanName: { equals: champDash, mode: "insensitive" } },
+    ] } });
+    if (champCard && !seen.has(`${champCard.id}:legend`)) {
+      await prisma.deckCard.create({ data: { deckId: deck.id, cardId: champCard.id, quantity: 1, section: "legend" } });
+      seen.add(`${champCard.id}:legend`);
+    }
+
     const parsed = parseDeckCode(d.deckCode);
     let created = 0;
-
-    const seen = new Set<string>();
     for (const entry of parsed.entries) {
       const dashName = entry.name.replace(/, /g, " - ");
       const card = await prisma.card.findFirst({

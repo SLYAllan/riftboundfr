@@ -318,26 +318,28 @@ const TOP8_SYDNEY = [
     champion: "Irelia, Fervent",
     player: "EDG Rico1997",
     placement: "1st",
-    record: "—",
+    record: "14-1-1",
     domains: "Calm/Chaos",
     deckCode: `== Main Deck ==
+3x Lonely Poro
+3x Scuttle Crab
+2x Vex, Apathetic
+2x Baron Nashor
+3x Zhonya's Hourglass
+2x Boots of Swiftness
+2x Charm
 3x Defiant Dance
 3x Defy
-3x Discipline
-3x Guardian Angel
-3x Scuttle Crab
-3x Tideturner
-3x Boots of Swiftness
-3x Stellacorn Herder
-2x Charm
 2x En Garde
-2x Stacked Deck
-2x Not So Fast
-2x Ride the Wind
-2x Star-Crossed
 1x Gust
-1x Fizz, Trickster
-1x Adaptatron
+1x Stacked Deck
+1x Abandon
+3x Discipline
+1x Flash
+2x Ride the Wind
+3x Find Your Center
+1x Star-Crossed
+1x Tricksy Tentacles
 
 == Runes ==
 6x Calm Rune
@@ -345,32 +347,45 @@ const TOP8_SYDNEY = [
 
 == Battlefield ==
 1x Abandoned Hall
+1x Aspirant's Climb
 1x Sunken Temple
-1x Targon's Peak`,
+
+== Side Deck ==
+2x Factory Recall
+2x Gust
+2x Guardian Angel
+1x Hard Bargain
+1x Baron Nashor`,
   },
   {
     legend: "Sivir, Battle Mistress",
     champion: "Sivir, Mercenary",
     player: "TSS SouledOut",
     placement: "2nd",
-    record: "—",
+    record: "14-2-0",
     domains: "Body/Chaos",
     deckCode: `== Main Deck ==
-3x Flurry of Blades
-3x Gust
-3x Sabotage
-3x Scryer's Bloom
-3x Stacked Deck
-3x Mobilize
-3x Treasure Trove
-3x Lunar Boon
-3x Catalyst of Aeons
-3x Dazzling Aurora
+1x Gentle Gemdragon
+1x Soulgorger
+1x Baron Nashor
 3x Elder Dragon
-2x Pack of Wonders
-2x Last Rites
-1x Disposal Order
-1x Mindsplitter
+2x Scryer's Bloom
+3x Treasure Trove
+1x Boots of Swiftness
+1x Last Rites
+3x Dazzling Aurora
+2x Flurry of Blades
+3x Gust
+1x Punch First
+1x Repulse
+3x Stacked Deck
+1x Abandon
+1x Challenge
+3x Mobilize
+1x Ride the Wind
+2x Invert Timelines
+2x Lunar Boon
+3x Catalyst of Aeons
 
 == Runes ==
 6x Body Rune
@@ -378,250 +393,213 @@ const TOP8_SYDNEY = [
 
 == Battlefield ==
 1x Aspirant's Climb
-1x Forgotten Monument
-1x Sigil of the Storm`,
+1x Sigil of the Storm
+1x The Papertree
+
+== Side Deck ==
+3x Acceptable Losses
+1x Repulse
+1x Abandon
+1x Beast Below
+1x Soulgorger
+1x Baron Nashor`,
   },
   {
     legend: "Diana, Scorn of the Moon",
     champion: "Diana, Lunari",
     player: "nice boy",
     placement: "3rd",
-    record: "—",
+    record: "12-2-1",
     domains: "Chaos/Mind",
     deckCode: `== Main Deck ==
+3x Plundering Poro
+3x Ravenbloom Student
+2x Bewitching Spirit
+1x Diana, Lunari
+1x Fizz, Trickster
+3x Nocturne, Horrifying
+2x Hwei, Brooding Painter
+2x Thousand-Tailed Watcher
 3x Gust
 3x Stacked Deck
 3x Stupefy
-3x Frigid Jewel
-3x Ravenbloom Student
-3x Ride the Wind
-3x Tideturner
-3x Hwei, Brooding Painter
-2x Flash
+1x Abandon
+1x Rebuke
+2x Ride the Wind
+3x Eclipse
 2x Moonfall
 2x Star-Crossed
-2x Fizz, Trickster
-1x Hard Bargain
-1x Smoke Screen
-1x Last Rites
-1x Fading Memories
-1x Vex, Apathetic
-1x Vex, Cheerless
-1x Mindsplitter
+2x Wages of Pain
 
 == Runes ==
-6x Chaos Rune
-6x Mind Rune
+7x Chaos Rune
+5x Mind Rune
 
 == Battlefield ==
 1x Abandoned Hall
+1x Frozen Fortress
 1x Ravenbloom Conservatory
-1x Targon's Peak
 
 == Side Deck ==
-3x Turn to Dust
-2x Eclipse
-1x Falling Comet
-1x Singularity
-1x Baron Nashor`,
+1x Abandon
+1x Rebuke
+2x Turn to Dust
+1x Star-Crossed
+3x Vex, Apathetic`,
   },
   {
     legend: "Vex, Gloomist",
     champion: "Vex, Apathetic",
-    player: "EEP Bonk Repeat",
+    player: "EEP Bonk Repeаt",
     placement: "4th",
-    record: "—",
+    record: "12-2-1",
     domains: "Calm/Chaos",
     deckCode: `== Main Deck ==
-3x Discipline
-3x Emperor's Divide
-3x Evelynn, Entrancing
+1x Evelynn, Entrancing
 3x Mutated Mouser
-3x Teemo, Scout
-2x Defy
-2x Existential Dread
-2x Gust
-2x Treasure Hunter
-2x Back Off
-2x Boots of Swiftness
+3x Overzealous Fan
+2x Tideturner
+1x Shadow
+3x Sona, Harmonious
+1x Boots of Swiftness
 2x Edge of Night
-2x Pyke, Returned
-2x Ember Monk
-2x Kha'Zix, Mutating Horror
-2x Sona, Harmonious
+2x Charm
+3x Defy
+2x Existential Dread
+3x Stacked Deck
+2x Discipline
+2x Flash
+1x Hard Bargain
+2x Meditation
 1x Switcheroo
-1x Star-Crossed
+3x Back Off
+2x Star-Crossed
 
 == Runes ==
-7x Chaos Rune
-5x Calm Rune
+6x Calm Rune
+6x Chaos Rune
 
 == Battlefield ==
-1x Bandle Tree
+1x Ravenbloom Conservatory
 1x Star Spring
 1x Startipped Peak
 
 == Side Deck ==
-2x Gust
-2x Ahri, Alluring
+3x Gust
 1x Abandon
-1x Not So Fast
 1x Hard Bargain
-1x Star-Crossed`,
+1x Not So Fast
+2x Ahri, Alluring`,
   },
   {
-    legend: "Master Yi, Wuju Bladesman",
-    champion: "Master Yi, Honed",
-    player: "Exordium",
+    legend: "Irelia, Blade Dancer",
+    champion: "Irelia, Fervent",
+    player: "Ghosterdriver",
     placement: "5th",
-    record: "—",
-    domains: "Calm/Body",
+    record: "11-2-1",
+    domains: "Calm/Chaos",
     deckCode: `== Main Deck ==
-3x Charm
-3x Clockwork Keeper
-2x Confront
-2x Defy
-3x Discipline
-3x En Garde
-3x First Mate
-3x Guardian Angel
 3x Lonely Poro
-1x Not So Fast
-3x Punch First
-3x Ruin Runner
-2x Sea Monkey
-2x Stellacorn Herder
-1x Thwonk!
-2x Trinity Force
-1x Irelia, Fervent
-
-== Runes ==
-6x Body Rune
-6x Calm Rune
-
-== Battlefield ==
-1x Forge of the Fluft
-1x Grove of the God-Willow
-1x Vilemaw's Lair
-
-== Side Deck ==
-2x Akshan, Mischievous
-1x Defy
-1x Disarming Rake
-1x Not So Fast
-1x Sabotage
-1x Unyielding Spirit
-1x Wind Wall`,
-  },
-  {
-    legend: "Teemo, Swift Scout",
-    champion: "Teemo, Strategist",
-    player: "AshenOCE",
-    placement: "6th",
-    record: "—",
-    domains: "Mind/Chaos",
-    deckCode: `== Main Deck ==
-3x Sprite Fountain
-3x Switcheroo
-3x Teemo, Scout
-3x Tideturner
-3x Windsinger
-3x Sprite Call
-3x Consult the Past
-3x Nocturne, Horrifying
-2x Existential Dread
-2x Bone Skewer
-2x Guerilla Warfare
-2x Teemo, Strategist
-2x Sneaky Deckhand
+3x Scuttle Crab
+2x Vex, Apathetic
+2x Baron Nashor
+1x Honeyfruit
+2x Zhonya's Hourglass
+2x Boots of Swiftness
+2x Charm
+3x Defiant Dance
+3x Defy
+2x En Garde
+2x Gust
+1x Stacked Deck
 1x Abandon
-1x Evelynn, Entrancing
+3x Discipline
+1x Hard Bargain
 1x Ride the Wind
-1x Singularity
-1x Baron Nashor
+3x Find Your Center
+1x Star-Crossed
+1x Tricksy Tentacles
 
 == Runes ==
-7x Mind Rune
-5x Chaos Rune
+6x Calm Rune
+6x Chaos Rune
 
 == Battlefield ==
-1x Grove of the God-Willow
-1x Startipped Peak
-1x The Arena's Greatest
+1x Abandoned Hall
+1x Aspirant's Climb
+1x Sunken Temple
 
 == Side Deck ==
-3x Turn to Dust
-2x Sprite Burst
-1x Fading Memories
-1x Abandon
-1x Singularity`,
+2x Factory Recall
+2x Invert Timelines
+1x Star-Crossed
+2x Tasty Faefolk
+1x Baron Nashor`,
   },
   {
-    legend: "LeBlanc, Deceiver",
-    champion: "LeBlanc, Shadow",
-    player: "DarkMagician",
+    legend: "Leblanc, Deceiver",
+    champion: "LeBlanc, Fragmented",
+    player: "CTCG DZiden",
     placement: "7th",
-    record: "—",
+    record: "11-3-0",
     domains: "Mind/Order",
     deckCode: `== Main Deck ==
-3x Hidden Blade
-3x Stupefy
-3x Deathknell
-3x Wages of Pain
-3x Cull the Weak
-3x Honest Broker
-3x Faithful Manufactor
-3x Singularity
-3x Imperial Decree
-3x Vanguard Captain
+2x Honest Broker
+3x Soaring Scout
+3x Watchful Sentry
+1x Black Rose Dignitary
+3x Karthus, Eternal
 2x Xin Zhao, Vigilant
-2x Lecturing Yordle
-2x Bellows Breath
-2x Spectral Matron
+1x Spectral Matron
+2x Glasc Mixologist
+1x Ruined Rex
+3x Thousand-Tailed Watcher
+1x Bellows Breath
+1x Sacrifice
+3x Cull the Weak
+3x Deathgrip
+1x Facebreaker
+2x Hidden Blade
+1x Salvage
+2x Shadow's Call
+1x Tactical Retreat
+2x Mirror Image
+1x Imperial Decree
 
 == Runes ==
 6x Mind Rune
 6x Order Rune
 
 == Battlefield ==
-1x The Arena's Greatest
-1x Treasure Hoard
-1x Void Gate
-
-== Side Deck ==
-2x Salvage
-2x Glasc Mixologist
-1x Facebreaker
-1x Xin Zhao, Vigilant
-1x Riptide Rex
-1x Bellows Breath`,
+1x Dusk Rose Lab
+1x Forbidding Waste
+1x Windswept Hillock`,
   },
   {
     legend: "Diana, Scorn of the Moon",
     champion: "Diana, Lunari",
-    player: "Lobo",
+    player: "CTG Alаnzq",
     placement: "8th",
-    record: "—",
+    record: "11-3-0",
     domains: "Chaos/Mind",
     deckCode: `== Main Deck ==
+3x Ravenbloom Student
+2x Fizz, Trickster
+3x Vex, Apathetic
+3x Hwei, Brooding Painter
+2x Vex, Cheerless
+2x Mindsplitter
+2x Existential Dread
 3x Gust
 3x Stacked Deck
 3x Stupefy
-3x Frigid Jewel
-3x Ride the Wind
-3x Tideturner
-3x Hwei, Brooding Painter
-3x Ravenbloom Student
-2x Flash
-2x Star-Crossed
-2x Fizz, Trickster
-1x Fading Memories
 1x Hard Bargain
-1x Last Rites
-1x Moonfall
-1x Smoke Screen
-1x Mindsplitter
-1x Vex, Cheerless
+2x Ride the Wind
+2x Eclipse
+3x Moonfall
+1x Star-Crossed
+3x Deadly Flourish
+1x Singularity
 
 == Runes ==
 7x Chaos Rune
@@ -633,11 +611,12 @@ const TOP8_SYDNEY = [
 1x Targon's Peak
 
 == Side Deck ==
-3x Turn to Dust
-2x Eclipse
-1x Falling Comet
-1x Singularity
-1x Baron Nashor`,
+3x Acceptable Losses
+1x Invert Timelines
+1x Star-Crossed
+1x Thousand-Tailed Watcher
+1x Unchecked Power
+1x Dr. Mundo, Expert`,
   },
 ];
 

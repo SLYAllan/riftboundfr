@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Master Yi, Tempered",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-113"
-    },
-    {
       "name": "Gemhand Hunter",
       "quantity": 3,
       "type": "Unit",
@@ -28,7 +22,7 @@
     },
     {
       "name": "Scuttle Crab",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-053"
     },
@@ -39,28 +33,22 @@
       "riftboundId": "UNL-040"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-032"
-    },
-    {
       "name": "Herald of Spring",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-034"
     },
     {
-      "name": "Voracious Gromp",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-100"
-    },
-    {
-      "name": "Vilemaw",
+      "name": "Arachnoid Horror",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-060"
+      "riftboundId": "UNL-117"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-082"
     },
     {
       "name": "Master Yi, Unstoppable",
@@ -70,7 +58,7 @@
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
@@ -81,46 +69,34 @@
       "riftboundId": "UNL-096"
     },
     {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-043"
+    },
+    {
+      "name": "Combat Experience",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-031"
+    },
+    {
       "name": "Defy",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
     {
-      "name": "Punch First",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "SFD-097"
-    },
-    {
-      "name": "Sabotage",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-156"
-    },
-    {
       "name": "Discipline",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-058"
     },
     {
-      "name": "Emperor's Divide",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-043"
-    },
-    {
       "name": "Grim Resolve",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-095"
-    },
-    {
-      "name": "Skyward Strike",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "UNL-038"
     },
     {
       "name": "Alpha Strike",
@@ -130,7 +106,7 @@
     },
     {
       "name": "Back Off",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-042"
     },
@@ -152,40 +128,34 @@
   ],
   "sideDeck": [
     {
-      "name": "Sabotage",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Forgotten Signpost",
+      "name": "En Garde",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-045"
+      "riftboundId": "OGN-046"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "OGN-145"
     },
     {
       "name": "Not So Fast",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "SFD-032"
-    },
-    {
-      "name": "Flurry of Feathers",
+      "name": "Akshan, Mischievous",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-044"
-    },
-    {
-      "name": "Poppy, Paragon",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-116"
+      "riftboundId": "SFD-109"
     }
   ],
   "record": null,

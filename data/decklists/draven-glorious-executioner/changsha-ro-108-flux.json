@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-108-flux",
   "legend": "Draven, Glorious Executioner",
-  "champion": "Draven, Showboat",
+  "champion": "Draven, Audacious",
   "player": "旋木时光.阿黎Flux",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,28 +15,22 @@
   ],
   "mainDeck": [
     {
-      "name": "Draven, Showboat",
+      "name": "Evelynn, Entrancing",
       "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "OGN-028"
-    },
-    {
-      "name": "Mischievous Marai",
-      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-003"
+      "riftboundId": "UNL-141"
     },
     {
       "name": "Overzealous Fan",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-128"
     },
     {
-      "name": "Pouty Poro",
+      "name": "Tideturner",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-013"
+      "riftboundId": "OGN-199"
     },
     {
       "name": "Treasure Hunter",
@@ -45,58 +39,40 @@
       "riftboundId": "SFD-130"
     },
     {
-      "name": "Pyke, Dockside Butcher",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-028"
-    },
-    {
       "name": "Jhin, Murderous Artist",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": null
     },
     {
       "name": "Kai'Sa, Survivor",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": null
     },
     {
       "name": "Noxus Hopeful",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-012"
     },
     {
-      "name": "Rengar, Unseen",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-024"
-    },
-    {
       "name": "Vex, Apathetic",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Darius, Trifarian",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-027"
-    },
-    {
-      "name": "Minotaur Reckoner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-014"
-    },
-    {
       "name": "Brynhir Thundersong",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-026"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-021"
     },
     {
       "name": "Spinning Axe",
@@ -105,16 +81,10 @@
       "riftboundId": "SFD-186"
     },
     {
-      "name": "Cleave",
+      "name": "Edge of Night",
       "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-004"
-    },
-    {
-      "name": "Existential Dread",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-134"
+      "type": "Gear",
+      "riftboundId": "SFD-139"
     },
     {
       "name": "Stacked Deck",
@@ -123,20 +93,38 @@
       "riftboundId": "OGN-183"
     },
     {
-      "name": "Abandon",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-131"
-    },
-    {
       "name": "Falling Star",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-029"
     },
     {
-      "name": "Ride the Wind",
+      "name": "Flash",
       "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-136"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-023"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-172"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-173"
     },
@@ -158,46 +146,52 @@
     "Fury": 6
   },
   "battlefields": [
-    "Forbidding Waste",
-    "Treasure Hoard",
-    "Zaun Warrens"
+    "Amateur Recital",
+    "Star Spring",
+    "Targon's Peak"
   ],
   "sideDeck": [
     {
-      "name": "Acceptable Losses",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-179"
-    },
-    {
-      "name": "Rebuke",
+      "name": "Against the Odds",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-172"
+      "riftboundId": "SFD-001"
     },
     {
-      "name": "Star-Crossed",
+      "name": "Falling Star",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-128"
+      "riftboundId": "OGN-029"
     },
     {
-      "name": "Kha'Zix, Mutating Horror",
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-136"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-150"
+    },
+    {
+      "name": "Vex, Apathetic",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": null
     },
     {
-      "name": "Brynhir Thundersong",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-026"
-    },
-    {
-      "name": "Ferrous Forerunner",
+      "name": "Thermo Beam",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-021"
+      "riftboundId": "OGN-022"
+    },
+    {
+      "name": "Mindsplitter",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-192"
     }
   ],
   "record": null,

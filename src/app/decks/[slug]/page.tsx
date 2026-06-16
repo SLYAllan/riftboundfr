@@ -118,8 +118,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
   }
 
   const legendCard = deck.cards.find((dc) => dc.section === "legend");
-  const championCard = deck.cards.find((dc) => dc.section === "legend" && dc.card.supertype === "Champion");
-  const actualLegend = deck.cards.find((dc) => dc.section === "legend" && dc.card.supertype !== "Champion") ?? legendCard;
+  // Champion = carte supertype "Champion" qui n'est PAS la Légende (certaines Légendes,
+  // ex. Annie, ont elles aussi supertype "Champion" → on distingue par type).
+  const championCard = deck.cards.find((dc) => dc.section === "legend" && dc.card.supertype === "Champion" && dc.card.type !== "Legend");
+  const actualLegend = deck.cards.find((dc) => dc.section === "legend" && dc.card.type === "Legend") ?? legendCard;
   const deckbuilderCode = encodeDeckBase64({
     legend: actualLegend ? { cardId: actualLegend.card.riftboundId, quantity: 1 } : null,
     champion: championCard ? { cardId: championCard.card.riftboundId, quantity: 1 } : null,

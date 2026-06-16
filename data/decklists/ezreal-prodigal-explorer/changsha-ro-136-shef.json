@@ -15,22 +15,22 @@
   ],
   "mainDeck": [
     {
-      "name": "Ezreal, Prodigy",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
       "name": "Ravenbloom Student",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-103"
     },
     {
-      "name": "Bewitching Spirit",
+      "name": "Traveling Merchant",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-121"
+      "riftboundId": "OGN-185"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
     },
     {
       "name": "Fizz, Trickster",
@@ -39,46 +39,34 @@
       "riftboundId": "SFD-140"
     },
     {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "UNL-080"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-116"
     },
     {
+      "name": "Rhasa the Sunderer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-195"
+    },
+    {
       "name": "Seal of Discord",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-204"
     },
     {
-      "name": "Last Rites",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-150"
-    },
-    {
       "name": "Bellows Breath",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-080"
-    },
-    {
-      "name": "Gust",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Stacked Deck",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-183"
     },
     {
       "name": "Stupefy",
@@ -87,22 +75,16 @@
       "riftboundId": "OGN-095"
     },
     {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
       "name": "Heedless Resurrection",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-142"
-    },
-    {
-      "name": "Smoke Screen",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-093"
-    },
-    {
-      "name": "Turn to Dust",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-070"
     },
     {
       "name": "Arcane Shift",
@@ -117,28 +99,22 @@
       "riftboundId": "UNL-063"
     },
     {
+      "name": "Invert Timelines",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-201"
+    },
+    {
       "name": "Star-Crossed",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-128"
     },
     {
       "name": "Wages of Pain",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "SFD-070"
-    },
-    {
-      "name": "Deadly Flourish",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "UNL-073"
-    },
-    {
-      "name": "Singularity",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-105"
     }
   ],
   "runes": {
@@ -146,22 +122,16 @@
     "Mind": 5
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Frozen Fortress",
-    "Sigil of the Storm"
+    "Minefield",
+    "Void Gate",
+    "Zaun Warrens"
   ],
   "sideDeck": [
     {
-      "name": "Acceptable Losses",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-179"
-    },
-    {
-      "name": "Hard Bargain",
+      "name": "Gust",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-136"
+      "riftboundId": "OGN-169"
     },
     {
       "name": "Turn to Dust",
@@ -170,22 +140,22 @@
       "riftboundId": "UNL-070"
     },
     {
-      "name": "Fizz, Trickster",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-140"
-    },
-    {
-      "name": "Vex, Cheerless",
+      "name": "Rocket Barrage",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-146"
+      "riftboundId": "SFD-077"
     },
     {
-      "name": "Unchecked Power",
+      "name": "Singularity",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-123"
+      "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Downwell",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-147"
     }
   ],
   "record": null,

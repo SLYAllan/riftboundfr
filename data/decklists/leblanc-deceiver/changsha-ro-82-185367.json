@@ -1,6 +1,6 @@
 {
   "id": "changsha-ro-82-185367",
-  "legend": "Leblanc, Deceiver",
+  "legend": "LeBlanc, Deceiver",
   "champion": "LeBlanc, Fragmented",
   "player": "吃土豆",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
@@ -15,14 +15,8 @@
   ],
   "mainDeck": [
     {
-      "name": "LeBlanc, Fragmented",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
       "name": "Honest Broker",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-155"
     },
@@ -57,12 +51,6 @@
       "riftboundId": "SFD-165"
     },
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Ruined Rex",
       "quantity": 3,
       "type": "Unit",
@@ -70,33 +58,21 @@
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Harnessed Dragon",
+      "name": "Atakhan",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-234"
+      "riftboundId": "UNL-170"
     },
     {
-      "name": "Rift Herald",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-179"
-    },
-    {
-      "name": "Baited Hook",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-242"
-    },
-    {
-      "name": "Sacrifice",
+      "name": "Cull the Weak",
       "quantity": 3,
       "type": "Spell",
-      "riftboundId": "UNL-173"
+      "riftboundId": "OGN-209"
     },
     {
       "name": "Hidden Blade",
@@ -105,25 +81,43 @@
       "riftboundId": "OGN-213"
     },
     {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Tactical Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-175"
+    },
+    {
       "name": "Mirror Image",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-200"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
     }
   ],
   "runes": {
-    "Mind": 4,
-    "Order": 8
+    "Mind": 5,
+    "Order": 7
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Star Spring",
+    "Dusk Rose Lab",
+    "Forbidding Waste",
     "Windswept Hillock"
   ],
   "sideDeck": [
     {
       "name": "Salvage",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
     },
@@ -140,16 +134,10 @@
       "riftboundId": "UNL-169"
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "Atakhan",
+      "name": "Unchecked Power",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-170"
+      "riftboundId": "OGN-123"
     }
   ],
   "record": null,

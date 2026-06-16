@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-93-goat",
   "legend": "Master Yi, Wuju Bladesman",
-  "champion": "Master Yi, Tempered",
+  "champion": "Master Yi, Honed",
   "player": "GOAT-毕月乌",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,10 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Master Yi, Tempered",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-113"
+      "name": "Clockwork Keeper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-044"
     },
     {
       "name": "Lonely Poro",
@@ -28,57 +28,63 @@
     },
     {
       "name": "Scuttle Crab",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-053"
     },
     {
+      "name": "Sea Monkey",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-098"
+    },
+    {
       "name": "First Mate",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-132"
     },
     {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
+      "name": "Qiyana, Victorious",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Poppy, Paragon",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-116"
+      "riftboundId": "OGN-155"
     },
     {
       "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-120"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-105"
     },
     {
-      "name": "Tasty Faefolk",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-075"
+      "name": "Doran's Blade",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-095"
     },
     {
-      "name": "Vilemaw",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-060"
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-051"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-115"
     },
     {
       "name": "Charm",
@@ -93,28 +99,22 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "En Garde",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-046"
-    },
-    {
       "name": "Punch First",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-097"
     },
     {
-      "name": "Sabotage",
-      "quantity": 1,
+      "name": "Repulse",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-156"
+      "riftboundId": "UNL-106"
     },
     {
-      "name": "Challenge",
-      "quantity": 1,
+      "name": "Confront",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-128"
+      "riftboundId": "OGN-129"
     },
     {
       "name": "Discipline",
@@ -129,22 +129,28 @@
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Back Off",
+      "name": "Find Your Center",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-042"
+      "riftboundId": "OGN-047"
     }
   ],
   "runes": {
-    "Body": 7,
-    "Calm": 5
+    "Body": 6,
+    "Calm": 6
   },
   "battlefields": [
-    "Emperor's Dais",
+    "Rockfall Path",
     "Star Spring",
-    "Startipped Peak"
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
+    {
+      "name": "En Garde",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-046"
+    },
     {
       "name": "Sabotage",
       "quantity": 2,
@@ -152,26 +158,26 @@
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Challenge",
+      "name": "Unyielding Spirit",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-128"
+      "riftboundId": "OGN-145"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 1,
+      "name": "Thwonk!",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-045"
+      "riftboundId": "SFD-040"
     },
     {
       "name": "Akshan, Mischievous",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-109"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-105"
     }

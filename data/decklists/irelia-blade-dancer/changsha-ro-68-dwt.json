@@ -15,46 +15,22 @@
   ],
   "mainDeck": [
     {
-      "name": "Irelia, Fervent",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "SFD-225"
-    },
-    {
-      "name": "Lonely Poro",
+      "name": "Treasure Hunter",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-036"
+      "riftboundId": "SFD-130"
     },
     {
-      "name": "Scuttle Crab",
+      "name": "Nami, Headstrong",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-053"
+      "riftboundId": "UNL-052"
     },
     {
-      "name": "Tideturner",
-      "quantity": 1,
+      "name": "Sneaky Deckhand",
+      "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-199"
-    },
-    {
-      "name": "Fizz, Trickster",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-140"
-    },
-    {
-      "name": "Pyke, Returned",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-145"
-    },
-    {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-056"
+      "riftboundId": "OGN-176"
     },
     {
       "name": "Stellacorn Herder",
@@ -64,39 +40,33 @@
     },
     {
       "name": "Irelia, Fervent",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-225"
     },
     {
       "name": "Guardian Angel",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "SFD-051"
     },
     {
-      "name": "Zhonya's Hourglass",
+      "name": "Spirit Wheel",
       "quantity": 1,
       "type": "Gear",
-      "riftboundId": "OGN-077"
+      "riftboundId": "SFD-144"
     },
     {
-      "name": "Boots of Swiftness",
+      "name": "The Syren",
       "quantity": 2,
       "type": "Gear",
-      "riftboundId": "SFD-133"
+      "riftboundId": "OGN-184"
     },
     {
-      "name": "Edge of Night",
+      "name": "Heart of Dark Ice",
       "quantity": 1,
       "type": "Gear",
-      "riftboundId": "SFD-139"
-    },
-    {
-      "name": "Charm",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-043"
+      "riftboundId": "SFD-052"
     },
     {
       "name": "Defiant Dance",
@@ -106,21 +76,27 @@
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-046"
     },
     {
-      "name": "Gust",
+      "name": "Existential Dread",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-134"
+    },
+    {
+      "name": "Abandon",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-169"
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Discipline",
@@ -129,10 +105,10 @@
       "riftboundId": "OGN-058"
     },
     {
-      "name": "Flash",
-      "quantity": 1,
+      "name": "Isolate",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGS-011"
+      "riftboundId": "UNL-124"
     },
     {
       "name": "Not So Fast",
@@ -141,22 +117,10 @@
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Rebuke",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-172"
-    },
-    {
-      "name": "Ride the Wind",
+      "name": "Lunar Boon",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-173"
-    },
-    {
-      "name": "Star-Crossed",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-128"
+      "riftboundId": "UNL-125"
     }
   ],
   "runes": {
@@ -165,57 +129,33 @@
   },
   "battlefields": [
     "Abandoned Hall",
-    "Sunken Temple",
-    "Targon's Peak"
+    "The Candlelit Sanctum",
+    "The Papertree"
   ],
   "sideDeck": [
     {
-      "name": "Factory Recall",
+      "name": "Abandon",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-135"
+      "riftboundId": "UNL-131"
     },
     {
-      "name": "Gust",
-      "quantity": 1,
+      "name": "Trevor Snoozebottom",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Heart of Dark Ice",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-052"
-    },
-    {
-      "name": "Pyke, Returned",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-145"
+      "riftboundId": "UNL-048"
     },
     {
       "name": "Adaptatron",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-056"
     },
     {
-      "name": "Draven, Audacious",
-      "quantity": 1,
+      "name": "Diana, No Longer Human",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "SFD-148"
-    },
-    {
-      "name": "Mindsplitter",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-192"
+      "riftboundId": null
     }
   ],
   "record": null,

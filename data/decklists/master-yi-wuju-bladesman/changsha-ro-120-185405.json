@@ -15,10 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Master Yi, Tempered",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-113"
+      "name": "Clockwork Keeper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-044"
     },
     {
       "name": "Lonely Poro",
@@ -33,34 +33,22 @@
       "riftboundId": "UNL-053"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-032"
-    },
-    {
-      "name": "Fiora, Peerless",
+      "name": "Nami, Headstrong",
       "quantity": 1,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "UNL-052"
     },
     {
-      "name": "First Mate",
-      "quantity": 3,
+      "name": "Stellacorn Herder",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-132"
+      "riftboundId": "SFD-048"
     },
     {
-      "name": "Akshan, Mischievous",
+      "name": "Irelia, Fervent",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-120"
+      "riftboundId": "SFD-225"
     },
     {
       "name": "Ruin Runner",
@@ -69,20 +57,32 @@
       "riftboundId": "SFD-105"
     },
     {
-      "name": "Vilemaw",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-060"
-    },
-    {
       "name": "Whiteflame Protector",
       "quantity": 1,
       "type": "Unit",
       "riftboundId": "OGN-082"
     },
     {
-      "name": "Charm",
+      "name": "Blood Rose",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-109"
+    },
+    {
+      "name": "Zhonya's Hourglass",
       "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-077"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-052"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -94,33 +94,45 @@
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-046"
     },
     {
-      "name": "Sabotage",
+      "name": "Punch First",
       "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Challenge",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-128"
+      "riftboundId": "SFD-097"
     },
     {
       "name": "Discipline",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-095"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-048"
     },
     {
       "name": "Not So Fast",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-045"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-192"
     }
   ],
   "runes": {
@@ -128,34 +140,46 @@
     "Calm": 6
   },
   "battlefields": [
-    "Emperor's Dais",
-    "Grove of the God-Willow",
-    "Star Spring"
+    "Rockfall Path",
+    "Star Spring",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
     {
-      "name": "Punch First",
+      "name": "Unyielding Spirit",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-097"
+      "riftboundId": "OGN-145"
     },
     {
-      "name": "Guardian Angel",
+      "name": "Back Off",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-051"
+      "riftboundId": "UNL-042"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "quantity": 3,
-      "type": "Sideboard",
-      "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Vilemaw",
+      "name": "Nami, Headstrong",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-060"
+      "riftboundId": "UNL-052"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-064"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Arachnoid Horror",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-117"
     }
   ],
   "record": null,

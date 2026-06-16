@@ -15,16 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Demacian Diplomat",
+      "name": "Evelynn, Entrancing",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-092"
+      "riftboundId": "UNL-141"
     },
     {
       "name": "Irresistible Faefolk",
@@ -33,46 +27,52 @@
       "riftboundId": "UNL-112"
     },
     {
-      "name": "Traveling Merchant",
+      "name": "Mister Root",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-185"
+      "riftboundId": "UNL-127"
     },
     {
       "name": "Fizz, Trickster",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-140"
     },
     {
-      "name": "Lucian, Merciless",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Akshan, Mischievous",
+      "name": "Insightful Investigator",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-109"
+      "riftboundId": "UNL-135"
     },
     {
-      "name": "Vex, Apathetic",
+      "name": "Kha'Zix, Mutating Horror",
       "quantity": 2,
       "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
+      "name": "Sett, Brawler",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-120"
+      "riftboundId": null
     },
     {
-      "name": "Punch First",
+      "name": "Draven, Audacious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-148"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-105"
+    },
+    {
+      "name": "Gust",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-097"
+      "riftboundId": "OGN-169"
     },
     {
       "name": "Sabotage",
@@ -87,8 +87,14 @@
       "riftboundId": "OGN-183"
     },
     {
-      "name": "Challenge",
+      "name": "Abandon",
       "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-128"
     },
@@ -99,16 +105,10 @@
       "riftboundId": "UNL-095"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 1,
+      "name": "Ride the Wind",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Rebuke",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-172"
+      "riftboundId": "OGN-173"
     },
     {
       "name": "Void Assault",
@@ -118,7 +118,7 @@
     },
     {
       "name": "Star-Crossed",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-128"
     }
@@ -128,52 +128,34 @@
     "Chaos": 6
   },
   "battlefields": [
-    "Forbidding Waste",
-    "The Arena's Greatest",
+    "Monastery of Hirana",
+    "Star Spring",
     "Zaun Warrens"
   ],
   "sideDeck": [
     {
-      "name": "Gust",
+      "name": "Punch First",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-169"
+      "riftboundId": "SFD-097"
     },
     {
-      "name": "Sabotage",
-      "quantity": 1,
+      "name": "Unyielding Spirit",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Stare Down",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-107"
-    },
-    {
-      "name": "Last Rites",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-150"
+      "riftboundId": "OGN-145"
     },
     {
       "name": "Akshan, Mischievous",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "SFD-109"
     },
     {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
+      "name": "Vex, Apathetic",
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": null
-    },
-    {
-      "name": "Baron Nashor",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-147"
     }
   ],
   "record": null,

@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Rek'Sai, Breacher",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "SFD-029"
-    },
-    {
       "name": "Carrion Dredger",
       "quantity": 3,
       "type": "Unit",
@@ -28,21 +22,39 @@
     },
     {
       "name": "Honest Broker",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-155"
     },
     {
-      "name": "Inferna",
-      "quantity": 3,
+      "name": "Pouty Poro",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "UNL-002"
+      "riftboundId": "OGN-013"
     },
     {
-      "name": "Vanguard Captain",
-      "quantity": 3,
+      "name": "Soaring Scout",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-218"
+      "riftboundId": "OGN-216"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-211"
+    },
+    {
+      "name": "Immortal Phoenix",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-037"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-028"
     },
     {
       "name": "Noxus Hopeful",
@@ -51,123 +63,111 @@
       "riftboundId": "OGN-012"
     },
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-021"
-    },
-    {
-      "name": "Seal of Unity",
+      "name": "Seal of Rage",
       "quantity": 3,
       "type": "Gear",
-      "riftboundId": "OGN-245"
+      "riftboundId": "OGN-040"
     },
     {
-      "name": "Divining Shells",
-      "quantity": 2,
+      "name": "Sun Disc",
+      "quantity": 1,
       "type": "Gear",
-      "riftboundId": "UNL-161"
+      "riftboundId": "OGN-021"
     },
     {
-      "name": "B.F. Sword",
+      "name": "Blood Rush",
       "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "SFD-161"
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-009"
     },
     {
       "name": "Cull the Weak",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-209"
     },
     {
-      "name": "Falling Star",
+      "name": "Deathgrip",
       "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-029"
     },
     {
       "name": "Hidden Blade",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Salvage",
+      "name": "Lotus Trap",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "UNL-013"
     },
     {
       "name": "Void Rush",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "SFD-188"
-    },
-    {
-      "name": "Vengeance",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-229"
     }
   ],
   "runes": {
-    "Fury": 5,
-    "Order": 7
+    "Fury": 8,
+    "Order": 4
   },
   "battlefields": [
     "The Arena's Greatest",
-    "The Candlelit Sanctum",
-    "Treasure Hoard"
+    "Veiled Temple",
+    "Zaun Warrens"
   ],
   "sideDeck": [
     {
-      "name": "Lotus Trap",
+      "name": "Blood Rush",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-013"
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-224"
     },
     {
       "name": "Smite",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-007"
     },
     {
-      "name": "Shen, Kinkou",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-241"
-    },
-    {
-      "name": "Vengeance",
+      "name": "Faithful Manufactor",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-229"
+      "riftboundId": "OGN-211"
     },
     {
-      "name": "Drag Under",
+      "name": "Immortal Phoenix",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-164"
+      "riftboundId": "OGN-037"
     },
     {
-      "name": "Thermo Beam",
+      "name": "Safety Inspector",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-022"
-    },
-    {
-      "name": "The Ruination",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-180"
+      "riftboundId": "UNL-164"
     }
   ],
   "record": null,

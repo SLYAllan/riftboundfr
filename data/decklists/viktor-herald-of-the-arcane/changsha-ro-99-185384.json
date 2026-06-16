@@ -15,10 +15,34 @@
   ],
   "mainDeck": [
     {
-      "name": "Viktor, Leader",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-069"
+    },
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-074"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-218"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-176"
     },
     {
       "name": "Jayce, Man of Progress",
@@ -27,28 +51,10 @@
       "riftboundId": "SFD-084"
     },
     {
-      "name": "Safety Inspector",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-164"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Thousand-Tailed Watcher",
       "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-116"
-    },
-    {
-      "name": "Sprite Fountain",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "UNL-078"
     },
     {
       "name": "Vanguard Armory",
@@ -82,21 +88,15 @@
     },
     {
       "name": "Shadow's Call",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-165"
     },
     {
-      "name": "Wages of Pain",
-      "quantity": 3,
+      "name": "Consult the Past",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-070"
-    },
-    {
-      "name": "Deadly Flourish",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "UNL-073"
+      "riftboundId": "OGN-083"
     },
     {
       "name": "Imperial Decree",
@@ -105,10 +105,16 @@
       "riftboundId": "OGN-221"
     },
     {
-      "name": "The Ruination",
+      "name": "Grand Strategem",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-180"
+      "riftboundId": "OGN-233"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
     }
   ],
   "runes": {
@@ -116,28 +122,34 @@
     "Order": 7
   },
   "battlefields": [
-    "Forbidding Waste",
     "The Arena's Greatest",
-    "Trifarian War Camp"
+    "Trifarian War Camp",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
     {
-      "name": "Salvage",
+      "name": "Stupefy",
       "quantity": 3,
+      "type": "Sideboard",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Pickpocket",
-      "quantity": 3,
+      "name": "Shadow's Call",
+      "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-074"
+      "riftboundId": "UNL-165"
     },
     {
-      "name": "Ashe, Focused",
+      "name": "Wages of Pain",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-169"
+      "riftboundId": "SFD-070"
     }
   ],
   "record": null,

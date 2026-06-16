@@ -15,10 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Vex, Apathetic",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
+      "name": "Evelynn, Entrancing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
     },
     {
       "name": "Mutated Mouser",
@@ -33,32 +33,20 @@
       "riftboundId": "SFD-128"
     },
     {
-      "name": "Tideturner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-199"
-    },
-    {
       "name": "Allay, Eager Admirer",
       "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-041"
     },
     {
-      "name": "Shadow",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-194"
-    },
-    {
       "name": "Trevor Snoozebottom",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-048"
     },
     {
       "name": "Sona, Harmonious",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-073"
     },
@@ -69,52 +57,52 @@
       "riftboundId": "OGN-067"
     },
     {
-      "name": "Vex, Cheerless",
+      "name": "Edge of Night",
       "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-146"
+      "type": "Gear",
+      "riftboundId": "SFD-139"
     },
     {
-      "name": "Baron Nashor",
+      "name": "Blast Cone",
       "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-147"
+      "type": "Gear",
+      "riftboundId": "UNL-133"
     },
     {
-      "name": "Zhonya's Hourglass",
+      "name": "Charm",
       "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Boots of Swiftness",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-133"
+      "type": "Spell",
+      "riftboundId": "OGN-043"
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
     {
       "name": "Existential Dread",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-134"
     },
     {
-      "name": "Gust",
-      "quantity": 1,
+      "name": "Abandon",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-169"
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Discipline",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-043"
     },
     {
       "name": "Not So Fast",
@@ -124,7 +112,7 @@
     },
     {
       "name": "Switcheroo",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-145"
     },
@@ -136,38 +124,26 @@
     },
     {
       "name": "Star-Crossed",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-128"
     }
   ],
   "runes": {
-    "Calm": 6,
-    "Chaos": 6
+    "Calm": 7,
+    "Chaos": 5
   },
   "battlefields": [
-    "Hallowed Tomb",
-    "Startipped Peak",
-    "The Papertree"
+    "Bandle Tree",
+    "The Grand Plaza",
+    "Trifarian War Camp"
   ],
   "sideDeck": [
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Abandon",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-131"
-    },
-    {
-      "name": "Not So Fast",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-045"
     },
     {
       "name": "Disarming Rake",
@@ -176,22 +152,22 @@
       "riftboundId": "SFD-032"
     },
     {
-      "name": "Wind Wall",
+      "name": "Star-Crossed",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-064"
+      "riftboundId": "UNL-128"
     },
     {
-      "name": "Vilemaw",
+      "name": "Vex, Cheerless",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-060"
+      "riftboundId": "SFD-146"
     },
     {
-      "name": "Baron Nashor",
-      "quantity": 1,
+      "name": "Alpha Wildclaw",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-147"
+      "riftboundId": "UNL-057"
     }
   ],
   "record": null,

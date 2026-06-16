@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-111-d-c-yl",
   "legend": "Fiora, Grand Duelist",
-  "champion": "Fiora, Worthy",
+  "champion": "Fiora, Victorious",
   "player": "D.C-YL.陈平安",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,62 +15,8 @@
   ],
   "mainDeck": [
     {
-      "name": "Fiora, Worthy",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Pit Rookie",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-136"
-    },
-    {
-      "name": "Unsung Hero",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "SFD-167"
-    },
-    {
-      "name": "First Mate",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-132"
-    },
-    {
-      "name": "Kinkou Initiate",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-097"
-    },
-    {
-      "name": "Spectral Matron",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-226"
-    },
-    {
-      "name": "Poppy, Paragon",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-116"
-    },
-    {
-      "name": "Sett, Brawler",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
       "name": "Harnessed Dragon",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "OGN-234"
     },
@@ -82,87 +28,99 @@
     },
     {
       "name": "Elder Dragon",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-118"
     },
     {
-      "name": "Shepherd's Heirloom",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "UNL-158"
-    },
-    {
-      "name": "B.F. Sword",
+      "name": "Divining Shells",
       "quantity": 3,
       "type": "Gear",
-      "riftboundId": "SFD-161"
+      "riftboundId": "UNL-161"
     },
     {
-      "name": "Punch First",
+      "name": "Forge of the Future",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-212"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Flurry of Blades",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-097"
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
     },
     {
       "name": "Sacrifice",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-173"
     },
     {
-      "name": "Challenge",
-      "quantity": 3,
+      "name": "Confront",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-128"
-    },
-    {
-      "name": "Deathgrip",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-163"
-    },
-    {
-      "name": "Grim Resolve",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-095"
+      "riftboundId": "OGN-129"
     },
     {
       "name": "Hidden Blade",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Riposte",
+      "name": "Mobilize",
       "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-166"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "SFD-206"
     },
     {
-      "name": "Salvage",
-      "quantity": 1,
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "OGN-138"
+    },
+    {
+      "name": "Divine Judgment",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-244"
     }
   ],
   "runes": {
-    "Body": 6,
-    "Order": 6
+    "Body": 8,
+    "Order": 4
   },
   "battlefields": [
-    "Monastery of Hirana",
-    "Sunken Temple",
-    "Trifarian War Camp"
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Trapping Grounds"
   ],
   "sideDeck": [
-    {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-106"
-    },
     {
       "name": "Unyielding Spirit",
       "quantity": 2,
@@ -170,22 +128,22 @@
       "riftboundId": "OGN-145"
     },
     {
-      "name": "Akshan, Mischievous",
+      "name": "Challenge",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-109"
+      "riftboundId": "OGN-128"
     },
     {
-      "name": "Ashe, Focused",
+      "name": "Hidden Blade",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-169"
+      "riftboundId": "OGN-213"
     },
     {
-      "name": "Rift Herald",
-      "quantity": 1,
+      "name": "Salvage",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-179"
+      "riftboundId": "OGN-224"
     }
   ],
   "record": null,

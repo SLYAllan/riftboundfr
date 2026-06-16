@@ -15,112 +15,124 @@
   ],
   "mainDeck": [
     {
-      "name": "Poppy, Paragon",
+      "name": "Demacian Diplomat",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-092"
+    },
+    {
+      "name": "Enthralling Protector",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-162"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Kinkou Initiate",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-097"
+    },
+    {
+      "name": "Nilah, Joyful Ascetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-115"
+    },
+    {
+      "name": "Wily Newtfish",
       "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-116"
-    },
-    {
-      "name": "Harnessed Dragon",
-      "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-234"
+      "riftboundId": "UNL-108"
     },
     {
-      "name": "Rift Herald",
-      "quantity": 1,
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-179"
+      "riftboundId": "UNL-120"
     },
     {
-      "name": "Elder Dragon",
-      "quantity": 3,
+      "name": "Voracious Gromp",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-118"
+      "riftboundId": "UNL-100"
     },
     {
-      "name": "Forge of the Future",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-212"
-    },
-    {
-      "name": "Vanguard Armory",
+      "name": "Seal of Strength",
       "quantity": 2,
       "type": "Gear",
-      "riftboundId": "SFD-168"
+      "riftboundId": "OGN-163"
     },
     {
-      "name": "Dazzling Aurora",
-      "quantity": 3,
+      "name": "Shepherd's Heirloom",
+      "quantity": 2,
       "type": "Gear",
-      "riftboundId": "OGN-160"
+      "riftboundId": "UNL-158"
     },
     {
-      "name": "Flurry of Blades",
-      "quantity": 3,
+      "name": "Hunter's Machete",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-096"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-133"
+      "riftboundId": "SFD-097"
+    },
+    {
+      "name": "Repulse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-106"
     },
     {
       "name": "Sabotage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Sacrifice",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "UNL-173"
-    },
-    {
-      "name": "Blood Money",
+      "name": "Challenge",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "SFD-162"
+      "riftboundId": "OGN-128"
     },
     {
-      "name": "Confront",
+      "name": "Disposal Order",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-103"
+    },
+    {
+      "name": "Grim Resolve",
       "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-129"
+      "riftboundId": "UNL-095"
     },
     {
-      "name": "Cull the Weak",
+      "name": "Keeper's Verdict",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-209"
+      "riftboundId": "UNL-204"
     },
     {
-      "name": "Mobilize",
-      "quantity": 3,
+      "name": "Tactical Retreat",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-134"
+      "riftboundId": "UNL-175"
     },
     {
-      "name": "Salvage",
+      "name": "Heroic Charge",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Catalyst of Aeons",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-138"
-    },
-    {
-      "name": "Divine Judgment",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-244"
-    },
-    {
-      "name": "The Ruination",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-180"
+      "riftboundId": "UNL-155"
     }
   ],
   "runes": {
@@ -128,16 +140,22 @@
     "Order": 6
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Forgotten Monument",
-    "Sigil of the Storm"
+    "Gardens of Becoming",
+    "Rockfall Path",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
     {
-      "name": "Keeper's Verdict",
+      "name": "Sacrifice",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Disposal Order",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-204"
+      "riftboundId": "UNL-103"
     },
     {
       "name": "Salvage",
@@ -146,16 +164,16 @@
       "riftboundId": "OGN-224"
     },
     {
+      "name": "Stare Down",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-107"
+    },
+    {
       "name": "Akshan, Mischievous",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 3,
-      "type": "Sideboard",
-      "riftboundId": "UNL-120"
     },
     {
       "name": "The Ruination",

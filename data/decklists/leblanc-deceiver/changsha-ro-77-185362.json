@@ -1,6 +1,6 @@
 {
   "id": "changsha-ro-77-185362",
-  "legend": "Leblanc, Deceiver",
+  "legend": "LeBlanc, Deceiver",
   "champion": "LeBlanc, Fragmented",
   "player": "刺蛇",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
@@ -15,10 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "LeBlanc, Fragmented",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
+      "name": "Carrion Dredger",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-153"
     },
     {
       "name": "Soaring Scout",
@@ -33,10 +33,10 @@
       "riftboundId": "OGN-096"
     },
     {
-      "name": "Chakram Dancer",
+      "name": "Black Rose Dignitary",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-071"
+      "riftboundId": "UNL-152"
     },
     {
       "name": "Karthus, Eternal",
@@ -45,16 +45,16 @@
       "riftboundId": "OGN-236"
     },
     {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-169"
+    },
+    {
       "name": "Glasc Mixologist",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-165"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
     },
     {
       "name": "Ruined Rex",
@@ -69,28 +69,22 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Harnessed Dragon",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-234"
-    },
-    {
       "name": "Rift Herald",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-179"
     },
     {
-      "name": "Seal of Unity",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-245"
+      "name": "Atakhan",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-170"
     },
     {
-      "name": "Baited Hook",
-      "quantity": 2,
+      "name": "Seal of Unity",
+      "quantity": 1,
       "type": "Gear",
-      "riftboundId": "OGN-242"
+      "riftboundId": "OGN-245"
     },
     {
       "name": "Sacrifice",
@@ -99,10 +93,22 @@
       "riftboundId": "UNL-173"
     },
     {
-      "name": "Hidden Blade",
+      "name": "Cull the Weak",
       "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-213"
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-165"
     },
     {
       "name": "Mirror Image",
@@ -112,44 +118,38 @@
     }
   ],
   "runes": {
-    "Mind": 4,
-    "Order": 8
+    "Mind": 5,
+    "Order": 7
   },
   "battlefields": [
+    "Dusk Rose Lab",
     "Star Spring",
-    "Trifarian War Camp",
     "Windswept Hillock"
   ],
   "sideDeck": [
     {
-      "name": "Bellows Breath",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-080"
-    },
-    {
-      "name": "Sacrifice",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-173"
-    },
-    {
       "name": "Salvage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
     },
     {
-      "name": "Ashe, Focused",
-      "quantity": 1,
+      "name": "Rocket Barrage",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-169"
+      "riftboundId": "SFD-077"
     },
     {
-      "name": "Ruined Rex",
+      "name": "Ekko, Recurrent",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "OGN-110"
+    },
+    {
+      "name": "Dr. Mundo, Expert",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-067"
+      "riftboundId": "OGN-109"
     },
     {
       "name": "Harnessed Dragon",
@@ -158,10 +158,10 @@
       "riftboundId": "OGN-234"
     },
     {
-      "name": "Atakhan",
+      "name": "The Ruination",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-170"
+      "riftboundId": "UNL-180"
     }
   ],
   "record": null,

@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Diana, Lunari",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-079"
-    },
-    {
       "name": "Ravenbloom Student",
       "quantity": 3,
       "type": "Unit",
@@ -33,16 +27,16 @@
       "riftboundId": "OGN-199"
     },
     {
-      "name": "Traveling Merchant",
-      "quantity": 2,
+      "name": "Sneaky Deckhand",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "OGN-185"
+      "riftboundId": "OGN-176"
     },
     {
-      "name": "Fizz, Trickster",
-      "quantity": 2,
+      "name": "Diana, No Longer Human",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "SFD-140"
+      "riftboundId": null
     },
     {
       "name": "Vex, Apathetic",
@@ -57,22 +51,28 @@
       "riftboundId": "UNL-080"
     },
     {
-      "name": "Vex, Cheerless",
-      "quantity": 2,
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
       "type": "Unit",
-      "riftboundId": "SFD-146"
+      "riftboundId": "OGN-116"
     },
     {
-      "name": "Acceptable Losses",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-179"
+      "name": "Frigid Jewel",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "UNL-074"
     },
     {
       "name": "Gust",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
     },
     {
       "name": "Stacked Deck",
@@ -87,63 +87,69 @@
       "riftboundId": "OGN-095"
     },
     {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Downstage Dramatics",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-061"
+    },
+    {
       "name": "Flash",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGS-011"
     },
     {
-      "name": "Hard Bargain",
+      "name": "Rebuke",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-136"
+      "riftboundId": "OGN-172"
     },
     {
       "name": "Ride the Wind",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-173"
     },
     {
-      "name": "Smoke Screen",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-093"
-    },
-    {
       "name": "Eclipse",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-063"
     },
     {
       "name": "Moonfall",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-198"
     },
     {
-      "name": "Star-Crossed",
+      "name": "Wages of Pain",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "UNL-128"
+      "riftboundId": "SFD-070"
     }
   ],
   "runes": {
-    "Chaos": 7,
-    "Mind": 5
+    "Chaos": 6,
+    "Mind": 6
   },
   "battlefields": [
     "Abandoned Hall",
-    "Hallowed Tomb",
+    "Ravenbloom Conservatory",
     "Targon's Peak"
   ],
   "sideDeck": [
     {
-      "name": "Retreat",
+      "name": "Factory Recall",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-104"
+      "riftboundId": "SFD-135"
     },
     {
       "name": "Abandon",
@@ -152,16 +158,16 @@
       "riftboundId": "UNL-131"
     },
     {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-145"
+    },
+    {
       "name": "Turn to Dust",
       "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-070"
-    },
-    {
-      "name": "Invert Timelines",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-201"
     },
     {
       "name": "Star-Crossed",
@@ -170,16 +176,16 @@
       "riftboundId": "UNL-128"
     },
     {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-123"
+    },
+    {
       "name": "Dr. Mundo, Expert",
       "quantity": 1,
       "type": "Sideboard",
       "riftboundId": "OGN-109"
-    },
-    {
-      "name": "Baron Nashor",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-147"
     }
   ],
   "record": null,

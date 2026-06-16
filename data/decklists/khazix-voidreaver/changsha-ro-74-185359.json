@@ -15,58 +15,64 @@
   ],
   "mainDeck": [
     {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Demacian Diplomat",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "UNL-092"
-    },
-    {
       "name": "Irresistible Faefolk",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-112"
     },
     {
-      "name": "Traveling Merchant",
+      "name": "Mister Root",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-185"
+      "riftboundId": "UNL-127"
     },
     {
-      "name": "Fizz, Trickster",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "SFD-140"
-    },
-    {
-      "name": "Lucian, Merciless",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Akshan, Mischievous",
+      "name": "Tideturner",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-109"
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": null
     },
     {
       "name": "Vex, Apathetic",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Rengar, Trophy Hunter",
+      "name": "Sett, Brawler",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-120"
+      "riftboundId": null
+    },
+    {
+      "name": "Arachnoid Horror",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-117"
+    },
+    {
+      "name": "Spirit Wheel",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-144"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
     },
     {
       "name": "Punch First",
@@ -75,16 +81,16 @@
       "riftboundId": "SFD-097"
     },
     {
-      "name": "Sabotage",
-      "quantity": 2,
+      "name": "Abandon",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-156"
+      "riftboundId": "UNL-131"
     },
     {
-      "name": "Stacked Deck",
-      "quantity": 3,
+      "name": "Challenge",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-183"
+      "riftboundId": "OGN-128"
     },
     {
       "name": "Grim Resolve",
@@ -99,20 +105,26 @@
       "riftboundId": "SFD-136"
     },
     {
-      "name": "Rebuke",
-      "quantity": 1,
+      "name": "Ride the Wind",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-172"
+      "riftboundId": "OGN-173"
     },
     {
       "name": "Void Assault",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-202"
     },
     {
+      "name": "Wallop",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-146"
+    },
+    {
       "name": "Star-Crossed",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-128"
     }
@@ -123,39 +135,39 @@
   },
   "battlefields": [
     "Forbidding Waste",
-    "The Arena's Greatest",
-    "Zaun Warrens"
+    "Hall of Legends",
+    "Monastery of Hirana"
   ],
   "sideDeck": [
     {
-      "name": "Gust",
-      "quantity": 3,
-      "type": "Sideboard",
-      "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Sabotage",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-156"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
-      "name": "Ruin Runner",
+      "name": "Unyielding Spirit",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-105"
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Disposal Order",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-103"
+    },
+    {
+      "name": "Void Assault",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-202"
+    },
+    {
+      "name": "Wallop",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-146"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "UNL-120"
     }
   ],
   "record": null,

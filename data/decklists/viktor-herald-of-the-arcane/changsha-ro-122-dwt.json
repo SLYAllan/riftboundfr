@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-122-dwt",
   "legend": "Viktor, Herald of the Arcane",
-  "champion": "Viktor, Leader",
+  "champion": "Viktor, Innovator",
   "player": "DWT-二麻",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,46 +15,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Viktor, Leader",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Zaun Punk",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-160"
-    },
-    {
-      "name": "Jayce, Man of Progress",
+      "name": "Safety Inspector",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "SFD-084"
-    },
-    {
-      "name": "Safety Inspector",
-      "quantity": 2,
-      "type": "Unit",
       "riftboundId": "UNL-164"
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": null
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "OGN-116"
-    },
-    {
-      "name": "Seal of Unity",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "OGN-245"
     },
     {
       "name": "Orb of Regret",
@@ -63,52 +27,52 @@
       "riftboundId": "OGN-090"
     },
     {
-      "name": "Forge of the Future",
+      "name": "Garbage Grabber",
       "quantity": 2,
       "type": "Gear",
-      "riftboundId": "OGN-212"
-    },
-    {
-      "name": "Sprite Fountain",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "UNL-078"
-    },
-    {
-      "name": "Vanguard Armory",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "SFD-168"
+      "riftboundId": "OGN-099"
     },
     {
       "name": "Bellows Breath",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "SFD-080"
     },
     {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-095"
+    },
+    {
+      "name": "Blood Money",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-162"
+    },
+    {
       "name": "Cull the Weak",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-209"
     },
     {
       "name": "Hidden Blade",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-213"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-224"
     },
     {
       "name": "Shadow's Call",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-063"
     },
     {
       "name": "Wages of Pain",
@@ -118,21 +82,27 @@
     },
     {
       "name": "Deadly Flourish",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-073"
     },
     {
       "name": "Imperial Decree",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-221"
     },
     {
       "name": "Singularity",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-105"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
     }
   ],
   "runes": {
@@ -140,58 +110,16 @@
     "Order": 6
   },
   "battlefields": [
-    "The Grand Plaza",
-    "Trifarian War Camp",
-    "Veiled Temple"
+    "Dusk Rose Lab",
+    "Ravenbloom Conservatory",
+    "Void Gate"
   ],
   "sideDeck": [
     {
-      "name": "Cull the Weak",
-      "quantity": 1,
+      "name": "Turn to Dust",
+      "quantity": 3,
       "type": "Sideboard",
-      "riftboundId": "OGN-209"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Zaun Punk",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-160"
-    },
-    {
-      "name": "B.F. Sword",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-161"
-    },
-    {
-      "name": "Deadly Flourish",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-073"
-    },
-    {
-      "name": "Sprite Burst",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-069"
-    },
-    {
-      "name": "Unchecked Power",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-123"
-    },
-    {
-      "name": "Time Warp",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-122"
+      "riftboundId": "UNL-070"
     }
   ],
   "record": null,

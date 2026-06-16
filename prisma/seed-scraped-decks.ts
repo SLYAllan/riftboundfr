@@ -5,6 +5,11 @@ import * as path from "path";
 const prisma = new PrismaClient();
 
 const TOURNAMENT_CTX: Record<string, string> = {
+  // Consolidation: les fichiers nomment "Suzhou/Fuzhou Regional" mais le tournoi
+  // affiché (tournament-flags) est "... Regional Qualifier" → on mappe pour éviter
+  // un contexte dupliqué à chaque seed.
+  "Suzhou Regional": "Suzhou Regional Qualifier",
+  "Fuzhou Regional": "Fuzhou Regional Qualifier",
   "Atlanta Regional Qualifier": "RQ Atlanta 2026",
   "Bologna Regional Qualifier": "RQ Bologna 2026",
   "Houston Regional Qualifier": "RQ Houston 2025",

@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-81-acc-muk",
   "legend": "Draven, Glorious Executioner",
-  "champion": "Draven, Showboat",
+  "champion": "Draven, Audacious",
   "player": "Acc.Muk.一会就睡",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,20 +15,14 @@
   ],
   "mainDeck": [
     {
-      "name": "Draven, Showboat",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "OGN-028"
-    },
-    {
       "name": "Evelynn, Entrancing",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-141"
     },
     {
       "name": "Overzealous Fan",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-128"
     },
@@ -39,10 +33,10 @@
       "riftboundId": "OGN-199"
     },
     {
-      "name": "Ember Monk",
-      "quantity": 3,
+      "name": "Jhin, Murderous Artist",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-167"
+      "riftboundId": null
     },
     {
       "name": "Kai'Sa, Survivor",
@@ -51,10 +45,10 @@
       "riftboundId": null
     },
     {
-      "name": "Vex, Apathetic",
-      "quantity": 2,
+      "name": "Noxus Hopeful",
+      "quantity": 3,
       "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "OGN-012"
     },
     {
       "name": "Darius, Trifarian",
@@ -63,10 +57,10 @@
       "riftboundId": "OGN-027"
     },
     {
-      "name": "Ferrous Forerunner",
+      "name": "Brynhir Thundersong",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-021"
+      "riftboundId": "OGN-026"
     },
     {
       "name": "Spinning Axe",
@@ -81,26 +75,14 @@
       "riftboundId": "SFD-139"
     },
     {
-      "name": "Cleave",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-004"
-    },
-    {
-      "name": "Gust",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
-    },
-    {
       "name": "Stacked Deck",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-183"
     },
     {
       "name": "Bone Skewer",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-139"
     },
@@ -111,14 +93,8 @@
       "riftboundId": "OGN-029"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-136"
-    },
-    {
       "name": "Rebuke",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-172"
     },
@@ -136,7 +112,7 @@
     },
     {
       "name": "Star-Crossed",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-128"
     }
@@ -146,34 +122,22 @@
     "Fury": 6
   },
   "battlefields": [
-    "Amateur Recital",
-    "Forgotten Monument",
-    "Zaun Warrens"
+    "Forge of the Fluft",
+    "Targon's Peak",
+    "Treasure Hoard"
   ],
   "sideDeck": [
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-169"
     },
     {
-      "name": "Falling Star",
-      "quantity": 1,
+      "name": "Abandon",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-029"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Switcheroo",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-145"
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Invert Timelines",
@@ -182,16 +146,16 @@
       "riftboundId": "OGN-201"
     },
     {
-      "name": "Star-Crossed",
+      "name": "Jhin, Murderous Artist",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-128"
+      "riftboundId": null
     },
     {
-      "name": "Brynhir Thundersong",
+      "name": "Ferrous Forerunner",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-026"
+      "riftboundId": "SFD-021"
     }
   ],
   "record": null,

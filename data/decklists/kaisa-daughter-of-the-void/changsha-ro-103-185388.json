@@ -15,22 +15,16 @@
   ],
   "mainDeck": [
     {
-      "name": "Kai'Sa, Survivor",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
       "name": "Plundering Poro",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-069"
     },
     {
-      "name": "Ravenbloom Student",
-      "quantity": 1,
+      "name": "Pouty Poro",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-103"
+      "riftboundId": "OGN-013"
     },
     {
       "name": "Watchful Sentry",
@@ -46,15 +40,9 @@
     },
     {
       "name": "Noxus Hopeful",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "OGN-012"
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-021"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -63,26 +51,20 @@
       "riftboundId": "OGN-116"
     },
     {
-      "name": "Long Sword",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-022"
-    },
-    {
       "name": "Bellows Breath",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-080"
     },
     {
       "name": "Hextech Ray",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-009"
     },
     {
       "name": "Retreat",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-104"
     },
@@ -99,16 +81,16 @@
       "riftboundId": "OGN-029"
     },
     {
-      "name": "Smite",
+      "name": "Piercing Light",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-007"
+      "riftboundId": "SFD-023"
     },
     {
-      "name": "Smoke Screen",
-      "quantity": 1,
+      "name": "Smite",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-093"
+      "riftboundId": "UNL-007"
     },
     {
       "name": "Turn to Dust",
@@ -117,10 +99,10 @@
       "riftboundId": "UNL-070"
     },
     {
-      "name": "Void Seeker",
-      "quantity": 1,
+      "name": "Sprite Burst",
+      "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-024"
+      "riftboundId": "UNL-069"
     },
     {
       "name": "Progress Day",
@@ -135,61 +117,49 @@
       "riftboundId": "OGN-105"
     },
     {
+      "name": "Icathian Rain",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-248"
+    },
+    {
       "name": "Time Warp",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-122"
     }
   ],
   "runes": {
-    "Fury": 7,
-    "Mind": 5
+    "Fury": 6,
+    "Mind": 6
   },
   "battlefields": [
-    "Forbidding Waste",
-    "Startipped Peak",
+    "Ravenbloom Conservatory",
+    "Rockfall Path",
     "Void Gate"
   ],
   "sideDeck": [
     {
-      "name": "Retreat",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-104"
-    },
-    {
       "name": "Turn to Dust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-070"
     },
     {
-      "name": "Darius, Trifarian",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-027"
-    },
-    {
-      "name": "Hwei, Brooding Painter",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-080"
-    },
-    {
-      "name": "Thermo Beam",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-022"
-    },
-    {
       "name": "Brynhir Thundersong",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-026"
     },
     {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Sideboard",
+      "riftboundId": "SFD-021"
+    },
+    {
       "name": "Unchecked Power",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-123"
     }

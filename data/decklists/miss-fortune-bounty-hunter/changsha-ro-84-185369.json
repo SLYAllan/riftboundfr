@@ -15,34 +15,16 @@
   ],
   "mainDeck": [
     {
-      "name": "Miss Fortune, Captain",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
       "name": "Mindsplitter",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "OGN-192"
-    },
-    {
-      "name": "Baron Nashor",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-147"
     },
     {
       "name": "Elder Dragon",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-118"
-    },
-    {
-      "name": "Scryer's Bloom",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "UNL-136"
     },
     {
       "name": "Last Rites",
@@ -63,22 +45,16 @@
       "riftboundId": "OGN-268"
     },
     {
-      "name": "Flurry of Blades",
+      "name": "Existential Dread",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-133"
+      "riftboundId": "UNL-134"
     },
     {
       "name": "Gust",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-169"
-    },
-    {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-106"
     },
     {
       "name": "Sabotage",
@@ -93,10 +69,16 @@
       "riftboundId": "OGN-183"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 2,
+      "name": "Abandon",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-136"
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
     },
     {
       "name": "Mobilize",
@@ -106,7 +88,7 @@
     },
     {
       "name": "Invert Timelines",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-201"
     },
@@ -134,32 +116,26 @@
   ],
   "sideDeck": [
     {
-      "name": "Factory Recall",
+      "name": "Flurry of Blades",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-135"
+      "riftboundId": "OGN-133"
     },
     {
-      "name": "Abandon",
+      "name": "Unyielding Spirit",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-131"
+      "riftboundId": "OGN-145"
     },
     {
-      "name": "Challenge",
+      "name": "Fading Memories",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-128"
-    },
-    {
-      "name": "Invert Timelines",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-201"
+      "riftboundId": "OGN-180"
     },
     {
       "name": "Baron Nashor",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "UNL-147"
     }

@@ -15,34 +15,16 @@
   ],
   "mainDeck": [
     {
-      "name": "Viktor, Innovator",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "OGN-117"
-    },
-    {
-      "name": "Plundering Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "riftboundId": "SFD-069"
-    },
-    {
-      "name": "Shen, Kinkou",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-241"
-    },
-    {
       "name": "Xin Zhao, Vigilant",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "SFD-176"
     },
     {
-      "name": "Safety Inspector",
+      "name": "Vi, Peacekeeper",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "UNL-164"
+      "riftboundId": null
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -52,9 +34,15 @@
     },
     {
       "name": "Sprite Fountain",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Gear",
       "riftboundId": "UNL-078"
+    },
+    {
+      "name": "Vanguard Armory",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-168"
     },
     {
       "name": "Bellows Breath",
@@ -70,7 +58,7 @@
     },
     {
       "name": "Blood Money",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "riftboundId": "SFD-162"
     },
@@ -87,16 +75,16 @@
       "riftboundId": "OGN-213"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "OGN-224"
-    },
-    {
       "name": "Shadow's Call",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Crescent Strike",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-072"
     },
     {
       "name": "Wages of Pain",
@@ -105,22 +93,10 @@
       "riftboundId": "SFD-070"
     },
     {
-      "name": "Deadly Flourish",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "UNL-073"
-    },
-    {
       "name": "Imperial Decree",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-221"
-    },
-    {
-      "name": "Sprite Burst",
-      "quantity": 2,
-      "type": "Spell",
-      "riftboundId": "UNL-069"
     },
     {
       "name": "Singularity",
@@ -135,27 +111,21 @@
   },
   "battlefields": [
     "Forbidding Waste",
-    "Ravenbloom Conservatory",
-    "The Arena's Greatest"
+    "Rockfall Path",
+    "Void Gate"
   ],
   "sideDeck": [
     {
-      "name": "Blood Money",
+      "name": "Forge of the Future",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-162"
+      "riftboundId": "OGN-212"
     },
     {
       "name": "Salvage",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "OGN-224"
-    },
-    {
-      "name": "Zaun Punk",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-160"
     },
     {
       "name": "Ashe, Focused",
@@ -165,21 +135,9 @@
     },
     {
       "name": "Safety Inspector",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Sideboard",
       "riftboundId": "UNL-164"
-    },
-    {
-      "name": "Unchecked Power",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-123"
-    },
-    {
-      "name": "Time Warp",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-122"
     }
   ],
   "record": null,

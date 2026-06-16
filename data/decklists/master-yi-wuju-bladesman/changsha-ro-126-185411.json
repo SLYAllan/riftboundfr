@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Master Yi, Tempered",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-113"
-    },
-    {
       "name": "Lonely Poro",
       "quantity": 3,
       "type": "Unit",
@@ -33,28 +27,10 @@
       "riftboundId": "UNL-053"
     },
     {
-      "name": "First Mate",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "OGN-132"
-    },
-    {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "SFD-109"
-    },
-    {
       "name": "Rengar, Trophy Hunter",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "UNL-120"
-    },
-    {
-      "name": "Arachnoid Horror",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "UNL-117"
     },
     {
       "name": "Ruin Runner",
@@ -69,22 +45,22 @@
       "riftboundId": "UNL-060"
     },
     {
-      "name": "Guardian Angel",
+      "name": "Whiteflame Protector",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-082"
+    },
+    {
+      "name": "Blood Rose",
       "quantity": 1,
       "type": "Gear",
-      "riftboundId": "SFD-051"
+      "riftboundId": "UNL-109"
     },
     {
       "name": "Zhonya's Hourglass",
       "quantity": 3,
       "type": "Gear",
       "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Trinity Force",
-      "quantity": 1,
-      "type": "Gear",
-      "riftboundId": "SFD-115"
     },
     {
       "name": "Charm",
@@ -111,22 +87,34 @@
       "riftboundId": "SFD-097"
     },
     {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-106"
-    },
-    {
-      "name": "Challenge",
+      "name": "Desert's Call",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-128"
+      "riftboundId": "SFD-031"
     },
     {
       "name": "Discipline",
       "quantity": 3,
       "type": "Spell",
       "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-192"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-042"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-047"
     }
   ],
   "runes": {
@@ -134,17 +122,11 @@
     "Calm": 6
   },
   "battlefields": [
-    "Altar to Unity",
-    "Star Spring",
-    "Treasure Hoard"
+    "Ravenbloom Conservatory",
+    "Rockfall Path",
+    "Vilemaw's Lair"
   ],
   "sideDeck": [
-    {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "UNL-106"
-    },
     {
       "name": "Sabotage",
       "quantity": 2,
@@ -152,22 +134,16 @@
       "riftboundId": "OGN-156"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 1,
+      "name": "Unyielding Spirit",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "SFD-045"
+      "riftboundId": "OGN-145"
     },
     {
-      "name": "Back Off",
-      "quantity": 1,
+      "name": "Nami, Headstrong",
+      "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "UNL-042"
-    },
-    {
-      "name": "Disarming Rake",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-032"
+      "riftboundId": "UNL-052"
     },
     {
       "name": "Akshan, Mischievous",
@@ -176,10 +152,10 @@
       "riftboundId": "SFD-109"
     },
     {
-      "name": "Vilemaw",
+      "name": "Ruin Runner",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "UNL-060"
+      "riftboundId": "SFD-105"
     }
   ],
   "record": null,

@@ -15,12 +15,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Irelia, Fervent",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "SFD-225"
-    },
-    {
       "name": "Lonely Poro",
       "quantity": 3,
       "type": "Unit",
@@ -28,7 +22,7 @@
     },
     {
       "name": "Scuttle Crab",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "UNL-053"
     },
@@ -39,44 +33,44 @@
       "riftboundId": "OGN-199"
     },
     {
-      "name": "Adaptatron",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-056"
-    },
-    {
       "name": "Stellacorn Herder",
       "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-048"
     },
     {
-      "name": "Irelia, Fervent",
-      "quantity": 1,
+      "name": "Draven, Audacious",
+      "quantity": 2,
       "type": "Unit",
-      "riftboundId": "SFD-225"
+      "riftboundId": "SFD-148"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-051"
+    },
+    {
+      "name": "The Syren",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-184"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Gear",
       "riftboundId": "OGN-077"
     },
     {
       "name": "Boots of Swiftness",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Gear",
       "riftboundId": "SFD-133"
     },
     {
-      "name": "Edge of Night",
-      "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "SFD-139"
-    },
-    {
       "name": "Charm",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-043"
     },
@@ -88,7 +82,7 @@
     },
     {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-045"
     },
@@ -100,15 +94,21 @@
     },
     {
       "name": "Gust",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-169"
     },
     {
       "name": "Stacked Deck",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Discipline",
@@ -117,16 +117,16 @@
       "riftboundId": "OGN-058"
     },
     {
+      "name": "Flash",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGS-011"
+    },
+    {
       "name": "Hard Bargain",
       "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-136"
-    },
-    {
-      "name": "Not So Fast",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "SFD-045"
     },
     {
       "name": "Rebuke",
@@ -135,22 +135,34 @@
       "riftboundId": "OGN-172"
     },
     {
-      "name": "Switcheroo",
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Tricksy Tentacles",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "SFD-145"
+      "riftboundId": "UNL-054"
     }
   ],
   "runes": {
-    "Calm": 5,
-    "Chaos": 7
+    "Calm": 6,
+    "Chaos": 6
   },
   "battlefields": [
-    "Fortified Position",
-    "Sunken Temple",
-    "Targon's Peak"
+    "Abandoned Hall",
+    "Ravenbloom Conservatory",
+    "Sunken Temple"
   ],
   "sideDeck": [
+    {
+      "name": "Defy",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "OGN-045"
+    },
     {
       "name": "Not So Fast",
       "quantity": 1,
@@ -158,34 +170,28 @@
       "riftboundId": "SFD-045"
     },
     {
-      "name": "Tideturner",
+      "name": "Zhonya's Hourglass",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-199"
-    },
-    {
-      "name": "Disarming Rake",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "SFD-032"
+      "riftboundId": "OGN-077"
     },
     {
       "name": "Star-Crossed",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Sideboard",
       "riftboundId": "UNL-128"
     },
     {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": null
-    },
-    {
-      "name": "Vex, Apathetic",
+      "name": "Adaptatron",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": null
+      "riftboundId": "OGN-056"
+    },
+    {
+      "name": "Vex, Cheerless",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "SFD-146"
     }
   ],
   "record": null,

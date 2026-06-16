@@ -15,22 +15,46 @@
   ],
   "mainDeck": [
     {
-      "name": "Sivir, Mercenary",
-      "quantity": 1,
-      "type": "Champion",
+      "name": "Traveling Merchant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-185"
+    },
+    {
+      "name": "Bewitching Spirit",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-121"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 2,
+      "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Mindsplitter",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": "OGN-192"
-    },
-    {
-      "name": "Elder Dragon",
+      "name": "Fizz, Trickster",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-118"
+      "riftboundId": "SFD-140"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-195"
+    },
+    {
+      "name": "Seal of Discord",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-204"
+    },
+    {
+      "name": "Seal of Strength",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-163"
     },
     {
       "name": "Scryer's Bloom",
@@ -40,7 +64,7 @@
     },
     {
       "name": "Treasure Trove",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-186"
     },
@@ -51,22 +75,22 @@
       "riftboundId": "SFD-150"
     },
     {
-      "name": "Dazzling Aurora",
-      "quantity": 3,
-      "type": "Gear",
-      "riftboundId": "OGN-160"
+      "name": "Acceptable Losses",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-179"
     },
     {
-      "name": "Flurry of Blades",
+      "name": "On the Hunt",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-204"
+    },
+    {
+      "name": "Punch First",
       "quantity": 2,
       "type": "Spell",
-      "riftboundId": "OGN-133"
-    },
-    {
-      "name": "Gust",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-169"
+      "riftboundId": "SFD-097"
     },
     {
       "name": "Sabotage",
@@ -81,75 +105,57 @@
       "riftboundId": "OGN-183"
     },
     {
-      "name": "Abandon",
-      "quantity": 1,
-      "type": "Spell",
-      "riftboundId": "UNL-131"
-    },
-    {
       "name": "Challenge",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-128"
     },
     {
-      "name": "Heedless Resurrection",
+      "name": "Hard Bargain",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "UNL-142"
+      "riftboundId": "SFD-136"
     },
     {
-      "name": "Mobilize",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-134"
-    },
-    {
-      "name": "Invert Timelines",
+      "name": "Rebuke",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-201"
+      "riftboundId": "OGN-172"
     },
     {
       "name": "Lunar Boon",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "UNL-125"
     },
     {
-      "name": "Catalyst of Aeons",
-      "quantity": 3,
+      "name": "Star-Crossed",
+      "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-138"
+      "riftboundId": "UNL-128"
     }
   ],
   "runes": {
-    "Body": 6,
-    "Chaos": 6
+    "Body": 5,
+    "Chaos": 7
   },
   "battlefields": [
-    "Aspirant's Climb",
-    "Forgotten Monument",
-    "Sigil of the Storm"
+    "Minefield",
+    "Sigil of the Storm",
+    "The Papertree"
   ],
   "sideDeck": [
     {
-      "name": "Factory Recall",
+      "name": "Acceptable Losses",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "SFD-135"
+      "riftboundId": "OGN-179"
     },
     {
-      "name": "Flurry of Blades",
+      "name": "Abandon",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-133"
-    },
-    {
-      "name": "Challenge",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-128"
+      "riftboundId": "UNL-131"
     },
     {
       "name": "Hard Bargain",
@@ -158,22 +164,28 @@
       "riftboundId": "SFD-136"
     },
     {
-      "name": "Invert Timelines",
+      "name": "Switcheroo",
       "quantity": 1,
       "type": "Sideboard",
-      "riftboundId": "OGN-201"
+      "riftboundId": "SFD-145"
+    },
+    {
+      "name": "Lunar Boon",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-125"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 1,
+      "type": "Sideboard",
+      "riftboundId": "UNL-128"
     },
     {
       "name": "Akshan, Mischievous",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Mindsplitter",
       "quantity": 2,
       "type": "Sideboard",
-      "riftboundId": "OGN-192"
+      "riftboundId": "SFD-109"
     }
   ],
   "record": null,

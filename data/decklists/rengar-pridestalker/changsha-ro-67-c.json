@@ -1,7 +1,7 @@
 {
   "id": "changsha-ro-67-c",
   "legend": "Rengar, Pridestalker",
-  "champion": "Rengar, Trophy Hunter",
+  "champion": "Rengar, Unseen",
   "player": "游人C",
   "tournament": "S3 Changsha Regional Open (2026-06-14)",
   "date": "2026-06-14",
@@ -15,46 +15,22 @@
   ],
   "mainDeck": [
     {
-      "name": "Rengar, Trophy Hunter",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": "UNL-120"
-    },
-    {
-      "name": "Determined Sentry",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-111"
-    },
-    {
       "name": "Inferna",
       "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-002"
     },
     {
-      "name": "Irresistible Faefolk",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-112"
-    },
-    {
-      "name": "Pit Rookie",
+      "name": "Mischievous Marai",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-136"
+      "riftboundId": "UNL-003"
     },
     {
-      "name": "First Mate",
+      "name": "Pouty Poro",
       "quantity": 2,
       "type": "Unit",
-      "riftboundId": "OGN-132"
-    },
-    {
-      "name": "Grim Apothecary",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-021"
+      "riftboundId": "OGN-013"
     },
     {
       "name": "Kinkou Initiate",
@@ -64,21 +40,15 @@
     },
     {
       "name": "Nidalee, Cat Form",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "riftboundId": "UNL-114"
     },
     {
-      "name": "Pyke, Dockside Butcher",
+      "name": "Pakaa Cub",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "UNL-028"
-    },
-    {
-      "name": "Jhin, Murderous Artist",
-      "quantity": 1,
-      "type": "Unit",
-      "riftboundId": null
+      "riftboundId": "OGN-135"
     },
     {
       "name": "Kai'Sa, Survivor",
@@ -87,28 +57,82 @@
       "riftboundId": null
     },
     {
-      "name": "Darius, Trifarian",
+      "name": "Noxus Hopeful",
       "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-012"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": "OGN-027"
     },
     {
-      "name": "Punch First",
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Arachnoid Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-117"
+    },
+    {
+      "name": "Brynhir Thundersong",
       "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-026"
+    },
+    {
+      "name": "Fresh Beans",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-011"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-003"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-004"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "SFD-097"
     },
     {
       "name": "Sabotage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Vault Breaker",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-010"
     },
     {
       "name": "Challenge",
       "quantity": 2,
       "type": "Spell",
       "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Confront",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-129"
     },
     {
       "name": "Thrill of the Hunt",
@@ -118,52 +142,15 @@
     }
   ],
   "runes": {
-    "Body": 8,
-    "Fury": 4
+    "Body": 7,
+    "Fury": 5
   },
   "battlefields": [
-    "Emperor's Dais",
-    "Star Spring",
+    "Forbidding Waste",
+    "Sunken Temple",
     "The Arena's Greatest"
   ],
-  "sideDeck": [
-    {
-      "name": "Unyielding Spirit",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-145"
-    },
-    {
-      "name": "Against the Odds",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "SFD-001"
-    },
-    {
-      "name": "Noxus Saboteur",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "OGN-018"
-    },
-    {
-      "name": "Akshan, Mischievous",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "SFD-109"
-    },
-    {
-      "name": "Carnivorous Snapvine",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-149"
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-026"
-    }
-  ],
+  "sideDeck": [],
   "record": null,
   "source": "https://riftdecks.com/riftbound-metagame/deck-1-185352",
   "notes": ""

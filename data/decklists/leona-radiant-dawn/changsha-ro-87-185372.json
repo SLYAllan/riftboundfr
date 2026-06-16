@@ -15,20 +15,8 @@
   ],
   "mainDeck": [
     {
-      "name": "Leona, Determined",
-      "quantity": 1,
-      "type": "Champion",
-      "riftboundId": null
-    },
-    {
-      "name": "Carrion Dredger",
-      "quantity": 3,
-      "type": "Unit",
-      "riftboundId": "UNL-153"
-    },
-    {
       "name": "Lonely Poro",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "riftboundId": "SFD-036"
     },
@@ -39,40 +27,52 @@
       "riftboundId": "UNL-053"
     },
     {
-      "name": "Fiora, Victorious",
+      "name": "Allay, Eager Admirer",
       "quantity": 3,
       "type": "Unit",
-      "riftboundId": "OGN-232"
+      "riftboundId": "UNL-041"
     },
     {
-      "name": "Vi, Peacekeeper",
+      "name": "Nami, Headstrong",
       "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-052"
+    },
+    {
+      "name": "Leona, Determined",
+      "quantity": 1,
       "type": "Unit",
       "riftboundId": null
     },
     {
-      "name": "Guardian Angel",
+      "name": "Blitzcrank, Impassive",
       "quantity": 2,
-      "type": "Gear",
-      "riftboundId": "SFD-051"
+      "type": "Unit",
+      "riftboundId": "OGN-067"
     },
     {
-      "name": "Shepherd's Heirloom",
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Leona, Zealot",
       "quantity": 1,
+      "type": "Unit",
+      "riftboundId": null
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
       "type": "Gear",
-      "riftboundId": "UNL-158"
+      "riftboundId": "UNL-049"
     },
     {
       "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "riftboundId": "OGN-077"
-    },
-    {
-      "name": "Charm",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-043"
     },
     {
       "name": "Defy",
@@ -81,22 +81,22 @@
       "riftboundId": "OGN-045"
     },
     {
-      "name": "Facebreaker",
-      "quantity": 3,
-      "type": "Spell",
-      "riftboundId": "OGN-220"
-    },
-    {
-      "name": "Hidden Blade",
+      "name": "Desert's Call",
       "quantity": 1,
       "type": "Spell",
-      "riftboundId": "OGN-213"
+      "riftboundId": "SFD-031"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
+      "name": "Discipline",
+      "quantity": 3,
       "type": "Spell",
-      "riftboundId": "OGN-224"
+      "riftboundId": "OGN-058"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-048"
     },
     {
       "name": "Thwonk!",
@@ -106,7 +106,7 @@
     },
     {
       "name": "Back Off",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "riftboundId": "UNL-042"
     },
@@ -118,7 +118,7 @@
     },
     {
       "name": "Zenith Blade",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Spell",
       "riftboundId": "OGN-262"
     }
@@ -129,35 +129,10 @@
   },
   "battlefields": [
     "Amateur Recital",
-    "Grove of the God-Willow",
+    "Aspirant's Climb",
     "Monastery of Hirana"
   ],
-  "sideDeck": [
-    {
-      "name": "Not So Fast",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "SFD-045"
-    },
-    {
-      "name": "Spirit's Refuge",
-      "quantity": 1,
-      "type": "Sideboard",
-      "riftboundId": "OGN-063"
-    },
-    {
-      "name": "Faithful Manufactor",
-      "quantity": 3,
-      "type": "Sideboard",
-      "riftboundId": "OGN-211"
-    },
-    {
-      "name": "Ashe, Focused",
-      "quantity": 2,
-      "type": "Sideboard",
-      "riftboundId": "UNL-169"
-    }
-  ],
+  "sideDeck": [],
   "record": null,
   "source": "https://riftdecks.com/riftbound-metagame/deck-yang-guang-nu-hai-185372",
   "notes": ""
