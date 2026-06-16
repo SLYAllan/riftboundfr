@@ -77,7 +77,7 @@ export function BestOfDeckBrowser({ entries }: { entries: BestOfEntry[] }) {
         {filtered.map((e) => {
           const isOpen = !!open[e.id];
           return (
-            <div key={e.id} className="overflow-hidden rounded-card border border-hairline bg-surface">
+            <div key={e.id} className={cn("rounded-card border border-hairline bg-surface", !isOpen && "overflow-hidden")}>
               <button
                 onClick={() => setOpen((o) => ({ ...o, [e.id]: !o[e.id] }))}
                 className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-surface-raised/50"
