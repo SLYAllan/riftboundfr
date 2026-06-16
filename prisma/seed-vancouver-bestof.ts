@@ -1755,6 +1755,7 @@ Voici le meilleur deck de chaque légende jouée à Vancouver : pour chaque lég
     data: {
       title: "Best of Vancouver — Toutes les légendes",
       slug: "best-of-vancouver-rq",
+      coverImage: "/img/articles/vancouver.webp",
       excerpt:
         "Les meilleures decklists pour chaque légende au Regional Qualifier de Vancouver (1800+ joueurs). AlanZQ champion avec Diana.",
       category: "tournoi",
