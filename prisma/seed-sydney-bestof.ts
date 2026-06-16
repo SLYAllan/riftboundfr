@@ -619,7 +619,7 @@ const BEST_OF: BestOfEntry[] = [
 2x Tasty Faefolk`,
   },
   {
-    legend: "Khazix, Voidreaver",
+    legend: "Kha'Zix, Voidreaver",
     champion: "Kha'Zix, Mutating Horror",
     player: "PPOONG",
     placement: "28th",
@@ -1293,7 +1293,7 @@ const BEST_OF: BestOfEntry[] = [
 1x Vilemaw`,
   },
   {
-    legend: "Reksai, Void Burrower",
+    legend: "Rek'Sai, Void Burrower",
     champion: "Rek'Sai, Breacher",
     player: "Trаsterisk",
     placement: "198th",
