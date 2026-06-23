@@ -52,7 +52,7 @@ const getHomeData = unstable_cache(
       prisma.article.findMany({
         where: { published: true, tournamentName: { not: null } },
         orderBy: { tournamentDate: "desc" },
-        take: 5,
+        take: 20,
         select: { slug: true, title: true, tournamentName: true, tournamentDate: true, tournamentLocation: true },
       }),
       prisma.card.count(),
@@ -75,7 +75,26 @@ const getHomeData = unstable_cache(
     const shuffled = allDecks.sort(() => Math.random() - 0.5);
     const randomDecks = shuffled.slice(0, 6);
 
-    return { tierLists, randomDecks, legendEntries, latestArticles, tournamentArticles, cardCount };
+    // Un seul tournoi par ville : un même RQ peut avoir un récap ET un best-of,
+    // parfois avec des libellés différents ("Utrecht Regional Qualifier" vs
+    // "Regional Qualifier Utrecht"). On normalise sur la ville et on garde le récap.
+    const tournamentKey = (name: string | null, slug: string) =>
+      (name ?? slug)
+        .toLowerCase()
+        .replace(/regional qualifier|regional open|\brq\b|\bro\b/g, "")
+        .replace(/[^a-z]+/g, "")
+        .trim();
+    const byTournament = new Map<string, (typeof tournamentArticles)[number]>();
+    for (const t of tournamentArticles) {
+      const key = tournamentKey(t.tournamentName, t.slug);
+      const existing = byTournament.get(key);
+      if (!existing || (t.slug.startsWith("recap") && !existing.slug.startsWith("recap"))) {
+        byTournament.set(key, t);
+      }
+    }
+    const dedupedTournaments = [...byTournament.values()].slice(0, 5);
+
+    return { tierLists, randomDecks, legendEntries, latestArticles, tournamentArticles: dedupedTournaments, cardCount };
   },
   ["home-data"],
   { revalidate: 60, tags: ["home"] },

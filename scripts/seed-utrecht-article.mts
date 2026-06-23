@@ -110,7 +110,7 @@ Un méta aussi étalé, c'est la marque d'un format en pleine santé. Les decks 
 
 En une ligne : trois Regional Qualifiers disputés, et toujours invaincu en série. Les chiffres avancés à l'antenne donnent le vertige, autour de 28 séries sans défaite et un bilan de 38-2-4 en parties. Squirtle arrive à Utrecht en tenant du titre européen, sorti vainqueur de Lille, et repart avec un second trophée.
 
-Son [[Azir, Emperor of the Sands|Azir]] est un moteur qui ne s'éteint jamais. On enchaîne les pièces d'équipement, on déclenche la capacité de Légende pour invoquer des Sand Soldiers à la chaîne, et on transmet l'équipement d'un soldat à l'autre au fil des conquêtes. Ajoutez [[Arise]] pour reconstruire un plateau entier en un tour, [[Death Grip]] pour passer par-dessus n'importe quel mur, et une discipline de fer dans la gestion des ressources. C'est lent à tuer, mais ça ne lâche jamais prise.
+Son [[Azir, Emperor of the Sands|Azir]] est un moteur qui ne s'éteint jamais. On enchaîne les pièces d'équipement, on déclenche la capacité de Légende pour invoquer des Sand Soldiers à la chaîne, et on transmet l'équipement d'un soldat à l'autre au fil des conquêtes. Ajoutez [[Arise]] pour reconstruire un plateau entier en un tour, [[Deathgrip]] pour passer par-dessus n'importe quel mur, et une discipline de fer dans la gestion des ressources. C'est lent à tuer, mais ça ne lâche jamais prise.
 
 En quart, il écarte l'[[Annie, Dark Child|Annie]] de **Prismaticismism**, le huitième seed qui s'était glissé dans le Top 8 à l'arraché sur les départages. En demie, il déroule contre le [[Sett, The Boss|Sett]] de **Collin K**. Direction la finale, sans trembler.`,
   },
@@ -121,7 +121,7 @@ En quart, il écarte l'[[Annie, Dark Child|Annie]] de **Prismaticismism**, le hu
 
 S'il y a une histoire à raconter cette fois, c'est celle de **Rednaxell**. Premier Regional Qualifier de sa vie, venu seul d'Athènes, sans équipe ni staff pour décortiquer les matchups, sur un [[Viktor, Herald of the Arcane|Viktor]] qu'il joue depuis Origines. Le David parfait face au Goliath Micelion.
 
-Son Viktor est l'autre deck à jetons du format. Le Victor Leader transforme chaque unité qui meurt en recrue prête à frapper, [[Sprite Fountain]] inonde le plateau au meilleur moment, et un arsenal de sorts comme [[Bellows Breath]], [[Cull the Weak]], [[Stupefy]] et [[Hidden Blade]] vient gérer tout ce qui dépasse.
+Son Viktor est l'autre deck à jetons du format. La capacité de [[Viktor, Herald of the Arcane|Viktor]] transforme chaque unité qui meurt en recrue prête à frapper, [[Sprite Fountain]] inonde le plateau au meilleur moment, et un arsenal de sorts comme [[Bellows Breath]], [[Cull the Weak]], [[Stupefy]] et [[Hidden Blade]] vient gérer tout ce qui dépasse.
 
 Sa demi-finale contre Dhawally restera dans les mémoires. La [[Diana, Scorn of the Moon|Diana]] de **Dhawally**, déjà vainqueur du RQ Houston et demi-finaliste à Vancouver, sort une défense d'anthologie et garde la partie en vie jusqu'au dernier souffle. Mais sur le tirage de conquête à sept points, Rednaxell pioche le [[Sprite Fountain]] pile au bon moment et s'offre la finale. Un crève-cœur pour Dhawally, dont le rêve d'un second trophée s'arrête à une carte près.`,
   },
@@ -134,7 +134,7 @@ Sa demi-finale contre Dhawally restera dans les mémoires. La [[Diana, Scorn of 
 
 La clé du week-end pour Rednaxell tenait dans sa réserve : [[Pickpocket]]. La carte détruit les équipements à coût 1, et Azir en joue une pleine fournée, [[BF Sword|Lame BF]], [[Soul Sword|Épée des Âmes]], [[Doran's Shield|Bouclier de Doran]], [[Eye of the Herald|Œil du Héraut]]. En venant disséquer le moteur d'équipement pièce par pièce, Rednaxell privait Squirtle de son carburant.
 
-La première manche bascule pour Squirtle dans une remontée à zéro rune, tout misé sur l'économie, un empire posé sous ses pieds. Rednaxell réplique dans la deuxième en montant à huit points grâce à un [[Cull the Weak]] décisif. Tout se joue dans une troisième manche serrée, sur les terrains fétiches de Viktor. Mais Squirtle trouve juste assez de puissance pour conclure et garder son invincibilité intacte.`,
+La première manche bascule pour Squirtle au terme d'une partie d'usure : il joue ses runes jusqu'à la dernière, tout misé sur son économie de plateau, et finit par poser son empire. Rednaxell réplique dans la deuxième en filant à huit points grâce à un [[Cull the Weak]] décisif. Tout se joue dans une troisième manche serrée, sur les terrains fétiches de Viktor. Mais Squirtle trouve juste assez de puissance pour conclure et garder son invincibilité intacte.`,
   },
   {
     type: "image",

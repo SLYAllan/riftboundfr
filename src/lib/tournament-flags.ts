@@ -393,7 +393,9 @@ export function getTournamentCountryCode(tournamentContext: string): string | nu
   const lower = tournamentContext.toLowerCase();
   if (lower.includes("sydney")) return "AU";
   if (lower.includes("atlanta")) return "US";
+  if (lower.includes("hartford")) return "US";
   if (lower.includes("vancouver")) return "CA";
+  if (lower.includes("utrecht")) return "NL";
   if (lower.includes("online") || lower.includes("en ligne")) return "ONLINE";
   return null;
 }

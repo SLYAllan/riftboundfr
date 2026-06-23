@@ -141,7 +141,9 @@ Champions : Master Yi Tempered (66%), Master Yi Honed (34%)
 
 **Battlefields** : Star Spring (59%), Vilemaw's Lair (57%), Startipped Peak (35%)
 
-**Top placements** : **Won Suzhou (燐川)**, 2nd Houston, 2nd Lille, 2nd Shanghai NO, 35 top 8 CC
+**Config gagnante Unleashed (Hartford, Factor 14-1-1)** : le **Ruin Runner** monte de flex à pièce maîtresse (2x main + 1 side) — 6 énergie / 5 might **non ciblable par sorts/capacités**, c'est LE plan anti-Chaos/Diana. Accompagné de **Sabotage 3x**, **Punch First 3x**, **Fiora Peerless 2x**, **Rengar Trophy Hunter 3x**, Scuttle Crab 3x, First Mate 2x, + 1x Challenge / 1x Primal Strength. Battlefields : **Emperor's Dais + Seat of Power + The Arena's Greatest**. Closer signature : poser **double The Arena's Greatest** pour transformer la partie en course à 6 points. Side : Alpha Strike 2x (2e sort signature), Disarming Rake 3x, 2e Challenge/Ruin Runner contre Vex/Hwei.
+
+**Top placements** : **Won Suzhou (燐川)**, **Won Tianjin (陈千语)**, **Won Hartford (Factor 14-1-1)**, 2nd Houston, 2nd Lille, 2nd Shanghai NO, 35 top 8 CC
 
 ---
 
@@ -175,7 +177,9 @@ Champion : Diana, Lunari (100%)
 
 **Battlefields** : Abandoned Hall (81%), Ravenbloom Conservatory (58%), Targon's Peak (50%)
 
-**Top placements** : 2nd Xi'an, Top 4 Sydney
+**Tech Unleashed (Hartford) — Diana = la légende la mieux convertie (3 Top 8)** : **Moonfall** reste la meilleure réponse aux gros corps non-ciblables (Ruin Runner), mais souvent jouée à 2x main + 1 side seulement, donc à piocher. **Kha'Zix, Mutating Horror** = le haut de courbe (gros might). Tech de terrain montante : **The Arena's Greatest** pour accélérer dans le miroir quand on joue premier (vu chez bsweitz). Certaines listes coupent **Baron Nashor** (vulnérable au Punch First/Sabotage du Master Yi). Faiblesse structurelle vs Master Yi : aucun sort ne touche le Ruin Runner, et le Rebuke (cannot be defied) est l'unique sort non-défiable du deck.
+
+**Top placements** : **2nd Hartford (bsweitz)**, 4e + 5e Hartford, Won Vancouver (AlanZQ), 2nd Tianjin, 2nd Xi'an, Top 4 Sydney, Top 4 Utrecht
 
 ---
 

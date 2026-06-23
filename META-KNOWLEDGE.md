@@ -430,11 +430,23 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - Finale = miroir de tokens (Sand Soldiers vs recruits). **Pickpocket** (side) = tech clé anti-équipement Azir. Dwali/Diwali (Diana, vainqueur Houston, top 4 Vancouver) tombe en demie sur un Sprite Fountain top-deck. Micelion : 3 en Top 8.
 - Article Top 8 : `data/articles-drafts/recap-utrecht-rq-top8.md`. Analyse VOD : `data/videos/utrecht-day1-analysis.json`. Page : `/tournois/rq-utrecht-2026`.
 
-### Synthèse Unleashed mise à jour (15 juin 2026, 6 906 decks classés)
-- Tier S : Master Yi Bladesman (10,8%), Irelia (8,7%), Diana (6,3%), LeBlanc (~6,3%).
-- Tier A : Fiora, Draven, Lillia, Azir (vainqueur Utrecht), Kai'Sa, Sivir, Sett, Rengar (finaliste Vancouver), Annie (meilleure conversion).
-- Tier B : Vex (piège volume), Viktor (finaliste Utrecht, faible conversion), Kha'Zix, Ornn, Pyke, Ezreal.
-- Master Yi Wuju Master = tier D, archétype de niche (0,4%, 28 decks classés, 1 top 8).
+### Juin 2026 — RQ Hartford (20 juin 2026, Amérique du Nord)
+- **1 953 joueurs**, **1 657 decklists** au classement final (standings complets scrapés via riftdecks). 13 rondes de Suisse → Top 8 à élimination directe. Set Unleashed — **dernier RQ du format** avant le set Vendetta (paires de couleurs ennemies).
+- **Vainqueur : Factor (Master Yi, Wuju Bladesman, Corps/Calme), 14-1-1** — 2-0 en finale sur **bsweitz (Diana, Scorn of the Moon, Chaos/Esprit, 13-2-1)**. Premier titre de Master Yi Bladesman sur le **circuit occidental** (Sydney/Vancouver/Utrecht/Hartford). Revanche personnelle : bsweitz avait éliminé Factor à Vancouver.
+- **Finale** = la signature du week-end : **double The Arena's Greatest** posé par Factor (partie à 6 points), gagnée en jouant **second**. Moteur Master Yi = **Ruin Runner** (6 énergie / 5 might, non ciblable par sorts/capacités), protégé par Sabotage + Punch First — cauchemar des decks Chaos/Diana.
+- **Top légendes par picks (1657 decks)** : Master Yi Wuju Bladesman (178 / 10,7%), Diana (134 / 8,1%), Irelia (93), LeBlanc (76), Azir (70), Viktor (64), Ahri (53), Sivir (50), Pyke (46), Rengar (45), Kai'Sa (44), Ezreal (42), Draven/MF/Jhin (40), Vex (39), Annie (38), Leona/Lillia (36), Rek'Sai (35), Kha'Zix (34).
+- **Conversion top cut** : **Diana = la vraie menace** (3 Top 8 / 4 Top 16 / 9 Top 32 / 14 Top 64, best 2e). **Master Yi Bladesman** le plus joué et champion mais 1 seul Top 8 (best 1er) — convertit au titre, pas en volume. **Irelia = piège volume** : 2e plus jouée (93) mais 0 Top 8 (best 9e). **Lux (CTCG Relivia) 6e** = surprise du Top 8, 1er Top 8 majeur Unleashed de la légende.
+- **Domaines** : Corps/Calme 250 (le + joué, Master Yi), **Chaos/Esprit 198 = meilleure conversion (4 Top 8)** (Diana + Ezreal), Esprit/Ordre 185 (Lux/Viktor/LeBlanc).
+- **Top 8** : 1er Factor (Master Yi), 2e bsweitz (Diana), 3e Bradykin (Ezreal), 4e linsanity (Diana), 5e ASC Evansrhim (Diana, **liste non publiée**), 6e CTCG Relivia (Lux), 7e Prismaticismism (Annie, champion d'Atlanta, sorti en quart), 8e Mirru (Pyke).
+- **Bracket** : QF — Factor>Evansrhim (Diana), Bradykin>Mirru (Pyke), linsanity>Relivia (Lux, 2-0), bsweitz>Prismaticismism (Annie). SF — Factor>Bradykin (Ezreal), bsweitz>linsanity (miroir Diana, 2-1). **Finale — Factor>bsweitz (2-0)**.
+- **Données** : 7 Top 8 JSON (prefix `hartford-rq-`) dans `data/decklists/` (5e manquante = non fabriquée). Méta agrégée : `data/meta-reports/unleashed-post-hartford.json`. Article : `scripts/seed-hartford-article.mts` → `/articles/recap-hartford-rq-top8`. VOD : `data/videos/hartford-day1.srt`.
+
+### Synthèse Unleashed mise à jour (23 juin 2026, ~8 560 decks classés — post-Hartford)
+- Tier S : Master Yi Bladesman (le + joué, vainqueur Suzhou/Tianjin/Hartford), Irelia (T1 mais 0 Top 8 à Hartford), Diana (meilleure conversion, 3 Top 8 Hartford), LeBlanc.
+- Tier A : Fiora, Draven, Lillia, Azir (vainqueur Utrecht), Kai'Sa, Sivir, Sett, Rengar (finaliste Vancouver), Annie (7e Hartford, meilleure conversion).
+- Tier B : Ezreal (3e Hartford), Vex (piège volume), Viktor (finaliste Utrecht), Kha'Zix, Ornn, Pyke (8e Hartford).
+- **Lux monte en tier C** : 6e à Hartford (Relivia), 1er Top 8 majeur Unleashed de la légende.
+- Master Yi Wuju Master = tier D, archétype de niche (0,4%, 1 top 8).
 
 ## 6. Résultats de tournois
 
@@ -463,8 +475,10 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 | 12 | S3 Xi'an RO | 24 mai 2026 | Unleashed | 640 | 636 | Azir (墨白) | Diana |
 | 13 | Vancouver RQ | 31 mai 2026 | Unleashed | — | 6 (Top 8 castés) | Diana (AlanZQ) | Rengar (Sam D Sherman) |
 | 14 | S3 Tianjin RO | 7 juin 2026 | Unleashed | 640 | 638 | Master Yi Wuju Bladesman (陈千语) | Diana (GREY-邮差) |
+| 15 | RQ Utrecht | 14 juin 2026 | Unleashed | 1953 | top 16 | Azir (Squirtle) | Viktor (Rednaxell) |
+| 16 | RQ Hartford | 20 juin 2026 | Unleashed | 1953 | 1657 | Master Yi Bladesman (Factor 14-1-1) | Diana (bsweitz) |
 
-**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, Irelia 2 (Sydney, Shenzhen), Azir 2 (Lille, Xi'an), Ezreal 1 (Bologna), Master Yi Bladesman 2 (Suzhou, Tianjin), Diana 1 (Vancouver)
+**Bilan Regional wins** : Kai'Sa 5 (Guangzhou, Beijing D2, Chongqing, Shanghai NO, Shanghai CC), Draven 4 (Vegas, Fuzhou, Chengdu, +), Annie 3, **Master Yi Bladesman 3 (Suzhou, Tianjin, Hartford)**, Azir 3 (Lille, Xi'an, Utrecht), Irelia 2 (Sydney, Shenzhen), Ezreal 1 (Bologna), Diana 1 (Vancouver).
 
 **1er double champion de RQ de l'histoire : AlanZQ** (Bologna sur Ezreal + Vancouver sur Diana). Note : Sam D Sherman (ex-Vegas/Draven) et Diwali (ex-Houston/Annie) étaient aussi en lice pour ce statut dans le même Top 8.
 

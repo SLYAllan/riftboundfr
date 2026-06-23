@@ -76,6 +76,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const isCommunity = cat === "community";
 
   const TOURNAMENT_FILTERS = [
+    { ctx: "RQ Hartford 2026", label: "Hartford RQ" },
+    { ctx: "RQ Utrecht 2026", label: "Utrecht RQ" },
+    { ctx: "S3 Changsha Regional Open (2026-06-14)", label: "Changsha RO S3" },
     { ctx: "S3 Tianjin Regional Open (2026-06-07)", label: "Tianjin RO S3" },
     { ctx: "Xi'an Regional Open S3", label: "Xi'an RO S3" },
     { ctx: "RQ Sydney 2026", label: "Sydney RQ" },
