@@ -282,6 +282,18 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     set: "Unleashed",
     format: "Conquest",
   },
+  "RQ Hartford 2026": {
+    name: "Hartford Regional Qualifier 2026",
+    shortName: "Hartford RQ",
+    countryCode: "US",
+    city: "Hartford",
+    location: "Hartford, CT, USA",
+    playerCount: 1953,
+    type: "regional",
+    date: "2026-06-20",
+    set: "Unleashed",
+    format: "Conquest",
+  },
 
   // ── 25 tournois CN Spiritforged scrapés le 31 mai (clé = tournamentContext exact, nom unique avec date) ──
   "S2 Regional Open Chengdu (2026-01-25)": { name: "S2 Regional Open Chengdu", shortName: "Chengdu RO S2", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 512, type: "regional", date: "2026-01-25", set: "Spiritforged", format: "Conquest" },
