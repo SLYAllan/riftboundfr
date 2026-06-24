@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useMemo, useEffect } from "react";
+import { useState, useRef, useCallback, useMemo, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Search, X } from "lucide-react";
 import type { GlossaryCategory, GlossaryTerm } from "./page";
@@ -73,17 +73,26 @@ function normalize(str: string): string {
 /* ── Card tooltip component ── */
 
 function CardTooltip({ item, card }: { item: GlossaryTerm; card?: CardInfo }) {
+  const [hovered, setHovered] = useState(false);
   const [tooltip, setTooltip] = useState<{ top: number; left: number } | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+  const popRef = useRef<HTMLDivElement>(null);
 
-  const show = useCallback(() => {
-    if (!ref.current || !card?.imageUrl) return;
+  // Mesure la taille réelle du tooltip puis le place à droite du terme (ou à
+  // gauche faute de place), borné dans le viewport. Jamais hors écran.
+  useLayoutEffect(() => {
+    if (!hovered || !ref.current || !popRef.current || !card?.imageUrl) return;
     const rect = ref.current.getBoundingClientRect();
-    const spaceRight = window.innerWidth - rect.right;
-    const left = spaceRight > 310 ? rect.right + 12 : rect.left - 300;
-    const top = Math.max(8, Math.min(rect.top - 40, window.innerHeight - 460));
+    const pop = popRef.current.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const w = pop.width;
+    const h = pop.height;
+    let left = vw - rect.right > w + 20 ? rect.right + 12 : rect.left - w - 12;
+    left = Math.max(8, Math.min(left, vw - w - 8));
+    const top = Math.max(8, Math.min(rect.top - 40, vh - h - 8));
     setTooltip({ top, left });
-  }, [card]);
+  }, [hovered, card]);
 
   if (!card) return null;
 
@@ -91,16 +100,17 @@ function CardTooltip({ item, card }: { item: GlossaryTerm; card?: CardInfo }) {
     <div
       ref={ref}
       className="mt-2 flex items-center gap-2 text-xs text-ink-muted cursor-help"
-      onMouseEnter={show}
-      onMouseLeave={() => setTooltip(null)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => { setHovered(false); setTooltip(null); }}
     >
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-arcane" />
       Ex&nbsp;: <span className="text-arcane">{card.name}</span>
       <span className="text-ink-disabled">({card.type})</span>
-      {tooltip && card.imageUrl && (
+      {hovered && card.imageUrl && (
         <div
+          ref={popRef}
           className="hidden md:block fixed z-50 pointer-events-none"
-          style={{ top: tooltip.top, left: tooltip.left }}
+          style={{ top: tooltip?.top ?? 0, left: tooltip?.left ?? 0, opacity: tooltip ? 1 : 0 }}
         >
           <div className="rounded-card border border-hairline bg-surface p-2 shadow-xl">
             <Image

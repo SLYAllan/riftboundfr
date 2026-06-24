@@ -397,7 +397,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
   // (genre 53/56). Le filtre "owned=1" ne garde que les decks 100% jouables.
   const ownedOnly = params.owned === "1";
   const sessionUser = await getUserFromSession();
-  const ownedOnlyActive = !!sessionUser;
   const coverageByDeck = new Map<string, { owned: number; required: number; missing: number }>();
   if (sessionUser && decks.length) {
     const owned = await getOwnedByName(sessionUser.id);
@@ -458,20 +457,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
         })}
       </div>
 
-      <div className="mt-3">
-        <Link
-          href={`/decks${(() => { const q = [!ownedOnly && "owned=1", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
-          className={cn(
-            "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
-            ownedOnly ? "bg-emerald-500/20 text-emerald-400 ring-1 ring-emerald-500/40" : "bg-surface-raised text-ink-muted hover:text-ink",
-          )}
-        >
-          <Hammer size={12} /> Jouables avec ma collection
-        </Link>
-        {ownedOnly && !ownedOnlyActive && (
-          <span className="ml-2 text-xs text-ink-muted">Connecte-toi pour utiliser ce filtre.</span>
-        )}
-      </div>
+      {/* Filtre collection : n'apparaît qu'une fois connecté (sinon aucune
+          couverture à calculer). Garde tous les autres filtres dans l'URL. */}
+      {sessionUser && (
+        <div className="mt-3">
+          <Link
+            href={`/decks${(() => { const q = [!ownedOnly && "owned=1", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+              ownedOnly ? "bg-emerald-500/20 text-emerald-400 ring-1 ring-emerald-500/40" : "bg-surface-raised text-ink-muted hover:text-ink",
+            )}
+          >
+            <Hammer size={12} /> {ownedOnly ? "Voir tous les decks" : "Decks que je peux jouer avec mes cartes"}
+          </Link>
+        </div>
+      )}
 
       {(!cat || cat === "tournoi" || cat === "bestof") && (
         <div className="mt-3 flex flex-wrap gap-2">

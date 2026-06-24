@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 
@@ -17,7 +17,6 @@ interface CardData {
 const cache = new Map<string, CardData | null>();
 
 const POP_W = 300;
-const POP_H = 470; // image (~419 at 300w) + footer
 
 function resized(url: string): string {
   if (url.includes("cmsassets.rgpub.io")) {
@@ -32,10 +31,17 @@ export function CardRef({ name, children }: { name: string; children?: React.Rea
   const [card, setCard] = useState<CardData | null>(cache.get(name) ?? null);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
   const ref = useRef<HTMLSpanElement>(null);
+  const popRef = useRef<HTMLSpanElement>(null);
   const fetched = useRef(false);
 
   const fetchCard = useCallback(() => {
-    if (fetched.current || cache.has(name)) return;
+    // Déjà en cache (rempli par une autre occurrence de la même carte) :
+    // appliquer la valeur à CETTE instance, sinon son aperçu reste vide.
+    if (cache.has(name)) {
+      setCard(cache.get(name) ?? null);
+      return;
+    }
+    if (fetched.current) return;
     fetched.current = true;
     fetch(`/api/cards/preview?name=${encodeURIComponent(name)}`)
       .then((r) => (r.ok ? r.json() : null))
@@ -46,27 +52,32 @@ export function CardRef({ name, children }: { name: string; children?: React.Rea
       .catch(() => {});
   }, [name]);
 
-  const place = useCallback(() => {
-    if (!ref.current) return;
+  const show = useCallback(() => {
+    setHovered(true);
+    fetchCard();
+  }, [fetchCard]);
+
+  // Mesure la hauteur RÉELLE du popup une fois rendu (opacity 0) puis le place
+  // au-dessus du mot — ou en dessous faute de place — toujours borné dans le
+  // viewport. Jamais hors écran, quelle que soit la hauteur du footer.
+  useLayoutEffect(() => {
+    if (!hovered || !ref.current || !popRef.current) return;
     // Anchor on the first client rect so a name wrapping across two lines
     // still positions the preview against where the word actually starts.
     const rects = ref.current.getClientRects();
     const rect = rects.length ? rects[0] : ref.current.getBoundingClientRect();
+    const pop = popRef.current.getBoundingClientRect();
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    let left = rect.left + rect.width / 2 - POP_W / 2;
-    left = Math.max(8, Math.min(left, vw - POP_W - 8));
-    let top = rect.top - POP_H - 10; // prefer above the word
+    const w = pop.width || POP_W;
+    const h = pop.height;
+    let left = rect.left + rect.width / 2 - w / 2;
+    left = Math.max(8, Math.min(left, vw - w - 8));
+    let top = rect.top - h - 10; // prefer above the word
     if (top < 8) top = rect.bottom + 10; // otherwise below
-    top = Math.max(8, Math.min(top, vh - POP_H - 8));
+    top = Math.max(8, Math.min(top, vh - h - 8));
     setPos({ top, left });
-  }, []);
-
-  const show = useCallback(() => {
-    setHovered(true);
-    fetchCard();
-    place();
-  }, [fetchCard, place]);
+  }, [hovered, card]);
 
   useEffect(() => {
     if (cache.has(name) && !card) setCard(cache.get(name) ?? null);
@@ -78,17 +89,20 @@ export function CardRef({ name, children }: { name: string; children?: React.Rea
         ref={ref}
         className="cursor-help border-b border-dotted border-arcane/40 text-arcane transition-colors hover:border-arcane hover:text-arcane-vivid"
         onMouseEnter={show}
-        onMouseLeave={() => setHovered(false)}
+        onMouseLeave={() => { setHovered(false); setPos(null); }}
       >
         {children ?? name}
       </span>
-      {hovered && card?.imageUrl && pos && (
+      {hovered && card?.imageUrl && (
         <span
+          ref={popRef}
           className="pointer-events-none fixed z-[200] block overflow-hidden rounded-2xl border border-hairline bg-surface shadow-2xl"
-          style={{ top: pos.top, left: pos.left, width: POP_W }}
+          style={{ top: pos?.top ?? 0, left: pos?.left ?? 0, width: POP_W, opacity: pos ? 1 : 0 }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={resized(card.imageUrl)} alt={card.name} className="block w-full bg-canvas" />
+          {/* aspectRatio réserve la hauteur AVANT chargement du bitmap : la mesure
+              de placement est correcte d'emblée, donc pas de débordement post-load */}
+          <img src={resized(card.imageUrl)} alt={card.name} className="block w-full bg-canvas object-cover" style={{ aspectRatio: "300 / 419" }} />
           <span className="block space-y-1.5 px-3 py-2.5">
             <span className="block text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {card.name}

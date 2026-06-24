@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 
 // Aperçu agrandi d'une carte au survol : popup en position fixe (jamais rognée
@@ -33,37 +33,45 @@ export function CardHover({
   const [hovered, setHovered] = useState(false);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
   const ref = useRef<HTMLDivElement>(null);
+  const popRef = useRef<HTMLDivElement>(null);
 
-  const popH = width * 1.4 + 78; // image 5:7 + footer
-
-  const place = useCallback(() => {
-    if (!ref.current) return;
+  // Une fois le popup rendu (opacity 0), on mesure sa hauteur RÉELLE puis on le
+  // place au-dessus de la vignette — ou en dessous s'il n'y a pas la place — en
+  // bornant systématiquement dans le viewport. Jamais hors écran.
+  useLayoutEffect(() => {
+    if (!hovered || !ref.current || !popRef.current) return;
     const rect = ref.current.getBoundingClientRect();
+    const pop = popRef.current.getBoundingClientRect();
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    let left = rect.left + rect.width / 2 - width / 2;
-    left = Math.max(8, Math.min(left, vw - width - 8));
-    let top = rect.top - popH - 10;
+    const w = pop.width || width;
+    const h = pop.height;
+    let left = rect.left + rect.width / 2 - w / 2;
+    left = Math.max(8, Math.min(left, vw - w - 8));
+    let top = rect.top - h - 10;
     if (top < 8) top = rect.bottom + 10;
-    top = Math.max(8, Math.min(top, vh - popH - 8));
+    top = Math.max(8, Math.min(top, vh - h - 8));
     setPos({ top, left });
-  }, [width, popH]);
+  }, [hovered, width]);
 
   return (
     <div
       ref={ref}
       className={className}
-      onMouseEnter={() => { setHovered(true); place(); }}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => { setHovered(false); setPos(null); }}
     >
       {children}
-      {hovered && src && pos && (
+      {hovered && src && (
         <div
+          ref={popRef}
           className="pointer-events-none fixed z-[200] overflow-hidden rounded-2xl border border-hairline bg-surface shadow-2xl"
-          style={{ top: pos.top, left: pos.left, width }}
+          style={{ top: pos?.top ?? 0, left: pos?.left ?? 0, width, opacity: pos ? 1 : 0 }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={resized(src, width)} alt={alt} className="block w-full bg-canvas" />
+          {/* aspectRatio réserve la hauteur AVANT chargement du bitmap : la mesure
+              de placement est correcte d'emblée, donc pas de débordement post-load */}
+          <img src={resized(src, width)} alt={alt} className="block w-full bg-canvas object-cover" style={{ aspectRatio: "300 / 419" }} />
           <div className="space-y-1.5 px-3 py-2.5">
             <div className="text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {name}

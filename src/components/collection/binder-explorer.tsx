@@ -256,32 +256,33 @@ export function BinderExplorer({
             const has = qty > 0;
             const wished = wishlist.has(c.id);
             return (
-              <CardHover
-                key={c.id}
-                className="group relative"
-                src={c.imageUrl}
-                alt={c.name}
-                name={c.name}
-                type={c.type}
-                energy={c.energy}
-                might={c.might}
-                domains={c.domains}
-                note={has ? <span className="font-semibold text-arcane">×{qty} en collection</span> : <span className="text-ink-muted">Non possédée</span>}
-              >
-                <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
-                  <CardImage src={c.imageUrl} alt={c.name} size="sm" />
-                  {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-white shadow">×{qty}</span>}
-                  <button onClick={() => toggleWish(c.id)} aria-label="Wishlist"
-                    className={`absolute left-1 top-1 rounded-full p-1 ${wished ? "bg-pink-500/90 text-white" : "bg-black/40 text-white/70 opacity-0 group-hover:opacity-100"}`}>
-                    <Heart size={12} fill={wished ? "currentColor" : "none"} />
-                  </button>
-                </div>
+              <div key={c.id} className="group relative">
+                {/* L'aperçu au survol ne se déclenche QUE sur l'image, pas sur le stepper */}
+                <CardHover
+                  src={c.imageUrl}
+                  alt={c.name}
+                  name={c.name}
+                  type={c.type}
+                  energy={c.energy}
+                  might={c.might}
+                  domains={c.domains}
+                  note={has ? <span className="font-semibold text-arcane">×{qty} en collection</span> : <span className="text-ink-muted">Non possédée</span>}
+                >
+                  <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
+                    <CardImage src={c.imageUrl} alt={c.name} size="sm" />
+                    {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-white shadow">×{qty}</span>}
+                    <button onClick={() => toggleWish(c.id)} aria-label="Wishlist"
+                      className={`absolute left-1 top-1 rounded-full p-1 ${wished ? "bg-pink-500/90 text-white" : "bg-black/40 text-white/70 opacity-0 group-hover:opacity-100"}`}>
+                      <Heart size={12} fill={wished ? "currentColor" : "none"} />
+                    </button>
+                  </div>
+                </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">
                   <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30">−</button>
                   <span className={`min-w-4 text-center text-sm ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
                   <button onClick={() => setQuantity(c.id, qty + 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink">+</button>
                 </div>
-              </CardHover>
+              </div>
             );
           })}
         </div>
