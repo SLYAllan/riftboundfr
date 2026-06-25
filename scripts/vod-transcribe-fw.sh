@@ -4,10 +4,14 @@
 # Identique à vod-transcribe.sh mais transcrit via scripts/fw_transcribe.py (CTranslate2).
 set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PATH="$HOME/.deno/bin:$PATH"   # Deno = solveur nsig pour yt-dlp (sinon "format not available")
 WORK="${1:-/d/riftbound-vods/worklist-all.txt}"
 BASE=/d/riftbound-vods
 AUD="$BASE/audio"; TR="$BASE/transcripts"; LOGS="$BASE/logs"
 MODEL="${WHISPER_MODEL:-small.en}"
+# Auth + throttling anti-bot YouTube (cookies Firefox + pauses) — surchargeable par env.
+COOKIES="${YTDLP_COOKIES:---cookies-from-browser firefox}"
+THROTTLE="${YTDLP_THROTTLE:---sleep-requests 1.5 --sleep-interval 1 --max-sleep-interval 4}"
 mkdir -p "$AUD" "$TR" "$LOGS"
 LOG="$LOGS/pipeline.log"
 ts(){ date '+%Y-%m-%d %H:%M:%S'; }
@@ -19,7 +23,8 @@ while IFS=$'\t' read -r id label; do
   if [ -f "$TR/$id.txt" ]; then echo "$(ts) SKIP  $id  $label" >>"$LOG"; ok=$((ok+1)); continue; fi
   echo "$(ts) DL    $id  $label" >>"$LOG"
   rm -f "$AUD/$id".* 2>/dev/null
-  yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 5 --no-warnings --no-progress \
+  yt-dlp -f "bestaudio/best" -x --audio-format mp3 --audio-quality 5 --no-warnings --no-progress \
+    $COOKIES $THROTTLE \
     -o "$AUD/%(id)s.%(ext)s" "https://www.youtube.com/watch?v=$id" >>"$LOGS/ytdlp.log" 2>&1
   af="$AUD/$id.mp3"
   if [ ! -f "$af" ]; then echo "$(ts) FAILDL $id" >>"$LOG"; continue; fi

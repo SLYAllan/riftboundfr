@@ -31,6 +31,15 @@ bash scripts/vod-transcribe-fw.sh /d/riftbound-vods/worklist.txt
 # Ancienne version (openai-whisper) si besoin :
 bash scripts/vod-transcribe.sh /d/riftbound-vods/worklist.txt
 ```
+**Prérequis téléchargement (sinon « format not available » / « confirm you're not a bot ») :**
+1. **yt-dlp à jour** (`pip install -U yt-dlp`) — YouTube change ses formats en continu.
+2. **Deno** (solveur nsig) dans le PATH — `irm https://deno.land/install.ps1 | iex` ; le script ajoute
+   `~/.deno/bin` au PATH. Sans lui, yt-dlp ne récupère que des images (« n challenge solving failed »).
+3. **Cookies Firefox** (`--cookies-from-browser firefox`, dans `$COOKIES`) — Firefox connecté à YouTube ;
+   Chrome/Edge chiffrent leurs cookies (illisibles). Lève l'anti-bot.
+4. **Throttling + concurrence modérée** (`$THROTTLE`, ~2-3 workers max) — trop de downloads parallèles
+   non authentifiés = blocage anti-bot de l'IP. yt-dlp `-f "bestaudio/best"` (fallback).
+
 Modèle : **`small.en` suffit** (test 25 juin : précision identique à openai-small sur les noms de
 cartes, plus rapide). Les erreurs résiduelles sur noms propres sont inhérentes à Whisper → rattrapées
 par `scripts/validate-card-names.mts`. `medium.en` = gain marginal pour plus de lenteur.
