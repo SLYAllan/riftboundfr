@@ -11,7 +11,7 @@
 **Lecture méta (ère Hartford).** La **consistance** prime sur la puissance brute (plans linéaires en day 2). Le **violet (Chaos)** domine et pousse le removal pur hors du méta → **Diana prospère**. Le **jaune (Ordre) aggro** est bien placé (nouvelles pioches). Le **de-ramp** est l'action la plus punitive. Différences régionales : NA = Draven/Kai'Sa/Azir + Set 1 ; Europe = Vex/Lillia/Kha'Zix/Irelia + plus d'Aurora. Hartford gonfle Master Yi (dernier « Best of » Set 1).
 
 **Tier consensuel (éditorial) :**
-- **S / haut A** : Irelia « Aurelia » (n°1, tech-dépendant), Master Yi Wuju Bladesman (le plus représenté day 2, vainqueur Hartford).
+- **S / haut A** : Irelia (n°1, tech-dépendant), Master Yi Wuju Bladesman (le plus représenté day 2, vainqueur Hartford).
 - **A** : Diana (vainqueur Vancouver, oppressive), Ezreal (meilleur contrôle), LeBlanc (déclin en rounds profonds), Annie (sous-estimée), Azir (skill, vainqueur Utrecht), Aurora MF/Sivir (« boogeyman » battable), Viktor (montée via Sprite Fountain, « plus fort à 6 points »).
 - **A/B hold & outsiders** : Vex (meilleur hold), Kha'Zix (design-flawed, sous-performe), Pyke (top 8 Hartford).
 - **B** : Fiora↑, Sett (Akshan+Arena's Bar), Rek'Sai (Void Rush/Under-Titan), Lucian↑, Ornn (Sprite Fountain), Darius, Kai'Sa↓, Yasuo, Jax, Volibear, Ivern.
@@ -618,7 +618,7 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 **Best Ofs** : Draven → Pog Chungus (Toronto) ; Lillia → Gail Wins ; Poppy → NoVeggies ; Yi → Houses Are Big. Team Secret Sauce = 3 Best Ofs.
 
 **Lecture méta** :
-- **Aurora retombe** : 1 seul en Top 8, éliminé en quart. Le gear hate (retrait des Guardian Angel, Turn to Dust, Acceptable Losses) punit Aurora ET les builds Irelia/Aurelia autour du gear.
+- **Aurora retombe** : 1 seul en Top 8, éliminé en quart. Le gear hate (retrait des Guardian Angel, Turn to Dust, Acceptable Losses) punit Aurora ET les builds Irelia/Irelia autour du gear.
 - **Fury ressuscité** par un pilote expert : Rengar agro-contrôle non-Aurora jusqu'en finale, porté par Irresistible Faefolk (charm + trades forcés) et Kai'Sa Survivor (moteur).
 - **Vex (Apathetic + Cheerless) = tech anti-Fury du week-end** : stun + blocage ambush/accelerate ; double Vex = verrou. Punch First reste LE débloqueur côté Fury.
 - **Diana top tier** : 2 en demi, gagne l'event. Stacked Deck gardé pour la réponse exacte, Moonfall removal, Ravenbloom Conservatory moteur de cartes, boucle Fizz + Star-Crossed pour retuer le Hwei adverse.

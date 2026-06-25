@@ -8,7 +8,7 @@
 > decklist n'est créée à partir de ces VOD** : toute liste vient du scrape réel.
 >
 > Couverture : RQ Sydney, Vancouver, Utrecht, Hartford, Tianjin, Xi'an + Tournament 15 + guides RiftLab.
-> Orthographes Whisper normalisées (Aurelia=Irelia, Massie/Wudu=Master Yi Bladesman, Kazakhs=Kha'Zix,
+> Orthographes Whisper normalisées (Massie/Wudu=Master Yi Bladesman, Kazakhs=Kha'Zix,
 > Hway/Hui=le moteur de draw de Diana, Volmaw=Ruin Runner-like, Ivan=Ivern).
 
 ## 1. Lecture méta générale (set Unleashed, ère Hartford)
@@ -36,7 +36,7 @@
 > Violet=Chaos, Jaune=Ordre).
 
 **Haut du tableau (S / haut A)**
-- **Irelia « Aurelia », Blade Dancer (Calme/Chaos)** — consensus n°1 du format (« queen of Riftbound »).
+- **Irelia, Blade Dancer (Calme/Chaos)** — consensus n°1 du format (« queen of Riftbound »).
   Vert+violet = counters verts + disruption violette. Très versatile, beaucoup de cartes en main, forte
   en field large. Gagne Sydney. À Hartford : représentation divisée par deux (effet « dernier Set 1 »).
   Pénalisée par la lourdeur mentale (math de might) et le skill requis. Pièce maîtresse : **Defiant Dance**
@@ -66,7 +66,7 @@
   (Ruin Runner intuable), Irelia, et l'aggro (lent). **Cold Shot banni** (sinon Ezreal Prodigy + Cold Shot
   trop fort). Conseil récurrent : **savoir concéder** une game longue pour préserver le temps.
 - **LeBlanc, Deceiver (Esprit/Ordre)** — la plus puissante « quand elle part », mais **trajectoire
-  descendante en rounds profonds** (affronte Yi/Diana/Aurelia, tous durs). Le déclin de Gust l'affaiblit.
+  descendante en rounds profonds** (affronte Yi/Diana/Irelia, tous durs). Le déclin de Gust l'affaiblit.
   Variante **Baited Hook** la plus forte. Core : **Karthus** (double chaque Death Knell), **Glass
   Mixologist** (revive ≤3 might), **Baited Hook** (cheat une grosse unité), **Mirror Image** (copie l'effet
   de carte seul), **Rune Rex + Sacrifice** (combo explosif). Cauchemar des decks de sorts de dégâts
@@ -101,7 +101,7 @@
 - **Kha'Zix, Voidreaver (Corps/Chaos)** — **réévalué à la hausse par certains** (adaptable, bon vs
   Master Yi), mais **design-flawed** selon d'autres : pas de vrai payoff XP, signature **Void Assault**
   n'est pas une « action » (pas de double-score), pas de ganking, peut bounce une unité seulement si
-  exhausted. **Sous-performe** à cause de LeBlanc/Ezreal/Aurelia/Diana au top. Combo signature :
+  exhausted. **Sous-performe** à cause de LeBlanc/Ezreal/Irelia/Diana au top. Combo signature :
   **Irresistible Fae Folk** (traîne l'ennemi) + ambush Kha'Zix Mutating Horror. **Fizz** (rejoue ≤3),
   **Monastery of Hirana** (draw/tour). Faible vs decks de hold (Vex, Ivern).
 - **Pyke, Bloodharbor Ripper (Fureur/Chaos)** — **validé top 8 Hartford** (version contrôle). Légende :
@@ -166,7 +166,7 @@
   Star-Cross anti Rune Rex). Annie tente Vex Cheerless + Invert Timelines ; Rockfall Path interdit l'ambush.
 - **Irelia vs Aurora** : **Irelia favori SI elle tech** (Adaptatron/Rake anti-gear on-play, Star-Cross/Mind
   Splitter vs Elder, Defy). Sinon Aurora high-roll gagne.
-- **Irelia > Vex** : Vex trop lent à s'établir ; Abandoned Hall double-dip avec Aurelia Fervent.
+- **Irelia > Vex** : Vex trop lent à s'établir ; Abandoned Hall double-dip avec Irelia Fervent.
 - **Azir > LeBlanc / Sett / Viktor (finale G3)** : nier le 1er conquer ; cascade d'équipements + Arise +
   double Defy. Peut étirer le timer pour forcer le tie G3 contre LeBlanc lente.
 - **LeBlanc > Kha'Zix** : high-roll Dustgrub Lab + Karthus intuable ; Kha'Zix manque d'outils.
@@ -185,7 +185,7 @@
 - **Defy** — ~40 % des decks, counter ~70 % des sorts ; la tech verte/jaune la plus « game-ending » en top
   cut. Toujours menacée par « 1 rune ouverte ». À garder pour Moonfall/Star-Cross/Arise, jamais sur un Gust.
 - **Star-Crossed (+ Fizz)** — pivot du chaos : bounce action-speed (les DEUX unités), fizzle Baited Hook,
-  reset Set/Fiora/Renata ; Fizz le reboucle. Némésis n°1 des Elder Dragons et d'Aurora/Aurelia/LeBlanc.
+  reset Set/Fiora/Renata ; Fizz le reboucle. Némésis n°1 des Elder Dragons et d'Aurora/Irelia/LeBlanc.
 - **Moonfall** (Diana) — -2 à tout le battlefield, action-speed, meilleur signature du jeu (scaling -4/-8).
 - **Ruin Runner** — mur intuable de Master Yi ; **mais meurt à Flurry of Blades** (qui ne cible pas).
 - **Rengar Trophy Hunter** — ambush surprise (champion zone), carte différenciante de Master Yi.
@@ -264,20 +264,20 @@ strict minimum pour Rune Rex à 6 runes), **6 two-drops seulement** (3 Soaring S
 **pas de Honest Broker** car une carte « morte » est inacceptable en combo), **3 Vi Peacekeeper en main**,
 3 Rune Rex, 3 Karthus. **Baited Hook = l'activateur** (transforme une copie temporaire en vraie unité ;
 ex. Glass Mixologist → Harness Dragon, « triche » ~7 runes). **Harness Dragon** = meilleure cible de Hook
-(détruit les boards d'Aurelia/Diana qui plient au removal). Champion principal **LeBlanc Fragmented** ;
+(détruit les boards d'Irelia/Diana qui plient au removal). Champion principal **LeBlanc Fragmented** ;
 champion alternatif en side avec **Windswept Hillock** (LE battlefield cassé : ganking gratuit pour la copie,
 joué en premier). Side : **Turn to Dust** + **Ash Focus** (anti-Aurora, arrache la Dazzling Aurora de la
 main), **Atakhan** (win-con **mono-carte vs Master Yi et Vex**), +2 Thousand Tail Watcher (vs aggro).
 Règle de pilotage : ne pas descendre Vi Peacekeeper sous 3 tant que l'aggro est dans le méta.
 
-**Pyke vs Aurelia — Top 8 Tianjin (Pyke 2-0, premier Pyke en top 8 du Set 3).** Gagné au **skill** (Pyke
+**Pyke vs Irelia — Top 8 Tianjin (Pyke 2-0, premier Pyke en top 8 du Set 3).** Gagné au **skill** (Pyke
 est bas-tier). Combo : **3 Bewitching Spirit enchaînés à 10 runes** (bounce via la Légende, rejoue) vident
-toute la main adverse. Plan : **neutraliser le Stellacorn Herder** (lifeline de pioche d'Aurelia) puis
-assécher sa main → Aurelia passe en top-deck. Tech atypiques vues : **Switcheroo** (échange une unité faible
-contre une grosse menace pumpée), **Ferros Forerunner** (verrouille Aurelia sans Star-Cross/Rebuke),
-splash **Ezreal Prodigy**. Moment clé : **Stacked Deck → Falling Stars** au bon timing (attendre Aurelia à
-0 carte). **Top 8 Tianjin ultra-diversifié** : 2 Aurelia, 2 Diana, 2 Rek'Sai, 1 Master Yi, 1 Pyke.
-Selon les casters, **le pire matchup d'Aurelia = Master Yi** (sinon « pas de vrai mauvais matchup », d'où sa
+toute la main adverse. Plan : **neutraliser le Stellacorn Herder** (lifeline de pioche d'Irelia) puis
+assécher sa main → Irelia passe en top-deck. Tech atypiques vues : **Switcheroo** (échange une unité faible
+contre une grosse menace pumpée), **Ferros Forerunner** (verrouille Irelia sans Star-Cross/Rebuke),
+splash **Ezreal Prodigy**. Moment clé : **Stacked Deck → Falling Stars** au bon timing (attendre Irelia à
+0 carte). **Top 8 Tianjin ultra-diversifié** : 2 Irelia, 2 Diana, 2 Rek'Sai, 1 Master Yi, 1 Pyke.
+Selon les casters, **le pire matchup d'Irelia = Master Yi** (sinon « pas de vrai mauvais matchup », d'où sa
 surreprésentation, 2e deck du week-end derrière Master Yi).
 
 ---
@@ -285,4 +285,4 @@ surreprésentation, 2e deck du week-end derrière Master Yi).
 *Incertitudes globales : noms de cartes en transcription audio approximative à vérifier sur le scrape brut
 avant tout seed (ex. « Stellacorn/Silcoon Herd », « Mr. Root », « Brin here »). Certains taux de conversion
 sont donnés « de mémoire » par les casters. Les opinions de tier sont éditoriales, pas data-backed. La VOD
-« Pyke vs Irelia » était en réalité Pyke vs **Aurelia** (étiquette du titre trompeuse).*
+« Pyke vs Irelia » était en réalité Pyke vs **Irelia** (étiquette du titre trompeuse).*

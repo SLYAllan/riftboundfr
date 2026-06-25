@@ -793,4 +793,4 @@ Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champi
 - **Punch First** : LE débloqueur Fury contre les unités défensives et Vex (envoyer plus de might). À toujours respecter quand l'adversaire Body laisse 1 rune.
 - **vs Aurora** : grouper ses unités sur un même battlefield neutralise l'Elder Dragon (un seul clear) ; Turn to Dust en multiple est la tech reine. Aurora reste binaire : si le plan A ne se pose pas, pas d'outils interactifs.
 - **Playoffs = decklists ouvertes** : sideboard à information quasi-parfaite ; sortir ses cartes mortes (gear hate vs deck gearless) est impératif. Brenn/Thundersong (lock après réaction) punit les joueurs qui laissent 4+ runes ouverts (ex : Diana).
-- **Confirmation déclin Aurora** : 1 seul Aurora en Top 8 Vancouver (Sivir), sorti en quart — le gear hate généralisé referme la fenêtre, et touche aussi les Irelia/Aurelia gear.
+- **Confirmation déclin Aurora** : 1 seul Aurora en Top 8 Vancouver (Sivir), sorti en quart — le gear hate généralisé referme la fenêtre, et touche aussi les Irelia/Irelia gear.
