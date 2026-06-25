@@ -62,6 +62,26 @@ function deckCode(d: DeckJson): string {
 }
 const ART = (h: string, dim = "744x1039") => `https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data_live/${h}-${dim}.png`;
 
+// Bannières de Légende PRÉ-CADRÉES (public/bannieres/*.webp) = cover propre et
+// centré sur la liste /articles. Copie du mapping de src/lib/banners.ts (l'alias
+// "@/" ne se résout pas dans ce script tsx). Fallback sur l'art de carte si absent.
+const BANNER_MAP: Record<string, string> = {
+  irelia: "irelia", sivir: "sivir", diana: "diana", vex: "vex", "master yi": "maitreyi_1",
+  leblanc: "leblanc", fiora: "fiora", "miss fortune": "missfortune", sett: "sett",
+  draven: "draven", rengar: "rengar", azir: "azir", poppy: "poppy", annie: "annie",
+  viktor: "viktor", ezreal: "ezreal", "kha'zix": "khazix", khazix: "khazix",
+  "kai'sa": "kaisa", kaisa: "kaisa", lillia: "lillia", teemo: "teemo", lucian: "lucian",
+  ornn: "ornn", pyke: "pyke", darius: "darius", jax: "jax", "rek'sai": "reksai",
+  reksai: "reksai", jhin: "Jhin", "renata glasc": "renataglasc", volibear: "volibear",
+  vi: "vi", jinx: "jinx", ahri: "ahri", leona: "leona", lux: "lux", "lee sin": "leesin",
+  yasuo: "yasuo", rumble: "rumble", ivern: "ivern", garen: "garen",
+};
+const bannerUrl = (legendName: string): string | null => {
+  const key = legendName.toLowerCase().split(",")[0].split(" -")[0].trim();
+  const file = BANNER_MAP[key];
+  return file ? `/bannieres/${file}.webp` : null;
+};
+
 type Content = {
   slug: string; title: string; excerpt: string; tags: string[];
   legendName: string; art: string; caption: string;
@@ -761,10 +781,11 @@ const FICHE_PUBLISHED_AT = new Date("2026-06-24");
 
 for (const c of CONTENT) {
   const { blocks, nLists } = buildBlocks(c);
+  const cover = bannerUrl(c.legendName) ?? c.art;
   await prisma.article.upsert({
     where: { slug: c.slug },
-    update: { title: c.title, excerpt: c.excerpt, tags: c.tags, blocks: blocks as object[], category: "meta", coverImage: c.art, published: true },
-    create: { slug: c.slug, title: c.title, excerpt: c.excerpt, tags: c.tags, blocks: blocks as object[], category: "meta", coverImage: c.art, published: true, publishedAt: FICHE_PUBLISHED_AT },
+    update: { title: c.title, excerpt: c.excerpt, tags: c.tags, blocks: blocks as object[], category: "meta", coverImage: cover, published: true },
+    create: { slug: c.slug, title: c.title, excerpt: c.excerpt, tags: c.tags, blocks: blocks as object[], category: "meta", coverImage: cover, published: true, publishedAt: FICHE_PUBLISHED_AT },
   });
   console.log(`  ✅ ${c.slug} (${nLists} listes)`);
 }
