@@ -388,6 +388,35 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Explorer - maillage interne vers les hubs principaux (ancres descriptives) */}
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <h2 className="mb-4 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          Explorer Riftbound France
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { href: "/cartes", icon: Library, title: "Base de cartes", desc: "Toutes les cartes de Riftbound, effets et domaines en français." },
+            { href: "/tier-list", icon: Shield, title: "Tier List", desc: "Le classement des meilleures Légendes du méta compétitif." },
+            { href: "/decks", icon: Layers, title: "Decks", desc: "Les decklists de tournois, jouables et à jour." },
+            { href: "/deckbuilder", icon: Gamepad2, title: "Deckbuilder", desc: "Construis, teste et exporte ton propre deck." },
+            { href: "/guides", icon: BookOpen, title: "Guides", desc: "Apprendre à jouer, deckbuilding, domaines et glossaire." },
+            { href: "/tournois", icon: Trophy, title: "Tournois", desc: "Résultats et best-of des Regional Qualifiers." },
+          ].map((h) => (
+            <Link
+              key={h.href}
+              href={h.href}
+              className="group flex items-start gap-3 rounded-card border border-hairline bg-surface px-4 py-4 transition-colors hover:border-arcane/60 hover:bg-surface-raised/50"
+            >
+              <h.icon className="mt-0.5 shrink-0 text-arcane" size={22} />
+              <div className="min-w-0">
+                <div className="font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{h.title}</div>
+                <p className="mt-0.5 text-sm leading-relaxed text-ink-secondary">{h.desc}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

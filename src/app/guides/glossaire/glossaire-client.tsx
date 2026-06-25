@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useMemo, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import { Search, X } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { GlossaryCategory, GlossaryTerm } from "./page";
 
 interface CardInfo {
@@ -299,6 +300,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
+      <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Glossaire", href: "/guides/glossaire" }]} className="mb-6" />
       {/* Header */}
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         Glossaire Riftbound
