@@ -14,17 +14,17 @@
 - **S / haut A** : Irelia (n°1, tech-dépendant), Master Yi Wuju Bladesman (le plus représenté day 2, vainqueur Hartford).
 - **A** : Diana (vainqueur Vancouver, oppressive), Ezreal (meilleur contrôle), LeBlanc (déclin en rounds profonds), Annie (sous-estimée), Azir (skill, vainqueur Utrecht), Aurora MF/Sivir (« boogeyman » battable), Viktor (montée via Sprite Fountain, « plus fort à 6 points »).
 - **A/B hold & outsiders** : Vex (meilleur hold), Kha'Zix (design-flawed, sous-performe), Pyke (top 8 Hartford).
-- **B** : Fiora↑, Sett (Akshan+Arena's Bar), Rek'Sai (Void Rush/Under-Titan), Lucian↑, Ornn (Sprite Fountain), Darius, Kai'Sa↓, Yasuo, Jax, Volibear, Ivern.
+- **B** : Fiora↑, Sett (Akshan+Arena Bar), Rek'Sai (Void Rush/Undertitan), Lucian↑, Ornn (Sprite Fountain), Darius, Kai'Sa↓, Yasuo, Jax, Volibear, Ivern.
 - **C/bas** : Rengar (high-roll, crushé par Vex), Lillia (overhyped), Lux (loop malsain), Jhin, Leona/Renata/Jinx/Ahri/Poppy/Garen (bas).
 
-**Cartes qui définissent le format :** Vex Apathetic/Cheerless (stun/taxe, ne ciblent pas), Defy (~40 %, counter ~70 % des sorts), Star-Crossed + Fizz (pivot chaos, anti-Elder), Moonfall (meilleur signature), Ruin Runner (intuable, meurt à Flurry of Blades), Rengar Trophy Hunter, Baron Nashor (anti-Aurora), Hway (Diana), Scuttle Crab, Tide Turner loop, gear hate **en unité** anti-Aurora (Adaptatron/Akshan/Action), Soul Sword/Sprite Fountain (gears Set 3).
+**Cartes qui définissent le format :** Vex Apathetic/Cheerless (stun/taxe, ne ciblent pas), Defy (~40 %, counter ~70 % des sorts), Star-Crossed + Fizz (pivot chaos, anti-Elder), Moonfall (meilleur signature), Ruin Runner (intuable, meurt à Flurry of Blades), Rengar Trophy Hunter, Baron Nashor (anti-Aurora), Hwei (Diana), Scuttle Crab, Tideturner loop, gear hate **en unité** anti-Aurora (Adaptatron/Akshan/Action), Soul Sword/Sprite Fountain (gears Set 3).
 
-**Surveillance ban (avis casters, NON officiel) :** Vex Apathetic (floodgate sans coût power), Star-Crossed (bounce base), Echo (loop Lux malsain), Ferris Forerunner (polarisant). Déjà bannie : Cold Shot.
+**Surveillance ban (avis casters, NON officiel) :** Vex Apathetic (floodgate sans coût power), Star-Crossed (bounce base), Echo (loop Lux malsain), Ferrous Forerunner (polarisant). Déjà bannie : Called Shot.
 
 **Mises à jour règles/format (à connaître) :**
 - **Bo1 : sideboard AVANT la partie** (tout le monde side-in Aurora).
 - **Nerf des buffs** (Sett) : il faut déjà un buff présent pour le dépenser.
-- **Emperor's Dias** : on peut refuser de payer le 1 énergie → bounce en main sans le token (errata probable).
+- **Emperor’s Dais** : on peut refuser de payer le 1 énergie → bounce en main sans le token (errata probable).
 - **Elder Dragon** : seuil létal ennemi → 1, passif **rétroactif** (Flurry of Blades avant Aurora tue plus).
 - **Star-Crossed** retourne les DEUX unités ; **Mirror Image** copie l'effet de carte seul.
 - **Overtime Swiss** : victoire **par 2** → 6-7 = **tie** (les deux ratent le top cut) ; top cut untimed.

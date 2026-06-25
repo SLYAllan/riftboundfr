@@ -9,7 +9,7 @@
 >
 > Couverture : RQ Sydney, Vancouver, Utrecht, Hartford, Tianjin, Xi'an + Tournament 15 + guides RiftLab.
 > Orthographes Whisper normalisées (Massie/Wudu=Master Yi Bladesman, Kazakhs=Kha'Zix,
-> Hway/Hui=le moteur de draw de Diana, Volmaw=Ruin Runner-like, Ivan=Ivern).
+> Hwei=le moteur de draw de Diana, Volmaw=Ruin Runner-like, Ivan=Ivern).
 
 ## 1. Lecture méta générale (set Unleashed, ère Hartford)
 
@@ -18,7 +18,7 @@
 - **Le violet (Chaos) domine la conversation** : LeBlanc, Aurora, Vex, Diana. Il « punit » de nombreux
   archétypes et pousse les decks de removal pur hors du méta.
 - **Le jaune (Ordre) aggro est très bien placé** grâce aux nouvelles pioches (un sort donne « temporary »
-  à un recruit et fait piocher 2 ; Sacrifice ; Call the Weak ; board-wipes Ruination).
+  à un recruit et fait piocher 2 ; Sacrifice ; Cull the Weak ; board-wipes Ruination).
 - **Le de-ramp est l'une des actions les plus punitives du set.** En Aurora, dépenser quoi que ce soit
   avant le tour 3 = quasi défaite.
 - **Peu de removal pur dans le méta → Diana prospère** (peu de réponses à ses unités).
@@ -46,30 +46,30 @@
   sorts/abilités — mais meurt à Flurry of Blades qui ne cible pas), **Rengar Trophy Hunter** (ambush
   surprise, carte différenciante), **First Mate** + **Star Spring** (re-stand → double conquer),
   **Punch First / On Guard / Discipline / Challenge** (buffs non-defiables ou assassinat hors combat).
-  Tendance : **gear hate en main deck** + **Fiora Peerless** (double sa might en défense 1v1). Piège
+  Tendance : **gear hate en main deck** + **Fiora, Peerless** (double sa might en défense 1v1). Piège
   récurrent : on oublie que sa Légende donne **+2 might à une unité qui défend** → trades « gratuits ».
   Pires matchups : Irelia, Diana (contestation early via Gust), decks tier 1 où il n'a plus de « win auto ».
 
 **Tier A**
 - **Diana, Scorn of the Moon (Esprit/Chaos)** — **en flèche, vainqueur Vancouver**, 3 en top 8 Hartford.
-  Oppressive ce set : mid-range showdown très sortilège-dépendant. Moteur : **Hway/Hui** (draw à chaque
+  Oppressive ce set : mid-range showdown très sortilège-dépendant. Moteur : **Hwei** (draw à chaque
   move, +might via Ride the Wind), **Moonfall** (signature, -2 à tout, le meilleur signature du jeu selon
   le consensus, scaling -4 à -8), **Star-Crossed** + **Fizz** (recyclage), **Vex Apathetic**,
-  **Tide Turner** (pull-back Vex pour le 8e point — win-con récurrente). Tech : **Acceptable Losses**
+  **Tideturner** (pull-back Vex pour le 8e point — win-con récurrente). Tech : **Acceptable Losses**
   (anti-gear vs Irelia), **Baron Nashor** side (matchups longs/removal), **Eclipse** (-4 sans plancher).
   **Très faible contre le removal** (rare actuellement) et les decks de sorts de dégâts (Pyke/Ezreal/Jhin).
-  Souvent « un shell pour Hway » : les games avec Hway sont radicalement différentes.
+  Souvent « un shell pour Hwei » : les games avec Hwei sont radicalement différentes.
 - **Ezreal, Prodigal Explorer (Esprit/Chaos)** — **meilleur deck contrôle** du format. Plan long, monte
   jusqu'à 9 points. **Fizz** (quasi gratuit, reboucle Bellows Breath/Wages of Pain), **Star-Crossed**,
   **Watcher** (-3 à tout, casse les holds, rejouable via Arcane Shift), **Bewitching Spirit** loop
-  (vide la main adverse), **Mind Splitter**, **Bellows Breath** (-might répétable). Faible vs Master Yi
-  (Ruin Runner intuable), Irelia, et l'aggro (lent). **Cold Shot banni** (sinon Ezreal Prodigy + Cold Shot
+  (vide la main adverse), **Mindsplitter**, **Bellows Breath** (-might répétable). Faible vs Master Yi
+  (Ruin Runner intuable), Irelia, et l'aggro (lent). **Called Shot bannie** (sinon Ezreal Prodigy + Called Shot
   trop fort). Conseil récurrent : **savoir concéder** une game longue pour préserver le temps.
 - **LeBlanc, Deceiver (Esprit/Ordre)** — la plus puissante « quand elle part », mais **trajectoire
   descendante en rounds profonds** (affronte Yi/Diana/Irelia, tous durs). Le déclin de Gust l'affaiblit.
   Variante **Baited Hook** la plus forte. Core : **Karthus** (double chaque Death Knell), **Glass
   Mixologist** (revive ≤3 might), **Baited Hook** (cheat une grosse unité), **Mirror Image** (copie l'effet
-  de carte seul), **Rune Rex + Sacrifice** (combo explosif). Cauchemar des decks de sorts de dégâts
+  de carte seul), **Ruined Rex + Sacrifice** (combo explosif). Cauchemar des decks de sorts de dégâts
   (Death Knell punit chaque kill). **Difficile : decks de hold + Vex** (stun les reflections).
 - **Annie, Dark Child (Fureur/Chaos)** — **sous-estimée**, très bonnes conversions, plusieurs top 8
   (Prismatism). Combo de couleur solide, flexible (aggro OG Rengar ou contrôle violet). **Sneaky Deckhand**
@@ -77,16 +77,16 @@
 - **Azir, Emperor of the Sands (Calme/Ordre)** — non-méta sur le papier mais **vainqueur Utrecht**
   (Squirtle, invaincu) par pur skill. Go-wide token, gère bien Aurora et « protect the queen ».
   Tech : cascade d'équipements (**Soul Sword** Set 3, Eye of the Herald, BF Sword via Hall of Legends),
-  triple **Arise** (briser un hold), **Death Grip** (transfert de might), double **Defy** game-ending.
+  triple **Arise** (briser un hold), **Deathgrip** (transfert de might), double **Defy** game-ending.
   Boosté par Sprite Fountain. Pickpocket en side anti-Azir (vole ses gears).
 - **Aurora (archétype gear, Body)** — **« boogeyman » du méta**, MF (Corps/Chaos) la meilleure version,
   Sivir (Corps/Chaos) gagne le miroir (meilleure rune economy via gold). **Dazzling Aurora** T3 = quasi
-  imbattable. **Elder Dragon** (seuil létal ennemi → 1) + **Flurry of Blades**/**Mind Splitter** = wipe.
+  imbattable. **Elder Dragon** (seuil létal ennemi → 1) + **Flurry of Blades**/**Mindsplitter** = wipe.
   **Baron Nashor** (12 might intuable + ganking). **Devient moins effrayante** au fil des RQ (sideboards
-  prêts : moitié anti-Aurora). Très faible aux Légendes Ordre (Hidden Blade, Call the Weak), au gear hate
+  prêts : moitié anti-Aurora). Très faible aux Légendes Ordre (Hidden Blade, Cull the Weak), au gear hate
   en **unité** (Akshan, salvage), et à **Star-Crossed**.
 - **Viktor, Herald of the Arcane (Esprit/Ordre)** — **montée nette via Sprite Fountain** ; « le deck le
-  plus fort du jeu à 6 points ». Pur control/removal : Bellows Breath (board-wipe -1 à tout), Call the
+  plus fort du jeu à 6 points ». Pur control/removal : Bellows Breath (board-wipe -1 à tout), Cull the
   Weak, Imperial Decree, Wages of Pain, génération continue de recruits. Faiblesse : **Moonfall** (-2 vs
   son -1), Pickpocket.
 
@@ -102,7 +102,7 @@
   Master Yi), mais **design-flawed** selon d'autres : pas de vrai payoff XP, signature **Void Assault**
   n'est pas une « action » (pas de double-score), pas de ganking, peut bounce une unité seulement si
   exhausted. **Sous-performe** à cause de LeBlanc/Ezreal/Irelia/Diana au top. Combo signature :
-  **Irresistible Fae Folk** (traîne l'ennemi) + ambush Kha'Zix Mutating Horror. **Fizz** (rejoue ≤3),
+  **Irresistible Faefolk** (traîne l'ennemi) + ambush Kha'Zix Mutating Horror. **Fizz** (rejoue ≤3),
   **Monastery of Hirana** (draw/tour). Faible vs decks de hold (Vex, Ivern).
 - **Pyke, Bloodharbor Ripper (Fureur/Chaos)** — **validé top 8 Hartford** (version contrôle). Légende :
   payer 1 + tap → renvoyer une unité en main + Gold Gear exhausted (rampe). **Ripper's Bay** (rampe vers
@@ -112,17 +112,17 @@
 
 **Tier B**
 - **Fiora, Grand Duelist (Corps/Ordre)** — montante (B→A) ; **Shepherd's Heirloom** (équip via XP) +
-  **Kinku Initiate** (3-cost draw, MVP), bonne vs Aurora (Action/Sabotage/Weapon Master). Plan plus
+  **Kinkou Initiate** (3-cost draw, MVP), bonne vs Aurora (Action/Sabotage/Weapon Master). Plan plus
   propre que Sett.
 - **Sett, The Boss (Corps/Ordre)** — mur défensif (la Légende garde l'unité même quand l'adversaire
-  conquiert). Moteur de valeur **Akshan + Arena's Bar** (ressuscite l'Akshan voleur de gear chaque tour).
-  **Irresistible Fae Folk** (charme/drag). Nerf : il faut déjà un buff présent pour le dépenser. Souffre du
+  conquiert). Moteur de valeur **Akshan + Arena Bar** (ressuscite l'Akshan voleur de gear chaque tour).
+  **Irresistible Faefolk** (charme/drag). Nerf : il faut déjà un buff présent pour le dépenser. Souffre du
   violet (Star-Crossed) et est **trop lent** pour punir le slow-roll d'Aurora.
 - **Rek'Sai, Void Burrower (Fureur/Ordre)** — **outsider Set 3** : aggro go-wide « dump la main ».
-  **Void Rush** (réduit de 2, joue de n'importe où) + **Under-Titan** (2 énergie / anthem +2) + unités
+  **Void Rush** (réduit de 2, joue de n'importe où) + **Undertitan** (2 énergie / anthem +2) + unités
   hors-main (Void Drone, Carrion Dredger) → board énorme dès T2-3. Faiblesse : coûts power élevés
-  (étranglement de runes), pas d'out late vs Diana. Counter suggéré : **Repose** (anti drops hors-main).
-- **Lucian, Purifier** — montant : **Blackbacks +4** (conquer garanti) + relentless/assault, un
+  (étranglement de runes), pas d'out late vs Diana. Counter suggéré : **Riposte** (anti drops hors-main).
+- **Lucian, Purifier** — montant : **un équipement +4** *[nom à vérifier au scrape]* (conquer garanti) + relentless/assault, un
   counterspell désormais. Bien positionné vs Aurora (orange).
 - **Ornn, Fire Below the Mountain (Corps/Ordre)** — boosté par **Sprite Fountain** (résout sa lenteur),
   build aggro (Sprite Burst, Steraks, Unchecked Power).
@@ -160,13 +160,13 @@
 
 - **Master Yi > Ezreal / Pyke / Viktor / Rengar / Vi** : Ruin Runner intuable, Trophy Hunter, Punch First ;
   Viktor renverse sur God-start.
-- **Diana > Master Yi** (serré) : Hway + draw, Baron Nashor side (3e battlefield casse les maths) ; MAIS
+- **Diana > Master Yi** (serré) : Hwei + draw, Baron Nashor side (3e battlefield casse les maths) ; MAIS
   Yi favori avec Ruin Runner main (3x) + gear hate. Finale Tianjin : **Yi 2-1**.
-- **Diana > Vex / Annie / Rek'Sai / LeBlanc / Lillia** : pure valeur (Hway, Moonfall, Vex Apathetic,
-  Star-Cross anti Rune Rex). Annie tente Vex Cheerless + Invert Timelines ; Rockfall Path interdit l'ambush.
+- **Diana > Vex / Annie / Rek'Sai / LeBlanc / Lillia** : pure valeur (Hwei, Moonfall, Vex Apathetic,
+  Star-Cross anti Ruined Rex). Annie tente Vex Cheerless + Invert Timelines ; Rockfall Path interdit l'ambush.
 - **Irelia vs Aurora** : **Irelia favori SI elle tech** (Adaptatron/Rake anti-gear on-play, Star-Cross/Mind
   Splitter vs Elder, Defy). Sinon Aurora high-roll gagne.
-- **Irelia > Vex** : Vex trop lent à s'établir ; Abandoned Hall double-dip avec Irelia Fervent.
+- **Irelia > Vex** : Vex trop lent à s'établir ; Abandoned Hall double-dip avec Irelia, Fervent.
 - **Azir > LeBlanc / Sett / Viktor (finale G3)** : nier le 1er conquer ; cascade d'équipements + Arise +
   double Defy. Peut étirer le timer pour forcer le tie G3 contre LeBlanc lente.
 - **LeBlanc > Kha'Zix** : high-roll Dustgrub Lab + Karthus intuable ; Kha'Zix manque d'outils.
@@ -191,11 +191,11 @@
 - **Rengar Trophy Hunter** — ambush surprise (champion zone), carte différenciante de Master Yi.
 - **Baron Nashor** — 12 might intuable + ganking (anti-Aurora) ; peut entrer dans n'importe quel
   battlefield via le Baron Pit (souvent oublié).
-- **Hway/Hui** (Diana), **Scuttle Crab** (29 % Hartford, draw + info ; mauvais en Vex), **Tide Turner**
+- **Hwei** (Diana), **Scuttle Crab** (29 % Hartford, draw + info ; mauvais en Vex), **Tideturner**
   (loop de valeur ; sert le 8e point de Diana), **Sona** (Vex, ready 4 runes EOT).
 - **Adaptatron / Disarming Rake / Action / Akshan / Sabotage / Thermo Beam** — réponses anti-Aurora
   (gear hate, surtout en **unité** que Sabotage ne recycle pas).
-- **Fiora Peerless** (Master Yi), **Acceptable Losses** (Diana anti-gear), **Heedless Resurrection** (miroir
+- **Fiora, Peerless** (Master Yi), **Acceptable Losses** (Diana anti-gear), **Heedless Resurrection** (miroir
   Aurora), **Soul Sword / Sprite Fountain** (gears Set 3 qui boostent Azir/Viktor/Ornn).
 
 ## 5. Surveillance ban (avis casters, NON officiel)
@@ -205,8 +205,10 @@
 - **Star-Crossed** — bounce action-speed pouvant cibler la base ; les casters voudraient le limiter aux
   battlefields.
 - **Echo** (Set 1) — active le **loop Lux** (ressources infinies), unanimement jugé malsain.
-- **Ferris Forerunner** — polarisant (mech tokens, gros might) plus que « broken ».
-- Déjà bannie : **Cold Shot**.
+- **Ferrous Forerunner** — polarisant (mech tokens, gros might) plus que « broken ».
+- Déjà bannie : **Called Shot** (confirmée dans la liste canonique `src/lib/banned-cards.ts` :
+  Fight or Flight, Scrapheap, Obelisk of Power, The Dreaming Tree, Draven Vanquisher, Called Shot).
+  → Toute mention VOD d'une carte « bannie » doit être recoupée avec cette liste avant d'être figée.
 
 ## 6. Règles & format (mises à jour à connaître)
 
@@ -221,7 +223,7 @@
 - **Battlefields contestés** : une unité qui entre sur un battlefield non-contesté le rend contesté →
   **showdown immédiat**. Mais tant qu'un effet (Charm) est sur la chain non résolu, le contrôle NE change
   PAS (le showdown attend la résolution).
-- **Emperor's Dias (ruling)** : on peut **refuser de payer le 1 énergie** à la résolution (« may pay one
+- **Emperor’s Dais (ruling)** : on peut **refuser de payer le 1 énergie** à la résolution (« may pay one
   energy AND », pas « to ») → on renvoie l'unité en main **sans** le token Sand Soldier. Jugé non
   intentionnel → errata probable (pas un ban).
 - **Elder Dragon** : seuil létal des ennemis ramené à **1** ; le passif tue **rétroactivement** les unités
@@ -260,21 +262,21 @@ trigger **Arena's Greatest** (point gratuit, raccourcit à 6) est souvent oubli�
 **Profil LeBlanc (DZiden, Challenger TCG — top 8 Sydney + vainqueur CCS Atlanta 25k).** Repositionnement
 majeur : **LeBlanc n'est PAS un deck aggro mais un deck d'inévitabilité/combo** qui cherche à **prolonger**
 la partie (logique proche de Dazzling Aurora). Ratios précis : **runes 8 Ordre / 4 Esprit** (4 Esprit =
-strict minimum pour Rune Rex à 6 runes), **6 two-drops seulement** (3 Soaring Scout + 3 Watchful Sentry,
+strict minimum pour Ruined Rex à 6 runes), **6 two-drops seulement** (3 Soaring Scout + 3 Watchful Sentry,
 **pas de Honest Broker** car une carte « morte » est inacceptable en combo), **3 Vi Peacekeeper en main**,
-3 Rune Rex, 3 Karthus. **Baited Hook = l'activateur** (transforme une copie temporaire en vraie unité ;
-ex. Glass Mixologist → Harness Dragon, « triche » ~7 runes). **Harness Dragon** = meilleure cible de Hook
+3 Ruined Rex, 3 Karthus. **Baited Hook = l'activateur** (transforme une copie temporaire en vraie unité ;
+ex. Glasc Mixologist → Harnessed Dragon, « triche » ~7 runes). **Harnessed Dragon** = meilleure cible de Hook
 (détruit les boards d'Irelia/Diana qui plient au removal). Champion principal **LeBlanc Fragmented** ;
 champion alternatif en side avec **Windswept Hillock** (LE battlefield cassé : ganking gratuit pour la copie,
-joué en premier). Side : **Turn to Dust** + **Ash Focus** (anti-Aurora, arrache la Dazzling Aurora de la
-main), **Atakhan** (win-con **mono-carte vs Master Yi et Vex**), +2 Thousand Tail Watcher (vs aggro).
+joué en premier). Side : **Turn to Dust** + **Ashe, Focused** (anti-Aurora, arrache la Dazzling Aurora de la
+main), **Atakhan** (win-con **mono-carte vs Master Yi et Vex**), +2 Thousand-Tailed Watcher (vs aggro).
 Règle de pilotage : ne pas descendre Vi Peacekeeper sous 3 tant que l'aggro est dans le méta.
 
 **Pyke vs Irelia — Top 8 Tianjin (Pyke 2-0, premier Pyke en top 8 du Set 3).** Gagné au **skill** (Pyke
 est bas-tier). Combo : **3 Bewitching Spirit enchaînés à 10 runes** (bounce via la Légende, rejoue) vident
 toute la main adverse. Plan : **neutraliser le Stellacorn Herder** (lifeline de pioche d'Irelia) puis
 assécher sa main → Irelia passe en top-deck. Tech atypiques vues : **Switcheroo** (échange une unité faible
-contre une grosse menace pumpée), **Ferros Forerunner** (verrouille Irelia sans Star-Cross/Rebuke),
+contre une grosse menace pumpée), **Ferrous Forerunner** (verrouille Irelia sans Star-Cross/Rebuke),
 splash **Ezreal Prodigy**. Moment clé : **Stacked Deck → Falling Stars** au bon timing (attendre Irelia à
 0 carte). **Top 8 Tianjin ultra-diversifié** : 2 Irelia, 2 Diana, 2 Rek'Sai, 1 Master Yi, 1 Pyke.
 Selon les casters, **le pire matchup d'Irelia = Master Yi** (sinon « pas de vrai mauvais matchup », d'où sa

@@ -5,32 +5,32 @@
 > ### Confirmations & tech VOD (v7, juin 2026)
 > Cartes citées par les casters comme cœur/flex/tech. À recouper avec le scrape brut avant tout seed (noms en transcription audio parfois approximatifs).
 >
-> **Anti-méta transverse :** **Vex Apathetic/Cheerless** (stun/taxe, ne ciblent pas → ignorent deflect), **Defy** (~40 % des decks, counter ~70 % des sorts), **Star-Crossed + Fizz** (bounce action-speed, anti-Elder/Aurora/LeBlanc), **Moonfall** (-2 à tout). **Anti-Aurora** : préférer le gear hate **en unité** (Adaptatron, Disarming Rake, Akshan, Action — non recyclable par Sabotage), + Sabotage (2 main / 1 side), Thermo Beam, Mind Splitter ×2 side, Heedless Resurrection (miroir).
+> **Anti-méta transverse :** **Vex Apathetic/Cheerless** (stun/taxe, ne ciblent pas → ignorent deflect), **Defy** (~40 % des decks, counter ~70 % des sorts), **Star-Crossed + Fizz** (bounce action-speed, anti-Elder/Aurora/LeBlanc), **Moonfall** (-2 à tout). **Anti-Aurora** : préférer le gear hate **en unité** (Adaptatron, Disarming Rake, Akshan, Action — non recyclable par Sabotage), + Sabotage (2 main / 1 side), Thermo Beam, Mindsplitter ×2 side, Heedless Resurrection (miroir).
 >
 > | Légende | Domaines | Cœur / tech VOD | Anti / faiblesse |
 > |---|---|---|---|
-> | Master Yi, Wuju Bladesman | Corps/Calme | Ruin Runner ×3, Rengar Trophy Hunter, First Mate + Star Spring, Punch First/On Guard/Discipline/Challenge, Fiora Peerless, gear hate main, Zhonya's | Irelia, Diana ; Ruin Runner meurt à Flurry of Blades |
+> | Master Yi, Wuju Bladesman | Corps/Calme | Ruin Runner ×3, Rengar Trophy Hunter, First Mate + Star Spring, Punch First/On Guard/Discipline/Challenge, Fiora, Peerless, gear hate main, Zhonya's | Irelia, Diana ; Ruin Runner meurt à Flurry of Blades |
 > | Irelia, Blade Dancer | Calme/Chaos | Defiant Dance, Stellacorn Herder, GA, double counterspell, Abandoned Hall (double-dip Fervent), Adaptatron (anti-Aurora) | Aurora high-roll, lourdeur mentale |
-> | Diana, Scorn of the Moon | Esprit/Chaos | Hway, Moonfall, Star-Crossed+Fizz, Vex Apathetic, Tide Turner (8e pt), Acceptable Losses, Eclipse, Baron Nashor side | removal (rare), sorts de dégâts (Pyke/Ezreal/Jhin) |
-> | Ezreal, Prodigal Explorer | Esprit/Chaos | Fizz loop, Watcher (rejoué via Arcane Shift), Star-Crossed, Bewitching Spirit, Bellows Breath, Mind Splitter, Singularity | Master Yi (Ruin Runner), Irelia, aggro ; Cold Shot banni |
-> | LeBlanc, Deceiver | Esprit/Ordre | Karthus (double Death Knell), Glass Mixologist, Baited Hook, Mirror Image, Rune Rex + Sacrifice, 3 Seals (pas 2) | decks de hold, Vex (stun reflections) |
-> | Annie, Dark Child | Fureur/Chaos | OG Rengar, Sneaky Deckhand (aggro sous Aurora), Ferris Forerunner, Falling Star, Cleave, Charm | — |
-> | Azir, Emperor of the Sands | Calme/Ordre | Soul Sword, cascade équipements (Eye of the Herald/BF Sword) via Hall of Legends, triple Arise, Death Grip, double Defy | Pickpocket (side adverse) |
-> | Sivir/Miss Fortune (Aurora) | Corps/Chaos | Dazzling Aurora T3, Elder Dragon + Flurry of Blades/Mind Splitter, Baron Nashor, Bullet Time, Last Rites ; Sivir gagne le miroir (gold) | gear hate en unité, Star-Crossed, Légendes Ordre, de-ramp |
-> | Viktor, Herald of the Arcane | Esprit/Ordre | Bellows Breath (-1 à tout), Call the Weak, Imperial Decree, Wages of Pain, recruits, Sprite Fountain | Moonfall (-2), Pickpocket |
+> | Diana, Scorn of the Moon | Esprit/Chaos | Hwei, Moonfall, Star-Crossed+Fizz, Vex Apathetic, Tideturner (8e pt), Acceptable Losses, Eclipse, Baron Nashor side | removal (rare), sorts de dégâts (Pyke/Ezreal/Jhin) |
+> | Ezreal, Prodigal Explorer | Esprit/Chaos | Fizz loop, Watcher (rejoué via Arcane Shift), Star-Crossed, Bewitching Spirit, Bellows Breath, Mindsplitter, Singularity | Master Yi (Ruin Runner), Irelia, aggro ; Called Shot bannie |
+> | LeBlanc, Deceiver | Esprit/Ordre | Karthus (double Death Knell), Glasc Mixologist, Baited Hook, Mirror Image, Ruined Rex + Sacrifice, 3 Seals (pas 2) | decks de hold, Vex (stun reflections) |
+> | Annie, Dark Child | Fureur/Chaos | OG Rengar, Sneaky Deckhand (aggro sous Aurora), Ferrous Forerunner, Falling Star, Cleave, Charm | — |
+> | Azir, Emperor of the Sands | Calme/Ordre | Soul Sword, cascade équipements (Eye of the Herald/BF Sword) via Hall of Legends, triple Arise, Deathgrip, double Defy | Pickpocket (side adverse) |
+> | Sivir/Miss Fortune (Aurora) | Corps/Chaos | Dazzling Aurora T3, Elder Dragon + Flurry of Blades/Mindsplitter, Baron Nashor, Bullet Time, Last Rites ; Sivir gagne le miroir (gold) | gear hate en unité, Star-Crossed, Légendes Ordre, de-ramp |
+> | Viktor, Herald of the Arcane | Esprit/Ordre | Bellows Breath (-1 à tout), Cull the Weak, Imperial Decree, Wages of Pain, recruits, Sprite Fountain | Moonfall (-2), Pickpocket |
 > | Vex, Gloomist | Calme/Chaos | Vex Apathetic, Sona (ready 4 runes EOT), Existential Dread, Mutated Mouser ; **PAS Grove of the God Willow** (déjà dans la Légende), éviter Scuttle Crab | Aurora, boardwipes, Ezreal |
-> | Kha'Zix, Voidreaver | Corps/Chaos | Irresistible Fae Folk + ambush Mutating Horror, Void Assault, Fizz, Monastery of Hirana, 8-9 two-drops | decks de hold (Vex/Ivern), LeBlanc, Ezreal ; signature pas une « action » |
+> | Kha'Zix, Voidreaver | Corps/Chaos | Irresistible Faefolk + ambush Mutating Horror, Void Assault, Fizz, Monastery of Hirana, 8-9 two-drops | decks de hold (Vex/Ivern), LeBlanc, Ezreal ; signature pas une « action » |
 > | Pyke, Bloodharbor Ripper | Fureur/Chaos | Ripper's Bay (rampe → Baron Nashor), Bewitching Spirit, Star-Crossed, Death from Below, Falling Star | Vex Apathetic (« tue le rouge »), aggro |
-> | Fiora, Grand Duelist | Corps/Ordre | Shepherd's Heirloom (équip via XP), Kinku Initiate, Set Brawler, Elder Dragon main | go-wide Rek'Sai |
-> | Sett, The Boss | Corps/Ordre | Akshan + Arena's Bar (moteur de valeur), Irresistible Fae Folk, Call to Glory ; nerf : buff déjà présent requis | Aurora (trop lent), violet |
-> | Rek'Sai, Void Burrower | Fureur/Ordre | Void Rush, Under-Titan (anthem +2), unités hors-main, Seals, Candlelit Sanctum | coûts power (rune choke), Diana late ; counter Repose |
-> | Rengar, Pridestalker | Fureur/Corps | Ambush, Trophy Hunter (champion zone), Thrill of the Hunt, Irresistible Fae Folk, Fresh Beans (draw), Determined Sentry | Vex Apathetic, Draven mid-range |
+> | Fiora, Grand Duelist | Corps/Ordre | Shepherd's Heirloom (équip via XP), Kinkou Initiate, Set Brawler, Elder Dragon main | go-wide Rek'Sai |
+> | Sett, The Boss | Corps/Ordre | Akshan + Arena Bar (moteur de valeur), Irresistible Faefolk, Call to Glory ; nerf : buff déjà présent requis | Aurora (trop lent), violet |
+> | Rek'Sai, Void Burrower | Fureur/Ordre | Void Rush, Undertitan (anthem +2), unités hors-main, Seals, Candlelit Sanctum | coûts power (rune choke), Diana late ; counter Riposte |
+> | Rengar, Pridestalker | Fureur/Corps | Ambush, Trophy Hunter (champion zone), Thrill of the Hunt, Irresistible Faefolk, Fresh Beans (draw), Determined Sentry | Vex Apathetic, Draven mid-range |
 > | Lillia, Bashful Bloom | Esprit/Calme | Lillia Faeforn, Sprite Fountain, tokens Sprite, Sprite Burst, Lilting Lullaby, Defy ×3 | Vex Apathetic, aggro-hold (Draven) |
 > | Jhin, Virtuoso | Fureur/Esprit | Curtain Call, Deadly Flourish, Singularity ×3, Time Warp, Rocket Barrage (anti-gear), Jhin Meticulous Killer ×3 | vert/Deflect, Vex, Master Yi XP |
 > | Kai'Sa, Daughter of the Void | Fureur/Esprit | Time Warp ×3, Thermo Beam, Singularity + Stupefy (prive Aurora de cibles), Baron Nashor (côté Aurora adverse) | Irelia |
 > | Master Yi, Wuju Master | Corps/Calme | Master Yi Tempered (Hunt 2), paliers niv. 6/11, Voracious Gromp, Elder Dragon, White Flame Protector, Concentrate, Alpha Strike | aucun avantage early (méta tempo) |
 > | Ivern, Greenfather | Calme/Ordre | Brush (symétrique), Ivern Nurture, Trusty Ramhound, Daisy, Friendship, Alpha Wild Claw, Emperor's Divide | Draven (anti-hold), bleu non-ciblé |
-> | Vi, Piltover Enforcer | Fureur/Ordre | Vi Destructive (Ganking), gears (Hextech Gauntlets/BF Sword), Death Grip, Sacrifice, Hidden Blade, Rek'Sai/Darius closers | gear removal (Salvage/Action/Thermo Beam) |
+> | Vi, Piltover Enforcer | Fureur/Ordre | Vi Destructive (Ganking), gears (Hextech Gauntlets/BF Sword), Deathgrip, Sacrifice, Hidden Blade, Rek'Sai/Darius closers | gear removal (Salvage/Action/Thermo Beam) |
 >
 > **Règles de deckbuilding nouvelles (VOD) :** (1) **Bo1 = sideboard avant la partie** → prévoir une config anti-Aurora prête ; piège pour Sivir/MF mid-range (pas de gear). (2) **Nerf des buffs** : il faut déjà un buff présent pour le dépenser (touche Sett/Vi). (3) Le **gear hate en unité** (Akshan/Action) bat l'Aurora mieux que les contre-sorts (Sabotage les recycle). (4) Decks de **hold** (Vex/Ivern/Ari) : afficher le total de might (compteur) — leur pire ennemi est l'horloge (overtime à +2 = tie).
 > Mis a jour le 25 juin 2026 (v6). Intégration des sources éditoriales **riftbound.gg** (recaps Utrecht/Hartford + tier lists « Tianjin » et « One More Regional Until Vendetta »). Ajout : **table canonique des paires de domaines par Légende** (40 Légendes Unleashed) confirmée par riftbound.gg, + ordre de tier list à jour (voir bloc « Paires de domaines (référence riftbound.gg) » ci-dessous). Corrections notables vs versions précédentes : **Rek'Sai = Fureur/Ordre** (et non Corps/Fureur), **Darius = Fureur/Ordre**, **Jhin = Fureur/Esprit** (et non Esprit/Ordre), **Rengar = Fureur/Corps**. Détail complet du méta dans META-KNOWLEDGE.md (v6).
@@ -222,7 +222,7 @@ Champions : Master Yi Tempered (66%), Master Yi Honed (34%)
 
 **Battlefields** : Star Spring (59%), Vilemaw's Lair (57%), Startipped Peak (35%)
 
-**Config gagnante Unleashed (Hartford, Factor 14-1-1)** : le **Ruin Runner** monte de flex à pièce maîtresse (2x main + 1 side) — 6 énergie / 5 might **non ciblable par sorts/capacités**, c'est LE plan anti-Chaos/Diana. Accompagné de **Sabotage 3x**, **Punch First 3x**, **Fiora Peerless 2x**, **Rengar Trophy Hunter 3x**, Scuttle Crab 3x, First Mate 2x, + 1x Challenge / 1x Primal Strength. Battlefields : **Emperor's Dais + Seat of Power + The Arena's Greatest**. Closer signature : poser **double The Arena's Greatest** pour transformer la partie en course à 6 points. Side : Alpha Strike 2x (2e sort signature), Disarming Rake 3x, 2e Challenge/Ruin Runner contre Vex/Hwei.
+**Config gagnante Unleashed (Hartford, Factor 14-1-1)** : le **Ruin Runner** monte de flex à pièce maîtresse (2x main + 1 side) — 6 énergie / 5 might **non ciblable par sorts/capacités**, c'est LE plan anti-Chaos/Diana. Accompagné de **Sabotage 3x**, **Punch First 3x**, **Fiora, Peerless 2x**, **Rengar Trophy Hunter 3x**, Scuttle Crab 3x, First Mate 2x, + 1x Challenge / 1x Primal Strength. Battlefields : **Emperor's Dais + Seat of Power + The Arena's Greatest**. Closer signature : poser **double The Arena's Greatest** pour transformer la partie en course à 6 points. Side : Alpha Strike 2x (2e sort signature), Disarming Rake 3x, 2e Challenge/Ruin Runner contre Vex/Hwei.
 
 **Top placements** : **Won Suzhou (燐川)**, **Won Tianjin (陈千语)**, **Won Hartford (Factor 14-1-1)**, 2nd Houston, 2nd Lille, 2nd Shanghai NO, 35 top 8 CC
 
@@ -236,7 +236,7 @@ Champion : Irelia, Fervent (100%)
 
 **Standard** : Tideturner 2-3x (75%), Stacked Deck 2x (66%)
 
-**Flex** : Lonely Poro 2x (55%), Zhonya's Hourglass 2x (57%), Adaptatron 1x (53%), Scuttle Crab 3x (52%), Star-Crossed 2x (48%), Flash 1x (45%), Rebuke 1x (39%), Gust 1x (37%), Fizz Trickster 1x (32%), Irelia Fervent (extra) 1x (30%)
+**Flex** : Lonely Poro 2x (55%), Zhonya's Hourglass 2x (57%), Adaptatron 1x (53%), Scuttle Crab 3x (52%), Star-Crossed 2x (48%), Flash 1x (45%), Rebuke 1x (39%), Gust 1x (37%), Fizz Trickster 1x (32%), Irelia, Fervent (extra) 1x (30%)
 
 **Battlefields** : Sunken Temple (87%), Targon's Peak (72%), Abandoned Hall (52%)
 
@@ -334,7 +334,7 @@ Champions : Ahri Inquisitive (73%), Ahri Alluring (27%)
 
 **Standard** : Discipline 3x (86%), Charm 2x (78%), Ravenbloom Student 3x (68%), Zhonya's Hourglass 2x (65%)
 
-**Flex** : Stupefy 3x (57%), Not So Fast 2x (54%), Back Off 2x (51%), Emperor's Divide 2x (49%), Vilemaw 2x (46%), Scuttle Crab 3x (43%), Irelia Fervent 2x (41%), Blitzcrank Impassive 2x (38%), Blue Sentinel 3x (35%), Sona Harmonious 2x (32%)
+**Flex** : Stupefy 3x (57%), Not So Fast 2x (54%), Back Off 2x (51%), Emperor's Divide 2x (49%), Vilemaw 2x (46%), Scuttle Crab 3x (43%), Irelia, Fervent 2x (41%), Blitzcrank Impassive 2x (38%), Blue Sentinel 3x (35%), Sona Harmonious 2x (32%)
 
 **Battlefields** : Grove of the God-Willow (52%), Ravenbloom Conservatory (24%), Trifarian War Camp (24%)
 
