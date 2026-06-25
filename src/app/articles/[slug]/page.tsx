@@ -360,6 +360,14 @@ export default async function ArticleDetailPage({ params }: PageProps) {
   const isBestOf = article.slug.startsWith("best-of");
   const bestOf = isBestOf ? buildBestOf(blocks, resolvedDecks, deckbuilderCodes) : null;
 
+  // Articles connexes (maillage + engagement) : même catégorie, les plus récents.
+  const relatedArticles = await prisma.article.findMany({
+    where: { published: true, slug: { not: slug }, category: article.category },
+    orderBy: { publishedAt: "desc" },
+    take: 3,
+    select: { slug: true, title: true, coverImage: true, publishedAt: true },
+  });
+
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
   const coverAbs = article.coverImage
     ? (article.coverImage.startsWith("http") ? article.coverImage : `${SITE}${article.coverImage}`)
@@ -440,6 +448,27 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} cardLinks={cardLinks} />
           )}
         </div>
+
+        {relatedArticles.length > 0 && (
+          <section className="mt-12 border-t border-hairline pt-8">
+            <h2 className="mb-4 text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>À lire aussi</h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedArticles.map((r) => (
+                <Link key={r.slug} href={`/articles/${r.slug}`} className="card-hover overflow-hidden rounded-card border border-hairline bg-surface">
+                  {r.coverImage && (
+                    <div className="aspect-video bg-surface-raised">
+                      <img src={r.coverImage} alt="" className="h-full w-full object-cover object-top" />
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <h3 className="text-sm font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{r.title}</h3>
+                    {r.publishedAt && <span className="mt-1 block text-xs text-ink-muted">{formatDate(r.publishedAt)}</span>}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         <CommentsSection articleId={article.id} />
       </article>
