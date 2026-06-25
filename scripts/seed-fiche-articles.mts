@@ -757,7 +757,6 @@ function buildBlocks(c: Content) {
   const lists = topLists(c.legendName);
   const blocks: object[] = [
     { type: "text", id: "lead", content: `${c.lead}\n\n> 💡 Survole (ou touche, sur mobile) les noms de cartes surlignés pour voir la carte.` },
-    { type: "image", id: "legend-art", src: c.art, alt: c.legendName, caption: c.caption, width: "narrow" },
     { type: "text", id: "bref", content: `## Le deck en bref\n\n${c.bref}` },
     { type: "text", id: "gagne", content: `## Comment ce deck gagne\n\n${c.gagne}` },
     { type: "text", id: "plan", content: `## Le plan de jeu, tour par tour\n\n${c.plan}` },
