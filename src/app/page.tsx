@@ -176,7 +176,7 @@ export default async function HomePage() {
           className="text-center text-xl font-bold sm:text-2xl"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          La référence Riftbound en français
+          Riftbound France, la référence du TCG en français
         </h1>
       </section>
 

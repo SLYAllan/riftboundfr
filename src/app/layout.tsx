@@ -59,24 +59,43 @@ export const viewport: Viewport = {
   themeColor: "#0ea5e9",
 };
 
+// @graph lie le WebSite et l'Organisation via @id. L'Organization (name + logo +
+// sameAs) est le signal d'entité que Google utilise pour reconnaître la marque
+// "Riftbound France" comme distincte du jeu Riftbound (Riot) → requête de marque.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Riftbound France",
-  url: "https://riftboundfrance.fr",
-  description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français.",
-  inLanguage: "fr",
-  publisher: {
-    "@type": "Organization",
-    name: "Riftbound France",
-    url: "https://riftboundfrance.fr",
-    email: "contact@riftboundfrance.fr",
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: "https://riftboundfrance.fr/cartes?q={search_term_string}",
-    "query-input": "required name=search_term_string",
-  },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://riftboundfrance.fr/#website",
+      name: "Riftbound France",
+      url: "https://riftboundfrance.fr",
+      description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français.",
+      inLanguage: "fr",
+      publisher: { "@id": "https://riftboundfrance.fr/#organization" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://riftboundfrance.fr/cartes?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://riftboundfrance.fr/#organization",
+      name: "Riftbound France",
+      alternateName: "RiftboundFrance",
+      url: "https://riftboundfrance.fr",
+      email: "contact@riftboundfrance.fr",
+      description: "La référence francophone pour le TCG Riftbound : tier lists, decks de tournois, guides et base de cartes.",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://riftboundfrance.fr/logorbfr.png",
+        width: 224,
+        height: 112,
+      },
+      sameAs: ["https://x.com/FRRiftbound"],
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
