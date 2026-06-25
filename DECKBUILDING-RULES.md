@@ -1,5 +1,86 @@
 # DECKBUILDING-RULES.md — Regles de construction de decks Riftbound
 
+> Mis a jour le 25 juin 2026 (v7). **Tech & cores issus de 84 VOD compétitives** (reformulés FR, matière privée — copyright). Les VOD **confirment** la table canonique de domaines ci-dessous. Ajout d'une section « Confirmations & tech VOD (v7) » : cartes signature/flex par Légende, anti-méta (surtout anti-Aurora), et règles de deckbuilding nouvelles (Bo1 sideboard avant game, nerf des buffs, gear hate en unité). Source fusionnée : `data/video-insights/unleashed-vod-synthesis-2026-06.md`. **Aucune decklist n'est fabriquée depuis les VOD** (toute liste vient du scrape réel).
+>
+> ### Confirmations & tech VOD (v7, juin 2026)
+> Cartes citées par les casters comme cœur/flex/tech. À recouper avec le scrape brut avant tout seed (noms en transcription audio parfois approximatifs).
+>
+> **Anti-méta transverse :** **Vex Apathetic/Cheerless** (stun/taxe, ne ciblent pas → ignorent deflect), **Defy** (~40 % des decks, counter ~70 % des sorts), **Star-Crossed + Fizz** (bounce action-speed, anti-Elder/Aurora/LeBlanc), **Moonfall** (-2 à tout). **Anti-Aurora** : préférer le gear hate **en unité** (Adaptatron, Disarming Rake, Akshan, Action — non recyclable par Sabotage), + Sabotage (2 main / 1 side), Thermo Beam, Mind Splitter ×2 side, Heedless Resurrection (miroir).
+>
+> | Légende | Domaines | Cœur / tech VOD | Anti / faiblesse |
+> |---|---|---|---|
+> | Master Yi, Wuju Bladesman | Corps/Calme | Ruin Runner ×3, Rengar Trophy Hunter, First Mate + Star Spring, Punch First/On Guard/Discipline/Challenge, Fiora Peerless, gear hate main, Zhonya's | Irelia, Diana ; Ruin Runner meurt à Flurry of Blades |
+> | Irelia, Blade Dancer | Calme/Chaos | Defiant Dance, Stellacorn Herder, GA, double counterspell, Abandoned Hall (double-dip Fervent), Adaptatron (anti-Aurora) | Aurora high-roll, lourdeur mentale |
+> | Diana, Scorn of the Moon | Esprit/Chaos | Hway, Moonfall, Star-Crossed+Fizz, Vex Apathetic, Tide Turner (8e pt), Acceptable Losses, Eclipse, Baron Nashor side | removal (rare), sorts de dégâts (Pyke/Ezreal/Jhin) |
+> | Ezreal, Prodigal Explorer | Esprit/Chaos | Fizz loop, Watcher (rejoué via Arcane Shift), Star-Crossed, Bewitching Spirit, Bellows Breath, Mind Splitter, Singularity | Master Yi (Ruin Runner), Irelia, aggro ; Cold Shot banni |
+> | LeBlanc, Deceiver | Esprit/Ordre | Karthus (double Death Knell), Glass Mixologist, Baited Hook, Mirror Image, Rune Rex + Sacrifice, 3 Seals (pas 2) | decks de hold, Vex (stun reflections) |
+> | Annie, Dark Child | Fureur/Chaos | OG Rengar, Sneaky Deckhand (aggro sous Aurora), Ferris Forerunner, Falling Star, Cleave, Charm | — |
+> | Azir, Emperor of the Sands | Calme/Ordre | Soul Sword, cascade équipements (Eye of the Herald/BF Sword) via Hall of Legends, triple Arise, Death Grip, double Defy | Pickpocket (side adverse) |
+> | Sivir/Miss Fortune (Aurora) | Corps/Chaos | Dazzling Aurora T3, Elder Dragon + Flurry of Blades/Mind Splitter, Baron Nashor, Bullet Time, Last Rites ; Sivir gagne le miroir (gold) | gear hate en unité, Star-Crossed, Légendes Ordre, de-ramp |
+> | Viktor, Herald of the Arcane | Esprit/Ordre | Bellows Breath (-1 à tout), Call the Weak, Imperial Decree, Wages of Pain, recruits, Sprite Fountain | Moonfall (-2), Pickpocket |
+> | Vex, Gloomist | Calme/Chaos | Vex Apathetic, Sona (ready 4 runes EOT), Existential Dread, Mutated Mouser ; **PAS Grove of the God Willow** (déjà dans la Légende), éviter Scuttle Crab | Aurora, boardwipes, Ezreal |
+> | Kha'Zix, Voidreaver | Corps/Chaos | Irresistible Fae Folk + ambush Mutating Horror, Void Assault, Fizz, Monastery of Hirana, 8-9 two-drops | decks de hold (Vex/Ivern), LeBlanc, Ezreal ; signature pas une « action » |
+> | Pyke, Bloodharbor Ripper | Fureur/Chaos | Ripper's Bay (rampe → Baron Nashor), Bewitching Spirit, Star-Crossed, Death from Below, Falling Star | Vex Apathetic (« tue le rouge »), aggro |
+> | Fiora, Grand Duelist | Corps/Ordre | Shepherd's Heirloom (équip via XP), Kinku Initiate, Set Brawler, Elder Dragon main | go-wide Rek'Sai |
+> | Sett, The Boss | Corps/Ordre | Akshan + Arena's Bar (moteur de valeur), Irresistible Fae Folk, Call to Glory ; nerf : buff déjà présent requis | Aurora (trop lent), violet |
+> | Rek'Sai, Void Burrower | Fureur/Ordre | Void Rush, Under-Titan (anthem +2), unités hors-main, Seals, Candlelit Sanctum | coûts power (rune choke), Diana late ; counter Repose |
+> | Rengar, Pridestalker | Fureur/Corps | Ambush, Trophy Hunter (champion zone), Thrill of the Hunt, Irresistible Fae Folk, Fresh Beans (draw), Determined Sentry | Vex Apathetic, Draven mid-range |
+> | Lillia, Bashful Bloom | Esprit/Calme | Lillia Faeforn, Sprite Fountain, tokens Sprite, Sprite Burst, Lilting Lullaby, Defy ×3 | Vex Apathetic, aggro-hold (Draven) |
+> | Jhin, Virtuoso | Fureur/Esprit | Curtain Call, Deadly Flourish, Singularity ×3, Time Warp, Rocket Barrage (anti-gear), Jhin Meticulous Killer ×3 | vert/Deflect, Vex, Master Yi XP |
+> | Kai'Sa, Daughter of the Void | Fureur/Esprit | Time Warp ×3, Thermo Beam, Singularity + Stupefy (prive Aurora de cibles), Baron Nashor (côté Aurora adverse) | Irelia |
+> | Master Yi, Wuju Master | Corps/Calme | Master Yi Tempered (Hunt 2), paliers niv. 6/11, Voracious Gromp, Elder Dragon, White Flame Protector, Concentrate, Alpha Strike | aucun avantage early (méta tempo) |
+> | Ivern, Greenfather | Calme/Ordre | Brush (symétrique), Ivern Nurture, Trusty Ramhound, Daisy, Friendship, Alpha Wild Claw, Emperor's Divide | Draven (anti-hold), bleu non-ciblé |
+> | Vi, Piltover Enforcer | Fureur/Ordre | Vi Destructive (Ganking), gears (Hextech Gauntlets/BF Sword), Death Grip, Sacrifice, Hidden Blade, Rek'Sai/Darius closers | gear removal (Salvage/Action/Thermo Beam) |
+>
+> **Règles de deckbuilding nouvelles (VOD) :** (1) **Bo1 = sideboard avant la partie** → prévoir une config anti-Aurora prête ; piège pour Sivir/MF mid-range (pas de gear). (2) **Nerf des buffs** : il faut déjà un buff présent pour le dépenser (touche Sett/Vi). (3) Le **gear hate en unité** (Akshan/Action) bat l'Aurora mieux que les contre-sorts (Sabotage les recycle). (4) Decks de **hold** (Vex/Ivern/Ari) : afficher le total de might (compteur) — leur pire ennemi est l'horloge (overtime à +2 = tie).
+> Mis a jour le 25 juin 2026 (v6). Intégration des sources éditoriales **riftbound.gg** (recaps Utrecht/Hartford + tier lists « Tianjin » et « One More Regional Until Vendetta »). Ajout : **table canonique des paires de domaines par Légende** (40 Légendes Unleashed) confirmée par riftbound.gg, + ordre de tier list à jour (voir bloc « Paires de domaines (référence riftbound.gg) » ci-dessous). Corrections notables vs versions précédentes : **Rek'Sai = Fureur/Ordre** (et non Corps/Fureur), **Darius = Fureur/Ordre**, **Jhin = Fureur/Esprit** (et non Esprit/Ordre), **Rengar = Fureur/Corps**. Détail complet du méta dans META-KNOWLEDGE.md (v6).
+>
+> ### Paires de domaines (référence riftbound.gg, juin 2026)
+> Source d'autorité pour les 2 domaines de chaque Légende (à utiliser pour les runes et l'identité de domaine). Tier = dernière tier list éditoriale (post-Changsha/Utrecht).
+>
+> | Tier | Légende | Domaines |
+> |------|---------|----------|
+> | 1 | Diana, Scorn of the Moon | Esprit/Chaos |
+> | 1 | Irelia, Blade Dancer | Calme/Chaos |
+> | 1 | Master Yi, Wuju Bladesman | Corps/Calme |
+> | 1 | Azir, Emperor of the Sands | Calme/Ordre |
+> | 2 | LeBlanc, Deceiver | Esprit/Ordre |
+> | 2 | Annie, Dark Child | Fureur/Chaos |
+> | 2 | Sivir, Battle Mistress | Corps/Chaos |
+> | 2 | Ezreal, Prodigal Explorer | Esprit/Chaos |
+> | 2 | Rek'Sai, Void Burrower | Fureur/Ordre |
+> | 2 | Vex, Gloomist | Calme/Chaos |
+> | 2 | Fiora, Grand Duelist | Corps/Ordre |
+> | 2 | Viktor, Herald of the Arcane | Esprit/Ordre |
+> | 2 | Rengar, Pridestalker | Fureur/Corps |
+> | 2 | Kha'Zix, Voidreaver | Corps/Chaos |
+> | 2 | Miss Fortune, Bounty Hunter | Corps/Chaos |
+> | 3 | Draven, Glorious Executioner | Fureur/Chaos |
+> | 3 | Sett, The Boss | Corps/Ordre |
+> | 3 | Darius, Hand of Noxus | Fureur/Ordre |
+> | 3 | Lillia, Bashful Bloom | Esprit/Calme |
+> | 3 | Pyke, Bloodharbor Ripper | Fureur/Chaos |
+> | 3 | Kai'Sa, Daughter of the Void | Fureur/Esprit |
+> | 3 | Lux, Lady of Luminosity | Esprit/Ordre |
+> | 3 | Teemo, Swift Scout | Esprit/Chaos |
+> | 4 | Master Yi, Wuju Master | Corps/Calme |
+> | 4 | Poppy, Keeper of the Hammer | Corps/Ordre |
+> | 4 | Volibear, Relentless Storm | Fureur/Corps |
+> | 4 | Ahri, Nine-Tailed Fox | Esprit/Calme |
+> | 4 | Vi, Piltover Enforcer | Fureur/Ordre |
+> | 4 | Jax, Grandmaster At Arms | Corps/Calme |
+> | 4 | Lucian, Purifier | Fureur/Corps |
+> | 4 | Ornn, Fire Below the Mountain | Esprit/Calme |
+> | 5 | Jhin, Virtuoso | Fureur/Esprit |
+> | 5 | Yasuo, Unforgiven | Calme/Chaos |
+> | 5 | Lee Sin, Blind Monk | Fureur/Corps |
+> | 5 | Jinx, Loose Cannon | Fureur/Chaos |
+> | 5 | Leona, Radiant Dawn | Calme/Ordre |
+> | 5 | Ivern, Green Father | Calme/Ordre |
+> | 5 | Renata Glasc, Chem-Baroness | Esprit/Ordre |
+> | 5 | Rumble, Mechanized Menace | Fureur/Esprit |
+> | 5 | Garen, Might of Demacia | Corps/Ordre |
+>
 > Mis a jour le 15 juin 2026 (v5). Ajouts : **S3 Changsha Regional Open** (640 j., 638 decklists, intégralité du field), **RQ Vancouver** (final standings, 118 listes) et **RQ Utrecht** (top 16). Unleashed → **6 906 decks classés**. Tier lists recalculées.
 > - **Deux légendes Master Yi** (à lire sur chaque deck, jamais déduites du set) : **Wuju Bladesman** — champion *Honed*, Body/Calm hold, la dominante (~10,8% Unleashed) — et **Wuju Master** — champion *Tempered*, Body/Calm, archétype de niche (~0,4%, présent à Changsha avec 18 listes). NB : le bloc « Master Yi, Wuju Master » plus bas (core Defy/Discipline/Zhonya's) décrit en réalité le **Bladesman** (étiquetage hérité v3).
 > - Vainqueurs : Changsha = **Irelia** (tempo gear) ; Utrecht = **Azir** (Squirtle, tokens equip) ; Vancouver = **Diana** (AlanZQ). Méta Unleashed le plus ouvert à ce jour (Utrecht : 8 légendes / 8 en Top 8).

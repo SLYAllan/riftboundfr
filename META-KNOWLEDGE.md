@@ -1,6 +1,34 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
+> Mis à jour le 25 juin 2026 (v7). **Analyse de 84 VOD compétitives** (RunesAndRift + RiftlabTCG : casts de rounds/finales, guides « How to Play », tier lists, deck profiles, mises à jour de règles), **reformulée en français** (matière privée, aucune citation — copyright). Apports : tier consensuel des casters, ~40 matchups détaillés, cores/tech des 22 Légendes, surveillance ban (avis casters) et mises à jour de règles/format. **Source de vérité fusionnée : `data/video-insights/unleashed-vod-synthesis-2026-06.md`.** Distillé dans la section « Juin 2026 (v7) — Analyse VOD » ci-dessous. Avis de tier éditoriaux (pas data-backed) ; aucune decklist créée à partir des VOD.
+> Mis à jour le 25 juin 2026 (v6). **Intégration des 4 sources éditoriales riftbound.gg** (par Den) : recaps **Utrecht** (Azir/Squirtle) et **Hartford** (Master Yi/Factor, dernier RQ Unleashed), + deux tier lists hebdo (**« Tianjin Shakes the Power Rankings »** post-Tianjin, **« One More Regional Until Vendetta »** post-Changsha/Utrecht). Ajouts : **dernière tier list éditoriale riftbound.gg (Tier 1-5 avec paires de domaines)** et **dataset des win rates globaux du set Unleashed** (recap Hartford, ~40 légendes). Voir la section « Juin 2026 — Tier lists riftbound.gg (Tianjin → Vendetta) ». Corrections de paires de domaines reportées dans DECKBUILDING-RULES.md (v6).
 > Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
 > Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
+
+## Juin 2026 (v7) — Analyse VOD compétitives (84 VOD, distillé)
+
+> Détail complet et matchups dans `data/video-insights/unleashed-vod-synthesis-2026-06.md`. Opinions de casters (Jibs, Pentastag, Exo…), reformulées FR.
+
+**Lecture méta (ère Hartford).** La **consistance** prime sur la puissance brute (plans linéaires en day 2). Le **violet (Chaos)** domine et pousse le removal pur hors du méta → **Diana prospère**. Le **jaune (Ordre) aggro** est bien placé (nouvelles pioches). Le **de-ramp** est l'action la plus punitive. Différences régionales : NA = Draven/Kai'Sa/Azir + Set 1 ; Europe = Vex/Lillia/Kha'Zix/Irelia + plus d'Aurora. Hartford gonfle Master Yi (dernier « Best of » Set 1).
+
+**Tier consensuel (éditorial) :**
+- **S / haut A** : Irelia « Aurelia » (n°1, tech-dépendant), Master Yi Wuju Bladesman (le plus représenté day 2, vainqueur Hartford).
+- **A** : Diana (vainqueur Vancouver, oppressive), Ezreal (meilleur contrôle), LeBlanc (déclin en rounds profonds), Annie (sous-estimée), Azir (skill, vainqueur Utrecht), Aurora MF/Sivir (« boogeyman » battable), Viktor (montée via Sprite Fountain, « plus fort à 6 points »).
+- **A/B hold & outsiders** : Vex (meilleur hold), Kha'Zix (design-flawed, sous-performe), Pyke (top 8 Hartford).
+- **B** : Fiora↑, Sett (Akshan+Arena's Bar), Rek'Sai (Void Rush/Under-Titan), Lucian↑, Ornn (Sprite Fountain), Darius, Kai'Sa↓, Yasuo, Jax, Volibear, Ivern.
+- **C/bas** : Rengar (high-roll, crushé par Vex), Lillia (overhyped), Lux (loop malsain), Jhin, Leona/Renata/Jinx/Ahri/Poppy/Garen (bas).
+
+**Cartes qui définissent le format :** Vex Apathetic/Cheerless (stun/taxe, ne ciblent pas), Defy (~40 %, counter ~70 % des sorts), Star-Crossed + Fizz (pivot chaos, anti-Elder), Moonfall (meilleur signature), Ruin Runner (intuable, meurt à Flurry of Blades), Rengar Trophy Hunter, Baron Nashor (anti-Aurora), Hway (Diana), Scuttle Crab, Tide Turner loop, gear hate **en unité** anti-Aurora (Adaptatron/Akshan/Action), Soul Sword/Sprite Fountain (gears Set 3).
+
+**Surveillance ban (avis casters, NON officiel) :** Vex Apathetic (floodgate sans coût power), Star-Crossed (bounce base), Echo (loop Lux malsain), Ferris Forerunner (polarisant). Déjà bannie : Cold Shot.
+
+**Mises à jour règles/format (à connaître) :**
+- **Bo1 : sideboard AVANT la partie** (tout le monde side-in Aurora).
+- **Nerf des buffs** (Sett) : il faut déjà un buff présent pour le dépenser.
+- **Emperor's Dias** : on peut refuser de payer le 1 énergie → bounce en main sans le token (errata probable).
+- **Elder Dragon** : seuil létal ennemi → 1, passif **rétroactif** (Flurry of Blades avant Aurora tue plus).
+- **Star-Crossed** retourne les DEUX unités ; **Mirror Image** copie l'effet de carte seul.
+- **Overtime Swiss** : victoire **par 2** → 6-7 = **tie** (les deux ratent le top cut) ; top cut untimed.
+- **Max 4 champions** pour Master Yi (sinon 3). Triggers verrouillés une fois sur la chain.
 
 ## 1. Règles clés (résumé pour rédaction)
 
@@ -447,6 +475,94 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - Tier B : Ezreal (3e Hartford), Vex (piège volume), Viktor (finaliste Utrecht), Kha'Zix, Ornn, Pyke (8e Hartford).
 - **Lux monte en tier C** : 6e à Hartford (Relivia), 1er Top 8 majeur Unleashed de la légende.
 - Master Yi Wuju Master = tier D, archétype de niche (0,4%, 1 top 8).
+
+### Juin 2026 — Tier lists riftbound.gg (Tianjin → Vendetta)
+
+> Deux tier lists hebdomadaires éditoriales de [riftbound.gg](https://riftbound.gg) (par Den), intégrées le 25 juin 2026. Méthode : « meilleure performance par légende en Regional » + « nombre de Top 8 dans les tournois 64+ joueurs ». Définitions : **Tier 1** = top cut attendu / vainqueur potentiel ; **Tier 2** = prétendant Top 16-32, à un ou deux matchs du Top 8 ; **Tier 3** = Top 64 avec un pilote expérimenté ; **Tier 4** = étincelles ponctuelles ; **Tier 5** = hors méta (« les cartes best-of valent surtout de l'argent »).
+
+#### Tier list « Tianjin Shakes the Power Rankings » (post-Tianjin, 31 tournois 64+)
+- **Trio indiscuté** : Diana (6W/23 Top8), Irelia (4W/20), **Origins Master Yi / Wuju Bladesman** (5W/47) — Master Yi serait #1 sur la seule scène chinoise mais peine à l'Ouest jusqu'à Vancouver.
+- **Tier 2** (dense, ~12 candidats Top 8) : Azir, Sivir, Vex, LeBlanc, Fiora, Ezreal, Rengar, Miss Fortune, Annie, **Rek'Sai** (Top 4 Tianjin, propulsé), **Pyke** (Top 4 Tianjin), Kha'Zix, Draven.
+- **Tier 3** : Viktor, Kai'Sa, Lux, Teemo, Poppy, Sett, Lillia. **Tier 4** : Darius, Lucian, Unleashed Yi (Wuju Master), Ahri, Ornn, Volibear, Vi, Jax. **Tier 5** : Yasuo, Lee Sin, Renata, Ivern, Leona, Jinx, Rumble, Jhin, Garen.
+- Lecture : le **domaine Fureur monte** (Rek'Sai + Pyke), les decks rapides perturbent le midrange du top tier. Chaque Top 8 Unleashed a livré un « invité surprise ».
+
+#### Tier list « One More Regional Until Vendetta » (post-Changsha/Utrecht, 38 tournois 64+) — **LA PLUS RÉCENTE**
+
+> La référence éditoriale actuelle, juste avant Hartford et le passage au set Vendetta. Le changement majeur : **Azir rejoint le Tier 1** (3e légende à 2 titres de Regional, après son sans-faute à Utrecht). Paires de domaines (FR) confirmées par la source.
+
+| Tier | Légende | Domaines | Bilan 64+ |
+|------|---------|----------|-----------|
+| **1** | Diana, Scorn of the Moon | Esprit/Chaos | 7 W / 31 Top 8 |
+| **1** | Irelia, Blade Dancer | Calme/Chaos | 4 W / 27 Top 8 |
+| **1** | Master Yi, Wuju Bladesman | Corps/Calme | 2 W / 56 Top 8 |
+| **1** | Azir, Emperor of the Sands | Calme/Ordre | 1 W / 17 Top 8 |
+| **2** | LeBlanc, Deceiver | Esprit/Ordre | 6 W / 18 Top 8 |
+| **2** | Annie, Dark Child | Fureur/Chaos | 1 W / 3 Top 8 |
+| **2** | Sivir, Battle Mistress | Corps/Chaos | 9 Top 8 |
+| **2** | Ezreal, Prodigal Explorer | Esprit/Chaos | 2 W / 8 Top 8 |
+| **2** | Rek'Sai, Void Burrower | Fureur/Ordre | 1 W / 3 Top 8 |
+| **2** | Vex, Gloomist | Calme/Chaos | 17 Top 8 |
+| **2** | Fiora, Grand Duelist | Corps/Ordre | 1 W / 13 Top 8 |
+| **2** | Viktor, Herald of the Arcane | Esprit/Ordre | 1 W / 12 Top 8 |
+| **2** | Rengar, Pridestalker | Fureur/Corps | 3 Top 8 |
+| **2** | Kha'Zix, Voidreaver | Corps/Chaos | 2 Top 8 |
+| **2** | Miss Fortune, Bounty Hunter | Corps/Chaos | 2 W / 4 Top 8 |
+| **3** | Draven, Glorious Executioner | Fureur/Chaos | 1 W / 6 Top 8 |
+| **3** | Sett, The Boss | Corps/Ordre | 1 W / 6 Top 8 |
+| **3** | Darius, Hand of Noxus | Fureur/Ordre | 1 Top 8 |
+| **3** | Lillia, Bashful Bloom | Esprit/Calme | 1 W / 2 Top 8 |
+| **3** | Pyke, Bloodharbor Ripper | Fureur/Chaos | 1 Top 8 |
+| **3** | Kai'Sa, Daughter of the Void | Fureur/Esprit | 6 Top 8 |
+| **3** | Lux, Lady of Luminosity | Esprit/Ordre | 1 Top 8 |
+| **3** | Teemo, Swift Scout | Esprit/Chaos | 1 Top 8 |
+| **4** | Master Yi, Wuju Master | Corps/Calme | — |
+| **4** | Poppy, Keeper of the Hammer | Corps/Ordre | 1 Top 8 |
+| **4** | Volibear, Relentless Storm | Fureur/Corps | — |
+| **4** | Ahri, Nine-Tailed Fox | Esprit/Calme | 1 Top 8 |
+| **4** | Vi, Piltover Enforcer | Fureur/Ordre | 1 Top 8 |
+| **4** | Jax, Grandmaster At Arms | Corps/Calme | — |
+| **4** | Lucian, Purifier | Fureur/Corps | — |
+| **4** | Ornn, Fire Below the Mountain | Esprit/Calme | — |
+| **5** | Jhin, Virtuoso | Fureur/Esprit | 2 Top 8 |
+| **5** | Yasuo, Unforgiven | Calme/Chaos | — |
+| **5** | Lee Sin, Blind Monk | Fureur/Corps | — |
+| **5** | Jinx, Loose Cannon | Fureur/Chaos | 1 Top 8 |
+| **5** | Leona, Radiant Dawn | Calme/Ordre | 1 Top 8 |
+| **5** | Ivern, Green Father | Calme/Ordre | — |
+| **5** | Renata Glasc, Chem-Baroness | Esprit/Ordre | — |
+| **5** | Rumble, Mechanized Menace | Fureur/Esprit | — |
+| **5** | Garen, Might of Demacia | Corps/Ordre | — |
+
+**Lecture riftbound.gg** : Diana reste #1 malgré un seul titre (Vancouver) — six Regionals consécutifs avec 2 demies + 4 finales, plus haut plafond si jouée optimalement. Sivir/Vex/LeBlanc, prétendants du début de set, ont raté les 3 derniers Top 8. À l'inverse, **Fureur en hausse** (Rek'Sai, Annie, Darius, Rengar tous en Top 8 à Vancouver ou Utrecht) : l'Ouest innove pendant que la Chine exploite les meilleures légendes établies.
+
+### Juin 2026 — Win rates globaux du set Unleashed (recap Hartford riftbound.gg)
+
+> Taux de victoire **global sur tout le set** (toutes parties classées riftdecks, échantillon entre parenthèses), publiés dans le recap Hartford. Indicateur de puissance brute complémentaire aux Top 8. Top du tableau : **Master Yi, Ezreal et LeBlanc à 56%**, Diana 55%.
+
+| Légende | WR | Parties | Légende | WR | Parties |
+|---------|----|---------|---------|----|---------|
+| Master Yi (Bladesman) | 56% | 1167 | Vex | 53% | 269 |
+| Ezreal | 56% | 272 | Sivir | 53% | 331 |
+| LeBlanc | 56% | 503 | Rek'Sai | 52% | 238 |
+| Diana | 55% | 846 | Rengar | 52% | 261 |
+| Azir | 54% | 477 | Kai'Sa | 52% | 294 |
+| Annie | 54% | 269 | Darius | 52% | 122 |
+| Lux | 54% | 157 | Kha'Zix | 51% | 207 |
+| Irelia | 53% | 592 | Draven | 51% | 273 |
+| Viktor | 50% | 378 | Poppy | 50% | 106 |
+| Lee Sin | 49% | 145 | Sett | 47% | 109 |
+| Miss Fortune | 47% | 232 | Lucian | 47% | 175 |
+| Volibear | 47% | 164 | Jinx | 46% | 206 |
+| Yasuo | 46% | 177 | Jax | 46% | 144 |
+| Lillia | 45% | 215 | Fiora | 44% | 152 |
+| Vi | 44% | 103 | Pyke | 43% | 260 |
+| Ahri | 42% | 307 | Teemo | 42% | 129 |
+| Ivern | 42% | 85 | Rumble | 42% | 64 |
+| Ornn | 40% | 147 | Jhin | 38% | 218 |
+| Unleashed Yi (Wuju Master) | 38% | 136 | Garen | 35% | 113 |
+| Leona | 34% | 200 | Renata Glasc | 34% | 115 |
+
+**Insight WR vs Top 8** : Pyke (43%) et Lux (54%) illustrent l'écart entre régularité et pic — Pyke convertit en Top 8 sans WR élevé, Lux a un bon WR mais peu de Top 8 jusqu'à Hartford. Master Yi cumule le meilleur WR ET le plus gros volume (1167 parties), confirmant sa domination du field. Bas de tableau (Leona, Renata, Garen, Jhin ≤ 38%) cohérent avec le Tier 5 éditorial.
 
 ## 6. Résultats de tournois
 
