@@ -76,7 +76,7 @@ export function UpdateDeckButton({ shareCode, ownerId }: Props) {
       <input
         value={changelog}
         onChange={(e) => setChangelog(e.target.value.slice(0, 500))}
-        placeholder="Changelog (optionnel) — ex: ajout de 2 Rune of Haste"
+        placeholder="Changelog (optionnel) - ex: ajout de 2 Rune of Haste"
         className="w-full rounded-lg border border-hairline bg-surface-raised px-3 py-2 text-sm text-ink placeholder:text-ink-muted/50"
       />
       {error && <p className="text-xs text-red-400">{error}</p>}

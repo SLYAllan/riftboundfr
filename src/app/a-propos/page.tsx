@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
-  title: { absolute: "À propos — Riftbound France" },
+  title: { absolute: "À propos - Riftbound France" },
   description:
     "Qui est derrière Riftbound France, la référence francophone du TCG Riftbound : mission, sources des données et contact.",
   alternates: { canonical: "/a-propos" },
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "À propos — Riftbound France",
+    title: "À propos - Riftbound France",
     description: "La référence francophone du TCG Riftbound : mission, sources des données et contact.",
     images: ["/img/og-default.png"],
   },

@@ -169,7 +169,7 @@ export function BinderExplorer({
         <span className="text-sm text-ink-muted">{distinctOwned} cartes · {copies} exemplaires</span>
       </div>
 
-      {/* Filters — label + valeur, icônes de domaine */}
+      {/* Filters - label + valeur, icônes de domaine */}
       <div className="mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">

@@ -1,6 +1,6 @@
 // Dynamic so it renders against the live DB at request time. With `revalidate`
 // the route was statically generated at Docker build (no DB available) and got
-// frozen to just the base URL — see deployment lessons. ~9k URLs fits well
+// frozen to just the base URL - see deployment lessons. ~9k URLs fits well
 // within a single sitemap (limit: 50 000 URLs / 50 MB).
 export const dynamic = "force-dynamic";
 
@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       `,
       // Curation : seuls les decks à valeur SEO entrent au sitemap (best-of,
       // guide rédigé, ou résultat de tournoi). Les decklists scrappées « brutes »
-      // restent accessibles mais ne sont plus poussées — sinon Google découvre
+      // restent accessibles mais ne sont plus poussées - sinon Google découvre
       // ~19k pages fines/quasi-dupliquées qu'il refuse d'indexer (budget de crawl).
       prisma.deck.findMany({
         where: {
@@ -54,7 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         orderBy: { id: "asc" },
       }),
       // Anti index-bloat : on exclut les variantes (alt-art / overnumbered /
-      // signature) qui sont en `noindex` sur la page — les lister contredisait le
+      // signature) qui sont en `noindex` sur la page - les lister contredisait le
       // robots et gaspillait du crawl.
       prisma.card.findMany({
         where: { alternateArt: false, overnumbered: false, signature: false },

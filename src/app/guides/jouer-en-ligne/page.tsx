@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Jouer à Riftbound en ligne — TCG Arena & RiftAtlas",
+    title: "Jouer à Riftbound en ligne - TCG Arena & RiftAtlas",
     description: "Comment jouer à Riftbound en ligne gratuitement avec TCG Arena et RiftAtlas.",
     images: ["/img/og-default.png"],
   },
@@ -33,7 +33,7 @@ const platforms = [
     tips: [
       "Activez les notifications sonores pour ne pas rater votre tour",
       "Utilisez le mode « Reveal Hidden » pour poser vos cartes face cachée",
-      "Le chronomètre par tour est de 90 secondes par défaut — demandez un allongement pour vos premières parties",
+      "Le chronomètre par tour est de 90 secondes par défaut - demandez un allongement pour vos premières parties",
       "Rejoignez le Discord de TCG Arena pour trouver des adversaires francophones",
     ],
   },
@@ -51,7 +51,7 @@ const platforms = [
       "Partagez le lien avec votre adversaire et commencez à jouer",
     ],
     tips: [
-      "Le mode Solo permet de tester votre deck sans adversaire — parfait pour s'entraîner au mulligan",
+      "Le mode Solo permet de tester votre deck sans adversaire - parfait pour s'entraîner au mulligan",
       "RiftAtlas supporte le Bo3 avec Réserve automatique entre les manches",
       "Utilisez le journal de partie pour revoir vos actions et analyser vos erreurs",
       "L'outil de statistiques intégré montre votre taux de victoire par légende et par face-à-face",

@@ -26,18 +26,35 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }
 
           case "decklist": {
             const cards = resolvedDecks?.[block.id] ?? [];
+            const list = (
+              <DecklistInteractive
+                cards={cards}
+                deckName={block.deckName}
+                legendName={block.legendName}
+                playerName={block.playerName}
+                context={block.context}
+                showCopyCode
+                showExportPng
+                deckbuilderCode={deckbuilderCodes?.[block.id]}
+              />
+            );
+            if (block.collapsed) {
+              return (
+                <details key={block.id} className="group my-6 rounded-card border border-border bg-surface-raised">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-3 rounded-card px-4 py-3 font-semibold text-ink transition-colors hover:bg-surface group-open:rounded-b-none [&::-webkit-details-marker]:hidden">
+                    <span>
+                      {block.deckName}
+                      {block.context && <span className="ml-2 text-sm font-normal text-ink-muted">· {block.context}</span>}
+                    </span>
+                    <span className="shrink-0 text-sm text-ink-muted transition-transform group-open:rotate-180" aria-hidden>▾</span>
+                  </summary>
+                  <div className="border-t border-border p-4">{list}</div>
+                </details>
+              );
+            }
             return (
               <div key={block.id} className="my-8">
-                <DecklistInteractive
-                  cards={cards}
-                  deckName={block.deckName}
-                  legendName={block.legendName}
-                  playerName={block.playerName}
-                  context={block.context}
-                  showCopyCode
-                  showExportPng
-                  deckbuilderCode={deckbuilderCodes?.[block.id]}
-                />
+                {list}
               </div>
             );
           }

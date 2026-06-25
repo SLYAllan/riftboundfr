@@ -243,7 +243,7 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
         <div className="space-y-10">
           {sTier.length > 0 && (
             <section>
-              <TierHeader tier="S" label="Regional Opens & Qualifiers — Europe & Chine" count={sTier.length} />
+              <TierHeader tier="S" label="Regional Opens & Qualifiers - Europe & Chine" count={sTier.length} />
               <div className="space-y-3">
                 {sTier.map((t) => (
                   <TournamentRow key={t.slug} tournament={t} featured />

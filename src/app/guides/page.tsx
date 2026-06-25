@@ -3,7 +3,7 @@ import { BookOpen, Layers, BookText, Shield, Monitor, TrendingUp } from "lucide-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Guides Riftbound — Débuter, deckbuilding, méta et règles",
+  title: "Guides Riftbound - Débuter, deckbuilding, méta et règles",
   description: "Tous les guides Riftbound en français : règles pour débuter, deckbuilding, les 6 domaines, méta et tier list, glossaire et comment jouer en ligne.",
   alternates: { canonical: "/guides" },
 };

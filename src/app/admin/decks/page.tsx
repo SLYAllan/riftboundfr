@@ -324,7 +324,7 @@ export default async function AdminDecksPage({ searchParams }: Props) {
                 </td>
                 <td className="px-4 py-3 text-sm text-arcane truncate">{displayLegendName(deck.legendName)}</td>
                 <td className="px-4 py-3 text-sm text-ink-secondary truncate">{deck.tournamentContext}</td>
-                <td className="px-4 py-3 text-sm text-ink-secondary">{deck.placement ?? "—"}</td>
+                <td className="px-4 py-3 text-sm text-ink-secondary">{deck.placement ?? "-"}</td>
                 <td className="px-4 py-3 text-sm text-ink-secondary">{cardTotal}</td>
                 <td className="px-4 py-3">
                   <span className={`text-xs px-2 py-1 rounded-full whitespace-nowrap ${deck.published ? "bg-success/10 text-success" : "bg-surface-overlay text-ink-muted"}`}>

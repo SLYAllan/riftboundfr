@@ -38,7 +38,7 @@ interface CardInfo {
   section: string;
 }
 
-// 1:1 square — the safest format for Twitter/X (no cropping in the timeline)
+// 1:1 square - the safest format for Twitter/X (no cropping in the timeline)
 const WIDTH = 1000;
 const HEIGHT = 1000;
 
@@ -461,7 +461,7 @@ function getLegendDomains(cards: CardInfo[]): string[] {
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
-  // Branded export background — read from disk and inline as a data URI.
+  // Branded export background - read from disk and inline as a data URI.
   // Fetching it via req.nextUrl.origin fails in prod: behind Coolify's reverse
   // proxy the origin is the internal container host (https://<id>:3000) which
   // satori cannot reach ("Can't load image ... fetch failed").

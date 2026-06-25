@@ -182,7 +182,7 @@ export function DeckPanelV2({
 
   return (
     <div className="flex flex-col h-full overflow-y-auto thin-scrollbar">
-      {/* Stats — always at top */}
+      {/* Stats - always at top */}
       <DeckStats mainDeck={deck.main} />
 
       {/* Header with counters */}
@@ -209,7 +209,7 @@ export function DeckPanelV2({
         )}
       </div>
 
-      {/* Legend — first */}
+      {/* Legend - first */}
         <CollapsibleSection label="Légende" target={null} total={deck.legend ? 1 : 0}>
           {deck.legend ? (
             <div className="grid grid-cols-2 gap-2 px-1">
@@ -220,7 +220,7 @@ export function DeckPanelV2({
           )}
         </CollapsibleSection>
 
-        {/* Main Deck — card image grid */}
+        {/* Main Deck - card image grid */}
         <CollapsibleSection label="Deck Principal" target={40} total={mainTotal}>
           {sortedMain.length > 0 ? (
             <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">
@@ -249,7 +249,7 @@ export function DeckPanelV2({
           onApply={onApplyRunes}
         />
 
-        {/* Runes — card image grid */}
+        {/* Runes - card image grid */}
         <CollapsibleSection label="Runes" target={12} total={runeTotal}>
           {sortedRune.length > 0 ? (
             <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">
@@ -282,7 +282,7 @@ export function DeckPanelV2({
           )}
         </CollapsibleSection>
 
-        {/* Reserve (sideboard) — card image grid */}
+        {/* Reserve (sideboard) - card image grid */}
         <CollapsibleSection label="Réserve" target={null} total={sideTotal} defaultOpen={sideTotal > 0}>
           {sortedSide.length > 0 ? (
             <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">

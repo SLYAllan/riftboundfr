@@ -11,7 +11,7 @@ import { Trophy, Swords, Users, Globe } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Tournois Riftbound France — Résultats et calendrier 2026" },
+  title: { absolute: "Tournois Riftbound France - Résultats et calendrier 2026" },
   description:
     "Calendrier des tournois Riftbound en France et dans le monde. Résultats, top 8, decklists gagnantes et Rift Tour.",
   alternates: { canonical: "/tournois" },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Tournois Riftbound France — Résultats et calendrier 2026",
+    title: "Tournois Riftbound France - Résultats et calendrier 2026",
     description:
       "Résultats, top 8, decklists gagnantes et calendrier des tournois Riftbound (France et monde).",
     images: ["/img/og-default.png"],
@@ -213,7 +213,7 @@ export default async function TournoisPage() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              Tournois Riftbound — Résultats et calendrier
+              Tournois Riftbound - Résultats et calendrier
             </h1>
           </div>
           <p className="mt-1 max-w-2xl text-sm sm:text-base text-ink-secondary">

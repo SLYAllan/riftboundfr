@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (info?.playerCount) bits.push(`${info.playerCount} joueurs`);
   if (info?.date) bits.push(info.date);
   const meta = bits.length ? ` (${bits.join(", ")})` : "";
-  const title = `${name} — Tournoi Riftbound`;
+  const title = `${name} - Tournoi Riftbound`;
   const description = `Résultats, top 8 et decklists du tournoi Riftbound ${name}${meta}.`;
   return {
     title,

@@ -36,7 +36,7 @@ export function CardHover({
   const popRef = useRef<HTMLDivElement>(null);
 
   // Une fois le popup rendu (opacity 0), on mesure sa hauteur RÉELLE puis on le
-  // place au-dessus de la vignette — ou en dessous s'il n'y a pas la place — en
+  // place au-dessus de la vignette - ou en dessous s'il n'y a pas la place - en
   // bornant systématiquement dans le viewport. Jamais hors écran.
   useLayoutEffect(() => {
     if (!hovered || !ref.current || !popRef.current) return;

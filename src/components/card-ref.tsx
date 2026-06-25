@@ -58,7 +58,7 @@ export function CardRef({ name, children }: { name: string; children?: React.Rea
   }, [fetchCard]);
 
   // Mesure la hauteur RÉELLE du popup une fois rendu (opacity 0) puis le place
-  // au-dessus du mot — ou en dessous faute de place — toujours borné dans le
+  // au-dessus du mot - ou en dessous faute de place - toujours borné dans le
   // viewport. Jamais hors écran, quelle que soit la hauteur du footer.
   useLayoutEffect(() => {
     if (!hovered || !ref.current || !popRef.current) return;

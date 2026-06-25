@@ -96,7 +96,7 @@ export function TierListTabs({
 
       <p className="mt-4 text-center text-sm text-ink-muted">
         Dernière mise à jour : {formatDate(activeTierList.updatedAt)}
-        {activeTierList.setContext && ` — Set ${activeTierList.setContext}`}
+        {activeTierList.setContext && ` - Set ${activeTierList.setContext}`}
       </p>
 
       <div className="mt-8 rounded-xl border border-hairline overflow-visible">

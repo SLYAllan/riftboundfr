@@ -160,7 +160,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* Hero — Logo centered */}
+      {/* Hero - Logo centered */}
       <section className="flex flex-col items-center gap-3 px-4 pt-10 pb-6">
         <Link href="/">
           <Image
@@ -183,7 +183,7 @@ export default async function HomePage() {
       {/* 3-column layout */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_1fr] items-stretch">
-          {/* Left — Random decks grid */}
+          {/* Left - Random decks grid */}
           <div className="flex flex-col rounded-card border border-hairline bg-surface overflow-hidden">
             <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
               <h2
@@ -249,7 +249,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Center — Guides list */}
+          {/* Center - Guides list */}
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="border-b border-hairline px-5 py-3">
               <h2
@@ -283,12 +283,12 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Right — Tier list */}
+          {/* Right - Tier list */}
           <HomeTierList tierLists={tierLists} legendMap={legendMap} />
         </div>
       </section>
 
-      {/* Encarts — Articles · Collection · Tournois */}
+      {/* Encarts - Articles · Collection · Tournois */}
       <section className="px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-3 items-stretch">
           {/* Articles */}

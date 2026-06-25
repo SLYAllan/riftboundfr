@@ -22,7 +22,7 @@ export function ServiceWorkerRegister() {
     }
 
     navigator.serviceWorker.register("/sw.js").catch(() => {
-      // Service worker registration failed — silently ignore
+      // Service worker registration failed - silently ignore
     });
   }, []);
 

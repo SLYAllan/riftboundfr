@@ -4,7 +4,7 @@ import { DOMAIN_ICONS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
 
 export const metadata: Metadata = {
-  title: { absolute: "6 Domaines Riftbound — Fury, Calm, Mind, Body, Chaos, Order" },
+  title: { absolute: "6 Domaines Riftbound - Fury, Calm, Mind, Body, Chaos, Order" },
   description:
     "Découvrez les 6 domaines de Riftbound : forces, faiblesses, style de jeu et Légendes associées pour chaque couleur.",
   alternates: { canonical: "/guides/domaines" },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "6 Domaines Riftbound — Fury, Calm, Mind, Body, Chaos, Order",
+    title: "6 Domaines Riftbound - Fury, Calm, Mind, Body, Chaos, Order",
     description:
       "Forces, faiblesses, style de jeu et Légendes associées pour chaque domaine Riftbound.",
     images: ["/img/og-default.png"],
@@ -28,7 +28,7 @@ const domains = [
     strengths: ["Dégâts directs avec des sorts", "Unités prêtes à agir dès leur arrivée (Accélération)", "Conquête rapide des champs de bataille", "Pression constante dès le Tour 1"],
     weaknesses: ["Peu de moyens de défendre", "Peu de pioche de cartes", "S'essouffle si la partie dure", "Vulnérable aux decks qui se préparent tranquillement"],
     keywords: ["Accélération", "Assaut", "Gank"],
-    playstyle: "Jouez agressivement dès le Tour 1. Posez des unités rapides, utilisez vos sorts pour éliminer les bloqueurs, et foncez sur les deux champs de bataille. Furie se marie très bien avec Corps — les deux récompensent le jeu offensif.",
+    playstyle: "Jouez agressivement dès le Tour 1. Posez des unités rapides, utilisez vos sorts pour éliminer les bloqueurs, et foncez sur les deux champs de bataille. Furie se marie très bien avec Corps - les deux récompensent le jeu offensif.",
     legends: [
       { name: "Draven", pair: "Chaos", desc: "Ultra agressif. Pression maximale dès les premiers tours." },
       { name: "Sivir", pair: "Body", desc: "Construit autour des équipements. Combine attaque et objets puissants." },
@@ -91,9 +91,9 @@ const domains = [
     color: "#8b5cf6",
     philosophy: "Chaos, c'est le risque et la récompense. Posez des cartes face cachée pour piéger l'adversaire, forcez-le à se défausser et déclenchez des combos explosifs. Imprévisible mais dévastateur.",
     strengths: ["Cartes face cachée pour piéger l'adversaire", "Force l'adversaire à se défausser", "Combos très puissants", "Peut renverser une partie en un tour"],
-    weaknesses: ["Résultats variables — parfois ça ne marche pas", "Dépend de combinaisons spécifiques", "Difficile à maîtriser pour les débutants"],
+    weaknesses: ["Résultats variables - parfois ça ne marche pas", "Dépend de combinaisons spécifiques", "Difficile à maîtriser pour les débutants"],
     keywords: ["Caché", "Agonie"],
-    playstyle: "Posez des cartes face cachée pour surprendre l'adversaire. Videz sa main pour qu'il n'ait plus de réponses. Assemblez vos combos et punissez ses erreurs. Chaos demande de l'expérience — évitez-le pour vos premières parties.",
+    playstyle: "Posez des cartes face cachée pour surprendre l'adversaire. Videz sa main pour qu'il n'ait plus de réponses. Assemblez vos combos et punissez ses erreurs. Chaos demande de l'expérience - évitez-le pour vos premières parties.",
     legends: [
       { name: "Draven", pair: "Fury", desc: "Ultra agressif avec des dégâts directs." },
       { name: "Diana", pair: "Mind", desc: "Rapide et perturbatrice. Sorts + vitesse." },
@@ -109,7 +109,7 @@ const domains = [
     strengths: ["Protection des unités alliées", "Création de petites unités (jetons)", "Résistant à la disruption", "Le mot-clé Agonie donne un bonus quand vos unités meurent"],
     weaknesses: ["Chaque jeton est faible individuellement", "Stratégie prévisible pour l'adversaire", "Besoin de temps pour se mettre en place"],
     keywords: ["Agonie", "Légion"],
-    playstyle: "Créez des jetons pour submerger l'adversaire par le nombre. Quand vos unités meurent, Agonie déclenche des effets bonus — chaque mort vous rapporte quelque chose. Ordre construit lentement mais devient très dur à arrêter.",
+    playstyle: "Créez des jetons pour submerger l'adversaire par le nombre. Quand vos unités meurent, Agonie déclenche des effets bonus - chaque mort vous rapporte quelque chose. Ordre construit lentement mais devient très dur à arrêter.",
     legends: [
       { name: "Irelia", pair: "Calm", desc: "Joue en réaction et contre-attaque au bon moment." },
       { name: "Azir", pair: "Calm", desc: "Crée des jetons en masse pour submerger l'adversaire." },
@@ -131,7 +131,7 @@ export default function DomainesGuidePage() {
 
       <div className="mt-4 space-y-2">
         <div className="rounded-lg border border-hairline bg-surface-raised px-4 py-3 text-sm text-ink-secondary">
-          <strong className="text-arcane">Pour débuter :</strong> Furie ou Corps pour une approche directe — posez des unités et attaquez. Évitez Chaos tant que vous n&apos;êtes pas à l&apos;aise avec les bases.
+          <strong className="text-arcane">Pour débuter :</strong> Furie ou Corps pour une approche directe - posez des unités et attaquez. Évitez Chaos tant que vous n&apos;êtes pas à l&apos;aise avec les bases.
         </div>
         <div className="rounded-lg border border-hairline bg-surface px-4 py-3 text-sm text-ink-secondary">
           <strong className="text-gold">Astuce :</strong> survolez les noms de cartes soulignés pour voir leur image.
@@ -242,19 +242,19 @@ export default function DomainesGuidePage() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
             <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef>
-            <span className="text-ink-secondary"> — Équipement à 9 énergie. La bombe ultime des decks d&apos;équipements. Cher mais dévastateur.</span>
+            <span className="text-ink-secondary"> - Équipement à 9 énergie. La bombe ultime des decks d&apos;équipements. Cher mais dévastateur.</span>
           </div>
           <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
             <CardRef name="Adaptatron">Adaptatron</CardRef>
-            <span className="text-ink-secondary"> — Détruit les équipements adverses. Indispensable si l&apos;adversaire joue des objets.</span>
+            <span className="text-ink-secondary"> - Détruit les équipements adverses. Indispensable si l&apos;adversaire joue des objets.</span>
           </div>
           <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
             <CardRef name="Back Off">Back Off</CardRef>
-            <span className="text-ink-secondary"> — Sort qui étourdit une unité. Utilisable dans beaucoup de combinaisons de domaines.</span>
+            <span className="text-ink-secondary"> - Sort qui étourdit une unité. Utilisable dans beaucoup de combinaisons de domaines.</span>
           </div>
           <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
             <CardRef name="Mindsplitter">Mindsplitter</CardRef>
-            <span className="text-ink-secondary"> — Force l&apos;adversaire à se défausser. L&apos;identité de Chaos en une carte.</span>
+            <span className="text-ink-secondary"> - Force l&apos;adversaire à se défausser. L&apos;identité de Chaos en une carte.</span>
           </div>
         </div>
       </section>

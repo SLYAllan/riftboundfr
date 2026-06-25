@@ -22,7 +22,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Riftbound France — Tier Lists, Decks & Guides en français",
+    default: "Riftbound France - Tier Lists, Decks & Guides en français",
     template: "%s | Riftbound France",
   },
   description:
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Riftbound France",
-    title: "Riftbound France — Tier Lists, Decks & Guides en français",
+    title: "Riftbound France - Tier Lists, Decks & Guides en français",
     description: "La référence francophone Riftbound : tier lists, decklists de tournois, guides et base de cartes.",
     images: ["/img/og-default.png"],
   },

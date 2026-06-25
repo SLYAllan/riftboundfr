@@ -67,7 +67,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
               <ul className="mt-1 list-disc pl-5 text-ink-muted">
                 {report.unmatched.map((u) => (
                   <li key={u.variantNumber}>
-                    {u.variantNumber} — {u.name} ({u.raison})
+                    {u.variantNumber} - {u.name} ({u.raison})
                   </li>
                 ))}
               </ul>

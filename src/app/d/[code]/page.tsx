@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     select: { title: true, legendName: true, description: true, authorName: true, domains: true },
   });
   if (!deck) return { title: "Deck introuvable" };
-  const title = `${deck.title} — ${displayLegendName(deck.legendName)}`;
+  const title = `${deck.title} - ${displayLegendName(deck.legendName)}`;
   const description = deck.description || `Deck ${deck.title} par ${deck.authorName}`;
   const image = `/api/decklist-image?share=${code}`;
   return {
@@ -186,7 +186,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
         )}
         {deck.version > 1 && (
           <p className="mt-2 text-xs text-ink-muted">
-            Version {deck.version} — mis à jour le {new Date(deck.updatedAt).toLocaleDateString("fr-FR")}
+            Version {deck.version} - mis à jour le {new Date(deck.updatedAt).toLocaleDateString("fr-FR")}
           </p>
         )}
       </div>

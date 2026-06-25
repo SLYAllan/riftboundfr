@@ -35,7 +35,7 @@ export function CardImage({ src, alt, size = "md", className, priority }: CardIm
 
   // Card art is served by the Sanity CDN (cmsassets.rgpub.io), which resizes
   // and serves WebP natively via URL params. We offload resizing to it instead
-  // of the Next.js image optimizer — the small server can't optimize hundreds
+  // of the Next.js image optimizer - the small server can't optimize hundreds
   // of card images per page (deck grids, articles) without choking.
   if (src.includes("cmsassets.rgpub.io")) {
     const sep = src.includes("?") ? "&" : "?";

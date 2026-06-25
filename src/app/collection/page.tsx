@@ -9,7 +9,7 @@ import { MAX_BINDERS } from "@/app/api/collection/binders/route";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Ma collection Riftbound — classeurs, progression et valeur" },
+  title: { absolute: "Ma collection Riftbound - classeurs, progression et valeur" },
   description:
     "Gère ta collection de cartes Riftbound en classeurs, suis ta progression par set, type et rareté, et repère tes cartes manquantes.",
   alternates: { canonical: "/collection" },

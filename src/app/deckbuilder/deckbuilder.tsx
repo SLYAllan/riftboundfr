@@ -143,7 +143,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
     // Le champion (encodé en C:) est une carte réelle du main deck. On l'ajoute
     // TOUJOURS au main. S'il y figure déjà (codes page deck/article qui l'incluent
     // aussi en M: à sa quantité réelle), on incrémente la quantité (+1) au lieu de
-    // créer une 2e entrée — ça évite le doublon de clé React tout en gardant le
+    // créer une 2e entrée - ça évite le doublon de clé React tout en gardant le
     // compte exact (ex. 40/40 = 39 cartes main + le champion de la section légende).
     if (data.champion) {
       const c = resolveCard(data.champion.cardId);
@@ -631,9 +631,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
         <button onClick={clearDeck} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-ink-muted disabled:opacity-30">Vider</button>
       </div>
 
-      {/* Main content — 2 column */}
+      {/* Main content - 2 column */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Left — Card browser */}
+        {/* Left - Card browser */}
         <div
           className="flex-1 overflow-hidden border-r border-hairline"
           onDragOver={(e) => {
@@ -664,7 +664,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
           />
         </div>
 
-        {/* Right — Deck panel */}
+        {/* Right - Deck panel */}
         <div
           className="hidden sm:flex w-80 xl:w-96 flex-col overflow-hidden"
           onDragOver={(e) => {

@@ -8,7 +8,7 @@ import { DeckbuilderV2 } from "./deckbuilder";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Deckbuilder Riftbound — Créez et partagez votre deck" },
+  title: { absolute: "Deckbuilder Riftbound - Créez et partagez votre deck" },
   description:
     "Construisez votre deck Riftbound avec notre deckbuilder interactif. Filtres, recherche de cartes et export.",
   alternates: { canonical: "/deckbuilder" },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Deckbuilder Riftbound — Créez et partagez votre deck",
+    title: "Deckbuilder Riftbound - Créez et partagez votre deck",
     description:
       "Deckbuilder Riftbound interactif : filtres, recherche de cartes et export de votre deck.",
     images: ["/img/og-default.png"],

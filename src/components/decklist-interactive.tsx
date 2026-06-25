@@ -28,8 +28,8 @@ interface DecklistInteractiveProps {
   deckbuilderCode?: string;
 }
 
-// Keyed by string (not DeckSection) so "champion" — produced by the text deck
-// code parser — is rendered too; otherwise champion units silently disappear.
+// Keyed by string (not DeckSection) so "champion" - produced by the text deck
+// code parser - is rendered too; otherwise champion units silently disappear.
 const sectionLabels: Record<string, string> = {
   legend: "Légende",
   champion: "Champion",
@@ -225,7 +225,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
       <div className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
           <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            Exporter — {deckName}
+            Exporter - {deckName}
           </h3>
           <button onClick={onClose} className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
         </div>
@@ -263,7 +263,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
 
           {activeTab === "tts" && (
             <div className="space-y-3">
-              <p className="text-xs text-ink-muted">Format Tabletop Simulator — collez dans TTS ou Pixelborn.</p>
+              <p className="text-xs text-ink-muted">Format Tabletop Simulator - collez dans TTS ou Pixelborn.</p>
               <div className="relative">
                 <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink break-all" />
                 <button

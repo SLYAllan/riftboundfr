@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = `Deck ${deck.title}`;
   const rawDesc =
     deck.description ||
-    `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` — ${deck.tournamentContext}` : ""}. Guide complet : gameplan, mulligan et matchups.`;
+    `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` - ${deck.tournamentContext}` : ""}. Guide complet : gameplan, mulligan et matchups.`;
   const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trimEnd()}…` : rawDesc;
   const image = `/api/decklist-image?slug=${slug}`;
   return {

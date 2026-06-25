@@ -10,7 +10,7 @@ export interface Crumb {
 
 /**
  * Fil d'Ariane visible + JSON-LD BreadcrumbList.
- * "Accueil" est ajouté automatiquement en tête — ne passer que les segments suivants.
+ * "Accueil" est ajouté automatiquement en tête - ne passer que les segments suivants.
  */
 export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
   const all: Crumb[] = [{ name: "Accueil", href: "/" }, ...items];

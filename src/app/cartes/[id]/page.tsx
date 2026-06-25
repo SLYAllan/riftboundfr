@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const card = await prisma.card.findUnique({ where: { riftboundId: id } });
   if (!card) return { title: "Carte introuvable" };
-  const title = `${card.name} — Carte Riftbound ${card.setName}`;
+  const title = `${card.name} - Carte Riftbound ${card.setName}`;
   const base = `${card.name} est une carte ${card.type} ${card.rarity} du set ${card.setName}.`;
   const rule = card.textPlain ? ` ${card.textPlain.replace(/\s+/g, " ").trim()}` : "";
   const full = `${base}${rule}`;
   const description = full.length > 155 ? `${full.slice(0, 152).trimEnd()}…` : full;
   // Anti index-bloat : les variantes (alt-art / overnumbered / signature) ne sont pas
-  // indexées (l'impression principale l'est) — elles partagent le même contenu jouable.
+  // indexées (l'impression principale l'est) - elles partagent le même contenu jouable.
   const isVariant = card.alternateArt || card.overnumbered || card.signature;
   return {
     title: { absolute: title },
@@ -113,7 +113,7 @@ export default async function CardDetailPage({ params }: PageProps) {
               </div>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Supertype</div>
-                <div className="mt-1 text-sm">{card.supertype || "—"}</div>
+                <div className="mt-1 text-sm">{card.supertype || "-"}</div>
               </div>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Domaines</div>
@@ -131,7 +131,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                       {DOMAIN_ICONS[domain] && <img src={DOMAIN_ICONS[domain]} alt="" className="h-4 w-4" />}
                       {DOMAIN_LABELS_FR[domain] ?? domain}
                     </span>
-                  )) : <span className="text-sm text-ink-muted">—</span>}
+                  )) : <span className="text-sm text-ink-muted">-</span>}
                 </div>
               </div>
             </div>

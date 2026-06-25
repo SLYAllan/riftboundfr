@@ -148,7 +148,7 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
         <div>
           <label className="block text-xs text-ink-muted mb-1">Contexte</label>
           <input type="text" value={block.context ?? ""} onChange={(e) => onChange({ ...block, context: e.target.value || undefined })}
-            placeholder="Top 4 — RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            placeholder="Top 4 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
         </div>
       </div>
       <div>
@@ -197,7 +197,7 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
           </div>
         ) : showPreview && isBinary ? (
           <div className="rounded-lg border border-hairline bg-canvas p-4">
-            <p className="text-xs text-ink-muted italic">Code binaire — preview non disponible</p>
+            <p className="text-xs text-ink-muted italic">Code binaire - preview non disponible</p>
           </div>
         ) : (
           <textarea
@@ -208,7 +208,7 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
             placeholder={"Legend:\n1 Master Yi - Wuju Bladesman\nChampion:\n1 Master Yi - Tempered\nMainDeck:\n3 Wuju Style\n3 Meditate\n...\nRunes:\n1 Rune Name\nBattlefields:\n1 Battlefield Name"}
           />
         )}
-        <p className="mt-1 text-[10px] text-ink-muted">Format texte (Legend: / MainDeck: / Runes: / ...) ou code binaire — la legende est remplie automatiquement</p>
+        <p className="mt-1 text-[10px] text-ink-muted">Format texte (Legend: / MainDeck: / Runes: / ...) ou code binaire - la legende est remplie automatiquement</p>
       </div>
     </div>
   );
@@ -519,7 +519,7 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
         <div>
           <label className="block text-xs text-ink-muted mb-1">Contexte (tous)</label>
           <input type="text" value={context} onChange={(e) => setContext(e.target.value)}
-            placeholder="Top 8 — RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-violet" />
+            placeholder="Top 8 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-violet" />
         </div>
       </div>
       <textarea

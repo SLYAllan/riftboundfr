@@ -56,7 +56,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
     const input = text.trim();
     const match = input.match(/\/d\/([a-zA-Z0-9]+)/);
     if (!match) {
-      setLinkError("Lien invalide — format attendu : /d/xxxxxxxx");
+      setLinkError("Lien invalide - format attendu : /d/xxxxxxxx");
       return;
     }
     setLinkLoading(true);

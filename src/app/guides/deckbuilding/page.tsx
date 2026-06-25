@@ -4,7 +4,7 @@ import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 
 export const metadata: Metadata = {
-  title: { absolute: "Guide Deckbuilding Riftbound — Construire son premier deck" },
+  title: { absolute: "Guide Deckbuilding Riftbound - Construire son premier deck" },
   description:
     "Construire un deck Riftbound compétitif : choix de la Légende, du champion, signatures, courbe d'énergie et conseils de jeu.",
   alternates: { canonical: "/guides/deckbuilding" },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Guide Deckbuilding Riftbound — Construire son premier deck",
+    title: "Guide Deckbuilding Riftbound - Construire son premier deck",
     description:
       "Choix de la Légende, du champion, signatures et courbe d'énergie pour construire votre deck Riftbound.",
     images: ["/img/og-default.png"],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const ratios = [
   { label: "Unités", range: "20-28", pct: "50-70%", desc: "Le cœur de votre deck. Sans unités, pas de combat et pas de points. Mélangez des unités pas chères (1-3 énergie) pour agir vite et des unités plus fortes (4-6) pour les combats importants." },
   { label: "Sorts", range: "8-14", pct: "20-35%", desc: "Vos outils : retirer une unité adverse, renforcer la vôtre en combat, piocher des cartes. Gardez toujours 3-4 sorts jouables en réaction pour ne pas subir sans rien faire." },
-  { label: "Équipements", range: "2-6", pct: "5-15%", desc: "Des objets que vous attachez à vos unités pour les rendre plus fortes. Ils restent dans votre base et survivent même si l'unité meurt — vous pouvez les ré-attacher à une autre." },
+  { label: "Équipements", range: "2-6", pct: "5-15%", desc: "Des objets que vous attachez à vos unités pour les rendre plus fortes. Ils restent dans votre base et survivent même si l'unité meurt - vous pouvez les ré-attacher à une autre." },
 ];
 
 const curveGuide = [
@@ -49,7 +49,7 @@ const domainSynergies = [
 
 const mistakes = [
   { name: "Pas assez d'unités", fix: "Mettez au moins 20 unités. Sans unités, pas de combat et pas de points. Les sorts complètent, mais les unités sont votre priorité." },
-  { name: "Trop de cartes dans le deck", fix: "Le minimum est 40 cartes — restez-y. Chaque carte en plus réduit vos chances de piocher vos meilleures." },
+  { name: "Trop de cartes dans le deck", fix: "Le minimum est 40 cartes - restez-y. Chaque carte en plus réduit vos chances de piocher vos meilleures." },
   { name: "Trop de cartes chères", fix: "Limitez-vous à 2-4 cartes à 7+ énergie. Si votre main de départ ne contient rien de jouable avant le Tour 3, vous partez avec un gros désavantage." },
   { name: "Pas de sorts pour se défendre", fix: "Gardez 3-4 sorts capables de retirer une unité adverse (Defy, Charm, Falling Star...). Sans ça, une seule grosse unité adverse peut vous bloquer." },
   { name: "Ignorer les champs de bataille", fix: "Vos 3 champs de bataille ont des capacités uniques. Lisez-les et choisissez-en qui complètent votre stratégie." },
@@ -122,7 +122,7 @@ export default function GuideDeckbuildingPage() {
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment répartir ses runes entre Énergie et Puissance ?</h2>
           <p className="mt-2 text-sm text-ink-secondary">
-            Vos 12 Runes génèrent soit de l&apos;<strong>Énergie</strong> (Épuiser — la rune reste disponible) soit de la <strong>Puissance</strong> (Recycler — la rune va sous le deck de runes).
+            Vos 12 Runes génèrent soit de l&apos;<strong>Énergie</strong> (Épuiser - la rune reste disponible) soit de la <strong>Puissance</strong> (Recycler - la rune va sous le deck de runes).
             L&apos;Énergie est votre mana pour jouer des cartes, la Puissance amplifie les effets de certaines cartes.
           </p>
           <div className="mt-4 space-y-2">
@@ -179,7 +179,7 @@ export default function GuideDeckbuildingPage() {
               <ul className="mt-2 space-y-1.5 text-xs text-ink-secondary">
                 <li>• Grosses unités résistantes avec Bouclier et Tank pour tenir les positions</li>
                 <li>• Surprenez l&apos;adversaire avec des renforts (Embuscade)</li>
-                <li>• Objectif : tenir un champ de bataille — chaque tour tenu = +1 point automatique</li>
+                <li>• Objectif : tenir un champ de bataille - chaque tour tenu = +1 point automatique</li>
                 <li>• Domaines typiques : Calme, Ordre</li>
               </ul>
             </div>
@@ -189,26 +189,26 @@ export default function GuideDeckbuildingPage() {
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles sont les cartes polyvalentes à connaître ?</h2>
           <p className="mt-2 text-sm text-ink-secondary">
-            Quelques cartes que vous verrez souvent — elles sont fortes dans beaucoup de decks différents.
+            Quelques cartes que vous verrez souvent - elles sont fortes dans beaucoup de decks différents.
           </p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Ferrous Forerunner">Ferrous Forerunner</CardRef> — Unité 6 énergie. Menace de milieu de partie solide et polyvalente.
+              <CardRef name="Ferrous Forerunner">Ferrous Forerunner</CardRef> - Unité 6 énergie. Menace de milieu de partie solide et polyvalente.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Defy">Defy</CardRef> — Sort 1 énergie. Retrait universel bas coût, jouable dans presque tous les decks.
+              <CardRef name="Defy">Defy</CardRef> - Sort 1 énergie. Retrait universel bas coût, jouable dans presque tous les decks.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Guardian Angel">Guardian Angel</CardRef> — Équipement 2 énergie. Protection essentielle pour vos unités clés.
+              <CardRef name="Guardian Angel">Guardian Angel</CardRef> - Équipement 2 énergie. Protection essentielle pour vos unités clés.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Noxus Hopeful">Noxus Hopeful</CardRef> — Unité 4 énergie. Pilier solide du milieu de courbe.
+              <CardRef name="Noxus Hopeful">Noxus Hopeful</CardRef> - Unité 4 énergie. Pilier solide du milieu de courbe.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Discipline">Discipline</CardRef> — Sort 2 énergie. Buff de combat polyvalent qui transforme les échanges en votre faveur.
+              <CardRef name="Discipline">Discipline</CardRef> - Sort 2 énergie. Buff de combat polyvalent qui transforme les échanges en votre faveur.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> — Équipement 9 énergie. Finisseur puissant mais jouable tard uniquement.
+              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> - Équipement 9 énergie. Finisseur puissant mais jouable tard uniquement.
             </div>
           </div>
         </section>

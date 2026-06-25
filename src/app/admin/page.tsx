@@ -103,7 +103,7 @@ export default async function AdminDashboard() {
                     {a.title}
                   </Link>
                   <span className="shrink-0 text-xs text-ink-muted">
-                    {a.publishedAt ? formatDate(a.publishedAt) : "—"}
+                    {a.publishedAt ? formatDate(a.publishedAt) : "-"}
                   </span>
                 </li>
               ))}

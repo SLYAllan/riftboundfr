@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import type { ArticleBlock } from "@/types";
 
 export const metadata: Metadata = {
-  title: { absolute: "Actualités Riftbound — News, analyses méta et résultats" },
+  title: { absolute: "Actualités Riftbound - News, analyses méta et résultats" },
   description:
     "Toute l'actualité Riftbound en français : analyses de méta, résultats de tournois, guides et annonces.",
   alternates: { canonical: "/articles" },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Actualités Riftbound — News, analyses méta et résultats",
+    title: "Actualités Riftbound - News, analyses méta et résultats",
     description:
       "Analyses de méta, résultats de tournois, guides et annonces Riftbound en français.",
     images: ["/img/og-default.png"],
@@ -104,7 +104,7 @@ export default async function ArticlesPage({
             >
               {article.coverImage && (
                 <div className="aspect-video bg-surface-raised">
-                  <img src={article.coverImage} alt="" className="h-full w-full object-cover" />
+                  <img src={article.coverImage} alt="" className="h-full w-full object-cover object-top" />
                 </div>
               )}
               <div className="p-5">

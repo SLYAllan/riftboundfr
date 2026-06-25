@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-canvas">
       <div className="w-full max-w-sm p-8 rounded-2xl bg-surface border border-hairline">
         <h1 className="text-2xl font-bold text-ink mb-6 text-center" style={{ fontFamily: "var(--font-rubik)" }}>
-          Admin — Riftbound France
+          Admin - Riftbound France
         </h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input

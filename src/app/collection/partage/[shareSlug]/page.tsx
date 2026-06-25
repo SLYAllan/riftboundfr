@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
 
 export const metadata: Metadata = {
-  title: { absolute: "Classeur partagé — Riftbound France" },
+  title: { absolute: "Classeur partagé - Riftbound France" },
   robots: { index: false, follow: false },
 };
 

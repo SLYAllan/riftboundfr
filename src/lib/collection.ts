@@ -1,7 +1,7 @@
 export type OwnedByName = Map<string, number>;
 
 // Clé de carte JOUABLE : on ignore le suffixe de variante/traitement entre
-// parenthèses — (Metal), (Overnumbered), (alt art)… — qui ne sont que des
+// parenthèses - (Metal), (Overnumbered), (alt art)… - qui ne sont que des
 // éditions cosmétiques de la même carte. Posséder n'importe quelle impression
 // d'une carte suffit donc à la jouer dans un deck.
 function nameKey(_cleanName: string | null, name: string): string {

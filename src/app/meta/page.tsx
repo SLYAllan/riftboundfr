@@ -154,7 +154,7 @@ export default async function MetaSnapshotPage() {
           Popularité des légendes basée sur les decks de tournois publiés.
         </p>
         <p className="mt-1 text-sm text-ink-muted">
-          Dernière mise à jour : {formatDate(latestDate)} — {totalDecks} decks
+          Dernière mise à jour : {formatDate(latestDate)} - {totalDecks} decks
           analysés
         </p>
       </div>

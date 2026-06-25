@@ -9,7 +9,7 @@ import { getBinderQuantities, getWishlistIds } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Classeur — Ma collection Riftbound" },
+  title: { absolute: "Classeur - Ma collection Riftbound" },
   robots: { index: false, follow: false },
 };
 

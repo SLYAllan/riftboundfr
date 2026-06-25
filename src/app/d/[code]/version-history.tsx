@@ -42,7 +42,7 @@ export function VersionHistory({ currentVersion, history }: Props) {
             <span className="rounded-full bg-arcane/15 px-2 py-0.5 text-arcane font-semibold">
               v{currentVersion}
             </span>
-            <span className="text-ink-muted">— version actuelle</span>
+            <span className="text-ink-muted">- version actuelle</span>
           </div>
           {history.map((v) => (
             <div key={v.id} className="flex items-start gap-2 text-xs">

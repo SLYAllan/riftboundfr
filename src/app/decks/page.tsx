@@ -18,7 +18,7 @@ import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Decks Riftbound en français — decklists de tournois et guides" },
+  title: { absolute: "Decks Riftbound en français - decklists de tournois et guides" },
   description:
     "Decklists Riftbound en français : decks gagnants de tournois (Regional Opens, RQ), builds compétitifs et guides par Légende.",
   alternates: { canonical: "/decks" },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Decks Riftbound en français — decklists de tournois et guides",
+    title: "Decks Riftbound en français - decklists de tournois et guides",
     description:
       "Decklists de tournois, builds compétitifs et guides pour chaque Légende Riftbound.",
     images: ["/img/og-default.png"],
@@ -177,8 +177,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
     return (
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound — Decklists compétitives</h1>
-        <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende — avec guides et explications en français.</p>
+        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
+        <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
           <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", !cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
@@ -322,7 +322,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const where: Record<string, unknown> = { published: true };
   if (cat === "tournoi") {
     // Vrais decks scrapés uniquement : les copies "best-of" (featured) ont le même
-    // tournamentContext et doubleraient les résultats — elles vivent dans cat=bestof.
+    // tournamentContext et doubleraient les résultats - elles vivent dans cat=bestof.
     where.featured = false;
     if (tournamentFilter) {
       where.tournamentContext = tournamentFilter;
@@ -425,8 +425,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound — Decklists compétitives</h1>
-      <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende — avec guides et explications en français.</p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
+      <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
 
       <div className="mt-6 flex flex-wrap gap-2.5">
         <Link

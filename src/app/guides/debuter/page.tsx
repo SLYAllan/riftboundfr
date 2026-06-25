@@ -50,7 +50,7 @@ const keywordsOther = [
 export default function GuideDebuterPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment jouer à Riftbound — Guide débutant</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment jouer à Riftbound - Guide débutant</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Riftbound est un jeu de cartes à collectionner dans l&apos;univers de League of Legends. Deux joueurs s&apos;affrontent pour le contrôle de champs de bataille
         et le premier à <strong>8 points</strong> gagne. Ce guide vous apprend tout ce qu&apos;il faut savoir pour jouer votre première partie.
@@ -86,7 +86,7 @@ export default function GuideDebuterPage() {
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>De quoi est composé un deck ?</h2>
           <p className="mt-2 text-sm text-ink-secondary">
-            Pas besoin de tout retenir — les decks de démarrage (Jinx, Viktor, Lee Sin, Fiora, Rumble) sont prêts à jouer. Voici les éléments pour comprendre ce que contient votre deck :
+            Pas besoin de tout retenir - les decks de démarrage (Jinx, Viktor, Lee Sin, Fiora, Rumble) sont prêts à jouer. Voici les éléments pour comprendre ce que contient votre deck :
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
@@ -134,7 +134,7 @@ export default function GuideDebuterPage() {
             ))}
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-            <strong>Pour débuter :</strong> Furie ou Corps sont les plus simples — vous posez des unités et vous attaquez. Évitez Chaos tant que vous n&apos;êtes pas à l&apos;aise avec les bases.
+            <strong>Pour débuter :</strong> Furie ou Corps sont les plus simples - vous posez des unités et vous attaquez. Évitez Chaos tant que vous n&apos;êtes pas à l&apos;aise avec les bases.
           </div>
         </section>
 
@@ -144,13 +144,13 @@ export default function GuideDebuterPage() {
           <p className="mt-2 text-sm text-ink-secondary">Vos runes produisent deux types de ressources :</p>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Énergie — la ressource de base</h3>
+              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Énergie - la ressource de base</h3>
               <p className="mt-1 text-sm text-ink-secondary">
                 Tournez une rune à l&apos;horizontale (<strong>épuiser</strong>) pour produire 1 énergie. La rune reste en jeu et sera de nouveau disponible au prochain tour. C&apos;est votre « mana » principal.
               </p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Puissance — la ressource avancée</h3>
+              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Puissance - la ressource avancée</h3>
               <p className="mt-1 text-sm text-ink-secondary">
                 Placez une rune sous votre deck de runes (<strong>recycler</strong>) pour produire 1 Puissance de sa couleur. Vous perdez la rune pour ce tour, mais certaines cartes puissantes l&apos;exigent.
               </p>
@@ -231,7 +231,7 @@ export default function GuideDebuterPage() {
               Chaque joueur pioche <strong>4 cartes</strong>. Vous pouvez ensuite remettre jusqu&apos;à <strong>2 cartes</strong> que vous ne voulez pas, piocher autant de nouvelles cartes, et les cartes remises vont sous votre deck.
             </p>
             <p className="mt-2">
-              C&apos;est le <strong>mulligan</strong> — l&apos;occasion de chercher une meilleure main de départ. Idéalement, gardez 1-2 unités pas chères que vous pourrez jouer dès les premiers tours.
+              C&apos;est le <strong>mulligan</strong> - l&apos;occasion de chercher une meilleure main de départ. Idéalement, gardez 1-2 unités pas chères que vous pourrez jouer dès les premiers tours.
             </p>
           </div>
         </section>
@@ -253,7 +253,7 @@ export default function GuideDebuterPage() {
           </div>
 
           <h3 className="mt-6 text-lg font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Autres mots-clés</h3>
-          <p className="mt-1 text-xs text-ink-muted">Vous les rencontrerez en jouant. Pas besoin de les apprendre par cœur — ils sont rappelés sur les cartes.</p>
+          <p className="mt-1 text-xs text-ink-muted">Vous les rencontrerez en jouant. Pas besoin de les apprendre par cœur - ils sont rappelés sur les cartes.</p>
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {keywordsOther.map((kw) => (
               <div key={kw.name} className="rounded-lg border border-hairline bg-surface p-3">
@@ -275,10 +275,10 @@ export default function GuideDebuterPage() {
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Conseils pour votre première partie</h2>
           <ul className="mt-3 space-y-2 text-ink-secondary">
             {[
-              "Commencez avec un deck de démarrage (Jinx, Viktor, Lee Sin, Fiora ou Rumble) — ils sont prêts à jouer, pas besoin de construire.",
+              "Commencez avec un deck de démarrage (Jinx, Viktor, Lee Sin, Fiora ou Rumble) - ils sont prêts à jouer, pas besoin de construire.",
               "Posez des unités dès que possible. Sans unités sur les champs de bataille, vous ne pouvez pas marquer de points.",
               "Gardez toujours un peu d'énergie en réserve. Ça vous permet de jouer un sort en réponse si l'adversaire vous attaque.",
-              "Ne jetez pas toutes vos cartes d'un coup. Gérez vos ressources — vous ne piochez qu'une carte par tour.",
+              "Ne jetez pas toutes vos cartes d'un coup. Gérez vos ressources - vous ne piochez qu'une carte par tour.",
               "Défendre un champ de bataille rapporte 1 point automatique à chaque tour. C'est souvent plus rentable que d'attaquer partout.",
               "Lisez les capacités de vos champs de bataille. Elles peuvent faire la différence !",
               "Ne changez pas de deck après une seule défaite. Jouez plusieurs parties pour apprendre les interactions.",
@@ -310,7 +310,7 @@ export default function GuideDebuterPage() {
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Draven, Glorious Executioner</span>
-              <p className="mt-0.5 text-xs text-ink-secondary">Agression pure (Chaos/Furie). Très fort sur le set précédent — parfait si vous aimez foncer.</p>
+              <p className="mt-0.5 text-xs text-ink-secondary">Agression pure (Chaos/Furie). Très fort sur le set précédent - parfait si vous aimez foncer.</p>
             </div>
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">

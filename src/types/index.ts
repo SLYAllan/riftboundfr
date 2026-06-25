@@ -98,6 +98,8 @@ export type ArticleBlock =
       playerName?: string;
       context?: string;
       deckId?: string;
+      /** Si vrai, la liste est repliée par défaut dans un menu déroulant. */
+      collapsed?: boolean;
     }
   | {
       type: "sponsor_link";
@@ -161,7 +163,7 @@ export interface BracketSlot {
   player: string;
   /** Legend / deck label shown under the player name. */
   legend?: string;
-  /** Games won in the match (string to allow "—" for byes). */
+  /** Games won in the match (string to allow "-" for byes). */
   score?: string;
   /** Highlights the winner row. */
   win?: boolean;

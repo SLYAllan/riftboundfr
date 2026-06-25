@@ -159,7 +159,7 @@ export default function GuideMetaPage() {
       <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
         <strong>D&apos;où viennent ces données ?</strong> De l&apos;analyse de <strong>88 tournois</strong> et plus de
         18 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
-        le nombre de top 8, les victoires et le taux de conversion — pas une opinion.
+        le nombre de top 8, les victoires et le taux de conversion - pas une opinion.
       </div>
 
       <div className="mt-10 space-y-12">
@@ -230,16 +230,16 @@ export default function GuideMetaPage() {
           </p>
           <div className="mt-4 space-y-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> — l&apos;équipement à 9 énergie qui portait Sivir,
+              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> - l&apos;équipement à 9 énergie qui portait Sivir,
               Miss Fortune et Poppy. <strong>En net déclin</strong> : le field a réagi.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
               <CardRef name="Salvage">Salvage</CardRef>, <CardRef name="Turn to Dust">Turn to Dust</CardRef> et{" "}
-              <CardRef name="Adaptatron">Adaptatron</CardRef> — du <strong>retrait d&apos;équipement joué en deck principal</strong>{" "}
+              <CardRef name="Adaptatron">Adaptatron</CardRef> - du <strong>retrait d&apos;équipement joué en deck principal</strong>{" "}
               pour punir Aurora. C&apos;est ce qui a fait chuter Sivir et Poppy.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Defy">Defy</CardRef> — le retrait universel à 1 énergie, présent dans presque tous les decks
+              <CardRef name="Defy">Defy</CardRef> - le retrait universel à 1 énergie, présent dans presque tous les decks
               réactifs.
             </div>
           </div>

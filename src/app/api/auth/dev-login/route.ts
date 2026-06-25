@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { createUserSession, getUserSessionCookieName } from "@/lib/session";
 
-// Connexion de test — UNIQUEMENT en développement. Renvoie 404 en production.
+// Connexion de test - UNIQUEMENT en développement. Renvoie 404 en production.
 // Permet de tester les fonctionnalités liées au compte (collection, likes…)
 // sans passer par l'OAuth Discord.
 export async function GET(req: Request) {

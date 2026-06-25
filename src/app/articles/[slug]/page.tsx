@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const article = await prisma.article.findUnique({ where: { slug } });
   if (!article) return { title: "Article introuvable" };
-  const rawDescription = article.excerpt || `${article.title} — Riftbound France`;
+  const rawDescription = article.excerpt || `${article.title} - Riftbound France`;
   const description =
     rawDescription.length > 155 ? `${rawDescription.slice(0, 152).trimEnd()}…` : rawDescription;
   // Les images og:image / twitter:image sont fournies par les conventions de
@@ -216,7 +216,7 @@ async function resolveDecklists(blocks: ArticleBlock[]): Promise<{ cards: Record
         });
       }
       // dedup uniquement sur la section "legend" (la légende/champion peut aussi
-      // figurer en main/side — il faut quand même l'afficher en Légende/Champion).
+      // figurer en main/side - il faut quand même l'afficher en Légende/Champion).
       if (legendCard && !deckCards.some((c) => c.cardId === legendCard!.id && c.section === "legend")) {
         riftboundIdMap.set(legendCard.id, legendCard.riftboundId); // pour le deckbuilder
         deckCards.unshift(toListCard(legendCard, 1, "legend" as DeckSection));
@@ -340,7 +340,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
-    description: article.excerpt || `${article.title} — Riftbound France`,
+    description: article.excerpt || `${article.title} - Riftbound France`,
     datePublished: article.publishedAt?.toISOString(),
     dateModified: article.updatedAt?.toISOString(),
     author: { "@type": "Person", name: "Allan", url: "https://twitter.com/solary_allan" },
@@ -386,12 +386,6 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             {article.tournamentPlayerCount && (
               <span className="flex items-center gap-1 text-ink-secondary"><Users size={14} />{article.tournamentPlayerCount} joueurs</span>
             )}
-          </div>
-        )}
-
-        {article.coverImage && (
-          <div className="mt-6 overflow-hidden rounded-card">
-            <img src={article.coverImage} alt="" className="w-full object-cover" />
           </div>
         )}
 

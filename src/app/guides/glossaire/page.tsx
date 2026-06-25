@@ -6,7 +6,7 @@ import { prisma, safeQuery } from "@/lib/prisma";
 import { GlossaireClient } from "./glossaire-client";
 
 export const metadata: Metadata = {
-  title: { absolute: "Glossaire Riftbound — Tous les termes du jeu expliqués" },
+  title: { absolute: "Glossaire Riftbound - Tous les termes du jeu expliqués" },
   description:
     "Dictionnaire complet des termes Riftbound : Conquer, Hold, Showdown, Rune, Domaine, Might et tous les keywords expliqués en français.",
   alternates: { canonical: "/guides/glossaire" },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Glossaire Riftbound — Tous les termes du jeu expliqués",
+    title: "Glossaire Riftbound - Tous les termes du jeu expliqués",
     description:
       "Conquer, Hold, Showdown, Rune, Domaine, Might et tous les keywords Riftbound expliqués en français.",
     images: ["/img/og-default.png"],
@@ -70,7 +70,7 @@ const terms: GlossaryTerm[] = [
   { term: "Dégainer", en: "Quick-Draw", category: "Mécaniques", subcategory: "Mot-clé (Équipement)", definition: "Si vous jouez cet Équipement en Réaction (pendant le combat), il s'attache gratuitement à une de vos unités, sans payer le coût d'Équiper.", related: ["Équiper", "Réaction", "Équipement"] },
 
   // === Mécaniques (Autres) ===
-  { term: "Caché", en: "Hidden", category: "Mécaniques", subcategory: "Mot-clé", definition: "Vous pouvez jouer cette carte face cachée sur un champ de bataille que vous contrôlez. Plus tard, retournez-la pour l'activer gratuitement — effet de surprise garanti. Typique du domaine Chaos.", related: ["Domaine", "Champ de bataille", "Embuscade"] },
+  { term: "Caché", en: "Hidden", category: "Mécaniques", subcategory: "Mot-clé", definition: "Vous pouvez jouer cette carte face cachée sur un champ de bataille que vous contrôlez. Plus tard, retournez-la pour l'activer gratuitement - effet de surprise garanti. Typique du domaine Chaos.", related: ["Domaine", "Champ de bataille", "Embuscade"] },
   { term: "Légion", en: "Legion", category: "Mécaniques", subcategory: "Mot-clé", definition: "Si vous avez déjà joué une autre carte de votre deck ce tour, cette carte déclenche un effet bonus. Récompense le fait de jouer plusieurs cartes par tour." },
   { term: "Niveau", en: "Level", category: "Mécaniques", subcategory: "Mot-clé", definition: "Cette carte gagne un bonus quand vous avez accumulé suffisamment de points d'XP (le seuil est indiqué sur la carte). Fonctionne avec le mot-clé Chasse.", related: ["XP", "Chasse"] },
   { term: "Unique", en: "Unique", category: "Mécaniques", subcategory: "Construction de deck", definition: "Vous ne pouvez mettre qu'un seul exemplaire de cette carte dans votre deck, au lieu des 3 copies habituelles." },

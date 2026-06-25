@@ -269,10 +269,10 @@ export function DeckCompare({ initialA, initialB }: Props) {
           {/* Stats comparison */}
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl border border-hairline bg-surface p-4">
-              <DeckStats cards={deckA.cards} label={`A — ${displayLegendName(deckA.legend)}`} color="text-arcane" />
+              <DeckStats cards={deckA.cards} label={`A - ${displayLegendName(deckA.legend)}`} color="text-arcane" />
             </div>
             <div className="rounded-xl border border-hairline bg-surface p-4">
-              <DeckStats cards={deckB.cards} label={`B — ${displayLegendName(deckB.legend)}`} color="text-violet" />
+              <DeckStats cards={deckB.cards} label={`B - ${displayLegendName(deckB.legend)}`} color="text-violet" />
             </div>
           </div>
 
