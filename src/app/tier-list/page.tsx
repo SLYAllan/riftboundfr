@@ -5,6 +5,7 @@ import { prisma, safeQuery } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)" },
@@ -87,6 +88,7 @@ export default async function TierListPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Tier List", href: "/tier-list" }]} className="mb-6" />
       <div className="text-center">
         <h1
           className="text-4xl font-bold"

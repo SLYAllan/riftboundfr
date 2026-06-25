@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS } from "@/lib/domains";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: { absolute: "Riftbound : premiers pas, règles et comment jouer (guide débutant FR)" },
@@ -50,6 +51,7 @@ const keywordsOther = [
 export default function GuideDebuterPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Guide débutant", href: "/guides/debuter" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment jouer à Riftbound - Guide débutant</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Riftbound est un jeu de cartes à collectionner dans l&apos;univers de League of Legends. Deux joueurs s&apos;affrontent pour le contrôle de champs de bataille

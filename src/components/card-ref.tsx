@@ -26,11 +26,11 @@ function resized(url: string): string {
   return url;
 }
 
-export function CardRef({ name, children }: { name: string; children?: React.ReactNode }) {
+export function CardRef({ name, href, children }: { name: string; href?: string; children?: React.ReactNode }) {
   const [hovered, setHovered] = useState(false);
   const [card, setCard] = useState<CardData | null>(cache.get(name) ?? null);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const popRef = useRef<HTMLSpanElement>(null);
   const fetched = useRef(false);
 
@@ -83,16 +83,31 @@ export function CardRef({ name, children }: { name: string; children?: React.Rea
     if (cache.has(name) && !card) setCard(cache.get(name) ?? null);
   }, [name, card]);
 
+  // Lien SSR vers la fiche carte quand href est fourni (maillage interne) ; sinon
+  // simple ancrage de survol. Le mot reste identique, le hover marche dans les deux cas.
+  const cls = "border-b border-dotted border-arcane/40 text-arcane transition-colors hover:border-arcane hover:text-arcane-vivid";
   return (
     <>
-      <span
-        ref={ref}
-        className="cursor-help border-b border-dotted border-arcane/40 text-arcane transition-colors hover:border-arcane hover:text-arcane-vivid"
-        onMouseEnter={show}
-        onMouseLeave={() => { setHovered(false); setPos(null); }}
-      >
-        {children ?? name}
-      </span>
+      {href ? (
+        <a
+          ref={ref as React.RefObject<HTMLAnchorElement>}
+          href={href}
+          className={`cursor-pointer ${cls}`}
+          onMouseEnter={show}
+          onMouseLeave={() => { setHovered(false); setPos(null); }}
+        >
+          {children ?? name}
+        </a>
+      ) : (
+        <span
+          ref={ref as React.RefObject<HTMLSpanElement>}
+          className={`cursor-help ${cls}`}
+          onMouseEnter={show}
+          onMouseLeave={() => { setHovered(false); setPos(null); }}
+        >
+          {children ?? name}
+        </span>
+      )}
       {hovered && card?.imageUrl && (
         <span
           ref={popRef}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import Link from "next/link";
 import { TrendingUp, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
@@ -148,6 +149,7 @@ function TierRow({ e }: { e: Entry }) {
 export default function GuideMetaPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Méta", href: "/guides/meta" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         Méta &amp; Tier List
       </h1>

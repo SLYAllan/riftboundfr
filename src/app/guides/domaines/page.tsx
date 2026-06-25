@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DOMAIN_ICONS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: { absolute: "6 Domaines Riftbound - Fury, Calm, Mind, Body, Chaos, Order" },
@@ -123,6 +124,7 @@ const domains = [
 export default function DomainesGuidePage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Les 6 domaines", href: "/guides/domaines" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Les 6 Domaines de Riftbound</h1>
       <p className="mt-2 text-lg text-ink-secondary">
         Chaque Légende Riftbound appartient à 2 domaines (couleurs) qui définissent quelles cartes vous pouvez jouer.

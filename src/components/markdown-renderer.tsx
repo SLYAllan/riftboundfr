@@ -7,14 +7,16 @@ import { CardRef } from "@/components/card-ref";
 // Renders an inline CardRef (hover preview + link to the card page).
 const CARD_REF_RE = /\[\[([^\]|]+?)(?:\|([^\]]+?))?\]\]/g;
 
-function withCardRefs(children: ReactNode): ReactNode {
+// cardLinks (optionnel) : map nom-de-carte minuscule -> riftboundId, pour rendre
+// chaque [[carte]] comme un VRAI lien SSR vers /cartes/[id] (maillage interne).
+function withCardRefs(children: ReactNode, cardLinks?: Record<string, string>): ReactNode {
   return Children.map(children, (child) => {
     if (typeof child !== "string") {
       // Recurse into element children so refs inside <strong>/<em> still work.
       if (isValidElement(child)) {
         const el = child as ReactElement<{ children?: ReactNode }>;
         if (el.props?.children) {
-          return cloneElement(el, undefined, withCardRefs(el.props.children));
+          return cloneElement(el, undefined, withCardRefs(el.props.children, cardLinks));
         }
       }
       return child;
@@ -29,8 +31,9 @@ function withCardRefs(children: ReactNode): ReactNode {
       if (match.index > last) parts.push(child.slice(last, match.index));
       const name = match[1].trim();
       const label = (match[2] ?? match[1]).trim();
+      const id = cardLinks?.[name.toLowerCase()];
       parts.push(
-        <CardRef key={`cr-${key++}`} name={name}>
+        <CardRef key={`cr-${key++}`} name={name} href={id ? `/cartes/${id}` : undefined}>
           {label}
         </CardRef>,
       );
@@ -43,7 +46,8 @@ function withCardRefs(children: ReactNode): ReactNode {
 
 // Explicit component styling so articles render with real typographic hierarchy
 // (headings, tables, lists) without depending on the Tailwind Typography plugin.
-const components: Components = {
+// Factory : capture cardLinks pour que les [[carte]] deviennent des liens SSR.
+const makeComponents = (cardLinks?: Record<string, string>): Components => ({
   h1: ({ children }) => (
     <h1 className="mt-10 mb-4 font-display text-3xl font-bold leading-tight text-ink">{children}</h1>
   ),
@@ -57,7 +61,7 @@ const components: Components = {
     <h4 className="mt-6 mb-2 text-lg font-semibold text-ink">{children}</h4>
   ),
   p: ({ children }) => (
-    <p className="my-4 leading-relaxed text-ink-secondary">{withCardRefs(children)}</p>
+    <p className="my-4 leading-relaxed text-ink-secondary">{withCardRefs(children, cardLinks)}</p>
   ),
   a: ({ href, children }) => (
     <a href={href} target={href?.startsWith("http") ? "_blank" : undefined} rel={href?.startsWith("http") ? "noopener noreferrer" : undefined} className="font-medium text-arcane underline-offset-2 hover:underline">{children}</a>
@@ -66,7 +70,7 @@ const components: Components = {
   em: ({ children }) => <em className="italic">{children}</em>,
   ul: ({ children }) => <ul className="my-4 list-disc space-y-1.5 pl-6 text-ink-secondary marker:text-ink-muted">{children}</ul>,
   ol: ({ children }) => <ol className="my-4 list-decimal space-y-1.5 pl-6 text-ink-secondary marker:text-ink-muted">{children}</ol>,
-  li: ({ children }) => <li className="leading-relaxed">{withCardRefs(children)}</li>,
+  li: ({ children }) => <li className="leading-relaxed">{withCardRefs(children, cardLinks)}</li>,
   blockquote: ({ children }) => (
     <blockquote className="my-6 border-l-4 border-arcane/60 bg-surface-raised/40 py-1 pl-4 italic text-ink-secondary">{children}</blockquote>
   ),
@@ -87,16 +91,16 @@ const components: Components = {
     <th className="border-b border-hairline px-3 py-2.5 text-left font-semibold text-ink">{children}</th>
   ),
   td: ({ children }) => (
-    <td className="border-b border-hairline/60 px-3 py-2.5 align-top text-ink-secondary">{withCardRefs(children)}</td>
+    <td className="border-b border-hairline/60 px-3 py-2.5 align-top text-ink-secondary">{withCardRefs(children, cardLinks)}</td>
   ),
-};
+});
 
-export function MarkdownRenderer({ content }: { content: string }) {
+export function MarkdownRenderer({ content, cardLinks }: { content: string; cardLinks?: Record<string, string> }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       skipHtml
-      components={components}
+      components={makeComponents(cardLinks)}
       allowedElements={[
         "h1", "h2", "h3", "h4", "h5", "h6",
         "p", "a", "em", "strong", "del", "br", "hr",

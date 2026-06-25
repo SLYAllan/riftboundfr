@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Jouer en ligne",
@@ -62,6 +63,7 @@ const platforms = [
 export default function JouerEnLignePage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Jouer en ligne", href: "/guides/jouer-en-ligne" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         Jouer en ligne
       </h1>

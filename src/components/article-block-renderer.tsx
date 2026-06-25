@@ -10,9 +10,11 @@ interface ArticleBlockRendererProps {
   blocks: ArticleBlock[];
   resolvedDecks?: Record<string, DecklistCard[]>;
   deckbuilderCodes?: Record<string, string>;
+  /** Map nom-de-carte minuscule -> riftboundId pour lier les [[carte]] (maillage SSR). */
+  cardLinks?: Record<string, string>;
 }
 
-export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }: ArticleBlockRendererProps) {
+export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, cardLinks }: ArticleBlockRendererProps) {
   return (
     <div className="space-y-8">
       {blocks.map((block) => {
@@ -20,7 +22,7 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes }
           case "text":
             return (
               <div key={block.id}>
-                <MarkdownRenderer content={block.content} />
+                <MarkdownRenderer content={block.content} cardLinks={cardLinks} />
               </div>
             );
 

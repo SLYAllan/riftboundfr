@@ -332,19 +332,55 @@ export default async function ArticleDetailPage({ params }: PageProps) {
   const blocks = (article.blocks as ArticleBlock[]) ?? [];
   const { cards: resolvedDecks, codes: deckbuilderCodes } = await resolveDecklists(blocks);
 
+  // Maillage interne : transformer les [[carte]] des blocs texte en liens SSR vers
+  // /cartes/[id]. Une seule requête pour tous les noms cités dans l'article.
+  const CARD_REF_RE = /\[\[([^\]|]+?)(?:\|[^\]]+?)?\]\]/g;
+  const refNames = new Set<string>();
+  for (const b of blocks) {
+    if (b.type === "text") {
+      let m: RegExpExecArray | null;
+      CARD_REF_RE.lastIndex = 0;
+      while ((m = CARD_REF_RE.exec(b.content)) !== null) refNames.add(m[1].trim());
+    }
+  }
+  const cardLinks: Record<string, string> = {};
+  if (refNames.size > 0) {
+    const names = [...refNames];
+    const refCards = await prisma.card.findMany({
+      where: { alternateArt: false, OR: [{ name: { in: names } }, { cleanName: { in: names } }] },
+      select: { name: true, cleanName: true, riftboundId: true },
+    });
+    for (const c of refCards) {
+      if (c.name) cardLinks[c.name.toLowerCase()] = c.riftboundId;
+      if (c.cleanName) cardLinks[c.cleanName.toLowerCase()] = c.riftboundId;
+    }
+  }
+
   const isTournoi = article.category === "tournoi";
   const isBestOf = article.slug.startsWith("best-of");
   const bestOf = isBestOf ? buildBestOf(blocks, resolvedDecks, deckbuilderCodes) : null;
 
+  const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
+  const coverAbs = article.coverImage
+    ? (article.coverImage.startsWith("http") ? article.coverImage : `${SITE}${article.coverImage}`)
+    : undefined;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.excerpt || `${article.title} - Riftbound France`,
+    ...(coverAbs ? { image: [coverAbs] } : {}),
     datePublished: article.publishedAt?.toISOString(),
     dateModified: article.updatedAt?.toISOString(),
     author: { "@type": "Person", name: "Allan", url: "https://twitter.com/solary_allan" },
-    publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://riftboundfrance.fr/#organization",
+      name: "Riftbound France",
+      url: "https://riftboundfrance.fr",
+      logo: { "@type": "ImageObject", url: "https://riftboundfrance.fr/logorbfr.png" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}/articles/${slug}` },
     inLanguage: "fr",
   };
   // Le BreadcrumbList est émis par le composant <Breadcrumbs/> ci-dessous (évite le doublon).
@@ -393,15 +429,15 @@ export default async function ArticleDetailPage({ params }: PageProps) {
           {bestOf ? (
             <>
               {bestOf.intro.length > 0 && (
-                <ArticleBlockRenderer blocks={bestOf.intro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+                <ArticleBlockRenderer blocks={bestOf.intro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} cardLinks={cardLinks} />
               )}
               <BestOfDeckBrowser entries={bestOf.entries} />
               {bestOf.outro.length > 0 && (
-                <ArticleBlockRenderer blocks={bestOf.outro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+                <ArticleBlockRenderer blocks={bestOf.outro} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} cardLinks={cardLinks} />
               )}
             </>
           ) : (
-            <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} />
+            <ArticleBlockRenderer blocks={blocks} resolvedDecks={resolvedDecks} deckbuilderCodes={deckbuilderCodes} cardLinks={cardLinks} />
           )}
         </div>
 
