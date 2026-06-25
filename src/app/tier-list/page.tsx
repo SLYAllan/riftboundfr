@@ -7,15 +7,15 @@ import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: "Tier List Riftbound - Meilleures Légendes (Juin 2026)" },
+  title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)" },
   description:
-    "Tier list Riftbound mise à jour pour le Set Unleashed. Classement S/A/B/C/D de toutes les Légendes avec decklists recommandées et analyses.",
+    "Tier list Riftbound française mise à jour pour le Set Unleashed. Classement S/A/B/C/D de toutes les Légendes, avec decklists recommandées et analyses.",
   alternates: { canonical: "/tier-list" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Tier List Riftbound - Meilleures Légendes (Juin 2026)",
+    title: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)",
     description:
       "Classement S/A/B/C/D de toutes les Légendes Riftbound (Set Unleashed) avec decklists recommandées.",
     images: ["/img/og-default.png"],

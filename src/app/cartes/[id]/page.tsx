@@ -20,8 +20,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const card = await prisma.card.findUnique({ where: { riftboundId: id } });
   if (!card) return { title: "Carte introuvable" };
-  const title = `${card.name} - Carte Riftbound ${card.setName}`;
-  const base = `${card.name} est une carte ${card.type} ${card.rarity} du set ${card.setName}.`;
+  // Title/description orientés recherche FR : les internautes cherchent "<nom> riftbound"
+  // et "riftbound fr / french cards" (cf. Search Console). On met le nom + "Carte Riftbound
+  // FR" en tête, puis le type et les domaines en français pour la pertinence et le CTR.
+  const TYPE_FR: Record<string, string> = {
+    Unit: "Unité", Spell: "Sort", Gear: "Équipement", Rune: "Rune",
+    Battlefield: "Champ de bataille", Legend: "Légende", Token: "Jeton",
+  };
+  const typeFR = card.supertype === "Champion Unit" ? "Unité Champion" : (TYPE_FR[card.type] ?? card.type);
+  const domFR = (card.domains ?? []).map((d) => DOMAIN_LABELS_FR[d] ?? d);
+  const domainPart = domFR.length ? ` ${domFR.join("/")}` : "";
+  const title = `${card.name} - Carte Riftbound FR : ${typeFR}${domainPart}`;
+  const base = `${card.name}, ${typeFR}${domainPart} du set ${card.setName} sur Riftbound France.`;
   const rule = card.textPlain ? ` ${card.textPlain.replace(/\s+/g, " ").trim()}` : "";
   const full = `${base}${rule}`;
   const description = full.length > 155 ? `${full.slice(0, 152).trimEnd()}…` : full;
