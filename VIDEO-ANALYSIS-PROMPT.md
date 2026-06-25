@@ -33,6 +33,19 @@ bash scripts/vod-transcribe.sh /d/riftbound-vods/worklist-p1.txt
 - Reprend automatiquement (skip si `.txt` déjà présent). Logs : `D:/riftbound-vods/logs/`.
 - Suivi : `tail D:/riftbound-vods/logs/pipeline.log`.
 
+## ⚖️ Hiérarchie de confiance des sources (IMPÉRATIF)
+
+Toutes les VOD ne se valent pas. À pondérer à l'analyse :
+
+- **Casts de games compétitives = la SEULE « vraie » valeur.** C'est du concret : ce qui se passe
+  réellement sur le board (matchups joués, lignes décisives, tech vues en jeu, résultats). À privilégier
+  pour tout ce qui est factuel (qui bat qui, comment, quelles cartes apparaissent).
+- **Podcasts / tier lists / « first impressions » / deck profiles d'opinion = AVIS PERSONNELS.** À prendre
+  avec des pincettes : c'est de la prédiction/ressenti, pas de l'observé. Toujours les marquer comme **opinion**
+  (« avis caster », `[avis]`), jamais présenter comme un fait.
+- **Règle d'arbitrage :** quand un avis (podcast/tier) contredit ce qu'on observe en cast ou la DB,
+  **le concret gagne** (cast > data > opinion). Un tier de podcast ne « prouve » rien.
+
 ## Ce qu'on extrait de chaque transcription
 1. **Matchups** : qui bat qui et pourquoi (plan, cartes pivots, pièges).
 2. **Tech & flex slots** : cartes que les casters signalent comme clés/montantes (ex. anti-Aurora, gear removal, stuns, Akshan, Star-Crossed, Scuttle Crab, Baited Hook).
