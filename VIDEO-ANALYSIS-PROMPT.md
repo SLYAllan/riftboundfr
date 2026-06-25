@@ -26,8 +26,14 @@ Worklists priorisées : `worklist-p1.txt` (RiftLab, connaissance) → `worklist-
 
 ## Pipeline de transcription (audio seul, GPU, en série)
 ```bash
-bash scripts/vod-transcribe.sh /d/riftbound-vods/worklist-p1.txt
+# Préféré : faster-whisper (même précision que openai-whisper, 2-4x plus rapide).
+bash scripts/vod-transcribe-fw.sh /d/riftbound-vods/worklist.txt
+# Ancienne version (openai-whisper) si besoin :
+bash scripts/vod-transcribe.sh /d/riftbound-vods/worklist.txt
 ```
+Modèle : **`small.en` suffit** (test 25 juin : précision identique à openai-small sur les noms de
+cartes, plus rapide). Les erreurs résiduelles sur noms propres sont inhérentes à Whisper → rattrapées
+par `scripts/validate-card-names.mts`. `medium.en` = gain marginal pour plus de lenteur.
 - yt-dlp (audio mp3) → Whisper `small.en` GPU → `D:/riftbound-vods/transcripts/<id>.txt`.
 - **Un job à la fois** (ne sature pas le PC). Audio supprimé après transcription (économie disque).
 - Reprend automatiquement (skip si `.txt` déjà présent). Logs : `D:/riftbound-vods/logs/`.
