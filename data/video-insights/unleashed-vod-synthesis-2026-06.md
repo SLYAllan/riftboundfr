@@ -255,6 +255,34 @@ trigger **Arena's Greatest** (point gratuit, raccourcit à 6) est souvent oubli�
 
 ---
 
+## 8. Compléments (2 VOD récupérées après coup)
+
+**Profil LeBlanc (DZiden, Challenger TCG — top 8 Sydney + vainqueur CCS Atlanta 25k).** Repositionnement
+majeur : **LeBlanc n'est PAS un deck aggro mais un deck d'inévitabilité/combo** qui cherche à **prolonger**
+la partie (logique proche de Dazzling Aurora). Ratios précis : **runes 8 Ordre / 4 Esprit** (4 Esprit =
+strict minimum pour Rune Rex à 6 runes), **6 two-drops seulement** (3 Soaring Scout + 3 Watchful Sentry,
+**pas de Honest Broker** car une carte « morte » est inacceptable en combo), **3 Vi Peacekeeper en main**,
+3 Rune Rex, 3 Karthus. **Baited Hook = l'activateur** (transforme une copie temporaire en vraie unité ;
+ex. Glass Mixologist → Harness Dragon, « triche » ~7 runes). **Harness Dragon** = meilleure cible de Hook
+(détruit les boards d'Aurelia/Diana qui plient au removal). Champion principal **LeBlanc Fragmented** ;
+champion alternatif en side avec **Windswept Hillock** (LE battlefield cassé : ganking gratuit pour la copie,
+joué en premier). Side : **Turn to Dust** + **Ash Focus** (anti-Aurora, arrache la Dazzling Aurora de la
+main), **Atakhan** (win-con **mono-carte vs Master Yi et Vex**), +2 Thousand Tail Watcher (vs aggro).
+Règle de pilotage : ne pas descendre Vi Peacekeeper sous 3 tant que l'aggro est dans le méta.
+
+**Pyke vs Aurelia — Top 8 Tianjin (Pyke 2-0, premier Pyke en top 8 du Set 3).** Gagné au **skill** (Pyke
+est bas-tier). Combo : **3 Bewitching Spirit enchaînés à 10 runes** (bounce via la Légende, rejoue) vident
+toute la main adverse. Plan : **neutraliser le Stellacorn Herder** (lifeline de pioche d'Aurelia) puis
+assécher sa main → Aurelia passe en top-deck. Tech atypiques vues : **Switcheroo** (échange une unité faible
+contre une grosse menace pumpée), **Ferros Forerunner** (verrouille Aurelia sans Star-Cross/Rebuke),
+splash **Ezreal Prodigy**. Moment clé : **Stacked Deck → Falling Stars** au bon timing (attendre Aurelia à
+0 carte). **Top 8 Tianjin ultra-diversifié** : 2 Aurelia, 2 Diana, 2 Rek'Sai, 1 Master Yi, 1 Pyke.
+Selon les casters, **le pire matchup d'Aurelia = Master Yi** (sinon « pas de vrai mauvais matchup », d'où sa
+surreprésentation, 2e deck du week-end derrière Master Yi).
+
+---
+
 *Incertitudes globales : noms de cartes en transcription audio approximative à vérifier sur le scrape brut
 avant tout seed (ex. « Stellacorn/Silcoon Herd », « Mr. Root », « Brin here »). Certains taux de conversion
-sont donnés « de mémoire » par les casters. Les opinions de tier sont éditoriales, pas data-backed.*
+sont donnés « de mémoire » par les casters. Les opinions de tier sont éditoriales, pas data-backed. La VOD
+« Pyke vs Irelia » était en réalité Pyke vs **Aurelia** (étiquette du titre trompeuse).*
