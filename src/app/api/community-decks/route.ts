@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 import crypto from "crypto";
 
 function generateShareCode(): string {
@@ -17,22 +18,10 @@ const TITLE_MAX = 200;
 const DECKCODE_MAX = 10000;
 const DESC_MAX = 500;
 
-const recentIps = new Map<string, number[]>();
-
-function rateLimit(ip: string, windowMs = 60_000, max = 5): boolean {
-  const now = Date.now();
-  const hits = (recentIps.get(ip) ?? []).filter((t) => now - t < windowMs);
-  if (hits.length >= max) return false;
-  hits.push(now);
-  recentIps.set(ip, hits);
-  return true;
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    if (!rateLimit(ip)) {
-      return NextResponse.json({ error: "Trop de requêtes, réessayez dans une minute" }, { status: 429 });
+    if (!rateLimit(req, { bucket: "community-decks-post", limit: 5 })) {
+      return tooMany();
     }
 
     const user = await getUserFromSession();

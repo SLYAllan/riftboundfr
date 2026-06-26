@@ -3,6 +3,7 @@ import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getOrCreateDefaultBinder } from "@/lib/collection-server";
 import { parsePiltoverCsv, aggregateByCard, type PiltoverRow } from "@/lib/piltover-import";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 type CardVariant = {
   id: string;
@@ -31,6 +32,7 @@ function pickVariant(cards: CardVariant[], row: PiltoverRow): string {
 }
 
 export async function POST(req: Request) {
+  if (!rateLimit(req, { bucket: "collection-import", limit: 5 })) return tooMany();
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

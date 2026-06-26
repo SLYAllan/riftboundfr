@@ -34,8 +34,15 @@ export function Navbar() {
     const handler = (e: MouseEvent) => {
       if (outilsRef.current && !outilsRef.current.contains(e.target as Node)) setOutilsOpen(false);
     };
+    const keyHandler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOutilsOpen(false);
+    };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("keydown", keyHandler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("keydown", keyHandler);
+    };
   }, []);
 
   if (pathname.startsWith("/admin")) return null;
@@ -54,6 +61,8 @@ export function Navbar() {
           <div ref={outilsRef} className="relative">
             <button
               onClick={() => setOutilsOpen(!outilsOpen)}
+              aria-haspopup="menu"
+              aria-expanded={outilsOpen}
               className={cn(
                 "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 isOutilsActive ? "text-arcane" : "text-ink-secondary hover:text-ink"
@@ -63,7 +72,7 @@ export function Navbar() {
               <ChevronDown size={14} className={cn("transition-transform", outilsOpen && "rotate-180")} />
             </button>
             {outilsOpen && (
-              <div className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+              <div role="menu" aria-label="Outils" className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
                 {outilsLinks.map((link) => (
                   <Link
                     key={link.href}

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X, Upload, FileText, Hash, Gamepad2, Link2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 
 type ImportFormat = "deckcode" | "cardnames" | "tts" | "link";
 
@@ -44,13 +45,8 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
   const [linkLoading, setLinkLoading] = useState(false);
   const [linkError, setLinkError] = useState<string | null>(null);
 
-  useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, [onClose]);
+  // Escape + piège de focus + retour de focus gérés par le hook a11y.
+  const dialogRef = useDialogA11y(onClose);
 
   async function handleLinkImport() {
     const input = text.trim();
@@ -105,15 +101,15 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="import-modal-title" tabIndex={-1} className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
           <div className="flex items-center gap-2">
             <Upload size={18} className="text-arcane" />
-            <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            <h3 id="import-modal-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               Importer un deck
             </h3>
           </div>
-          <button onClick={onClose} className="text-ink-muted hover:text-ink">
+          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink">
             <X size={20} />
           </button>
         </div>

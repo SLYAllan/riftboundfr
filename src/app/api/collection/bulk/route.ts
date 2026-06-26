@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getOrCreateDefaultBinder } from "@/lib/collection-server";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 interface BulkItem {
   cardId: string;
@@ -10,6 +11,7 @@ interface BulkItem {
 
 // POST /api/collection/bulk { binderId?, items: [{cardId, quantity}] }
 export async function POST(req: Request) {
+  if (!rateLimit(req, { bucket: "collection-bulk", limit: 10 })) return tooMany();
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

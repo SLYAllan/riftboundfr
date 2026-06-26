@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getWishlistIds } from "@/lib/collection-server";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 // GET /api/wishlist → { ids: [cardId] }
 export async function GET() {
@@ -12,6 +13,7 @@ export async function GET() {
 
 // POST /api/wishlist { cardId, wanted } → ajoute/retire de la wishlist
 export async function POST(req: Request) {
+  if (!rateLimit(req, { bucket: "wishlist-post", limit: 30 })) return tooMany();
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

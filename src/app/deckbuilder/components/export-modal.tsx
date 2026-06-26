@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Copy, Check, Link2, Hash, Gamepad2, Image } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 
 type ExportTab = "link" | "deckcode" | "tts" | "image";
 
@@ -57,13 +58,8 @@ export function ExportModal({
   const [user, setUser] = useState<UserData | null>(null);
   const [userLoading, setUserLoading] = useState(true);
 
-  useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    document.addEventListener("keydown", handleKey);
-    return () => document.removeEventListener("keydown", handleKey);
-  }, [onClose]);
+  // Escape + piège de focus + retour de focus gérés par le hook a11y.
+  const dialogRef = useDialogA11y(onClose);
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -108,12 +104,12 @@ export function ExportModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="export-modal-title" tabIndex={-1} className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
-          <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          <h3 id="export-modal-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             Exporter - {deckTitle}
           </h3>
-          <button onClick={onClose} className="text-ink-muted hover:text-ink"><X size={20} /></button>
+          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink"><X size={20} /></button>
         </div>
 
         <div className="flex border-b border-hairline overflow-x-auto">

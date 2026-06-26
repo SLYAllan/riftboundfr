@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export async function POST(
-  _req: NextRequest,
+  req: NextRequest,
   { params }: { params: Promise<{ code: string }> },
 ) {
+  if (!rateLimit(req, { bucket: "cd-like", limit: 30 })) return tooMany();
   const user = await getUserFromSession();
   if (!user) {
     return NextResponse.json({ error: "Non connecté" }, { status: 401 });

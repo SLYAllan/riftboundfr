@@ -2,6 +2,7 @@
 
 import { X } from "lucide-react";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
+import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import type { CardData } from "@/types";
 
 interface CardDetailModalProps {
@@ -10,12 +11,13 @@ interface CardDetailModalProps {
 }
 
 export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
+  const dialogRef = useDialogA11y(onClose);
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="w-full max-w-2xl rounded-card border border-hairline bg-surface overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="card-modal-title" tabIndex={-1} className="w-full max-w-2xl rounded-card border border-hairline bg-surface overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
-          <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h3>
-          <button onClick={onClose} className="text-ink-muted hover:text-ink"><X size={20} /></button>
+          <h3 id="card-modal-title" className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h3>
+          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink"><X size={20} /></button>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 p-5">
