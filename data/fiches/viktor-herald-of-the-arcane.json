@@ -1,7 +1,10 @@
 {
   "legendName": "Viktor, Herald of the Arcane",
   "legendId": null,
-  "domains": ["Mind", "Order"],
+  "domains": [
+    "Mind",
+    "Order"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Spell Control / Removal-heavy",
@@ -13,21 +16,60 @@
     "winCondition": "Attrition — épuise les ressources adverses avec du removal puis conquiert les positions non défendues"
   },
   "keyCards": [
-    { "name": "Bellows Breath", "role": "Core — removal, 100% à 2.6x." },
-    { "name": "Imperial Decree", "role": "Core — removal premium, 100% à 2.8x." },
-    { "name": "Cull the Weak", "role": "Core — removal conditionnel, 94% à 2.9x." },
-    { "name": "Hidden Blade", "role": "Core — combat trick/removal, 94% à 3x." },
-    { "name": "Thousand-Tailed Watcher", "role": "Standard — menace principale, 82% à 2.1x." },
-    { "name": "Stupefy", "role": "Standard — disruption, 82% à 2.8x." },
-    { "name": "Wages of Pain", "role": "Standard — finisher, 82% à 2.9x." },
-    { "name": "Singularity", "role": "Standard — contrôle de board, 76% à 2.1x." },
-    { "name": "Salvage", "role": "Flex — draw/reload, 59% à 1.4x." },
-    { "name": "Sprite Fountain", "role": "Flex — gear pour value, 53% à 2.4x." },
-    { "name": "Shadow's Call", "role": "Flex — removal supplémentaire, 53% à 2.6x." }
+    {
+      "name": "Bellows Breath",
+      "role": "Core — removal, 100% à 2.6x."
+    },
+    {
+      "name": "Imperial Decree",
+      "role": "Core — removal premium, 100% à 2.8x."
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Core — removal conditionnel, 94% à 2.9x."
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Core — combat trick/removal, 94% à 3x."
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard — menace principale, 82% à 2.1x."
+    },
+    {
+      "name": "Stupefy",
+      "role": "Standard — disruption, 82% à 2.8x."
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Standard — finisher, 82% à 2.9x."
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard — contrôle de board, 76% à 2.1x."
+    },
+    {
+      "name": "Salvage",
+      "role": "Flex — draw/reload, 59% à 1.4x."
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Flex — gear pour value, 53% à 2.4x."
+    },
+    {
+      "name": "Shadow's Call",
+      "role": "Flex — removal supplémentaire, 53% à 2.6x."
+    }
   ],
   "champions": {
-    "Viktor, Leader": { "usage": "71%", "role": "Champion principal — amplifie le contrôle." },
-    "Viktor, Innovator": { "usage": "29%", "role": "Variante — focus sur la génération de valeur." }
+    "Viktor, Leader": {
+      "usage": "71%",
+      "role": "Champion principal — amplifie le contrôle."
+    },
+    "Viktor, Innovator": {
+      "usage": "29%",
+      "role": "Variante — focus sur la génération de valeur."
+    }
   },
   "topBattlefields": [
     "The Arena's Greatest (59%)",
@@ -52,13 +94,40 @@
     "tier": 3,
     "deckCount": 17,
     "bestPlacements": [
-      { "placement": "45th", "player": "Robert S", "tournament": "Atlanta RQ" },
-      { "placement": "56th", "player": "Won Hyuk D", "tournament": "Atlanta RQ" },
-      { "placement": "62nd", "player": "淘金巢", "tournament": "S3 Xi'an Regional Open" }
+      {
+        "placement": "45th",
+        "player": "Robert S",
+        "tournament": "Atlanta RQ"
+      },
+      {
+        "placement": "56th",
+        "player": "Won Hyuk D",
+        "tournament": "Atlanta RQ"
+      },
+      {
+        "placement": "62nd",
+        "player": "淘金巢",
+        "tournament": "S3 Xi'an Regional Open"
+      }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 17 decklists (Xi'an + Atlanta)"
+  "dataSource": "meta-analysis.json — 17 decklists (Xi'an + Atlanta)",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "« Le deck le plus fort à 6 points », montée via Sprite Fountain (Unleashed).",
+      "EN SPIRITFORGED : écrase les decks ramp ; PERD vs Ruin Runner (intuable) et Ferrous Forerunner."
+    ],
+    "techCards": [
+      "Bellows Breath (board-wipe -1 à tout)",
+      "Cull the Weak",
+      "Imperial Decree (indéfendable, choisit 2 zones)",
+      "Wages of Pain",
+      "Vanguard Armory (+ Veiled Temple le re-ready)"
+    ],
+    "note": "Combo Bellows Breath + Imperial Decree = wipe 2 battlefields + base. Faible à Moonfall (-2 vs son -1) et Pickpocket."
+  }
 }

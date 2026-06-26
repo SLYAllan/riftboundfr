@@ -1,7 +1,10 @@
 {
   "legendName": "Ornn, Fire Below the Mountain",
   "legendId": null,
-  "domains": ["Calm", "Mind"],
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Gear-heavy / Forge Synergy",
@@ -13,23 +16,68 @@
     "winCondition": "Board de gears accumulés — les unités deviennent inarrêtables avec l'équipement empilé"
   },
   "keyCards": [
-    { "name": "Defy", "role": "Core — protection universelle, 100% à 2.2x." },
-    { "name": "Poro Snax", "role": "Core — gear staple, 93% à 2.7x." },
-    { "name": "Seal of Focus", "role": "Standard — gear cheap, 80% à 2.8x." },
-    { "name": "Scuttle Crab", "role": "Standard — early unit, 80% à 2.8x." },
-    { "name": "Thousand-Tailed Watcher", "role": "Standard — threat, 80% à 2.1x." },
-    { "name": "Guardian Angel", "role": "Standard — protection gear premium, 80% à 2.3x." },
-    { "name": "Sprite Fountain", "role": "Standard — draw engine, 80% à 3x." },
-    { "name": "Charm", "role": "Standard — CC, 80% à 1.3x." },
-    { "name": "Consult the Past", "role": "Standard — recyclage, 73% à 2.5x." },
-    { "name": "Forgefire Cape", "role": "Standard — gear signature, 73% à 1x." },
-    { "name": "Brutalizer", "role": "Standard — gear mid, 67% à 2.6x." },
-    { "name": "Seal of Insight", "role": "Standard — gear value, 67% à 1.9x." },
-    { "name": "Sprite Burst", "role": "Standard — removal, 67% à 2.1x." },
-    { "name": "Pit Crew", "role": "Standard — unit gear-synergy, 67% à 2.7x." }
+    {
+      "name": "Defy",
+      "role": "Core — protection universelle, 100% à 2.2x."
+    },
+    {
+      "name": "Poro Snax",
+      "role": "Core — gear staple, 93% à 2.7x."
+    },
+    {
+      "name": "Seal of Focus",
+      "role": "Standard — gear cheap, 80% à 2.8x."
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard — early unit, 80% à 2.8x."
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard — threat, 80% à 2.1x."
+    },
+    {
+      "name": "Guardian Angel",
+      "role": "Standard — protection gear premium, 80% à 2.3x."
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Standard — draw engine, 80% à 3x."
+    },
+    {
+      "name": "Charm",
+      "role": "Standard — CC, 80% à 1.3x."
+    },
+    {
+      "name": "Consult the Past",
+      "role": "Standard — recyclage, 73% à 2.5x."
+    },
+    {
+      "name": "Forgefire Cape",
+      "role": "Standard — gear signature, 73% à 1x."
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Standard — gear mid, 67% à 2.6x."
+    },
+    {
+      "name": "Seal of Insight",
+      "role": "Standard — gear value, 67% à 1.9x."
+    },
+    {
+      "name": "Sprite Burst",
+      "role": "Standard — removal, 67% à 2.1x."
+    },
+    {
+      "name": "Pit Crew",
+      "role": "Standard — unit gear-synergy, 67% à 2.7x."
+    }
   ],
   "champions": {
-    "Ornn, Forge God": { "usage": "100%", "role": "Seul champion — synergise parfaitement avec le gameplan gear." }
+    "Ornn, Forge God": {
+      "usage": "100%",
+      "role": "Seul champion — synergise parfaitement avec le gameplan gear."
+    }
   },
   "topBattlefields": [
     "Treasure Hoard (73%)",
@@ -54,13 +102,40 @@
     "tier": 3,
     "deckCount": 15,
     "bestPlacements": [
-      { "placement": "121st", "player": "C+", "tournament": "S3 Xi'an Regional Open" },
-      { "placement": "124th", "player": "Angelo L", "tournament": "Atlanta RQ" },
-      { "placement": "201st", "player": "QW", "tournament": "S3 Xi'an Regional Open" }
+      {
+        "placement": "121st",
+        "player": "C+",
+        "tournament": "S3 Xi'an Regional Open"
+      },
+      {
+        "placement": "124th",
+        "player": "Angelo L",
+        "tournament": "Atlanta RQ"
+      },
+      {
+        "placement": "201st",
+        "player": "QW",
+        "tournament": "S3 Xi'an Regional Open"
+      }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 15 decklists (Xi'an + Atlanta)"
+  "dataSource": "meta-analysis.json — 15 decklists (Xi'an + Atlanta)",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Boosté top B par Sprite Fountain (résout sa lenteur)."
+    ],
+    "techCards": [
+      "Sprite Fountain (quasi 2-drop gratuit)",
+      "Sprite Burst",
+      "Brutalizer (équipé gratuit chaque tour via Ornn)",
+      "Frigid Jewel (+2 à la 2e pioche)",
+      "Steraks (+3)",
+      "Unchecked Power"
+    ],
+    "note": "Build aggro/tempo (sprites) plus consistant qu'un seul gros Ornn."
+  }
 }

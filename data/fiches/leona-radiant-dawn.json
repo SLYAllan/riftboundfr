@@ -1,7 +1,10 @@
 {
   "legendName": "Leona, Radiant Dawn",
   "legendId": null,
-  "domains": ["Calm", "Order"],
+  "domains": [
+    "Calm",
+    "Order"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Midrange Control / Rallying",
@@ -13,22 +16,64 @@
     "winCondition": "Conquête progressive avec des unités résilientes et des combat tricks défensifs"
   },
   "keyCards": [
-    { "name": "Defy", "role": "Core — protection, 100% à 2.9x." },
-    { "name": "Discipline", "role": "Core — removal/buff, 100% à 2.9x." },
-    { "name": "Back Off", "role": "Core — bounce, 90% à 2.9x." },
-    { "name": "Vi, Peacekeeper", "role": "Core — unité menace principale, 90% à 2.5x." },
-    { "name": "Call to Glory", "role": "Standard — rally surprise, 85% à 2.5x." },
-    { "name": "Hidden Blade", "role": "Standard — combat trick, 80% à 2x." },
-    { "name": "Scuttle Crab", "role": "Standard — early game, 75% à 3x." },
-    { "name": "Fiora, Victorious", "role": "Standard — threat mid, 70% à 2.5x." },
-    { "name": "Zenith Blade", "role": "Standard — spell signature, 65% à 2x." },
-    { "name": "Vex, Mocking", "role": "Standard — contrôle, 65% à 2x." },
-    { "name": "Emperor's Divide", "role": "Standard — finisher, 65% à 1.8x." },
-    { "name": "Zhonya's Hourglass", "role": "Standard — protection gear, 65% à 2.2x." }
+    {
+      "name": "Defy",
+      "role": "Core — protection, 100% à 2.9x."
+    },
+    {
+      "name": "Discipline",
+      "role": "Core — removal/buff, 100% à 2.9x."
+    },
+    {
+      "name": "Back Off",
+      "role": "Core — bounce, 90% à 2.9x."
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "role": "Core — unité menace principale, 90% à 2.5x."
+    },
+    {
+      "name": "Call to Glory",
+      "role": "Standard — rally surprise, 85% à 2.5x."
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard — combat trick, 80% à 2x."
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard — early game, 75% à 3x."
+    },
+    {
+      "name": "Fiora, Victorious",
+      "role": "Standard — threat mid, 70% à 2.5x."
+    },
+    {
+      "name": "Zenith Blade",
+      "role": "Standard — spell signature, 65% à 2x."
+    },
+    {
+      "name": "Vex, Mocking",
+      "role": "Standard — contrôle, 65% à 2x."
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Standard — finisher, 65% à 1.8x."
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard — protection gear, 65% à 2.2x."
+    }
   ],
   "champions": {
-    "Leona, Determined": { "usage": "65%", "role": "Champion principal — résilience en combat." },
-    "Leona, Zealot": { "usage": "35%", "role": "Variante agressive — pression plus directe." }
+    "Leona, Determined": {
+      "usage": "65%",
+      "role": "Champion principal — résilience en combat."
+    },
+    "Leona, Zealot": {
+      "usage": "35%",
+      "role": "Variante agressive — pression plus directe."
+    }
   },
   "topBattlefields": [
     "Sunken Temple (90%)",
@@ -53,13 +98,39 @@
     "tier": 3,
     "deckCount": 20,
     "bestPlacements": [
-      { "placement": "66th", "player": "逆转 懒人疗程", "tournament": "S3 Xi'an Regional Open" },
-      { "placement": "146th", "player": "窥瞳", "tournament": "S3 Xi'an Regional Open" },
-      { "placement": "255th", "player": "丹柯", "tournament": "S3 Xi'an Regional Open" }
+      {
+        "placement": "66th",
+        "player": "逆转 懒人疗程",
+        "tournament": "S3 Xi'an Regional Open"
+      },
+      {
+        "placement": "146th",
+        "player": "窥瞳",
+        "tournament": "S3 Xi'an Regional Open"
+      },
+      {
+        "placement": "255th",
+        "player": "丹柯",
+        "tournament": "S3 Xi'an Regional Open"
+      }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 20 decklists (Xi'an + Sydney)"
+  "dataSource": "meta-analysis.json — 20 decklists (Xi'an + Sydney)",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "F-tier : Vex fait mieux le stun. Mais Vex Mocking + Whisperkeeper la rendent capable de « rattraper ».",
+      "Empêche Renata de tenir un battlefield."
+    ],
+    "techCards": [
+      "Zenith Blade (signature, stun + push)",
+      "World Atlas (+2 might/+2 gold au hold)",
+      "Jana (double reaction-speed)",
+      "Back Off (stun)"
+    ],
+    "note": "Support de stun ; honeyfruit jugée mauvaise (n'aide pas quand on perd le tempo)."
+  }
 }

@@ -1,7 +1,10 @@
 {
   "legendName": "Ezreal, Prodigal Explorer",
   "legendId": null,
-  "domains": ["Chaos", "Mind"],
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
   "set": "Spiritforged",
   "tier": 3,
   "archetype": "Control-value / Target & draw engine",
@@ -13,13 +16,41 @@
     "winCondition": "Contrôle total via targeting + draw infini → l'adversaire n'a plus de ressources"
   },
   "keyCards": [
-    { "name": "SFD-200", "id": "SFD-200", "role": "3 dégâts + replay d'une unité. Combo OGN-192 = re-discard. Combo OGN-116 = re-debuff." },
-    { "name": "OGN-192", "id": "OGN-192", "role": "Disruption main adverse — win condition avec SFD-200." },
-    { "name": "OGN-116", "id": "OGN-116", "role": "-3 might board — win condition avec SFD-200." },
-    { "name": "SFD-069", "id": "SFD-069", "role": "Gestion de runes." },
-    { "name": "SFD-070", "id": "SFD-070", "role": "Gestion de runes." },
-    { "name": "SFD-146", "id": "SFD-146", "role": "Jouer des sorts pendant le combat." },
-    { "name": "OGN-195", "id": "OGN-195", "role": "Synergy avec les cartes qui target." }
+    {
+      "name": "SFD-200",
+      "id": "SFD-200",
+      "role": "3 dégâts + replay d'une unité. Combo OGN-192 = re-discard. Combo OGN-116 = re-debuff."
+    },
+    {
+      "name": "OGN-192",
+      "id": "OGN-192",
+      "role": "Disruption main adverse — win condition avec SFD-200."
+    },
+    {
+      "name": "OGN-116",
+      "id": "OGN-116",
+      "role": "-3 might board — win condition avec SFD-200."
+    },
+    {
+      "name": "SFD-069",
+      "id": "SFD-069",
+      "role": "Gestion de runes."
+    },
+    {
+      "name": "SFD-070",
+      "id": "SFD-070",
+      "role": "Gestion de runes."
+    },
+    {
+      "name": "SFD-146",
+      "id": "SFD-146",
+      "role": "Jouer des sorts pendant le combat."
+    },
+    {
+      "name": "OGN-195",
+      "id": "OGN-195",
+      "role": "Synergy avec les cartes qui target."
+    }
   ],
   "strengths": [
     "Beaucoup plus fort en Occident qu'en Chine (Bologna win, Vegas top 8)",
@@ -36,10 +67,29 @@
   "competitiveResults": {
     "tier": 3,
     "preRegionals": "1 Win / 1 Top 8 (tournoi occidental uniquement)",
-    "sydneyStats": { "winRate": "50%", "matches": 190, "bestPlacement": "18th (10-3-0)" },
+    "sydneyStats": {
+      "winRate": "50%",
+      "matches": 190,
+      "bestPlacement": "18th (10-3-0)"
+    },
     "notes": "Différence régionale massive — fort en Occident, invisible en Chine"
   },
   "difficulty": "Très Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/ezreal-prodigal-explorer-guide/"
+  "sourceUrl": "https://riftbound.gg/ezreal-prodigal-explorer-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Meilleur deck contrôle du format.",
+      "Faible vs Master Yi (Ruin Runner intuable), Irelia, et l'aggro (lent)."
+    ],
+    "techCards": [
+      "Fizz (loop, reboucle Bellows Breath/Wages of Pain)",
+      "Watcher (-3 à tout, rejoué via Arcane Shift)",
+      "Bewitching Spirit (vide la main adverse)",
+      "Mindsplitter",
+      "Bellows Breath"
+    ],
+    "note": "Called Shot banni. Conseil récurrent : savoir concéder une game longue. Spiritforged : « Pit Crew » domine le swiss mais chute en top cut vs Aurelia."
+  }
 }

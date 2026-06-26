@@ -1,7 +1,10 @@
 {
   "legendName": "Master Yi, Wuju Bladesman",
   "legendId": "OGS-019",
-  "domains": ["Calm", "Body"],
+  "domains": [
+    "Calm",
+    "Body"
+  ],
   "set": "Origins (Starter)",
   "tier": 1,
   "archetype": "Hold-oriented / Défense & durabilité",
@@ -13,16 +16,59 @@
     "winCondition": "Hold des battlefields + scoring passif. +2 Might en défense = mur infranchissable."
   },
   "keyCards": [
-    { "name": "UNL-113", "id": "UNL-113", "cost": 2, "role": "Nouveau chosen champion. Remplace OGS-009. Play turn 2, gagne XP sur le board." },
-    { "name": "UNL-060", "id": "UNL-060", "role": "Draw engine late game. Combiné avec OGN-075, durabilité massive." },
-    { "name": "OGN-075", "id": "OGN-075", "role": "Draw complémentaire — duo avec UNL-060." },
-    { "name": "UNL-053", "id": "UNL-053", "cost": 2, "role": "Tuteur turn 1 staple." },
-    { "name": "SFD-036", "id": "SFD-036", "cost": 2, "role": "Second tuteur turn 1." },
-    { "name": "UNL-120", "id": "UNL-120", "role": "Mid game enforcer — unité flexible et beefue." },
-    { "name": "UNL-042", "id": "UNL-042", "role": "Stun — effet que l'adversaire doit garder en tête." },
-    { "name": "OGN-043", "id": "OGN-043", "role": "Sort core d'interaction." },
-    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort staple." },
-    { "name": "OGN-058", "id": "OGN-058", "role": "Buff staple." }
+    {
+      "name": "UNL-113",
+      "id": "UNL-113",
+      "cost": 2,
+      "role": "Nouveau chosen champion. Remplace OGS-009. Play turn 2, gagne XP sur le board."
+    },
+    {
+      "name": "UNL-060",
+      "id": "UNL-060",
+      "role": "Draw engine late game. Combiné avec OGN-075, durabilité massive."
+    },
+    {
+      "name": "OGN-075",
+      "id": "OGN-075",
+      "role": "Draw complémentaire — duo avec UNL-060."
+    },
+    {
+      "name": "UNL-053",
+      "id": "UNL-053",
+      "cost": 2,
+      "role": "Tuteur turn 1 staple."
+    },
+    {
+      "name": "SFD-036",
+      "id": "SFD-036",
+      "cost": 2,
+      "role": "Second tuteur turn 1."
+    },
+    {
+      "name": "UNL-120",
+      "id": "UNL-120",
+      "role": "Mid game enforcer — unité flexible et beefue."
+    },
+    {
+      "name": "UNL-042",
+      "id": "UNL-042",
+      "role": "Stun — effet que l'adversaire doit garder en tête."
+    },
+    {
+      "name": "OGN-043",
+      "id": "OGN-043",
+      "role": "Sort core d'interaction."
+    },
+    {
+      "name": "OGN-045",
+      "id": "OGN-045",
+      "role": "Contresort staple."
+    },
+    {
+      "name": "OGN-058",
+      "id": "OGN-058",
+      "role": "Buff staple."
+    }
   ],
   "strengths": [
     "Ability fantastique early — +2 Might en défense verrouille un battlefield",
@@ -39,9 +85,28 @@
     "tier": 1,
     "preRegionals": "4 Wins / 35 Top 8 (plus de top 8 que toute autre légende)",
     "regionalResults": "Won Suzhou RQ, Top 16 Sydney",
-    "sydneyStats": { "winRate": "56%", "matches": 546, "bestPlacement": "12th (11-2-0)" }
+    "sydneyStats": {
+      "winRate": "56%",
+      "matches": 546,
+      "bestPlacement": "12th (11-2-0)"
+    }
   },
   "difficulty": "Facile-Moyen",
   "beginnerFriendly": true,
-  "sourceUrl": "https://riftbound.gg/master-yi-wuju-bladesman-guide/"
+  "sourceUrl": "https://riftbound.gg/master-yi-wuju-bladesman-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Pires : Irelia et Diana (contestent l'early via Gust).",
+      "Favorables : Ezreal, Pyke, Viktor, Vi (Ruin Runner intuable les bloque)."
+    ],
+    "techCards": [
+      "Ruin Runner ×3 (« the camel », intuable — mais meurt à Flurry of Blades)",
+      "Rengar, Trophy Hunter (ambush surprise, carte différenciante)",
+      "First Mate + Star Spring (re-stand → double conquer)",
+      "Fiora, Peerless (double sa might en défense 1v1)",
+      "gear hate en main deck"
+    ],
+    "note": "Piège récurrent : on oublie que sa Légende donne +2 might à une unité qui défend → trades « gratuits ». Vainqueur Hartford (Factor), le plus représenté day 2."
+  }
 }

@@ -1,7 +1,10 @@
 {
   "legendName": "Sett, The Boss",
   "legendId": "OGN-269",
-  "domains": ["Body", "Order"],
+  "domains": [
+    "Body",
+    "Order"
+  ],
   "set": "Origins",
   "tier": 2,
   "archetype": "Hold-oriented / Buff midrange & résilience",
@@ -13,17 +16,61 @@
     "winCondition": "Accumulation de might inarrêtable — les unités reviennent toujours grâce à l'ability"
   },
   "keyCards": [
-    { "name": "OGN-269 (Legend)", "id": "OGN-269", "role": "Ability — rappelle les unités vaincues = value infinie." },
-    { "name": "OGN-270", "id": "OGN-270", "role": "Signature — buff un unit + contest un battlefield. Staple must-own." },
-    { "name": "OGN-164", "id": "OGN-164", "role": "Champion unit (1 copie en chosen champion)." },
-    { "name": "SFD-113", "id": "SFD-113", "role": "Unité qui veut conquérir chaque tour." },
-    { "name": "OGN-232", "id": "OGN-232", "role": "Unité qui gagne des upsides quand buffée." },
-    { "name": "SFD-108", "id": "SFD-108", "role": "Buff d'unités." },
-    { "name": "SFD-098", "id": "SFD-098", "role": "Unité qui se buff elle-même." },
-    { "name": "SFD-105", "id": "SFD-105", "role": "Immune aux sorts — parfait pour showdowns." },
-    { "name": "OGN-282", "id": "OGN-282", "role": "Draw en payant un buff — résout le manque de draw de Sett." },
-    { "name": "OGN-207", "id": "OGN-207", "role": "Support gratuit quand on a un buff à dépenser." },
-    { "name": "OGN-213", "id": "OGN-213", "role": "Removal — combo avec l'ability pour sauver l'unité ciblée = 'Draw 2'." }
+    {
+      "name": "OGN-269 (Legend)",
+      "id": "OGN-269",
+      "role": "Ability — rappelle les unités vaincues = value infinie."
+    },
+    {
+      "name": "OGN-270",
+      "id": "OGN-270",
+      "role": "Signature — buff un unit + contest un battlefield. Staple must-own."
+    },
+    {
+      "name": "OGN-164",
+      "id": "OGN-164",
+      "role": "Champion unit (1 copie en chosen champion)."
+    },
+    {
+      "name": "SFD-113",
+      "id": "SFD-113",
+      "role": "Unité qui veut conquérir chaque tour."
+    },
+    {
+      "name": "OGN-232",
+      "id": "OGN-232",
+      "role": "Unité qui gagne des upsides quand buffée."
+    },
+    {
+      "name": "SFD-108",
+      "id": "SFD-108",
+      "role": "Buff d'unités."
+    },
+    {
+      "name": "SFD-098",
+      "id": "SFD-098",
+      "role": "Unité qui se buff elle-même."
+    },
+    {
+      "name": "SFD-105",
+      "id": "SFD-105",
+      "role": "Immune aux sorts — parfait pour showdowns."
+    },
+    {
+      "name": "OGN-282",
+      "id": "OGN-282",
+      "role": "Draw en payant un buff — résout le manque de draw de Sett."
+    },
+    {
+      "name": "OGN-207",
+      "id": "OGN-207",
+      "role": "Support gratuit quand on a un buff à dépenser."
+    },
+    {
+      "name": "OGN-213",
+      "id": "OGN-213",
+      "role": "Removal — combo avec l'ability pour sauver l'unité ciblée = 'Draw 2'."
+    }
   ],
   "strengths": [
     "Ability = les unités ne meurent jamais, value cumulée",
@@ -39,9 +86,27 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "2 Wins (City Challenges)",
-    "sydneyStats": { "winRate": "53%", "matches": 159, "bestPlacement": "9th (11-2-0)" }
+    "sydneyStats": {
+      "winRate": "53%",
+      "matches": 159,
+      "bestPlacement": "9th (11-2-0)"
+    }
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/sett-the-boss-guide/"
+  "sourceUrl": "https://riftbound.gg/sett-the-boss-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Mur défensif (la Légende garde l'unité même conquise).",
+      "Trop lent pour punir le slow-roll d'Aurora ; souffre du violet (Star-Crossed)."
+    ],
+    "techCards": [
+      "Akshan + Arena Bar (moteur de valeur, ressuscite l'Akshan voleur de gear)",
+      "Irresistible Faefolk (charme/drag)",
+      "Call to Glory",
+      "Fade Dragon"
+    ],
+    "note": "Nerf : il faut déjà un buff présent pour le dépenser. Sett Brawler va très tall sur Trifarian War Camp."
+  }
 }

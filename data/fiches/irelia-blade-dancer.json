@@ -1,7 +1,10 @@
 {
   "legendName": "Irelia, Blade Dancer",
   "legendId": "SFD-195",
-  "domains": ["Calm", "Order"],
+  "domains": [
+    "Calm",
+    "Order"
+  ],
   "set": "Spiritforged",
   "tier": 1,
   "archetype": "Tempo-midrange / Mouvement & poussée de points",
@@ -13,20 +16,90 @@
     "winCondition": "SFD-057 protégé — push de points irrésistible une fois timing trouvé"
   },
   "keyCards": [
-    { "name": "Stellacorn Herder", "id": "UNL-150", "cost": 4, "role": "Duo clé — draw engine et stun. Développé à un battlefield, très difficile à déloger." },
-    { "name": "SFD-048", "id": "SFD-048", "cost": 4, "role": "Second pilier du duo 4-cost. Complémente UNL-150 parfaitement." },
-    { "name": "SFD-057", "id": "SFD-057", "cost": null, "role": "Win condition principale. Tout le deck build autour de cette carte depuis Spiritforged." },
-    { "name": "UNL-053", "id": "UNL-053", "cost": 2, "role": "Tuteur early game — cherche nos unités clés." },
-    { "name": "SFD-036", "id": "SFD-036", "cost": 2, "role": "Second tuteur pour trouver UNL-150 ou SFD-048 tôt." },
-    { "name": "UNL-042", "id": "UNL-042", "cost": null, "role": "Stun d'unités adverses — réduit le besoin de garder des runes ouvertes pour réagir." },
-    { "name": "OGS-011", "id": "OGS-011", "cost": null, "role": "Mouvement d'unités entre battlefields." },
-    { "name": "SFD-133", "id": "SFD-133", "cost": null, "role": "Mouvement alternatif." },
-    { "name": "SFD-051", "id": "SFD-051", "cost": null, "role": "Protection d'unités." },
-    { "name": "OGN-077", "id": "OGN-077", "cost": null, "role": "Protection d'unités clés." },
-    { "name": "OGN-058", "id": "OGN-058", "cost": null, "role": "Buff de might — push SFD-057." },
-    { "name": "SFD-196", "id": "SFD-196", "cost": null, "role": "Buff de might alternatif." },
-    { "name": "OGN-045", "id": "OGN-045", "cost": null, "role": "Contresort — protection cruciale." },
-    { "name": "OGN-192", "id": "OGN-192", "cost": null, "role": "Disruption — inclusion optionnelle quand le core est solide." }
+    {
+      "name": "Stellacorn Herder",
+      "id": "UNL-150",
+      "cost": 4,
+      "role": "Duo clé — draw engine et stun. Développé à un battlefield, très difficile à déloger."
+    },
+    {
+      "name": "SFD-048",
+      "id": "SFD-048",
+      "cost": 4,
+      "role": "Second pilier du duo 4-cost. Complémente UNL-150 parfaitement."
+    },
+    {
+      "name": "SFD-057",
+      "id": "SFD-057",
+      "cost": null,
+      "role": "Win condition principale. Tout le deck build autour de cette carte depuis Spiritforged."
+    },
+    {
+      "name": "UNL-053",
+      "id": "UNL-053",
+      "cost": 2,
+      "role": "Tuteur early game — cherche nos unités clés."
+    },
+    {
+      "name": "SFD-036",
+      "id": "SFD-036",
+      "cost": 2,
+      "role": "Second tuteur pour trouver UNL-150 ou SFD-048 tôt."
+    },
+    {
+      "name": "UNL-042",
+      "id": "UNL-042",
+      "cost": null,
+      "role": "Stun d'unités adverses — réduit le besoin de garder des runes ouvertes pour réagir."
+    },
+    {
+      "name": "OGS-011",
+      "id": "OGS-011",
+      "cost": null,
+      "role": "Mouvement d'unités entre battlefields."
+    },
+    {
+      "name": "SFD-133",
+      "id": "SFD-133",
+      "cost": null,
+      "role": "Mouvement alternatif."
+    },
+    {
+      "name": "SFD-051",
+      "id": "SFD-051",
+      "cost": null,
+      "role": "Protection d'unités."
+    },
+    {
+      "name": "OGN-077",
+      "id": "OGN-077",
+      "cost": null,
+      "role": "Protection d'unités clés."
+    },
+    {
+      "name": "OGN-058",
+      "id": "OGN-058",
+      "cost": null,
+      "role": "Buff de might — push SFD-057."
+    },
+    {
+      "name": "SFD-196",
+      "id": "SFD-196",
+      "cost": null,
+      "role": "Buff de might alternatif."
+    },
+    {
+      "name": "OGN-045",
+      "id": "OGN-045",
+      "cost": null,
+      "role": "Contresort — protection cruciale."
+    },
+    {
+      "name": "OGN-192",
+      "id": "OGN-192",
+      "cost": null,
+      "role": "Disruption — inclusion optionnelle quand le core est solide."
+    }
   ],
   "strengths": [
     "Top tier en méta midrange — son style de jeu est parfait pour ce format",
@@ -41,9 +114,17 @@
     "Vulnérable si les unités clés sont retirées avant de pouvoir les protéger"
   ],
   "matchups": {
-    "favorable": ["Midrange standard", "Aggro (bloqueurs + contresorts)"],
-    "unfavorable": ["Aurora decks (OGN-160) — amélioré post-Sydney"],
-    "even": ["Diana", "LeBlanc"]
+    "favorable": [
+      "Midrange standard",
+      "Aggro (bloqueurs + contresorts)"
+    ],
+    "unfavorable": [
+      "Aurora decks (OGN-160) — amélioré post-Sydney"
+    ],
+    "even": [
+      "Diana",
+      "LeBlanc"
+    ]
   },
   "competitiveResults": {
     "tier": 1,
@@ -64,5 +145,21 @@
     "Timing de l'ability est tout — maîtriser le scoring window",
     "Contre Aurora, UNL-042 stun les grosses unités invoquées par le gear"
   ],
-  "sourceUrl": "https://riftbound.gg/irelia-blade-dancer-guide/"
+  "sourceUrl": "https://riftbound.gg/irelia-blade-dancer-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Consensus n°1 du format mais tech-dépendant.",
+      "Bat le Vex-hold (buff énorme une unité posée tôt → wipe).",
+      "vs Aurora : favori SI elle tech (Adaptatron/Disarming Rake anti-gear on-play, Star-Crossed/Mindsplitter vs Elder)."
+    ],
+    "techCards": [
+      "Defiant Dance (meilleur signature)",
+      "Stellacorn Herder (MVP card-draw)",
+      "Guardian Angel + Zhonya's (protègent le Fervent)",
+      "Baron Nashor (Unleashed, +2 + gank)",
+      "Boots of Swiftness"
+    ],
+    "note": "« Reine » du format : qui perd son Fervent en premier perd quasi la game. Pénalisée par la lourdeur mentale (math)."
+  }
 }

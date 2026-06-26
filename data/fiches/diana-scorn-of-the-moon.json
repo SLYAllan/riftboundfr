@@ -1,7 +1,10 @@
 {
   "legendName": "Diana, Scorn of the Moon",
   "legendId": "UNL-197",
-  "domains": ["Chaos", "Mind"],
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
   "set": "Unleashed",
   "tier": 1,
   "archetype": "Aggro-tempo / Domination des showdowns + punition",
@@ -13,14 +16,47 @@
     "winCondition": "Lead au score + punition des risques adverses"
   },
   "keyCards": [
-    { "name": "OGN-103", "id": "OGN-103", "role": "Machine à showdowns early avec l'ability légende." },
-    { "name": "UNL-080", "id": "UNL-080", "cost": 5, "role": "Flexible mid game — draw ou 8-might conquérir." },
-    { "name": "OGN-116", "id": "OGN-116", "role": "Closer Mind — -3 might aux unités adverses." },
-    { "name": "OGN-169", "id": "OGN-169", "role": "Sort support early game." },
-    { "name": "OGN-095", "id": "OGN-095", "role": "Sort support early complémentaire." },
-    { "name": "UNL-128", "id": "UNL-128", "role": "Maintien de l'avance une fois en tête." },
-    { "name": "UNL-198", "id": "UNL-198", "role": "Contrôle réactif — empêche les retours." },
-    { "name": "OGN-173", "id": "OGN-173", "role": "Push final — score avant stabilisation adverse." }
+    {
+      "name": "OGN-103",
+      "id": "OGN-103",
+      "role": "Machine à showdowns early avec l'ability légende."
+    },
+    {
+      "name": "UNL-080",
+      "id": "UNL-080",
+      "cost": 5,
+      "role": "Flexible mid game — draw ou 8-might conquérir."
+    },
+    {
+      "name": "OGN-116",
+      "id": "OGN-116",
+      "role": "Closer Mind — -3 might aux unités adverses."
+    },
+    {
+      "name": "OGN-169",
+      "id": "OGN-169",
+      "role": "Sort support early game."
+    },
+    {
+      "name": "OGN-095",
+      "id": "OGN-095",
+      "role": "Sort support early complémentaire."
+    },
+    {
+      "name": "UNL-128",
+      "id": "UNL-128",
+      "role": "Maintien de l'avance une fois en tête."
+    },
+    {
+      "name": "UNL-198",
+      "id": "UNL-198",
+      "role": "Contrôle réactif — empêche les retours."
+    },
+    {
+      "name": "OGN-173",
+      "id": "OGN-173",
+      "role": "Push final — score avant stabilisation adverse."
+    }
   ],
   "strengths": [
     "Arsenal Chaos+Mind répond à tout : contresort, removal, draw, mouvement, résurrection",
@@ -36,9 +72,30 @@
     "tier": 1,
     "preRegionals": "3 Wins / 13 Top 8 (4 CC wins = record Unleashed)",
     "regionalResults": "Top 4 Sydney (12-2-1)",
-    "sydneyStats": { "winRate": "56%", "matches": 353, "conversionRate": ">20%" }
+    "sydneyStats": {
+      "winRate": "56%",
+      "matches": 353,
+      "conversionRate": ">20%"
+    }
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/diana-scorn-of-the-moon-guide/"
+  "sourceUrl": "https://riftbound.gg/diana-scorn-of-the-moon-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "En flèche (vainqueur Vancouver), oppressive ce set.",
+      "Très faible vs removal (rare) et sorts de dégâts (Pyke/Ezreal/Jhin)."
+    ],
+    "techCards": [
+      "Hwei (moteur de draw, scale avec les sorts)",
+      "Moonfall (signature, -2 à tout, le meilleur du jeu)",
+      "Star-Crossed + Fizz",
+      "Vex Apathetic",
+      "Tideturner (pull-back Vex pour le 8e point)",
+      "Acceptable Losses (anti-gear vs Irelia)",
+      "Baron Nashor (side, matchups longs)"
+    ],
+    "note": "Souvent « un shell pour Hwei » : les games avec Hwei sont radicalement différentes."
+  }
 }

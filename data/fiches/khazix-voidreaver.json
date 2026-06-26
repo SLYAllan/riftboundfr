@@ -1,7 +1,10 @@
 {
   "legendName": "Kha'Zix, Voidreaver",
   "legendId": "UNL-202",
-  "domains": ["Fury", "Body"],
+  "domains": [
+    "Fury",
+    "Body"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Tempo-midrange / XP gain & conquête",
@@ -13,15 +16,52 @@
     "winCondition": "Conquête double battlefield avec l'ability qui protège les unités post-conquête"
   },
   "keyCards": [
-    { "name": "UNL-150", "id": "UNL-150", "cost": 4, "role": "Développé sur un battlefield — limite l'ability adverse." },
-    { "name": "OGN-164", "id": "OGN-164", "role": "Unité buffable avec l'ability." },
-    { "name": "UNL-127", "id": "UNL-127", "role": "Gain d'XP." },
-    { "name": "UNL-210", "id": "UNL-210", "role": "Tandem early avec UNL-112." },
-    { "name": "UNL-112", "id": "UNL-112", "role": "Tandem early avec UNL-210." },
-    { "name": "UNL-095", "id": "UNL-095", "role": "Sort clé — buff solide + XP potentiel." },
-    { "name": "UNL-114", "id": "UNL-114", "role": "Élément de surprise imprévisible." },
-    { "name": "UNL-202", "id": "UNL-202", "role": "Contrôle late — bon avec les unités massives." },
-    { "name": "UNL-131", "id": "UNL-131", "role": "Maintien du contrôle." }
+    {
+      "name": "UNL-150",
+      "id": "UNL-150",
+      "cost": 4,
+      "role": "Développé sur un battlefield — limite l'ability adverse."
+    },
+    {
+      "name": "OGN-164",
+      "id": "OGN-164",
+      "role": "Unité buffable avec l'ability."
+    },
+    {
+      "name": "UNL-127",
+      "id": "UNL-127",
+      "role": "Gain d'XP."
+    },
+    {
+      "name": "UNL-210",
+      "id": "UNL-210",
+      "role": "Tandem early avec UNL-112."
+    },
+    {
+      "name": "UNL-112",
+      "id": "UNL-112",
+      "role": "Tandem early avec UNL-210."
+    },
+    {
+      "name": "UNL-095",
+      "id": "UNL-095",
+      "role": "Sort clé — buff solide + XP potentiel."
+    },
+    {
+      "name": "UNL-114",
+      "id": "UNL-114",
+      "role": "Élément de surprise imprévisible."
+    },
+    {
+      "name": "UNL-202",
+      "id": "UNL-202",
+      "role": "Contrôle late — bon avec les unités massives."
+    },
+    {
+      "name": "UNL-131",
+      "id": "UNL-131",
+      "role": "Maintien du contrôle."
+    }
   ],
   "strengths": [
     "Double ability — buff early + protection late",
@@ -36,9 +76,28 @@
   "competitiveResults": {
     "tier": 3,
     "preRegionals": "3 Top 8",
-    "sydneyStats": { "winRate": "50%", "matches": 210, "bestPlacement": "48th (9-2-2)" }
+    "sydneyStats": {
+      "winRate": "50%",
+      "matches": 210,
+      "bestPlacement": "48th (9-2-2)"
+    }
   },
   "difficulty": "Moyen-Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/khazix-voidreaver-guide/"
+  "sourceUrl": "https://riftbound.gg/khazix-voidreaver-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Réévalué à la hausse par certains mais sous-performe (LeBlanc/Ezreal/Irelia/Diana au top).",
+      "Bon vs Master Yi ; mauvais vs decks de hold (Vex, Ivern)."
+    ],
+    "techCards": [
+      "Irresistible Faefolk + ambush Mutating Horror",
+      "Void Assault (signature)",
+      "Fizz (rejoue ≤3)",
+      "Monastery of Hirana (draw/tour)",
+      "8-9 two-drops"
+    ],
+    "note": "Design-flawed : pas de vrai payoff XP, signature pas une « action » (pas de double-score), pas de ganking."
+  }
 }

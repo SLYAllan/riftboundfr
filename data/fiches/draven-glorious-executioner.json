@@ -1,7 +1,10 @@
 {
   "legendName": "Draven, Glorious Executioner",
   "legendId": null,
-  "domains": ["Chaos", "Fury"],
+  "domains": [
+    "Chaos",
+    "Fury"
+  ],
   "set": "Origins",
   "tier": 2,
   "archetype": "Midrange explosif / Draw via combats",
@@ -13,14 +16,46 @@
     "winCondition": "Pression midrange explosive + draw via combats gagnés = l'adversaire s'épuise"
   },
   "keyCards": [
-    { "name": "OGN-028", "id": "OGN-028", "role": "Chosen champion (post-ban SFD-020). 5-cost pressure tool, fort quand on score tôt." },
-    { "name": "SFD-130", "id": "SFD-130", "role": "Développe des unités quand il se déplace — runes intactes. Inarrêtable si il bouge plusieurs fois." },
-    { "name": "OGN-039", "id": "OGN-039", "role": "Draw engine." },
-    { "name": "OGN-183", "id": "OGN-183", "role": "Deck digging." },
-    { "name": "OGN-192", "id": "OGN-192", "role": "Side deck vs control — disruption main." },
-    { "name": "OGN-172", "id": "OGN-172", "role": "Renvoie les grosses unités en main — permet de scorer avant stabilisation." },
-    { "name": "OGN-289", "id": "OGN-289", "role": "Battlefield spécifique — jouer des sorts support sans perdre de tempo." },
-    { "name": "OGN-173", "id": "OGN-173", "role": "Push final combiné avec OGN-028." }
+    {
+      "name": "OGN-028",
+      "id": "OGN-028",
+      "role": "Chosen champion (post-ban SFD-020). 5-cost pressure tool, fort quand on score tôt."
+    },
+    {
+      "name": "SFD-130",
+      "id": "SFD-130",
+      "role": "Développe des unités quand il se déplace — runes intactes. Inarrêtable si il bouge plusieurs fois."
+    },
+    {
+      "name": "OGN-039",
+      "id": "OGN-039",
+      "role": "Draw engine."
+    },
+    {
+      "name": "OGN-183",
+      "id": "OGN-183",
+      "role": "Deck digging."
+    },
+    {
+      "name": "OGN-192",
+      "id": "OGN-192",
+      "role": "Side deck vs control — disruption main."
+    },
+    {
+      "name": "OGN-172",
+      "id": "OGN-172",
+      "role": "Renvoie les grosses unités en main — permet de scorer avant stabilisation."
+    },
+    {
+      "name": "OGN-289",
+      "id": "OGN-289",
+      "role": "Battlefield spécifique — jouer des sorts support sans perdre de tempo."
+    },
+    {
+      "name": "OGN-173",
+      "id": "OGN-173",
+      "role": "Push final combiné avec OGN-028."
+    }
   ],
   "strengths": [
     "0 carte Unleashed dans le meilleur deck — prouve la force du core Spiritforged",
@@ -35,9 +70,29 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "5 Top 8",
-    "sydneyStats": { "winRate": "55%", "matches": 193, "bestPlacement": "10th (11-2-0)" }
+    "sydneyStats": {
+      "winRate": "55%",
+      "matches": 193,
+      "bestPlacement": "10th (11-2-0)"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
-  "sourceUrl": "https://riftbound.gg/draven-glorious-executioner-guide/"
+  "sourceUrl": "https://riftbound.gg/draven-glorious-executioner-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "DOMINE le jour 1 Spiritforged (~35 %, « tier 0 ») mais les pros jouent autour (0 top 4 Bologna).",
+      "Battre Draven = ne JAMAIS donner de combat gratuit (= pioche + gold) + Falling Star tôt (le ramène à 2 runes)."
+    ],
+    "techCards": [
+      "Spinning Axe (ré-équipement)",
+      "Ferrous Forerunner",
+      "Treasure Hunter (gold = avantage runes)",
+      "Brynhir Thundersong",
+      "Hard Bargain",
+      "Vex Apathetic (en Unleashed, purple partagé)"
+    ],
+    "note": "Vanquisher banni → garde Showboat/Audacious. En Unleashed, Falling Star = boogeyman anti-Diana."
+  }
 }

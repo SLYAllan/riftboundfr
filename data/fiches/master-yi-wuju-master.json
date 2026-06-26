@@ -1,7 +1,10 @@
 {
   "legendName": "Master Yi, Wuju Master",
   "legendId": null,
-  "domains": ["Body", "Calm"],
+  "domains": [
+    "Body",
+    "Calm"
+  ],
   "set": "Unleashed",
   "tier": 4,
   "archetype": "Midrange off-tempo / Hunt & XP scaling",
@@ -13,17 +16,62 @@
     "winCondition": "Atteindre level 11 XP → toutes les unités entrent ready avec +1 Might = impossible à contenir"
   },
   "keyCards": [
-    { "name": "UNL-059", "id": "UNL-059", "cost": 6, "role": "Objectif ultime — unité massive qui entre ready." },
-    { "name": "UNL-113", "id": "UNL-113", "role": "Chosen champion — doit survivre pour gagner de l'XP." },
-    { "name": "UNL-094", "id": "UNL-094", "role": "Unité early." },
-    { "name": "UNL-040", "id": "UNL-040", "role": "Unité early." },
-    { "name": "UNL-100", "id": "UNL-100", "role": "Alternative en allant second — attendre level 6." },
-    { "name": "UNL-095", "id": "UNL-095", "role": "Staple buff + XP gain." },
-    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort." },
-    { "name": "OGN-077", "id": "OGN-077", "role": "Protection." },
-    { "name": "OGN-058", "id": "OGN-058", "role": "Buff." },
-    { "name": "UNL-031", "id": "UNL-031", "role": "XP spell (mid-late seulement)." },
-    { "name": "UNL-091", "id": "UNL-091", "role": "XP spell (mid-late seulement)." }
+    {
+      "name": "UNL-059",
+      "id": "UNL-059",
+      "cost": 6,
+      "role": "Objectif ultime — unité massive qui entre ready."
+    },
+    {
+      "name": "UNL-113",
+      "id": "UNL-113",
+      "role": "Chosen champion — doit survivre pour gagner de l'XP."
+    },
+    {
+      "name": "UNL-094",
+      "id": "UNL-094",
+      "role": "Unité early."
+    },
+    {
+      "name": "UNL-040",
+      "id": "UNL-040",
+      "role": "Unité early."
+    },
+    {
+      "name": "UNL-100",
+      "id": "UNL-100",
+      "role": "Alternative en allant second — attendre level 6."
+    },
+    {
+      "name": "UNL-095",
+      "id": "UNL-095",
+      "role": "Staple buff + XP gain."
+    },
+    {
+      "name": "OGN-045",
+      "id": "OGN-045",
+      "role": "Contresort."
+    },
+    {
+      "name": "OGN-077",
+      "id": "OGN-077",
+      "role": "Protection."
+    },
+    {
+      "name": "OGN-058",
+      "id": "OGN-058",
+      "role": "Buff."
+    },
+    {
+      "name": "UNL-031",
+      "id": "UNL-031",
+      "role": "XP spell (mid-late seulement)."
+    },
+    {
+      "name": "UNL-091",
+      "id": "UNL-091",
+      "role": "XP spell (mid-late seulement)."
+    }
   ],
   "strengths": [
     "Level 11 reward = le plus puissant du jeu si atteint",
@@ -39,9 +87,29 @@
   "competitiveResults": {
     "tier": 4,
     "preRegionals": "1 Top 8",
-    "sydneyStats": { "winRate": "45%", "matches": 88, "bestPlacement": "41st (10-3-0)" }
+    "sydneyStats": {
+      "winRate": "45%",
+      "matches": 88,
+      "bestPlacement": "41st (10-3-0)"
+    }
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/master-yi-wuju-master-guide/"
+  "sourceUrl": "https://riftbound.gg/master-yi-wuju-master-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Variante XP de niche (ceiling très haut mais moins consistant que le Bladesman).",
+      "Aucun avantage early = handicap dans un méta tempo."
+    ],
+    "techCards": [
+      "Master Yi, Tempered (Hunt 2)",
+      "Reckoner's Arena (double le Hunt : conquer-triggers même sur hold)",
+      "Voracious Gromp (Hunt 3)",
+      "Elder Dragon",
+      "White Flame Protector",
+      "Concentrate"
+    ],
+    "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable."
+  }
 }

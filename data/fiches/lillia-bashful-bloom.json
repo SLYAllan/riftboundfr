@@ -1,7 +1,10 @@
 {
   "legendName": "Lillia, Bashful Bloom",
   "legendId": null,
-  "domains": ["Calm", "Mind"],
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Value-tempo / Sprites temporaires & scaling",
@@ -13,16 +16,56 @@
     "winCondition": "Échanges asymétriques (tokens vs vraies unités) + scoring continu"
   },
   "keyCards": [
-    { "name": "UNL-078", "id": "UNL-078", "role": "Génère des Sprites temporaires 3-might." },
-    { "name": "UNL-069", "id": "UNL-069", "role": "Seconde source de Sprites." },
-    { "name": "OGN-116", "id": "OGN-116", "role": "Closer Mind standard." },
-    { "name": "OGN-123", "id": "OGN-123", "role": "Alternative slow win con." },
-    { "name": "UNL-084", "id": "UNL-084", "role": "Compagnon d'OGN-123 en pace lent." },
-    { "name": "OGN-058", "id": "OGN-058", "role": "Draw support." },
-    { "name": "OGN-095", "id": "OGN-095", "role": "Draw support." },
-    { "name": "UNL-083", "id": "UNL-083", "role": "Draw support." },
-    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort — protège les vraies unités." },
-    { "name": "UNL-190", "id": "UNL-190", "role": "Deny les tentatives de comeback." }
+    {
+      "name": "UNL-078",
+      "id": "UNL-078",
+      "role": "Génère des Sprites temporaires 3-might."
+    },
+    {
+      "name": "UNL-069",
+      "id": "UNL-069",
+      "role": "Seconde source de Sprites."
+    },
+    {
+      "name": "OGN-116",
+      "id": "OGN-116",
+      "role": "Closer Mind standard."
+    },
+    {
+      "name": "OGN-123",
+      "id": "OGN-123",
+      "role": "Alternative slow win con."
+    },
+    {
+      "name": "UNL-084",
+      "id": "UNL-084",
+      "role": "Compagnon d'OGN-123 en pace lent."
+    },
+    {
+      "name": "OGN-058",
+      "id": "OGN-058",
+      "role": "Draw support."
+    },
+    {
+      "name": "OGN-095",
+      "id": "OGN-095",
+      "role": "Draw support."
+    },
+    {
+      "name": "UNL-083",
+      "id": "UNL-083",
+      "role": "Draw support."
+    },
+    {
+      "name": "OGN-045",
+      "id": "OGN-045",
+      "role": "Contresort — protège les vraies unités."
+    },
+    {
+      "name": "UNL-190",
+      "id": "UNL-190",
+      "role": "Deny les tentatives de comeback."
+    }
   ],
   "strengths": [
     "Synergy temporaire = échanges toujours en faveur de Lillia",
@@ -38,9 +81,28 @@
   "competitiveResults": {
     "tier": 3,
     "preRegionals": "2 Top 8 (1 win early puis déclin)",
-    "sydneyStats": { "winRate": "49%", "matches": 235, "bestPlacement": "33rd (10-3-0)" }
+    "sydneyStats": {
+      "winRate": "49%",
+      "matches": 235,
+      "bestPlacement": "33rd (10-3-0)"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
-  "sourceUrl": "https://riftbound.gg/lillia-bashful-bloom-guide/"
+  "sourceUrl": "https://riftbound.gg/lillia-bashful-bloom-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Tempo ultra-rapide (jamais de hold, vise 6 points vite).",
+      "Pire matchup : Vex Apathetic + aggro-hold (Draven)."
+    ],
+    "techCards": [
+      "Lillia Faeforn (sprite au move)",
+      "Lilting Lullaby (signature : counter + bloque les sorts)",
+      "Sprite Fountain",
+      "Heart of Dark Ice (+3 → sprite 6 might)",
+      "Thousand-Tailed Watcher"
+    ],
+    "note": "Légende : Sprite 3-might temporary READY, -1 énergie par unité temporary. Duskrose Lab (sacrifie un sprite → pioche)."
+  }
 }

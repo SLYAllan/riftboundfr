@@ -1,7 +1,10 @@
 {
   "legendName": "Rengar, Pridestalker",
   "legendId": null,
-  "domains": ["Body", "Fury"],
+  "domains": [
+    "Body",
+    "Fury"
+  ],
   "set": "Origins",
   "tier": 2,
   "archetype": "Aggro-proactif / Ambush & pression constante",
@@ -13,18 +16,66 @@
     "winCondition": "Lead early + Ambush imprévisible + draw via UNL-011"
   },
   "keyCards": [
-    { "name": "OGN-012", "id": "OGN-012", "role": "Unité beefue — ancre le board." },
-    { "name": "UNL-120", "id": "UNL-120", "role": "Seconde ancre mid game." },
-    { "name": "OGN-039", "id": "OGN-039", "role": "Draw — besoin de setup pour éviter le remove." },
-    { "name": "UNL-114", "id": "UNL-114", "role": "Draw + surprise Ambush." },
-    { "name": "UNL-011", "id": "UNL-011", "role": "Gear clé — +1 carte/tour pour le reste du match. Si il tient, Rengar ne manque jamais de gaz." },
-    { "name": "UNL-002", "id": "UNL-002", "role": "3-might en attaque — bat les 2-might early." },
-    { "name": "UNL-112", "id": "UNL-112", "role": "Drag vers un battlefield + Ambush support." },
-    { "name": "UNL-106", "id": "UNL-106", "role": "Support cheap Ambush — garde l'adversaire alerte." },
-    { "name": "SFD-097", "id": "SFD-097", "role": "Buff support." },
-    { "name": "UNL-184", "id": "UNL-184", "role": "Support cheap." },
-    { "name": "UNL-021", "id": "UNL-021", "role": "Ambush 3-cost." },
-    { "name": "SFD-025", "id": "SFD-025", "role": "Ambush 3-cost alternatif." }
+    {
+      "name": "OGN-012",
+      "id": "OGN-012",
+      "role": "Unité beefue — ancre le board."
+    },
+    {
+      "name": "UNL-120",
+      "id": "UNL-120",
+      "role": "Seconde ancre mid game."
+    },
+    {
+      "name": "OGN-039",
+      "id": "OGN-039",
+      "role": "Draw — besoin de setup pour éviter le remove."
+    },
+    {
+      "name": "UNL-114",
+      "id": "UNL-114",
+      "role": "Draw + surprise Ambush."
+    },
+    {
+      "name": "UNL-011",
+      "id": "UNL-011",
+      "role": "Gear clé — +1 carte/tour pour le reste du match. Si il tient, Rengar ne manque jamais de gaz."
+    },
+    {
+      "name": "UNL-002",
+      "id": "UNL-002",
+      "role": "3-might en attaque — bat les 2-might early."
+    },
+    {
+      "name": "UNL-112",
+      "id": "UNL-112",
+      "role": "Drag vers un battlefield + Ambush support."
+    },
+    {
+      "name": "UNL-106",
+      "id": "UNL-106",
+      "role": "Support cheap Ambush — garde l'adversaire alerte."
+    },
+    {
+      "name": "SFD-097",
+      "id": "SFD-097",
+      "role": "Buff support."
+    },
+    {
+      "name": "UNL-184",
+      "id": "UNL-184",
+      "role": "Support cheap."
+    },
+    {
+      "name": "UNL-021",
+      "id": "UNL-021",
+      "role": "Ambush 3-cost."
+    },
+    {
+      "name": "SFD-025",
+      "id": "SFD-025",
+      "role": "Ambush 3-cost alternatif."
+    }
   ],
   "strengths": [
     "Pression constante via Ambush — l'adversaire ne sait jamais le vrai might disponible",
@@ -40,9 +91,28 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "1 Win (semaine 1) / 5 Top 8",
-    "sydneyStats": { "winRate": "52%", "matches": 188, "bestPlacement": "11th (11-2-0)" }
+    "sydneyStats": {
+      "winRate": "52%",
+      "matches": 188,
+      "bestPlacement": "11th (11-2-0)"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/rengar-pridestalker-guide/"
+  "sourceUrl": "https://riftbound.gg/rengar-pridestalker-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Épitomé du C (high-roll), mais 2e Vancouver = plafond élevé.",
+      "Crushé par Vex Apathetic (stun l'ambush). Mauvais vs Draven mid-range."
+    ],
+    "techCards": [
+      "Ambush + Trophy Hunter (champion zone)",
+      "Thrill of the Hunt (signature, reset + ambush)",
+      "Irresistible Faefolk",
+      "Fresh Beans (draw)",
+      "Determined Sentry"
+    ],
+    "note": "Aggro Ambush ultra-rapide, quasi pas de top end ; score au tour adverse."
+  }
 }

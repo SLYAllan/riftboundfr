@@ -1,7 +1,10 @@
 {
   "legendName": "Miss Fortune, Bounty Hunter",
   "legendId": "OGN-267",
-  "domains": ["Body", "Chaos"],
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
   "set": "Origins",
   "tier": 2,
   "archetype": "Ramp / Ganking + Aurora",
@@ -13,15 +16,51 @@
     "winCondition": "Ganking sur unités massives invoquées par Aurora = conquête double-battlefield"
   },
   "keyCards": [
-    { "name": "OGN-267 (Legend)", "id": "OGN-267", "role": "Ability — donne Ganking à n'importe quelle unité, même massive." },
-    { "name": "Dazzling Aurora", "id": "OGN-160", "role": "Win condition partagée avec Sivir — gear 9-cost." },
-    { "name": "OGN-268", "id": "OGN-268", "role": "Board wipe d'urgence — détruit les tokens pour 1 rune. Contre grosses unités, coûte plus de runes." },
-    { "name": "OGN-162", "id": "OGN-162", "role": "Champion qui ready les unités en se déplaçant. Combo clé avec Ganking." },
-    { "name": "OGN-193", "id": "OGN-193", "role": "Joue dans les battlefields vides — peut voler un battlefield." },
-    { "name": "OGN-192", "id": "OGN-192", "role": "Disruption main adverse." },
-    { "name": "OGN-156", "id": "OGN-156", "role": "Disruption Body domain." },
-    { "name": "SFD-150", "id": "SFD-150", "role": "Résurrection de grosses unités." },
-    { "name": "OGN-169", "id": "OGN-169", "role": "Cheap removal early." }
+    {
+      "name": "OGN-267 (Legend)",
+      "id": "OGN-267",
+      "role": "Ability — donne Ganking à n'importe quelle unité, même massive."
+    },
+    {
+      "name": "Dazzling Aurora",
+      "id": "OGN-160",
+      "role": "Win condition partagée avec Sivir — gear 9-cost."
+    },
+    {
+      "name": "OGN-268",
+      "id": "OGN-268",
+      "role": "Board wipe d'urgence — détruit les tokens pour 1 rune. Contre grosses unités, coûte plus de runes."
+    },
+    {
+      "name": "OGN-162",
+      "id": "OGN-162",
+      "role": "Champion qui ready les unités en se déplaçant. Combo clé avec Ganking."
+    },
+    {
+      "name": "OGN-193",
+      "id": "OGN-193",
+      "role": "Joue dans les battlefields vides — peut voler un battlefield."
+    },
+    {
+      "name": "OGN-192",
+      "id": "OGN-192",
+      "role": "Disruption main adverse."
+    },
+    {
+      "name": "OGN-156",
+      "id": "OGN-156",
+      "role": "Disruption Body domain."
+    },
+    {
+      "name": "SFD-150",
+      "id": "SFD-150",
+      "role": "Résurrection de grosses unités."
+    },
+    {
+      "name": "OGN-169",
+      "id": "OGN-169",
+      "role": "Cheap removal early."
+    }
   ],
   "strengths": [
     "Ganking = meilleure ability pour scorer le dernier point (double conquête)",
@@ -36,9 +75,29 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "1 Win / 4 Top 8",
-    "sydneyStats": { "winRate": "55%", "matches": 329, "bestPlacement": "35th (10-3-0)" }
+    "sydneyStats": {
+      "winRate": "55%",
+      "matches": 329,
+      "bestPlacement": "35th (10-3-0)"
+    }
   },
   "difficulty": "Moyen-Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/miss-fortune-bounty-hunter-guide/"
+  "sourceUrl": "https://riftbound.gg/miss-fortune-bounty-hunter-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Meilleure version d'Aurora (ganking du Champion pour finir). « Boogeyman » du méta.",
+      "Excellente vs Vex (Elder Dragon). Faible au gear hate en unité, Star-Crossed, Légendes Ordre."
+    ],
+    "techCards": [
+      "Dazzling Aurora",
+      "Elder Dragon + Flurry of Blades",
+      "Baron Nashor (12 might intuable + ganking)",
+      "Bullet Time",
+      "Last Rites",
+      "Mindsplitter"
+    ],
+    "note": "MF préférée à Sivir hors miroir (ganking pour conquérir 2 terrains). Baron en finisher = quasi-imbattable pour Diana."
+  }
 }

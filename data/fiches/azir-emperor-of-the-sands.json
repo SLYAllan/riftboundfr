@@ -1,7 +1,10 @@
 {
   "legendName": "Azir, Emperor of the Sands",
   "legendId": null,
-  "domains": ["Calm", "Order"],
+  "domains": [
+    "Calm",
+    "Order"
+  ],
   "set": "Origins",
   "tier": 2,
   "archetype": "Token / Equipment conquérant",
@@ -13,19 +16,72 @@
     "winCondition": "Conquête continue avec une armée de Sand Soldiers équipés"
   },
   "keyCards": [
-    { "name": "SFD-153", "id": "SFD-153", "role": "Equipment — plus de might pour son coût." },
-    { "name": "SFD-042", "id": "SFD-042", "role": "Equipment — crée des tokens." },
-    { "name": "SFD-198", "id": "SFD-198", "cost": 6, "role": "Reward pour les gears joués — staple." },
-    { "name": "SFD-177", "id": "SFD-177", "role": "Chosen champion — Accelerate pour conquête immédiate avec tokens." },
-    { "name": "OGN-233", "id": "OGN-233", "role": "Token support." },
-    { "name": "OGN-209", "id": "OGN-209", "role": "Removal essentiel." },
-    { "name": "OGN-213", "id": "OGN-213", "role": "Removal — hidden card en réaction." },
-    { "name": "SFD-154", "id": "SFD-154", "role": "Hidden — buff de might." },
-    { "name": "SFD-043", "id": "SFD-043", "role": "Retreat les unités à la base, ready pour re-attaquer." },
-    { "name": "SFD-163", "id": "SFD-163", "role": "Push le dernier point." },
-    { "name": "UNL-039", "id": "UNL-039", "role": "Nouvel equipment Unleashed." },
-    { "name": "UNL-042", "id": "UNL-042", "role": "Stun — nouvel outil que l'adversaire doit anticiper." },
-    { "name": "UNL-173", "id": "UNL-173", "role": "Convertit une unité en cartes + rune." }
+    {
+      "name": "SFD-153",
+      "id": "SFD-153",
+      "role": "Equipment — plus de might pour son coût."
+    },
+    {
+      "name": "SFD-042",
+      "id": "SFD-042",
+      "role": "Equipment — crée des tokens."
+    },
+    {
+      "name": "SFD-198",
+      "id": "SFD-198",
+      "cost": 6,
+      "role": "Reward pour les gears joués — staple."
+    },
+    {
+      "name": "SFD-177",
+      "id": "SFD-177",
+      "role": "Chosen champion — Accelerate pour conquête immédiate avec tokens."
+    },
+    {
+      "name": "OGN-233",
+      "id": "OGN-233",
+      "role": "Token support."
+    },
+    {
+      "name": "OGN-209",
+      "id": "OGN-209",
+      "role": "Removal essentiel."
+    },
+    {
+      "name": "OGN-213",
+      "id": "OGN-213",
+      "role": "Removal — hidden card en réaction."
+    },
+    {
+      "name": "SFD-154",
+      "id": "SFD-154",
+      "role": "Hidden — buff de might."
+    },
+    {
+      "name": "SFD-043",
+      "id": "SFD-043",
+      "role": "Retreat les unités à la base, ready pour re-attaquer."
+    },
+    {
+      "name": "SFD-163",
+      "id": "SFD-163",
+      "role": "Push le dernier point."
+    },
+    {
+      "name": "UNL-039",
+      "id": "UNL-039",
+      "role": "Nouvel equipment Unleashed."
+    },
+    {
+      "name": "UNL-042",
+      "id": "UNL-042",
+      "role": "Stun — nouvel outil que l'adversaire doit anticiper."
+    },
+    {
+      "name": "UNL-173",
+      "id": "UNL-173",
+      "role": "Convertit une unité en cartes + rune."
+    }
   ],
   "strengths": [
     "1 Win en tournoi online occidental + 2 Top 8",
@@ -40,9 +96,27 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "1 Win / 2 Top 8",
-    "sydneyStats": { "winRate": "52%", "matches": 241, "bestPlacement": "25th (10-3-0)" }
+    "sydneyStats": {
+      "winRate": "52%",
+      "matches": 241,
+      "bestPlacement": "25th (10-3-0)"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/azir-emperor-of-the-sands-guide/"
+  "sourceUrl": "https://riftbound.gg/azir-emperor-of-the-sands-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Non-méta sur le papier mais vainqueur Utrecht (skill). Gère bien Aurora et « protect the queen »."
+    ],
+    "techCards": [
+      "Soul Sword (Set 3)",
+      "cascade d'équipements (Eye of the Herald/BF Sword via Hall of Legends)",
+      "triple Arise (briser un hold)",
+      "Deathgrip (transfert de might)",
+      "double Defy"
+    ],
+    "note": "Armée de tokens jetables : sacrifier un token (Hidden Blade) = pioche. Faiblesse : la pioche (chaque gear = une unité). Pickpocket en side adverse."
+  }
 }

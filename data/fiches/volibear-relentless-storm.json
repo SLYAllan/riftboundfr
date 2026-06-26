@@ -1,7 +1,10 @@
 {
   "legendName": "Volibear, Relentless Storm",
   "legendId": null,
-  "domains": ["Body", "Fury"],
+  "domains": [
+    "Body",
+    "Fury"
+  ],
   "set": "Unleashed",
   "tier": 3,
   "archetype": "Dragon Ramp / Big Units",
@@ -13,22 +16,64 @@
     "winCondition": "Overwhelm — déploie des dragons massifs que l'adversaire ne peut pas gérer"
   },
   "keyCards": [
-    { "name": "Kadregrin the Infernal", "role": "Core — finisher dragon, 100% à 2.9x." },
-    { "name": "Elder Dragon", "role": "Core — menace majeure, 93% à 2.7x." },
-    { "name": "Challenge", "role": "Core — force les trades, 93% à 2.5x." },
-    { "name": "Mobilize", "role": "Standard — ramp essentiel, 86% à 3x." },
-    { "name": "Sabotage", "role": "Standard — disruption, 79% à 2x." },
-    { "name": "Sky Splitter", "role": "Standard — removal/board control, 79% à 2.6x." },
-    { "name": "Flurry of Blades", "role": "Standard — combat trick, 71% à 2x." },
-    { "name": "Gentle Gemdragon", "role": "Standard — dragon mid, 64% à 2.9x." },
-    { "name": "Confront", "role": "Standard — challenger, 64% à 2.7x." },
-    { "name": "Herald of Scales", "role": "Flex — early dragon, 57% à 3x." },
-    { "name": "Blazing Scorcher", "role": "Flex — early dragon, 57% à 3x." },
-    { "name": "Stormbringer", "role": "Flex — spell signature, 57% à 1.5x." },
-    { "name": "Punch First", "role": "Flex — removal, 57% à 1.5x." }
+    {
+      "name": "Kadregrin the Infernal",
+      "role": "Core — finisher dragon, 100% à 2.9x."
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Core — menace majeure, 93% à 2.7x."
+    },
+    {
+      "name": "Challenge",
+      "role": "Core — force les trades, 93% à 2.5x."
+    },
+    {
+      "name": "Mobilize",
+      "role": "Standard — ramp essentiel, 86% à 3x."
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard — disruption, 79% à 2x."
+    },
+    {
+      "name": "Sky Splitter",
+      "role": "Standard — removal/board control, 79% à 2.6x."
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Standard — combat trick, 71% à 2x."
+    },
+    {
+      "name": "Gentle Gemdragon",
+      "role": "Standard — dragon mid, 64% à 2.9x."
+    },
+    {
+      "name": "Confront",
+      "role": "Standard — challenger, 64% à 2.7x."
+    },
+    {
+      "name": "Herald of Scales",
+      "role": "Flex — early dragon, 57% à 3x."
+    },
+    {
+      "name": "Blazing Scorcher",
+      "role": "Flex — early dragon, 57% à 3x."
+    },
+    {
+      "name": "Stormbringer",
+      "role": "Flex — spell signature, 57% à 1.5x."
+    },
+    {
+      "name": "Punch First",
+      "role": "Flex — removal, 57% à 1.5x."
+    }
   ],
   "champions": {
-    "Volibear, Furious": { "usage": "100%", "role": "Seul champion — agression et overwhelm." }
+    "Volibear, Furious": {
+      "usage": "100%",
+      "role": "Seul champion — agression et overwhelm."
+    }
   },
   "topBattlefields": [
     "Aspirant's Climb (100%)",
@@ -53,13 +98,38 @@
     "tier": 3,
     "deckCount": 14,
     "bestPlacements": [
-      { "placement": "41st", "player": "Antyn V", "tournament": "Atlanta RQ" },
-      { "placement": "98th", "player": "FOF 麦克阿瑟", "tournament": "S3 Xi'an Regional Open" },
-      { "placement": "106th", "player": "大喷菇", "tournament": "S3 Xi'an Regional Open" }
+      {
+        "placement": "41st",
+        "player": "Antyn V",
+        "tournament": "Atlanta RQ"
+      },
+      {
+        "placement": "98th",
+        "player": "FOF 麦克阿瑟",
+        "tournament": "S3 Xi'an Regional Open"
+      },
+      {
+        "placement": "106th",
+        "player": "大喷菇",
+        "tournament": "S3 Xi'an Regional Open"
+      }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 14 decklists (Xi'an + Atlanta)"
+  "dataSource": "meta-analysis.json — 14 decklists (Xi'an + Atlanta)",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Build Dragons OU Aurora ; high-rolls supérieurs à Viktor."
+    ],
+    "techCards": [
+      "Herald of the Scales (dragons -2 énergie)",
+      "Storm Bringer (signature, dégâts = might à un battlefield + move)",
+      "Elder Dragon",
+      "Dragonsoul Sage (libère de la dépendance Aurora)"
+    ],
+    "note": "Tendance : on coupe de plus en plus Aurora des listes Dragons (la légende donne une rune gratuite par unité mighty)."
+  }
 }

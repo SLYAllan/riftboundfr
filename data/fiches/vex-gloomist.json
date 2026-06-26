@@ -1,7 +1,10 @@
 {
   "legendName": "Vex, Gloomist",
   "legendId": "UNL-193",
-  "domains": ["Calm", "Chaos"],
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
   "set": "Unleashed",
   "tier": 2,
   "archetype": "Hold-control / Attrition & disruption",
@@ -13,13 +16,43 @@
     "winCondition": "Attrition — épuiser l'adversaire via le hold continu + réponses à tout"
   },
   "keyCards": [
-    { "name": "UNL-150", "id": "UNL-150", "cost": 4, "role": "Unité clé #1 — très difficile à déloger d'un battlefield." },
-    { "name": "OGN-073", "id": "OGN-073", "cost": 4, "role": "Unité clé #2 — duo avec UNL-150 pour verrouiller un battlefield." },
-    { "name": "OGN-077", "id": "OGN-077", "role": "Protection d'unités — multiple copies." },
-    { "name": "OGN-058", "id": "OGN-058", "role": "Support Calm staple." },
-    { "name": "OGN-045", "id": "OGN-045", "role": "Contresort Calm staple." },
-    { "name": "UNL-141", "id": "UNL-141", "role": "Unité cheap staple en hold strategy." },
-    { "name": "UNL-036", "id": "UNL-036", "role": "Unité cheap qui a prouvé sa valeur en hold." }
+    {
+      "name": "UNL-150",
+      "id": "UNL-150",
+      "cost": 4,
+      "role": "Unité clé #1 — très difficile à déloger d'un battlefield."
+    },
+    {
+      "name": "OGN-073",
+      "id": "OGN-073",
+      "cost": 4,
+      "role": "Unité clé #2 — duo avec UNL-150 pour verrouiller un battlefield."
+    },
+    {
+      "name": "OGN-077",
+      "id": "OGN-077",
+      "role": "Protection d'unités — multiple copies."
+    },
+    {
+      "name": "OGN-058",
+      "id": "OGN-058",
+      "role": "Support Calm staple."
+    },
+    {
+      "name": "OGN-045",
+      "id": "OGN-045",
+      "role": "Contresort Calm staple."
+    },
+    {
+      "name": "UNL-141",
+      "id": "UNL-141",
+      "role": "Unité cheap staple en hold strategy."
+    },
+    {
+      "name": "UNL-036",
+      "id": "UNL-036",
+      "role": "Unité cheap qui a prouvé sa valeur en hold."
+    }
   ],
   "strengths": [
     "Calm + Chaos = excellent mix support + disruption",
@@ -36,9 +69,27 @@
     "tier": 2,
     "preRegionals": "5 Top 8",
     "regionalResults": "Top 4 Sydney (12-2-1)",
-    "sydneyStats": { "winRate": "53%", "matches": 336, "conversionRate": "20%" }
+    "sydneyStats": {
+      "winRate": "53%",
+      "matches": 336,
+      "conversionRate": "20%"
+    }
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
-  "sourceUrl": "https://riftbound.gg/vex-gloomist-guide/"
+  "sourceUrl": "https://riftbound.gg/vex-gloomist-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Meilleur deck de hold du set (haut B / bas A).",
+      "Pire matchup : MF Aurora (Elder Dragon = « réponse à tout »). Difficile : boardwipes, Ezreal contrôle."
+    ],
+    "techCards": [
+      "Vex Apathetic (stun + no-move, ne cible pas → ignore deflect)",
+      "Sona (ready 4 runes EOT)",
+      "Existential Dread",
+      "Shadow (linchpin du hold)"
+    ],
+    "note": "Erreurs de deckbuilding : NE PAS jouer Grove of the God Willow (déjà dans la Légende), éviter Scuttle Crab (0 might)."
+  }
 }

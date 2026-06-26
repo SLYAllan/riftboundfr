@@ -1,7 +1,10 @@
 {
   "legendName": "LeBlanc, Deceiver",
   "legendId": "UNL-199",
-  "domains": ["Mind", "Order"],
+  "domains": [
+    "Mind",
+    "Order"
+  ],
   "set": "Unleashed",
   "tier": 1,
   "archetype": "Value-engine / Deathknell synergy",
@@ -13,13 +16,41 @@
     "winCondition": "Deathknell engine inarrêtable — value infinie une fois UNL-172 + OGN-236 posés"
   },
   "keyCards": [
-    { "name": "UNL-172", "id": "UNL-172", "role": "Backbone #1 — ne jamais manquer de ressources." },
-    { "name": "OGN-236", "id": "OGN-236", "role": "Backbone #2 — DOIT être retiré avant tout Deathknell, sinon bonus massif." },
-    { "name": "UNL-200", "id": "UNL-200", "role": "Versatile — value sur propres unités OU removal en copiant l'unité adverse." },
-    { "name": "OGN-209", "id": "OGN-209", "role": "Removal fantastique avec plein de réflexions jetables." },
-    { "name": "OGN-011", "id": "OGN-011", "role": "Closer — push pour la victoire." },
-    { "name": "UNL-176", "id": "UNL-176", "role": "Sécurisation — verrouille un battlefield." },
-    { "name": "OGN-242", "id": "OGN-242", "role": "Variante slow (Sydney) — première apparition de ce build." }
+    {
+      "name": "UNL-172",
+      "id": "UNL-172",
+      "role": "Backbone #1 — ne jamais manquer de ressources."
+    },
+    {
+      "name": "OGN-236",
+      "id": "OGN-236",
+      "role": "Backbone #2 — DOIT être retiré avant tout Deathknell, sinon bonus massif."
+    },
+    {
+      "name": "UNL-200",
+      "id": "UNL-200",
+      "role": "Versatile — value sur propres unités OU removal en copiant l'unité adverse."
+    },
+    {
+      "name": "OGN-209",
+      "id": "OGN-209",
+      "role": "Removal fantastique avec plein de réflexions jetables."
+    },
+    {
+      "name": "OGN-011",
+      "id": "OGN-011",
+      "role": "Closer — push pour la victoire."
+    },
+    {
+      "name": "UNL-176",
+      "id": "UNL-176",
+      "role": "Sécurisation — verrouille un battlefield."
+    },
+    {
+      "name": "OGN-242",
+      "id": "OGN-242",
+      "role": "Variante slow (Sydney) — première apparition de ce build."
+    }
   ],
   "strengths": [
     "Seule légende Deathknell — unique et difficile à cibler",
@@ -35,9 +66,29 @@
     "tier": 1,
     "preRegionals": "2 Wins / 14 Top 8",
     "regionalResults": "Top 8 Sydney (12-3-0)",
-    "sydneyStats": { "winRate": "53%", "matches": 539, "conversionRate": "18.2%" }
+    "sydneyStats": {
+      "winRate": "53%",
+      "matches": 539,
+      "conversionRate": "18.2%"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
-  "sourceUrl": "https://riftbound.gg/leblanc-deceiver-guide/"
+  "sourceUrl": "https://riftbound.gg/leblanc-deceiver-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "La plus puissante « quand elle part » mais décline en rounds profonds (Yi/Diana/Irelia).",
+      "Cauchemar des decks de sorts de dégâts ; difficile vs decks de hold + Vex (stun les reflections)."
+    ],
+    "techCards": [
+      "Karthus (double chaque Death Knell)",
+      "Glasc Mixologist (revive ≤3 might)",
+      "Baited Hook (l'activateur)",
+      "Mirror Image (copie l'effet de carte seul)",
+      "Ruined Rex + Sacrifice",
+      "Atakhan (win-con mono-carte vs Master Yi/Vex)"
+    ],
+    "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit)."
+  }
 }

@@ -1,7 +1,10 @@
 {
   "legendName": "Fiora, Grand Duelist",
   "legendId": "SFD-205",
-  "domains": ["Order", "Body"],
+  "domains": [
+    "Order",
+    "Body"
+  ],
   "set": "Spiritforged",
   "tier": 2,
   "archetype": "Midrange / Buff-oriented, variante OGN-242",
@@ -13,17 +16,61 @@
     "winCondition": "Unités buffées snowball le board. OGN-242 comme plan alternatif brute force."
   },
   "keyCards": [
-    { "name": "OGN-232", "id": "OGN-232", "role": "Unité 4-might principale — cible de buff idéale." },
-    { "name": "OGN-164", "id": "OGN-164", "role": "Seconde unité 4-might focus." },
-    { "name": "UNL-169", "id": "UNL-169", "role": "Nouveau staple Unleashed — seul vrai ajout du set pour Fiora." },
-    { "name": "SFD-109", "id": "SFD-109", "role": "Gear removal — gère les Aurora et autres gears adverses." },
-    { "name": "UNL-158", "id": "UNL-158", "role": "Equipment — buff permanent." },
-    { "name": "SFD-161", "id": "SFD-161", "role": "Equipment complémentaire." },
-    { "name": "SFD-097", "id": "SFD-097", "role": "Buff de might." },
-    { "name": "SFD-206", "id": "SFD-206", "role": "Protection fantastique — protège les unités du removal." },
-    { "name": "UNL-173", "id": "UNL-173", "role": "Convertit une unité condamnée en cartes + rune extra." },
-    { "name": "OGN-242", "id": "OGN-242", "role": "Win con brute force — puissant mais risqué (gear removal partout)." },
-    { "name": "OGN-226", "id": "OGN-226", "role": "Compagnon d'OGN-242 — développe 2 unités en 1 carte." }
+    {
+      "name": "OGN-232",
+      "id": "OGN-232",
+      "role": "Unité 4-might principale — cible de buff idéale."
+    },
+    {
+      "name": "OGN-164",
+      "id": "OGN-164",
+      "role": "Seconde unité 4-might focus."
+    },
+    {
+      "name": "UNL-169",
+      "id": "UNL-169",
+      "role": "Nouveau staple Unleashed — seul vrai ajout du set pour Fiora."
+    },
+    {
+      "name": "SFD-109",
+      "id": "SFD-109",
+      "role": "Gear removal — gère les Aurora et autres gears adverses."
+    },
+    {
+      "name": "UNL-158",
+      "id": "UNL-158",
+      "role": "Equipment — buff permanent."
+    },
+    {
+      "name": "SFD-161",
+      "id": "SFD-161",
+      "role": "Equipment complémentaire."
+    },
+    {
+      "name": "SFD-097",
+      "id": "SFD-097",
+      "role": "Buff de might."
+    },
+    {
+      "name": "SFD-206",
+      "id": "SFD-206",
+      "role": "Protection fantastique — protège les unités du removal."
+    },
+    {
+      "name": "UNL-173",
+      "id": "UNL-173",
+      "role": "Convertit une unité condamnée en cartes + rune extra."
+    },
+    {
+      "name": "OGN-242",
+      "id": "OGN-242",
+      "role": "Win con brute force — puissant mais risqué (gear removal partout)."
+    },
+    {
+      "name": "OGN-226",
+      "id": "OGN-226",
+      "role": "Compagnon d'OGN-242 — développe 2 unités en 1 carte."
+    }
   ],
   "strengths": [
     "Compétitive pour top 8 dans la plupart des tournois",
@@ -38,9 +85,28 @@
   "competitiveResults": {
     "tier": 2,
     "preRegionals": "1 Win / 11 Top 8",
-    "sydneyStats": { "winRate": "48%", "matches": 235, "bestPlacement": "17th (10-3-0)" }
+    "sydneyStats": {
+      "winRate": "48%",
+      "matches": 235,
+      "bestPlacement": "17th (10-3-0)"
+    }
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
-  "sourceUrl": "https://riftbound.gg/fiora-grand-duelist-guide/"
+  "sourceUrl": "https://riftbound.gg/fiora-grand-duelist-guide/",
+  "vodInsights": {
+    "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
+    "matchups": [
+      "Montante (B→A), méta plus tempo. EN SPIRITFORGED : la vraie réponse à Draven (matchup le plus équilibré).",
+      "Cède au go-wide Rek'Sai."
+    ],
+    "techCards": [
+      "Shepherd's Heirloom (équip via XP)",
+      "Kinkou Initiate (3-cost draw, MVP)",
+      "Sett Brawler (moteur)",
+      "Riposte (signature, un des meilleurs counters)",
+      "build Baited Hook"
+    ],
+    "note": "Veut franchir le seuil mighty via ÉQUIPEMENT (deflect/ganking/shield), offense > défense. Faiblesse : la pioche."
+  }
 }
