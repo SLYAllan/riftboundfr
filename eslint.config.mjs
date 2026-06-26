@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts / seeds / données : hors périmètre app → ne pollue plus `npm run lint` (L15).
+    "scripts/**",
+    "prisma/**",
+    "data/**",
+    "audit-task*.js",
   ]),
 ]);
 

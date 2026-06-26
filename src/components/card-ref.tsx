@@ -95,6 +95,8 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
           className={`cursor-pointer ${cls}`}
           onMouseEnter={show}
           onMouseLeave={() => { setHovered(false); setPos(null); }}
+          onFocus={show}
+          onBlur={() => { setHovered(false); setPos(null); }}
         >
           {children ?? name}
         </a>
@@ -102,8 +104,12 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
         <span
           ref={ref as React.RefObject<HTMLSpanElement>}
           className={`cursor-help ${cls}`}
+          tabIndex={0}
+          aria-label={name}
           onMouseEnter={show}
           onMouseLeave={() => { setHovered(false); setPos(null); }}
+          onFocus={show}
+          onBlur={() => { setHovered(false); setPos(null); }}
         >
           {children ?? name}
         </span>

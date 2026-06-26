@@ -32,6 +32,8 @@ const getHomeData = unstable_cache(
             { featured: true },
           ],
         },
+        // Borne le pool (L14) : on n'en affiche que 6 au hasard, inutile de tout charger.
+        take: 60,
         select: {
           id: true,
           slug: true,

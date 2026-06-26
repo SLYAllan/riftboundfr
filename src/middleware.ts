@@ -2,6 +2,24 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
+  // CSRF (L8) : refuse les écritures cross-origin sur l'API (défense en profondeur
+  // au-dessus de SameSite=Lax). Origin absent (clients non-navigateur) = toléré.
+  if (
+    ["POST", "PUT", "PATCH", "DELETE"].includes(request.method) &&
+    request.nextUrl.pathname.startsWith("/api/")
+  ) {
+    const origin = request.headers.get("origin");
+    if (origin) {
+      try {
+        if (new URL(origin).host !== request.headers.get("host")) {
+          return NextResponse.json({ error: "Origine non autorisée" }, { status: 403 });
+        }
+      } catch {
+        return NextResponse.json({ error: "Origine invalide" }, { status: 403 });
+      }
+    }
+  }
+
   const response = NextResponse.next();
 
   response.headers.set("X-Frame-Options", "DENY");

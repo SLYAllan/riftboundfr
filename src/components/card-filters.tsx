@@ -54,6 +54,8 @@ export function CardFilters({ sets }: CardFiltersProps) {
               <button
                 key={d}
                 onClick={() => toggleDomain(d)}
+                aria-pressed={active}
+                aria-label={`Domaine ${DOMAIN_LABELS_FR[d] ?? d}`}
                 className={cn(
                   "rounded-md border px-2.5 py-1.5 text-xs font-bold uppercase tracking-wide transition-all",
                   active
@@ -74,7 +76,7 @@ export function CardFilters({ sets }: CardFiltersProps) {
 
         {/* Dropdowns */}
         <div className="flex flex-wrap items-center gap-2 flex-1">
-          <select className={selectClass} value={selectValue("set")} onChange={(e) => updateFilter("set", e.target.value)}>
+          <select aria-label="Filtrer par set" className={selectClass} value={selectValue("set")} onChange={(e) => updateFilter("set", e.target.value)}>
             <option value="all">Set</option>
             <option value="origins">Origins</option>
             <option value="spiritforged">Spiritforged</option>
@@ -82,14 +84,14 @@ export function CardFilters({ sets }: CardFiltersProps) {
             <option value="promo">Promo</option>
           </select>
 
-          <select className={selectClass} value={selectValue("type")} onChange={(e) => updateFilter("type", e.target.value)}>
+          <select aria-label="Filtrer par type" className={selectClass} value={selectValue("type")} onChange={(e) => updateFilter("type", e.target.value)}>
             <option value="all">Type</option>
             {CARD_TYPES.map((t) => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>
 
-          <select className={selectClass} value={selectValue("rarity")} onChange={(e) => updateFilter("rarity", e.target.value)}>
+          <select aria-label="Filtrer par rareté" className={selectClass} value={selectValue("rarity")} onChange={(e) => updateFilter("rarity", e.target.value)}>
             <option value="all">Rarete</option>
             {RARITIES.map((r) => (
               <option key={r} value={r}>{r}</option>

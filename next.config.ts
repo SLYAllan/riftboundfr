@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
+  experimental: {
+    // Tree-shaking ciblé des gros barrels d'icônes (L12).
+    optimizePackageImports: ["lucide-react"],
+  },
   images: {
     remotePatterns: [
       {
