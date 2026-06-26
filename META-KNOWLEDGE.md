@@ -1707,3 +1707,32 @@ Meta top 16 : Draven 43.75% (7/16), Master Yi 18.75%, Irelia 12.5%. Annie gagne 
 | **mobalytics.gg/riftbound** | ⚠️ Accessible mais app JS — trending decks/tier list non extractables via curl |
 | **riftboundstats.com** | ⚠️ App JS — "#1 Competitive Riftbound Database" mais contenu dynamique |
 | **riftdecks.com** | ✅ Scraping via Firecrawl. 7987 decklists extraites au total (20 tournois) |
+
+---
+
+## Juin 2026 (v8) — Passe 3 VOD (118 casts, Set 2 surtout)
+
+> Distillé de `data/video-insights/pass3-2026-06.md` (net-new vs les 2 docs précédents). Casts = factuel,
+> `[avis]` = caster. ⚠️ **« Ari » des transcripts Whisper = Ahri** (corrigé partout). Matchups pairwise
+> consolidés dans `data/video-insights/matchups-reference.md`. Aucune decklist fabriquée.
+
+### Chiffres de tournois (factuel)
+- **RQ Fuzhou (511 j. J1, 64 J2)** : **Top 64 = 40 Draven / 64 (62,5 %)**, puis Aurelia, Kai'Sa, Fiora. **Grande finale : Draven (apot2) bat Fiora 2-0** = 1er champion Regional Open Saison 2. Beaucoup de **DRAW** (règle RO : victoire par 2 pts d'écart sinon égalité).
+- **Finale régionale Shangdu** : Draven bat Fiora 2-0 (2e champion Draven consécutif).
+- **Shanghai National Open** : Kai'Sa ~30 % du field ; Viktor = 3e deck le plus représenté ; **Omega Zero (Kai'Sa control) = 1er champion national**, bat Master Yi 2-0 (prize ~$30k).
+- **R&R Invitational** : J Chan 1er champion (bat Rek'Sai 2-1, miroir Draven en finale). **Bologna (340 j.)** : miracle Draven 1ʳᵉ place, « nemesis méta », quasi tier 0.
+- **« Hongshou »** : **4 des Top 8 = Master Yi** (2 ramp standard, 2 Dazzling Aurora).
+
+### Tier / méta [avis casters]
+- **Draven = tier 0** Set 2 (domine le field, ~62 % du Top 64 Fuzhou) mais les pros jouent autour → peu de titres en pro tour ; **triangle Draven < Ezreal < Irelia < Draven** ; **Fiora = la vraie réponse à Draven**.
+- **MF Aurora (Dazzling Aurora) = le « gros méchant » oppressif** Set 2-3, « il faut une limite » ; **telltale : un Poro T1 = pas Aurora**. Les 2 derniers points contre elle sont les plus durs.
+- **Order = seule couleur avec du kill sec** (Call the Weak / Hidden Blade, ignore le might) → définit la méta. **Set 2 tourne autour du gear + gold** → gear-hate main-deck = meta-call.
+- Légendes secondaires Set 2 viables mais sous-représentées (gatées derrière leur mécanique) : Set, Victor (Jace+Vanguard Armory « carte la plus oppressante »), Ahri (gagne une finale vs Kai'Sa), Rek'Sai (bat Aurelia 3-0), Yasuo (bat MF Aurora), Jinx, Ornn, Renata (1er support, ouvre la porte au 2v2). Cores détaillés dans DECKBUILDING-RULES.md (pass3).
+
+### Rulings net-new (à connaître pour la couverture)
+- **Triggers « missable »** (head judge) : Ravenbloom Student, Arena's Greatest (+1 pt), Annie (ready 2 runes EOT), Obelisk of Power, Dazzling Aurora — ne disent pas « may » → **à ANNONCER** sinon rulés ratés (points perdus en cast).
+- **Draven (FAQ)** : ne peut pas passer de 6 à 8 pts seul (un seul battlefield conquis/tour) ; ne pioche pas si stun en défense. **Draven Audacious** : pas de point si l'unité est sauvée (GA/Zhonya's) ; à sa mort EN combat l'adversaire marque 1 (combo Fight or Flight = 2 pts).
+- **Une carte CONTRÉE n'est pas « jouée »** (ne compte pas pour Darius re-ready / Ravenbloom Student).
+- **Hidden Blade** : cible une unité **ON battlefield** uniquement. **Switcheroo** (Spirit Forge) : coût additionnel, quasi « je gagne » en 1v1.
+- **Set 2 (Arata)** : might peut descendre à 0/négatif (Origins avait un plancher). **Errata** : Falling Star + Akathian/Nakathian Rain durcis (moins de kills « cheese » pour Kai'Sa).
+- **Précédent « 702 / face-down zone »** : un juge peut upgrade un warning en game loss si une info de zone face-cachée est modifiée irréparablement (déjà dans cross-set-casts).

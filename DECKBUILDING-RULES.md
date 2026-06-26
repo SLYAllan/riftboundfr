@@ -796,3 +796,43 @@ Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champi
 - **vs Aurora** : grouper ses unités sur un même battlefield neutralise l'Elder Dragon (un seul clear) ; Turn to Dust en multiple est la tech reine. Aurora reste binaire : si le plan A ne se pose pas, pas d'outils interactifs.
 - **Playoffs = decklists ouvertes** : sideboard à information quasi-parfaite ; sortir ses cartes mortes (gear hate vs deck gearless) est impératif. Brenn/Thundersong (lock après réaction) punit les joueurs qui laissent 4+ runes ouverts (ex : Diana).
 - **Confirmation déclin Aurora** : 1 seul Aurora en Top 8 Vancouver (Sivir), sorti en quart — le gear hate généralisé referme la fenêtre, et touche aussi les Irelia/Irelia gear.
+
+---
+
+## Pass 3 (26 juin) — cores/tech des légendes secondaires Set 2 (casts)
+
+> Net-new distillé de `data/video-insights/pass3-2026-06.md` (118 casts). Casts = factuel, `[avis]` = caster.
+> Noms EN **à recouper** au scrape brut (Whisper). ⚠️ **« Ari » des transcripts = Ahri** (corrigé).
+> Matchups consolidés à part dans `data/video-insights/matchups-reference.md`.
+
+**Set** (Fury go-tall, légende « sauvetage ») : Arena Bar ×3 / Warmog's Armor (moteur de buff), **Sett Brawler** + Showstopper/First Mate (accelerate → might quasi infini), Sett Kingpin (anti go-wide), triple Seal (rend l'ability gratuite), Challenge (removal), Call to Glory, Divine Judgment (anti-Lux/ramp), Vilemaw's Lair (lead anti-Annie). **Faiblesse structurelle : très peu de card draw → besoin du Dreaming Tree** ; faible au go-wide (removal mono-cible Order).
+
+**Victor** (Order prison/token) : **Trifarian War Camp** pivot, combo **Jace + Vanguard Armory** (3 recruits/tour, snowball type Aurora) + Veiled Temple (re-ready), finishers Imperial Decree / Grand Stratagem / Singularity / Drag Under / Watcher. **Perd au Ruin Runner et au Ferrous Forerunner.**
+
+**Lux** (Order unitless control) : **Lux Crownguard** (+2 runes), removal lourd (Singularity, Call the Weak, Imperial Decree, **Grand Stratagem** letal), Recruit the Vanguard (recruits), ~9 counters. **Faiblesse majeure : ne peut PAS conquérir → 0-2 vs Aurelia.**
+
+**Rumble** (mech tribal) : Rumble Scrapper (+1 unités, stackable), Production Surge, **Danger Zone** (signature), Bubble Bot, Marching Orders (removal gratuit). Fort early/mid mais **peu d'accelerate le tour où tu joues → lent, mauvais de derrière**.
+
+**Renata** (1er support, gold) : gold sacrifié = +1 énergie à ≤3 pts (tours explosifs : double Time Warp + Echo), **Pawn** (Deflect 2, grossit avec gold), Hostile Takeover. **Faible aux board-wipes gold (Thermal Beam efface les gold tokens/le Pawn).**
+
+**Azir** (gear/sand soldiers) : Eye of the Herald, **Brutalizer** (transfert d'équip → 5 might), **Arise** (signature), Azir Sovereign (overkill conquer). Triple Defy. **Jax** (gear) : Apprentice Smith (pioche), **Strike Down** + **Counter Strike** (pseudo-stun), Brutalizer récurrent ; variante Jax Dazzling Aurora.
+
+**Ornn** (Blue Horn, gear midrange) : **Blue Horn** + 1-2 **Svellsongur** (recopie +1 → might 16-21+), Treasure Hoard (gold = gear), Tianna Crownguard (déni de score), Requiem (ready + gank). « protège/tue le Blue Horn ».
+
+**Yasuo** (move-to-score) : Ride the Wind + Back Alley Bar (+might au move) + Zhonya's, **Last Hand** (double might), **Inverted Timeline** (anti-Kai'Sa), Mask of Foresight. **Bat MF Aurora et Fiora 2-0** ; perd vs Viktor.
+
+**Ahri** (blue défensif/control — *PAS « Ari »*) : passive **-1/-2 might à toute unité ennemie entrante**, Alluring Ahri (skip tour adverse), Wielder of Water (anti-Annie), Foxfire (side anti-aggro AoE), Falling Comet, Time Warp, Defy ×3. **Gagne une finale vs Kai'Sa 2-0.**
+
+**Sivir** (mono purple chaos) : même package qu'Annie (**Called Shot ×3**, Ezreal/Fizz, Sabotage) ; variante midrange discard (**Raza**, Last Rites). **Jinx** (miracle red) : **Sun Disc** (accelerate ready/legion), Immortal Phoenix, win-con **Vi + Ride the Wind**.
+
+**Lee Sin** (Body/Calm midrange) : Sunlit Guardian (shield/tank), Clockwork Keeper (pseudo-accelerate), Dragon Rage (double-challenge), Block. **Leona** (Order stun) : Forgotten Monument, avalanche de stuns (Rune Prison, Zenith Blade), **Tianna Crownguard** MVP, Harnessed Dragon. **Rek'Sai** (Seal of Rage rouge/jaune, removal) : **Void Rush** (signature top-tier), Immortal Phoenix (rejoue en tuant SA propre unité), Undertitan (anthem), Candlelit Sanctum. **Bat Aurelia 3-0** ; perd vs Draven (full-hold puni).
+
+**Master Yi set 2** : **Trinity Force = deck RAPIDE** (point bonus au hold → 2 pts/tour), **Ruin Runner + Valmont's Lair = némésis de Draven** ; 4/8 d'un Top 8 = Master Yi. **Kai'Sa control/hold** (Omega Zero, 1er champion national) : tient les battlefields vs Aurora, **Angle Shot** (retire les GA, MVP anti-Aurelia), Orb of Regret, Ravenborn Tome.
+
+### Règles de deckbuilding net-new (pass3)
+- **[avis] Set 2 tourne autour du GEAR et du GOLD** (gold = gear, paie les coûts) → le **gear-hate main-deck** (Akshan, Factory Recall, Pickpocket/Salvage, Thermo Beam) est un meta-call valable (beaucoup de légendes en dépendent : Azir, Ornn, générateurs de gold).
+- **[avis] Couleur Order = seule avec du kill sec** (Call the Weak / Hidden Blade), **ignore le might** → définit la méta et punit les decks peu unit-dépendants (Fiora go-tall, Lux).
+- **[avis] Punch First** (+5 might, 1 power, **non-Defyable**) = carte la plus game-defining du set malgré son statut commun ; seules réponses : Windwall/Rebuke/Switcheroo (toutes Chaos).
+- **[avis] Treasure Hunter** (gold engine) = meilleur drop hors légende/champion ; **Stellacorn Herder** = peut-être meilleure carte verte ; **Sneaky Deckhand** (point gratuit en jouant 2e).
+- **[avis] Decks « tall » (Teemo, Yi) en difficulté vs go-wide** (Darius token-hook + War Camp). Decks « pet » hors-méta (Set, Rumble, Victor prison) partagent la faiblesse **manque de card draw**.
+- **Gear : bien plus efficace en attaque qu'en défense** (ré-équiper BF Sword après combat = Punch First gratuit répété).
