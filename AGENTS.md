@@ -20,3 +20,20 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   pas à sa source brute = fabrication). Corriger ou supprimer tout MISMATCH.
 - Les articles Top 8 avec decklists codées en dur (`prisma/seed-top8-articles.ts`)
   doivent refléter le scrape fidèle, pas une couche approximée.
+
+# Automatismes & sources de vérité (lire avant d'agir)
+
+**Commandes one-shot** (codes de sortie réels — NE PAS passer par `rtk` comme garde dans un `&&`, `rtk` masque l'exit code) :
+- `npm run verify` → `tsc --noEmit && next build` (à lancer avant tout push ; vérifier l'EXIT).
+- `npm run fix:names <doc.md>` → auto-corrige les noms Whisper (distance ≤ 2 vs DB cartes) ; `npm run validate:names` = gate (exit 1 si suspects).
+- `npm run validate:decks` → garde-fou anti-fabrication decklists (exit 1 si MISMATCH vs scrape brut).
+
+**Sources de vérité (où vit quoi) :**
+- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (7 bans) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
+- Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
+- Méta/tier/rulings → `META-KNOWLEDGE.md` · règles deckbuilding/cores → `DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
+
+**Réflexes :**
+- **Coupler le nouveau à l'ancien** : recouper toute donnée importée contre les sources ci-dessus AVANT de la figer ; ne jamais traiter une info isolément.
+- **Agents/Workflow par vagues de 3-4 max** (jamais plus → rate-limit API). Pas 2 gros workflows en même temps.
+- Contenu **site** rendu : **pas de tiret cadratin (—)**, terminologie FR officielle. Docs internes (META/DECKBUILDING/video-insights) : em-dash toléré.

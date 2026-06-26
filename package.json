@@ -11,7 +11,11 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "sync-cards": "npx tsx scripts/sync-cards.ts"
+    "sync-cards": "npx tsx scripts/sync-cards.ts",
+    "verify": "tsc --noEmit && next build",
+    "validate:names": "npx tsx scripts/validate-card-names.mts",
+    "fix:names": "npx tsx scripts/validate-card-names.mts --fix",
+    "validate:decks": "python -X utf8 scripts/validate-decklists.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
