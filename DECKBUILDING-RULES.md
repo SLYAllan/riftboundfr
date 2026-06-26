@@ -2,6 +2,8 @@
 
 > Mis a jour le 25 juin 2026 (v7). **Tech & cores issus de 84 VOD compétitives** (reformulés FR, matière privée — copyright). Les VOD **confirment** la table canonique de domaines ci-dessous. Ajout d'une section « Confirmations & tech VOD (v7) » : cartes signature/flex par Légende, anti-méta (surtout anti-Aurora), et règles de deckbuilding nouvelles (Bo1 sideboard avant game, nerf des buffs, gear hate en unité). Source fusionnée : `data/video-insights/unleashed-vod-synthesis-2026-06.md`. **Aucune decklist n'est fabriquée depuis les VOD** (toute liste vient du scrape réel).
 >
+> **MAJ 26 juin (2ᵉ passe, ~184 casts inter-sets) :** **Ban list officielle = 7 cartes** (constructed) — Called Shot, Draven Vanquisher, Fight or Flight, Scrapheap, The Dreaming Tree, Obelisk of Power, **Reaver's Row** ; **à ne jamais inclure dans une liste** (source canonique `src/lib/banned-cards.ts`). Détail des cores/tech/matchups Spiritforged + Origins (Draven domine, Aurelia/Lucian OTK `Ruin Runner`+`Skyfall`+`Trinity Force`, Ezreal Pit Crew, Fiora Baited Hook, Viktor token) et premières impressions Unleashed (Lillia, Pyke) dans `data/video-insights/cross-set-casts-2026-06.md` + les 22 fiches (`data/fiches/*.json`, champ `vodInsights`).
+>
 > ### Confirmations & tech VOD (v7, juin 2026)
 > Cartes citées par les casters comme cœur/flex/tech. À recouper avec le scrape brut avant tout seed (noms en transcription audio parfois approximatifs).
 >
