@@ -48,7 +48,7 @@ export function parseDeckCode(code: string): ParsedDeck {
     if (cardMatch) {
       const quantity = parseInt(cardMatch[1], 10);
       let name = cardMatch[2].trim();
-      let setCode = cardMatch[3]?.trim();
+      let setCode: string | undefined = cardMatch[3]?.trim();
       // Une parenthèse n'est un code d'extension que si elle en a la forme (ex. OGN, SFD-123).
       // Sinon (ex. "Master Yi (Wuju Master)") elle fait partie du nom et doit être conservée.
       if (setCode && !/^[A-Z]{2,4}(-\d+){0,2}$/i.test(setCode)) {
