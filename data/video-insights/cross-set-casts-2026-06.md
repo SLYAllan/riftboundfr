@@ -15,7 +15,7 @@
 **Tendance de fond.** **Draven domine le jour 1** des RQ (~30/130 joueurs sur les premiers RQ chinois),
 souvent qualifié « tier 0 » : meilleure qualité de cartes + pioche massive ; à 6 points avec un board, il
 gagne presque toujours. Deux variantes : **Draven mid-range** (choisit souvent Reaver's Row game 1) et
-**Miracle Draven** (package Ezreal/seals/Scrap Heap, plafond plus haut mais brûle ses propres runes).
+**Miracle Draven** (package Ezreal/seals/Scrapheap, plafond plus haut mais brûle ses propres runes).
 **Mais les pros « savent jouer autour de Draven »** → très représenté mais peu de titres (0 en top 4 à
 Bologna, où **Ezreal (Alan ZQ) gagne** = 1er champion régional occidental).
 

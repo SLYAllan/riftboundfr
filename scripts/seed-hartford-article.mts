@@ -32,7 +32,7 @@ function deckBlock(file: string, id: string, place: string) {
     type: "decklist" as const,
     id,
     deckCode: buildDeckCode(d),
-    deckName: `${d.legend.split(",")[0]} — ${d.player}`,
+    deckName: `${d.legend.split(",")[0]} - ${d.player}`,
     legendName: d.legend,
     playerName: d.player,
     context: `${place} · RQ Hartford`,
@@ -137,7 +137,7 @@ Il y avait une histoire dans cette finale, et Factor l'a racontée lui-même apr
 
 La première manche tourne à l'avantage du [[Master Yi, Wuju Bladesman|Master Yi]]. Une fois le [[Ruin Runner]] en jeu, protégé par le [[Sabotage]] et hors de portée des [[Moonfall]] de la [[Diana, Scorn of the Moon|Diana]], bsweitz n'a tout simplement pas assez de puissance pour passer par-dessus. La manche se referme sans bavure.
 
-La deuxième restera la signature du week-end. En Riftbound, chaque joueur n'engage qu'un seul terrain — et cette fois **les deux finalistes posent un [[The Arena's Greatest|The Arena's Greatest]]**. Comme la Légende de l'arène donne un point de départ à son joueur, ce « double Arena's Greatest » fait démarrer chacun à deux points : il n'en reste que six à conquérir, et la manche vire au sprint. Voyant la Légende de l'arène en face, Factor a aligné la sienne. « Donnons-leur un spectacle », lâche-t-il. Et alors qu'il joue second, là où chaque action compte double, c'est lui qui trouve la dernière ligne et conclut. **2 à 0.**
+La deuxième restera la signature du week-end. En Riftbound, chaque joueur n'engage qu'un seul terrain - et cette fois **les deux finalistes posent un [[The Arena's Greatest|The Arena's Greatest]]**. Comme la Légende de l'arène donne un point de départ à son joueur, ce « double Arena's Greatest » fait démarrer chacun à deux points : il n'en reste que six à conquérir, et la manche vire au sprint. Voyant la Légende de l'arène en face, Factor a aligné la sienne. « Donnons-leur un spectacle », lâche-t-il. Et alors qu'il joue second, là où chaque action compte double, c'est lui qui trouve la dernière ligne et conclut. **2 à 0.**
 
 Et le clou de l'histoire : le [[Ruin Runner]], Factor le qualifiait de pire carte de son week-end. Elle est pourtant remontée au sommet de son deck manche après manche, jusqu'à le porter au titre.`,
   },

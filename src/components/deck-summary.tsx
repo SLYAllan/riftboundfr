@@ -91,14 +91,15 @@ function StackedCurve({
     return map;
   }, [cards, field, maxBucket]);
 
+  // useState AVANT tout return anticipé (rules-of-hooks : sinon nombre de hooks variable → crash).
+  const [hovered, setHovered] = useState<number | null>(null);
+
   const hasData = Array.from(curve.values()).some((b) => b.total > 0);
   if (!hasData) return null;
 
   const maxCount = Math.max(1, ...Array.from(curve.values()).map((b) => b.total));
   const BAR_MAX = 72;
   const buckets = Array.from({ length: maxBucket + 1 }, (_, i) => i);
-
-  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <div>

@@ -87,3 +87,16 @@ data/videos/_*.log
 data/raw-scrapes/**/_*.log
 data/raw-scrapes/**/*.jsonl
 dev-server.log
+
+# --- Nettoyage audit 26 juin : médias VOD + python + logs ---
+data/videos/*.mp3
+data/videos/*.wav
+data/videos/*-frames/
+data/videos/*-day1.json
+data/videos/*-day1.srt
+data/videos/*-day1.tsv
+data/videos/*-day1.vtt
+data/videos/*-day1.txt
+__pycache__/
+*.pyc
+data/raw-scrapes/**/*.log
