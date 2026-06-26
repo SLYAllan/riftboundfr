@@ -26,24 +26,21 @@ export async function POST(
     where: { userId_communityDeckId: { userId: user.id, communityDeckId: deck.id } },
   });
 
-  if (existing) {
-    await prisma.communityDeckLike.delete({ where: { id: existing.id } });
-    await prisma.communityDeck.update({
-      where: { id: deck.id },
-      data: { likes: { decrement: 1 } },
-    });
-    return NextResponse.json({ liked: false });
-  }
-
-  await prisma.communityDeckLike.create({
-    data: { userId: user.id, communityDeckId: deck.id },
-  });
-  await prisma.communityDeck.update({
-    where: { id: deck.id },
-    data: { likes: { increment: 1 } },
+  // Transaction + recompte du compteur depuis le count réel : jamais de drift ni de
+  // valeur négative (les decks communautaires n'ont pas de baseline seedée).
+  const liked = !existing;
+  const likes = await prisma.$transaction(async (tx) => {
+    if (existing) {
+      await tx.communityDeckLike.delete({ where: { id: existing.id } });
+    } else {
+      await tx.communityDeckLike.create({ data: { userId: user.id, communityDeckId: deck.id } });
+    }
+    const count = await tx.communityDeckLike.count({ where: { communityDeckId: deck.id } });
+    await tx.communityDeck.update({ where: { id: deck.id }, data: { likes: count } });
+    return count;
   });
 
-  return NextResponse.json({ liked: true });
+  return NextResponse.json({ liked, likes });
 }
 
 export async function GET(

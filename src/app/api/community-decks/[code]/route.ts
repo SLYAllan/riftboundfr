@@ -19,10 +19,9 @@ export async function GET(
     return NextResponse.json({ error: "Deck introuvable" }, { status: 404 });
   }
 
-  await prisma.communityDeck.update({
-    where: { id: deck.id },
-    data: { views: { increment: 1 } },
-  });
+  // PAS d'incrément de vues ici : ce GET sert aux fetches programmatiques (import par
+  // lien, rafraîchissement du bouton like). Les vues réelles sont comptées par le rendu
+  // de la page /d/[code] elle-même.
 
   return NextResponse.json(deck);
 }

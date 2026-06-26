@@ -47,8 +47,14 @@ export function parseDeckCode(code: string): ParsedDeck {
     const cardMatch = line.match(/^(\d+)x?\s+(.+?)(?:\s+\(([^)]+)\))?$/i);
     if (cardMatch) {
       const quantity = parseInt(cardMatch[1], 10);
-      const name = cardMatch[2].trim();
-      const setCode = cardMatch[3]?.trim();
+      let name = cardMatch[2].trim();
+      let setCode = cardMatch[3]?.trim();
+      // Une parenthèse n'est un code d'extension que si elle en a la forme (ex. OGN, SFD-123).
+      // Sinon (ex. "Master Yi (Wuju Master)") elle fait partie du nom et doit être conservée.
+      if (setCode && !/^[A-Z]{2,4}(-\d+){0,2}$/i.test(setCode)) {
+        name = `${name} (${setCode})`;
+        setCode = undefined;
+      }
       entries.push({ quantity, name, section: currentSection, setCode });
       continue;
     }

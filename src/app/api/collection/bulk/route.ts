@@ -17,9 +17,17 @@ export async function POST(req: Request) {
 
   const body = await req.json().catch(() => null);
   const items: BulkItem[] = Array.isArray(body?.items) ? body.items : [];
-  const valid = items.filter(
+  // Borne anti-DoS : bien au-dessus de la taille du catalogue (~1048 cartes).
+  if (items.length > 5000) return NextResponse.json({ error: "too_many_items" }, { status: 413 });
+  const wellFormed = items.filter(
     (i) => typeof i.cardId === "string" && Number.isInteger(i.quantity) && i.quantity >= 0,
   );
+  // Valide l'existence des cartes (évite les FK orphelines / 500).
+  const ids = [...new Set(wellFormed.map((i) => i.cardId))];
+  const existingIds = new Set(
+    (await prisma.card.findMany({ where: { id: { in: ids } }, select: { id: true } })).map((c) => c.id),
+  );
+  const valid = wellFormed.filter((i) => existingIds.has(i.cardId));
 
   let binderId = typeof body?.binderId === "string" ? body.binderId : null;
   if (binderId) {

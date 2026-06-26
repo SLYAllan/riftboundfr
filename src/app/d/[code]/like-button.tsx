@@ -34,7 +34,7 @@ export function LikeButton({ shareCode, initialLikes, isLoggedIn }: Props) {
       const data = await res.json();
       if (res.ok) {
         setLiked(data.liked);
-        setLikes((prev) => prev + (data.liked ? 1 : -1));
+        setLikes(data.likes); // valeur serveur (recomptée), pas d'optimiste divergent
       }
     } catch {}
     setLoading(false);
