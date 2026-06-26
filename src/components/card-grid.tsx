@@ -4,8 +4,12 @@ import { CardImage } from "@/components/card-image";
 import { RarityBadge } from "@/components/rarity-badge";
 import type { Card } from "@prisma/client";
 
+// Seuls ces champs scalaires sont rendus → permet un select Prisma léger côté /cartes
+// (évite de transférer textPlain/textHtml volumineux). Un Card complet reste assignable.
+type CardGridCard = Pick<Card, "id" | "imageUrl" | "name" | "rarity" | "riftboundId" | "setName" | "type">;
+
 interface CardGridProps {
-  cards: Card[];
+  cards: CardGridCard[];
 }
 
 export function CardGrid({ cards }: CardGridProps) {

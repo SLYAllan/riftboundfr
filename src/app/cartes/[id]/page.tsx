@@ -90,8 +90,27 @@ export default async function CardDetailPage({ params }: PageProps) {
     })
     .slice(0, 5);
 
+  // JSON-LD d'entité (M14) : rend la fiche carte citable (Google rich results / GEO).
+  const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
+  const cardJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: card.name,
+    ...(card.imageUrl ? { image: card.imageUrl } : {}),
+    description: card.textPlain?.replace(/\s+/g, " ").trim() || `${card.name}, carte ${card.type} du set ${card.setName} de Riftbound.`,
+    category: card.supertype ?? card.type,
+    brand: { "@type": "Brand", name: "Riftbound" },
+    url: `${SITE}/cartes/${card.riftboundId}`,
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "Set", value: card.setName },
+      { "@type": "PropertyValue", name: "Rareté", value: card.rarity },
+      ...(card.domains?.length ? [{ "@type": "PropertyValue", name: "Domaines", value: card.domains.join(", ") }] : []),
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cardJsonLd).replace(/</g, "\\u003c") }} />
       <Breadcrumbs
         items={[
           { name: "Cartes", href: "/cartes" },

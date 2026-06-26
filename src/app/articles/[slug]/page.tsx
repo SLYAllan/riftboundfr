@@ -8,6 +8,7 @@ import { BestOfDeckBrowser, type BestOfEntry } from "@/components/best-of-deck-b
 import { parseDeckCode } from "@/lib/deck-code";
 import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import type { ArticleBlock, DecklistCard, DeckSection } from "@/types";
@@ -456,8 +457,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               {relatedArticles.map((r) => (
                 <Link key={r.slug} href={`/articles/${r.slug}`} className="card-hover overflow-hidden rounded-card border border-hairline bg-surface">
                   {r.coverImage && (
-                    <div className="aspect-video bg-surface-raised">
-                      <img src={r.coverImage} alt="" className="h-full w-full object-cover object-top" />
+                    <div className="relative aspect-video bg-surface-raised">
+                      <Image src={r.coverImage} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
                     </div>
                   )}
                   <div className="p-4">

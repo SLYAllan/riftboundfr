@@ -131,8 +131,21 @@ export default async function DeckDetailPage({ params }: PageProps) {
     side: deck.cards.filter((dc) => dc.section === "side").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),
   });
 
+  // JSON-LD d'entité (M14) : deck = CreativeWork citable.
+  const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
+  const deckJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: deck.title,
+    url: `${SITE}/decks/${slug}`,
+    about: `Deck Riftbound ${displayLegendName(deck.legendName)} (${deck.format})`,
+    inLanguage: "fr",
+    isPartOf: { "@type": "WebSite", name: "Riftbound France", url: SITE },
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deckJsonLd).replace(/</g, "\\u003c") }} />
       <Breadcrumbs
         items={[
           { name: "Decks", href: "/decks" },

@@ -176,8 +176,23 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   const legendCountsObj = Object.fromEntries(legendCounts);
   const totalDecks = deduped.length;
 
+  // JSON-LD d'entité (M14) : tournoi = Event citable.
+  const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name,
+    url: `${SITE}/tournois/${slug}`,
+    ...(date ? { startDate: date } : {}),
+    ...(location ? { location: { "@type": "Place", name: location } } : {}),
+    ...(playerCount ? { maximumAttendeeCapacity: playerCount } : {}),
+    description: `Tournoi compétitif Riftbound : résultats, Top 8 et decklists${location ? ` (${location})` : ""}.`,
+    inLanguage: "fr",
+  };
+
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd).replace(/</g, "\\u003c") }} />
       {/* Back nav + fil d'Ariane */}
       <Breadcrumbs
         items={[

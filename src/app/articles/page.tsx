@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import Link from "next/link";
+import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
@@ -103,8 +104,8 @@ export default async function ArticlesPage({
               className="card-hover rounded-card border border-hairline bg-surface overflow-hidden"
             >
               {article.coverImage && (
-                <div className="aspect-video bg-surface-raised">
-                  <img src={article.coverImage} alt="" className="h-full w-full object-cover object-top" />
+                <div className="relative aspect-video bg-surface-raised">
+                  <Image src={article.coverImage} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               )}
               <div className="p-5">

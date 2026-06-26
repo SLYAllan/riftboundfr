@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { SearchBar } from "@/components/search-bar";
 import { CardGrid } from "@/components/card-grid";
@@ -8,6 +9,13 @@ import { CardFilters } from "@/components/card-filters";
 import { Pagination } from "@/components/pagination";
 import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
+
+// Les sets ne changent qu'à une nouvelle extension → cache long (1h, tag "card-sets").
+const getCardSets = unstable_cache(
+  () => prisma.cardSet.findMany({ orderBy: { publishedOn: "asc" } }),
+  ["card-sets-v1"],
+  { revalidate: 3600, tags: ["card-sets"] },
+);
 
 export const metadata: Metadata = {
   title: { absolute: "Cartes Riftbound en français - base de données complète et filtres" },
@@ -63,12 +71,14 @@ export default async function CartesPage({ searchParams }: PageProps) {
   const [cards, total, sets] = await Promise.all([
     prisma.card.findMany({
       where,
+      // select léger : pas de textPlain/textHtml (lourds, inutiles dans la grille).
+      select: { id: true, riftboundId: true, name: true, imageUrl: true, rarity: true, setName: true, type: true },
       orderBy: [{ name: "asc" }],
       skip: (page - 1) * PER_PAGE,
       take: PER_PAGE,
     }),
     prisma.card.count({ where }),
-    prisma.cardSet.findMany({ orderBy: { publishedOn: "asc" } }),
+    getCardSets(),
   ]);
 
   const totalPages = Math.ceil(total / PER_PAGE);
