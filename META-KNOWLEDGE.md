@@ -30,6 +30,12 @@
 - **Overtime Swiss** : victoire **par 2** → 6-7 = **tie** (les deux ratent le top cut) ; top cut untimed.
 - **Max 4 champions** pour Master Yi (sinon 3). Triggers verrouillés une fois sur la chain.
 
+**Ban list officielle (effective 31 mars 2026, 7 cartes — source canonique `src/lib/banned-cards.ts`) :**
+Called Shot, Draven Vanquisher, Fight or Flight, Scrapheap, The Dreaming Tree, Obelisk of Power, **Reaver's
+Row**. (Correction juin 2026 : Reaver's Row manquait, « Draven, Vanquisher » mal orthographié.) Dazzling
+Aurora **non** bannie. Détail des casts inter-sets (matchups Spiritforged/Origins + tech) dans
+`data/video-insights/cross-set-casts-2026-06.md`.
+
 ## 1. Règles clés (résumé pour rédaction)
 
 ### Setup
