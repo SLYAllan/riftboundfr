@@ -1,11 +1,27 @@
 // force-dynamic: queries the DB; `revalidate` froze it empty at Docker build.
 export const dynamic = "force-dynamic";
 
-import { prisma, safeQuery } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
 import type { Metadata } from "next";
+
+// Cache RUNTIME (pas build) : les decks publiés ne changent qu'aux seeds → 5 min suffit.
+// Invalidable via revalidateTag("meta"). Évite de recharger tous les decks à chaque crawl.
+const getMetaData = unstable_cache(
+  () =>
+    Promise.all([
+      prisma.deck.findMany({
+        where: { published: true },
+        select: { legendName: true, tournamentContext: true, format: true, createdAt: true },
+      }),
+      prisma.tierList.findFirst({ where: { current: true, published: true }, include: { entries: true } }),
+    ]),
+  ["meta-snapshot-v1"],
+  { revalidate: 300, tags: ["meta"] },
+);
 
 export const metadata: Metadata = {
   title: "Meta Snapshot",
@@ -27,24 +43,13 @@ interface LegendStats {
 }
 
 export default async function MetaSnapshotPage() {
-  const [decks, currentTierList] = await safeQuery(
-    () => Promise.all([
-      prisma.deck.findMany({
-        where: { published: true },
-        select: {
-          legendName: true,
-          tournamentContext: true,
-          format: true,
-          createdAt: true,
-        },
-      }),
-      prisma.tierList.findFirst({
-        where: { current: true, published: true },
-        include: { entries: true },
-      }),
-    ]),
-    [[], null] as const,
-  );
+  let decks: Awaited<ReturnType<typeof getMetaData>>[0] = [];
+  let currentTierList: Awaited<ReturnType<typeof getMetaData>>[1] = null;
+  try {
+    [decks, currentTierList] = await getMetaData();
+  } catch {
+    [decks, currentTierList] = [[], null];
+  }
 
   if (decks.length === 0) {
     return (

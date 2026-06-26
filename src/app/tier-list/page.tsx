@@ -1,11 +1,37 @@
 // force-dynamic: queries the DB; `revalidate` froze it empty at Docker build.
 export const dynamic = "force-dynamic";
 
-import { prisma, safeQuery } from "@/lib/prisma";
+import { unstable_cache } from "next/cache";
+import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+
+// Cache runtime (5 min, tag "tier-list") : tier lists + cartes légende + decks liés
+// en une fois, au lieu de 3 requêtes Prisma à chaque crawl. Invalidable via revalidateTag.
+const getTierListData = unstable_cache(
+  async () => {
+    const tierLists = await prisma.tierList.findMany({
+      where: { published: true },
+      include: { entries: { orderBy: { position: "asc" } } },
+      orderBy: { createdAt: "asc" },
+    });
+    const allLegendIds = [...new Set(tierLists.flatMap((tl) => tl.entries.map((e) => e.legendId)))];
+    const allDeckIds = [
+      ...new Set(tierLists.flatMap((tl) => tl.entries.map((e) => e.deckId)).filter((id): id is string => id != null)),
+    ];
+    const [legendCards, linkedDecks] = await Promise.all([
+      prisma.card.findMany({ where: { riftboundId: { in: allLegendIds } } }),
+      allDeckIds.length > 0
+        ? prisma.deck.findMany({ where: { id: { in: allDeckIds } }, select: { id: true, slug: true } })
+        : Promise.resolve([] as { id: string; slug: string }[]),
+    ]);
+    return { tierLists, legendCards, linkedDecks };
+  },
+  ["tier-list-data-v1"],
+  { revalidate: 300, tags: ["tier-list"] },
+);
 
 export const metadata: Metadata = {
   title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)" },
@@ -24,14 +50,12 @@ export const metadata: Metadata = {
 };
 
 export default async function TierListPage() {
-  const tierLists = await safeQuery(
-    () => prisma.tierList.findMany({
-      where: { published: true },
-      include: { entries: { orderBy: { position: "asc" } } },
-      orderBy: { createdAt: "asc" },
-    }),
-    [],
-  );
+  let tierLists: Awaited<ReturnType<typeof getTierListData>>["tierLists"] = [];
+  let legendCards: Awaited<ReturnType<typeof getTierListData>>["legendCards"] = [];
+  let linkedDecks: Awaited<ReturnType<typeof getTierListData>>["linkedDecks"] = [];
+  try {
+    ({ tierLists, legendCards, linkedDecks } = await getTierListData());
+  } catch { /* DB indispo → page vide gracieuse */ }
 
   if (tierLists.length === 0) {
     return (
@@ -48,29 +72,6 @@ export default async function TierListPage() {
       </div>
     );
   }
-
-  const allLegendIds = [
-    ...new Set(tierLists.flatMap((tl) => tl.entries.map((e) => e.legendId))),
-  ];
-  const allDeckIds = [
-    ...new Set(
-      tierLists
-        .flatMap((tl) => tl.entries.map((e) => e.deckId))
-        .filter((id): id is string => id != null),
-    ),
-  ];
-
-  const [legendCards, linkedDecks] = await Promise.all([
-    prisma.card.findMany({
-      where: { riftboundId: { in: allLegendIds } },
-    }),
-    allDeckIds.length > 0
-      ? prisma.deck.findMany({
-          where: { id: { in: allDeckIds } },
-          select: { id: true, slug: true },
-        })
-      : Promise.resolve([]),
-  ]);
 
   const legendMap = Object.fromEntries(
     legendCards.map((c) => [
