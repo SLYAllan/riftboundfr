@@ -48,7 +48,7 @@
 ### Rengar (aggro/tempo)
 - Pride Stalker : quand tu joues une unité, +1 à n'importe quelle unité. Trophy Hunter (chosen) = ambush. Thrill of the Hunt (signature) = banish une unité alliée, la rejoue (reset, revient ambush) — combo « ride the wind scam ».
 - **vs Poppy** : Rengar gagne via flexibilité + Thrill of the Hunt. Faiblesse avouée : matchup horrible vs Vex Apathetic.
-- **vs Ari/Irelia (Xi'an R2)** : Green Ari (hold, -1 might en attaque) renforcée set 3 (Vilemaw, Alpha Wild Claw, Sona, Blue Sentinel). Rengar doit prendre l'initiative (Punch First + Pit Rookie pour percer). Massive Foresight (+2 en défense seul).
+- **vs Ahri/Irelia (Xi'an R2)** : Green Ahri (hold, -1 might en attaque) renforcée set 3 (Vilemaw, Alpha Wild Claw, Sona, Blue Sentinel). Rengar doit prendre l'initiative (Punch First + Pit Rookie pour percer). Massive Foresight (+2 en défense seul).
 - **vs Lily (T2)** : Lily XP (sprites ready), Dusk Rose Lab (sacrifie sprite → pioche). Rengar gagne via Thrill of the Hunt. Challenge tue Lily tôt = clé.
 
 ### Pyke (bounce/hidden)

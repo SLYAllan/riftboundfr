@@ -34,7 +34,7 @@
 > | Ivern, Greenfather | Calme/Ordre | Brush (symétrique), Ivern Nurture, Trusty Ramhound, Daisy, Friendship, Alpha Wild Claw, Emperor's Divide | Draven (anti-hold), bleu non-ciblé |
 > | Vi, Piltover Enforcer | Fureur/Ordre | Vi Destructive (Ganking), gears (Hextech Gauntlets/BF Sword), Deathgrip, Sacrifice, Hidden Blade, Rek'Sai/Darius closers | gear removal (Salvage/Action/Thermo Beam) |
 >
-> **Règles de deckbuilding nouvelles (VOD) :** (1) **Bo1 = sideboard avant la partie** → prévoir une config anti-Aurora prête ; piège pour Sivir/MF mid-range (pas de gear). (2) **Nerf des buffs** : il faut déjà un buff présent pour le dépenser (touche Sett/Vi). (3) Le **gear hate en unité** (Akshan/Action) bat l'Aurora mieux que les contre-sorts (Sabotage les recycle). (4) Decks de **hold** (Vex/Ivern/Ari) : afficher le total de might (compteur) — leur pire ennemi est l'horloge (overtime à +2 = tie).
+> **Règles de deckbuilding nouvelles (VOD) :** (1) **Bo1 = sideboard avant la partie** → prévoir une config anti-Aurora prête ; piège pour Sivir/MF mid-range (pas de gear). (2) **Nerf des buffs** : il faut déjà un buff présent pour le dépenser (touche Sett/Vi). (3) Le **gear hate en unité** (Akshan/Action) bat l'Aurora mieux que les contre-sorts (Sabotage les recycle). (4) Decks de **hold** (Vex/Ivern/Ahri) : afficher le total de might (compteur) — leur pire ennemi est l'horloge (overtime à +2 = tie).
 > Mis a jour le 25 juin 2026 (v6). Intégration des sources éditoriales **riftbound.gg** (recaps Utrecht/Hartford + tier lists « Tianjin » et « One More Regional Until Vendetta »). Ajout : **table canonique des paires de domaines par Légende** (40 Légendes Unleashed) confirmée par riftbound.gg, + ordre de tier list à jour (voir bloc « Paires de domaines (référence riftbound.gg) » ci-dessous). Corrections notables vs versions précédentes : **Rek'Sai = Fureur/Ordre** (et non Corps/Fureur), **Darius = Fureur/Ordre**, **Jhin = Fureur/Esprit** (et non Esprit/Ordre), **Rengar = Fureur/Corps**. Détail complet du méta dans META-KNOWLEDGE.md (v6).
 >
 > ### Paires de domaines (référence riftbound.gg, juin 2026)
@@ -802,7 +802,7 @@ Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champi
 ## Pass 3 (26 juin) — cores/tech des légendes secondaires Set 2 (casts)
 
 > Net-new distillé de `data/video-insights/pass3-2026-06.md` (118 casts). Casts = factuel, `[avis]` = caster.
-> Noms EN **à recouper** au scrape brut (Whisper). ⚠️ **« Ari » des transcripts = Ahri** (corrigé).
+> Noms EN **à recouper** au scrape brut (Whisper). ⚠️ Whisper transcrit **Ahri** en « A-r-i » dans les sources brutes — corrigé ici.
 > Matchups consolidés à part dans `data/video-insights/matchups-reference.md`.
 
 **Set** (Fury go-tall, légende « sauvetage ») : Arena Bar ×3 / Warmog's Armor (moteur de buff), **Sett Brawler** + Showstopper/First Mate (accelerate → might quasi infini), Sett Kingpin (anti go-wide), triple Seal (rend l'ability gratuite), Challenge (removal), Call to Glory, Divine Judgment (anti-Lux/ramp), Vilemaw's Lair (lead anti-Annie). **Faiblesse structurelle : très peu de card draw → besoin du Dreaming Tree** ; faible au go-wide (removal mono-cible Order).
@@ -821,7 +821,7 @@ Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champi
 
 **Yasuo** (move-to-score) : Ride the Wind + Back Alley Bar (+might au move) + Zhonya's, **Last Hand** (double might), **Inverted Timeline** (anti-Kai'Sa), Mask of Foresight. **Bat MF Aurora et Fiora 2-0** ; perd vs Viktor.
 
-**Ahri** (blue défensif/control — *PAS « Ari »*) : passive **-1/-2 might à toute unité ennemie entrante**, Alluring Ahri (skip tour adverse), Wielder of Water (anti-Annie), Foxfire (side anti-aggro AoE), Falling Comet, Time Warp, Defy ×3. **Gagne une finale vs Kai'Sa 2-0.**
+**Ahri** (la légende renard à neuf queues, blue défensif/control) : passive **-1/-2 might à toute unité ennemie entrante**, Alluring Ahri (skip tour adverse), Wielder of Water (anti-Annie), Foxfire (side anti-aggro AoE), Falling Comet, Time Warp, Defy ×3. **Gagne une finale vs Kai'Sa 2-0.**
 
 **Sivir** (mono purple chaos) : même package qu'Annie (**Called Shot ×3**, Ezreal/Fizz, Sabotage) ; variante midrange discard (**Raza**, Last Rites). **Jinx** (miracle red) : **Sun Disc** (accelerate ready/legion), Immortal Phoenix, win-con **Vi + Ride the Wind**.
 
