@@ -105,13 +105,16 @@ export function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="text-ink-secondary md:hidden"
+          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
       {mobileOpen && (
-        <div className="border-t border-hairline px-4 py-4 md:hidden glass">
+        <div id="mobile-menu" className="border-t border-hairline px-4 py-4 md:hidden glass">
           <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">Outils</p>
           {outilsLinks.map((link) => (
             <Link
