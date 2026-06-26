@@ -148,9 +148,10 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
     if (data.champion) {
       const c = resolveCard(data.champion.cardId);
       if (c) {
+        const qty = data.champion.quantity || 1; // respecte les copies multiples (2-3) du champion
         const existing = newDeck.main.find((e) => e.cardId === c.id);
-        if (existing) existing.quantity += 1;
-        else newDeck.main.push(cardToEntry(c));
+        if (existing) existing.quantity += qty;
+        else newDeck.main.push(cardToEntry(c, qty));
       }
     }
 
@@ -314,6 +315,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
   }
 
   function handleSave() {
+    // Le champion est rangé dans la section "legend" à sa vraie quantité ; on l'EXCLUT
+    // du main sauvegardé pour ne pas le dupliquer au rechargement (legend + main).
+    const championEntry = findMatchingChampion(deck.main, deck.legend?.name);
     const data = {
       title: deckTitle,
       legendId: deck.legend?.cardId ?? null,
@@ -321,14 +325,13 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
       legendDomains,
       sections: {
         legend: deck.legend ? [deckEntryToSaved(deck.legend)] : [],
-        main: deck.main.map(deckEntryToSaved),
+        main: deck.main.filter((e) => e.cardId !== championEntry?.cardId).map(deckEntryToSaved),
         rune: deck.rune.map(deckEntryToSaved),
         battlefield: deck.battlefield.map(deckEntryToSaved),
         side: deck.side.map(deckEntryToSaved),
       },
     };
 
-    const championEntry = findMatchingChampion(deck.main, deck.legend?.name);
     if (championEntry) {
       data.sections.legend.push(deckEntryToSaved(championEntry));
     }
@@ -389,7 +392,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
     const championInMain = findMatchingChampion(deck.main, deck.legend?.name);
     const codeData = {
       legend: deck.legend ? { cardId: deck.legend.cardId, quantity: 1 } : null,
-      champion: championInMain ? { cardId: championInMain.cardId, quantity: 1 } : null,
+      champion: championInMain ? { cardId: championInMain.cardId, quantity: championInMain.quantity } : null,
       main: deck.main.filter((e) => e.cardId !== championInMain?.cardId).map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
       rune: deck.rune.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
       battlefield: deck.battlefield.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
@@ -404,7 +407,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
     const entries: { quantity: number; name: string; section: "legend" | "champion" | "main" | "rune" | "battlefield" | "side" }[] = [];
     if (deck.legend) entries.push({ quantity: 1, name: fmt(deck.legend.name), section: "legend" });
     const championInMain = findMatchingChampion(deck.main, deck.legend?.name);
-    if (championInMain) entries.push({ quantity: 1, name: fmt(championInMain.name), section: "champion" });
+    if (championInMain) entries.push({ quantity: championInMain.quantity, name: fmt(championInMain.name), section: "champion" });
     for (const e of deck.main) {
       if (e.cardId === championInMain?.cardId) continue;
       entries.push({ quantity: e.quantity, name: fmt(e.name), section: "main" });

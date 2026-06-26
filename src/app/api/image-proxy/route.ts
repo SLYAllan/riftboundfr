@@ -15,17 +15,24 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Invalid url" }, { status: 400 });
   }
 
-  if (parsed.hostname !== ALLOWED_HOST) {
+  if (parsed.protocol !== "https:" || parsed.hostname !== ALLOWED_HOST) {
     return NextResponse.json({ error: "Host not allowed" }, { status: 403 });
   }
 
   try {
-    const res = await fetch(url);
+    // redirect: "manual" → on ne SUIT pas un 3xx vers une cible interne (SSRF).
+    const res = await fetch(url, { redirect: "manual" });
+    if (res.status >= 300 && res.status < 400) {
+      return NextResponse.json({ error: "Redirect refused" }, { status: 502 });
+    }
     if (!res.ok) {
       return NextResponse.json({ error: "Upstream error" }, { status: 502 });
     }
 
     const contentType = res.headers.get("content-type") ?? "image/webp";
+    if (!contentType.startsWith("image/")) {
+      return NextResponse.json({ error: "Not an image" }, { status: 415 });
+    }
     const buffer = await res.arrayBuffer();
 
     return new NextResponse(buffer, {

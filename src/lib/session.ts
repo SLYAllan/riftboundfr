@@ -15,11 +15,17 @@ function sign(payload: string): string {
   return `${payload}.${hmac.digest("hex")}`;
 }
 
+// Fenêtre de validité d'une session utilisateur signée.
+const SESSION_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+
 function verify(token: string): string | null {
   const dot = token.lastIndexOf(".");
   if (dot === -1) return null;
   const payload = token.substring(0, dot);
   if (token !== sign(payload)) return null;
+  // Expiration : payload = `<userId>:<timestamp>:<nonce>` ; rejette si trop ancien.
+  const ts = Number(payload.split(":")[1]);
+  if (!Number.isFinite(ts) || Date.now() - ts > SESSION_MAX_AGE_MS) return null;
   return payload;
 }
 

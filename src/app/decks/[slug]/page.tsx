@@ -124,7 +124,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
   const actualLegend = deck.cards.find((dc) => dc.section === "legend" && dc.card.type === "Legend") ?? legendCard;
   const deckbuilderCode = encodeDeckBase64({
     legend: actualLegend ? { cardId: actualLegend.card.riftboundId, quantity: 1 } : null,
-    champion: championCard ? { cardId: championCard.card.riftboundId, quantity: 1 } : null,
+    champion: championCard ? { cardId: championCard.card.riftboundId, quantity: championCard.quantity } : null,
     main: deck.cards.filter((dc) => dc.section === "main").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),
     rune: deck.cards.filter((dc) => dc.section === "rune").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),
     battlefield: deck.cards.filter((dc) => dc.section === "battlefield").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),

@@ -27,7 +27,9 @@ export const metadata: Metadata = {
   },
   description:
     "La référence francophone Riftbound : tier lists à jour, decklists de tournois, guides débutants, résultats compétitifs et base de cartes.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  // Fallback sur l'apex PROD (pas localhost) : si NEXT_PUBLIC_SITE_URL manque au build,
+  // les og:image/canonical pointent quand même vers la prod, jamais vers localhost.
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr"),
   keywords: ["Riftbound", "TCG", "cartes", "decks", "tier list", "guides", "tournois", "France", "français"],
   openGraph: {
     type: "website",
@@ -106,13 +108,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="alternate" type="application/rss+xml" title="Riftbound France" href="/rss.xml" />
       </head>
       <body className="min-h-screen flex flex-col" style={{ fontFamily: "var(--font-jakarta), sans-serif" }}>
+        <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[300] focus:rounded-lg focus:bg-arcane focus:px-4 focus:py-2 focus:text-white">
+          Aller au contenu
+        </a>
         <Analytics />
         <ServiceWorkerRegister />
         <CollectionProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main id="contenu" className="flex-1">{children}</main>
           <Footer />
         </CollectionProvider>
         <CookieBanner />

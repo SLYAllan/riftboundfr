@@ -5,9 +5,13 @@ import { getUserFromSession } from "@/lib/session";
 
 export const SESSION_COOKIE = "riftbound_admin";
 
+// Fenêtre de validité d'une session signée (au-delà, le cookie est rejeté côté serveur).
+const SESSION_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
+
 function getSessionSecret(): string {
-  const secret = process.env.SESSION_SECRET || process.env.ADMIN_PASSWORD;
-  if (!secret) throw new Error("SESSION_SECRET or ADMIN_PASSWORD environment variable is required");
+  // PAS de fallback sur ADMIN_PASSWORD (entropie faible) : fail-fast si le secret manque.
+  const secret = process.env.SESSION_SECRET;
+  if (!secret) throw new Error("SESSION_SECRET environment variable is required");
   return secret;
 }
 
@@ -21,7 +25,11 @@ function verifySignature(signed: string): boolean {
   const dotIdx = signed.lastIndexOf(".");
   if (dotIdx === -1) return false;
   const value = signed.substring(0, dotIdx);
-  return signed === signSession(value);
+  if (signed !== signSession(value)) return false;
+  // Expiration : payload = `admin:<timestamp>:<nonce>` ; rejette si trop ancien.
+  const ts = Number(value.split(":")[1]);
+  if (!Number.isFinite(ts) || Date.now() - ts > SESSION_MAX_AGE_MS) return false;
+  return true;
 }
 
 async function isAdminByPassword(): Promise<boolean> {

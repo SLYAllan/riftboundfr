@@ -206,7 +206,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
             }
             return encodeDeckBase64({
               legend: decoded.legend ? { cardId: toRiftboundId(decoded.legend.cardId), quantity: 1 } : null,
-              champion: decoded.champion ? { cardId: toRiftboundId(decoded.champion.cardId), quantity: 1 } : null,
+              champion: decoded.champion ? { cardId: toRiftboundId(decoded.champion.cardId), quantity: decoded.champion.quantity } : null,
               main: decoded.main.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
               rune: decoded.rune.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
               battlefield: decoded.battlefield.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
