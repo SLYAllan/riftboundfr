@@ -52,11 +52,11 @@ const spiritforged: Entry[] = [
 
 const unleashed: Entry[] = [
   { tier: "S", name: "Irelia, Blade Dancer", note: "8 % du field, 6 victoires. Toujours la reine, la plus constante du format." },
-  { tier: "S", name: "Master Yi, Wuju Master", note: "Le nouveau Master Yi du méta (différent du Bladesman d'Origines). 30 top 8." },
-  { tier: "S", name: "LeBlanc, Deceiver", note: "Moteur d'Agonie : tire profit de la mort de ses propres unités. 19 top 8." },
-  { tier: "S", name: "Diana, Scorn of the Moon", note: "Agro-tempo qui monte vite : finaliste de Xi'an, domine les City Challenges." },
-  { tier: "A", name: "Fiora · Lillia · Sivir · Sett · Azir · Kai'Sa · Rengar · Annie", note: "Une douzaine de légendes viables. Sett et Annie surperforment en conversion." },
-  { tier: "B", name: "Vex · Draven · Kha'Zix · Viktor · Pyke · Ezreal · Ornn", note: "Présents en top cut sans gagner. Vex est l'une des plus jouées." },
+  { tier: "S", name: "Master Yi, Wuju Master", note: "Le nouveau Master Yi du méta (différent du Bladesman d'Origines). 30 top 8. A gagné le Régional de Suzhou (finale contre Irelia)." },
+  { tier: "S", name: "LeBlanc, Deceiver", note: "Moteur d'Agonie : tire profit de la mort de ses propres unités. 19 top 8. Se contre en tuant son Karthus tôt (Challenge) plutôt qu'en l'affrontant tard." },
+  { tier: "S", name: "Diana, Scorn of the Moon", note: "Agro-tempo qui monte vite : double championne au plus gros Régional du set (Vancouver, ~2000 joueurs), domine les City Challenges." },
+  { tier: "A", name: "Fiora · Lillia · Sivir · Sett · Azir · Kai'Sa · Rengar · Annie", note: "Une douzaine de légendes viables. Sett et Annie surperforment en conversion. Azir a gagné le RQ de Lille (invaincu)." },
+  { tier: "B", name: "Vex · Draven · Kha'Zix · Viktor · Pyke · Ezreal · Ornn", note: "Présents en top cut sans gagner. Vex est l'une des plus jouées ; Ezreal contrôle a gagné le Triple Win-A-Box en renvoyant la Vex en main pour casser son Hold." },
   { tier: "C", name: "Miss Fortune", note: "Piège du format : 3,3 % du field pour un seul top 8. Le méta a maindecké le retrait d'équipement." },
 ];
 
@@ -114,8 +114,8 @@ const archetypes = [
   },
   {
     name: "Combo / Engine",
-    desc: "Assembler un moteur de valeur (Agonie, cartes face cachée, équipements) qui prend le dessus si la partie dure. Demande de l'expérience.",
-    legends: "LeBlanc, Diana, Vex",
+    desc: "Assembler un moteur de valeur (Agonie, cartes face cachée, équipements, Dragons) qui prend le dessus si la partie dure. Demande de l'expérience. Vu récemment : un Volibear Dragons qui enchaîne réduction de coût et pioche pour vider son deck en un tour.",
+    legends: "LeBlanc, Diana, Vex, Volibear",
     domains: "Esprit, Chaos, Ordre",
   },
   {
@@ -243,6 +243,18 @@ export default function GuideMetaPage() {
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
               <CardRef name="Defy">Defy</CardRef> - le retrait universel à 1 énergie, présent dans presque tous les decks
               réactifs.
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Vex">Vex</CardRef> (version à 4 coût) - un quasi verrou : Déviation, et chaque unité posée par
+              l&apos;adversaire arrive étourdie. Très jouée, souvent citée comme candidate au bannissement.
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Unchecked Power">Unchecked Power</CardRef> - la réponse aux decks de Hold (Vex, Master Yi) :
+              elle balaye un champ de bataille même très chargé et remet la partie à zéro.
+            </div>
+            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
+              <CardRef name="Akshan">Akshan</CardRef> - la réponse en unité à l&apos;archétype Aurora : il vole ou détruit
+              l&apos;équipement adverse, donc l&apos;Aurora elle-même.
             </div>
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">

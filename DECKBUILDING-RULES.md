@@ -836,3 +836,72 @@ Source : VOD officielle Top 8 (`data/videos/vancouver-day1-analysis.md`). Champi
 - **[avis] Treasure Hunter** (gold engine) = meilleur drop hors légende/champion ; **Stellacorn Herder** = peut-être meilleure carte verte ; **Sneaky Deckhand** (point gratuit en jouant 2e).
 - **[avis] Decks « tall » (Teemo, Yi) en difficulté vs go-wide** (Darius token-hook + War Camp). Decks « pet » hors-méta (Set, Rumble, Victor prison) partagent la faiblesse **manque de card draw**.
 - **Gear : bien plus efficace en attaque qu'en défense** (ré-équiper BF Sword après combat = Punch First gratuit répété).
+
+
+---
+
+## Pass 4 (27 juin) — cores des Légendes Set 3 Unleashed (guides RiftLab)
+
+> Distillé des guides dédiés `data/video-insights/pass4-legend-guides-2026-06.md` (13 guides).
+> Perspective **guide/auteur** → souvent `[avis]` (reco de build, pas un résultat de tournoi).
+> Noms alignés sur la DB cartes (`npm run fix:names` passé). Matchups → `matchups-reference.md`.
+> ⚠️ **Aurora = archétype** (gear Dazzling Aurora), pas une Légende.
+
+**Vex** (Chaos control, tenir 1 battlefield) : légende **draw 1 on hold** ; chosen champion **Vex Apathetic** `[avis]` (stun + bloque le move des unités adverses + Deflect → hold quasi incontestable). Core : Mutated Mouser (T1), **Sona** (ready 4 runes), Tianna Crownguard + Ahri (tempo de points), unités 2-énergie cachées (Evelynn, Teemo, Overzealous Fan). Battlefields : **Grove of the God Willow** (draw 1 ≈ draw 2), Bandle Tree, Ravenbloom Conservatory. Counters Defy/Not So Fast/Hard Bargain/Abandon, stun répétable Existential Dread. **Faible aux board-wipes** (Unchecked Power, Ruination, Downwell).
+
+**Kha'Zix** (Body+Chaos, mouvement/isolation) : légende **Void Reaver** (win combat → XP ; XP pour buff/déplacer ses unités à la base). Principe : unités à la base, attaquer puis revenir via combat tricks. Chosen champion **Kha'Zix Mutating Horror** `[avis]`. Combo signature T2 = **Irresistible Faefolk** (drag ennemi) + ambush = kill + 3 XP. Core : Mr. Root, Nidalee, Qiyana[?], Fizz (rejoue Void Assault), Yone Bladesman (late, bloque le retreat). **Void Assault** signature. Battlefield favori **Star Spring**.
+
+**Rengar** (Fury+Body, ambush/pounce) : légende **+1 might quand tu joues une unité**. Chosen champion **Rengar Trophy Hunter** `[avis]` (ambush en réaction même sans unité au battlefield). Core : Irresistible Faefolk, Nidalee, Kai'Sa Survivor, Grim Apothecary, **Brynhir Thundersong**. Cheese late `[avis]` : **Thrill of the Hunt** (signature) + Brynhir = l'adversaire ne joue pas 2 tours d'affilée. Tech : **Repulse** (counterspell anti-rebuke), **Challenge** (obligatoire vs Vex). Gear Fresh Beans (draw). Battlefields Star Spring / Treasure Horde.
+
+**XP Master Yi** (Wuju Master, Calm+Body, level/XP) : ⚠️ PAS le Wuju Bladesman ([[feedback_master_yi_disambiguation]]). Paliers **niv 6 = +1 might à tout (permanent)**, **niv 11 = tout entre ready**. Chosen champion **Master Yi Tempered** `[avis]` (Hunt 2 = 2 XP/conquer-hold). Core : **Voracious Gromp** (Hunt 3), Elder Dragon, White Flame Protector (+8, combo Not So Fast), Arachnid Horror ; **Alpha Strike** (signature removal+XP), **Concentrate** (solve le draw), Discipline. Battlefield clé **Reckoner's Arena** (Hunt sur conquer ET hold = double). Endgame possible Master Yi Unstoppable (untargetable niv 16).
+
+**Pyke** (Fury+Chaos, aggro-control sorts/disruption de main) : légende **Blood Harbor Ripper** (rend une unité à la main + Gold Gear). Chosen champion **Pyke Dockside Butcher** `[avis]` (Hidden + Ganking, accélérable). Core : Bewitching Spirit + Mindsplitter (discard), Fizz Trickster, **Baron Nashor** (finisher), **Death from Below** (signature kill). Tech Falling Star, Star-Crossed, Gust, Rebuke. Battlefield signature **Ripper's Bay** (ramp via la légende).
+
+**Ivern** (Calm+Order, "brush"/animaux, hold) : légende remplace un battlefield par un **token Brush** (+1 might aux cats/dogs/poros/birds). Chosen champions Ivern Friend to All (score si 4 tags) ou Ivern Nurture (scry+buff, plus consistant). Core : Stalwart Poro, Mutated Mouser, Stalking Wolf, **Daisy** (unité signature, -1 énergie/tag), **Friendship** (+1/tag, must). Battlefields "when I conquer" (Treasure Hoard, Zaun Warrens) qu'on transforme en Brush. **Faible aux effets de board sans cible** (blue : The Watcher, Unchecked Power).
+
+**Lillia** (Calm+Mind, tempo sprites) : légende **Thousand-Tailed Watcher** (joue des tokens Sprite ready, -1 énergie/unité temporaire). Deck **tempo pur** (objectif 6 pts vite). Chosen champion **Lillia, Fae Fawn** `[avis]`. Core : **Sprite Fountain** (≈2 pts T1), Scuttle Crab, Ravenbloom Student ; finishers **Thousand-Tailed Watcher** + **Sprite Burst** (non-Defyable). Gears Mask of Foresight, Heart of Dark Ice. Combo Lillia + **Smoke and Mirrors**. **Lilting Lullaby** signature (stop les sorts adverses). Battlefields Dusk Rose Lab / Targon's Peak. **Pire matchup : Vex Apathetic** (annule le gameplan).
+
+**LeBlanc** (Mind+Order, "reflections" temporaires + death-knell) : légende sur conquer/hold → **token Reflection temporaire** (favorise les unités death-knell). Chosen champions **LeBlanc, Everywhere At Once** (Backline, se duplique) ou LeBlanc Fragmented (death-knell draw). Core : **Karthus Eternal** (double les death-knells), **Glasc Mixologist** (rejoue ≤3 might), Soren Scout[?], Watchful Sentry, Baited Hook ; **Mirror Image** signature. **Très bon spread** `[avis]`, écrase le spell-damage rouge (l'attrition leur donne la value). Galère vs Vex Apathetic (stun les Reflections).
+
+**Diana** (Mind+Chaos, mid-range/skirmish "showdown") : légende **Scorn of the Moon** (+1 énergie en showdown). Chosen champion **Diana Lunari** `[avis]` (scry + draw sorts à 1 énergie). Core : Ravenbloom Student, **Hwei**[?] (draw+discard, monte à 8+ might), Tide Turner, Fizz Trickster ; **Moonfall** signature (charm + -2 might AoE), Eclipse, Star-Crossed, Ride the Wind (combo Hwei jusqu'à 14). Battlefields Ravenbloom Conservatory / Abandoned Hall / Targon's Peak. **Dur vs sorts de dégâts** (Pyke/Ezreal/Jhin), seule protection Hard Bargain.
+
+**Vi** (Fury+Order, aggro "excess damage"/équipement) : légende **ready une unité quand 3+ dégâts en excès** → snowball gank. Chosen champion **Vi Destructive** `[avis]` (recycle le trash → boost + ganking ; finit à 6 pts) ou Vi Hot-Headed (double son might en boucle, Deflect). Core : corps jetables (Unsung Hero, Pouty Poro) qui portent les gears, **Hextech Gauntlets** (signature, souvent ~1 énergie), BF Sword, Kai'Sa Survivor (draw), Death Grip + Hidden Blade + Sacrifice. **Plus grosse faiblesse = gear removal** (Salvage, Thermal Beam). Bon vs Aurora.
+
+**Jhin** (Fury+Mind, ramp "4 sorts"/removal) : légende **Virtuoso** (banish les sorts 4+ énergie ; 4 banish → channel 4 runes NON exhaustées + draw). Chosen champions **Jhin Murderous Artist** (on move +1 énergie/power) + **Jhin Meticulous Killer** (×3, 4 might pour 1 power si sort 4+ joué). Core : removal qui touche la base (Deadly Flourish, Rocket Barrage = anti-gear), **Singularity** (×3), **Curtain Call** signature (toolbox), Frigid Touch, Thousand-Tailed Watcher, Sprite Burst. Battlefields Void Gate / Forgotten Library / Vilemaw's Lair. **Galère vs green/deflect** (Vex, XP Master Yi : Defy/Not So Fast cassants).
+
+### Archétype Aurora (gear Dazzling Aurora) — net-new pass4
+- **Pas une légende** : gear 9 énergie 2 power, en fin de tour révèle jusqu'à une unité et **la joue gratuitement** → deck d'unités très haut might (Elder Dragon, Baron Nashor, Mindsplitter). High-roll (monstrueux on-curve, brick sinon).
+- **Légende porteuse** `[avis]` : **Miss Fortune** = reco (ganking → Baron untargetable ; signature Bullet Time) ; **Sivir** = meilleure éco de runes, **supérieure en miroir** ; **Master Yi** = le plus consistant (Zhonya's, Desert's Call).
+- Core support : **Stacked Deck**, Lunar Boon, **Elder Dragon** (assigne les dégâts létaux individuellement = tout le board à 1 HP, combo Flurry of Blades ×3), Last Rites, Headless Resurrection, Challenge, Invert Timelines (vs Vex). Mindsplitter AVANT l'Aurora (retire la gear-hate).
+- **Faiblesses** : super-aggro (Lillia, LeBlanc) si ramp manqué ; **order domain** (Hidden Blade, Cull the Weak qui touche le Baron sans le cibler) ; **Salvage** (gear-hate + draw). Bon vs hold decks (set up lent).
+
+### Règles de deckbuilding net-new (pass4)
+- **[avis] Vex Apathetic = le chosen champion qui définit la méta Unleashed** : stun + blocage de mouvement = **contre structurel** des decks de tokens/tempo (Lillia, Ornn sprites) et des Reflections (LeBlanc). Quasi toutes les fiches le citent comme « pire matchup » → un plan anti-Vex (Challenge, removal Order, pression early) est obligatoire.
+- **[avis] Punch First reste la référence** ; côté Unleashed, **Defy / Not So Fast** sont les cartes qui « cassent » les decks de gros sorts (Jhin) et de combos.
+- **[avis] Le gear-hate est encore plus central en Set 3** : Salvage / Thermal Beam / Rocket Barrage punissent à la fois l'archétype Aurora et Vi (sur-équipement) — meta-call confirmé depuis pass3.
+- **[avis] Hiérarchie des chosen champions** : presque chaque légende Unleashed a un chosen champion « par défaut » nettement supérieur (Vex Apathetic, Kha'Zix Mutating Horror, Rengar Trophy Hunter, Master Yi Tempered, Pyke Dockside Butcher, Lillia Fae Fawn, Diana Lunari, Vi Destructive) — point de départ de tout build.
+- **[avis] Star Spring** = battlefield pivot du Set 3 pour les decks de mouvement/ambush (Kha'Zix, Rengar, LeBlanc) : renvoie une unité à la base gratuitement après un play.
+
+---
+
+## Pass 10-14 — cores Set 1/2 + tech net-new Unleashed (27/06)
+
+> **Cores complets des Légendes Set 1/2 + Spiritforged** (Kai'Sa, Victor, Darius, Sett, Annie, Ornn, MF, Teemo,
+> Yasuo, Draven, Sivir, Azir, Ezreal, Irelia + counter Master Yi) → `data/video-insights/pass10-...md`.
+> Ci-dessous le **net-new de deckbuilding** observé en tournoi (Suzhou, Win-A-Box, Contenders), à coupler aux cores.
+
+### Tech & archétypes net-new (Unleashed, casts)
+- ⭐ **Volibear « Dragon Storm »** (combo) : **Gem Dragon**[?] (chaque dragon → untap des runes) + **Herald of Scales** (dragons −2 énergie) + **K-Dragon**[?] (draw 4-9). 3+3 → ~26 énergie flottante = draw quasi tout le deck. Soutien : Sabotage (strip la main), Confront (enter ready), Dune Drake, Blazing Scorcher.
+- **Azir (yellow)** : un **2e gear 1-drop (Soul Sword)** rend le **gear T1 consistant** = deck "complètement différent" avec. **Hall of Legends** (conquer → ready Azir → un sand soldier de plus). Mécanique : 1 équipement joué coche le bloc ; si Azir untap, pas besoin d'un autre gear. **Weakness = gear-hate (Thermo Beam) + Vex Apathetic (stun les sand soldiers d'Arise).**
+- **Ezreal control** = la version la + oppressante : **3 Bewitching Spirit + Pack of Wonders + Treasure Trove** = vide la main adverse ; Deadly Flourish (removal back-line + gold), Star-Crossed, Fizz, Watcher+Bellows. **Bat Vex** (Rebuke/Star-Crossed renvoient la Vex à la main = reset le hold).
+- **Sett** compétitif (gagne Contenders London) : **3 Seals** (ability gratuite), Set Brawler 12-16 might, Showstopper, **Sabotage** anti-Aurora, **Divine Judgment** (reset, non-Defyable).
+- **Master Yi (proving grounds/mid-range)** : build **double Zhonya's** + **Trophy Hunter** (surprise defender 8-might) + **Vilemaw/Valmar ambush** (finisher type White Flame). Devient un hold deck (>2-drops). XP Master Yi (Unleashed) = autre légende (cf. pass4).
+- **Lillia / Rek'Sai / Darius** = aggro : Lillia = **consistance** (double conquer via sprites + Smoke and Mirrors + Heart of Dark Ice) ; Darius = Phoenix go-wide (Immortal Phoenix + Shadows Call + Undying Legion + Ferrous Forerunner) ; Rek'Sai = feast-or-famine (Immortal Phoenix sacrifice-loop + Void Rush).
+
+### Règles de deckbuilding net-new (pass11-14)
+- **[avis] Unchecked Power / Downwell = réponse obligatoire aux hold decks** (Vex/Yi/MF) : clear un battlefield 12+ might → reset. Un Diana/control SANS Unchecked Power perd vs Vex.
+- **[avis] Akshan = la réponse-UNITÉ à Aurora** (vole/tue le gear → l'Aurora ; dur à empêcher car l'anti-gear est surtout des sorts recyclables) — MAIS **Possession** (Aurora) re-vole l'Akshan. **Adaptatron main-deck** (Irelia) = anti-gear action-speed. **Divine Judgment** = reset/mirror-breaker (Garen/Sett). **Sabotage** arrache l'Aurora.
+- **[avis] Vex Apathetic = contre transversal** : stun tokens/sprites/Reflections **ET** sand soldiers d'Arise (Azir). Plan anti-Vex obligatoire (Challenge, removal Order, pression early, ou Unchecked Power).
+- **[avis] Challenge = anti-LeBlanc** : tue le Karthus T2 → déni du moteur death-knell avant le snowball.
+- **[avis] Faefolk + Forbidding Waste** = combo "drag-isolate" : rend une unité (ex. Irelia) défenseur seul à −2 → ambush kill.
+- **[avis] Aurora se construit autour du high-roll** : meilleur deck game 1, plus faible games 2-3 (un bon joueur Aurora joue bien SANS l'avoir tirée : Forge of the Future early, Elder hardcast, Rift Herald). Le yellow/orange (Sivir/Garen/Poppy) gagne le **miroir Aurora** (Divine Judgment + gear-hate + recycle Order).

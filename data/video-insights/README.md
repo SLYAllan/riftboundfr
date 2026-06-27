@@ -14,6 +14,17 @@
 | Synthèse Unleashed (set 3) | `unleashed-vod-synthesis-2026-06.md` | ~40 matchups + cores set 3. |
 | Passif Spiritforged/Origins (set 2/1) | `cross-set-casts-2026-06.md` | méta Draven, légendes principales. |
 | Légendes secondaires set 2 + rulings | `pass3-2026-06.md` | net-new 118 casts. |
+| Guides de Légende RiftLab (Set 3 Unleashed) | `pass4-legend-guides-2026-06.md` | 13 guides dédiés : core + chosen champion + battlefields + matchups par légende. "Aurora" = archétype (gear Dazzling Aurora), pas une légende. |
+| Tier list Unleashed + deck profiles | `pass5-tierlist-deckprofiles-2026-06.md` | Tier list complète (panel RiftLab, `[avis]` début de set) + cores des deck profiles LeBlanc (DZiden, CCS Atlanta) & Jhin (Jibbs, Utrecht). ⚠️ Aurelia/Irelia ambigus (Whisper). |
+| Meta breakdowns RQ (Sydney/Hartford/Vancouver) | `pass6-rq-meta-breakdowns-2026-06.md` | Meta J1/J2, conversion, top 8, tech — **résultats factuels** + `[avis]`. Confirme Factor (Hartford) & AlanZQ Diana double champion (Vancouver). ⚠️⚠️ Irelia≠Aurelia traités comme 2 decks → contredit la mémoire, à trancher. |
+| Nexus Night casts (gameplay local) | `pass7-nexus-night-casts-2026-06.md` | Leona/Rengar, Vex/Ezreal, Master Yi/MF Aurora : tech + matchups + **rulings** (Elder Dragon, Baron, Bullet Time, Zenith Blade). **Akshan = compteur Aurora clé**. Vex se construit à part (pas de Scuttle Crab/Grove). |
+| Podcasts bans/règles + "Vex overrated" | `pass8-podcasts-bans-rules-2026-06.md` | Liste de bans (Draven/Cull the Weak/Fight or Flight, **PAS Aurora**), origine règle 702, rulings (Symbol of the Solari cassée, contrôle battlefield sur la chain), Vex=A pas S, méta Europe=Victor/USA=Ornn. |
+| Podcast #4 Lille + timeline + inventaire | `pass9-podcast4-lille-2026-06.md` | Lille = Azir (Squirtle) invaincu ; ⚠️ podcasts #1/#2/#4 PRÉ-sortie Unleashed (prédictions). Inventaire des 102 nouveaux transcripts. |
+| Guides de Légende Set 1/2 + Spiritforged | `pass10-legend-guides-set12-spiritforged-2026-06.md` | 15 guides "Learn X" / Spiritforged + counter Master Yi : cores/battlefields/matchups Kai'Sa, Victor, Darius, Sett, Annie, Ornn, MF, Teemo, Yasuo, Draven, Sivir, Azir, Ezreal, Irelia. ⚠️ Set 1/2 (avant Unleashed). |
+| Suzhou Regional — top cut (Unleashed) | `pass11-suzhou-topcut-2026-06.md` | Analyse des 6 top-cuts (finale Master Yi>Irelia, demi >Sivir, Ezreal>Diana, Lillia>Rek'Sai, Garen>Sivir) : decklists/tech, lignes, rulings. **🔑 "Aurelia" = Irelia (résolu)**. Adaptatron/Divine Judgment/Akshan anti-Aurora. |
+| Suzhou Regional — rounds Swiss (Unleashed) | `pass12-suzhou-rounds-2026-06.md` | Analyse des 6 rounds (Azir/Irelia, Ivern/Yi, Kha'Zix/Irelia, Ezreal/Fiora, Poppy/Fiora, LeBlanc/Fiora) : tech, combos (Faefolk+Forbidding Waste, Challenge anti-Karthus), rulings, méta diverse. |
+| Triple Win-A-Box Tournament (Unleashed) | `pass13-winabox-tournament-2026-06.md` | Vainqueur = Bradykin (Ezreal control). GF Ezreal>Vex, Azir>Pyke, Lillia>Darius, Yi>Viktor. ⭐ **Volibear "Dragon Storm" (Gem Dragon + Herald of Scales = draw/mana infinie)**. Unchecked Power anti-Vex. |
+| Contenders London + net-new résiduel | `pass14-contenders-london-2026-06.md` | Sett gagne London (vs Aurora-Yi, via Sabotage + Divine Judgment) ; miroir Aurora-Yi vs Tempo-Yi. ⚠️ pré-Unleashed. Liste du backlog résiduel SKIP (low/redondant). |
 | Détail brut match-par-match | `raw/lot01..11.md` | non distillé, le plus granulaire. |
 | Cartes bannies | `../../src/lib/banned-cards.ts` | 7 cartes. Canonique. |
 

@@ -313,6 +313,77 @@
 **Yasuo vs Vex (Gloomist)** — favorisé : Yasuo [avis]
 · tech A : Treasure Hunter (green spells gratuits, jusqu'à 5 Defy/tour), mobilité · tech B : hold, Vex Apathetic · pourquoi : Yasuo punit Vex en mobilité.
 
+### Avis de guides RiftLab (pass4) — jugements d'auteur (PAS des games)
+
+> Source : guides dédiés `pass4-legend-guides-2026-06.md`. Ce sont des **opinions de deckbuilding** (`[avis]`),
+> pas des résultats de tournoi. Reciproques fusionnées (1 entrée par paire).
+
+**Vex (Apathetic) vs Lillia** — favorisé : Vex [avis] · pourquoi : les tokens sprites de Lillia entrent stun + ne bougent pas → disparaissent avant de menacer.
+
+**Vex (Apathetic) vs Ornn** — favorisé : Vex [avis] · pourquoi : même logique, les sprites Ornn entrent stun via Apathetic.
+
+**Vex (Apathetic) vs LeBlanc** — favorisé : Vex [avis] · pourquoi : Apathetic stun les Reflections jouées ce tour → annule légende + signature de LeBlanc.
+
+**Vex vs Aurora** — favorisé : Aurora [avis] · pourquoi : jeu lent qui joue dans le late d'Aurora ; Elder Dragon dévaste un board concentré. (cf. caster : Vex difficile vs Aurora.)
+
+**Kha'Zix (Void Reaver) vs Ivern** — favorisé : Ivern [avis] · pourquoi : Kha'Zix faible vs hold ; Ivern campe un battlefield Brush trop fort à casser.
+
+**Kha'Zix vs Vex** — favorisé : Vex [avis] · pourquoi : deck d'attaques faible vs hold ; seule sortie Void Assault/Fae Hook, dur sous counterspells.
+
+**Kha'Zix vs XP Master Yi** — even [avis] · pourquoi : skirmish mid-range, matchup fun et équilibré (idem vs Rek'Sai, Ornn).
+
+**Rengar vs Jhin** — favorisé : Jhin [avis] · pourquoi : Rengar trop dépendant des unités, tuées on cooldown par la removal.
+
+**Rengar vs Kai'Sa** — favorisé : Kai'Sa [avis] · pourquoi : même raison (removal sur les unités de Rengar).
+
+**Rengar vs LeBlanc** — favorisé : LeBlanc [avis] · pourquoi : removal qui démonte le board unit-reliant de Rengar.
+
+**Rengar vs Vex** — favorisé : Vex [avis] · pourquoi : plus gros contre de Rengar (tout deck purple) ; besoin d'un Challenge immédiat.
+
+**XP Master Yi vs Vex** — favorisé : Vex [avis] · pourquoi : Vex demande une réponse early, punit le départ lent (farm XP) du Wuju Master.
+
+**XP Master Yi vs Irelia** — favorisé : Master Yi [avis] · pourquoi : Irelia set up lentement → surprises late-game du Wuju Master (idem vs Aurora).
+
+**Pyke vs Lillia** — favorisé : Lillia [avis] · pourquoi : aggro dur à suivre pour Pyke sans action-speed (Gust/Void Seeker).
+
+**Pyke vs Annie** — favorisé : Annie [avis] · pourquoi : aggro rapide ; Pyke peine sans réponses action-speed.
+
+**Pyke vs Aurora** — even [avis] · pourquoi : Pyke vise la hand disruption + Mindsplitter pour arracher l'Aurora de la main.
+
+**Ivern vs Viktor** — favorisé : Ivern [avis] · pourquoi : Viktor peine à conquer / peu d'unités ; le Brush donne un hold énorme.
+
+**Ivern vs Kai'Sa** — favorisé : Kai'Sa [avis] · pourquoi : effets de board sans cible (The Watcher, Unchecked Power) battent les petites unités d'Ivern.
+
+**Ivern vs Jhin** — favorisé : Jhin [avis] · pourquoi : sorts de dégâts/board punissent l'essaim d'Ivern (mitigé par Alpha Wildclaw/Not So Fast).
+
+**Lillia vs Draven** — favorisé : Draven [avis] · pourquoi : aggro-hold = pire matchup de Lillia.
+
+**LeBlanc vs Kai'Sa** — favorisé : LeBlanc [avis] · pourquoi : tuer ses unités death-knell = leur donner la value → pas d'attrition possible pour le spell-damage rouge.
+
+**LeBlanc vs Jhin** — favorisé : LeBlanc [avis] · pourquoi : même logique (death-knell vs removal rouge).
+
+**LeBlanc vs Aurora** — favorisé : LeBlanc [avis] · pourquoi : tempo 2 pts/tour ferme la game avant qu'Aurora stabilise.
+
+**Diana vs Poppy** — favorisé : Diana [avis] · pourquoi : Diana surclasse les decks lents en skirmish (idem vs Kha'Zix, nouveau Master Yi).
+
+**Diana vs Lillia** — even [avis] · pourquoi : Lillia hyper-aggro ; Diana stabilise via Star-Crossed (attention à Lilting Lullaby).
+
+**Diana vs Jhin** — favorisé : Jhin [avis] · pourquoi : sorts de dégâts (Pyke/Ezreal/Jhin) durs pour Diana, seule protection Hard Bargain.
+
+**Vi vs Aurora** — favorisé : Vi [avis] · pourquoi : unités sur-équipées deviennent assez grosses + aggression outpace l'install d'Aurora.
+
+**Vi vs Vex** — favorisé : Vex [avis] · pourquoi : hold fort, MAIS Vex faible early → Vi peut prendre l'avance T1-2 avant les stuns.
+
+**Jhin vs Draven** — favorisé : Jhin [avis] · pourquoi : Jhin tue tout ce que les decks de board mid-range (Rengar/Diana/Draven) développent.
+
+**Jhin vs XP Master Yi** — favorisé : Master Yi [avis] · pourquoi : green/deflect (Defy/Not So Fast) cassants pour Jhin ; sauf à tuer le chosen champion Yi tôt.
+
+**Aurora vs Lillia** — favorisé : Lillia [avis] · pourquoi : super-aggro ferme avant qu'Aurora trouve son ramp.
+
+**Aurora vs LeBlanc** — favorisé : LeBlanc [avis] · pourquoi : aggro + death-knell, Aurora trop lente si ramp manqué.
+
+**Aurora — miroir** — favorisé : Sivir [avis] · pourquoi : pur gamble (qui hit l'Elder Drake en dernier gagne), mais Sivir l'emporte sur l'éco de runes.
+
 ---
 
 ## Set Spiritforged
@@ -681,6 +752,18 @@
 **Yasuo vs Viktor (aggro-control)** — favorisé : Viktor
 · tech A : Last Hand, Ride the Wind · tech B : removal, recruits · pourquoi : Yasuo perd 2-1 ; Viktor = 3e deck le plus représenté à un national.
 
+### Avis de guide RiftLab — Rek'Sai control (pass4)
+
+> Net-new du guide Rek'Sai (build **control**, distinct du go-wide ci-dessus). `[avis]` d'auteur.
+
+**Rek'Sai (control) vs Lucian** — favorisé : Rek'Sai [avis] · pourquoi : beaucoup de sorts vs leurs unités-clés + Thermal Beam anti-gear.
+
+**Rek'Sai (control) vs Sivir** — favorisé : variable [avis] · pourquoi : Sivir sabote des sorts-clés → Rek'Sai doit contrôler le board early ; jouable mais serré.
+
+**Rek'Sai (control) vs Draven** — favorisé : Draven [avis] · pourquoi : Draven draw en masse → out-resource Rek'Sai ; Ferrous Forerunner + accelerate + Last Rites rejouent ses unités. (Confirme pass3 : « perd vs Draven ».)
+
+**Rek'Sai (control) vs Ezreal** — favorisé : Ezreal [avis] · pourquoi : même problème (mass card draw) ; ne pas jeter ses unités (Wages of Pain).
+
 ---
 
 ## Set Origins
@@ -760,3 +843,49 @@
 
 **Kai'Sa vs Master Yi** — favorisé : Master Yi [game unique]
 · tech A : Kai'Sa cyborg · tech B : ramp/Dazzling Aurora, Dead Bloom Predator + Deflect (>10 might/battlefield), Zhonya's, double Desert's Call, Anivia, Ravenborn Tome · pourquoi : showmatch USA vs France (mix set 1/2) ; Master Yi favorisé on the play, Dead Bloom Predator + Deflect = némésis Kai'Sa.
+
+---
+
+## Matchups de casts — Suzhou Regional + Win-A-Box (Unleashed, pass11-13)
+
+> **Résultats de tournoi** (factuels) avec tech vue en jeu. "Aurelia" = Irelia. `[avis]` = jugement caster.
+
+**Master Yi vs Irelia** — favorisé : Master Yi [résultat : finale Suzhou] · tech A : "Irelia trap" (Akshan retire la protection + Charm dans Vilemaw), 3 Akshan + 3 Sabotage + 2 Not So Fast en SB, Rengar (défend 8), Vilemaw réaction · tech B : Abandoned Hall (+2/sort), Boots, Defiant Dance, Star-Crossed · pourquoi : le +2-en-défense-seul rend Yi bien plus rune-efficace ; sabote la main d'Irelia et la prive de gear.
+
+**Master Yi vs Sivir (Aurora)** — favorisé : Master Yi [Suzhou demi] mais `[avis]` "temps emprunté" · tech A : Akshan (vole l'Aurora), outpace, Ruin Runner · tech B : Elder Dragon, Mind Splitter, **Possession** (re-vole l'Akshan), Sabotage→gold · pourquoi : Aurora oppressante même à 7-1 ; Yi gagne en outpace/vol, Possession est le contre-au-contre.
+
+**Irelia vs Sivir (Aurora)** — favorisé : Irelia [Suzhou top 8] · tech A : **Adaptatron main-deck** (anti-gear action-speed), Vex Apathetic, Baron Nashor, Heart of Dark Ice · tech B : Aurora package · pourquoi : Adaptatron + hold d'Irelia étouffent l'install d'Aurora.
+
+**Garen (Aurora) vs Sivir (Aurora)** — favorisé : Garen [Suzhou top 64, miroir] · tech A : **Divine Judgment** (stun la légende = mirror-breaker), Salvage, Harness Dragon (field removal), Kareena recruits, Unyielding Spirit · tech B : Sivir-Aurora chaos · pourquoi : yellow/orange gagne le miroir Aurora (removal Order ciblé + gear-hate + recycle).
+
+**Ezreal vs Diana** — favorisé : Ezreal [Suzhou top 16, 2-0] · tech A : Deadly Flourish (removal back-line + gold), Star-Crossed, Bewitching Spirit, Acceptable Losses, Watcher+Bellows · tech B : Moonfall, Hwei, Vex Apathetic · pourquoi : removal massive ; les combat tricks de Diana inefficaces (Ezreal ne commit pas d'unités).
+
+**Lillia vs Rek'Sai** — favorisé : Lillia [Suzhou top 32, 2-0] · tech A : sprites, Smoke and Mirrors, Heart of Dark Ice, Vilemaw, Sprite Burst · tech B : Immortal Phoenix (boucle sacrifice), Void Rush, Noxus Hopeful · pourquoi : Lillia = consistance (double conquer/tour) ; Rek'Sai feast-or-famine.
+
+**Kha'Zix vs Irelia** — favorisé : Kha'Zix [Suzhou R4, 2-0] `[avis]` · tech A : **Irresistible Faefolk + Forbidding Waste** (rend Irelia défenseur seul -2) + ambush Kha'Zix = kill, Void Assault, Grim Resolve · tech B : Irelia Fervent (souvent sortie sans protection = punie) · pourquoi : drag-isolate inverse le matchup vs une Irelia à peu d'unités. ⚠️ nuance vs guide (Kha'Zix "faible vs hold") : valable surtout vs Irelia.
+
+**Azir vs Irelia** — favorisé : Azir si gear T1 [Suzhou R2] · tech A : Soul Sword (1-drop), Arise, Brutalizer, BF Sword, Hall of Legends · tech B : **Vex Apathetic (stun les sand soldiers d'Arise)** + **Adaptatron** (tue les gears) + Stellacorn (draw engine) · pourquoi : serré ; Vex+Adaptatron = le plan anti-Azir d'Irelia, sinon Azir submerge.
+
+**Ivern vs Master Yi (mid-range)** — even/jouable [Suzhou R3] · tech A : Ivern green (engine card-advantage), Friendship (+1/tag), Brush · tech B : Scuttle (+2), Rengar surprise defender, Vilemaw finisher · pourquoi : Ivern out-grind ; Yi gagne s'il tient un battlefield + Vilemaw.
+
+**Ezreal vs Fiora** — favorisé : Ezreal [Suzhou R5, 2-0] · tech A : control (3 Bewitching Spirit + Pack of Wonders = vide la main), Wages/Bellows/Eclipse, Vex Apathetic (stun Trophy Hunter) · tech B : Fiora mid-range Victorious (whiff Baited Hook) · pourquoi : mill de main + removal ; Fiora-mid-range trop lente.
+
+**Poppy (Aurora) vs Fiora** — favorisé : Poppy [Suzhou R6, 2-0] · tech A : Aurora yellow (Forge of the Future = points early sans Aurora, Elder Dragon hardcast, Rift Herald, unités 8-coût-1-power) · tech B : Fiora Victorious (sabote l'Aurora) · pourquoi : Poppy joue bien SANS Aurora ; Fiora-mid manque de pression.
+
+**LeBlanc vs Fiora** — favorisé : Fiora [Suzhou R7, 2-1] `[avis]` · tech A : **Challenge** (tue Karthus T2 = déni du moteur death-knell), Nidalee (draw on win), triple Salvage, Repulse · tech B : LeBlanc Karthus + Echo + Glasc Mixologist + Vi Peacekeeper · pourquoi : Challenge online tôt étouffe LeBlanc ; sinon LeBlanc snowball.
+
+**Vex vs Ezreal** — favorisé : Ezreal [Win-A-Box finale, 2-1] · tech A : Bewitching Spirit + Pack of Wonders, Wages/Bellows/Deadly Flourish, Star-Crossed, **Rebuke/Star-Crossed renvoient la Vex à la main = reset le hold** · tech B : Vex Apathetic + Discipline + Sona + Grove of the God Willow · pourquoi : Ezreal reset le moteur de hold ; Vex gagne si Discipline+Apathetic verrouillent tôt.
+
+**Azir vs Pyke** — favorisé : Azir [Win-A-Box R1, 2-0] · tech A : sand soldiers/gear "all gas", Hall of Legends · tech B : Pyke discard/self-bounce (Bewitching Spirit, Death from Below) · pourquoi : le discard de Pyke est faible vs un deck qui joue depuis le board pas la main.
+
+**Volibear "Dragon Storm" vs LeBlanc** — favorisé : Volibear [Win-A-Box R2, 2-0] `[avis]` · tech A : Gem Dragon + Herald of Scales + K-Dragon (draw/mana infinie), Sabotage, Falling Star/Challenge clear · tech B : blue LeBlanc sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors) · pourquoi : out-value total une fois le moteur Miracle en ligne.
+
+**Lillia vs Darius** — favorisé : Lillia [Win-A-Box R3, 2-0] · tech A : sprites double-conquer · tech B : Darius Phoenix go-wide (Immortal Phoenix, Shadows Call, Undying Legion, Ferrous Forerunner) · pourquoi : consistance Lillia ; Darius puni s'il rate son T1 / overcommit.
+
+**Vex vs Diana** — favorisé : Vex [Win-A-Box bonus] · tech A : hold + draw, Boots of Swiftness (ganking), Amateur Recital, Existential Dread · tech B : Diana **sans Unchecked Power** (seulement Downwell en SB) · pourquoi : le hold de Vex étrangle ; Diana DOIT jouer Unchecked Power/Downwell.
+
+**Master Yi (mid-range) vs Viktor** — favorisé : Master Yi [Win-A-Box R5] `[avis]` · tech A : Trophy Hunter (surprise defender 8-might), double Zhonya's, Vilemaw ambush · tech B : Viktor Jace+Vanguard Armory, Sprite Fountain, Imperial Decree, Bellows Breath · pourquoi : matchup autrefois even, penche Yi en Set 3 (Yi devient un hold deck que les recruits peinent à casser).
+
+**Sett vs Master Yi (Aurora)** — favorisé : Sett [Contenders London GF, 2-1, pré-Unleashed] · tech A : Sett Brawler buffé (12-16 might), 3 Seals, Divine Judgment, **Sabotage sur l'Aurora** · tech B : Aurora-Yi · pourquoi : Sett arrache l'Aurora + joue bien sans dépendre d'1 carte.
+
+**Aurora Master Yi vs Tempo Master Yi** — favorisé : Tempo Yi [Contenders London, miroir] · tech A (tempo) : Pit Rookie + Par, Dead Bloom Predator, Clockwork Keeper, aggression · tech B (aurora) : Catalyst/Mobilize/Find Your Center ramp + Aurora · pourquoi : l'Aurora-Yi galère s'il ne trouve pas l'Aurora tôt (1 unité en base) → le tempo punit.

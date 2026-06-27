@@ -1736,3 +1736,46 @@ Meta top 16 : Draven 43.75% (7/16), Master Yi 18.75%, Irelia 12.5%. Annie gagne 
 - **Hidden Blade** : cible une unité **ON battlefield** uniquement. **Switcheroo** (Spirit Forge) : coût additionnel, quasi « je gagne » en 1v1.
 - **Set 2 (Arata)** : might peut descendre à 0/négatif (Origins avait un plancher). **Errata** : Falling Star + Akathian/Nakathian Rain durcis (moins de kills « cheese » pour Kai'Sa).
 - **Précédent « 702 / face-down zone »** : un juge peut upgrade un warning en game loss si une info de zone face-cachée est modifiée irréparablement (déjà dans cross-set-casts).
+
+---
+
+## Consolidation Unleashed (Set 3) — distillée de pass5→pass14 (27/06)
+
+> Sources : guides RiftLab, tier list, meta-breakdowns RQ, Suzhou Regional, Triple Win-A-Box, podcasts, Contenders London.
+> Détail par doc dans `data/video-insights/pass4..14`. **`[avis]` = caster/panel**, début de set (snapshot, pas data figée).
+
+### 🔑 Résolution de nom : **« Aurelia » = Irelia** (Blade Dancer)
+Les casters/Whisper rendent **Irelia** en « Aurelia » par intermittence (le cast "Sivir vs Irelia" dit "Aurelia" en jouant les cartes d'Irelia : Fervent, Defiant Dance, Boots, Adaptatron, Deflect). → **Aurelia ≡ Irelia, ne pas dédoubler.**
+
+### Tier list Unleashed (snapshot panel RiftLab, `[avis]`, début de set)
+- **Haut (A / candidats S)** : **MF Aurora** (seul candidat S), **Master Yi** (Aurora & mid-range/XP), **LeBlanc**, **Annie**, **Ezreal** (toolbox), **Draven**, **Azir**, **Vex** (bottom-A, « overrated » mais fort), **Irelia** (consistante, gagne Sydney), **Diana** (gagne Vancouver).
+- **B** : Sivir (Aurora), Victor, Lucian, Vi, Set, Kai'Sa, Ivern, Ornn (boost Sprite Fountain), Darius, Volibear, Rek'Sai, Fiora (boostée Set 3).
+- **C** : Teemo, Yasuo, Rengar (high-roll), Lillia (« overhyped » mais consistante), Pyke, Kha'Zix, Poppy (Aurora jaune), Lux.
+- **D/F** : Jhin, Jinx, Garen ; Lee Sin, Leona, Rumble, Renata, Karma (F).
+
+### Champions de tournois Unleashed (factuel)
+- **Sydney RQ** : **Rico (Irelia)** — 1re victoire d'Irelia en regional. · **Hartford RQ** : **Factor (Master Yi)**. · **Vancouver RQ** (~2000 j., le + gros) : **AlanZQ (Diana) = double champion** (après Bologna). · **Suzhou Regional (CN)** : **Master Yi** (bat Irelia en finale). · **Triple Win-A-Box (Unleashed)** : **Bradykin (Ezreal control)**. · **Lille RQ** : **Squirtle/Pedro (Azir)**, invaincu. · **Contenders London** (pré-Unleashed) : **Igor (Sett)**.
+- **Méta Sydney = la plus diverse jamais vue en TCG** : LeBlanc n°1 à seulement **6-7 %** (puis chaque légende a son pocket). **Aucun deck n'a un matchup favorable across-the-board.** Méta CN nettement plus **Aurora** (3/8 top 8 Suzhou) qu'à l'Ouest.
+
+### Archétypes Unleashed à connaître
+- **Archétype Aurora** (gear **Dazzling Aurora**, PAS une légende) : porté par MF (reco, ganking→Baron untargetable), Sivir (meilleure éco de runes, supérieure en miroir), Master Yi (le + consistant). **Meilleur deck game 1, plus faible games 2-3** (prévisible → l'adversaire prépare gear-hate). Core : Elder Dragon (assigne les dégâts létaux individuellement = tout à 1 HP), Mind Splitter, Stacked Deck, Flurry of Blades.
+- ⭐ **Volibear « Dragon Storm »** (combo émergent Win-A-Box) : **Gem Dragon**[?] (chaque dragon → untap des runes) + **Herald of Scales** (dragons −2 énergie) + **K-Dragon**[?] (draw 4-9) → **draw/mana quasi infinie** (tour « Miracle », ~26 énergie flottante). Bat LeBlanc. À surveiller.
+- **Hold decks** : Vex (tenir 1 battlefield + draw), Ivern (Brush), Master Yi (+2 défense). **Réponse obligatoire = Unchecked Power / Downwell** (clear un battlefield 12+ might → reset). Ezreal bat Vex en renvoyant la Vex à la main (Rebuke/Star-Crossed reset le moteur).
+
+### Ban-watch (`[avis]` casters/panels)
+- **Vex Apathetic** = candidat n°1 : **« floodgate »** (0 power cost + Deflect + stun les unités jouées → contraint l'adversaire). ~26 % des decks à Hartford. Contre structurel de tokens/sprites/Reflections **et** des sand soldiers d'Arise (Azir).
+- **Lux loop via carte Echo** = combo infini non-intentionnel (« glitch ») → candidat ban unanime (existe aussi en Echo+Jhin).
+- **Ferrous Forerunner** = polarisant (certains decks sans réponse) ; **Defy** ultra-omniprésent (40 % des decks, contre ~70-75 % des sorts).
+
+### Rulings Unleashed consolidés (cf. pass7/11/12/13/14)
+- **Defy sur Sacrifice / Death Grip / Heedless Resurrection ne sauve PAS l'unité** (le kill = un coût → l'unité meurt quand même, et proc les death-knells, ex. les 3 Immortal Phoenix de Rek'Sai).
+- **Elder Dragon** : inflige des dégâts à **toutes** les unités du battlefield, mais l'effet « tout dégât est létal » ne touche que les unités **ennemies**. · **Baron Nashor** : +2 à toutes tes unités, **untargetable**, va au Baron Pit depuis n'importe où (mais ouvre une 3e zone à conquérir). · **Repulse** ne stoppe pas l'Elder (ne « select » pas une seule unité).
+- **Fizz** recycle l'**Arcane Shift** (override le banish). · **Flash** sauve une unité d'Elder Dragon. · **The Watcher** ne cible pas (pas de coût de flag) → mais **Not So Fast** marche dessus. · **Bullet Time** : on paie le power à la résolution.
+- **Contrôle de battlefield figé tant qu'il y a un truc sur la chain** → tue le combo Lillia/Rengar « conquérir au tour adverse » ; permet Glasc Mixologist / Zhonya's-sur-Lonely-Poro.
+- **Emperor's Dais** (ruling) : refuser de payer l'énergie → pas de token mais bounce l'unité (réabus on-play). · **Symbol of the Solari** = carte cassée (plus d'égalités dans le jeu).
+- **Erreur de présentation** (ex. 10 runes au lieu de 12, ou champion oublié) = **game loss** une fois la partie commencée. · La Chine garde la règle **« missed trigger » punitive** (channel/draw + pass = point perdu).
+
+### Tech anti-archétype clés
+- **Anti-Aurora** : **Akshan** (unité green/orange : vole/tue le gear → l'Aurora ; dur à empêcher car l'anti-gear est surtout des sorts recyclables via Sabotage) — MAIS **Possession** (Aurora) re-vole l'Akshan. **Adaptatron** main-deck (Irelia, action-speed). **Divine Judgment** (Garen/Sett : reset, non-Defyable). **Sabotage** (Sett/Sivir : arrache l'Aurora).
+- **Anti-Irelia** : « Irelia trap » (Akshan retire sa protection + Charm dans Vilemaw) ; Kha'Zix **Faefolk + Forbidding Waste** (isole Irelia en défenseur seul -2 → ambush kill).
+- **Anti-LeBlanc** : **Challenge** (tue Karthus T2, déni du moteur death-knell) ; bouncer pas tuer (Rebuke/Star-Crossed) ; discard.
