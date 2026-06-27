@@ -52,7 +52,7 @@ const spiritforged: Entry[] = [
 
 const unleashed: Entry[] = [
   { tier: "S", name: "Irelia, Blade Dancer", note: "8 % du field, 6 victoires. Toujours la reine, la plus constante du format." },
-  { tier: "S", name: "Master Yi, Wuju Master", note: "Le nouveau Master Yi du méta (différent du Bladesman d'Origines). 30 top 8. A gagné le Régional de Suzhou (finale contre Irelia)." },
+  { tier: "S", name: "Master Yi, Wuju Bladesman", note: "Le Master Yi dominant du format : deck de Hold Corps/Calme (+2 Might en défense seul). A gagné Suzhou, Tianjin et Hartford. À ne pas confondre avec le Wuju Master (variante XP/Tempered, de niche et bien plus faible)." },
   { tier: "S", name: "LeBlanc, Deceiver", note: "Moteur d'Agonie : tire profit de la mort de ses propres unités. 19 top 8. Se contre en tuant son Karthus tôt (Challenge) plutôt qu'en l'affrontant tard." },
   { tier: "S", name: "Diana, Scorn of the Moon", note: "Agro-tempo qui monte vite : double championne au plus gros Régional du set (Vancouver, ~2000 joueurs), domine les City Challenges." },
   { tier: "A", name: "Fiora · Lillia · Sivir · Sett · Azir · Kai'Sa · Rengar · Annie", note: "Une douzaine de légendes viables. Sett et Annie surperforment en conversion. Azir a gagné le RQ de Lille (invaincu)." },
@@ -65,7 +65,7 @@ const sets = [
     id: "unleashed",
     name: "Unleashed",
     fr: "Le set actuel",
-    decks: "4 501 decks classés · 41 légendes",
+    decks: "environ 8 600 decks classés · 40 légendes",
     summary:
       "Le méta le plus ouvert de l'histoire du jeu : quatre légendes S quasi à égalité et une douzaine de decks viables. Aucune légende n'écrase le format.",
     entries: unleashed,
@@ -160,7 +160,7 @@ export default function GuideMetaPage() {
 
       <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
         <strong>D&apos;où viennent ces données ?</strong> De l&apos;analyse de <strong>88 tournois</strong> et plus de
-        18 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
+        20 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
         le nombre de top 8, les victoires et le taux de conversion - pas une opinion.
       </div>
 

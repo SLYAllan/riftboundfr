@@ -178,7 +178,7 @@ const META: Record<string, Meta> = {
   "irelia, blade dancer": { tier: 1, archetype: "Tempo à équipements", fam: "tempo" },
   "master yi, wuju bladesman": { tier: 1, archetype: "Contrôle de terrain", fam: "hold" },
   "azir, emperor of the sands": { tier: 1, archetype: "Jetons et équipements", fam: "tokens" },
-  "leblanc, deceiver": { tier: 2, archetype: "Midrange Agonie", fam: "deathknell" },
+  "leblanc, deceiver": { tier: 1, archetype: "Midrange Agonie", fam: "deathknell" },
   "annie, dark child": { tier: 2, archetype: "Aggro", fam: "aggro" },
   "sivir, battle mistress": { tier: 2, archetype: "Rampe à équipements", fam: "ramp" },
   "ezreal, prodigal explorer": { tier: 2, archetype: "Contrôle à dégâts", fam: "control" },

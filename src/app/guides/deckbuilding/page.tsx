@@ -232,7 +232,7 @@ export default function GuideDeckbuildingPage() {
           <p className="mt-2 text-sm text-ink-secondary">
             Si vous débutez la construction, partir d&apos;une légende éprouvée évite bien des erreurs. Sur le format actuel
             (Unleashed), quatre légendes dominent les tournois : <strong>Irelia</strong> (tempo réactif, la plus constante),
-            <strong> Master Yi, Wuju Master</strong> (montée en puissance), <strong>Diana</strong> (agro-tempo) et
+            <strong> Master Yi, Wuju Bladesman</strong> (contrôle de terrain Corps/Calme), <strong>Diana</strong> (agro-tempo) et
             <strong> LeBlanc</strong> (moteur d&apos;Agonie). Leurs cœurs de deck sont bien établis : copiez-les pour apprendre,
             puis ajustez vos slots flexibles.
           </p>

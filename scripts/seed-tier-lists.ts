@@ -85,7 +85,7 @@ const unleashedTier: TierEntry[] = [
   { legendName: "Lux, Lady of Luminosity", tier: "C", comment: "Control Mind/Order. 6e à Hartford (CTCG Relivia) — 1er Top 8 majeur Unleashed. Pic de spiciness, monte en C" },
   { legendName: "Ahri, Nine-Tailed Fox", tier: "C", comment: "1,6% (113 decks), 0 top 8" },
   { legendName: "Jhin, Virtuoso", tier: "C", comment: "1,2% (80 decks), 2 top 8. Combo précision" },
-  { legendName: "Volibear, Relentless Storm", tier: "C", comment: "1,3% (90 decks), 1 top 8" },
+  { legendName: "Volibear, Relentless Storm", tier: "C", comment: "1,3% (90 decks), 1 top 8. Combo « Dragon Storm » émergent (Gem Dragon untap les runes + Herald of Scales -2 énergie = pioche/mana quasi infinie), repéré au Triple Win-A-Box" },
   { legendName: "Vi, Piltover Enforcer", tier: "C", comment: "1,1% (79 decks), 0 top 8" },
   { legendName: "Teemo, Swift Scout", tier: "C", comment: "1,3% (91 decks), 1 top 8" },
   { legendName: "Poppy, Keeper of the Hammer", tier: "C", comment: "0,9% (64 decks), 2 top 8" },
@@ -234,8 +234,9 @@ async function main() {
 
   await seedTierList("Tier List Origins", "Origins", originsTier, false);
   await seedTierList("Tier List Spiritforged", "Spiritforged", spiritforgedTier, false);
-  await seedTierList("Tier List Unleashed", "Unleashed", unleashedTier, false);
-  await seedTierList("Tier List Globale", "Global", globalTier, true);
+  // Unleashed = format actuel → liste « courante » affichée par défaut (/meta + /tier-list).
+  await seedTierList("Tier List Unleashed", "Unleashed", unleashedTier, true);
+  await seedTierList("Tier List Globale", "Global", globalTier, false);
 
   console.log("\n✅ All tier lists seeded.");
 }
