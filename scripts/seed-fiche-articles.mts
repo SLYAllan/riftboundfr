@@ -778,15 +778,15 @@ function buildBlocks(c: Content) {
 // de publication existante d'un article (sinon tout remonte en tête de liste).
 const FICHE_PUBLISHED_AT = new Date("2026-06-24");
 
-// DÉSACTIVÉ : les articles "meilleur-deck-<legende>" font doublon avec la section
-// /legendes (qui affiche directement les decklists de chaque Légende). On ne les
-// recrée plus. Suppression en base : scripts/delete-meilleur-deck-articles.ts.
-// Pour réactiver, retirer ce bloc de garde.
-console.log("seed-fiche-articles : DÉSACTIVÉ (remplacé par la section /legendes). Aucun article écrit.");
-await prisma.$disconnect();
-process.exit(0);
+// DÉSACTIVÉ par défaut : ces articles "meilleur-deck-*" font doublon avec la section
+// /legendes (qui affiche directement les decklists). On ne les recrée plus. Pour
+// forcer une régénération : RESEED_FICHES=1. Suppression : scripts/delete-meilleur-deck-articles.ts.
+const RESEED_FICHES = process.env.RESEED_FICHES === "1";
+if (!RESEED_FICHES) {
+  console.log("seed-fiche-articles : DÉSACTIVÉ (doublon avec /legendes). RESEED_FICHES=1 pour forcer.");
+}
 
-for (const c of CONTENT) {
+for (const c of RESEED_FICHES ? CONTENT : []) {
   const { blocks, nLists } = buildBlocks(c);
   const cover = bannerUrl(c.legendName) ?? c.art;
   await prisma.article.upsert({
@@ -796,5 +796,5 @@ for (const c of CONTENT) {
   });
   console.log(`  ✅ ${c.slug} (${nLists} listes)`);
 }
-console.log(`\n${CONTENT.length} articles écrits à la main seedés.`);
+if (RESEED_FICHES) console.log(`\n${CONTENT.length} articles écrits à la main seedés.`);
 await prisma.$disconnect();

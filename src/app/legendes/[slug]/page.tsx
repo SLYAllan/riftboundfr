@@ -185,11 +185,19 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   const cardMap: Record<string, string> = {};
   if (codes.size > 0) {
     try {
+      // Les fiches utilisent un code court (UNL-059) ; en base le riftboundId est en
+      // minuscules sur 3 segments (unl-059-219). On matche par préfixe "unl-059-" (le
+      // tiret final exclut les variantes alt-art type "unl-059a-").
+      const codeList = [...codes];
       const cards = await prisma.card.findMany({
-        where: { riftboundId: { in: [...codes] } },
+        where: { OR: codeList.map((c) => ({ riftboundId: { startsWith: `${c.toLowerCase()}-` } })) },
         select: { riftboundId: true, name: true },
       });
-      for (const c of cards) cardMap[c.riftboundId] = c.name;
+      for (const code of codeList) {
+        const pref = `${code.toLowerCase()}-`;
+        const match = cards.find((c) => c.riftboundId.startsWith(pref));
+        if (match) cardMap[code] = match.name;
+      }
     } catch {
       /* DB indispo : on affichera les codes bruts (cas de repli). */
     }
