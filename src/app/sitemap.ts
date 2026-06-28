@@ -4,6 +4,8 @@
 // within a single sitemap (limit: 50 000 URLs / 50 MB).
 export const dynamic = "force-dynamic";
 
+import { promises as fs } from "fs";
+import path from "path";
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
@@ -17,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/cartes`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/decks`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/articles`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
+    { url: `${baseUrl}/legendes`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/tier-list`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/tournois`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/deckbuilder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
@@ -28,6 +31,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/domaines`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/jouer-en-ligne`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
+
+  // Fiches Légendes : générées depuis data/fiches/*.json (système de fichiers,
+  // toujours dispo, même sans DB). Une URL /legendes/<slug> par fiche.
+  let legendPages: MetadataRoute.Sitemap = [];
+  try {
+    const ficheFiles = await fs.readdir(path.join(process.cwd(), "data", "fiches"));
+    legendPages = ficheFiles
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => ({
+        url: `${baseUrl}/legendes/${f.replace(/\.json$/, "")}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      }));
+  } catch {
+    /* dossier indispo : on s'en passe. */
+  }
 
   try {
     const [articles, tournamentContexts, decks, cards] = await Promise.all([
@@ -91,9 +111,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
-    return [...staticPages, ...articlePages, ...tournamentPages, ...cardPages, ...deckPages];
+    return [...staticPages, ...legendPages, ...articlePages, ...tournamentPages, ...cardPages, ...deckPages];
   } catch {
-    // DB unavailable (e.g. Docker build): emit at least the static pages.
-    return staticPages;
+    // DB unavailable (e.g. Docker build): emit at least the static + legend pages.
+    return [...staticPages, ...legendPages];
   }
 }

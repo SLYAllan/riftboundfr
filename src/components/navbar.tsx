@@ -11,6 +11,7 @@ import { UserMenu } from "@/components/user-menu";
 
 const mainLinks = [
   { href: "/tier-list", label: "Tier List" },
+  { href: "/legendes", label: "Légendes" },
   { href: "/decks", label: "Decks" },
   { href: "/guides", label: "Guides" },
   { href: "/tournois", label: "Tournois" },

@@ -160,7 +160,7 @@ export default function GuideMetaPage() {
 
       <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
         <strong>D&apos;où viennent ces données ?</strong> De l&apos;analyse de <strong>88 tournois</strong> et plus de
-        20 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
+        21 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
         le nombre de top 8, les victoires et le taux de conversion - pas une opinion.
       </div>
 
