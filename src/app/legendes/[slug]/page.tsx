@@ -9,11 +9,12 @@ import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingUp, Sparkles, AlertTriangle, Swords, Layers } from "lucide-react";
+import { TrendingUp, Sparkles, AlertTriangle, Layers } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CardRef } from "@/components/card-ref";
 import { DecklistInteractive } from "@/components/decklist-interactive";
+import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { displayLegendName } from "@/lib/utils";
@@ -90,6 +91,16 @@ function placementRank(p: string | null): number {
   if (!p) return 9999;
   const m = p.match(/\d+/);
   return m ? parseInt(m[0], 10) : 9999;
+}
+
+// Nom de deck affiché sur la page d'une Légende : pas de tiret cadratin (règle du site),
+// FR ("Best of" -> "Meilleur de"), et on retire le préfixe redondant du nom de la Légende
+// (on est déjà sur sa page).
+function displayDeckName(title: string, legendName: string): string {
+  let t = title.replace(/\s*[—–]\s*/g, " · ").replace(/\bBest of\b/gi, "Meilleur de");
+  const legPrefix = legendName.replace(/\s*[—–]\s*/g, " · ");
+  if (t.startsWith(legPrefix)) t = t.slice(legPrefix.length).replace(/^[\s·:,-]+/, "");
+  return t.trim() || title;
 }
 
 // Decklists réelles de la Légende (uniquement des decks publiés en base, jamais
@@ -283,13 +294,31 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     return decklistCards;
   };
 
+  // Code deckbuilder (même encodage que /decks/[slug]) pour le bouton « Ouvrir dans le deckbuilder ».
+  const sectionRefs = (deck: (typeof topDecks)[number], s: string) =>
+    deck.cards.filter((dc) => dc.section === s).map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity }));
   const decklists = await Promise.all(
-    topDecks.map(async (deck) => ({ deck, cards: await buildDecklistCards(deck) })),
+    topDecks.map(async (deck) => {
+      const champ = deck.cards.find(
+        (dc) => dc.section === "legend" && dc.card.supertype === "Champion" && dc.card.type !== "Legend",
+      );
+      const leg =
+        deck.cards.find((dc) => dc.section === "legend" && dc.card.type === "Legend") ??
+        deck.cards.find((dc) => dc.section === "legend");
+      const deckbuilderCode = encodeDeckBase64({
+        legend: leg ? { cardId: leg.card.riftboundId, quantity: 1 } : null,
+        champion: champ ? { cardId: champ.card.riftboundId, quantity: champ.quantity } : null,
+        main: sectionRefs(deck, "main"),
+        rune: sectionRefs(deck, "rune"),
+        battlefield: sectionRefs(deck, "battlefield"),
+        side: sectionRefs(deck, "side"),
+      });
+      return { deck, cards: await buildDecklistCards(deck), deckbuilderCode };
+    }),
   );
 
   const domains = fiche.domains ?? [];
   const tierLabel = fiche.tier ? TIER_LABELS[fiche.tier] ?? `Tier ${fiche.tier}` : null;
-  const gp = fiche.gameplan ?? {};
   const decksHref = `/decks?legend=${encodeURIComponent(legendName)}`;
 
   const jsonLd = {
@@ -352,7 +381,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           <img
             src={bannerUrl}
             alt={`Bannière ${name}`}
-            className="h-44 w-full object-cover sm:h-56"
+            className="block h-auto w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
@@ -378,26 +407,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         </header>
       )}
 
-      {/* Capacité + accès aux decks */}
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-stretch">
-        {fiche.legendAbility && (
-          <div className="flex-1 rounded-card border border-hairline bg-surface p-4">
-            <h2
-              className="flex items-center gap-2 text-sm font-semibold text-arcane"
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-            >
-              <Sparkles size={16} /> Capacité de la Légende
-            </h2>
-            <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
-          </div>
-        )}
-        <Link
-          href={decksHref}
-          className="inline-flex items-center justify-center gap-2 rounded-card bg-arcane px-5 py-3 text-sm font-semibold text-white hover:opacity-90 sm:w-64 sm:shrink-0"
-        >
-          Voir tous les decks de {name}
-        </Link>
-      </div>
+      {/* Capacité de la Légende */}
+      {fiche.legendAbility && (
+        <div className="mt-6 rounded-card border border-hairline bg-surface p-4">
+          <h2
+            className="flex items-center gap-2 text-sm font-semibold text-arcane"
+            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+          >
+            <Sparkles size={16} /> Capacité de la Légende
+          </h2>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
+        </div>
+      )}
 
       <div className="mt-10 space-y-12">
         {/* Decklists, contenu principal */}
@@ -410,7 +431,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             <DecklistInteractive
               compact
               cards={decklists[0].cards}
-              deckName={decklists[0].deck.title}
+              deckName={displayDeckName(decklists[0].deck.title, legendName)}
               legendName={legendName}
               playerName={decklists[0].deck.playerName ?? undefined}
               context={
@@ -418,17 +439,20 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   .filter(Boolean)
                   .join(" · ") || undefined
               }
+              showCopyCode
+              showExportPng
+              deckbuilderCode={decklists[0].deckbuilderCode}
             />
           ) : (
             <div className="space-y-3">
-              {decklists.map(({ deck, cards }, i) => (
+              {decklists.map(({ deck, cards, deckbuilderCode }, i) => (
                 <details
                   key={deck.id}
                   open={i === 0}
                   className="group rounded-card border border-hairline bg-surface"
                 >
                   <summary className="flex cursor-pointer flex-wrap items-center gap-2 px-4 py-3 text-sm font-semibold">
-                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</span>
+                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{displayDeckName(deck.title, legendName)}</span>
                     {deck.playerName && (
                       <span className="font-normal text-ink-muted">par {deck.playerName}</span>
                     )}
@@ -447,10 +471,13 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                     <DecklistInteractive
                       compact
                       cards={cards}
-                      deckName={deck.title}
+                      deckName={displayDeckName(deck.title, legendName)}
                       legendName={legendName}
                       playerName={deck.playerName ?? undefined}
                       context={deck.tournamentContext ?? undefined}
+                      showCopyCode
+                      showExportPng
+                      deckbuilderCode={deckbuilderCode}
                     />
                   </div>
                 </details>
@@ -550,38 +577,6 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               </section>
             )}
           </div>
-        )}
-
-        {/* Plan de jeu, version courte */}
-        {(gp.earlyGame || gp.midGame || gp.lateGame || gp.winCondition) && (
-          <Section title="Plan de jeu" icon={<Swords size={20} />}>
-            <div className="grid gap-2 sm:grid-cols-3">
-              {gp.earlyGame && (
-                <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Début : </strong>
-                  {gp.earlyGame}
-                </div>
-              )}
-              {gp.midGame && (
-                <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Milieu : </strong>
-                  {gp.midGame}
-                </div>
-              )}
-              {gp.lateGame && (
-                <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Fin : </strong>
-                  {gp.lateGame}
-                </div>
-              )}
-            </div>
-            {gp.winCondition && (
-              <div className="mt-2 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-                <strong>Condition de victoire : </strong>
-                {gp.winCondition}
-              </div>
-            )}
-          </Section>
         )}
 
         {/* Champions + Champs de bataille côte à côte */}
