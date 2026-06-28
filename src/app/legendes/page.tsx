@@ -4,22 +4,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
+import { getBannerUrl } from "@/lib/banners";
 import { displayLegendName } from "@/lib/utils";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 
 export const metadata: Metadata = {
-  title: { absolute: "Fiches Légendes Riftbound FR : guides & analyses VOD par Légende" },
+  title: { absolute: "Fiches Légendes Riftbound FR : guides & decklists par Légende" },
   description:
-    "Toutes les fiches Légendes Riftbound en français : archétype, plan de jeu, cartes clés, forces, faiblesses et analyse VOD (matchups et tech), classées par tier.",
+    "Toutes les fiches Légendes Riftbound en français : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses, classées par tier.",
   alternates: { canonical: "/legendes" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Fiches Légendes Riftbound FR : guides & analyses VOD par Légende",
+    title: "Fiches Légendes Riftbound FR : guides & decklists par Légende",
     description:
-      "Toutes les fiches Légendes Riftbound : archétype, plan de jeu, cartes clés, forces, faiblesses et analyse VOD, classées par tier.",
+      "Toutes les fiches Légendes Riftbound : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses, classées par tier.",
     images: ["/img/og-default.png"],
   },
 };
@@ -67,11 +68,20 @@ const TIER_GROUPS: { tier: number; label: string; note: string; color: string }[
 
 function LegendCard({ fiche }: { fiche: FicheSummary }) {
   const name = displayLegendName(fiche.legendName);
+  const bannerUrl = getBannerUrl(fiche.legendName);
   return (
     <Link
       href={`/legendes/${fiche.slug}`}
-      className="block rounded-lg border border-hairline bg-surface p-4 transition-colors hover:border-hairline-accent"
+      className="block overflow-hidden rounded-lg border border-hairline bg-surface transition-colors hover:border-hairline-accent"
     >
+      {bannerUrl && (
+        <img
+          src={bannerUrl}
+          alt={`Bannière ${name}`}
+          className="h-24 w-full rounded-t-lg object-cover"
+        />
+      )}
+      <div className="p-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
           {name}
@@ -91,6 +101,7 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
         ))}
       </div>
       {fiche.archetype && <p className="mt-2 text-xs text-ink-secondary">{fiche.archetype}</p>}
+      </div>
     </Link>
   );
 }
@@ -112,8 +123,8 @@ export default async function LegendesIndexPage() {
         Fiches Légendes
       </h1>
       <p className="mt-2 text-lg text-ink-secondary">
-        Une fiche par Légende du jeu : archétype, plan de jeu, cartes clés, forces, faiblesses et une analyse VOD tirée
-        des casts compétitifs. Les Légendes sont classées par tier.
+        Une fiche par Légende du jeu : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses.
+        Les Légendes sont classées par tier.
       </p>
 
       <div className="mt-10 space-y-12">

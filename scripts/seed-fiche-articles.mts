@@ -778,6 +778,14 @@ function buildBlocks(c: Content) {
 // de publication existante d'un article (sinon tout remonte en tête de liste).
 const FICHE_PUBLISHED_AT = new Date("2026-06-24");
 
+// DÉSACTIVÉ : les articles "meilleur-deck-<legende>" font doublon avec la section
+// /legendes (qui affiche directement les decklists de chaque Légende). On ne les
+// recrée plus. Suppression en base : scripts/delete-meilleur-deck-articles.ts.
+// Pour réactiver, retirer ce bloc de garde.
+console.log("seed-fiche-articles : DÉSACTIVÉ (remplacé par la section /legendes). Aucun article écrit.");
+await prisma.$disconnect();
+process.exit(0);
+
 for (const c of CONTENT) {
   const { blocks, nLists } = buildBlocks(c);
   const cover = bannerUrl(c.legendName) ?? c.art;

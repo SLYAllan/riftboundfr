@@ -1,20 +1,23 @@
-// ISR : les fiches viennent du système de fichiers (dispo au build), mais la
-// résolution des codes cartes (UNL-059 -> nom réel) interroge la DB, indispo au
-// build Docker. On rend en ISR + try/catch : si la DB manque, on affiche le code
-// brut, et la revalidation résoudra le vrai nom au premier rendu en prod.
-export const revalidate = 3600;
+// Page dynamique : la résolution des codes cartes (UNL-059 -> nom réel) et les
+// decklists interrogent la DB d'exécution, indisponible au build Docker. En
+// "force-dynamic", le rendu se fait toujours à la requête, donc la DB est joignable
+// en prod et les codes sont résolus en vrais noms (fini les UNL-059 affichés bruts).
+export const dynamic = "force-dynamic";
 
 import { promises as fs } from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingUp, Sparkles, AlertTriangle, Swords, Video } from "lucide-react";
+import { TrendingUp, Sparkles, AlertTriangle, Swords, Layers } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CardRef } from "@/components/card-ref";
+import { DecklistInteractive } from "@/components/decklist-interactive";
+import { getBannerUrl } from "@/lib/banners";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { displayLegendName } from "@/lib/utils";
+import type { DecklistCard, DeckSection } from "@/types";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
@@ -31,12 +34,6 @@ interface Gameplan {
   lateGame?: string;
   winCondition?: string;
 }
-interface VodInsights {
-  source?: string;
-  matchups?: string[] | string;
-  techCards?: string[] | string;
-  note?: string;
-}
 interface Fiche {
   legendName?: string;
   legendId?: string | null;
@@ -51,18 +48,8 @@ interface Fiche {
   topBattlefields?: string[];
   strengths?: string[];
   weaknesses?: string[];
-  matchups?: { favorable?: string[]; unfavorable?: string[]; even?: string[] };
-  competitiveResults?: Record<string, unknown>;
   difficulty?: string;
-  tipsBeginners?: string[];
-  tipsAdvanced?: string[];
   sourceUrl?: string;
-  vodInsights?: VodInsights;
-}
-
-async function listSlugs(): Promise<string[]> {
-  const files = await fs.readdir(FICHES_DIR);
-  return files.filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""));
 }
 
 // Le contenu rendu du site ne doit jamais contenir de tiret cadratin (—) ni demi-cadratin
@@ -90,11 +77,6 @@ async function getFiche(slug: string): Promise<Fiche | null> {
   }
 }
 
-export async function generateStaticParams() {
-  const slugs = await listSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
-
 const TIER_LABELS: Record<number, string> = {
   1: "Tier 1 (haut du méta)",
   2: "Tier 2 (solide)",
@@ -102,45 +84,29 @@ const TIER_LABELS: Record<number, string> = {
   4: "Tier 4 (de niche)",
 };
 
-const RESULT_LABELS: Record<string, string> = {
-  tier: "Tier",
-  preRegionals: "Avant les Régionaux",
-  regionalResults: "Résultats en Régional",
-  cityChallengWins: "Victoires City Challenge",
-  sydneyWinRate: "Winrate à Sydney",
-  sydneyConversionRate: "Taux de conversion à Sydney",
-  sydneyStats: "Statistiques Sydney",
-  winRate: "Winrate",
-  matches: "Matchs",
-  bestPlacement: "Meilleur placement",
-  bestPlacements: "Meilleurs placements",
-  placement: "Placement",
-  player: "Joueur",
-  tournament: "Tournoi",
-};
-
-function labelFor(key: string): string {
-  return RESULT_LABELS[key] ?? key;
+// Ordre de tri des decks par niveau de tournoi, identique à la page /decks.
+const TIER_ORDER: Record<string, number> = { S: 0, A: 1, B: 2, C: 3, D: 4 };
+function placementRank(p: string | null): number {
+  if (!p) return 9999;
+  const m = p.match(/\d+/);
+  return m ? parseInt(m[0], 10) : 9999;
 }
 
-function renderValue(value: unknown): string {
-  if (value == null) return "";
-  if (typeof value === "string" || typeof value === "number") return String(value);
-  if (Array.isArray(value)) {
-    return value
-      .map((v) =>
-        v && typeof v === "object"
-          ? Object.values(v as Record<string, unknown>).filter(Boolean).join(", ")
-          : String(v),
-      )
-      .join(" · ");
+// Decklists réelles de la Légende (uniquement des decks publiés en base, jamais
+// d'invention). try/catch : si la DB est indisponible, on rend la page sans decks.
+async function fetchLegendDecks(legendName: string) {
+  try {
+    return await prisma.deck.findMany({
+      where: { published: true, legendName: { contains: legendName, mode: "insensitive" } },
+      include: {
+        cards: { include: { card: true }, orderBy: [{ section: "asc" }, { card: { name: "asc" } }] },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 30,
+    });
+  } catch {
+    return [];
   }
-  if (typeof value === "object") {
-    return Object.entries(value as Record<string, unknown>)
-      .map(([k, v]) => `${labelFor(k)} : ${renderValue(v)}`)
-      .join(" · ");
-  }
-  return String(value);
 }
 
 export async function generateMetadata({
@@ -153,10 +119,10 @@ export async function generateMetadata({
   if (!fiche) return { title: "Légende introuvable" };
   const name = displayLegendName(fiche.legendName ?? slug);
   const setPart = fiche.set ? ` (set ${fiche.set})` : "";
-  const title = `${name} : guide & analyse VOD${setPart}`;
+  const title = `${name} : guide & decklists${setPart}`;
   const archetype = fiche.archetype ? `${fiche.archetype}. ` : "";
   const description =
-    `${name} à Riftbound : ${archetype}plan de jeu, cartes clés, forces, faiblesses et analyse VOD (matchups et tech).`.slice(
+    `${name} à Riftbound : ${archetype}decklists, plan de jeu, cartes clés, forces et faiblesses.`.slice(
       0,
       158,
     );
@@ -204,10 +170,13 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   if (!fiche) notFound();
 
   const name = displayLegendName(fiche.legendName ?? slug);
+  const legendName = fiche.legendName ?? name;
+  const bannerUrl = getBannerUrl(legendName);
 
   // Résolution des codes cartes -> noms réels. Les keyCards portent parfois un code
   // (UNL-059) dans `name`, parfois le vrai nom. On collecte tous les codes et on
-  // interroge la DB une seule fois. try/catch : la page reste rendue même sans DB.
+  // interroge la DB une seule fois. En force-dynamic la DB est joignable : les codes
+  // sont résolus en prod (plus de UNL-059 affichés bruts).
   const codes = new Set<string>();
   for (const kc of fiche.keyCards ?? []) {
     if (kc.id && CODE_RE.test(kc.id)) codes.add(kc.id);
@@ -222,25 +191,103 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
       });
       for (const c of cards) cardMap[c.riftboundId] = c.name;
     } catch {
-      /* DB indispo (build Docker) : on affichera les codes bruts, l'ISR résoudra ensuite. */
+      /* DB indispo : on affichera les codes bruts (cas de repli). */
     }
   }
+
+  // On récupère un pool puis on garde les 3 meilleures (tier de tournoi puis placement).
+  const legendDecks = await fetchLegendDecks(legendName);
+
+  legendDecks.sort((a, b) => {
+    const ta = a.tournamentTier ? (TIER_ORDER[a.tournamentTier] ?? 5) : 5;
+    const tb = b.tournamentTier ? (TIER_ORDER[b.tournamentTier] ?? 5) : 5;
+    if (ta !== tb) return ta - tb;
+    return placementRank(a.placement) - placementRank(b.placement);
+  });
+  const topDecks = legendDecks.slice(0, 3);
+
+  // Mappe un deck (DeckCard[] + carte incluse) vers DecklistCard[], avec le repli
+  // d'injection de la Légende (reprise fidèle de /decks/[slug]).
+  const buildDecklistCards = async (
+    deck: (typeof topDecks)[number],
+  ): Promise<DecklistCard[]> => {
+    const hasLegendSection = deck.cards.some(
+      (dc) => dc.section === "legend" && dc.card.type === "Legend",
+    );
+    let decklistCards: DecklistCard[] = deck.cards.map((dc) => ({
+      cardId: dc.card.id,
+      name: dc.card.name,
+      artUrl: dc.card.imageUrl,
+      type: dc.card.type,
+      cost: dc.card.energy,
+      power: dc.card.power,
+      energy: dc.card.energy,
+      might: dc.card.might,
+      rarity: dc.card.rarity,
+      domains: dc.card.domains,
+      description: dc.card.textPlain,
+      quantity: dc.quantity,
+      section: dc.section as DeckSection,
+    }));
+
+    if (!hasLegendSection) {
+      const dashName = deck.legendName.replace(", ", " - ");
+      const prefix = deck.legendName.split(",")[0].split(" - ")[0].trim();
+      let legendCard = await prisma.card.findFirst({
+        where: {
+          OR: [
+            { riftboundId: deck.legendId },
+            { type: "Legend", name: { equals: deck.legendName, mode: "insensitive" } },
+            { type: "Legend", name: { equals: dashName, mode: "insensitive" } },
+          ],
+        },
+      });
+      if (!legendCard) {
+        legendCard = await prisma.card.findFirst({
+          where: {
+            type: "Legend",
+            name: { startsWith: prefix, mode: "insensitive" },
+            NOT: { name: { contains: "Overnumbered" } },
+          },
+        });
+      }
+      if (legendCard && !decklistCards.some((c) => c.cardId === legendCard!.id)) {
+        decklistCards = [
+          {
+            cardId: legendCard.id,
+            name: legendCard.name,
+            artUrl: legendCard.imageUrl,
+            type: legendCard.type,
+            cost: legendCard.energy,
+            power: legendCard.power,
+            energy: legendCard.energy,
+            might: legendCard.might,
+            rarity: legendCard.rarity,
+            domains: legendCard.domains,
+            description: legendCard.textPlain,
+            quantity: 1,
+            section: "legend" as DeckSection,
+          },
+          ...decklistCards,
+        ];
+      }
+    }
+    return decklistCards;
+  };
+
+  const decklists = await Promise.all(
+    topDecks.map(async (deck) => ({ deck, cards: await buildDecklistCards(deck) })),
+  );
 
   const domains = fiche.domains ?? [];
   const tierLabel = fiche.tier ? TIER_LABELS[fiche.tier] ?? `Tier ${fiche.tier}` : null;
   const gp = fiche.gameplan ?? {};
-  const vod = fiche.vodInsights;
-  const vodMatchups = Array.isArray(vod?.matchups)
-    ? vod!.matchups
-    : vod?.matchups
-      ? [vod.matchups]
-      : [];
-  const vodTech = Array.isArray(vod?.techCards) ? vod!.techCards : vod?.techCards ? [vod.techCards] : [];
+  const decksHref = `/decks?legend=${encodeURIComponent(legendName)}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${name} : guide et analyse VOD à Riftbound`,
+    headline: `${name} : guide et decklists à Riftbound`,
     description: fiche.archetype ?? `Guide de la Légende ${name} à Riftbound.`,
     inLanguage: "fr",
     about: "Riftbound",
@@ -248,8 +295,37 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
   };
 
+  const Badges = (
+    <div className="flex flex-wrap items-center gap-2 text-xs">
+      {domains.map((d) => (
+        <span
+          key={d}
+          className="inline-flex items-center gap-1 rounded px-2 py-0.5 font-semibold"
+          style={{
+            backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20`,
+            color: DOMAIN_COLORS[d] ?? "#6b7280",
+          }}
+        >
+          {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3.5 w-3.5" />}
+          {DOMAIN_LABELS_FR[d] ?? d}
+        </span>
+      ))}
+      {tierLabel && (
+        <span className="rounded bg-gold/15 px-2 py-0.5 font-semibold text-gold">{tierLabel}</span>
+      )}
+      {fiche.set && (
+        <span className="rounded bg-violet/15 px-2 py-0.5 font-semibold text-violet">{fiche.set}</span>
+      )}
+      {fiche.difficulty && (
+        <span className="rounded bg-surface-raised px-2 py-0.5 text-ink-muted">
+          Difficulté : {fiche.difficulty}
+        </span>
+      )}
+    </div>
+  );
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
@@ -262,283 +338,308 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         className="mb-6"
       />
 
-      <header>
-        <div className="flex flex-wrap items-center gap-2 text-xs">
-          {domains.map((d) => (
-            <span
-              key={d}
-              className="inline-flex items-center gap-1 rounded px-2 py-0.5 font-semibold"
-              style={{
-                backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20`,
-                color: DOMAIN_COLORS[d] ?? "#6b7280",
-              }}
+      {/* Bannière héro */}
+      {bannerUrl ? (
+        <header className="relative overflow-hidden rounded-card border border-hairline">
+          <img
+            src={bannerUrl}
+            alt={`Bannière ${name}`}
+            className="h-44 w-full object-cover sm:h-56"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+            <h1
+              className="text-3xl font-bold text-white drop-shadow sm:text-4xl"
+              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3.5 w-3.5" />}
-              {DOMAIN_LABELS_FR[d] ?? d}
-            </span>
-          ))}
-          {tierLabel && (
-            <span className="rounded bg-gold/15 px-2 py-0.5 font-semibold text-gold">{tierLabel}</span>
-          )}
-          {fiche.set && <span className="rounded bg-violet/15 px-2 py-0.5 font-semibold text-violet">{fiche.set}</span>}
-          {fiche.difficulty && <span className="text-ink-muted">Difficulté : {fiche.difficulty}</span>}
-        </div>
-        <h1 className="mt-3 text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          {name}
-        </h1>
-        {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
-      </header>
+              {name}
+            </h1>
+            {fiche.archetype && (
+              <p className="mt-1 max-w-2xl text-sm text-white/85 sm:text-base">{fiche.archetype}</p>
+            )}
+            <div className="mt-3">{Badges}</div>
+          </div>
+        </header>
+      ) : (
+        <header className="rounded-card border border-hairline bg-surface p-5">
+          <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            {name}
+          </h1>
+          {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
+          <div className="mt-3">{Badges}</div>
+        </header>
+      )}
+
+      {/* Capacité + accès aux decks */}
+      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+        {fiche.legendAbility && (
+          <div className="flex-1 rounded-card border border-hairline bg-surface p-4">
+            <h2
+              className="flex items-center gap-2 text-sm font-semibold text-arcane"
+              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+            >
+              <Sparkles size={16} /> Capacité de la Légende
+            </h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
+          </div>
+        )}
+        <Link
+          href={decksHref}
+          className="inline-flex items-center justify-center gap-2 rounded-card bg-arcane px-5 py-3 text-sm font-semibold text-white hover:opacity-90 sm:w-64 sm:shrink-0"
+        >
+          Voir tous les decks de {name}
+        </Link>
+      </div>
 
       <div className="mt-10 space-y-12">
-        {fiche.legendAbility && (
-          <Section title="Capacité de la Légende" icon={<Sparkles size={20} />}>
-            <p className="text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
-          </Section>
+        {/* Decklists, contenu principal */}
+        <Section title="Decklists de la Légende" icon={<Layers size={20} />}>
+          {decklists.length === 0 ? (
+            <p className="rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
+              Pas encore de decklist classée pour cette Légende.
+            </p>
+          ) : decklists.length === 1 ? (
+            <DecklistInteractive
+              compact
+              cards={decklists[0].cards}
+              deckName={decklists[0].deck.title}
+              legendName={legendName}
+              playerName={decklists[0].deck.playerName ?? undefined}
+              context={
+                [decklists[0].deck.tournamentContext, decklists[0].deck.placement]
+                  .filter(Boolean)
+                  .join(" · ") || undefined
+              }
+            />
+          ) : (
+            <div className="space-y-3">
+              {decklists.map(({ deck, cards }, i) => (
+                <details
+                  key={deck.id}
+                  open={i === 0}
+                  className="group rounded-card border border-hairline bg-surface"
+                >
+                  <summary className="flex cursor-pointer flex-wrap items-center gap-2 px-4 py-3 text-sm font-semibold">
+                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</span>
+                    {deck.playerName && (
+                      <span className="font-normal text-ink-muted">par {deck.playerName}</span>
+                    )}
+                    {deck.tournamentTier && (
+                      <span className="rounded bg-gold/15 px-1.5 py-0.5 text-[10px] font-bold text-gold">
+                        {deck.tournamentTier}
+                      </span>
+                    )}
+                    {deck.placement && (
+                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
+                        {deck.placement}
+                      </span>
+                    )}
+                  </summary>
+                  <div className="px-3 pb-3">
+                    <DecklistInteractive
+                      compact
+                      cards={cards}
+                      deckName={deck.title}
+                      legendName={legendName}
+                      playerName={deck.playerName ?? undefined}
+                      context={deck.tournamentContext ?? undefined}
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          )}
+        </Section>
+
+        {/* À savoir : cartes clés + forces/faiblesses côte à côte */}
+        {((fiche.keyCards?.length ?? 0) > 0 ||
+          (fiche.strengths?.length ?? 0) > 0 ||
+          (fiche.weaknesses?.length ?? 0) > 0) && (
+          <div className="grid gap-6 lg:grid-cols-2">
+            {(fiche.keyCards?.length ?? 0) > 0 && (
+              <section>
+                <h2
+                  className="flex items-center gap-2 text-xl font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  <TrendingUp size={18} /> Cartes clés
+                </h2>
+                <div className="mt-3 space-y-2">
+                  {fiche.keyCards!.map((kc, i) => {
+                    const code =
+                      kc.id && CODE_RE.test(kc.id)
+                        ? kc.id
+                        : kc.name && CODE_RE.test(kc.name)
+                          ? kc.name
+                          : null;
+                    const resolved = code ? cardMap[code] : null;
+                    const nameIsCode = !!kc.name && CODE_RE.test(kc.name);
+                    const display = resolved ?? kc.name ?? code ?? "";
+                    const wrapName = resolved ?? (!nameIsCode ? kc.name : null);
+                    return (
+                      <div key={i} className="rounded-lg border border-hairline bg-surface p-3">
+                        <div className="flex flex-wrap items-baseline gap-2">
+                          <span
+                            className="text-sm font-semibold"
+                            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                          >
+                            {wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
+                          </span>
+                          {kc.cost != null && (
+                            <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-arcane">
+                              {kc.cost} énergie
+                            </span>
+                          )}
+                        </div>
+                        {kc.role && <p className="mt-0.5 text-xs text-ink-secondary">{kc.role}</p>}
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
+              <section>
+                <h2
+                  className="text-xl font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  Forces &amp; faiblesses
+                </h2>
+                <div className="mt-3 space-y-4">
+                  {(fiche.strengths?.length ?? 0) > 0 && (
+                    <div className="rounded-lg border border-hairline bg-surface p-4">
+                      <h3
+                        className="text-sm font-semibold text-emerald-500"
+                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                      >
+                        Forces
+                      </h3>
+                      <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                        {fiche.strengths!.map((s, i) => (
+                          <li key={i}>{s}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {(fiche.weaknesses?.length ?? 0) > 0 && (
+                    <div className="rounded-lg border border-hairline bg-surface p-4">
+                      <h3
+                        className="flex items-center gap-1.5 text-sm font-semibold text-red-400"
+                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                      >
+                        <AlertTriangle size={15} /> Faiblesses
+                      </h3>
+                      <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                        {fiche.weaknesses!.map((w, i) => (
+                          <li key={i}>{w}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
+          </div>
         )}
 
+        {/* Plan de jeu, version courte */}
         {(gp.earlyGame || gp.midGame || gp.lateGame || gp.winCondition) && (
           <Section title="Plan de jeu" icon={<Swords size={20} />}>
-            <div className="space-y-2">
+            <div className="grid gap-2 sm:grid-cols-3">
               {gp.earlyGame && (
                 <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Début de partie : </strong>
+                  <strong className="text-ink">Début : </strong>
                   {gp.earlyGame}
                 </div>
               )}
               {gp.midGame && (
                 <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Milieu de partie : </strong>
+                  <strong className="text-ink">Milieu : </strong>
                   {gp.midGame}
                 </div>
               )}
               {gp.lateGame && (
                 <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-                  <strong className="text-ink">Fin de partie : </strong>
+                  <strong className="text-ink">Fin : </strong>
                   {gp.lateGame}
                 </div>
               )}
-              {gp.winCondition && (
-                <div className="rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-                  <strong>Condition de victoire : </strong>
-                  {gp.winCondition}
-                </div>
-              )}
             </div>
+            {gp.winCondition && (
+              <div className="mt-2 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
+                <strong>Condition de victoire : </strong>
+                {gp.winCondition}
+              </div>
+            )}
           </Section>
         )}
 
-        {(fiche.keyCards?.length ?? 0) > 0 && (
-          <Section title="Cartes clés" icon={<TrendingUp size={20} />}>
-            <div className="space-y-2">
-              {fiche.keyCards!.map((kc, i) => {
-                const code = kc.id && CODE_RE.test(kc.id) ? kc.id : kc.name && CODE_RE.test(kc.name) ? kc.name : null;
-                const resolved = code ? cardMap[code] : null;
-                const nameIsCode = !!kc.name && CODE_RE.test(kc.name);
-                // Vrai nom à afficher : résolu en priorité, sinon le name de la fiche s'il
-                // n'est pas un code, sinon le code brut (non résolu, affiché tel quel).
-                const display = resolved ?? kc.name ?? code ?? "";
-                const wrapName = resolved ?? (!nameIsCode ? kc.name : null);
-                return (
-                  <div key={i} className="rounded-lg border border-hairline bg-surface p-3">
-                    <div className="flex flex-wrap items-baseline gap-2">
-                      <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                        {wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
-                      </span>
-                      {kc.cost != null && (
-                        <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-arcane">
-                          {kc.cost} énergie
+        {/* Champions + Champs de bataille côte à côte */}
+        {((fiche.champions && Object.keys(fiche.champions).length > 0) ||
+          (fiche.topBattlefields?.length ?? 0) > 0) && (
+          <div className="grid gap-6 lg:grid-cols-2">
+            {fiche.champions && Object.keys(fiche.champions).length > 0 && (
+              <section>
+                <h2
+                  className="text-xl font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  Champions joués
+                </h2>
+                <div className="mt-3 space-y-2">
+                  {Object.entries(fiche.champions).map(([champName, info]) => (
+                    <div key={champName} className="rounded-lg border border-hairline bg-surface p-3">
+                      <div className="flex flex-wrap items-baseline gap-2">
+                        <span
+                          className="text-sm font-semibold"
+                          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                        >
+                          {champName}
                         </span>
-                      )}
+                        {info?.usage && (
+                          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet">
+                            {info.usage}
+                          </span>
+                        )}
+                      </div>
+                      {info?.role && <p className="mt-0.5 text-xs text-ink-secondary">{info.role}</p>}
                     </div>
-                    {kc.role && <p className="mt-0.5 text-xs text-ink-secondary">{kc.role}</p>}
-                  </div>
-                );
-              })}
-            </div>
-          </Section>
-        )}
+                  ))}
+                </div>
+              </section>
+            )}
 
-        {fiche.champions && Object.keys(fiche.champions).length > 0 && (
-          <Section title="Champions joués">
-            <div className="space-y-2">
-              {Object.entries(fiche.champions).map(([champName, info]) => (
-                <div key={champName} className="rounded-lg border border-hairline bg-surface p-3">
-                  <div className="flex flex-wrap items-baseline gap-2">
-                    <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                      {champName}
+            {(fiche.topBattlefields?.length ?? 0) > 0 && (
+              <section>
+                <h2
+                  className="text-xl font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  Champs de bataille fréquents
+                </h2>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {fiche.topBattlefields!.map((bf) => (
+                    <span
+                      key={bf}
+                      className="rounded-full bg-surface-raised px-3 py-1 text-xs text-ink-secondary"
+                    >
+                      {bf}
                     </span>
-                    {info?.usage && (
-                      <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet">
-                        {info.usage}
-                      </span>
-                    )}
-                  </div>
-                  {info?.role && <p className="mt-0.5 text-xs text-ink-secondary">{info.role}</p>}
+                  ))}
                 </div>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {(fiche.topBattlefields?.length ?? 0) > 0 && (
-          <Section title="Champs de bataille fréquents">
-            <div className="flex flex-wrap gap-2">
-              {fiche.topBattlefields!.map((bf) => (
-                <span key={bf} className="rounded-full bg-surface-raised px-3 py-1 text-xs text-ink-secondary">
-                  {bf}
-                </span>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
-          <Section title="Forces & faiblesses">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {(fiche.strengths?.length ?? 0) > 0 && (
-                <div className="rounded-lg border border-hairline bg-surface p-4">
-                  <h3 className="text-sm font-semibold text-emerald-500" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    Forces
-                  </h3>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                    {fiche.strengths!.map((s, i) => (
-                      <li key={i}>{s}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {(fiche.weaknesses?.length ?? 0) > 0 && (
-                <div className="rounded-lg border border-hairline bg-surface p-4">
-                  <h3 className="flex items-center gap-1.5 text-sm font-semibold text-red-400" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    <AlertTriangle size={15} /> Faiblesses
-                  </h3>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                    {fiche.weaknesses!.map((w, i) => (
-                      <li key={i}>{w}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </Section>
-        )}
-
-        {fiche.matchups && (fiche.matchups.favorable || fiche.matchups.unfavorable || fiche.matchups.even) && (
-          <Section title="Matchups">
-            <div className="grid gap-2 sm:grid-cols-3">
-              {(["favorable", "even", "unfavorable"] as const).map((k) => {
-                const list = fiche.matchups?.[k];
-                if (!list || list.length === 0) return null;
-                const label = k === "favorable" ? "Favorables" : k === "even" ? "Équilibrés" : "Défavorables";
-                const color = k === "favorable" ? "text-emerald-500" : k === "even" ? "text-ink-secondary" : "text-red-400";
-                return (
-                  <div key={k} className="rounded-lg border border-hairline bg-surface p-3">
-                    <h3 className={`text-xs font-semibold uppercase tracking-wider ${color}`}>{label}</h3>
-                    <ul className="mt-1.5 space-y-1 text-sm text-ink-secondary">
-                      {list.map((m, i) => (
-                        <li key={i}>{m}</li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          </Section>
-        )}
-
-        {((fiche.tipsBeginners?.length ?? 0) > 0 || (fiche.tipsAdvanced?.length ?? 0) > 0) && (
-          <Section title="Conseils de pilotage">
-            <div className="space-y-3">
-              {(fiche.tipsBeginners?.length ?? 0) > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    Débutants
-                  </h3>
-                  <ul className="mt-1.5 list-disc space-y-1 pl-5 text-sm text-ink-secondary">
-                    {fiche.tipsBeginners!.map((t, i) => (
-                      <li key={i}>{t}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {(fiche.tipsAdvanced?.length ?? 0) > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    Avancés
-                  </h3>
-                  <ul className="mt-1.5 list-disc space-y-1 pl-5 text-sm text-ink-secondary">
-                    {fiche.tipsAdvanced!.map((t, i) => (
-                      <li key={i}>{t}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </Section>
-        )}
-
-        {fiche.competitiveResults && Object.keys(fiche.competitiveResults).length > 0 && (
-          <Section title="Résultats compétitifs">
-            <dl className="space-y-1.5 rounded-lg border border-hairline bg-surface p-4 text-sm">
-              {Object.entries(fiche.competitiveResults).map(([k, v]) => {
-                const rendered = renderValue(v);
-                if (!rendered) return null;
-                return (
-                  <div key={k} className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
-                    <dt className="font-semibold text-ink-secondary sm:w-48 sm:shrink-0">{labelFor(k)}</dt>
-                    <dd className="text-ink-muted">{rendered}</dd>
-                  </div>
-                );
-              })}
-            </dl>
-          </Section>
-        )}
-
-        {vod && (vodMatchups.length > 0 || vodTech.length > 0 || vod.note) && (
-          <Section title="Analyse VOD" icon={<Video size={20} />}>
-            <div className="rounded-xl border-2 border-arcane/20 bg-arcane/5 p-4">
-              <p className="text-xs text-ink-muted">
-                Synthèse tirée des casts compétitifs (cf. analyses vidéo internes). Avis des commentateurs.
-              </p>
-              {vodMatchups.length > 0 && (
-                <div className="mt-3">
-                  <h3 className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    Matchups & lecture du méta
-                  </h3>
-                  <ul className="mt-1.5 list-disc space-y-1 pl-5 text-sm text-ink-secondary">
-                    {vodMatchups.map((m, i) => (
-                      <li key={i}>{m}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {vodTech.length > 0 && (
-                <div className="mt-3">
-                  <h3 className="text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    Cartes tech
-                  </h3>
-                  <div className="mt-1.5 flex flex-wrap gap-2">
-                    {vodTech.map((t, i) => (
-                      <span key={i} className="rounded-full bg-surface px-3 py-1 text-xs text-ink-secondary">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {vod.note && (
-                <p className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-secondary">{vod.note}</p>
-              )}
-            </div>
-          </Section>
+              </section>
+            )}
+          </div>
         )}
 
         <div className="flex flex-wrap gap-3">
           <Link
-            href={`/decks?legend=${encodeURIComponent(fiche.legendName ?? name)}`}
+            href={decksHref}
             className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
           >
-            Voir les decklists
+            Voir tous les decks de {name}
           </Link>
           <Link
             href="/tier-list"
