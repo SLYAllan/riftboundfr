@@ -72,35 +72,41 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
   return (
     <Link
       href={`/legendes/${fiche.slug}`}
-      className="block overflow-hidden rounded-lg border border-hairline bg-surface transition-colors hover:border-hairline-accent"
+      className="group relative block overflow-hidden rounded-card border border-hairline bg-surface-raised transition hover:border-hairline-accent hover:shadow-xl hover:shadow-black/30"
     >
-      {bannerUrl && (
+      {bannerUrl ? (
         <img
           src={bannerUrl}
-          alt={`Bannière ${name}`}
-          className="h-24 w-full rounded-t-lg object-cover"
+          alt=""
+          className="aspect-[16/7] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
+      ) : (
+        <div className="aspect-[16/7] w-full bg-surface-raised" />
       )}
-      <div className="p-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          {name}
-        </span>
-        {fiche.set && <span className="rounded-full bg-violet/10 px-2 py-0.5 text-[10px] font-bold text-violet">{fiche.set}</span>}
-      </div>
-      <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-        {fiche.domains.map((d) => (
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 p-3">
+        <div className="flex flex-wrap items-center gap-2">
           <span
-            key={d}
-            className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-semibold"
-            style={{ backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20`, color: DOMAIN_COLORS[d] ?? "#6b7280" }}
+            className="text-base font-bold leading-tight text-white drop-shadow"
+            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           >
-            {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3 w-3" />}
-            {DOMAIN_LABELS_FR[d] ?? d}
+            {name}
           </span>
-        ))}
-      </div>
-      {fiche.archetype && <p className="mt-2 text-xs text-ink-secondary">{fiche.archetype}</p>}
+          {fiche.archetype && (
+            <span className="text-[11px] text-white/70">{fiche.archetype}</span>
+          )}
+        </div>
+        <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+          {fiche.domains.map((d) => (
+            <span
+              key={d}
+              className="inline-flex items-center gap-1 rounded bg-black/50 px-1.5 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm"
+            >
+              {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3 w-3" />}
+              {DOMAIN_LABELS_FR[d] ?? d}
+            </span>
+          ))}
+        </div>
       </div>
     </Link>
   );
@@ -117,7 +123,7 @@ export default async function LegendesIndexPage() {
   const untiered = fiches.filter((f) => !f.tier || !TIER_GROUPS.some((g) => g.tier === f.tier));
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Légendes", href: "/legendes" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         Fiches Légendes
@@ -142,7 +148,7 @@ export default async function LegendesIndexPage() {
                 <span className="text-xs text-ink-muted">{g.note}</span>
               </div>
             </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {g.items.map((f) => (
                 <LegendCard key={f.slug} fiche={f} />
               ))}
@@ -155,7 +161,7 @@ export default async function LegendesIndexPage() {
             <h2 className="text-2xl font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               Autres Légendes
             </h2>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {untiered.map((f) => (
                 <LegendCard key={f.slug} fiche={f} />
               ))}

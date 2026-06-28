@@ -9,10 +9,12 @@ import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TrendingUp, Sparkles, AlertTriangle, Layers } from "lucide-react";
+import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CardRef } from "@/components/card-ref";
+import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { LEGEND_GUIDES } from "@/lib/legend-guides";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
@@ -321,6 +323,13 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   const tierLabel = fiche.tier ? TIER_LABELS[fiche.tier] ?? `Tier ${fiche.tier}` : null;
   const decksHref = `/decks?legend=${encodeURIComponent(legendName)}`;
 
+  // Guide "Comment jouer" : prose HUMAINE recopiée des fiches-articles (src/lib/legend-guides.ts),
+  // affichée seulement si une entrée existe pour ce slug (jamais d'invention).
+  const guide = LEGEND_GUIDES[slug];
+  const guideProse = guide
+    ? [guide.bref, guide.gagne, guide.plan].filter(Boolean).join("\n\n").replace(/\s*[—–]\s*/g, ", ")
+    : null;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -486,6 +495,15 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           )}
         </Section>
 
+        {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
+        {guideProse && (
+          <Section title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
+            <div className="max-w-3xl text-[15px] leading-7 text-ink-secondary">
+              <MarkdownRenderer content={guideProse} />
+            </div>
+          </Section>
+        )}
+
         {/* À savoir : cartes clés + forces/faiblesses côte à côte */}
         {((fiche.keyCards?.length ?? 0) > 0 ||
           (fiche.strengths?.length ?? 0) > 0 ||
@@ -520,11 +538,6 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                           >
                             {wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
                           </span>
-                          {kc.cost != null && (
-                            <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-arcane">
-                              {kc.cost} énergie
-                            </span>
-                          )}
                         </div>
                         {kc.role && <p className="mt-0.5 text-xs text-ink-secondary">{kc.role}</p>}
                       </div>
