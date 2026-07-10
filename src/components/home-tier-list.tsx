@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn, displayLegendName } from "@/lib/utils";
 
@@ -96,7 +97,7 @@ export function HomeTierList({
           href="/tier-list"
           className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
         >
-          Voir tout <ArrowRight size={14} />
+          Tier list complète <ArrowRight size={14} />
         </Link>
       </div>
 
@@ -152,11 +153,13 @@ export function HomeTierList({
                   {entries.map((entry) => {
                     const card = legendMap.get(entry.legendId);
                     return card?.imageUrl ? (
-                      <img
+                      <Image
                         key={entry.id}
                         src={card.imageUrl}
                         alt={entry.legendName}
                         title={entry.legendName}
+                        width={48}
+                        height={48}
                         suppressHydrationWarning
                         className="h-12 w-12 rounded-lg object-cover hover:scale-110 transition-transform"
                       />

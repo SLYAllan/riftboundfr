@@ -19,6 +19,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Consolide les signaux SEO : Google indexait des URLs en www (la canonical seule ne suffit pas).
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.riftboundfrance.fr" }],
+        destination: "https://riftboundfrance.fr/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

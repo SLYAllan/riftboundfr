@@ -9,6 +9,7 @@ import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -387,9 +388,13 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
       {/* Bannière héro */}
       {bannerUrl ? (
         <header className="relative overflow-hidden rounded-card border border-hairline">
-          <img
+          <Image
             src={bannerUrl}
             alt={`Bannière ${name}`}
+            width={700}
+            height={300}
+            priority
+            sizes="(max-width: 1024px) 100vw, 976px"
             className="block h-auto w-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />

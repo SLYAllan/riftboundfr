@@ -117,6 +117,14 @@ export default async function DeckDetailPage({ params }: PageProps) {
     }
   }
 
+  // Decks liés (même Légende) : retient les visiteurs organiques qui repartent après la liste.
+  const relatedDecks = await prisma.deck.findMany({
+    where: { published: true, legendName: deck.legendName, NOT: { id: deck.id } },
+    orderBy: { createdAt: "desc" },
+    take: 6,
+    select: { id: true, slug: true, title: true, playerName: true, placement: true, tournamentContext: true },
+  });
+
   const legendCard = deck.cards.find((dc) => dc.section === "legend");
   // Champion = carte supertype "Champion" qui n'est PAS la Légende (certaines Légendes,
   // ex. Annie, ont elles aussi supertype "Champion" → on distingue par type).
@@ -230,6 +238,31 @@ export default async function DeckDetailPage({ params }: PageProps) {
         <div className="mt-12">
           <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Guide du deck</h2>
           <div className="mt-4"><MarkdownRenderer content={deck.guide} /></div>
+        </div>
+      )}
+
+      {relatedDecks.length > 0 && (
+        <div className="mt-12">
+          <div className="flex items-center justify-between">
+            <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              Autres decks {displayLegendName(deck.legendName)}
+            </h2>
+            <Link href="/decks" className="text-sm text-arcane hover:text-arcane-light">Tous les decks</Link>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedDecks.map((rd) => (
+              <Link
+                key={rd.id}
+                href={`/decks/${rd.slug}`}
+                className="rounded-card border border-hairline bg-surface px-4 py-3 transition-colors hover:bg-surface-raised/50"
+              >
+                <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{rd.title}</div>
+                <div className="mt-1 truncate text-xs text-ink-muted">
+                  {[rd.playerName, rd.placement, rd.tournamentContext].filter(Boolean).join(" · ")}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </div>

@@ -2,6 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { getBannerUrl } from "@/lib/banners";
@@ -75,9 +76,12 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
       className="group relative block overflow-hidden rounded-card border border-hairline bg-surface-raised transition hover:border-hairline-accent hover:shadow-xl hover:shadow-black/30"
     >
       {bannerUrl ? (
-        <img
+        <Image
           src={bannerUrl}
           alt=""
+          width={640}
+          height={280}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="aspect-[16/7] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
         />
       ) : (

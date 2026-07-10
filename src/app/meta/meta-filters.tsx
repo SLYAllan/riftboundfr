@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LegendStats {
@@ -113,9 +114,11 @@ export function MetaFilters({
 
                 {/* Legend icon */}
                 {legend.iconUrl ? (
-                  <img
+                  <Image
                     src={legend.iconUrl}
                     alt={legend.shortName}
+                    width={80}
+                    height={80}
                     className="h-16 w-16 rounded-lg object-cover sm:h-20 sm:w-20"
                   />
                 ) : (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 
 interface TierListData {
@@ -136,9 +137,11 @@ export function TierListTabs({
                       onMouseLeave={() => setHoveredEntry(null)}
                     >
                       {card?.imageUrl ? (
-                        <img
+                        <Image
                           src={card.imageUrl}
                           alt={entry.legendName}
+                          width={80}
+                          height={80}
                           suppressHydrationWarning
                           className={cn(
                             "h-16 w-16 rounded-lg object-cover transition-transform sm:h-20 sm:w-20",
