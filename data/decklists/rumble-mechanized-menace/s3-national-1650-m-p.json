@@ -1,0 +1,182 @@
+{
+  "id": "s3-national-1650-m-p",
+  "legend": "Rumble, Mechanized Menace",
+  "champion": "Rumble, Hotheaded",
+  "player": "M·P",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1650,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Forecaster",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-65"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-7"
+    },
+    {
+      "name": "Bubble Bot",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-62"
+    },
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-26"
+    },
+    {
+      "name": "Rumble, Scrapper",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-89"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-21"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Breakneck Mech",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-71"
+    },
+    {
+      "name": "Chemtech Cask",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-63"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Lotus Trap",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-13"
+    },
+    {
+      "name": "Shakedown",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-33"
+    },
+    {
+      "name": "Smoke Screen",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-93"
+    },
+    {
+      "name": "Upstage Comedy",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-9"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-63"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-76"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-77"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Forbidding Waste",
+    "Rockfall Path",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Angle Shot",
+      "quantity": 2,
+      "riftboundId": "SFD-11"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "riftboundId": "UNL-70"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 1,
+      "riftboundId": "SFD-14"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "riftboundId": "OGN-22"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ap-lan-bo-220077",
+  "notes": null
+}

@@ -50,7 +50,10 @@ def walk(o):
         for v in o.values(): walk(v)
     elif isinstance(o, list):
         for v in o: walk(v)
-for d in ('changsha', 'vancouver', 'utrecht'):
+# Tous les dossiers de scrape, pas une liste figée : sinon chaque nouveau tournoi
+# arrive « invérifiable » tant que personne ne pense à l'ajouter ici.
+for d in sorted(os.listdir(RAW)):
+    if not os.path.isdir(os.path.join(RAW, d)): continue
     for f in glob.glob(os.path.join(RAW, d, '*.json')):
         try:
             obj = json.loads(open(f, encoding='utf-8').read())

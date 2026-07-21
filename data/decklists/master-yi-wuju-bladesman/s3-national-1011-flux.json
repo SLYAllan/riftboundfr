@@ -1,0 +1,127 @@
+{
+  "id": "s3-national-1011-flux",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Honed",
+  "player": "旋木时光.阿黎Flux",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1011,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-44"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-36"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-105"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-115"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-31"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Thwonk!",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-40"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-47"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Emperor's Dais",
+    "Forge of the Fluft",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-xuan-mu-shi-guang-en-shi-shen-ye-219451",
+  "notes": null
+}

@@ -1,0 +1,114 @@
+{
+  "id": "s3-national-705-laikin",
+  "legend": "Ezreal, Prodigal Explorer",
+  "champion": "Ezreal, Prodigy",
+  "player": "LaiKin",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 705,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
+    },
+    {
+      "name": "Diana, Lunari",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-79"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-149"
+    },
+    {
+      "name": "Lillia, Fae Fawn",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-82"
+    },
+    {
+      "name": "Pyke, Returned",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-145"
+    },
+    {
+      "name": "Bard, Mercurial",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-79"
+    },
+    {
+      "name": "Jayce, Man of Progress",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-84"
+    },
+    {
+      "name": "Jhin, Meticulous Killer",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-89"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-143"
+    },
+    {
+      "name": "LeBlanc, Everywhere at Once",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-90"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-80"
+    },
+    {
+      "name": "Renata Glasc, Mastermind",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-88"
+    },
+    {
+      "name": "Zilean, Time Mage",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-86"
+    },
+    {
+      "name": "Syndra, Transcendent",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-146"
+    }
+  ],
+  "runes": {
+    "Mind": 12
+  },
+  "battlefields": [
+    "Altar of Blood",
+    "Amateur Recital",
+    "Forbidding Waste"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-eeez-219143",
+  "notes": null
+}

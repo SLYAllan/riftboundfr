@@ -1,0 +1,163 @@
+{
+  "id": "s3-national-602-shark",
+  "legend": "Viktor, Herald of the Arcane",
+  "champion": "Viktor, Leader",
+  "player": "Shark",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 602,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-69"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-81"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-87"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-176"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-165"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-80"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-70"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-221"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "The Arena's Greatest",
+    "Vilemaw's Lair",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Pickpocket",
+      "quantity": 2,
+      "riftboundId": "SFD-74"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "riftboundId": "SFD-164"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 1,
+      "riftboundId": "SFD-165"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 1,
+      "riftboundId": "OGN-221"
+    },
+    {
+      "name": "Machine Evangel",
+      "quantity": 1,
+      "riftboundId": "OGN-239"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "riftboundId": "OGN-92"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "riftboundId": "OGN-105"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-shark-wei-219040",
+  "notes": null
+}

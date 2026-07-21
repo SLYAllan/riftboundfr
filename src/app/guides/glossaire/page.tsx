@@ -64,6 +64,14 @@ const terms: GlossaryTerm[] = [
 
   // === Mécaniques (Sort) ===
   { term: "Répétition", en: "Repeat", category: "Mécaniques", subcategory: "Mot-clé (Sort)", definition: "En payant un coût supplémentaire (indiqué sur la carte), vous pouvez lancer ce sort une deuxième fois dans la foulée." },
+  // Vendetta, en vigueur le 24 juillet 2026. Définitions reprises des règles du jeu
+  // officielles FR du 16/07/2026 (règles 829, 827, 828, 440, 443).
+  { term: "Flux", en: "Flux", category: "Mécaniques", subcategory: "Mot-clé (Sort)", definition: "Vous pouvez lancer ce sort depuis votre défausse en payant son coût de Flux au lieu de son coût normal, puis il est banni. Le Flux ne change ni le moment où le sort peut être lancé ni ses autorisations, seulement la zone d'où il part.", related: ["Défausser", "Bannir"] },
+
+  // === Mécaniques (Vendetta) ===
+  { term: "Amplification", en: "Amplify", category: "Mécaniques", subcategory: "Mot-clé (Vendetta)", definition: "Mot-clé de compétence activée, surtout sur les permanents et les Légendes. Payez le coût d'Amplification et la carte devient amplifiée. Un élément déjà amplifié ne peut pas l'être une seconde fois.", related: ["Amplifié", "Désamplifier"] },
+  { term: "Amplifié", en: "Amplified", category: "Mécaniques", subcategory: "Mot-clé (Vendetta)", definition: "État binaire : une carte est amplifiée ou elle ne l'est pas. Le texte écrit après le symbole Amplifié n'est actif que tant que la carte garde cet état.", related: ["Amplification", "Désamplifier"] },
+  { term: "Désamplifier", en: "Deamplify", category: "Mécaniques", subcategory: "Mot-clé (Vendetta)", definition: "Retirer l'état amplifié d'une ou plusieurs cartes. Désamplifier une carte qui ne l'est pas ne fait rien.", related: ["Amplification", "Amplifié"] },
 
   // === Mécaniques (Équipement) ===
   { term: "Équiper", en: "Equip", category: "Mécaniques", subcategory: "Mot-clé (Équipement)", definition: "Payez le coût indiqué pour attacher cet Équipement à une de vos unités. L'unité bénéficie alors des bonus de l'Équipement.", related: ["Équipement", "Expert en armes", "Dégainer"] },
@@ -78,6 +86,10 @@ const terms: GlossaryTerm[] = [
   // === Actions ===
   { term: "Épuiser", en: "Exhaust", category: "Actions", definition: "Tourner une carte à l'horizontale pour l'utiliser (attaquer, activer une capacité, générer de l'énergie). Une carte épuisée ne peut plus rien faire tant qu'elle n'est pas préparée.", related: ["Préparer", "Accélération", "Énergie"] },
   { term: "Préparer", en: "Ready", category: "Actions", definition: "Remettre une carte à la verticale. Elle est de nouveau disponible pour être utilisée. Toutes vos cartes se préparent au début de votre tour (Phase d'Éveil).", related: ["Épuiser", "Phase d'Éveil"] },
+  { term: "Brûler", en: "Burn", category: "Actions", definition: "Déplacer des cartes du dessus de votre deck principal vers la défausse. La carte s'écrit « Brûlez X », X étant le nombre de cartes. Vous ne brûlez que si un effet vous le demande.", related: ["Défausser", "Flux"] },
+  { term: "Passer", en: "Skip", category: "Actions", definition: "Remplacer un événement par rien. « Passez votre phase de pioche » supprime la pioche ; « Passez le prochain déplacement de cette unité » supprime ce déplacement. Rien ne se déclenche à la place.", related: ["Déplacer", "Piocher"] },
+  { term: "Défausser", en: "Discard", category: "Actions", definition: "Envoyer une carte de votre main directement dans votre défausse, sans la jouer. C'est vous qui choisissez les cartes, et vous ne défaussez que si un effet vous le demande.", related: ["Brûler", "Bannir", "Flux"] },
+  { term: "Bannir", en: "Banish", category: "Actions", definition: "Déplacer une carte, depuis n'importe quelle zone, vers la zone de bannissement. Bannir n'est ni une élimination ni une défausse : la carte quitte la partie.", related: ["Défausser", "Flux"] },
   { term: "Prédiction", en: "Predict", category: "Actions", definition: "Regardez plusieurs cartes du dessus de votre deck. Gardez celles qui vous intéressent dans l'ordre voulu, et mettez les autres en dessous du deck.", related: ["Recycler", "Vision"] },
   { term: "Recycler", en: "Recycle", category: "Actions", definition: "Mettre une carte ou une rune en dessous de son deck respectif. Pour les runes, c'est aussi le moyen de générer de la Puissance (ressource).", related: ["Prédiction", "Puissance (ressource)", "Rune"] },
   { term: "Rappeler", en: "Recall", category: "Actions", definition: "Renvoyer des unités dans votre Base après un combat. Cela se produit quand vos unités survivantes ne conquièrent pas le champ de bataille.", related: ["Base", "Confrontation", "Conquête"] },

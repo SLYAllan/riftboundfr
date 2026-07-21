@@ -1,0 +1,158 @@
+{
+  "id": "hartford-44-seaweedstrangler",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Tempered",
+  "player": "SeaweedStrangler",
+  "tournament": "RQ Hartford 2026",
+  "date": "2026-06-20",
+  "placement": 44,
+  "playerCount": 1953,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-44"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-36"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-105"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-82"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-77"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-115"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-46"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-95"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-192"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-42"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Calm": 5
+  },
+  "battlefields": [
+    "Ravenbloom Conservatory",
+    "Star Spring",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Skyward Strike",
+      "quantity": 1,
+      "riftboundId": "UNL-38"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 1,
+      "riftboundId": "UNL-42"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "riftboundId": "SFD-109"
+    }
+  ],
+  "record": "10-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-201330",
+  "notes": null
+}

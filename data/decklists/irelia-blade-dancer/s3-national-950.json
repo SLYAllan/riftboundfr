@@ -1,0 +1,167 @@
+{
+  "id": "s3-national-950",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "炸鸡",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 950,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Evelynn, Entrancing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-141"
+    },
+    {
+      "name": "Nami, Headstrong",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-52"
+    },
+    {
+      "name": "Diana, No Longer Human",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-149"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-48"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-150"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "The Syren",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "OGN-184"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-77"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-46"
+    },
+    {
+      "name": "Existential Dread",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-134"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Flash",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGS-11"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-172"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Ravenbloom Conservatory",
+    "Sunken Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Gust",
+      "quantity": 3,
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Windsinger",
+      "quantity": 2,
+      "riftboundId": "SFD-138"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 3,
+      "riftboundId": "SFD-32"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-dao-mei-219390",
+  "notes": null
+}

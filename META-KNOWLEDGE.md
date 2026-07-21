@@ -30,10 +30,21 @@
 - **Overtime Swiss** : victoire **par 2** → 6-7 = **tie** (les deux ratent le top cut) ; top cut untimed.
 - **Max 4 champions** pour Master Yi (sinon 3). Triggers verrouillés une fois sur la chain.
 
-**Ban list officielle (effective 31 mars 2026, 7 cartes — source canonique `src/lib/banned-cards.ts`) :**
-Called Shot, Draven Vanquisher, Fight or Flight, Scrapheap, The Dreaming Tree, Obelisk of Power, **Reaver's
-Row**. (Correction juin 2026 : Reaver's Row manquait, « Draven, Vanquisher » mal orthographié.) Dazzling
-Aurora **non** bannie. Détail des casts inter-sets (matchups Spiritforged/Origins + tech) dans
+**Ban list officielle — source canonique `src/lib/banned-cards.ts`.**
+
+*31 mars 2026, 7 cartes :* Called Shot, Draven Vanquisher, Fight or Flight, Scrapheap, The Dreaming Tree,
+Obelisk of Power, **Reaver's Row**. (Correction juin 2026 : Reaver's Row manquait, « Draven, Vanquisher »
+mal orthographié.) Dazzling Aurora **non** bannie.
+
+*24 juillet 2026, patch Vendetta ([annonce](https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/)) :*
+- **Standard, carte :** Stealthy Pursuer (Traqueuse furtive).
+- **Standard, battlefields :** The Arena's Greatest (Légende de l'arène) et Aspirant's Climb (Ascension des
+  aspirants). Ils pesaient **18 % et 23 %** des decks du format : c'est le vrai coup dur pour Body/ramp et
+  Aggro/Fury, voir `DECKBUILDING-RULES.md`.
+- **Aucune légende bannie** dans les formats que suit le site. L'annonce en bannit une en 2v2 construit,
+  format qu'on ne couvre pas : ne pas la faire remonter côté site.
+
+Détail des casts inter-sets (matchups Spiritforged/Origins + tech) dans
 `data/video-insights/cross-set-casts-2026-06.md`.
 
 ## 1. Règles clés (résumé pour rédaction)
@@ -91,6 +102,20 @@ Aurora **non** bannie. Détail des casts inter-sets (matchups Spiritforged/Origi
 - **AMBUSH** : unité cachée révélée en défense — excellent pour Hold
 - **HUNT** : nouveau keyword Unleashed — gain d'XP en combat, déblocage de paliers
 
+### Mots-clés Vendetta (règles du jeu FR du 16 juillet 2026, en vigueur le 24 juillet)
+- **AMPLIFICATION / AMPLIFIÉ / DÉSAMPLIFIER** (règles 827-828, 441-442) : compétence activée, surtout sur
+  permanents et légendes. On paie le coût, la carte devient *amplifiée*. État binaire, pas de cumul : une
+  carte déjà amplifiée ne peut pas l'être une 2ᵉ fois. Le texte marqué « Amplifié > ... » n'est actif que
+  tant que l'état tient. Mécanique phare du set.
+- **FLUX** (829) : mot-clé passif sur les sorts. « Flux [Coût] » = on peut lancer le sort **depuis la
+  défausse** à ce coût alternatif, puis il est banni. Ne change ni le timing ni les autorisations, juste la
+  zone de départ. Un sort peut porter plusieurs Flux à coûts différents, le contrôleur choisit.
+- **BRÛLER** (440) : « Brûlez X » = X cartes du dessus du deck principal vers la défausse. Action limitée.
+- **PASSER** (443) : remplace un événement par rien, sans déclencheur (phase de pioche, déplacement, point
+  de conquête). C'est un effet de remplacement.
+
+Rendus côté site dans `/guides/glossaire`. PDF des règles : voir `data/meta-reports/`.
+
 ### Zones de jeu (Comprehensive Rules 2026-03-30)
 - **Board** : Bases (une par joueur), Battlefield Zone (plusieurs BF), Facedown Zones (1 par BF, max 1 carte cachée), Legend Zone
 - **Non-Board** : Chain (pile de résolution), Trash (défausse — unordered, public), Champion Zone, Main Deck Zone (secret), Rune Deck Zone (secret), Banishment (exile — cartes retirées du jeu)
@@ -145,22 +170,30 @@ Aurora **non** bannie. Détail des casts inter-sets (matchups Spiritforged/Origi
 
 **Insight Origins** : méta à 2 têtes ultra-dominant — **Kai'Sa + Master Yi Bladesman = 50% du field** et 144 top 8 sur ~136 places. Sett surperforme (4 wins pour 5,4%).
 
-### 2.2 Tier Unleashed — data-backed (8 juin 2026, 5 105 decks classés)
+### 2.2 Tier Unleashed — data-backed (21 juillet 2026, **9 555 decks classés**)
 
-> 25 S3 City Challenges + Xi'an RO + **Tianjin RO** + Suzhou RQ + Sydney. 40 légendes — le méta le plus diversifié.
+> Recalculé sur tout le dépôt via `scripts/tier-unleashed.py` : 25 S3 City Challenges + Xi'an RO + Tianjin RO + Changsha RO + Suzhou RQ + Sydney + Vancouver + Utrecht + **Hartford (classement complet, 1 659)** + **S3 National Open (classement complet, 2 030)**. 40 légendes.
+> **Taux de Top 8 moyen du field = 2,76 %.** C'est la barre : au-dessus, la légende convertit mieux que la moyenne ; en dessous, elle est surjouée pour ce qu'elle rend.
 
-| Tier | Legend | Field % (decks) | Top 8 | Wins |
-|------|--------|-----------------|-------|------|
-| **S** | Master Yi, Wuju Bladesman | 11,4% (583) | 41 | 5 |
-| **S** | Irelia, Blade Dancer | 8,3% (422) | 31 | 5 |
-| **S** | LeBlanc, Deceiver | 7,1% (365) | 18 | 2 |
-| **S** | Diana, Scorn of the Moon | 6,5% (334) | 21 | 2 |
-| **A** | Fiora (5,6%/15·3W) · Lillia (5,1%/11) · Azir (3,8%/7·1W) · Kai'Sa (3,6%/11) · Sivir (2,9%/8·2W) · Sett (2,7%/8·3W) · Rengar (2,7%/5·1W) · Annie (1,5%/5·3W sleeper) | — | — | — |
-| **B** | Vex (5%/7·0W) · Viktor · Kha'Zix · Draven (2,6%/8) · Ornn · Pyke (4e Tianjin) · Ezreal | 1,7-5% | 2-8 | 0-1 |
-| **C** | Miss Fortune (3,3% mais 1 top8) · Ahri · Volibear · Jhin · Vi · Teemo · Poppy · **Rek'sai (3e Tianjin)** | 0,8-3,3% | 0-2 | 0 |
-| **D** | Leona · Ivern · Lux · Lucian · Jax · Yasuo · Jinx · Rumble · Darius · Lee Sin · Garen · Renata | <1,3% | 0-1 | 0 |
+| Tier | Legend | Field % (decks) | Top 8 | Wins | Conversion |
+|------|--------|-----------------|-------|------|-----------|
+| **S** | Master Yi, Wuju Bladesman | 11,9% (1133) | 49 | 6 | 4,3% |
+| **S** | Irelia, Blade Dancer | 8,2% (780) | 37 | 7 | 4,7% |
+| **S** | Diana, Scorn of the Moon | 7,3% (698) | 31 | 3 | 4,4% |
+| **A** | Annie, Dark Child | 1,7% (161) | 8 | 3 | **5,0%** (meilleure du set) |
+| **A** | Sett (2,1%/9·3W · 4,4%) · Fiora (4,0%/15·3W · 3,9%) · Draven (2,3%/8 · 3,7%) · Kai'Sa (3,3%/11 · 3,5%) · Sivir (2,7%/9·2W · 3,5%) | — | — | — | > 2,76% |
+| **B** | LeBlanc (6,0%/18·2W · 3,1%) · Lillia (3,8%/11·1W · 3,0%) · Rek'Sai (1,4%/4 · 3,0%) · Darius (0,8%/2 · 2,7%) · Azir (3,8%/9·2W · 2,5%) · Rengar (2,5%/6·1W · 2,5%) · Pyke (2,2%/5 · 2,4%) · Ezreal (1,9%/4 · 2,2%) | — | — | — | ~2,5% |
+| **C** | **Vex (4,2%/7·0W · 1,8%)** · Kha'Zix (2,4%/4 · 1,7%) · Garen · Jhin · **Viktor (3,3%/4 · 1,3%)** · Ornn · Poppy · Lucian · Jax · Master Yi Wuju Master · Lux · Teemo · Volibear | 0,7-4,2% | 1-7 | 0 | < 2% |
+| **D** | **Miss Fortune (2,8%/1 · 0,4%)** · Ahri (2,0%/0) · Leona (1,5%/0) · Vi · Jinx · Ivern · Yasuo · Lee Sin · Rumble · Renata | ≤2,8% | 0-1 | 0 | ~0% |
 
-**Insights Unleashed** : **Master Yi (Wuju Bladesman)** est le **#1 du field** (11,4 %, 583 decks) et **a gagné Tianjin** — c'est bien le Bladesman d'Origins joué en Unleashed, PAS le « Wuju Master » (légende quasi jamais jouée : ne pas confondre). **Irelia** reste T1. **Vex** = piège volume (5 % du field, 0 win). **Miss Fortune** sous-performe (3,3 %, 1 top 8). **Rek'sai** surprend (3e Tianjin) → remonte en C. Annie/Sett/Fiora surperforment en conversion. Méta très ouvert (~13 légendes viables).
+**Ce qui a changé depuis le 8 juin** (le National Open ajoute 2 030 decks classés et Hartford 1 659, soit ensemble près de 40 % de la base) :
+- **LeBlanc quitte le tier S.** Elle garde du volume (6,3 %, 497 decks) mais convertit à 3,6 %, à peine au-dessus de la moyenne, et n'a plus rien gagné depuis les City Challenges d'avril. Au National : 89 listes, 2 dans le Top 16 (11e et 13e), aucune dans le Top 8.
+- **Annie est la meilleure conversion du set** : 6,5 % de Top 8 et 3 victoires pour seulement 124 decks. Top 8 à Utrecht, à Hartford, et 6e au National. Ce n'est plus une « sleeper », c'est un tier A.
+- **Vex tombe en C.** 357 decks, 7 Top 8, **aucune victoire**, et **zéro Top 32 au National** sur 89 listes. Trois tournois de suite sans conversion : le piège volume est démontré, pas supposé.
+- **Miss Fortune s'effondre en D** : 228 decks pour **1 seul Top 8**, soit 0,4 %. C'est la pire conversion du set, dix fois sous la moyenne. L'archétype Aurora qu'elle porte est lisible et préparé.
+- **Rek'Sai monte en A** : 4 Top 8 pour 99 decks (4,0 %), après son podium à Tianjin et sa 5e place au National. Deux orthographes coexistaient dans le dépôt (`Rek'sai` / `Rek'Sai`) et cassaient le comptage ; c'est fusionné.
+- **Master Yi Bladesman reste n°1 du field mais est surjoué** : 12,1 % des decks, conversion 5,1 %, soit moins bien qu'Irelia et Diana qui sont deux fois moins choisies. Toujours à ne pas confondre avec le **Wuju Master** (77 decks, 1 Top 8, tier C).
+- **Ahri, Leona, Vi, Ivern, Jinx, Yasuo, Rumble** : plus de 500 decks cumulés, **zéro Top 8**. À déconseiller franchement.
 
 ### Tier List historique cross-set (Origins→Unleashed)
 
@@ -465,7 +498,8 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - Article Top 8 : `data/articles-drafts/recap-utrecht-rq-top8.md`. Analyse VOD : `data/videos/utrecht-day1-analysis.json`. Page : `/tournois/rq-utrecht-2026`.
 
 ### Juin 2026 — RQ Hartford (20 juin 2026, Amérique du Nord)
-- **1 953 joueurs**, **1 657 decklists** au classement final (standings complets scrapés via riftdecks). 13 rondes de Suisse → Top 8 à élimination directe. Set Unleashed — **dernier RQ du format** avant le set Vendetta (paires de couleurs ennemies).
+- **1 953 joueurs**, **1 659 entrées au classement final** (rang, bilan, légende, joueur : tout récupéré le 21 juillet). ⚠️ riftdecks n'a publié que **116 decklists** sur ces 1 659 : les autres lignes affichent « N/A / Submit Deck ». Les 116 sont dans le dépôt (préfixe `hartford-`). 13 rondes de Suisse → Top 8 à élimination directe.
+- ⚠️ **Correction du 21 juillet** : les 7 fiches du Top 8 issues du parsage markdown de juin contenaient au moins une erreur de champion (Factor jouait **Master Yi, Honed**, pas Tempered). Elles ont été remplacées par le scrape direct du tableau, qui lit la ligne `data-card-type` au lieu de deviner. Set Unleashed — **dernier RQ du format** avant le set Vendetta (paires de couleurs ennemies).
 - **Vainqueur : Factor (Master Yi, Wuju Bladesman, Corps/Calme), 14-1-1** — 2-0 en finale sur **bsweitz (Diana, Scorn of the Moon, Chaos/Esprit, 13-2-1)**. Premier titre de Master Yi Bladesman sur le **circuit occidental** (Sydney/Vancouver/Utrecht/Hartford). Revanche personnelle : bsweitz avait éliminé Factor à Vancouver.
 - **Finale** = la signature du week-end : **double The Arena's Greatest** posé par Factor (partie à 6 points), gagnée en jouant **second**. Moteur Master Yi = **Ruin Runner** (6 énergie / 5 might, non ciblable par sorts/capacités), protégé par Sabotage + Punch First — cauchemar des decks Chaos/Diana.
 - **Top légendes par picks (1657 decks)** : Master Yi Wuju Bladesman (178 / 10,7%), Diana (134 / 8,1%), Irelia (93), LeBlanc (76), Azir (70), Viktor (64), Ahri (53), Sivir (50), Pyke (46), Rengar (45), Kai'Sa (44), Ezreal (42), Draven/MF/Jhin (40), Vex (39), Annie (38), Leona/Lillia (36), Rek'Sai (35), Kha'Zix (34).
@@ -481,6 +515,21 @@ Chaque fiche contient : domains, ability, gameplan (early/mid/late), key cards a
 - Tier B : Ezreal (3e Hartford), Vex (piège volume), Viktor (finaliste Utrecht), Kha'Zix, Ornn, Pyke (8e Hartford).
 - **Lux monte en tier C** : 6e à Hartford (Relivia), 1er Top 8 majeur Unleashed de la légende.
 - Master Yi Wuju Master = tier D, archétype de niche (0,4%, 1 top 8).
+
+### Juillet 2026 — S3 National Open (19 juillet 2026, Chine) — le plus gros field Unleashed
+
+- **2 048 joueurs**, **2 032 decklists** publiées, set Unleashed. Classement complet récupéré (rang + légende pour les 2 032). Le plus gros tournoi Unleashed à ce jour, devant Vancouver et Hartford.
+- **Vainqueur : Irelia, Blade Dancer** (梦之星-咕嘎乐色, Calme/Chaos). **Finale 100 % Irelia** : le 1er et le 2e jouent la même légende, les mêmes deux domaines.
+- **Top 8** : 1er + 2e Irelia · 3e + 4e Diana · **5e Rek'Sai** · **6e Annie** · 7e + 8e Master Yi Bladesman. Cinq légendes pour huit joueurs.
+- **Field** : Master Yi Bladesman 15,1 % (307) · Irelia 9,9 % (202) · Diana 8,2 % (166) · LeBlanc 4,4 % (89) · Vex 4,4 % (89) · Viktor 4,2 % (86) · Azir 3,5 % (72) · Kai'Sa 3,2 % (66).
+- **Seules 10 légendes sur 41 placent un deck dans le Top 32.** Le méta reste large à la base et se referme complètement en haut de tableau.
+- **Conversion en Top 32** (moyenne du field = 1,6 %) : Lux 6,1 % (2 sur 33) · Rek'Sai 4,4 % · Annie 4,2 % · **Diana 4,2 %** · Irelia 3,0 % · Master Yi 2,6 % · Viktor 2,3 % · LeBlanc 2,2 %.
+- **Master Yi est surjoué** : premier du field de très loin (15,1 %) mais seulement 2 Top 8 et une conversion à peine au-dessus de la moyenne. Diana convertit une fois et demie mieux en étant deux fois moins jouée.
+- **Vex ne convertit toujours rien** : 89 decks, **zéro Top 32**. Troisième tournoi de suite (Tianjin, Hartford, National) où le gros pick rate ne donne aucun résultat. Le piège volume est confirmé, ce n'est plus un accident d'échantillon.
+- **Kai'Sa a disparu du haut de tableau** : 66 decks, zéro Top 32. La reine d'Origins ne tient plus en Unleashed.
+- **Rek'Sai et Annie confirment** : deux légendes peu jouées (45 et 24 decks) qui signent chacune un Top 8, après le podium de Rek'Sai à Tianjin et le Top 8 d'Annie à Hartford et Utrecht. Ce ne sont plus des surprises isolées.
+- **Lux place deux decks dans le Top 16** (12e et 14e) avec 33 listes seulement. Bon tournoi, mais **à ne pas surinterpréter** : sur l'ensemble de l'Unleashed elle reste à 1 Top 8 pour 87 decks. Elle ne monte pas de tier.
+- **Données** : `data/tournaments/s3-national.json`, decklists préfixées `s3-national-` dans `data/decklists/`. Source : riftdecks, tournoi `s3-national-open-tournament-decks-13535`.
 
 ### Juin 2026 — Tier lists riftbound.gg (Tianjin → Vendetta)
 
@@ -1764,6 +1813,7 @@ Les casters/Whisper rendent **Irelia** en « Aurelia » par intermittence (le ca
 
 ### Ban-watch (`[avis]` casters/panels)
 - **Vex Apathetic** = candidat n°1 : **« floodgate »** (0 power cost + Deflect + stun les unités jouées → contraint l'adversaire). ~26 % des decks à Hartford. Contre structurel de tokens/sprites/Reflections **et** des sand soldiers d'Arise (Azir).
+  ⚠️ **Ne pas confondre la carte et la légende** : il s'agit de la **carte** *Vex, Apathetic*, jouée un peu partout. La **légende** *Vex, Gloomist* ne pèse que **2,4 % du field à Hartford** (40 decks sur 1 659, aucun Top 64) et 4,4 % au National. Mesure sur les 947 listes du National : la carte est en deck principal dans 11,2 % des listes et en réserve dans 5,9 %.
 - **Lux loop via carte Echo** = combo infini non-intentionnel (« glitch ») → candidat ban unanime (existe aussi en Echo+Jhin).
 - **Ferrous Forerunner** = polarisant (certains decks sans réponse) ; **Defy** ultra-omniprésent (40 % des decks, contre ~70-75 % des sorts).
 

@@ -1,0 +1,143 @@
+{
+  "id": "hartford-565-dragonbit",
+  "legend": "Lucian, Purifier",
+  "champion": "Lucian, Merciless",
+  "player": "DragonBit",
+  "tournament": "RQ Hartford 2026",
+  "date": "2026-06-20",
+  "placement": 565,
+  "playerCount": 1953,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Dragonsoul Sage",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-93"
+    },
+    {
+      "name": "Herald of Scales",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-140"
+    },
+    {
+      "name": "Blazing Scorcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-1"
+    },
+    {
+      "name": "Direwing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-94"
+    },
+    {
+      "name": "Gentle Gemdragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-104"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-38"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Recurve Bow",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-16"
+    },
+    {
+      "name": "Boneshiver",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-118"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Confront",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-129"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Relentless Pursuit",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-184"
+    },
+    {
+      "name": "Show of Strength",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-106"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-14"
+    }
+  ],
+  "runes": {
+    "Body": 5,
+    "Fury": 7
+  },
+  "battlefields": [
+    "Altar of Blood",
+    "Aspirant's Climb",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "riftboundId": "OGN-22"
+    }
+  ],
+  "record": "5-3-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lucian-purifier-201712",
+  "notes": null
+}

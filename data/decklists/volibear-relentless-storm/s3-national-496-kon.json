@@ -1,0 +1,147 @@
+{
+  "id": "s3-national-496-kon",
+  "legend": "Volibear, Relentless Storm",
+  "champion": null,
+  "player": "kon",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 496,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Warwick, Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-159"
+    },
+    {
+      "name": "Deadbloom Predator",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-161"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-38"
+    },
+    {
+      "name": "Volibear, Furious",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-41"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Iron Ballista",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-17"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    },
+    {
+      "name": "Stormbringer",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-250"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-14"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Frozen Fortress",
+    "Sigil of the Storm"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Get Excited!",
+      "quantity": 2,
+      "riftboundId": "OGN-8"
+    },
+    {
+      "name": "Vi, Destructive",
+      "quantity": 1,
+      "riftboundId": "OGN-36"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "riftboundId": "OGN-22"
+    },
+    {
+      "name": "Stormbringer",
+      "quantity": 1,
+      "riftboundId": "OGN-250"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-volibear-218934",
+  "notes": null
+}

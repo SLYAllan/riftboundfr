@@ -30,6 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/glossaire`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/guides/domaines`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/jouer-en-ligne`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/guides/ban-list`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   // Fiches Légendes : générées depuis data/fiches/*.json (système de fichiers,

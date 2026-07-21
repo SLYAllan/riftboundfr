@@ -1,0 +1,175 @@
+{
+  "id": "s3-national-207",
+  "legend": "Fiora, Grand Duelist",
+  "champion": "Fiora, Victorious",
+  "player": "夜月",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 207,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "Sea Monkey",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-98"
+    },
+    {
+      "name": "Unsung Hero",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-167"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Kinkou Initiate",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-97"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Spectral Matron",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-226"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-164"
+    },
+    {
+      "name": "Baited Hook",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-242"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-206"
+    },
+    {
+      "name": "Tactical Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Call to Glory",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-207"
+    }
+  ],
+  "runes": {
+    "Body": 5,
+    "Order": 7
+  },
+  "battlefields": [
+    "Monastery of Hirana",
+    "Sunken Temple",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Punch First",
+      "quantity": 1,
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Repulse",
+      "quantity": 1,
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 1,
+      "riftboundId": "SFD-206"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "riftboundId": "SFD-180"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "riftboundId": "SFD-109"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-tang-hao-218645",
+  "notes": null
+}

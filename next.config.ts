@@ -28,6 +28,14 @@ const nextConfig: NextConfig = {
         destination: "https://riftboundfrance.fr/:path*",
         permanent: true,
       },
+      // Les articles "meilleur deck par légende" ont été supprimés mais Google les
+      // affiche toujours et ils renvoyaient un 404. Le slug d'article reprend celui
+      // de la fiche : meilleur-deck-irelia-blade-dancer -> irelia-blade-dancer.
+      {
+        source: "/articles/meilleur-deck-:slug",
+        destination: "/legendes/:slug",
+        permanent: true,
+      },
     ];
   },
   async headers() {

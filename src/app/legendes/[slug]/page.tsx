@@ -132,14 +132,19 @@ export async function generateMetadata({
   const fiche = await getFiche(slug);
   if (!fiche) return { title: "Légende introuvable" };
   const name = displayLegendName(fiche.legendName ?? slug);
-  const setPart = fiche.set ? ` (set ${fiche.set})` : "";
-  const title = `${name} : guide & decklists${setPart}`;
+  // Pas de set dans le titre : `fiche.set` est le set d'IMPRESSION de la carte
+  // légende (Irelia = Spiritforged, Master Yi = Origins Starter), pas le format
+  // où elle se joue. Toutes les fiches sont jouables en Unleashed, donc afficher
+  // un vieux set laissait croire à une page périmée.
+  const title = `${name} : meilleurs decks et guide`;
   const archetype = fiche.archetype ? `${fiche.archetype}. ` : "";
-  const description =
-    `${name} à Riftbound : ${archetype}decklists, plan de jeu, cartes clés, forces et faiblesses.`.slice(
-      0,
-      158,
-    );
+  // La description ne promet que ce que la page contient vraiment : les fiches
+  // générées depuis les decklists n'ont ni plan de jeu ni forces et faiblesses.
+  const hasGuide = Boolean(fiche.gameplan || fiche.strengths?.length || fiche.weaknesses?.length);
+  const promise = hasGuide
+    ? "decklists de tournoi, plan de jeu, cartes clés, forces et faiblesses."
+    : "decklists de tournoi, cartes clés et résultats mesurés en compétition.";
+  const description = `Les meilleurs decks ${name} à Riftbound : ${archetype}${promise}`.slice(0, 158);
   return {
     title: { absolute: `${title} | Riftbound France` },
     description,

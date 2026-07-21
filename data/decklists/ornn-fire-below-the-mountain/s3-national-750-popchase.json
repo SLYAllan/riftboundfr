@@ -1,0 +1,180 @@
+{
+  "id": "s3-national-750-popchase",
+  "legend": "Ornn, Fire Below the Mountain",
+  "champion": "Ornn, Blacksmith",
+  "player": "旋木时光的PopChase",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 750,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Apprentice Smith",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-41"
+    },
+    {
+      "name": "Lonely Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-36"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-103"
+    },
+    {
+      "name": "Janna, Savior",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-53"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-73"
+    },
+    {
+      "name": "Kai'Sa, Evolutionary",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-112"
+    },
+    {
+      "name": "Ornn, Forge God",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-85"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Svellsongur",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-59"
+    },
+    {
+      "name": "Forgefire Cape",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-190"
+    },
+    {
+      "name": "Rabadon's Deathcrown",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-191"
+    },
+    {
+      "name": "Bellows Breath",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-80"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Frigid Touch",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-66"
+    },
+    {
+      "name": "Wages of Pain",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-70"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-83"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-77"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-114"
+    }
+  ],
+  "runes": {
+    "Calm": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Ornn's Forge",
+    "Sigil of the Storm",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "riftboundId": "SFD-43"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 1,
+      "riftboundId": "SFD-81"
+    },
+    {
+      "name": "Rocket Barrage",
+      "quantity": 1,
+      "riftboundId": "SFD-77"
+    },
+    {
+      "name": "Shurelya's Requiem",
+      "quantity": 1,
+      "riftboundId": "SFD-192"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 1,
+      "riftboundId": "SFD-48"
+    },
+    {
+      "name": "Mageseeker Warden",
+      "quantity": 1,
+      "riftboundId": "OGN-70"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 1,
+      "riftboundId": "OGN-114"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "riftboundId": "OGN-116"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-shan-yang-best-219188",
+  "notes": null
+}

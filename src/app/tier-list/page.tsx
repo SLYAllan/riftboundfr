@@ -34,15 +34,15 @@ const getTierListData = unstable_cache(
 );
 
 export const metadata: Metadata = {
-  title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)" },
+  title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juillet 2026)" },
   description:
-    "Tier list Riftbound française mise à jour pour le Set Unleashed. Classement S/A/B/C/D de toutes les Légendes, avec decklists recommandées et analyses.",
+    "Tier list Riftbound française du Set Unleashed, calculée sur 7 903 decks de tournoi. Classement S/A/B/C/D de toutes les Légendes, avec decklists et analyses.",
   alternates: { canonical: "/tier-list" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juin 2026)",
+    title: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juillet 2026)",
     description:
       "Classement S/A/B/C/D de toutes les Légendes Riftbound (Set Unleashed) avec decklists recommandées.",
     images: ["/img/og-default.png"],

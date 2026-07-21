@@ -1,0 +1,152 @@
+{
+  "id": "s3-national-1435-ai-mcdull",
+  "legend": "Lux, Lady of Luminosity",
+  "champion": "Lux, Crownguard",
+  "player": "Ai.mcdull",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1435,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-216"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-110"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-120"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-212"
+    },
+    {
+      "name": "Sumpworks Map",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-85"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Downstage Dramatics",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-61"
+    },
+    {
+      "name": "Rally the Troops",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-166"
+    },
+    {
+      "name": "Shadow's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-165"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-83"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-69"
+    },
+    {
+      "name": "Progress Day",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-114"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Mind": 8,
+    "Order": 4
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forgotten Monument",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Retreat",
+      "quantity": 2,
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Fiora, Worthy",
+      "quantity": 1,
+      "riftboundId": "SFD-180"
+    },
+    {
+      "name": "Deadly Flourish",
+      "quantity": 2,
+      "riftboundId": "UNL-73"
+    },
+    {
+      "name": "Renata Glasc, Mastermind",
+      "quantity": 1,
+      "riftboundId": "SFD-88"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 1,
+      "riftboundId": "UNL-69"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 1,
+      "riftboundId": "UNL-180"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lux-219866",
+  "notes": null
+}

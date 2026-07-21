@@ -1,0 +1,193 @@
+{
+  "id": "s3-national-1250-cuc",
+  "legend": "Rumble, Mechanized Menace",
+  "champion": "Rumble, Hotheaded",
+  "player": "CUC-八酋",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1250,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Forecaster",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-65"
+    },
+    {
+      "name": "Gem Jammer",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-7"
+    },
+    {
+      "name": "Plundering Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-69"
+    },
+    {
+      "name": "Bubble Bot",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-62"
+    },
+    {
+      "name": "Blue Sentinel",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-87"
+    },
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-26"
+    },
+    {
+      "name": "Hwei, Brooding Painter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-80"
+    },
+    {
+      "name": "Rumble, Scrapper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-89"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-21"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Breakneck Mech",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-71"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-4"
+    },
+    {
+      "name": "Danger Zone",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-182"
+    },
+    {
+      "name": "Retreat",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-104"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Upstage Comedy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-9"
+    },
+    {
+      "name": "Eclipse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-63"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-83"
+    },
+    {
+      "name": "Production Surge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-76"
+    },
+    {
+      "name": "Unchecked Power",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-123"
+    }
+  ],
+  "runes": {
+    "Fury": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Star Spring",
+    "Startipped Peak",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Cloth Armor",
+      "quantity": 1,
+      "riftboundId": "SFD-64"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 1,
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 1,
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "riftboundId": "UNL-70"
+    },
+    {
+      "name": "Blighted Battleaxe",
+      "quantity": 1,
+      "riftboundId": "UNL-19"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "riftboundId": "OGN-22"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-3dan-lan-bo-219683",
+  "notes": null
+}

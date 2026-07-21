@@ -1,0 +1,148 @@
+{
+  "id": "s3-national-1027",
+  "legend": "Ornn, Fire Below the Mountain",
+  "champion": "Ornn, Forge God",
+  "player": "大菠萝蜜",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1027,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Aspiring Engineer",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-61"
+    },
+    {
+      "name": "Pit Crew",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-91"
+    },
+    {
+      "name": "Dropboarder",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-72"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Poro Snax",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-46"
+    },
+    {
+      "name": "Brutalizer",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-42"
+    },
+    {
+      "name": "Mask of Foresight",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-60"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-78"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-52"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-46"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-42"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Mind": 6
+  },
+  "battlefields": [
+    "Dusk Rose Lab",
+    "Rockfall Path",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 3,
+      "riftboundId": "UNL-70"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 2,
+      "riftboundId": "OGN-64"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ao-en-219467",
+  "notes": null
+}

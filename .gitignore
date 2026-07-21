@@ -100,3 +100,6 @@ data/videos/*-day1.txt
 __pycache__/
 *.pyc
 data/raw-scrapes/**/*.log
+
+# Artefacts du CLI Firecrawl (scratch local)
+.firecrawl/

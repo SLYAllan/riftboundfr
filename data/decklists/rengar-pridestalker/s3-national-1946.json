@@ -1,0 +1,115 @@
+{
+  "id": "s3-national-1946",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Unseen",
+  "player": "小飞天",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1946,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Lucian, Gunslinger",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-28"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Nilah, Joyful Ascetic",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-115"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-28"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-25"
+    },
+    {
+      "name": "Jhin, Murderous Artist",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-22"
+    },
+    {
+      "name": "Master Yi, Tempered",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-113"
+    },
+    {
+      "name": "Rell, Magnetic",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-24"
+    },
+    {
+      "name": "Rumble, Hotheaded",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-26"
+    },
+    {
+      "name": "Vi, Hotheaded",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-30"
+    },
+    {
+      "name": "Kha'Zix, Evolving Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-119"
+    },
+    {
+      "name": "Poppy, Paragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-116"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Xerath, Freed",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-26"
+    }
+  ],
+  "runes": {
+    "Body": 3,
+    "Fury": 9
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Altar of Blood",
+    "Black Flame Altar"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-xiao-shi-hou-220373",
+  "notes": null
+}

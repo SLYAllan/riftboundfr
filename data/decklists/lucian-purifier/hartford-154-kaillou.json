@@ -1,0 +1,158 @@
+{
+  "id": "hartford-154-kaillou",
+  "legend": "Lucian, Purifier",
+  "champion": "Lucian, Merciless",
+  "player": "Kaillou",
+  "tournament": "RQ Hartford 2026",
+  "date": "2026-06-20",
+  "placement": 154,
+  "playerCount": 1953,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Irresistible Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-112"
+    },
+    {
+      "name": "Pouty Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-13"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-39"
+    },
+    {
+      "name": "Red Brambleback",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-29"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-21"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-105"
+    },
+    {
+      "name": "Doran's Blade",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-95"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-22"
+    },
+    {
+      "name": "Skyfall of Areion",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-30"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-115"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Repulse",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Grim Resolve",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-95"
+    },
+    {
+      "name": "Relentless Pursuit",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-184"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Sunken Temple",
+    "The Candlelit Sanctum",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Repulse",
+      "quantity": 1,
+      "riftboundId": "UNL-106"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Cannon Barrage",
+      "quantity": 2,
+      "riftboundId": "OGN-127"
+    },
+    {
+      "name": "Smite",
+      "quantity": 1,
+      "riftboundId": "UNL-7"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "riftboundId": "SFD-21"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 1,
+      "riftboundId": "SFD-105"
+    }
+  ],
+  "record": "9-4-0",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-lucian-purifier-200689",
+  "notes": null
+}

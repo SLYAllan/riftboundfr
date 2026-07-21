@@ -1,0 +1,142 @@
+{
+  "id": "hartford-27-yoshi",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Pouncing",
+  "player": "Yoshi",
+  "tournament": "RQ Hartford 2026",
+  "date": "2026-06-20",
+  "placement": 27,
+  "playerCount": 1953,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Determined Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-111"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-2"
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-112"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-113"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-28"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-25"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-12"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Confront",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-129"
+    },
+    {
+      "name": "Thrill of the Hunt",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-184"
+    },
+    {
+      "name": "Right of Conquest",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-15"
+    }
+  ],
+  "runes": {
+    "Body": 5,
+    "Fury": 7
+  },
+  "battlefields": [
+    "Emperor's Dais",
+    "Seat of Power",
+    "Star Spring"
+  ],
+  "sideDeck": [
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "riftboundId": "OGN-26"
+    }
+  ],
+  "record": "10-2-1",
+  "source": "https://riftdecks.com/riftbound-metagame/deck-rengar-pridestalker-201477",
+  "notes": null
+}

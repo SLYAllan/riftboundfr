@@ -1,0 +1,153 @@
+{
+  "id": "s3-national-538-tree",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "tree",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 538,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-44"
+    },
+    {
+      "name": "Windsinger",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-138"
+    },
+    {
+      "name": "Bewitching Spirit",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-121"
+    },
+    {
+      "name": "Ezreal, Prodigy",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-149"
+    },
+    {
+      "name": "Pyke, Returned",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-145"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-43"
+    },
+    {
+      "name": "Feral Strength",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-34"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-128"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Emperor's Dais",
+    "Sunken Temple"
+  ],
+  "sideDeck": [
+    {
+      "name": "Feral Strength",
+      "quantity": 1,
+      "riftboundId": "SFD-34"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 2,
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Bewitching Spirit",
+      "quantity": 2,
+      "riftboundId": "UNL-121"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 2,
+      "riftboundId": "SFD-32"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-wo-de-dao-dun-218976",
+  "notes": null
+}

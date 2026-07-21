@@ -6,6 +6,7 @@ import { slugify, displayLegendName } from "@/lib/utils";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
+import { legendFicheHref } from "@/lib/legend-fiche";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
@@ -125,6 +126,9 @@ export default async function DeckDetailPage({ params }: PageProps) {
     select: { id: true, slug: true, title: true, playerName: true, placement: true, tournamentContext: true },
   });
 
+  // Lien vers la fiche de la Légende quand elle existe : c'est le seul chemin
+  // interne des pages deck vers /legendes, qui vise les requêtes "deck <légende>".
+  const legendHref = await legendFicheHref(deck.legendName);
   const legendCard = deck.cards.find((dc) => dc.section === "legend");
   // Champion = carte supertype "Champion" qui n'est PAS la Légende (certaines Légendes,
   // ex. Annie, ont elles aussi supertype "Champion" → on distingue par type).
@@ -163,7 +167,13 @@ export default async function DeckDetailPage({ params }: PageProps) {
       <div className="mt-6">
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
         <div className="mt-2 flex flex-wrap items-center gap-3">
-          <span className="text-lg text-arcane">{displayLegendName(deck.legendName)}</span>
+          {legendHref ? (
+            <Link href={legendHref} className="text-lg text-arcane hover:underline">
+              {displayLegendName(deck.legendName)}
+            </Link>
+          ) : (
+            <span className="text-lg text-arcane">{displayLegendName(deck.legendName)}</span>
+          )}
           <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs text-ink-secondary">{deck.format}</span>
           <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
             setTag === "Unleashed" ? "bg-arcane/10 text-arcane"

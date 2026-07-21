@@ -1,0 +1,147 @@
+{
+  "id": "s3-national-1092-fg-diamond-d",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Trophy Hunter",
+  "player": "FG.Diamond D",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1092,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Determined Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-111"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-2"
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-112"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "Grim Apothecary",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-21"
+    },
+    {
+      "name": "Kinkou Initiate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-97"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-28"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-39"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-27"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-26"
+    },
+    {
+      "name": "Punch First",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-97"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Thrill of the Hunt",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-184"
+    }
+  ],
+  "runes": {
+    "Body": 8,
+    "Fury": 4
+  },
+  "battlefields": [
+    "Emperor's Dais",
+    "Star Spring",
+    "The Arena's Greatest"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 3,
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 1,
+      "riftboundId": "OGN-26"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-rengar-v3-219530",
+  "notes": null
+}

@@ -1,0 +1,176 @@
+{
+  "id": "s3-national-1978-yiyi",
+  "legend": "Ivern, Green Father",
+  "champion": "Ivern, Nurturer",
+  "player": "yiyi",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1978,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Carrion Dredger",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-153"
+    },
+    {
+      "name": "Mutated Mouser",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-36"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-52"
+    },
+    {
+      "name": "Trusty Ramhound",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-159"
+    },
+    {
+      "name": "Nami, Headstrong",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-52"
+    },
+    {
+      "name": "Azir, Sovereign",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-177"
+    },
+    {
+      "name": "Frisky Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-33"
+    },
+    {
+      "name": "Ivern, Nurturer",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-51"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-176"
+    },
+    {
+      "name": "Ivern, Friend to All",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-177"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "Daisy!",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Tactical Retreat",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-175"
+    },
+    {
+      "name": "Flurry of Feathers",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-44"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Order": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Vaults of Helia",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "riftboundId": "SFD-32"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 1,
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 1,
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "The Ruination",
+      "quantity": 1,
+      "riftboundId": "UNL-180"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ai-weng-220405",
+  "notes": null
+}

@@ -1,0 +1,170 @@
+{
+  "id": "s3-national-1820-style",
+  "legend": "Lee Sin, Blind Monk",
+  "champion": "Lee Sin, Centered",
+  "player": "江南style",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1820,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-60"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-118"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-77"
+    },
+    {
+      "name": "Trinity Force",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-115"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-160"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Flurry of Blades",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-133"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-156"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Desert's Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-31"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-43"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-42"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-47"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Hallowed Tomb",
+    "Rockfall Path"
+  ],
+  "sideDeck": [
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 2,
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 1,
+      "riftboundId": "SFD-105"
+    },
+    {
+      "name": "Udyr, Wildman",
+      "quantity": 1,
+      "riftboundId": "OGN-157"
+    },
+    {
+      "name": "Warwick, Hunter",
+      "quantity": 1,
+      "riftboundId": "OGN-159"
+    },
+    {
+      "name": "Whiteflame Protector",
+      "quantity": 1,
+      "riftboundId": "OGN-82"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-s3guo-sai-de-biao-zui-qiang-220248",
+  "notes": null
+}

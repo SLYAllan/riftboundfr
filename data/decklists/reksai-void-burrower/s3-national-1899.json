@@ -1,0 +1,198 @@
+{
+  "id": "s3-national-1899",
+  "legend": "Rek'Sai, Void Burrower",
+  "champion": "Rek'Sai, Breacher",
+  "player": "尘姬",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1899,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Carrion Dredger",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-153"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-2"
+    },
+    {
+      "name": "Mischievous Marai",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-3"
+    },
+    {
+      "name": "Void Hatchling",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-18"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-29"
+    },
+    {
+      "name": "Sharkling",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-6"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-12"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-27"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-176"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-21"
+    },
+    {
+      "name": "Seal of Rage",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-40"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-22"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-4"
+    },
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Deathgrip",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-163"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Void Rush",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-188"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-24"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Forbidding Waste",
+    "The Arena's Greatest",
+    "The Candlelit Sanctum"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sacrifice",
+      "quantity": 1,
+      "riftboundId": "UNL-173"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 1,
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Smite",
+      "quantity": 1,
+      "riftboundId": "UNL-7"
+    },
+    {
+      "name": "Immortal Phoenix",
+      "quantity": 1,
+      "riftboundId": "OGN-37"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "riftboundId": "SFD-164"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "riftboundId": "SFD-21"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-wa-jue-ji-220326",
+  "notes": null
+}

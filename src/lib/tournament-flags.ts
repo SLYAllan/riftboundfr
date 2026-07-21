@@ -282,6 +282,18 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     set: "Unleashed",
     format: "Conquest",
   },
+  "S3 National Open (2026-07-19)": {
+    name: "S3 National Open",
+    shortName: "National Open S3",
+    countryCode: "CN",
+    city: "Chine",
+    location: "Chine",
+    playerCount: 2048,
+    type: "regional",
+    date: "2026-07-19",
+    set: "Unleashed",
+    format: "Conquest",
+  },
   "RQ Hartford 2026": {
     name: "Hartford Regional Qualifier 2026",
     shortName: "Hartford RQ",

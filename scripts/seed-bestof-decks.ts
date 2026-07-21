@@ -9,6 +9,11 @@ const ARTICLE_META: Record<string, { tournament: string; set: string }> = {
   "best-of-las-vegas-rq-2026": { tournament: "RQ Las Vegas 2026", set: "Spiritforged" },
   "best-of-lille-rq-2026": { tournament: "RQ Lille 2026", set: "Spiritforged" },
   "best-of-xian-regional-open-s3": { tournament: "Xi'an Regional Open S3", set: "Unleashed" },
+  // Recréé le 21 juillet 2026 : les 40 decks best-of d'origine ne correspondaient à
+  // aucune liste publiée. Les blocs de l'article ont été réécrits depuis les 104
+  // vraies decklists scrapées, il en reste 38 (Teemo et Leona n'en ont aucune).
+  "best-of-hartford-rq": { tournament: "RQ Hartford 2026", set: "Unleashed" },
+  "best-of-national-open-s3": { tournament: "S3 National Open (2026-07-19)", set: "Unleashed" },
 };
 
 interface DecklistBlock {

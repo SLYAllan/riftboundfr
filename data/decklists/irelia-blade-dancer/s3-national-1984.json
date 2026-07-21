@@ -1,0 +1,176 @@
+{
+  "id": "s3-national-1984",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "简单人机",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1984,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Mister Root",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-127"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-199"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-143"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-48"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-150"
+    },
+    {
+      "name": "Soul Sword",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-39"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Charm",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Combat Experience",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-31"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Gust",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Skyward Strike",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-38"
+    },
+    {
+      "name": "Switcheroo",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-145"
+    }
+  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Abandoned Hall",
+    "Sunken Temple",
+    "Targon's Peak"
+  ],
+  "sideDeck": [
+    {
+      "name": "Combat Experience",
+      "quantity": 1,
+      "riftboundId": "UNL-31"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 1,
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "riftboundId": "OGN-56"
+    },
+    {
+      "name": "Kha'Zix, Mutating Horror",
+      "quantity": 1,
+      "riftboundId": "UNL-143"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 1,
+      "riftboundId": "UNL-150"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-xing-hai-dao-mei-220411",
+  "notes": null
+}

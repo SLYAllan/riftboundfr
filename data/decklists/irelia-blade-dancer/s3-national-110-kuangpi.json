@@ -1,0 +1,147 @@
+{
+  "id": "s3-national-110-kuangpi",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "狂派_KuangPi",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 110,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-181"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-186"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-77"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Gust",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-169"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-47"
+    },
+    {
+      "name": "Tricksy Tentacles",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-54"
+    }
+  ],
+  "runes": {
+    "Calm": 4,
+    "Chaos": 8
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "The Papertree",
+    "Vaults of Helia"
+  ],
+  "sideDeck": [
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "riftboundId": "SFD-135"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 1,
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 3,
+      "riftboundId": "OGN-201"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 2,
+      "riftboundId": "OGN-56"
+    },
+    {
+      "name": "Annie, Stubborn",
+      "quantity": 1,
+      "riftboundId": "OGS-10"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ke-yi-ba-ba24tian-jiao-ma-218549",
+  "notes": null
+}

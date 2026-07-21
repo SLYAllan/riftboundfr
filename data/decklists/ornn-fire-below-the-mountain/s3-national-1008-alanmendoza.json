@@ -1,0 +1,145 @@
+{
+  "id": "s3-national-1008-alanmendoza",
+  "legend": "Ornn, Fire Below the Mountain",
+  "champion": "Ornn, Forge God",
+  "player": "AlanMendoza",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1008,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Ornn, Blacksmith",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-58"
+    },
+    {
+      "name": "Ornn, Forge God",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-85"
+    },
+    {
+      "name": "Seal of Focus",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-81"
+    },
+    {
+      "name": "Seal of Insight",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-120"
+    },
+    {
+      "name": "Poro Snax",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-46"
+    },
+    {
+      "name": "Guardian Angel",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "SFD-51"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-78"
+    },
+    {
+      "name": "Hextech Anomaly",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-83"
+    },
+    {
+      "name": "Svellsongur",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-59"
+    },
+    {
+      "name": "World Atlas",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-86"
+    },
+    {
+      "name": "Shurelya's Requiem",
+      "quantity": 1,
+      "type": "Gear",
+      "riftboundId": "SFD-192"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-43"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Premonition",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "SFD-87"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-42"
+    },
+    {
+      "name": "Consult the Past",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-83"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-122"
+    }
+  ],
+  "runes": {
+    "Calm": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Ornn's Forge",
+    "Power Nexus"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ornn-219448",
+  "notes": null
+}

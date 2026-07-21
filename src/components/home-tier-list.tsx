@@ -48,7 +48,11 @@ const TIER_TEXT: Record<string, string> = {
   D: "text-white",
 };
 
-const tierOrder = ["S", "A", "B", "C", "D"];
+// L'accueil ne montre QUE les rangs S et A. Avant, il affichait la tier list
+// entière : Google indexait ce contenu sur l'accueil et ne renvoyait jamais vers
+// /tier-list (109 impressions, 3 sessions sur la page dediee, GSC juillet 2026).
+// La page d'accueil donne un aperçu, la page dédiée garde le classement complet.
+const tierOrder = ["S", "A"];
 
 export function HomeTierList({
   tierLists,
@@ -177,6 +181,19 @@ export function HomeTierList({
               </div>
             );
           })}
+          {(() => {
+            const rest = active.entries.filter((e) => !tierOrder.includes(e.tier)).length;
+            if (!rest) return null;
+            return (
+              <Link
+                href="/tier-list"
+                className="flex items-center justify-center gap-1 border-t border-hairline px-4 py-3 text-sm font-semibold text-arcane hover:bg-surface-raised hover:text-arcane-light"
+              >
+                Tier list Riftbound complète, {rest} autres Légendes classées
+                <ArrowRight size={14} />
+              </Link>
+            );
+          })()}
         </div>
       ) : (
         <div className="px-4 py-12 text-center text-sm text-ink-muted">

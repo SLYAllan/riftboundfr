@@ -1,0 +1,147 @@
+{
+  "id": "s3-national-642",
+  "legend": "Irelia, Blade Dancer",
+  "champion": "Irelia, Fervent",
+  "player": "凉笙",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 642,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "mainDeck": [
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-60"
+    },
+    {
+      "name": "Baron Nashor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-147"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 2,
+      "type": "Gear",
+      "riftboundId": "OGN-181"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-186"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-77"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-133"
+    },
+    {
+      "name": "Defiant Dance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-196"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-183"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-173"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-47"
+    },
+    {
+      "name": "Tricksy Tentacles",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "UNL-54"
+    }
+  ],
+  "runes": {
+    "Calm": 5,
+    "Chaos": 7
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Rockfall Path",
+    "Vaults of Helia"
+  ],
+  "sideDeck": [
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "riftboundId": "SFD-135"
+    },
+    {
+      "name": "Abandon",
+      "quantity": 2,
+      "riftboundId": "UNL-131"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
+      "riftboundId": "UNL-128"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 1,
+      "riftboundId": "OGN-56"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-wei-le-na-ge-mu-biao-jia-you-liang-sheng-219080",
+  "notes": null
+}

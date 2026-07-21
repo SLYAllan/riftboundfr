@@ -1,0 +1,181 @@
+{
+  "id": "s3-national-1941",
+  "legend": "Rengar, Pridestalker",
+  "champion": "Rengar, Unseen",
+  "player": "鄂飘",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1941,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Fury"
+  ],
+  "mainDeck": [
+    {
+      "name": "Vi, Destructive",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-36"
+    },
+    {
+      "name": "Fiora, Peerless",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-110"
+    },
+    {
+      "name": "Jinx, Demolitionist",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-30"
+    },
+    {
+      "name": "Lucian, Gunslinger",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-28"
+    },
+    {
+      "name": "Lucian, Merciless",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-113"
+    },
+    {
+      "name": "Nilah, Joyful Ascetic",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-115"
+    },
+    {
+      "name": "Pyke, Dockside Butcher",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-28"
+    },
+    {
+      "name": "Rek'Sai, Breacher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-29"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-25"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "SFD-109"
+    },
+    {
+      "name": "Jax, Unrelenting",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-119"
+    },
+    {
+      "name": "Jhin, Murderous Artist",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-22"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-39"
+    },
+    {
+      "name": "Vayne, Hunter",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-35"
+    },
+    {
+      "name": "Vi, Hotheaded",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-30"
+    },
+    {
+      "name": "Annie, Fiery",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGS-1"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-27"
+    },
+    {
+      "name": "Draven, Showboat",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-28"
+    },
+    {
+      "name": "Katarina, Reckless",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-23"
+    },
+    {
+      "name": "Sett, Brawler",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-164"
+    },
+    {
+      "name": "Yone, Blademaster",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-116"
+    },
+    {
+      "name": "Garen, Rugged",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGS-7"
+    },
+    {
+      "name": "Sivir, Ambitious",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "SFD-120"
+    },
+    {
+      "name": "Anivia, Primal",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-148"
+    },
+    {
+      "name": "Master Yi, Honed",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGS-9"
+    }
+  ],
+  "runes": {
+    "Body": 5,
+    "Fury": 7
+  },
+  "battlefields": [
+    "Altar of Blood",
+    "Dusk Rose Lab",
+    "Seat of Power"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-guan-jun01-220368",
+  "notes": null
+}

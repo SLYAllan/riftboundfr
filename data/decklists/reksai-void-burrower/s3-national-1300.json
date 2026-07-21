@@ -1,0 +1,152 @@
+{
+  "id": "s3-national-1300",
+  "legend": "Rek'Sai, Void Burrower",
+  "champion": "Rek'Sai, Swarm Queen",
+  "player": "迪尔格",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1300,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Carrion Dredger",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-153"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-2"
+    },
+    {
+      "name": "Mischievous Marai",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-3"
+    },
+    {
+      "name": "Vanguard Captain",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-218"
+    },
+    {
+      "name": "Void Drone",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-10"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-12"
+    },
+    {
+      "name": "Battering Ram",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-12"
+    },
+    {
+      "name": "Undertitan",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-175"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-245"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Void Rush",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-188"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-164"
+    },
+    {
+      "name": "Imperial Decree",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-221"
+    }
+  ],
+  "runes": {
+    "Fury": 3,
+    "Order": 9
+  },
+  "battlefields": [
+    "The Arena's Greatest",
+    "The Candlelit Sanctum",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Galio, Indefatigable",
+      "quantity": 2,
+      "riftboundId": "UNL-171"
+    },
+    {
+      "name": "Square Up",
+      "quantity": 1,
+      "riftboundId": "UNL-17"
+    },
+    {
+      "name": "Ashe, Focused",
+      "quantity": 2,
+      "riftboundId": "UNL-169"
+    },
+    {
+      "name": "Drag Under",
+      "quantity": 1,
+      "riftboundId": "SFD-164"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "riftboundId": "UNL-176"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-wa-219733",
+  "notes": null
+}

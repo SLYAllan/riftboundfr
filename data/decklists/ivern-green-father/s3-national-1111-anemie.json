@@ -1,0 +1,183 @@
+{
+  "id": "s3-national-1111-anemie",
+  "legend": "Ivern, Green Father",
+  "champion": "Ivern, Nurturer",
+  "player": "Anemie",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1111,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Mutated Mouser",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-36"
+    },
+    {
+      "name": "Stalwart Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-52"
+    },
+    {
+      "name": "Trusty Ramhound",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-159"
+    },
+    {
+      "name": "Loyal Poro",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-156"
+    },
+    {
+      "name": "Frisky Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-33"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-176"
+    },
+    {
+      "name": "Ivern, Friend to All",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-177"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "UNL-60"
+    },
+    {
+      "name": "Daisy!",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-196"
+    },
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Friendship",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-46"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Emperor's Divide",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-43"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-48"
+    },
+    {
+      "name": "Not So Fast",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "SFD-45"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Back Off",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-42"
+    },
+    {
+      "name": "Flurry of Feathers",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-44"
+    },
+    {
+      "name": "Grand Strategem",
+      "quantity": 1,
+      "type": "Spell",
+      "riftboundId": "OGN-233"
+    }
+  ],
+  "runes": {
+    "Calm": 7,
+    "Order": 5
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Forbidding Waste",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 1,
+      "riftboundId": "OGN-224"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 1,
+      "riftboundId": "SFD-32"
+    },
+    {
+      "name": "Alpha Wildclaw",
+      "quantity": 2,
+      "riftboundId": "UNL-57"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 1,
+      "riftboundId": "UNL-60"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-ai-219549",
+  "notes": null
+}

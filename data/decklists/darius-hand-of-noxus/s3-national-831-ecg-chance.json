@@ -1,0 +1,394 @@
+{
+  "id": "s3-national-831-ecg-chance",
+  "legend": "Darius, Hand of Noxus",
+  "champion": "Darius, Trifarian",
+  "player": "灵花祭.ECG.Chance",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 831,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "mainDeck": [
+    {
+      "name": "Daring Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-210"
+    },
+    {
+      "name": "Honest Broker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-155"
+    },
+    {
+      "name": "Inferna",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-2"
+    },
+    {
+      "name": "Legion Rearguard",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-10"
+    },
+    {
+      "name": "Soaring Scout",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-216"
+    },
+    {
+      "name": "Trifarian Gloryseeker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-217"
+    },
+    {
+      "name": "Trusty Ramhound",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-159"
+    },
+    {
+      "name": "Crimson Pigeons",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-154"
+    },
+    {
+      "name": "Eager Drakehound",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-6"
+    },
+    {
+      "name": "Galio, Indefatigable",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-171"
+    },
+    {
+      "name": "Noxus Saboteur",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-18"
+    },
+    {
+      "name": "Rengar, Pouncing",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-25"
+    },
+    {
+      "name": "Captain Farron",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-15"
+    },
+    {
+      "name": "Draven, Vanquisher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-20"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-39"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-12"
+    },
+    {
+      "name": "Battering Ram",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-12"
+    },
+    {
+      "name": "Blazing Scorcher",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-1"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-27"
+    },
+    {
+      "name": "Draven, Showboat",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-28"
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-14"
+    },
+    {
+      "name": "Armed Assailant",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-2"
+    },
+    {
+      "name": "Darius, Executioner",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-243"
+    },
+    {
+      "name": "Garen, Commander",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGS-13"
+    },
+    {
+      "name": "Raging Firebrand",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-31"
+    },
+    {
+      "name": "Dunebreaker",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "SFD-27"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-234"
+    },
+    {
+      "name": "Inviolus Vox",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-27"
+    },
+    {
+      "name": "Magma Wurm",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-11"
+    },
+    {
+      "name": "Kadregrin the Infernal",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-38"
+    },
+    {
+      "name": "Seal of Rage",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-40"
+    },
+    {
+      "name": "Seal of Unity",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-245"
+    },
+    {
+      "name": "Serrated Dirk",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-9"
+    },
+    {
+      "name": "Long Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-22"
+    },
+    {
+      "name": "Sun Disc",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-21"
+    },
+    {
+      "name": "Blade of the Ruined King",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-178"
+    },
+    {
+      "name": "Iron Ballista",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "OGN-17"
+    },
+    {
+      "name": "Skyfall of Areion",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-30"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "SFD-161"
+    },
+    {
+      "name": "Blighted Battleaxe",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-19"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-3"
+    },
+    {
+      "name": "Cleave",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-4"
+    },
+    {
+      "name": "Hextech Ray",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-9"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-1"
+    },
+    {
+      "name": "Blood Money",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-162"
+    },
+    {
+      "name": "Bonds of Strength",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-151"
+    },
+    {
+      "name": "Cull the Weak",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-209"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-29"
+    },
+    {
+      "name": "Hidden Blade",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-213"
+    },
+    {
+      "name": "Shakedown",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-33"
+    },
+    {
+      "name": "Upstage Comedy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-9"
+    },
+    {
+      "name": "Back to Back",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-206"
+    },
+    {
+      "name": "Sudden Storm",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-17"
+    },
+    {
+      "name": "Void Seeker",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-24"
+    },
+    {
+      "name": "Noxian Guillotine",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-254"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-229"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-22"
+    },
+    {
+      "name": "Blast of Power",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGS-12"
+    },
+    {
+      "name": "Grand Strategem",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-233"
+    },
+    {
+      "name": "Sky Splitter",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-14"
+    }
+  ],
+  "runes": {
+    "Fury": 10,
+    "Order": 10
+  },
+  "battlefields": [
+    "Grove of the God-Willow",
+    "Hall of Legends",
+    "Obelisk of Power",
+    "Startipped Peak",
+    "Sunken Temple",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-guo-shou-219270",
+  "notes": null
+}

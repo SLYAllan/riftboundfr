@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Layers, BookText, Shield, Monitor, TrendingUp } from "lucide-react";
+import { BookOpen, Layers, BookText, Shield, Monitor, TrendingUp, Ban } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ const guides = [
   { href: "/guides/domaines", icon: Shield, title: "Les 6 Domaines", description: "Fury, Calm, Mind, Body, Chaos, Order : philosophies, forces et légendes associées à chaque domaine." },
   { href: "/guides/meta", icon: TrendingUp, title: "Méta & Tier List", description: "Le méta compétitif set par set, les meilleures légendes et les archétypes. Basé sur 88 tournois analysés." },
   { href: "/guides/glossaire", icon: BookText, title: "Glossaire", description: "Tous les termes du jeu expliqués en français : mots-clés, mécaniques, jargon TCG." },
+  { href: "/guides/ban-list", icon: Ban, title: "Ban list", description: "Toutes les cartes et les champs de bataille interdits en tournoi, avec leur date." },
   { href: "/guides/jouer-en-ligne", icon: Monitor, title: "Jouer en ligne", description: "Comment jouer à Riftbound gratuitement en ligne avec TCG Arena et RiftAtlas. Guide pas-à-pas." },
 ];
 

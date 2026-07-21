@@ -22,11 +22,13 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Riftbound France - Tier Lists, Decks & Guides en français",
+    default: "Riftbound France - Decks, cartes et guides du TCG en français",
     template: "%s | Riftbound France",
   },
   description:
-    "La référence francophone Riftbound : tier lists à jour, decklists de tournois, guides débutants, résultats compétitifs et base de cartes.",
+    // "tier list" retiré du titre et rétrogradé ici : la page /tier-list vise cette
+    // requête et l'accueil la lui prenait (position 4, 109 impressions captées par l'accueil).
+    "La référence francophone Riftbound : decklists de tournois, base de cartes, guides débutants et résultats compétitifs.",
   // Fallback sur l'apex PROD (pas localhost) : si NEXT_PUBLIC_SITE_URL manque au build,
   // les og:image/canonical pointent quand même vers la prod, jamais vers localhost.
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr"),
@@ -35,8 +37,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "Riftbound France",
-    title: "Riftbound France - Tier Lists, Decks & Guides en français",
-    description: "La référence francophone Riftbound : tier lists, decklists de tournois, guides et base de cartes.",
+    title: "Riftbound France - Decks, cartes et guides du TCG en français",
+    description: "La référence francophone Riftbound : decklists de tournois, base de cartes, guides et résultats.",
     images: ["/img/og-default.png"],
   },
   twitter: {

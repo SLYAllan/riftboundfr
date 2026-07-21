@@ -168,18 +168,25 @@
 
 ### Top 15 Battlefields (7987 decks)
 
+> **Lire ce tableau avec la ban list en tête.** Il compte tous les decks depuis Origins,
+> y compris ceux joués avant les bans. Cinq de ces battlefields sont aujourd'hui
+> interdits en Standard : The Dreaming Tree, Obelisk of Power et Reaver's Row depuis le
+> 31 mars 2026, **Aspirant's Climb et The Arena's Greatest depuis le 24 juillet 2026**.
+> Les deux derniers pesaient 23 % et 18 % du format : les decks Body/ramp et Aggro/Fury
+> doivent leur trouver un remplaçant. Source unique : `src/lib/banned-cards.ts`.
+
 | Battlefield | Decks | % | Profil |
 |-------------|-------|---|--------|
-| The Dreaming Tree | 958 | 29% | Calm/Mind value — universel Origins |
-| Obelisk of Power | 830 | 25% | Aggro/midrange universel |
-| Aspirant's Climb | 749 | 23% | Ramp/Aurora — quasi-exclusif Body |
+| ~~The Dreaming Tree~~ (banni) | 958 | 29% | Calm/Mind value — universel Origins |
+| ~~Obelisk of Power~~ (banni) | 830 | 25% | Aggro/midrange universel |
+| ~~Aspirant's Climb~~ (banni 24 juil. 2026) | 749 | 23% | Ramp/Aurora — quasi-exclusif Body |
 | Zaun Warrens | 676 | 21% | Aggro Fury/Chaos |
 | Sigil of the Storm | 608 | 19% | Body ramp |
-| The Arena's Greatest | 596 | 18% | Aggro/Fury |
+| ~~The Arena's Greatest~~ (banni 24 juil. 2026) | 596 | 18% | Aggro/Fury |
 | Grove of the God-Willow | 542 | 16% | Calm value |
 | Void Gate | 505 | 15% | Fury/Mind — Kai'Sa |
 | Trifarian War Camp | 427 | 13% | Order/Azir/Fury |
-| Reaver's Row | 386 | 12% | Fury/Mind — Kai'Sa |
+| ~~Reaver's Row~~ (banni) | 386 | 12% | Fury/Mind — Kai'Sa |
 | Vilemaw's Lair | 343 | 10% | Value — Calm/Body |
 | Targon's Peak | 287 | 9% | Calm/Chaos tempo |
 | Startipped Peak | 275 | 8% | Calm/Chaos hold |
@@ -226,7 +233,9 @@ Champions : Master Yi Tempered (66%), Master Yi Honed (34%)
 
 **Config gagnante Unleashed (Hartford, Factor 14-1-1)** : le **Ruin Runner** monte de flex à pièce maîtresse (2x main + 1 side) — 6 énergie / 5 might **non ciblable par sorts/capacités**, c'est LE plan anti-Chaos/Diana. Accompagné de **Sabotage 3x**, **Punch First 3x**, **Fiora, Peerless 2x**, **Rengar Trophy Hunter 3x**, Scuttle Crab 3x, First Mate 2x, + 1x Challenge / 1x Primal Strength. Battlefields : **Emperor's Dais + Seat of Power + The Arena's Greatest**. Closer signature : poser **double The Arena's Greatest** pour transformer la partie en course à 6 points. Side : Alpha Strike 2x (2e sort signature), Disarming Rake 3x, 2e Challenge/Ruin Runner contre Vex/Hwei.
 
-**Top placements** : **Won Suzhou (燐川)**, **Won Tianjin (陈千语)**, **Won Hartford (Factor 14-1-1)**, 2nd Houston, 2nd Lille, 2nd Shanghai NO, 35 top 8 CC
+**Mesuré au S3 National Open, 19 juillet 2026 (307 listes, jeu complet)** : le core tient en **3 cartes**, Defy 3x (98 %), Charm 3x (96 %), Discipline 3x (95 %). Juste derrière, un bloc très stable : Zhonya's Hourglass 3x (88 %), Punch First 3x (86 %), Lonely Poro 3x (82 %), Rengar Trophy Hunter 3x (74 %), En Garde 2x (73 %), Scuttle Crab et First Mate 3x (71 %), Ruin Runner 2x (70 %). Battlefields : Star Spring 54 %, Emperor's Dais 34 %, Vilemaw's Lair 27 %, Seat of Power 23 %. ⚠️ **The Arena's Greatest (20 %) est banni depuis le 24 juillet 2026**, ces listes sont à refaire sur ce point. Side : **Sabotage 61 % · Akshan, Mischievous 54 % · Disarming Rake 41 %**, un plan anti-équipement systématique. Champions : **82 % Tempered contre 18 % Honed** ; **le champion ne dit pas quelle légende Master Yi c'est**.
+
+**Top placements** : **Won Suzhou (燐川)**, **Won Tianjin (陈千语)**, **Won Hartford (Factor 14-1-1)**, 2nd Houston, 2nd Lille, 2nd Shanghai NO, 7e + 8e National Open, 35 top 8 CC
 
 ---
 
@@ -242,7 +251,9 @@ Champion : Irelia, Fervent (100%)
 
 **Battlefields** : Sunken Temple (87%), Targon's Peak (72%), Abandoned Hall (52%)
 
-**Top placements** : Won Sydney, Won Shenzhen, Finalist Suzhou, 3rd Atlanta (x2), 3rd Bologna, 3rd Xi'an
+**Mesuré au S3 National Open, 19 juillet 2026 (202 listes, dont le vainqueur et le finaliste)** : core de **6 cartes** au-dessus de 90 %, Discipline 3x (100 %), Defiant Dance 3x (99 %), Defy 3x (99 %), Boots of Swiftness 2x (98 %), Charm 2x (92 %), En Garde 2x (91 %). Puis Ride the Wind 2x (87 %), Not So Fast 1x (84 %), Guardian Angel 3x (83 %), Stellacorn Herder 3x (82 %), Scuttle Crab 3x (80 %). Champion : **Fervent à 99 %**, Graceful a disparu. Battlefields : Sunken Temple 89 %, Abandoned Hall 85 %, Targon's Peak 56 %. ⚠️ **Aspirant's Climb (19 %) est banni depuis le 24 juillet 2026.** Side : **Adaptatron 61 %**, la réponse à l'Aurora, puis Star-Crossed et Gust (57 %).
+
+**Top placements** : **Won S3 National Open** (finale 100 % Irelia), Won Sydney, Won Shenzhen, Finalist Suzhou, 3rd Atlanta (x2), 3rd Bologna, 3rd Xi'an
 
 ---
 
@@ -262,7 +273,9 @@ Champion : Diana, Lunari (100%)
 
 **Tech Unleashed (Hartford) — Diana = la légende la mieux convertie (3 Top 8)** : **Moonfall** reste la meilleure réponse aux gros corps non-ciblables (Ruin Runner), mais souvent jouée à 2x main + 1 side seulement, donc à piocher. **Kha'Zix, Mutating Horror** = le haut de courbe (gros might). Tech de terrain montante : **The Arena's Greatest** pour accélérer dans le miroir quand on joue premier (vu chez bsweitz). Certaines listes coupent **Baron Nashor** (vulnérable au Punch First/Sabotage du Master Yi). Faiblesse structurelle vs Master Yi : aucun sort ne touche le Ruin Runner, et le Rebuke (cannot be defied) est l'unique sort non-défiable du deck.
 
-**Top placements** : **2nd Hartford (bsweitz)**, 4e + 5e Hartford, Won Vancouver (AlanZQ), 2nd Tianjin, 2nd Xi'an, Top 4 Sydney, Top 4 Utrecht
+**Mesuré au S3 National Open, 19 juillet 2026 (166 listes)** : core de **5 cartes** au-dessus de 90 %, Stupefy 3x (94 %), Ride the Wind 3x (92 %), Stacked Deck 3x (91 %), Moonfall 3x (91 %), Ravenbloom Student 3x (90 %). **Moonfall reste la réponse obligatoire aux gros corps non ciblables**, comme à Hartford. Ensuite Hwei 3x (86 %), Gust 2x (86 %), Star-Crossed 2x (82 %), Fizz 2x (75 %), Tideturner 3x (73 %). Champion : Lunari 95 %, No Longer Human 5 %. Battlefields : Abandoned Hall 90 %, Targon's Peak 57 %, Ravenbloom Conservatory 50 %. Side : **Turn to Dust 77 %**, de très loin la première carte de réserve.
+
+**Top placements** : **3e + 4e National Open**, **2nd Hartford (bsweitz)**, 4e + 5e Hartford, Won Vancouver (AlanZQ), 2nd Tianjin, 2nd Xi'an, Top 4 Sydney, Top 4 Utrecht
 
 ---
 
@@ -294,7 +307,9 @@ Champions : LeBlanc Fragmented (81%), LeBlanc Everywhere at Once (19%)
 
 **Battlefields** : Windswept Hillock (97%), Dusk Rose Lab (91%), Forbidding Waste (66%)
 
-**Top placements** : 6th Xi'an, Top 8 Sydney
+**Mesuré au S3 National Open, 19 juillet 2026 (89 listes)** : core resserré sur **Soaring Scout 3x (96 %)** et **Watchful Sentry 3x (92 %)**. Derrière, un bloc stable : Karthus Eternal, Glasc Mixologist et Mirror Image 3x (90 %), Ruined Rex 3x (87 %), Sacrifice 3x et Hidden Blade 2x (81 %), Thousand-Tailed Watcher 2x (79 %). Vi, Peacekeeper 2x tient en flex (47 %). Battlefields : **Windswept Hillock 89 %, Dusk Rose Lab 76 %**. Side : **Salvage 72 %**. ⚠️ Malgré 89 listes au tournoi, **aucun Top 8** et deux places seulement dans le Top 16 : le moteur tourne, mais il ne gagne plus.
+
+**Top placements** : 11e + 13e National Open, 6th Xi'an, Top 8 Sydney
 
 ---
 

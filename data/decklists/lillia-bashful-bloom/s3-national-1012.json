@@ -1,0 +1,137 @@
+{
+  "id": "s3-national-1012",
+  "legend": "Lillia, Bashful Bloom",
+  "champion": "Lillia, Fae Fawn",
+  "player": "七泽",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 1012,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Clockwork Keeper",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGN-44"
+    },
+    {
+      "name": "Keeper of Masks",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-81"
+    },
+    {
+      "name": "Petal Pixie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-76"
+    },
+    {
+      "name": "Scuttle Crab",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-53"
+    },
+    {
+      "name": "Lillia, Fae Fawn",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "UNL-82"
+    },
+    {
+      "name": "Sprite Mother",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-106"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGN-116"
+    },
+    {
+      "name": "Sprite Fountain",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-78"
+    },
+    {
+      "name": "Defy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-45"
+    },
+    {
+      "name": "Stupefy",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-95"
+    },
+    {
+      "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-58"
+    },
+    {
+      "name": "Lilting Lullaby",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-190"
+    },
+    {
+      "name": "Smoke and Mirrors",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "UNL-83"
+    },
+    {
+      "name": "Sprite Call",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-94"
+    },
+    {
+      "name": "Sprite Burst",
+      "quantity": 2,
+      "type": "Spell",
+      "riftboundId": "UNL-69"
+    }
+  ],
+  "runes": {
+    "Calm": 5,
+    "Mind": 7
+  },
+  "battlefields": [
+    "Black Flame Altar",
+    "Dusk Rose Lab",
+    "Ornn's Forge"
+  ],
+  "sideDeck": [
+    {
+      "name": "Charm",
+      "quantity": 3,
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Turn to Dust",
+      "quantity": 2,
+      "riftboundId": "UNL-70"
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "quantity": 3,
+      "riftboundId": "SFD-52"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-li-li-ya-zui-zhong-ban-219452",
+  "notes": null
+}

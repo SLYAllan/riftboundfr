@@ -1,0 +1,136 @@
+{
+  "id": "s3-national-74",
+  "legend": "Master Yi, Wuju Bladesman",
+  "champion": "Master Yi, Honed",
+  "player": "雷千",
+  "tournament": "S3 National Open (2026-07-19)",
+  "date": "2026-07-19",
+  "placement": 74,
+  "playerCount": 2048,
+  "set": "Unleashed",
+  "archetype": null,
+  "domains": [
+    "Body",
+    "Calm"
+  ],
+  "mainDeck": [
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-136"
+    },
+    {
+      "name": "First Mate",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-132"
+    },
+    {
+      "name": "Nidalee, Cat Form",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-114"
+    },
+    {
+      "name": "Wielder of Water",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "OGN-55"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-120"
+    },
+    {
+      "name": "Yi, Meditative",
+      "quantity": 2,
+      "type": "Unit",
+      "riftboundId": "OGS-4"
+    },
+    {
+      "name": "Master Yi, Honed",
+      "quantity": 1,
+      "type": "Unit",
+      "riftboundId": "OGS-9"
+    },
+    {
+      "name": "Vilemaw",
+      "quantity": 3,
+      "type": "Unit",
+      "riftboundId": "UNL-60"
+    },
+    {
+      "name": "Honeyfruit",
+      "quantity": 3,
+      "type": "Gear",
+      "riftboundId": "UNL-49"
+    },
+    {
+      "name": "Challenge",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-128"
+    },
+    {
+      "name": "Feral Strength",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "SFD-34"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-134"
+    },
+    {
+      "name": "Find Your Center",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-47"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "riftboundId": "OGN-138"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Startipped Peak",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Charm",
+      "quantity": 2,
+      "riftboundId": "OGN-43"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 2,
+      "riftboundId": "OGN-145"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 1,
+      "riftboundId": "OGN-64"
+    },
+    {
+      "name": "Adaptatron",
+      "quantity": 3,
+      "riftboundId": "OGN-56"
+    }
+  ],
+  "record": null,
+  "source": "https://riftdecks.com/riftbound-metagame/deck-en-shi-mai-mai-218511",
+  "notes": null
+}

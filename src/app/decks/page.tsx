@@ -73,9 +73,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const setFilter = params.set;
   const tournamentFilter = params.tournament;
   const sortParam = params.sort;
+  const search = (params.q ?? "").trim();
   const isCommunity = cat === "community";
 
   const TOURNAMENT_FILTERS = [
+    { ctx: "S3 National Open (2026-07-19)", label: "National Open S3" },
     { ctx: "RQ Hartford 2026", label: "Hartford RQ" },
     { ctx: "RQ Utrecht 2026", label: "Utrecht RQ" },
     { ctx: "S3 Changsha Regional Open (2026-06-14)", label: "Changsha RO S3" },
@@ -179,6 +181,18 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
         <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
+      {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
+          sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
+      <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
+        Chaque deck donne la liste complète, les runes, les champs de bataille et le
+        joueur qui l&apos;a jouée, avec le tournoi et le classement obtenu. Pour savoir
+        quoi jouer, commence par la{" "}
+        <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
+        puis choisis ta{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
+        peux aussi partir d&apos;une liste et la modifier dans le{" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
+      </p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
           <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", !cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
@@ -345,6 +359,22 @@ export default async function DecksPage({ searchParams }: PageProps) {
     }
   }
   if (legendFilter) where.legendName = { contains: legendFilter, mode: "insensitive" };
+  // Recherche texte : titre, Légende, joueur, tournoi et NOM DE CARTE. Passe par AND
+  // pour ne pas écraser le OR posé plus haut par les catégories.
+  if (search) {
+    const like = { contains: search, mode: "insensitive" as const };
+    where.AND = [
+      {
+        OR: [
+          { title: like },
+          { legendName: like },
+          { playerName: like },
+          { tournamentContext: like },
+          { cards: { some: { card: { name: like } } } },
+        ],
+      },
+    ];
+  }
 
   const [allDecks, legends] = await Promise.all([
     prisma.deck.findMany({
@@ -427,6 +457,44 @@ export default async function DecksPage({ searchParams }: PageProps) {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
       <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
+      {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
+          sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
+      <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
+        Chaque deck donne la liste complète, les runes, les champs de bataille et le
+        joueur qui l&apos;a jouée, avec le tournoi et le classement obtenu. Pour savoir
+        quoi jouer, commence par la{" "}
+        <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
+        puis choisis ta{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
+        peux aussi partir d&apos;une liste et la modifier dans le{" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
+      </p>
+
+      {/* Recherche : formulaire GET, les filtres en cours partent en champs cachés
+          pour ne pas être perdus à la soumission. */}
+      <form method="get" action="/decks" className="mt-5 flex max-w-lg gap-2">
+        {cat && <input type="hidden" name="cat" value={cat} />}
+        {setFilter && <input type="hidden" name="set" value={setFilter} />}
+        {tournamentFilter && <input type="hidden" name="tournament" value={tournamentFilter} />}
+        {legendFilter && <input type="hidden" name="legend" value={legendFilter} />}
+        <input
+          type="search"
+          name="q"
+          defaultValue={search}
+          placeholder="Chercher un deck, une Légende, un joueur ou une carte"
+          aria-label="Chercher un deck, une Légende, un joueur ou une carte"
+          className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none"
+        />
+        <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          Chercher
+        </button>
+      </form>
+      {search && (
+        <p className="mt-2 text-sm text-ink-secondary">
+          Résultats pour <strong>{search}</strong>.{" "}
+          <Link href="/decks" className="text-arcane hover:underline">Tout afficher</Link>
+        </p>
+      )}
 
       <div className="mt-6 flex flex-wrap gap-2.5">
         <Link
