@@ -48,11 +48,7 @@ const TIER_TEXT: Record<string, string> = {
   D: "text-white",
 };
 
-// L'accueil ne montre QUE les rangs S et A. Avant, il affichait la tier list
-// entière : Google indexait ce contenu sur l'accueil et ne renvoyait jamais vers
-// /tier-list (109 impressions, 3 sessions sur la page dediee, GSC juillet 2026).
-// La page d'accueil donne un aperçu, la page dédiée garde le classement complet.
-const tierOrder = ["S", "A"];
+const tierOrder = ["S", "A", "B", "C", "D"];
 
 export function HomeTierList({
   tierLists,
@@ -88,14 +84,20 @@ export function HomeTierList({
       )
     : {};
 
+  // Hauteur FIXE, jamais dérivée du contenu. Chaque onglet a un nombre de Légendes
+  // différent : si la carte se dimensionnait sur son contenu, elle grandirait au clic
+  // et, étant dans une grille, elle pousserait toute la ligne avec elle. self-start
+  // l'empêche de s'étirer si une colonne voisine est plus haute.
   return (
-    <div className="rounded-card border border-hairline bg-surface overflow-hidden">
-      <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
+    <div className="flex flex-col self-start rounded-card border border-hairline bg-surface overflow-hidden">
+      <div className="shrink-0 border-b border-hairline px-4 py-3 flex items-center justify-between">
+        {/* Titre volontairement différent de « Tier List » : l'accueil captait les
+            requêtes à la place de /tier-list, qui porte le vrai classement commenté. */}
         <h2
           className="text-lg font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Tier List
+          Aperçu du méta
         </h2>
         <Link
           href="/tier-list"
@@ -106,7 +108,7 @@ export function HomeTierList({
       </div>
 
       {tierLists.length > 1 && (
-        <div className="flex border-b border-hairline">
+        <div className="flex shrink-0 border-b border-hairline">
           {tierLists.map((tl, i) => (
             <button
               key={tl.id}
@@ -126,7 +128,7 @@ export function HomeTierList({
       )}
 
       {active && active.entries.length > 0 ? (
-        <div>
+        <div className="h-[420px] overflow-y-auto">
           {tierOrder.map((tier, tierIdx) => {
             const entries = grouped[tier];
             if (!entries || entries.length === 0) return null;
@@ -181,25 +183,21 @@ export function HomeTierList({
               </div>
             );
           })}
-          {(() => {
-            const rest = active.entries.filter((e) => !tierOrder.includes(e.tier)).length;
-            if (!rest) return null;
-            return (
-              <Link
-                href="/tier-list"
-                className="flex items-center justify-center gap-1 border-t border-hairline px-4 py-3 text-sm font-semibold text-arcane hover:bg-surface-raised hover:text-arcane-light"
-              >
-                Tier list Riftbound complète, {rest} autres Légendes classées
-                <ArrowRight size={14} />
-              </Link>
-            );
-          })()}
         </div>
       ) : (
-        <div className="px-4 py-12 text-center text-sm text-ink-muted">
+        <div className="flex-1 px-4 py-12 text-center text-sm text-ink-muted">
           Tier list à venir
         </div>
       )}
+
+      {/* Reste collé en bas de la carte, hors de la zone qui défile. */}
+      <Link
+        href="/tier-list"
+        className="flex shrink-0 items-center justify-center gap-1 border-t border-hairline px-4 py-3 text-sm font-semibold text-arcane hover:bg-surface-raised hover:text-arcane-light"
+      >
+        Tier list Riftbound complète, avec les decks
+        <ArrowRight size={14} />
+      </Link>
     </div>
   );
 }

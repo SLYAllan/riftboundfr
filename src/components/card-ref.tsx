@@ -123,7 +123,14 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {/* aspectRatio réserve la hauteur AVANT chargement du bitmap : la mesure
               de placement est correcte d'emblée, donc pas de débordement post-load */}
-          <img src={resized(card.imageUrl)} alt={card.name} className="block w-full bg-canvas object-cover" style={{ aspectRatio: "300 / 419" }} />
+          <img
+            src={resized(card.imageUrl)}
+            alt={card.name}
+            className="block w-full bg-canvas object-cover"
+            // Les champs de bataille sont en paysage (1038x744), tout le reste en
+            // portrait. Avec un seul ratio, le terrain était rogné de moitié.
+            style={{ aspectRatio: card.type === "Battlefield" ? "419 / 300" : "300 / 419" }}
+          />
           <span className="block space-y-1.5 px-3 py-2.5">
             <span className="block text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {card.name}

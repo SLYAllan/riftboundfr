@@ -239,4 +239,176 @@ Le cœur du moteur, c'est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 
 
 **Fin de partie.** Au palier maximal, toute ton armée entre prête et renforcée. À ce stade, l'adversaire ne peut plus suivre le rythme.`,
   },
+  // ── Legendes ajoutees le 22 juillet 2026 ──────────────────────────────────
+  // Ecrits a partir de la capacite reelle de chaque Legende et des cartes coeur
+  // mesurees sur les decklists de tournoi (data/fiches/*.json). Les taux de jeu
+  // cites viennent du comptage, pas d'une impression.
+  "kaisa-daughter-of-the-void": {
+    slug: "kaisa-daughter-of-the-void",
+    bref: `Kai'Sa est un deck **Furie/Esprit** de **tempo par les sorts**, et accessoirement la Légende la plus jouée de toute l'histoire du jeu : plus de 3 000 listes recensées et 135 top 8. Si tu ne sais pas quoi jouer, c'est le choix par défaut du format, et ce n'est pas un hasard.`,
+    gagne: `Sa capacité tient en une ligne : épuise-la et tu obtiens une rune, mais uniquement pour lancer un sort. Autrement dit, tu as chaque tour un sort presque gratuit de plus que l'adversaire. Tout le deck est bâti là-dessus.
+
+Le résultat, c'est un deck qui répond à tout. **[[Falling Star]]** inflige 3 dégâts deux fois, de quoi nettoyer deux petites unités ou en abattre une grosse. **[[Hextech Ray]]** frappe à distance sur un champ de bataille. **[[Stupefy]]** affaiblit et repioche pour une énergie. Et quand tu veux reprendre la main d'un coup, **[[Thousand-Tailed Watcher]]** arrive avec 7 de Puissance et retire 3 à toutes les unités adverses.`,
+    plan: `**Début de partie.** Ne te précipite pas. Pose **[[Watchful Sentry]]** ou **[[Lecturing Yordle]]**, qui piochent en mourant ou en arrivant, et laisse l'adversaire s'engager le premier.
+
+**Milieu de partie.** C'est là que tu prends le dessus. Chaque combat où tu lances un sort de plus se gagne, et ta capacité t'en offre un. **[[Retreat]]** sauve une unité condamnée et te rend une rune au passage.
+
+**Fin de partie.** **[[Thousand-Tailed Watcher]]** remet le plateau à plat, **[[Darius, Trifarian]]** se prépare tout seul dès que tu joues ta deuxième carte du tour. Tu conclus avec une avance en cartes que l'adversaire n'a jamais comblée.`,
+  },
+  "annie-dark-child": {
+    slug: "annie-dark-child",
+    bref: `Annie est un deck **Furie/Chaos** de **mouvement**, et l'une des meilleures affaires du format : 500 listes recensées seulement, mais 25 top 8 et 6 victoires, un rendement que peu de Légendes plus jouées atteignent.`,
+    gagne: `Sa capacité prépare jusqu'à deux runes à la fin de ton tour. Concrètement, tu joues pendant le tour adverse avec des ressources que les autres n'ont plus. C'est une invitation à remplir ton deck de réactions et à ne jamais rester passif.
+
+Le reste du deck sert à déplacer les unités, les tiennes comme celles d'en face. **[[Fight or Flight]]** et **[[Flash]]** renvoient des unités à la base, **[[Rebuke]]** en renvoie une carrément en main, **[[Ride the Wind]]** repositionne au bon moment. Un champ de bataille que l'adversaire croyait tenir se vide juste avant qu'il ne marque.`,
+    plan: `**Début de partie.** Développe sans t'exposer. **[[Traveling Merchant]]** échange une carte morte contre une neuve à chaque déplacement, **[[Stacked Deck]]** va chercher la pièce manquante.
+
+**Milieu de partie.** Choisis tes combats et refuse les autres. Tu n'as pas besoin de gagner un affrontement : sortir ton unité au dernier moment suffit à annuler celui de l'adversaire.
+
+**Fin de partie.** **[[Kai'Sa, Survivor]]** pioche quand elle conquiert, **[[Vi, Destructive]]** passe d'un terrain à l'autre pour aller chercher le point qui manque. Garde toujours deux runes prêtes : c'est ce qui rend tes fins de partie imprévisibles.`,
+  },
+  "darius-hand-of-noxus": {
+    slug: "darius-hand-of-noxus",
+    bref: `Darius est un deck **Furie/Ordre** d'**agression en série**, construit autour du mot-clé Légion. 284 listes, 12 top 8 : régulier en haut de tableau, mais toujours pas de titre à son palmarès.`,
+    gagne: `Sa capacité te rend une énergie dès que tu as déjà joué une carte dans le tour. Le deck entier récompense la même chose : enchaîner. **[[Noxus Hopeful]]** coûte deux énergies de moins si ce n'est pas ta première carte du tour, **[[Vanguard Captain]]** amène deux recrues avec lui dans les mêmes conditions.
+
+Tu ne cherches pas à survivre longtemps, tu cherches à poser plus de corps que l'adversaire ne peut en gérer, puis à convertir. **[[Cleave]]** ajoute 3 de Puissance à un attaquant, **[[Grand Strategem]]** en ajoute 5 à toute ton armée d'un coup : le combat que l'adversaire pensait tenir est perdu d'avance.`,
+    plan: `**Début de partie.** Vise deux cartes par tour dès que possible. Une seule carte jouée, et la moitié de ton deck fonctionne au tarif plein.
+
+**Milieu de partie.** Sature un champ de bataille. **[[Hidden Blade]]**, posée face cachée, retire gratuitement le défenseur qui bloquait tout, même en plein combat.
+
+**Fin de partie.** **[[Grand Strategem]]** est ta carte de finition : garde-la pour le tour où l'adversaire s'est enfin stabilisé, et fais sauter le verrou d'un seul sort.`,
+  },
+  "reksai-void-burrower": {
+    slug: "reksai-void-burrower",
+    bref: `Rek'Sai est un deck **Furie/Ordre** d'**agression qui pioche dans son deck**. Peu jouée, 92 listes seulement, mais elle a signé une 5e place au National Open : c'est un choix de joueur qui connaît son deck, pas un choix par défaut.`,
+    gagne: `Chaque fois que tu conquiers, tu peux l'épuiser pour révéler les deux cartes du dessus de ton deck, en bannir une et la jouer aussitôt. Conquérir ne te rapporte donc pas qu'un point : ça te rapporte une carte gratuite. Plus tu avances, plus tu creuses.
+
+**[[Void Rush]]** fait la même chose pour deux énergies, en réduisant le coût de ce que tu joues. Et **[[Undertitan]]**, révélé depuis ton deck, ajoute deux énergies au lieu de t'en coûter. Le deck s'auto-alimente tant que tu continues d'attaquer.`,
+    plan: `**Début de partie.** Prends un terrain vite. Sans conquête, ta capacité ne sert à rien et le deck tourne à vide.
+
+**Milieu de partie.** Enchaîne conquête et révélation. **[[Noxus Hopeful]]** à quatre énergies, souvent deux, remplit le plateau pendant que **[[Hidden Blade]]** et **[[Falling Star]]** dégagent ce qui gêne.
+
+**Fin de partie.** **[[Cull the Weak]]** oblige chacun à sacrifier une unité : joue-la quand l'adversaire n'a qu'une seule grosse pièce et que tu en as cinq petites.`,
+  },
+  "pyke-bloodharbor-ripper": {
+    slug: "pyke-bloodharbor-ripper",
+    bref: `Pyke est un deck **Furie/Chaos** de **rebond et de ressources**. 127 listes pour 5 top 8, l'un des meilleurs rendements des Légendes discrètes du format.`,
+    gagne: `Sa capacité renvoie une de tes unités en main et te donne un jeton d'or au passage. Ça a l'air défensif, c'est en réalité un moteur : tu sauves une unité d'un combat perdu, tu récupères son effet d'arrivée pour plus tard, et tu gagnes une ressource.
+
+Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de tes unités et une unité adverse en main. **[[Treasure Hunter]]** crée de l'or à chaque déplacement. **[[Fizz, Trickster]]** rejoue un sort depuis ta défausse sans payer son énergie. Tu joues deux fois ce que l'adversaire ne joue qu'une.`,
+    plan: `**Début de partie.** Pose des unités bon marché à effet d'arrivée. Elles vaudront double quand tu les renverras en main.
+
+**Milieu de partie.** Refuse les échanges défavorables : au lieu de perdre une unité, reprends-la. **[[Bewitching Spirit]]** vide la main adverse pendant que tu montes ta réserve d'or.
+
+**Fin de partie.** **[[Mindsplitter]]** arrache la carte que l'adversaire gardait pour te répondre. Une fois sa réponse partie, tu poses ta menace et tu marques.`,
+  },
+  "jax-grandmaster-at-arms": {
+    slug: "jax-grandmaster-at-arms",
+    bref: `Jax est un deck **Calme/Corps** d'**équipement mobile**. 184 listes, 4 top 8 : jouable, jamais dominant. Un deck de patience plus que de pression.`,
+    gagne: `Sa capacité déplace ton équipement d'une unité à l'autre, même déjà attaché. Tu n'as donc pas besoin de protéger l'unité équipée : si elle meurt, l'équipement repart ailleurs. La menace, c'est le matériel, pas le porteur.
+
+À partir de là, le deck devient une forteresse. **[[Guardian Angel]]** et **[[Brutalizer]]** s'attachent pour une seule rune Calme, et la muraille de réactions fait le reste : **[[Counter Strike]]** empêche les prochains dégâts et repioche, **[[Not So Fast]]** contre tout ce qui vise tes unités ou ton équipement, **[[Defy]]** contre le reste.`,
+    plan: `**Début de partie.** Équipe une unité bon marché et installe-toi sur un terrain. Tu n'as pas besoin d'aller vite.
+
+**Milieu de partie.** Fais payer chaque tentative de retrait. Entre **[[Counter Strike]]**, **[[Not So Fast]]** et **[[Discipline]]**, l'adversaire doit dépenser deux ou trois cartes pour en tuer une seule.
+
+**Fin de partie.** **[[Challenge]]** force un duel entre ton unité équipée et la leur : à ce stade la tienne est plus grosse, et l'échange est gagné d'avance.`,
+  },
+  "lucian-purifier": {
+    slug: "lucian-purifier",
+    bref: `Lucian est un deck **Furie/Corps** d'**équipement agressif**. 233 listes, 2 top 8 seulement : le plan de jeu est clair, mais il convertit mal face aux decks qui savent retirer les unités.`,
+    gagne: `Sa capacité donne Assaut à tous tes équipements : chaque unité équipée frappe plus fort en attaque. Tu n'équipes donc pas pour survivre, tu équipes pour marquer.
+
+**[[Relentless Pursuit]]**, présente dans la totalité des listes, déplace une unité, y attache un équipement et lui permet de rentrer à la base après avoir conquis. Tu attaques sans t'exposer au retour de bâton. **[[Lucian, Merciless]]** s'équipe à coût réduit en arrivant et se prépare la première fois qu'il conquiert chaque tour.`,
+    plan: `**Début de partie.** Pose une unité et un équipement bon marché, **[[Doran's Blade]]** pour une seule rune Corps, et commence à pousser.
+
+**Milieu de partie.** **[[First Mate]]** prépare une autre unité en arrivant, ce qui te donne deux attaques dans le même tour. **[[Punch First]]** ajoute 5 de Puissance pour une énergie et vole les combats qu'on te croyait perdus.
+
+**Fin de partie.** **[[Challenge]]** nettoie le dernier défenseur en le forçant à échanger avec ton unité équipée. Attention : tout ton plan repose sur des unités qui portent le matériel, et un retrait bien placé te coûte deux cartes d'un coup.`,
+  },
+  "garen-might-of-demacia": {
+    slug: "garen-might-of-demacia",
+    bref: `Garen est un deck **Corps/Ordre** de **rampe et de nombre**. 106 listes, 1 top 8 : une Légende de fin de partie, lente à démarrer et vulnérable en attendant.`,
+    gagne: `Sa capacité récompense la masse : conquiers un champ de bataille avec au moins quatre unités dessus et tu piochies deux cartes. Ce n'est pas un deck qui frappe fort, c'est un deck qui frappe nombreux.
+
+Avant ça, tu montes tes ressources. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, et te font piocher quand tu ne peux plus. Au bout, **[[Dazzling Aurora]]** pose une unité gratuite à chaque fin de tour, indéfiniment.`,
+    plan: `**Début de partie.** Survis et canalise. Tes premiers tours ne marquent rien, ils préparent la suite.
+
+**Milieu de partie.** Déploie large plutôt que gros. **[[Confront]]** fait entrer prêtes toutes les unités que tu poses ce tour et repioche : c'est ton tour de bascule.
+
+**Fin de partie.** Avec **[[Dazzling Aurora]]** en jeu, tu produis plus vite que l'adversaire ne nettoie. **[[Harnessed Dragon]]** tue une unité en arrivant et referme la partie.`,
+  },
+  "lux-lady-of-luminosity": {
+    slug: "lux-lady-of-luminosity",
+    bref: `Lux est un deck **Esprit/Ordre** de **contrôle par les gros sorts**. 247 listes, 4 top 8 : elle répond à tout, mais elle a du mal à conclure avant que le temps ne tombe.`,
+    gagne: `Sa capacité te fait piocher chaque fois que tu lances un sort à cinq énergies ou plus. Là où un deck normal se ruine à jouer cher, Lux se rembourse. Son deck est donc rempli de sorts que personne d'autre ne peut se permettre.
+
+**[[Singularity]]** inflige 6 dégâts à deux unités d'un coup. **[[Imperial Decree]]** tue tout ce qui subit le moindre dégât pendant le tour. **[[Falling Comet]]** et **[[Drag Under]]** règlent les menaces isolées. Et **[[Time Warp]]**, à dix énergies, te donne carrément un tour de plus.`,
+    plan: `**Début de partie.** Tu vas encaisser des points, c'est normal. Garde **[[Bellows Breath]]** et **[[Cull the Weak]]** pour contenir les premières vagues à moindre coût.
+
+**Milieu de partie.** Nettoie le plateau au bon moment. Un **[[Singularity]]** sur deux unités bien choisies annule trois tours de développement adverse.
+
+**Fin de partie.** C'est ta phase. Chaque gros sort repioche, tu enchaînes les réponses, et **[[Time Warp]]** te donne le tour supplémentaire qui transforme l'avantage en victoire. Le vrai risque n'est pas de perdre le plateau, c'est de manquer de temps.`,
+  },
+  "renata-glasc-chem-baroness": {
+    slug: "renata-glasc-chem-baroness",
+    bref: `Renata Glasc est un deck **Esprit/Ordre** de **contrôle par les ressources**. Soyons honnêtes : 106 listes recensées et **aucun top 8**. Le deck est plaisant à piloter, mais il n'a rien prouvé en compétition.`,
+    gagne: `Sa capacité fabrique de l'or dès que toi ou un allié contrôlez un terrain, et cet or rapporte une énergie de plus quand tu approches du score de victoire. Tu joues donc de plus en plus vite à mesure que la partie avance.
+
+Le deck accumule les jetons d'or par tous les bouts : **[[Plundering Poro]]** en crée en conquérant, **[[Honest Broker]]** en laisse un en mourant, **[[Wages of Pain]]** en donne un en retirant une unité. Puis tu convertis, souvent brutalement, avec **[[Hostile Takeover]]** qui prend le contrôle d'une unité adverse et l'active aussitôt.`,
+    plan: `**Début de partie.** Tiens un terrain, même modeste. Sans contrôle, ta capacité ne se déclenche jamais.
+
+**Milieu de partie.** Empile l'or et retire les menaces avec **[[Hidden Blade]]** et **[[Cull the Weak]]**. Tu ne cherches pas à dominer le plateau, seulement à ne pas mourir.
+
+**Fin de partie.** Près du score de victoire, ton or vaut double. **[[Hostile Takeover]]** puis **[[Time Warp]]** enchaînés dans le même tour sont ta meilleure fin de partie.`,
+  },
+  "yasuo-unforgiven": {
+    slug: "yasuo-unforgiven",
+    bref: `Yasuo est un deck **Calme/Chaos** de **repositionnement**. 336 listes pour 2 top 8 : très choisi, très rarement payant. À jouer parce qu'il te plaît, pas parce qu'il gagne.`,
+    gagne: `Sa capacité déplace une unité amie vers sa base ou depuis sa base, pour deux énergies. Tu peux donc retirer un défenseur d'un combat perdu, ou en faire surgir un là où l'adversaire ne l'attendait pas.
+
+Le reste est un socle de réactions solide mais sans surprise : **[[Defy]]** contre les sorts, **[[Discipline]]** et **[[En Garde]]** gonflent une unité et repiochent, **[[Zhonya's Hourglass]]** sauve une unité de la mort en la renvoyant à la base.`,
+    plan: `**Début de partie.** Pose peu, garde tes énergies. La force du deck, c'est de réagir.
+
+**Milieu de partie.** Sers-toi de ta capacité comme d'un sort gratuit : chaque combat que tu refuses au dernier moment est une carte gagnée.
+
+**Fin de partie.** **[[Fight or Flight]]**, posée face cachée en avance, se joue pour rien et vide un terrain au moment décisif. Le problème du deck reste le même : il sait ne pas perdre, il sait mal gagner.`,
+  },
+  "jinx-loose-cannon": {
+    slug: "jinx-loose-cannon",
+    bref: `Jinx est un deck **Furie/Chaos** d'**agression main vide**. 278 listes, 3 top 8 : le plan est direct et amusant, le rendement reste faible.`,
+    gagne: `Sa capacité te fait piocher au début de ton tour si tu as une carte ou moins en main. Vider sa main n'est donc pas une faiblesse ici, c'est la condition pour continuer à jouer.
+
+Tout le deck consomme des cartes volontiers. **[[Chemtech Enforcer]]** défausse en arrivant, **[[Traveling Merchant]]** défausse et repioche à chaque déplacement, et **[[Super Mega Death Rocket!]]** revient de la défausse quand tu conquiers, contre une défausse de plus.`,
+    plan: `**Début de partie.** Joue tout. Retenir des cartes en main coupe ta pioche et ralentit le deck.
+
+**Milieu de partie.** Pousse sur un terrain et conquiers pour ramener le missile. **[[Noxus Hopeful]]** à coût réduit remplit le plateau au passage.
+
+**Fin de partie.** Tu finis souvent la main vide face à un adversaire qui a des réponses. C'est le défaut de structure du deck : ta pioche est régulière mais lente, et une carte par tour ne suffit pas face à un contrôle installé.`,
+  },
+  "lee-sin-blind-monk": {
+    slug: "lee-sin-blind-monk",
+    bref: `Lee Sin est un deck **Calme/Corps** de **renfort progressif**. 242 listes pour 3 top 8 : honnête en partie libre, en retrait en compétition.`,
+    gagne: `Sa capacité renforce une unité amie chaque tour pour une énergie. Ce n'est pas spectaculaire, mais c'est gratuit et ça s'accumule : une unité renforcée deux ou trois fois devient un mur que peu de decks savent franchir.
+
+Autour, tu protèges cette pièce. **[[Zhonya's Hourglass]]** la sauve d'une mort certaine, **[[Defy]]** contre le sort qui la viserait, **[[Discipline]]** ajoute 2 de Puissance et repioche au moment du combat.`,
+    plan: `**Début de partie.** Pose une unité que tu comptes garder longtemps et commence à la renforcer dès que tu as une énergie de libre.
+
+**Milieu de partie.** **[[First Mate]]** et **[[Pit Rookie]]** te donnent une deuxième action dans le tour, l'un en préparant une unité, l'autre en renforçant.
+
+**Fin de partie.** **[[Charm]]** déplace le défenseur adverse hors du terrain que tu convoites, et ton unité renforcée conquiert seule. Le point faible reste la lenteur : contre un deck qui marque tôt, tu renforces une unité pendant qu'il prend des points.`,
+  },
+  "rumble-mechanized-menace": {
+    slug: "rumble-mechanized-menace",
+    bref: `Rumble est un deck **Furie/Esprit** **tribal Mechs**, le plus thématique du format. 166 listes, 1 top 8 : un deck de passionné, pas un choix de tournoi.`,
+    gagne: `Sa capacité donne Bouclier à tous tes Mechs : ils gagnent en Puissance quand ils défendent. Chaque autre carte du deck empile un bonus supplémentaire sur la même famille. **[[Rumble, Scrapper]]** ajoute 1 de Puissance à tous les Mechs, **[[Rumble, Hotheaded]]** leur donne Assaut, **[[Breakneck Mech]]** leur ajoute Protection et le déplacement libre entre terrains.
+
+Empilés, ces effets transforment des unités quelconques en armée cohérente que l'adversaire ne peut ni cibler facilement ni bloquer proprement.`,
+    plan: `**Début de partie.** **[[Forecaster]]** et **[[Gem Jammer]]** posent les bases : le premier donne Vision à tes Mechs, le second offre le déplacement libre à une unité.
+
+**Milieu de partie.** Enchaîne les Mechs qui se renforcent entre eux. **[[Bubble Bot]]** prépare un autre Mech en arrivant, ce qui te donne une action de plus.
+
+**Fin de partie.** **[[Ferrous Forerunner]]** laisse deux Mechs derrière lui en mourant : ton armée ne disparaît jamais vraiment. Le défaut du deck est là : il lui faut plusieurs pièces en jeu pour fonctionner, et il perd sèchement s'il se fait démonter avant de les avoir posées.`,
+  },
 };

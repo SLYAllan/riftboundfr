@@ -71,7 +71,13 @@ export function CardHover({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           {/* aspectRatio réserve la hauteur AVANT chargement du bitmap : la mesure
               de placement est correcte d'emblée, donc pas de débordement post-load */}
-          <img src={resized(src, width)} alt={alt} className="block w-full bg-canvas object-cover" style={{ aspectRatio: "300 / 419" }} />
+          <img
+            src={resized(src, width)}
+            alt={alt}
+            className="block w-full bg-canvas object-cover"
+            // Champs de bataille en paysage (1038x744), le reste en portrait.
+            style={{ aspectRatio: type === "Battlefield" ? "419 / 300" : "300 / 419" }}
+          />
           <div className="space-y-1.5 px-3 py-2.5">
             <div className="text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {name}

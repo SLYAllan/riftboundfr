@@ -46,19 +46,22 @@ export default function BanListPage() {
         Ban list Riftbound
       </h1>
       <p className="mt-3 text-ink-secondary">
-        Dix cartes sont interdites en Standard. Aucune légende n&apos;est bannie. Une carte bannie
-        reste jouable en draft et en scellé. Le{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link> refuse
-        automatiquement ces cartes.
+        Dix cartes n&apos;ont plus leur place en Standard. Si l&apos;une d&apos;elles traîne encore
+        dans ta liste, ton deck est illégal en tournoi : mieux vaut le découvrir maintenant que
+        devant un arbitre. Elles restent jouables en draft et en scellé, et le{" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link> te
+        prévient si tu en glisses une.
       </p>
 
       <h2 className="mt-10 text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         24 juillet 2026, patch Vendetta
       </h2>
       <p className="mt-2 text-ink-secondary">
-        Trois interdictions en Standard. Les deux champs de bataille font mal : ils étaient joués
-        dans 23 % et 18 % des decks de tournoi, surtout par les decks de rampe Corps et les decks
-        agressifs Fureur.
+        Trois cartes tombent, et ce sont surtout les deux champs de bataille qui vont se sentir.
+        Aspirant&apos;s Climb tournait dans près d&apos;un deck de tournoi sur quatre,
+        The Arena&apos;s Greatest dans presque un sur cinq. Si tu joues de la rampe Corps ou de
+        l&apos;agression Fureur, il va falloir leur trouver un remplaçant avant ton prochain
+        tournoi.
       </p>
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm">
@@ -85,7 +88,9 @@ export default function BanListPage() {
         31 mars 2026
       </h2>
       <p className="mt-2 text-ink-secondary">
-        Sept cartes, visant surtout les decks Draven et les combos Miracle.
+        La première vague. Sept cartes, dont la moitié servait à alimenter Draven et les
+        combos Miracle, qui écrasaient le format Spiritforged. Elles n&apos;ont jamais été
+        rendues depuis.
       </p>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2">
         {MARS.map((n) => (
@@ -96,26 +101,20 @@ export default function BanListPage() {
       </ul>
 
       <h2 className="mt-10 text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Sources
+        Pour aller plus loin
       </h2>
-      <ul className="mt-3 space-y-2 text-sm text-ink-secondary">
-        <li>
-          <a href="https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
-            Mise à jour de la ban list, juillet 2026
-          </a>
-        </li>
-        <li>
-          <a href="https://playriftbound.com/fr-fr/rules-hub/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
-            Rules Hub officiel
-          </a>{" "}
-          : règles du jeu et règles de tournoi à jour.
-        </li>
-      </ul>
-
-      <p className="mt-8 text-sm text-ink-muted">
-        Les nouveaux mots-clés de Vendetta, amplification, Flux, brûler et passer, sont expliqués
-        dans le{" "}
+      <p className="mt-2 text-sm text-ink-secondary">
+        Le même patch apporte quatre nouveaux mots-clés, l&apos;amplification, le Flux, brûler et
+        passer. On les explique un par un dans le{" "}
         <Link href="/guides/glossaire" className="text-arcane hover:underline">glossaire</Link>.
+        Si tu veux la version officielle, tout est chez Riot :{" "}
+        <a href="https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
+          l&apos;annonce de la ban list
+        </a>{" "}
+        et le{" "}
+        <a href="https://playriftbound.com/fr-fr/rules-hub/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
+          Rules Hub
+        </a>, qui héberge les règles du jeu et les règles de tournoi à jour.
       </p>
     </div>
   );

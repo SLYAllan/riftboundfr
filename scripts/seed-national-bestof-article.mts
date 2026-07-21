@@ -124,7 +124,7 @@ async function main() {
     title: "Best of du National Open S3 - Toutes les légendes",
     excerpt:
       "La meilleure decklist de chaque Légende au National Open S3, le plus gros tournoi Unleashed jamais joué : 2 048 joueurs, 1 957 listes publiées, une finale entre deux Irelia.",
-    coverImage: null,
+    coverImage: "/img/articles/S3-national.webp",
     category: "tournoi",
     tags: ["national-open", "s3", "best-of", "meta", "unleashed"],
     tournamentName: "S3 National Open",
