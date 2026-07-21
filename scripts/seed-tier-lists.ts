@@ -10,7 +10,7 @@ interface TierEntry {
 
 // Recalculé sur 6799 decks classés Origins (Shanghai NO + Beijing/Guangzhou/Chongqing/Hangzhou RO + City Challenges)
 const originsTier: TierEntry[] = [
-  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "27,6% du field (1876 decks), 83 top 8, 10 victoires. Reine d'Origins" },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "27,6% des decks (1876 au total), 83 top 8, 10 victoires. Reine d'Origins" },
   { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "23% (1561 decks), 61 top 8, 6 wins. Hold +2 Might" },
   { legendName: "Viktor, Herald of the Arcane", tier: "A", comment: "11,5% (781 decks), 24 top 8, 2 wins. Control Mind/Order" },
   { legendName: "Sett, The Boss", tier: "A", comment: "5,4% (366 decks), 10 top 8, 4 wins. Meilleure conversion" },
@@ -29,7 +29,7 @@ const originsTier: TierEntry[] = [
 ];
 
 const spiritforgedTier: TierEntry[] = [
-  { legendName: "Draven, Glorious Executioner", tier: "S", comment: "21% du field (1539 decks), 88 top 8, 15 victoires. Roi incontesté du Spiritforged" },
+  { legendName: "Draven, Glorious Executioner", tier: "S", comment: "21% des decks (1539 au total), 88 top 8, 15 victoires. Roi incontesté du Spiritforged" },
   { legendName: "Irelia, Blade Dancer", tier: "A", comment: "12% (876 decks), 45 top 8, 3 wins. Tempo dominant" },
   { legendName: "Kai'Sa, Daughter of the Void", tier: "A", comment: "12% (865 decks), 29 top 8, 4 wins. Reste T1 Fury/Mind" },
   { legendName: "Viktor, Herald of the Arcane", tier: "A", comment: "6% (445 decks), 21 top 8, 2 wins. Forte conversion Mind/Order" },
@@ -62,13 +62,13 @@ const spiritforgedTier: TierEntry[] = [
 // Recalculé le 21 juillet 2026 sur 9 555 decks classés Unleashed via scripts/tier-unleashed.py
 // (S3 City Challenges + Xi'an/Tianjin/Changsha RO + Suzhou RQ + Sydney + Vancouver + Utrecht
 //  + Hartford, classement complet 1 659 + S3 National Open, classement complet 2 030).
-// Taux de Top 8 moyen du field = 2,76 % : c'est la barre qui sépare les légendes qui convertissent de celles qui sont surjouées.
+// Taux de Top 8 moyen des decks = 2,76 % : c'est la barre qui sépare les légendes qui convertissent de celles qui sont surjouées.
 // NB dev : deux légendes Master Yi distinctes, Wuju Bladesman et Wuju Master.
 // Le champion NE permet PAS de les distinguer : mesuré sur les 307 Bladesman du National Open
 // (scrape complet), 82 % jouent Tempered et 18 % Honed, et les Wuju Master jouent Tempered aussi.
 // Toujours lire la légende réelle du deck, jamais la déduire du champion ni du set.
 const unleashedTier: TierEntry[] = [
-  { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "11,9% du field (1133 decks), 49 top 8, 6 victoires, conversion 4,3%. Hold Corps/Calme. A gagné Suzhou, Tianjin et Hartford. Le plus joué de très loin, mais convertit moins bien qu'Irelia et Diana, deux fois moins choisies" },
+  { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "11,9% des decks (1133 au total), 49 top 8, 6 victoires, conversion 4,3%. Hold Corps/Calme. A gagné Suzhou, Tianjin et Hartford. Le plus joué de très loin, mais convertit moins bien qu'Irelia et Diana, deux fois moins choisies" },
   { legendName: "Irelia, Blade Dancer", tier: "S", comment: "8,2% (780 decks), 37 top 8, 7 victoires, conversion 4,7%. Tempo gear Calme/Chaos. A gagné le S3 National Open, où la finale opposait deux Irelia" },
   { legendName: "Diana, Scorn of the Moon", tier: "S", comment: "7,3% (698 decks), 31 top 8, 3 victoires, conversion 4,4%. Chaos/Esprit. A gagné Vancouver, 3 top 8 à Hartford, 3e et 4e au National. La plus régulière du set" },
   { legendName: "Annie, Dark Child", tier: "A", comment: "1,7% (161 decks) pour 8 top 8 et 3 victoires : conversion 5,0%, la meilleure du set. Top 8 à Utrecht, à Hartford, 6e au National. Aggro Chaos/Fureur très sous-estimé" },
@@ -89,7 +89,7 @@ const unleashedTier: TierEntry[] = [
   { legendName: "Kha'Zix, Voidreaver", tier: "C", comment: "2,4% (234 decks), 4 top 8, conversion 1,7%. Aggro combo" },
   { legendName: "Garen, Might of Demacia", tier: "C", comment: "0,7% (63 decks), 1 top 8, conversion 1,6%. Rampe Aurora" },
   { legendName: "Jhin, Virtuoso", tier: "C", comment: "1,5% (142 decks), 2 top 8, conversion 1,4%. Combo précision" },
-  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "3,3% (313 decks), 4 top 8, conversion 1,3%. Finaliste d'Utrecht, mais très en dessous de la moyenne du field sur la durée" },
+  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "3,3% (313 decks), 4 top 8, conversion 1,3%. Finaliste d'Utrecht, mais très en dessous de la moyenne des decks sur la durée" },
   { legendName: "Ornn, Fire Below the Mountain", tier: "C", comment: "1,7% (165 decks), 2 top 8, conversion 1,2%. Valeur par l'équipement" },
   { legendName: "Poppy, Keeper of the Hammer", tier: "C", comment: "1,0% (94 decks), 1 top 8, conversion 1,1%" },
   { legendName: "Lucian, Purifier", tier: "C", comment: "1,0% (91 decks), 1 top 8, conversion 1,1%" },
@@ -114,7 +114,7 @@ const unleashedTier: TierEntry[] = [
 // classements complets de Hartford et du S3 National Open inclus. Taux de Top 8 moyen = 3,23 %.
 // Commande : python -X utf8 scripts/tier-unleashed.py Global
 const globalTier: TierEntry[] = [
-  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "13,1% du field toutes ères (3118 decks), 135 top 8, 17 victoires, conversion 4,3%. La plus jouée et la plus titrée de l'histoire du jeu, reine d'Origins" },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "13,1% des decks toutes ères (3118 au total), 135 top 8, 17 victoires, conversion 4,3%. La plus jouée et la plus titrée de l'histoire du jeu, reine d'Origins" },
   { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "12,5% (2967 decks), 122 top 8, 12 victoires, conversion 4,1%. Hold Corps/Calme, dominant d'Origins à Unleashed" },
   { legendName: "Draven, Glorious Executioner", tier: "S", comment: "7,4% (1760 decks), 97 top 8, 16 victoires, conversion 5,5%. Meilleure conversion des grosses légendes, roi du Spiritforged" },
   { legendName: "Irelia, Blade Dancer", tier: "S", comment: "7,0% (1658 decks), 83 top 8, 10 victoires, conversion 5,0%. Tempo gear, a gagné le S3 National Open" },
