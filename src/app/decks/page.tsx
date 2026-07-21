@@ -41,7 +41,6 @@ const CATEGORIES = [
   { key: "deckbuilder", label: "Créer son deck", href: "/deckbuilder", icon: Hammer, color: "violet" as const, isLink: true },
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, color: "arcane" as const, isLink: false },
   { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, color: "gold" as const, isLink: false },
-  { key: "tournoi", label: "Tournois", href: "/decks?cat=tournoi", icon: Trophy, color: "gold" as const, isLink: false },
   { key: "guide", label: "Avec guide", href: "/decks?cat=guide", icon: BookOpen, color: "violet" as const, isLink: false },
 ] as const;
 
@@ -184,9 +183,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
-        Chaque deck donne la liste complète, les runes, les champs de bataille et le
-        joueur qui l&apos;a jouée, avec le tournoi et le classement obtenu. Pour savoir
-        quoi jouer, commence par la{" "}
+        On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
+        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, va sur
+        sa page dans les{" "}
+        <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
+        Pour savoir quoi jouer, commence par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisis ta{" "}
         <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
@@ -334,22 +335,18 @@ export default async function DecksPage({ searchParams }: PageProps) {
   }
 
   const where: Record<string, unknown> = { published: true };
-  if (cat === "tournoi") {
-    // Vrais decks scrapés uniquement : les copies "best-of" (featured) ont le même
-    // tournamentContext et doubleraient les résultats - elles vivent dans cat=bestof.
-    where.featured = false;
-    if (tournamentFilter) {
-      where.tournamentContext = tournamentFilter;
-    } else {
-      where.tournamentContext = { not: null };
-    }
-  } else if (cat === "guide") {
+  // /decks ne montre jamais les milliers de decklists brutes d'un tournoi : elles
+  // vivent sur la page du tournoi (/tournois/[slug]). Ici, uniquement les best-of
+  // (un deck par Légende), les decks avec guide et les decks communautaires. Le
+  // filtre par tournoi sélectionne donc toujours des best-of.
+  if (cat === "guide") {
     where.guide = { not: null };
   } else if (cat === "bestof") {
     where.featured = true;
     if (tournamentFilter) where.tournamentContext = tournamentFilter;
   } else {
     if (tournamentFilter) {
+      where.featured = true;
       where.tournamentContext = tournamentFilter;
     } else {
       where.OR = [
@@ -460,9 +457,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
-        Chaque deck donne la liste complète, les runes, les champs de bataille et le
-        joueur qui l&apos;a jouée, avec le tournoi et le classement obtenu. Pour savoir
-        quoi jouer, commence par la{" "}
+        On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
+        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, va sur
+        sa page dans les{" "}
+        <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
+        Pour savoir quoi jouer, commence par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisis ta{" "}
         <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
@@ -541,15 +540,15 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </div>
       )}
 
-      {(!cat || cat === "tournoi" || cat === "bestof") && (
+      {(!cat || cat === "bestof") && (
         <div className="mt-3 flex flex-wrap gap-2">
           <Link
-            href={cat ? `/decks?cat=${cat}` : "/decks"}
+            href="/decks?cat=bestof"
             className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
-              !tournamentFilter ? "bg-gold/20 text-gold ring-1 ring-gold/40" : "bg-surface-raised text-ink-muted hover:text-ink"
+              cat === "bestof" && !tournamentFilter ? "bg-gold/20 text-gold ring-1 ring-gold/40" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
-            <Trophy size={11} /> Tous
+            <Trophy size={11} /> Best of par tournoi
           </Link>
           {TOURNAMENT_FILTERS.map((t) => {
             const info = getTournamentInfo(t.ctx);
@@ -558,7 +557,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             return (
               <Link
                 key={t.ctx}
-                href={`/decks?${cat ? `cat=${cat}&` : ""}tournament=${encodeURIComponent(t.ctx)}`}
+                href={`/decks?cat=bestof&tournament=${encodeURIComponent(t.ctx)}`}
                 className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
                   isActive ? "bg-gold/20 text-gold ring-1 ring-gold/40" : "bg-surface-raised text-ink-muted hover:text-ink"
                 )}
@@ -621,7 +620,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <div className="mt-4 text-sm text-ink-muted">
         {decks.length} deck{decks.length !== 1 ? "s" : ""}
         {legendFilter && <span> pour <strong className="text-arcane">{legendFilter}</strong></span>}
-        {cat && <span> &middot; {cat === "tournoi" ? "Tournois" : cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat}</span>}
+        {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>

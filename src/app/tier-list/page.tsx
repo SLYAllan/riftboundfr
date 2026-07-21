@@ -36,7 +36,7 @@ const getTierListData = unstable_cache(
 export const metadata: Metadata = {
   title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juillet 2026)" },
   description:
-    "Tier list Riftbound française du Set Unleashed, calculée sur 7 903 decks de tournoi. Classement S/A/B/C/D de toutes les Légendes, avec decklists et analyses.",
+    "Tier list Riftbound française du Set Unleashed, calculée sur 9 555 decks de tournoi. Classement S/A/B/C/D de toutes les Légendes, avec decklists et analyses.",
   alternates: { canonical: "/tier-list" },
   openGraph: {
     type: "website",
