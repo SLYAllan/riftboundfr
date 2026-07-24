@@ -1,3 +1,7 @@
+// Requête DB pour les images de cartes -> rendu à la requête, pas au build
+// (le build Coolify utilise une fausse DATABASE_URL injoignable).
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import { unstable_cache } from "next/cache";
