@@ -78,7 +78,7 @@ export function tokensToQuery(tokens: SearchToken[], freeText: string): string {
 export const FIELD_SUGGESTIONS: Record<FieldKey, string[]> = {
   type: ["unit", "spell", "gear"],
   domain: ["fury", "calm", "order", "chaos", "mind", "body"],
-  set: ["origins", "spiritforged", "unleashed"],
+  set: ["origins", "spiritforged", "unleashed", "vendetta"],
   energy: ["0", "1", "2", "3", "4", "5", "6", "7", "8+", "0-2", "3-5", "6+"],
   power: ["0", "1", "2", "3", "4"],
   might: ["1", "2", "3", "4", "5", "6+"],
@@ -90,6 +90,7 @@ const SET_ALIASES: Record<string, string[]> = {
   origins: ["OGN", "OGS"],
   spiritforged: ["SFD"],
   unleashed: ["UNL"],
+  vendetta: ["VEN"],
 };
 
 export function getSetCodesFromAlias(alias: string): string[] {

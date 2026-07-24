@@ -295,7 +295,7 @@ export default async function ProfilPage() {
           </h2>
           <Link
             href="/deckbuilder"
-            className="flex items-center gap-1.5 rounded-lg bg-violet/10 px-3 py-1.5 text-sm font-medium text-violet hover:bg-violet/20 transition-colors"
+            className="flex items-center gap-1.5 rounded-lg bg-violet px-3 py-1.5 text-sm font-medium text-white hover:opacity-90 transition-opacity"
           >
             <Hammer size={14} /> Créer un deck
           </Link>

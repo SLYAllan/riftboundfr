@@ -35,16 +35,18 @@ export function getRarityColor(rarity: string): string {
   return map[rarity] ?? "text-ink-secondary";
 }
 
+// Fond neutre, la couleur ne vit que sur le texte (pas d'empilement fond+texte).
 export function getRarityBgColor(rarity: string): string {
   const map: Record<string, string> = {
-    Common: "bg-rarity-common/20 text-rarity-common",
-    Uncommon: "bg-rarity-common/20 text-rarity-common",
-    Rare: "bg-rarity-rare/20 text-rarity-rare",
-    Epic: "bg-rarity-epic/20 text-rarity-epic",
-    Champion: "bg-rarity-champion/20 text-rarity-champion",
-    Showcase: "bg-rarity-legend/20 text-rarity-legend",
+    Common: "bg-surface-raised text-rarity-common",
+    Uncommon: "bg-surface-raised text-rarity-uncommon",
+    Rare: "bg-surface-raised text-rarity-rare",
+    Epic: "bg-surface-raised text-rarity-epic",
+    Champion: "bg-surface-raised text-rarity-champion",
+    Showcase: "bg-surface-raised text-rarity-legend",
+    Promo: "bg-surface-raised text-rarity-champion",
   };
-  return map[rarity] ?? "bg-ink-muted/20 text-ink-secondary";
+  return map[rarity] ?? "bg-surface-raised text-ink-secondary";
 }
 
 export function getTierColor(tier: string): string {
@@ -74,6 +76,6 @@ export function displayLegendName(name: string): string {
 }
 
 export const CARD_TYPES = ["Unit", "Spell", "Gear", "Rune", "Battlefield", "Legend"] as const;
-export const RARITIES = ["Common", "Uncommon", "Rare", "Epic", "Showcase"] as const;
+export const RARITIES = ["Common", "Uncommon", "Rare", "Epic", "Showcase", "Promo"] as const;
 export const DOMAINS = ["Fury", "Sorcery", "Order", "Calm", "Mind", "Body", "Chaos"] as const;
 export const TIERS = ["S", "A", "B", "C", "D"] as const;

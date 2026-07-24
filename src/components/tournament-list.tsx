@@ -3,23 +3,29 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
+import { getBannerUrl } from "@/lib/banners";
 import { CountryBadge } from "@/components/country-badge";
 import {
   Users,
   MapPin,
   Calendar,
   Swords,
-  ChevronRight,
   Search,
 } from "lucide-react";
 import type { TournamentData } from "@/app/tournois/page";
 
 const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed"] as const;
 
-const MEDAL_STYLES: Record<number, { bg: string; text: string; label: string }> = {
-  1: { bg: "bg-gold/15", text: "text-gold", label: "1er" },
-  2: { bg: "bg-gray-400/15", text: "text-gray-300", label: "2e" },
-  3: { bg: "bg-amber-600/15", text: "text-amber-600", label: "3e" },
+const MEDAL_RING: Record<number, string> = {
+  1: "ring-2 ring-gold",
+  2: "ring-2 ring-gray-300/70",
+  3: "ring-2 ring-amber-600/70",
+};
+
+const MEDAL_TEXT: Record<number, string> = {
+  1: "text-gold",
+  2: "text-gray-300",
+  3: "text-amber-600",
 };
 
 function TournamentRow({
@@ -30,124 +36,132 @@ function TournamentRow({
   featured?: boolean;
 }) {
   const top8 = tournament.topDecks.filter((d) => d.placementNum <= 8);
+  const winner = top8.find((d) => d.placementNum === 1);
+  const bannerUrl = winner ? getBannerUrl(winner.legendName) : null;
 
   return (
     <div
       className={cn(
-        "group rounded-xl border border-hairline bg-surface/40 transition-all duration-200",
-        "hover:border-hairline-accent hover:bg-surface/70",
-        featured && "border-hairline-strong bg-surface/60",
+        "group relative overflow-hidden rounded-xl border border-hairline bg-surface/50 transition-all duration-200",
+        "hover:border-hairline-accent",
+        featured && "border-hairline-strong bg-surface/70",
       )}
     >
+      {/* Art de la légende du vainqueur, fondu dans la carte */}
+      {bannerUrl && (
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-2/5 max-w-[420px] sm:block"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 45%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 45%)",
+          }}
+        >
+          <img
+            src={bannerUrl}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover object-[center_20%] opacity-60 transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/45 to-canvas/10" />
+          {winner && (
+            <div className="absolute bottom-2.5 right-4 text-right">
+              <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-gold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                Vainqueur
+              </div>
+              <div className="text-sm font-bold leading-tight text-ink drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                {winner.playerName ?? "Inconnu"}
+              </div>
+              <div className="text-[11px] leading-tight text-ink-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+                {displayLegendName(winner.legendName)}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       <Link
         href={`/tournois/${tournament.slug}`}
-        className="block px-5 py-4"
+        className="relative z-10 block px-5 pt-4 pb-2 sm:pr-[38%]"
       >
-        {/* Main row */}
-        <div className="flex items-center gap-4">
-          {/* Flag */}
-          <div className="shrink-0">
-            {tournament.countryCode && (
-              <CountryBadge code={tournament.countryCode} className="h-6 w-9" />
+        <div className="flex items-center gap-3">
+          {tournament.countryCode && (
+            <CountryBadge code={tournament.countryCode} className="h-6 w-9 shrink-0" />
+          )}
+          <h2
+            className={cn(
+              "min-w-0 truncate font-bold leading-tight tracking-tight group-hover:text-arcane-light transition-colors",
+              featured ? "text-lg" : "text-base",
             )}
-          </div>
+            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+          >
+            {tournament.name}
+          </h2>
+        </div>
 
-          {/* Name + articles */}
-          <div className="flex-1 min-w-0">
-            <h2
-              className={cn(
-                "font-bold leading-tight tracking-tight group-hover:text-arcane-light transition-colors",
-                featured ? "text-lg" : "text-base",
-              )}
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-            >
-              {tournament.name}
-            </h2>
-
-            {/* Meta info */}
-            <div className="mt-1.5 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-secondary">
-              {tournament.date && (
-                <span className="flex items-center gap-1.5">
-                  <Calendar size={13} className="text-ink-muted" />
-                  {formatDate(tournament.date)}
-                </span>
-              )}
-              {tournament.location && (
-                <span className="flex items-center gap-1.5">
-                  <MapPin size={13} className="text-ink-muted" />
-                  {tournament.location}
-                </span>
-              )}
-              {tournament.playerCount && (
-                <span className="flex items-center gap-1.5">
-                  <Users size={13} className="text-ink-muted" />
-                  {tournament.playerCount.toLocaleString("fr-FR")} joueurs
-                </span>
-              )}
-              <span className="flex items-center gap-1.5">
-                <Swords size={13} className="text-ink-muted" />
-                {tournament.deckCount} decklists
-              </span>
-            </div>
-          </div>
-
-          {/* Arrow */}
-          <ChevronRight
-            size={18}
-            className="shrink-0 text-ink-muted group-hover:text-arcane transition-all group-hover:translate-x-0.5"
-          />
+        <div className="mt-1.5 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-secondary">
+          {tournament.date && (
+            <span className="flex items-center gap-1.5">
+              <Calendar size={13} className="text-ink-muted" />
+              {formatDate(tournament.date)}
+            </span>
+          )}
+          {tournament.location && (
+            <span className="flex items-center gap-1.5">
+              <MapPin size={13} className="text-ink-muted" />
+              {tournament.location}
+            </span>
+          )}
+          {tournament.playerCount && (
+            <span className="flex items-center gap-1.5">
+              <Users size={13} className="text-ink-muted" />
+              {tournament.playerCount.toLocaleString("fr-FR")} joueurs
+            </span>
+          )}
+          <span className="flex items-center gap-1.5">
+            <Swords size={13} className="text-ink-muted" />
+            {tournament.deckCount} decklists
+          </span>
         </div>
       </Link>
 
-      {/* Top 8 inline */}
+      {/* Top 8 : tuiles d'icônes uniformes, rang en coin, anneau or/argent/bronze */}
       {top8.length > 0 && (
-        <div className="px-5 pb-4 -mt-1">
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-            {top8.map((deck) => {
-              const medal = MEDAL_STYLES[deck.placementNum];
-              return (
-                <Link
-                  key={deck.slug}
-                  href={`/decks/${deck.slug}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className={cn(
-                    "group/chip flex min-w-0 items-center gap-2 rounded-lg px-2 py-1.5 transition-colors",
-                    "bg-canvas/60 hover:bg-surface-raised border border-hairline/40",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "flex h-4 w-4 items-center justify-center rounded text-[9px] font-bold shrink-0",
-                      medal?.bg ?? "bg-surface-raised",
-                      medal?.text ?? "text-ink-muted",
-                    )}
-                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                  >
-                    {medal?.label ?? deck.placementNum}
-                  </span>
-                  {deck.legendIcon && (
-                    <img
-                      src={deck.legendIcon}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      width={28}
-                      height={28}
-                      className="h-7 w-7 rounded object-cover shrink-0"
-                    />
-                  )}
-                  <div className="flex flex-col min-w-0 flex-1">
-                    <span className="block truncate text-xs font-medium leading-tight">
-                      {deck.playerName ?? "Inconnu"}
-                    </span>
-                    <span className="hidden truncate text-[10px] leading-tight text-ink-muted sm:block">
-                      {displayLegendName(deck.legendName)}
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+        <div className="relative z-10 flex flex-wrap items-center gap-1.5 px-5 pb-4 pt-1">
+          {top8.map((deck) => (
+            <Link
+              key={deck.slug}
+              href={`/decks/${deck.slug}`}
+              title={`${deck.placement ?? deck.placementNum} - ${deck.playerName ?? "Inconnu"} (${displayLegendName(deck.legendName)})`}
+              className={cn(
+                "relative h-9 w-9 shrink-0 overflow-hidden rounded-lg transition-transform hover:z-10 hover:scale-110",
+                MEDAL_RING[deck.placementNum] ?? "ring-1 ring-hairline",
+              )}
+            >
+              {deck.legendIcon ? (
+                <img
+                  src={deck.legendIcon}
+                  alt={displayLegendName(deck.legendName)}
+                  loading="lazy"
+                  decoding="async"
+                  width={36}
+                  height={36}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="h-full w-full bg-surface-raised" />
+              )}
+              <span
+                className={cn(
+                  "absolute bottom-0 right-0 rounded-tl bg-canvas/85 px-1 text-[9px] font-bold leading-snug",
+                  MEDAL_TEXT[deck.placementNum] ?? "text-ink-secondary",
+                )}
+                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              >
+                {deck.placementNum}
+              </span>
+            </Link>
+          ))}
         </div>
       )}
     </div>

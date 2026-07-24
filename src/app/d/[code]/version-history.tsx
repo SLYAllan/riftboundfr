@@ -39,7 +39,7 @@ export function VersionHistory({ currentVersion, history }: Props) {
       {open && (
         <div className="border-t border-hairline px-4 py-3 space-y-3">
           <div className="flex items-center gap-2 text-xs">
-            <span className="rounded-full bg-arcane/15 px-2 py-0.5 text-arcane font-semibold">
+            <span className="rounded-full bg-surface-raised px-2 py-0.5 text-arcane font-semibold">
               v{currentVersion}
             </span>
             <span className="text-ink-muted">- version actuelle</span>

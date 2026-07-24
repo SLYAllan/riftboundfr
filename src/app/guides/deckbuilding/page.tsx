@@ -132,7 +132,7 @@ export default function GuideDeckbuildingPage() {
               <div key={r.name} className="rounded-lg border border-hairline bg-surface p-4">
                 <div className="flex items-center gap-3">
                   <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{r.name}</span>
-                  <span className="rounded-full bg-gold/10 px-2 py-0.5 text-xs font-semibold text-gold">{r.split}</span>
+                  <span className="rounded-full bg-surface-raised px-2 py-0.5 text-xs font-semibold text-gold">{r.split}</span>
                 </div>
                 <p className="mt-1 text-sm text-ink-secondary">{r.desc}</p>
               </div>

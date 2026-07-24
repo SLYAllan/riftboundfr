@@ -7,6 +7,8 @@ import { RarityBadge } from "@/components/rarity-badge";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib/domains";
 import { isBanned } from "@/lib/banned-cards";
+import { getErrata } from "@/lib/errata-2026-07";
+import { ErrataDiff } from "@/components/errata-diff";
 import { displayLegendName } from "@/lib/utils";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -58,6 +60,8 @@ export default async function CardDetailPage({ params }: PageProps) {
   const { id } = await params;
   const card = await prisma.card.findUnique({ where: { riftboundId: id } });
   if (!card) notFound();
+
+  const errata = getErrata(card.name);
 
   const relatedDeckCards = await prisma.deckCard.findMany({
     where: { cardId: card.id, deck: { published: true } },
@@ -123,8 +127,9 @@ export default async function CardDetailPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <RarityBadge rarity={card.rarity} />
-            <span className="rounded-full bg-violet/20 px-2.5 py-0.5 text-xs font-semibold text-violet">{card.setName}</span>
-            {isBanned(card.name) && <span className="rounded-full bg-red-500/20 px-2.5 py-0.5 text-xs font-bold text-red-400">Banni</span>}
+            <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-semibold text-violet">{card.setName}</span>
+            {isBanned(card.name) && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-red-400 ring-1 ring-red-500/30">Banni</span>}
+            {errata && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-amber-400 ring-1 ring-amber-500/30">Errata</span>}
             <span className="text-sm text-ink-secondary">{card.riftboundId}</span>
           </div>
           <div className="mt-6 space-y-4">
@@ -150,12 +155,8 @@ export default async function CardDetailPage({ params }: PageProps) {
                   {card.domains.length > 0 ? card.domains.map((domain) => (
                     <span
                       key={domain}
-                      className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold"
-                      style={{
-                        backgroundColor: `${DOMAIN_COLORS[domain] ?? "#6b7280"}20`,
-                        color: DOMAIN_COLORS[domain] ?? "#6b7280",
-                        borderColor: `${DOMAIN_COLORS[domain] ?? "#6b7280"}40`,
-                      }}
+                      className="inline-flex items-center gap-1.5 rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-semibold"
+                      style={{ color: DOMAIN_COLORS[domain] ?? "#6b7280" }}
                     >
                       {DOMAIN_ICONS[domain] && <img src={DOMAIN_ICONS[domain]} alt="" className="h-4 w-4" />}
                       {DOMAIN_LABELS_FR[domain] ?? domain}
@@ -192,6 +193,16 @@ export default async function CardDetailPage({ params }: PageProps) {
                 <p className="mt-2 text-sm leading-relaxed text-ink-secondary"><CardTextRenderer text={card.textPlain} /></p>
               </div>
             )}
+            {errata && (
+              <div className="rounded-lg border border-hairline bg-surface p-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Errata du 23 juillet 2026</span>
+                </div>
+                <div className="mt-2"><ErrataDiff before={errata.before} after={errata.after} /></div>
+                <p className="mt-2 text-sm text-ink-secondary">{errata.change}</p>
+                <Link href="/guides/ban-list" className="mt-2 inline-block text-xs text-arcane hover:underline">Voir tous les erratas</Link>
+              </div>
+            )}
             {card.flavorText && (
               <p className="border-l-2 border-violet/30 pl-4 text-sm italic text-ink-muted">{card.flavorText}</p>
             )}
@@ -213,10 +224,10 @@ export default async function CardDetailPage({ params }: PageProps) {
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{deck.title}</span>
                       {deck.placement && (
-                        <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[10px] font-bold text-gold">{deck.placement}</span>
+                        <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{deck.placement}</span>
                       )}
                       {deck.featured && (
-                        <span className="rounded-full bg-violet/10 px-2 py-0.5 text-[10px] font-bold text-violet">Best of</span>
+                        <span className="rounded-full bg-violet px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
                       )}
                     </div>
                     <div className="mt-0.5 flex items-center gap-2 text-sm">

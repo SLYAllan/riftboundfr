@@ -34,14 +34,14 @@ const ALL_CATEGORIES: GlossaryCategory[] = [
 ];
 
 const CATEGORY_COLORS: Record<GlossaryCategory, string> = {
-  "Mécaniques": "bg-violet/15 text-violet-light border-violet/30",
-  "Types de cartes": "bg-arcane/15 text-arcane-light border-arcane/30",
-  "Phases de jeu": "bg-gold/15 text-gold-light border-gold/30",
-  "Zones de jeu": "bg-domain-calm/15 text-domain-calm border-domain-calm/30",
-  "Actions": "bg-domain-fury/15 text-domain-fury border-domain-fury/30",
-  "Timing": "bg-domain-chaos/15 text-domain-chaos border-domain-chaos/30",
-  "Ressources": "bg-domain-body/15 text-domain-body border-domain-body/30",
-  "Formats & Règles": "bg-ink-muted/15 text-ink-secondary border-ink-muted/30",
+  "Mécaniques": "bg-surface-raised text-violet-light",
+  "Types de cartes": "bg-surface-raised text-arcane-light",
+  "Phases de jeu": "bg-surface-raised text-gold-light",
+  "Zones de jeu": "bg-surface-raised text-domain-calm",
+  "Actions": "bg-surface-raised text-domain-fury",
+  "Timing": "bg-surface-raised text-domain-chaos",
+  "Ressources": "bg-surface-raised text-domain-body",
+  "Formats & Règles": "bg-surface-raised text-ink-secondary",
 };
 
 const CATEGORY_ACTIVE: Record<GlossaryCategory, string> = {
@@ -159,7 +159,7 @@ function TermCard({
           )}
         </dt>
         <span
-          className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${CATEGORY_COLORS[item.category]}`}
+          className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${CATEGORY_COLORS[item.category]}`}
         >
           {item.category}
         </span>
@@ -363,8 +363,8 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
             <button
               key={cat}
               onClick={() => setActiveCategory(isActive ? null : cat)}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-                isActive ? CATEGORY_ACTIVE[cat] + " border-transparent" : CATEGORY_COLORS[cat] + " hover:brightness-125"
+              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                isActive ? CATEGORY_ACTIVE[cat] : CATEGORY_COLORS[cat] + " hover:brightness-125"
               }`}
             >
               {cat} ({count})
@@ -433,7 +433,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
             <section key={letter} id={`letter-${letter}`} className="scroll-mt-24">
               <div className="sticky top-16 z-10 mb-3 flex items-center gap-3 bg-canvas/95 py-2 backdrop-blur-sm">
                 <span
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-arcane/15 text-lg font-bold text-arcane"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-arcane text-lg font-bold text-white"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {letter}

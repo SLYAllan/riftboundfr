@@ -34,7 +34,7 @@ export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
           <div className="flex-1 space-y-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-sm font-semibold text-ink-secondary">{card.supertype ? `${card.supertype} ` : ""}{card.type}</span>
-              <span className="rounded-full bg-violet/20 px-2.5 py-0.5 text-xs font-bold text-violet">{card.rarity}</span>
+              <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-violet">{card.rarity}</span>
               {card.domains.map((d) => (
                 <span
                   key={d}

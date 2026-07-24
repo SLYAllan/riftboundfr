@@ -49,11 +49,11 @@ const isChampionCard = (c: DecklistCard): boolean =>
   (c.section as string) === "champion" || (c.section === "legend" && c.type !== "Legend");
 
 const RARITY_COLORS: Record<string, string> = {
-  Common: "bg-zinc-500/20 text-zinc-400",
-  Uncommon: "bg-green-500/20 text-green-400",
-  Rare: "bg-blue-500/20 text-blue-400",
-  Epic: "bg-purple-500/20 text-purple-400",
-  Showcase: "bg-gold/20 text-gold",
+  Common: "bg-surface-raised text-zinc-400",
+  Uncommon: "bg-surface-raised text-green-400",
+  Rare: "bg-surface-raised text-blue-400",
+  Epic: "bg-surface-raised text-purple-400",
+  Showcase: "bg-surface-raised text-gold",
 };
 
 type ExportTab = "deckcode" | "tts" | "image";
@@ -78,7 +78,7 @@ function CardTooltip({ card }: { card: DecklistCard }) {
             {TYPE_LABELS_FR[card.type] ?? card.type}
           </span>
           <span className={cn("text-xs rounded px-1.5 py-0.5 font-semibold", RARITY_COLORS[card.rarity] ?? "bg-surface-raised text-ink-secondary")}>{RARITY_LABELS_FR[card.rarity] ?? card.rarity}</span>
-          {isBanned(card.name) && <span className="text-[10px] rounded px-1.5 py-0.5 font-bold bg-red-500/20 text-red-400">Banni</span>}
+          {isBanned(card.name) && <span className="text-[10px] rounded px-1.5 py-0.5 font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
           {card.domains?.map((d) => (
             <span key={d} className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280", backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20` }}>
               {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3 w-3" />}
@@ -116,7 +116,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
               {TYPE_LABELS_FR[card.type] ?? card.type}
             </span>
             <span className={cn("text-xs rounded px-2 py-0.5 font-semibold", RARITY_COLORS[card.rarity] ?? "bg-surface-raised text-ink-secondary")}>{RARITY_LABELS_FR[card.rarity] ?? card.rarity}</span>
-            {isBanned(card.name) && <span className="text-xs rounded px-2 py-0.5 font-bold bg-red-500/20 text-red-400">Banni</span>}
+            {isBanned(card.name) && <span className="text-xs rounded px-2 py-0.5 font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
             {card.domains?.map((d) => (
               <span key={d} className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280", backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20` }}>
                 {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3.5 w-3.5" />}
@@ -360,7 +360,7 @@ export function DecklistInteractive({
                 onClick={() => setView("grid")}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "grid" ? "bg-arcane/10 text-arcane" : "text-ink-muted hover:text-ink"
+                  view === "grid" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <Grid3X3 size={16} />
@@ -369,7 +369,7 @@ export function DecklistInteractive({
                 onClick={() => setView("list")}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "list" ? "bg-arcane/10 text-arcane" : "text-ink-muted hover:text-ink"
+                  view === "list" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <List size={16} />
@@ -378,7 +378,7 @@ export function DecklistInteractive({
                 onClick={() => setView("stats")}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "stats" ? "bg-arcane/10 text-arcane" : "text-ink-muted hover:text-ink"
+                  view === "stats" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <BarChart3 size={16} />
@@ -446,7 +446,7 @@ export function DecklistInteractive({
                         <div className="mt-1 truncate text-xs text-ink-secondary group-hover:text-arcane">
                           {c.name}
                         </div>
-                        {isBanned(c.name) && <span className="mt-0.5 inline-block text-[9px] rounded px-1 py-px font-bold bg-red-500/20 text-red-400">Banni</span>}
+                        {isBanned(c.name) && <span className="mt-0.5 inline-block text-[9px] rounded px-1 py-px font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
                         {hoveredCard === c.cardId + c.section && (
                           <div className="hidden md:block">
                             <CardTooltip card={c} />
@@ -493,7 +493,7 @@ export function DecklistInteractive({
                           onMouseEnter={() => setHoveredCard(c.cardId + c.section)}
                           onMouseLeave={() => setHoveredCard(null)}
                         >
-                          <td className="py-1.5 pr-2 font-medium">{c.name}{isBanned(c.name) && <span className="ml-1.5 text-[10px] rounded px-1 py-px font-bold bg-red-500/20 text-red-400">Banni</span>}</td>
+                          <td className="py-1.5 pr-2 font-medium">{c.name}{isBanned(c.name) && <span className="ml-1.5 text-[10px] rounded px-1 py-px font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}</td>
                           <td className="py-1.5 px-2 text-ink-secondary">{TYPE_LABELS_FR[c.type] ?? c.type}</td>
                           <td className="py-1.5 px-2 text-center text-yellow-400 font-medium">{c.energy ?? "-"}</td>
                           <td className="py-1.5 px-2 text-center text-red-400 font-medium">{c.might ?? "-"}</td>
@@ -534,7 +534,7 @@ export function DecklistInteractive({
           {(showExportPng || showCopyCode) && (
             <button
               onClick={() => setShowExport(true)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane/10 px-3 py-1.5 text-xs font-medium text-arcane hover:bg-arcane/20 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
             >
               <Image size={14} />
               Exporter
@@ -543,7 +543,7 @@ export function DecklistInteractive({
           {deckbuilderCode && (
             <Link
               href={`/deckbuilder?deck=${deckbuilderCode}`}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-violet/10 px-3 py-1.5 text-xs font-medium text-violet hover:bg-violet/20 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-violet px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
             >
               <Hammer size={14} />
               Ouvrir dans le Deckbuilder

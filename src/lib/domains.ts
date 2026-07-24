@@ -69,6 +69,7 @@ export const RARITY_LABELS_FR: Record<string, string> = {
   Rare: "Rare",
   Epic: "Épique",
   Showcase: "Showcase",
+  Promo: "Promo",
   Legend: "Légende",
 };
 

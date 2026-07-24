@@ -176,9 +176,9 @@ export default async function DeckDetailPage({ params }: PageProps) {
           )}
           <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs text-ink-secondary">{deck.format}</span>
           <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-            setTag === "Unleashed" ? "bg-arcane/10 text-arcane"
-              : setTag === "Spiritforged" ? "bg-emerald-500/10 text-emerald-400"
-              : setTag === "Origins" ? "bg-amber-500/10 text-amber-400"
+            setTag === "Unleashed" ? "bg-arcane text-white"
+              : setTag === "Spiritforged" ? "bg-emerald-500 text-white"
+              : setTag === "Origins" ? "bg-amber-500 text-canvas"
               : "bg-surface-raised text-ink-secondary"
           }`}>
             {setTag}
@@ -194,9 +194,9 @@ export default async function DeckDetailPage({ params }: PageProps) {
           })()}
           {deck.tournamentTier && (
             <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-              deck.tournamentTier === "P" ? "bg-gold/10 text-gold"
-                : deck.tournamentTier === "S" ? "bg-arcane/10 text-arcane"
-                : deck.tournamentTier === "A" ? "bg-violet/10 text-violet"
+              deck.tournamentTier === "P" ? "bg-gold text-canvas"
+                : deck.tournamentTier === "S" ? "bg-arcane text-white"
+                : deck.tournamentTier === "A" ? "bg-violet text-white"
                 : "bg-surface-raised text-ink-secondary"
             }`}>
               {deck.tournamentTier} Tier

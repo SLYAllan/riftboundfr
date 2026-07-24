@@ -363,10 +363,10 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         </span>
       ))}
       {tierLabel && (
-        <span className="rounded bg-gold/15 px-2 py-0.5 font-semibold text-gold">{tierLabel}</span>
+        <span className="rounded bg-gold px-2 py-0.5 font-semibold text-canvas">{tierLabel}</span>
       )}
       {fiche.set && (
-        <span className="rounded bg-violet/15 px-2 py-0.5 font-semibold text-violet">{fiche.set}</span>
+        <span className="rounded bg-violet px-2 py-0.5 font-semibold text-white">{fiche.set}</span>
       )}
       {fiche.difficulty && (
         <span className="rounded bg-surface-raised px-2 py-0.5 text-ink-muted">
@@ -476,7 +476,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       <span className="font-normal text-ink-muted">par {deck.playerName}</span>
                     )}
                     {deck.tournamentTier && (
-                      <span className="rounded bg-gold/15 px-1.5 py-0.5 text-[10px] font-bold text-gold">
+                      <span className="rounded bg-gold px-1.5 py-0.5 text-[10px] font-bold text-canvas">
                         {deck.tournamentTier}
                       </span>
                     )}

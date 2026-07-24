@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { cn, displayLegendName } from "@/lib/utils";
-import { Trophy, Eye, ChevronDown, Swords, Crown } from "lucide-react";
+import { Trophy, Eye, ChevronDown, Swords } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
 /*  Medal styling                                                      */
@@ -82,25 +82,6 @@ export function TournamentDeckGrid({
   const top8 = useMemo(() => decks.filter((d) => d.placementNum <= 8), [decks]);
   const rest = useMemo(() => decks.filter((d) => d.placementNum > 8), [decks]);
 
-  const uniqueLegendCount = useMemo(
-    () => new Set(decks.map((d) => d.legendName)).size,
-    [decks],
-  );
-
-  const topLegends = useMemo(() => {
-    const counts = new Map<string, { name: string; icon: string | null; count: number }>();
-    for (const d of decks) {
-      const short = displayLegendName(d.legendName);
-      const existing = counts.get(short);
-      if (existing) {
-        existing.count++;
-      } else {
-        counts.set(short, { name: short, icon: d.legendIcon, count: 1 });
-      }
-    }
-    return [...counts.values()].sort((a, b) => b.count - a.count).slice(0, 3);
-  }, [decks]);
-
   /* Visible rest decks */
   const visibleRest = rest.slice(0, visibleCount);
   const hasMore = rest.length > visibleCount;
@@ -120,61 +101,26 @@ export function TournamentDeckGrid({
   }
 
   return (
-    <div className="mt-8 space-y-8">
-      {/* Stats summary bar */}
-      <div className="flex flex-wrap items-center gap-3 rounded-card bg-surface/60 border border-hairline px-4 py-3">
+    <div className="mt-6 space-y-6">
+      {/* Toolbar : compteur à gauche, filtre à droite */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 rounded-card bg-surface/60 border border-hairline px-4 py-3">
         <div className="flex items-center gap-2 text-sm text-ink-secondary">
           <Swords size={14} className="text-arcane" />
           <span>
-            <span className="font-semibold text-ink">{uniqueLegendCount}</span>{" "}
-            {uniqueLegendCount > 1 ? "légendes représentées" : "légende représentée"}
+            <span className="font-semibold text-ink">
+              {filteredCount === totalCount
+                ? totalCount.toLocaleString("fr-FR")
+                : `${filteredCount.toLocaleString("fr-FR")} / ${totalCount.toLocaleString("fr-FR")}`}
+            </span>{" "}
+            decklists
           </span>
         </div>
 
-        {topLegends.length > 0 && (
-          <>
-            <span className="text-hairline-strong">|</span>
-            <div className="flex items-center gap-1 text-sm text-ink-secondary">
-              <Crown size={14} className="text-gold" />
-              <span className="mr-1">Top&nbsp;:</span>
-              {topLegends.map((l, i) => (
-                <span key={l.name} className="inline-flex items-center gap-1">
-                  {l.icon && (
-                    <img
-                      src={l.icon}
-                      alt=""
-                      className="h-5 w-5 rounded"
-                    />
-                  )}
-                  <span className="text-ink font-medium">{l.name}</span>
-                  <span className="text-ink-muted text-xs">({l.count})</span>
-                  {i < topLegends.length - 1 && (
-                    <span className="text-hairline-strong mx-0.5">&middot;</span>
-                  )}
-                </span>
-              ))}
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Legend filter dropdown */}
-      <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <label htmlFor="legend-filter" className="text-xs font-bold uppercase tracking-widest text-ink-muted">
-            Filtrer par légende
-          </label>
-          <span className="text-sm text-ink-muted">
-            {filteredCount === totalCount
-              ? `${totalCount} decklists`
-              : `${filteredCount} / ${totalCount} decklists`}
-          </span>
-        </div>
         <select
-          id="legend-filter"
+          aria-label="Filtrer par légende"
           value={currentLegend ?? ""}
           onChange={(e) => handleLegendChange(e.target.value)}
-          className="w-full sm:w-auto sm:min-w-[280px] appearance-none rounded-card bg-surface border border-hairline text-ink text-sm font-medium px-3.5 py-2 pr-9 transition-colors hover:bg-surface-raised hover:border-hairline-strong focus:outline-none focus:border-arcane/40 focus:ring-1 focus:ring-arcane/20"
+          className="ml-auto w-full sm:w-auto sm:min-w-[240px] appearance-none rounded-lg bg-surface border border-hairline text-ink text-sm font-medium px-3.5 py-2 pr-9 transition-colors hover:bg-surface-raised hover:border-hairline-strong focus:outline-none focus:border-arcane/40 focus:ring-1 focus:ring-arcane/20"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
             backgroundRepeat: "no-repeat",
@@ -223,7 +169,7 @@ export function TournamentDeckGrid({
           >
             Toutes les decklists ({rest.length})
           </h2>
-          <div className="grid gap-2.5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {visibleRest.map((d) => (
               <DeckMiniCard key={d.slug} deck={d} />
             ))}
@@ -365,20 +311,31 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
     <Link
       href={`/decks/${deck.slug}`}
       className={cn(
-        "group flex items-center gap-2.5 rounded-card border border-hairline p-2.5",
+        "group flex items-center gap-3 rounded-card border border-hairline p-3",
         "bg-surface/40 transition-all duration-150",
         "hover:bg-surface-raised/60 hover:border-hairline-strong",
       )}
     >
+      {/* Placement : colonne fixe en tête, la grille se lit par classement */}
+      <span
+        className={cn(
+          "w-9 shrink-0 text-center text-xs font-bold tabular-nums",
+          hasMedal ? medalText : "text-ink-muted",
+        )}
+        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+      >
+        {deck.placement ?? "-"}
+      </span>
+
       {/* Legend icon */}
       {deck.legendIcon ? (
         <img
           src={deck.legendIcon}
           alt={deck.legendName}
-          className="h-9 w-9 rounded-lg object-cover shrink-0 ring-1 ring-hairline"
+          className="h-11 w-11 rounded-lg object-cover shrink-0 ring-1 ring-hairline"
         />
       ) : (
-        <div className="h-9 w-9 rounded-lg bg-surface-raised shrink-0" />
+        <div className="h-11 w-11 rounded-lg bg-surface-raised shrink-0" />
       )}
 
       {/* Text content */}
@@ -399,19 +356,6 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
           )}
         </div>
       </div>
-
-      {/* Placement badge */}
-      {deck.placement && (
-        <span
-          className={cn(
-            "text-xs font-bold shrink-0",
-            hasMedal ? medalText : "text-ink-muted",
-          )}
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          {deck.placement}
-        </span>
-      )}
     </Link>
   );
 }

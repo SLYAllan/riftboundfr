@@ -20,7 +20,7 @@ function Slot({ slot, champion }: { slot: BracketSlot; champion?: boolean }) {
         <span
           className={cn(
             "shrink-0 rounded px-1.5 text-[11px] font-bold tabular-nums leading-5",
-            slot.win ? "bg-gold/20 text-gold" : "bg-surface-raised text-ink-muted",
+            slot.win ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted",
           )}
         >
           {slot.score}

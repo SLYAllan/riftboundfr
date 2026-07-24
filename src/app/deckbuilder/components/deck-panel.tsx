@@ -24,12 +24,116 @@ interface DeckPanelV2Props {
   isCompetitive: boolean;
 }
 
-function LegendCard({ entry, onRemove, label }: { entry: DeckEntry; onRemove: () => void; label: string }) {
+/* Aperçu carte au survol d'une vignette : affiché en `fixed` à gauche du panneau,
+   clampé verticalement pour ne jamais sortir de l'écran. */
+const PREVIEW_W = 240;
+const PREVIEW_H = 336; // portrait 5/7 ; les terrains (paysage) seront plus courts
+
+interface PreviewState {
+  entry: DeckEntry;
+  top: number;
+  left: number;
+}
+
+function computePreview(entry: DeckEntry, el: HTMLElement): PreviewState {
+  const r = el.getBoundingClientRect();
+  const top = Math.min(
+    Math.max(r.top + r.height / 2 - PREVIEW_H / 2, 8),
+    Math.max(window.innerHeight - PREVIEW_H - 8, 8),
+  );
+  const left = Math.max(r.left - PREVIEW_W - 12, 8);
+  return { entry, top, left };
+}
+
+interface RowHoverProps {
+  onHover: (entry: DeckEntry, el: HTMLElement) => void;
+  onLeave: () => void;
+}
+
+function tileBtn(extra?: string) {
+  return cn(
+    "flex h-6 w-6 items-center justify-center rounded-md bg-canvas/85 text-ink-secondary shadow transition-colors",
+    extra,
+  );
+}
+
+function DeckCardTile({
+  entry, section, onRemove, onQtyChange, onMove, showMove, onHover, onLeave,
+}: {
+  entry: DeckEntry; section: DeckSection;
+  onRemove: () => void; onQtyChange?: (delta: number) => void;
+  onMove?: () => void; showMove?: boolean;
+} & RowHoverProps) {
+  const isBattlefield = entry.type === "Battlefield";
   return (
     <div
       className="group relative"
       draggable
-      onDragStart={(e) => { e.dataTransfer.setData("remove-card", `legend|${entry.cardId}`); }}
+      onDragStart={(e) => {
+        e.dataTransfer.setData("remove-card", `${section}|${entry.cardId}`);
+        onLeave();
+      }}
+      onMouseEnter={(e) => onHover(entry, e.currentTarget)}
+      onMouseLeave={onLeave}
+    >
+      {entry.imageUrl ? (
+        <img
+          src={entry.imageUrl}
+          alt={entry.name}
+          className={cn(
+            "w-full rounded-lg aspect-[5/7]",
+            isBattlefield ? "object-contain bg-surface-raised" : "object-cover",
+          )}
+          loading="lazy"
+        />
+      ) : (
+        <div className="w-full aspect-[5/7] rounded-lg bg-surface-raised flex items-center justify-center text-[10px] text-ink-muted p-1 text-center leading-tight">
+          {entry.name}
+        </div>
+      )}
+
+      <span className="absolute -top-1.5 -right-1.5 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-arcane text-[11px] font-bold text-white shadow-md">
+        {entry.quantity}
+      </span>
+
+      {/* Contrôles en bas de vignette, au survol (l'art reste visible) */}
+      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1 opacity-0 translate-y-1 pointer-events-none transition-all duration-150 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+        {onQtyChange && (
+          <>
+            <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label="Retirer une copie">
+              <Minus size={13} />
+            </button>
+            <button onClick={() => onQtyChange(1)} className={tileBtn("hover:text-arcane hover:bg-canvas")} aria-label="Ajouter une copie">
+              <Plus size={13} />
+            </button>
+          </>
+        )}
+        {showMove && onMove && (
+          <button onClick={onMove} className={tileBtn("hover:text-gold hover:bg-canvas")} aria-label="Déplacer vers l'autre section">
+            <ArrowRightLeft size={13} />
+          </button>
+        )}
+        <button onClick={onRemove} className={tileBtn("hover:text-error hover:bg-canvas")} aria-label="Supprimer la carte">
+          <Trash2 size={13} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function LegendTile({ entry, onRemove, onHover, onLeave }: {
+  entry: DeckEntry; onRemove: () => void;
+} & RowHoverProps) {
+  return (
+    <div
+      className="group relative"
+      draggable
+      onDragStart={(e) => {
+        e.dataTransfer.setData("remove-card", `legend|${entry.cardId}`);
+        onLeave();
+      }}
+      onMouseEnter={(e) => onHover(entry, e.currentTarget)}
+      onMouseLeave={onLeave}
     >
       {entry.imageUrl ? (
         <img src={entry.imageUrl} alt={entry.name} className="w-full rounded-lg object-cover" loading="lazy" />
@@ -40,83 +144,18 @@ function LegendCard({ entry, onRemove, label }: { entry: DeckEntry; onRemove: ()
       )}
       <button
         onClick={onRemove}
-        className="absolute top-1 right-1 p-1 rounded-full bg-canvas/80 text-ink-muted hover:text-error opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute top-1.5 right-1.5 z-10 rounded-full bg-canvas/85 p-1.5 text-ink-muted opacity-0 shadow transition-opacity hover:text-error group-hover:opacity-100"
+        aria-label="Retirer la légende"
       >
-        <Trash2 size={12} />
+        <Trash2 size={13} />
       </button>
-      <div className="mt-1 text-center text-[10px] text-ink-muted">{label}</div>
-    </div>
-  );
-}
-
-function DeckCardTile({
-  entry, section, onRemove, onQtyChange, onMove, showMove,
-}: {
-  entry: DeckEntry; section: DeckSection;
-  onRemove: () => void; onQtyChange: (delta: number) => void;
-  onMove?: () => void; showMove: boolean;
-}) {
-  return (
-    <div
-      className="group relative"
-      draggable
-      onDragStart={(e) => { e.dataTransfer.setData("remove-card", `${section}|${entry.cardId}`); }}
-    >
-      {entry.imageUrl ? (
-        <img
-          src={entry.imageUrl}
-          alt={entry.name}
-          className="w-full rounded aspect-[5/7] object-cover"
-          loading="lazy"
-        />
-      ) : (
-        <div className="w-full aspect-[5/7] rounded bg-surface-raised flex items-center justify-center text-[7px] text-ink-muted p-0.5 text-center leading-tight">
-          {entry.name}
-        </div>
-      )}
-
-      {entry.quantity > 1 && (
-        <span className="absolute -top-1 -right-1 z-10 flex h-4 w-4 items-center justify-center rounded-full bg-arcane text-[9px] font-bold text-white shadow-sm">
-          {entry.quantity}
-        </span>
-      )}
-
-      <div className="absolute inset-0 z-20 flex items-center justify-center gap-0.5 rounded bg-canvas/70 opacity-0 group-hover:opacity-100 transition-opacity">
-        <button onClick={(e) => { e.stopPropagation(); onQtyChange(-1); }} className="rounded-full bg-surface p-1 text-ink-muted hover:text-ink">
-          <Minus size={10} />
-        </button>
-        <button onClick={(e) => { e.stopPropagation(); onQtyChange(1); }} className="rounded-full bg-surface p-1 text-ink-muted hover:text-arcane">
-          <Plus size={10} />
-        </button>
-        {showMove && onMove && (
-          <button onClick={(e) => { e.stopPropagation(); onMove(); }} className="rounded-full bg-surface p-1 text-ink-muted hover:text-gold">
-            <ArrowRightLeft size={10} />
-          </button>
-        )}
-        <button onClick={(e) => { e.stopPropagation(); onRemove(); }} className="rounded-full bg-surface p-1 text-ink-muted hover:text-error">
-          <Trash2 size={10} />
-        </button>
+      <div className="mt-1 flex items-center justify-center gap-1.5">
+        {entry.domains.map((d) => (
+          <span key={d} className="text-[10px] font-semibold" style={{ color: DOMAIN_COLORS[d] }}>
+            {DOMAIN_LABELS_FR[d] ?? d}
+          </span>
+        ))}
       </div>
-    </div>
-  );
-}
-
-function BattlefieldTile({ entry, onRemove }: { entry: DeckEntry; onRemove: () => void }) {
-  return (
-    <div className="group relative" draggable onDragStart={(e) => { e.dataTransfer.setData("remove-card", `battlefield|${entry.cardId}`); }}>
-      {entry.imageUrl ? (
-        <img src={entry.imageUrl} alt={entry.name} className="w-full aspect-[5/7] rounded-md object-contain bg-surface-raised" loading="lazy" />
-      ) : (
-        <div className="aspect-[5/7] w-full rounded-md bg-surface-raised flex items-center justify-center text-[10px] text-ink-muted p-1 text-center">
-          {entry.name}
-        </div>
-      )}
-      <button
-        onClick={onRemove}
-        className="absolute top-0.5 right-0.5 p-0.5 rounded-full bg-canvas/80 text-ink-muted hover:text-error opacity-0 group-hover:opacity-100 transition-opacity"
-      >
-        <Trash2 size={11} />
-      </button>
     </div>
   );
 }
@@ -141,7 +180,7 @@ function CollapsibleSection({
           <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{label}</h4>
         </div>
         <span className={cn(
-          "text-xs font-bold",
+          "text-xs font-bold tabular-nums",
           isOver ? "text-error" : isFull ? "text-success" : "text-ink-muted"
         )}>
           {total}{target != null ? `/${target}` : ""}
@@ -152,10 +191,18 @@ function CollapsibleSection({
   );
 }
 
+const EMPTY_HINT = <div className="px-2 py-1.5 text-xs italic text-ink-disabled">Vide</div>;
+
 export function DeckPanelV2({
   deck, onRemoveCard, onUpdateQuantity, onMoveCard, onApplyRunes, onSectionClick,
   legendDomains, isCompetitive,
 }: DeckPanelV2Props) {
+  const [preview, setPreview] = useState<PreviewState | null>(null);
+
+  const showPreview = (entry: DeckEntry, el: HTMLElement) => setPreview(computePreview(entry, el));
+  const hidePreview = () => setPreview(null);
+  const hover: RowHoverProps = { onHover: showPreview, onLeave: hidePreview };
+
   const mainTotal = deck.main.reduce((s, e) => s + e.quantity, 0);
   const runeTotal = deck.rune.reduce((s, e) => s + e.quantity, 0);
   const bfTotal = deck.battlefield.reduce((s, e) => s + e.quantity, 0);
@@ -180,8 +227,20 @@ export function DeckPanelV2({
     legendDomains,
   );
 
+  const cardGrid = "grid grid-cols-3 gap-2 px-1";
+
   return (
-    <div className="flex flex-col h-full overflow-y-auto thin-scrollbar">
+    <div className="flex flex-col h-full overflow-y-auto thin-scrollbar" onScroll={hidePreview}>
+      {/* Aperçu carte (hover card), hors flux */}
+      {preview?.entry.imageUrl && (
+        <img
+          src={preview.entry.imageUrl}
+          alt={preview.entry.name}
+          className="pointer-events-none fixed z-[100] rounded-xl border border-hairline bg-canvas shadow-2xl"
+          style={{ top: preview.top, left: preview.left, width: PREVIEW_W }}
+        />
+      )}
+
       {/* Stats - always at top */}
       <DeckStats mainDeck={deck.main} />
 
@@ -189,7 +248,7 @@ export function DeckPanelV2({
       <div className="px-3 pt-3 pb-2 border-b border-hairline">
         <div className="flex items-center justify-between">
           <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Deck</h3>
-          <div className="flex items-center gap-2 text-[10px] font-medium">
+          <div className="flex items-center gap-2 text-[10px] font-medium tabular-nums">
             <span className={cn(mainTotal >= 40 ? "text-success" : "text-ink-muted")}>{mainTotal}/40</span>
             <span className="text-ink-disabled">&middot;</span>
             <span className={cn(runeTotal === 12 ? "text-success" : runeTotal > 12 ? "text-error" : "text-ink-muted")}>{runeTotal}/12</span>
@@ -210,105 +269,105 @@ export function DeckPanelV2({
       </div>
 
       {/* Legend - first */}
-        <CollapsibleSection label="Légende" target={null} total={deck.legend ? 1 : 0}>
-          {deck.legend ? (
-            <div className="grid grid-cols-2 gap-2 px-1">
-              <LegendCard entry={deck.legend} onRemove={() => onRemoveCard("legend", deck.legend!.cardId)} label="Légende" />
-            </div>
-          ) : (
-            <div className="text-xs text-ink-disabled italic py-2 px-1">Cliquez sur une légende pour commencer</div>
-          )}
-        </CollapsibleSection>
+      <CollapsibleSection label="Légende" target={null} total={deck.legend ? 1 : 0}>
+        {deck.legend ? (
+          <div className={cardGrid}>
+            <LegendTile entry={deck.legend} onRemove={() => onRemoveCard("legend", deck.legend!.cardId)} {...hover} />
+          </div>
+        ) : (
+          <div className="px-2 py-1.5 text-xs italic text-ink-disabled">Cliquez sur une légende pour commencer</div>
+        )}
+      </CollapsibleSection>
 
-        {/* Main Deck - card image grid */}
-        <CollapsibleSection label="Deck Principal" target={40} total={mainTotal}>
-          {sortedMain.length > 0 ? (
-            <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">
-              {sortedMain.map((entry) => (
-                <DeckCardTile
-                  key={entry.cardId}
-                  entry={entry}
-                  section="main"
-                  onRemove={() => onRemoveCard("main", entry.cardId)}
-                  onQtyChange={(d) => onUpdateQuantity("main", entry.cardId, d)}
-                  onMove={() => onMoveCard("main", "side", entry.cardId)}
-                  showMove
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-xs text-ink-disabled italic py-2 px-1">Vide</div>
-          )}
-        </CollapsibleSection>
+      {/* Main Deck - card image grid */}
+      <CollapsibleSection label="Deck Principal" target={40} total={mainTotal}>
+        {sortedMain.length > 0 ? (
+          <div className={cardGrid}>
+            {sortedMain.map((entry) => (
+              <DeckCardTile
+                key={entry.cardId}
+                entry={entry}
+                section="main"
+                onRemove={() => onRemoveCard("main", entry.cardId)}
+                onQtyChange={(d) => onUpdateQuantity("main", entry.cardId, d)}
+                onMove={() => onMoveCard("main", "side", entry.cardId)}
+                showMove
+                {...hover}
+              />
+            ))}
+          </div>
+        ) : EMPTY_HINT}
+      </CollapsibleSection>
 
-        {/* Rune Suggestion */}
-        <RuneSuggestionPanel
-          mainDeck={deck.main}
-          legendDomains={legendDomains}
-          currentRunes={deck.rune}
-          onApply={onApplyRunes}
-        />
+      {/* Rune Suggestion */}
+      <RuneSuggestionPanel
+        mainDeck={deck.main}
+        legendDomains={legendDomains}
+        currentRunes={deck.rune}
+        onApply={onApplyRunes}
+      />
 
-        {/* Runes - card image grid */}
-        <CollapsibleSection label="Runes" target={12} total={runeTotal}>
-          {sortedRune.length > 0 ? (
-            <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">
-              {sortedRune.map((entry) => (
-                <DeckCardTile
-                  key={entry.cardId}
-                  entry={entry}
-                  section="rune"
-                  onRemove={() => onRemoveCard("rune", entry.cardId)}
-                  onQtyChange={(d) => onUpdateQuantity("rune", entry.cardId, d)}
-                  showMove={false}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-xs text-ink-disabled italic py-2 px-1">Vide</div>
-          )}
-        </CollapsibleSection>
+      {/* Runes - card image grid */}
+      <CollapsibleSection label="Runes" target={12} total={runeTotal}>
+        {sortedRune.length > 0 ? (
+          <div className={cardGrid}>
+            {sortedRune.map((entry) => (
+              <DeckCardTile
+                key={entry.cardId}
+                entry={entry}
+                section="rune"
+                onRemove={() => onRemoveCard("rune", entry.cardId)}
+                onQtyChange={(d) => onUpdateQuantity("rune", entry.cardId, d)}
+                {...hover}
+              />
+            ))}
+          </div>
+        ) : EMPTY_HINT}
+      </CollapsibleSection>
 
-        {/* Battlefields */}
-        <CollapsibleSection label="Champs de bataille" target={3} total={bfTotal}>
-          {deck.battlefield.length > 0 ? (
-            <div className="grid grid-cols-3 gap-1.5 px-1">
-              {deck.battlefield.map((entry) => (
-                <BattlefieldTile key={entry.cardId} entry={entry} onRemove={() => onRemoveCard("battlefield", entry.cardId)} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-xs text-ink-disabled italic py-2 px-1">Vide</div>
-          )}
-        </CollapsibleSection>
+      {/* Battlefields */}
+      <CollapsibleSection label="Champs de bataille" target={3} total={bfTotal}>
+        {deck.battlefield.length > 0 ? (
+          <div className={cardGrid}>
+            {deck.battlefield.map((entry) => (
+              <DeckCardTile
+                key={entry.cardId}
+                entry={entry}
+                section="battlefield"
+                onRemove={() => onRemoveCard("battlefield", entry.cardId)}
+                {...hover}
+              />
+            ))}
+          </div>
+        ) : EMPTY_HINT}
+      </CollapsibleSection>
 
-        {/* Reserve (sideboard) - card image grid */}
-        <CollapsibleSection label="Réserve" target={null} total={sideTotal} defaultOpen={sideTotal > 0}>
-          {sortedSide.length > 0 ? (
-            <div className="grid grid-cols-5 xl:grid-cols-6 gap-1 px-1">
-              {sortedSide.map((entry) => (
-                <DeckCardTile
-                  key={entry.cardId}
-                  entry={entry}
-                  section="side"
-                  onRemove={() => onRemoveCard("side", entry.cardId)}
-                  onQtyChange={(d) => onUpdateQuantity("side", entry.cardId, d)}
-                  onMove={() => onMoveCard("side", "main", entry.cardId)}
-                  showMove
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-xs text-ink-disabled italic py-2 px-1">Vide</div>
-          )}
-        </CollapsibleSection>
+      {/* Reserve (sideboard) - card image grid */}
+      <CollapsibleSection label="Réserve" target={null} total={sideTotal} defaultOpen={sideTotal > 0}>
+        {sortedSide.length > 0 ? (
+          <div className={cardGrid}>
+            {sortedSide.map((entry) => (
+              <DeckCardTile
+                key={entry.cardId}
+                entry={entry}
+                section="side"
+                onRemove={() => onRemoveCard("side", entry.cardId)}
+                onQtyChange={(d) => onUpdateQuantity("side", entry.cardId, d)}
+                onMove={() => onMoveCard("side", "main", entry.cardId)}
+                showMove
+                {...hover}
+              />
+            ))}
+          </div>
+        ) : EMPTY_HINT}
+      </CollapsibleSection>
 
-        {/* Validation */}
-        <DeckValidation
-          issues={validationIssues}
-          isCompetitive={isCompetitive}
-          onSectionClick={onSectionClick}
-        />
+      {/* Validation */}
+      <DeckValidation
+        issues={validationIssues}
+        isCompetitive={isCompetitive}
+        onSectionClick={onSectionClick}
+      />
     </div>
   );
 }

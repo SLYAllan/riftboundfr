@@ -133,8 +133,8 @@ export function DeckLikeButton({ slug, initialLikes, compact }: DeckLikeButtonPr
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-all",
         liked
-          ? "bg-red-500/10 text-red-400 hover:bg-red-500/20"
-          : "bg-surface-raised text-ink-muted hover:text-red-400 hover:bg-red-500/10",
+          ? "bg-red-500 text-white hover:opacity-90"
+          : "bg-surface-raised text-ink-muted hover:text-red-400",
       )}
       title={loggedIn === false ? "Connectez-vous pour aimer" : liked ? "Retirer des favoris" : "Ajouter aux favoris"}
     >

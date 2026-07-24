@@ -1,4 +1,5 @@
 import { cn, getRarityBgColor } from "@/lib/utils";
+import { RARITY_LABELS_FR } from "@/lib/domains";
 
 export function RarityBadge({ rarity, className }: { rarity: string; className?: string }) {
   return (
@@ -9,7 +10,7 @@ export function RarityBadge({ rarity, className }: { rarity: string; className?:
         className
       )}
     >
-      {rarity}
+      {RARITY_LABELS_FR[rarity] ?? rarity}
     </span>
   );
 }

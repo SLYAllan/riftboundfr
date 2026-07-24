@@ -127,7 +127,7 @@ export default async function ArticlesPage({
                 {legends.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-1">
                     {legends.slice(0, 8).map((l) => (
-                      <span key={l} className="rounded-full bg-arcane/10 px-2 py-0.5 text-[10px] font-semibold text-arcane">
+                      <span key={l} className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-semibold text-arcane">
                         {l}
                       </span>
                     ))}

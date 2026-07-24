@@ -174,7 +174,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
             {deck.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-violet/15 px-2.5 py-0.5 text-xs font-semibold text-violet border border-violet/30"
+                className="rounded-full bg-violet px-2.5 py-0.5 text-xs font-semibold text-white"
               >
                 {tag}
               </span>

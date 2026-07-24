@@ -371,10 +371,13 @@ export default async function HomePage() {
             ) : (
               <div className="divide-y divide-hairline flex-1">
                 {tournamentArticles.map((t) => {
-                  const cc = t.tournamentName ? getTournamentCountryCode(t.tournamentName) : null;
+                  const cc = (t.tournamentName ? getTournamentCountryCode(t.tournamentName) : null)
+                    ?? (t.tournamentLocation ? getTournamentCountryCode(t.tournamentLocation) : null);
                   return (
                     <Link key={t.slug} href={`/articles/${t.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
-                      {cc ? <CountryBadge code={cc} /> : <Trophy size={16} className="shrink-0 text-gold" />}
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-surface-raised">
+                        {cc ? <CountryBadge code={cc} /> : <Trophy size={15} className="text-gold" />}
+                      </span>
                       <div className="min-w-0">
                         <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t.tournamentName ?? t.title}</div>
                         <div className="text-[11px] text-ink-muted">

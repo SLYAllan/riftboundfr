@@ -41,6 +41,15 @@ const BANNER_MAP: Record<string, string> = {
   rumble: "rumble",
   ivern: "ivern",
   garen: "garen",
+  akali: "akali",
+  ambessa: "ambessa",
+  jayce: "jayce",
+  kennen: "kennen",
+  mel: "mel",
+  nasus: "nasus",
+  renekton: "renekton",
+  shen: "shen",
+  zed: "zed",
 };
 
 export function getBannerUrl(legendName: string): string | null {
@@ -92,6 +101,15 @@ const ICON_MAP: Record<string, string> = {
   rumble: "rumble",
   ivern: "ivern",
   garen: "garen",
+  akali: "akali",
+  ambessa: "ambessa",
+  jayce: "jayce",
+  kennen: "kennen",
+  mel: "mel",
+  nasus: "nasus",
+  renekton: "renekton",
+  shen: "shen",
+  zed: "zed",
 };
 
 export function getLegendIconUrl(legendName: string): string | null {

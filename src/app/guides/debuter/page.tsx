@@ -173,7 +173,7 @@ export default function GuideDebuterPage() {
               { phase: "Fin de tour", desc: "Tous les dégâts sur les unités sont soignés. Vos unités repartent à pleine vie pour le prochain tour." },
             ].map((p, i) => (
               <div key={p.phase} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-arcane/10 text-xs font-bold text-arcane">{i + 1}</span>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-arcane text-xs font-bold text-white">{i + 1}</span>
                 <div>
                   <h4 className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{p.phase}</h4>
                   <p className="text-xs text-ink-secondary">{p.desc}</p>

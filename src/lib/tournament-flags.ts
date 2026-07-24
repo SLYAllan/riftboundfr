@@ -420,6 +420,7 @@ export function getTournamentCountryCode(tournamentContext: string): string | nu
   if (lower.includes("hartford")) return "US";
   if (lower.includes("vancouver")) return "CA";
   if (lower.includes("utrecht")) return "NL";
+  if (lower.includes("chine") || lower.includes("china") || lower.includes("changsha") || lower.includes("tianjin")) return "CN";
   if (lower.includes("online") || lower.includes("en ligne")) return "ONLINE";
   return null;
 }

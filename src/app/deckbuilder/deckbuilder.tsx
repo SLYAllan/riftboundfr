@@ -669,7 +669,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
 
         {/* Right - Deck panel */}
         <div
-          className="hidden sm:flex w-80 xl:w-96 flex-col overflow-hidden"
+          className="hidden sm:flex w-96 xl:w-[27rem] flex-col overflow-hidden"
           onDragOver={(e) => {
             if (e.dataTransfer.types.includes("card-id")) {
               e.preventDefault();
