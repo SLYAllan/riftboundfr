@@ -22,7 +22,7 @@ interface ExportModalProps {
   isEmpty: boolean;
   isDeckValid: boolean;
   onPublish: (isPublic: boolean, opts: { tags: string[]; description: string }) => Promise<string | null>;
-  onExportImage: () => void;
+  onExportImage: () => Promise<void>;
   onClose: () => void;
 }
 
@@ -57,6 +57,7 @@ export function ExportModal({
   const [description, setDescription] = useState("");
   const [user, setUser] = useState<UserData | null>(null);
   const [userLoading, setUserLoading] = useState(true);
+  const [imageState, setImageState] = useState<"idle" | "loading" | "error">("idle");
 
   // Escape + piège de focus + retour de focus gérés par le hook a11y.
   const dialogRef = useDialogA11y(onClose);
@@ -75,6 +76,16 @@ export function ExportModal({
     await navigator.clipboard.writeText(text);
     setCopied(key);
     setTimeout(() => setCopied(null), 2000);
+  }
+
+  async function handleExportImage() {
+    setImageState("loading");
+    try {
+      await onExportImage();
+      setImageState("idle");
+    } catch {
+      setImageState("error");
+    }
   }
 
   function toggleTag(tag: string) {
@@ -289,12 +300,19 @@ export function ExportModal({
             <div className="text-center py-6">
               <p className="text-sm text-ink-secondary mb-4">Exportez votre deck en image PNG.</p>
               <button
-                onClick={onExportImage}
-                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition-all"
+                onClick={handleExportImage}
+                disabled={imageState === "loading"}
+                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50 transition-all"
               >
                 <Image size={15} className="inline mr-1.5" />
-                Générer l&apos;image
+                {imageState === "loading" ? "Génération..." : "Générer l'image"}
               </button>
+              {imageState === "loading" && (
+                <p className="mt-3 text-xs text-ink-muted">Les images des cartes sont chargées une à une, comptez quelques secondes.</p>
+              )}
+              {imageState === "error" && (
+                <p className="mt-3 text-xs text-red-400">Image impossible à générer. Rechargez la page et réessayez.</p>
+              )}
             </div>
           )}
         </div>

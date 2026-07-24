@@ -19,6 +19,7 @@ import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "./lib/export-formats";
 import { generateDeckImage } from "./lib/export-image";
+import { downloadBlob } from "@/lib/download";
 import type { RuneSuggestion } from "./lib/rune-calculator";
 import type { CardData, DeckEntry, DeckState, BuilderTab } from "@/types";
 import type { DeckSection } from "@/types";
@@ -540,13 +541,8 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
       side: deck.side,
       legendDomains,
     });
-    if (!blob) return;
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.download = `${deckTitle.replace(/[^a-zA-Z0-9_-]/g, "_")}.png`;
-    link.href = url;
-    link.click();
-    URL.revokeObjectURL(url);
+    if (!blob) throw new Error("Génération de l'image impossible");
+    downloadBlob(blob, `${deckTitle.replace(/[^a-zA-Z0-9_-]/g, "_")}.png`);
   }
 
   const isEmpty = !deck.legend && deck.main.length === 0 && deck.rune.length === 0;

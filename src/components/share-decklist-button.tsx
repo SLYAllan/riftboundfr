@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Share2, Download, Check, Loader2 } from "lucide-react";
+import { useState } from "react";
+import { Share2, Download, Check } from "lucide-react";
+import { useIsAdmin } from "@/hooks/use-is-admin";
 
 interface ShareDecklistButtonProps {
   /** Slug for editorial decks */
@@ -26,24 +27,10 @@ export function ShareDecklistButton({
   playerName,
   tournamentContext,
 }: ShareDecklistButtonProps) {
-  const [downloading, setDownloading] = useState(false);
   const [copied, setCopied] = useState(false);
   // Admin-only feature: the decklist image generator is reserved for the
   // Riftbound France admin (Discord role). Hidden for everyone else.
-  const [isAdmin, setIsAdmin] = useState(false);
-
-  useEffect(() => {
-    let active = true;
-    fetch("/api/auth/me")
-      .then((r) => r.json())
-      .then((data) => {
-        if (active) setIsAdmin(data?.role === "admin");
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, []);
+  const isAdmin = useIsAdmin();
 
   const imageParam = slug
     ? `slug=${slug}`
@@ -54,24 +41,6 @@ export function ShareDecklistButton({
   if (!isAdmin || !imageParam) return null;
 
   const imageUrl = `/api/decklist-image?${imageParam}`;
-
-  async function handleDownload() {
-    setDownloading(true);
-    try {
-      const res = await fetch(imageUrl);
-      if (!res.ok) throw new Error("Failed to generate image");
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.download = `${deckTitle.replace(/\s+/g, "-").toLowerCase()}-decklist.png`;
-      link.href = url;
-      link.click();
-      URL.revokeObjectURL(url);
-    } catch {
-      // silent fail
-    }
-    setDownloading(false);
-  }
 
   function handleShareTwitter() {
     const parts: string[] = [];
@@ -116,15 +85,16 @@ export function ShareDecklistButton({
         <Share2 size={14} />
         Twitter
       </button>
-      <button
-        onClick={handleDownload}
-        disabled={downloading}
-        className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors disabled:opacity-50"
-        title="Telecharger l'image decklist"
+      {/* Lien direct : le serveur renvoie l'image avec Content-Disposition, donc
+          le fichier arrive nommé et en .png sans passer par un blob. */}
+      <a
+        href={`${imageUrl}&download=1`}
+        className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
+        title="Admin : image carrée 1000x1000 pour les réseaux"
       >
-        {downloading ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}
-        {downloading ? "..." : "Image 9:16"}
-      </button>
+        <Download size={14} />
+        Image 1:1
+      </a>
       <button
         onClick={handleCopyImageUrl}
         className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-2.5 py-1.5 text-xs text-ink-muted hover:text-ink transition-colors"

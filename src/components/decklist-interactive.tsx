@@ -4,11 +4,13 @@ import { useState, useCallback } from "react";
 import { CardImage } from "@/components/card-image";
 import { cn, displayLegendName } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
-import { Grid3X3, List, Copy, Check, Image, Hash, Gamepad2, BarChart3, Hammer } from "lucide-react";
+import { Grid3X3, List, Copy, Check, Image, Hash, Gamepad2, BarChart3, Hammer, Download } from "lucide-react";
+import { useIsAdmin } from "@/hooks/use-is-admin";
 import { DeckSummary } from "@/components/deck-summary";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { isBanned } from "@/lib/banned-cards";
 import { generateDeckImage } from "@/lib/export-image";
+import { downloadBlob } from "@/lib/download";
 import { entriesToDeckCode } from "@/lib/deck-code";
 import { exportAsTTS } from "@/lib/export-formats";
 import type { DecklistCard, DeckSection } from "@/types";
@@ -201,12 +203,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
       });
 
       if (blob) {
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.download = `${deckName.replace(/\s+/g, "-").toLowerCase()}.png`;
-        link.href = url;
-        link.click();
-        URL.revokeObjectURL(url);
+        downloadBlob(blob, `${deckName.replace(/\s+/g, "-").toLowerCase()}.png`);
       }
     } catch {
       // silent fail
@@ -308,6 +305,7 @@ export function DecklistInteractive({
   sourceArticleSlug,
   deckbuilderCode,
 }: DecklistInteractiveProps) {
+  const isAdmin = useIsAdmin();
   const [view, setView] = useState<"grid" | "list" | "stats">("grid");
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [mobileCard, setMobileCard] = useState<DecklistCard | null>(null);
@@ -539,6 +537,16 @@ export function DecklistInteractive({
               <Image size={14} />
               Exporter
             </button>
+          )}
+          {deckbuilderCode && isAdmin && (
+            <a
+              href={`/api/decklist-image?code=${encodeURIComponent(deckbuilderCode)}&download=1`}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
+              title="Admin : image carrée 1000x1000 pour les réseaux"
+            >
+              <Download size={14} />
+              Image 1:1
+            </a>
           )}
           {deckbuilderCode && (
             <Link

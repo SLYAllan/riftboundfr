@@ -126,10 +126,9 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
             position: "absolute",
             top: 4,
             right: 4,
-            backgroundColor: "rgba(139, 92, 246, 0.9)",
-            borderRadius: 10,
-            width: 22,
-            height: 22,
+            backgroundColor: "rgba(8, 8, 14, 0.85)",
+            borderRadius: 4,
+            padding: "1px 6px",
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -141,7 +140,7 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
               fontWeight: 700,
             }}
           >
-            {card.quantity}
+            x{card.quantity}
           </span>
         </div>
       )}
@@ -581,7 +580,7 @@ export async function GET(req: NextRequest) {
           />
         )}
 
-        {/* Dark overlay for readability over the background */}
+        {/* Voile sombre uni : lisibilité, sans teinte ni dégradé */}
         <div
           style={{
             position: "absolute",
@@ -589,36 +588,16 @@ export async function GET(req: NextRequest) {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(10, 10, 18, 0.72)",
+            backgroundColor: "rgba(10, 10, 18, 0.82)",
             display: "flex",
           }}
         />
 
-        {/* Domain gradient tint */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: `linear-gradient(160deg, ${domainColor1}33 0%, transparent 45%, ${domainColor2}22 100%)`,
-            display: "flex",
-          }}
-        />
-
-        {/* Subtle top accent line */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 3,
-            background: `linear-gradient(90deg, ${domainColor1}, ${domainColor2})`,
-            display: "flex",
-          }}
-        />
+        {/* Filet du haut : une couleur pleine par domaine, pas de dégradé */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, display: "flex" }}>
+          <div style={{ display: "flex", flex: 1, backgroundColor: domainColor1 }} />
+          <div style={{ display: "flex", flex: 1, backgroundColor: domainColor2 }} />
+        </div>
 
         {/* ===== HEADER ===== */}
         <div
@@ -647,7 +626,6 @@ export async function GET(req: NextRequest) {
                   borderRadius: 8,
                   overflow: "hidden",
                   flexShrink: 0,
-                  border: `2px solid ${domainColor1}60`,
                 }}
               >
                 <img
@@ -691,22 +669,29 @@ export async function GET(req: NextRequest) {
                     marginTop: 2,
                   }}
                 >
+                  {/* Pastille pleine + texte neutre : pas de fond teinté sous du texte teinté */}
                   {domains.map((d) => (
                     <div
                       key={d}
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: 4,
-                        backgroundColor: `${DOMAIN_COLORS[d] ?? "#8b5cf6"}25`,
-                        border: `1px solid ${DOMAIN_COLORS[d] ?? "#8b5cf6"}50`,
-                        borderRadius: 12,
-                        padding: "3px 10px",
-                        color: DOMAIN_COLORS[d] ?? "#8b5cf6",
+                        gap: 6,
+                        marginRight: 6,
+                        color: "#c4c0d0",
                         fontSize: 13,
                         fontWeight: 700,
                       }}
                     >
+                      <div
+                        style={{
+                          display: "flex",
+                          width: 10,
+                          height: 10,
+                          borderRadius: 5,
+                          backgroundColor: DOMAIN_COLORS[d] ?? "#8b5cf6",
+                        }}
+                      />
                       {DOMAIN_LABELS_FR[d] ?? d}
                     </div>
                   ))}
@@ -745,13 +730,7 @@ export async function GET(req: NextRequest) {
                       </span>
                     )}
                     {record && (
-                      <span
-                        style={{
-                          display: "flex",
-                          color: domainColor1,
-                          fontWeight: 600,
-                        }}
-                      >
+                      <span style={{ display: "flex", color: "#8b8698", fontWeight: 600 }}>
                         ({record})
                       </span>
                     )}
@@ -794,7 +773,7 @@ export async function GET(req: NextRequest) {
             display: "flex",
             height: 1,
             margin: "0 32px",
-            background: `linear-gradient(90deg, ${domainColor1}40, ${domainColor2}40, transparent)`,
+            backgroundColor: "#2a2740",
           }}
         />
 
@@ -835,7 +814,7 @@ export async function GET(req: NextRequest) {
           {/* Side deck section */}
           {sideCards.length > 0 && (
             <div style={{ display: "flex", flexDirection: "column", marginTop: 12 }}>
-              <SectionHeader label="Reserve" count={sideCount} />
+              <SectionHeader label="Réserve" count={sideCount} />
               <CardRow cards={sideCards} w={pw} h={ph} />
             </div>
           )}
@@ -865,7 +844,7 @@ export async function GET(req: NextRequest) {
             </span>
             {sideCount > 0 && (
               <span style={{ display: "flex" }}>
-                {sideCount} reserve
+                {sideCount} en réserve
               </span>
             )}
             <span style={{ display: "flex" }}>
@@ -877,7 +856,7 @@ export async function GET(req: NextRequest) {
               display: "flex",
               alignItems: "center",
               gap: 8,
-              color: domainColor1,
+              color: "#c4c0d0",
               fontSize: 16,
               fontWeight: 700,
             }}
@@ -892,7 +871,16 @@ export async function GET(req: NextRequest) {
       height: HEIGHT,
       headers: {
         "Cache-Control": "public, max-age=3600, s-maxage=3600",
+        // Avec ?download=1 le navigateur enregistre un vrai .png au lieu de
+        // deviner le nom depuis l'URL (Chrome sortait un fichier sans extension).
+        ...(searchParams.get("download")
+          ? { "Content-Disposition": `attachment; filename="${fileSlug(slug ?? shareCode ?? "decklist")}.png"` }
+          : {}),
       },
     },
   );
+}
+
+function fileSlug(s: string): string {
+  return s.replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80) || "decklist";
 }

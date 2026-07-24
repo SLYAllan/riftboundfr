@@ -7,6 +7,7 @@ import { CardHover } from "@/components/collection/card-hover";
 import { ImportPiltover } from "@/components/collection/import-piltover";
 import { DOMAIN_LABELS_FR, TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
 import { Heart, Upload, Download, Share2, Lock, Globe, ChevronDown } from "lucide-react";
+import { downloadBlob } from "@/lib/download";
 
 const DOMAIN_ORDER = ["Fury", "Calm", "Mind", "Body", "Chaos", "Order"];
 
@@ -132,11 +133,7 @@ export function BinderExplorer({
     }
     const csv = rows.map((r) => r.map((v) => `"${v.replace(/"/g, '""')}"`).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = `${binder.name.replace(/\s+/g, "-").toLowerCase()}.csv`;
-    a.click();
-    URL.revokeObjectURL(a.href);
+    downloadBlob(blob, `${binder.name.replace(/\s+/g, "-").toLowerCase()}.csv`);
   }
 
   async function toggleShare() {
