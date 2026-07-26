@@ -82,6 +82,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
     { ctx: "S3 Changsha Regional Open (2026-06-14)", label: "Changsha RO S3" },
     { ctx: "S3 Tianjin Regional Open (2026-06-07)", label: "Tianjin RO S3" },
     { ctx: "Xi'an Regional Open S3", label: "Xi'an RO S3" },
+    { ctx: "Guangzhou Regional Open", label: "Guangzhou RO" },
+    { ctx: "Chongqing Regional Open", label: "Chongqing RO" },
+    { ctx: "Beijing Regional Open", label: "Beijing RO" },
+    { ctx: "Hangzhou Regional Open (2025-09-14)", label: "Hangzhou RO" },
     { ctx: "RQ Sydney 2026", label: "Sydney RQ" },
     { ctx: "RQ Vancouver 2026", label: "Vancouver RQ" },
     { ctx: "RQ Atlanta 2026", label: "Atlanta RQ" },
@@ -356,6 +360,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
     }
   }
   if (legendFilter) where.legendName = { contains: legendFilter, mode: "insensitive" };
+  // Le filtre par set part dans la requête : filtré après le take(200), les sets
+  // anciens (Origins) ne remontaient jamais et la page affichait 0 deck.
+  if (setFilter) where.setTag = setFilter;
   // Recherche texte : titre, Légende, joueur, tournoi et NOM DE CARTE. Passe par AND
   // pour ne pas écraser le OR posé plus haut par les catégories.
   if (search) {
@@ -381,7 +388,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       select: {
         id: true, slug: true, title: true, legendName: true, legendId: true,
         playerName: true, authorName: true, placement: true, record: true,
-        tournamentContext: true, tournamentTier: true, featured: true,
+        tournamentContext: true, tournamentTier: true, featured: true, setTag: true,
         sourceUrl: true, guide: true, createdAt: true, description: true, format: true, likes: true,
         sourceArticle: { select: { slug: true, title: true } },
       },
@@ -394,19 +401,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
     }),
   ]);
 
-  const deckIds = allDecks.map((d) => d.id);
-  const setTags = deckIds.length > 0
-    ? await prisma.$queryRaw<Array<{ id: string; setTag: string }>>`
-        SELECT id, "setTag" FROM "Deck" WHERE id = ANY(${deckIds})
-      `
-    : [];
-  const setTagMap = new Map(setTags.map((r) => [r.id, r.setTag]));
-
-  let decks = allDecks.map((d) => ({ ...d, setTag: setTagMap.get(d.id) ?? "Unleashed" }));
-
-  if (setFilter) {
-    decks = decks.filter((d) => d.setTag === setFilter);
-  }
+  let decks = allDecks;
 
   if (sortParam === "popular") {
     decks.sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0) || (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0));
