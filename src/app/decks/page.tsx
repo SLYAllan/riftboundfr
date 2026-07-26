@@ -75,26 +75,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const search = (params.q ?? "").trim();
   const isCommunity = cat === "community";
 
-  const TOURNAMENT_FILTERS = [
-    { ctx: "S3 National Open (2026-07-19)", label: "National Open S3" },
-    { ctx: "RQ Hartford 2026", label: "Hartford RQ" },
-    { ctx: "RQ Utrecht 2026", label: "Utrecht RQ" },
-    { ctx: "S3 Changsha Regional Open (2026-06-14)", label: "Changsha RO S3" },
-    { ctx: "S3 Tianjin Regional Open (2026-06-07)", label: "Tianjin RO S3" },
-    { ctx: "Xi'an Regional Open S3", label: "Xi'an RO S3" },
-    { ctx: "Guangzhou Regional Open", label: "Guangzhou RO" },
-    { ctx: "Chongqing Regional Open", label: "Chongqing RO" },
-    { ctx: "Beijing Regional Open", label: "Beijing RO" },
-    { ctx: "Hangzhou Regional Open (2025-09-14)", label: "Hangzhou RO" },
-    { ctx: "RQ Sydney 2026", label: "Sydney RQ" },
-    { ctx: "RQ Vancouver 2026", label: "Vancouver RQ" },
-    { ctx: "RQ Atlanta 2026", label: "Atlanta RQ" },
-    { ctx: "RQ Lille 2026", label: "Lille RQ" },
-    { ctx: "RQ Las Vegas 2026", label: "Las Vegas RQ" },
-    { ctx: "RQ Bologna 2026", label: "Bologna RQ" },
-    { ctx: "RQ Houston 2025", label: "Houston RQ" },
-  ];
-
   if (isCommunity) {
     const domainFilter = params.domain;
     const tagFilter = params.tag;
@@ -338,6 +318,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
     );
   }
 
+  // Boutons « best of par tournoi » : lus dans les decks marqués best-of, libellé et
+  // date pris dans le registre des tournois. Un nouveau best-of apparaît donc tout
+  // seul, plus de liste à tenir à la main.
+  const featuredTournaments = await prisma.deck.groupBy({
+    by: ["tournamentContext"],
+    where: { published: true, featured: true, tournamentContext: { not: null } },
+  });
+  const TOURNAMENT_FILTERS = featuredTournaments
+    .map((t) => {
+      const ctx = t.tournamentContext!;
+      const info = getTournamentInfo(ctx);
+      return { ctx, label: info?.shortName ?? ctx, date: info?.date ?? "", set: info?.set };
+    })
+    .sort((a, b) => b.date.localeCompare(a.date));
+
   const where: Record<string, unknown> = { published: true };
   // /decks ne montre jamais les milliers de decklists brutes d'un tournoi : elles
   // vivent sur la page du tournoi (/tournois/[slug]). Ici, uniquement les best-of
@@ -545,9 +540,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
           >
             <Trophy size={11} /> Best of par tournoi
           </Link>
-          {TOURNAMENT_FILTERS.map((t) => {
-            const info = getTournamentInfo(t.ctx);
-            const cc = info?.countryCode;
+          {TOURNAMENT_FILTERS.filter((t) => !setFilter || t.set === setFilter).map((t) => {
+            const cc = getTournamentInfo(t.ctx)?.countryCode;
             const isActive = tournamentFilter === t.ctx;
             return (
               <Link
