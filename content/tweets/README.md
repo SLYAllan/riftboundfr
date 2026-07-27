@@ -8,27 +8,40 @@ Tout ce qui concerne le compte X est ici.
 | --- | --- |
 | `AAAA-MM-JJ-idees.md` | Une session d'idées : note de situation du site, puis les tweets prêts à copier avec lien, timing, média et points à vérifier. |
 | `archive.md` | La liste des angles déjà proposés ou postés. À lire avant d'écrire, pour ne pas reposter la même idée. |
-| `images/` | Les visuels prêts à poster, en 1000x1000. Chaque visuel a son `.html` source à côté : on régénère l'image à partir de là. |
+| `images/` | Les visuels prêts à poster, en 1600x1600. Chaque visuel a son `.html` source et son `-alt.txt` à côté : on régénère l'image à partir de là. |
 
 ## Refaire les visuels de tier list
 
 Les tier lists viennent de la base, donc le visuel suit toujours le classement en
-ligne. Trois étapes :
+ligne. Quatre étapes :
 
 ```bash
-# 1. générer les pages HTML (un set = une page)
+# 1. compter ce sur quoi le classement repose (écrit data/tier-source-counts.json,
+#    lu par le générateur pour la ligne du bas)
+python -X utf8 scripts/tier-unleashed.py Spiritforged
+python -X utf8 scripts/tier-unleashed.py Unleashed
+
+# 2. générer les pages HTML (un set = une page, + le texte alt du tweet)
 npx tsx scripts/gen-tierlist-image.mts Spiritforged Unleashed
 
-# 2. servir le repo en local (les images de Légende sont dans public/)
+# 3. servir le repo en local (les images de Légende sont dans public/)
 python -m http.server 8899 --bind 127.0.0.1
 
-# 3. ouvrir http://127.0.0.1:8899/content/tweets/images/tier-list-unleashed.html
-#    dans un navigateur en 1000x1000 et capturer la page
+# 4. ouvrir http://127.0.0.1:8899/content/tweets/images/tier-list-unleashed.html
+#    dans un navigateur en 1600x1600 et capturer la page
 ```
 
 Le fond est celui des images de deck (`public/img/fond-export.png`), avec le même
-voile sombre. Pour un autre set : ajouter son nom à la commande (`Origins`,
+voile sombre. Pour un autre set : ajouter son nom aux commandes (`Origins`,
 `Vendetta` quand sa tier list existera).
+
+Deux points à ne pas défaire :
+
+- La ligne du bas annonce des **résultats**, pas des decklists. Les tiers sont
+  calculés sur les classements complets (rang + Légende) ; tous les joueurs classés
+  n'ont pas publié leur liste, Hartford n'en a que 142 sur 1 659.
+- Verre et ombres oui, halos colorés non. Pas de glow sur le titre ni derrière le
+  tier S : ça fait image générée.
 
 ## Règles de publication
 

@@ -142,6 +142,19 @@ def main(card_set='Unleashed'):
     ranked = sum(1 for d in decks if d.get('placement'))
     base = 100 * sum(top8.values()) / max(ranked, 1)
     print(f"decks classes : {ranked} | taux Top 8 moyen : {base:.2f}%\n")
+
+    # Ce sur quoi le classement repose vraiment, pour que les visuels de tier list
+    # annoncent la meme base que le calcul (et non le nombre de decklists en DB,
+    # plus petit : tous les joueurs classes n'ont pas publie leur liste).
+    counts_path = os.path.join('data', 'tier-source-counts.json')
+    counts = {}
+    if os.path.exists(counts_path):
+        counts = json.load(open(counts_path, encoding='utf-8'))
+    counts[card_set] = {
+        'results': ranked,
+        'tournaments': len({d.get('tournament') for d in decks if d.get('tournament')}),
+    }
+    json.dump(counts, open(counts_path, 'w', encoding='utf-8'), indent=2, ensure_ascii=False)
     print(f"{'LEGENDE':38s} {'decks':>6s} {'field':>6s} {'top8':>5s} {'wins':>5s} {'conv':>6s}")
     for lg, c in tot.most_common():
         conv = 100 * top8[lg] / c

@@ -1,82 +1,109 @@
 <meta charset="utf-8">
 <style>
+  /* Rubik : la police du site, pour que les visuels soient reconnaissables. */
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap");
   * { margin:0; padding:0; box-sizing:border-box; }
+  /* Maquette dessinée en 1000 px, rendue en 1600 : tout est rasterisé x1,6. */
+  html { zoom:1.6; }
   /* Même fond que les images de deck : fond-export.png + voile sombre uni. */
   body { width:1000px; height:1000px; background:#0a0a12; color:#f1f5f9;
-         font-family:"Segoe UI",Roboto,Arial,sans-serif; display:flex; flex-direction:column;
-         padding:30px 24px 22px; overflow:hidden; }
+         font-family:Rubik,"Segoe UI",Roboto,Arial,sans-serif; display:flex; flex-direction:column;
+         padding:30px 20px 24px; overflow:hidden; }
   body::before { content:""; position:fixed; inset:0;
                  background:url("/public/img/fond-export.png") center/cover; }
   body::after { content:""; position:fixed; inset:0; background:rgba(10,10,18,.82); }
   header, main, footer { position:relative; z-index:1; }
-  header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:8px; }
-  .kicker { font-size:19px; letter-spacing:.22em; text-transform:uppercase; color:#94a3b8; font-weight:700; }
-  h1 { font-size:62px; line-height:1; font-weight:800; color:#10b981; margin-top:6px; }
-  .site { font-size:20px; font-weight:700; color:#94a3b8; padding-bottom:8px; }
-  main { flex:1; display:flex; flex-direction:column; justify-content:space-evenly; }
-  .row { display:flex; align-items:stretch; gap:12px; }
-  .tier { width:68px; flex:none; border-radius:12px; color:#101014; font-size:38px; font-weight:900;
-          display:flex; align-items:center; justify-content:center; }
-  .cells { flex:1; display:flex; flex-wrap:wrap; align-content:center; gap:6px;
-           background:rgba(255,255,255,.05); border-radius:12px; padding:10px; }
-  .cell { width:78px; height:78px; border-radius:10px; object-fit:cover; display:block; }
-  footer { margin-top:10px; display:flex; justify-content:space-between; font-size:16px; color:#94a3b8; }
-  footer b { color:#f1f5f9; }
+  header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:10px; }
+  .kicker { font-size:19px; letter-spacing:.22em; text-transform:uppercase; color:#a8b6c8; font-weight:700; }
+  h1 { font-size:50px; line-height:1; font-weight:800; color:#10b981; margin-top:4px; }
+  .site { font-size:22px; font-weight:800; color:#f1f5f9; padding-bottom:6px; }
+  main { flex:1; display:flex; flex-direction:column; justify-content:space-between; gap:12px; }
+  .row { display:flex; align-items:stretch; gap:10px; }
+  /* Matière verre : reflet en haut, bord interne fin, ombre portée. Aucun halo coloré. */
+  .tier { width:56px; flex:none; border-radius:12px; color:#101014; font-size:36px; font-weight:900;
+          display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+          box-shadow:0 6px 16px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.3); }
+  .tier::before { content:""; position:absolute; inset:0 0 auto 0; height:40%;
+                  background:linear-gradient(rgba(255,255,255,.26), rgba(255,255,255,0)); }
+  /* Aligné à gauche partout : l'ordre dans un tier veut dire quelque chose. */
+  .cells { flex:1; display:flex; flex-direction:column; justify-content:center; gap:11px;
+           background:rgba(255,255,255,.05); border-radius:12px; padding:12px 8px;
+           box-shadow:inset 0 1px 0 rgba(255,255,255,.09), inset 0 0 0 1px rgba(255,255,255,.06); }
+  .line { display:flex; gap:11px; }
+  .cell { width:85px; height:85px; border-radius:11px; object-fit:cover; display:block;
+          box-shadow:0 0 0 1px rgba(255,255,255,.12), 0 5px 12px rgba(0,0,0,.6); }
+  /* Le D recule par son fond, pas par ses portraits : ils doivent rester identifiables. */
+  .tD .cells { background:rgba(255,255,255,.025); }
+  footer { margin-top:14px; display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+           font-size:18px; color:#e8eef6; white-space:nowrap; }
+  footer b { color:#fff; }
 </style>
 <header>
-  <div><div class="kicker">Tier list Riftbound</div><h1>Spiritforged</h1></div>
+  <div><div class="kicker">Tier list Riftbound · Set 2</div><h1>Armes spirituelles</h1></div>
   <div class="site">riftboundfrance.fr</div>
 </header>
 <main>
-    <div class="row">
-      <div class="tier" style="background:#f59e0b">S</div>
+    <div class="row tS">
+      <div class="tier" style="background:#ef4444">S</div>
       <div class="cells">
-      <img class="cell" src="/public/img/legend_icon/draven.webp" alt="Draven"></div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/draven.webp" alt="Draven">
+        </div></div>
     </div>
-    <div class="row">
-      <div class="tier" style="background:#ef4444">A</div>
+    <div class="row tA">
+      <div class="tier" style="background:#f97316">A</div>
       <div class="cells">
-      <img class="cell" src="/public/img/legend_icon/irelia.webp" alt="Irelia">
-      <img class="cell" src="/public/img/legend_icon/kaisa.webp" alt="Kai'Sa">
-      <img class="cell" src="/public/img/legend_icon/viktor.webp" alt="Viktor"></div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/irelia.webp" alt="Irelia">
+          <img class="cell" src="/public/img/legend_icon/kaisa.webp" alt="Kai'Sa">
+          <img class="cell" src="/public/img/legend_icon/viktor.webp" alt="Viktor">
+        </div></div>
     </div>
-    <div class="row">
-      <div class="tier" style="background:#8b5cf6">B</div>
+    <div class="row tB">
+      <div class="tier" style="background:#eab308">B</div>
       <div class="cells">
-      <img class="cell" src="/public/img/legend_icon/annie.webp" alt="Annie">
-      <img class="cell" src="/public/img/legend_icon/fiora.webp" alt="Fiora">
-      <img class="cell" src="/public/img/legend_icon/ezreal.webp" alt="Ezreal">
-      <img class="cell" src="/public/img/legend_icon/azir.webp" alt="Azir">
-      <img class="cell" src="/public/img/legend_icon/reksai.webp" alt="Rek'Sai">
-      <img class="cell" src="/public/img/legend_icon/masteryi_1.webp" alt="Yi Fine lame"></div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/annie.webp" alt="Annie">
+          <img class="cell" src="/public/img/legend_icon/fiora.webp" alt="Fiora">
+          <img class="cell" src="/public/img/legend_icon/ezreal.webp" alt="Ezreal">
+          <img class="cell" src="/public/img/legend_icon/azir.webp" alt="Azir">
+          <img class="cell" src="/public/img/legend_icon/reksai.webp" alt="Rek'Sai">
+          <img class="cell" src="/public/img/legend_icon/masteryi_1.webp" alt="Yi Fine lame">
+        </div></div>
     </div>
-    <div class="row">
-      <div class="tier" style="background:#0ea5e9">C</div>
+    <div class="row tC">
+      <div class="tier" style="background:#22c55e">C</div>
       <div class="cells">
-      <img class="cell" src="/public/img/legend_icon/sivir.webp" alt="Sivir">
-      <img class="cell" src="/public/img/legend_icon/lucian.webp" alt="Lucian">
-      <img class="cell" src="/public/img/legend_icon/ornn.webp" alt="Ornn">
-      <img class="cell" src="/public/img/legend_icon/sett.webp" alt="Sett">
-      <img class="cell" src="/public/img/legend_icon/ahri.webp" alt="Ahri">
-      <img class="cell" src="/public/img/legend_icon/jax.webp" alt="Jax">
-      <img class="cell" src="/public/img/legend_icon/lux.webp" alt="Lux">
-      <img class="cell" src="/public/img/legend_icon/missfortune.webp" alt="Miss Fortune"></div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/sivir.webp" alt="Sivir">
+          <img class="cell" src="/public/img/legend_icon/lucian.webp" alt="Lucian">
+          <img class="cell" src="/public/img/legend_icon/ornn.webp" alt="Ornn">
+          <img class="cell" src="/public/img/legend_icon/sett.webp" alt="Sett">
+          <img class="cell" src="/public/img/legend_icon/ahri.webp" alt="Ahri">
+          <img class="cell" src="/public/img/legend_icon/jax.webp" alt="Jax">
+          <img class="cell" src="/public/img/legend_icon/lux.webp" alt="Lux">
+          <img class="cell" src="/public/img/legend_icon/missfortune.webp" alt="Miss Fortune">
+        </div></div>
     </div>
-    <div class="row">
-      <div class="tier" style="background:#6b7280">D</div>
+    <div class="row tD">
+      <div class="tier" style="background:#38bdf8">D</div>
       <div class="cells">
-      <img class="cell" src="/public/img/legend_icon/yasuo.webp" alt="Yasuo">
-      <img class="cell" src="/public/img/legend_icon/rumble.webp" alt="Rumble">
-      <img class="cell" src="/public/img/legend_icon/teemo.webp" alt="Teemo">
-      <img class="cell" src="/public/img/legend_icon/jinx.webp" alt="Jinx">
-      <img class="cell" src="/public/img/legend_icon/volibear.webp" alt="Volibear">
-      <img class="cell" src="/public/img/legend_icon/leona.webp" alt="Leona">
-      <img class="cell" src="/public/img/legend_icon/renataglasc.webp" alt="Renata Glasc">
-      <img class="cell" src="/public/img/legend_icon/darius.webp" alt="Darius">
-      <img class="cell" src="/public/img/legend_icon/leesin.webp" alt="Lee Sin">
-      <img class="cell" src="/public/img/legend_icon/garen.webp" alt="Garen"></div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/yasuo.webp" alt="Yasuo">
+          <img class="cell" src="/public/img/legend_icon/rumble.webp" alt="Rumble">
+          <img class="cell" src="/public/img/legend_icon/teemo.webp" alt="Teemo">
+          <img class="cell" src="/public/img/legend_icon/jinx.webp" alt="Jinx">
+          <img class="cell" src="/public/img/legend_icon/volibear.webp" alt="Volibear">
+        </div>
+        <div class="line">
+          <img class="cell" src="/public/img/legend_icon/leona.webp" alt="Leona">
+          <img class="cell" src="/public/img/legend_icon/renataglasc.webp" alt="Renata Glasc">
+          <img class="cell" src="/public/img/legend_icon/darius.webp" alt="Darius">
+          <img class="cell" src="/public/img/legend_icon/leesin.webp" alt="Lee Sin">
+          <img class="cell" src="/public/img/legend_icon/garen.webp" alt="Garen">
+        </div></div>
     </div></main>
 <footer>
-  <span>Classement des Légendes d'après les résultats de tournoi</span>
-  <span><b>Set Spiritforged</b> · en français</span>
+  <span>Classement d'après les résultats de tournoi</span>
+  <span>31 tournois · 7 278 résultats · du 20/12 au 29/04</span>
 </footer>

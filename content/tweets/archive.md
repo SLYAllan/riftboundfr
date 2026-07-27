@@ -10,6 +10,7 @@ Format : `AAAA-MM-JJ | statut | catégorie | angle | lien principal`
 Aucun angle antérieur enregistré : ce fichier a été créé le 27 juillet 2026, les
 publications d'avant cette date ne sont pas tracées ici.
 
+2026-07-27 | posté | Meta | Tier lists Armes spirituelles et Déchaînement en visuel, classement d'après les résultats de tournoi | /guides/meta
 2026-07-27 | proposé | Actu | Sortie mondiale simultanée de Vendetta le 31 juillet, renvoi vers la base de cartes | /cartes?set=vendetta
 2026-07-27 | proposé | Actu | Bans du 24 juillet en Standard + Master Yi banni en 2v2 seulement | /guides/ban-list
 2026-07-27 | proposé | Actu | Rift Tour phase 1 en cours, les 16 boutiques par division | /articles/le-rift-tour-circuit-competitif-france
