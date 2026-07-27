@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  /* Même fond que les images de deck : fond-export.png + voile sombre uni. */
+  body { width:1000px; height:1000px; background:#0a0a12; color:#f1f5f9;
+         font-family:"Segoe UI",Roboto,Arial,sans-serif; display:flex; flex-direction:column;
+         padding:30px 24px 22px; overflow:hidden; }
+  body::before { content:""; position:fixed; inset:0;
+                 background:url("/public/img/fond-export.png") center/cover; }
+  body::after { content:""; position:fixed; inset:0; background:rgba(10,10,18,.82); }
+  header, main, footer { position:relative; z-index:1; }
+  header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:8px; }
+  .kicker { font-size:19px; letter-spacing:.22em; text-transform:uppercase; color:#94a3b8; font-weight:700; }
+  h1 { font-size:62px; line-height:1; font-weight:800; color:#10b981; margin-top:6px; }
+  .site { font-size:20px; font-weight:700; color:#94a3b8; padding-bottom:8px; }
+  main { flex:1; display:flex; flex-direction:column; justify-content:space-evenly; }
+  .row { display:flex; align-items:stretch; gap:12px; }
+  .tier { width:68px; flex:none; border-radius:12px; color:#101014; font-size:38px; font-weight:900;
+          display:flex; align-items:center; justify-content:center; }
+  .cells { flex:1; display:flex; flex-wrap:wrap; align-content:center; gap:6px;
+           background:rgba(255,255,255,.05); border-radius:12px; padding:10px; }
+  .cell { width:78px; height:78px; border-radius:10px; object-fit:cover; display:block; }
+  footer { margin-top:10px; display:flex; justify-content:space-between; font-size:16px; color:#94a3b8; }
+  footer b { color:#f1f5f9; }
+</style>
+<header>
+  <div><div class="kicker">Tier list Riftbound</div><h1>Spiritforged</h1></div>
+  <div class="site">riftboundfrance.fr</div>
+</header>
+<main>
+    <div class="row">
+      <div class="tier" style="background:#f59e0b">S</div>
+      <div class="cells">
+      <img class="cell" src="/public/img/legend_icon/draven.webp" alt="Draven"></div>
+    </div>
+    <div class="row">
+      <div class="tier" style="background:#ef4444">A</div>
+      <div class="cells">
+      <img class="cell" src="/public/img/legend_icon/irelia.webp" alt="Irelia">
+      <img class="cell" src="/public/img/legend_icon/kaisa.webp" alt="Kai'Sa">
+      <img class="cell" src="/public/img/legend_icon/viktor.webp" alt="Viktor"></div>
+    </div>
+    <div class="row">
+      <div class="tier" style="background:#8b5cf6">B</div>
+      <div class="cells">
+      <img class="cell" src="/public/img/legend_icon/annie.webp" alt="Annie">
+      <img class="cell" src="/public/img/legend_icon/fiora.webp" alt="Fiora">
+      <img class="cell" src="/public/img/legend_icon/ezreal.webp" alt="Ezreal">
+      <img class="cell" src="/public/img/legend_icon/azir.webp" alt="Azir">
+      <img class="cell" src="/public/img/legend_icon/reksai.webp" alt="Rek'Sai">
+      <img class="cell" src="/public/img/legend_icon/masteryi_1.webp" alt="Yi Fine lame"></div>
+    </div>
+    <div class="row">
+      <div class="tier" style="background:#0ea5e9">C</div>
+      <div class="cells">
+      <img class="cell" src="/public/img/legend_icon/sivir.webp" alt="Sivir">
+      <img class="cell" src="/public/img/legend_icon/lucian.webp" alt="Lucian">
+      <img class="cell" src="/public/img/legend_icon/ornn.webp" alt="Ornn">
+      <img class="cell" src="/public/img/legend_icon/sett.webp" alt="Sett">
+      <img class="cell" src="/public/img/legend_icon/ahri.webp" alt="Ahri">
+      <img class="cell" src="/public/img/legend_icon/jax.webp" alt="Jax">
+      <img class="cell" src="/public/img/legend_icon/lux.webp" alt="Lux">
+      <img class="cell" src="/public/img/legend_icon/missfortune.webp" alt="Miss Fortune"></div>
+    </div>
+    <div class="row">
+      <div class="tier" style="background:#6b7280">D</div>
+      <div class="cells">
+      <img class="cell" src="/public/img/legend_icon/yasuo.webp" alt="Yasuo">
+      <img class="cell" src="/public/img/legend_icon/rumble.webp" alt="Rumble">
+      <img class="cell" src="/public/img/legend_icon/teemo.webp" alt="Teemo">
+      <img class="cell" src="/public/img/legend_icon/jinx.webp" alt="Jinx">
+      <img class="cell" src="/public/img/legend_icon/volibear.webp" alt="Volibear">
+      <img class="cell" src="/public/img/legend_icon/leona.webp" alt="Leona">
+      <img class="cell" src="/public/img/legend_icon/renataglasc.webp" alt="Renata Glasc">
+      <img class="cell" src="/public/img/legend_icon/darius.webp" alt="Darius">
+      <img class="cell" src="/public/img/legend_icon/leesin.webp" alt="Lee Sin">
+      <img class="cell" src="/public/img/legend_icon/garen.webp" alt="Garen"></div>
+    </div></main>
+<footer>
+  <span>Classement des Légendes d'après les résultats de tournoi</span>
+  <span><b>Set Spiritforged</b> · en français</span>
+</footer>
