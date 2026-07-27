@@ -135,7 +135,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 1719,
     type: "regional",
     date: "2026-02-21",
-    set: "Unleashed",
+    set: "Spiritforged",
     format: "Conquest",
   },
   "Las Vegas Regional Qualifier": {
@@ -147,7 +147,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 1670,
     type: "regional",
     date: "2026-03-01",
-    set: "Unleashed",
+    set: "Spiritforged",
     format: "Conquest",
   },
   "Shenzhen National Open S2": {
@@ -159,7 +159,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 2048,
     type: "regional",
     date: "2026-03-22",
-    set: "Unleashed",
+    set: "Spiritforged",
     format: "Conquest",
   },
   "Sydney RQ 2026": {
@@ -183,7 +183,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 1949,
     type: "regional",
     date: "2026-04-18",
-    set: "Unleashed",
+    set: "Spiritforged",
     format: "Conquest",
   },
   "Atlanta RQ 2026": {
@@ -195,7 +195,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 1832,
     type: "regional",
     date: "2026-04-29",
-    set: "Unleashed",
+    set: "Spiritforged",
     format: "Conquest",
   },
   "Xi'an Regional Open S3": {
@@ -207,7 +207,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     playerCount: 640,
     type: "regional",
     date: "2026-05-24",
-    set: "Spiritforged",
+    set: "Unleashed",
     format: "Conquest",
   },
   "Fuzhou Regional Qualifier": {
