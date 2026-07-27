@@ -1640,7 +1640,7 @@ Voici le meilleur deck de chaque Légende jouée à Utrecht : pour chacune, la l
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Utrecht`,
+        title: `${d.legend} · Best of Utrecht`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

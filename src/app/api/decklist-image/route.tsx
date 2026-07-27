@@ -39,19 +39,21 @@ interface CardInfo {
 }
 
 // 1:1 square - the safest format for Twitter/X (no cropping in the timeline)
-const WIDTH = 1000;
-const HEIGHT = 1000;
+const WIDTH = 2000;
+const HEIGHT = 2000;
+// Rendu en 2000 px : à 1000 le texte des cartes devenait illisible une fois
+// l'image recompressée par X. Toutes les dimensions ci-dessous suivent.
 
-const CARD_GAP = 6;
-const BODY_W = WIDTH - 64; // 32px horizontal padding on each side
+const CARD_GAP = 12;
+const BODY_W = WIDTH - 128; // 64px de marge de chaque côté
 
 // Pick the LARGEST card size that still lets the whole deck (main + runes +
 // battlefields + side) fit inside the square. Maximizes legibility per deck.
 function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number) {
-  const HEADER = 178; // legend header block
-  const FOOTER = 64;
-  const SECT = 34; // section title + spacing
-  for (const pw of [132, 124, 116, 108, 100, 92, 84, 78, 72]) {
+  const HEADER = 356; // legend header block
+  const FOOTER = 128;
+  const SECT = 68; // section title + spacing
+  for (const pw of [264, 248, 232, 216, 200, 184, 168, 156, 144]) {
     const ph = Math.round(pw * 1.4);
     const lw = Math.round(pw * 1.7);
     const lh = Math.round(pw * 1.2);
@@ -65,7 +67,7 @@ function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number) {
     if (sideN) h += SECT + Math.ceil(sideN / cols) * rowH;
     if (h <= HEIGHT) return { pw, ph, lw, lh };
   }
-  return { pw: 72, ph: 101, lw: 122, lh: 86 };
+  return { pw: 144, ph: 202, lw: 244, lh: 172 };
 }
 
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
@@ -79,7 +81,7 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
         position: "relative",
         width: w,
         height: h,
-        borderRadius: 6,
+        borderRadius: 12,
         overflow: "hidden",
         flexShrink: 0,
       }}
@@ -91,7 +93,7 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
           height={h}
           style={{
             objectFit: "cover",
-            borderRadius: 6,
+            borderRadius: 12,
           }}
         />
       ) : (
@@ -103,16 +105,16 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
             backgroundColor: "#1e1b2e",
             alignItems: "center",
             justifyContent: "center",
-            borderRadius: 6,
-            border: "1px solid #2a2740",
+            borderRadius: 12,
+            border: "2px solid #2a2740",
           }}
         >
           <span
             style={{
               color: "#6b6580",
-              fontSize: 10,
+              fontSize: 20,
               textAlign: "center",
-              padding: 4,
+              padding: 8,
             }}
           >
             {card.name}
@@ -124,11 +126,11 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
           style={{
             display: "flex",
             position: "absolute",
-            top: 4,
-            right: 4,
+            top: 8,
+            right: 8,
             backgroundColor: "rgba(8, 8, 14, 0.85)",
-            borderRadius: 4,
-            padding: "1px 6px",
+            borderRadius: 8,
+            padding: "2px 12px",
             alignItems: "center",
             justifyContent: "center",
           }}
@@ -136,7 +138,7 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
           <span
             style={{
               color: "#fff",
-              fontSize: 12,
+              fontSize: 24,
               fontWeight: 700,
             }}
           >
@@ -154,28 +156,28 @@ function SectionHeader({ label, count }: { label: string; count: number }) {
       style={{
         display: "flex",
         alignItems: "center",
-        gap: 8,
-        marginBottom: 8,
-        marginTop: 4,
+        gap: 16,
+        marginBottom: 16,
+        marginTop: 8,
       }}
     >
       <span
         style={{
           color: "#d4a843",
-          fontSize: 14,
+          fontSize: 28,
           fontWeight: 700,
           textTransform: "uppercase",
-          letterSpacing: 1,
+          letterSpacing: 2,
         }}
       >
         {label}
       </span>
-      <span style={{ color: "#6b6580", fontSize: 13 }}>({count})</span>
+      <span style={{ color: "#6b6580", fontSize: 26 }}>({count})</span>
       <div
         style={{
           display: "flex",
           flex: 1,
-          height: 1,
+          height: 2,
           backgroundColor: "#2a2740",
         }}
       />
@@ -594,7 +596,7 @@ export async function GET(req: NextRequest) {
         />
 
         {/* Filet du haut : une couleur pleine par domaine, pas de dégradé */}
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, display: "flex" }}>
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 6, display: "flex" }}>
           <div style={{ display: "flex", flex: 1, backgroundColor: domainColor1 }} />
           <div style={{ display: "flex", flex: 1, backgroundColor: domainColor2 }} />
         </div>
@@ -604,7 +606,7 @@ export async function GET(req: NextRequest) {
           style={{
             display: "flex",
             flexDirection: "column",
-            padding: "24px 32px 14px",
+            padding: "48px 64px 28px",
             position: "relative",
           }}
         >
@@ -613,7 +615,7 @@ export async function GET(req: NextRequest) {
             style={{
               display: "flex",
               alignItems: "flex-start",
-              gap: 20,
+              gap: 40,
             }}
           >
             {/* Legend card image */}
@@ -621,17 +623,17 @@ export async function GET(req: NextRequest) {
               <div
                 style={{
                   display: "flex",
-                  width: 90,
-                  height: 126,
-                  borderRadius: 8,
+                  width: 180,
+                  height: 252,
+                  borderRadius: 16,
                   overflow: "hidden",
                   flexShrink: 0,
                 }}
               >
                 <img
                   src={legendImgUrl}
-                  width={90}
-                  height={126}
+                  width={180}
+                  height={252}
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -643,14 +645,14 @@ export async function GET(req: NextRequest) {
                 display: "flex",
                 flexDirection: "column",
                 flex: 1,
-                gap: 6,
+                gap: 12,
               }}
             >
               {/* Legend name */}
               <div
                 style={{
                   display: "flex",
-                  fontSize: 28,
+                  fontSize: 56,
                   fontWeight: 800,
                   color: "#ffffff",
                   lineHeight: 1.2,
@@ -665,8 +667,8 @@ export async function GET(req: NextRequest) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 8,
-                    marginTop: 2,
+                    gap: 16,
+                    marginTop: 4,
                   }}
                 >
                   {/* Pastille pleine + texte neutre : pas de fond teinté sous du texte teinté */}
@@ -676,19 +678,19 @@ export async function GET(req: NextRequest) {
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: 6,
-                        marginRight: 6,
+                        gap: 12,
+                        marginRight: 12,
                         color: "#c4c0d0",
-                        fontSize: 13,
+                        fontSize: 26,
                         fontWeight: 700,
                       }}
                     >
                       <div
                         style={{
                           display: "flex",
-                          width: 10,
-                          height: 10,
-                          borderRadius: 5,
+                          width: 20,
+                          height: 20,
+                          borderRadius: 10,
                           backgroundColor: DOMAIN_COLORS[d] ?? "#8b5cf6",
                         }}
                       />
@@ -703,8 +705,8 @@ export async function GET(req: NextRequest) {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: 2,
-                  marginTop: 4,
+                  gap: 4,
+                  marginTop: 8,
                 }}
               >
                 {tournamentContext && (
@@ -712,8 +714,8 @@ export async function GET(req: NextRequest) {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 6,
-                      fontSize: 14,
+                      gap: 12,
+                      fontSize: 28,
                       color: "#a3a3b8",
                     }}
                   >
@@ -740,7 +742,7 @@ export async function GET(req: NextRequest) {
                   <div
                     style={{
                       display: "flex",
-                      fontSize: 14,
+                      fontSize: 28,
                       color: "#8b8698",
                     }}
                   >
@@ -754,10 +756,10 @@ export async function GET(req: NextRequest) {
                 <div
                   style={{
                     display: "flex",
-                    fontSize: 16,
+                    fontSize: 32,
                     fontWeight: 600,
                     color: "#c4c0d0",
-                    marginTop: 2,
+                    marginTop: 4,
                   }}
                 >
                   {title.length > 50 ? title.slice(0, 50) + "..." : title}
@@ -771,8 +773,8 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             display: "flex",
-            height: 1,
-            margin: "0 32px",
+            height: 2,
+            margin: "0 64px",
             backgroundColor: "#2a2740",
           }}
         />
@@ -783,8 +785,8 @@ export async function GET(req: NextRequest) {
             display: "flex",
             flexDirection: "column",
             flex: 1,
-            padding: "16px 32px",
-            gap: 4,
+            padding: "32px 64px",
+            gap: 8,
             overflow: "hidden",
           }}
         >
@@ -794,7 +796,7 @@ export async function GET(req: NextRequest) {
 
           {/* Runes section */}
           {runeCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", marginTop: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
               <SectionHeader label="Runes" count={runeCards.reduce((s, r) => s + r.quantity, 0)} />
               <CardRow cards={runeCards} w={pw} h={ph} />
             </div>
@@ -802,7 +804,7 @@ export async function GET(req: NextRequest) {
 
           {/* Battlefields section */}
           {battlefieldCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", marginTop: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
               <SectionHeader
                 label="Champs de bataille"
                 count={battlefieldCards.reduce((s, b) => s + b.quantity, 0)}
@@ -813,7 +815,7 @@ export async function GET(req: NextRequest) {
 
           {/* Side deck section */}
           {sideCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", marginTop: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
               <SectionHeader label="Réserve" count={sideCount} />
               <CardRow cards={sideCards} w={pw} h={ph} />
             </div>
@@ -826,17 +828,17 @@ export async function GET(req: NextRequest) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "16px 32px 24px",
-            borderTop: "1px solid #1e1b2e",
+            padding: "32px 64px 48px",
+            borderTop: "2px solid #1e1b2e",
           }}
         >
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 16,
+              gap: 32,
               color: "#6b6580",
-              fontSize: 13,
+              fontSize: 26,
             }}
           >
             <span style={{ display: "flex" }}>
@@ -855,9 +857,9 @@ export async function GET(req: NextRequest) {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
+              gap: 16,
               color: "#c4c0d0",
-              fontSize: 16,
+              fontSize: 32,
               fontWeight: 700,
             }}
           >

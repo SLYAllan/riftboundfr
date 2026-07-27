@@ -63,7 +63,7 @@ async function main() {
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — ${d.player} (${ordinal(d.placement)} Hartford)`,
+        title: `${d.legend} · ${d.player} (${ordinal(d.placement)} Hartford)`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

@@ -225,7 +225,7 @@ Voici le meilleur deck de **chaque légende** jouée à Tianjin : pour chaque l�
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Tianjin`,
+        title: `${d.legend} · Best of Tianjin`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

@@ -225,7 +225,7 @@ Voici le meilleur deck de **chaque légende** jouée à Changsha : pour chaque l
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Changsha`,
+        title: `${d.legend} · Best of Changsha`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

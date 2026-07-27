@@ -1286,7 +1286,7 @@ Voici les **28 meilleures decklists** — une par légende, au meilleur classeme
     // Use $executeRaw to set setTag since Prisma client doesn't know about it
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Atlanta`,
+        title: `${d.legend} · Best of Atlanta`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

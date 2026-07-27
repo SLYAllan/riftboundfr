@@ -1636,7 +1636,7 @@ Pour chaque legende, nous avons selectionne la liste qui a obtenu le meilleur cl
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Sydney`,
+        title: `${d.legend} · Best of Sydney`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

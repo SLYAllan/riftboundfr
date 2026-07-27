@@ -80,7 +80,7 @@ async function seedTournamentDecks(
     await prisma.deck.create({
       data: {
         slug,
-        title: `${placement} ${tournamentContext} — ${legendShort} (${entry.player})`,
+        title: `${placement} ${tournamentContext} · ${legendShort} (${entry.player})`,
         legendId,
         legendName: entry.legend,
         format: "constructed",

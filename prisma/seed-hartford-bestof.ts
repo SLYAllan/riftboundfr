@@ -1673,7 +1673,7 @@ Voici le meilleur deck de chaque Légende jouée à Hartford : pour chacune, la 
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Hartford`,
+        title: `${d.legend} · Best of Hartford`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

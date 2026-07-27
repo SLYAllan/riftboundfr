@@ -113,7 +113,7 @@ async function main() {
     const who = d.player ?? "joueur inconnu";
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — ${who}${place ? ` (${ordinal(place)})` : ""}`,
+        title: `${d.legend} · ${who}${place ? ` (${ordinal(place)})` : ""}`,
         slug: d.id,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

@@ -4,6 +4,24 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+# Vérifier, jamais deviner — RÈGLE ABSOLUE
+
+**L'outil existe déjà. Cherche-le avant d'en écrire un.** Avant de produire quoi que
+ce soit (visuel, export, script), lister ce que le site fait déjà et s'en servir. Ne
+JAMAIS créer un nouveau rendu quand une route, un composant ou un script couvre le
+besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
+
+- **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
+  `?share=`), carré 1000x1000, publique, serveur dev lancé. C'est **le** visuel de
+  deck. Rendu à plat paysage 2258x1518 = `generateDeckImage` de
+  `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
+- **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
+  `content/tweets/README.md`.
+
+**Ne pas deviner un format, un nom ou un chemin : vérifier dans le code ou demander.**
+Une supposition non vérifiée coûte plus cher que la question. Si la vérification est
+impossible, le dire et s'arrêter — ne pas livrer une approximation.
+
 # Intégrité des données decklists — RÈGLE ABSOLUE
 
 **N'invente JAMAIS une decklist, un deck, un résultat ou des cartes.** Si la donnée

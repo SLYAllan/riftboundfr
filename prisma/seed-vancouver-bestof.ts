@@ -1788,7 +1788,7 @@ Voici le meilleur deck de chaque légende jouée à Vancouver : pour chaque lég
 
     const deck = await prisma.deck.create({
       data: {
-        title: `${d.legend} — Best of Vancouver`,
+        title: `${d.legend} · Best of Vancouver`,
         slug,
         legendId: legendCard?.riftboundId ?? d.legend,
         legendName: d.legend,

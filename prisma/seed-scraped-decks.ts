@@ -122,7 +122,7 @@ async function main() {
         const deck = await prisma.deck.create({
           data: {
             slug,
-            title: `${legendName} — ${tournamentCtx}`,
+            title: `${legendName} · ${tournamentCtx}`,
             legendId,
             legendName,
             playerName,
