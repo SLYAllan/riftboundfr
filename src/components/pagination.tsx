@@ -36,10 +36,11 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
   }
 
   return (
-    <nav className="flex items-center justify-center gap-1">
+    <nav aria-label="Pagination" className="flex items-center justify-center gap-1">
       {currentPage > 1 && (
         <Link
           href={getPageUrl(currentPage - 1)}
+          aria-label="Page précédente"
           className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
         >
           <ChevronLeft size={16} />
@@ -55,7 +56,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
             className={cn(
               "flex h-9 min-w-[36px] items-center justify-center rounded-lg text-sm font-medium",
               p === currentPage
-                ? "bg-arcane text-white"
+                ? "bg-arcane text-canvas"
                 : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
             )}
           >
@@ -66,6 +67,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
       {currentPage < totalPages && (
         <Link
           href={getPageUrl(currentPage + 1)}
+          aria-label="Page suivante"
           className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
         >
           <ChevronRight size={16} />

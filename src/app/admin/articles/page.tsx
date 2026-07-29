@@ -18,7 +18,7 @@ export default async function AdminArticlesPage() {
         </h1>
         <Link
           href="/admin/articles/new"
-          className="px-4 py-2 rounded-lg bg-arcane text-white font-semibold hover:bg-arcane-dark transition-colors text-sm"
+          className="px-4 py-2 rounded-lg bg-arcane text-canvas font-semibold hover:bg-arcane-light transition-colors text-sm"
         >
           Nouvel article
         </Link>

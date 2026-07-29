@@ -171,11 +171,11 @@ export function BinderExplorer({
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
           <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder="Rechercher une carte…"
-            className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-sm focus:border-arcane focus:outline-none" />
+            className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-sm focus:border-arcane" />
           <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
             {([["all", "Toutes"], ["owned", "Possédées"], ["missing", "Manquantes"], ["wishlist", "Wishlist"]] as [Owned, string][]).map(([v, l]) => (
               <button key={v} onClick={() => { setOwned(v); setPage(1); }}
-                className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${owned === v ? "bg-arcane text-white" : "text-ink-secondary hover:text-ink"}`}>{l}</button>
+                className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${owned === v ? "bg-arcane text-canvas" : "text-ink-secondary hover:text-ink"}`}>{l}</button>
             ))}
           </div>
           <FilterPill label="Tri" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
@@ -267,7 +267,7 @@ export function BinderExplorer({
                 >
                   <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
                     <CardImage src={c.imageUrl} alt={c.name} size="sm" />
-                    {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-white shadow">×{qty}</span>}
+                    {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-canvas shadow">×{qty}</span>}
                     <button onClick={() => toggleWish(c.id)} aria-label="Wishlist"
                       className={`absolute left-1 top-1 rounded-full p-1 ${wished ? "bg-pink-500/90 text-white" : "bg-black/40 text-white/70 opacity-0 group-hover:opacity-100"}`}>
                       <Heart size={12} fill={wished ? "currentColor" : "none"} />
@@ -276,7 +276,7 @@ export function BinderExplorer({
                 </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">
                   <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30">−</button>
-                  <span className={`min-w-4 text-center text-sm ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
+                  <span className={`min-w-4 text-center text-sm tabular-nums ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
                   <button onClick={() => setQuantity(c.id, qty + 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink">+</button>
                 </div>
               </div>
@@ -304,7 +304,7 @@ function FilterPill({ label, value, onChange, children }: {
   return (
     <div className={`relative flex h-9 items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 ${active ? "border-arcane/50" : "border-hairline"}`}>
       <span className="text-[10px] font-bold uppercase tracking-wide text-ink-muted">{label}</span>
-      <select value={value} onChange={onChange} className="cursor-pointer appearance-none bg-transparent text-sm text-ink focus:outline-none">
+      <select value={value} onChange={onChange} className="cursor-pointer appearance-none bg-transparent text-sm text-ink">
         {children}
       </select>
       <ChevronDown size={14} className="pointer-events-none absolute right-2 text-ink-muted" />

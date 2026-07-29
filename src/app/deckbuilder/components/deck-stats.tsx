@@ -91,7 +91,7 @@ function TypeDistribution({ entries }: { entries: DeckEntry[] }) {
             <span className="text-[11px] text-ink-secondary w-16 shrink-0">{type}</span>
             <div className="flex-1 h-3 bg-surface-raised rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-300"
+                className="h-full rounded-full transition-colors duration-300"
                 style={{
                   width: `${(count / total) * 100}%`,
                   backgroundColor: typeColors[type] ?? "#64748b",
@@ -131,7 +131,7 @@ function DomainDistribution({ entries }: { entries: DeckEntry[] }) {
             </span>
             <div className="flex-1 h-3 bg-surface-raised rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-300"
+                className="h-full rounded-full transition-colors duration-300"
                 style={{
                   width: `${(count / total) * 100}%`,
                   backgroundColor: DOMAIN_COLORS[domain] ?? "#64748b",
@@ -159,7 +159,7 @@ export function DeckStats({ mainDeck }: DeckStatsProps) {
         <div className="flex items-center gap-1.5">
           <ChevronDown size={13} className={cn("text-ink-muted transition-transform", !open && "-rotate-90")} />
           <BarChart3 size={13} className="text-ink-muted" />
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Statistiques</h4>
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Statistiques</p>
         </div>
       </button>
       {open && (

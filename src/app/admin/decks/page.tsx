@@ -351,11 +351,12 @@ export default async function AdminDecksPage({ searchParams }: Props) {
 function Header({ tabs, activeTab }: { tabs: { key: Tab; label: string; count: number }[]; activeTab: Tab }) {
   return (
     <div className="flex items-center justify-between gap-4 flex-wrap">
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <h1 className="text-3xl font-bold text-ink" style={{ fontFamily: "var(--font-rubik)" }}>
           Decks
         </h1>
-        <div className="flex items-center gap-1 rounded-lg bg-surface-raised p-1">
+        {/* flex-wrap : les onglets avec leur compteur dépassaient de 20px à 390px. */}
+        <div className="flex flex-wrap items-center gap-1 rounded-lg bg-surface-raised p-1">
           {tabs.map((t) => (
             <Link
               key={t.key}
@@ -363,7 +364,7 @@ function Header({ tabs, activeTab }: { tabs: { key: Tab; label: string; count: n
               className={cn(
                 "px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5",
                 activeTab === t.key
-                  ? "bg-arcane text-white"
+                  ? "bg-arcane text-canvas"
                   : "text-ink-secondary hover:text-ink",
               )}
             >
@@ -380,7 +381,7 @@ function Header({ tabs, activeTab }: { tabs: { key: Tab; label: string; count: n
       </div>
       <Link
         href="/admin/decks/import"
-        className="flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:brightness-110"
+        className="flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110"
       >
         Importer un deck
       </Link>

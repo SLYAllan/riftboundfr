@@ -407,7 +407,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
       <article className="mt-6">
         <div className="flex items-center gap-2 text-xs">
-          <span className="font-semibold uppercase tracking-wider text-violet">{article.category}</span>
+          <span className="font-semibold uppercase tracking-wider text-violet-light">{article.category}</span>
           <span className="text-ink-muted">Par Allan</span>
           {article.publishedAt && <span className="text-ink-muted">{formatDate(article.publishedAt)}</span>}
         </div>

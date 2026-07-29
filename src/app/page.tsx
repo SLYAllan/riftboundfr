@@ -297,7 +297,7 @@ export default async function HomePage() {
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Newspaper size={18} className="text-violet" /> Derniers articles
+                <Newspaper size={18} className="text-violet-light" /> Derniers articles
               </h2>
               <Link href="/articles" className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
                 Tous <ArrowRight size={14} />
@@ -317,7 +317,7 @@ export default async function HomePage() {
                       )}
                     </div>
                     <div className="min-w-0">
-                      <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-violet">
+                      <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-violet-light">
                         {categoryLabels[a.category] ?? a.category}
                         {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt)}</span>}
                       </div>
@@ -350,7 +350,7 @@ export default async function HomePage() {
                   <div className="mt-1 text-[11px] uppercase tracking-wider text-ink-muted">Piltover Archive</div>
                 </div>
               </div>
-              <Link href="/collection" className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-arcane/90">
+              <Link href="/collection" className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/90">
                 Gérer ma collection <ArrowRight size={15} />
               </Link>
             </div>

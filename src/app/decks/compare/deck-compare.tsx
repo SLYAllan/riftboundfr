@@ -75,7 +75,7 @@ function StatBar({ label, valueA, valueB, color }: { label: string; valueA: numb
           <div className="h-full rounded-r" style={{ width: `${(valueB / max) * 100}%`, backgroundColor: color, opacity: 0.4 }} />
         </div>
       </div>
-      <span className="w-10 font-mono text-violet">{valueB}</span>
+      <span className="w-10 font-mono text-violet-light">{valueB}</span>
       <span className="w-20 text-ink-muted truncate">{label}</span>
     </div>
   );
@@ -112,7 +112,7 @@ function DeckStats({ cards, label, color }: { cards: DecklistCard[]; label: stri
         </div>
         <div className="flex flex-wrap gap-1.5">
           {Object.entries(domainCounts).sort((a, b) => b[1] - a[1]).map(([domain, count]) => (
-            <span key={domain} className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-semibold" style={{ color: DOMAIN_COLORS[domain], backgroundColor: `${DOMAIN_COLORS[domain]}15` }}>
+            <span key={domain} className="inline-flex items-center gap-1 rounded bg-surface-raised px-1.5 py-0.5 text-[10px] font-semibold" style={{ color: DOMAIN_COLORS[domain] }}>
               {DOMAIN_LABELS_FR[domain] ?? domain} {count}
             </span>
           ))}
@@ -187,8 +187,9 @@ export function DeckCompare({ initialA, initialB }: Props) {
       {/* Input */}
       <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-3 items-end">
         <div>
-          <label className="block text-xs text-ink-muted mb-1">Deck A</label>
+          <label htmlFor="deck-code-a" className="block text-xs text-ink-muted mb-1">Deck A</label>
           <input
+            id="deck-code-a"
             value={codeA}
             onChange={(e) => setCodeA(e.target.value)}
             placeholder="Code binaire du deck A"
@@ -196,19 +197,20 @@ export function DeckCompare({ initialA, initialB }: Props) {
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
         </div>
-        <button onClick={handleCompare} className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:bg-arcane-light transition-colors">
+        <button onClick={handleCompare} className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane-light transition-colors">
           <ArrowLeftRight size={16} className="inline mr-1" />
           Comparer
         </button>
         <div>
-          <label className="block text-xs text-ink-muted mb-1">Deck B</label>
+          <label htmlFor="deck-code-b" className="block text-xs text-ink-muted mb-1">Deck B</label>
           <input
+            id="deck-code-b"
             value={codeB}
             onChange={(e) => setCodeB(e.target.value)}
             placeholder="Code binaire du deck B"
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
-          {deckB && <div className="mt-1 text-xs text-violet">{displayLegendName(deckB.legend)}</div>}
+          {deckB && <div className="mt-1 text-xs text-violet-light">{displayLegendName(deckB.legend)}</div>}
         </div>
       </div>
 
@@ -228,7 +230,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             <span className="inline-flex items-center gap-1.5 rounded-full bg-arcane/10 px-3 py-1 text-xs font-semibold text-arcane">
               <Plus size={12} /> {stats.onlyA} uniques A
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet/10 px-3 py-1 text-xs font-semibold text-violet">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet/10 px-3 py-1 text-xs font-semibold text-violet-light">
               <Plus size={12} /> {stats.onlyB} uniques B
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400">
@@ -238,10 +240,10 @@ export function DeckCompare({ initialA, initialB }: Props) {
 
           {/* View toggle */}
           <div className="flex gap-2">
-            <button onClick={() => setView("diff")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "diff" ? "bg-arcane text-white" : "bg-surface text-ink-muted hover:text-ink")}>
+            <button onClick={() => setView("diff")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "diff" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>
               Vue diff
             </button>
-            <button onClick={() => setView("side-by-side")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "side-by-side" ? "bg-arcane text-white" : "bg-surface text-ink-muted hover:text-ink")}>
+            <button onClick={() => setView("side-by-side")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "side-by-side" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>
               Côte à côte
             </button>
           </div>
@@ -262,7 +264,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             </div>
             <div className="flex justify-between mt-2 text-[10px] text-ink-muted">
               <span className="text-arcane font-semibold">Deck A</span>
-              <span className="text-violet font-semibold">Deck B</span>
+              <span className="text-violet-light font-semibold">Deck B</span>
             </div>
           </div>
 
@@ -272,7 +274,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
               <DeckStats cards={deckA.cards} label={`A - ${displayLegendName(deckA.legend)}`} color="text-arcane" />
             </div>
             <div className="rounded-xl border border-hairline bg-surface p-4">
-              <DeckStats cards={deckB.cards} label={`B - ${displayLegendName(deckB.legend)}`} color="text-violet" />
+              <DeckStats cards={deckB.cards} label={`B - ${displayLegendName(deckB.legend)}`} color="text-violet-light" />
             </div>
           </div>
 
@@ -322,7 +324,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
                               ) : (
                                 <Plus size={10} className="text-emerald-400" />
                               )}
-                              <span className={cn("w-6 text-center rounded py-0.5", d.qtyB > 0 ? "bg-violet/10 text-violet font-bold" : "text-ink-muted")}>
+                              <span className={cn("w-6 text-center rounded py-0.5", d.qtyB > 0 ? "bg-violet/10 text-violet-light font-bold" : "text-ink-muted")}>
                                 {d.qtyB || "-"}
                               </span>
                             </div>
@@ -341,7 +343,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             <div className="grid grid-cols-2 gap-4">
               {[deckA, deckB].map((deck, idx) => (
                 <div key={idx} className="rounded-xl border border-hairline bg-surface overflow-hidden">
-                  <div className={cn("px-4 py-2 text-sm font-bold border-b border-hairline", idx === 0 ? "text-arcane" : "text-violet")}>
+                  <div className={cn("px-4 py-2 text-sm font-bold border-b border-hairline", idx === 0 ? "text-arcane" : "text-violet-light")}>
                     {displayLegendName(deck.legend)}
                   </div>
                   <div className="p-3 space-y-4">
@@ -363,7 +365,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
                                     <CardImage src={c.artUrl} alt={c.name} size="sm" />
                                   </div>
                                   {c.quantity > 1 && (
-                                    <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-arcane text-[9px] font-bold text-white">
+                                    <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-arcane text-[9px] font-bold text-canvas">
                                       {c.quantity}
                                     </span>
                                   )}

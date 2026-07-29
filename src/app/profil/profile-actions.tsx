@@ -58,7 +58,7 @@ export function ProfileActions({ userId, username, riotGameName, riotTagLine }: 
           value={newUsername}
           onChange={(e) => setNewUsername(e.target.value)}
           maxLength={30}
-          className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink focus:border-arcane focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink focus:border-arcane"
         />
       </div>
       <div className="grid grid-cols-2 gap-2">
@@ -69,7 +69,7 @@ export function ProfileActions({ userId, username, riotGameName, riotTagLine }: 
             value={newRiotName}
             onChange={(e) => setNewRiotName(e.target.value)}
             placeholder="GameName"
-            className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink placeholder:text-ink-disabled focus:border-arcane focus:outline-none"
+            className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
           />
         </div>
         <div>
@@ -80,7 +80,7 @@ export function ProfileActions({ userId, username, riotGameName, riotTagLine }: 
             onChange={(e) => setNewRiotTag(e.target.value)}
             placeholder="TAG"
             maxLength={5}
-            className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink placeholder:text-ink-disabled focus:border-arcane focus:outline-none"
+            className="mt-1 w-full rounded-lg border border-hairline bg-surface-raised px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
           />
         </div>
       </div>
@@ -88,7 +88,7 @@ export function ProfileActions({ userId, username, riotGameName, riotTagLine }: 
         <button
           onClick={save}
           disabled={saving}
-          className="flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-sm font-medium text-white hover:bg-arcane-light transition-colors disabled:opacity-50"
+          className="flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-sm font-medium text-canvas hover:bg-arcane-light transition-colors disabled:opacity-50"
         >
           <Check size={14} /> {saving ? "..." : "Enregistrer"}
         </button>

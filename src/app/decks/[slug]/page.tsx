@@ -176,8 +176,8 @@ export default async function DeckDetailPage({ params }: PageProps) {
           )}
           <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs text-ink-secondary">{deck.format}</span>
           <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-            setTag === "Unleashed" ? "bg-arcane text-white"
-              : setTag === "Spiritforged" ? "bg-emerald-500 text-white"
+            setTag === "Unleashed" ? "bg-arcane text-canvas"
+              : setTag === "Spiritforged" ? "bg-emerald-500 text-canvas"
               : setTag === "Origins" ? "bg-amber-500 text-canvas"
               : "bg-surface-raised text-ink-secondary"
           }`}>
@@ -195,8 +195,8 @@ export default async function DeckDetailPage({ params }: PageProps) {
           {deck.tournamentTier && (
             <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
               deck.tournamentTier === "P" ? "bg-gold text-canvas"
-                : deck.tournamentTier === "S" ? "bg-arcane text-white"
-                : deck.tournamentTier === "A" ? "bg-violet text-white"
+                : deck.tournamentTier === "S" ? "bg-arcane text-canvas"
+                : deck.tournamentTier === "A" ? "bg-violet-dark text-white"
                 : "bg-surface-raised text-ink-secondary"
             }`}>
               {deck.tournamentTier} Tier
@@ -264,7 +264,9 @@ export default async function DeckDetailPage({ params }: PageProps) {
               <Link
                 key={rd.id}
                 href={`/decks/${rd.slug}`}
-                className="rounded-card border border-hairline bg-surface px-4 py-3 transition-colors hover:bg-surface-raised/50"
+                // min-w-0 : sans lui, une cellule de grille garde la largeur de son
+                // texte le plus long, truncate ne s'applique pas et la page déborde.
+                className="min-w-0 rounded-card border border-hairline bg-surface px-4 py-3 transition-colors hover:bg-surface-raised/50"
               >
                 <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{rd.title}</div>
                 <div className="mt-1 truncate text-xs text-ink-muted">

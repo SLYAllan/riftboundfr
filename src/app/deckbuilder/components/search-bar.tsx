@@ -12,7 +12,7 @@ interface SearchBarProps {
 }
 
 const TOKEN_COLORS: Record<string, string> = {
-  type: "bg-violet/20 text-violet border-violet/30",
+  type: "bg-violet/20 text-violet-light border-violet/30",
   domain: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
   set: "bg-amber-500/20 text-amber-400 border-amber-500/30",
   energy: "bg-arcane/20 text-arcane border-arcane/30",
@@ -102,7 +102,8 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
           value={parsed.tokens.length > 0 ? parsed.freeText : value}
           onChange={handleChange}
           placeholder={parsed.tokens.length > 0 ? "Ajouter un filtre..." : "Rechercher... (ex: unit fury energy:3)"}
-          className="flex-1 min-w-[120px] h-7 bg-transparent text-sm text-ink placeholder:text-ink-muted focus:outline-none"
+          aria-label="Rechercher une carte"
+          className="flex-1 min-w-[120px] h-7 bg-transparent text-sm text-ink placeholder:text-ink-muted"
         />
 
         {(value || parsed.tokens.length > 0) && (

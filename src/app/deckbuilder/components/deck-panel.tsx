@@ -92,12 +92,12 @@ function DeckCardTile({
         </div>
       )}
 
-      <span className="absolute -top-1.5 -right-1.5 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-arcane text-[11px] font-bold text-white shadow-md">
+      <span className="absolute -top-1.5 -right-1.5 z-10 flex h-6 w-6 items-center justify-center rounded-full bg-arcane text-[11px] font-bold text-canvas shadow-md">
         {entry.quantity}
       </span>
 
       {/* Contrôles en bas de vignette, au survol (l'art reste visible) */}
-      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1 opacity-0 translate-y-1 pointer-events-none transition-all duration-150 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1 opacity-0 translate-y-1 pointer-events-none transition duration-150 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
         {onQtyChange && (
           <>
             <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label="Retirer une copie">
@@ -177,7 +177,7 @@ function CollapsibleSection({
       >
         <div className="flex items-center gap-1.5">
           <ChevronDown size={13} className={cn("text-ink-muted transition-transform", !open && "-rotate-90")} />
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{label}</h4>
+          <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{label}</p>
         </div>
         <span className={cn(
           "text-xs font-bold tabular-nums",
@@ -191,7 +191,7 @@ function CollapsibleSection({
   );
 }
 
-const EMPTY_HINT = <div className="px-2 py-1.5 text-xs italic text-ink-disabled">Vide</div>;
+const EMPTY_HINT = <div className="px-2 py-1.5 text-xs italic text-ink-muted">Vide</div>;
 
 export function DeckPanelV2({
   deck, onRemoveCard, onUpdateQuantity, onMoveCard, onApplyRunes, onSectionClick,
@@ -247,20 +247,20 @@ export function DeckPanelV2({
       {/* Header with counters */}
       <div className="px-3 pt-3 pb-2 border-b border-hairline">
         <div className="flex items-center justify-between">
-          <h3 className="text-base font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Deck</h3>
+          <h2 className="text-base font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Deck</h2>
           <div className="flex items-center gap-2 text-[10px] font-medium tabular-nums">
             <span className={cn(mainTotal >= 40 ? "text-success" : "text-ink-muted")}>{mainTotal}/40</span>
-            <span className="text-ink-disabled">&middot;</span>
+            <span className="text-ink-muted">&middot;</span>
             <span className={cn(runeTotal === 12 ? "text-success" : runeTotal > 12 ? "text-error" : "text-ink-muted")}>{runeTotal}/12</span>
-            <span className="text-ink-disabled">&middot;</span>
+            <span className="text-ink-muted">&middot;</span>
             <span className={cn(bfTotal === 3 ? "text-success" : bfTotal > 3 ? "text-error" : "text-ink-muted")}>{bfTotal}/3</span>
           </div>
         </div>
         {legendDomains.length > 0 && (
           <div className="mt-1 flex gap-1">
             {legendDomains.map((d) => (
-              <span key={d} className="rounded-full px-1.5 py-0.5 text-[10px] font-semibold"
-                style={{ color: DOMAIN_COLORS[d], backgroundColor: `${DOMAIN_COLORS[d]}15` }}>
+              <span key={d} className="rounded-full bg-surface-raised px-1.5 py-0.5 text-[10px] font-semibold"
+                style={{ color: DOMAIN_COLORS[d] }}>
                 {DOMAIN_LABELS_FR[d] ?? d}
               </span>
             ))}
@@ -275,7 +275,7 @@ export function DeckPanelV2({
             <LegendTile entry={deck.legend} onRemove={() => onRemoveCard("legend", deck.legend!.cardId)} {...hover} />
           </div>
         ) : (
-          <div className="px-2 py-1.5 text-xs italic text-ink-disabled">Cliquez sur une légende pour commencer</div>
+          <div className="px-2 py-1.5 text-xs italic text-ink-muted">Cliquez sur une légende pour commencer</div>
         )}
       </CollapsibleSection>
 

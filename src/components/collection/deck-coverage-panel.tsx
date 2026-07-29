@@ -84,16 +84,16 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
           ) : missing === 0 ? (
             <span className="text-sm font-medium text-emerald-400">Deck complet ✓</span>
           ) : missing != null ? (
-            <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">Il te manque {missing} carte(s)</button>
+            <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">Il te manque {missing} carte{missing > 1 ? "s" : ""}</button>
           ) : null}
           {open && coverage && coverage.totals.missing > 0 && (
             <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
               <button onClick={() => setMode("grid")} aria-label="Vue cartes"
-                className={`flex h-6 w-6 items-center justify-center rounded-md ${mode === "grid" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"}`}>
+                className={`flex h-6 w-6 items-center justify-center rounded-md ${mode === "grid" ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"}`}>
                 <LayoutGrid size={13} />
               </button>
               <button onClick={() => setMode("list")} aria-label="Vue liste"
-                className={`flex h-6 w-6 items-center justify-center rounded-md ${mode === "list" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"}`}>
+                className={`flex h-6 w-6 items-center justify-center rounded-md ${mode === "list" ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"}`}>
                 <List size={13} />
               </button>
             </div>
@@ -135,7 +135,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
                     {Array.from({ length: shown }).map((_, i) => (
                       <div
                         key={i}
-                        className="absolute top-0 overflow-hidden rounded-game-card transition-all duration-200 group-hover:ring-2 group-hover:ring-arcane/70"
+                        className="absolute top-0 overflow-hidden rounded-game-card transition duration-200 group-hover:ring-2 group-hover:ring-arcane/70"
                         style={{ left: i * OFFSET, width: W, zIndex: i }}
                       >
                         <CardImage src={e.imageUrl ?? null} alt={e.name} size="sm" />
@@ -159,7 +159,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
         <div className="mt-3">
           <div className="h-2 overflow-hidden rounded bg-surface-raised">
             <div
-              className="h-2 rounded bg-arcane transition-all"
+              className="h-2 rounded bg-arcane transition-colors"
               style={{ width: `${coverage.totals.completionPct}%` }}
             />
           </div>

@@ -45,14 +45,14 @@ const CATEGORY_COLORS: Record<GlossaryCategory, string> = {
 };
 
 const CATEGORY_ACTIVE: Record<GlossaryCategory, string> = {
-  "Mécaniques": "bg-violet text-white",
-  "Types de cartes": "bg-arcane text-white",
+  "Mécaniques": "bg-violet-dark text-white",
+  "Types de cartes": "bg-arcane text-canvas",
   "Phases de jeu": "bg-gold text-canvas",
   "Zones de jeu": "bg-domain-calm text-canvas",
-  "Actions": "bg-domain-fury text-white",
-  "Timing": "bg-domain-chaos text-white",
-  "Ressources": "bg-domain-body text-white",
-  "Formats & Règles": "bg-ink-muted text-white",
+  "Actions": "bg-domain-fury text-canvas",
+  "Timing": "bg-violet-dark text-white",
+  "Ressources": "bg-domain-body text-canvas",
+  "Formats & Règles": "bg-ink-muted text-canvas",
 };
 
 function slugify(term: string): string {
@@ -106,7 +106,7 @@ function CardTooltip({ item, card }: { item: GlossaryTerm; card?: CardInfo }) {
     >
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-arcane" />
       Ex&nbsp;: <span className="text-arcane">{card.name}</span>
-      <span className="text-ink-disabled">({card.type})</span>
+      <span className="text-ink-muted">({card.type})</span>
       {hovered && card.imageUrl && (
         <div
           ref={popRef}
@@ -173,12 +173,12 @@ function TermCard({
       <CardTooltip item={item} card={card} />
       {item.related && item.related.length > 0 && (
         <div className="mt-2.5 flex flex-wrap items-center gap-1.5 text-xs">
-          <span className="text-ink-disabled">Voir aussi&nbsp;:</span>
+          <span className="text-ink-muted">Voir aussi&nbsp;:</span>
           {item.related.map((rel) => (
             <button
               key={rel}
               onClick={() => onNavigate(rel)}
-              className="rounded-md bg-surface-raised px-1.5 py-0.5 text-arcane transition-colors hover:bg-arcane/15 hover:text-arcane-light"
+              className="rounded-md bg-surface-raised px-1.5 py-1 text-arcane transition-colors hover:bg-arcane/15 hover:text-arcane-light"
             >
               {rel}
             </button>
@@ -330,7 +330,9 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Rechercher un terme, un mot-clé, une mécanique..."
-          className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-12 text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none focus:ring-2 focus:ring-arcane-glow"
+
+          aria-label="Rechercher dans le glossaire"
+          className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-12 text-ink placeholder:text-ink-muted focus:border-arcane focus:ring-2 focus:ring-arcane-glow"
         />
         {search && (
           <button
@@ -433,13 +435,13 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
             <section key={letter} id={`letter-${letter}`} className="scroll-mt-24">
               <div className="sticky top-16 z-10 mb-3 flex items-center gap-3 bg-canvas/95 py-2 backdrop-blur-sm">
                 <span
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-arcane text-lg font-bold text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-arcane text-lg font-bold text-canvas"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {letter}
                 </span>
                 <div className="h-px flex-1 bg-hairline" />
-                <span className="text-xs text-ink-disabled">
+                <span className="text-xs text-ink-muted">
                   {letterGroups[letter].length} terme{letterGroups[letter].length > 1 ? "s" : ""}
                 </span>
               </div>

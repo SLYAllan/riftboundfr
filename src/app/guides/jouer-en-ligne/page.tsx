@@ -41,7 +41,7 @@ const platforms = [
   {
     name: "RiftAtlas",
     url: "https://riftatlas.com",
-    color: "#8b5cf6",
+    color: "#a78bfa",
     description: "Simulateur de parties Riftbound avec gestion complète des règles. Idéal pour tester des decks et s'entraîner en solo ou contre des amis.",
     steps: [
       "Allez sur riftatlas.com et créez un compte (gratuit)",
@@ -111,7 +111,7 @@ export default function JouerEnLignePage() {
               {platform.steps.map((step, i) => (
                 <li key={i} className="flex gap-3">
                   <span
-                    className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+                    className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-canvas"
                     style={{ backgroundColor: platform.color }}
                   >
                     {i + 1}
@@ -153,7 +153,7 @@ export default function JouerEnLignePage() {
             </ul>
           </div>
           <div className="rounded-lg border border-violet/20 bg-violet/5 p-4">
-            <h3 className="font-semibold text-violet" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            <h3 className="font-semibold text-violet-light" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               RiftAtlas
             </h3>
             <ul className="mt-2 space-y-1 text-sm text-ink-secondary">

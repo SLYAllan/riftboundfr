@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { cn, displayLegendName } from "@/lib/utils";
+import { TIER_BANNER, TIER_TEXT_CLASS } from "@/lib/tier-colors";
 
 interface Legend {
   riftboundId: string;
@@ -35,13 +36,8 @@ interface TierListData {
 
 const TIERS = ["S", "A", "B", "C", "D"] as const;
 
-const TIER_COLORS: Record<string, string> = {
-  S: "bg-amber-500",
-  A: "bg-red-500",
-  B: "bg-violet-500",
-  C: "bg-sky-500",
-  D: "bg-gray-500",
-};
+// Les couleurs viennent de la source partagée : l'éditeur montrait S en ambre alors
+// que le site le montre en rouge, et l'accueil/tier-list encore autrement.
 
 const SET_OPTIONS = [
   { value: "Global", label: "Globale (toutes les légendes)" },
@@ -228,7 +224,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
             className={cn(
               "px-4 py-2 rounded-lg text-sm font-semibold transition-colors",
               activeId === tl.id
-                ? "bg-arcane text-white"
+                ? "bg-arcane text-canvas"
                 : "bg-surface border border-hairline text-ink-secondary hover:text-ink",
             )}
           >
@@ -255,7 +251,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                 <label className="block text-xs text-ink-muted mb-1">
                   Titre
                 </label>
-                <input
+                <input aria-label="Titre"
                   type="text"
                   value={active.title}
                   onChange={(e) =>
@@ -266,7 +262,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
               </div>
               <div>
                 <label className="block text-xs text-ink-muted mb-1">Set</label>
-                <select
+                <select aria-label="Set"
                   value={active.setContext ?? "Global"}
                   onChange={(e) =>
                     updateActive((tl) => ({
@@ -330,8 +326,9 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                 >
                   <div
                     className={cn(
-                      "flex w-16 shrink-0 items-center justify-center text-white text-2xl font-black",
-                      TIER_COLORS[tier],
+                      "flex w-16 shrink-0 items-center justify-center text-2xl font-black",
+                      TIER_BANNER[tier]?.bg,
+                      TIER_BANNER[tier]?.text,
                     )}
                     style={{ fontFamily: "var(--font-rubik)" }}
                   >
@@ -363,7 +360,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                           </div>
                           <button
                             onClick={() => removeEntry(entry.legendId)}
-                            className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full bg-red-500 text-white text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                            className="absolute -top-1.5 -right-1.5 h-5 w-5 rounded-full bg-red-500 text-canvas text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                             title="Retirer"
                           >
                             &times;
@@ -374,8 +371,8 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                                 key={t}
                                 onClick={() => moveEntry(entry.legendId, t)}
                                 className={cn(
-                                  "h-4 w-5 rounded-sm text-[8px] font-bold text-white flex items-center justify-center shadow",
-                                  TIER_COLORS[t],
+                                  "h-6 w-6 rounded-sm bg-surface-raised text-[10px] font-bold flex items-center justify-center shadow ring-1 ring-hairline",
+                                  TIER_TEXT_CLASS[t],
                                 )}
                                 title={`Vers ${t}`}
                               >
@@ -399,9 +396,9 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
 
           {/* Available legends */}
           <div className="p-4 rounded-xl bg-surface border border-hairline">
-            <h3 className="text-sm font-semibold text-ink mb-3">
+            <h2 className="text-sm font-semibold text-ink mb-3">
               Légendes disponibles ({availableLegends.length})
-            </h3>
+            </h2>
             {availableLegends.length > 0 ? (
               <div className="flex flex-wrap gap-3">
                 {availableLegends.map((legend) => {
@@ -414,7 +411,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                           setAssigningLegend(isOpen ? null : legend.riftboundId)
                         }
                         className={cn(
-                          "rounded-lg transition-all hover:scale-105",
+                          "rounded-lg transition hover:scale-105",
                           isOpen && "ring-2 ring-arcane scale-105",
                         )}
                         title={legend.name}
@@ -438,8 +435,8 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
                               key={t}
                               onClick={() => addToTier(legend.riftboundId, t)}
                               className={cn(
-                                "h-7 w-7 rounded text-xs font-bold text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform",
-                                TIER_COLORS[t],
+                                "h-7 w-7 rounded bg-surface-raised text-xs font-bold flex items-center justify-center shadow-lg ring-1 ring-hairline hover:scale-110 transition-transform",
+                                TIER_TEXT_CLASS[t],
                               )}
                             >
                               {t}
@@ -463,7 +460,7 @@ export function TierListEditor({ initialTierLists, allLegends, idAliases = {} }:
             <button
               onClick={handleSave}
               disabled={saving}
-              className="px-6 py-2.5 rounded-lg bg-arcane text-white font-semibold text-sm hover:bg-arcane-light transition-colors disabled:opacity-50"
+              className="px-6 py-2.5 rounded-lg bg-arcane text-canvas font-semibold text-sm hover:bg-arcane-light transition-colors disabled:opacity-50"
             >
               {saving ? "Sauvegarde..." : "Sauvegarder"}
             </button>

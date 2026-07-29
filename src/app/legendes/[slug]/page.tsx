@@ -352,11 +352,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
       {domains.map((d) => (
         <span
           key={d}
-          className="inline-flex items-center gap-1 rounded px-2 py-0.5 font-semibold"
-          style={{
-            backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20`,
-            color: DOMAIN_COLORS[d] ?? "#6b7280",
-          }}
+          className="inline-flex items-center gap-1 rounded bg-surface-raised px-2 py-0.5 font-semibold"
+          style={{ color: DOMAIN_COLORS[d] ?? "#6b7280" }}
         >
           {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3.5 w-3.5" />}
           {DOMAIN_LABELS_FR[d] ?? d}
@@ -366,7 +363,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         <span className="rounded bg-gold px-2 py-0.5 font-semibold text-canvas">{tierLabel}</span>
       )}
       {fiche.set && (
-        <span className="rounded bg-violet px-2 py-0.5 font-semibold text-white">{fiche.set}</span>
+        <span className="rounded bg-violet-dark px-2 py-0.5 font-semibold text-white">{fiche.set}</span>
       )}
       {fiche.difficulty && (
         <span className="rounded bg-surface-raised px-2 py-0.5 text-ink-muted">
@@ -625,7 +622,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                           {champName}
                         </span>
                         {info?.usage && (
-                          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet">
+                          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet-light">
                             {info.usage}
                           </span>
                         )}
@@ -663,7 +660,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         <div className="flex flex-wrap gap-3">
           <Link
             href={decksHref}
-            className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90"
           >
             Voir tous les decks de {name}
           </Link>

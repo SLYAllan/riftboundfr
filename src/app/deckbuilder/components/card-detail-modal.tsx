@@ -34,16 +34,12 @@ export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
           <div className="flex-1 space-y-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-sm font-semibold text-ink-secondary">{card.supertype ? `${card.supertype} ` : ""}{card.type}</span>
-              <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-violet">{card.rarity}</span>
+              <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-violet-light">{card.rarity}</span>
               {card.domains.map((d) => (
                 <span
                   key={d}
-                  className="inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-bold"
-                  style={{
-                    backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20`,
-                    color: DOMAIN_COLORS[d] ?? "#6b7280",
-                    borderColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}40`,
-                  }}
+                  className="inline-flex items-center gap-1 rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold"
+                  style={{ color: DOMAIN_COLORS[d] ?? "#6b7280" }}
                 >
                   {DOMAIN_LABELS_FR[d] ?? d}
                 </span>
@@ -75,7 +71,7 @@ export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
                 {card.might != null && (
                   <div className="rounded-lg bg-surface-raised p-3 text-center">
                     <div className="text-xs uppercase tracking-wider text-ink-muted font-semibold">Puissance</div>
-                    <div className="text-3xl font-bold text-violet" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.might}</div>
+                    <div className="text-3xl font-bold text-violet-light" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.might}</div>
                   </div>
                 )}
               </div>

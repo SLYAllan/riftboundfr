@@ -54,7 +54,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 glass border-b border-hairline">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logorbfr.png" alt="Riftbound France" width={96} height={32} className="h-8 w-auto" priority />
+          <Image src="/logorbfr.png" alt="Riftbound France" width={224} height={112} className="h-8 w-auto" priority />
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">
@@ -117,7 +117,9 @@ export function Navbar() {
           className="text-ink-secondary md:hidden"
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={mobileOpen}
-          aria-controls="mobile-menu"
+          // Pas d'aria-controls : le panneau n'existe dans le DOM que lorsqu'il est
+          // ouvert, la référence pointait donc dans le vide sur toutes les pages.
+          // aria-expanded + le panneau juste après le bouton suffisent.
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

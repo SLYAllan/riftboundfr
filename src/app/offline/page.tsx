@@ -40,7 +40,7 @@ export default function OfflinePage() {
       <button
         type="button"
         onClick={() => window.location.reload()}
-        className="rounded-xl bg-arcane px-6 py-3 font-semibold text-white transition-colors hover:bg-arcane-dark"
+        className="rounded-xl bg-arcane px-6 py-3 font-semibold text-canvas transition-colors hover:bg-arcane-light"
       >
         {"Réessayer"}
       </button>

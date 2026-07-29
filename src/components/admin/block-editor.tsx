@@ -96,7 +96,7 @@ function TextBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { t
           value={block.content}
           onChange={(e) => onChange({ ...block, content: e.target.value })}
           rows={6}
-          className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-sm focus:outline-none focus:border-arcane resize-y"
+          className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-sm focus:border-arcane resize-y"
           placeholder="Contenu markdown..."
         />
       )}
@@ -133,22 +133,22 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
         <div>
           <label className="block text-xs text-ink-muted mb-1">Nom du deck</label>
           <input type="text" value={block.deckName} onChange={(e) => onChange({ ...block, deckName: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Legende</label>
           <input type="text" value={block.legendName} onChange={(e) => onChange({ ...block, legendName: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Joueur</label>
           <input type="text" value={block.playerName ?? ""} onChange={(e) => onChange({ ...block, playerName: e.target.value || undefined })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Contexte</label>
           <input type="text" value={block.context ?? ""} onChange={(e) => onChange({ ...block, context: e.target.value || undefined })}
-            placeholder="Top 4 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            placeholder="Top 4 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div>
@@ -204,7 +204,7 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
             value={block.deckCode}
             onChange={(e) => handleDeckCodeChange(e.target.value)}
             rows={8}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:outline-none focus:border-arcane resize-y"
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:border-arcane resize-y"
             placeholder={"Legend:\n1 Master Yi - Wuju Bladesman\nChampion:\n1 Master Yi - Tempered\nMainDeck:\n3 Wuju Style\n3 Meditate\n...\nRunes:\n1 Rune Name\nBattlefields:\n1 Battlefield Name"}
           />
         )}
@@ -221,34 +221,34 @@ function SponsorBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, 
         <div>
           <label className="block text-xs text-ink-muted mb-1">Titre</label>
           <input type="text" value={block.title} onChange={(e) => onChange({ ...block, title: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Texte CTA</label>
           <input type="text" value={block.ctaText} onChange={(e) => onChange({ ...block, ctaText: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">URL destination</label>
           <input type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Image URL</label>
           <input type="url" value={block.imageUrl ?? ""} onChange={(e) => onChange({ ...block, imageUrl: e.target.value || undefined })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div>
         <label className="block text-xs text-ink-muted mb-1">Description</label>
         <input type="text" value={block.description ?? ""} onChange={(e) => onChange({ ...block, description: e.target.value || undefined })}
-          className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+          className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
       </div>
       <div className="flex items-center gap-6">
         <div>
           <label className="block text-xs text-ink-muted mb-1">Style</label>
           <select value={block.style} onChange={(e) => onChange({ ...block, style: e.target.value as "standard" | "highlight" | "minimal" })}
-            className="px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane">
+            className="px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane">
             <option value="standard">Standard</option>
             <option value="highlight">Highlight (or)</option>
             <option value="minimal">Minimal</option>
@@ -270,24 +270,24 @@ function ImageBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
         <div>
           <label className="block text-xs text-ink-muted mb-1">URL de l&apos;image</label>
           <input type="url" value={block.src} onChange={(e) => onChange({ ...block, src: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Texte alternatif</label>
           <input type="text" value={block.alt} onChange={(e) => onChange({ ...block, alt: e.target.value })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
           <input type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Largeur</label>
           <select value={block.width ?? "full"} onChange={(e) => onChange({ ...block, width: e.target.value === "narrow" ? "narrow" : undefined })}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane">
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane">
             <option value="full">Pleine largeur</option>
             <option value="narrow">Centree (portrait/poster)</option>
           </select>
@@ -301,7 +301,7 @@ function ImageBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
 }
 
 function TweetBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "tweet" }>; onChange: (b: ArticleBlock) => void }) {
-  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane";
+  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane";
   return (
     <div className="space-y-3">
       <div className="grid grid-cols-3 gap-3">
@@ -371,7 +371,7 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
           <div ref={gripRef} className="cursor-grab active:cursor-grabbing text-ink-muted hover:text-ink">
             <GripVertical size={16} />
           </div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-violet">{blockTypeLabels[block.type]}</span>
+          <span className="text-xs font-semibold uppercase tracking-wider text-violet-light">{blockTypeLabels[block.type]}</span>
         </div>
         <div className="flex items-center gap-1">
           <button onClick={onDuplicate} className="p-1 text-ink-muted hover:text-arcane" title="Dupliquer"><Copy size={16} /></button>
@@ -394,7 +394,7 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
 function BracketBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "bracket" }>; onChange: (b: ArticleBlock) => void }) {
   const [raw, setRaw] = useState(() => JSON.stringify(block.rounds, null, 2));
   const [err, setErr] = useState<string | null>(null);
-  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane";
+  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane";
   return (
     <div className="space-y-2">
       <label className="text-xs text-ink-muted">Titre</label>
@@ -420,7 +420,7 @@ function BracketBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, 
           }
         }}
         rows={12}
-        className="w-full px-3 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:outline-none focus:border-arcane resize-y"
+        className="w-full px-3 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:border-arcane resize-y"
       />
       {err && <p className="text-xs text-red-400">JSON invalide : {err}</p>}
       <p className="text-[11px] text-ink-muted">
@@ -494,7 +494,7 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
     return (
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-1 rounded-full border border-dashed border-hairline-strong px-4 py-1.5 text-xs text-ink-muted hover:text-violet hover:border-violet transition-colors"
+        className="flex items-center gap-1 rounded-full border border-dashed border-hairline-strong px-4 py-1.5 text-xs text-ink-muted hover:text-violet-light hover:border-violet transition-colors"
       >
         <Upload size={14} /> Import en masse
       </button>
@@ -504,7 +504,7 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
   return (
     <div className="rounded-xl border border-violet/30 bg-violet/5 p-4 space-y-3">
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-wider text-violet">Import en masse</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-violet-light">Import en masse</p>
         <button onClick={() => setOpen(false)} className="text-xs text-ink-muted hover:text-ink">&times; Fermer</button>
       </div>
       <p className="text-[11px] text-ink-muted">
@@ -514,19 +514,19 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
         <div>
           <label className="block text-xs text-ink-muted mb-1">Joueur (tous)</label>
           <input type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)}
-            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-violet" />
+            className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-violet" />
         </div>
         <div>
           <label className="block text-xs text-ink-muted mb-1">Contexte (tous)</label>
           <input type="text" value={context} onChange={(e) => setContext(e.target.value)}
-            placeholder="Top 8 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-violet" />
+            placeholder="Top 8 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-violet" />
         </div>
       </div>
       <textarea
         value={raw}
         onChange={(e) => setRaw(e.target.value)}
         rows={12}
-        className="w-full px-3 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:outline-none focus:border-violet resize-y"
+        className="w-full px-3 py-2 rounded-lg bg-surface-raised border border-hairline text-ink font-mono text-xs focus:border-violet resize-y"
         placeholder={"Legend:\n1 Master Yi - Wuju Bladesman\nMainDeck:\n3 Wuju Style\n...\n---\nLegend:\n1 Ahri - Foxfire\nMainDeck:\n3 Orb of Deception\n..."}
       />
       <div className="flex items-center justify-between">
@@ -536,7 +536,7 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
         <button
           onClick={handleImport}
           disabled={previewCount === 0}
-          className="px-4 py-1.5 rounded-lg bg-violet text-white text-sm font-semibold hover:bg-violet-light transition-colors disabled:opacity-50"
+          className="px-4 py-1.5 rounded-lg bg-violet-dark text-white text-sm font-semibold hover:bg-violet-light transition-colors disabled:opacity-50"
         >
           Importer {previewCount} bloc{previewCount > 1 ? "s" : ""}
         </button>
@@ -668,13 +668,13 @@ export function BlockEditor({ article }: BlockEditorProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm text-ink-secondary mb-1">Titre</label>
-          <input type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:outline-none focus:border-arcane" required />
+          <input aria-label="Titre" type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
+            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" required />
         </div>
         <div>
           <label className="block text-sm text-ink-secondary mb-1">Categorie</label>
-          <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:outline-none focus:border-arcane">
+          <select aria-label="Categorie" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
+            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane">
             <option value="actualite">Actualite</option>
             <option value="guide">Guide</option>
             <option value="meta">Meta</option>
@@ -686,20 +686,20 @@ export function BlockEditor({ article }: BlockEditorProps) {
 
       <div>
         <label className="block text-sm text-ink-secondary mb-1">Extrait</label>
-        <textarea value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} rows={2}
-          className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:outline-none focus:border-arcane" />
+        <textarea aria-label="Extrait" value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} rows={2}
+          className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm text-ink-secondary mb-1">Image de couverture (URL)</label>
-          <input type="url" value={form.coverImage} onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:outline-none focus:border-arcane" />
+          <input aria-label="Image de couverture (URL)" type="url" value={form.coverImage} onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
         </div>
         <div>
           <label className="block text-sm text-ink-secondary mb-1">Tags (separes par des virgules)</label>
-          <input type="text" value={form.tags} onChange={(e) => setForm({ ...form, tags: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:outline-none focus:border-arcane" />
+          <input aria-label="Tags (separes par des virgules)" type="text" value={form.tags} onChange={(e) => setForm({ ...form, tags: e.target.value })}
+            className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
         </div>
       </div>
 
@@ -710,22 +710,22 @@ export function BlockEditor({ article }: BlockEditorProps) {
             <div>
               <label className="block text-xs text-ink-muted mb-1">Nom du tournoi</label>
               <input type="text" value={form.tournamentName} onChange={(e) => setForm({ ...form, tournamentName: e.target.value })}
-                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
               <label className="block text-xs text-ink-muted mb-1">Date</label>
               <input type="date" value={form.tournamentDate} onChange={(e) => setForm({ ...form, tournamentDate: e.target.value })}
-                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
               <label className="block text-xs text-ink-muted mb-1">Lieu</label>
               <input type="text" value={form.tournamentLocation} onChange={(e) => setForm({ ...form, tournamentLocation: e.target.value })}
-                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
               <label className="block text-xs text-ink-muted mb-1">Nombre de joueurs</label>
               <input type="number" value={form.tournamentPlayerCount} onChange={(e) => setForm({ ...form, tournamentPlayerCount: e.target.value })}
-                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:outline-none focus:border-arcane" />
+                className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
           </div>
         </div>
@@ -781,7 +781,7 @@ export function BlockEditor({ article }: BlockEditorProps) {
           Mettre en avant
         </label>
         <button type="submit" disabled={loading}
-          className="ml-auto px-6 py-3 rounded-lg bg-arcane text-white font-semibold hover:bg-arcane-dark transition-colors disabled:opacity-50">
+          className="ml-auto px-6 py-3 rounded-lg bg-arcane text-canvas font-semibold hover:bg-arcane-light transition-colors disabled:opacity-50">
           {loading ? "Enregistrement..." : article ? "Mettre a jour" : "Creer l'article"}
         </button>
       </div>

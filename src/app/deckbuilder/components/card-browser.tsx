@@ -88,7 +88,7 @@ function CardTile({
           alt={card.name}
           onClick={onAddMain}
           className={cn(
-            "w-full rounded-lg cursor-pointer transition-all duration-150",
+            "w-full rounded-lg cursor-pointer transition-colors duration-150",
             isBattlefield ? "aspect-[5/7] object-contain bg-surface-raised" : "aspect-[5/7] object-cover",
             atMax ? "brightness-50 saturate-50" : inDeck > 0 ? "ring-2 ring-arcane brightness-95" : "group-hover:brightness-110",
           )}
@@ -109,20 +109,20 @@ function CardTile({
       )}
 
       {inDeck > 0 && (
-        <span className="absolute -right-1 -top-1 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-arcane text-[10px] font-bold text-white shadow-md">
+        <span className="absolute -right-1 -top-1 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-arcane text-[10px] font-bold text-canvas shadow-md">
           {inDeck}
         </span>
       )}
 
       <div className={cn(
-        "absolute bottom-1 inset-x-1 z-20 flex gap-1 transition-all duration-150",
+        "absolute bottom-1 inset-x-1 z-20 flex gap-1 transition-colors duration-150",
         "opacity-0 translate-y-1 pointer-events-none",
         "group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto",
       )}>
         {!atMax && (
           <button
             onClick={(e) => { e.stopPropagation(); onAddMain(); }}
-            className="flex-1 rounded-md bg-arcane/90 py-1.5 text-xs font-semibold text-white hover:bg-arcane transition-colors flex items-center justify-center gap-1 shadow-lg"
+            className="flex-1 rounded-md bg-arcane/90 py-1.5 text-xs font-semibold text-canvas hover:bg-arcane transition-colors flex items-center justify-center gap-1 shadow-lg"
           >
             <Plus size={12} /> {addLabel}
           </button>
@@ -137,6 +137,7 @@ function CardTile({
         )}
         <button
           onClick={(e) => { e.stopPropagation(); onDetail(); }}
+          aria-label="Voir le détail de la carte"
           className="rounded-md bg-surface/90 backdrop-blur-sm px-2 py-1.5 text-xs text-ink hover:bg-surface transition-colors shadow-lg border border-hairline"
         >
           <Eye size={13} />
@@ -279,7 +280,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
     setPowerLow(0); setPowerHigh(4); setMightLow(0); setMightHigh(10);
   }
 
-  const selectClass = "h-8 rounded-lg border border-hairline-strong bg-surface px-2.5 text-xs text-ink focus:border-arcane focus:outline-none cursor-pointer";
+  const selectClass = "h-8 rounded-lg border border-hairline-strong bg-surface px-2.5 text-xs text-ink focus:border-arcane cursor-pointer";
   const showSliderToggle = activeTab === "main" || activeTab === "rune";
 
   return (
@@ -298,7 +299,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
                   key={d}
                   onClick={() => toggleDomain(d)}
                   className={cn(
-                    "rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-all",
+                    "rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
                     active
                       ? "border-current shadow-sm"
                       : isLegendDomain
@@ -318,7 +319,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
           <div className="h-5 w-px bg-hairline" />
 
-          <select className={selectClass} value={sortBy} onChange={(e) => setSortBy(e.target.value as SortKey)}>
+          <select aria-label="Trier les cartes" className={selectClass} value={sortBy} onChange={(e) => setSortBy(e.target.value as SortKey)}>
             {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
 

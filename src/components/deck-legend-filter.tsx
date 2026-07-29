@@ -38,9 +38,10 @@ export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
       <select
         value={current}
         onChange={(e) => handleChange(e.target.value)}
-        className="h-9 w-full sm:w-64 rounded-lg border border-hairline-strong bg-surface pl-9 pr-3 text-sm text-ink focus:border-arcane focus:outline-none cursor-pointer appearance-none"
+        aria-label="Filtrer par Légende"
+        className="h-9 w-full sm:w-64 rounded-lg border border-hairline-strong bg-surface pl-9 pr-3 text-sm text-ink focus:border-arcane cursor-pointer appearance-none"
       >
-        <option value="">Toutes les legendes</option>
+        <option value="">Toutes les Légendes</option>
         {uniqueLegends.map((name) => (
           <option key={name} value={name}>{name}</option>
         ))}

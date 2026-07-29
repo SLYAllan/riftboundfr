@@ -1,21 +1,14 @@
+// Ces couleurs servent surtout de texte sur fond sombre : Furie, Esprit, Chaos et
+// Sorcellerie ont été éclaircies pour tenir 4,5:1 (teinte et saturation inchangées).
+// Doivent rester identiques aux tokens --color-domain-* de globals.css.
 export const DOMAIN_COLORS: Record<string, string> = {
-  Fury: "#ef4444",
+  Fury: "#ff5c58",
   Calm: "#22c55e",
-  Mind: "#3b82f6",
+  Mind: "#4b93ff",
   Body: "#f97316",
-  Chaos: "#8b5cf6",
+  Chaos: "#a77bff",
   Order: "#eab308",
-  Sorcery: "#ec4899",
-};
-
-export const DOMAIN_BG: Record<string, string> = {
-  Fury: "bg-[#ef4444]/15 text-[#ef4444] border-[#ef4444]/30",
-  Calm: "bg-[#22c55e]/15 text-[#22c55e] border-[#22c55e]/30",
-  Mind: "bg-[#3b82f6]/15 text-[#3b82f6] border-[#3b82f6]/30",
-  Body: "bg-[#f97316]/15 text-[#f97316] border-[#f97316]/30",
-  Chaos: "bg-[#8b5cf6]/15 text-[#8b5cf6] border-[#8b5cf6]/30",
-  Order: "bg-[#eab308]/15 text-[#eab308] border-[#eab308]/30",
-  Sorcery: "bg-[#ec4899]/15 text-[#ec4899] border-[#ec4899]/30",
+  Sorcery: "#fa55a5",
 };
 
 export const DOMAIN_LABELS_FR: Record<string, string> = {

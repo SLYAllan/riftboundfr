@@ -31,7 +31,7 @@ export function SyncButton() {
       <button
         onClick={handleSync}
         disabled={loading}
-        className="px-6 py-3 rounded-lg bg-arcane text-white font-semibold hover:bg-arcane-dark transition-colors disabled:opacity-50"
+        className="px-6 py-3 rounded-lg bg-arcane text-canvas font-semibold hover:bg-arcane-light transition-colors disabled:opacity-50"
       >
         {loading ? "Synchronisation en cours..." : "Synchroniser les cartes"}
       </button>

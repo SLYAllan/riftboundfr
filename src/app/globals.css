@@ -35,12 +35,13 @@
   --color-violet-light: #a78bfa;
   --color-violet-dark: #7c3aed;
 
-  /* Tiers */
+  /* Tiers. Les valeurs servent de texte sur surface-raised (#2c2c34) : la
+     luminosité est réglée pour tenir 4,5:1, teinte et saturation inchangées. */
   --color-tier-s: #f59e0b;
-  --color-tier-a: #ef4444;
-  --color-tier-b: #8b5cf6;
+  --color-tier-a: #ff5c58;
+  --color-tier-b: #a77bff;
   --color-tier-c: #0ea5e9;
-  --color-tier-d: #6b7280;
+  --color-tier-d: #949aa6;
   --color-tier-s-bg: rgba(245, 158, 11, 0.08);
   --color-tier-a-bg: rgba(239, 68, 68, 0.08);
   --color-tier-b-bg: rgba(139, 92, 246, 0.08);
@@ -51,14 +52,16 @@
   --color-rarity-common: #9ca3af;
   --color-rarity-uncommon: #4ade80;
   --color-rarity-rare: #0ea5e9;
-  --color-rarity-epic: #8b5cf6;
+  --color-rarity-epic: #a77bff;
   --color-rarity-champion: #f59e0b;
-  --color-rarity-legend: #ef4444;
+  --color-rarity-legend: #ff5c58;
 
-  /* Ink (Text) */
+  /* Ink (Text). ink-muted porte des dates, des compteurs et des libellés à 10-12px :
+     il lui faut 4,5:1 sur le fond le plus clair où il apparaît (surface-raised).
+     ink-disabled ne sert qu'aux contrôles réellement inactifs. */
   --color-ink: #f1f5f9;
   --color-ink-secondary: #94a3b8;
-  --color-ink-muted: #64748b;
+  --color-ink-muted: #8596ae;
   --color-ink-disabled: #475569;
 
   /* Hairline (Borders) */
@@ -74,7 +77,9 @@
 
   /* Radii */
   --radius-card: 12px;
-  --radius-game-card: 8px;
+  /* Angles droits sur l'art de carte : choix d'Allan. Un seul point à changer,
+     les 10 usages de rounded-game-card suivent. */
+  --radius-game-card: 0px;
   --radius-feature: 24px;
 
   /* Spacing */
@@ -82,14 +87,14 @@
   --spacing-section-lg: 96px;
   --spacing-hero: 120px;
 
-  /* Domain Colors */
-  --color-domain-fury: #ef4444;
+  /* Domain Colors. À garder synchronisées avec DOMAIN_COLORS de src/lib/domains.ts. */
+  --color-domain-fury: #ff5c58;
   --color-domain-calm: #22c55e;
-  --color-domain-mind: #3b82f6;
+  --color-domain-mind: #4b93ff;
   --color-domain-body: #f97316;
-  --color-domain-chaos: #8b5cf6;
+  --color-domain-chaos: #a77bff;
   --color-domain-order: #eab308;
-  --color-domain-sorcery: #ec4899;
+  --color-domain-sorcery: #fa55a5;
 
   /* Animations */
   --animate-fade-in: fade-in 0.5s ease-out;
@@ -162,11 +167,31 @@
     @apply bg-canvas text-ink antialiased;
     font-family: var(--font-jakarta), sans-serif;
   }
+  /* Coupure des lignes : titres équilibrés, paragraphes sans mot orphelin en
+     dernière ligne. Les blocs longs sont ignorés par le navigateur, c'est voulu. */
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p, li, figcaption, blockquote {
+    text-wrap: pretty;
+  }
   /* Baseline focus clavier visible (a11y) : couvre tous les éléments interactifs
      qui n'ont pas de focus custom. La navigation souris n'est pas affectée. */
   :focus-visible {
     outline: 2px solid var(--color-arcane);
     outline-offset: 2px;
+  }
+}
+
+/* Respecte « réduire les animations » du système. Hors @layer et en !important
+   pour passer devant les utilitaires Tailwind (transition-*, animate-*). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
   }
 }
 

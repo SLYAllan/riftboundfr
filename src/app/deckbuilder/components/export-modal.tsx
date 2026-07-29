@@ -149,7 +149,7 @@ export function ExportModal({
                   <input readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink font-mono" />
                   <button
                     onClick={() => copyToClipboard(shareUrl, "url")}
-                    className="flex items-center gap-1 rounded-lg bg-arcane px-3 py-1 text-xs font-semibold text-white hover:brightness-110"
+                    className="flex items-center gap-1 rounded-lg bg-arcane px-3 py-1 text-xs font-semibold text-canvas hover:brightness-110"
                   >
                     {copied === "url" ? <Check size={13} /> : <Copy size={13} />}
                     {copied === "url" ? "Copié !" : "Copier"}
@@ -208,7 +208,7 @@ export function ExportModal({
                             className={cn(
                               "rounded-full px-2.5 py-1 text-[11px] font-semibold transition-colors",
                               selectedTags.includes(tag.value)
-                                ? "bg-violet text-white"
+                                ? "bg-violet-dark text-white"
                                 : "bg-surface-raised text-ink-muted hover:text-ink hover:bg-surface-raised/80 border border-hairline",
                             )}
                           >
@@ -244,7 +244,7 @@ export function ExportModal({
                     <button
                       onClick={handlePublish}
                       disabled={!canPublish}
-                      className="w-full rounded-lg bg-violet px-3 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition-all"
+                      className="w-full rounded-lg bg-violet-dark px-3 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition"
                     >
                       {publishing ? "Publication..." : unlisted ? "Créer le lien" : "Publier le deck"}
                     </button>
@@ -255,8 +255,8 @@ export function ExportModal({
 
                     {publishedUrl && (
                       <div className="flex items-center gap-2">
-                        <input readOnly value={publishedUrl} className="flex-1 h-8 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-xs text-violet font-mono" />
-                        <button onClick={() => copyToClipboard(publishedUrl!, "pub")} className="text-[10px] text-violet hover:underline">
+                        <input readOnly value={publishedUrl} className="flex-1 h-8 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-xs text-violet-light font-mono" />
+                        <button onClick={() => copyToClipboard(publishedUrl!, "pub")} className="text-[10px] text-violet-light hover:underline">
                           {copied === "pub" ? "Copié !" : "Copier"}
                         </button>
                       </div>
@@ -302,7 +302,7 @@ export function ExportModal({
               <button
                 onClick={handleExportImage}
                 disabled={imageState === "loading"}
-                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50 transition-all"
+                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-canvas hover:brightness-110 disabled:opacity-50 transition"
               >
                 <Image size={15} className="inline mr-1.5" />
                 {imageState === "loading" ? "Génération..." : "Générer l'image"}

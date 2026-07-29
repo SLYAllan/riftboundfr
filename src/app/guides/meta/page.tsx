@@ -131,7 +131,7 @@ function TierRow({ e }: { e: Entry }) {
   return (
     <div className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
       <span
-        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black text-white ${s.bg}`}
+        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black text-canvas ${s.bg}`}
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
         {e.tier}
@@ -276,13 +276,13 @@ export default function GuideMetaPage() {
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
             Voir la Tier List complète
           </Link>
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
             Guide de deckbuilding
           </Link>
-          <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             Résultats de tournois
           </Link>
         </div>

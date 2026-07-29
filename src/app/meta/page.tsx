@@ -9,17 +9,45 @@ import { MetaFilters } from "./meta-filters";
 import type { Metadata } from "next";
 
 // Cache RUNTIME (pas build) : les decks publiés ne changent qu'aux seeds → 5 min suffit.
-// Invalidable via revalidateTag("meta"). Évite de recharger tous les decks à chaque crawl.
+// Invalidable via revalidateTag("meta").
+//
+// On agrège DANS la fonction cachée. La version précédente mettait en cache les
+// ~21 000 lignes brutes, soit 3,9 Mo : au-delà de 2 Mo Next refuse d'écrire et lève
+// un unhandledRejection, donc le cache ne servait jamais et la page rejouait toute
+// la requête à chaque visite. L'agrégat fait quelques kilo-octets.
 const getMetaData = unstable_cache(
-  () =>
-    Promise.all([
+  async () => {
+    const [decks, tierList] = await Promise.all([
       prisma.deck.findMany({
         where: { published: true },
-        select: { legendName: true, tournamentContext: true, format: true, createdAt: true },
+        select: { legendName: true, tournamentContext: true, format: true },
       }),
       prisma.tierList.findFirst({ where: { current: true, published: true }, include: { entries: true } }),
-    ]),
-  ["meta-snapshot-v1"],
+    ]);
+
+    const groupes = new Map<string, { count: number; tournaments: Set<string>; formats: Set<string> }>();
+    for (const d of decks) {
+      let g = groupes.get(d.legendName);
+      if (!g) groupes.set(d.legendName, (g = { count: 0, tournaments: new Set(), formats: new Set() }));
+      g.count++;
+      if (d.tournamentContext) g.tournaments.add(d.tournamentContext);
+      if (d.format) g.formats.add(d.format);
+    }
+
+    return {
+      totalDecks: decks.length,
+      legendes: [...groupes].map(([legendName, g]) => ({
+        legendName,
+        count: g.count,
+        tournaments: [...g.tournaments],
+        formats: [...g.formats],
+      })),
+      allTournaments: [...new Set(decks.map((d) => d.tournamentContext).filter((t): t is string => !!t))].sort(),
+      allFormats: [...new Set(decks.map((d) => d.format).filter(Boolean))].sort(),
+      tierList,
+    };
+  },
+  ["meta-snapshot-v2"],
   { revalidate: 300, tags: ["meta"] },
 );
 
@@ -43,15 +71,16 @@ interface LegendStats {
 }
 
 export default async function MetaSnapshotPage() {
-  let decks: Awaited<ReturnType<typeof getMetaData>>[0] = [];
-  let currentTierList: Awaited<ReturnType<typeof getMetaData>>[1] = null;
+  type MetaData = Awaited<ReturnType<typeof getMetaData>>;
+  let data: MetaData;
   try {
-    [decks, currentTierList] = await getMetaData();
+    data = await getMetaData();
   } catch {
-    [decks, currentTierList] = [[], null];
+    data = { totalDecks: 0, legendes: [], allTournaments: [], allFormats: [], tierList: null };
   }
+  const { totalDecks, legendes, allTournaments, allFormats, tierList: currentTierList } = data;
 
-  if (decks.length === 0) {
+  if (totalDecks === 0) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
         <h1
@@ -81,70 +110,29 @@ export default async function MetaSnapshotPage() {
     }
   }
 
-  // Collect all unique tournaments and formats
-  const allTournaments = [
-    ...new Set(
-      decks
-        .map((d) => d.tournamentContext)
-        .filter((t): t is string => t != null && t.length > 0),
-    ),
-  ].sort();
-
-  const allFormats = [
-    ...new Set(decks.map((d) => d.format).filter((f) => f.length > 0)),
-  ].sort();
-
-  // Group decks by legendName
-  const legendGroups = new Map<
-    string,
-    {
-      count: number;
-      tournaments: Set<string>;
-      formats: Set<string>;
-    }
-  >();
-
-  for (const deck of decks) {
-    const existing = legendGroups.get(deck.legendName);
-    if (existing) {
-      existing.count++;
-      if (deck.tournamentContext) existing.tournaments.add(deck.tournamentContext);
-      existing.formats.add(deck.format);
-    } else {
-      legendGroups.set(deck.legendName, {
-        count: 1,
-        tournaments: new Set(
-          deck.tournamentContext ? [deck.tournamentContext] : [],
-        ),
-        formats: new Set([deck.format]),
-      });
-    }
-  }
-
-  const totalDecks = decks.length;
+  // Tournois, formats et regroupement par légende viennent déjà agrégés du cache.
 
   // Build stats sorted by popularity
-  const legendStats: LegendStats[] = [...legendGroups.entries()]
-    .map(([legendName, data]) => {
-      const tierInfo = tierMap.get(legendName);
+  const legendStats: LegendStats[] = legendes
+    .map((l) => {
+      const tierInfo = tierMap.get(l.legendName);
       return {
-        legendName,
-        shortName: displayLegendName(legendName),
-        iconUrl: getLegendIconUrl(legendName),
-        deckCount: data.count,
-        popularity: Math.round((data.count / totalDecks) * 1000) / 10,
+        legendName: l.legendName,
+        shortName: displayLegendName(l.legendName),
+        iconUrl: getLegendIconUrl(l.legendName),
+        deckCount: l.count,
+        popularity: Math.round((l.count / totalDecks) * 1000) / 10,
         tier: tierInfo?.tier ?? null,
         tierComment: tierInfo?.comment ?? null,
-        tournaments: [...data.tournaments],
-        formats: [...data.formats],
+        tournaments: l.tournaments,
+        formats: l.formats,
       };
     })
     .sort((a, b) => b.deckCount - a.deckCount);
 
-  // Find most recent deck date for "last updated"
-  const latestDate = decks.reduce((latest, d) => {
-    return d.createdAt > latest ? d.createdAt : latest;
-  }, decks[0].createdAt);
+  // Date affichée : celle de la tier list courante. On ne charge plus createdAt sur
+  // les 21 000 decks juste pour prendre le maximum.
+  const latestDate = currentTierList?.updatedAt ?? new Date();
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">

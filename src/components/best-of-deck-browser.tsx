@@ -57,7 +57,9 @@ export function BestOfDeckBrowser({ entries }: { entries: BestOfEntry[] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Rechercher une Légende ou un joueur…"
-            className="w-full rounded-lg border border-hairline-strong bg-surface-raised py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none"
+
+            aria-label="Rechercher une Légende ou un joueur"
+            className="w-full rounded-lg border border-hairline-strong bg-surface-raised py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
           />
         </div>
         <div className="flex items-center justify-between gap-3 sm:justify-start">

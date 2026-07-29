@@ -48,7 +48,7 @@ export function LikeButton({ shareCode, initialLikes, isLoggedIn }: Props) {
       className={cn(
         "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
         liked
-          ? "bg-red-500 text-white hover:opacity-90"
+          ? "bg-red-500 text-canvas hover:opacity-90"
           : isLoggedIn
             ? "bg-surface border border-hairline text-ink-muted hover:text-red-400 hover:border-red-400/30"
             : "bg-surface border border-hairline text-ink-muted opacity-60 cursor-not-allowed",

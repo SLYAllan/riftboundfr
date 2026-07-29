@@ -17,12 +17,14 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div className="min-h-screen flex bg-canvas">
-      <aside className="w-60 bg-surface border-r border-hairline p-6 flex flex-col gap-2">
-        <Link href="/" className="text-lg font-bold text-arcane mb-6" style={{ fontFamily: "var(--font-rubik)" }}>
+    // Colonne sur mobile, deux colonnes à partir de md : la barre latérale figée à
+    // 240px plus p-8 faisait déborder l'écran jusqu'à 722px de large à 390px.
+    <div className="min-h-screen flex flex-col md:flex-row bg-canvas">
+      <aside className="w-full md:w-60 shrink-0 bg-surface border-b md:border-b-0 md:border-r border-hairline p-4 md:p-6 flex flex-row md:flex-col flex-wrap gap-2">
+        <Link href="/" className="w-full text-lg font-bold text-arcane md:mb-6" style={{ fontFamily: "var(--font-rubik)" }}>
           Riftbound France
         </Link>
-        <p className="text-xs text-ink-muted uppercase tracking-wider mb-2">Administration</p>
+        <p className="hidden md:block text-xs text-ink-muted uppercase tracking-wider mb-2">Administration</p>
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -32,13 +34,13 @@ export default async function AdminLayout({ children }: { children: React.ReactN
             {item.label}
           </Link>
         ))}
-        <div className="mt-auto">
-          <Link href="/" className="px-3 py-2 text-ink-muted hover:text-ink text-sm">
+        <div className="md:mt-auto">
+          <Link href="/" className="block px-3 py-2 text-ink-muted hover:text-ink text-sm">
             Retour au site
           </Link>
         </div>
       </aside>
-      <div className="flex-1 p-8">{children}</div>
+      <div className="min-w-0 flex-1 p-4 sm:p-6 md:p-8">{children}</div>
     </div>
   );
 }

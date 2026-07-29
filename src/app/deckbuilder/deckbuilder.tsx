@@ -20,6 +20,7 @@ import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "./lib/export-formats";
 import { generateDeckImage } from "./lib/export-image";
 import { downloadBlob } from "@/lib/download";
+import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import type { RuneSuggestion } from "./lib/rune-calculator";
 import type { CardData, DeckEntry, DeckState, BuilderTab } from "@/types";
 import type { DeckSection } from "@/types";
@@ -566,17 +567,18 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
             type="text"
             value={deckTitle}
             onChange={(e) => setDeckTitle(e.target.value)}
-            className="h-8 w-48 rounded-lg border border-hairline-strong bg-surface px-3 text-sm font-semibold focus:border-arcane focus:outline-none"
+            aria-label="Nom du deck"
+            className="h-8 w-48 rounded-lg border border-hairline-strong bg-surface px-3 text-sm font-semibold focus:border-arcane"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           />
           <div className="hidden sm:flex items-center gap-1">
-            <button onClick={() => setShowExport(true)} disabled={isEmpty} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-violet hover:bg-violet/10 transition-colors disabled:opacity-30">
+            <button onClick={() => setShowExport(true)} disabled={isEmpty} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-violet-light hover:bg-violet/10 transition-colors disabled:opacity-30">
               <Share2 size={13} /> Exporter
             </button>
             <button onClick={() => setShowImport(true)} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-secondary hover:text-ink hover:bg-surface-raised transition-colors">
               <Upload size={13} /> Importer
             </button>
-            <button onClick={clearDeck} disabled={isEmpty} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error hover:bg-error/10 transition-colors disabled:opacity-30">
+            <button onClick={clearDeck} disabled={isEmpty} aria-label="Vider le deck" className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error hover:bg-error/10 transition-colors disabled:opacity-30">
               <X size={13} />
             </button>
           </div>
@@ -625,7 +627,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
 
       {/* Mobile action bar */}
       <div className="shrink-0 flex sm:hidden items-center gap-1 border-b border-hairline px-3 py-1.5 overflow-x-auto">
-        <button onClick={() => setShowExport(true)} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-violet disabled:opacity-30">Exporter</button>
+        <button onClick={() => setShowExport(true)} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-violet-light disabled:opacity-30">Exporter</button>
         <button onClick={() => setShowImport(true)} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-ink-secondary">Importer</button>
         <button onClick={clearDeck} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-ink-muted disabled:opacity-30">Vider</button>
       </div>
@@ -705,11 +707,10 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
 
       {/* Saved decks modal */}
       {showSavedList && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={() => setShowSavedList(false)}>
-          <div className="w-full max-w-md max-h-[70vh] rounded-card border border-hairline bg-surface overflow-hidden" onClick={(e) => e.stopPropagation()}>
+        <SavedDecksModalShell onClose={() => setShowSavedList(false)}>
             <div className="flex items-center justify-between border-b border-hairline p-4">
-              <h3 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks sauvegardés</h3>
-              <button onClick={() => setShowSavedList(false)} className="text-ink-muted hover:text-ink"><X size={18} /></button>
+              <h2 id="saved-decks-title" className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks sauvegardés</h2>
+              <button onClick={() => setShowSavedList(false)} aria-label="Fermer" className="text-ink-muted hover:text-ink"><X size={18} /></button>
             </div>
             <div className="overflow-y-auto p-4 space-y-2">
               {savedDecks.length === 0 ? (
@@ -721,7 +722,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
                       <div className="text-base font-semibold">{s.title}</div>
                       <div className="text-sm text-ink-secondary">{s.legendName ?? "Pas de légende"}</div>
                     </button>
-                    <button onClick={() => handleDeleteSaved(s.id)} className="text-ink-muted hover:text-error p-1">
+                    <button onClick={() => handleDeleteSaved(s.id)} aria-label={`Supprimer ${s.title}`} className="text-ink-muted hover:text-error p-1">
                       <Trash2 size={14} />
                     </button>
                   </div>
@@ -736,8 +737,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
                 <Plus size={14} /> Nouveau deck
               </button>
             </div>
-          </div>
-        </div>
+        </SavedDecksModalShell>
       )}
 
       {/* Import modal */}
@@ -763,6 +763,27 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
         />
       )}
 
+    </div>
+  );
+}
+
+// Enveloppe la modale des decks sauvegardés pour que useDialogA11y (focus, Escape,
+// piège de tabulation) se monte avec elle et pas avec toute la page.
+function SavedDecksModalShell({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
+  const dialogRef = useDialogA11y(onClose);
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
+      <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="saved-decks-title"
+        tabIndex={-1}
+        className="w-full max-w-md max-h-[70vh] rounded-card border border-hairline bg-surface overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
     </div>
   );
 }

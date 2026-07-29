@@ -40,7 +40,7 @@ export function SponsorCard({ title, description, imageUrl, ctaText, url, style,
       target="_blank"
       rel={rel}
       className={cn(
-        "group block rounded-card overflow-hidden transition-all",
+        "group block rounded-card overflow-hidden transition-colors",
         style === "highlight"
           ? "border-2 border-gold/40 bg-gold/5 hover:border-gold/60"
           : "border border-hairline bg-surface-raised hover:border-hairline-accent"
@@ -72,7 +72,7 @@ export function SponsorCard({ title, description, imageUrl, ctaText, url, style,
             "flex-shrink-0 rounded-lg px-4 py-2 text-sm font-semibold transition-colors",
             style === "highlight"
               ? "bg-gold text-canvas hover:bg-gold/90"
-              : "bg-arcane text-white hover:bg-arcane-dark"
+              : "bg-arcane text-canvas hover:bg-arcane-light"
           )}
         >
           {ctaText}

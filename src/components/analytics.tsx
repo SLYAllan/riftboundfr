@@ -77,7 +77,7 @@ export function CookieBanner() {
         <div className="mt-3 flex items-center gap-3">
           <button
             onClick={accept}
-            className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:bg-arcane/90 transition-colors"
+            className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane/90 transition-colors"
           >
             Accepter
           </button>

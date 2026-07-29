@@ -37,6 +37,16 @@ interface PageProps {
   searchParams: Promise<Record<string, string | undefined>>;
 }
 
+// Classes littérales : Tailwind ne génère que ce qu'il voit écrit en toutes lettres,
+// une classe construite (`bg-tier-${x}`) ne sort jamais.
+const TIER_BG: Record<string, string> = {
+  S: "bg-tier-s",
+  A: "bg-tier-a",
+  B: "bg-tier-b",
+  C: "bg-tier-c",
+  D: "bg-tier-d",
+};
+
 const CATEGORIES = [
   { key: "deckbuilder", label: "Créer son deck", href: "/deckbuilder", icon: Hammer, color: "violet" as const, isLink: true },
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, color: "arcane" as const, isLink: false },
@@ -45,22 +55,22 @@ const CATEGORIES = [
 ] as const;
 
 const COLOR_CLASSES = {
-  violet: { base: "bg-violet text-white hover:opacity-90", active: "bg-violet text-white ring-2 ring-violet/40 ring-offset-1 ring-offset-canvas" },
-  arcane: { base: "bg-arcane text-white hover:opacity-90", active: "bg-arcane text-white ring-2 ring-arcane/40 ring-offset-1 ring-offset-canvas" },
-  gold: { base: "bg-gold text-white hover:opacity-90", active: "bg-gold text-white ring-2 ring-gold/40 ring-offset-1 ring-offset-canvas" },
+  violet: { base: "bg-violet-dark text-white hover:opacity-90", active: "bg-violet-dark text-white ring-2 ring-violet/40 ring-offset-1 ring-offset-canvas" },
+  arcane: { base: "bg-arcane text-canvas hover:opacity-90", active: "bg-arcane text-canvas ring-2 ring-arcane/40 ring-offset-1 ring-offset-canvas" },
+  gold: { base: "bg-gold text-canvas hover:opacity-90", active: "bg-gold text-canvas ring-2 ring-gold/40 ring-offset-1 ring-offset-canvas" },
 };
 
 const SET_STYLES: Record<string, { badge: string; active: string }> = {
   Unleashed: {
-    badge: "bg-arcane text-white",
-    active: "bg-arcane text-white",
+    badge: "bg-arcane text-canvas",
+    active: "bg-arcane text-canvas",
   },
   Spiritforged: {
-    badge: "bg-emerald-600 text-white",
-    active: "bg-emerald-500 text-white",
+    badge: "bg-emerald-600 text-canvas",
+    active: "bg-emerald-500 text-canvas",
   },
   Origins: {
-    badge: "bg-amber-600 text-white",
+    badge: "bg-amber-600 text-canvas",
     active: "bg-amber-500 text-canvas",
   },
 };
@@ -180,7 +190,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       </p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
-          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", !cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
+          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
             Tous
           </Link>
           {CATEGORIES.map((c) => {
@@ -188,7 +198,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const isActive = !c.isLink && cat === c.key;
             const colors = COLOR_CLASSES[c.color];
             return (
-              <Link key={c.key} href={c.href} className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all", isActive ? colors.active : colors.base)}>
+              <Link key={c.key} href={c.href} className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", isActive ? colors.active : colors.base)}>
                 <Icon size={15} /> {c.label}
               </Link>
             );
@@ -197,11 +207,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
         {/* Domain filters */}
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all", !domainFilter ? "bg-arcane text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+          <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !domainFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
             Tous domaines
           </Link>
           {DOMAIN_OPTIONS.map((d) => (
-            <Link key={d} href={comLink({ domain: domainFilter === d ? null : d })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all", domainFilter === d ? "bg-arcane text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+            <Link key={d} href={comLink({ domain: domainFilter === d ? null : d })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", domainFilter === d ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               {d}
             </Link>
           ))}
@@ -209,11 +219,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
         {/* Tag filters */}
         <div className="mt-2 flex flex-wrap gap-1.5">
-          <Link href={comLink({ tag: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all", !tagFilter ? "bg-violet text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+          <Link href={comLink({ tag: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !tagFilter ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
             Tous styles
           </Link>
           {TAG_OPTIONS.map((t) => (
-            <Link key={t} href={comLink({ tag: tagFilter === t ? null : t })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all capitalize", tagFilter === t ? "bg-violet text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+            <Link key={t} href={comLink({ tag: tagFilter === t ? null : t })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors capitalize", tagFilter === t ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               {t}
             </Link>
           ))}
@@ -226,13 +236,13 @@ export default async function DecksPage({ searchParams }: PageProps) {
           </Suspense>
           <div className="flex items-center gap-1.5 ml-auto">
             <span className="text-xs text-ink-muted">Tri :</span>
-            <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all", !sortParam ? "bg-arcane text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+            <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               Récent
             </Link>
-            <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-all", sortParam === "popular" ? "bg-red-500 text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+            <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               <Heart size={10} /> Populaire
             </Link>
-            <Link href={comLink({ sort: "views" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-all", sortParam === "views" ? "bg-blue-500 text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+            <Link href={comLink({ sort: "views" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "views" ? "bg-blue-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               <Eye size={10} /> Vues
             </Link>
           </div>
@@ -248,7 +258,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         {communityDecks.length === 0 ? (
           <div className="mt-12 text-center">
             <p className="text-ink-muted">Aucun deck communautaire pour ces filtres.</p>
-            <Link href="/deckbuilder" className="mt-4 inline-flex items-center gap-2 text-sm text-violet hover:underline">
+            <Link href="/deckbuilder" className="mt-4 inline-flex items-center gap-2 text-sm text-violet-light hover:underline">
               <Hammer size={14} /> Soyez le premier à partager un deck !
             </Link>
           </div>
@@ -294,7 +304,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           {deck.tags.length > 0 && (
                             <div className="mt-1 flex flex-wrap gap-1">
                               {deck.tags.map((t) => (
-                                <span key={t} className="rounded-full bg-violet px-1.5 py-0.5 text-[9px] font-semibold text-white capitalize">{t}</span>
+                                <span key={t} className="rounded-full bg-violet-dark px-1.5 py-0.5 text-[9px] font-semibold text-white capitalize">{t}</span>
                               ))}
                             </div>
                           )}
@@ -472,9 +482,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
           defaultValue={search}
           placeholder="Chercher un deck, une Légende, un joueur ou une carte"
           aria-label="Chercher un deck, une Légende, un joueur ou une carte"
-          className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none"
+          className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
         />
-        <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+        <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
           Chercher
         </button>
       </form>
@@ -489,8 +499,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Link
           href="/decks"
           className={cn(
-            "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all",
-            !cat && !setFilter ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink",
+            "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+            !cat && !setFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink",
           )}
         >
           Tous
@@ -504,7 +514,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               key={c.key}
               href={c.href}
               className={cn(
-                "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all",
+                "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
                 isActive ? colors.active : colors.base,
               )}
             >
@@ -521,8 +531,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Link
             href={`/decks${(() => { const q = [!ownedOnly && "owned=1", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
-              ownedOnly ? "bg-emerald-500 text-white" : "bg-surface-raised text-ink-muted hover:text-ink",
+              "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
+              ownedOnly ? "bg-emerald-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
             )}
           >
             <Hammer size={12} /> {ownedOnly ? "Voir tous les decks" : "Decks que je peux jouer avec mes cartes"}
@@ -534,7 +544,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <div className="mt-3 flex flex-wrap gap-2">
           <Link
             href="/decks?cat=bestof"
-            className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+            className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
               cat === "bestof" && !tournamentFilter ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
@@ -547,7 +557,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               <Link
                 key={t.ctx}
                 href={`/decks?cat=bestof&tournament=${encodeURIComponent(t.ctx)}`}
-                className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+                className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
                   isActive ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
                 )}
               >
@@ -562,7 +572,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <div className="mt-3 flex flex-wrap gap-2">
         <Link
           href={cat ? `/decks?cat=${cat}` : "/decks"}
-          className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+          className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
             !setFilter ? "bg-ink/10 text-ink ring-1 ring-ink/20" : "bg-surface-raised text-ink-muted hover:text-ink"
           )}
         >
@@ -572,7 +582,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Link
             key={s}
             href={`/decks?set=${s}${cat ? `&cat=${cat}` : ""}`}
-            className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-all",
+            className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
               setFilter === s ? SET_STYLES[s].active : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
@@ -589,16 +599,16 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <span className="text-xs text-ink-muted">Tri :</span>
           <Link
             href={`/decks${(() => { const q = [cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
-            className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-all",
-              sortParam !== "popular" ? "bg-arcane text-white" : "bg-surface-raised text-ink-muted hover:text-ink"
+            className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+              sortParam !== "popular" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
-            Recent
+            Récents
           </Link>
           <Link
             href={`/decks?${["sort=popular", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&")}`}
-            className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-all",
-              sortParam === "popular" ? "bg-red-500 text-white" : "bg-surface-raised text-ink-muted hover:text-ink"
+            className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+              sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
             <Heart size={10} /> Populaire
@@ -656,8 +666,15 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           <div className="flex items-center gap-2">
                             {deck.tournamentTier && (
                               <span
-                                className="inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-white shadow-sm ring-1 ring-white/25"
-                                style={{ backgroundColor: `var(--color-tier-${deck.tournamentTier.toLowerCase()})` }}
+                                // Classe littérale et pas `var(--color-tier-*)` en style
+                                // inline : avec `@theme inline`, Tailwind n'émet pas ces
+                                // variables, le fond du badge était donc transparent.
+                                // Les tokens sont réglés pour servir de texte sur fond
+                                // sombre, donc en remplissage le libellé passe en encre.
+                                className={cn(
+                                  "inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20",
+                                  TIER_BG[deck.tournamentTier] ?? "bg-ink-muted",
+                                )}
                                 title={`Tier ${deck.tournamentTier}`}
                               >
                                 Tier {deck.tournamentTier}

@@ -302,7 +302,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                 <Link
                   key={a.slug}
                   href={`/articles/${a.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-arcane px-4 py-1.5 text-xs font-semibold text-white hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-arcane px-4 py-1.5 text-xs font-semibold text-canvas hover:opacity-90 transition-opacity"
                 >
                   <BookOpen size={12} />
                   {a.title}
@@ -337,7 +337,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                 <Link
                   key={l.name}
                   href={`/tournois/${slug}?legend=${encodeURIComponent(l.name)}`}
-                  className="group relative h-28 overflow-hidden rounded-card border border-hairline transition-all duration-200 hover:border-hairline-strong hover:shadow-lg hover:shadow-black/20"
+                  className="group relative h-28 overflow-hidden rounded-card border border-hairline transition duration-200 hover:border-hairline-strong hover:shadow-lg hover:shadow-black/20"
                 >
                   {banner ? (
                     <img

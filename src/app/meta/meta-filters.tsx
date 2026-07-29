@@ -16,12 +16,14 @@ interface LegendStats {
   formats: string[];
 }
 
+// Fond neutre sous un texte coloré, jamais un fond de la même teinte : le
+// texte perdait du contraste (3,78 à 4,12:1) sur son propre halo.
 const TIER_STYLES: Record<string, { bg: string; text: string; border: string }> = {
-  S: { bg: "bg-tier-s/20", text: "text-tier-s", border: "border-tier-s/40" },
-  A: { bg: "bg-tier-a/20", text: "text-tier-a", border: "border-tier-a/40" },
-  B: { bg: "bg-tier-b/20", text: "text-tier-b", border: "border-tier-b/40" },
-  C: { bg: "bg-tier-c/20", text: "text-tier-c", border: "border-tier-c/40" },
-  D: { bg: "bg-tier-d/20", text: "text-tier-d", border: "border-tier-d/40" },
+  S: { bg: "bg-surface-raised", text: "text-tier-s", border: "border-hairline" },
+  A: { bg: "bg-surface-raised", text: "text-tier-a", border: "border-hairline" },
+  B: { bg: "bg-surface-raised", text: "text-tier-b", border: "border-hairline" },
+  C: { bg: "bg-surface-raised", text: "text-tier-c", border: "border-hairline" },
+  D: { bg: "bg-surface-raised", text: "text-tier-d", border: "border-hairline" },
 };
 
 interface Props {
@@ -61,7 +63,9 @@ export function MetaFilters({
             <select
               value={selectedTournament}
               onChange={(e) => setSelectedTournament(e.target.value)}
-              className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane focus:outline-none"
+
+              aria-label="Filtrer par tournoi"
+              className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane"
             >
               <option value="all">Tous les tournois</option>
               {allTournaments.map((t) => (
@@ -75,7 +79,9 @@ export function MetaFilters({
             <select
               value={selectedFormat}
               onChange={(e) => setSelectedFormat(e.target.value)}
-              className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane focus:outline-none"
+
+              aria-label="Filtrer par format"
+              className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane"
             >
               <option value="all">Tous les formats</option>
               {allFormats.map((f) => (
@@ -169,7 +175,7 @@ export function MetaFilters({
                   </div>
                   <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-surface-raised">
                     <div
-                      className="h-full rounded-full bg-arcane transition-all"
+                      className="h-full rounded-full bg-arcane transition-colors"
                       style={{ width: `${Math.min(legend.popularity, 100)}%` }}
                     />
                   </div>

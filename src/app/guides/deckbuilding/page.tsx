@@ -103,7 +103,7 @@ export default function GuideDeckbuildingPage() {
           <div className="mt-4 space-y-2">
             {curveGuide.map((c) => (
               <div key={c.range} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: c.color }}>
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-canvas" style={{ backgroundColor: c.color }}>
                   {c.range.split(" ")[0]}
                 </div>
                 <div className="flex-1">
@@ -152,7 +152,7 @@ export default function GuideDeckbuildingPage() {
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {domainSynergies.map((s) => (
               <div key={s.combo} className="rounded-lg border border-hairline bg-surface p-4">
-                <h4 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{s.combo}</h4>
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{s.combo}</h3>
                 <span className="text-xs font-semibold text-arcane">{s.style}</span>
                 <p className="mt-1 text-xs text-ink-secondary">{s.desc}</p>
                 <p className="mt-1 text-xs text-ink-muted">Légendes : {s.ex}</p>
@@ -250,7 +250,7 @@ export default function GuideDeckbuildingPage() {
           <div className="mt-4 space-y-2">
             {mistakes.map((m) => (
               <div key={m.name} className="rounded-lg border border-hairline bg-surface p-3">
-                <h4 className="text-sm font-semibold text-danger" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{m.name}</h4>
+                <h3 className="text-sm font-semibold text-danger" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{m.name}</h3>
                 <p className="mt-0.5 text-xs text-ink-secondary">{m.fix}</p>
               </div>
             ))}
@@ -258,10 +258,10 @@ export default function GuideDeckbuildingPage() {
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             <Hammer size={16} /> Créer un deck
           </Link>
-          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
             Guide du débutant
           </Link>
         </div>

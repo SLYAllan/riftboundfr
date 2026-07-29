@@ -50,7 +50,7 @@ export function CardImage({ src, alt, size = "md", className, priority }: CardIm
         alt={alt}
         width={width}
         height={height}
-        className={cn("rounded-game-card game-card-hover w-full h-auto", className)}
+        className={cn("rounded-game-card game-card-hover w-full h-auto outline outline-1 -outline-offset-1 outline-white/10", className)}
         priority={priority}
         unoptimized
       />
@@ -63,7 +63,7 @@ export function CardImage({ src, alt, size = "md", className, priority }: CardIm
       alt={alt}
       width={width}
       height={height}
-      className={cn("rounded-game-card game-card-hover w-full h-auto", className)}
+      className={cn("rounded-game-card game-card-hover w-full h-auto outline outline-1 -outline-offset-1 outline-white/10", className)}
       priority={priority}
     />
   );

@@ -127,7 +127,7 @@ export default async function CardDetailPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <RarityBadge rarity={card.rarity} />
-            <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-semibold text-violet">{card.setName}</span>
+            <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-semibold text-violet-light">{card.setName}</span>
             {isBanned(card.name) && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-red-400 ring-1 ring-red-500/30">Banni</span>}
             {errata && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-amber-400 ring-1 ring-amber-500/30">Errata</span>}
             <span className="text-sm text-ink-secondary">{card.riftboundId}</span>
@@ -182,7 +182,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                 {card.power !== null && (
                   <div className="rounded-lg bg-surface-raised p-3 text-center">
                     <div className="text-xs text-ink-muted">Power</div>
-                    <div className="text-2xl font-bold text-violet" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.power}</div>
+                    <div className="text-2xl font-bold text-violet-light" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.power}</div>
                   </div>
                 )}
               </div>
@@ -227,7 +227,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                         <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{deck.placement}</span>
                       )}
                       {deck.featured && (
-                        <span className="rounded-full bg-violet px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
+                        <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
                       )}
                     </div>
                     <div className="mt-0.5 flex items-center gap-2 text-sm">

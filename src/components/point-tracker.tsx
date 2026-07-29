@@ -127,9 +127,9 @@ export function PointTracker() {
                 <button
                   key={n}
                   onClick={() => setPlayerCount(n)}
-                  className={`flex-1 rounded-xl py-3 text-lg font-bold transition-all ${
+                  className={`flex-1 rounded-xl py-3 text-lg font-bold transition-colors ${
                     playerCount === n
-                      ? "bg-arcane text-white shadow-lg shadow-arcane/25"
+                      ? "bg-arcane text-canvas shadow-lg shadow-arcane/25"
                       : "bg-surface-raised text-ink-secondary hover:bg-surface-overlay"
                   }`}
                 >
@@ -145,6 +145,7 @@ export function PointTracker() {
             <div className="flex items-center justify-center gap-6">
               <button
                 onClick={() => setMaxPoints((v) => Math.max(0, v - 1))}
+                aria-label="Retirer un point de départ"
                 className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-raised text-ink-secondary hover:bg-surface-overlay transition-colors"
               >
                 <Minus size={20} />
@@ -154,6 +155,7 @@ export function PointTracker() {
               </span>
               <button
                 onClick={() => setMaxPoints((v) => v + 1)}
+                aria-label="Ajouter un point de départ"
                 className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-raised text-ink-secondary hover:bg-surface-overlay transition-colors"
               >
                 <Plus size={20} />
@@ -183,7 +185,8 @@ export function PointTracker() {
                     onChange={(e) =>
                       setPlayers((prev) => prev.map((p, j) => (j === i ? { ...p, name: e.target.value } : p)))
                     }
-                    className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:border-arcane/50"
+                    aria-label={`Nom du joueur ${i + 1}`}
+                    className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50"
                   />
                 </div>
               ))}
@@ -193,7 +196,7 @@ export function PointTracker() {
           {/* Start */}
           <button
             onClick={startGame}
-            className="w-full rounded-xl bg-gold py-4 text-lg font-bold text-canvas transition-all hover:bg-gold-light shadow-lg shadow-gold/25"
+            className="w-full rounded-xl bg-gold py-4 text-lg font-bold text-canvas transition hover:bg-gold-light shadow-lg shadow-gold/25"
             style={{ fontFamily: "var(--font-rubik)" }}
           >
             Lancer la partie
@@ -236,7 +239,7 @@ export function PointTracker() {
               onChange={(e) => setLegendSearch(e.target.value)}
               placeholder="Rechercher une légende..."
               autoFocus
-              className="w-full rounded-lg bg-surface-raised border border-hairline pl-9 pr-3 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:border-arcane/50"
+              className="w-full rounded-lg bg-surface-raised border border-hairline pl-9 pr-3 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50"
             />
           </div>
 
@@ -245,7 +248,7 @@ export function PointTracker() {
               <button
                 key={legend.id}
                 onClick={() => selectLegend(legend)}
-                className="group relative aspect-[3/4] rounded-lg overflow-hidden border border-hairline hover:border-arcane/50 transition-all hover:scale-[1.03]"
+                className="group relative aspect-[3/4] rounded-lg overflow-hidden border border-hairline hover:border-arcane/50 transition hover:scale-[1.03]"
               >
                 {legend.imageUrl ? (
                   <Image src={legend.imageUrl} alt={legend.name} fill className="object-cover object-top" sizes="(max-width: 640px) 33vw, 25vw" />
@@ -368,7 +371,7 @@ export function PointTracker() {
                 <div className="flex items-center gap-6 sm:gap-8">
                   <button
                     onClick={() => changeScore(i, -1)}
-                    className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-surface-raised/80 border border-hairline text-ink-secondary hover:bg-error/20 hover:text-error hover:border-error/30 active:scale-90 transition-all"
+                    className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-surface-raised/80 border border-hairline text-ink-secondary hover:bg-error/20 hover:text-error hover:border-error/30 active:scale-90 transition"
                   >
                     <Minus size={28} />
                   </button>
@@ -388,7 +391,7 @@ export function PointTracker() {
 
                   <button
                     onClick={() => changeScore(i, 1)}
-                    className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-surface-raised/80 border border-hairline text-ink-secondary hover:bg-success/20 hover:text-success hover:border-success/30 active:scale-90 transition-all"
+                    className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-surface-raised/80 border border-hairline text-ink-secondary hover:bg-success/20 hover:text-success hover:border-success/30 active:scale-90 transition"
                   >
                     <Plus size={28} />
                   </button>

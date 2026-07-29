@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DOMAIN_ICONS } from "@/lib/domains";
+import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
@@ -24,7 +24,7 @@ const domains = [
   {
     name: "Fury",
     fr: "Furie",
-    color: "#ef4444",
+    color: DOMAIN_COLORS.Fury,
     philosophy: "Furie, c'est l'attaque pure. Vos unités frappent vite et fort grâce au mot-clé Assaut (bonus en attaque). Idéal pour finir les parties rapidement.",
     strengths: ["Dégâts directs avec des sorts", "Unités prêtes à agir dès leur arrivée (Accélération)", "Conquête rapide des champs de bataille", "Pression constante dès le Tour 1"],
     weaknesses: ["Peu de moyens de défendre", "Peu de pioche de cartes", "S'essouffle si la partie dure", "Vulnérable aux decks qui se préparent tranquillement"],
@@ -39,7 +39,7 @@ const domains = [
   {
     name: "Calm",
     fr: "Calme",
-    color: "#22c55e",
+    color: DOMAIN_COLORS.Calm,
     philosophy: "Calme mise sur la durée. Vos unités se soignent, grandissent au fil des tours et deviennent de plus en plus difficiles à éliminer. La défense est votre meilleure attaque.",
     strengths: ["Soins et récupération", "Sorts jouables en réponse à l'adversaire", "Unités qui gagnent en force au fil du temps", "Embuscade pour surprendre l'adversaire"],
     weaknesses: ["Lent à démarrer", "Vulnérable aux attaques rapides", "Doit tenir un champ de bataille pour être efficace"],
@@ -56,7 +56,7 @@ const domains = [
   {
     name: "Mind",
     fr: "Esprit",
-    color: "#3b82f6",
+    color: DOMAIN_COLORS.Mind,
     philosophy: "Esprit préfère la ruse à la force. Piochez des cartes, posez des équipements puissants et perturbez les plans de l'adversaire avec vos sorts de contrôle.",
     strengths: ["Pioche de cartes (vous avez toujours des options)", "Équipements puissants", "Sorts de contrôle pour neutraliser les menaces", "S'adapte à la stratégie adverse"],
     weaknesses: ["Unités fragiles", "Demande de bien lire le jeu adverse", "Vulnérable aux attaques rapides du Tour 1"],
@@ -70,7 +70,7 @@ const domains = [
   {
     name: "Body",
     fr: "Corps",
-    color: "#f97316",
+    color: DOMAIN_COLORS.Body,
     philosophy: "Corps écrase l'adversaire par la force brute. Vos unités ont les plus hautes statistiques du jeu et dominent les combats grâce à leur Puissance supérieure.",
     strengths: ["Les plus grosses unités du jeu", "Domine les combats directs", "Les unités s'améliorent en permanence", "Le mot-clé Chasse fait gagner de l'XP"],
     weaknesses: ["Peu de sorts ou d'astuces", "Vulnérable aux sorts d'élimination ciblée", "Dépend beaucoup des résultats de combat"],
@@ -89,7 +89,7 @@ const domains = [
   {
     name: "Chaos",
     fr: "Chaos",
-    color: "#8b5cf6",
+    color: DOMAIN_COLORS.Chaos,
     philosophy: "Chaos, c'est le risque et la récompense. Posez des cartes face cachée pour piéger l'adversaire, forcez-le à se défausser et déclenchez des combos explosifs. Imprévisible mais dévastateur.",
     strengths: ["Cartes face cachée pour piéger l'adversaire", "Force l'adversaire à se défausser", "Combos très puissants", "Peut renverser une partie en un tour"],
     weaknesses: ["Résultats variables - parfois ça ne marche pas", "Dépend de combinaisons spécifiques", "Difficile à maîtriser pour les débutants"],
@@ -105,7 +105,7 @@ const domains = [
   {
     name: "Order",
     fr: "Ordre",
-    color: "#eab308",
+    color: DOMAIN_COLORS.Order,
     philosophy: "Ordre construit des stratégies méthodiques et difficiles à perturber. Protégez vos unités, créez des jetons et tirez profit de chaque mort grâce au mot-clé Agonie.",
     strengths: ["Protection des unités alliées", "Création de petites unités (jetons)", "Résistant à la disruption", "Le mot-clé Agonie donne un bonus quand vos unités meurent"],
     weaknesses: ["Chaque jeton est faible individuellement", "Stratégie prévisible pour l'adversaire", "Besoin de temps pour se mettre en place"],
@@ -262,13 +262,13 @@ export default function DomainesGuidePage() {
       </section>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+        <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
           Guide de deckbuilding
         </Link>
-        <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+        <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
           Méta &amp; Tier List
         </Link>
-        <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+        <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
           Tier List actuelle
         </Link>
       </div>

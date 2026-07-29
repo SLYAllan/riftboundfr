@@ -50,7 +50,7 @@ export function CardFilters({ total }: { total: number }) {
   const type = get("type");
 
   const selectClass =
-    "h-9 rounded-lg border border-hairline-strong bg-surface pl-3 pr-8 text-sm text-ink focus:border-arcane focus:outline-none cursor-pointer appearance-none";
+    "h-9 rounded-lg border border-hairline-strong bg-surface pl-3 pr-8 text-sm text-ink focus:border-arcane cursor-pointer appearance-none";
 
   const activeSummary = [
     domain !== "all" && (DOMAIN_LABELS_FR[domain] ?? domain),

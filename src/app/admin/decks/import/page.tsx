@@ -82,12 +82,12 @@ export default function ImportDeckPage() {
     setError(null);
   }
 
-  const inputClass = "w-full h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none";
+  const inputClass = "w-full h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane";
 
   return (
     <div className="max-w-3xl space-y-6">
       <div className="flex items-center gap-3">
-        <Link href="/admin/decks" className="text-ink-muted hover:text-ink">
+        <Link href="/admin/decks" aria-label="Retour aux decks" className="text-ink-muted hover:text-ink">
           <ArrowLeft size={18} />
         </Link>
         <h1 className="text-3xl font-bold text-ink" style={{ fontFamily: "var(--font-rubik)" }}>
@@ -118,7 +118,7 @@ export default function ImportDeckPage() {
             </div>
           )}
           <div className="flex gap-3">
-            <Link href={`/decks/${result.slug}`} className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:brightness-110">
+            <Link href={`/decks/${result.slug}`} className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110">
               Voir le deck
             </Link>
             <button onClick={handleReset} className="rounded-lg border border-hairline px-4 py-2 text-sm text-ink-secondary hover:text-ink">
@@ -136,10 +136,11 @@ export default function ImportDeckPage() {
                 Format Riftdecks : sections &quot;Legend:&quot;, &quot;Champion:&quot;, &quot;MainDeck:&quot;, &quot;Battlefields:&quot;, &quot;Runes:&quot;, &quot;Sideboard:&quot;
               </p>
               <textarea
+                aria-label="Deck code"
                 value={deckCode}
                 onChange={(e) => setDeckCode(e.target.value)}
                 rows={14}
-                className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none"
+                className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink placeholder:text-ink-muted focus:border-arcane"
                 placeholder={EXAMPLE_CODE}
               />
             </div>
@@ -152,22 +153,22 @@ export default function ImportDeckPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="col-span-2">
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Titre du deck *</label>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Poppy Aurora Aggro" className={inputClass} />
+                <input aria-label="Titre du deck" type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Poppy Aurora Aggro" className={inputClass} />
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Joueur</label>
-                <input type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)} placeholder="Pseudo du joueur" className={inputClass} />
+                <input aria-label="Joueur" type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)} placeholder="Pseudo du joueur" className={inputClass} />
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Classement</label>
-                <input type="text" value={placement} onChange={(e) => setPlacement(e.target.value)} placeholder="1er, Top 4, Top 8..." className={inputClass} />
+                <input aria-label="Classement" type="text" value={placement} onChange={(e) => setPlacement(e.target.value)} placeholder="1er, Top 4, Top 8..." className={inputClass} />
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Tournoi</label>
-                <input type="text" value={tournamentName} onChange={(e) => setTournamentName(e.target.value)} placeholder="Sydney Major, EU Weekly..." className={inputClass} />
+                <input aria-label="Tournoi" type="text" value={tournamentName} onChange={(e) => setTournamentName(e.target.value)} placeholder="Sydney Major, EU Weekly..." className={inputClass} />
               </div>
 
               <div>
@@ -181,7 +182,7 @@ export default function ImportDeckPage() {
                         tournamentTier === t
                           ? t === "P" ? "border-gold bg-gold/10 text-gold"
                             : t === "S" ? "border-arcane bg-arcane/10 text-arcane"
-                            : t === "A" ? "border-violet bg-violet/10 text-violet"
+                            : t === "A" ? "border-violet bg-violet/10 text-violet-light"
                             : "border-ink-muted bg-surface-raised text-ink-secondary"
                           : "border-hairline text-ink-muted hover:text-ink hover:border-hairline-strong"
                       }`}
@@ -194,21 +195,21 @@ export default function ImportDeckPage() {
 
               <div>
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Date</label>
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className={inputClass} />
+                <input aria-label="Date" type="date" value={date} onChange={(e) => setDate(e.target.value)} className={inputClass} />
               </div>
 
               <div>
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Resultats (W-L-D)</label>
-                <input type="text" value={record} onChange={(e) => setRecord(e.target.value)} placeholder="14-1-1" className={inputClass} />
+                <input aria-label="Resultats (W-L-D)" type="text" value={record} onChange={(e) => setRecord(e.target.value)} placeholder="14-1-1" className={inputClass} />
               </div>
 
               <div className="col-span-2">
                 <label className="block text-xs font-semibold text-ink-secondary mb-1">Notes / Description (optionnel)</label>
-                <textarea
+                <textarea aria-label="Notes / Description (optionnel)"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
-                  className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none"
+                  className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
                   placeholder="Notes sur le deck, meta, choix de cartes..."
                 />
               </div>
@@ -226,7 +227,7 @@ export default function ImportDeckPage() {
             <button
               onClick={handleSubmit}
               disabled={loading || !deckCode.trim() || !title.trim()}
-              className="flex items-center gap-2 rounded-lg bg-arcane px-6 py-2.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition-all"
+              className="flex items-center gap-2 rounded-lg bg-arcane px-6 py-2.5 text-sm font-semibold text-canvas hover:brightness-110 disabled:opacity-30 transition"
             >
               <Upload size={16} />
               {loading ? "Import en cours..." : "Importer le deck"}

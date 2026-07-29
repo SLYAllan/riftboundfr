@@ -31,7 +31,7 @@ export default async function CollectionPage() {
           </p>
           <Link
             href="/api/auth/discord"
-            className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-white hover:bg-arcane/90"
+            className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-canvas hover:bg-arcane/90"
           >
             Se connecter avec Discord
           </Link>

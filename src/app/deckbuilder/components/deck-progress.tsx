@@ -73,7 +73,7 @@ export function DeckProgress({
               ) : (
                 <span className={cn(
                   "flex h-4 w-4 items-center justify-center rounded-full text-[9px] font-bold shrink-0",
-                  isActive ? "bg-arcane text-white" : "bg-surface-raised text-ink-muted",
+                  isActive ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted",
                 )}>
                   {i + 1}
                 </span>

@@ -6,6 +6,7 @@ import { cn, displayLegendName } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
 import { Grid3X3, List, Copy, Check, Image, Hash, Gamepad2, BarChart3, Hammer, Download } from "lucide-react";
 import { useIsAdmin } from "@/hooks/use-is-admin";
+import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import { DeckSummary } from "@/components/deck-summary";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { isBanned } from "@/lib/banned-cards";
@@ -71,9 +72,11 @@ function CardTooltip({ card }: { card: DecklistCard }) {
         />
       )}
       <div className="p-3 space-y-2">
-        <h4 className="text-lg font-bold leading-tight" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+        {/* Aperçu au survol, pas une section du document : un titre ici polluait
+            le plan de la page avec un h4 sous un h2. */}
+        <p className="text-lg font-bold leading-tight" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
           {card.name}
-        </h4>
+        </p>
         <div className="flex flex-wrap items-center gap-1.5">
           <span className="inline-flex items-center gap-1 text-xs rounded bg-surface-raised px-1.5 py-0.5 text-ink-secondary">
             {TYPE_ICONS[card.type] && <img src={TYPE_ICONS[card.type]} alt="" className="h-3 w-3" />}
@@ -82,7 +85,7 @@ function CardTooltip({ card }: { card: DecklistCard }) {
           <span className={cn("text-xs rounded px-1.5 py-0.5 font-semibold", RARITY_COLORS[card.rarity] ?? "bg-surface-raised text-ink-secondary")}>{RARITY_LABELS_FR[card.rarity] ?? card.rarity}</span>
           {isBanned(card.name) && <span className="text-[10px] rounded px-1.5 py-0.5 font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
           {card.domains?.map((d) => (
-            <span key={d} className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280", backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20` }}>
+            <span key={d} className="inline-flex items-center gap-1 rounded bg-surface-raised px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280" }}>
               {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3 w-3" />}
               {DOMAIN_LABELS_FR[d] ?? d}
             </span>
@@ -102,14 +105,15 @@ function CardTooltip({ card }: { card: DecklistCard }) {
 }
 
 function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () => void }) {
+  const dialogRef = useDialogA11y(onClose);
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="w-full max-w-xs rounded-xl border border-hairline bg-surface overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="mobile-card-title" tabIndex={-1} className="w-full max-w-xs rounded-xl border border-hairline bg-surface overflow-hidden" onClick={(e) => e.stopPropagation()}>
         {card.artUrl && (
           <img src={card.artUrl} alt={card.name} className="w-full object-contain bg-canvas" />
         )}
         <div className="p-4 space-y-2.5">
-          <h4 className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          <h4 id="mobile-card-title" className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             {card.name}
           </h4>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -120,7 +124,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
             <span className={cn("text-xs rounded px-2 py-0.5 font-semibold", RARITY_COLORS[card.rarity] ?? "bg-surface-raised text-ink-secondary")}>{RARITY_LABELS_FR[card.rarity] ?? card.rarity}</span>
             {isBanned(card.name) && <span className="text-xs rounded px-2 py-0.5 font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
             {card.domains?.map((d) => (
-              <span key={d} className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280", backgroundColor: `${DOMAIN_COLORS[d] ?? "#6b7280"}20` }}>
+              <span key={d} className="inline-flex items-center gap-1 rounded bg-surface-raised px-1.5 py-0.5 text-[10px] font-bold" style={{ color: DOMAIN_COLORS[d] ?? "#6b7280" }}>
                 {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3.5 w-3.5" />}
                 {DOMAIN_LABELS_FR[d] ?? d}
               </span>
@@ -147,6 +151,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
 }
 
 function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deckName: string; onClose: () => void }) {
+  const dialogRef = useDialogA11y(onClose);
   const [activeTab, setActiveTab] = useState<ExportTab>("deckcode");
   const [copied, setCopied] = useState<string | null>(null);
   const [exporting, setExporting] = useState(false);
@@ -219,12 +224,12 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="export-panel-title" tabIndex={-1} className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
-          <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          <h3 id="export-panel-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             Exporter - {deckName}
           </h3>
-          <button onClick={onClose} className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
+          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
         </div>
 
         <div className="flex border-b border-hairline overflow-x-auto">
@@ -280,7 +285,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
               <button
                 onClick={handleExportImage}
                 disabled={exporting}
-                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-white hover:brightness-110 transition-all disabled:opacity-50"
+                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-canvas hover:brightness-110 transition disabled:opacity-50"
               >
                 <Image size={15} className="inline mr-1.5" />
                 {exporting ? "Génération..." : "Générer l’image"}
@@ -344,9 +349,12 @@ export function DecklistInteractive({
         <div className="border-b border-hairline p-4">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              {/* h2 et pas h3 : sur une page deck, ce bloc suit directement le h1
+                  et sautait un niveau. Ailleurs (article, légende) il titre le
+                  bloc decklist, donc il doit rester un titre. */}
+              <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 {deckName}
-              </h3>
+              </h2>
               <div className="mt-1 flex flex-wrap items-center gap-2 text-sm">
                 <span className="text-arcane">{displayLegendName(legendName)}</span>
                 {playerName && <span className="text-ink-muted">par {playerName}</span>}
@@ -356,27 +364,33 @@ export function DecklistInteractive({
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setView("grid")}
+                aria-label="Affichage en grille"
+                aria-pressed={view === "grid"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "grid" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
+                  view === "grid" ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <Grid3X3 size={16} />
               </button>
               <button
                 onClick={() => setView("list")}
+                aria-label="Affichage en liste"
+                aria-pressed={view === "list"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "list" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
+                  view === "list" ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <List size={16} />
               </button>
               <button
                 onClick={() => setView("stats")}
+                aria-label="Statistiques du deck"
+                aria-pressed={view === "stats"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
-                  view === "stats" ? "bg-arcane text-white" : "text-ink-muted hover:text-ink"
+                  view === "stats" ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"
                 )}
               >
                 <BarChart3 size={16} />
@@ -391,13 +405,13 @@ export function DecklistInteractive({
         <div className="flex items-center justify-between border-b border-hairline px-4 py-2">
           <div className="text-xs text-ink-muted">{totalCards} cartes</div>
           <div className="flex items-center gap-1">
-            <button onClick={() => setView("grid")} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("grid")} aria-label="Affichage en grille" aria-pressed={view === "grid"} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>
               <Grid3X3 size={14} />
             </button>
-            <button onClick={() => setView("list")} className={cn("rounded p-1.5", view === "list" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("list")} aria-label="Affichage en liste" aria-pressed={view === "list"} className={cn("rounded p-1.5", view === "list" ? "text-arcane" : "text-ink-muted")}>
               <List size={14} />
             </button>
-            <button onClick={() => setView("stats")} className={cn("rounded p-1.5", view === "stats" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("stats")} aria-label="Statistiques du deck" aria-pressed={view === "stats"} className={cn("rounded p-1.5", view === "stats" ? "text-arcane" : "text-ink-muted")}>
               <BarChart3 size={14} />
             </button>
           </div>
@@ -415,9 +429,9 @@ export function DecklistInteractive({
               const total = sectionCards.reduce((sum, c) => sum + c.quantity, 0);
               return (
                 <div key={section}>
-                  <h4 className="text-sm font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                  <h2 className="text-sm font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]} <span className="text-ink-muted font-normal">({total})</span>
-                  </h4>
+                  </h2>
                   <div className="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8">
                     {sectionCards.map((c) => {
                       const isBf = c.type === "Battlefield";
@@ -437,7 +451,7 @@ export function DecklistInteractive({
                           <CardImage src={c.artUrl} alt={c.name} size="sm" />
                         )}
                         {c.quantity > 1 && (
-                          <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-arcane text-xs font-bold text-white">
+                          <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-arcane text-xs font-bold text-canvas">
                             {c.quantity}
                           </span>
                         )}
@@ -465,9 +479,9 @@ export function DecklistInteractive({
               if (!sectionCards?.length) return null;
               return (
                 <div key={section}>
-                  <h4 className="text-sm font-semibold text-ink-secondary mb-2" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                  <h2 className="text-sm font-semibold text-ink-secondary mb-2" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]}
-                  </h4>
+                  </h2>
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-hairline text-xs text-ink-muted">
@@ -532,7 +546,7 @@ export function DecklistInteractive({
           {(showExportPng || showCopyCode) && (
             <button
               onClick={() => setShowExport(true)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas hover:opacity-90 transition-opacity"
             >
               <Image size={14} />
               Exporter
@@ -551,7 +565,7 @@ export function DecklistInteractive({
           {deckbuilderCode && (
             <Link
               href={`/deckbuilder?deck=${deckbuilderCode}`}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-violet px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
             >
               <Hammer size={14} />
               Ouvrir dans le Deckbuilder

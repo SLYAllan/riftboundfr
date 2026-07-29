@@ -92,7 +92,7 @@ export default function AProposPage() {
             contact@riftboundfrance.fr
           </a>
         </p>
-        <p className="text-xs text-ink-disabled">
+        <p className="text-xs text-ink-muted">
           Site non approuvé par Riot Games. Riftbound et les propriétés associées sont des marques
           de Riot Games, Inc.
         </p>

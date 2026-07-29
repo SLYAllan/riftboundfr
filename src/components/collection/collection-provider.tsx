@@ -25,7 +25,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     fetch("/api/collection")
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
-        if (data && typeof data === "object" && !("error" in data)) {
+        if (data && typeof data === "object" && !("error" in data) && !("anonymous" in data)) {
           setQuantities(data as Record<string, number>);
           setLoggedIn(true);
         }

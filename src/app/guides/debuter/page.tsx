@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Hammer, BookOpen } from "lucide-react";
-import { DOMAIN_ICONS } from "@/lib/domains";
+import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 const domains = [
-  { name: "Fury", fr: "Furie", color: "#ef4444", desc: "Attaque rapide et dégâts directs. Foncez sur l'adversaire." },
-  { name: "Calm", fr: "Calme", color: "#22c55e", desc: "Défense solide, soins et unités qui grandissent au fil du temps." },
-  { name: "Mind", fr: "Esprit", color: "#3b82f6", desc: "Sorts malins, pioche de cartes et équipements puissants." },
-  { name: "Body", fr: "Corps", color: "#f97316", desc: "Grosses unités qui écrasent tout sur leur passage." },
-  { name: "Chaos", fr: "Chaos", color: "#8b5cf6", desc: "Imprévisible, risqué mais dévastateur. Pour joueurs expérimentés." },
-  { name: "Order", fr: "Ordre", color: "#eab308", desc: "Armée de jetons, protection de vos unités et stratégie méthodique." },
+  { name: "Fury", fr: "Furie", color: DOMAIN_COLORS.Fury, desc: "Attaque rapide et dégâts directs. Foncez sur l'adversaire." },
+  { name: "Calm", fr: "Calme", color: DOMAIN_COLORS.Calm, desc: "Défense solide, soins et unités qui grandissent au fil du temps." },
+  { name: "Mind", fr: "Esprit", color: DOMAIN_COLORS.Mind, desc: "Sorts malins, pioche de cartes et équipements puissants." },
+  { name: "Body", fr: "Corps", color: DOMAIN_COLORS.Body, desc: "Grosses unités qui écrasent tout sur leur passage." },
+  { name: "Chaos", fr: "Chaos", color: DOMAIN_COLORS.Chaos, desc: "Imprévisible, risqué mais dévastateur. Pour joueurs expérimentés." },
+  { name: "Order", fr: "Ordre", color: DOMAIN_COLORS.Order, desc: "Armée de jetons, protection de vos unités et stratégie méthodique." },
 ];
 
 const keywordsEssential = [
@@ -106,7 +106,7 @@ export default function GuideDebuterPage() {
             ))}
           </div>
           <div className="mt-4">
-            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
               <Hammer size={16} /> Essayer le Deckbuilder
             </Link>
           </div>
@@ -173,9 +173,9 @@ export default function GuideDebuterPage() {
               { phase: "Fin de tour", desc: "Tous les dégâts sur les unités sont soignés. Vos unités repartent à pleine vie pour le prochain tour." },
             ].map((p, i) => (
               <div key={p.phase} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-arcane text-xs font-bold text-white">{i + 1}</span>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-arcane text-xs font-bold text-canvas">{i + 1}</span>
                 <div>
-                  <h4 className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{p.phase}</h4>
+                  <h3 className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{p.phase}</h3>
                   <p className="text-xs text-ink-secondary">{p.desc}</p>
                 </div>
               </div>
@@ -322,13 +322,13 @@ export default function GuideDebuterPage() {
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
             Guide de deckbuilding
           </Link>
-          <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
             Méta &amp; Tier List
           </Link>
-          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             Les 6 Domaines
           </Link>
           <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:opacity-90">

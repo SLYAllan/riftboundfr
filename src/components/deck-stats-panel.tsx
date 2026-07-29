@@ -26,7 +26,7 @@ function EnergyCurve({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <h4 className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Courbe d&apos;énergie</h4>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Courbe d&apos;énergie</p>
       <div className="flex items-end gap-1.5">
         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((cost) => {
           const bucket = curve.get(cost);
@@ -83,14 +83,14 @@ function TypeDistribution({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <h4 className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par type</h4>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par type</p>
       <div className="space-y-2">
         {sorted.map(([type, count]) => (
           <div key={type} className="flex items-center gap-2">
             <span className="text-xs text-ink-secondary w-20 shrink-0">{TYPE_LABELS_FR[type] ?? type}</span>
             <div className="flex-1 h-4 bg-surface-raised rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-300"
+                className="h-full rounded-full transition-colors duration-300"
                 style={{
                   width: `${(count / total) * 100}%`,
                   backgroundColor: typeColors[type] ?? "#64748b",
@@ -124,7 +124,7 @@ function DomainDistribution({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <h4 className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par domaine</h4>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par domaine</p>
       <div className="space-y-2">
         {sorted.map(([domain, count]) => (
           <div key={domain} className="flex items-center gap-2">
@@ -133,7 +133,7 @@ function DomainDistribution({ cards }: { cards: DecklistCard[] }) {
             </span>
             <div className="flex-1 h-4 bg-surface-raised rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-300"
+                className="h-full rounded-full transition-colors duration-300"
                 style={{
                   width: `${(count / total) * 100}%`,
                   backgroundColor: DOMAIN_COLORS[domain] ?? "#64748b",

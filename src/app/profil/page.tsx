@@ -222,7 +222,7 @@ export default async function ProfilPage() {
           <div className="mt-1 text-xs text-ink-muted">Decks publics</div>
         </div>
         <div className="rounded-card border border-hairline bg-surface p-4 text-center">
-          <div className="text-2xl font-bold text-violet" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          <div className="text-2xl font-bold text-violet-light" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             {totalViews}
           </div>
           <div className="mt-1 text-xs text-ink-muted">Vues totales</div>
@@ -254,7 +254,7 @@ export default async function ProfilPage() {
               <div className="text-2xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{completion}%</div>
               <div className="text-[11px] uppercase tracking-wider text-ink-muted">complétion</div>
             </div>
-            <Link href="/collection" className="inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-arcane/90">
+            <Link href="/collection" className="inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/90">
               <Layers size={15} /> Gérer ma collection <ArrowRight size={15} />
             </Link>
           </div>
@@ -295,7 +295,7 @@ export default async function ProfilPage() {
           </h2>
           <Link
             href="/deckbuilder"
-            className="flex items-center gap-1.5 rounded-lg bg-violet px-3 py-1.5 text-sm font-medium text-white hover:opacity-90 transition-opacity"
+            className="flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-sm font-medium text-white hover:opacity-90 transition-opacity"
           >
             <Hammer size={14} /> Créer un deck
           </Link>
@@ -306,7 +306,7 @@ export default async function ProfilPage() {
             <p className="text-ink-muted">Vous n&apos;avez pas encore créé de deck.</p>
             <Link
               href="/deckbuilder"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-violet hover:underline"
+              className="mt-3 inline-flex items-center gap-2 text-sm text-violet-light hover:underline"
             >
               <Hammer size={14} /> Créer votre premier deck
             </Link>
@@ -350,7 +350,7 @@ export default async function ProfilPage() {
             <p className="text-ink-muted">Vous n&apos;avez pas encore de deck en favori.</p>
             <Link
               href="/decks"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-violet hover:underline"
+              className="mt-3 inline-flex items-center gap-2 text-sm text-violet-light hover:underline"
             >
               <Heart size={14} /> Découvrir les decks de la communauté
             </Link>

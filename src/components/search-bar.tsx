@@ -34,7 +34,8 @@ export function SearchBar({ placeholder = "Rechercher une carte...", basePath = 
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder={placeholder}
-        className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-4 text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none focus:ring-2 focus:ring-arcane-glow"
+        aria-label={placeholder}
+        className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-4 text-ink placeholder:text-ink-muted focus:border-arcane focus:ring-2 focus:ring-arcane-glow"
       />
     </form>
   );

@@ -85,13 +85,13 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
               onChange={(e) => setBody(e.target.value)}
               placeholder="Ajouter un commentaire..."
               rows={3}
-              className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:border-arcane/50 resize-none"
+              className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
             />
             <div className="flex justify-end mt-2">
               <button
                 onClick={() => submit()}
                 disabled={!body.trim() || sending}
-                className="flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-1.5 text-sm font-medium text-white disabled:opacity-40 hover:bg-arcane-light transition-colors"
+                className="flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-1.5 text-sm font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
               >
                 <Send size={14} />
                 Envoyer
@@ -221,14 +221,15 @@ function CommentThread({
                 value={replyBody}
                 onChange={(e) => setReplyBody(e.target.value)}
                 placeholder="Votre réponse..."
+                aria-label="Votre réponse"
                 rows={2}
                 autoFocus
-                className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:border-arcane/50 resize-none"
+                className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
               />
               <button
                 onClick={submitReply}
                 disabled={!replyBody.trim() || sending}
-                className="self-end rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-white disabled:opacity-40 hover:bg-arcane-light transition-colors"
+                className="self-end rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
               >
                 <Send size={12} />
               </button>

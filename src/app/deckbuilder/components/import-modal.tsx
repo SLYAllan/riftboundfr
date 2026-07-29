@@ -140,7 +140,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
               <input
                 value={text}
                 onChange={(e) => { setText(e.target.value); setLinkError(null); }}
-                className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2.5 text-sm font-mono text-ink focus:border-arcane focus:outline-none placeholder:text-ink-muted/50"
+                className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2.5 text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
                 placeholder={currentTab.placeholder}
               />
               {linkError && <p className="text-xs text-red-400">{linkError}</p>}
@@ -150,7 +150,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
               value={text}
               onChange={(e) => setText(e.target.value)}
               rows={10}
-              className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink focus:border-arcane focus:outline-none placeholder:text-ink-muted/50"
+              className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
               placeholder={currentTab.placeholder}
             />
           )}
@@ -165,7 +165,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
             <button
               onClick={handleDetectAndImport}
               disabled={!text.trim() || linkLoading}
-              className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:brightness-110 transition-all disabled:opacity-30"
+              className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110 transition disabled:opacity-30"
             >
               {linkLoading ? "Chargement..." : "Importer"}
             </button>

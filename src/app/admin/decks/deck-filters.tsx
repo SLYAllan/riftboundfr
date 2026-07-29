@@ -38,15 +38,16 @@ export function DeckFilters({ tab, legends, tournaments }: DeckFiltersProps) {
       <input
         type="text"
         placeholder="Rechercher…"
+        aria-label="Rechercher un deck"
         defaultValue={sp.get("q") ?? ""}
         onChange={(e) => handleSearch(e.target.value)}
-        className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none w-56"
+        className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane w-56"
       />
       {legends.length > 0 && (
-        <select
+        <select aria-label="Toutes les légendes"
           defaultValue={sp.get("legend") ?? ""}
           onChange={(e) => navigate({ legend: e.target.value })}
-          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane focus:outline-none"
+          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
         >
           <option value="">Toutes les légendes</option>
           {legends.map((l) => (
@@ -57,10 +58,10 @@ export function DeckFilters({ tab, legends, tournaments }: DeckFiltersProps) {
         </select>
       )}
       {tournaments && tournaments.length > 0 && (
-        <select
+        <select aria-label="Tous les tournois"
           defaultValue={sp.get("tournament") ?? ""}
           onChange={(e) => navigate({ tournament: e.target.value })}
-          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane focus:outline-none"
+          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
         >
           <option value="">Tous les tournois</option>
           {tournaments.map((t) => (

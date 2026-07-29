@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn, displayLegendName } from "@/lib/utils";
+import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
 
 interface TierListData {
   id: string;
@@ -32,23 +33,7 @@ const SET_SHORT: Record<string, string> = {
   Global: "ALL",
 };
 
-const TIER_COLORS: Record<string, string> = {
-  S: "bg-red-500",
-  A: "bg-orange-400",
-  B: "bg-yellow-400",
-  C: "bg-teal-500",
-  D: "bg-gray-500",
-};
-
-const TIER_TEXT: Record<string, string> = {
-  S: "text-white",
-  A: "text-white",
-  B: "text-gray-900",
-  C: "text-white",
-  D: "text-white",
-};
-
-const tierOrder = ["S", "A", "B", "C", "D"];
+const tierOrder = TIER_ORDER;
 
 export function HomeTierList({
   tierLists,
@@ -73,21 +58,21 @@ export function HomeTierList({
     );
   }
 
-  const grouped = active
-    ? active.entries.reduce(
-        (acc, entry) => {
-          if (!acc[entry.tier]) acc[entry.tier] = [];
-          acc[entry.tier].push(entry);
-          return acc;
-        },
-        {} as Record<string, typeof active.entries>,
-      )
-    : {};
+  const groupBy = (entries: TierListData["entries"]) =>
+    entries.reduce(
+      (acc, entry) => {
+        if (!acc[entry.tier]) acc[entry.tier] = [];
+        acc[entry.tier].push(entry);
+        return acc;
+      },
+      {} as Record<string, TierListData["entries"]>,
+    );
 
-  // Hauteur FIXE, jamais dérivée du contenu. Chaque onglet a un nombre de Légendes
-  // différent : si la carte se dimensionnait sur son contenu, elle grandirait au clic
-  // et, étant dans une grille, elle pousserait toute la ligne avec elle. self-start
-  // l'empêche de s'étirer si une colonne voisine est plus haute.
+  // Pas de zone qui défile : la carte montre tout son contenu. Pour qu'elle ne
+  // change pas de taille au changement d'onglet, les onglets sont empilés dans la
+  // même cellule de grille et seul l'actif est visible ; les autres restent dans le
+  // flux et donnent à la carte la hauteur du plus grand onglet. self-start l'empêche
+  // de s'étirer si une colonne voisine est plus haute.
   return (
     <div className="flex flex-col self-start rounded-card border border-hairline bg-surface overflow-hidden">
       <div className="shrink-0 border-b border-hairline px-4 py-3 flex items-center justify-between">
@@ -127,59 +112,80 @@ export function HomeTierList({
         </div>
       )}
 
-      {active && active.entries.length > 0 ? (
-        <div className="h-[420px] overflow-y-auto">
-          {tierOrder.map((tier, tierIdx) => {
-            const entries = grouped[tier];
-            if (!entries || entries.length === 0) return null;
-            const isFirst = tierOrder.slice(0, tierIdx).every((t) => !grouped[t]?.length);
-            const isLast = tierIdx === tierOrder.length - 1 || tierOrder.slice(tierIdx + 1).every((t) => !grouped[t]?.length);
+      {tierLists.some((tl) => tl.entries.length > 0) ? (
+        <div className="grid">
+          {tierLists.map((tl, listIdx) => {
+            const isActive = listIdx === activeIdx;
+            const g = groupBy(tl.entries);
             return (
               <div
-                key={tier}
-                className="flex border-b border-hairline/50 last:border-b-0"
+                key={tl.id}
+                // Même cellule pour tous les onglets : les inactifs restent dans le
+                // flux et fixent la hauteur sur le plus grand, donc la carte ne
+                // bouge pas au clic. invisible les sort de l'ordre de tabulation
+                // et de l'arbre d'accessibilité.
+                className={cn("col-start-1 row-start-1", !isActive && "invisible")}
+                aria-hidden={!isActive}
               >
-                <div
-                  className={cn(
-                    "flex w-14 shrink-0 items-center justify-center",
-                    TIER_COLORS[tier],
-                    TIER_TEXT[tier],
-                    isFirst && "rounded-tl-sm",
-                    isLast && "rounded-bl-sm",
-                  )}
-                >
-                  <span
-                    className="text-2xl font-black"
-                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                  >
-                    {tier}
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-center gap-1.5 p-2 flex-1 min-h-[52px]">
-                  {entries.map((entry) => {
-                    const card = legendMap.get(entry.legendId);
-                    return card?.imageUrl ? (
-                      <Image
-                        key={entry.id}
-                        src={card.imageUrl}
-                        alt={entry.legendName}
-                        title={entry.legendName}
-                        width={48}
-                        height={48}
-                        suppressHydrationWarning
-                        className="h-12 w-12 rounded-lg object-cover hover:scale-110 transition-transform"
-                      />
-                    ) : (
+                {tierOrder.map((tier, tierIdx) => {
+                  const entries = g[tier];
+                  if (!entries || entries.length === 0) return null;
+                  const isFirst = tierOrder.slice(0, tierIdx).every((t) => !g[t]?.length);
+                  const isLast = tierIdx === tierOrder.length - 1 || tierOrder.slice(tierIdx + 1).every((t) => !g[t]?.length);
+                  return (
+                    <div
+                      key={tier}
+                      className="flex border-b border-hairline/50 last:border-b-0"
+                    >
                       <div
-                        key={entry.id}
-                        className="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-raised text-[8px] text-ink-muted"
-                        title={entry.legendName}
+                        className={cn(
+                          "flex w-14 shrink-0 items-center justify-center",
+                          TIER_BANNER[tier]?.bg,
+                          TIER_BANNER[tier]?.text,
+                          isFirst && "rounded-tl-sm",
+                          isLast && "rounded-bl-sm",
+                        )}
                       >
-                        {displayLegendName(entry.legendName).split(",")[0].slice(0, 4)}
+                        <span
+                          className="text-2xl font-black"
+                          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                        >
+                          {tier}
+                        </span>
                       </div>
-                    );
-                  })}
-                </div>
+                      <div className="flex flex-wrap items-center gap-1.5 p-2 flex-1 min-h-[52px]">
+                        {entries.map((entry) => {
+                          const card = legendMap.get(entry.legendId);
+                          // Onglet inactif : une vignette vide, de la même taille.
+                          // Elle occupe la place sans télécharger d'image.
+                          if (!isActive) {
+                            return <div key={entry.id} className="h-12 w-12 rounded-lg bg-surface-raised" />;
+                          }
+                          return card?.imageUrl ? (
+                            <Image
+                              key={entry.id}
+                              src={card.imageUrl}
+                              alt={entry.legendName}
+                              title={entry.legendName}
+                              width={48}
+                              height={48}
+                              suppressHydrationWarning
+                              className="h-12 w-12 rounded-lg object-cover hover:scale-110 transition-transform"
+                            />
+                          ) : (
+                            <div
+                              key={entry.id}
+                              className="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-raised text-[8px] text-ink-muted"
+                              title={entry.legendName}
+                            >
+                              {displayLegendName(entry.legendName).split(",")[0].slice(0, 4)}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             );
           })}

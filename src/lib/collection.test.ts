@@ -4,14 +4,18 @@ import { buildOwnedByName, computeDeckCoverage } from "./collection";
 const card = (cleanName: string, name = cleanName) => ({ cleanName, name });
 
 describe("buildOwnedByName", () => {
-  it("agrège les quantités par cleanName (variantes confondues)", () => {
+  // La clé vient du `name` normalisé (minuscules, sans accent, séparateurs réduits à
+  // une espace), pas du `cleanName` : « Blind Fury (Alt) » doit compter avec
+  // « Blind Fury ». Le test attendait des tirets, format que la fonction n'a jamais
+  // produit ; seules les clés d'un seul mot passaient.
+  it("agrège les quantités par nom normalisé (variantes confondues)", () => {
     const owned = buildOwnedByName([
       { card: card("blind-fury", "Blind Fury"), quantity: 2 },
       { card: card("blind-fury", "Blind Fury (Alt)"), quantity: 1 },
       { card: card("falling-star", "Falling Star"), quantity: 3 },
     ]);
-    expect(owned.get("blind-fury")).toBe(3);
-    expect(owned.get("falling-star")).toBe(3);
+    expect(owned.get("blind fury")).toBe(3);
+    expect(owned.get("falling star")).toBe(3);
   });
 
   it("retombe sur name si cleanName manquant", () => {

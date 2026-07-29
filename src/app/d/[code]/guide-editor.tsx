@@ -74,13 +74,13 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
             rows={8}
             maxLength={5000}
             placeholder="Décrivez votre stratégie, les matchups, les choix de cartes..."
-            className="w-full rounded-lg border border-hairline bg-surface p-4 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none resize-y"
+            className="w-full rounded-lg border border-hairline bg-surface p-4 text-sm text-ink placeholder:text-ink-muted focus:border-arcane resize-y"
           />
           <div className="flex items-center gap-2">
             <button
               onClick={save}
               disabled={saving}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110 disabled:opacity-50"
             >
               <Check size={14} />
               {saving ? "Sauvegarde..." : "Sauvegarder"}

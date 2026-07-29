@@ -7,9 +7,17 @@ import { getCollectionMap, getBinderQuantities, getOrCreateDefaultBinder } from 
 // GET /api/collection?binderId=x → quantités du classeur x
 export async function GET(req: Request) {
   const user = await getUserFromSession();
-  if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-
   const binderId = new URL(req.url).searchParams.get("binderId");
+
+  // Visiteur non connecté : il ne possède simplement rien. On répond 200 avec un
+  // marqueur au lieu d'un 401, que le navigateur journalisait en erreur sur CHAQUE
+  // page (le provider interroge cette route partout). Un 401 reste la bonne réponse
+  // pour l'accès à un classeur précis et pour toute écriture.
+  if (!user) {
+    if (binderId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    return NextResponse.json({ anonymous: true });
+  }
+
   if (binderId) {
     const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
     if (!binder) return NextResponse.json({ error: "not_found" }, { status: 404 });

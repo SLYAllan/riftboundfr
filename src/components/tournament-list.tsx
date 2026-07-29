@@ -42,7 +42,7 @@ function TournamentRow({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-xl border border-hairline bg-surface/50 transition-all duration-200",
+        "group relative overflow-hidden rounded-xl border border-hairline bg-surface/50 transition-colors duration-200",
         "hover:border-hairline-accent",
         featured && "border-hairline-strong bg-surface/70",
       )}
@@ -174,7 +174,7 @@ function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; co
     <div className="mb-4 flex items-center gap-2.5">
       <span
         className={cn(
-          "flex h-9 w-9 items-center justify-center rounded-lg text-lg font-black text-white",
+          "flex h-9 w-9 items-center justify-center rounded-lg text-lg font-black text-canvas",
           bg,
         )}
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
@@ -246,7 +246,9 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Rechercher un tournoi…"
-            className="w-full rounded-lg border border-hairline bg-transparent py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-hairline-accent focus:outline-none"
+
+            aria-label="Rechercher un tournoi"
+            className="w-full rounded-lg border border-hairline bg-transparent py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-hairline-accent"
           />
         </div>
       </div>

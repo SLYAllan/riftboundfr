@@ -208,7 +208,7 @@ export function CollectionDashboard({
       <section className="mt-8">
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-secondary">Statistiques</h2>
-          <select value={scope} onChange={(e) => setScope(e.target.value)} className="h-9 rounded-lg border border-hairline bg-surface px-3 text-sm">
+          <select aria-label="Filtrer par classeur" value={scope} onChange={(e) => setScope(e.target.value)} className="h-9 rounded-lg border border-hairline bg-surface px-3 text-sm">
             <option value="all">Tous les classeurs</option>
             {binders.map((b) => <option key={b.id} value={b.id}>{b.name}</option>)}
           </select>

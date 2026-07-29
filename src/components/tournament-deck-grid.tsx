@@ -26,7 +26,7 @@ const MEDAL_BG: Record<number, string> = {
 const MEDAL_BADGE: Record<number, string> = {
   1: "bg-gold text-canvas",
   2: "bg-gray-300 text-gray-900",
-  3: "bg-amber-600 text-white",
+  3: "bg-amber-600 text-canvas",
 };
 
 /* ------------------------------------------------------------------ */
@@ -120,7 +120,7 @@ export function TournamentDeckGrid({
           aria-label="Filtrer par légende"
           value={currentLegend ?? ""}
           onChange={(e) => handleLegendChange(e.target.value)}
-          className="ml-auto w-full sm:w-auto sm:min-w-[240px] appearance-none rounded-lg bg-surface border border-hairline text-ink text-sm font-medium px-3.5 py-2 pr-9 transition-colors hover:bg-surface-raised hover:border-hairline-strong focus:outline-none focus:border-arcane/40 focus:ring-1 focus:ring-arcane/20"
+          className="ml-auto w-full sm:w-auto sm:min-w-[240px] appearance-none rounded-lg bg-surface border border-hairline text-ink text-sm font-medium px-3.5 py-2 pr-9 transition-colors hover:bg-surface-raised hover:border-hairline-strong focus:border-arcane/40 focus:ring-1 focus:ring-arcane/20"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
             backgroundRepeat: "no-repeat",
@@ -221,7 +221,7 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
     <Link
       href={`/decks/${deck.slug}`}
       className={cn(
-        "group relative rounded-card border overflow-hidden transition-all duration-200",
+        "group relative rounded-card border overflow-hidden transition-colors duration-200",
         "hover:border-hairline-strong hover:shadow-lg hover:shadow-black/20",
         medalBg ?? "border-hairline",
       )}
@@ -312,7 +312,7 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
       href={`/decks/${deck.slug}`}
       className={cn(
         "group flex items-center gap-3 rounded-card border border-hairline p-3",
-        "bg-surface/40 transition-all duration-150",
+        "bg-surface/40 transition-colors duration-150",
         "hover:bg-surface-raised/60 hover:border-hairline-strong",
       )}
     >

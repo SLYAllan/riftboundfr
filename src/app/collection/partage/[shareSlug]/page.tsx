@@ -47,7 +47,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
               <div className="relative overflow-hidden rounded-game-card">
                 <CardImage src={it.card.imageUrl} alt={it.card.name} size="sm" />
                 {it.quantity > 1 && (
-                  <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-white shadow">×{it.quantity}</span>
+                  <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-canvas shadow">×{it.quantity}</span>
                 )}
               </div>
               <div className="mt-0.5 truncate text-center text-[10px] text-ink-muted" title={it.card.name}>{it.card.name}</div>

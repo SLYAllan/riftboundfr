@@ -40,13 +40,13 @@ export default function AdminLoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Mot de passe"
-            className="w-full px-4 py-3 rounded-lg bg-surface-raised border border-hairline text-ink placeholder:text-ink-muted focus:outline-none focus:border-arcane"
+            className="w-full px-4 py-3 rounded-lg bg-surface-raised border border-hairline text-ink placeholder:text-ink-muted focus:border-arcane"
           />
           {error && <p className="text-error text-sm">{error}</p>}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-lg bg-arcane text-white font-semibold hover:bg-arcane-dark transition-colors disabled:opacity-50"
+            className="w-full py-3 rounded-lg bg-arcane text-canvas font-semibold hover:bg-arcane-light transition-colors disabled:opacity-50"
           >
             {loading ? "Connexion..." : "Se connecter"}
           </button>

@@ -241,7 +241,7 @@ export default async function TournoisPage() {
               </div>
             </div>
             <div className="flex items-center gap-2.5 rounded-lg border border-hairline bg-canvas/60 px-4 py-2.5">
-              <Users size={16} className="text-violet shrink-0" />
+              <Users size={16} className="text-violet-light shrink-0" />
               <div>
                 <div className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                   {totalPlayers.toLocaleString("fr-FR")}

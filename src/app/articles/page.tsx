@@ -68,7 +68,7 @@ export default async function ArticlesPage({
       <div className="mt-4 flex flex-wrap gap-2">
         <Link
           href="/articles"
-          className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!category ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+          className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!category ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
         >
           Tous
         </Link>
@@ -76,7 +76,7 @@ export default async function ArticlesPage({
           <Link
             key={cat}
             href={`/articles?category=${cat}`}
-            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${category === cat ? "bg-arcane text-white" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${category === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
           >
             {categoryLabels[cat] ?? cat}
           </Link>
@@ -110,7 +110,7 @@ export default async function ArticlesPage({
               )}
               <div className="p-5">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-violet">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-violet-light">
                     {categoryLabels[article.category] ?? article.category}
                   </span>
                   {cc && <CountryBadge code={cc} />}

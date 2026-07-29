@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
+import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
 
 interface TierListData {
   id: string;
@@ -41,15 +42,7 @@ const SET_LABELS: Record<string, string> = {
   Global: "Globale",
 };
 
-const TIER_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  S: { bg: "bg-red-500/80", text: "text-white", border: "border-red-500/40" },
-  A: { bg: "bg-orange-400/80", text: "text-white", border: "border-orange-400/40" },
-  B: { bg: "bg-yellow-400/80", text: "text-gray-900", border: "border-yellow-400/40" },
-  C: { bg: "bg-teal-500/80", text: "text-white", border: "border-teal-500/40" },
-  D: { bg: "bg-gray-500/80", text: "text-white", border: "border-gray-500/40" },
-};
-
-const tierOrder = ["S", "A", "B", "C", "D"];
+const tierOrder = TIER_ORDER;
 
 export function TierListTabs({
   tierLists,
@@ -72,8 +65,10 @@ export function TierListTabs({
 
   return (
     <>
-      <div className="mt-8 flex justify-center">
-        <div className="inline-flex rounded-lg border border-hairline bg-surface p-1 gap-1">
+      <div className="mt-8 flex justify-center px-4">
+        {/* Les 4 onglets font 412px : sans retour à la ligne, ils débordaient
+            l'écran à 320px de large. */}
+        <div className="inline-flex max-w-full flex-wrap justify-center rounded-lg border border-hairline bg-surface p-1 gap-1">
           {tierLists.map((tl) => (
             <button
               key={tl.id}
@@ -81,7 +76,7 @@ export function TierListTabs({
               className={cn(
                 "rounded-md px-4 py-2 text-sm font-semibold transition-colors",
                 activeTab === tl.id
-                  ? "bg-arcane text-white shadow-sm"
+                  ? "bg-arcane text-canvas shadow-sm"
                   : "text-ink-secondary hover:text-ink hover:bg-surface-raised",
               )}
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
@@ -104,7 +99,7 @@ export function TierListTabs({
         {tierOrder.map((tier, tierIdx) => {
           const entries = grouped[tier];
           if (!entries || entries.length === 0) return null;
-          const colors = TIER_COLORS[tier];
+          const colors = TIER_BANNER[tier];
           const isFirst = tierIdx === 0 || tierOrder.slice(0, tierIdx).every((t) => !grouped[t]?.length);
           const isLast = tierIdx === tierOrder.length - 1 || tierOrder.slice(tierIdx + 1).every((t) => !grouped[t]?.length);
           return (
