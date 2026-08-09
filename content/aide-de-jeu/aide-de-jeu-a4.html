@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Riftbound, aide de jeu A4</title>
+<!--
+  Source de l'aide de jeu A4, deux pages, format 1 contre 1.
+  Toutes les icônes viennent de public/icons/, les mêmes fichiers que le site.
+  Aucun pictogramme n'est dessiné ici : les gestes sans asset n'en portent pas.
+  Texte en français uniquement.
+
+  Rendu PDF : servir la racine du dépôt en local, ouvrir cette page dans Chromium
+  et imprimer en A4 avec les fonds, marges 9mm / 9mm / 7mm.
+-->
+<style>
+  @page { size: A4; margin: 9mm 9mm 7mm; }
+
+  :root {
+    --ink: #17151a;
+    --ink-soft: #45404d;
+    --line: #d6d1cb;
+    --gold: #a8781f;
+    --gold-soft: #f6efdf;
+    --wash: #f5f3ef;
+    --kw: #94b42a;
+    --kw-ink: #231916;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-size: 8.1pt; }
+
+  body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", "DejaVu Sans", sans-serif;
+    color: var(--ink);
+    line-height: 1.38;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page { page-break-after: always; }
+  .page:last-of-type { page-break-after: auto; }
+
+  /* Bandeau d'objectif */
+  .goal {
+    background: var(--gold-soft);
+    border-left: 2.4pt solid var(--gold);
+    padding: 2mm 3mm;
+    margin-bottom: 3mm;
+    font-size: 8.4pt;
+  }
+  .goal b { color: var(--gold); }
+
+  /* Colonnes. Pas de hauteur imposée : une hauteur trop courte pousse le surplus
+     dans une 3e colonne, ce qui fait rétrécir toute la page à l'impression. */
+  .cols {
+    column-count: 2;
+    column-gap: 5.5mm;
+    column-fill: balance;
+  }
+
+  section {
+    break-inside: avoid;
+    margin-bottom: 3.2mm;
+  }
+  section.may-break { break-inside: auto; }
+
+  h2 {
+    font-size: 7.6pt;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin: 0 0 1.4mm;
+    padding-bottom: .8mm;
+    border-bottom: .7pt solid var(--line);
+    color: var(--gold);
+  }
+
+  p { margin: 0 0 1.2mm; }
+
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { margin-bottom: 1.1mm; padding-left: 3.1mm; position: relative; }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: .42em;
+    width: 1.5mm; height: 1.5mm;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  li.plain { padding-left: 0; }
+  li.plain::before { content: none; }
+
+  /* Étapes de la confrontation. Surtout pas de rond chiffré ici : ce visuel
+     est réservé au coût en énergie, il ne doit pas vouloir dire deux choses. */
+  ol { margin: 0; padding: 0; counter-reset: step; list-style: none; }
+  ol li { padding-left: 5.6mm; margin-bottom: 1.2mm; }
+  ol li::before {
+    counter-increment: step;
+    content: counter(step) ".";
+    background: none;
+    color: var(--gold);
+    width: 4.4mm;
+    top: 0;
+    transform: none;
+    font-size: 8.4pt;
+    font-weight: 800;
+    text-align: right;
+    left: -.6mm;
+  }
+
+  /* Tableaux clé / valeur, pour les gestes et les mots-clés */
+  .rows { display: grid; grid-template-columns: auto 1fr; gap: .9mm 2mm; align-items: start; }
+  .rows dt { font-weight: 700; white-space: nowrap; display: flex; align-items: center; gap: 1.4mm; }
+  .rows dd { margin: 0; color: var(--ink-soft); }
+
+  /* Icônes */
+  .ic { width: 3.6mm; height: 3.6mm; object-fit: contain; vertical-align: -.7mm; }
+  .ic-lg { width: 4.6mm; height: 4.6mm; }
+  svg.ic { fill: none; stroke: var(--ink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* Grille des domaines */
+  .domains { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1mm 2mm; }
+  .domains span { display: flex; align-items: center; gap: 1.4mm; font-weight: 600; }
+
+  /* Encart d'avertissement */
+  .warn {
+    background: var(--wash);
+    border: .7pt solid var(--line);
+    border-left: 2.4pt solid var(--ink);
+    padding: 1.8mm 2.4mm;
+    margin-top: 1.4mm;
+  }
+  .warn b { text-transform: uppercase; font-size: 6.8pt; letter-spacing: .08em; }
+
+  .note { color: var(--ink-soft); font-size: 7.2pt; }
+
+  /* Étiquette de mot-clé, reprise du bandeau imprimé sur les cartes.
+     Couleurs prélevées sur Sprite Fountain (UNL 078/219) : fond #94b42a,
+     texte #231916. Italique gras en majuscules, sur un parallélogramme penché. */
+  .kw {
+    display: inline-block;
+    background: var(--kw);
+    color: var(--kw-ink);
+    font-style: italic;
+    font-weight: 800;
+    font-size: .86em;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    padding: .2mm 1.3mm .35mm;
+    transform: skewX(-11deg);
+    white-space: nowrap;
+  }
+  .kw > span { display: inline-block; transform: skewX(11deg); }
+
+  /* Coût d'une carte : le rond d'énergie et ses symboles de rune.
+     Même rendu que le site, voir src/components/card-text-renderer.tsx. */
+  .cost { display: inline-flex; align-items: center; gap: .6mm; }
+  .nrg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4mm; height: 3.4mm;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-size: 6.2pt;
+    font-weight: 700;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============================ PAGE 1 ============================ -->
+<div class="page">
+
+  <div class="goal">
+    <b>But :</b> premier à 8 points. Conquérir un champ de bataille rapporte 1 point.
+    Le tenir encore au début de ton tour, ce qu'on appelle l'occupation, rapporte 1 point de plus.
+    On ne marque qu'une fois par champ et par tour.
+  </div>
+
+  <div class="cols">
+
+    <section>
+      <h2>Ce qu'il y a dans un deck</h2>
+      <ul>
+        <li><img class="ic" src="../../public/icons/Legend.webp" alt=""> <b>1 Légende.</b> Elle fixe les domaines autorisés, deux sur toutes les Légendes sorties à ce jour. Elle démarre dans sa zone.</li>
+        <li><b>3 champs de bataille.</b> Les cartes horizontales, les lieux à conquérir. Un seul des trois sera joué.</li>
+        <li><img class="ic" src="../../public/icons/Rune.webp" alt=""> <b>12 runes pile</b>, aux domaines de ta Légende, dans un deck séparé.</li>
+        <li><b>Un deck principal d'au moins 40 cartes :</b> unités, sorts, équipements. L'une d'elles est ton champion, posé d'entrée devant toi. On mélange les autres.</li>
+        <li>Jusqu'à <b>3 cartes du même nom</b>, champion compris. Jusqu'à <b>3 cartes Signature en tout</b> (sorts et unités), toutes au nom du champion de ta Légende.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Les 6 domaines</h2>
+      <div class="domains">
+        <span><img class="ic" src="../../public/icons/Fury.webp" alt="">Fureur</span>
+        <span><img class="ic" src="../../public/icons/Calm.webp" alt="">Calme</span>
+        <span><img class="ic" src="../../public/icons/Mind.webp" alt="">Esprit</span>
+        <span><img class="ic" src="../../public/icons/Body.webp" alt="">Corps</span>
+        <span><img class="ic" src="../../public/icons/Chaos.webp" alt="">Chaos</span>
+        <span><img class="ic" src="../../public/icons/Order.webp" alt="">Ordre</span>
+      </div>
+      <p class="note" style="margin-top:1.2mm">
+        <img class="ic" src="../../public/icons/RainbowRune.webp" alt=""> L'arc-en-ciel se paie avec n'importe quel domaine.
+      </p>
+    </section>
+
+    <section>
+      <h2>Mise en place</h2>
+      <ul>
+        <li>Légende et champion face visible. Deck principal et deck de runes mélangés, gardés séparés.</li>
+        <li>Chacun met en jeu <b>1 de ses 3 champs de bataille</b> ; les deux autres sortent de la partie. Les deux champs retenus vont au centre, dans leur zone commune.</li>
+        <li>Prévois la place pour ta Base, où vivent tes unités hors champ de bataille, tes runes et ta défausse.</li>
+        <li>Qui commence ? On lance les dés.</li>
+        <li>Chacun pioche <b>4 cartes</b>. Mulligan : mets jusqu'à 2 cartes de côté, repioche autant, <b>puis</b> glisse les cartes mises de côté sous ton deck.</li>
+        <li>Au premier tour, celui qui commence canalise <b>2 runes</b>, le second en canalise <b>3</b>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ton tour, dans l'ordre</h2>
+      <dl class="rows">
+        <dt>A. Éveil</dt>
+        <dd>tout ce que tu contrôles se prépare : unités, Légende, runes reviennent à la verticale.</dd>
+        <dt>B. Départ</dt>
+        <dd>effets de début de tour, puis 1 point par champ de bataille que tu contrôles.</dd>
+        <dt>C. Canalisation</dt>
+        <dd>pose les 2 runes du dessus de ton deck de runes, préparées.</dd>
+        <dt>D. Pioche</dt>
+        <dd>1 carte. Pas de limite de cartes en main.</dd>
+      </dl>
+      <p style="margin-top:1.2mm">Puis <b>tu joues</b>, dans l'ordre que tu veux, autant de fois que tu peux payer :</p>
+      <ul>
+        <li>jouer des cartes, depuis ta main ou ton champion posé devant toi ;</li>
+        <li>activer des capacités d'unités, de runes ou de Légende ;</li>
+        <li>épuiser des unités pour les déplacer vers un champ de bataille ou en revenir. S'il y a des ennemis dessus, ça part en confrontation.</li>
+      </ul>
+      <p style="margin-top:1.2mm"><b>Fin de tour :</b> effets de fin de tour, puis toutes les unités sont soignées.</p>
+    </section>
+
+    <section>
+      <h2>Les 3 types de cartes</h2>
+      <dl class="rows">
+        <dt><img class="ic" src="../../public/icons/Unit.webp" alt="">Unités</dt>
+        <dd>arrivent épuisées, dans ta Base ou sur un champ de bataille à toi. Dégâts égaux ou supérieurs à leur Puissance, elles sont éliminées. Les champions sont des unités.</dd>
+        <dt><img class="ic" src="../../public/icons/Spell.webp" alt="">Sorts</dt>
+        <dd>font leur effet puis vont à la défausse. Jamais posés en jeu.</dd>
+        <dt><img class="ic" src="../../public/icons/Gear.webp" alt="">Équipements</dt>
+        <dd>joués préparés dans ta Base. Ils n'attaquent pas, n'ont pas de Puissance et ne subissent pas de dégâts : ce sont leurs capacités qui comptent. Un équipement équipé suit l'unité qui le porte.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Payer le coût d'une carte</h2>
+      <p class="note">Le coût est en haut à gauche. Le rond chiffré et les symboles de domaine vont le plus souvent ensemble, mais ils ne se paient pas de la même façon.</p>
+      <p style="margin-top:1mm">
+        <span class="cost"><span class="nrg">2</span><img class="ic" src="../../public/icons/Fury.webp" alt=""></span>
+        = épuise 2 runes, <b>et</b> recycle 1 rune Fureur.
+      </p>
+      <dl class="rows" style="margin-top:1.4mm">
+        <dt><span class="cost"><span class="nrg">2</span></span> Le rond chiffré</dt>
+        <dd>c'est l'énergie. <b>Épuise</b> autant de runes qu'indiqué, n'importe lesquelles. Elles restent sur le plateau et se préparent à ton prochain Éveil.</dd>
+        <dt><span class="cost"><img class="ic" src="../../public/icons/Fury.webp" alt=""><img class="ic" src="../../public/icons/Body.webp" alt=""></span> Les symboles</dt>
+        <dd>un symbole de domaine, sans rond. <b>Recycle</b> 1 rune de ce domaine par symbole : elle quitte le plateau et retourne sous ton deck de runes.</dd>
+      </dl>
+      <p class="note" style="margin-top:1.2mm">Une rune déjà épuisée peut encore être recyclée, y compris celle qui vient de payer l'énergie.</p>
+    </section>
+
+    <section>
+      <h2>Les gestes de base</h2>
+      <dl class="rows">
+        <dt>
+          <img class="ic" src="../../public/icons/Tap.webp" alt="">
+          Épuiser
+        </dt>
+        <dd>coucher la carte à l'horizontale, pour payer l'énergie ou pour te déplacer. Une carte épuisée ne peut plus être épuisée à nouveau, mais elle se bat toujours et ses capacités marchent.</dd>
+
+        <dt>Préparer</dt>
+        <dd>la remettre à la verticale. Tout se prépare à l'Éveil.</dd>
+
+        <dt>Recycler</dt>
+        <dd>glisser une rune sous ton deck de runes pour payer un symbole de domaine.</dd>
+
+        <dt>Canaliser</dt>
+        <dd>poser des runes du deck de runes en jeu, préparées.</dd>
+
+        <dt>Déplacer</dt>
+        <dd>épuiser une unité pour entrer sur un champ de bataille ou en revenir. Interdit pendant une confrontation ou un combat.</dd>
+
+        <dt>Jeton</dt>
+        <dd>unité créée en cours de partie, hors deck. N'importe quel objet qu'on peut coucher et redresser fait l'affaire.</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Quand a-t-on le droit de jouer ?</h2>
+      <p>Par défaut : à ton tour seulement, hors combat, quand rien d'autre n'est en cours. Trois mots-clés changent ça.</p>
+      <dl class="rows" style="margin-top:1mm">
+        <dt><span class="kw"><span>Action</span></span></dt>
+        <dd>jouable aussi pendant les confrontations, combat compris, même si ce n'est pas ton tour.</dd>
+        <dt><span class="kw"><span>Réaction</span></span></dt>
+        <dd>en plus, jouable avant qu'un sort ou une capacité ne se résolve. La réaction se résout d'abord.</dd>
+        <dt><span class="kw"><span>Ajout</span></span></dt>
+        <dd>les capacités des runes qui servent à payer se résolvent aussitôt : on ne peut pas y réagir.</dd>
+      </dl>
+    </section>
+
+  </div>
+</div>
+
+<!-- ============================ PAGE 2 ============================ -->
+<div class="page">
+
+  <div class="cols short">
+
+    <section>
+      <h2>Marquer des points</h2>
+      <ul>
+        <li><b>Conquête.</b> Tu prends le contrôle d'un champ qui ne t'a pas encore rapporté de point ce tour. 1 point. Entrer sur un champ vide le conquiert aussitôt ; entrer sur un champ tenu par l'ennemi déclenche d'abord une confrontation.</li>
+        <li><b>Occupation.</b> Au début de ton tour, chaque champ que tu contrôles encore rapporte 1 point. Tu contrôles un champ tant qu'une de tes unités y reste.</li>
+        <li><b>Effets de cartes.</b> Certaines cartes donnent directement des points. Ceux-là échappent à la règle du dernier point.</li>
+        <li>Un même champ ne rapporte <b>jamais plus d'un point par tour</b> et par joueur.</li>
+        <li>Perdre le contrôle d'un champ retire la carte cachée qui s'y trouvait.</li>
+      </ul>
+      <div class="warn">
+        <b>Victoire</b><br>
+        Tu gagnes dès que tu as <b>8 points ou plus</b> et plus de points que ton adversaire.
+      </div>
+    </section>
+
+    <section class="may-break">
+      <h2>La confrontation, étape par étape</h2>
+      <ol>
+        <li>Les capacités « quand je défends » se résolvent <b>avant</b> les « quand j'attaque ». Réactions possibles des deux côtés.</li>
+        <li>Place à la confrontation : les deux joueurs jouent leurs cartes <span class="kw"><span>Action</span></span> et leurs cartes cachées. Chaque sort ou capacité peut prendre des <span class="kw"><span>Réaction</span></span> avant de se résoudre, et les réactions se résolvent en premier.</li>
+        <li>Tout le monde a passé ? On se bat.</li>
+        <li>Chacun additionne la Puissance de ses unités présentes et répartit ce total en dégâts sur les unités d'en face. Il faut de quoi tuer une unité avant d'en entamer une autre, et juste de quoi la tuer, pas plus, tant qu'il reste une unité à toucher. Les unités <span class="kw"><span>Tank</span></span> encaissent en premier.</li>
+        <li>Tous les dégâts tombent en même temps. Dégâts égaux ou supérieurs à la Puissance, l'unité est éliminée. Les dégâts ne baissent pas la Puissance : une unité à 6 qui a pris 5 tape toujours à 6.</li>
+        <li>On soigne toutes les unités qui restent. Puis <b>le joueur dont le total de Puissance est le plus faible rappelle ses unités à sa Base</b>. C'est ce total, pas le rôle d'attaquant ou de défenseur, qui décide qui recule.</li>
+        <li>Il ne reste qu'un joueur sur le champ ? Il en prend le contrôle, et s'il n'y avait pas encore marqué ce tour, c'est une conquête : 1 point. Totaux égaux et personne ne recule ? Un nouveau combat s'engage aussitôt.</li>
+      </ol>
+      <p class="note" style="margin-top:1.2mm">Un défenseur qui survit n'annule donc pas forcément la conquête : s'il lui reste moins de Puissance, c'est lui qui rentre à la Base.</p>
+    </section>
+
+    <section>
+      <h2>Le dernier point</h2>
+      <p>Le point qui te ferait atteindre 8 ne se prend pas sur une simple conquête. Il faut :</p>
+      <ul>
+        <li>le marquer par <b>occupation</b>, donc en tenant un champ au début de ton tour ; ou</li>
+        <li>le marquer par conquête <b>et</b> avoir marqué sur <b>tous les champs de bataille</b> pendant ce même tour, par conquête ou par occupation.</li>
+      </ul>
+      <p style="margin-top:1.2mm">Sinon le point saute et tu pioches 1 carte à la place. Les points donnés par une carte échappent à cette restriction.</p>
+    </section>
+
+    <section class="may-break">
+      <h2>Mots-clés</h2>
+      <dl class="rows">
+        <dt><span class="kw"><span>Accélération</span></span></dt>
+        <dd>contre 1 énergie et 1 rune recyclée en plus, l'unité arrive préparée au lieu d'épuisée.</dd>
+        <dt><span class="kw"><span>Légion</span></span></dt>
+        <dd>effet bonus si tu as déjà joué une autre carte ce tour.</dd>
+        <dt><span class="kw"><span>Assaut</span></span></dt>
+        <dd>Puissance augmentée tant que l'unité attaque.</dd>
+        <dt><span class="kw"><span>Bouclier</span></span></dt>
+        <dd>Puissance augmentée tant que l'unité défend.</dd>
+        <dt><span class="kw"><span>Tank</span></span></dt>
+        <dd>doit recevoir les dégâts mortels avant les autres unités de son camp.</dd>
+        <dt><span class="kw"><span>Agonie</span></span></dt>
+        <dd>effet déclenché quand la carte est éliminée et part à la défausse.</dd>
+        <dt><span class="kw"><span>Protection</span></span></dt>
+        <dd>l'adversaire doit recycler une rune de plus, n'importe quel domaine, à chaque fois qu'il cible cette carte.</dd>
+        <dt><span class="kw"><span>Gank</span></span></dt>
+        <dd>peut passer d'un champ de bataille à l'autre sans repasser par la Base.</dd>
+        <dt><span class="kw"><span>Temporaire</span></span></dt>
+        <dd>éliminée au début de ton tour, avant que les points soient marqués.</dd>
+        <dt><span class="kw"><span>Vision</span></span></dt>
+        <dd>en la jouant, regarde la carte du dessus de ton deck. Tu peux la recycler.</dd>
+        <dt><span class="kw"><span>Étourdissement</span></span></dt>
+        <dd>la Puissance de l'unité ne compte pas dans les dégâts de combat. Il faut quand même sa Puissance entière pour l'éliminer. Ça se dissipe en fin de tour.</dd>
+        <dt><span class="kw"><span>Buff</span></span></dt>
+        <dd>marqueur qui donne +1 Puissance. Un seul par unité, les suivants sont perdus. Certains effets en dépensent un.</dd>
+      </dl>
+      <p style="margin-top:1.4mm"><span class="kw"><span>Caché</span></span> : à ton tour, recycle 1 rune, n'importe quel domaine, pour poser la carte face cachée sur un champ que tu contrôles. Une seule carte cachée par champ, et elle y reste tant que tu gardes le champ.</p>
+      <div class="warn">
+        <b>Piège</b><br>
+        La carte cachée n'est jouable qu'<b>à partir du tour suivant</b>. Elle gagne alors <span class="kw"><span>Réaction</span></span> et se joue sans payer son coût, en ciblant ce champ ou ce qui s'y trouve.
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -45,7 +45,12 @@ Deux points à ne pas défaire :
 
 ## Règles de publication
 
-- 280 caractères, un lien en fin de tweet, une idée par tweet.
+- 280 caractères, une idée par tweet.
+- **Pas de lien dans le corps du tweet.** X réduit la portée des publications qui
+  sortent les gens de la plateforme. Le tweet se suffit à lui-même, le lien part en
+  première réponse. Sur un compte qui cherche son audience, la portée vaut plus que le
+  clic, d'autant que le trafic du site vient de la recherche, pas des réseaux.
+- Une image porte plus loin qu'un texte nu. Joindre un visuel dès que possible.
 - Pas plus d'un hashtag, deux emoji maximum, jamais en ouverture.
 - Aucun chiffre ni nom de carte sorti de nulle part : tout vient de la base ou d'une
   source citée dans la fiche du tweet.

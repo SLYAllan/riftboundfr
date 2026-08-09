@@ -23,3 +23,10 @@ publications d'avant cette date ne sont pas tracées ici.
 2026-07-27 | proposé | Outils | Couverture de collection par deck (53/56) et filtre decks jouables | /collection
 2026-07-27 | proposé | Communauté | Sondage : quelle Légende Vendetta en premier | aucun
 2026-07-27 | proposé | Communauté | Rift Tour : vous jouez dans quelle boutique | /articles/le-rift-tour-circuit-competitif-france
+
+## 2026-08
+
+2026-08-09 | proposé | Meta | Trois City Challenges le 8 août, 370 joueurs : trois vainqueurs, trois paires de domaines, aucun deck dominant | /cartes?set=vendetta
+2026-08-09 | proposé | Actu | Kennen 2e à Wuhan une semaine après la sortie de Vendetta | /cartes?set=vendetta
+2026-08-09 | proposé | Actu | Réserve de 8 à 10 cartes, confirmé sur les 192 listes des premiers tournois Vendetta | /guides/deckbuilding
+2026-08-09 | proposé | Communauté | Laquelle des quatre listes Vendetta vous montez | /deckbuilder
