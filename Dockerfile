@@ -1,4 +1,7 @@
-FROM node:20-alpine AS base
+# Node 20 est en fin de vie depuis avril 2026 : plus de correctif de sécurité.
+# 24 est la LTS courante et la version de développement en local, donc build et
+# production tournent sur le même moteur.
+FROM node:24-alpine AS base
 
 FROM base AS deps
 WORKDIR /app
