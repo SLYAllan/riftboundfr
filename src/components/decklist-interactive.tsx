@@ -92,9 +92,9 @@ function CardTooltip({ card }: { card: DecklistCard }) {
           ))}
         </div>
         <div className="flex gap-3 text-sm font-semibold">
-          {card.energy != null && <span className="inline-flex items-center gap-1 text-yellow-400"><img src="/icons/SwordIconRB.webp" alt="" className="h-3.5 w-3.5" />{card.energy}</span>}
+          {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>Énergie</span>}
           {card.power != null && <span className="text-pink-400">{card.power} <span className="text-xs font-normal text-ink-muted">Pouvoir</span></span>}
-          {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/OverNumbered.webp" alt="" className="h-3.5 w-3.5" />{card.might}</span>}
+          {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-3.5 w-3.5 brightness-0 invert" />{card.might}</span>}
         </div>
         {card.description && (
           <p className="text-xs text-ink-secondary leading-relaxed"><CardTextRenderer text={card.description} /></p>
@@ -131,9 +131,9 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
             ))}
           </div>
           <div className="flex gap-3 text-base font-semibold">
-            {card.energy != null && <span className="inline-flex items-center gap-1 text-yellow-400"><img src="/icons/SwordIconRB.webp" alt="" className="h-4 w-4" />{card.energy}</span>}
+            {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>Énergie</span>}
             {card.power != null && <span className="text-pink-400">{card.power} <span className="text-xs font-normal text-ink-muted">Pouvoir</span></span>}
-            {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/OverNumbered.webp" alt="" className="h-4 w-4" />{card.might}</span>}
+            {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-4 w-4 brightness-0 invert" />{card.might}</span>}
           </div>
           {card.description && (
             <p className="text-sm text-ink-secondary leading-relaxed"><CardTextRenderer text={card.description} /></p>
@@ -429,9 +429,13 @@ export function DecklistInteractive({
               const total = sectionCards.reduce((sum, c) => sum + c.quantity, 0);
               return (
                 <div key={section}>
-                  <h2 className="text-sm font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                  {/* h3 et pas h2 : ces libellés se répètent à l'identique pour chaque
+                      decklist de la page. Sur une page Légende qui en déplie trois, ça
+                      faisait 18 h2 « Deck Principal » quasi identiques, qui noyaient les
+                      deux seuls titres porteurs de sens. */}
+                  <h3 className="text-sm font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]} <span className="text-ink-muted font-normal">({total})</span>
-                  </h2>
+                  </h3>
                   <div className="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8">
                     {sectionCards.map((c) => {
                       const isBf = c.type === "Battlefield";
@@ -479,9 +483,9 @@ export function DecklistInteractive({
               if (!sectionCards?.length) return null;
               return (
                 <div key={section}>
-                  <h2 className="text-sm font-semibold text-ink-secondary mb-2" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                  <h3 className="text-sm font-semibold text-ink-secondary mb-2" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]}
-                  </h2>
+                  </h3>
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-hairline text-xs text-ink-muted">

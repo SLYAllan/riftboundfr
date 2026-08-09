@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback, useEffect, useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
+import { CardTextRenderer } from "@/components/card-text-renderer";
 
 interface CardData {
   name: string;
@@ -12,6 +13,7 @@ interface CardData {
   might?: number | null;
   rarity?: string;
   domains?: string[];
+  textPlain?: string | null;
 }
 
 const cache = new Map<string, CardData | null>();
@@ -137,17 +139,22 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
             </span>
             <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
               {card.type && <span className="text-ink-muted">{TYPE_LABELS_FR[card.type] ?? card.type}</span>}
+              {/* Énergie en pastille chiffrée, Puissance avec l'épée : c'était
+                  l'inverse, l'énergie portait l'épée de Puissance et la Puissance
+                  l'icône des surnuméraires, noire sur fond sombre donc invisible.
+                  Même rendu que CardTextRenderer. */}
               {card.energy != null && (
-                <span className="inline-flex items-center gap-1 font-semibold text-yellow-400">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/SwordIconRB.webp" alt="" className="h-3.5 w-3.5" />
-                  {card.energy}
+                <span className="inline-flex items-center gap-1 font-semibold text-ink-secondary">
+                  <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">
+                    {card.energy}
+                  </span>
+                  Énergie
                 </span>
               )}
               {card.might != null && (
                 <span className="inline-flex items-center gap-1 font-semibold text-red-400">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/OverNumbered.webp" alt="" className="h-3.5 w-3.5" />
+                  <img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-3.5 w-3.5 brightness-0 invert" />
                   {card.might}
                 </span>
               )}
@@ -161,6 +168,11 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
                 </span>
               ))}
             </span>
+            {card.textPlain && (
+              <span className="block border-t border-hairline pt-1.5 text-xs text-ink-secondary">
+                <CardTextRenderer text={card.textPlain} />
+              </span>
+            )}
           </span>
         </span>
       )}

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
+import { CardTextRenderer } from "@/components/card-text-renderer";
 
 // Aperçu agrandi d'une carte au survol : popup en position fixe (jamais rognée
 // par les conteneurs en overflow-hidden), placée au-dessus de la vignette ou
@@ -14,6 +15,12 @@ function resized(url: string, w: number): string {
   }
   return url;
 }
+
+// Texte d'effet chargé à la demande : ni la couverture de deck ni le classeur ne
+// le transportent, et l'ajouter à leurs deux chaînes de données pour un survol ne
+// vaut pas le détour. Une seule requête par nom, mise en cache pour la session ;
+// la route répond avec un cache d'une heure.
+const textCache = new Map<string, string | null>();
 
 export function CardHover({
   src, alt, name, type, energy, might, domains, note, width = 300, className, children,
@@ -32,8 +39,29 @@ export function CardHover({
 }) {
   const [hovered, setHovered] = useState(false);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
+  const [text, setText] = useState<string | null>(textCache.get(name) ?? null);
   const ref = useRef<HTMLDivElement>(null);
   const popRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!hovered) return;
+    if (textCache.has(name)) {
+      setText(textCache.get(name) ?? null);
+      return;
+    }
+    let cancelled = false;
+    fetch(`/api/cards/preview?name=${encodeURIComponent(name)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        const t = d?.textPlain ?? null;
+        textCache.set(name, t);
+        if (!cancelled) setText(t);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [hovered, name]);
 
   // Une fois le popup rendu (opacity 0), on mesure sa hauteur RÉELLE puis on le
   // place au-dessus de la vignette - ou en dessous s'il n'y a pas la place - en
@@ -84,17 +112,20 @@ export function CardHover({
             </div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
               {type && <span className="text-ink-muted">{TYPE_LABELS_FR[type] ?? type}</span>}
+              {/* Même correction que dans CardRef : l'énergie en pastille chiffrée,
+                  la Puissance avec l'épée en blanc. */}
               {energy != null && (
-                <span className="inline-flex items-center gap-1 font-semibold text-yellow-400">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/SwordIconRB.webp" alt="" className="h-3.5 w-3.5" />
-                  {energy}
+                <span className="inline-flex items-center gap-1 font-semibold text-ink-secondary">
+                  <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">
+                    {energy}
+                  </span>
+                  Énergie
                 </span>
               )}
               {might != null && (
                 <span className="inline-flex items-center gap-1 font-semibold text-red-400">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/icons/OverNumbered.webp" alt="" className="h-3.5 w-3.5" />
+                  <img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-3.5 w-3.5 brightness-0 invert" />
                   {might}
                 </span>
               )}
@@ -108,6 +139,11 @@ export function CardHover({
                 </span>
               ))}
             </div>
+            {text && (
+              <div className="border-t border-hairline pt-1.5 text-xs text-ink-secondary">
+                <CardTextRenderer text={text} />
+              </div>
+            )}
             {note && <div className="text-xs">{note}</div>}
           </div>
         </div>

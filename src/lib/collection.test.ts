@@ -54,6 +54,17 @@ describe("computeDeckCoverage", () => {
     expect(cov.totals.owned).toBe(1);
   });
 
+  it("main + réserve de la même carte = une seule ligne", () => {
+    const owned = new Map([["gust", 1]]);
+    const cov = computeDeckCoverage(owned, [
+      { cardId: "c1", name: "Gust", section: "main", cleanName: "gust", quantity: 3 },
+      { cardId: "c1", name: "Gust", section: "side", cleanName: "gust", quantity: 2 },
+    ]);
+    expect(cov.entries).toHaveLength(1);
+    expect(cov.entries[0].required).toBe(5);
+    expect(cov.entries[0].missing).toBe(4);
+  });
+
   it("l'alt-art compte (possédé via cleanName)", () => {
     const owned = new Map([["gust", 3], ["flash", 1]]);
     const cov = computeDeckCoverage(owned, deck);

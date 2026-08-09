@@ -63,11 +63,23 @@ export function computeDeckCoverage(
   owned: OwnedByName,
   deckCards: DeckCardLike[],
 ): DeckCoverage {
+  // Une carte jouée en main ET en réserve arrivait ici en deux lignes, donc deux
+  // vignettes de la même carte dans « cartes manquantes ». On additionne d'abord
+  // les quantités par carte : une carte, une ligne. La section retenue est celle
+  // de la première ligne, elle ne sert pas à l'affichage.
+  const merged = new Map<string, DeckCardLike>();
+  for (const dc of deckCards) {
+    const key = nameKey(dc.cleanName, dc.name);
+    const seen = merged.get(key);
+    if (seen) seen.quantity += dc.quantity;
+    else merged.set(key, { ...dc });
+  }
+
   // On consomme les exemplaires possédés au fur et à mesure : si deux lignes du
   // deck pointent vers la même carte (impressions différentes), elles puisent
   // dans le même stock au lieu de le compter deux fois.
   const remaining = new Map(owned);
-  const entries: CoverageEntry[] = deckCards.map((dc) => {
+  const entries: CoverageEntry[] = [...merged.values()].map((dc) => {
     const key = nameKey(dc.cleanName, dc.name);
     const have = remaining.get(key) ?? 0;
     const used = Math.min(have, dc.quantity);
