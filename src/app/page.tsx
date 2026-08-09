@@ -11,6 +11,7 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { BookOpen, Layers, BookText, Shield, ArrowRight, Gamepad2, Newspaper, Trophy, Library, Upload } from "lucide-react";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
+import { legendsWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
@@ -18,33 +19,13 @@ import { HomeTierList } from "@/components/home-tier-list";
 
 const getHomeData = unstable_cache(
   async () => {
-    const [tierLists, allDecks, latestArticles, tournamentArticles, cardCount] = await Promise.all([
+    const [tierLists, legends, latestArticles, tournamentArticles, cardCount] = await Promise.all([
       prisma.tierList.findMany({
         where: { published: true },
         include: { entries: { orderBy: { position: "asc" } } },
         orderBy: { createdAt: "asc" },
       }),
-      prisma.deck.findMany({
-        where: {
-          published: true,
-          OR: [
-            { tournamentContext: null },
-            { featured: true },
-          ],
-        },
-        // Borne le pool (L14) : on n'en affiche que 6 au hasard, inutile de tout charger.
-        take: 60,
-        select: {
-          id: true,
-          slug: true,
-          legendName: true,
-          playerName: true,
-          placement: true,
-          tournamentTier: true,
-          tournamentContext: true,
-          featured: true,
-        },
-      }),
+      legendsWithDecks(),
       prisma.article.findMany({
         where: { published: true },
         orderBy: { publishedAt: "desc" },
@@ -74,8 +55,12 @@ const getHomeData = unstable_cache(
         { imageUrl: getLegendIconUrl(c.name) ?? c.imageUrl, domains: c.domains },
       ]);
 
-    const shuffled = allDecks.sort(() => Math.random() - 0.5);
-    const randomDecks = shuffled.slice(0, 6);
+    // Six Légendes les plus jouées, pas six decks au hasard. Search Console (juillet
+    // 2026) : l'accueil est en position 8,6 sur « riftbound deck » et n'y convertit pas,
+    // pendant que `/decks` reste bloqué en 13,5 derrière elle. Le bloc renvoyait vers
+    // six decklists tirées au sort, sans rapport avec la recherche. Il renvoie
+    // maintenant vers les pages de Légende, qui visent « deck <légende> ».
+    const topLegends = legends.slice(0, 6);
 
     // Un seul tournoi par ville : un même RQ peut avoir un récap ET un best-of,
     // parfois avec des libellés différents ("Utrecht Regional Qualifier" vs
@@ -96,7 +81,7 @@ const getHomeData = unstable_cache(
     }
     const dedupedTournaments = [...byTournament.values()].slice(0, 5);
 
-    return { tierLists, randomDecks, legendEntries, latestArticles, tournamentArticles: dedupedTournaments, cardCount };
+    return { tierLists, topLegends, legendEntries, latestArticles, tournamentArticles: dedupedTournaments, cardCount };
   },
   ["home-data"],
   { revalidate: 60, tags: ["home"] },
@@ -145,7 +130,7 @@ const guides = [
 
 export default async function HomePage() {
   let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
-  let randomDecks: Awaited<ReturnType<typeof getHomeData>>["randomDecks"] = [];
+  let topLegends: Awaited<ReturnType<typeof getHomeData>>["topLegends"] = [];
   let latestArticles: Awaited<ReturnType<typeof getHomeData>>["latestArticles"] = [];
   let tournamentArticles: Awaited<ReturnType<typeof getHomeData>>["tournamentArticles"] = [];
   let cardCount = 0;
@@ -153,7 +138,7 @@ export default async function HomePage() {
   try {
     const data = await getHomeData();
     tierLists = data.tierLists;
-    randomDecks = data.randomDecks;
+    topLegends = data.topLegends;
     latestArticles = data.latestArticles;
     tournamentArticles = data.tournamentArticles;
     cardCount = data.cardCount;
@@ -185,14 +170,14 @@ export default async function HomePage() {
       {/* 3-column layout */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr_1fr] items-stretch">
-          {/* Left - Random decks grid */}
+          {/* Left - Légendes les plus jouées */}
           <div className="flex flex-col rounded-card border border-hairline bg-surface overflow-hidden">
             <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
               <h2
                 className="text-lg font-bold"
                 style={{ fontFamily: "var(--font-rubik), sans-serif" }}
               >
-                Decks à la une
+                Légendes les plus jouées
               </h2>
               <Link
                 href="/decks"
@@ -202,20 +187,20 @@ export default async function HomePage() {
               </Link>
             </div>
             <div className="grid flex-1 grid-cols-3 gap-1 p-2 content-center">
-              {randomDecks.map((deck) => {
+              {topLegends.map((legend) => {
                 // Icône de légende = image source carrée (800×800), nette en vignette
                 // carrée ; fallback bannière large si pas d'icône.
-                const imgUrl = getLegendIconUrl(deck.legendName) ?? getBannerUrl(deck.legendName);
+                const imgUrl = getLegendIconUrl(legend.legendName) ?? getBannerUrl(legend.legendName);
                 return (
                   <Link
-                    key={deck.id}
-                    href={`/decks/${deck.slug}`}
+                    key={legend.slug}
+                    href={`/legendes/${legend.slug}`}
                     className="group relative overflow-hidden rounded-lg aspect-square"
                   >
                     {imgUrl ? (
                       <Image
                         src={imgUrl}
-                        alt={deck.legendName}
+                        alt={legend.legendName}
                         fill
                         sizes="(max-width: 640px) 30vw, (max-width: 1024px) 15vw, 160px"
                         loading="lazy"
@@ -226,24 +211,15 @@ export default async function HomePage() {
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-canvas/90 via-canvas/30 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-1.5">
-                      <div className="flex items-end justify-between gap-1">
-                        <span
-                          className="text-[11px] font-bold leading-tight text-ink drop-shadow-md truncate"
-                          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                        >
-                          {displayLegendName(deck.legendName)}
-                        </span>
-                        {deck.tournamentTier && (
-                          <span className="shrink-0 rounded bg-canvas/60 px-1 py-0.5 text-[9px] font-bold text-arcane">
-                            {deck.tournamentTier}
-                          </span>
-                        )}
+                      <span
+                        className="block text-[11px] font-bold leading-tight text-ink drop-shadow-md truncate"
+                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                      >
+                        {displayLegendName(legend.legendName)}
+                      </span>
+                      <div className="text-[9px] text-gold/80 truncate leading-tight mt-0.5">
+                        {legend.deckCount.toLocaleString("fr-FR")} decks
                       </div>
-                      {deck.tournamentContext && (
-                        <div className="text-[9px] text-gold/80 truncate leading-tight mt-0.5">
-                          {deck.tournamentContext}
-                        </div>
-                      )}
                     </div>
                   </Link>
                 );

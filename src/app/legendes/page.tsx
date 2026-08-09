@@ -6,7 +6,12 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { getBannerUrl } from "@/lib/banners";
+import { legendsWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName } from "@/lib/utils";
+
+// La liste dépend de la base (Légendes sans fiche) : rendu à la requête, comme les
+// autres pages qui lisent la DB, sinon le build Docker la fige à vide.
+export const dynamic = "force-dynamic";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 
@@ -35,6 +40,8 @@ interface FicheSummary {
   archetype?: string;
 }
 
+// Fiches rédigées, plus les Légendes qui ont des decks publiés sans fiche : elles ont
+// une page (rendue depuis la base), elle doit donc être atteignable depuis l'index.
 async function loadSummaries(): Promise<FicheSummary[]> {
   const files = (await fs.readdir(FICHES_DIR)).filter((f) => f.endsWith(".json"));
   const out: FicheSummary[] = [];
@@ -55,6 +62,12 @@ async function loadSummaries(): Promise<FicheSummary[]> {
       });
     } catch {
       /* fiche illisible : on l'ignore, jamais d'invention. */
+    }
+  }
+  const known = new Set(out.map((f) => f.slug));
+  for (const l of await legendsWithDecks()) {
+    if (!known.has(l.slug)) {
+      out.push({ slug: l.slug, legendName: l.legendName, domains: [] });
     }
   }
   return out;

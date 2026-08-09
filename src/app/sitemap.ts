@@ -8,7 +8,12 @@ import { promises as fs } from "fs";
 import path from "path";
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
+import { legendsWithDecks } from "@/lib/legend-fiche";
 import { slugify } from "@/lib/utils";
+
+// Graphies telles qu'elles arrivent du scrape : ordinaux anglais, y compris quand ils
+// sont fautifs plus loin dans le classement (« 1373th »).
+const TOP8_PLACEMENTS = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
@@ -33,22 +38,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/ban-list`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
-  // Fiches Légendes : générées depuis data/fiches/*.json (système de fichiers,
-  // toujours dispo, même sans DB). Une URL /legendes/<slug> par fiche.
-  let legendPages: MetadataRoute.Sitemap = [];
+  // Pages Légendes : une par fiche rédigée (data/fiches/*.json, toujours lisible même
+  // sans DB) PLUS une par Légende qui a des decks publiés sans fiche. Priorité haute :
+  // ce sont les pages qui visent les requêtes "deck <légende>".
+  const legendSlugs = new Set<string>();
   try {
     const ficheFiles = await fs.readdir(path.join(process.cwd(), "data", "fiches"));
-    legendPages = ficheFiles
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => ({
-        url: `${baseUrl}/legendes/${f.replace(/\.json$/, "")}`,
-        lastModified: now,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      }));
+    for (const f of ficheFiles) {
+      if (f.endsWith(".json")) legendSlugs.add(f.replace(/\.json$/, ""));
+    }
   } catch {
     /* dossier indispo : on s'en passe. */
   }
+  for (const l of await legendsWithDecks()) legendSlugs.add(l.slug);
+  const legendPages: MetadataRoute.Sitemap = [...legendSlugs].map((slug) => ({
+    url: `${baseUrl}/legendes/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
   try {
     const [articles, tournamentContexts, decks, cards] = await Promise.all([
@@ -57,18 +65,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         SELECT DISTINCT "tournamentContext" FROM "Deck"
         WHERE published = true AND "tournamentContext" IS NOT NULL
       `,
-      // Curation : seuls les decks à valeur SEO entrent au sitemap (best-of,
-      // guide rédigé, ou résultat de tournoi). Les decklists scrappées « brutes »
-      // restent accessibles mais ne sont plus poussées - sinon Google découvre
-      // ~19k pages fines/quasi-dupliquées qu'il refuse d'indexer (budget de crawl).
+      // Curation : seuls les decks à valeur SEO entrent au sitemap (best-of, guide
+      // rédigé, ou Top 8 de tournoi). Les decklists scrappées « brutes » restent en
+      // ligne et liées depuis les pages de tournoi, mais ne sont plus poussées.
+      //
+      // Les deux conditions précédentes, `tournamentContext` et `placement` non nuls,
+      // ne filtraient rien : 22 511 decks publiés sur 22 511 ont un contexte de
+      // tournoi, et 22 450 ont un classement (jusqu'à « 1373th »). Le sitemap
+      // déclarait donc 22 512 pages de decks pour 23 751 URL, alors que Google n'en
+      // indexe qu'un quart et qu'elles rapportent 0,12 clic chacune. D'où le Top 8
+      // en toutes lettres : c'est le seul classement qui fasse une page à part.
       prisma.deck.findMany({
         where: {
           published: true,
           OR: [
             { featured: true },
             { guide: { not: null } },
-            { tournamentContext: { not: null } },
-            { placement: { not: null } },
+            { placement: { in: TOP8_PLACEMENTS } },
           ],
         },
         select: { slug: true, updatedAt: true },

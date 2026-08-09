@@ -20,7 +20,8 @@ import { DecklistInteractive } from "@/components/decklist-interactive";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
-import { displayLegendName } from "@/lib/utils";
+import { legendWithDecks } from "@/lib/legend-fiche";
+import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
@@ -81,6 +82,42 @@ async function getFiche(slug: string): Promise<Fiche | null> {
   }
 }
 
+// Une Légende sans fiche rédigée a quand même sa page dès qu'elle a des decks publiés :
+// la fiche est alors reconstruite depuis la base. On ne reprend que les domaines, qui
+// n'ont pas de langue. Pas le texte de la carte : il est en anglais et truffé de jetons
+// d'icônes, illisible dans un bloc de prose française. Rien n'est inventé : sans carte en
+// base, la page n'affiche que les decklists.
+async function ficheFromDb(legendName: string): Promise<Fiche> {
+  const fiche: Fiche = { legendName };
+  try {
+    const card = await prisma.card.findFirst({
+      where: {
+        type: "Legend",
+        OR: [
+          { name: { equals: legendName, mode: "insensitive" } },
+          { name: { equals: legendName.replace(", ", " - "), mode: "insensitive" } },
+        ],
+      },
+      select: { domains: true },
+    });
+    if (card) fiche.domains = card.domains;
+  } catch {
+    /* DB indispo : page rendue sans domaines. */
+  }
+  return fiche;
+}
+
+// Fiche rédigée si elle existe, sinon repli sur la base. `null` = ni l'une ni l'autre,
+// la page n'existe pas.
+async function resolveLegend(
+  slug: string,
+): Promise<{ fiche: Fiche; deckCount: number } | null> {
+  const [fiche, fromDecks] = await Promise.all([getFiche(slug), legendWithDecks(slug)]);
+  if (fiche) return { fiche, deckCount: fromDecks?.deckCount ?? 0 };
+  if (!fromDecks) return null;
+  return { fiche: await ficheFromDb(fromDecks.legendName), deckCount: fromDecks.deckCount };
+}
+
 const TIER_LABELS: Record<number, string> = {
   1: "Tier 1 (haut du méta)",
   2: "Tier 2 (solide)",
@@ -108,16 +145,45 @@ function displayDeckName(title: string, legendName: string): string {
 
 // Decklists réelles de la Légende (uniquement des decks publiés en base, jamais
 // d'invention). try/catch : si la DB est indisponible, on rend la page sans decks.
+//
+// Deux requêtes plutôt qu'une : le classement se fait sur `tournamentTier` (S > A > B…)
+// et `placement` ("1st", "10th"), que Postgres trierait dans l'ordre alphabétique, donc
+// faux. On lit d'abord les clés de tri seules (léger, même sur 3 000 decks), on trie en
+// mémoire, puis on ne charge les cartes que des 24 retenus. Avant, le tri portait sur les
+// 30 decks les plus récents : la page annonçait les meilleurs et montrait les derniers.
+const POOL_SIZE = 24;
+
 async function fetchLegendDecks(legendName: string) {
   try {
-    return await prisma.deck.findMany({
+    const keys = await prisma.deck.findMany({
       where: { published: true, legendName: { contains: legendName, mode: "insensitive" } },
+      select: { id: true, featured: true, tournamentTier: true, placement: true, createdAt: true },
+    });
+    keys.sort((a, b) => {
+      // `featured` d'abord : ce sont les best-of, la meilleure liste retenue par tournoi
+      // pour cette Légende. Le classer après le niveau de tournoi remontait un 48e
+      // d'Utrecht devant eux, parce que `tournamentTier` n'est renseigné que sur 221
+      // decks sur 22 500 et vaut null sur la plupart des best-of.
+      if (a.featured !== b.featured) return a.featured ? -1 : 1;
+      const ta = a.tournamentTier ? (TIER_ORDER[a.tournamentTier] ?? 5) : 5;
+      const tb = b.tournamentTier ? (TIER_ORDER[b.tournamentTier] ?? 5) : 5;
+      if (ta !== tb) return ta - tb;
+      const pa = placementRank(a.placement);
+      const pb = placementRank(b.placement);
+      if (pa !== pb) return pa - pb;
+      return b.createdAt.getTime() - a.createdAt.getTime();
+    });
+    const ids = keys.slice(0, POOL_SIZE).map((k) => k.id);
+    if (ids.length === 0) return [];
+    const decks = await prisma.deck.findMany({
+      where: { id: { in: ids } },
       include: {
         cards: { include: { card: true }, orderBy: [{ section: "asc" }, { card: { name: "asc" } }] },
       },
-      orderBy: { createdAt: "desc" },
-      take: 30,
     });
+    // `in` ne garantit pas l'ordre : on réapplique celui des ids.
+    const rank = new Map(ids.map((id, i) => [id, i]));
+    return decks.sort((a, b) => (rank.get(a.id) ?? 0) - (rank.get(b.id) ?? 0));
   } catch {
     return [];
   }
@@ -129,14 +195,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const fiche = await getFiche(slug);
-  if (!fiche) return { title: "Légende introuvable" };
+  const resolved = await resolveLegend(slug);
+  if (!resolved) return { title: "Légende introuvable" };
+  const { fiche } = resolved;
   const name = displayLegendName(fiche.legendName ?? slug);
   // Pas de set dans le titre : `fiche.set` est le set d'IMPRESSION de la carte
   // légende (Irelia = Spiritforged, Master Yi = Origins Starter), pas le format
   // où elle se joue. Toutes les fiches sont jouables en Unleashed, donc afficher
   // un vieux set laissait croire à une page périmée.
-  const title = `${name} : meilleurs decks et guide`;
+  const title = `Decks ${name} : les meilleures listes et le guide`;
   const archetype = fiche.archetype ? `${fiche.archetype}. ` : "";
   // La description ne promet que ce que la page contient vraiment : les fiches
   // générées depuis les decklists n'ont ni plan de jeu ni forces et faiblesses.
@@ -183,10 +250,64 @@ function Section({
   );
 }
 
+// Vignette de carte : l'image quand la carte est en base, le texte seul sinon.
+// Sert aux cartes clés, aux Champions joués et aux champs de bataille, qui
+// étaient trois listes de texte. Les champs de bataille sont en paysage.
+function CardTile({
+  art,
+  label,
+  sub,
+  badge,
+  landscape,
+}: {
+  art: { name: string; imageUrl: string | null; riftboundId: string } | null;
+  label: React.ReactNode;
+  sub?: string | null;
+  badge?: string | null;
+  landscape?: boolean;
+}) {
+  const image = art?.imageUrl ? (
+    <Image
+      src={art.imageUrl}
+      alt={art.name}
+      width={landscape ? 300 : 214}
+      height={landscape ? 214 : 300}
+      sizes="(max-width: 640px) 45vw, 200px"
+      className="w-full rounded-game-card bg-surface-raised object-cover transition-transform duration-200 group-hover:scale-[1.03]"
+      style={{ aspectRatio: landscape ? "419 / 300" : "300 / 419" }}
+    />
+  ) : null;
+
+  return (
+    <div className="group flex flex-col gap-1.5">
+      {image &&
+        (art ? (
+          <Link href={`/cartes/${art.riftboundId}`} className="block">
+            {image}
+          </Link>
+        ) : (
+          image
+        ))}
+      <div className="flex flex-wrap items-baseline gap-1.5">
+        <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          {label}
+        </span>
+        {badge && (
+          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet-light">
+            {badge}
+          </span>
+        )}
+      </div>
+      {sub && <p className="text-xs text-ink-secondary">{sub}</p>}
+    </div>
+  );
+}
+
 export default async function LegendePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const fiche = await getFiche(slug);
-  if (!fiche) notFound();
+  const resolved = await resolveLegend(slug);
+  if (!resolved) notFound();
+  const { fiche, deckCount } = resolved;
 
   const name = displayLegendName(fiche.legendName ?? slug);
   const legendName = fiche.legendName ?? name;
@@ -196,42 +317,76 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   // (UNL-059) dans `name`, parfois le vrai nom. On collecte tous les codes et on
   // interroge la DB une seule fois. En force-dynamic la DB est joignable : les codes
   // sont résolus en prod (plus de UNL-059 affichés bruts).
+  // On résout aussi les noms, pas seulement les codes, et on rapatrie l'image :
+  // les cartes clés, les Champions joués et les champs de bataille étaient trois
+  // listes de texte, alors que ces pages parlent de cartes.
   const codes = new Set<string>();
+  const names = new Set<string>();
+  const collect = (v: string | null | undefined) => {
+    if (!v) return;
+    if (CODE_RE.test(v)) codes.add(v);
+    else names.add(v);
+  };
   for (const kc of fiche.keyCards ?? []) {
     if (kc.id && CODE_RE.test(kc.id)) codes.add(kc.id);
-    else if (kc.name && CODE_RE.test(kc.name)) codes.add(kc.name);
+    else collect(kc.name);
   }
-  const cardMap: Record<string, string> = {};
-  if (codes.size > 0) {
+  for (const champName of Object.keys(fiche.champions ?? {})) collect(champName);
+  for (const bf of fiche.topBattlefields ?? []) collect(bf);
+
+  interface Art {
+    name: string;
+    imageUrl: string | null;
+    riftboundId: string;
+  }
+  const cardArt: Record<string, Art> = {};
+  if (codes.size > 0 || names.size > 0) {
     try {
       // Les fiches utilisent un code court (UNL-059) ; en base le riftboundId est en
       // minuscules sur 3 segments (unl-059-219). On matche par préfixe "unl-059-" (le
       // tiret final exclut les variantes alt-art type "unl-059a-").
       const codeList = [...codes];
+      const nameList = [...names];
       const cards = await prisma.card.findMany({
-        where: { OR: codeList.map((c) => ({ riftboundId: { startsWith: `${c.toLowerCase()}-` } })) },
-        select: { riftboundId: true, name: true },
+        where: {
+          alternateArt: false,
+          OR: [
+            ...codeList.map((c) => ({ riftboundId: { startsWith: `${c.toLowerCase()}-` } })),
+            ...nameList.flatMap((n) => [
+              { name: { equals: n, mode: "insensitive" as const } },
+              { cleanName: { equals: n, mode: "insensitive" as const } },
+            ]),
+          ],
+        },
+        select: { riftboundId: true, name: true, cleanName: true, imageUrl: true },
       });
       for (const code of codeList) {
         const pref = `${code.toLowerCase()}-`;
         const match = cards.find((c) => c.riftboundId.startsWith(pref));
-        if (match) cardMap[code] = match.name;
+        if (match) cardArt[code] = match;
+      }
+      for (const n of nameList) {
+        const low = n.toLowerCase();
+        const match = cards.find(
+          (c) => c.name.toLowerCase() === low || c.cleanName?.toLowerCase() === low,
+        );
+        if (match) cardArt[n] = match;
       }
     } catch {
-      /* DB indispo : on affichera les codes bruts (cas de repli). */
+      /* DB indispo : on retombe sur le texte seul. */
     }
   }
+  // Compat : les rendus qui n'ont besoin que du nom résolu.
+  const cardMap: Record<string, string> = Object.fromEntries(
+    Object.entries(cardArt).map(([k, v]) => [k, v.name]),
+  );
 
-  // On récupère un pool puis on garde les 3 meilleures (tier de tournoi puis placement).
+  // Pool déjà trié (niveau de tournoi, puis classement) : les 3 premiers dépliés.
   const legendDecks = await fetchLegendDecks(legendName);
-
-  legendDecks.sort((a, b) => {
-    const ta = a.tournamentTier ? (TIER_ORDER[a.tournamentTier] ?? 5) : 5;
-    const tb = b.tournamentTier ? (TIER_ORDER[b.tournamentTier] ?? 5) : 5;
-    if (ta !== tb) return ta - tb;
-    return placementRank(a.placement) - placementRank(b.placement);
-  });
   const topDecks = legendDecks.slice(0, 3);
+  // Le reste du pool part en liste de liens (pas de decklist dépliée : la page serait
+  // illisible et lourde).
+  const otherDecks = legendDecks.slice(3);
 
   // Mappe un deck (DeckCard[] + carte incluse) vers DecklistCard[], avec le repli
   // d'injection de la Légende (reprise fidèle de /decks/[slug]).
@@ -336,10 +491,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     ? [guide.bref, guide.gagne, guide.plan].filter(Boolean).join("\n\n").replace(/\s*[—–]\s*/g, ", ")
     : null;
 
+  // Date de fraîcheur : celle du deck le plus récent affiché. Elle décrit exactement
+  // ce que la page contient, contrairement à une date de publication figée. Les pages
+  // concurrentes affichent la leur dans les résultats de recherche, pas nous.
+  const lastUpdated = legendDecks.length
+    ? new Date(Math.max(...legendDecks.map((d) => d.createdAt.getTime())))
+    : null;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${name} : guide et decklists à Riftbound`,
+    headline: `Decks ${name} : les meilleures listes et le guide`,
+    ...(lastUpdated ? { dateModified: lastUpdated.toISOString() } : {}),
     description: fiche.archetype ?? `Guide de la Légende ${name} à Riftbound.`,
     inLanguage: "fr",
     about: "Riftbound",
@@ -405,21 +568,33 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               className="text-3xl font-bold text-white drop-shadow sm:text-4xl"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              {name}
+              Decks {name}
             </h1>
             {fiche.archetype && (
               <p className="mt-1 max-w-2xl text-sm text-white/85 sm:text-base">{fiche.archetype}</p>
             )}
             <div className="mt-3">{Badges}</div>
+            {lastUpdated && (
+              <p className="mt-2 text-xs text-white/70">
+                Mis à jour le{" "}
+                <time dateTime={lastUpdated.toISOString().slice(0, 10)}>{formatDate(lastUpdated)}</time>
+              </p>
+            )}
           </div>
         </header>
       ) : (
         <header className="rounded-card border border-hairline bg-surface p-5">
           <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            {name}
+            Decks {name}
           </h1>
           {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
           <div className="mt-3">{Badges}</div>
+          {lastUpdated && (
+            <p className="mt-2 text-xs text-ink-muted">
+              Mis à jour le{" "}
+              <time dateTime={lastUpdated.toISOString().slice(0, 10)}>{formatDate(lastUpdated)}</time>
+            </p>
+          )}
         </header>
       )}
 
@@ -438,7 +613,12 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
       <div className="mt-10 space-y-12">
         {/* Decklists, contenu principal */}
-        <Section title="Decklists de la Légende" icon={<Layers size={20} />}>
+        <Section title={`Meilleurs decks ${name}`} icon={<Layers size={20} />}>
+          {deckCount > 0 && (
+            <p className="mb-3 text-sm text-ink-secondary">
+              {`${deckCount.toLocaleString("fr-FR")} decklist${deckCount > 1 ? "s" : ""} ${name} relevée${deckCount > 1 ? "s" : ""} en tournoi. Les meilleures d'abord : niveau du tournoi, puis classement du joueur.`}
+            </p>
+          )}
           {decklists.length === 0 ? (
             <p className="rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
               Pas encore de decklist classée pour cette Légende.
@@ -502,6 +682,51 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           )}
         </Section>
 
+        {/* Les listes suivantes en liens : chemin interne vers les pages deck, que Google
+            n'atteint aujourd'hui que par le sitemap. Rendu dans l'ordre de tri déjà
+            calculé (niveau de tournoi, puis classement). */}
+        {otherDecks.length > 0 && (
+          <Section title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
+            <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
+              {otherDecks.map((deck) => (
+                <li key={deck.id}>
+                  <Link
+                    href={`/decks/${deck.slug}`}
+                    className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-2.5 text-sm hover:bg-surface-raised"
+                  >
+                    <span
+                      className="font-semibold text-arcane"
+                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                    >
+                      {displayDeckName(deck.title, legendName)}
+                    </span>
+                    {deck.playerName && (
+                      <span className="text-ink-muted">par {deck.playerName}</span>
+                    )}
+                    {deck.placement && (
+                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
+                        {deck.placement}
+                      </span>
+                    )}
+                    {deck.tournamentContext && (
+                      <span className="ml-auto truncate text-xs text-ink-muted">
+                        {deck.tournamentContext}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {deckCount > legendDecks.length && (
+              <p className="mt-3 text-sm">
+                <Link href={decksHref} className="text-arcane hover:underline">
+                  Voir les {deckCount.toLocaleString("fr-FR")} decks {name}
+                </Link>
+              </p>
+            )}
+          </Section>
+        )}
+
         {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
         {guideProse && (
           <Section title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
@@ -524,7 +749,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                 >
                   <TrendingUp size={18} /> Cartes clés
                 </h2>
-                <div className="mt-3 space-y-2">
+                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {fiche.keyCards!.map((kc, i) => {
                     const code =
                       kc.id && CODE_RE.test(kc.id)
@@ -532,22 +757,17 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                         : kc.name && CODE_RE.test(kc.name)
                           ? kc.name
                           : null;
-                    const resolved = code ? cardMap[code] : null;
+                    const art = (code ? cardArt[code] : null) ?? (kc.name ? cardArt[kc.name] : null);
                     const nameIsCode = !!kc.name && CODE_RE.test(kc.name);
-                    const display = resolved ?? kc.name ?? code ?? "";
-                    const wrapName = resolved ?? (!nameIsCode ? kc.name : null);
+                    const display = art?.name ?? kc.name ?? code ?? "";
+                    const wrapName = art?.name ?? (!nameIsCode ? kc.name : null);
                     return (
-                      <div key={i} className="rounded-lg border border-hairline bg-surface p-3">
-                        <div className="flex flex-wrap items-baseline gap-2">
-                          <span
-                            className="text-sm font-semibold"
-                            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                          >
-                            {wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
-                          </span>
-                        </div>
-                        {kc.role && <p className="mt-0.5 text-xs text-ink-secondary">{kc.role}</p>}
-                      </div>
+                      <CardTile
+                        key={i}
+                        art={art}
+                        label={wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
+                        sub={kc.role}
+                      />
                     );
                   })}
                 </div>
@@ -611,24 +831,15 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                 >
                   Champions joués
                 </h2>
-                <div className="mt-3 space-y-2">
+                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {Object.entries(fiche.champions).map(([champName, info]) => (
-                    <div key={champName} className="rounded-lg border border-hairline bg-surface p-3">
-                      <div className="flex flex-wrap items-baseline gap-2">
-                        <span
-                          className="text-sm font-semibold"
-                          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                        >
-                          {champName}
-                        </span>
-                        {info?.usage && (
-                          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet-light">
-                            {info.usage}
-                          </span>
-                        )}
-                      </div>
-                      {info?.role && <p className="mt-0.5 text-xs text-ink-secondary">{info.role}</p>}
-                    </div>
+                    <CardTile
+                      key={champName}
+                      art={cardArt[champName] ?? null}
+                      label={champName}
+                      badge={info?.usage}
+                      sub={info?.role}
+                    />
                   ))}
                 </div>
               </section>
@@ -642,14 +853,9 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                 >
                   Champs de bataille fréquents
                 </h2>
-                <div className="mt-3 flex flex-wrap gap-2">
+                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {fiche.topBattlefields!.map((bf) => (
-                    <span
-                      key={bf}
-                      className="rounded-full bg-surface-raised px-3 py-1 text-xs text-ink-secondary"
-                    >
-                      {bf}
-                    </span>
+                    <CardTile key={bf} art={cardArt[bf] ?? null} label={bf} landscape />
                   ))}
                 </div>
               </section>

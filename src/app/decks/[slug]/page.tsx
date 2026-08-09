@@ -6,7 +6,7 @@ import { slugify, displayLegendName } from "@/lib/utils";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
-import { legendFicheHref } from "@/lib/legend-fiche";
+import { legendHref as legendPageHref } from "@/lib/legend-fiche";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
@@ -126,9 +126,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
     select: { id: true, slug: true, title: true, playerName: true, placement: true, tournamentContext: true },
   });
 
-  // Lien vers la fiche de la Légende quand elle existe : c'est le seul chemin
-  // interne des pages deck vers /legendes, qui vise les requêtes "deck <légende>".
-  const legendHref = await legendFicheHref(deck.legendName);
+  // Lien vers la page de la Légende : c'est le chemin interne des pages deck vers
+  // /legendes, qui vise les requêtes "deck <légende>". Toujours valide, puisque ce deck
+  // est publié et que toute Légende avec un deck publié a une page.
+  const legendHref = legendPageHref(deck.legendName);
   const legendCard = deck.cards.find((dc) => dc.section === "legend");
   // Champion = carte supertype "Champion" qui n'est PAS la Légende (certaines Légendes,
   // ex. Annie, ont elles aussi supertype "Champion" → on distingue par type).

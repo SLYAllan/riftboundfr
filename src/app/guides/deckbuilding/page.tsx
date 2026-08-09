@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { legendHref } from "@/lib/legend-fiche";
 
 export const metadata: Metadata = {
   title: { absolute: "Guide Deckbuilding Riftbound - Construire son premier deck" },
@@ -75,7 +76,7 @@ export default function GuideDeckbuildingPage() {
           <p className="mt-2 text-sm text-ink-secondary">
             Un deck Riftbound contient au minimum <strong>40 cartes</strong> dans le deck principal (rester à 40 est recommandé), <strong>12 Runes</strong>, <strong>3 champs de bataille</strong>,
             plus une <strong>Légende</strong> et un <strong>Champion</strong> (1 copie désignée, jusqu&apos;à 3 copies dans le deck + jusqu&apos;à 3 cartes Signature).
-            La Réserve (side deck) permet d&apos;adapter votre deck entre les manches en Bo3.
+            La Réserve compte <strong>10 cartes</strong> depuis Vendetta et permet d&apos;adapter votre deck entre les manches en Bo3.
           </p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
             <strong>Règle des 3 copies :</strong> si une carte mérite d&apos;être incluse, jouez-en 3 copies. Si elle est situationnelle, jouez-en 1 ou 2.
@@ -231,10 +232,14 @@ export default function GuideDeckbuildingPage() {
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles légendes sont fortes en ce moment ?</h2>
           <p className="mt-2 text-sm text-ink-secondary">
             Si vous débutez la construction, partir d&apos;une légende éprouvée évite bien des erreurs. Sur le format actuel
-            (Unleashed), quatre légendes dominent les tournois : <strong>Irelia</strong> (tempo réactif, la plus constante),
-            <strong> Master Yi, Wuju Bladesman</strong> (contrôle de terrain Corps/Calme), <strong>Diana</strong> (agro-tempo) et
-            <strong> LeBlanc</strong> (moteur d&apos;Agonie). Leurs cœurs de deck sont bien établis : copiez-les pour apprendre,
-            puis ajustez vos slots flexibles.
+            (Unleashed), quatre légendes dominent les tournois :{" "}
+            <Link href={legendHref("Irelia, Blade Dancer")} className="font-semibold underline">Irelia</Link> (tempo réactif,
+            la plus constante),{" "}
+            <Link href={legendHref("Master Yi, Wuju Bladesman")} className="font-semibold underline">Master Yi, Wuju Bladesman</Link>{" "}
+            (contrôle de terrain Corps/Calme),{" "}
+            <Link href={legendHref("Diana, Scorn of the Moon")} className="font-semibold underline">Diana</Link> (agro-tempo) et{" "}
+            <Link href={legendHref("LeBlanc, Deceiver")} className="font-semibold underline">LeBlanc</Link> (moteur d&apos;Agonie).
+            Leurs cœurs de deck sont bien établis : copiez-les pour apprendre, puis ajustez vos slots flexibles.
           </p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
             <strong>Astuce :</strong> une légende peu jouée mais qui gagne souvent (comme <strong>Annie</strong> ou{" "}
@@ -261,7 +266,10 @@ export default function GuideDeckbuildingPage() {
           <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             <Hammer size={16} /> Créer un deck
           </Link>
-          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
+          <Link href="/decks" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
+            Voir des decks de tournoi
+          </Link>
+          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg border border-hairline px-4 py-2 text-sm font-semibold text-ink hover:bg-surface">
             Guide du débutant
           </Link>
         </div>
