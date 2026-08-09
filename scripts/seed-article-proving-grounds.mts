@@ -81,12 +81,12 @@ async function main() {
 
 | Légende | Top 8 sur Déchaînement | La liste qui a fait le résultat |
 |---|---|---|
-| Master Yi, Wuju Bladesman | 50 | **Aussi la moins chère, ou presque** |
+| Master Yi, Wuju Bladesman | 50 | **Trois fois moins chère que les autres** |
 | Annie, Dark Child | 8 | Deux fois le prix d'une liste jouable |
 | Lux, Lady of Luminosity | 1 | Quatre fois le prix d'une liste jouable |
 | Garen, Might of Demacia | 1 | Trois fois le prix d'une liste jouable |
 
-Le nombre de résultats ne dit pas tout. Chez Master Yi, la liste qui gagne est aussi celle qui coûte le moins cher. Chez les trois autres, la liste qui a fait un classement et celle qu'on peut se payer sont deux decks différents.
+Le nombre de résultats ne dit pas tout. La liste de Master Yi coûte trois fois moins que les trois autres, et c'est aussi celle dont l'écart avec une version économique est le plus faible. Chez Lux et Garen, la liste qui a fait un classement et celle qu'on peut se payer sont deux decks très différents.
 
 Ces chiffres décrivent Déchaînement. Vendetta est sorti le 31 juillet et les premiers tournois du nouveau format viennent tout juste de se jouer, donc ce qui suit raconte un format qui se termine.
 
@@ -107,11 +107,11 @@ La liste à copier est celle de **Factor, qui a gagné le RQ Hartford 2026**, le
 
 Le deck joue Corps et Calme et gagne par le contrôle du terrain. Il pose des unités bon marché qui survivent au premier échange, [[Ruin Runner]] et [[Lonely Poro]] en tête, il protège ce qui compte avec [[Defy]] et [[Discipline]], et il prend un champ de bataille après l'autre pendant que l'adversaire cherche encore par où entrer. Le champion désigné est [[Master Yi, Honed]], qui coûte quelques centimes.
 
-Une seule carte pèse vraiment dans le budget : [[Zhonya's Hourglass]] représente à elle seule la moitié de la valeur du deck. Le reste est bon marché, et les runes comme les champs de bataille ne coûtent presque rien.
+Deux lignes font les deux tiers du budget : les trois [[Zhonya's Hourglass]] et la Légende elle-même. Tout le reste est bon marché, [[Defy]] et [[Discipline]] en tête, et les runes comme les champs de bataille ne coûtent presque rien.
 
-Sur les 970 listes de Master Yi publiées sur le format, la moins chère de toutes descend à peine sous celle-ci. Inutile, donc, de chercher une version économique : celle qui a gagné le Regional en est déjà une.
+Sur les 970 listes de Master Yi publiées, les plus économiques reviennent à environ 40 % de moins que celle-ci. C'est le plus petit écart des quatre Légendes, et en valeur absolue ce deck reste trois fois moins cher que les trois autres.
 
-Si vous démarrez, montez les neuf dixièmes du deck maintenant et gardez les Zhonya's pour plus tard. Il reste jouable en attendant.`,
+Si vous démarrez, montez tout sauf les Zhonya's et ajoutez-les ensuite. Le deck reste jouable en attendant.`,
     ),
     list(
       "deck-yi",
@@ -131,11 +131,11 @@ Si vous démarrez, montez les neuf dixièmes du deck maintenant et gardez les Zh
 
 Huit listes d'Annie ont fini dans un Top 8 sur le format. Celle retenue ici a **gagné le City Challenge de Shenzhen du 16 mai**. Deux listes coûtent un peu moins cher, mais aucune des deux n'a de réserve : impossible de les jouer telles quelles en Bo3.
 
-C'est un deck qui carbure aux ressources. [[Traveling Merchant]] et [[Treasure Trove]] enchaînent les cartes, [[Rhasa the Sunderer]] et [[Brynhir Thundersong]] ferment la partie, et [[Heedless Resurrection]] ramène ce qui est tombé. Le champion désigné est [[Annie, Stubborn]], qui ne coûte rien.
+C'est un deck Furie et Chaos, bâti sur des unités bon marché qui reviennent vite. [[Sneaky Deckhand]], [[Ferrous Forerunner]] et [[Grim Apothecary]] occupent le terrain, [[Stacked Deck]] va chercher la carte qui manque, et [[Rengar, Pouncing]] puis [[Kai'Sa, Survivor]] transforment cette pression en points. Le champion désigné est [[Annie, Stubborn]], qui ne coûte rien.
 
-La facture est nettement plus lourde que chez Master Yi, mais elle se concentre sur peu de cartes : [[Seal of Discord]] représente à elle seule la moitié du prix du deck, devant les [[Ezreal, Prodigy]] et la Légende.
+La facture est nettement plus lourde que chez Master Yi, et elle tient à une seule ligne : les trois [[Kai'Sa, Survivor]] représentent à eux seuls près de 60 % du prix du deck. Loin derrière viennent [[Stacked Deck]] et la Légende.
 
-Autrement dit, ce n'est pas le plan de jeu d'Annie qui coûte cher, c'est une carte. D'autres joueurs l'ont d'ailleurs montée pour moitié moins : sur les 132 listes d'Annie publiées, la moins chère revient à peu près à la moitié de celle-ci. Aucune n'a fait de Top 8, mais elles tournent. Commencer sans les Seal of Discord reste donc une bonne façon d'entrer dans le deck.`,
+Ce n'est donc pas le plan de jeu d'Annie qui coûte cher, c'est une carte. D'autres joueurs l'ont montée pour moitié moins : sur les 132 listes d'Annie publiées, la moins chère revient à peu près à la moitié de celle-ci. Aucune n'a fait de Top 8, mais elles tournent.`,
     ),
     list(
       "deck-annie",
@@ -207,7 +207,7 @@ Deux réserves pour finir. D'abord, la liste date de mai et le méta a changé d
 
 Avec Master Yi, la question du budget ne se pose pas vraiment : la liste qui a gagné Hartford est déjà la moins chère que vous trouverez.
 
-Avec Annie, vous pouvez commencer par tout le reste du deck et acheter les [[Seal of Discord]] plus tard, quand vous en aurez les moyens. Le deck tourne sans, moins bien, mais il tourne.
+Avec Annie, vous pouvez monter tout le reste du deck et acheter les [[Kai'Sa, Survivor]] plus tard, quand vous en aurez les moyens. Le deck tourne sans, moins bien, mais il tourne.
 
 Avec Lux, cette solution n'existe pas. Les deux cartes qui coûtent cher sont précisément celles qui font gagner la partie. Vous les achetez, ou vous jouez autre chose.
 
