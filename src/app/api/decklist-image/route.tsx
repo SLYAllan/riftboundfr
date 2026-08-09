@@ -39,21 +39,33 @@ interface CardInfo {
 }
 
 // 1:1 square - the safest format for Twitter/X (no cropping in the timeline)
-const WIDTH = 2000;
-const HEIGHT = 2000;
 // Rendu en 2000 px : à 1000 le texte des cartes devenait illisible une fois
 // l'image recompressée par X. Toutes les dimensions ci-dessous suivent.
+//
+// `story` est le 9:16 des formats verticaux (story, reel, short). Même densité
+// de pixels que le carré à largeur égale, donc même lisibilité après
+// recompression. La mise en page est identique : seul le cadre change, et
+// `pickSizes` retrouve tout seul la taille de carte qui rentre.
+const FORMATS = {
+  square: { w: 2000, h: 2000 },
+  // 1620 et pas 1350 : le cadre vertical est étroit, donc le nombre de colonnes est
+  // dicté par la largeur. À 1350 le solveur tombait à 132 px de large par carte sur un
+  // gros deck, illisible. À 1620 il tient 184 px pour le même deck, soit 39 % de plus,
+  // sans changer le rapport 9:16.
+  story: { w: 1620, h: 2880 },
+} as const;
+type FormatKey = keyof typeof FORMATS;
 
 const CARD_GAP = 12;
-const BODY_W = WIDTH - 128; // 64px de marge de chaque côté
 
 // Pick the LARGEST card size that still lets the whole deck (main + runes +
 // battlefields + side) fit inside the square. Maximizes legibility per deck.
-function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number) {
+function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number, width: number, height: number) {
+  const BODY_W = width - 128; // 64px de marge de chaque côté
   const HEADER = 356; // legend header block
   const FOOTER = 128;
   const SECT = 68; // section title + spacing
-  for (const pw of [264, 248, 232, 216, 200, 184, 168, 156, 144]) {
+  for (const pw of [264, 248, 232, 216, 200, 184, 168, 156, 144, 132, 120, 108]) {
     const ph = Math.round(pw * 1.4);
     const lw = Math.round(pw * 1.7);
     const lh = Math.round(pw * 1.2);
@@ -65,9 +77,9 @@ function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number) {
     if (runeN) h += SECT + Math.ceil(runeN / cols) * rowH;
     if (bfN) h += SECT + Math.ceil(bfN / bfCols) * (lh + CARD_GAP);
     if (sideN) h += SECT + Math.ceil(sideN / cols) * rowH;
-    if (h <= HEIGHT) return { pw, ph, lw, lh };
+    if (h <= height) return { pw, ph, lw, lh };
   }
-  return { pw: 144, ph: 202, lw: 244, lh: 172 };
+  return { pw: 108, ph: 151, lw: 184, lh: 130 };
 }
 
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
@@ -478,6 +490,11 @@ export async function GET(req: NextRequest) {
   const slug = searchParams.get("slug");
   const code = searchParams.get("code");
   const shareCode = searchParams.get("share");
+  // ?format=story pour le 9:16, carré par défaut : tout ce qui existait continue
+  // de rendre exactement la même image.
+  const formatKey: FormatKey = searchParams.get("format") === "story" ? "story" : "square";
+  const WIDTH = FORMATS[formatKey].w;
+  const HEIGHT = FORMATS[formatKey].h;
 
   if (!slug && !code && !shareCode) {
     return new Response(
@@ -509,8 +526,14 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const { title, legendName, playerName, tournamentContext, placement, record, cards, domains } =
+  const { legendName, playerName, tournamentContext, placement, record, cards, domains } =
     deckData;
+  // Le code de deck ne transporte que des cartes : le titre saisi dans le deckbuilder
+  // s'y perdait et l'image retombait sur le nom de la Légende. On l'accepte en
+  // paramètre plutôt que de changer le format du code, qui sert aussi aux liens de
+  // partage. Borné à 80 caractères, la mise en page en tronque déjà l'affichage.
+  const titleParam = searchParams.get("title")?.trim().slice(0, 80);
+  const title = titleParam || deckData.title;
 
   // Organize cards by section
   const legendCards = cards.filter(
@@ -550,6 +573,8 @@ export async function GET(req: NextRequest) {
     runeCards.length,
     battlefieldCards.length,
     sideCards.length,
+    WIDTH,
+    HEIGHT,
   );
 
   return new ImageResponse(

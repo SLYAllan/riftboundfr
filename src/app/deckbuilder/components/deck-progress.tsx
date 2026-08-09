@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
+import { SIDE_SIZE } from "../lib/deck-rules";
 
 export type ProgressStep = "legend" | "champion" | "main" | "rune" | "battlefield" | "side";
 
@@ -34,7 +35,7 @@ export function DeckProgress({
     { key: "main", label: "Deck", current: mainTotal, target: 40, filterTab: "main" },
     { key: "rune", label: "Runes", current: runeTotal, target: 12, filterTab: "rune" },
     { key: "battlefield", label: "Champs", current: battlefieldTotal, target: 3, filterTab: "battlefield" },
-    { key: "side", label: "Réserve", current: sideTotal, target: 8, filterTab: "main" },
+    { key: "side", label: "Réserve", current: sideTotal, target: SIDE_SIZE, filterTab: "main" },
   ];
 
   const allComplete = steps.slice(0, 5).every((s) => s.current >= s.target);

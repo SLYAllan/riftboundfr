@@ -9,7 +9,7 @@ import {
 import { cn } from "@/lib/utils";
 import { DOMAIN_LABELS_FR } from "@/lib/domains";
 import { encodeDeckBase64, decodeDeck } from "@/lib/deck-codec";
-import { getSavedDecks, saveDeck, updateDeck, deleteDeck } from "@/lib/deck-storage";
+import { getSavedDecks, saveDeck, updateDeck, deleteDeck, saveDraft, loadDraft } from "@/lib/deck-storage";
 import { entriesToDeckCode, parseDeckCode } from "@/lib/deck-code";
 import { CardBrowserV2 } from "./components/card-browser";
 import { DeckPanelV2 } from "./components/deck-panel";
@@ -74,9 +74,10 @@ function maxQuantity(section: DeckSection, _type: string): number {
 interface DeckbuilderV2Props {
   initialCards: CardData[];
   idAliases?: Record<string, string>;
+  isAdmin?: boolean;
 }
 
-export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Props) {
+export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }: DeckbuilderV2Props) {
   const searchParams = useSearchParams();
   const [cards] = useState(initialCards);
   const [deck, setDeck] = useState<DeckState>(EMPTY_DECK);
@@ -112,7 +113,27 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
         return;
       }
     }
+
+    // Pas de deck dans l'URL : on reprend le brouillon local, s'il y en a un.
+    const draft = loadDraft<DeckState>();
+    if (draft?.deck) {
+      setDeck(draft.deck);
+      setDeckTitle(draft.title || "Nouveau deck");
+      if (draft.deck.legend) setActiveTab("main");
+    }
   }, [searchParams]);
+
+  // Sauvegarde du brouillon à chaque changement, pour survivre à un F5.
+  // On saute le tout premier passage : il a lieu avant que l'effet ci-dessus
+  // n'ait posé son état, et écraserait le brouillon avec un deck vide.
+  const draftReady = useRef(false);
+  useEffect(() => {
+    if (!draftReady.current) {
+      draftReady.current = true;
+      return;
+    }
+    saveDraft(deckTitle, deck);
+  }, [deck, deckTitle]);
 
   function resolveCard(id: string): CardData | undefined {
     return cardMap.get(id) ?? cardMap.get(idAliases[id]);
@@ -388,6 +409,12 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
     deleteDeck(id);
     setSavedDecks(getSavedDecks());
     if (activeDeckId === id) setActiveDeckId(null);
+  }
+
+  // Le code base64 seul, sans l'URL autour : c'est ce que /api/decklist-image
+  // attend en ?code=.
+  function getDeckCode(): string {
+    return getShareUrl().split("deck=")[1] ?? "";
   }
 
   function getShareUrl(): string {
@@ -752,6 +779,8 @@ export function DeckbuilderV2({ initialCards, idAliases = {} }: DeckbuilderV2Pro
       {showExport && (
         <ExportModal
           shareUrl={getShareUrl()}
+          deckCode={getDeckCode()}
+          isAdmin={isAdmin}
           textCode={getTextCode()}
           ttsCode={getTTSCode()}
           deckTitle={deckTitle}

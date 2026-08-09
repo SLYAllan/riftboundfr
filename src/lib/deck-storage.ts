@@ -68,3 +68,33 @@ export function deleteDeck(id: string): boolean {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
   return true;
 }
+
+// Brouillon du deck en cours de construction. Distinct des decks enregistrés :
+// il n'est jamais listé, il sert juste à retrouver son travail après un F5 ou
+// une fermeture d'onglet. Écrasé à chaque changement, une seule entrée.
+const DRAFT_KEY = "riftbound-deck-draft";
+
+export interface DeckDraft<T> {
+  title: string;
+  deck: T;
+  savedAt: string;
+}
+
+export function saveDraft<T>(title: string, deck: T): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify({ title, deck, savedAt: new Date().toISOString() }));
+  } catch {
+    /* quota plein ou stockage refusé : le brouillon est un confort, pas une garantie. */
+  }
+}
+
+export function loadDraft<T>(): DeckDraft<T> | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    return raw ? (JSON.parse(raw) as DeckDraft<T>) : null;
+  } catch {
+    return null;
+  }
+}

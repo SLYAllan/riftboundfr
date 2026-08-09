@@ -16,6 +16,8 @@ interface UserData {
 
 interface ExportModalProps {
   shareUrl: string;
+  deckCode: string;
+  isAdmin?: boolean;
   textCode: string;
   ttsCode: string;
   deckTitle: string;
@@ -44,9 +46,13 @@ const TABS: { key: ExportTab; label: string; icon: typeof Hash }[] = [
 ];
 
 export function ExportModal({
-  shareUrl, textCode, ttsCode, deckTitle, isEmpty, isDeckValid,
+  shareUrl, deckCode, isAdmin = false, textCode, ttsCode, deckTitle, isEmpty, isDeckValid,
   onPublish, onExportImage, onClose,
 }: ExportModalProps) {
+  // Le titre par défaut n'apprend rien : dans ce cas l'image garde le nom de la
+  // Légende, comme avant.
+  const titleParam =
+    deckTitle && deckTitle !== "Nouveau deck" ? `&title=${encodeURIComponent(deckTitle)}` : "";
   const [activeTab, setActiveTab] = useState<ExportTab>("link");
   const [copied, setCopied] = useState<string | null>(null);
   const [publishing, setPublishing] = useState(false);
@@ -309,6 +315,29 @@ export function ExportModal({
               </button>
               {imageState === "loading" && (
                 <p className="mt-3 text-xs text-ink-muted">Les images des cartes sont chargées une à une, comptez quelques secondes.</p>
+              )}
+              {isAdmin && deckCode && (
+                <div className="mt-5 border-t border-hairline pt-4">
+                  <p className="text-xs text-ink-muted">Formats réseaux, réservés à l&apos;administration.</p>
+                  <div className="mt-2 flex flex-wrap justify-center gap-2">
+                    <a
+                      href={`/api/decklist-image?code=${encodeURIComponent(deckCode)}${titleParam}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg border border-hairline px-3 py-1.5 text-xs font-semibold text-ink hover:bg-surface-raised"
+                    >
+                      Carré 2000x2000
+                    </a>
+                    <a
+                      href={`/api/decklist-image?code=${encodeURIComponent(deckCode)}&format=story${titleParam}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-lg border border-hairline px-3 py-1.5 text-xs font-semibold text-ink hover:bg-surface-raised"
+                    >
+                      9:16 1350x2400
+                    </a>
+                  </div>
+                </div>
               )}
               {imageState === "error" && (
                 <p className="mt-3 text-xs text-red-400">Image impossible à générer. Rechargez la page et réessayez.</p>

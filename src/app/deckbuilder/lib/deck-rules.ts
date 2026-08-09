@@ -1,5 +1,8 @@
 import { BANNED_CARD_NAMES } from "@/lib/banned-cards";
 
+// Taille de la Réserve, passée de 8 à 10 avec Vendetta.
+export const SIDE_SIZE = 10;
+
 export interface DeckValidationIssue {
   id: string;
   section: "legend" | "main" | "rune" | "battlefield" | "side";
@@ -76,12 +79,13 @@ export function validateDeck(
     });
   }
 
-  if (counts.sideTotal > 0 && counts.sideTotal !== 8) {
+  // Réserve à 10 depuis Vendetta (c'était 8).
+  if (counts.sideTotal > 0 && counts.sideTotal !== SIDE_SIZE) {
     issues.push({
       id: "side-count",
       section: "side",
       severity: "error",
-      message: `Réserve : ${counts.sideTotal}/8 (doit être 0 ou exactement 8)`,
+      message: `Réserve : ${counts.sideTotal}/${SIDE_SIZE} (doit être 0 ou exactement ${SIDE_SIZE})`,
     });
   }
 

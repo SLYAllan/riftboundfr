@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
 import { prisma, safeQuery } from "@/lib/prisma";
+import { isAdmin } from "@/lib/auth";
 import { DeckbuilderV2 } from "./deckbuilder";
 import type { Metadata } from "next";
 
@@ -115,10 +116,13 @@ async function getCards() {
 
 export default async function DeckbuilderPage() {
   const { cards, idAliases } = await safeQuery(() => getCards(), { cards: [], idAliases: {} as Record<string, string> });
+  // Lu côté serveur : `isAdmin()` couvre les deux entrées (mot de passe et Discord),
+  // là où /api/auth/me ne connaît que le rôle Discord.
+  const admin = await safeQuery(() => isAdmin(), false);
 
   return (
     <Suspense fallback={<div className="flex items-center justify-center h-[calc(100dvh-57px)] text-ink-muted">Chargement...</div>}>
-      <DeckbuilderV2 initialCards={cards} idAliases={idAliases} />
+      <DeckbuilderV2 initialCards={cards} idAliases={idAliases} isAdmin={admin} />
     </Suspense>
   );
 }
