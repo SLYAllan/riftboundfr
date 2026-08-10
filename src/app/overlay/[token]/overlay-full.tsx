@@ -83,22 +83,26 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
   return (
-    // Des ronds detaches, comme sur la retransmission : pas de bandeau noir, le fond
-    // reste la table de jeu. L ecart double au milieu separe les deux joueurs.
-    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center gap-2">
+    // Ronds detaches, anneau dore sur fond sombre, comme sur la retransmission. Le
+    // score courant est rempli en dore, chiffre en encre sombre. Les deux 8 du
+    // milieu, le seuil de victoire, portent un double anneau.
+    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center gap-2.5">
       {cells.map((c, i) => {
         const actif = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
+        const seuil = c.v === max;
         return (
           <span
             key={i}
             className={[
-              "flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold tabular-nums",
-              i === max ? "ml-4" : "",
-              actif
-                ? "bg-gold text-[#1b1408] ring-2 ring-white/80 ring-offset-2 ring-offset-transparent"
-                : "bg-black/70 text-white/80 ring-1 ring-white/35",
+              "flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold tabular-nums ring-1 ring-gold/80",
+              i === max ? "ml-3" : "",
+              actif ? "bg-gold text-[#1b1408]" : "bg-[#0b1220]/85 text-white",
             ].join(" ")}
-            style={{ boxShadow: actif ? "0 2px 10px rgba(0,0,0,0.55)" : "0 1px 6px rgba(0,0,0,0.5)" }}
+            style={{
+              boxShadow: seuil
+                ? "0 0 0 3px rgba(11,18,32,0.85), 0 0 0 4px rgba(212,168,67,0.85), 0 2px 8px rgba(0,0,0,0.5)"
+                : "0 2px 8px rgba(0,0,0,0.5)",
+            }}
           >
             {c.v}
           </span>
@@ -232,15 +236,20 @@ function Side({
   );
 }
 
-/** Manche du Bo3 : cercle vide, et le logo au centre dès qu'elle est gagnée. */
+/**
+ * Manche du Bo3. Les deux pastilles se ressemblent, c'est le logo qui distingue la
+ * manche gagnee : un anneau dore sur fond sombre dans les deux cas, comme sur la
+ * retransmission. Pas de fond dore delave, qui jurait avec l orange du logo.
+ */
 function Manche({ gagnee }: { gagnee: boolean }) {
   return (
     <span
-      className={`flex h-7 w-7 items-center justify-center rounded-full border-2 transition-colors duration-150 ${
-        gagnee ? "border-gold bg-gold/20" : "border-white/50 bg-black/30"
+      className={`flex h-8 w-8 items-center justify-center rounded-full bg-black/55 ring-2 ${
+        gagnee ? "ring-gold" : "ring-white/35"
       }`}
+      style={{ boxShadow: gagnee ? "0 0 10px rgba(212,168,67,0.55)" : "0 1px 4px rgba(0,0,0,0.5)" }}
     >
-      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className="h-4 w-4 object-contain" />}
+      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className="h-5 w-5 object-contain" />}
     </span>
   );
 }
