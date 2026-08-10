@@ -1,11 +1,10 @@
-/* Arpona en gras, la police de la retransmission officielle. Ce n'est pas une police
-   libre : le fichier n'est pas versionné. Déposez `arpona-bold.woff2` dans
-   `public/fonts/` et l'overlay la prend, sans toucher au code. Tant qu'il n'est pas
-   là, on retombe sur Rubik, et rien ne casse.
+/* Arpona en gras, la police de la retransmission officielle. Le woff2 est produit
+   depuis l'OTF fourni par Allan (fontTools) : 42 Ko contre 107, et c'est le seul
+   format que tous les navigateurs chargent vite. L'OTF reste en secours.
    Elle ne sert QUE sur l'overlay : le reste du site garde ses polices. */
 @font-face {
   font-family: "Arpona";
-  src: url("/fonts/arpona-bold.woff2") format("woff2");
+  src: url("/fonts/arpona-bold.woff2") format("woff2"), url("/fonts/arpona-bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;

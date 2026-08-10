@@ -1,7 +1,9 @@
-Deposez ici arpona-bold.woff2.
+Arpona gras, utilisee uniquement par l overlay de stream.
 
-Arpona n est pas une police libre : le fichier ne peut pas etre versionne ni
-telecharge automatiquement. Des qu il est present, l overlay l utilise ; sinon il
-retombe sur Rubik. Seul l overlay s en sert, pas le reste du site.
+arpona-bold.otf est la source fournie ; arpona-bold.woff2 en est la conversion
+(fontTools), servie en premier car trois fois plus legere.
 
-Si vous avez la police en OTF ou TTF, convertissez-la en woff2 avant de la poser.
+Pour regenerer le woff2 apres un changement de source :
+  python -c "from fontTools.ttLib import TTFont; f=TTFont('public/fonts/arpona-bold.otf'); f.flavor='woff2'; f.save('public/fonts/arpona-bold.woff2')"
+
+Police sous licence : elle est ici parce que le site doit la servir a OBS.

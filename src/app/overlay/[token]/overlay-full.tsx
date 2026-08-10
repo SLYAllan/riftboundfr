@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
-import { getLegendIconUrl } from "@/lib/banners";
+import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import type { OverlayPlayer, OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 
@@ -100,6 +100,9 @@ function Side({
   format: OverlayStateData["format"];
   footer: React.ReactNode;
 }) {
+  // Bannière large plutôt que la vignette carrée : c'est ce que montre la
+  // retransmission officielle, et l'illustration porte le panneau.
+  const banner = p.legendName ? getBannerUrl(p.legendName) : null;
   const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
   const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
   // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
@@ -115,16 +118,19 @@ function Side({
         {p.name || "—"}
       </div>
 
-      {/* Légende : illustration + champion élu */}
-      <div className="flex items-center gap-3 rounded-lg bg-black/70 p-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
-        {icon ? (
-          <img src={icon} alt="" className="h-14 w-14 shrink-0 rounded-md object-cover outline outline-1 outline-white/10" />
-        ) : (
-          <div className="h-14 w-14 shrink-0 rounded-md bg-white/5" />
+      {/* Légende : la bannière en fond, le nom et le champion élu par-dessus */}
+      <div className="relative h-[124px] overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
+        {(banner ?? icon) && (
+          <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
-        <div className="min-w-0">
-          <div className="truncate text-sm font-bold uppercase leading-tight text-white">{p.legendName || "Légende"}</div>
-          <div className="truncate text-xs leading-tight text-white/70">{p.championName || "Champion"}</div>
+        <div className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-black/90 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 px-2 pb-2">
+          <div className="truncate text-center text-sm font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+            {p.legendName || "Légende"}
+          </div>
+          <div className="truncate text-center text-xs leading-tight text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+            {p.championName || "Champion"}
+          </div>
         </div>
       </div>
 
