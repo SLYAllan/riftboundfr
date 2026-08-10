@@ -4,7 +4,7 @@ import { useState, useRef, useCallback, useMemo, useEffect, useLayoutEffect } fr
 import Image from "next/image";
 import { Search, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import type { GlossaryCategory, GlossaryTerm } from "./page";
+import type { GlossaryCategory, GlossaryTerm } from "@/lib/glossary";
 
 interface CardInfo {
   name: string;

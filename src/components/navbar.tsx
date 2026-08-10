@@ -23,6 +23,7 @@ const outilsLinks = [
   { href: "/deckbuilder", label: "Deckbuilder" },
   { href: "/collection", label: "Ma collection" },
   { href: "/outils/compteur", label: "Compteur" },
+  { href: "/outils/regles", label: "Chercher une règle" },
 ];
 
 export function Navbar() {
