@@ -174,7 +174,7 @@ function Side({
         {(banner ?? icon) && (
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
           <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
@@ -241,7 +241,7 @@ function Side({
           <img src={art[bf]!} alt="" className="absolute inset-0 h-full w-full scale-[1.4] object-cover object-[50%_38%]" />
         )}
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
         <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
           <FitText chars={24} className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
@@ -430,7 +430,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           {p.legendName && getBannerUrl(p.legendName) && (
             <div className="relative h-[104px]">
               <img src={getBannerUrl(p.legendName)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
             </div>
           )}
           <div className="p-3 pt-2">
