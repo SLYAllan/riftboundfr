@@ -148,7 +148,7 @@ function Side({
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
       <div
-        className="absolute z-20 flex items-center justify-center px-2"
+        className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
         <span className="min-w-0 truncate text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
@@ -165,11 +165,11 @@ function Side({
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 z-20 px-2 pb-2">
-          <div className="truncate text-center text-sm font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+        <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
+          <div className="truncate text-center text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
           </div>
-          <div className="truncate text-center text-xs leading-tight text-white/80 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+          <div className="truncate text-center text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
             {p.championName || "Champion"}
           </div>
         </div>
@@ -213,8 +213,8 @@ function Side({
         )}
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
-        <div className="relative z-20 flex h-full flex-col justify-end px-2 pb-2">
-          <div className="truncate text-center text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+        <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
+          <div className="truncate text-center text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
           </div>
           {rounds > 0 && (
@@ -255,9 +255,9 @@ function Timer({ endsAt }: { endsAt?: string | null }) {
   const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
   return (
-    <div className="flex h-full items-center justify-center">
+    <div className="flex h-full items-center justify-center overflow-hidden">
       <div
-        className="text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
+        className="truncate text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
         style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
       >
         {mm}:{ss}
@@ -294,7 +294,7 @@ export function OverlayFull({ token }: { token: string }) {
                 en encre sombre puisque le fond est jaune. */}
             {event.round && (
               <div
-                className="absolute z-20 flex items-center justify-center px-2"
+                className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
                 <span className="min-w-0 truncate text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
