@@ -17,7 +17,9 @@ export interface OverlayStateData {
   // `logoUrl` : logo de la compétition, vide par défaut (emplacement réservé).
   // `endsAt` : instant de fin du chrono, en ISO. Le décompte se calcule à l'affichage,
   // sinon il faudrait pousser une mise à jour chaque seconde.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null };
+  // `timerVisible` : le chrono n'a pas sa place partout, on doit pouvoir l'éteindre
+  // sans perdre l'heure de fin qui tourne.
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -32,7 +34,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },

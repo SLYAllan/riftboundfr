@@ -248,7 +248,15 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             {[10, 20, 25, 30, 40, 50, 60, 75].map((m) => <option key={m} value={m}>{m} min</option>)}
           </select>
         </label>
-        <button onClick={() => update({ event: { endsAt: null } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Arrêter le chrono</button>
+        <button onClick={() => update({ event: { endsAt: null } })} className="rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]">Arrêter le chrono</button>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={state.event.timerVisible !== false}
+            onChange={(e) => update({ event: { timerVisible: e.target.checked } })}
+          />
+          Chrono à l&apos;écran
+        </label>
         <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Swap joueurs</button>
         <button onClick={() => update({ points: { a: 0, b: 0 } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset game</button>
         <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset match</button>

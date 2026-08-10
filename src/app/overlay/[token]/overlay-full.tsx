@@ -280,27 +280,42 @@ function Manche({ gagnee }: { gagnee: boolean }) {
   );
 }
 
-/** Carte affichee dans le cadre de droite, choisie depuis le tableau de bord. */
+/**
+ * Carte affichée dans le cadre de droite, choisie depuis le tableau de bord.
+ *
+ * L'image reste montée le temps de disparaître : sans ça « Masquer » la faisait
+ * sauter d'un coup, sans le fondu qu'on a partout ailleurs.
+ */
 function CarteMontree({ nom }: { nom: string | null }) {
   const art = useBattlefieldArt(nom ? [nom] : []);
-  const url = nom ? art[nom] : null;
-  // Le fondu doit partir quand l'image est prête, pas quand la balise est posée :
-  // sinon il se joue pendant le chargement et personne ne le voit.
-  const [prete, setPrete] = useState(false);
-  useEffect(() => setPrete(false), [url]);
+  const cible = nom ? art[nom] : null;
+  const [affichee, setAffichee] = useState<string | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (cible) {
+      setAffichee(cible);
+      return;
+    }
+    // On éteint, puis on retire une fois le fondu terminé.
+    setVisible(false);
+    const t = setTimeout(() => setAffichee(null), 320);
+    return () => clearTimeout(t);
+  }, [cible]);
+
   return (
     <div
       className="absolute z-20 overflow-hidden"
       style={{ left: SLOT.cards.left, width: SLOT.cards.width, top: SLOT.cards.top, height: SLOT.cards.height }}
     >
-      {url && (
+      {affichee && (
         <img
-          key={url}
-          src={url}
+          key={affichee}
+          src={affichee}
           alt=""
-          onLoad={() => setPrete(true)}
+          onLoad={() => setVisible(true)}
           className={`absolute inset-0 m-auto max-h-full max-w-full object-contain transition-opacity duration-300 ease-out ${
-            prete ? "opacity-100" : "opacity-0"
+            visible && cible ? "opacity-100" : "opacity-0"
           }`}
         />
       )}
@@ -366,12 +381,14 @@ export function OverlayFull({ token }: { token: string }) {
                 </FitText>
               </div>
             )}
-            <div
-              className="absolute z-20"
-              style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
-            >
-              <Timer endsAt={event.endsAt} />
-            </div>
+            {event.timerVisible !== false && (
+              <div
+                className="absolute z-20"
+                style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
+              >
+                <Timer endsAt={event.endsAt} />
+              </div>
+            )}
           </>
         }
       />
