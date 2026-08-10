@@ -21,6 +21,7 @@ import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } 
 import { generateDeckImage } from "./lib/export-image";
 import { SIDE_SIZE } from "./lib/deck-rules";
 import { findMatchingChampion, splitChampion } from "./lib/champion";
+import { preferredPrinting } from "@/lib/card-printing";
 import { downloadBlob } from "@/lib/download";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import type { RuneSuggestion } from "./lib/rune-calculator";
@@ -520,11 +521,15 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       const nameLower = entry.name.toLowerCase();
       const nameDash = nameLower.replace(",", " -");
       const nameNoApostrophe = nameLower.replace(/'/g, "");
-      const card = cards.find((c) => {
-        const n = c.name.toLowerCase();
-        const nNoApostrophe = n.replace(/'/g, "");
-        return n === nameLower || n === nameDash || nNoApostrophe === nameNoApostrophe;
-      });
+      // Plusieurs impressions portent le même nom : on prend l'ordinaire, pas la
+      // première venue (souvent une promo ou une showcase).
+      const card = cards
+        .filter((c) => {
+          const n = c.name.toLowerCase();
+          const nNoApostrophe = n.replace(/'/g, "");
+          return n === nameLower || n === nameDash || nNoApostrophe === nameNoApostrophe;
+        })
+        .reduce<CardData | undefined>((best, c) => (best ? preferredPrinting(best, c) : c), undefined);
       if (!card) continue;
 
       if (card.type === "Legend") {

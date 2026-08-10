@@ -18,6 +18,7 @@ import { getUserFromSession } from "@/lib/session";
 import Link from "next/link";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
+import { buildCardLookup } from "@/lib/card-printing";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -85,12 +86,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
       : { riftboundId: { in: allIdentifiers } },
   });
 
-  const cardMap = new Map<string, typeof cards[number]>();
-  for (const c of cards) {
-    cardMap.set(c.riftboundId, c);
-    cardMap.set(c.name, c);
-    cardMap.set(c.name.toLowerCase(), c);
-  }
+  const cardMap = buildCardLookup(cards);
 
   function toListCards(
     entries: { cardId: string; quantity: number }[],

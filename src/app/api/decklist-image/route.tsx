@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { displayLegendName } from "@/lib/utils";
 import { allowSvgInSharp } from "@/lib/og-sharp";
+import { buildCardLookup } from "@/lib/card-printing";
 
 export const runtime = "nodejs";
 
@@ -373,12 +374,7 @@ async function fetchDeckFromCode(deckCode: string) {
       : { riftboundId: { in: allIdentifiers } },
   });
 
-  const cardMap = new Map<string, (typeof dbCards)[number]>();
-  for (const c of dbCards) {
-    cardMap.set(c.riftboundId, c);
-    cardMap.set(c.name, c);
-    cardMap.set(c.name.toLowerCase(), c);
-  }
+  const cardMap = buildCardLookup(dbCards);
 
   function resolve(
     entries: { cardId: string; quantity: number }[],
@@ -468,12 +464,7 @@ async function fetchDeckFromShareCode(shareCode: string) {
       : { riftboundId: { in: allIdentifiers } },
   });
 
-  const cardMap = new Map<string, (typeof dbCards)[number]>();
-  for (const c of dbCards) {
-    cardMap.set(c.riftboundId, c);
-    cardMap.set(c.name, c);
-    cardMap.set(c.name.toLowerCase(), c);
-  }
+  const cardMap = buildCardLookup(dbCards);
 
   function resolve(
     entries: { cardId: string; quantity: number }[],

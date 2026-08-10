@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { DeckCompare } from "./deck-compare";
 import type { DecklistCard, DeckSection } from "@/types";
+import { buildCardLookup } from "@/lib/card-printing";
 
 export const metadata: Metadata = {
   title: "Comparaison de decks",
@@ -26,12 +27,7 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
       ? { name: { in: allIds, mode: "insensitive" }, alternateArt: false }
       : { riftboundId: { in: allIds } },
   });
-  const cardMap = new Map<string, typeof cards[number]>();
-  for (const c of cards) {
-    cardMap.set(c.riftboundId, c);
-    cardMap.set(c.name, c);
-    cardMap.set(c.name.toLowerCase(), c);
-  }
+  const cardMap = buildCardLookup(cards);
 
   const deckCards: DecklistCard[] = [];
   let legendName = "";
