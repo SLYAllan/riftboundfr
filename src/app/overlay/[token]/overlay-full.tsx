@@ -153,6 +153,7 @@ function Side({
   const bf = p.battlefields[0] ?? "";
   const art = useBattlefieldArt(bf ? [bf] : []);
   const cam = camSrc(p.camUrl);
+  const [camCharge, setCamCharge] = useState(false);
   return (
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
@@ -192,12 +193,23 @@ function Side({
             style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
             className="absolute overflow-hidden"
           >
+            {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la
+                fenêtre du dessus. `allow-scripts` et `allow-same-origin` sont le
+                minimum pour que WebRTC tourne. Le témoin ci-dessous dit si le
+                cadre a fini de charger, pour ne plus avoir à deviner. */}
             <iframe
               src={cam}
               title={`Caméra de ${p.name || "joueur"}`}
               allow="autoplay; fullscreen"
+              sandbox="allow-scripts allow-same-origin"
+              onLoad={() => setCamCharge(true)}
               className="h-full w-full border-0"
             />
+            {!camCharge && (
+              <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
+                caméra en attente
+              </span>
+            )}
           </div>
         ) : (
           <Slot
@@ -311,7 +323,7 @@ export function OverlayFull({ token }: { token: string }) {
                 className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
-                <FitText chars={14} className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                <FitText chars={11} className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                   {event.round}
                 </FitText>
               </div>
