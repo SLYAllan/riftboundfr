@@ -1,0 +1,25 @@
+.root {
+  position: fixed;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  color: #fff;
+  font-family: var(--font-rubik), system-ui, sans-serif;
+}
+
+/* Ces règles ne s'appliquent QUE sur la page overlay (ce module CSS n'est chargé
+   que par overlay-full.tsx). On rend la page totalement transparente pour OBS et
+   on masque tout le chrome du site (navbar, footer, bannière cookies). */
+:global(html),
+:global(body) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+:global(nav),
+:global(header),
+:global(footer) {
+  display: none !important;
+}

@@ -93,6 +93,23 @@ async function migrate() {
       }
       console.log("WishlistItem table ready.");
     }
+
+    // OverlayState
+    if (!tableNames.includes("OverlayState")) {
+      console.log("Creating OverlayState table...");
+      await prisma.$executeRawUnsafe(
+        `CREATE TABLE IF NOT EXISTS "OverlayState" ("id" TEXT NOT NULL, "userId" TEXT NOT NULL, "token" TEXT NOT NULL, "state" JSONB NOT NULL, "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP, CONSTRAINT "OverlayState_pkey" PRIMARY KEY ("id"))`,
+      );
+      await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "OverlayState_userId_key" ON "OverlayState"("userId")`);
+      await prisma.$executeRawUnsafe(`CREATE UNIQUE INDEX IF NOT EXISTS "OverlayState_token_key" ON "OverlayState"("token")`);
+      await prisma.$executeRawUnsafe(`CREATE INDEX IF NOT EXISTS "OverlayState_token_idx" ON "OverlayState"("token")`);
+      try {
+        await prisma.$executeRawUnsafe(`ALTER TABLE "OverlayState" ADD CONSTRAINT "OverlayState_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE`);
+      } catch (e) {
+        console.log("OverlayState FK skipped:", e.message);
+      }
+      console.log("OverlayState table ready.");
+    }
   } catch (e) {
     console.error("Migration check failed:", e.message);
   } finally {

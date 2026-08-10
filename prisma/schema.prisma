@@ -195,6 +195,8 @@ model User {
   collection     CollectionItem[]
   binders        Binder[]
   wishlist       WishlistItem[]
+  overlayState   OverlayState?
+
 
   @@index([discordId])
   @@index([riotId])
@@ -335,6 +337,18 @@ model Binder {
   items CollectionItem[]
 
   @@index([userId])
+}
+
+model OverlayState {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  state     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([token])
 }
 
 model WishlistItem {
