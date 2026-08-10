@@ -68,7 +68,7 @@ export function CookieBanner() {
   };
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 p-4">
+    <div data-chrome="cookies" className="fixed bottom-0 inset-x-0 z-50 p-4">
       <div className="mx-auto max-w-2xl rounded-card border border-hairline bg-surface p-4 shadow-xl backdrop-blur-sm">
         <p className="text-sm text-ink-secondary">
           Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience.

@@ -33,6 +33,7 @@
 }
 :global(nav),
 :global(header),
-:global(footer) {
+:global(footer),
+:global([data-chrome="cookies"]) {
   display: none !important;
 }
