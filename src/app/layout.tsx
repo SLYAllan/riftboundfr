@@ -111,6 +111,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="alternate" type="application/rss+xml" title="Riftbound France" href="/rss.xml" />
+        {/* Vérification de propriété du site pour Impact. Leur balise attend `value`
+            et non `content` : elle est écrite telle qu'ils la donnent, sinon la
+            vérification échoue. L'API Metadata de Next ne sait produire que
+            `content`, d'où la balise en clair ici. */}
+        <meta name="impact-site-verification" {...{ value: "593585bf-09ed-4e6d-a416-3c83a58c46d6" }} />
       </head>
       <body className="min-h-screen flex flex-col" style={{ fontFamily: "var(--font-jakarta), sans-serif" }}>
         <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[300] focus:rounded-lg focus:bg-arcane focus:px-4 focus:py-2 focus:text-white">
