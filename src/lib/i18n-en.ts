@@ -58,6 +58,8 @@ export const EN: Record<string, string> = {
 
   // — Tableau de bord de l'habillage de stream —
   "Habillage de stream": "Stream overlay",
+  "Scores, Légendes et caméra affichés en direct dans OBS.":
+    "Scores, Legends and camera, live on screen in OBS.",
   "Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.":
     "This page drives what viewers see during your stream. Everything you change here goes live at once, with nothing to restart.",
   "Première fois ? Trois étapes.": "First time? Three steps.",
