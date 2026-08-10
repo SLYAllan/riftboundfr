@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
 import { prisma } from "@/lib/prisma";
+import { allowSvgInSharp } from "@/lib/og-sharp";
 
 // X/Twitter ne rend pas le WebP : on génère une image PNG à la volée à partir
 // de la cover de l'article (convertie via sharp) avec un bandeau de marque.
@@ -34,6 +35,7 @@ export async function renderArticleOgImage(slug: string) {
 
   const title = article?.title ?? "Riftbound France";
   const cover = await loadCoverAsPng(article?.coverImage ?? null);
+  await allowSvgInSharp();
 
   return new ImageResponse(
     (

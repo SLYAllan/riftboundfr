@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { displayLegendName } from "@/lib/utils";
+import { allowSvgInSharp } from "@/lib/og-sharp";
 
 export const runtime = "nodejs";
 
@@ -57,29 +58,47 @@ const FORMATS = {
 type FormatKey = keyof typeof FORMATS;
 
 const CARD_GAP = 12;
+// Écart entre les deux groupes quand Runes et Champs de bataille partagent une bande.
+const BAND_SPACING = 56;
 
-// Pick the LARGEST card size that still lets the whole deck (main + runes +
-// battlefields + side) fit inside the square. Maximizes legibility per deck.
+// Choisit la PLUS GRANDE taille de carte qui laisse tout le deck (deck principal +
+// runes + champs de bataille + réserve) tenir dans le cadre.
+//
+// Deux ou trois runes et trois champs de bataille occupaient chacun une bande pleine
+// largeur : sur onze colonnes, huit restaient vides et la moitié de la hauteur partait
+// en fond perdu, ce qui rabaissait toutes les cartes. Quand les deux groupes tiennent
+// côte à côte, ils partagent une bande, et la place récupérée revient aux cartes.
 function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number, width: number, height: number) {
   const BODY_W = width - 128; // 64px de marge de chaque côté
-  const HEADER = 356; // legend header block
+  const HEADER = 356; // bloc Légende du haut
   const FOOTER = 128;
-  const SECT = 68; // section title + spacing
-  for (const pw of [264, 248, 232, 216, 200, 184, 168, 156, 144, 132, 120, 108]) {
+  const SECT = 68; // titre de section + espacement
+  const BAND_GAP = 24; // marginTop entre deux sections
+  // Pas de 4 px : le palier grossier laissait jusqu'à 200 px inutilisés en bas.
+  for (let pw = 320; pw >= 104; pw -= 4) {
     const ph = Math.round(pw * 1.4);
     const lw = Math.round(pw * 1.7);
     const lh = Math.round(pw * 1.2);
     const cols = Math.floor((BODY_W + CARD_GAP) / (pw + CARD_GAP));
+    if (cols < 1) continue;
     const bfCols = Math.max(1, Math.floor((BODY_W + CARD_GAP) / (lw + CARD_GAP)));
     const rowH = ph + CARD_GAP;
+    const runeW = runeN ? runeN * (pw + CARD_GAP) - CARD_GAP : 0;
+    const bfW = bfN ? bfN * (lw + CARD_GAP) - CARD_GAP : 0;
+    const paired = runeN > 0 && bfN > 0 && runeW + BAND_SPACING + bfW <= BODY_W;
+
     let h = HEADER + FOOTER;
     h += SECT + Math.ceil(mainN / cols) * rowH;
-    if (runeN) h += SECT + Math.ceil(runeN / cols) * rowH;
-    if (bfN) h += SECT + Math.ceil(bfN / bfCols) * (lh + CARD_GAP);
-    if (sideN) h += SECT + Math.ceil(sideN / cols) * rowH;
-    if (h <= height) return { pw, ph, lw, lh };
+    if (paired) {
+      h += BAND_GAP + SECT + Math.max(rowH, lh + CARD_GAP);
+    } else {
+      if (runeN) h += BAND_GAP + SECT + Math.ceil(runeN / cols) * rowH;
+      if (bfN) h += BAND_GAP + SECT + Math.ceil(bfN / bfCols) * (lh + CARD_GAP);
+    }
+    if (sideN) h += BAND_GAP + SECT + Math.ceil(sideN / cols) * rowH;
+    if (h <= height) return { pw, ph, lw, lh, paired };
   }
-  return { pw: 108, ph: 151, lw: 184, lh: 130 };
+  return { pw: 104, ph: 146, lw: 177, lh: 125, paired: false };
 }
 
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
@@ -473,6 +492,7 @@ function getLegendDomains(cards: CardInfo[]): string[] {
 }
 
 export async function GET(req: NextRequest) {
+  await allowSvgInSharp();
   const { searchParams } = req.nextUrl;
   // Branded export background - read from disk and inline as a data URI.
   // Fetching it via req.nextUrl.origin fails in prod: behind Coolify's reverse
@@ -568,7 +588,7 @@ export async function GET(req: NextRequest) {
   const legendImgUrl = legendCards[0]?.imageUrl || null;
 
   // Largest card sizes that still fit the whole deck in the square.
-  const { pw, ph, lw, lh } = pickSizes(
+  const { pw, ph, lw, lh, paired } = pickSizes(
     mainDisplayCards.length,
     runeCards.length,
     battlefieldCards.length,
@@ -810,6 +830,9 @@ export async function GET(req: NextRequest) {
             display: "flex",
             flexDirection: "column",
             flex: 1,
+            // Le solveur travaille par paliers : il reste toujours un peu de hauteur
+            // inutilisée. Centrée, elle se lit comme une marge ; en bas, comme un trou.
+            justifyContent: "center",
             padding: "32px 64px",
             gap: 8,
             overflow: "hidden",
@@ -819,23 +842,36 @@ export async function GET(req: NextRequest) {
           <SectionHeader label="Deck Principal" count={mainCount} />
           <CardRow cards={mainDisplayCards} w={pw} h={ph} />
 
-          {/* Runes section */}
-          {runeCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
-              <SectionHeader label="Runes" count={runeCards.reduce((s, r) => s + r.quantity, 0)} />
-              <CardRow cards={runeCards} w={pw} h={ph} />
+          {/* Runes et champs de bataille : côte à côte quand ils tiennent sur une bande */}
+          {paired ? (
+            <div style={{ display: "flex", marginTop: 24, gap: BAND_SPACING }}>
+              <div style={{ display: "flex", flexDirection: "column", width: runeCards.length * (pw + CARD_GAP) - CARD_GAP }}>
+                <SectionHeader label="Runes" count={runeCards.reduce((s, r) => s + r.quantity, 0)} />
+                <CardRow cards={runeCards} w={pw} h={ph} />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", width: battlefieldCards.length * (lw + CARD_GAP) - CARD_GAP }}>
+                <SectionHeader label="Champs de bataille" count={battlefieldCards.reduce((s, b) => s + b.quantity, 0)} />
+                <CardRow cards={battlefieldCards} w={lw} h={lh} />
+              </div>
             </div>
-          )}
-
-          {/* Battlefields section */}
-          {battlefieldCards.length > 0 && (
-            <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
-              <SectionHeader
-                label="Champs de bataille"
-                count={battlefieldCards.reduce((s, b) => s + b.quantity, 0)}
-              />
-              <CardRow cards={battlefieldCards} w={lw} h={lh} />
-            </div>
+          ) : (
+            <>
+              {runeCards.length > 0 && (
+                <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
+                  <SectionHeader label="Runes" count={runeCards.reduce((s, r) => s + r.quantity, 0)} />
+                  <CardRow cards={runeCards} w={pw} h={ph} />
+                </div>
+              )}
+              {battlefieldCards.length > 0 && (
+                <div style={{ display: "flex", flexDirection: "column", marginTop: 24 }}>
+                  <SectionHeader
+                    label="Champs de bataille"
+                    count={battlefieldCards.reduce((s, b) => s + b.quantity, 0)}
+                  />
+                  <CardRow cards={battlefieldCards} w={lw} h={lh} />
+                </div>
+              )}
+            </>
           )}
 
           {/* Side deck section */}

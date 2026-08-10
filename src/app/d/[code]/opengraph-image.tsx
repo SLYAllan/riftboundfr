@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
+import { allowSvgInSharp } from "@/lib/og-sharp";
 
 export const alt = "Deck communautaire Riftbound";
 export const size = { width: 1200, height: 630 };
@@ -27,6 +28,7 @@ export default async function OGImage({
   params: Promise<{ code: string }>;
 }) {
   const { code } = await params;
+  await allowSvgInSharp();
 
   const deck = await prisma.communityDeck.findUnique({
     where: { shareCode: code },
