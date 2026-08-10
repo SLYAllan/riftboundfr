@@ -18,7 +18,9 @@ const SLOT = {
   legend: { top: 88, height: 141 },
   cam: { top: 246, height: 299 },
   bf: { top: 545, height: 90 },
-  timer: { top: 968, height: 52 },
+  // Case dorée du bas relevée au pixel sur le fond : x 102-253, y 968-1019.
+  timer: { left: 102, top: 968, width: 152, height: 52 },
+  round: { top: 906, height: 52 },
   cards: { top: 678, height: 387 },
 } as const;
 
@@ -237,7 +239,7 @@ function Manche({ gagnee }: { gagnee: boolean }) {
   );
 }
 
-function Timer({ endsAt, round }: { endsAt?: string | null; round: string }) {
+function Timer({ endsAt }: { endsAt?: string | null }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -247,15 +249,10 @@ function Timer({ endsAt, round }: { endsAt?: string | null; round: string }) {
   const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
   return (
-    <div className="flex h-full flex-col items-center justify-end text-center">
-      {round && (
-        <div className="mb-2 truncate text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {round}
-        </div>
-      )}
+    <div className="flex h-full items-center justify-center">
       <div
-        className="text-4xl font-bold tabular-nums leading-none text-white"
-        style={{ textShadow: "0 2px 6px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.55)" }}
+        className="text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
+        style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
       >
         {mm}:{ss}
       </div>
@@ -287,8 +284,21 @@ export function OverlayFull({ token }: { token: string }) {
                 style={{ left: SLOT.x.left, width: SLOT.width, top: 700, height: 220 }}
               />
             )}
-            <div className="absolute z-20" style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.timer.top - 74, height: SLOT.timer.height + 74 }}>
-              <Timer endsAt={event.endsAt} round={event.round} />
+            {/* La ronde au-dessus, sur le fond bleu ; le chrono dans la case dorée,
+                en encre sombre puisque le fond est jaune. */}
+            {event.round && (
+              <div
+                className="absolute z-20 flex items-center justify-center truncate text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+                style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
+              >
+                {event.round}
+              </div>
+            )}
+            <div
+              className="absolute z-20"
+              style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
+            >
+              <Timer endsAt={event.endsAt} />
             </div>
           </>
         }
