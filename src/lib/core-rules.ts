@@ -30,3 +30,40 @@ export async function loadCoreRules(): Promise<CoreRule[]> {
   }
   return cache;
 }
+
+export interface RuleChapter {
+  title: string;
+  anchor: string;
+  rules: CoreRule[];
+}
+
+// Le regroupement par chapitre ne dépend pas de la requête : on le calcule une fois
+// par processus, pas à chaque affichage de la page.
+let chapters: RuleChapter[] | null = null;
+
+export async function loadRuleChapters(): Promise<RuleChapter[]> {
+  if (chapters) return chapters;
+  const rules = await loadCoreRules();
+  const out: RuleChapter[] = [];
+  for (const r of rules) {
+    const last = out[out.length - 1];
+    if (last && last.title === r.section) last.rules.push(r);
+    else {
+      const title = r.section || "Règles générales";
+      out.push({
+        title,
+        anchor:
+          "s-" +
+          title
+            .normalize("NFD")
+            .replace(/[̀-ͯ]/g, "")
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, ""),
+        rules: [r],
+      });
+    }
+  }
+  chapters = out;
+  return chapters;
+}

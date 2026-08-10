@@ -34,9 +34,9 @@ section = None
 for e in entries:
     e["text"] = re.sub(r"\s+", " ", e["text"]).strip()
     top = e["id"].split(".")[0]
-    if "." not in e["id"] and not e["text"].endswith("."):
-        section = e["text"]
-        e["section"] = e["text"]
+    if "." not in e["id"] and not e["text"].endswith(".") and len(e["text"]) <= 60:
+        section = e["text"].rstrip(" :")
+        e["section"] = section
     else:
         e["section"] = section or ""
     e["top"] = top
