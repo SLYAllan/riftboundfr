@@ -4,7 +4,7 @@ import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { legendHref } from "@/lib/legend-fiche";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Guide Deckbuilding Riftbound - Construire son premier deck" },
@@ -61,47 +61,38 @@ const mistakes = [
   { name: "Oublier la Réserve en Bo3", fix: "En match en 3 manches, la Réserve vous permet d'adapter votre deck entre les manches. Préparez des réponses aux stratégies adverses." },
 ];
 
-export default function GuideDeckbuildingPage() {
+export default async function GuideDeckbuildingPage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Construire son deck", href: "/guides/deckbuilding" }]} className="mb-6" />
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Construire son deck Riftbound</h1>
-      <p className="mt-2 text-lg text-ink-secondary">
-        Vous avez compris les règles de base et vous voulez construire votre propre deck ? Ce guide vous montre les bons ratios, la courbe d&apos;énergie idéale et les erreurs à éviter.
-      </p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Construire son deck Riftbound")}</h1>
+      <p className="mt-2 text-lg text-ink-secondary">{t("Vous avez compris les règles de base et vous voulez construire votre propre deck ? Ce guide vous montre les bons ratios, la courbe d’énergie idéale et les erreurs à éviter.")}</p>
 
       <div className="mt-10 space-y-12">
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelle est la structure d&apos;un deck Riftbound ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Un deck Riftbound contient au minimum <strong>40 cartes</strong> dans le deck principal (rester à 40 est recommandé), <strong>12 Runes</strong>, <strong>3 champs de bataille</strong>,
-            plus une <strong>Légende</strong> et un <strong>Champion</strong> (1 copie désignée, jusqu&apos;à 3 copies dans le deck + jusqu&apos;à 3 cartes Signature).
-            La Réserve compte <strong>10 cartes</strong> depuis Vendetta et permet d&apos;adapter votre deck entre les manches en Bo3.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelle est la structure d’un deck Riftbound ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Un deck Riftbound contient au minimum")}{" "}<strong>40 cartes</strong>{" "}{t("dans le deck principal (rester à 40 est recommandé),")}{" "}<strong>12 Runes</strong>, <strong>{t("3 champs de bataille")}</strong>{t(", plus une")}{" "}<strong>{t("Légende")}</strong>{" "}{t("et un")}{" "}<strong>Champion</strong>{" "}{t("(1 copie désignée, jusqu’à 3 copies dans le deck + jusqu’à 3 cartes Signature). La Réserve compte")}{" "}<strong>10 cartes</strong>{" "}{t("depuis Vendetta et permet d’adapter votre deck entre les manches en Bo3.")}</p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-            <strong>Règle des 3 copies :</strong> si une carte mérite d&apos;être incluse, jouez-en 3 copies. Si elle est situationnelle, jouez-en 1 ou 2.
-          </div>
+            <strong>{t("Règle des 3 copies :")}</strong>{" "}{t("si une carte mérite d’être incluse, jouez-en 3 copies. Si elle est situationnelle, jouez-en 1 ou 2.")}</div>
           <div className="mt-4 space-y-2">
             {ratios.map((r) => (
-              <div key={r.label} className="flex flex-col gap-1 rounded-lg border border-hairline bg-surface p-4 sm:flex-row sm:items-center sm:gap-4">
+              <div key={t(r.label)} className="flex flex-col gap-1 rounded-lg border border-hairline bg-surface p-4 sm:flex-row sm:items-center sm:gap-4">
                 <div className="flex items-center gap-3 sm:min-w-[200px]">
-                  <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{r.label}</span>
+                  <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(r.label)}</span>
                   <span className="text-sm text-arcane">{r.range}</span>
                   <span className="text-xs text-ink-muted">({r.pct})</span>
                 </div>
-                <p className="text-sm text-ink-secondary">{r.desc}</p>
+                <p className="text-sm text-ink-secondary">{t(r.desc)}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment optimiser sa courbe d&apos;énergie ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            La courbe d&apos;énergie détermine quand vous pouvez jouer vos cartes. Visez une courbe centrée autour de 3-4 énergie.
-            Trop de cartes chères = vulnérable en début de partie. Trop de cartes pas chères = manque de puissance en milieu de partie.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment optimiser sa courbe d’énergie ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("La courbe d’énergie détermine quand vous pouvez jouer vos cartes. Visez une courbe centrée autour de 3-4 énergie. Trop de cartes chères = vulnérable en début de partie. Trop de cartes pas chères = manque de puissance en milieu de partie.")}</p>
           <div className="mt-4 space-y-2">
             {curveGuide.map((c) => (
               <div key={c.range} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
@@ -118,72 +109,61 @@ export default function GuideDeckbuildingPage() {
               </div>
             ))}
           </div>
-          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-            Rappel : vous recevez 2 Runes par tour (3 au Tour 1 si second joueur). Tour 1 = 2-3 énergie, Tour 2 = 4-5, Tour 3 = 6-7.
-          </div>
+          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">{t("Rappel : vous recevez 2 Runes par tour (3 au Tour 1 si second joueur). Tour 1 = 2-3 énergie, Tour 2 = 4-5, Tour 3 = 6-7.")}</div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment répartir ses runes entre Énergie et Puissance ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Vos 12 Runes génèrent soit de l&apos;<strong>Énergie</strong> (Épuiser - la rune reste disponible) soit de la <strong>Puissance</strong> (Recycler - la rune va sous le deck de runes).
-            L&apos;Énergie est votre mana pour jouer des cartes, la Puissance amplifie les effets de certaines cartes.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment répartir ses runes entre Énergie et Puissance ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Vos 12 Runes génèrent soit de l’")}<strong>{t("Énergie")}</strong>{" "}{t("(Épuiser - la rune reste disponible) soit de la")}{" "}<strong>Puissance</strong>{" "}{t("(Recycler - la rune va sous le deck de runes). L’Énergie est votre mana pour jouer des cartes, la Puissance amplifie les effets de certaines cartes.")}</p>
           <div className="mt-4 space-y-2">
             {runeStrategies.map((r) => (
-              <div key={r.name} className="rounded-lg border border-hairline bg-surface p-4">
+              <div key={t(r.name)} className="rounded-lg border border-hairline bg-surface p-4">
                 <div className="flex items-center gap-3">
-                  <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{r.name}</span>
-                  <span className="rounded-full bg-surface-raised px-2 py-0.5 text-xs font-semibold text-gold">{r.split}</span>
+                  <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(r.name)}</span>
+                  <span className="rounded-full bg-surface-raised px-2 py-0.5 text-xs font-semibold text-gold">{t(r.split)}</span>
                 </div>
-                <p className="mt-1 text-sm text-ink-secondary">{r.desc}</p>
+                <p className="mt-1 text-sm text-ink-secondary">{t(r.desc)}</p>
               </div>
             ))}
           </div>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-            <strong>Important :</strong> Le pool de Runes se vide 2 fois par tour. Planifiez vos dépenses entre la phase de Pioche et la fin de tour.
-          </div>
+            <strong>Important :</strong>{" "}{t("Le pool de Runes se vide 2 fois par tour. Planifiez vos dépenses entre la phase de Pioche et la fin de tour.")}</div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles sont les meilleures synergies de domaines ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Chaque Légende a 2 domaines qui déterminent quelles Runes et cartes vous pouvez jouer. Se concentrer sur un seul domaine peut déclencher des bonus d&apos;Allégeance cumulatifs.
-            Voici les combinaisons les plus courantes.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelles sont les meilleures synergies de domaines ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Chaque Légende a 2 domaines qui déterminent quelles Runes et cartes vous pouvez jouer. Se concentrer sur un seul domaine peut déclencher des bonus d’Allégeance cumulatifs. Voici les combinaisons les plus courantes.")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {domainSynergies.map((s) => (
-              <div key={s.combo} className="rounded-lg border border-hairline bg-surface p-4">
-                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{s.combo}</h3>
-                <span className="text-xs font-semibold text-arcane">{s.style}</span>
-                <p className="mt-1 text-xs text-ink-secondary">{s.desc}</p>
-                <p className="mt-1 text-xs text-ink-muted">Légendes : {s.ex}</p>
+              <div key={t(s.combo)} className="rounded-lg border border-hairline bg-surface p-4">
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(s.combo)}</h3>
+                <span className="text-xs font-semibold text-arcane">{t(s.style)}</span>
+                <p className="mt-1 text-xs text-ink-secondary">{t(s.desc)}</p>
+                <p className="mt-1 text-xs text-ink-muted">Légendes : {t(s.ex)}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment gagner avec la Conquête et les champs de bataille ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Rappel : le premier à <strong>8 points</strong> gagne. Il y a deux grandes approches pour y arriver.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment gagner avec la Conquête et les champs de bataille ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Rappel : le premier à")}{" "}<strong>8 points</strong>{" "}{t("gagne. Il y a deux grandes approches pour y arriver.")}</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Stratégie agressive</h3>
+              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Stratégie agressive")}</h3>
               <ul className="mt-2 space-y-1.5 text-xs text-ink-secondary">
-                <li>• Unités rapides qui arrivent prêtes à agir (Accélération)</li>
-                <li>• Sorts pas chers pour éliminer les bloqueurs (<CardRef name="Defy">Defy</CardRef>, <CardRef name="Charm">Charm</CardRef>)</li>
-                <li>• Objectif : scorer sur les deux champs le plus vite possible</li>
+                <li>{t("• Unités rapides qui arrivent prêtes à agir (Accélération)")}</li>
+                <li>{t("• Sorts pas chers pour éliminer les bloqueurs (")}<CardRef name="Defy">Defy</CardRef>, <CardRef name="Charm">Charm</CardRef>)</li>
+                <li>{t("• Objectif : scorer sur les deux champs le plus vite possible")}</li>
                 <li>• Domaines typiques : Furie, Corps</li>
               </ul>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Stratégie contrôle</h3>
+              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Stratégie contrôle")}</h3>
               <ul className="mt-2 space-y-1.5 text-xs text-ink-secondary">
-                <li>• Grosses unités résistantes avec Bouclier et Tank pour tenir les positions</li>
-                <li>• Surprenez l&apos;adversaire avec des renforts (Embuscade)</li>
-                <li>• Objectif : tenir un champ de bataille - chaque tour tenu = +1 point automatique</li>
+                <li>{t("• Grosses unités résistantes avec Bouclier et Tank pour tenir les positions")}</li>
+                <li>{t("• Surprenez l’adversaire avec des renforts (Embuscade)")}</li>
+                <li>{t("• Objectif : tenir un champ de bataille - chaque tour tenu = +1 point automatique")}</li>
                 <li>• Domaines typiques : Calme, Ordre</li>
               </ul>
             </div>
@@ -191,46 +171,38 @@ export default function GuideDeckbuildingPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles sont les cartes polyvalentes à connaître ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Quelques cartes que vous verrez souvent - elles sont fortes dans beaucoup de decks différents.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelles sont les cartes polyvalentes à connaître ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Quelques cartes que vous verrez souvent - elles sont fortes dans beaucoup de decks différents.")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Ferrous Forerunner">Ferrous Forerunner</CardRef> - Unité 6 énergie. Menace de milieu de partie solide et polyvalente.
-            </div>
+              <CardRef name="Ferrous Forerunner">Ferrous Forerunner</CardRef>{" "}{t("- Unité 6 énergie. Menace de milieu de partie solide et polyvalente.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Defy">Defy</CardRef> - Sort 1 énergie. Retrait universel bas coût, jouable dans presque tous les decks.
-            </div>
+              <CardRef name="Defy">Defy</CardRef>{" "}{t("- Sort 1 énergie. Retrait universel bas coût, jouable dans presque tous les decks.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Guardian Angel">Guardian Angel</CardRef> - Équipement 2 énergie. Protection essentielle pour vos unités clés.
-            </div>
+              <CardRef name="Guardian Angel">Guardian Angel</CardRef>{" "}{t("- Équipement 2 énergie. Protection essentielle pour vos unités clés.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Noxus Hopeful">Noxus Hopeful</CardRef> - Unité 4 énergie. Pilier solide du milieu de courbe.
-            </div>
+              <CardRef name="Noxus Hopeful">Noxus Hopeful</CardRef>{" "}{t("- Unité 4 énergie. Pilier solide du milieu de courbe.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Discipline">Discipline</CardRef> - Sort 2 énergie. Buff de combat polyvalent qui transforme les échanges en votre faveur.
-            </div>
+              <CardRef name="Discipline">Discipline</CardRef>{" "}{t("- Sort 2 énergie. Buff de combat polyvalent qui transforme les échanges en votre faveur.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> - Équipement 9 énergie. Finisseur puissant mais jouable tard uniquement.
-            </div>
+              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef>{" "}{t("- Équipement 9 énergie. Finisseur puissant mais jouable tard uniquement.")}</div>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment réussir son mulligan ?</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment réussir son mulligan ?")}</h2>
           <div className="mt-4 rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
-            <p>Vous commencez avec <strong>4 cartes</strong>. Vous pouvez remettre jusqu&apos;à <strong>2 cartes</strong> de votre main, piocher autant de nouvelles cartes, puis recycler les cartes mises de côté sous votre deck.</p>
+            <p>{t("Vous commencez avec")}{" "}<strong>4 cartes</strong>{t(". Vous pouvez remettre jusqu’à")}{" "}<strong>2 cartes</strong>{" "}{t("de votre main, piocher autant de nouvelles cartes, puis recycler les cartes mises de côté sous votre deck.")}</p>
             <ul className="mt-3 space-y-1.5 text-xs">
-              <li><span className="text-gold">&#x2022;</span> <strong>Gardez :</strong> 1-2 unités jouables Tour 1-2, 1 sort de retrait ou buff de combat</li>
-              <li><span className="text-gold">&#x2022;</span> <strong>Renvoyez :</strong> les cartes 6+ énergie, les doublons de finisseurs, les équipements sans unités pour les porter</li>
-              <li><span className="text-gold">&#x2022;</span> <strong>Adaptez au match-up :</strong> contre l&apos;agression, gardez vos retraits bas coût. Contre le contrôle, gardez vos menaces de milieu de partie</li>
+              <li><span className="text-gold">&#x2022;</span> <strong>Gardez :</strong>{" "}{t("1-2 unités jouables Tour 1-2, 1 sort de retrait ou buff de combat")}</li>
+              <li><span className="text-gold">&#x2022;</span> <strong>Renvoyez :</strong>{" "}{t("les cartes 6+ énergie, les doublons de finisseurs, les équipements sans unités pour les porter")}</li>
+              <li><span className="text-gold">&#x2022;</span> <strong>{t("Adaptez au match-up :")}</strong>{" "}{t("contre l’agression, gardez vos retraits bas coût. Contre le contrôle, gardez vos menaces de milieu de partie")}</li>
             </ul>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles légendes sont fortes en ce moment ?</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelles légendes sont fortes en ce moment ?")}</h2>
           <p className="mt-2 text-sm text-ink-secondary">
             Si vous débutez la construction, partir d&apos;une légende éprouvée évite bien des erreurs. Sur le format actuel
             (Unleashed), quatre légendes dominent les tournois :{" "}
@@ -239,24 +211,20 @@ export default function GuideDeckbuildingPage() {
             <Link href={legendHref("Master Yi, Wuju Bladesman")} className="font-semibold underline">Master Yi, Wuju Bladesman</Link>{" "}
             (contrôle de terrain Corps/Calme),{" "}
             <Link href={legendHref("Diana, Scorn of the Moon")} className="font-semibold underline">Diana</Link> (agro-tempo) et{" "}
-            <Link href={legendHref("LeBlanc, Deceiver")} className="font-semibold underline">LeBlanc</Link> (moteur d&apos;Agonie).
-            Leurs cœurs de deck sont bien établis : copiez-les pour apprendre, puis ajustez vos slots flexibles.
-          </p>
+            <Link href={legendHref("LeBlanc, Deceiver")} className="font-semibold underline">LeBlanc</Link>{" "}{t("(moteur d’Agonie). Leurs cœurs de deck sont bien établis : copiez-les pour apprendre, puis ajustez vos slots flexibles.")}</p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-            <strong>Astuce :</strong> une légende peu jouée mais qui gagne souvent (comme <strong>Annie</strong> ou{" "}
-            <strong>Sett</strong>) est souvent un meilleur choix qu&apos;une légende très populaire qui ne convertit pas.
-            Le détail set par set est dans le <Link href="/guides/meta" className="underline">guide Méta &amp; Tier List</Link>.
+            <strong>Astuce :</strong>{" "}{t("une légende peu jouée mais qui gagne souvent (comme")}{" "}<strong>Annie</strong> ou{" "}
+            <strong>Sett</strong>{t(") est souvent un meilleur choix qu’une légende très populaire qui ne convertit pas. Le détail set par set est dans le")}{" "}<Link href="/guides/meta" className="underline">{t("guide Méta & Tier List")}</Link>.
           </div>
         </section>
 
         <section>
           <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            <AlertTriangle size={20} /> Quelles erreurs éviter en deckbuilding ?
-          </h2>
+            <AlertTriangle size={20} />{" "}{t("Quelles erreurs éviter en deckbuilding ?")}</h2>
           <div className="mt-4 space-y-2">
             {mistakes.map((m) => (
-              <div key={m.name} className="rounded-lg border border-hairline bg-surface p-3">
-                <h3 className="text-sm font-semibold text-danger" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{m.name}</h3>
+              <div key={t(m.name)} className="rounded-lg border border-hairline bg-surface p-3">
+                <h3 className="text-sm font-semibold text-danger" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(m.name)}</h3>
                 <p className="mt-0.5 text-xs text-ink-secondary">{m.fix}</p>
               </div>
             ))}
@@ -265,14 +233,9 @@ export default function GuideDeckbuildingPage() {
 
         <div className="flex flex-wrap gap-3">
           <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
-            <Hammer size={16} /> Créer un deck
-          </Link>
-          <Link href="/decks" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-            Voir des decks de tournoi
-          </Link>
-          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg border border-hairline px-4 py-2 text-sm font-semibold text-ink hover:bg-surface">
-            Guide du débutant
-          </Link>
+            <Hammer size={16} />{" "}{t("Créer un deck")}</Link>
+          <Link href="/decks" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Voir des decks de tournoi")}</Link>
+          <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg border border-hairline px-4 py-2 text-sm font-semibold text-ink hover:bg-surface">{t("Guide du débutant")}</Link>
         </div>
       </div>
     </div>

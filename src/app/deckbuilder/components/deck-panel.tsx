@@ -273,7 +273,7 @@ export function DeckPanelV2({
       </div>
 
       {/* Legend - first */}
-      <CollapsibleSection label="Légende" target={null} total={deck.legend ? 1 : 0}>
+      <CollapsibleSection label={t("Légende")} target={null} total={deck.legend ? 1 : 0}>
         {deck.legend ? (
           <div className={cardGrid}>
             <LegendTile entry={deck.legend} onRemove={() => onRemoveCard("legend", deck.legend!.cardId)} {...hover} />
@@ -330,7 +330,7 @@ export function DeckPanelV2({
       </CollapsibleSection>
 
       {/* Battlefields */}
-      <CollapsibleSection label="Champs de bataille" target={3} total={bfTotal}>
+      <CollapsibleSection label={t("Champs de bataille")} target={3} total={bfTotal}>
         {deck.battlefield.length > 0 ? (
           <div className={cardGrid}>
             {deck.battlefield.map((entry) => (
@@ -347,7 +347,7 @@ export function DeckPanelV2({
       </CollapsibleSection>
 
       {/* Reserve (sideboard) - card image grid */}
-      <CollapsibleSection label="Réserve" target={null} total={sideTotal} defaultOpen={sideTotal > 0}>
+      <CollapsibleSection label={t("Réserve")} target={null} total={sideTotal} defaultOpen={sideTotal > 0}>
         {sortedSide.length > 0 ? (
           <div className={cardGrid}>
             {sortedSide.map((entry) => (

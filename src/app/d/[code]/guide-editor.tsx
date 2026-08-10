@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Pencil, Check, X } from "lucide-react";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { useT } from "@/components/i18n-provider";
 
 interface Props {
   shareCode: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) {
+  const t = useT();
   const [guide, setGuide] = useState(initialGuide ?? "");
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(guide);
@@ -49,9 +51,7 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
         <h2
           className="text-2xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          Guide du deck
-        </h2>
+        >{t("Guide du deck")}</h2>
         {isOwner && !editing && (
           <button
             onClick={() => {
@@ -73,7 +73,7 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
             onChange={(e) => setDraft(e.target.value)}
             rows={8}
             maxLength={5000}
-            placeholder="Décrivez votre stratégie, les matchups, les choix de cartes..."
+            placeholder={t("Décrivez votre stratégie, les matchups, les choix de cartes...")}
             className="w-full rounded-lg border border-hairline bg-surface p-4 text-sm text-ink placeholder:text-ink-muted focus:border-arcane resize-y"
           />
           <div className="flex items-center gap-2">

@@ -6,6 +6,7 @@ import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { cn, displayLegendName } from "@/lib/utils";
 import type { DecklistCard } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 export interface BestOfEntry {
   id: string;
@@ -25,6 +26,7 @@ const norm = (s: string) =>
     .toLowerCase();
 
 export function BestOfDeckBrowser({ entries }: { entries: BestOfEntry[] }) {
+  const t = useT();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState<Record<string, boolean>>({});
 
@@ -56,9 +58,9 @@ export function BestOfDeckBrowser({ entries }: { entries: BestOfEntry[] }) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Rechercher une Légende ou un joueur…"
+            placeholder={t("Rechercher une Légende ou un joueur…")}
 
-            aria-label="Rechercher une Légende ou un joueur"
+            aria-label={t("Rechercher une Légende ou un joueur")}
             className="w-full rounded-lg border border-hairline-strong bg-surface-raised py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
           />
         </div>

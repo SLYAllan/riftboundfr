@@ -67,9 +67,7 @@ export function CardFilters({ total }: { total: number }) {
     <div className="space-y-3">
       {/* Domaines — le logo de rune porte la couleur */}
       <div className="flex flex-wrap gap-2">
-        <button onClick={() => set("domain", "all")} className={pill(domain === "all")}>
-          Tous domaines
-        </button>
+        <button onClick={() => set("domain", "all")} className={pill(domain === "all")}>{t("Tous domaines")}</button>
         {DOMAIN_ORDER.map((d) => (
           <button key={d} onClick={() => set("domain", domain === d ? "all" : d)} className={pill(domain === d)}>
             {DOMAIN_ICONS[d] && <Image src={DOMAIN_ICONS[d]} alt="" width={16} height={16} className="h-4 w-4" />}
@@ -80,9 +78,7 @@ export function CardFilters({ total }: { total: number }) {
 
       {/* Types */}
       <div className="flex flex-wrap gap-2">
-        <button onClick={() => set("type", "all")} className={pill(type === "all")}>
-          Tous types
-        </button>
+        <button onClick={() => set("type", "all")} className={pill(type === "all")}>{t("Tous types")}</button>
         {CARD_TYPES.map((ty) => (
           <button key={ty} onClick={() => set("type", type === ty ? "all" : ty)} className={pill(type === ty)}>
             {TYPE_ICONS[ty] && <Image src={TYPE_ICONS[ty]} alt="" width={16} height={16} className="h-4 w-4" />}

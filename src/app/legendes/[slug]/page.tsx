@@ -23,6 +23,7 @@ import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
+import { tr } from "@/lib/i18n-server";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
@@ -304,6 +305,7 @@ function CardTile({
 }
 
 export default async function LegendePage({ params }: { params: Promise<{ slug: string }> }) {
+  const t = await tr();
   const { slug } = await params;
   const resolved = await resolveLegend(slug);
   if (!resolved) notFound();
@@ -605,7 +607,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             className="flex items-center gap-2 text-sm font-semibold text-arcane"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           >
-            <Sparkles size={16} /> Capacité de la Légende
+            <Sparkles size={16} /> {t("Capacité de la Légende")}
           </h2>
           <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
         </div>
@@ -621,7 +623,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           )}
           {decklists.length === 0 ? (
             <p className="rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
-              Pas encore de decklist classée pour cette Légende.
+              {t("Pas encore de decklist classée pour cette Légende.")}
             </p>
           ) : decklists.length === 1 ? (
             <DecklistInteractive
@@ -747,7 +749,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   className="flex items-center gap-2 text-xl font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
-                  <TrendingUp size={18} /> Cartes clés
+                  <TrendingUp size={18} /> {t("Cartes clés")}
                 </h2>
                 <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {fiche.keyCards!.map((kc, i) => {
@@ -829,7 +831,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   className="text-xl font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
-                  Champions joués
+                  {t("Champions joués")}
                 </h2>
                 <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {Object.entries(fiche.champions).map(([champName, info]) => (
@@ -851,7 +853,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   className="text-xl font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
-                  Champs de bataille fréquents
+                  {t("Champs de bataille fréquents")}
                 </h2>
                 <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {fiche.topBattlefields!.map((bf) => (
@@ -880,7 +882,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             href="/legendes"
             className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:text-ink"
           >
-            Toutes les Légendes
+            {t("Toutes les Légendes")}
           </Link>
         </div>
       </div>

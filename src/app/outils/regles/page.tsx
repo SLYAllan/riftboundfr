@@ -12,7 +12,7 @@ import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
 import { loadCoreRules, loadRuleChapters, CORE_RULES_PDF, CORE_RULES_UPDATED, type CoreRule } from "@/lib/core-rules";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Règles de Riftbound en français - le texte officiel, cherchable" },
@@ -48,6 +48,7 @@ export default async function ReglesPage({
 }: {
   searchParams: Promise<{ q?: string }>;
 }) {
+  const t = await tr();
   const { q } = await searchParams;
   const query = (q ?? "").trim();
   const needle = fold(query);
@@ -113,12 +114,10 @@ export default async function ReglesPage({
 
       <header className="max-w-3xl">
         <h1 className="text-balance text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          Les règles de Riftbound, en français
+          {t("Les règles de Riftbound, en français")}
         </h1>
         <p className="mt-3 text-pretty text-ink-secondary">
-          Le texte officiel en entier, tel que Riot le publie, plus les erratas, les cartes
-          interdites et les mots-clés. Cherchez un terme pendant une partie, ou déroulez le
-          règlement en entier.
+          {t("Le texte officiel en entier, tel que Riot le publie, plus les erratas, les cartes interdites et les mots-clés. Cherchez un terme pendant une partie, ou déroulez le règlement en entier.")}
         </p>
         <p className="mt-2 text-sm text-ink-muted">
           Règles de base, mise à jour du {CORE_RULES_UPDATED}.{" "}
@@ -138,8 +137,8 @@ export default async function ReglesPage({
           type="search"
           name="q"
           defaultValue={query}
-          placeholder="Réserve, Amplifié, mulligan, Aspirant's Climb..."
-          aria-label="Chercher dans les règles"
+          placeholder={t("Réserve, Amplifié, mulligan, Aspirant's Climb...")}
+          aria-label={t("Chercher dans les règles")}
           className="h-12 w-full rounded-xl border border-hairline-strong bg-surface px-4 text-base text-ink shadow-[0_1px_2px_rgba(0,0,0,0.28)] outline-none transition-colors duration-150 placeholder:text-ink-muted/60 focus:border-arcane"
         />
       </form>
@@ -173,7 +172,7 @@ export default async function ReglesPage({
           </p>
 
           {bans.length > 0 && (
-            <Section title="Interdit en tournoi" tone="text-error">
+            <Section title={t("Interdit en tournoi")} tone="text-error">
               {bans.map((b) => (
                 <div key={b.en} className={`${CARD} border-error/30`}>
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -200,7 +199,7 @@ export default async function ReglesPage({
           )}
 
           {erratas.length > 0 && (
-            <Section title="Texte corrigé par un errata" tone="text-gold">
+            <Section title={t("Texte corrigé par un errata")} tone="text-gold">
               {erratas.map((e) => (
                 <div key={e.name} className={CARD}>
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -216,7 +215,7 @@ export default async function ReglesPage({
                       </div>
                     </div>
                     <div className="rounded-lg border border-hairline bg-surface-raised p-3">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">Après</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">{t("Après")}</div>
                       <div className="mt-1 text-sm text-ink">
                         <CardTextRenderer text={e.after} />
                       </div>
@@ -242,7 +241,7 @@ export default async function ReglesPage({
           )}
 
           {terms.length > 0 && (
-            <Section title="Termes et mots-clés" tone="text-arcane">
+            <Section title={t("Termes et mots-clés")} tone="text-arcane">
               {terms.map((t) => (
                 <div key={t.term} className={CARD}>
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -284,7 +283,7 @@ export default async function ReglesPage({
         <div className="mt-10 gap-10 lg:flex lg:items-start">
           {/* Sommaire, collé en haut sur grand écran */}
           <nav
-            aria-label="Sommaire des règles"
+            aria-label={t("Sommaire des règles")}
             className="mb-8 shrink-0 lg:sticky lg:top-20 lg:mb-0 lg:max-h-[calc(100dvh-6rem)] lg:w-64 lg:overflow-y-auto lg:pr-2 thin-scrollbar"
           >
             <p className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Sommaire</p>

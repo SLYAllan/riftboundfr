@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
+import { useT } from "@/components/i18n-provider";
 
 // Aperçu agrandi d'une carte au survol : popup en position fixe (jamais rognée
 // par les conteneurs en overflow-hidden), placée au-dessus de la vignette ou
@@ -37,6 +38,7 @@ export function CardHover({
   className?: string;
   children: React.ReactNode;
 }) {
+  const t = useT();
   const [hovered, setHovered] = useState(false);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
   const [text, setText] = useState<string | null>(textCache.get(name) ?? null);
@@ -118,9 +120,7 @@ export function CardHover({
                 <span className="inline-flex items-center gap-1 font-semibold text-ink-secondary">
                   <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">
                     {energy}
-                  </span>
-                  Énergie
-                </span>
+                  </span>{t("Énergie")}</span>
               )}
               {might != null && (
                 <span className="inline-flex items-center gap-1 font-semibold text-red-400">

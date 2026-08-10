@@ -16,6 +16,7 @@ import { entriesToDeckCode } from "@/lib/deck-code";
 import { exportAsTTS } from "@/lib/export-formats";
 import type { DecklistCard, DeckSection } from "@/types";
 import Link from "@/components/lien";
+import { useT } from "@/components/i18n-provider";
 
 interface DecklistInteractiveProps {
   cards: DecklistCard[];
@@ -62,6 +63,7 @@ const RARITY_COLORS: Record<string, string> = {
 type ExportTab = "deckcode" | "tts" | "image";
 
 function CardTooltip({ card }: { card: DecklistCard }) {
+  const t = useT();
   return (
     <div className="pointer-events-none absolute z-[100] rounded-xl border border-hairline bg-surface shadow-2xl bottom-full left-1/2 -translate-x-1/2 mb-2" style={{ width: 240 }}>
       {card.artUrl && (
@@ -92,7 +94,7 @@ function CardTooltip({ card }: { card: DecklistCard }) {
           ))}
         </div>
         <div className="flex gap-3 text-sm font-semibold">
-          {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>Énergie</span>}
+          {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>{t("Énergie")}</span>}
           {card.power != null && <span className="text-pink-400">{card.power} <span className="text-xs font-normal text-ink-muted">Pouvoir</span></span>}
           {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-3.5 w-3.5 brightness-0 invert" />{card.might}</span>}
         </div>
@@ -105,6 +107,7 @@ function CardTooltip({ card }: { card: DecklistCard }) {
 }
 
 function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () => void }) {
+  const t = useT();
   const dialogRef = useDialogA11y(onClose);
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
@@ -131,7 +134,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
             ))}
           </div>
           <div className="flex gap-3 text-base font-semibold">
-            {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>Énergie</span>}
+            {card.energy != null && <span className="inline-flex items-center gap-1 text-ink-secondary"><span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">{card.energy}</span>{t("Énergie")}</span>}
             {card.power != null && <span className="text-pink-400">{card.power} <span className="text-xs font-normal text-ink-muted">Pouvoir</span></span>}
             {card.might != null && <span className="inline-flex items-center gap-1 text-red-400"><img src="/icons/SwordIconRB.webp" alt="Puissance" className="h-4 w-4 brightness-0 invert" />{card.might}</span>}
           </div>
@@ -151,6 +154,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
 }
 
 function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deckName: string; onClose: () => void }) {
+  const t = useT();
   const dialogRef = useDialogA11y(onClose);
   const [activeTab, setActiveTab] = useState<ExportTab>("deckcode");
   const [copied, setCopied] = useState<string | null>(null);
@@ -265,7 +269,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
 
           {activeTab === "tts" && (
             <div className="space-y-3">
-              <p className="text-xs text-ink-muted">Format Tabletop Simulator - collez dans TTS ou Pixelborn.</p>
+              <p className="text-xs text-ink-muted">{t("Format Tabletop Simulator - collez dans TTS ou Pixelborn.")}</p>
               <div className="relative">
                 <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink break-all" />
                 <button
@@ -281,7 +285,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
 
           {activeTab === "image" && (
             <div className="text-center py-6">
-              <p className="text-sm text-ink-secondary mb-4">Exportez votre deck en image PNG.</p>
+              <p className="text-sm text-ink-secondary mb-4">{t("Exportez votre deck en image PNG.")}</p>
               <button
                 onClick={handleExportImage}
                 disabled={exporting}
@@ -310,6 +314,7 @@ export function DecklistInteractive({
   sourceArticleSlug,
   deckbuilderCode,
 }: DecklistInteractiveProps) {
+  const t = useT();
   const isAdmin = useIsAdmin();
   const [view, setView] = useState<"grid" | "list" | "stats">("grid");
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -364,7 +369,7 @@ export function DecklistInteractive({
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setView("grid")}
-                aria-label="Affichage en grille"
+                aria-label={t("Affichage en grille")}
                 aria-pressed={view === "grid"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
@@ -375,7 +380,7 @@ export function DecklistInteractive({
               </button>
               <button
                 onClick={() => setView("list")}
-                aria-label="Affichage en liste"
+                aria-label={t("Affichage en liste")}
                 aria-pressed={view === "list"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
@@ -386,7 +391,7 @@ export function DecklistInteractive({
               </button>
               <button
                 onClick={() => setView("stats")}
-                aria-label="Statistiques du deck"
+                aria-label={t("Statistiques du deck")}
                 aria-pressed={view === "stats"}
                 className={cn(
                   "rounded-lg p-2 transition-colors",
@@ -405,13 +410,13 @@ export function DecklistInteractive({
         <div className="flex items-center justify-between border-b border-hairline px-4 py-2">
           <div className="text-xs text-ink-muted">{totalCards} cartes</div>
           <div className="flex items-center gap-1">
-            <button onClick={() => setView("grid")} aria-label="Affichage en grille" aria-pressed={view === "grid"} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("grid")} aria-label={t("Affichage en grille")} aria-pressed={view === "grid"} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>
               <Grid3X3 size={14} />
             </button>
-            <button onClick={() => setView("list")} aria-label="Affichage en liste" aria-pressed={view === "list"} className={cn("rounded p-1.5", view === "list" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("list")} aria-label={t("Affichage en liste")} aria-pressed={view === "list"} className={cn("rounded p-1.5", view === "list" ? "text-arcane" : "text-ink-muted")}>
               <List size={14} />
             </button>
-            <button onClick={() => setView("stats")} aria-label="Statistiques du deck" aria-pressed={view === "stats"} className={cn("rounded p-1.5", view === "stats" ? "text-arcane" : "text-ink-muted")}>
+            <button onClick={() => setView("stats")} aria-label={t("Statistiques du deck")} aria-pressed={view === "stats"} className={cn("rounded p-1.5", view === "stats" ? "text-arcane" : "text-ink-muted")}>
               <BarChart3 size={14} />
             </button>
           </div>
@@ -491,11 +496,11 @@ export function DecklistInteractive({
                       <tr className="border-b border-hairline text-xs text-ink-muted">
                         <th className="text-left py-1 pr-2">Nom</th>
                         <th className="text-left py-1 px-2">Type</th>
-                        <th className="text-center py-1 px-2">Coût</th>
+                        <th className="text-center py-1 px-2">{t("Coût")}</th>
                         <th className="text-center py-1 px-2">Puissance</th>
-                        <th className="text-center py-1 px-2">Qté</th>
+                        <th className="text-center py-1 px-2">{t("Qté")}</th>
                         <th className="text-left py-1 px-2">Domaines</th>
-                        <th className="text-left py-1 pl-2">Rareté</th>
+                        <th className="text-left py-1 pl-2">{t("Rareté")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -560,7 +565,7 @@ export function DecklistInteractive({
             <a
               href={`/api/decklist-image?code=${encodeURIComponent(deckbuilderCode)}&download=1`}
               className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
-              title="Admin : image carrée 1000x1000 pour les réseaux"
+              title={t("Admin : image carrée 1000x1000 pour les réseaux")}
             >
               <Download size={14} />
               Image 1:1
@@ -571,17 +576,13 @@ export function DecklistInteractive({
               href={`/deckbuilder?deck=${deckbuilderCode}`}
               className="inline-flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
             >
-              <Hammer size={14} />
-              Ouvrir dans le Deckbuilder
-            </Link>
+              <Hammer size={14} />{t("Ouvrir dans le Deckbuilder")}</Link>
           )}
           {sourceArticleSlug && (
             <Link
               href={`/articles/${sourceArticleSlug}`}
               className="inline-flex items-center gap-1.5 text-xs text-arcane hover:underline ml-auto"
-            >
-              Voir l&apos;article associé
-            </Link>
+            >{t("Voir l’article associé")}</Link>
           )}
         </div>
       )}

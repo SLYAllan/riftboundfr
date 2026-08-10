@@ -5,6 +5,7 @@ import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { SponsorCard } from "@/components/sponsor-card";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { TournamentBracket } from "@/components/tournament-bracket";
+import { useT } from "@/components/i18n-provider";
 
 interface ArticleBlockRendererProps {
   blocks: ArticleBlock[];
@@ -15,6 +16,7 @@ interface ArticleBlockRendererProps {
 }
 
 export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, cardLinks }: ArticleBlockRendererProps) {
+  const t = useT();
   return (
     <div className="space-y-8">
       {blocks.map((block) => {
@@ -125,7 +127,7 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
                     </div>
                   )}
                   {block.date && <div className="mt-3 text-sm text-ink-muted">{block.date}</div>}
-                  <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-arcane">Voir sur X &rarr;</div>
+                  <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-arcane">{t("Voir sur X")} &rarr;</div>
                 </a>
               </div>
             );

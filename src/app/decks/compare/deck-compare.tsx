@@ -6,6 +6,7 @@ import { CardImage } from "@/components/card-image";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { ArrowLeftRight, Plus, Minus, Equal } from "lucide-react";
 import type { DecklistCard } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckData {
   code: string;
@@ -130,6 +131,7 @@ const SECTION_LABELS: Record<string, string> = {
 };
 
 export function DeckCompare({ initialA, initialB }: Props) {
+  const t = useT();
   const [codeA, setCodeA] = useState(initialA?.code ?? "");
   const [codeB, setCodeB] = useState(initialB?.code ?? "");
   const [deckA] = useState<DeckData | null>(initialA);
@@ -192,7 +194,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             id="deck-code-a"
             value={codeA}
             onChange={(e) => setCodeA(e.target.value)}
-            placeholder="Code binaire du deck A"
+            placeholder={t("Code binaire du deck A")}
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
@@ -208,7 +210,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             id="deck-code-b"
             value={codeB}
             onChange={(e) => setCodeB(e.target.value)}
-            placeholder="Code binaire du deck B"
+            placeholder={t("Code binaire du deck B")}
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckB && <div className="mt-1 text-xs text-violet-light">{displayLegendName(deckB.legend)}</div>}
@@ -216,9 +218,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
       </div>
 
       {!hasBoth && (
-        <div className="rounded-xl border border-hairline bg-surface p-12 text-center text-ink-muted">
-          Collez deux codes de decks et cliquez sur Comparer pour voir les différences.
-        </div>
+        <div className="rounded-xl border border-hairline bg-surface p-12 text-center text-ink-muted">{t("Collez deux codes de decks et cliquez sur Comparer pour voir les différences.")}</div>
       )}
 
       {hasBoth && (
@@ -244,14 +244,12 @@ export function DeckCompare({ initialA, initialB }: Props) {
             <button onClick={() => setView("diff")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "diff" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>
               Vue diff
             </button>
-            <button onClick={() => setView("side-by-side")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "side-by-side" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>
-              Côte à côte
-            </button>
+            <button onClick={() => setView("side-by-side")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "side-by-side" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>{t("Côte à côte")}</button>
           </div>
 
           {/* Energy curve comparison */}
           <div className="rounded-xl border border-hairline bg-surface p-4">
-            <h3 className="text-sm font-bold text-ink mb-3">Courbe d&apos;énergie</h3>
+            <h3 className="text-sm font-bold text-ink mb-3">{t("Courbe d’énergie")}</h3>
             <div className="space-y-1">
               {Array.from({ length: 9 }, (_, i) => i).map((cost) => (
                 <StatBar

@@ -8,6 +8,7 @@ import { CardDetailModal } from "./card-detail-modal";
 import { SearchBar } from "./search-bar";
 import { parseSearchQuery, getSetCodesFromAlias, type ParsedSearch } from "../lib/search-parser";
 import type { CardData, BuilderTab } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface CardBrowserProps {
   cards: CardData[];
@@ -71,6 +72,7 @@ function CardTile({
   onAddMain: () => void; onAddSide: () => void; onDetail: () => void;
   activeTab: BuilderTab;
 }) {
+  const t = useT();
   const atMax = inDeck >= maxQty;
   const isSingleSlot = card.type === "Legend" || card.type === "Battlefield";
   const addLabel = card.type === "Legend" ? "Légende"
@@ -137,7 +139,7 @@ function CardTile({
         )}
         <button
           onClick={(e) => { e.stopPropagation(); onDetail(); }}
-          aria-label="Voir le détail de la carte"
+          aria-label={t("Voir le détail de la carte")}
           className="rounded-md bg-surface/90 backdrop-blur-sm px-2 py-1.5 text-xs text-ink hover:bg-surface transition-colors shadow-lg border border-hairline"
         >
           <Eye size={13} />
@@ -152,6 +154,7 @@ function CardTile({
 }
 
 export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains, hasLegend, activeTab, legendFirstName }: CardBrowserProps) {
+  const t = useT();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [energyLow, setEnergyLow] = useState(0);
@@ -319,7 +322,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
           <div className="h-5 w-px bg-hairline" />
 
-          <select aria-label="Trier les cartes" className={selectClass} value={sortBy} onChange={(e) => setSortBy(e.target.value as SortKey)}>
+          <select aria-label={t("Trier les cartes")} className={selectClass} value={sortBy} onChange={(e) => setSortBy(e.target.value as SortKey)}>
             {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
 
@@ -334,14 +337,14 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
           {hasFilters && (
             <button onClick={resetFilters} className="flex items-center gap-1 text-xs text-ink-muted hover:text-ink">
-              <RotateCcw size={12} /> Réinit.
+              <RotateCcw size={12} /> {t("Réinit.")}
             </button>
           )}
         </div>
 
         {showSliders && showSliderToggle && (
           <div className="flex gap-4">
-            <RangeSlider label="Énergie" min={0} max={12} valueLow={energyLow} valueHigh={energyHigh} onChange={(l, h) => { setEnergyLow(l); setEnergyHigh(h); }} />
+            <RangeSlider label={t("Énergie")} min={0} max={12} valueLow={energyLow} valueHigh={energyHigh} onChange={(l, h) => { setEnergyLow(l); setEnergyHigh(h); }} />
             <RangeSlider label="Pouvoir" min={0} max={4} valueLow={powerLow} valueHigh={powerHigh} onChange={(l, h) => { setPowerLow(l); setPowerHigh(h); }} />
             <RangeSlider label="Puissance" min={0} max={10} valueLow={mightLow} valueHigh={mightHigh} onChange={(l, h) => { setMightLow(l); setMightHigh(h); }} />
           </div>
@@ -355,13 +358,13 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       <div className="flex-1 overflow-y-auto thin-scrollbar p-3">
         {activeTab === "legend" && !hasLegend && !searchQuery && selectedDomains.size === 0 && (
           <div className="mb-3 rounded-lg bg-gold/5 border border-gold/20 p-2.5 text-center text-sm text-gold">
-            Choisissez une Légende pour commencer votre deck
+            {t("Choisissez une Légende pour commencer votre deck")}
           </div>
         )}
 
         {activeTab !== "legend" && !hasLegend && (
           <div className="mb-3 rounded-lg bg-gold/5 border border-gold/20 p-2.5 text-center text-sm text-gold">
-            Sélectionnez d&apos;abord une Légende dans l&apos;onglet Légende
+            {t("Sélectionnez d’abord une Légende dans l’onglet Légende")}
           </div>
         )}
 
@@ -380,7 +383,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
           ))}
         </div>
         {filtered.length === 0 && (
-          <div className="py-12 text-center text-sm text-ink-muted">Aucune carte trouvée</div>
+          <div className="py-12 text-center text-sm text-ink-muted">{t("Aucune carte trouvée")}</div>
         )}
       </div>
 

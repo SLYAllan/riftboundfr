@@ -16,6 +16,7 @@ import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
+import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function DeckDetailPage({ params }: PageProps) {
+  const t = await tr();
   const { slug } = await params;
   const deck = await prisma.deck.findUnique({
     where: { slug },
@@ -186,7 +188,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
           </span>
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
-          {(deck.playerName || deck.authorName) && <span>par <strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>}
+          {(deck.playerName || deck.authorName) && <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>}
           {deck.placement && <span>&middot; {deck.placement}</span>}
           {deck.record && <span className="text-arcane">({deck.record})</span>}
           {deck.tournamentContext && (() => {
@@ -247,7 +249,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
 
       {deck.guide && (
         <div className="mt-12">
-          <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Guide du deck</h2>
+          <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Guide du deck")}</h2>
           <div className="mt-4"><MarkdownRenderer content={deck.guide} /></div>
         </div>
       )}
@@ -258,7 +260,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               Autres decks {displayLegendName(deck.legendName)}
             </h2>
-            <Link href="/decks" className="text-sm text-arcane hover:text-arcane-light">Tous les decks</Link>
+            <Link href="/decks" className="text-sm text-arcane hover:text-arcane-light">{t("Tous les decks")}</Link>
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {relatedDecks.map((rd) => (

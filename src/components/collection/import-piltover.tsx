@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/components/i18n-provider";
 
 interface Report {
   imported: number;
@@ -9,6 +10,7 @@ interface Report {
 }
 
 export function ImportPiltover({ binderId }: { binderId?: string }) {
+  const t = useT();
   const [report, setReport] = useState<Report | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -41,10 +43,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
   return (
     <div className="rounded-lg border border-line bg-surface-raised/40 p-4">
       <h2 className="mb-1 font-semibold">Importer depuis Piltover Archive</h2>
-      <p className="mb-3 text-sm text-ink-muted">
-        Exporte ta collection en CSV depuis Piltover Archive, puis dépose le fichier ici.
-        Les quantités existantes seront remplacées par celles du fichier.
-      </p>
+      <p className="mb-3 text-sm text-ink-muted">{t("Exporte ta collection en CSV depuis Piltover Archive, puis dépose le fichier ici. Les quantités existantes seront remplacées par celles du fichier.")}</p>
       <input
         type="file"
         accept=".csv,text/csv"
@@ -52,7 +51,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
         disabled={busy}
         className="text-sm"
       />
-      {busy && <p className="mt-2 text-sm text-ink-muted">Import en cours…</p>}
+      {busy && <p className="mt-2 text-sm text-ink-muted">{t("Import en cours…")}</p>}
       {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
       {report && (
         <div className="mt-3 text-sm">

@@ -7,6 +7,7 @@ import Link from "@/components/lien";
 import Image from "next/image";
 import { cn, displayLegendName } from "@/lib/utils";
 import { Trophy, Eye, ChevronDown, Swords } from "lucide-react";
+import { useT } from "@/components/i18n-provider";
 
 /* ------------------------------------------------------------------ */
 /*  Medal styling                                                      */
@@ -76,6 +77,7 @@ export function TournamentDeckGrid({
   filteredCount,
   totalCount,
 }: Props) {
+  const t = useT();
   const router = useRouter();
   const lien = useLien();
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
@@ -119,7 +121,7 @@ export function TournamentDeckGrid({
         </div>
 
         <select
-          aria-label="Filtrer par légende"
+          aria-label={t("Filtrer par légende")}
           value={currentLegend ?? ""}
           onChange={(e) => handleLegendChange(e.target.value)}
           className="ml-auto w-full sm:w-auto sm:min-w-[240px] appearance-none rounded-lg bg-surface border border-hairline text-ink text-sm font-medium px-3.5 py-2 pr-9 transition-colors hover:bg-surface-raised hover:border-hairline-strong focus:border-arcane/40 focus:ring-1 focus:ring-arcane/20"
@@ -183,9 +185,7 @@ export function TournamentDeckGrid({
                 onClick={handleLoadMore}
                 className="inline-flex items-center gap-2 rounded-full bg-surface border border-hairline px-6 py-2.5 text-sm font-semibold text-ink-secondary hover:bg-surface-raised hover:text-ink transition-colors"
               >
-                <ChevronDown size={16} />
-                Charger plus
-                <span className="text-xs text-ink-muted">
+                <ChevronDown size={16} />{t("Charger plus")}<span className="text-xs text-ink-muted">
                   ({Math.min(rest.length - visibleCount, LOAD_MORE_STEP)} restants sur {rest.length - visibleCount})
                 </span>
               </button>
@@ -198,13 +198,11 @@ export function TournamentDeckGrid({
       {decks.length === 0 && (
         <div className="mt-12 text-center text-ink-muted py-16">
           <Swords size={32} className="mx-auto mb-3 opacity-40" />
-          <p className="text-lg font-medium">Aucune decklist trouvée pour ce filtre.</p>
+          <p className="text-lg font-medium">{t("Aucune decklist trouvée pour ce filtre.")}</p>
           <button
             onClick={() => handleLegendChange("")}
             className="mt-3 text-sm text-arcane hover:text-arcane-light transition-colors"
-          >
-            Afficher toutes les decklists
-          </button>
+          >{t("Afficher toutes les decklists")}</button>
         </div>
       )}
     </div>

@@ -7,7 +7,7 @@ import { getLegendIconUrl } from "@/lib/banners";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
 import type { Metadata } from "next";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 // Cache RUNTIME (pas build) : les decks publiés ne changent qu'aux seeds → 5 min suffit.
 // Invalidable via revalidateTag("meta").
@@ -72,6 +72,7 @@ interface LegendStats {
 }
 
 export default async function MetaSnapshotPage() {
+  const t = await tr();
   type MetaData = Awaited<ReturnType<typeof getMetaData>>;
   let data: MetaData;
   try {
@@ -91,7 +92,7 @@ export default async function MetaSnapshotPage() {
           Meta Snapshot
         </h1>
         <p className="mt-4 text-ink-secondary">
-          Aucune donnée disponible pour le moment.
+          {t("Aucune donnée disponible pour le moment.")}
         </p>
       </div>
     );
@@ -145,7 +146,7 @@ export default async function MetaSnapshotPage() {
           Meta Snapshot
         </h1>
         <p className="mt-2 text-ink-secondary">
-          Popularité des légendes basée sur les decks de tournois publiés.
+          {t("Popularité des légendes basée sur les decks de tournois publiés.")}
         </p>
         <p className="mt-1 text-sm text-ink-muted">
           Dernière mise à jour : {formatDate(latestDate)} - {totalDecks} decks
@@ -161,9 +162,7 @@ export default async function MetaSnapshotPage() {
 
       <div className="mt-8 rounded-lg border border-hairline bg-surface p-6 text-center">
         <p className="text-sm text-ink-muted">
-          Ces données reflètent uniquement le nombre de decks publiés par
-          légende. Elles ne constituent pas des statistiques de winrate ou de
-          performance.
+          {t("Ces données reflètent uniquement le nombre de decks publiés par légende. Elles ne constituent pas des statistiques de winrate ou de performance.")}
         </p>
       </div>
     </div>

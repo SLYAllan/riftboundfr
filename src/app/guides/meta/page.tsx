@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import Link from "@/components/lien";
 import { TrendingUp, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: "Méta & Tier List Riftbound",
@@ -127,7 +127,8 @@ const archetypes = [
   },
 ];
 
-function TierRow({ e }: { e: Entry }) {
+async function TierRow({ e }: { e: Entry }) {
+  const t = await tr();
   const s = TIER_STYLE[e.tier];
   return (
     <div className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
@@ -139,45 +140,31 @@ function TierRow({ e }: { e: Entry }) {
       </span>
       <div className="flex-1">
         <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          {e.name}
+          {t(e.name)}
         </span>
-        <p className="mt-0.5 text-xs text-ink-secondary">{e.note}</p>
+        <p className="mt-0.5 text-xs text-ink-secondary">{t(e.note)}</p>
       </div>
     </div>
   );
 }
 
-export default function GuideMetaPage() {
+export default async function GuideMetaPage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Méta", href: "/guides/meta" }]} className="mb-6" />
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Méta &amp; Tier List
-      </h1>
-      <p className="mt-2 text-lg text-ink-secondary">
-        Quelles légendes gagnent vraiment les tournois ? Ce guide résume le méta compétitif set par set,
-        les grands archétypes et les cartes qui définissent le format.
-      </p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Méta & Tier List")}</h1>
+      <p className="mt-2 text-lg text-ink-secondary">{t("Quelles légendes gagnent vraiment les tournois ? Ce guide résume le méta compétitif set par set, les grands archétypes et les cartes qui définissent le format.")}</p>
 
       <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-        <strong>D&apos;où viennent ces données ?</strong> De l&apos;analyse de <strong>88 tournois</strong> et plus de
-        21 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field,
-        le nombre de top 8, les victoires et le taux de conversion - pas une opinion.
-      </div>
+        <strong>{t("D’où viennent ces données ?")}</strong>{" "}{t("De l’analyse de")}{" "}<strong>88 tournois</strong>{" "}{t("et plus de 21 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.")}</div>
 
       <div className="mt-10 space-y-12">
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            C&apos;est quoi le « méta » ?
-          </h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("C’est quoi le « méta » ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Le méta (pour")}{" "}<em>metagame</em>{t(") désigne l’ensemble des decks les plus joués et les plus performants à un instant donné. Il évolue à chaque nouveau set et à chaque gros tournoi. Connaître le méta vous aide à choisir une légende solide, à anticiper ce que joueront vos adversaires et à préparer votre Réserve en Bo3.")}</p>
           <p className="mt-2 text-sm text-ink-secondary">
-            Le méta (pour <em>metagame</em>) désigne l&apos;ensemble des decks les plus joués et les plus performants à un
-            instant donné. Il évolue à chaque nouveau set et à chaque gros tournoi. Connaître le méta vous aide à choisir
-            une légende solide, à anticiper ce que joueront vos adversaires et à préparer votre Réserve en Bo3.
-          </p>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Riftbound compte aujourd&apos;hui <strong>trois sets</strong>. Chacun a son propre méta, car le pool de cartes
-            légales change. Le format actuel est <strong>Unleashed</strong>.
+            Riftbound compte aujourd&apos;hui <strong>trois sets</strong>{t(". Chacun a son propre méta, car le pool de cartes légales change. Le format actuel est")}{" "}<strong>Unleashed</strong>.
           </p>
         </section>
 
@@ -187,35 +174,30 @@ export default function GuideMetaPage() {
               <span className="h-8 w-1.5 rounded-full" style={{ backgroundColor: set.color }} />
               <div>
                 <h2 className="text-2xl font-semibold" style={{ color: set.color, fontFamily: "var(--font-rubik), sans-serif" }}>
-                  {set.name}
+                  {t(set.name)}
                 </h2>
-                <span className="text-xs text-ink-muted">{set.fr} · {set.decks}</span>
+                <span className="text-xs text-ink-muted">{t(set.fr)} · {set.decks}</span>
               </div>
             </div>
-            <p className="mt-3 text-sm text-ink-secondary">{set.summary}</p>
+            <p className="mt-3 text-sm text-ink-secondary">{t(set.summary)}</p>
             <div className="mt-4 space-y-2">
               {set.entries.map((e) => (
-                <TierRow key={e.name} e={e} />
+                <TierRow key={t(e.name)} e={e} />
               ))}
             </div>
           </section>
         ))}
 
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            Les grands archétypes
-          </h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Au-delà des légendes, chaque deck appartient à une grande famille de stratégie. Identifier l&apos;archétype
-            adverse en quelques tours vous dit comment jouer la partie.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Les grands archétypes")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Au-delà des légendes, chaque deck appartient à une grande famille de stratégie. Identifier l’archétype adverse en quelques tours vous dit comment jouer la partie.")}</p>
           <div className="mt-4 space-y-2">
             {archetypes.map((a) => (
-              <div key={a.name} className="rounded-lg border border-hairline bg-surface p-4">
-                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{a.name}</h3>
-                <p className="mt-1 text-sm text-ink-secondary">{a.desc}</p>
+              <div key={t(a.name)} className="rounded-lg border border-hairline bg-surface p-4">
+                <h3 className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(a.name)}</h3>
+                <p className="mt-1 text-sm text-ink-secondary">{t(a.desc)}</p>
                 <div className="mt-2 flex flex-col gap-1 text-xs text-ink-muted sm:flex-row sm:gap-6">
-                  <span><strong className="text-ink-secondary">Légendes :</strong> {a.legends}</span>
+                  <span><strong className="text-ink-secondary">{t("Légendes :")}</strong> {a.legends}</span>
                   <span><strong className="text-ink-secondary">Domaines :</strong> {a.domains}</span>
                 </div>
               </div>
@@ -225,67 +207,38 @@ export default function GuideMetaPage() {
 
         <section>
           <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            <TrendingUp size={20} /> Les cartes qui définissent le format
-          </h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Une poignée de cartes oriente la construction de tous les decks. Les connaître, c&apos;est comprendre pourquoi
-            le méta ressemble à ce qu&apos;il est.
-          </p>
+            <TrendingUp size={20} />{" "}{t("Les cartes qui définissent le format")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Une poignée de cartes oriente la construction de tous les decks. Les connaître, c’est comprendre pourquoi le méta ressemble à ce qu’il est.")}</p>
           <div className="mt-4 space-y-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef> - l&apos;équipement à 9 énergie qui portait Sivir,
-              Miss Fortune et Poppy. <strong>En net déclin</strong> : le field a réagi.
-            </div>
+              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef>{" "}{t("- l’équipement à 9 énergie qui portait Sivir, Miss Fortune et Poppy.")}{" "}<strong>{t("En net déclin")}</strong>{" "}{t(": le field a réagi.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
               <CardRef name="Salvage">Salvage</CardRef>, <CardRef name="Turn to Dust">Turn to Dust</CardRef> et{" "}
-              <CardRef name="Adaptatron">Adaptatron</CardRef> - du <strong>retrait d&apos;équipement joué en deck principal</strong>{" "}
+              <CardRef name="Adaptatron">Adaptatron</CardRef>{" "}{t("- du")}{" "}<strong>{t("retrait d’équipement joué en deck principal")}</strong>{" "}
               pour punir Aurora. C&apos;est ce qui a fait chuter Sivir et Poppy.
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Defy">Defy</CardRef> - le retrait universel à 1 énergie, présent dans presque tous les decks
-              réactifs.
-            </div>
+              <CardRef name="Defy">Defy</CardRef>{" "}{t("- le retrait universel à 1 énergie, présent dans presque tous les decks réactifs.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Vex">Vex</CardRef> (version à 4 coût) - un quasi verrou : Déviation, et chaque unité posée par
-              l&apos;adversaire arrive étourdie. Très jouée, souvent citée comme candidate au bannissement.
-            </div>
+              <CardRef name="Vex">Vex</CardRef>{" "}{t("(version à 4 coût) - un quasi verrou : Déviation, et chaque unité posée par l’adversaire arrive étourdie. Très jouée, souvent citée comme candidate au bannissement.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Unchecked Power">Unchecked Power</CardRef> - la réponse aux decks de Hold (Vex, Master Yi) :
-              elle balaye un champ de bataille même très chargé et remet la partie à zéro.
-            </div>
+              <CardRef name="Unchecked Power">Unchecked Power</CardRef>{" "}{t("- la réponse aux decks de Hold (Vex, Master Yi) : elle balaye un champ de bataille même très chargé et remet la partie à zéro.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Akshan">Akshan</CardRef> - la réponse en unité à l&apos;archétype Aurora : il vole ou détruit
-              l&apos;équipement adverse, donc l&apos;Aurora elle-même.
-            </div>
+              <CardRef name="Akshan">Akshan</CardRef>{" "}{t("- la réponse en unité à l’archétype Aurora : il vole ou détruit l’équipement adverse, donc l’Aurora elle-même.")}</div>
           </div>
-          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-            Leçon de méta : quand une carte devient trop forte (Aurora), le field s&apos;adapte en intégrant sa réponse en
-            deck principal. C&apos;est le cycle naturel du jeu compétitif.
-          </div>
+          <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">{t("Leçon de méta : quand une carte devient trop forte (Aurora), le field s’adapte en intégrant sa réponse en deck principal. C’est le cycle naturel du jeu compétitif.")}</div>
         </section>
 
         <section>
           <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            <AlertTriangle size={20} /> Attention aux pièges de représentation
-          </h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Une légende beaucoup jouée n&apos;est pas forcément forte. Certaines sont populaires mais convertissent mal en
-            top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l&apos;inverse, des sleepers comme
-            <strong> Annie</strong> ou <strong>Sett</strong> sont peu joués mais gagnent au-dessus de leur poids.
-            Regardez toujours le <strong>taux de conversion</strong>, pas seulement la part du field.
-          </p>
+            <AlertTriangle size={20} />{" "}{t("Attention aux pièges de représentation")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Une légende beaucoup jouée n’est pas forcément forte. Certaines sont populaires mais convertissent mal en top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l’inverse, des sleepers comme")}<strong> Annie</strong> ou <strong>Sett</strong>{" "}{t("sont peu joués mais gagnent au-dessus de leur poids. Regardez toujours le")}{" "}<strong>{t("taux de conversion")}</strong>{t(", pas seulement la part du field.")}</p>
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-            Voir la Tier List complète
-          </Link>
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-            Guide de deckbuilding
-          </Link>
-          <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
-            Résultats de tournois
-          </Link>
+          <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Voir la Tier List complète")}</Link>
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Guide de deckbuilding")}</Link>
+          <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">{t("Résultats de tournois")}</Link>
         </div>
       </div>
     </div>

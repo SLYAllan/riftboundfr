@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Pencil, Check, X } from "lucide-react";
+import { useT } from "@/components/i18n-provider";
 
 interface ProfileActionsProps {
   userId: string;
@@ -11,6 +12,7 @@ interface ProfileActionsProps {
 }
 
 export function ProfileActions({ userId, username, riotGameName, riotTagLine }: ProfileActionsProps) {
+  const t = useT();
   const [editing, setEditing] = useState(false);
   const [newUsername, setNewUsername] = useState(username);
   const [newRiotName, setNewRiotName] = useState(riotGameName ?? "");
@@ -44,8 +46,7 @@ export function ProfileActions({ userId, username, riotGameName, riotTagLine }: 
         onClick={() => setEditing(true)}
         className="flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-sm text-ink-secondary hover:text-ink transition-colors"
       >
-        <Pencil size={13} /> Modifier le profil
-      </button>
+        <Pencil size={13} />{" "}{t("Modifier le profil")}</button>
     );
   }
 

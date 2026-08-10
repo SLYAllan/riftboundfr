@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Share2, Download, Check } from "lucide-react";
 import { useIsAdmin } from "@/hooks/use-is-admin";
+import { useT } from "@/components/i18n-provider";
 
 interface ShareDecklistButtonProps {
   /** Slug for editorial decks */
@@ -27,6 +28,7 @@ export function ShareDecklistButton({
   playerName,
   tournamentContext,
 }: ShareDecklistButtonProps) {
+  const t = useT();
   const [copied, setCopied] = useState(false);
   // Admin-only feature: the decklist image generator is reserved for the
   // Riftbound France admin (Discord role). Hidden for everyone else.
@@ -80,7 +82,7 @@ export function ShareDecklistButton({
       <button
         onClick={handleShareTwitter}
         className="inline-flex items-center gap-1.5 rounded-lg bg-[#1d9bf0]/10 px-3 py-1.5 text-xs font-medium text-[#1d9bf0] hover:bg-[#1d9bf0]/20 transition-colors"
-        title="Partager sur Twitter"
+        title={t("Partager sur Twitter")}
       >
         <Share2 size={14} />
         Twitter
@@ -90,7 +92,7 @@ export function ShareDecklistButton({
       <a
         href={`${imageUrl}&download=1`}
         className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
-        title="Admin : image carrée 1000x1000 pour les réseaux"
+        title={t("Admin : image carrée 1000x1000 pour les réseaux")}
       >
         <Download size={14} />
         Image 1:1
@@ -98,7 +100,7 @@ export function ShareDecklistButton({
       <button
         onClick={handleCopyImageUrl}
         className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-2.5 py-1.5 text-xs text-ink-muted hover:text-ink transition-colors"
-        title="Copier le lien de l'image"
+        title={t("Copier le lien de l'image")}
       >
         {copied ? <Check size={13} className="text-success" /> : <Share2 size={13} />}
       </button>

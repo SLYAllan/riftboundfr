@@ -6,6 +6,7 @@ import Link from "@/components/lien";
 import Image from "next/image";
 import { Folder, Plus, Globe, Lock, Layers, Hash, PieChart, Heart, MoreVertical, Pencil, Trash2, Share2 } from "lucide-react";
 import { TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
+import { useT } from "@/components/i18n-provider";
 
 export interface DashCard { id: string; set: string; setName: string; type: string; rarity: string; domains: string[] }
 export interface DashSet { setId: string; name: string; cardCount: number }
@@ -28,6 +29,7 @@ export function CollectionDashboard({
   cards: DashCard[]; sets: DashSet[]; binders: DashBinder[]; items: DashItem[];
   wishlistCount: number; maxBinders: number;
 }) {
+  const t = useT();
   const router = useRouter();
   const [binders, setBinders] = useState(initialBinders);
   const [scope, setScope] = useState<string>("all"); // "all" | binderId
@@ -149,7 +151,7 @@ export function CollectionDashboard({
           <div className="flex items-center gap-5">
             <div className="text-right">
               <div className="text-3xl font-extrabold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{completion}%</div>
-              <div className="text-[11px] uppercase tracking-wider text-ink-muted">complétion</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("complétion")}</div>
             </div>
             <div className="hidden h-14 w-14 sm:block">
               <svg viewBox="0 0 36 36" className="h-14 w-14 -rotate-90">
@@ -165,8 +167,8 @@ export function CollectionDashboard({
       {/* Binders */}
       <section className="mt-6">
         <div className="mb-3 flex items-baseline gap-2">
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-secondary">Tes classeurs</h2>
-          <span className="text-xs text-ink-muted">Ouvre un classeur pour parcourir et gérer tes cartes</span>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-secondary">{t("Tes classeurs")}</h2>
+          <span className="text-xs text-ink-muted">{t("Ouvre un classeur pour parcourir et gérer tes cartes")}</span>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {binders.map((b) => (
@@ -176,7 +178,7 @@ export function CollectionDashboard({
                   <Folder size={18} className="text-arcane" style={b.color ? { color: b.color } : undefined} />
                   <span className="font-semibold">{b.name}</span>
                   <span className="ml-auto inline-flex items-center gap-1 text-[11px] text-ink-muted">
-                    {b.isPublic ? <><Globe size={11} /> Partagé</> : <><Lock size={11} /> Privé</>}
+                    {b.isPublic ? <><Globe size={11} />{" "}{t("Partagé")}</> : <><Lock size={11} />{" "}{t("Privé")}</>}
                   </span>
                 </div>
                 <div className="mt-3 flex items-end justify-between">
@@ -184,7 +186,7 @@ export function CollectionDashboard({
                   <span className="text-xs text-ink-muted">{b.copies} ex.</span>
                 </div>
               </Link>
-              <button onClick={() => setMenuFor(menuFor === b.id ? null : b.id)} className="absolute right-2 top-2 rounded p-1 text-ink-muted hover:text-ink" aria-label="Gérer">
+              <button onClick={() => setMenuFor(menuFor === b.id ? null : b.id)} className="absolute right-2 top-2 rounded p-1 text-ink-muted hover:text-ink" aria-label={t("Gérer")}>
                 <MoreVertical size={15} />
               </button>
               {menuFor === b.id && (
@@ -208,24 +210,24 @@ export function CollectionDashboard({
       <section className="mt-8">
         <div className="mb-3 flex items-center justify-between">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-secondary">Statistiques</h2>
-          <select aria-label="Filtrer par classeur" value={scope} onChange={(e) => setScope(e.target.value)} className="h-9 rounded-lg border border-hairline bg-surface px-3 text-sm">
-            <option value="all">Tous les classeurs</option>
+          <select aria-label={t("Filtrer par classeur")} value={scope} onChange={(e) => setScope(e.target.value)} className="h-9 rounded-lg border border-hairline bg-surface px-3 text-sm">
+            <option value="all">{t("Tous les classeurs")}</option>
             {binders.map((b) => <option key={b.id} value={b.id}>{b.name}</option>)}
           </select>
         </div>
 
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          <StatCard icon={<Layers size={16} />} label="Cartes collectées" value={String(stats.distinct)} sub={`sur ${stats.total} disponibles`} accent />
-          <StatCard icon={<Hash size={16} />} label="Total de cartes" value={stats.copies.toLocaleString("fr-FR")} sub="doublons inclus" />
-          <StatCard icon={<PieChart size={16} />} label="Complétion" value={`${completion}%`} sub="progression globale" />
+          <StatCard icon={<Layers size={16} />} label={t("Cartes collectées")} value={String(stats.distinct)} sub={`sur ${stats.total} disponibles`} accent />
+          <StatCard icon={<Hash size={16} />} label={t("Total de cartes")} value={stats.copies.toLocaleString("fr-FR")} sub="doublons inclus" />
+          <StatCard icon={<PieChart size={16} />} label={t("Complétion")} value={`${completion}%`} sub="progression globale" />
           <StatCard icon={<Heart size={16} />} label="Wishlist" value={String(wishlistCount)} sub="cartes désirées" />
         </div>
 
         <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-2">
-          <Breakdown title="Cartes par type"
+          <Breakdown title={t("Cartes par type")}
             rows={[...stats.byType.entries()].sort((a, b) => TYPE_ORDER.indexOf(a[0]) - TYPE_ORDER.indexOf(b[0]))
               .map(([k, v]) => ({ label: TYPE_LABELS_FR[k] ?? k, owned: v.owned, total: v.total, color: "var(--color-arcane, #8b5cf6)" }))} />
-          <Breakdown title="Cartes par rareté"
+          <Breakdown title={t("Cartes par rareté")}
             rows={[...stats.byRarity.entries()].sort((a, b) => RARITY_ORDER.indexOf(a[0]) - RARITY_ORDER.indexOf(b[0]))
               .map(([k, v]) => ({ label: RARITY_LABELS_FR[k] ?? k, owned: v.owned, total: v.total, color: RARITY_COLORS[k] ?? "#9ca3af" }))} />
         </div>
@@ -233,7 +235,7 @@ export function CollectionDashboard({
 
       {/* Progression par domaine */}
       <section className="mt-8">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-secondary">Progression par domaine</h2>
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-secondary">{t("Progression par domaine")}</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {DOMAIN_ORDER.map((d) => {
             const st = stats.byDomain.get(d) ?? { owned: 0, total: 0 };
@@ -257,7 +259,7 @@ export function CollectionDashboard({
 
       {/* Sets */}
       <section className="mt-8">
-        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-secondary">Progression par set</h2>
+        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-ink-secondary">{t("Progression par set")}</h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {sets.map((s) => {
             const st = stats.bySet.get(s.setId) ?? { owned: 0, total: s.cardCount };

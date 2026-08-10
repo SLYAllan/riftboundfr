@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { ExternalLink } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: "Jouer en ligne",
@@ -61,37 +61,30 @@ const platforms = [
   },
 ];
 
-export default function JouerEnLignePage() {
+export default async function JouerEnLignePage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Jouer en ligne", href: "/guides/jouer-en-ligne" }]} className="mb-6" />
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Jouer en ligne
-      </h1>
-      <p className="mt-2 text-lg text-ink-secondary">
-        Pas de cartes physiques ? Pas de problème. Deux plateformes permettent de jouer à Riftbound gratuitement en ligne.
-      </p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Jouer en ligne")}</h1>
+      <p className="mt-2 text-lg text-ink-secondary">{t("Pas de cartes physiques ? Pas de problème. Deux plateformes permettent de jouer à Riftbound gratuitement en ligne.")}</p>
 
       <div className="mt-4 rounded-lg border border-gold/20 bg-gold/5 px-4 py-3 text-sm text-ink-secondary">
-        <strong className="text-gold">Prérequis :</strong> un deck Riftbound prêt à jouer.{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">
-          Créez-en un avec le Deckbuilder
-        </Link>{" "}
+        <strong className="text-gold">{t("Prérequis :")}</strong> un deck Riftbound prêt à jouer.{" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">{t("Créez-en un avec le Deckbuilder")}</Link>{" "}
         ou{" "}
-        <Link href="/decks" className="text-arcane hover:underline">
-          copiez un deck existant
-        </Link>.
+        <Link href="/decks" className="text-arcane hover:underline">{t("copiez un deck existant")}</Link>.
       </div>
 
       <div className="mt-10 space-y-14">
         {platforms.map((platform) => (
-          <section key={platform.name}>
+          <section key={t(platform.name)}>
             <div className="flex items-center gap-3">
               <h2
                 className="text-2xl font-semibold"
                 style={{ fontFamily: "var(--font-rubik), sans-serif", color: platform.color }}
               >
-                {platform.name}
+                {t(platform.name)}
               </h2>
               <a
                 href={platform.url}
@@ -103,7 +96,7 @@ export default function JouerEnLignePage() {
               </a>
             </div>
 
-            <p className="mt-2 text-ink-secondary">{platform.description}</p>
+            <p className="mt-2 text-ink-secondary">{t(platform.description)}</p>
 
             <h3 className="mt-6 text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               Comment commencer
@@ -138,19 +131,17 @@ export default function JouerEnLignePage() {
       </div>
 
       <section className="mt-14 rounded-card border border-hairline bg-surface p-6">
-        <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          Quelle plateforme choisir pour jouer à Riftbound en ligne ?
-        </h2>
+        <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelle plateforme choisir pour jouer à Riftbound en ligne ?")}</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="rounded-lg border border-arcane/20 bg-arcane/5 p-4">
             <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               TCG Arena
             </h3>
             <ul className="mt-2 space-y-1 text-sm text-ink-secondary">
-              <li>+ Recherche d&apos;adversaire intégrée</li>
-              <li>+ Interface plus fluide</li>
-              <li>+ Discussion en jeu</li>
-              <li>− Moins de formats supportés</li>
+              <li>{t("+ Recherche d’adversaire intégrée")}</li>
+              <li>{t("+ Interface plus fluide")}</li>
+              <li>{t("+ Discussion en jeu")}</li>
+              <li>{t("− Moins de formats supportés")}</li>
             </ul>
           </div>
           <div className="rounded-lg border border-violet/20 bg-violet/5 p-4">
@@ -158,26 +149,21 @@ export default function JouerEnLignePage() {
               RiftAtlas
             </h3>
             <ul className="mt-2 space-y-1 text-sm text-ink-secondary">
-              <li>+ Mode solo pour tester</li>
-              <li>+ Bo3 avec Réserve</li>
-              <li>+ Statistiques avancées</li>
-              <li>− Nécessite un lien d&apos;invitation</li>
+              <li>{t("+ Mode solo pour tester")}</li>
+              <li>{t("+ Bo3 avec Réserve")}</li>
+              <li>{t("+ Statistiques avancées")}</li>
+              <li>{t("− Nécessite un lien d’invitation")}</li>
             </ul>
           </div>
         </div>
-        <p className="mt-4 text-sm text-ink-muted">
-          Les deux sont gratuits. Si vous débutez, commencez par TCG Arena pour sa recherche d&apos;adversaire.
-          Si vous voulez tester des decks en solo avant de jouer, utilisez RiftAtlas.
-        </p>
+        <p className="mt-4 text-sm text-ink-muted">{t("Les deux sont gratuits. Si vous débutez, commencez par TCG Arena pour sa recherche d’adversaire. Si vous voulez tester des decks en solo avant de jouer, utilisez RiftAtlas.")}</p>
       </section>
 
       <div className="mt-8 text-center">
         <Link
           href="/guides"
           className="text-sm text-ink-muted hover:text-arcane transition-colors"
-        >
-          &larr; Retour aux guides
-        </Link>
+        >{t("&larr; Retour aux guides")}</Link>
       </div>
     </div>
   );

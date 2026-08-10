@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Minus, Plus, RotateCcw, Undo2, Search, ChevronLeft } from "lucide-react";
 import { DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
+import { useT } from "@/components/i18n-provider";
 
 interface Legend {
   id: string;
@@ -25,6 +26,7 @@ interface HistoryEntry {
 }
 
 export function PointTracker() {
+  const t = useT();
   const [phase, setPhase] = useState<Phase>("setup");
   const [playerCount, setPlayerCount] = useState(2);
   const [maxPoints, setMaxPoints] = useState(0);
@@ -113,15 +115,13 @@ export function PointTracker() {
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
-            <h1 className="text-3xl font-bold" style={{ fontFamily: "var(--font-rubik)" }}>
-              Compteur de points
-            </h1>
-            <p className="mt-2 text-ink-secondary text-sm">Configurez votre partie</p>
+            <h1 className="text-3xl font-bold" style={{ fontFamily: "var(--font-rubik)" }}>{t("Compteur de points")}</h1>
+            <p className="mt-2 text-ink-secondary text-sm">{t("Configurez votre partie")}</p>
           </div>
 
           {/* Player count */}
           <div className="space-y-3">
-            <label className="text-sm font-medium text-ink-secondary">Nombre de joueurs</label>
+            <label className="text-sm font-medium text-ink-secondary">{t("Nombre de joueurs")}</label>
             <div className="flex gap-2">
               {[2, 3, 4].map((n) => (
                 <button
@@ -141,11 +141,11 @@ export function PointTracker() {
 
           {/* Max points */}
           <div className="space-y-3">
-            <label className="text-sm font-medium text-ink-secondary">Points de départ</label>
+            <label className="text-sm font-medium text-ink-secondary">{t("Points de départ")}</label>
             <div className="flex items-center justify-center gap-6">
               <button
                 onClick={() => setMaxPoints((v) => Math.max(0, v - 1))}
-                aria-label="Retirer un point de départ"
+                aria-label={t("Retirer un point de départ")}
                 className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-raised text-ink-secondary hover:bg-surface-overlay transition-colors"
               >
                 <Minus size={20} />
@@ -155,7 +155,7 @@ export function PointTracker() {
               </span>
               <button
                 onClick={() => setMaxPoints((v) => v + 1)}
-                aria-label="Ajouter un point de départ"
+                aria-label={t("Ajouter un point de départ")}
                 className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-raised text-ink-secondary hover:bg-surface-overlay transition-colors"
               >
                 <Plus size={20} />
@@ -198,9 +198,7 @@ export function PointTracker() {
             onClick={startGame}
             className="w-full rounded-xl bg-gold py-4 text-lg font-bold text-canvas transition hover:bg-gold-light shadow-lg shadow-gold/25"
             style={{ fontFamily: "var(--font-rubik)" }}
-          >
-            Lancer la partie
-          </button>
+          >{t("Lancer la partie")}</button>
         </div>
       </div>
     );
@@ -222,9 +220,7 @@ export function PointTracker() {
             Retour
           </button>
 
-          <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-rubik)" }}>
-            Choisir une Légende
-          </h2>
+          <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-rubik)" }}>{t("Choisir une Légende")}</h2>
           {selectingFor !== null && (
             <p className="text-sm text-ink-secondary mb-4">
               pour {players[selectingFor]?.name}
@@ -237,7 +233,7 @@ export function PointTracker() {
               type="text"
               value={legendSearch}
               onChange={(e) => setLegendSearch(e.target.value)}
-              placeholder="Rechercher une légende..."
+              placeholder={t("Rechercher une légende...")}
               autoFocus
               className="w-full rounded-lg bg-surface-raised border border-hairline pl-9 pr-3 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50"
             />
@@ -272,7 +268,7 @@ export function PointTracker() {
           </div>
 
           {filteredLegends.length === 0 && (
-            <p className="mt-8 text-center text-ink-muted text-sm">Aucune légende trouvée</p>
+            <p className="mt-8 text-center text-ink-muted text-sm">{t("Aucune légende trouvée")}</p>
           )}
         </div>
       </div>
@@ -361,9 +357,7 @@ export function PointTracker() {
                     <button
                       onClick={() => openLegendSelect(i)}
                       className="text-xs text-arcane/70 hover:text-arcane transition-colors"
-                    >
-                      + Légende
-                    </button>
+                    >{t("+ Légende")}</button>
                   )}
                 </div>
 

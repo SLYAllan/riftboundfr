@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n-provider";
 
 interface LegendStats {
   legendName: string;
@@ -37,6 +38,7 @@ export function MetaFilters({
   allTournaments,
   allFormats,
 }: Props) {
+  const t = useT();
   const [selectedTournament, setSelectedTournament] = useState<string>("all");
   const [selectedFormat, setSelectedFormat] = useState<string>("all");
 
@@ -64,10 +66,10 @@ export function MetaFilters({
               value={selectedTournament}
               onChange={(e) => setSelectedTournament(e.target.value)}
 
-              aria-label="Filtrer par tournoi"
+              aria-label={t("Filtrer par tournoi")}
               className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane"
             >
-              <option value="all">Tous les tournois</option>
+              <option value="all">{t("Tous les tournois")}</option>
               {allTournaments.map((t) => (
                 <option key={t} value={t}>
                   {t}
@@ -80,10 +82,10 @@ export function MetaFilters({
               value={selectedFormat}
               onChange={(e) => setSelectedFormat(e.target.value)}
 
-              aria-label="Filtrer par format"
+              aria-label={t("Filtrer par format")}
               className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm text-ink focus:border-arcane"
             >
-              <option value="all">Tous les formats</option>
+              <option value="all">{t("Tous les formats")}</option>
               {allFormats.map((f) => (
                 <option key={f} value={f}>
                   {f.charAt(0).toUpperCase() + f.slice(1)}
@@ -95,9 +97,7 @@ export function MetaFilters({
       )}
 
       {filtered.length === 0 ? (
-        <p className="mt-12 text-center text-ink-secondary">
-          Aucune légende trouvée avec ces filtres.
-        </p>
+        <p className="mt-12 text-center text-ink-secondary">{t("Aucune légende trouvée avec ces filtres.")}</p>
       ) : (
         <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
           {filtered.map((legend, idx) => {
@@ -168,7 +168,7 @@ export function MetaFilters({
                 {/* Popularity bar */}
                 <div className="mt-2 w-full">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-ink-muted">Popularité</span>
+                    <span className="text-ink-muted">{t("Popularité")}</span>
                     <span className="font-semibold text-ink-secondary">
                       {legend.popularity}%
                     </span>

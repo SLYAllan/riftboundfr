@@ -5,6 +5,7 @@ import { Shuffle } from "lucide-react";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardImage } from "@/components/card-image";
 import type { DecklistCard } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckSummaryProps {
   cards: DecklistCard[];
@@ -224,6 +225,7 @@ function DomainsChart({ cards }: { cards: DecklistCard[] }) {
 }
 
 function TypesChart({ cards }: { cards: DecklistCard[] }) {
+  const t = useT();
   const typeColors: Record<string, string> = {
     Unit: "#0ea5e9",
     Spell: "#8b5cf6",
@@ -252,9 +254,7 @@ function TypesChart({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">
-        Types de cartes
-      </h5>
+      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">{t("Types de cartes")}</h5>
       <div className="flex items-center gap-3">
         <DonutChart data={data} size={90} />
         <div className="space-y-1 min-w-0">
@@ -278,6 +278,7 @@ function TypesChart({ cards }: { cards: DecklistCard[] }) {
 }
 
 function DrawHand({ cards }: { cards: DecklistCard[] }) {
+  const t = useT();
   const [hand, setHand] = useState<DecklistCard[]>([]);
 
   const drawableCards = useMemo(
@@ -302,9 +303,7 @@ function DrawHand({ cards }: { cards: DecklistCard[] }) {
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">
-          Tirer une main
-        </h5>
+        <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">{t("Tirer une main")}</h5>
         <button
           onClick={draw}
           className="inline-flex items-center gap-1 rounded-lg bg-arcane px-2.5 py-1 text-[10px] font-semibold text-canvas hover:opacity-90 transition-opacity"
@@ -330,10 +329,11 @@ function DrawHand({ cards }: { cards: DecklistCard[] }) {
 }
 
 export function DeckSummary({ cards }: DeckSummaryProps) {
+  const t = useT();
   return (
     <div className="space-y-5">
-      <StackedCurve title="Courbe d'énergie" cards={cards} field="energy" maxBucket={8} />
-      <StackedCurve title="Courbe de puissance" cards={cards} field="might" maxBucket={6} />
+      <StackedCurve title={t("Courbe d'énergie")} cards={cards} field="energy" maxBucket={8} />
+      <StackedCurve title={t("Courbe de puissance")} cards={cards} field="might" maxBucket={6} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <DomainsChart cards={cards} />
         <TypesChart cards={cards} />

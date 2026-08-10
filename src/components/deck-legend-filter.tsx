@@ -3,12 +3,14 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLien } from "@/components/i18n-provider";
 import { Search } from "lucide-react";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckLegendFilterProps {
   legends: string[];
 }
 
 export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
+  const t = useT();
   const router = useRouter();
   const lien = useLien();
   const searchParams = useSearchParams();
@@ -40,10 +42,10 @@ export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
       <select
         value={current}
         onChange={(e) => handleChange(e.target.value)}
-        aria-label="Filtrer par Légende"
+        aria-label={t("Filtrer par Légende")}
         className="h-9 w-full sm:w-64 rounded-lg border border-hairline-strong bg-surface pl-9 pr-3 text-sm text-ink focus:border-arcane cursor-pointer appearance-none"
       >
-        <option value="">Toutes les Légendes</option>
+        <option value="">{t("Toutes les Légendes")}</option>
         {uniqueLegends.map((name) => (
           <option key={name} value={name}>{name}</option>
         ))}

@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n-provider";
 
 // Drapeaux hébergés localement dans public/img/flags/{code}.svg (CSP-safe, pas de dépendance externe).
 // Les emojis drapeaux ne s'affichent pas sous Windows → on utilise de vraies images SVG.
@@ -8,12 +11,13 @@ const HAS_FLAG = new Set([
 ]);
 
 export function CountryBadge({ code, className }: { code: string; className?: string }) {
+  const t = useT();
   if (code === "ONLINE") {
     return (
       <span
         className={cn("inline-flex items-center text-sm leading-none", className)}
-        title="En ligne"
-        aria-label="En ligne"
+        title={t("En ligne")}
+        aria-label={t("En ligne")}
       >
         {"\u{1F310}"}
       </span>

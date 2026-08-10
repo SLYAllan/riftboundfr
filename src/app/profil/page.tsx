@@ -12,7 +12,7 @@ import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers } from "
 import { ProfileActions } from "./profile-actions";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import type { Metadata } from "next";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: "Mon profil",
@@ -29,7 +29,8 @@ type DeckCardData = {
   createdAt: Date;
 };
 
-function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor?: boolean }) {
+async function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor?: boolean }) {
+  const t = await tr();
   const bannerUrl = getBannerUrl(deck.legendName);
   return (
     <Link
@@ -71,9 +72,7 @@ function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor
               </div>
               <div className="flex items-center gap-1.5">
                 {deck.isPrivate && (
-                  <span className="rounded bg-surface/80 px-1.5 py-0.5 text-[10px] text-white">
-                    Privé
-                  </span>
+                  <span className="rounded bg-surface/80 px-1.5 py-0.5 text-[10px] text-white">{t("Privé")}</span>
                 )}
                 <span className="text-[10px] text-white/75 drop-shadow-md">
                   {formatDate(deck.createdAt)}
@@ -88,6 +87,7 @@ function DeckCard({ deck, showAuthor = false }: { deck: DeckCardData; showAuthor
 }
 
 export default async function ProfilPage() {
+  const t = await tr();
   const user = await getUserFromSession();
   if (!user) redirect("/api/auth/discord");
 
@@ -214,7 +214,7 @@ export default async function ProfilPage() {
           <div className="text-2xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             {decks.length}
           </div>
-          <div className="mt-1 text-xs text-ink-muted">Decks créés</div>
+          <div className="mt-1 text-xs text-ink-muted">{t("Decks créés")}</div>
         </div>
         <div className="rounded-card border border-hairline bg-surface p-4 text-center">
           <div className="text-2xl font-bold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
@@ -232,7 +232,7 @@ export default async function ProfilPage() {
           <div className="text-2xl font-bold text-red-400" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             {totalLikes}
           </div>
-          <div className="mt-1 text-xs text-ink-muted">J&apos;aime reçus</div>
+          <div className="mt-1 text-xs text-ink-muted">{t("J’aime reçus")}</div>
         </div>
       </div>
 
@@ -253,10 +253,10 @@ export default async function ProfilPage() {
           <div className="flex items-center gap-4">
             <div className="text-right">
               <div className="text-2xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{completion}%</div>
-              <div className="text-[11px] uppercase tracking-wider text-ink-muted">complétion</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("complétion")}</div>
             </div>
             <Link href="/collection" className="inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/90">
-              <Layers size={15} /> Gérer ma collection <ArrowRight size={15} />
+              <Layers size={15} />{" "}{t("Gérer ma collection")}{" "}<ArrowRight size={15} />
             </Link>
           </div>
         </div>
@@ -268,9 +268,7 @@ export default async function ProfilPage() {
       {/* Top legends */}
       {topLegends.length > 0 && (
         <div className="mt-6">
-          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wider">
-            Légendes favorites
-          </h2>
+          <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wider">{t("Légendes favorites")}</h2>
           <div className="mt-2 flex flex-wrap gap-2">
             {topLegends.map(([legend, count]) => (
               <div
@@ -298,19 +296,17 @@ export default async function ProfilPage() {
             href="/deckbuilder"
             className="flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-sm font-medium text-white hover:opacity-90 transition-opacity"
           >
-            <Hammer size={14} /> Créer un deck
-          </Link>
+            <Hammer size={14} />{" "}{t("Créer un deck")}</Link>
         </div>
 
         {decks.length === 0 ? (
           <div className="mt-8 text-center">
-            <p className="text-ink-muted">Vous n&apos;avez pas encore créé de deck.</p>
+            <p className="text-ink-muted">{t("Vous n’avez pas encore créé de deck.")}</p>
             <Link
               href="/deckbuilder"
               className="mt-3 inline-flex items-center gap-2 text-sm text-violet-light hover:underline"
             >
-              <Hammer size={14} /> Créer votre premier deck
-            </Link>
+              <Hammer size={14} />{" "}{t("Créer votre premier deck")}</Link>
           </div>
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -348,13 +344,12 @@ export default async function ProfilPage() {
 
         {favoriteDecks.length === 0 ? (
           <div className="mt-6 rounded-card border border-hairline bg-surface p-6 text-center">
-            <p className="text-ink-muted">Vous n&apos;avez pas encore de deck en favori.</p>
+            <p className="text-ink-muted">{t("Vous n’avez pas encore de deck en favori.")}</p>
             <Link
               href="/decks"
               className="mt-3 inline-flex items-center gap-2 text-sm text-violet-light hover:underline"
             >
-              <Heart size={14} /> Découvrir les decks de la communauté
-            </Link>
+              <Heart size={14} />{" "}{t("Découvrir les decks de la communauté")}</Link>
           </div>
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

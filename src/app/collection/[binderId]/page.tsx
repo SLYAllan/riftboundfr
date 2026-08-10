@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { getBinderQuantities, getWishlistIds } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur - Ma collection Riftbound" },
@@ -17,12 +17,13 @@ const metadata: Metadata = {
 const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function BinderPage({ params }: { params: Promise<{ binderId: string }> }) {
+  const t = await tr();
   const { binderId } = await params;
   const user = await getUserFromSession();
   if (!user) {
     return (
       <main className="mx-auto max-w-7xl px-4 py-8">
-        <Link href="/api/auth/discord" className="text-arcane hover:underline">Se connecter avec Discord</Link>
+        <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Se connecter avec Discord")}</Link>
       </main>
     );
   }
@@ -56,7 +57,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
-      <Link href="/collection" className="text-sm text-ink-muted hover:text-ink">← Retour à la collection</Link>
+      <Link href="/collection" className="text-sm text-ink-muted hover:text-ink">{t("← Retour à la collection")}</Link>
       <BinderExplorer
         binder={{ id: binder.id, name: binder.name, isPublic: binder.isPublic, shareSlug: binder.shareSlug }}
         cards={cards}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronUp, ChevronDown, MessageSquare, Send, User as UserIcon } from "lucide-react";
 import { DiscordAvatar } from "@/components/discord-avatar";
+import { useT } from "@/components/i18n-provider";
 
 interface CommentUser {
   id: string;
@@ -32,6 +33,7 @@ interface CommentsSectionProps {
 }
 
 export function CommentsSection({ articleId, communityDeckId }: CommentsSectionProps) {
+  const t = useT();
   const [comments, setComments] = useState<CommentData[]>([]);
   const [user, setUser] = useState<CurrentUser | null>(null);
   const [body, setBody] = useState("");
@@ -83,7 +85,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
             <textarea
               value={body}
               onChange={(e) => setBody(e.target.value)}
-              placeholder="Ajouter un commentaire..."
+              placeholder={t("Ajouter un commentaire...")}
               rows={3}
               className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
             />
@@ -101,7 +103,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
         </div>
       ) : (
         <div className="mb-8 rounded-lg border border-hairline bg-surface p-4 text-center">
-          <p className="text-sm text-ink-secondary mb-2">Connectez-vous pour commenter</p>
+          <p className="text-sm text-ink-secondary mb-2">{t("Connectez-vous pour commenter")}</p>
           <a
             href="/api/auth/discord"
             className="inline-flex items-center gap-2 rounded-lg bg-[#5865F2] px-4 py-2 text-sm font-medium text-white hover:bg-[#4752C4] transition-colors"
@@ -122,7 +124,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
       </div>
 
       {comments.length === 0 && (
-        <p className="text-center text-sm text-ink-muted py-8">Aucun commentaire pour le moment. Soyez le premier !</p>
+        <p className="text-center text-sm text-ink-muted py-8">{t("Aucun commentaire pour le moment. Soyez le premier !")}</p>
       )}
     </div>
   );
@@ -143,6 +145,7 @@ function CommentThread({
   onRefresh: () => void;
   depth?: number;
 }) {
+  const t = useT();
   const [replying, setReplying] = useState(false);
   const [replyBody, setReplyBody] = useState("");
   const [sending, setSending] = useState(false);
@@ -209,9 +212,7 @@ function CommentThread({
             <button
               onClick={() => setReplying(!replying)}
               className="mt-1 text-xs text-ink-muted hover:text-arcane transition-colors"
-            >
-              Répondre
-            </button>
+            >{t("Répondre")}</button>
           )}
 
           {/* Reply form */}
@@ -220,8 +221,8 @@ function CommentThread({
               <textarea
                 value={replyBody}
                 onChange={(e) => setReplyBody(e.target.value)}
-                placeholder="Votre réponse..."
-                aria-label="Votre réponse"
+                placeholder={t("Votre réponse...")}
+                aria-label={t("Votre réponse")}
                 rows={2}
                 autoFocus
                 className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"

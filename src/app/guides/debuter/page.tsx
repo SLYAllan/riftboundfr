@@ -3,7 +3,7 @@ import Link from "@/components/lien";
 import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Riftbound : premiers pas, règles et comment jouer (guide débutant FR)" },
@@ -49,48 +49,41 @@ const keywordsOther = [
   { name: "Répétition", en: "Repeat", desc: "Payez un surcoût pour exécuter l'effet du sort une seconde fois." },
 ];
 
-export default function GuideDebuterPage() {
+export default async function GuideDebuterPage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Guide débutant", href: "/guides/debuter" }]} className="mb-6" />
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment jouer à Riftbound - Guide débutant</h1>
-      <p className="mt-2 text-lg text-ink-secondary">
-        Riftbound est un jeu de cartes à collectionner dans l&apos;univers de League of Legends. Deux joueurs s&apos;affrontent pour le contrôle de champs de bataille
-        et le premier à <strong>8 points</strong> gagne. Ce guide vous apprend tout ce qu&apos;il faut savoir pour jouer votre première partie.
-      </p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment jouer à Riftbound - Guide débutant")}</h1>
+      <p className="mt-2 text-lg text-ink-secondary">{t("Riftbound est un jeu de cartes à collectionner dans l’univers de League of Legends. Deux joueurs s’affrontent pour le contrôle de champs de bataille et le premier à")}{" "}<strong>8 points</strong>{" "}{t("gagne. Ce guide vous apprend tout ce qu’il faut savoir pour jouer votre première partie.")}</p>
 
       <div className="mt-10 space-y-12">
 
         {/* === 1. BUT DU JEU === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quel est le but du jeu ?</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quel est le but du jeu ?")}</h2>
           <div className="mt-4 rounded-card border-2 border-gold/30 bg-gold-glow p-6">
-            <p className="text-lg font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Premier joueur à atteindre 8 points</p>
-            <p className="mt-2 text-sm text-ink-secondary">
-              Il y a 2 champs de bataille en jeu. Vous marquez des points en y envoyant vos unités :
-            </p>
+            <p className="text-lg font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Premier joueur à atteindre 8 points")}</p>
+            <p className="mt-2 text-sm text-ink-secondary">{t("Il y a 2 champs de bataille en jeu. Vous marquez des points en y envoyant vos unités :")}</p>
             <div className="mt-4 space-y-3 text-sm text-ink-secondary">
               <div className="flex gap-3">
-                <span className="font-bold text-arcane shrink-0">Conquête</span>
-                <span>Vous gagnez un combat ou occupez un champ sans adversaire = <strong>+1 point</strong>.</span>
+                <span className="font-bold text-arcane shrink-0">{t("Conquête")}</span>
+                <span>{t("Vous gagnez un combat ou occupez un champ sans adversaire =")}{" "}<strong>+1 point</strong>.</span>
               </div>
               <div className="flex gap-3">
-                <span className="font-bold text-success shrink-0">Contrôle</span>
-                <span>Vous commencez votre tour en tenant un champ déjà conquis = <strong>+1 point par champ tenu</strong>.</span>
+                <span className="font-bold text-success shrink-0">{t("Contrôle")}</span>
+                <span>{t("Vous commencez votre tour en tenant un champ déjà conquis =")}{" "}<strong>{t("+1 point par champ tenu")}</strong>.</span>
               </div>
               <div className="mt-2 rounded bg-surface-raised p-2 text-xs text-gold">
-                <strong>Règle du dernier point :</strong> pour atteindre 8 par Conquête, vous devez scorer sur les DEUX champs de bataille ce tour-là. Sinon, vous piochez une carte à la place.
-              </div>
+                <strong>{t("Règle du dernier point :")}</strong>{" "}{t("pour atteindre 8 par Conquête, vous devez scorer sur les DEUX champs de bataille ce tour-là. Sinon, vous piochez une carte à la place.")}</div>
             </div>
           </div>
         </section>
 
         {/* === 2. COMPOSITION DU DECK === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>De quoi est composé un deck ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Pas besoin de tout retenir - les decks de démarrage (Jinx, Viktor, Lee Sin, Fiora, Rumble) sont prêts à jouer. Voici les éléments pour comprendre ce que contient votre deck :
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("De quoi est composé un deck ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Pas besoin de tout retenir - les decks de démarrage (Jinx, Viktor, Lee Sin, Fiora, Rumble) sont prêts à jouer. Voici les éléments pour comprendre ce que contient votre deck :")}</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
               { name: "Légende", desc: "Votre carte de leader. Elle définit vos 2 couleurs (domaines) et vous donne une capacité spéciale. Elle ne va jamais sur le champ de bataille." },
@@ -100,70 +93,62 @@ export default function GuideDebuterPage() {
               { name: "3 Champs de bataille", desc: "Les zones où se déroulent les combats. En match simple, un seul est tiré au hasard." },
               { name: "Réserve", desc: "Cartes de rechange pour adapter votre deck entre les manches (uniquement en match en 3 manches)." },
             ].map((item) => (
-              <div key={item.name} className="rounded-lg border border-hairline bg-surface p-4">
-                <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{item.name}</h3>
-                <p className="mt-1 text-sm text-ink-secondary">{item.desc}</p>
+              <div key={t(item.name)} className="rounded-lg border border-hairline bg-surface p-4">
+                <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(item.name)}</h3>
+                <p className="mt-1 text-sm text-ink-secondary">{t(item.desc)}</p>
               </div>
             ))}
           </div>
           <div className="mt-4">
             <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
-              <Hammer size={16} /> Essayer le Deckbuilder
-            </Link>
+              <Hammer size={16} />{" "}{t("Essayer le Deckbuilder")}</Link>
           </div>
         </section>
 
         {/* === 3. DOMAINES === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quelles sont les 6 couleurs du jeu ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Chaque Légende appartient à 2 <strong>domaines</strong> (couleurs). Ça détermine quelles cartes vous pouvez mettre dans votre deck.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelles sont les 6 couleurs du jeu ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Chaque Légende appartient à 2")}{" "}<strong>domaines</strong>{" "}{t("(couleurs). Ça détermine quelles cartes vous pouvez mettre dans votre deck.")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {domains.map((d) => (
-              <div key={d.name} className="flex items-center gap-3 rounded-lg border border-hairline bg-surface p-3">
+              <div key={t(d.name)} className="flex items-center gap-3 rounded-lg border border-hairline bg-surface p-3">
                 <div className="h-8 w-8 rounded-full shrink-0 flex items-center justify-center" style={{ backgroundColor: `${d.color}20` }}>
                   {DOMAIN_ICONS[d.name] ? (
-                    <img src={DOMAIN_ICONS[d.name]} alt={d.name} className="h-5 w-5" />
+                    <img src={DOMAIN_ICONS[d.name]} alt={t(d.name)} className="h-5 w-5" />
                   ) : (
                     <span className="text-xs font-bold text-white">{d.name[0]}</span>
                   )}
                 </div>
                 <div>
-                  <span className="font-semibold" style={{ color: d.color, fontFamily: "var(--font-rubik), sans-serif" }}>{d.fr}</span>
-                  <p className="text-xs text-ink-secondary">{d.desc}</p>
+                  <span className="font-semibold" style={{ color: d.color, fontFamily: "var(--font-rubik), sans-serif" }}>{t(d.fr)}</span>
+                  <p className="text-xs text-ink-secondary">{t(d.desc)}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-            <strong>Pour débuter :</strong> Furie ou Corps sont les plus simples - vous posez des unités et vous attaquez. Évitez Chaos tant que vous n&apos;êtes pas à l&apos;aise avec les bases.
-          </div>
+            <strong>{t("Pour débuter :")}</strong>{" "}{t("Furie ou Corps sont les plus simples - vous posez des unités et vous attaquez. Évitez Chaos tant que vous n’êtes pas à l’aise avec les bases.")}</div>
         </section>
 
         {/* === 4. RESSOURCES === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment payer ses cartes ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">Vos runes produisent deux types de ressources :</p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment payer ses cartes ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Vos runes produisent deux types de ressources :")}</p>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Énergie - la ressource de base</h3>
-              <p className="mt-1 text-sm text-ink-secondary">
-                Tournez une rune à l&apos;horizontale (<strong>épuiser</strong>) pour produire 1 énergie. La rune reste en jeu et sera de nouveau disponible au prochain tour. C&apos;est votre « mana » principal.
-              </p>
+              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Énergie - la ressource de base")}</h3>
+              <p className="mt-1 text-sm text-ink-secondary">{t("Tournez une rune à l’horizontale (")}<strong>{t("épuiser")}</strong>{t(") pour produire 1 énergie. La rune reste en jeu et sera de nouveau disponible au prochain tour. C’est votre « mana » principal.")}</p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Puissance - la ressource avancée</h3>
-              <p className="mt-1 text-sm text-ink-secondary">
-                Placez une rune sous votre deck de runes (<strong>recycler</strong>) pour produire 1 Puissance de sa couleur. Vous perdez la rune pour ce tour, mais certaines cartes puissantes l&apos;exigent.
-              </p>
+              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Puissance - la ressource avancée")}</h3>
+              <p className="mt-1 text-sm text-ink-secondary">{t("Placez une rune sous votre deck de runes (")}<strong>recycler</strong>{t(") pour produire 1 Puissance de sa couleur. Vous perdez la rune pour ce tour, mais certaines cartes puissantes l’exigent.")}</p>
             </div>
           </div>
         </section>
 
         {/* === 5. DÉROULEMENT D'UN TOUR === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment se déroule un tour ?</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment se déroule un tour ?")}</h2>
           <div className="mt-4 space-y-2">
             {[
               { phase: "Éveil", desc: "Remettez toutes vos cartes épuisées en position verticale. Elles sont de nouveau utilisables." },
@@ -173,11 +158,11 @@ export default function GuideDebuterPage() {
               { phase: "Phase principale", desc: "Le cœur du tour : jouez des unités, lancez des sorts, équipez vos unités, déplacez-les vers les champs de bataille. Quand vos unités rencontrent celles de l'adversaire, un combat se déclenche." },
               { phase: "Fin de tour", desc: "Tous les dégâts sur les unités sont soignés. Vos unités repartent à pleine vie pour le prochain tour." },
             ].map((p, i) => (
-              <div key={p.phase} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
+              <div key={t(p.phase)} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-arcane text-xs font-bold text-canvas">{i + 1}</span>
                 <div>
-                  <h3 className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{p.phase}</h3>
-                  <p className="text-xs text-ink-secondary">{p.desc}</p>
+                  <h3 className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(p.phase)}</h3>
+                  <p className="text-xs text-ink-secondary">{t(p.desc)}</p>
                 </div>
               </div>
             ))}
@@ -186,96 +171,84 @@ export default function GuideDebuterPage() {
 
         {/* === 6. COMBAT === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment fonctionne le combat ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Un combat se déclenche quand des unités des deux joueurs se retrouvent sur le même champ de bataille.
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment fonctionne le combat ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Un combat se déclenche quand des unités des deux joueurs se retrouvent sur le même champ de bataille.")}</p>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>1. Avant les dégâts</h3>
-              <p className="mt-1 text-sm text-ink-secondary">
-                Certaines unités ont des effets qui se déclenchent en attaque ou en défense. Ensuite, les deux joueurs peuvent jouer des cartes pour renforcer leur camp ou affaiblir l&apos;adversaire. Quand les deux passent, on passe aux dégâts.
-              </p>
+              <h3 className="font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("1. Avant les dégâts")}</h3>
+              <p className="mt-1 text-sm text-ink-secondary">{t("Certaines unités ont des effets qui se déclenchent en attaque ou en défense. Ensuite, les deux joueurs peuvent jouer des cartes pour renforcer leur camp ou affaiblir l’adversaire. Quand les deux passent, on passe aux dégâts.")}</p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>2. Résolution des dégâts</h3>
+              <h3 className="font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("2. Résolution des dégâts")}</h3>
               <ul className="mt-2 space-y-1.5 text-sm text-ink-secondary">
-                <li><span className="text-gold">&#x2022;</span> Chaque camp additionne la <strong>Puissance</strong> de toutes ses unités</li>
-                <li><span className="text-gold">&#x2022;</span> Les deux camps infligent leurs dégâts <strong>en même temps</strong></li>
-                <li><span className="text-gold">&#x2022;</span> Vous répartissez vos dégâts sur les unités adverses, mais vous devez <strong>éliminer une unité complètement</strong> avant de passer à la suivante</li>
-                <li><span className="text-gold">&#x2022;</span> Une unité est éliminée quand les dégâts reçus ≥ sa Puissance</li>
+                <li><span className="text-gold">&#x2022;</span>{" "}{t("Chaque camp additionne la")}{" "}<strong>Puissance</strong>{" "}{t("de toutes ses unités")}</li>
+                <li><span className="text-gold">&#x2022;</span>{" "}{t("Les deux camps infligent leurs dégâts")}{" "}<strong>{t("en même temps")}</strong></li>
+                <li><span className="text-gold">&#x2022;</span>{" "}{t("Vous répartissez vos dégâts sur les unités adverses, mais vous devez")}{" "}<strong>{t("éliminer une unité complètement")}</strong>{" "}{t("avant de passer à la suivante")}</li>
+                <li><span className="text-gold">&#x2022;</span>{" "}{t("Une unité est éliminée quand les dégâts reçus ≥ sa Puissance")}</li>
               </ul>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-4">
-              <h3 className="font-semibold text-success" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>3. Résultat</h3>
+              <h3 className="font-semibold text-success" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Résultat")}</h3>
               <ul className="mt-2 space-y-1.5 text-sm text-ink-secondary">
-                <li><span className="text-gold">&#x2022;</span> <strong>L&apos;attaquant gagne</strong> (plus de défenseurs) → il conquiert le champ, +1 point</li>
-                <li><span className="text-gold">&#x2022;</span> <strong>Le défenseur tient</strong> (au moins une unité survit) → les attaquants sont renvoyés à la base</li>
-                <li><span className="text-gold">&#x2022;</span> <strong>Tout le monde meurt</strong> → le champ devient libre</li>
-                <li><span className="text-gold">&#x2022;</span> Tous les dégâts sont soignés après chaque combat</li>
+                <li><span className="text-gold">&#x2022;</span> <strong>L&apos;attaquant gagne</strong>{" "}{t("(plus de défenseurs) → il conquiert le champ, +1 point")}</li>
+                <li><span className="text-gold">&#x2022;</span> <strong>{t("Le défenseur tient")}</strong>{" "}{t("(au moins une unité survit) → les attaquants sont renvoyés à la base")}</li>
+                <li><span className="text-gold">&#x2022;</span> <strong>{t("Tout le monde meurt")}</strong>{" "}{t("→ le champ devient libre")}</li>
+                <li><span className="text-gold">&#x2022;</span>{" "}{t("Tous les dégâts sont soignés après chaque combat")}</li>
               </ul>
             </div>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
               <div className="rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-                <strong className="text-gold">Bon à savoir :</strong> une unité épuisée peut quand même défendre. Pas besoin de la redresser pour bloquer.
-              </div>
+                <strong className="text-gold">{t("Bon à savoir :")}</strong>{" "}{t("une unité épuisée peut quand même défendre. Pas besoin de la redresser pour bloquer.")}</div>
               <div className="rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
-                <strong className="text-gold">Bon à savoir :</strong> si une unité équipée meurt, l&apos;équipement survit et peut être attaché à une autre unité.
-              </div>
+                <strong className="text-gold">{t("Bon à savoir :")}</strong>{" "}{t("si une unité équipée meurt, l’équipement survit et peut être attaché à une autre unité.")}</div>
             </div>
           </div>
         </section>
 
         {/* === 7. MULLIGAN === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Comment commence la partie ?</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment commence la partie ?")}</h2>
           <div className="mt-4 rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
             <p>
-              Chaque joueur pioche <strong>4 cartes</strong>. Vous pouvez ensuite remettre jusqu&apos;à <strong>2 cartes</strong> que vous ne voulez pas, piocher autant de nouvelles cartes, et les cartes remises vont sous votre deck.
-            </p>
-            <p className="mt-2">
-              C&apos;est le <strong>mulligan</strong> - l&apos;occasion de chercher une meilleure main de départ. Idéalement, gardez 1-2 unités pas chères que vous pourrez jouer dès les premiers tours.
-            </p>
+              Chaque joueur pioche <strong>4 cartes</strong>{t(". Vous pouvez ensuite remettre jusqu’à")}{" "}<strong>2 cartes</strong>{" "}{t("que vous ne voulez pas, piocher autant de nouvelles cartes, et les cartes remises vont sous votre deck.")}</p>
+            <p className="mt-2">{t("C’est le")}{" "}<strong>mulligan</strong>{" "}{t("- l’occasion de chercher une meilleure main de départ. Idéalement, gardez 1-2 unités pas chères que vous pourrez jouer dès les premiers tours.")}</p>
           </div>
         </section>
 
         {/* === 8. MOTS-CLÉS ESSENTIELS === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Quels mots-clés faut-il connaître en priorité ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Les cartes Riftbound utilisent des mots-clés pour décrire leurs effets. Voici les 6 les plus courants :
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quels mots-clés faut-il connaître en priorité ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Les cartes Riftbound utilisent des mots-clés pour décrire leurs effets. Voici les 6 les plus courants :")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {keywordsEssential.map((kw) => (
-              <div key={kw.name} className="rounded-lg border border-hairline bg-surface p-3">
-                <span className="text-xs font-bold text-gold">{kw.name}</span>
+              <div key={t(kw.name)} className="rounded-lg border border-hairline bg-surface p-3">
+                <span className="text-xs font-bold text-gold">{t(kw.name)}</span>
                 <span className="ml-1 text-[10px] text-ink-muted">({kw.en})</span>
-                <p className="mt-0.5 text-xs text-ink-secondary">{kw.desc}</p>
+                <p className="mt-0.5 text-xs text-ink-secondary">{t(kw.desc)}</p>
               </div>
             ))}
           </div>
 
-          <h3 className="mt-6 text-lg font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Autres mots-clés</h3>
-          <p className="mt-1 text-xs text-ink-muted">Vous les rencontrerez en jouant. Pas besoin de les apprendre par cœur - ils sont rappelés sur les cartes.</p>
+          <h3 className="mt-6 text-lg font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Autres mots-clés")}</h3>
+          <p className="mt-1 text-xs text-ink-muted">{t("Vous les rencontrerez en jouant. Pas besoin de les apprendre par cœur - ils sont rappelés sur les cartes.")}</p>
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {keywordsOther.map((kw) => (
-              <div key={kw.name} className="rounded-lg border border-hairline bg-surface p-3">
-                <span className="text-xs font-bold text-ink-secondary">{kw.name}</span>
+              <div key={t(kw.name)} className="rounded-lg border border-hairline bg-surface p-3">
+                <span className="text-xs font-bold text-ink-secondary">{t(kw.name)}</span>
                 <span className="ml-1 text-[10px] text-ink-muted">({kw.en})</span>
-                <p className="mt-0.5 text-xs text-ink-muted">{kw.desc}</p>
+                <p className="mt-0.5 text-xs text-ink-muted">{t(kw.desc)}</p>
               </div>
             ))}
           </div>
           <div className="mt-3">
             <Link href="/guides/glossaire" className="inline-flex items-center gap-2 text-sm text-arcane hover:underline">
-              <BookOpen size={14} /> Voir tous les termes dans le glossaire
-            </Link>
+              <BookOpen size={14} />{" "}{t("Voir tous les termes dans le glossaire")}</Link>
           </div>
         </section>
 
         {/* === 9. CONSEILS === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Conseils pour votre première partie</h2>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Conseils pour votre première partie")}</h2>
           <ul className="mt-3 space-y-2 text-ink-secondary">
             {[
               "Commencez avec un deck de démarrage (Jinx, Viktor, Lee Sin, Fiora ou Rumble) - ils sont prêts à jouer, pas besoin de construire.",
@@ -293,45 +266,36 @@ export default function GuideDebuterPage() {
 
         {/* === 10. QUELLE LÉGENDE === */}
         <section>
-          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Par quelle légende commencer ?</h2>
-          <p className="mt-2 text-sm text-ink-secondary">
-            Une fois à l&apos;aise avec les bases, choisissez une légende dont le style vous parle. Sur le format actuel
-            (Unleashed), voici des points de départ accessibles et solides en tournoi :
-          </p>
+          <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Par quelle légende commencer ?")}</h2>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Une fois à l’aise avec les bases, choisissez une légende dont le style vous parle. Sur le format actuel (Unleashed), voici des points de départ accessibles et solides en tournoi :")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Irelia, Blade Dancer</span>
-              <p className="mt-0.5 text-xs text-ink-secondary">Tempo réactif (Calme/Ordre). La légende la plus constante du méta. Cœur de deck bien établi.</p>
+              <p className="mt-0.5 text-xs text-ink-secondary">{t("Tempo réactif (Calme/Ordre). La légende la plus constante du méta. Cœur de deck bien établi.")}</p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Master Yi, Wuju Master</span>
-              <p className="mt-0.5 text-xs text-ink-secondary">Corps/Calme. Gagne en puissance avec l&apos;XP. Récompense le jeu patient.</p>
+              <p className="mt-0.5 text-xs text-ink-secondary">{t("Corps/Calme. Gagne en puissance avec l’XP. Récompense le jeu patient.")}</p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Diana, Scorn of the Moon</span>
-              <p className="mt-0.5 text-xs text-ink-secondary">Agro-tempo (Esprit/Chaos). Rapide et directe, idéale pour apprendre à mettre la pression.</p>
+              <p className="mt-0.5 text-xs text-ink-secondary">{t("Agro-tempo (Esprit/Chaos). Rapide et directe, idéale pour apprendre à mettre la pression.")}</p>
             </div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Draven, Glorious Executioner</span>
-              <p className="mt-0.5 text-xs text-ink-secondary">Agression pure (Chaos/Furie). Très fort sur le set précédent - parfait si vous aimez foncer.</p>
+              <p className="mt-0.5 text-xs text-ink-secondary">{t("Agression pure (Chaos/Furie). Très fort sur le set précédent - parfait si vous aimez foncer.")}</p>
             </div>
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
             Pour le détail complet des meilleures légendes par set, consultez le{" "}
-            <Link href="/guides/meta" className="text-arcane hover:underline">guide Méta &amp; Tier List</Link>.
+            <Link href="/guides/meta" className="text-arcane hover:underline">{t("guide Méta & Tier List")}</Link>.
           </div>
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-            Guide de deckbuilding
-          </Link>
-          <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-            Méta &amp; Tier List
-          </Link>
-          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
-            Les 6 Domaines
-          </Link>
+          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Guide de deckbuilding")}</Link>
+          <Link href="/guides/meta" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Méta & Tier List")}</Link>
+          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">{t("Les 6 Domaines")}</Link>
           <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:opacity-90">
             <BookOpen size={16} /> Glossaire complet
           </Link>

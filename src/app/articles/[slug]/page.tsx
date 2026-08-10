@@ -16,6 +16,7 @@ import { Calendar, MapPin, Users } from "lucide-react";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { CommentsSection } from "@/components/comments";
+import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -326,6 +327,7 @@ function buildBestOf(
 }
 
 export default async function ArticleDetailPage({ params }: PageProps) {
+  const t = await tr();
   const { slug } = await params;
   const article = await prisma.article.findUnique({ where: { slug } });
   if (!article || !article.published) notFound();
@@ -392,8 +394,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}/articles/${slug}` },
     inLanguage: "fr",
   };
-  // Le BreadcrumbList est émis par le composant <Breadcrumbs/> ci-dessous (évite le doublon).
-  const jsonLdHtml = JSON.stringify(articleJsonLd).replace(/</g, "\\u003c");
+  // Le BreadcrumbList est emis par le composant Breadcrumbs ci-dessous (evite le doublon).
+  const jsonLdHtml = JSON.stringify(articleJsonLd).replace(/</g, "\u003c");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -408,7 +410,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
       <article className="mt-6">
         <div className="flex items-center gap-2 text-xs">
           <span className="font-semibold uppercase tracking-wider text-violet-light">{article.category}</span>
-          <span className="text-ink-muted">Par Allan</span>
+          <span className="text-ink-muted">{t("Par Allan")}</span>
           {article.publishedAt && <span className="text-ink-muted">{formatDate(article.publishedAt)}</span>}
         </div>
 
@@ -452,7 +454,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
         {relatedArticles.length > 0 && (
           <section className="mt-12 border-t border-hairline pt-8">
-            <h2 className="mb-4 text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>À lire aussi</h2>
+            <h2 className="mb-4 text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("À lire aussi")}</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {relatedArticles.map((r) => (
                 <Link key={r.slug} href={`/articles/${r.slug}`} className="card-hover overflow-hidden rounded-card border border-hairline bg-surface">

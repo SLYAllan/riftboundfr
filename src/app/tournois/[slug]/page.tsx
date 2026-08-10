@@ -11,6 +11,7 @@ import { Users, MapPin, Calendar, Swords, ArrowLeft, BookOpen } from "lucide-rea
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
+import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -59,6 +60,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function TournamentDetailPage({ params, searchParams }: PageProps) {
+  const t = await tr();
   const { slug } = await params;
   const sp = await searchParams;
   const legendFilter = sp.legend;
@@ -322,9 +324,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
               className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-ink-secondary"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              <Swords size={16} className="text-arcane" />
-              Méta du tournoi
-            </h2>
+              <Swords size={16} className="text-arcane" />{t("Méta du tournoi")}</h2>
             <span className="text-sm text-ink-muted">
               {legendStats.length} légendes &middot; {totalDecks.toLocaleString("fr-FR")} decklists
             </span>

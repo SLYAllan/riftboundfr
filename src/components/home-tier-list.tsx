@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn, displayLegendName } from "@/lib/utils";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
+import { useT } from "@/components/i18n-provider";
 
 interface TierListData {
   id: string;
@@ -42,6 +43,7 @@ export function HomeTierList({
   tierLists: TierListData[];
   legendMap: Map<string, CardData>;
 }) {
+  const t = useT();
   const currentIdx = tierLists.findIndex((tl) => tl.current);
   const [activeIdx, setActiveIdx] = useState(
     currentIdx >= 0 ? currentIdx : 0,
@@ -52,7 +54,7 @@ export function HomeTierList({
     return (
       <div className="rounded-card border border-hairline bg-surface overflow-hidden">
         <div className="px-4 py-12 text-center text-sm text-ink-muted">
-          Tier list à venir
+          {t("Tier list à venir")}
         </div>
       </div>
     );
@@ -82,13 +84,13 @@ export function HomeTierList({
           className="text-lg font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Aperçu du méta
+          {t("Aperçu du méta")}
         </h2>
         <Link
           href="/tier-list"
           className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
         >
-          Tier list complète <ArrowRight size={14} />
+          {t("Tier list complète")} <ArrowRight size={14} />
         </Link>
       </div>
 
@@ -192,7 +194,7 @@ export function HomeTierList({
         </div>
       ) : (
         <div className="flex-1 px-4 py-12 text-center text-sm text-ink-muted">
-          Tier list à venir
+          {t("Tier list à venir")}
         </div>
       )}
 
@@ -201,7 +203,7 @@ export function HomeTierList({
         href="/tier-list"
         className="flex shrink-0 items-center justify-center gap-1 border-t border-hairline px-4 py-3 text-sm font-semibold text-arcane hover:bg-surface-raised hover:text-arcane-light"
       >
-        Tier list Riftbound complète, avec les decks
+        {t("Tier list Riftbound complète, avec les decks")}
         <ArrowRight size={14} />
       </Link>
     </div>

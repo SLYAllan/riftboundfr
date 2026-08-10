@@ -2,12 +2,14 @@
 
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import type { DecklistCard } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckStatsPanelProps {
   cards: DecklistCard[];
 }
 
 function EnergyCurve({ cards }: { cards: DecklistCard[] }) {
+  const t = useT();
   const mainCards = cards.filter((c) => c.section === "main");
   const curve = new Map<number, { total: number; byDomain: Map<string, number> }>();
 
@@ -26,7 +28,7 @@ function EnergyCurve({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Courbe d&apos;énergie</p>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">{t("Courbe d’énergie")}</p>
       <div className="flex items-end gap-1.5">
         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((cost) => {
           const bucket = curve.get(cost);
@@ -64,6 +66,7 @@ function EnergyCurve({ cards }: { cards: DecklistCard[] }) {
 }
 
 function TypeDistribution({ cards }: { cards: DecklistCard[] }) {
+  const t = useT();
   const mainCards = cards.filter((c) => c.section === "main");
   const typeCounts = new Map<string, number>();
   let total = 0;
@@ -83,7 +86,7 @@ function TypeDistribution({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par type</p>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">{t("Répartition par type")}</p>
       <div className="space-y-2">
         {sorted.map(([type, count]) => (
           <div key={type} className="flex items-center gap-2">
@@ -106,6 +109,7 @@ function TypeDistribution({ cards }: { cards: DecklistCard[] }) {
 }
 
 function DomainDistribution({ cards }: { cards: DecklistCard[] }) {
+  const t = useT();
   const mainCards = cards.filter((c) => c.section === "main");
   const domainCounts = new Map<string, number>();
   let total = 0;
@@ -124,7 +128,7 @@ function DomainDistribution({ cards }: { cards: DecklistCard[] }) {
 
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">Répartition par domaine</p>
+      <p className="text-xs font-bold uppercase tracking-wider text-ink-muted mb-3">{t("Répartition par domaine")}</p>
       <div className="space-y-2">
         {sorted.map(([domain, count]) => (
           <div key={domain} className="flex items-center gap-2">

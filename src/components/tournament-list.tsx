@@ -13,6 +13,7 @@ import {
   Search,
 } from "lucide-react";
 import type { TournamentData } from "@/app/tournois/page";
+import { useT } from "@/components/i18n-provider";
 
 const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed"] as const;
 
@@ -194,6 +195,7 @@ function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; co
 }
 
 export function TournamentList({ tournaments }: { tournaments: TournamentData[] }) {
+  const t = useT();
   const [setFilter, setSetFilter] = useState<string>("Tous");
   const [query, setQuery] = useState("");
 
@@ -245,16 +247,16 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Rechercher un tournoi…"
+            placeholder={t("Rechercher un tournoi…")}
 
-            aria-label="Rechercher un tournoi"
+            aria-label={t("Rechercher un tournoi")}
             className="w-full rounded-lg border border-hairline bg-transparent py-2 pl-9 pr-3 text-sm text-ink placeholder:text-ink-muted focus:border-hairline-accent"
           />
         </div>
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-12 text-center text-ink-muted">Aucun tournoi pour ce filtre.</p>
+        <p className="py-12 text-center text-ink-muted">{t("Aucun tournoi pour ce filtre.")}</p>
       ) : (
         <div className="space-y-10">
           {sTier.length > 0 && (

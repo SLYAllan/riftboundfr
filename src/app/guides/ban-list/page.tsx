@@ -9,7 +9,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ErrataDiff } from "@/components/errata-diff";
 import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Ban list Riftbound - Toutes les cartes interdites en tournoi" },
@@ -109,6 +109,7 @@ function CardThumb({ card, caption, sub }: { card: BanCard | null; caption: stri
 }
 
 export default async function BanListPage() {
+  const t = await tr();
   const cards = await getBanCards();
   const heading = { fontFamily: "var(--font-rubik), sans-serif" };
 
@@ -121,46 +122,31 @@ export default async function BanListPage() {
         Dix cartes n&apos;ont plus leur place en Standard. Si l&apos;une d&apos;elles traîne encore
         dans ta liste, ton deck est illégal en tournoi : mieux vaut le découvrir maintenant que
         devant un arbitre. Elles restent jouables en draft et en scellé, et le{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link> te
-        prévient si tu en glisses une.
-      </p>
+        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>{" "}{t("te prévient si tu en glisses une.")}</p>
 
       <h2 className="mt-10 text-2xl font-bold" style={heading}>24 juillet 2026, patch Vendetta</h2>
-      <p className="mt-2 text-ink-secondary">
-        Trois cartes tombent, et ce sont surtout les deux champs de bataille qui vont se sentir.
-        Aspirant&apos;s Climb tournait dans près d&apos;un deck de tournoi sur quatre,
-        The Arena&apos;s Greatest dans presque un sur cinq. Si tu joues de la rampe Corps ou de
-        l&apos;agression Fureur, il va falloir leur trouver un remplaçant avant ton prochain tournoi.
-      </p>
+      <p className="mt-2 text-ink-secondary">{t("Trois cartes tombent, et ce sont surtout les deux champs de bataille qui vont se sentir. Aspirant’s Climb tournait dans près d’un deck de tournoi sur quatre, The Arena’s Greatest dans presque un sur cinq. Si tu joues de la rampe Corps ou de l’agression Fureur, il va falloir leur trouver un remplaçant avant ton prochain tournoi.")}</p>
       <div className="mt-5 flex flex-wrap justify-center gap-5 sm:justify-start">
         {JUILLET.map((c) => (
-          <CardThumb key={c.en} card={bestEdition(cards, c.en)} caption={c.fr} sub={c.type} />
+          <CardThumb key={c.en} card={bestEdition(cards, c.en)} caption={t(c.fr)} sub={c.type} />
         ))}
       </div>
 
       <h2 className="mt-10 text-2xl font-bold" style={heading}>31 mars 2026</h2>
-      <p className="mt-2 text-ink-secondary">
-        La première vague. Sept cartes, dont la moitié servait à alimenter Draven et les
-        combos Miracle, qui écrasaient le format Spiritforged. Elles n&apos;ont jamais été
-        rendues depuis.
-      </p>
+      <p className="mt-2 text-ink-secondary">{t("La première vague. Sept cartes, dont la moitié servait à alimenter Draven et les combos Miracle, qui écrasaient le format Spiritforged. Elles n’ont jamais été rendues depuis.")}</p>
       <div className="mt-5 flex flex-wrap justify-center gap-5 sm:justify-start">
         {MARS.map((n) => (
           <CardThumb key={n} card={bestEdition(cards, n)} caption={n} />
         ))}
       </div>
 
-      <h2 className="mt-10 text-2xl font-bold" style={heading}>Erratas du 23 juillet 2026</h2>
-      <p className="mt-2 text-ink-secondary">
-        En plus des bans, huit cartes changent de texte avec la sortie de Vendetta. Rien
-        n&apos;est interdit ici : ces cartes se jouent avec leur nouveau texte, et c&apos;est ce
-        texte que tu verras partout sur le site.
-      </p>
+      <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("Erratas du 23 juillet 2026")}</h2>
+      <p className="mt-2 text-ink-secondary">{t("En plus des bans, huit cartes changent de texte avec la sortie de Vendetta. Rien n’est interdit ici : ces cartes se jouent avec leur nouveau texte, et c’est ce texte que tu verras partout sur le site.")}</p>
       <ul className="mt-5 space-y-4">
         {ERRATA_2026_07.map((e) => {
           const card = bestEdition(cards, e.name);
           return (
-            <li key={e.name} className="flex flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 sm:flex-row">
+            <li key={t(e.name)} className="flex flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 sm:flex-row">
               {card?.imageUrl && (
                 <Link href={`/cartes/${card.riftboundId}`} className="shrink-0 self-center sm:self-start">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -174,7 +160,7 @@ export default async function BanListPage() {
               )}
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-semibold text-ink">{e.name}</span>
+                  <span className="font-semibold text-ink">{t(e.name)}</span>
                   <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[11px] text-ink-muted">{e.set}</span>
                 </div>
                 <div className="mt-2"><ErrataDiff before={e.before} after={e.after} /></div>
@@ -185,20 +171,17 @@ export default async function BanListPage() {
         })}
       </ul>
 
-      <h2 className="mt-10 text-2xl font-bold" style={heading}>Pour aller plus loin</h2>
+      <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("Pour aller plus loin")}</h2>
       <p className="mt-2 text-sm text-ink-secondary">
         Le même patch apporte quatre nouveaux mots-clés, l&apos;amplification, le Flux, brûler et
         passer. On les explique un par un dans le{" "}
         <Link href="/guides/glossaire" className="text-arcane hover:underline">glossaire</Link>.
         Si tu veux la version officielle, tout est chez Riot :{" "}
-        <a href="https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
-          l&apos;annonce de la ban list
-        </a>{" "}
+        <a href="https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">{t("l’annonce de la ban list")}</a>{" "}
         et le{" "}
         <a href="https://playriftbound.com/fr-fr/rules-hub/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">
           Rules Hub
-        </a>, qui héberge les règles du jeu et les règles de tournoi à jour.
-      </p>
+        </a>{t(", qui héberge les règles du jeu et les règles de tournoi à jour.")}</p>
     </div>
   );
 }

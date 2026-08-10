@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect, useLayoutEffect } from "react
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
+import { useT } from "@/components/i18n-provider";
 
 interface CardData {
   name: string;
@@ -29,6 +30,7 @@ function resized(url: string): string {
 }
 
 export function CardRef({ name, href, children }: { name: string; href?: string; children?: React.ReactNode }) {
+  const t = useT();
   const [hovered, setHovered] = useState(false);
   const [card, setCard] = useState<CardData | null>(cache.get(name) ?? null);
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null);
@@ -147,9 +149,7 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
                 <span className="inline-flex items-center gap-1 font-semibold text-ink-secondary">
                   <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas">
                     {card.energy}
-                  </span>
-                  Énergie
-                </span>
+                  </span>{t("Énergie")}</span>
               )}
               {card.might != null && (
                 <span className="inline-flex items-center gap-1 font-semibold text-red-400">

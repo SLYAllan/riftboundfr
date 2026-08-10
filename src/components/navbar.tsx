@@ -31,7 +31,7 @@ const outilsLinks = [
 /**
  * Rechargement complet plutôt que navigation client : changer de langue change
  * tout ce que le serveur a rendu, y compris les métadonnées et le `lang` de la
- * page. Un `<a>` est ici plus sûr qu'un `<Link>`.
+ * page. Un lien brut est ici plus sûr qu'un composant Link.
  */
 function SelecteurLangue({ chemin, compact = false }: { chemin: string; compact?: boolean }) {
   const langue = useLangue();

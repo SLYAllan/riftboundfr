@@ -7,6 +7,7 @@ import { useCollection } from "@/components/collection/collection-provider";
 import { CardImage } from "@/components/card-image";
 import { CardHover } from "@/components/collection/card-hover";
 import type { DeckCoverage } from "@/lib/collection";
+import { useT } from "@/components/i18n-provider";
 
 export interface CoverageItem {
   cardId: string;
@@ -18,6 +19,7 @@ export interface CoverageItem {
 // `quantities` du contexte sert juste de déclencheur : quand la collection change
 // (stepper, import), on recalcule. Le calcul fiable (alt-art) vient du serveur.
 export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
+  const t = useT();
   const { loggedIn, quantities } = useCollection();
   const [coverage, setCoverage] = useState<DeckCoverage | null>(null);
   const [loading, setLoading] = useState(false);
@@ -58,9 +60,7 @@ export function DeckCoveragePanel({ items }: { items: CoverageItem[] }) {
   if (!loggedIn) {
     return (
       <div className="rounded-lg border border-line p-4 text-sm text-ink-muted">
-        <Link href="/api/auth/discord" className="text-arcane hover:underline">
-          Connecte-toi avec Discord
-        </Link>{" "}
+        <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Connecte-toi avec Discord")}</Link>{" "}
         pour voir combien de cartes il te manque pour ce deck.{" "}
         <Link href="/collection" className="text-arcane hover:underline">
           Ma collection

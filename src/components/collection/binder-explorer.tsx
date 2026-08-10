@@ -8,6 +8,7 @@ import { ImportPiltover } from "@/components/collection/import-piltover";
 import { DOMAIN_LABELS_FR, TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
 import { Heart, Upload, Download, Share2, Lock, Globe, ChevronDown } from "lucide-react";
 import { downloadBlob } from "@/lib/download";
+import { useT } from "@/components/i18n-provider";
 
 const DOMAIN_ORDER = ["Fury", "Calm", "Mind", "Body", "Chaos", "Order"];
 
@@ -39,6 +40,7 @@ export function BinderExplorer({
   binder: BinderInfo; cards: BinderCard[]; sets: BinderSetMeta[];
   initialQuantities: Record<string, number>; initialWishlist: string[];
 }) {
+  const t = useT();
   const [quantities, setQuantities] = useState<Record<string, number>>(initialQuantities);
   const [wishlist, setWishlist] = useState<Set<string>>(new Set(initialWishlist));
   const [isPublic, setIsPublic] = useState(binder.isPublic);
@@ -170,7 +172,7 @@ export function BinderExplorer({
       <div className="mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
-          <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder="Rechercher une carte…"
+          <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder={t("Rechercher une carte…")}
             className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-sm focus:border-arcane" />
           <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
             {([["all", "Toutes"], ["owned", "Possédées"], ["missing", "Manquantes"], ["wishlist", "Wishlist"]] as [Owned, string][]).map(([v, l]) => (
@@ -179,7 +181,7 @@ export function BinderExplorer({
             ))}
           </div>
           <FilterPill label="Tri" value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
-            <option value="id">ID</option><option value="name">Nom</option><option value="rarity">Rareté</option><option value="energy">Énergie</option>
+            <option value="id">ID</option><option value="name">Nom</option><option value="rarity">{t("Rareté")}</option><option value="energy">{t("Énergie")}</option>
           </FilterPill>
         </div>
 
@@ -199,25 +201,25 @@ export function BinderExplorer({
           </div>
           <span className="mx-1 hidden h-6 w-px bg-hairline sm:block" />
           <FilterPill label="Set" value={setF} onChange={(e) => { setSetF(e.target.value); setPage(1); }}>
-            <option value="all">Tous</option>{sets.map((s) => <option key={s.setId} value={s.setId}>{s.name}</option>)}
+            <option value="all">{t("Tous")}</option>{sets.map((s) => <option key={s.setId} value={s.setId}>{s.name}</option>)}
           </FilterPill>
           <FilterPill label="Type" value={typeF} onChange={(e) => { setTypeF(e.target.value); setPage(1); }}>
-            <option value="all">Tous</option>{types.map((t) => <option key={t} value={t}>{TYPE_LABELS_FR[t] ?? t}</option>)}
+            <option value="all">{t("Tous")}</option>{types.map((t) => <option key={t} value={t}>{TYPE_LABELS_FR[t] ?? t}</option>)}
           </FilterPill>
           <FilterPill label="Supertype" value={superF} onChange={(e) => { setSuperF(e.target.value); setPage(1); }}>
-            <option value="all">Tous</option>{supers.map((t) => <option key={t} value={t}>{t}</option>)}
+            <option value="all">{t("Tous")}</option>{supers.map((t) => <option key={t} value={t}>{t}</option>)}
           </FilterPill>
           <FilterPill label="Variante" value={variantF} onChange={(e) => { setVariantF(e.target.value); setPage(1); }}>
-            <option value="all">Toutes</option>{["normal", "alt", "over", "sig"].map((v) => <option key={v} value={v}>{VARIANT_LABELS[v]}</option>)}
+            <option value="all">{t("Toutes")}</option>{["normal", "alt", "over", "sig"].map((v) => <option key={v} value={v}>{VARIANT_LABELS[v]}</option>)}
           </FilterPill>
-          <FilterPill label="Rareté" value={rarityF} onChange={(e) => { setRarityF(e.target.value); setPage(1); }}>
-            <option value="all">Toutes</option>{rarities.map((r) => <option key={r} value={r}>{RARITY_LABELS_FR[r] ?? r}</option>)}
+          <FilterPill label={t("Rareté")} value={rarityF} onChange={(e) => { setRarityF(e.target.value); setPage(1); }}>
+            <option value="all">{t("Toutes")}</option>{rarities.map((r) => <option key={r} value={r}>{RARITY_LABELS_FR[r] ?? r}</option>)}
           </FilterPill>
         </div>
 
         {/* Ligne 3 : sliders */}
         <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <Slider label="Énergie max" value={maxE} max={12} onChange={(v) => { setMaxE(v); setPage(1); }} />
+          <Slider label={t("Énergie max")} value={maxE} max={12} onChange={(v) => { setMaxE(v); setPage(1); }} />
           <Slider label="Pouvoir max" value={maxP} max={4} onChange={(v) => { setMaxP(v); setPage(1); }} />
           <Slider label="Might max" value={maxM} max={10} onChange={(v) => { setMaxM(v); setPage(1); }} />
         </div>
@@ -235,7 +237,7 @@ export function BinderExplorer({
         <button onClick={() => setShowImport((v) => !v)} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Upload size={13} /> Importer</button>
         <button onClick={exportCsv} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Download size={13} /> Exporter CSV</button>
         <button onClick={toggleShare} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink">
-          {isPublic ? <><Globe size={13} /> Partagé</> : <><Lock size={13} /> Rendre public</>}
+          {isPublic ? <><Globe size={13} />{" "}{t("Partagé")}</> : <><Lock size={13} /> Rendre public</>}
         </button>
       </div>
       {showImport && <div className="mt-3"><ImportPiltover binderId={binder.id} /></div>}
@@ -245,7 +247,7 @@ export function BinderExplorer({
 
       {/* Grid */}
       {visible.length === 0 ? (
-        <p className="py-16 text-center text-ink-muted">Aucune carte ne correspond aux filtres.</p>
+        <p className="py-16 text-center text-ink-muted">{t("Aucune carte ne correspond aux filtres.")}</p>
       ) : (
         <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7">
           {visible.map((c) => {
@@ -263,7 +265,7 @@ export function BinderExplorer({
                   energy={c.energy}
                   might={c.might}
                   domains={c.domains}
-                  note={has ? <span className="font-semibold text-arcane">×{qty} en collection</span> : <span className="text-ink-muted">Non possédée</span>}
+                  note={has ? <span className="font-semibold text-arcane">×{qty} en collection</span> : <span className="text-ink-muted">{t("Non possédée")}</span>}
                 >
                   <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
                     <CardImage src={c.imageUrl} alt={c.name} size="sm" />

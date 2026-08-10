@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { History, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useT } from "@/components/i18n-provider";
 
 interface Version {
   id: string;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 export function VersionHistory({ currentVersion, history }: Props) {
+  const t = useT();
   const [open, setOpen] = useState(false);
 
   if (currentVersion <= 1 || history.length === 0) return null;
@@ -29,9 +31,7 @@ export function VersionHistory({ currentVersion, history }: Props) {
       >
         <div className="flex items-center gap-2">
           <History size={15} className="text-ink-muted" />
-          <span className="text-sm font-semibold text-ink">
-            Historique des versions
-          </span>
+          <span className="text-sm font-semibold text-ink">{t("Historique des versions")}</span>
           <span className="text-xs text-ink-muted">({history.length})</span>
         </div>
         <ChevronDown size={15} className={cn("text-ink-muted transition-transform", open && "rotate-180")} />

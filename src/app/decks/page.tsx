@@ -16,7 +16,7 @@ import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { decodeDeck } from "@/lib/deck-codec";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Decks Riftbound en français - decklists de tournois et guides" },
@@ -77,6 +77,7 @@ const SET_STYLES: Record<string, { badge: string; active: string }> = {
 };
 
 export default async function DecksPage({ searchParams }: PageProps) {
+  const t = await tr();
   const params = await searchParams;
   const cat = params.cat;
   const legendFilter = params.legend;
@@ -173,8 +174,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
     return (
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
-        <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
+        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks Riftbound - Decklists compétitives")}</h1>
+        <p className="mt-2 text-ink-secondary">{t("Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.")}</p>
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
@@ -185,15 +186,13 @@ export default async function DecksPage({ searchParams }: PageProps) {
         Pour savoir quoi jouer, commence par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisis ta{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
         peux aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
       </p>
 
         <div className="mt-6 flex flex-wrap gap-2.5">
-          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink")}>
-            Tous
-          </Link>
+          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink")}>{t("Tous")}</Link>
           {CATEGORIES.map((c) => {
             const Icon = c.icon;
             const isActive = !c.isLink && cat === c.key;
@@ -208,9 +207,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
         {/* Domain filters */}
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !domainFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-            Tous domaines
-          </Link>
+          <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !domainFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Tous domaines")}</Link>
           {DOMAIN_OPTIONS.map((d) => (
             <Link key={d} href={comLink({ domain: domainFilter === d ? null : d })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", domainFilter === d ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               {d}
@@ -220,9 +217,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
         {/* Tag filters */}
         <div className="mt-2 flex flex-wrap gap-1.5">
-          <Link href={comLink({ tag: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !tagFilter ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-            Tous styles
-          </Link>
+          <Link href={comLink({ tag: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !tagFilter ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Tous styles")}</Link>
           {TAG_OPTIONS.map((t) => (
             <Link key={t} href={comLink({ tag: tagFilter === t ? null : t })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors capitalize", tagFilter === t ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               {t}
@@ -237,9 +232,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           </Suspense>
           <div className="flex items-center gap-1.5 ml-auto">
             <span className="text-xs text-ink-muted">Tri :</span>
-            <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-              Récent
-            </Link>
+            <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Récent")}</Link>
             <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
               <Heart size={10} /> Populaire
             </Link>
@@ -251,17 +244,16 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
         <div className="mt-4 text-sm text-ink-muted">
           {communityDecks.length} deck{communityDecks.length !== 1 ? "s" : ""} communautaire{communityDecks.length !== 1 ? "s" : ""}
-          {legendFilter && <span> pour <strong className="text-arcane">{legendFilter}</strong></span>}
+          {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
           {domainFilter && <span> &middot; <strong>{domainFilter}</strong></span>}
           {tagFilter && <span> &middot; <strong className="capitalize">{tagFilter}</strong></span>}
         </div>
 
         {communityDecks.length === 0 ? (
           <div className="mt-12 text-center">
-            <p className="text-ink-muted">Aucun deck communautaire pour ces filtres.</p>
+            <p className="text-ink-muted">{t("Aucun deck communautaire pour ces filtres.")}</p>
             <Link href="/deckbuilder" className="mt-4 inline-flex items-center gap-2 text-sm text-violet-light hover:underline">
-              <Hammer size={14} /> Soyez le premier à partager un deck !
-            </Link>
+              <Hammer size={14} />{" "}{t("Soyez le premier à partager un deck !")}</Link>
           </div>
         ) : (
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -453,8 +445,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks Riftbound - Decklists compétitives</h1>
-      <p className="mt-2 text-ink-secondary">Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.</p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks Riftbound - Decklists compétitives")}</h1>
+      <p className="mt-2 text-ink-secondary">{t("Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.")}</p>
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
@@ -465,7 +457,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         Pour savoir quoi jouer, commence par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisis ta{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">Légende</Link>. Tu
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
         peux aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
       </p>
@@ -481,8 +473,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
           type="search"
           name="q"
           defaultValue={search}
-          placeholder="Chercher un deck, une Légende, un joueur ou une carte"
-          aria-label="Chercher un deck, une Légende, un joueur ou une carte"
+          placeholder={t("Chercher un deck, une Légende, un joueur ou une carte")}
+          aria-label={t("Chercher un deck, une Légende, un joueur ou une carte")}
           className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
         />
         <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
@@ -490,8 +482,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </button>
       </form>
       {search && (
-        <p className="mt-2 text-sm text-ink-secondary">
-          Résultats pour <strong>{search}</strong>.{" "}
+        <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")}{" "}<strong>{search}</strong>.{" "}
           <Link href="/decks" className="text-arcane hover:underline">Tout afficher</Link>
         </p>
       )}
@@ -503,9 +494,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
             !cat && !setFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink",
           )}
-        >
-          Tous
-        </Link>
+        >{t("Tous")}</Link>
         {CATEGORIES.map((c) => {
           const Icon = c.icon;
           const isActive = !c.isLink && cat === c.key;
@@ -549,8 +538,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               cat === "bestof" && !tournamentFilter ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
-            <Trophy size={11} /> Best of par tournoi
-          </Link>
+            <Trophy size={11} />{" "}{t("Best of par tournoi")}</Link>
           {TOURNAMENT_FILTERS.filter((t) => !setFilter || t.set === setFilter).map((t) => {
             const cc = getTournamentInfo(t.ctx)?.countryCode;
             const isActive = tournamentFilter === t.ctx;
@@ -576,9 +564,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
             !setFilter ? "bg-ink/10 text-ink ring-1 ring-ink/20" : "bg-surface-raised text-ink-muted hover:text-ink"
           )}
-        >
-          Tous les sets
-        </Link>
+        >{t("Tous les sets")}</Link>
         {(["Unleashed", "Spiritforged", "Origins"] as const).map((s) => (
           <Link
             key={s}
@@ -603,9 +589,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
               sortParam !== "popular" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
-          >
-            Récents
-          </Link>
+          >{t("Récents")}</Link>
           <Link
             href={`/decks?${["sort=popular", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&")}`}
             className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
@@ -619,14 +603,14 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
       <div className="mt-4 text-sm text-ink-muted">
         {decks.length} deck{decks.length !== 1 ? "s" : ""}
-        {legendFilter && <span> pour <strong className="text-arcane">{legendFilter}</strong></span>}
+        {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
         {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>
 
       {decks.length === 0 ? (
-        <p className="mt-12 text-center text-ink-muted">Aucun deck pour ces filtres.</p>
+        <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
       ) : (
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {decks.map((deck) => {

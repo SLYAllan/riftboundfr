@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur partagé - Riftbound France" },
@@ -14,6 +14,7 @@ const metadata: Metadata = {
 const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function SharedBinderPage({ params }: { params: Promise<{ shareSlug: string }> }) {
+  const t = await tr();
   const { shareSlug } = await params;
   const binder = await prisma.binder.findFirst({
     where: { shareSlug, isPublic: true },
@@ -40,7 +41,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
         Classeur partagé par {binder.user.username} · {items.length} cartes · {copies} exemplaires
       </p>
       {items.length === 0 ? (
-        <p className="py-16 text-center text-ink-muted">Ce classeur est vide.</p>
+        <p className="py-16 text-center text-ink-muted">{t("Ce classeur est vide.")}</p>
       ) : (
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           {items.map((it) => (

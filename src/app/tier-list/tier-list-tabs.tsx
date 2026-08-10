@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
+import { useT } from "@/components/i18n-provider";
 
 interface TierListData {
   id: string;
@@ -50,6 +51,7 @@ export function TierListTabs({
   deckSlugMap,
   defaultTab,
 }: Props) {
+  const t = useT();
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [hoveredEntry, setHoveredEntry] = useState<string | null>(null);
   const activeTierList = tierLists.find((tl) => tl.id === activeTab)!;
@@ -203,10 +205,7 @@ export function TierListTabs({
       </div>
 
       <div className="mt-8 rounded-lg border border-hairline bg-surface p-6 text-center">
-        <p className="text-sm text-ink-muted">
-          Cette tier list est basée sur notre analyse des résultats de tournois
-          publics. Elle ne reflète pas de données statistiques automatisées.
-        </p>
+        <p className="text-sm text-ink-muted">{t("Cette tier list est basée sur notre analyse des résultats de tournois publics. Elle ne reflète pas de données statistiques automatisées.")}</p>
       </div>
     </>
   );

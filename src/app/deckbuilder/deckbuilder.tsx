@@ -28,6 +28,7 @@ import type { RuneSuggestion } from "./lib/rune-calculator";
 import type { CardData, DeckEntry, DeckState, BuilderTab } from "@/types";
 import type { DeckSection } from "@/types";
 import type { SavedDeck } from "@/lib/deck-storage";
+import { useT } from "@/components/i18n-provider";
 
 const EMPTY_DECK: DeckState = {
   legend: null,
@@ -75,6 +76,7 @@ interface DeckbuilderV2Props {
 }
 
 export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }: DeckbuilderV2Props) {
+  const t = useT();
   const searchParams = useSearchParams();
   const [cards] = useState(initialCards);
   const [deck, setDeck] = useState<DeckState>(EMPTY_DECK);
@@ -646,7 +648,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
             type="text"
             value={deckTitle}
             onChange={(e) => setDeckTitle(e.target.value)}
-            aria-label="Nom du deck"
+            aria-label={t("Nom du deck")}
             className="h-9 min-w-0 flex-1 sm:h-8 sm:w-48 sm:flex-none rounded-lg border border-hairline-strong bg-surface px-3 text-base sm:text-sm font-semibold focus:border-arcane"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           />
@@ -657,7 +659,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
             <button onClick={() => setShowImport(true)} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-secondary hover:text-ink hover:bg-surface-raised transition-colors">
               <Upload size={13} /> Importer
             </button>
-            <button onClick={clearDeck} disabled={isEmpty} aria-label="Vider le deck" className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error hover:bg-error/10 transition-colors disabled:opacity-30">
+            <button onClick={clearDeck} disabled={isEmpty} aria-label={t("Vider le deck")} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error hover:bg-error/10 transition-colors disabled:opacity-30">
               <X size={13} />
             </button>
           </div>
@@ -667,7 +669,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
         {/* Selected legend + domains + meta */}
         {deck.legend && (
           <div className="px-4 pb-2 flex items-center gap-2 text-sm">
-            <span className="text-ink-muted">Légende :</span>
+            <span className="text-ink-muted">{t("Légende :")}</span>
             <span className="font-semibold text-ink">{deck.legend.name.split(",")[0]}</span>
             <span className="text-ink-muted">&middot;</span>
             {legendDomains.map((d) => (
@@ -835,12 +837,12 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       {showSavedList && (
         <ModalShell onClose={() => setShowSavedList(false)} labelledBy="saved-decks-title" className="w-full max-w-md max-h-[70vh]">
             <div className="flex items-center justify-between border-b border-hairline p-4">
-              <h2 id="saved-decks-title" className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks sauvegardés</h2>
+              <h2 id="saved-decks-title" className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks sauvegardés")}</h2>
               <button onClick={() => setShowSavedList(false)} aria-label="Fermer" className="text-ink-muted hover:text-ink"><X size={18} /></button>
             </div>
             <div className="overflow-y-auto p-4 space-y-2">
               {savedDecks.length === 0 ? (
-                <p className="text-sm text-ink-muted text-center py-8">Aucun deck sauvegardé</p>
+                <p className="text-sm text-ink-muted text-center py-8">{t("Aucun deck sauvegardé")}</p>
               ) : (
                 savedDecks.map((s) => (
                   <div key={s.id} className="flex items-center gap-3 rounded-lg border border-hairline p-4 hover:border-hairline-accent transition-colors">

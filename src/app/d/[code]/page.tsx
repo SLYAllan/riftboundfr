@@ -19,6 +19,7 @@ import Link from "@/components/lien";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { buildCardLookup } from "@/lib/card-printing";
+import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -53,6 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CommunityDeckPage({ params }: PageProps) {
+  const t = await tr();
   const { code } = await params;
 
   const deck = await prisma.communityDeck.findUnique({
@@ -128,9 +130,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/decks?cat=community" className="text-sm text-ink-muted hover:text-arcane">
-        &larr; Retour aux decks communautaires
-      </Link>
+      <Link href="/decks?cat=community" className="text-sm text-ink-muted hover:text-arcane">{t("&larr; Retour aux decks communautaires")}</Link>
       <div className="mt-6">
         <h1
           className="text-3xl font-bold leading-tight sm:text-4xl"
@@ -142,8 +142,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           <span className="text-lg text-arcane">
             {displayLegendName(deck.legendName)}
           </span>
-          <span className="text-sm text-ink-muted">
-            par <strong className="text-ink-secondary">{deck.authorName}</strong>
+          <span className="text-sm text-ink-muted">{t("par")}{" "}<strong className="text-ink-secondary">{deck.authorName}</strong>
           </span>
           <LikeButton
             shareCode={deck.shareCode}

@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { useT } from "@/components/i18n-provider";
 
 const RUNE_ICONS: Record<string, { src: string; label: string }> = {
   rainbow: { src: "/icons/RainbowRune.webp", label: "n'importe quelle Rune" },
@@ -58,12 +59,13 @@ function tokenize(text: string): Token[] {
 }
 
 export function CardTextRenderer({ text }: { text: string }) {
+  const t = useT();
   const tokens = tokenize(text);
 
   const elements: ReactNode[] = tokens.map((token, i) => {
     switch (token.type) {
       case "exhaust":
-        return <img key={i} src="/icons/Tap.webp" alt="Épuiser" title="Épuiser" className="inline h-3.5 w-3.5 align-text-bottom" />;
+        return <img key={i} src="/icons/Tap.webp" alt={t("Épuiser")} title={t("Épuiser")} className="inline h-3.5 w-3.5 align-text-bottom" />;
       case "might":
         // Icône rendue en blanc (brightness-0 invert) : les fonds sont sombres.
         return <img key={i} src="/icons/SwordIconRB.webp" alt="Puissance" title="Puissance" className="inline h-3.5 w-3.5 align-text-bottom brightness-0 invert" />;

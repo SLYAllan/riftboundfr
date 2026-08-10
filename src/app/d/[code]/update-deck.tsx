@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { RefreshCw } from "lucide-react";
+import { useT } from "@/components/i18n-provider";
 
 interface Props {
   shareCode: string;
@@ -12,6 +13,7 @@ interface Props {
 // maintenant le deckbuilder avec la liste chargée : on modifie les cartes, puis on
 // valide avec un changelog depuis la fenêtre d'export.
 export function UpdateDeckButton({ shareCode, ownerId }: Props) {
+  const t = useT();
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
@@ -31,8 +33,6 @@ export function UpdateDeckButton({ shareCode, ownerId }: Props) {
       href={`/deckbuilder?maj=${encodeURIComponent(shareCode)}`}
       className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors border border-hairline"
     >
-      <RefreshCw size={13} />
-      Modifier le deck
-    </a>
+      <RefreshCw size={13} />{t("Modifier le deck")}</a>
   );
 }

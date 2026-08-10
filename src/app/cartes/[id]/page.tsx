@@ -13,6 +13,7 @@ import { displayLegendName } from "@/lib/utils";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
+import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -57,6 +58,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function CardDetailPage({ params }: PageProps) {
+  const t = await tr();
   const { id } = await params;
   const card = await prisma.card.findUnique({ where: { riftboundId: id } });
   if (!card) notFound();
@@ -142,7 +144,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                 </div>
               </div>
               <div>
-                <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Rareté</div>
+                <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Rareté")}</div>
                 <div className="mt-1 text-sm">{card.rarity}</div>
               </div>
               <div>
@@ -196,11 +198,11 @@ export default async function CardDetailPage({ params }: PageProps) {
             {errata && (
               <div className="rounded-lg border border-hairline bg-surface p-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Errata du 23 juillet 2026</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Errata du 23 juillet 2026")}</span>
                 </div>
                 <div className="mt-2"><ErrataDiff before={errata.before} after={errata.after} /></div>
                 <p className="mt-2 text-sm text-ink-secondary">{errata.change}</p>
-                <Link href="/guides/ban-list" className="mt-2 inline-block text-xs text-arcane hover:underline">Voir tous les erratas</Link>
+                <Link href="/guides/ban-list" className="mt-2 inline-block text-xs text-arcane hover:underline">{t("Voir tous les erratas")}</Link>
               </div>
             )}
             {card.flavorText && (
@@ -217,7 +219,7 @@ export default async function CardDetailPage({ params }: PageProps) {
           </div>
           {relatedDecks.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks utilisant cette carte</h2>
+              <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks utilisant cette carte")}</h2>
               <div className="mt-3 space-y-2">
                 {relatedDecks.map(({ deck }) => (
                   <Link key={deck.id} href={`/decks/${deck.slug}`} className="block rounded-lg border border-hairline bg-surface p-3 transition-colors hover:border-hairline-accent">

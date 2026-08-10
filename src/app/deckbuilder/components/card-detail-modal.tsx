@@ -27,9 +27,7 @@ export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
             {card.imageUrl ? (
               <img src={card.imageUrl} alt={card.name} className="w-full rounded-lg" />
             ) : (
-              <div className="aspect-[5/7] w-full rounded-lg bg-surface-raised flex items-center justify-center text-ink-muted">
-                Pas d&apos;image
-              </div>
+              <div className="aspect-[5/7] w-full rounded-lg bg-surface-raised flex items-center justify-center text-ink-muted">{t("Pas d’image")}</div>
             )}
           </div>
 
@@ -60,7 +58,7 @@ export function CardDetailModal({ card, onClose }: CardDetailModalProps) {
               <div className="grid grid-cols-3 gap-3">
                 {card.energy != null && (
                   <div className="rounded-lg bg-surface-raised p-3 text-center">
-                    <div className="text-xs uppercase tracking-wider text-ink-muted font-semibold">Énergie</div>
+                    <div className="text-xs uppercase tracking-wider text-ink-muted font-semibold">{t("Énergie")}</div>
                     <div className="text-3xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.energy}</div>
                   </div>
                 )}

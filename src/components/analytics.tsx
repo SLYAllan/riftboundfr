@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { useT } from "@/components/i18n-provider";
 
 // Measurement ID hardcoded as the default (a GA4 ID is a public, client-side
 // value, not a secret). NEXT_PUBLIC_GA_ID can still override it if needed.
@@ -38,6 +39,7 @@ export function Analytics() {
 }
 
 export function CookieBanner() {
+  const t = useT();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -70,10 +72,7 @@ export function CookieBanner() {
   return (
     <div data-chrome="cookies" className="fixed bottom-0 inset-x-0 z-50 p-4">
       <div className="mx-auto max-w-2xl rounded-card border border-hairline bg-surface p-4 shadow-xl backdrop-blur-sm">
-        <p className="text-sm text-ink-secondary">
-          Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience.
-          Aucune donnée personnelle n&apos;est partagée avec des tiers.
-        </p>
+        <p className="text-sm text-ink-secondary">{t("Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience. Aucune donnée personnelle n’est partagée avec des tiers.")}</p>
         <div className="mt-3 flex items-center gap-3">
           <button
             onClick={accept}

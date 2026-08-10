@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Search, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { GlossaryCategory, GlossaryTerm } from "@/lib/glossary";
+import { useT } from "@/components/i18n-provider";
 
 interface CardInfo {
   name: string;
@@ -192,6 +193,7 @@ function TermCard({
 /* ── Main client component ── */
 
 export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) {
+  const t = useT();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<GlossaryCategory | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -305,10 +307,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         Glossaire Riftbound
       </h1>
-      <p className="mt-2 text-ink-secondary">
-        Tous les mots-clés officiels et termes du TCG Riftbound expliqués en
-        fran&ccedil;ais.
-        <span className="ml-2 text-xs text-ink-muted">
+      <p className="mt-2 text-ink-secondary">{t("Tous les mots-clés officiels et termes du TCG Riftbound expliqués en français.")}<span className="ml-2 text-xs text-ink-muted">
           Source&nbsp;:{" "}
           <a
             href="https://riftboundsymbols.com/riftbound-keywords/"
@@ -329,16 +328,16 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Rechercher un terme, un mot-clé, une mécanique..."
+          placeholder={t("Rechercher un terme, un mot-clé, une mécanique...")}
 
-          aria-label="Rechercher dans le glossaire"
+          aria-label={t("Rechercher dans le glossaire")}
           className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-12 text-ink placeholder:text-ink-muted focus:border-arcane focus:ring-2 focus:ring-arcane-glow"
         />
         {search && (
           <button
             onClick={() => { setSearch(""); searchRef.current?.focus(); }}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted hover:text-ink"
-            aria-label="Effacer la recherche"
+            aria-label={t("Effacer la recherche")}
           >
             <X size={18} />
           </button>
@@ -376,7 +375,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
       </div>
 
       {/* Alphabet navigation */}
-      <nav className="mt-5 flex flex-wrap gap-1" aria-label="Navigation alphabétique">
+      <nav className="mt-5 flex flex-wrap gap-1" aria-label={t("Navigation alphabétique")}>
         {allLetters.map((letter) => {
           const hasResults = letters.includes(letter);
           return (
@@ -419,15 +418,11 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
       {/* Terms grouped by letter */}
       {filteredTerms.length === 0 ? (
         <div className="mt-12 text-center">
-          <p className="text-lg text-ink-muted">
-            Aucun terme ne correspond à votre recherche.
-          </p>
+          <p className="text-lg text-ink-muted">{t("Aucun terme ne correspond à votre recherche.")}</p>
           <button
             onClick={() => { setSearch(""); setActiveCategory(null); searchRef.current?.focus(); }}
             className="mt-3 text-sm text-arcane hover:underline"
-          >
-            Réinitialiser les filtres
-          </button>
+          >{t("Réinitialiser les filtres")}</button>
         </div>
       ) : (
         <dl className="mt-4 space-y-8">
@@ -465,9 +460,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-sm text-ink-muted hover:text-arcane transition-colors"
-        >
-          Retour en haut
-        </button>
+        >{t("Retour en haut")}</button>
       </div>
     </div>
   );

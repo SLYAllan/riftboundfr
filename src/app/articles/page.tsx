@@ -66,15 +66,13 @@ export default async function ArticlesPage({
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Actualités Riftbound</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Actualités Riftbound")}</h1>
 
       <div className="mt-4 flex flex-wrap gap-2">
         <Link
           href="/articles"
           className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!category ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
-        >
-          Tous
-        </Link>
+        >{t("Tous")}</Link>
         {categories.map((cat) => (
           <Link
             key={cat}
