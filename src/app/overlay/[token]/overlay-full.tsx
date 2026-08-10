@@ -83,18 +83,22 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
   return (
-    <div className="absolute left-1/2 top-0 z-20 flex -translate-x-1/2 overflow-hidden rounded-b-xl border border-t-0 border-white/15 bg-black/80 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+    // Des ronds detaches, comme sur la retransmission : pas de bandeau noir, le fond
+    // reste la table de jeu. L ecart double au milieu separe les deux joueurs.
+    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center gap-2">
       {cells.map((c, i) => {
-        const reached = c.side === "a" ? c.v <= a : c.v <= b;
-        const current = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
+        const actif = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
         return (
           <span
             key={i}
             className={[
-              "flex h-11 w-11 items-center justify-center border-r border-white/10 text-base font-bold tabular-nums last:border-r-0",
-              current ? "bg-gold text-black" : reached ? "bg-white/15 text-white" : "text-white/45",
-              i === max - 1 ? "border-r-2 border-r-white/30" : "",
+              "flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold tabular-nums",
+              i === max ? "ml-4" : "",
+              actif
+                ? "bg-gold text-[#1b1408] ring-2 ring-white/80 ring-offset-2 ring-offset-transparent"
+                : "bg-black/70 text-white/80 ring-1 ring-white/35",
             ].join(" ")}
+            style={{ boxShadow: actif ? "0 2px 10px rgba(0,0,0,0.55)" : "0 1px 6px rgba(0,0,0,0.5)" }}
           >
             {c.v}
           </span>
