@@ -10,6 +10,10 @@ import styles from "./overlay.module.css";
 // n'est jamais redimensionnée : OBS la capture telle quelle.
 const COL = 300;
 const PAD = 34;
+// Hauteurs fixes : les deux colonnes doivent s'aligner au pixel, quitte à laisser du
+// vide en dessous. Une caméra qui flotte de dix pixels d'un côté à l'autre se voit.
+const CAM_H = 470;
+const BF_H = 104;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
@@ -114,12 +118,12 @@ function Side({
       style={{ width: COL, [side]: PAD } as React.CSSProperties}
     >
       {/* Pseudo */}
-      <div className="truncate rounded-lg bg-black/80 px-3 py-2 text-center text-xl font-bold tracking-wide text-white shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
+      <div className="shrink-0 truncate rounded-lg bg-black/80 px-3 py-2 text-center text-xl font-bold tracking-wide text-white shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
         {p.name || "—"}
       </div>
 
       {/* Légende : la bannière en fond, le nom et le champion élu par-dessus */}
-      <div className="relative h-[124px] overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
+      <div className="relative h-[124px] shrink-0 overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
         {(banner ?? icon) && (
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
@@ -134,15 +138,40 @@ function Side({
         </div>
       </div>
 
-      {/* Caméra : cadre seul, la source vidéo est posée dessous dans OBS */}
-      {p.camEnabled && <Slot label="Caméra" className="flex-1" />}
+      {/* Caméra : le lien VDO.Ninja s'affiche dans le cadre. Sans lien, le cadre
+          reste vide et transparent, la source se pose dessous dans OBS. */}
+      {p.camEnabled &&
+        (p.camUrl ? (
+          <div
+            style={{ height: CAM_H }}
+            className="shrink-0 overflow-hidden rounded-lg border border-white/30 shadow-[inset_0_0_0_3px_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.12)]"
+          >
+            <iframe
+              src={p.camUrl}
+              title={`Caméra de ${p.name || "joueur"}`}
+              allow="autoplay; camera; microphone; fullscreen"
+              className="h-full w-full border-0"
+            />
+          </div>
+        ) : (
+          <Slot label="Caméra" className="shrink-0" style={{ height: CAM_H }} />
+        ))}
 
       {/* Le champ de bataille en jeu, son illustration en fond, et les manches
           gagnées posées dessus comme sur la retransmission officielle. */}
-      <div className="relative overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
-        {art[bf] && <img src={art[bf]!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" />}
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="relative px-2 pb-2 pt-2.5">
+      <div
+        style={{ height: BF_H }}
+        className="relative shrink-0 overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15"
+      >
+        {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
+            liseré et le bandeau de titre de l'illustration. Voile léger, et un
+            dégradé sous le texte seulement, pour ne pas éteindre l'art. */}
+        {art[bf] && (
+          <img src={art[bf]!} alt="" className="absolute inset-0 h-full w-full scale-[1.4] object-cover object-[50%_38%]" />
+        )}
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
+        <div className="relative flex h-full flex-col justify-end px-2 pb-2">
           <div className="truncate text-center text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
           </div>
@@ -156,8 +185,9 @@ function Side({
         </div>
       </div>
 
-      {/* Bas de colonne : chrono et logo à gauche, cartes à droite */}
-      {footer}
+      {/* Bas de colonne : chrono et logo à gauche, cartes à droite. `mt-auto` colle
+          le bloc en bas, le vide reste au milieu comme demandé. */}
+      <div className="mt-auto shrink-0">{footer}</div>
     </div>
   );
 }

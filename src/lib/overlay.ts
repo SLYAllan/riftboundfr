@@ -8,6 +8,9 @@ export interface OverlayPlayer {
   battlefields: string[];
   gamesWon: number;
   camEnabled: boolean;
+  // Lien « view » VDO.Ninja : chacun colle le sien, la camera arrive dans le cadre
+  // sans passer par OBS. Vide = cadre laisse transparent.
+  camUrl?: string;
 }
 
 export interface OverlayStateData {
@@ -22,7 +25,7 @@ export interface OverlayStateData {
 }
 
 function emptyPlayer(name: string): OverlayPlayer {
-  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, camEnabled: true };
+  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, camEnabled: true, camUrl: "" };
 }
 
 export function defaultOverlayState(): OverlayStateData {
