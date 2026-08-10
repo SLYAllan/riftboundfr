@@ -81,7 +81,7 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
   return (
-    <div className="absolute left-1/2 top-0 flex -translate-x-1/2 overflow-hidden rounded-b-xl border border-t-0 border-white/15 bg-black/80 shadow-[0_2px_12px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+    <div className="absolute left-1/2 top-0 z-20 flex -translate-x-1/2 overflow-hidden rounded-b-xl border border-t-0 border-white/15 bg-black/80 shadow-[0_2px_12px_rgba(0,0,0,0.5)] backdrop-blur-sm">
       {cells.map((c, i) => {
         const reached = c.side === "a" ? c.v <= a : c.v <= b;
         const current = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
@@ -142,7 +142,7 @@ function Side({
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
       <div
-        className="absolute flex items-center justify-center truncate px-2 text-2xl font-bold uppercase tracking-wide text-white"
+        className="absolute z-20 flex items-center justify-center truncate px-2 text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
         {p.name || "—"}
@@ -157,7 +157,7 @@ function Side({
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
         <div className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-black/90 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 px-2 pb-2">
+        <div className="absolute inset-x-0 bottom-0 z-20 px-2 pb-2">
           <div className="truncate text-center text-sm font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
           </div>
@@ -205,7 +205,7 @@ function Side({
         )}
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
-        <div className="relative flex h-full flex-col justify-end px-2 pb-2">
+        <div className="relative z-20 flex h-full flex-col justify-end px-2 pb-2">
           <div className="truncate text-center text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
           </div>
@@ -247,11 +247,18 @@ function Timer({ endsAt, round }: { endsAt?: string | null; round: string }) {
   const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
   return (
-    <div className="flex h-full flex-col items-center justify-center text-center">
-      <div className="text-3xl font-bold tabular-nums leading-none text-white">
+    <div className="flex h-full flex-col items-center justify-end text-center">
+      {round && (
+        <div className="mb-2 truncate text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+          {round}
+        </div>
+      )}
+      <div
+        className="text-4xl font-bold tabular-nums leading-none text-white"
+        style={{ textShadow: "0 2px 6px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.55)" }}
+      >
         {mm}:{ss}
       </div>
-      {round && <div className="mt-0.5 truncate text-[11px] font-semibold uppercase tracking-wide text-white/80">{round}</div>}
     </div>
   );
 }
@@ -264,7 +271,7 @@ export function OverlayFull({ token }: { token: string }) {
     <div className={styles.root}>
       {/* Le cadre fourni, en fond : ses découpes sont transparentes, tout le reste
           de l'habillage vient de lui. */}
-      <img src="/stream/test.webp" alt="" className="absolute inset-0 h-full w-full" />
+      <img src="/stream/test.webp" alt="" className="absolute inset-0 z-10 h-full w-full" />
       <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
       <Side
         p={state.players[0]}
@@ -280,7 +287,7 @@ export function OverlayFull({ token }: { token: string }) {
                 style={{ left: SLOT.x.left, width: SLOT.width, top: 700, height: 220 }}
               />
             )}
-            <div className="absolute" style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.timer.top, height: SLOT.timer.height }}>
+            <div className="absolute z-20" style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.timer.top - 74, height: SLOT.timer.height + 74 }}>
               <Timer endsAt={event.endsAt} round={event.round} />
             </div>
           </>

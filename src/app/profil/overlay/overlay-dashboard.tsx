@@ -84,20 +84,25 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               </select>
 
               <div>
-                <select value="" onChange={(e) => { if (e.target.value && !p.battlefields.includes(e.target.value)) setPlayer(i, { battlefields: [...p.battlefields, e.target.value] }); }} className={inputCls}>
-                  <option value="">+ Ajouter un battlefield…</option>
+                <select
+                  value={p.battlefields[0] ?? ""}
+                  onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
+                  className={inputCls}
+                >
+                  <option value="">Champ de bataille en jeu…</option>
                   {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
                 </select>
-                {p.battlefields.length > 0 && (
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {p.battlefields.map((b) => (
-                      <span key={b} className="inline-flex items-center gap-1 rounded-full bg-surface-raised px-2.5 py-1 text-xs">
-                        {b}
-                        <button onClick={() => setPlayer(i, { battlefields: p.battlefields.filter((x) => x !== b) })} className="text-ink-muted hover:text-error">×</button>
-                      </span>
-                    ))}
-                  </div>
-                )}
+              </div>
+
+              <div>
+                <label className="mb-1 block text-xs text-ink-muted">Lien caméra VDO.Ninja (https://vdo.ninja/?view=…)</label>
+                <input
+                  value={p.camUrl ?? ""}
+                  onChange={(e) => setPlayer(i, { camUrl: e.target.value })}
+                  placeholder="https://vdo.ninja/?view=..."
+                  className={inputCls}
+                />
+                <p className="mt-1 text-xs text-ink-muted">Vide, ou autre chose que vdo.ninja en https : le cadre reste transparent, la caméra se pose dessous dans OBS.</p>
               </div>
 
               <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} /> Cam visible</label>
@@ -135,7 +140,23 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           </select>
         </label>
         <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder="Titre event" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
-        <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="Round (TOP 8…)" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
+        <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="Ronde (TOP 8…)" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
+        <input value={state.event.logoUrl ?? ""} onChange={(e) => update({ event: { logoUrl: e.target.value } })} placeholder="Lien du logo du tournoi" className="min-w-[220px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5" />
+        <label className="flex items-center gap-2">Chrono
+          <select
+            value=""
+            onChange={(e) => {
+              const min = Number(e.target.value);
+              if (!min) return;
+              update({ event: { endsAt: new Date(Date.now() + min * 60000).toISOString() } });
+            }}
+            className="rounded-lg border border-hairline bg-surface px-2 py-1.5"
+          >
+            <option value="">Lancer…</option>
+            {[10, 20, 25, 30, 40, 50, 60, 75].map((m) => <option key={m} value={m}>{m} min</option>)}
+          </select>
+        </label>
+        <button onClick={() => update({ event: { endsAt: null } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Arrêter le chrono</button>
         <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Swap joueurs</button>
         <button onClick={() => update({ points: { a: 0, b: 0 } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset game</button>
         <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset match</button>
