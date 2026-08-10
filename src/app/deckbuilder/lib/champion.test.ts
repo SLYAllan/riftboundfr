@@ -22,6 +22,15 @@ describe("splitChampion", () => {
     expect(rest.some((e) => e.name === "Akali, Silent")).toBe(false);
   });
 
+  it("ne décrémente que la ligne trouvée si la carte apparaît deux fois", () => {
+    // Cas d'un code texte importé : le champion arrive sur sa propre ligne, ses copies
+    // sur une autre. Décrémenter les deux perdait un exemplaire.
+    const main = [entry("Akali, Silent", 1, "Champion"), entry("Akali, Silent", 2, "Champion")];
+    const { champion, rest } = splitChampion(main, "Akali, Rogue Assassin");
+    expect(champion?.quantity).toBe(1);
+    expect((champion?.quantity ?? 0) + rest.reduce((s, e) => s + e.quantity, 0)).toBe(3);
+  });
+
   it("laisse le deck intact sans champion correspondant", () => {
     const main = [entry("Charm", 3)];
     expect(splitChampion(main, "Akali, Rogue Assassin")).toEqual({ champion: undefined, rest: main });

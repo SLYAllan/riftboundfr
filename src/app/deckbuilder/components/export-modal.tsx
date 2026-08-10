@@ -24,6 +24,9 @@ interface ExportModalProps {
   isEmpty: boolean;
   isDeckValid: boolean;
   onPublish: (isPublic: boolean, opts: { tags: string[]; description: string }) => Promise<string | null>;
+  // Renseigné quand on modifie un deck déjà publié (deckbuilder ouvert avec ?maj=).
+  updateShareCode?: string | null;
+  onUpdatePublished?: (changelog: string) => Promise<string | null>;
   onExportImage: () => Promise<void>;
   onClose: () => void;
 }
@@ -47,7 +50,7 @@ const TABS: { key: ExportTab; label: string; icon: typeof Hash }[] = [
 
 export function ExportModal({
   shareUrl, deckCode, isAdmin = false, textCode, ttsCode, deckTitle, isEmpty, isDeckValid,
-  onPublish, onExportImage, onClose,
+  onPublish, updateShareCode = null, onUpdatePublished, onExportImage, onClose,
 }: ExportModalProps) {
   // Le titre par défaut n'apprend rien : dans ce cas l'image garde le nom de la
   // Légende, comme avant.
@@ -64,6 +67,8 @@ export function ExportModal({
   const [user, setUser] = useState<UserData | null>(null);
   const [userLoading, setUserLoading] = useState(true);
   const [imageState, setImageState] = useState<"idle" | "loading" | "error">("idle");
+  const [changelog, setChangelog] = useState("");
+  const [updated, setUpdated] = useState(false);
 
   // Escape + piège de focus + retour de focus gérés par le hook a11y.
   const dialogRef = useDialogA11y(onClose);
@@ -109,6 +114,16 @@ export function ExportModal({
     } else if (result) {
       setPublishError(result);
     }
+    setPublishing(false);
+  }
+
+  async function handleUpdate() {
+    if (!onUpdatePublished) return;
+    setPublishing(true);
+    setPublishError(null);
+    const err = await onUpdatePublished(changelog.trim());
+    if (err) setPublishError(err);
+    else setUpdated(true);
     setPublishing(false);
   }
 
@@ -163,6 +178,35 @@ export function ExportModal({
                 </div>
               </div>
 
+              {updateShareCode ? (
+                <div className="border-t border-hairline pt-4 space-y-3">
+                  <label className="text-sm font-semibold text-ink-secondary">Mettre à jour le deck publié</label>
+                  <p className="text-xs text-ink-muted">L&apos;ancienne version reste dans l&apos;historique du deck.</p>
+                  <input
+                    value={changelog}
+                    onChange={(e) => setChangelog(e.target.value.slice(0, 500))}
+                    placeholder="Ce qui change (optionnel) - ex : +2 Falling Star, -2 Charm"
+                    className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-sm text-ink placeholder:text-ink-muted/50"
+                  />
+                  {publishError && <p className="text-xs text-red-400">{publishError}</p>}
+                  {updated ? (
+                    <a
+                      href={`/d/${updateShareCode}`}
+                      className="block w-full rounded-lg bg-success/20 px-3 py-2 text-center text-sm font-semibold text-success"
+                    >
+                      Deck mis à jour - voir la page du deck
+                    </a>
+                  ) : (
+                    <button
+                      onClick={handleUpdate}
+                      disabled={isEmpty || publishing}
+                      className="w-full rounded-lg bg-violet-dark px-3 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition"
+                    >
+                      {publishing ? "Mise à jour..." : "Mettre à jour"}
+                    </button>
+                  )}
+                </div>
+              ) : (
               <div className="border-t border-hairline pt-4">
                 <label className="text-sm font-semibold text-ink-secondary">Publier dans la communauté</label>
 
@@ -270,6 +314,7 @@ export function ExportModal({
                   </div>
                 )}
               </div>
+              )}
             </div>
           )}
 

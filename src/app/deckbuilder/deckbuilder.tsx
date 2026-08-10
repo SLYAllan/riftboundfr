@@ -87,6 +87,8 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   const [showExport, setShowExport] = useState(false);
   // Sous sm le panneau de deck est masqué : ce tiroir est le seul moyen de voir sa liste.
   const [showDeckSheet, setShowDeckSheet] = useState(false);
+  // Code de partage du deck communautaire en cours de modification (?maj=).
+  const [updateShareCode, setUpdateShareCode] = useState<string | null>(null);
   const isCompetitive = true;
   const initialized = useRef(false);
 
@@ -102,6 +104,22 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
     if (initialized.current) return;
     initialized.current = true;
     setSavedDecks(getSavedDecks());
+
+    // ?maj=<shareCode> : on revient d'un deck communautaire pour le modifier. On
+    // recharge sa liste depuis l'API, plus besoin de coller un code à la main.
+    const majParam = searchParams.get("maj");
+    if (majParam) {
+      setUpdateShareCode(majParam);
+      fetch(`/api/community-decks/${majParam}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (!d?.deckCode) return;
+          handleCardNamesImport(d.deckCode);
+          if (d.title) setDeckTitle(d.title);
+        })
+        .catch(() => {});
+      return;
+    }
 
     const deckParam = searchParams.get("deck");
     if (deckParam) {
@@ -515,7 +533,13 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
         const section = card.type === "Rune" ? "rune"
           : card.type === "Battlefield" ? "battlefield"
           : entry.section === "side" ? "side" : "main";
-        (newDeck[section] as DeckEntry[]).push(cardToEntry(card, entry.quantity));
+        // Le champion apparaît deux fois dans un code texte (section Champion + ses
+        // copies du deck principal). Sans fusion, deux lignes pour la même carte :
+        // clé React en double, et un compte faux à la ré-export.
+        const list = newDeck[section] as DeckEntry[];
+        const existing = list.find((e) => e.cardId === card.id);
+        if (existing) existing.quantity += entry.quantity;
+        else list.push(cardToEntry(card, entry.quantity));
       }
     }
 
@@ -548,6 +572,23 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
         return `${window.location.origin}/d/${data.shareCode}`;
       }
     } catch { /* ignore */ }
+    return null;
+  }
+
+  // Renvoie null si tout va bien, sinon le message d'erreur à afficher.
+  async function handleUpdatePublished(changelog: string): Promise<string | null> {
+    if (!updateShareCode) return "Aucun deck à mettre à jour";
+    try {
+      const res = await fetch(`/api/community-decks/${updateShareCode}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ deckCode: getTextCode(), changelog: changelog || undefined }),
+      });
+      const data = await res.json();
+      if (!res.ok) return data.error ?? "Erreur lors de la mise à jour";
+    } catch {
+      return "Erreur lors de la mise à jour";
+    }
     return null;
   }
 
@@ -840,6 +881,8 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
           isEmpty={isEmpty}
           isDeckValid={!!deck.legend && mainTotal >= 40 && runeTotal === 12 && bfTotal >= 1 && bfTotal <= 3}
           onPublish={handlePublish}
+          updateShareCode={updateShareCode}
+          onUpdatePublished={handleUpdatePublished}
           onExportImage={handleExportImage}
           onClose={() => setShowExport(false)}
         />
