@@ -220,7 +220,7 @@ function Manche({ gagnee }: { gagnee: boolean }) {
         gagnee ? "border-gold bg-gold/20" : "border-white/50 bg-black/30"
       }`}
     >
-      {gagnee && <img src="/icons/RainbowRune.webp" alt="" className="h-4 w-4 object-contain" />}
+      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className="h-4 w-4 object-contain" />}
     </span>
   );
 }
