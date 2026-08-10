@@ -56,212 +56,286 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const toutesCartes = [...new Set([...listes[0], ...listes[1]])];
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
-  const inputCls = "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm focus:border-arcane focus:outline-none";
-  const btnStep = "flex h-7 w-7 items-center justify-center rounded-lg border border-hairline hover:bg-surface-raised";
+  const inputCls =
+    "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm transition-colors duration-150 focus:border-arcane focus:outline-none";
+  const btnStep =
+    "flex h-9 w-9 items-center justify-center rounded-lg border border-hairline text-base transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:opacity-30";
+  const btnPlein =
+    "shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]";
+  const btnVide =
+    "shrink-0 rounded-lg border border-hairline px-3 py-2 text-sm transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]";
+
+  const [minutes, setMinutes] = useState(50);
 
   return (
-    <div className="mx-auto max-w-5xl p-4 space-y-6">
-      <div className="flex items-center gap-3">
-        <span className="text-2xl">🎥</span>
-        <h1 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Overlay de stream</h1>
-      </div>
-
-      <div className="flex flex-wrap items-center gap-2 rounded-xl border border-hairline bg-surface p-3 text-sm">
-        <span className="font-medium">Lien OBS</span>
-        <code className="flex-1 min-w-[200px] truncate rounded-lg bg-surface-raised px-3 py-2">{overlayUrl}</code>
-        <button onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }} className="rounded-lg bg-arcane px-3 py-2 font-medium text-white hover:bg-arcane/90">{copied ? "Copié ✓" : "Copier"}</button>
-        <button onClick={() => fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload())} className="rounded-lg border border-hairline px-3 py-2 hover:bg-surface-raised">Régénérer</button>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        {([0, 1] as const).map((i) => {
-          const p = state.players[i];
-          const pts = i === 0 ? state.points.a : state.points.b;
-          const key = i === 0 ? "a" : "b";
-          return (
-            <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
-              <h2 className="font-semibold text-ink-secondary">Joueur {i + 1}</h2>
-              <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder="Nom du joueur" className={inputCls} />
-              <select value={p.legendId ?? ""} onChange={(e) => { const l = legends.find((x) => x.id === e.target.value); setPlayer(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }} className={inputCls}>
-                <option value="">— Légende —</option>
-                {legends.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
-              </select>
-              <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
-                <option value="">— Champion —</option>
-                {champs[i].map((c) => <option key={c} value={c}>{c}</option>)}
-              </select>
-
-              <div>
-                <select
-                  value={p.battlefields[0] ?? ""}
-                  onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
-                  className={inputCls}
-                >
-                  <option value="">Champ de bataille en jeu…</option>
-                  {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1 block text-xs text-ink-muted">Lien caméra VDO.Ninja (https://vdo.ninja/?view=…)</label>
-                <div className="flex gap-2">
-                  <input
-                    value={brouillonCam[i]}
-                    onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
-                    placeholder="https://vdo.ninja/?view=..."
-                    className={inputCls}
-                  />
-                  <button
-                    onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })}
-                    className="shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
-                  >
-                    Charger
-                  </button>
-                  {p.camUrl && (
-                    <button
-                      onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
-                      className="shrink-0 rounded-lg border border-hairline px-3 py-2 text-sm transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
-                    >
-                      Retirer
-                    </button>
-                  )}
-                </div>
-                <p className="mt-1 text-xs text-ink-muted">Le son est coupé d&apos;office. Vide, ou autre chose que vdo.ninja en https : le cadre reste transparent, la caméra se pose dessous dans OBS.</p>
-              </div>
-
-              <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} /> Cam visible</label>
-
-              <div className="flex items-center justify-between gap-2 rounded-lg bg-surface-raised/50 px-3 py-2 text-sm">
-                <span className="text-ink-secondary">Points</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
-                  <span className="w-6 text-center font-bold tabular-nums">{pts}</span>
-                  <button onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
-                </div>
-              </div>
-              <div className="flex items-center justify-between gap-2 rounded-lg bg-surface-raised/50 px-3 py-2 text-sm">
-                <span className="text-ink-secondary">Manches gagnées</span>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
-                  <span className="w-6 text-center font-bold tabular-nums">{p.gamesWon}</span>
-                  <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
-        <h2 className="font-semibold">Cartes à montrer</h2>
-        <p className="text-xs text-ink-muted">
-          Collez une decklist par joueur, puis choisissez la carte à afficher dans le cadre de droite.
+    <div className="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
+      <header>
+        <h1 className="text-balance text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+          Habillage de stream
+        </h1>
+        <p className="mt-2 max-w-2xl text-pretty text-sm text-ink-secondary">
+          Cette page pilote ce qui s&apos;affiche à l&apos;écran pendant votre diffusion. Tout ce que
+          vous changez ici part en direct, sans rien relancer.
         </p>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {([0, 1] as const).map((i) => (
-            <div key={i} className="space-y-2">
-              <textarea
-                value={brouillonDeck[i]}
-                onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
-                placeholder={`Decklist du joueur ${i + 1}`}
-                rows={4}
-                className={`${inputCls} font-mono text-xs`}
-              />
-              <button
-                onClick={() => {
-                  const noms = parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name);
-                  const l: [string[], string[]] = [[...listes[0]], [...listes[1]]];
-                  l[i] = [...new Set(noms)];
-                  update({ cards: { lists: l, shown: state.cards?.shown ?? null } } as never);
-                }}
-                className="rounded-lg bg-arcane px-3 py-1.5 font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
-              >
-                Charger la liste ({listes[i].length})
-              </button>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <select
-            value={state.cards?.shown ?? ""}
-            onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
-            className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5"
-          >
-            <option value="">— Aucune carte à l&apos;écran —</option>
-            {toutesCartes.map((c) => <option key={c} value={c}>{c}</option>)}
-          </select>
-          <button
-            onClick={() => update({ cards: { lists: listes as [string[], string[]], shown: null } } as never)}
-            className="rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
-          >
-            Masquer
-          </button>
-        </div>
-      </div>
+      </header>
 
-      <div className="flex flex-wrap items-center gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
-        <label className="flex items-center gap-2">Format
-          <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className="rounded-lg border border-hairline bg-surface px-2 py-1.5">
-            <option>BO1</option><option>BO3</option><option>BO5</option>
-          </select>
-        </label>
-        <label className="flex items-center gap-2">Points max
-          <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className="rounded-lg border border-hairline bg-surface px-2 py-1.5">
-            <option value={8}>8</option><option value={9}>9</option>
-          </select>
-        </label>
-        <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder="Titre event" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
-        <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="Ronde (TOP 8…)" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
-        <span className="flex min-w-[280px] flex-1 gap-2">
-          <input
-            value={brouillonLogo}
-            onChange={(e) => setBrouillonLogo(e.target.value)}
-            placeholder="Lien du logo du tournoi"
-            className="min-w-0 flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5"
-          />
+      <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
+        <h2 className="font-semibold text-ink">Première fois ? Trois étapes.</h2>
+        <ol className="mt-2 space-y-1.5 text-sm text-ink-secondary">
+          <li><strong className="text-ink">1.</strong> Copiez le lien ci-dessous.</li>
+          <li>
+            <strong className="text-ink">2.</strong> Dans OBS : <em>Sources</em> → <em>+</em> → <em>Navigateur</em>.
+            Collez le lien, mettez <strong className="text-ink">1920</strong> de largeur et{" "}
+            <strong className="text-ink">1080</strong> de hauteur, puis validez.
+          </li>
+          <li><strong className="text-ink">3.</strong> Revenez ici et remplissez les cases. L&apos;écran suit tout seul.</li>
+        </ol>
+        <p className="mt-2 text-xs text-ink-muted">
+          Si un changement ne s&apos;affiche pas : clic droit sur la source dans OBS → <em>Actualiser</em>.
+        </p>
+      </section>
+
+      <section className="rounded-xl border border-hairline bg-surface p-4">
+        <label className="text-sm font-semibold">Lien à coller dans OBS</label>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}</code>
           <button
-            onClick={() => update({ event: { logoUrl: brouillonLogo } })}
-            className="shrink-0 rounded-lg bg-arcane px-3 py-1.5 font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
+            onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
+            className={btnPlein}
           >
-            Charger
+            {copied ? "Copié ✓" : "Copier"}
           </button>
-          {state.event.logoUrl && (
-            <button
-              onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }}
-              className="shrink-0 rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
+          <button onClick={() => fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload())} className={btnVide}>
+            Nouveau lien
+          </button>
+        </div>
+        <p className="mt-2 text-xs text-ink-muted">
+          Gardez ce lien pour vous : qui l&apos;a peut voir votre habillage. « Nouveau lien » rend
+          l&apos;ancien inutilisable.
+        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
+          <span className="text-sm text-ink-secondary">Pas de caméra ni de cadre ?</span>
+          <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
+          <button onClick={() => navigator.clipboard.writeText(overlayUrl + "?compact=1")} className={btnVide}>
+            Copier la version simple
+          </button>
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>1. Les joueurs</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {([0, 1] as const).map((i) => {
+            const p = state.players[i];
+            const pts = i === 0 ? state.points.a : state.points.b;
+            const key = i === 0 ? "a" : "b";
+            return (
+              <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
+                <h3 className="text-sm font-semibold text-ink-secondary">Joueur {i + 1}</h3>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">Pseudo</span>
+                  <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder="Son pseudo" className={inputCls} />
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">Légende</span>
+                  <select
+                    value={p.legendId ?? ""}
+                    onChange={(e) => { const l = legends.find((x) => x.id === e.target.value); setPlayer(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }}
+                    className={inputCls}
+                  >
+                    <option value="">À choisir…</option>
+                    {legends.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">Champion élu</span>
+                  <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
+                    <option value="">{p.legendName ? "À choisir…" : "Choisissez d’abord une Légende"}</option>
+                    {champs[i].map((c) => <option key={c} value={c}>{c}</option>)}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">Champ de bataille en jeu</span>
+                  <select
+                    value={p.battlefields[0] ?? ""}
+                    onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
+                    className={inputCls}
+                  >
+                    <option value="">Aucun</option>
+                    {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
+                  </select>
+                </label>
+
+                <div className="rounded-lg bg-surface-raised/50 p-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm text-ink-secondary">Points</span>
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
+                      <span className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
+                      <button onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <span className="text-sm text-ink-secondary">Manches gagnées</span>
+                    <div className="flex items-center gap-2">
+                      <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
+                      <span className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
+                      <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <span className="mb-1 block text-xs text-ink-muted">Caméra (lien VDO.Ninja)</span>
+                  <div className="flex gap-2">
+                    <input
+                      value={brouillonCam[i]}
+                      onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                      placeholder="https://vdo.ninja/?view=..."
+                      className={inputCls}
+                    />
+                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} className={btnPlein}>Charger</button>
+                    {p.camUrl && (
+                      <button
+                        onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
+                        className={btnVide}
+                      >
+                        Retirer
+                      </button>
+                    )}
+                  </div>
+                  <p className="mt-1 text-xs text-ink-muted">
+                    Le son est coupé d&apos;office. Laissez vide si vous posez la caméra vous-même dans OBS.
+                  </p>
+                  <label className="mt-2 flex items-center gap-2 text-sm">
+                    <input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} />
+                    Montrer le cadre caméra
+                  </label>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>2. Le match</h2>
+        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+          <label className="block">
+            <span className="mb-1 block text-xs text-ink-muted">Format</span>
+            <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
+              <option>BO1</option><option>BO3</option><option>BO5</option>
+            </select>
+          </label>
+          <label className="block">
+            <span className="mb-1 block text-xs text-ink-muted">Points pour gagner</span>
+            <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
+              <option value={8}>8</option><option value={9}>9</option>
+            </select>
+          </label>
+          <label className="block min-w-[180px] flex-1">
+            <span className="mb-1 block text-xs text-ink-muted">Ronde affichée</span>
+            <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="TOP 8, Finale…" className={inputCls} />
+          </label>
+          <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className={btnVide}>
+            Échanger les joueurs
+          </button>
+          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>Remettre les points à zéro</button>
+        </div>
+
+        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+          <label className="block">
+            <span className="mb-1 block text-xs text-ink-muted">Durée en minutes</span>
+            <input
+              type="number"
+              min={1}
+              max={180}
+              value={minutes}
+              onChange={(e) => setMinutes(Number(e.target.value))}
+              className="w-28 rounded-lg border border-hairline bg-surface px-3 py-2 tabular-nums"
+            />
+          </label>
+          <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString() } })} className={btnPlein}>
+            Lancer le chrono
+          </button>
+          <button onClick={() => update({ event: { endsAt: null } })} className={btnVide}>Arrêter</button>
+          <label className="flex items-center gap-2">
+            <input type="checkbox" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
+            Montrer le chrono
+          </label>
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>3. Montrer une carte</h2>
+        <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+          <p className="text-xs text-ink-muted">
+            Collez la liste de chaque joueur une fois en début de match. Ensuite, choisir une carte
+            dans le menu l&apos;affiche à l&apos;écran, à droite.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {([0, 1] as const).map((i) => (
+              <div key={i} className="space-y-2">
+                <textarea
+                  value={brouillonDeck[i]}
+                  onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                  placeholder={"Liste du joueur " + (i + 1)}
+                  rows={4}
+                  className={inputCls + " font-mono text-xs"}
+                />
+                <button
+                  onClick={() => {
+                    const noms = parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name);
+                    const l: [string[], string[]] = [[...listes[0]], [...listes[1]]];
+                    l[i] = [...new Set(noms)];
+                    update({ cards: { lists: l, shown: state.cards?.shown ?? null } } as never);
+                  }}
+                  className={btnPlein}
+                >
+                  Charger la liste ({listes[i].length})
+                </button>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <select
+              value={state.cards?.shown ?? ""}
+              onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
+              className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-2"
             >
-              Retirer
+              <option value="">Aucune carte à l&apos;écran</option>
+              {toutesCartes.map((c) => <option key={c} value={c}>{c}</option>)}
+            </select>
+            <button onClick={() => update({ cards: { lists: listes as [string[], string[]], shown: null } } as never)} className={btnVide}>
+              Masquer
             </button>
-          )}
-        </span>
-        <label className="flex items-center gap-2">Chrono
-          <select
-            value=""
-            onChange={(e) => {
-              const min = Number(e.target.value);
-              if (!min) return;
-              update({ event: { endsAt: new Date(Date.now() + min * 60000).toISOString() } });
-            }}
-            className="rounded-lg border border-hairline bg-surface px-2 py-1.5"
-          >
-            <option value="">Lancer…</option>
-            {[10, 20, 25, 30, 40, 50, 60, 75].map((m) => <option key={m} value={m}>{m} min</option>)}
-          </select>
-        </label>
-        <button onClick={() => update({ event: { endsAt: null } })} className="rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]">Arrêter le chrono</button>
-        <label className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            checked={state.event.timerVisible !== false}
-            onChange={(e) => update({ event: { timerVisible: e.target.checked } })}
-          />
-          Chrono à l&apos;écran
-        </label>
-        <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Swap joueurs</button>
-        <button onClick={() => update({ points: { a: 0, b: 0 } })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset game</button>
-        <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset match</button>
-      </div>
+          </div>
+        </div>
+      </section>
 
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>4. Le tournoi</h2>
+        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+          <label className="block min-w-[180px] flex-1">
+            <span className="mb-1 block text-xs text-ink-muted">Nom du tournoi</span>
+            <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder="Nom affiché" className={inputCls} />
+          </label>
+          <div className="min-w-[280px] flex-1">
+            <span className="mb-1 block text-xs text-ink-muted">Logo (lien d&apos;image)</span>
+            <div className="flex gap-2">
+              <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" className={inputCls} />
+              <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} className={btnPlein}>Charger</button>
+              {state.event.logoUrl && (
+                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnVide}>Retirer</button>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -286,7 +286,7 @@ function Manche({ gagnee }: { gagnee: boolean }) {
  * L'image reste montée le temps de disparaître : sans ça « Masquer » la faisait
  * sauter d'un coup, sans le fondu qu'on a partout ailleurs.
  */
-function CarteMontree({ nom }: { nom: string | null }) {
+function CarteMontree({ nom, compact = false }: { nom: string | null; compact?: boolean }) {
   const art = useBattlefieldArt(nom ? [nom] : []);
   const cible = nom ? art[nom] : null;
   const [affichee, setAffichee] = useState<string | null>(null);
@@ -306,7 +306,11 @@ function CarteMontree({ nom }: { nom: string | null }) {
   return (
     <div
       className="absolute z-20 overflow-hidden"
-      style={{ left: SLOT.cards.left, width: SLOT.cards.width, top: SLOT.cards.top, height: SLOT.cards.height }}
+      style={
+        compact
+          ? { right: 40, width: 260, top: 300, height: 364 }
+          : { left: SLOT.cards.left, width: SLOT.cards.width, top: SLOT.cards.top, height: SLOT.cards.height }
+      }
     >
       {affichee && (
         <img
@@ -344,10 +348,13 @@ function Timer({ endsAt }: { endsAt?: string | null }) {
   );
 }
 
-export function OverlayFull({ token }: { token: string }) {
+export function OverlayFull({ token, compact = false }: { token: string; compact?: boolean }) {
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
   const { event } = state;
+  // Version simple : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
+  // webcam et veut quand même le score, les Légendes et la carte à l'écran.
+  if (compact) return <OverlayCompact state={state} />;
   return (
     <div className={styles.root}>
       {/* Le cadre fourni, en fond : ses découpes sont transparentes, tout le reste
@@ -398,6 +405,56 @@ export function OverlayFull({ token }: { token: string }) {
         format={state.format}
         footer={<CarteMontree nom={state.cards?.shown ?? null} />}
       />
+    </div>
+  );
+}
+
+/**
+ * Habillage réduit : les points en haut, un bandeau par joueur avec son pseudo, sa
+ * Légende et son champion, et la carte montrée à droite. Rien d'autre, et un fond
+ * transparent : ça se pose sur n'importe quelle scène.
+ */
+function OverlayCompact({ state }: { state: OverlayStateData }) {
+  const [a, b] = state.players;
+  return (
+    <div className={styles.root}>
+      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
+      {[a, b].map((p, i) => (
+        <div
+          key={i}
+          className="absolute top-20 w-[330px] overflow-hidden rounded-xl bg-black/75 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+          style={{ [i === 0 ? "left" : "right"]: 40 } as React.CSSProperties}
+        >
+          {/* La banniere de la Legende, meme sans habillage : c'est elle qui donne
+              sa couleur au bandeau et qui identifie le joueur d'un coup d'oeil. */}
+          {p.legendName && getBannerUrl(p.legendName) && (
+            <div className="relative h-[104px]">
+              <img src={getBannerUrl(p.legendName)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
+              <div className="absolute inset-0 bg-black/25" />
+              <div className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-black/85 to-transparent" />
+            </div>
+          )}
+          <div className="p-3 pt-2">
+          <FitText chars={15} className="text-2xl font-bold uppercase tracking-wide text-white">
+            {p.name || "—"}
+          </FitText>
+          <div className="mt-1 border-t border-white/15 pt-1">
+            <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white/95">
+              {p.legendName || "Légende"}
+            </FitText>
+            <FitText chars={32} className="text-sm leading-tight text-white/70">
+              {p.championName || "Champion"}
+            </FitText>
+          </div>
+          {p.battlefields[0] && (
+            <FitText chars={30} className="mt-1 text-xs uppercase tracking-wide text-white/60">
+              {p.battlefields[0]}
+            </FitText>
+          )}
+          </div>
+        </div>
+      ))}
+      <CarteMontree nom={state.cards?.shown ?? null} compact />
     </div>
   );
 }
