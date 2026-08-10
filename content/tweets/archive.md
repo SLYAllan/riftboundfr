@@ -30,5 +30,5 @@ publications d'avant cette date ne sont pas tracées ici.
 2026-08-09 | proposé | Actu | Kennen 2e à Wuhan une semaine après la sortie de Vendetta | /cartes?set=vendetta
 2026-08-09 | proposé | Actu | Réserve de 8 à 10 cartes, confirmé sur les 192 listes des premiers tournois Vendetta | /guides/deckbuilding
 2026-08-10 | posté | Communauté | Laquelle des quatre listes Vendetta vous montez, les quatre decks en images | /deckbuilder
-2026-08-10 | proposé | Site | Le deck de Master Yi qui a gagné Hartford ne contient aucune carte de Proving Grounds | /articles/proving-grounds-quel-deck-monter
+2026-08-10 | proposé | Site | Master Yi, une des quatre Légendes de Proving Grounds, a gagné le dernier RQ et coûte le moins cher à monter | /articles/proving-grounds-quel-deck-monter
 2026-08-10 | proposé | Actu | Ottawa 594 joueurs, premier grand tournoi Vendetta, Rengar Pridestalker vainqueur 12-0-2 | /cartes?set=vendetta
