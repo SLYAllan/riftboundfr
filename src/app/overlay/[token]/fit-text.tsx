@@ -23,6 +23,9 @@ export function FitText({ children, className = "" }: { children: string; classN
       // On mesure à taille pleine, sinon on rétrécirait à partir d'une valeur déjà réduite.
       t.style.transform = "scale(1)";
       const dispo = b.clientWidth;
+      // `w-max` est indispensable : sans lui la boîte d'un inline-block est plafonnée
+      // par son conteneur, le texte déborde à l'intérieur, et la mesure rend la
+      // largeur du conteneur. Le rapport valait donc 1 et rien ne se réduisait.
       const large = t.getBoundingClientRect().width;
       setEchelle(large > dispo && large > 0 ? Math.max(0.4, dispo / large) : 1);
     };
@@ -43,7 +46,7 @@ export function FitText({ children, className = "" }: { children: string; classN
       <span
         key={children}
         ref={texte}
-        className={`inline-block whitespace-nowrap ${styles.apparait}`}
+        className={`inline-block w-max whitespace-nowrap ${styles.apparait}`}
         style={{ transform: `scale(${echelle})`, transformOrigin: "center" }}
       >
         {children}

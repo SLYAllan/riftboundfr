@@ -48,6 +48,9 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     update({ players: i === 0 ? [p, {}] : [{}, p] } as never);
   }
 
+  const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
+  const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
+  const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   const inputCls = "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm focus:border-arcane focus:outline-none";
   const btnStep = "flex h-7 w-7 items-center justify-center rounded-lg border border-hairline hover:bg-surface-raised";
 
@@ -96,13 +99,29 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
               <div>
                 <label className="mb-1 block text-xs text-ink-muted">Lien caméra VDO.Ninja (https://vdo.ninja/?view=…)</label>
-                <input
-                  value={p.camUrl ?? ""}
-                  onChange={(e) => setPlayer(i, { camUrl: e.target.value })}
-                  placeholder="https://vdo.ninja/?view=..."
-                  className={inputCls}
-                />
-                <p className="mt-1 text-xs text-ink-muted">Vide, ou autre chose que vdo.ninja en https : le cadre reste transparent, la caméra se pose dessous dans OBS.</p>
+                <div className="flex gap-2">
+                  <input
+                    value={brouillonCam[i]}
+                    onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                    placeholder="https://vdo.ninja/?view=..."
+                    className={inputCls}
+                  />
+                  <button
+                    onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })}
+                    className="shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
+                  >
+                    Charger
+                  </button>
+                  {p.camUrl && (
+                    <button
+                      onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
+                      className="shrink-0 rounded-lg border border-hairline px-3 py-2 text-sm transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
+                    >
+                      Retirer
+                    </button>
+                  )}
+                </div>
+                <p className="mt-1 text-xs text-ink-muted">Le son est coupé d&apos;office. Vide, ou autre chose que vdo.ninja en https : le cadre reste transparent, la caméra se pose dessous dans OBS.</p>
               </div>
 
               <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} /> Cam visible</label>
@@ -110,17 +129,17 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               <div className="flex items-center justify-between gap-2 rounded-lg bg-surface-raised/50 px-3 py-2 text-sm">
                 <span className="text-ink-secondary">Points</span>
                 <div className="flex items-center gap-2">
-                  <button onClick={() => update({ points: { [key]: pts - 1 } } as never)} className={btnStep}>−</button>
-                  <span className="w-6 text-center font-bold">{pts}</span>
-                  <button onClick={() => update({ points: { [key]: pts + 1 } } as never)} className={btnStep}>+</button>
+                  <button onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
+                  <span className="w-6 text-center font-bold tabular-nums">{pts}</span>
+                  <button onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
                 </div>
               </div>
               <div className="flex items-center justify-between gap-2 rounded-lg bg-surface-raised/50 px-3 py-2 text-sm">
                 <span className="text-ink-secondary">Manches gagnées</span>
                 <div className="flex items-center gap-2">
-                  <button onClick={() => setPlayer(i, { gamesWon: Math.max(0, p.gamesWon - 1) })} className={btnStep}>−</button>
-                  <span className="w-6 text-center font-bold">{p.gamesWon}</span>
-                  <button onClick={() => setPlayer(i, { gamesWon: p.gamesWon + 1 })} className={btnStep}>+</button>
+                  <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
+                  <span className="w-6 text-center font-bold tabular-nums">{p.gamesWon}</span>
+                  <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
                 </div>
               </div>
             </div>
@@ -162,17 +181,6 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className="rounded-lg border border-hairline px-3 py-1.5 hover:bg-surface-raised">Reset match</button>
       </div>
 
-      <div>
-        <h2 className="mb-1 font-semibold">Aperçu</h2>
-        <p className="mb-2 text-xs text-ink-muted">Aperçu à l&apos;échelle — l&apos;overlay réel fait 1920×1080 et son fond est transparent dans OBS (le damier ci-dessous simule la transparence).</p>
-        <div className="relative overflow-hidden rounded-lg border border-hairline" style={{ width: 640, height: 360, background: "repeating-conic-gradient(#1f1f1f 0% 25%, #2a2a2a 0% 50%) 50% / 28px 28px" }}>
-          <iframe
-            src={`/overlay/${token}`}
-            title="Aperçu overlay"
-            style={{ width: 1920, height: 1080, border: 0, transform: "scale(0.33333)", transformOrigin: "top left", pointerEvents: "none" }}
-          />
-        </div>
-      </div>
     </div>
   );
 }

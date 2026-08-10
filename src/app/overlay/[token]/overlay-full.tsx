@@ -73,6 +73,9 @@ function camSrc(url: string | undefined): string | null {
     const u = new URL(url);
     if (u.protocol !== "https:") return null;
     if (!/(^|\.)vdo\.ninja$/i.test(u.hostname)) return null;
+    // Le son doit rester coupé : la voix passe déjà par la table de mixage, sinon
+    // c'est du double son et de l'écho en direct.
+    if (!u.searchParams.has("muted")) u.searchParams.set("muted", "1");
     return u.toString();
   } catch {
     return null;
@@ -192,7 +195,7 @@ function Side({
               src={cam}
               sandbox="allow-scripts allow-same-origin"
               title={`Caméra de ${p.name || "joueur"}`}
-              allow="autoplay; camera; microphone; fullscreen"
+              allow="autoplay; fullscreen"
               className="h-full w-full border-0"
             />
           </div>
