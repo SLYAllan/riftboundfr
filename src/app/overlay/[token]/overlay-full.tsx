@@ -197,13 +197,22 @@ function Side({
                 fenêtre du dessus. `allow-scripts` et `allow-same-origin` sont le
                 minimum pour que WebRTC tourne. Le témoin ci-dessous dit si le
                 cadre a fini de charger, pour ne plus avoir à deviner. */}
+            {/* Une webcam est en 16:9, le cadre est en portrait : à pleine largeur
+                l'image ne remplirait qu'un tiers de la hauteur. On agrandit donc le
+                flux jusqu'à couvrir le cadre et on garde le centre, les côtés
+                partent hors champ — c'est le buste qu'on veut voir. */}
             <iframe
               src={cam}
               title={`Caméra de ${p.name || "joueur"}`}
               allow="autoplay; fullscreen"
               sandbox="allow-scripts allow-same-origin"
               onLoad={() => setCamCharge(true)}
-              className="h-full w-full border-0"
+              className="absolute left-1/2 top-0 border-0"
+              style={{
+                width: Math.round((SLOT.cam.height * 16) / 9),
+                height: SLOT.cam.height,
+                transform: "translateX(-50%)",
+              }}
             />
             {!camCharge && (
               <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
