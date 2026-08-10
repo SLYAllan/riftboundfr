@@ -29,4 +29,5 @@ publications d'avant cette date ne sont pas tracées ici.
 2026-08-09 | proposé | Meta | Trois City Challenges le 8 août, 370 joueurs : trois vainqueurs, trois paires de domaines, aucun deck dominant | /cartes?set=vendetta
 2026-08-09 | proposé | Actu | Kennen 2e à Wuhan une semaine après la sortie de Vendetta | /cartes?set=vendetta
 2026-08-09 | proposé | Actu | Réserve de 8 à 10 cartes, confirmé sur les 192 listes des premiers tournois Vendetta | /guides/deckbuilding
-2026-08-09 | proposé | Communauté | Laquelle des quatre listes Vendetta vous montez | /deckbuilder
+2026-08-10 | posté | Communauté | Laquelle des quatre listes Vendetta vous montez, les quatre decks en images | /deckbuilder
+2026-08-10 | proposé | Site | Le deck de Master Yi qui a gagné Hartford ne contient aucune carte de Proving Grounds | /articles/proving-grounds-quel-deck-monter

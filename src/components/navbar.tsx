@@ -114,7 +114,7 @@ export function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="text-ink-secondary md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary md:hidden"
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={mobileOpen}
           // Pas d'aria-controls : le panneau n'existe dans le DOM que lorsqu'il est

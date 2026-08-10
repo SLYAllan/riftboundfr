@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Upload, Trash2,
-  X, Plus, Share2,
+  X, Plus, Share2, ChevronUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_LABELS_FR } from "@/lib/domains";
@@ -90,6 +90,8 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   const [showSavedList, setShowSavedList] = useState(false);
   const [showImport, setShowImport] = useState(false);
   const [showExport, setShowExport] = useState(false);
+  // Sous sm le panneau de deck est masqué : ce tiroir est le seul moyen de voir sa liste.
+  const [showDeckSheet, setShowDeckSheet] = useState(false);
   const isCompetitive = true;
   const initialized = useRef(false);
 
@@ -576,11 +578,12 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
 
   const isEmpty = !deck.legend && deck.main.length === 0 && deck.rune.length === 0;
 
-  const tabs: { key: BuilderTab; label: string; done: boolean }[] = [
-    { key: "legend", label: "Légende", done: !!deck.legend },
-    { key: "main", label: `Deck/Réserve (${mainTotal + sideTotal})`, done: mainTotal >= 40 },
-    { key: "rune", label: `Runes (${runeTotal}/12)`, done: runeTotal === 12 },
-    { key: "battlefield", label: `Champs de bataille (${bfTotal}/3)`, done: bfTotal === 3 },
+  // `short` évite que les onglets passent sur deux lignes sur un téléphone.
+  const tabs: { key: BuilderTab; label: string; short: string; done: boolean }[] = [
+    { key: "legend", label: "Légende", short: "Légende", done: !!deck.legend },
+    { key: "main", label: `Deck/Réserve (${mainTotal + sideTotal})`, short: `Deck (${mainTotal + sideTotal})`, done: mainTotal >= 40 },
+    { key: "rune", label: `Runes (${runeTotal}/12)`, short: `Runes (${runeTotal}/12)`, done: runeTotal === 12 },
+    { key: "battlefield", label: `Champs de bataille (${bfTotal}/3)`, short: `Champs (${bfTotal}/3)`, done: bfTotal === 3 },
   ];
 
   return (
@@ -588,15 +591,15 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       {/* Header */}
       <div className="shrink-0 border-b border-hairline">
         <div className="flex items-center gap-2 px-4 py-3 flex-wrap">
-          <h1 className="text-lg font-bold shrink-0" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            Deckbuilder Riftbound
+          <h1 className="text-sm sm:text-lg font-bold shrink-0" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            Deckbuilder<span className="hidden sm:inline"> Riftbound</span>
           </h1>
           <input
             type="text"
             value={deckTitle}
             onChange={(e) => setDeckTitle(e.target.value)}
             aria-label="Nom du deck"
-            className="h-8 w-48 rounded-lg border border-hairline-strong bg-surface px-3 text-sm font-semibold focus:border-arcane"
+            className="h-9 min-w-0 flex-1 sm:h-8 sm:w-48 sm:flex-none rounded-lg border border-hairline-strong bg-surface px-3 text-base sm:text-sm font-semibold focus:border-arcane"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           />
           <div className="hidden sm:flex items-center gap-1">
@@ -644,7 +647,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
               )}
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              {tab.done && tab.key !== activeTab && "✓ "}{tab.label}
+              {tab.done && tab.key !== activeTab && "✓ "}
+              <span className="sm:hidden">{tab.short}</span>
+              <span className="hidden sm:inline">{tab.label}</span>
               {activeTab === tab.key && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-arcane" />
               )}
@@ -733,9 +738,54 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
         </div>
       </div>
 
+      {/* Barre de deck mobile : le panneau de droite est masqué sous sm, sans elle on
+          construit un deck sans jamais voir sa liste. */}
+      <button
+        onClick={() => setShowDeckSheet(true)}
+        className="shrink-0 sm:hidden flex items-center justify-between gap-2 border-t border-hairline bg-surface px-4 py-3 text-left"
+      >
+        <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Mon deck</span>
+        <span className="flex items-center gap-1.5 text-xs tabular-nums">
+          <span className={mainTotal >= 40 ? "text-success" : "text-ink-secondary"}>{mainTotal}/40</span>
+          <span className="text-ink-muted">&middot;</span>
+          <span className={runeTotal === 12 ? "text-success" : "text-ink-secondary"}>{runeTotal}/12</span>
+          <span className="text-ink-muted">&middot;</span>
+          <span className={bfTotal === 3 ? "text-success" : "text-ink-secondary"}>{bfTotal}/3</span>
+          {sideTotal > 0 && <><span className="text-ink-muted">&middot;</span><span className="text-ink-secondary">{sideTotal} rés.</span></>}
+          <ChevronUp size={14} className="text-ink-muted" />
+        </span>
+      </button>
+
+      {/* Tiroir de deck mobile */}
+      {showDeckSheet && (
+        <ModalShell onClose={() => setShowDeckSheet(false)} labelledBy="mobile-deck-title" className="w-full max-w-md h-[85dvh] flex flex-col">
+          <div className="flex shrink-0 items-center justify-between border-b border-hairline p-3">
+            <h2 id="mobile-deck-title" className="text-base font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Mon deck</h2>
+            <button onClick={() => setShowDeckSheet(false)} aria-label="Fermer" className="p-2 text-ink-muted hover:text-ink"><X size={18} /></button>
+          </div>
+          <div className="flex-1 overflow-hidden">
+            <DeckPanelV2
+              deck={deck}
+              onRemoveCard={removeCard}
+              onUpdateQuantity={updateQuantity}
+              onMoveCard={moveCard}
+              onApplyRunes={applyRuneSuggestions}
+              onSectionClick={(section) => { handleSectionClick(section); setShowDeckSheet(false); }}
+              legendDomains={legendDomains}
+              isCompetitive={isCompetitive}
+            />
+          </div>
+          {!isEmpty && (
+            <div className="shrink-0 border-t border-hairline p-2">
+              <DeckCoveragePanel items={coverageItems} />
+            </div>
+          )}
+        </ModalShell>
+      )}
+
       {/* Saved decks modal */}
       {showSavedList && (
-        <SavedDecksModalShell onClose={() => setShowSavedList(false)}>
+        <ModalShell onClose={() => setShowSavedList(false)} labelledBy="saved-decks-title" className="w-full max-w-md max-h-[70vh]">
             <div className="flex items-center justify-between border-b border-hairline p-4">
               <h2 id="saved-decks-title" className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Decks sauvegardés</h2>
               <button onClick={() => setShowSavedList(false)} aria-label="Fermer" className="text-ink-muted hover:text-ink"><X size={18} /></button>
@@ -765,7 +815,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
                 <Plus size={14} /> Nouveau deck
               </button>
             </div>
-        </SavedDecksModalShell>
+        </ModalShell>
       )}
 
       {/* Import modal */}
@@ -797,9 +847,11 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   );
 }
 
-// Enveloppe la modale des decks sauvegardés pour que useDialogA11y (focus, Escape,
-// piège de tabulation) se monte avec elle et pas avec toute la page.
-function SavedDecksModalShell({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
+// Enveloppe une modale pour que useDialogA11y (focus, Escape, piège de tabulation) se
+// monte avec elle et pas avec toute la page.
+function ModalShell({ onClose, labelledBy, className, children }: {
+  onClose: () => void; labelledBy: string; className: string; children: React.ReactNode;
+}) {
   const dialogRef = useDialogA11y(onClose);
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
@@ -807,9 +859,9 @@ function SavedDecksModalShell({ onClose, children }: { onClose: () => void; chil
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="saved-decks-title"
+        aria-labelledby={labelledBy}
         tabIndex={-1}
-        className="w-full max-w-md max-h-[70vh] rounded-card border border-hairline bg-surface overflow-hidden"
+        className={cn("rounded-card border border-hairline bg-surface overflow-hidden", className)}
         onClick={(e) => e.stopPropagation()}
       >
         {children}

@@ -197,7 +197,8 @@ export function DeckCompare({ initialA, initialB }: Props) {
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
         </div>
-        <button onClick={handleCompare} className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane-light transition-colors">
+        {/* order-last : en une colonne le bouton tombait entre les deux champs */}
+        <button onClick={handleCompare} className="order-last sm:order-none rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane-light transition-colors">
           <ArrowLeftRight size={16} className="inline mr-1" />
           Comparer
         </button>
