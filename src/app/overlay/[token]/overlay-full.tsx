@@ -102,8 +102,9 @@ function Side({
 }) {
   const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
   const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
-  const bf = (p.battlefields.length ? p.battlefields : ["", "", ""]).slice(0, 3);
-  const art = useBattlefieldArt(bf);
+  // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
+  const bf = p.battlefields[0] ?? "";
+  const art = useBattlefieldArt(bf ? [bf] : []);
   return (
     <div
       className="absolute top-0 flex h-full flex-col gap-3 py-8"
@@ -130,41 +131,41 @@ function Side({
       {/* Caméra : cadre seul, la source vidéo est posée dessous dans OBS */}
       {p.camEnabled && <Slot label="Caméra" className="flex-1" />}
 
-      {/* Champs de bataille : l'illustration de la carte, le nom par-dessus */}
-      <div className="space-y-1.5">
-        {bf.map((b, i) => (
-          <div
-            key={i}
-            className="relative h-11 overflow-hidden rounded-md bg-black/70 shadow-[0_1px_6px_rgba(0,0,0,0.4)] outline outline-1 outline-white/10"
-          >
-            {art[b] && (
-              <img src={art[b]!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
-            )}
-            <div className="absolute inset-0 bg-black/55" />
-            <div className="relative flex h-full items-center justify-center truncate px-2 text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-              {b || "—"}
-            </div>
+      {/* Le champ de bataille en jeu, son illustration en fond, et les manches
+          gagnées posées dessus comme sur la retransmission officielle. */}
+      <div className="relative overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
+        {art[bf] && <img src={art[bf]!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" />}
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative px-2 pb-2 pt-2.5">
+          <div className="truncate text-center text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+            {bf || "Champ de bataille"}
           </div>
-        ))}
-      </div>
-
-      {/* Manches gagnées */}
-      {rounds > 0 && (
-        <div className="flex justify-center gap-2">
-          {Array.from({ length: rounds }).map((_, i) => (
-            <span
-              key={i}
-              className={`h-5 w-5 rounded-full border-2 transition-colors duration-150 ${
-                i < p.gamesWon ? "border-gold bg-gold" : "border-white/40 bg-black/40"
-              }`}
-            />
-          ))}
+          {rounds > 0 && (
+            <div className="mt-2 flex justify-center gap-2.5">
+              {Array.from({ length: rounds }).map((_, i) => (
+                <Manche key={i} gagnee={i < p.gamesWon} />
+              ))}
+            </div>
+          )}
         </div>
-      )}
+      </div>
 
       {/* Bas de colonne : chrono et logo à gauche, cartes à droite */}
       {footer}
     </div>
+  );
+}
+
+/** Manche du Bo3 : cercle vide, et le logo au centre dès qu'elle est gagnée. */
+function Manche({ gagnee }: { gagnee: boolean }) {
+  return (
+    <span
+      className={`flex h-7 w-7 items-center justify-center rounded-full border-2 transition-colors duration-150 ${
+        gagnee ? "border-gold bg-gold/20" : "border-white/50 bg-black/30"
+      }`}
+    >
+      {gagnee && <img src="/icons/RainbowRune.webp" alt="" className="h-4 w-4 object-contain" />}
+    </span>
   );
 }
 
