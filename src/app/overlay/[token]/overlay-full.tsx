@@ -51,6 +51,24 @@ function useBattlefieldArt(names: string[]): Record<string, string | null> {
   return art;
 }
 
+/**
+ * Le lien de caméra vient de l'état, que plusieurs personnes peuvent remplir, et la
+ * page d'overlay est ouverte par d'autres. Une URL `javascript:` dans un iframe
+ * s'exécuterait sur le domaine du site : on n'accepte donc que du https chez
+ * VDO.Ninja, et rien d'autre ne s'affiche.
+ */
+function camSrc(url: string | undefined): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    if (u.protocol !== "https:") return null;
+    if (!/(^|\.)vdo\.ninja$/i.test(u.hostname)) return null;
+    return u.toString();
+  } catch {
+    return null;
+  }
+}
+
 function Points({ max, a, b }: { max: number; a: number; b: number }) {
   const cells: { side: "a" | "b"; v: number }[] = [];
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
@@ -112,6 +130,7 @@ function Side({
   // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
   const bf = p.battlefields[0] ?? "";
   const art = useBattlefieldArt(bf ? [bf] : []);
+  const cam = camSrc(p.camUrl);
   return (
     <div
       className="absolute top-0 flex h-full flex-col gap-3 py-8"
@@ -141,13 +160,14 @@ function Side({
       {/* Caméra : le lien VDO.Ninja s'affiche dans le cadre. Sans lien, le cadre
           reste vide et transparent, la source se pose dessous dans OBS. */}
       {p.camEnabled &&
-        (p.camUrl ? (
+        (cam ? (
           <div
             style={{ height: CAM_H }}
             className="shrink-0 overflow-hidden rounded-lg border border-white/30 shadow-[inset_0_0_0_3px_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.12)]"
           >
             <iframe
-              src={p.camUrl}
+              src={cam}
+              sandbox="allow-scripts allow-same-origin"
               title={`Caméra de ${p.name || "joueur"}`}
               allow="autoplay; camera; microphone; fullscreen"
               className="h-full w-full border-0"
