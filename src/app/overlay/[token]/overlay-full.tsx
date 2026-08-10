@@ -11,6 +11,42 @@ import styles from "./overlay.module.css";
 const COL = 300;
 const PAD = 34;
 
+// Illustrations des champs de bataille : l'état ne transporte que des noms. On les
+// résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
+// résultat pour toute la durée du direct — un tournoi ne change pas d'illustration.
+const bfArt = new Map<string, string | null>();
+
+function useBattlefieldArt(names: string[]): Record<string, string | null> {
+  const [art, setArt] = useState<Record<string, string | null>>({});
+  const key = names.join("|");
+  useEffect(() => {
+    let annule = false;
+    const manquants = names.filter((n) => n && !bfArt.has(n));
+    if (manquants.length === 0) {
+      setArt(Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null])));
+      return;
+    }
+    Promise.all(
+      manquants.map(async (n) => {
+        try {
+          const r = await fetch(`/api/cards/preview?name=${encodeURIComponent(n)}`);
+          const c = r.ok ? await r.json() : null;
+          bfArt.set(n, c?.imageUrl ?? null);
+        } catch {
+          bfArt.set(n, null);
+        }
+      }),
+    ).then(() => {
+      if (!annule) setArt(Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null])));
+    });
+    return () => {
+      annule = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+  return art;
+}
+
 function Points({ max, a, b }: { max: number; a: number; b: number }) {
   const cells: { side: "a" | "b"; v: number }[] = [];
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
@@ -37,13 +73,18 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   );
 }
 
-/** Cadre vide : la maquette réserve la place, le contenu vient d'OBS ou plus tard. */
+/**
+ * Cadre vide : la maquette réserve la place, le contenu vient d'OBS ou plus tard.
+ * Aucun fond, pas même un noir à 10 % : la caméra se pose dessous dans OBS et le
+ * moindre voile la grisait. Il ne reste que le trait, plus une seconde ligne à
+ * l'intérieur pour le liseré des cadres de Riftbound.
+ */
 function Slot({ label, className = "", style }: { label: string; className?: string; style?: React.CSSProperties }) {
   return (
     <div
       aria-label={label}
       style={style}
-      className={`rounded-lg border border-white/20 bg-black/10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)] ${className}`}
+      className={`rounded-lg border border-white/30 shadow-[inset_0_0_0_3px_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.12)] ${className}`}
     />
   );
 }
@@ -61,6 +102,8 @@ function Side({
 }) {
   const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
   const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
+  const bf = (p.battlefields.length ? p.battlefields : ["", "", ""]).slice(0, 3);
+  const art = useBattlefieldArt(bf);
   return (
     <div
       className="absolute top-0 flex h-full flex-col gap-3 py-8"
@@ -87,14 +130,20 @@ function Side({
       {/* Caméra : cadre seul, la source vidéo est posée dessous dans OBS */}
       {p.camEnabled && <Slot label="Caméra" className="flex-1" />}
 
-      {/* Champs de bataille */}
+      {/* Champs de bataille : l'illustration de la carte, le nom par-dessus */}
       <div className="space-y-1.5">
-        {(p.battlefields.length ? p.battlefields : ["", "", ""]).slice(0, 3).map((b, i) => (
+        {bf.map((b, i) => (
           <div
             key={i}
-            className="truncate rounded-md bg-black/70 px-2.5 py-1.5 text-center text-sm font-semibold text-white/90 shadow-[0_1px_6px_rgba(0,0,0,0.4)]"
+            className="relative h-11 overflow-hidden rounded-md bg-black/70 shadow-[0_1px_6px_rgba(0,0,0,0.4)] outline outline-1 outline-white/10"
           >
-            {b || "—"}
+            {art[b] && (
+              <img src={art[b]!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
+            )}
+            <div className="absolute inset-0 bg-black/55" />
+            <div className="relative flex h-full items-center justify-center truncate px-2 text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+              {b || "—"}
+            </div>
           </div>
         ))}
       </div>
