@@ -1,7 +1,8 @@
-Deck Rengar, Pridestalker en Furie et Corps, vainqueur du Riftbound Showdown
-Ottawa du 8 août 2026 (594 joueurs). Deck principal de 40 cartes avec Rengar,
-Trophy Hunter comme champion élu, 12 runes (8 Corps, 4 Furie), trois champs de
-bataille (Emperor's Dais, Seat of Power, Star Spring) et 10 cartes en réserve.
+Deck Rengar, Pridestalker en Furie et Corps, joué par Prismaticismism et
+vainqueur du Riftbound Showdown Ottawa du 8 août 2026 (594 joueurs, 12-0-2, format
+Vendetta). Deck principal de 40 cartes avec Rengar, Trophy Hunter comme champion
+élu, 12 runes (8 Corps, 4 Furie), trois champs de bataille (Emperor's Dais, Seat
+of Power, Star Spring) et 10 cartes en réserve.
 
 Carré 2000x2000, produit par la route d'image de deck du site.
 
@@ -9,10 +10,14 @@ Pour le régénérer (serveur dev lancé, la liste dans un fichier texte) :
 
     curl -s -G "http://localhost:3000/api/decklist-image" \
       --data-urlencode "code@rengar.txt" \
-      --data-urlencode "title=1er, Riftbound Showdown Ottawa" \
+      --data-urlencode "player=Prismaticismism" \
+      --data-urlencode "tournament=Riftbound Showdown Ottawa" \
+      --data-urlencode "place=1er" \
+      --data-urlencode "record=12-0-2" \
       -o content/tweets/images/2026-08-10-rengar-pridestalker-ottawa.png
 
-Source de la liste : fournie par Allan le 10 août 2026. La page riftdecks du
-deck (deck-rengar-pridestalker-225531) n'affiche pas la liste, elle indique
-« Missing / Not available » pour le champion, les runes et les champs de
-bataille : elle ne peut pas servir de source.
+Sources : liste fournie par Allan le 10 août 2026 ; joueur, place, record et
+tournoi relevés sur la page du tournoi riftdecks. La page du deck lui-même
+n'affiche pas la liste (« Missing / Not available » pour le champion, les runes
+et les champs de bataille), elle ne peut donc pas servir de source pour les
+cartes.

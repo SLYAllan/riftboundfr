@@ -571,14 +571,21 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const { legendName, playerName, tournamentContext, placement, record, cards, domains } =
-    deckData;
+  const { legendName, cards, domains } = deckData;
   // Le code de deck ne transporte que des cartes : le titre saisi dans le deckbuilder
   // s'y perdait et l'image retombait sur le nom de la Légende. On l'accepte en
   // paramètre plutôt que de changer le format du code, qui sert aussi aux liens de
   // partage. Borné à 80 caractères, la mise en page en tronque déjà l'affichage.
   const titleParam = searchParams.get("title")?.trim().slice(0, 80);
   const title = titleParam || deckData.title;
+  // Même raison pour le joueur et le tournoi : un deck rendu depuis un code n'a ni
+  // l'un ni l'autre, et un visuel de deck de tournoi doit créditer son joueur. Les
+  // decks de la base gardent leurs valeurs si le paramètre n'est pas fourni.
+  const param = (k: string, max: number) => searchParams.get(k)?.trim().slice(0, max) || null;
+  const playerName = param("player", 60) ?? deckData.playerName;
+  const tournamentContext = param("tournament", 80) ?? deckData.tournamentContext;
+  const placement = param("place", 20) ?? deckData.placement;
+  const record = param("record", 20) ?? deckData.record;
 
   // Organize cards by section
   const legendCards = cards.filter(
