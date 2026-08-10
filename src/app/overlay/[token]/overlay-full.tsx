@@ -308,11 +308,12 @@ export function OverlayFull({ token }: { token: string }) {
         format={state.format}
         footer={
           <>
+            {/* z-20 : sans lui le logo passait sous le cadre du fond, donc invisible. */}
             {event.logoUrl && (
               <img
                 src={event.logoUrl}
                 alt=""
-                className="absolute object-contain"
+                className="absolute z-20 object-contain"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: 700, height: 220 }}
               />
             )}
