@@ -305,7 +305,8 @@ export default async function ReglesPage({
           <div className="min-w-0 flex-1">
             <p className="text-sm text-ink-muted">
               {allRules.length.toLocaleString("fr-FR")} règles, dans l&apos;ordre du document
-              officiel. Le numéro à gauche est celui qu&apos;un arbitre vous demandera.
+              officiel. Le numéro à gauche est celui qu&apos;un arbitre vous demandera, et les
+              termes du glossaire sont cliquables.
             </p>
             {chapters.map((c) => (
               <section key={c.title} id={c.anchor} className="mt-8 scroll-mt-24">
@@ -318,12 +319,19 @@ export default async function ReglesPage({
                 {/* Les styles sont portés par la liste, pas répétés sur deux mille
                     lignes : la page pesait un tiers de plus rien qu'en attributs. */}
                 <dl className="mt-3 grid grid-cols-[4.5rem_1fr] gap-x-3 gap-y-3 text-sm leading-relaxed [&>dd]:text-pretty [&>dd]:text-ink-secondary [&>dt]:font-mono [&>dt]:text-xs [&>dt]:tabular-nums [&>dt]:text-ink-muted">
-                  {c.rules.map((r) => (
-                    <Fragment key={r.id}>
-                      <dt>{r.id}</dt>
-                      <dd>{r.text}</dd>
-                    </Fragment>
-                  ))}
+                  {(() => {
+                    // Un compteur par chapitre : un terme est relié à sa première
+                    // apparition, pas aux cent suivantes.
+                    const seen = new Set<string>();
+                    return c.rules.map((r) => (
+                      <Fragment key={r.id}>
+                        <dt>{r.id}</dt>
+                        <dd>
+                          <RuleText text={r.text} seen={seen} />
+                        </dd>
+                      </Fragment>
+                    ));
+                  })()}
                 </dl>
               </section>
             ))}
