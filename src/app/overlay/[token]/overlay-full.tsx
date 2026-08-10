@@ -160,7 +160,7 @@ function Side({
         className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
-        <FitText className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+        <FitText chars={13} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
           {p.name || "—"}
         </FitText>
       </div>
@@ -175,10 +175,10 @@ function Side({
         )}
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
-          <FitText className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+          <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
           </FitText>
-          <FitText className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+          <FitText chars={34} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
             {p.championName || "Champion"}
           </FitText>
         </div>
@@ -194,7 +194,6 @@ function Side({
           >
             <iframe
               src={cam}
-              sandbox="allow-scripts allow-same-origin"
               title={`Caméra de ${p.name || "joueur"}`}
               allow="autoplay; fullscreen"
               className="h-full w-full border-0"
@@ -223,7 +222,7 @@ function Side({
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
         <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
-          <FitText className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+          <FitText chars={24} className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
           </FitText>
           {rounds > 0 && (
@@ -312,7 +311,7 @@ export function OverlayFull({ token }: { token: string }) {
                 className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
-                <FitText className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                <FitText chars={14} className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                   {event.round}
                 </FitText>
               </div>
