@@ -4,6 +4,7 @@ import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import type { OverlayPlayer, OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
+import { FitText } from "./fit-text";
 
 // Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
 // transparent pour la zone de jeu. Tout est en pixels, la page fait 1920x1080 et
@@ -155,9 +156,9 @@ function Side({
         className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
-        <span className="min-w-0 truncate text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+        <FitText className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
           {p.name || "—"}
-        </span>
+        </FitText>
       </div>
 
       {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus */}
@@ -170,12 +171,12 @@ function Side({
         )}
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
-          <div className="truncate text-center text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+          <FitText className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
-          </div>
-          <div className="truncate text-center text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+          </FitText>
+          <FitText className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
             {p.championName || "Champion"}
-          </div>
+          </FitText>
         </div>
       </div>
 
@@ -218,9 +219,9 @@ function Side({
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
         <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
-          <div className="truncate text-center text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+          <FitText className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {bf || "Champ de bataille"}
-          </div>
+          </FitText>
           {rounds > 0 && (
             <div className="mt-2 flex justify-center gap-2.5">
               {Array.from({ length: rounds }).map((_, i) => (
@@ -266,7 +267,7 @@ function Timer({ endsAt }: { endsAt?: string | null }) {
   return (
     <div className="flex h-full items-center justify-center overflow-hidden">
       <div
-        className="truncate text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
+        className="text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
         style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
       >
         {mm}:{ss}
@@ -306,9 +307,9 @@ export function OverlayFull({ token }: { token: string }) {
                 className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
-                <span className="min-w-0 truncate text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                <FitText className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                   {event.round}
-                </span>
+                </FitText>
               </div>
             )}
             <div

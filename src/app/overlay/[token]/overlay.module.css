@@ -37,3 +37,14 @@
 :global([data-chrome="cookies"]) {
   display: none !important;
 }
+
+/* Fondu joué à chaque changement de valeur : le texte est remonté avec une nouvelle
+   clé React, l'animation repart donc toute seule. Court et sans mouvement, sinon
+   ça danse à chaque point marqué. */
+.apparait {
+  animation: apparait 260ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+@keyframes apparait {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
