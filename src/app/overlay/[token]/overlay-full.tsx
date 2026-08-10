@@ -96,8 +96,9 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
         const seuil = c.v === max;
         return (
           <span
-            key={i}
+            key={`${i}-${actif}`}
             className={[
+              styles.apparait,
               "flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold tabular-nums ring-1 ring-gold/80",
               i === max ? "ml-3" : "",
               actif ? "bg-gold text-[#1b1408]" : "bg-[#0b1220]/85 text-white",
@@ -156,7 +157,7 @@ function Side({
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
       <div
-        className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
+        className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
         <FitText className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
@@ -248,7 +249,8 @@ function Side({
 function Manche({ gagnee }: { gagnee: boolean }) {
   return (
     <span
-      className={`flex h-8 w-8 items-center justify-center rounded-full bg-black/55 ring-2 ${
+      key={String(gagnee)}
+      className={`${styles.apparait} flex h-8 w-8 items-center justify-center rounded-full bg-black/55 ring-2 ${
         gagnee ? "ring-gold" : "ring-white/35"
       }`}
       style={{ boxShadow: gagnee ? "0 0 10px rgba(212,168,67,0.55)" : "0 1px 4px rgba(0,0,0,0.5)" }}
@@ -307,7 +309,7 @@ export function OverlayFull({ token }: { token: string }) {
                 en encre sombre puisque le fond est jaune. */}
             {event.round && (
               <div
-                className="absolute z-20 flex items-center justify-center overflow-hidden px-2"
+                className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
                 <FitText className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
