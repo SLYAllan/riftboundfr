@@ -83,7 +83,7 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
   return (
-    <div className="absolute left-1/2 top-0 z-20 flex -translate-x-1/2 overflow-hidden rounded-b-xl border border-t-0 border-white/15 bg-black/80 shadow-[0_2px_12px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+    <div className="absolute left-1/2 top-0 z-20 flex -translate-x-1/2 overflow-hidden rounded-b-xl border border-t-0 border-white/15 bg-black/80 shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
       {cells.map((c, i) => {
         const reached = c.side === "a" ? c.v <= a : c.v <= b;
         const current = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
@@ -105,17 +105,17 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
 }
 
 /**
- * Cadre vide : la maquette réserve la place, le contenu vient d'OBS ou plus tard.
- * Aucun fond, pas même un noir à 10 % : la caméra se pose dessous dans OBS et le
- * moindre voile la grisait. Il ne reste que le trait, plus une seconde ligne à
- * l'intérieur pour le liseré des cadres de Riftbound.
+ * Emplacement laissé vide : rien du tout, ni fond ni trait. Le cadre doré vient de
+ * l'image de fond ; en dessiner un second par-dessus donnait une double bordure sur
+ * la sortie OBS. Le composant ne sert plus qu'à réserver la place et à nommer la
+ * zone pour les lecteurs d'écran et les captures.
  */
 function Slot({ label, className = "", style }: { label: string; className?: string; style?: React.CSSProperties }) {
   return (
     <div
       aria-label={label}
       style={style}
-      className={`rounded-lg border border-white/30 shadow-[inset_0_0_0_3px_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.12)] ${className}`}
+      className={className}
     />
   );
 }
@@ -144,10 +144,12 @@ function Side({
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
       <div
-        className="absolute z-20 flex items-center justify-center truncate px-2 text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+        className="absolute z-20 flex items-center justify-center px-2"
         style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
       >
-        {p.name || "—"}
+        <span className="min-w-0 truncate text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+          {p.name || "—"}
+        </span>
       </div>
 
       {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus */}
@@ -158,7 +160,7 @@ function Side({
         {(banner ?? icon) && (
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
-        <div className="absolute inset-x-0 bottom-0 top-1/3 bg-gradient-to-t from-black/90 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-black/85 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 z-20 px-2 pb-2">
           <div className="truncate text-center text-sm font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
             {p.legendName || "Légende"}
@@ -288,10 +290,12 @@ export function OverlayFull({ token }: { token: string }) {
                 en encre sombre puisque le fond est jaune. */}
             {event.round && (
               <div
-                className="absolute z-20 flex items-center justify-center truncate text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
+                className="absolute z-20 flex items-center justify-center px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
               >
-                {event.round}
+                <span className="min-w-0 truncate text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                  {event.round}
+                </span>
               </div>
             )}
             <div
