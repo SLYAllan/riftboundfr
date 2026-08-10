@@ -22,6 +22,8 @@ export interface OverlayStateData {
   maxPoints: number;
   points: { a: number; b: number };
   players: [OverlayPlayer, OverlayPlayer];
+  // Deux decklists chargees depuis le tableau de bord, et la carte montree a droite.
+  cards: { lists: [string[], string[]]; shown: string | null };
 }
 
 function emptyPlayer(name: string): OverlayPlayer {
@@ -35,6 +37,7 @@ export function defaultOverlayState(): OverlayStateData {
     maxPoints: 8,
     points: { a: 0, b: 0 },
     players: [emptyPlayer("Joueur 1"), emptyPlayer("Joueur 2")],
+    cards: { lists: [[], []], shown: null },
   };
 }
 
@@ -51,6 +54,10 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
     ...patch,
     event: { ...base.event, ...(patch.event ?? {}) },
     points: { ...base.points, ...(patch.points ?? {}) },
+    cards: {
+      lists: (patch.cards?.lists ?? base.cards?.lists ?? [[], []]) as [string[], string[]],
+      shown: patch.cards?.shown !== undefined ? (patch.cards.shown as string | null) : (base.cards?.shown ?? null),
+    },
     players: [
       { ...base.players[0], ...(patch.players?.[0] ?? {}) },
       { ...base.players[1], ...(patch.players?.[1] ?? {}) },

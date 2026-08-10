@@ -280,6 +280,27 @@ function Manche({ gagnee }: { gagnee: boolean }) {
   );
 }
 
+/** Carte affichee dans le cadre de droite, choisie depuis le tableau de bord. */
+function CarteMontree({ nom }: { nom: string | null }) {
+  const art = useBattlefieldArt(nom ? [nom] : []);
+  const url = nom ? art[nom] : null;
+  return (
+    <div
+      className="absolute z-20 overflow-hidden"
+      style={{ left: SLOT.x.right, width: SLOT.width, top: SLOT.cards.top, height: SLOT.cards.height }}
+    >
+      {url && (
+        <img
+          key={nom ?? ""}
+          src={url}
+          alt=""
+          className={`${styles.apparait} absolute inset-0 m-auto max-h-full max-w-full object-contain`}
+        />
+      )}
+    </div>
+  );
+}
+
 function Timer({ endsAt }: { endsAt?: string | null }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -351,13 +372,7 @@ export function OverlayFull({ token }: { token: string }) {
         p={state.players[1]}
         side="right"
         format={state.format}
-        footer={
-          <Slot
-            label="Cartes"
-            className="absolute"
-            style={{ left: SLOT.x.right, width: SLOT.width, top: SLOT.cards.top, height: SLOT.cards.height }}
-          />
-        }
+        footer={<CarteMontree nom={state.cards?.shown ?? null} />}
       />
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { applyStateUpdate, type OverlayStateData } from "@/lib/overlay";
+import { parseDeckCode } from "@/lib/deck-code";
 
 type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
 
@@ -50,6 +51,9 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
   const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
   const [brouillonLogo, setBrouillonLogo] = useState("");
+  const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
+  const listes = state.cards?.lists ?? [[], []];
+  const toutesCartes = [...new Set([...listes[0], ...listes[1]])];
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   const inputCls = "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm focus:border-arcane focus:outline-none";
@@ -146,6 +150,53 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             </div>
           );
         })}
+      </div>
+
+      <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+        <h2 className="font-semibold">Cartes à montrer</h2>
+        <p className="text-xs text-ink-muted">
+          Collez une decklist par joueur, puis choisissez la carte à afficher dans le cadre de droite.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {([0, 1] as const).map((i) => (
+            <div key={i} className="space-y-2">
+              <textarea
+                value={brouillonDeck[i]}
+                onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                placeholder={`Decklist du joueur ${i + 1}`}
+                rows={4}
+                className={`${inputCls} font-mono text-xs`}
+              />
+              <button
+                onClick={() => {
+                  const noms = parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name);
+                  const l: [string[], string[]] = [[...listes[0]], [...listes[1]]];
+                  l[i] = [...new Set(noms)];
+                  update({ cards: { lists: l, shown: state.cards?.shown ?? null } } as never);
+                }}
+                className="rounded-lg bg-arcane px-3 py-1.5 font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
+              >
+                Charger la liste ({listes[i].length})
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-2">
+          <select
+            value={state.cards?.shown ?? ""}
+            onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
+            className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5"
+          >
+            <option value="">— Aucune carte à l&apos;écran —</option>
+            {toutesCartes.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
+          <button
+            onClick={() => update({ cards: { lists: listes as [string[], string[]], shown: null } } as never)}
+            className="rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
+          >
+            Masquer
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
