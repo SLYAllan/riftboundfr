@@ -8,12 +8,19 @@ import styles from "./overlay.module.css";
 // Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
 // transparent pour la zone de jeu. Tout est en pixels, la page fait 1920x1080 et
 // n'est jamais redimensionnée : OBS la capture telle quelle.
-const COL = 300;
-const PAD = 34;
-// Hauteurs fixes : les deux colonnes doivent s'aligner au pixel, quitte à laisser du
-// vide en dessous. Une caméra qui flotte de dix pixels d'un côté à l'autre se voit.
-const CAM_H = 470;
-const BF_H = 104;
+// Le fond fourni (public/stream/test.webp) porte les cadres dorés et ses découpes
+// sont transparentes. Tout ce qui suit est mesuré dessus au pixel, en 1920x1080 :
+// on remplit ses trous, on ne redessine rien.
+const SLOT = {
+  x: { left: 43, right: 1606 },
+  width: 275,
+  name: { top: 24, height: 56 },
+  legend: { top: 88, height: 141 },
+  cam: { top: 246, height: 299 },
+  bf: { top: 545, height: 90 },
+  timer: { top: 968, height: 52 },
+  cards: { top: 678, height: 387 },
+} as const;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
@@ -132,17 +139,20 @@ function Side({
   const art = useBattlefieldArt(bf ? [bf] : []);
   const cam = camSrc(p.camUrl);
   return (
-    <div
-      className="absolute top-0 flex h-full flex-col gap-3 py-8"
-      style={{ width: COL, [side]: PAD } as React.CSSProperties}
-    >
-      {/* Pseudo */}
-      <div className="shrink-0 truncate rounded-lg bg-black/80 px-3 py-2 text-center text-xl font-bold tracking-wide text-white shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
+    <div className="absolute inset-0">
+      {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
+      <div
+        className="absolute flex items-center justify-center truncate px-2 text-2xl font-bold uppercase tracking-wide text-white"
+        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
+      >
         {p.name || "—"}
       </div>
 
-      {/* Légende : la bannière en fond, le nom et le champion élu par-dessus */}
-      <div className="relative h-[124px] shrink-0 overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15">
+      {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus */}
+      <div
+        className="absolute overflow-hidden"
+        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.legend.top, height: SLOT.legend.height }}
+      >
         {(banner ?? icon) && (
           <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
         )}
@@ -162,8 +172,8 @@ function Side({
       {p.camEnabled &&
         (cam ? (
           <div
-            style={{ height: CAM_H }}
-            className="shrink-0 overflow-hidden rounded-lg border border-white/30 shadow-[inset_0_0_0_3px_rgba(0,0,0,0.35),inset_0_0_0_4px_rgba(255,255,255,0.12)]"
+            style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
+            className="absolute overflow-hidden"
           >
             <iframe
               src={cam}
@@ -174,14 +184,18 @@ function Side({
             />
           </div>
         ) : (
-          <Slot label="Caméra" className="shrink-0" style={{ height: CAM_H }} />
+          <Slot
+            label="Caméra"
+            className="absolute"
+            style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
+          />
         ))}
 
       {/* Le champ de bataille en jeu, son illustration en fond, et les manches
           gagnées posées dessus comme sur la retransmission officielle. */}
       <div
-        style={{ height: BF_H }}
-        className="relative shrink-0 overflow-hidden rounded-lg bg-black/70 shadow-[0_2px_10px_rgba(0,0,0,0.45)] outline outline-1 outline-white/15"
+        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.bf.top, height: SLOT.bf.height } as React.CSSProperties}
+        className="absolute overflow-hidden bg-black/70"
       >
         {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
             liseré et le bandeau de titre de l'illustration. Voile léger, et un
@@ -205,9 +219,7 @@ function Side({
         </div>
       </div>
 
-      {/* Bas de colonne : chrono et logo à gauche, cartes à droite. `mt-auto` colle
-          le bloc en bas, le vide reste au milieu comme demandé. */}
-      <div className="mt-auto shrink-0">{footer}</div>
+      {footer}
     </div>
   );
 }
@@ -235,11 +247,11 @@ function Timer({ endsAt, round }: { endsAt?: string | null; round: string }) {
   const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
   return (
-    <div className="rounded-lg bg-black/85 px-3 py-2 text-center shadow-[0_2px_10px_rgba(0,0,0,0.45)]">
+    <div className="flex h-full flex-col items-center justify-center text-center">
       <div className="text-3xl font-bold tabular-nums leading-none text-white">
         {mm}:{ss}
       </div>
-      {round && <div className="mt-1 truncate text-xs font-semibold uppercase tracking-wide text-white/70">{round}</div>}
+      {round && <div className="mt-0.5 truncate text-[11px] font-semibold uppercase tracking-wide text-white/80">{round}</div>}
     </div>
   );
 }
@@ -250,27 +262,41 @@ export function OverlayFull({ token }: { token: string }) {
   const { event } = state;
   return (
     <div className={styles.root}>
+      {/* Le cadre fourni, en fond : ses découpes sont transparentes, tout le reste
+          de l'habillage vient de lui. */}
+      <img src="/stream/test.webp" alt="" className="absolute inset-0 h-full w-full" />
       <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
       <Side
         p={state.players[0]}
         side="left"
         format={state.format}
         footer={
-          <div className="mt-3 flex flex-col gap-3">
-            {event.logoUrl ? (
-              <img src={event.logoUrl} alt="" className="mx-auto max-h-[150px] w-auto object-contain" />
-            ) : (
-              <Slot label="Logo du tournoi" style={{ height: 150 }} />
+          <>
+            {event.logoUrl && (
+              <img
+                src={event.logoUrl}
+                alt=""
+                className="absolute object-contain"
+                style={{ left: SLOT.x.left, width: SLOT.width, top: 700, height: 220 }}
+              />
             )}
-            <Timer endsAt={event.endsAt} round={event.round} />
-          </div>
+            <div className="absolute" style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.timer.top, height: SLOT.timer.height }}>
+              <Timer endsAt={event.endsAt} round={event.round} />
+            </div>
+          </>
         }
       />
       <Side
         p={state.players[1]}
         side="right"
         format={state.format}
-        footer={<Slot label="Cartes" className="mt-3" style={{ height: 340 }} />}
+        footer={
+          <Slot
+            label="Cartes"
+            className="absolute"
+            style={{ left: SLOT.x.right, width: SLOT.width, top: SLOT.cards.top, height: SLOT.cards.height }}
+          />
+        }
       />
     </div>
   );
