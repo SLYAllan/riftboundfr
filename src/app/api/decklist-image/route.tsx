@@ -57,7 +57,10 @@ const FORMATS = {
 } as const;
 type FormatKey = keyof typeof FORMATS;
 
-const CARD_GAP = 12;
+// Gouttière entre cartes et marge latérale, serrées au maximum : à dix colonnes,
+// chaque pixel repris ici passe dans la largeur des cartes.
+const CARD_GAP = 8;
+const SIDE_PAD = 40;
 // Écart entre les deux groupes quand Runes et Champs de bataille partagent une bande.
 const BAND_SPACING = 56;
 
@@ -69,8 +72,8 @@ const BAND_SPACING = 56;
 // en fond perdu, ce qui rabaissait toutes les cartes. Quand les deux groupes tiennent
 // côte à côte, ils partagent une bande, et la place récupérée revient aux cartes.
 function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number, width: number, height: number) {
-  const BODY_W = width - 128; // 64px de marge de chaque côté
-  const HEADER = 356; // bloc Légende du haut
+  const BODY_W = width - SIDE_PAD * 2;
+  const HEADER = 356; // bloc Légende du haut, carte de Légende à sa taille de base
   const FOOTER = 128;
   const SECT = 68; // titre de section + espacement
   const BAND_GAP = 24; // marginTop entre deux sections
@@ -96,9 +99,40 @@ function pickSizes(mainN: number, runeN: number, bfN: number, sideN: number, wid
       if (bfN) h += BAND_GAP + SECT + Math.ceil(bfN / bfCols) * (lh + CARD_GAP);
     }
     if (sideN) h += BAND_GAP + SECT + Math.ceil(sideN / cols) * rowH;
-    if (h <= height) return { pw, ph, lw, lh, paired };
+    if (h <= height) return { pw, ph, lw, lh, paired, slack: height - h };
   }
-  return { pw: 104, ph: 146, lw: 177, lh: 125, paired: false };
+  return { pw: 104, ph: 146, lw: 177, lh: 125, paired: false, slack: 0 };
+}
+
+// Logos de domaine. Les fichiers sont en WebP et satori ne les lit pas : on les
+// convertit en PNG une fois, puis on garde le résultat en mémoire du processus.
+const domainIconCache = new Map<string, string | null>();
+async function domainIconDataUri(domain: string): Promise<string | null> {
+  const cached = domainIconCache.get(domain);
+  if (cached !== undefined) return cached;
+  let uri: string | null = null;
+  try {
+    const sharp = (await import("sharp")).default;
+    const buf = await readFile(join(process.cwd(), "public", "icons", `${domain}.webp`));
+    const png = await sharp(buf).resize(96, 96, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer();
+    uri = `data:image/png;base64,${png.toString("base64")}`;
+  } catch {
+    uri = null; // domaine sans logo (Sorcellerie) → on retombe sur la pastille
+  }
+  domainIconCache.set(domain, uri);
+  return uri;
+}
+
+// La taille des cartes est bornée par le nombre de colonnes, donc par la largeur : la
+// hauteur qui reste après le meilleur découpage ne peut pas leur profiter. Elle part
+// dans la carte de Légende, qui était minuscule pour un bloc qui prend tout le haut.
+const LEGEND_BASE_H = 252;
+function legendSize(slack: number, frameH: number) {
+  // Plafond proportionnel au cadre : le 9:16 a bien plus de rab que le carré, et
+  // sans ça il se retrouvait avec trois gros blancs entre les sections.
+  const max = Math.round(frameH * 0.235);
+  const h = Math.min(LEGEND_BASE_H + Math.max(0, slack), max);
+  return { w: Math.round(h / 1.4), h };
 }
 
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
@@ -588,7 +622,7 @@ export async function GET(req: NextRequest) {
   const legendImgUrl = legendCards[0]?.imageUrl || null;
 
   // Largest card sizes that still fit the whole deck in the square.
-  const { pw, ph, lw, lh, paired } = pickSizes(
+  const { pw, ph, lw, lh, paired, slack } = pickSizes(
     mainDisplayCards.length,
     runeCards.length,
     battlefieldCards.length,
@@ -596,6 +630,10 @@ export async function GET(req: NextRequest) {
     WIDTH,
     HEIGHT,
   );
+  const legend = legendSize(slack, HEIGHT);
+  const domainIcons = Object.fromEntries(
+    await Promise.all(domains.map(async (d) => [d, await domainIconDataUri(d)] as const)),
+  ) as Record<string, string | null>;
 
   return new ImageResponse(
     (
@@ -651,7 +689,7 @@ export async function GET(req: NextRequest) {
           style={{
             display: "flex",
             flexDirection: "column",
-            padding: "48px 64px 28px",
+            padding: `48px ${SIDE_PAD}px 28px`,
             position: "relative",
           }}
         >
@@ -668,8 +706,8 @@ export async function GET(req: NextRequest) {
               <div
                 style={{
                   display: "flex",
-                  width: 180,
-                  height: 252,
+                  width: legend.w,
+                  height: legend.h,
                   borderRadius: 16,
                   overflow: "hidden",
                   flexShrink: 0,
@@ -677,8 +715,8 @@ export async function GET(req: NextRequest) {
               >
                 <img
                   src={legendImgUrl}
-                  width={180}
-                  height={252}
+                  width={legend.w}
+                  height={legend.h}
                   style={{ objectFit: "cover" }}
                 />
               </div>
@@ -716,7 +754,7 @@ export async function GET(req: NextRequest) {
                     marginTop: 4,
                   }}
                 >
-                  {/* Pastille pleine + texte neutre : pas de fond teinté sous du texte teinté */}
+                  {/* Logo du domaine + texte neutre : pas de fond teinté sous du texte teinté */}
                   {domains.map((d) => (
                     <div
                       key={d}
@@ -726,19 +764,23 @@ export async function GET(req: NextRequest) {
                         gap: 12,
                         marginRight: 12,
                         color: "#c4c0d0",
-                        fontSize: 26,
+                        fontSize: 30,
                         fontWeight: 700,
                       }}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          width: 20,
-                          height: 20,
-                          borderRadius: 10,
-                          backgroundColor: DOMAIN_COLORS[d] ?? "#8b5cf6",
-                        }}
-                      />
+                      {domainIcons[d] ? (
+                        <img src={domainIcons[d]!} width={38} height={38} />
+                      ) : (
+                        <div
+                          style={{
+                            display: "flex",
+                            width: 24,
+                            height: 24,
+                            borderRadius: 12,
+                            backgroundColor: DOMAIN_COLORS[d] ?? "#8b5cf6",
+                          }}
+                        />
+                      )}
                       {DOMAIN_LABELS_FR[d] ?? d}
                     </div>
                   ))}
@@ -819,7 +861,7 @@ export async function GET(req: NextRequest) {
           style={{
             display: "flex",
             height: 2,
-            margin: "0 64px",
+            margin: `0 ${SIDE_PAD}px`,
             backgroundColor: "#2a2740",
           }}
         />
@@ -830,10 +872,10 @@ export async function GET(req: NextRequest) {
             display: "flex",
             flexDirection: "column",
             flex: 1,
-            // Le solveur travaille par paliers : il reste toujours un peu de hauteur
-            // inutilisée. Centrée, elle se lit comme une marge ; en bas, comme un trou.
-            justifyContent: "center",
-            padding: "32px 64px",
+            // Le gros de la hauteur restante part dans la carte de Légende ; le
+            // reliquat est réparti entre les sections plutôt que laissé en bas.
+            justifyContent: "space-between",
+            padding: `32px ${SIDE_PAD}px`,
             gap: 8,
             overflow: "hidden",
           }}
@@ -889,7 +931,7 @@ export async function GET(req: NextRequest) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "32px 64px 48px",
+            padding: `32px ${SIDE_PAD}px 48px`,
             borderTop: "2px solid #1e1b2e",
           }}
         >
