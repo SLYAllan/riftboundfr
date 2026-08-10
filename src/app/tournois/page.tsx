@@ -9,8 +9,10 @@ import { getLegendIconUrl } from "@/lib/banners";
 import { TournamentList } from "@/components/tournament-list";
 import { Trophy, Swords, Users, Globe } from "lucide-react";
 import type { Metadata } from "next";
+import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
+import { etiquetteLocale } from "@/lib/i18n";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Tournois Riftbound France - Résultats et calendrier 2026" },
   description:
     "Calendrier des tournois Riftbound en France et dans le monde. Résultats, top 8, decklists gagnantes et Rift Tour.",
@@ -186,6 +188,8 @@ async function getTournamentData() {
 export type TournamentData = Awaited<ReturnType<typeof getTournamentData>>[number];
 
 export default async function TournoisPage() {
+  const t = await tr();
+  const locale = etiquetteLocale(await langueCourante());
   const allTournaments = await safeQuery(() => getTournamentData(), []);
   const tournaments = allTournaments.filter((t) => t.deckCount > 5);
 
@@ -213,11 +217,11 @@ export default async function TournoisPage() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              Tournois Riftbound - Résultats et calendrier
+              {t("Tournois Riftbound - Résultats et calendrier")}
             </h1>
           </div>
           <p className="mt-1 max-w-2xl text-sm sm:text-base text-ink-secondary">
-            Résultats, decklists et analyses de tous les tournois compétitifs Riftbound.
+            {t("Résultats, decklists et analyses de tous les tournois compétitifs Riftbound.")}
           </p>
 
           {/* Stats */}
@@ -228,25 +232,25 @@ export default async function TournoisPage() {
                 <div className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                   {tournaments.length}
                 </div>
-                <div className="text-[11px] text-ink-muted uppercase tracking-wider">Tournois</div>
+                <div className="text-[11px] text-ink-muted uppercase tracking-wider">{t("Tournois")}</div>
               </div>
             </div>
             <div className="flex items-center gap-2.5 rounded-lg border border-hairline bg-canvas/60 px-4 py-2.5">
               <Swords size={16} className="text-arcane shrink-0" />
               <div>
                 <div className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                  {totalDecks.toLocaleString("fr-FR")}
+                  {totalDecks.toLocaleString(locale)}
                 </div>
-                <div className="text-[11px] text-ink-muted uppercase tracking-wider">Decklists</div>
+                <div className="text-[11px] text-ink-muted uppercase tracking-wider">{t("Decklists")}</div>
               </div>
             </div>
             <div className="flex items-center gap-2.5 rounded-lg border border-hairline bg-canvas/60 px-4 py-2.5">
               <Users size={16} className="text-violet-light shrink-0" />
               <div>
                 <div className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                  {totalPlayers.toLocaleString("fr-FR")}
+                  {totalPlayers.toLocaleString(locale)}
                 </div>
-                <div className="text-[11px] text-ink-muted uppercase tracking-wider">Joueurs</div>
+                <div className="text-[11px] text-ink-muted uppercase tracking-wider">{t("Joueurs")}</div>
               </div>
             </div>
             <div className="flex items-center gap-2.5 rounded-lg border border-hairline bg-canvas/60 px-4 py-2.5">
@@ -255,7 +259,7 @@ export default async function TournoisPage() {
                 <div className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                   {countries.size}
                 </div>
-                <div className="text-[11px] text-ink-muted uppercase tracking-wider">Pays</div>
+                <div className="text-[11px] text-ink-muted uppercase tracking-wider">{t("Pays")}</div>
               </div>
             </div>
           </div>
@@ -263,10 +267,12 @@ export default async function TournoisPage() {
       </div>
 
       {tournaments.length === 0 ? (
-        <p className="mt-12 text-center text-ink-muted">Aucun tournoi pour le moment.</p>
+        <p className="mt-12 text-center text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
       ) : (
         <TournamentList tournaments={tournaments} />
       )}
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

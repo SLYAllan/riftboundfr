@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "À propos - Riftbound France" },
   description:
     "Qui est derrière Riftbound France, la référence francophone du TCG Riftbound : mission, sources des données et contact.",
@@ -36,37 +37,34 @@ const jsonLd = {
   },
 };
 
-export default function AProposPage() {
+export default async function AProposPage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Breadcrumbs items={[{ name: "À propos", href: "/a-propos" }]} />
+      <Breadcrumbs items={[{ name: t("À propos"), href: "/a-propos" }]} />
 
       <h1
         className="mt-6 text-4xl font-bold"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
-        À propos de Riftbound France
+        {t("À propos de Riftbound France")}
       </h1>
 
       <div className="mt-4 space-y-4 leading-relaxed text-ink-secondary">
         <p>
-          <strong className="text-ink">Riftbound France</strong> est le site communautaire
-          francophone dédié au TCG <strong className="text-ink">Riftbound</strong> de Riot Games :
-          base de cartes, decklists de tournois, tier lists, guides et deckbuilder, le tout en
-          français.
+          <strong className="text-ink">Riftbound France</strong>{" "}
+          {t("est le site communautaire francophone dédié au TCG Riftbound de Riot Games : base de cartes, decklists de tournois, tier lists, guides et deckbuilder.")}
         </p>
         <p>
-          Le site est édité par <strong className="text-ink">Allan</strong>. Les cartes et leurs
-          visuels proviennent de l&apos;API publique <strong className="text-ink">Riftcodex</strong>.
-          Les decks et résultats de tournois sont recoupés depuis les événements officiels et tenus
-          à jour manuellement.
+          {t("Le site est édité par")} <strong className="text-ink">Allan</strong>.{" "}
+          {t("Les cartes et leurs visuels proviennent de l’API publique Riftcodex. Les decks et résultats de tournois sont recoupés depuis les événements officiels et tenus à jour manuellement.")}
         </p>
         <p>
-          Nous suivre :{" "}
+          {t("Nous suivre :")}{" "}
           <a
             href="https://twitter.com/FRRiftbound"
             target="_blank"
@@ -93,10 +91,11 @@ export default function AProposPage() {
           </a>
         </p>
         <p className="text-xs text-ink-muted">
-          Site non approuvé par Riot Games. Riftbound et les propriétés associées sont des marques
-          de Riot Games, Inc.
+          {t("Site non approuvé par Riot Games. Riftbound et les propriétés associées sont des marques de Riot Games, Inc.")}
         </p>
       </div>
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

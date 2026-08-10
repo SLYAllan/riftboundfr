@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useLien } from "@/components/i18n-provider";
 import { Search } from "lucide-react";
 
 interface DeckLegendFilterProps {
@@ -9,6 +10,7 @@ interface DeckLegendFilterProps {
 
 export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
   const router = useRouter();
+  const lien = useLien();
   const searchParams = useSearchParams();
   const current = searchParams.get("legend") ?? "";
 
@@ -29,7 +31,7 @@ export function DeckLegendFilter({ legends }: DeckLegendFilterProps) {
     } else {
       params.delete("legend");
     }
-    router.push(`/decks?${params.toString()}`);
+    router.push(lien(`/decks?${params.toString()}`));
   }
 
   return (

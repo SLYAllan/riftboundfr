@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { TrendingUp, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Méta & Tier List Riftbound",
   description:
     "Le méta compétitif Riftbound set par set (Origins, Spiritforged, Unleashed) : meilleures Légendes, archétypes et cartes clés. Basé sur 88 tournois.",
@@ -290,3 +291,5 @@ export default function GuideMetaPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

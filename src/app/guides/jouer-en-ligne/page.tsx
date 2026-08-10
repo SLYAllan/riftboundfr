@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { ExternalLink } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Jouer en ligne",
   description: "Comment jouer à Riftbound en ligne gratuitement avec TCG Arena et RiftAtlas.",
   alternates: { canonical: "/guides/jouer-en-ligne" },
@@ -181,3 +182,5 @@ export default function JouerEnLignePage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useLien, useT } from "@/components/i18n-provider";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CARD_TYPES, RARITIES } from "@/lib/utils";
@@ -35,6 +36,8 @@ function pill(active: boolean) {
 
 export function CardFilters({ total }: { total: number }) {
   const router = useRouter();
+  const lien = useLien();
+  const t = useT();
   const searchParams = useSearchParams();
 
   function set(key: string, value: string) {
@@ -42,7 +45,7 @@ export function CardFilters({ total }: { total: number }) {
     if (value && value !== "all") params.set(key, value);
     else params.delete(key);
     params.delete("page");
-    router.push(`/cartes?${params.toString()}`);
+    router.push(lien(`/cartes?${params.toString()}`));
   }
 
   const get = (key: string) => searchParams.get(key) ?? "all";
@@ -53,10 +56,10 @@ export function CardFilters({ total }: { total: number }) {
     "h-9 rounded-lg border border-hairline-strong bg-surface pl-3 pr-8 text-sm text-ink focus:border-arcane cursor-pointer appearance-none";
 
   const activeSummary = [
-    domain !== "all" && (DOMAIN_LABELS_FR[domain] ?? domain),
-    type !== "all" && (TYPE_LABELS_FR[type] ?? type),
+    domain !== "all" && t(DOMAIN_LABELS_FR[domain] ?? domain),
+    type !== "all" && t(TYPE_LABELS_FR[type] ?? type),
     get("set") !== "all" && (SET_LABELS[get("set")] ?? get("set")),
-    get("rarity") !== "all" && (RARITY_LABELS_FR[get("rarity")] ?? get("rarity")),
+    get("rarity") !== "all" && t(RARITY_LABELS_FR[get("rarity")] ?? get("rarity")),
     searchParams.get("q") && `« ${searchParams.get("q")} »`,
   ].filter(Boolean) as string[];
 
@@ -70,7 +73,7 @@ export function CardFilters({ total }: { total: number }) {
         {DOMAIN_ORDER.map((d) => (
           <button key={d} onClick={() => set("domain", domain === d ? "all" : d)} className={pill(domain === d)}>
             {DOMAIN_ICONS[d] && <Image src={DOMAIN_ICONS[d]} alt="" width={16} height={16} className="h-4 w-4" />}
-            {DOMAIN_LABELS_FR[d] ?? d}
+            {t(DOMAIN_LABELS_FR[d] ?? d)}
           </button>
         ))}
       </div>
@@ -80,10 +83,10 @@ export function CardFilters({ total }: { total: number }) {
         <button onClick={() => set("type", "all")} className={pill(type === "all")}>
           Tous types
         </button>
-        {CARD_TYPES.map((t) => (
-          <button key={t} onClick={() => set("type", type === t ? "all" : t)} className={pill(type === t)}>
-            {TYPE_ICONS[t] && <Image src={TYPE_ICONS[t]} alt="" width={16} height={16} className="h-4 w-4" />}
-            {TYPE_LABELS_FR[t] ?? t}
+        {CARD_TYPES.map((ty) => (
+          <button key={ty} onClick={() => set("type", type === ty ? "all" : ty)} className={pill(type === ty)}>
+            {TYPE_ICONS[ty] && <Image src={TYPE_ICONS[ty]} alt="" width={16} height={16} className="h-4 w-4" />}
+            {t(TYPE_LABELS_FR[ty] ?? ty)}
           </button>
         ))}
       </div>
@@ -92,33 +95,33 @@ export function CardFilters({ total }: { total: number }) {
       <div className="flex flex-wrap items-center gap-2">
         <div className="relative">
           <Search className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-muted" size={14} />
-          <select aria-label="Filtrer par set" className={cn(selectClass, "pl-8")} value={get("set")} onChange={(e) => set("set", e.target.value)}>
-            <option value="all">Tous les sets</option>
+          <select aria-label={t("Filtrer par set")} className={cn(selectClass, "pl-8")} value={get("set")} onChange={(e) => set("set", e.target.value)}>
+            <option value="all">{t("Tous les sets")}</option>
             {Object.entries(SET_LABELS).map(([v, l]) => (
-              <option key={v} value={v}>{l}</option>
+              <option key={v} value={v}>{t(l)}</option>
             ))}
           </select>
         </div>
 
-        <select aria-label="Filtrer par rareté" className={selectClass} value={get("rarity")} onChange={(e) => set("rarity", e.target.value)}>
-          <option value="all">Toutes raretés</option>
+        <select aria-label={t("Filtrer par rareté")} className={selectClass} value={get("rarity")} onChange={(e) => set("rarity", e.target.value)}>
+          <option value="all">{t("Toutes raretés")}</option>
           {RARITIES.map((r) => (
-            <option key={r} value={r}>{RARITY_LABELS_FR[r] ?? r}</option>
+            <option key={r} value={r}>{t(RARITY_LABELS_FR[r] ?? r)}</option>
           ))}
         </select>
 
         <div className="ml-auto flex items-center gap-1.5">
-          <span className="text-xs text-ink-muted">Tri :</span>
-          <select aria-label="Trier" className={selectClass} value={searchParams.get("sort") ?? "numero"} onChange={(e) => set("sort", e.target.value === "numero" ? "all" : e.target.value)}>
+          <span className="text-xs text-ink-muted">{t("Tri :")}</span>
+          <select aria-label={t("Trier")} className={selectClass} value={searchParams.get("sort") ?? "numero"} onChange={(e) => set("sort", e.target.value === "numero" ? "all" : e.target.value)}>
             {Object.entries(SORT_LABELS).map(([v, l]) => (
-              <option key={v} value={v}>{l}</option>
+              <option key={v} value={v}>{t(l)}</option>
             ))}
           </select>
         </div>
       </div>
 
       <div className="text-sm text-ink-muted">
-        {total} carte{total !== 1 ? "s" : ""}
+        {total} {total !== 1 ? t("cartes") : t("carte")}
         {activeSummary.length > 0 && <span> &middot; {activeSummary.join(" · ")}</span>}
       </div>
     </div>

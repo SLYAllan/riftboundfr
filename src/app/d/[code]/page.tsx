@@ -15,7 +15,7 @@ import { LikeButton } from "./like-button";
 import { VisibilityToggle } from "./visibility-toggle";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { getUserFromSession } from "@/lib/session";
-import Link from "next/link";
+import Link from "@/components/lien";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { buildCardLookup } from "@/lib/card-printing";

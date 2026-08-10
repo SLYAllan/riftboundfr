@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { parseSearchQuery, tokensToQuery, FIELD_SUGGESTIONS, type SearchToken, type ParsedSearch } from "../lib/search-parser";
+import { useT } from "@/components/i18n-provider";
 
 interface SearchBarProps {
   value: string;
@@ -34,6 +35,7 @@ const FIELD_LABELS: Record<string, string> = {
 };
 
 export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
+  const t = useT();
   const inputRef = useRef<HTMLInputElement>(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestionField, setSuggestionField] = useState<string | null>(null);
@@ -101,8 +103,8 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
           type="text"
           value={parsed.tokens.length > 0 ? parsed.freeText : value}
           onChange={handleChange}
-          placeholder={parsed.tokens.length > 0 ? "Ajouter un filtre..." : "Rechercher... (ex: unit fury energy:3)"}
-          aria-label="Rechercher une carte"
+          placeholder={parsed.tokens.length > 0 ? t("Ajouter un filtre...") : t("Rechercher... (ex: unit fury energy:3)")}
+          aria-label={t("Rechercher une carte")}
           className="flex-1 min-w-[120px] h-7 bg-transparent text-sm text-ink placeholder:text-ink-muted"
         />
 

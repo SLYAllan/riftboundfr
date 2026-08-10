@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { CardImage } from "@/components/card-image";
 import { RarityBadge } from "@/components/rarity-badge";

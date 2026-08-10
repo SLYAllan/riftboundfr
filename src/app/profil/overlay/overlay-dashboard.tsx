@@ -2,10 +2,12 @@
 import { useEffect, useRef, useState } from "react";
 import { applyStateUpdate, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
+import { useT } from "@/components/i18n-provider";
 
 type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
 
 export function OverlayDashboard({ token, initial }: { token: string; initial: OverlayStateData }) {
+  const t = useT();
   const [state, setState] = useState<OverlayStateData>(initial);
   const [legends, setLegends] = useState<Legend[]>([]);
   const [battlefields, setBattlefields] = useState<string[]>([]);
@@ -71,59 +73,57 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     <div className="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
       <header>
         <h1 className="text-balance text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          Habillage de stream
+          {t("Habillage de stream")}
         </h1>
         <p className="mt-2 max-w-2xl text-pretty text-sm text-ink-secondary">
-          Cette page pilote ce qui s&apos;affiche à l&apos;écran pendant votre diffusion. Tout ce que
-          vous changez ici part en direct, sans rien relancer.
+          {t("Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.")}
         </p>
       </header>
 
       <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
-        <h2 className="font-semibold text-ink">Première fois ? Trois étapes.</h2>
+        <h2 className="font-semibold text-ink">{t("Première fois ? Trois étapes.")}</h2>
         <ol className="mt-2 space-y-1.5 text-sm text-ink-secondary">
-          <li><strong className="text-ink">1.</strong> Copiez le lien ci-dessous.</li>
+          <li><strong className="text-ink">1.</strong> {t("Copiez le lien ci-dessous.")}</li>
           <li>
-            <strong className="text-ink">2.</strong> Dans OBS : <em>Sources</em> → <em>+</em> → <em>Navigateur</em>.
-            Collez le lien, mettez <strong className="text-ink">1920</strong> de largeur et{" "}
-            <strong className="text-ink">1080</strong> de hauteur, puis validez.
+            <strong className="text-ink">2.</strong> {t("Dans OBS :")} <em>{t("Sources")}</em> → <em>+</em> → <em>{t("Navigateur")}</em>.{" "}
+            {t("Collez le lien, mettez")} <strong className="text-ink">1920</strong> {t("de largeur et")}{" "}
+            <strong className="text-ink">1080</strong> {t("de hauteur, puis validez.")}
           </li>
-          <li><strong className="text-ink">3.</strong> Revenez ici et remplissez les cases. L&apos;écran suit tout seul.</li>
+          <li><strong className="text-ink">3.</strong> {t("Revenez ici et remplissez les cases. L’écran suit tout seul.")}</li>
         </ol>
         <p className="mt-2 text-xs text-ink-muted">
-          Si un changement ne s&apos;affiche pas : clic droit sur la source dans OBS → <em>Actualiser</em>.
+          {t("Si un changement ne s’affiche pas : clic droit sur la source dans OBS →")} <em>{t("Actualiser")}</em>.
         </p>
       </section>
 
       <section className="rounded-xl border border-hairline bg-surface p-4">
-        <label className="text-sm font-semibold">Lien à coller dans OBS</label>
+        <label className="text-sm font-semibold">{t("Lien à coller dans OBS")}</label>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}</code>
           <button
             onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
             className={btnPlein}
           >
-            {copied ? "Copié ✓" : "Copier"}
+            {copied ? t("Copié ✓") : t("Copier")}
           </button>
           <button onClick={() => fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload())} className={btnVide}>
-            Nouveau lien
+            {t("Nouveau lien")}
           </button>
         </div>
         <p className="mt-2 text-xs text-ink-muted">
-          Gardez ce lien pour vous : qui l&apos;a peut voir votre habillage. « Nouveau lien » rend
-          l&apos;ancien inutilisable.
+          {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
-          <span className="text-sm text-ink-secondary">Pas de caméra ni de cadre ?</span>
+          <span className="text-sm text-ink-secondary">{t("Pas de caméra ni de cadre ?")}</span>
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
           <button onClick={() => navigator.clipboard.writeText(overlayUrl + "?compact=1")} className={btnVide}>
-            Copier la version simple
+            {t("Copier la version simple")}
           </button>
         </div>
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>1. Les joueurs</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("1. Les joueurs")}</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {([0, 1] as const).map((i) => {
             const p = state.players[i];
@@ -131,48 +131,48 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             const key = i === 0 ? "a" : "b";
             return (
               <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
-                <h3 className="text-sm font-semibold text-ink-secondary">Joueur {i + 1}</h3>
+                <h3 className="text-sm font-semibold text-ink-secondary">{t("Joueur")} {i + 1}</h3>
 
                 <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">Pseudo</span>
-                  <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder="Son pseudo" className={inputCls} />
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Pseudo")}</span>
+                  <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder={t("Son pseudo")} className={inputCls} />
                 </label>
 
                 <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">Légende</span>
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span>
                   <select
                     value={p.legendId ?? ""}
                     onChange={(e) => { const l = legends.find((x) => x.id === e.target.value); setPlayer(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }}
                     className={inputCls}
                   >
-                    <option value="">À choisir…</option>
+                    <option value="">{t("À choisir…")}</option>
                     {legends.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
                   </select>
                 </label>
 
                 <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">Champion élu</span>
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span>
                   <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
-                    <option value="">{p.legendName ? "À choisir…" : "Choisissez d’abord une Légende"}</option>
+                    <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
                     {champs[i].map((c) => <option key={c} value={c}>{c}</option>)}
                   </select>
                 </label>
 
                 <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">Champ de bataille en jeu</span>
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
                   <select
                     value={p.battlefields[0] ?? ""}
                     onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
                     className={inputCls}
                   >
-                    <option value="">Aucun</option>
+                    <option value="">{t("Aucun")}</option>
                     {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
                   </select>
                 </label>
 
                 <div className="rounded-lg bg-surface-raised/50 p-3">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm text-ink-secondary">Points</span>
+                    <span className="text-sm text-ink-secondary">{t("Points")}</span>
                     <div className="flex items-center gap-2">
                       <button onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
                       <span className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
@@ -180,7 +180,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between gap-2">
-                    <span className="text-sm text-ink-secondary">Manches gagnées</span>
+                    <span className="text-sm text-ink-secondary">{t("Manches gagnées")}</span>
                     <div className="flex items-center gap-2">
                       <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
                       <span className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
@@ -190,7 +190,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                 </div>
 
                 <div>
-                  <span className="mb-1 block text-xs text-ink-muted">Caméra (lien VDO.Ninja)</span>
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Caméra (lien VDO.Ninja)")}</span>
                   <div className="flex gap-2">
                     <input
                       value={brouillonCam[i]}
@@ -198,22 +198,22 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                       placeholder="https://vdo.ninja/?view=..."
                       className={inputCls}
                     />
-                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} className={btnPlein}>Charger</button>
+                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} className={btnPlein}>{t("Charger")}</button>
                     {p.camUrl && (
                       <button
                         onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
                         className={btnVide}
                       >
-                        Retirer
+                        {t("Retirer")}
                       </button>
                     )}
                   </div>
                   <p className="mt-1 text-xs text-ink-muted">
-                    Le son est coupé d&apos;office. Laissez vide si vous posez la caméra vous-même dans OBS.
+                    {t("Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.")}
                   </p>
                   <label className="mt-2 flex items-center gap-2 text-sm">
                     <input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} />
-                    Montrer le cadre caméra
+                    {t("Montrer le cadre caméra")}
                   </label>
                 </div>
               </div>
@@ -223,33 +223,33 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>2. Le match</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("2. Le match")}</h2>
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block">
-            <span className="mb-1 block text-xs text-ink-muted">Format</span>
+            <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
             <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
               <option>BO1</option><option>BO3</option><option>BO5</option>
             </select>
           </label>
           <label className="block">
-            <span className="mb-1 block text-xs text-ink-muted">Points pour gagner</span>
+            <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
             <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
               <option value={8}>8</option><option value={9}>9</option>
             </select>
           </label>
           <label className="block min-w-[180px] flex-1">
-            <span className="mb-1 block text-xs text-ink-muted">Ronde affichée</span>
-            <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="TOP 8, Finale…" className={inputCls} />
+            <span className="mb-1 block text-xs text-ink-muted">{t("Ronde affichée")}</span>
+            <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder={t("TOP 8, Finale…")} className={inputCls} />
           </label>
           <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className={btnVide}>
-            Échanger les joueurs
+            {t("Échanger les joueurs")}
           </button>
-          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>Remettre les points à zéro</button>
+          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>{t("Remettre les points à zéro")}</button>
         </div>
 
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block">
-            <span className="mb-1 block text-xs text-ink-muted">Durée en minutes</span>
+            <span className="mb-1 block text-xs text-ink-muted">{t("Durée en minutes")}</span>
             <input
               type="number"
               min={1}
@@ -260,22 +260,21 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             />
           </label>
           <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString() } })} className={btnPlein}>
-            Lancer le chrono
+            {t("Lancer le chrono")}
           </button>
-          <button onClick={() => update({ event: { endsAt: null } })} className={btnVide}>Arrêter</button>
+          <button onClick={() => update({ event: { endsAt: null } })} className={btnVide}>{t("Arrêter")}</button>
           <label className="flex items-center gap-2">
             <input type="checkbox" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
-            Montrer le chrono
+            {t("Montrer le chrono")}
           </label>
         </div>
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>3. Montrer une carte</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Montrer une carte")}</h2>
         <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
-            Collez la liste de chaque joueur une fois en début de match. Ensuite, choisir une carte
-            dans le menu l&apos;affiche à l&apos;écran, à droite.
+            {t("Collez la liste de chaque joueur une fois en début de match. Ensuite, choisir une carte dans le menu l’affiche à l’écran, à droite.")}
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {([0, 1] as const).map((i) => (
@@ -283,7 +282,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                 <textarea
                   value={brouillonDeck[i]}
                   onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
-                  placeholder={"Liste du joueur " + (i + 1)}
+                  placeholder={t("Liste du joueur") + " " + (i + 1)}
                   rows={4}
                   className={inputCls + " font-mono text-xs"}
                 />
@@ -296,7 +295,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   }}
                   className={btnPlein}
                 >
-                  Charger la liste ({listes[i].length})
+                  {t("Charger la liste")} ({listes[i].length})
                 </button>
               </div>
             ))}
@@ -307,30 +306,30 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
               className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-2"
             >
-              <option value="">Aucune carte à l&apos;écran</option>
+              <option value="">{t("Aucune carte à l’écran")}</option>
               {toutesCartes.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
             <button onClick={() => update({ cards: { lists: listes as [string[], string[]], shown: null } } as never)} className={btnVide}>
-              Masquer
+              {t("Masquer")}
             </button>
           </div>
         </div>
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>4. Le tournoi</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("4. Le tournoi")}</h2>
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block min-w-[180px] flex-1">
-            <span className="mb-1 block text-xs text-ink-muted">Nom du tournoi</span>
-            <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder="Nom affiché" className={inputCls} />
+            <span className="mb-1 block text-xs text-ink-muted">{t("Nom du tournoi")}</span>
+            <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder={t("Nom affiché")} className={inputCls} />
           </label>
           <div className="min-w-[280px] flex-1">
-            <span className="mb-1 block text-xs text-ink-muted">Logo (lien d&apos;image)</span>
+            <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
             <div className="flex gap-2">
               <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" className={inputCls} />
-              <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} className={btnPlein}>Charger</button>
+              <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} className={btnPlein}>{t("Charger")}</button>
               {state.event.logoUrl && (
-                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnVide}>Retirer</button>
+                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnVide}>{t("Retirer")}</button>
               )}
             </div>
           </div>

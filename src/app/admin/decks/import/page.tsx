@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Upload, CheckCircle, AlertCircle, ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/lien";
 
 const TIERS = ["P", "S", "A", "B"] as const;
 

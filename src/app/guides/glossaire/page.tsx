@@ -5,8 +5,9 @@ import type { Metadata } from "next";
 import { prisma, safeQuery } from "@/lib/prisma";
 import { GlossaireClient } from "./glossaire-client";
 import { GLOSSARY_TERMS, type GlossaryTerm, type GlossaryCategory } from "@/lib/glossary";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Glossaire Riftbound - Tous les termes du jeu expliqués" },
   description:
     "Dictionnaire complet des termes Riftbound : Conquer, Hold, Showdown, Rune, Domaine, Might et tous les keywords expliqués en français.",
@@ -60,3 +61,5 @@ export default async function GlossairePage() {
 
   return <GlossaireClient terms={terms} cardByKeyword={cardByKeyword} />;
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

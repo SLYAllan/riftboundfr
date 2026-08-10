@@ -6,14 +6,15 @@ import { getUserFromSession } from "@/lib/session";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { getBannerUrl } from "@/lib/banners";
 import { getBinders, getCollectionMap } from "@/lib/collection-server";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers } from "lucide-react";
 import { ProfileActions } from "./profile-actions";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import type { Metadata } from "next";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Mon profil",
 };
 
@@ -366,3 +367,5 @@ export default async function ProfilPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

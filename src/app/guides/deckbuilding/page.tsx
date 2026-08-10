@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { legendHref } from "@/lib/legend-fiche";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Guide Deckbuilding Riftbound - Construire son premier deck" },
   description:
     "Construire un deck Riftbound compétitif : choix de la Légende, du champion, signatures, courbe d'énergie et conseils de jeu.",
@@ -277,3 +278,5 @@ export default function GuideDeckbuildingPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

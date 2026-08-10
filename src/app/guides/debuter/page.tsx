@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Riftbound : premiers pas, règles et comment jouer (guide débutant FR)" },
   description:
     "Tes premiers pas à Riftbound : règles, déroulement d'un tour, les 6 domaines et conditions de victoire. Guide débutant complet, en français.",
@@ -340,3 +341,5 @@ export default function GuideDebuterPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { getBannerUrl } from "@/lib/banners";
 import { CountryBadge } from "@/components/country-badge";

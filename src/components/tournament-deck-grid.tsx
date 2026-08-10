@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useLien } from "@/components/i18n-provider";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { cn, displayLegendName } from "@/lib/utils";
 import { Trophy, Eye, ChevronDown, Swords } from "lucide-react";
@@ -76,6 +77,7 @@ export function TournamentDeckGrid({
   totalCount,
 }: Props) {
   const router = useRouter();
+  const lien = useLien();
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
 
   /* ---- derived data ---- */
@@ -90,9 +92,9 @@ export function TournamentDeckGrid({
   function handleLegendChange(value: string) {
     setVisibleCount(INITIAL_VISIBLE);
     if (value) {
-      router.push(`/tournois/${tournamentSlug}?legend=${encodeURIComponent(value)}`);
+      router.push(lien(`/tournois/${tournamentSlug}?legend=${encodeURIComponent(value)}`));
     } else {
-      router.push(`/tournois/${tournamentSlug}`);
+      router.push(lien(`/tournois/${tournamentSlug}`));
     }
   }
 

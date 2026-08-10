@@ -8,6 +8,7 @@ import { CardFilters } from "@/components/card-filters";
 import { Pagination } from "@/components/pagination";
 import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 // Ordres proposés dans le filtre "Tri". Défaut = numéro de collection par set.
 const SORTS: Record<string, Prisma.CardOrderByWithRelationInput[]> = {
@@ -17,7 +18,7 @@ const SORTS: Record<string, Prisma.CardOrderByWithRelationInput[]> = {
   "energie-desc": [{ energy: { sort: "desc", nulls: "last" } }, { name: "asc" }],
 };
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Cartes Riftbound en français - base de données complète et filtres" },
   description:
     "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.",
@@ -40,6 +41,7 @@ interface PageProps {
 }
 
 export default async function CartesPage({ searchParams }: PageProps) {
+  const t = await tr();
   const params = await searchParams;
   const page = Math.max(1, Number(params.page) || 1);
   const search = params.q;
@@ -87,9 +89,9 @@ export default async function CartesPage({ searchParams }: PageProps) {
 
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Base de données des cartes Riftbound</h1>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Base de données des cartes Riftbound")}</h1>
       <p className="mt-2 max-w-3xl text-ink-secondary">
-        Parcourez toutes les cartes du TCG Riftbound - sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez par set, type, rareté et domaine, et consultez le texte complet et les statistiques de chaque carte en français.
+        {t("Parcourez toutes les cartes du TCG Riftbound - sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez par set, type, rareté et domaine, et consultez le texte complet et les statistiques de chaque carte en français.")}
       </p>
       <div className="mt-6"><Suspense><SearchBar /></Suspense></div>
       <div className="mt-4"><Suspense><CardFilters total={total} /></Suspense></div>
@@ -98,3 +100,5 @@ export default async function CartesPage({ searchParams }: PageProps) {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

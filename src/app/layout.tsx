@@ -6,6 +6,9 @@ import { Analytics, CookieBanner } from "@/components/analytics";
 import { CollectionProvider } from "@/components/collection/collection-provider";
 
 import { ServiceWorkerRegister } from "@/components/sw-register";
+import { FournisseurLangue } from "@/components/i18n-provider";
+import { traduire, PREFIXE_EN } from "@/lib/i18n";
+import { cheminCourant, langueCourante } from "@/lib/i18n-server";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -20,7 +23,7 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
-export const metadata: Metadata = {
+const metadataFR: Metadata = {
   title: {
     default: "Riftbound France - Decks, cartes et guides du TCG en français",
     template: "%s | Riftbound France",
@@ -58,6 +61,32 @@ export const metadata: Metadata = {
     title: "Riftbound France",
   },
 };
+
+// Seul ce qui change d'une langue à l'autre est réécrit : le reste (metadataBase,
+// robots, twitter, icônes) est commun aux deux versions.
+export async function generateMetadata(): Promise<Metadata> {
+  if ((await langueCourante()) === "fr") return metadataFR;
+  return {
+    ...metadataFR,
+    title: {
+      default: "Riftbound France - Decks, cards and guides for the TCG",
+      template: "%s | Riftbound France",
+    },
+    description:
+      "Riftbound in French and English: tournament decklists, card database, tier list, beginner guides and competitive results.",
+    keywords: ["Riftbound", "TCG", "cards", "decks", "tier list", "guides", "tournaments", "France"],
+    openGraph: {
+      ...metadataFR.openGraph,
+      locale: "en_GB",
+      title: "Riftbound France - Decks, cards and guides for the TCG",
+      description: "Tournament decklists, card database, guides and results for Riftbound.",
+    },
+    twitter: {
+      ...metadataFR.twitter,
+      description: "Decks, cards and guides for the Riftbound TCG.",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: "#0ea5e9",
@@ -102,15 +131,25 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const langue = await langueCourante();
+  const chemin = await cheminCourant();
+  const site = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
+  const cheminFr = chemin === "/" ? "" : chemin;
+
   return (
-    <html lang="fr" className={`dark ${rubik.variable} ${jakarta.variable}`}>
+    <html lang={langue} className={`dark ${rubik.variable} ${jakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="alternate" type="application/rss+xml" title="Riftbound France" href="/rss.xml" />
+        {/* Déclaré ici plutôt que page par page : le middleware nous donne le
+            chemin sans préfixe, ce qui couvre les 44 pages d'un coup. */}
+        <link rel="alternate" hrefLang="fr" href={`${site}${cheminFr}`} />
+        <link rel="alternate" hrefLang="en" href={`${site}${PREFIXE_EN}${cheminFr}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${site}${cheminFr}`} />
         {/* Vérification de propriété du site pour Impact. Leur balise attend `value`
             et non `content` : elle est écrite telle qu'ils la donnent, sinon la
             vérification échoue. L'API Metadata de Next ne sait produire que
@@ -119,16 +158,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="min-h-screen flex flex-col" style={{ fontFamily: "var(--font-jakarta), sans-serif" }}>
         <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[300] focus:rounded-lg focus:bg-arcane focus:px-4 focus:py-2 focus:text-white">
-          Aller au contenu
+          {traduire("Aller au contenu", langue)}
         </a>
         <Analytics />
         <ServiceWorkerRegister />
-        <CollectionProvider>
-          <Navbar />
-          <main id="contenu" className="flex-1">{children}</main>
-          <Footer />
-        </CollectionProvider>
-        <CookieBanner />
+        <FournisseurLangue langue={langue}>
+          <CollectionProvider>
+            <Navbar chemin={chemin} />
+            <main id="contenu" className="flex-1">{children}</main>
+            <Footer />
+          </CollectionProvider>
+          <CookieBanner />
+        </FournisseurLangue>
       </body>
     </html>
   );

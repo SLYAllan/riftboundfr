@@ -7,6 +7,7 @@ import { getLegendIconUrl } from "@/lib/banners";
 import { TierListTabs } from "./tier-list-tabs";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 // Cache runtime (5 min, tag "tier-list") : tier lists + cartes légende + decks liés
 // en une fois, au lieu de 3 requêtes Prisma à chaque crawl. Invalidable via revalidateTag.
@@ -33,7 +34,7 @@ const getTierListData = unstable_cache(
   { revalidate: 300, tags: ["tier-list"] },
 );
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juillet 2026)" },
   description:
     "Tier list Riftbound française du Set Unleashed, calculée sur 9 555 decks de tournoi. Classement S/A/B/C/D de toutes les Légendes, avec decklists et analyses.",
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TierListPage() {
+  const t = await tr();
   let tierLists: Awaited<ReturnType<typeof getTierListData>>["tierLists"] = [];
   let legendCards: Awaited<ReturnType<typeof getTierListData>>["legendCards"] = [];
   let linkedDecks: Awaited<ReturnType<typeof getTierListData>>["linkedDecks"] = [];
@@ -64,10 +66,10 @@ export default async function TierListPage() {
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Tier List Riftbound - Les meilleures Légendes du méta
+          {t("Tier List Riftbound - Les meilleures Légendes du méta")}
         </h1>
         <p className="mt-4 text-ink-secondary">
-          Aucune tier list publiée pour le moment.
+          {t("Aucune tier list publiée pour le moment.")}
         </p>
       </div>
     );
@@ -89,17 +91,16 @@ export default async function TierListPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Breadcrumbs items={[{ name: "Tier List", href: "/tier-list" }]} className="mb-6" />
+      <Breadcrumbs items={[{ name: t("Tier List"), href: "/tier-list" }]} className="mb-6" />
       <div className="text-center">
         <h1
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Tier List Riftbound - Les meilleures Légendes du méta
+          {t("Tier List Riftbound - Les meilleures Légendes du méta")}
         </h1>
         <p className="mt-2 text-ink-secondary">
-          Classement éditorial par set et global, basé sur les résultats de
-          tournois.
+          {t("Classement éditorial par set et global, basé sur les résultats de tournois.")}
         </p>
       </div>
       <TierListTabs
@@ -111,3 +112,5 @@ export default async function TierListPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

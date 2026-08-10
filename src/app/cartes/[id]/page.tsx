@@ -10,7 +10,7 @@ import { isBanned } from "@/lib/banned-cards";
 import { getErrata } from "@/lib/errata-2026-07";
 import { ErrataDiff } from "@/components/errata-diff";
 import { displayLegendName } from "@/lib/utils";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 

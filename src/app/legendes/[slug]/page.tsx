@@ -8,7 +8,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-react";
 import { prisma } from "@/lib/prisma";

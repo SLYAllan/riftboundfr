@@ -1,12 +1,14 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { UserMenu } from "@/components/user-menu";
+import { useLangue, useT } from "@/components/i18n-provider";
+import { PREFIXE_EN, sansPrefixe } from "@/lib/i18n";
 
 
 const mainLinks = [
@@ -26,8 +28,40 @@ const outilsLinks = [
   { href: "/outils/regles", label: "Chercher une règle" },
 ];
 
-export function Navbar() {
-  const pathname = usePathname();
+/**
+ * Rechargement complet plutôt que navigation client : changer de langue change
+ * tout ce que le serveur a rendu, y compris les métadonnées et le `lang` de la
+ * page. Un `<a>` est ici plus sûr qu'un `<Link>`.
+ */
+function SelecteurLangue({ chemin, compact = false }: { chemin: string; compact?: boolean }) {
+  const langue = useLangue();
+  const nu = chemin === "/" ? "" : chemin;
+  return (
+    <div className={cn("flex items-center gap-0.5 rounded-lg border border-hairline p-0.5", compact && "w-max")}>
+      {([
+        { code: "fr", href: nu || "/" },
+        { code: "en", href: `${PREFIXE_EN}${nu}` },
+      ] as const).map((l) => (
+        <a
+          key={l.code}
+          href={l.href}
+          hrefLang={l.code}
+          aria-current={langue === l.code ? "true" : undefined}
+          className={cn(
+            "flex h-8 min-w-8 items-center justify-center rounded-md px-1.5 text-xs font-bold uppercase transition-colors",
+            langue === l.code ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink",
+          )}
+        >
+          {l.code}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export function Navbar({ chemin = "/" }: { chemin?: string }) {
+  const pathname = sansPrefixe(usePathname());
+  const t = useT();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [outilsOpen, setOutilsOpen] = useState(false);
   const outilsRef = useRef<HTMLDivElement>(null);
@@ -70,11 +104,11 @@ export function Navbar() {
                 isOutilsActive ? "text-arcane" : "text-ink-secondary hover:text-ink"
               )}
             >
-              Outils
+              {t("Outils")}
               <ChevronDown size={14} className={cn("transition-transform", outilsOpen && "rotate-180")} />
             </button>
             {outilsOpen && (
-              <div role="menu" aria-label="Outils" className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+              <div role="menu" aria-label={t("Outils")} className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
                 {outilsLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -87,7 +121,7 @@ export function Navbar() {
                         : "text-ink-secondary hover:text-ink hover:bg-surface-raised"
                     )}
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 ))}
               </div>
@@ -105,10 +139,11 @@ export function Navbar() {
                   : "text-ink-secondary hover:text-ink"
               )}
             >
-              {link.label}
+              {t(link.label)}
             </Link>
           ))}
-          <div className="ml-2 flex items-center gap-1 border-l border-hairline pl-3">
+          <div className="ml-2 flex items-center gap-2 border-l border-hairline pl-3">
+            <SelecteurLangue chemin={chemin} />
             <UserMenu />
           </div>
         </div>
@@ -116,7 +151,7 @@ export function Navbar() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary md:hidden"
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={mobileOpen ? t("Fermer le menu") : t("Ouvrir le menu")}
           aria-expanded={mobileOpen}
           // Pas d'aria-controls : le panneau n'existe dans le DOM que lorsqu'il est
           // ouvert, la référence pointait donc dans le vide sur toutes les pages.
@@ -128,7 +163,7 @@ export function Navbar() {
 
       {mobileOpen && (
         <div id="mobile-menu" className="border-t border-hairline px-4 py-4 md:hidden glass">
-          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">Outils</p>
+          <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Outils")}</p>
           {outilsLinks.map((link) => (
             <Link
               key={link.href}
@@ -139,7 +174,7 @@ export function Navbar() {
                 pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
               )}
             >
-              {link.label}
+              {t(link.label)}
             </Link>
           ))}
           <div className="my-2 border-t border-hairline" />
@@ -153,11 +188,12 @@ export function Navbar() {
                 pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
               )}
             >
-              {link.label}
+              {t(link.label)}
             </Link>
           ))}
-          <div className="mt-2 flex items-center gap-2 border-t border-hairline pt-3 px-3">
+          <div className="mt-2 flex flex-wrap items-center gap-3 border-t border-hairline pt-3 px-3">
             <UserMenu />
+            <SelecteurLangue chemin={chemin} compact />
           </div>
         </div>
       )}

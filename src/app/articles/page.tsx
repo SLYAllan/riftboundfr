@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { formatDate, displayLegendName } from "@/lib/utils";
@@ -8,8 +8,9 @@ import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import type { ArticleBlock } from "@/types";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Actualités Riftbound - News, analyses méta et résultats" },
   description:
     "Toute l'actualité Riftbound en français : analyses de méta, résultats de tournois, guides et annonces.",
@@ -38,6 +39,8 @@ export default async function ArticlesPage({
 }: {
   searchParams: Promise<{ category?: string }>;
 }) {
+
+  const t = await tr();
   const { category } = await searchParams;
 
   const where: Record<string, unknown> = { published: true };
@@ -78,13 +81,13 @@ export default async function ArticlesPage({
             href={`/articles?category=${cat}`}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${category === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
           >
-            {categoryLabels[cat] ?? cat}
+            {t(categoryLabels[cat] ?? cat)}
           </Link>
         ))}
       </div>
 
       {articles.length === 0 ? (
-        <p className="mt-12 text-center text-ink-muted">Aucun article publié pour le moment.</p>
+        <p className="mt-12 text-center text-ink-muted">{t("Aucun article publié pour le moment.")}</p>
       ) : (
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => {
@@ -111,7 +114,7 @@ export default async function ArticlesPage({
               <div className="p-5">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-semibold uppercase tracking-wider text-violet-light">
-                    {categoryLabels[article.category] ?? article.category}
+                    {t(categoryLabels[article.category] ?? article.category)}
                   </span>
                   {cc && <CountryBadge code={cc} />}
                   {article.publishedAt && (
@@ -147,3 +150,5 @@ export default async function ArticlesPage({
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

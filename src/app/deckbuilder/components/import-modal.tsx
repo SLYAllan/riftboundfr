@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X, Upload, FileText, Hash, Gamepad2, Link2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
+import { useT } from "@/components/i18n-provider";
 
 type ImportFormat = "deckcode" | "cardnames" | "tts" | "link";
 
@@ -40,6 +41,7 @@ const TABS: { key: ImportFormat; label: string; icon: typeof FileText; placehold
 ];
 
 export function ImportModal({ onImport, onClose }: ImportModalProps) {
+  const t = useT();
   const [activeTab, setActiveTab] = useState<ImportFormat>("deckcode");
   const [text, setText] = useState("");
   const [linkLoading, setLinkLoading] = useState(false);
@@ -106,10 +108,10 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
           <div className="flex items-center gap-2">
             <Upload size={18} className="text-arcane" />
             <h3 id="import-modal-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-              Importer un deck
+              {t("Importer un deck")}
             </h3>
           </div>
-          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink">
+          <button onClick={onClose} aria-label={t("Fermer")} className="text-ink-muted hover:text-ink">
             <X size={20} />
           </button>
         </div>
@@ -135,7 +137,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
           {activeTab === "link" ? (
             <div className="space-y-3">
               <p className="text-xs text-ink-muted">
-                Collez un lien de deck communautaire pour l&apos;importer dans le deckbuilder.
+                {t("Collez un lien de deck communautaire pour l’importer dans le deckbuilder.")}
               </p>
               <input
                 value={text}

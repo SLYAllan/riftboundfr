@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { GLOSSARY_TERMS } from "@/lib/glossary";
 
 // Slug identique à celui des ancres du glossaire, pour que le lien tombe sur la

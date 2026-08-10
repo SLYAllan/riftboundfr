@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import { prisma } from "@/lib/prisma";
 import { verifyAdmin } from "@/lib/auth";
 import { SyncButton } from "./sync-button";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { formatDate } from "@/lib/utils";
 
 export default async function AdminDashboard() {

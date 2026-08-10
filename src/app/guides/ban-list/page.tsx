@@ -3,14 +3,15 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ErrataDiff } from "@/components/errata-diff";
 import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Ban list Riftbound - Toutes les cartes interdites en tournoi" },
   description:
     "La ban list officielle Riftbound à jour : cartes et champs de bataille interdits en tournoi, avec leur date, et les erratas de cartes de juillet 2026.",
@@ -201,3 +202,5 @@ export default async function BanListPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

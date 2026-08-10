@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { Folder, Plus, Globe, Lock, Layers, Hash, PieChart, Heart, MoreVertical, Pencil, Trash2, Share2 } from "lucide-react";
 import { TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";

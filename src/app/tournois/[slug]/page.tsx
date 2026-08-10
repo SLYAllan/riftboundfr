@@ -8,7 +8,7 @@ import { getLegendIconUrl, getBannerUrl } from "@/lib/banners";
 import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
 import { Users, MapPin, Calendar, Swords, ArrowLeft, BookOpen } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 

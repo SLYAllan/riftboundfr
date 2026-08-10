@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useT } from "@/components/i18n-provider";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +13,7 @@ interface PaginationProps {
 
 export function Pagination({ currentPage, totalPages }: PaginationProps) {
   const pathname = usePathname();
+  const t = useT();
   const searchParams = useSearchParams();
 
   function getPageUrl(page: number) {
@@ -40,7 +42,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
       {currentPage > 1 && (
         <Link
           href={getPageUrl(currentPage - 1)}
-          aria-label="Page précédente"
+          aria-label={t("Page précédente")}
           className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
         >
           <ChevronLeft size={16} />
@@ -67,7 +69,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
       {currentPage < totalPages && (
         <Link
           href={getPageUrl(currentPage + 1)}
-          aria-label="Page suivante"
+          aria-label={t("Page suivante")}
           className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
         >
           <ChevronRight size={16} />

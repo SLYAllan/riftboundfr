@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { LayoutGrid, List, ChevronDown } from "lucide-react";
 import { useCollection } from "@/components/collection/collection-provider";
 import { CardImage } from "@/components/card-image";

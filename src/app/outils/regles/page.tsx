@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
 import { Fragment } from "react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { prisma, safeQuery } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { GLOSSARY_TERMS } from "@/lib/glossary";
@@ -12,8 +12,9 @@ import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
 import { loadCoreRules, loadRuleChapters, CORE_RULES_PDF, CORE_RULES_UPDATED, type CoreRule } from "@/lib/core-rules";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Règles de Riftbound en français - le texte officiel, cherchable" },
   description:
     "Les règles officielles de Riftbound en français, en entier et cherchables : texte des règles de base, erratas, cartes interdites, mots-clés et texte des cartes.",
@@ -368,3 +369,5 @@ function RuleRow({ rule }: { rule: CoreRule }) {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

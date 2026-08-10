@@ -15,7 +15,7 @@ import { downloadBlob } from "@/lib/download";
 import { entriesToDeckCode } from "@/lib/deck-code";
 import { exportAsTTS } from "@/lib/export-formats";
 import type { DecklistCard, DeckSection } from "@/types";
-import Link from "next/link";
+import Link from "@/components/lien";
 
 interface DecklistInteractiveProps {
   cards: DecklistCard[];

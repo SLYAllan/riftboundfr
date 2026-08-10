@@ -7,7 +7,7 @@ import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { legendHref as legendPageHref } from "@/lib/legend-fiche";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";

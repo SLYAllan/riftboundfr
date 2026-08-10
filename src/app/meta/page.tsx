@@ -7,6 +7,7 @@ import { getLegendIconUrl } from "@/lib/banners";
 import { formatDate, displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
 import type { Metadata } from "next";
+import { metaTraduite } from "@/lib/i18n-server";
 
 // Cache RUNTIME (pas build) : les decks publiés ne changent qu'aux seeds → 5 min suffit.
 // Invalidable via revalidateTag("meta").
@@ -51,7 +52,7 @@ const getMetaData = unstable_cache(
   { revalidate: 300, tags: ["meta"] },
 );
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Meta Snapshot",
   description:
     "Aperçu du métagame Riftbound : légendes les plus jouées en tournoi. Données basées sur les decks publiés.",
@@ -168,3 +169,5 @@ export default async function MetaSnapshotPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

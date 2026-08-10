@@ -7,7 +7,7 @@ import { ArticleBlockRenderer } from "@/components/article-block-renderer";
 import { BestOfDeckBrowser, type BestOfEntry } from "@/components/best-of-deck-browser";
 import { parseDeckCode } from "@/lib/deck-code";
 import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";

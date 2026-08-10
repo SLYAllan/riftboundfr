@@ -7,8 +7,9 @@ import { prisma, safeQuery } from "@/lib/prisma";
 import { isAdmin } from "@/lib/auth";
 import { DeckbuilderV2 } from "./deckbuilder";
 import type { Metadata } from "next";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Deckbuilder Riftbound - Créez et partagez votre deck" },
   description:
     "Construisez votre deck Riftbound avec notre deckbuilder interactif. Filtres, recherche de cartes et export.",
@@ -126,3 +127,5 @@ export default async function DeckbuilderPage() {
     </Suspense>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

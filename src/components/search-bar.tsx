@@ -2,6 +2,7 @@
 
 import { Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useLien, useT } from "@/components/i18n-provider";
 import { useState } from "react";
 
 interface SearchBarProps {
@@ -11,8 +12,11 @@ interface SearchBarProps {
 
 export function SearchBar({ placeholder = "Rechercher une carte...", basePath = "/cartes" }: SearchBarProps) {
   const router = useRouter();
+  const lien = useLien();
+  const t = useT();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
+  const etiquette = t(placeholder);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -23,7 +27,7 @@ export function SearchBar({ placeholder = "Rechercher une carte...", basePath = 
       params.delete("q");
     }
     params.delete("page");
-    router.push(`${basePath}?${params.toString()}`);
+    router.push(lien(`${basePath}?${params.toString()}`));
   }
 
   return (
@@ -33,8 +37,8 @@ export function SearchBar({ placeholder = "Rechercher une carte...", basePath = 
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        placeholder={placeholder}
-        aria-label={placeholder}
+        placeholder={etiquette}
+        aria-label={etiquette}
         className="h-12 w-full rounded-full border border-hairline-strong bg-surface pl-12 pr-4 text-ink placeholder:text-ink-muted focus:border-arcane focus:ring-2 focus:ring-arcane-glow"
       />
     </form>

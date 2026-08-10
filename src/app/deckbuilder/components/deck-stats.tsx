@@ -5,12 +5,14 @@ import { ChevronDown, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import type { DeckEntry } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckStatsProps {
   mainDeck: DeckEntry[];
 }
 
 function EnergyCurve({ entries }: { entries: DeckEntry[] }) {
+  const t = useT();
   const curve = new Map<number, { total: number; byDomain: Map<string, number> }>();
 
   for (const e of entries) {
@@ -29,7 +31,7 @@ function EnergyCurve({ entries }: { entries: DeckEntry[] }) {
 
   return (
     <div>
-      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">Courbe d&apos;énergie</h5>
+      <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">{t("Courbe d’énergie")}</h5>
       <div className="flex items-end gap-1">
         {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((cost) => {
           const bucket = curve.get(cost);
@@ -147,6 +149,7 @@ function DomainDistribution({ entries }: { entries: DeckEntry[] }) {
 }
 
 export function DeckStats({ mainDeck }: DeckStatsProps) {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const [dist, setDist] = useState<"type" | "domain">("type");
 

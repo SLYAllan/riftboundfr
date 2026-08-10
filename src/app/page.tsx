@@ -1,10 +1,10 @@
 export const revalidate = 60;
 
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 import { unstable_cache } from "next/cache";
@@ -16,6 +16,8 @@ import { displayLegendName, formatDate } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { HomeTierList } from "@/components/home-tier-list";
+import { etiquetteLocale, traduire } from "@/lib/i18n";
+import { langueCourante, metaTraduite } from "@/lib/i18n-server";
 
 const getHomeData = unstable_cache(
   async () => {
@@ -145,6 +147,10 @@ export default async function HomePage() {
     legendMap = new Map(data.legendEntries);
   } catch {}
 
+  const langue = await langueCourante();
+  const t = (texte: string) => traduire(texte, langue);
+  const locale = etiquetteLocale(langue);
+
   return (
     <div>
       {/* Hero - Logo centered */}
@@ -163,7 +169,7 @@ export default async function HomePage() {
           className="text-center text-xl font-bold sm:text-2xl"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Riftbound France, la référence du TCG en français
+          {t("Riftbound France, la référence du TCG en français")}
         </h1>
       </section>
 
@@ -177,13 +183,13 @@ export default async function HomePage() {
                 className="text-lg font-bold"
                 style={{ fontFamily: "var(--font-rubik), sans-serif" }}
               >
-                Légendes les plus jouées
+                {t("Légendes les plus jouées")}
               </h2>
               <Link
                 href="/decks"
                 className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
               >
-                Tous les decks <ArrowRight size={14} />
+                {t("Tous les decks")} <ArrowRight size={14} />
               </Link>
             </div>
             <div className="grid flex-1 grid-cols-3 gap-1 p-2 content-center">
@@ -218,7 +224,7 @@ export default async function HomePage() {
                         {displayLegendName(legend.legendName)}
                       </span>
                       <div className="text-[9px] text-gold/80 truncate leading-tight mt-0.5">
-                        {legend.deckCount.toLocaleString("fr-FR")} decks
+                        {legend.deckCount.toLocaleString(locale)} {t("decks")}
                       </div>
                     </div>
                   </Link>
@@ -250,10 +256,10 @@ export default async function HomePage() {
                       className="font-bold text-base"
                       style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                     >
-                      {guide.title}
+                      {t(guide.title)}
                     </div>
                     <p className="mt-1 text-sm text-ink-secondary leading-relaxed">
-                      {guide.description}
+                      {t(guide.description)}
                     </p>
                   </div>
                 </Link>
@@ -273,14 +279,14 @@ export default async function HomePage() {
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Newspaper size={18} className="text-violet-light" /> Derniers articles
+                <Newspaper size={18} className="text-violet-light" /> {t("Derniers articles")}
               </h2>
               <Link href="/articles" className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
-                Tous <ArrowRight size={14} />
+                {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
             {latestArticles.length === 0 ? (
-              <p className="px-4 py-6 text-sm text-ink-muted">Aucun article pour le moment.</p>
+              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun article pour le moment.")}</p>
             ) : (
               <div className="divide-y divide-hairline flex-1">
                 {latestArticles.map((a) => (
@@ -294,8 +300,8 @@ export default async function HomePage() {
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-violet-light">
-                        {categoryLabels[a.category] ?? a.category}
-                        {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt)}</span>}
+                        {t(categoryLabels[a.category] ?? a.category)}
+                        {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt, locale)}</span>}
                       </div>
                       <div className="mt-0.5 truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{a.title}</div>
                     </div>
@@ -309,17 +315,17 @@ export default async function HomePage() {
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Library size={18} className="text-arcane" /> Ma collection
+                <Library size={18} className="text-arcane" /> {t("Ma collection")}
               </h2>
             </div>
             <div className="flex flex-1 flex-col gap-4 p-5">
               <p className="text-sm text-ink-secondary leading-relaxed">
-                Suis ta collection Riftbound en classeurs, repère tes cartes manquantes et vois quels decks méta tu peux déjà jouer.
+                {t("Suis ta collection Riftbound en classeurs, repère tes cartes manquantes et vois quels decks méta tu peux déjà jouer.")}
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
-                  <div className="text-xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{cardCount.toLocaleString("fr-FR")}</div>
-                  <div className="text-[11px] uppercase tracking-wider text-ink-muted">cartes à collectionner</div>
+                  <div className="text-xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{cardCount.toLocaleString(locale)}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("cartes à collectionner")}</div>
                 </div>
                 <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
                   <div className="flex items-center gap-1.5 text-sm font-semibold"><Upload size={14} className="text-arcane" /> Import CSV</div>
@@ -327,7 +333,7 @@ export default async function HomePage() {
                 </div>
               </div>
               <Link href="/collection" className="mt-auto inline-flex items-center justify-center gap-2 rounded-lg bg-arcane px-4 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/90">
-                Gérer ma collection <ArrowRight size={15} />
+                {t("Gérer ma collection")} <ArrowRight size={15} />
               </Link>
             </div>
           </div>
@@ -336,14 +342,14 @@ export default async function HomePage() {
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Trophy size={18} className="text-gold" /> Tournois
+                <Trophy size={18} className="text-gold" /> {t("Tournois")}
               </h2>
               <Link href="/tournois" className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
-                Tous <ArrowRight size={14} />
+                {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
             {tournamentArticles.length === 0 ? (
-              <p className="px-4 py-6 text-sm text-ink-muted">Aucun tournoi pour le moment.</p>
+              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
             ) : (
               <div className="divide-y divide-hairline flex-1">
                 {tournamentArticles.map((t) => {
@@ -358,7 +364,7 @@ export default async function HomePage() {
                         <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t.tournamentName ?? t.title}</div>
                         <div className="text-[11px] text-ink-muted">
                           {t.tournamentLocation ? t.tournamentLocation.split(",")[0] : ""}
-                          {t.tournamentDate ? `${t.tournamentLocation ? " · " : ""}${formatDate(t.tournamentDate)}` : ""}
+                          {t.tournamentDate ? `${t.tournamentLocation ? " · " : ""}${formatDate(t.tournamentDate, locale)}` : ""}
                         </div>
                       </div>
                     </Link>
@@ -373,3 +379,5 @@ export default async function HomePage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

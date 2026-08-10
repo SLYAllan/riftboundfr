@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Classeur partagé - Riftbound France" },
   robots: { index: false, follow: false },
 };
@@ -58,3 +59,5 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
     </main>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

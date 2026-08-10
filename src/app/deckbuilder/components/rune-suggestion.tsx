@@ -4,6 +4,7 @@ import { Sparkles } from "lucide-react";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { calculateRuneSuggestion, type RuneSuggestion } from "../lib/rune-calculator";
 import type { DeckEntry } from "@/types";
+import { useT } from "@/components/i18n-provider";
 
 interface RuneSuggestionProps {
   mainDeck: DeckEntry[];
@@ -13,6 +14,7 @@ interface RuneSuggestionProps {
 }
 
 export function RuneSuggestionPanel({ mainDeck, legendDomains, currentRunes, onApply }: RuneSuggestionProps) {
+  const t = useT();
   if (mainDeck.length === 0 || legendDomains.length === 0) return null;
 
   const suggestions = calculateRuneSuggestion(mainDeck, legendDomains);
@@ -28,7 +30,7 @@ export function RuneSuggestionPanel({ mainDeck, legendDomains, currentRunes, onA
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-1.5">
           <Sparkles size={12} className="text-gold" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">Runes suggérées</span>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">{t("Runes suggérées")}</span>
         </div>
         {!isSameAsCurrent && (
           <button

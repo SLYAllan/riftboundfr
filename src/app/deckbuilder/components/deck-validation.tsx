@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { DeckValidationIssue } from "../lib/deck-rules";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckValidationProps {
   issues: DeckValidationIssue[];
@@ -12,6 +13,7 @@ interface DeckValidationProps {
 }
 
 export function DeckValidation({ issues, isCompetitive, onSectionClick }: DeckValidationProps) {
+  const t = useT();
   const [collapsed, setCollapsed] = useState(false);
 
   if (!isCompetitive) return null;
@@ -64,7 +66,7 @@ export function DeckValidation({ issues, isCompetitive, onSectionClick }: DeckVa
           {isValid && (
             <div className="flex items-center gap-1.5 px-2 py-1">
               <CheckCircle2 size={11} className="text-emerald-400" />
-              <span className="text-[11px] text-emerald-400">Toutes les règles compétitives sont respectées</span>
+              <span className="text-[11px] text-emerald-400">{t("Toutes les règles compétitives sont respectées")}</span>
             </div>
           )}
         </div>

@@ -6,8 +6,9 @@ import { decodeDeck } from "@/lib/deck-codec";
 import { DeckCompare } from "./deck-compare";
 import type { DecklistCard, DeckSection } from "@/types";
 import { buildCardLookup } from "@/lib/card-printing";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Comparaison de decks",
   description: "Comparez deux decks Riftbound côte à côte : cartes communes, exclusives, statistiques.",
 };
@@ -82,3 +83,5 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

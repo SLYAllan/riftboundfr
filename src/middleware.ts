@@ -20,13 +20,32 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  const response = NextResponse.next();
+  // Version anglaise : /en/decks sert la page /decks avec la langue posée en
+  // en-tête. Aucun fichier n'est dupliqué, et une page pas encore traduite
+  // reste lisible en français au lieu de renvoyer un 404.
+  const chemin = request.nextUrl.pathname;
+  const enAnglais = chemin === "/en" || chemin.startsWith("/en/");
+  const cheminNu = enAnglais ? chemin.slice(3) || "/" : chemin;
+
+  const entrees = new Headers(request.headers);
+  entrees.set("x-langue", enAnglais ? "en" : "fr");
+  entrees.set("x-chemin", cheminNu);
+
+  let response: NextResponse;
+  if (enAnglais) {
+    const cible = request.nextUrl.clone();
+    cible.pathname = cheminNu;
+    response = NextResponse.rewrite(cible, { request: { headers: entrees } });
+  } else {
+    response = NextResponse.next({ request: { headers: entrees } });
+  }
+  response.headers.set("Content-Language", enAnglais ? "en" : "fr");
 
   // L'habillage de stream est la seule page qui encadre un site tiers (la caméra
   // VDO.Ninja) et affiche une image venue de n'importe où (le logo du tournoi). La
   // politique du site interdit les deux, à juste titre : on ne l'ouvre donc que sur
   // cette route, et seulement pour ce qu'elle a besoin.
-  const estOverlay = request.nextUrl.pathname.startsWith("/overlay/");
+  const estOverlay = cheminNu.startsWith("/overlay/");
 
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");

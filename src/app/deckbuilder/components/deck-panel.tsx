@@ -12,6 +12,7 @@ import { validateDeck } from "../lib/deck-rules";
 import type { DeckState, DeckEntry } from "@/types";
 import type { DeckSection } from "@/types";
 import type { RuneSuggestion } from "../lib/rune-calculator";
+import { useT } from "@/components/i18n-provider";
 
 interface DeckPanelV2Props {
   deck: DeckState;
@@ -64,6 +65,7 @@ function DeckCardTile({
   onRemove: () => void; onQtyChange?: (delta: number) => void;
   onMove?: () => void; showMove?: boolean;
 } & RowHoverProps) {
+  const t = useT();
   const isBattlefield = entry.type === "Battlefield";
   return (
     <div
@@ -100,20 +102,20 @@ function DeckCardTile({
       <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1 opacity-0 translate-y-1 pointer-events-none transition duration-150 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
         {onQtyChange && (
           <>
-            <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label="Retirer une copie">
+            <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label={t("Retirer une copie")}>
               <Minus size={13} />
             </button>
-            <button onClick={() => onQtyChange(1)} className={tileBtn("hover:text-arcane hover:bg-canvas")} aria-label="Ajouter une copie">
+            <button onClick={() => onQtyChange(1)} className={tileBtn("hover:text-arcane hover:bg-canvas")} aria-label={t("Ajouter une copie")}>
               <Plus size={13} />
             </button>
           </>
         )}
         {showMove && onMove && (
-          <button onClick={onMove} className={tileBtn("hover:text-gold hover:bg-canvas")} aria-label="Déplacer vers l'autre section">
+          <button onClick={onMove} className={tileBtn("hover:text-gold hover:bg-canvas")} aria-label={t("Déplacer vers l’autre section")}>
             <ArrowRightLeft size={13} />
           </button>
         )}
-        <button onClick={onRemove} className={tileBtn("hover:text-error hover:bg-canvas")} aria-label="Supprimer la carte">
+        <button onClick={onRemove} className={tileBtn("hover:text-error hover:bg-canvas")} aria-label={t("Supprimer la carte")}>
           <Trash2 size={13} />
         </button>
       </div>
@@ -124,6 +126,7 @@ function DeckCardTile({
 function LegendTile({ entry, onRemove, onHover, onLeave }: {
   entry: DeckEntry; onRemove: () => void;
 } & RowHoverProps) {
+  const t = useT();
   return (
     <div
       className="group relative"
@@ -145,7 +148,7 @@ function LegendTile({ entry, onRemove, onHover, onLeave }: {
       <button
         onClick={onRemove}
         className="absolute top-1.5 right-1.5 z-10 rounded-full bg-canvas/85 p-1.5 text-ink-muted opacity-0 shadow transition-opacity hover:text-error group-hover:opacity-100"
-        aria-label="Retirer la légende"
+        aria-label={t("Retirer la légende")}
       >
         <Trash2 size={13} />
       </button>
@@ -197,6 +200,7 @@ export function DeckPanelV2({
   deck, onRemoveCard, onUpdateQuantity, onMoveCard, onApplyRunes, onSectionClick,
   legendDomains, isCompetitive,
 }: DeckPanelV2Props) {
+  const t = useT();
   const [preview, setPreview] = useState<PreviewState | null>(null);
 
   const showPreview = (entry: DeckEntry, el: HTMLElement) => setPreview(computePreview(entry, el));
@@ -275,7 +279,7 @@ export function DeckPanelV2({
             <LegendTile entry={deck.legend} onRemove={() => onRemoveCard("legend", deck.legend!.cardId)} {...hover} />
           </div>
         ) : (
-          <div className="px-2 py-1.5 text-xs italic text-ink-muted">Cliquez sur une légende pour commencer</div>
+          <div className="px-2 py-1.5 text-xs italic text-ink-muted">{t("Cliquez sur une légende pour commencer")}</div>
         )}
       </CollapsibleSection>
 

@@ -1,6 +1,8 @@
-import Link from "next/link";
+import Link from "@/components/lien";
+import { tr } from "@/lib/i18n-server";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const t = await tr();
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center px-4 text-center">
       <span
@@ -13,16 +15,16 @@ export default function NotFound() {
         className="mt-2 text-2xl font-bold"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
-        Page introuvable
+        {t("Page introuvable")}
       </h1>
       <p className="mt-2 text-sm text-ink-secondary">
-        Cette page n&apos;existe pas ou a été déplacée.
+        {t("Cette page n’existe pas ou a été déplacée.")}
       </p>
       <Link
         href="/"
         className="mt-6 rounded-full bg-arcane px-6 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/80"
       >
-        Retour à l&apos;accueil
+        {t("Retour à l’accueil")}
       </Link>
     </div>
   );

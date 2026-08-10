@@ -1,11 +1,14 @@
 "use client";
 
+import { useT } from "@/components/i18n-provider";
+
 export default function Error({
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useT();
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center px-4 text-center">
       <span
@@ -18,16 +21,16 @@ export default function Error({
         className="mt-2 text-2xl font-bold"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
-        Erreur serveur
+        {t("Erreur serveur")}
       </h1>
       <p className="mt-2 text-sm text-ink-secondary">
-        Quelque chose s&apos;est mal passé. Réessayez ou revenez plus tard.
+        {t("Quelque chose s’est mal passé. Réessayez ou revenez plus tard.")}
       </p>
       <button
         onClick={reset}
         className="mt-6 rounded-full bg-arcane px-6 py-2.5 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/80"
       >
-        Réessayer
+        {t("Réessayer")}
       </button>
     </div>
   );

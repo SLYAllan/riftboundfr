@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { Hammer, Users, Trophy, BookOpen, Star, Eye, Heart } from "lucide-react";
@@ -16,8 +16,9 @@ import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { decodeDeck } from "@/lib/deck-codec";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Decks Riftbound en français - decklists de tournois et guides" },
   description:
     "Decklists Riftbound en français : decks gagnants de tournois (Regional Opens, RQ), builds compétitifs et guides par Légende.",
@@ -722,3 +723,5 @@ export default async function DecksPage({ searchParams }: PageProps) {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

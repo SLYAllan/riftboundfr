@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { ChevronRight } from "lucide-react";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";

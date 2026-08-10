@@ -1,14 +1,15 @@
 export const dynamic = "force-dynamic";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { getBinders, getCollectionItems, getWishlistIds } from "@/lib/collection-server";
 import { CollectionDashboard, type DashCard, type DashSet } from "@/components/collection/collection-dashboard";
 import { MAX_BINDERS } from "@/app/api/collection/binders/route";
 import type { Metadata } from "next";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Ma collection Riftbound - classeurs, progression et valeur" },
   description:
     "Gère ta collection de cartes Riftbound en classeurs, suis ta progression par set, type et rareté, et repère tes cartes manquantes.",
@@ -81,3 +82,5 @@ export default async function CollectionPage() {
     </main>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

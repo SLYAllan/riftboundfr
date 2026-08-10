@@ -5,6 +5,7 @@ import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import type { OverlayPlayer, OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
+import { useT } from "@/components/i18n-provider";
 
 // Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
 // transparent pour la zone de jeu. Tout est en pixels, la page fait 1920x1080 et
@@ -144,6 +145,7 @@ function Side({
   format: OverlayStateData["format"];
   footer: React.ReactNode;
 }) {
+  const t = useT();
   // Bannière large plutôt que la vignette carrée : c'est ce que montre la
   // retransmission officielle, et l'illustration porte le panneau.
   const banner = p.legendName ? getBannerUrl(p.legendName) : null;
@@ -177,7 +179,7 @@ function Side({
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
           <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {p.legendName || "Légende"}
+            {p.legendName || t("Légende")}
           </FitText>
           <FitText chars={34} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
             {p.championName || "Champion"}
@@ -216,13 +218,13 @@ function Side({
             />
             {!camCharge && (
               <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
-                caméra en attente
+                {t("caméra en attente")}
               </span>
             )}
           </div>
         ) : (
           <Slot
-            label="Caméra"
+            label={t("Caméra")}
             className="absolute"
             style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
           />
@@ -415,6 +417,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
  * transparent : ça se pose sur n'importe quelle scène.
  */
 function OverlayCompact({ state }: { state: OverlayStateData }) {
+  const t = useT();
   const [a, b] = state.players;
   return (
     <div className={styles.root}>
@@ -439,7 +442,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           </FitText>
           <div className="mt-1 border-t border-white/15 pt-1">
             <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white/95">
-              {p.legendName || "Légende"}
+              {p.legendName || t("Légende")}
             </FitText>
             <FitText chars={32} className="text-sm leading-tight text-white/70">
               {p.championName || "Champion"}

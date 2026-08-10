@@ -1,29 +1,33 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
+import { tr } from "@/lib/i18n-server";
 
-export function Footer() {
+const liens = [
+  { href: "/cartes", label: "Cartes" },
+  { href: "/decks", label: "Decks" },
+  { href: "/tier-list", label: "Tier List" },
+  { href: "/guides/debuter", label: "Guides" },
+  { href: "/tournois", label: "Tournois" },
+  { href: "/articles", label: "Articles" },
+  { href: "/deckbuilder", label: "Deckbuilder" },
+  { href: "/a-propos", label: "À propos" },
+];
+
+export async function Footer() {
+  const t = await tr();
+
   return (
     <footer className="border-t border-hairline bg-surface">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         {/* py-1 sur chaque lien : sans lui la cible fait 16px de haut et les
             cercles de 24px de deux liens voisins se chevauchent (WCAG 2.5.8). */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 py-1.5 text-xs text-ink-muted [&_a]:py-1">
-          <Link href="/cartes" className="hover:text-ink transition-colors">Cartes</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/decks" className="hover:text-ink transition-colors">Decks</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/tier-list" className="hover:text-ink transition-colors">Tier List</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/guides/debuter" className="hover:text-ink transition-colors">Guides</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/tournois" className="hover:text-ink transition-colors">Tournois</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/articles" className="hover:text-ink transition-colors">Articles</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/deckbuilder" className="hover:text-ink transition-colors">Deckbuilder</Link>
-          <span className="text-hairline">·</span>
-          <Link href="/a-propos" className="hover:text-ink transition-colors">À propos</Link>
-          <span className="text-hairline">·</span>
+          {liens.map((lien) => (
+            <span key={lien.href} className="flex items-center gap-x-4">
+              <Link href={lien.href} className="hover:text-ink transition-colors">{t(lien.label)}</Link>
+              <span className="text-hairline">·</span>
+            </span>
+          ))}
           <a href="mailto:contact@riftboundfrance.fr" className="hover:text-ink transition-colors">Contact</a>
         </div>
 
@@ -32,7 +36,8 @@ export function Footer() {
             <Image src="/logorbfr.png" alt="Riftbound France" width={224} height={112} className="h-7 w-auto" />
           </div>
           <p className="text-[11px] leading-snug text-ink-muted sm:ml-auto sm:max-w-3xl sm:text-right">
-            &copy; {new Date().getFullYear()} Riftbound France &middot; riftboundfrance.fr. Site non approuv&eacute; par Riot Games. Riot Games et toutes les propri&eacute;t&eacute;s associ&eacute;es sont des marques de Riot Games, Inc.
+            &copy; {new Date().getFullYear()} Riftbound France &middot; riftboundfrance.fr.{" "}
+            {t("Site non approuvé par Riot Games. Riot Games et toutes les propriétés associées sont des marques de Riot Games, Inc.")}
           </p>
         </div>
       </div>

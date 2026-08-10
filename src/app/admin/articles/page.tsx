@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { prisma } from "@/lib/prisma";
 import { verifyAdmin } from "@/lib/auth";
 import { formatDate } from "@/lib/utils";

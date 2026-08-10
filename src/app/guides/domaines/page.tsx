@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "6 Domaines Riftbound - Fury, Calm, Mind, Body, Chaos, Order" },
   description:
     "Découvrez les 6 domaines de Riftbound : forces, faiblesses, style de jeu et Légendes associées pour chaque couleur.",
@@ -275,3 +276,5 @@ export default function DomainesGuidePage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

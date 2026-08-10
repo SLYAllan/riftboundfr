@@ -1,14 +1,15 @@
 export const dynamic = "force-dynamic";
 
-import Link from "next/link";
+import Link from "@/components/lien";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { getBinderQuantities, getWishlistIds } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
+import { metaTraduite } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Classeur - Ma collection Riftbound" },
   robots: { index: false, follow: false },
 };
@@ -66,3 +67,5 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
     </main>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

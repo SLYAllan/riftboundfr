@@ -1,8 +1,9 @@
-import Link from "next/link";
+import Link from "@/components/lien";
 import { BookOpen, Layers, BookText, Shield, Monitor, TrendingUp, Ban } from "lucide-react";
 import type { Metadata } from "next";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Guides Riftbound - Débuter, deckbuilding, méta et règles",
   description: "Tous les guides Riftbound en français : règles pour débuter, deckbuilding, les 6 domaines, méta et tier list, glossaire et comment jouer en ligne.",
   alternates: { canonical: "/guides" },
@@ -18,20 +19,23 @@ const guides = [
   { href: "/guides/jouer-en-ligne", icon: Monitor, title: "Jouer en ligne", description: "Comment jouer à Riftbound gratuitement en ligne avec TCG Arena et RiftAtlas. Guide pas-à-pas." },
 ];
 
-export default function GuidesPage() {
+export default async function GuidesPage() {
+  const t = await tr();
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Guides</h1>
-      <p className="mt-2 text-ink-secondary">Tout ce qu&apos;il faut pour débuter et progresser au TCG Riftbound.</p>
+      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Guides")}</h1>
+      <p className="mt-2 text-ink-secondary">{t("Tout ce qu’il faut pour débuter et progresser au TCG Riftbound.")}</p>
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {guides.map((guide) => (
           <Link key={guide.href} href={guide.href} className="card-hover rounded-feature border border-hairline bg-surface p-6">
             <guide.icon className="text-arcane" size={32} />
-            <h2 className="mt-4 text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{guide.title}</h2>
-            <p className="mt-2 text-sm text-ink-secondary">{guide.description}</p>
+            <h2 className="mt-4 text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(guide.title)}</h2>
+            <p className="mt-2 text-sm text-ink-secondary">{t(guide.description)}</p>
           </Link>
         ))}
       </div>
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);

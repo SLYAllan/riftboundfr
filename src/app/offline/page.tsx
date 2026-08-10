@@ -1,6 +1,9 @@
 "use client";
 
+import { useT } from "@/components/i18n-provider";
+
 export default function OfflinePage() {
+  const t = useT();
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-4 py-24 text-center">
       <div className="mb-6">
@@ -30,11 +33,11 @@ export default function OfflinePage() {
         className="mb-4 text-3xl font-bold"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
-        {"Vous êtes hors ligne"}
+        {t("Vous êtes hors ligne")}
       </h1>
 
       <p className="mb-8 max-w-md text-lg text-ink-secondary">
-        {"Impossible de charger cette page. Vérifiez votre connexion internet puis réessayez."}
+        {t("Impossible de charger cette page. Vérifiez votre connexion internet puis réessayez.")}
       </p>
 
       <button
@@ -42,7 +45,7 @@ export default function OfflinePage() {
         onClick={() => window.location.reload()}
         className="rounded-xl bg-arcane px-6 py-3 font-semibold text-canvas transition-colors hover:bg-arcane-light"
       >
-        {"Réessayer"}
+        {t("Réessayer")}
       </button>
     </div>
   );

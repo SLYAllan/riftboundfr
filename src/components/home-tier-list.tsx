@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn, displayLegendName } from "@/lib/utils";

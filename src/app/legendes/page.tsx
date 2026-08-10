@@ -1,13 +1,14 @@
 import { promises as fs } from "fs";
 import path from "path";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/lien";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { getBannerUrl } from "@/lib/banners";
 import { legendsWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName } from "@/lib/utils";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 // La liste dépend de la base (Légendes sans fiche) : rendu à la requête, comme les
 // autres pages qui lisent la DB, sinon le build Docker la fige à vide.
@@ -15,7 +16,7 @@ export const dynamic = "force-dynamic";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: { absolute: "Fiches Légendes Riftbound FR : guides & decklists par Légende" },
   description:
     "Toutes les fiches Légendes Riftbound en français : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses, classées par tier.",
@@ -130,6 +131,7 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
 }
 
 export default async function LegendesIndexPage() {
+  const t = await tr();
   const fiches = await loadSummaries();
   fiches.sort((a, b) => displayLegendName(a.legendName).localeCompare(displayLegendName(b.legendName), "fr"));
 
@@ -143,11 +145,10 @@ export default async function LegendesIndexPage() {
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Légendes", href: "/legendes" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Fiches Légendes
+        {t("Fiches Légendes")}
       </h1>
       <p className="mt-2 text-lg text-ink-secondary">
-        Une fiche par Légende du jeu : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses.
-        Les Légendes sont classées par tier.
+        {t("Une fiche par Légende du jeu : archétype, decklists, plan de jeu, cartes clés, forces et faiblesses. Les Légendes sont classées par tier.")}
       </p>
 
       <div className="mt-10 space-y-12">
@@ -176,7 +177,7 @@ export default async function LegendesIndexPage() {
         {untiered.length > 0 && (
           <section>
             <h2 className="text-2xl font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-              Autres Légendes
+              {t("Autres Légendes")}
             </h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {untiered.map((f) => (
@@ -189,3 +190,5 @@ export default async function LegendesIndexPage() {
     </div>
   );
 }
+
+export const generateMetadata = () => metaTraduite(metadata);
