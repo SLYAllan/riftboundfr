@@ -46,6 +46,11 @@ Deux points à ne pas défaire :
 ## Règles de publication
 
 - 280 caractères, une idée par tweet.
+- **Écrire comme un joueur, pas comme une fiche.** Deux tics à bannir : la phrase qui
+  annonce puis déroule ses données après deux-points (« Vainqueur : untel, tel deck,
+  12-0-2 »), et le nom complet des cartes. Personne ne dit « Master Yi, Wuju Bladesman »
+  ni « Rengar, Pridestalker » à voix haute : on dit Master Yi, on dit Rengar. Le nom
+  complet appartient aux articles et aux decklists.
 - **Pas de lien dans le corps du tweet.** X réduit la portée des publications qui
   sortent les gens de la plateforme. Le tweet se suffit à lui-même, le lien part en
   première réponse. Sur un compte qui cherche son audience, la portée vaut plus que le
