@@ -22,7 +22,7 @@ const SLOT = {
   // Case dorée du bas relevée au pixel sur le fond : x 102-253, y 968-1019.
   timer: { left: 102, top: 968, width: 152, height: 52 },
   round: { top: 906, height: 52 },
-  cards: { top: 678, height: 387 },
+  cards: { left: 1608, top: 688, width: 268, height: 366 },
 } as const;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
@@ -284,17 +284,24 @@ function Manche({ gagnee }: { gagnee: boolean }) {
 function CarteMontree({ nom }: { nom: string | null }) {
   const art = useBattlefieldArt(nom ? [nom] : []);
   const url = nom ? art[nom] : null;
+  // Le fondu doit partir quand l'image est prête, pas quand la balise est posée :
+  // sinon il se joue pendant le chargement et personne ne le voit.
+  const [prete, setPrete] = useState(false);
+  useEffect(() => setPrete(false), [url]);
   return (
     <div
       className="absolute z-20 overflow-hidden"
-      style={{ left: SLOT.x.right, width: SLOT.width, top: SLOT.cards.top, height: SLOT.cards.height }}
+      style={{ left: SLOT.cards.left, width: SLOT.cards.width, top: SLOT.cards.top, height: SLOT.cards.height }}
     >
       {url && (
         <img
-          key={nom ?? ""}
+          key={url}
           src={url}
           alt=""
-          className={`${styles.apparait} absolute inset-0 m-auto max-h-full max-w-full object-contain`}
+          onLoad={() => setPrete(true)}
+          className={`absolute inset-0 m-auto max-h-full max-w-full object-contain transition-opacity duration-300 ease-out ${
+            prete ? "opacity-100" : "opacity-0"
+          }`}
         />
       )}
     </div>
