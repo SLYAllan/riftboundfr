@@ -20,6 +20,7 @@ import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "./lib/export-formats";
 import { generateDeckImage } from "./lib/export-image";
 import { SIDE_SIZE } from "./lib/deck-rules";
+import { findMatchingChampion, splitChampion } from "./lib/champion";
 import { downloadBlob } from "@/lib/download";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import type { RuneSuggestion } from "./lib/rune-calculator";
@@ -50,12 +51,6 @@ function cardToEntry(card: CardData, qty = 1): DeckEntry {
     domains: card.domains,
     quantity: qty,
   };
-}
-
-function findMatchingChampion(mainDeck: DeckEntry[], legendName: string | undefined): DeckEntry | undefined {
-  if (!legendName) return undefined;
-  const firstName = legendName.split(",")[0].toLowerCase();
-  return mainDeck.find((e) => e.supertype === "Champion" && e.name.toLowerCase().startsWith(firstName));
 }
 
 function detectSection(card: CardData): DeckSection {
@@ -341,9 +336,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   }
 
   function handleSave() {
-    // Le champion est rangé dans la section "legend" à sa vraie quantité ; on l'EXCLUT
-    // du main sauvegardé pour ne pas le dupliquer au rechargement (legend + main).
-    const championEntry = findMatchingChampion(deck.main, deck.legend?.name);
+    // Un exemplaire du champion est rangé dans la section "legend" ; il est retiré du
+    // main sauvegardé pour ne pas être compté deux fois au rechargement.
+    const { champion: championEntry, rest: mainRest } = splitChampion(deck.main, deck.legend?.name);
     const data = {
       title: deckTitle,
       legendId: deck.legend?.cardId ?? null,
@@ -351,7 +346,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       legendDomains,
       sections: {
         legend: deck.legend ? [deckEntryToSaved(deck.legend)] : [],
-        main: deck.main.filter((e) => e.cardId !== championEntry?.cardId).map(deckEntryToSaved),
+        main: mainRest.map(deckEntryToSaved),
         rune: deck.rune.map(deckEntryToSaved),
         battlefield: deck.battlefield.map(deckEntryToSaved),
         side: deck.side.map(deckEntryToSaved),
@@ -387,17 +382,27 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   function loadSaved(saved: SavedDeck) {
     const newDeck: DeckState = { legend: null, champion: null, main: [], rune: [], battlefield: [], side: [] };
 
+    // Le champion sauvegardé revient au main. Depuis qu'on n'en détache qu'un
+    // exemplaire, ses copies sont aussi dans la section main : sans fusion on
+    // obtiendrait deux entrées pour la même carte (clé React en double).
+    const add = (section: DeckSection, card: CardData, qty: number) => {
+      const list = newDeck[section] as DeckEntry[];
+      const existing = list.find((e) => e.cardId === card.id);
+      if (existing) existing.quantity += qty;
+      else list.push(cardToEntry(card, qty));
+    };
+
     for (const entry of saved.sections.legend ?? []) {
       const card = cardMap.get(entry.cardId);
       if (!card) continue;
       if (card.type === "Legend") newDeck.legend = cardToEntry(card, entry.quantity);
-      else if (card.supertype === "Champion") newDeck.main.push(cardToEntry(card, entry.quantity));
+      else if (card.supertype === "Champion") add("main", card, entry.quantity);
     }
 
     for (const section of ["main", "rune", "battlefield", "side"] as const) {
       for (const entry of saved.sections[section] ?? []) {
         const card = cardMap.get(entry.cardId);
-        if (card) newDeck[section].push(cardToEntry(card, entry.quantity));
+        if (card) add(section, card, entry.quantity);
       }
     }
 
@@ -421,11 +426,11 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   }
 
   function getShareUrl(): string {
-    const championInMain = findMatchingChampion(deck.main, deck.legend?.name);
+    const { champion: championInMain, rest: mainRest } = splitChampion(deck.main, deck.legend?.name);
     const codeData = {
       legend: deck.legend ? { cardId: deck.legend.cardId, quantity: 1 } : null,
-      champion: championInMain ? { cardId: championInMain.cardId, quantity: championInMain.quantity } : null,
-      main: deck.main.filter((e) => e.cardId !== championInMain?.cardId).map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
+      champion: championInMain ? { cardId: championInMain.cardId, quantity: 1 } : null,
+      main: mainRest.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
       rune: deck.rune.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
       battlefield: deck.battlefield.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
       side: deck.side.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
@@ -438,12 +443,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
     const fmt = (n: string) => n;
     const entries: { quantity: number; name: string; section: "legend" | "champion" | "main" | "rune" | "battlefield" | "side" }[] = [];
     if (deck.legend) entries.push({ quantity: 1, name: fmt(deck.legend.name), section: "legend" });
-    const championInMain = findMatchingChampion(deck.main, deck.legend?.name);
-    if (championInMain) entries.push({ quantity: championInMain.quantity, name: fmt(championInMain.name), section: "champion" });
-    for (const e of deck.main) {
-      if (e.cardId === championInMain?.cardId) continue;
-      entries.push({ quantity: e.quantity, name: fmt(e.name), section: "main" });
-    }
+    const { champion: championInMain, rest: mainRest } = splitChampion(deck.main, deck.legend?.name);
+    if (championInMain) entries.push({ quantity: 1, name: fmt(championInMain.name), section: "champion" });
+    for (const e of mainRest) entries.push({ quantity: e.quantity, name: fmt(e.name), section: "main" });
     for (const e of deck.rune) entries.push({ quantity: e.quantity, name: fmt(e.name), section: "rune" });
     for (const e of deck.battlefield) entries.push({ quantity: e.quantity, name: fmt(e.name), section: "battlefield" });
     for (const e of deck.side) entries.push({ quantity: e.quantity, name: fmt(e.name), section: "side" });
