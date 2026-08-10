@@ -49,6 +49,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   }
 
   const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
+  const [brouillonLogo, setBrouillonLogo] = useState("");
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   const inputCls = "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm focus:border-arcane focus:outline-none";
@@ -160,7 +161,28 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         </label>
         <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder="Titre event" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
         <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder="Ronde (TOP 8…)" className="rounded-lg border border-hairline bg-surface px-3 py-1.5" />
-        <input value={state.event.logoUrl ?? ""} onChange={(e) => update({ event: { logoUrl: e.target.value } })} placeholder="Lien du logo du tournoi" className="min-w-[220px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5" />
+        <span className="flex min-w-[280px] flex-1 gap-2">
+          <input
+            value={brouillonLogo}
+            onChange={(e) => setBrouillonLogo(e.target.value)}
+            placeholder="Lien du logo du tournoi"
+            className="min-w-0 flex-1 rounded-lg border border-hairline bg-surface px-3 py-1.5"
+          />
+          <button
+            onClick={() => update({ event: { logoUrl: brouillonLogo } })}
+            className="shrink-0 rounded-lg bg-arcane px-3 py-1.5 font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]"
+          >
+            Charger
+          </button>
+          {state.event.logoUrl && (
+            <button
+              onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }}
+              className="shrink-0 rounded-lg border border-hairline px-3 py-1.5 transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]"
+            >
+              Retirer
+            </button>
+          )}
+        </span>
         <label className="flex items-center gap-2">Chrono
           <select
             value=""
