@@ -44,7 +44,7 @@ export function DeckProgress({
     <div className="flex items-center gap-1 px-3 py-2 overflow-x-auto">
       {steps.map((step, i) => {
         const done = step.key === "side"
-          ? sideTotal === 0 || sideTotal === 8
+          ? sideTotal === 0 || sideTotal === SIDE_SIZE
           : step.current >= step.target;
         const isOver = step.current > step.target && step.key !== "main" && step.key !== "side";
         const isActive = activeStep === step.filterTab ||

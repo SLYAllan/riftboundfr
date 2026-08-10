@@ -115,7 +115,7 @@
 - **40 cartes Main Deck** : unites, sorts, gears
 - **12 Runes** : matchent les Domain Identity de la Legend
 - **3 Battlefields** : choisis strategiquement
-- **8 cartes Side Deck** : echanges en Bo3
+- **10 cartes Side Deck** (8 avant Vendetta) : echanges en Bo3
 
 ### Ratio unites/sorts/gears (moyenne sur 7987 decks)
 
@@ -700,7 +700,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ## 6. Sideboard rules
 
-- **8 cartes** en side deck
+- **10 cartes** en side deck (8 avant Vendetta)
 - Cartes universelles de side : Salvage, Ashe Focused, Brynhir Thundersong, Turn to Dust, Sabotage, Star-Crossed, Repulse
 - 3 Battlefields fixes (pas de swap), choix strategique en game 2-3
 
@@ -747,8 +747,8 @@ ENTREE : Legend + Archetype + Contraintes
 7. VERIFIER la courbe : aggro=bas, midrange=equilibre, control=haut
 8. CONSTRUIRE les 12 Runes (split selon section 3)
 9. CHOISIR 3 Battlefields (section 2 par Legend)
-10. CONSTRUIRE le Side Deck (8 cartes, section 6)
-11. VALIDER (40 main + 12 runes + 3 BF + 8 side, max 3 copies)
+10. CONSTRUIRE le Side Deck (10 cartes, section 6)
+11. VALIDER (40 main + 12 runes + 3 BF + 10 side, max 3 copies)
 
 SORTIE : Decklist complete + guide
 ```

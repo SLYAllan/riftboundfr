@@ -19,6 +19,7 @@ import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "./lib/export-formats";
 import { generateDeckImage } from "./lib/export-image";
+import { SIDE_SIZE } from "./lib/deck-rules";
 import { downloadBlob } from "@/lib/download";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import type { RuneSuggestion } from "./lib/rune-calculator";
@@ -235,7 +236,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
 
       if (section === "side") {
         const sideTotal = prev.side.reduce((s, e) => s + e.quantity, 0);
-        if (sideTotal >= 8) return prev;
+        if (sideTotal >= SIDE_SIZE) return prev;
       }
 
       const arr = [...(prev[section] as DeckEntry[])];
