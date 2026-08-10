@@ -22,10 +22,21 @@ export function middleware(request: NextRequest) {
 
   const response = NextResponse.next();
 
+  // L'habillage de stream est la seule page qui encadre un site tiers (la caméra
+  // VDO.Ninja) et affiche une image venue de n'importe où (le logo du tournoi). La
+  // politique du site interdit les deux, à juste titre : on ne l'ouvre donc que sur
+  // cette route, et seulement pour ce qu'elle a besoin.
+  const estOverlay = request.nextUrl.pathname.startsWith("/overlay/");
+
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  response.headers.set(
+    "Permissions-Policy",
+    estOverlay
+      ? "camera=(), microphone=(), geolocation=(), autoplay=(self \"https://vdo.ninja\")"
+      : "camera=(), microphone=(), geolocation=()",
+  );
   response.headers.set(
     "Strict-Transport-Security",
     "max-age=63072000; includeSubDomains; preload",
@@ -40,9 +51,15 @@ export function middleware(request: NextRequest) {
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://cmsassets.rgpub.io https://cdn.discordapp.com https://www.google-analytics.com https://*.google-analytics.com https://*.g.doubleclick.net",
+      estOverlay
+        ? // Le logo du tournoi est une image que l'organisateur héberge où il veut.
+          "img-src 'self' data: blob: https:"
+        : "img-src 'self' data: blob: https://cmsassets.rgpub.io https://cdn.discordapp.com https://www.google-analytics.com https://*.google-analytics.com https://*.g.doubleclick.net",
       "connect-src 'self' https://cmsassets.rgpub.io https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net",
       "frame-ancestors 'none'",
+      // Sans ça, `default-src 'self'` interdit l'iframe et la caméra n'apparaît
+      // jamais : c'était la cause du cadre vide, pas le code de l'overlay.
+      estOverlay ? "frame-src https://vdo.ninja https://*.vdo.ninja" : "frame-src 'none'",
     ].join("; "),
   );
 
