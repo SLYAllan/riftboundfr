@@ -188,6 +188,9 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           deckName={deck.title}
           legendName={deck.legendName}
           playerName={deck.authorName}
+          // Même raison que sur /decks/[slug] : le h1 et la sous-ligne au-dessus
+          // disent déjà le titre, la Légende et l'auteur.
+          compact
           showCopyCode
           showExportPng
           deckbuilderCode={(() => {

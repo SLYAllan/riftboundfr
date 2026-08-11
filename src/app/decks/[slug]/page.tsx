@@ -229,6 +229,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
           legendName={deck.legendName}
           playerName={deck.playerName ?? deck.authorName ?? undefined}
           context={deck.tournamentContext ?? undefined}
+          // La page porte déjà le titre, la Légende, le joueur et le tournoi
+          // dans son h1 et sa sous-ligne : l'en-tête complet les répétait mot
+          // pour mot juste en dessous.
+          compact
           showCopyCode
           showExportPng
           sourceArticleSlug={deck.sourceArticle?.slug}
