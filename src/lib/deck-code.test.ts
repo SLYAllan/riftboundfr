@@ -75,11 +75,27 @@ describe("parseDeckCode : en-têtes de section", () => {
 });
 
 describe("parseDeckCode : formes de ligne", () => {
-  it("accepte une ligne sans quantité, comptée pour 1", () => {
-    const { entries, errors } = parseDeckCode("MainDeck:\nVilemaw\nThermo Beam");
-    expect(errors).toEqual([]);
-    expect(entries.map((e) => e.name)).toEqual(["Vilemaw", "Thermo Beam"]);
-    expect(entries.every((e) => e.quantity === 1)).toBe(true);
+  // Garde-fou anti-fabrication : sans quantité obligatoire, la moindre ligne
+  // parasite d'un scrape devenait une carte fantôme sans erreur signalée. Les
+  // seeds de tournoi passent par ce parseur.
+  it("refuse une ligne sans quantité et la signale", () => {
+    const { entries, errors } = parseDeckCode("MainDeck:\nVilemaw\n2 Thermo Beam");
+    expect(entries.map((e) => e.name)).toEqual(["Thermo Beam"]);
+    expect(errors).toHaveLength(1);
+    expect(errors[0]).toContain("Vilemaw");
+  });
+
+  it("ne fabrique aucune carte à partir de lignes parasites", () => {
+    const junk = [
+      "Deck de Jean-Michel",
+      "https://riftdecks.com/deck/1234",
+      "Missing / Not available",
+      "Total: 64",
+      "Powered by riftdecks",
+    ];
+    const { entries, errors } = parseDeckCode("MainDeck:\n" + junk.join("\n") + "\n1 Vilemaw");
+    expect(entries.map((e) => e.name)).toEqual(["Vilemaw"]);
+    expect(errors).toHaveLength(junk.length);
   });
 
   it("accepte « 3x Nom » et « 3 Nom »", () => {

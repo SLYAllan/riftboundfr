@@ -68,11 +68,13 @@ export function parseDeckCode(code: string): ParsedDeck {
       continue;
     }
 
-    // La quantité est facultative : une liste collée sans chiffres (« Vilemaw »
-    // sur sa ligne) valait « ligne non reconnue » et la carte était perdue.
-    const cardMatch = line.match(/^(?:(\d+)\s*x?\s+)?(.+?)(?:\s+\(([^)]+)\))?$/i);
+    // La quantité est OBLIGATOIRE. La rendre facultative transformait la moindre
+    // ligne parasite d'un scrape (« Missing / Not available », une URL, « Total:
+    // 64 ») en carte fantôme, sans plus aucune erreur signalée : exactement ce
+    // que le garde-fou anti-fabrication doit empêcher.
+    const cardMatch = line.match(/^(\d+)\s*x?\s+(.+?)(?:\s+\(([^)]+)\))?$/i);
     if (cardMatch) {
-      const quantity = cardMatch[1] ? parseInt(cardMatch[1], 10) : 1;
+      const quantity = parseInt(cardMatch[1], 10);
       let name = cardMatch[2].trim().replace(/\s+/g, " ");
       let setCode: string | undefined = cardMatch[3]?.trim();
       if (setCode) {

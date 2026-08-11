@@ -6,6 +6,7 @@ import { decodeDeck } from "@/lib/deck-codec";
 import { DeckCompare } from "./deck-compare";
 import type { DecklistCard, DeckSection } from "@/types";
 import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
+import { findCard } from "@/lib/card-printing";
 import { metaTraduite } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
@@ -23,7 +24,9 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
   let legendName = "";
 
   function resolve(id: string) {
-    return cardMap.get(id) ?? cardMap.get(id.toLowerCase());
+    // findCard et pas cardMap.get : c'est lui qui gère apostrophes, virgules et
+    // suffixes de variante. Un accès direct raterait « KaiSa Survivor ».
+    return findCard(cardMap, id);
   }
 
   if (decoded.legend) {
