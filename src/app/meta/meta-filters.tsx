@@ -133,9 +133,11 @@ export function MetaFilters({
                   </div>
                 )}
 
-                {/* Legend name */}
+                {/* Nom sur deux lignes réservées : sinon « Sett, The Boss »
+                    (1 ligne) et « Miss Fortune, Bounty Hunter » (2 lignes)
+                    décalent le tier, le compte et la barre de leurs voisins. */}
                 <p
-                  className="mt-3 text-center text-sm font-semibold text-ink leading-tight"
+                  className="mt-3 flex min-h-9 items-center text-center text-sm font-semibold text-ink leading-tight"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {legend.shortName}

@@ -89,7 +89,7 @@ export default async function MetaSnapshotPage() {
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Meta Snapshot
+          {t("Aperçu du méta")}
         </h1>
         <p className="mt-4 text-ink-secondary">
           {t("Aucune donnée disponible pour le moment.")}
@@ -143,7 +143,7 @@ export default async function MetaSnapshotPage() {
           className="text-4xl font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
-          Meta Snapshot
+          {t("Aperçu du méta")}
         </h1>
         <p className="mt-2 text-ink-secondary">
           {t("Popularité des légendes basée sur les decks de tournois publiés.")}

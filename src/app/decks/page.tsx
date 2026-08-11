@@ -290,9 +290,12 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                             {deck.title}
                           </div>
-                          <div className="mt-0.5 flex flex-wrap items-center gap-2 text-xs">
-                            <span className="text-arcane drop-shadow-sm">{displayLegendName(deck.legendName)}</span>
-                            <span className="text-white/80 drop-shadow-sm">par {deck.authorName}</span>
+                          <div
+                            className="mt-0.5 flex flex-wrap items-center gap-2 text-xs"
+                            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.7)" }}
+                          >
+                            <span className="text-arcane-light">{displayLegendName(deck.legendName)}</span>
+                            <span className="text-white/80">par {deck.authorName}</span>
                           </div>
                           {deck.tags.length > 0 && (
                             <div className="mt-1 flex flex-wrap gap-1">
@@ -647,7 +650,14 @@ export default async function DecksPage({ searchParams }: PageProps) {
                         <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                           {displayLegendName(deck.legendName)}
                         </div>
-                        <div className="mt-1 space-y-0.5 text-xs">
+                        {/* Halo sombre porté par le TEXTE, pas par un voile sur
+                            l'image : les dégradés des bannières ont été allégés
+                            exprès. Sans lui, « RQ Utrecht 2026 » en or disparaît
+                            sur les arts dorés (Sett, Azir). */}
+                        <div
+                          className="mt-1 space-y-0.5 text-xs"
+                          style={{ textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.7)" }}
+                        >
                           <div className="flex items-center gap-2">
                             {deck.tournamentTier && (
                               <span
@@ -660,6 +670,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
                                   "inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20",
                                   TIER_BG[deck.tournamentTier] ?? "bg-ink-muted",
                                 )}
+                                // Pas de halo ici : la pastille a un fond plein.
+                                // Hérité du conteneur, il bavait autour du texte
+                                // sombre posé sur l'or.
+                                style={{ textShadow: "none" }}
                                 title={`Tier ${deck.tournamentTier}`}
                               >
                                 Tier {deck.tournamentTier}
@@ -668,7 +682,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             {deck.tournamentContext && (() => {
                               const cc = getTournamentCountryCode(deck.tournamentContext);
                               return (
-                                <span className="flex min-w-0 items-center gap-1 text-gold drop-shadow-sm">
+                                // Blanc et pas or : l'or sur une armure dorée
+                                // (Azir, Sett) ne se lit pas. Le sens « tournoi »
+                                // reste porté par le drapeau et la pastille Best of.
+                                <span className="flex min-w-0 items-center gap-1 text-white/90">
                                   {cc && <CountryBadge code={cc} />}
                                   <span className="truncate">{deck.tournamentContext}</span>
                                 </span>
@@ -677,8 +694,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           </div>
                           {(deck.placement || deck.playerName || deck.authorName) && (
                             <div className="flex items-center gap-2">
-                              {deck.placement && <span className="shrink-0 font-semibold text-ink-secondary drop-shadow-sm">{deck.placement}</span>}
-                              {(deck.playerName || deck.authorName) && <span className="truncate text-white/90 drop-shadow-sm">par {deck.playerName || deck.authorName}</span>}
+                              {deck.placement && <span className="shrink-0 font-semibold text-ink">{deck.placement}</span>}
+                              {(deck.playerName || deck.authorName) && <span className="truncate text-white/90">par {deck.playerName || deck.authorName}</span>}
                             </div>
                           )}
                         </div>

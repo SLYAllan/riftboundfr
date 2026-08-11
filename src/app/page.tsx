@@ -166,7 +166,7 @@ export default async function HomePage() {
           />
         </Link>
         <h1
-          className="text-center text-xl font-bold sm:text-2xl"
+          className="text-center text-2xl font-bold sm:text-3xl"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
           {t("Riftbound France, la référence du TCG en français")}
@@ -192,7 +192,10 @@ export default async function HomePage() {
                 {t("Tous les decks")} <ArrowRight size={14} />
               </Link>
             </div>
-            <div className="grid flex-1 grid-cols-3 gap-1 p-2 content-center">
+            {/* 2 colonnes, pas 3 : la hauteur de la ligne est fixée par la tier
+                list à droite. En 3 colonnes les 6 vignettes flottaient au milieu
+                d'un vide de 400px, et les noms ne tenaient pas. */}
+            <div className="grid flex-1 grid-cols-2 gap-1.5 p-2 content-center">
               {topLegends.map((legend) => {
                 // Icône de légende = image source carrée (800×800), nette en vignette
                 // carrée ; fallback bannière large si pas d'icône.
@@ -218,12 +221,12 @@ export default async function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-canvas/90 via-canvas/30 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-1.5">
                       <span
-                        className="block text-[11px] font-bold leading-tight text-ink drop-shadow-md truncate"
+                        className="block text-xs font-bold leading-tight text-ink drop-shadow-md line-clamp-2"
                         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                       >
                         {displayLegendName(legend.legendName)}
                       </span>
-                      <div className="text-[9px] text-gold/80 truncate leading-tight mt-0.5">
+                      <div className="text-[10px] text-gold/80 truncate leading-tight mt-0.5">
                         {legend.deckCount.toLocaleString(locale)} {t("decks")}
                       </div>
                     </div>
