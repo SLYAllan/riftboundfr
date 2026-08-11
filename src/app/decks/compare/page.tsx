@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { DeckCompare } from "./deck-compare";
 import type { DecklistCard, DeckSection } from "@/types";
-import { buildCardLookup } from "@/lib/card-printing";
+import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
 import { metaTraduite } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
@@ -17,18 +17,7 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
   const decoded = decodeDeck(code);
   if (!decoded) return null;
 
-  const allIds: string[] = [];
-  if (decoded.legend) allIds.push(decoded.legend.cardId);
-  if (decoded.champion) allIds.push(decoded.champion.cardId);
-  for (const e of [...decoded.main, ...decoded.rune, ...decoded.battlefield, ...decoded.side]) allIds.push(e.cardId);
-
-  const isNameFormat = allIds.some((id) => id.includes(" ") || id.includes(","));
-  const cards = await prisma.card.findMany({
-    where: isNameFormat
-      ? { name: { in: allIds, mode: "insensitive" }, alternateArt: false }
-      : { riftboundId: { in: allIds } },
-  });
-  const cardMap = buildCardLookup(cards);
+  const { map: cardMap } = await resolveDeckCards(deckIdentifiers(decoded));
 
   const deckCards: DecklistCard[] = [];
   let legendName = "";

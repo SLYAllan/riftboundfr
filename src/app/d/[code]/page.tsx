@@ -18,7 +18,8 @@ import { getUserFromSession } from "@/lib/session";
 import Link from "@/components/lien";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
-import { buildCardLookup } from "@/lib/card-printing";
+import { findCard } from "@/lib/card-printing";
+import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
 import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
@@ -73,22 +74,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
   const decoded = decodeDeck(deck.deckCode);
   if (!decoded) notFound();
 
-  const allIdentifiers: string[] = [];
-  if (decoded.legend) allIdentifiers.push(decoded.legend.cardId);
-  if (decoded.champion) allIdentifiers.push(decoded.champion.cardId);
-  for (const e of [...decoded.main, ...decoded.rune, ...decoded.battlefield, ...decoded.side]) {
-    allIdentifiers.push(e.cardId);
-  }
-
-  const isNameFormat = allIdentifiers.some((id) => id.includes(" ") || id.includes(","));
-
-  const cards = await prisma.card.findMany({
-    where: isNameFormat
-      ? { name: { in: allIdentifiers, mode: "insensitive" }, alternateArt: false }
-      : { riftboundId: { in: allIdentifiers } },
-  });
-
-  const cardMap = buildCardLookup(cards);
+  const { map: cardMap, missing } = await resolveDeckCards(deckIdentifiers(decoded));
 
   function toListCards(
     entries: { cardId: string; quantity: number }[],
@@ -96,7 +82,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
   ): DecklistCard[] {
     const result: DecklistCard[] = [];
     for (const e of entries) {
-      const card = cardMap.get(e.cardId) ?? cardMap.get(e.cardId.toLowerCase());
+      const card = findCard(cardMap, e.cardId);
       if (!card) continue;
       result.push({
         cardId: card.id,
@@ -185,6 +171,16 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           </p>
         )}
       </div>
+
+      {/* Une carte que la base ne reconnaît pas était retirée sans rien dire :
+          la réserve tombait de 10 à 9 et personne ne voyait pourquoi. */}
+      {missing.length > 0 && (
+        <p role="status" className="mt-6 rounded-lg border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-ink">
+          {missing.length === 1
+            ? `Une carte de ce deck n'a pas été reconnue et n'est pas affichée : ${missing[0]}.`
+            : `${missing.length} cartes de ce deck n'ont pas été reconnues et ne sont pas affichées : ${missing.join(", ")}.`}
+        </p>
+      )}
 
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
         <DecklistInteractive

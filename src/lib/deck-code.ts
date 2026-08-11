@@ -1,3 +1,5 @@
+import { VARIANT_SUFFIX } from "./card-printing";
+
 export interface ParsedDeckEntry {
   quantity: number;
   name: string;
@@ -26,7 +28,30 @@ const SECTION_HEADERS: Record<string, ParsedDeckEntry["section"]> = {
   "side": "side",
   "side deck": "side",
   "sideboard": "side",
+  // Libellés français : ce sont ceux que le site affiche, donc ceux que les
+  // joueurs recopient. Sans eux, tout retombait dans le deck principal.
+  "légende": "legend",
+  "legende": "legend",
+  "légendes": "legend",
+  "deck principal": "main",
+  "principal": "main",
+  "réserve": "side",
+  "reserve": "side",
+  "champs de bataille": "battlefield",
+  "champ de bataille": "battlefield",
 };
+
+// Un en-tête peut porter un accent (« Réserve: ») ou un compte
+// (« Sideboard (10): »). L'ancienne forme n'acceptait que des lettres ASCII :
+// la ligne partait en « ligne non reconnue » et ses cartes tombaient en main.
+const SECTION_LINE = /^([\p{L}\s]+?)(?:\s*\(\s*\d+\s*\))?\s*:$/u;
+
+function sectionKey(raw: string): string {
+  return raw
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+}
 
 export function parseDeckCode(code: string): ParsedDeck {
   const lines = code.split("\n").map((l) => l.trim()).filter(Boolean);
@@ -37,23 +62,32 @@ export function parseDeckCode(code: string): ParsedDeck {
   for (const line of lines) {
     if (line.startsWith("//") || line.startsWith("#")) continue;
 
-    const sectionMatch = line.match(/^==\s*(.+?)\s*==$/) ?? line.match(/^([A-Za-z\s]+):$/);
+    const sectionMatch = line.match(/^==\s*(.+?)\s*==$/) ?? line.match(SECTION_LINE);
     if (sectionMatch) {
-      const key = sectionMatch[1].trim().toLowerCase();
-      currentSection = SECTION_HEADERS[key] ?? "main";
+      currentSection = SECTION_HEADERS[sectionKey(sectionMatch[1])] ?? "main";
       continue;
     }
 
-    const cardMatch = line.match(/^(\d+)x?\s+(.+?)(?:\s+\(([^)]+)\))?$/i);
+    // La quantité est facultative : une liste collée sans chiffres (« Vilemaw »
+    // sur sa ligne) valait « ligne non reconnue » et la carte était perdue.
+    const cardMatch = line.match(/^(?:(\d+)\s*x?\s+)?(.+?)(?:\s+\(([^)]+)\))?$/i);
     if (cardMatch) {
-      const quantity = parseInt(cardMatch[1], 10);
-      let name = cardMatch[2].trim();
+      const quantity = cardMatch[1] ? parseInt(cardMatch[1], 10) : 1;
+      let name = cardMatch[2].trim().replace(/\s+/g, " ");
       let setCode: string | undefined = cardMatch[3]?.trim();
-      // Une parenthèse n'est un code d'extension que si elle en a la forme (ex. OGN, SFD-123).
-      // Sinon (ex. "Master Yi (Wuju Master)") elle fait partie du nom et doit être conservée.
-      if (setCode && !/^[A-Z]{2,4}(-\d+){0,2}$/i.test(setCode)) {
-        name = `${name} (${setCode})`;
-        setCode = undefined;
+      if (setCode) {
+        if (VARIANT_SUFFIX.test(`(${setCode})`)) {
+          // Traitement cosmétique (Alternate Art, Overnumbered…) : la carte
+          // jouable est la même. Recollé au nom, il la rendait introuvable et
+          // l'affichage la supprimait sans rien dire.
+          setCode = undefined;
+        } else if (!/^[A-Z]{2,4}(-\d+){0,2}$/i.test(setCode)) {
+          // Une parenthèse n'est un code d'extension que si elle en a la forme
+          // (ex. OGN, SFD-123). Sinon (ex. "Master Yi (Wuju Master)") elle fait
+          // partie du nom et doit être conservée.
+          name = `${name} (${setCode})`;
+          setCode = undefined;
+        }
       }
       entries.push({ quantity, name, section: currentSection, setCode });
       continue;

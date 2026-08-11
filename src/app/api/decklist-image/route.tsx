@@ -6,7 +6,8 @@ import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { displayLegendName } from "@/lib/utils";
 import { allowSvgInSharp } from "@/lib/og-sharp";
-import { buildCardLookup } from "@/lib/card-printing";
+import { findCard } from "@/lib/card-printing";
+import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
 
 export const runtime = "nodejs";
 
@@ -352,29 +353,7 @@ async function fetchDeckFromCode(deckCode: string) {
   const decoded = decodeDeck(deckCode);
   if (!decoded) return null;
 
-  const allIdentifiers: string[] = [];
-  if (decoded.legend) allIdentifiers.push(decoded.legend.cardId);
-  if (decoded.champion) allIdentifiers.push(decoded.champion.cardId);
-  for (const e of [
-    ...decoded.main,
-    ...decoded.rune,
-    ...decoded.battlefield,
-    ...decoded.side,
-  ]) {
-    allIdentifiers.push(e.cardId);
-  }
-
-  const isNameFormat = allIdentifiers.some(
-    (id) => id.includes(" ") || id.includes(","),
-  );
-
-  const dbCards = await prisma.card.findMany({
-    where: isNameFormat
-      ? { name: { in: allIdentifiers, mode: "insensitive" }, alternateArt: false }
-      : { riftboundId: { in: allIdentifiers } },
-  });
-
-  const cardMap = buildCardLookup(dbCards);
+  const { map: cardMap } = await resolveDeckCards(deckIdentifiers(decoded));
 
   function resolve(
     entries: { cardId: string; quantity: number }[],
@@ -383,7 +362,7 @@ async function fetchDeckFromCode(deckCode: string) {
     return entries
       .map((e) => {
         const card =
-          cardMap.get(e.cardId) ?? cardMap.get(e.cardId.toLowerCase());
+          findCard(cardMap, e.cardId);
         if (!card) return null;
         return {
           name: card.name,
@@ -442,29 +421,7 @@ async function fetchDeckFromShareCode(shareCode: string) {
   const decoded = decodeDeck(deck.deckCode);
   if (!decoded) return null;
 
-  const allIdentifiers: string[] = [];
-  if (decoded.legend) allIdentifiers.push(decoded.legend.cardId);
-  if (decoded.champion) allIdentifiers.push(decoded.champion.cardId);
-  for (const e of [
-    ...decoded.main,
-    ...decoded.rune,
-    ...decoded.battlefield,
-    ...decoded.side,
-  ]) {
-    allIdentifiers.push(e.cardId);
-  }
-
-  const isNameFormat = allIdentifiers.some(
-    (id) => id.includes(" ") || id.includes(","),
-  );
-
-  const dbCards = await prisma.card.findMany({
-    where: isNameFormat
-      ? { name: { in: allIdentifiers, mode: "insensitive" }, alternateArt: false }
-      : { riftboundId: { in: allIdentifiers } },
-  });
-
-  const cardMap = buildCardLookup(dbCards);
+  const { map: cardMap } = await resolveDeckCards(deckIdentifiers(decoded));
 
   function resolve(
     entries: { cardId: string; quantity: number }[],
@@ -473,7 +430,7 @@ async function fetchDeckFromShareCode(shareCode: string) {
     return entries
       .map((e) => {
         const card =
-          cardMap.get(e.cardId) ?? cardMap.get(e.cardId.toLowerCase());
+          findCard(cardMap, e.cardId);
         if (!card) return null;
         return {
           name: card.name,
