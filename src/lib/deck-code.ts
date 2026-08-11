@@ -77,9 +77,11 @@ export function parseDeckCode(code: string): ParsedDeck {
       let setCode: string | undefined = cardMatch[3]?.trim();
       if (setCode) {
         if (VARIANT_SUFFIX.test(`(${setCode})`)) {
-          // Traitement cosmétique (Alternate Art, Overnumbered…) : la carte
-          // jouable est la même. Recollé au nom, il la rendait introuvable et
-          // l'affichage la supprimait sans rien dire.
+          // « Vilemaw (Alternate Art) » est le VRAI nom d'une vraie carte
+          // (unl-060a-219) : on le garde entier pour retrouver l'illustration
+          // choisie. C'est resolveDeckCards qui retombe sur l'impression de base
+          // si cette variante n'existe pas, au lieu de perdre la carte.
+          name = `${name} (${setCode})`;
           setCode = undefined;
         } else if (!/^[A-Z]{2,4}(-\d+){0,2}$/i.test(setCode)) {
           // Une parenthèse n'est un code d'extension que si elle en a la forme

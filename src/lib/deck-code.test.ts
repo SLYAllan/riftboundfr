@@ -7,17 +7,22 @@ import { parseDeckCode } from "./deck-code";
 // n'était jamais retrouvé.
 
 describe("parseDeckCode : parenthèses en fin de nom", () => {
-  it("retire un marqueur de variante et garde le nom de base", () => {
+  // « Vilemaw (Alternate Art) » est le vrai nom d'une carte en base
+  // (unl-060a-219) : le parseur le garde entier pour que l'illustration choisie
+  // soit retrouvée. C'est resolveDeckCards qui retombe sur l'impression de base
+  // quand la variante n'existe pas, au lieu de perdre la carte.
+  it("garde un marqueur de variante, qui fait partie du nom en base", () => {
     const { entries } = parseDeckCode("Sideboard:\n1 Vilemaw (Alternate Art)");
     expect(entries).toHaveLength(1);
-    expect(entries[0].name).toBe("Vilemaw");
+    expect(entries[0].name).toBe("Vilemaw (Alternate Art)");
+    expect(entries[0].setCode).toBeUndefined();
     expect(entries[0].section).toBe("side");
   });
 
-  it("retire les autres marqueurs cosmétiques", () => {
+  it("garde les autres marqueurs cosmétiques dans le nom", () => {
     for (const marqueur of ["Overnumbered", "Signature", "Metal", "Starter", "Alt Art"]) {
       const { entries } = parseDeckCode(`MainDeck:\n1 Akali, Rogue Assassin (${marqueur})`);
-      expect(entries[0].name).toBe("Akali, Rogue Assassin");
+      expect(entries[0].name).toBe(`Akali, Rogue Assassin (${marqueur})`);
     }
   });
 
@@ -110,6 +115,6 @@ describe("parseDeckCode : le deck réel qui a révélé le défaut", () => {
     expect(entries).toHaveLength(8);
     expect(entries.reduce((s, e) => s + e.quantity, 0)).toBe(10);
     expect(entries.every((e) => e.section === "side")).toBe(true);
-    expect(entries.at(-1)!.name).toBe("Vilemaw");
+    expect(entries.at(-1)!.name).toBe("Vilemaw (Alternate Art)");
   });
 });
