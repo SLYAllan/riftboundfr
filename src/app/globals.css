@@ -73,6 +73,9 @@
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
+  /* Rouge de TEXTE. error (#ef4444) tombe à 2,8:1 en petit texte sur les
+     surfaces sombres : illisible. Celui-ci tient 4,9:1 sur surface-raised. */
+  --color-error-light: #ff6b6b;
   --color-info: #0ea5e9;
 
   /* Radii */
@@ -180,6 +183,24 @@
   :focus-visible {
     outline: 2px solid var(--color-arcane);
     outline-offset: 2px;
+  }
+  /* Tailwind v4 a retiré le curseur main par défaut sur les boutons : sans ça,
+     tout le site rend les boutons avec la flèche, ils ne se lisent plus comme
+     cliquables. Une règle ici plutôt que cursor-pointer dans 300 composants. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  label:has(input[type="checkbox"], input[type="radio"]) {
+    cursor: pointer;
+  }
+  /* iOS Safari zoome la page dès qu'un champ passe sous 16px. On pose le
+     plancher sur mobile ; au-dessus de 640px les tailles du design reprennent. */
+  @media (max-width: 640px) {
+    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+    textarea,
+    select {
+      font-size: 16px;
+    }
   }
 }
 

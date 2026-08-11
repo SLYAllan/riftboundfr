@@ -289,7 +289,7 @@ export default async function ReglesPage({
             <p className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Sommaire</p>
             <ul className="mt-2 space-y-px">
               {chapters.map((c) => (
-                <li key={c.title}>
+                <li key={c.anchor}>
                   <a
                     href={`#${c.anchor}`}
                     className="flex items-baseline justify-between gap-3 rounded-md px-2 py-1.5 text-sm text-ink-secondary transition-colors duration-150 hover:bg-surface hover:text-ink"
@@ -309,7 +309,7 @@ export default async function ReglesPage({
               termes du glossaire sont cliquables.
             </p>
             {chapters.map((c) => (
-              <section key={c.title} id={c.anchor} className="mt-8 scroll-mt-24">
+              <section key={c.anchor} id={c.anchor} className="mt-8 scroll-mt-24">
                 <h2
                   className="text-balance border-b border-hairline pb-2 text-lg font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}

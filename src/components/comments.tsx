@@ -86,8 +86,9 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
               value={body}
               onChange={(e) => setBody(e.target.value)}
               placeholder={t("Ajouter un commentaire...")}
+              aria-label={t("Votre commentaire")}
               rows={3}
-              className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
+              className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
             />
             <div className="flex justify-end mt-2">
               <button

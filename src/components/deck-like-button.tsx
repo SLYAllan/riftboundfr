@@ -108,7 +108,9 @@ export function DeckLikeButton({ slug, initialLikes, compact }: DeckLikeButtonPr
           toggle();
         }}
         className={cn(
-          "inline-flex items-center gap-1 rounded-full bg-black/40 px-2 py-1 text-xs font-semibold backdrop-blur-sm transition-colors",
+          // min-h-6 : sans lui la pastille fait 23px, juste sous le minimum de
+          // 24px de WCAG 2.5.8.
+          "inline-flex min-h-6 items-center gap-1 rounded-full bg-black/40 px-2 py-1 text-xs font-semibold backdrop-blur-sm transition-colors",
           liked ? "text-red-400" : "text-white hover:text-red-400",
         )}
         title={loggedIn === false ? "Connectez-vous pour aimer" : liked ? "Retirer des favoris" : "Ajouter aux favoris"}

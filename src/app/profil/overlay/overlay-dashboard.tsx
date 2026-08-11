@@ -63,7 +63,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const btnStep =
     "flex h-9 w-9 items-center justify-center rounded-lg border border-hairline text-base transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:opacity-30";
   const btnPlein =
-    "shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-white transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]";
+    "shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-canvas transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]";
   const btnVide =
     "shrink-0 rounded-lg border border-hairline px-3 py-2 text-sm transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]";
 
@@ -196,6 +196,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                       value={brouillonCam[i]}
                       onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
                       placeholder="https://vdo.ninja/?view=..."
+                      aria-label={`${t("Caméra (lien VDO.Ninja)")} — ${t("joueur")} ${i + 1}`}
                       className={inputCls}
                     />
                     <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} className={btnPlein}>{t("Charger")}</button>
@@ -211,8 +212,10 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   <p className="mt-1 text-xs text-ink-muted">
                     {t("Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.")}
                   </p>
-                  <label className="mt-2 flex items-center gap-2 text-sm">
-                    <input type="checkbox" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} />
+                  {/* py-1 + size-4 : la case seule faisait 13px, sous le
+                      minimum de 24px de WCAG 2.5.8 même en comptant le libellé. */}
+                  <label className="mt-2 flex items-center gap-2 py-1 text-sm">
+                    <input type="checkbox" className="size-4 accent-arcane" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} />
                     {t("Montrer le cadre caméra")}
                   </label>
                 </div>
@@ -264,7 +267,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           </button>
           <button onClick={() => update({ event: { endsAt: null } })} className={btnVide}>{t("Arrêter")}</button>
           <label className="flex items-center gap-2">
-            <input type="checkbox" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
+            <input type="checkbox" className="size-4 accent-arcane" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
             {t("Montrer le chrono")}
           </label>
         </div>
@@ -283,6 +286,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   value={brouillonDeck[i]}
                   onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
                   placeholder={t("Liste du joueur") + " " + (i + 1)}
+                  aria-label={t("Liste du joueur") + " " + (i + 1)}
                   rows={4}
                   className={inputCls + " font-mono text-xs"}
                 />
@@ -304,6 +308,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             <select
               value={state.cards?.shown ?? ""}
               onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
+              aria-label={t("Carte à afficher à l’écran")}
               className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-2"
             >
               <option value="">{t("Aucune carte à l’écran")}</option>
@@ -326,7 +331,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           <div className="min-w-[280px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
             <div className="flex gap-2">
-              <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" className={inputCls} />
+              <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" aria-label={t("Logo (lien d’image)")} className={inputCls} />
               <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} className={btnPlein}>{t("Charger")}</button>
               {state.event.logoUrl && (
                 <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnVide}>{t("Retirer")}</button>

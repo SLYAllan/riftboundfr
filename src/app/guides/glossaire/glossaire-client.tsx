@@ -385,7 +385,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
               disabled={!hasResults}
               className={`flex h-8 w-8 items-center justify-center rounded-md text-sm font-semibold transition-colors ${
                 hasResults
-                  ? "bg-surface-raised text-ink hover:bg-arcane hover:text-white cursor-pointer"
+                  ? "bg-surface-raised text-ink hover:bg-arcane hover:text-canvas cursor-pointer"
                   : "bg-surface text-ink-disabled cursor-default"
               }`}
               aria-label={`Aller à la lettre ${letter}`}

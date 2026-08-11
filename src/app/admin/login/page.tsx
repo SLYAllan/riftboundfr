@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -29,7 +29,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-canvas">
+    <div className="min-h-dvh flex items-center justify-center bg-canvas">
       <div className="w-full max-w-sm p-8 rounded-2xl bg-surface border border-hairline">
         <h1 className="text-2xl font-bold text-ink mb-6 text-center" style={{ fontFamily: "var(--font-rubik)" }}>
           Admin - Riftbound France
@@ -40,6 +40,8 @@ export default function AdminLoginPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Mot de passe"
+            aria-label="Mot de passe"
+            autoComplete="current-password"
             className="w-full px-4 py-3 rounded-lg bg-surface-raised border border-hairline text-ink placeholder:text-ink-muted focus:border-arcane"
           />
           {error && <p className="text-error text-sm">{error}</p>}

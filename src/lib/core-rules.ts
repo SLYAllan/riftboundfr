@@ -45,23 +45,27 @@ export async function loadRuleChapters(): Promise<RuleChapter[]> {
   if (chapters) return chapters;
   const rules = await loadCoreRules();
   const out: RuleChapter[] = [];
+  // Le regroupement suit l'ordre du document : un même titre qui revient plus
+  // loin ouvre un second chapitre. Sans suffixe, les deux portaient le même id
+  // et le sommaire renvoyait toujours au premier (« Équiper », « Amplification »,
+  // « Champs de bataille », « Présence sur les permanents »).
+  const used = new Map<string, number>();
   for (const r of rules) {
     const last = out[out.length - 1];
     if (last && last.title === r.section) last.rules.push(r);
     else {
       const title = r.section || "Règles générales";
-      out.push({
-        title,
-        anchor:
-          "s-" +
-          title
-            .normalize("NFD")
-            .replace(/[̀-ͯ]/g, "")
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/(^-|-$)/g, ""),
-        rules: [r],
-      });
+      const base =
+        "s-" +
+        title
+          .normalize("NFD")
+          .replace(/[̀-ͯ]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "");
+      const n = (used.get(base) ?? 0) + 1;
+      used.set(base, n);
+      out.push({ title, anchor: n === 1 ? base : `${base}-${n}`, rules: [r] });
     }
   }
   chapters = out;

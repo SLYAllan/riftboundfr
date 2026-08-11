@@ -25,7 +25,10 @@ export async function Footer() {
           {liens.map((lien) => (
             <span key={lien.href} className="flex items-center gap-x-4">
               <Link href={lien.href} className="hover:text-ink transition-colors">{t(lien.label)}</Link>
-              <span className="text-hairline">·</span>
+              {/* Pas de couleur propre : text-hairline est une couleur de
+                  BORDURE (10 % d'opacité), le point tombait à 1,19:1. Il hérite
+                  maintenant du text-ink-muted du conteneur. */}
+              <span aria-hidden="true">·</span>
             </span>
           ))}
           <a href="mailto:contact@riftboundfrance.fr" className="hover:text-ink transition-colors">Contact</a>
