@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
 import { useT } from "@/components/i18n-provider";
@@ -126,10 +127,17 @@ export function TierListTabs({
                 {entries.map((entry) => {
                   const card = legendMap[entry.legendId];
                   const isHovered = hoveredEntry === entry.id;
+                  const nom = displayLegendName(entry.legendName);
                   return (
-                    <div
+                    <Link
                       key={entry.id}
-                      className="group relative"
+                      // L'infobulle ne se déclenche jamais au doigt : sur mobile
+                      // la vignette était muette. Le lien donne une sortie, et
+                      // /decks filtre déjà sur ?legend=.
+                      href={`/decks?legend=${encodeURIComponent(entry.legendName)}`}
+                      aria-label={`${t("Voir les decks")} ${nom}`}
+                      title={nom}
+                      className="group relative rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
                       onMouseEnter={() => setHoveredEntry(entry.id)}
                       onMouseLeave={() => setHoveredEntry(null)}
                     >
@@ -195,7 +203,7 @@ export function TierListTabs({
                           )}
                         </div>
                       )}
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
