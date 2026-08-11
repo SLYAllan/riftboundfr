@@ -74,11 +74,15 @@ async function loadSummaries(): Promise<FicheSummary[]> {
   return out;
 }
 
+// Un seul vocabulaire de classement sur tout le site : S/A/B/C/D, comme
+// /tier-list. Le mot « Tier » reste réservé au niveau des tournois. Les couleurs
+// sont celles des tokens --color-tier-* pour que le même rang ait la même tête
+// d'une page à l'autre.
 const TIER_GROUPS: { tier: number; label: string; note: string; color: string }[] = [
-  { tier: 1, label: "Tier 1", note: "Le haut du méta", color: "#ef4444" },
-  { tier: 2, label: "Tier 2", note: "Solides et compétitives", color: "#f97316" },
-  { tier: 3, label: "Tier 3", note: "Jouables avec un bon pilote", color: "#22c55e" },
-  { tier: 4, label: "Tier 4", note: "De niche ou en retrait", color: "#6b7280" },
+  { tier: 1, label: "S", note: "Le haut du méta", color: "var(--color-tier-s)" },
+  { tier: 2, label: "A", note: "Solides et compétitives", color: "var(--color-tier-a)" },
+  { tier: 3, label: "B", note: "Jouables avec un bon pilote", color: "var(--color-tier-b)" },
+  { tier: 4, label: "C", note: "De niche ou en retrait", color: "var(--color-tier-c)" },
 ];
 
 function LegendCard({ fiche }: { fiche: FicheSummary }) {

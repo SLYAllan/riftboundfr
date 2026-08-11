@@ -119,11 +119,13 @@ async function resolveLegend(
   return { fiche: await ficheFromDb(fromDecks.legendName), deckCount: fromDecks.deckCount };
 }
 
+// S/A/B/C comme /tier-list et /legendes : un seul vocabulaire de classement.
+// « Tier » reste réservé au niveau des tournois.
 const TIER_LABELS: Record<number, string> = {
-  1: "Tier 1 (haut du méta)",
-  2: "Tier 2 (solide)",
-  3: "Tier 3 (jouable)",
-  4: "Tier 4 (de niche)",
+  1: "S (haut du méta)",
+  2: "A (solide)",
+  3: "B (jouable)",
+  4: "C (de niche)",
 };
 
 // Ordre de tri des decks par niveau de tournoi, identique à la page /decks.
