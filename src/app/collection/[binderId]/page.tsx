@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
-import { getBinderQuantities, getWishlistIds } from "@/lib/collection-server";
+import { getBinderQuantities } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
@@ -31,7 +31,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
   const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id } });
   if (!binder) notFound();
 
-  const [dbSets, dbCards, quantities, wishlist] = await Promise.all([
+  const [dbSets, dbCards, quantities] = await Promise.all([
     prisma.cardSet.findMany(),
     prisma.card.findMany({
       select: {
@@ -42,7 +42,6 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
       orderBy: [{ set: "asc" }, { collectorNumber: "asc" }],
     }),
     getBinderQuantities(binderId),
-    getWishlistIds(user.id),
   ]);
 
   const cards: BinderCard[] = dbCards;
@@ -63,7 +62,6 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
         cards={cards}
         sets={sets}
         initialQuantities={quantities}
-        initialWishlist={wishlist}
       />
     </main>
   );

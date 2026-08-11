@@ -36,7 +36,6 @@ model Card {
 
   deckCards DeckCard[]
   collectionItems CollectionItem[]
-  wishlistItems   WishlistItem[]
 
   @@index([set])
   @@index([type])
@@ -194,7 +193,6 @@ model User {
   comments       Comment[]
   collection     CollectionItem[]
   binders        Binder[]
-  wishlist       WishlistItem[]
   overlayState   OverlayState?
 
 
@@ -349,17 +347,4 @@ model OverlayState {
   updatedAt DateTime @updatedAt
 
   @@index([token])
-}
-
-model WishlistItem {
-  id        String   @id @default(cuid())
-  userId    String
-  cardId    String
-  createdAt DateTime @default(now())
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  card Card @relation(fields: [cardId], references: [id])
-
-  @@unique([userId, cardId])
-  @@index([userId])
 }

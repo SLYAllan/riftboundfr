@@ -76,15 +76,6 @@ export async function getOrCreateDefaultBinder(userId: string) {
   });
 }
 
-// Liste des cardId en wishlist d'un user.
-export async function getWishlistIds(userId: string): Promise<string[]> {
-  const items = await prisma.wishlistItem.findMany({
-    where: { userId },
-    select: { cardId: true },
-  });
-  return items.map((i) => i.cardId);
-}
-
 // Quantités possédées agrégées par cleanName, pour le calcul de couverture
 // (l'alt-art compte pour la carte jouable). Somme sur tous les classeurs.
 export async function getOwnedByName(userId: string): Promise<OwnedByName> {

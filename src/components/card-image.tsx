@@ -7,6 +7,10 @@ interface CardImageProps {
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
   priority?: boolean;
+  /** Zoom au survol. À couper quand l'image n'est pas cliquable pour elle-même
+      (pochettes de classeur) : 9 cartes qui gonflent une par une font croire
+      à 9 cibles alors qu'il n'y en a qu'une. */
+  hoverZoom?: boolean;
 }
 
 const sizes = {
@@ -16,8 +20,9 @@ const sizes = {
   xl: { width: 400, height: 558 },
 };
 
-export function CardImage({ src, alt, size = "md", className, priority }: CardImageProps) {
+export function CardImage({ src, alt, size = "md", className, priority, hoverZoom = true }: CardImageProps) {
   const { width, height } = sizes[size];
+  const base = cn("rounded-game-card w-full h-auto outline outline-1 -outline-offset-1 outline-white/10", hoverZoom && "game-card-hover");
 
   if (!src) {
     return (
@@ -50,7 +55,7 @@ export function CardImage({ src, alt, size = "md", className, priority }: CardIm
         alt={alt}
         width={width}
         height={height}
-        className={cn("rounded-game-card game-card-hover w-full h-auto outline outline-1 -outline-offset-1 outline-white/10", className)}
+        className={cn(base, className)}
         priority={priority}
         unoptimized
       />

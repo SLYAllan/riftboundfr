@@ -6,7 +6,7 @@ import { CardImage } from "@/components/card-image";
 import { CardHover } from "@/components/collection/card-hover";
 import { ImportPiltover } from "@/components/collection/import-piltover";
 import { DOMAIN_LABELS_FR, TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
-import { Heart, Upload, Download, Share2, Lock, Globe, ChevronDown } from "lucide-react";
+import { Upload, Download, Share2, Lock, Globe, ChevronDown } from "lucide-react";
 import { downloadBlob } from "@/lib/download";
 import { useT } from "@/components/i18n-provider";
 
@@ -20,7 +20,7 @@ export interface BinderCard {
 }
 export interface BinderSetMeta { setId: string; name: string }
 interface BinderInfo { id: string; name: string; isPublic: boolean; shareSlug: string | null }
-type Owned = "all" | "owned" | "missing" | "wishlist";
+type Owned = "all" | "owned" | "missing";
 type SortKey = "id" | "name" | "rarity" | "energy";
 
 const RARITY_ORDER: Record<string, number> = { Common: 0, Uncommon: 1, Rare: 2, Epic: 3, Showcase: 4, Mythic: 5, Legendary: 6 };
@@ -35,14 +35,13 @@ function variantOf(c: BinderCard): string {
 const VARIANT_LABELS: Record<string, string> = { normal: "Normale", alt: "Alt Art", over: "Overnumbered", sig: "Signature" };
 
 export function BinderExplorer({
-  binder, cards, sets, initialQuantities, initialWishlist,
+  binder, cards, sets, initialQuantities,
 }: {
   binder: BinderInfo; cards: BinderCard[]; sets: BinderSetMeta[];
-  initialQuantities: Record<string, number>; initialWishlist: string[];
+  initialQuantities: Record<string, number>;
 }) {
   const t = useT();
   const [quantities, setQuantities] = useState<Record<string, number>>(initialQuantities);
-  const [wishlist, setWishlist] = useState<Set<string>>(new Set(initialWishlist));
   const [isPublic, setIsPublic] = useState(binder.isPublic);
   const [shareSlug, setShareSlug] = useState(binder.shareSlug);
 
@@ -82,7 +81,6 @@ export function BinderExplorer({
       const has = (quantities[c.id] ?? 0) > 0;
       if (owned === "owned" && !has) return false;
       if (owned === "missing" && has) return false;
-      if (owned === "wishlist" && !wishlist.has(c.id)) return false;
       return true;
     });
     out.sort((a, b) => {
@@ -92,7 +90,7 @@ export function BinderExplorer({
       return a.set.localeCompare(b.set) || (a.collectorNumber ?? 0) - (b.collectorNumber ?? 0);
     });
     return out;
-  }, [cards, q, setF, typeF, superF, variantF, rarityF, domainF, maxE, maxP, maxM, owned, sort, quantities, wishlist]);
+  }, [cards, q, setF, typeF, superF, variantF, rarityF, domainF, maxE, maxP, maxM, owned, sort, quantities]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageClamped = Math.min(page, totalPages);
@@ -113,19 +111,6 @@ export function BinderExplorer({
       body: JSON.stringify({ binderId: binder.id, cardId, quantity: next }),
     }).catch(() => {});
   }, [binder.id]);
-
-  const toggleWish = useCallback((cardId: string) => {
-    setWishlist((prev) => {
-      const n = new Set(prev);
-      const wanted = !n.has(cardId);
-      if (wanted) n.add(cardId); else n.delete(cardId);
-      fetch("/api/wishlist", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cardId, wanted }),
-      }).catch(() => {});
-      return n;
-    });
-  }, []);
 
   function exportCsv() {
     const rows = [["name", "set", "number", "rarity", "quantity"]];
@@ -164,7 +149,7 @@ export function BinderExplorer({
   return (
     <div className="mt-2">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h1 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rajdhani), sans-serif" }}>{binder.name}</h1>
+        <h1 className="font-display text-2xl font-bold">{binder.name}</h1>
         <span className="text-sm text-ink-muted">{distinctOwned} cartes · {copies} exemplaires</span>
       </div>
 
@@ -173,9 +158,10 @@ export function BinderExplorer({
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
           <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder={t("Rechercher une carte…")}
-            className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-sm focus:border-arcane" />
+            aria-label={t("Rechercher une carte")} type="search"
+            className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-base focus:border-arcane sm:text-sm" />
           <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
-            {([["all", "Toutes"], ["owned", "Possédées"], ["missing", "Manquantes"], ["wishlist", "Wishlist"]] as [Owned, string][]).map(([v, l]) => (
+            {([["all", "Toutes"], ["owned", "Possédées"], ["missing", "Manquantes"]] as [Owned, string][]).map(([v, l]) => (
               <button key={v} onClick={() => { setOwned(v); setPage(1); }}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${owned === v ? "bg-arcane text-canvas" : "text-ink-secondary hover:text-ink"}`}>{l}</button>
             ))}
@@ -253,7 +239,6 @@ export function BinderExplorer({
           {visible.map((c) => {
             const qty = quantities[c.id] ?? 0;
             const has = qty > 0;
-            const wished = wishlist.has(c.id);
             return (
               <div key={c.id} className="group relative">
                 {/* L'aperçu au survol ne se déclenche QUE sur l'image, pas sur le stepper */}
@@ -270,10 +255,6 @@ export function BinderExplorer({
                   <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
                     <CardImage src={c.imageUrl} alt={c.name} size="sm" />
                     {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-canvas shadow">×{qty}</span>}
-                    <button onClick={() => toggleWish(c.id)} aria-label="Wishlist"
-                      className={`absolute left-1 top-1 rounded-full p-1 ${wished ? "bg-pink-500/90 text-white" : "bg-black/40 text-white/70 opacity-0 group-hover:opacity-100"}`}>
-                      <Heart size={12} fill={wished ? "currentColor" : "none"} />
-                    </button>
                   </div>
                 </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">
@@ -304,9 +285,12 @@ function FilterPill({ label, value, onChange, children }: {
 }) {
   const active = value !== "all" && value !== "id";
   return (
-    <div className={`relative flex h-9 items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 ${active ? "border-arcane/50" : "border-hairline"}`}>
-      <span className="text-[10px] font-bold uppercase tracking-wide text-ink-muted">{label}</span>
-      <select value={value} onChange={onChange} className="cursor-pointer appearance-none bg-transparent text-sm text-ink">
+    // max-w : un select natif se dimensionne sur son option la plus longue.
+    // Sans plafond, « Riftbound Organized Play Promotional Cards » pousse la
+    // pastille à 361px et fait défiler toute la page sur mobile.
+    <div className={`relative flex h-9 max-w-full items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 ${active ? "border-arcane/50" : "border-hairline"}`}>
+      <span className="shrink-0 text-[10px] font-bold uppercase tracking-wide text-ink-muted">{label}</span>
+      <select value={value} onChange={onChange} aria-label={label} className="min-w-0 max-w-[150px] cursor-pointer appearance-none bg-transparent text-sm text-ink">
         {children}
       </select>
       <ChevronDown size={14} className="pointer-events-none absolute right-2 text-ink-muted" />
@@ -318,7 +302,7 @@ function Slider({ label, value, max, onChange }: { label: string; value: number;
   return (
     <div>
       <div className="mb-1 flex justify-between text-xs text-ink-muted"><span>{label}</span><span>{value >= max ? "Tout" : `≤ ${value}`}</span></div>
-      <input type="range" min={0} max={max} value={value} onChange={(e) => onChange(Number(e.target.value))} className="w-full accent-arcane" />
+      <input type="range" min={0} max={max} value={value} aria-label={label} onChange={(e) => onChange(Number(e.target.value))} className="w-full accent-arcane" />
     </div>
   );
 }

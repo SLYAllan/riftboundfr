@@ -66,6 +66,24 @@ export const RARITY_LABELS_FR: Record<string, string> = {
   Legend: "Légende",
 };
 
+// Ordre de rareté, du plus commun au plus rare. Les deux jeux de noms croisés
+// dans la base cohabitent (Showcase/Mythic/Legendary côté import, Legend côté
+// fiches), d'où les rangs partagés. Inconnu = 99, trié en dernier.
+export const RARITY_RANK: Record<string, number> = {
+  Common: 0, Uncommon: 1, Rare: 2, Epic: 3, Promo: 4,
+  Showcase: 5, Mythic: 6, Legend: 7, Legendary: 7,
+};
+
+// Couleurs de rareté, alignées sur les tokens --color-rarity-* de globals.css.
+export const RARITY_COLORS: Record<string, string> = {
+  Common: "#9ca3af", Uncommon: "#4ade80", Rare: "#0ea5e9", Epic: "#a77bff",
+  Promo: "#f59e0b", Showcase: "#f59e0b", Mythic: "#ff5c58", Legend: "#ff5c58", Legendary: "#ff5c58",
+};
+
+export function rarityRank(rarity: string): number {
+  return RARITY_RANK[rarity] ?? 99;
+}
+
 export function getDomainColor(domain: string): string {
   return DOMAIN_COLORS[domain] ?? "#6b7280";
 }
