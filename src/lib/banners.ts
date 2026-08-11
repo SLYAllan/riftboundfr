@@ -58,7 +58,7 @@ export function getBannerUrl(legendName: string): string | null {
   return file ? `/bannieres/${file}.webp` : null;
 }
 
-const ICON_MAP: Record<string, string> = {
+export const ICON_MAP: Record<string, string> = {
   irelia: "irelia",
   sivir: "sivir",
   diana: "diana",

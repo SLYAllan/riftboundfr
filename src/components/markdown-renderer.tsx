@@ -2,6 +2,8 @@ import { Children, cloneElement, isValidElement, type ReactElement, type ReactNo
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CardRef } from "@/components/card-ref";
+import { Emote } from "@/components/emote";
+import { decouperEmotes } from "@/lib/emotes";
 
 // Card-reference syntax for article prose: [[Card Name]] or [[Card Name|Label]].
 // Renders an inline CardRef (hover preview + link to the card page).
@@ -21,14 +23,14 @@ function withCardRefs(children: ReactNode, cardLinks?: Record<string, string>): 
       }
       return child;
     }
-    if (!child.includes("[[")) return child;
+    if (!child.includes("[[")) return withEmotes(child);
     const parts: ReactNode[] = [];
     let last = 0;
     let match: RegExpExecArray | null;
     let key = 0;
     CARD_REF_RE.lastIndex = 0;
     while ((match = CARD_REF_RE.exec(child)) !== null) {
-      if (match.index > last) parts.push(child.slice(last, match.index));
+      if (match.index > last) parts.push(withEmotes(child.slice(last, match.index)));
       const name = match[1].trim();
       const label = (match[2] ?? match[1]).trim();
       const id = cardLinks?.[name.toLowerCase()];
@@ -39,9 +41,19 @@ function withCardRefs(children: ReactNode, cardLinks?: Record<string, string>): 
       );
       last = match.index + match[0].length;
     }
-    if (last < child.length) parts.push(child.slice(last));
+    if (last < child.length) parts.push(withEmotes(child.slice(last)));
     return parts;
   });
+}
+
+// Incrustations « :furie: », « :irelia: » dans la prose des guides et articles.
+// Passe après les [[carte]] pour ne pas découper une référence en deux.
+function withEmotes(text: string): ReactNode {
+  const morceaux = decouperEmotes(text);
+  if (morceaux.length === 1) return text;
+  return morceaux.map((m, i) =>
+    m.type === "texte" ? m.valeur : <Emote key={`em-${i}`} emote={m.emote} />,
+  );
 }
 
 // Explicit component styling so articles render with real typographic hierarchy

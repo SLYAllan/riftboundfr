@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Pencil, Check, X } from "lucide-react";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { useT } from "@/components/i18n-provider";
+import { EmotePicker } from "@/components/emote-picker";
 
 interface Props {
   shareCode: string;
@@ -16,6 +17,7 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
   const [guide, setGuide] = useState(initialGuide ?? "");
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(guide);
+  const champRef = useRef<HTMLTextAreaElement>(null);
   const [saving, setSaving] = useState(false);
   const [isOwner, setIsOwner] = useState(false);
 
@@ -69,14 +71,17 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
       {editing ? (
         <div className="mt-4 space-y-3">
           <textarea
+            ref={champRef}
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             rows={8}
             maxLength={5000}
+            aria-label={t("Votre guide")}
             placeholder={t("Décrivez votre stratégie, les matchups, les choix de cartes...")}
-            className="w-full rounded-lg border border-hairline bg-surface p-4 text-sm text-ink placeholder:text-ink-muted focus:border-arcane resize-y"
+            className="w-full rounded-lg border border-hairline bg-surface p-4 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane resize-y"
           />
           <div className="flex items-center gap-2">
+            <EmotePicker champRef={champRef} onTexte={setDraft} />
             <button
               onClick={save}
               disabled={saving}

@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronUp, ChevronDown, MessageSquare, Send, User as UserIcon } from "lucide-react";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import { useT } from "@/components/i18n-provider";
+import { EmotePicker } from "@/components/emote-picker";
+import { TexteAvecEmotes } from "@/components/emote";
 
 interface CommentUser {
   id: string;
@@ -37,6 +39,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
   const [comments, setComments] = useState<CommentData[]>([]);
   const [user, setUser] = useState<CurrentUser | null>(null);
   const [body, setBody] = useState("");
+  const champRef = useRef<HTMLTextAreaElement>(null);
   const [sending, setSending] = useState(false);
 
   const queryParam = articleId
@@ -83,6 +86,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
             fallback={<div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-surface-raised"><UserIcon size={16} className="text-ink-muted" /></div>} />
           <div className="flex-1">
             <textarea
+              ref={champRef}
               value={body}
               onChange={(e) => setBody(e.target.value)}
               placeholder={t("Ajouter un commentaire...")}
@@ -90,7 +94,8 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
               rows={3}
               className="w-full rounded-lg bg-surface-raised border border-hairline px-3 py-2 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
             />
-            <div className="flex justify-end mt-2">
+            <div className="flex items-center justify-between mt-2">
+              <EmotePicker champRef={champRef} onTexte={setBody} />
               <button
                 onClick={() => submit()}
                 disabled={!body.trim() || sending}
@@ -149,6 +154,7 @@ function CommentThread({
   const t = useT();
   const [replying, setReplying] = useState(false);
   const [replyBody, setReplyBody] = useState("");
+  const reponseRef = useRef<HTMLTextAreaElement>(null);
   const [sending, setSending] = useState(false);
 
   const score = comment.upvotes - comment.downvotes;
@@ -206,7 +212,9 @@ function CommentThread({
           </div>
 
           {/* Body */}
-          <p className="text-sm text-ink/90 whitespace-pre-wrap">{comment.body}</p>
+          <p className="text-sm text-ink/90 whitespace-pre-wrap">
+            <TexteAvecEmotes texte={comment.body} />
+          </p>
 
           {/* Actions */}
           {user && depth === 0 && (
@@ -220,21 +228,26 @@ function CommentThread({
           {replying && (
             <div className="mt-2 flex gap-2">
               <textarea
+                ref={reponseRef}
                 value={replyBody}
                 onChange={(e) => setReplyBody(e.target.value)}
                 placeholder={t("Votre réponse...")}
                 aria-label={t("Votre réponse")}
                 rows={2}
                 autoFocus
-                className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
+                className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
               />
-              <button
-                onClick={submitReply}
-                disabled={!replyBody.trim() || sending}
-                className="self-end rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
-              >
-                <Send size={12} />
-              </button>
+              <div className="flex flex-col justify-end gap-1">
+                <EmotePicker champRef={reponseRef} onTexte={setReplyBody} />
+                <button
+                  onClick={submitReply}
+                  disabled={!replyBody.trim() || sending}
+                  aria-label={t("Envoyer la réponse")}
+                  className="flex size-9 items-center justify-center rounded-lg bg-arcane text-xs font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
+                >
+                  <Send size={12} />
+                </button>
+              </div>
             </div>
           )}
 
