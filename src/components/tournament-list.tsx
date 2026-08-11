@@ -66,14 +66,14 @@ function TournamentRow({
           />
           <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/45 to-canvas/10" />
           {winner && (
-            <div className="absolute bottom-2.5 right-4 text-right">
-              <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-gold drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+            <div className="texte-sur-art absolute bottom-2.5 right-4 text-right">
+              <div className="text-[9px] font-bold uppercase tracking-[0.15em] text-gold">
                 Vainqueur
               </div>
-              <div className="text-sm font-bold leading-tight text-ink drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              <div className="text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 {winner.playerName ?? "Inconnu"}
               </div>
-              <div className="text-[11px] leading-tight text-ink-secondary drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+              <div className="text-[11px] leading-tight text-ink">
                 {displayLegendName(winner.legendName)}
               </div>
             </div>

@@ -103,17 +103,18 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <span
-            className="text-base font-bold leading-tight text-white drop-shadow"
-            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-          >
-            {name}
-          </span>
-          {fiche.archetype && (
-            <span className="text-[11px] text-white/70">{fiche.archetype}</span>
-          )}
+        {/* L'archétype va toujours SOUS le nom. En flex-wrap il passait à droite
+            quand le nom était court (LeBlanc, Ahri) et dessous sinon (Diana) :
+            d'une carte à l'autre, plus rien ne s'alignait. */}
+        <div
+          className="text-base font-bold leading-tight text-white drop-shadow"
+          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+        >
+          {name}
         </div>
+        {fiche.archetype && (
+          <div className="mt-0.5 line-clamp-1 text-[11px] text-white/70">{fiche.archetype}</div>
+        )}
         <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
           {fiche.domains.map((d) => (
             <span

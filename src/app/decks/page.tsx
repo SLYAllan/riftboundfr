@@ -291,8 +291,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             {deck.title}
                           </div>
                           <div
-                            className="mt-0.5 flex flex-wrap items-center gap-2 text-xs"
-                            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.7)" }}
+                            className="texte-sur-art mt-0.5 flex flex-wrap items-center gap-2 text-xs"
                           >
                             <span className="text-arcane-light">{displayLegendName(deck.legendName)}</span>
                             <span className="text-white/80">par {deck.authorName}</span>
@@ -655,8 +654,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             exprès. Sans lui, « RQ Utrecht 2026 » en or disparaît
                             sur les arts dorés (Sett, Azir). */}
                         <div
-                          className="mt-1 space-y-0.5 text-xs"
-                          style={{ textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.7)" }}
+                          className="texte-sur-art mt-1 space-y-0.5 text-xs"
                         >
                           <div className="flex items-center gap-2">
                             {deck.tournamentTier && (

@@ -119,7 +119,10 @@ export default async function ArticlesPage({
                     <span className="text-xs text-ink-muted">{formatDate(article.publishedAt)}</span>
                   )}
                 </div>
-                <h2 className="mt-2 text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                {/* Deux lignes réservées : un titre court faisait remonter la
+                    description et les pastilles, et plus rien ne s'alignait
+                    d'une carte à l'autre. */}
+                <h2 className="mt-2 line-clamp-2 min-h-[3.5rem] text-lg font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                   {article.title}
                 </h2>
                 {article.excerpt && (
