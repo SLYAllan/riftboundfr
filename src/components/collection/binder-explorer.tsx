@@ -53,9 +53,16 @@ export function BinderExplorer({
   const [rarityF, setRarityF] = useState("all");
   const [domainF, setDomainF] = useState("all");
   const [owned, setOwned] = useState<Owned>("all");
-  const [maxE, setMaxE] = useState(12);
-  const [maxP, setMaxP] = useState(4);
-  const [maxM, setMaxM] = useState(10);
+  // Plafonds tirés des cartes, jamais écrits en dur : le curseur Might était
+  // bloqué à 10 alors que la base monte à 12, donc Baron Nashor et Master Yi,
+  // Unstoppable étaient introuvables quoi qu'on fasse. Un futur set qui dépasse
+  // ces valeurs ne peut plus escamoter de cartes.
+  const capE = useMemo(() => Math.max(1, ...cards.map((c) => c.energy ?? 0)), [cards]);
+  const capP = useMemo(() => Math.max(1, ...cards.map((c) => c.power ?? 0)), [cards]);
+  const capM = useMemo(() => Math.max(1, ...cards.map((c) => c.might ?? 0)), [cards]);
+  const [maxE, setMaxE] = useState(capE);
+  const [maxP, setMaxP] = useState(capP);
+  const [maxM, setMaxM] = useState(capM);
   const [sort, setSort] = useState<SortKey>("id");
   const [page, setPage] = useState(1);
   const [showImport, setShowImport] = useState(false);
@@ -140,11 +147,11 @@ export function BinderExplorer({
 
   function clearAll() {
     setQ(""); setSetF("all"); setTypeF("all"); setSuperF("all"); setVariantF("all");
-    setRarityF("all"); setDomainF("all"); setOwned("all"); setMaxE(12); setMaxP(4); setMaxM(10); setPage(1);
+    setRarityF("all"); setDomainF("all"); setOwned("all"); setMaxE(capE); setMaxP(capP); setMaxM(capM); setPage(1);
   }
 
   const activeFilters = [setF, typeF, superF, variantF, rarityF, domainF].filter((v) => v !== "all").length
-    + (owned !== "all" ? 1 : 0) + (q ? 1 : 0) + (maxE < 12 || maxP < 4 || maxM < 10 ? 1 : 0);
+    + (owned !== "all" ? 1 : 0) + (q ? 1 : 0) + (maxE < capE || maxP < capP || maxM < capM ? 1 : 0);
 
   return (
     <div className="mt-2">
@@ -205,9 +212,9 @@ export function BinderExplorer({
 
         {/* Ligne 3 : sliders */}
         <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <Slider label={t("Énergie max")} value={maxE} max={12} onChange={(v) => { setMaxE(v); setPage(1); }} />
-          <Slider label="Pouvoir max" value={maxP} max={4} onChange={(v) => { setMaxP(v); setPage(1); }} />
-          <Slider label="Might max" value={maxM} max={10} onChange={(v) => { setMaxM(v); setPage(1); }} />
+          <Slider label={t("Énergie max")} value={maxE} max={capE} onChange={(v) => { setMaxE(v); setPage(1); }} />
+          <Slider label="Pouvoir max" value={maxP} max={capP} onChange={(v) => { setMaxP(v); setPage(1); }} />
+          <Slider label="Might max" value={maxM} max={capM} onChange={(v) => { setMaxM(v); setPage(1); }} />
         </div>
 
         {/* Footer */}

@@ -158,11 +158,17 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDomains, setSelectedDomains] = useState<Set<string>>(new Set());
   const [energyLow, setEnergyLow] = useState(0);
-  const [energyHigh, setEnergyHigh] = useState(12);
+  // Plafonds tirés des cartes, jamais écrits en dur : le curseur Puissance
+  // s'arrêtait à 10 alors que la base monte à 12, donc Baron Nashor et Master
+  // Yi, Unstoppable étaient introuvables dans le deckbuilder.
+  const capE = useMemo(() => Math.max(1, ...cards.map((c) => c.energy ?? 0)), [cards]);
+  const capP = useMemo(() => Math.max(1, ...cards.map((c) => c.power ?? 0)), [cards]);
+  const capM = useMemo(() => Math.max(1, ...cards.map((c) => c.might ?? 0)), [cards]);
+  const [energyHigh, setEnergyHigh] = useState(capE);
   const [powerLow, setPowerLow] = useState(0);
-  const [powerHigh, setPowerHigh] = useState(4);
+  const [powerHigh, setPowerHigh] = useState(capP);
   const [mightLow, setMightLow] = useState(0);
-  const [mightHigh, setMightHigh] = useState(10);
+  const [mightHigh, setMightHigh] = useState(capM);
   const [showSliders, setShowSliders] = useState(false);
   const [sortBy, setSortBy] = useState<SortKey>("energy");
   const [detailCard, setDetailCard] = useState<CardData | null>(null);
@@ -275,12 +281,12 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
   const hasFilters =
     selectedDomains.size > 0 || searchQuery.trim() !== "" ||
-    energyLow > 0 || energyHigh < 12 || powerLow > 0 || powerHigh < 4 || mightLow > 0 || mightHigh < 10;
+    energyLow > 0 || energyHigh < capE || powerLow > 0 || powerHigh < capP || mightLow > 0 || mightHigh < capM;
 
   function resetFilters() {
     setSearchQuery(""); setSelectedDomains(new Set());
-    setEnergyLow(0); setEnergyHigh(12);
-    setPowerLow(0); setPowerHigh(4); setMightLow(0); setMightHigh(10);
+    setEnergyLow(0); setEnergyHigh(capE);
+    setPowerLow(0); setPowerHigh(capP); setMightLow(0); setMightHigh(capM);
   }
 
   const selectClass = "h-8 rounded-lg border border-hairline-strong bg-surface px-2.5 text-xs text-ink focus:border-arcane cursor-pointer";
@@ -344,9 +350,9 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
         {showSliders && showSliderToggle && (
           <div className="flex gap-4">
-            <RangeSlider label={t("Énergie")} min={0} max={12} valueLow={energyLow} valueHigh={energyHigh} onChange={(l, h) => { setEnergyLow(l); setEnergyHigh(h); }} />
-            <RangeSlider label="Pouvoir" min={0} max={4} valueLow={powerLow} valueHigh={powerHigh} onChange={(l, h) => { setPowerLow(l); setPowerHigh(h); }} />
-            <RangeSlider label="Puissance" min={0} max={10} valueLow={mightLow} valueHigh={mightHigh} onChange={(l, h) => { setMightLow(l); setMightHigh(h); }} />
+            <RangeSlider label={t("Énergie")} min={0} max={capE} valueLow={energyLow} valueHigh={energyHigh} onChange={(l, h) => { setEnergyLow(l); setEnergyHigh(h); }} />
+            <RangeSlider label="Pouvoir" min={0} max={capP} valueLow={powerLow} valueHigh={powerHigh} onChange={(l, h) => { setPowerLow(l); setPowerHigh(h); }} />
+            <RangeSlider label="Puissance" min={0} max={capM} valueLow={mightLow} valueHigh={mightHigh} onChange={(l, h) => { setMightLow(l); setMightHigh(h); }} />
           </div>
         )}
 
