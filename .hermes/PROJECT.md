@@ -22,4 +22,4 @@
 - Pas de migrations Prisma : `db push` seulement, **aucun retour arrière**.
 - Contenu rendu du site : **pas de tiret cadratin**, français, pas d'anglicisme.
 
-**Lire ensuite.** `CLAUDE.md` (architecture, commandes, conventions) · `HANDOFF.md` (état, chantier en cours, pièges) · `docs/PROJET.md` (tout le projet) · `AGENTS.md` (règles de travail).
+**Lire ensuite.** `CLAUDE.md` (architecture, commandes, conventions) · `HANDOFF.md` (état, chantier en cours, pièges) · `docs/PROJET.md` (tout le projet) · `AGENTS.md` (règles de travail) · `.hermes/SKILLS.md` (quel skill sert à quoi ici ; toute prose FR rendue passe par la commande `reecrire`).
