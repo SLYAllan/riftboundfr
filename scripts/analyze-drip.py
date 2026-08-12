@@ -3,7 +3,7 @@
 
   python -X utf8 scripts/analyze-drip.py <dossier-scrape> [nb-decks-mini]
 
-Pour chaque legende ayant assez de decks, affiche, au format de DECKBUILDING-RULES.md :
+Pour chaque legende ayant assez de decks, affiche, au format de docs/DECKBUILDING-RULES.md :
 champion, core (>=90% des listes), standard (60-89%), flex (30-59%), battlefields,
 repartition des runes, meilleurs classements.
 """

@@ -1,0 +1,56 @@
+# Documentation — Riftbound France
+
+Où trouver quoi. Rangé le 12 août 2026.
+
+## À la racine du dépôt
+
+| Fichier | Ce qu'on y trouve |
+|---|---|
+| `CLAUDE.md` | Stack, arborescence, où vit la logique, commandes vérifiées, conventions. **Le point de départ.** |
+| `AGENTS.md` | Règles de travail : ne jamais deviner, ne jamais fabriquer une decklist, sources de vérité. Importé par `CLAUDE.md`. |
+| `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les 5 prochaines tâches, et les pièges. |
+| `README.md` | Démarrage rapide. |
+
+## Connaissance du projet
+
+| Fichier | Ce qu'on y trouve |
+|---|---|
+| `PROJET.md` | **Le projet en entier** : ce qu'est le site, son vocabulaire, ses pages, d'où viennent les données et par quelle chaîne, l'éditorial, la sécurité, l'histoire. À lire en premier quand on arrive. |
+| `META-KNOWLEDGE.md` | Méta, tier lists, rulings, chiffres de tournoi, terminologie française officielle. Le plus gros document du dépôt. |
+| `DECKBUILDING-RULES.md` | Règles de construction, table canonique des domaines, cores et cartes techniques par Légende. |
+| `ARTICLE-STYLE.md` | Style et gabarit des articles. |
+| `DESIGN.MD` | Règles visuelles du site. |
+| `SEO-STRATEGY.md` | Stratégie de référencement. |
+| `DEPLOIEMENT.md` | Coolify, Docker, DNS, SSL, base de données, méthode de seed en production. |
+
+## Archive
+
+| Fichier | Ce qu'on y trouve |
+|---|---|
+| `AUDITS.md` | **Les 15 audits et rapports du projet en un seul fichier**, du plus récent (11 août 2026) au plus ancien (24 mai 2026). Chaque section garde son texte d'origine et la mention de son fichier source. C'est un état des lieux daté, pas la vérité d'aujourd'hui : pour l'état courant, lire `HANDOFF.md`. |
+| `prompts/` | Les prompts réutilisables : scraping riftdecks, scraping Firecrawl, analyse de VOD, apprentissage de la méta, refonte du deckbuilder, modification d'articles et de decks. |
+| `superpowers/` | Plans et spécifications de sessions passées. |
+
+## Où vivent les données
+
+`data/` et `content/` ne sont pas rangés dans `docs/` : une bonne partie des 77
+scripts de `scripts/` les lit par un chemin en dur. Les déplacer casse la chaîne
+de scraping et de seed. Voici la carte.
+
+| Chemin | Ce que c'est | Statut |
+|---|---|---|
+| `data/raw-scrapes/` | **Scrapes bruts de riftdecks, par tournoi et par page.** La source de vérité contre laquelle `validate-decklists.py` vérifie qu'aucune decklist n'a été fabriquée. Voir `AGENT-INSTRUCTIONS.md` du dossier. | Source de vérité |
+| `data/fiches/*.json` | Fiche par Légende : identité, forces, faiblesses, cartes clés. | Source de vérité |
+| `data/video-insights/` | Connaissance tirée des VOD compétitives. Lire son `README.md` : il donne l'index, la hiérarchie et le pipeline. `matchups-reference.md` est la source unique des matchups. | Source de vérité |
+| `data/meta-reports/` | Rapports de méta par tournoi. | Dérivé |
+| `data/decklists/`, `data/tournaments/` | Decklists et tournois convertis, prêts à seeder. | Dérivé |
+| `data/articles-drafts/` | Brouillons d'articles non publiés. | En chantier |
+| `data/rules/`, `data/riftbound-rules-fr*` | Règles officielles du jeu en français. | Source de vérité |
+| `data/prices/`, `data/videos/` | Régénérés, ignorés par git. | Jetable |
+| `content/articles/` | Articles rédigés à la main. | Source de vérité |
+| `content/aide-de-jeu/` | Textes de l'aide de jeu. | Source de vérité |
+| `content/tweets/` | Idées de publications et visuels. Son `README.md` explique la génération des visuels de tier list. | Source de vérité |
+
+Les règles du jeu codées en dur (bans, domaines, errata, drapeaux de tournoi) ne
+sont ni dans `data/` ni ici : elles vivent dans `src/lib/`, listées dans
+`CLAUDE.md`.

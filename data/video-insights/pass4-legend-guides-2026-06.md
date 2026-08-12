@@ -2,7 +2,7 @@
 
 > Source : guides "How to Play X | Unleashed Legend Guide & Decklist" (chaîne RiftLab) + 1 guide Spiritforged.
 > Reformulé FR (copyright). Perspective **guide dédié** (core recommandé, chosen champion, battlefields, tech,
-> matchups par l'auteur) — complète les casts de match (cf. `matchups-reference.md`) et `DECKBUILDING-RULES.md`.
+> matchups par l'auteur) — complète les casts de match (cf. `matchups-reference.md`) et `docs/DECKBUILDING-RULES.md`.
 > `[avis]` = reco/opinion de l'auteur. `[?]` = nom Whisper à recouper (lancer `npm run fix:names`).
 > **Aucune decklist fabriquée** : on extrait des cores/tech qualitatifs, pas des listes seedées (cf. ../../AGENTS.md).
 

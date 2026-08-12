@@ -8,10 +8,10 @@
  *
  * Usage :
  *   npx tsx scripts/validate-card-names.mts [fichier1.md fichier2.md ...]
- *   (défaut : META-KNOWLEDGE.md, DECKBUILDING-RULES.md, data/video-insights/*.md)
+ *   (défaut : docs/META-KNOWLEDGE.md, docs/DECKBUILDING-RULES.md, data/video-insights/*.md)
  *
  * Sort en code 1 s'il reste des suspects (peut servir de garde-fou avant commit/seed).
- * À LANCER après toute analyse VOD avant de figer la connaissance (cf. VIDEO-ANALYSIS-PROMPT.md).
+ * À LANCER après toute analyse VOD avant de figer la connaissance (cf. docs/prompts/VIDEO-ANALYSIS-PROMPT.md).
  */
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
@@ -114,7 +114,7 @@ if (files.length === 0) {
   files = [];
   const dir = "data/video-insights";
   if (existsSync(dir)) for (const f of readdirSync(dir)) if (f.endsWith(".md")) files.push(join(dir, f));
-  if (files.length === 0) files = ["META-KNOWLEDGE.md", "DECKBUILDING-RULES.md"];
+  if (files.length === 0) files = ["docs/META-KNOWLEDGE.md", "docs/DECKBUILDING-RULES.md"];
 }
 
 let totalSuspects = 0;

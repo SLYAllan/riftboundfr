@@ -31,5 +31,5 @@ Repères utiles : 422 Défausser, 427 Bannir, 440 Brûler, 441 Amplification (ac
 Notes de patch : https://playriftbound.com/fr-fr/news/announcements/core-rules-vendetta-patch-notes/
 Ban list : https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/
 
-Le détail est repris dans `META-KNOWLEDGE.md` (mots-clés et ban list) et rendu sur le
+Le détail est repris dans `docs/META-KNOWLEDGE.md` (mots-clés et ban list) et rendu sur le
 site dans `/guides/glossaire`.

@@ -16,8 +16,10 @@ JAMAIS créer un nouveau rendu quand une route, un composant ou un script couvre
 besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
 
 - **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
-  `?share=`), carré 1000x1000, publique, serveur dev lancé. C'est **le** visuel de
-  deck. Rendu à plat paysage 2258x1518 = `generateDeckImage` de
+  `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
+  Carré **2000x2000** par défaut, `&format=story` pour le 9:16 **1620x2880**
+  (dimensions dans `FORMATS`, `src/app/api/decklist-image/route.tsx`).
+  Rendu à plat paysage 2258x1518 = `generateDeckImage` de
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
   `content/tweets/README.md`.
@@ -51,9 +53,10 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (exit 1 si MISMATCH vs scrape brut).
 
 **Sources de vérité (où vit quoi) :**
-- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (7 bans) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
+- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (10 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
 - Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
-- Méta/tier/rulings → `META-KNOWLEDGE.md` · règles deckbuilding/cores → `DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
+- Méta/tier/rulings → `docs/META-KNOWLEDGE.md` · règles deckbuilding/cores → `docs/DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
+- Architecture, commandes vérifiées et conventions → `CLAUDE.md` · état du chantier et pièges → `HANDOFF.md` · index des docs → `docs/README.md`.
 
 **Réflexes :**
 - **Coupler le nouveau à l'ancien** : recouper toute donnée importée contre les sources ci-dessus AVANT de la figer ; ne jamais traiter une info isolément.

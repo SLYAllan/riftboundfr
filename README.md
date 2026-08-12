@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Riftbound France
 
-## Getting Started
+Site francophone du jeu de cartes Riftbound : base de cartes, decks de tournoi,
+tier lists, articles, constructeur de deck, suivi de collection.
 
-First, run the development server:
+En ligne sur **https://riftboundfrance.fr**.
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+docker compose up -d db          # PostgreSQL 16 sur 127.0.0.1:5433
+cp .env.example .env             # remplir DATABASE_URL et SESSION_SECRET
+npx prisma db push
+npx prisma generate
+npx tsx scripts/seed-cards.ts
+npm run dev                      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`SESSION_SECRET` est obligatoire : sans lui, toute page qui lit une session lève
+une erreur. Le générer avec `openssl rand -hex 32`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commandes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Commande | Ce qu'elle fait |
+|---|---|
+| `npm run dev` | Serveur de développement. |
+| `npm run verify` | `tsc --noEmit && next build`. **À lancer avant tout push.** |
+| `npm test` | Vitest. |
+| `npm run lint` | ESLint. **Échoue aujourd'hui**, voir `HANDOFF.md`. |
+| `npm run validate:decks` | Garde-fou anti-fabrication de decklists. |
+| `npm run validate:names` | Vérifie les noms de cartes cités dans les docs. |
 
-## Learn More
+## Où lire quoi
 
-To learn more about Next.js, take a look at the following resources:
+| Fichier | Pour quoi |
+|---|---|
+| `docs/PROJET.md` | **Le projet en entier** : ce que c'est, les données, l'histoire. Commencer ici. |
+| `CLAUDE.md` | Architecture, arborescence, commandes vérifiées, conventions de code. |
+| `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les pièges. |
+| `AGENTS.md` | Règles de travail : ne jamais deviner, ne jamais fabriquer une decklist. |
+| `docs/README.md` | Index de toute la documentation et carte des données. |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 16 (App Router) · React 19 · Prisma 6 · PostgreSQL 16 · Tailwind 4 ·
+TypeScript · Vitest. Node 22 ou plus. Déployé par Coolify derrière Caddy.

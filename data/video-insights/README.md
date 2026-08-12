@@ -8,8 +8,8 @@
 | Type d'info | Source de vérité | Notes |
 |---|---|---|
 | **Matchups A vs B** | **`matchups-reference.md`** | Source unique, pairwise, qualitatif. Remplace la prose matchup des autres docs. `[avis]`/`[conflit]` marqués. |
-| Méta / tier / rulings / chiffres tournois | **`../../META-KNOWLEDGE.md`** | Distillé (éditorial riftbound.gg + VOD). `[avis]` = caster. |
-| Règles de deckbuilding, cores/tech par Légende | **`../../DECKBUILDING-RULES.md`** | Table de domaines canonique + cores. |
+| Méta / tier / rulings / chiffres tournois | **`../../docs/META-KNOWLEDGE.md`** | Distillé (éditorial riftbound.gg + VOD). `[avis]` = caster. |
+| Règles de deckbuilding, cores/tech par Légende | **`../../docs/DECKBUILDING-RULES.md`** | Table de domaines canonique + cores. |
 | Cores/tech par Légende (fiche) | **`../fiches/*.json`** champ `vodInsights` | Vue par légende (22 fiches = liste canonique des Légendes). |
 | Synthèse Unleashed (set 3) | `unleashed-vod-synthesis-2026-06.md` | ~40 matchups + cores set 3. |
 | Passif Spiritforged/Origins (set 2/1) | `cross-set-casts-2026-06.md` | méta Draven, légendes principales. |
@@ -38,4 +38,4 @@
 1. **Transcrire** : `D:/riftbound-vods/` via `scripts/vod-transcribe-fw.sh` (faster-whisper small.en). Cf. téléchargement YouTube dans `VIDEO-ANALYSIS-PROMPT.md`.
 2. **Analyser** en agents/Workflow **par vagues de 3** (jamais plus → rate-limit API). Reformuler FR, classer cast/`[avis]`/guide.
 3. **Valider les noms** : `npm run fix:names <doc.md>` (auto-corrige distance ≤ 2 vs DB) puis `npm run validate:names` (gate, exit 1 si suspects). Les inconnus restants → demander un lien web à Allan, ne pas inventer.
-4. **Distiller** : matchups → `matchups-reference.md` ; méta/tier/rulings → `META-KNOWLEDGE.md` ; cores/tech → `DECKBUILDING-RULES.md` + fiches.
+4. **Distiller** : matchups → `matchups-reference.md` ; méta/tier/rulings → `docs/META-KNOWLEDGE.md` ; cores/tech → `docs/DECKBUILDING-RULES.md` + fiches.

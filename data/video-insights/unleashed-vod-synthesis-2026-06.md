@@ -2,7 +2,7 @@
 
 > **Matière privée, usage interne.** Connaissance extraite de 84 VOD compétitives (RunesAndRift,
 > RiftlabTCG) et **reformulée en français** — aucune citation verbatim, jamais de traduction littérale
-> (copyright). Ce fichier nourrit META-KNOWLEDGE.md / DECKBUILDING-RULES.md / les fiches. Les noms de
+> (copyright). Ce fichier nourrit docs/META-KNOWLEDGE.md / docs/DECKBUILDING-RULES.md / les fiches. Les noms de
 > cartes et de Légendes restent en anglais (noms propres). Les chiffres et avis sont ceux des casters
 > (Jibs, Pentastag, Exo/XO…) — à traiter comme **opinion experte**, pas comme donnée DB. **Aucune
 > decklist n'est créée à partir de ces VOD** : toute liste vient du scrape réel.
@@ -31,7 +31,7 @@
 
 ## 2. Tier / lecture par Légende (consensus casters)
 
-> Domaines confirmés conformes à la table canonique riftbound.gg (voir DECKBUILDING-RULES.md). Les VOD
+> Domaines confirmés conformes à la table canonique riftbound.gg (voir docs/DECKBUILDING-RULES.md). Les VOD
 > **confirment** ces paires (lecture par couleur : Rouge=Fureur, Vert=Calme, Bleu=Esprit, Orange=Corps,
 > Violet=Chaos, Jaune=Ordre).
 
