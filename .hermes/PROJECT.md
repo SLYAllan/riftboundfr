@@ -14,6 +14,8 @@
 
 **Déployer.** Coolify construit depuis le `Dockerfile` ; le `docker-compose.yml` est local uniquement. Un déploiement **ne seede pas** les decks. Voir `docs/DEPLOIEMENT.md`.
 
+**Router.** Ce que Codex peut finir seul : TypeScript, tests, refactors — tout ce que `npm run verify` sait juger. Ce qui revient à Claude Code : la prose française rendue (les commandes `/reecrire` et `/accroche` n'existent pas dans Codex) et les passes d'interface (skills `better-*`). Ce qui ne se délègue pas : décider si une decklist est sourcée ou fabriquée. Détail dans la section « Ce qui n'existe que d'un côté » d'`AGENTS.md`.
+
 **Ne jamais toucher.**
 - **Ne jamais fabriquer une decklist, un deck, un résultat ou une carte.** Sourcer depuis `data/raw-scrapes/`, jamais de mémoire ; donnée invérifiable = on saute. Garde-fou : `npm run validate:decks` (lent, > 5 min).
 - **Ne jamais recalculer les cartes d'un deck à la main** : passer par `resolveDeckCards` (`src/lib/deck-cards.ts`), passage unique.

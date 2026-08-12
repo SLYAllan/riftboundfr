@@ -36,7 +36,7 @@ une erreur. Le générer avec `openssl rand -hex 32`.
 |---|---|
 | `docs/PROJET.md` | **Le projet en entier** : ce que c'est, les données, l'histoire. Commencer ici. |
 | `AGENTS.md` | **Règles de travail + architecture, commandes vérifiées, conventions.** Lu par Claude Code ET par Codex. |
-| `CLAUDE.md` | Importe `AGENTS.md` et ajoute le peu qui est propre à Claude Code (commandes d'écriture FR, skills, garde-fous). |
+| `CLAUDE.md` | Importe `AGENTS.md`, rien d'autre. Vide de fond exprès : Codex ne le lit pas. |
 | `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les pièges. |
 | `docs/README.md` | Index de toute la documentation et carte des données. |
 

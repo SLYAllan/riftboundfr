@@ -7,7 +7,7 @@ Où trouver quoi. Rangé le 12 août 2026.
 | Fichier | Ce qu'on y trouve |
 |---|---|
 | `AGENTS.md` | **Le point de départ.** Règles de travail, puis stack, arborescence, où vit la logique, commandes vérifiées, conventions. Lu par Claude Code ET par Codex : c'est la source unique. |
-| `CLAUDE.md` | Importe `AGENTS.md`, puis le peu qui est propre à Claude Code : commandes d'écriture FR, skills, garde-fous. |
+| `CLAUDE.md` | Importe `AGENTS.md`, rien d'autre. Vide de fond exprès : Codex ne le lit pas, donc toute consigne posée là lui échapperait. |
 | `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les 5 prochaines tâches, et les pièges. |
 | `README.md` | Démarrage rapide. |
 

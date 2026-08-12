@@ -10,11 +10,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 # Ce fichier est la source unique
 
-Règles de travail, architecture, commandes et conventions vivent **ici**, pas dans
-`CLAUDE.md`. Raison : **Codex lit `AGENTS.md` et ne lit pas `CLAUDE.md`**, alors que
-Claude Code lit les deux (`CLAUDE.md` commence par `@AGENTS.md`). Séparer le fond
-entre les deux fichiers ferait travailler l'un des deux agents sur une version
-périmée. `CLAUDE.md` ne garde donc que ce qui n'existe que côté Claude Code.
+**Tout le fond est ici** : règles de travail, architecture, commandes, conventions,
+et ce qui n'existe que d'un côté (dernière section). Raison : **Codex lit
+`AGENTS.md` et ne lit pas `CLAUDE.md`**, alors que Claude Code lit les deux
+(`CLAUDE.md` commence par `@AGENTS.md`). `CLAUDE.md` est donc vide de fond, exprès :
+une consigne posée là serait invisible à Codex, puis divergerait. **Toute nouvelle
+consigne va ici.**
 
 Autres portes d'entrée : `HANDOFF.md` (état du chantier, ce qui est cassé, pièges) ·
 `docs/PROJET.md` (le projet en entier) · `docs/README.md` (index des docs et carte
@@ -318,3 +319,58 @@ comprendre à la première lecture.
 - Un aperçu de carte au survol ne doit jamais sortir de l'écran.
 - Les classes Tailwind construites par concaténation ne sont pas générées :
   utiliser une valeur arbitraire ou un style en ligne.
+
+---
+
+# Ce qui n'existe que d'un côté
+
+Ce dépôt est travaillé par plusieurs exécutants : Claude Code, et Codex piloté par
+Hermes. Ils n'ont pas les mêmes outils. Cette section dit lesquels, pour que
+l'orchestrateur route la tâche au bon endroit et qu'aucun agent ne tente ce qu'il
+ne peut pas faire.
+
+## Écrire en français : côté Claude Code seulement
+
+Deux commandes portent les six règles d'écriture (Orwell) qui s'appliquent à
+**toute prose rendue sur le site** : articles, guides, textes de page.
+
+- `/reecrire` — réécrit un texte selon les six règles.
+- `/accroche` — réécrit une accroche ou un texte d'accueil.
+
+Ce sont des commandes Claude Code. **Elles n'existent pas dans Codex.** Une tâche
+qui produit du texte français destiné aux visiteurs se termine côté Claude Code.
+Les règles elles-mêmes : pas d'image toute faite, pas de mot long quand un court
+suffit, couper ce qui peut l'être, actif plutôt que passif, mot français courant
+plutôt que jargon. Et jamais de tiret cadratin dans le contenu rendu.
+
+## Skills : côté Claude Code seulement
+
+`.hermes/SKILLS.md` dit lequel sert à quoi sur ce projet, et lesquels ne servent à
+rien ici. En résumé : la famille `better-*` pour les passes d'interface (elle a
+servi à l'audit du 29 juillet), `firecrawl` pour tout scraping — `WebFetch` et
+`curl` se prennent des 403 Cloudflare.
+
+`.hermes/skills/` en contient une copie de secours, parce que ces skills ne
+viennent d'aucun marketplace et se sont déjà perdus une fois dans System32.
+**Ce n'est pas la source** : Claude Code charge ceux de `~/.claude/`.
+
+Un skill propose une méthode, il ne connaît pas le projet. Ce fichier prime.
+
+## Garde-fous : chacun les siens
+
+`.claude/settings.json` refuse `rm -rf`, `push --force`, les remises à zéro de base
+et la lecture des `.env` ; il demande confirmation pour les déploiements, les seeds
+et `prisma db push`.
+
+**Ces règles ne protègent que Claude Code.** Un agent lancé par Hermes ou Codex
+passe par sa propre politique d'approbation, à régler séparément dans sa config.
+Ne jamais supposer qu'un garde-fou posé d'un côté couvre l'autre. Ça compte
+particulièrement ici : `prisma db push` n'a aucun retour arrière, et la base de
+production est encore joignable depuis Internet (cf. `HANDOFF.md`).
+
+## Mémoire : côté Claude Code seulement
+
+Claude Code tient un dossier de mémoire par projet, pour des faits qui ne sont pas
+dans le dépôt (préférences d'Allan, pièges d'API, historique de décisions). Un fait
+qui vit déjà dans ce fichier, dans `HANDOFF.md` ou dans `docs/` n'y a pas sa place :
+il y serait dupliqué, puis désynchronisé.
