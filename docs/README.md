@@ -6,8 +6,8 @@ Où trouver quoi. Rangé le 12 août 2026.
 
 | Fichier | Ce qu'on y trouve |
 |---|---|
-| `CLAUDE.md` | Stack, arborescence, où vit la logique, commandes vérifiées, conventions. **Le point de départ.** |
-| `AGENTS.md` | Règles de travail : ne jamais deviner, ne jamais fabriquer une decklist, sources de vérité. Importé par `CLAUDE.md`. |
+| `AGENTS.md` | **Le point de départ.** Règles de travail, puis stack, arborescence, où vit la logique, commandes vérifiées, conventions. Lu par Claude Code ET par Codex : c'est la source unique. |
+| `CLAUDE.md` | Importe `AGENTS.md`, puis le peu qui est propre à Claude Code : commandes d'écriture FR, skills, garde-fous. |
 | `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les 5 prochaines tâches, et les pièges. |
 | `README.md` | Démarrage rapide. |
 
@@ -53,4 +53,4 @@ de scraping et de seed. Voici la carte.
 
 Les règles du jeu codées en dur (bans, domaines, errata, drapeaux de tournoi) ne
 sont ni dans `data/` ni ici : elles vivent dans `src/lib/`, listées dans
-`CLAUDE.md`.
+`AGENTS.md`.

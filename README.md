@@ -35,9 +35,9 @@ une erreur. Le générer avec `openssl rand -hex 32`.
 | Fichier | Pour quoi |
 |---|---|
 | `docs/PROJET.md` | **Le projet en entier** : ce que c'est, les données, l'histoire. Commencer ici. |
-| `CLAUDE.md` | Architecture, arborescence, commandes vérifiées, conventions de code. |
+| `AGENTS.md` | **Règles de travail + architecture, commandes vérifiées, conventions.** Lu par Claude Code ET par Codex. |
+| `CLAUDE.md` | Importe `AGENTS.md` et ajoute le peu qui est propre à Claude Code (commandes d'écriture FR, skills, garde-fous). |
 | `HANDOFF.md` | Ce qui marche, ce qui est cassé, le chantier en cours, les pièges. |
-| `AGENTS.md` | Règles de travail : ne jamais deviner, ne jamais fabriquer une decklist. |
 | `docs/README.md` | Index de toute la documentation et carte des données. |
 
 ## Stack

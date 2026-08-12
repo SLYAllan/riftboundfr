@@ -4,8 +4,9 @@ Document de référence. Écrit le 12 août 2026 pour quelqu'un qui arrive sans 
 savoir : ce qu'est le site, ce qu'il contient, comment il est fait, comment on le
 fait tourner et comment on le nourrit.
 
-Les trois autres portes d'entrée : `CLAUDE.md` (architecture et commandes),
-`HANDOFF.md` (état du chantier et pièges), `AGENTS.md` (règles de travail).
+Les deux autres portes d'entrée : `AGENTS.md` (règles de travail, architecture,
+commandes vérifiées, conventions — lu aussi par Codex) et `HANDOFF.md` (état du
+chantier et pièges).
 
 ---
 
@@ -90,7 +91,7 @@ articles, des decks, des événements et des tier lists.
 
 ## 4. Comment c'est fait
 
-Détail complet dans `CLAUDE.md`. En bref : **Next.js 16.3** en App Router,
+Détail complet dans `AGENTS.md`. En bref : **Next.js 16.3** en App Router,
 **React 19**, **Prisma 6** sur **PostgreSQL 16**, **Tailwind 4**, TypeScript strict,
 Vitest. Sortie `standalone`, image Docker, déployée par Coolify derrière Caddy sur
 un serveur Hetzner.
@@ -222,7 +223,7 @@ lève une erreur. Le générer avec `openssl rand -hex 32`.
 Avant tout push : `npm run verify` (c'est `tsc --noEmit && next build`). Vérifier le
 code de sortie pour de vrai — `rtk` le masque et a déjà laissé passer du code cassé.
 
-L'état exact de chaque commande, y compris celles qui échouent, est dans `CLAUDE.md`
+L'état exact de chaque commande, y compris celles qui échouent, est dans `AGENTS.md`
 et `HANDOFF.md`.
 
 ## 8. Déploiement

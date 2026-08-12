@@ -15,7 +15,7 @@ Dans `.hermes/commands/`. Ce sont des **commandes**, pas des skills, et elles so
 
 | Commande | Quand |
 |---|---|
-| `reecrire` | Réécrit un texte selon les six règles d'Orwell du `CLAUDE.md` global. À passer sur toute prose rendue : articles, guides, textes de page. |
+| `reecrire` | Réécrit un texte selon les six règles d'Orwell du CLAUDE.md global d'Allan. À passer sur toute prose rendue : articles, guides, textes de page. |
 | `accroche` | Réécrit une accroche ou un texte d'accueil selon les mêmes règles. |
 
 Rappel des règles qu'elles appliquent : pas d'image toute faite, pas de mot long

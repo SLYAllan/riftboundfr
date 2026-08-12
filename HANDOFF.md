@@ -2,7 +2,7 @@
 
 **Relevé du 12 août 2026.** Branche `main`, dernier commit `a95230bb` (11 août).
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
-L'architecture et les commandes sont dans `CLAUDE.md`, l'archive des audits dans
+L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
 `docs/AUDITS.md`.
 
 ## Ce qui marche
