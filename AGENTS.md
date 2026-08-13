@@ -28,6 +28,11 @@ ce soit (visuel, export, script), lister ce que le site fait déjà et s'en serv
 JAMAIS créer un nouveau rendu quand une route, un composant ou un script couvre le
 besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
 
+- **Prix et achat d'un deck** → `src/lib/cardnexus.ts`, et lui seul. Il porte les
+  liens affiliés (identifiant de partenaire Impact) : un lien CardNexus écrit à la
+  main ailleurs est un lien non tracké, donc une vente perdue en silence.
+  Prix affichés = `data/prices/card-prices.json`, relevé par `npm run sync-prices`.
+  Panier prêt à payer = `/api/cardnexus/panier?slug=` ou `?code=`.
 - **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
   `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
   Carré **2000x2000** par défaut, `&format=story` pour le 9:16 **1620x2880**
@@ -210,6 +215,7 @@ son travail.
 | `npm test` | ✅ | Vitest. **10 fichiers, 85 tests, tous verts, ~1,2 s.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run lint` | ❌ | **Échoue : 15 erreurs, 96 avertissements.** Voir plus bas. |
+| `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
 | `docker compose up -d db` | ✅ | PostgreSQL 16 local sur le port **5433**. |

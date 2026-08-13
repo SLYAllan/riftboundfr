@@ -1,97 +1,121 @@
-// Relevé de prix des cartes — OUTIL INTERNE, rien de tout ceci n'est rendu sur le site.
+// Relevé de prix des cartes, source CardNexus.
 //
-// Source : les fichiers JSON statiques de magicalmeta.ink, qui publie les prix
-// TCGPlayer. Pas d'authentification, pas de Cloudflare, pas de limite annoncée :
-// neuf fichiers, un par set, régénérés chaque jour vers 11h UTC. On les lit comme
-// un navigateur le ferait, une fois par jour, séquentiellement.
+// Remplace l'ancienne source magicalmeta.ink, qui donnait des prix TCGPlayer en
+// dollars convertis au doigt mouillé : le site affiche maintenant ces prix, donc
+// ils doivent être vrais et en euros. CardNexus publie le prix du marché européen
+// et vend les cartes, ce qui rend le chiffre cohérent avec le bouton d'achat.
 //
-// Pourquoi pas Cardmarket : il n'existe pas d'API publique, et recopier leurs pages
-// contrevient à leurs conditions. Le prix rendu ici est donc AMÉRICAIN. La conversion
-// vers l'euro plus bas est une estimation assumée, à ne jamais présenter comme un prix
-// Cardmarket.
+// Le fichier produit est lu par src/lib/cardnexus.ts au rendu des pages deck.
+// Rien n'appelle l'API au moment d'une visite : les prix bougent lentement, un
+// relevé par jour suffit et la page reste rapide.
 //
 // Usage :
-//   npx tsx --env-file=.env scripts/sync-prices.mts            met à jour data/card-prices.json
+//   npx tsx --env-file=.env scripts/sync-prices.mts            met à jour data/prices/card-prices.json
 //   npx tsx --env-file=.env scripts/sync-prices.mts --deck <slug>   chiffre un deck publié
 //   npx tsx --env-file=.env scripts/sync-prices.mts --test     auto-contrôle
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
 import { prisma } from "../src/lib/prisma";
+import { cleCatalogue, prixRetenu, type BlocPrix } from "../src/lib/cardnexus";
 
-const BASE = "https://magicalmeta.ink/riftbound/data";
-const UA = "Mozilla/5.0 (compatible; RiftboundFrance/1.0; +https://riftboundfrance.fr)";
+const API = "https://public-api.cardnexus.com/v1";
 const OUT_DIR = join(process.cwd(), "data", "prices");
 const OUT_FILE = join(OUT_DIR, "card-prices.json");
 
-// Le change dollar vers euro ET l'écart de marché en un seul facteur : sur un TCG
-// récent l'Europe paie au-dessus des États-Unis, l'offre y étant plus mince. Chercher
-// la précision serait faux, l'écart entre deux boutiques françaises est plus grand.
-const USD_TO_EUR = 0.92;
-const EU_MARKET_FACTOR = 1.15;
-export const usdToEur = (usd: number) => usd * USD_TO_EUR * EU_MARKET_FACTOR;
+const CLE = process.env.CARDNEXUS_API_KEY;
+if (!CLE) throw new Error("CARDNEXUS_API_KEY manquante : la poser dans .env (et dans Coolify pour la prod).");
 
 export function normalizeName(s: string): string {
   return s
     .toLowerCase()
     .replace(/[’'`]/g, "")
-    // TCGPlayer écrit « Annie - Fiery » là où Riftcodex écrit « Annie, Fiery ».
+    // CardNexus écrit « Annie - Fiery » là où Riftcodex écrit « Annie, Fiery ».
     .replace(/\s*[-,]\s*/g, " ")
     .replace(/[^a-z0-9 ]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-interface PriceRow {
-  usd: number;
-  productId: number;
-  tcgName: string;
+interface Produit {
+  id: number;
+  name: string;
+  printNumber: string;
+  expansion: { code: string };
+  pricesByFinish?: Record<string, BlocPrix>;
 }
 
-async function getJson<T>(url: string): Promise<T> {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`GET ${url} -> ${res.status}`);
-  return (await res.json()) as T;
-}
-
-async function fetchPrices(): Promise<Map<string, PriceRow>> {
-  const list = await getJson<{ sets: { filename: string; set_name: string }[] }>(`${BASE}/sets/sets-list.json`);
-  const byName = new Map<string, PriceRow>();
-  for (const s of list.sets) {
-    const d = await getJson<{ cards: { name: string; product_id: number; current_price?: { market_price?: number } }[] }>(
-      `${BASE}/sets/${s.filename}`,
-    );
-    let n = 0;
-    for (const c of d.cards) {
-      const usd = c.current_price?.market_price ?? 0;
-      if (!usd) continue;
-      const key = normalizeName(c.name);
-      const prev = byName.get(key);
-      // Plusieurs produits pour un même nom (finitions, éditions) : on garde le moins
-      // cher, c'est l'exemplaire qu'un joueur achète pour jouer.
-      if (!prev || usd < prev.usd) byName.set(key, { usd, productId: c.product_id, tcgName: c.name });
-      n++;
-    }
-    console.log(`  ${s.set_name} : ${n} tarifs`);
+/** Le catalogue Riftbound entier, 200 par appel. 1400 cartes = 8 requêtes. */
+async function catalogue(): Promise<Produit[]> {
+  const out: Produit[] = [];
+  for (let offset = 0; ; offset += 200) {
+    const res = await fetch(`${API}/products/search`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${CLE}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        gameFilters: { game: "riftbound" },
+        productType: { op: "or", values: ["card"] },
+        limit: 200,
+        offset,
+      }),
+    });
+    if (!res.ok) throw new Error(`POST /products/search -> ${res.status} ${await res.text()}`);
+    const j = (await res.json()) as { data: Produit[]; pagination: { hasMore: boolean } };
+    out.push(...j.data);
+    process.stdout.write(`\r  ${out.length} produits`);
+    if (!j.pagination.hasMore) break;
   }
-  return byName;
+  console.log();
+  return out;
 }
 
 async function sync() {
-  console.log("Relevé des prix (source : magicalmeta.ink, prix TCGPlayer)");
-  const prices = await fetchPrices();
-  const cards = await prisma.card.findMany({ select: { riftboundId: true, name: true, cleanName: true, set: true } });
+  console.log("Relevé des prix (source : CardNexus, marché européen, en euros)");
+  const produits = await catalogue();
 
-  const out: Record<string, { usd: number; tcgName: string; productId: number }> = {};
-  let hit = 0;
-  const misses: string[] = [];
-  for (const c of cards) {
-    const m = prices.get(normalizeName(c.name)) ?? (c.cleanName ? prices.get(normalizeName(c.cleanName)) : undefined);
-    if (!m) {
-      misses.push(`${c.set} ${c.name}`);
+  const parNumero = new Map<string, Produit>();
+  const parNom = new Map<string, Produit>();
+  for (const p of produits) {
+    parNumero.set(`${p.expansion.code}-${p.printNumber}`.toUpperCase(), p);
+    // Plusieurs impressions d'une même carte : on garde la moins chère, c'est
+    // l'exemplaire qu'un joueur achète pour jouer.
+    const cle = normalizeName(p.name);
+    const prec = parNom.get(cle);
+    const px = prixRetenu(p.pricesByFinish);
+    const pxPrec = prec ? prixRetenu(prec.pricesByFinish) : null;
+    if (!prec || (px && (!pxPrec || px.eur < pxPrec.eur))) parNom.set(cle, p);
+  }
+
+  const cartes = await prisma.card.findMany({
+    select: { riftboundId: true, name: true, cleanName: true, set: true },
+  });
+
+  const out: Record<string, { eur: number; productId: number; nom: string; source: string; finition: string }> = {};
+  let parNum = 0;
+  let parNomHit = 0;
+  const sansPrix: string[] = [];
+  const introuvables: string[] = [];
+
+  for (const c of cartes) {
+    let p = cleCatalogue(c.riftboundId)
+      .map((k) => parNumero.get(k))
+      .find(Boolean);
+    if (p) parNum++;
+    else {
+      // Nos préfixes OPP, PR et JDG ne sont pas des codes d'extension CardNexus :
+      // pour ces cartes le numéro ne peut pas trancher, seul le nom le peut.
+      p = parNom.get(normalizeName(c.name)) ?? (c.cleanName ? parNom.get(normalizeName(c.cleanName)) : undefined);
+      if (p) parNomHit++;
+    }
+    if (!p) {
+      introuvables.push(`${c.set} ${c.name}`);
       continue;
     }
-    out[c.riftboundId] = { usd: m.usd, tcgName: m.tcgName, productId: m.productId };
-    hit++;
+    const px = prixRetenu(p.pricesByFinish);
+    if (!px) {
+      sansPrix.push(`${c.set} ${c.name}`);
+      continue;
+    }
+    out[c.riftboundId] = { eur: px.eur, productId: p.id, nom: p.name, source: px.source, finition: px.finition };
   }
 
   mkdirSync(OUT_DIR, { recursive: true });
@@ -99,10 +123,9 @@ async function sync() {
     OUT_FILE,
     JSON.stringify(
       {
-        source: "magicalmeta.ink (prix TCGPlayer, marché américain, en dollars)",
+        source: "CardNexus (public-api.cardnexus.com), marché européen, en euros",
         fetchedAt: new Date().toISOString(),
-        usdToEur: USD_TO_EUR,
-        euMarketFactor: EU_MARKET_FACTOR,
+        currency: "EUR",
         cards: out,
       },
       null,
@@ -110,11 +133,15 @@ async function sync() {
     ),
     "utf-8",
   );
-  console.log(`\n${hit}/${cards.length} cartes tarifées -> ${OUT_FILE}`);
-  console.log(`sans prix : ${misses.length}${misses.length ? " (ex. " + misses.slice(0, 3).join(", ") + ")" : ""}`);
+
+  const n = Object.keys(out).length;
+  console.log(`\n${n}/${cartes.length} cartes tarifées -> ${OUT_FILE}`);
+  console.log(`  appariées par numéro : ${parNum}, par nom : ${parNomHit}`);
+  console.log(`  au catalogue mais sans prix : ${sansPrix.length}${sansPrix.length ? ` (ex. ${sansPrix.slice(0, 3).join(", ")})` : ""}`);
+  console.log(`  absentes du catalogue : ${introuvables.length}${introuvables.length ? ` (ex. ${introuvables.slice(0, 3).join(", ")})` : ""}`);
 }
 
-function loadPrices(): Record<string, { usd: number }> {
+function loadPrices(): Record<string, { eur: number }> {
   if (!existsSync(OUT_FILE)) throw new Error(`${OUT_FILE} absent : lancer le script sans argument d'abord.`);
   return JSON.parse(readFileSync(OUT_FILE, "utf-8")).cards;
 }
@@ -127,7 +154,7 @@ async function priceDeck(slug: string) {
   if (!deck) throw new Error(`deck introuvable : ${slug}`);
   const prices = loadPrices();
 
-  let usd = 0;
+  let eur = 0;
   let known = 0;
   let total = 0;
   const lines: string[] = [];
@@ -139,17 +166,18 @@ async function priceDeck(slug: string) {
       continue;
     }
     known += dc.quantity;
-    usd += p.usd * dc.quantity;
-    lines.push(`  ${(p.usd * dc.quantity).toFixed(2).padStart(6)} $  x${dc.quantity} ${dc.card.name}`);
+    eur += p.eur * dc.quantity;
+    lines.push(`  ${(p.eur * dc.quantity).toFixed(2).padStart(6)} €  x${dc.quantity} ${dc.card.name}`);
   }
   lines.sort((a, b) => parseFloat(b.trim()) - parseFloat(a.trim()) || 0);
   console.log(`${deck.title}\n${lines.slice(0, 10).join("\n")}\n  ...`);
-  console.log(`\nTotal : ${usd.toFixed(2)} $  soit ~${usdToEur(usd).toFixed(0)} € estimés`);
+  console.log(`\nTotal : ${eur.toFixed(2)} €`);
   console.log(`Couverture : ${known}/${total} exemplaires tarifés`);
 }
 
-// Auto-contrôle : la normalisation doit réconcilier les deux conventions d'écriture
-// et l'estimation euro doit rester monotone. Le reste du script est de l'entrée-sortie.
+// Auto-contrôle : la normalisation doit réconcilier les deux conventions d'écriture.
+// Le reste du script est de l'entrée-sortie ; les fonctions de prix ont leurs tests
+// dans src/lib/cardnexus.test.ts.
 function test() {
   const eq = (a: string, b: string) => {
     if (normalizeName(a) !== normalizeName(b)) throw new Error(`${a} != ${b}`);
@@ -158,8 +186,6 @@ function test() {
   eq("Kai'Sa, Daughter of the Void", "KaiSa - Daughter of the Void");
   eq("Rek'sai,  Void   Burrower", "Rek'Sai - Void Burrower");
   if (normalizeName("Annie, Fiery") === normalizeName("Annie, Frozen")) throw new Error("collision");
-  if (usdToEur(10) <= usdToEur(5)) throw new Error("conversion non monotone");
-  if (Math.round(usdToEur(100)) !== 106) throw new Error("facteur euro inattendu");
   console.log("ok");
 }
 

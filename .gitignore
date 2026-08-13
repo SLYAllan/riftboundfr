@@ -104,6 +104,14 @@ data/raw-scrapes/**/*.log
 # Artefacts du CLI Firecrawl (scratch local)
 .firecrawl/
 
-# Relevé de prix régénéré chaque jour par scripts/sync-prices.mts
-data/prices/
+# Charte CardNexus reçue avec le programme d'affiliation : 11 Mo de PDF et de
+# variantes dont le site n'utilise rien. Les deux logos qu'il sert sont copiés
+# dans public/cardnexus/. Le reste reste sur le disque d'Allan, pas dans l'historique.
+data/cardnexus-brand/
+
+# Le relevé de prix est maintenant AFFICHÉ sur les pages deck, donc il doit
+# partir dans l'image Docker : Next le trace depuis data/ vers .next/standalone,
+# mais encore faut-il qu'il soit dans le dépôt. Le suivre, c'est aussi garder
+# une trace des prix à chaque relevé.
+!data/prices/card-prices.json
 data/rules/*.pdf

@@ -19,7 +19,8 @@ import Link from "@/components/lien";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { findCard } from "@/lib/card-printing";
-import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
+import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
+import { chiffrerDeck } from "@/lib/cardnexus";
 import { tr } from "@/lib/i18n-server";
 
 interface PageProps {
@@ -111,6 +112,13 @@ export default async function CommunityDeckPage({ params }: PageProps) {
     ...toListCards(decoded.battlefield, "battlefield"),
     ...toListCards(decoded.side, "side"),
   ];
+
+  // Chiffrage : le relevé de prix est indexé par riftboundId, que `decklistCards`
+  // ne porte pas (il expose l'id de base pour la collection).
+  const cartesChiffrables = deckCoverageItems(decoded).flatMap((i) => {
+    const card = findCard(cardMap, i.cardId);
+    return card ? [{ riftboundId: card.riftboundId, name: card.name, quantity: i.quantity }] : [];
+  });
 
   const user = await getUserFromSession();
 
@@ -210,14 +218,6 @@ export default async function CommunityDeckPage({ params }: PageProps) {
         />
         <div className="space-y-4">
           <DeckStatsPanel cards={decklistCards} />
-          <DeckCoveragePanel
-            items={decklistCards.map((c) => ({
-              cardId: c.cardId,
-              quantity: c.quantity,
-              section: c.section,
-              name: c.name,
-            }))}
-          />
           <VersionHistory
             currentVersion={deck.version}
             history={deck.history.map((h) => ({
@@ -229,6 +229,21 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           />
           <UpdateDeckButton shareCode={deck.shareCode} ownerId={deck.userId} />
         </div>
+      </div>
+
+      {/* Pleine largeur, comme sur /decks/[slug] : l'aperçu des cartes manquantes
+          s'empile en colonne dans la barre latérale de 300 px, illisible. */}
+      <div className="mt-6">
+        <DeckCoveragePanel
+          prix={chiffrerDeck(cartesChiffrables)}
+          lienAchat={`/api/cardnexus/panier?share=${deck.shareCode}`}
+          items={decklistCards.map((c) => ({
+            cardId: c.cardId,
+            quantity: c.quantity,
+            section: c.section,
+            name: c.name,
+          }))}
+        />
       </div>
 
       <CommunityDeckGuide
