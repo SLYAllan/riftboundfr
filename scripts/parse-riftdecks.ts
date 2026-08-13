@@ -24,12 +24,42 @@ interface DeckJson {
   archetype: null;
   domains: string[];
   mainDeck: DeckCard[];
-  runes: { name: string; quantity: number }[];
+  // Un objet { Fury: 6, Mind: 6 }, pas un tableau, et sans le suffixe « Rune » :
+  // c'est ce que lit `seed-tournament-decks.ts` et ce qu'écrivent les decklists
+  // déjà en base. En tableau, le seeder ne voyait aucune rune.
+  runes: Record<string, number>;
   battlefields: string[];
-  sideboard: DeckCard[];
+  // `sideDeck`, pas `sideboard` : le seeder ne connaît que ce nom-là, et une
+  // réserve rangée sous l'autre disparaissait en silence.
+  sideDeck: DeckCard[];
   totalCards: number;
   stats: { unitCount: number; spellCount: number; gearCount: number; averageCost: null };
   sourceUrl: string;
+}
+
+/**
+ * Les noms de Légende canoniques, indexés en minuscules.
+ *
+ * Le fil d'Ariane de riftdecks écrit « Kai'sa », « Khazix », « Reksai » là où la
+ * base dit « Kai'Sa », « Kha'Zix », « Rek'sai » : la casse ET l'apostrophe
+ * varient. Les deux comptent, parce que le seed rapproche un deck de sa Légende
+ * par le nom : une lettre de travers crée une Légende fantôme à côté de la vraie.
+ * `legend-map.json` porte l'orthographe qui fait foi.
+ *
+ * La clé de recherche ignore donc tout ce qui n'est pas lettre ou chiffre.
+ */
+function cleNom(nom: string): string {
+  return nom.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+const NOMS_CANONIQUES: Map<string, string> = (() => {
+  const chemin = path.join(__dirname, "../data/raw-scrapes/legend-map.json");
+  const carte: Record<string, string> = JSON.parse(fs.readFileSync(chemin, "utf-8"));
+  return new Map(Object.values(carte).map((nom) => [cleNom(nom), nom]));
+})();
+
+function legendeCanonique(nom: string): string {
+  return NOMS_CANONIQUES.get(cleNom(nom)) ?? nom;
 }
 
 /** Ce qui change d'un tournoi à l'autre, et que le markdown d'un deck ne porte pas. */
@@ -74,9 +104,9 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
   // Parse card sections
   let currentSection = "";
   const mainDeck: DeckCard[] = [];
-  const runes: { name: string; quantity: number }[] = [];
+  const runes: Record<string, number> = {};
   const battlefields: string[] = [];
-  const sideboard: DeckCard[] = [];
+  const sideDeck: DeckCard[] = [];
   let champion: string | null = null;
 
   for (const line of lines) {
@@ -109,11 +139,13 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
     if (currentSection === "legend") continue;
 
     if (currentSection === "rune") {
-      runes.push({ name, quantity });
+      // « Fury Rune » -> clé « Fury ». Deux lignes du même domaine s'additionnent.
+      const domaine = name.replace(/\s*Runes?$/i, "").trim();
+      runes[domaine] = (runes[domaine] ?? 0) + quantity;
     } else if (currentSection === "battlefield") {
       battlefields.push(name);
     } else if (currentSection === "sideboard") {
-      sideboard.push({ name, quantity, type: "Unknown", rarity, domain: cardDomain });
+      sideDeck.push({ name, quantity, type: "Unknown", rarity, domain: cardDomain });
     } else {
       const type = currentSection === "unit" ? "Unit" : currentSection === "spell" ? "Spell" : currentSection === "gear" ? "Gear" : "Unknown";
       mainDeck.push({ name, quantity, type, rarity, domain: cardDomain });
@@ -124,12 +156,12 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
 
   const deckId = sourceUrl.match(/deck-[^/]+$/)?.[0] ?? "unknown";
   const totalCards = mainDeck.reduce((s, c) => s + c.quantity, 0)
-    + runes.reduce((s, r) => s + r.quantity, 0)
+    + Object.values(runes).reduce((s, q) => s + q, 0)
     + battlefields.length + 1 + (champion ? 1 : 0);
 
   return {
     id: deckId,
-    legend,
+    legend: legendeCanonique(legend),
     legendId: null,
     champion,
     player,
@@ -144,7 +176,7 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
     mainDeck,
     runes,
     battlefields,
-    sideboard,
+    sideDeck,
     totalCards,
     stats: {
       unitCount: mainDeck.filter(c => c.type === "Unit").reduce((s, c) => s + c.quantity, 0),
