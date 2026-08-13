@@ -26,7 +26,12 @@ RACINE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 FICHIER_CLES="$RACINE/.firecrawl/keys"
 # La clé qui marchait au dernier appel, pour ne pas retenter les mortes à chaque
 # fois : sur 600 decks, ça ferait 600 essais perdus d'avance.
-ETAT="$RACINE/.firecrawl/cle-courante"
+#
+# `FC_ETAT` sert à faire tourner deux scrapes en même temps : chacun son jeu de
+# clés (via FIRECRAWL_API_KEYS) ET son fichier d'état, sinon le second réécrit
+# l'index du premier et les deux repartent sur la même clé — donc sur le même
+# quota de 18 requêtes/minute, ce qui annule tout l'intérêt du parallèle.
+ETAT="${FC_ETAT:-$RACINE/.firecrawl/cle-courante}"
 
 # --- Charger les clés --------------------------------------------------------
 CLES=()
