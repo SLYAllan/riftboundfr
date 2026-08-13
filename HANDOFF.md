@@ -78,12 +78,19 @@ Le parseur prend maintenant le tournoi en argument (il portait Xi'an en dur) :
 npx tsx scripts/parse-riftdecks.ts <slug> "<nom>" <AAAA-MM-JJ> <joueurs> Vendetta
 ```
 
-**Fait** : Fuzhou (128 decks, 32 Légendes) et Hangzhou (124, 32) sont scrapés
-**et** convertis en JSON. **Reste** : finir le scrape de Guangzhou, Chengdu et
-Beijing, les convertir, puis pour les cinq — valider, seeder
-(`scripts/seed-tournament-decks.ts`), lever les best-of
-(`scripts/mark-bestof-tournois.mts`), et poser le set **Vendetta** dans
-`src/lib/tournament-flags.ts`.
+**Terminés de bout en bout** (scrapés, convertis, validés, seedés en local,
+best-of levés) : Fuzhou 128 decks / 32 Légendes, Hangzhou 124 / 32,
+Guangzhou 128 / 29. Les cinq tournois sont déclarés en set Vendetta dans
+`src/lib/tournament-flags.ts` et `/decks` a son filtre.
+
+**En cours** : Chengdu et Beijing (128 chacun), et Ottawa (525 listes). Reprendre
+avec `bash scripts/scrape-tournoi.sh`, puis convertir, seeder, lever les best-of.
+
+**Ottawa : 525 listes pour 581 joueurs.** L'écart n'est pas une perte : riftdecks
+a un filtre « Decklist Missing », ces 56 joueurs n'ont pas publié de liste. On ne
+la fabrique pas.
+
+**Rien n'est en production.** Tout ce qui précède est en base locale.
 
 Trois pièges déjà payés, à ne pas repayer :
 
