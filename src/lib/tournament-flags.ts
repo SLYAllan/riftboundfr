@@ -35,7 +35,7 @@ export interface TournamentInfo {
   playerCount?: number;
   type: "regional" | "city_challenge" | "worlds" | "online" | "other";
   date?: string;
-  set?: "Origins" | "Unleashed" | "Spiritforged";
+  set?: "Origins" | "Unleashed" | "Spiritforged" | "Vendetta";
   format?: "Conquest" | "Standard";
   hidden?: boolean;
 }
@@ -360,6 +360,16 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   "S3 Shanghai City Challenge (2026-04-19)": { name: "S3 Shanghai City Challenge (2026-04-19)", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-04-19", set: "Unleashed", format: "Standard" },
   "S3 Nanjing City Challenge (2026-04-18)": { name: "S3 Nanjing City Challenge (2026-04-18)", shortName: "Nanjing CC", countryCode: "CN", city: "Nanjing", location: "Nanjing, Chine", playerCount: 128, type: "city_challenge", date: "2026-04-18", set: "Unleashed", format: "Standard" },
   "S3 Shenzhen City Challenge (2026-04-18)": { name: "S3 Shenzhen City Challenge (2026-04-18)", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2026-04-18", set: "Unleashed", format: "Standard" },
+
+  // S4, les premiers tournois joués en Vendetta. Le set est relevé sur la page
+  // riftdecks de chaque tournoi (champ « META »), pas déduit de la date : six
+  // tournois s'étaient retrouvés dans le mauvais set en juillet pour l'avoir
+  // deviné, ce qui fausse toutes les tier lists.
+  "S4 Fuzhou City Challenge (2026-08-09)": { name: "S4 Fuzhou City Challenge (2026-08-09)", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-09", set: "Vendetta", format: "Standard" },
+  "S4 Hangzhou City Challenge (2026-08-09)": { name: "S4 Hangzhou City Challenge (2026-08-09)", shortName: "Hangzhou CC", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 124, type: "city_challenge", date: "2026-08-09", set: "Vendetta", format: "Standard" },
+  "S4 Guangzhou City Challenge (2026-08-09)": { name: "S4 Guangzhou City Challenge (2026-08-09)", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-09", set: "Vendetta", format: "Standard" },
+  "S4 Chengdu City Challenge (2026-08-08)": { name: "S4 Chengdu City Challenge (2026-08-08)", shortName: "Chengdu CC", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-08", set: "Vendetta", format: "Standard" },
+  "S4 Beijing City Challenge (2026-08-08)": { name: "S4 Beijing City Challenge (2026-08-08)", shortName: "Beijing CC", countryCode: "CN", city: "Beijing", location: "Pékin, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-08", set: "Vendetta", format: "Standard" },
   "Hangzhou Regional Open (2025-09-14)": { name: "Hangzhou Regional Open (2025-09-14)", shortName: "Hangzhou RO", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 510, type: "regional", date: "2025-09-14", set: "Origins", format: "Conquest" },
   "Fuzhou City Challenge (2025-09-27)": { name: "Fuzhou City Challenge (2025-09-27)", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shenzhen City Challenge (2025-09-27)": { name: "Shenzhen City Challenge (2025-09-27)", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },

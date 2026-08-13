@@ -63,6 +63,10 @@ const COLOR_CLASSES = {
 };
 
 const SET_STYLES: Record<string, { badge: string; active: string }> = {
+  Vendetta: {
+    badge: "bg-rose-600 text-canvas",
+    active: "bg-rose-500 text-canvas",
+  },
   Unleashed: {
     badge: "bg-arcane text-canvas",
     active: "bg-arcane text-canvas",
@@ -566,7 +570,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
             !setFilter ? "bg-ink/10 text-ink ring-1 ring-ink/20" : "bg-surface-raised text-ink-muted hover:text-ink"
           )}
         >{t("Tous les sets")}</Link>
-        {(["Unleashed", "Spiritforged", "Origins"] as const).map((s) => (
+        {/* Du plus récent au plus ancien. Un set absent d'ici n'a pas de filtre :
+            ses decks existent en base mais rien ne permet de les isoler. */}
+        {(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => (
           <Link
             key={s}
             href={`/decks?set=${s}${cat ? `&cat=${cat}` : ""}`}
