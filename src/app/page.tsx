@@ -192,41 +192,43 @@ export default async function HomePage() {
                 {t("Tous les decks")} <ArrowRight size={14} />
               </Link>
             </div>
-            {/* 2 colonnes, pas 3 : la hauteur de la ligne est fixée par la tier
-                list à droite. En 3 colonnes les 6 vignettes flottaient au milieu
-                d'un vide de 400px, et les noms ne tenaient pas. */}
-            <div className="grid flex-1 grid-cols-2 gap-1.5 p-2 content-center">
+            {/* Des lignes, pas des pavés. En vignettes carrées sur deux colonnes,
+                chaque Légende occupait 207 px alors que la même icône fait 48 px
+                dans la tier list juste à droite : la colonne écrasait ses deux
+                voisines, et les deux dernières Légendes sortaient du cadre. Une
+                ligne par Légende reprend le rythme de la colonne Guides et la
+                taille d'icône de la tier list. */}
+            <div className="flex flex-1 flex-col divide-y divide-hairline">
               {topLegends.map((legend) => {
-                // Icône de légende = image source carrée (800×800), nette en vignette
-                // carrée ; fallback bannière large si pas d'icône.
+                // Icône de légende = image source carrée (800×800), nette en petit ;
+                // fallback bannière large si pas d'icône.
                 const imgUrl = getLegendIconUrl(legend.legendName) ?? getBannerUrl(legend.legendName);
                 return (
                   <Link
                     key={legend.slug}
                     href={`/legendes/${legend.slug}`}
-                    className="group relative overflow-hidden rounded-lg aspect-square"
+                    className="group flex flex-1 items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised"
                   >
-                    {imgUrl ? (
-                      <Image
-                        src={imgUrl}
-                        alt={legend.legendName}
-                        fill
-                        sizes="(max-width: 640px) 30vw, (max-width: 1024px) 15vw, 160px"
-                        loading="lazy"
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-surface-raised" />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-canvas/90 via-canvas/30 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-1.5">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-surface-raised">
+                      {imgUrl && (
+                        <Image
+                          src={imgUrl}
+                          alt={legend.legendName}
+                          fill
+                          sizes="48px"
+                          loading="lazy"
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
+                    <div className="min-w-0 flex-1">
                       <span
-                        className="block text-xs font-bold leading-tight text-ink drop-shadow-md line-clamp-2"
+                        className="block truncate text-sm font-bold text-ink transition-colors group-hover:text-arcane"
                         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                       >
                         {displayLegendName(legend.legendName)}
                       </span>
-                      <div className="text-[10px] text-gold/80 truncate leading-tight mt-0.5">
+                      <div className="mt-0.5 truncate text-xs text-ink-muted">
                         {legend.deckCount.toLocaleString(locale)} {t("decks")}
                       </div>
                     </div>
