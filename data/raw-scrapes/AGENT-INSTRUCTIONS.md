@@ -1,9 +1,25 @@
 # Riftbound tournament scraper — shared agent instructions
 
-You scrape ONE tournament from riftdecks.com via the local MCP "Scrapeur" tools
-(`mcp__scrapeur__scrape`, `mcp__scrapeur__map_urls`) — already authorized.
+You scrape ONE tournament from riftdecks.com.
 Working dir: `C:\Users\Allan\Documents\Claude\RiftboundFr`.
 Your prompt gives you a **URL** and a **SLUG**. Use them everywhere `{URL}` / `{SLUG}` appear.
+
+**Fetching is already scripted — use it instead of calling a scraper by hand:**
+
+```bash
+bash scripts/scrape-tournoi.sh {SLUG} {URL} <page-count>
+```
+
+It does STEP 1 and the fetching half of STEP 2 (raw markdown into
+`data/raw-scrapes/{SLUG}/`), and it is resumable. What remains for you is the
+parsing: turning that raw markdown into decklist JSON, from STEP 2.2 onward.
+
+Only the `firecrawl` CLI gets through riftdecks' Cloudflare. `curl`, `WebFetch`,
+the MCP "Scrapeur" tools and `cloudscraper` 1.2.71 all return 403 (checked
+2026-08-13). Calls go through `scripts/fc.sh`, which rotates to the next API key
+when the current one runs out of credit; keys live in `.firecrawl/keys`, one per
+line, **untracked** — recreate it on a fresh clone. One tournament at a time: a
+key is capped at 18 requests/minute.
 
 ## STEP 0 — Legend lookup map
 Read `data/raw-scrapes/legend-map.json` — a JSON object mapping `"SET-NUMBER"` (e.g. `"SFD-185"`)

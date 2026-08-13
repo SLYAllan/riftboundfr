@@ -27,12 +27,33 @@ La lire en entier avant de commencer. Elle donne le découpage par pages, la
 reconnaissance de la Légende par `legend-map.json`, le format exact des fichiers
 à écrire, et quoi faire d'un deck sans Légende (le sauter, pas le deviner).
 
-Deux points qui coûtent cher si on les rate :
+En pratique, tout est fait par un script :
 
-- **Le scraping passe par le serveur MCP `scrapeur`.** `WebFetch` et `curl` se
-  prennent des 403 Cloudflare. Attendre ~1,5 s entre deux appels.
-- **Un tournoi par agent, quatre agents au plus en parallèle.** Au-delà, l'API
-  répond 429 et la moitié des decks manque sans que personne le voie.
+```bash
+bash scripts/scrape-tournoi.sh <slug> <url-du-tournoi> <nb-pages>
+```
+
+Il collecte les URL de decks page par page, puis récupère chaque deck. Il est
+reprenable : un deck déjà sur le disque n'est pas repris, et un fichier trop
+court est rejeté plutôt que gardé (sinon une page de défi Cloudflare compterait
+comme un deck).
+
+Quatre points qui coûtent cher si on les rate :
+
+- **Seul le CLI `firecrawl` traverse le Cloudflare de riftdecks.** `curl`,
+  `WebFetch`, le serveur MCP `scrapeur` et `cloudscraper` 1.2.71 y prennent tous
+  un 403, vérifié le 13 août 2026.
+- **Les appels passent par `scripts/fc.sh`, pas par `firecrawl` en direct.** Il
+  change de clé quand la clé courante n'a plus de crédit. Sans lui, un run s'est
+  arrêté net au milieu d'un tournoi et n'a jamais atteint les deux suivants.
+- **Les clés vivent dans `.firecrawl/keys`, une par ligne. Ce fichier n'est pas
+  dans git** (ce sont des secrets) : sur un clone neuf il faut le recréer, sinon
+  `fc.sh` retombe sur la config du CLI. La variable `FIRECRAWL_API_KEYS`
+  (séparée par des virgules) fait la même chose et gagne sur le fichier.
+- **Un tournoi à la fois.** Une clé plafonne à 18 requêtes par minute. Deux
+  scrapes en parallèle ne vont pas deux fois plus vite : ils se volent le quota
+  et repartent en erreur. À 1 s d'écart, deux appels sur cinq revenaient vides —
+  ça ressemble à des decks manquants, ce sont des refus de débit.
 
 Sortie : `data/decklists/<legende>/<slug>-*.json`, plus le résumé
 `data/tournaments/<slug>.json` et le fragment d'index

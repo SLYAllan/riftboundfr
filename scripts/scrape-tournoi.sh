@@ -4,16 +4,16 @@
 #   bash scripts/scrape-tournoi.sh <slug> <url-du-tournoi> <nb-pages>
 #   bash scripts/scrape-tournoi.sh s4-fuzhou https://riftdecks.com/riftbound-tournaments/s4-fuzhou-...-13758 2
 #
-# Passe par le CLI `firecrawl`, seul outil qui traverse le Cloudflare de
-# riftdecks : `curl`, `WebFetch`, le MCP scrapeur et cloudscraper 1.2.71 y
-# prennent tous un 403 (vérifié le 13 août 2026).
+# Passe par le CLI `firecrawl` (via `fc.sh`), seul outil qui traverse le
+# Cloudflare de riftdecks : `curl`, `WebFetch`, le MCP scrapeur et cloudscraper
+# 1.2.71 y prennent tous un 403 (vérifié le 13 août 2026).
 #
 # Reprenable : un deck déjà sur le disque n'est pas rescrapé. Relancer après une
 # coupure reprend où ça s'est arrêté, sans repayer les appels déjà faits.
 #
-# À lancer un tournoi À LA FOIS. Le compte firecrawl plafonne à 18 requêtes par
-# minute pour tout le compte : deux scrapes en parallèle ne vont pas deux fois
-# plus vite, ils se volent le quota et repartent en erreur.
+# À lancer un tournoi À LA FOIS. Une clé firecrawl plafonne à 18 requêtes par
+# minute : deux scrapes en parallèle ne vont pas deux fois plus vite, ils se
+# volent le quota et repartent en erreur.
 #
 # Ne produit QUE du scrape brut. La conversion en decklists JSON vient après, et
 # c'est elle qui doit être recoupée contre ce brut (voir AGENT-INSTRUCTIONS.md).
@@ -28,6 +28,11 @@ BRUT="$RACINE/$SLUG"
 URLS="$RACINE/$SLUG-urls.txt"
 ERREURS="$RACINE/$SLUG-errors.txt"
 
+# Passe par le rotateur de clés plutôt que par `firecrawl` en direct : quand une
+# clé n'a plus de crédit il prend la suivante. Sans lui, le run précédent s'est
+# arrêté net au milieu de Guangzhou et n'a jamais atteint Chengdu ni Beijing.
+FC="bash $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/fc.sh"
+
 mkdir -p "$BRUT"
 : > "$ERREURS"
 
@@ -40,8 +45,8 @@ if [ ! -s "$URLS" ]; then
     [ "$p" -gt 1 ] && page_url="$URL?page=$p"
     page_md="$BRUT/_page-$p.md"
     if [ ! -s "$page_md" ]; then
-      firecrawl scrape "$page_url" -f markdown --only-main-content -o "$page_md" > /dev/null 2>&1
-      sleep 2
+      $FC scrape "$page_url" -f markdown --only-main-content -o "$page_md" > /dev/null 2>&1
+      sleep 4
     fi
     grep -oE "https://riftdecks\.com/riftbound-metagame/deck-[a-z0-9-]+" "$page_md" >> "$TMP_URLS" 2>/dev/null
     echo "[$SLUG] page $p/$PAGES : $(wc -l < "$TMP_URLS") URL cumulées (avant dédoublonnage)"
@@ -66,12 +71,13 @@ while IFS= read -r deck_url; do
   if [ -s "$fichier" ] && [ "$(wc -c < "$fichier")" -gt 500 ]; then
     caches=$((caches + 1)); ok=$((ok + 1))
   else
-    # Le compte firecrawl est limité à 18 requêtes/minute, soit 3,33 s entre deux
+    # Une clé firecrawl est limitée à 18 requêtes/minute, soit 3,33 s entre deux
     # appels. À 1 s, deux appels sur cinq revenaient vides : des refus de débit,
-    # pas des decks manquants. Une deuxième chance après 20 s absorbe le reste.
+    # pas des decks manquants. fc.sh rattrape le débit et le crédit ; la seconde
+    # chance ici couvre le reste (page vide, coupure réseau).
     obtenu=0
     for essai in 1 2; do
-      firecrawl scrape "$deck_url" -f markdown --only-main-content -o "$fichier" > /dev/null 2>&1
+      $FC scrape "$deck_url" -f markdown --only-main-content -o "$fichier" > /dev/null 2>&1
       if [ -s "$fichier" ] && [ "$(wc -c < "$fichier")" -gt 500 ]; then obtenu=1; break; fi
       rm -f "$fichier"
       [ "$essai" -eq 1 ] && sleep 20
