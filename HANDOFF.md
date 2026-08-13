@@ -72,17 +72,29 @@ Chengdu 128, Beijing 128 = **636 decks**) sont récupérés par
 `bash scripts/scrape-s4-chine.sh`. Reprenable : le relancer après une coupure
 repart d'où ça s'est arrêté.
 
-**Il ne reste que du scrape brut** dans `data/raw-scrapes/s4-*/`. Rien n'est
-converti, rien n'est seedé. La suite, dans l'ordre du skill `scraper-tournoi` :
-convertir en decklists JSON (étape 2 des `AGENT-INSTRUCTIONS.md`), valider,
-seeder, lever les best-of, poser le set **Vendetta** dans `tournament-flags.ts`.
+Le parseur prend maintenant le tournoi en argument (il portait Xi'an en dur) :
 
-Deux choses à savoir avant de reprendre :
+```bash
+npx tsx scripts/parse-riftdecks.ts <slug> "<nom>" <AAAA-MM-JJ> <joueurs> Vendetta
+```
 
-- **Le parseur n'est pas générique.** `scripts/parse-riftdecks.ts` a ses chemins
-  en dur sur `s3-xian`, `parse-chinese-tournaments.ts` de même. Chaque tournoi a
-  eu sa copie. Le paramétrer une fois vaut mieux qu'une sixième copie.
-- **Ottawa (581 decks) n'est pas lancé.** Même commande, une page de plus :
+**Fait** : Fuzhou (128 decks, 32 Légendes) et Hangzhou (124, 32) sont scrapés
+**et** convertis en JSON. **Reste** : finir le scrape de Guangzhou, Chengdu et
+Beijing, les convertir, puis pour les cinq — valider, seeder
+(`scripts/seed-tournament-decks.ts`), lever les best-of
+(`scripts/mark-bestof-tournois.mts`), et poser le set **Vendetta** dans
+`src/lib/tournament-flags.ts`.
+
+Trois pièges déjà payés, à ne pas repayer :
+
+- **Le format du parseur ne collait pas au seeder.** Runes en tableau au lieu
+  d'un objet `{Fury:6}`, réserve sous `sideboard` au lieu de `sideDeck`, nom de
+  Légende au fil d'Ariane (`Khazix`) au lieu du canonique (`Kha'Zix`). Chacun
+  perdait des données en silence. Corrigé, mais c'est le genre d'écart à
+  revérifier sur un deck avant de seeder les autres.
+- **Les clés firecrawl s'épuisent.** `scripts/fc.sh` passe à la suivante ; elles
+  vivent dans `.firecrawl/keys`, hors git, à recréer sur un clone neuf.
+- **Ottawa (581 decks) n'est pas lancé.** Même commande, dix pages :
   `bash scripts/scrape-tournoi.sh riftbound-showdown-ottawa "<url>" 10`.
 
 ### Codex : une étape manuelle reste à faire
