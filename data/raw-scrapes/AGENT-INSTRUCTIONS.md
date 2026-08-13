@@ -9,12 +9,19 @@ Your prompt gives you a **URL** and a **SLUG**. Use them everywhere `{URL}` / `{
 Read `data/raw-scrapes/legend-map.json` — a JSON object mapping `"SET-NUMBER"` (e.g. `"SFD-185"`)
 to a canonical legend name (e.g. `"Draven, Glorious Executioner"`). Used to identify each deck's legend.
 
+**A legend missing from this map silently drops the whole deck** (`no-legend`, STEP 2.2). When the
+tournament is on a set newer than the map, every deck led by a new legend disappears without warning —
+this happened with Vendetta, whose 9 legends were in the card DB but absent from the map. Before
+scraping a new set, run `npx tsx scripts/maj-legend-map.mts` (add `--apply` to write): it fills the
+map from the card DB and never overwrites an existing entry.
+
 ## STEP 1 — Tournament meta + paginated deck-URL collection
 1. `mcp__scrapeur__scrape({URL})` (page 1). From the markdown read:
    - tournament display name (H1 / "Event name"),
    - player count (`"N Players"`),
    - Date (format `M/D/YY` → convert to `YYYY-MM-DD`),
-   - the **Meta** value = the SET (`Origins` / `Spiritforged` / `Unleashed`),
+   - the **Meta** value = the SET (`Origins` / `Spiritforged` / `Unleashed` / `Vendetta`),
+     capitalised as shown — the page prints it uppercase (`VENDETTA`),
    - the line `Page 1 of N, showing X record(s) out of TOTAL total` → `N` = last page, `TOTAL` = expected deck count.
 2. For each page `p` in `1..N`: call `mcp__scrapeur__map_urls(URL + (p>1 ? "?page="+p : ""), limit=130)`.
    Keep links matching `/riftbound-metagame/deck-`. Dedupe across pages. Wait ~1.5s between pages.
@@ -61,7 +68,7 @@ For each deck URL:
   "date": "YYYY-MM-DD",
   "placement": <int|null>,
   "playerCount": <int>,
-  "set": "Origins|Spiritforged|Unleashed",
+  "set": "Origins|Spiritforged|Unleashed|Vendetta",
   "format": "Constructed",
   "archetype": null,
   "domains": ["Chaos","Fury"],

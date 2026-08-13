@@ -5,7 +5,20 @@ description: Ajoute un tournoi riftdecks.com au site, du scraping jusqu'à la mi
 
 # Ajouter un tournoi
 
-Six étapes, dans cet ordre. Aucune ne se saute, surtout pas la 2.
+Sept étapes, dans cet ordre. Aucune ne se saute, surtout pas la 0 et la 2.
+
+## 0. Vérifier que les Légendes du set sont connues
+
+```bash
+npx tsx scripts/maj-legend-map.mts          # dit ce qui manque
+npx tsx scripts/maj-legend-map.mts --apply  # écrit
+```
+
+Le scraper reconnaît la Légende d'un deck par `data/raw-scrapes/legend-map.json`.
+**Une Légende absente fait sauter le deck entier, en silence.** Un tournoi sur un
+set plus récent que la carte perd donc la moitié de ses decks sans que rien ne
+prévienne : c'est arrivé avec Vendetta, dont les 9 Légendes étaient en base mais
+pas dans la carte.
 
 ## 1. Scraper
 
