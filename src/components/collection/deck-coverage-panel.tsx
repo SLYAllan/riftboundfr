@@ -98,12 +98,18 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
         <>
           <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
             <div>
-              <div className="text-sm font-semibold text-ink-secondary">Prix du deck</div>
+              {/* « À partir de » et pas « Prix du deck » : le total additionne le prix
+                  le plus bas de chaque carte prise séparément. Personne ne paie ça —
+                  les cartes viennent de plusieurs vendeurs, chacun avec son port. Un
+                  deck annoncé 141 € est ressorti à 201 € au panier. Le plancher, lui,
+                  est vrai et vérifiable ; le présenter comme le prix était le mensonge. */}
+              <div className="text-sm font-semibold text-ink-secondary">À partir de</div>
               <div className="mt-1 text-3xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 {euros.format(prix.total)}
               </div>
               <p className="mt-1 text-xs text-ink-muted">
-                Prix le plus bas sur CardNexus{releve ? `, relevé le ${releve}` : ""}.
+                Somme des prix les plus bas sur CardNexus{releve ? `, relevés le ${releve}` : ""}, hors frais de port.
+                Le panier réel coûte plus : les cartes viennent de plusieurs vendeurs.
                 {prix.exemplairesSansPrix > 0 &&
                   ` ${prix.exemplairesSansPrix} carte${prix.exemplairesSansPrix > 1 ? "s" : ""} sans prix connu.`}
               </p>
@@ -146,10 +152,27 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                 ) : missing === 0 ? (
                   <span className="text-sm font-medium text-emerald-400">Deck complet ✓</span>
                 ) : missing != null ? (
-                  <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">
-                    Il te manque {missing} carte{missing > 1 ? "s" : ""}
-                    {resteAAcheter > 0 && <span className="text-ink-muted"> · {euros.format(resteAAcheter)}</span>}
-                  </button>
+                  <>
+                    <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">
+                      Il te manque {missing} carte{missing > 1 ? "s" : ""}
+                      {resteAAcheter > 0 && <span className="text-ink-muted"> · à partir de {euros.format(resteAAcheter)}</span>}
+                    </button>
+                    {/* Le bouton qui sert vraiment quand on possède déjà la moitié du
+                        deck : acheter le deck entier ferait payer trois fois les
+                        cartes déjà en boîte. Le serveur retranche la collection, il
+                        ne reçoit aucune liste du navigateur. */}
+                    {lienAchat && (
+                      <a
+                        href={`${lienAchat}&manquantes=1`}
+                        target="_blank"
+                        rel="noopener sponsored nofollow"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-arcane/60 px-2.5 py-1.5 text-sm font-semibold text-arcane transition-[background-color,transform] duration-150 hover:bg-arcane/10 active:scale-[0.96]"
+                      >
+                        <Image src="/cardnexus/mini-blanc.svg" alt="" width={101} height={100} className="h-4 w-4 opacity-80" />
+                        Acheter ce qui me manque
+                      </a>
+                    )}
+                  </>
                 ) : null}
                 {open && missing != null && missing > 0 && (
                   <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
