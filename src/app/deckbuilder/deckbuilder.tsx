@@ -11,6 +11,7 @@ import { DOMAIN_LABELS_FR } from "@/lib/domains";
 import { encodeDeckBase64, decodeDeck } from "@/lib/deck-codec";
 import { getSavedDecks, saveDeck, updateDeck, deleteDeck, saveDraft, loadDraft } from "@/lib/deck-storage";
 import { entriesToDeckCode, parseDeckCode } from "@/lib/deck-code";
+import { deckCoverageItems } from "@/lib/deck-cards";
 import { CardBrowserV2 } from "./components/card-browser";
 import { DeckPanelV2 } from "./components/deck-panel";
 import { ImportModal } from "./components/import-modal";
@@ -218,16 +219,20 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   const runeTotal = deck.rune.reduce((s, e) => s + e.quantity, 0);
   const bfTotal = deck.battlefield.reduce((s, e) => s + e.quantity, 0);
 
-  // Items pour le calcul « cartes manquantes » (toutes les sections du deck).
-  const coverageItems = useMemo(() => {
-    const out: { cardId: string; quantity: number; section: string }[] = [];
-    if (deck.legend) out.push({ cardId: deck.legend.cardId, quantity: 1, section: "legend" });
-    if (deck.champion) out.push({ cardId: deck.champion.cardId, quantity: 1, section: "legend" });
-    for (const e of deck.main) out.push({ cardId: e.cardId, quantity: e.quantity, section: "main" });
-    for (const e of deck.rune) out.push({ cardId: e.cardId, quantity: e.quantity, section: "rune" });
-    for (const e of deck.battlefield) out.push({ cardId: e.cardId, quantity: e.quantity, section: "battlefield" });
-    return out;
-  }, [deck]);
+  // Items pour le calcul « cartes manquantes ». La réserve en fait partie : elle
+  // était oubliée ici, donc le compteur annonçait moins de manquantes qu'en vrai.
+  const coverageItems = useMemo(
+    () =>
+      deckCoverageItems({
+        legend: deck.legend ? { cardId: deck.legend.cardId, quantity: 1 } : null,
+        champion: deck.champion ? { cardId: deck.champion.cardId, quantity: 1 } : null,
+        main: deck.main.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
+        rune: deck.rune.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
+        battlefield: deck.battlefield.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
+        side: deck.side.map((e) => ({ cardId: e.cardId, quantity: e.quantity })),
+      }),
+    [deck],
+  );
 
   const addCard = useCallback((card: CardData, toSide?: boolean) => {
     setDeck((prev) => {

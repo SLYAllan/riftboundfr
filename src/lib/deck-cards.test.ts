@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { queryKeys } from "./deck-cards";
+import { queryKeys, deckCoverageItems } from "./deck-cards";
 import { buildCardLookup, findCard, normalizeCardName, looksLikeRiftboundId } from "./card-printing";
 
 // Une carte doit être retrouvée quelle que soit la façon dont un joueur a collé
@@ -100,5 +100,40 @@ describe("préférence d'impression", () => {
       carte("unl-060-220", "Vilemaw", { alternateArt: false, collectorNumber: 99 }),
     ]);
     expect(findCard(map, "Vilemaw")?.riftboundId).toBe("unl-060-220");
+  });
+});
+
+describe("deckCoverageItems", () => {
+  const deck = {
+    legend: { cardId: "ogs-019-024", quantity: 1 },
+    champion: { cardId: "ogs-009-024", quantity: 2 },
+    main: [{ cardId: "ogn-091-298", quantity: 3 }],
+    rune: [{ cardId: "opp-042b-298", quantity: 6 }],
+    battlefield: [{ cardId: "ogn-284-298", quantity: 1 }],
+    side: [{ cardId: "ogn-156-298", quantity: 1 }],
+  };
+
+  // C'était le bug : la réserve était oubliée par le deckbuilder et par la liste
+  // des decks communautaires, qui annonçaient donc moins de cartes manquantes
+  // que la page du deck lui-même.
+  it("compte la réserve, qu'il faut posséder pour jouer en tournoi", () => {
+    const items = deckCoverageItems(deck);
+    expect(items.find((i) => i.section === "side")).toEqual({
+      cardId: "ogn-156-298",
+      quantity: 1,
+      section: "side",
+    });
+    expect(items.reduce((s, i) => s + i.quantity, 0)).toBe(14);
+  });
+
+  it("range la Légende et le champion dans la même section", () => {
+    const legend = deckCoverageItems(deck).filter((i) => i.section === "legend");
+    expect(legend.map((i) => i.cardId)).toEqual(["ogs-019-024", "ogs-009-024"]);
+  });
+
+  it("accepte un deck sans Légende ni champion", () => {
+    const items = deckCoverageItems({ ...deck, legend: null, champion: null });
+    expect(items.some((i) => i.section === "legend")).toBe(false);
+    expect(items).toHaveLength(4);
   });
 });

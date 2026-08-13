@@ -14,6 +14,7 @@ import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { decodeDeck } from "@/lib/deck-codec";
+import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
@@ -123,11 +124,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
       for (const d of communityDecks) {
         const dec = decodeDeck(d.deckCode);
         if (!dec) continue;
-        const entries = [
-          ...(dec.legend ? [dec.legend] : []),
-          ...(dec.champion ? [dec.champion] : []),
-          ...dec.main, ...dec.rune, ...dec.battlefield,
-        ];
+        // deckCoverageItems inclut la réserve, qui manquait ici : le même deck
+        // annonçait moins de cartes manquantes que sur sa propre page.
+        const entries = deckCoverageItems(dec);
         decodedByDeck.set(d.id, entries.map((e) => ({ ident: e.cardId, qty: e.quantity })));
         for (const e of entries) allIdents.add(e.cardId);
       }

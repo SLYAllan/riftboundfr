@@ -34,6 +34,33 @@ export function deckIdentifiers(deck: DeckCodeData): string[] {
   return ids;
 }
 
+/**
+ * Les cartes d'un deck pour le calcul « cartes manquantes », avec leur section.
+ *
+ * La réserve EN FAIT PARTIE : il faut la posséder pour jouer le deck en tournoi.
+ * Le deckbuilder et les decks communautaires l'oubliaient chacun de leur côté,
+ * alors que les decks officiels, qui lisent toutes les lignes en base, la
+ * comptaient. Le même deck n'affichait donc pas le même nombre de manquantes
+ * selon la page.
+ */
+export function deckCoverageItems(
+  deck: DeckCodeData,
+): { cardId: string; quantity: number; section: string }[] {
+  const out: { cardId: string; quantity: number; section: string }[] = [];
+  if (deck.legend) out.push({ cardId: deck.legend.cardId, quantity: deck.legend.quantity, section: "legend" });
+  if (deck.champion) out.push({ cardId: deck.champion.cardId, quantity: deck.champion.quantity, section: "legend" });
+  const sections = [
+    ["main", deck.main],
+    ["rune", deck.rune],
+    ["battlefield", deck.battlefield],
+    ["side", deck.side],
+  ] as const;
+  for (const [section, entries] of sections) {
+    for (const e of entries) out.push({ cardId: e.cardId, quantity: e.quantity, section });
+  }
+  return out;
+}
+
 export interface ResolvedDeckCards<T> {
   /** Indexé par riftboundId, nom exact, minuscules et nom normalisé. */
   map: Map<string, T>;
