@@ -328,51 +328,65 @@ comprendre à la première lecture.
 
 ---
 
-# Ce qui n'existe que d'un côté
+# Travailler à deux : Claude Code et Codex
 
-Ce dépôt est travaillé par plusieurs exécutants : Claude Code, et Codex piloté par
-Hermes. Ils n'ont pas les mêmes outils. Cette section dit lesquels, pour que
-l'orchestrateur route la tâche au bon endroit et qu'aucun agent ne tente ce qu'il
-ne peut pas faire.
+Ce dépôt est travaillé par deux exécutants, Claude Code et Codex. Ils lisent tous
+les deux ce fichier. Cette section dit ce qu'ils partagent, ce qui reste propre à
+chacun, et comment se passer le travail sans le refaire.
 
-## Écrire en français : côté Claude Code seulement
+## Ce qui est partagé
 
-Deux commandes portent les six règles d'écriture (Orwell) qui s'appliquent à
-**toute prose rendue sur le site** : articles, guides, textes de page.
+| Quoi | Où | Lu par |
+|---|---|---|
+| Règles, architecture, commandes, conventions | `AGENTS.md` (ce fichier) | les deux |
+| État du chantier, ce qui est cassé, pièges | `HANDOFF.md` | les deux |
+| Skills du dépôt | `.agents/skills/` | Codex, depuis n'importe quel sous-dossier |
+| Réglages Codex, garde-fous, sous-agents | `.codex/` — voir son `README.md` | Codex, si le dépôt est de confiance |
+| Réglages Claude Code | `.claude/settings.json` | Claude Code |
 
-- `/reecrire` — réécrit un texte selon les six règles.
-- `/accroche` — réécrit une accroche ou un texte d'accueil.
+Six skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
+`decklists`, `scraper-tournoi`, `outils-existants`. Ils **renvoient** à ce fichier
+au lieu de le recopier : deux copies de la même règle finissent toujours par
+diverger.
 
-Ce sont des commandes Claude Code. **Elles n'existent pas dans Codex.** Une tâche
-qui produit du texte français destiné aux visiteurs se termine côté Claude Code.
-Les règles elles-mêmes : pas d'image toute faite, pas de mot long quand un court
-suffit, couper ce qui peut l'être, actif plutôt que passif, mot français courant
-plutôt que jargon. Et jamais de tiret cadratin dans le contenu rendu.
+Les six règles d'écriture française ne sont donc plus réservées à Claude Code : le
+skill `reecrire` les porte des deux côtés. Une tâche qui produit du texte français
+pour les visiteurs peut se terminer de chaque côté.
 
-## Skills : côté Claude Code seulement
+## Ce qui reste d'un seul côté
 
-`.hermes/SKILLS.md` dit lequel sert à quoi sur ce projet, et lesquels ne servent à
-rien ici. En résumé : la famille `better-*` pour les passes d'interface (elle a
-servi à l'audit du 29 juillet), `firecrawl` pour tout scraping — `WebFetch` et
-`curl` se prennent des 403 Cloudflare.
-
-`.hermes/skills/` en contient une copie de secours, parce que ces skills ne
-viennent d'aucun marketplace et se sont déjà perdus une fois dans System32.
-**Ce n'est pas la source** : Claude Code charge ceux de `~/.claude/`.
+- **Passes d'interface** (`better-*`) et **scraping par `firecrawl`** : côté Claude
+  Code, ces skills vivent dans `~/.claude/`. `.hermes/SKILLS.md` dit lequel sert à
+  quoi ici ; `.hermes/skills/` en garde une copie de secours (ils ne viennent
+  d'aucun marketplace et se sont déjà perdus une fois dans System32). Pour les
+  rapatrier côté Codex : `/import` dans une session, choisir Claude Code.
+- **Mémoire par projet** : côté Claude Code, pour des faits absents du dépôt.
+  Un fait déjà écrit ici, dans `HANDOFF.md` ou dans `docs/` n'y a pas sa place.
+- **Serveur MCP `dataforseo`** : demande des identifiants, donc il reste dans la
+  config personnelle de chacun, jamais dans le dépôt.
 
 Un skill propose une méthode, il ne connaît pas le projet. Ce fichier prime.
 
-## Garde-fous : chacun les siens
+## Garde-fous : deux fichiers, à faire bouger ensemble
 
-`.claude/settings.json` refuse `rm -rf`, `push --force`, les remises à zéro de base
-et la lecture des `.env` ; il demande confirmation pour les déploiements, les seeds
-et `prisma db push`.
+`.claude/settings.json` et `.codex/hooks/garde-fous.py` refusent la même chose :
+`rm -rf`, `push --force`, les remises à zéro de base, la lecture des `.env`.
 
-**Ces règles ne protègent que Claude Code.** Un agent lancé par Hermes ou Codex
-passe par sa propre politique d'approbation, à régler séparément dans sa config.
-Ne jamais supposer qu'un garde-fou posé d'un côté couvre l'autre. Ça compte
-particulièrement ici : `prisma db push` n'a aucun retour arrière, et la base de
-production est encore joignable depuis Internet (cf. `HANDOFF.md`).
+**Chacun ne protège que son exécutant.** Une règle ajoutée d'un seul côté laisse
+l'autre à découvert. Ça compte ici plus qu'ailleurs : `prisma db push` n'a aucun
+retour arrière, et la base de production est encore joignable depuis Internet
+(cf. `HANDOFF.md`). Après toute modification du hook : `python
+.codex/hooks/garde-fous.py --test`, et le réapprouver par `/hooks` — Codex retient
+son empreinte et l'ignore tant qu'il n'est pas relu.
+
+## Se passer le travail
+
+Celui qui s'arrête en cours de route écrit dans `HANDOFF.md` : ce qui est fait, ce
+qui ne l'est pas, et la commande qui le prouve. Un diff ne dit pas pourquoi une
+piste a été abandonnée.
+
+Les deux ne travaillent pas sur le même fichier en même temps : le dernier à
+écrire écrase l'autre sans prévenir. Se répartir par fichier, pas par tâche.
 
 ## Mémoire : côté Claude Code seulement
 

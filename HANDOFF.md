@@ -1,6 +1,6 @@
 # HANDOFF — état des lieux
 
-**Relevé du 12 août 2026.** Branche `main`, dernier commit `a95230bb` (11 août).
+**Relevé du 13 août 2026.** Branche `main`, dernier commit `121e8cf0`.
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
 L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
 `docs/AUDITS.md`.
@@ -46,25 +46,17 @@ et ne pas conclure « ça marche » sur un simple dépassement.
 
 ## Ce qui est en chantier, non terminé
 
-### Comptage unifié des cartes manquantes (non commité)
+### Champions comptés deux fois : corrigé en local, pas en prod
 
-Trois fichiers modifiés dans l'arbre de travail :
+`scripts/fix-doublons-ogs-opp.mts` retire la ligne OPP en double quand un deck
+porte la même carte sous ses deux impressions (OGS et OPP). **8 lignes sur 7
+decks corrigées en base locale ; la production porte encore le défaut.**
 
-```
-src/lib/deck-cards.ts              + fonction deckCoverageItems()
-src/app/deckbuilder/deckbuilder.tsx  s'en sert à la place de son calcul local
-src/app/decks/page.tsx               idem
-```
-
-Le même deck annonçait un nombre de cartes manquantes différent selon la page :
-le deckbuilder et les decks de la communauté oubliaient chacun la **réserve**,
-alors qu'il faut la posséder pour jouer le deck en tournoi. `deckCoverageItems`
-est le passage unique qui corrige les trois.
-
-`tsc`, les tests et le build sont verts avec ces changements en place.
-**Il manque un test** : `deckCoverageItems` n'apparaît pas dans
-`src/lib/deck-cards.test.ts`. C'est une fonction avec une boucle et des branches,
-elle doit repartir avec son test avant d'être committée.
+Le script tourne à blanc par défaut, `--apply` pour écrire. En production, il
+faut le lancer depuis un poste avec le `DATABASE_URL` de prod — **pas depuis le
+conteneur** : l'image `standalone` n'embarque ni `tsx`, ni les scripts, ni de
+fichier `.env` (Coolify injecte les variables dans l'environnement, d'où le
+`node: .env: not found` si on tente `--env-file=.env` là-bas).
 
 ### Branche `feat/stream-overlay`, non fusionnée
 
@@ -73,12 +65,13 @@ pas prêt pour la production. Les correctifs de code partent directement sur
 `main` ; **ne pas fusionner cette branche** sans décision explicite.
 (`feat/collection` est fusionnée et peut être supprimée.)
 
-### Fichier égaré servi publiquement
+### Codex : une étape manuelle reste à faire
 
-`public/stream/SKILL.md` traîne dans l'arbre de travail, non suivi par git.
-C'est une documentation Next.js sur les Cache Components tombée au mauvais
-endroit : tout ce qui est dans `public/` est **servi tel quel** sur le site, donc
-ce fichier serait accessible à `/stream/SKILL.md`. À sortir de `public/`.
+`.codex/` et `.agents/skills/` sont en place et vérifiés : Codex charge
+`AGENTS.md`, les six skills, les deux serveurs MCP et les deux sous-agents.
+**Les garde-fous ne tournent pas encore** : Codex refuse de lancer un hook non
+relu. Ouvrir une session, taper `/hooks`, approuver `garde-fous.py`. Détail dans
+`.codex/README.md`.
 
 ## Les 5 prochaines tâches, par priorité
 
@@ -90,8 +83,9 @@ ce fichier serait accessible à `/stream/SKILL.md`. À sortir de `public/`.
    seeds, ou restreindre le port au pare-feu Hetzner à une seule IP. Vérifier
    avec `nc -vz 178.104.237.33 15432` depuis l'extérieur : la connexion ne doit
    plus s'établir. C'est le point **C1** de l'audit du 26 juin, toujours ouvert.
-2. **Terminer le comptage unifié des cartes manquantes** : écrire le test de
-   `deckCoverageItems`, relancer `npm run verify`, committer les trois fichiers.
+2. **Passer le correctif des champions en double sur la production** :
+   `npx tsx scripts/fix-doublons-ogs-opp.mts` avec le `DATABASE_URL` de prod pour
+   voir les 8 lignes, puis `--apply`.
 3. **Remettre `npm run lint` au vert.** Passer `npx eslint --fix` pour les trois
    `prefer-const`, puis traiter les onze `set-state-in-effect` un par un
    (la plupart se règlent en dérivant la valeur au rendu au lieu de la poser dans

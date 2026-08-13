@@ -1,0 +1,53 @@
+# Config de projet Codex — Riftbound France.
+#
+# Codex lit ce fichier UNIQUEMENT si le dépôt est marqué de confiance. Au premier
+# lancement il pose la question ; sinon `/status` dit où en est le dépôt. Sans
+# confiance, ni ce fichier ni les garde-fous plus bas ne s'appliquent.
+#
+# Équivalent Codex de `.claude/settings.json`. Les deux doivent bouger ensemble :
+# un garde-fou posé d'un seul côté ne protège que cet exécutant.
+
+# Demande avant d'agir hors du bac à sable. « never » mettrait la base de prod,
+# joignable depuis Internet, à portée d'une commande non relue.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+# AGENTS.md fait à lui seul ~21 Ko et Codex s'arrête à 32 Ko de consignes
+# cumulées, en coupant la fin sans le dire. La marge évite de perdre les
+# conventions, qui sont en bas du fichier.
+project_doc_max_bytes = 65536
+
+[sandbox_workspace_write]
+# npm, Prisma et le scraping parlent tous au réseau. Sans ça, chaque commande
+# s'arrête pour demander une escalade et plus rien n'avance.
+network_access = true
+
+# Quatre fils au plus : au-delà, l'API répond 429. La règle vaut aussi pour les
+# agents de Claude Code, c'est le même compte en face.
+[agents]
+max_concurrent_threads_per_session = 4
+
+# Le scraping de riftdecks passe par là. `WebFetch` et `curl` se prennent des 403
+# Cloudflare : ce serveur est le seul chemin qui marche.
+[mcp_servers.scrapeur]
+command = "C:\\Users\\Allan\\Documents\\Claude\\Scrapeur\\.venv\\Scripts\\python.exe"
+args = ["C:\\Users\\Allan\\Documents\\Claude\\Scrapeur\\mcp_server.py"]
+
+# Sert aux balayages d'interface (audit de toutes les pages, visuels de tier list).
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+
+# dataforseo n'est pas ici : il demande un identifiant et un mot de passe, qui
+# n'ont rien à faire dans un dépôt public. Le poser dans ~/.codex/config.toml.
+
+# Garde-fous. Codex demande de relire et d'approuver un hook avant de le lancer :
+# taper `/hooks` une fois, sinon il est listé puis ignoré.
+[[hooks.PreToolUse]]
+matcher = "^Bash$"
+
+[[hooks.PreToolUse.hooks]]
+type = "command"
+command = "python \"$(git rev-parse --show-toplevel)/.codex/hooks/garde-fous.py\""
+timeout = 10
+statusMessage = "Relecture de la commande"
