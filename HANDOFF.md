@@ -65,6 +65,26 @@ pas prêt pour la production. Les correctifs de code partent directement sur
 `main` ; **ne pas fusionner cette branche** sans décision explicite.
 (`feat/collection` est fusionnée et peut être supprimée.)
 
+### Cinq tournois S4 chinois : scrape brut lancé, conversion à faire
+
+Les cinq City Challenge du 8-9 août (Fuzhou 128, Hangzhou 124, Guangzhou 128,
+Chengdu 128, Beijing 128 = **636 decks**) sont récupérés par
+`bash scripts/scrape-s4-chine.sh`. Reprenable : le relancer après une coupure
+repart d'où ça s'est arrêté.
+
+**Il ne reste que du scrape brut** dans `data/raw-scrapes/s4-*/`. Rien n'est
+converti, rien n'est seedé. La suite, dans l'ordre du skill `scraper-tournoi` :
+convertir en decklists JSON (étape 2 des `AGENT-INSTRUCTIONS.md`), valider,
+seeder, lever les best-of, poser le set **Vendetta** dans `tournament-flags.ts`.
+
+Deux choses à savoir avant de reprendre :
+
+- **Le parseur n'est pas générique.** `scripts/parse-riftdecks.ts` a ses chemins
+  en dur sur `s3-xian`, `parse-chinese-tournaments.ts` de même. Chaque tournoi a
+  eu sa copie. Le paramétrer une fois vaut mieux qu'une sixième copie.
+- **Ottawa (581 decks) n'est pas lancé.** Même commande, une page de plus :
+  `bash scripts/scrape-tournoi.sh riftbound-showdown-ottawa "<url>" 10`.
+
 ### Codex : une étape manuelle reste à faire
 
 `.codex/` et `.agents/skills/` sont en place et vérifiés : Codex charge
