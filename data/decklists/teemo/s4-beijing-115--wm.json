@@ -1,0 +1,53 @@
+{
+  "id": "deck-cheng-shi-sai-di128ming-228732",
+  "legend": "Teemo, Swift Scout",
+  "legendId": null,
+  "champion": "Teemo, Strategist",
+  "player": "安wm",
+  "tournament": "S4 Beijing City Challenge",
+  "date": "2026-08-08",
+  "placement": 115,
+  "playerCount": 128,
+  "set": "Vendetta",
+  "format": "Constructed",
+  "archetype": null,
+  "domains": [
+    "Chaos",
+    "Mind"
+  ],
+  "mainDeck": [
+    {
+      "name": "Spiderling",
+      "quantity": 39,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 2,
+    "Mind": 10
+  },
+  "battlefields": [
+    "Bandle Tree",
+    "The Grand Plaza",
+    "Trifarian War Camp"
+  ],
+  "sideDeck": [
+    {
+      "name": "Spiderling",
+      "quantity": 10,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    }
+  ],
+  "totalCards": 56,
+  "stats": {
+    "unitCount": 39,
+    "spellCount": 0,
+    "gearCount": 0,
+    "averageCost": null
+  },
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-cheng-shi-sai-di128ming-228732"
+}

@@ -90,7 +90,7 @@ export default async function AdminDecksPage({ searchParams }: Props) {
         <Header tabs={tabs} activeTab={tab} />
         <DeckFilters tab={tab} legends={legends} />
         <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
-          <table className="w-full table-fixed">
+          <table className="min-w-[900px] w-full table-fixed">
             <thead>
               <tr className="border-b border-hairline">
                 <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[24%]">Titre</th>
@@ -189,7 +189,7 @@ export default async function AdminDecksPage({ searchParams }: Props) {
         <Header tabs={tabs} activeTab={tab} />
         <DeckFilters tab={tab} legends={legends} />
         <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
-          <table className="w-full table-fixed">
+          <table className="min-w-[700px] w-full table-fixed">
             <thead>
               <tr className="border-b border-hairline">
                 <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[35%]">Nom</th>
@@ -300,7 +300,7 @@ export default async function AdminDecksPage({ searchParams }: Props) {
       <Header tabs={tabs} activeTab={tab} />
       <DeckFilters tab={tab} legends={legends} tournaments={tournaments} />
       <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
-        <table className="w-full table-fixed">
+        <table className="min-w-[760px] w-full table-fixed">
           <thead>
             <tr className="border-b border-hairline">
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[22%]">Joueur</th>

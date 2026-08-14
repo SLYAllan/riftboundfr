@@ -41,6 +41,7 @@ const SET_LABELS: Record<string, string> = {
   Origins: "Origins",
   Spiritforged: "Spiritforged",
   Unleashed: "Unleashed",
+  Vendetta: "Vendetta",
   Global: "Globale",
 };
 
@@ -69,7 +70,7 @@ export function TierListTabs({
   return (
     <>
       <div className="mt-8 flex justify-center px-4">
-        {/* Les 4 onglets font 412px : sans retour à la ligne, ils débordaient
+        {/* Les onglets font 412px : sans retour à la ligne, ils débordaient
             l'écran à 320px de large. */}
         <div className="inline-flex max-w-full flex-wrap justify-center rounded-lg border border-hairline bg-surface p-1 gap-1">
           {tierLists.map((tl) => (

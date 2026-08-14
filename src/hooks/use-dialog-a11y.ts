@@ -12,6 +12,11 @@ import { useEffect, useRef } from "react";
  */
 export function useDialogA11y<T extends HTMLElement = HTMLDivElement>(onClose: () => void) {
   const ref = useRef<T>(null);
+  const onCloseRef = useRef(onClose);
+
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -31,7 +36,7 @@ export function useDialogA11y<T extends HTMLElement = HTMLDivElement>(onClose: (
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key === "Tab" && node) {
@@ -57,7 +62,7 @@ export function useDialogA11y<T extends HTMLElement = HTMLDivElement>(onClose: (
       document.removeEventListener("keydown", onKey);
       previouslyFocused?.focus?.();
     };
-  }, [onClose]);
+  }, []);
 
   return ref;
 }

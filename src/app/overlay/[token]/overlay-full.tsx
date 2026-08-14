@@ -34,13 +34,11 @@ const bfArt = new Map<string, string | null>();
 function useBattlefieldArt(names: string[]): Record<string, string | null> {
   const [art, setArt] = useState<Record<string, string | null>>({});
   const key = names.join("|");
+  const cached = Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null]));
   useEffect(() => {
     let annule = false;
     const manquants = names.filter((n) => n && !bfArt.has(n));
-    if (manquants.length === 0) {
-      setArt(Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null])));
-      return;
-    }
+    if (manquants.length === 0) return;
     Promise.all(
       manquants.map(async (n) => {
         try {
@@ -59,7 +57,7 @@ function useBattlefieldArt(names: string[]): Record<string, string | null> {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
-  return art;
+  return Object.fromEntries(names.filter(Boolean).map((n) => [n, art[n] ?? cached[n] ?? null]));
 }
 
 /**
@@ -295,14 +293,21 @@ function CarteMontree({ nom, compact = false }: { nom: string | null; compact?: 
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let annule = false;
     if (cible) {
-      setAffichee(cible);
-      return;
+      queueMicrotask(() => {
+        if (!annule) setAffichee(cible);
+      });
+      return () => { annule = true; };
     }
     // On éteint, puis on retire une fois le fondu terminé.
-    setVisible(false);
-    const t = setTimeout(() => setAffichee(null), 320);
-    return () => clearTimeout(t);
+    queueMicrotask(() => {
+      if (!annule) setVisible(false);
+    });
+    const t = setTimeout(() => {
+      if (!annule) setAffichee(null);
+    }, 320);
+    return () => { annule = true; clearTimeout(t); };
   }, [cible]);
 
   return (

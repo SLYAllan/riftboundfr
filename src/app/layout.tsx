@@ -25,30 +25,30 @@ const jakarta = Plus_Jakarta_Sans({
 
 const metadataFR: Metadata = {
   title: {
-    default: "Riftbound France - Decks, cartes et guides du TCG en franÃ§ais",
+    default: "Riftbound France - Decks, cartes et guides du TCG en français",
     template: "%s | Riftbound France",
   },
   description:
-    // "tier list" retirÃ© du titre et rÃ©trogradÃ© ici : la page /tier-list vise cette
-    // requÃªte et l'accueil la lui prenait (position 4, 109 impressions captÃ©es par l'accueil).
-    "La rÃ©fÃ©rence francophone Riftbound : decklists de tournois, base de cartes, guides dÃ©butants et rÃ©sultats compÃ©titifs.",
+    // "tier list" retiré du titre et rétrogradé ici : la page /tier-list vise cette
+    // requête et l'accueil la lui prenait (position 4, 109 impressions captées par l'accueil).
+    "La référence francophone Riftbound : decklists de tournois, base de cartes, guides débutants et résultats compétitifs.",
   // Fallback sur l'apex PROD (pas localhost) : si NEXT_PUBLIC_SITE_URL manque au build,
-  // les og:image/canonical pointent quand mÃªme vers la prod, jamais vers localhost.
+  // les og:image/canonical pointent quand même vers la prod, jamais vers localhost.
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr"),
-  keywords: ["Riftbound", "TCG", "cartes", "decks", "tier list", "guides", "tournois", "France", "franÃ§ais"],
+  keywords: ["Riftbound", "TCG", "cartes", "decks", "tier list", "guides", "tournois", "France", "français"],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     siteName: "Riftbound France",
-    title: "Riftbound France - Decks, cartes et guides du TCG en franÃ§ais",
-    description: "La rÃ©fÃ©rence francophone Riftbound : decklists de tournois, base de cartes, guides et rÃ©sultats.",
+    title: "Riftbound France - Decks, cartes et guides du TCG en français",
+    description: "La référence francophone Riftbound : decklists de tournois, base de cartes, guides et résultats.",
     images: ["/img/og-default.png"],
   },
   twitter: {
     card: "summary_large_image",
     site: "@FRRiftbound",
     title: "Riftbound France",
-    description: "La rÃ©fÃ©rence francophone pour le TCG Riftbound.",
+    description: "La référence francophone pour le TCG Riftbound.",
     images: ["/img/og-default.png"],
   },
   robots: {
@@ -62,8 +62,8 @@ const metadataFR: Metadata = {
   },
 };
 
-// Seul ce qui change d'une langue Ã  l'autre est rÃ©Ã©crit : le reste (metadataBase,
-// robots, twitter, icÃ´nes) est commun aux deux versions.
+// Seul ce qui change d'une langue à l'autre est réécrit : le reste (metadataBase,
+// robots, twitter, icônes) est commun aux deux versions.
 export async function generateMetadata(): Promise<Metadata> {
   if ((await langueCourante()) === "fr") return metadataFR;
   return {
@@ -93,8 +93,8 @@ export const viewport: Viewport = {
 };
 
 // @graph lie le WebSite et l'Organisation via @id. L'Organization (name + logo +
-// sameAs) est le signal d'entitÃ© que Google utilise pour reconnaÃ®tre la marque
-// "Riftbound France" comme distincte du jeu Riftbound (Riot) â†’ requÃªte de marque.
+// sameAs) est le signal d'entité que Google utilise pour reconnaître la marque
+// "Riftbound France" comme distincte du jeu Riftbound (Riot) → requête de marque.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -103,7 +103,7 @@ const jsonLd = {
       "@id": "https://riftboundfrance.fr/#website",
       name: "Riftbound France",
       url: "https://riftboundfrance.fr",
-      description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en franÃ§ais.",
+      description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français.",
       inLanguage: "fr",
       publisher: { "@id": "https://riftboundfrance.fr/#organization" },
       potentialAction: {
@@ -119,7 +119,7 @@ const jsonLd = {
       alternateName: "RiftboundFrance",
       url: "https://riftboundfrance.fr",
       email: "contact@riftboundfrance.fr",
-      description: "La rÃ©fÃ©rence francophone pour le TCG Riftbound : tier lists, decks de tournois, guides et base de cartes.",
+      description: "La référence francophone pour le TCG Riftbound : tier lists, decks de tournois, guides et base de cartes.",
       logo: {
         "@type": "ImageObject",
         url: "https://riftboundfrance.fr/logorbfr.png",
@@ -145,15 +145,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="alternate" type="application/rss+xml" title="Riftbound France" href="/rss.xml" />
-        {/* DÃ©clarÃ© ici plutÃ´t que page par page : le middleware nous donne le
-            chemin sans prÃ©fixe, ce qui couvre les 44 pages d'un coup. */}
+        {/* Déclaré ici plutôt que page par page : le middleware nous donne le
+            chemin sans préfixe, ce qui couvre les 44 pages d'un coup. */}
         <link rel="alternate" hrefLang="fr" href={`${site}${cheminFr}`} />
         <link rel="alternate" hrefLang="en" href={`${site}${PREFIXE_EN}${cheminFr}`} />
         <link rel="alternate" hrefLang="x-default" href={`${site}${cheminFr}`} />
-        {/* VÃ©rification de propriÃ©tÃ© du site pour Impact. Leur balise attend `value`
-            et non `content` : elle est Ã©crite telle qu'ils la donnent, sinon la
-            vÃ©rification Ã©choue. L'API Metadata de Next ne sait produire que
-            `content`, d'oÃ¹ la balise en clair ici. */}
+        {/* Vérification de propriété du site pour Impact. Leur balise attend `value`
+            et non `content` : elle est écrite telle qu'ils la donnent, sinon la
+            vérification échoue. L'API Metadata de Next ne sait produire que
+            `content`, d'où la balise en clair ici. */}
         <meta name="impact-site-verification" {...{ value: "593585bf-09ed-4e6d-a416-3c83a58c46d6" }} />
       </head>
       <body className="min-h-dvh flex flex-col" style={{ fontFamily: "var(--font-jakarta), sans-serif" }}>

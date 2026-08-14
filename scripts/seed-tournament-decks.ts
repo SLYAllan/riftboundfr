@@ -12,12 +12,14 @@ import { PrismaClient } from "@prisma/client";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parseDeckCode } from "../src/lib/deck-code";
+import { sourceDuDeck, slugsDuLot } from "./seed-tournament-integrity";
 
 const prisma = new PrismaClient();
 
 type DeckJson = {
   id: string; legend: string; champion: string | null; player: string | null;
-  placement: number | null; domains: string[]; record?: string | null; source?: string | null;
+  placement: number | null; domains: string[]; record?: string | null;
+  source?: string | null; sourceUrl?: string | null;
   mainDeck: { name: string; quantity: number; type?: string }[];
   runes: Record<string, number>; battlefields: string[];
   sideDeck?: { name: string; quantity: number }[];
@@ -95,75 +97,102 @@ async function main() {
     return byName.get(n.toLowerCase()) ?? byName.get(n.replace(/, /g, " - ").toLowerCase());
   };
 
-  // Rejouable : on repart d'un état propre pour ce préfixe.
-  const old = await prisma.deck.findMany({ where: { slug: { startsWith: `${prefix}-` } }, select: { id: true } });
-  if (old.length) {
-    const ids = old.map((d) => d.id);
-    await prisma.deckCard.deleteMany({ where: { deckId: { in: ids } } });
-    await prisma.deck.deleteMany({ where: { id: { in: ids } } });
-    console.log(`${old.length} decks ${prefix}-* supprimés avant re-seed`);
+  // Le seeder créait d'abord les decks puis annonçait les cartes introuvables :
+  // un lot pouvait donc sembler réussi tout en étant incomplet. On résout tout
+  // avant la première écriture et on s'arrête dès qu'un nom manque.
+  const unresolved = new Map<string, number>();
+  for (const deck of decks) {
+    if (!legendByName.has(deck.legend.toLowerCase())) {
+      unresolved.set(deck.legend, (unresolved.get(deck.legend) ?? 0) + 1);
+    }
+    if (deck.champion && !find(deck.champion)) {
+      unresolved.set(deck.champion, (unresolved.get(deck.champion) ?? 0) + 1);
+    }
+    for (const entry of parseDeckCode(buildDeckCode(deck)).entries) {
+      if (!find(entry.name)) unresolved.set(entry.name, (unresolved.get(entry.name) ?? 0) + 1);
+    }
+  }
+  if (unresolved.size) {
+    const details = [...unresolved.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([nom, count]) => `${count}x ${nom}`)
+      .join(", ");
+    throw new Error(`Préflight refusé, cartes introuvables : ${details}`);
   }
 
-  const notFound = new Map<string, number>();
+  // Les slugs stockés viennent de Riftdecks (`deck-*`) et ne portent pas toujours
+  // le préfixe du fichier. On supprime donc les identifiants exacts du lot, sans
+  // toucher aux best-of ni à un autre tournoi partageant le même contexte.
+  const slugs = slugsDuLot(decks);
   let done = 0;
 
-  for (const d of decks) {
-    const legendCard = legendByName.get(d.legend.toLowerCase());
-    const place = d.placement;
-    const who = d.player ?? "joueur inconnu";
-    const deck = await prisma.deck.create({
-      data: {
-        title: `${d.legend} · ${who}${place ? ` (${ordinal(place)})` : ""}`,
-        slug: d.id,
-        legendId: legendCard?.riftboundId ?? d.legend,
-        legendName: d.legend,
-        description: `${place ? `${ordinal(place)} au ` : ""}${context} par ${who}${d.record ? ` (${d.record})` : ""}. ${d.domains.join("/")}.`,
-        format: "constructed",
-        setTag,
-        tags,
-        featured: false,
-        published: true,
-        tournamentContext: context,
-        tournamentTier: null,
-        placement: place ? ordinal(place) : null,
-        record: d.record ?? null,
-        playerName: d.player,
-        sourceUrl: d.source ?? null,
-      },
-    });
-
-    const rows: { deckId: string; cardId: string; quantity: number; section: string }[] = [];
-    const seen = new Set<string>();
-    const push = (cardId: string, quantity: number, section: string) => {
-      const key = `${cardId}:${section}`;
-      if (seen.has(key)) return;
-      seen.add(key);
-      rows.push({ deckId: deck.id, cardId, quantity, section });
-    };
-
-    if (legendCard) push(legendCard.id, 1, "legend");
-    if (d.champion) {
-      const champ = find(d.champion);
-      if (champ) push(champ.id, 1, "legend");
-      else notFound.set(d.champion, (notFound.get(d.champion) ?? 0) + 1);
+  // Sans transaction, une erreur DB après la suppression laissait un tournoi
+  // partiellement seedé. Le préflight reste hors transaction ; les écritures du
+  // lot sont ensuite atomiques, avec un délai adapté aux imports de masse.
+  await prisma.$transaction(async (tx) => {
+    const old = await tx.deck.findMany({ where: { slug: { in: slugs } }, select: { id: true } });
+    if (old.length) {
+      const ids = old.map((d) => d.id);
+      await tx.deckCard.deleteMany({ where: { deckId: { in: ids } } });
+      await tx.deck.deleteMany({ where: { id: { in: ids } } });
+      console.log(`${old.length} decks du lot supprimés avant re-seed`);
     }
-    for (const entry of parseDeckCode(buildDeckCode(d)).entries) {
-      const card = find(entry.name);
-      if (card) push(card.id, entry.quantity, entry.section);
-      else notFound.set(entry.name, (notFound.get(entry.name) ?? 0) + 1);
-    }
-    await prisma.deckCard.createMany({ data: rows });
 
-    if (++done % 200 === 0) console.log(`  ${done}/${decks.length}`);
-  }
+    for (const d of decks) {
+      const legendCard = legendByName.get(d.legend.toLowerCase());
+      const place = d.placement;
+      const who = d.player ?? "joueur inconnu";
+      const deck = await tx.deck.create({
+        data: {
+          title: `${d.legend} · ${who}${place ? ` (${ordinal(place)})` : ""}`,
+          slug: d.id,
+          legendId: legendCard?.riftboundId ?? d.legend,
+          legendName: d.legend,
+          description: `${place ? `${ordinal(place)} au ` : ""}${context} par ${who}${d.record ? ` (${d.record})` : ""}. ${d.domains.join("/")}.`,
+          format: "constructed",
+          setTag,
+          tags,
+          featured: false,
+          published: true,
+          tournamentContext: context,
+          tournamentTier: null,
+          placement: place ? ordinal(place) : null,
+          record: d.record ?? null,
+          playerName: d.player,
+          sourceUrl: sourceDuDeck(d),
+        },
+      });
+
+      const rows: { deckId: string; cardId: string; quantity: number; section: string }[] = [];
+      const seen = new Set<string>();
+      const push = (cardId: string, quantity: number, section: string) => {
+        const key = `${cardId}:${section}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        rows.push({ deckId: deck.id, cardId, quantity, section });
+      };
+
+      if (legendCard) push(legendCard.id, 1, "legend");
+      if (d.champion) {
+        const champ = find(d.champion);
+        if (champ) push(champ.id, 1, "legend");
+      }
+      for (const entry of parseDeckCode(buildDeckCode(d)).entries) {
+        const card = find(entry.name);
+        if (card) push(card.id, entry.quantity, entry.section);
+      }
+      await tx.deckCard.createMany({ data: rows });
+
+      if (++done % 200 === 0) console.log(`  ${done}/${decks.length}`);
+    }
+  }, { maxWait: 10_000, timeout: 120_000 });
 
   console.log(`\n${done} decks seedés pour ${context}.`);
-  if (notFound.size) {
-    console.log(`\n⚠️ ${notFound.size} noms de cartes introuvables en base :`);
-    for (const [n, c] of [...notFound.entries()].sort((a, b) => b[1] - a[1]).slice(0, 25)) {
-      console.log(`    ${c}x  ${n}`);
-    }
-  }
 }
 
-main().catch(console.error).finally(() => prisma.$disconnect());
+main()
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  })
+  .finally(() => prisma.$disconnect());

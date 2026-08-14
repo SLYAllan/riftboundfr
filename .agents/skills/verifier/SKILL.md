@@ -20,13 +20,16 @@ committer du code cassé : `rtk` rend 0 même quand la commande dessous échoue.
 Pour juger un résultat, jamais de `&&` derrière `rtk` :
 
 ```bash
+# PowerShell
+npx tsc --noEmit ; echo "EXIT=$LASTEXITCODE"
+
+# Bash
 npx tsc --noEmit ; echo "EXIT=$?"
 ```
 
-**2. `npm run lint` échoue, et ce n'est pas toi.** 15 erreurs préexistantes, dont
-11 viennent d'une règle de React 19 (`react-hooks/set-state-in-effect`). Une
-sortie non vide n'est pas un échec de ton travail : vérifier seulement que tu
-n'as pas **ajouté** d'erreur.
+**2. `npm run lint` passe avec des avertissements.** Au relevé du 14 août 2026 :
+0 erreur et 97 avertissements. Une nouvelle erreur bloque le travail ; les
+avertissements existants restent une dette à réduire séparément.
 
 **3. `npm run validate:decks` dépasse 5 minutes.** Le lancer avec une limite très
 large. Un dépassement n'est pas un « ça marche ».

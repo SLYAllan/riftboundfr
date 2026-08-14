@@ -169,8 +169,8 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   4. élargit la CSP pour `/overlay/` seulement (iframe VDO.Ninja + images de
      n'importe quel hôte). Ne pas élargir ailleurs.
 - **`src/app/layout.tsx`** — coquille du site, `metadataBase`, polices, analytics.
-- **`entrypoint.sh`** — démarrage du conteneur : `node migrate.mjs` (pousse le
-  schéma si les tables manquent) puis `node server.js`.
+- **`entrypoint.sh`** — démarrage du conteneur : `node migrate.mjs` (vérifie les
+  18 tables et refuse une base vide ou incomplète) puis `node server.js`.
 
 ## API
 
@@ -204,7 +204,7 @@ Pas de dossier `migrations/` : le schéma est poussé avec `prisma db push`.
 
 # Commandes
 
-Toutes vérifiées le 12 août 2026 sur `main`. Un agent doit s'y fier pour valider
+Toutes vérifiées le 14 août 2026 sur `main`. Un agent doit s'y fier pour valider
 son travail.
 
 | Commande | État | Ce qu'elle fait |
@@ -212,9 +212,9 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **10 fichiers, 85 tests, tous verts, ~1,2 s.** |
+| `npm test` | ✅ | Vitest. **22 fichiers, 140 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
-| `npm run lint` | ❌ | **Échoue : 15 erreurs, 96 avertissements.** Voir plus bas. |
+| `npm run lint` | ✅ | **0 erreur, 97 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
@@ -223,14 +223,14 @@ son travail.
 Lancer un seul test : `npx vitest run src/lib/deck-code.test.ts`
 Un seul cas : `npx vitest run -t "nom du test"`
 
-**`npm run lint` échoue aujourd'hui** — 15 erreurs, dont 11 sont la règle React 19
-`react-hooks/set-state-in-effect` et 3 des `prefer-const` réparables par
-`npx eslint --fix`. Ce n'est pas une régression de ton travail : vérifie que tu
-n'as pas **ajouté** d'erreur, ne prends pas la sortie non vide pour un échec.
+**`npm run lint` passe au dernier relevé du 14 août 2026** — 0 erreur et
+97 avertissements. La commande fait désormais partie de la porte CI ; les
+avertissements restent à réduire sans les confondre avec des erreurs.
 
 **`rtk` masque le code de sortie.** Ne jamais écrire `rtk tsc && git commit` :
 du code cassé a déjà été committé comme ça. Pour vérifier, toujours
-`npx tsc --noEmit ; echo "EXIT=$?"`.
+en PowerShell `npx tsc --noEmit; Write-Output "EXIT=$LASTEXITCODE"`, et en bash
+`npx tsc --noEmit; echo "EXIT=$?"`.
 
 ## Base de données locale
 
@@ -297,9 +297,9 @@ comprendre à la première lecture.
 ## Tests
 
 - Vitest sans fichier de config, donc environnement Node par défaut, sans DOM.
-  On teste **la logique**, jamais le rendu des composants : 8 des 10 fichiers
-  sont dans `src/lib/`, les deux autres testent une fonction pure rangée à côté
-  de sa page (`deckbuilder/lib/champion.test.ts`, `overlay/[token]/cam-src.test.ts`).
+  On teste **la logique**, jamais le rendu des composants. Les tests de fonctions
+  pures peuvent rester rangés à côté de leur page (`deckbuilder/lib/champion.test.ts`,
+  `overlay/[token]/cam-src.test.ts`).
 - Pas de fixtures ni de mocks de base : les tests portent sur des fonctions
   pures (analyse de code de deck, normalisation de nom, calcul de couverture).
 - Toute nouvelle fonction de `src/lib/` qui contient une branche ou une boucle

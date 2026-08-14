@@ -8,9 +8,9 @@
 
 **Tester.**
 - Porte avant tout push : `npm run verify` (= `tsc --noEmit && next build`). Vert.
-- `npx vitest run` : 10 fichiers, 85 tests, vert. Un seul : `npx vitest run <fichier>`.
-- `npm run lint` : **ÉCHOUE (15 erreurs préexistantes)**. Pas une porte ; vérifier seulement qu'aucune erreur n'a été ajoutée.
-- Lire les codes de sortie avec `cmd ; echo EXIT=$?`. **Jamais `rtk cmd && ...`** : `rtk` masque le code de sortie et a déjà laissé committer du code cassé.
+- `npx vitest run --pool=threads` : 22 fichiers, 140 tests, vert. Un seul : `npx vitest run <fichier>`.
+- `npm run lint` : **PASSE (0 erreur, 97 avertissements)**. La commande fait partie de la porte CI ; les avertissements restent à réduire.
+- Lire les codes de sortie avec `cmd; Write-Output "EXIT=$LASTEXITCODE"` en PowerShell ou `cmd; echo EXIT=$?` en bash. **Jamais `rtk cmd && ...`** : `rtk` masque le code de sortie et a déjà laissé committer du code cassé.
 
 **Déployer.** Coolify construit depuis le `Dockerfile` ; le `docker-compose.yml` est local uniquement. Un déploiement **ne seede pas** les decks. Voir `docs/DEPLOIEMENT.md`.
 

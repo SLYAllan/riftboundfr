@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { resoudreLegende } from "./tier-list-integrity";
 
 const prisma = new PrismaClient();
 
@@ -156,54 +157,72 @@ const globalTier: TierEntry[] = [
   { legendName: "Ivern, Green Father", tier: "D", comment: "0,4% (99 decks), aucun top 8. Rampe et soutien" },
 ];
 
+const vendettaTier: TierEntry[] = [
+  { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "101 decks, 14 top 8, 1 victoire" },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "102 decks, 9 top 8, 2 victoires" },
+  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "100 decks, 9 top 8, 1 victoire" },
+  { legendName: "Irelia, Blade Dancer", tier: "A", comment: "78 decks, 6 top 8" },
+  { legendName: "Draven, Glorious Executioner", tier: "A", comment: "24 decks, 5 top 8, 1 victoire" },
+  { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "46 decks, 4 top 8, 2 victoires" },
+  { legendName: "Rek'Sai, Void Burrower", tier: "A", comment: "54 decks, 4 top 8" },
+  { legendName: "Nasus, Curator of the Sands", tier: "A", comment: "56 decks, 3 top 8, 1 victoire" },
+  { legendName: "Lillia, Bashful Bloom", tier: "B", comment: "24 decks, 3 top 8" },
+  { legendName: "Ezreal, Prodigal Explorer", tier: "B", comment: "17 decks, 3 top 8, échantillon réduit" },
+  { legendName: "Azir, Emperor of the Sands", tier: "B", comment: "25 decks, 2 top 8" },
+  { legendName: "Rengar, Pridestalker", tier: "B", comment: "11 decks, 1 top 8, 1 victoire" },
+  { legendName: "Volibear, Relentless Storm", tier: "B", comment: "4 decks, 1 top 8, échantillon très réduit" },
+  { legendName: "Sivir, Battle Mistress", tier: "B", comment: "5 decks, 1 top 8, échantillon très réduit" },
+  { legendName: "Lux, Lady of Luminosity", tier: "B", comment: "8 decks, 1 top 8, échantillon réduit" },
+  { legendName: "Ambessa, Matriarch of War", tier: "B", comment: "9 decks, 1 top 8, échantillon réduit" },
+  { legendName: "Vex, Gloomist", tier: "B", comment: "13 decks, 1 top 8" },
+  { legendName: "Ornn, Fire Below the Mountain", tier: "B", comment: "14 decks, 1 top 8" },
+  { legendName: "LeBlanc, Deceiver", tier: "C", comment: "20 decks, 1 top 8" },
+  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "24 decks, 1 top 8" },
+  { legendName: "Fiora, Grand Duelist", tier: "C", comment: "29 decks, 1 top 8" },
+  { legendName: "Jayce, Defender of Tomorrow", tier: "C", comment: "49 decks, aucun top 8" },
+  { legendName: "Akali, Rogue Assassin", tier: "C", comment: "43 decks, aucun top 8" },
+  { legendName: "Mel, Soul's Reflection", tier: "C", comment: "22 decks, aucun top 8" },
+  { legendName: "Pyke, Bloodharbor Ripper", tier: "C", comment: "16 decks, aucun top 8" },
+  { legendName: "Zed, Master of Shadows", tier: "C", comment: "12 decks, aucun top 8" },
+  { legendName: "Kha'Zix, Voidreaver", tier: "C", comment: "11 decks, aucun top 8" },
+  { legendName: "Jax, Grandmaster At Arms", tier: "C", comment: "9 decks, aucun top 8" },
+  { legendName: "Rumble, Mechanized Menace", tier: "C", comment: "7 decks, aucun top 8" },
+  { legendName: "Shen, Eye of Twilight", tier: "C", comment: "7 decks, aucun top 8" },
+  { legendName: "Leona, Radiant Dawn", tier: "D", comment: "6 decks, aucun top 8" },
+  { legendName: "Master Yi, Wuju Master", tier: "D", comment: "6 decks, aucun top 8, à ne pas confondre avec Bladesman" },
+  { legendName: "Sett, The Boss", tier: "D", comment: "5 decks, aucun top 8" },
+  { legendName: "Jhin, Virtuoso", tier: "D", comment: "5 decks, aucun top 8" },
+  { legendName: "Annie, Dark Child", tier: "D", comment: "3 decks, aucun top 8" },
+  { legendName: "Teemo, Swift Scout", tier: "D", comment: "3 decks, aucun top 8" },
+  { legendName: "Vi, Piltover Enforcer", tier: "D", comment: "3 decks, aucun top 8" },
+  { legendName: "Ivern, Green Father", tier: "D", comment: "2 decks, aucun top 8" },
+  { legendName: "Lucian, Purifier", tier: "D", comment: "2 decks, aucun top 8" },
+  { legendName: "Renekton, Butcher of the Sands", tier: "D", comment: "2 decks, aucun top 8" },
+  { legendName: "Darius, Hand of Noxus", tier: "D", comment: "1 deck, aucun top 8" },
+  { legendName: "Jinx, Loose Cannon", tier: "D", comment: "1 deck, aucun top 8" },
+  { legendName: "Renata Glasc, Chem-Baroness", tier: "D", comment: "1 deck, aucun top 8" },
+  { legendName: "Yasuo, Unforgiven", tier: "D", comment: "1 deck, aucun top 8" },
+  { legendName: "Ahri, Nine-Tailed Fox", tier: "D", comment: "1 deck, aucun top 8" },
+];
+
 async function seedTierList(
   title: string,
   setContext: string,
   entries: TierEntry[],
   isCurrent: boolean,
 ) {
-  const existing = await prisma.tierList.findFirst({
-    where: { title },
-  });
-  if (existing) {
-    await prisma.tierListEntry.deleteMany({ where: { tierListId: existing.id } });
-    await prisma.tierList.delete({ where: { id: existing.id } });
-  }
-
   const legendCards = await prisma.card.findMany({
-    where: { type: "Legend" },
+    where: { type: "Legend", alternateArt: false, overnumbered: false, signature: false, set: { not: "OPP" } },
     select: { riftboundId: true, name: true },
   });
 
-  const legendMap = new Map<string, string>();
-  const legendMapAll = new Map<string, string>();
-  for (const c of legendCards) {
-    const lower = c.name.toLowerCase();
-    legendMapAll.set(lower, c.riftboundId);
-    if (!c.name.includes("(")) {
-      legendMap.set(lower, c.riftboundId);
-    }
-  }
-
   const resolvedEntries = entries.map((e, i) => {
-    // Les noms de cartes en DB sont au format virgule ("Master Yi, Wuju Bladesman").
-    // Essayer le nom exact (virgule) AVANT le fallback par prefixe, sinon 2 legendes du meme
-    // personnage (Wuju Bladesman vs Wuju Master) resolvent vers le meme id -> meme image.
-    const lower = e.legendName.toLowerCase();
-    let legendId = legendMap.get(lower) ?? legendMap.get(lower.replace(", ", " - ")) ?? "";
-    if (!legendId) {
-      const prefix = e.legendName.split(",")[0].toLowerCase().replace("'", "'");
-      for (const [name, id] of legendMap) {
-        if (name.startsWith(prefix)) { legendId = id; break; }
-      }
-      if (!legendId) {
-        for (const [name, id] of legendMapAll) {
-          if (name.startsWith(prefix) && !name.includes("overnumbered") && !name.includes("signature") && !name.includes("alternate")) {
-            legendId = id; break;
-          }
-        }
-      }
-    }
+    // Une résolution par prénom publiait la mauvaise image dès qu'un champion avait
+    // plusieurs Légendes. Le nom complet canonique est désormais obligatoire.
+    const legendId = resoudreLegende(
+      e.legendName,
+      legendCards.map((carte) => ({ id: carte.riftboundId, name: carte.name })),
+    ) ?? "";
     return {
       legendId,
       legendName: e.legendName,
@@ -215,7 +234,15 @@ async function seedTierList(
 
   const unresolved = resolvedEntries.filter((e) => !e.legendId);
   if (unresolved.length > 0) {
-    console.warn(`  ⚠ ${unresolved.length} legends not found:`, unresolved.map((e) => e.legendName));
+    throw new Error(`${unresolved.length} Légendes introuvables : ${unresolved.map((e) => e.legendName).join(", ")}`);
+  }
+
+  const existing = await prisma.tierList.findFirst({
+    where: { title },
+  });
+  if (existing) {
+    await prisma.tierListEntry.deleteMany({ where: { tierListId: existing.id } });
+    await prisma.tierList.delete({ where: { id: existing.id } });
   }
 
   const tierList = await prisma.tierList.create({
@@ -242,13 +269,17 @@ async function main() {
 
   await seedTierList("Tier List Origins", "Origins", originsTier, false);
   await seedTierList("Tier List Spiritforged", "Spiritforged", spiritforgedTier, false);
-  // Unleashed = format actuel → liste « courante » affichée par défaut (/meta + /tier-list).
-  await seedTierList("Tier List Unleashed", "Unleashed", unleashedTier, true);
+  // Vendetta = format actuel → liste « courante » affichée par défaut (/meta + /tier-list).
+  await seedTierList("Tier List Unleashed", "Unleashed", unleashedTier, false);
+  await seedTierList("Tier List Vendetta", "Vendetta", vendettaTier, true);
   await seedTierList("Tier List Globale", "Global", globalTier, false);
 
   console.log("\n✅ All tier lists seeded.");
 }
 
 main()
-  .catch(console.error)
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  })
   .finally(() => prisma.$disconnect());
