@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { createUserSession, getUserSessionCookieName } from "@/lib/session";
-import { destinationConnexion } from "@/lib/auth-redirect";
 
 interface DiscordUser {
   id: string;
@@ -25,9 +24,7 @@ export async function GET(req: NextRequest) {
 
   const cookieStore = await cookies();
   const savedState = cookieStore.get("discord_oauth_state")?.value;
-  const destination = destinationConnexion(cookieStore.get("discord_oauth_retour")?.value);
   cookieStore.delete("discord_oauth_state");
-  cookieStore.delete("discord_oauth_retour");
 
   if (!savedState || savedState !== state) {
     return NextResponse.redirect(new URL("/?auth_error=invalid_state", siteUrl));
@@ -88,7 +85,7 @@ export async function GET(req: NextRequest) {
 
   const sessionToken = await createUserSession(user.id);
 
-  const res = NextResponse.redirect(new URL(destination, siteUrl));
+  const res = NextResponse.redirect(new URL("/", siteUrl));
   res.cookies.set(getUserSessionCookieName(), sessionToken, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",

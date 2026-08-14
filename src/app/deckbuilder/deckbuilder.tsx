@@ -92,7 +92,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   // Sous sm le panneau de deck est masqué : ce tiroir est le seul moyen de voir sa liste.
   const [showDeckSheet, setShowDeckSheet] = useState(false);
   // Code de partage du deck communautaire en cours de modification (?maj=).
-  const [updateShareCode] = useState<string | null>(() => searchParams.get("maj"));
+  const [updateShareCode, setUpdateShareCode] = useState<string | null>(null);
   const isCompetitive = true;
   const initialized = useRef(false);
 
@@ -107,41 +107,40 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   useEffect(() => {
     if (initialized.current) return;
     initialized.current = true;
-    queueMicrotask(() => {
-      setSavedDecks(getSavedDecks());
+    setSavedDecks(getSavedDecks());
 
-      // ?maj=<shareCode> : on revient d'un deck communautaire pour le modifier. On
-      // recharge sa liste depuis l'API, plus besoin de coller un code à la main.
-      const majParam = searchParams.get("maj");
-      if (majParam) {
-        fetch(`/api/community-decks/${majParam}`)
-          .then((r) => (r.ok ? r.json() : null))
-          .then((d) => {
-            if (!d?.deckCode) return;
-            handleCardNamesImport(d.deckCode);
-            if (d.title) setDeckTitle(d.title);
-          })
-          .catch(() => {});
+    // ?maj=<shareCode> : on revient d'un deck communautaire pour le modifier. On
+    // recharge sa liste depuis l'API, plus besoin de coller un code à la main.
+    const majParam = searchParams.get("maj");
+    if (majParam) {
+      setUpdateShareCode(majParam);
+      fetch(`/api/community-decks/${majParam}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => {
+          if (!d?.deckCode) return;
+          handleCardNamesImport(d.deckCode);
+          if (d.title) setDeckTitle(d.title);
+        })
+        .catch(() => {});
+      return;
+    }
+
+    const deckParam = searchParams.get("deck");
+    if (deckParam) {
+      const decoded = decodeDeck(deckParam);
+      if (decoded) {
+        loadFromCodeData(decoded);
         return;
       }
+    }
 
-      const deckParam = searchParams.get("deck");
-      if (deckParam) {
-        const decoded = decodeDeck(deckParam);
-        if (decoded) {
-          loadFromCodeData(decoded);
-          return;
-        }
-      }
-
-      // Pas de deck dans l'URL : on reprend le brouillon local, s'il y en a un.
-      const draft = loadDraft<DeckState>();
-      if (draft?.deck) {
-        setDeck(draft.deck);
-        setDeckTitle(draft.title || "Nouveau deck");
-        if (draft.deck.legend) setActiveTab("main");
-      }
-    });
+    // Pas de deck dans l'URL : on reprend le brouillon local, s'il y en a un.
+    const draft = loadDraft<DeckState>();
+    if (draft?.deck) {
+      setDeck(draft.deck);
+      setDeckTitle(draft.title || "Nouveau deck");
+      if (draft.deck.legend) setActiveTab("main");
+    }
   }, [searchParams]);
 
   // Sauvegarde du brouillon à chaque changement, pour survivre à un F5.
@@ -716,9 +715,9 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
 
       {/* Mobile action bar */}
       <div className="shrink-0 flex sm:hidden items-center gap-1 border-b border-hairline px-3 py-1.5 overflow-x-auto">
-        <button onClick={() => setShowExport(true)} disabled={isEmpty} className="min-h-11 shrink-0 rounded px-2 text-[10px] text-violet-light disabled:opacity-30">Exporter</button>
-        <button onClick={() => setShowImport(true)} className="min-h-11 shrink-0 rounded px-2 text-[10px] text-ink-secondary">Importer</button>
-        <button onClick={clearDeck} disabled={isEmpty} className="min-h-11 shrink-0 rounded px-2 text-[10px] text-ink-muted disabled:opacity-30">Vider</button>
+        <button onClick={() => setShowExport(true)} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-violet-light disabled:opacity-30">Exporter</button>
+        <button onClick={() => setShowImport(true)} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-ink-secondary">Importer</button>
+        <button onClick={clearDeck} disabled={isEmpty} className="shrink-0 rounded px-2 py-0.5 text-[10px] text-ink-muted disabled:opacity-30">Vider</button>
       </div>
 
       {/* Main content - 2 column */}

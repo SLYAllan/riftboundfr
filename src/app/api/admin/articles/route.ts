@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isAdmin } from "@/lib/auth";
 import { slugify } from "@/lib/utils";
-import { validerArticle } from "@/lib/admin-validation";
 
 export async function GET() {
   if (!(await isAdmin())) return NextResponse.json({ error: "Non autorise" }, { status: 401 });
@@ -14,14 +13,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   if (!(await isAdmin())) return NextResponse.json({ error: "Non autorise" }, { status: 401 });
 
-  let data;
-  try {
-    data = await req.json();
-  } catch {
-    return NextResponse.json({ error: "JSON invalide" }, { status: 400 });
-  }
-  const validation = validerArticle(data);
-  if (!validation.ok) return NextResponse.json({ error: validation.error }, { status: 400 });
+  const data = await req.json();
   const article = await prisma.article.create({
     data: {
       title: data.title,

@@ -10,12 +10,9 @@ export const dynamic = "force-dynamic";
 
 export default async function OverlayDashboardPage() {
   const user = await getUserFromSession();
-  // L'OAuth conserve cette destination locale dans un cookie HTTP-only lié à
-  // son state : l'utilisateur revient ici sans ouvrir de redirection externe.
-  if (!user) {
-    const retour = prefixerLien("/profil/overlay", await langueCourante());
-    redirect(`/api/auth/discord?retour=${encodeURIComponent(retour)}`);
-  }
+  // Le lien de connexion doit rester dans la langue courante, sinon un
+  // streamer anglophone atterrit sur la page francaise.
+  if (!user) redirect(prefixerLien("/profil", await langueCourante()));
   const row = await getOrCreateOverlayState(user.id);
   return <OverlayDashboard token={row.token} initial={row.state as unknown as OverlayStateData} />;
 }

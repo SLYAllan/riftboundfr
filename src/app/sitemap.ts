@@ -26,7 +26,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/articles`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/legendes`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/tier-list`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/meta`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/tournois`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/deckbuilder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

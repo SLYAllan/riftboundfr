@@ -28,7 +28,6 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
 COPY migrate.mjs ./
-COPY migrate-schema.mjs ./
 COPY entrypoint.sh ./
 RUN chmod +x entrypoint.sh
 # Le user nextjs doit pouvoir écrire le cache d'images optimisées et le cache

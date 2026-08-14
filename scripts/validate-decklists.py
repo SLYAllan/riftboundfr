@@ -12,7 +12,6 @@ Exit 1 si au moins un MISMATCH (carte différente de la source) est trouvé.
 """
 import re, glob, os, json, sys
 from collections import Counter
-from validate_decklists_rules import vendetta_decklist_missing
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DECKS = os.path.join(ROOT, 'data', 'decklists')
@@ -99,17 +98,11 @@ def diff_is_champion_only(a, b, champs):
     diff = [n for n in names if a.get(n,0) != b.get(n,0)]
     return all(n in champs for n in diff), diff
 
-verified = mismatch = unverifiable = incomplete_side_deck = 0
+verified = mismatch = unverifiable = 0
 mism_list = []
-incomplete_side_decks = []
 for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
     try: o = json.loads(open(f, encoding='utf-8').read())
     except Exception: continue
-    missing = vendetta_decklist_missing(o)
-    if missing:
-        incomplete_side_deck += 1
-        incomplete_side_decks.append((os.path.relpath(f, ROOT), ", ".join(missing)))
-        continue
     idv = o.get('id', ''); src = o.get('source') or o.get('sourceUrl') or ''
     truth = None; champs = set()
     if idv in md_by_stem:
@@ -130,13 +123,9 @@ for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
             mismatch += 1
             mism_list.append((os.path.relpath(f, ROOT), o.get('player'), diff[:5]))
 
-print(f"verified={verified}  MISMATCH(fabriqué?)={mismatch}  réserve Vendetta incomplète={incomplete_side_deck}  unverifiable(pas de source brute)={unverifiable}")
+print(f"verified={verified}  MISMATCH(fabriqué?)={mismatch}  unverifiable(pas de source brute)={unverifiable}")
 if mism_list:
     print("\n=== MISMATCH (cartes != source brute — à corriger ou supprimer) ===")
     for f, pl, diff in mism_list[:50]:
         sys.stdout.buffer.write(f"  {f}  player={pl}  diff={diff}\n".encode('utf-8','replace'))
-if incomplete_side_decks:
-    print("\n=== RÉSERVE VENDETTA INCOMPLÈTE — deck à supprimer ===")
-    for f, total in incomplete_side_decks[:50]:
-        sys.stdout.buffer.write(f"  {f}  réserve={total}/10\n".encode('utf-8','replace'))
-sys.exit(1 if mismatch or incomplete_side_deck else 0)
+sys.exit(1 if mismatch else 0)

@@ -1,6 +1,4 @@
 #!/bin/sh
-set -e
-
 echo "Checking database..."
 node migrate.mjs
 echo "Starting server..."

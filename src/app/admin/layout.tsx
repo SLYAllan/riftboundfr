@@ -6,7 +6,7 @@ const navItems = [
   { href: "/admin/articles", label: "Articles" },
   { href: "/admin/decks", label: "Decks" },
   { href: "/admin/tier-list", label: "Tier List" },
-  { href: "/admin/events", label: "Événements" },
+  { href: "/admin/events", label: "Ã‰vÃ©nements" },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -17,8 +17,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    // Colonne sur mobile, deux colonnes à partir de md : la barre latérale figée à
-    // 240px plus p-8 faisait déborder l'écran jusqu'à 722px de large à 390px.
+    // Colonne sur mobile, deux colonnes Ã  partir de md : la barre latÃ©rale figÃ©e Ã 
+    // 240px plus p-8 faisait dÃ©border l'Ã©cran jusqu'Ã  722px de large Ã  390px.
     <div className="min-h-dvh flex flex-col md:flex-row bg-canvas">
       <aside className="w-full md:w-60 shrink-0 bg-surface border-b md:border-b-0 md:border-r border-hairline p-4 md:p-6 flex flex-row md:flex-col flex-wrap gap-2">
         <Link href="/" className="w-full text-lg font-bold text-arcane md:mb-6" style={{ fontFamily: "var(--font-rubik)" }}>

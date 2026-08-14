@@ -226,17 +226,12 @@ code de sortie pour de vrai — `rtk` le masque et a déjà laissé passer du co
 L'état exact de chaque commande, y compris celles qui échouent, est dans `AGENTS.md`
 et `HANDOFF.md`.
 
-Au relevé du 14 août 2026, TypeScript, les 140 tests, ESLint et le build passent.
-ESLint garde 97 avertissements sans erreur. Le workflow CI rejoue ces quatre
-contrôles à chaque push et demande de fusion.
-
 ## 8. Déploiement
 
 Coolify construit l'image depuis le `Dockerfile` et gère le proxy. Le
 `docker-compose.yml` du dépôt ne sert qu'au développement local. Au démarrage du
-conteneur, `entrypoint.sh` lance `node migrate.mjs` (qui vérifie les 18 tables et
-refuse une base vide ou incomplète) puis `node server.js`. L'initialisation se fait
-hors du conteneur avec `npx prisma db push`.
+conteneur, `entrypoint.sh` lance `node migrate.mjs` (qui pousse le schéma si les
+tables manquent) puis `node server.js`.
 
 **Un déploiement ne seede pas les decks.** Le contenu se pousse séparément.
 
@@ -251,12 +246,11 @@ routes, contrôles de propriété sur les objets d'un utilisateur.
 
 Ce qui ne l'est pas, et qui est prioritaire :
 
-- **le port PostgreSQL historique** (`178.104.237.33:15432`) refusait la connexion
-  lors du contrôle externe du 14 août. Le point reste ouvert jusqu'à vérification
-  durable du pare-feu ; ne pas le rouvrir publiquement ;
+- **la base de production est exposée sur une IP publique** (`178.104.237.33:15432`,
+  via un tunnel socat) — première tâche du `HANDOFF.md` ;
 - la CSP garde `unsafe-inline` et `unsafe-eval` ;
-- la limitation de débit vit en mémoire, perd son état à chaque redéploiement et
-  ne couvre pas toutes les routes qui écrivent.
+- la limitation de débit vit en mémoire et ne couvre pas toutes les routes qui
+  écrivent.
 
 ## 10. Historique
 

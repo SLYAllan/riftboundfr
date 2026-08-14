@@ -48,6 +48,7 @@ export function CardHover({
   useEffect(() => {
     if (!hovered) return;
     if (textCache.has(name)) {
+      setText(textCache.get(name) ?? null);
       return;
     }
     let cancelled = false;
@@ -63,8 +64,6 @@ export function CardHover({
       cancelled = true;
     };
   }, [hovered, name]);
-
-  const texte = textCache.has(name) ? textCache.get(name) ?? null : text;
 
   // Une fois le popup rendu (opacity 0), on mesure sa hauteur RÉELLE puis on le
   // place au-dessus de la vignette - ou en dessous s'il n'y a pas la place - en
@@ -140,9 +139,9 @@ export function CardHover({
                 </span>
               ))}
             </div>
-            {texte && (
+            {text && (
               <div className="border-t border-hairline pt-1.5 text-xs text-ink-secondary">
-                <CardTextRenderer text={texte} />
+                <CardTextRenderer text={text} />
               </div>
             )}
             {note && <div className="text-xs">{note}</div>}

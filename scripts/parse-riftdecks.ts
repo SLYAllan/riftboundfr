@@ -1,7 +1,5 @@
 import * as fs from "fs";
 import * as path from "path";
-import { decklistVendettaComplete } from "./decklist-integrity";
-import { sortiesObsoletes } from "./parse-riftdecks-integrity";
 
 interface DeckCard {
   name: string;
@@ -222,7 +220,6 @@ const decklistsDir = path.join(__dirname, "../data/decklists");
 // tournois et le réécrire depuis un import en cours a déjà fait perdre des entrées.
 const fragmentsDir = path.join(__dirname, "../data/raw-scrapes/index-fragments");
 const indexPath = path.join(fragmentsDir, `${meta.slug}.json`);
-const rejetsPath = path.join(fragmentsDir, `${meta.slug}-rejected.json`);
 fs.mkdirSync(fragmentsDir, { recursive: true });
 
 // `_page-N.md` sont les pages de liste du tournoi, pas des decks.
@@ -230,7 +227,6 @@ const files = fs.readdirSync(rawDir).filter(f => f.startsWith("deck-") && f.ends
 console.log(`Parsing ${files.length} deck files...`);
 
 const index: Array<{ id: string; legend: string; player: string; placement: number | null; file: string }> = [];
-const rejets: Array<{ id: string; source: string; reasons: string[] }> = [];
 let parsed = 0;
 let failed = 0;
 
@@ -243,14 +239,6 @@ for (const file of files) {
   const deck = parseDeckMarkdown(md, sourceUrl, meta);
   if (!deck) {
     console.log(`  SKIP: ${file} (no legend found)`);
-    rejets.push({ id: file.replace(/\.md$/, ""), source: `data/raw-scrapes/${meta.slug}/${file}`, reasons: ["Légende absente"] });
-    failed++;
-    continue;
-  }
-  const integrite = decklistVendettaComplete(deck);
-  if (!integrite.complete) {
-    console.log(`  SKIP: ${file} (decklist Vendetta incomplète : ${integrite.missing.join(", ")})`);
-    rejets.push({ id: deck.id, source: `data/raw-scrapes/${meta.slug}/${file}`, reasons: integrite.missing });
     failed++;
     continue;
   }
@@ -277,11 +265,7 @@ if (fs.existsSync(indexPath)) {
   const raw = JSON.parse(fs.readFileSync(indexPath, "utf-8"));
   existingIndex = Array.isArray(raw) ? raw : [];
 }
-for (const fichier of sortiesObsoletes(existingIndex, index)) {
-  const chemin = path.join(decklistsDir, fichier);
-  if (fs.existsSync(chemin)) fs.unlinkSync(chemin);
-}
-fs.writeFileSync(indexPath, JSON.stringify(index, null, 2), "utf-8");
-fs.writeFileSync(rejetsPath, JSON.stringify({ tournament: meta.tournament, set: meta.set, decks: rejets }, null, 2), "utf-8");
+const mergedIndex = [...existingIndex.filter(e => !index.some(n => n.id === e.id)), ...index];
+fs.writeFileSync(indexPath, JSON.stringify(mergedIndex, null, 2), "utf-8");
 
-console.log(`\nDone: ${parsed} parsed, ${failed} failed, ${index.length} total in index`);
+console.log(`\nDone: ${parsed} parsed, ${failed} failed, ${mergedIndex.length} total in index`);

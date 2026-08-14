@@ -1,6 +1,6 @@
 # Documentation — Riftbound France
 
-Où trouver quoi. Rangé le 14 août 2026.
+Où trouver quoi. Rangé le 12 août 2026.
 
 ## À la racine du dépôt
 
@@ -22,8 +22,6 @@ Où trouver quoi. Rangé le 14 août 2026.
 | `DESIGN.MD` | Règles visuelles du site. |
 | `SEO-STRATEGY.md` | Stratégie de référencement. |
 | `DEPLOIEMENT.md` | Coolify, Docker, DNS, SSL, base de données, méthode de seed en production. |
-| `RAPPORT-SESSION-2026-08-14.md` | **Passation complète du chantier Vendetta/S4** : 9 tournois, 982 decks validés et seedés, rejets, changements de code, erreurs rencontrées, audit Codex, vérifications et travaux restants. |
-| `AUDIT-SITE-2026-08-14.md` | Audit fonctionnel et UI/UX vérifié : routes, responsive, accessibilité, corrections locales et limites du contrôle. |
 
 ## Archive
 

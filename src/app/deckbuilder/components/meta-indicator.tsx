@@ -24,30 +24,27 @@ const TIER_COLORS: Record<string, string> = {
 
 export function MetaIndicator({ legendName }: MetaIndicatorProps) {
   const [meta, setMeta] = useState<LegendMeta | null>(null);
-  const [metaName, setMetaName] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!legendName) return;
+    if (!legendName) { setMeta(null); return; }
 
     let cancelled = false;
+    setLoading(true);
 
     fetch(`/api/legends/meta?name=${encodeURIComponent(legendName)}`)
       .then((res) => res.ok ? res.json() : null)
       .then((data) => {
-        if (cancelled) return;
-        setMeta(data);
-        setMetaName(legendName);
+        if (!cancelled && data) setMeta(data);
+        else if (!cancelled) setMeta(null);
       })
-      .catch(() => {
-        if (cancelled) return;
-        setMeta(null);
-        setMetaName(legendName);
-      });
+      .catch(() => { if (!cancelled) setMeta(null); })
+      .finally(() => { if (!cancelled) setLoading(false); });
 
     return () => { cancelled = true; };
   }, [legendName]);
 
-  if (!legendName || metaName !== legendName || !meta) return null;
+  if (!legendName || loading || !meta) return null;
   if (!meta.tier && meta.tournamentDecks === 0) return null;
 
   return (

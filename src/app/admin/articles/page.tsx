@@ -25,7 +25,7 @@ export default async function AdminArticlesPage() {
       </div>
 
       <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
-        <table className="min-w-[700px] w-full table-fixed">
+        <table className="w-full table-fixed">
           <thead>
             <tr className="border-b border-hairline">
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[45%]">Titre</th>

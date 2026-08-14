@@ -17,7 +17,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    queueMicrotask(() => setOrigin(window.location.origin));
+    setOrigin(window.location.origin);
     fetch("/api/legends").then((r) => r.json()).then(setLegends).catch(() => {});
     fetch("/api/battlefields").then((r) => r.json()).then(setBattlefields).catch(() => {});
   }, []);
@@ -101,7 +101,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}</code>
           <button
-            onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}`); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
+            onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
             className={btnPlein}
           >
             {copied ? t("Copié ✓") : t("Copier")}
@@ -116,7 +116,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Pas de caméra ni de cadre ?")}</span>
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
-          <button onClick={() => navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}?compact=1`)} className={btnVide}>
+          <button onClick={() => navigator.clipboard.writeText(overlayUrl + "?compact=1")} className={btnVide}>
             {t("Copier la version simple")}
           </button>
         </div>

@@ -15,7 +15,7 @@ import {
 import type { TournamentData } from "@/app/tournois/page";
 import { useT } from "@/components/i18n-provider";
 
-const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed", "Vendetta"] as const;
+const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed"] as const;
 
 const MEDAL_RING: Record<number, string> = {
   1: "ring-2 ring-gold",

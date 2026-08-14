@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { cookies } from "next/headers";
-import { destinationConnexion } from "@/lib/auth-redirect";
 
-export async function GET(req: Request) {
+export async function GET() {
   const clientId = process.env.DISCORD_CLIENT_ID;
   if (!clientId) {
     return NextResponse.json({ error: "Discord non configuré" }, { status: 500 });
@@ -11,15 +10,7 @@ export async function GET(req: Request) {
 
   const state = crypto.randomBytes(16).toString("hex");
   const cookieStore = await cookies();
-  const destination = destinationConnexion(new URL(req.url).searchParams.get("retour"));
   cookieStore.set("discord_oauth_state", state, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    path: "/",
-    maxAge: 600,
-  });
-  cookieStore.set("discord_oauth_retour", destination, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",

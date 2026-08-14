@@ -81,7 +81,7 @@ function TextBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { t
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <label htmlFor={`text-content-${block.id}`} className="text-xs text-ink-muted">Markdown</label>
+        <span className="text-xs text-ink-muted">Markdown</span>
         <button onClick={() => setPreview(!preview)} className="text-xs text-ink-muted hover:text-ink flex items-center gap-1">
           {preview ? <EyeOff size={12} /> : <Eye size={12} />}
           {preview ? "Editer" : "Preview"}
@@ -93,7 +93,6 @@ function TextBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { t
         </div>
       ) : (
         <textarea
-          id={`text-content-${block.id}`}
           value={block.content}
           onChange={(e) => onChange({ ...block, content: e.target.value })}
           rows={6}
@@ -132,29 +131,29 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor={`deck-name-${block.id}`} className="block text-xs text-ink-muted mb-1">Nom du deck</label>
-          <input id={`deck-name-${block.id}`} type="text" value={block.deckName} onChange={(e) => onChange({ ...block, deckName: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">Nom du deck</label>
+          <input type="text" value={block.deckName} onChange={(e) => onChange({ ...block, deckName: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`deck-legend-${block.id}`} className="block text-xs text-ink-muted mb-1">Legende</label>
-          <input id={`deck-legend-${block.id}`} type="text" value={block.legendName} onChange={(e) => onChange({ ...block, legendName: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">Legende</label>
+          <input type="text" value={block.legendName} onChange={(e) => onChange({ ...block, legendName: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`deck-player-${block.id}`} className="block text-xs text-ink-muted mb-1">Joueur</label>
-          <input id={`deck-player-${block.id}`} type="text" value={block.playerName ?? ""} onChange={(e) => onChange({ ...block, playerName: e.target.value || undefined })}
+          <label className="block text-xs text-ink-muted mb-1">Joueur</label>
+          <input type="text" value={block.playerName ?? ""} onChange={(e) => onChange({ ...block, playerName: e.target.value || undefined })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`deck-context-${block.id}`} className="block text-xs text-ink-muted mb-1">Contexte</label>
-          <input id={`deck-context-${block.id}`} type="text" value={block.context ?? ""} onChange={(e) => onChange({ ...block, context: e.target.value || undefined })}
+          <label className="block text-xs text-ink-muted mb-1">Contexte</label>
+          <input type="text" value={block.context ?? ""} onChange={(e) => onChange({ ...block, context: e.target.value || undefined })}
             placeholder="Top 4 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div>
         <div className="flex items-center justify-between mb-1">
-          <label htmlFor={`deck-code-${block.id}`} className="text-xs text-ink-muted">Deck code</label>
+          <label className="text-xs text-ink-muted">Deck code</label>
           {block.deckCode && (
             <button onClick={() => setShowPreview(!showPreview)} className="text-xs text-ink-muted hover:text-ink flex items-center gap-1">
               {showPreview ? <EyeOff size={12} /> : <Eye size={12} />}
@@ -202,7 +201,6 @@ function DecklistBlockEditor({ block, onChange }: { block: Extract<ArticleBlock,
           </div>
         ) : (
           <textarea
-            id={`deck-code-${block.id}`}
             value={block.deckCode}
             onChange={(e) => handleDeckCodeChange(e.target.value)}
             rows={8}
@@ -221,35 +219,35 @@ function SponsorBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, 
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor={`sponsor-title-${block.id}`} className="block text-xs text-ink-muted mb-1">Titre</label>
-          <input id={`sponsor-title-${block.id}`} type="text" value={block.title} onChange={(e) => onChange({ ...block, title: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">Titre</label>
+          <input type="text" value={block.title} onChange={(e) => onChange({ ...block, title: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`sponsor-cta-${block.id}`} className="block text-xs text-ink-muted mb-1">Texte CTA</label>
-          <input id={`sponsor-cta-${block.id}`} type="text" value={block.ctaText} onChange={(e) => onChange({ ...block, ctaText: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">Texte CTA</label>
+          <input type="text" value={block.ctaText} onChange={(e) => onChange({ ...block, ctaText: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`sponsor-url-${block.id}`} className="block text-xs text-ink-muted mb-1">URL destination</label>
-          <input id={`sponsor-url-${block.id}`} type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">URL destination</label>
+          <input type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`sponsor-image-${block.id}`} className="block text-xs text-ink-muted mb-1">Image URL</label>
-          <input id={`sponsor-image-${block.id}`} type="url" value={block.imageUrl ?? ""} onChange={(e) => onChange({ ...block, imageUrl: e.target.value || undefined })}
+          <label className="block text-xs text-ink-muted mb-1">Image URL</label>
+          <input type="url" value={block.imageUrl ?? ""} onChange={(e) => onChange({ ...block, imageUrl: e.target.value || undefined })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div>
-        <label htmlFor={`sponsor-description-${block.id}`} className="block text-xs text-ink-muted mb-1">Description</label>
-        <input id={`sponsor-description-${block.id}`} type="text" value={block.description ?? ""} onChange={(e) => onChange({ ...block, description: e.target.value || undefined })}
+        <label className="block text-xs text-ink-muted mb-1">Description</label>
+        <input type="text" value={block.description ?? ""} onChange={(e) => onChange({ ...block, description: e.target.value || undefined })}
           className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
       </div>
       <div className="flex items-center gap-6">
         <div>
-          <label htmlFor={`sponsor-style-${block.id}`} className="block text-xs text-ink-muted mb-1">Style</label>
-          <select id={`sponsor-style-${block.id}`} value={block.style} onChange={(e) => onChange({ ...block, style: e.target.value as "standard" | "highlight" | "minimal" })}
+          <label className="block text-xs text-ink-muted mb-1">Style</label>
+          <select value={block.style} onChange={(e) => onChange({ ...block, style: e.target.value as "standard" | "highlight" | "minimal" })}
             className="px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane">
             <option value="standard">Standard</option>
             <option value="highlight">Highlight (or)</option>
@@ -270,25 +268,25 @@ function ImageBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor={`image-src-${block.id}`} className="block text-xs text-ink-muted mb-1">URL de l&apos;image</label>
-          <input id={`image-src-${block.id}`} type="url" value={block.src} onChange={(e) => onChange({ ...block, src: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">URL de l&apos;image</label>
+          <input type="url" value={block.src} onChange={(e) => onChange({ ...block, src: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`image-alt-${block.id}`} className="block text-xs text-ink-muted mb-1">Texte alternatif</label>
-          <input id={`image-alt-${block.id}`} type="text" value={block.alt} onChange={(e) => onChange({ ...block, alt: e.target.value })}
+          <label className="block text-xs text-ink-muted mb-1">Texte alternatif</label>
+          <input type="text" value={block.alt} onChange={(e) => onChange({ ...block, alt: e.target.value })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor={`image-caption-${block.id}`} className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
-          <input id={`image-caption-${block.id}`} type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })}
+          <label className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
+          <input type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor={`image-width-${block.id}`} className="block text-xs text-ink-muted mb-1">Largeur</label>
-          <select id={`image-width-${block.id}`} value={block.width ?? "full"} onChange={(e) => onChange({ ...block, width: e.target.value === "narrow" ? "narrow" : undefined })}
+          <label className="block text-xs text-ink-muted mb-1">Largeur</label>
+          <select value={block.width ?? "full"} onChange={(e) => onChange({ ...block, width: e.target.value === "narrow" ? "narrow" : undefined })}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane">
             <option value="full">Pleine largeur</option>
             <option value="narrow">Centree (portrait/poster)</option>
@@ -308,40 +306,40 @@ function TweetBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
     <div className="space-y-3">
       <div className="grid grid-cols-3 gap-3">
         <div>
-          <label htmlFor={`tweet-author-${block.id}`} className="block text-xs text-ink-muted mb-1">Auteur</label>
-          <input id={`tweet-author-${block.id}`} type="text" value={block.author} onChange={(e) => onChange({ ...block, author: e.target.value })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Auteur</label>
+          <input type="text" value={block.author} onChange={(e) => onChange({ ...block, author: e.target.value })} className={inputCls} />
         </div>
         <div>
-          <label htmlFor={`tweet-handle-${block.id}`} className="block text-xs text-ink-muted mb-1">Handle (sans @)</label>
-          <input id={`tweet-handle-${block.id}`} type="text" value={block.handle} onChange={(e) => onChange({ ...block, handle: e.target.value })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Handle (sans @)</label>
+          <input type="text" value={block.handle} onChange={(e) => onChange({ ...block, handle: e.target.value })} className={inputCls} />
         </div>
         <div>
-          <label htmlFor={`tweet-date-${block.id}`} className="block text-xs text-ink-muted mb-1">Date</label>
-          <input id={`tweet-date-${block.id}`} type="text" value={block.date ?? ""} onChange={(e) => onChange({ ...block, date: e.target.value || undefined })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Date</label>
+          <input type="text" value={block.date ?? ""} onChange={(e) => onChange({ ...block, date: e.target.value || undefined })} className={inputCls} />
         </div>
       </div>
       <div>
-        <label htmlFor={`tweet-url-${block.id}`} className="block text-xs text-ink-muted mb-1">Lien vers le post (X)</label>
-        <input id={`tweet-url-${block.id}`} type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })} className={inputCls} />
+        <label className="block text-xs text-ink-muted mb-1">Lien vers le post (X)</label>
+        <input type="url" value={block.url} onChange={(e) => onChange({ ...block, url: e.target.value })} className={inputCls} />
       </div>
       <div>
-        <label htmlFor={`tweet-content-${block.id}`} className="block text-xs text-ink-muted mb-1">Contenu</label>
-        <textarea id={`tweet-content-${block.id}`} value={block.content} onChange={(e) => onChange({ ...block, content: e.target.value })} rows={4} className={inputCls} />
+        <label className="block text-xs text-ink-muted mb-1">Contenu</label>
+        <textarea value={block.content} onChange={(e) => onChange({ ...block, content: e.target.value })} rows={4} className={inputCls} />
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor={`tweet-avatar-${block.id}`} className="block text-xs text-ink-muted mb-1">Avatar (URL locale)</label>
-          <input id={`tweet-avatar-${block.id}`} type="text" value={block.avatar ?? ""} onChange={(e) => onChange({ ...block, avatar: e.target.value || undefined })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Avatar (URL locale)</label>
+          <input type="text" value={block.avatar ?? ""} onChange={(e) => onChange({ ...block, avatar: e.target.value || undefined })} className={inputCls} />
         </div>
         <div>
-          <label htmlFor={`tweet-media-${block.id}`} className="block text-xs text-ink-muted mb-1">Image attachee (URL locale)</label>
-          <input id={`tweet-media-${block.id}`} type="text" value={block.media ?? ""} onChange={(e) => onChange({ ...block, media: e.target.value || undefined })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Image attachee (URL locale)</label>
+          <input type="text" value={block.media ?? ""} onChange={(e) => onChange({ ...block, media: e.target.value || undefined })} className={inputCls} />
         </div>
       </div>
       {block.media && (
         <div>
-          <label htmlFor={`tweet-media-alt-${block.id}`} className="block text-xs text-ink-muted mb-1">Texte alternatif de l&apos;image</label>
-          <input id={`tweet-media-alt-${block.id}`} type="text" value={block.mediaAlt ?? ""} onChange={(e) => onChange({ ...block, mediaAlt: e.target.value || undefined })} className={inputCls} />
+          <label className="block text-xs text-ink-muted mb-1">Texte alternatif de l&apos;image</label>
+          <input type="text" value={block.mediaAlt ?? ""} onChange={(e) => onChange({ ...block, mediaAlt: e.target.value || undefined })} className={inputCls} />
         </div>
       )}
     </div>
@@ -376,10 +374,10 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
           <span className="text-xs font-semibold uppercase tracking-wider text-violet-light">{blockTypeLabels[block.type]}</span>
         </div>
         <div className="flex items-center gap-1">
-          <button onClick={onDuplicate} aria-label="Dupliquer le bloc" className="p-1 text-ink-muted hover:text-arcane" title="Dupliquer"><Copy size={16} /></button>
-          <button onClick={onMoveUp} aria-label="Monter le bloc" disabled={isFirst} className="p-1 text-ink-muted hover:text-ink disabled:opacity-30"><ChevronUp size={16} /></button>
-          <button onClick={onMoveDown} aria-label="Descendre le bloc" disabled={isLast} className="p-1 text-ink-muted hover:text-ink disabled:opacity-30"><ChevronDown size={16} /></button>
-          <button onClick={onRemove} aria-label="Supprimer le bloc" className="p-1 text-ink-muted hover:text-red-400"><Trash2 size={16} /></button>
+          <button onClick={onDuplicate} className="p-1 text-ink-muted hover:text-arcane" title="Dupliquer"><Copy size={16} /></button>
+          <button onClick={onMoveUp} disabled={isFirst} className="p-1 text-ink-muted hover:text-ink disabled:opacity-30"><ChevronUp size={16} /></button>
+          <button onClick={onMoveDown} disabled={isLast} className="p-1 text-ink-muted hover:text-ink disabled:opacity-30"><ChevronDown size={16} /></button>
+          <button onClick={onRemove} className="p-1 text-ink-muted hover:text-red-400"><Trash2 size={16} /></button>
         </div>
       </div>
       {block.type === "text" && <TextBlockEditor block={block} onChange={onChange} />}
@@ -399,18 +397,16 @@ function BracketBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, 
   const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane";
   return (
     <div className="space-y-2">
-      <label htmlFor={`bracket-title-${block.id}`} className="text-xs text-ink-muted">Titre</label>
+      <label className="text-xs text-ink-muted">Titre</label>
       <input
-        id={`bracket-title-${block.id}`}
         type="text"
         value={block.title ?? ""}
         onChange={(e) => onChange({ ...block, title: e.target.value || undefined })}
         placeholder="Le parcours du Top 8"
         className={inputCls}
       />
-      <label htmlFor={`bracket-rounds-${block.id}`} className="text-xs text-ink-muted">Rounds (JSON)</label>
+      <label className="text-xs text-ink-muted">Rounds (JSON)</label>
       <textarea
-        id={`bracket-rounds-${block.id}`}
         value={raw}
         onChange={(e) => {
           setRaw(e.target.value);
@@ -516,19 +512,17 @@ function BulkDeckImport({ onImport }: { onImport: (blocks: ArticleBlock[]) => vo
       </p>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label htmlFor="bulk-player" className="block text-xs text-ink-muted mb-1">Joueur (tous)</label>
-          <input id="bulk-player" type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)}
+          <label className="block text-xs text-ink-muted mb-1">Joueur (tous)</label>
+          <input type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)}
             className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-violet" />
         </div>
         <div>
-          <label htmlFor="bulk-context" className="block text-xs text-ink-muted mb-1">Contexte (tous)</label>
-          <input id="bulk-context" type="text" value={context} onChange={(e) => setContext(e.target.value)}
+          <label className="block text-xs text-ink-muted mb-1">Contexte (tous)</label>
+          <input type="text" value={context} onChange={(e) => setContext(e.target.value)}
             placeholder="Top 8 - RQ Sydney" className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-violet" />
         </div>
       </div>
-      <label htmlFor="bulk-decklists" className="sr-only">Decklists à importer</label>
       <textarea
-        id="bulk-decklists"
         value={raw}
         onChange={(e) => setRaw(e.target.value)}
         rows={12}
@@ -673,13 +667,13 @@ export function BlockEditor({ article }: BlockEditorProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="article-title" className="block text-sm text-ink-secondary mb-1">Titre</label>
-          <input id="article-title" type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
+          <label className="block text-sm text-ink-secondary mb-1">Titre</label>
+          <input aria-label="Titre" type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
             className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" required />
         </div>
         <div>
-          <label htmlFor="article-category" className="block text-sm text-ink-secondary mb-1">Categorie</label>
-          <select id="article-category" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
+          <label className="block text-sm text-ink-secondary mb-1">Categorie</label>
+          <select aria-label="Categorie" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
             className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane">
             <option value="actualite">Actualite</option>
             <option value="guide">Guide</option>
@@ -691,20 +685,20 @@ export function BlockEditor({ article }: BlockEditorProps) {
       </div>
 
       <div>
-        <label htmlFor="article-excerpt" className="block text-sm text-ink-secondary mb-1">Extrait</label>
-        <textarea id="article-excerpt" value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} rows={2}
+        <label className="block text-sm text-ink-secondary mb-1">Extrait</label>
+        <textarea aria-label="Extrait" value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} rows={2}
           className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="article-cover-image" className="block text-sm text-ink-secondary mb-1">Image de couverture (URL)</label>
-          <input id="article-cover-image" type="url" value={form.coverImage} onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
+          <label className="block text-sm text-ink-secondary mb-1">Image de couverture (URL)</label>
+          <input aria-label="Image de couverture (URL)" type="url" value={form.coverImage} onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
             className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
         </div>
         <div>
-          <label htmlFor="article-tags" className="block text-sm text-ink-secondary mb-1">Tags (separes par des virgules)</label>
-          <input id="article-tags" type="text" value={form.tags} onChange={(e) => setForm({ ...form, tags: e.target.value })}
+          <label className="block text-sm text-ink-secondary mb-1">Tags (separes par des virgules)</label>
+          <input aria-label="Tags (separes par des virgules)" type="text" value={form.tags} onChange={(e) => setForm({ ...form, tags: e.target.value })}
             className="w-full px-4 py-2 rounded-lg bg-surface-raised border border-hairline text-ink focus:border-arcane" />
         </div>
       </div>
@@ -714,23 +708,23 @@ export function BlockEditor({ article }: BlockEditorProps) {
           <p className="text-xs font-semibold uppercase tracking-wider text-gold">Infos tournoi</p>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label htmlFor="article-tournament-name" className="block text-xs text-ink-muted mb-1">Nom du tournoi</label>
-              <input id="article-tournament-name" type="text" value={form.tournamentName} onChange={(e) => setForm({ ...form, tournamentName: e.target.value })}
+              <label className="block text-xs text-ink-muted mb-1">Nom du tournoi</label>
+              <input type="text" value={form.tournamentName} onChange={(e) => setForm({ ...form, tournamentName: e.target.value })}
                 className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
-              <label htmlFor="article-tournament-date" className="block text-xs text-ink-muted mb-1">Date</label>
-              <input id="article-tournament-date" type="date" value={form.tournamentDate} onChange={(e) => setForm({ ...form, tournamentDate: e.target.value })}
+              <label className="block text-xs text-ink-muted mb-1">Date</label>
+              <input type="date" value={form.tournamentDate} onChange={(e) => setForm({ ...form, tournamentDate: e.target.value })}
                 className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
-              <label htmlFor="article-tournament-location" className="block text-xs text-ink-muted mb-1">Lieu</label>
-              <input id="article-tournament-location" type="text" value={form.tournamentLocation} onChange={(e) => setForm({ ...form, tournamentLocation: e.target.value })}
+              <label className="block text-xs text-ink-muted mb-1">Lieu</label>
+              <input type="text" value={form.tournamentLocation} onChange={(e) => setForm({ ...form, tournamentLocation: e.target.value })}
                 className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
             <div>
-              <label htmlFor="article-tournament-player-count" className="block text-xs text-ink-muted mb-1">Nombre de joueurs</label>
-              <input id="article-tournament-player-count" type="number" value={form.tournamentPlayerCount} onChange={(e) => setForm({ ...form, tournamentPlayerCount: e.target.value })}
+              <label className="block text-xs text-ink-muted mb-1">Nombre de joueurs</label>
+              <input type="number" value={form.tournamentPlayerCount} onChange={(e) => setForm({ ...form, tournamentPlayerCount: e.target.value })}
                 className="w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane" />
             </div>
           </div>

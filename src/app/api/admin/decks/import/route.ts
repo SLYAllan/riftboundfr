@@ -3,20 +3,11 @@ import { prisma } from "@/lib/prisma";
 import { isAdmin } from "@/lib/auth";
 import { slugify } from "@/lib/utils";
 import { parseDeckCode } from "@/lib/deck-code";
-import { validerImportDeck } from "@/lib/admin-validation";
-import { buildCardLookup, findCard } from "@/lib/card-printing";
 
 export async function POST(req: NextRequest) {
   if (!(await isAdmin())) return NextResponse.json({ error: "Non autorise" }, { status: 401 });
 
-  let body;
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "JSON invalide" }, { status: 400 });
-  }
-  const validation = validerImportDeck(body);
-  if (!validation.ok) return NextResponse.json({ error: validation.error }, { status: 400 });
+  const body = await req.json();
   const { deckCode, title, playerName, placement, tournamentName, tournamentTier, date, record, description } = body;
 
   if (!deckCode || !title) {
@@ -24,19 +15,19 @@ export async function POST(req: NextRequest) {
   }
 
   const parsed = parseDeckCode(deckCode);
-  if (parsed.errors.length > 0) {
-    return NextResponse.json({ error: "Code de deck invalide", errors: parsed.errors }, { status: 400 });
-  }
   if (parsed.entries.length === 0) {
     return NextResponse.json({ error: "Aucune carte trouvee dans le deck code", errors: parsed.errors }, { status: 400 });
   }
 
   const allCards = await prisma.card.findMany({
     where: { alternateArt: false },
-    select: { id: true, riftboundId: true, name: true, type: true, supertype: true },
+    select: { id: true, name: true, type: true, supertype: true },
   });
 
-  const cardByName = buildCardLookup(allCards);
+  const cardByName = new Map<string, typeof allCards[0]>();
+  for (const c of allCards) {
+    cardByName.set(c.name.toLowerCase(), c);
+  }
 
   const matched: { cardId: string; quantity: number; section: string }[] = [];
   const notFound: string[] = [];
@@ -44,7 +35,7 @@ export async function POST(req: NextRequest) {
   let legendName: string | null = null;
 
   for (const entry of parsed.entries) {
-    const card = findCard(cardByName, entry.name);
+    const card = cardByName.get(entry.name.toLowerCase());
     if (!card) {
       notFound.push(entry.name);
       continue;
@@ -74,10 +65,6 @@ export async function POST(req: NextRequest) {
         legendName = card.name;
       }
     }
-  }
-
-  if (notFound.length > 0) {
-    return NextResponse.json({ error: "Cartes introuvables dans la base", notFound }, { status: 400 });
   }
 
   let slug = slugify(title);

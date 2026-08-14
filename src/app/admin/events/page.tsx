@@ -15,8 +15,8 @@ export default async function AdminEventsPage() {
         Événements
       </h1>
 
-      <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
-        <table className="min-w-[650px] w-full">
+      <div className="rounded-xl bg-surface border border-hairline overflow-hidden">
+        <table className="w-full">
           <thead>
             <tr className="border-b border-hairline">
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium">Titre</th>
