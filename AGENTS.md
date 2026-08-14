@@ -269,7 +269,7 @@ Déduites du code existant. À suivre, pas à discuter.
 - **Aucun tiret cadratin (—) dans le contenu rendu du site.** Toléré dans les
   docs internes et les commentaires.
 - Terminologie française officielle du jeu : voir `docs/META-KNOWLEDGE.md`.
-- Le libellé court du set Vendetta est `VEN` sur l’accueil et `/tier-list`.
+- Le libellé court du set Vendetta est `VEN` sur l’accueil ; `/tier-list` affiche `Vendetta`.
 
 ## Nommage
 

@@ -41,7 +41,6 @@ const SET_LABELS: Record<string, string> = {
   Origins: "Origins",
   Spiritforged: "Spiritforged",
   Unleashed: "Unleashed",
-  Vendetta: "VEN",
   Global: "Globale",
 };
 
