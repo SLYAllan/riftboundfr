@@ -126,6 +126,7 @@ const TIER_LABELS: Record<number, string> = {
   2: "A (solide)",
   3: "B (jouable)",
   4: "C (de niche)",
+  5: "D (anecdotique)",
 };
 
 // Ordre de tri des decks par niveau de tournoi, identique à la page /decks.
