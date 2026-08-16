@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { getBannerUrl } from "@/lib/banners";
 import { legendsWithDecks } from "@/lib/legend-fiche";
+import { prisma } from "@/lib/prisma";
 import { displayLegendName } from "@/lib/utils";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
@@ -65,10 +66,24 @@ async function loadSummaries(): Promise<FicheSummary[]> {
       /* fiche illisible : on l'ignore, jamais d'invention. */
     }
   }
+  // Domaines des Légendes sans fiche : lus sur la carte Légende en base, en un
+  // seul appel (pas de N+1). Sans ça, ces Légendes s'affichaient sans domaine.
+  const cleNom = (n: string) => n.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const domainesParLegende = new Map<string, string[]>();
+  try {
+    const cartes = await prisma.card.findMany({
+      where: { type: "Legend" },
+      select: { name: true, domains: true },
+    });
+    for (const c of cartes) domainesParLegende.set(cleNom(c.name), c.domains);
+  } catch {
+    /* base indispo : les Légendes sans fiche resteront sans domaine, jamais d'invention. */
+  }
+
   const known = new Set(out.map((f) => f.slug));
   for (const l of await legendsWithDecks()) {
     if (!known.has(l.slug)) {
-      out.push({ slug: l.slug, legendName: l.legendName, domains: [] });
+      out.push({ slug: l.slug, legendName: l.legendName, domains: domainesParLegende.get(cleNom(l.legendName)) ?? [] });
     }
   }
   return out;
