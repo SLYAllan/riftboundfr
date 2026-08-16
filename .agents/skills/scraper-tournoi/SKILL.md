@@ -7,6 +7,12 @@ description: Ajoute un tournoi riftdecks.com au site, du scraping jusqu'à la mi
 
 Sept étapes, dans cet ordre. Aucune ne se saute, surtout pas la 0 et la 2.
 
+**Déléguer le grain (skill `delegate-wave`).** Le balayage des scrapes bruts, le
+recoupement d'un lot de decklists ou tout audit de masse partent à une vague de
+workers pi/DeepSeek ; toi tu relis et tu tranches. Ce qui NE se délègue PAS : la
+décision de garder/supprimer une decklist (étape 2, intégrité), le seed **prod**,
+les flags. La porte `npm run verify` reste chez toi.
+
 ## 0. Vérifier que les Légendes du set sont connues
 
 ```bash

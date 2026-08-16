@@ -43,6 +43,13 @@ large. Un dépassement n'est pas un « ça marche ».
 | `npm run validate:decks` | Garde-fou anti-fabrication de decklists. Lent. |
 | `npm run validate:names` | Noms de cartes suspects. Corrige avec `npm run fix:names`. |
 
+## Déléguer la lecture, pas la porte
+
+Le repérage (quels fichiers ont changé, où vit un symptôme) peut partir à un worker
+pi/DeepSeek — voir le skill `delegate-wave`. Mais **la porte `npm run verify` se
+lance chez toi**, jamais chez un worker : un worker bon marché rend « vert » sans
+avoir lu le vrai code de sortie. Tu relis la sortie, tu tranches.
+
 ## Ce qu'il faut dire ensuite
 
 Rapporter le résultat réel, sortie à l'appui. Si un test échoue, le dire avec sa
