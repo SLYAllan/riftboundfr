@@ -50,11 +50,12 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
       )}
       {pages.map((p, i) =>
         p === "..." ? (
-          <span key={`dots-${i}`} className="px-2 text-ink-muted">...</span>
+          <span key={`dots-${i}`} aria-hidden="true" className="px-2 text-ink-muted">...</span>
         ) : (
           <Link
             key={p}
             href={getPageUrl(p)}
+            aria-current={p === currentPage ? "page" : undefined}
             className={cn(
               "flex h-9 min-w-[36px] items-center justify-center rounded-lg text-sm font-medium",
               p === currentPage

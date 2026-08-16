@@ -191,13 +191,13 @@ function CommentThread({
       <div className="flex gap-3">
         {/* Vote buttons */}
         <div className="flex flex-col items-center gap-0.5 pt-1">
-          <button onClick={() => vote(1)} className="text-ink-muted hover:text-arcane transition-colors">
+          <button onClick={() => vote(1)} aria-label="Voter pour" className="text-ink-muted hover:text-arcane transition-colors">
             <ChevronUp size={18} />
           </button>
           <span className={`text-xs font-bold tabular-nums ${score > 0 ? "text-arcane" : score < 0 ? "text-error" : "text-ink-muted"}`}>
             {score}
           </span>
-          <button onClick={() => vote(-1)} className="text-ink-muted hover:text-error transition-colors">
+          <button onClick={() => vote(-1)} aria-label="Voter contre" className="text-ink-muted hover:text-error transition-colors">
             <ChevronDown size={18} />
           </button>
         </div>

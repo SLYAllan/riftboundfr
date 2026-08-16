@@ -87,7 +87,10 @@ export function TierListTabs({
             >
               {SET_LABELS[tl.setContext ?? ""] ?? tl.title}
               {tl.current && (
-                <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-gold" />
+                <>
+                  <span className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
+                  <span className="sr-only"> (actuelle)</span>
+                </>
               )}
             </button>
           ))}

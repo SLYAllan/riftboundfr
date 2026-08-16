@@ -132,6 +132,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
               className={cn(
                 "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 pathname.startsWith(link.href)

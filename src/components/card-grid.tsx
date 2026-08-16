@@ -16,7 +16,7 @@ export function CardGrid({ cards }: CardGridProps) {
   if (cards.length === 0) {
     return (
       <div className="py-20 text-center text-ink-muted">
-        Aucune carte trouvee.
+        Aucune carte trouvée.
       </div>
     );
   }
@@ -45,7 +45,7 @@ export function CardGrid({ cards }: CardGridProps) {
                   </div>
                 ) : (
                   <div className="flex h-full items-center justify-center text-ink-muted">
-                    <span className="text-xs">No image</span>
+                    <span className="text-xs">Pas d&apos;image</span>
                   </div>
                 )}
               </div>

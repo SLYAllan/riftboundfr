@@ -33,7 +33,7 @@ export function CardImage({ src, alt, size = "md", className, priority, hoverZoo
         )}
         style={{ width, height }}
       >
-        <span className="text-xs">No image</span>
+        <span className="text-xs">Pas d&apos;image</span>
       </div>
     );
   }

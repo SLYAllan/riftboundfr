@@ -391,7 +391,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
         />
         <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-          Chercher
+          {t("Chercher")}
         </button>
       </form>
       {search && (
@@ -533,7 +533,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const bannerUrl = getBannerUrl(deck.legendName);
             const style = SET_STYLES[deck.setTag];
             return (
-              <Link key={deck.id} href={`/decks/${deck.slug}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
+              <article key={deck.id} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
+                <Link href={`/decks/${deck.slug}`} className="absolute inset-0 z-10" aria-label={`Voir le deck ${displayLegendName(deck.legendName)}`} />
                 <div className="relative flex flex-col justify-end" style={{ height: 128 }}>
                   {bannerUrl ? (
                     <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
@@ -557,7 +558,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                       </span>
                     );
                   })()}
-                  <div className="relative z-10 p-3">
+                  <div className="relative p-3">
                     <div className="flex items-end justify-between gap-2">
                       <div className="min-w-0">
                         <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
@@ -612,7 +613,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           )}
                         </div>
                       </div>
-                      <div className="flex shrink-0 items-center gap-1">
+                      <div className="relative z-20 flex shrink-0 items-center gap-1">
                         <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} compact />
                         {style && (
                           <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", style.badge)}>
@@ -628,7 +629,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </article>
             );
           })}
         </div>

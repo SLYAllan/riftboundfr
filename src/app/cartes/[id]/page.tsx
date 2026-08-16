@@ -171,7 +171,7 @@ export default async function CardDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-3 gap-4">
                 {card.energy !== null && (
                   <div className="rounded-lg bg-surface-raised p-3 text-center">
-                    <div className="text-xs text-ink-muted">Energie</div>
+                    <div className="text-xs text-ink-muted">Énergie</div>
                     <div className="text-2xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.energy}</div>
                   </div>
                 )}
