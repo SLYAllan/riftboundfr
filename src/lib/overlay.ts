@@ -7,10 +7,13 @@ export interface OverlayPlayer {
   championName: string;
   battlefields: string[];
   gamesWon: number;
-  camEnabled: boolean;
   // Lien « view » VDO.Ninja : chacun colle le sien, la camera arrive dans le cadre
-  // sans passer par OBS. Vide = cadre laisse transparent.
+  // sans passer par OBS. Vide = cadre laisse transparent (une source OBS peut se
+  // poser dessous).
   camUrl?: string;
+  // Fond de webcam optionnel (image fournie) : à cocher pour ne pas laisser le cadre
+  // vide quand on n'a pas de caméra. Le flux, s'il arrive, se pose par-dessus.
+  camBackground?: boolean;
 }
 
 export interface OverlayStateData {
@@ -19,28 +22,35 @@ export interface OverlayStateData {
   // sinon il faudrait pousser une mise à jour chaque seconde.
   // `timerVisible` : le chrono n'a pas sa place partout, on doit pouvoir l'éteindre
   // sans perdre l'heure de fin qui tourne.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean };
+  // `paused` : secondes restantes figées quand le chrono est en pause (null = il
+  // tourne). En pause on gèle l'affichage ; reprendre repose un `endsAt`.
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; paused?: number | null };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
   players: [OverlayPlayer, OverlayPlayer];
-  // Deux affiches de cartes, gauche (0) et droite (1). Chaque côté : sa decklist
-  // collée (`lists`), les cartes décochées à ignorer dans la diapo (`ignored`), son
-  // drapeau d'affichage (`visible`), rotation auto ou manuelle (`auto`) et la carte
-  // courante en manuel (`index`). `seconds` = durée d'une carte en rotation auto.
-  // Dès qu'une affiche est visible, le chrono et le logo se cachent (mode vitrine).
+  // Cartes à l'écran. `lists` porte une decklist par JOUEUR (0 = joueur 1, 1 = joueur
+  // 2), pas par cadre. `mode` décide de l'affichage :
+  //   - "none"  : rien ;
+  //   - "mixed" : UN cadre, à droite, où défilent les cartes des deux decks mêlées
+  //     (la gauche garde le chrono et le logo, elle a déjà les infos) ;
+  //   - "split" : DEUX cadres, un par joueur (gauche = joueur 1, droite = joueur 2).
+  // `auto` = diapo automatique ; en auto seulement, `ignored` retire des cartes du
+  // défilé. En manuel on choisit la carte d'un clic (`index`, par cadre : gauche,
+  // droite). `seconds` = durée d'une carte en diapo. Le chrono et le logo se cachent
+  // seulement quand le cadre GAUCHE montre des cartes (mode "split").
   cards: {
     lists: [string[], string[]];
     ignored: [string[], string[]];
-    visible: [boolean, boolean];
-    auto: [boolean, boolean];
+    mode: "none" | "mixed" | "split";
+    auto: boolean;
     index: [number, number];
     seconds: number;
   };
 }
 
 function emptyPlayer(name: string): OverlayPlayer {
-  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, camEnabled: true, camUrl: "" };
+  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, camUrl: "", camBackground: false };
 }
 
 export function defaultOverlayState(): OverlayStateData {
@@ -50,8 +60,20 @@ export function defaultOverlayState(): OverlayStateData {
     maxPoints: 8,
     points: { a: 0, b: 0 },
     players: [emptyPlayer("Joueur 1"), emptyPlayer("Joueur 2")],
-    cards: { lists: [[], []], ignored: [[], []], visible: [false, false], auto: [false, false], index: [0, 0], seconds: 5 },
+    cards: { lists: [[], []], ignored: [[], []], mode: "none", auto: false, index: [0, 0], seconds: 5 },
   };
+}
+
+// Deux decks mêlés en un seul défilé : on alterne une carte de chacun (joueur 1,
+// joueur 2, joueur 1…) au lieu de coller les listes bout à bout, pour que les deux
+// decks se voient dès les premières cartes. Servi par l'overlay et le tableau de bord.
+export function entrelace(a: string[], b: string[]): string[] {
+  const out: string[] = [];
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    if (i < a.length) out.push(a[i]);
+    if (i < b.length) out.push(b[i]);
+  }
+  return out;
 }
 
 export function clampPoints(n: number, max: number): number {
@@ -70,8 +92,8 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
     cards: {
       lists: (patch.cards?.lists ?? base.cards?.lists ?? [[], []]) as [string[], string[]],
       ignored: (patch.cards?.ignored ?? base.cards?.ignored ?? [[], []]) as [string[], string[]],
-      visible: (patch.cards?.visible ?? base.cards?.visible ?? [false, false]) as [boolean, boolean],
-      auto: (patch.cards?.auto ?? base.cards?.auto ?? [false, false]) as [boolean, boolean],
+      mode: (patch.cards?.mode ?? base.cards?.mode ?? "none") as OverlayStateData["cards"]["mode"],
+      auto: patch.cards?.auto ?? base.cards?.auto ?? false,
       index: (patch.cards?.index ?? base.cards?.index ?? [0, 0]) as [number, number],
       seconds: patch.cards?.seconds ?? base.cards?.seconds ?? 5,
     },
@@ -80,7 +102,7 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
       { ...base.players[1], ...(patch.players?.[1] ?? {}) },
     ] as [OverlayPlayer, OverlayPlayer],
   };
-  const max = next.maxPoints === 9 ? 9 : 8;
+  const max = next.maxPoints === 10 ? 10 : next.maxPoints === 9 ? 9 : 8;
   next.maxPoints = max;
   next.points = { a: clampPoints(next.points.a, max), b: clampPoints(next.points.b, max) };
   return next;

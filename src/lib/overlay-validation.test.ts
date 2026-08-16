@@ -8,7 +8,7 @@ describe("validerPatchOverlay", () => {
       format: "BO3",
       points: { a: 4 },
       players: [{ name: "Allan", battlefields: ["The Grand Plaza"] }, {}],
-      cards: { lists: [["Fireball"], []], shown: "Fireball" },
+      cards: { lists: [["Fireball"], []], ignored: [[], []], mode: "mixed", auto: false, index: [0, 0], seconds: 5 },
     } as const;
 
     expect(validerPatchOverlay(patch)).toEqual({ ok: true, value: patch });

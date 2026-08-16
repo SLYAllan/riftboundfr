@@ -13,6 +13,10 @@ export async function GET(req: Request) {
   const rows = await prisma.card.findMany({
     where: {
       supertype: "Champion",
+      // Certaines Légendes des Origines (Annie, Lux, Garen, Master Yi…) portent aussi
+      // supertype "Champion" en base. Une Légende n'est pas un Champion Unit : sans ce
+      // filtre, « Annie, Dark Child » (la Légende) s'affichait comme champion possible.
+      type: { not: "Legend" },
       name: { startsWith: `${first},` },
       NOT: { name: { contains: "(" } }, // exclut (Alternate Art), (Signature)…
     },

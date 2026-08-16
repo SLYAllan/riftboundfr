@@ -27,7 +27,7 @@ const outilsLinks = [
   { href: "/collection", label: "Ma collection" },
   { href: "/outils/compteur", label: "Compteur" },
   { href: "/outils/regles", label: "Chercher une règle" },
-  { href: "/profil/overlay", label: "Habillage de stream" },
+  { href: "/profil/overlay", label: "Overlay de stream" },
 ];
 
 /**

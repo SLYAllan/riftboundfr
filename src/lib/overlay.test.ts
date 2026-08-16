@@ -8,7 +8,7 @@ describe("overlay logic", () => {
     expect(s.format).toBe("BO3");
     expect(s.maxPoints).toBe(8);
     expect(s.points).toEqual({ a: 0, b: 0 });
-    expect(s.players[0].camEnabled).toBe(true);
+    expect(s.players[0].camBackground).toBe(false);
   });
 
   it("clampPoints bornes 0..max", () => {

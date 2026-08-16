@@ -56,8 +56,8 @@ export const EN: Record<string, string> = {
   "TCG Arena et RiftAtlas : comment jouer depuis chez vous.":
     "TCG Arena and RiftAtlas: how to play from home.",
 
-  // — Tableau de bord de l'habillage de stream —
-  "Habillage de stream": "Stream overlay",
+  // — Tableau de bord de l'overlay de stream —
+  "Overlay de stream": "Stream overlay",
   "Scores, Légendes et caméra affichés en direct dans OBS.":
     "Scores, Legends and camera, live on screen in OBS.",
   "Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.":
@@ -100,7 +100,7 @@ export const EN: Record<string, string> = {
   Retirer: "Remove",
   "Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.":
     "Sound is always muted. Leave this empty if you add the camera yourself in OBS.",
-  "Montrer le cadre caméra": "Show the camera frame",
+  "Fond de webcam (sans caméra)": "Webcam backdrop (no camera)",
   "2. Le match": "2. The match",
   Format: "Format",
   "Points pour gagner": "Points to win",
@@ -110,18 +110,30 @@ export const EN: Record<string, string> = {
   "Remettre les points à zéro": "Reset points",
   "Durée en minutes": "Length in minutes",
   "Lancer le chrono": "Start the timer",
+  Pause: "Pause",
+  Reprendre: "Resume",
   Arrêter: "Stop",
   "Montrer le chrono": "Show the timer",
   "3. Montrer une carte": "3. Show a card",
-  "Collez la liste de chaque joueur une fois en début de match. Ensuite, choisir une carte dans le menu l’affiche à l’écran, à droite.":
-    "Paste each player's list once, at the start of the match. After that, picking a card from the menu puts it on screen, on the right.",
-  "Liste du joueur": "List for player",
-  "Charger la liste": "Load the list",
-  "Aucune carte à l’écran": "No card on screen",
+  "Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.":
+    "Paste one decklist per player (battlefields are dropped from the rotation). Pick a display, then click a card to show it. “Auto slideshow” cycles them on its own; otherwise you pick by clicking. “Two frames” hides the timer and logo on the left.",
+  Affichage: "Display",
+  "Affichage des cartes": "Card display",
+  Rien: "Nothing",
+  "Un cadre, les 2 decks à droite": "One frame, both decks on the right",
+  "Deux cadres, un par joueur": "Two frames, one per player",
+  "Diapo auto": "Auto slideshow",
+  "Durée par carte": "Seconds per card",
+  "Vider les decklists": "Clear the decklists",
+  "Joueur 1 (gauche)": "Player 1 (left)",
+  "Joueur 2 (droite)": "Player 2 (right)",
+  "Collez une decklist": "Paste a decklist",
+  Decklist: "Decklist",
+  "Garder dans la diapo": "Keep in the slideshow",
   Masquer: "Hide",
   "4. Le tournoi": "4. The tournament",
   "Nom du tournoi": "Tournament name",
-  "Nom affiché": "Name on screen",
+  "Nom affiché (deux lignes possibles)": "Name on screen (up to two lines)",
   "Logo (lien d’image)": "Logo (image link)",
 
   // — Habillage affiché à l'écran —

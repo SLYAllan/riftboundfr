@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { applyStateUpdate, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, entrelace, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
@@ -54,22 +54,50 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
   const [brouillonLogo, setBrouillonLogo] = useState("");
   const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
+  // Coercition volontaire : un état sauvé sous l'ANCIENNE forme portait `auto` en
+  // tableau et pas de `mode`. Sans ça, `?? false` garde le tableau (truthy), le patch
+  // repart avec un `auto` tableau, la validation le refuse (400) et plus rien ne se
+  // sauve — c'était la panne « les boutons ne réagissent plus ».
   const cards: OverlayStateData["cards"] = {
     lists: state.cards?.lists ?? [[], []],
     ignored: state.cards?.ignored ?? [[], []],
-    visible: state.cards?.visible ?? [false, false],
-    auto: state.cards?.auto ?? [false, false],
+    mode: (["none", "mixed", "split"] as const).includes(state.cards?.mode as never) ? state.cards.mode : "none",
+    auto: state.cards?.auto === true,
     index: state.cards?.index ?? [0, 0],
-    seconds: state.cards?.seconds ?? 5,
+    seconds: typeof state.cards?.seconds === "number" ? state.cards.seconds : 5,
   };
   const paire = <T,>(t: [T, T], i: 0 | 1, v: T): [T, T] => (i === 0 ? [v, t[1]] : [t[0], v]);
   const majCards = (p: Partial<OverlayStateData["cards"]>) => update({ cards: { ...cards, ...p } } as never);
+  // Cliquer une carte = la montrer tout de suite, en manuel. Si rien n'est encore
+  // affiché, on passe en « un cadre par joueur ». En « mixed » toutes les cartes vont
+  // au cadre de droite (index dans le défilé mêlé) ; en « split » chaque joueur a son
+  // cadre. La diapo auto se coupe pour rester sur la carte choisie.
+  const montrer = (i: 0 | 1, nom: string) => {
+    if (cards.mode === "mixed") {
+      const pos = entrelace(cards.lists[0], cards.lists[1]).indexOf(nom);
+      majCards({ auto: false, index: paire(cards.index, 1, Math.max(0, pos)) });
+    } else {
+      majCards({ mode: "split", auto: false, index: paire(cards.index, i, Math.max(0, cards.lists[i].indexOf(nom))) });
+    }
+  };
+  // Carte actuellement à l'écran pour le joueur i (pour surligner). En manuel : la
+  // carte à l'index de son cadre (gauche = 0, droite = 1 ; en mixed les deux pointent
+  // le cadre droit via le défilé mêlé).
+  const carteMontree = (i: 0 | 1): string | null => {
+    if (cards.mode === "none" || cards.auto) return null;
+    if (cards.mode === "mixed") {
+      const combine = entrelace(cards.lists[0], cards.lists[1]);
+      return combine.length ? combine[((cards.index[1] % combine.length) + combine.length) % combine.length] : null;
+    }
+    const liste = cards.lists[i];
+    return liste.length ? liste[((cards.index[i] % liste.length) + liste.length) % liste.length] : null;
+  };
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   const inputCls =
     "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm transition-colors duration-150 focus:border-arcane focus:outline-none";
   const btnStep =
-    "flex h-9 w-9 items-center justify-center rounded-lg border border-hairline text-base transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:opacity-30";
+    "flex h-10 w-10 items-center justify-center rounded-lg border border-hairline text-base tabular-nums transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:opacity-30";
   const btnPlein =
     "shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-canvas transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]";
   const btnVide =
@@ -81,7 +109,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     <div className="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
       <header>
         <h1 className="text-balance text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          {t("Habillage de stream")}
+          {t("Overlay de stream")}
         </h1>
         <p className="mt-2 max-w-2xl text-pretty text-sm text-ink-secondary">
           {t("Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.")}
@@ -223,8 +251,8 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   {/* py-1 + size-4 : la case seule faisait 13px, sous le
                       minimum de 24px de WCAG 2.5.8 même en comptant le libellé. */}
                   <label className="mt-2 flex items-center gap-2 py-1 text-sm">
-                    <input type="checkbox" className="size-4 accent-arcane" checked={p.camEnabled} onChange={(e) => setPlayer(i, { camEnabled: e.target.checked })} />
-                    {t("Montrer le cadre caméra")}
+                    <input type="checkbox" className="size-4 accent-arcane" checked={p.camBackground ?? false} onChange={(e) => setPlayer(i, { camBackground: e.target.checked })} />
+                    {t("Fond de webcam (sans caméra)")}
                   </label>
                 </div>
               </div>
@@ -245,14 +273,25 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           <label className="block">
             <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
             <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
-              <option value={8}>8</option><option value={9}>9</option>
+              <option value={8}>8</option><option value={9}>9</option><option value={10}>10</option>
             </select>
           </label>
           <label className="block min-w-[180px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Ronde affichée")}</span>
             <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder={t("TOP 8, Finale…")} className={inputCls} />
           </label>
-          <button onClick={() => update({ players: [state.players[1], state.players[0]] as never, points: { a: state.points.b, b: state.points.a } })} className={btnVide}>
+          <button
+            onClick={() =>
+              update({
+                players: [state.players[1], state.players[0]] as never,
+                points: { a: state.points.b, b: state.points.a },
+                // Les decklists sont rangées par joueur : on les permute aussi, sinon
+                // les cartes restent chez l'ancien camp après l'échange.
+                cards: { ...cards, lists: [cards.lists[1], cards.lists[0]], ignored: [cards.ignored[1], cards.ignored[0]], index: [cards.index[1], cards.index[0]] },
+              })
+            }
+            className={btnVide}
+          >
             {t("Échanger les joueurs")}
           </button>
           <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>{t("Remettre les points à zéro")}</button>
@@ -270,10 +309,26 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               className="w-28 rounded-lg border border-hairline bg-surface px-3 py-2 tabular-nums"
             />
           </label>
-          <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString() } })} className={btnPlein}>
+          <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString(), paused: null } })} className={btnPlein}>
             {t("Lancer le chrono")}
           </button>
-          <button onClick={() => update({ event: { endsAt: null } })} className={btnVide}>{t("Arrêter")}</button>
+          {state.event.paused == null ? (
+            <button
+              onClick={() => update({ event: { paused: state.event.endsAt ? Math.max(0, Math.floor((new Date(state.event.endsAt).getTime() - Date.now()) / 1000)) : 0 } })}
+              disabled={!state.event.endsAt}
+              className={btnVide}
+            >
+              {t("Pause")}
+            </button>
+          ) : (
+            <button
+              onClick={() => update({ event: { endsAt: new Date(Date.now() + (state.event.paused ?? 0) * 1000).toISOString(), paused: null } })}
+              className={btnPlein}
+            >
+              {t("Reprendre")}
+            </button>
+          )}
+          <button onClick={() => update({ event: { endsAt: null, paused: null } })} className={btnVide}>{t("Arrêter")}</button>
           <label className="flex items-center gap-2">
             <input type="checkbox" className="size-4 accent-arcane" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
             {t("Montrer le chrono")}
@@ -283,19 +338,59 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Montrer une carte")}</h2>
-        <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+        <div className="space-y-4 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
-            {t("Une affiche à gauche, une à droite. Collez une decklist, cochez les cartes à montrer (décochées = ignorées), puis « Afficher ». « Diapo auto » fait tourner les cartes ; sinon les flèches font défiler à la main. Quand une affiche est visible, le chrono et le logo se cachent.")}
+            {t("Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
           </p>
+
+          {/* Tous les réglages ensemble : quel affichage, diapo auto, durée. */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <label className="flex items-center gap-2">
+              <span className="text-xs text-ink-muted">{t("Affichage")}</span>
+              <select
+                value={cards.mode}
+                onChange={(e) => majCards({ mode: e.target.value as OverlayStateData["cards"]["mode"] })}
+                aria-label={t("Affichage des cartes")}
+                className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm transition-colors duration-150 focus:border-arcane focus:outline-none"
+              >
+                <option value="none">{t("Rien")}</option>
+                <option value="mixed">{t("Un cadre, les 2 decks à droite")}</option>
+                <option value="split">{t("Deux cadres, un par joueur")}</option>
+              </select>
+            </label>
+            <label className="flex items-center gap-2">
+              <input type="checkbox" className="size-4 accent-arcane" checked={cards.auto} onChange={(e) => majCards({ auto: e.target.checked })} />
+              {t("Diapo auto")}
+            </label>
+            {cards.auto && (
+              <label className="flex items-center gap-2">
+                <span className="text-xs text-ink-muted">{t("Durée par carte")}</span>
+                <input
+                  type="number" min={1} max={60}
+                  value={cards.seconds}
+                  onChange={(e) => majCards({ seconds: Math.max(1, Math.min(60, Number(e.target.value) || 5)) })}
+                  aria-label={t("Durée par carte")}
+                  className="w-16 rounded-lg border border-hairline bg-surface px-2 py-1 tabular-nums transition-colors duration-150 focus:border-arcane focus:outline-none"
+                />
+                <span className="text-xs text-ink-muted">s</span>
+              </label>
+            )}
+            <button
+              onClick={() => { setBrouillonDeck(["", ""]); majCards({ lists: [[], []], ignored: [[], []], index: [0, 0], mode: "none" }); }}
+              className={btnVide + " ml-auto"}
+            >
+              {t("Vider les decklists")}
+            </button>
+          </div>
+
           <div className="grid gap-3 sm:grid-cols-2">
             {([0, 1] as const).map((i) => {
               const liste = cards.lists[i];
               const ignorees = cards.ignored[i];
-              const actives = liste.filter((c) => !ignorees.includes(c));
-              const idx = actives.length ? ((cards.index[i] % actives.length) + actives.length) % actives.length : 0;
+              const montree = carteMontree(i);
               return (
                 <div key={i} className="space-y-2 rounded-xl border border-hairline bg-surface p-3">
-                  <div className="text-xs font-semibold text-ink-muted">{i === 0 ? t("Affiche gauche") : t("Affiche droite")}</div>
+                  <div className="text-xs font-semibold text-ink-muted">{i === 0 ? t("Joueur 1 (gauche)") : t("Joueur 2 (droite)")}</div>
                   <textarea
                     value={brouillonDeck[i]}
                     onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
@@ -306,7 +401,13 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   />
                   <button
                     onClick={() => {
-                      const noms = [...new Set(parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name))];
+                      // On ne garde que les cartes à montrer. On retire : les terrains
+                      // (liste des champs de bataille), la Légende (elle est déjà sur la
+                      // bannière) et les runes (une ressource, pas une carte du deck).
+                      const legendes = new Set(legends.map((l) => l.name));
+                      const noms = [...new Set(parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name))].filter(
+                        (n) => !battlefields.includes(n) && !legendes.has(n) && !/ Rune$/i.test(n),
+                      );
                       majCards({ lists: paire(cards.lists, i, noms), ignored: paire(cards.ignored, i, []), index: paire(cards.index, i, 0) });
                     }}
                     className={btnPlein}
@@ -315,64 +416,42 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   </button>
 
                   {liste.length > 0 && (
-                    <>
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
-                        <label className="flex items-center gap-1.5">
-                          <input type="checkbox" className="size-4 accent-arcane" checked={cards.visible[i]} onChange={(e) => majCards({ visible: paire(cards.visible, i, e.target.checked) })} />
-                          {t("Afficher")}
-                        </label>
-                        <label className="flex items-center gap-1.5">
-                          <input type="checkbox" className="size-4 accent-arcane" checked={cards.auto[i]} onChange={(e) => majCards({ auto: paire(cards.auto, i, e.target.checked) })} />
-                          {t("Diapo auto")}
-                        </label>
-                        {!cards.auto[i] && actives.length > 1 && (
-                          <span className="ml-auto flex items-center gap-1">
-                            <button onClick={() => majCards({ index: paire(cards.index, i, idx - 1) })} className={btnStep}>‹</button>
-                            <span className="tabular-nums text-ink-muted">{idx + 1}/{actives.length}</span>
-                            <button onClick={() => majCards({ index: paire(cards.index, i, idx + 1) })} className={btnStep}>›</button>
-                          </span>
-                        )}
-                      </div>
-                      <div className="max-h-40 space-y-0.5 overflow-y-auto pr-1">
-                        {liste.map((c) => {
-                          const coche = !ignorees.includes(c);
-                          return (
-                            <label key={c} className="flex items-center gap-2 text-xs">
+                    <div className="max-h-52 space-y-0.5 overflow-y-auto pr-1">
+                      {liste.map((c) => {
+                        const exclue = ignorees.includes(c);
+                        return (
+                          <div key={c} className="flex items-center gap-2">
+                            {/* En diapo auto seulement : décocher retire la carte du
+                                défilé. En manuel on clique le nom pour la montrer. */}
+                            {cards.auto && (
                               <input
                                 type="checkbox"
                                 className="size-3.5 accent-arcane"
-                                checked={coche}
+                                checked={!exclue}
+                                aria-label={`${t("Garder dans la diapo")} — ${c}`}
                                 onChange={(e) => {
                                   const nextIgn = e.target.checked ? ignorees.filter((x) => x !== c) : [...new Set([...ignorees, c])];
                                   majCards({ ignored: paire(cards.ignored, i, nextIgn) });
                                 }}
                               />
-                              <span className={coche ? "" : "text-ink-muted line-through"}>{c}</span>
-                            </label>
-                          );
-                        })}
-                      </div>
-                    </>
+                            )}
+                            <button
+                              type="button"
+                              onClick={() => montrer(i, c)}
+                              className={`flex-1 truncate rounded px-2 py-1 text-left text-xs transition-colors duration-150 ${
+                                c === montree ? "bg-arcane/15 font-medium text-ink" : "text-ink-secondary hover:bg-surface-raised"
+                              } ${cards.auto && exclue ? "text-ink-muted line-through" : ""}`}
+                            >
+                              {c}
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
               );
             })}
-          </div>
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <label className="flex items-center gap-2">
-              <span className="text-xs text-ink-muted">{t("Durée par carte (diapo auto)")}</span>
-              <input
-                type="number" min={1} max={60}
-                value={cards.seconds}
-                onChange={(e) => majCards({ seconds: Math.max(1, Math.min(60, Number(e.target.value) || 5)) })}
-                aria-label={t("Durée par carte")}
-                className="w-16 rounded-lg border border-hairline bg-surface px-2 py-1"
-              />
-              <span className="text-xs text-ink-muted">s</span>
-            </label>
-            <button onClick={() => majCards({ visible: [false, false] })} className={btnVide}>
-              {t("Tout masquer")}
-            </button>
           </div>
         </div>
       </section>
@@ -380,9 +459,17 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("4. Le tournoi")}</h2>
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
-          <label className="block min-w-[180px] flex-1">
+          <label className="block min-w-[220px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Nom du tournoi")}</span>
-            <input value={state.event.title} onChange={(e) => update({ event: { title: e.target.value } })} placeholder={t("Nom affiché")} className={inputCls} />
+            {/* Zone de texte plutôt qu'une ligne : le titre s'affiche en gros et peut
+                tenir sur deux lignes à l'écran ; un retour à la ligne tapé ici est gardé. */}
+            <textarea
+              value={state.event.title}
+              onChange={(e) => update({ event: { title: e.target.value } })}
+              placeholder={t("Nom affiché (deux lignes possibles)")}
+              rows={2}
+              className={inputCls + " resize-none"}
+            />
           </label>
           <div className="min-w-[280px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>

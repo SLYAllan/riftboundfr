@@ -36,7 +36,7 @@ function nombre(value: unknown, chemin: string, min: number, max: number): strin
 function validerJoueur(value: unknown, index: number): string | null {
   if (!estObjet(value)) return `players.${index} doit être un objet`;
   const prefixe = `players.${index}`;
-  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "camEnabled", "camUrl"], prefixe);
+  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "camUrl", "camBackground"], prefixe);
   if (inconnu) return inconnu;
   for (const cle of ["name", "legendName", "championName"] as const) {
     if (value[cle] !== undefined) {
@@ -52,7 +52,7 @@ function validerJoueur(value: unknown, index: number): string | null {
     const erreur = chaine(value.camUrl, `${prefixe}.camUrl`, LIMITES.url);
     if (erreur) return erreur;
   }
-  if (value.camEnabled !== undefined && typeof value.camEnabled !== "boolean") return `${prefixe}.camEnabled doit être un booléen`;
+  if (value.camBackground !== undefined && typeof value.camBackground !== "boolean") return `${prefixe}.camBackground doit être un booléen`;
   if (value.gamesWon !== undefined) {
     const erreur = nombre(value.gamesWon, `${prefixe}.gamesWon`, 0, 5);
     if (erreur) return erreur;
@@ -77,13 +77,13 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
   if (value.format !== undefined && !["BO1", "BO3", "BO5"].includes(String(value.format))) {
     return { ok: false, error: "format doit être BO1, BO3 ou BO5" };
   }
-  if (value.maxPoints !== undefined && value.maxPoints !== 8 && value.maxPoints !== 9) {
-    return { ok: false, error: "maxPoints doit être 8 ou 9" };
+  if (value.maxPoints !== undefined && ![8, 9, 10].includes(Number(value.maxPoints))) {
+    return { ok: false, error: "maxPoints doit être 8, 9 ou 10" };
   }
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "paused"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -102,6 +102,10 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
     if (value.event.timerVisible !== undefined && typeof value.event.timerVisible !== "boolean") {
       return { ok: false, error: "event.timerVisible doit être un booléen" };
     }
+    if (value.event.paused !== undefined && value.event.paused !== null) {
+      const erreur = nombre(value.event.paused, "event.paused", 0, 86400);
+      if (erreur) return { ok: false, error: erreur };
+    }
   }
 
   if (value.points !== undefined) {
@@ -110,7 +114,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["a", "b"] as const) {
       if (value.points[cle] !== undefined) {
-        const erreur = nombre(value.points[cle], `points.${cle}`, 0, 9);
+        const erreur = nombre(value.points[cle], `points.${cle}`, 0, 10);
         if (erreur) return { ok: false, error: erreur };
       }
     }
@@ -126,21 +130,38 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.cards !== undefined) {
     if (!estObjet(value.cards)) return { ok: false, error: "cards doit être un objet" };
-    const erreurChamp = champsConnus(value.cards, ["lists", "shown"], "cards");
+    const erreurChamp = champsConnus(value.cards, ["lists", "ignored", "mode", "auto", "index", "seconds"], "cards");
     if (erreurChamp) return { ok: false, error: erreurChamp };
-    if (value.cards.shown !== undefined && value.cards.shown !== null) {
-      const erreur = chaine(value.cards.shown, "cards.shown");
-      if (erreur) return { ok: false, error: erreur };
-    }
-    if (value.cards.lists !== undefined) {
-      if (!Array.isArray(value.cards.lists) || value.cards.lists.length !== 2) return { ok: false, error: "cards.lists doit contenir 2 listes" };
-      for (const [listeIndex, liste] of value.cards.lists.entries()) {
-        if (!Array.isArray(liste) || liste.length > LIMITES.cartes) return { ok: false, error: `cards.lists.${listeIndex} accepte au maximum ${LIMITES.cartes} cartes` };
-        for (const [carteIndex, carte] of liste.entries()) {
-          const erreur = chaine(carte, `cards.lists.${listeIndex}.${carteIndex}`);
+    // `lists` et `ignored` : deux listes de noms de cartes.
+    for (const cle of ["lists", "ignored"] as const) {
+      const v = value.cards[cle];
+      if (v === undefined) continue;
+      if (!Array.isArray(v) || v.length !== 2) return { ok: false, error: `cards.${cle} doit contenir 2 listes` };
+      for (const [li, liste] of v.entries()) {
+        if (!Array.isArray(liste) || liste.length > LIMITES.cartes) return { ok: false, error: `cards.${cle}.${li} accepte au maximum ${LIMITES.cartes} cartes` };
+        for (const [ci, carte] of liste.entries()) {
+          const erreur = chaine(carte, `cards.${cle}.${li}.${ci}`);
           if (erreur) return { ok: false, error: erreur };
         }
       }
+    }
+    // `mode` : aucune / un cadre mêlé / deux cadres.
+    if (value.cards.mode !== undefined && !["none", "mixed", "split"].includes(String(value.cards.mode))) {
+      return { ok: false, error: "cards.mode doit être none, mixed ou split" };
+    }
+    // `auto` : un seul booléen (diapo automatique).
+    if (value.cards.auto !== undefined && typeof value.cards.auto !== "boolean") {
+      return { ok: false, error: "cards.auto doit être un booléen" };
+    }
+    // `index` : deux entiers (la carte courante par côté).
+    if (value.cards.index !== undefined) {
+      const v = value.cards.index;
+      if (!Array.isArray(v) || v.length !== 2 || v.some((x) => typeof x !== "number")) return { ok: false, error: "cards.index doit être deux nombres" };
+    }
+    // `seconds` : durée d'une carte en diapo auto.
+    if (value.cards.seconds !== undefined) {
+      const erreur = nombre(value.cards.seconds, "cards.seconds", 1, 60);
+      if (erreur) return { ok: false, error: erreur };
     }
   }
 

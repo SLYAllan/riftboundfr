@@ -16,21 +16,30 @@ import styles from "./overlay.module.css";
 export function FitText({
   children,
   chars,
+  lines = 1,
   className = "",
 }: {
   children: string;
   /** Nombre de caracteres qui tiennent sur une ligne a taille pleine. */
   chars: number;
+  /** Nombre de lignes autorisees. Au-dela, le texte retrecit pour tout montrer sans
+   *  jamais couper : ni troncature, ni « … », mais jamais plus de `lines` lignes. */
+  lines?: number;
   className?: string;
 }) {
   const n = children.length;
-  const k = n > chars ? Math.max(0.45, chars / n) : 1;
+  const capacite = chars * lines;
+  const k = n > capacite ? Math.max(0.45, capacite / n) : 1;
+  const multi = lines > 1;
   return (
     <span className={`block w-full overflow-hidden text-center ${className}`}>
       <span
         key={children}
-        className={`inline-block whitespace-nowrap ${styles.apparait}`}
-        style={{ fontSize: `${k}em` }}
+        className={`${styles.apparait} ${multi ? "block [text-wrap:balance]" : "inline-block whitespace-nowrap"}`}
+        // line-clamp en style en ligne : la classe Tailwind dynamique ne serait pas
+        // generee. Comme `k` reduit deja pour tout faire tenir, le clamp ne coupe qu'en
+        // ultime secours.
+        style={multi ? { fontSize: `${k}em`, display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: lines, overflow: "hidden" } : { fontSize: `${k}em` }}
       >
         {children}
       </span>

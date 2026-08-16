@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
-import type { OverlayPlayer, OverlayStateData } from "@/lib/overlay";
+import { entrelace, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useT } from "@/components/i18n-provider";
@@ -22,12 +22,15 @@ const SLOT = {
   bf: { top: 545, height: 90 },
   // Case dorée du bas relevée au pixel sur le fond : x 102-253, y 968-1019.
   timer: { left: 102, top: 968, width: 152, height: 52 },
-  round: { top: 906, height: 52 },
+  // Descendue de 906 à 900 pour ne plus chevaucher le bas du logo (qui finit à 892).
+  round: { top: 900, height: 50 },
   // Calés sur l'intérieur des cadres dessinés dans cartes_gauche/droite.webp
   // (contours dorés, bbox : gauche 41-316 x 682-1045, droite 1604-1879 x 682-1045),
   // avec un léger retrait pour que la carte tienne dans le contour.
-  cardsLeft: { left: 41, top: 682, width: 275, height: 363 },
-  cards: { left: 1604, top: 682, width: 275, height: 363 },
+  // La carte tient DANS le cadre, pas dessus : plus petite, centrée dans le contour
+  // (cadre gauche 41-316 x 682-1045, droite 1604-1879). ~30px de marge par côté.
+  cardsLeft: { left: 61, top: 708, width: 235, height: 310 },
+  cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
@@ -90,49 +93,26 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
   return (
-    // Ronds detaches, anneau dore sur fond sombre, comme sur la retransmission. Le
-    // score courant est rempli en dore, chiffre en encre sombre. Les deux 8 du
-    // milieu, le seuil de victoire, portent un double anneau.
-    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center gap-2.5">
+    // Pastilles = images fournies (public/stream/<n>_empty|full.webp), pas de rond
+    // dessiné en code. La pastille du score courant de chaque joueur est « full »,
+    // les autres « empty ». Espacement régulier : l'ancienne marge centrale (ml-3)
+    // créait un écart de 62px au milieu contre 50px ailleurs.
+    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center">
       {cells.map((c, i) => {
-        const actif = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
-        const seuil = c.v === max;
+        const full = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
+        // Le point final (celui qui donne la manche) est mis en avant : un poil plus
+        // gros et un peu détaché du reste. Les autres restent à 50 px, collés.
+        const finalPoint = c.v === max;
         return (
-          <span
-            key={`${i}-${actif}`}
-            className={[
-              styles.apparait,
-              "flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold tabular-nums ring-1 ring-gold/80",
-              i === max ? "ml-3" : "",
-              actif ? "bg-gold text-[#1b1408]" : "bg-[#0b1220]/85 text-white",
-            ].join(" ")}
-            style={{
-              boxShadow: seuil
-                ? "0 0 0 3px rgba(11,18,32,0.85), 0 0 0 4px rgba(212,168,67,0.85), 0 2px 8px rgba(0,0,0,0.5)"
-                : "0 2px 8px rgba(0,0,0,0.5)",
-            }}
-          >
-            {c.v}
-          </span>
+          <img
+            key={`${i}-${full}`}
+            src={`/stream/${c.v}_${full ? "full" : "empty"}.webp`}
+            alt=""
+            className={`${styles.apparait} object-contain ${finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]"}`}
+          />
         );
       })}
     </div>
-  );
-}
-
-/**
- * Emplacement laissé vide : rien du tout, ni fond ni trait. Le cadre doré vient de
- * l'image de fond ; en dessiner un second par-dessus donnait une double bordure sur
- * la sortie OBS. Le composant ne sert plus qu'à réserver la place et à nommer la
- * zone pour les lecteurs d'écran et les captures.
- */
-function Slot({ label, className = "", style }: { label: string; className?: string; style?: React.CSSProperties }) {
-  return (
-    <div
-      aria-label={label}
-      style={style}
-      className={className}
-    />
   );
 }
 
@@ -191,51 +171,57 @@ function Side({
 
       {/* Caméra : le lien VDO.Ninja s'affiche dans le cadre. Sans lien, le cadre
           reste vide et transparent, la source se pose dessous dans OBS. */}
-      {p.camEnabled &&
-        (cam ? (
-          <div
-            style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
-            className="absolute overflow-hidden"
-          >
-            {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la
-                fenêtre du dessus. `allow-scripts` et `allow-same-origin` sont le
-                minimum pour que WebRTC tourne. Le témoin ci-dessous dit si le
-                cadre a fini de charger, pour ne plus avoir à deviner. */}
-            {/* Une webcam est en 16:9, le cadre est en portrait : à pleine largeur
-                l'image ne remplirait qu'un tiers de la hauteur. On agrandit donc le
-                flux jusqu'à couvrir le cadre et on garde le centre, les côtés
-                partent hors champ — c'est le buste qu'on veut voir. */}
-            <iframe
-              src={cam}
-              title={`Caméra de ${p.name || "joueur"}`}
-              allow="autoplay; fullscreen"
-              sandbox="allow-scripts allow-same-origin"
-              onLoad={() => setCamCharge(true)}
-              className="absolute left-1/2 top-0 border-0"
-              style={{
-                width: Math.round((SLOT.cam.height * 16) / 9),
-                height: SLOT.cam.height,
-                transform: "translateX(-50%)",
-              }}
-            />
-            {!camCharge && (
-              <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
-                {t("caméra en attente")}
-              </span>
-            )}
-          </div>
-        ) : (
-          <Slot
-            label={t("Caméra")}
-            className="absolute"
-            style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
-          />
-        ))}
+      {/* Le cadre caméra est toujours là : transparent si rien (une source OBS peut se
+          poser dessous), le fond webcam s'il est coché, le flux VDO.Ninja par-dessus. */}
+      {(
+        <div
+          style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
+          className="absolute overflow-hidden"
+          aria-label={t("Caméra")}
+        >
+          {/* Fond de webcam en OPTION (case à cocher par joueur) : le cadre n'est pas
+              vide sans caméra. Le flux VDO.Ninja, quand il arrive, se pose par-dessus. */}
+          {p.camBackground && (
+            <img src="/stream/webcam_default.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          )}
+          {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la fenêtre
+              du dessus. `allow-scripts` et `allow-same-origin` sont le minimum pour que
+              WebRTC tourne. Une webcam est en 16:9, le cadre est en portrait : on
+              agrandit le flux jusqu'à couvrir le cadre et on garde le centre — c'est le
+              buste qu'on veut voir. Le témoin dit si le cadre a fini de charger. */}
+          {cam && (
+            <>
+              <iframe
+                src={cam}
+                title={`Caméra de ${p.name || "joueur"}`}
+                allow="autoplay; fullscreen"
+                sandbox="allow-scripts allow-same-origin"
+                onLoad={() => setCamCharge(true)}
+                className="absolute left-1/2 top-0 border-0"
+                style={{
+                  width: Math.round((SLOT.cam.height * 16) / 9),
+                  height: SLOT.cam.height,
+                  transform: "translateX(-50%)",
+                }}
+              />
+              {!camCharge && (
+                <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
+                  {t("caméra en attente")}
+                </span>
+              )}
+            </>
+          )}
+        </div>
+      )}
 
       {/* Le champ de bataille en jeu, son illustration en fond, et les manches
           gagnées posées dessus comme sur la retransmission officielle. */}
       <div
-        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.bf.top, height: SLOT.bf.height } as React.CSSProperties}
+        // Élargi de 8px de chaque côté (centre conservé) : l'ombre allait moins
+        // loin que l'ouverture du cadre, il restait une bande bleue à gauche et à
+        // droite. Le cadre doré (dans test.webp) reste au-dessus, on remplit juste
+        // le vide sous ses bords.
+        style={{ left: SLOT.x[side] - 8, width: SLOT.width + 16, top: SLOT.bf.top, height: SLOT.bf.height } as React.CSSProperties}
         className="absolute overflow-hidden bg-black/70"
       >
         {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
@@ -294,64 +280,55 @@ type SlotStyle = { left?: number; right?: number; top: number; width: number; he
 
 function CarteMontree({ nom, slot }: { nom: string | null; slot: SlotStyle }) {
   const art = useBattlefieldArt(nom ? [nom] : []);
-  const cible = nom ? art[nom] : null;
-  const [affichee, setAffichee] = useState<string | null>(null);
-  const [visible, setVisible] = useState(false);
-
+  const cible = nom ? art[nom] ?? null : null;
+  // Calques empilés pour le cross-fade : la nouvelle carte apparaît en fondu
+  // par-dessus la précédente, puis l'ancienne est retirée (500 ms > durée du fondu).
+  // Quand la carte part (cible = null), le conteneur passe en opacité 0 — fondu de
+  // disparition — puis on vide les calques.
+  const [calques, setCalques] = useState<{ id: number; src: string }[]>([]);
+  const idRef = useRef(0);
+  const precRef = useRef<string | null>(null);
   useEffect(() => {
-    let annule = false;
+    if (cible === precRef.current) return;
+    precRef.current = cible;
     if (cible) {
-      queueMicrotask(() => {
-        if (!annule) setAffichee(cible);
-      });
-      return () => { annule = true; };
+      const id = ++idRef.current;
+      setCalques((c) => [...c.slice(-1), { id, src: cible }]);
+      const t = setTimeout(() => setCalques((c) => c.filter((x) => x.id === id)), 500);
+      return () => clearTimeout(t);
     }
-    // On éteint, puis on retire une fois le fondu terminé.
-    queueMicrotask(() => {
-      if (!annule) setVisible(false);
-    });
-    const t = setTimeout(() => {
-      if (!annule) setAffichee(null);
-    }, 320);
-    return () => { annule = true; clearTimeout(t); };
+    const t = setTimeout(() => setCalques([]), 340);
+    return () => clearTimeout(t);
   }, [cible]);
 
   return (
-    <div className="absolute z-20 overflow-hidden" style={slot}>
-      {affichee && (
+    <div
+      className="absolute z-20 overflow-hidden transition-opacity duration-300 ease-out"
+      style={{ ...slot, opacity: cible ? 1 : 0 }}
+    >
+      {calques.map((l) => (
         <img
-          key={affichee}
-          src={affichee}
+          key={l.id}
+          src={l.src}
           alt=""
-          onLoad={() => setVisible(true)}
-          className={`absolute inset-0 m-auto max-h-full max-w-full object-contain transition-opacity duration-300 ease-out ${
-            visible && cible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`${styles.fonduCarte} absolute inset-0 m-auto max-h-full max-w-full object-contain`}
         />
-      )}
+      ))}
     </div>
   );
 }
 
-// Carte courante d'un côté : les cartes cochées de la decklist (les décochées sont
-// ignorées), à l'index manuel du tableau de bord ou au `tick` de la rotation auto.
-// Côté caché = null (l'affiche se fond).
-function carteCourante(cards: OverlayStateData["cards"], side: 0 | 1, tick: number): string | null {
-  if (!cards?.visible?.[side]) return null;
-  const actives = (cards.lists?.[side] ?? []).filter((c) => !(cards.ignored?.[side] ?? []).includes(c));
-  if (!actives.length) return null;
-  const brut = cards.auto?.[side] ? tick : cards.index?.[side] ?? 0;
-  const i = ((brut % actives.length) + actives.length) % actives.length;
-  return actives[i];
+// Cartes qui défilent dans un cadre. En diapo auto seulement, `ignored` retire des
+// cartes ; en manuel on garde toute la liste pour pouvoir cliquer n'importe laquelle.
+function activesCadre(liste: string[], ignored: string[], auto: boolean): string[] {
+  return auto ? liste.filter((c) => !ignored.includes(c)) : liste;
 }
 
-// Une affiche = un côté. En rotation auto, un minuteur LOCAL avance la carte toutes
-// les `seconds` : jamais poussé en base, sinon on écrirait l'API toutes les 5 s. En
-// manuel, l'index vient du tableau de bord.
-function CarteAffiche({ cards, side, slot }: { cards: OverlayStateData["cards"]; side: 0 | 1; slot: SlotStyle }) {
-  const auto = cards?.auto?.[side] ?? false;
-  const seconds = cards?.seconds ?? 5;
-  const actives = (cards?.lists?.[side] ?? []).filter((c) => !(cards?.ignored?.[side] ?? []).includes(c));
+// Un cadre = une liste déjà résolue (le mode décide côté appelant qui la remplit).
+// En diapo auto, un minuteur LOCAL avance la carte toutes les `seconds` : jamais
+// poussé en base, sinon on écrirait l'API toutes les 5 s. En manuel, l'index vient
+// du tableau de bord (choix d'une carte au clic). Liste vide = rien, l'affiche se fond.
+function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string[]; auto: boolean; index: number; seconds: number; slot: SlotStyle }) {
   const [tick, setTick] = useState(0);
   useEffect(() => {
     if (!auto || actives.length < 2) return;
@@ -359,16 +336,21 @@ function CarteAffiche({ cards, side, slot }: { cards: OverlayStateData["cards"];
     return () => clearInterval(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auto, seconds, actives.length]);
-  return <CarteMontree nom={carteCourante(cards, side, tick)} slot={slot} />;
+  const brut = auto ? tick : index;
+  const nom = actives.length ? actives[((brut % actives.length) + actives.length) % actives.length] : null;
+  return <CarteMontree nom={nom} slot={slot} />;
 }
 
-function Timer({ endsAt }: { endsAt?: string | null }) {
+function Timer({ endsAt, paused }: { endsAt?: string | null; paused?: number | null }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
-  const left = endsAt ? Math.max(0, Math.floor((new Date(endsAt).getTime() - now) / 1000)) : null;
+  // En pause : on fige les secondes restantes. Sinon : décompte depuis endsAt.
+  const left = paused != null
+    ? Math.max(0, Math.floor(paused))
+    : endsAt ? Math.max(0, Math.floor((new Date(endsAt).getTime() - now) / 1000)) : null;
   const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
   return (
@@ -387,9 +369,25 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
   const { event } = state;
-  // Mode vitrine : dès qu'une affiche de cartes est visible, on cache le chrono et
-  // le logo (le score et les Légendes restent).
-  const vitrine = !!(state.cards?.visible?.[0] || state.cards?.visible?.[1]);
+  const cards = state.cards;
+  const mode = cards?.mode ?? "none";
+  // Ce que montre chaque cadre selon le mode. "split" = un deck par cadre ; "mixed" =
+  // les deux decks mêlés, à droite seulement (la gauche garde le chrono). La gauche
+  // ne montre des cartes qu'en "split".
+  const gauche = mode === "split" ? activesCadre(cards.lists?.[0] ?? [], cards.ignored?.[0] ?? [], cards.auto) : [];
+  const droite =
+    mode === "mixed"
+      ? entrelace(
+          activesCadre(cards.lists?.[0] ?? [], cards.ignored?.[0] ?? [], cards.auto),
+          activesCadre(cards.lists?.[1] ?? [], cards.ignored?.[1] ?? [], cards.auto),
+        )
+      : mode === "split"
+        ? activesCadre(cards.lists?.[1] ?? [], cards.ignored?.[1] ?? [], cards.auto)
+        : [];
+  // Le chrono, le logo et le titre vivent dans la colonne GAUCHE. On ne les cache
+  // donc qu'en mode "split", où le cadre GAUCHE est à l'écran (même vide). En "mixed"
+  // la gauche est libre, tout reste. Le score et les Légendes restent toujours.
+  const vitrine = mode === "split";
   // Version simple : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
   // webcam et veut quand même le score, les Légendes et la carte à l'écran.
   if (compact) return <OverlayCompact state={state} />;
@@ -404,10 +402,12 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
       {!vitrine && event.timerVisible !== false && (
         <img src="/stream/Chrono.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
       )}
-      {state.cards?.visible?.[0] && (
+      {/* Cadres liés au MODE, pas au nombre de cartes : on peut poser un cadre vide
+          (deck pas encore collé) puis y charger les cartes. */}
+      {mode === "split" && (
         <img src="/stream/cartes_gauche.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
       )}
-      {state.cards?.visible?.[1] && (
+      {(mode === "mixed" || mode === "split") && (
         <img src="/stream/cartes_droite.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
       )}
       <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
@@ -417,18 +417,35 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         format={state.format}
         footer={
           <>
+            {/* De haut en bas : titre du tournoi, logo, ronde, chrono. Le titre se pose
+                juste au-dessus du logo ; sans logo il descend dans la place laissée
+                libre pour ne pas flotter tout en haut avec du vide dessous. */}
+            {!vitrine && event.title && (
+              <div
+                className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center ${event.logoUrl ? "justify-end" : "justify-center"}`}
+                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 628 : 700, height: event.logoUrl ? 66 : 190 }}
+              >
+                {/* Gros titre sur une ou deux lignes : FitText montre TOUT le texte en
+                    réduisant si besoin, sans jamais couper ni « … », et sans dépasser
+                    deux lignes. Avec logo : ancré juste au-dessus, il grandit vers le haut. */}
+                <FitText chars={13} lines={2} className="text-2xl font-bold uppercase leading-[1.05] tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                  {event.title}
+                </FitText>
+              </div>
+            )}
             {/* z-20 : sans lui le logo passait sous le cadre du fond, donc invisible. */}
             {!vitrine && event.logoUrl && (
               <img
                 src={event.logoUrl}
                 alt=""
                 className="absolute z-20 object-contain"
-                style={{ left: SLOT.x.left, width: SLOT.width, top: 700, height: 220 }}
+                style={{ left: SLOT.x.left, width: SLOT.width, top: 696, height: 196 }}
               />
             )}
             {/* La ronde au-dessus, sur le fond bleu ; le chrono dans la case dorée,
-                en encre sombre puisque le fond est jaune. */}
-            {event.round && (
+                en encre sombre puisque le fond est jaune. Cachée en vitrine (deux
+                cadres) comme le reste de la colonne gauche. */}
+            {!vitrine && event.round && (
               <div
                 className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
                 style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
@@ -443,7 +460,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
                 className="absolute z-20"
                 style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
               >
-                <Timer endsAt={event.endsAt} />
+                <Timer endsAt={event.endsAt} paused={event.paused} />
               </div>
             )}
           </>
@@ -455,9 +472,10 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         format={state.format}
         footer={null}
       />
-      {/* Deux affiches de cartes, gauche et droite, au-dessus du cadre (z-20). */}
-      <CarteAffiche cards={state.cards} side={0} slot={SLOT.cardsLeft} />
-      <CarteAffiche cards={state.cards} side={1} slot={SLOT.cards} />
+      {/* Deux cadres, gauche et droite, au-dessus du décor (z-20). Le mode a déjà
+          rempli `gauche`/`droite` : un deck chacun, ou les deux mêlés à droite. */}
+      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
+      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
     </div>
   );
 }
@@ -507,7 +525,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           </div>
         </div>
       ))}
-      <CarteAffiche cards={state.cards} side={1} slot={{ right: 40, top: 300, width: 260, height: 364 }} />
+      {/* Pas d'affiche de cartes sur le compact : c'est la version minimale. */}
     </div>
   );
 }
