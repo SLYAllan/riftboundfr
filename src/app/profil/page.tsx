@@ -8,7 +8,7 @@ import { getBannerUrl } from "@/lib/banners";
 import { getBinders, getCollectionMap } from "@/lib/collection-server";
 import Link from "@/components/lien";
 import Image from "next/image";
-import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers, MonitorPlay } from "lucide-react";
+import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Layers } from "lucide-react";
 import { ProfileActions } from "./profile-actions";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import type { Metadata } from "next";
@@ -265,24 +265,6 @@ export default async function ProfilPage() {
         </div>
       </div>
 
-      {/* Habillage de stream */}
-      <Link
-        href="/profil/overlay"
-        className="card-hover mt-4 flex items-center gap-3 rounded-card border border-hairline bg-surface p-5"
-      >
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet to-arcane">
-          <MonitorPlay size={22} className="text-white" />
-        </div>
-        <div className="min-w-0 flex-1">
-          <h2 className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            {t("Habillage de stream")}
-          </h2>
-          <p className="text-sm text-ink-muted">
-            {t("Scores, Légendes et caméra affichés en direct dans OBS.")}
-          </p>
-        </div>
-        <ArrowRight size={18} className="shrink-0 text-ink-muted" />
-      </Link>
 
       {/* Top legends */}
       {topLegends.length > 0 && (

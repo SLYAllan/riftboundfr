@@ -4,6 +4,88 @@
 > Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
 > Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
+## Vendetta (S4) — corpus compétitif vérifié au 14 août 2026
+
+> Analyse produite par `scripts/analyze-vendetta-meta.ts` sur **982 decklists publiées, complètes et seedées**, réparties sur **9 contextes DB**. Les 549 sources partielles restantes sont conservées dans les rapports `*-rejected.json` et ne sont pas incluses. Cette section décrit les résultats observés ; elle ne constitue pas encore une tier list éditoriale.
+
+### Méthode et limites
+
+Le corpus comprend uniquement les decks `published` avec `setTag = Vendetta` et un `tournamentContext` non nul. Les placements sont lus depuis le champ DB `placement` ; le Top 8 correspond à un placement numérique inférieur ou égal à 8, et une victoire à la première place. Les decks ont été retenus par le pipeline d'intégrité Vendetta : 39 cartes principales, 1 champion, 12 runes, 3 champs de bataille et exactement 10 cartes de réserve.
+
+Les statistiques ne mesurent ni les résultats de rondes, ni les matchups, ni les cartes jouées. Elles ne permettent donc pas encore de déduire des cores ou des règles de construction. Les petits échantillons sont très instables : une seule place en Top 8 peut donner un taux élevé à une légende jouée quatre ou cinq fois. Les tournois n'ont pas tous le même nombre de decklists publiées, et Ottawa ne compte que 38 listes complètes sur 525 pages publiées. Aucune tier list ne doit être attribuée automatiquement depuis ces chiffres.
+
+### Field complet
+
+| Légende | Decks | Field | Top 8 | Conversion | Victoires | Tournois |
+|---|---:|---:|---:|---:|---:|---:|
+| Master Yi, Wuju Bladesman | 101 | 10,29 % | 14 | 13,86 % | 1 | 9 |
+| Kai'Sa, Daughter of the Void | 102 | 10,39 % | 9 | 8,82 % | 2 | 8 |
+| Kennen, Heart of the Tempest | 100 | 10,18 % | 9 | 9,00 % | 1 | 9 |
+| Irelia, Blade Dancer | 78 | 7,94 % | 6 | 7,69 % | 0 | 9 |
+| Draven, Glorious Executioner | 24 | 2,44 % | 5 | 20,83 % | 1 | 9 |
+| Diana, Scorn of the Moon | 46 | 4,68 % | 4 | 8,70 % | 2 | 8 |
+| Rek'Sai, Void Burrower | 54 | 5,50 % | 4 | 7,41 % | 0 | 9 |
+| Nasus, Curator of the Sands | 56 | 5,70 % | 3 | 5,36 % | 1 | 9 |
+| Ezreal, Prodigal Explorer | 17 | 1,73 % | 3 | 17,65 % | 0 | 8 |
+| Lillia, Bashful Bloom | 24 | 2,44 % | 3 | 12,50 % | 0 | 8 |
+| Azir, Emperor of the Sands | 25 | 2,55 % | 2 | 8,00 % | 0 | 9 |
+| Rengar, Pridestalker | 11 | 1,12 % | 1 | 9,09 % | 1 | 8 |
+| Volibear, Relentless Storm | 4 | 0,41 % | 1 | 25,00 % | 0 | 2 |
+| Sivir, Battle Mistress | 5 | 0,51 % | 1 | 20,00 % | 0 | 4 |
+| Lux, Lady of Luminosity | 8 | 0,81 % | 1 | 12,50 % | 0 | 6 |
+| Ambessa, Matriarch of War | 9 | 0,92 % | 1 | 11,11 % | 0 | 5 |
+| Vex, Gloomist | 13 | 1,32 % | 1 | 7,69 % | 0 | 5 |
+| Ornn, Fire Below the Mountain | 14 | 1,43 % | 1 | 7,14 % | 0 | 7 |
+| LeBlanc, Deceiver | 20 | 2,04 % | 1 | 5,00 % | 0 | 8 |
+| Viktor, Herald of the Arcane | 24 | 2,44 % | 1 | 4,17 % | 0 | 6 |
+| Fiora, Grand Duelist | 29 | 2,95 % | 1 | 3,45 % | 0 | 9 |
+| Jayce, Defender of Tomorrow | 49 | 4,99 % | 0 | 0,00 % | 0 | 9 |
+| Akali, Rogue Assassin | 43 | 4,38 % | 0 | 0,00 % | 0 | 9 |
+| Mel, Soul's Reflection | 22 | 2,24 % | 0 | 0,00 % | 0 | 8 |
+| Pyke, Bloodharbor Ripper | 16 | 1,63 % | 0 | 0,00 % | 0 | 8 |
+| Zed, Master of Shadows | 12 | 1,22 % | 0 | 0,00 % | 0 | 6 |
+| Kha'Zix, Voidreaver | 11 | 1,12 % | 0 | 0,00 % | 0 | 8 |
+| Jax, Grandmaster At Arms | 9 | 0,92 % | 0 | 0,00 % | 0 | 6 |
+| Rumble, Mechanized Menace | 7 | 0,71 % | 0 | 0,00 % | 0 | 6 |
+| Shen, Eye of Twilight | 7 | 0,71 % | 0 | 0,00 % | 0 | 6 |
+| Leona, Radiant Dawn | 6 | 0,61 % | 0 | 0,00 % | 0 | 3 |
+| Master Yi, Wuju Master | 6 | 0,61 % | 0 | 0,00 % | 0 | 4 |
+| Sett, The Boss | 5 | 0,51 % | 0 | 0,00 % | 0 | 3 |
+| Jhin, Virtuoso | 5 | 0,51 % | 0 | 0,00 % | 0 | 3 |
+| Annie, Dark Child | 3 | 0,31 % | 0 | 0,00 % | 0 | 3 |
+| Teemo, Swift Scout | 3 | 0,31 % | 0 | 0,00 % | 0 | 3 |
+| Vi, Piltover Enforcer | 3 | 0,31 % | 0 | 0,00 % | 0 | 2 |
+| Ivern, Green Father | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
+| Lucian, Purifier | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
+| Renekton, Butcher of the Sands | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
+| Darius, Hand of Noxus | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+| Jinx, Loose Cannon | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+| Renata Glasc, Chem-Baroness | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+| Yasuo, Unforgiven | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+| Ahri, Nine-Tailed Fox | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+
+Total : **982 decks, 72 places en Top 8 et 9 victoires réparties entre 7 légendes**. Les taux de field sont arrondis à deux décimales.
+
+### Top 8, conversion et victoires
+
+Le Top 8 est dominé en volume par **Master Yi, Wuju Bladesman** (14 Top 8), devant Kai'Sa et Kennen (9 chacun), puis Irelia (6). La meilleure conversion parmi les légendes avec au moins 20 decks est Draven (5 Top 8 sur 24, 20,83 %), devant Lillia (12,50 %) et Master Yi Bladesman (13,86 %). Ces taux ne constituent pas un classement de puissance sans contrôle du nombre de rondes, du niveau des adversaires et des matchups.
+
+### Résultats par tournoi
+
+| Contexte DB | Decks | Top 8 | Vainqueur |
+|---|---:|---:|---|
+| S4 Fuzhou City Challenge (2026-08-09) | 122 | 8 | Kai'Sa, Daughter of the Void |
+| S4 Hangzhou City Challenge (2026-08-09) | 118 | 8 | Diana, Scorn of the Moon |
+| S4 Guangzhou City Challenge (2026-08-09) | 121 | 8 | Nasus, Curator of the Sands |
+| S4 Chengdu City Challenge (2026-08-08) | 119 | 8 | Kennen, Heart of the Tempest |
+| S4 Beijing City Challenge (2026-08-08) | 123 | 8 | Diana, Scorn of the Moon |
+| S4 Shanghai City Challenge (2026-08-08) | 124 | 8 | Draven, Glorious Executioner |
+| S4 Shenzhen City Challenge (2026-08-08) | 118 | 8 | Kai'Sa, Daughter of the Void |
+| S4 Wuhan City Challenge (2026-08-08) | 99 | 8 | Master Yi, Wuju Bladesman |
+| Riftbound Showdown Ottawa (2026-08-08) | 38 | 8 | Rengar, Pridestalker |
+
+Les neuf contextes totalisent bien 982 decks et 72 places de Top 8. Les fiches Vendetta des nouvelles légendes (Kennen, Nasus, Ambessa, Jayce, Akali, Mel, Zed, Shen et Renekton) ne sont pas encore présentes dans `data/fiches/`. Elles ne sont pas complétées ici : les statistiques de présence et de résultat ne suffisent pas à établir leurs domaines, leurs cores ou leurs matchups.
+
 ## Juin 2026 (v7) — Analyse VOD compétitives (84 VOD, distillé)
 
 > Détail complet et matchups dans `data/video-insights/unleashed-vod-synthesis-2026-06.md`. Opinions de casters (Jibs, Pentastag, Exo…), reformulées FR.
@@ -103,6 +185,13 @@ Détail des casts inter-sets (matchups Spiritforged/Origins + tech) dans
 - **HUNT** : nouveau keyword Unleashed — gain d'XP en combat, déblocage de paliers
 
 ### Mots-clés Vendetta (règles du jeu FR du 16 juillet 2026, en vigueur le 24 juillet)
+
+**Intégrité des decklists Vendetta :** une liste exploitable possède 39 cartes dans
+le deck principal, 1 champion, 12 runes, 3 champs de bataille et exactement 10 cartes
+en réserve. Toute autre composition exclut le deck des statistiques, des seeds et
+des tier lists. Le corpus brut reste archivé pour audit ; aucune carte absente n'est
+reconstituée.
+
 - **AMPLIFICATION / AMPLIFIÉ / DÉSAMPLIFIER** (règles 827-828, 441-442) : compétence activée, surtout sur
   permanents et légendes. On paie le coût, la carte devient *amplifiée*. État binaire, pas de cumul : une
   carte déjà amplifiée ne peut pas l'être une 2ᵉ fois. Le texte marqué « Amplifié > ... » n'est actif que

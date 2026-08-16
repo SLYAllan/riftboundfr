@@ -117,6 +117,12 @@
 - **3 Battlefields** : choisis strategiquement
 - **10 cartes Side Deck** (8 avant Vendetta) : echanges en Bo3
 
+Pour les données Vendetta, une liste exploitable doit contenir **39 cartes dans le
+deck principal, 1 champion, 12 runes, 3 champs de bataille et exactement 10 cartes
+en réserve**. Toute autre composition est incomplète et doit être exclue en entier
+des imports, même si Riftdecks la publie ainsi. On conserve le Markdown brut comme
+preuve, sans compléter ni deviner les cartes manquantes.
+
 ### Ratio unites/sorts/gears (moyenne sur 7987 decks)
 
 | Archetype | Unites | Sorts | Gears | Total |

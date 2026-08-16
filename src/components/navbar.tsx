@@ -26,6 +26,7 @@ const outilsLinks = [
   { href: "/collection", label: "Ma collection" },
   { href: "/outils/compteur", label: "Compteur" },
   { href: "/outils/regles", label: "Chercher une règle" },
+  { href: "/profil/overlay", label: "Habillage de stream" },
 ];
 
 /**
@@ -97,7 +98,6 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
           <div ref={outilsRef} className="relative">
             <button
               onClick={() => setOutilsOpen(!outilsOpen)}
-              aria-haspopup="menu"
               aria-expanded={outilsOpen}
               className={cn(
                 "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
@@ -108,7 +108,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
               <ChevronDown size={14} className={cn("transition-transform", outilsOpen && "rotate-180")} />
             </button>
             {outilsOpen && (
-              <div role="menu" aria-label={t("Outils")} className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+              <div className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
                 {outilsLinks.map((link) => (
                   <Link
                     key={link.href}

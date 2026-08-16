@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useCallback, useLayoutEffect } from "react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
@@ -82,10 +82,6 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
     top = Math.max(8, Math.min(top, vh - h - 8));
     setPos({ top, left });
   }, [hovered, card]);
-
-  useEffect(() => {
-    if (cache.has(name) && !card) setCard(cache.get(name) ?? null);
-  }, [name, card]);
 
   // Lien SSR vers la fiche carte quand href est fourni (maillage interne) ; sinon
   // simple ancrage de survol. Le mot reste identique, le hover marche dans les deux cas.

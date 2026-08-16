@@ -292,7 +292,7 @@ function buildBestOf(
   for (const b of blocks) {
     if (b.type === "decklist") {
       phase = "decks";
-      let desc = pending
+      const desc = pending
         .filter((t): t is Extract<ArticleBlock, { type: "text" }> => t.type === "text" && !isTierHeading(t.content))
         .map((t) => t.content)
         .join("\n\n")

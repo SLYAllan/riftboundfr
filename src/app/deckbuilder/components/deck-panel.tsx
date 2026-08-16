@@ -98,8 +98,8 @@ function DeckCardTile({
         {entry.quantity}
       </span>
 
-      {/* Contrôles en bas de vignette, au survol (l'art reste visible) */}
-      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1 opacity-0 translate-y-1 pointer-events-none transition duration-150 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+      {/* Ces actions doivent rester utilisables sur écran tactile, où le survol n'existe pas. */}
+      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1">
         {onQtyChange && (
           <>
             <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label={t("Retirer une copie")}>
@@ -147,7 +147,7 @@ function LegendTile({ entry, onRemove, onHover, onLeave }: {
       )}
       <button
         onClick={onRemove}
-        className="absolute top-1.5 right-1.5 z-10 rounded-full bg-canvas/85 p-1.5 text-ink-muted opacity-0 shadow transition-opacity hover:text-error group-hover:opacity-100"
+        className="absolute top-1.5 right-1.5 z-10 rounded-full bg-canvas/85 p-1.5 text-ink-muted shadow transition-colors hover:text-error"
         aria-label={t("Retirer la légende")}
       >
         <Trash2 size={13} />

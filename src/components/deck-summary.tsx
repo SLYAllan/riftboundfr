@@ -26,15 +26,13 @@ function DonutChart({
   const cx = size / 2;
   const cy = size / 2;
 
-  let accumulated = 0;
-
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="shrink-0">
       {data.map((d, i) => {
         const pct = d.value / total;
         const dashLength = pct * circumference;
+        const accumulated = data.slice(0, i).reduce((sum, item) => sum + item.value / total, 0);
         const dashOffset = -accumulated * circumference + circumference * 0.25;
-        accumulated += pct;
 
         return (
           <circle

@@ -47,7 +47,7 @@ export function DeckFilters({ tab, legends, tournaments }: DeckFiltersProps) {
         <select aria-label="Toutes les légendes"
           defaultValue={sp.get("legend") ?? ""}
           onChange={(e) => navigate({ legend: e.target.value })}
-          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
+          className="min-w-0 max-w-full rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
         >
           <option value="">Toutes les légendes</option>
           {legends.map((l) => (
@@ -61,7 +61,7 @@ export function DeckFilters({ tab, legends, tournaments }: DeckFiltersProps) {
         <select aria-label="Tous les tournois"
           defaultValue={sp.get("tournament") ?? ""}
           onChange={(e) => navigate({ tournament: e.target.value })}
-          className="rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
+          className="min-w-0 max-w-full rounded-lg border border-hairline bg-surface px-3 py-1.5 text-sm text-ink focus:border-arcane"
         >
           <option value="">Tous les tournois</option>
           {tournaments.map((t) => (

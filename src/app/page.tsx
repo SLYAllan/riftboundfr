@@ -111,6 +111,12 @@ const guides = [
     description: "Courbe d'énergie, ratios et synergies de domaines.",
   },
   {
+    href: "/guides/meta",
+    icon: Trophy,
+    title: "Méta & Tier List",
+    description: "Résultats de tournois, tendances et lecture du méta.",
+  },
+  {
     href: "/guides/domaines",
     icon: Shield,
     title: "Les 6 Domaines",

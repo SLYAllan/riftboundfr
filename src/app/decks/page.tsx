@@ -18,6 +18,8 @@ import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { lireFiltresDecks, listerDecks } from "@/lib/deck-listing";
+import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
   title: { absolute: "Decks Riftbound en français - decklists de tournois et guides" },
@@ -42,11 +44,7 @@ interface PageProps {
 // Classes littérales : Tailwind ne génère que ce qu'il voit écrit en toutes lettres,
 // une classe construite (`bg-tier-${x}`) ne sort jamais.
 const TIER_BG: Record<string, string> = {
-  S: "bg-tier-s",
-  A: "bg-tier-a",
-  B: "bg-tier-b",
-  C: "bg-tier-c",
-  D: "bg-tier-d",
+  S: "bg-tier-s", A: "bg-tier-a", B: "bg-tier-b", C: "bg-tier-c", D: "bg-tier-d",
 };
 
 const CATEGORIES = [
@@ -341,111 +339,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 
-  const where: Record<string, unknown> = { published: true };
-  // /decks ne montre jamais les milliers de decklists brutes d'un tournoi : elles
-  // vivent sur la page du tournoi (/tournois/[slug]). Ici, uniquement les best-of
-  // (un deck par Légende), les decks avec guide et les decks communautaires. Le
-  // filtre par tournoi sélectionne donc toujours des best-of.
-  if (cat === "guide") {
-    where.guide = { not: null };
-  } else if (cat === "bestof") {
-    where.featured = true;
-    if (tournamentFilter) where.tournamentContext = tournamentFilter;
-  } else {
-    if (tournamentFilter) {
-      where.featured = true;
-      where.tournamentContext = tournamentFilter;
-    } else {
-      where.OR = [
-        { tournamentContext: null },
-        { featured: true },
-      ];
-    }
-  }
-  if (legendFilter) where.legendName = { contains: legendFilter, mode: "insensitive" };
-  // Le filtre par set part dans la requête : filtré après le take(200), les sets
-  // anciens (Origins) ne remontaient jamais et la page affichait 0 deck.
-  if (setFilter) where.setTag = setFilter;
-  // Recherche texte : titre, Légende, joueur, tournoi et NOM DE CARTE. Passe par AND
-  // pour ne pas écraser le OR posé plus haut par les catégories.
-  if (search) {
-    const like = { contains: search, mode: "insensitive" as const };
-    where.AND = [
-      {
-        OR: [
-          { title: like },
-          { legendName: like },
-          { playerName: like },
-          { tournamentContext: like },
-          { cards: { some: { card: { name: like } } } },
-        ],
-      },
-    ];
-  }
-
-  const [allDecks, legends] = await Promise.all([
-    prisma.deck.findMany({
-      where,
-      orderBy: { createdAt: "desc" },
-      take: 200,
-      select: {
-        id: true, slug: true, title: true, legendName: true, legendId: true,
-        playerName: true, authorName: true, placement: true, record: true,
-        tournamentContext: true, tournamentTier: true, featured: true, setTag: true,
-        sourceUrl: true, guide: true, createdAt: true, description: true, format: true, likes: true,
-        sourceArticle: { select: { slug: true, title: true } },
-      },
-    }),
+  const filtres = lireFiltresDecks(params);
+  const [lotInitial, legends, sessionUser] = await Promise.all([
+    listerDecks(filtres),
     prisma.deck.findMany({
       where: { published: true },
       select: { legendName: true },
       distinct: ["legendName"],
       orderBy: { legendName: "asc" },
     }),
+    getUserFromSession(),
   ]);
 
-  let decks = allDecks;
-
-  if (sortParam === "popular") {
-    decks.sort((a, b) => (b.likes ?? 0) - (a.likes ?? 0) || (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0));
-  } else {
-    const TIER_ORDER: Record<string, number> = { S: 0, A: 1, B: 2, C: 3, D: 4 };
-    decks.sort((a, b) => {
-      const ta = a.tournamentTier ? (TIER_ORDER[a.tournamentTier] ?? 5) : 5;
-      const tb = b.tournamentTier ? (TIER_ORDER[b.tournamentTier] ?? 5) : 5;
-      if (ta !== tb) return ta - tb;
-      return (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0);
-    });
-  }
-
-  // Couverture collection : pour l'utilisateur connecté, calcule possédées/requises par deck
-  // (genre 53/56). Le filtre "owned=1" ne garde que les decks 100% jouables.
-  const ownedOnly = params.owned === "1";
-  const sessionUser = await getUserFromSession();
-  const coverageByDeck = new Map<string, { owned: number; required: number; missing: number }>();
-  if (sessionUser && decks.length) {
-    const owned = await getOwnedByName(sessionUser.id);
-    const ids = decks.map((d) => d.id);
-    const dcs = await prisma.deckCard.findMany({
-      where: { deckId: { in: ids } },
-      select: { deckId: true, quantity: true, section: true, card: { select: { id: true, name: true, cleanName: true } } },
-    });
-    const byDeck = new Map<string, DeckCardLike[]>();
-    for (const dc of dcs) {
-      const arr = byDeck.get(dc.deckId) ?? [];
-      arr.push({ cardId: dc.card.id, name: dc.card.name, section: dc.section, cleanName: dc.card.cleanName, quantity: dc.quantity });
-      byDeck.set(dc.deckId, arr);
-    }
-    for (const d of decks) {
-      const cards = byDeck.get(d.id);
-      if (cards && cards.length > 0) {
-        const t = computeDeckCoverage(owned, cards).totals;
-        coverageByDeck.set(d.id, { owned: t.owned, required: t.required, missing: t.missing });
-      }
-    }
-    if (ownedOnly) decks = decks.filter((d) => coverageByDeck.get(d.id)?.missing === 0);
-  }
-
+  const ownedOnly = filtres.owned;
+  const decks = lotInitial.decks;
+  const coverageByDeck = new Map(decks.map((deck) => [deck.id, deck.coverage]));
   const legendNames = legends.map((l) => l.legendName);
 
   return (
@@ -609,16 +517,17 @@ export default async function DecksPage({ searchParams }: PageProps) {
       </div>
 
       <div className="mt-4 text-sm text-ink-muted">
-        {decks.length} deck{decks.length !== 1 ? "s" : ""}
+        {lotInitial.total} deck{lotInitial.total !== 1 ? "s" : ""}
         {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
         {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>
 
-      {decks.length === 0 ? (
+      {lotInitial.total === 0 ? (
         <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
       ) : (
+        <>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {decks.map((deck) => {
             const bannerUrl = getBannerUrl(deck.legendName);
@@ -723,6 +632,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
             );
           })}
         </div>
+        <DecksProgressifs initial={{ ...lotInitial, decks: [] }} filtres={filtres} />
+        </>
       )}
     </div>
   );

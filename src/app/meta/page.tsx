@@ -2,74 +2,49 @@
 export const dynamic = "force-dynamic";
 
 import { unstable_cache } from "next/cache";
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
-import { formatDate, displayLegendName } from "@/lib/utils";
+import { displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
-import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import Link from "@/components/lien";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
-// Cache RUNTIME (pas build) : les decks publiés ne changent qu'aux seeds → 5 min suffit.
-// Invalidable via revalidateTag("meta").
-//
-// On agrège DANS la fonction cachée. La version précédente mettait en cache les
-// ~21 000 lignes brutes, soit 3,9 Mo : au-delà de 2 Mo Next refuse d'écrire et lève
-// un unhandledRejection, donc le cache ne servait jamais et la page rejouait toute
-// la requête à chaque visite. L'agrégat fait quelques kilo-octets.
 const getMetaData = unstable_cache(
   async () => {
-    const [decks, tierList] = await Promise.all([
-      prisma.deck.findMany({
-        where: { published: true },
-        select: { legendName: true, tournamentContext: true, format: true },
+    const [groupes, tierList] = await Promise.all([
+      prisma.deck.groupBy({
+        by: ["legendName", "tournamentContext", "setTag"],
+        where: { published: true, tournamentContext: { not: null } },
+        _count: { _all: true },
       }),
-      prisma.tierList.findFirst({ where: { current: true, published: true }, include: { entries: true } }),
+      prisma.tierList.findFirst({
+        where: { current: true, published: true },
+        select: { updatedAt: true, setContext: true },
+      }),
     ]);
 
-    const groupes = new Map<string, { count: number; tournaments: Set<string>; formats: Set<string> }>();
-    for (const d of decks) {
-      let g = groupes.get(d.legendName);
-      if (!g) groupes.set(d.legendName, (g = { count: 0, tournaments: new Set(), formats: new Set() }));
-      g.count++;
-      if (d.tournamentContext) g.tournaments.add(d.tournamentContext);
-      if (d.format) g.formats.add(d.format);
-    }
-
     return {
-      totalDecks: decks.length,
-      legendes: [...groupes].map(([legendName, g]) => ({
-        legendName,
-        count: g.count,
-        tournaments: [...g.tournaments],
-        formats: [...g.formats],
+      tranches: groupes.map((groupe) => ({
+        legendName: groupe.legendName,
+        tournament: groupe.tournamentContext!,
+        set: groupe.setTag,
+        count: groupe._count._all,
       })),
-      allTournaments: [...new Set(decks.map((d) => d.tournamentContext).filter((t): t is string => !!t))].sort(),
-      allFormats: [...new Set(decks.map((d) => d.format).filter(Boolean))].sort(),
       tierList,
     };
   },
-  ["meta-snapshot-v2"],
+  ["meta-snapshot-v3"],
   { revalidate: 300, tags: ["meta"] },
 );
 
 const metadata: Metadata = {
-  title: "Meta Snapshot",
+  title: { absolute: "Méta Riftbound Vendetta - Popularité des Légendes en tournoi" },
   description:
-    "Aperçu du métagame Riftbound : légendes les plus jouées en tournoi. Données basées sur les decks publiés.",
+    "Analyse du métagame Riftbound par set et tournoi : popularité réelle des Légendes, recalculée sur les decklists complètes publiées.",
   alternates: { canonical: "/meta" },
 };
-
-interface LegendStats {
-  legendName: string;
-  shortName: string;
-  iconUrl: string | null;
-  deckCount: number;
-  popularity: number;
-  tier: string | null;
-  tierComment: string | null;
-  tournaments: string[];
-  formats: string[];
-}
 
 export default async function MetaSnapshotPage() {
   const t = await tr();
@@ -78,93 +53,55 @@ export default async function MetaSnapshotPage() {
   try {
     data = await getMetaData();
   } catch {
-    data = { totalDecks: 0, legendes: [], allTournaments: [], allFormats: [], tierList: null };
+    data = { tranches: [], tierList: null };
   }
-  const { totalDecks, legendes, allTournaments, allFormats, tierList: currentTierList } = data;
 
-  if (totalDecks === 0) {
+  if (data.tranches.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
-        <h1
-          className="text-4xl font-bold"
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          {t("Aperçu du méta")}
-        </h1>
-        <p className="mt-4 text-ink-secondary">
-          {t("Aucune donnée disponible pour le moment.")}
-        </p>
+        <h1 className="text-4xl font-bold font-display">{t("Méta Riftbound")}</h1>
+        <p className="mt-4 text-ink-secondary">{t("Aucune donnée disponible pour le moment.")}</p>
       </div>
     );
   }
 
-  // Build tier lookup from current tier list
-  const tierMap = new Map<
-    string,
-    { tier: string; comment: string | null }
-  >();
-  if (currentTierList) {
-    for (const entry of currentTierList.entries) {
-      tierMap.set(entry.legendName, {
-        tier: entry.tier,
-        comment: entry.comment,
-      });
-    }
-  }
-
-  // Tournois, formats et regroupement par légende viennent déjà agrégés du cache.
-
-  // Build stats sorted by popularity
-  const legendStats: LegendStats[] = legendes
-    .map((l) => {
-      const tierInfo = tierMap.get(l.legendName);
-      return {
-        legendName: l.legendName,
-        shortName: displayLegendName(l.legendName),
-        iconUrl: getLegendIconUrl(l.legendName),
-        deckCount: l.count,
-        popularity: Math.round((l.count / totalDecks) * 1000) / 10,
-        tier: tierInfo?.tier ?? null,
-        tierComment: tierInfo?.comment ?? null,
-        tournaments: l.tournaments,
-        formats: l.formats,
-      };
-    })
-    .sort((a, b) => b.deckCount - a.deckCount);
-
-  // Date affichée : celle de la tier list courante. On ne charge plus createdAt sur
-  // les 21 000 decks juste pour prendre le maximum.
-  const latestDate = currentTierList?.updatedAt ?? new Date();
+  const noms = [...new Set(data.tranches.map((tranche) => tranche.legendName))];
+  const legendes = noms.map((legendName) => ({
+    legendName,
+    shortName: displayLegendName(legendName),
+    iconUrl: getLegendIconUrl(legendName),
+  }));
+  const sets = [...new Set(data.tranches.map((tranche) => tranche.set))]
+    .filter(Boolean)
+    .sort((a, b) => (a === "Vendetta" ? -1 : b === "Vendetta" ? 1 : a.localeCompare(b)));
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <div className="text-center">
-        <h1
-          className="text-4xl font-bold"
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
+      <Breadcrumbs items={[{ name: t("Méta"), href: "/meta" }]} className="mb-6" />
+
+      <header className="grid gap-5 border-b border-hairline pb-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-arcane">{t("Données de tournoi")}</p>
+          <h1 className="mt-2 text-balance text-3xl font-bold font-display sm:text-5xl">{t("Le méta Riftbound, tournoi par tournoi")}</h1>
+          <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-ink-secondary">
+            {t("Comparez la présence des Légendes par set ou par événement. Chaque classement est recalculé sur la sélection affichée.")}
+          </p>
+        </div>
+        <Link
+          href="/tier-list"
+          className="inline-flex min-h-11 items-center justify-center rounded-lg border border-hairline bg-surface px-4 text-sm font-semibold text-ink transition-colors hover:bg-surface-raised"
         >
-          {t("Aperçu du méta")}
-        </h1>
-        <p className="mt-2 text-ink-secondary">
-          {t("Popularité des légendes basée sur les decks de tournois publiés.")}
-        </p>
-        <p className="mt-1 text-sm text-ink-muted">
-          Dernière mise à jour : {formatDate(latestDate)} - {totalDecks} decks
-          analysés
-        </p>
-      </div>
+          {t("Voir la tier list")}
+        </Link>
+      </header>
 
-      <MetaFilters
-        legendStats={legendStats}
-        allTournaments={allTournaments}
-        allFormats={allFormats}
-      />
+      <MetaFilters tranches={data.tranches} legendes={legendes} sets={sets} />
 
-      <div className="mt-8 rounded-lg border border-hairline bg-surface p-6 text-center">
-        <p className="text-sm text-ink-muted">
-          {t("Ces données reflètent uniquement le nombre de decks publiés par légende. Elles ne constituent pas des statistiques de winrate ou de performance.")}
+      <footer className="mt-8 border-t border-hairline pt-5">
+        <p className="max-w-4xl text-sm leading-relaxed text-ink-muted">
+          {t("Ces chiffres mesurent la représentation dans les decklists publiées, pas le taux de victoire. Les listes incomplètes ne sont pas comptabilisées.")}
         </p>
-      </div>
+      </footer>
     </div>
   );
 }

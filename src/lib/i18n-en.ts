@@ -241,6 +241,7 @@ export const EN: Record<string, string> = {
   "Fury, Calm, Mind, Body, Chaos, Order : philosophies, forces et légendes associées à chaque domaine.":
     "Fury, Calm, Mind, Body, Chaos, Order: the thinking, the strengths and the Legends tied to each domain.",
   "Méta & Tier List": "Meta & tier list",
+  "Résultats de tournois, tendances et lecture du méta.": "Tournament results, trends and meta analysis.",
   "Le méta compétitif set par set, les meilleures légendes et les archétypes. Basé sur 88 tournois analysés.":
     "The competitive meta set by set, the best Legends and the archetypes. Based on 88 tournaments.",
   "Tous les termes du jeu expliqués en français : mots-clés, mécaniques, jargon TCG.":
@@ -735,6 +736,24 @@ export const EN: Record<string, string> = {
 
   // — Passe automatique : textes des guides, du deckbuilder, de la collection —
   "Aperçu du méta": "Meta at a glance",
+  "Méta Riftbound": "Riftbound meta",
+
+  "Données de tournoi": "Tournament data",
+  "Le méta Riftbound, tournoi par tournoi": "The Riftbound meta, tournament by tournament",
+  "Comparez la présence des Légendes par set ou par événement. Chaque classement est recalculé sur la sélection affichée.":
+    "Compare Legend representation by set or event. Every ranking is recalculated for the current selection.",
+  "Voir la tier list": "View the tier list",
+  "Périmètre analysé": "Analysis scope",
+  "decklists complètes": "complete decklists",
+  "tournois": "tournaments",
+  "Légendes représentées": "Legends represented",
+  "Filtres du méta": "Meta filters",
+
+
+  "Classement recalculé selon les filtres actifs.": "Ranking recalculated from the active filters.",
+  "decklists": "decklists",
+  "Ces chiffres mesurent la représentation dans les decklists publiées, pas le taux de victoire. Les listes incomplètes ne sont pas comptabilisées.":
+    "These figures measure representation in published decklists, not win rate. Incomplete lists are not counted.",
   "Aucun deck sauvegardé": "No saved decks",
   "Aucune carte trouvée": "No card found",
   "Aucune donnée disponible pour le moment.": "No data available yet.",

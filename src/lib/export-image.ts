@@ -261,7 +261,7 @@ export async function generateDeckImage(params: {
   }
 
   const gridX = PAD + LEFT_W + 16;
-  let gy = bodyY;
+  const gy = bodyY;
   for (let i = 0; i < mainCards.length; i++) {
     const col = i % GRID_COLS;
     const row = Math.floor(i / GRID_COLS);

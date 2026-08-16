@@ -20,7 +20,8 @@ export function Analytics() {
   const [consent, setConsent] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setConsent(getConsent());
+    const consentTimer = setTimeout(() => setConsent(getConsent()), 0);
+    return () => clearTimeout(consentTimer);
   }, []);
 
   if (!GA_ID || consent !== true) return null;
@@ -43,7 +44,10 @@ export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (getConsent() === null) setVisible(true);
+    const bannerTimer = setTimeout(() => {
+      if (getConsent() === null) setVisible(true);
+    }, 0);
+    return () => clearTimeout(bannerTimer);
   }, []);
 
   if (!visible) return null;

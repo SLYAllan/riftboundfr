@@ -198,7 +198,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
     const freeText = parsed.freeText.toLowerCase();
     const seenRuneNames = new Set<string>();
 
-    let result = tabCards.filter((c) => {
+    const result = tabCards.filter((c) => {
       if (freeText && !c.name.toLowerCase().includes(freeText) && !c.textPlain?.toLowerCase().includes(freeText)) return false;
 
       for (const token of parsed.tokens) {
