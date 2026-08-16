@@ -79,6 +79,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 **Réflexes :**
 - **Coupler le nouveau à l'ancien** : recouper toute donnée importée contre les sources ci-dessus AVANT de la figer ; ne jamais traiter une info isolément.
 - **Agents/Workflow par vagues de 3-4 max** (jamais plus → rate-limit API). Pas 2 gros workflows en même temps.
+- **Déléguer par défaut** : le gros du travail (lecture, recherche, scrape, parse, édition mécanique) part à une vague de workers `pi` sur DeepSeek — voir le skill `delegate-wave`. Tu ne fais plus que découper, relire chaque diff et trancher. Ce qui reste chez toi : le jugement, l'intégrité des decklists, la base de prod, la sécurité. La porte reste `npm run verify`, lancée par toi.
 - Contenu **site** rendu : **pas de tiret cadratin (—)**, terminologie FR officielle. Docs internes (META/DECKBUILDING/video-insights) : em-dash toléré.
 
 ---
@@ -345,10 +346,10 @@ chacun, et comment se passer le travail sans le refaire.
 | Réglages Codex, garde-fous, sous-agents | `.codex/` — voir son `README.md` | Codex, si le dépôt est de confiance |
 | Réglages Claude Code | `.claude/settings.json` | Claude Code |
 
-Six skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
-`decklists`, `scraper-tournoi`, `outils-existants`. Ils **renvoient** à ce fichier
-au lieu de le recopier : deux copies de la même règle finissent toujours par
-diverger.
+Sept skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
+`decklists`, `scraper-tournoi`, `outils-existants`, `delegate-wave`. Ils
+**renvoient** à ce fichier au lieu de le recopier : deux copies de la même règle
+finissent toujours par diverger.
 
 Les six règles d'écriture française ne sont donc plus réservées à Claude Code : le
 skill `reecrire` les porte des deux côtés. Une tâche qui produit du texte français
