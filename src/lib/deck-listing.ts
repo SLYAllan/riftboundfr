@@ -52,9 +52,12 @@ const PLAFOND_SCAN_OWNED = 300;
 
 export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
   const where = construireWhere(filtres);
+  // "Récents" doit trier par date, pas par tier : sinon les tournois tier S
+  // (anciens Regional) enterrent les nouveaux City Challenge et l'onglet ne fait
+  // rien de visible. Le tier ne départage plus qu'à date égale (même seed).
   const orderBy: Prisma.DeckOrderByWithRelationInput[] = filtres.sort === "popular"
     ? [{ likes: "desc" }, { createdAt: "desc" }]
-    : [{ tournamentTier: "asc" }, { createdAt: "desc" }];
+    : [{ createdAt: "desc" }, { tournamentTier: "asc" }];
   const utilisateur = await getUserFromSession();
 
   const [bruts, totalSansCollection] = await Promise.all([
