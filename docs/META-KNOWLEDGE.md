@@ -4,9 +4,9 @@
 > Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
 > Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
-## Vendetta (S4) — corpus compétitif vérifié au 14 août 2026
+## Vendetta (S4) — corpus compétitif vérifié au 16 août 2026
 
-> Analyse produite par `scripts/analyze-vendetta-meta.ts` sur **982 decklists publiées, complètes et seedées**, réparties sur **9 contextes DB**. Les 549 sources partielles restantes sont conservées dans les rapports `*-rejected.json` et ne sont pas incluses. Cette section décrit les résultats observés ; elle ne constitue pas encore une tier list éditoriale.
+> Analyse produite par `scripts/analyze-vendetta-meta.ts` sur **1230 decklists publiées, complètes et seedées**, réparties sur **11 contextes DB** (ajout des City Challenge de Nanjing et Beijing du 15 août, 124 decklists complètes chacun). Les sources partielles restantes sont conservées dans les rapports `*-rejected.json` et ne sont pas incluses. Cette section décrit les résultats observés ; elle ne constitue pas encore une tier list éditoriale.
 
 ### Méthode et limites
 
@@ -18,57 +18,58 @@ Les statistiques ne mesurent ni les résultats de rondes, ni les matchups, ni le
 
 | Légende | Decks | Field | Top 8 | Conversion | Victoires | Tournois |
 |---|---:|---:|---:|---:|---:|---:|
-| Master Yi, Wuju Bladesman | 101 | 10,29 % | 14 | 13,86 % | 1 | 9 |
-| Kai'Sa, Daughter of the Void | 102 | 10,39 % | 9 | 8,82 % | 2 | 8 |
-| Kennen, Heart of the Tempest | 100 | 10,18 % | 9 | 9,00 % | 1 | 9 |
-| Irelia, Blade Dancer | 78 | 7,94 % | 6 | 7,69 % | 0 | 9 |
-| Draven, Glorious Executioner | 24 | 2,44 % | 5 | 20,83 % | 1 | 9 |
-| Diana, Scorn of the Moon | 46 | 4,68 % | 4 | 8,70 % | 2 | 8 |
-| Rek'Sai, Void Burrower | 54 | 5,50 % | 4 | 7,41 % | 0 | 9 |
-| Nasus, Curator of the Sands | 56 | 5,70 % | 3 | 5,36 % | 1 | 9 |
-| Ezreal, Prodigal Explorer | 17 | 1,73 % | 3 | 17,65 % | 0 | 8 |
-| Lillia, Bashful Bloom | 24 | 2,44 % | 3 | 12,50 % | 0 | 8 |
-| Azir, Emperor of the Sands | 25 | 2,55 % | 2 | 8,00 % | 0 | 9 |
-| Rengar, Pridestalker | 11 | 1,12 % | 1 | 9,09 % | 1 | 8 |
-| Volibear, Relentless Storm | 4 | 0,41 % | 1 | 25,00 % | 0 | 2 |
-| Sivir, Battle Mistress | 5 | 0,51 % | 1 | 20,00 % | 0 | 4 |
-| Lux, Lady of Luminosity | 8 | 0,81 % | 1 | 12,50 % | 0 | 6 |
-| Ambessa, Matriarch of War | 9 | 0,92 % | 1 | 11,11 % | 0 | 5 |
-| Vex, Gloomist | 13 | 1,32 % | 1 | 7,69 % | 0 | 5 |
-| Ornn, Fire Below the Mountain | 14 | 1,43 % | 1 | 7,14 % | 0 | 7 |
-| LeBlanc, Deceiver | 20 | 2,04 % | 1 | 5,00 % | 0 | 8 |
-| Viktor, Herald of the Arcane | 24 | 2,44 % | 1 | 4,17 % | 0 | 6 |
-| Fiora, Grand Duelist | 29 | 2,95 % | 1 | 3,45 % | 0 | 9 |
-| Jayce, Defender of Tomorrow | 49 | 4,99 % | 0 | 0,00 % | 0 | 9 |
-| Akali, Rogue Assassin | 43 | 4,38 % | 0 | 0,00 % | 0 | 9 |
-| Mel, Soul's Reflection | 22 | 2,24 % | 0 | 0,00 % | 0 | 8 |
-| Pyke, Bloodharbor Ripper | 16 | 1,63 % | 0 | 0,00 % | 0 | 8 |
-| Zed, Master of Shadows | 12 | 1,22 % | 0 | 0,00 % | 0 | 6 |
-| Kha'Zix, Voidreaver | 11 | 1,12 % | 0 | 0,00 % | 0 | 8 |
-| Jax, Grandmaster At Arms | 9 | 0,92 % | 0 | 0,00 % | 0 | 6 |
-| Rumble, Mechanized Menace | 7 | 0,71 % | 0 | 0,00 % | 0 | 6 |
-| Shen, Eye of Twilight | 7 | 0,71 % | 0 | 0,00 % | 0 | 6 |
-| Leona, Radiant Dawn | 6 | 0,61 % | 0 | 0,00 % | 0 | 3 |
-| Master Yi, Wuju Master | 6 | 0,61 % | 0 | 0,00 % | 0 | 4 |
-| Sett, The Boss | 5 | 0,51 % | 0 | 0,00 % | 0 | 3 |
-| Jhin, Virtuoso | 5 | 0,51 % | 0 | 0,00 % | 0 | 3 |
-| Annie, Dark Child | 3 | 0,31 % | 0 | 0,00 % | 0 | 3 |
-| Teemo, Swift Scout | 3 | 0,31 % | 0 | 0,00 % | 0 | 3 |
-| Vi, Piltover Enforcer | 3 | 0,31 % | 0 | 0,00 % | 0 | 2 |
-| Ivern, Green Father | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
-| Lucian, Purifier | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
-| Renekton, Butcher of the Sands | 2 | 0,20 % | 0 | 0,00 % | 0 | 2 |
-| Darius, Hand of Noxus | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
-| Jinx, Loose Cannon | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
-| Renata Glasc, Chem-Baroness | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
-| Yasuo, Unforgiven | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
-| Ahri, Nine-Tailed Fox | 1 | 0,10 % | 0 | 0,00 % | 0 | 1 |
+| Kai'Sa, Daughter of the Void | 133 | 10,81 % | 11 | 8,27 % | 2 | 10 |
+| Master Yi, Wuju Bladesman | 126 | 10,24 % | 18 | 14,29 % | 2 | 11 |
+| Kennen, Heart of the Tempest | 125 | 10,16 % | 14 | 11,20 % | 1 | 11 |
+| Irelia, Blade Dancer | 97 | 7,89 % | 6 | 6,19 % | 0 | 11 |
+| Nasus, Curator of the Sands | 68 | 5,53 % | 3 | 4,41 % | 1 | 11 |
+| Rek'sai, Void Burrower | 60 | 4,88 % | 6 | 10,00 % | 0 | 11 |
+| Diana, Scorn of the Moon | 59 | 4,80 % | 4 | 6,78 % | 2 | 10 |
+| Jayce, Defender of Tomorrow | 57 | 4,63 % | 1 | 1,75 % | 0 | 11 |
+| Akali, Rogue Assassin | 57 | 4,63 % | 0 | 0,00 % | 0 | 11 |
+| Draven, Glorious Executioner | 36 | 2,93 % | 5 | 13,89 % | 1 | 11 |
+| Fiora, Grand Duelist | 35 | 2,85 % | 3 | 8,57 % | 1 | 11 |
+| Viktor, Herald of the Arcane | 35 | 2,85 % | 1 | 2,86 % | 0 | 8 |
+| Lillia, Bashful Bloom | 30 | 2,44 % | 3 | 10,00 % | 0 | 10 |
+| Azir, Emperor of the Sands | 30 | 2,44 % | 2 | 6,67 % | 0 | 11 |
+| Mel, Soul's Reflection | 28 | 2,28 % | 0 | 0,00 % | 0 | 10 |
+| Ezreal, Prodigal Explorer | 25 | 2,03 % | 3 | 12,00 % | 0 | 10 |
+| LeBlanc, Deceiver | 23 | 1,87 % | 1 | 4,35 % | 0 | 10 |
+| Ornn, Fire Below the Mountain | 20 | 1,63 % | 1 | 5,00 % | 0 | 9 |
+| Pyke, Bloodharbor Ripper | 19 | 1,54 % | 0 | 0,00 % | 0 | 10 |
+| Rengar, Pridestalker | 17 | 1,38 % | 1 | 5,88 % | 1 | 10 |
+| Vex, Gloomist | 16 | 1,30 % | 1 | 6,25 % | 0 | 7 |
+| Zed, Master of Shadows | 15 | 1,22 % | 0 | 0,00 % | 0 | 8 |
+| Kha'Zix, Voidreaver | 13 | 1,06 % | 0 | 0,00 % | 0 | 10 |
+| Ambessa, Matriarch of War | 10 | 0,81 % | 1 | 10,00 % | 0 | 6 |
+| Jax, Grandmaster At Arms | 10 | 0,81 % | 0 | 0,00 % | 0 | 7 |
+| Lux, Lady of Luminosity | 8 | 0,65 % | 1 | 12,50 % | 0 | 6 |
+| Shen, Eye of Twilight | 8 | 0,65 % | 0 | 0,00 % | 0 | 7 |
+| Rumble, Mechanized Menace | 7 | 0,57 % | 0 | 0,00 % | 0 | 6 |
+| Sivir, Battle Mistress | 6 | 0,49 % | 1 | 16,67 % | 0 | 5 |
+| Leona, Radiant Dawn | 6 | 0,49 % | 0 | 0,00 % | 0 | 3 |
+| Master Yi, Wuju Master | 6 | 0,49 % | 0 | 0,00 % | 0 | 4 |
+| Jhin, Virtuoso | 6 | 0,49 % | 0 | 0,00 % | 0 | 4 |
+| Sett, The Boss | 5 | 0,41 % | 0 | 0,00 % | 0 | 3 |
+| Volibear, Relentless Storm | 4 | 0,33 % | 1 | 25,00 % | 0 | 2 |
+| Annie, Dark Child | 4 | 0,33 % | 0 | 0,00 % | 0 | 4 |
+| Renekton, Butcher of the Sands | 4 | 0,33 % | 0 | 0,00 % | 0 | 4 |
+| Teemo, Swift Scout | 3 | 0,24 % | 0 | 0,00 % | 0 | 3 |
+| Ivern, Green Father | 3 | 0,24 % | 0 | 0,00 % | 0 | 3 |
+| Vi, Piltover Enforcer | 3 | 0,24 % | 0 | 0,00 % | 0 | 2 |
+| Yasuo, Unforgiven | 3 | 0,24 % | 0 | 0,00 % | 0 | 2 |
+| Jinx, Loose Cannon | 2 | 0,16 % | 0 | 0,00 % | 0 | 2 |
+| Lucian, Purifier | 2 | 0,16 % | 0 | 0,00 % | 0 | 2 |
+| Renata Glasc, Chem-Baroness | 2 | 0,16 % | 0 | 0,00 % | 0 | 2 |
+| Ahri, Nine-Tailed Fox | 2 | 0,16 % | 0 | 0,00 % | 0 | 2 |
+| Darius, Hand of Noxus | 1 | 0,08 % | 0 | 0,00 % | 0 | 1 |
+| Miss Fortune, Bounty Hunter | 1 | 0,08 % | 0 | 0,00 % | 0 | 1 |
 
-Total : **982 decks, 72 places en Top 8 et 9 victoires réparties entre 7 légendes**. Les taux de field sont arrondis à deux décimales.
+Total : **1230 decks, 88 places en Top 8 et 11 victoires réparties entre 8 légendes**. Les taux de field sont arrondis à deux décimales.
 
 ### Top 8, conversion et victoires
 
-Le Top 8 est dominé en volume par **Master Yi, Wuju Bladesman** (14 Top 8), devant Kai'Sa et Kennen (9 chacun), puis Irelia (6). La meilleure conversion parmi les légendes avec au moins 20 decks est Draven (5 Top 8 sur 24, 20,83 %), devant Lillia (12,50 %) et Master Yi Bladesman (13,86 %). Ces taux ne constituent pas un classement de puissance sans contrôle du nombre de rondes, du niveau des adversaires et des matchups.
+Le Top 8 est dominé en volume par **Master Yi, Wuju Bladesman** (18 Top 8), devant Kennen (14), Kai'Sa (11), puis Irelia et Rek'sai (6 chacun). La meilleure conversion parmi les légendes avec au moins 20 decks est Master Yi Bladesman (18 Top 8 sur 126, 14,29 %), devant Draven (13,89 %) et Ezreal (12,00 %). Ces taux ne constituent pas un classement de puissance sans contrôle du nombre de rondes, du niveau des adversaires et des matchups.
 
 ### Résultats par tournoi
 
@@ -82,6 +83,8 @@ Le Top 8 est dominé en volume par **Master Yi, Wuju Bladesman** (14 Top 8), dev
 | S4 Shanghai City Challenge (2026-08-08) | 124 | 8 | Draven, Glorious Executioner |
 | S4 Shenzhen City Challenge (2026-08-08) | 118 | 8 | Kai'Sa, Daughter of the Void |
 | S4 Wuhan City Challenge (2026-08-08) | 99 | 8 | Master Yi, Wuju Bladesman |
+| S4 Nanjing City Challenge (2026-08-15) | 124 | 8 | Fiora, Grand Duelist |
+| S4 Beijing City Challenge (2026-08-15) | 124 | 8 | Master Yi, Wuju Bladesman |
 | Riftbound Showdown Ottawa (2026-08-08) | 38 | 8 | Rengar, Pridestalker |
 
 Les neuf contextes totalisent bien 982 decks et 72 places de Top 8. Les fiches Vendetta des nouvelles légendes (Kennen, Nasus, Ambessa, Jayce, Akali, Mel, Zed, Shen et Renekton) ne sont pas encore présentes dans `data/fiches/`. Elles ne sont pas complétées ici : les statistiques de présence et de résultat ne suffisent pas à établir leurs domaines, leurs cores ou leurs matchups.
