@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "eslint",
     "lint:slop": "oxlint",
+    "lint:slop:changed": "node scripts/lint-slop-changed.mjs",
     "test": "vitest run",
     "sync-cards": "npx tsx scripts/sync-cards.ts",
     "sync-prices": "npx tsx --env-file=.env scripts/sync-prices.mts",
