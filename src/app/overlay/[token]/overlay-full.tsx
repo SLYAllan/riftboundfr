@@ -24,10 +24,10 @@ const SLOT = {
   timer: { left: 102, top: 968, width: 152, height: 52 },
   round: { top: 906, height: 52 },
   // Calés sur l'intérieur des cadres dessinés dans cartes_gauche/droite.webp
-  // (contours dorés relevés à la bbox : gauche 40-321 x 664-1047, droite 1603-1884
-  // x 681-1064), avec un léger retrait pour que la carte tienne dans le contour.
-  cardsLeft: { left: 50, top: 674, width: 261, height: 363 },
-  cards: { left: 1613, top: 691, width: 261, height: 363 },
+  // (contours dorés, bbox : gauche 41-316 x 682-1045, droite 1604-1879 x 682-1045),
+  // avec un léger retrait pour que la carte tienne dans le contour.
+  cardsLeft: { left: 47, top: 688, width: 262, height: 351 },
+  cards: { left: 1610, top: 688, width: 262, height: 351 },
 } as const;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
