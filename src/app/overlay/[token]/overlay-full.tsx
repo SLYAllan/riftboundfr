@@ -23,6 +23,7 @@ const SLOT = {
   // Case dorée du bas relevée au pixel sur le fond : x 102-253, y 968-1019.
   timer: { left: 102, top: 968, width: 152, height: 52 },
   round: { top: 906, height: 52 },
+  cardsLeft: { left: 43, top: 688, width: 268, height: 366 },
   cards: { left: 1608, top: 688, width: 268, height: 366 },
 } as const;
 
@@ -286,7 +287,9 @@ function Manche({ gagnee }: { gagnee: boolean }) {
  * L'image reste montée le temps de disparaître : sans ça « Masquer » la faisait
  * sauter d'un coup, sans le fondu qu'on a partout ailleurs.
  */
-function CarteMontree({ nom, compact = false }: { nom: string | null; compact?: boolean }) {
+type SlotStyle = { left?: number; right?: number; top: number; width: number; height: number };
+
+function CarteMontree({ nom, slot }: { nom: string | null; slot: SlotStyle }) {
   const art = useBattlefieldArt(nom ? [nom] : []);
   const cible = nom ? art[nom] : null;
   const [affichee, setAffichee] = useState<string | null>(null);
@@ -311,14 +314,7 @@ function CarteMontree({ nom, compact = false }: { nom: string | null; compact?: 
   }, [cible]);
 
   return (
-    <div
-      className="absolute z-20 overflow-hidden"
-      style={
-        compact
-          ? { right: 40, width: 260, top: 300, height: 364 }
-          : { left: SLOT.cards.left, width: SLOT.cards.width, top: SLOT.cards.top, height: SLOT.cards.height }
-      }
-    >
+    <div className="absolute z-20 overflow-hidden" style={slot}>
       {affichee && (
         <img
           key={affichee}
@@ -332,6 +328,35 @@ function CarteMontree({ nom, compact = false }: { nom: string | null; compact?: 
       )}
     </div>
   );
+}
+
+// Carte courante d'un côté : les cartes cochées de la decklist (les décochées sont
+// ignorées), à l'index manuel du tableau de bord ou au `tick` de la rotation auto.
+// Côté caché = null (l'affiche se fond).
+function carteCourante(cards: OverlayStateData["cards"], side: 0 | 1, tick: number): string | null {
+  if (!cards?.visible?.[side]) return null;
+  const actives = (cards.lists?.[side] ?? []).filter((c) => !(cards.ignored?.[side] ?? []).includes(c));
+  if (!actives.length) return null;
+  const brut = cards.auto?.[side] ? tick : cards.index?.[side] ?? 0;
+  const i = ((brut % actives.length) + actives.length) % actives.length;
+  return actives[i];
+}
+
+// Une affiche = un côté. En rotation auto, un minuteur LOCAL avance la carte toutes
+// les `seconds` : jamais poussé en base, sinon on écrirait l'API toutes les 5 s. En
+// manuel, l'index vient du tableau de bord.
+function CarteAffiche({ cards, side, slot }: { cards: OverlayStateData["cards"]; side: 0 | 1; slot: SlotStyle }) {
+  const auto = cards?.auto?.[side] ?? false;
+  const seconds = cards?.seconds ?? 5;
+  const actives = (cards?.lists?.[side] ?? []).filter((c) => !(cards?.ignored?.[side] ?? []).includes(c));
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    if (!auto || actives.length < 2) return;
+    const id = setInterval(() => setTick((t) => t + 1), Math.max(1, seconds) * 1000);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auto, seconds, actives.length]);
+  return <CarteMontree nom={carteCourante(cards, side, tick)} slot={slot} />;
 }
 
 function Timer({ endsAt }: { endsAt?: string | null }) {
@@ -359,6 +384,9 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
   const { event } = state;
+  // Mode vitrine : dès qu'une affiche de cartes est visible, on cache le chrono et
+  // le logo (le score et les Légendes restent).
+  const vitrine = !!(state.cards?.visible?.[0] || state.cards?.visible?.[1]);
   // Version simple : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
   // webcam et veut quand même le score, les Légendes et la carte à l'écran.
   if (compact) return <OverlayCompact state={state} />;
@@ -375,7 +403,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         footer={
           <>
             {/* z-20 : sans lui le logo passait sous le cadre du fond, donc invisible. */}
-            {event.logoUrl && (
+            {!vitrine && event.logoUrl && (
               <img
                 src={event.logoUrl}
                 alt=""
@@ -395,7 +423,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
                 </FitText>
               </div>
             )}
-            {event.timerVisible !== false && (
+            {!vitrine && event.timerVisible !== false && (
               <div
                 className="absolute z-20"
                 style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
@@ -410,8 +438,11 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         p={state.players[1]}
         side="right"
         format={state.format}
-        footer={<CarteMontree nom={state.cards?.shown ?? null} />}
+        footer={null}
       />
+      {/* Deux affiches de cartes, gauche et droite, au-dessus du cadre (z-20). */}
+      <CarteAffiche cards={state.cards} side={0} slot={SLOT.cardsLeft} />
+      <CarteAffiche cards={state.cards} side={1} slot={SLOT.cards} />
     </div>
   );
 }
@@ -461,7 +492,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           </div>
         </div>
       ))}
-      <CarteMontree nom={state.cards?.shown ?? null} compact />
+      <CarteAffiche cards={state.cards} side={1} slot={{ right: 40, top: 300, width: 260, height: 364 }} />
     </div>
   );
 }

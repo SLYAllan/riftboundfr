@@ -54,8 +54,16 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
   const [brouillonLogo, setBrouillonLogo] = useState("");
   const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
-  const listes = state.cards?.lists ?? [[], []];
-  const toutesCartes = [...new Set([...listes[0], ...listes[1]])];
+  const cards: OverlayStateData["cards"] = {
+    lists: state.cards?.lists ?? [[], []],
+    ignored: state.cards?.ignored ?? [[], []],
+    visible: state.cards?.visible ?? [false, false],
+    auto: state.cards?.auto ?? [false, false],
+    index: state.cards?.index ?? [0, 0],
+    seconds: state.cards?.seconds ?? 5,
+  };
+  const paire = <T,>(t: [T, T], i: 0 | 1, v: T): [T, T] => (i === 0 ? [v, t[1]] : [t[0], v]);
+  const majCards = (p: Partial<OverlayStateData["cards"]>) => update({ cards: { ...cards, ...p } } as never);
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   const inputCls =
@@ -277,45 +285,93 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Montrer une carte")}</h2>
         <div className="space-y-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
-            {t("Collez la liste de chaque joueur une fois en début de match. Ensuite, choisir une carte dans le menu l’affiche à l’écran, à droite.")}
+            {t("Une affiche à gauche, une à droite. Collez une decklist, cochez les cartes à montrer (décochées = ignorées), puis « Afficher ». « Diapo auto » fait tourner les cartes ; sinon les flèches font défiler à la main. Quand une affiche est visible, le chrono et le logo se cachent.")}
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
-            {([0, 1] as const).map((i) => (
-              <div key={i} className="space-y-2">
-                <textarea
-                  value={brouillonDeck[i]}
-                  onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
-                  placeholder={t("Liste du joueur") + " " + (i + 1)}
-                  aria-label={t("Liste du joueur") + " " + (i + 1)}
-                  rows={4}
-                  className={inputCls + " font-mono text-xs"}
-                />
-                <button
-                  onClick={() => {
-                    const noms = parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name);
-                    const l: [string[], string[]] = [[...listes[0]], [...listes[1]]];
-                    l[i] = [...new Set(noms)];
-                    update({ cards: { lists: l, shown: state.cards?.shown ?? null } } as never);
-                  }}
-                  className={btnPlein}
-                >
-                  {t("Charger la liste")} ({listes[i].length})
-                </button>
-              </div>
-            ))}
+            {([0, 1] as const).map((i) => {
+              const liste = cards.lists[i];
+              const ignorees = cards.ignored[i];
+              const actives = liste.filter((c) => !ignorees.includes(c));
+              const idx = actives.length ? ((cards.index[i] % actives.length) + actives.length) % actives.length : 0;
+              return (
+                <div key={i} className="space-y-2 rounded-xl border border-hairline bg-surface p-3">
+                  <div className="text-xs font-semibold text-ink-muted">{i === 0 ? t("Affiche gauche") : t("Affiche droite")}</div>
+                  <textarea
+                    value={brouillonDeck[i]}
+                    onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                    placeholder={t("Collez une decklist")}
+                    aria-label={t("Decklist")}
+                    rows={3}
+                    className={inputCls + " font-mono text-xs"}
+                  />
+                  <button
+                    onClick={() => {
+                      const noms = [...new Set(parseDeckCode(brouillonDeck[i]).entries.map((e) => e.name))];
+                      majCards({ lists: paire(cards.lists, i, noms), ignored: paire(cards.ignored, i, []), index: paire(cards.index, i, 0) });
+                    }}
+                    className={btnPlein}
+                  >
+                    {t("Charger")} ({liste.length})
+                  </button>
+
+                  {liste.length > 0 && (
+                    <>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
+                        <label className="flex items-center gap-1.5">
+                          <input type="checkbox" className="size-4 accent-arcane" checked={cards.visible[i]} onChange={(e) => majCards({ visible: paire(cards.visible, i, e.target.checked) })} />
+                          {t("Afficher")}
+                        </label>
+                        <label className="flex items-center gap-1.5">
+                          <input type="checkbox" className="size-4 accent-arcane" checked={cards.auto[i]} onChange={(e) => majCards({ auto: paire(cards.auto, i, e.target.checked) })} />
+                          {t("Diapo auto")}
+                        </label>
+                        {!cards.auto[i] && actives.length > 1 && (
+                          <span className="ml-auto flex items-center gap-1">
+                            <button onClick={() => majCards({ index: paire(cards.index, i, idx - 1) })} className={btnStep}>‹</button>
+                            <span className="tabular-nums text-ink-muted">{idx + 1}/{actives.length}</span>
+                            <button onClick={() => majCards({ index: paire(cards.index, i, idx + 1) })} className={btnStep}>›</button>
+                          </span>
+                        )}
+                      </div>
+                      <div className="max-h-40 space-y-0.5 overflow-y-auto pr-1">
+                        {liste.map((c) => {
+                          const coche = !ignorees.includes(c);
+                          return (
+                            <label key={c} className="flex items-center gap-2 text-xs">
+                              <input
+                                type="checkbox"
+                                className="size-3.5 accent-arcane"
+                                checked={coche}
+                                onChange={(e) => {
+                                  const nextIgn = e.target.checked ? ignorees.filter((x) => x !== c) : [...new Set([...ignorees, c])];
+                                  majCards({ ignored: paire(cards.ignored, i, nextIgn) });
+                                }}
+                              />
+                              <span className={coche ? "" : "text-ink-muted line-through"}>{c}</span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
           </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <select
-              value={state.cards?.shown ?? ""}
-              onChange={(e) => update({ cards: { lists: listes as [string[], string[]], shown: e.target.value || null } } as never)}
-              aria-label={t("Carte à afficher à l’écran")}
-              className="min-w-[240px] flex-1 rounded-lg border border-hairline bg-surface px-3 py-2"
-            >
-              <option value="">{t("Aucune carte à l’écran")}</option>
-              {toutesCartes.map((c) => <option key={c} value={c}>{c}</option>)}
-            </select>
-            <button onClick={() => update({ cards: { lists: listes as [string[], string[]], shown: null } } as never)} className={btnVide}>
-              {t("Masquer")}
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <label className="flex items-center gap-2">
+              <span className="text-xs text-ink-muted">{t("Durée par carte (diapo auto)")}</span>
+              <input
+                type="number" min={1} max={60}
+                value={cards.seconds}
+                onChange={(e) => majCards({ seconds: Math.max(1, Math.min(60, Number(e.target.value) || 5)) })}
+                aria-label={t("Durée par carte")}
+                className="w-16 rounded-lg border border-hairline bg-surface px-2 py-1"
+              />
+              <span className="text-xs text-ink-muted">s</span>
+            </label>
+            <button onClick={() => majCards({ visible: [false, false] })} className={btnVide}>
+              {t("Tout masquer")}
             </button>
           </div>
         </div>

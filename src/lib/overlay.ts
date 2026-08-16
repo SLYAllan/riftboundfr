@@ -24,8 +24,19 @@ export interface OverlayStateData {
   maxPoints: number;
   points: { a: number; b: number };
   players: [OverlayPlayer, OverlayPlayer];
-  // Deux decklists chargees depuis le tableau de bord, et la carte montree a droite.
-  cards: { lists: [string[], string[]]; shown: string | null };
+  // Deux affiches de cartes, gauche (0) et droite (1). Chaque côté : sa decklist
+  // collée (`lists`), les cartes décochées à ignorer dans la diapo (`ignored`), son
+  // drapeau d'affichage (`visible`), rotation auto ou manuelle (`auto`) et la carte
+  // courante en manuel (`index`). `seconds` = durée d'une carte en rotation auto.
+  // Dès qu'une affiche est visible, le chrono et le logo se cachent (mode vitrine).
+  cards: {
+    lists: [string[], string[]];
+    ignored: [string[], string[]];
+    visible: [boolean, boolean];
+    auto: [boolean, boolean];
+    index: [number, number];
+    seconds: number;
+  };
 }
 
 function emptyPlayer(name: string): OverlayPlayer {
@@ -39,7 +50,7 @@ export function defaultOverlayState(): OverlayStateData {
     maxPoints: 8,
     points: { a: 0, b: 0 },
     players: [emptyPlayer("Joueur 1"), emptyPlayer("Joueur 2")],
-    cards: { lists: [[], []], shown: null },
+    cards: { lists: [[], []], ignored: [[], []], visible: [false, false], auto: [false, false], index: [0, 0], seconds: 5 },
   };
 }
 
@@ -58,7 +69,11 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
     points: { ...base.points, ...(patch.points ?? {}) },
     cards: {
       lists: (patch.cards?.lists ?? base.cards?.lists ?? [[], []]) as [string[], string[]],
-      shown: patch.cards?.shown !== undefined ? (patch.cards.shown as string | null) : (base.cards?.shown ?? null),
+      ignored: (patch.cards?.ignored ?? base.cards?.ignored ?? [[], []]) as [string[], string[]],
+      visible: (patch.cards?.visible ?? base.cards?.visible ?? [false, false]) as [boolean, boolean],
+      auto: (patch.cards?.auto ?? base.cards?.auto ?? [false, false]) as [boolean, boolean],
+      index: (patch.cards?.index ?? base.cards?.index ?? [0, 0]) as [number, number],
+      seconds: patch.cards?.seconds ?? base.cards?.seconds ?? 5,
     },
     players: [
       { ...base.players[0], ...(patch.players?.[0] ?? {}) },
