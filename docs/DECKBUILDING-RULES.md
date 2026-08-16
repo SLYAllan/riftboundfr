@@ -205,6 +205,19 @@ preuve, sans compléter ni deviner les cartes manquantes.
 
 Classification : **core** (90%+), **standard** (60-89%), **flex** (30-59%), **tech** (10-29%)
 
+### Cores observés — corpus Vendetta à jour (16 août 2026, 1230 decklists)
+
+> Taux d'inclusion et copies médianes calculés sur les decklists Vendetta réelles seedées (`data/decklists`), pas sur les VOD. « Core » = présent dans 90 %+ des listes de la Légende. Recalculable à tout moment en agrégeant `mainDeck` par `legend` sur `set = Vendetta`.
+
+- **Kai'Sa, Daughter of the Void** (133 listes) — core : Thousand-Tailed Watcher, Stupefy, Falling Star, Brynhir Thundersong, Hextech Ray, Temporal Breach, Watchful Sentry, Time Warp, Progress Day, Noxus Hopeful (tous 2-3 ex.). Standard : Lecturing Yordle, Plundering Poro, Bellows Breath, Singularity, Retreat, Ravenbloom Student.
+- **Master Yi, Wuju Bladesman** (126 listes) — core : Charm, Defy, Punch First, Discipline, Lonely Poro, Scuttle Crab, Zhonya's Hourglass, First Mate, Rengar Trophy Hunter, En Garde. Standard : Rampage, Sabotage, Ruin Runner, Pit Rookie.
+- **Kennen, Heart of the Tempest** (125 listes) — core : Lightning Rush, Stacked Deck, Fizz Trickster, Star-Crossed, Ride the Wind. Standard : Rhasa the Sunderer, Seal of Discord, Traveling Merchant, Last Rites, Nocturne Horrifying, Treasure Hunter.
+- **Irelia, Blade Dancer** (97 listes) — core : Boots of Swiftness, Defiant Dance, Defy, Discipline, Stellacorn Herder, Scuttle Crab, Tideturner, Star-Crossed, En Garde, Ride the Wind, Guardian Angel. Standard : Charm, Zhonya's Hourglass, Stacked Deck, Akali Silent, Fizz Trickster.
+- **Rek'sai, Void Burrower** (60 listes) — core : Void Rush, Carrion Dredger, Inferna, Falling Star, Noxus Hopeful, Undertitan, Cull the Weak, Cleave, Faithful Manufactor, Blood Rush. Standard : Honest Broker, Shadow Fiend, Vi Peacekeeper, Zed From the Shadows, Dragon Form.
+- **Diana, Scorn of the Moon** (59 listes) — core : Ravenbloom Student, Fizz Trickster, Hwei Brooding Painter, Stacked Deck, Stupefy, Ride the Wind, Moonfall, Star-Crossed, Tideturner, Gust, Patched Porobot. Standard : Temporal Breach, Swain Visionary, Eclipse, Morbid Return.
+- **Nasus, Curator of the Sands** (68 listes) — core : Thousand-Tailed Watcher, Defy, Discipline, Find Your Center, Scuttle Crab, Stupefy. Standard : Ravenbloom Student, Tasty Faefolk, Bellows Breath, Steel Paws, Retreat, Charm, Temporal Breach, Sprite Queen, Astral Heron.
+- **Draven, Glorious Executioner** (36 listes) — core : Spinning Axe, Tideturner, Stacked Deck, Switcheroo, Kai'Sa Survivor, Vex Apathetic. Standard : Ferrous Forerunner, Falling Star, Rebuke, Cleave.
+
 ### Kai'Sa, Daughter of the Void (~1379 decks) — Fury/Mind — Tempo-combo
 
 > Légende #1 en volume (Shanghai NO 599 + Beijing 153 + Chongqing 168 + Guangzhou 98 + Shenzhen 218 + Fuzhou 39 + Suzhou 15 + divers). Dominante Origins, adaptée Spiritforged.
