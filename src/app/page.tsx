@@ -175,6 +175,15 @@ export default async function HomePage() {
         >
           {t("Riftbound France, la référence du TCG en français")}
         </h1>
+        {/* Sous-titre : deux liens à ancre forte qui envoient l'intention « deck »
+            vers /decks et « tier list » vers /tier-list. Sans ça, l'accueil captait
+            « riftbound deck » (pos 7) sans jamais laisser /decks (pos 13) gagner. */}
+        <p className="max-w-xl text-center text-sm text-ink-secondary sm:text-base">
+          <Link href="/decks" className="text-arcane hover:underline">{t("Decks de tournoi")}</Link>
+          {", "}
+          <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list du méta")}</Link>
+          {t(" et base de cartes Riftbound, en français.")}
+        </p>
       </section>
 
       {/* 3-column layout */}
@@ -193,7 +202,7 @@ export default async function HomePage() {
                 href="/decks"
                 className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
               >
-                {t("Tous les decks")} <ArrowRight size={14} />
+                {t("Tous les decks Riftbound")} <ArrowRight size={14} />
               </Link>
             </div>
             {/* Des lignes, pas des pavés. En vignettes carrées sur deux colonnes,
