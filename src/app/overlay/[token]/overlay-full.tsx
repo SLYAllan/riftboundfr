@@ -26,8 +26,8 @@ const SLOT = {
   // Calés sur l'intérieur des cadres dessinés dans cartes_gauche/droite.webp
   // (contours dorés, bbox : gauche 41-316 x 682-1045, droite 1604-1879 x 682-1045),
   // avec un léger retrait pour que la carte tienne dans le contour.
-  cardsLeft: { left: 47, top: 688, width: 262, height: 351 },
-  cards: { left: 1610, top: 688, width: 262, height: 351 },
+  cardsLeft: { left: 41, top: 682, width: 275, height: 363 },
+  cards: { left: 1604, top: 682, width: 275, height: 363 },
 } as const;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
