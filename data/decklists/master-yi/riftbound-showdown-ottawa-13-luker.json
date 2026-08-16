@@ -1,12 +1,12 @@
 {
-  "id": "deck-master-yi-wuju-bladesman-225645",
+  "id": "deck-master-yi-wuju-bladesman-225583",
   "legend": "Master Yi, Wuju Bladesman",
   "legendId": null,
   "champion": "Master Yi, Tempered",
-  "player": "MaximeB",
+  "player": "Luker",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 163,
+  "placement": 13,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -17,6 +17,20 @@
   ],
   "mainDeck": [
     {
+      "name": "Steel Paws",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Legion Marauder",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
       "name": "Lonely Poro",
       "quantity": 3,
       "type": "Unit",
@@ -24,45 +38,24 @@
       "domain": "calm"
     },
     {
-      "name": "Pit Rookie",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "body"
-    },
-    {
       "name": "Scuttle Crab",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
       "domain": "calm"
     },
     {
       "name": "First Mate",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "body"
-    },
-    {
-      "name": "Akali, Silent",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "calm"
     },
     {
       "name": "Rengar, Trophy Hunter",
       "quantity": 3,
       "type": "Unit",
       "rarity": "epic",
-      "domain": "body"
-    },
-    {
-      "name": "Ruin Runner",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "uncommon",
       "domain": "body"
     },
     {
@@ -73,22 +66,15 @@
       "domain": "calm"
     },
     {
-      "name": "Trinity Force",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
       "name": "Charm",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
       "name": "Defy",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
@@ -122,72 +108,93 @@
       "domain": "calm"
     },
     {
-      "name": "Alpha Strike",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "calm/body"
-    },
-    {
       "name": "Rampage",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "body"
     },
     {
       "name": "Onslaught",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "body"
     }
   ],
   "runes": {
-    "Body": 7,
-    "Calm": 5
+    "Body": 6,
+    "Calm": 6
   },
   "battlefields": [
-    "Emperor's Dais",
+    "Grove of the God-Willow",
     "Seat of Power",
-    "Startipped Peak"
+    "Star Spring"
   ],
   "sideDeck": [
     {
-      "name": "Decree of Focus",
-      "quantity": 3,
+      "name": "Crumbling Sands",
+      "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "calm"
     },
     {
       "name": "Decree of Strength",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "body"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 3,
+      "name": "Repulse",
+      "quantity": 1,
       "type": "Unknown",
-      "rarity": "common",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Alpha Strike",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "calm/body"
+    },
+    {
+      "name": "Akali, Silent",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
       "domain": "calm"
     },
     {
-      "name": "Fiora, Peerless",
+      "name": "Akshan, Mischievous",
       "quantity": 2,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "body"
+    },
+    {
+      "name": "Tomb-Raider Barbara",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 18,
-    "spellCount": 17,
-    "gearCount": 4,
+    "unitCount": 16,
+    "spellCount": 21,
+    "gearCount": 2,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-225645"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-225583"
 }

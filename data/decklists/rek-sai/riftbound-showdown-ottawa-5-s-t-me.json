@@ -1,12 +1,12 @@
 {
-  "id": "deck-reksai-void-burrower-225538",
+  "id": "deck-reksai-void-burrower-225561",
   "legend": "Rek'sai, Void Burrower",
   "legendId": null,
   "champion": "Rek'Sai, Breacher",
-  "player": "Sinzari L",
+  "player": "Sаtаme",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 8,
+  "placement": 5,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -24,6 +24,13 @@
       "domain": "order"
     },
     {
+      "name": "Daring Poro",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
       "name": "Inferna",
       "quantity": 3,
       "type": "Unit",
@@ -32,24 +39,24 @@
     },
     {
       "name": "Legion Rearguard",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "fury"
     },
     {
       "name": "Noxian Emissary",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unit",
       "rarity": "uncommon",
       "domain": "order"
     },
     {
-      "name": "Shadow Fiend",
+      "name": "Escaped Grayback",
       "quantity": 3,
       "type": "Unit",
       "rarity": "uncommon",
-      "domain": "fury"
+      "domain": "order"
     },
     {
       "name": "Faithful Manufactor",
@@ -73,13 +80,6 @@
       "domain": "order"
     },
     {
-      "name": "Long Sword",
-      "quantity": 1,
-      "type": "Gear",
-      "rarity": "rare",
-      "domain": "fury"
-    },
-    {
       "name": "Blood Rush",
       "quantity": 3,
       "type": "Spell",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Cleave",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "fury"
@@ -120,23 +120,30 @@
     "Order": 5
   },
   "battlefields": [
-    "Forbidding Waste",
     "Mystic Vortex",
-    "The Candlelit Sanctum"
+    "The Candlelit Sanctum",
+    "Trifarian War Camp"
   ],
   "sideDeck": [
     {
-      "name": "Brittle Steel",
-      "quantity": 1,
+      "name": "Forge of the Future",
+      "quantity": 3,
       "type": "Unknown",
       "rarity": "common",
-      "domain": "fury"
+      "domain": "order"
     },
     {
-      "name": "Forge of the Future",
+      "name": "Hidden Blade",
       "quantity": 2,
       "type": "Unknown",
       "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Noxian Emissary",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
       "domain": "order"
     },
     {
@@ -147,33 +154,19 @@
       "domain": "order"
     },
     {
-      "name": "Smite",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
       "name": "Ferrous Forerunner",
       "quantity": 2,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "fury"
-    },
-    {
-      "name": "Divine Judgment",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
-      "domain": "order"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 23,
-    "spellCount": 15,
-    "gearCount": 1,
+    "unitCount": 25,
+    "spellCount": 14,
+    "gearCount": 0,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225538"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225561"
 }

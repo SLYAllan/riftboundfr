@@ -1,12 +1,12 @@
 {
-  "id": "deck-fiora-grand-duelist-225768",
+  "id": "deck-fiora-grand-duelist-225657",
   "legend": "Fiora, Grand Duelist",
   "legendId": null,
   "champion": "Fiora, Worthy",
-  "player": "Deathwing40k",
+  "player": "MаsteR of Swаg",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 312,
+  "placement": 194,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -17,13 +17,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Carrion Dredger",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
       "name": "Irresistible Faefolk",
       "quantity": 3,
       "type": "Unit",
@@ -31,10 +24,10 @@
       "domain": "body"
     },
     {
-      "name": "Noxian Demolitionist",
-      "quantity": 1,
+      "name": "Pit Rookie",
+      "quantity": 2,
       "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "body"
     },
     {
@@ -45,22 +38,36 @@
       "domain": "order"
     },
     {
+      "name": "First Mate",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
       "name": "Kayle, Justified",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
       "domain": "order"
     },
     {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
+      "name": "Ambessa, The Wolf",
+      "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
       "domain": "body"
     },
     {
-      "name": "Rengar, Trophy Hunter",
+      "name": "Spectral Matron",
       "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Rengar, Trophy Hunter",
+      "quantity": 3,
       "type": "Unit",
       "rarity": "epic",
       "domain": "body"
@@ -74,31 +81,17 @@
     },
     {
       "name": "Vi, Peacekeeper",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "order"
-    },
-    {
-      "name": "Harnessed Dragon",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
       "domain": "order"
     },
     {
       "name": "B.F. Sword",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "rarity": "uncommon",
       "domain": "order"
-    },
-    {
-      "name": "Tools of Empire",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "common",
-      "domain": "body"
     },
     {
       "name": "Punch First",
@@ -108,22 +101,36 @@
       "domain": "body"
     },
     {
+      "name": "Repulse",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
       "name": "Sacrifice",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "rare",
       "domain": "order"
     },
     {
-      "name": "Deathgrip",
-      "quantity": 3,
+      "name": "Challenge",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Ki Barrier",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "order"
     },
     {
       "name": "Riposte",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "epic",
       "domain": "body/order"
@@ -137,57 +144,78 @@
     }
   ],
   "runes": {
-    "Body": 7,
-    "Order": 5
+    "Body": 6,
+    "Order": 6
   },
   "battlefields": [
-    "Protective Sands",
+    "Risen Altar",
     "Sandswept Tomb",
     "Sunken Temple"
   ],
   "sideDeck": [
     {
-      "name": "Decree of Strength",
+      "name": "Unyielding Spirit",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Forge of the Future",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Riposte",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "body/order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Akshan, Mischievous",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "body"
     },
     {
-      "name": "Fallen Feline",
+      "name": "Tools of Empire",
       "quantity": 1,
       "type": "Unknown",
-      "rarity": "rare",
-      "domain": "order"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 3,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Ashe, Focused",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "order"
+      "rarity": "common",
+      "domain": "body"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unknown",
       "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Elder Dragon",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
       "domain": "body"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 21,
+    "unitCount": 22,
     "spellCount": 14,
-    "gearCount": 4,
+    "gearCount": 3,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-fiora-grand-duelist-225768"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-fiora-grand-duelist-225657"
 }

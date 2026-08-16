@@ -1,12 +1,12 @@
 {
-  "id": "deck-reksai-void-burrower-225561",
+  "id": "deck-reksai-void-burrower-225526",
   "legend": "Rek'sai, Void Burrower",
   "legendId": null,
   "champion": "Rek'Sai, Breacher",
-  "player": "Douglas D",
+  "player": "skilliton",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 5,
+  "placement": 3,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -24,7 +24,7 @@
       "domain": "order"
     },
     {
-      "name": "Daring Poro",
+      "name": "Honest Broker",
       "quantity": 3,
       "type": "Unit",
       "rarity": "common",
@@ -32,27 +32,13 @@
     },
     {
       "name": "Inferna",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
-      "name": "Legion Rearguard",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "rarity": "common",
       "domain": "fury"
     },
     {
       "name": "Noxian Emissary",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Escaped Grayback",
       "quantity": 3,
       "type": "Unit",
       "rarity": "uncommon",
@@ -66,6 +52,13 @@
       "domain": "order"
     },
     {
+      "name": "Vanguard Captain",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
       "name": "Noxus Hopeful",
       "quantity": 3,
       "type": "Unit",
@@ -73,11 +66,25 @@
       "domain": "fury"
     },
     {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
       "name": "Undertitan",
       "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
       "domain": "order"
+    },
+    {
+      "name": "Rage Amplifier",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "fury"
     },
     {
       "name": "Blood Rush",
@@ -108,6 +115,13 @@
       "domain": "fury"
     },
     {
+      "name": "Hidden Blade",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
       "name": "Void Rush",
       "quantity": 3,
       "type": "Spell",
@@ -116,15 +130,36 @@
     }
   ],
   "runes": {
-    "Fury": 7,
-    "Order": 5
+    "Fury": 6,
+    "Order": 6
   },
   "battlefields": [
-    "Mystic Vortex",
+    "Forbidding Waste",
     "The Candlelit Sanctum",
     "Trifarian War Camp"
   ],
   "sideDeck": [
+    {
+      "name": "Decree of Rage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Against the Odds",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Brittle Steel",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
     {
       "name": "Forge of the Future",
       "quantity": 3,
@@ -133,40 +168,26 @@
       "domain": "order"
     },
     {
-      "name": "Hidden Blade",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Noxian Emissary",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Ferrous Forerunner",
+      "name": "Kennen, Keeper of Balance",
       "quantity": 2,
       "type": "Unknown",
       "rarity": "rare",
-      "domain": "fury"
+      "domain": "order"
+    },
+    {
+      "name": "Vi, Peacekeeper",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "order"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 25,
-    "spellCount": 14,
-    "gearCount": 0,
+    "unitCount": 23,
+    "spellCount": 15,
+    "gearCount": 1,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225561"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225526"
 }

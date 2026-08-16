@@ -86,10 +86,17 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
     }
   }
 
-  // Extract player
+  // Extract player : le pseudo du H1 « # <Légende/nom> by <pseudo> », pas le vrai
+  // nom du corps « decklist by <nom>. <place> ». Les tournois occidentaux (Ottawa,
+  // via Jeux Face à Face) mettent le VRAI nom dans le corps mais le pseudo dans le
+  // H1 ; on veut le pseudo partout, comme le valideur qui lit déjà le H1.
   let player = "";
-  const playerMatch = md.match(/decklist by (.+?)\.\s+\d/);
-  if (playerMatch) player = playerMatch[1].trim();
+  const h1Player = md.match(/^#\s+.+?\s+by\s+(.+?)\s*$/m);
+  if (h1Player) player = h1Player[1].trim();
+  else {
+    const playerMatch = md.match(/decklist by (.+?)\.\s+\d/);
+    if (playerMatch) player = playerMatch[1].trim();
+  }
 
   // Extract placement
   let placement: number | null = null;

@@ -1,90 +1,111 @@
 {
-  "id": "deck-kennen-heart-of-the-tempest-225528",
-  "legend": "Kennen, Heart of the Tempest",
+  "id": "deck-draven-glorious-executioner-225552",
+  "legend": "Draven, Glorious Executioner",
   "legendId": null,
-  "champion": "Kennen, Storm of Shuriken",
-  "player": "Woo K",
+  "champion": "Draven, Showboat",
+  "player": "DаreMx",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 95,
+  "placement": 10,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
   "archetype": null,
   "domains": [
     "Chaos",
-    "Order"
+    "Fury"
   ],
   "mainDeck": [
     {
-      "name": "Gust Monk",
-      "quantity": 1,
+      "name": "Evelynn, Entrancing",
+      "quantity": 3,
       "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "rare",
       "domain": "chaos"
     },
     {
-      "name": "Traveling Merchant",
+      "name": "Tideturner",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "rare",
       "domain": "chaos"
     },
     {
       "name": "Treasure Hunter",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "chaos"
     },
     {
-      "name": "Fizz, Trickster",
+      "name": "Rek'Sai, Breacher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Vex, Apathetic",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Darius, Trifarian",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Zed, Without a Sound",
       "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
       "domain": "chaos"
     },
     {
-      "name": "Nocturne, Horrifying",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
-      "name": "Rhasa the Sunderer",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
-      "name": "Seal of Discord",
-      "quantity": 3,
-      "type": "Gear",
-      "rarity": "epic",
-      "domain": "chaos"
-    },
-    {
-      "name": "Last Rites",
+      "name": "Ferrous Forerunner",
       "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Spinning Axe",
+      "quantity": 3,
       "type": "Gear",
       "rarity": "epic",
-      "domain": "chaos"
+      "domain": "fury/chaos"
+    },
+    {
+      "name": "Blood Rush",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
     },
     {
       "name": "Gust",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
-    },
-    {
-      "name": "Lightning Rush",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "order/chaos"
     },
     {
       "name": "Stacked Deck",
@@ -94,77 +115,49 @@
       "domain": "chaos"
     },
     {
-      "name": "Hard Bargain",
-      "quantity": 1,
+      "name": "Falling Star",
+      "quantity": 2,
       "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
-      "name": "Hidden Blade",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "order"
+      "rarity": "rare",
+      "domain": "fury"
     },
     {
       "name": "Rebuke",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Ride the Wind",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     },
     {
       "name": "Switcheroo",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "rare",
       "domain": "chaos"
     },
     {
-      "name": "Invert Timelines",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "chaos"
-    },
-    {
-      "name": "Shadows of the Past",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
       "name": "Star-Crossed",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     },
     {
       "name": "Up from the Deep",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     }
   ],
   "runes": {
-    "Chaos": 9,
-    "Order": 3
+    "Chaos": 6,
+    "Fury": 6
   },
   "battlefields": [
-    "Minefield",
-    "The Candlelit Sanctum",
-    "Zaun Warrens"
+    "Grove of the God-Willow",
+    "Seat of Power",
+    "Treasure Hoard"
   ],
   "sideDeck": [
     {
@@ -176,41 +169,55 @@
     },
     {
       "name": "Abandon",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Ravenbloom Prefect",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Star-Crossed",
       "quantity": 1,
       "type": "Unknown",
-      "rarity": "common",
+      "rarity": "uncommon",
       "domain": "chaos"
     },
     {
-      "name": "Divine Judgment",
+      "name": "Brittle Steel",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Invert Timelines",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "epic",
-      "domain": "order"
+      "domain": "chaos"
     },
     {
-      "name": "Downwell",
+      "name": "Ravenbloom Prefect",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Draven, Audacious",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
+      "domain": "chaos"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Baron Nashor",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "epic",
@@ -219,10 +226,10 @@
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 14,
-    "spellCount": 21,
-    "gearCount": 4,
+    "unitCount": 23,
+    "spellCount": 13,
+    "gearCount": 3,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-kennen-heart-of-the-tempest-225528"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-draven-glorious-executioner-225552"
 }

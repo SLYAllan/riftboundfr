@@ -1,12 +1,12 @@
 {
-  "id": "deck-kennen-heart-of-the-tempest-225529",
+  "id": "deck-kennen-heart-of-the-tempest-225540",
   "legend": "Kennen, Heart of the Tempest",
   "legendId": null,
   "champion": "Kennen, Storm of Shuriken",
-  "player": "Russell C",
+  "player": "Sodаpop",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 4,
+  "placement": 6,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -17,17 +17,17 @@
   ],
   "mainDeck": [
     {
-      "name": "Tideturner",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
       "name": "Traveling Merchant",
       "quantity": 3,
       "type": "Unit",
       "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Hunter",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
       "domain": "chaos"
     },
     {
@@ -38,17 +38,17 @@
       "domain": "chaos"
     },
     {
+      "name": "Ravenbloom Prefect",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
       "name": "Nocturne, Horrifying",
       "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "uncommon",
       "domain": "chaos"
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "name": "Last Rites",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "rarity": "epic",
       "domain": "chaos"
@@ -101,29 +101,22 @@
       "domain": "chaos"
     },
     {
-      "name": "Hard Bargain",
+      "name": "Abandon",
       "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "chaos"
     },
     {
-      "name": "Hidden Blade",
+      "name": "Deathgrip",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "common",
+      "rarity": "uncommon",
       "domain": "order"
     },
     {
-      "name": "Rebuke",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
       "name": "Ride the Wind",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
@@ -136,15 +129,15 @@
       "domain": "chaos"
     },
     {
-      "name": "Shadows of the Past",
+      "name": "Invert Timelines",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "uncommon",
+      "rarity": "epic",
       "domain": "chaos"
     },
     {
       "name": "Star-Crossed",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
@@ -157,6 +150,13 @@
       "domain": "chaos"
     },
     {
+      "name": "Wind and Ghosts",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
       "name": "The Harrowing",
       "quantity": 1,
       "type": "Spell",
@@ -165,8 +165,8 @@
     }
   ],
   "runes": {
-    "Chaos": 9,
-    "Order": 3
+    "Chaos": 11,
+    "Order": 1
   },
   "battlefields": [
     "Forbidding Waste",
@@ -189,25 +189,11 @@
       "domain": "chaos"
     },
     {
-      "name": "Salvage",
+      "name": "Forge of the Future",
       "quantity": 1,
       "type": "Unknown",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "order"
-    },
-    {
-      "name": "Invert Timelines",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
-      "domain": "chaos"
-    },
-    {
-      "name": "Last Rites",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
-      "domain": "chaos"
     },
     {
       "name": "Ravenbloom Prefect",
@@ -217,22 +203,22 @@
       "domain": "chaos"
     },
     {
-      "name": "Up from the Deep",
+      "name": "Shadows of the Past",
       "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Star-Crossed",
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "common",
       "domain": "chaos"
     },
     {
-      "name": "Divine Judgment",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
-      "domain": "order"
-    },
-    {
       "name": "Downwell",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "epic",
       "domain": "chaos"
@@ -240,10 +226,10 @@
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 14,
-    "spellCount": 21,
-    "gearCount": 4,
+    "unitCount": 15,
+    "spellCount": 19,
+    "gearCount": 5,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-kennen-heart-of-the-tempest-225529"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-kennen-heart-of-the-tempest-225540"
 }

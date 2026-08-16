@@ -1,12 +1,12 @@
 {
-  "id": "deck-reksai-void-burrower-225526",
+  "id": "deck-reksai-void-burrower-225538",
   "legend": "Rek'sai, Void Burrower",
   "legendId": null,
   "champion": "Rek'Sai, Breacher",
-  "player": "Taylor K",
+  "player": "Sinzаri",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 3,
+  "placement": 8,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -24,14 +24,14 @@
       "domain": "order"
     },
     {
-      "name": "Honest Broker",
+      "name": "Inferna",
       "quantity": 3,
       "type": "Unit",
       "rarity": "common",
-      "domain": "order"
+      "domain": "fury"
     },
     {
-      "name": "Inferna",
+      "name": "Legion Rearguard",
       "quantity": 2,
       "type": "Unit",
       "rarity": "common",
@@ -45,15 +45,15 @@
       "domain": "order"
     },
     {
-      "name": "Faithful Manufactor",
+      "name": "Shadow Fiend",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "common",
-      "domain": "order"
+      "rarity": "uncommon",
+      "domain": "fury"
     },
     {
-      "name": "Vanguard Captain",
-      "quantity": 2,
+      "name": "Faithful Manufactor",
+      "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "order"
@@ -66,13 +66,6 @@
       "domain": "fury"
     },
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "order"
-    },
-    {
       "name": "Undertitan",
       "quantity": 3,
       "type": "Unit",
@@ -80,7 +73,7 @@
       "domain": "order"
     },
     {
-      "name": "Rage Amplifier",
+      "name": "Long Sword",
       "quantity": 1,
       "type": "Gear",
       "rarity": "rare",
@@ -95,7 +88,7 @@
     },
     {
       "name": "Cleave",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "fury"
@@ -115,13 +108,6 @@
       "domain": "fury"
     },
     {
-      "name": "Hidden Blade",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
       "name": "Void Rush",
       "quantity": 3,
       "type": "Spell",
@@ -130,55 +116,55 @@
     }
   ],
   "runes": {
-    "Fury": 6,
-    "Order": 6
+    "Fury": 7,
+    "Order": 5
   },
   "battlefields": [
     "Forbidding Waste",
-    "The Candlelit Sanctum",
-    "Trifarian War Camp"
+    "Mystic Vortex",
+    "The Candlelit Sanctum"
   ],
   "sideDeck": [
     {
-      "name": "Decree of Rage",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "fury"
-    },
-    {
-      "name": "Against the Odds",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
       "name": "Brittle Steel",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unknown",
       "rarity": "common",
       "domain": "fury"
     },
     {
       "name": "Forge of the Future",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "common",
       "domain": "order"
     },
     {
-      "name": "Kennen, Keeper of Balance",
+      "name": "Salvage",
       "quantity": 2,
       "type": "Unknown",
-      "rarity": "rare",
+      "rarity": "uncommon",
       "domain": "order"
     },
     {
-      "name": "Vi, Peacekeeper",
-      "quantity": 1,
+      "name": "Smite",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Divine Judgment",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
       "domain": "order"
     }
   ],
@@ -189,5 +175,5 @@
     "gearCount": 1,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225526"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-reksai-void-burrower-225538"
 }

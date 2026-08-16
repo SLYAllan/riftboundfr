@@ -1,12 +1,12 @@
 {
-  "id": "deck-master-yi-wuju-bladesman-225583",
+  "id": "deck-master-yi-wuju-bladesman-225551",
   "legend": "Master Yi, Wuju Bladesman",
   "legendId": null,
   "champion": "Master Yi, Tempered",
-  "player": "Michael L",
+  "player": "cаmeroncshenoy",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 13,
+  "placement": 115,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -17,25 +17,18 @@
   ],
   "mainDeck": [
     {
-      "name": "Steel Paws",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
-      "name": "Legion Marauder",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "body"
-    },
-    {
       "name": "Lonely Poro",
       "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "calm"
+    },
+    {
+      "name": "Pit Rookie",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "body"
     },
     {
       "name": "Scuttle Crab",
@@ -46,16 +39,30 @@
     },
     {
       "name": "First Mate",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "rarity": "common",
       "domain": "body"
+    },
+    {
+      "name": "Akali, Silent",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
     },
     {
       "name": "Rengar, Trophy Hunter",
       "quantity": 3,
       "type": "Unit",
       "rarity": "epic",
+      "domain": "body"
+    },
+    {
+      "name": "Ruin Runner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
       "domain": "body"
     },
     {
@@ -81,7 +88,7 @@
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
@@ -109,13 +116,6 @@
     },
     {
       "name": "Rampage",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "body"
-    },
-    {
-      "name": "Onslaught",
       "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
@@ -123,39 +123,18 @@
     }
   ],
   "runes": {
-    "Body": 6,
-    "Calm": 6
+    "Body": 7,
+    "Calm": 5
   },
   "battlefields": [
-    "Grove of the God-Willow",
+    "Emperor's Dais",
     "Seat of Power",
     "Star Spring"
   ],
   "sideDeck": [
     {
-      "name": "Crumbling Sands",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
       "name": "Decree of Strength",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Repulse",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "body"
-    },
-    {
-      "name": "Sabotage",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "body"
@@ -168,33 +147,40 @@
       "domain": "calm/body"
     },
     {
-      "name": "Akali, Silent",
-      "quantity": 2,
+      "name": "Disarming Rake",
+      "quantity": 3,
       "type": "Unknown",
-      "rarity": "rare",
+      "rarity": "common",
       "domain": "calm"
     },
     {
-      "name": "Akshan, Mischievous",
-      "quantity": 2,
+      "name": "Fiora, Peerless",
+      "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "body"
     },
     {
-      "name": "Tomb-Raider Barbara",
+      "name": "First Mate",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Ruin Runner",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "uncommon",
-      "domain": "calm"
+      "domain": "body"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 16,
-    "spellCount": 21,
+    "unitCount": 18,
+    "spellCount": 19,
     "gearCount": 2,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-225583"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-master-yi-wuju-bladesman-225551"
 }

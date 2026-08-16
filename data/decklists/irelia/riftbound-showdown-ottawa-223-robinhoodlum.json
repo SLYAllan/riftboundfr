@@ -1,12 +1,12 @@
 {
-  "id": "deck-irelia-blade-dancer-225578",
+  "id": "deck-irelia-blade-dancer-225708",
   "legend": "Irelia, Blade Dancer",
   "legendId": null,
   "champion": "Irelia, Fervent",
-  "player": "Andrew C",
+  "player": "RobinHoodlum",
   "tournament": "Riftbound Showdown Ottawa",
   "date": "2026-08-08",
-  "placement": 15,
+  "placement": 223,
   "playerCount": 594,
   "set": "Vendetta",
   "format": "Constructed",
@@ -17,15 +17,8 @@
   ],
   "mainDeck": [
     {
-      "name": "Gust Monk",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
       "name": "Scuttle Crab",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
       "domain": "calm"
@@ -38,25 +31,11 @@
       "domain": "chaos"
     },
     {
-      "name": "Pyke, Returned",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
       "name": "Akali, Silent",
       "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
       "domain": "calm"
-    },
-    {
-      "name": "Kha'Zix, Mutating Horror",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
     },
     {
       "name": "Stellacorn Herder",
@@ -66,15 +45,15 @@
       "domain": "calm"
     },
     {
-      "name": "Forgotten Signpost",
+      "name": "Ocean Drake",
       "quantity": 1,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "calm"
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "chaos"
     },
     {
       "name": "Guardian Angel",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "rarity": "rare",
       "domain": "calm"
@@ -108,15 +87,15 @@
       "domain": "calm"
     },
     {
-      "name": "En Garde",
-      "quantity": 2,
+      "name": "Gust",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
-      "domain": "calm"
+      "domain": "chaos"
     },
     {
       "name": "Twilight Shroud",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
@@ -136,20 +115,6 @@
       "domain": "chaos"
     },
     {
-      "name": "Not So Fast",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "calm"
-    },
-    {
-      "name": "Rebuke",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
       "name": "Ride the Wind",
       "quantity": 2,
       "type": "Spell",
@@ -157,15 +122,15 @@
       "domain": "chaos"
     },
     {
-      "name": "Switcheroo",
-      "quantity": 1,
+      "name": "Find Your Center",
+      "quantity": 3,
       "type": "Spell",
-      "rarity": "rare",
-      "domain": "chaos"
+      "rarity": "common",
+      "domain": "calm"
     },
     {
       "name": "Star-Crossed",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
@@ -189,43 +154,22 @@
   ],
   "sideDeck": [
     {
-      "name": "Crumbling Sands",
+      "name": "Decree of Focus",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
       "domain": "calm"
     },
     {
-      "name": "Twilight Shroud",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "calm"
-    },
-    {
-      "name": "Abandon",
-      "quantity": 1,
+      "name": "Hard Bargain",
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "uncommon",
       "domain": "chaos"
     },
     {
-      "name": "Pyke, Returned",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
       "name": "Ravenbloom Prefect",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Star-Crossed",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "common",
       "domain": "chaos"
@@ -246,7 +190,7 @@
     },
     {
       "name": "Vex, Apathetic",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "epic",
       "domain": "chaos"
@@ -254,10 +198,10 @@
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 12,
-    "spellCount": 23,
+    "unitCount": 11,
+    "spellCount": 24,
     "gearCount": 4,
     "averageCost": null
   },
-  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-irelia-blade-dancer-225578"
+  "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-irelia-blade-dancer-225708"
 }
