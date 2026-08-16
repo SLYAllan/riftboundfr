@@ -40,9 +40,9 @@ const getMetaData = unstable_cache(
 );
 
 const metadata: Metadata = {
-  title: { absolute: "Méta Riftbound Vendetta - Popularité des Légendes en tournoi" },
+  title: { absolute: "Méta Riftbound Vendetta - Decks et Légendes les plus joués en tournoi" },
   description:
-    "Analyse du métagame Riftbound par set et tournoi : popularité réelle des Légendes, recalculée sur les decklists complètes publiées.",
+    "Le méta deck Riftbound par set et tournoi : les decks et Légendes les plus joués, avec parts de terrain et conversions, recalculés sur les decklists complètes publiées.",
   alternates: { canonical: "/meta" },
 };
 
@@ -82,7 +82,7 @@ export default async function MetaSnapshotPage() {
       <header className="grid gap-5 border-b border-hairline pb-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-arcane">{t("Données de tournoi")}</p>
-          <h1 className="mt-2 text-balance text-3xl font-bold font-display sm:text-5xl">{t("Le méta Riftbound, tournoi par tournoi")}</h1>
+          <h1 className="mt-2 text-balance text-3xl font-bold font-display sm:text-5xl">{t("Le méta Riftbound : decks et Légendes, tournoi par tournoi")}</h1>
           <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-ink-secondary">
             {t("Comparez la présence des Légendes par set ou par événement. Chaque classement est recalculé sur la sélection affichée.")}
           </p>
