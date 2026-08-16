@@ -12,8 +12,8 @@ import { prisma } from "@/lib/prisma";
 import { BookOpen, Layers, BookText, Shield, ArrowRight, Gamepad2, Newspaper, Trophy, Library, Upload } from "lucide-react";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { legendsWithDecks } from "@/lib/legend-fiche";
-import { displayLegendName, formatDate } from "@/lib/utils";
-import { getTournamentCountryCode } from "@/lib/tournament-flags";
+import { displayLegendName, formatDate, slugify } from "@/lib/utils";
+import { getTournamentInfo } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { HomeTierList } from "@/components/home-tier-list";
 import { etiquetteLocale, traduire } from "@/lib/i18n";
@@ -21,7 +21,7 @@ import { langueCourante, metaTraduite } from "@/lib/i18n-server";
 
 const getHomeData = unstable_cache(
   async () => {
-    const [tierLists, legends, latestArticles, tournamentArticles, cardCount] = await Promise.all([
+    const [tierLists, legends, latestArticles, cardCount, derniersTournoisRaw] = await Promise.all([
       prisma.tierList.findMany({
         where: { published: true },
         include: { entries: { orderBy: { position: "asc" } } },
@@ -34,14 +34,31 @@ const getHomeData = unstable_cache(
         take: 4,
         select: { slug: true, title: true, coverImage: true, category: true, publishedAt: true },
       }),
-      prisma.article.findMany({
-        where: { published: true, tournamentName: { not: null } },
-        orderBy: { tournamentDate: "desc" },
-        take: 20,
-        select: { slug: true, title: true, tournamentName: true, tournamentDate: true, tournamentLocation: true },
-      }),
       prisma.card.count(),
+      // Derniers tournois AJOUTÉS, pas les plus récents par date de jeu : on trie
+      // par date de seed (createdAt), pour que la carte signale ce qui vient
+      // d'arriver sur le site, même sans article de récap (les City Challenges
+      // n'en ont pas). Se met à jour tout seul à chaque seed.
+      prisma.deck.groupBy({
+        by: ["tournamentContext"],
+        where: { published: true, tournamentContext: { not: null } },
+        _max: { createdAt: true },
+        orderBy: { _max: { createdAt: "desc" } },
+        take: 6,
+      }),
     ]);
+
+    const derniersTournois = derniersTournoisRaw.map((groupe) => {
+      const context = groupe.tournamentContext!;
+      const info = getTournamentInfo(context);
+      return {
+        slug: slugify(context),
+        nom: info?.name ?? context,
+        countryCode: info?.countryCode ?? null,
+        date: info?.date ?? null,
+        ajouteLe: groupe._max.createdAt?.toISOString() ?? null,
+      };
+    });
 
     const legendIds = [
       ...new Set(tierLists.flatMap((tl) => tl.entries.map((e) => e.legendId))),
@@ -64,26 +81,7 @@ const getHomeData = unstable_cache(
     // maintenant vers les pages de Légende, qui visent « deck <légende> ».
     const topLegends = legends.slice(0, 6);
 
-    // Un seul tournoi par ville : un même RQ peut avoir un récap ET un best-of,
-    // parfois avec des libellés différents ("Utrecht Regional Qualifier" vs
-    // "Regional Qualifier Utrecht"). On normalise sur la ville et on garde le récap.
-    const tournamentKey = (name: string | null, slug: string) =>
-      (name ?? slug)
-        .toLowerCase()
-        .replace(/regional qualifier|regional open|\brq\b|\bro\b/g, "")
-        .replace(/[^a-z]+/g, "")
-        .trim();
-    const byTournament = new Map<string, (typeof tournamentArticles)[number]>();
-    for (const t of tournamentArticles) {
-      const key = tournamentKey(t.tournamentName, t.slug);
-      const existing = byTournament.get(key);
-      if (!existing || (t.slug.startsWith("recap") && !existing.slug.startsWith("recap"))) {
-        byTournament.set(key, t);
-      }
-    }
-    const dedupedTournaments = [...byTournament.values()].slice(0, 5);
-
-    return { tierLists, topLegends, legendEntries, latestArticles, tournamentArticles: dedupedTournaments, cardCount };
+    return { tierLists, topLegends, legendEntries, latestArticles, derniersTournois, cardCount };
   },
   ["home-data"],
   { revalidate: 60, tags: ["home"] },
@@ -140,7 +138,7 @@ export default async function HomePage() {
   let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
   let topLegends: Awaited<ReturnType<typeof getHomeData>>["topLegends"] = [];
   let latestArticles: Awaited<ReturnType<typeof getHomeData>>["latestArticles"] = [];
-  let tournamentArticles: Awaited<ReturnType<typeof getHomeData>>["tournamentArticles"] = [];
+  let derniersTournois: Awaited<ReturnType<typeof getHomeData>>["derniersTournois"] = [];
   let cardCount = 0;
   let legendMap = new Map<string, { imageUrl: string | null; domains: string[] }>();
   try {
@@ -148,7 +146,7 @@ export default async function HomePage() {
     tierLists = data.tierLists;
     topLegends = data.topLegends;
     latestArticles = data.latestArticles;
-    tournamentArticles = data.tournamentArticles;
+    derniersTournois = data.derniersTournois;
     cardCount = data.cardCount;
     legendMap = new Map(data.legendEntries);
   } catch {}
@@ -359,24 +357,27 @@ export default async function HomePage() {
                 {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
-            {tournamentArticles.length === 0 ? (
+            {derniersTournois.length === 0 ? (
               <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
             ) : (
               <div className="divide-y divide-hairline flex-1">
-                {tournamentArticles.map((t) => {
-                  const cc = (t.tournamentName ? getTournamentCountryCode(t.tournamentName) : null)
-                    ?? (t.tournamentLocation ? getTournamentCountryCode(t.tournamentLocation) : null);
+                {derniersTournois.map((tournoi) => {
+                  // « Nouveau » = ajouté au site il y a moins de 7 jours (date de seed),
+                  // pas la date du tournoi : c'est ce qui vient d'arriver qu'on signale.
+                  const recent = tournoi.ajouteLe
+                    ? Date.now() - new Date(tournoi.ajouteLe).getTime() < 7 * 24 * 3600 * 1000
+                    : false;
                   return (
-                    <Link key={t.slug} href={`/articles/${t.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
+                    <Link key={tournoi.slug} href={`/tournois/${tournoi.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-surface-raised">
-                        {cc ? <CountryBadge code={cc} /> : <Trophy size={15} className="text-gold" />}
+                        {tournoi.countryCode ? <CountryBadge code={tournoi.countryCode} /> : <Trophy size={15} className="text-gold" />}
                       </span>
-                      <div className="min-w-0">
-                        <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t.tournamentName ?? t.title}</div>
-                        <div className="text-[11px] text-ink-muted">
-                          {t.tournamentLocation ? t.tournamentLocation.split(",")[0] : ""}
-                          {t.tournamentDate ? `${t.tournamentLocation ? " · " : ""}${formatDate(t.tournamentDate, locale)}` : ""}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{tournoi.nom}</span>
+                          {recent && <span className="shrink-0 rounded-full bg-arcane px-1.5 py-0.5 text-[10px] font-bold text-canvas">{t("Nouveau")}</span>}
                         </div>
+                        {tournoi.date && <div className="text-[11px] text-ink-muted">{formatDate(tournoi.date, locale)}</div>}
                       </div>
                     </Link>
                   );
