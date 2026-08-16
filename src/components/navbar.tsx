@@ -13,6 +13,7 @@ import { PREFIXE_EN, sansPrefixe } from "@/lib/i18n";
 
 const mainLinks = [
   { href: "/tier-list", label: "Tier List" },
+  { href: "/meta", label: "Méta" },
   { href: "/legendes", label: "Légendes" },
   { href: "/decks", label: "Decks" },
   { href: "/guides", label: "Guides" },
