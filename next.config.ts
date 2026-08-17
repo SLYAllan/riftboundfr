@@ -3,6 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
+  // La pastille de développement de Next se pose en bas à gauche de CHAQUE page,
+  // donc dans la source navigateur d'OBS : elle se voyait à l'écran pendant un
+  // direct lancé sur le serveur de dev. Les erreurs de compilation restent affichées.
+  devIndicators: false,
   experimental: {
     // Tree-shaking ciblé des gros barrels d'icônes (L12).
     optimizePackageImports: ["lucide-react"],

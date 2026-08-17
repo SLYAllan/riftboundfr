@@ -36,7 +36,7 @@ function nombre(value: unknown, chemin: string, min: number, max: number): strin
 function validerJoueur(value: unknown, index: number): string | null {
   if (!estObjet(value)) return `players.${index} doit être un objet`;
   const prefixe = `players.${index}`;
-  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "camUrl", "camBackground"], prefixe);
+  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "camUrl", "camBackground", "camNonce"], prefixe);
   if (inconnu) return inconnu;
   for (const cle of ["name", "legendName", "championName"] as const) {
     if (value[cle] !== undefined) {
@@ -53,6 +53,11 @@ function validerJoueur(value: unknown, index: number): string | null {
     if (erreur) return erreur;
   }
   if (value.camBackground !== undefined && typeof value.camBackground !== "boolean") return `${prefixe}.camBackground doit être un booléen`;
+  if (value.camNonce !== undefined) {
+    // Un horodatage en millisecondes : la borne haute laisse de la marge jusqu'en 2100.
+    const erreur = nombre(value.camNonce, `${prefixe}.camNonce`, 0, 4e12);
+    if (erreur) return erreur;
+  }
   if (value.gamesWon !== undefined) {
     const erreur = nombre(value.gamesWon, `${prefixe}.gamesWon`, 0, 5);
     if (erreur) return erreur;
@@ -83,7 +88,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "paused"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -99,8 +104,10 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
       const erreur = chaine(value.event.endsAt, "event.endsAt");
       if (erreur) return { ok: false, error: erreur };
     }
-    if (value.event.timerVisible !== undefined && typeof value.event.timerVisible !== "boolean") {
-      return { ok: false, error: "event.timerVisible doit être un booléen" };
+    for (const cle of ["timerVisible", "pointsVisible"] as const) {
+      if (value.event[cle] !== undefined && typeof value.event[cle] !== "boolean") {
+        return { ok: false, error: `event.${cle} doit être un booléen` };
+      }
     }
     if (value.event.paused !== undefined && value.event.paused !== null) {
       const erreur = nombre(value.event.paused, "event.paused", 0, 86400);

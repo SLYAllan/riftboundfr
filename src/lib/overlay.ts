@@ -14,6 +14,10 @@ export interface OverlayPlayer {
   // Fond de webcam optionnel (image fournie) : à cocher pour ne pas laisser le cadre
   // vide quand on n'a pas de caméra. Le flux, s'il arrive, se pose par-dessus.
   camBackground?: boolean;
+  // Change à chaque « Relancer » : l'overlay s'en sert comme clé d'iframe, ce qui
+  // recharge le flux. Un VDO.Ninja figé ne repart pas tout seul, et la seule
+  // parade était de retirer le lien puis de le recoller.
+  camNonce?: number;
 }
 
 export interface OverlayStateData {
@@ -22,9 +26,12 @@ export interface OverlayStateData {
   // sinon il faudrait pousser une mise à jour chaque seconde.
   // `timerVisible` : le chrono n'a pas sa place partout, on doit pouvoir l'éteindre
   // sans perdre l'heure de fin qui tourne.
+  // `pointsVisible` : même chose pour la rangée de points. Une partie hors match
+  // (démo, deck tech, pause) n'a pas de score à montrer, et on ne veut pas perdre
+  // les points en cours pour autant.
   // `paused` : secondes restantes figées quand le chrono est en pause (null = il
   // tourne). En pause on gèle l'affichage ; reprendre repose un `endsAt`.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; paused?: number | null };
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -55,7 +62,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },

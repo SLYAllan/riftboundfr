@@ -4,7 +4,7 @@ import { validerPatchOverlay } from "./overlay-validation";
 describe("validerPatchOverlay", () => {
   it("accepte une mise à jour partielle conforme au tableau de bord", () => {
     const patch = {
-      event: { round: "Finale", timerVisible: true },
+      event: { round: "Finale", timerVisible: true, pointsVisible: false },
       format: "BO3",
       points: { a: 4 },
       players: [{ name: "Allan", battlefields: ["The Grand Plaza"] }, {}],
@@ -12,6 +12,13 @@ describe("validerPatchOverlay", () => {
     } as const;
 
     expect(validerPatchOverlay(patch)).toEqual({ ok: true, value: patch });
+  });
+
+  it("refuse un interrupteur d'affichage qui n'est pas un booléen", () => {
+    expect(validerPatchOverlay({ event: { pointsVisible: "oui" } })).toEqual({
+      ok: false,
+      error: "event.pointsVisible doit être un booléen",
+    });
   });
 
   it("refuse les propriétés inconnues et les chaînes démesurées", () => {

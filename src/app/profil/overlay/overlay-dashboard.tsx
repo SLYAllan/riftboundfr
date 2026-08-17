@@ -1,10 +1,64 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  AlertTriangle, ArrowLeftRight, Check, Copy, Eraser, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
+} from "lucide-react";
 import { applyStateUpdate, entrelace, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
 type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
+
+/**
+ * Un lien de logo qui ne finit pas par une extension d'image.
+ *
+ * On ne peut pas le vérifier pour de vrai depuis cette page : la politique de
+ * sécurité n'autorise les images de n'importe quel hôte que sur `/overlay/`, et
+ * le proxy d'images est volontairement limité à un seul domaine. Reste la forme
+ * du lien, qui suffit à attraper le cas courant : l'adresse de la PAGE au lieu
+ * de celle de l'image.
+ */
+function lienNonImage(url: string): boolean {
+  const u = url.trim();
+  if (!u) return false;
+  return !/\.(png|jpe?g|webp|gif|avif|svg)([?#]|$)/i.test(u);
+}
+
+/**
+ * Bouton qui demande un second clic avant d'agir.
+ *
+ * « Nouveau lien » tue le lien collé dans OBS : un clic de trop en pleine
+ * diffusion et l'habillage disparaît jusqu'à ce qu'on recolle la source. Rien
+ * n'avertissait. L'armement retombe seul au bout de quatre secondes, pour que le
+ * bouton ne reste pas piégé pour le clic suivant.
+ */
+function BoutonConfirme({
+  libelle, confirmation, icone, onConfirme, className,
+}: {
+  libelle: string;
+  confirmation: string;
+  icone: ReactNode;
+  onConfirme: () => void;
+  className: string;
+}) {
+  const [arme, setArme] = useState(false);
+
+  useEffect(() => {
+    if (!arme) return;
+    const minuteur = setTimeout(() => setArme(false), 4000);
+    return () => clearTimeout(minuteur);
+  }, [arme]);
+
+  return (
+    <button
+      onClick={() => { if (arme) { setArme(false); onConfirme(); } else setArme(true); }}
+      className={className}
+    >
+      {arme ? <Check size={15} aria-hidden /> : icone}
+      {arme ? confirmation : libelle}
+    </button>
+  );
+}
 
 export function OverlayDashboard({ token, initial }: { token: string; initial: OverlayStateData }) {
   const t = useT();
@@ -94,14 +148,30 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   };
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
+  // `text-base sm:text-sm` : sous 16 px, iOS zoome dès qu'on touche un champ et
+  // la page part de travers en plein direct. Le 14 px revient dès l'écran large.
+  // `min-h-11` : 44 px, la cible tactile minimale — les champs faisaient 38.
   const inputCls =
-    "w-full rounded-lg border border-hairline bg-surface px-3 py-2 text-sm transition-colors duration-150 focus:border-arcane focus:outline-none";
+    "w-full min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base transition-colors duration-150 focus:border-arcane focus:outline-none sm:text-sm";
+  const selectCls = "min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base sm:text-sm";
+  // Un libellé de case à cocher n'est pas qu'un mot : c'est la zone qu'on vise.
+  const caseCls = "flex min-h-11 items-center gap-2 text-sm";
+  // `disabled:pointer-events-none` : sans ça un bouton grisé s'éclaire encore au
+  // survol et se ratatine au clic. Il a l'air de marcher et ne fait rien.
+  // `min-h-11` : 44 px, la cible tactile minimale. On pilote un stream depuis un
+  // téléphone posé à côté du tapis, avec des boutons de 36 px on rate.
   const btnStep =
-    "flex h-10 w-10 items-center justify-center rounded-lg border border-hairline text-base tabular-nums transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:opacity-30";
-  const btnPlein =
-    "shrink-0 rounded-lg bg-arcane px-3 py-2 text-sm font-medium text-canvas transition-[background-color,scale] duration-150 hover:bg-arcane/90 active:scale-[0.96]";
-  const btnVide =
-    "shrink-0 rounded-lg border border-hairline px-3 py-2 text-sm transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96]";
+    "flex size-11 items-center justify-center rounded-lg border border-hairline text-base tabular-nums transition-[background-color,scale] duration-150 hover:bg-surface-raised active:scale-[0.96] disabled:pointer-events-none disabled:opacity-30";
+  const btnBase =
+    "inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm transition-[background-color,scale] duration-150 active:scale-[0.96] disabled:pointer-events-none disabled:opacity-40";
+  const btnPlein = `${btnBase} bg-arcane font-medium text-canvas hover:bg-arcane/90`;
+  const btnVide = `${btnBase} border border-hairline hover:bg-surface-raised`;
+  // Fond neutre, texte rouge : la règle d'interface du dépôt interdit le fond
+  // teinté sous un texte de la même couleur. Ce qui casse quelque chose se
+  // distingue quand même de ce qui ne casse rien.
+  // `error-light` et pas `error` : le rouge plein tombait à 4,16:1 sur ce fond,
+  // sous les 4,5:1 exigés. Mesuré en composant le fond translucide, pas déduit.
+  const btnDanger = `${btnBase} border border-hairline text-error-light hover:bg-surface-raised`;
 
   const [minutes, setMinutes] = useState(50);
 
@@ -136,15 +206,22 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <label className="text-sm font-semibold">{t("Lien à coller dans OBS")}</label>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}</code>
+          {/* Largeur fixée : « Copier » et « Copié » n'ont pas la même longueur,
+              et le bouton sautait sous le curseur au moment du clic. */}
           <button
             onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}`); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
-            className={btnPlein}
+            className={`${btnPlein} min-w-[7.5rem]`}
           >
-            {copied ? t("Copié ✓") : t("Copier")}
+            {copied ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
+            {copied ? t("Copié") : t("Copier")}
           </button>
-          <button onClick={() => fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload())} className={btnVide}>
-            {t("Nouveau lien")}
-          </button>
+          <BoutonConfirme
+            libelle={t("Nouveau lien")}
+            confirmation={t("Confirmer ?")}
+            icone={<KeyRound size={15} aria-hidden />}
+            onConfirme={() => { fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload()); }}
+            className={btnDanger}
+          />
         </div>
         <p className="mt-2 text-xs text-ink-muted">
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
@@ -153,6 +230,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           <span className="text-sm text-ink-secondary">{t("Pas de caméra ni de cadre ?")}</span>
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
           <button onClick={() => navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}?compact=1`)} className={btnVide}>
+            <Copy size={15} aria-hidden />
             {t("Copier la version simple")}
           </button>
         </div>
@@ -210,17 +288,17 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-sm text-ink-secondary">{t("Points")}</span>
                     <div className="flex items-center gap-2">
-                      <button onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
+                      <button aria-label={`${t("Un point de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
                       <span className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
-                      <button onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
+                      <button aria-label={`${t("Un point de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between gap-2">
                     <span className="text-sm text-ink-secondary">{t("Manches gagnées")}</span>
                     <div className="flex items-center gap-2">
-                      <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
+                      <button aria-label={`${t("Une manche de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
                       <span className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
-                      <button onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
+                      <button aria-label={`${t("Une manche de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
                     </div>
                   </div>
                 </div>
@@ -232,17 +310,29 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                       value={brouillonCam[i]}
                       onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
                       placeholder="https://vdo.ninja/?view=..."
-                      aria-label={`${t("Caméra (lien VDO.Ninja)")} — ${t("joueur")} ${i + 1}`}
+                      aria-label={`${t("Caméra (lien VDO.Ninja)")}, ${t("joueur")} ${i + 1}`}
                       className={inputCls}
                     />
-                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} className={btnPlein}>{t("Charger")}</button>
+                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} disabled={!brouillonCam[i].trim()} className={btnPlein}>
+                      <Upload size={15} aria-hidden />
+                      {t("Charger")}
+                    </button>
                     {p.camUrl && (
-                      <button
-                        onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
-                        className={btnVide}
-                      >
-                        {t("Retirer")}
-                      </button>
+                      <>
+                        {/* Un VDO.Ninja qui gèle ne repart pas seul : jusqu'ici il
+                            fallait retirer le lien puis le recoller en direct. */}
+                        <button onClick={() => setPlayer(i, { camNonce: Date.now() })} className={btnVide}>
+                          <RefreshCw size={15} aria-hidden />
+                          {t("Relancer")}
+                        </button>
+                        <button
+                          onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
+                          className={btnDanger}
+                        >
+                          <X size={15} aria-hidden />
+                          {t("Retirer")}
+                        </button>
+                      </>
                     )}
                   </div>
                   <p className="mt-1 text-xs text-ink-muted">
@@ -250,7 +340,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   </p>
                   {/* py-1 + size-4 : la case seule faisait 13px, sous le
                       minimum de 24px de WCAG 2.5.8 même en comptant le libellé. */}
-                  <label className="mt-2 flex items-center gap-2 py-1 text-sm">
+                  <label className={"mt-2 " + caseCls}>
                     <input type="checkbox" className="size-4 accent-arcane" checked={p.camBackground ?? false} onChange={(e) => setPlayer(i, { camBackground: e.target.checked })} />
                     {t("Fond de webcam (sans caméra)")}
                   </label>
@@ -266,15 +356,21 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block">
             <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
-            <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
+            <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className={selectCls}>
               <option>BO1</option><option>BO3</option><option>BO5</option>
             </select>
           </label>
           <label className="block">
             <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
-            <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className="rounded-lg border border-hairline bg-surface px-3 py-2">
+            <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className={selectCls}>
               <option value={8}>8</option><option value={9}>9</option><option value={10}>10</option>
             </select>
+          </label>
+          {/* Cacher les points sans les perdre : hors match (démo, deck tech, pause)
+              le score n'a rien à faire à l'écran, mais il doit revenir tel quel. */}
+          <label className={caseCls}>
+            <input type="checkbox" className="size-4 accent-arcane" checked={state.event.pointsVisible !== false} onChange={(e) => update({ event: { pointsVisible: e.target.checked } })} />
+            {t("Montrer les points")}
           </label>
           <label className="block min-w-[180px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Ronde affichée")}</span>
@@ -292,9 +388,13 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             }
             className={btnVide}
           >
+            <ArrowLeftRight size={15} aria-hidden />
             {t("Échanger les joueurs")}
           </button>
-          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>{t("Remettre les points à zéro")}</button>
+          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>
+            <RotateCcw size={15} aria-hidden />
+            {t("Remettre les points à zéro")}
+          </button>
         </div>
 
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
@@ -306,10 +406,11 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               max={180}
               value={minutes}
               onChange={(e) => setMinutes(Number(e.target.value))}
-              className="w-28 rounded-lg border border-hairline bg-surface px-3 py-2 tabular-nums"
+              className="w-28 min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base tabular-nums sm:text-sm"
             />
           </label>
           <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString(), paused: null } })} className={btnPlein}>
+            <Play size={15} aria-hidden />
             {t("Lancer le chrono")}
           </button>
           {state.event.paused == null ? (
@@ -318,6 +419,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               disabled={!state.event.endsAt}
               className={btnVide}
             >
+              <Pause size={15} aria-hidden />
               {t("Pause")}
             </button>
           ) : (
@@ -325,11 +427,15 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
               onClick={() => update({ event: { endsAt: new Date(Date.now() + (state.event.paused ?? 0) * 1000).toISOString(), paused: null } })}
               className={btnPlein}
             >
+              <Play size={15} aria-hidden />
               {t("Reprendre")}
             </button>
           )}
-          <button onClick={() => update({ event: { endsAt: null, paused: null } })} className={btnVide}>{t("Arrêter")}</button>
-          <label className="flex items-center gap-2">
+          <button onClick={() => update({ event: { endsAt: null, paused: null } })} disabled={!state.event.endsAt && state.event.paused == null} className={btnVide}>
+            <Square size={15} aria-hidden />
+            {t("Arrêter")}
+          </button>
+          <label className={caseCls}>
             <input type="checkbox" className="size-4 accent-arcane" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
             {t("Montrer le chrono")}
           </label>
@@ -345,25 +451,25 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
           {/* Tous les réglages ensemble : quel affichage, diapo auto, durée. */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <label className="flex items-center gap-2">
+            <label className={caseCls}>
               <span className="text-xs text-ink-muted">{t("Affichage")}</span>
               <select
                 value={cards.mode}
                 onChange={(e) => majCards({ mode: e.target.value as OverlayStateData["cards"]["mode"] })}
                 aria-label={t("Affichage des cartes")}
-                className="rounded-lg border border-hairline bg-surface px-3 py-2 text-sm transition-colors duration-150 focus:border-arcane focus:outline-none"
+                className={selectCls + " transition-colors duration-150 focus:border-arcane focus:outline-none"}
               >
                 <option value="none">{t("Rien")}</option>
                 <option value="mixed">{t("Un cadre, les 2 decks à droite")}</option>
                 <option value="split">{t("Deux cadres, un par joueur")}</option>
               </select>
             </label>
-            <label className="flex items-center gap-2">
+            <label className={caseCls}>
               <input type="checkbox" className="size-4 accent-arcane" checked={cards.auto} onChange={(e) => majCards({ auto: e.target.checked })} />
               {t("Diapo auto")}
             </label>
             {cards.auto && (
-              <label className="flex items-center gap-2">
+              <label className={caseCls}>
                 <span className="text-xs text-ink-muted">{t("Durée par carte")}</span>
                 <input
                   type="number" min={1} max={60}
@@ -375,12 +481,13 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                 <span className="text-xs text-ink-muted">s</span>
               </label>
             )}
-            <button
-              onClick={() => { setBrouillonDeck(["", ""]); majCards({ lists: [[], []], ignored: [[], []], index: [0, 0], mode: "none" }); }}
-              className={btnVide + " ml-auto"}
-            >
-              {t("Vider les decklists")}
-            </button>
+            <BoutonConfirme
+              libelle={t("Vider les decklists")}
+              confirmation={t("Confirmer ?")}
+              icone={<Eraser size={15} aria-hidden />}
+              onConfirme={() => { setBrouillonDeck(["", ""]); majCards({ lists: [[], []], ignored: [[], []], index: [0, 0], mode: "none" }); }}
+              className={btnDanger + " ml-auto"}
+            />
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -397,7 +504,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                     placeholder={t("Collez une decklist")}
                     aria-label={t("Decklist")}
                     rows={3}
-                    className={inputCls + " font-mono text-xs"}
+                    className={inputCls + " font-mono text-base sm:text-xs"}
                   />
                   <button
                     onClick={() => {
@@ -410,25 +517,29 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                       );
                       majCards({ lists: paire(cards.lists, i, noms), ignored: paire(cards.ignored, i, []), index: paire(cards.index, i, 0) });
                     }}
+                    disabled={!brouillonDeck[i].trim()}
                     className={btnPlein}
                   >
+                    <Upload size={15} aria-hidden />
                     {t("Charger")} ({liste.length})
                   </button>
 
                   {liste.length > 0 && (
-                    <div className="max-h-52 space-y-0.5 overflow-y-auto pr-1">
+                    // Relevé de 208 à 288 px : avec des lignes à 36 px, la hauteur
+                    // d'avant coupait un nom en deux au bas du cadre.
+                    <div className="max-h-72 space-y-0.5 overflow-y-auto pr-1">
                       {liste.map((c) => {
                         const exclue = ignorees.includes(c);
                         return (
-                          <div key={c} className="flex items-center gap-2">
+                          <div key={c} className="flex min-h-9 items-center gap-2">
                             {/* En diapo auto seulement : décocher retire la carte du
                                 défilé. En manuel on clique le nom pour la montrer. */}
                             {cards.auto && (
                               <input
                                 type="checkbox"
-                                className="size-3.5 accent-arcane"
+                                className="size-4 accent-arcane"
                                 checked={!exclue}
-                                aria-label={`${t("Garder dans la diapo")} — ${c}`}
+                                aria-label={`${t("Garder dans la diapo")} : ${c}`}
                                 onChange={(e) => {
                                   const nextIgn = e.target.checked ? ignorees.filter((x) => x !== c) : [...new Set([...ignorees, c])];
                                   majCards({ ignored: paire(cards.ignored, i, nextIgn) });
@@ -438,7 +549,10 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                             <button
                               type="button"
                               onClick={() => montrer(i, c)}
-                              className={`flex-1 truncate rounded px-2 py-1 text-left text-xs transition-colors duration-150 ${
+                              // La liste des cartes se clique en plein match : une
+                              // ligne de 24 px se rate au doigt. 36 px, et la liste
+                              // reste dans son cadre qui défile.
+                              className={`min-h-9 flex-1 truncate rounded px-2 py-2 text-left text-xs transition-colors duration-150 ${
                                 c === montree ? "bg-arcane/15 font-medium text-ink" : "text-ink-secondary hover:bg-surface-raised"
                               } ${cards.auto && exclue ? "text-ink-muted line-through" : ""}`}
                             >
@@ -475,11 +589,26 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
             <div className="flex gap-2">
               <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" aria-label={t("Logo (lien d’image)")} className={inputCls} />
-              <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} className={btnPlein}>{t("Charger")}</button>
+              <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} disabled={!brouillonLogo.trim()} className={btnPlein}>
+                <Upload size={15} aria-hidden />
+                {t("Charger")}
+              </button>
               {state.event.logoUrl && (
-                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnVide}>{t("Retirer")}</button>
+                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnDanger}>
+                  <X size={15} aria-hidden />
+                  {t("Retirer")}
+                </button>
               )}
             </div>
+            {/* Une adresse de PAGE collée ici ne montre rien à l'écran et rien ne le
+                disait : le cadre du logo restait vide sans un mot. La règle du dépôt
+                est de ne jamais avaler une donnée qui ne passe pas. */}
+            {lienNonImage(brouillonLogo.trim() || state.event.logoUrl || "") && (
+              <p role="status" className="mt-2 flex items-start gap-1.5 text-xs text-warning">
+                <AlertTriangle size={14} className="mt-px shrink-0" aria-hidden />
+                {t("Ce lien ne pointe pas vers un fichier image (.png, .jpg, .webp) : rien ne s’affichera. Sur la page de l’image, faites un clic droit puis « Copier l’adresse de l’image ».")}
+              </p>
+            )}
           </div>
         </div>
       </section>

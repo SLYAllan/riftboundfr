@@ -116,6 +116,43 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
   );
 }
 
+/**
+ * Le flux VDO.Ninja dans sa découpe, avec son témoin d'attente.
+ *
+ * Composant à part pour que « Relancer » suffise : on le remonte par sa clé et
+ * l'état du témoin repart de zéro tout seul.
+ */
+function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
+  const t = useT();
+  const [charge, setCharge] = useState(false);
+  return (
+    <>
+      {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la fenêtre
+          du dessus. `allow-scripts` et `allow-same-origin` sont le minimum pour que
+          WebRTC tourne. Une webcam est en 16:9, le cadre est en portrait : on
+          agrandit le flux jusqu'à couvrir le cadre et on garde le centre. */}
+      <iframe
+        src={cam}
+        title={`Caméra de ${nom || "joueur"}`}
+        allow="autoplay; fullscreen"
+        sandbox="allow-scripts allow-same-origin"
+        onLoad={() => setCharge(true)}
+        className="absolute left-1/2 top-0 border-0"
+        style={{
+          width: Math.round((SLOT.cam.height * 16) / 9),
+          height: SLOT.cam.height,
+          transform: "translateX(-50%)",
+        }}
+      />
+      {!charge && (
+        <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
+          {t("caméra en attente")}
+        </span>
+      )}
+    </>
+  );
+}
+
 function Side({
   p,
   side,
@@ -137,7 +174,6 @@ function Side({
   const bf = p.battlefields[0] ?? "";
   const art = useBattlefieldArt(bf ? [bf] : []);
   const cam = camSrc(p.camUrl);
-  const [camCharge, setCamCharge] = useState(false);
   return (
     <div className="absolute inset-0">
       {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
@@ -189,28 +225,10 @@ function Side({
               WebRTC tourne. Une webcam est en 16:9, le cadre est en portrait : on
               agrandit le flux jusqu'à couvrir le cadre et on garde le centre — c'est le
               buste qu'on veut voir. Le témoin dit si le cadre a fini de charger. */}
-          {cam && (
-            <>
-              <iframe
-                src={cam}
-                title={`Caméra de ${p.name || "joueur"}`}
-                allow="autoplay; fullscreen"
-                sandbox="allow-scripts allow-same-origin"
-                onLoad={() => setCamCharge(true)}
-                className="absolute left-1/2 top-0 border-0"
-                style={{
-                  width: Math.round((SLOT.cam.height * 16) / 9),
-                  height: SLOT.cam.height,
-                  transform: "translateX(-50%)",
-                }}
-              />
-              {!camCharge && (
-                <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
-                  {t("caméra en attente")}
-                </span>
-              )}
-            </>
-          )}
+          {/* La clé porte le nonce : « Relancer » le change, React jette le cadre
+              et en monte un neuf — le flux repart et le témoin d'attente aussi,
+              sans effet de bord à écrire. Sans ça, un VDO.Ninja figé reste figé. */}
+          {cam && <CadreCamera key={`${cam}-${p.camNonce ?? 0}`} cam={cam} nom={p.name} />}
         </div>
       )}
 
@@ -237,7 +255,9 @@ function Side({
             {bf || "Champ de bataille"}
           </FitText>
           {rounds > 0 && (
-            <div className="mt-2 flex justify-center gap-2.5">
+            // mb-2 : posées au ras du bas de la découpe, les pastilles touchaient
+            // le trait doré du cadre. Remontées de 8 px.
+            <div className="mt-2 mb-2 flex justify-center gap-2.5">
               {Array.from({ length: rounds }).map((_, i) => (
                 <Manche key={i} gagnee={i < p.gamesWon} />
               ))}
@@ -410,7 +430,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
       {(mode === "mixed" || mode === "split") && (
         <img src="/stream/cartes_droite.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
       )}
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
+      {event.pointsVisible !== false && <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />}
       <Side
         p={state.players[0]}
         side="left"
@@ -423,7 +443,11 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
             {!vitrine && event.title && (
               <div
                 className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center ${event.logoUrl ? "justify-end" : "justify-center"}`}
-                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 628 : 700, height: event.logoUrl ? 66 : 190 }}
+                // Avec logo, le titre est ancré en bas de sa case : il collait au
+                // trait doré du cadre au-dessus. Descendu de 12 px, le logo suit
+                // d'autant pour ne pas se faire recouvrir (il finit toujours à 892,
+                // au-dessus de la ronde).
+                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 640 : 700, height: event.logoUrl ? 66 : 190 }}
               >
                 {/* Gros titre sur une ou deux lignes : FitText montre TOUT le texte en
                     réduisant si besoin, sans jamais couper ni « … », et sans dépasser
@@ -439,7 +463,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
                 src={event.logoUrl}
                 alt=""
                 className="absolute z-20 object-contain"
-                style={{ left: SLOT.x.left, width: SLOT.width, top: 696, height: 196 }}
+                style={{ left: SLOT.x.left, width: SLOT.width, top: 708, height: 184 }}
               />
             )}
             {/* La ronde au-dessus, sur le fond bleu ; le chrono dans la case dorée,
@@ -490,7 +514,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
   const [a, b] = state.players;
   return (
     <div className={styles.root}>
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />
+      {state.event.pointsVisible !== false && <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />}
       {[a, b].map((p, i) => (
         <div
           key={i}
