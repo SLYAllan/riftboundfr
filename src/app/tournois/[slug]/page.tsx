@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { slugify, formatDate, displayLegendName } from "@/lib/utils";
 import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
+import { articleDuTournoi } from "@/lib/tournament-articles";
 import { getLegendIconUrl, getBannerUrl } from "@/lib/banners";
 import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
@@ -106,10 +107,11 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   ]);
 
   const cityLower = info?.city.toLowerCase() ?? ctx.toLowerCase();
-  const matchedArticles = articles.filter((a) => {
-    const artCity = a.tournamentLocation?.split(",")[0]?.trim().toLowerCase() ?? "";
-    return artCity && cityLower.includes(artCity);
-  });
+  // Ville ET date : la ville seule collait l'article du Regional Open de Tianjin
+  // (7 juin, 640 joueurs) sur la page du City Challenge du 16 août.
+  const matchedArticles = articles.filter((a) =>
+    articleDuTournoi(a, cityLower, info?.date ? new Date(info.date) : null),
+  );
 
   let date: string | null = null;
   let location: string | null = null;
