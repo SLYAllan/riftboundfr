@@ -48,15 +48,22 @@ const getHomeData = unstable_cache(
       }),
     ]);
 
+    // « Nouveau » se décide ICI, au chargement des données, et pas dans le rendu :
+    // `Date.now()` pendant le rendu est une lecture impure, refusée par le lint.
+    const maintenant = Date.now();
     const derniersTournois = derniersTournoisRaw.map((groupe) => {
       const context = groupe.tournamentContext!;
       const info = getTournamentInfo(context);
+      const ajouteLe = groupe._max.createdAt;
       return {
         slug: slugify(context),
         nom: info?.name ?? context,
         countryCode: info?.countryCode ?? null,
         date: info?.date ?? null,
-        ajouteLe: groupe._max.createdAt?.toISOString() ?? null,
+        ajouteLe: ajouteLe?.toISOString() ?? null,
+        // Ajouté au site il y a moins de 7 jours (date de seed), pas la date du
+        // tournoi : c'est ce qui vient d'arriver qu'on signale.
+        recent: ajouteLe ? maintenant - ajouteLe.getTime() < 7 * 24 * 3600 * 1000 : false,
       };
     });
 
@@ -371,11 +378,7 @@ export default async function HomePage() {
             ) : (
               <div className="divide-y divide-hairline flex-1">
                 {derniersTournois.map((tournoi) => {
-                  // « Nouveau » = ajouté au site il y a moins de 7 jours (date de seed),
-                  // pas la date du tournoi : c'est ce qui vient d'arriver qu'on signale.
-                  const recent = tournoi.ajouteLe
-                    ? Date.now() - new Date(tournoi.ajouteLe).getTime() < 7 * 24 * 3600 * 1000
-                    : false;
+                  const recent = tournoi.recent;
                   return (
                     <Link key={tournoi.slug} href={`/tournois/${tournoi.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
                       <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-surface-raised">

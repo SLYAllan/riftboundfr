@@ -163,7 +163,7 @@ export default async function JouerEnLignePage() {
         <Link
           href="/guides"
           className="text-sm text-ink-muted hover:text-arcane transition-colors"
-        >{t("&larr; Retour aux guides")}</Link>
+        >{t("← Retour aux guides")}</Link>
       </div>
     </div>
   );
