@@ -1,0 +1,151 @@
+{
+  "legendName": "Zed, Master of Shadows",
+  "legendId": "Zed, Master of Shadows",
+  "domains": [
+    "Fury",
+    "Chaos"
+  ],
+  "set": "Vendetta",
+  "tier": 4,
+  "archetype": "Bannissement et rotation de main",
+  "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
+  "gameplan": {
+    "earlyGame": "Stacked Deck choisit la bonne carte parmi trois. Traveling Merchant échange une carte à chaque déplacement.",
+    "midGame": "Death Mark, dans 95 % des listes, ouvre le combat. Zed, From the Shadows arrive avec un Clone d'Ombre s'il est payé en défausse.",
+    "lateGame": "Perfect Execution prépare une unité et lui donne Assaut 3, de quoi reprendre un champ de bataille perdu.",
+    "winCondition": "Une main tenue à jour tour après tour, et deux menaces là où l'adversaire n'en attendait qu'une."
+  },
+  "strengths": [
+    "Stacked Deck et Death Mark dans 95 % des listes",
+    "Zaun Warrens dans 95 % des listes : le terrain est arrêté, même si la liste ne l'est pas"
+  ],
+  "weaknesses": [
+    "19 listes en onze tournois, aucun Top 8",
+    "Sept Champions se partagent la place, aucun au-dessus de 74 % : personne n'a fixé la liste",
+    "Bannir demande des cartes qui bannissent, et le deck n'en joue pas tant que ça"
+  ],
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Death Mark",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 84 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 84 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 79 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 74 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Cleave",
+      "role": "Standard, 68 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 63 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Souple, 53 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Souple, 53 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 47 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Souple, 42 % des listes, 3 exemplaires"
+    }
+  ],
+  "champions": {
+    "Zed, From the Shadows": {
+      "usage": "74 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "53 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Zed, Without a Sound": {
+      "usage": "53 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Destructive": {
+      "usage": "47 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Unseen": {
+      "usage": "32 %",
+      "role": "1.5 exemplaire en moyenne"
+    },
+    "Rek'Sai, Breacher": {
+      "usage": "32 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Zaun Warrens (95 %)",
+    "Minefield (53 %)",
+    "Forbidding Waste (47 %)",
+    "Shadow Temple (42 %)",
+    "Seat of Power (32 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 19,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 11,
+    "bestPlacements": [
+      {
+        "placement": "18th",
+        "player": "小震",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "32th",
+        "player": "皮皮有活",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "39th",
+        "player": "利原",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "40th",
+        "player": "Golden Time.猫岛",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "43th",
+        "player": "小震",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 19 listes, 11 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

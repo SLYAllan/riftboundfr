@@ -10,22 +10,22 @@
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "id": "OGN-183",
+      "id": "Stacked Deck",
       "role": "Présente dans 94 % des 503 listes recensées."
     },
     {
       "name": "Kai'Sa, Survivor",
-      "id": "OGN-039",
+      "id": "Kai'Sa, Survivor",
       "role": "Présente dans 91 % des 503 listes recensées."
     },
     {
       "name": "Traveling Merchant",
-      "id": "OGN-185",
+      "id": "Traveling Merchant",
       "role": "Présente dans 87 % des 503 listes recensées."
     },
     {
       "name": "Ride the Wind",
-      "id": "OGN-173",
+      "id": "Ride The Wind",
       "role": "Présente dans 77 % des 503 listes recensées."
     },
     {
@@ -34,17 +34,17 @@
     },
     {
       "name": "Flash",
-      "id": "OGS-011",
+      "id": "Flash",
       "role": "Présente dans 72 % des 503 listes recensées."
     },
     {
       "name": "Rebuke",
-      "id": "OGN-172",
+      "id": "Rebuke",
       "role": "Présente dans 66 % des 503 listes recensées."
     },
     {
       "name": "Vi, Destructive",
-      "id": "OGN-036",
+      "id": "Vi, Destructive",
       "role": "Présente dans 64 % des 503 listes recensées."
     }
   ],
@@ -54,5 +54,13 @@
     "victoires": 6,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Runes préparées en fin de tour",
+  "legendAbility": "À la fin de votre tour, préparez jusqu'à deux runes. Vous rejouez le tour suivant avec deux ressources d'avance.",
+  "strengths": [
+    "Deux runes rendues chaque tour, sans condition ni coût."
+  ],
+  "weaknesses": [
+    "6 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

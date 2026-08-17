@@ -7,74 +7,108 @@
   ],
   "set": "Origins",
   "tier": 2,
-  "archetype": "Midrange explosif / Draw via combats",
-  "legendAbility": "Pioche une carte quand il gagne un combat (attaque ou défense). L'adversaire doit constamment calculer si attaquer est rentable.",
+  "archetype": "Combats rentables, pioche à chaque victoire",
+  "legendAbility": "Quand vous gagnez un combat, piochez une carte. Chaque affrontement gagné paie le suivant.",
   "gameplan": {
-    "earlyGame": "SFD-130 développe des unités sans perdre de runes. Pression rapide avec des unités 4-6 cost.",
-    "midGame": "OGN-039 + ability = draw massif. OGN-183 pour creuser le deck. Unités 4-6 cost dominent le midrange.",
-    "lateGame": "OGN-172 renvoie les grosses menaces en main adverse — scores les derniers points. OGN-192 en side deck vs control.",
-    "winCondition": "Pression midrange explosive + draw via combats gagnés = l'adversaire s'épuise"
+    "earlyGame": "Spinning Axe, dans toutes les listes, s'attache en réaction et fait basculer un premier combat. Tideturner déplace la menace.",
+    "midGame": "Draven, Showboat grossit avec le score. Switcheroo échange les Puissances au pire moment pour l'adversaire.",
+    "lateGame": "Kai'Sa, Survivor et Vex, Apathetic verrouillent le terrain, Rebuke et Star-Crossed renvoient ce qui gêne.",
+    "winCondition": "Gagner des combats en série, piocher à chaque fois et finir avec un Draven devenu énorme."
   },
   "keyCards": [
     {
-      "name": "OGN-028",
-      "id": "OGN-028",
-      "role": "Chosen champion (post-ban SFD-020). 5-cost pressure tool, fort quand on score tôt."
+      "name": "Spinning Axe",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-130",
-      "id": "SFD-130",
-      "role": "Développe des unités quand il se déplace — runes intactes. Inarrêtable si il bouge plusieurs fois."
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-039",
-      "id": "OGN-039",
-      "role": "Draw engine."
+      "name": "Tideturner",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-183",
-      "id": "OGN-183",
-      "role": "Deck digging."
+      "name": "Switcheroo",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-192",
-      "id": "OGN-192",
-      "role": "Side deck vs control — disruption main."
+      "name": "Rebuke",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-172",
-      "id": "OGN-172",
-      "role": "Renvoie les grosses unités en main — permet de scorer avant stabilisation."
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-289",
-      "id": "OGN-289",
-      "role": "Battlefield spécifique — jouer des sorts support sans perdre de tempo."
+      "name": "Falling Star",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-173",
-      "id": "OGN-173",
-      "role": "Push final combiné avec OGN-028."
+      "name": "Cleave",
+      "role": "Standard, 88 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Overzealous Fan",
+      "role": "Standard, 82 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "0 carte Unleashed dans le meilleur deck — prouve la force du core Spiritforged",
-    "Ability crée un dilemme constant pour l'adversaire",
-    "Explosif en midrange — difficile à contenir"
+    "Cinq cartes au-dessus de 90 %, dont Spinning Axe dans toutes les listes",
+    "9,8 % de conversion et un titre, sur 51 listes et quinze tournois",
+    "Sept Champions au-dessus de 55 % : c'est le deck le plus modulable du format",
+    "La Légende pioche sans coûter ni énergie ni épuisement"
   ],
   "weaknesses": [
-    "0 amélioration d'Unleashed = limité à long terme",
-    "Struggle vs grosses menaces OGN-160 — doit renvoyer avec OGN-172",
-    "N'a pas dominé le meta depuis le ban de SFD-020"
+    "Rien ne se déclenche si les combats sont perdus : le deck n'a pas de plan de repli",
+    "Draven, Showboat n'est dangereux qu'avec de l'avance au score",
+    "Volume modeste, 51 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "5 Top 8",
-    "sydneyStats": {
-      "winRate": "55%",
-      "matches": 193,
-      "bestPlacement": "10th (11-2-0)"
-    }
+    "deckCount": 51,
+    "top8": 5,
+    "titres": 1,
+    "conversion": "9.8 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "JHM.太子",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "2nd",
+        "player": ">171",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "5th",
+        "player": "CCC",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "6th",
+        "player": "TIE.TAI选手",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "8th",
+        "player": "福州橙逯 · 木相",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
@@ -94,5 +128,41 @@
       "Vex Apathetic (en Unleashed, purple partagé)"
     ],
     "note": "Vanquisher banni → garde Showboat/Audacious. En Unleashed, Falling Star = boogeyman anti-Diana."
-  }
+  },
+  "champions": {
+    "Draven, Showboat": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "94 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "88 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "73 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Kha'Zix, Mutating Horror": {
+      "usage": "65 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "63 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Pyke, Dockside Butcher": {
+      "usage": "57 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Treasure Hoard (86 %)",
+    "Zaun Warrens (75 %)",
+    "Amateur Recital (49 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 51 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

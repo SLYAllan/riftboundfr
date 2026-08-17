@@ -1,95 +1,114 @@
 {
   "legendName": "Master Yi, Wuju Bladesman",
-  "legendId": "OGS-019",
+  "legendId": "Master Yi, Wuju Bladesman",
   "domains": [
     "Calm",
     "Body"
   ],
   "set": "Origins (Starter)",
   "tier": 1,
-  "archetype": "Hold-oriented / Défense & durabilité",
-  "legendAbility": "+2 Might aux unités défendant un battlefield. Fantastique pour s'installer tôt et tenir tout le match.",
+  "archetype": "Contrôle de terrain, une seule unité qui tient",
+  "legendAbility": "Tant qu'une de vos unités défend seule, elle gagne +2 Puissance. Toute la construction sert ce bonus : une unité par champ de bataille, jamais deux.",
   "gameplan": {
-    "earlyGame": "Tour 1: UNL-053 ou SFD-036 comme défenseur solo. Tour 2: UNL-113 (nouveau chosen champion remplaçant OGS-009).",
-    "midGame": "UNL-120 comme enforcer flexible et beefu. Draw massif avec UNL-060 + OGN-075.",
-    "lateGame": "Tenir indéfiniment grâce au card draw amélioré. UNL-042 pour stun les attaquants.",
-    "winCondition": "Hold des battlefields + scoring passif. +2 Might en défense = mur infranchissable."
+    "earlyGame": "Scuttle Crab et Lonely Poro, à 2 énergie et dans 99 % des listes, occupent un champ de bataille en piochant. Discipline garde la main ouverte.",
+    "midGame": "Master Yi, Tempered et Rengar, Trophy Hunter prennent un deuxième champ de bataille. Punch First et En Garde gagnent le combat pour une énergie.",
+    "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass encaisse le premier retrait.",
+    "winCondition": "Tenir deux champs de bataille avec une unité chacun et marquer tour après tour."
   },
   "keyCards": [
     {
-      "name": "UNL-113",
-      "id": "UNL-113",
-      "cost": 2,
-      "role": "Nouveau chosen champion. Remplace OGS-009. Play turn 2, gagne XP sur le board."
+      "name": "Charm",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-060",
-      "id": "UNL-060",
-      "role": "Draw engine late game. Combiné avec OGN-075, durabilité massive."
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-075",
-      "id": "OGN-075",
-      "role": "Draw complémentaire — duo avec UNL-060."
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-053",
-      "id": "UNL-053",
-      "cost": 2,
-      "role": "Tuteur turn 1 staple."
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-036",
-      "id": "SFD-036",
-      "cost": 2,
-      "role": "Second tuteur turn 1."
+      "name": "Lonely Poro",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-120",
-      "id": "UNL-120",
-      "role": "Mid game enforcer — unité flexible et beefue."
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-042",
-      "id": "UNL-042",
-      "role": "Stun — effet que l'adversaire doit garder en tête."
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-043",
-      "id": "OGN-043",
-      "role": "Sort core d'interaction."
+      "name": "First Mate",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-045",
-      "id": "OGN-045",
-      "role": "Contresort staple."
+      "name": "En Garde",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-058",
-      "id": "OGN-058",
-      "role": "Buff staple."
+      "name": "Rampage",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 81 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ruin Runner",
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Ability fantastique early — +2 Might en défense verrouille un battlefield",
-    "Ambush keyword parfait pour le hold",
-    "Massivement amélioré par Unleashed — plus de draw, stun, unités mid game",
-    "Vérifie tous les fondamentaux : showdowns, draw, interaction",
-    "Deck le plus consistant du format"
+    "Huit cartes dans plus de 95 % des listes : la construction ne varie presque pas d'un joueur à l'autre",
+    "Le plus joué du format, 192 listes sur 15 tournois, et l'un des deux seuls gros archétypes à convertir au-dessus du champ : 10,9 % de Top 8 contre 7,1 % de moyenne",
+    "Trois titres en quinze tournois",
+    "Zhonya's Hourglass, présent dans 99 % des listes, annule le premier retrait adverse"
   ],
   "weaknesses": [
-    "Stratégie hold pure — doit scorer progressivement, pas de finish explosif",
-    "Si l'adversaire prend un gros lead avant l'installation, difficile de revenir"
+    "Tout repose sur une unité isolée : deux retraits d'affilée cassent le plan",
+    "Peu de pioche en dehors de Discipline et Scuttle Crab, la main se vide vite",
+    "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "tier": 1,
-    "preRegionals": "4 Wins / 35 Top 8 (plus de top 8 que toute autre légende)",
-    "regionalResults": "Won Suzhou RQ, Top 16 Sydney",
-    "sydneyStats": {
-      "winRate": "56%",
-      "matches": 546,
-      "bestPlacement": "12th (11-2-0)"
-    }
+    "deckCount": 192,
+    "top8": 21,
+    "titres": 3,
+    "conversion": "10.9 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "EN",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": "元气-九萬",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "1st",
+        "player": "紫蝎",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "2nd",
+        "player": "Yang",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "3rd",
+        "player": "旋木时光的晴光",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      }
+    ]
   },
   "difficulty": "Facile-Moyen",
   "beginnerFriendly": true,
@@ -108,5 +127,25 @@
       "gear hate en main deck"
     ],
     "note": "Piège récurrent : on oublie que sa Légende donne +2 might à une unité qui défend → trades « gratuits ». Vainqueur Hartford (Factor), le plus représenté day 2."
-  }
+  },
+  "champions": {
+    "Master Yi, Tempered": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "99 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Irelia, Fervent": {
+      "usage": "30 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Star Spring (91 %)",
+    "Emperor's Dais (88 %)",
+    "Seat of Power (70 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 192 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

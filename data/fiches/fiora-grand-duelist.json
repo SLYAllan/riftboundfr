@@ -1,95 +1,114 @@
 {
   "legendName": "Fiora, Grand Duelist",
-  "legendId": "SFD-205",
+  "legendId": "Fiora, Grand Duelist",
   "domains": [
     "Order",
     "Body"
   ],
   "set": "Spiritforged",
   "tier": 3,
-  "archetype": "Midrange / Buff-oriented, variante OGN-242",
-  "legendAbility": "Quand une unité atteint un certain seuil de Might (probablement via buff), trigger SFD-205 pour générer de la value.",
+  "archetype": "Duel : une grosse unité, protégée",
+  "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
   "gameplan": {
-    "earlyGame": "Déployer des unités 4-might (OGN-232, OGN-164). Chercher UNL-169 (nouveau staple Unleashed).",
-    "midGame": "Buff les unités pour trigger l'ability. Equipment UNL-158 et SFD-161 + buffs SFD-097. Snowball si les unités restent.",
-    "lateGame": "OGN-242 + OGN-226 pour brute force (risqué — tout le monde joue du gear removal). UNL-173 convertit une unité condamnée en cartes + rune.",
-    "winCondition": "Unités buffées snowball le board. OGN-242 comme plan alternatif brute force."
+    "earlyGame": "Pit Rookie et First Mate posent une unité et en préparent une autre. Shepherd's Heirloom lance l'XP.",
+    "midGame": "Punch First et Rampage font passer la barre des 5 Puissance et déclenchent la Légende. Riposte, dans toutes les listes, contre le sort qui devait répondre.",
+    "lateGame": "Fiora, Victorious devient intouchable une fois Puissante : protection, déplacement libre et bonus en défense.",
+    "winCondition": "Une unité au-dessus de 5 Puissance que rien ne peut ni cibler ni bloquer."
   },
   "keyCards": [
     {
-      "name": "OGN-232",
-      "id": "OGN-232",
-      "role": "Unité 4-might principale — cible de buff idéale."
+      "name": "Riposte",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-164",
-      "id": "OGN-164",
-      "role": "Seconde unité 4-might focus."
+      "name": "Punch First",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-169",
-      "id": "UNL-169",
-      "role": "Nouveau staple Unleashed — seul vrai ajout du set pour Fiora."
+      "name": "First Mate",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-109",
-      "id": "SFD-109",
-      "role": "Gear removal — gère les Aurora et autres gears adverses."
+      "name": "Rampage",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-158",
-      "id": "UNL-158",
-      "role": "Equipment — buff permanent."
+      "name": "Hidden Blade",
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-161",
-      "id": "SFD-161",
-      "role": "Equipment complémentaire."
+      "name": "Pit Rookie",
+      "role": "Standard, 76 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-097",
-      "id": "SFD-097",
-      "role": "Buff de might."
+      "name": "Sacrifice",
+      "role": "Standard, 63 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-206",
-      "id": "SFD-206",
-      "role": "Protection fantastique — protège les unités du removal."
+      "name": "Shepherd's Heirloom",
+      "role": "Souple, 59 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-173",
-      "id": "UNL-173",
-      "role": "Convertit une unité condamnée en cartes + rune extra."
+      "name": "B.F. Sword",
+      "role": "Souple, 57 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-242",
-      "id": "OGN-242",
-      "role": "Win con brute force — puissant mais risqué (gear removal partout)."
+      "name": "Harnessed Dragon",
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-226",
-      "id": "OGN-226",
-      "role": "Compagnon d'OGN-242 — développe 2 unités en 1 carte."
+      "name": "Grim Resolve",
+      "role": "Souple, 48 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Unsung Hero",
+      "role": "Souple, 44 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
-    "Compétitive pour top 8 dans la plupart des tournois",
-    "Midrange solide — plan de jeu clair",
-    "Buffs + protection = unités très difficiles à retirer"
+    "Riposte dans 100 % des listes et Punch First dans 98 % : la protection est systématique",
+    "9,3 % de conversion et un titre, sur 54 listes seulement",
+    "Sunken Temple dans 94 % des listes, un terrain qui récompense l'unité unique",
+    "Six Champions différents au-dessus de 35 % : la liste s'adapte au tournoi"
   ],
   "weaknesses": [
-    "Struggle contre top tier sans OGN-242",
-    "OGN-242 build risqué car tout le monde a du gear removal",
-    "Pas de gros renfort Unleashed (juste UNL-169)"
+    "Sans buff, la Légende ne canalise rien et le deck n'avance plus",
+    "Une seule menace à la fois : un retrait bien placé annule le tour",
+    "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "1 Win / 11 Top 8",
-    "sydneyStats": {
-      "winRate": "48%",
-      "matches": 235,
-      "bestPlacement": "17th (10-3-0)"
-    }
+    "deckCount": 54,
+    "top8": 5,
+    "titres": 1,
+    "conversion": "9.3 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "小橘派派",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "4th",
+        "player": "DWT-阿龙",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "遁去的一",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "7th",
+        "player": "BKM-京門",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "8th",
+        "player": "ARBD.张伯伦",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
@@ -108,5 +127,37 @@
       "build Baited Hook"
     ],
     "note": "Veut franchir le seuil mighty via ÉQUIPEMENT (deflect/ganking/shield), offense > défense. Faiblesse : la pioche."
-  }
+  },
+  "champions": {
+    "Fiora, Victorious": {
+      "usage": "81 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kayle, Justified": {
+      "usage": "59 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "54 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "48 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Poppy, Paragon": {
+      "usage": "39 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ambessa, The Wolf": {
+      "usage": "37 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Sunken Temple (94 %)",
+    "Trifarian War Camp (33 %)",
+    "Monastery of Hirana (31 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 54 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

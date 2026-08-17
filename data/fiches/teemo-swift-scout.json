@@ -1,92 +1,81 @@
 {
   "legendName": "Teemo, Swift Scout",
-  "legendId": "OGN-263",
+  "legendId": "Teemo, Swift Scout",
   "domains": [
     "Chaos",
     "Mind"
   ],
   "set": "Origins",
   "tier": 5,
-  "archetype": "Aggro-hold / Hidden cards & disruption",
-  "legendAbility": "Build autour des Hidden cards. Prend le lead early, puis utilise des cartes cachées pour garder l'adversaire dans le flou.",
-  "gameplan": {
-    "earlyGame": "Installer OGN-288 et OGN-280 pour hold les battlefields. OGN-121 + OGN-194 = combo early game — retire les unités adverses cheap.",
-    "midGame": "Cacher des cartes chaque tour. Disruption de la main/board via Chaos. SFD-138, OGN-094, UNL-078 pour gérer les petites unités.",
-    "lateGame": "SFD-145 pour les gros attaquants. UNL-139 + UNL-141 en combo removal. OGN-083 + OGN-264 pour refill.",
-    "winCondition": "Lead early + confusion via Hidden cards → l'adversaire prend des risques → on punit"
-  },
+  "archetype": "Cartes cachées à moindre coût",
+  "legendAbility": "Vous pouvez payer une énergie au lieu d'une Puissance pour cacher une carte. Une énergie et un épuisement ramènent un Teemo en main depuis la zone de Champion ou le terrain.",
   "keyCards": [
     {
-      "name": "OGN-288",
-      "id": "OGN-288",
+      "name": "Startipped Peak",
+      "id": "Startipped Peak",
       "role": "Hold de battlefield."
     },
     {
-      "name": "OGN-280",
-      "id": "OGN-280",
+      "name": "Grove of the God-Willow",
+      "id": "Grove of the God-Willow",
       "role": "Hold complémentaire."
     },
     {
-      "name": "OGN-121",
-      "id": "OGN-121",
-      "role": "Synergie avec OGN-194 — élimine les unités cheap grâce aux Hidden cards."
+      "name": "Teemo, Strategist",
+      "id": "Teemo, Strategist",
+      "role": "Synergie avec Nocturne, Horrifying — élimine les unités cheap grâce aux Hidden cards."
     },
     {
-      "name": "OGN-194",
-      "id": "OGN-194",
-      "role": "Combo avec OGN-121 — clé de l'early game."
+      "name": "Nocturne, Horrifying",
+      "id": "Nocturne, Horrifying",
+      "role": "Combo avec Teemo, Strategist — clé de l'early game."
     },
     {
-      "name": "SFD-138",
-      "id": "SFD-138",
+      "name": "Windsinger",
+      "id": "Windsinger",
       "role": "Removal de petites unités."
     },
     {
-      "name": "OGN-094",
-      "id": "OGN-094",
+      "name": "Sprite Call",
+      "id": "Sprite Call",
       "role": "Removal cheap."
     },
     {
-      "name": "UNL-078",
-      "id": "UNL-078",
+      "name": "Sprite Fountain",
+      "id": "Sprite Fountain",
       "role": "Removal Unleashed."
     },
     {
-      "name": "SFD-145",
-      "id": "SFD-145",
+      "name": "Switcheroo",
+      "id": "Switcheroo",
       "role": "Gère les gros attaquants."
     },
     {
-      "name": "UNL-139",
-      "id": "UNL-139",
-      "role": "Combo removal avec UNL-141."
+      "name": "Bone Skewer",
+      "id": "Bone Skewer",
+      "role": "Combo removal avec Evelynn, Entrancing."
     },
     {
-      "name": "UNL-141",
-      "id": "UNL-141",
-      "role": "Combo removal avec UNL-139."
+      "name": "Evelynn, Entrancing",
+      "id": "Evelynn, Entrancing",
+      "role": "Combo removal avec Bone Skewer."
     },
     {
-      "name": "OGN-083",
-      "id": "OGN-083",
+      "name": "Consult the Past",
+      "id": "Consult the Past",
       "role": "Refill de main."
     },
     {
-      "name": "OGN-264",
-      "id": "OGN-264",
+      "name": "Guerilla Warfare",
+      "id": "Guerilla Warfare",
       "role": "Refill complémentaire."
     }
   ],
   "strengths": [
-    "Top 8 Sydney — performance surprise du tournoi",
-    "Retour au Hidden synergy original avec Unleashed",
-    "L'adversaire ne sait jamais quoi attendre — Hidden crée de l'incertitude",
-    "Bon contre les decks qui planifient précisément leurs tours"
+    "Il ramène son Champion en main autant de fois qu'il le faut."
   ],
   "weaknesses": [
-    "44% win rate à Sydney — performance globale faible malgré le top 8",
-    "10% conversion rate — le top 8 est probablement un outlier",
-    "Difficile à évaluer — une seule bonne liste connue"
+    "4 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
     "tier": 3,

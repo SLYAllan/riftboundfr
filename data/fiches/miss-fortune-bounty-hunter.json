@@ -1,76 +1,66 @@
 {
   "legendName": "Miss Fortune, Bounty Hunter",
-  "legendId": "OGN-267",
+  "legendId": "Miss Fortune, Bounty Hunter",
   "domains": [
     "Body",
     "Chaos"
   ],
   "set": "Origins",
   "tier": 5,
-  "archetype": "Ramp / Ganking + Aurora",
-  "legendAbility": "OGN-267 donne Ganking à n'importe quelle unité — mouvement entre battlefields pour conquérir les deux d'un coup.",
-  "gameplan": {
-    "earlyGame": "Ramp avec OGN-160 build. Moins d'outils early que Sivir — OGN-268 en urgence, OGN-169 pour limiter le score adverse.",
-    "midGame": "Développer OGN-160 (Dazzling Aurora). OGN-162 + Ganking combo pour utiliser une grosse unité deux fois dans le même tour.",
-    "lateGame": "Combo: Déplacer grosse unité → OGN-162 (Accelerate) → Ready la grosse unité → OGN-267 Ganking → Conquérir l'autre battlefield.",
-    "winCondition": "Ganking sur unités massives invoquées par Aurora = conquête double-battlefield"
-  },
+  "archetype": "Unité mobile d'un champ à l'autre",
+  "legendAbility": "Épuisez Miss Fortune pour donner Déplacement libre à une unité le temps du tour : elle passe d'un champ de bataille à l'autre.",
   "keyCards": [
     {
-      "name": "OGN-267 (Legend)",
-      "id": "OGN-267",
+      "name": "Miss Fortune, Bounty Hunter (Legend)",
+      "id": "Miss Fortune, Bounty Hunter",
       "role": "Ability — donne Ganking à n'importe quelle unité, même massive."
     },
     {
       "name": "Dazzling Aurora",
-      "id": "OGN-160",
+      "id": "Dazzling Aurora",
       "role": "Win condition partagée avec Sivir — gear 9-cost."
     },
     {
-      "name": "OGN-268",
-      "id": "OGN-268",
+      "name": "Bullet Time",
+      "id": "Bullet Time",
       "role": "Board wipe d'urgence — détruit les tokens pour 1 rune. Contre grosses unités, coûte plus de runes."
     },
     {
-      "name": "OGN-162",
-      "id": "OGN-162",
+      "name": "Miss Fortune, Captain",
+      "id": "Miss Fortune, Captain",
       "role": "Champion qui ready les unités en se déplaçant. Combo clé avec Ganking."
     },
     {
-      "name": "OGN-193",
-      "id": "OGN-193",
+      "name": "Miss Fortune, Buccaneer",
+      "id": "Miss Fortune, Buccaneer",
       "role": "Joue dans les battlefields vides — peut voler un battlefield."
     },
     {
-      "name": "OGN-192",
-      "id": "OGN-192",
+      "name": "Mindsplitter",
+      "id": "Mindsplitter",
       "role": "Disruption main adverse."
     },
     {
-      "name": "OGN-156",
-      "id": "OGN-156",
+      "name": "Sabotage",
+      "id": "Sabotage",
       "role": "Disruption Body domain."
     },
     {
-      "name": "SFD-150",
-      "id": "SFD-150",
+      "name": "Last Rites",
+      "id": "Last Rites",
       "role": "Résurrection de grosses unités."
     },
     {
-      "name": "OGN-169",
-      "id": "OGN-169",
+      "name": "Gust",
+      "id": "Gust",
       "role": "Cheap removal early."
     }
   ],
   "strengths": [
-    "Ganking = meilleure ability pour scorer le dernier point (double conquête)",
-    "Spécialiste anti-late game — Chaos disruption",
-    "Combo OGN-162 + Ganking dévastateur"
+    "Une menace qui change de position après la déclaration adverse."
   ],
   "weaknesses": [
-    "Moins d'outils early game que Sivir pour protéger le ramp",
-    "Dépendante de trouver OGN-160",
-    "Guide pas mis à jour pour Unleashed — données limitées"
+    "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
     "tier": 2,

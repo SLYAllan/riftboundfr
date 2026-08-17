@@ -9,51 +9,126 @@
   "tier": 4,
   "keyCards": [
     {
-      "name": "Singularity",
-      "id": "OGN-105",
-      "role": "Présente dans 96 % des 247 listes recensées."
+      "name": "Progress Day",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Cull the Weak",
-      "id": "OGN-209",
-      "role": "Présente dans 89 % des 247 listes recensées."
-    },
-    {
-      "name": "Imperial Decree",
-      "id": "OGN-221",
-      "role": "Présente dans 87 % des 247 listes recensées."
+      "name": "Forge of the Future",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Time Warp",
-      "id": "OGN-122",
-      "role": "Présente dans 83 % des 247 listes recensées."
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
-      "name": "Falling Comet",
-      "id": "OGN-085",
-      "role": "Présente dans 75 % des 247 listes recensées."
+      "name": "Sacrifice",
+      "role": "Standard, 80 % des listes, 3 exemplaires"
     },
     {
-      "name": "Drag Under",
-      "id": "SFD-164",
-      "role": "Présente dans 67 % des 247 listes recensées."
+      "name": "The Ruination",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
     },
     {
-      "name": "Bellows Breath",
-      "id": "SFD-080",
-      "role": "Présente dans 65 % des 247 listes recensées."
+      "name": "Soaring Scout",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
-      "name": "Wages of Pain",
-      "id": "SFD-070",
-      "role": "Présente dans 61 % des 247 listes recensées."
+      "name": "Stupefy",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Dredge Up",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Shadow's Call",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Seal of Insight",
+      "role": "Standard, 60 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sprite Burst",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Retreat",
+      "role": "Standard, 60 % des listes, 1.5 exemplaire"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 247,
-    "top8": 4,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "deckCount": 10,
+    "top8": 1,
+    "titres": 0,
+    "conversion": "10 %",
+    "tournois": 8,
+    "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "未中选-瞌睡回忆",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "23th",
+        "player": "元气幻界-冷漠降临",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "34th",
+        "player": "幻灵卡域·耿鬼",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "52th",
+        "player": "LineKa·DNY",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "77th",
+        "player": "i开TV·i光·幸若杳晚·白开老师最帅",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      }
+    ]
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "champions": {
+    "Lux, Crownguard": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ekko, Recurrent": {
+      "usage": "80 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Renata Glasc, Mastermind": {
+      "usage": "30 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ashe, Focused": {
+      "usage": "30 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Forgotten Monument (80 %)",
+    "The Papertree (60 %)",
+    "Sigil of the Storm (50 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 10 listes, 8 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Gros sorts et pioche",
+  "legendAbility": "Quand vous jouez un sort qui coûte 5 énergie ou plus, piochez une carte.",
+  "gameplan": {
+    "earlyGame": "Tenir avec des réponses bon marché en attendant d'avoir les runes.",
+    "midGame": "Chaque gros sort joué rapporte une carte, ce qui paie le suivant.",
+    "lateGame": "Enchaîner deux sorts chers dans le même tour et prendre l'avantage de terrain.",
+    "winCondition": "Une chaîne de sorts coûteux que la pioche de la Légende finance."
+  },
+  "strengths": [
+    "Un Top 8 sur dix listes"
+  ],
+  "weaknesses": [
+    "10 listes en huit tournois : trop peu pour décrire un cœur ou un plan fiable",
+    "La condition à 5 énergie arrive tard, les premiers tours sont vides"
+  ]
 }

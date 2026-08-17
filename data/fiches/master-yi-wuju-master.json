@@ -7,82 +7,71 @@
   ],
   "set": "Unleashed",
   "tier": 5,
-  "archetype": "Midrange off-tempo / Hunt & XP scaling",
-  "legendAbility": "Basée sur le nouveau mécanisme Hunt. Level 6: toutes les unités +1 Might. Level 11: toutes les unités entrent ready. PAS d'ability early = désavantage.",
-  "gameplan": {
-    "earlyGame": "UNL-094, UNL-040, puis UNL-113 (chosen champion). UNL-100 si on va en second — attendre le level 6. Pas d'ability = désavantage.",
-    "midGame": "UNL-095 comme staple buff/XP. OGN-045, OGN-077, OGN-058 comme support. UNL-031 et UNL-091 pour XP (pas jouables tôt).",
-    "lateGame": "UNL-059 pour 6 runes ready = objectif ultime. +1 Might global à lv6, tous ready à lv11 = overwhelming.",
-    "winCondition": "Atteindre level 11 XP → toutes les unités entrent ready avec +1 Might = impossible à contenir"
-  },
+  "archetype": "Montée en niveau",
+  "legendAbility": "À 6 XP, vos unités gagnent +1 Puissance. À 11 XP, elles arrivent prêtes.",
   "keyCards": [
     {
-      "name": "UNL-059",
-      "id": "UNL-059",
+      "name": "Master Yi, Unstoppable",
+      "id": "Master Yi, Unstoppable",
       "cost": 6,
       "role": "Objectif ultime — unité massive qui entre ready."
     },
     {
-      "name": "UNL-113",
-      "id": "UNL-113",
+      "name": "Master Yi, Tempered",
+      "id": "Master Yi, Tempered",
       "role": "Chosen champion — doit survivre pour gagner de l'XP."
     },
     {
-      "name": "UNL-094",
-      "id": "UNL-094",
+      "name": "Gemhand Hunter",
+      "id": "Gemhand Hunter",
       "role": "Unité early."
     },
     {
-      "name": "UNL-040",
-      "id": "UNL-040",
+      "name": "Wuju Apprentice",
+      "id": "Wuju Apprentice",
       "role": "Unité early."
     },
     {
-      "name": "UNL-100",
-      "id": "UNL-100",
+      "name": "Voracious Gromp",
+      "id": "Voracious Gromp",
       "role": "Alternative en allant second — attendre level 6."
     },
     {
-      "name": "UNL-095",
-      "id": "UNL-095",
+      "name": "Grim Resolve",
+      "id": "Grim Resolve",
       "role": "Staple buff + XP gain."
     },
     {
-      "name": "OGN-045",
-      "id": "OGN-045",
+      "name": "Defy",
+      "id": "Defy",
       "role": "Contresort."
     },
     {
-      "name": "OGN-077",
-      "id": "OGN-077",
+      "name": "Zhonya's Hourglass",
+      "id": "Zhonya's Hourglass",
       "role": "Protection."
     },
     {
-      "name": "OGN-058",
-      "id": "OGN-058",
+      "name": "Discipline",
+      "id": "Discipline",
       "role": "Buff."
     },
     {
-      "name": "UNL-031",
-      "id": "UNL-031",
+      "name": "Combat Experience",
+      "id": "Combat Experience",
       "role": "XP spell (mid-late seulement)."
     },
     {
-      "name": "UNL-091",
-      "id": "UNL-091",
+      "name": "Concentrate",
+      "id": "Concentrate",
       "role": "XP spell (mid-late seulement)."
     }
   ],
   "strengths": [
-    "Level 11 reward = le plus puissant du jeu si atteint",
-    "Level 6 rend les unités plus résistantes aux dégâts",
-    "Concept exciting du nouveau mécanisme Hunt"
+    "Deux paliers qui transforment tout le deck, sans carte à jouer."
   ],
   "weaknesses": [
-    "PAS d'ability early = désavantage énorme dans un meta tempo",
-    "Riftbound a beaucoup de snowball + removals qui ignorent la taille",
-    "Deckbuilding limité — besoin d'XP agressif",
-    "Struggle à être compétitif — rare top 8"
+    "7 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
     "tier": 4,

@@ -1,0 +1,131 @@
+{
+  "legendName": "Jayce, Defender of Tomorrow",
+  "legendId": "Jayce, Defender of Tomorrow",
+  "domains": [
+    "Mind",
+    "Body"
+  ],
+  "set": "Vendetta",
+  "tier": 3,
+  "archetype": "Équipements préparés, montée en ressources",
+  "legendAbility": "Une énergie et un épuisement préparent un équipement ; amplifié, Jayce en prépare deux. Les équipements qui produisent des ressources servent deux fois par tour.",
+  "gameplan": {
+    "earlyGame": "Platewyrm Egg et Garbage Grabber posent la base. Mobilize et Catalyst of Aeons canalisent des runes en avance.",
+    "midGame": "La Légende prépare les équipements déjà utilisés : chaque tour rapporte plus de ressources que le précédent.",
+    "lateGame": "Dazzling Aurora rejoue une unité gratuite en fin de tour, Elder Dragon arrive à 12 énergie et tue tout ce qu'il touche.",
+    "winCondition": "Arriver aux très gros coûts deux tours avant l'adversaire."
+  },
+  "strengths": [
+    "72 listes vues aux quinze tournois : le deck fait partie du paysage",
+    "Bellows Breath et Elder Dragon dans plus de 90 % des listes",
+    "Sigil of the Storm dans 82 % des listes, choisi pour tenir le temps de monter",
+    "La Légende double l'usage des équipements à ressources"
+  ],
+  "weaknesses": [
+    "4,2 % de conversion, trois Top 8 pour 72 listes : très joué, rarement récompensé",
+    "Le deck perd s'il est pressé avant d'avoir monté ses runes",
+    "Aucun Champion au-dessus de 40 % : les pilotes ne s'accordent pas sur la liste"
+  ],
+  "difficulty": "Moyenne",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Standard, 89 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Garbage Grabber",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Platewyrm Egg",
+      "role": "Standard, 86 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Dredge Up",
+      "role": "Standard, 86 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Mobilize",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Clairvoyance",
+      "role": "Standard, 81 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "role": "Standard, 72 % des listes, 3 exemplaires"
+    }
+  ],
+  "champions": {
+    "Jayce, Man of Progress": {
+      "usage": "40 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Jayce, Brilliant Inventor": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Sigil of the Storm (82 %)",
+    "Forgotten Monument (53 %)",
+    "The Papertree (47 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 72,
+    "top8": 3,
+    "titres": 0,
+    "conversion": "4.2 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "6th",
+        "player": "一氙化氢",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "7th",
+        "player": "🐊",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "8th",
+        "player": "Sky",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "12th",
+        "player": "MRR",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "13th",
+        "player": "立风四正",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 72 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

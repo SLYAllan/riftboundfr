@@ -10,32 +10,32 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "id": "OGN-213",
+      "id": "Hidden Blade",
       "role": "Présente dans 93 % des 284 listes recensées."
     },
     {
       "name": "Noxus Hopeful",
-      "id": "OGN-012",
+      "id": "Noxus Hopeful",
       "role": "Présente dans 92 % des 284 listes recensées."
     },
     {
       "name": "Vanguard Captain",
-      "id": "OGN-218",
+      "id": "Vanguard Captain",
       "role": "Présente dans 69 % des 284 listes recensées."
     },
     {
       "name": "Kai'Sa, Survivor",
-      "id": "OGN-039",
+      "id": "Kai'Sa, Survivor",
       "role": "Présente dans 65 % des 284 listes recensées."
     },
     {
       "name": "Cleave",
-      "id": "OGN-004",
+      "id": "Cleave",
       "role": "Présente dans 62 % des 284 listes recensées."
     },
     {
       "name": "Grand Strategem",
-      "id": "OGN-233",
+      "id": "Grand Strategem",
       "role": "Présente dans 61 % des 284 listes recensées."
     }
   ],
@@ -45,5 +45,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Énergie supplémentaire après la première carte",
+  "legendAbility": "Épuisez Darius en réaction pour ajouter une énergie, à condition d'avoir déjà joué une carte dans le tour.",
+  "strengths": [
+    "Une énergie de plus par tour dès que le tour est lancé, y compris pendant un combat."
+  ],
+  "weaknesses": [
+    "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

@@ -1,0 +1,135 @@
+{
+  "legendName": "Mel, Soul's Reflection",
+  "legendId": "Mel, Soul's Reflection",
+  "domains": [
+    "Mind",
+    "Chaos"
+  ],
+  "set": "Vendetta",
+  "tier": 4,
+  "archetype": "Amplification et sorts pris à l'adversaire",
+  "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
+  "gameplan": {
+    "earlyGame": "Stupefy et Stacked Deck, présents dans presque toutes les listes, tiennent la main pleine à une énergie.",
+    "midGame": "Rebuttal, dans toutes les listes, prend le contrôle d'un sort adverse. Applied Researchers amplifié fait baisser le coût de vos sorts.",
+    "lateGame": "Mel, Newly Awakened amplifiée rend vos sorts incontrables. Thousand-Tailed Watcher referme le terrain.",
+    "winCondition": "Gagner les échanges de sorts, puis marquer pendant que l'adversaire n'a plus de réponse."
+  },
+  "strengths": [
+    "Rebuttal et Stupefy dans toutes les listes",
+    "Mel, Newly Awakened amplifiée met vos sorts hors de portée des contres",
+    "37 listes réparties sur quatorze tournois"
+  ],
+  "weaknesses": [
+    "Aucun Top 8 en quatorze tournois",
+    "Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon la Légende reste inerte",
+    "Terrains dispersés, aucun au-dessus de 49 % : personne n'a arrêté la liste"
+  ],
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Rebuttal",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stupefy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 89 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Standard, 73 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 62 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 57 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Shock Blast",
+      "role": "Souple, 49 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 46 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Applied Researchers",
+      "role": "Souple, 41 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Souple, 41 % des listes, 2 exemplaires"
+    }
+  ],
+  "champions": {
+    "Fizz, Trickster": {
+      "usage": "89 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Mel, Newly Awakened": {
+      "usage": "76 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Hwei, Brooding Painter": {
+      "usage": "49 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Frozen Fortress (49 %)",
+    "Rockfall Path (35 %)",
+    "Heisho, Shell of the World (32 %)",
+    "Abandoned Hall (32 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 37,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 14,
+    "bestPlacements": [
+      {
+        "placement": "10th",
+        "player": "3+X END.明涌",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "18th",
+        "player": "TwistedTCG",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "19th",
+        "player": "星游.九思",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "20th",
+        "player": "卓卡-777🤪",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "22th",
+        "player": "煜",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 37 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

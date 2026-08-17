@@ -10,42 +10,42 @@
   "keyCards": [
     {
       "name": "Forecaster",
-      "id": "SFD-065",
+      "id": "Forecaster",
       "role": "Présente dans 100 % des 166 listes recensées."
     },
     {
       "name": "Ferrous Forerunner",
-      "id": "SFD-021",
+      "id": "Ferrous Forerunner",
       "role": "Présente dans 99 % des 166 listes recensées."
     },
     {
       "name": "Gem Jammer",
-      "id": "SFD-007",
+      "id": "Gem Jammer",
       "role": "Présente dans 98 % des 166 listes recensées."
     },
     {
       "name": "Bubble Bot",
-      "id": "SFD-062",
+      "id": "Bubble Bot",
       "role": "Présente dans 95 % des 166 listes recensées."
     },
     {
       "name": "Rumble, Hotheaded",
-      "id": "SFD-026",
+      "id": "Rumble, Hotheaded",
       "role": "Présente dans 93 % des 166 listes recensées."
     },
     {
       "name": "Breakneck Mech",
-      "id": "SFD-071",
+      "id": "Breakneck Mech",
       "role": "Présente dans 89 % des 166 listes recensées."
     },
     {
       "name": "Rumble, Scrapper",
-      "id": "SFD-089",
+      "id": "Rumble, Scrapper",
       "role": "Présente dans 85 % des 166 listes recensées."
     },
     {
       "name": "Stupefy",
-      "id": "OGN-095",
+      "id": "Stupefy",
       "role": "Présente dans 82 % des 166 listes recensées."
     }
   ],
@@ -55,5 +55,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Mechs en défense",
+  "legendAbility": "Vos Mechs ont Bouclier : ils gagnent de la Puissance quand ils défendent.",
+  "strengths": [
+    "Un bonus défensif gratuit sur toute une famille d'unités."
+  ],
+  "weaknesses": [
+    "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

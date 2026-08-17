@@ -19,7 +19,24 @@ interface Token {
   runeKey?: string;
 }
 
-function tokenize(text: string): Token[] {
+/**
+ * Le texte des cartes arrive de l'API avec ses entités HTML (« [Action][&gt;] » s'affichait
+ * tel quel) et ses capacités collées bout à bout (« gain 1 XP.Spend 3 XP »). On décode et
+ * on décolle. La condition sur la minuscule qui suit épargne les initiales : « B.F. Sword »
+ * ne devient pas « B. F. Sword ».
+ */
+function decoder(texte: string): string {
+  return texte
+    .replace(/&gt;/g, ">")
+    .replace(/&lt;/g, "<")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/(?<=\w)\.(?=[A-Z][a-z])/g, ". ");
+}
+
+function tokenize(brut: string): Token[] {
+  const text = decoder(brut);
   const tokens: Token[] = [];
   // Symboles :rb_...: ET mots-clés entre crochets [Predict], [Assault 2]...
   const regex = /:rb_exhaust:|:rb_might:|:rb_rune_(\w+):|:rb_energy_(\w+):|:rb_(\w+):|\[([^\]]+)\]/g;
@@ -77,9 +94,15 @@ export function CardTextRenderer({ text }: { text: string }) {
       case "energy":
         return <span key={i} className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-ink text-[10px] font-bold text-canvas align-text-bottom">{token.value}</span>;
       case "keyword":
+        // « [>] » n'est pas un mot-clé mais la flèche qui sépare la condition de l'effet.
+        if (token.value === ">") return <span key={i} className="mx-1 text-ink-muted">▸</span>;
         return <span key={i} className="mx-px rounded bg-surface-raised px-1 py-px text-[0.85em] font-bold text-ink">{token.value}</span>;
-      default:
-        return <span key={i}>{token.value}</span>;
+      default: {
+        // Deux capacités collées par un point (« empower me.[Action] ») : on les décolle,
+        // sinon les phrases se touchent et le texte devient illisible.
+        const colle = token.value.endsWith(".") && tokens[i + 1]?.type === "keyword";
+        return <span key={i}>{colle ? `${token.value} ` : token.value}</span>;
+      }
     }
   });
 

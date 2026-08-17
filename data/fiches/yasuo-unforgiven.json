@@ -10,17 +10,17 @@
   "keyCards": [
     {
       "name": "Ride the Wind",
-      "id": "OGN-173",
+      "id": "Ride The Wind",
       "role": "Présente dans 99 % des 336 listes recensées."
     },
     {
       "name": "Discipline",
-      "id": "OGN-058",
+      "id": "Discipline",
       "role": "Présente dans 98 % des 336 listes recensées."
     },
     {
       "name": "Defy",
-      "id": "OGN-045",
+      "id": "Defy",
       "role": "Présente dans 94 % des 336 listes recensées."
     },
     {
@@ -29,12 +29,12 @@
     },
     {
       "name": "En Garde",
-      "id": "OGN-046",
+      "id": "En Garde",
       "role": "Présente dans 78 % des 336 listes recensées."
     },
     {
       "name": "Zhonya's Hourglass",
-      "id": "OGN-077",
+      "id": "Zhonya's Hourglass",
       "role": "Présente dans 76 % des 336 listes recensées."
     }
   ],
@@ -44,5 +44,13 @@
     "victoires": 1,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Déplacements payants",
+  "legendAbility": "Deux énergie et un épuisement déplacent une de vos unités vers la base ou depuis la base.",
+  "strengths": [
+    "Une unité retirée du combat, ou ajoutée, à n'importe quel moment."
+  ],
+  "weaknesses": [
+    "4 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

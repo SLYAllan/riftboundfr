@@ -1,0 +1,134 @@
+{
+  "legendName": "Akali, Rogue Assassin",
+  "legendId": "Akali, Rogue Assassin",
+  "domains": [
+    "Fury",
+    "Calm"
+  ],
+  "set": "Vendetta",
+  "tier": 4,
+  "archetype": "Mouvement et retrait ciblé",
+  "legendAbility": "Épuisez Akali pendant votre tour pour ramener une de vos unités engagées à la base, et la préparer si elle est amplifiée. On retire une unité du combat au dernier moment.",
+  "gameplan": {
+    "earlyGame": "Scuttle Crab et Lonely Poro piochent en occupant le terrain. Shuriken Flip inflige 2 dégâts et déplace une unité pour une énergie.",
+    "midGame": "Stellacorn Herder pioche à chaque déplacement. La Légende sort l'unité du combat perdu avant qu'il ne se résolve.",
+    "lateGame": "Akali, Silent ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant.",
+    "winCondition": "Marquer avec des unités que l'adversaire n'arrive ni à cibler ni à coincer."
+  },
+  "strengths": [
+    "Quatre cartes au-dessus de 90 %, dont Defy et Shuriken Flip dans toutes les listes",
+    "Akali, Silent échappe aux sorts tant qu'elle reste hors combat",
+    "Vue aux quinze tournois du set : la Légende plaît, même sans résultats"
+  ],
+  "weaknesses": [
+    "74 listes, quinze tournois, aucun Top 8 : le plus gros volume sans résultat du set",
+    "L'écart avec la moyenne du champ est net au calcul (p = 0,010), ce n'est pas de la malchance",
+    "Retirer ses unités du combat ne marque aucun point : le deck se défend bien et gagne mal"
+  ],
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Shuriken Flip",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stellacorn Herder",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 89 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 76 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 76 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "En Garde",
+      "role": "Standard, 69 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Standard, 66 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 61 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Twilight Shroud",
+      "role": "Souple, 55 % des listes, 1 exemplaire"
+    }
+  ],
+  "champions": {
+    "Akali, Silent": {
+      "usage": "77 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Jhin, Murderous Artist": {
+      "usage": "62 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Akali, Deadly Weapon": {
+      "usage": "50 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Back-Alley Bar (53 %)",
+    "Star Spring (51 %)",
+    "Sunken Temple (35 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 74,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "14th",
+        "player": "澄匿梦霞",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "14th",
+        "player": "ZL-明日的晴天",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "20th",
+        "player": "白色枫叶",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "20th",
+        "player": "аvаlonqq",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "25th",
+        "player": "酒屿上久雨",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 74 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

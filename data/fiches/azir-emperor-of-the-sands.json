@@ -7,100 +7,108 @@
   ],
   "set": "Origins",
   "tier": 3,
-  "archetype": "Token / Equipment conquérant",
-  "legendAbility": "Jouer des equipment cards trigger l'ability — crée des Sand Soldiers tokens et développe le board.",
+  "archetype": "Équipements et jetons Soldat des Sables",
+  "legendAbility": "Vos Soldats des Sables sont Experts en armes. Pour une énergie, épuisez Azir et posez un Soldat de 2 Puissance, à condition d'avoir joué un Équipement ce tour-là.",
   "gameplan": {
-    "earlyGame": "Développer des equipment et tokens. SFD-153 (plus de might/cost), SFD-042 (crée des tokens). Hidden cards pour protéger.",
-    "midGame": "SFD-198 comme reward pour avoir joué des gears. SFD-177 en chosen champion (Accelerate = conquête immédiate).",
-    "lateGame": "Conquérir avec tokens + equipment. SFD-163 et SFD-043 pour les derniers points.",
-    "winCondition": "Conquête continue avec une armée de Sand Soldiers équipés"
+    "earlyGame": "Doran's Shield, Eye of the Herald et B.F. Sword, tous dans 100 % des listes, arment le premier jeton dès le tour deux.",
+    "midGame": "Chaque Équipement joué ouvre un Soldat gratuit. Brutalizer et Soul Sword s'attachent en arrivant grâce à Expert en armes.",
+    "lateGame": "Arise! pose un Soldat par Équipement contrôlé et en prépare deux. Azir, Sovereign les emmène tous au même champ de bataille.",
+    "winCondition": "Un tapis de jetons armés qui conquiert deux champs de bataille dans le même tour."
   },
   "keyCards": [
     {
-      "name": "SFD-153",
-      "id": "SFD-153",
-      "role": "Equipment — plus de might pour son coût."
+      "name": "Doran's Shield",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-042",
-      "id": "SFD-042",
-      "role": "Equipment — crée des tokens."
+      "name": "Eye of the Herald",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-198",
-      "id": "SFD-198",
-      "cost": 6,
-      "role": "Reward pour les gears joués — staple."
+      "name": "B.F. Sword",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-177",
-      "id": "SFD-177",
-      "role": "Chosen champion — Accelerate pour conquête immédiate avec tokens."
+      "name": "Arise!",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-233",
-      "id": "OGN-233",
-      "role": "Token support."
+      "name": "Brutalizer",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-209",
-      "id": "OGN-209",
-      "role": "Removal essentiel."
+      "name": "Defy",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-213",
-      "id": "OGN-213",
-      "role": "Removal — hidden card en réaction."
+      "name": "Discipline",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-154",
-      "id": "SFD-154",
-      "role": "Hidden — buff de might."
+      "name": "Hidden Blade",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-043",
-      "id": "SFD-043",
-      "role": "Retreat les unités à la base, ready pour re-attaquer."
+      "name": "Soul Sword",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-163",
-      "id": "SFD-163",
-      "role": "Push le dernier point."
+      "name": "Guards!",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-039",
-      "id": "UNL-039",
-      "role": "Nouvel equipment Unleashed."
+      "name": "Deathgrip",
+      "role": "Standard, 68 % des listes, 1 exemplaire"
     },
     {
-      "name": "UNL-042",
-      "id": "UNL-042",
-      "role": "Stun — nouvel outil que l'adversaire doit anticiper."
-    },
-    {
-      "name": "UNL-173",
-      "id": "UNL-173",
-      "role": "Convertit une unité en cartes + rune."
+      "name": "Back Off",
+      "role": "Standard, 62 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "1 Win en tournoi online occidental + 2 Top 8",
-    "Core equipment stable à travers les sets — peu de cartes à changer",
-    "Hidden cards rendent les conquêtes imprévisibles"
+    "Dix cartes au-dessus de 90 %, dont quatre dans toutes les listes : la courbe est réglée",
+    "10,8 % de conversion et un titre, sur 37 listes",
+    "Hall of Legends et Trifarian War Camp dans 97 % des listes",
+    "Les jetons arrivent équipés, donc rentables dès le tour où ils tombent"
   ],
   "weaknesses": [
-    "Dépendant des equipment — vulnérable au gear removal",
-    "Peu d'unités 'réelles' — repose sur les tokens + gears",
-    "Guide Spiritforged uniquement — pas de mise à jour complète Unleashed"
+    "Sans Équipement joué dans le tour, la Légende ne produit rien",
+    "Le retrait d'Équipement coupe le moteur d'un coup",
+    "37 listes seulement, et un écart de conversion que l'échantillon ne permet pas de trancher"
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "1 Win / 2 Top 8",
-    "sydneyStats": {
-      "winRate": "52%",
-      "matches": 241,
-      "bestPlacement": "25th (10-3-0)"
-    }
+    "deckCount": 37,
+    "top8": 4,
+    "titres": 1,
+    "conversion": "10.8 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "🐊司书🐊",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "2nd",
+        "player": "酷猫.泡泡刀听见你说",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "2nd",
+        "player": "Nephox FL",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "8th",
+        "player": "风又音理",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "16th",
+        "player": "火伊布",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": false,
@@ -118,5 +126,21 @@
       "double Defy"
     ],
     "note": "Armée de tokens jetables : sacrifier un token (Hidden Blade) = pioche. Faiblesse : la pioche (chaque gear = une unité). Pickpocket en side adverse. Bat Pyke (joue depuis le board, pas la main). Soul Sword (gear 1-drop) rend le gear T1 consistant. Grosse faiblesse : Vex Apathetic (stun les sand soldiers d'Arise) + Bullet Time/Flurry of Blades qui reset le board."
-  }
+  },
+  "champions": {
+    "Azir, Sovereign": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "95 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Hall of Legends (97 %)",
+    "Trifarian War Camp (97 %)",
+    "Ornn's Forge (84 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 37 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

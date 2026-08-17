@@ -7,9 +7,8 @@
    **ne jamais le montrer en clair dans un tweet**. La première capture affichait
    le vrai jeton d'Allan, elle a été refaite avec un jeton masqué (`xxxx…`) — si
    tu régénères l'image, masque-le à nouveau.
-2. **Rien de tout ça n'est déployé au moment où j'écris.** Les cinq commits du
-   17 août sont locaux. Poster ces tweets avant le déploiement promettrait des
-   boutons que personne ne trouverait.
+2. **Déployé et vérifié en prod le 17 août.** Le site répond, la tier list et les
+   quatre tournois chinois sont en ligne. Rien n'empêche plus de poster.
 3. Visuel prêt : `images/overlay-dashboard-en.png`, 1905x2381, donc du 4:5 que X
    affiche en entier sans rogner. Les liens y disent `riftboundfrance.fr` alors que
    la capture vient du local, et les joueurs sont inventés (Astra, Vex).
@@ -61,6 +60,59 @@
 > breaks.
 >
 > 🔗 riftboundfrance.fr
+
+## Version longue (un seul post, abonnement X)
+
+Texte brut, sans chevrons : à copier tel quel. Ton posé, sans se donner le beau
+rôle. Chaque phrase correspond à une case réelle du tableau de bord.
+Média : la même capture.
+
+---
+
+Made a free stream overlay for Riftbound. It is on riftboundfrance.fr, take it if
+you want it.
+
+Started it for our own French streams. Building one from scratch is an afternoon
+in OBS nudging text boxes around, and I would rather see more locals streamed
+than have everyone redo that afternoon.
+
+One browser source in OBS, one control panel open on a second screen or your
+phone. You type a name, it shows up on stream. Nothing to install, no plugin, no
+account anywhere else.
+
+Setup takes about a minute: sign in, copy your private link, drop it in OBS as a
+Browser source at 1920x1080. Keep that link to yourself, anyone who has it can
+watch your overlay. One button retires it and gives you a fresh one.
+
+What you can put on screen:
+
+Both players with their legend, champion and battlefield. Pick the legend first
+and the champion list narrows down to the ones that go with it.
+
+Points and games won, on buttons that stop at the score ending the match. And a
+swap for when the two of them change seats.
+
+Cameras through VDO.Ninja, muted from the start. If one freezes mid-game, you
+reload that frame alone. No camera? A still image does the job.
+
+A timer you start, pause and reset. Timer and points can be taken off screen for
+a minute and come back exactly as they were.
+
+Card previews from a pasted decklist. Paste both lists, battlefields and runes
+drop out of the rotation on their own, then click a card to show it or let the
+slideshow run while you keep talking. Both decks in one frame, or one frame each.
+
+Tournament name and logo on top.
+
+Nothing that would kill your OBS link happens on a single click, and the whole
+panel works from a phone sitting next to the mat.
+
+If it saves you an afternoon, it did its job. It is early, so tell me what
+breaks.
+
+🔗 riftboundfrance.fr
+
+---
 
 ## Version courte (un seul tweet)
 

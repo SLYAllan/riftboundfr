@@ -1,0 +1,129 @@
+{
+  "legendName": "Nasus, Curator of the Sands",
+  "legendId": "Nasus, Curator of the Sands",
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "set": "Vendetta",
+  "tier": 2,
+  "archetype": "Grosses unités payées deux fois",
+  "legendAbility": "Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, épuisez Nasus pour préparer jusqu'à deux runes. Le gros coup se rembourse.",
+  "gameplan": {
+    "earlyGame": "Scuttle Crab et Ravenbloom Student tiennent le terrain pendant que Defy et Discipline gardent la réponse ouverte.",
+    "midGame": "Thousand-Tailed Watcher, à 7 énergie et dans toutes les listes, baisse toutes les unités adverses de 3 Puissance et rend deux runes grâce à la Légende.",
+    "lateGame": "Tasty Faefolk et Astral Heron enchaînent au même coût. Nasus, Ascended arrive à 8 énergie avec Protection 2.",
+    "winCondition": "Poser une menace à 7 énergie ou plus par tour sans jamais tomber à court de runes."
+  },
+  "strengths": [
+    "Deux titres en quinze tournois, dont Tianjin",
+    "Six cartes au-dessus de 90 %, dont Thousand-Tailed Watcher et Defy dans toutes les listes",
+    "La Légende rend la moitié des runes dépensées sur un gros tour",
+    "86 listes vues aux quinze tournois du set : le deck n'a jamais disparu"
+  ],
+  "weaknesses": [
+    "4,7 % de conversion contre 7,1 % pour le champ : deux titres, mais très peu de Top 8 autour",
+    "Rien ne se déclenche sous 7 énergie, les premiers tours sont creux",
+    "Les terrains sont dispersés, aucun ne dépasse 57 % : le plan n'est pas stabilisé"
+  ],
+  "difficulty": "Moyenne",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Find Your Center",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stupefy",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Standard, 78 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tasty Faefolk",
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Retreat",
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    }
+  ],
+  "champions": {
+    "Nasus, Ascended": {
+      "usage": "91 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Vilemaw's Lair (57 %)",
+    "The Papertree (41 %)",
+    "Rockfall Path (36 %)",
+    "Altar of Blood (31 %)",
+    "Forgotten Monument (30 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 86,
+    "top8": 4,
+    "titres": 2,
+    "conversion": "4.7 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "ARBD-Noppl",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "1st",
+        "player": "灵花祭.ecg.Asukа",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "6th",
+        "player": "SD.LD",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "8th",
+        "player": "半日孤独.OST永远的拥趸.MnGD最后的守望者.EW出走的野狼",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "12th",
+        "player": "DWT-老默",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 86 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

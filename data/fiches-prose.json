@@ -1,0 +1,576 @@
+{
+  "_lisez-moi": "Prose des fiches Légendes, réécrite le 17 août 2026 sur les 1671 decklists Vendetta et le texte réel des cartes. Appliquée par scripts/fiches-prose.mts. Les sections chiffrées (cartes clés, champions, terrains) viennent de scripts/fiches-maj.mts et ne sont pas ici.",
+  "master-yi-wuju-bladesman.json": {
+    "archetype": "Contrôle de terrain, une seule unité qui tient",
+    "legendAbility": "Tant qu'une de vos unités défend seule, elle gagne +2 Puissance. Toute la construction sert ce bonus : une unité par champ de bataille, jamais deux.",
+    "gameplan": {
+      "earlyGame": "Scuttle Crab et Lonely Poro, à 2 énergie et dans 99 % des listes, occupent un champ de bataille en piochant. Discipline garde la main ouverte.",
+      "midGame": "Master Yi, Tempered et Rengar, Trophy Hunter prennent un deuxième champ de bataille. Punch First et En Garde gagnent le combat pour une énergie.",
+      "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass encaisse le premier retrait.",
+      "winCondition": "Tenir deux champs de bataille avec une unité chacun et marquer tour après tour."
+    },
+    "strengths": [
+      "Huit cartes dans plus de 95 % des listes : la construction ne varie presque pas d'un joueur à l'autre",
+      "Le plus joué du format, 192 listes sur 15 tournois, et l'un des deux seuls gros archétypes à convertir au-dessus du champ : 10,9 % de Top 8 contre 7,1 % de moyenne",
+      "Trois titres en quinze tournois",
+      "Zhonya's Hourglass, présent dans 99 % des listes, annule le premier retrait adverse"
+    ],
+    "weaknesses": [
+      "Tout repose sur une unité isolée : deux retraits d'affilée cassent le plan",
+      "Peu de pioche en dehors de Discipline et Scuttle Crab, la main se vide vite",
+      "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
+    ]
+  },
+  "kaisa-daughter-of-the-void.json": {
+    "archetype": "Sorts et tempo, pioche massive",
+    "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
+    "gameplan": {
+      "earlyGame": "Watchful Sentry et Lecturing Yordle piochent en arrivant ou en mourant. Hextech Ray nettoie une petite unité pour une énergie.",
+      "midGame": "Falling Star et Temporal Breach ouvrent le combat. Brynhir Thundersong, dans 99 % des listes, coupe le tour de l'adversaire quand elle arrive.",
+      "lateGame": "Thousand-Tailed Watcher baisse toutes les unités adverses de 3 Puissance. Progress Day pioche 4, Time Warp rejoue un tour entier.",
+      "winCondition": "Enchaîner les tours et les sorts jusqu'à ce que l'adversaire n'ait plus de réponse."
+    },
+    "strengths": [
+      "Deuxième deck du format en volume : 189 listes sur 14 tournois",
+      "Sept cartes au-dessus de 95 %, dont Thousand-Tailed Watcher, Stupefy et Falling Star",
+      "Time Warp dans 95 % des listes : un tour de plus décide une partie serrée",
+      "La Légende paie les sorts sans toucher aux runes du tour"
+    ],
+    "weaknesses": [
+      "Sa conversion est celle du champ, 7,4 % contre 7,1 % : beaucoup de listes, peu de Top 8",
+      "Le moteur coûte cher, 7 énergie pour Thousand-Tailed Watcher et 10 pour Time Warp",
+      "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
+    ]
+  },
+  "irelia-blade-dancer.json": {
+    "archetype": "Tempo et mouvement, une unité préparée deux fois",
+    "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
+    "gameplan": {
+      "earlyGame": "Scuttle Crab et Stellacorn Herder piochent en se déplaçant. Boots of Swiftness, dans toutes les listes, rend une unité mobile.",
+      "midGame": "Irelia, Fervent grossit à chaque fois qu'on la choisit. Ride The Wind la déplace et la prépare, la Légende la prépare une seconde fois.",
+      "lateGame": "Guardian Angel et Zhonya's Hourglass la gardent en vie, Defy et Charm écartent la réponse adverse.",
+      "winCondition": "Une seule unité qui attaque, revient et repart : deux points par tour sans jamais perdre le contrôle."
+    },
+    "strengths": [
+      "Douze cartes au-dessus de 90 %, dont quatre dans 100 % des listes : le cœur est fermé",
+      "Abandoned Hall dans toutes les listes, Sunken Temple dans 93 % : les terrains font partie du plan",
+      "Présente aux quinze tournois du set, 134 listes",
+      "Defy et Charm couvrent à la fois les sorts et les blocages"
+    ],
+    "weaknesses": [
+      "Conversion sous la moyenne, 6,7 % contre 7,1 %, et aucun titre en quinze tournois",
+      "Sans Irelia, Fervent en jeu, la Légende n'a plus rien à préparer",
+      "La liste est connue de tous, il n'y a presque pas de place pour surprendre"
+    ]
+  },
+  "diana-scorn-of-the-moon.json": {
+    "archetype": "Combats gagnés à la réaction",
+    "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
+    "gameplan": {
+      "earlyGame": "Ravenbloom Student grossit à chaque sort. Stacked Deck et Stupefy, dans toutes les listes, tiennent la main pleine.",
+      "midGame": "Moonfall et Star-Crossed, présents partout, pèsent sur un combat déjà engagé. Tideturner arrive caché et déplace la menace.",
+      "lateGame": "Hwei, Brooding Painter et Diana, Lunari piochent en bougeant. Swain, Visionary marque un point supplémentaire quand la conquête est propre.",
+      "winCondition": "Gagner chaque combat d'une Puissance et marquer sans jamais surexposer le terrain."
+    },
+    "strengths": [
+      "Neuf cartes dans 100 % des listes : c'est le cœur le plus fermé du format",
+      "Trois titres en quatorze tournois, autant que le deck le plus joué du format",
+      "L'énergie de la Légende ne sert qu'en combat, là où l'adversaire a déjà dépensé la sienne",
+      "Abandoned Hall dans 94 % des listes, taillé pour les déplacements"
+    ],
+    "weaknesses": [
+      "Conversion de 7,1 %, exactement la moyenne du champ : elle gagne ou elle sort tôt",
+      "Sans sort en main, la Légende ne sert à rien",
+      "84 listes seulement, un pilote qui découvre le deck perd les combats serrés"
+    ]
+  },
+  "reksai-void-burrower.json": {
+    "archetype": "Agression large, unités qui reviennent du deck",
+    "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
+    "gameplan": {
+      "earlyGame": "Carrion Dredger et Noxus Hopeful, à 2 et 4 énergie, prennent le terrain tôt. Inferna arrive en embuscade au milieu du combat.",
+      "midGame": "Void Rush rejoue une carte du dessus à coût réduit. Cull the Weak et Falling Star vident le champ d'en face.",
+      "lateGame": "Undertitan donne +2 Puissance à tout le reste. Blood Rush et Cleave transforment une unité moyenne en menace.",
+      "winCondition": "Conquérir tôt, rejouer gratuitement à chaque conquête et ne jamais laisser l'adversaire respirer."
+    },
+    "strengths": [
+      "Dix cartes au-dessus de 90 %, dont Void Rush dans 99 % des listes",
+      "10,4 % de conversion contre 7,1 % pour le champ, sur 77 listes et quinze tournois",
+      "The Candlelit Sanctum dans 96 % des listes : le terrain est choisi, pas subi",
+      "La Légende transforme chaque conquête en carte gratuite"
+    ],
+    "weaknesses": [
+      "Aucun titre : le deck arrive en Top 8 mais ne finit pas",
+      "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
+      "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
+    ]
+  },
+  "fiora-grand-duelist.json": {
+    "archetype": "Duel : une grosse unité, protégée",
+    "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
+    "gameplan": {
+      "earlyGame": "Pit Rookie et First Mate posent une unité et en préparent une autre. Shepherd's Heirloom lance l'XP.",
+      "midGame": "Punch First et Rampage font passer la barre des 5 Puissance et déclenchent la Légende. Riposte, dans toutes les listes, contre le sort qui devait répondre.",
+      "lateGame": "Fiora, Victorious devient intouchable une fois Puissante : protection, déplacement libre et bonus en défense.",
+      "winCondition": "Une unité au-dessus de 5 Puissance que rien ne peut ni cibler ni bloquer."
+    },
+    "strengths": [
+      "Riposte dans 100 % des listes et Punch First dans 98 % : la protection est systématique",
+      "9,3 % de conversion et un titre, sur 54 listes seulement",
+      "Sunken Temple dans 94 % des listes, un terrain qui récompense l'unité unique",
+      "Six Champions différents au-dessus de 35 % : la liste s'adapte au tournoi"
+    ],
+    "weaknesses": [
+      "Sans buff, la Légende ne canalise rien et le deck n'avance plus",
+      "Une seule menace à la fois : un retrait bien placé annule le tour",
+      "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
+    ]
+  },
+  "draven-glorious-executioner.json": {
+    "archetype": "Combats rentables, pioche à chaque victoire",
+    "legendAbility": "Quand vous gagnez un combat, piochez une carte. Chaque affrontement gagné paie le suivant.",
+    "gameplan": {
+      "earlyGame": "Spinning Axe, dans toutes les listes, s'attache en réaction et fait basculer un premier combat. Tideturner déplace la menace.",
+      "midGame": "Draven, Showboat grossit avec le score. Switcheroo échange les Puissances au pire moment pour l'adversaire.",
+      "lateGame": "Kai'Sa, Survivor et Vex, Apathetic verrouillent le terrain, Rebuke et Star-Crossed renvoient ce qui gêne.",
+      "winCondition": "Gagner des combats en série, piocher à chaque fois et finir avec un Draven devenu énorme."
+    },
+    "strengths": [
+      "Cinq cartes au-dessus de 90 %, dont Spinning Axe dans toutes les listes",
+      "9,8 % de conversion et un titre, sur 51 listes et quinze tournois",
+      "Sept Champions au-dessus de 55 % : c'est le deck le plus modulable du format",
+      "La Légende pioche sans coûter ni énergie ni épuisement"
+    ],
+    "weaknesses": [
+      "Rien ne se déclenche si les combats sont perdus : le deck n'a pas de plan de repli",
+      "Draven, Showboat n'est dangereux qu'avec de l'avance au score",
+      "Volume modeste, 51 listes : peu de références pour affiner la liste"
+    ]
+  },
+  "viktor-herald-of-the-arcane.json": {
+    "archetype": "Contrôle par le retrait, jetons en défense",
+    "legendAbility": "Une énergie et épuiser Viktor jouent un jeton Recrue de 1 Puissance. Un bloqueur gratuit à chaque tour.",
+    "gameplan": {
+      "earlyGame": "Les Recrues de la Légende occupent le terrain pendant que Bellows Breath et Stupefy nettoient les petites unités.",
+      "midGame": "Cull the Weak, Hidden Blade et Wages of Pain, tous au-dessus de 95 %, retirent la menace principale d'en face.",
+      "lateGame": "Imperial Decree tue tout ce qui prend un dégât ce tour-là. Viktor, Leader recrée un jeton à chaque unité perdue.",
+      "winCondition": "Vider le terrain adverse et marquer avec ce qui reste."
+    },
+    "strengths": [
+      "Sept cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
+      "Imperial Decree dans 100 % des listes : une réponse aux tapis d'unités",
+      "La Légende fournit un bloqueur par tour, sans carte dépensée",
+      "Forbidding Waste dans 83 % des listes, choisi pour tenir"
+    ],
+    "weaknesses": [
+      "4,3 % de conversion contre 7,1 % pour le champ, aucun titre",
+      "Vu à douze tournois seulement sur quinze : le deck disparaît quand le format accélère",
+      "Sans menace propre, les parties longues se terminent à égalité de terrain"
+    ]
+  },
+  "azir-emperor-of-the-sands.json": {
+    "archetype": "Équipements et jetons Soldat des Sables",
+    "legendAbility": "Vos Soldats des Sables sont Experts en armes. Pour une énergie, épuisez Azir et posez un Soldat de 2 Puissance, à condition d'avoir joué un Équipement ce tour-là.",
+    "gameplan": {
+      "earlyGame": "Doran's Shield, Eye of the Herald et B.F. Sword, tous dans 100 % des listes, arment le premier jeton dès le tour deux.",
+      "midGame": "Chaque Équipement joué ouvre un Soldat gratuit. Brutalizer et Soul Sword s'attachent en arrivant grâce à Expert en armes.",
+      "lateGame": "Arise! pose un Soldat par Équipement contrôlé et en prépare deux. Azir, Sovereign les emmène tous au même champ de bataille.",
+      "winCondition": "Un tapis de jetons armés qui conquiert deux champs de bataille dans le même tour."
+    },
+    "strengths": [
+      "Dix cartes au-dessus de 90 %, dont quatre dans toutes les listes : la courbe est réglée",
+      "10,8 % de conversion et un titre, sur 37 listes",
+      "Hall of Legends et Trifarian War Camp dans 97 % des listes",
+      "Les jetons arrivent équipés, donc rentables dès le tour où ils tombent"
+    ],
+    "weaknesses": [
+      "Sans Équipement joué dans le tour, la Légende ne produit rien",
+      "Le retrait d'Équipement coupe le moteur d'un coup",
+      "37 listes seulement, et un écart de conversion que l'échantillon ne permet pas de trancher"
+    ]
+  },
+  "lillia-bashful-bloom.json": {
+    "archetype": "Jetons temporaires, tempo à répétition",
+    "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
+    "gameplan": {
+      "earlyGame": "Sprite Fountain, dans toutes les listes, pose un premier Esprit et rend la capacité moins chère. Ravenbloom Student grossit sur chaque sort.",
+      "midGame": "Sprite Burst pose deux Esprits prêts d'un coup. Charm et Defy protègent la conquête du tour.",
+      "lateGame": "Lillia, Fae Fawn laisse un Esprit derrière elle à chaque déplacement. Unchecked Power nettoie un terrain saturé.",
+      "winCondition": "Poser plus d'unités par tour que l'adversaire ne peut en retirer, et marquer avant qu'elles ne disparaissent."
+    },
+    "strengths": [
+      "Huit cartes au-dessus de 90 %, dont quatre dans toutes les listes",
+      "8,6 % de conversion sur 35 listes, au-dessus de la moyenne du champ",
+      "Dusk Rose Lab dans 94 % des listes : le terrain récompense les jetons",
+      "Chaque Esprit en jeu rend le suivant moins cher"
+    ],
+    "weaknesses": [
+      "Les jetons meurent au début de votre tour : rater la conquête, c'est tout perdre",
+      "Aucun titre en treize tournois",
+      "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
+    ]
+  },
+  "leblanc-deceiver.json": {
+    "archetype": "Copies et morts rentables",
+    "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
+    "gameplan": {
+      "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans toutes les listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
+      "midGame": "Karthus, Eternal double tous vos effets de mort. Glasc Mixologist rejoue une unité du cimetière en mourant.",
+      "lateGame": "Mirror Image et la Légende copient la plus grosse unité du terrain, la vôtre ou celle d'en face.",
+      "winCondition": "Marquer avec des copies gratuites pendant que chaque mort rapporte une carte."
+    },
+    "strengths": [
+      "Sacrifice dans toutes les listes, Mirror Image dans 94 % : la copie est le vrai plan",
+      "Karthus, Eternal dans 79 % des listes, il double tout ce qui meurt",
+      "Windswept Hillock dans 94 % des listes",
+      "Chaque conquête donne une unité de plus, sans carte jouée"
+    ],
+    "weaknesses": [
+      "5,9 % de conversion, sous la moyenne, aucun titre en quatorze tournois",
+      "La Légende demande de défausser : la main s'épuise vite",
+      "Sans unité intéressante sur le terrain, la copie ne vaut rien"
+    ]
+  },
+  "ezreal-prodigal-explorer.json": {
+    "archetype": "Sorts en chaîne, pioche conditionnelle",
+    "legendAbility": "Épuisez Ezreal pour piocher, à condition d'avoir ciblé deux fois des unités ou des équipements adverses dans le tour. Il récompense les tours où l'on répond deux fois.",
+    "gameplan": {
+      "earlyGame": "Bellows Breath et Stupefy, dans toutes les listes, touchent plusieurs unités et remplissent la condition de la Légende.",
+      "midGame": "Fizz, Trickster rejoue un sort du cimetière en arrivant. Star-Crossed renvoie une menace et une des vôtres pour la rejouer.",
+      "lateGame": "Wages of Pain et Deadly Flourish finissent les unités entamées et laissent un jeton Or derrière elles.",
+      "winCondition": "Répondre deux fois par tour, piocher, et gagner le combat que l'adversaire croyait acquis."
+    },
+    "strengths": [
+      "Quatre cartes dans 100 % des listes et sept au-dessus de 90 %",
+      "8,8 % de conversion sur 34 listes, au-dessus du champ",
+      "Frozen Fortress et Sigil of the Storm dans plus de 85 % des listes",
+      "La pioche de la Légende ne coûte ni carte ni énergie"
+    ],
+    "weaknesses": [
+      "La condition de deux cibles par tour tombe à l'eau contre un terrain vide",
+      "34 listes, aucun titre : le deck reste une affaire de spécialistes",
+      "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
+    ]
+  },
+  "ornn-fire-below-the-mountain.json": {
+    "archetype": "Équipements, ressources en réaction",
+    "legendAbility": "Épuisez Ornn en réaction pour ajouter une Puissance, utilisable seulement pour jouer un équipement ou activer sa capacité.",
+    "gameplan": {
+      "earlyGame": "Sprite Fountain et Poro Snax, à 2 et 1 énergie, posent un équipement et piochent. Scuttle Crab tient le terrain.",
+      "midGame": "Sterak's Gage et Brutalizer s'attachent en réaction. Patched Porobot pioche dès trois équipements en jeu.",
+      "lateGame": "Shurelya's Requiem prépare toutes vos unités d'un coup. Ornn, Forge God arrive déjà équipé.",
+      "winCondition": "Une unité surchargée d'équipements que la Puissance de la Légende paie sans toucher aux runes."
+    },
+    "strengths": [
+      "11,1 % de conversion, le meilleur du format après Kennen, sur 27 listes",
+      "Sprite Fountain et Defy dans toutes les listes",
+      "Ornn's Forge dans 81 % des listes, taillé pour les équipements",
+      "La Légende paie les équipements sans dépenser le tour"
+    ],
+    "weaknesses": [
+      "27 listes en treize tournois : l'écart de conversion ne prouve rien à ce volume",
+      "Le retrait d'équipement fait s'effondrer le deck entier",
+      "Deux Champions se partagent la place, aucun ne dépasse 60 % : la liste n'est pas fixée"
+    ]
+  },
+  "pyke-bloodharbor-ripper.json": {
+    "archetype": "Retours en main et or",
+    "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
+    "gameplan": {
+      "earlyGame": "Bewitching Spirit fait défausser en arrivant, Treasure Hunter pose de l'or à chaque déplacement.",
+      "midGame": "Star-Crossed et Falling Star, dans 96 % des listes, cassent le tempo adverse. Void Seeker inflige 4 dégâts et pioche.",
+      "lateGame": "Pyke, Dockside Butcher se déplace d'un champ de bataille à l'autre et revient caché.",
+      "winCondition": "Rejouer les mêmes arrivées rentables jusqu'à épuiser les réponses adverses."
+    },
+    "strengths": [
+      "Quatre cartes au-dessus de 95 %, Ripper's Bay dans 96 % des listes",
+      "Fizz, Trickster et Ezreal, Prodigy dans plus de 90 % des listes : la chaîne de sorts est réglée",
+      "La Légende sauve une unité menacée tout en produisant de l'or"
+    ],
+    "weaknesses": [
+      "Zéro Top 8 en treize tournois sur 24 listes : les résultats ne suivent pas",
+      "Renvoyer ses propres unités coûte du tempo à chaque fois",
+      "Le deck n'a pas de vraie fin de partie, il vise l'usure"
+    ]
+  },
+  "vex-gloomist.json": {
+    "archetype": "Contrôle d'un seul champ de bataille",
+    "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Vex pour piocher. Tenir rapporte une carte par tour.",
+    "gameplan": {
+      "earlyGame": "Mutated Mouser et Scuttle Crab tiennent une position à moindres frais. Defy et Discipline gardent la réponse ouverte.",
+      "midGame": "Vex, Apathetic étourdit chaque unité posée en face et l'empêche de bouger. Boots of Swiftness rendent la vôtre mobile.",
+      "lateGame": "Zhonya's Hourglass et Back Off protègent la position pendant que la Légende pioche à chaque tour tenu.",
+      "winCondition": "Tenir un champ de bataille, piocher chaque tour, et laisser l'adversaire s'user dessus."
+    },
+    "strengths": [
+      "Defy, Discipline et Charm dans toutes les listes",
+      "Vex, Apathetic dans toutes les listes : elle bloque la pose d'unités adverses",
+      "Startipped Peak dans 68 % des listes, un terrain fait pour tenir"
+    ],
+    "weaknesses": [
+      "22 listes, un seul Top 8 en neuf tournois",
+      "Vu à neuf tournois sur quinze : le deck disparaît des méta rapides",
+      "Sans position tenue, la Légende ne pioche plus rien"
+    ]
+  },
+  "rengar-pridestalker.json": {
+    "archetype": "Embuscades, unités posées en combat",
+    "legendAbility": "Quand vous jouez une unité, donnez +1 Puissance à une unité pour le tour. Chaque arrivée fait pencher un combat.",
+    "gameplan": {
+      "earlyGame": "Irresistible Faefolk et Kinkou Initiate posent la pression tôt. Pit Rookie laisse un buff derrière lui.",
+      "midGame": "Thrill of the Hunt, dans toutes les listes, rejoue une de vos unités sur n'importe quel champ de bataille au milieu du combat.",
+      "lateGame": "Rengar, Trophy Hunter arrive directement là où l'adversaire a ses unités. Nidalee, Cat Form pioche à chaque combat gagné.",
+      "winCondition": "Gagner des combats que l'adversaire croyait remportés, en posant des unités après sa déclaration."
+    },
+    "strengths": [
+      "Thrill of the Hunt dans toutes les listes, trois autres cartes à 91 %",
+      "Un titre malgré 22 listes seulement",
+      "Star Spring dans 86 % des listes"
+    ],
+    "weaknesses": [
+      "4,5 % de conversion, sous la moyenne du champ",
+      "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait",
+      "22 listes en treize tournois : personne n'a stabilisé la liste"
+    ]
+  },
+  "khazix-voidreaver.json": {
+    "archetype": "XP et combats gagnés",
+    "legendAbility": "Chaque combat gagné donne 1 XP. Un XP et un épuisement pour améliorer une unité, deux XP pour ramener une unité épuisée à la base.",
+    "gameplan": {
+      "earlyGame": "Poser tôt et gagner un premier combat pour lancer l'XP.",
+      "midGame": "Dépenser l'XP en buffs pour enchaîner les combats gagnés sans dépenser de carte.",
+      "lateGame": "Ramener les unités épuisées à la base pour rejouer les mêmes attaques au tour suivant.",
+      "winCondition": "Une accumulation d'XP qui rend chaque combat plus rentable que le précédent."
+    },
+    "strengths": [
+      "La Légende transforme un combat gagné en ressource durable",
+      "Un Top 8 malgré 17 listes seulement"
+    ],
+    "weaknesses": [
+      "17 listes sur quinze tournois : le deck est marginal et sa liste change à chaque joueur",
+      "Sans premier combat gagné, la Légende ne fait rien du tout",
+      "Trop peu de données pour parler d'un cœur stable"
+    ]
+  },
+  "jax-grandmaster-at-arms.json": {
+    "archetype": "Équipements déplacés d'une unité à l'autre",
+    "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
+    "gameplan": {
+      "earlyGame": "Poser des équipements bon marché et une unité pour les porter.",
+      "midGame": "Déplacer l'équipement sur l'unité qui va combattre, au moment où l'adversaire a déclaré.",
+      "lateGame": "Rassembler les équipements sur une seule unité et forcer le combat.",
+      "winCondition": "Un porteur bien équipé, changé à volonté selon la menace."
+    },
+    "strengths": [
+      "La Légende déplace l'équipement gratuitement une fois attaché"
+    ],
+    "weaknesses": [
+      "10 listes en sept tournois, aucun Top 8 : les données ne permettent aucune conclusion",
+      "Deux points de rupture, l'unité et l'équipement, et le retrait de l'un suffit"
+    ]
+  },
+  "lux-lady-of-luminosity.json": {
+    "archetype": "Gros sorts et pioche",
+    "legendAbility": "Quand vous jouez un sort qui coûte 5 énergie ou plus, piochez une carte.",
+    "gameplan": {
+      "earlyGame": "Tenir avec des réponses bon marché en attendant d'avoir les runes.",
+      "midGame": "Chaque gros sort joué rapporte une carte, ce qui paie le suivant.",
+      "lateGame": "Enchaîner deux sorts chers dans le même tour et prendre l'avantage de terrain.",
+      "winCondition": "Une chaîne de sorts coûteux que la pioche de la Légende finance."
+    },
+    "strengths": [
+      "Un Top 8 sur dix listes"
+    ],
+    "weaknesses": [
+      "10 listes en huit tournois : trop peu pour décrire un cœur ou un plan fiable",
+      "La condition à 5 énergie arrive tard, les premiers tours sont vides"
+    ]
+  },
+  "ahri-nine-tailed-fox.json": {
+    "archetype": "Défense d'un champ de bataille tenu",
+    "legendAbility": "Quand une unité adverse attaque un champ de bataille que vous contrôlez, elle perd 1 Puissance pour le tour, sans descendre sous 1.",
+    "gameplan": null,
+    "strengths": [
+      "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
+    ],
+    "weaknesses": [
+      "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "annie-dark-child.json": {
+    "archetype": "Runes préparées en fin de tour",
+    "legendAbility": "À la fin de votre tour, préparez jusqu'à deux runes. Vous rejouez le tour suivant avec deux ressources d'avance.",
+    "gameplan": null,
+    "strengths": [
+      "Deux runes rendues chaque tour, sans condition ni coût."
+    ],
+    "weaknesses": [
+      "6 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "darius-hand-of-noxus.json": {
+    "archetype": "Énergie supplémentaire après la première carte",
+    "legendAbility": "Épuisez Darius en réaction pour ajouter une énergie, à condition d'avoir déjà joué une carte dans le tour.",
+    "gameplan": null,
+    "strengths": [
+      "Une énergie de plus par tour dès que le tour est lancé, y compris pendant un combat."
+    ],
+    "weaknesses": [
+      "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "garen-might-of-demacia.json": {
+    "archetype": "Conquête en nombre",
+    "legendAbility": "Quand vous conquérez avec quatre unités ou plus au même champ de bataille, piochez deux cartes.",
+    "gameplan": null,
+    "strengths": [
+      "Deux cartes à chaque conquête large : le nombre d'unités devient une ressource."
+    ],
+    "weaknesses": [
+      "Aucune liste en tournoi sur le set Vendetta : la Légende est sortie du format joué, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "jinx-loose-cannon.json": {
+    "archetype": "Main vide, pioche garantie",
+    "legendAbility": "Au début de votre phase d'éveil, piochez une carte si votre main en contient une ou moins.",
+    "gameplan": null,
+    "strengths": [
+      "Jouer sa main entière ne coûte rien : la pioche revient d'elle-même."
+    ],
+    "weaknesses": [
+      "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "lee-sin-blind-monk.json": {
+    "archetype": "Bonus de Puissance à la demande",
+    "legendAbility": "Une énergie et un épuisement améliorent une de vos unités.",
+    "gameplan": null,
+    "strengths": [
+      "Un bonus permanent chaque tour, disponible dès le premier."
+    ],
+    "weaknesses": [
+      "Aucune liste en tournoi sur le set Vendetta : la Légende est sortie du format joué, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "leona-radiant-dawn.json": {
+    "archetype": "Étourdir puis renforcer",
+    "legendAbility": "Quand vous étourdissez une ou plusieurs unités adverses, améliorez une de vos unités.",
+    "gameplan": null,
+    "strengths": [
+      "Chaque effet d'étourdissement paie deux fois : l'unité adverse ne frappe pas, la vôtre grossit."
+    ],
+    "weaknesses": [
+      "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "lucian-purifier.json": {
+    "archetype": "Équipements offensifs",
+    "legendAbility": "Chacun de vos équipements donne Assaut à l'unité qui le porte.",
+    "gameplan": null,
+    "strengths": [
+      "Un équipement posé vaut aussi une hausse de Puissance en attaque."
+    ],
+    "weaknesses": [
+      "5 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "master-yi-wuju-master.json": {
+    "archetype": "Montée en niveau",
+    "legendAbility": "À 6 XP, vos unités gagnent +1 Puissance. À 11 XP, elles arrivent prêtes.",
+    "gameplan": null,
+    "strengths": [
+      "Deux paliers qui transforment tout le deck, sans carte à jouer."
+    ],
+    "weaknesses": [
+      "7 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "miss-fortune-bounty-hunter.json": {
+    "archetype": "Unité mobile d'un champ à l'autre",
+    "legendAbility": "Épuisez Miss Fortune pour donner Déplacement libre à une unité le temps du tour : elle passe d'un champ de bataille à l'autre.",
+    "gameplan": null,
+    "strengths": [
+      "Une menace qui change de position après la déclaration adverse."
+    ],
+    "weaknesses": [
+      "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "renata-glasc-chem-baroness.json": {
+    "archetype": "Or gagné en tenant",
+    "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Renata pour poser un jeton Or épuisé. À trois points du score de victoire, votre Or rapporte une énergie de plus.",
+    "gameplan": null,
+    "strengths": [
+      "Une ressource par tour tenu, qui grossit quand la partie approche de sa fin."
+    ],
+    "weaknesses": [
+      "3 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "rumble-mechanized-menace.json": {
+    "archetype": "Mechs en défense",
+    "legendAbility": "Vos Mechs ont Bouclier : ils gagnent de la Puissance quand ils défendent.",
+    "gameplan": null,
+    "strengths": [
+      "Un bonus défensif gratuit sur toute une famille d'unités."
+    ],
+    "weaknesses": [
+      "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "sett-the-boss.json": {
+    "archetype": "Unité sauvée par son bonus",
+    "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Et quand vous conquérez, Sett se prépare.",
+    "gameplan": null,
+    "strengths": [
+      "Le bonus posé sur une unité sert aussi d'assurance-vie."
+    ],
+    "weaknesses": [
+      "8 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "sivir-battle-mistress.json": {
+    "archetype": "Or à chaque rune recyclée",
+    "legendAbility": "Quand vous recyclez une rune, épuisez Sivir pour poser un jeton Or épuisé. Elle se prépare dès qu'une unité adverse meurt.",
+    "gameplan": null,
+    "strengths": [
+      "De la ressource tirée d'une action que tous les decks font déjà."
+    ],
+    "weaknesses": [
+      "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "teemo-swift-scout.json": {
+    "archetype": "Cartes cachées à moindre coût",
+    "legendAbility": "Vous pouvez payer une énergie au lieu d'une Puissance pour cacher une carte. Une énergie et un épuisement ramènent un Teemo en main depuis la zone de Champion ou le terrain.",
+    "gameplan": null,
+    "strengths": [
+      "Il ramène son Champion en main autant de fois qu'il le faut."
+    ],
+    "weaknesses": [
+      "4 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "volibear-relentless-storm.json": {
+    "archetype": "Rune canalisée sur chaque grosse unité",
+    "legendAbility": "Quand vous jouez une unité Puissante, cinq Puissance ou plus, épuisez Volibear pour canaliser une rune épuisée.",
+    "gameplan": null,
+    "strengths": [
+      "Les grosses unités se paient elles-mêmes, en partie."
+    ],
+    "weaknesses": [
+      "6 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  },
+  "yasuo-unforgiven.json": {
+    "archetype": "Déplacements payants",
+    "legendAbility": "Deux énergie et un épuisement déplacent une de vos unités vers la base ou depuis la base.",
+    "gameplan": null,
+    "strengths": [
+      "Une unité retirée du combat, ou ajoutée, à n'importe quel moment."
+    ],
+    "weaknesses": [
+      "4 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+    ]
+  }
+}

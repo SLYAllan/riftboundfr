@@ -42,7 +42,9 @@ de scraping et de seed. Voici la carte.
 | Chemin | Ce que c'est | Statut |
 |---|---|---|
 | `data/raw-scrapes/` | **Scrapes bruts de riftdecks, par tournoi et par page.** La source de vérité contre laquelle `validate-decklists.py` vérifie qu'aucune decklist n'a été fabriquée. Voir `AGENT-INSTRUCTIONS.md` du dossier. | Source de vérité |
-| `data/fiches/*.json` | Fiche par Légende : identité, forces, faiblesses, cartes clés. | Source de vérité |
+| `data/fiches/*.json` | Fiche par Légende, lue par `/legendes`. **Deux moitiés qui ne se modifient pas de la même façon** : les sections chiffrées (cartes clés, champions, terrains, résultats) sont recalculées depuis la base par `scripts/fiches-stats.mts` puis posées par `scripts/fiches-maj.mts` ; la prose (archétype, capacité, plan de jeu, forces, faiblesses) est écrite à la main dans `data/fiches-prose.json` et appliquée par `scripts/fiches-prose.mts`. Ne pas éditer une section chiffrée à la main, le prochain calcul l'écrase. | Source de vérité |
+| `data/fiches-prose.json` | La prose des fiches Légendes, relue à la main. C'est là qu'on écrit, jamais dans `data/fiches/` directement. | Source de vérité |
+| `data/fiches-stats-vendetta.json` | Ce que les decklists du format disent de chaque Légende : parts de cartes, champions, terrains, places. Régénéré par `scripts/fiches-stats.mts`. | Dérivé |
 | `data/video-insights/` | Connaissance tirée des VOD compétitives. Lire son `README.md` : il donne l'index, la hiérarchie et le pipeline. `matchups-reference.md` est la source unique des matchups. | Source de vérité |
 | `data/meta-reports/` | Rapports de méta par tournoi. | Dérivé |
 | `data/decklists/`, `data/tournaments/` | Decklists et tournois convertis, prêts à seeder. | Dérivé |

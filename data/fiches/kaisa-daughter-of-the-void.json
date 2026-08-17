@@ -6,54 +6,121 @@
     "Mind"
   ],
   "set": "Origins",
-  "tier": 1,
+  "tier": 2,
   "keyCards": [
     {
-      "name": "Falling Star",
-      "id": "OGN-029",
-      "role": "Présente dans 100 % des 3013 listes recensées."
-    },
-    {
       "name": "Thousand-Tailed Watcher",
-      "id": "OGN-116",
-      "role": "Présente dans 99 % des 3013 listes recensées."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
-      "id": "OGN-095",
-      "role": "Présente dans 99 % des 3013 listes recensées."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Hextech Ray",
-      "id": "OGN-009",
-      "role": "Présente dans 97 % des 3013 listes recensées."
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "Retreat",
-      "id": "OGN-104",
-      "role": "Présente dans 90 % des 3013 listes recensées."
-    },
-    {
-      "name": "Lecturing Yordle",
-      "id": "OGN-087",
-      "role": "Présente dans 86 % des 3013 listes recensées."
-    },
-    {
-      "name": "Darius, Trifarian",
-      "id": "OGN-027",
-      "role": "Présente dans 86 % des 3013 listes recensées."
+      "name": "Temporal Breach",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Watchful Sentry",
-      "id": "OGN-096",
-      "role": "Présente dans 85 % des 3013 listes recensées."
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Time Warp",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Progress Day",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "role": "Standard, 86 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Standard, 81 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 3013,
-    "top8": 135,
-    "victoires": 17,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "deckCount": 189,
+    "top8": 14,
+    "titres": 2,
+    "conversion": "7.4 %",
+    "tournois": 14,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "喵喵.全圆佑",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "1st",
+        "player": "Ether",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "2nd",
+        "player": "FB.YK.咕嘎飞鱼",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "BKM-Vita",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "4th",
+        "player": "猫岛巡礼.No.Jay",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      }
+    ]
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Rockfall Path (89 %)",
+    "Frozen Fortress (86 %)",
+    "Void Gate (80 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 189 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Sorts et tempo, pioche massive",
+  "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
+  "gameplan": {
+    "earlyGame": "Watchful Sentry et Lecturing Yordle piochent en arrivant ou en mourant. Hextech Ray nettoie une petite unité pour une énergie.",
+    "midGame": "Falling Star et Temporal Breach ouvrent le combat. Brynhir Thundersong, dans 99 % des listes, coupe le tour de l'adversaire quand elle arrive.",
+    "lateGame": "Thousand-Tailed Watcher baisse toutes les unités adverses de 3 Puissance. Progress Day pioche 4, Time Warp rejoue un tour entier.",
+    "winCondition": "Enchaîner les tours et les sorts jusqu'à ce que l'adversaire n'ait plus de réponse."
+  },
+  "strengths": [
+    "Deuxième deck du format en volume : 189 listes sur 14 tournois",
+    "Sept cartes au-dessus de 95 %, dont Thousand-Tailed Watcher, Stupefy et Falling Star",
+    "Time Warp dans 95 % des listes : un tour de plus décide une partie serrée",
+    "La Légende paie les sorts sans toucher aux runes du tour"
+  ],
+  "weaknesses": [
+    "Sa conversion est celle du champ, 7,4 % contre 7,1 % : beaucoup de listes, peu de Top 8",
+    "Le moteur coûte cher, 7 énergie pour Thousand-Tailed Watcher et 10 pour Time Warp",
+    "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
+  ]
 }

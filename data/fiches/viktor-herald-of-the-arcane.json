@@ -7,114 +7,129 @@
   ],
   "set": "Unleashed",
   "tier": 3,
-  "archetype": "Spell Control / Removal-heavy",
-  "legendAbility": "Contrôle pur basé sur les spells de removal et disruption. Élimine les menaces adverses et gagne par attrition.",
+  "archetype": "Contrôle par le retrait, jetons en défense",
+  "legendAbility": "Une énergie et épuiser Viktor jouent un jeton Recrue de 1 Puissance. Un bloqueur gratuit à chaque tour.",
   "gameplan": {
-    "earlyGame": "Bellows Breath et Hidden Blade pour répondre aux menaces early. Faithful Manufactor ou Safety Inspector pour value.",
-    "midGame": "Cull the Weak + Imperial Decree comme removal principal. Thousand-Tailed Watcher comme menace. Stupefy pour disruption.",
-    "lateGame": "Wages of Pain pour closer. Shadow's Call et Singularity pour maintenir le contrôle. Salvage pour reload.",
-    "winCondition": "Attrition — épuise les ressources adverses avec du removal puis conquiert les positions non défendues"
+    "earlyGame": "Les Recrues de la Légende occupent le terrain pendant que Bellows Breath et Stupefy nettoient les petites unités.",
+    "midGame": "Cull the Weak, Hidden Blade et Wages of Pain, tous au-dessus de 95 %, retirent la menace principale d'en face.",
+    "lateGame": "Imperial Decree tue tout ce qui prend un dégât ce tour-là. Viktor, Leader recrée un jeton à chaque unité perdue.",
+    "winCondition": "Vider le terrain adverse et marquer avec ce qui reste."
   },
   "keyCards": [
     {
-      "name": "Bellows Breath",
-      "role": "Core — removal, 100% à 2.6x."
-    },
-    {
-      "name": "Imperial Decree",
-      "role": "Core — removal premium, 100% à 2.8x."
-    },
-    {
       "name": "Cull the Weak",
-      "role": "Core — removal conditionnel, 94% à 2.9x."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Core — combat trick/removal, 94% à 3x."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard — menace principale, 82% à 2.1x."
+      "name": "Imperial Decree",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stupefy",
-      "role": "Standard — disruption, 82% à 2.8x."
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Wages of Pain",
-      "role": "Standard — finisher, 82% à 2.9x."
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard — contrôle de board, 76% à 2.1x."
-    },
-    {
-      "name": "Salvage",
-      "role": "Flex — draw/reload, 59% à 1.4x."
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Flex — gear pour value, 53% à 2.4x."
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Shadow's Call",
-      "role": "Flex — removal supplémentaire, 53% à 2.6x."
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Stupefy",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Standard, 85 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 65 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Lacerate",
+      "role": "Standard, 61 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "71%",
-      "role": "Champion principal — amplifie le contrôle."
+      "usage": "85 %",
+      "role": "1 exemplaire en moyenne"
     },
-    "Viktor, Innovator": {
-      "usage": "29%",
-      "role": "Variante — focus sur la génération de valeur."
+    "Vi, Peacekeeper": {
+      "usage": "48 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "The Arena's Greatest (59%)",
-    "Forbidding Waste (47%)",
-    "Treasure Hoard (47%)",
-    "Void Gate (35%)",
-    "Trifarian War Camp (24%)"
+    "Forbidding Waste (83 %)",
+    "Ravenbloom Conservatory (59 %)",
+    "Rockfall Path (50 %)",
+    "Treasure Hoard (39 %)"
   ],
   "strengths": [
-    "4 core removal spells à 94%+ — extrêmement consistant",
-    "Spell-heavy (24.1 avg) — le plus spell-dense de tous les decks",
-    "Multiple removal tools = bon contre aggro",
-    "Flexible: Mind/Order offre contrôle + structure"
+    "Sept cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
+    "Imperial Decree dans 100 % des listes : une réponse aux tapis d'unités",
+    "La Légende fournit un bloqueur par tour, sans carte dépensée",
+    "Forbidding Waste dans 83 % des listes, choisi pour tenir"
   ],
   "weaknesses": [
-    "Peu d'unités (10.4 avg) — vulnérable si le board est vide",
-    "Pas de Top 16 majeur — best 45th Atlanta RQ",
-    "Dépendant des spells — faible contre counter-spell decks",
-    "Win condition lente — peut se faire déborder par les decks combo"
+    "4,3 % de conversion contre 7,1 % pour le champ, aucun titre",
+    "Vu à douze tournois seulement sur quinze : le deck disparaît quand le format accélère",
+    "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "tier": 3,
-    "deckCount": 17,
+    "deckCount": 46,
+    "top8": 2,
+    "titres": 0,
+    "conversion": "4.3 %",
+    "tournois": 12,
     "bestPlacements": [
       {
-        "placement": "45th",
-        "player": "Robert S",
-        "tournament": "Atlanta RQ"
+        "placement": "6th",
+        "player": "云也会失重",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
-        "placement": "56th",
-        "player": "Won Hyuk D",
-        "tournament": "Atlanta RQ"
+        "placement": "7th",
+        "player": "Vemon",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       },
       {
-        "placement": "62nd",
-        "player": "淘金巢",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "11th",
+        "player": "无赞助·刘沛松",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "12th",
+        "player": "矢岛透",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "23th",
+        "player": "崔025",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 17 decklists (Xi'an + Atlanta)",
+  "dataSource": "Decklists de tournoi en base : 46 listes, 12 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

@@ -7,95 +7,107 @@
   ],
   "set": "Origins",
   "tier": 3,
-  "archetype": "Aggro-proactif / Ambush & pression constante",
-  "legendAbility": "Jeu très proactif — prendre le lead vite et piloter depuis cette position dominante.",
+  "archetype": "Embuscades, unités posées en combat",
+  "legendAbility": "Quand vous jouez une unité, donnez +1 Puissance à une unité pour le tour. Chaque arrivée fait pencher un combat.",
   "gameplan": {
-    "earlyGame": "UNL-002 (3-might en attaque) bat les 2-might early. UNL-112 drag une unité + aide Ambush.",
-    "midGame": "OGN-012 et UNL-120 comme unités beefues. OGN-039 et UNL-114 pour le draw. UNL-011 gear = +1 carte/tour.",
-    "lateGame": "Si UNL-011 tient, draw infini. Push avec les Ambush units que l'adversaire ne peut pas prévoir.",
-    "winCondition": "Lead early + Ambush imprévisible + draw via UNL-011"
+    "earlyGame": "Irresistible Faefolk et Kinkou Initiate posent la pression tôt. Pit Rookie laisse un buff derrière lui.",
+    "midGame": "Thrill of the Hunt, dans toutes les listes, rejoue une de vos unités sur n'importe quel champ de bataille au milieu du combat.",
+    "lateGame": "Rengar, Trophy Hunter arrive directement là où l'adversaire a ses unités. Nidalee, Cat Form pioche à chaque combat gagné.",
+    "winCondition": "Gagner des combats que l'adversaire croyait remportés, en posant des unités après sa déclaration."
   },
   "keyCards": [
     {
-      "name": "OGN-012",
-      "id": "OGN-012",
-      "role": "Unité beefue — ancre le board."
+      "name": "Thrill of the Hunt",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-120",
-      "id": "UNL-120",
-      "role": "Seconde ancre mid game."
+      "name": "Inferna",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-039",
-      "id": "OGN-039",
-      "role": "Draw — besoin de setup pour éviter le remove."
+      "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-114",
-      "id": "UNL-114",
-      "role": "Draw + surprise Ambush."
+      "name": "Punch First",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-011",
-      "id": "UNL-011",
-      "role": "Gear clé — +1 carte/tour pour le reste du match. Si il tient, Rengar ne manque jamais de gaz."
+      "name": "Pit Rookie",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-002",
-      "id": "UNL-002",
-      "role": "3-might en attaque — bat les 2-might early."
+      "name": "Kinkou Initiate",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-112",
-      "id": "UNL-112",
-      "role": "Drag vers un battlefield + Ambush support."
+      "name": "Noxus Hopeful",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-106",
-      "id": "UNL-106",
-      "role": "Support cheap Ambush — garde l'adversaire alerte."
+      "name": "Grim Apothecary",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-097",
-      "id": "SFD-097",
-      "role": "Buff support."
+      "name": "First Mate",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-184",
-      "id": "UNL-184",
-      "role": "Support cheap."
+      "name": "Brynhir Thundersong",
+      "role": "Standard, 64 % des listes, 1 exemplaire"
     },
     {
-      "name": "UNL-021",
-      "id": "UNL-021",
-      "role": "Ambush 3-cost."
+      "name": "Sabotage",
+      "role": "Souple, 45 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-025",
-      "id": "SFD-025",
-      "role": "Ambush 3-cost alternatif."
+      "name": "Rampage",
+      "role": "Souple, 45 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Pression constante via Ambush — l'adversaire ne sait jamais le vrai might disponible",
-    "Multiple top 8 chaque semaine en City Challenges",
-    "UNL-011 comme draw engine est fantastique"
+    "Thrill of the Hunt dans toutes les listes, trois autres cartes à 91 %",
+    "Un titre malgré 22 listes seulement",
+    "Star Spring dans 86 % des listes"
   ],
   "weaknesses": [
-    "Perd du momentum avec le temps — week 1 win, puis aucun événement gagné",
-    "Style proactif Body+Fury et Ambush demandent des runes ouvertes = tension constante",
-    "Joueurs expérimentés savent contrer l'Ambush = moins d'impact",
-    "Quand le core synergy struggle, default vers OGN-160 = signe de faiblesse"
+    "4,5 % de conversion, sous la moyenne du champ",
+    "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait",
+    "22 listes en treize tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "1 Win (semaine 1) / 5 Top 8",
-    "sydneyStats": {
-      "winRate": "52%",
-      "matches": 188,
-      "bestPlacement": "11th (11-2-0)"
-    }
+    "deckCount": 22,
+    "top8": 1,
+    "titres": 1,
+    "conversion": "4.5 %",
+    "tournois": 13,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "Prismаticismism",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "15th",
+        "player": "雷汐",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "15th",
+        "player": "象象和刘刘",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "18th",
+        "player": "华蓝-震刀\\_N1uBro",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "23th",
+        "player": "卡茶.饭团不想听",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": false,
@@ -114,5 +126,33 @@
       "Determined Sentry"
     ],
     "note": "Aggro Ambush ultra-rapide, quasi pas de top end ; score au tour adverse."
-  }
+  },
+  "champions": {
+    "Rengar, Trophy Hunter": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Nidalee, Cat Form": {
+      "usage": "91 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "86 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Pyke, Dockside Butcher": {
+      "usage": "55 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Darius, Trifarian": {
+      "usage": "36 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Star Spring (86 %)",
+    "Emperor's Dais (73 %)",
+    "Forbidding Waste (50 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 22 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

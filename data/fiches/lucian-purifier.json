@@ -10,37 +10,37 @@
   "keyCards": [
     {
       "name": "Relentless Pursuit",
-      "id": "SFD-184",
+      "id": "Relentless Pursuit",
       "role": "Présente dans 100 % des 233 listes recensées."
     },
     {
       "name": "Kai'Sa, Survivor",
-      "id": "OGN-039",
+      "id": "Kai'Sa, Survivor",
       "role": "Présente dans 92 % des 233 listes recensées."
     },
     {
       "name": "First Mate",
-      "id": "OGN-132",
+      "id": "First Mate",
       "role": "Présente dans 91 % des 233 listes recensées."
     },
     {
       "name": "Punch First",
-      "id": "SFD-097",
+      "id": "Punch First",
       "role": "Présente dans 91 % des 233 listes recensées."
     },
     {
       "name": "Challenge",
-      "id": "OGN-128",
+      "id": "Challenge",
       "role": "Présente dans 85 % des 233 listes recensées."
     },
     {
       "name": "Boneshiver",
-      "id": "SFD-118",
+      "id": "Boneshiver",
       "role": "Présente dans 82 % des 233 listes recensées."
     },
     {
       "name": "Doran's Blade",
-      "id": "SFD-095",
+      "id": "Doran's Blade",
       "role": "Présente dans 78 % des 233 listes recensées."
     },
     {
@@ -54,5 +54,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Équipements offensifs",
+  "legendAbility": "Chacun de vos équipements donne Assaut à l'unité qui le porte.",
+  "strengths": [
+    "Un équipement posé vaut aussi une hausse de Puissance en attaque."
+  ],
+  "weaknesses": [
+    "5 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

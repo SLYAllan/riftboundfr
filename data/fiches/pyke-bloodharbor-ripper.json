@@ -9,51 +9,125 @@
   "tier": 4,
   "keyCards": [
     {
-      "name": "Stacked Deck",
-      "id": "OGN-183",
-      "role": "Présente dans 96 % des 127 listes recensées."
+      "name": "Bewitching Spirit",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "Star-Crossed",
-      "id": "UNL-128",
-      "role": "Présente dans 95 % des 127 listes recensées."
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Falling Star",
-      "id": "OGN-029",
-      "role": "Présente dans 91 % des 127 listes recensées."
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "Fizz, Trickster",
-      "id": "SFD-140",
-      "role": "Présente dans 84 % des 127 listes recensées."
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
-      "name": "Bewitching Spirit",
-      "id": "UNL-121",
-      "role": "Présente dans 76 % des 127 listes recensées."
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Void Seeker",
+      "role": "Standard, 83 % des listes, 1.5 exemplaire"
     },
     {
       "name": "Treasure Hunter",
-      "id": "SFD-130",
-      "role": "Présente dans 76 % des 127 listes recensées."
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
-      "name": "Mindsplitter",
-      "id": "OGN-192",
-      "role": "Présente dans 65 % des 127 listes recensées."
+      "name": "Blood Rush",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     },
     {
-      "name": "Tideturner",
-      "id": "OGN-199",
-      "role": "Présente dans 64 % des 127 listes recensées."
+      "name": "Gust Monk",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Piercing Light",
+      "role": "Standard, 63 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 63 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 58 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 127,
-    "top8": 5,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "deckCount": 24,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 13,
+    "bestPlacements": [
+      {
+        "placement": "11th",
+        "player": "notxy99",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "13th",
+        "player": "闪电家^乐事^糖果雨",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "14th",
+        "player": "虫爷",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "42th",
+        "player": "牛逼哄哄的能量瓶小伙儿.bJd",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "47th",
+        "player": "FB.眯眼老屍",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      }
+    ]
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "champions": {
+    "Pyke, Dockside Butcher": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "96 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "92 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Ripper's Bay (96 %)",
+    "Forbidding Waste (83 %)",
+    "Void Gate (33 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 24 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Retours en main et or",
+  "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
+  "gameplan": {
+    "earlyGame": "Bewitching Spirit fait défausser en arrivant, Treasure Hunter pose de l'or à chaque déplacement.",
+    "midGame": "Star-Crossed et Falling Star, dans 96 % des listes, cassent le tempo adverse. Void Seeker inflige 4 dégâts et pioche.",
+    "lateGame": "Pyke, Dockside Butcher se déplace d'un champ de bataille à l'autre et revient caché.",
+    "winCondition": "Rejouer les mêmes arrivées rentables jusqu'à épuiser les réponses adverses."
+  },
+  "strengths": [
+    "Quatre cartes au-dessus de 95 %, Ripper's Bay dans 96 % des listes",
+    "Fizz, Trickster et Ezreal, Prodigy dans plus de 90 % des listes : la chaîne de sorts est réglée",
+    "La Légende sauve une unité menacée tout en produisant de l'or"
+  ],
+  "weaknesses": [
+    "Zéro Top 8 en treize tournois sur 24 listes : les résultats ne suivent pas",
+    "Renvoyer ses propres unités coûte du tempo à chaque fois",
+    "Le deck n'a pas de vraie fin de partie, il vise l'usure"
+  ]
 }

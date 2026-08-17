@@ -10,22 +10,22 @@
   "keyCards": [
     {
       "name": "Traveling Merchant",
-      "id": "OGN-185",
+      "id": "Traveling Merchant",
       "role": "Présente dans 95 % des 278 listes recensées."
     },
     {
       "name": "Noxus Hopeful",
-      "id": "OGN-012",
+      "id": "Noxus Hopeful",
       "role": "Présente dans 88 % des 278 listes recensées."
     },
     {
       "name": "Stacked Deck",
-      "id": "OGN-183",
+      "id": "Stacked Deck",
       "role": "Présente dans 83 % des 278 listes recensées."
     },
     {
       "name": "Vi, Destructive",
-      "id": "OGN-036",
+      "id": "Vi, Destructive",
       "role": "Présente dans 70 % des 278 listes recensées."
     },
     {
@@ -34,12 +34,12 @@
     },
     {
       "name": "Super Mega Death Rocket!",
-      "id": "OGN-252",
+      "id": "Super Mega Death Rocket!",
       "role": "Présente dans 67 % des 278 listes recensées."
     },
     {
       "name": "Chemtech Enforcer",
-      "id": "OGN-003",
+      "id": "Chemtech Enforcer",
       "role": "Présente dans 65 % des 278 listes recensées."
     }
   ],
@@ -49,5 +49,13 @@
     "victoires": 1,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Main vide, pioche garantie",
+  "legendAbility": "Au début de votre phase d'éveil, piochez une carte si votre main en contient une ou moins.",
+  "strengths": [
+    "Jouer sa main entière ne coûte rien : la pioche revient d'elle-même."
+  ],
+  "weaknesses": [
+    "2 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

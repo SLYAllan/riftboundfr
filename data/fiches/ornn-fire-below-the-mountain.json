@@ -7,122 +7,128 @@
   ],
   "set": "Unleashed",
   "tier": 3,
-  "archetype": "Gear-heavy / Forge Synergy",
-  "legendAbility": "Synergise avec les gears — forge des équipements améliorés, accumule de la valeur via les artefacts.",
+  "archetype": "Équipements, ressources en réaction",
+  "legendAbility": "Épuisez Ornn en réaction pour ajouter une Puissance, utilisable seulement pour jouer un équipement ou activer sa capacité.",
   "gameplan": {
-    "earlyGame": "Poro Snax et Seal of Focus pour établir le board avec des gears cheap. Pit Crew pour value.",
-    "midGame": "Brutalizer + Guardian Angel pour protéger les unités clés. Sprite Fountain pour draw. Consult the Past pour recycler.",
-    "lateGame": "Thousand-Tailed Watcher avec des gears massifs. Shurelya's Requiem comme finisher. Forgefire Cape pour les gros trades.",
-    "winCondition": "Board de gears accumulés — les unités deviennent inarrêtables avec l'équipement empilé"
+    "earlyGame": "Sprite Fountain et Poro Snax, à 2 et 1 énergie, posent un équipement et piochent. Scuttle Crab tient le terrain.",
+    "midGame": "Sterak's Gage et Brutalizer s'attachent en réaction. Patched Porobot pioche dès trois équipements en jeu.",
+    "lateGame": "Shurelya's Requiem prépare toutes vos unités d'un coup. Ornn, Forge God arrive déjà équipé.",
+    "winCondition": "Une unité surchargée d'équipements que la Puissance de la Légende paie sans toucher aux runes."
   },
   "keyCards": [
     {
+      "name": "Sprite Fountain",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Defy",
-      "role": "Core — protection universelle, 100% à 2.2x."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Poro Snax",
-      "role": "Core — gear staple, 93% à 2.7x."
+      "name": "Shurelya's Requiem",
+      "role": "Standard, 89 % des listes, 1 exemplaire"
     },
     {
-      "name": "Seal of Focus",
-      "role": "Standard — gear cheap, 80% à 2.8x."
+      "name": "Patched Porobot",
+      "role": "Standard, 81 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Discipline",
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard — early unit, 80% à 2.8x."
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard — threat, 80% à 2.1x."
-    },
-    {
-      "name": "Guardian Angel",
-      "role": "Standard — protection gear premium, 80% à 2.3x."
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Standard — draw engine, 80% à 3x."
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Standard — CC, 80% à 1.3x."
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
-      "name": "Consult the Past",
-      "role": "Standard — recyclage, 73% à 2.5x."
+      "name": "Sterak's Gage",
+      "role": "Souple, 59 % des listes, 3 exemplaires"
     },
     {
-      "name": "Forgefire Cape",
-      "role": "Standard — gear signature, 73% à 1x."
+      "name": "Poro Snax",
+      "role": "Souple, 56 % des listes, 3 exemplaires"
     },
     {
-      "name": "Brutalizer",
-      "role": "Standard — gear mid, 67% à 2.6x."
+      "name": "Guardian Angel",
+      "role": "Souple, 52 % des listes, 3 exemplaires"
     },
     {
-      "name": "Seal of Insight",
-      "role": "Standard — gear value, 67% à 1.9x."
-    },
-    {
-      "name": "Sprite Burst",
-      "role": "Standard — removal, 67% à 2.1x."
-    },
-    {
-      "name": "Pit Crew",
-      "role": "Standard — unit gear-synergy, 67% à 2.7x."
+      "name": "Seal of Focus",
+      "role": "Souple, 48 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ornn, Forge God": {
-      "usage": "100%",
-      "role": "Seul champion — synergise parfaitement avec le gameplan gear."
+      "usage": "59 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ornn, Blacksmith": {
+      "usage": "48 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (73%)",
-    "Dusk Rose Lab (67%)",
-    "The Arena's Greatest (60%)",
-    "Ornn's Forge (33%)",
-    "Rockfall Path (27%)"
+    "Ornn's Forge (81 %)",
+    "Treasure Hoard (52 %)",
+    "Veiled Temple (48 %)"
   ],
   "strengths": [
-    "Archétype unique : gear-heavy (16.9 avg gears) — le plus gear-dense du jeu",
-    "Core large de 13 standard cards — builds très consistants",
-    "Treasure Hoard + Dusk Rose Lab = battlefields gear-synergy",
-    "Accumulation de valeur — difficile à disruption si pas stoppé tôt"
+    "11,1 % de conversion, le meilleur du format après Kennen, sur 27 listes",
+    "Sprite Fountain et Defy dans toutes les listes",
+    "Ornn's Forge dans 81 % des listes, taillé pour les équipements",
+    "La Légende paie les équipements sans dépenser le tour"
   ],
   "weaknesses": [
-    "Peu de removal spells (11.3 avg) — vulnérable aux boards agressifs",
-    "Pas de Top 64 majeur — best 121st Xi'an",
-    "Dépendant du draw de gears — inconsistant si mauvais draws",
-    "Anti-gear tech peut détruire le gameplan"
+    "27 listes en treize tournois : l'écart de conversion ne prouve rien à ce volume",
+    "Le retrait d'équipement fait s'effondrer le deck entier",
+    "Deux Champions se partagent la place, aucun ne dépasse 60 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "tier": 3,
-    "deckCount": 15,
+    "deckCount": 27,
+    "top8": 3,
+    "titres": 0,
+    "conversion": "11.1 %",
+    "tournois": 13,
     "bestPlacements": [
       {
-        "placement": "121st",
-        "player": "C+",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "4th",
+        "player": "天津cаrdtime-金角大王",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
-        "placement": "124th",
-        "player": "Angelo L",
-        "tournament": "Atlanta RQ"
+        "placement": "5th",
+        "player": "solo｜蓝白",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
-        "placement": "201st",
-        "player": "QW",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "7th",
+        "player": "KD",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "20th",
+        "player": "Cyder",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "21th",
+        "player": "ALL黑鸦",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 15 decklists (Xi'an + Atlanta)",
+  "dataSource": "Decklists de tournoi en base : 27 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

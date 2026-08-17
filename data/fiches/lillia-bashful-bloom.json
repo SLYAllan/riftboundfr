@@ -7,85 +7,108 @@
   ],
   "set": "Unleashed",
   "tier": 3,
-  "archetype": "Value-tempo / Sprites temporaires & scaling",
-  "legendAbility": "Génère des UNL-T07 (Sprites 3-might temporaires) qui entrent ready. Les adversaires doivent choisir entre perdre leurs vraies unités contre des tokens ou laisser des conquêtes gratuites.",
+  "archetype": "Jetons temporaires, tempo à répétition",
+  "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
   "gameplan": {
-    "earlyGame": "Garder l'unité turn 1 hors des showdowns. Laisser l'adversaire choisir ses combats — UNL-T07 arrive bientôt.",
-    "midGame": "UNL-078 et UNL-069 génèrent des Sprites 3-might. L'adversaire perd des vraies unités contre des tokens = échange favorable.",
-    "lateGame": "OGN-116 comme closer Mind. OGN-123 + UNL-084 pour pace plus lent. Continuer à générer des Sprites.",
-    "winCondition": "Échanges asymétriques (tokens vs vraies unités) + scoring continu"
+    "earlyGame": "Sprite Fountain, dans toutes les listes, pose un premier Esprit et rend la capacité moins chère. Ravenbloom Student grossit sur chaque sort.",
+    "midGame": "Sprite Burst pose deux Esprits prêts d'un coup. Charm et Defy protègent la conquête du tour.",
+    "lateGame": "Lillia, Fae Fawn laisse un Esprit derrière elle à chaque déplacement. Unchecked Power nettoie un terrain saturé.",
+    "winCondition": "Poser plus d'unités par tour que l'adversaire ne peut en retirer, et marquer avant qu'elles ne disparaissent."
   },
   "keyCards": [
     {
-      "name": "UNL-078",
-      "id": "UNL-078",
-      "role": "Génère des Sprites temporaires 3-might."
+      "name": "Sprite Fountain",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-069",
-      "id": "UNL-069",
-      "role": "Seconde source de Sprites."
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-116",
-      "id": "OGN-116",
-      "role": "Closer Mind standard."
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-123",
-      "id": "OGN-123",
-      "role": "Alternative slow win con."
+      "name": "Sprite Burst",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-084",
-      "id": "UNL-084",
-      "role": "Compagnon d'OGN-123 en pace lent."
+      "name": "Stupefy",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-058",
-      "id": "OGN-058",
-      "role": "Draw support."
+      "name": "Smoke and Mirrors",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-095",
-      "id": "OGN-095",
-      "role": "Draw support."
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-083",
-      "id": "UNL-083",
-      "role": "Draw support."
+      "name": "Charm",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-045",
-      "id": "OGN-045",
-      "role": "Contresort — protège les vraies unités."
+      "name": "Lilting Lullaby",
+      "role": "Standard, 89 % des listes, 1 exemplaire"
     },
     {
-      "name": "UNL-190",
-      "id": "UNL-190",
-      "role": "Deny les tentatives de comeback."
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Mask of Foresight",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Standard, 66 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
-    "Synergy temporaire = échanges toujours en faveur de Lillia",
-    "Sprites entrent ready = pression immédiate",
-    "Multiple top 8 chaque semaine en City Challenges"
+    "Huit cartes au-dessus de 90 %, dont quatre dans toutes les listes",
+    "8,6 % de conversion sur 35 listes, au-dessus de la moyenne du champ",
+    "Dusk Rose Lab dans 94 % des listes : le terrain récompense les jetons",
+    "Chaque Esprit en jeu rend le suivant moins cher"
   ],
   "weaknesses": [
-    "Build évident dès le début — pas flexible",
-    "Calm+Mind manque historiquement de raw power",
-    "Perd du momentum chaque semaine — signe négatif",
-    "Suit les traces d'Ahri — solide mais pas gagnante"
+    "Les jetons meurent au début de votre tour : rater la conquête, c'est tout perdre",
+    "Aucun titre en treize tournois",
+    "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "tier": 3,
-    "preRegionals": "2 Top 8 (1 win early puis déclin)",
-    "sydneyStats": {
-      "winRate": "49%",
-      "matches": 235,
-      "bestPlacement": "33rd (10-3-0)"
-    }
+    "deckCount": 35,
+    "top8": 3,
+    "titres": 0,
+    "conversion": "8.6 %",
+    "tournois": 13,
+    "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "奥雷里亚诺",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "优极客.无痕",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "5th",
+        "player": "XXT.zyoung",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "13th",
+        "player": "小神仙",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "23th",
+        "player": "Jzn",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
@@ -104,5 +127,18 @@
       "Thousand-Tailed Watcher"
     ],
     "note": "Légende : Sprite 3-might temporary READY, -1 énergie par unité temporary. Duskrose Lab (sacrifie un sprite → pioche). Au Win-A-Box/Suzhou : bat Darius et Rek'Sai par pure consistance (double conquer chaque tour). Tech : Smoke and Mirrors, Sprite Burst."
-  }
+  },
+  "champions": {
+    "Lillia, Fae Fawn": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Dusk Rose Lab (94 %)",
+    "Black Flame Altar (80 %)",
+    "Seat of Power (49 %)",
+    "Forbidding Waste (34 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 35 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

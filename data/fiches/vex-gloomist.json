@@ -1,79 +1,113 @@
 {
   "legendName": "Vex, Gloomist",
-  "legendId": "UNL-193",
+  "legendId": "Vex, Gloomist",
   "domains": [
     "Calm",
     "Chaos"
   ],
   "set": "Unleashed",
   "tier": 3,
-  "archetype": "Hold-control / Attrition & disruption",
-  "legendAbility": "Hold-oriented avec des outils pour ramener des unités en showdown, les renvoyer en base, ou stun les attaquants.",
+  "archetype": "Contrôle d'un seul champ de bataille",
+  "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Vex pour piocher. Tenir rapporte une carte par tour.",
   "gameplan": {
-    "earlyGame": "Développer UNL-150 et OGN-073 (4-cost clés) sur un battlefield. Les garder en vie à tout prix.",
-    "midGame": "Utiliser les outils Calm (OGN-077, OGN-058, OGN-045) pour protéger. UNL-141 et UNL-036 en staples cheap.",
-    "lateGame": "Win condition pas encore définie — certains builds Hidden, d'autres high-cost. Le deck cherche encore l'optimal.",
-    "winCondition": "Attrition — épuiser l'adversaire via le hold continu + réponses à tout"
+    "earlyGame": "Mutated Mouser et Scuttle Crab tiennent une position à moindres frais. Defy et Discipline gardent la réponse ouverte.",
+    "midGame": "Vex, Apathetic étourdit chaque unité posée en face et l'empêche de bouger. Boots of Swiftness rendent la vôtre mobile.",
+    "lateGame": "Zhonya's Hourglass et Back Off protègent la position pendant que la Légende pioche à chaque tour tenu.",
+    "winCondition": "Tenir un champ de bataille, piocher chaque tour, et laisser l'adversaire s'user dessus."
   },
   "keyCards": [
     {
-      "name": "UNL-150",
-      "id": "UNL-150",
-      "cost": 4,
-      "role": "Unité clé #1 — très difficile à déloger d'un battlefield."
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-073",
-      "id": "OGN-073",
-      "cost": 4,
-      "role": "Unité clé #2 — duo avec UNL-150 pour verrouiller un battlefield."
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-077",
-      "id": "OGN-077",
-      "role": "Protection d'unités — multiple copies."
+      "name": "Charm",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-058",
-      "id": "OGN-058",
-      "role": "Support Calm staple."
+      "name": "Boots of Swiftness",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-045",
-      "id": "OGN-045",
-      "role": "Contresort Calm staple."
+      "name": "Switcheroo",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-141",
-      "id": "UNL-141",
-      "role": "Unité cheap staple en hold strategy."
+      "name": "Star-Crossed",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-036",
-      "id": "UNL-036",
-      "role": "Unité cheap qui a prouvé sa valeur en hold."
+      "name": "Mutated Mouser",
+      "role": "Standard, 73 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 64 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Back Off",
+      "role": "Standard, 64 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 64 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 59 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
-    "Calm + Chaos = excellent mix support + disruption",
-    "Top 4 Sydney — performance surprise solide",
-    "Build probablement trouvé — peu de variation entre les listes chinoises et Sydney",
-    "Meilleur départ pour un hold strategy depuis le début de Riftbound"
+    "Defy, Discipline et Charm dans toutes les listes",
+    "Vex, Apathetic dans toutes les listes : elle bloque la pose d'unités adverses",
+    "Startipped Peak dans 68 % des listes, un terrain fait pour tenir"
   ],
   "weaknesses": [
-    "Manque de raw power pour push quand l'occasion se présente",
-    "Win condition late game pas encore définie — builds variés",
-    "Historiquement les hold legends non-Yi ne gagnent pas les tournois"
+    "22 listes, un seul Top 8 en neuf tournois",
+    "Vu à neuf tournois sur quinze : le deck disparaît des méta rapides",
+    "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "5 Top 8",
-    "regionalResults": "Top 4 Sydney (12-2-1)",
-    "sydneyStats": {
-      "winRate": "53%",
-      "matches": 336,
-      "conversionRate": "20%"
-    }
+    "deckCount": 22,
+    "top8": 1,
+    "titres": 0,
+    "conversion": "4.5 %",
+    "tournois": 9,
+    "bestPlacements": [
+      {
+        "placement": "8th",
+        "player": "热水加冰",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "32th",
+        "player": "Saber",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "34th",
+        "player": "TXG·北顾",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "34th",
+        "player": "泉",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "35th",
+        "player": "顾瞻",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      }
+    ]
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
@@ -91,5 +125,30 @@
       "Shadow (linchpin du hold)"
     ],
     "note": "Erreurs de deckbuilding : NE PAS jouer Grove of the God Willow (déjà dans la Légende), éviter Scuttle Crab (0 might). Vex Apathetic (4 coût) = quasi verrou et candidate au ban. Bat Diana (qui manque Unchecked Power), mais PERD vs Ezreal qui renvoie la Vex en main pour casser le Hold. Tech vue : Boots of Swiftness (ganking, bouge gauche-droite au lieu de retreat)."
-  }
+  },
+  "champions": {
+    "Vex, Apathetic": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "64 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "55 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Irelia, Fervent": {
+      "usage": "45 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Startipped Peak (68 %)",
+    "Targon's Peak (36 %)",
+    "Fortified Position (32 %)",
+    "Abandoned Hall (32 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 22 listes, 9 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

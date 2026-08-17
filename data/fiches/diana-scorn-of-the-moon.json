@@ -1,82 +1,114 @@
 {
   "legendName": "Diana, Scorn of the Moon",
-  "legendId": "UNL-197",
+  "legendId": "Diana, Scorn of the Moon",
   "domains": [
     "Chaos",
     "Mind"
   ],
   "set": "Unleashed",
   "tier": 2,
-  "archetype": "Aggro-tempo / Domination des showdowns + punition",
-  "legendAbility": "Contrôle le pace en dominant les showdowns early. L'adversaire est forcé de prendre des risques que Chaos-Mind punit sévèrement.",
+  "archetype": "Combats gagnés à la réaction",
+  "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
-    "earlyGame": "OGN-103 + ability = machine à gagner les showdowns. Prendre le lead au scoreboard.",
-    "midGame": "UNL-080 (5-cost) — ability flexible : creuse le deck OU 8-might pour conquérir.",
-    "lateGame": "OGN-116 comme closer Mind standard. OGN-173 pour push les derniers points.",
-    "winCondition": "Lead au score + punition des risques adverses"
+    "earlyGame": "Ravenbloom Student grossit à chaque sort. Stacked Deck et Stupefy, dans toutes les listes, tiennent la main pleine.",
+    "midGame": "Moonfall et Star-Crossed, présents partout, pèsent sur un combat déjà engagé. Tideturner arrive caché et déplace la menace.",
+    "lateGame": "Hwei, Brooding Painter et Diana, Lunari piochent en bougeant. Swain, Visionary marque un point supplémentaire quand la conquête est propre.",
+    "winCondition": "Gagner chaque combat d'une Puissance et marquer sans jamais surexposer le terrain."
   },
   "keyCards": [
     {
-      "name": "OGN-103",
-      "id": "OGN-103",
-      "role": "Machine à showdowns early avec l'ability légende."
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-080",
-      "id": "UNL-080",
-      "cost": 5,
-      "role": "Flexible mid game — draw ou 8-might conquérir."
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-116",
-      "id": "OGN-116",
-      "role": "Closer Mind — -3 might aux unités adverses."
+      "name": "Stupefy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-169",
-      "id": "OGN-169",
-      "role": "Sort support early game."
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-095",
-      "id": "OGN-095",
-      "role": "Sort support early complémentaire."
+      "name": "Moonfall",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-128",
-      "id": "UNL-128",
-      "role": "Maintien de l'avance une fois en tête."
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-198",
-      "id": "UNL-198",
-      "role": "Contrôle réactif — empêche les retours."
+      "name": "Tideturner",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-173",
-      "id": "OGN-173",
-      "role": "Push final — score avant stabilisation adverse."
+      "name": "Gust",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Patched Porobot",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Flash",
+      "role": "Standard, 69 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Morbid Return",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Arsenal Chaos+Mind répond à tout : contresort, removal, draw, mouvement, résurrection",
-    "Domine l'early game via showdowns",
-    "Record Unleashed de 4 City Challenge wins",
-    "Million de possibilités une fois maîtrisée"
+    "Neuf cartes dans 100 % des listes : c'est le cœur le plus fermé du format",
+    "Trois titres en quatorze tournois, autant que le deck le plus joué du format",
+    "L'énergie de la Légende ne sert qu'en combat, là où l'adversaire a déjà dépensé la sienne",
+    "Abandoned Hall dans 94 % des listes, taillé pour les déplacements"
   ],
   "weaknesses": [
-    "Complexité élevée — million de choix chaque tour",
-    "Moins populaire en top cut que Irelia aux gros tournois"
+    "Conversion de 7,1 %, exactement la moyenne du champ : elle gagne ou elle sort tôt",
+    "Sans sort en main, la Légende ne sert à rien",
+    "84 listes seulement, un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "tier": 1,
-    "preRegionals": "3 Wins / 13 Top 8 (4 CC wins = record Unleashed)",
-    "regionalResults": "Top 4 Sydney (12-2-1)",
-    "sydneyStats": {
-      "winRate": "56%",
-      "matches": 353,
-      "conversionRate": ">20%"
-    }
+    "deckCount": 84,
+    "top8": 6,
+    "titres": 3,
+    "conversion": "7.1 %",
+    "tournois": 14,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "抖音老油条.KaLioS",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": "GREY-邮差",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "1st",
+        "player": "AkirаAI",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "2nd",
+        "player": "火星.化作蝴蝶飞舞",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "3rd",
+        "player": "无极卡牌.牢底",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      }
+    ]
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
@@ -97,5 +129,34 @@
       "Baron Nashor (side, matchups longs)"
     ],
     "note": "Souvent « un shell pour Hwei » : les games avec Hwei sont radicalement différentes. Double championne au plus gros Régional du set (Vancouver, ~2000 joueurs). Doit jouer Unchecked Power / Downwell vs les decks de Hold (perd vs Vex sinon)."
-  }
+  },
+  "champions": {
+    "Hwei, Brooding Painter": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "100 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Diana, Lunari": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Swain, Visionary": {
+      "usage": "70 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "37 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Abandoned Hall (94 %)",
+    "Rockfall Path (69 %)",
+    "Veiled Temple (37 %)",
+    "Targon's Peak (36 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 84 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

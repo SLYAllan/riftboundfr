@@ -1,0 +1,143 @@
+{
+  "legendName": "Ambessa, Matriarch of War",
+  "legendId": "Ambessa, Matriarch of War",
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "set": "Vendetta",
+  "tier": 4,
+  "archetype": "Amplification et unités préparées",
+  "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
+  "gameplan": {
+    "earlyGame": "Legion Marauder et Pit Rookie posent la pression et laissent un bonus derrière eux.",
+    "midGame": "Punch First, dans toutes les listes, gagne le combat pour une énergie. Chaque amplification recharge la Légende.",
+    "lateGame": "Ambessa, The Wolf amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.",
+    "winCondition": "Une unité préparée deux fois dans le tour, qui attaque puis défend."
+  },
+  "strengths": [
+    "Punch First dans toutes les listes, quatre autres cartes au-dessus de 85 %",
+    "Un Top 8 malgré treize listes",
+    "Risen Altar dans 85 % des listes"
+  ],
+  "weaknesses": [
+    "13 listes en neuf tournois : trop peu pour parler d'un archétype installé",
+    "Sans autre carte à amplifier, la Légende ne se recharge pas",
+    "Le deck n'a qu'une menace à la fois et pas de plan de repli"
+  ],
+  "difficulty": "Moyenne",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Legion Marauder",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Rampage",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Standard, 85 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Guttural Roar",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Public Execution",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "First Mate",
+      "role": "Standard, 69 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Standard, 69 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Repulse",
+      "role": "Standard, 69 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Profiteer",
+      "role": "Standard, 62 % des listes, 2 exemplaires"
+    }
+  ],
+  "champions": {
+    "Ambessa, The Wolf": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "62 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "46 %",
+      "role": "2.5 exemplaires en moyenne"
+    },
+    "Kayle, Justified": {
+      "usage": "38 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Jayce, Hammer in Hand": {
+      "usage": "38 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Risen Altar (85 %)",
+    "Sunken Temple (54 %)",
+    "Mystic Vortex (38 %)",
+    "Sandswept Tomb (31 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 13,
+    "top8": 1,
+    "titres": 0,
+    "conversion": "7.7 %",
+    "tournois": 9,
+    "bestPlacements": [
+      {
+        "placement": "7th",
+        "player": "肉松饼",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "22th",
+        "player": "氐",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "43th",
+        "player": "东莞铁猫",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "50th",
+        "player": "ZZZ",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "52th",
+        "player": "紫禁·BOT·元气教父",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 13 listes, 9 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}

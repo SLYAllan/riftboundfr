@@ -9,46 +9,128 @@
   "tier": 2,
   "keyCards": [
     {
-      "name": "Noxus Hopeful",
-      "id": "OGN-012",
-      "role": "Présente dans 99 % des 92 listes recensées."
+      "name": "Void Rush",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "Void Rush",
-      "id": "SFD-188",
-      "role": "Présente dans 97 % des 92 listes recensées."
+      "name": "Carrion Dredger",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Cull the Weak",
-      "id": "OGN-209",
-      "role": "Présente dans 91 % des 92 listes recensées."
-    },
-    {
-      "name": "Hidden Blade",
-      "id": "OGN-213",
-      "role": "Présente dans 88 % des 92 listes recensées."
-    },
-    {
-      "name": "Honest Broker",
-      "id": "SFD-155",
-      "role": "Présente dans 75 % des 92 listes recensées."
-    },
-    {
-      "name": "Falling Star",
-      "id": "OGN-029",
-      "role": "Présente dans 74 % des 92 listes recensées."
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Undertitan",
-      "id": "SFD-175",
-      "role": "Présente dans 66 % des 92 listes recensées."
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Inferna",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Cleave",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Blood Rush",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Honest Broker",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Shadow Fiend",
+      "role": "Standard, 68 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 92,
-    "top8": 1,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "deckCount": 77,
+    "top8": 8,
+    "titres": 0,
+    "conversion": "10.4 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "XYZ.媄猗",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "2nd",
+        "player": "灵花祭.ECG.Chаnce",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "3rd",
+        "player": "skilliton",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "5th",
+        "player": "Sаtаme",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "6th",
+        "player": "超级无敌暴龙",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ]
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "champions": {
+    "Rek'Sai, Breacher": {
+      "usage": "99 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "65 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Zed, From the Shadows": {
+      "usage": "57 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "The Candlelit Sanctum (96 %)",
+    "Mystic Vortex (56 %)",
+    "Zaun Warrens (53 %)",
+    "Trifarian War Camp (40 %)",
+    "Forbidding Waste (35 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 77 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Agression large, unités qui reviennent du deck",
+  "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
+  "gameplan": {
+    "earlyGame": "Carrion Dredger et Noxus Hopeful, à 2 et 4 énergie, prennent le terrain tôt. Inferna arrive en embuscade au milieu du combat.",
+    "midGame": "Void Rush rejoue une carte du dessus à coût réduit. Cull the Weak et Falling Star vident le champ d'en face.",
+    "lateGame": "Undertitan donne +2 Puissance à tout le reste. Blood Rush et Cleave transforment une unité moyenne en menace.",
+    "winCondition": "Conquérir tôt, rejouer gratuitement à chaque conquête et ne jamais laisser l'adversaire respirer."
+  },
+  "strengths": [
+    "Dix cartes au-dessus de 90 %, dont Void Rush dans 99 % des listes",
+    "10,4 % de conversion contre 7,1 % pour le champ, sur 77 listes et quinze tournois",
+    "The Candlelit Sanctum dans 96 % des listes : le terrain est choisi, pas subi",
+    "La Légende transforme chaque conquête en carte gratuite"
+  ],
+  "weaknesses": [
+    "Aucun titre : le deck arrive en Top 8 mais ne finit pas",
+    "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
+    "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
+  ]
 }

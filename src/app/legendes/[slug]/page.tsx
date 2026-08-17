@@ -14,6 +14,7 @@ import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-reac
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CardRef } from "@/components/card-ref";
+import { CardTextRenderer } from "@/components/card-text-renderer";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { LEGEND_GUIDES } from "@/lib/legend-guides";
 import { DecklistInteractive } from "@/components/decklist-interactive";
@@ -27,6 +28,12 @@ import { tr } from "@/lib/i18n-server";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
+
+// Les fiches notent un champ de bataille « Minefield (88 %) ». Cherchée telle quelle,
+// la carte n'existe pas : la vignette restait vide et le nom s'affichait avec sa part
+// collée dessus. On sépare le nom de la part.
+const nomTerrain = (bf: string) => bf.replace(/\s*\(\s*[\d.,]+\s*%?\s*\)\s*$/, "").trim();
+const partTerrain = (bf: string) => bf.match(/\(\s*([\d.,]+)\s*%?\s*\)\s*$/)?.[1] ?? null;
 
 interface KeyCard {
   name?: string;
@@ -318,6 +325,27 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   const legendName = fiche.legendName ?? name;
   const bannerUrl = getBannerUrl(legendName);
 
+  // La carte Légende elle-même, pour l'encart d'en-tête. Les variantes portent leur
+  // mention dans le nom ((Metal), (Signature)…), donc l'égalité stricte prend l'originale.
+  let carteLegende: { riftboundId: string; imageUrl: string | null; textPlain: string | null } | null =
+    null;
+  try {
+    carteLegende = await prisma.card.findFirst({
+      where: {
+        type: "Legend",
+        alternateArt: false,
+        OR: [
+          { name: { equals: legendName, mode: "insensitive" } },
+          { name: { equals: legendName.replace(", ", " - "), mode: "insensitive" } },
+        ],
+      },
+      select: { riftboundId: true, imageUrl: true, textPlain: true },
+      orderBy: [{ overnumbered: "asc" }, { set: "asc" }],
+    });
+  } catch {
+    /* DB indispo : l'encart se réduit à l'explication de la fiche. */
+  }
+
   // Résolution des codes cartes -> noms réels. Les keyCards portent parfois un code
   // (UNL-059) dans `name`, parfois le vrai nom. On collecte tous les codes et on
   // interroge la DB une seule fois. En force-dynamic la DB est joignable : les codes
@@ -337,7 +365,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     else collect(kc.name);
   }
   for (const champName of Object.keys(fiche.champions ?? {})) collect(champName);
-  for (const bf of fiche.topBattlefields ?? []) collect(bf);
+  for (const bf of fiche.topBattlefields ?? []) collect(nomTerrain(bf));
 
   interface Art {
     name: string;
@@ -603,16 +631,45 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         </header>
       )}
 
-      {/* Capacité de la Légende */}
-      {fiche.legendAbility && (
-        <div className="mt-6 rounded-card border border-hairline bg-surface p-4">
-          <h2
-            className="flex items-center gap-2 text-sm font-semibold text-arcane"
-            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-          >
-            <Sparkles size={16} /> {t("Capacité de la Légende")}
-          </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{fiche.legendAbility}</p>
+      {/* Capacité de la Légende : la carte, son texte de règles, puis l'explication.
+          Le texte de la carte fait foi et reste en anglais, comme sur /cartes ; la phrase
+          en dessous dit ce que ça change en partie. Sans carte en base, l'encart se réduit
+          à l'explication. */}
+      {(carteLegende || fiche.legendAbility) && (
+        <div className="mt-6 flex flex-col gap-4 rounded-card border border-hairline bg-surface p-4 sm:flex-row">
+          {carteLegende?.imageUrl && (
+            <Link href={`/cartes/${carteLegende.riftboundId}`} className="shrink-0 self-start">
+              <Image
+                src={carteLegende.imageUrl}
+                alt={name}
+                width={214}
+                height={300}
+                sizes="(max-width: 640px) 40vw, 140px"
+                className="w-28 rounded-game-card bg-surface-raised transition-transform duration-200 hover:scale-[1.03] sm:w-36"
+                style={{ aspectRatio: "300 / 419" }}
+              />
+            </Link>
+          )}
+          <div className="min-w-0">
+            <h2
+              className="flex items-center gap-2 text-sm font-semibold text-arcane"
+              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+            >
+              <Sparkles size={16} /> {t("Capacité de la Légende")}
+            </h2>
+            {carteLegende?.textPlain && (
+              <p className="mt-1.5 text-sm leading-relaxed text-ink">
+                <CardTextRenderer text={carteLegende.textPlain} />
+              </p>
+            )}
+            {fiche.legendAbility && (
+              <p
+                className={`text-sm leading-relaxed text-ink-secondary ${carteLegende?.textPlain ? "mt-2.5 border-t border-hairline pt-2.5" : "mt-1.5"}`}
+              >
+                {fiche.legendAbility}
+              </p>
+            )}
+          </div>
         </div>
       )}
 
@@ -686,51 +743,6 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             </div>
           )}
         </Section>
-
-        {/* Les listes suivantes en liens : chemin interne vers les pages deck, que Google
-            n'atteint aujourd'hui que par le sitemap. Rendu dans l'ordre de tri déjà
-            calculé (niveau de tournoi, puis classement). */}
-        {otherDecks.length > 0 && (
-          <Section title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
-            <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
-              {otherDecks.map((deck) => (
-                <li key={deck.id}>
-                  <Link
-                    href={`/decks/${deck.slug}`}
-                    className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-2.5 text-sm hover:bg-surface-raised"
-                  >
-                    <span
-                      className="font-semibold text-arcane"
-                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                    >
-                      {displayDeckName(deck.title, legendName)}
-                    </span>
-                    {deck.playerName && (
-                      <span className="text-ink-muted">par {deck.playerName}</span>
-                    )}
-                    {deck.placement && (
-                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
-                        {deck.placement}
-                      </span>
-                    )}
-                    {deck.tournamentContext && (
-                      <span className="ml-auto truncate text-xs text-ink-muted">
-                        {deck.tournamentContext}
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {deckCount > legendDecks.length && (
-              <p className="mt-3 text-sm">
-                <Link href={decksHref} className="text-arcane hover:underline">
-                  Voir les {deckCount.toLocaleString("fr-FR")} decks {name}
-                </Link>
-              </p>
-            )}
-          </Section>
-        )}
 
         {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
         {guideProse && (
@@ -841,7 +853,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                     <CardTile
                       key={champName}
                       art={cardArt[champName] ?? null}
-                      label={champName}
+                      label={<CardRef name={champName}>{champName}</CardRef>}
                       badge={info?.usage}
                       sub={info?.role}
                     />
@@ -859,13 +871,69 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   {t("Champs de bataille fréquents")}
                 </h2>
                 <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {fiche.topBattlefields!.map((bf) => (
-                    <CardTile key={bf} art={cardArt[bf] ?? null} label={bf} landscape />
-                  ))}
+                  {fiche.topBattlefields!.map((bf) => {
+                    const nom = nomTerrain(bf);
+                    const part = partTerrain(bf);
+                    return (
+                      <CardTile
+                        key={bf}
+                        art={cardArt[nom] ?? null}
+                        label={<CardRef name={nom}>{nom}</CardRef>}
+                        sub={part ? `${part} % des listes` : null}
+                        landscape
+                      />
+                    );
+                  })}
                 </div>
               </section>
             )}
           </div>
+        )}
+
+        {/* Les listes suivantes en liens : chemin interne vers les pages deck, que Google
+            n'atteint aujourd'hui que par le sitemap. Rendu dans l'ordre de tri déjà
+            calculé (niveau de tournoi, puis classement). Placées après les cartes clés :
+            une longue liste de liens entre le guide et le reste coupait la lecture. */}
+        {otherDecks.length > 0 && (
+          <Section title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
+            <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
+              {otherDecks.map((deck) => (
+                <li key={deck.id}>
+                  <Link
+                    href={`/decks/${deck.slug}`}
+                    className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-2.5 text-sm hover:bg-surface-raised"
+                  >
+                    <span
+                      className="font-semibold text-arcane"
+                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                    >
+                      {displayDeckName(deck.title, legendName)}
+                    </span>
+                    {deck.playerName && (
+                      <span className="text-ink-muted">par {deck.playerName}</span>
+                    )}
+                    {deck.placement && (
+                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
+                        {deck.placement}
+                      </span>
+                    )}
+                    {deck.tournamentContext && (
+                      <span className="ml-auto truncate text-xs text-ink-muted">
+                        {deck.tournamentContext}
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {deckCount > legendDecks.length && (
+              <p className="mt-3 text-sm">
+                <Link href={decksHref} className="text-arcane hover:underline">
+                  Voir les {deckCount.toLocaleString("fr-FR")} decks {name}
+                </Link>
+              </p>
+            )}
+          </Section>
         )}
 
         <div className="flex flex-wrap gap-3">

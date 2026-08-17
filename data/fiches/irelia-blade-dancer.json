@@ -1,117 +1,80 @@
 {
   "legendName": "Irelia, Blade Dancer",
-  "legendId": "SFD-195",
+  "legendId": "Irelia, Blade Dancer",
   "domains": [
     "Calm",
     "Order"
   ],
   "set": "Spiritforged",
   "tier": 2,
-  "archetype": "Tempo-midrange / Mouvement & poussée de points",
-  "legendAbility": "Irelia utilise ses runes pour pousser des points via mouvements et attaques timing. Trop tôt = pas assez de runes. Trop tard = l'adversaire s'installe.",
+  "archetype": "Tempo et mouvement, une unité préparée deux fois",
+  "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
   "gameplan": {
-    "earlyGame": "Poser UNL-053 ou SFD-036 pour chercher les unités clés. Protéger les premières positions avec des sorts cheap.",
-    "midGame": "Développer UNL-150 et SFD-048 — duo mortel à 4 mana. Commencer à utiliser l'ability pour pousser des points.",
-    "lateGame": "Fermer avec SFD-057 protégé par contresorts. UNL-150 et UNL-042 pour stun les unités adverses.",
-    "winCondition": "SFD-057 protégé — push de points irrésistible une fois timing trouvé"
+    "earlyGame": "Scuttle Crab et Stellacorn Herder piochent en se déplaçant. Boots of Swiftness, dans toutes les listes, rend une unité mobile.",
+    "midGame": "Irelia, Fervent grossit à chaque fois qu'on la choisit. Ride The Wind la déplace et la prépare, la Légende la prépare une seconde fois.",
+    "lateGame": "Guardian Angel et Zhonya's Hourglass la gardent en vie, Defy et Charm écartent la réponse adverse.",
+    "winCondition": "Une seule unité qui attaque, revient et repart : deux points par tour sans jamais perdre le contrôle."
   },
   "keyCards": [
     {
+      "name": "Boots of Swiftness",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Defiant Dance",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Stellacorn Herder",
-      "id": "UNL-150",
-      "cost": 4,
-      "role": "Duo clé — draw engine et stun. Développé à un battlefield, très difficile à déloger."
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-048",
-      "id": "SFD-048",
-      "cost": 4,
-      "role": "Second pilier du duo 4-cost. Complémente UNL-150 parfaitement."
+      "name": "Tideturner",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-057",
-      "id": "SFD-057",
-      "cost": null,
-      "role": "Win condition principale. Tout le deck build autour de cette carte depuis Spiritforged."
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-053",
-      "id": "UNL-053",
-      "cost": 2,
-      "role": "Tuteur early game — cherche nos unités clés."
+      "name": "En Garde",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-036",
-      "id": "SFD-036",
-      "cost": 2,
-      "role": "Second tuteur pour trouver UNL-150 ou SFD-048 tôt."
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-042",
-      "id": "UNL-042",
-      "cost": null,
-      "role": "Stun d'unités adverses — réduit le besoin de garder des runes ouvertes pour réagir."
+      "name": "Charm",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGS-011",
-      "id": "OGS-011",
-      "cost": null,
-      "role": "Mouvement d'unités entre battlefields."
-    },
-    {
-      "name": "SFD-133",
-      "id": "SFD-133",
-      "cost": null,
-      "role": "Mouvement alternatif."
-    },
-    {
-      "name": "SFD-051",
-      "id": "SFD-051",
-      "cost": null,
-      "role": "Protection d'unités."
-    },
-    {
-      "name": "OGN-077",
-      "id": "OGN-077",
-      "cost": null,
-      "role": "Protection d'unités clés."
-    },
-    {
-      "name": "OGN-058",
-      "id": "OGN-058",
-      "cost": null,
-      "role": "Buff de might — push SFD-057."
-    },
-    {
-      "name": "SFD-196",
-      "id": "SFD-196",
-      "cost": null,
-      "role": "Buff de might alternatif."
-    },
-    {
-      "name": "OGN-045",
-      "id": "OGN-045",
-      "cost": null,
-      "role": "Contresort — protection cruciale."
-    },
-    {
-      "name": "OGN-192",
-      "id": "OGN-192",
-      "cost": null,
-      "role": "Disruption — inclusion optionnelle quand le core est solide."
+      "name": "Guardian Angel",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Top tier en méta midrange — son style de jeu est parfait pour ce format",
-    "Duo UNL-150 + SFD-048 extrêmement résilient",
-    "UNL-150 et UNL-042 neutralisent les grosses unités adverses",
-    "Calm domain excellent pour contrer les sorts",
-    "Deck très bien défini depuis Spiritforged — peu de mauvais builds possibles"
+    "Douze cartes au-dessus de 90 %, dont quatre dans 100 % des listes : le cœur est fermé",
+    "Abandoned Hall dans toutes les listes, Sunken Temple dans 93 % : les terrains font partie du plan",
+    "Présente aux quinze tournois du set, 134 listes",
+    "Defy et Charm couvrent à la fois les sorts et les blocages"
   ],
   "weaknesses": [
-    "Stratégie rigide — build autour de SFD-057, pas de plan B",
-    "Matchup Aurora (OGN-160) historiquement difficile — mais amélioré avec OGN-056 tech",
-    "Vulnérable si les unités clés sont retirées avant de pouvoir les protéger"
+    "Conversion sous la moyenne, 6,7 % contre 7,1 %, et aucun titre en quinze tournois",
+    "Sans Irelia, Fervent en jeu, la Légende n'a plus rien à préparer",
+    "La liste est connue de tous, il n'y a presque pas de place pour surprendre"
   ],
   "matchups": {
     "favorable": [
@@ -119,7 +82,7 @@
       "Aggro (bloqueurs + contresorts)"
     ],
     "unfavorable": [
-      "Aurora decks (OGN-160) — amélioré post-Sydney"
+      "Aurora decks (Dazzling Aurora) — amélioré post-Sydney"
     ],
     "even": [
       "Diana",
@@ -127,23 +90,49 @@
     ]
   },
   "competitiveResults": {
-    "tier": 1,
-    "cityChallengWins": "Plus de victoires que toute autre légende",
-    "regionalResults": "Won Sydney RQ (14-1-1), Finalist Suzhou RQ",
-    "preRegionals": "6 Wins / 21 Top 8",
-    "sydneyWinRate": "55% sur 528 matchs",
-    "sydneyConversionRate": ">20%"
+    "deckCount": 134,
+    "top8": 9,
+    "titres": 0,
+    "conversion": "6.7 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "ARBD-Skyer",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "3rd",
+        "player": "极大",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "旋木时光绿拐",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "4th",
+        "player": "CCB.冷静",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "5th",
+        "player": "纸传.晴天",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      }
+    ]
   },
   "difficulty": "Moyen-Difficile",
   "beginnerFriendly": false,
   "tipsBeginners": [
     "Ne pas utiliser l'ability trop tôt — laisser les runes s'accumuler",
-    "Garder OGN-045 pour les moments critiques, pas les sorts mineurs"
+    "Garder Defy pour les moments critiques, pas les sorts mineurs"
   ],
   "tipsAdvanced": [
-    "OGN-056 est le tech card anti-Aurora — crucial en post-Sydney",
+    "Adaptatron est le tech card anti-Aurora — crucial en post-Sydney",
     "Timing de l'ability est tout — maîtriser le scoring window",
-    "Contre Aurora, UNL-042 stun les grosses unités invoquées par le gear"
+    "Contre Aurora, Back Off stun les grosses unités invoquées par le gear"
   ],
   "sourceUrl": "https://riftbound.gg/irelia-blade-dancer-guide/",
   "vodInsights": {
@@ -163,5 +152,29 @@
       "Boots of Swiftness"
     ],
     "note": "« Reine » du format : qui perd son Fervent en premier perd quasi la game. Pénalisée par la lourdeur mentale (math)."
-  }
+  },
+  "champions": {
+    "Irelia, Fervent": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Akali, Silent": {
+      "usage": "74 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "67 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "46 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Abandoned Hall (100 %)",
+    "Sunken Temple (93 %)",
+    "Targon's Peak (78 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 134 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

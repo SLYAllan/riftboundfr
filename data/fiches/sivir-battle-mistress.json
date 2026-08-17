@@ -1,87 +1,76 @@
 {
   "legendName": "Sivir, Battle Mistress",
-  "legendId": "SFD-203",
+  "legendId": "Sivir, Battle Mistress",
   "domains": [
     "Fury",
     "Body"
   ],
   "set": "Spiritforged",
   "tier": 4,
-  "archetype": "Ramp-control / OGN-160 (Dazzling Aurora) build",
-  "legendAbility": "Meilleure légende pour builder autour de Dazzling Aurora. Le deck stall early et domine avec le gear 9-cost.",
-  "gameplan": {
-    "earlyGame": "Ramp avec OGN-134, OGN-183, OGN-186. Survivre avec OGN-169 et OGN-133 contre les petites unités.",
-    "midGame": "Draw massif avec UNL-125 et UNL-136 pour trouver OGN-160. Contrôle du board en attendant.",
-    "lateGame": "OGN-160 invoque UNL-118 qui retire les unités adverses. OGN-192 pour disruption. SFD-150 récupère le dragon du trash.",
-    "winCondition": "Dazzling Aurora (OGN-160) + UNL-118 = domination totale du board"
-  },
+  "archetype": "Or à chaque rune recyclée",
+  "legendAbility": "Quand vous recyclez une rune, épuisez Sivir pour poser un jeton Or épuisé. Elle se prépare dès qu'une unité adverse meurt.",
   "keyCards": [
     {
       "name": "Dazzling Aurora",
-      "id": "OGN-160",
+      "id": "Dazzling Aurora",
       "role": "Win condition — gear 9-cost build-around."
     },
     {
-      "name": "UNL-118",
-      "id": "UNL-118",
+      "name": "Elder Dragon",
+      "id": "Elder Dragon",
       "role": "Dragon invoqué par Aurora — retire les unités adverses. Galère vs armées de petites unités."
     },
     {
-      "name": "OGN-192",
-      "id": "OGN-192",
+      "name": "Mindsplitter",
+      "id": "Mindsplitter",
       "role": "Disruption — voir la main adverse et discard."
     },
     {
-      "name": "SFD-150",
-      "id": "SFD-150",
+      "name": "Last Rites",
+      "id": "Last Rites",
       "role": "Résurrection — ramène le dragon du trash."
     },
     {
-      "name": "OGN-134",
-      "id": "OGN-134",
+      "name": "Mobilize",
+      "id": "Mobilize",
       "role": "Ramp."
     },
     {
-      "name": "OGN-183",
-      "id": "OGN-183",
+      "name": "Stacked Deck",
+      "id": "Stacked Deck",
       "role": "Ramp."
     },
     {
-      "name": "OGN-186",
-      "id": "OGN-186",
+      "name": "Treasure Trove",
+      "id": "Treasure Trove",
       "role": "Ramp."
     },
     {
-      "name": "UNL-125",
-      "id": "UNL-125",
+      "name": "Lunar Boon",
+      "id": "Lunar Boon",
       "role": "Draw — trouver Aurora en temps voulu."
     },
     {
-      "name": "UNL-136",
-      "id": "UNL-136",
+      "name": "Scryer's Bloom",
+      "id": "Scryer's Bloom",
       "role": "Draw complémentaire."
     },
     {
-      "name": "OGN-169",
-      "id": "OGN-169",
+      "name": "Gust",
+      "id": "Gust",
       "role": "Removal early — gère les petites unités sans recycler de runes."
     },
     {
-      "name": "OGN-133",
-      "id": "OGN-133",
+      "name": "Flurry of Blades",
+      "id": "Flurry of Blades",
       "role": "Removal early complémentaire."
     }
   ],
   "strengths": [
-    "Meilleure légende pour Dazzling Aurora — synergie optimale avec UNL-118",
-    "Finale Sydney, Top 4 Suzhou — résultats prouvés",
-    "Meilleur win rate à Sydney (61%) et conversion rate (37.5%)",
-    "Dark horse devenue Tier 1 contender"
+    "De la ressource tirée d'une action que tous les decks font déjà."
   ],
   "weaknesses": [
-    "Doit affronter d'autres Aurora decks (mirror)",
-    "Le meta pourrait packer plus de gear removal",
-    "UNL-118 struggle contre armées de petits might"
+    "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
     "tier": 1,

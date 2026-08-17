@@ -1,87 +1,76 @@
 {
   "legendName": "Sett, The Boss",
-  "legendId": "OGN-269",
+  "legendId": "Sett, The Boss",
   "domains": [
     "Body",
     "Order"
   ],
   "set": "Origins",
   "tier": 5,
-  "archetype": "Hold-oriented / Buff midrange & résilience",
-  "legendAbility": "Rappelle une unité vaincue au lieu de la laisser mourir. Value énorme si bien timé — les unités ne meurent jamais.",
-  "gameplan": {
-    "earlyGame": "Développer des unités et commencer à buff. Tour 1-2 avec des unités cheap ou SFD-113/OGN-232.",
-    "midGame": "Buff avec OGN-270 (signature), SFD-108, equipment SFD-097. Hold avec des unités massives.",
-    "lateGame": "Total de might ne fait que croître car les unités sont rappelées. OGN-282 pour draw quand un buff est disponible.",
-    "winCondition": "Accumulation de might inarrêtable — les unités reviennent toujours grâce à l'ability"
-  },
+  "archetype": "Unité sauvée par son bonus",
+  "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Et quand vous conquérez, Sett se prépare.",
   "keyCards": [
     {
-      "name": "OGN-269 (Legend)",
-      "id": "OGN-269",
+      "name": "Sett, The Boss (Legend)",
+      "id": "Sett, The Boss",
       "role": "Ability — rappelle les unités vaincues = value infinie."
     },
     {
-      "name": "OGN-270",
-      "id": "OGN-270",
+      "name": "Showstopper",
+      "id": "Showstopper",
       "role": "Signature — buff un unit + contest un battlefield. Staple must-own."
     },
     {
-      "name": "OGN-164",
-      "id": "OGN-164",
+      "name": "Sett, Brawler",
+      "id": "Sett, Brawler",
       "role": "Champion unit (1 copie en chosen champion)."
     },
     {
-      "name": "SFD-113",
-      "id": "SFD-113",
+      "name": "Lucian, Merciless",
+      "id": "Lucian, Merciless",
       "role": "Unité qui veut conquérir chaque tour."
     },
     {
-      "name": "OGN-232",
-      "id": "OGN-232",
+      "name": "Fiora, Victorious",
+      "id": "Fiora, Victorious",
       "role": "Unité qui gagne des upsides quand buffée."
     },
     {
-      "name": "SFD-108",
-      "id": "SFD-108",
+      "name": "Warmog's Armor",
+      "id": "Warmog's Armor",
       "role": "Buff d'unités."
     },
     {
-      "name": "SFD-098",
-      "id": "SFD-098",
+      "name": "Sea Monkey",
+      "id": "Sea Monkey",
       "role": "Unité qui se buff elle-même."
     },
     {
-      "name": "SFD-105",
-      "id": "SFD-105",
+      "name": "Ruin Runner",
+      "id": "Ruin Runner",
       "role": "Immune aux sorts — parfait pour showdowns."
     },
     {
-      "name": "OGN-282",
-      "id": "OGN-282",
+      "name": "Monastery of Hirana",
+      "id": "Monastery of Hirana",
       "role": "Draw en payant un buff — résout le manque de draw de Sett."
     },
     {
-      "name": "OGN-207",
-      "id": "OGN-207",
+      "name": "Call to Glory",
+      "id": "Call to Glory",
       "role": "Support gratuit quand on a un buff à dépenser."
     },
     {
-      "name": "OGN-213",
-      "id": "OGN-213",
+      "name": "Hidden Blade",
+      "id": "Hidden Blade",
       "role": "Removal — combo avec l'ability pour sauver l'unité ciblée = 'Draw 2'."
     }
   ],
   "strengths": [
-    "Ability = les unités ne meurent jamais, value cumulée",
-    "2 wins de tournoi — ceiling élevé en mains expertes",
-    "Body+Order ont des buffs partout, rendant l'ability facile à trigger",
-    "Sorts gratuits via le coût 'dépenser un buff'"
+    "Le bonus posé sur une unité sert aussi d'assurance-vie."
   ],
   "weaknesses": [
-    "Anomalie — 2 wins, 0 autre top cut. Légende difficile à piloter.",
-    "Pas de nouveaux outils d'Unleashed mentionnés dans le guide",
-    "Guide Spiritforged uniquement — pas de mise à jour Unleashed"
+    "8 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
     "tier": 2,

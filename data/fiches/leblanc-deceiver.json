@@ -1,76 +1,114 @@
 {
   "legendName": "LeBlanc, Deceiver",
-  "legendId": "UNL-199",
+  "legendId": "LeBlanc, Deceiver",
   "domains": [
     "Mind",
     "Order"
   ],
   "set": "Unleashed",
   "tier": 3,
-  "archetype": "Value-engine / Deathknell synergy",
-  "legendAbility": "Crée des réflexions temporaires destinées à mourir. Chaque mort trigger Deathknell = draw, runes, invocations, removals.",
+  "archetype": "Copies et morts rentables",
+  "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
   "gameplan": {
-    "earlyGame": "Trouver UNL-172 (ressources infinies) + OGN-236 (doit être retiré avant tout Deathknell).",
-    "midGame": "Avec le duo en place, liberté totale. UNL-200 pour copier/remove. OGN-209 pour removal avec unités jetables.",
-    "lateGame": "OGN-011 pour push. UNL-176 pour hold. Variante OGN-242 en slow build (Sydney top 8).",
-    "winCondition": "Deathknell engine inarrêtable — value infinie une fois UNL-172 + OGN-236 posés"
+    "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans toutes les listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
+    "midGame": "Karthus, Eternal double tous vos effets de mort. Glasc Mixologist rejoue une unité du cimetière en mourant.",
+    "lateGame": "Mirror Image et la Légende copient la plus grosse unité du terrain, la vôtre ou celle d'en face.",
+    "winCondition": "Marquer avec des copies gratuites pendant que chaque mort rapporte une carte."
   },
   "keyCards": [
     {
-      "name": "UNL-172",
-      "id": "UNL-172",
-      "role": "Backbone #1 — ne jamais manquer de ressources."
+      "name": "Sacrifice",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-236",
-      "id": "OGN-236",
-      "role": "Backbone #2 — DOIT être retiré avant tout Deathknell, sinon bonus massif."
+      "name": "Mirror Image",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-200",
-      "id": "UNL-200",
-      "role": "Versatile — value sur propres unités OU removal en copiant l'unité adverse."
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-209",
-      "id": "OGN-209",
-      "role": "Removal fantastique avec plein de réflexions jetables."
+      "name": "Soaring Scout",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-011",
-      "id": "OGN-011",
-      "role": "Closer — push pour la victoire."
+      "name": "Hidden Blade",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-176",
-      "id": "UNL-176",
-      "role": "Sécurisation — verrouille un battlefield."
+      "name": "Glasc Mixologist",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-242",
-      "id": "OGN-242",
-      "role": "Variante slow (Sydney) — première apparition de ce build."
+      "name": "Ruined Rex",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Watchful Sentry",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Baited Hook",
+      "role": "Standard, 74 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Standard, 71 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Rift Herald",
+      "role": "Standard, 62 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Black Rose Dignitary",
+      "role": "Souple, 56 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Seule légende Deathknell — unique et difficile à cibler",
-    "Value engine inarrêtable avec UNL-172 + OGN-236",
-    "Réflexions alimentent naturellement le moteur"
+    "Sacrifice dans toutes les listes, Mirror Image dans 94 % : la copie est le vrai plan",
+    "Karthus, Eternal dans 79 % des listes, il double tout ce qui meurt",
+    "Windswept Hillock dans 94 % des listes",
+    "Chaque conquête donne une unité de plus, sans carte jouée"
   ],
   "weaknesses": [
-    "Synergy limite le deckbuilding",
-    "Build connu de tous — doit trouver des wrinkles (OGN-234, SFD-177 mouvement)",
-    "Conversion rate 18.2% à Sydney — en dessous des autres Tier 1"
+    "5,9 % de conversion, sous la moyenne, aucun titre en quatorze tournois",
+    "La Légende demande de défausser : la main s'épuise vite",
+    "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "tier": 1,
-    "preRegionals": "2 Wins / 14 Top 8",
-    "regionalResults": "Top 8 Sydney (12-3-0)",
-    "sydneyStats": {
-      "winRate": "53%",
-      "matches": 539,
-      "conversionRate": "18.2%"
-    }
+    "deckCount": 34,
+    "top8": 2,
+    "titres": 0,
+    "conversion": "5.9 %",
+    "tournois": 14,
+    "bestPlacements": [
+      {
+        "placement": "5th",
+        "player": "猫岛巡礼.Mercy",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "6th",
+        "player": "神奥.JINX希尔焰",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "12th",
+        "player": "阳",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "12th",
+        "player": "Don’t mess with Mаhmood coffee",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "17th",
+        "player": "Renfield",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
@@ -90,5 +128,25 @@
       "Atakhan (win-con mono-carte vs Master Yi/Vex)"
     ],
     "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit). Perd vs Volibear Dragon Storm (out-value). Se contre via Challenge (tue le Karthus T2 = déni du moteur Death Knell) plutôt qu'en l'affrontant tard. Existe aussi en variante BLUE sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors)."
-  }
+  },
+  "champions": {
+    "LeBlanc, Fragmented": {
+      "usage": "82 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Karthus, Eternal": {
+      "usage": "79 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "71 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Windswept Hillock (94 %)",
+    "Star Spring (59 %)",
+    "Dusk Rose Lab (47 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 34 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

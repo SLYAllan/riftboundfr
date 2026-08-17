@@ -10,32 +10,32 @@
   "keyCards": [
     {
       "name": "Defy",
-      "id": "OGN-045",
+      "id": "Defy",
       "role": "Présente dans 98 % des 242 listes recensées."
     },
     {
       "name": "Discipline",
-      "id": "OGN-058",
+      "id": "Discipline",
       "role": "Présente dans 98 % des 242 listes recensées."
     },
     {
       "name": "Zhonya's Hourglass",
-      "id": "OGN-077",
+      "id": "Zhonya's Hourglass",
       "role": "Présente dans 80 % des 242 listes recensées."
     },
     {
       "name": "First Mate",
-      "id": "OGN-132",
+      "id": "First Mate",
       "role": "Présente dans 79 % des 242 listes recensées."
     },
     {
       "name": "Charm",
-      "id": "OGN-043",
+      "id": "Charm",
       "role": "Présente dans 79 % des 242 listes recensées."
     },
     {
       "name": "Pit Rookie",
-      "id": "OGN-136",
+      "id": "Pit Rookie",
       "role": "Présente dans 61 % des 242 listes recensées."
     }
   ],
@@ -45,5 +45,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Bonus de Puissance à la demande",
+  "legendAbility": "Une énergie et un épuisement améliorent une de vos unités.",
+  "strengths": [
+    "Un bonus permanent chaque tour, disponible dès le premier."
+  ],
+  "weaknesses": [
+    "Aucune liste en tournoi sur le set Vendetta : la Légende est sortie du format joué, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

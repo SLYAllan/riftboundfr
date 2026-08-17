@@ -7,72 +7,108 @@
   ],
   "set": "Spiritforged",
   "tier": 3,
-  "archetype": "Control-value / Target & draw engine",
-  "legendAbility": "Pioche quand il cible 2 cartes adverses par tour. Le draw gratuit libère des slots dans le deck normalement dédiés au draw.",
+  "archetype": "Sorts en chaîne, pioche conditionnelle",
+  "legendAbility": "Épuisez Ezreal pour piocher, à condition d'avoir ciblé deux fois des unités ou des équipements adverses dans le tour. Il récompense les tours où l'on répond deux fois.",
   "gameplan": {
-    "earlyGame": "Setup avec SFD-069, SFD-070, SFD-146 pour gérer les runes. Ne pas recycler trop tôt — les high-cost arrivent.",
-    "midGame": "OGN-192 (disruption main) et OGN-116 (-3 might board) comme win conditions avec SFD-200 pour replay.",
-    "lateGame": "Ability = draw infini une fois le rythme installé. Chaos+Mind out-value ou out-pace tous les decks sauf les miracles.",
-    "winCondition": "Contrôle total via targeting + draw infini → l'adversaire n'a plus de ressources"
+    "earlyGame": "Bellows Breath et Stupefy, dans toutes les listes, touchent plusieurs unités et remplissent la condition de la Légende.",
+    "midGame": "Fizz, Trickster rejoue un sort du cimetière en arrivant. Star-Crossed renvoie une menace et une des vôtres pour la rejouer.",
+    "lateGame": "Wages of Pain et Deadly Flourish finissent les unités entamées et laissent un jeton Or derrière elles.",
+    "winCondition": "Répondre deux fois par tour, piocher, et gagner le combat que l'adversaire croyait acquis."
   },
   "keyCards": [
     {
-      "name": "SFD-200",
-      "id": "SFD-200",
-      "role": "3 dégâts + replay d'une unité. Combo OGN-192 = re-discard. Combo OGN-116 = re-debuff."
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-192",
-      "id": "OGN-192",
-      "role": "Disruption main adverse — win condition avec SFD-200."
+      "name": "Stupefy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-116",
-      "id": "OGN-116",
-      "role": "-3 might board — win condition avec SFD-200."
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-069",
-      "id": "SFD-069",
-      "role": "Gestion de runes."
+      "name": "Wages of Pain",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
-      "name": "SFD-070",
-      "id": "SFD-070",
-      "role": "Gestion de runes."
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
-      "name": "SFD-146",
-      "id": "SFD-146",
-      "role": "Jouer des sorts pendant le combat."
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
-      "name": "OGN-195",
-      "id": "OGN-195",
-      "role": "Synergy avec les cartes qui target."
+      "name": "Gust",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Bewitching Spirit",
+      "role": "Standard, 85 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Standard, 82 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "The List",
+      "role": "Standard, 82 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Deadly Flourish",
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Beaucoup plus fort en Occident qu'en Chine (Bologna win, Vegas top 8)",
-    "Draw gratuit via ability = deck ultra-efficient",
-    "Chaos+Mind = meilleur duo de contrôle du jeu",
-    "Complexe mais ceiling très élevé"
+    "Quatre cartes dans 100 % des listes et sept au-dessus de 90 %",
+    "8,8 % de conversion sur 34 listes, au-dessus du champ",
+    "Frozen Fortress et Sigil of the Storm dans plus de 85 % des listes",
+    "La pioche de la Légende ne coûte ni carte ni énergie"
   ],
   "weaknesses": [
-    "Post-ban list a coupé le momentum",
-    "Pas encore trouvé sa place en Unleashed — 0 résultat en Chine",
-    "Complexe à piloter — besoin de trouver 2 targets par tour",
-    "Guide Spiritforged uniquement"
+    "La condition de deux cibles par tour tombe à l'eau contre un terrain vide",
+    "34 listes, aucun titre : le deck reste une affaire de spécialistes",
+    "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "tier": 3,
-    "preRegionals": "1 Win / 1 Top 8 (tournoi occidental uniquement)",
-    "sydneyStats": {
-      "winRate": "50%",
-      "matches": 190,
-      "bestPlacement": "18th (10-3-0)"
-    },
-    "notes": "Différence régionale massive — fort en Occident, invisible en Chine"
+    "deckCount": 34,
+    "top8": 3,
+    "titres": 0,
+    "conversion": "8.8 %",
+    "tournois": 14,
+    "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "无所畏惧",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "霆霆",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "7th",
+        "player": "Berkunn",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "11th",
+        "player": "胰脏",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "16th",
+        "player": "咲夜",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      }
+    ]
   },
   "difficulty": "Très Difficile",
   "beginnerFriendly": false,
@@ -91,5 +127,25 @@
       "Bellows Breath"
     ],
     "note": "Called Shot banni. Conseil récurrent : savoir concéder une game longue. A gagné le Triple Win-A-Box (Unleashed) en contrôle, en battant Vex en finale : renvoyer la Vex en main (Rebuke / Star-Crossed) reset son moteur de Hold. Tech : Deadly Flourish, Pack of Wonders, 3 Bewitching Spirit (vide la main). (« Aurelia » dans les casts = Irelia.)"
-  }
+  },
+  "champions": {
+    "Fizz, Trickster": {
+      "usage": "100 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "76 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Frozen Fortress (88 %)",
+    "Sigil of the Storm (85 %)",
+    "Heisho, Shell of the World (68 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 34 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

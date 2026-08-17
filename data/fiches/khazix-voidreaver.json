@@ -1,86 +1,112 @@
 {
   "legendName": "Kha'Zix, Voidreaver",
-  "legendId": "UNL-202",
+  "legendId": "Void Assault",
   "domains": [
     "Fury",
     "Body"
   ],
   "set": "Unleashed",
   "tier": 4,
-  "archetype": "Tempo-midrange / XP gain & conquête",
-  "legendAbility": "1re ability: buff les unités via XP gagné en combat. 2e ability: protège les unités en les renvoyant à la base après conquête — excellent pour le finish.",
+  "archetype": "XP et combats gagnés",
+  "legendAbility": "Chaque combat gagné donne 1 XP. Un XP et un épuisement pour améliorer une unité, deux XP pour ramener une unité épuisée à la base.",
   "gameplan": {
-    "earlyGame": "UNL-150 développé sur un battlefield. UNL-210 + UNL-112 comme tandem early. Gagner des combats pour XP.",
-    "midGame": "OGN-164 buffé avec l'ability. UNL-127 pour l'XP. UNL-114, UNL-145, UNL-143, UNL-120 comme unités mid game.",
-    "lateGame": "UNL-202 + UNL-131 pour contrôler. Objectif: conquérir les deux battlefields pour 6+ points.",
-    "winCondition": "Conquête double battlefield avec l'ability qui protège les unités post-conquête"
+    "earlyGame": "Poser tôt et gagner un premier combat pour lancer l'XP.",
+    "midGame": "Dépenser l'XP en buffs pour enchaîner les combats gagnés sans dépenser de carte.",
+    "lateGame": "Ramener les unités épuisées à la base pour rejouer les mêmes attaques au tour suivant.",
+    "winCondition": "Une accumulation d'XP qui rend chaque combat plus rentable que le précédent."
   },
   "keyCards": [
     {
-      "name": "UNL-150",
-      "id": "UNL-150",
-      "cost": 4,
-      "role": "Développé sur un battlefield — limite l'ability adverse."
+      "name": "Void Assault",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "OGN-164",
-      "id": "OGN-164",
-      "role": "Unité buffable avec l'ability."
+      "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-127",
-      "id": "UNL-127",
-      "role": "Gain d'XP."
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 94 % des listes, 2.5 exemplaires"
     },
     {
-      "name": "UNL-210",
-      "id": "UNL-210",
-      "role": "Tandem early avec UNL-112."
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-112",
-      "id": "UNL-112",
-      "role": "Tandem early avec UNL-210."
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 94 % des listes, 1.5 exemplaire"
     },
     {
-      "name": "UNL-095",
-      "id": "UNL-095",
-      "role": "Sort clé — buff solide + XP potentiel."
+      "name": "Grim Resolve",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-114",
-      "id": "UNL-114",
-      "role": "Élément de surprise imprévisible."
+      "name": "Punch First",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
-      "name": "UNL-202",
-      "id": "UNL-202",
-      "role": "Contrôle late — bon avec les unités massives."
+      "name": "Demacian Diplomat",
+      "role": "Standard, 76 % des listes, 3 exemplaires"
     },
     {
-      "name": "UNL-131",
-      "id": "UNL-131",
-      "role": "Maintien du contrôle."
+      "name": "Sabotage",
+      "role": "Standard, 65 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Rampage",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
-    "Double ability — buff early + protection late",
-    "Pas vu comme une menace → l'adversaire ne build pas contre Kha'Zix",
-    "Au moins 1 top 8 par semaine en City Challenges"
+    "La Légende transforme un combat gagné en ressource durable",
+    "Un Top 8 malgré 17 listes seulement"
   ],
   "weaknesses": [
-    "Struggle à enforcer le style proactif — les unités early sont faibles en combat",
-    "Certains joueurs default vers OGN-160 (Aurora) ce qui signale que le core synergy lutte",
-    "UNL-202 bon avec grosses unités mais Sivir/MF font mieux le Aurora build"
+    "17 listes sur quinze tournois : le deck est marginal et sa liste change à chaque joueur",
+    "Sans premier combat gagné, la Légende ne fait rien du tout",
+    "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "tier": 3,
-    "preRegionals": "3 Top 8",
-    "sydneyStats": {
-      "winRate": "50%",
-      "matches": 210,
-      "bestPlacement": "48th (9-2-2)"
-    }
+    "deckCount": 17,
+    "top8": 1,
+    "titres": 0,
+    "conversion": "5.9 %",
+    "tournois": 13,
+    "bestPlacements": [
+      {
+        "placement": "8th",
+        "player": "高长恭",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "10th",
+        "player": "FB.大泽小橙",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "27th",
+        "player": "淘金巢.Yuuj",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "29th",
+        "player": "纸传.白子洲",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "33th",
+        "player": "DJS.Ai.Jeremy🐺",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      }
+    ]
   },
   "difficulty": "Moyen-Difficile",
   "beginnerFriendly": false,
@@ -99,5 +125,38 @@
       "8-9 two-drops"
     ],
     "note": "Design-flawed : pas de vrai payoff XP, signature pas une « action » (pas de double-score), pas de ganking."
-  }
+  },
+  "champions": {
+    "Kha'Zix, Mutating Horror": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "88 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "71 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "53 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Qiyana, Victorious": {
+      "usage": "41 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Sett, Brawler": {
+      "usage": "41 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Monastery of Hirana (82 %)",
+    "Forbidding Waste (76 %)",
+    "Star Spring (53 %)",
+    "Sandswept Tomb (35 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 17 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

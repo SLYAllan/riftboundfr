@@ -10,32 +10,32 @@
   "keyCards": [
     {
       "name": "Confront",
-      "id": "OGN-129",
+      "id": "Confront",
       "role": "Présente dans 85 % des 106 listes recensées."
     },
     {
       "name": "Mobilize",
-      "id": "OGN-134",
+      "id": "Mobilize",
       "role": "Présente dans 67 % des 106 listes recensées."
     },
     {
       "name": "Catalyst of Aeons",
-      "id": "OGN-138",
+      "id": "Catalyst of Aeons",
       "role": "Présente dans 66 % des 106 listes recensées."
     },
     {
       "name": "Dazzling Aurora",
-      "id": "OGN-160",
+      "id": "Dazzling Aurora",
       "role": "Présente dans 65 % des 106 listes recensées."
     },
     {
       "name": "Hidden Blade",
-      "id": "OGN-213",
+      "id": "Hidden Blade",
       "role": "Présente dans 63 % des 106 listes recensées."
     },
     {
       "name": "Harnessed Dragon",
-      "id": "OGN-234",
+      "id": "Harnessed Dragon",
       "role": "Présente dans 60 % des 106 listes recensées."
     }
   ],
@@ -45,5 +45,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Conquête en nombre",
+  "legendAbility": "Quand vous conquérez avec quatre unités ou plus au même champ de bataille, piochez deux cartes.",
+  "strengths": [
+    "Deux cartes à chaque conquête large : le nombre d'unités devient une ressource."
+  ],
+  "weaknesses": [
+    "Aucune liste en tournoi sur le set Vendetta : la Légende est sortie du format joué, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

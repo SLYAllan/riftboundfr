@@ -10,42 +10,42 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "id": "OGN-213",
+      "id": "Hidden Blade",
       "role": "Présente dans 95 % des 106 listes recensées."
     },
     {
       "name": "Hostile Takeover",
-      "id": "SFD-202",
+      "id": "Hostile Takeover",
       "role": "Présente dans 95 % des 106 listes recensées."
     },
     {
       "name": "Plundering Poro",
-      "id": "SFD-069",
+      "id": "Plundering Poro",
       "role": "Présente dans 82 % des 106 listes recensées."
     },
     {
       "name": "Honest Broker",
-      "id": "SFD-155",
+      "id": "Honest Broker",
       "role": "Présente dans 78 % des 106 listes recensées."
     },
     {
       "name": "Wages of Pain",
-      "id": "SFD-070",
+      "id": "Wages of Pain",
       "role": "Présente dans 76 % des 106 listes recensées."
     },
     {
       "name": "Time Warp",
-      "id": "OGN-122",
+      "id": "Time Warp",
       "role": "Présente dans 74 % des 106 listes recensées."
     },
     {
       "name": "Cull the Weak",
-      "id": "OGN-209",
+      "id": "Cull the Weak",
       "role": "Présente dans 67 % des 106 listes recensées."
     },
     {
       "name": "Card Sharp",
-      "id": "SFD-081",
+      "id": "Card Sharp",
       "role": "Présente dans 61 % des 106 listes recensées."
     }
   ],
@@ -55,5 +55,13 @@
     "victoires": 0,
     "source": "Decklists de tournoi scrapées, data/decklists."
   },
-  "sourceUrl": null
+  "sourceUrl": null,
+  "archetype": "Or gagné en tenant",
+  "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Renata pour poser un jeton Or épuisé. À trois points du score de victoire, votre Or rapporte une énergie de plus.",
+  "strengths": [
+    "Une ressource par tour tenu, qui grossit quand la partie approche de sa fin."
+  ],
+  "weaknesses": [
+    "3 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
+  ]
 }

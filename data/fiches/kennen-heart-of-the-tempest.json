@@ -1,0 +1,136 @@
+{
+  "legendName": "Kennen, Heart of the Tempest",
+  "legendId": "Kennen, Heart of the Tempest",
+  "domains": [
+    "Order",
+    "Chaos"
+  ],
+  "set": "Vendetta",
+  "tier": 1,
+  "archetype": "Cimetière : jouer ses cartes ailleurs que depuis la main",
+  "legendAbility": "Chaque carte jouée depuis autre chose que votre main amplifie Kennen. Désamplifiez-le et épuisez-le pour donner Assaut 2 à une unité le temps du tour.",
+  "gameplan": {
+    "earlyGame": "Lightning Rush, dans toutes les listes, pioche une carte sur trois et envoie les deux autres au cimetière. Le deck se remplit exprès.",
+    "midGame": "Les sorts joués depuis le cimetière amplifient la Légende sans rien coûter. Rhasa the Sunderer, à 10 énergie de base, descend d'une énergie par carte au cimetière.",
+    "lateGame": "Fizz, Trickster rejoue un sort du cimetière en arrivant. Kennen, Storm of Shuriken rend un sort rejouable après une conquête.",
+    "winCondition": "Un cimetière plein qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
+  },
+  "strengths": [
+    "Meilleure conversion du format : 20 Top 8 pour 162 listes, 12,3 % contre 7,1 % de moyenne",
+    "Le seul écart nettement confirmé par le calcul (p = 0,014 contre la moyenne du champ)",
+    "Lightning Rush dans toutes les listes, Stacked Deck dans 98 % : le deck choisit ce qu'il pioche",
+    "Minefield et Zaun Warrens dans plus de 79 % des listes, les terrains font partie du plan"
+  ],
+  "weaknesses": [
+    "Un seul titre malgré la meilleure conversion : le deck arrive loin, il finit rarement",
+    "Remplir le cimetière prend des tours, les départs très rapides le prennent de vitesse",
+    "Sans carte jouée hors de la main, la Légende reste désamplifiée et ne donne aucun bonus"
+  ],
+  "difficulty": "Difficile",
+  "beginnerFriendly": false,
+  "keyCards": [
+    {
+      "name": "Lightning Rush",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "role": "Standard, 87 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Seal of Discord",
+      "role": "Standard, 85 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Last Rites",
+      "role": "Standard, 81 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Standard, 67 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 51 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 46 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Souple, 46 % des listes, 2 exemplaires"
+    }
+  ],
+  "champions": {
+    "Fizz, Trickster": {
+      "usage": "91 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Storm of Shuriken": {
+      "usage": "90 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Nocturne, Horrifying": {
+      "usage": "75 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Minefield (88 %)",
+    "Zaun Warrens (79 %)",
+    "Forbidding Waste (33 %)",
+    "The Candlelit Sanctum (33 %)"
+  ],
+  "competitiveResults": {
+    "deckCount": 162,
+    "top8": 20,
+    "titres": 1,
+    "conversion": "12.3 %",
+    "tournois": 15,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "小运重卡",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "2nd",
+        "player": "粉皮土豆",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "2nd",
+        "player": "Blacksheep",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "2nd",
+        "player": "Joyspace\\_Jspre",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "2nd",
+        "player": "TheTopDeckHero",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      }
+    ]
+  },
+  "dataSource": "Decklists de tournoi en base : 162 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+}
