@@ -35,6 +35,38 @@ describe("validerPatchOverlay", () => {
     expect(validerPatchOverlay(patch)).toEqual({ ok: true, value: patch });
   });
 
+  // La panne « aucun bouton ne réagit » : l'état stocké datait d'une version plus
+  // ancienne, il repartait tel quel dans la sauvegarde de l'état entier, et le serveur
+  // refusait TOUT. Ce qui sort de applyStateUpdate doit toujours passer la validation.
+  it("remet en forme un état écrit par une version plus ancienne", () => {
+    const ancien = {
+      event: { title: "Coupe", round: "T8", vitrine: true },
+      format: "BO7",
+      maxPoints: 12,
+      points: { a: 99, b: null },
+      players: [
+        { name: "Alice", deck: "vieux champ", gamesWon: 42, battlefields: ["a", "b", "c", "d"] },
+        { name: "Bob", legendId: 7 },
+      ],
+      // La forme d'avant : `auto` en tableau, aucun `mode`.
+      cards: { lists: [["Fireball"], []], auto: [true, false], seconds: 900 },
+    } as never;
+
+    const remis = applyStateUpdate(ancien, {});
+
+    expect(remis.cards.auto).toBe(false);
+    expect(remis.cards.mode).toBe("none");
+    expect(remis.format).toBe("BO3");
+    expect(remis.maxPoints).toBe(10);
+    expect(remis.points).toEqual({ a: 10, b: 0 });
+    expect(remis.players[0].battlefields).toHaveLength(3);
+    expect(remis.players[0].gamesWon).toBe(5);
+    expect(remis.players[1].legendId).toBeNull();
+    expect(remis.players[0]).not.toHaveProperty("deck");
+    expect(remis.event).not.toHaveProperty("vitrine");
+    expect(validerPatchOverlay(JSON.parse(JSON.stringify(remis)))).toMatchObject({ ok: true });
+  });
+
   it("refuse un interrupteur d'affichage qui n'est pas un booléen", () => {
     expect(validerPatchOverlay({ event: { pointsVisible: "oui" } })).toEqual({
       ok: false,

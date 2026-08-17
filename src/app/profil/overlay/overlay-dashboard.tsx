@@ -70,6 +70,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aEnvoyer = useRef<OverlayStateData | null>(null);
+  const [erreur, setErreur] = useState<string | null>(null);
 
   useEffect(() => {
     queueMicrotask(() => setOrigin(window.location.origin));
@@ -101,7 +102,16 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
       aEnvoyer.current = next;
       if (saveTimer.current) clearTimeout(saveTimer.current);
       saveTimer.current = setTimeout(() => {
-        fetch("/api/overlay/state", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(aEnvoyer.current) });
+        // Une sauvegarde refusée ne doit JAMAIS passer sous silence : le tableau de
+        // bord continuait de réagir alors que l'écran d'OBS, lui, ne bougeait plus.
+        // On ne pouvait que deviner. Le message du serveur s'affiche maintenant.
+        fetch("/api/overlay/state", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(aEnvoyer.current) })
+          .then(async (r) => {
+            if (r.ok) return setErreur(null);
+            const corps = await r.json().catch(() => ({}) as { error?: string });
+            setErreur(corps.error ?? `Le serveur a refusé la sauvegarde (${r.status}).`);
+          })
+          .catch(() => setErreur("Connexion perdue : rien n’est parti à l’écran."));
       }, 300);
       return next;
     });
@@ -193,6 +203,18 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           {t("Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.")}
         </p>
       </header>
+
+      {/* Fond neutre, texte rouge : la règle d'interface interdit le fond teinté sous
+          un texte de la même couleur. */}
+      {erreur && (
+        <div role="alert" className="flex items-start gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
+          <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />
+          <span>
+            <strong className="font-semibold">{t("Rien n’est enregistré.")}</strong> {erreur}{" "}
+            {t("L’écran d’OBS montre toujours l’état d’avant.")}
+          </span>
+        </div>
+      )}
 
       <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
         <h2 className="font-semibold text-ink">{t("Première fois ? Trois étapes.")}</h2>

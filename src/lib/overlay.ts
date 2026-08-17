@@ -90,29 +90,107 @@ export function clampPoints(n: number, max: number): number {
 
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };
 
-export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<OverlayStateData> & { players?: Array<Partial<OverlayPlayer>> }): OverlayStateData {
-  const next: OverlayStateData = {
-    ...base,
-    ...patch,
-    event: { ...base.event, ...(patch.event ?? {}) },
-    points: { ...base.points, ...(patch.points ?? {}) },
-    cards: {
-      lists: (patch.cards?.lists ?? base.cards?.lists ?? [[], []]) as [string[], string[]],
-      ignored: (patch.cards?.ignored ?? base.cards?.ignored ?? [[], []]) as [string[], string[]],
-      mode: (patch.cards?.mode ?? base.cards?.mode ?? "none") as OverlayStateData["cards"]["mode"],
-      auto: patch.cards?.auto ?? base.cards?.auto ?? false,
-      index: (patch.cards?.index ?? base.cards?.index ?? [0, 0]) as [number, number],
-      seconds: patch.cards?.seconds ?? base.cards?.seconds ?? 5,
-    },
-    players: [
-      { ...base.players[0], ...(patch.players?.[0] ?? {}) },
-      { ...base.players[1], ...(patch.players?.[1] ?? {}) },
-    ] as [OverlayPlayer, OverlayPlayer],
+// Remise en forme de l'état.
+//
+// Le tableau de bord sauve l'état ENTIER. Un état écrit par une version plus
+// ancienne (`cards.auto` en TABLEAU, pas de `mode`, champs disparus depuis) repartait
+// tel quel : la validation le refuse alors en bloc, le serveur répond 400 et PLUS RIEN
+// ne se sauve, sans un mot à l'écran. C'est la panne « aucun bouton ne réagit ».
+// Tout ressort d'ici à la forme du jour, donc la première sauvegarde réussie répare
+// l'état stocké. Les bornes recopient celles de `overlay-validation.ts` : ce qui sort
+// d'ici doit toujours y passer.
+const TEXTE_MAX = 120;
+const URL_MAX = 2_048;
+const CARTES_MAX = 80;
+
+function texte(v: unknown, limite = TEXTE_MAX): string {
+  return typeof v === "string" ? v.slice(0, limite) : "";
+}
+
+function entier(v: unknown, min: number, max: number, defaut: number): number {
+  const n = typeof v === "number" && Number.isFinite(v) ? Math.round(v) : defaut;
+  return Math.max(min, Math.min(max, n));
+}
+
+function listeDeNoms(v: unknown, maximum: number): string[] {
+  if (!Array.isArray(v)) return [];
+  return v.filter((n) => typeof n === "string").slice(0, maximum).map((n) => texte(n));
+}
+
+function normaliserJoueur(v: unknown, nomParDefaut: string): OverlayPlayer {
+  const p = (v ?? {}) as Record<string, unknown>;
+  const joueur: OverlayPlayer = {
+    name: typeof p.name === "string" ? texte(p.name) : nomParDefaut,
+    legendId: typeof p.legendId === "string" ? texte(p.legendId) : null,
+    legendName: texte(p.legendName),
+    championName: texte(p.championName),
+    battlefields: listeDeNoms(p.battlefields, 3),
+    gamesWon: entier(p.gamesWon, 0, 5, 0),
+    camUrl: texte(p.camUrl, URL_MAX),
+    camBackground: p.camBackground === true,
   };
-  const max = next.maxPoints === 10 ? 10 : next.maxPoints === 9 ? 9 : 8;
-  next.maxPoints = max;
-  next.points = { a: clampPoints(next.points.a, max), b: clampPoints(next.points.b, max) };
-  return next;
+  // `camNonce` n'existe qu'une fois la caméra relancée. On l'omet plutôt que d'y poser
+  // 0 : il sert de clé d'iframe, et le poser à chaque sauvegarde rechargerait le flux.
+  if (p.camNonce !== undefined) joueur.camNonce = entier(p.camNonce, 0, 4e12, 0);
+  return joueur;
+}
+
+function normaliserEvent(v: unknown): OverlayStateData["event"] {
+  const e = (v ?? {}) as Record<string, unknown>;
+  return {
+    title: texte(e.title),
+    round: texte(e.round),
+    logoUrl: texte(e.logoUrl, URL_MAX),
+    endsAt: typeof e.endsAt === "string" ? texte(e.endsAt) : null,
+    // Absent = visible : c'est ce que voit un état d'avant ces deux interrupteurs.
+    timerVisible: e.timerVisible !== false,
+    pointsVisible: e.pointsVisible !== false,
+    paused: typeof e.paused === "number" && Number.isFinite(e.paused) ? entier(e.paused, 0, 86_400, 0) : null,
+  };
+}
+
+function normaliserCards(v: unknown): OverlayStateData["cards"] {
+  const c = (v ?? {}) as Record<string, unknown>;
+  const deuxListes = (x: unknown): [string[], string[]] => {
+    const a = Array.isArray(x) ? x : [];
+    return [listeDeNoms(a[0], CARTES_MAX), listeDeNoms(a[1], CARTES_MAX)];
+  };
+  const index = Array.isArray(c.index) ? c.index : [];
+  return {
+    lists: deuxListes(c.lists),
+    ignored: deuxListes(c.ignored),
+    mode: c.mode === "mixed" || c.mode === "split" ? c.mode : "none",
+    // `=== true` et pas `?? false` : une version plus ancienne stockait `auto` en
+    // tableau, et un tableau vaut vrai. Il repartait alors dans la sauvegarde, où la
+    // validation l'a toujours refusé.
+    auto: c.auto === true,
+    index: [entier(index[0], 0, 9_999, 0), entier(index[1], 0, 9_999, 0)],
+    seconds: entier(c.seconds, 1, 60, 5),
+  };
+}
+
+export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<OverlayStateData> & { players?: Array<Partial<OverlayPlayer>> }): OverlayStateData {
+  const format = patch.format ?? base?.format;
+  const max = entier(patch.maxPoints ?? base?.maxPoints, 8, 10, 8);
+  const points = { ...base?.points, ...(patch.points ?? {}) };
+  return {
+    event: normaliserEvent({ ...base?.event, ...(patch.event ?? {}) }),
+    format: format === "BO1" || format === "BO5" ? format : "BO3",
+    maxPoints: max === 9 ? 9 : max === 10 ? 10 : 8,
+    points: { a: clampPoints(entier(points.a, 0, 10, 0), max), b: clampPoints(entier(points.b, 0, 10, 0), max) },
+    players: [
+      normaliserJoueur({ ...base?.players?.[0], ...(patch.players?.[0] ?? {}) }, "Joueur 1"),
+      normaliserJoueur({ ...base?.players?.[1], ...(patch.players?.[1] ?? {}) }, "Joueur 2"),
+    ],
+    cards: normaliserCards({
+      lists: patch.cards?.lists ?? base?.cards?.lists,
+      ignored: patch.cards?.ignored ?? base?.cards?.ignored,
+      mode: patch.cards?.mode ?? base?.cards?.mode,
+      auto: patch.cards?.auto ?? base?.cards?.auto,
+      index: patch.cards?.index ?? base?.cards?.index,
+      seconds: patch.cards?.seconds ?? base?.cards?.seconds,
+    }),
+  };
 }
 
 export function makeToken(): string {
