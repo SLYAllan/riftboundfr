@@ -69,6 +69,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [copied, setCopied] = useState(false);
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const aEnvoyer = useRef<OverlayStateData | null>(null);
 
   useEffect(() => {
     queueMicrotask(() => setOrigin(window.location.origin));
@@ -88,12 +89,19 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     });
   }, [state.players[0].legendName, state.players[1].legendName]);
 
+  // On envoie l'état ENTIER, pas le patch. Le minuteur d'attente annule l'envoi
+  // précédent : tant qu'on postait le patch, tout ce qui avait été changé moins de
+  // 300 ms plus tôt partait à la poubelle sans rien dire. « Échanger les joueurs »
+  // suivi d'un clic sur un point ne changeait donc rien à l'écran d'OBS, et les
+  // modifications suivantes s'appliquaient à l'ancien ordre. Avec l'état entier,
+  // le dernier envoi porte tout ce qui a été fait avant lui.
   function update(patch: Parameters<typeof applyStateUpdate>[1]) {
     setState((s) => {
       const next = applyStateUpdate(s, patch);
+      aEnvoyer.current = next;
       if (saveTimer.current) clearTimeout(saveTimer.current);
       saveTimer.current = setTimeout(() => {
-        fetch("/api/overlay/state", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(patch) });
+        fetch("/api/overlay/state", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(aEnvoyer.current) });
       }, 300);
       return next;
     });

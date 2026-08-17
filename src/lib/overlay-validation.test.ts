@@ -1,7 +1,28 @@
 import { describe, expect, it } from "vitest";
 import { validerPatchOverlay } from "./overlay-validation";
+import { applyStateUpdate, defaultOverlayState } from "./overlay";
 
 describe("validerPatchOverlay", () => {
+  // Le tableau de bord envoie l'état ENTIER à chaque sauvegarde. Si un champ d'état
+  // n'est pas dans la liste des champs permis, tout le tableau de bord cesse de
+  // sauver (400) au lieu de perdre juste ce champ.
+  it("accepte l'état entier, y compris après un échange de joueurs", () => {
+    const base = defaultOverlayState();
+    base.players[0] = { ...base.players[0], name: "Alice", legendName: "Diana", gamesWon: 2, camUrl: "https://vdo.ninja/?view=a", camNonce: Date.now() };
+    base.players[1] = { ...base.players[1], name: "Bob", legendName: "Jax", gamesWon: 1 };
+    base.event = { ...base.event, round: "Finale", paused: 42 };
+    base.points = { a: 5, b: 3 };
+
+    const echange = applyStateUpdate(base, {
+      players: [base.players[1], base.players[0]],
+      points: { a: base.points.b, b: base.points.a },
+    });
+
+    expect(echange.players.map((p) => p.name)).toEqual(["Bob", "Alice"]);
+    expect(validerPatchOverlay(JSON.parse(JSON.stringify(echange)))).toMatchObject({ ok: true });
+  });
+
+
   it("accepte une mise à jour partielle conforme au tableau de bord", () => {
     const patch = {
       event: { round: "Finale", timerVisible: true, pointsVisible: false },
