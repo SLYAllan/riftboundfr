@@ -159,18 +159,25 @@ const globalTier: TierEntry[] = [
 
 const vendettaTier: TierEntry[] = [
   // Relevé du 17 août 2026 : 1671 decklists vérifiées sur 15 tournois, 119 places
-  // de Top 8, 15 titres. La conversion moyenne du format est de 7,1 % : c'est
-  // l'étalon qui sépare « beaucoup joué » de « joué et efficace ».
+  // de Top 8, 15 titres. La conversion moyenne du format est de 7,1 %.
+  //
+  // Règle du S : seules les Légendes dont l'écart à cette moyenne tient un test
+  // binomial (p < 0,05) y entrent. `scripts/tier-stats-vendetta.mts` le calcule.
+  // Au 17 août, trois Légendes seulement se détachent : Kennen (p = 0,014) et
+  // Master Yi (p = 0,048) au-dessus, Akali (p = 0,010) en dessous. Tout le reste
+  // est du bruit d'échantillon, et un titre isolé ne vaut pas preuve : c'est un
+  // tournoi sur quinze. Les rangs A à D restent un classement de lecture, pas un
+  // résultat de calcul — le dire plutôt que le maquiller en science.
   { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "Le plus joué (192) ET le plus présent en Top 8 (21), avec trois titres." },
   { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "Meilleure conversion des gros volumes : 20 Top 8 pour 162 listes." },
-  { legendName: "Kai'Sa, Daughter of the Void", tier: "A", comment: "Deuxième deck le plus joué, mais 7,4 % de conversion : à peine la moyenne du format." },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "A", comment: "Deuxième deck le plus joué, mais sa conversion est celle du champ : 7,4 % contre 7,1 %." },
   { legendName: "Irelia, Blade Dancer", tier: "A", comment: "Pilier de contrôle, présent partout ; toujours aucun titre en quinze tournois." },
   { legendName: "Rek'Sai, Void Burrower", tier: "A", comment: "Convertit bien au-dessus de la moyenne pour sa part du champ." },
   { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "Trois titres, autant que Master Yi, pour deux fois moins de listes." },
   { legendName: "Nasus, Curator of the Sands", tier: "A", comment: "Deux titres dont Tianjin, mais une conversion faible : le deck gagne ou sort tôt." },
   { legendName: "Draven, Glorious Executioner", tier: "A", comment: "Peu joué, bien classé, et il gagne." },
-  { legendName: "Azir, Emperor of the Sands", tier: "A", comment: "Vainqueur de Shanghai le 16 août, une des meilleures conversions du set." },
-  { legendName: "Fiora, Grand Duelist", tier: "A", comment: "Le duel bien piloté paie : un titre à Nanjing et une conversion au-dessus de la moyenne." },
+  { legendName: "Azir, Emperor of the Sands", tier: "B", comment: "Vainqueur de Shanghai le 16 août, mais 37 listes : l'écart avec le champ n'est pas établi." },
+  { legendName: "Fiora, Grand Duelist", tier: "B", comment: "Un titre à Nanjing, conversion au-dessus de la moyenne sur 54 listes seulement." },
   { legendName: "Ornn, Fire Below the Mountain", tier: "B", comment: "Petit volume, mais trois Top 8 : le meilleur rendement des decks discrets." },
   { legendName: "Ezreal, Prodigal Explorer", tier: "B", comment: "Échantillon modeste, conversion au-dessus de la moyenne." },
   { legendName: "Lillia, Bashful Bloom", tier: "B", comment: "Régulière en Top 8 pour sa part du champ." },
