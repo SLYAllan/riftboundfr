@@ -20,6 +20,7 @@ import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
+import { diffDecks } from "@/lib/deck-diff";
 import { chiffrerDeck } from "@/lib/cardnexus";
 import { tr } from "@/lib/i18n-server";
 
@@ -120,11 +121,26 @@ export default async function CommunityDeckPage({ params }: PageProps) {
     return card ? [{ riftboundId: card.riftboundId, name: card.name, quantity: i.quantity }] : [];
   });
 
+  // Historique : chaque ligne porte le code d'AVANT la mise à jour, sous son
+  // ancien numéro. Le code d'après est donc la ligne plus récente, et le deck
+  // courant pour la plus récente de toutes.
+  const historique = deck.history.map((h, i) => {
+    const avant = decodeDeck(h.deckCode);
+    const apres = decodeDeck(i === 0 ? deck.deckCode : deck.history[i - 1].deckCode);
+    return { ligne: h, changements: avant && apres ? diffDecks(avant, apres) : [] };
+  });
+  // Les cartes sorties du deck ne sont plus dans `cardMap` : il faut les
+  // résoudre à part. Un identifiant introuvable s'affiche tel quel, jamais
+  // escamoté.
+  const { map: cartesHistorique } = await resolveDeckCards(
+    [...new Set(historique.flatMap((v) => v.changements.map((c) => c.cardId)))],
+  );
+
   const user = await getUserFromSession();
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/decks?cat=community" className="text-sm text-ink-muted hover:text-arcane">{t("&larr; Retour aux decks communautaires")}</Link>
+      <Link href="/decks?cat=community" className="text-sm text-ink-muted hover:text-arcane">{t("← Retour aux decks communautaires")}</Link>
       <div className="mt-6">
         <h1
           className="text-3xl font-bold leading-tight sm:text-4xl"
@@ -220,11 +236,17 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           <DeckStatsPanel cards={decklistCards} />
           <VersionHistory
             currentVersion={deck.version}
-            history={deck.history.map((h) => ({
-              id: h.id,
-              version: h.version,
-              changelog: h.changelog,
-              createdAt: h.createdAt.toISOString(),
+            history={historique.map(({ ligne, changements }) => ({
+              id: ligne.id,
+              version: ligne.version,
+              changelog: ligne.changelog,
+              createdAt: ligne.createdAt.toISOString(),
+              changements: changements.map((c) => ({
+                nom: findCard(cartesHistorique, c.cardId)?.name ?? c.cardId,
+                section: c.section,
+                avant: c.avant,
+                apres: c.apres,
+              })),
             }))}
           />
           <UpdateDeckButton shareCode={deck.shareCode} ownerId={deck.userId} />
