@@ -84,7 +84,15 @@ npx tsx scripts/seed-tournament-decks.ts <prefixe> "<contexte tournoi>" <set> "<
 
 Le `<contexte tournoi>` sert de clé partout ensuite : le réutiliser à l'identique.
 
-## 4. Lever les best-of
+## 4. Lever les best-of — Regional Qualifiers UNIQUEMENT
+
+**Un City Challenge n'a pas de best-of.** Ni un weekly, ni un tournoi de boutique :
+seuls les Regional Qualifiers en portent. Un City Challenge se lit sur sa page
+`/tournois/<slug>`, pas dans `/decks?cat=bestof`. Sauter cette étape pour eux
+n'est pas un oubli, c'est la règle. (Des best-of ont déjà été levés à tort sur
+trois City Challenges le 17 août 2026, puis retirés.)
+
+Pour un Regional Qualifier :
 
 ```bash
 npx tsx scripts/mark-bestof-tournois.mts "<contexte tournoi>"
