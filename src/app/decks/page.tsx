@@ -396,7 +396,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       </form>
       {search && (
         <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")}{" "}<strong>{search}</strong>.{" "}
-          <Link href="/decks" className="text-arcane hover:underline">Tout afficher</Link>
+          <Link href="/decks" className="text-arcane hover:underline">{t("Tout afficher")}</Link>
         </p>
       )}
 

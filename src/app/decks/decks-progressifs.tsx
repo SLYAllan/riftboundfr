@@ -9,6 +9,7 @@ import { getBannerUrl } from "@/lib/banners";
 import { parametresDecks, type DeckListe, type FiltresDecks, type LotDecks } from "@/lib/deck-listing-params";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { cn, displayLegendName } from "@/lib/utils";
+import { useT } from "@/components/i18n-provider";
 
 const TIER_BG: Record<string, string> = {
   S: "bg-tier-s", A: "bg-tier-a", B: "bg-tier-b", C: "bg-tier-c", D: "bg-tier-d",
@@ -63,6 +64,7 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
 }
 
 export function DecksProgressifs({ initial, filtres }: { initial: LotDecks; filtres: FiltresDecks }) {
+  const t = useT();
   const [decks, setDecks] = useState(initial.decks);
   const [suivant, setSuivant] = useState(initial.suivant);
   const [chargement, setChargement] = useState(false);
@@ -110,9 +112,9 @@ export function DecksProgressifs({ initial, filtres }: { initial: LotDecks; filt
         {decks.map((deck) => <CarteDeck key={deck.id} deck={deck} />)}
       </div>
       <div ref={sentinelle} className="mt-6 flex min-h-11 flex-col items-center justify-center gap-2" aria-live="polite" aria-busy={chargement}>
-        {suivant !== null && <button type="button" onClick={() => void charger()} disabled={chargement} className="min-h-11 rounded-full bg-surface-raised px-5 py-2 text-sm font-semibold text-ink hover:bg-surface disabled:cursor-wait disabled:opacity-60 focus-visible:ring-2 focus-visible:ring-arcane">{chargement ? "Chargement…" : "Charger plus de decks"}</button>}
+        {suivant !== null && <button type="button" onClick={() => void charger()} disabled={chargement} className="min-h-11 rounded-full bg-surface-raised px-5 py-2 text-sm font-semibold text-ink hover:bg-surface disabled:cursor-wait disabled:opacity-60 focus-visible:ring-2 focus-visible:ring-arcane">{chargement ? t("Chargement…") : t("Charger plus de decks")}</button>}
         {erreur && <p role="alert" className="text-sm text-red-400">{erreur}</p>}
-        {suivant === null && <p className="text-sm text-ink-muted">Tous les decks sont affichés.</p>}
+        {suivant === null && <p className="text-sm text-ink-muted">{t("Tous les decks sont affichés.")}</p>}
       </div>
     </>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "@/components/lien";
 import { ChevronRight } from "lucide-react";
+import { useT } from "@/components/i18n-provider";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
 
@@ -11,9 +14,14 @@ export interface Crumb {
 /**
  * Fil d'Ariane visible + JSON-LD BreadcrumbList.
  * "Accueil" est ajouté automatiquement en tête - ne passer que les segments suivants.
+ *
+ * Composant client pour une seule raison : les libellés passent par le dictionnaire,
+ * et le fil d'Ariane restait en français sur tout le site anglais. Le rendu initial
+ * se fait quand même sur le serveur, le JSON-LD est donc bien dans le HTML servi.
  */
 export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
-  const all: Crumb[] = [{ name: "Accueil", href: "/" }, ...items];
+  const t = useT();
+  const all: Crumb[] = [{ name: "Accueil", href: "/" }, ...items].map((c) => ({ ...c, name: t(c.name) }));
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -27,7 +35,7 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
 
   return (
     <nav
-      aria-label="Fil d'Ariane"
+      aria-label={t("Fil d'Ariane")}
       className={`text-sm text-ink-muted ${className ?? ""}`}
     >
       <script

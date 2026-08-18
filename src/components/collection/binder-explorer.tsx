@@ -219,9 +219,9 @@ export function BinderExplorer({
 
         {/* Footer */}
         <div className="mt-3 flex items-center gap-3 border-t border-hairline pt-3 text-xs">
-          <span className="text-ink-muted">Actif : {activeFilters > 0 ? activeFilters : "aucun"}</span>
-          {activeFilters > 0 && <button onClick={clearAll} className="text-arcane hover:underline">Tout effacer</button>}
-          <span className="ml-auto font-semibold text-arcane">{filtered.length} carte{filtered.length !== 1 ? "s" : ""}</span>
+          <span className="text-ink-muted">{t("Actif :")} {activeFilters > 0 ? activeFilters : t("aucun")}</span>
+          {activeFilters > 0 && <button onClick={clearAll} className="text-arcane hover:underline">{t("Tout effacer")}</button>}
+          <span className="ml-auto font-semibold text-arcane">{filtered.length} {t(filtered.length === 1 ? "carte" : "cartes")}</span>
         </div>
       </div>
 

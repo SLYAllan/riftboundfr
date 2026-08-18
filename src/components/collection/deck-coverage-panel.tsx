@@ -103,7 +103,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                   les cartes viennent de plusieurs vendeurs, chacun avec son port. Un
                   deck annoncé 141 € est ressorti à 201 € au panier. Le plancher, lui,
                   est vrai et vérifiable ; le présenter comme le prix était le mensonge. */}
-              <div className="text-sm font-semibold text-ink-secondary">À partir de</div>
+              <div className="text-sm font-semibold text-ink-secondary">{t("À partir de")}</div>
               <div className="mt-1 text-3xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 {euros.format(prix.total)}
               </div>

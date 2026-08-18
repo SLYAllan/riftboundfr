@@ -41,19 +41,33 @@ function SelecteurLangue({ chemin, compact = false }: { chemin: string; compact?
   return (
     <div className={cn("flex items-center gap-0.5 rounded-lg border border-hairline p-0.5", compact && "w-max")}>
       {([
-        { code: "fr", href: nu || "/" },
-        { code: "en", href: `${PREFIXE_EN}${nu}` },
+        // Le drapeau vient de `public/img/flags/`, comme les pays des tournois : les
+        // emojis drapeaux ne s'affichent pas sous Windows, ils y sortent en lettres.
+        // Le code de langue reste écrit à côté — un drapeau ne dit pas une langue,
+        // et « GB » ne veut pas dire « English » pour tout le monde.
+        { code: "fr", drapeau: "fr", nom: "Français", href: nu || "/" },
+        { code: "en", drapeau: "gb", nom: "English", href: `${PREFIXE_EN}${nu}` },
       ] as const).map((l) => (
         <a
           key={l.code}
           href={l.href}
           hrefLang={l.code}
+          lang={l.code}
+          title={l.nom}
           aria-current={langue === l.code ? "true" : undefined}
           className={cn(
-            "flex h-8 min-w-8 items-center justify-center rounded-md px-1.5 text-xs font-bold uppercase transition-colors",
+            "flex h-8 min-w-8 items-center justify-center gap-1.5 rounded-md px-1.5 text-xs font-bold uppercase transition-colors",
             langue === l.code ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink",
           )}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/img/flags/${l.drapeau}.svg`}
+            alt=""
+            width={18}
+            height={12}
+            className="h-3 w-[18px] shrink-0 rounded-[2px] object-cover"
+          />
           {l.code}
         </a>
       ))}

@@ -232,7 +232,7 @@ export default async function GuideMetaPage() {
         <section>
           <h2 className="flex items-center gap-2 text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             <AlertTriangle size={20} />{" "}{t("Attention aux pièges de représentation")}</h2>
-          <p className="mt-2 text-sm text-ink-secondary">{t("Une légende beaucoup jouée n’est pas forcément forte. Certaines sont populaires mais convertissent mal en top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l’inverse, des sleepers comme")}<strong> Annie</strong> ou <strong>Sett</strong>{" "}{t("sont peu joués mais gagnent au-dessus de leur poids. Regardez toujours le")}{" "}<strong>{t("taux de conversion")}</strong>{t(", pas seulement la part du field.")}</p>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Une légende beaucoup jouée n’est pas forcément forte. Certaines sont populaires mais convertissent mal en top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l’inverse, des sleepers comme")}<strong> Annie</strong> {t("ou")} <strong>Sett</strong>{" "}{t("sont peu joués mais gagnent au-dessus de leur poids. Regardez toujours le")}{" "}<strong>{t("taux de conversion")}</strong>{t(", pas seulement la part du field.")}</p>
         </section>
 
         <div className="flex flex-wrap gap-3">
