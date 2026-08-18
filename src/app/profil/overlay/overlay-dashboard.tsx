@@ -109,9 +109,11 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           .then(async (r) => {
             if (r.ok) return setErreur(null);
             const corps = await r.json().catch(() => ({}) as { error?: string });
-            setErreur(corps.error ?? `Le serveur a refusé la sauvegarde (${r.status}).`);
+            // Traduit comme le reste : un streamer anglophone recevait ce message en
+            // français, au pire moment. Le message du serveur, lui, reste tel quel.
+            setErreur(corps.error ?? `${t("Le serveur a refusé la sauvegarde.")} (${r.status})`);
           })
-          .catch(() => setErreur("Connexion perdue : rien n’est parti à l’écran."));
+          .catch(() => setErreur(t("Connexion perdue : rien n’est parti à l’écran.")));
       }, 300);
       return next;
     });
@@ -335,13 +337,17 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
                 <div>
                   <span className="mb-1 block text-xs text-ink-muted">{t("Caméra (lien VDO.Ninja)")}</span>
-                  <div className="flex gap-2">
+                  {/* `flex-wrap` + `min-w-full` : avec une caméra chargée il y a trois
+                      boutons sur la ligne, et sur un téléphone le champ tombait à 26 px.
+                      On ne pouvait plus ni lire ni corriger le lien. Le champ prend
+                      toute la ligne sous 640 px, les boutons passent dessous. */}
+                  <div className="flex flex-wrap gap-2">
                     <input
                       value={brouillonCam[i]}
                       onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
                       placeholder="https://vdo.ninja/?view=..."
                       aria-label={`${t("Caméra (lien VDO.Ninja)")}, ${t("joueur")} ${i + 1}`}
-                      className={inputCls}
+                      className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"}
                     />
                     <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} disabled={!brouillonCam[i].trim()} className={btnPlein}>
                       <Upload size={15} aria-hidden />
@@ -481,13 +487,17 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
           {/* Tous les réglages ensemble : quel affichage, diapo auto, durée. */}
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <label className={caseCls}>
+            {/* Un menu se dimensionne sur sa plus longue option. En anglais, « One
+                frame, both decks » dépassait de 17 px et TOUTE la page se décalait
+                sur le côté. Sous 640 px le menu prend la ligne entière : aucune
+                traduction ne peut plus faire déborder la page. */}
+            <label className={caseCls + " w-full sm:w-auto"}>
               <span className="text-xs text-ink-muted">{t("Affichage")}</span>
               <select
                 value={cards.mode}
                 onChange={(e) => majCards({ mode: e.target.value as OverlayStateData["cards"]["mode"] })}
                 aria-label={t("Affichage des cartes")}
-                className={selectCls + " transition-colors duration-150 focus:border-arcane focus:outline-none"}
+                className={selectCls + " w-full min-w-0 flex-1 transition-colors duration-150 focus:border-arcane focus:outline-none sm:w-auto sm:flex-none"}
               >
                 <option value="none">{t("Rien")}</option>
                 <option value="mixed">{t("Un cadre, les 2 decks à droite")}</option>
@@ -565,16 +575,22 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                             {/* En diapo auto seulement : décocher retire la carte du
                                 défilé. En manuel on clique le nom pour la montrer. */}
                             {cards.auto && (
-                              <input
-                                type="checkbox"
-                                className="size-4 accent-arcane"
-                                checked={!exclue}
-                                aria-label={`${t("Garder dans la diapo")} : ${c}`}
-                                onChange={(e) => {
-                                  const nextIgn = e.target.checked ? ignorees.filter((x) => x !== c) : [...new Set([...ignorees, c])];
-                                  majCards({ ignored: paire(cards.ignored, i, nextIgn) });
-                                }}
-                              />
+                              // La case fait 16 px et le nom de carte commence 8 px
+                              // plus loin : sous les 24 px de la WCAG, et sans marge
+                              // pour rattraper. On vise la case, on décoche la carte
+                              // d'à côté. Le libellé porte la zone de 36 px.
+                              <label className="flex size-9 shrink-0 items-center justify-center">
+                                <input
+                                  type="checkbox"
+                                  className="size-4 accent-arcane"
+                                  checked={!exclue}
+                                  aria-label={`${t("Garder dans la diapo")} : ${c}`}
+                                  onChange={(e) => {
+                                    const nextIgn = e.target.checked ? ignorees.filter((x) => x !== c) : [...new Set([...ignorees, c])];
+                                    majCards({ ignored: paire(cards.ignored, i, nextIgn) });
+                                  }}
+                                />
+                              </label>
                             )}
                             <button
                               type="button"
@@ -617,8 +633,10 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           </label>
           <div className="min-w-[280px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
-            <div className="flex gap-2">
-              <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" aria-label={t("Logo (lien d’image)")} className={inputCls} />
+            {/* Même raison que la caméra : à deux boutons, le champ tombait à 98 px
+                sur un téléphone. On ne colle pas une adresse dans 98 px. */}
+            <div className="flex flex-wrap gap-2">
+              <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" aria-label={t("Logo (lien d’image)")} className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"} />
               <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} disabled={!brouillonLogo.trim()} className={btnPlein}>
                 <Upload size={15} aria-hidden />
                 {t("Charger")}
