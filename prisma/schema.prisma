@@ -194,6 +194,7 @@ model User {
   collection     CollectionItem[]
   binders        Binder[]
   overlayState   OverlayState?
+  overlayMedia   OverlayMedia[]
 
 
   @@index([discordId])
@@ -347,4 +348,24 @@ model OverlayState {
   updatedAt DateTime @updatedAt
 
   @@index([token])
+}
+
+/// Images d'habillage envoyées depuis un fichier : `kind` vaut "logo" (logo de la
+/// compétition) ou "background" (le décor entier, à partir du gabarit Photoshop).
+/// Une ligne par compte et par genre.
+///
+/// Table à part, et pas des colonnes sur `OverlayState` : l'habillage relit l'état
+/// ENTIER toutes les 1,5 s pendant toute la diffusion. Des octets posés sur cette
+/// ligne repartiraient de la base à chaque tour, pour rien. Ici, ils ne sont lus
+/// que par la route qui sert l'image, une fois, puis le cache du navigateur prend
+/// le relais (l'adresse porte un numéro de version).
+model OverlayMedia {
+  userId    String
+  kind      String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mime      String
+  data      Bytes
+  updatedAt DateTime @updatedAt
+
+  @@id([userId, kind])
 }

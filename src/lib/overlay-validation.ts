@@ -88,7 +88,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "layout", "backgroundUrl"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -96,9 +96,11 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
         if (erreur) return { ok: false, error: erreur };
       }
     }
-    if (value.event.logoUrl !== undefined) {
-      const erreur = chaine(value.event.logoUrl, "event.logoUrl", LIMITES.url);
-      if (erreur) return { ok: false, error: erreur };
+    for (const cle of ["logoUrl", "backgroundUrl"] as const) {
+      if (value.event[cle] !== undefined) {
+        const erreur = chaine(value.event[cle], `event.${cle}`, LIMITES.url);
+        if (erreur) return { ok: false, error: erreur };
+      }
     }
     if (value.event.endsAt !== undefined && value.event.endsAt !== null) {
       const erreur = chaine(value.event.endsAt, "event.endsAt");
@@ -112,6 +114,9 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
     if (value.event.paused !== undefined && value.event.paused !== null) {
       const erreur = nombre(value.event.paused, "event.paused", 0, 86400);
       if (erreur) return { ok: false, error: erreur };
+    }
+    if (value.event.layout !== undefined && !["cams", "nocam"].includes(String(value.event.layout))) {
+      return { ok: false, error: "event.layout doit être cams ou nocam" };
     }
   }
 

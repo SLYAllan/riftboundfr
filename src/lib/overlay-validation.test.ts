@@ -74,6 +74,15 @@ describe("validerPatchOverlay", () => {
     });
   });
 
+  it("n'accepte que les deux décors connus", () => {
+    expect(validerPatchOverlay({ event: { layout: "nocam" } }).ok).toBe(true);
+    expect(validerPatchOverlay({ event: { layout: "cams" } }).ok).toBe(true);
+    expect(validerPatchOverlay({ event: { layout: "sansCadre" } })).toEqual({
+      ok: false,
+      error: "event.layout doit être cams ou nocam",
+    });
+  });
+
   it("refuse les propriétés inconnues et les chaînes démesurées", () => {
     expect(validerPatchOverlay({ admin: true })).toEqual({ ok: false, error: "Champ overlay inconnu : admin" });
     expect(validerPatchOverlay({ event: { title: "x".repeat(121) } })).toEqual({

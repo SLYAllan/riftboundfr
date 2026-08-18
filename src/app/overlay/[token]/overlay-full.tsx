@@ -33,6 +33,18 @@ const SLOT = {
   cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
 
+// Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
+// cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
+// caméra plateau : le cadre vide se voyait, et on ne pouvait rien y faire.
+const FOND = "/stream/test.webp";
+const FOND_SANS_CAM = "/stream/layout_sanscam.webp";
+
+// Le décor sans caméra n'a QUE deux ouvertures par colonne, relevées sur son canal
+// alpha : y 251-543 (l'ancienne case caméra) et y 547-630 (le champ de bataille). La
+// fenêtre à bannière de Légende n'existe plus. La Légende prend donc la grande case,
+// et comme celle-ci est presque carrée (278 x 293), on y met l'icône carrée et non la
+// bannière large, qui serait rognée des deux côtés.
+
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
 // résultat pour toute la durée du direct — un tournoi ne change pas d'illustration.
@@ -88,7 +100,7 @@ function camSrc(url: string | undefined): string | null {
   }
 }
 
-function Points({ max, a, b }: { max: number; a: number; b: number }) {
+function Points({ max, a, b, visible }: { max: number; a: number; b: number; visible: boolean }) {
   const cells: { side: "a" | "b"; v: number }[] = [];
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
@@ -97,7 +109,10 @@ function Points({ max, a, b }: { max: number; a: number; b: number }) {
     // dessiné en code. La pastille du score courant de chaque joueur est « full »,
     // les autres « empty ». Espacement régulier : l'ancienne marge centrale (ml-3)
     // créait un écart de 62px au milieu contre 50px ailleurs.
-    <div className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center">
+    <div
+      className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center transition-opacity duration-300 ease-out"
+      style={{ opacity: visible ? 1 : 0 }}
+    >
       {cells.map((c, i) => {
         const full = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
         // Le point final (celui qui donne la manche) est mis en avant : un poil plus
@@ -137,18 +152,38 @@ function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
         allow="autoplay; fullscreen"
         sandbox="allow-scripts allow-same-origin"
         onLoad={() => setCharge(true)}
-        className="absolute left-1/2 top-0 border-0"
+        className="absolute left-1/2 top-0 border-0 transition-opacity duration-300 ease-out"
         style={{
           width: Math.round((SLOT.cam.height * 16) / 9),
           height: SLOT.cam.height,
           transform: "translateX(-50%)",
+          opacity: charge ? 1 : 0,
         }}
       />
-      {!charge && (
-        <span className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70">
-          {t("caméra en attente")}
-        </span>
-      )}
+      <span
+        className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70 transition-opacity duration-300 ease-out"
+        style={{ opacity: charge ? 0 : 1 }}
+      >
+        {t("caméra en attente")}
+      </span>
+    </>
+  );
+}
+
+/** Nom de Légende et Champion posés en bas d'une case, sur un dégradé. */
+function EtiquetteLegende({ legende, champion }: { legende: string; champion: string }) {
+  const t = useT();
+  return (
+    <>
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
+        <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+          {legende || t("Légende")}
+        </FitText>
+        <FitText chars={34} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+          {champion || "Champion"}
+        </FitText>
+      </div>
     </>
   );
 }
@@ -157,11 +192,13 @@ function Side({
   p,
   side,
   format,
+  sansCam,
   footer,
 }: {
   p: OverlayPlayer;
   side: "left" | "right";
   format: OverlayStateData["format"];
+  sansCam: boolean;
   footer: React.ReactNode;
 }) {
   const t = useT();
@@ -186,40 +223,50 @@ function Side({
         </FitText>
       </div>
 
-      {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus */}
-      <div
-        className="absolute overflow-hidden"
-        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.legend.top, height: SLOT.legend.height }}
-      >
-        {(banner ?? icon) && (
-          <img src={(banner ?? icon)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
-        )}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
-          <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {p.legendName || t("Légende")}
-          </FitText>
-          <FitText chars={34} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-            {p.championName || "Champion"}
-          </FitText>
+      {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus.
+          Le décor sans caméra n'a pas cette fenêtre : la Légende passe dans la grande
+          case en dessous. */}
+      {!sansCam && (
+        <div
+          className="absolute overflow-hidden"
+          style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.legend.top, height: SLOT.legend.height }}
+        >
+          <ImageFondu src={banner ?? icon} imgClassName="object-cover object-[50%_28%]" />
+          <EtiquetteLegende legende={p.legendName} champion={p.championName} />
         </div>
-      </div>
+      )}
 
       {/* Caméra : le lien VDO.Ninja s'affiche dans le cadre. Sans lien, le cadre
           reste vide et transparent, la source se pose dessous dans OBS. */}
       {/* Le cadre caméra est toujours là : transparent si rien (une source OBS peut se
           poser dessous), le fond webcam s'il est coché, le flux VDO.Ninja par-dessus. */}
-      {(
+      {/* Décor sans caméra : la grande case porte la Légende, en icône carrée. */}
+      {sansCam && (
         <div
-          style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
+          style={{ left: SLOT.x[side] - 3, width: SLOT.width + 6, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
+          className="absolute overflow-hidden"
+        >
+          {/* L'icône d'abord, la bannière seulement en secours : la case est presque
+              carrée, une bannière large y perdrait les deux côtés du dessin. */}
+          <ImageFondu src={icon ?? banner} imgClassName="object-cover" />
+          <EtiquetteLegende legende={p.legendName} champion={p.championName} />
+        </div>
+      )}
+
+      {!sansCam && (
+        <div
+          // Élargi de 3 px de chaque côté (centre conservé), comme le champ de
+          // bataille en dessous : l'ouverture dessinée dans le décor est un peu plus
+          // large que la case mesurée, et il restait un trait clair de 2 px à gauche
+          // et 1 px à droite sur toute la hauteur — transparent dans OBS, blanc au
+          // navigateur. Le cadre doré passe au-dessus, on ne fait que combler.
+          style={{ left: SLOT.x[side] - 3, width: SLOT.width + 6, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
           className="absolute overflow-hidden"
           aria-label={t("Caméra")}
         >
           {/* Fond de webcam en OPTION (case à cocher par joueur) : le cadre n'est pas
               vide sans caméra. Le flux VDO.Ninja, quand il arrive, se pose par-dessus. */}
-          {p.camBackground && (
-            <img src="/stream/webcam_default.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
-          )}
+          <ImageFondu src={p.camBackground ? "/stream/webcam_default.png" : null} imgClassName="object-cover" />
           {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la fenêtre
               du dessus. `allow-scripts` et `allow-same-origin` sont le minimum pour que
               WebRTC tourne. Une webcam est en 16:9, le cadre est en portrait : on
@@ -245,9 +292,7 @@ function Side({
         {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
             liseré et le bandeau de titre de l'illustration. Voile léger, et un
             dégradé sous le texte seulement, pour ne pas éteindre l'art. */}
-        {art[bf] && (
-          <img src={art[bf]!} alt="" className="absolute inset-0 h-full w-full scale-[1.4] object-cover object-[50%_38%]" />
-        )}
+        <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
         <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
@@ -287,6 +332,44 @@ function Manche({ gagnee }: { gagnee: boolean }) {
     >
       {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className="h-5 w-5 object-contain" />}
     </span>
+  );
+}
+
+/**
+ * Image qui se remplace en fondu enchaîné au lieu de sauter d'un coup.
+ *
+ * Même procédé que la carte montrée : la nouvelle couche apparaît par-dessus
+ * l'ancienne, puis l'ancienne est retirée une fois le fondu fini. `src` à null fait
+ * disparaître en fondu. Sert à tout ce qui change en direct — Légende, champ de
+ * bataille, logo, fond de webcam : sans ça, changer de Légende faisait un à-coup.
+ */
+function ImageFondu({ src, imgClassName = "", className = "" }: { src: string | null; imgClassName?: string; className?: string }) {
+  const [calques, setCalques] = useState<{ id: number; src: string }[]>([]);
+  const idRef = useRef(0);
+  const precRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (src === precRef.current) return;
+    precRef.current = src;
+    if (src) {
+      const id = ++idRef.current;
+      setCalques((c) => [...c.slice(-1), { id, src }]);
+      // 500 ms > la durée du fondu : l'ancienne couche part une fois recouverte.
+      const t = setTimeout(() => setCalques((c) => c.filter((x) => x.id === id)), 500);
+      return () => clearTimeout(t);
+    }
+    const t = setTimeout(() => setCalques([]), 340);
+    return () => clearTimeout(t);
+  }, [src]);
+
+  return (
+    <div
+      className={`absolute inset-0 transition-opacity duration-300 ease-out ${className}`}
+      style={{ opacity: src ? 1 : 0 }}
+    >
+      {calques.map((l) => (
+        <img key={l.id} src={l.src} alt="" className={`${styles.apparait} absolute inset-0 h-full w-full ${imgClassName}`} />
+      ))}
+    </div>
   );
 }
 
@@ -408,6 +491,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   // donc qu'en mode "split", où le cadre GAUCHE est à l'écran (même vide). En "mixed"
   // la gauche est libre, tout reste. Le score et les Légendes restent toujours.
   const vitrine = mode === "split";
+  const sansCam = event.layout === "nocam";
   // Version simple : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
   // webcam et veut quand même le score, les Légendes et la carte à l'écran.
   if (compact) return <OverlayCompact state={state} />;
@@ -415,39 +499,57 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
     <div className={styles.root}>
       {/* Le cadre fourni, en fond : ses découpes sont transparentes, tout le reste
           de l'habillage vient de lui. */}
-      <img src="/stream/test.webp" alt="" className="absolute inset-0 z-10 h-full w-full" />
+      {/* Décor : celui du streamer s'il en a envoyé un (gabarit Photoshop), sinon
+          celui du site. Repli sur le décor d'origine si l'image ne charge pas : une
+          image cassée en pleine diffusion coûte plus cher qu'un cadre en trop. */}
+      <img
+        src={event.backgroundUrl || (sansCam ? FOND_SANS_CAM : FOND)}
+        onError={(e) => { if (!e.currentTarget.src.endsWith(FOND)) e.currentTarget.src = FOND; }}
+        alt=""
+        className="absolute inset-0 z-10 h-full w-full"
+      />
       {/* Calques cadres, plein écran (le cadre est dessiné à sa place) : la case du
           chrono avec le timer, les contours des cartes quand l'affiche est visible.
           Entre le fond (z-10) et le contenu texte/carte (z-20). */}
-      {!vitrine && event.timerVisible !== false && (
-        <img src="/stream/Chrono.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
-      )}
+      <img
+        src="/stream/Chrono.webp"
+        alt=""
+        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
+      />
       {/* Cadres liés au MODE, pas au nombre de cartes : on peut poser un cadre vide
           (deck pas encore collé) puis y charger les cartes. */}
-      {mode === "split" && (
-        <img src="/stream/cartes_gauche.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
-      )}
-      {(mode === "mixed" || mode === "split") && (
-        <img src="/stream/cartes_droite.webp" alt="" className="absolute inset-0 z-[11] h-full w-full" />
-      )}
-      {event.pointsVisible !== false && <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />}
+      <img
+        src="/stream/cartes_gauche.webp"
+        alt=""
+        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: mode === "split" ? 1 : 0 }}
+      />
+      <img
+        src="/stream/cartes_droite.webp"
+        alt=""
+        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
+      />
+      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={event.pointsVisible !== false} />
       <Side
         p={state.players[0]}
         side="left"
         format={state.format}
+        sansCam={sansCam}
         footer={
           <>
             {/* De haut en bas : titre du tournoi, logo, ronde, chrono. Le titre se pose
                 juste au-dessus du logo ; sans logo il descend dans la place laissée
                 libre pour ne pas flotter tout en haut avec du vide dessous. */}
-            {!vitrine && event.title && (
+            {event.title && (
               <div
-                className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center ${event.logoUrl ? "justify-end" : "justify-center"}`}
+                className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center transition-opacity duration-300 ease-out ${event.logoUrl ? "justify-end" : "justify-center"}`}
                 // Avec logo, le titre est ancré en bas de sa case : il collait au
                 // trait doré du cadre au-dessus. Descendu de 12 px, le logo suit
                 // d'autant pour ne pas se faire recouvrir (il finit toujours à 892,
                 // au-dessus de la ronde).
-                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 640 : 700, height: event.logoUrl ? 66 : 190 }}
+                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 640 : 700, height: event.logoUrl ? 66 : 190, opacity: vitrine ? 0 : 1 }}
               >
                 {/* Gros titre sur une ou deux lignes : FitText montre TOUT le texte en
                     réduisant si besoin, sans jamais couper ni « … », et sans dépasser
@@ -458,35 +560,31 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
               </div>
             )}
             {/* z-20 : sans lui le logo passait sous le cadre du fond, donc invisible. */}
-            {!vitrine && event.logoUrl && (
-              <img
-                src={event.logoUrl}
-                alt=""
-                className="absolute z-20 object-contain"
-                style={{ left: SLOT.x.left, width: SLOT.width, top: 708, height: 184 }}
-              />
-            )}
+            <div className="absolute z-20" style={{ left: SLOT.x.left, width: SLOT.width, top: 708, height: 184 }}>
+              <ImageFondu src={!vitrine && event.logoUrl ? event.logoUrl : null} imgClassName="object-contain" />
+            </div>
             {/* La ronde au-dessus, sur le fond bleu ; le chrono dans la case dorée,
                 en encre sombre puisque le fond est jaune. Cachée en vitrine (deux
                 cadres) comme le reste de la colonne gauche. */}
-            {!vitrine && event.round && (
+            {event.round && (
               <div
-                className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
-                style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height }}
+                className="absolute z-20 flex flex-col justify-center overflow-hidden px-2 transition-opacity duration-300 ease-out"
+                style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height, opacity: vitrine ? 0 : 1 }}
               >
                 <FitText chars={11} className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
                   {event.round}
                 </FitText>
               </div>
             )}
-            {!vitrine && event.timerVisible !== false && (
-              <div
-                className="absolute z-20"
-                style={{ left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height }}
-              >
-                <Timer endsAt={event.endsAt} paused={event.paused} />
-              </div>
-            )}
+            <div
+              className="absolute z-20 transition-opacity duration-300 ease-out"
+              style={{
+                left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height,
+                opacity: !vitrine && event.timerVisible !== false ? 1 : 0,
+              }}
+            >
+              <Timer endsAt={event.endsAt} paused={event.paused} />
+            </div>
           </>
         }
       />
@@ -494,6 +592,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         p={state.players[1]}
         side="right"
         format={state.format}
+        sansCam={sansCam}
         footer={null}
       />
       {/* Deux cadres, gauche et droite, au-dessus du décor (z-20). Le mode a déjà
@@ -514,7 +613,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
   const [a, b] = state.players;
   return (
     <div className={styles.root}>
-      {state.event.pointsVisible !== false && <Points max={state.maxPoints} a={state.points.a} b={state.points.b} />}
+      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} />
       {[a, b].map((p, i) => (
         <div
           key={i}
@@ -525,7 +624,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
               sa couleur au bandeau et qui identifie le joueur d'un coup d'oeil. */}
           {p.legendName && getBannerUrl(p.legendName) && (
             <div className="relative h-[104px]">
-              <img src={getBannerUrl(p.legendName)!} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_28%]" />
+              <ImageFondu src={getBannerUrl(p.legendName)} imgClassName="object-cover object-[50%_28%]" />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
             </div>
           )}

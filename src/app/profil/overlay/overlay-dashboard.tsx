@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  AlertTriangle, ArrowLeftRight, Check, Copy, Eraser, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
+  AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, entrelace, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, entrelace, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
@@ -21,7 +21,37 @@ type Legend = { id: string; name: string; imageUrl: string | null; domains: stri
 function lienNonImage(url: string): boolean {
   const u = url.trim();
   if (!u) return false;
+  // Un logo envoyé depuis un fichier est servi par notre API, sans extension dans
+  // l'adresse. L'avertissement tomberait à tort sur lui.
+  if (u.startsWith("/api/overlay/")) return false;
   return !/\.(png|jpe?g|webp|gif|avif|svg)([?#]|$)/i.test(u);
+}
+
+/**
+ * Réduit une image choisie sur le disque avant de l'envoyer.
+ *
+ * Le logo s'affiche dans un cadre de 275x184 : une photo de quatre méga-octets
+ * n'apporte rien à l'écran. Le décor, lui, garde ses 1920 px : il se pose au pixel
+ * près sur les découpes du gabarit, le réduire décalerait tout. On redessine en WebP,
+ * qui garde la transparence — un décor sans transparence bouche la zone de jeu.
+ * Un fichier déjà léger part tel quel : ça garde un GIF animé animé.
+ */
+async function preparerImage(fichier: File, cote: number): Promise<Blob> {
+  if (fichier.size <= 400 * 1024 && TYPES_IMAGE.includes(fichier.type)) return fichier;
+  const image = await createImageBitmap(fichier);
+  const facteur = Math.min(1, cote / Math.max(image.width, image.height));
+  const largeur = Math.max(1, Math.round(image.width * facteur));
+  const hauteur = Math.max(1, Math.round(image.height * facteur));
+  const toile = document.createElement("canvas");
+  toile.width = largeur;
+  toile.height = hauteur;
+  const ctx = toile.getContext("2d");
+  if (!ctx) throw new Error("canvas");
+  ctx.drawImage(image, 0, 0, largeur, hauteur);
+  image.close();
+  return new Promise((resoudre, rejeter) => {
+    toile.toBlob((b) => (b ? resoudre(b) : rejeter(new Error("blob"))), "image/webp", 0.92);
+  });
 }
 
 /**
@@ -127,6 +157,48 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
   const [brouillonCam, setBrouillonCam] = useState<[string, string]>(["", ""]);
   const [brouillonLogo, setBrouillonLogo] = useState("");
+  const fichierLogo = useRef<HTMLInputElement | null>(null);
+  const fichierFond = useRef<HTMLInputElement | null>(null);
+  const [envoi, setEnvoi] = useState<GenreMedia | null>(null);
+  const [erreurMedia, setErreurMedia] = useState<string | null>(null);
+  const sansCam = state.event.layout === "nocam";
+
+  // Envoi d'une image depuis le disque : le logo du tournoi, ou le décor entier. Le
+  // fichier est réduit dans le navigateur, puis posé en base ; l'état ne porte que son
+  // adresse. Y mettre l'image elle-même ferait repasser des dizaines de kilo-octets à
+  // chaque relecture de l'habillage, toutes les 1,5 s, pendant toute la diffusion.
+  async function envoyerMedia(genre: GenreMedia, fichier: File) {
+    setErreurMedia(null);
+    setEnvoi(genre);
+    try {
+      const corps = await preparerImage(fichier, COTE_MAX_MEDIA[genre]);
+      const r = await fetch(`/api/overlay/media?kind=${genre}`, { method: "POST", headers: { "Content-Type": corps.type }, body: corps });
+      const corpsReponse = (await r.json().catch(() => ({}))) as { url?: string; error?: string };
+      if (!r.ok || !corpsReponse.url) {
+        setErreurMedia(corpsReponse.error ?? `${t("L’envoi de l’image a échoué.")} (${r.status})`);
+        return;
+      }
+      if (genre === "logo") {
+        setBrouillonLogo("");
+        update({ event: { logoUrl: corpsReponse.url } });
+      } else {
+        update({ event: { backgroundUrl: corpsReponse.url } });
+      }
+    } catch {
+      setErreurMedia(t("L’envoi de l’image a échoué."));
+    } finally {
+      setEnvoi(null);
+      const champ = genre === "logo" ? fichierLogo : fichierFond;
+      if (champ.current) champ.current.value = "";
+    }
+  }
+
+  /** Retire une image envoyée : l'adresse dans l'état, et les octets en base. */
+  function retirerMedia(genre: GenreMedia) {
+    update({ event: genre === "logo" ? { logoUrl: "" } : { backgroundUrl: "" } });
+    if (genre === "logo") setBrouillonLogo("");
+    void fetch(`/api/overlay/media?kind=${genre}`, { method: "DELETE" }).catch(() => {});
+  }
   const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
   // Coercition volontaire : un état sauvé sous l'ANCIENNE forme portait `auto` en
   // tableau et pas de `mode`. Sans ça, `?? false` garde le tableau (truthy), le patch
@@ -166,6 +238,50 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     const liste = cards.lists[i];
     return liste.length ? liste[((cards.index[i] % liste.length) + liste.length) % liste.length] : null;
   };
+
+  // Recherche d'une carte à montrer sans coller de decklist : « c'est quoi cette
+  // carte ? » pendant un commentaire. On ne charge la base de cartes qu'au premier
+  // usage du champ — un tableau de bord ouvert toute la journée n'a pas à la tirer
+  // pour rien.
+  const [cartes, setCartes] = useState<{ name: string; imageUrl: string | null }[] | null>(null);
+  const [chargeCartes, setChargeCartes] = useState(false);
+  const [rechCarte, setRechCarte] = useState("");
+
+  function chargerCartes() {
+    if (cartes || chargeCartes) return;
+    setChargeCartes(true);
+    fetch("/api/cards")
+      .then((r) => r.json())
+      .then((liste: { name: string; imageUrl: string | null }[]) => {
+        // Une même carte revient en plusieurs éditions : on garde un nom une fois.
+        const parNom = new Map<string, { name: string; imageUrl: string | null }>();
+        for (const c of liste) if (!parNom.has(c.name)) parNom.set(c.name, { name: c.name, imageUrl: c.imageUrl });
+        setCartes([...parNom.values()]);
+      })
+      .catch(() => {})
+      .finally(() => setChargeCartes(false));
+  }
+
+  const resultatsCartes = (() => {
+    const q = rechCarte.trim().toLowerCase();
+    if (!cartes || q.length < 2) return [];
+    return cartes.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 8);
+  })();
+
+  // La carte cherchée rejoint la liste du joueur 1 (celle qui alimente le cadre) et
+  // passe à l'écran. Tout part en UNE sauvegarde : ajouter puis appeler `montrer`
+  // relirait la liste d'avant, et l'index tomberait à côté.
+  function montrerCarteCherchee(nom: string) {
+    const lists: [string[], string[]] = cards.lists[0].includes(nom)
+      ? cards.lists
+      : [[...cards.lists[0], nom], cards.lists[1]];
+    const mode = cards.mode === "none" ? "mixed" : cards.mode;
+    const cadre: 0 | 1 = mode === "mixed" ? 1 : 0;
+    const pos = mode === "mixed" ? entrelace(lists[0], lists[1]).indexOf(nom) : lists[0].indexOf(nom);
+    majCards({ lists, mode, auto: false, index: paire(cards.index, cadre, Math.max(0, pos)) });
+    setRechCarte("");
+  }
+
   const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   // `text-base sm:text-sm` : sous 16 px, iOS zoome dès qu'on touche un champ et
@@ -259,6 +375,51 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
+          <span className="text-sm text-ink-secondary">{t("Décor")}</span>
+          <select
+            value={sansCam ? "nocam" : "cams"}
+            onChange={(e) => update({ event: { layout: e.target.value as "cams" | "nocam" } })}
+            aria-label={t("Décor")}
+            className={selectCls}
+          >
+            <option value="cams">{t("Avec cadres caméra")}</option>
+            <option value="nocam">{t("Sans cadres caméra")}</option>
+          </select>
+          <p className="w-full text-xs text-ink-muted">
+            {t("Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : les deux cadres portrait disparaissent et la Légende prend la place.")}
+          </p>
+          {/* Décor maison. Le gabarit est fourni juste à côté : sans lui, une image
+              quelconque décale tout, parce que les découpes doivent tomber au pixel
+              près sur les cases que le code remplit. */}
+          <div className="flex w-full flex-wrap items-center gap-2 border-t border-hairline pt-3">
+            <span className="text-sm text-ink-secondary">{t("Votre propre décor")}</span>
+            <input
+              ref={fichierFond}
+              type="file"
+              accept={TYPES_IMAGE.join(",")}
+              className="hidden"
+              onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("background", f); }}
+            />
+            <button onClick={() => fichierFond.current?.click()} disabled={envoi !== null} className={btnVide}>
+              <Upload size={15} aria-hidden />
+              {envoi === "background" ? t("Envoi…") : t("Depuis un fichier")}
+            </button>
+            <a href="/stream/layout.psd" download className={btnVide}>
+              <Download size={15} aria-hidden />
+              {t("Gabarit Photoshop")}
+            </a>
+            {state.event.backgroundUrl && (
+              <button onClick={() => retirerMedia("background")} className={btnDanger}>
+                <X size={15} aria-hidden />
+                {t("Reprendre le décor du site")}
+              </button>
+            )}
+            <p className="w-full text-xs text-ink-muted">
+              {t("1920 x 1080, PNG ou WebP, transparent là où le jeu doit se voir. Partez du gabarit : les découpes doivent tomber au pixel près.")}
+            </p>
+          </div>
+        </div>
+        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Pas de caméra ni de cadre ?")}</span>
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
           <button onClick={() => navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}?compact=1`)} className={btnVide}>
@@ -335,6 +496,9 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                   </div>
                 </div>
 
+                {/* Décor sans cadres : plus rien où poser une caméra. On enlève les
+                    champs plutôt que de les laisser sans effet visible. */}
+                {!sansCam && (
                 <div>
                   <span className="mb-1 block text-xs text-ink-muted">{t("Caméra (lien VDO.Ninja)")}</span>
                   {/* `flex-wrap` + `min-w-full` : avec une caméra chargée il y a trois
@@ -381,6 +545,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                     {t("Fond de webcam (sans caméra)")}
                   </label>
                 </div>
+                )}
               </div>
             );
           })}
@@ -530,6 +695,41 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
             />
           </div>
 
+          {/* Montrer une carte sans rien coller : on tape son nom, on clique, elle
+              est à l'écran. Jusqu'ici il fallait une decklist pour ça. */}
+          <div className="rounded-xl border border-hairline bg-surface p-3">
+            <span className="mb-1 block text-xs text-ink-muted">{t("Montrer une carte sans decklist")}</span>
+            <input
+              value={rechCarte}
+              onFocus={chargerCartes}
+              onChange={(e) => setRechCarte(e.target.value)}
+              placeholder={t("Chercher une carte…")}
+              aria-label={t("Montrer une carte sans decklist")}
+              className={inputCls}
+            />
+            {resultatsCartes.length > 0 && (
+              <ul className="mt-2 space-y-1">
+                {resultatsCartes.map((c) => (
+                  <li key={c.name}>
+                    <button
+                      onClick={() => montrerCarteCherchee(c.name)}
+                      className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm hover:bg-surface-raised"
+                    >
+                      {c.imageUrl && <img src={c.imageUrl} alt="" className="h-9 w-7 shrink-0 rounded object-cover" />}
+                      <span className="truncate">{c.name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {rechCarte.trim().length >= 2 && cartes && resultatsCartes.length === 0 && (
+              <p className="mt-2 text-xs text-ink-muted">{t("Aucune carte à ce nom.")}</p>
+            )}
+            <p className="mt-1 text-xs text-ink-muted">
+              {t("La carte rejoint la liste du joueur 1 et passe à l’écran tout de suite.")}
+            </p>
+          </div>
+
           <div className="grid gap-3 sm:grid-cols-2">
             {([0, 1] as const).map((i) => {
               const liste = cards.lists[i];
@@ -618,7 +818,11 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("4. Le tournoi")}</h2>
-        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+        {/* `items-start`, pas `items-end` : les deux colonnes n'ont plus la même
+            hauteur depuis que le logo porte un bouton d'envoi et sa ligne d'aide.
+            Alignées par le bas, « Nom du tournoi » tombait au milieu du cadre, sous
+            le champ d'en face. On aligne les deux étiquettes en haut. */}
+        <div className="flex flex-wrap items-start gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block min-w-[220px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Nom du tournoi")}</span>
             {/* Zone de texte plutôt qu'une ligne : le titre s'affiche en gros et peut
@@ -634,20 +838,46 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           <div className="min-w-[280px] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
             {/* Même raison que la caméra : à deux boutons, le champ tombait à 98 px
-                sur un téléphone. On ne colle pas une adresse dans 98 px. */}
-            <div className="flex flex-wrap gap-2">
+                sur un téléphone. On ne colle pas une adresse dans 98 px.
+                Les boutons sont dans leur propre boîte : à trois, « Retirer » partait
+                seul à la ligne pendant que les deux autres restaient en haut. */}
+            <div className="flex flex-wrap items-start gap-2">
               <input value={brouillonLogo} onChange={(e) => setBrouillonLogo(e.target.value)} placeholder="https://…" aria-label={t("Logo (lien d’image)")} className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"} />
+              <div className="flex flex-wrap gap-2">
               <button onClick={() => update({ event: { logoUrl: brouillonLogo } })} disabled={!brouillonLogo.trim()} className={btnPlein}>
                 <Upload size={15} aria-hidden />
                 {t("Charger")}
               </button>
+              {/* Le vrai besoin : personne n'héberge d'images. Le fichier part chez
+                  nous et l'état ne garde qu'une adresse. */}
+              <input
+                ref={fichierLogo}
+                type="file"
+                accept={TYPES_IMAGE.join(",")}
+                className="hidden"
+                onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("logo", f); }}
+              />
+              <button onClick={() => fichierLogo.current?.click()} disabled={envoi !== null} className={btnVide}>
+                <Upload size={15} aria-hidden />
+                {envoi === "logo" ? t("Envoi…") : t("Depuis un fichier")}
+              </button>
               {state.event.logoUrl && (
-                <button onClick={() => { update({ event: { logoUrl: "" } }); setBrouillonLogo(""); }} className={btnDanger}>
+                <button onClick={() => retirerMedia("logo")} className={btnDanger}>
                   <X size={15} aria-hidden />
                   {t("Retirer")}
                 </button>
               )}
+              </div>
             </div>
+            <p className="mt-1 text-xs text-ink-muted">
+              {t("PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.")}
+            </p>
+            {erreurMedia && (
+              <p role="alert" className="mt-2 flex items-start gap-1.5 text-xs text-error">
+                <AlertTriangle size={14} className="mt-px shrink-0" aria-hidden />
+                {erreurMedia}
+              </p>
+            )}
             {/* Une adresse de PAGE collée ici ne montre rien à l'écran et rien ne le
                 disait : le cadre du logo restait vide sans un mot. La règle du dépôt
                 est de ne jamais avaler une donnée qui ne passe pas. */}

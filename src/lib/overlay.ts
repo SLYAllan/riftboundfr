@@ -1,5 +1,51 @@
 export type OverlayFormat = "BO1" | "BO3" | "BO5";
 
+/** Décor : avec cadres webcam, ou sans. */
+export type OverlayLayout = "cams" | "nocam";
+
+/**
+ * Formats acceptés pour une image envoyée depuis un fichier. Lus des deux côtés : le
+ * champ de fichier du tableau de bord et la route qui reçoit. Pas de SVG — servi sur
+ * notre domaine, il peut porter du script.
+ */
+export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"];
+
+/** Les deux images qu'un streamer peut fournir. */
+export type GenreMedia = "logo" | "background";
+
+export function estGenreMedia(v: string): v is GenreMedia {
+  return v === "logo" || v === "background";
+}
+
+/**
+ * Côté le plus long après réduction dans le navigateur, et poids maximum accepté.
+ * Le décor doit rester en 1920x1080 : il se pose au pixel près sur les découpes du
+ * gabarit. Le logo, lui, s'affiche dans une case de 275x184.
+ */
+export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920 };
+
+/**
+ * Le vrai format d'une image, lu dans ses premiers octets.
+ *
+ * L'en-tête `Content-Type` d'un envoi est déclaré par celui qui envoie : il suffit
+ * d'écrire `image/png` au-dessus de n'importe quoi. On ne garde donc en base que ce
+ * qu'on a reconnu, et on le sert sous CE type-là, jamais sous le type annoncé.
+ * Rend `null` si la signature n'est pas reconnue.
+ */
+export function typeReel(octets: Uint8Array): string | null {
+  const a = (i: number) => octets[i];
+  if (octets.length >= 8 && a(0) === 0x89 && a(1) === 0x50 && a(2) === 0x4e && a(3) === 0x47) return "image/png";
+  if (octets.length >= 3 && a(0) === 0xff && a(1) === 0xd8 && a(2) === 0xff) return "image/jpeg";
+  if (octets.length >= 4 && a(0) === 0x47 && a(1) === 0x49 && a(2) === 0x46 && a(3) === 0x38) return "image/gif";
+  if (
+    octets.length >= 12 &&
+    a(0) === 0x52 && a(1) === 0x49 && a(2) === 0x46 && a(3) === 0x46 &&
+    a(8) === 0x57 && a(9) === 0x45 && a(10) === 0x42 && a(11) === 0x50
+  ) return "image/webp";
+  return null;
+}
+export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024 };
+
 export interface OverlayPlayer {
   name: string;
   legendId: string | null;
@@ -31,7 +77,12 @@ export interface OverlayStateData {
   // les points en cours pour autant.
   // `paused` : secondes restantes figées quand le chrono est en pause (null = il
   // tourne). En pause on gèle l'affichage ; reprendre repose un `endsAt`.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null };
+  // `layout` : quel décor. "cams" = celui d'origine, avec un cadre webcam par joueur.
+  // "nocam" = le décor sans ces cadres, pour les locales qui n'ont qu'une caméra
+  // plateau : la Légende occupe alors la grande case.
+  // `backgroundUrl` : décor fourni par le streamer, envoyé depuis un fichier à partir
+  // du gabarit Photoshop. Vide = un des deux décors du site.
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; layout?: OverlayLayout; backgroundUrl?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -62,7 +113,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, layout: "cams", backgroundUrl: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -146,6 +197,9 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     timerVisible: e.timerVisible !== false,
     pointsVisible: e.pointsVisible !== false,
     paused: typeof e.paused === "number" && Number.isFinite(e.paused) ? entier(e.paused, 0, 86_400, 0) : null,
+    // Absent = décor d'origine : c'est ce que porte tout état écrit avant ce champ.
+    layout: e.layout === "nocam" ? "nocam" : "cams",
+    backgroundUrl: texte(e.backgroundUrl, URL_MAX),
   };
 }
 
