@@ -1,13 +1,25 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import type { Langue } from "./i18n";
 
-// Règles de base officielles, version française, extraites du PDF du Hub des règles
-// (playriftbound.com/fr-fr/rules-hub/, dernière mise à jour du 16 juillet 2026) par
-// `scripts/parse-core-rules.py`. Le PDF fait 44 Mo et n'est pas versionné ; le JSON
-// est la source de la recherche.
+// Règles de base officielles, extraites des PDF par `scripts/parse-core-rules.py`.
+// Les PDF pèsent plus de 40 Mo et ne sont pas versionnés ; les JSON font foi pour la
+// recherche. Même révision des deux côtés (16 juillet 2026) et MÊME numérotation :
+// la règle 103.2 porte le même numéro en français et en anglais.
+//
+// La version anglaise a été ajoutée parce que `/en/outils/regles` servait les règles
+// françaises à un lecteur anglophone — 2 600 phrases dans la mauvaise langue.
 export const CORE_RULES_UPDATED = "16 juillet 2026";
-export const CORE_RULES_PDF =
-  "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/f668751be265e4bdf828145b593a74e0ddab6a9f.pdf";
+
+const PDF: Record<Langue, string> = {
+  fr: "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/f668751be265e4bdf828145b593a74e0ddab6a9f.pdf",
+  en: "https://static.dotgg.gg/media/sites/67/2026/03/Riftbound-Core-Rules-RUP4-July-16-2026.pdf",
+};
+
+/** Le PDF officiel de la langue demandée. */
+export function pdfDesRegles(langue: Langue): string {
+  return PDF[langue];
+}
 
 export interface CoreRule {
   id: string;
@@ -16,19 +28,22 @@ export interface CoreRule {
   top: string;
 }
 
-// Le fichier est lu une fois par processus : 2 000 règles, on ne relit pas à chaque
-// recherche.
-let cache: CoreRule[] | null = null;
+// Le fichier est lu une fois par processus et par langue : 2 300 règles, on ne relit
+// pas à chaque recherche.
+const cache = new Map<Langue, CoreRule[]>();
 
-export async function loadCoreRules(): Promise<CoreRule[]> {
-  if (cache) return cache;
+export async function loadCoreRules(langue: Langue = "fr"): Promise<CoreRule[]> {
+  const deja = cache.get(langue);
+  if (deja) return deja;
+  let rules: CoreRule[];
   try {
-    const buf = await readFile(join(process.cwd(), "data", "rules", "core-rules-fr.json"), "utf8");
-    cache = JSON.parse(buf) as CoreRule[];
+    const buf = await readFile(join(process.cwd(), "data", "rules", `core-rules-${langue}.json`), "utf8");
+    rules = JSON.parse(buf) as CoreRule[];
   } catch {
-    cache = []; // fichier absent : la recherche marche sans, avec les autres sources
+    rules = []; // fichier absent : la recherche marche sans, avec les autres sources
   }
-  return cache;
+  cache.set(langue, rules);
+  return rules;
 }
 
 export interface RuleChapter {
@@ -38,12 +53,13 @@ export interface RuleChapter {
 }
 
 // Le regroupement par chapitre ne dépend pas de la requête : on le calcule une fois
-// par processus, pas à chaque affichage de la page.
-let chapters: RuleChapter[] | null = null;
+// par processus et par langue, pas à chaque affichage de la page.
+const chapters = new Map<Langue, RuleChapter[]>();
 
-export async function loadRuleChapters(): Promise<RuleChapter[]> {
-  if (chapters) return chapters;
-  const rules = await loadCoreRules();
+export async function loadRuleChapters(langue: Langue = "fr"): Promise<RuleChapter[]> {
+  const deja = chapters.get(langue);
+  if (deja) return deja;
+  const rules = await loadCoreRules(langue);
   const out: RuleChapter[] = [];
   // Le regroupement suit l'ordre du document : un même titre qui revient plus
   // loin ouvre un second chapitre. Sans suffixe, les deux portaient le même id
@@ -68,6 +84,6 @@ export async function loadRuleChapters(): Promise<RuleChapter[]> {
       out.push({ title, anchor: n === 1 ? base : `${base}-${n}`, rules: [r] });
     }
   }
-  chapters = out;
-  return chapters;
+  chapters.set(langue, out);
+  return out;
 }

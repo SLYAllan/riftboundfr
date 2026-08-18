@@ -11,8 +11,9 @@ import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
 import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
-import { loadCoreRules, loadRuleChapters, CORE_RULES_PDF, CORE_RULES_UPDATED, type CoreRule } from "@/lib/core-rules";
-import { metaTraduite, tr } from "@/lib/i18n-server";
+import { loadCoreRules, loadRuleChapters, pdfDesRegles, CORE_RULES_UPDATED, type CoreRule } from "@/lib/core-rules";
+import { langueCourante, metaTraduite, tr } from "@/lib/i18n-server";
+import { etiquetteLocale, type Langue } from "@/lib/i18n";
 
 const metadata: Metadata = {
   title: { absolute: "Règles de Riftbound en français - le texte officiel, cherchable" },
@@ -37,7 +38,12 @@ function fold(s: string): string {
 }
 
 // Raccourcis sous la barre : les questions qui reviennent le plus souvent.
-const SUGGESTIONS = ["Réserve", "Amplifié", "Flux", "Bannir", "Épuiser", "Conquête", "Caché", "Mulligan"];
+// Ces mots sont cherchés DANS le texte des règles : ils doivent être écrits dans la
+// langue du règlement affiché, sinon aucun ne rend de résultat sur la version anglaise.
+const SUGGESTIONS: Record<Langue, string[]> = {
+  fr: ["Réserve", "Amplifié", "Flux", "Bannir", "Épuiser", "Conquête", "Caché", "Mulligan"],
+  en: ["Sideboard", "Amplified", "Flux", "Banish", "Exhaust", "Conquer", "Hidden", "Mulligan"],
+};
 
 // Une carte de résultat et un bloc de règle partagent la même géométrie : rayon
 // extérieur 12, rembourrage 16, donc rayon intérieur 8 pour rester concentrique.
@@ -49,12 +55,15 @@ export default async function ReglesPage({
   searchParams: Promise<{ q?: string }>;
 }) {
   const t = await tr();
+  // Les règles existent dans les deux langues, avec la même numérotation. Sans ça,
+  // un lecteur anglophone recevait le règlement français en entier.
+  const langue = await langueCourante();
   const { q } = await searchParams;
   const query = (q ?? "").trim();
   const needle = fold(query);
   const hasQuery = needle.length >= 2;
 
-  const allRules = await loadCoreRules();
+  const allRules = await loadCoreRules(langue);
 
   const terms = hasQuery
     ? GLOSSARY_TERMS.filter(
@@ -103,7 +112,7 @@ export default async function ReglesPage({
   const total = terms.length + erratas.length + bans.length + rules.length + uniqueCards.length;
 
   // Le règlement complet, groupé par section dans l'ordre du document.
-  const chapters = hasQuery ? [] : await loadRuleChapters();
+  const chapters = hasQuery ? [] : await loadRuleChapters(langue);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
@@ -120,14 +129,14 @@ export default async function ReglesPage({
           {t("Le texte officiel en entier, tel que Riot le publie, plus les erratas, les cartes interdites et les mots-clés. Cherchez un terme pendant une partie, ou déroulez le règlement en entier.")}
         </p>
         <p className="mt-2 text-sm text-ink-muted">
-          Règles de base, mise à jour du {CORE_RULES_UPDATED}.{" "}
+          {t("Règles de base, mise à jour du")} {t(CORE_RULES_UPDATED)}.{" "}
           <a
-            href={CORE_RULES_PDF}
+            href={pdfDesRegles(langue)}
             target="_blank"
             rel="noopener noreferrer"
             className="text-arcane underline-offset-2 transition-colors duration-150 hover:underline"
           >
-            Document original
+            {t("Document original")}
           </a>
         </p>
       </header>
@@ -144,7 +153,7 @@ export default async function ReglesPage({
       </form>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        {SUGGESTIONS.map((s) => (
+        {SUGGESTIONS[langue].map((s) => (
           <Link
             key={s}
             href={`/outils/regles?q=${encodeURIComponent(s)}`}
@@ -286,7 +295,7 @@ export default async function ReglesPage({
             aria-label={t("Sommaire des règles")}
             className="mb-8 shrink-0 lg:sticky lg:top-20 lg:mb-0 lg:max-h-[calc(100dvh-6rem)] lg:w-64 lg:overflow-y-auto lg:pr-2 thin-scrollbar"
           >
-            <p className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">Sommaire</p>
+            <p className="text-[11px] font-bold uppercase tracking-wider text-ink-muted">{t("Sommaire")}</p>
             <ul className="mt-2 space-y-px">
               {chapters.map((c) => (
                 <li key={c.anchor}>
@@ -304,9 +313,8 @@ export default async function ReglesPage({
 
           <div className="min-w-0 flex-1">
             <p className="text-sm text-ink-muted">
-              {allRules.length.toLocaleString("fr-FR")} règles, dans l&apos;ordre du document
-              officiel. Le numéro à gauche est celui qu&apos;un arbitre vous demandera, et les
-              termes du glossaire sont cliquables.
+              {allRules.length.toLocaleString(etiquetteLocale(langue))}{" "}
+              {t("règles, dans l’ordre du document officiel. Le numéro à gauche est celui qu’un arbitre vous demandera, et les termes du glossaire sont cliquables.")}
             </p>
             {chapters.map((c) => (
               <section key={c.anchor} id={c.anchor} className="mt-8 scroll-mt-24">
