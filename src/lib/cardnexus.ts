@@ -160,6 +160,45 @@ interface Regroupee extends Carte {
 }
 
 /**
+ * Pour chaque nom de catalogue, l'impression la moins chère.
+ *
+ * Une carte est souvent imprimée plusieurs fois : l'édition ordinaire, et une
+ * édition « overnumbered » ou alt-art numérotée au-delà du set. À la table elles
+ * sont la MÊME carte, et le règlement les accepte toutes ; au marché, l'écart est
+ * énorme (Kennen, Heart of the Tempest : 1280 EUR contre 0,05 EUR).
+ *
+ * Une decklist de tournoi note l'impression que le joueur a enregistrée. Chiffrer
+ * dessus affichait un prix que personne ne paie, et le panier envoyait acheter la
+ * carte à 1280 EUR. Relevé sur la base : 410 decks affichaient un prix trop haut,
+ * de 225 EUR en moyenne pour un deck qui en vaut 114.
+ *
+ * Le nom du catalogue CardNexus réunit toutes les impressions d'une carte. Vérifié
+ * sur le relevé entier : sur 155 noms portant plusieurs impressions, AUCUN ne mêle
+ * deux cartes différentes — une Légende et son Champion gardent des noms distincts.
+ */
+function parNomMoinsCher(prix: FichierPrix): Map<string, PrixCarte> {
+  const index = new Map<string, PrixCarte>();
+  for (const p of Object.values(prix.cards)) {
+    const deja = index.get(p.nom);
+    if (!deja || p.eur < deja.eur) index.set(p.nom, p);
+  }
+  return index;
+}
+
+// Calculé une fois par relevé, comme les prix eux-mêmes.
+const indexParRelevé = new WeakMap<FichierPrix, Map<string, PrixCarte>>();
+
+/** L'impression la moins chère de la même carte, ou celle d'origine si elle est seule. */
+function laMoinsChere(p: PrixCarte, prix: FichierPrix): PrixCarte {
+  let index = indexParRelevé.get(prix);
+  if (!index) {
+    index = parNomMoinsCher(prix);
+    indexParRelevé.set(prix, index);
+  }
+  return index.get(p.nom) ?? p;
+}
+
+/**
  * Une ligne par article acheté, quantités additionnées.
  *
  * Deux regroupements en un, parce qu'une même carte arrive ici plusieurs fois
@@ -176,7 +215,11 @@ interface Regroupee extends Carte {
 function regrouper(cartes: Carte[], prix: FichierPrix | null): Regroupee[] {
   const parArticle = new Map<string, Regroupee>();
   for (const c of cartes) {
-    const p = prix?.cards[c.riftboundId] ?? null;
+    const brut = prix?.cards[c.riftboundId] ?? null;
+    // On chiffre et on vend l'impression la moins chère de la carte, pas celle que
+    // la decklist a notée : c'est la même carte, et c'est celle que le lecteur va
+    // acheter. C'est aussi ce que promet le « À partir de » affiché au-dessus.
+    const p = brut && prix ? laMoinsChere(brut, prix) : brut;
     const cle = p ? `p${p.productId}` : c.riftboundId;
     const deja = parArticle.get(cle);
     if (deja) deja.quantity += c.quantity;

@@ -72,6 +72,10 @@ describe("chiffrerDeck", () => {
       "ogn-091-298": { eur: 2, productId: 1, nom: "Pit Crew", source: "cardnexus", finition: "Standard" },
       "ogs-009-024": { eur: 1.5, productId: 9, nom: "Master Yi - Honed", source: "cardnexus", finition: "Standard" },
       "opp-009-024": { eur: 1.5, productId: 9, nom: "Master Yi - Honed", source: "cardnexus", finition: "Standard" },
+      // Deux impressions de la même carte : l'ordinaire, et celle numérotée au-delà
+      // du set. Même carte à la table, 90 EUR d'écart au marché.
+      "unl-120-219": { eur: 15, productId: 20, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Foil" },
+      "ven-179-166": { eur: 90, productId: 21, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Foil" },
     },
   };
 
@@ -138,6 +142,21 @@ describe("chiffrerDeck", () => {
     );
     expect(items).toEqual([{ productId: 1, finish: "Standard", language: "fr", quantity: 5 }]);
     expect(absentes).toEqual(["Inconnue"]);
+  });
+
+  // Une decklist de tournoi note l'impression enregistrée par le joueur. Chiffrer
+  // dessus affichait un prix que personne ne paie, et le panier envoyait acheter la
+  // carte chère alors que la même carte existe à 15 EUR.
+  it("chiffre la carte sur son impression la moins chère, pas sur celle notée", () => {
+    const d = chiffrerDeck([{ riftboundId: "ven-179-166", name: "Rengar, Trophy Hunter", quantity: 3 }], prix);
+    expect(d.total).toBe(45);
+    expect(d.lignes[0].eurUnitaire).toBe(15);
+  });
+
+  it("met la moins chère au panier, pas celle de la decklist", () => {
+    expect(lignesListe([{ riftboundId: "ven-179-166", name: "Rengar, Trophy Hunter", quantity: 3 }], prix).items).toEqual([
+      { productId: 20, finish: "Foil", language: "fr", quantity: 3 },
+    ]);
   });
 
   it("sans relevé, rend un total nul et tout en manquant plutôt que de planter", () => {
