@@ -29,6 +29,16 @@ les identifiants MCP dataforseo) :
 export DEEPSEEK_API_KEY=sk-...      # shell perso, pas un fichier suivi
 ```
 
+**Sur cette machine, la clé n'est PAS dans l'environnement** : elle est posée dans le
+magasin d'identifiants de pi, `~/.pi/agent/auth.json`, sous `deepseek`. Un
+`echo $DEEPSEEK_API_KEY` vide ne veut donc pas dire qu'elle manque. Avant d'annoncer
+que la vague ne peut pas partir, regarder ce fichier, puis confirmer d'un vrai appel :
+
+```bash
+pi -p --provider deepseek --model deepseek-v4-flash --approve \
+   --tools read,grep,glob --session-id wave-test "Réponds uniquement : OK"
+```
+
 Deux modèles, deux usages :
 
 | Modèle | Pour quoi |
