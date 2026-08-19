@@ -9,6 +9,11 @@ import { useT } from "@/components/i18n-provider";
 
 type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
 
+/** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
+function cleFond(genre: GenreMedia): "backgroundUrl" | "backgroundNocamUrl" {
+  return genre === "backgroundNocam" ? "backgroundNocamUrl" : "backgroundUrl";
+}
+
 /**
  * Un lien de logo qui ne finit pas par une extension d'image.
  *
@@ -162,6 +167,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   const [envoi, setEnvoi] = useState<GenreMedia | null>(null);
   const [erreurMedia, setErreurMedia] = useState<string | null>(null);
   const sansCam = state.event.layout === "nocam";
+  const genreFond: GenreMedia = sansCam ? "backgroundNocam" : "background";
 
   // Envoi d'une image depuis le disque : le logo du tournoi, ou le décor entier. Le
   // fichier est réduit dans le navigateur, puis posé en base ; l'état ne porte que son
@@ -182,7 +188,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         setBrouillonLogo("");
         update({ event: { logoUrl: corpsReponse.url } });
       } else {
-        update({ event: { backgroundUrl: corpsReponse.url } });
+        update({ event: { [cleFond(genre)]: corpsReponse.url } });
       }
     } catch {
       setErreurMedia(t("L’envoi de l’image a échoué."));
@@ -195,7 +201,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
 
   /** Retire une image envoyée : l'adresse dans l'état, et les octets en base. */
   function retirerMedia(genre: GenreMedia) {
-    update({ event: genre === "logo" ? { logoUrl: "" } : { backgroundUrl: "" } });
+    update({ event: genre === "logo" ? { logoUrl: "" } : { [cleFond(genre)]: "" } });
     if (genre === "logo") setBrouillonLogo("");
     void fetch(`/api/overlay/media?kind=${genre}`, { method: "DELETE" }).catch(() => {});
   }
@@ -214,29 +220,38 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   };
   const paire = <T,>(t: [T, T], i: 0 | 1, v: T): [T, T] => (i === 0 ? [v, t[1]] : [t[0], v]);
   const majCards = (p: Partial<OverlayStateData["cards"]>) => update({ cards: { ...cards, ...p } } as never);
+  // Carte actuellement à l'écran pour le joueur i (pour surligner). En manuel : la
+  // carte à l'index de son cadre (gauche = 0, droite = 1 ; en mixed les deux pointent
+  // le cadre droit via le défilé mêlé). Un index négatif = cadre vidé à la main.
+  const carteMontree = (i: 0 | 1): string | null => {
+    if (cards.mode === "none" || cards.auto) return null;
+    if (cards.mode === "mixed") {
+      const combine = entrelace(cards.lists[0], cards.lists[1]);
+      return combine.length && cards.index[1] >= 0 ? combine[cards.index[1] % combine.length] : null;
+    }
+    const liste = cards.lists[i];
+    return liste.length && cards.index[i] >= 0 ? liste[cards.index[i] % liste.length] : null;
+  };
   // Cliquer une carte = la montrer tout de suite, en manuel. Si rien n'est encore
   // affiché, on passe en « un cadre par joueur ». En « mixed » toutes les cartes vont
   // au cadre de droite (index dans le défilé mêlé) ; en « split » chaque joueur a son
   // cadre. La diapo auto se coupe pour rester sur la carte choisie.
+  //
+  // RECLIQUER la carte déjà à l'écran la retire : l'index du cadre passe à -1 et
+  // l'overlay n'affiche plus rien. Sans ça il fallait laisser la carte en place plus
+  // longtemps que voulu, ou changer de mode pour libérer le cadre.
   const montrer = (i: 0 | 1, nom: string) => {
+    const cadre: 0 | 1 = cards.mode === "mixed" ? 1 : i;
+    if (carteMontree(i) === nom) {
+      majCards({ auto: false, index: paire(cards.index, cadre, -1) });
+      return;
+    }
     if (cards.mode === "mixed") {
       const pos = entrelace(cards.lists[0], cards.lists[1]).indexOf(nom);
       majCards({ auto: false, index: paire(cards.index, 1, Math.max(0, pos)) });
     } else {
       majCards({ mode: "split", auto: false, index: paire(cards.index, i, Math.max(0, cards.lists[i].indexOf(nom))) });
     }
-  };
-  // Carte actuellement à l'écran pour le joueur i (pour surligner). En manuel : la
-  // carte à l'index de son cadre (gauche = 0, droite = 1 ; en mixed les deux pointent
-  // le cadre droit via le défilé mêlé).
-  const carteMontree = (i: 0 | 1): string | null => {
-    if (cards.mode === "none" || cards.auto) return null;
-    if (cards.mode === "mixed") {
-      const combine = entrelace(cards.lists[0], cards.lists[1]);
-      return combine.length ? combine[((cards.index[1] % combine.length) + combine.length) % combine.length] : null;
-    }
-    const liste = cards.lists[i];
-    return liste.length ? liste[((cards.index[i] % liste.length) + liste.length) % liste.length] : null;
   };
 
   // Recherche d'une carte à montrer sans coller de decklist : « c'est quoi cette
@@ -391,31 +406,40 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
           {/* Décor maison. Le gabarit est fourni juste à côté : sans lui, une image
               quelconque décale tout, parce que les découpes doivent tomber au pixel
               près sur les cases que le code remplit. */}
+          {/* Le décor envoyé vaut pour le mode CHOISI juste au-dessus : les deux
+              gabarits n'ont pas les mêmes découpes, un seul fond pour les deux
+              tomberait à côté. On garde donc les deux, et on montre celui du mode
+              courant. */}
           <div className="flex w-full flex-wrap items-center gap-2 border-t border-hairline pt-3">
-            <span className="text-sm text-ink-secondary">{t("Votre propre décor")}</span>
+            <span className="text-sm text-ink-secondary">
+              {sansCam ? t("Votre propre décor (sans cadres caméra)") : t("Votre propre décor (avec cadres caméra)")}
+            </span>
             <input
               ref={fichierFond}
               type="file"
               accept={TYPES_IMAGE.join(",")}
               className="hidden"
-              onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("background", f); }}
+              onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia(genreFond, f); }}
             />
             <button onClick={() => fichierFond.current?.click()} disabled={envoi !== null} className={btnVide}>
               <Upload size={15} aria-hidden />
-              {envoi === "background" ? t("Envoi…") : t("Depuis un fichier")}
+              {envoi === genreFond ? t("Envoi…") : t("Depuis un fichier")}
             </button>
             <a href="/stream/layout.psd" download className={btnVide}>
               <Download size={15} aria-hidden />
               {t("Gabarit Photoshop")}
             </a>
-            {state.event.backgroundUrl && (
-              <button onClick={() => retirerMedia("background")} className={btnDanger}>
+            {state.event[cleFond(genreFond)] && (
+              <button onClick={() => retirerMedia(genreFond)} className={btnDanger}>
                 <X size={15} aria-hidden />
                 {t("Reprendre le décor du site")}
               </button>
             )}
             <p className="w-full text-xs text-ink-muted">
               {t("1920 x 1080, PNG ou WebP, transparent là où le jeu doit se voir. Partez du gabarit : les découpes doivent tomber au pixel près.")}
+            </p>
+            <p className="w-full text-xs text-ink-muted">
+              {t("Ce décor ne sert qu’au mode choisi ci-dessus. L’autre mode garde le sien.")}
             </p>
           </div>
         </div>
@@ -647,7 +671,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Montrer une carte")}</h2>
         <div className="space-y-4 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
-            {t("Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
+            {t("Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer, et reclique-la pour la retirer de l’écran. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
           </p>
 
           {/* Tous les réglages ensemble : quel affichage, diapo auto, durée. */}
@@ -795,6 +819,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
                             <button
                               type="button"
                               onClick={() => montrer(i, c)}
+                              title={c === montree ? t("Cliquez de nouveau pour la retirer de l’écran") : undefined}
                               // La liste des cartes se clique en plein match : une
                               // ligne de 24 px se rate au doigt. 36 px, et la liste
                               // reste dans son cadre qui défile.

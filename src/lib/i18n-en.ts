@@ -109,7 +109,12 @@ export const EN: Record<string, string> = {
   "Depuis un fichier": "From a file",
   "Envoi…": "Uploading…",
   "L’envoi de l’image a échoué.": "The image upload failed.",
+  "Cliquez de nouveau pour la retirer de l’écran": "Click again to take it off screen",
   "Votre propre décor": "Your own overlay art",
+  "Votre propre décor (avec cadres caméra)": "Your own overlay art (with camera frames)",
+  "Votre propre décor (sans cadres caméra)": "Your own overlay art (without camera frames)",
+  "Ce décor ne sert qu’au mode choisi ci-dessus. L’autre mode garde le sien.":
+    "This art only serves the mode picked above. The other mode keeps its own.",
   "Gabarit Photoshop": "Photoshop template",
   "Reprendre le décor du site": "Back to the site art",
   "1920 x 1080, PNG ou WebP, transparent là où le jeu doit se voir. Partez du gabarit : les découpes doivent tomber au pixel près.":
@@ -153,8 +158,8 @@ export const EN: Record<string, string> = {
   "Ce lien ne pointe pas vers un fichier image (.png, .jpg, .webp) : rien ne s’affichera. Sur la page de l’image, faites un clic droit puis « Copier l’adresse de l’image ».":
     "This link doesn’t point to an image file (.png, .jpg, .webp), so nothing will show. Right-click the image itself and pick “Copy image address”.",
   "3. Montrer une carte": "3. Show a card",
-  "Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.":
-    "Paste one decklist per player, battlefields are left out. Pick a layout, then click a card to put it on screen. “Auto slideshow” cycles through them for you; otherwise you choose card by card. “Two frames” hides the timer and the logo on the left.",
+  "Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer, et reclique-la pour la retirer de l’écran. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.":
+    "Paste one decklist per player, battlefields are left out. Pick a layout, then click a card to put it on screen, and click it again to take it off. “Auto slideshow” cycles through them for you; otherwise you choose card by card. “Two frames” hides the timer and the logo on the left.",
   Affichage: "Layout",
   "Affichage des cartes": "Card layout",
   Rien: "Off",

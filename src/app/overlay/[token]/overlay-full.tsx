@@ -17,6 +17,10 @@ const SLOT = {
   x: { left: 43, right: 1606 },
   width: 275,
   name: { top: 24, height: 56 },
+  // Décor sans caméra : il n'y a pas de bandeau en haut, le pseudo flottait seul à
+  // 160 px au-dessus du cadre. Le trait doré du cadre commence à y 243 (mesuré sur
+  // layout_sanscam.webp) : on pose le pseudo juste dessus.
+  nameSansCam: { top: 181, height: 56 },
   legend: { top: 88, height: 141 },
   cam: { top: 246, height: 299 },
   bf: { top: 545, height: 90 },
@@ -213,10 +217,15 @@ function Side({
   const cam = camSrc(p.camUrl);
   return (
     <div className="absolute inset-0">
-      {/* Pseudo, sur le bandeau au-dessus du premier cadre */}
+      {/* Pseudo, juste au-dessus du premier cadre. */}
       <div
         className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
-        style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.name.top, height: SLOT.name.height }}
+        style={{
+          left: SLOT.x[side],
+          width: SLOT.width,
+          top: (sansCam ? SLOT.nameSansCam : SLOT.name).top,
+          height: (sansCam ? SLOT.nameSansCam : SLOT.name).height,
+        }}
       >
         <FitText chars={13} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
           {p.name || "—"}
@@ -440,7 +449,9 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auto, seconds, actives.length]);
   const brut = auto ? tick : index;
-  const nom = actives.length ? actives[((brut % actives.length) + actives.length) % actives.length] : null;
+  // `brut < 0` = cadre vidé à la main (on a recliqué la carte à l'écran). Sans ce
+  // test, le modulo ramènerait -1 sur la DERNIÈRE carte de la liste au lieu de rien.
+  const nom = actives.length && brut >= 0 ? actives[((brut % actives.length) + actives.length) % actives.length] : null;
   return <CarteMontree nom={nom} slot={slot} />;
 }
 
@@ -503,7 +514,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
           celui du site. Repli sur le décor d'origine si l'image ne charge pas : une
           image cassée en pleine diffusion coûte plus cher qu'un cadre en trop. */}
       <img
-        src={event.backgroundUrl || (sansCam ? FOND_SANS_CAM : FOND)}
+        src={(sansCam ? event.backgroundNocamUrl : event.backgroundUrl) || (sansCam ? FOND_SANS_CAM : FOND)}
         onError={(e) => { if (!e.currentTarget.src.endsWith(FOND)) e.currentTarget.src = FOND; }}
         alt=""
         className="absolute inset-0 z-10 h-full w-full"

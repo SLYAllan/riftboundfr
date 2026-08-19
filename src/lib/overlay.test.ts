@@ -59,4 +59,19 @@ describe("overlay logic", () => {
     expect(a).toMatch(/^[a-z0-9]{16,}$/);
     expect(a).not.toBe(b);
   });
+
+  // Reclic sur la carte à l'écran = cadre vidé. L'état porte -1, et il doit y rester :
+  // un plancher à 0 le ramènerait sur la première carte, donc l'affiche ne partirait
+  // jamais. Le décor par mode se garde aussi des deux côtés.
+  it("garde un index à -1 (cadre vidé) et un décor par mode", () => {
+    const base = defaultOverlayState();
+    const apres = applyStateUpdate(base, { cards: { ...base.cards, index: [-1, 3] } });
+    expect(apres.cards.index).toEqual([-1, 3]);
+    // Plus bas que -1, on retombe à -1 : il n'y a rien de moins que « rien ».
+    expect(applyStateUpdate(base, { cards: { ...base.cards, index: [-9, 0] } }).cards.index[0]).toBe(-1);
+
+    const fonds = applyStateUpdate(base, { event: { backgroundUrl: "/a.png", backgroundNocamUrl: "/b.png" } });
+    expect(fonds.event.backgroundUrl).toBe("/a.png");
+    expect(fonds.event.backgroundNocamUrl).toBe("/b.png");
+  });
 });

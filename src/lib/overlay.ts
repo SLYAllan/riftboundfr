@@ -10,11 +10,12 @@ export type OverlayLayout = "cams" | "nocam";
  */
 export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"];
 
-/** Les deux images qu'un streamer peut fournir. */
-export type GenreMedia = "logo" | "background";
+/** Les images qu'un streamer peut fournir. Un décor par mode : les deux gabarits
+ * n'ont pas les mêmes découpes, un seul fond pour les deux tomberait à côté. */
+export type GenreMedia = "logo" | "background" | "backgroundNocam";
 
 export function estGenreMedia(v: string): v is GenreMedia {
-  return v === "logo" || v === "background";
+  return v === "logo" || v === "background" || v === "backgroundNocam";
 }
 
 /**
@@ -22,7 +23,7 @@ export function estGenreMedia(v: string): v is GenreMedia {
  * Le décor doit rester en 1920x1080 : il se pose au pixel près sur les découpes du
  * gabarit. Le logo, lui, s'affiche dans une case de 275x184.
  */
-export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920 };
+export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920, backgroundNocam: 1920 };
 
 /**
  * Le vrai format d'une image, lu dans ses premiers octets.
@@ -44,7 +45,7 @@ export function typeReel(octets: Uint8Array): string | null {
   ) return "image/webp";
   return null;
 }
-export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024 };
+export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024, backgroundNocam: 3 * 1024 * 1024 };
 
 export interface OverlayPlayer {
   name: string;
@@ -80,9 +81,10 @@ export interface OverlayStateData {
   // `layout` : quel décor. "cams" = celui d'origine, avec un cadre webcam par joueur.
   // "nocam" = le décor sans ces cadres, pour les locales qui n'ont qu'une caméra
   // plateau : la Légende occupe alors la grande case.
-  // `backgroundUrl` : décor fourni par le streamer, envoyé depuis un fichier à partir
-  // du gabarit Photoshop. Vide = un des deux décors du site.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; layout?: OverlayLayout; backgroundUrl?: string };
+  // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
+  // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
+  // découpes diffèrent. Vide = le décor du site pour ce mode.
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -113,7 +115,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, layout: "cams", backgroundUrl: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -200,6 +202,7 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     // Absent = décor d'origine : c'est ce que porte tout état écrit avant ce champ.
     layout: e.layout === "nocam" ? "nocam" : "cams",
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
+    backgroundNocamUrl: texte(e.backgroundNocamUrl, URL_MAX),
   };
 }
 
@@ -218,7 +221,9 @@ function normaliserCards(v: unknown): OverlayStateData["cards"] {
     // tableau, et un tableau vaut vrai. Il repartait alors dans la sauvegarde, où la
     // validation l'a toujours refusé.
     auto: c.auto === true,
-    index: [entier(index[0], 0, 9_999, 0), entier(index[1], 0, 9_999, 0)],
+    // Plancher à -1, pas 0 : -1 veut dire « aucune carte dans ce cadre ». C'est ce
+    // qu'écrit le tableau de bord quand on reclique la carte à l'écran pour la retirer.
+    index: [entier(index[0], -1, 9_999, 0), entier(index[1], -1, 9_999, 0)],
     seconds: entier(c.seconds, 1, 60, 5),
   };
 }
