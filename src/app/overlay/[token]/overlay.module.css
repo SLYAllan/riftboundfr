@@ -11,8 +11,14 @@
 }
 
 .root {
+  /* Toile fixe de 1920x1080, centrée puis mise à l'échelle de la source d'OBS
+     (`--echelle-overlay`, posée par `useEchelle`). Avant, elle était ancrée en haut
+     à gauche : une source réglée à 1600x900 coupait le décor à droite et poussait
+     toute l'image du même côté. À 1920x1080 le facteur vaut 1, rien ne bouge. */
   position: fixed;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--echelle-overlay, 1));
   width: 1920px;
   height: 1080px;
   background: transparent;

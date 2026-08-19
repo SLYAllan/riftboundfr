@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay } from "./overlay";
 
 describe("overlay logic", () => {
   it("default state has two players, BO3, maxPoints 8, points 0", () => {
@@ -90,5 +90,18 @@ describe("overlay logic", () => {
     expect(apres.backgroundUrl).toBe("/api/overlay/neuf/media/background?v=2");
     // Une image hébergée ailleurs n'a rien à voir avec le jeton : on n'y touche pas.
     expect(apres.backgroundNocamUrl).toBe("https://exemple.test/decor.png");
+  });
+
+  // Une source OBS réglée ailleurs qu'à 1920x1080 laissait la toile ancrée en haut à
+  // gauche : le décor débordait à droite et tout paraissait poussé de ce côté.
+  it("echelleOverlay tient dans la source sans déformer", () => {
+    expect(echelleOverlay(1920, 1080)).toBe(1);
+    expect(echelleOverlay(1600, 900)).toBeCloseTo(0.8333, 4);
+    // Source plus large que haute : c'est la hauteur qui borne, sinon on déborde en bas.
+    expect(echelleOverlay(1920, 720)).toBeCloseTo(2 / 3, 4);
+    // Source plus grande : on remplit, on ne laisse pas une toile perdue dans un coin.
+    expect(echelleOverlay(3840, 2160)).toBe(2);
+    // Une taille absurde ne doit pas faire disparaître l'habillage.
+    expect(echelleOverlay(0, 0)).toBe(1);
   });
 });

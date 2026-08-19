@@ -2,14 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
-import { entrelace, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { echelleOverlay, entrelace, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useT } from "@/components/i18n-provider";
 
 // Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
-// transparent pour la zone de jeu. Tout est en pixels, la page fait 1920x1080 et
-// n'est jamais redimensionnée : OBS la capture telle quelle.
+// transparent pour la zone de jeu. Tout est en pixels sur une toile de 1920x1080,
+// que `useEchelle` met ensuite à la taille de la source d'OBS.
 // Le fond fourni (public/stream/test.webp) porte les cadres dorés et ses découpes
 // sont transparentes. Tout ce qui suit est mesuré dessus au pixel, en 1920x1080 :
 // on remplit ses trous, on ne redessine rien.
@@ -479,7 +479,28 @@ function Timer({ endsAt, paused }: { endsAt?: string | null; paused?: number | n
   );
 }
 
+/**
+ * Met la toile 1920x1080 à la taille de la source d'OBS.
+ *
+ * Sans ça, une source réglée à autre chose que 1920x1080 gardait la toile ancrée en
+ * haut à gauche : le décor débordait à droite et tout l'habillage paraissait poussé
+ * vers la droite. Le facteur est posé en variable CSS, le centrage est fait par la
+ * feuille de style.
+ */
+function useEchelle() {
+  useEffect(() => {
+    const poser = () => {
+      const e = echelleOverlay(window.innerWidth, window.innerHeight);
+      document.documentElement.style.setProperty("--echelle-overlay", String(e));
+    };
+    poser();
+    window.addEventListener("resize", poser);
+    return () => window.removeEventListener("resize", poser);
+  }, []);
+}
+
 export function OverlayFull({ token, compact = false }: { token: string; compact?: boolean }) {
+  useEchelle();
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
   const { event } = state;

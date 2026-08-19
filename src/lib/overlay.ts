@@ -270,6 +270,23 @@ export function recalerMedias(event: OverlayStateData["event"], ancien: string, 
   return sortie;
 }
 
+/** Toile de l'habillage : tout y est posé au pixel, elle ne change jamais de taille. */
+export const TOILE = { largeur: 1920, hauteur: 1080 };
+
+/**
+ * De combien réduire (ou agrandir) la toile pour tenir dans la source d'OBS.
+ *
+ * L'habillage est dessiné sur 1920x1080 fixes, ancrés en haut à gauche. Une source
+ * navigateur réglée à autre chose (1600x900 est courant) laissait donc le décor
+ * déborder à droite, et TOUT paraissait décalé vers la droite — la rangée de points
+ * la première, puisqu'elle est la seule chose que l'œil compare au centre de l'écran.
+ * On garde les proportions : le plus petit des deux rapports.
+ */
+export function echelleOverlay(largeur: number, hauteur: number): number {
+  if (!(largeur > 0) || !(hauteur > 0)) return 1;
+  return Math.min(largeur / TOILE.largeur, hauteur / TOILE.hauteur);
+}
+
 export function makeToken(): string {
   // Token public de l'overlay OBS : aléatoire cryptographique (isomorphe Node 18+/navigateur).
   const bytes = new Uint8Array(16);
