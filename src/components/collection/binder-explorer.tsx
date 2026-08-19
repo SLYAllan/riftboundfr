@@ -161,7 +161,12 @@ export function BinderExplorer({
       </div>
 
       {/* Filters - label + valeur, icônes de domaine */}
-      <div className="mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
+      <details className="group mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between font-semibold text-ink sm:hidden [&::-webkit-details-marker]:hidden">
+          <span>{t("Filtres")}{activeFilters > 0 ? ` (${activeFilters})` : ""}</span>
+          <ChevronDown size={16} className="transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="hidden group-open:block sm:block">
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
           <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder={t("Rechercher une carte…")}
@@ -218,18 +223,19 @@ export function BinderExplorer({
         </div>
 
         {/* Footer */}
-        <div className="mt-3 flex items-center gap-3 border-t border-hairline pt-3 text-xs">
+        <div className="mt-3 flex min-h-10 items-center gap-3 border-t border-hairline pt-3 text-xs">
           <span className="text-ink-muted">{t("Actif :")} {activeFilters > 0 ? activeFilters : t("aucun")}</span>
           {activeFilters > 0 && <button onClick={clearAll} className="text-arcane hover:underline">{t("Tout effacer")}</button>}
           <span className="ml-auto font-semibold text-arcane">{filtered.length} {t(filtered.length === 1 ? "carte" : "cartes")}</span>
         </div>
-      </div>
+        </div>
+      </details>
 
       {/* Toolbar */}
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <button onClick={() => setShowImport((v) => !v)} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Upload size={13} /> Importer</button>
-        <button onClick={exportCsv} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Download size={13} /> Exporter CSV</button>
-        <button onClick={toggleShare} className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink">
+        <button onClick={() => setShowImport((v) => !v)} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Upload size={13} /> Importer</button>
+        <button onClick={exportCsv} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink"><Download size={13} /> Exporter CSV</button>
+        <button onClick={toggleShare} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink">
           {isPublic ? <><Globe size={13} />{" "}{t("Partagé")}</> : <><Lock size={13} /> Rendre public</>}
         </button>
       </div>
@@ -265,9 +271,9 @@ export function BinderExplorer({
                   </div>
                 </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">
-                  <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30">−</button>
+                  <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30 sm:size-6">−</button>
                   <span className={`min-w-4 text-center text-sm tabular-nums ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
-                  <button onClick={() => setQuantity(c.id, qty + 1)} className="flex h-6 w-6 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink">+</button>
+                  <button onClick={() => setQuantity(c.id, qty + 1)} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink sm:size-6">+</button>
                 </div>
               </div>
             );
@@ -295,7 +301,7 @@ function FilterPill({ label, value, onChange, children }: {
     // max-w : un select natif se dimensionne sur son option la plus longue.
     // Sans plafond, « Riftbound Organized Play Promotional Cards » pousse la
     // pastille à 361px et fait défiler toute la page sur mobile.
-    <div className={`relative flex h-9 max-w-full items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 ${active ? "border-arcane/50" : "border-hairline"}`}>
+    <div className={`relative flex h-11 max-w-full items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 sm:h-9 ${active ? "border-arcane/50" : "border-hairline"}`}>
       <span className="shrink-0 text-[10px] font-bold uppercase tracking-wide text-ink-muted">{label}</span>
       <select value={value} onChange={onChange} aria-label={label} className="min-w-0 max-w-[150px] cursor-pointer appearance-none bg-transparent text-sm text-ink">
         {children}
@@ -309,7 +315,7 @@ function Slider({ label, value, max, onChange }: { label: string; value: number;
   return (
     <div>
       <div className="mb-1 flex justify-between text-xs text-ink-muted"><span>{label}</span><span>{value >= max ? "Tout" : `≤ ${value}`}</span></div>
-      <input type="range" min={0} max={max} value={value} aria-label={label} onChange={(e) => onChange(Number(e.target.value))} className="w-full accent-arcane" />
+      <input type="range" min={0} max={max} value={value} aria-label={label} onChange={(e) => onChange(Number(e.target.value))} className="h-6 w-full accent-arcane" />
     </div>
   );
 }

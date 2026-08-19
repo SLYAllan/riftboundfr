@@ -38,6 +38,18 @@ args = ["C:\\Users\\Allan\\Documents\\Claude\\Scrapeur\\mcp_server.py"]
 command = "npx"
 args = ["@playwright/mcp@latest"]
 
+[mcp_servers.playwright.tools.browser_close]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_resize]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_evaluate]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_click]
+approval_mode = "approve"
+
 # dataforseo n'est pas ici : il demande un identifiant et un mot de passe, qui
 # n'ont rien à faire dans un dépôt public. Le poser dans ~/.codex/config.toml.
 

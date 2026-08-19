@@ -11,6 +11,7 @@ import { Trophy, Swords, Users, Globe } from "lucide-react";
 import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
+import { articleDuTournoi } from "@/lib/tournament-articles";
 
 const metadata: Metadata = {
   title: { absolute: "Tournois Riftbound France - Résultats et calendrier 2026" },
@@ -84,13 +85,6 @@ async function getTournamentData() {
     decksByContext.set(ctx, [...real, ...fillers]);
   }
 
-  const articlesByCity = new Map<string, typeof articles>();
-  for (const a of articles) {
-    const city = a.tournamentLocation?.split(",")[0]?.trim().toLowerCase() ?? "";
-    if (!articlesByCity.has(city)) articlesByCity.set(city, []);
-    articlesByCity.get(city)!.push(a);
-  }
-
   const tournamentMap = new Map<string, {
     name: string;
     slug: string;
@@ -119,12 +113,9 @@ async function getTournamentData() {
     const cc = getTournamentCountryCode(ctx);
     const cityLower = info?.city.toLowerCase() ?? ctx.toLowerCase();
 
-    let matchedArticles: typeof articles = [];
-    for (const [artCity, artList] of articlesByCity) {
-      if (artCity && cityLower.includes(artCity)) {
-        matchedArticles = [...matchedArticles, ...artList];
-      }
-    }
+    const matchedArticles = articles.filter((article) =>
+      articleDuTournoi(article, cityLower, info?.date ? new Date(info.date) : null),
+    );
 
     let date: string | null = null;
     let location: string | null = null;
@@ -209,15 +200,16 @@ export default async function TournoisPage() {
           }}
         />
         <div className="relative">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold">
-              <Trophy className="text-white" size={24} />
+          <div className="mb-3 flex items-center gap-3">
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-gold sm:size-11 sm:rounded-xl">
+              <Trophy className="text-white" size={22} />
             </div>
             <h1
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+              className="text-balance text-2xl font-bold sm:text-4xl lg:text-5xl"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              {t("Tournois Riftbound - Résultats et calendrier")}
+              <span className="sm:hidden">{t("Tournois Riftbound")}</span>
+              <span className="hidden sm:inline">{t("Tournois Riftbound - Résultats et calendrier")}</span>
             </h1>
           </div>
           <p className="mt-1 max-w-2xl text-sm sm:text-base text-ink-secondary">

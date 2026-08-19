@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLien, useT } from "@/components/i18n-provider";
-import { Search } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CARD_TYPES, RARITIES } from "@/lib/utils";
 import { DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
@@ -48,6 +48,10 @@ export function CardFilters({ total }: { total: number }) {
     router.push(lien(`/cartes?${params.toString()}`));
   }
 
+  function effacerTout() {
+    router.push(lien("/cartes"));
+  }
+
   const get = (key: string) => searchParams.get(key) ?? "all";
   const domain = get("domain");
   const type = get("type");
@@ -63,13 +67,18 @@ export function CardFilters({ total }: { total: number }) {
     searchParams.get("q") && `« ${searchParams.get("q")} »`,
   ].filter(Boolean) as string[];
 
-  return (
+  const aFiltres = activeSummary.length > 0;
+
+  // Rendu une fois, montré deux fois : repliable sur mobile (<details>), ouvert
+  // en permanence sur desktop. Pas de state React : le toggle vient du <details>
+  // natif, la bascule mobile/desktop de classes CSS.
+  const contenuFiltres = (
     <div className="space-y-3">
       {/* Domaines — le logo de rune porte la couleur */}
       <div className="flex flex-wrap gap-2">
-        <button onClick={() => set("domain", "all")} className={pill(domain === "all")}>{t("Tous domaines")}</button>
+        <button type="button" onClick={() => set("domain", "all")} aria-pressed={domain === "all"} className={pill(domain === "all")}>{t("Tous domaines")}</button>
         {DOMAIN_ORDER.map((d) => (
-          <button key={d} onClick={() => set("domain", domain === d ? "all" : d)} className={pill(domain === d)}>
+          <button key={d} type="button" onClick={() => set("domain", domain === d ? "all" : d)} aria-pressed={domain === d} className={pill(domain === d)}>
             {DOMAIN_ICONS[d] && <Image src={DOMAIN_ICONS[d]} alt="" width={16} height={16} className="h-4 w-4" />}
             {t(DOMAIN_LABELS_FR[d] ?? d)}
           </button>
@@ -78,9 +87,9 @@ export function CardFilters({ total }: { total: number }) {
 
       {/* Types */}
       <div className="flex flex-wrap gap-2">
-        <button onClick={() => set("type", "all")} className={pill(type === "all")}>{t("Tous types")}</button>
+        <button type="button" onClick={() => set("type", "all")} aria-pressed={type === "all"} className={pill(type === "all")}>{t("Tous types")}</button>
         {CARD_TYPES.map((ty) => (
-          <button key={ty} onClick={() => set("type", type === ty ? "all" : ty)} className={pill(type === ty)}>
+          <button key={ty} type="button" onClick={() => set("type", type === ty ? "all" : ty)} aria-pressed={type === ty} className={pill(type === ty)}>
             {TYPE_ICONS[ty] && <Image src={TYPE_ICONS[ty]} alt="" width={16} height={16} className="h-4 w-4" />}
             {t(TYPE_LABELS_FR[ty] ?? ty)}
           </button>
@@ -89,15 +98,12 @@ export function CardFilters({ total }: { total: number }) {
 
       {/* Set / Rareté / Tri */}
       <div className="flex flex-wrap items-center gap-2">
-        <div className="relative">
-          <Search className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-muted" size={14} />
-          <select aria-label={t("Filtrer par set")} className={cn(selectClass, "pl-8")} value={get("set")} onChange={(e) => set("set", e.target.value)}>
-            <option value="all">{t("Tous les sets")}</option>
-            {Object.entries(SET_LABELS).map(([v, l]) => (
-              <option key={v} value={v}>{t(l)}</option>
-            ))}
-          </select>
-        </div>
+        <select aria-label={t("Filtrer par set")} className={selectClass} value={get("set")} onChange={(e) => set("set", e.target.value)}>
+          <option value="all">{t("Tous les sets")}</option>
+          {Object.entries(SET_LABELS).map(([v, l]) => (
+            <option key={v} value={v}>{t(l)}</option>
+          ))}
+        </select>
 
         <select aria-label={t("Filtrer par rareté")} className={selectClass} value={get("rarity")} onChange={(e) => set("rarity", e.target.value)}>
           <option value="all">{t("Toutes raretés")}</option>
@@ -115,10 +121,33 @@ export function CardFilters({ total }: { total: number }) {
           </select>
         </div>
       </div>
+    </div>
+  );
 
-      <div className="text-sm text-ink-muted">
-        {total} {total !== 1 ? t("cartes") : t("carte")}
-        {activeSummary.length > 0 && <span> &middot; {activeSummary.join(" · ")}</span>}
+  return (
+    <div className="space-y-3">
+      {/* Mobile : panneau repliable. Desktop : toujours ouvert. */}
+      <details className="group sm:hidden">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm font-semibold text-ink [&::-webkit-details-marker]:hidden">
+          <ChevronDown size={16} className="transition-transform group-open:rotate-180" />
+          {t("Filtres")}
+        </summary>
+        <div className="mt-3">{contenuFiltres}</div>
+      </details>
+      <div className="hidden sm:block">{contenuFiltres}</div>
+
+      {/* Résumé des filtres actifs et remise à zéro */}
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+        <span>{total} {total !== 1 ? t("cartes") : t("carte")}</span>
+        {aFiltres && (
+          <>
+            <span aria-hidden="true">&middot;</span>
+            <span>{activeSummary.join(" · ")}</span>
+            <button type="button" onClick={effacerTout} className="text-arcane hover:underline">
+              {t("Tout effacer")}
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

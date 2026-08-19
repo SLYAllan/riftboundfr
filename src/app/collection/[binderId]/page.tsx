@@ -22,9 +22,9 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
   const user = await getUserFromSession();
   if (!user) {
     return (
-      <main className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-8">
         <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Se connecter avec Discord")}</Link>
-      </main>
+      </div>
     );
   }
 
@@ -55,15 +55,15 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
     });
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
-      <Link href="/collection" className="text-sm text-ink-muted hover:text-ink">{t("← Retour à la collection")}</Link>
+    <div className="mx-auto max-w-7xl px-4 py-8">
+      <Link href="/collection" className="inline-flex min-h-11 items-center text-sm text-ink-muted hover:text-ink sm:min-h-0">{t("← Retour à la collection")}</Link>
       <BinderExplorer
         binder={{ id: binder.id, name: binder.name, isPublic: binder.isPublic, shareSlug: binder.shareSlug }}
         cards={cards}
         sets={sets}
         initialQuantities={quantities}
       />
-    </main>
+    </div>
   );
 }
 

@@ -16,7 +16,7 @@ les commandes exactes de reprise. La lire avant de reprendre ce chantier.
 | Vérification | Résultat |
 |---|---|
 | `npx tsc --noEmit` | sortie **0**, aucune erreur |
-| `npx vitest run --pool=threads` | **22 fichiers, 140 tests, tous verts** |
+| `npm test` | **26 fichiers, 164 tests, tous verts** |
 | `npx next build` | sortie **0**, toutes les routes construites |
 | `npm run verify` | vert (c'est `tsc` + `build`) |
 
@@ -214,6 +214,36 @@ au reste du schéma, sans retour arrière.
 peut-être `cartes_gauche.webp` / `cartes_droite.webp` depuis son PSD redessiné — les
 fichiers du dépôt sont ceux du 16 août et ne correspondent plus. Les repères de position
 sont mesurés sur ces images ; s'ils bougent, il faut les remesurer.
+
+## Session du 19 août 2026 : cartes, tournois, collection et deckbuilder
+
+Passe d'interface de Codex, relue et poussée :
+
+- `/cartes` utilise un conteneur de 1400 px sur ordinateur. Les filtres restent
+  repliés sur mobile et leur bouton atteint 44 px de haut.
+- `/tournois` regroupe les événements par set, puis par niveau S/A et par date.
+  Le titre mobile est raccourci. Une page tournoi affiche les événements voisins
+  du même set, dans un ordre stable, et limite les voisins aux tournois visibles
+  dans la liste.
+- La page d'un classeur n'imbrique plus deux balises `main`. Ses filtres sont
+  repliés sur mobile, ses actions et compteurs ont de plus grandes zones tactiles.
+- L'aperçu flottant du deckbuilder ne s'ouvre que si l'appareil gère le survol
+  avec un pointeur fin. Un toucher ne peut donc plus placer l'aperçu devant les
+  boutons du tiroir.
+- Les nouveaux textes ont leur traduction anglaise.
+
+Playwright MCP a contrôlé `/cartes`, le classeur test
+`/collection/cmq4e09rr0001vs1stsbqpyau`, `/tournois`, le tournoi de Tianjin
+et le parcours mobile du deckbuilder avec ajout puis retrait d'une carte.
+`npm test` passe avec **26 fichiers et 164 tests**. `npm run verify` passe
+avec **EXIT=0** et 52 pages générées.
+
+Relu et revérifié avant de pousser : `tsc` à 0, 164 tests verts, `lint` à 0 erreur
+(99 avertissements, tous `no-img-element`), build à 0. Deux points contrôlés à la
+mesure plutôt qu'à l'œil : la nouvelle requête des contextes de tournoi
+(`placement IS NOT NULL` et plus de 5 decks) ne perd **aucune** des 110 pages
+existantes, et un contenu forcé visible dans un `<details>` fermé s'affiche bien
+sous Chrome 151. Aucun seed ni déploiement.
 
 ## Les 5 prochaines tâches, par priorité
 

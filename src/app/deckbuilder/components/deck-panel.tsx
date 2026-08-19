@@ -13,6 +13,7 @@ import type { DeckState, DeckEntry } from "@/types";
 import type { DeckSection } from "@/types";
 import type { RuneSuggestion } from "../lib/rune-calculator";
 import { useT } from "@/components/i18n-provider";
+import { peutAfficherApercuCarte } from "../lib/preview-pointer";
 
 interface DeckPanelV2Props {
   deck: DeckState;
@@ -203,7 +204,13 @@ export function DeckPanelV2({
   const t = useT();
   const [preview, setPreview] = useState<PreviewState | null>(null);
 
-  const showPreview = (entry: DeckEntry, el: HTMLElement) => setPreview(computePreview(entry, el));
+  const showPreview = (entry: DeckEntry, el: HTMLElement) => {
+    if (!peutAfficherApercuCarte(
+      window.matchMedia("(hover: hover)").matches,
+      window.matchMedia("(pointer: fine)").matches,
+    )) return;
+    setPreview(computePreview(entry, el));
+  };
   const hidePreview = () => setPreview(null);
   const hover: RowHoverProps = { onHover: showPreview, onLeave: hidePreview };
 

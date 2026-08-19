@@ -53,7 +53,10 @@ export function CardGrid({ cards }: CardGridProps) {
               <CardImage src={card.imageUrl} alt={card.name} size="md" />
             )}
             <div className="mt-2">
-              <div className="truncate text-sm font-medium group-hover:text-arcane">
+              <div
+                className="line-clamp-2 min-h-10 text-sm font-medium group-hover:text-arcane"
+                title={card.name}
+              >
                 {card.name}
               </div>
               <div className="mt-1 flex items-center gap-2">

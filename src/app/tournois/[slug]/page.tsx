@@ -3,12 +3,13 @@ export const revalidate = 3600;
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { slugify, formatDate, displayLegendName } from "@/lib/utils";
-import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
+import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from "@/lib/tournament-flags";
 import { articleDuTournoi } from "@/lib/tournament-articles";
+import { voisinsDuTournoi } from "@/lib/tournament-order";
 import { getLegendIconUrl, getBannerUrl } from "@/lib/banners";
 import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
-import { Users, MapPin, Calendar, Swords, ArrowLeft, BookOpen } from "lucide-react";
+import { Users, MapPin, Calendar, Swords, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
@@ -25,12 +26,19 @@ function parsePlacement(p: string | null): number {
   return isNaN(n) ? 9999 : n;
 }
 
-async function findTournamentContext(slug: string): Promise<string | null> {
+async function getTournamentContexts(): Promise<string[]> {
   const contexts: { tournamentContext: string }[] = await prisma.$queryRaw`
     SELECT DISTINCT "tournamentContext" FROM "Deck"
-    WHERE published = true AND "tournamentContext" IS NOT NULL
+    WHERE published = true AND "tournamentContext" IS NOT NULL AND placement IS NOT NULL
+    GROUP BY "tournamentContext"
+    HAVING COUNT(*) > 5
   `;
-  return contexts.find((c) => slugify(c.tournamentContext) === slug)?.tournamentContext ?? null;
+  return contexts.map((c) => c.tournamentContext);
+}
+
+async function findTournamentContext(slug: string): Promise<string | null> {
+  const contexts = await getTournamentContexts();
+  return contexts.find((context) => slugify(context) === slug) ?? null;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -66,12 +74,21 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   const sp = await searchParams;
   const legendFilter = sp.legend;
 
-  const ctx = await findTournamentContext(slug);
+  const contexts = await getTournamentContexts();
+  const ctx = contexts.find((context) => slugify(context) === slug) ?? null;
   if (!ctx) notFound();
 
   const info = getTournamentInfo(ctx);
   const cc = getTournamentCountryCode(ctx);
   const name = info?.name ?? ctx;
+  const voisins = voisinsDuTournoi(
+    contexts.flatMap((context) => {
+      const details = getTournamentInfo(context);
+      if (!details || isTournamentHidden(context)) return [];
+      return [{ slug: slugify(context), name: details.name, set: details.set ?? null, tier: details.type === "regional" ? "S" as const : "A" as const, date: details.date ?? null }];
+    }),
+    slug,
+  );
 
   // On récupère TOUS les decks du tournoi (vrais + best-of), puis on construit
   // le pool affiché : vrais decks classés + best-of "fillers" pour les
@@ -271,6 +288,11 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
             >
               {name}
             </h1>
+            {info?.set && (
+              <span className="rounded-full bg-surface-raised px-3 py-1 text-xs font-semibold text-ink-secondary ring-1 ring-hairline">
+                {info.set}
+              </span>
+            )}
           </div>
 
           {/* Stats row */}
@@ -367,9 +389,9 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                     >
                       {fmtShare(l.count)}&nbsp;%
                     </div>
-                    <div className="mt-1 flex items-center gap-1.5 text-xs text-ink-secondary">
+                    <div className="mt-1 flex items-start gap-1.5 text-xs text-ink-secondary">
                       {l.icon && <img src={l.icon} alt="" className="h-4 w-4 rounded" />}
-                      <span className="truncate">{displayLegendName(l.name)}</span>
+                      <span className="min-w-0 line-clamp-2 leading-tight sm:truncate">{displayLegendName(l.name)}</span>
                       <span className="shrink-0 text-ink-muted">&middot; {l.count.toLocaleString("fr-FR")}</span>
                     </div>
                   </div>
@@ -396,6 +418,23 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
         filteredCount={decks.length}
         totalCount={totalDecks}
       />
+
+      {(voisins.precedent || voisins.suivant) && (
+        <nav aria-label={t("Tournois voisins")} className="mt-12 grid gap-3 border-t border-hairline pt-6 sm:grid-cols-2">
+          {voisins.precedent ? (
+            <Link href={`/tournois/${voisins.precedent.slug}`} className="rounded-card border border-hairline bg-surface/50 p-4 transition-colors hover:border-hairline-accent">
+              <span className="flex items-center gap-1 text-xs text-ink-muted"><ArrowLeft size={13} />{t("Tournoi précédent")}</span>
+              <span className="mt-1 block font-semibold text-ink">{voisins.precedent.name}</span>
+            </Link>
+          ) : <span />}
+          {voisins.suivant && (
+            <Link href={`/tournois/${voisins.suivant.slug}`} className="rounded-card border border-hairline bg-surface/50 p-4 text-right transition-colors hover:border-hairline-accent">
+              <span className="flex items-center justify-end gap-1 text-xs text-ink-muted">{t("Tournoi suivant")}<ArrowRight size={13} /></span>
+              <span className="mt-1 block font-semibold text-ink">{voisins.suivant.name}</span>
+            </Link>
+          )}
+        </nav>
+      )}
     </div>
   );
 }

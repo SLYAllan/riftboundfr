@@ -88,14 +88,14 @@ export default async function CartesPage({ searchParams }: PageProps) {
   const totalPages = Math.ceil(total / PER_PAGE);
 
   return (
-    <div className="px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Base de données des cartes Riftbound")}</h1>
+    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold font-display">{t("Base de données des cartes Riftbound")}</h1>
       <p className="mt-2 max-w-3xl text-ink-secondary">
         {t("Parcourez toutes les cartes du TCG Riftbound - sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez par set, type, rareté et domaine, et consultez le texte complet et les statistiques de chaque carte en français.")}
       </p>
-      <div className="mt-6"><Suspense><SearchBar /></Suspense></div>
+      <div className="mt-8"><Suspense><SearchBar /></Suspense></div>
       <div className="mt-4"><Suspense><CardFilters total={total} /></Suspense></div>
-      <div className="mt-6"><CardGrid cards={cards} /></div>
+      <div className="mt-8"><CardGrid cards={cards} /></div>
       <div className="mt-8"><Suspense><Pagination currentPage={page} totalPages={totalPages} /></Suspense></div>
     </div>
   );

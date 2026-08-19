@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import type { TournamentData } from "@/app/tournois/page";
 import { useT } from "@/components/i18n-provider";
+import { grouperTournoisParSet } from "@/lib/tournament-order";
 
 const SET_FILTERS = ["Tous", "Origins", "Spiritforged", "Unleashed", "Vendetta"] as const;
 
@@ -170,7 +171,7 @@ function TournamentRow({
 }
 
 function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; count: number }) {
-  const bg = tier === "S" ? "bg-gold" : "bg-arcane";
+  const bg = tier === "S" ? "bg-gold" : "bg-tier-a";
   return (
     <div className="mb-4 flex items-center gap-2.5">
       <span
@@ -213,8 +214,7 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
     });
   }, [tournaments, setFilter, query]);
 
-  const sTier = filtered.filter((t) => t.tier === "S");
-  const aTier = filtered.filter((t) => t.tier === "A");
+  const groupes = grouperTournoisParSet(filtered);
 
   return (
     <div>
@@ -258,28 +258,39 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
       {filtered.length === 0 ? (
         <p className="py-12 text-center text-ink-muted">{t("Aucun tournoi pour ce filtre.")}</p>
       ) : (
-        <div className="space-y-10">
-          {sTier.length > 0 && (
-            <section>
-              <TierHeader tier="S" label="Regional Opens & Qualifiers - Europe & Chine" count={sTier.length} />
-              <div className="space-y-3">
-                {sTier.map((t) => (
-                  <TournamentRow key={t.slug} tournament={t} featured />
-                ))}
-              </div>
-            </section>
-          )}
-
-          {aTier.length > 0 && (
-            <section>
-              <TierHeader tier="A" label="City Challenges & autres tournois" count={aTier.length} />
-              <div className="space-y-2">
-                {aTier.map((t) => (
-                  <TournamentRow key={t.slug} tournament={t} />
-                ))}
-              </div>
-            </section>
-          )}
+        <div className="space-y-14">
+          {groupes.map((groupe) => {
+            const sTier = groupe.tournois.filter((tournoi) => tournoi.tier === "S");
+            const aTier = groupe.tournois.filter((tournoi) => tournoi.tier === "A");
+            return (
+              <section key={groupe.set} aria-labelledby={`set-${groupe.set.toLowerCase()}`}>
+                <div className="mb-6 flex items-end gap-3 border-b border-hairline pb-3">
+                  <h2 id={`set-${groupe.set.toLowerCase()}`} className="font-display text-2xl font-bold text-ink">
+                    {groupe.set}
+                  </h2>
+                  <span className="pb-0.5 text-sm text-ink-muted">{groupe.tournois.length} {t("tournois")}</span>
+                </div>
+                <div className="space-y-9">
+                  {sTier.length > 0 && (
+                    <div>
+                      <TierHeader tier="S" label={t("Tournois régionaux et qualifications")} count={sTier.length} />
+                      <div className="space-y-3">
+                        {sTier.map((tournoi) => <TournamentRow key={tournoi.slug} tournament={tournoi} featured />)}
+                      </div>
+                    </div>
+                  )}
+                  {aTier.length > 0 && (
+                    <div>
+                      <TierHeader tier="A" label={t("City Challenges et autres tournois")} count={aTier.length} />
+                      <div className="space-y-2">
+                        {aTier.map((tournoi) => <TournamentRow key={tournoi.slug} tournament={tournoi} />)}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </section>
+            );
+          })}
         </div>
       )}
     </div>
