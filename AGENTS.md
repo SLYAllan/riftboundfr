@@ -43,6 +43,15 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
   `content/tweets/README.md`.
+- **Habillage de stream** → **toute vérification passe par OBS, pas par le
+  navigateur, et sans qu'Allan ait à le demander.** C'est le seul endroit où l'on
+  voit la transparence composée et le vrai rendu. OBS expose un WebSocket sur
+  `ws://127.0.0.1:4455` ; le mot de passe est dans
+  `%APPDATA%/obs-studio/user.ini` (`ServerPassword=`), Node 24 a `WebSocket` en
+  natif, et `GetSourceScreenshot` sur la source « Navigateur web » rend l'image.
+  Une mesure dans le navigateur ne prouve rien toute seule : elle sert à trouver,
+  la capture OBS sert à conclure. Ne jamais changer l'état de l'habillage
+  d'Allan pour prendre une capture : le lui demander.
 
 **Ne pas deviner un format, un nom ou un chemin : vérifier dans le code ou demander.**
 Une supposition non vérifiée coûte plus cher que la question. Si la vérification est
