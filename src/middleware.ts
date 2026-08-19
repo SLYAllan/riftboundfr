@@ -47,6 +47,12 @@ export function middleware(request: NextRequest) {
   // cette route, et seulement pour ce qu'elle a besoin.
   const estOverlay = cheminNu.startsWith("/overlay/");
 
+  // L'adresse d'un habillage porte son jeton, qui donne accès à l'état en lecture.
+  // Elle ne doit jamais finir dans un index : il suffit d'un lien collé quelque part
+  // de public pour qu'elle y entre et y reste. On la laisse explorable (sinon
+  // l'en-tête ne serait jamais lu) et on interdit l'indexation.
+  if (estOverlay) response.headers.set("X-Robots-Tag", "noindex, nofollow");
+
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");

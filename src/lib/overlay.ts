@@ -252,6 +252,24 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
   };
 }
 
+/**
+ * Recale les adresses d'images sur un nouveau jeton.
+ *
+ * Les images envoyées sont servies SOUS le jeton (`/api/overlay/<jeton>/media/...`)
+ * et leur adresse est gardée dans l'état. « Nouveau lien » changeait le jeton sans y
+ * toucher : les adresses pointaient dans le vide, le logo et le décor disparaissaient
+ * de l'habillage sans un mot, et il fallait les renvoyer un par un.
+ */
+export function recalerMedias(event: OverlayStateData["event"], ancien: string, nouveau: string): OverlayStateData["event"] {
+  const prefixe = `/api/overlay/${ancien}/media/`;
+  const sortie = { ...event };
+  for (const cle of ["logoUrl", "backgroundUrl", "backgroundNocamUrl"] as const) {
+    const v = sortie[cle];
+    if (v && v.startsWith(prefixe)) sortie[cle] = `/api/overlay/${nouveau}/media/${v.slice(prefixe.length)}`;
+  }
+  return sortie;
+}
+
 export function makeToken(): string {
   // Token public de l'overlay OBS : aléatoire cryptographique (isomorphe Node 18+/navigateur).
   const bytes = new Uint8Array(16);

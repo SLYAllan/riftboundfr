@@ -1,6 +1,6 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
-import { defaultOverlayState, makeToken, applyStateUpdate, type OverlayStateData } from "@/lib/overlay";
+import { defaultOverlayState, makeToken, applyStateUpdate, recalerMedias, type OverlayStateData } from "@/lib/overlay";
 
 export async function getOrCreateOverlayState(userId: string) {
   const existing = await prisma.overlayState.findUnique({ where: { userId } });
@@ -23,8 +23,12 @@ export async function saveState(userId: string, patch: Partial<OverlayStateData>
 }
 
 export async function regenerateToken(userId: string) {
-  await getOrCreateOverlayState(userId);
+  const row = await getOrCreateOverlayState(userId);
   const token = makeToken();
-  await prisma.overlayState.update({ where: { userId }, data: { token } });
+  // Les images envoyées sont servies sous le jeton : sans ce recalage, « Nouveau
+  // lien » laissait leurs adresses pointer dans le vide.
+  const etat = row.state as unknown as OverlayStateData;
+  const suivant = { ...etat, event: recalerMedias(etat.event, row.token, token) };
+  await prisma.overlayState.update({ where: { userId }, data: { token, state: suivant as object } });
   return token;
 }

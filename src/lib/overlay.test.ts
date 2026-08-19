@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias } from "./overlay";
 
 describe("overlay logic", () => {
   it("default state has two players, BO3, maxPoints 8, points 0", () => {
@@ -73,5 +73,22 @@ describe("overlay logic", () => {
     const fonds = applyStateUpdate(base, { event: { backgroundUrl: "/a.png", backgroundNocamUrl: "/b.png" } });
     expect(fonds.event.backgroundUrl).toBe("/a.png");
     expect(fonds.event.backgroundNocamUrl).toBe("/b.png");
+  });
+
+  // « Nouveau lien » change le jeton, et les images sont servies SOUS le jeton. Sans
+  // recalage, leurs adresses pointaient dans le vide et l'habillage perdait son logo
+  // et son décor sans rien dire.
+  it("recalerMedias suit le jeton, et ne touche à rien d'autre", () => {
+    const event = {
+      ...defaultOverlayState().event,
+      logoUrl: "/api/overlay/vieux/media/logo?v=1",
+      backgroundUrl: "/api/overlay/vieux/media/background?v=2",
+      backgroundNocamUrl: "https://exemple.test/decor.png",
+    };
+    const apres = recalerMedias(event, "vieux", "neuf");
+    expect(apres.logoUrl).toBe("/api/overlay/neuf/media/logo?v=1");
+    expect(apres.backgroundUrl).toBe("/api/overlay/neuf/media/background?v=2");
+    // Une image hébergée ailleurs n'a rien à voir avec le jeton : on n'y touche pas.
+    expect(apres.backgroundNocamUrl).toBe("https://exemple.test/decor.png");
   });
 });
