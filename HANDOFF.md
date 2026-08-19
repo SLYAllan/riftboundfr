@@ -1,6 +1,7 @@
 # HANDOFF — état des lieux
 
-**Relevé mis à jour le 14 août 2026.** Branche `main`, dernier commit `8321eaf3`.
+**Relevé mis à jour le 19 août 2026.** Branche `main`, dernier commit `320e27ad`.
+La session du 19 août est décrite plus bas ; le reste date du relevé du 14 août.
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
 L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
 `docs/AUDITS.md`.
@@ -164,12 +165,63 @@ La DB locale ne contenait plus la tier list Origins après un seed interrompu su
 
 Après validation éditoriale d'Allan, `scripts/seed-tier-lists.ts` contient désormais la proposition Vendetta fondée sur les 982 decks vérifiés. Le seed local a créé `Tier List Vendetta` avec **45 entrées**, publiée et marquée comme liste courante. L'audit Vendetta confirme 982 decks et 45 légendes classées. Le visuel a été généré sous `content/tweets/images/tier-list-vendetta.html`. Aucun seed de decklist, commit ou déploiement n'a été effectué.
 
+## Session du 19 août 2026 : anglais, règles, prix, habillage
+
+Cinq commits poussés sur `main` (`826bb6b4` à `320e27ad`). Ce qui compte pour la
+suite :
+
+**Version anglaise.** `scripts/audit-version-anglaise.mjs` (nouveau) va chercher les
+pages `/en` rendues et compte les phrases restées en français. Il est passé de 2 966
+à 328 phrases sur 33 pages. `src/components/breadcrumbs.tsx` est devenu un composant
+client pour traduire le fil d'Ariane des 17 pages d'un coup. Reste : environ 120
+phrases écrites en dur dans 4 guides (mécanique) et tout l'éditorial (fiches de
+Légende, articles, glossaire), qui demande une décision d'architecture d'Allan.
+Sous Git Bash, le script veut `MSYS_NO_PATHCONV=1`, sinon les chemins sont réécrits.
+
+**Règlement anglais.** `scripts/parse-core-rules.py` prend maintenant la langue en
+argument (`fr` par défaut, `en`) et produit `data/rules/core-rules-<langue>.json`.
+Deux défauts corrigés au passage : les ligatures du PDF (ﬀ, ﬁ, ﬂ) passaient telles
+quelles, et un filtre sur la longueur du texte jetait les règles courtes. Le français
+passe de 2 094 à 2 317 règles sans perte, l'anglais en donne 2 316.
+`loadCoreRules(langue)` garde un cache par langue.
+
+**Prix CardNexus.** `regrouper()` retient l'impression la moins chère du même nom
+de catalogue. Une decklist qui cite une surnumérotée ne facture plus la surnumérotée :
+410 decks étaient surévalués, la médiane tombait de 225 €. Le regroupement se fait par
+le **nom du catalogue CardNexus**, jamais par `cleanName` (confond Légende et Champion)
+ni par identité stricte (les noms en base portent « (overnumbered) »).
+
+**Habillage de stream.** Nouveau décor sans caméra (`layout_sanscam.webp`), la Légende
+prenant la place de la caméra en cube. Envoi de logo et de fond par le streameur, avec
+recherche de carte sans decklist. Nouvelle table `OverlayMedia` (voir `AGENTS.md`).
+Les types d'image sont vérifiés **par les octets de tête**, pas par le `Content-Type`
+déclaré ; le SVG est refusé exprès.
+
+**Piège trouvé, et cher.** Une opacité posée sur une enveloppe sans hauteur autour d'un
+élément en position absolue **ne s'anime pas**. Le fondu des points ne jouait pas et ça
+ne se voyait pas en relecture de code : il a fallu mesurer image par image dans OBS.
+L'opacité doit être posée sur l'élément positionné lui-même.
+
+**Le piège de l'ordre de déploiement.** Coolify déploie tout seul au push. Le code est
+donc en production **avant** le schéma, puisqu'il n'y a pas de migrations. `OverlayMedia`
+a rendu 500 en prod jusqu'à sa création à la main. Pour toute nouvelle table : sortir le
+DDL exact avec `npx prisma migrate diff --from-empty --to-schema-datamodel
+prisma/schema.prisma --script`, puis le faire jouer dans le conteneur `/app`, où
+`DATABASE_URL` est déjà posé. Ne pas lancer `prisma db push` sur la prod : il toucherait
+au reste du schéma, sans retour arrière.
+
+**Ce qui attend Allan :** réexporter `public/stream/test.webp` (décor avec caméras) et
+peut-être `cartes_gauche.webp` / `cartes_droite.webp` depuis son PSD redessiné — les
+fichiers du dépôt sont ceux du 16 août et ne correspondent plus. Les repères de position
+sont mesurés sur ces images ; s'ils bougent, il faut les remesurer.
+
 ## Les 5 prochaines tâches, par priorité
 
-1. **Maintenir PostgreSQL fermé.** Le port historique `178.104.237.33:15432`
-   refusait la connexion lors du contrôle externe du 14 août. Ne pas le rouvrir
-   publiquement ; utiliser un tunnel SSH ponctuel pour les seeds ou une règle de
-   pare-feu limitée à une seule IP.
+1. **Fermer PostgreSQL.** Le port `178.104.237.33:15432` **répond de nouveau depuis
+   Internet** : vérifié le 19 août 2026, connexion TCP acceptée, et une lecture de la
+   base de production a bien abouti. Le contrôle du 14 août concluait l'inverse : le
+   port a donc été rouvert entre-temps. Le refermer, et passer par un tunnel SSH
+   ponctuel ou une règle de pare-feu limitée à une seule IP.
 2. **Passer le correctif des champions en double sur la production** :
    `npx tsx scripts/fix-doublons-ogs-opp.mts` avec le `DATABASE_URL` de prod pour
    voir les 8 lignes, puis `--apply`.

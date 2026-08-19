@@ -32,6 +32,8 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   liens affiliés (identifiant de partenaire Impact) : un lien CardNexus écrit à la
   main ailleurs est un lien non tracké, donc une vente perdue en silence.
   Prix affichés = `data/prices/card-prices.json`, relevé par `npm run sync-prices`.
+  Le prix retenu est **l'impression la moins chère du même nom** : une decklist qui
+  cite une surnumérotée ne fait pas payer la surnumérotée.
   Panier prêt à payer = `/api/cardnexus/panier?slug=` ou `?code=`.
 - **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
   `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
@@ -189,7 +191,7 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
 
 ## Base de données
 
-18 modèles dans `prisma/schema.prisma`. Les axes :
+19 modèles dans `prisma/schema.prisma`. Les axes :
 
 - **Cartes** : `Card`, `CardSet`.
 - **Decks officiels** : `Deck` + `DeckCard`, rattachés à un `Event`.
@@ -199,7 +201,10 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
 - **Collection** : `CollectionItem`, `Binder`.
 - **Éditorial** : `Article`, `TierList` + `TierListEntry`.
 - **Comptes** : `User`, `Comment`, `CommentVote`.
-- **Stream** : `OverlayState`.
+- **Stream** : `OverlayState`, et `OverlayMedia` (logo et fond envoyés par le
+  streameur, stockés en `Bytes`). `OverlayMedia` est **volontairement absente** de
+  `TABLES_ATTENDUES` (`migrate-schema.mjs`) : sinon le conteneur refuse de démarrer
+  entre le déploiement du code et le `prisma db push`.
 
 Pas de dossier `migrations/` : le schéma est poussé avec `prisma db push`.
 
