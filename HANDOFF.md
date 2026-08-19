@@ -217,11 +217,13 @@ sont mesurés sur ces images ; s'ils bougent, il faut les remesurer.
 
 ## Les 5 prochaines tâches, par priorité
 
-1. **Fermer PostgreSQL.** Le port `178.104.237.33:15432` **répond de nouveau depuis
-   Internet** : vérifié le 19 août 2026, connexion TCP acceptée, et une lecture de la
-   base de production a bien abouti. Le contrôle du 14 août concluait l'inverse : le
-   port a donc été rouvert entre-temps. Le refermer, et passer par un tunnel SSH
-   ponctuel ou une règle de pare-feu limitée à une seule IP.
+1. **Refermer PostgreSQL après chaque seed.** Le 19 août 2026, le port
+   `178.104.237.33:15432` acceptait les connexions depuis Internet en début de
+   journée, puis plus du tout quelques heures après (contrôlé deux fois, avec le
+   port 443 en témoin pour prouver que l'hôte répondait toujours). Rien n'est donc
+   cassé aujourd'hui, mais le trou **se rouvre à chaque seed** : c'est un `socat`
+   lancé à la main, pas une règle permanente, et personne ne voit qu'il traîne.
+   Le refermer dans la foulée du seed, ou passer par un tunnel SSH ponctuel.
 2. **Passer le correctif des champions en double sur la production** :
    `npx tsx scripts/fix-doublons-ogs-opp.mts` avec le `DATABASE_URL` de prod pour
    voir les 8 lignes, puis `--apply`.
