@@ -31,11 +31,38 @@ la session Playwright appartient à Claude et le WebSocket OBS ne tourne pas.
 
 Relecture Codex : le bandeau d'erreur porte maintenant `Réessayer`; la file garde
 le même état jusqu'à son envoi. Le dernier état différé part avec `keepalive` au
-départ de la page. La normalisation VDO.Ninja reste dupliquée tant que Claude possède
-`overlay-full.tsx`; ne pas fusionner les deux copies sans coordonner ce fichier.
+départ de la page.
 
-**Relevé mis à jour le 20 août 2026.** Branche `main`, dernier commit du companion
-`e391395c`.
+### Fin de journée : reprise par Claude
+
+Le chantier est terminé des deux côtés, `overlay-full.tsx` n'est plus réservé.
+Trois défauts corrigés après relecture :
+
+- **La règle du lien VDO.Ninja existait en trois exemplaires** (page d'habillage,
+  tableau de bord, et une copie à la main dans `cam-src.test.ts`). La copie du test
+  avait déjà cessé de couper le son : elle validait une règle que le site
+  n'appliquait plus. Tout passe par `src/lib/overlay-cam.ts`, testé une fois.
+  `cam-src.test.ts` est supprimé.
+- **Le bloc « Liens et affichage OBS » était replié d'office.** Il porte le mode
+  d'emploi de la première fois, le lien OBS et le lien du compagnon : un nouveau
+  venu n'y trouvait rien à faire. Il s'ouvre par défaut. Le compagnon et la version
+  simple ont depuis chacun leur encadré.
+- **Le bandeau d'erreur du compagnon n'avait sa position qu'en paysage.** En
+  portrait il poussait les deux panneaux de score au moment précis d'une coupure.
+
+Habillage compact : le décor `public/stream/compact.webp` n'a **qu'un** cadre par
+joueur, la coupure des rails vers 130-206 est décorative. La Légende va du haut au
+trait plein, le champ de bataille prend le bas, le pseudo tombe sous le cadre. Les
+mesures sont celles de l'INTÉRIEUR des rails. Le nombre de caractères qui tiennent
+vient d'une mesure au navigateur, pas d'une règle de trois. Vérifié par capture OBS
+(`GetSourceScreenshot` sur la source « Navigateur web »), pas au navigateur seul.
+
+**Reste à faire :** les deux cadres de `compact.webp` n'ont pas la même taille
+(gauche 231x305, droite 240x316, et la droite descend de 11 px). Les deux colonnes
+ne peuvent donc pas être jumelles. Allan reprend le webp. Question toujours en
+attente : le chinois pour l'habillage (portée non tranchée).
+
+**Relevé mis à jour le 20 août 2026.** Branche `main`.
 La session du 20 août est décrite plus bas ; le reste date du relevé du 14 août.
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
 L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
