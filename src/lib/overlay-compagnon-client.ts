@@ -93,6 +93,11 @@ export function creerFilePatchs(
   return {
     ajouter(patch: PatchCompagnon) {
       attente = fusionnerPatchs(attente, patch);
+      // Une action de plus vaut un nouvel essai. Sans ça, un seul envoi refusé
+      // gelait la file : le téléphone continuait de compter, l'écran du stream
+      // restait figé, et rien ne repartait tant que personne ne lisait la
+      // bannière pour cliquer « Réessayer ».
+      bloquee = false;
       void vider();
     },
     renvoyer() {

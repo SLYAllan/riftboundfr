@@ -125,9 +125,19 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     envoyer(patchPourRestaurerManche(derniereManche));
     setDerniereManche(null); setConfirmeNouveauMatch(false);
   }
-  function nouveauMatch() {
+  function remettreLesScoresAZero() {
     envoyer({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] } as PatchCompagnon);
-    setDerniereManche(null); setConfirmeNouveauMatch(false); setEnMatch(false); setEtape(0);
+    setDerniereManche(null); setConfirmeNouveauMatch(false);
+  }
+  function nouveauMatch() {
+    remettreLesScoresAZero(); setEnMatch(false); setEtape(0);
+  }
+  function lancerLaPartie() {
+    // Le match précédent dort encore dans l'état de l'habillage : sans cette remise
+    // à zéro, « Lancer la partie » ouvrait aussitôt l'écran de vainqueur, et les
+    // points de l'autre match restaient à l'écran du stream.
+    if (vainqueur !== null) remettreLesScoresAZero();
+    setEnMatch(true);
   }
 
   const retourEnvoi = <div className="flex min-w-0 items-center gap-2">
@@ -183,7 +193,7 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
 
       <nav className="flex items-center justify-between gap-3" aria-label={t("Étapes de création")}>
         {etape > 0 ? <button type="button" onClick={() => setEtape(bornerEtape(etape - 1))} className={boutonSecondaire}><ChevronLeft size={18} aria-hidden />{t("Retour")}</button> : <span />}
-        {etape < 2 ? <button type="button" onClick={() => setEtape(bornerEtape(etape + 1))} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-arcane px-5 py-2 font-bold text-canvas active:scale-[0.96]">{t("Continuer")}<ChevronRight size={18} aria-hidden /></button> : <button type="button" onClick={() => setEnMatch(true)} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Lancer la partie")}</button>}
+        {etape < 2 ? <button type="button" onClick={() => setEtape(bornerEtape(etape + 1))} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-arcane px-5 py-2 font-bold text-canvas active:scale-[0.96]">{t("Continuer")}<ChevronRight size={18} aria-hidden /></button> : <button type="button" onClick={lancerLaPartie} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Lancer la partie")}</button>}
       </nav>
     </div>
   </main>;

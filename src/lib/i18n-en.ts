@@ -914,6 +914,9 @@ export const EN: Record<string, string> = {
   "Rechercher une légende": "Search for a Legend",
 
   // Compagnon de match :
+  Aucune: "None",
+  Retour: "Back",
+  "Chercher une carte…": "Search for a card…",
   "Compagnon de match": "Match companion",
   "Tout ce que vous tapez ici part sur l’habillage de stream.":
     "Everything you type here goes straight to the stream overlay.",
@@ -951,8 +954,6 @@ export const EN: Record<string, string> = {
   "Annuler la dernière manche": "Undo last game",
   "Corriger la dernière manche": "Correct last game",
   "Confirmer le nouveau match": "Confirm new match",
-  "Toute personne qui possède ce lien peut modifier l’habillage. Ne le montrez pas en direct.":
-    "Anyone with this link can change the overlay. Do not show it on stream.",
   "Copie impossible. Sélectionnez le lien et copiez-le.":
     "Unable to copy. Select the link and copy it.",
 };

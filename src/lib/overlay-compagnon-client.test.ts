@@ -68,6 +68,27 @@ describe("file d’envoi du compagnon", () => {
     expect(recus).toEqual([{ points: { a: 4 } }, { points: { a: 4 } }]);
   });
 
+  it("repart au geste suivant après un envoi refusé", async () => {
+    let echoue = true;
+    const recus: unknown[] = [];
+    const file = creerFilePatchs(async (patch) => {
+      recus.push(patch);
+      if (echoue) throw new Error("hors ligne");
+    });
+
+    file.ajouter({ points: { a: 1 } });
+    await file.quandCalme();
+    expect(recus).toEqual([{ points: { a: 1 } }]);
+
+    // Marquer le point suivant suffit : personne n'a à lire la bannière pour que
+    // l'écran du stream reparte.
+    echoue = false;
+    file.ajouter({ points: { a: 2 } });
+    await file.quandVide();
+    expect(recus).toEqual([{ points: { a: 1 } }, { points: { a: 2 } }]);
+    expect(file.aDesChangements()).toBe(false);
+  });
+
   it("borne le parcours entre les trois étapes", () => {
     expect(bornerEtape(-1)).toBe(0);
     expect(bornerEtape(1)).toBe(1);

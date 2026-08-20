@@ -417,8 +417,14 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               {copieCompagnon === "copie" ? t("Copié") : t("Copier")}
             </button>
           </div>
-          <p role="status" aria-live="polite" className="mt-2 text-xs text-ink-muted">
-            {copieCompagnon === "copie" ? t("Copié") : t("Toute personne qui possède ce lien peut modifier l’habillage. Ne le montrez pas en direct.")}
+          {/* La mise en garde reste à l'écran en permanence : quand « Copié » prenait
+              sa place, la seule phrase qui dit de ne pas montrer ce lien en direct
+              disparaissait au moment précis où on venait de le copier. */}
+          <p className="mt-2 text-xs text-ink-muted">
+            {t("Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.")}
+          </p>
+          <p role="status" aria-live="polite" className="sr-only">
+            {copieCompagnon === "copie" ? t("Copié") : ""}
           </p>
           {copieCompagnon === "erreur" && (
             <p role="alert" className="mt-2 text-xs text-error-light">
