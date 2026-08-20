@@ -19,6 +19,7 @@ const mainLinks = [
   { href: "/guides", label: "Guides" },
   { href: "/tournois", label: "Tournois" },
   { href: "/articles", label: "Articles" },
+  { href: "/profil/overlay", label: "Overlay" },
 ];
 
 const outilsLinks = [
@@ -27,7 +28,6 @@ const outilsLinks = [
   { href: "/collection", label: "Ma collection" },
   { href: "/outils/compteur", label: "Compteur" },
   { href: "/outils/regles", label: "Chercher une règle" },
-  { href: "/profil/overlay", label: "Overlay de stream" },
 ];
 
 /**
