@@ -121,6 +121,7 @@ export const EN: Record<string, string> = {
     "1920 x 1080, PNG or WebP, transparent where the game must show through. Start from the template: the cut-outs have to land pixel-perfect.",
   "PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.":
     "PNG, JPEG, WebP or GIF, 512 KB at most. The image is shrunk in your browser before it is sent.",
+  "Version simple (sans caméra ni cadre)": "Simple version (no camera, no frames)",
   "Copier la version simple": "Copy the plain link",
   "1. Les joueurs": "1. Players",
   Joueur: "Player",

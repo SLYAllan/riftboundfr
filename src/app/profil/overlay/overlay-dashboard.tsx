@@ -435,47 +435,6 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
 
-        <section className="mt-3 border-t border-hairline pt-3">
-          <h3 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h3>
-          <p className="mt-1 text-xs text-ink-muted">
-            {t("Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.")}
-          </p>
-          <ol className="mt-2 space-y-1.5 text-xs text-ink-secondary">
-            <li><strong className="text-ink">1.</strong> {t("Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.")}</li>
-            <li><strong className="text-ink">2.</strong> {t("Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.")}</li>
-            <li><strong className="text-ink">3.</strong> {t("Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.")}</li>
-          </ol>
-          <div className="mt-2 flex flex-wrap items-center gap-2">
-            <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
-            <button
-              onClick={() => void copierCompagnon()}
-              className={`${btnPlein} min-w-[7.5rem]`}
-            >
-              {copieCompagnon === "copie" ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
-              {copieCompagnon === "copie" ? t("Copié") : t("Copier")}
-            </button>
-            {/* Un lien, pas un bouton : on l'ouvre dans un autre onglet pour garder
-                ce tableau de bord sous la main pendant la diffusion. */}
-            <a href={urlCompagnon} target="_blank" rel="noopener noreferrer" className={btnVide}>
-              <ExternalLink size={15} aria-hidden />
-              {t("Lancer le compagnon")}
-            </a>
-          </div>
-          {/* La mise en garde reste à l'écran en permanence : quand « Copié » prenait
-              sa place, la seule phrase qui dit de ne pas montrer ce lien en direct
-              disparaissait au moment précis où on venait de le copier. */}
-          <p className="mt-2 text-xs text-ink-muted">
-            {t("Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.")}
-          </p>
-          <p role="status" aria-live="polite" className="sr-only">
-            {copieCompagnon === "copie" ? t("Copié") : ""}
-          </p>
-          {copieCompagnon === "erreur" && (
-            <p role="alert" className="mt-2 text-xs text-error-light">
-              {t("Copie impossible. Sélectionnez le lien et copiez-le.")}
-            </p>
-          )}
-        </section>
         <p role="status" aria-live="polite" className="sr-only">{copied ? t("Copié") : ""}</p>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Décor")}</span>
@@ -531,14 +490,61 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             </p>
           </div>
         </div>
-        <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
-          <span className="text-sm text-ink-secondary">{t("Pas de caméra ni de cadre ?")}</span>
-          <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-1.5 text-xs">{overlayUrl}?compact=1</code>
+      </section>
+
+      <section className="rounded-xl border border-hairline bg-surface p-4">
+        <h2 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h2>
+        <p className="mt-1 text-xs text-ink-muted">
+          {t("Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.")}
+        </p>
+        <ol className="mt-2 space-y-1.5 text-xs text-ink-secondary">
+          <li><strong className="text-ink">1.</strong> {t("Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.")}</li>
+          <li><strong className="text-ink">2.</strong> {t("Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.")}</li>
+          <li><strong className="text-ink">3.</strong> {t("Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.")}</li>
+        </ol>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
+          <button
+            onClick={() => void copierCompagnon()}
+            className={`${btnPlein} min-w-[7.5rem]`}
+          >
+            {copieCompagnon === "copie" ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
+            {copieCompagnon === "copie" ? t("Copié") : t("Copier")}
+          </button>
+          {/* Un lien, pas un bouton : on l'ouvre dans un autre onglet pour garder
+              ce tableau de bord sous la main pendant la diffusion. */}
+          <a href={urlCompagnon} target="_blank" rel="noopener noreferrer" className={btnVide}>
+            <ExternalLink size={15} aria-hidden />
+            {t("Lancer le compagnon")}
+          </a>
+        </div>
+        {/* La mise en garde reste à l'écran en permanence : quand « Copié » prenait
+            sa place, la seule phrase qui dit de ne pas montrer ce lien en direct
+            disparaissait au moment précis où on venait de le copier. */}
+        <p className="mt-2 text-xs text-ink-muted">
+          {t("Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.")}
+        </p>
+        <p role="status" aria-live="polite" className="sr-only">
+          {copieCompagnon === "copie" ? t("Copié") : ""}
+        </p>
+        {copieCompagnon === "erreur" && (
+          <p role="alert" className="mt-2 text-xs text-error-light">
+            {t("Copie impossible. Sélectionnez le lien et copiez-le.")}
+          </p>
+        )}
+      </section>
+
+      <section className="rounded-xl border border-hairline bg-surface p-4">
+        <h2 className="text-sm font-semibold">{t("Version simple (sans caméra ni cadre)")}</h2>
+        <p className="mt-1 text-xs text-ink-muted">
+          {t("La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}
+        </p>
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}?compact=1</code>
           <button onClick={() => navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}?compact=1`)} className={btnVide}>
             <Copy size={15} aria-hidden />
             {t("Copier la version simple")}
           </button>
-          <p className="w-full text-xs text-ink-muted">{t("La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}</p>
         </div>
       </section>
         </div>
