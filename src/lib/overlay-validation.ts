@@ -88,7 +88,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "layout", "backgroundUrl", "backgroundNocamUrl"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "timerDepassement", "layout", "backgroundUrl", "backgroundNocamUrl"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -106,13 +106,14 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
       const erreur = chaine(value.event.endsAt, "event.endsAt");
       if (erreur) return { ok: false, error: erreur };
     }
-    for (const cle of ["timerVisible", "pointsVisible"] as const) {
+    for (const cle of ["timerVisible", "pointsVisible", "timerDepassement"] as const) {
       if (value.event[cle] !== undefined && typeof value.event[cle] !== "boolean") {
         return { ok: false, error: `event.${cle} doit être un booléen` };
       }
     }
     if (value.event.paused !== undefined && value.event.paused !== null) {
-      const erreur = nombre(value.event.paused, "event.paused", 0, 86400);
+      // Borne basse negative : en prolongation, la pause fige un temps DEPASSE.
+      const erreur = nombre(value.event.paused, "event.paused", -86400, 86400);
       if (erreur) return { ok: false, error: erreur };
     }
     if (value.event.layout !== undefined && !["cams", "nocam"].includes(String(value.event.layout))) {

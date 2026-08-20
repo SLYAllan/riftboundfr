@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, secondesChrono } from "./overlay";
 
 describe("overlay logic", () => {
   it("default state has two players, BO3, maxPoints 8, points 0", () => {
@@ -103,5 +103,33 @@ describe("overlay logic", () => {
     expect(echelleOverlay(3840, 2160)).toBe(2);
     // Une taille absurde ne doit pas faire disparaître l'habillage.
     expect(echelleOverlay(0, 0)).toBe(1);
+  });
+});
+
+describe("secondesChrono", () => {
+  const T0 = Date.parse("2026-08-21T12:00:00.000Z");
+  const dans = (secondes: number) => new Date(T0 + secondes * 1000).toISOString();
+
+  it("rend null sans chrono lancé", () => {
+    expect(secondesChrono({}, T0)).toBeNull();
+    expect(secondesChrono({ endsAt: null }, T0)).toBeNull();
+  });
+
+  it("décompte jusqu'à zéro et s'y arrête", () => {
+    expect(secondesChrono({ endsAt: dans(90) }, T0)).toBe(90);
+    expect(secondesChrono({ endsAt: dans(-40) }, T0)).toBe(0);
+  });
+
+  it("passe sous zéro quand le dépassement est demandé", () => {
+    expect(secondesChrono({ endsAt: dans(-40), timerDepassement: true }, T0)).toBe(-40);
+    // Lancé sur zéro : le chrono monte au lieu de descendre.
+    expect(secondesChrono({ endsAt: dans(-125), timerDepassement: true }, T0)).toBe(-125);
+  });
+
+  it("fige le temps en pause, dépassement compris", () => {
+    expect(secondesChrono({ endsAt: dans(999), paused: 42 }, T0)).toBe(42);
+    // Sans l'option, une pause prise en prolongation reste à zéro.
+    expect(secondesChrono({ paused: -30 }, T0)).toBe(0);
+    expect(secondesChrono({ paused: -30, timerDepassement: true }, T0)).toBe(-30);
   });
 });

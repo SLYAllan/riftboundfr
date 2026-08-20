@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
-import { echelleOverlay, entrelace, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { echelleOverlay, entrelace, secondesChrono, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useT } from "@/components/i18n-provider";
@@ -496,25 +496,28 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
   return <CarteMontree nom={nom} slot={slot} />;
 }
 
-function Timer({ endsAt, paused }: { endsAt?: string | null; paused?: number | null }) {
+function Timer({ endsAt, paused, depassement }: { endsAt?: string | null; paused?: number | null; depassement?: boolean }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
-  // En pause : on fige les secondes restantes. Sinon : décompte depuis endsAt.
-  const left = paused != null
-    ? Math.max(0, Math.floor(paused))
-    : endsAt ? Math.max(0, Math.floor((new Date(endsAt).getTime() - now) / 1000)) : null;
-  const mm = left === null ? "--" : String(Math.floor(left / 60)).padStart(2, "0");
-  const ss = left === null ? "--" : String(left % 60).padStart(2, "0");
+  // La règle vit dans `src/lib/overlay.ts` : elle a des branches, elle tourne en
+  // direct, et un composant client ne se teste pas ici.
+  const left = secondesChrono({ endsAt, paused, timerDepassement: depassement }, now);
+  const enRetard = left !== null && left < 0;
+  const abs = left === null ? 0 : Math.abs(left);
+  const mm = left === null ? "--" : String(Math.floor(abs / 60)).padStart(2, "0");
+  const ss = left === null ? "--" : String(abs % 60).padStart(2, "0");
   return (
     <div className="flex h-full items-center justify-center overflow-hidden">
       <div
-        className="text-[34px] font-bold leading-none tabular-nums text-[#1b1408]"
+        // Le dépassement se lit d'un coup d'œil : signe devant et encre rouge sombre.
+        // Sur la case dorée du décor, un rouge clair passerait inaperçu.
+        className={`text-[34px] font-bold leading-none tabular-nums ${enRetard ? "text-[#7a1310]" : "text-[#1b1408]"}`}
         style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
       >
-        {mm}:{ss}
+        {enRetard ? "+" : ""}{mm}:{ss}
       </div>
     </div>
   );
@@ -644,7 +647,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
                 opacity: !vitrine && event.timerVisible !== false ? 1 : 0,
               }}
             >
-              <Timer endsAt={event.endsAt} paused={event.paused} />
+              <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} />
             </div>
           </>
         }

@@ -147,7 +147,10 @@ export const EN: Record<string, string> = {
   "Ronde affichée": "Round on screen",
   "TOP 8, Finale…": "TOP 8, Final…",
   "Échanger les joueurs": "Swap players",
-  "Remettre les points à zéro": "Reset points",
+  "Remettre le score à zéro": "Reset the score",
+  "Continuer après zéro": "Keep going past zero",
+  "Sans cette case le chrono s’arrête sur 00:00. Avec, il repart en négatif et affiche le dépassement en rouge, ce qui sert pour les tours de mort subite. Une durée de 0 minute donne un chrono qui monte à partir de zéro.":
+    "Without this box the timer stops at 00:00. With it, the timer runs past zero and shows the overtime in red, which is what sudden-death turns need. A duration of 0 minutes gives you a timer that counts up from zero.",
   "Durée en minutes": "Minutes",
   "Lancer le chrono": "Start timer",
   Pause: "Pause",

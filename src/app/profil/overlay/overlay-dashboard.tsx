@@ -732,9 +732,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <ArrowLeftRight size={15} aria-hidden />
             {t("Échanger les joueurs")}
           </button>
-          <button onClick={() => update({ points: { a: 0, b: 0 } })} className={btnVide}>
+          {/* Points ET manches : le bouton ne servait qu'entre deux manches, alors
+              qu'on s'en sert surtout entre deux matchs. Les manches de la paire
+              précédente restaient à l'écran. */}
+          <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className={btnVide}>
             <RotateCcw size={15} aria-hidden />
-            {t("Remettre les points à zéro")}
+            {t("Remettre le score à zéro")}
           </button>
         </div>
 
@@ -743,10 +746,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <span className="mb-1 block text-xs text-ink-muted">{t("Durée en minutes")}</span>
             <input
               type="number"
-              min={1}
+              min={0}
               max={180}
               value={minutes}
-              onChange={(e) => setMinutes(Math.max(1, Math.min(180, Number(e.target.value) || 1)))}
+              // 0 accepté : lancé à zéro avec « Continuer après zéro », le chrono
+              // monte au lieu de descendre. C'est le chrono libre, sans autre code.
+              onChange={(e) => setMinutes(Math.max(0, Math.min(180, Number(e.target.value) || 0)))}
               className="w-28 min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base tabular-nums sm:text-sm"
             />
           </label>
@@ -756,7 +761,9 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           </button>
           {state.event.paused == null ? (
             <button
-              onClick={() => update({ event: { paused: state.event.endsAt ? Math.max(0, Math.floor((new Date(state.event.endsAt).getTime() - Date.now()) / 1000)) : 0 } })}
+              // Sans borne basse : en prolongation, la pause figeait 00:00 et le
+              // dépassement repartait de zéro à la reprise.
+              onClick={() => update({ event: { paused: state.event.endsAt ? Math.floor((new Date(state.event.endsAt).getTime() - Date.now()) / 1000) : 0 } })}
               disabled={!state.event.endsAt}
               className={btnVide}
             >
@@ -780,6 +787,13 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <input type="checkbox" className="size-4 accent-arcane" checked={state.event.timerVisible !== false} onChange={(e) => update({ event: { timerVisible: e.target.checked } })} />
             {t("Montrer le chrono")}
           </label>
+          <label className={caseCls}>
+            <input type="checkbox" className="size-4 accent-arcane" checked={state.event.timerDepassement === true} onChange={(e) => update({ event: { timerDepassement: e.target.checked } })} />
+            {t("Continuer après zéro")}
+          </label>
+          <p className="w-full text-xs text-ink-muted">
+            {t("Sans cette case le chrono s’arrête sur 00:00. Avec, il repart en négatif et affiche le dépassement en rouge, ce qui sert pour les tours de mort subite. Une durée de 0 minute donne un chrono qui monte à partir de zéro.")}
+          </p>
         </div>
       </section>
 

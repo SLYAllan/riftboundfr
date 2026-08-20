@@ -77,14 +77,18 @@ export interface OverlayStateData {
   // (démo, deck tech, pause) n'a pas de score à montrer, et on ne veut pas perdre
   // les points en cours pour autant.
   // `paused` : secondes restantes figées quand le chrono est en pause (null = il
-  // tourne). En pause on gèle l'affichage ; reprendre repose un `endsAt`.
+  // tourne). En pause on gèle l'affichage ; reprendre repose un `endsAt`. Peut être
+  // NÉGATIF quand le chrono a dépassé zéro : sinon mettre en pause une prolongation
+  // la ramenait à 00:00.
+  // `timerDepassement` : le chrono continue après zéro au lieu de s'y arrêter, et
+  // compte le temps de dépassement. Lancé sur 0 minute, il sert de chrono qui monte.
   // `layout` : quel décor. "cams" = celui d'origine, avec un cadre webcam par joueur.
   // "nocam" = le décor sans ces cadres, pour les locales qui n'ont qu'une caméra
   // plateau : la Légende occupe alors la grande case.
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
   // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
   // découpes diffèrent. Vide = le décor du site pour ce mode.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -115,7 +119,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -142,6 +146,24 @@ export function entrelace(a: string[], b: string[]): string[] {
  */
 export function manchesPourGagner(format: OverlayFormat): number {
   return format === "BO5" ? 3 : format === "BO3" ? 2 : 1;
+}
+
+/**
+ * Secondes affichées par le chrono. `null` = pas de chrono lancé.
+ *
+ * En pause on rend le temps figé tel quel. Sinon on compte depuis `endsAt`. Sans
+ * l'option de dépassement on s'arrête à zéro ; avec, on passe en négatif et
+ * l'affichage montre le temps de retard.
+ */
+export function secondesChrono(
+  e: { endsAt?: string | null; paused?: number | null; timerDepassement?: boolean },
+  maintenant: number,
+): number | null {
+  const brut = e.paused != null
+    ? Math.floor(e.paused)
+    : e.endsAt ? Math.floor((new Date(e.endsAt).getTime() - maintenant) / 1000) : null;
+  if (brut === null || Number.isNaN(brut)) return null;
+  return e.timerDepassement ? brut : Math.max(0, brut);
 }
 
 export function clampPoints(n: number, max: number): number {
@@ -206,7 +228,9 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     // Absent = visible : c'est ce que voit un état d'avant ces deux interrupteurs.
     timerVisible: e.timerVisible !== false,
     pointsVisible: e.pointsVisible !== false,
-    paused: typeof e.paused === "number" && Number.isFinite(e.paused) ? entier(e.paused, 0, 86_400, 0) : null,
+    paused: typeof e.paused === "number" && Number.isFinite(e.paused) ? entier(e.paused, -86_400, 86_400, 0) : null,
+    // Absent = faux : un état écrit avant cette option garde le chrono qui s'arrête.
+    timerDepassement: e.timerDepassement === true,
     // Absent = décor d'origine : c'est ce que porte tout état écrit avant ce champ.
     layout: e.layout === "nocam" ? "nocam" : "cams",
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
