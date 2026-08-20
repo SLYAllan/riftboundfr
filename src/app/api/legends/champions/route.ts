@@ -17,7 +17,12 @@ export async function GET(req: Request) {
       // supertype "Champion" en base. Une Légende n'est pas un Champion Unit : sans ce
       // filtre, « Annie, Dark Child » (la Légende) s'affichait comme champion possible.
       type: { not: "Legend" },
-      name: { startsWith: `${first},` },
+      // `mode: "insensitive"` : PostgreSQL compare la casse, et la base ne l'écrit pas
+      // toujours pareil des deux côtés. « Rek'sai, Void Burrower » est une Légende à
+      // s minuscule, ses champions « Rek'Sai, Breacher » à S majuscule : la liste des
+      // champions élus restait vide pour elle seule. Sur les 49 Légendes, c'était la
+      // seule touchée, mais rien n'empêche la prochaine.
+      name: { startsWith: `${first},`, mode: "insensitive" },
       NOT: { name: { contains: "(" } }, // exclut (Alternate Art), (Signature)…
     },
     select: { name: true },
