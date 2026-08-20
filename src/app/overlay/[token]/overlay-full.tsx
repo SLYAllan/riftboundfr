@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
-import { echelleOverlay, entrelace, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { echelleOverlay, entrelace, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useT } from "@/components/i18n-provider";
@@ -36,6 +36,35 @@ const SLOT = {
   cardsLeft: { left: 61, top: 708, width: 235, height: 310 },
   cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
+
+// Découpes de public/stream/compact.webp, relevées au pixel sur son canal alpha :
+// deux cadres par joueur, le haut pour la Légende, le bas coupé en deux par un trait
+// (le pseudo au-dessus, le champ de bataille et les manches en dessous).
+//
+// Les deux côtés ne sont PAS symétriques dans l'image : le cadre de droite est plus
+// large de 8 px et descend de 7. Chaque côté porte donc ses propres mesures — les
+// aligner sur la moyenne décalait le contenu hors du trait doré.
+const CADRE_COMPACT = {
+  left: {
+    x: 26, largeur: 230,
+    hero: { top: 18, hauteur: 112 },
+    pseudo: { top: 207, hauteur: 39 },
+    bf: { top: 249, hauteur: 65 },
+  },
+  right: {
+    x: 1654, largeur: 238,
+    hero: { top: 18, hauteur: 116 },
+    pseudo: { top: 214, hauteur: 40 },
+    bf: { top: 257, hauteur: 67 },
+  },
+} as const;
+const FOND_COMPACT = "/stream/compact.webp";
+
+
+// De combien le compact réduit les cadres de cartes et leur carte. Le gabarit les
+// dessine pour l'habillage complet, où ils ont toute la place ; sur un téléphone la
+// scène est déjà chargée.
+const ECHELLE_CARTES_COMPACT = 0.85;
 
 // Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
 // cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
@@ -175,16 +204,18 @@ function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
 }
 
 /** Nom de Légende et Champion posés en bas d'une case, sur un dégradé. */
-function EtiquetteLegende({ legende, champion }: { legende: string; champion: string }) {
+function EtiquetteLegende({
+  legende, champion, charsLegende = 26, charsChampion = 34,
+}: { legende: string; champion: string; charsLegende?: number; charsChampion?: number }) {
   const t = useT();
   return (
     <>
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
-        <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+        <FitText chars={charsLegende} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
           {legende || t("Légende")}
         </FitText>
-        <FitText chars={34} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
+        <FitText chars={charsChampion} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
           {champion || "Champion"}
         </FitText>
       </div>
@@ -640,15 +671,69 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
 }
 
 /**
- * Habillage réduit : les points en haut, un bandeau par joueur avec son pseudo, sa
- * Légende et son champion, et les cartes en bas. Rien d'autre, et un fond
- * transparent : ça se pose sur n'importe quelle scène.
+ * Le bloc d'un joueur dans le décor compact.
  *
- * Tout y est plus petit que dans l'habillage complet SAUF le texte : cette version
- * part sur un téléphone (Moblin), où la vignette du stream tient dans une main.
+ * `compact.webp` porte deux cadres par côté : la Légende en haut, et en bas un cadre
+ * coupé en deux par un trait — le pseudo au-dessus, le champ de bataille et les
+ * manches en dessous. On ne redessine rien, on remplit ses découpes, comme pour
+ * l'habillage complet.
+ */
+function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left" | "right"; format: OverlayStateData["format"] }) {
+  const cote = CADRE_COMPACT[side];
+  const banner = p.legendName ? getBannerUrl(p.legendName) : null;
+  const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
+  const bf = p.battlefields[0] ?? "";
+  const art = useBattlefieldArt(bf ? [bf] : []);
+  const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
+  const decoupe = (d: { top: number; hauteur: number }) => ({ left: cote.x, width: cote.largeur, top: d.top, height: d.hauteur });
+  return (
+    <>
+      <div className="absolute z-20 overflow-hidden" style={decoupe(cote.hero)}>
+        {/* La bannière large d'abord : la découpe est en paysage, l'icône carrée y
+            serait rognée des deux côtés. */}
+        <ImageFondu src={banner ?? icon} imgClassName="object-cover object-[50%_28%]" />
+        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={21} charsChampion={28} />
+      </div>
+
+      <div className="absolute z-20 flex flex-col justify-center overflow-hidden px-2" style={decoupe(cote.pseudo)}>
+        <FitText chars={11} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+          {p.name || "—"}
+        </FitText>
+      </div>
+
+      <div className="absolute z-20 overflow-hidden" style={decoupe(cote.bf)}>
+        <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
+        <div className="absolute inset-0 bg-black/45" />
+        {/* Le nom à gauche, les manches à droite : la découpe fait 66 px de haut,
+            empilés comme dans l'habillage complet ils ne tiendraient pas. */}
+        <div className="relative z-20 flex h-full items-center gap-2 px-2">
+          <span className="min-w-0 flex-1">
+            <FitText chars={14} className="text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+              {bf || "Champ de bataille"}
+            </FitText>
+          </span>
+          {rounds > 0 && (
+            <span className="flex shrink-0 gap-1.5">
+              {Array.from({ length: rounds }).map((_, i) => (
+                <Manche key={i} gagnee={i < p.gamesWon} />
+              ))}
+            </span>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+/**
+ * Habillage réduit : les points en haut, le bloc de chaque joueur dans son cadre
+ * (Légende, champ de bataille, manches) et les cartes en bas. Rien d'autre, et un
+ * fond transparent : ça se pose sur n'importe quelle scène.
+ *
+ * Tout y est repris du décor sans caméra, en plus petit : cette version part sur un
+ * téléphone (Moblin), où l'image du stream tient dans une main.
  */
 function OverlayCompact({ state }: { state: OverlayStateData }) {
-  const t = useT();
   const [a, b] = state.players;
   const cards = state.cards;
   const mode = cards?.mode ?? "none";
@@ -656,59 +741,39 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
   return (
     <div className={styles.root}>
       <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} />
-      {[a, b].map((p, i) => (
-        <div
-          key={i}
-          className="absolute top-20 w-[330px] overflow-hidden rounded-xl bg-black/75 shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
-          style={{ [i === 0 ? "left" : "right"]: 40 } as React.CSSProperties}
-        >
-          {/* La banniere de la Legende, meme sans habillage : c'est elle qui donne
-              sa couleur au bandeau et qui identifie le joueur d'un coup d'oeil. */}
-          {p.legendName && getBannerUrl(p.legendName) && (
-            <div className="relative h-[72px]">
-              <ImageFondu src={getBannerUrl(p.legendName)} imgClassName="object-cover object-[50%_28%]" />
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
-            </div>
-          )}
-          <div className="p-3 pt-2">
-          <FitText chars={12} className="text-3xl font-bold uppercase tracking-wide text-white">
-            {p.name || "—"}
-          </FitText>
-          <div className="mt-1 border-t border-white/15 pt-1">
-            <FitText chars={23} className="text-lg font-bold uppercase leading-tight text-white/95">
-              {p.legendName || t("Légende")}
-            </FitText>
-            <FitText chars={28} className="text-base leading-tight text-white/70">
-              {p.championName || "Champion"}
-            </FitText>
-          </div>
-          {p.battlefields[0] && (
-            <FitText chars={26} className="mt-1 text-sm uppercase tracking-wide text-white/60">
-              {p.battlefields[0]}
-            </FitText>
-          )}
-          </div>
-        </div>
-      ))}
+      <BlocJoueurCompact p={a} side="left" format={state.format} />
+      <BlocJoueurCompact p={b} side="right" format={state.format} />
+      {/* Le décor PAR-DESSUS le contenu : ses traits dorés encadrent alors les images,
+          au lieu de passer dessous et de disparaître. Il est transparent partout
+          ailleurs, il ne masque donc rien. */}
+      <img src={FOND_COMPACT} alt="" className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
       {/* Les mêmes cadres dorés que l'habillage complet, et les cartes dans leurs
           découpes : ils sont dessinés en bas de la toile, aux deux coins. Leur place
           est celle du gabarit, au pixel — d'où les slots partagés. Comme dans le
           complet, le cadre suit le MODE et pas le nombre de cartes : on peut le poser
           vide, puis y charger le deck. */}
-      <img
-        src="/stream/cartes_gauche.webp"
-        alt=""
-        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: mode === "split" ? 1 : 0 }}
-      />
-      <img
-        src="/stream/cartes_droite.webp"
-        alt=""
-        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
-      />
-      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
-      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
+      {/* Le cadre est un calque pleine toile : on ne peut pas le rétrécir seul sans le
+          décoller de la carte. Les deux descendent donc du même facteur, ancrés au
+          coin du bas — ce qui les rapproche aussi du bord, la place gagnée revient à
+          la scène du streamer. */}
+      <div className="absolute inset-0 z-[11] origin-bottom-left" style={{ transform: `scale(${ECHELLE_CARTES_COMPACT})` }}>
+        <img
+          src="/stream/cartes_gauche.webp"
+          alt=""
+          className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
+          style={{ opacity: mode === "split" ? 1 : 0 }}
+        />
+        <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
+      </div>
+      <div className="absolute inset-0 z-[11] origin-bottom-right" style={{ transform: `scale(${ECHELLE_CARTES_COMPACT})` }}>
+        <img
+          src="/stream/cartes_droite.webp"
+          alt=""
+          className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
+          style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
+        />
+        <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
+      </div>
     </div>
   );
 }
