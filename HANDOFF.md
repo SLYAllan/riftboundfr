@@ -245,6 +245,55 @@ mesure plutôt qu'à l'œil : la nouvelle requête des contextes de tournoi
 existantes, et un contenu forcé visible dans un `<details>` fermé s'affiche bien
 sous Chrome 151. Aucun seed ni déploiement.
 
+## Session du 20 août 2026 : compagnon de match (COMMIT LOCAL, NON POUSSÉ)
+
+Commit `c07632e4` sur `main`, **en local seulement**. `npm run verify` sort à 0,
+169 tests verts, `npm run lint` 0 erreur. Allan fait repasser Codex sur
+l'interface : **Claude Code ne touche plus à ces fichiers** tant que la passe
+n'est pas rendue.
+
+Ce qui a été ajouté : une page tenue à une main pendant la partie, qui pilote
+l'habillage sans compte Discord. Un joueur qui diffuse son tournoi ne peut pas
+tenir le tableau de bord, il joue.
+
+| Fichier | Rôle |
+|---|---|
+| `src/app/compagnon/[token]/[cle]/compagnon.tsx` | Toute l'interface (préparation puis match). C'est **là** que porte la passe d'interface. |
+| `src/app/compagnon/[token]/[cle]/compagnon.module.css` | Masque barre du site, pied de page et bannière cookies, comme le fait `overlay.module.css`. |
+| `src/app/compagnon/[token]/[cle]/page.tsx` | Vérifie la clé, charge l'état, `noindex`. |
+| `src/app/api/overlay/[token]/compagnon/route.ts` | Écriture par la clé, en-tête `x-cle-compagnon`. |
+| `src/lib/overlay-compagnon.ts` (+ test) | Clé = HMAC du jeton avec `SESSION_SECRET`. |
+
+Trois choses à ne pas défaire en retouchant l'interface :
+
+1. **Le compagnon envoie un PATCH, jamais l'état entier.** Le streamer peut
+   changer son décor depuis son tableau de bord au même moment ; un état entier
+   écraserait son travail. Les patchs s'empilent dans `fusionner()` avant
+   l'envoi — sans ça, taper un pseudo puis marquer un point 200 ms plus tard
+   jetait le pseudo.
+2. **Le module CSS.** Sans lui, l'écran de match passe sous la ligne de
+   flottaison du téléphone et il faut faire défiler pour marquer un point.
+3. **La question « qui a gagné » ne se pose qu'au clic.** Un joueur peut
+   concéder ou finir la manche au temps : l'habillage ne tranche pas à sa place.
+
+Vérifié en local (serveur de dev, 390x844) : bonne clé 200, mauvaise clé 404,
+API sans clé 403, deux points puis fin de manche → l'état public rend
+`points {a:0,b:0}` et `manches [1,0]`, BO3 gagné → écran de vainqueur,
+en-tête `noindex` posé. Le bloc « Lien compagnon » du tableau de bord n'a été
+vu qu'en HTML : Playwright n'est pas une dépendance du projet.
+
+**En attente d'une réponse d'Allan** : le chinois (simplifié/traditionnel)
+demandé sous le tweet du 20 août. Périmètre à trancher — overlay seul
+(~85 textes), tout le site (775 entrées de `i18n-en.ts`, traduction machine à
+faire relire par un natif), ou la plomberie multilingue seule. Rien n'a été
+écrit : la vague de relevé était en lecture seule. Ce qu'elle a mesuré :
+l'habillage lui-même ne porte que cinq textes (« Légende », « Champion »,
+« Champ de bataille », « caméra en attente », « Caméra »), tout le reste de ce
+qu'on lit à l'écran est tapé par le streamer ou vient de la base ; les
+79 textes du tableau de bord passent déjà par `t()`. La plomberie, elle, est
+codée en dur pour deux langues (`type Langue`, `PREFIXE_EN`, le middleware, le
+sélecteur de la navbar, les `hreflang`).
+
 ## Les 5 prochaines tâches, par priorité
 
 1. **Refermer PostgreSQL après chaque seed.** Le 19 août 2026, le port
