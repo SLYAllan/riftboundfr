@@ -233,9 +233,11 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     {panneauJoueur(0)}
 
     <Dialog open={demandeTerrain} onOpenChange={setDemandeTerrain}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Champ de bataille de la manche suivante")}</DialogTitle><DialogDescription className="text-center">{t("Chacun choisit le sien. Laissez tel quel si vous rejouez le même.")}</DialogDescription>
-      {/* Le joueur 2 d'abord et à l'envers, comme pour le gagnant : il est assis en
-          face, son côté de l'écran est retourné. */}
-      {([1, 0] as const).map((i) => <label key={i} className={`block ${i === 1 ? "rotate-180" : ""}`}>
+      {/* Rien de retourné dans une boîte de dialogue : un menu natif ouvre sa liste
+          à l'endroit alors que sa boîte est à l'envers, et plus personne ne sait
+          quoi lire. Celui qui prend le téléphone répond pour les deux, chaque
+          champ porte le nom de son joueur. */}
+      {([0, 1] as const).map((i) => <label key={i} className="block">
         <span className="mb-1 block text-xs text-ink-muted">{state.players[i].name || `${t("Joueur")} ${i + 1}`}</span>
         <select name={`terrain-manche-${i + 1}`} autoComplete="off" value={state.players[i].battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b}>{b}</option>)}</select>
       </label>)}
@@ -243,7 +245,7 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
       <button type="button" onClick={() => setDemandeTerrain(false)} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Continuer")}</button>
     </DialogContent></Dialog>
 
-    <Dialog open={demandeGagnant} onOpenChange={setDemandeGagnant}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Qui a gagné la manche ?")}</DialogTitle><DialogDescription className="text-center">{t("Choisissez le gagnant pour mettre à jour le BO.")}</DialogDescription><button type="button" onClick={() => finDeManche(1)} className="min-h-16 rotate-180 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[1].name || `${t("Joueur")} 2`}</button><button type="button" onClick={() => finDeManche(0)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[0].name || `${t("Joueur")} 1`}</button><button type="button" onClick={() => setDemandeGagnant(false)} className="min-h-11 text-sm text-ink-secondary">{t("Annuler")}</button></DialogContent></Dialog>
+    <Dialog open={demandeGagnant} onOpenChange={setDemandeGagnant}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Qui a gagné la manche ?")}</DialogTitle><DialogDescription className="text-center">{t("Choisissez le gagnant pour mettre à jour le BO.")}</DialogDescription><button type="button" onClick={() => finDeManche(0)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[0].name || `${t("Joueur")} 1`}</button><button type="button" onClick={() => finDeManche(1)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[1].name || `${t("Joueur")} 2`}</button><button type="button" onClick={() => setDemandeGagnant(false)} className="min-h-11 text-sm text-ink-secondary">{t("Annuler")}</button></DialogContent></Dialog>
 
   </main>;
 }
