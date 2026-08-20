@@ -1,6 +1,6 @@
 # Documentation — Riftbound France
 
-Où trouver quoi. Rangé le 14 août 2026.
+Où trouver quoi. Rangé le 20 août 2026.
 
 ## À la racine du dépôt
 

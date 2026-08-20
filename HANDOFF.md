@@ -1,7 +1,8 @@
 # HANDOFF — état des lieux
 
-**Relevé mis à jour le 19 août 2026.** Branche `main`, dernier commit `320e27ad`.
-La session du 19 août est décrite plus bas ; le reste date du relevé du 14 août.
+**Relevé mis à jour le 20 août 2026.** Branche `main`, dernier commit du companion
+`e391395c`.
+La session du 20 août est décrite plus bas ; le reste date du relevé du 14 août.
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
 L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
 `docs/AUDITS.md`.
@@ -16,7 +17,7 @@ les commandes exactes de reprise. La lire avant de reprendre ce chantier.
 | Vérification | Résultat |
 |---|---|
 | `npx tsc --noEmit` | sortie **0**, aucune erreur |
-| `npm test` | **26 fichiers, 164 tests, tous verts** |
+| `npm test` | **28 fichiers, 175 tests, tous verts** |
 | `npx next build` | sortie **0**, toutes les routes construites |
 | `npm run verify` | vert (c'est `tsc` + `build`) |
 
@@ -29,7 +30,7 @@ génération d'images de deck, habillage de stream.
 
 ## Ce qui est cassé
 
-### `npm run lint` passe — 0 erreur, 97 avertissements au dernier relevé
+### `npm run lint` passe — 0 erreur, 99 avertissements au dernier relevé
 
 La commande fait désormais partie de la porte CI. Les avertissements restent à
 réduire, mais ils ne bloquent pas la vérification.
@@ -245,24 +246,27 @@ mesure plutôt qu'à l'œil : la nouvelle requête des contextes de tournoi
 existantes, et un contenu forcé visible dans un `<details>` fermé s'affiche bien
 sous Chrome 151. Aucun seed ni déploiement.
 
-## Session du 20 août 2026 : compagnon de match (COMMIT LOCAL, NON POUSSÉ)
+## Session du 20 août 2026 : compagnon de match (COMMITS LOCAUX, NON POUSSÉS)
 
-Commit `c07632e4` sur `main`, **en local seulement**. `npm run verify` sort à 0,
-169 tests verts, `npm run lint` 0 erreur. Allan fait repasser Codex sur
-l'interface : **Claude Code ne touche plus à ces fichiers** tant que la passe
-n'est pas rendue.
+Les commits `77c970de`, `deaf8d05` et `e391395c` sont sur `main`, **en local
+seulement**. Le dernier commit remplace la première version du companion par une
+interface mobile face-à-face.
 
-Ce qui a été ajouté : une page tenue à une main pendant la partie, qui pilote
-l'habillage sans compte Discord. Un joueur qui diffuse son tournoi ne peut pas
-tenir le tableau de bord, il joue.
+La page guide la création du match en trois étapes : format, pseudos, Légendes,
+champions et champs de bataille. Pendant la partie, le téléphone peut rester
+entre les joueurs : le panneau du haut tourne à 180 degrés, les deux scores se
+mettent à jour sans changer de page et l'image de chaque Légende sert de fond.
+Le bouton de fin de manche demande le gagnant, met à jour le BO et relance les
+points jusqu'à la victoire du match. La dernière manche peut être annulée.
 
 | Fichier | Rôle |
 |---|---|
-| `src/app/compagnon/[token]/[cle]/compagnon.tsx` | Toute l'interface (préparation puis match). C'est **là** que porte la passe d'interface. |
-| `src/app/compagnon/[token]/[cle]/compagnon.module.css` | Masque barre du site, pied de page et bannière cookies, comme le fait `overlay.module.css`. |
+| `src/app/compagnon/[token]/[cle]/compagnon.tsx` | Parcours en trois étapes, compteur face-à-face, fin et annulation de manche. |
+| `src/app/compagnon/[token]/[cle]/compagnon.module.css` | Plein écran mobile, zones sûres, portrait vertical et paysage côte à côte. |
 | `src/app/compagnon/[token]/[cle]/page.tsx` | Vérifie la clé, charge l'état, `noindex`. |
 | `src/app/api/overlay/[token]/compagnon/route.ts` | Écriture par la clé, en-tête `x-cle-compagnon`. |
 | `src/lib/overlay-compagnon.ts` (+ test) | Clé = HMAC du jeton avec `SESSION_SECRET`. |
+| `src/lib/overlay-compagnon-client.ts` (+ test) | Fusion, ordre, reprise des envois et annulation de manche. |
 
 Trois choses à ne pas défaire en retouchant l'interface :
 
@@ -270,17 +274,19 @@ Trois choses à ne pas défaire en retouchant l'interface :
    changer son décor depuis son tableau de bord au même moment ; un état entier
    écraserait son travail. Les patchs s'empilent dans `fusionner()` avant
    l'envoi — sans ça, taper un pseudo puis marquer un point 200 ms plus tard
-   jetait le pseudo.
+   jetait le pseudo. Les requêtes partent maintenant dans l'ordre et un échec
+   garde le changement jusqu'au nouvel essai.
 2. **Le module CSS.** Sans lui, l'écran de match passe sous la ligne de
    flottaison du téléphone et il faut faire défiler pour marquer un point.
 3. **La question « qui a gagné » ne se pose qu'au clic.** Un joueur peut
    concéder ou finir la manche au temps : l'habillage ne tranche pas à sa place.
 
-Vérifié en local (serveur de dev, 390x844) : bonne clé 200, mauvaise clé 404,
-API sans clé 403, deux points puis fin de manche → l'état public rend
-`points {a:0,b:0}` et `manches [1,0]`, BO3 gagné → écran de vainqueur,
-en-tête `noindex` posé. Le bloc « Lien compagnon » du tableau de bord n'a été
-vu qu'en HTML : Playwright n'est pas une dépendance du projet.
+Playwright a contrôlé les trois étapes, le match en 390×844 et 844×390, la mise
+à jour d'un point et la fenêtre de fin de manche. Le test a restauré l'état de
+l'habillage après les captures ; ses fichiers temporaires ont été retirés.
+Vérifications finales : **28 fichiers et 175 tests verts**, lint avec **0 erreur
+et 99 avertissements**, `npm run verify` avec `VERIFY_EXIT=0`, 52 pages générées
+et `git diff --check` vert. Aucun push, seed ou déploiement n'a été fait.
 
 **En attente d'une réponse d'Allan** : le chinois (simplifié/traditionnel)
 demandé sous le tweet du 20 août. Périmètre à trancher — overlay seul
@@ -306,7 +312,7 @@ sélecteur de la navbar, les `hreflang`).
 2. **Passer le correctif des champions en double sur la production** :
    `npx tsx scripts/fix-doublons-ogs-opp.mts` avec le `DATABASE_URL` de prod pour
    voir les 8 lignes, puis `--apply`.
-3. **Réduire les 97 avertissements de lint.** Commencer par les imports et
+3. **Réduire les 99 avertissements de lint.** Commencer par les imports et
    variables inutilisés, puis les images non optimisées.
 4. **Réduire les 1 201 listes invérifiables** en retrouvant leurs sources brutes,
    sans les considérer valides par défaut.

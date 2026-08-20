@@ -219,7 +219,7 @@ Pas de dossier `migrations/` : le schéma est poussé avec `prisma db push`.
 
 # Commandes
 
-Toutes vérifiées le 14 août 2026 sur `main`. Un agent doit s'y fier pour valider
+Toutes vérifiées le 20 août 2026 sur `main`. Un agent doit s'y fier pour valider
 son travail.
 
 | Commande | État | Ce qu'elle fait |
@@ -227,9 +227,9 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **22 fichiers, 140 tests, tous verts.** |
+| `npm test` | ✅ | Vitest. **28 fichiers, 175 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
-| `npm run lint` | ✅ | **0 erreur, 97 avertissements.** Les avertissements restent à réduire. |
+| `npm run lint` | ✅ | **0 erreur, 99 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
@@ -238,8 +238,8 @@ son travail.
 Lancer un seul test : `npx vitest run src/lib/deck-code.test.ts`
 Un seul cas : `npx vitest run -t "nom du test"`
 
-**`npm run lint` passe au dernier relevé du 14 août 2026** — 0 erreur et
-97 avertissements. La commande fait désormais partie de la porte CI ; les
+**`npm run lint` passe au dernier relevé du 20 août 2026** — 0 erreur et
+99 avertissements. La commande fait désormais partie de la porte CI ; les
 avertissements restent à réduire sans les confondre avec des erreurs.
 
 **`rtk` masque le code de sortie.** Ne jamais écrire `rtk tsc && git commit` :
