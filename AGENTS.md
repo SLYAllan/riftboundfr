@@ -43,12 +43,22 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
   `content/tweets/README.md`.
+- **Décors d'habillage** (`public/stream/*.webp`) → **les découpes se mesurent sur
+  le canal alpha de l'image, jamais à l'œil.** Le code ne redessine rien : il
+  remplit les trous du décor. Deux pièges déjà payés : la boîte du dessin n'est pas
+  l'intérieur du cadre (l'illustration passait par-dessus les traits dorés), et une
+  coupure dans un rail est décorative, pas un séparateur (dans `compact.webp` elle
+  faisait croire à deux cadres, d'où un trou en plein milieu de la colonne). Les
+  deux côtés ne sont pas forcément symétriques : chacun porte ses mesures.
 - **Habillage de stream** → **toute vérification passe par OBS, pas par le
   navigateur, et sans qu'Allan ait à le demander.** C'est le seul endroit où l'on
   voit la transparence composée et le vrai rendu. OBS expose un WebSocket sur
   `ws://127.0.0.1:4455` ; le mot de passe est dans
   `%APPDATA%/obs-studio/user.ini` (`ServerPassword=`), Node 24 a `WebSocket` en
   natif, et `GetSourceScreenshot` sur la source « Navigateur web » rend l'image.
+  `PressInputPropertiesButton` avec `refreshnocache` recharge la source avant la
+  capture. Ne pas croire `ServerEnabled=` dans `user.ini` : OBS ne l'écrit qu'en
+  quittant, il disait `false` alors que le serveur tournait. Tester le port.
   Une mesure dans le navigateur ne prouve rien toute seule : elle sert à trouver,
   la capture OBS sert à conclure. Ne jamais changer l'état de l'habillage
   d'Allan pour prendre une capture : le lui demander.
@@ -129,6 +139,7 @@ src/app/          Routes (App Router). Un dossier = une URL.
   d/[code]/       Deck partagé par code, avec image Open Graph.
   deckbuilder/    Constructeur de deck (gros composant client).
   overlay/[token] Habillage de stream, la seule route qui encadre un site tiers.
+  compagnon/…     Compteur de match sur téléphone, ouvert par lien, sans compte.
 src/lib/          TOUTE la logique métier. Pas de logique dans les pages.
 src/components/   Composants partagés entre plusieurs pages.
 src/middleware.ts CSRF, version anglaise, en-têtes de sécurité.
@@ -170,6 +181,19 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   tournoi codées en dur, relues par plusieurs pages.
 - `export-image.ts` — rendu paysage 2258x1518 dans un canvas côté navigateur,
   déclenché par le bouton « Exporter » d'une page de deck.
+- **`overlay-cam.ts` — passage unique pour le lien de caméra.** La règle (https
+  chez VDO.Ninja, et rien d'autre) a vécu en trois exemplaires : la page
+  d'habillage, le tableau de bord, et une copie à la main dans un test. La copie du
+  test avait cessé de couper le son : elle validait une règle que le site
+  n'appliquait plus. Ne pas la recopier, l'importer.
+- `overlay-compagnon.ts` — clé du lien compagnon, `HMAC-SHA256(SESSION_SECRET,
+  "compagnon:" + jeton)`. Le jeton seul ne doit pas suffire à ÉCRIRE : il est collé
+  dans OBS et finit lu par un viewer. Rien à stocker, et « Nouveau lien » tue
+  l'ancien partage en même temps que le jeton.
+- `overlay-server.ts` — `saveState(userId, patch)` pour le tableau de bord,
+  `saveStateByToken(token, patch)` pour le compagnon. **Toujours un PATCH, jamais
+  l'état entier** : les deux écrivent en même temps, le dernier arrivé écraserait
+  ce que l'autre vient de changer.
 
 ## Points d'entrée
 
@@ -196,6 +220,9 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   Carré **2000x2000** par défaut, `story` = **1620x2880** (9:16).
   Ne jamais écrire un autre rendu d'image de deck.
 - `/api/overlay/*` — état de l'habillage de stream, adressé par jeton.
+  `/api/overlay/[token]/compagnon` écrit sans session Discord : la clé du lien de
+  partage voyage en en-tête `x-cle-compagnon`, pas dans l'adresse, pour ne pas
+  s'écrire dans les journaux du serveur à chaque point marqué.
 - `/api/image-proxy` — sert les images distantes en respectant la CSP.
 
 ## Base de données
@@ -227,9 +254,9 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **28 fichiers, 175 tests, tous verts.** |
+| `npm test` | ✅ | Vitest. **29 fichiers, 180 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
-| `npm run lint` | ✅ | **0 erreur, 99 avertissements.** Les avertissements restent à réduire. |
+| `npm run lint` | ✅ | **0 erreur, 102 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
@@ -239,7 +266,7 @@ Lancer un seul test : `npx vitest run src/lib/deck-code.test.ts`
 Un seul cas : `npx vitest run -t "nom du test"`
 
 **`npm run lint` passe au dernier relevé du 20 août 2026** — 0 erreur et
-99 avertissements. La commande fait désormais partie de la porte CI ; les
+102 avertissements. La commande fait désormais partie de la porte CI ; les
 avertissements restent à réduire sans les confondre avec des erreurs.
 
 **`rtk` masque le code de sortie.** Ne jamais écrire `rtk tsc && git commit` :
@@ -314,8 +341,10 @@ comprendre à la première lecture.
 
 - Vitest sans fichier de config, donc environnement Node par défaut, sans DOM.
   On teste **la logique**, jamais le rendu des composants. Les tests de fonctions
-  pures peuvent rester rangés à côté de leur page (`deckbuilder/lib/champion.test.ts`,
-  `overlay/[token]/cam-src.test.ts`).
+  pures peuvent rester rangés à côté de leur page (`deckbuilder/lib/champion.test.ts`).
+  Un test qui recopie la règle au lieu de l'importer ne teste rien : `cam-src.test.ts`
+  faisait ça et a fini par valider une règle que le site n'appliquait plus. Si
+  l'import tire React, sortir la règle dans `src/lib/`.
 - Pas de fixtures ni de mocks de base : les tests portent sur des fonctions
   pures (analyse de code de deck, normalisation de nom, calcul de couverture).
 - Toute nouvelle fonction de `src/lib/` qui contient une branche ou une boucle
