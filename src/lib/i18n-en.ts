@@ -16,7 +16,6 @@ export const EN: Record<string, string> = {
   Légendes: "Legends",
   Tournois: "Tournaments",
   "Ma collection": "My collection",
-  Compteur: "Life counter",
   "Chercher une règle": "Search the rules",
   // — Fil d'Ariane (composant partagé, présent sur 17 pages) —
   Accueil: "Home",
@@ -417,9 +416,6 @@ export const EN: Record<string, string> = {
   "Meta Snapshot": "Meta snapshot",
   "Aperçu du métagame Riftbound : légendes les plus jouées en tournoi. Données basées sur les decks publiés.":
     "A look at the Riftbound metagame: the most played Legends in tournament play, based on published decks.",
-  "Compteur de points": "Life counter",
-  "Compteur de points interactif pour vos parties de Riftbound. Suivez les scores de 2 à 4 joueurs.":
-    "An interactive point counter for your Riftbound games. Track scores for 2 to 4 players.",
   "Règles de Riftbound en français - le texte officiel, cherchable":
     "Riftbound rules - the official text, searchable",
   "Les règles officielles de Riftbound en français, en entier et cherchables : texte des règles de base, erratas, cartes interdites, mots-clés et texte des cartes.":
@@ -466,7 +462,6 @@ export const EN: Record<string, string> = {
   "+ Bo3 avec Réserve": "+ Bo3 with a Sideboard",
   "+ Discussion en jeu": "+ In-game chat",
   "+ Interface plus fluide": "+ Smoother interface",
-  "+ Légende": "+ Legend",
   "+ Mode solo pour tester": "+ Solo mode for testing",
   "+ Recherche d’adversaire intégrée": "+ Built-in matchmaking",
   "+ Statistiques avancées": "+ Advanced stats",
@@ -513,7 +508,6 @@ export const EN: Record<string, string> = {
   "Aucun tournoi pour ce filtre.": "No tournaments match this filter.",
   "Aucune carte ne correspond aux filtres.": "No cards match these filters.",
   "Aucune decklist trouvée pour ce filtre.": "No decklist found for this filter.",
-  "Aucune légende trouvée": "No Legend found",
   "Aucune légende trouvée avec ces filtres.": "No Legend matches these filters.",
   "Autres mots-clés": "Other keywords",
   "Best of par tournoi": "Best of, by tournament",
@@ -528,7 +522,6 @@ export const EN: Record<string, string> = {
   "Chaque Légende appartient à 2": "Every Legend belongs to 2",
   "Chaque camp additionne la": "Each side adds up the",
   "Charger plus": "Load more",
-  "Choisir une Légende": "Pick a Legend",
   "Collez deux codes de decks et cliquez sur Comparer pour voir les différences.": "Paste two deck codes and click Compare to see the differences.",
   "Comment commence la partie ?": "How does the game start?",
   "Comment fonctionne le combat ?": "How does combat work?",
@@ -540,7 +533,6 @@ export const EN: Record<string, string> = {
   "Comment répartir ses runes entre Énergie et Puissance ?": "How do you split your runes between Energy and Power?",
   "Comment réussir son mulligan ?": "How do you mulligan well?",
   "Comment se déroule un tour ?": "How does a turn play out?",
-  "Configurez votre partie": "Set up your game",
   "Connecte-toi avec Discord": "Sign in with Discord",
   "Connecte-toi avec Discord pour gérer ta collection en classeurs et suivre ta progression.": "Sign in with Discord to manage your collection in binders and track your progress.",
   "Connectez-vous avec Discord pour publier votre deck.": "Sign in with Discord to publish your deck.",
@@ -609,7 +601,6 @@ export const EN: Record<string, string> = {
   "Modifier le deck": "Edit the deck",
   "Modifier le profil": "Edit profile",
   "Méta du tournoi": "Tournament meta",
-  "Nombre de joueurs": "Number of players",
   "Non listé": "Unlisted",
   "Non possédée": "Not owned",
   "Ouvre un classeur pour parcourir et gérer tes cartes": "Open a binder to browse and manage your cards",
@@ -621,7 +612,6 @@ export const EN: Record<string, string> = {
   "Pas de cartes physiques ? Pas de problème. Deux plateformes permettent de jouer à Riftbound gratuitement en ligne.": "No physical cards? No problem. Two platforms let you play Riftbound online for free.",
   "Pas d’image": "No image",
   "Placez une rune sous votre deck de runes (": "Put a rune under your rune deck (",
-  "Points de départ": "Starting points",
   "Popularité": "Popularity",
   "Pour aller plus loin": "Going further",
   "Pour débuter :": "To get started:",
@@ -761,7 +751,6 @@ export const EN: Record<string, string> = {
   "Affichage en grille": "Grid view",
   "Affichage en liste": "List view",
   "Ajouter un commentaire...": "Add a comment…",
-  "Ajouter un point de départ": "Add a starting point",
   "Cartes collectées": "Cards collected",
   "Cartes par rareté": "Cards by rarity",
   "Cartes par type": "Cards by type",
@@ -796,8 +785,6 @@ export const EN: Record<string, string> = {
   "Rechercher une Légende ou un joueur": "Search for a Legend or a player",
   "Rechercher une Légende ou un joueur…": "Search for a Legend or a player…",
   "Rechercher une carte…": "Search for a card…",
-  "Rechercher une légende...": "Search for a Legend…",
-  "Retirer un point de départ": "Remove a starting point",
   "Réserve": "Sideboard",
   "Réserve, Amplifié, mulligan, Aspirant's Climb...": "Sideboard, Amplified, mulligan, Aspirant's Climb…",
   "Sommaire des règles": "Rules contents",
@@ -915,8 +902,6 @@ export const EN: Record<string, string> = {
   "Aucune icône pour": "No icon for",
   Domaines: "Domains",
 
-  // — Compteur de points —
-  "Rechercher une légende": "Search for a Legend",
 
   // Compagnon de match :
   Aucune: "None",

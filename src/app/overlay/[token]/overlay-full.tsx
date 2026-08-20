@@ -521,7 +521,9 @@ function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null;
       >
         {/* Au-delà de 99 minutes il y a un chiffre de plus, et « +180:00 » débordait
             de la case dorée. `FitText` réduit alors ce qu'il faut, sans jamais couper. */}
-        <FitText chars={6}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
+        {/* `fondu={false}` : le chrono change chaque seconde, l'apparition en fondu
+            le faisait clignoter en continu. */}
+        <FitText chars={6} fondu={false}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
       </div>
     </div>
   );

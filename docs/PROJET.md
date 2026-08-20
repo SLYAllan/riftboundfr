@@ -72,8 +72,10 @@ guides et les decks de la communauté. Les listes brutes vivent sur
 `/tournois/[slug]`.
 
 **Outils** — `/deckbuilder`, `/collection` (+ `/collection/[binderId]` et
-`/collection/partage/[shareSlug]`), `/community-decks`, `/outils/compteur`,
-`/outils/regles`.
+`/collection/partage/[shareSlug]`), `/community-decks`, `/outils/regles`.
+Le compteur de points autonome a été retiré le 21 août 2026 : le compagnon de
+match (`/compagnon/…`, ouvert par lien depuis `/profil/overlay`) fait la même
+chose et alimente l'habillage de stream en même temps.
 
 **Guides et articles** — `/guides` avec sept guides (débuter, deckbuilding,
 domaines, glossaire, ban list, méta, jouer en ligne), `/articles` et

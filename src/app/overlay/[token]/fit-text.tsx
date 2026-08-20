@@ -18,6 +18,7 @@ export function FitText({
   chars,
   lines = 1,
   className = "",
+  fondu = true,
 }: {
   children: string;
   /** Nombre de caracteres qui tiennent sur une ligne a taille pleine. */
@@ -26,6 +27,10 @@ export function FitText({
    *  jamais couper : ni troncature, ni « … », mais jamais plus de `lines` lignes. */
   lines?: number;
   className?: string;
+  /** Le fondu se rejoue a chaque changement de contenu. Bien pour un nom de Legende
+   *  qui change une fois par match, insupportable pour un chrono : il clignotait a
+   *  chaque seconde. `fondu={false}` pour ce qui bouge tout seul. */
+  fondu?: boolean;
 }) {
   const n = children.length;
   const capacite = chars * lines;
@@ -34,8 +39,8 @@ export function FitText({
   return (
     <span className={`block w-full overflow-hidden text-center ${className}`}>
       <span
-        key={children}
-        className={`${styles.apparait} ${multi ? "block [text-wrap:balance]" : "inline-block whitespace-nowrap"}`}
+        key={fondu ? children : undefined}
+        className={`${fondu ? styles.apparait : ""} ${multi ? "block [text-wrap:balance]" : "inline-block whitespace-nowrap"}`}
         // line-clamp en style en ligne : la classe Tailwind dynamique ne serait pas
         // generee. Comme `k` reduit deja pour tout faire tenir, le clamp ne coupe qu'en
         // ultime secours.

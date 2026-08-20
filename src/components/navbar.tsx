@@ -26,7 +26,6 @@ const outilsLinks = [
   { href: "/cartes", label: "Cartes" },
   { href: "/deckbuilder", label: "Deckbuilder" },
   { href: "/collection", label: "Ma collection" },
-  { href: "/outils/compteur", label: "Compteur" },
   { href: "/outils/regles", label: "Chercher une règle" },
 ];
 
