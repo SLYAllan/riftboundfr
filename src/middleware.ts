@@ -51,7 +51,11 @@ export function middleware(request: NextRequest) {
   // Elle ne doit jamais finir dans un index : il suffit d'un lien collé quelque part
   // de public pour qu'elle y entre et y reste. On la laisse explorable (sinon
   // l'en-tête ne serait jamais lu) et on interdit l'indexation.
-  if (estOverlay) response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  // Même raison pour le compagnon : son adresse porte de quoi ÉCRIRE sur
+  // l'habillage, elle n'a rien à faire dans un index.
+  if (estOverlay || cheminNu.startsWith("/compagnon/")) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
 
   response.headers.set("X-Frame-Options", "DENY");
   response.headers.set("X-Content-Type-Options", "nosniff");

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, entrelace, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
@@ -95,13 +95,14 @@ function BoutonConfirme({
   );
 }
 
-export function OverlayDashboard({ token, initial }: { token: string; initial: OverlayStateData }) {
+export function OverlayDashboard({ token, cleCompagnon, initial }: { token: string; cleCompagnon: string; initial: OverlayStateData }) {
   const t = useT();
   const [state, setState] = useState<OverlayStateData>(initial);
   const [legends, setLegends] = useState<Legend[]>([]);
   const [battlefields, setBattlefields] = useState<string[]>([]);
   const [champs, setChamps] = useState<[string[], string[]]>([[], []]);
   const [copied, setCopied] = useState(false);
+  const [copieCompagnon, setCopieCompagnon] = useState(false);
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aEnvoyer = useRef<OverlayStateData | null>(null);
@@ -155,6 +156,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
   }
 
   const overlayUrl = `${origin}/overlay/${token}`;
+  const urlCompagnon = `${origin}/compagnon/${token}/${cleCompagnon}`;
 
   function setPlayer(i: 0 | 1, p: Partial<OverlayStateData["players"][0]>) {
     update({ players: i === 0 ? [p, {}] : [{}, p] } as never);
@@ -297,7 +299,7 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
     setRechCarte("");
   }
 
-  const manchesMax = state.format === "BO5" ? 3 : state.format === "BO3" ? 2 : 1;
+  const manchesMax = manchesPourGagner(state.format);
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
   // `text-base sm:text-sm` : sous 16 px, iOS zoome dès qu'on touche un champ et
   // la page part de travers en plein direct. Le 14 px revient dès l'écran large.
@@ -389,6 +391,26 @@ export function OverlayDashboard({ token, initial }: { token: string; initial: O
         <p className="mt-2 text-xs text-ink-muted">
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
+
+        <div className="mt-3 border-t border-hairline pt-3">
+          <label className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</label>
+          <p className="mt-1 text-xs text-ink-muted">
+            {t("À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.")}
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
+            <button
+              onClick={() => { navigator.clipboard.writeText(urlCompagnon); setCopieCompagnon(true); setTimeout(() => setCopieCompagnon(false), 1500); }}
+              className={`${btnPlein} min-w-[7.5rem]`}
+            >
+              {copieCompagnon ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
+              {copieCompagnon ? t("Copié") : t("Copier")}
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-ink-muted">
+            {t("Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.")}
+          </p>
+        </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Décor")}</span>
           <select

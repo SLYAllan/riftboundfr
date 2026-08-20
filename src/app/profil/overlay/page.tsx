@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getUserFromSession } from "@/lib/session";
 import { getOrCreateOverlayState } from "@/lib/overlay-server";
+import { cleCompagnon } from "@/lib/overlay-compagnon";
 import type { OverlayStateData } from "@/lib/overlay";
 import { OverlayDashboard } from "./overlay-dashboard";
 import { langueCourante } from "@/lib/i18n-server";
@@ -17,5 +18,5 @@ export default async function OverlayDashboardPage() {
     redirect(`/api/auth/discord?retour=${encodeURIComponent(retour)}`);
   }
   const row = await getOrCreateOverlayState(user.id);
-  return <OverlayDashboard token={row.token} initial={row.state as unknown as OverlayStateData} />;
+  return <OverlayDashboard token={row.token} cleCompagnon={cleCompagnon(row.token)} initial={row.state as unknown as OverlayStateData} />;
 }

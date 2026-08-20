@@ -22,6 +22,20 @@ export async function saveState(userId: string, patch: Partial<OverlayStateData>
   return merged;
 }
 
+/**
+ * Écriture par le jeton, pour le compagnon : celui qui tient la manette n'est pas
+ * forcément connecté à Discord. On applique un PATCH, jamais l'état entier — le
+ * streamer peut être en train de changer autre chose depuis son tableau de bord,
+ * et le dernier arrivé écraserait tout le reste.
+ */
+export async function saveStateByToken(token: string, patch: Partial<OverlayStateData> & { players?: unknown }) {
+  const row = await prisma.overlayState.findUnique({ where: { token } });
+  if (!row) return null;
+  const merged = applyStateUpdate(row.state as unknown as OverlayStateData, patch as never);
+  await prisma.overlayState.update({ where: { token }, data: { state: merged as object } });
+  return merged;
+}
+
 export async function regenerateToken(userId: string) {
   const row = await getOrCreateOverlayState(userId);
   const token = makeToken();

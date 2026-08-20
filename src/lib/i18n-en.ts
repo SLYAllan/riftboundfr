@@ -912,4 +912,21 @@ export const EN: Record<string, string> = {
 
   // — Compteur de points —
   "Rechercher une légende": "Search for a Legend",
+
+  // Compagnon de match :
+  "Compagnon de match": "Match companion",
+  "Tout ce que vous tapez ici part sur l’habillage de stream.":
+    "Everything you type here goes straight to the stream overlay.",
+  "Lancer le match": "Start match",
+  "Reprendre le match": "Resume match",
+  "Réglages": "Settings",
+  "Fin de la manche": "Finish game",
+  "Qui a gagné la manche ?": "Who won the game?",
+  "remporte le match": "wins the match",
+  "Nouveau match": "New match",
+  "Lien compagnon (téléphone)": "Companion link (phone)",
+  "À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.":
+    "Open it on a player's phone: they set up the match, score the points and close the games. The overlay follows along, no account needed.",
+  "Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.":
+    "Whoever has this link changes what is on screen: don't show it on stream. “New link” replaces it too.",
 };

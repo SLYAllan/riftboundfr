@@ -136,6 +136,14 @@ export function entrelace(a: string[], b: string[]): string[] {
   return out;
 }
 
+/**
+ * Manches à gagner pour emporter le match. Lue par le tableau de bord et par le
+ * compagnon : les deux bornaient le compteur de manches chacun de leur côté.
+ */
+export function manchesPourGagner(format: OverlayFormat): number {
+  return format === "BO5" ? 3 : format === "BO3" ? 2 : 1;
+}
+
 export function clampPoints(n: number, max: number): number {
   if (Number.isNaN(n)) return 0;
   return Math.max(0, Math.min(max, Math.round(n)));
