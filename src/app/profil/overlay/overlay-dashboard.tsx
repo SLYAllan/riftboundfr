@@ -7,7 +7,7 @@ import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_I
 import { creerFileEtats } from "@/lib/overlay-dashboard-client";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { parseDeckCode } from "@/lib/deck-code";
-import { useT } from "@/components/i18n-provider";
+import { useLien, useT } from "@/components/i18n-provider";
 
 type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
 
@@ -100,6 +100,10 @@ function BoutonConfirme({
 
 export function OverlayDashboard({ token, cleCompagnon, initial }: { token: string; cleCompagnon: string; initial: OverlayStateData }) {
   const t = useT();
+  // Les trois adresses portent le préfixe de langue de CETTE page. Un streamer
+  // anglophone copiait sinon un lien français : son habillage et le compagnon de
+  // ses joueurs démarraient en français, sans qu'il puisse rien y faire.
+  const lien = useLien();
   const [state, setState] = useState<OverlayStateData>(initial);
   const [legends, setLegends] = useState<Legend[]>([]);
   const [battlefields, setBattlefields] = useState<string[]>([]);
@@ -175,8 +179,9 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
     });
   }
 
-  const overlayUrl = `${origin}/overlay/${token}`;
-  const urlCompagnon = `${origin}/compagnon/${token}/${cleCompagnon}`;
+  const overlayUrl = `${origin}${lien(`/overlay/${token}`)}`;
+  const urlCompact = `${overlayUrl}?compact=1`;
+  const urlCompagnon = `${origin}${lien(`/compagnon/${token}/${cleCompagnon}`)}`;
 
   async function copierCompagnon() {
     try {
@@ -417,7 +422,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           {/* Largeur fixée : « Copier » et « Copié » n'ont pas la même longueur,
               et le bouton sautait sous le curseur au moment du clic. */}
           <button
-            onClick={() => { navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}`); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
+            onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
             className={`${btnPlein} min-w-[7.5rem]`}
           >
             {copied ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
@@ -541,8 +546,8 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           {t("La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}?compact=1</code>
-          <button onClick={() => navigator.clipboard.writeText(`${window.location.origin}/overlay/${token}?compact=1`)} className={btnVide}>
+          <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompact}</code>
+          <button onClick={() => navigator.clipboard.writeText(urlCompact)} className={btnVide}>
             <Copy size={15} aria-hidden />
             {t("Copier la version simple")}
           </button>
