@@ -357,6 +357,7 @@ chacun, et comment se passer le travail sans le refaire.
 | Règles, architecture, commandes, conventions | `AGENTS.md` (ce fichier) | les deux |
 | État du chantier, ce qui est cassé, pièges | `HANDOFF.md` | les deux |
 | Skills du dépôt | `.agents/skills/` | Codex, depuis n'importe quel sous-dossier |
+| Panneaux vers ces skills | `.claude/skills/` | Claude Code |
 | Réglages Codex, garde-fous, sous-agents | `.codex/` — voir son `README.md` | Codex, si le dépôt est de confiance |
 | Réglages Claude Code | `.claude/settings.json` | Claude Code |
 
@@ -364,6 +365,14 @@ Sept skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
 `decklists`, `scraper-tournoi`, `outils-existants`, `delegate-wave`. Ils
 **renvoient** à ce fichier au lieu de le recopier : deux copies de la même règle
 finissent toujours par diverger.
+
+**Les deux exécutants ne les cherchent pas au même endroit** : Codex lit
+`.agents/skills/`, Claude Code lit `.claude/skills/`. Claude Code ne voyait donc
+aucun skill du dépôt, et `delegate-wave` n'était employé que d'un côté. Chaque skill
+a maintenant son panneau dans `.claude/skills/<nom>/SKILL.md`, qui ne porte que le
+nom, la description et « lis `.agents/skills/<nom>/SKILL.md` ». **Un nouveau skill
+se pose des deux côtés** : le fond dans `.agents/skills/`, le panneau dans
+`.claude/skills/`.
 
 Les six règles d'écriture française ne sont donc plus réservées à Claude Code : le
 skill `reecrire` les porte des deux côtés. Une tâche qui produit du texte français
