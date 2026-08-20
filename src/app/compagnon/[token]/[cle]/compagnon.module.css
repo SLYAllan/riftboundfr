@@ -1,15 +1,78 @@
-/* Ces règles ne valent QUE sur le compagnon : ce module CSS n'est chargé que par
-   compagnon.tsx. On masque la barre du site, le pied de page et la bannière
-   cookies. Le compagnon se tient à une main pendant la partie ; avec le chrome du
-   site autour, l'écran de match passait sous la ligne de flottaison et il fallait
-   faire défiler pour marquer un point. */
-:global(nav),
-:global(header),
-:global(footer),
+:global([data-chrome="site"]),
 :global([data-chrome="cookies"]) {
   display: none !important;
 }
 
-.page {
+.page { min-height: 100dvh; }
+
+.match {
+  display: flex;
+  height: 100dvh;
   min-height: 100dvh;
+  flex-direction: column;
+  padding-block: env(safe-area-inset-top) env(safe-area-inset-bottom);
+  overflow: hidden;
+}
+
+.joueur {
+  position: relative;
+  display: flex;
+  min-height: 13rem;
+  flex: 1 0 13rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.joueurInverse { transform: rotate(180deg); }
+.art, .voile { position: absolute; inset: 0; }
+.art { background-position: center 24%; background-size: cover; transform: scale(1.02); }
+.voile { background: rgba(7, 10, 18, 0.58); }
+
+.boutonPoint {
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  flex: 0 0 4rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  background: rgba(20, 24, 35, 0.78);
+  color: white;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+.boutonPoint:active { transform: scale(0.96); }
+.boutonPoint:disabled { opacity: 0.3; }
+
+.barreCentrale {
+  z-index: 2;
+  display: flex;
+  min-height: 5.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-block: 1px solid var(--color-hairline);
+  background: var(--color-surface);
+  padding: 0.5rem 0.75rem;
+}
+
+.actionCentrale {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border-radius: 0.75rem;
+  padding-inline: 0.5rem;
+  color: var(--color-ink-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (orientation: landscape) {
+  .match { flex-direction: row; }
+  .joueur { min-width: 13rem; min-height: 100dvh; flex: 1 1 0; }
+  .barreCentrale { width: 8rem; min-height: 100dvh; flex-direction: column; flex-wrap: nowrap; justify-content: center; }
+  .erreurEnvoi { position: fixed; right: 0.5rem; bottom: 0.5rem; left: 0.5rem; z-index: 60; }
 }

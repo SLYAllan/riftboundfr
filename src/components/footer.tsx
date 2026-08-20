@@ -17,7 +17,7 @@ export async function Footer() {
   const t = await tr();
 
   return (
-    <footer className="border-t border-hairline bg-surface">
+    <footer data-chrome="site" className="border-t border-hairline bg-surface">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         {/* py-1 sur chaque lien : sans lui la cible fait 16px de haut et les
             cercles de 24px de deux liens voisins se chevauchent (WCAG 2.5.8). */}

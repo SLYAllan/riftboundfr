@@ -102,7 +102,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const [battlefields, setBattlefields] = useState<string[]>([]);
   const [champs, setChamps] = useState<[string[], string[]]>([[], []]);
   const [copied, setCopied] = useState(false);
-  const [copieCompagnon, setCopieCompagnon] = useState(false);
+  const [copieCompagnon, setCopieCompagnon] = useState<"repos" | "copie" | "erreur">("repos");
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const aEnvoyer = useRef<OverlayStateData | null>(null);
@@ -157,6 +157,16 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
   const overlayUrl = `${origin}/overlay/${token}`;
   const urlCompagnon = `${origin}/compagnon/${token}/${cleCompagnon}`;
+
+  async function copierCompagnon() {
+    try {
+      await navigator.clipboard.writeText(urlCompagnon);
+      setCopieCompagnon("copie");
+      setTimeout(() => setCopieCompagnon("repos"), 1500);
+    } catch {
+      setCopieCompagnon("erreur");
+    }
+  }
 
   function setPlayer(i: 0 | 1, p: Partial<OverlayStateData["players"][0]>) {
     update({ players: i === 0 ? [p, {}] : [{}, p] } as never);
@@ -392,25 +402,30 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
 
-        <div className="mt-3 border-t border-hairline pt-3">
-          <label className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</label>
+        <section className="mt-3 border-t border-hairline pt-3">
+          <h3 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h3>
           <p className="mt-1 text-xs text-ink-muted">
             {t("À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.")}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
             <button
-              onClick={() => { navigator.clipboard.writeText(urlCompagnon); setCopieCompagnon(true); setTimeout(() => setCopieCompagnon(false), 1500); }}
+              onClick={() => void copierCompagnon()}
               className={`${btnPlein} min-w-[7.5rem]`}
             >
-              {copieCompagnon ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
-              {copieCompagnon ? t("Copié") : t("Copier")}
+              {copieCompagnon === "copie" ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
+              {copieCompagnon === "copie" ? t("Copié") : t("Copier")}
             </button>
           </div>
-          <p className="mt-2 text-xs text-ink-muted">
-            {t("Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.")}
+          <p role="status" aria-live="polite" className="mt-2 text-xs text-ink-muted">
+            {copieCompagnon === "copie" ? t("Copié") : t("Toute personne qui possède ce lien peut modifier l’habillage. Ne le montrez pas en direct.")}
           </p>
-        </div>
+          {copieCompagnon === "erreur" && (
+            <p role="alert" className="mt-2 text-xs text-error-light">
+              {t("Copie impossible. Sélectionnez le lien et copiez-le.")}
+            </p>
+          )}
+        </section>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Décor")}</span>
           <select

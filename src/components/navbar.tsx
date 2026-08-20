@@ -102,7 +102,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
   const isOutilsActive = outilsLinks.some((l) => pathname.startsWith(l.href));
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-hairline">
+    <header data-chrome="site" className="sticky top-0 z-50 glass border-b border-hairline">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logorbfr.png" alt="Riftbound France" width={224} height={112} className="h-8 w-auto" priority />

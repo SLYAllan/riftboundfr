@@ -929,4 +929,30 @@ export const EN: Record<string, string> = {
     "Open it on a player's phone: they set up the match, score the points and close the games. The overlay follows along, no account needed.",
   "Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.":
     "Whoever has this link changes what is on screen: don't show it on stream. “New link” replaces it too.",
+  "Créer la partie": "Create match",
+  "Vos changements s’affichent sur le stream dès qu’ils sont enregistrés.":
+    "Your changes appear on stream as soon as they are saved.",
+  "Choisir les decks": "Choose decks",
+  "Vérifier la partie": "Review match",
+  "Modification non envoyée. Vérifiez votre connexion, puis réessayez.":
+    "Change not sent. Check your connection, then try again.",
+  "Impossible de charger cette liste.": "Unable to load this list.",
+  "À jour": "Up to date",
+  "Hors ligne": "Offline",
+  "Pseudo du joueur": "Player name",
+  "Création de la partie": "Match setup",
+  Partie: "Match",
+  Vérification: "Review",
+  "Aucune Légende": "No Legend",
+  "Légende non choisie": "No Legend selected",
+  "Étapes de création": "Setup steps",
+  Continuer: "Continue",
+  "Choisissez le gagnant pour mettre à jour le BO.": "Choose the winner to update the best-of score.",
+  "Annuler la dernière manche": "Undo last game",
+  "Corriger la dernière manche": "Correct last game",
+  "Confirmer le nouveau match": "Confirm new match",
+  "Toute personne qui possède ce lien peut modifier l’habillage. Ne le montrez pas en direct.":
+    "Anyone with this link can change the overlay. Do not show it on stream.",
+  "Copie impossible. Sélectionnez le lien et copiez-le.":
+    "Unable to copy. Select the link and copy it.",
 };

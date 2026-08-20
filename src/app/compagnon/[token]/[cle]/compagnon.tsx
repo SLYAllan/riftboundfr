@@ -1,349 +1,217 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, Minus, Plus, Trophy } from "lucide-react";
-import { DOMAIN_COLORS } from "@/lib/domains";
-import { applyStateUpdate, clampPoints, manchesPourGagner, type OverlayStateData } from "@/lib/overlay";
+import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Trophy } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import {
+  bornerEtape, creerFilePatchs, memoriserManche, patchPourRestaurerManche,
+  type EtatEnvoi, type MemoireManche, type PatchCompagnon,
+} from "@/lib/overlay-compagnon-client";
+import { applyStateUpdate, clampPoints, manchesPourGagner, type OverlayStateData } from "@/lib/overlay";
 import styles from "./compagnon.module.css";
 
-interface Legende {
-  id: string;
-  name: string;
-  imageUrl: string | null;
-  domains: string[];
+interface Legende { id: string; name: string; imageUrl: string | null; domains: string[] }
+type ErreursListes = { legendes?: string; champions?: string; terrains?: string };
+
+const champCls = "w-full min-h-11 rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
+const boutonSecondaire = "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hairline bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary transition-colors hover:text-ink active:scale-[0.96]";
+
+function MessageErreurListe({ message, relancer, libelle }: { message?: string; relancer: () => void; libelle: string }) {
+  if (!message) return null;
+  return <div className="mt-2 flex items-center justify-between gap-3 rounded-lg bg-error/10 p-2 text-xs text-error-light" role="alert">
+    <span>{message}</span><button type="button" onClick={relancer} className="min-h-11 shrink-0 font-semibold underline">{libelle}</button>
+  </div>;
 }
-
-type Patch = Parameters<typeof applyStateUpdate>[1];
-
-/**
- * Empile deux patchs en un seul.
- *
- * Le compagnon envoie un PATCH et pas l'état entier : le streamer peut être en
- * train de changer le décor ou les cartes depuis son tableau de bord, et un état
- * entier écraserait son travail. Mais avec un minuteur d'attente, le patch suivant
- * remplaçait le précédent : taper un pseudo puis marquer un point 200 ms plus tard
- * jetait le pseudo sans un mot. Tout s'accumule donc ici jusqu'à l'envoi.
- */
-function fusionner(a: Patch, b: Patch): Patch {
-  const joueurs = a.players || b.players;
-  return {
-    ...a,
-    ...b,
-    event: a.event || b.event ? { ...a.event, ...b.event } : undefined,
-    points: a.points || b.points ? { ...a.points, ...b.points } : undefined,
-    players: joueurs
-      ? [
-          { ...a.players?.[0], ...b.players?.[0] },
-          { ...a.players?.[1], ...b.players?.[1] },
-        ]
-      : undefined,
-  } as Patch;
-}
-
-const champCls =
-  "w-full rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
 
 export function Compagnon({ token, cle, initial }: { token: string; cle: string; initial: OverlayStateData }) {
   const t = useT();
-  const [state, setState] = useState<OverlayStateData>(initial);
+  const [state, setState] = useState(initial);
+  const [etape, setEtape] = useState<0 | 1 | 2>(0);
   const [enMatch, setEnMatch] = useState(false);
   const [demandeGagnant, setDemandeGagnant] = useState(false);
+  const [confirmeNouveauMatch, setConfirmeNouveauMatch] = useState(false);
+  const [derniereManche, setDerniereManche] = useState<MemoireManche | null>(null);
   const [legendes, setLegendes] = useState<Legende[]>([]);
   const [champions, setChampions] = useState<[string[], string[]]>([[], []]);
   const [terrains, setTerrains] = useState<string[]>([]);
-  const [erreur, setErreur] = useState<string | null>(null);
-  const minuteur = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const enAttente = useRef<Patch>({});
+  const [erreursListes, setErreursListes] = useState<ErreursListes>({});
+  const [etatEnvoi, setEtatEnvoi] = useState<EtatEnvoi>("a-jour");
+  const [erreurEnvoi, setErreurEnvoi] = useState(false);
+  const requetesChampions = useRef<[AbortController | null, AbortController | null]>([null, null]);
+  const [file] = useState(() => creerFilePatchs(async (patch) => {
+      const reponse = await fetch(`/api/overlay/${token}/compagnon`, {
+        method: "POST", headers: { "Content-Type": "application/json", "x-cle-compagnon": cle },
+        body: JSON.stringify(patch), keepalive: true,
+      });
+      if (!reponse.ok) { setErreurEnvoi(true); throw new Error("sauvegarde"); }
+      setErreurEnvoi(false);
+    }, setEtatEnvoi));
 
-  useEffect(() => {
-    fetch("/api/legends").then((r) => r.json()).then(setLegendes).catch(() => {});
-    fetch("/api/battlefields").then((r) => r.json()).then(setTerrains).catch(() => {});
-  }, []);
-
-  const legende0 = state.players[0].legendName;
-  const legende1 = state.players[1].legendName;
-  useEffect(() => {
-    [legende0, legende1].forEach((nom, i) => {
-      if (!nom) {
-        setChampions((c) => (i === 0 ? [[], c[1]] : [c[0], []]));
-        return;
-      }
-      fetch(`/api/legends/champions?legend=${encodeURIComponent(nom)}`)
-        .then((r) => r.json())
-        .then((liste: string[]) => setChampions((c) => (i === 0 ? [liste, c[1]] : [c[0], liste])))
-        .catch(() => {});
-    });
-  }, [legende0, legende1]);
-
-  function envoyer(patch: Patch) {
-    setState((s) => applyStateUpdate(s, patch));
-    enAttente.current = fusionner(enAttente.current, patch);
-    if (minuteur.current) clearTimeout(minuteur.current);
-    minuteur.current = setTimeout(() => {
-      const corps = enAttente.current;
-      enAttente.current = {};
-      fetch(`/api/overlay/${token}/compagnon`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-cle-compagnon": cle },
-        body: JSON.stringify(corps),
-      })
-        .then(async (r) => {
-          if (r.ok) return setErreur(null);
-          const rep = (await r.json().catch(() => ({}))) as { error?: string };
-          setErreur(rep.error ?? `${t("Le serveur a refusé la sauvegarde.")} (${r.status})`);
-        })
-        .catch(() => setErreur(t("Connexion perdue : rien n’est parti à l’écran.")));
-    }, 300);
+  async function chargerListe<T>(url: string, genre: keyof ErreursListes, enregistrer: (valeur: T) => void) {
+    try {
+      const reponse = await fetch(url);
+      if (!reponse.ok) throw new Error(String(reponse.status));
+      enregistrer((await reponse.json()) as T);
+      setErreursListes((courantes) => ({ ...courantes, [genre]: undefined }));
+    } catch {
+      setErreursListes((courantes) => ({ ...courantes, [genre]: t("Impossible de charger cette liste.") }));
+    }
   }
 
-  function setJoueur(i: 0 | 1, p: Partial<OverlayStateData["players"][0]>) {
-    envoyer({ players: i === 0 ? [p, {}] : [{}, p] } as Patch);
+  function chargerLegendes() { void chargerListe<Legende[]>("/api/legends", "legendes", setLegendes); }
+  function chargerTerrains() { void chargerListe<string[]>("/api/battlefields", "terrains", setTerrains); }
+  function chargerChampions(i: 0 | 1, nom: string) {
+    requetesChampions.current[i]?.abort();
+    if (!nom) { setChampions((c) => i === 0 ? [[], c[1]] : [c[0], []]); return; }
+    const controleur = new AbortController();
+    requetesChampions.current[i] = controleur;
+    void fetch(`/api/legends/champions?legend=${encodeURIComponent(nom)}`, { signal: controleur.signal })
+      .then((reponse) => { if (!reponse.ok) throw new Error(String(reponse.status)); return reponse.json() as Promise<string[]>; })
+      .then((liste) => {
+        setChampions((c) => i === 0 ? [liste, c[1]] : [c[0], liste]);
+        setErreursListes((courantes) => ({ ...courantes, champions: undefined }));
+      })
+      .catch((erreur: unknown) => {
+        if (erreur instanceof DOMException && erreur.name === "AbortError") return;
+        setErreursListes((courantes) => ({ ...courantes, champions: t("Impossible de charger cette liste.") }));
+      });
+  }
+
+  useEffect(() => { queueMicrotask(() => { chargerLegendes(); chargerTerrains(); }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const legende0 = state.players[0].legendName;
+  const legende1 = state.players[1].legendName;
+  useEffect(() => { queueMicrotask(() => { chargerChampions(0, legende0); chargerChampions(1, legende1); }); }, [legende0, legende1]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    const auDepart = () => {
+      const patch = file.prendreEnAttente();
+      if (!patch) return;
+      void fetch(`/api/overlay/${token}/compagnon`, {
+        method: "POST", headers: { "Content-Type": "application/json", "x-cle-compagnon": cle },
+        body: JSON.stringify(patch), keepalive: true,
+      });
+    };
+    window.addEventListener("pagehide", auDepart);
+    return () => window.removeEventListener("pagehide", auDepart);
+  }, [cle, file, token]);
+
+  function envoyer(patch: PatchCompagnon) {
+    setState((courant) => applyStateUpdate(courant, patch));
+    file.ajouter(patch);
+  }
+  function setJoueur(i: 0 | 1, patch: Partial<OverlayStateData["players"][0]>) {
+    envoyer({ players: i === 0 ? [patch, {}] : [{}, patch] } as PatchCompagnon);
   }
 
   const manchesMax = manchesPourGagner(state.format);
-  const vainqueur =
-    state.players[0].gamesWon >= manchesMax ? 0 : state.players[1].gamesWon >= manchesMax ? 1 : null;
-
+  const vainqueur = state.players[0].gamesWon >= manchesMax ? 0 : state.players[1].gamesWon >= manchesMax ? 1 : null;
   function point(i: 0 | 1, delta: number) {
     const cote = i === 0 ? "a" : "b";
-    const valeur = clampPoints(state.points[cote] + delta, state.maxPoints);
-    envoyer({ points: { [cote]: valeur } } as Patch);
+    envoyer({ points: { [cote]: clampPoints(state.points[cote] + delta, state.maxPoints) } } as PatchCompagnon);
   }
-
   function finDeManche(gagnant: 0 | 1) {
-    const manches = Math.min(state.players[gagnant].gamesWon + 1, manchesMax);
+    setDerniereManche(memoriserManche(state));
     envoyer({
       points: { a: 0, b: 0 },
-      players: gagnant === 0 ? [{ gamesWon: manches }, {}] : [{}, { gamesWon: manches }],
-    } as Patch);
+      players: gagnant === 0
+        ? [{ gamesWon: Math.min(state.players[0].gamesWon + 1, manchesMax) }, {}]
+        : [{}, { gamesWon: Math.min(state.players[1].gamesWon + 1, manchesMax) }],
+    } as PatchCompagnon);
     setDemandeGagnant(false);
   }
-
+  function annulerDerniereManche() {
+    if (!derniereManche) return;
+    envoyer(patchPourRestaurerManche(derniereManche));
+    setDerniereManche(null); setConfirmeNouveauMatch(false);
+  }
   function nouveauMatch() {
-    envoyer({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] } as Patch);
-    setEnMatch(false);
+    envoyer({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] } as PatchCompagnon);
+    setDerniereManche(null); setConfirmeNouveauMatch(false); setEnMatch(false); setEtape(0);
   }
 
-  const barreErreur = erreur ? (
-    <p role="status" className="bg-error/15 px-4 py-2 text-center text-sm text-error">{erreur}</p>
-  ) : null;
+  const retourEnvoi = <div className="flex min-w-0 items-center gap-2">
+    <p role="status" aria-live="polite" className="shrink-0 text-xs text-ink-secondary">
+      {etatEnvoi === "envoi" ? t("Envoi…") : etatEnvoi === "hors-ligne" ? t("Hors ligne") : t("À jour")}
+    </p>
+    {etatEnvoi === "hors-ligne" && <button type="button" onClick={() => file.renvoyer()} className="min-h-11 text-xs font-semibold text-error-light underline">{t("Réessayer")}</button>}
+  </div>;
 
-  // --- PRÉPARATION DU MATCH ---
-  if (!enMatch) {
-    const commence = state.players[0].gamesWon + state.players[1].gamesWon > 0 && vainqueur === null;
-    return (
-      <div className={`${styles.page} bg-canvas px-4 py-6`}>
-        {barreErreur}
-        <div className="mx-auto max-w-md space-y-6">
-          <div>
-            <h1 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik)" }}>{t("Compagnon de match")}</h1>
-            <p className="mt-1 text-sm text-ink-secondary">
-              {t("Tout ce que vous tapez ici part sur l’habillage de stream.")}
-            </p>
-          </div>
+  if (!enMatch) return <main className={`${styles.page} bg-canvas px-4 py-6`}>
+    <div className="mx-auto max-w-lg space-y-6">
+      <header className="flex items-start justify-between gap-4">
+        <div className="min-w-0"><h1 className="text-2xl font-bold font-display">{t("Compagnon de match")}</h1>
+          <p className="mt-1 text-sm text-ink-secondary">{t("Vos changements s’affichent sur le stream dès qu’ils sont enregistrés.")}</p></div>
+        {retourEnvoi}
+      </header>
+      {erreurEnvoi && <p role="alert" className="rounded-lg bg-error/10 px-3 py-2 text-sm text-error-light">{t("Modification non envoyée. Vérifiez votre connexion, puis réessayez.")}</p>}
+      <ol className="grid grid-cols-3 gap-2" aria-label={t("Création de la partie")}>
+        {[t("Partie"), t("Decks"), t("Vérification")].map((libelle, i) => <li key={libelle} aria-current={i === etape ? "step" : undefined} className={`rounded-full px-2 py-2 text-center text-xs font-semibold ${i === etape ? "bg-arcane text-canvas" : "bg-surface text-ink-muted"}`}>{i + 1}. {libelle}</li>)}
+      </ol>
 
-          <div className="grid grid-cols-2 gap-3">
-            <label className="block">
-              <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
-              <select
-                value={state.format}
-                onChange={(e) => envoyer({ format: e.target.value as OverlayStateData["format"] })}
-                className={champCls}
-              >
-                <option value="BO1">BO1</option>
-                <option value="BO3">BO3</option>
-                <option value="BO5">BO5</option>
-              </select>
-            </label>
-            <label className="block">
-              <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
-              <select
-                value={state.maxPoints}
-                onChange={(e) => envoyer({ maxPoints: Number(e.target.value) })}
-                className={champCls}
-              >
-                <option value={8}>8</option>
-                <option value={9}>9</option>
-                <option value={10}>10</option>
-              </select>
-            </label>
-          </div>
-
-          {([0, 1] as const).map((i) => {
-            const p = state.players[i];
-            return (
-              <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
-                <h2 className="text-sm font-semibold text-ink-secondary">{t("Joueur")} {i + 1}</h2>
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Pseudo")}</span>
-                  <input
-                    value={p.name}
-                    onChange={(e) => setJoueur(i, { name: e.target.value })}
-                    placeholder={t("Son pseudo")}
-                    className={champCls}
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span>
-                  <select
-                    value={p.legendId ?? ""}
-                    onChange={(e) => {
-                      const l = legendes.find((x) => x.id === e.target.value);
-                      setJoueur(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" });
-                    }}
-                    className={champCls}
-                  >
-                    <option value="">{t("À choisir…")}</option>
-                    {legendes.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
-                  </select>
-                </label>
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span>
-                  <select
-                    value={p.championName}
-                    onChange={(e) => setJoueur(i, { championName: e.target.value })}
-                    disabled={!p.legendName}
-                    className={champCls}
-                  >
-                    <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
-                    {champions[i].map((c) => <option key={c} value={c}>{c}</option>)}
-                  </select>
-                </label>
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
-                  <select
-                    value={p.battlefields[0] ?? ""}
-                    onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })}
-                    className={champCls}
-                  >
-                    <option value="">{t("Aucun")}</option>
-                    {terrains.map((b) => <option key={b} value={b}>{b}</option>)}
-                  </select>
-                </label>
-              </div>
-            );
-          })}
-
-          <button
-            onClick={() => {
-              if (vainqueur !== null) nouveauMatch();
-              setEnMatch(true);
-            }}
-            className="w-full rounded-xl bg-gold py-4 text-lg font-bold text-canvas shadow-lg shadow-gold/25 transition hover:bg-gold-light"
-          >
-            {commence ? t("Reprendre le match") : t("Lancer le match")}
-          </button>
+      {etape === 0 && <section aria-labelledby="etape-partie" className="space-y-5">
+        <h2 id="etape-partie" className="text-xl font-bold">{t("Créer la partie")}</h2>
+        <div className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-2">
+          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Format")}</span><select name="format" autoComplete="off" value={state.format} onChange={(e) => envoyer({ format: e.target.value as OverlayStateData["format"] })} className={champCls}><option>BO1</option><option>BO3</option><option>BO5</option></select></label>
+          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Points pour gagner")}</span><select name="points" autoComplete="off" value={state.maxPoints} onChange={(e) => envoyer({ maxPoints: Number(e.target.value) })} className={champCls}><option value={8}>8</option><option value={9}>9</option><option value={10}>10</option></select></label>
         </div>
-      </div>
-    );
-  }
+        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => <label key={i} className="block rounded-xl border border-hairline bg-surface p-4">
+          <span className="mb-2 block text-sm font-semibold">{t("Joueur")} {i + 1}</span><span className="mb-1 block text-xs text-ink-muted">{t("Pseudo du joueur")}</span>
+          <input name={`joueur-${i + 1}`} autoComplete="off" value={state.players[i].name} onChange={(e) => setJoueur(i, { name: e.target.value })} placeholder={`${t("Joueur")} ${i + 1}`} className={champCls} />
+        </label>)}</div>
+      </section>}
 
-  // --- MATCH EN COURS ---
-  return (
-    <div className={`${styles.page} flex h-[100dvh] flex-col bg-canvas`}>
-      {barreErreur}
-      <div className="flex items-center justify-between border-b border-hairline bg-surface/80 px-4 py-2 backdrop-blur-sm">
-        <button
-          onClick={() => setEnMatch(false)}
-          className="flex items-center gap-1 text-sm text-ink-secondary transition-colors hover:text-ink"
-        >
-          <ChevronLeft size={16} aria-hidden />
-          {t("Réglages")}
-        </button>
-        <span className="text-sm font-bold tabular-nums">
-          {state.players[0].gamesWon} – {state.players[1].gamesWon}
-        </span>
-        <span className="text-xs text-ink-muted">{state.format} · {state.maxPoints} {t("pts")}</span>
-      </div>
+      {etape === 1 && <section aria-labelledby="etape-decks" className="space-y-4">
+        <h2 id="etape-decks" className="text-xl font-bold">{t("Choisir les decks")}</h2>
+        <MessageErreurListe message={erreursListes.legendes} relancer={chargerLegendes} libelle={t("Réessayer")} /><MessageErreurListe message={erreursListes.terrains} relancer={chargerTerrains} libelle={t("Réessayer")} />
+        {([0, 1] as const).map((i) => { const joueur = state.players[i]; return <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
+          <h3 className="truncate text-base font-semibold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h3>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span><select name={`legende-${i + 1}`} autoComplete="off" value={joueur.legendId ?? ""} onChange={(e) => { const l = legendes.find((x) => x.id === e.target.value); setJoueur(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }} className={champCls}><option value="">{t("Aucune")}</option>{legendes.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}</select></label>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span><select name={`champion-${i + 1}`} autoComplete="off" aria-describedby={!joueur.legendName ? `aide-champion-${i}` : undefined} value={joueur.championName} onChange={(e) => setJoueur(i, { championName: e.target.value })} disabled={!joueur.legendName} className={champCls}><option value="">{t("Aucun")}</option>{champions[i].map((c) => <option key={c}>{c}</option>)}</select>{!joueur.legendName && <span id={`aide-champion-${i}`} className="mt-1 block text-xs text-ink-muted">{t("Choisissez d’abord une Légende")}</span>}</label>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille")}</span><select name={`terrain-${i + 1}`} autoComplete="off" value={joueur.battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b}>{b}</option>)}</select></label>
+        </div>; })}
+        <MessageErreurListe message={erreursListes.champions} relancer={() => { chargerChampions(0, legende0); chargerChampions(1, legende1); }} libelle={t("Réessayer")} />
+      </section>}
 
-      <div className="grid flex-1 grid-rows-2 gap-px bg-hairline">
-        {([0, 1] as const).map((i) => {
-          const p = state.players[i];
-          const pts = i === 0 ? state.points.a : state.points.b;
-          const domaine = legendes.find((l) => l.id === p.legendId)?.domains[0];
-          const couleur = domaine ? DOMAIN_COLORS[domaine] : "#64748b";
-          return (
-            <div key={i} className="flex flex-col items-center justify-center gap-2 bg-canvas px-4">
-              <div className="text-center">
-                <p className="truncate text-base font-medium text-ink/80">{p.name || `${t("Joueur")} ${i + 1}`}</p>
-                {p.legendName && <p className="text-xs text-ink-muted">{p.legendName}</p>}
-              </div>
-              <div className="flex items-center gap-6">
-                <button
-                  onClick={() => point(i, -1)}
-                  disabled={pts <= 0}
-                  aria-label={`${t("Un point de moins")}, ${t("joueur")} ${i + 1}`}
-                  className="flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-surface-raised/80 text-ink-secondary transition active:scale-90 disabled:opacity-30"
-                >
-                  <Minus size={30} aria-hidden />
-                </button>
-                <span
-                  className="min-w-[86px] text-center text-7xl font-black tabular-nums"
-                  style={{ fontFamily: "var(--font-rubik)", color: couleur, textShadow: `0 0 30px ${couleur}33` }}
-                >
-                  {pts}
-                </span>
-                <button
-                  onClick={() => point(i, 1)}
-                  disabled={pts >= state.maxPoints}
-                  aria-label={`${t("Un point de plus")}, ${t("joueur")} ${i + 1}`}
-                  className="flex h-16 w-16 items-center justify-center rounded-full border border-hairline bg-surface-raised/80 text-ink-secondary transition active:scale-90 disabled:opacity-30"
-                >
-                  <Plus size={30} aria-hidden />
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      {etape === 2 && <section aria-labelledby="etape-verification" className="space-y-4">
+        <h2 id="etape-verification" className="text-xl font-bold">{t("Vérifier la partie")}</h2>
+        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => { const joueur = state.players[i]; const art = legendes.find((l) => l.id === joueur.legendId)?.imageUrl; return <article key={i} className="relative min-h-52 overflow-hidden rounded-xl border border-hairline bg-surface">
+          {art && <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url("${art.replaceAll('"', '%22')}")` }} />}<div className="absolute inset-0 bg-black/45" />
+          <div className="relative flex min-h-52 flex-col justify-end p-4"><h3 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h3><p className="truncate text-sm text-ink-secondary">{joueur.legendName || t("Aucune Légende")}</p>{joueur.championName && <p className="truncate text-xs text-ink-muted">{joueur.championName}</p>}{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
+        </article>; })}</div><p className="text-center text-sm text-ink-secondary">{state.format} · {state.maxPoints} {t("pts")}</p>
+      </section>}
 
-      <div className="border-t border-hairline bg-surface/80 p-3 backdrop-blur-sm">
-        <button
-          onClick={() => setDemandeGagnant(true)}
-          className="w-full rounded-xl bg-arcane py-4 text-base font-bold text-canvas transition active:scale-[0.99]"
-        >
-          {t("Fin de la manche")}
-        </button>
-      </div>
-
-      {/* Qui a gagné : la question ne se pose qu'au clic, jamais toute seule. Un
-          joueur qui atteint le score peut concéder, se tromper de bouton, ou finir
-          la manche au temps ; l'habillage ne doit pas trancher à sa place. */}
-      {demandeGagnant && vainqueur === null && (
-        <div className="fixed inset-0 z-50 flex flex-col justify-end bg-black/60 p-4">
-          <div className="space-y-3 rounded-2xl border border-hairline bg-surface p-4">
-            <p className="text-center text-base font-semibold">{t("Qui a gagné la manche ?")}</p>
-            {([0, 1] as const).map((i) => (
-              <button
-                key={i}
-                onClick={() => finDeManche(i)}
-                className="w-full rounded-xl border border-hairline bg-surface-raised py-4 text-base font-bold transition active:scale-[0.99]"
-              >
-                {state.players[i].name || `${t("Joueur")} ${i + 1}`}
-              </button>
-            ))}
-            <button onClick={() => setDemandeGagnant(false)} className="w-full py-2 text-sm text-ink-secondary">
-              {t("Annuler")}
-            </button>
-          </div>
-        </div>
-      )}
-
-      {vainqueur !== null && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-canvas/95 p-6 text-center">
-          <Trophy size={48} className="text-gold" aria-hidden />
-          <p className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik)" }}>
-            {state.players[vainqueur].name || `${t("Joueur")} ${vainqueur + 1}`}
-          </p>
-          <p className="text-sm text-ink-secondary">
-            {t("remporte le match")} {state.players[0].gamesWon} – {state.players[1].gamesWon}
-          </p>
-          <button onClick={nouveauMatch} className="mt-2 w-full max-w-xs rounded-xl bg-gold py-4 text-base font-bold text-canvas">
-            {t("Nouveau match")}
-          </button>
-        </div>
-      )}
+      <nav className="flex items-center justify-between gap-3" aria-label={t("Étapes de création")}>
+        {etape > 0 ? <button type="button" onClick={() => setEtape(bornerEtape(etape - 1))} className={boutonSecondaire}><ChevronLeft size={18} aria-hidden />{t("Retour")}</button> : <span />}
+        {etape < 2 ? <button type="button" onClick={() => setEtape(bornerEtape(etape + 1))} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-arcane px-5 py-2 font-bold text-canvas active:scale-[0.96]">{t("Continuer")}<ChevronRight size={18} aria-hidden /></button> : <button type="button" onClick={() => setEnMatch(true)} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Lancer la partie")}</button>}
+      </nav>
     </div>
-  );
+  </main>;
+
+  function panneauJoueur(i: 0 | 1, inverse = false) {
+    const joueur = state.players[i]; const points = i === 0 ? state.points.a : state.points.b;
+    const art = legendes.find((l) => l.id === joueur.legendId)?.imageUrl;
+    return <section className={`${styles.joueur} ${inverse ? styles.joueurInverse : ""}`} aria-label={`${t("Joueur")} ${i + 1}`}>
+      {art && <div className={styles.art} style={{ backgroundImage: `url("${art.replaceAll('"', '%22')}")` }} />}<div className={styles.voile} />
+      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col items-center justify-center gap-2 px-4 py-3"><div className="w-full min-w-0 text-center"><h2 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h2><p className="truncate text-xs text-ink-secondary">{joueur.championName || joueur.legendName || t("Légende non choisie")}</p>{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
+        <div className="flex items-center justify-center gap-5"><button type="button" onClick={() => point(i, -1)} disabled={points <= 0} aria-label={`${t("Un point de moins")}, ${joueur.name || `${t("joueur")} ${i + 1}`}`} className={styles.boutonPoint}><Minus size={30} aria-hidden /></button><span className="min-w-24 text-center text-7xl font-black tabular-nums text-white font-display">{points}</span><button type="button" onClick={() => point(i, 1)} disabled={points >= state.maxPoints} aria-label={`${t("Un point de plus")}, ${joueur.name || `${t("joueur")} ${i + 1}`}`} className={styles.boutonPoint}><Plus size={30} aria-hidden /></button></div>
+      </div>
+    </section>;
+  }
+
+  return <main className={`${styles.page} ${styles.match} bg-canvas`}>
+    {panneauJoueur(1, true)}
+    <div className={styles.barreCentrale}>
+      <button type="button" onClick={() => setEnMatch(false)} className={styles.actionCentrale}><ChevronLeft size={17} aria-hidden />{t("Réglages")}</button>
+      <div className="flex min-w-0 flex-col items-center"><strong className="text-base tabular-nums">{state.players[0].gamesWon} – {state.players[1].gamesWon}</strong><span className="text-[11px] text-ink-muted">{state.format} · {state.maxPoints} {t("pts")}</span>{retourEnvoi}</div>
+      <button type="button" onClick={() => setDemandeGagnant(true)} className="min-h-11 rounded-xl bg-arcane px-3 py-2 text-sm font-bold text-canvas active:scale-[0.96]">{t("Fin de la manche")}</button>
+      {derniereManche && vainqueur === null && <button type="button" onClick={annulerDerniereManche} className={styles.actionCentrale}><RotateCcw size={16} aria-hidden />{t("Annuler la dernière manche")}</button>}
+    </div>
+    {erreurEnvoi && <div role="alert" className={`${styles.erreurEnvoi} flex items-center justify-center gap-3 bg-error/10 px-3 py-2 text-xs text-error-light`}><span>{t("Modification non envoyée. Vérifiez votre connexion, puis réessayez.")}</span><button type="button" onClick={() => file.renvoyer()} className="min-h-11 font-bold underline">{t("Réessayer")}</button></div>}
+    {panneauJoueur(0)}
+
+    <Dialog open={demandeGagnant} onOpenChange={setDemandeGagnant}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Qui a gagné la manche ?")}</DialogTitle><DialogDescription className="text-center">{t("Choisissez le gagnant pour mettre à jour le BO.")}</DialogDescription><button type="button" onClick={() => finDeManche(1)} className="min-h-16 rotate-180 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[1].name || `${t("Joueur")} 2`}</button><button type="button" onClick={() => finDeManche(0)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[0].name || `${t("Joueur")} 1`}</button><button type="button" onClick={() => setDemandeGagnant(false)} className="min-h-11 text-sm text-ink-secondary">{t("Annuler")}</button></DialogContent></Dialog>
+
+    <Dialog open={vainqueur !== null} onOpenChange={(ouvert) => { if (!ouvert) setEnMatch(false); }}><DialogContent showCloseButton={false} className="justify-items-center gap-4 bg-surface text-center"><Trophy size={48} className="text-gold" aria-hidden /><DialogTitle className="text-2xl font-bold">{vainqueur !== null ? state.players[vainqueur].name || `${t("Joueur")} ${vainqueur + 1}` : ""}</DialogTitle><DialogDescription>{t("remporte le match")} {state.players[0].gamesWon} – {state.players[1].gamesWon}</DialogDescription>{derniereManche && <button type="button" onClick={annulerDerniereManche} className={`${boutonSecondaire} w-full`}><RotateCcw size={17} aria-hidden />{t("Corriger la dernière manche")}</button>}<button type="button" onClick={() => confirmeNouveauMatch ? nouveauMatch() : setConfirmeNouveauMatch(true)} className="min-h-12 w-full rounded-xl bg-gold px-4 py-3 font-bold text-canvas active:scale-[0.96]">{confirmeNouveauMatch ? t("Confirmer le nouveau match") : t("Nouveau match")}</button></DialogContent></Dialog>
+  </main>;
 }
