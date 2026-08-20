@@ -67,9 +67,21 @@
   font-weight: 600;
 }
 
+/* Le bandeau d'erreur flotte au lieu de s'intercaler. Defini seulement en paysage,
+   il devenait en portrait un element de plus dans la colonne : les deux panneaux de
+   score se retrecissaient d'un coup des qu'un envoi ratait, c'est-a-dire au pire
+   moment. */
+.erreurEnvoi {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  z-index: 60;
+  border-radius: 0.75rem;
+}
+
 @media (orientation: landscape) {
   .match { flex-direction: row; }
   .joueur { min-width: 13rem; min-height: 100dvh; flex: 1 1 0; }
   .barreCentrale { width: 8rem; min-height: 100dvh; flex-direction: column; flex-wrap: nowrap; justify-content: center; }
-  .erreurEnvoi { position: fixed; right: 0.5rem; bottom: 0.5rem; left: 0.5rem; z-index: 60; }
 }
