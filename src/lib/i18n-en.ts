@@ -925,9 +925,16 @@ export const EN: Record<string, string> = {
   "Réglages": "Settings",
   "Fin de la manche": "Finish game",
   "Qui a gagné la manche ?": "Who won the game?",
+  "Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.":
+    "The companion fits in one hand during the game, and needs no account.",
+  "Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.":
+    "Open this link on the phone of whoever keeps score.",
+  "Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.":
+    "They set up the game: names, format, Legend and battlefield for each player.",
+  "Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.":
+    "During the match they score the points and close each game. The screen follows on its own.",
+  "Lancer le compagnon": "Start the companion",
   "Lien compagnon (téléphone)": "Companion link (phone)",
-  "À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.":
-    "Open it on a player's phone: they set up the match, score the points and close the games. The overlay follows along, no account needed.",
   "Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.":
     "Whoever has this link changes what is on screen: don't show it on stream. “New link” replaces it too.",
   "Créer la partie": "Create match",

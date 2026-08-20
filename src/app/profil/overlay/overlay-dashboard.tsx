@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
+  AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { parseDeckCode } from "@/lib/deck-code";
@@ -405,8 +405,13 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         <section className="mt-3 border-t border-hairline pt-3">
           <h3 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h3>
           <p className="mt-1 text-xs text-ink-muted">
-            {t("À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.")}
+            {t("Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.")}
           </p>
+          <ol className="mt-2 space-y-1.5 text-xs text-ink-secondary">
+            <li><strong className="text-ink">1.</strong> {t("Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.")}</li>
+            <li><strong className="text-ink">2.</strong> {t("Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.")}</li>
+            <li><strong className="text-ink">3.</strong> {t("Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.")}</li>
+          </ol>
           <div className="mt-2 flex flex-wrap items-center gap-2">
             <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
             <button
@@ -416,6 +421,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               {copieCompagnon === "copie" ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
               {copieCompagnon === "copie" ? t("Copié") : t("Copier")}
             </button>
+            {/* Un lien, pas un bouton : on l'ouvre dans un autre onglet pour garder
+                ce tableau de bord sous la main pendant la diffusion. */}
+            <a href={urlCompagnon} target="_blank" rel="noopener noreferrer" className={btnVide}>
+              <ExternalLink size={15} aria-hidden />
+              {t("Lancer le compagnon")}
+            </a>
           </div>
           {/* La mise en garde reste à l'écran en permanence : quand « Copié » prenait
               sa place, la seule phrase qui dit de ne pas montrer ce lien en direct
