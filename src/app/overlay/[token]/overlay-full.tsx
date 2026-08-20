@@ -37,6 +37,13 @@ const SLOT = {
   cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
 
+// Habillage réduit : mêmes 1920x1080, mais rien n'est dessiné dessous. Les cartes se
+// posent aux deux coins du bas, plus petites que dans le complet (235x310).
+const SLOT_COMPACT = {
+  cartesGauche: { left: 43, top: 772, width: 190, height: 266 },
+  cartesDroite: { left: 1687, top: 772, width: 190, height: 266 },
+} as const;
+
 // Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
 // cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
 // caméra plateau : le cadre vide se voyait, et on ne pouvait rien y faire.
@@ -436,6 +443,22 @@ function activesCadre(liste: string[], ignored: string[], auto: boolean): string
   return auto ? liste.filter((c) => !ignored.includes(c)) : liste;
 }
 
+/**
+ * Ce que montre chaque cadre, selon le mode. "split" = un deck par cadre ; "mixed" =
+ * les deux decks mêlés, à droite seulement (dans l'habillage complet, la gauche garde
+ * le chrono). La gauche ne montre des cartes qu'en "split".
+ *
+ * Lue par l'habillage complet ET par le compact : le calcul était écrit une seule
+ * fois, dans le complet, et le compact n'avait donc pas de cartes du tout.
+ */
+function cartesParCadre(cards: OverlayStateData["cards"]): { gauche: string[]; droite: string[] } {
+  const mode = cards?.mode ?? "none";
+  const liste = (i: 0 | 1) => activesCadre(cards.lists?.[i] ?? [], cards.ignored?.[i] ?? [], cards.auto);
+  if (mode === "split") return { gauche: liste(0), droite: liste(1) };
+  if (mode === "mixed") return { gauche: [], droite: entrelace(liste(0), liste(1)) };
+  return { gauche: [], droite: [] };
+}
+
 // Un cadre = une liste déjà résolue (le mode décide côté appelant qui la remplit).
 // En diapo auto, un minuteur LOCAL avance la carte toutes les `seconds` : jamais
 // poussé en base, sinon on écrirait l'API toutes les 5 s. En manuel, l'index vient
@@ -506,19 +529,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   const { event } = state;
   const cards = state.cards;
   const mode = cards?.mode ?? "none";
-  // Ce que montre chaque cadre selon le mode. "split" = un deck par cadre ; "mixed" =
-  // les deux decks mêlés, à droite seulement (la gauche garde le chrono). La gauche
-  // ne montre des cartes qu'en "split".
-  const gauche = mode === "split" ? activesCadre(cards.lists?.[0] ?? [], cards.ignored?.[0] ?? [], cards.auto) : [];
-  const droite =
-    mode === "mixed"
-      ? entrelace(
-          activesCadre(cards.lists?.[0] ?? [], cards.ignored?.[0] ?? [], cards.auto),
-          activesCadre(cards.lists?.[1] ?? [], cards.ignored?.[1] ?? [], cards.auto),
-        )
-      : mode === "split"
-        ? activesCadre(cards.lists?.[1] ?? [], cards.ignored?.[1] ?? [], cards.auto)
-        : [];
+  const { gauche, droite } = cartesParCadre(cards);
   // Le chrono, le logo et le titre vivent dans la colonne GAUCHE. On ne les cache
   // donc qu'en mode "split", où le cadre GAUCHE est à l'écran (même vide). En "mixed"
   // la gauche est libre, tout reste. Le score et les Légendes restent toujours.
@@ -637,12 +648,17 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
 
 /**
  * Habillage réduit : les points en haut, un bandeau par joueur avec son pseudo, sa
- * Légende et son champion, et la carte montrée à droite. Rien d'autre, et un fond
+ * Légende et son champion, et les cartes en bas. Rien d'autre, et un fond
  * transparent : ça se pose sur n'importe quelle scène.
+ *
+ * Tout y est plus petit que dans l'habillage complet SAUF le texte : cette version
+ * part sur un téléphone (Moblin), où la vignette du stream tient dans une main.
  */
 function OverlayCompact({ state }: { state: OverlayStateData }) {
   const t = useT();
   const [a, b] = state.players;
+  const cards = state.cards;
+  const { gauche, droite } = cartesParCadre(cards);
   return (
     <div className={styles.root}>
       <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} />
@@ -655,32 +671,36 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           {/* La banniere de la Legende, meme sans habillage : c'est elle qui donne
               sa couleur au bandeau et qui identifie le joueur d'un coup d'oeil. */}
           {p.legendName && getBannerUrl(p.legendName) && (
-            <div className="relative h-[104px]">
+            <div className="relative h-[72px]">
               <ImageFondu src={getBannerUrl(p.legendName)} imgClassName="object-cover object-[50%_28%]" />
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
             </div>
           )}
           <div className="p-3 pt-2">
-          <FitText chars={15} className="text-2xl font-bold uppercase tracking-wide text-white">
+          <FitText chars={12} className="text-3xl font-bold uppercase tracking-wide text-white">
             {p.name || "—"}
           </FitText>
           <div className="mt-1 border-t border-white/15 pt-1">
-            <FitText chars={26} className="text-base font-bold uppercase leading-tight text-white/95">
+            <FitText chars={23} className="text-lg font-bold uppercase leading-tight text-white/95">
               {p.legendName || t("Légende")}
             </FitText>
-            <FitText chars={32} className="text-sm leading-tight text-white/70">
+            <FitText chars={28} className="text-base leading-tight text-white/70">
               {p.championName || "Champion"}
             </FitText>
           </div>
           {p.battlefields[0] && (
-            <FitText chars={30} className="mt-1 text-xs uppercase tracking-wide text-white/60">
+            <FitText chars={26} className="mt-1 text-sm uppercase tracking-wide text-white/60">
               {p.battlefields[0]}
             </FitText>
           )}
           </div>
         </div>
       ))}
-      {/* Pas d'affiche de cartes sur le compact : c'est la version minimale. */}
+      {/* Les cartes en bas, aux deux coins : le haut est déjà pris par les points et
+          les deux bandeaux. Plus petites que dans l'habillage complet, qui les pose
+          dans un cadre dessiné ; ici elles flottent sur la scène du streamer. */}
+      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT_COMPACT.cartesGauche} />
+      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT_COMPACT.cartesDroite} />
     </div>
   );
 }
