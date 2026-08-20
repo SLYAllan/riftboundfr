@@ -926,6 +926,9 @@ export const EN: Record<string, string> = {
   "Réglages": "Settings",
   "Fin de la manche": "Finish game",
   "Qui a gagné la manche ?": "Who won the game?",
+  "Champ de bataille de la manche suivante": "Battlefield for the next game",
+  "Chacun choisit le sien. Laissez tel quel si vous rejouez le même.":
+    "Each player picks their own. Leave it as is if you play the same one again.",
   "C’est la version des joueurs, à tenir pendant qu’ils jouent. Un téléphone posé entre eux, coupé en deux : chacun voit sa moitié à l’endroit de son côté et marque ses points sans lâcher ses cartes. Vous n’avez rien à faire pendant ce temps, et eux n’ont aucun compte à créer.":
     "This is the players' version, to keep at hand while they play. One phone between them, split in two: each reads their half the right way up and scores without putting their cards down. You have nothing to do meanwhile, and they need no account.",
   "Envoyez ce lien aux joueurs, ou posez le téléphone entre eux, à plat sur la table.":
