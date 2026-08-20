@@ -126,6 +126,15 @@ describe("secondesChrono", () => {
     expect(secondesChrono({ endsAt: dans(-125), timerDepassement: true }, T0)).toBe(-125);
   });
 
+  it("laisse le chrono qui monte passer sous zéro", () => {
+    // Lancé maintenant, il vaut zéro puis file en négatif : c'est l'affichage qui
+    // en fait un temps écoulé, sans plus ni rouge.
+    expect(secondesChrono({ endsAt: dans(0), timerMonte: true }, T0)).toBe(0);
+    expect(secondesChrono({ endsAt: dans(-75), timerMonte: true }, T0)).toBe(-75);
+    // Sans l'option, le même état resterait collé à zéro.
+    expect(secondesChrono({ endsAt: dans(-75) }, T0)).toBe(0);
+  });
+
   it("fige le temps en pause, dépassement compris", () => {
     expect(secondesChrono({ endsAt: dans(999), paused: 42 }, T0)).toBe(42);
     // Sans l'option, une pause prise en prolongation reste à zéro.

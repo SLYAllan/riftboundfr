@@ -496,7 +496,7 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
   return <CarteMontree nom={nom} slot={slot} />;
 }
 
-function Timer({ endsAt, paused, depassement }: { endsAt?: string | null; paused?: number | null; depassement?: boolean }) {
+function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null; paused?: number | null; depassement?: boolean; monte?: boolean }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     const id = setInterval(() => setNow(Date.now()), 1000);
@@ -504,20 +504,24 @@ function Timer({ endsAt, paused, depassement }: { endsAt?: string | null; paused
   }, []);
   // La règle vit dans `src/lib/overlay.ts` : elle a des branches, elle tourne en
   // direct, et un composant client ne se teste pas ici.
-  const left = secondesChrono({ endsAt, paused, timerDepassement: depassement }, now);
-  const enRetard = left !== null && left < 0;
+  const left = secondesChrono({ endsAt, paused, timerDepassement: depassement, timerMonte: monte }, now);
+  // Un chrono qui monte ne dépasse rien, il mesure : ni plus devant, ni rouge. Le
+  // dépassement d'un décompte, lui, doit sauter aux yeux.
+  const enRetard = !monte && left !== null && left < 0;
   const abs = left === null ? 0 : Math.abs(left);
   const mm = left === null ? "--" : String(Math.floor(abs / 60)).padStart(2, "0");
   const ss = left === null ? "--" : String(abs % 60).padStart(2, "0");
   return (
     <div className="flex h-full items-center justify-center overflow-hidden">
       <div
-        // Le dépassement se lit d'un coup d'œil : signe devant et encre rouge sombre.
-        // Sur la case dorée du décor, un rouge clair passerait inaperçu.
-        className={`text-[34px] font-bold leading-none tabular-nums ${enRetard ? "text-[#7a1310]" : "text-[#1b1408]"}`}
+        // Encre rouge sombre pour le dépassement : sur la case dorée du décor, un
+        // rouge clair passerait inaperçu.
+        className={`w-full text-[34px] font-bold leading-none tabular-nums ${enRetard ? "text-[#7a1310]" : "text-[#1b1408]"}`}
         style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
       >
-        {enRetard ? "+" : ""}{mm}:{ss}
+        {/* Au-delà de 99 minutes il y a un chiffre de plus, et « +180:00 » débordait
+            de la case dorée. `FitText` réduit alors ce qu'il faut, sans jamais couper. */}
+        <FitText chars={6}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
       </div>
     </div>
   );
@@ -647,7 +651,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
                 opacity: !vitrine && event.timerVisible !== false ? 1 : 0,
               }}
             >
-              <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} />
+              <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} monte={event.timerMonte} />
             </div>
           </>
         }

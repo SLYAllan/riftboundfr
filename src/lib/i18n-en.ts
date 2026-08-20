@@ -149,8 +149,9 @@ export const EN: Record<string, string> = {
   "Échanger les joueurs": "Swap players",
   "Remettre le score à zéro": "Reset the score",
   "Continuer après zéro": "Keep going past zero",
-  "Sans cette case le chrono s’arrête sur 00:00. Avec, il repart en négatif et affiche le dépassement en rouge, ce qui sert pour les tours de mort subite. Une durée de 0 minute donne un chrono qui monte à partir de zéro.":
-    "Without this box the timer stops at 00:00. With it, the timer runs past zero and shows the overtime in red, which is what sudden-death turns need. A duration of 0 minutes gives you a timer that counts up from zero.",
+  "Chrono qui monte": "Count-up timer",
+  "« Continuer après zéro » empêche le décompte de s’arrêter sur 00:00 : il passe en négatif et affiche le dépassement en rouge, ce qu’il faut pour un tour de mort subite. « Chrono qui monte » part de zéro et ne s’arrête pas, sans durée à saisir.":
+    "“Keep going past zero” stops the countdown from freezing on 00:00: it runs into the negative and shows the overtime in red, which is what a sudden-death turn needs. “Count-up timer” starts at zero and never stops, with no duration to type in.",
   "Durée en minutes": "Minutes",
   "Lancer le chrono": "Start timer",
   Pause: "Pause",

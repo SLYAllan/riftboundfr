@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
+  AlertTriangle, ArrowLeftRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEtats } from "@/lib/overlay-dashboard-client";
@@ -755,9 +755,16 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               className="w-28 min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base tabular-nums sm:text-sm"
             />
           </label>
-          <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString(), paused: null } })} className={btnPlein}>
+          <button onClick={() => update({ event: { endsAt: new Date(Date.now() + minutes * 60000).toISOString(), paused: null, timerMonte: false } })} className={btnPlein}>
             <Play size={15} aria-hidden />
             {t("Lancer le chrono")}
+          </button>
+          {/* Le chrono qui monte n'a pas de durée : il part de maintenant et ne
+              s'arrête pas. Un bouton plutôt qu'une case, parce que c'est une façon
+              de LANCER le chrono, pas un réglage qu'on laisse coché. */}
+          <button onClick={() => update({ event: { endsAt: new Date().toISOString(), paused: null, timerMonte: true } })} className={btnVide}>
+            <ArrowUp size={15} aria-hidden />
+            {t("Chrono qui monte")}
           </button>
           {state.event.paused == null ? (
             <button
@@ -779,7 +786,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               {t("Reprendre")}
             </button>
           )}
-          <button onClick={() => update({ event: { endsAt: null, paused: null } })} disabled={!state.event.endsAt && state.event.paused == null} className={btnVide}>
+          <button onClick={() => update({ event: { endsAt: null, paused: null, timerMonte: false } })} disabled={!state.event.endsAt && state.event.paused == null} className={btnVide}>
             <Square size={15} aria-hidden />
             {t("Arrêter")}
           </button>
@@ -792,7 +799,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             {t("Continuer après zéro")}
           </label>
           <p className="w-full text-xs text-ink-muted">
-            {t("Sans cette case le chrono s’arrête sur 00:00. Avec, il repart en négatif et affiche le dépassement en rouge, ce qui sert pour les tours de mort subite. Une durée de 0 minute donne un chrono qui monte à partir de zéro.")}
+            {t("« Continuer après zéro » empêche le décompte de s’arrêter sur 00:00 : il passe en négatif et affiche le dépassement en rouge, ce qu’il faut pour un tour de mort subite. « Chrono qui monte » part de zéro et ne s’arrête pas, sans durée à saisir.")}
           </p>
         </div>
       </section>

@@ -81,14 +81,17 @@ export interface OverlayStateData {
   // NÉGATIF quand le chrono a dépassé zéro : sinon mettre en pause une prolongation
   // la ramenait à 00:00.
   // `timerDepassement` : le chrono continue après zéro au lieu de s'y arrêter, et
-  // compte le temps de dépassement. Lancé sur 0 minute, il sert de chrono qui monte.
+  // compte le temps de dépassement, affiché en rouge avec un plus devant.
+  // `timerMonte` : chrono qui monte. Il part de zéro, ne s'arrête jamais, et
+  // s'affiche comme un temps écoulé ordinaire — ni plus, ni rouge : rien n'est
+  // dépassé, on mesure. Sert aux rondes libres et aux pauses annoncées.
   // `layout` : quel décor. "cams" = celui d'origine, avec un cadre webcam par joueur.
   // "nocam" = le décor sans ces cadres, pour les locales qui n'ont qu'une caméra
   // plateau : la Légende occupe alors la grande case.
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
   // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
   // découpes diffèrent. Vide = le décor du site pour ce mode.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -119,7 +122,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -152,18 +155,20 @@ export function manchesPourGagner(format: OverlayFormat): number {
  * Secondes affichées par le chrono. `null` = pas de chrono lancé.
  *
  * En pause on rend le temps figé tel quel. Sinon on compte depuis `endsAt`. Sans
- * l'option de dépassement on s'arrête à zéro ; avec, on passe en négatif et
- * l'affichage montre le temps de retard.
+ * option on s'arrête à zéro ; avec le dépassement ou le chrono qui monte, on passe
+ * en négatif et c'est l'affichage qui décide comment le montrer.
  */
 export function secondesChrono(
-  e: { endsAt?: string | null; paused?: number | null; timerDepassement?: boolean },
+  e: { endsAt?: string | null; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean },
   maintenant: number,
 ): number | null {
   const brut = e.paused != null
     ? Math.floor(e.paused)
     : e.endsAt ? Math.floor((new Date(e.endsAt).getTime() - maintenant) / 1000) : null;
   if (brut === null || Number.isNaN(brut)) return null;
-  return e.timerDepassement ? brut : Math.max(0, brut);
+  // Le chrono qui monte passe zéro par nature : sans lui laisser le négatif, il
+  // resterait figé sur 00:00 dès la première seconde.
+  return e.timerDepassement || e.timerMonte ? brut : Math.max(0, brut);
 }
 
 export function clampPoints(n: number, max: number): number {
@@ -229,8 +234,9 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     timerVisible: e.timerVisible !== false,
     pointsVisible: e.pointsVisible !== false,
     paused: typeof e.paused === "number" && Number.isFinite(e.paused) ? entier(e.paused, -86_400, 86_400, 0) : null,
-    // Absent = faux : un état écrit avant cette option garde le chrono qui s'arrête.
+    // Absent = faux : un état écrit avant ces options garde le chrono qui s'arrête.
     timerDepassement: e.timerDepassement === true,
+    timerMonte: e.timerMonte === true,
     // Absent = décor d'origine : c'est ce que porte tout état écrit avant ce champ.
     layout: e.layout === "nocam" ? "nocam" : "cams",
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
