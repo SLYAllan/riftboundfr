@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
+import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { echelleOverlay, entrelace, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
@@ -37,34 +38,46 @@ const SLOT = {
   cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
 
-// Découpes de public/stream/compact.webp, relevées au pixel sur son canal alpha :
-// deux cadres par joueur, le haut pour la Légende, le bas coupé en deux par un trait
-// (le pseudo au-dessus, le champ de bataille et les manches en dessous).
+// Découpes de public/stream/compact.webp, relevées au pixel sur son canal alpha.
+//
+// UN SEUL panneau par joueur : les rails dorés portent une coupure décorative vers
+// 130-206, ce n'est pas un séparateur. La Légende passe dessous et descend jusqu'au
+// trait plein (246 à gauche, 254 à droite), le champ de bataille occupe tout ce qui
+// reste. Découper la Légende à la coupure laissait un trou en plein milieu.
+//
+// Les mesures ci-dessous sont celles de l'INTÉRIEUR des rails, pas de la boîte du
+// dessin : rails verticaux à 30-32 et 249-251 (gauche), 1658-1660 et 1885-1887
+// (droite) ; bordures à 20-25 et 311-316 (gauche), 20-26 et 321-327 (droite). Se
+// caler sur la boîte faisait passer l'illustration par-dessus les traits, et ça se
+// voyait.
+//
+// Le pseudo, lui, tombe SOUS le panneau, à l'air libre : comme dans le décor sans
+// caméra, il ne prend pas de place dans l'encadré.
 //
 // Les deux côtés ne sont PAS symétriques dans l'image : le cadre de droite est plus
 // large de 8 px et descend de 7. Chaque côté porte donc ses propres mesures — les
 // aligner sur la moyenne décalait le contenu hors du trait doré.
 const CADRE_COMPACT = {
   left: {
-    x: 26, largeur: 230,
-    hero: { top: 18, hauteur: 112 },
-    pseudo: { top: 207, hauteur: 39 },
-    bf: { top: 249, hauteur: 65 },
+    x: 33, largeur: 216,
+    hero: { top: 26, hauteur: 220 },
+    bf: { top: 249, hauteur: 62 },
+    pseudo: { top: 322, hauteur: 38 },
+    // Le cadre de cartes est dessiné à demeure dans cartes_gauche.webp : on ne peut
+    // pas le déplacer, seulement transformer son calque. Réduit de 0,85 et ancré au
+    // coin du bas — d'où le décalage, `transform-origin` étant en haut à gauche.
+    cartes: { echelle: 0.85, x: 0, y: 162 },
   },
   right: {
-    x: 1654, largeur: 238,
-    hero: { top: 18, hauteur: 116 },
-    pseudo: { top: 214, hauteur: 40 },
-    bf: { top: 257, hauteur: 67 },
+    x: 1661, largeur: 224,
+    hero: { top: 27, hauteur: 227 },
+    bf: { top: 257, hauteur: 64 },
+    pseudo: { top: 333, hauteur: 38 },
+    cartes: { echelle: 0.85, x: 288, y: 162 },
   },
 } as const;
 const FOND_COMPACT = "/stream/compact.webp";
 
-
-// De combien le compact réduit les cadres de cartes et leur carte. Le gabarit les
-// dessine pour l'habillage complet, où ils ont toute la place ; sur un téléphone la
-// scène est déjà chargée.
-const ECHELLE_CARTES_COMPACT = 0.85;
 
 // Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
 // cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
@@ -110,27 +123,6 @@ function useBattlefieldArt(names: string[]): Record<string, string | null> {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
   return Object.fromEntries(names.filter(Boolean).map((n) => [n, art[n] ?? cached[n] ?? null]));
-}
-
-/**
- * Le lien de caméra vient de l'état, que plusieurs personnes peuvent remplir, et la
- * page d'overlay est ouverte par d'autres. Une URL `javascript:` dans un iframe
- * s'exécuterait sur le domaine du site : on n'accepte donc que du https chez
- * VDO.Ninja, et rien d'autre ne s'affiche.
- */
-function camSrc(url: string | undefined): string | null {
-  if (!url) return null;
-  try {
-    const u = new URL(url);
-    if (u.protocol !== "https:") return null;
-    if (!/(^|\.)vdo\.ninja$/i.test(u.hostname)) return null;
-    // Le son doit rester coupé : la voix passe déjà par la table de mixage, sinon
-    // c'est du double son et de l'écho en direct.
-    if (!u.searchParams.has("muted")) u.searchParams.set("muted", "1");
-    return u.toString();
-  } catch {
-    return null;
-  }
 }
 
 function Points({ max, a, b, visible }: { max: number; a: number; b: number; visible: boolean }) {
@@ -245,7 +237,7 @@ function Side({
   // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
   const bf = p.battlefields[0] ?? "";
   const art = useBattlefieldArt(bf ? [bf] : []);
-  const cam = camSrc(p.camUrl);
+  const cam = normaliserLienCamera(p.camUrl);
   return (
     <div className="absolute inset-0">
       {/* Pseudo, juste au-dessus du premier cadre. */}
@@ -686,19 +678,18 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
   const art = useBattlefieldArt(bf ? [bf] : []);
   const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
   const decoupe = (d: { top: number; hauteur: number }) => ({ left: cote.x, width: cote.largeur, top: d.top, height: d.hauteur });
+  // Combien de caractères tiennent : les valeurs par défaut valent pour les 275 px de
+  // l'habillage complet, on les ramène à la largeur du cadre. Les deux côtés n'ont
+  // pas la même, et un chiffre en trop coupait « Jax, Grandmaster at Arms » net.
+  const chars = (plein: number) => Math.round((plein * cote.largeur) / 275);
   return (
     <>
       <div className="absolute z-20 overflow-hidden" style={decoupe(cote.hero)}>
-        {/* La bannière large d'abord : la découpe est en paysage, l'icône carrée y
-            serait rognée des deux côtés. */}
-        <ImageFondu src={banner ?? icon} imgClassName="object-cover object-[50%_28%]" />
-        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={21} charsChampion={28} />
-      </div>
-
-      <div className="absolute z-20 flex flex-col justify-center overflow-hidden px-2" style={decoupe(cote.pseudo)}>
-        <FitText chars={11} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {p.name || "—"}
-        </FitText>
+        {/* L'icône carrée d'abord, la bannière en secours : la case fait 216x220,
+            presque carrée comme celle du décor sans caméra. Une bannière large y
+            perdrait les deux côtés du dessin. */}
+        <ImageFondu src={icon ?? banner} imgClassName="object-cover" />
+        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={chars(26)} charsChampion={chars(34)} />
       </div>
 
       <div className="absolute z-20 overflow-hidden" style={decoupe(cote.bf)}>
@@ -708,7 +699,7 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
             empilés comme dans l'habillage complet ils ne tiendraient pas. */}
         <div className="relative z-20 flex h-full items-center gap-2 px-2">
           <span className="min-w-0 flex-1">
-            <FitText chars={14} className="text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+            <FitText chars={chars(17)} className="text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
               {bf || "Champ de bataille"}
             </FitText>
           </span>
@@ -721,7 +712,54 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
           )}
         </div>
       </div>
+
+      {/* Le pseudo sous le panneau, sans cadre autour : le décor n'a pas de case pour
+          lui, et le loger dedans mangeait la Légende. */}
+      <div className="absolute z-20 flex flex-col justify-center overflow-hidden px-2" style={decoupe(cote.pseudo)}>
+        <FitText chars={11} className="text-xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+          {p.name || "—"}
+        </FitText>
+      </div>
     </>
+  );
+}
+
+/**
+ * Un cadre de cartes du compact : le calque du gabarit et sa carte, ramenés sous le
+ * bloc du joueur. Le cadre est dessiné à demeure dans une image pleine toile, on ne
+ * peut donc que transformer le calque entier — la carte suit, elle est dedans.
+ */
+function CadreCartesCompact({
+  side,
+  visible,
+  cards,
+  actives,
+}: {
+  side: "left" | "right";
+  visible: boolean;
+  cards: NonNullable<OverlayStateData["cards"]>;
+  actives: string[];
+}) {
+  const { echelle, x, y } = CADRE_COMPACT[side].cartes;
+  return (
+    <div
+      className="absolute inset-0 z-[11]"
+      style={{ transform: `translate(${x}px, ${y}px) scale(${echelle})`, transformOrigin: "0 0" }}
+    >
+      <img
+        src={side === "left" ? "/stream/cartes_gauche.webp" : "/stream/cartes_droite.webp"}
+        alt=""
+        className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: visible ? 1 : 0 }}
+      />
+      <CarteAffiche
+        actives={actives}
+        auto={cards.auto}
+        index={cards.index?.[side === "left" ? 0 : 1] ?? 0}
+        seconds={cards.seconds}
+        slot={side === "left" ? SLOT.cardsLeft : SLOT.cards}
+      />
+    </div>
   );
 }
 
@@ -748,32 +786,11 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           ailleurs, il ne masque donc rien. */}
       <img src={FOND_COMPACT} alt="" className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
       {/* Les mêmes cadres dorés que l'habillage complet, et les cartes dans leurs
-          découpes : ils sont dessinés en bas de la toile, aux deux coins. Leur place
-          est celle du gabarit, au pixel — d'où les slots partagés. Comme dans le
+          découpes : en bas de la toile, aux deux coins, un peu réduits. Comme dans le
           complet, le cadre suit le MODE et pas le nombre de cartes : on peut le poser
           vide, puis y charger le deck. */}
-      {/* Le cadre est un calque pleine toile : on ne peut pas le rétrécir seul sans le
-          décoller de la carte. Les deux descendent donc du même facteur, ancrés au
-          coin du bas — ce qui les rapproche aussi du bord, la place gagnée revient à
-          la scène du streamer. */}
-      <div className="absolute inset-0 z-[11] origin-bottom-left" style={{ transform: `scale(${ECHELLE_CARTES_COMPACT})` }}>
-        <img
-          src="/stream/cartes_gauche.webp"
-          alt=""
-          className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
-          style={{ opacity: mode === "split" ? 1 : 0 }}
-        />
-        <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
-      </div>
-      <div className="absolute inset-0 z-[11] origin-bottom-right" style={{ transform: `scale(${ECHELLE_CARTES_COMPACT})` }}>
-        <img
-          src="/stream/cartes_droite.webp"
-          alt=""
-          className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
-          style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
-        />
-        <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
-      </div>
+      <CadreCartesCompact side="left" visible={mode === "split"} cards={cards} actives={gauche} />
+      <CadreCartesCompact side="right" visible={mode === "mixed" || mode === "split"} cards={cards} actives={droite} />
     </div>
   );
 }
