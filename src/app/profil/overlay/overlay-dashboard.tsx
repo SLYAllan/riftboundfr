@@ -494,13 +494,14 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
       <section className="rounded-xl border border-hairline bg-surface p-4">
         <h2 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h2>
-        <p className="mt-1 text-xs text-ink-muted">
-          {t("Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.")}
+        <p className="mt-1 text-xs text-ink-secondary">
+          {t("C’est la version des joueurs, à tenir pendant qu’ils jouent. Un téléphone posé entre eux, coupé en deux : chacun voit sa moitié à l’endroit de son côté et marque ses points sans lâcher ses cartes. Vous n’avez rien à faire pendant ce temps, et eux n’ont aucun compte à créer.")}
         </p>
         <ol className="mt-2 space-y-1.5 text-xs text-ink-secondary">
-          <li><strong className="text-ink">1.</strong> {t("Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.")}</li>
-          <li><strong className="text-ink">2.</strong> {t("Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.")}</li>
-          <li><strong className="text-ink">3.</strong> {t("Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.")}</li>
+          <li><strong className="text-ink">1.</strong> {t("Envoyez ce lien aux joueurs, ou posez le téléphone entre eux, à plat sur la table.")}</li>
+          <li><strong className="text-ink">2.</strong> {t("Avant de commencer, ils remplissent la partie : pseudos, format, points pour gagner, puis Légende, champion et champ de bataille de chacun.")}</li>
+          <li><strong className="text-ink">3.</strong> {t("Pendant la partie, chacun compte ses points de son côté. En fin de manche, ils désignent le gagnant et le BO avance tout seul.")}</li>
+          <li><strong className="text-ink">4.</strong> {t("Tout ce qu’ils touchent part à l’écran du stream. Vos réglages à vous, ici, ne sont pas écrasés.")}</li>
         </ol>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>

@@ -926,14 +926,16 @@ export const EN: Record<string, string> = {
   "Réglages": "Settings",
   "Fin de la manche": "Finish game",
   "Qui a gagné la manche ?": "Who won the game?",
-  "Le compagnon tient dans une main pendant la partie, et ne demande aucun compte.":
-    "The companion fits in one hand during the game, and needs no account.",
-  "Ouvrez ce lien sur le téléphone du joueur qui tiendra le score.":
-    "Open this link on the phone of whoever keeps score.",
-  "Il prépare la partie : pseudos, format, Légende et champ de bataille de chacun.":
-    "They set up the game: names, format, Legend and battlefield for each player.",
-  "Pendant le match, il marque les points et clôt chaque manche. L’écran suit tout seul.":
-    "During the match they score the points and close each game. The screen follows on its own.",
+  "C’est la version des joueurs, à tenir pendant qu’ils jouent. Un téléphone posé entre eux, coupé en deux : chacun voit sa moitié à l’endroit de son côté et marque ses points sans lâcher ses cartes. Vous n’avez rien à faire pendant ce temps, et eux n’ont aucun compte à créer.":
+    "This is the players' version, to keep at hand while they play. One phone between them, split in two: each reads their half the right way up and scores without putting their cards down. You have nothing to do meanwhile, and they need no account.",
+  "Envoyez ce lien aux joueurs, ou posez le téléphone entre eux, à plat sur la table.":
+    "Send this link to the players, or lay the phone flat on the table between them.",
+  "Avant de commencer, ils remplissent la partie : pseudos, format, points pour gagner, puis Légende, champion et champ de bataille de chacun.":
+    "Before they start, they fill the game in: names, format, points to win, then Legend, champion and battlefield for each player.",
+  "Pendant la partie, chacun compte ses points de son côté. En fin de manche, ils désignent le gagnant et le BO avance tout seul.":
+    "During the game each player counts their own points. At the end of a game they pick the winner, and the BO moves on by itself.",
+  "Tout ce qu’ils touchent part à l’écran du stream. Vos réglages à vous, ici, ne sont pas écrasés.":
+    "Everything they touch goes straight to the stream. Your own settings here are not overwritten.",
   "Lancer le compagnon": "Start the companion",
   "Lien compagnon (téléphone)": "Companion link (phone)",
   "Celui qui a ce lien change ce qui est à l’écran : ne le montrez pas en direct. « Nouveau lien » le remplace lui aussi.":
