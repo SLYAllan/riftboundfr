@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw, Trophy } from "lucide-react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { getLegendIconUrl } from "@/lib/banners";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import {
   bornerEtape, creerFilePatchs, memoriserManche, patchPourRestaurerManche,
@@ -30,7 +32,6 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   const [etape, setEtape] = useState<0 | 1 | 2>(0);
   const [enMatch, setEnMatch] = useState(false);
   const [demandeGagnant, setDemandeGagnant] = useState(false);
-  const [confirmeNouveauMatch, setConfirmeNouveauMatch] = useState(false);
   const [derniereManche, setDerniereManche] = useState<MemoireManche | null>(null);
   const [legendes, setLegendes] = useState<Legende[]>([]);
   const [champions, setChampions] = useState<[string[], string[]]>([[], []]);
@@ -123,14 +124,11 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   function annulerDerniereManche() {
     if (!derniereManche) return;
     envoyer(patchPourRestaurerManche(derniereManche));
-    setDerniereManche(null); setConfirmeNouveauMatch(false);
+    setDerniereManche(null);
   }
   function remettreLesScoresAZero() {
     envoyer({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] } as PatchCompagnon);
-    setDerniereManche(null); setConfirmeNouveauMatch(false);
-  }
-  function nouveauMatch() {
-    remettreLesScoresAZero(); setEnMatch(false); setEtape(0);
+    setDerniereManche(null);
   }
   function lancerLaPartie() {
     // Le match précédent dort encore dans l'état de l'habillage : sans cette remise
@@ -185,9 +183,9 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
 
       {etape === 2 && <section aria-labelledby="etape-verification" className="space-y-4">
         <h2 id="etape-verification" className="text-xl font-bold">{t("Vérifier la partie")}</h2>
-        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => { const joueur = state.players[i]; const art = legendes.find((l) => l.id === joueur.legendId)?.imageUrl; return <article key={i} className="relative min-h-52 overflow-hidden rounded-xl border border-hairline bg-surface">
-          {art && <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url("${art.replaceAll('"', '%22')}")` }} />}<div className="absolute inset-0 bg-black/45" />
-          <div className="relative flex min-h-52 flex-col justify-end p-4"><h3 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h3><p className="truncate text-sm text-ink-secondary">{joueur.legendName || t("Aucune Légende")}</p>{joueur.championName && <p className="truncate text-xs text-ink-muted">{joueur.championName}</p>}{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
+        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => { const joueur = state.players[i]; const icone = getLegendIconUrl(joueur.legendName); return <article key={i} className="flex items-center gap-3 rounded-xl border border-hairline bg-surface p-4">
+          {icone && <Image src={icone} alt="" width={48} height={48} className="h-12 w-12 shrink-0 rounded-lg ring-1 ring-white/10" />}
+          <div className="min-w-0"><h3 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h3><p className="truncate text-sm text-ink-secondary">{joueur.legendName || t("Aucune Légende")}</p>{joueur.championName && <p className="truncate text-xs text-ink-muted">{joueur.championName}</p>}{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
         </article>; })}</div><p className="text-center text-sm text-ink-secondary">{state.format} · {state.maxPoints} {t("pts")}</p>
       </section>}
 
@@ -200,10 +198,11 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
 
   function panneauJoueur(i: 0 | 1, inverse = false) {
     const joueur = state.players[i]; const points = i === 0 ? state.points.a : state.points.b;
-    const art = legendes.find((l) => l.id === joueur.legendId)?.imageUrl;
+    // Le logo carré de la Légende, celui des grilles de tournoi. La carte entière
+    // servait de fond : on lisait son texte de règles derrière le score.
+    const icone = getLegendIconUrl(joueur.legendName);
     return <section className={`${styles.joueur} ${inverse ? styles.joueurInverse : ""}`} aria-label={`${t("Joueur")} ${i + 1}`}>
-      {art && <div className={styles.art} style={{ backgroundImage: `url("${art.replaceAll('"', '%22')}")` }} />}<div className={styles.voile} />
-      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col items-center justify-center gap-2 px-4 py-3"><div className="w-full min-w-0 text-center"><h2 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h2><p className="truncate text-xs text-ink-secondary">{joueur.championName || joueur.legendName || t("Légende non choisie")}</p>{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
+      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col items-center justify-center gap-2 px-4 py-3"><div className="flex w-full min-w-0 flex-col items-center gap-1.5 text-center">{icone && <Image src={icone} alt="" width={56} height={56} className="h-14 w-14 rounded-xl ring-1 ring-white/10" />}<h2 className="truncate text-lg font-bold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h2><p className="truncate text-xs text-ink-secondary">{joueur.championName || joueur.legendName || t("Légende non choisie")}</p>{joueur.battlefields[0] && <p className="truncate text-xs text-ink-muted">{joueur.battlefields[0]}</p>}</div>
         <div className="flex items-center justify-center gap-5"><button type="button" onClick={() => point(i, -1)} disabled={points <= 0} aria-label={`${t("Un point de moins")}, ${joueur.name || `${t("joueur")} ${i + 1}`}`} className={styles.boutonPoint}><Minus size={30} aria-hidden /></button><span className="min-w-24 text-center text-7xl font-black tabular-nums text-white font-display">{points}</span><button type="button" onClick={() => point(i, 1)} disabled={points >= state.maxPoints} aria-label={`${t("Un point de plus")}, ${joueur.name || `${t("joueur")} ${i + 1}`}`} className={styles.boutonPoint}><Plus size={30} aria-hidden /></button></div>
       </div>
     </section>;
@@ -215,13 +214,12 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
       <button type="button" onClick={() => setEnMatch(false)} className={styles.actionCentrale}><ChevronLeft size={17} aria-hidden />{t("Réglages")}</button>
       <div className="flex min-w-0 flex-col items-center"><strong className="text-base tabular-nums">{state.players[0].gamesWon} – {state.players[1].gamesWon}</strong><span className="text-[11px] text-ink-muted">{state.format} · {state.maxPoints} {t("pts")}</span>{retourEnvoi}</div>
       <button type="button" onClick={() => setDemandeGagnant(true)} className="min-h-11 rounded-xl bg-arcane px-3 py-2 text-sm font-bold text-canvas active:scale-[0.96]">{t("Fin de la manche")}</button>
-      {derniereManche && vainqueur === null && <button type="button" onClick={annulerDerniereManche} className={styles.actionCentrale}><RotateCcw size={16} aria-hidden />{t("Annuler la dernière manche")}</button>}
+      {derniereManche && <button type="button" onClick={annulerDerniereManche} className={styles.actionCentrale}><RotateCcw size={16} aria-hidden />{t("Annuler la dernière manche")}</button>}
     </div>
     {erreurEnvoi && <div role="alert" className={`${styles.erreurEnvoi} flex items-center justify-center gap-3 bg-error/10 px-3 py-2 text-xs text-error-light`}><span>{t("Modification non envoyée. Vérifiez votre connexion, puis réessayez.")}</span><button type="button" onClick={() => file.renvoyer()} className="min-h-11 font-bold underline">{t("Réessayer")}</button></div>}
     {panneauJoueur(0)}
 
     <Dialog open={demandeGagnant} onOpenChange={setDemandeGagnant}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Qui a gagné la manche ?")}</DialogTitle><DialogDescription className="text-center">{t("Choisissez le gagnant pour mettre à jour le BO.")}</DialogDescription><button type="button" onClick={() => finDeManche(1)} className="min-h-16 rotate-180 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[1].name || `${t("Joueur")} 2`}</button><button type="button" onClick={() => finDeManche(0)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[0].name || `${t("Joueur")} 1`}</button><button type="button" onClick={() => setDemandeGagnant(false)} className="min-h-11 text-sm text-ink-secondary">{t("Annuler")}</button></DialogContent></Dialog>
 
-    <Dialog open={vainqueur !== null} onOpenChange={(ouvert) => { if (!ouvert) setEnMatch(false); }}><DialogContent showCloseButton={false} className="justify-items-center gap-4 bg-surface text-center"><Trophy size={48} className="text-gold" aria-hidden /><DialogTitle className="text-2xl font-bold">{vainqueur !== null ? state.players[vainqueur].name || `${t("Joueur")} ${vainqueur + 1}` : ""}</DialogTitle><DialogDescription>{t("remporte le match")} {state.players[0].gamesWon} – {state.players[1].gamesWon}</DialogDescription>{derniereManche && <button type="button" onClick={annulerDerniereManche} className={`${boutonSecondaire} w-full`}><RotateCcw size={17} aria-hidden />{t("Corriger la dernière manche")}</button>}<button type="button" onClick={() => confirmeNouveauMatch ? nouveauMatch() : setConfirmeNouveauMatch(true)} className="min-h-12 w-full rounded-xl bg-gold px-4 py-3 font-bold text-canvas active:scale-[0.96]">{confirmeNouveauMatch ? t("Confirmer le nouveau match") : t("Nouveau match")}</button></DialogContent></Dialog>
   </main>;
 }

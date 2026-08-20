@@ -925,8 +925,6 @@ export const EN: Record<string, string> = {
   "Réglages": "Settings",
   "Fin de la manche": "Finish game",
   "Qui a gagné la manche ?": "Who won the game?",
-  "remporte le match": "wins the match",
-  "Nouveau match": "New match",
   "Lien compagnon (téléphone)": "Companion link (phone)",
   "À ouvrir sur le téléphone d’un joueur : il prépare le match, marque les points et clôt les manches. L’habillage suit, sans compte à créer.":
     "Open it on a player's phone: they set up the match, score the points and close the games. The overlay follows along, no account needed.",
@@ -952,8 +950,6 @@ export const EN: Record<string, string> = {
   Continuer: "Continue",
   "Choisissez le gagnant pour mettre à jour le BO.": "Choose the winner to update the best-of score.",
   "Annuler la dernière manche": "Undo last game",
-  "Corriger la dernière manche": "Correct last game",
-  "Confirmer le nouveau match": "Confirm new match",
   "Copie impossible. Sélectionnez le lien et copiez-le.":
     "Unable to copy. Select the link and copy it.",
 };
