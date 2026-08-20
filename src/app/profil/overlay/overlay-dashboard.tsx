@@ -4,6 +4,7 @@ import {
   AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { creerFileEtats, normaliserLienCamera } from "@/lib/overlay-dashboard-client";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
@@ -87,6 +88,7 @@ function BoutonConfirme({
   return (
     <button
       onClick={() => { if (arme) { setArme(false); onConfirme(); } else setArme(true); }}
+      aria-live="polite"
       className={className}
     >
       {arme ? <Check size={15} aria-hidden /> : icone}
@@ -105,8 +107,28 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const [copieCompagnon, setCopieCompagnon] = useState<"repos" | "copie" | "erreur">("repos");
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const aEnvoyer = useRef<OverlayStateData | null>(null);
+  const etatDiffere = useRef<OverlayStateData | null>(null);
   const [erreur, setErreur] = useState<string | null>(null);
+  const [fileSauvegarde] = useState(() => creerFileEtats<OverlayStateData>(async (etat) => {
+    try {
+      const reponse = await fetch("/api/overlay/state", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(etat),
+        keepalive: true,
+      });
+      if (!reponse.ok) {
+        const corps = await reponse.json().catch(() => ({}) as { error?: string });
+        setErreur(corps.error ?? `${t("Le serveur a refusé la sauvegarde.")} (${reponse.status})`);
+        throw new Error("sauvegarde");
+      }
+      setErreur(null);
+    } catch (cause) {
+      if (cause instanceof Error && cause.message === "sauvegarde") throw cause;
+      setErreur(t("Connexion perdue : rien n’est parti à l’écran."));
+      throw cause;
+    }
+  }));
 
   useEffect(() => {
     queueMicrotask(() => setOrigin(window.location.origin));
@@ -126,30 +148,27 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
     });
   }, [state.players[0].legendName, state.players[1].legendName]);
 
-  // On envoie l'état ENTIER, pas le patch. Le minuteur d'attente annule l'envoi
-  // précédent : tant qu'on postait le patch, tout ce qui avait été changé moins de
-  // 300 ms plus tôt partait à la poubelle sans rien dire. « Échanger les joueurs »
-  // suivi d'un clic sur un point ne changeait donc rien à l'écran d'OBS, et les
-  // modifications suivantes s'appliquaient à l'ancien ordre. Avec l'état entier,
-  // le dernier envoi porte tout ce qui a été fait avant lui.
+  useEffect(() => {
+    const auDepart = () => {
+      if (!etatDiffere.current) return;
+      if (saveTimer.current) clearTimeout(saveTimer.current);
+      fileSauvegarde.ajouter(etatDiffere.current);
+      etatDiffere.current = null;
+    };
+    window.addEventListener("pagehide", auDepart);
+    return () => window.removeEventListener("pagehide", auDepart);
+  }, [fileSauvegarde]);
+
+  // Le dernier état porte tout ce qui précède, et la file attend la réponse avant
+  // d'envoyer le suivant. Deux POST pleins ne peuvent donc plus s'écraser à l'envers.
   function update(patch: Parameters<typeof applyStateUpdate>[1]) {
     setState((s) => {
       const next = applyStateUpdate(s, patch);
-      aEnvoyer.current = next;
+      etatDiffere.current = next;
       if (saveTimer.current) clearTimeout(saveTimer.current);
       saveTimer.current = setTimeout(() => {
-        // Une sauvegarde refusée ne doit JAMAIS passer sous silence : le tableau de
-        // bord continuait de réagir alors que l'écran d'OBS, lui, ne bougeait plus.
-        // On ne pouvait que deviner. Le message du serveur s'affiche maintenant.
-        fetch("/api/overlay/state", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(aEnvoyer.current) })
-          .then(async (r) => {
-            if (r.ok) return setErreur(null);
-            const corps = await r.json().catch(() => ({}) as { error?: string });
-            // Traduit comme le reste : un streamer anglophone recevait ce message en
-            // français, au pire moment. Le message du serveur, lui, reste tel quel.
-            setErreur(corps.error ?? `${t("Le serveur a refusé la sauvegarde.")} (${r.status})`);
-          })
-          .catch(() => setErreur(t("Connexion perdue : rien n’est parti à l’écran.")));
+        etatDiffere.current = null;
+        fileSauvegarde.ajouter(next);
       }, 300);
       return next;
     });
@@ -315,7 +334,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   // la page part de travers en plein direct. Le 14 px revient dès l'écran large.
   // `min-h-11` : 44 px, la cible tactile minimale — les champs faisaient 38.
   const inputCls =
-    "w-full min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base transition-colors duration-150 focus:border-arcane focus:outline-none sm:text-sm";
+    "w-full min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base transition-colors duration-150 focus:border-arcane focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-arcane sm:text-sm";
   const selectCls = "min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base sm:text-sm";
   // Un libellé de case à cocher n'est pas qu'un mot : c'est la zone qu'on vise.
   const caseCls = "flex min-h-11 items-center gap-2 text-sm";
@@ -352,15 +371,25 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       {/* Fond neutre, texte rouge : la règle d'interface interdit le fond teinté sous
           un texte de la même couleur. */}
       {erreur && (
-        <div role="alert" className="flex items-start gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
+        <div role="alert" className="flex flex-wrap items-center gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
           <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />
           <span>
             <strong className="font-semibold">{t("Rien n’est enregistré.")}</strong> {erreur}{" "}
             {t("L’écran d’OBS montre toujours l’état d’avant.")}
           </span>
+          <button type="button" onClick={() => fileSauvegarde.relancer()} className={`${btnVide} ml-auto`}>
+            <RefreshCw size={15} aria-hidden />{t("Réessayer")}
+          </button>
         </div>
       )}
 
+      <details className="group rounded-xl border border-hairline bg-surface">
+        <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-semibold">
+          <span>{t("Liens et affichage OBS")}</span>
+          <span className="text-sm font-normal text-ink-muted group-open:hidden">{t("Ouvrir")}</span>
+          <span className="hidden text-sm font-normal text-ink-muted group-open:inline">{t("Fermer")}</span>
+        </summary>
+        <div className="space-y-4 border-t border-hairline p-4">
       <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
         <h2 className="font-semibold text-ink">{t("Première fois ? Trois étapes.")}</h2>
         <ol className="mt-2 space-y-1.5 text-sm text-ink-secondary">
@@ -378,7 +407,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       </section>
 
       <section className="rounded-xl border border-hairline bg-surface p-4">
-        <label className="text-sm font-semibold">{t("Lien à coller dans OBS")}</label>
+        <h2 className="text-sm font-semibold">{t("Lien à coller dans OBS")}</h2>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{overlayUrl}</code>
           {/* Largeur fixée : « Copier » et « Copié » n'ont pas la même longueur,
@@ -443,6 +472,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             </p>
           )}
         </section>
+        <p role="status" aria-live="polite" className="sr-only">{copied ? t("Copié") : ""}</p>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">
           <span className="text-sm text-ink-secondary">{t("Décor")}</span>
           <select
@@ -504,11 +534,14 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <Copy size={15} aria-hidden />
             {t("Copier la version simple")}
           </button>
+          <p className="w-full text-xs text-ink-muted">{t("La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}</p>
         </div>
       </section>
+        </div>
+      </details>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("1. Les joueurs")}</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Joueurs et score")}</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {([0, 1] as const).map((i) => {
             const p = state.players[i];
@@ -554,13 +587,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
                   </select>
                 </label>
-
                 <div className="rounded-lg bg-surface-raised/50 p-3">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-sm text-ink-secondary">{t("Points")}</span>
                     <div className="flex items-center gap-2">
                       <button aria-label={`${t("Un point de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
-                      <span className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
+                      <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
                       <button aria-label={`${t("Un point de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
                     </div>
                   </div>
@@ -568,7 +600,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     <span className="text-sm text-ink-secondary">{t("Manches gagnées")}</span>
                     <div className="flex items-center gap-2">
                       <button aria-label={`${t("Une manche de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
-                      <span className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
+                      <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
                       <button aria-label={`${t("Une manche de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
                     </div>
                   </div>
@@ -577,8 +609,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                 {/* Décor sans cadres : plus rien où poser une caméra. On enlève les
                     champs plutôt que de les laisser sans effet visible. */}
                 {!sansCam && (
-                <div>
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Caméra (lien VDO.Ninja)")}</span>
+                <details className="rounded-lg border border-hairline bg-surface-raised/40">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-3 py-2 text-sm text-ink-secondary">
+                    <span>{t("Caméra du joueur")}</span><span className="text-xs text-ink-muted">{t("Optionnel")}</span>
+                  </summary>
+                  <div className="border-t border-hairline p-3">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Lien VDO.Ninja")}</span>
                   {/* `flex-wrap` + `min-w-full` : avec une caméra chargée il y a trois
                       boutons sur la ligne, et sur un téléphone le champ tombait à 26 px.
                       On ne pouvait plus ni lire ni corriger le lien. Le champ prend
@@ -591,7 +627,11 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                       aria-label={`${t("Caméra (lien VDO.Ninja)")}, ${t("joueur")} ${i + 1}`}
                       className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"}
                     />
-                    <button onClick={() => setPlayer(i, { camUrl: brouillonCam[i] })} disabled={!brouillonCam[i].trim()} className={btnPlein}>
+                    <button
+                      onClick={() => setPlayer(i, { camUrl: normaliserLienCamera(brouillonCam[i]) ?? "" })}
+                      disabled={!normaliserLienCamera(brouillonCam[i])}
+                      className={btnPlein}
+                    >
                       <Upload size={15} aria-hidden />
                       {t("Charger")}
                     </button>
@@ -613,6 +653,11 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                       </>
                     )}
                   </div>
+                  {brouillonCam[i].trim() && !normaliserLienCamera(brouillonCam[i]) && (
+                    <p role="alert" className="mt-1 text-xs text-error-light">
+                      {t("Utilisez un lien HTTPS fourni par VDO.Ninja.")}
+                    </p>
+                  )}
                   <p className="mt-1 text-xs text-ink-muted">
                     {t("Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.")}
                   </p>
@@ -622,7 +667,8 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     <input type="checkbox" className="size-4 accent-arcane" checked={p.camBackground ?? false} onChange={(e) => setPlayer(i, { camBackground: e.target.checked })} />
                     {t("Fond de webcam (sans caméra)")}
                   </label>
-                </div>
+                  </div>
+                </details>
                 )}
               </div>
             );
@@ -631,7 +677,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("2. Le match")}</h2>
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Match et chrono")}</h2>
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <label className="block">
             <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
@@ -684,7 +730,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               min={1}
               max={180}
               value={minutes}
-              onChange={(e) => setMinutes(Number(e.target.value))}
+              onChange={(e) => setMinutes(Math.max(1, Math.min(180, Number(e.target.value) || 1)))}
               className="w-28 min-h-11 rounded-lg border border-hairline bg-surface px-3 py-2 text-base tabular-nums sm:text-sm"
             />
           </label>
@@ -721,8 +767,11 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </div>
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("3. Montrer une carte")}</h2>
+      <details className="group rounded-xl border border-hairline bg-surface">
+        <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-lg font-semibold">
+          <span>{t("Cartes à l’écran")}</span><span className="text-sm font-normal text-ink-muted">{t("Optionnel")}</span>
+        </summary>
+      <section className="space-y-3 border-t border-hairline p-4">
         <div className="space-y-4 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
             {t("Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer, et reclique-la pour la retirer de l’écran. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
@@ -785,6 +834,9 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               aria-label={t("Montrer une carte sans decklist")}
               className={inputCls}
             />
+            <p role="status" aria-live="polite" className="sr-only">
+              {rechCarte.trim().length >= 2 && cartes ? `${resultatsCartes.length} ${t("résultats")}` : ""}
+            </p>
             {resultatsCartes.length > 0 && (
               <ul className="mt-2 space-y-1">
                 {resultatsCartes.map((c) => (
@@ -820,11 +872,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     value={brouillonDeck[i]}
                     onChange={(e) => setBrouillonDeck((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
                     placeholder={t("Collez une decklist")}
-                    aria-label={t("Decklist")}
+                    aria-label={`${t("Decklist")}, ${t("joueur")} ${i + 1}`}
                     rows={3}
                     className={inputCls + " font-mono text-base sm:text-xs"}
                   />
                   <button
+                    aria-label={`${t("Charger la decklist")}, ${t("joueur")} ${i + 1}`}
                     onClick={() => {
                       // On ne garde que les cartes à montrer. On retire : les terrains
                       // (liste des champs de bataille), la Légende (elle est déjà sur la
@@ -873,7 +926,8 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                             <button
                               type="button"
                               onClick={() => montrer(i, c)}
-                              title={c === montree ? t("Cliquez de nouveau pour la retirer de l’écran") : undefined}
+                              aria-pressed={c === montree}
+                              aria-label={c === montree ? `${t("Retirer de l’écran")} : ${c}` : `${t("Montrer à l’écran")} : ${c}`}
                               // La liste des cartes se clique en plein match : une
                               // ligne de 24 px se rate au doigt. 36 px, et la liste
                               // reste dans son cadre qui défile.
@@ -894,9 +948,13 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           </div>
         </div>
       </section>
+      </details>
 
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("4. Le tournoi")}</h2>
+      <details className="group rounded-xl border border-hairline bg-surface">
+        <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-lg font-semibold">
+          <span>{t("Tournoi et logo")}</span><span className="text-sm font-normal text-ink-muted">{t("Optionnel")}</span>
+        </summary>
+      <section className="space-y-3 border-t border-hairline p-4">
         {/* `items-start`, pas `items-end` : les deux colonnes n'ont plus la même
             hauteur depuis que le logo porte un bouton d'envoi et sa ligne d'aide.
             Alignées par le bas, « Nom du tournoi » tombait au milieu du cadre, sous
@@ -952,7 +1010,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               {t("PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.")}
             </p>
             {erreurMedia && (
-              <p role="alert" className="mt-2 flex items-start gap-1.5 text-xs text-error">
+              <p role="alert" className="mt-2 flex items-start gap-1.5 text-xs text-error-light">
                 <AlertTriangle size={14} className="mt-px shrink-0" aria-hidden />
                 {erreurMedia}
               </p>
@@ -969,6 +1027,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           </div>
         </div>
       </section>
+      </details>
     </div>
   );
 }

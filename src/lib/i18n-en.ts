@@ -959,4 +959,20 @@ export const EN: Record<string, string> = {
   "Annuler la dernière manche": "Undo last game",
   "Copie impossible. Sélectionnez le lien et copiez-le.":
     "Unable to copy. Select the link and copy it.",
+  "Liens et affichage OBS": "OBS links and display",
+  Ouvrir: "Open",
+  Optionnel: "Optional",
+  "Joueurs et score": "Players and score",
+  "Match et chrono": "Match and timer",
+  "Cartes à l’écran": "Cards on screen",
+  "Tournoi et logo": "Event and logo",
+  "Caméra du joueur": "Player camera",
+  "Lien VDO.Ninja": "VDO.Ninja link",
+  "Charger la decklist": "Load decklist",
+  résultats: "results",
+  "La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.":
+    "The simple version does not show the timer, event, logo, cameras or your custom layout.",
+  "Utilisez un lien HTTPS fourni par VDO.Ninja.": "Use an HTTPS link provided by VDO.Ninja.",
+  "Retirer de l’écran": "Remove from screen",
+  "Montrer à l’écran": "Show on screen",
 };

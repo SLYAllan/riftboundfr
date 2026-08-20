@@ -1,5 +1,39 @@
 # HANDOFF — état des lieux
 
+## Travail en parallèle du 20 août 2026
+
+**Codex a terminé la passe sur l'interface de `/profil/overlay`.** Fichiers touchés :
+`src/app/profil/overlay/overlay-dashboard.tsx`, la logique et les tests ajoutés
+dans `src/lib/`, les traductions, puis ce fichier de passation. Objectif :
+rendre le tableau de bord lisible pour une boutique ou un streamer débutant,
+puis corriger les écarts d'accessibilité et l'ordre des sauvegardes.
+
+**Ne pas toucher aux changements de Claude en cours** dans
+`src/app/overlay/[token]/overlay-full.tsx` et `public/stream/compact.webp`. Codex
+ne modifiera pas ces deux fichiers et relira leur état avant chaque commit.
+
+État Codex : `src/lib/overlay-dashboard-client.ts` porte maintenant la validation
+des liens VDO.Ninja et une file de sauvegardes ordonnée. Son test ciblé passe :
+**1 fichier, 4 tests, EXIT=0**. Le tableau de bord utilise désormais cette file.
+Après retour d'Allan, la piste en quatre vues a été retirée : elle divisait trop
+un outil destiné aux boutiques et aux streamers débutants. La page reste unique.
+L'installation OBS se replie dans un seul bloc, tandis que joueurs, scores, match
+et chrono restent visibles. Cartes, tournoi, logo et caméras sont des options
+repliées.
+Sont aussi corrigés : lien caméra refusé avec message, noms des deux decklists,
+état des cartes affichées, annonces de score et de recherche, contraste de
+l'erreur média et bornage du chrono.
+
+Vérifications après ce lot et après les changements parallèles de Claude :
+**29 fichiers et 180 tests verts**, lint à **0 erreur et 102 avertissements**,
+puis `npm run verify` à **EXIT=0**. Le contrôle visuel connecté n'a pas été refait :
+la session Playwright appartient à Claude et le WebSocket OBS ne tourne pas.
+
+Relecture Codex : le bandeau d'erreur porte maintenant `Réessayer`; la file garde
+le même état jusqu'à son envoi. Le dernier état différé part avec `keepalive` au
+départ de la page. La normalisation VDO.Ninja reste dupliquée tant que Claude possède
+`overlay-full.tsx`; ne pas fusionner les deux copies sans coordonner ce fichier.
+
 **Relevé mis à jour le 20 août 2026.** Branche `main`, dernier commit du companion
 `e391395c`.
 La session du 20 août est décrite plus bas ; le reste date du relevé du 14 août.
