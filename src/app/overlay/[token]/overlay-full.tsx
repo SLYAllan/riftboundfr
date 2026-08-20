@@ -37,13 +37,6 @@ const SLOT = {
   cards: { left: 1624, top: 708, width: 235, height: 310 },
 } as const;
 
-// Habillage réduit : mêmes 1920x1080, mais rien n'est dessiné dessous. Les cartes se
-// posent aux deux coins du bas, plus petites que dans le complet (235x310).
-const SLOT_COMPACT = {
-  cartesGauche: { left: 43, top: 772, width: 190, height: 266 },
-  cartesDroite: { left: 1687, top: 772, width: 190, height: 266 },
-} as const;
-
 // Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
 // cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
 // caméra plateau : le cadre vide se voyait, et on ne pouvait rien y faire.
@@ -658,6 +651,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
   const t = useT();
   const [a, b] = state.players;
   const cards = state.cards;
+  const mode = cards?.mode ?? "none";
   const { gauche, droite } = cartesParCadre(cards);
   return (
     <div className={styles.root}>
@@ -696,11 +690,25 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
           </div>
         </div>
       ))}
-      {/* Les cartes en bas, aux deux coins : le haut est déjà pris par les points et
-          les deux bandeaux. Plus petites que dans l'habillage complet, qui les pose
-          dans un cadre dessiné ; ici elles flottent sur la scène du streamer. */}
-      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT_COMPACT.cartesGauche} />
-      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT_COMPACT.cartesDroite} />
+      {/* Les mêmes cadres dorés que l'habillage complet, et les cartes dans leurs
+          découpes : ils sont dessinés en bas de la toile, aux deux coins. Leur place
+          est celle du gabarit, au pixel — d'où les slots partagés. Comme dans le
+          complet, le cadre suit le MODE et pas le nombre de cartes : on peut le poser
+          vide, puis y charger le deck. */}
+      <img
+        src="/stream/cartes_gauche.webp"
+        alt=""
+        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: mode === "split" ? 1 : 0 }}
+      />
+      <img
+        src="/stream/cartes_droite.webp"
+        alt=""
+        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
+      />
+      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
+      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
     </div>
   );
 }
