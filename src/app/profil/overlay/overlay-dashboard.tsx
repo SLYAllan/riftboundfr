@@ -4,7 +4,8 @@ import {
   AlertTriangle, ArrowLeftRight, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
-import { creerFileEtats, normaliserLienCamera } from "@/lib/overlay-dashboard-client";
+import { creerFileEtats } from "@/lib/overlay-dashboard-client";
+import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useT } from "@/components/i18n-provider";
 
@@ -383,7 +384,10 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </div>
       )}
 
-      <details className="group rounded-xl border border-hairline bg-surface">
+      {/* `open` : ce bloc porte le mode d'emploi de la première fois, le lien à coller
+          dans OBS et le lien du compagnon. Replié d'office, un nouveau venu ouvrait la
+          page et n'y trouvait rien à faire. Il se replie une fois le stream monté. */}
+      <details open className="group rounded-xl border border-hairline bg-surface">
         <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-semibold">
           <span>{t("Liens et affichage OBS")}</span>
           <span className="text-sm font-normal text-ink-muted group-open:hidden">{t("Ouvrir")}</span>

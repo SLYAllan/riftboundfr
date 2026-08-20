@@ -1,14 +1,3 @@
-export function normaliserLienCamera(url: string): string | null {
-  try {
-    const lien = new URL(url);
-    if (lien.protocol !== "https:" || !/(^|\.)vdo\.ninja$/i.test(lien.hostname)) return null;
-    if (!lien.searchParams.has("muted")) lien.searchParams.set("muted", "1");
-    return lien.toString();
-  } catch {
-    return null;
-  }
-}
-
 export function creerFileEtats<T>(envoyer: (etat: T) => Promise<void>) {
   let attente: T | undefined;
   let enCours = false;

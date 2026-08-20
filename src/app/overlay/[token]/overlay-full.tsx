@@ -62,7 +62,7 @@ const CADRE_COMPACT = {
     x: 33, largeur: 216,
     hero: { top: 26, hauteur: 220 },
     bf: { top: 249, hauteur: 62 },
-    pseudo: { top: 322, hauteur: 38 },
+    pseudo: { top: 333, hauteur: 38 },
     // Le cadre de cartes est dessiné à demeure dans cartes_gauche.webp : on ne peut
     // pas le déplacer, seulement transformer son calque. Réduit de 0,85 et ancré au
     // coin du bas — d'où le décalage, `transform-origin` étant en haut à gauche.
@@ -353,16 +353,18 @@ function Side({
  * manche gagnee : un anneau dore sur fond sombre dans les deux cas, comme sur la
  * retransmission. Pas de fond dore delave, qui jurait avec l orange du logo.
  */
-function Manche({ gagnee }: { gagnee: boolean }) {
+// `petite` : la version compacte tombe a 24 px. L'anneau d'une manche perdue a 35 %
+// de blanc y disparaissait sur une illustration sombre, et le score ne se lisait plus.
+function Manche({ gagnee, petite = false }: { gagnee: boolean; petite?: boolean }) {
   return (
     <span
       key={String(gagnee)}
-      className={`${styles.apparait} flex h-8 w-8 items-center justify-center rounded-full bg-black/55 ring-2 ${
-        gagnee ? "ring-gold" : "ring-white/35"
-      }`}
+      className={`${styles.apparait} flex items-center justify-center rounded-full bg-black/55 ring-2 ${
+        petite ? "h-6 w-6" : "h-8 w-8"
+      } ${gagnee ? "ring-gold" : petite ? "ring-white/60" : "ring-white/35"}`}
       style={{ boxShadow: gagnee ? "0 0 10px rgba(212,168,67,0.55)" : "0 1px 4px rgba(0,0,0,0.5)" }}
     >
-      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className="h-5 w-5 object-contain" />}
+      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className={`${petite ? "h-4 w-4" : "h-5 w-5"} object-contain`} />}
     </span>
   );
 }
@@ -678,10 +680,15 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
   const art = useBattlefieldArt(bf ? [bf] : []);
   const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
   const decoupe = (d: { top: number; hauteur: number }) => ({ left: cote.x, width: cote.largeur, top: d.top, height: d.hauteur });
-  // Combien de caractères tiennent : les valeurs par défaut valent pour les 275 px de
-  // l'habillage complet, on les ramène à la largeur du cadre. Les deux côtés n'ont
-  // pas la même, et un chiffre en trop coupait « Jax, Grandmaster at Arms » net.
-  const chars = (plein: number) => Math.round((plein * cote.largeur) / 275);
+  // Combien de caractères tiennent. `FitText` ne mesure pas (la mesure ment dans le
+  // navigateur d'OBS) : il compte les caractères. Mesuré au navigateur sur les noms
+  // les plus larges, une majuscule grasse en `text-base` prend 0,70 em ; d'où le
+  // 11,2 px par caractère, moins la marge intérieure. « Ravenbloom Conservatory »
+  // débordait de son cadre de 3 px avec une règle de trois sur 275.
+  const charsLarge = Math.floor((cote.largeur - 8) / 11.2);
+  // La ligne du champion est en `text-sm` et sans majuscules forcées : elle tient
+  // bien plus de caractères.
+  const charsFin = Math.floor((cote.largeur - 8) / 7.6);
   return (
     <>
       <div className="absolute z-20 overflow-hidden" style={decoupe(cote.hero)}>
@@ -689,26 +696,27 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
             presque carrée comme celle du décor sans caméra. Une bannière large y
             perdrait les deux côtés du dessin. */}
         <ImageFondu src={icon ?? banner} imgClassName="object-cover" />
-        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={chars(26)} charsChampion={chars(34)} />
+        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={charsLarge} charsChampion={charsFin} />
       </div>
 
       <div className="absolute z-20 overflow-hidden" style={decoupe(cote.bf)}>
         <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
-        <div className="absolute inset-0 bg-black/45" />
-        {/* Le nom à gauche, les manches à droite : la découpe fait 66 px de haut,
-            empilés comme dans l'habillage complet ils ne tiendraient pas. */}
-        <div className="relative z-20 flex h-full items-center gap-2 px-2">
-          <span className="min-w-0 flex-1">
-            <FitText chars={chars(17)} className="text-sm font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-              {bf || "Champ de bataille"}
-            </FitText>
-          </span>
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
+        {/* Même disposition que l'habillage complet : le nom en haut sur toute la
+            largeur, les manches dessous. Côte à côte, le nom n'avait plus que la
+            moitié du cadre et un long champ de bataille tombait à une taille
+            illisible. Les pastilles sont réduites, la découpe ne fait que 62 px. */}
+        <div className="relative z-20 flex h-full flex-col justify-center overflow-hidden px-1">
+          <FitText chars={charsLarge} lines={rounds > 0 ? 1 : 2} className="text-base font-bold uppercase leading-tight tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
+            {bf || "Champ de bataille"}
+          </FitText>
           {rounds > 0 && (
-            <span className="flex shrink-0 gap-1.5">
+            <div className="mt-1 flex justify-center gap-2">
               {Array.from({ length: rounds }).map((_, i) => (
-                <Manche key={i} gagnee={i < p.gamesWon} />
+                <Manche key={i} gagnee={i < p.gamesWon} petite />
               ))}
-            </span>
+            </div>
           )}
         </div>
       </div>

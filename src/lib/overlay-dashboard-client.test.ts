@@ -1,14 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { creerFileEtats, normaliserLienCamera } from "./overlay-dashboard-client";
-
-describe("lien de caméra du tableau de bord", () => {
-  it("accepte seulement une URL HTTPS VDO.Ninja et coupe son son", () => {
-    expect(normaliserLienCamera("https://vdo.ninja/?view=abc")).toContain("muted=1");
-    expect(normaliserLienCamera("http://vdo.ninja/?view=abc")).toBeNull();
-    expect(normaliserLienCamera("https://example.com/?view=abc")).toBeNull();
-    expect(normaliserLienCamera("pas une adresse")).toBeNull();
-  });
-});
+import { creerFileEtats } from "./overlay-dashboard-client";
 
 describe("file de sauvegarde du tableau de bord", () => {
   it("attend la première sauvegarde puis n’envoie que le dernier état", async () => {
