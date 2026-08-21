@@ -291,6 +291,19 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
 }
 
 /**
+ * Fusion d'un patch sur un état, extraite pour être testable sans base.
+ *
+ * C'est `applyStateUpdate` sous un nom qui dit ce qu'il fait au niveau de
+ * l'écriture : deux patchs distincts appliqués en séquence conservent chacun
+ * leur champ, là où deux écritures concurrentes qui lisaient le même ancien
+ * état s'écrasaient l'une l'autre.
+ */
+export const fusionnerEtatOverlay = (
+  etat: OverlayStateData,
+  patch: DeepPartial<OverlayStateData> & { players?: Array<Partial<OverlayPlayer>> },
+): OverlayStateData => applyStateUpdate(etat, patch);
+
+/**
  * Recale les adresses d'images sur un nouveau jeton.
  *
  * Les images envoyées sont servies SOUS le jeton (`/api/overlay/<jeton>/media/...`)

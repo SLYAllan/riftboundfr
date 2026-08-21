@@ -1,6 +1,6 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
-import { defaultOverlayState, makeToken, applyStateUpdate, recalerMedias, type OverlayStateData } from "@/lib/overlay";
+import { defaultOverlayState, makeToken, fusionnerEtatOverlay, recalerMedias, type OverlayStateData } from "@/lib/overlay";
 
 export async function getOrCreateOverlayState(userId: string) {
   const existing = await prisma.overlayState.findUnique({ where: { userId } });
@@ -16,10 +16,18 @@ export async function getStateByToken(token: string): Promise<OverlayStateData |
 }
 
 export async function saveState(userId: string, patch: Partial<OverlayStateData> & { players?: unknown }) {
-  const row = await getOrCreateOverlayState(userId);
-  const merged = applyStateUpdate(row.state as unknown as OverlayStateData, patch as never);
-  await prisma.overlayState.update({ where: { userId }, data: { state: merged as object } });
-  return merged;
+  await getOrCreateOverlayState(userId);
+  return prisma.$transaction(async (tx) => {
+    // Verrou de ligne : sans lui, deux écritures lisaient le même ancien état puis
+    // se le réécrivaient chacune, et le dernier arrivé écrasait le changement de
+    // l'autre. La lecture, la fusion et l'écriture deviennent indivisibles.
+    await tx.$queryRaw`SELECT id FROM "OverlayState" WHERE "userId" = ${userId} FOR UPDATE`;
+    const row = await tx.overlayState.findUnique({ where: { userId } });
+    if (!row) throw new Error("OverlayState introuvable");
+    const merged = fusionnerEtatOverlay(row.state as unknown as OverlayStateData, patch as never);
+    await tx.overlayState.update({ where: { userId }, data: { state: merged as object } });
+    return merged;
+  });
 }
 
 /**
@@ -29,11 +37,15 @@ export async function saveState(userId: string, patch: Partial<OverlayStateData>
  * et le dernier arrivé écraserait tout le reste.
  */
 export async function saveStateByToken(token: string, patch: Partial<OverlayStateData> & { players?: unknown }) {
-  const row = await prisma.overlayState.findUnique({ where: { token } });
-  if (!row) return null;
-  const merged = applyStateUpdate(row.state as unknown as OverlayStateData, patch as never);
-  await prisma.overlayState.update({ where: { token }, data: { state: merged as object } });
-  return merged;
+  return prisma.$transaction(async (tx) => {
+    const verrouillees = await tx.$queryRaw<Array<{ id: string }>>`SELECT id FROM "OverlayState" WHERE "token" = ${token} FOR UPDATE`;
+    if (verrouillees.length === 0) return null;
+    const row = await tx.overlayState.findUnique({ where: { token } });
+    if (!row) return null;
+    const merged = fusionnerEtatOverlay(row.state as unknown as OverlayStateData, patch as never);
+    await tx.overlayState.update({ where: { token }, data: { state: merged as object } });
+    return merged;
+  });
 }
 
 export async function regenerateToken(userId: string) {
