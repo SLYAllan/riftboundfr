@@ -54,13 +54,11 @@ describe("file d’envoi vers l’habillage", () => {
     file.ajouter(4);
     await file.quandCalme();
     expect(recus).toEqual([4]);
-    expect(file.aDesChangements()).toBe(true);
 
     echoue = false;
     file.renvoyer();
     await file.quandVide();
     expect(recus).toEqual([4, 4]);
-    expect(file.aDesChangements()).toBe(false);
   });
 
   it("repart au geste suivant après un refus", async () => {

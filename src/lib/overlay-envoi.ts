@@ -78,7 +78,6 @@ export function creerFileEnvoi<T>(
     },
     quandCalme: () => (enCours ? new Promise<void>((resoudre) => calme.push(resoudre)) : Promise.resolve()),
     quandVide: () => (!enCours && attente === undefined ? Promise.resolve() : new Promise<void>((resoudre) => vide.push(resoudre))),
-    aDesChangements: () => enCours || attente !== undefined,
     prendreEnAttente(): T | null {
       // Un second POST pendant celui qui tourne pourrait arriver le premier en base,
       // puis se faire écraser par l'ancien. Mieux vaut laisser keepalive finir l'envoi.

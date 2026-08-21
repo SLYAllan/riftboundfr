@@ -295,21 +295,32 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   // pour rien.
   const [cartes, setCartes] = useState<{ name: string; imageUrl: string | null }[] | null>(null);
   const [chargeCartes, setChargeCartes] = useState(false);
+  const [erreurCartes, setErreurCartes] = useState(false);
   const [rechCarte, setRechCarte] = useState("");
 
-  function chargerCartes() {
+  // Mêmes garde-fous que les trois autres listes : sans contrôle de `r.ok`, une base
+  // en panne rendait `{ error: … }` et l'échec disparaissait dans un `catch` muet.
+  // On tapait dans le champ de recherche et il ne se passait rien, sans un mot.
+  async function chargerCartes() {
     if (cartes || chargeCartes) return;
     setChargeCartes(true);
-    fetch("/api/cards")
-      .then((r) => r.json())
-      .then((liste: { name: string; imageUrl: string | null }[]) => {
-        // Une même carte revient en plusieurs éditions : on garde un nom une fois.
-        const parNom = new Map<string, { name: string; imageUrl: string | null }>();
-        for (const c of liste) if (!parNom.has(c.name)) parNom.set(c.name, { name: c.name, imageUrl: c.imageUrl });
-        setCartes([...parNom.values()]);
-      })
-      .catch(() => {})
-      .finally(() => setChargeCartes(false));
+    try {
+      const reponse = await fetch("/api/cards");
+      if (!reponse.ok) throw new Error(String(reponse.status));
+      const liste: unknown = await reponse.json();
+      if (!Array.isArray(liste)) throw new Error("réponse inattendue");
+      // Une même carte revient en plusieurs éditions : on garde un nom une fois.
+      const parNom = new Map<string, { name: string; imageUrl: string | null }>();
+      for (const c of liste as { name: string; imageUrl: string | null }[]) {
+        if (!parNom.has(c.name)) parNom.set(c.name, { name: c.name, imageUrl: c.imageUrl });
+      }
+      setCartes([...parNom.values()]);
+      setErreurCartes(false);
+    } catch {
+      setErreurCartes(true);
+    } finally {
+      setChargeCartes(false);
+    }
   }
 
   const resultatsCartes = (() => {
@@ -877,7 +888,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <span className="mb-1 block text-xs text-ink-muted">{t("Montrer une carte sans decklist")}</span>
             <input
               value={rechCarte}
-              onFocus={chargerCartes}
+              onFocus={() => void chargerCartes()}
               onChange={(e) => setRechCarte(e.target.value)}
               placeholder={t("Chercher une carte…")}
               aria-label={t("Montrer une carte sans decklist")}
@@ -886,6 +897,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <p role="status" aria-live="polite" className="sr-only">
               {rechCarte.trim().length >= 2 && cartes ? `${resultatsCartes.length} ${t("résultats")}` : ""}
             </p>
+            {erreurCartes && (
+              <p role="alert" className="mt-1 flex flex-wrap items-center gap-2 text-xs text-error-light">
+                <span>{t("Impossible de charger cette liste.")}</span>
+                <button type="button" onClick={() => void chargerCartes()} className="font-semibold underline">{t("Réessayer")}</button>
+              </p>
+            )}
             {resultatsCartes.length > 0 && (
               <ul className="mt-2 space-y-1">
                 {resultatsCartes.map((c) => (
