@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { saveStateByToken } from "@/lib/overlay-server";
 import { cleCompagnonValide } from "@/lib/overlay-compagnon";
 import { TAILLE_MAX_PATCH_OVERLAY, validerPatchOverlay } from "@/lib/overlay-validation";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,11 @@ export const dynamic = "force-dynamic";
  * s'écrire dans les journaux du serveur à chaque point marqué.
  */
 export async function POST(req: Request, { params }: { params: Promise<{ token: string }> }) {
+  // Limite par IP avant même de vérifier la clé : le compagnon écrit à chaque
+  // point marqué, et une clé devinable ne doit pas se tenter à volonté.
+  if (!rateLimit(req, { bucket: "overlay-compagnon", limit: 60 })) {
+    return tooMany("Trop de requêtes, réessayez dans une minute");
+  }
   const { token } = await params;
   if (!cleCompagnonValide(token, req.headers.get("x-cle-compagnon"))) {
     return NextResponse.json({ error: "Lien de partage invalide" }, { status: 403 });

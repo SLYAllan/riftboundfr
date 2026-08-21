@@ -1,10 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
-
-function makeSlug(): string {
-  return Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 6);
-}
+import { creerSlugPartage } from "@/lib/partage-slug";
 
 // PATCH /api/collection/binders/[id] { name?, description?, isPublic?, color? }
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -22,7 +19,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (typeof body?.color === "string") data.color = body.color.slice(0, 20) || null;
   if (typeof body?.isPublic === "boolean") {
     data.isPublic = body.isPublic;
-    if (body.isPublic && !binder.shareSlug) data.shareSlug = makeSlug();
+    if (body.isPublic && !binder.shareSlug) data.shareSlug = creerSlugPartage();
   }
 
   const updated = await prisma.binder.update({ where: { id }, data });

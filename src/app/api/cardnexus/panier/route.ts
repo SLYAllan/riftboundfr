@@ -7,6 +7,7 @@ import { lienPanier, lignesListe, type Carte } from "@/lib/cardnexus";
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -102,6 +103,12 @@ async function cartesManquantes(cartes: CarteDeck[], userId: string): Promise<Ca
  * visiteur ait besoin d'un compte.
  */
 export async function GET(request: Request) {
+  // Chaque clic crée une liste sur le compte CardNexus la première fois : on
+  // limite le débit par IP avant tout appel réseau, comme les autres écritures.
+  if (!rateLimit(request, { bucket: "cardnexus-panier", limit: 10 })) {
+    return tooMany();
+  }
+
   const cle = process.env.CARDNEXUS_API_KEY;
   if (!cle) {
     return NextResponse.json({ error: "Achat indisponible : clé CardNexus absente." }, { status: 503 });
@@ -187,5 +194,13 @@ export async function GET(request: Request) {
   }
 
   listesConnues.set(cleCache, id);
+  // Borne simple : au-delà de 1000 listes en mémoire, on jette la plus ancienne.
+  // La Map conserve l'ordre d'insertion, donc sa première clé est la plus vieille.
+  // Sans cette borne, un grand nombre de decks ou de joueurs ferait grossir le
+  // cache sans fin pendant la vie du conteneur.
+  if (listesConnues.size > 1000) {
+    const plusAncienne = listesConnues.keys().next().value as string | undefined;
+    if (plusAncienne !== undefined) listesConnues.delete(plusAncienne);
+  }
   return NextResponse.redirect(lienPanier(id), 302);
 }
