@@ -52,11 +52,18 @@ depuis.
 
 ### Ce qui reste à décider
 
-1. **`Deck.legendId` mélange deux formes.** 4 030 decks sur 24 182 portent un
-   `riftboundId`, les autres un `id` de base. Le seed écrit désormais le
-   `riftboundId`, ce que les pages de deck et l'image de deck interrogent déjà
-   (`{ riftboundId: deck.legendId }`) — mais l'import admin écrit toujours l'`id`.
-   Choisir une forme et rattraper la colonne, ou laisser les deux lectures.
+1. **`Deck.legendId` mélange deux formes, et ça ne casse rien.** 4 030 decks sur
+   24 182 portent un `riftboundId`, les autres un `id` de base. Vérifié avant de
+   pousser : **aucune page ne regroupe ni ne filtre les decks par `legendId`**. Le
+   regroupement par Légende passe partout par `legendName` (`groupBy: ["legendName"]`
+   dans `src/lib/legend-fiche.ts`, `where: { legendName }` dans `deck-listing.ts` et
+   sur `/legendes/[slug]`). `legendId` n'est lu qu'à un seul endroit, en repli, dans
+   un `OR` avec deux recherches par nom, et seulement si le deck n'a pas de carte
+   Légende dans sa section `legend`. **Mesuré : 0 deck publié sur 24 182 est dans ce
+   cas**, donc ce repli ne s'exécute jamais. Les pages de tournoi, `export-image.ts`,
+   `resolveDeckCards`, `deck-code` et le deckbuilder ne lisent pas du tout le champ.
+   Seul `/api/v1/decks` le rend tel quel : un consommateur externe verrait deux
+   formes. Uniformiser reste souhaitable, mais rien n'attend après.
 2. **Le déploiement Coolify n'est pas lancé.** Le sitemap double le nombre
    d'adresses (FR + EN) : le vérifier en production après déploiement.
 3. **Le seed strict n'a jamais tourné.** Le premier tournoi importé après ce
