@@ -8,7 +8,7 @@ import { metaTraduite, tr } from "@/lib/i18n-server";
 const metadata: Metadata = {
   title: "Méta & Tier List Riftbound",
   description:
-    "Le méta compétitif Riftbound set par set (Origins, Spiritforged, Unleashed) : meilleures Légendes, archétypes et cartes clés. Basé sur 88 tournois.",
+    "Le méta compétitif Riftbound set par set, d'Origins à Vendetta : meilleures Légendes, archétypes et cartes clés.",
   alternates: { canonical: "/guides/meta" },
   openGraph: {
     type: "article",
@@ -16,7 +16,7 @@ const metadata: Metadata = {
     locale: "fr_FR",
     title: "Méta & Tier List Riftbound",
     description:
-      "Le méta Riftbound set par set : meilleures Légendes, archétypes et cartes clés, sur 88 tournois.",
+      "Le méta Riftbound set par set, d'Origins à Vendetta : meilleures Légendes, archétypes et cartes clés.",
     images: ["/img/og-default.png"],
   },
 };
@@ -63,9 +63,18 @@ const unleashed: Entry[] = [
 
 const sets = [
   {
+    id: "vendetta",
+    name: "Vendetta",
+    fr: "Le set actuel",
+    decks: "résultats en cours d’analyse",
+    summary: "Les résultats Vendetta sont intégrés au site au fil des tournois. Consultez la Tier List pour le classement à jour.",
+    entries: [],
+    color: "#d4a017",
+  },
+  {
     id: "unleashed",
     name: "Unleashed",
-    fr: "Le set actuel",
+    fr: "Le 3e set",
     decks: "environ 8 600 decks classés · 40 légendes",
     summary:
       "Le méta le plus ouvert de l'histoire du jeu : quatre légendes S quasi à égalité et une douzaine de decks viables. Aucune légende n'écrase le format.",
@@ -157,14 +166,14 @@ export default async function GuideMetaPage() {
       <p className="mt-2 text-lg text-ink-secondary">{t("Quelles légendes gagnent vraiment les tournois ? Ce guide résume le méta compétitif set par set, les grands archétypes et les cartes qui définissent le format.")}</p>
 
       <div className="mt-4 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
-        <strong>{t("D’où viennent ces données ?")}</strong>{" "}{t("De l’analyse de")}{" "}<strong>88 tournois</strong>{" "}{t("et plus de 21 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.")}</div>
+        <strong>{t("D’où viennent ces données ?")}</strong>{" "}{t("De l’analyse de")}{" "}<strong>109 tournois</strong>{" "}{t("et plus de 24 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.")}</div>
 
       <div className="mt-10 space-y-12">
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("C’est quoi le « méta » ?")}</h2>
           <p className="mt-2 text-sm text-ink-secondary">{t("Le méta (pour")}{" "}<em>metagame</em>{t(") désigne l’ensemble des decks les plus joués et les plus performants à un instant donné. Il évolue à chaque nouveau set et à chaque gros tournoi. Connaître le méta vous aide à choisir une légende solide, à anticiper ce que joueront vos adversaires et à préparer votre Réserve en Bo3.")}</p>
           <p className="mt-2 text-sm text-ink-secondary">
-            Riftbound compte aujourd&apos;hui <strong>trois sets</strong>{t(". Chacun a son propre méta, car le pool de cartes légales change. Le format actuel est")}{" "}<strong>Unleashed</strong>.
+            Riftbound compte aujourd&apos;hui <strong>quatre sets</strong>{t(". Chacun a son propre méta, car le pool de cartes légales change. Le format actuel est")}{" "}<strong>Vendetta</strong>.
           </p>
         </section>
 

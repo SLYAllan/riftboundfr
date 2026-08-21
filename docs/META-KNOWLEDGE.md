@@ -103,7 +103,7 @@ Ces taux ne constituent pas un classement de puissance : ils ne contrôlent ni l
 
 Les quinze contextes totalisent 1671 decks et 119 places de Top 8. Qingdao n'en compte que 7 : la liste de la huitième place est publiée incomplète chez riftdecks et a été écartée, on ne la reconstitue pas. Ottawa reste à part avec 38 listes complètes sur 525 pages publiées.
 
-Les fiches Vendetta des nouvelles légendes (Kennen, Nasus, Ambessa, Jayce, Akali, Mel, Zed, Shen et Renekton) ne sont toujours pas dans `data/fiches/`. Les statistiques de présence et de résultat ne suffisent pas à établir leurs domaines, leurs cores ou leurs matchups : il faut lire les listes.
+Les fiches Vendetta de Shen et Renekton ne sont toujours pas dans `data/fiches/`. Celles de Kennen, Nasus, Ambessa, Jayce, Akali, Mel et Zed existent. Les statistiques de présence et de résultat ne suffisent pas à établir les domaines, les cores ou les matchups des deux fiches manquantes : il faut lire les listes.
 
 ## Juin 2026 (v7) — Analyse VOD compétitives (84 VOD, distillé)
 

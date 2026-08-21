@@ -310,8 +310,8 @@ export const EN: Record<string, string> = {
     "Fury, Calm, Mind, Body, Chaos, Order: the thinking, the strengths and the Legends tied to each domain.",
   "Méta & Tier List": "Meta & tier list",
   "Résultats de tournois, tendances et lecture du méta.": "Tournament results, trends and meta analysis.",
-  "Le méta compétitif set par set, les meilleures légendes et les archétypes. Basé sur 88 tournois analysés.":
-    "The competitive meta set by set, the best Legends and the archetypes. Based on 88 tournaments.",
+  "Le méta compétitif set par set, les meilleures légendes et les archétypes. Basé sur 109 tournois analysés.":
+    "The competitive meta set by set, the best Legends and the archetypes. Based on 109 tournaments.",
   "Tous les termes du jeu expliqués en français : mots-clés, mécaniques, jargon TCG.":
     "Every game term explained: keywords, mechanics, TCG jargon.",
   "Ban list": "Ban list",
@@ -399,10 +399,8 @@ export const EN: Record<string, string> = {
   "Jouer à Riftbound en ligne - TCG Arena & RiftAtlas":
     "Play Riftbound online - TCG Arena & RiftAtlas",
   "Méta & Tier List Riftbound": "Riftbound meta & tier list",
-  "Le méta compétitif Riftbound set par set (Origins, Spiritforged, Unleashed) : meilleures Légendes, archétypes et cartes clés. Basé sur 88 tournois.":
-    "The competitive Riftbound meta set by set (Origins, Spiritforged, Unleashed): best Legends, archetypes and key cards. Based on 88 tournaments.",
-  "Le méta Riftbound set par set : meilleures Légendes, archétypes et cartes clés, sur 88 tournois.":
-    "The Riftbound meta set by set: best Legends, archetypes and key cards, across 88 tournaments.",
+  "Le méta compétitif Riftbound set par set, d'Origins à Vendetta : meilleures Légendes, archétypes et cartes clés.":
+    "The competitive Riftbound meta set by set, from Origins to Vendetta: best Legends, archetypes and key cards.",
   "Guides Riftbound - Débuter, deckbuilding, méta et règles":
     "Riftbound guides - getting started, deckbuilding, meta and rules",
   "Tous les guides Riftbound en français : règles pour débuter, deckbuilding, les 6 domaines, méta et tier list, glossaire et comment jouer en ligne.":
@@ -426,8 +424,10 @@ export const EN: Record<string, string> = {
   "Mon profil": "My profile",
   "Tier List Riftbound FR - Meilleures Légendes (Set Unleashed, Juillet 2026)":
     "Riftbound tier list - best Legends (Unleashed set, July 2026)",
-  "Tier list Riftbound française du Set Unleashed, calculée sur 9 555 decks de tournoi. Classement S/A/B/C/D de toutes les Légendes, avec decklists et analyses.":
-    "The Riftbound tier list for the Unleashed set, worked out from 9,555 tournament decks. Every Legend ranked S/A/B/C/D, with decklists and analysis.",
+  "Tier List Riftbound FR - Meilleures Légendes du format":
+    "Riftbound tier list - best Legends in the current format",
+  "Tier list Riftbound française fondée sur les résultats de tournois. Classement S/A/B/C/D des Légendes par set, avec decklists et analyses.":
+    "The French Riftbound tier list based on tournament results. Every Legend ranked S/A/B/C/D by set, with decklists and analysis.",
   "Classement S/A/B/C/D de toutes les Légendes Riftbound (Set Unleashed) avec decklists recommandées.":
     "Every Riftbound Legend ranked S/A/B/C/D (Unleashed set) with recommended decklists.",
   "Tournois Riftbound France - Résultats et calendrier 2026":
@@ -662,7 +662,11 @@ export const EN: Record<string, string> = {
   "Types de cartes": "Card types",
   "Un combat se déclenche quand des unités des deux joueurs se retrouvent sur le même champ de bataille.": "Combat happens when units from both players end up on the same battlefield.",
   "Un deck Riftbound contient au minimum": "A Riftbound deck holds at least",
-  "Une fois à l’aise avec les bases, choisissez une légende dont le style vous parle. Sur le format actuel (Unleashed), voici des points de départ accessibles et solides en tournoi :": "Once you are comfortable with the basics, pick a Legend whose style speaks to you. In the current format (Unleashed), here are approachable starting points that hold up in tournaments:",
+  "Une fois à l’aise avec les bases, choisissez une légende dont le style vous parle. Ces légendes offrent des points de départ accessibles pour apprendre le jeu :": "Once you are comfortable with the basics, pick a Legend whose style speaks to you. These Legends are approachable starting points for learning the game:",
+  "Le set actuel": "The current set",
+  "Le 3e set": "The third set",
+  "résultats en cours d’analyse": "results are being analysed",
+  "Les résultats Vendetta sont intégrés au site au fil des tournois. Consultez la Tier List pour le classement à jour.": "Vendetta results are added as tournaments take place. See the Tier List for the latest ranking.",
   "Une légende beaucoup jouée n’est pas forcément forte. Certaines sont populaires mais convertissent mal en top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l’inverse, des sleepers comme": "A heavily played Legend is not automatically a strong one. Some are popular but convert poorly into top 8 (Lucian, Yasuo and Sivir in Spiritforged, Miss Fortune in Unleashed). The other way round, sleepers like",
   "Une poignée de cartes oriente la construction de tous les decks. Les connaître, c’est comprendre pourquoi le méta ressemble à ce qu’il est.": "A handful of cards shape how every deck is built. Knowing them is understanding why the meta looks the way it does.",
   "Une unité est éliminée quand les dégâts reçus ≥ sa Puissance": "A unit is destroyed when the damage it has taken is greater than or equal to its Might",
@@ -689,7 +693,7 @@ export const EN: Record<string, string> = {
   "de votre main, piocher autant de nouvelles cartes, puis recycler les cartes mises de côté sous votre deck.": "from your hand, draw that many new cards, then recycle the set-aside cards under your deck.",
   "depuis Vendetta et permet d’adapter votre deck entre les manches en Bo3.": "since Vendetta, and it lets you adapt your deck between games in Bo3.",
   "en même temps": "at the same time",
-  "et plus de 21 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.": "and more than 21,000 ranked decklists (China, Europe, United States, Oceania). The tiers below measure field share, number of top 8s, wins and conversion rate - not an opinion.",
+  "et plus de 24 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.": "and more than 24,000 ranked decklists (China, Europe, United States, Oceania). The tiers below measure field share, number of top 8s, wins and conversion rate - not an opinion.",
   "et un": "and one",
   "gagne. Ce guide vous apprend tout ce qu’il faut savoir pour jouer votre première partie.": "wins. This guide covers everything you need to play your first game.",
   "gagne. Il y a deux grandes approches pour y arriver.": "wins. There are two broad ways to get there.",

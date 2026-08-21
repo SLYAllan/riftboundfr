@@ -267,7 +267,7 @@ export default async function GuideDebuterPage() {
         {/* === 10. QUELLE LÉGENDE === */}
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Par quelle légende commencer ?")}</h2>
-          <p className="mt-2 text-sm text-ink-secondary">{t("Une fois à l’aise avec les bases, choisissez une légende dont le style vous parle. Sur le format actuel (Unleashed), voici des points de départ accessibles et solides en tournoi :")}</p>
+          <p className="mt-2 text-sm text-ink-secondary">{t("Une fois à l’aise avec les bases, choisissez une légende dont le style vous parle. Ces légendes offrent des points de départ accessibles pour apprendre le jeu :")}</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm">
               <span className="font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>Irelia, Blade Dancer</span>
