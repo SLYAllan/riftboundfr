@@ -28,6 +28,16 @@ describe("overlay logic", () => {
     expect(back.points.a).toBe(8);
   });
 
+  // Tableau de bord et compagnon écrivent en même temps. Les deux patchs sont
+  // appliqués en séquence sur la ligne verrouillée par `saveState` : chacun doit
+  // garder son champ, là où deux écritures concurrentes s'écrasaient l'une l'autre.
+  it("applyStateUpdate garde deux patchs sur des champs distincts", () => {
+    const premier = applyStateUpdate(defaultOverlayState(), { points: { a: 1 } });
+    const second = applyStateUpdate(premier, { points: { b: 2 } });
+    expect(second.points.a).toBe(1);
+    expect(second.points.b).toBe(2);
+  });
+
   // Le décor est un choix de l'état : un habillage sauvé AVANT ce champ n'en a pas,
   // et il doit rester celui d'origine plutôt que de perdre ses cadres en direct.
   it("le décor retombe sur « cams » quand il manque ou qu'il est faux", () => {

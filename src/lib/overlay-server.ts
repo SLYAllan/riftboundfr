@@ -1,6 +1,6 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
-import { defaultOverlayState, makeToken, fusionnerEtatOverlay, recalerMedias, type OverlayStateData } from "@/lib/overlay";
+import { defaultOverlayState, makeToken, applyStateUpdate, recalerMedias, type OverlayStateData } from "@/lib/overlay";
 
 export async function getOrCreateOverlayState(userId: string) {
   const existing = await prisma.overlayState.findUnique({ where: { userId } });
@@ -24,7 +24,7 @@ export async function saveState(userId: string, patch: Partial<OverlayStateData>
     await tx.$queryRaw`SELECT id FROM "OverlayState" WHERE "userId" = ${userId} FOR UPDATE`;
     const row = await tx.overlayState.findUnique({ where: { userId } });
     if (!row) throw new Error("OverlayState introuvable");
-    const merged = fusionnerEtatOverlay(row.state as unknown as OverlayStateData, patch as never);
+    const merged = applyStateUpdate(row.state as unknown as OverlayStateData, patch as never);
     await tx.overlayState.update({ where: { userId }, data: { state: merged as object } });
     return merged;
   });
@@ -42,7 +42,7 @@ export async function saveStateByToken(token: string, patch: Partial<OverlayStat
     if (verrouillees.length === 0) return null;
     const row = await tx.overlayState.findUnique({ where: { token } });
     if (!row) return null;
-    const merged = fusionnerEtatOverlay(row.state as unknown as OverlayStateData, patch as never);
+    const merged = applyStateUpdate(row.state as unknown as OverlayStateData, patch as never);
     await tx.overlayState.update({ where: { token }, data: { state: merged as object } });
     return merged;
   });
