@@ -21,6 +21,8 @@ function emptyBlock(type: ArticleBlock["type"]): ArticleBlock {
       return { type: "sponsor_link", id: generateId(), title: "", ctaText: "En savoir plus", url: "", style: "standard", isSponsored: false };
     case "image":
       return { type: "image", id: generateId(), src: "", alt: "" };
+    case "video":
+      return { type: "video", id: generateId(), src: "" };
     case "tweet":
       return { type: "tweet", id: generateId(), url: "", author: "", handle: "", content: "" };
     case "bracket":
@@ -44,6 +46,7 @@ const blockTypeLabels: Record<ArticleBlock["type"], string> = {
   decklist: "Decklist",
   sponsor_link: "Lien sponsorise",
   image: "Image",
+  video: "Video",
   tweet: "Tweet (X)",
   bracket: "Bracket (tournoi)",
   separator: "Separateur",
@@ -302,6 +305,39 @@ function ImageBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { 
   );
 }
 
+function VideoBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "video" }>; onChange: (b: ArticleBlock) => void }) {
+  const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane";
+  return (
+    <div className="space-y-3">
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          {/* Fichier du site : la CSP `default-src 'self'` refuse un lecteur externe. */}
+          <label htmlFor={`video-src-${block.id}`} className="block text-xs text-ink-muted mb-1">Fichier video (/video/...)</label>
+          <input id={`video-src-${block.id}`} type="text" value={block.src} onChange={(e) => onChange({ ...block, src: e.target.value })} className={inputCls} />
+        </div>
+        <div>
+          <label htmlFor={`video-poster-${block.id}`} className="block text-xs text-ink-muted mb-1">Affiche (optionnel)</label>
+          <input id={`video-poster-${block.id}`} type="text" value={block.poster ?? ""} onChange={(e) => onChange({ ...block, poster: e.target.value || undefined })} className={inputCls} />
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <label htmlFor={`video-caption-${block.id}`} className="block text-xs text-ink-muted mb-1">Legende (optionnel)</label>
+          <input id={`video-caption-${block.id}`} type="text" value={block.caption ?? ""} onChange={(e) => onChange({ ...block, caption: e.target.value || undefined })} className={inputCls} />
+        </div>
+        <div>
+          <label htmlFor={`video-loop-${block.id}`} className="block text-xs text-ink-muted mb-1">Lecture</label>
+          <select id={`video-loop-${block.id}`} value={block.loop === false ? "once" : "loop"} onChange={(e) => onChange({ ...block, loop: e.target.value === "once" ? false : undefined })} className={inputCls}>
+            <option value="loop">En boucle</option>
+            <option value="once">Une seule fois</option>
+          </select>
+        </div>
+      </div>
+      {block.src && <video src={block.src} poster={block.poster} controls muted playsInline preload="metadata" className="max-h-40 rounded-lg" />}
+    </div>
+  );
+}
+
 function TweetBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, { type: "tweet" }>; onChange: (b: ArticleBlock) => void }) {
   const inputCls = "w-full px-3 py-1.5 rounded-lg bg-surface-raised border border-hairline text-ink text-sm focus:border-arcane";
   return (
@@ -386,6 +422,7 @@ function BlockEditorItem({ block, onChange, onRemove, onDuplicate, onMoveUp, onM
       {block.type === "decklist" && <DecklistBlockEditor block={block} onChange={onChange} />}
       {block.type === "sponsor_link" && <SponsorBlockEditor block={block} onChange={onChange} />}
       {block.type === "image" && <ImageBlockEditor block={block} onChange={onChange} />}
+      {block.type === "video" && <VideoBlockEditor block={block} onChange={onChange} />}
       {block.type === "tweet" && <TweetBlockEditor block={block} onChange={onChange} />}
       {block.type === "bracket" && <BracketBlockEditor block={block} onChange={onChange} />}
       {block.type === "separator" && <hr className="border-hairline" />}
@@ -436,7 +473,7 @@ function BracketBlockEditor({ block, onChange }: { block: Extract<ArticleBlock, 
 
 function AddBlockMenu({ onAdd }: { onAdd: (type: ArticleBlock["type"]) => void }) {
   const [open, setOpen] = useState(false);
-  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "tweet", "bracket", "separator"];
+  const types: ArticleBlock["type"][] = ["text", "decklist", "sponsor_link", "image", "video", "tweet", "bracket", "separator"];
   return (
     <div className="relative flex justify-center">
       <button

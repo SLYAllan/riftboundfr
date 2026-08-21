@@ -35,9 +35,21 @@ describe("validation des entrées admin", () => {
       ok: false,
       error: "Champ article inconnu : admin",
     });
-    expect(validerArticle({ title: "Titre", blocks: [{ type: "video", id: "x" }] })).toEqual({
+    expect(validerArticle({ title: "Titre", blocks: [{ type: "podcast", id: "x" }] })).toEqual({
       ok: false,
       error: "blocks.0.type inconnu",
+    });
+  });
+
+  it("accepte un bloc video et refuse celui qui n'a pas de fichier", () => {
+    // La liste blanche de `validerBloc` refuse tout type absent : un bloc ajouté au
+    // type `ArticleBlock` sans l'être ici fait échouer l'enregistrement en admin,
+    // avec « type inconnu » pour seul message.
+    const article = { title: "Titre", blocks: [{ type: "video", id: "v", src: "/video/demo.mp4", poster: "/img/a.webp", loop: false }] };
+    expect(validerArticle(article)).toEqual({ ok: true, value: article });
+    expect(validerArticle({ title: "Titre", blocks: [{ type: "video", id: "v" }] })).toEqual({
+      ok: false,
+      error: "blocks.0.src est requis",
     });
   });
 

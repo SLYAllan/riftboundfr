@@ -562,7 +562,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   // la gauche est libre, tout reste. Le score et les Légendes restent toujours.
   const vitrine = mode === "split";
   const sansCam = event.layout === "nocam";
-  // Version simple : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
+  // Overlay compact : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
   // webcam et veut quand même le score, les Légendes et la carte à l'écran.
   if (compact) return <OverlayCompact state={state} />;
   return (

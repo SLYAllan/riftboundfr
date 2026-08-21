@@ -1,5 +1,120 @@
 # HANDOFF — état des lieux
 
+## Decklists du 21 août 2026
+
+L'audit des sources a ajouté 2 listes Ottawa, 45 listes Atlanta et 81 listes
+Lille. Le corpus local compte 101 listes pour `Atlanta Regional Qualifier`, 144
+pour `Lille Regional Qualifier` et 40 pour
+`Riftbound Showdown Ottawa (2026-08-08)`. Chaque RQ porte 28 best-of ; Ottawa
+n'en porte aucun. Le validateur donne 22 853 listes vérifiées, aucun écart et
+aucune réserve Vendetta incomplète.
+
+La production contient les mêmes listes et aucun ancien deck sans source. Ses
+deux contextes portent encore les noms `RQ Atlanta 2026` et `RQ Lille 2026` : le
+tunnel public a été fermé avant leur renommage. À sa réouverture, renommer ces
+deux valeurs dans `Deck.tournamentContext`, puis recalculer les best-of avec les
+noms complets. Le mot de passe PostgreSQL exposé dans la conversation doit être
+changé.
+
+## Article overlay compact + compagnon — prêt à publier
+
+Écrit le 21 août 2026, puis repris avec Allan phrase par phrase. Le texte reste
+centré sur le montage mobile : deux appareils, Moblin, le compagnon et les deux
+supports proposés. Les détails de code, le dépannage et le ton commercial ont
+été retirés. Le seed publie désormais l'article.
+
+### Ce qui est bon et n'est pas à refaire
+
+- `scripts/seed-article-overlay-compagnon.mts` — 23 blocs, upsert sur le slug
+  `streamer-riftbound-avec-un-telephone`, avec `published: true`.
+- `scripts/gen-i18n-article-overlay.mts` — écrit `src/lib/i18n-articles-en.ts`.
+  **À relancer après toute retouche du texte français**, sinon le passage
+  modifié repasse en français sur `/en` (le dictionnaire est indexé par le
+  français exact). Le script s'arrête si une traduction manque.
+- Médias, tous construits et vérifiés servis en 200 :
+  `public/video/overlay-compagnon-demo.mp4` (les deux captures Multicorder côte à
+  côte, toutes deux lancées à 18 s, 61,3 s, 3,3 Mo),
+  `public/video/moblin-widget.mp4` (sa capture d'écran Moblin, 56 s, 865 Ko),
+  et 6 images dans `public/img/articles/` dont `overlay-compact-plateau.webp`
+  refaite depuis `IMG_7920_2.JPG`, la version où Allan a flouté le fond.
+- Deux liens Amazon, `isSponsored: false`, vérifiés en stock : Manfrotto PIXI
+  (`B09GKLCP95`) et bras magnétique UGREEN (`B0D2RC162S`).
+
+### Ce qui a été repris dans le texte
+
+Allan a rejeté la prose deux fois de suite, et il a raison les deux fois.
+
+1. **Première version, trop commerciale.** Elle contenait en plus un paragraphe
+   de remerciements **entièrement inventé** (« merci à ceux qui ont testé les
+   premières versions, plusieurs choix viennent de leurs remarques »). Aucune
+   source. Supprimé. Ne pas le réintroduire sous une autre forme : personne ne
+   sait qui a testé quoi.
+2. **Deuxième version, journal de bord d'un dev.** En corrigeant, Claude a versé
+   dans le détail d'implémentation raconté au lecteur : « deux détails m'ont
+   coûté plus de temps que le reste », la file d'envoi, les patchs. Allan :
+   « le mec qui va lire l'article est dev, il s'en fout ».
+3. **Troisième version, toujours pas naturelle.** Le passage encore en place le
+   montre bien :
+
+   > Les noms longs tiennent. « Ravenbloom Conservatory » ne rentre pas dans un
+   > cadre de champ de bataille, alors il rapetisse jusqu'à tenir au lieu de se
+   > faire couper.
+
+   C'est une ligne de spécification habillée en phrase. Le passage a été retiré,
+   comme les autres détails de code et de dépannage qui n'aidaient pas au
+   montage.
+
+Le fond factuel, lui, a été vérifié dans le code et peut être réutilisé tel
+quel : ce que l'overlay compact affiche et n'affiche pas, les trois liens du
+tableau de bord, les six étapes Moblin, le découpage en deux de l'écran du
+compagnon, « Nouveau lien » qui casse la source déjà collée.
+
+### Contraintes posées par Allan pendant la passe
+
+- **« overlay », jamais « habillage »** dans le contenu rendu. C'est le libellé
+  de la navbar. Le texte de l'article est propre ; l'interface du tableau de
+  bord et ce fichier disent encore « habillage », passe non faite.
+- **Pas de marche à suivre OBS** : l'article vise le montage mobile.
+- **Deux appareils, pas un** : un téléphone sur trépied qui filme, plus une
+  tablette ou un vieux téléphone entre les joueurs.
+- Les liens Amazon rendus en carte carrée avec une grande image, pas en bandeau.
+- Les vidéos prennent toute la colonne, pas la largeur du texte.
+
+Après la reprise : les 10 tests d'`admin-validation.test.ts` passent et
+`npm run verify` sort 0. Le seed local publie 23 blocs et le générateur écrit
+28 traductions dans `src/lib/i18n-articles-en.ts`.
+
+### Code de production touché, hors article
+
+Ces changements sont indépendants de l'article et tiennent debout seuls.
+
+- **Nouveau type de bloc `video`.** Un type de bloc demande QUATRE retouches,
+  comme `event` pour l'overlay : le type dans `src/types/index.ts`, le rendu
+  dans `src/components/article-block-renderer.tsx`, la liste blanche de
+  `src/lib/admin-validation.ts`, et `src/components/admin/block-editor.tsx`.
+  Oublier la liste blanche fait répondre « type inconnu » à tout enregistrement
+  depuis l'admin. Un test existant se servait de `"video"` comme exemple de type
+  inconnu : passé sur `"podcast"`, et un test du nouveau bloc ajouté.
+- **Traduction des articles.** Le contenu d'article ne passait par aucun
+  dictionnaire : `/en` rendait un article français. Le corps, les légendes, les
+  titres et les métadonnées passent maintenant par `traduire`, avec un second
+  dictionnaire `src/lib/i18n-articles-en.ts` à côté de celui de l'interface.
+  Les autres articles ne bougent pas, une phrase absente reste en français.
+- **`SponsorCard`** passe en carte carrée, image plein cadre en haut. Seul
+  l'article de cette passe s'en sert.
+- **« Actualités »** manquait à `i18n-en.ts` : le fil d'Ariane de tous les
+  articles restait en français sur `/en`.
+
+### Ce qui a été lancé
+
+`npx tsc --noEmit` sort 0. `npx next build` sort 0. `npm test` donne 206 tests
+verts sur 207 : `scripts/decklists-index.test.ts` échoue, et il échouait **avant
+cette passe** (l'index pointe vers les decklists supprimées dans l'arbre de
+travail). Ne pas chercher de ce côté.
+
+`npm run lint` sort 8 erreurs, toutes dans `.firecrawl/*.js` (`require()`),
+toutes antérieures.
+
 ## Audit du 21 août 2026 — relu et poussé
 
 L'audit de Codex a été relu par Claude, corrigé sur trois points, puis poussé sur

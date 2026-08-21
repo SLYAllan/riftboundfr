@@ -155,6 +155,17 @@ export type ArticleBlock =
       }[];
     }
   | {
+      type: "video";
+      id: string;
+      /** Fichier servi par le site (/video/...) : la CSP `default-src 'self'` refuse tout hôte extérieur. */
+      src: string;
+      /** Image affichée avant la lecture, et pendant le chargement. */
+      poster?: string;
+      caption?: string;
+      /** Muette et en boucle, comme un GIF. Mettre `false` pour un extrait qu'on regarde une fois. */
+      loop?: boolean;
+    }
+  | {
       type: "separator";
       id: string;
     };

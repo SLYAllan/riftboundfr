@@ -19,6 +19,7 @@ export const EN: Record<string, string> = {
   "Chercher une règle": "Search the rules",
   // — Fil d'Ariane (composant partagé, présent sur 17 pages) —
   Accueil: "Home",
+  Actualités: "News",
   "Fil d'Ariane": "Breadcrumb",
   "Règles": "Rules",
   "Construire son deck": "Deckbuilding",
@@ -120,8 +121,8 @@ export const EN: Record<string, string> = {
     "1920 x 1080, PNG or WebP, transparent where the game must show through. Start from the template: the cut-outs have to land pixel-perfect.",
   "PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.":
     "PNG, JPEG, WebP or GIF, 512 KB at most. The image is shrunk in your browser before it is sent.",
-  "Version simple (sans caméra ni cadre)": "Simple version (no camera, no frames)",
-  "Copier la version simple": "Copy the plain link",
+  "Overlay compact (sans caméra ni cadre)": "Compact overlay (no camera, no frames)",
+  "Copier l’overlay compact": "Copy the compact overlay",
   "1. Les joueurs": "1. Players",
   Joueur: "Player",
   Pseudo: "Name",
@@ -969,8 +970,8 @@ export const EN: Record<string, string> = {
   "Lien VDO.Ninja": "VDO.Ninja link",
   "Charger la decklist": "Load decklist",
   résultats: "results",
-  "La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.":
-    "The simple version does not show the timer, event, logo, cameras or your custom layout.",
+  "L’overlay compact n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.":
+    "The compact overlay does not show the timer, event, logo, cameras or your custom layout.",
   "Utilisez un lien HTTPS fourni par VDO.Ninja.": "Use an HTTPS link provided by VDO.Ninja.",
   "Retirer de l’écran": "Remove from screen",
   "Montrer à l’écran": "Show on screen",

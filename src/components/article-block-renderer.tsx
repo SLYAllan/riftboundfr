@@ -24,7 +24,7 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
           case "text":
             return (
               <div key={block.id}>
-                <MarkdownRenderer content={block.content} cardLinks={cardLinks} />
+                <MarkdownRenderer content={t(block.content)} cardLinks={cardLinks} />
               </div>
             );
 
@@ -65,12 +65,14 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
 
           case "sponsor_link":
             return (
-              <div key={block.id} className="my-6">
+              // `max-w-xs` : la carte est carrée, l'étirer sur toute la colonne
+              // donnerait une image de 1200 px de haut pour un lien de trois mots.
+              <div key={block.id} className="my-6 mx-auto max-w-xs">
                 <SponsorCard
-                  title={block.title}
-                  description={block.description}
+                  title={t(block.title)}
+                  description={block.description ? t(block.description) : undefined}
                   imageUrl={block.imageUrl}
-                  ctaText={block.ctaText}
+                  ctaText={t(block.ctaText)}
                   url={block.url}
                   style={block.style}
                   isSponsored={block.isSponsored}
@@ -85,10 +87,10 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
                 className={block.width === "narrow" ? "my-6 mx-auto max-w-sm" : "my-6 mx-auto max-w-3xl"}
               >
                 <div className="overflow-hidden rounded-card">
-                  <img src={block.src} alt={block.alt} loading="lazy" decoding="async" className="w-full object-cover" />
+                  <img src={block.src} alt={t(block.alt)} loading="lazy" decoding="async" className="w-full object-cover" />
                 </div>
                 {block.caption && (
-                  <figcaption className="mt-2 text-center text-sm text-ink-muted">{block.caption}</figcaption>
+                  <figcaption className="mt-2 text-center text-sm text-ink-muted">{t(block.caption)}</figcaption>
                 )}
               </figure>
             );
@@ -137,6 +139,32 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
               <div key={block.id} className="my-8">
                 <TournamentBracket title={block.title} rounds={block.rounds} />
               </div>
+            );
+
+          case "video":
+            // Pas de `max-w` : la vidéo prend toute la colonne. Une démonstration
+            // côte à côte fait 1920 px de large pour 540 de haut, la brider à la
+            // largeur du texte rendait les deux écrans illisibles.
+            return (
+              <figure key={block.id} className="my-8 w-full">
+                {/* `controls` malgré la lecture auto : sans lui, personne ne peut
+                    revenir en arrière sur un geste qui vient de passer. `playsInline`
+                    évite le plein écran forcé sur iPhone, qui masque la légende. */}
+                <video
+                  src={block.src}
+                  poster={block.poster}
+                  controls
+                  autoPlay
+                  muted
+                  loop={block.loop !== false}
+                  playsInline
+                  preload="metadata"
+                  className="w-full rounded-card"
+                />
+                {block.caption && (
+                  <figcaption className="mt-2 text-center text-sm text-ink-muted">{t(block.caption)}</figcaption>
+                )}
+              </figure>
             );
 
           case "separator":

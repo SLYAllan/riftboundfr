@@ -80,6 +80,7 @@ function validerBloc(value: unknown, index: number): string | null {
     decklist: ["type", "id", "deckCode", "deckName", "legendName", "championName", "playerName", "context", "deckId", "collapsed"],
     sponsor_link: ["type", "id", "title", "description", "imageUrl", "ctaText", "url", "style", "isSponsored"],
     image: ["type", "id", "src", "alt", "caption", "width"],
+    video: ["type", "id", "src", "poster", "caption", "loop"],
     tweet: ["type", "id", "url", "author", "handle", "content", "date", "avatar", "media", "mediaAlt"],
     bracket: ["type", "id", "title", "rounds"],
   };
@@ -96,6 +97,7 @@ function validerBloc(value: unknown, index: number): string | null {
     decklist: ["deckCode", "deckName", "legendName"],
     sponsor_link: ["title", "ctaText", "url"],
     image: ["src", "alt"],
+    video: ["src"],
     tweet: ["url", "author", "handle", "content"],
   };
   for (const cle of champsObligatoires[bloc.value.type]) {

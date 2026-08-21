@@ -16,7 +16,7 @@ import { Calendar, MapPin, Users } from "lucide-react";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { CommentsSection } from "@/components/comments";
-import { tr } from "@/lib/i18n-server";
+import { tr, metaTraduite } from "@/lib/i18n-server";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -32,13 +32,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Les images og:image / twitter:image sont fournies par les conventions de
   // fichiers opengraph-image.tsx / twitter-image.tsx (PNG généré à la volée,
   // car X ne rend pas le WebP des covers).
-  return {
+  // `metaTraduite` cherche le titre et le chapô dans le dictionnaire, comme pour
+  // le corps de l'article : sans lui, l'onglet et l'aperçu partagé restaient en
+  // français sur /en alors que la page, elle, était traduite.
+  return metaTraduite({
     title: article.title,
     description,
     alternates: { canonical: `/articles/${slug}` },
     openGraph: { type: "article", title: article.title, description },
     twitter: { card: "summary_large_image", title: article.title, description },
-  };
+  });
 }
 
 function isBinaryDeckCode(code: string): boolean {
@@ -415,7 +418,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
         </div>
 
         <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-          {article.title}
+          {t(article.title)}
         </h1>
 
         {isTournoi && (article.tournamentName || article.tournamentLocation || article.tournamentPlayerCount) && (

@@ -1,4 +1,5 @@
 import { EN } from "./i18n-en";
+import { EN_ARTICLES } from "./i18n-articles-en";
 
 export type Langue = "fr" | "en";
 
@@ -13,7 +14,10 @@ export const PREFIXE_EN = "/en";
  */
 export function traduire(texte: string, langue: Langue): string {
   if (langue === "fr") return texte;
-  return EN[texte] ?? texte;
+  // Deux dictionnaires : l'interface, puis la prose des articles. Séparés parce
+  // qu'un seul paragraphe d'article pèse plus que dix phrases de menu, et qu'un
+  // article se traduit d'un bloc alors que l'interface se traduit par pages.
+  return EN[texte] ?? EN_ARTICLES[texte] ?? texte;
 }
 
 /** Étiquette de langue pour les nombres et les dates. */

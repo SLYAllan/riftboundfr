@@ -550,15 +550,15 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       </section>
 
       <section className="rounded-xl border border-hairline bg-surface p-4">
-        <h2 className="text-sm font-semibold">{t("Version simple (sans caméra ni cadre)")}</h2>
+        <h2 className="text-sm font-semibold">{t("Overlay compact (sans caméra ni cadre)")}</h2>
         <p className="mt-1 text-xs text-ink-muted">
-          {t("La version simple n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}
+          {t("L’overlay compact n’affiche ni le chrono, ni le tournoi, ni le logo, ni les caméras, ni votre décor.")}
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompact}</code>
           <button onClick={() => navigator.clipboard.writeText(urlCompact)} className={btnVide}>
             <Copy size={15} aria-hidden />
-            {t("Copier la version simple")}
+            {t("Copier l’overlay compact")}
           </button>
         </div>
       </section>

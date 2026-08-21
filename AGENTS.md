@@ -175,10 +175,22 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   `next/headers` n'existe pas côté client, et les mélanger casse tout le site au
   chargement. Le dictionnaire `i18n-en.ts` est indexé **par le texte français
   lui-même**, donc une phrase non traduite retombe sur le français.
+  **La prose des ARTICLES vit dans un second dictionnaire**, `i18n-articles-en.ts` :
+  un seul paragraphe d'article pèse plus que dix phrases de menu, et les mélanger
+  rend `i18n-en.ts` illisible. Ce fichier est ENGENDRÉ, jamais écrit à la main —
+  les clés sont relues depuis les blocs en base par un script `gen-i18n-article-*`,
+  parce qu'une clé retapée avec une apostrophe droite au lieu d'une courbe ne
+  trouve rien et laisse le paragraphe en français, sans erreur.
 - `collection.ts` / `collection-server.ts` — même découpage client/serveur.
 - `banned-cards.ts`, `bans.ts`, `core-rules.ts`, `domains.ts`,
   `tournament-flags.ts`, `errata-2026-07.ts` — règles du jeu et métadonnées de
   tournoi codées en dur, relues par plusieurs pages.
+- **Ajouter un type de bloc d'article demande QUATRE retouches**, comme `event`
+  pour l'overlay : le type dans `src/types/index.ts`, le rendu dans
+  `article-block-renderer.tsx`, la liste blanche de `admin-validation.ts`, et
+  `admin/block-editor.tsx`. La liste blanche refuse les types inconnus : en
+  oublier une fait répondre « type inconnu » à tout enregistrement depuis
+  l'admin, alors que la page publique, elle, s'affiche très bien.
 - `export-image.ts` — rendu paysage 2258x1518 dans un canvas côté navigateur,
   déclenché par le bouton « Exporter » d'une page de deck.
 - **`overlay-cam.ts` — passage unique pour le lien de caméra.** La règle (https
@@ -339,6 +351,15 @@ Déduites du code existant. À suivre, pas à discuter.
   d'écrire ce qui cassait avant : « Sans ça, `default-src 'self'` interdit
   l'iframe et la caméra n'apparaît jamais : c'était la cause du cadre vide. »
   Un commentaire qui paraphrase la ligne suivante n'a rien à faire là.
+- **Le mot rendu est « overlay », pas « habillage ».** C'est le libellé de la
+  navbar et celui qu'emploient les streamers. Le tableau de bord dit encore
+  « habillage » par endroits : à corriger quand on y passe.
+- **Un article n'est pas une fiche produit, et pas un journal de bord.** Deux
+  versions de l'article overlay ont été rejetées pour ça : la première sonnait
+  commerciale, la seconde racontait au lecteur ce que le code avait coûté à
+  écrire. Le lecteur ne s'est jamais demandé si un nom de carte trop long tenait
+  dans son cadre. Écrire ce qu'il veut savoir avant de se lancer, rien d'autre.
+  Détail : `HANDOFF.md`, section « Article overlay compact + compagnon ».
 - **Aucun tiret cadratin (—) dans le contenu rendu du site.** Toléré dans les
   docs internes et les commentaires.
 - Terminologie française officielle du jeu : voir `docs/META-KNOWLEDGE.md`.

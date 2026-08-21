@@ -46,30 +46,32 @@ export function SponsorCard({ title, description, imageUrl, ctaText, url, style,
           : "border border-hairline bg-surface-raised hover:border-hairline-accent"
       )}
     >
-      <div className="flex items-center gap-4 p-5">
-        {imageUrl && (
-          <div className="hidden sm:block h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-surface">
-            <img src={imageUrl} alt="" className="h-full w-full object-cover" />
-          </div>
-        )}
-        <div className="flex-1 min-w-0">
-          {isSponsored && (
-            <span className="text-[10px] uppercase tracking-widest text-ink-muted">Sponsorise</span>
-          )}
-          <h4
-            className={cn(
-              "font-semibold",
-              style === "highlight" ? "text-gold" : "text-ink"
-            )}
-            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-          >
-            {title}
-          </h4>
-          {description && <p className="mt-1 text-sm text-ink-secondary line-clamp-1">{description}</p>}
+      {/* Carte carrée, pas bandeau : une vignette de 64 px dans une bande pleine
+          largeur ne montrait rien du produit. L'image occupe maintenant tout le
+          haut de la carte, en `contain` parce qu'un détourage sur fond blanc perd
+          ses bords en `cover`. */}
+      {imageUrl && (
+        <div className="aspect-square w-full overflow-hidden bg-white">
+          <img src={imageUrl} alt="" className="h-full w-full object-contain" />
         </div>
+      )}
+      <div className="flex flex-col gap-2 p-4">
+        {isSponsored && (
+          <span className="text-[10px] uppercase tracking-widest text-ink-muted">Sponsorise</span>
+        )}
+        <h4
+          className={cn(
+            "font-semibold leading-snug",
+            style === "highlight" ? "text-gold" : "text-ink"
+          )}
+          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+        >
+          {title}
+        </h4>
+        {description && <p className="text-sm text-ink-secondary">{description}</p>}
         <span
           className={cn(
-            "flex-shrink-0 rounded-lg px-4 py-2 text-sm font-semibold transition-colors",
+            "mt-1 rounded-lg px-4 py-2 text-center text-sm font-semibold transition-colors",
             style === "highlight"
               ? "bg-gold text-canvas hover:bg-gold/90"
               : "bg-arcane text-canvas hover:bg-arcane-light"
