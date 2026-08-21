@@ -1,5 +1,67 @@
 # HANDOFF — état des lieux
 
+## Audit du 21 août 2026 — relu et poussé
+
+L'audit de Codex a été relu par Claude, corrigé sur trois points, puis poussé sur
+`main`. **Rien n'a été seedé ni déployé** : le déploiement Coolify reste à lancer.
+
+Ce que la passe change :
+
+- écritures concurrentes de l'habillage, de la collection, des commentaires et
+  des votes sérialisées — verrou de ligne, transactions, erreurs visibles ;
+- slugs de partage tirés au sort par `crypto`, limites de débit sur le panier
+  CardNexus, le compagnon et le jeton d'habillage, cache CardNexus borné ;
+- contrôles principaux atteignables au clavier, états ARIA posés ;
+- `data/decklists-index.json` ramené de 20 064 à 18 460 entrées : 1 doublon et
+  1 603 chemins sans fichier. **Aucune decklist perdue** — vérifié entrée par
+  entrée, les 18 460 chemins restants existent sur le disque ;
+- `prisma/seed-scraped-decks.ts` refuse une carte ou une Légende absente et
+  écrit en transaction. **Le seed n'a pas été lancé** ;
+- canonical anglais, sitemap FR/EN avec alternates, sans date inventée ;
+- 14 composants d'interface, deux relais deckbuilder et deux dépendances sans
+  appel retirés. `button` et `dialog` restent ;
+- guides et docs alignés sur Vendetta, quatrième set.
+
+### Ce que la relecture a corrigé
+
+1. **Les chiffres du site étaient faux à deux endroits sur trois.** Codex avait
+   mis à jour `llms.txt` et la description du guide méta, mais trois textes
+   rendus disaient encore « 88 tournois » et « 21 000 decklists », et `llms.txt`
+   annonçait 1 048 cartes. Relevé sur la production (`/api/v1/cards`,
+   `/api/v1/decks`, `/tournois`) : **1 175 cartes, 24 127 decklists,
+   109 tournois**. Corrigé partout, clés anglaises comprises — sans elles la
+   phrase repassait en français sur `/en`.
+2. **`fusionnerEtatOverlay` n'était qu'un second nom pour `applyStateUpdate`**,
+   que tout le reste du site appelle déjà. Supprimé ; son test rejoint ceux
+   d'`applyStateUpdate`. Le verrou de ligne de `saveState` ne bouge pas.
+3. Deux clés de traduction devenues orphelines portaient de faux chiffres
+   (88 tournois, 9 555 decks) : retirées avant qu'elles ne ressortent.
+
+### Vérifié par Claude après corrections
+
+| Vérification | Résultat |
+|---|---|
+| `npx next build` | **EXIT=0** |
+| `npx tsc --noEmit` | **EXIT=0**, 0 erreur |
+| `npx vitest run` | **39 fichiers, 206 tests verts** |
+| `npm run lint` | **0 erreur, 99 avertissements** |
+
+`npm run validate:decks` avait été lancé par Codex après le nettoyage de
+l'index : 22 626 vérifiées, 0 mismatch. Rien n'a touché aux données de deck
+depuis.
+
+### Ce qui reste à décider
+
+1. **`Deck.legendId` mélange deux formes.** 4 030 decks sur 24 182 portent un
+   `riftboundId`, les autres un `id` de base. Le seed écrit désormais le
+   `riftboundId`, ce que les pages de deck et l'image de deck interrogent déjà
+   (`{ riftboundId: deck.legendId }`) — mais l'import admin écrit toujours l'`id`.
+   Choisir une forme et rattraper la colonne, ou laisser les deux lectures.
+2. **Le déploiement Coolify n'est pas lancé.** Le sitemap double le nombre
+   d'adresses (FR + EN) : le vérifier en production après déploiement.
+3. **Le seed strict n'a jamais tourné.** Le premier tournoi importé après ce
+   changement dira si des noms de cartes du scrape ne passent plus.
+
 ## Habillage de stream — état au 21 août 2026
 
 Le chantier est **fermé des deux côtés**, plus aucun fichier réservé. Tout est
