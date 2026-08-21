@@ -151,6 +151,7 @@ export function ExportModal({
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
+              aria-pressed={activeTab === tab.key}
               className={cn(
                 "flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold transition-colors relative whitespace-nowrap",
                 activeTab === tab.key ? "text-arcane" : "text-ink-muted hover:text-ink",
@@ -167,9 +168,9 @@ export function ExportModal({
           {activeTab === "link" && (
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-semibold text-ink-secondary">{t("Lien de partage")}</label>
+                <label htmlFor="export-lien" className="text-sm font-semibold text-ink-secondary">{t("Lien de partage")}</label>
                 <div className="mt-1.5 flex gap-2">
-                  <input readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink font-mono" />
+                  <input id="export-lien" readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink font-mono" />
                   <button
                     onClick={() => copyToClipboard(shareUrl, "url")}
                     className="flex items-center gap-1 rounded-lg bg-arcane px-3 py-1 text-xs font-semibold text-canvas hover:brightness-110"
@@ -182,15 +183,16 @@ export function ExportModal({
 
               {updateShareCode ? (
                 <div className="border-t border-hairline pt-4 space-y-3">
-                  <label className="text-sm font-semibold text-ink-secondary">{t("Mettre à jour le deck publié")}</label>
+                  <label htmlFor="export-changelog" className="text-sm font-semibold text-ink-secondary">{t("Mettre à jour le deck publié")}</label>
                   <p className="text-xs text-ink-muted">{t("L’ancienne version reste dans l’historique du deck.")}</p>
                   <input
+                    id="export-changelog"
                     value={changelog}
                     onChange={(e) => setChangelog(e.target.value.slice(0, 500))}
                     placeholder={t("Ce qui change (optionnel) - ex : +2 Falling Star, -2 Charm")}
                     className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-sm text-ink placeholder:text-ink-muted/50"
                   />
-                  {publishError && <p className="text-xs text-red-400">{publishError}</p>}
+                  {publishError && <p role="alert" className="text-xs text-red-400">{publishError}</p>}
                   {updated ? (
                     <a
                       href={`/d/${updateShareCode}`}
@@ -267,8 +269,9 @@ export function ExportModal({
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold text-ink-secondary">Description (optionnel)</label>
+                      <label htmlFor="export-description" className="text-xs font-semibold text-ink-secondary">Description (optionnel)</label>
                       <textarea
+                        id="export-description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value.slice(0, 500))}
                         placeholder={t("Décrivez brièvement votre deck...")}
@@ -296,7 +299,7 @@ export function ExportModal({
                     </button>
 
                     {publishError && (
-                      <p className="text-xs text-red-400">{publishError}</p>
+                      <p role="alert" className="text-xs text-red-400">{publishError}</p>
                     )}
 
                     {publishedUrl && (
@@ -379,7 +382,7 @@ export function ExportModal({
                 </div>
               )}
               {imageState === "error" && (
-                <p className="mt-3 text-xs text-red-400">{t("Image impossible à générer. Rechargez la page et réessayez.")}</p>
+                <p role="alert" className="mt-3 text-xs text-red-400">{t("Image impossible à générer. Rechargez la page et réessayez.")}</p>
               )}
             </div>
           )}

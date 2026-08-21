@@ -49,12 +49,13 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
         accept=".csv,text/csv"
         onChange={onFile}
         disabled={busy}
+        aria-label="Fichier CSV Piltover Archive"
         className="text-sm"
       />
-      {busy && <p className="mt-2 text-sm text-ink-muted">{t("Import en cours…")}</p>}
-      {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+      {busy && <p role="status" className="mt-2 text-sm text-ink-muted">{t("Import en cours…")}</p>}
+      {error && <p role="alert" className="mt-2 text-sm text-red-400">{error}</p>}
       {report && (
-        <div className="mt-3 text-sm">
+        <div role="status" className="mt-3 text-sm">
           <p className="text-arcane">
             {report.imported} carte(s) importée(s) sur {report.rows} ligne(s).
           </p>

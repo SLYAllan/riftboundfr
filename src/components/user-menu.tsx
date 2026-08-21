@@ -73,7 +73,6 @@ export function UserMenu() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        aria-haspopup="menu"
         aria-expanded={open}
         aria-label={t("Menu utilisateur")}
         className="flex items-center gap-2 rounded-lg px-2 py-1 transition-colors hover:bg-surface-raised"
@@ -93,7 +92,7 @@ export function UserMenu() {
       </button>
 
       {open && (
-        <div role="menu" aria-label={t("Menu utilisateur")} className="absolute right-0 top-full mt-2 w-48 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+        <div className="absolute right-0 top-full mt-2 w-48 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
           <div className="px-3 py-2 border-b border-hairline mb-1">
             <p className="text-sm font-medium text-ink truncate">{user.username}</p>
             {user.discordName && (

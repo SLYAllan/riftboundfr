@@ -162,6 +162,8 @@ export function DeckLikeButton({ slug, initialLikes, compact }: DeckLikeButtonPr
           liked ? "text-red-400" : "text-white hover:text-red-400",
         )}
         title={title}
+        aria-label={title}
+        aria-pressed={liked === true}
       >
         <Heart
           size={15}
@@ -181,6 +183,7 @@ export function DeckLikeButton({ slug, initialLikes, compact }: DeckLikeButtonPr
       type="button"
       disabled={liked === null || loggedIn === null || actionEnCours}
       onClick={toggle}
+      aria-pressed={liked === true}
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
         liked

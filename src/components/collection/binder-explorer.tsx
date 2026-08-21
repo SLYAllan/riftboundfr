@@ -204,7 +204,7 @@ export function BinderExplorer({
             aria-label={t("Rechercher une carte")} type="search"
             className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-base focus:border-arcane sm:text-sm" />
           <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
-            {([["all", "Toutes"], ["owned", "Possédées"], ["missing", "Manquantes"]] as [Owned, string][]).map(([v, l]) => (
+            {([["all", t("Toutes")], ["owned", "Possédées"], ["missing", "Manquantes"]] as [Owned, string][]).map(([v, l]) => (
               <button key={v} onClick={() => { setOwned(v); setPage(1); }}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${owned === v ? "bg-arcane text-canvas" : "text-ink-secondary hover:text-ink"}`}>{l}</button>
             ))}
@@ -279,7 +279,7 @@ export function BinderExplorer({
           <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />
           <span>Impossible d&apos;enregistrer ce classeur. Vos changements attendent, rien n&apos;est perdu.</span>
           <button type="button" onClick={renvoyer} className="ml-auto inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-sm font-semibold text-ink-secondary hover:text-ink">
-            <RefreshCw size={15} aria-hidden /> Réessayer
+            <RefreshCw size={15} aria-hidden /> {t("Réessayer")}
           </button>
         </div>
       )}
@@ -311,9 +311,9 @@ export function BinderExplorer({
                   </div>
                 </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">
-                  <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30 sm:size-6">−</button>
-                  <span className={`min-w-4 text-center text-sm tabular-nums ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
-                  <button onClick={() => setQuantity(c.id, qty + 1)} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink sm:size-6">+</button>
+                  <button disabled={qty === 0} onClick={() => setQuantity(c.id, qty - 1)} aria-label={t("Retirer une copie")} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-30 sm:size-6">−</button>
+                  <span aria-live="polite" className={`min-w-4 text-center text-sm tabular-nums ${has ? "font-semibold text-arcane" : "text-ink-muted"}`}>{qty}</span>
+                  <button onClick={() => setQuantity(c.id, qty + 1)} aria-label={t("Ajouter une copie")} className="flex size-8 items-center justify-center rounded bg-surface-raised text-ink-secondary hover:text-ink sm:size-6">+</button>
                 </div>
               </div>
             );
@@ -324,9 +324,9 @@ export function BinderExplorer({
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="mt-6 flex items-center justify-center gap-3">
-          <button disabled={pageClamped <= 1} onClick={() => setPage(pageClamped - 1)} className="rounded-lg bg-surface-raised px-3 py-1.5 text-sm disabled:opacity-30">←</button>
+          <button disabled={pageClamped <= 1} onClick={() => setPage(pageClamped - 1)} aria-label={t("Page précédente")} className="rounded-lg bg-surface-raised px-3 py-1.5 text-sm disabled:opacity-30">←</button>
           <span className="text-sm text-ink-muted">Page {pageClamped} / {totalPages}</span>
-          <button disabled={pageClamped >= totalPages} onClick={() => setPage(pageClamped + 1)} className="rounded-lg bg-surface-raised px-3 py-1.5 text-sm disabled:opacity-30">→</button>
+          <button disabled={pageClamped >= totalPages} onClick={() => setPage(pageClamped + 1)} aria-label={t("Page suivante")} className="rounded-lg bg-surface-raised px-3 py-1.5 text-sm disabled:opacity-30">→</button>
         </div>
       )}
     </div>

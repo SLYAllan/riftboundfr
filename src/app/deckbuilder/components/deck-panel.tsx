@@ -177,11 +177,12 @@ function CollapsibleSection({
     <div className="border-b border-hairline/50">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="flex w-full items-center justify-between px-3 py-2 hover:bg-surface-raised/30 transition-colors"
       >
         <div className="flex items-center gap-1.5">
           <ChevronDown size={13} className={cn("text-ink-muted transition-transform", !open && "-rotate-90")} />
-          <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{label}</p>
+          <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{label}</span>
         </div>
         <span className={cn(
           "text-xs font-bold tabular-nums",
@@ -291,7 +292,7 @@ export function DeckPanelV2({
       </CollapsibleSection>
 
       {/* Main Deck - card image grid */}
-      <CollapsibleSection label="Deck Principal" target={40} total={mainTotal}>
+      <CollapsibleSection label={t("Deck principal")} target={40} total={mainTotal}>
         {sortedMain.length > 0 ? (
           <div className={cardGrid}>
             {sortedMain.map((entry) => (
@@ -319,7 +320,7 @@ export function DeckPanelV2({
       />
 
       {/* Runes - card image grid */}
-      <CollapsibleSection label="Runes" target={12} total={runeTotal}>
+      <CollapsibleSection label={t("Runes")} target={12} total={runeTotal}>
         {sortedRune.length > 0 ? (
           <div className={cardGrid}>
             {sortedRune.map((entry) => (

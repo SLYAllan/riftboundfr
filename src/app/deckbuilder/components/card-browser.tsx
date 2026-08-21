@@ -54,10 +54,12 @@ function RangeSlider({
         <div className="absolute h-1 rounded-full bg-gold" style={{ left: `${pctLow}%`, right: `${100 - pctHigh}%` }} />
         <input type="range" min={min} max={max} value={valueLow}
           onChange={(e) => onChange(Math.min(Number(e.target.value), valueHigh), valueHigh)}
+          aria-label={`${label} minimum`}
           className="absolute inset-x-0 appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gold [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-canvas [&::-webkit-slider-thumb]:cursor-pointer"
         />
         <input type="range" min={min} max={max} value={valueHigh}
           onChange={(e) => onChange(valueLow, Math.max(Number(e.target.value), valueLow))}
+          aria-label={`${label} maximum`}
           className="absolute inset-x-0 appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gold [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-canvas [&::-webkit-slider-thumb]:cursor-pointer"
         />
       </div>
@@ -307,6 +309,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
                 <button
                   key={d}
                   onClick={() => toggleDomain(d)}
+                  aria-pressed={active}
                   className={cn(
                     "rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
                     active
@@ -335,6 +338,8 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
           {showSliderToggle && (
             <button
               onClick={() => setShowSliders(!showSliders)}
+              aria-label={t("Filtres")}
+              aria-expanded={showSliders}
               className={cn("rounded-lg p-1.5 border transition-colors", showSliders ? "border-gold text-gold" : "border-hairline text-ink-muted hover:text-ink")}
             >
               <SlidersHorizontal size={14} />

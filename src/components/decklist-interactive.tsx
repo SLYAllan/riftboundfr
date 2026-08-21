@@ -32,17 +32,6 @@ interface DecklistInteractiveProps {
   deckbuilderCode?: string;
 }
 
-// Keyed by string (not DeckSection) so "champion" - produced by the text deck
-// code parser - is rendered too; otherwise champion units silently disappear.
-const sectionLabels: Record<string, string> = {
-  legend: "Légende",
-  champion: "Champion",
-  main: "Deck Principal",
-  rune: "Runes",
-  battlefield: "Champs de bataille",
-  side: "Réserve",
-};
-
 const sectionOrder: string[] = ["legend", "champion", "main", "rune", "battlefield", "side"];
 
 // Un champion arrive soit en section "champion" (code deck d'article, en-tête
@@ -146,7 +135,7 @@ function MobileCardModal({ card, onClose }: { card: DecklistCard; onClose: () =>
           onClick={onClose}
           className="w-full border-t border-hairline py-3 text-sm font-medium text-ink-secondary hover:text-ink"
         >
-          Fermer
+          {t("Fermer")}
         </button>
       </div>
     </div>
@@ -233,7 +222,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
           <h3 id="export-panel-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             Exporter - {deckName}
           </h3>
-          <button onClick={onClose} aria-label="Fermer" className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
+          <button onClick={onClose} aria-label={t("Fermer")} className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
         </div>
 
         <div className="flex border-b border-hairline overflow-x-auto">
@@ -241,6 +230,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
+              aria-pressed={activeTab === tab.key}
               className={cn(
                 "flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold transition-colors relative whitespace-nowrap",
                 activeTab === tab.key ? "text-arcane" : "text-ink-muted hover:text-ink",
@@ -335,6 +325,18 @@ export function DecklistInteractive({
   );
 
   const totalCards = cards.reduce((sum, c) => sum + c.quantity, 0);
+
+  // Keyed by string (not DeckSection) so "champion" - produced by the text deck
+  // code parser - is rendered too; otherwise champion units silently disappear.
+  // Passés par t() : ces libellés ont déjà leur entrée anglaise dans i18n-en.ts.
+  const sectionLabels: Record<string, string> = {
+    legend: t("Légende"),
+    champion: t("Champion"),
+    main: t("Deck principal"),
+    rune: t("Runes"),
+    battlefield: t("Champs de bataille"),
+    side: t("Réserve"),
+  };
 
   const handleQuickCopy = useCallback(async () => {
     const exportEntries = cards.map((c) => ({
@@ -445,9 +447,11 @@ export function DecklistInteractive({
                     {sectionCards.map((c) => {
                       const isBf = c.type === "Battlefield";
                       return (
-                      <div
+                      <button
+                        type="button"
                         key={c.cardId + c.section}
-                        className="group relative cursor-pointer"
+                        aria-label={c.name}
+                        className="group relative w-full cursor-pointer text-left"
                         onMouseEnter={() => setHoveredCard(c.cardId + c.section)}
                         onMouseLeave={() => setHoveredCard(null)}
                         onClick={() => {
@@ -473,7 +477,7 @@ export function DecklistInteractive({
                             <CardTooltip card={c} />
                           </div>
                         )}
-                      </div>
+                      </button>
                       );
                     })}
                   </div>
@@ -514,7 +518,12 @@ export function DecklistInteractive({
                           onMouseEnter={() => setHoveredCard(c.cardId + c.section)}
                           onMouseLeave={() => setHoveredCard(null)}
                         >
-                          <td className="py-1.5 pr-2 font-medium">{c.name}{isBanned(c.name) && <span className="ml-1.5 text-[10px] rounded px-1 py-px font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}</td>
+                          <td className="py-1.5 pr-2 font-medium">
+                            <button type="button" onClick={() => setMobileCard(c)} className="text-left hover:text-arcane">
+                              {c.name}
+                            </button>
+                            {isBanned(c.name) && <span className="ml-1.5 text-[10px] rounded px-1 py-px font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}
+                          </td>
                           <td className="py-1.5 px-2 text-ink-secondary">{TYPE_LABELS_FR[c.type] ?? c.type}</td>
                           <td className="py-1.5 px-2 text-center text-yellow-400 font-medium">{c.energy ?? "-"}</td>
                           <td className="py-1.5 px-2 text-center text-red-400 font-medium">{c.might ?? "-"}</td>
