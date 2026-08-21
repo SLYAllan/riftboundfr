@@ -34,7 +34,9 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const cardId = typeof body?.cardId === "string" ? body.cardId : null;
   const quantity = Number(body?.quantity);
-  if (!cardId || !Number.isInteger(quantity) || quantity < 0) {
+  // Borne identique à la route bulk : un entier entre 0 et 9999, jamais une
+  // valeur infinie qui gonflerait les totaux affichés partout sur le site.
+  if (!cardId || !Number.isInteger(quantity) || quantity < 0 || quantity > 9999) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
 

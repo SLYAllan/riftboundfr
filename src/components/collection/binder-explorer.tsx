@@ -1,14 +1,15 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { CardImage } from "@/components/card-image";
 import { CardHover } from "@/components/collection/card-hover";
 import { ImportPiltover } from "@/components/collection/import-piltover";
 import { DOMAIN_LABELS_FR, TYPE_LABELS_FR, RARITY_LABELS_FR, DOMAIN_COLORS, DOMAIN_ICONS } from "@/lib/domains";
-import { Upload, Download, Share2, Lock, Globe, ChevronDown } from "lucide-react";
+import { Upload, Download, Share2, Lock, Globe, ChevronDown, AlertTriangle, RefreshCw } from "lucide-react";
 import { downloadBlob } from "@/lib/download";
 import { useT } from "@/components/i18n-provider";
+import { creerFileCollection, type EtatEnvoi, type CartesEnAttente } from "@/lib/collection-envoi";
 
 const DOMAIN_ORDER = ["Fury", "Calm", "Mind", "Body", "Chaos", "Order"];
 
@@ -106,18 +107,48 @@ export function BinderExplorer({
   const distinctOwned = cards.filter((c) => (quantities[c.id] ?? 0) > 0).length;
   const copies = Object.values(quantities).reduce((s, v) => s + v, 0);
 
-  const setQuantity = useCallback((cardId: string, qty: number) => {
-    const next = Math.max(0, qty);
-    setQuantities((prev) => {
-      const u = { ...prev };
-      if (next <= 0) delete u[cardId]; else u[cardId] = next;
-      return u;
-    });
-    fetch("/api/collection", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ binderId: binder.id, cardId, quantity: next }),
-    }).catch(() => {});
-  }, [binder.id]);
+  const [etat, setEtat] = useState<EtatEnvoi>("a-jour");
+
+  // Un lot peut porter plusieurs cartes : on les poste l'une après l'autre vers
+  // CE classeur. Un 4xx/5xx fait échouer le lot entier, qui reste en attente
+  // dans la file jusqu'à « Réessayer ».
+  const envoyer = useCallback(
+    async (cartes: CartesEnAttente) => {
+      for (const [cardId, quantity] of Object.entries(cartes)) {
+        const r = await fetch("/api/collection", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ binderId: binder.id, cardId, quantity }),
+        });
+        if (!r.ok) throw new Error("sauvegarde refusée");
+      }
+    },
+    [binder.id],
+  );
+
+  // Créée une seule fois : la file garde son état entre deux rendus, sinon un
+  // changement pendant un envoi en vol partirait dans une file neuve et vide.
+  const fileRef = useRef<ReturnType<typeof creerFileCollection> | null>(null);
+  if (fileRef.current === null) {
+    fileRef.current = creerFileCollection(envoyer, setEtat);
+  }
+  const file = fileRef.current;
+
+  const setQuantity = useCallback(
+    (cardId: string, qty: number) => {
+      const next = Math.max(0, Math.min(9999, Math.floor(qty)));
+      setQuantities((prev) => {
+        const u = { ...prev };
+        if (next <= 0) delete u[cardId];
+        else u[cardId] = next;
+        return u;
+      });
+      file.ajouter({ cardId, quantity: next });
+    },
+    [file],
+  );
+
+  const renvoyer = useCallback(() => file.renvoyer(), [file]);
 
   function exportCsv() {
     const rows = [["name", "set", "number", "rarity", "quantity"]];
@@ -242,6 +273,15 @@ export function BinderExplorer({
       {showImport && <div className="mt-3"><ImportPiltover binderId={binder.id} /></div>}
       {isPublic && shareSlug && (
         <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-ink-muted"><Share2 size={12} /> Lien public : <code className="rounded bg-surface-raised px-1.5 py-0.5">/collection/partage/{shareSlug}</code></p>
+      )}
+      {etat === "hors-ligne" && (
+        <div role="alert" className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
+          <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />
+          <span>Impossible d&apos;enregistrer ce classeur. Vos changements attendent, rien n&apos;est perdu.</span>
+          <button type="button" onClick={renvoyer} className="ml-auto inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-sm font-semibold text-ink-secondary hover:text-ink">
+            <RefreshCw size={15} aria-hidden /> Réessayer
+          </button>
+        </div>
       )}
 
       {/* Grid */}

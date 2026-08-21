@@ -19,8 +19,9 @@ export async function POST(req: Request) {
   const items: BulkItem[] = Array.isArray(body?.items) ? body.items : [];
   // Borne anti-DoS : bien au-dessus de la taille du catalogue (~1048 cartes).
   if (items.length > 5000) return NextResponse.json({ error: "too_many_items" }, { status: 413 });
+  // Borne identique à la route simple : un entier entre 0 et 9999.
   const wellFormed = items.filter(
-    (i) => typeof i.cardId === "string" && Number.isInteger(i.quantity) && i.quantity >= 0,
+    (i) => typeof i.cardId === "string" && Number.isInteger(i.quantity) && i.quantity >= 0 && i.quantity <= 9999,
   );
   // Valide l'existence des cartes (évite les FK orphelines / 500).
   const ids = [...new Set(wellFormed.map((i) => i.cardId))];

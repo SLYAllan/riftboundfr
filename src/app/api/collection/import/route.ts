@@ -31,10 +31,35 @@ function pickVariant(cards: CardVariant[], row: PiltoverRow): string {
   return (match ?? fallback ?? cards[0]).id;
 }
 
+// Borne d'import : 2 Mio, largement au-dessus d'un export Piltover complet.
+const LIMITE_IMPORT_OCTETS = 2 * 1024 * 1024;
+// Borne anti-DoS : bien au-dessus de la taille du catalogue (~1048 cartes).
+const LIMITE_IMPORT_LIGNES = 5000;
+
 export async function POST(req: Request) {
   if (!rateLimit(req, { bucket: "collection-import", limit: 5 })) return tooMany();
+
+  // Taille bornée AVANT toute lecture : l'en-tête Content-Length, quand le
+  // navigateur le pose, évite de lire un corps de plusieurs méga-octets.
+  const longueur = Number(req.headers.get("content-length"));
+  if (Number.isFinite(longueur) && longueur > LIMITE_IMPORT_OCTETS) {
+    return NextResponse.json({ error: "file_too_large" }, { status: 413 });
+  }
+
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const text = await req.text();
+  if (Buffer.byteLength(text, "utf8") > LIMITE_IMPORT_OCTETS) {
+    return NextResponse.json({ error: "file_too_large" }, { status: 413 });
+  }
+  // Borné AVANT toute requête en base : compter les lignes ne coûte rien à côté
+  // d'une requête par ligne de carte.
+  const lignes = text.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  if (lignes.length > LIMITE_IMPORT_LIGNES) {
+    return NextResponse.json({ error: "too_many_lines" }, { status: 413 });
+  }
+  const rows = parsePiltoverCsv(text);
 
   // classeur cible via ?binderId= (sinon classeur par défaut)
   let binderId = new URL(req.url).searchParams.get("binderId");
@@ -45,9 +70,6 @@ export async function POST(req: Request) {
     binderId = (await getOrCreateDefaultBinder(user.id)).id;
   }
   const bId = binderId;
-
-  const text = await req.text();
-  const rows = parsePiltoverCsv(text);
   const unmatched: { variantNumber: string; name: string; raison: string }[] = [];
   const resolved: { cardId: string; quantity: number }[] = [];
 
