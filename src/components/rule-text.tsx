@@ -1,16 +1,6 @@
 import Link from "@/components/lien";
 import { GLOSSARY_TERMS } from "@/lib/glossary";
-
-// Slug identique à celui des ancres du glossaire, pour que le lien tombe sur la
-// bonne définition.
-function slugify(term: string): string {
-  return term
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+import { slugify } from "@/lib/utils";
 
 // Termes triés du plus long au plus court : « Champ de bataille » doit gagner sur
 // « Champ ». On ne garde que les termes d'au moins quatre lettres, sinon « Base »

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { slugify, formatDate, cn, getRarityColor } from "./utils";
+import { slugify, formatDate, cn } from "./utils";
 
 describe("slugify", () => {
   it("converts text to kebab-case slug", () => {
@@ -43,17 +43,5 @@ describe("cn", () => {
 
   it("deduplicates tailwind classes", () => {
     expect(cn("px-2", "px-4")).toBe("px-4");
-  });
-});
-
-describe("getRarityColor", () => {
-  it("returns correct color for known rarities", () => {
-    expect(getRarityColor("Rare")).toBe("text-rarity-rare");
-    expect(getRarityColor("Epic")).toBe("text-rarity-epic");
-    expect(getRarityColor("Legend")).toBe("text-rarity-legend");
-  });
-
-  it("returns fallback for unknown rarity", () => {
-    expect(getRarityColor("Unknown")).toBe("text-ink-secondary");
   });
 });

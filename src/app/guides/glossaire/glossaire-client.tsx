@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Search, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { GlossaryCategory, GlossaryTerm } from "@/lib/glossary";
+import { slugify } from "@/lib/utils";
 import { useT } from "@/components/i18n-provider";
 
 interface CardInfo {
@@ -55,15 +56,6 @@ const CATEGORY_ACTIVE: Record<GlossaryCategory, string> = {
   "Ressources": "bg-domain-body text-canvas",
   "Formats & Règles": "bg-ink-muted text-canvas",
 };
-
-function slugify(term: string): string {
-  return term
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
 
 function normalize(str: string): string {
   return str
