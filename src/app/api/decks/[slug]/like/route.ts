@@ -24,20 +24,33 @@ export async function POST(
 
   // Enregistre le like par utilisateur (idempotent grâce à la contrainte unique).
   // On n'incrémente le compteur que si le like est nouveau, pour préserver les
-  // compteurs existants (decks seedés).
+  // compteurs existants (decks seedés). Le like et son compteur bougent ensemble :
+  // une panne entre les deux laisserait un like sans son point.
   try {
-    await prisma.deckLike.create({ data: { userId: user.id, deckId: deck.id } });
+    const updated = await prisma.$transaction(async (tx) => {
+      const ajout = await tx.deckLike.createMany({
+        data: [{ userId: user.id, deckId: deck.id }],
+        skipDuplicates: true,
+      });
+      if (ajout.count === 0) {
+        const courant = await tx.deck.findUnique({
+          where: { id: deck.id },
+          select: { likes: true },
+        });
+        return { likes: courant?.likes ?? deck.likes };
+      }
+
+      return tx.deck.update({
+        where: { id: deck.id },
+        data: { likes: { increment: 1 } },
+        select: { likes: true },
+      });
+    });
+
+    return NextResponse.json(updated);
   } catch {
-    return NextResponse.json({ likes: deck.likes });
+    return NextResponse.json({ error: "Le like n'a pas pu être enregistré" }, { status: 500 });
   }
-
-  const updated = await prisma.deck.update({
-    where: { id: deck.id },
-    data: { likes: { increment: 1 } },
-    select: { likes: true },
-  });
-
-  return NextResponse.json({ likes: updated.likes });
 }
 
 export async function DELETE(

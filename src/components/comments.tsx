@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronUp, ChevronDown, MessageSquare, Send, User as UserIcon } from "lucide-react";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import { useT } from "@/components/i18n-provider";
 import { EmotePicker } from "@/components/emote-picker";
 import { TexteAvecEmotes } from "@/components/emote";
+import { lireTableauJson } from "@/lib/reponse-json";
 
 interface CommentUser {
   id: string;
@@ -37,8 +38,11 @@ interface CommentsSectionProps {
 export function CommentsSection({ articleId, communityDeckId }: CommentsSectionProps) {
   const t = useT();
   const [comments, setComments] = useState<CommentData[]>([]);
+  const [chargement, setChargement] = useState(true);
+  const [erreurChargement, setErreurChargement] = useState(false);
   const [user, setUser] = useState<CurrentUser | null>(null);
   const [body, setBody] = useState("");
+  const [erreurEnvoi, setErreurEnvoi] = useState(false);
   const champRef = useRef<HTMLTextAreaElement>(null);
   const [sending, setSending] = useState(false);
 
@@ -47,29 +51,55 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
     : `communityDeckId=${communityDeckId}`;
   const postPayload = articleId ? { articleId } : { communityDeckId };
 
+  // `r.ok` puis la forme : un 500 `{ error: … }` ou un corps qui n'est pas une
+  // liste ne doivent jamais atterrir dans `comments` (le `.map` du rendu levait).
+  const chargerCommentaires = useCallback(
+    async (silencieux = false) => {
+      if (!silencieux) setChargement(true);
+      setErreurChargement(false);
+      try {
+        const reponse = await fetch(`/api/comments?${queryParam}`);
+        setComments(await lireTableauJson<CommentData>(reponse));
+      } catch {
+        setErreurChargement(true);
+      } finally {
+        if (!silencieux) setChargement(false);
+      }
+    },
+    [queryParam],
+  );
+
   useEffect(() => {
-    fetch(`/api/comments?${queryParam}`)
-      .then((r) => r.json())
-      .then(setComments);
+    queueMicrotask(() => {
+      void chargerCommentaires();
+    });
     fetch("/api/auth/me")
-      .then((r) => r.json())
-      .then((d) => setUser(d));
-  }, [queryParam]);
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setUser(d && typeof d === "object" ? (d as CurrentUser) : null))
+      .catch(() => {});
+  }, [chargerCommentaires]);
 
   const submit = async (parentId?: string) => {
     if (!body.trim() || sending) return;
     setSending(true);
-    const res = await fetch("/api/comments", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...postPayload, body, parentId }),
-    });
-    if (res.ok) {
+    setErreurEnvoi(false);
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...postPayload, body, parentId }),
+      });
+      if (!res.ok) {
+        setErreurEnvoi(true);
+        return;
+      }
       setBody("");
-      const fresh = await fetch(`/api/comments?${queryParam}`).then((r) => r.json());
-      setComments(fresh);
+      await chargerCommentaires(true);
+    } catch {
+      setErreurEnvoi(true);
+    } finally {
+      setSending(false);
     }
-    setSending(false);
   };
 
   return (
@@ -105,6 +135,11 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
                 Envoyer
               </button>
             </div>
+            {erreurEnvoi && (
+              <p role="alert" className="mt-2 text-xs text-error">
+                Impossible d&apos;enregistrer votre commentaire.
+              </p>
+            )}
           </div>
         </div>
       ) : (
@@ -120,17 +155,30 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
       )}
 
       {/* Comments list */}
-      <div className="space-y-4">
-        {comments.map((comment) => (
-          <CommentThread key={comment.id} comment={comment} postPayload={postPayload} queryParam={queryParam} user={user} onRefresh={async () => {
-            const fresh = await fetch(`/api/comments?${queryParam}`).then((r) => r.json());
-            setComments(fresh);
-          }} />
-        ))}
-      </div>
+      {chargement ? (
+        <p className="text-center text-sm text-ink-muted py-8">{t("Chargement…")}</p>
+      ) : erreurChargement ? (
+        <div role="alert" className="rounded-lg border border-hairline bg-surface p-4 text-center">
+          <p className="text-sm text-ink-secondary mb-2">{t("Impossible de charger cette liste.")}</p>
+          <button
+            onClick={() => void chargerCommentaires()}
+            className="rounded-lg bg-surface-raised px-4 py-1.5 text-sm font-medium text-ink-secondary hover:text-ink transition-colors"
+          >
+            {t("Réessayer")}
+          </button>
+        </div>
+      ) : (
+        <>
+          <div className="space-y-4">
+            {comments.map((comment) => (
+              <CommentThread key={comment.id} comment={comment} postPayload={postPayload} queryParam={queryParam} user={user} onRefresh={() => void chargerCommentaires(true)} />
+            ))}
+          </div>
 
-      {comments.length === 0 && (
-        <p className="text-center text-sm text-ink-muted py-8">{t("Aucun commentaire pour le moment. Soyez le premier !")}</p>
+          {comments.length === 0 && (
+            <p className="text-center text-sm text-ink-muted py-8">{t("Aucun commentaire pour le moment. Soyez le premier !")}</p>
+          )}
+        </>
       )}
     </div>
   );
@@ -156,34 +204,53 @@ function CommentThread({
   const [replyBody, setReplyBody] = useState("");
   const reponseRef = useRef<HTMLTextAreaElement>(null);
   const [sending, setSending] = useState(false);
+  const [erreurVote, setErreurVote] = useState(false);
+  const [erreurReponse, setErreurReponse] = useState(false);
 
   const score = comment.upvotes - comment.downvotes;
   const timeAgo = formatTimeAgo(comment.createdAt);
 
   const vote = async (value: number) => {
     if (!user) return;
-    await fetch("/api/comments/vote", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ commentId: comment.id, value }),
-    });
-    onRefresh();
+    setErreurVote(false);
+    try {
+      const res = await fetch("/api/comments/vote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ commentId: comment.id, value }),
+      });
+      if (!res.ok) {
+        setErreurVote(true);
+        return;
+      }
+      onRefresh();
+    } catch {
+      setErreurVote(true);
+    }
   };
 
   const submitReply = async () => {
     if (!replyBody.trim() || sending) return;
     setSending(true);
-    const res = await fetch("/api/comments", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...postPayload, body: replyBody, parentId: comment.id }),
-    });
-    if (res.ok) {
+    setErreurReponse(false);
+    try {
+      const res = await fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...postPayload, body: replyBody, parentId: comment.id }),
+      });
+      if (!res.ok) {
+        setErreurReponse(true);
+        return;
+      }
       setReplyBody("");
       setReplying(false);
       onRefresh();
+    } catch {
+      setErreurReponse(true);
+    } finally {
+      setSending(false);
     }
-    setSending(false);
   };
 
   return (
@@ -216,6 +283,12 @@ function CommentThread({
             <TexteAvecEmotes texte={comment.body} />
           </p>
 
+          {erreurVote && (
+            <p role="alert" className="mt-1 text-xs text-error">
+              Impossible d&apos;enregistrer votre vote.
+            </p>
+          )}
+
           {/* Actions */}
           {user && depth === 0 && (
             <button
@@ -226,29 +299,36 @@ function CommentThread({
 
           {/* Reply form */}
           {replying && (
-            <div className="mt-2 flex gap-2">
-              <textarea
-                ref={reponseRef}
-                value={replyBody}
-                onChange={(e) => setReplyBody(e.target.value)}
-                placeholder={t("Votre réponse...")}
-                aria-label={t("Votre réponse")}
-                rows={2}
-                autoFocus
-                className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
-              />
-              <div className="flex flex-col justify-end gap-1">
-                <EmotePicker champRef={reponseRef} onTexte={setReplyBody} />
-                <button
-                  onClick={submitReply}
-                  disabled={!replyBody.trim() || sending}
-                  aria-label={t("Envoyer la réponse")}
-                  className="flex size-9 items-center justify-center rounded-lg bg-arcane text-xs font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
-                >
-                  <Send size={12} />
-                </button>
+            <>
+              <div className="mt-2 flex gap-2">
+                <textarea
+                  ref={reponseRef}
+                  value={replyBody}
+                  onChange={(e) => setReplyBody(e.target.value)}
+                  placeholder={t("Votre réponse...")}
+                  aria-label={t("Votre réponse")}
+                  rows={2}
+                  autoFocus
+                  className="flex-1 rounded-lg bg-surface-raised border border-hairline px-3 py-1.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-arcane/50 resize-none"
+                />
+                <div className="flex flex-col justify-end gap-1">
+                  <EmotePicker champRef={reponseRef} onTexte={setReplyBody} />
+                  <button
+                    onClick={submitReply}
+                    disabled={!replyBody.trim() || sending}
+                    aria-label={t("Envoyer la réponse")}
+                    className="flex size-9 items-center justify-center rounded-lg bg-arcane text-xs font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
+                  >
+                    <Send size={12} />
+                  </button>
+                </div>
               </div>
-            </div>
+              {erreurReponse && (
+                <p role="alert" className="mt-1 text-xs text-error">
+                  Impossible d&apos;enregistrer votre réponse.
+                </p>
+              )}
+            </>
           )}
 
           {/* Replies */}

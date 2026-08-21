@@ -93,6 +93,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   const [showDeckSheet, setShowDeckSheet] = useState(false);
   // Code de partage du deck communautaire en cours de modification (?maj=).
   const [updateShareCode] = useState<string | null>(() => searchParams.get("maj"));
+  const [erreurMaj, setErreurMaj] = useState<string | null>(null);
   const isCompetitive = true;
   const initialized = useRef(false);
 
@@ -115,13 +116,24 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       const majParam = searchParams.get("maj");
       if (majParam) {
         fetch(`/api/community-decks/${majParam}`)
-          .then((r) => (r.ok ? r.json() : null))
+          .then(async (r) => {
+            if (!r.ok) {
+              const corps: { error?: string } = await r.json().catch(() => ({}));
+              throw new Error(corps.error ?? "Impossible de charger le deck à modifier.");
+            }
+            return r.json();
+          })
           .then((d) => {
-            if (!d?.deckCode) return;
+            if (!d?.deckCode) {
+              setErreurMaj("Ce deck n'a pas de liste à modifier.");
+              return;
+            }
             handleCardNamesImport(d.deckCode);
             if (d.title) setDeckTitle(d.title);
           })
-          .catch(() => {});
+          .catch((cause) => {
+            setErreurMaj(cause instanceof Error ? cause.message : "Impossible de charger le deck à modifier.");
+          });
         return;
       }
 
@@ -644,6 +656,15 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
 
   return (
     <div className="flex flex-col h-[calc(100dvh-57px)]">
+      {erreurMaj && (
+        <div role="alert" className="flex items-center gap-2 border-b border-hairline bg-surface px-4 py-2 text-sm text-error">
+          <span className="min-w-0 flex-1">{erreurMaj}</span>
+          <button onClick={() => setErreurMaj(null)} aria-label="Fermer" className="text-ink-muted hover:text-ink">
+            <X size={14} />
+          </button>
+        </div>
+      )}
+
       {/* Header */}
       <div className="shrink-0 border-b border-hairline">
         <div className="flex items-center gap-2 px-4 py-3 flex-wrap">

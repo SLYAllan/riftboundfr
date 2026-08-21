@@ -40,7 +40,7 @@ export async function PATCH(
 
   const deck = await prisma.communityDeck.findUnique({
     where: { shareCode: code },
-    select: { id: true, userId: true, deckCode: true, version: true },
+    select: { id: true, userId: true },
   });
 
   if (!deck) {
@@ -52,6 +52,7 @@ export async function PATCH(
   }
 
   const body = await req.json();
+  // Champs indépendants de la version : ils se calculent une fois, avant le verrou.
   const data: Record<string, unknown> = {};
   if (typeof body.description === "string") data.description = body.description.slice(0, 500) || null;
   if (typeof body.guide === "string") data.guide = body.guide.slice(0, 5000) || null;
@@ -60,27 +61,52 @@ export async function PATCH(
     data.tags = body.tags.filter((t: string) => VALID_TAGS.includes(t)).slice(0, 5);
   }
 
-  if (typeof body.deckCode === "string" && body.deckCode.trim() && body.deckCode !== deck.deckCode) {
-    await prisma.communityDeckVersion.create({
-      data: {
-        communityDeckId: deck.id,
-        version: deck.version,
-        deckCode: deck.deckCode,
-        changelog: typeof body.changelog === "string" ? body.changelog.slice(0, 500) || null : null,
-      },
-    });
-    data.deckCode = body.deckCode.slice(0, 10000);
-    data.version = deck.version + 1;
-  }
+  const nouveauDeckCode = typeof body.deckCode === "string" ? body.deckCode : "";
+  const changelog = typeof body.changelog === "string" ? body.changelog.slice(0, 500) || null : null;
 
-  if (Object.keys(data).length === 0) {
+  const updated = await prisma.$transaction(async (tx) => {
+    // Verrou sur la ligne : deux PATCH en parallèle liraient le même numéro de
+    // version et écriraient deux entrées d'historique pour le même numéro. Le
+    // FOR UPDATE force le second à attendre et à relire la version incrémentée.
+    const verrous = await tx.$queryRaw<{ id: string }[]>`
+      SELECT id FROM "CommunityDeck" WHERE id = ${deck.id} FOR UPDATE
+    `;
+    if (verrous.length === 0) {
+      throw new Error("Deck introuvable");
+    }
+
+    const courant = await tx.communityDeck.findUnique({
+      where: { id: deck.id },
+      select: { version: true, deckCode: true },
+    });
+    if (!courant) {
+      throw new Error("Deck introuvable");
+    }
+
+    const dataFinal = { ...data };
+    if (nouveauDeckCode.trim() && nouveauDeckCode !== courant.deckCode) {
+      await tx.communityDeckVersion.create({
+        data: {
+          communityDeckId: deck.id,
+          version: courant.version,
+          deckCode: courant.deckCode,
+          changelog,
+        },
+      });
+      dataFinal.deckCode = nouveauDeckCode.slice(0, 10000);
+      dataFinal.version = courant.version + 1;
+    }
+
+    if (Object.keys(dataFinal).length === 0) {
+      return null;
+    }
+
+    return tx.communityDeck.update({ where: { id: deck.id }, data: dataFinal });
+  });
+
+  if (updated === null) {
     return NextResponse.json({ error: "Rien à mettre à jour" }, { status: 400 });
   }
-
-  const updated = await prisma.communityDeck.update({
-    where: { id: deck.id },
-    data,
-  });
 
   return NextResponse.json(updated);
 }

@@ -19,6 +19,7 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
   const [draft, setDraft] = useState(guide);
   const champRef = useRef<HTMLTextAreaElement>(null);
   const [saving, setSaving] = useState(false);
+  const [erreur, setErreur] = useState<string | null>(null);
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
@@ -33,16 +34,24 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
 
   async function save() {
     setSaving(true);
-    const res = await fetch(`/api/community-decks/${shareCode}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ guide: draft }),
-    });
-    if (res.ok) {
+    setErreur(null);
+    try {
+      const res = await fetch(`/api/community-decks/${shareCode}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ guide: draft }),
+      });
+      if (!res.ok) {
+        const corps: { error?: string } = await res.json().catch(() => ({}));
+        throw new Error(corps.error ?? "La sauvegarde a échoué.");
+      }
       setGuide(draft);
       setEditing(false);
+    } catch (cause) {
+      setErreur(cause instanceof Error ? cause.message : "La sauvegarde a échoué.");
+    } finally {
+      setSaving(false);
     }
-    setSaving(false);
   }
 
   if (!guide && !isOwner) return null;
@@ -101,6 +110,11 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
               {draft.length}/5000
             </span>
           </div>
+          {erreur && (
+            <p role="alert" className="text-sm text-error">
+              {erreur}
+            </p>
+          )}
         </div>
       ) : guide ? (
         <div className="mt-4">
