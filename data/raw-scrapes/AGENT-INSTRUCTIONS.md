@@ -68,8 +68,8 @@ For each deck URL:
    - champion section → `champion` = that card's name (qty 1).
    - unit/gear/spell → `mainDeck` entries with type Unit/Gear/Spell.
    - battlefields → `battlefields` (names only).
-   - runes → `runes` `[{name,quantity}]`.
-   - sideboard → `sideboard` `[{name,quantity,type:"Unknown",rarity,domain}]`.
+   - runes → `runes` objet par domaine, sans le suffixe « Rune » : `{"Chaos":6,"Fury":6}`.
+   - sideboard → `sideDeck` `[{name,quantity,type:"Unknown",rarity,domain}]`.
 5. **Deck domains**: from the `## Deck Stats` → `domains` block at the bottom (e.g. `chaos 55%`, `fury 47%`),
    non-colorless only, Capitalized (`["Chaos","Fury"]`). Fallback: the two rune icons in the header.
 6. **Write** `data/decklists/{legend-slug}/{SLUG}-{placement|unranked}-{player-slug}.json`:
@@ -89,9 +89,9 @@ For each deck URL:
   "archetype": null,
   "domains": ["Chaos","Fury"],
   "mainDeck": [{"name":"","quantity":3,"type":"Unit","rarity":"common","domain":"chaos"}],
-  "runes": [{"name":"Chaos Rune","quantity":6}],
+  "runes": {"Chaos":6,"Fury":6},
   "battlefields": ["..."],
-  "sideboard": [{"name":"","quantity":2,"type":"Unknown","rarity":"rare","domain":"fury"}],
+  "sideDeck": [{"name":"","quantity":2,"type":"Unknown","rarity":"rare","domain":"fury"}],
   "totalCards": <sum mainDeck qty + runes qty + battlefields.length + 1 (legend) + (champion?1:0)>,
   "stats": {"unitCount":<Unit qty sum>,"spellCount":<Spell qty sum>,"gearCount":<Gear qty sum>,"averageCost":null},
   "sourceUrl": "<deckUrl>"

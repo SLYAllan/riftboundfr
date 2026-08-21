@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import * as fs from "fs";
 import * as path from "path";
+import { buildCardLookup, findCard } from "../src/lib/card-printing";
 
 const prisma = new PrismaClient();
 
@@ -46,24 +47,20 @@ function ordinal(n: number, ctx: string): string {
 }
 
 async function main() {
-  const cardsByName = new Map<string, { id: string; type: string }>();
   const allCards = await prisma.card.findMany({
-    select: { id: true, name: true, type: true },
+    select: { id: true, riftboundId: true, name: true, type: true, set: true, collectorNumber: true, alternateArt: true },
   });
-  for (const c of allCards) {
-    cardsByName.set(c.name.toLowerCase(), { id: c.id, type: c.type });
-  }
-
-  function findCard(name: string): { id: string; type: string } | undefined {
-    const lower = name.toLowerCase();
-    return cardsByName.get(lower) ?? cardsByName.get(lower.replace(",", " -"));
-  }
+  const cartes = buildCardLookup(allCards);
+  const exigerCarte = (nom: string) => {
+    const carte = findCard(cartes, nom);
+    if (!carte) throw new Error(`Carte introuvable : ${nom}`);
+    return carte;
+  };
 
   const legends = allCards.filter((c) => c.type === "Legend");
   function findLegendId(legendName: string): string | null {
-    const first = legendName.split(",")[0].trim().toLowerCase();
-    const match = legends.find((l) => l.name.toLowerCase().includes(first));
-    return match?.id ?? null;
+    const match = legends.find((l) => l.name.toLowerCase() === legendName.toLowerCase());
+    return match?.riftboundId ?? null;
   }
 
   const existing = await prisma.deck.findMany({
@@ -114,53 +111,27 @@ async function main() {
           continue;
         }
         existingSet.add(key);
-        const legendId = findLegendId(legendName) ?? "unknown";
+        const legendId = findLegendId(legendName);
+        if (!legendId) throw new Error(`Légende introuvable : ${legendName}`);
         const slug = slugify(
           `${tournamentCtx}-${placement ?? "x"}-${playerName}-${legendName.split(",")[0]}`,
         );
 
-        const deck = await prisma.deck.create({
-          data: {
-            slug,
-            title: `${legendName} · ${tournamentCtx}`,
-            legendId,
-            legendName,
-            playerName,
-            placement,
-            tournamentContext: tournamentCtx,
-            published: true,
-            featured: false,
-            format: data.format?.toLowerCase() ?? "constructed",
-            setTag: data.set ?? null,
-            tags: [slugify(tournamentCtx)],
-          },
-        });
-
         const deckCards: {
-          deckId: string;
           cardId: string;
           quantity: number;
           section: string;
         }[] = [];
         const seen = new Set<string>();
 
-        const legendCard = findCard(legendName);
-        if (legendCard) {
-          deckCards.push({
-            deckId: deck.id,
-            cardId: legendCard.id,
-            quantity: 1,
-            section: "legend",
-          });
-          seen.add(`${legendCard.id}|legend`);
-        }
+        const legendCard = exigerCarte(legendName);
+        deckCards.push({ cardId: legendCard.id, quantity: 1, section: "legend" });
+        seen.add(`${legendCard.id}|legend`);
 
         if (data.champion) {
-          const champName = data.champion.replace(",", " -").toLowerCase();
-          const champCard = findCard(data.champion);
-          if (champCard && !seen.has(`${champCard.id}|legend`)) {
+          const champCard = exigerCarte(data.champion);
+          if (!seen.has(`${champCard.id}|legend`)) {
             deckCards.push({
-              deckId: deck.id,
               cardId: champCard.id,
               quantity: 1,
               section: "legend",
@@ -170,10 +141,9 @@ async function main() {
         }
 
         for (const entry of data.mainDeck ?? []) {
-          const card = findCard(entry.name);
-          if (card && !seen.has(`${card.id}|main`)) {
+          const card = exigerCarte(entry.name);
+          if (!seen.has(`${card.id}|main`)) {
             deckCards.push({
-              deckId: deck.id,
               cardId: card.id,
               quantity: entry.quantity,
               section: "main",
@@ -183,10 +153,9 @@ async function main() {
         }
 
         for (const entry of data.sideboard ?? data.sideDeck ?? []) {
-          const card = findCard(entry.name);
-          if (card && !seen.has(`${card.id}|side`)) {
+          const card = exigerCarte(entry.name);
+          if (!seen.has(`${card.id}|side`)) {
             deckCards.push({
-              deckId: deck.id,
               cardId: card.id,
               quantity: entry.quantity,
               section: "side",
@@ -208,10 +177,9 @@ async function main() {
               }))
             : [];
         for (const entry of runesArr) {
-          const card = findCard(entry.name);
-          if (card && !seen.has(`${card.id}|rune`)) {
+          const card = exigerCarte(entry.name);
+          if (!seen.has(`${card.id}|rune`)) {
             deckCards.push({
-              deckId: deck.id,
               cardId: card.id,
               quantity: entry.quantity,
               section: "rune",
@@ -222,10 +190,9 @@ async function main() {
 
         for (const bf of data.battlefields ?? []) {
           const name = typeof bf === "string" ? bf : bf.name;
-          const card = findCard(name);
-          if (card && !seen.has(`${card.id}|battlefield`)) {
+          const card = exigerCarte(name);
+          if (!seen.has(`${card.id}|battlefield`)) {
             deckCards.push({
-              deckId: deck.id,
               cardId: card.id,
               quantity: 1,
               section: "battlefield",
@@ -234,12 +201,27 @@ async function main() {
           }
         }
 
-        if (deckCards.length > 0) {
-          await prisma.deckCard.createMany({
-            data: deckCards,
-            skipDuplicates: true,
+        await prisma.$transaction(async (tx) => {
+          const deck = await tx.deck.create({
+            data: {
+              slug,
+              title: `${legendName} · ${tournamentCtx}`,
+              legendId,
+              legendName,
+              playerName,
+              placement,
+              tournamentContext: tournamentCtx,
+              published: true,
+              featured: false,
+              format: data.format?.toLowerCase() ?? "constructed",
+              setTag: data.set ?? null,
+              tags: [slugify(tournamentCtx)],
+            },
           });
-        }
+          await tx.deckCard.createMany({
+            data: deckCards.map((carte) => ({ ...carte, deckId: deck.id })),
+          });
+        });
 
         created++;
       } catch (e: any) {
@@ -254,6 +236,7 @@ async function main() {
   const total = await prisma.deck.count();
   console.log(`Total decks in DB: ${total}`);
   await prisma.$disconnect();
+  if (errors > 0) throw new Error(`${errors} decklist(s) n'ont pas été importées`);
 }
 
 main();
