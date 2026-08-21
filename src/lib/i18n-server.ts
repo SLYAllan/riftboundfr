@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import type { Metadata } from "next";
-import { traduire, type Langue } from "./i18n";
+import { traduire, traduireCanonical, type Langue } from "./i18n";
 
 /**
  * Fichier separe de `i18n.ts` : `next/headers` n'existe que cote serveur, et
@@ -49,6 +49,14 @@ export async function metaTraduite(m: Metadata): Promise<Metadata> {
     ...m,
     title: titre as Metadata["title"],
     description: t(m.description) as string | undefined,
+    alternates: m.alternates
+      ? {
+          ...m.alternates,
+          canonical: m.alternates.canonical
+            ? traduireCanonical(m.alternates.canonical, langue)
+            : m.alternates.canonical,
+        }
+      : m.alternates,
     openGraph: m.openGraph
       ? {
           ...m.openGraph,

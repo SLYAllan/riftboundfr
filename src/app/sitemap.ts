@@ -10,6 +10,7 @@ import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { legendsWithDecks } from "@/lib/legend-fiche";
 import { slugify } from "@/lib/utils";
+import { avecAnglais } from "@/lib/sitemap";
 
 // Graphies telles qu'elles arrivent du scrape : ordinaux anglais, y compris quand ils
 // sont fautifs plus loin dans le classement (« 1373th »).
@@ -17,27 +18,26 @@ const TOP8_PLACEMENTS = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
-  const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: now, changeFrequency: "daily", priority: 1 },
-    { url: `${baseUrl}/cartes`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/decks`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/articles`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${baseUrl}/legendes`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/tier-list`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/meta`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
-    { url: `${baseUrl}/tournois`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${baseUrl}/deckbuilder`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides/debuter`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides/deckbuilding`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides/meta`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${baseUrl}/guides/glossaire`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/outils/regles`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/guides/domaines`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides/jouer-en-ligne`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/guides/ban-list`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: baseUrl, changeFrequency: "daily", priority: 1 },
+    { url: `${baseUrl}/cartes`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${baseUrl}/decks`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${baseUrl}/articles`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${baseUrl}/legendes`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/tier-list`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/meta`, changeFrequency: "daily", priority: 0.8 },
+    { url: `${baseUrl}/tournois`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/deckbuilder`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/debuter`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/deckbuilding`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/meta`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/guides/glossaire`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/outils/regles`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/guides/domaines`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/jouer-en-ligne`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/guides/ban-list`, changeFrequency: "monthly", priority: 0.7 },
   ];
 
   // Pages Légendes : une par fiche rédigée (data/fiches/*.json, toujours lisible même
@@ -55,7 +55,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const l of await legendsWithDecks()) legendSlugs.add(l.slug);
   const legendPages: MetadataRoute.Sitemap = [...legendSlugs].map((slug) => ({
     url: `${baseUrl}/legendes/${slug}`,
-    lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -108,7 +107,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const tournamentPages: MetadataRoute.Sitemap = tournamentContexts.map((t) => ({
       url: `${baseUrl}/tournois/${slugify(t.tournamentContext)}`,
-      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.7,
     }));
@@ -127,9 +125,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
-    return [...staticPages, ...legendPages, ...articlePages, ...tournamentPages, ...cardPages, ...deckPages];
+    return avecAnglais([...staticPages, ...legendPages, ...articlePages, ...tournamentPages, ...cardPages, ...deckPages], baseUrl);
   } catch {
     // DB unavailable (e.g. Docker build): emit at least the static + legend pages.
-    return [...staticPages, ...legendPages];
+    return avecAnglais([...staticPages, ...legendPages], baseUrl);
   }
 }

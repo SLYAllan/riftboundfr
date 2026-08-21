@@ -46,3 +46,21 @@ export function prefixerLien(href: string, langue: Langue): string {
   }
   return href === "/" ? PREFIXE_EN : `${PREFIXE_EN}${href}`;
 }
+
+/** Le canonical doit désigner la page dans la langue réellement rendue. */
+type Canonical = string | URL | { title?: string; url: string | URL };
+
+export function traduireCanonical(canonical: Canonical, langue: Langue): Canonical {
+  if (langue === "fr") return canonical;
+  if (typeof canonical === "string") {
+    if (canonical.startsWith("/")) return prefixerLien(canonical, langue);
+    const traduit = traduireCanonical(new URL(canonical), langue);
+    return traduit.toString();
+  }
+  if (!(canonical instanceof URL)) {
+    return { ...canonical, url: traduireCanonical(canonical.url, langue) as string | URL };
+  }
+  const traduit = new URL(canonical);
+  traduit.pathname = prefixerLien(traduit.pathname, langue);
+  return traduit;
+}
