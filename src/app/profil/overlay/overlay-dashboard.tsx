@@ -4,12 +4,12 @@ import {
   AlertTriangle, ArrowLeftRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
-import { creerFileEtats } from "@/lib/overlay-dashboard-client";
+import { creerFileEnvoi } from "@/lib/overlay-envoi";
+import { useListesOverlay } from "@/hooks/use-listes-overlay";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { parseDeckCode } from "@/lib/deck-code";
 import { useLien, useT } from "@/components/i18n-provider";
 
-type Legend = { id: string; name: string; imageUrl: string | null; domains: string[] };
 
 /** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
 function cleFond(genre: GenreMedia): "backgroundUrl" | "backgroundNocamUrl" {
@@ -105,16 +105,13 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   // ses joueurs démarraient en français, sans qu'il puisse rien y faire.
   const lien = useLien();
   const [state, setState] = useState<OverlayStateData>(initial);
-  const [legends, setLegends] = useState<Legend[]>([]);
-  const [battlefields, setBattlefields] = useState<string[]>([]);
-  const [champs, setChamps] = useState<[string[], string[]]>([[], []]);
   const [copied, setCopied] = useState(false);
   const [copieCompagnon, setCopieCompagnon] = useState<"repos" | "copie" | "erreur">("repos");
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const etatDiffere = useRef<OverlayStateData | null>(null);
   const [erreur, setErreur] = useState<string | null>(null);
-  const [fileSauvegarde] = useState(() => creerFileEtats<OverlayStateData>(async (etat) => {
+  const [fileSauvegarde] = useState(() => creerFileEnvoi<OverlayStateData>(async (etat) => {
     try {
       const reponse = await fetch("/api/overlay/state", {
         method: "POST",
@@ -137,21 +134,22 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
   useEffect(() => {
     queueMicrotask(() => setOrigin(window.location.origin));
-    fetch("/api/legends").then((r) => r.json()).then(setLegends).catch(() => {});
-    fetch("/api/battlefields").then((r) => r.json()).then(setBattlefields).catch(() => {});
   }, []);
 
-  // Charge les champions de chaque légende sélectionnée
-  useEffect(() => {
-    [0, 1].forEach((i) => {
-      const ln = state.players[i].legendName;
-      if (!ln) { setChamps((c) => { const n: [string[], string[]] = [c[0], c[1]]; n[i] = []; return n; }); return; }
-      fetch(`/api/legends/champions?legend=${encodeURIComponent(ln)}`)
-        .then((r) => r.json())
-        .then((list: string[]) => setChamps((c) => { const n: [string[], string[]] = [c[0], c[1]]; n[i] = list; return n; }))
-        .catch(() => {});
-    });
-  }, [state.players[0].legendName, state.players[1].legendName]);
+  // Les trois listes viennent du même endroit que celles du compagnon : `r.ok`
+  // vérifié, échec visible et retentable, requête de champions annulée quand la
+  // Légende change. Avant, un `.catch(() => {})` avalait tout et un corps d'erreur
+  // JSON faisait tomber la page entière sur le `.map` du rendu.
+  const {
+    legendes: legends, terrains: battlefields, champions: champs, erreurs: erreursListes,
+    chargerLegendes, chargerTerrains, rechargerChampions,
+  } = useListesOverlay(
+    [state.players[0].legendName, state.players[1].legendName],
+    t("Impossible de charger cette liste."),
+  );
+
+  // Le minuteur de 300 ms survivait au démontage et tirait sur un composant parti.
+  useEffect(() => () => { if (saveTimer.current) clearTimeout(saveTimer.current); }, []);
 
   useEffect(() => {
     const auDepart = () => {
@@ -383,7 +381,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <strong className="font-semibold">{t("Rien n’est enregistré.")}</strong> {erreur}{" "}
             {t("L’écran d’OBS montre toujours l’état d’avant.")}
           </span>
-          <button type="button" onClick={() => fileSauvegarde.relancer()} className={`${btnVide} ml-auto`}>
+          <button type="button" onClick={() => fileSauvegarde.renvoyer()} className={`${btnVide} ml-auto`}>
             <RefreshCw size={15} aria-hidden />{t("Réessayer")}
           </button>
         </div>
@@ -558,6 +556,20 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Joueurs et score")}</h2>
+        {/* Une liste qui n'a pas chargé se voit et se retente. Muette, elle laissait
+            un menu vide sans dire pourquoi, en plein direct. */}
+        {([
+          [erreursListes.legendes, chargerLegendes] as const,
+          [erreursListes.terrains, chargerTerrains] as const,
+          [erreursListes.champions, rechargerChampions] as const,
+        ]).map(([message, relancer], i) => message && (
+          <p key={i} role="alert" className="flex flex-wrap items-center gap-2 rounded-lg border border-hairline bg-surface p-3 text-sm text-error-light">
+            <span>{message}</span>
+            <button type="button" onClick={relancer} className={`${btnVide} ml-auto`}>
+              <RefreshCw size={15} aria-hidden />{t("Réessayer")}
+            </button>
+          </p>
+        ))}
         <div className="grid gap-4 sm:grid-cols-2">
           {([0, 1] as const).map((i) => {
             const p = state.players[i];

@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import { applyStateUpdate, defaultOverlayState } from "./overlay";
 import {
   bornerEtape,
-  creerFilePatchs,
   fusionnerPatchs,
   memoriserManche,
   patchPourRestaurerManche,
@@ -18,76 +17,7 @@ describe("file d’envoi du compagnon", () => {
     ).toMatchObject({ players: [{ name: "A" }, { name: "B" }], points: { a: 3 } });
   });
 
-  it("attend la réponse avant d’envoyer le patch suivant", async () => {
-    let finirPremier: (() => void) | undefined;
-    const recus: unknown[] = [];
-    const file = creerFilePatchs(async (patch) => {
-      recus.push(patch);
-      if (recus.length === 1) await new Promise<void>((resolve) => { finirPremier = resolve; });
-    });
 
-    file.ajouter({ points: { a: 1 } });
-    file.ajouter({ points: { a: 2 } });
-    await Promise.resolve();
-    expect(recus).toEqual([{ points: { a: 1 } }]);
-
-    finirPremier?.();
-    await file.quandVide();
-    expect(recus).toEqual([{ points: { a: 1 } }, { points: { a: 2 } }]);
-  });
-
-  it("ne sort pas le patch en attente pendant un envoi", async () => {
-    let finir: (() => void) | undefined;
-    let appels = 0;
-    const file = creerFilePatchs(async () => {
-      appels += 1;
-      if (appels === 1) await new Promise<void>((resolve) => { finir = resolve; });
-    });
-    file.ajouter({ points: { a: 1 } });
-    file.ajouter({ points: { a: 2 } });
-    expect(file.prendreEnAttente()).toBeNull();
-    finir?.();
-    await file.quandCalme();
-  });
-
-  it("remet un patch refusé dans la file jusqu’au nouvel essai", async () => {
-    let echoue = true;
-    const recus: unknown[] = [];
-    const file = creerFilePatchs(async (patch) => {
-      recus.push(patch);
-      if (echoue) throw new Error("hors ligne");
-    });
-
-    file.ajouter({ points: { a: 4 } });
-    await file.quandCalme();
-    expect(file.aDesChangements()).toBe(true);
-
-    echoue = false;
-    file.renvoyer();
-    await file.quandVide();
-    expect(recus).toEqual([{ points: { a: 4 } }, { points: { a: 4 } }]);
-  });
-
-  it("repart au geste suivant après un envoi refusé", async () => {
-    let echoue = true;
-    const recus: unknown[] = [];
-    const file = creerFilePatchs(async (patch) => {
-      recus.push(patch);
-      if (echoue) throw new Error("hors ligne");
-    });
-
-    file.ajouter({ points: { a: 1 } });
-    await file.quandCalme();
-    expect(recus).toEqual([{ points: { a: 1 } }]);
-
-    // Marquer le point suivant suffit : personne n'a à lire la bannière pour que
-    // l'écran du stream reparte.
-    echoue = false;
-    file.ajouter({ points: { a: 2 } });
-    await file.quandVide();
-    expect(recus).toEqual([{ points: { a: 1 } }, { points: { a: 2 } }]);
-    expect(file.aDesChangements()).toBe(false);
-  });
 
   it("borne le parcours entre les trois étapes", () => {
     expect(bornerEtape(-1)).toBe(0);

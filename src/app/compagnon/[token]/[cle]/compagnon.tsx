@@ -1,20 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import {
-  bornerEtape, creerFilePatchs, memoriserManche, patchPourRestaurerManche,
-  type EtatEnvoi, type MemoireManche, type PatchCompagnon,
+  bornerEtape, fusionnerPatchs, memoriserManche, patchPourRestaurerManche,
+  type MemoireManche, type PatchCompagnon,
 } from "@/lib/overlay-compagnon-client";
+import { creerFileEnvoi, type EtatEnvoi } from "@/lib/overlay-envoi";
+import { useListesOverlay } from "@/hooks/use-listes-overlay";
 import { applyStateUpdate, clampPoints, manchesPourGagner, type OverlayStateData } from "@/lib/overlay";
 import styles from "./compagnon.module.css";
-
-interface Legende { id: string; name: string; imageUrl: string | null; domains: string[] }
-type ErreursListes = { legendes?: string; champions?: string; terrains?: string };
 
 const champCls = "w-full min-h-11 rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
 const boutonSecondaire = "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-hairline bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary transition-colors hover:text-ink active:scale-[0.96]";
@@ -34,56 +33,28 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   const [demandeGagnant, setDemandeGagnant] = useState(false);
   const [demandeTerrain, setDemandeTerrain] = useState(false);
   const [derniereManche, setDerniereManche] = useState<MemoireManche | null>(null);
-  const [legendes, setLegendes] = useState<Legende[]>([]);
-  const [champions, setChampions] = useState<[string[], string[]]>([[], []]);
-  const [terrains, setTerrains] = useState<string[]>([]);
-  const [erreursListes, setErreursListes] = useState<ErreursListes>({});
   const [etatEnvoi, setEtatEnvoi] = useState<EtatEnvoi>("a-jour");
   const [erreurEnvoi, setErreurEnvoi] = useState(false);
-  const requetesChampions = useRef<[AbortController | null, AbortController | null]>([null, null]);
-  const [file] = useState(() => creerFilePatchs(async (patch) => {
+  const [file] = useState(() => creerFileEnvoi<PatchCompagnon>(
+    async (patch) => {
       const reponse = await fetch(`/api/overlay/${token}/compagnon`, {
         method: "POST", headers: { "Content-Type": "application/json", "x-cle-compagnon": cle },
         body: JSON.stringify(patch), keepalive: true,
       });
       if (!reponse.ok) { setErreurEnvoi(true); throw new Error("sauvegarde"); }
       setErreurEnvoi(false);
-    }, setEtatEnvoi));
+    },
+    // Des patchs, donc on fusionne : sans ça un champ changé entre deux envois
+    // disparaîtrait au lieu de partir avec le suivant.
+    { combiner: fusionnerPatchs, surEtat: setEtatEnvoi },
+  ));
 
-  async function chargerListe<T>(url: string, genre: keyof ErreursListes, enregistrer: (valeur: T) => void) {
-    try {
-      const reponse = await fetch(url);
-      if (!reponse.ok) throw new Error(String(reponse.status));
-      enregistrer((await reponse.json()) as T);
-      setErreursListes((courantes) => ({ ...courantes, [genre]: undefined }));
-    } catch {
-      setErreursListes((courantes) => ({ ...courantes, [genre]: t("Impossible de charger cette liste.") }));
-    }
-  }
-
-  function chargerLegendes() { void chargerListe<Legende[]>("/api/legends", "legendes", setLegendes); }
-  function chargerTerrains() { void chargerListe<string[]>("/api/battlefields", "terrains", setTerrains); }
-  function chargerChampions(i: 0 | 1, nom: string) {
-    requetesChampions.current[i]?.abort();
-    if (!nom) { setChampions((c) => i === 0 ? [[], c[1]] : [c[0], []]); return; }
-    const controleur = new AbortController();
-    requetesChampions.current[i] = controleur;
-    void fetch(`/api/legends/champions?legend=${encodeURIComponent(nom)}`, { signal: controleur.signal })
-      .then((reponse) => { if (!reponse.ok) throw new Error(String(reponse.status)); return reponse.json() as Promise<string[]>; })
-      .then((liste) => {
-        setChampions((c) => i === 0 ? [liste, c[1]] : [c[0], liste]);
-        setErreursListes((courantes) => ({ ...courantes, champions: undefined }));
-      })
-      .catch((erreur: unknown) => {
-        if (erreur instanceof DOMException && erreur.name === "AbortError") return;
-        setErreursListes((courantes) => ({ ...courantes, champions: t("Impossible de charger cette liste.") }));
-      });
-  }
-
-  useEffect(() => { queueMicrotask(() => { chargerLegendes(); chargerTerrains(); }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const legende0 = state.players[0].legendName;
   const legende1 = state.players[1].legendName;
-  useEffect(() => { queueMicrotask(() => { chargerChampions(0, legende0); chargerChampions(1, legende1); }); }, [legende0, legende1]); // eslint-disable-line react-hooks/exhaustive-deps
+  const {
+    legendes, terrains, champions, erreurs: erreursListes,
+    chargerLegendes, chargerTerrains, rechargerChampions,
+  } = useListesOverlay([legende0, legende1], t("Impossible de charger cette liste."));
 
   useEffect(() => {
     const auDepart = () => {
@@ -109,7 +80,14 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   const manchesMax = manchesPourGagner(state.format);
   function point(i: 0 | 1, delta: number) {
     const cote = i === 0 ? "a" : "b";
-    envoyer({ points: { [cote]: clampPoints(state.points[cote] + delta, state.maxPoints) } } as PatchCompagnon);
+    // Compté depuis l'état le plus frais, pas depuis celui du rendu : deux tapes
+    // dans la même image auraient compté un seul point.
+    setState((courant) => {
+      const valeur = clampPoints(courant.points[cote] + delta, courant.maxPoints);
+      const patch = { points: { [cote]: valeur } } as PatchCompagnon;
+      file.ajouter(patch);
+      return applyStateUpdate(courant, patch);
+    });
   }
   function finDeManche(gagnant: 0 | 1) {
     setDerniereManche(memoriserManche(state));
@@ -182,7 +160,7 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
           <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span><select name={`champion-${i + 1}`} autoComplete="off" aria-describedby={!joueur.legendName ? `aide-champion-${i}` : undefined} value={joueur.championName} onChange={(e) => setJoueur(i, { championName: e.target.value })} disabled={!joueur.legendName} className={champCls}><option value="">{t("Aucun")}</option>{champions[i].map((c) => <option key={c}>{c}</option>)}</select>{!joueur.legendName && <span id={`aide-champion-${i}`} className="mt-1 block text-xs text-ink-muted">{t("Choisissez d’abord une Légende")}</span>}</label>
           <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille")}</span><select name={`terrain-${i + 1}`} autoComplete="off" value={joueur.battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b}>{b}</option>)}</select></label>
         </div>; })}
-        <MessageErreurListe message={erreursListes.champions} relancer={() => { chargerChampions(0, legende0); chargerChampions(1, legende1); }} libelle={t("Réessayer")} />
+        <MessageErreurListe message={erreursListes.champions} relancer={rechargerChampions} libelle={t("Réessayer")} />
       </section>}
 
       {etape === 2 && <section aria-labelledby="etape-verification" className="space-y-4">
