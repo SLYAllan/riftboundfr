@@ -506,6 +506,10 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </div>
       </section>
 
+      <a href={lien("/articles/streamer-riftbound-avec-un-telephone")} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-arcane hover:underline">
+        {t("Configurer votre stream mobile : voir le tutoriel")}
+        <ExternalLink size={15} aria-hidden />
+      </a>
       <section className="rounded-xl border border-hairline bg-surface p-4">
         <h2 className="text-sm font-semibold">{t("Lien compagnon (téléphone)")}</h2>
         <p className="mt-1 text-xs text-ink-secondary">

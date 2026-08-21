@@ -123,6 +123,7 @@ export const EN: Record<string, string> = {
     "PNG, JPEG, WebP or GIF, 512 KB at most. The image is shrunk in your browser before it is sent.",
   "Overlay compact (sans caméra ni cadre)": "Compact overlay (no camera, no frames)",
   "Copier l’overlay compact": "Copy the compact overlay",
+  "Configurer votre stream mobile : voir le tutoriel": "Set up your mobile stream: view the tutorial",
   "1. Les joueurs": "1. Players",
   Joueur: "Player",
   Pseudo: "Name",
@@ -919,6 +920,10 @@ export const EN: Record<string, string> = {
   "Reprendre le match": "Resume match",
   "Réglages": "Settings",
   "Fin de la manche": "Finish game",
+  "Match terminé": "Match over",
+  "Préparer le match suivant ? Le résultat reste sur le stream jusqu'au lancement du nouveau match.": "Set up the next match? The result stays on stream until you start the new match.",
+  "Préparer le match suivant": "Set up the next match",
+  "Garder le résultat": "Keep the result",
   "Qui a gagné la manche ?": "Who won the game?",
   "Champ de bataille de la manche suivante": "Battlefield for the next game",
   "Chacun choisit le sien. Laissez tel quel si vous rejouez le même.":

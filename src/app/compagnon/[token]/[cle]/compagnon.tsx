@@ -7,12 +7,13 @@ import { useT } from "@/components/i18n-provider";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import {
-  bornerEtape, fusionnerPatchs, memoriserManche, patchPourRestaurerManche,
+  bornerEtape, fusionnerPatchs, memoriserManche, patchPourNouveauMatch,
+  patchPourRestaurerManche, resultatFinDeManche,
   type MemoireManche, type PatchCompagnon,
 } from "@/lib/overlay-compagnon-client";
 import { creerFileEnvoi, type EtatEnvoi } from "@/lib/overlay-envoi";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
-import { applyStateUpdate, clampPoints, manchesPourGagner, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, clampPoints, type OverlayStateData } from "@/lib/overlay";
 import styles from "./compagnon.module.css";
 
 const champCls = "w-full min-h-11 rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
@@ -32,6 +33,8 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   const [enMatch, setEnMatch] = useState(false);
   const [demandeGagnant, setDemandeGagnant] = useState(false);
   const [demandeTerrain, setDemandeTerrain] = useState(false);
+  const [demandeNouveauMatch, setDemandeNouveauMatch] = useState(false);
+  const [nouveauMatchEnPreparation, setNouveauMatchEnPreparation] = useState(false);
   const [derniereManche, setDerniereManche] = useState<MemoireManche | null>(null);
   const [etatEnvoi, setEtatEnvoi] = useState<EtatEnvoi>("a-jour");
   const [erreurEnvoi, setErreurEnvoi] = useState(false);
@@ -73,11 +76,14 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     setState((courant) => applyStateUpdate(courant, patch));
     file.ajouter(patch);
   }
+  function modifierReglage(patch: PatchCompagnon) {
+    if (nouveauMatchEnPreparation && !enMatch) setState((courant) => applyStateUpdate(courant, patch));
+    else envoyer(patch);
+  }
   function setJoueur(i: 0 | 1, patch: Partial<OverlayStateData["players"][0]>) {
-    envoyer({ players: i === 0 ? [patch, {}] : [{}, patch] } as PatchCompagnon);
+    modifierReglage({ players: i === 0 ? [patch, {}] : [{}, patch] } as PatchCompagnon);
   }
 
-  const manchesMax = manchesPourGagner(state.format);
   function point(i: 0 | 1, delta: number) {
     const cote = i === 0 ? "a" : "b";
     // Compté depuis l'état le plus frais, pas depuis celui du rendu : deux tapes
@@ -91,16 +97,14 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
   }
   function finDeManche(gagnant: 0 | 1) {
     setDerniereManche(memoriserManche(state));
-    const manches = Math.min(state.players[gagnant].gamesWon + 1, manchesMax);
-    envoyer({
-      points: { a: 0, b: 0 },
-      players: gagnant === 0 ? [{ gamesWon: manches }, {}] : [{}, { gamesWon: manches }],
-    } as PatchCompagnon);
+    const resultat = resultatFinDeManche(state, gagnant);
+    envoyer(resultat.patch);
     setDemandeGagnant(false);
     // Le champ de bataille change d'une manche à l'autre, et personne ne pense à
     // revenir aux réglages pour le dire. On le demande quand il sert : entre deux
     // manches, jamais quand le match est joué.
-    if (manches < manchesMax) setDemandeTerrain(true);
+    if (resultat.matchTermine) setDemandeNouveauMatch(true);
+    else setDemandeTerrain(true);
   }
   function annulerDerniereManche() {
     if (!derniereManche) return;
@@ -116,8 +120,18 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     // joueurs qui rejouent l'un contre l'autre ne retouchent ni les pseudos ni les
     // Légendes : le match précédent dormait alors dans l'état de l'habillage, et le
     // stream repartait avec ses points et ses manches.
-    remettreLesScoresAZero();
+    if (nouveauMatchEnPreparation) {
+      envoyer(patchPourNouveauMatch(state));
+      setDerniereManche(null);
+      setNouveauMatchEnPreparation(false);
+    } else remettreLesScoresAZero();
     setEnMatch(true);
+  }
+  function preparerMatchSuivant() {
+    setNouveauMatchEnPreparation(true);
+    setDemandeNouveauMatch(false);
+    setEtape(0);
+    setEnMatch(false);
   }
 
   const retourEnvoi = <div className="flex min-w-0 items-center gap-2">
@@ -142,8 +156,8 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
       {etape === 0 && <section aria-labelledby="etape-partie" className="space-y-5">
         <h2 id="etape-partie" className="text-xl font-bold">{t("Créer la partie")}</h2>
         <div className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-2">
-          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Format")}</span><select name="format" autoComplete="off" value={state.format} onChange={(e) => envoyer({ format: e.target.value as OverlayStateData["format"] })} className={champCls}><option>BO1</option><option>BO3</option><option>BO5</option></select></label>
-          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Points pour gagner")}</span><select name="points" autoComplete="off" value={state.maxPoints} onChange={(e) => envoyer({ maxPoints: Number(e.target.value) })} className={champCls}><option value={8}>8</option><option value={9}>9</option><option value={10}>10</option></select></label>
+          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Format")}</span><select name="format" autoComplete="off" value={state.format} onChange={(e) => modifierReglage({ format: e.target.value as OverlayStateData["format"] })} className={champCls}><option>BO1</option><option>BO3</option><option>BO5</option></select></label>
+          <label><span className="mb-1 block text-sm text-ink-secondary">{t("Points pour gagner")}</span><select name="points" autoComplete="off" value={state.maxPoints} onChange={(e) => modifierReglage({ maxPoints: Number(e.target.value) })} className={champCls}><option value={8}>8</option><option value={9}>9</option><option value={10}>10</option></select></label>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => <label key={i} className="block rounded-xl border border-hairline bg-surface p-4">
           <span className="mb-2 block text-sm font-semibold">{t("Joueur")} {i + 1}</span><span className="mb-1 block text-xs text-ink-muted">{t("Pseudo du joueur")}</span>
@@ -224,6 +238,8 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     </DialogContent></Dialog>
 
     <Dialog open={demandeGagnant} onOpenChange={setDemandeGagnant}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Qui a gagné la manche ?")}</DialogTitle><DialogDescription className="text-center">{t("Choisissez le gagnant pour mettre à jour le BO.")}</DialogDescription><button type="button" onClick={() => finDeManche(0)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[0].name || `${t("Joueur")} 1`}</button><button type="button" onClick={() => finDeManche(1)} className="min-h-16 rounded-xl border border-hairline bg-surface-raised px-4 text-base font-bold active:scale-[0.96]">{state.players[1].name || `${t("Joueur")} 2`}</button><button type="button" onClick={() => setDemandeGagnant(false)} className="min-h-11 text-sm text-ink-secondary">{t("Annuler")}</button></DialogContent></Dialog>
+
+    <Dialog open={demandeNouveauMatch} onOpenChange={setDemandeNouveauMatch}><DialogContent showCloseButton={false} className="gap-3 bg-surface"><DialogTitle className="text-center text-lg">{t("Match terminé")}</DialogTitle><DialogDescription className="text-center">{t("Préparer le match suivant ? Le résultat reste sur le stream jusqu'au lancement du nouveau match.")}</DialogDescription><button type="button" onClick={preparerMatchSuivant} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Préparer le match suivant")}</button><button type="button" onClick={() => setDemandeNouveauMatch(false)} className={boutonSecondaire}>{t("Garder le résultat")}</button></DialogContent></Dialog>
 
   </main>;
 }

@@ -145,10 +145,10 @@ function Points({ max, a, b, visible }: { max: number; a: number; b: number; vis
         const finalPoint = c.v === max;
         return (
           <img
-            key={`${i}-${full}`}
+            key={i}
             src={`/stream/${c.v}_${full ? "full" : "empty"}.webp`}
             alt=""
-            className={`${styles.apparait} object-contain ${finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]"}`}
+            className={`object-contain ${finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]"}`}
           />
         );
       })}
@@ -251,7 +251,7 @@ function Side({
         }}
       >
         <FitText chars={13} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {p.name || "—"}
+          {p.name}
         </FitText>
       </div>
 
@@ -734,7 +734,7 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
           lui, et le loger dedans mangeait la Légende. */}
       <div className="absolute z-20 flex flex-col justify-center overflow-hidden px-2" style={decoupe(cote.pseudo)}>
         <FitText chars={11} className="text-xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {p.name || "—"}
+          {p.name}
         </FitText>
       </div>
     </>
