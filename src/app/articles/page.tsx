@@ -123,10 +123,10 @@ export default async function ArticlesPage({
                     description et les pastilles, et plus rien ne s'alignait
                     d'une carte à l'autre. */}
                 <h2 className="mt-2 line-clamp-2 min-h-[3.5rem] text-lg font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                  {article.title}
+                  {t(article.title)}
                 </h2>
                 {article.excerpt && (
-                  <p className="mt-2 line-clamp-2 text-sm text-ink-secondary">{article.excerpt}</p>
+                  <p className="mt-2 line-clamp-2 text-sm text-ink-secondary">{t(article.excerpt)}</p>
                 )}
                 {legends.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-1">

@@ -467,7 +467,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                     </div>
                   )}
                   <div className="p-4">
-                    <h3 className="text-sm font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{r.title}</h3>
+                    <h3 className="text-sm font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(r.title)}</h3>
                     {r.publishedAt && <span className="mt-1 block text-xs text-ink-muted">{formatDate(r.publishedAt)}</span>}
                   </div>
                 </Link>

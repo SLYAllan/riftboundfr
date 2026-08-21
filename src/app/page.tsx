@@ -328,7 +328,7 @@ export default async function HomePage() {
                         {t(categoryLabels[a.category] ?? a.category)}
                         {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt, locale)}</span>}
                       </div>
-                      <div className="mt-0.5 truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{a.title}</div>
+                      <div className="mt-0.5 truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(a.title)}</div>
                     </div>
                   </Link>
                 ))}

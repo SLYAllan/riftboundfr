@@ -16,12 +16,12 @@ deux valeurs dans `Deck.tournamentContext`, puis recalculer les best-of avec les
 noms complets. Le mot de passe PostgreSQL exposé dans la conversation doit être
 changé.
 
-## Article overlay compact + compagnon — prêt à publier
+## Article overlay compact + compagnon — publié
 
 Écrit le 21 août 2026, puis repris avec Allan phrase par phrase. Le texte reste
 centré sur le montage mobile : deux appareils, Moblin, le compagnon et les deux
 supports proposés. Les détails de code, le dépannage et le ton commercial ont
-été retirés. Le seed publie désormais l'article.
+été retirés. L'article est publié sur le site.
 
 ### Ce qui est bon et n'est pas à refaire
 
@@ -99,7 +99,9 @@ Ces changements sont indépendants de l'article et tiennent debout seuls.
   dictionnaire : `/en` rendait un article français. Le corps, les légendes, les
   titres et les métadonnées passent maintenant par `traduire`, avec un second
   dictionnaire `src/lib/i18n-articles-en.ts` à côté de celui de l'interface.
-  Les autres articles ne bougent pas, une phrase absente reste en français.
+  L'accueil, la liste `/articles` et les articles liés traduisent aussi le titre ;
+  la liste traduit le chapô. Les autres articles ne bougent pas, une phrase
+  absente reste en français.
 - **`SponsorCard`** passe en carte carrée, image plein cadre en haut. Seul
   l'article de cette passe s'en sert.
 - **« Actualités »** manquait à `i18n-en.ts` : le fil d'Ariane de tous les
@@ -199,7 +201,10 @@ poussé sur `main`. Porte vérifiée en fin de session : `npm run verify` EXIT=0
   joueurs, score, match, chrono, cartes à l'écran, tournoi et logo.
 - **`/compagnon/[token]/[cle]`** — le compteur de match sur téléphone, ouvert par
   lien, sans compte Discord. Deux joueurs face à face, chacun sa moitié d'écran.
-  Il remplace l'ancien `/outils/compteur`, supprimé.
+  À la fin du BO, « Préparer le match suivant » rouvre le formulaire avec les
+  anciennes données. Le résultat reste sur le direct jusqu'à « Lancer la partie »,
+  qui remplace les joueurs et remet les scores à zéro d'un coup. Il remplace
+  l'ancien `/outils/compteur`, supprimé.
 
 ### Les règles qui ne se devinent pas
 

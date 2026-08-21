@@ -181,6 +181,9 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   les clés sont relues depuis les blocs en base par un script `gen-i18n-article-*`,
   parce qu'une clé retapée avec une apostrophe droite au lieu d'une courbe ne
   trouve rien et laisse le paragraphe en français, sans erreur.
+  Les cartes d'article de l'accueil, de `/articles` et les articles liés doivent
+  aussi passer leur titre et leur chapô dans `traduire` : traduire la page seule
+  laisse encore le titre français dans ces listes.
 - `collection.ts` / `collection-server.ts` — même découpage client/serveur.
 - `banned-cards.ts`, `bans.ts`, `core-rules.ts`, `domains.ts`,
   `tournament-flags.ts`, `errata-2026-07.ts` — règles du jeu et métadonnées de
@@ -202,6 +205,11 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   "compagnon:" + jeton)`. Le jeton seul ne doit pas suffire à ÉCRIRE : il est collé
   dans OBS et finit lu par un viewer. Rien à stocker, et « Nouveau lien » tue
   l'ancien partage en même temps que le jeton.
+- **Le match suivant se prépare sans toucher au direct.** Après la dernière
+  manche, le compagnon garde le résultat dans l'overlay et ouvre le formulaire
+  avec les anciennes données. Les changements restent sur le téléphone jusqu'à
+  « Lancer la partie », qui envoie les nouveaux joueurs, decks et scores d'un
+  coup. Ne pas vider l'overlay au clic sur « Préparer le match suivant ».
 - `overlay-server.ts` — `saveState(userId, patch)` pour le tableau de bord,
   `saveStateByToken(token, patch)` pour le compagnon. **Toujours un PATCH, jamais
   l'état entier** : les deux écrivent en même temps, le dernier arrivé écraserait
