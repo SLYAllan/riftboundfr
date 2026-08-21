@@ -194,13 +194,32 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   `saveStateByToken(token, patch)` pour le compagnon. **Toujours un PATCH, jamais
   l'état entier** : les deux écrivent en même temps, le dernier arrivé écraserait
   ce que l'autre vient de changer.
+- **`overlay-envoi.ts` — LA file d'envoi vers l'habillage**, tableau de bord et
+  compagnon compris. Un seul envoi en vol : deux POST peuvent arriver dans le
+  désordre et l'ancien écrase le neuf en base. Le paramètre `combiner` dit quoi
+  faire de deux envois en attente — remplacer (état entier) ou fusionner (patchs).
+  Elle a existé en deux exemplaires pendant un jour et avait déjà divergé : ne pas
+  en réécrire une troisième.
+- **`src/hooks/use-listes-overlay.ts` — LE chargement des Légendes, des champs de
+  bataille et des champions.** Porte les trois règles ci-dessus (`r.ok`, forme,
+  échec visible) plus l'annulation de la requête en cours quand la Légende change,
+  sinon la réponse lente arrive en dernier et affiche le mauvais deck.
+- `overlay.ts` — `secondesChrono` rend les secondes affichées, négatives quand le
+  chrono passe zéro. **Ajouter un champ à `event` demande TROIS retouches** : le
+  type dans `overlay.ts`, `normaliserEvent` juste en dessous, et la liste blanche
+  de `overlay-validation.ts`. Cette liste refuse les champs inconnus : un champ
+  oublié là fait répondre 400 à toute écriture du tableau de bord.
 
 ## Points d'entrée
 
 - **`src/middleware.ts`** tourne avant toute page. Il fait quatre choses :
   1. refuse les écritures API cross-origin (403) ;
   2. réécrit `/en/...` vers la page française et pose les en-têtes `x-langue` et
-     `x-chemin` que lit `i18n-server.ts` — aucune page n'est dupliquée ;
+     `x-chemin` que lit `i18n-server.ts` — aucune page n'est dupliquée. Un lien
+     construit à la main (`${origin}/overlay/…`) rate ce préfixe : passer par
+     `useLien`, sinon un streamer anglophone copie un lien français et ses joueurs
+     se retrouvent avec un compagnon en français. Les tests de chemin du
+     middleware travaillent sur `cheminNu`, sans le préfixe ;
   3. pose les en-têtes de sécurité et la CSP ;
   4. élargit la CSP pour `/overlay/` seulement (iframe VDO.Ninja + images de
      n'importe quel hôte). Ne pas élargir ailleurs.
@@ -268,6 +287,18 @@ Un seul cas : `npx vitest run -t "nom du test"`
 **`npm run lint` passe au dernier relevé du 20 août 2026** — 0 erreur et
 102 avertissements. La commande fait désormais partie de la porte CI ; les
 avertissements restent à réduire sans les confondre avec des erreurs.
+
+**Trois pièges de plateforme déjà payés :**
+- **`startsWith` de Prisma compare la casse sur PostgreSQL.** La base n'écrit pas
+  toujours un nom pareil des deux côtés (« Rek'sai » la Légende, « Rek'Sai » ses
+  champions) : passer `mode: "insensitive"` sur toute recherche de nom.
+- **Ne pas exporter `metadata` quand la page a un `generateMetadata`.** Next garde
+  la version statique et ignore la fonction : le titre reste en français sur `/en`.
+  Le gabarit est `const metadata` (sans `export`) puis
+  `export const generateMetadata = () => metaTraduite(metadata);`.
+- **Supprimer une page casse `tsc` tant que le build n'a pas tourné.**
+  `.next/types/validator.ts` garde la liste des routes du dernier build. Lancer
+  `npx next build` avant `npm run verify`, dont `tsc` est la première étape.
 
 **`rtk` masque le code de sortie.** Ne jamais écrire `rtk tsc && git commit` :
 du code cassé a déjà été committé comme ça. Pour vérifier, toujours
@@ -361,6 +392,12 @@ comprendre à la première lecture.
   HTTP, jamais une trace d'exécution.
 - **Ne jamais avaler une donnée manquante en silence.** Une carte introuvable
   se remonte dans `missing` et s'affiche ; un `continue` muet est un bug.
+- **Un `fetch` côté navigateur se vérifie deux fois : `r.ok`, puis la FORME.**
+  `fetch(...).then(r => r.json()).then(setListe)` a déjà fait tomber le tableau de
+  bord de l'habillage en plein direct : la route rendait `{ error: … }` avec un
+  500, l'objet atterrissait dans l'état, et le `.map` du rendu levait. Contrôler
+  `r.ok`, refuser ce qui n'est pas un tableau, montrer l'échec avec un
+  « Réessayer ». Un `.catch(() => {})` est un bug, pas une précaution.
 
 ## Interface
 

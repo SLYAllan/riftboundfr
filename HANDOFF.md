@@ -1,69 +1,63 @@
 # HANDOFF — état des lieux
 
-## Travail en parallèle du 20 août 2026
+## Habillage de stream — état au 21 août 2026
 
-**Codex a terminé la passe sur l'interface de `/profil/overlay`.** Fichiers touchés :
-`src/app/profil/overlay/overlay-dashboard.tsx`, la logique et les tests ajoutés
-dans `src/lib/`, les traductions, puis ce fichier de passation. Objectif :
-rendre le tableau de bord lisible pour une boutique ou un streamer débutant,
-puis corriger les écarts d'accessibilité et l'ordre des sauvegardes.
+Le chantier est **fermé des deux côtés**, plus aucun fichier réservé. Tout est
+poussé sur `main`. Porte vérifiée en fin de session : `npm run verify` EXIT=0,
+**29 fichiers et 186 tests verts**, lint à **0 erreur**.
 
-**Ne pas toucher aux changements de Claude en cours** dans
-`src/app/overlay/[token]/overlay-full.tsx` et `public/stream/compact.webp`. Codex
-ne modifiera pas ces deux fichiers et relira leur état avant chaque commit.
+### Ce qui existe
 
-État Codex : `src/lib/overlay-dashboard-client.ts` porte maintenant la validation
-des liens VDO.Ninja et une file de sauvegardes ordonnée. Son test ciblé passe :
-**1 fichier, 4 tests, EXIT=0**. Le tableau de bord utilise désormais cette file.
-Après retour d'Allan, la piste en quatre vues a été retirée : elle divisait trop
-un outil destiné aux boutiques et aux streamers débutants. La page reste unique.
-L'installation OBS se replie dans un seul bloc, tandis que joueurs, scores, match
-et chrono restent visibles. Cartes, tournoi, logo et caméras sont des options
-repliées.
-Sont aussi corrigés : lien caméra refusé avec message, noms des deux decklists,
-état des cartes affichées, annonces de score et de recherche, contraste de
-l'erreur média et bornage du chrono.
+- **`/overlay/[token]`** — l'habillage complet, deux décors au choix (avec ou
+  sans cadres caméra), plus `?compact=1` pour la version réduite d'un stream
+  mobile. Le décor compact est `public/stream/compact.webp`, dessiné par Allan.
+- **`/profil/overlay`** — le tableau de bord du streamer. Liens OBS, décor,
+  joueurs, score, match, chrono, cartes à l'écran, tournoi et logo.
+- **`/compagnon/[token]/[cle]`** — le compteur de match sur téléphone, ouvert par
+  lien, sans compte Discord. Deux joueurs face à face, chacun sa moitié d'écran.
+  Il remplace l'ancien `/outils/compteur`, supprimé.
 
-Vérifications après ce lot et après les changements parallèles de Claude :
-**29 fichiers et 180 tests verts**, lint à **0 erreur et 102 avertissements**,
-puis `npm run verify` à **EXIT=0**. Le contrôle visuel connecté n'a pas été refait :
-la session Playwright appartient à Claude et le WebSocket OBS ne tourne pas.
+### Les règles qui ne se devinent pas
 
-Relecture Codex : le bandeau d'erreur porte maintenant `Réessayer`; la file garde
-le même état jusqu'à son envoi. Le dernier état différé part avec `keepalive` au
-départ de la page.
+Elles sont dans `AGENTS.md`, à lire avant de toucher à cette partie :
 
-### Fin de journée : reprise par Claude
+- **un seul envoi en vol** vers l'habillage, par `src/lib/overlay-envoi.ts` ;
+- **toujours un PATCH**, jamais l'état entier : tableau de bord et compagnon
+  écrivent en même temps ;
+- **les listes passent par `src/hooks/use-listes-overlay.ts`** — `r.ok`, forme
+  vérifiée, échec visible ; un `.catch(() => {})` a déjà fait tomber le tableau
+  de bord en plein direct ;
+- **un champ ajouté à `event` demande trois retouches** (type, `normaliserEvent`,
+  liste blanche de `overlay-validation.ts`), sinon toute écriture répond 400 ;
+- **les découpes d'un décor se mesurent sur le canal alpha**, jamais à l'œil ;
+- **la vérification passe par OBS**, pas par le navigateur seul.
 
-Le chantier est terminé des deux côtés, `overlay-full.tsx` n'est plus réservé.
-Trois défauts corrigés après relecture :
+### Comment essayer sans casser le direct d'Allan
 
-- **La règle du lien VDO.Ninja existait en trois exemplaires** (page d'habillage,
-  tableau de bord, et une copie à la main dans `cam-src.test.ts`). La copie du test
-  avait déjà cessé de couper le son : elle validait une règle que le site
-  n'appliquait plus. Tout passe par `src/lib/overlay-cam.ts`, testé une fois.
-  `cam-src.test.ts` est supprimé.
-- **Le bloc « Liens et affichage OBS » était replié d'office.** Il porte le mode
-  d'emploi de la première fois, le lien OBS et le lien du compagnon : un nouveau
-  venu n'y trouvait rien à faire. Il s'ouvre par défaut. Le compagnon et la version
-  simple ont depuis chacun leur encadré.
-- **Le bandeau d'erreur du compagnon n'avait sa position qu'en paysage.** En
-  portrait il poussait les deux panneaux de score au moment précis d'une coupure.
+Il n'y a qu'un seul `OverlayState` en base locale, et c'est celui qu'Allan a
+ouvert dans OBS. Lancer une partie depuis le compagnon **remet les points et les
+manches à zéro**. Avant tout essai qui écrit : sauver `overlayState.state` dans un
+fichier, faire l'essai, restaurer. Sa source OBS pointe sur
+`http://localhost:3000/overlay/…?compact=1`, donc sur le serveur de dev.
 
-Habillage compact : le décor `public/stream/compact.webp` n'a **qu'un** cadre par
-joueur, la coupure des rails vers 130-206 est décorative. La Légende va du haut au
-trait plein, le champ de bataille prend le bas, le pseudo tombe sous le cadre. Les
-mesures sont celles de l'INTÉRIEUR des rails. Le nombre de caractères qui tiennent
-vient d'une mesure au navigateur, pas d'une règle de trois. Vérifié par capture OBS
-(`GetSourceScreenshot` sur la source « Navigateur web »), pas au navigateur seul.
+### Ce qui reste ouvert
 
-**Reste à faire :** les deux cadres de `compact.webp` n'ont pas la même taille
-(gauche 231x305, droite 240x316, et la droite descend de 11 px). Les deux colonnes
-ne peuvent donc pas être jumelles. Allan reprend le webp. Question toujours en
-attente : le chinois pour l'habillage (portée non tranchée).
+1. **`compact.webp` n'est pas symétrique** — cadre gauche 231x305, cadre droit
+   240x316, et le droit descend de 11 px. Les deux colonnes ne peuvent donc pas
+   être jumelles. Allan reprend le fichier ; il faudra remesurer les découpes et
+   recaler `CADRE_COMPACT` dans `overlay-full.tsx`.
+2. **Le chinois** — un spectateur l'a demandé pour l'habillage. Portée non
+   tranchée : l'habillage seul (~85 phrases), tout le site (807 entrées, machine
+   à faire relire par un natif), ou seulement la plomberie. `Langue` et
+   `PREFIXE_EN` sont écrits pour exactement deux langues.
+3. **Rek'Sai s'écrit de deux façons en base** — « Rek'sai » la Légende, « Rek'Sai »
+   ses champions. La recherche est devenue insensible à la casse, la donnée n'a
+   pas été corrigée : renommer une carte se paie dans les decklists qui la citent.
+4. **`overlay-dashboard.tsx` fait 1082 lignes.** Rien ne presse, mais c'est le
+   fichier où deux exécutants se marchent dessus.
 
-**Relevé mis à jour le 20 août 2026.** Branche `main`.
-La session du 20 août est décrite plus bas ; le reste date du relevé du 14 août.
+**Relevé mis à jour le 21 août 2026.** Branche `main`.
+La session des 20 et 21 août est décrite ci-dessus ; le reste date du relevé du 14 août.
 Tout ce qui suit a été mesuré en lançant les commandes, pas déduit d'une lecture.
 L'architecture et les commandes sont dans `AGENTS.md`, l'archive des audits dans
 `docs/AUDITS.md`.
