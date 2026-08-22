@@ -154,6 +154,43 @@ La vidéo ci-dessous montre les six étapes. L'application y apparaît en anglai
     "/img/articles/moblin-widget.webp",
     "Le montage complet dans Moblin, de la création du widget jusqu'à l'overlay affiché sur la scène.",
   ),
+  sep("sep-android"),
+  t(
+    "irl-pro",
+    `## Sur Android avec IRL Pro
+
+[IRL Pro](https://play.google.com/store/apps/details?id=app.irlpro.android) peut ajouter l'overlay comme une page web au-dessus de la caméra.
+
+1. Ouvrez **Settings**, puis **Overlays** et **Web Overlays**.
+2. Touchez **New web overlay**.
+3. Donnez un nom à l'overlay, puis collez le lien de l'overlay compact dans **URL**.
+4. Dans **WebView options**, réglez la largeur sur **1920**, la hauteur sur **1080** et l'échelle sur **100 %**.
+5. Revenez à la caméra et vérifiez que l'overlay apparaît avant de lancer le direct.`,
+  ),
+  video(
+    "irl-pro-video",
+    "/video/irl-pro-overlay-android.mp4",
+    "/img/articles/irl-pro-overlay-android.webp",
+    "Ajouter l'overlay compact dans IRL Pro, puis contrôler son affichage sur la caméra.",
+  ),
+  t(
+    "prism-live",
+    `## Sur Android avec PRISM Live Studio
+
+[PRISM Live Studio](https://play.google.com/store/apps/details?id=com.prism.live) permet aussi d'ajouter une page web à la scène.
+
+1. Ouvrez **My Studio** depuis l'écran de la caméra.
+2. Touchez **Web**.
+3. Collez le lien de l'overlay compact dans **URL**, ajoutez un titre, puis touchez **Save**.
+4. Placez l'overlay sur toute l'image dans l'éditeur.
+5. Fermez l'éditeur et vérifiez le rendu sur la caméra avant de lancer le direct.`,
+  ),
+  video(
+    "prism-live-video",
+    "/video/prism-live-overlay-android.mp4",
+    "/img/articles/prism-live-overlay-android.webp",
+    "Ajouter l'overlay compact dans PRISM Live Studio et l'ajuster à l'image.",
+  ),
   img(
     "moblin-telephone",
     "/img/articles/overlay-moblin-telephone.webp",
@@ -201,7 +238,7 @@ const data = {
     "Un téléphone filme la table, les joueurs comptent leurs points sur un second appareil et l'overlay se met à jour. Voici le matériel et les réglages nécessaires.",
   coverImage: "/img/articles/overlay-compagnon-cover.webp",
   category: "guide",
-  tags: ["stream", "overlay", "compagnon", "moblin", "tutoriel"],
+  tags: ["stream", "overlay", "compagnon", "moblin", "android", "prism live studio", "irl pro", "tutoriel"],
   blocks,
   published: true,
   publishedAt: new Date(),

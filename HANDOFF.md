@@ -84,6 +84,12 @@ Après la reprise : les 10 tests d'`admin-validation.test.ts` passent et
 `npm run verify` sort 0. Le seed local publie 23 blocs et le générateur écrit
 28 traductions dans `src/lib/i18n-articles-en.ts`.
 
+Ajout du 22 août : l'article porte aussi deux tutos Android, IRL Pro et PRISM
+Live Studio, avec leurs liens Play Store et les vidéos fournies par Allan. Les
+médias vivent dans `public/video/*-overlay-android.mp4`, avec leurs affiches dans
+`public/img/articles/`. Le seed local publie maintenant 28 blocs et le générateur
+écrit 32 traductions.
+
 ### Code de production touché, hors article
 
 Ces changements sont indépendants de l'article et tiennent debout seuls.

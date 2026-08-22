@@ -105,6 +105,30 @@ The video below shows all six steps. The app appears in English because it follo
   "moblin-video.caption":
     "The whole setup inside Moblin, from creating the widget to the overlay showing on the scene.",
 
+  "irl-pro.content": `## On Android with IRL Pro
+
+[IRL Pro](https://play.google.com/store/apps/details?id=app.irlpro.android) can add the overlay as a web page over the camera feed.
+
+1. Open **Settings**, then **Overlays** and **Web Overlays**.
+2. Tap **New web overlay**.
+3. Name the overlay, then paste the compact overlay link into **URL**.
+4. Under **WebView options**, set the width to **1920**, height to **1080**, and scale to **100%**.
+5. Return to the camera and check that the overlay appears before going live.`,
+  "irl-pro-video.caption":
+    "Adding the compact overlay in IRL Pro, then checking it on the camera feed.",
+
+  "prism-live.content": `## On Android with PRISM Live Studio
+
+[PRISM Live Studio](https://play.google.com/store/apps/details?id=com.prism.live) can also add a web page to the scene.
+
+1. Open **My Studio** from the camera screen.
+2. Tap **Web**.
+3. Paste the compact overlay link into **URL**, add a title, then tap **Save**.
+4. Fit the overlay to the full frame in the editor.
+5. Close the editor and check the camera view before going live.`,
+  "prism-live-video.caption":
+    "Adding the compact overlay in PRISM Live Studio and fitting it to the frame.",
+
 
   "moblin-telephone.alt": "An iPhone on a small tripod, filming the playmat with the compact overlay already in place.",
   "moblin-telephone.caption": "On the camera side, the setup fits into a phone and a tripod.",
