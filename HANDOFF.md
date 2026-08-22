@@ -90,6 +90,10 @@ médias vivent dans `public/video/*-overlay-android.mp4`, avec leurs affiches da
 `public/img/articles/`. Le seed local publie maintenant 28 blocs et le générateur
 écrit 32 traductions.
 
+Le tableau de bord accepte aussi un décor propre à l'overlay compact. Il passe
+par le même stockage `OverlayMedia` que les deux autres décors, sous le genre
+`backgroundCompact`, et revient à `public/stream/compact.webp` quand on le retire.
+
 ### Code de production touché, hors article
 
 Ces changements sont indépendants de l'article et tiennent debout seuls.

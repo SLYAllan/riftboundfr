@@ -806,7 +806,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
       {/* Le décor PAR-DESSUS le contenu : ses traits dorés encadrent alors les images,
           au lieu de passer dessous et de disparaître. Il est transparent partout
           ailleurs, il ne masque donc rien. */}
-      <img src={FOND_COMPACT} alt="" className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
+      <img src={state.event.backgroundCompactUrl || FOND_COMPACT} alt="" className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
       {/* Les mêmes cadres dorés que l'habillage complet, et les cartes dans leurs
           découpes : en bas de la toile, aux deux coins, un peu réduits. Comme dans le
           complet, le cadre suit le MODE et pas le nombre de cartes : on peut le poser

@@ -12,7 +12,8 @@ import { useLien, useT } from "@/components/i18n-provider";
 
 
 /** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
-function cleFond(genre: GenreMedia): "backgroundUrl" | "backgroundNocamUrl" {
+function cleFond(genre: Exclude<GenreMedia, "logo">): "backgroundUrl" | "backgroundNocamUrl" | "backgroundCompactUrl" {
+  if (genre === "backgroundCompact") return "backgroundCompactUrl";
   return genre === "backgroundNocam" ? "backgroundNocamUrl" : "backgroundUrl";
 }
 
@@ -199,6 +200,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const [brouillonLogo, setBrouillonLogo] = useState("");
   const fichierLogo = useRef<HTMLInputElement | null>(null);
   const fichierFond = useRef<HTMLInputElement | null>(null);
+  const fichierFondCompact = useRef<HTMLInputElement | null>(null);
   const [envoi, setEnvoi] = useState<GenreMedia | null>(null);
   const [erreurMedia, setErreurMedia] = useState<string | null>(null);
   const sansCam = state.event.layout === "nocam";
@@ -229,7 +231,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       setErreurMedia(t("L’envoi de l’image a échoué."));
     } finally {
       setEnvoi(null);
-      const champ = genre === "logo" ? fichierLogo : fichierFond;
+      const champ = genre === "logo" ? fichierLogo : genre === "backgroundCompact" ? fichierFondCompact : fichierFond;
       if (champ.current) champ.current.value = "";
     }
   }
@@ -576,6 +578,23 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <Download size={15} aria-hidden />
             {t("Gabarit Photoshop")}
           </a>
+          <input
+            ref={fichierFondCompact}
+            type="file"
+            accept={TYPES_IMAGE.join(",")}
+            className="hidden"
+            onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("backgroundCompact", f); }}
+          />
+          <button onClick={() => fichierFondCompact.current?.click()} disabled={envoi !== null} className={btnVide}>
+            <Upload size={15} aria-hidden />
+            {envoi === "backgroundCompact" ? t("Envoi…") : t("Remplacer le décor compact")}
+          </button>
+          {state.event.backgroundCompactUrl && (
+            <button onClick={() => retirerMedia("backgroundCompact")} className={btnDanger}>
+              <X size={15} aria-hidden />
+              {t("Reprendre le décor du site")}
+            </button>
+          )}
         </div>
       </section>
         </div>

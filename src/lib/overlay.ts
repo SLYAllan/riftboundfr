@@ -10,12 +10,12 @@ export type OverlayLayout = "cams" | "nocam";
  */
 export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"];
 
-/** Les images qu'un streamer peut fournir. Un décor par mode : les deux gabarits
- * n'ont pas les mêmes découpes, un seul fond pour les deux tomberait à côté. */
-export type GenreMedia = "logo" | "background" | "backgroundNocam";
+/** Les images qu'un streamer peut fournir. Un décor par mode : les gabarits
+ * n'ont pas les mêmes découpes, un seul fond pour tous tomberait à côté. */
+export type GenreMedia = "logo" | "background" | "backgroundNocam" | "backgroundCompact";
 
 export function estGenreMedia(v: string): v is GenreMedia {
-  return v === "logo" || v === "background" || v === "backgroundNocam";
+  return v === "logo" || v === "background" || v === "backgroundNocam" || v === "backgroundCompact";
 }
 
 /**
@@ -23,7 +23,7 @@ export function estGenreMedia(v: string): v is GenreMedia {
  * Le décor doit rester en 1920x1080 : il se pose au pixel près sur les découpes du
  * gabarit. Le logo, lui, s'affiche dans une case de 275x184.
  */
-export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920, backgroundNocam: 1920 };
+export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920, backgroundNocam: 1920, backgroundCompact: 1920 };
 
 /**
  * Le vrai format d'une image, lu dans ses premiers octets.
@@ -45,7 +45,7 @@ export function typeReel(octets: Uint8Array): string | null {
   ) return "image/webp";
   return null;
 }
-export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024, backgroundNocam: 3 * 1024 * 1024 };
+export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024, backgroundNocam: 3 * 1024 * 1024, backgroundCompact: 3 * 1024 * 1024 };
 
 export interface OverlayPlayer {
   name: string;
@@ -91,7 +91,7 @@ export interface OverlayStateData {
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
   // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
   // découpes diffèrent. Vide = le décor du site pour ce mode.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string };
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -122,7 +122,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "", backgroundCompactUrl: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -241,6 +241,7 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     layout: e.layout === "nocam" ? "nocam" : "cams",
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
     backgroundNocamUrl: texte(e.backgroundNocamUrl, URL_MAX),
+    backgroundCompactUrl: texte(e.backgroundCompactUrl, URL_MAX),
   };
 }
 
@@ -301,7 +302,7 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
 export function recalerMedias(event: OverlayStateData["event"], ancien: string, nouveau: string): OverlayStateData["event"] {
   const prefixe = `/api/overlay/${ancien}/media/`;
   const sortie = { ...event };
-  for (const cle of ["logoUrl", "backgroundUrl", "backgroundNocamUrl"] as const) {
+  for (const cle of ["logoUrl", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl"] as const) {
     const v = sortie[cle];
     if (v && v.startsWith(prefixe)) sortie[cle] = `/api/overlay/${nouveau}/media/${v.slice(prefixe.length)}`;
   }

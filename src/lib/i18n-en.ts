@@ -117,6 +117,7 @@ export const EN: Record<string, string> = {
     "This art only serves the mode picked above. The other mode keeps its own.",
   "Gabarit Photoshop": "Photoshop template",
   "Reprendre le décor du site": "Back to the site art",
+  "Remplacer le décor compact": "Replace compact overlay art",
   "1920 x 1080, PNG ou WebP, transparent là où le jeu doit se voir. Partez du gabarit : les découpes doivent tomber au pixel près.":
     "1920 x 1080, PNG or WebP, transparent where the game must show through. Start from the template: the cut-outs have to land pixel-perfect.",
   "PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.":

@@ -80,9 +80,10 @@ describe("overlay logic", () => {
     // Plus bas que -1, on retombe à -1 : il n'y a rien de moins que « rien ».
     expect(applyStateUpdate(base, { cards: { ...base.cards, index: [-9, 0] } }).cards.index[0]).toBe(-1);
 
-    const fonds = applyStateUpdate(base, { event: { backgroundUrl: "/a.png", backgroundNocamUrl: "/b.png" } });
+    const fonds = applyStateUpdate(base, { event: { backgroundUrl: "/a.png", backgroundNocamUrl: "/b.png", backgroundCompactUrl: "/c.png" } });
     expect(fonds.event.backgroundUrl).toBe("/a.png");
     expect(fonds.event.backgroundNocamUrl).toBe("/b.png");
+    expect(fonds.event.backgroundCompactUrl).toBe("/c.png");
   });
 
   // « Nouveau lien » change le jeton, et les images sont servies SOUS le jeton. Sans
@@ -94,12 +95,14 @@ describe("overlay logic", () => {
       logoUrl: "/api/overlay/vieux/media/logo?v=1",
       backgroundUrl: "/api/overlay/vieux/media/background?v=2",
       backgroundNocamUrl: "https://exemple.test/decor.png",
+      backgroundCompactUrl: "/api/overlay/vieux/media/backgroundCompact?v=3",
     };
     const apres = recalerMedias(event, "vieux", "neuf");
     expect(apres.logoUrl).toBe("/api/overlay/neuf/media/logo?v=1");
     expect(apres.backgroundUrl).toBe("/api/overlay/neuf/media/background?v=2");
     // Une image hébergée ailleurs n'a rien à voir avec le jeton : on n'y touche pas.
     expect(apres.backgroundNocamUrl).toBe("https://exemple.test/decor.png");
+    expect(apres.backgroundCompactUrl).toBe("/api/overlay/neuf/media/backgroundCompact?v=3");
   });
 
   // Une source OBS réglée ailleurs qu'à 1920x1080 laissait la toile ancrée en haut à
