@@ -758,3 +758,8 @@ partagée de `card-printing.ts` (`Alt`, `Alt Art`, `Alternate Art`, `Metal`,
 donc l'impression normale à 0,18 € au lieu de celle à 150 €. Les suffixes de
 jeu, comme `Recruit (DE)`, restent distincts.
 Test : `npx vitest run src/lib/cardnexus.test.ts` (23 tests verts).
+
+Les listes CardNexus demandent maintenant les cartes en anglais. Vendetta n'existe
+pas encore en français, donc le choix précédent pouvait produire un panier
+incomplet. Repasser la constante `LANGUE` de `src/lib/cardnexus.ts` à `fr` quand
+toutes les extensions jouées seront disponibles en français.

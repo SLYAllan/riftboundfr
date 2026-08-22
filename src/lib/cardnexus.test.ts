@@ -130,7 +130,7 @@ describe("chiffrerDeck", () => {
         { riftboundId: "opp-009-024", name: "Master Yi, Honed", quantity: 1 },
       ],
       prix,
-    ).items).toEqual([{ productId: 9, finish: "Standard", language: "fr", quantity: 2 }]);
+    ).items).toEqual([{ productId: 9, finish: "Standard", language: "en", quantity: 2 }]);
   });
 
   it("additionne une carte présente deux fois, sinon CardNexus remplace la quantité", () => {
@@ -142,7 +142,7 @@ describe("chiffrerDeck", () => {
       ],
       prix,
     );
-    expect(items).toEqual([{ productId: 1, finish: "Standard", language: "fr", quantity: 5 }]);
+    expect(items).toEqual([{ productId: 1, finish: "Standard", language: "en", quantity: 5 }]);
     expect(absentes).toEqual(["Inconnue"]);
   });
 
@@ -157,7 +157,7 @@ describe("chiffrerDeck", () => {
 
   it("met la moins chère au panier, pas celle de la decklist", () => {
     expect(lignesListe([{ riftboundId: "ven-179-166", name: "Rengar, Trophy Hunter", quantity: 3 }], prix).items).toEqual([
-      { productId: 20, finish: "Foil", language: "fr", quantity: 3 },
+      { productId: 20, finish: "Foil", language: "en", quantity: 3 },
     ]);
   });
 

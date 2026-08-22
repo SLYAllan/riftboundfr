@@ -245,11 +245,9 @@ function regrouper(cartes: Carte[], prix: FichierPrix | null): Regroupee[] {
 }
 
 // CardNexus exige une langue par ligne, il n'accepte pas « n'importe laquelle ».
-// Le français est le bon choix ici : c'est le public du site, et sur le marché
-// européen les annonces françaises de Riftbound sont les plus nombreuses (relevé
-// à la main sur plusieurs cartes). C'est le bouton à tourner si le panier proposé
-// revenait trop souvent incomplet.
-const LANGUE = "fr";
+// Vendetta n'existe pas encore en français : demander du français rendrait les
+// paniers récents incomplets. Repasser à `fr` quand tout le format sera disponible.
+const LANGUE = "en";
 
 /**
  * Les lignes d'une liste CardNexus pour un deck, et ce qui n'a pas pu y entrer.
