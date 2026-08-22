@@ -40,23 +40,23 @@ const SLOT = {
 
 // Découpes de public/stream/compact.webp, relevées au pixel sur son canal alpha.
 //
-// UN SEUL panneau par joueur : les rails dorés portent une coupure décorative vers
-// 130-206, ce n'est pas un séparateur. La Légende passe dessous et descend jusqu'au
-// trait plein (246 à gauche, 254 à droite), le champ de bataille occupe tout ce qui
-// reste. Découper la Légende à la coupure laissait un trou en plein milieu.
+// UN SEUL panneau par joueur : les rails dorés portent une coupure décorative de
+// 130 à 206, ce n'est pas un séparateur. La Légende passe dessous et descend jusqu'au
+// trait plein (246-248), le champ de bataille occupe tout ce qui reste. Découper la
+// Légende à la coupure laissait un trou en plein milieu.
 //
-// Les mesures ci-dessous sont celles de l'INTÉRIEUR des rails, pas de la boîte du
-// dessin : rails verticaux à 30-32 et 249-251 (gauche), 1658-1660 et 1885-1887
-// (droite) ; bordures à 20-25 et 311-316 (gauche), 20-26 et 321-327 (droite). Se
-// caler sur la boîte faisait passer l'illustration par-dessus les traits, et ça se
-// voyait.
+// Les mesures sont celles de l'INTÉRIEUR des rails, pas de la boîte du dessin :
+// rails verticaux à 30-32 et 249-251 à gauche, bordures à 26-28 et 254-255. Se caler
+// sur la boîte faisait passer l'illustration par-dessus les traits, et ça se voyait.
 //
 // Le pseudo, lui, tombe SOUS le panneau, à l'air libre : comme dans le décor sans
 // caméra, il ne prend pas de place dans l'encadré.
 //
-// Les deux côtés ne sont PAS symétriques dans l'image : le cadre de droite est plus
-// large de 8 px et descend de 7. Chaque côté porte donc ses propres mesures — les
-// aligner sur la moyenne décalait le contenu hors du trait doré.
+// Le décor du 22 août rend les deux côtés identiques au pixel : le cadre de droite
+// est celui de gauche décalé de 1635 px (rails 1665-1667 et 1884-1886, mêmes lignes
+// horizontales). Avant, il était plus large de 8 px et descendait de 7, d'où deux
+// jeux de mesures. On garde deux jeux quand même : rien ne garantit que le prochain
+// décor reste symétrique, et c'est ce qu'on avait supposé la dernière fois.
 const CADRE_COMPACT = {
   left: {
     x: 33, largeur: 216,
@@ -69,11 +69,16 @@ const CADRE_COMPACT = {
     cartes: { echelle: 0.85, x: 0, y: 162 },
   },
   right: {
-    x: 1661, largeur: 224,
-    hero: { top: 27, hauteur: 227 },
-    bf: { top: 257, hauteur: 64 },
+    x: 1668, largeur: 216,
+    hero: { top: 26, hauteur: 220 },
+    bf: { top: 249, hauteur: 62 },
     pseudo: { top: 333, hauteur: 38 },
-    cartes: { echelle: 0.85, x: 288, y: 162 },
+    // Le cadre de cartes se cale sur le panneau du dessus, pas sur le milieu de la
+    // toile. Les deux images de cadre sont la même à 1563 px d'écart, les deux
+    // panneaux à 1635 px : le décalage est donc 1635 - 1563 x 0,85 = 306,45, et le
+    // cadre de droite retombe au même retrait qu'à gauche. 288 le posait 18 px trop
+    // à gauche depuis que le panneau a bougé.
+    cartes: { echelle: 0.85, x: 306.45, y: 162 },
   },
 } as const;
 const FOND_COMPACT = "/stream/compact.webp";

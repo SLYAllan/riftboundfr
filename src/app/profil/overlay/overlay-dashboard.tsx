@@ -572,6 +572,10 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <Copy size={15} aria-hidden />
             {t("Copier l’overlay compact")}
           </button>
+          <a href="/stream/layout_compact.psd" download className={btnVide}>
+            <Download size={15} aria-hidden />
+            {t("Gabarit Photoshop")}
+          </a>
         </div>
       </section>
         </div>

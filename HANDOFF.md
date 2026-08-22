@@ -186,6 +186,27 @@ depuis.
 3. **Le seed strict n'a jamais tourné.** Le premier tournoi importé après ce
    changement dira si des noms de cartes du scrape ne passent plus.
 
+## Décor compact réexporté le 22 août 2026
+
+Allan a redessiné `public/stream/compact.webp` : les deux côtés sont maintenant
+identiques au pixel, le cadre de droite est celui de gauche décalé de 1635 px. Avant,
+il était plus large de 8 px et descendait de 7. `CADRE_COMPACT`, dans
+`src/app/overlay/[token]/overlay-full.tsx`, a été remesuré sur le canal alpha du
+nouveau fichier : `right.x` 1661 → 1668, `largeur` 224 → 216, `hero` et `bf` alignés
+sur ceux de gauche.
+
+Le cadre de cartes de droite passe de `x: 288` à `x: 306,45`. Il était calé sur le
+milieu de la toile ; il se cale maintenant sur le panneau du dessus, comme à gauche.
+Les deux images de cadre sont la même à 1563 px d'écart, les deux panneaux à 1635 px,
+d'où 1635 - 1563 x 0,85.
+
+Vérifié dans OBS (scène INGAME, source « Navigateur web » sur `localhost:3000`) : les
+deux panneaux tiennent dans leurs traits dorés. Les cadres de cartes, eux, ne sont pas
+vus à l'écran — l'état d'Allan est en mode `none`, et le basculer aurait changé son
+direct. Leur calage est mesuré, pas vu.
+
+Le fichier source est `public/stream/layout_compact.psd`, versionné comme `layout.psd`.
+
 ## Habillage de stream — état au 21 août 2026
 
 Le chantier est **fermé des deux côtés**, plus aucun fichier réservé. Tout est
