@@ -8,6 +8,7 @@ import { getUserFromSession } from "@/lib/session";
 import { getBinderQuantities } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { impressionsAchat } from "@/lib/cardnexus";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur - Ma collection Riftbound" },
@@ -45,6 +46,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
   ]);
 
   const cards: BinderCard[] = dbCards;
+  const impressions = impressionsAchat();
   const presentSets = new Set(cards.map((c) => c.set));
   const sets: BinderSetMeta[] = dbSets
     .filter((s) => presentSets.has(s.setId))
@@ -62,6 +64,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
         cards={cards}
         sets={sets}
         initialQuantities={quantities}
+        impressions={impressions}
       />
     </div>
   );

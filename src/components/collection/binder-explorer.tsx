@@ -36,15 +36,17 @@ function variantOf(c: BinderCard): string {
 const VARIANT_LABELS: Record<string, string> = { normal: "Normale", alt: "Alt Art", over: "Overnumbered", sig: "Signature" };
 
 export function BinderExplorer({
-  binder, cards, sets, initialQuantities,
+  binder, cards, sets, initialQuantities, impressions,
 }: {
   binder: BinderInfo; cards: BinderCard[]; sets: BinderSetMeta[];
   initialQuantities: Record<string, number>;
+  impressions: { connues: string[]; conseillees: string[] };
 }) {
   const t = useT();
   const [quantities, setQuantities] = useState<Record<string, number>>(initialQuantities);
   const [isPublic, setIsPublic] = useState(binder.isPublic);
   const [shareSlug, setShareSlug] = useState(binder.shareSlug);
+  const [erreurPartage, setErreurPartage] = useState<string | null>(null);
 
   const [q, setQ] = useState("");
   const [setF, setSetF] = useState("all");
@@ -72,6 +74,8 @@ export function BinderExplorer({
   const supers = useMemo(() => [...new Set(cards.map((c) => c.supertype).filter(Boolean) as string[])].sort(), [cards]);
   const rarities = useMemo(() => [...new Set(cards.map((c) => c.rarity))].sort((a, b) => (RARITY_ORDER[a] ?? 9) - (RARITY_ORDER[b] ?? 9)), [cards]);
   const domains = useMemo(() => [...new Set(cards.flatMap((c) => c.domains))].sort(), [cards]);
+  const impressionsConnues = useMemo(() => new Set(impressions.connues), [impressions.connues]);
+  const impressionsConseillees = useMemo(() => new Set(impressions.conseillees), [impressions.conseillees]);
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -89,6 +93,7 @@ export function BinderExplorer({
       const has = (quantities[c.id] ?? 0) > 0;
       if (owned === "owned" && !has) return false;
       if (owned === "missing" && has) return false;
+      if (owned === "missing" && impressionsConnues.has(c.riftboundId) && !impressionsConseillees.has(c.riftboundId)) return false;
       return true;
     });
     out.sort((a, b) => {
@@ -98,7 +103,7 @@ export function BinderExplorer({
       return a.set.localeCompare(b.set) || (a.collectorNumber ?? 0) - (b.collectorNumber ?? 0);
     });
     return out;
-  }, [cards, q, setF, typeF, superF, variantF, rarityF, domainF, maxE, maxP, maxM, owned, sort, quantities]);
+  }, [cards, q, setF, typeF, superF, variantF, rarityF, domainF, maxE, maxP, maxM, owned, sort, quantities, impressionsConnues, impressionsConseillees]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageClamped = Math.min(page, totalPages);
@@ -109,19 +114,18 @@ export function BinderExplorer({
 
   const [etat, setEtat] = useState<EtatEnvoi>("a-jour");
 
-  // Un lot peut porter plusieurs cartes : on les poste l'une après l'autre vers
-  // CE classeur. Un 4xx/5xx fait échouer le lot entier, qui reste en attente
-  // dans la file jusqu'à « Réessayer ».
+  // La route bulk garde le lot atomique : un refus ne sauvegarde aucune carte.
   const envoyer = useCallback(
     async (cartes: CartesEnAttente) => {
-      for (const [cardId, quantity] of Object.entries(cartes)) {
-        const r = await fetch("/api/collection", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ binderId: binder.id, cardId, quantity }),
-        });
-        if (!r.ok) throw new Error("sauvegarde refusée");
-      }
+      const r = await fetch("/api/collection/bulk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          binderId: binder.id,
+          items: Object.entries(cartes).map(([cardId, quantity]) => ({ cardId, quantity })),
+        }),
+      });
+      if (!r.ok) throw new Error("sauvegarde refusée");
     },
     [binder.id],
   );
@@ -162,17 +166,27 @@ export function BinderExplorer({
   }
 
   async function toggleShare() {
-    const res = await fetch(`/api/collection/binders/${binder.id}`, {
-      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ isPublic: !isPublic }),
-    });
-    if (res.ok) {
-      const { binder: b } = await res.json();
+    setErreurPartage(null);
+    try {
+      const res = await fetch(`/api/collection/binders/${binder.id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ isPublic: !isPublic }),
+      });
+      const data = await res.json().catch(() => null);
+      const b = data?.binder;
+      if (!res.ok || typeof b?.isPublic !== "boolean") throw new Error("partage refusé");
       setIsPublic(b.isPublic); setShareSlug(b.shareSlug);
       if (b.isPublic && b.shareSlug) {
         const url = `${location.origin}/collection/partage/${b.shareSlug}`;
-        navigator.clipboard?.writeText(url).catch(() => {});
-        window.alert(`Classeur partagé ! Lien copié :\n${url}`);
+        try {
+          if (!navigator.clipboard) throw new Error("presse-papiers absent");
+          await navigator.clipboard.writeText(url);
+          window.alert(`Classeur partagé ! Lien copié :\n${url}`);
+        } catch {
+          setErreurPartage("Le classeur est public, mais le lien n'a pas pu être copié.");
+        }
       }
+    } catch {
+      setErreurPartage("Impossible de modifier le partage. Réessaie.");
     }
   }
 
@@ -191,13 +205,8 @@ export function BinderExplorer({
         <span className="text-sm text-ink-muted">{distinctOwned} cartes · {copies} exemplaires</span>
       </div>
 
-      {/* Filters - label + valeur, icônes de domaine */}
-      <details className="group mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
-        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between font-semibold text-ink sm:hidden [&::-webkit-details-marker]:hidden">
-          <span>{t("Filtres")}{activeFilters > 0 ? ` (${activeFilters})` : ""}</span>
-          <ChevronDown size={16} className="transition-transform group-open:rotate-180" />
-        </summary>
-        <div className="hidden group-open:block sm:block">
+      {/* Recherche et filtres restent visibles : ce sont les contrôles principaux du classeur. */}
+      <div className="mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
           <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder={t("Rechercher une carte…")}
@@ -205,7 +214,7 @@ export function BinderExplorer({
             className="h-9 min-w-[200px] flex-1 rounded-lg border border-hairline bg-surface px-3 text-base focus:border-arcane sm:text-sm" />
           <div className="flex rounded-lg border border-hairline bg-surface p-0.5">
             {([["all", t("Toutes")], ["owned", "Possédées"], ["missing", "Manquantes"]] as [Owned, string][]).map(([v, l]) => (
-              <button key={v} onClick={() => { setOwned(v); setPage(1); }}
+              <button key={v} onClick={() => { setOwned(v); setPage(1); }} aria-pressed={owned === v}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${owned === v ? "bg-arcane text-canvas" : "text-ink-secondary hover:text-ink"}`}>{l}</button>
             ))}
           </div>
@@ -220,7 +229,7 @@ export function BinderExplorer({
             {DOMAIN_ORDER.filter((d) => domains.includes(d) && DOMAIN_ICONS[d]).map((d) => {
               const active = domainF === d;
               return (
-                <button key={d} onClick={() => { setDomainF(active ? "all" : d); setPage(1); }} title={DOMAIN_LABELS_FR[d] ?? d}
+                <button key={d} onClick={() => { setDomainF(active ? "all" : d); setPage(1); }} title={DOMAIN_LABELS_FR[d] ?? d} aria-pressed={active}
                   className={`flex h-9 w-9 items-center justify-center rounded-lg border transition ${active ? "" : "border-hairline opacity-50 hover:opacity-100"}`}
                   style={active ? { borderColor: DOMAIN_COLORS[d], backgroundColor: `${DOMAIN_COLORS[d]}22` } : undefined}>
                   <Image src={DOMAIN_ICONS[d]} alt={DOMAIN_LABELS_FR[d] ?? d} width={20} height={20} className="h-5 w-5" />
@@ -259,8 +268,7 @@ export function BinderExplorer({
           {activeFilters > 0 && <button onClick={clearAll} className="text-arcane hover:underline">{t("Tout effacer")}</button>}
           <span className="ml-auto font-semibold text-arcane">{filtered.length} {t(filtered.length === 1 ? "carte" : "cartes")}</span>
         </div>
-        </div>
-      </details>
+      </div>
 
       {/* Toolbar */}
       <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -274,6 +282,7 @@ export function BinderExplorer({
       {isPublic && shareSlug && (
         <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-ink-muted"><Share2 size={12} /> Lien public : <code className="rounded bg-surface-raised px-1.5 py-0.5">/collection/partage/{shareSlug}</code></p>
       )}
+      {erreurPartage && <p role="alert" className="mt-2 text-sm text-error-light">{erreurPartage}</p>}
       {etat === "hors-ligne" && (
         <div role="alert" className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
           <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />

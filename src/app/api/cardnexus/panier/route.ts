@@ -47,7 +47,8 @@ async function cartesDuCode(code: string, titre = "Deck Riftbound France") {
   const deck = decodeDeck(code);
   if (!deck) return null;
   const items = deckCoverageItems(deck);
-  const { map } = await resolveDeckCards(items.map((i) => i.cardId));
+  const { map, missing } = await resolveDeckCards(items.map((i) => i.cardId));
+  if (missing.length > 0) return null;
   const cartes: CarteDeck[] = [];
   for (const i of items) {
     const carte = findCard(map, i.cardId);
@@ -155,7 +156,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Tu possèdes déjà toutes les cartes de ce deck." }, { status: 404 });
   }
 
-  const { items } = lignesListe(cartes);
+  const { items, absentes } = lignesListe(cartes);
+  if (absentes.length > 0) {
+    return NextResponse.json({ error: "Certaines cartes du deck ne sont pas au catalogue CardNexus." }, { status: 404 });
+  }
   if (items.length === 0) {
     return NextResponse.json({ error: "Aucune carte de ce deck n'est au catalogue CardNexus." }, { status: 404 });
   }
@@ -167,30 +171,41 @@ export async function GET(request: Request) {
   if (dejaVue) return NextResponse.redirect(lienPanier(dejaVue), 302);
 
   const entetes = { Authorization: `Bearer ${cle}`, "Content-Type": "application/json" };
-  const creation = await fetch(`${API}/lists`, {
-    method: "POST",
-    headers: entetes,
-    body: JSON.stringify({
-      name: (user ? `${deck.titre} - ce qu'il me manque` : deck.titre).slice(0, 100),
-      game: "riftbound",
-      status: "toComplete",
-      isPublic: true,
-      currency: "EUR",
-      description: "Liste composée par Riftbound France.",
-    }),
-  });
-  if (!creation.ok) {
-    return NextResponse.json({ error: "CardNexus a refusé la création de la liste." }, { status: 502 });
-  }
-  const { id } = (await creation.json()) as { id: string };
+  let id: string;
+  try {
+    const creation = await fetch(`${API}/lists`, {
+      method: "POST",
+      headers: entetes,
+      signal: AbortSignal.timeout(10_000),
+      body: JSON.stringify({
+        name: (user ? `${deck.titre} - ce qu'il me manque` : deck.titre).slice(0, 100),
+        game: "riftbound",
+        status: "toComplete",
+        isPublic: true,
+        currency: "EUR",
+        description: "Liste composée par Riftbound France.",
+      }),
+    });
+    if (!creation.ok) {
+      return NextResponse.json({ error: "CardNexus a refusé la création de la liste." }, { status: 502 });
+    }
+    const donnees = await creation.json();
+    id = donnees?.id;
+    if (typeof id !== "string" || id.length === 0) {
+      return NextResponse.json({ error: "CardNexus a rendu une liste invalide." }, { status: 502 });
+    }
 
-  const ajout = await fetch(`${API}/lists/${id}/items`, {
-    method: "POST",
-    headers: entetes,
-    body: JSON.stringify({ items }),
-  });
-  if (!ajout.ok) {
-    return NextResponse.json({ error: "CardNexus a refusé les cartes du deck." }, { status: 502 });
+    const ajout = await fetch(`${API}/lists/${id}/items`, {
+      method: "POST",
+      headers: entetes,
+      signal: AbortSignal.timeout(10_000),
+      body: JSON.stringify({ items }),
+    });
+    if (!ajout.ok) {
+      return NextResponse.json({ error: "CardNexus a refusé les cartes du deck." }, { status: 502 });
+    }
+  } catch {
+    return NextResponse.json({ error: "CardNexus ne répond pas." }, { status: 502 });
   }
 
   listesConnues.set(cleCache, id);

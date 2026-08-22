@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import type { Prisma } from "@prisma/client";
 import { buildOwnedByName, type OwnedByName } from "@/lib/collection";
 
 // Map cardId -> quantité TOTALE possédée (somme sur tous les classeurs de l'user),
@@ -42,6 +43,16 @@ export interface BinderSummary {
   copies: number; // nb total d'exemplaires
 }
 
+export async function withBinderLock<T>(
+  userId: string,
+  action: (tx: Prisma.TransactionClient) => Promise<T>,
+): Promise<T> {
+  return prisma.$transaction(async (tx) => {
+    await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${userId}))`;
+    return action(tx);
+  });
+}
+
 // Classeurs d'un user avec compteurs (cartes distinctes + exemplaires).
 export async function getBinders(userId: string): Promise<BinderSummary[]> {
   const binders = await prisma.binder.findMany({
@@ -66,13 +77,15 @@ export async function getBinders(userId: string): Promise<BinderSummary[]> {
 
 // Retourne le classeur par défaut de l'user (le premier), en le créant si besoin.
 export async function getOrCreateDefaultBinder(userId: string) {
-  const existing = await prisma.binder.findFirst({
-    where: { userId },
-    orderBy: [{ position: "asc" }, { createdAt: "asc" }],
-  });
-  if (existing) return existing;
-  return prisma.binder.create({
-    data: { userId, name: "Ma collection", description: "Classeur par défaut", position: 0 },
+  return withBinderLock(userId, async (tx) => {
+    const existing = await tx.binder.findFirst({
+      where: { userId },
+      orderBy: [{ position: "asc" }, { createdAt: "asc" }],
+    });
+    if (existing) return existing;
+    return tx.binder.create({
+      data: { userId, name: "Ma collection", description: "Classeur par défaut", position: 0 },
+    });
   });
 }
 

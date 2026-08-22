@@ -59,17 +59,13 @@ export async function POST(req: Request) {
   if (lignes.length > LIMITE_IMPORT_LIGNES) {
     return NextResponse.json({ error: "too_many_lines" }, { status: 413 });
   }
-  const rows = parsePiltoverCsv(text);
-
-  // classeur cible via ?binderId= (sinon classeur par défaut)
-  let binderId = new URL(req.url).searchParams.get("binderId");
-  if (binderId) {
-    const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
-    if (!binder) return NextResponse.json({ error: "binder_not_found" }, { status: 404 });
-  } else {
-    binderId = (await getOrCreateDefaultBinder(user.id)).id;
+  let rows: PiltoverRow[];
+  try {
+    rows = parsePiltoverCsv(text);
+  } catch {
+    return NextResponse.json({ error: "invalid_quantity" }, { status: 400 });
   }
-  const bId = binderId;
+
   const unmatched: { variantNumber: string; name: string; raison: string }[] = [];
   const resolved: { cardId: string; quantity: number }[] = [];
 
@@ -90,7 +86,27 @@ export async function POST(req: Request) {
   }
 
   // Somme les lignes multiples pointant vers la même impression (binders).
-  const aggregated = aggregateByCard(resolved);
+  let aggregated: { cardId: string; quantity: number }[];
+  try {
+    aggregated = aggregateByCard(resolved);
+  } catch {
+    return NextResponse.json({ error: "invalid_quantity" }, { status: 400 });
+  }
+
+  if (unmatched.length > 0) {
+    return NextResponse.json({ error: "cards_not_found", imported: 0, rows: rows.length, unmatched }, { status: 400 });
+  }
+
+  // On ne choisit le classeur qu'après validation de tout le fichier : un import
+  // refusé ne doit même pas créer le classeur par défaut.
+  let binderId = new URL(req.url).searchParams.get("binderId");
+  if (binderId) {
+    const binder = await prisma.binder.findFirst({ where: { id: binderId, userId: user.id }, select: { id: true } });
+    if (!binder) return NextResponse.json({ error: "binder_not_found" }, { status: 404 });
+  } else {
+    binderId = (await getOrCreateDefaultBinder(user.id)).id;
+  }
+  const bId = binderId;
 
   await prisma.$transaction(
     aggregated.map((i) =>

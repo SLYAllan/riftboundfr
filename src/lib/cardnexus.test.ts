@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat } from "./cardnexus";
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {
@@ -164,5 +164,34 @@ describe("chiffrerDeck", () => {
     expect(d.total).toBe(0);
     expect(d.exemplairesSansPrix).toBe(4);
     expect(d.releveLe).toBeNull();
+  });
+});
+
+describe("impressionsAchat", () => {
+  it("rend deux listes vides sans relevé", () => {
+    expect(impressionsAchat(null)).toEqual({ connues: [], conseillees: [] });
+  });
+
+  it("ne conseille que l'impression la moins chère d'une même carte", () => {
+    const choix = impressionsAchat({
+      fetchedAt: "2026-08-13T00:00:00.000Z",
+      cards: {
+        "unl-120-219": { eur: 15, productId: 20, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Standard" },
+        "ven-179-166": { eur: 90, productId: 21, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Foil" },
+      },
+    });
+
+    expect(choix).toEqual({ connues: ["unl-120-219", "ven-179-166"], conseillees: ["unl-120-219"] });
+  });
+
+  it("garde un conseil distinct pour chaque nom", () => {
+    const choix = impressionsAchat({
+      fetchedAt: "2026-08-13T00:00:00.000Z",
+      cards: {
+        a: { eur: 2, productId: 1, nom: "Carte A", source: "cardnexus", finition: "Standard" },
+        b: { eur: 3, productId: 2, nom: "Carte B", source: "cardnexus", finition: "Standard" },
+      },
+    });
+    expect(choix.conseillees).toEqual(["a", "b"]);
   });
 });

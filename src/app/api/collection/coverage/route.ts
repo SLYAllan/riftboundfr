@@ -20,9 +20,15 @@ export async function POST(req: Request) {
 
   const body = await req.json().catch(() => null);
   const items: InItem[] = Array.isArray(body?.items) ? body.items : [];
+  if (items.length > 200) {
+    return NextResponse.json({ error: "Trop de cartes dans le deck." }, { status: 413 });
+  }
   const valid = items.filter(
-    (i) => typeof i.cardId === "string" && Number.isInteger(i.quantity) && i.quantity > 0,
+    (i) => typeof i.cardId === "string" && i.cardId.length > 0 && i.cardId.length <= 100 && Number.isInteger(i.quantity) && i.quantity > 0 && i.quantity <= 100,
   );
+  if (valid.length !== items.length) {
+    return NextResponse.json({ error: "Données de deck invalides." }, { status: 400 });
+  }
   if (valid.length === 0) {
     return NextResponse.json({ loggedIn: true, coverage: { entries: [], totals: { required: 0, owned: 0, missing: 0, completionPct: 100 } } });
   }
@@ -41,21 +47,25 @@ export async function POST(req: Request) {
     byId.set(c.id, c);
     byId.set(c.riftboundId, c);
   }
+  const missingIds = [...new Set(valid.filter((i) => !byId.has(i.cardId)).map((i) => i.cardId))];
+  if (missingIds.length > 0) {
+    return NextResponse.json({ error: "Cartes introuvables.", missing: missingIds }, { status: 404 });
+  }
 
   const deckCards: DeckCardLike[] = valid.map((i) => {
-    const c = byId.get(i.cardId);
+    const c = byId.get(i.cardId)!;
     return {
       cardId: i.cardId,
-      name: c?.name ?? i.name ?? i.cardId,
+      name: c.name,
       section: i.section ?? "main",
-      cleanName: c?.cleanName ?? null,
+      cleanName: c.cleanName,
       quantity: i.quantity,
-      imageUrl: c?.imageUrl ?? null,
-      rarity: c?.rarity ?? null,
-      type: c?.type ?? null,
-      energy: c?.energy ?? null,
-      might: c?.might ?? null,
-      domains: c?.domains ?? [],
+      imageUrl: c.imageUrl,
+      rarity: c.rarity,
+      type: c.type,
+      energy: c.energy,
+      might: c.might,
+      domains: c.domains,
     };
   });
 

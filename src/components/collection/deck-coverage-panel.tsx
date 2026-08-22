@@ -37,8 +37,10 @@ interface Props {
 export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
   const t = useT();
   const { loggedIn, quantities } = useCollection();
-  const [coverage, setCoverage] = useState<DeckCoverage | null>(null);
+  const [resultat, setResultat] = useState<{ cle: string; valeur: DeckCoverage } | null>(null);
   const [loading, setLoading] = useState(false);
+  const [erreurCle, setErreurCle] = useState<string | null>(null);
+  const [tentative, setTentative] = useState(0);
   const [mode, setMode] = useState<"grid" | "list">("grid");
   const [open, setOpen] = useState(false);
 
@@ -48,6 +50,8 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
     [items],
   );
   const collKey = useMemo(() => Object.entries(quantities).map(([k, v]) => `${k}:${v}`).sort().join("|"), [quantities]);
+  const cleDonnees = `${loggedIn}:${itemsKey}:${collKey}`;
+  const cleRequete = `${cleDonnees}:${tentative}`;
 
   // La couverture est indexée par identifiant de carte, le relevé de prix par nom :
   // le nom est la seule clé que les deux partagent.
@@ -69,11 +73,15 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items }),
       })
-        .then((r) => (r.ok ? r.json() : null))
-        .then((data) => {
-          if (!cancelled && data?.coverage) setCoverage(data.coverage);
+        .then((r) => {
+          if (!r.ok) throw new Error();
+          return r.json();
         })
-        .catch(() => {})
+        .then((data) => {
+          if (!Array.isArray(data?.coverage?.entries) || typeof data?.coverage?.totals?.missing !== "number") throw new Error();
+          if (!cancelled) setResultat({ cle: cleDonnees, valeur: data.coverage });
+        })
+        .catch(() => !cancelled && setErreurCle(cleRequete))
         .finally(() => !cancelled && setLoading(false));
     }, 350);
     return () => {
@@ -81,8 +89,10 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
       clearTimeout(t);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loggedIn, itemsKey, collKey]);
+  }, [loggedIn, itemsKey, collKey, tentative, cleDonnees, cleRequete]);
 
+  const coverage = resultat?.cle === cleDonnees ? resultat.valeur : null;
+  const erreur = erreurCle === cleRequete;
   const missing = coverage?.totals.missing ?? null;
   const manquantes = coverage?.entries.filter((e) => e.missing > 0) ?? [];
 
@@ -149,6 +159,10 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
               <div className="flex items-center gap-3">
                 {loading && missing === null ? (
                   <span className="text-sm text-ink-muted">Calcul…</span>
+                ) : erreur ? (
+                  <span role="alert" className="text-sm text-red-400">
+                    Calcul impossible. <button className="underline" onClick={() => setTentative((n) => n + 1)}>Réessayer</button>
+                  </span>
                 ) : missing === 0 ? (
                   <span className="text-sm font-medium text-emerald-400">Deck complet ✓</span>
                 ) : missing != null ? (

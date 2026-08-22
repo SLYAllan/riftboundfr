@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parsePiltoverCsv, aggregateByCard } from "./piltover-import";
+import { parsePiltoverCsv, aggregateByCard, validerLotCollection } from "./piltover-import";
 
 const HEADER =
   "Variant Number,Card Name,Set,Set Prefix,Rarity,Variant Type,Variant Label,Foil,Quantity,Language,Condition,Grading Company,Grading Value,Grading Label,Notes";
@@ -42,6 +42,17 @@ describe("parsePiltoverCsv", () => {
     const rows = parsePiltoverCsv(`${HEADER}\n\n`);
     expect(rows).toHaveLength(0);
   });
+
+  it.each(["", "0", "-1", "2 cartes", "10000"])(
+    "refuse la quantité Piltover invalide %j",
+    (quantity) => {
+      expect(() =>
+        parsePiltoverCsv(
+          `${HEADER}\nOGN-025,Blind Fury,Origins,OGN,Rare,Standard,Standard,true,${quantity},English,Near Mint,,,,Allan`,
+        ),
+      ).toThrow("quantite invalide");
+    },
+  );
 });
 
 describe("aggregateByCard", () => {
@@ -54,5 +65,42 @@ describe("aggregateByCard", () => {
     expect(agg).toHaveLength(2);
     expect(agg.find((a) => a.cardId === "ash")!.quantity).toBe(3);
     expect(agg.find((a) => a.cardId === "gust")!.quantity).toBe(3);
+  });
+
+  it("refuse une somme qui dépasse la limite d'une carte", () => {
+    expect(() =>
+      aggregateByCard([
+        { cardId: "ash", quantity: 6000 },
+        { cardId: "ash", quantity: 4000 },
+      ]),
+    ).toThrow("quantite invalide");
+  });
+});
+
+describe("validerLotCollection", () => {
+  it("refuse tout le lot si une entrée est invalide", () => {
+    expect(
+      validerLotCollection([
+        { cardId: "carte-valide", quantity: 2 },
+        { cardId: "carte-invalide", quantity: -1 },
+      ]),
+    ).toBeNull();
+  });
+
+  it("refuse les cartes en double dans un lot", () => {
+    expect(
+      validerLotCollection([
+        { cardId: "meme-carte", quantity: 1 },
+        { cardId: "meme-carte", quantity: 2 },
+      ]),
+    ).toBeNull();
+  });
+
+  it("rend le lot valide sans le modifier", () => {
+    const items = [
+      { cardId: "carte-a", quantity: 0 },
+      { cardId: "carte-b", quantity: 9999 },
+    ];
+    expect(validerLotCollection(items)).toEqual(items);
   });
 });

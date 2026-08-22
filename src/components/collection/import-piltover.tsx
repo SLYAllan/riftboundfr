@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useT } from "@/components/i18n-provider";
 
 interface Report {
@@ -11,6 +12,7 @@ interface Report {
 
 export function ImportPiltover({ binderId }: { binderId?: string }) {
   const t = useT();
+  const router = useRouter();
   const [report, setReport] = useState<Report | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,14 +27,16 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
       const text = await file.text();
       const url = binderId ? `/api/collection/import?binderId=${binderId}` : "/api/collection/import";
       const res = await fetch(url, { method: "POST", body: text });
+      const data = await res.json().catch(() => null);
       if (!res.ok) {
+        if (Array.isArray(data?.unmatched)) setReport(data as Report);
         setError(res.status === 401 ? "Connecte-toi avec Discord d'abord." : "Échec de l'import.");
         return;
       }
-      const data: Report = await res.json();
-      setReport(data);
-      // Recharge pour rafraîchir les barres de complétion depuis le serveur.
-      setTimeout(() => location.reload(), 1200);
+      if (!Array.isArray(data?.unmatched) || typeof data?.imported !== "number" || typeof data?.rows !== "number") {
+        throw new Error("réponse invalide");
+      }
+      setReport(data as Report);
     } catch {
       setError("Fichier illisible.");
     } finally {
@@ -59,6 +63,9 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
           <p className="text-arcane">
             {report.imported} carte(s) importée(s) sur {report.rows} ligne(s).
           </p>
+          <button type="button" onClick={() => router.refresh()} className="mt-2 text-arcane underline">
+            {t("Actualiser la collection")}
+          </button>
           {report.unmatched.length > 0 && (
             <details className="mt-1">
               <summary className="cursor-pointer text-ink-muted">

@@ -727,3 +727,26 @@ fait par cette reprise d'audit. Après le dernier changement : ESLint ciblé san
 erreur et avec 3 avertissements `no-img-element` préexistants, TypeScript vert,
 22 fichiers et 140 tests verts, `npm run verify`
 vert avec 52 pages générées, et `git diff --check` vert.
+
+## Session du 22 août 2026 : audit de la collection
+
+L'audit de la collection a trouvé puis corrigé les points suivants :
+
+- la recherche et les filtres d'un classeur restent visibles sur mobile ;
+- le filtre « Manquantes » conseille l'impression CardNexus la moins chère ;
+- un import Piltover ou un lot invalide est refusé avant toute écriture ;
+- un verrou PostgreSQL empêche deux créations en même temps de dépasser la
+  limite de classeurs ou de créer deux classeurs par défaut ;
+- les actions sur les classeurs montrent leur échec et le rapport d'import reste
+  affiché jusqu'à l'actualisation demandée par le joueur ;
+- l'achat refuse un deck si une carte manque en base ou dans le catalogue
+  CardNexus, au lieu de créer un panier incomplet ;
+- les appels CardNexus ont une limite de dix secondes et leurs réponses sont
+  vérifiées ;
+- la couverture d'un deck refuse les lots hors bornes et affiche un bouton
+  « Réessayer » si son calcul échoue.
+
+Le cache des listes CardNexus peut encore créer deux listes lors de deux premiers
+clics simultanés sur le même deck. L'effet se limite à un doublon sur le compte
+CardNexus ; aucune carte ni commande n'est perdue. Garder ce point tant que le
+quota de listes ne pose pas de problème.

@@ -3,11 +3,7 @@ import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getOrCreateDefaultBinder } from "@/lib/collection-server";
 import { rateLimit, tooMany } from "@/lib/rate-limit";
-
-interface BulkItem {
-  cardId: string;
-  quantity: number;
-}
+import { validerLotCollection } from "@/lib/piltover-import";
 
 // POST /api/collection/bulk { binderId?, items: [{cardId, quantity}] }
 export async function POST(req: Request) {
@@ -16,19 +12,21 @@ export async function POST(req: Request) {
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const body = await req.json().catch(() => null);
-  const items: BulkItem[] = Array.isArray(body?.items) ? body.items : [];
+  const itemsBruts = body?.items;
   // Borne anti-DoS : bien au-dessus de la taille du catalogue (~1048 cartes).
-  if (items.length > 5000) return NextResponse.json({ error: "too_many_items" }, { status: 413 });
-  // Borne identique à la route simple : un entier entre 0 et 9999.
-  const wellFormed = items.filter(
-    (i) => typeof i.cardId === "string" && Number.isInteger(i.quantity) && i.quantity >= 0 && i.quantity <= 9999,
-  );
+  if (Array.isArray(itemsBruts) && itemsBruts.length > 5000) {
+    return NextResponse.json({ error: "too_many_items" }, { status: 413 });
+  }
+  const items = validerLotCollection(itemsBruts);
+  if (!items) return NextResponse.json({ error: "invalid" }, { status: 400 });
   // Valide l'existence des cartes (évite les FK orphelines / 500).
-  const ids = [...new Set(wellFormed.map((i) => i.cardId))];
+  const ids = items.map((i) => i.cardId);
   const existingIds = new Set(
     (await prisma.card.findMany({ where: { id: { in: ids } }, select: { id: true } })).map((c) => c.id),
   );
-  const valid = wellFormed.filter((i) => existingIds.has(i.cardId));
+  if (existingIds.size !== ids.length) {
+    return NextResponse.json({ error: "card_not_found" }, { status: 404 });
+  }
 
   let binderId = typeof body?.binderId === "string" ? body.binderId : null;
   if (binderId) {
@@ -40,7 +38,7 @@ export async function POST(req: Request) {
   const bId = binderId;
 
   await prisma.$transaction(
-    valid.map((i) =>
+    items.map((i) =>
       i.quantity === 0
         ? prisma.collectionItem.deleteMany({ where: { binderId: bId, cardId: i.cardId } })
         : prisma.collectionItem.upsert({
@@ -50,5 +48,5 @@ export async function POST(req: Request) {
           }),
     ),
   );
-  return NextResponse.json({ ok: true, count: valid.length, binderId: bId });
+  return NextResponse.json({ ok: true, count: items.length, binderId: bId });
 }

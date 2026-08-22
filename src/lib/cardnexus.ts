@@ -185,6 +185,17 @@ function parNomMoinsCher(prix: FichierPrix): Map<string, PrixCarte> {
   return index;
 }
 
+/** Les impressions connues et celle à conseiller pour chaque carte. */
+export function impressionsAchat(prix: FichierPrix | null = chargerPrix()): { connues: string[]; conseillees: string[] } {
+  if (!prix) return { connues: [], conseillees: [] };
+  const moinsCheres = new Set(parNomMoinsCher(prix).values());
+  const connues = Object.keys(prix.cards);
+  return {
+    connues,
+    conseillees: connues.filter((id) => moinsCheres.has(prix.cards[id])),
+  };
+}
+
 // Calculé une fois par relevé, comme les prix eux-mêmes.
 const indexParRelevé = new WeakMap<FichierPrix, Map<string, PrixCarte>>();
 

@@ -48,6 +48,7 @@ export function CollectionDashboard({
   const [copied, setCopied] = useState<string | null>(null);
   const [pendingDelete, setPendingDelete] = useState<DashBinder | null>(null);
   const [deleting, setDeleting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // quantités cardId -> qty selon le scope sélectionné
   const qtyByCard = useMemo(() => {
@@ -84,39 +85,70 @@ export function CollectionDashboard({
   const pct = stats.total ? (stats.distinct / stats.total) * 100 : 0;
 
   async function createBinder(name: string) {
-    const res = await fetch("/api/collection/binders", {
-      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
-    });
-    if (res.ok) {
+    setError(null);
+    try {
+      const res = await fetch("/api/collection/binders", {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
+      });
+      if (!res.ok) throw new Error();
       const { binder } = await res.json();
       setBinders((b) => [...b, { ...binder, distinct: 0, copies: 0 }]);
+      setCreating(false);
+      return true;
+    } catch {
+      setError("Impossible de créer le classeur.");
+      return false;
     }
-    setCreating(false);
   }
 
   async function renameBinder(b: DashBinder, name: string) {
-    if (name === b.name) return;
-    const res = await fetch(`/api/collection/binders/${b.id}`, {
-      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
-    });
-    if (res.ok) setBinders((arr) => arr.map((x) => (x.id === b.id ? { ...x, name } : x)));
+    if (name === b.name) return true;
+    setError(null);
+    try {
+      const res = await fetch(`/api/collection/binders/${b.id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }),
+      });
+      if (!res.ok) throw new Error();
+      setBinders((arr) => arr.map((x) => (x.id === b.id ? { ...x, name } : x)));
+      return true;
+    } catch {
+      setError("Impossible de renommer le classeur.");
+      return false;
+    }
   }
 
   async function toggleShare(b: DashBinder) {
-    const res = await fetch(`/api/collection/binders/${b.id}`, {
-      method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ isPublic: !b.isPublic }),
-    });
-    if (!res.ok) return;
-    const { binder } = await res.json();
-    setBinders((arr) => arr.map((x) => (x.id === b.id ? { ...x, isPublic: binder.isPublic, shareSlug: binder.shareSlug } : x)));
-    if (binder.isPublic && binder.shareSlug) {
-      await navigator.clipboard?.writeText(`${location.origin}/collection/partage/${binder.shareSlug}`).catch(() => {});
-      setCopied(b.id);
-      setTimeout(() => setCopied((c) => (c === b.id ? null : c)), 2500);
+    setError(null);
+    try {
+      const res = await fetch(`/api/collection/binders/${b.id}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ isPublic: !b.isPublic }),
+      });
+      if (!res.ok) throw new Error();
+      const { binder } = await res.json();
+      setBinders((arr) => arr.map((x) => (x.id === b.id ? { ...x, isPublic: binder.isPublic, shareSlug: binder.shareSlug } : x)));
+      if (binder.isPublic && binder.shareSlug) {
+        if (!navigator.clipboard) {
+          setError("Le classeur est public, mais le lien n'a pas pu être copié.");
+          return true;
+        }
+        try {
+          await navigator.clipboard.writeText(`${location.origin}/collection/partage/${binder.shareSlug}`);
+        } catch {
+          setError("Le classeur est public, mais le lien n'a pas pu être copié.");
+          return true;
+        }
+        setCopied(b.id);
+        setTimeout(() => setCopied((c) => (c === b.id ? null : c)), 2500);
+      }
+      return true;
+    } catch {
+      setError("Impossible de modifier le partage.");
+      return false;
     }
   }
 
   async function deleteBinder(b: DashBinder) {
+    setError(null);
     setDeleting(true);
     try {
       const res = await fetch(`/api/collection/binders/${b.id}`, { method: "DELETE" });
@@ -124,10 +156,14 @@ export function CollectionDashboard({
         setBinders((arr) => arr.filter((x) => x.id !== b.id));
         if (scope === b.id) setScope("all");
         router.refresh();
+        setPendingDelete(null);
+      } else {
+        setError("Impossible de supprimer le classeur.");
       }
+    } catch {
+      setError("Impossible de supprimer le classeur.");
     } finally {
       setDeleting(false);
-      setPendingDelete(null);
     }
   }
 
@@ -192,6 +228,7 @@ export function CollectionDashboard({
           <h2 className="shrink-0 font-display text-lg font-bold">{t("Tes classeurs")}</h2>
           <span className="text-xs text-ink-muted">{t("Ouvre un classeur pour parcourir et gérer tes cartes")}</span>
         </div>
+        {error && <p role="alert" className="mb-4 text-sm text-error-light">{error}</p>}
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {binders.map((b) => (
@@ -283,6 +320,7 @@ export function CollectionDashboard({
                 ? `« ${pendingDelete.name} » et les ${pendingDelete.distinct} cartes qu'il contient seront perdus. C'est définitif.`
                 : ""}
             </DialogDescription>
+            {error && <p role="alert" className="text-sm text-error-light">{error}</p>}
           </DialogHeader>
           <DialogFooter>
             <button
@@ -304,7 +342,7 @@ export function CollectionDashboard({
 /** Un classeur rendu comme une page physique : perforations + 9 pochettes. */
 function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
   binder: DashBinder; cards: PocketCard[]; copied: boolean;
-  onRename: (name: string) => void; onShare: () => void; onDelete: () => void;
+  onRename: (name: string) => Promise<boolean>; onShare: () => Promise<boolean>; onDelete: () => void;
 }) {
   const t = useT();
   const [menu, setMenu] = useState(false);
@@ -393,7 +431,11 @@ function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
           <NameForm
             defaultValue={b.name}
             label={t("Nom du classeur")}
-            onSubmit={(name) => { onRename(name); setEditing(false); }}
+            onSubmit={async (name) => {
+              const success = await onRename(name);
+              if (success) setEditing(false);
+              return success;
+            }}
             onCancel={() => setEditing(false)}
           />
         </div>
@@ -417,7 +459,7 @@ function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
           className="absolute right-2 top-12 z-20 w-52 overflow-hidden rounded-xl border border-hairline-strong bg-surface-raised py-1 shadow-2xl"
         >
           <MenuItem icon={<Pencil size={14} />} onClick={() => { setEditing(true); closeMenu(); }}>{t("Renommer")}</MenuItem>
-          <MenuItem icon={b.isPublic ? <Lock size={14} /> : <Share2 size={14} />} onClick={() => { onShare(); closeMenu(true); }}>
+          <MenuItem icon={b.isPublic ? <Lock size={14} /> : <Share2 size={14} />} onClick={async () => { if (await onShare()) closeMenu(true); }}>
             {b.isPublic ? t("Rendre privé") : t("Partager le lien")}
           </MenuItem>
           <MenuItem icon={<Trash2 size={14} />} danger onClick={() => { onDelete(); closeMenu(true); }}>{t("Supprimer le classeur")}</MenuItem>
@@ -428,7 +470,7 @@ function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
 }
 
 function MenuItem({ icon, children, onClick, danger }: {
-  icon: React.ReactNode; children: React.ReactNode; onClick: () => void; danger?: boolean;
+  icon: React.ReactNode; children: React.ReactNode; onClick: () => void | Promise<void>; danger?: boolean;
 }) {
   return (
     <button
@@ -443,17 +485,18 @@ function MenuItem({ icon, children, onClick, danger }: {
     ailleurs valide. Le drapeau `done` évite qu'Échap déclenche aussi le blur. */
 function NameForm({ defaultValue = "", label, onSubmit, onCancel, className }: {
   defaultValue?: string; label: string;
-  onSubmit: (name: string) => void; onCancel: () => void; className?: string;
+  onSubmit: (name: string) => Promise<boolean>; onCancel: () => void; className?: string;
 }) {
   const ref = useRef<HTMLInputElement>(null);
   const done = useRef(false);
   useEffect(() => { ref.current?.select(); }, []);
 
-  function commit(value: string) {
+  async function commit(value: string) {
     if (done.current) return;
     done.current = true;
     const name = value.trim();
-    if (name) onSubmit(name); else onCancel();
+    if (name && !(await onSubmit(name))) done.current = false;
+    else if (!name) onCancel();
   }
 
   return (
