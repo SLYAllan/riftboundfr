@@ -750,3 +750,11 @@ Le cache des listes CardNexus peut encore créer deux listes lors de deux premie
 clics simultanés sur le même deck. L'effet se limite à un doublon sur le compte
 CardNexus ; aucune carte ni commande n'est perdue. Garder ce point tant que le
 quota de listes ne pose pas de problème.
+
+Correctif ajouté après contrôle du deck Zhao Jia 231937 : CardNexus suffixe les
+noms des impressions cosmétiques. Le choix du prix passe par la liste blanche
+partagée de `card-printing.ts` (`Alt`, `Alt Art`, `Alternate Art`, `Metal`,
+`Overnumbered`, `Signature`, `Starter`, `Ultimate`). Kayle conseille
+donc l'impression normale à 0,18 € au lieu de celle à 150 €. Les suffixes de
+jeu, comme `Recruit (DE)`, restent distincts.
+Test : `npx vitest run src/lib/cardnexus.test.ts` (23 tests verts).

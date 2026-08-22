@@ -76,6 +76,8 @@ describe("chiffrerDeck", () => {
       // du set. Même carte à la table, 90 EUR d'écart au marché.
       "unl-120-219": { eur: 15, productId: 20, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Foil" },
       "ven-179-166": { eur: 90, productId: 21, nom: "Rengar - Trophy Hunter", source: "cardnexus", finition: "Foil" },
+      "ven-134-166": { eur: 0.18, productId: 22, nom: "Kayle - Justified", source: "cardnexus", finition: "Foil" },
+      "ven-185-166": { eur: 150, productId: 23, nom: "Kayle - Justified (Overnumbered)", source: "cardmarket", finition: "Foil" },
     },
   };
 
@@ -159,6 +161,12 @@ describe("chiffrerDeck", () => {
     ]);
   });
 
+  it("ramène une overnumbered au nom de sa carte avant de choisir le prix", () => {
+    const d = chiffrerDeck([{ riftboundId: "ven-185-166", name: "Kayle, Justified", quantity: 3 }], prix);
+    expect(d.total).toBeCloseTo(0.54);
+    expect(d.lignes[0].lien).toContain("/22/");
+  });
+
   it("sans relevé, rend un total nul et tout en manquant plutôt que de planter", () => {
     const d = chiffrerDeck([{ riftboundId: "ogn-091-298", name: "Pit Crew", quantity: 4 }], null);
     expect(d.total).toBe(0);
@@ -193,5 +201,24 @@ describe("impressionsAchat", () => {
       },
     });
     expect(choix.conseillees).toEqual(["a", "b"]);
+  });
+
+  it("regroupe toutes les variantes cosmétiques du catalogue", () => {
+    const cartes = Object.fromEntries(
+      ["alt", "Alt Art", "Alternate Art", "Metal", "Overnumbered", "Signature", "Starter", "Ultimate"].map((variante, i) => [
+        `variante-${i}`,
+        { eur: i + 2, productId: i + 2, nom: `Carte A (${variante})`, source: "cardnexus", finition: "Foil" },
+      ]),
+    );
+    const choix = impressionsAchat({
+      fetchedAt: "2026-08-13T00:00:00.000Z",
+      cards: {
+        normale: { eur: 1, productId: 1, nom: "Carte A", source: "cardnexus", finition: "Standard" },
+        ...cartes,
+        recrue: { eur: 0.5, productId: 9, nom: "Recruit (DE)", source: "cardnexus", finition: "Standard" },
+      },
+    });
+
+    expect(choix.conseillees).toEqual(["normale", "recrue"]);
   });
 });

@@ -1,5 +1,6 @@
 import { readFileSync } from "fs";
 import { join } from "path";
+import { VARIANT_SUFFIX } from "./card-printing";
 
 // Passage unique vers CardNexus : prix des cartes et liens d'achat affiliés.
 //
@@ -172,15 +173,19 @@ interface Regroupee extends Carte {
  * carte à 1280 EUR. Relevé sur la base : 410 decks affichaient un prix trop haut,
  * de 225 EUR en moyenne pour un deck qui en vaut 114.
  *
- * Le nom du catalogue CardNexus réunit toutes les impressions d'une carte. Vérifié
- * sur le relevé entier : sur 155 noms portant plusieurs impressions, AUCUN ne mêle
- * deux cartes différentes — une Légende et son Champion gardent des noms distincts.
+ * CardNexus ajoute parfois le type d'impression au nom. On retire ces suffixes
+ * cosmétiques avant le choix : une Légende et son Champion restent distincts.
  */
+function nomSansVariante(nom: string): string {
+  return nom.replace(VARIANT_SUFFIX, "");
+}
+
 function parNomMoinsCher(prix: FichierPrix): Map<string, PrixCarte> {
   const index = new Map<string, PrixCarte>();
   for (const p of Object.values(prix.cards)) {
-    const deja = index.get(p.nom);
-    if (!deja || p.eur < deja.eur) index.set(p.nom, p);
+    const nom = nomSansVariante(p.nom);
+    const deja = index.get(nom);
+    if (!deja || p.eur < deja.eur) index.set(nom, p);
   }
   return index;
 }
@@ -206,7 +211,7 @@ function laMoinsChere(p: PrixCarte, prix: FichierPrix): PrixCarte {
     index = parNomMoinsCher(prix);
     indexParRelevé.set(prix, index);
   }
-  return index.get(p.nom) ?? p;
+  return index.get(nomSansVariante(p.nom)) ?? p;
 }
 
 /**

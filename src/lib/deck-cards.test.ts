@@ -43,6 +43,9 @@ describe("normalizeCardName", () => {
     expect(normalizeCardName("KaiSa Survivor")).toBe(attendu);
     expect(normalizeCardName("Kai'Sa,   Survivor")).toBe(attendu);
     expect(normalizeCardName("Kai'Sa, Survivor (Alternate Art)")).toBe(attendu);
+    for (const suffixe of ["Alt", "Alt Art", "Metal", "Overnumbered", "Signature", "Starter", "Ultimate"]) {
+      expect(normalizeCardName(`Kai'Sa, Survivor (${suffixe})`)).toBe(attendu);
+    }
   });
 });
 

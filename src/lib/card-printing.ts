@@ -12,7 +12,7 @@
 // en base : ce sont des drapeaux (alternateArt, overnumbered, signature). Collés
 // au nom, ils rendent la carte introuvable. À garder aligné avec VARIANT_SUFFIXES
 // de src/app/api/legends/route.ts.
-export const VARIANT_SUFFIX = /\s*\((Metal|Overnumbered|Signature|Alternate Art|Alt Art|Starter)\)\s*$/i;
+export const VARIANT_SUFFIX = /\s*\((Metal|Overnumbered|Signature|Alternate Art|Alt Art|Alt|Starter|Ultimate)\)\s*$/i;
 
 // Forme d'un riftboundId : « ogn-183-298 », « unl-060-219 ». Sert à distinguer un
 // identifiant d'un nom de carte. Le test « contient un espace » ne suffisait pas :
