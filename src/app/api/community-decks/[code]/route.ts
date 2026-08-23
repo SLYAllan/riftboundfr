@@ -110,3 +110,33 @@ export async function PATCH(
 
   return NextResponse.json(updated);
 }
+
+export async function DELETE(
+  _req: NextRequest,
+  { params }: { params: Promise<{ code: string }> }
+) {
+  const { code } = await params;
+  const user = await getUserFromSession();
+  if (!user) {
+    return NextResponse.json({ error: "Connexion requise" }, { status: 401 });
+  }
+
+  const deck = await prisma.communityDeck.findUnique({
+    where: { shareCode: code },
+    select: { id: true, userId: true },
+  });
+
+  if (!deck) {
+    return NextResponse.json({ error: "Deck introuvable" }, { status: 404 });
+  }
+
+  if (deck.userId !== user.id) {
+    return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
+  }
+
+  // Versions, j'aime et commentaires partent avec : les trois relations sont en
+  // onDelete: Cascade (schema.prisma:276, 286, 218). Rien à supprimer à la main.
+  await prisma.communityDeck.delete({ where: { id: deck.id } });
+
+  return NextResponse.json({ ok: true });
+}

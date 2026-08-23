@@ -10,17 +10,50 @@
  */
 export const EN: Record<string, string> = {
   // — Navigation et pied de page —
+  "Action impossible. Réessaie.": "Could not do that. Try again.",
+  "Action impossible. Vérifie ta connexion.": "Could not do that. Check your connection.",
   "Aller au contenu": "Skip to content",
+  "Aucun deck pour ce filtre.": "No deck matches this filter.",
+  "classeur": "binder",
+  "classeurs": "binders",
+  "Compte": "Account",
+  "Confirmer la suppression": "Confirm deletion",
+  "deck créé": "deck created",
+  "Deck supprimé": "Deck deleted",
+  "decks créés": "decks created",
+  "Decks publics": "Public decks",
+  "Déconnexion…": "Signing out…",
+  "Enregistrement en cours": "Saving",
+  "Enregistrement impossible. Réessaie.": "Could not save. Try again.",
+  "Enregistrement impossible. Vérifie ta connexion.": "Could not save. Check your connection.",
+  "Enregistrement…": "Saving…",
+  "Enregistrer": "Save",
+  "exemplaires en collection": "copies in collection",
+  "Favoris": "Favourites",
+  "Mes decks": "My decks",
   Outils: "Tools",
   Cartes: "Cards",
   Légendes: "Legends",
+  "Privés": "Private",
+  "Profil enregistré": "Profile saved",
+  "Publics": "Public",
+  "Rendre public": "Make public",
+  "Scores, décor et lien compagnon": "Scores, background and companion link",
+  "Statistiques": "Stats",
+  "Supprimer": "Delete",
   Tournois: "Tournaments",
+  "Avec guide": "With guide",
+  "Bannie en construit": "Banned in constructed",
+  "Communautaires": "Community",
+  "Créer son deck": "Build a deck",
+  "j'aime": "likes",
   "Ma collection": "My collection",
   "Chercher une règle": "Search the rules",
   // — Fil d'Ariane (composant partagé, présent sur 17 pages) —
   Accueil: "Home",
   Actualités: "News",
   "Fil d'Ariane": "Breadcrumb",
+  "Membre depuis": "Member since",
   "Règles": "Rules",
   "Construire son deck": "Deckbuilding",
   "Guide débutant": "Beginner's guide",
@@ -31,6 +64,11 @@ export const EN: Record<string, string> = {
   "Règles de base, mise à jour du": "Core rules, updated",
   "16 juillet 2026": "16 July 2026",
   "Document original": "Official PDF",
+  "Toutes les listes": "All lists",
+  "Visibilité modifiée": "Visibility changed",
+  "Voir tous mes decks": "See all my decks",
+  "vues": "views",
+  "Vues totales": "Total views",
   "À propos": "About",
   "Ouvrir le menu": "Open menu",
   "Fermer le menu": "Close menu",
@@ -60,7 +98,7 @@ export const EN: Record<string, string> = {
   "Courbe d'énergie, ratios et synergies de domaines.":
     "Energy curve, ratios and domain synergies.",
   "Les 6 Domaines": "The 6 Domains",
-  "Fury, Calm, Mind, Body, Chaos, Order : forces et légendes.":
+  "Furie, Calme, Esprit, Corps, Chaos, Ordre : forces et légendes.":
     "Fury, Calm, Mind, Body, Chaos, Order: strengths and Legends.",
   Glossaire: "Glossary",
   "Tous les mots-clés et termes du jeu en français.":
@@ -313,7 +351,7 @@ export const EN: Record<string, string> = {
     "The full rules: deck construction, turn phases, resources, win conditions and keywords.",
   "Construisez un deck compétitif : courbe d'énergie, ratio de cartes, synergies de domaines, mulligan.":
     "Build a competitive deck: energy curve, card ratios, domain synergies, mulligan.",
-  "Fury, Calm, Mind, Body, Chaos, Order : philosophies, forces et légendes associées à chaque domaine.":
+  "Furie, Calme, Esprit, Corps, Chaos, Ordre : philosophies, forces et légendes associées à chaque domaine.":
     "Fury, Calm, Mind, Body, Chaos, Order: the thinking, the strengths and the Legends tied to each domain.",
   "Méta & Tier List": "Meta & tier list",
   "Résultats de tournois, tendances et lecture du méta.": "Tournament results, trends and meta analysis.",
@@ -449,7 +487,7 @@ export const EN: Record<string, string> = {
   Guide: "Guide",
   Tournoi: "Tournament",
   Méta: "Meta",
-  "Patch Notes": "Patch notes",
+  "Notes de patch": "Patch notes",
 
   // — Passe automatique : textes des guides, du deckbuilder, de la collection —
   "← Retour aux decks communautaires": "← Back to community decks",
