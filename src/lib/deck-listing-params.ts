@@ -1,5 +1,7 @@
+import type { Prisma } from "@prisma/client";
+
 export interface FiltresDecks {
-  cat?: "bestof" | "guide";
+  cat?: "bestof" | "guide" | "all";
   legend?: string;
   set?: string;
   tournament?: string;
@@ -42,7 +44,7 @@ export interface LotDecks {
 export function lireFiltresDecks(params: Record<string, string | undefined>): FiltresDecks {
   const offset = Number.parseInt(params.offset ?? "0", 10);
   return {
-    cat: params.cat === "bestof" || params.cat === "guide" ? params.cat : undefined,
+    cat: params.cat === "bestof" || params.cat === "guide" || params.cat === "all" ? params.cat : undefined,
     legend: params.legend || undefined,
     set: params.set || undefined,
     tournament: params.tournament || undefined,
@@ -64,4 +66,29 @@ export function parametresDecks(filtres: FiltresDecks): URLSearchParams {
   if (filtres.owned) params.set("owned", "1");
   if (filtres.offset) params.set("offset", String(filtres.offset));
   return params;
+}
+
+export function construireWhere(filtres: FiltresDecks): Prisma.DeckWhereInput {
+  const where: Prisma.DeckWhereInput = { published: true };
+  if (filtres.cat === "guide") where.guide = { not: null };
+  // "all" est le seul onglet qui ne filtre pas sur `featured`. Ailleurs, un deck de
+  // tournoi non marqué best-of ne sortait nulle part sur /decks : ni dans "Tous"
+  // (le OR ci-dessous l'exclut), ni dans "Best of" ni via le filtre tournoi (les
+  // deux forcent featured). Il ne restait accessible que par /tournois et /legendes.
+  else if (filtres.cat !== "all") {
+    if (filtres.cat === "bestof" || filtres.tournament) where.featured = true;
+    else where.OR = [{ tournamentContext: null }, { featured: true }];
+  }
+  // Hors du bloc ci-dessus : sinon `?cat=guide&tournament=X` perdait le tournoi.
+  if (filtres.tournament) where.tournamentContext = filtres.tournament;
+  if (filtres.legend) where.legendName = { contains: filtres.legend, mode: "insensitive" };
+  if (filtres.set) where.setTag = filtres.set;
+  if (filtres.q) {
+    const like = { contains: filtres.q, mode: "insensitive" as const };
+    where.AND = [{ OR: [
+      { title: like }, { legendName: like }, { playerName: like },
+      { tournamentContext: like }, { cards: { some: { card: { name: like } } } },
+    ] }];
+  }
+  return where;
 }

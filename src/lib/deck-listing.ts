@@ -3,33 +3,14 @@ import { computeDeckCoverage, type DeckCardLike } from "./collection";
 import { getOwnedByName } from "./collection-server";
 import { prisma } from "./prisma";
 import { getUserFromSession } from "./session";
+import { construireWhere } from "./deck-listing-params";
 import type { DeckListe, FiltresDecks, LotDecks } from "./deck-listing-params";
 
-export { lireFiltresDecks, parametresDecks } from "./deck-listing-params";
+export { construireWhere, lireFiltresDecks, parametresDecks } from "./deck-listing-params";
 
 // 51 decks remplit exactement 17 rangées sur la grille desktop à trois colonnes.
 export const TAILLE_LOT_DECKS = 51;
 
-function construireWhere(filtres: FiltresDecks): Prisma.DeckWhereInput {
-  const where: Prisma.DeckWhereInput = { published: true };
-  if (filtres.cat === "guide") where.guide = { not: null };
-  else if (filtres.cat === "bestof" || filtres.tournament) {
-    where.featured = true;
-    if (filtres.tournament) where.tournamentContext = filtres.tournament;
-  } else {
-    where.OR = [{ tournamentContext: null }, { featured: true }];
-  }
-  if (filtres.legend) where.legendName = { contains: filtres.legend, mode: "insensitive" };
-  if (filtres.set) where.setTag = filtres.set;
-  if (filtres.q) {
-    const like = { contains: filtres.q, mode: "insensitive" as const };
-    where.AND = [{ OR: [
-      { title: like }, { legendName: like }, { playerName: like },
-      { tournamentContext: like }, { cards: { some: { card: { name: like } } } },
-    ] }];
-  }
-  return where;
-}
 
 const deckSelect = {
   id: true, slug: true, title: true, legendName: true, legendId: true,

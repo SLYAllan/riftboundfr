@@ -18,7 +18,7 @@ import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
-import { lireFiltresDecks, listerDecks } from "@/lib/deck-listing";
+import { construireWhere, lireFiltresDecks, listerDecks } from "@/lib/deck-listing";
 import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
@@ -51,6 +51,7 @@ const CATEGORIES = [
   { key: "deckbuilder", label: "Créer son deck", href: "/deckbuilder", icon: Hammer, color: "violet" as const, isLink: true },
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, color: "arcane" as const, isLink: false },
   { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, color: "gold" as const, isLink: false },
+  { key: "all", label: "Toutes les listes", href: "/decks?cat=all", icon: Trophy, color: "violet" as const, isLink: false },
   { key: "guide", label: "Avec guide", href: "/decks?cat=guide", icon: BookOpen, color: "violet" as const, isLink: false },
 ] as const;
 
@@ -200,7 +201,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const colors = COLOR_CLASSES[c.color];
             return (
               <Link key={c.key} href={c.href} className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", isActive ? colors.active : colors.base)}>
-                <Icon size={15} /> {c.label}
+                <Icon size={15} /> {t(c.label)}
               </Link>
             );
           })}
@@ -343,7 +344,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const [lotInitial, legends, sessionUser] = await Promise.all([
     listerDecks(filtres),
     prisma.deck.findMany({
-      where: { published: true },
+      // Même filtre que la liste, sinon le menu propose des Légendes qui n'ont
+      // que des decks écartés par l'onglet en cours et renvoient "Aucun deck".
+      // `legend: undefined` : sans ça le menu se réduirait au choix déjà fait.
+      where: construireWhere({ ...filtres, legend: undefined }),
       select: { legendName: true },
       distinct: ["legendName"],
       orderBy: { legendName: "asc" },
@@ -421,7 +425,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                 isActive ? colors.active : colors.base,
               )}
             >
-              <Icon size={15} /> {c.label}
+              <Icon size={15} /> {t(c.label)}
             </Link>
           );
         })}
@@ -519,7 +523,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <div className="mt-4 text-sm text-ink-muted">
         {lotInitial.total} deck{lotInitial.total !== 1 ? "s" : ""}
         {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
-        {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat}</span>}
+        {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat === "all" ? "Toutes les listes" : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>
