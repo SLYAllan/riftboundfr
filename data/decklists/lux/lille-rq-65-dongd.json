@@ -122,22 +122,16 @@
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Mind Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
   "battlefields": [
     "Aspirant's Climb",
     "Sigil of the Storm",
     "Vilemaw's Lair"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Blood Money",
       "quantity": 2,

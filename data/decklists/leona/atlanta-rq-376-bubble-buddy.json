@@ -17,25 +17,11 @@
   ],
   "mainDeck": [
     {
-      "name": "Honest Broker",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
       "name": "Lonely Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "calm"
-    },
-    {
-      "name": "Unsung Hero",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "uncommon",
-      "domain": "order"
+      "rarity": "common",
+      "domain": "calm"
     },
     {
       "name": "Fiora, Victorious",
@@ -45,53 +31,67 @@
       "domain": "order"
     },
     {
-      "name": "Leona, Determined",
-      "quantity": 2,
+      "name": "Stellacorn Herder",
+      "quantity": 3,
       "type": "Unit",
-      "rarity": "rare",
-      "domain": "order"
-    },
-    {
-      "name": "Sona, Harmonious",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
-      "name": "Blitzcrank, Impassive",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
+      "rarity": "uncommon",
       "domain": "calm"
     },
     {
       "name": "Irelia, Fervent",
       "quantity": 2,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "epic",
       "domain": "calm"
     },
     {
-      "name": "B.F. Sword",
-      "quantity": 3,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "order"
+      "name": "Leona, Zealot",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
     },
     {
-      "name": "Defy",
+      "name": "Guardian Angel",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Mask of Foresight",
       "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Charm",
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
-      "name": "Deathgrip",
-      "quantity": 2,
+      "name": "Defy",
+      "quantity": 3,
       "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "En Garde",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
     },
     {
       "name": "Discipline",
@@ -101,38 +101,24 @@
       "domain": "calm"
     },
     {
-      "name": "Emperor's Divide",
-      "quantity": 2,
+      "name": "Not So Fast",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "calm"
     },
     {
-      "name": "Facebreaker",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Hidden Blade",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Rune Prison",
-      "quantity": 1,
+      "name": "Thwonk!",
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
-      "name": "Salvage",
+      "name": "Call to Glory",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "order"
     },
     {
@@ -140,59 +126,24 @@
       "quantity": 3,
       "type": "Spell",
       "rarity": "epic",
-      "domain": "calm"
+      "domain": "calm/order"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 7,
+    "Order": 5
+  },
   "battlefields": [
-    "Grove of the God-Willow",
-    "Monastery of Hirana",
-    "Sunken Temple"
+    "Aspirant's Climb",
+    "Rockfall Path",
+    "Sigil of the Storm"
   ],
-  "sideboard": [
-    {
-      "name": "Cull the Weak",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Call to Glory",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Janna, Savior",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
-      "name": "Last Stand",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "calm"
-    }
-  ],
+  "sideDeck": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 18,
+    "unitCount": 13,
     "spellCount": 18,
-    "gearCount": 3,
+    "gearCount": 8,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-leona-radiant-dawn-122541"

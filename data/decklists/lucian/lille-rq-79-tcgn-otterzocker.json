@@ -136,22 +136,16 @@
       "domain": "fury/body"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 7
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 5
-    }
-  ],
+  "runes": {
+    "Body": 7,
+    "Fury": 5
+  },
   "battlefields": [
     "Forge of the Fluft",
     "Sunken Temple",
     "The Candlelit Sanctum"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Sabotage",
       "quantity": 2,

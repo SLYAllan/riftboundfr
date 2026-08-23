@@ -3,7 +3,7 @@
   "legend": "Draven, Glorious Executioner",
   "legendId": null,
   "champion": "Draven, Showboat",
-  "player": "Stony",
+  "player": "stony",
   "tournament": "Lille Regional Qualifier",
   "date": "2026-04-18",
   "placement": 62,
@@ -129,22 +129,16 @@
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
   "battlefields": [
     "Targon's Peak",
     "Treasure Hoard",
     "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Hard Bargain",
       "quantity": 2,

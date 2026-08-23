@@ -143,22 +143,16 @@
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Mind Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Mind": 6
+  },
   "battlefields": [
     "Aspirant's Climb",
     "Grove of the God-Willow",
     "Marai Spire"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Bellows Breath",
       "quantity": 2,

@@ -2,7 +2,7 @@
   "id": "deck-viktor-herald-of-the-arcane-122798",
   "legend": "Viktor, Herald of the Arcane",
   "legendId": null,
-  "champion": "Viktor, Innovator",
+  "champion": "Viktor, Leader",
   "player": "RyаnEffinMiles",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
@@ -17,8 +17,64 @@
   ],
   "mainDeck": [
     {
-      "name": "Vanguard Armory",
+      "name": "Honest Broker",
       "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Watchful Sentry",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Card Sharp",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Lecturing Yordle",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Orb of Regret",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "B.F. Sword",
+      "quantity": 1,
       "type": "Gear",
       "rarity": "uncommon",
       "domain": "order"
@@ -31,24 +87,17 @@
       "domain": "mind"
     },
     {
-      "name": "Blood Money",
+      "name": "Stupefy",
       "quantity": 3,
       "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
+      "rarity": "common",
+      "domain": "mind"
     },
     {
       "name": "Cull the Weak",
       "quantity": 3,
       "type": "Spell",
       "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Facebreaker",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
       "domain": "order"
     },
     {
@@ -59,45 +108,17 @@
       "domain": "order"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Wages of Pain",
-      "quantity": 3,
+      "name": "Consult the Past",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
       "domain": "mind"
     },
     {
       "name": "Rocket Barrage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
-      "domain": "mind"
-    },
-    {
-      "name": "Vengeance",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Drag Under",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Falling Comet",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
       "domain": "mind"
     },
     {
@@ -108,41 +129,64 @@
       "domain": "order"
     },
     {
-      "name": "Blast of Power",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "order"
-    },
-    {
       "name": "Singularity",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Mind Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Mind": 5,
+    "Order": 7
+  },
   "battlefields": [
-    "Ravenbloom Conservatory",
-    "Targon's Peak",
+    "The Arena's Greatest",
+    "The Papertree",
     "Trifarian War Camp"
   ],
-  "sideboard": [],
+  "sideDeck": [
+    {
+      "name": "Facebreaker",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Salvage",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Vengeance",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "order"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    }
+  ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 0,
-    "spellCount": 36,
-    "gearCount": 3,
+    "unitCount": 18,
+    "spellCount": 19,
+    "gearCount": 2,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-viktor-herald-of-the-arcane-122798"

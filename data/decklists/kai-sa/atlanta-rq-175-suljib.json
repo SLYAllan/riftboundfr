@@ -17,17 +17,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Gem Jammer",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
-      "name": "Ravenbloom Student",
+      "name": "Plundering Poro",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "mind"
     },
     {
@@ -38,15 +31,22 @@
       "domain": "mind"
     },
     {
+      "name": "Lecturing Yordle",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
       "name": "Noxus Hopeful",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "common",
       "domain": "fury"
     },
     {
       "name": "Darius, Trifarian",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "rarity": "showcase",
       "domain": "fury"
@@ -66,29 +66,8 @@
       "domain": "mind"
     },
     {
-      "name": "Dr. Mundo, Expert",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "mind"
-    },
-    {
-      "name": "Bellows Breath",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "rare",
-      "domain": "mind"
-    },
-    {
-      "name": "Cleave",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
       "name": "Hextech Ray",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "fury"
@@ -115,111 +94,91 @@
       "domain": "fury"
     },
     {
-      "name": "Premonition",
+      "name": "Get Excited!",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Piercing Light",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "epic",
-      "domain": "mind"
+      "rarity": "rare",
+      "domain": "fury"
     },
     {
       "name": "Smoke Screen",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "mind"
     },
     {
-      "name": "Void Seeker",
+      "name": "Progress Day",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
       "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
+  "runes": {
+    "Fury": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "Ravenbloom Conservatory",
+    "Vilemaw's Lair",
+    "Void Gate"
+  ],
+  "sideDeck": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Piercing Light",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
       "domain": "fury"
     },
     {
       "name": "Rocket Barrage",
       "quantity": 1,
-      "type": "Spell",
+      "type": "Unknown",
       "rarity": "uncommon",
       "domain": "mind"
     },
     {
       "name": "Thermo Beam",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "fury"
-    },
-    {
-      "name": "Time Warp",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "mind"
-    }
-  ],
-  "runes": [
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Mind Rune",
-      "quantity": 6
-    }
-  ],
-  "battlefields": [
-    "Ravenbloom Conservatory",
-    "Void Gate",
-    "Zaun Warrens"
-  ],
-  "sideboard": [
-    {
-      "name": "Pouty Poro",
       "quantity": 2,
       "type": "Unknown",
-      "rarity": "showcase",
-      "domain": "fury"
-    },
-    {
-      "name": "Noxus Hopeful",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
-      "name": "Darius, Trifarian",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "showcase",
-      "domain": "fury"
-    },
-    {
-      "name": "Thermo Beam",
-      "quantity": 1,
-      "type": "Unknown",
       "rarity": "uncommon",
-      "domain": "fury"
-    },
-    {
-      "name": "Icathian Rain",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
       "domain": "fury"
     },
     {
       "name": "Unchecked Power",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "epic",
-      "domain": "mind"
-    },
-    {
-      "name": "Dr. Mundo, Expert",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
       "domain": "mind"
     }
   ],

@@ -24,10 +24,10 @@
       "domain": "order"
     },
     {
-      "name": "Ravenbloom Student",
+      "name": "Plundering Poro",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "mind"
     },
     {
@@ -39,29 +39,50 @@
     },
     {
       "name": "Card Sharp",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Shen, Kinkou",
       "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
+      "domain": "order"
+    },
+    {
+      "name": "Ekko, Recurrent",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Ornn, Forge God",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
       "domain": "mind"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
       "domain": "mind"
     },
     {
-      "name": "Chemtech Cask",
-      "quantity": 2,
+      "name": "Cloth Armor",
+      "quantity": 1,
       "type": "Gear",
       "rarity": "common",
       "domain": "mind"
     },
     {
-      "name": "Bellows Breath",
+      "name": "World Atlas",
       "quantity": 2,
-      "type": "Spell",
+      "type": "Gear",
       "rarity": "rare",
       "domain": "mind"
     },
@@ -73,24 +94,10 @@
       "domain": "mind"
     },
     {
-      "name": "Blood Money",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
       "name": "Cull the Weak",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
-      "domain": "order"
-    },
-    {
-      "name": "Facebreaker",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
       "domain": "order"
     },
     {
@@ -102,7 +109,7 @@
     },
     {
       "name": "Salvage",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "order"
@@ -119,37 +126,38 @@
       "quantity": 3,
       "type": "Spell",
       "rarity": "epic",
+      "domain": "mind/order"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
       "domain": "mind"
     },
     {
       "name": "Time Warp",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Spell",
       "rarity": "epic",
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Mind Rune",
-      "quantity": 8
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 4
-    }
-  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
   "battlefields": [
-    "Bandle Tree",
-    "Power Nexus",
-    "The Papertree"
+    "The Papertree",
+    "Treasure Hoard",
+    "Vilemaw's Lair"
   ],
-  "sideboard": [],
+  "sideDeck": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 12,
-    "spellCount": 25,
-    "gearCount": 2,
+    "unitCount": 18,
+    "spellCount": 18,
+    "gearCount": 3,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-renata-glasc-chem-baroness-123345"

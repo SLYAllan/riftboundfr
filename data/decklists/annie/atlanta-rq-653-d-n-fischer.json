@@ -17,11 +17,18 @@
   ],
   "mainDeck": [
     {
-      "name": "Pouty Poro",
+      "name": "Overzealous Fan",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "showcase",
-      "domain": "fury"
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
     },
     {
       "name": "Traveling Merchant",
@@ -31,25 +38,18 @@
       "domain": "chaos"
     },
     {
-      "name": "Vi, Destructive",
+      "name": "Rek'Sai, Breacher",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Rengar, Pouncing",
       "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
       "domain": "fury"
-    },
-    {
-      "name": "Ezreal, Prodigy",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "epic",
-      "domain": "chaos"
-    },
-    {
-      "name": "Sneaky Deckhand",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
     },
     {
       "name": "Kai'Sa, Survivor",
@@ -59,10 +59,17 @@
       "domain": "fury"
     },
     {
-      "name": "Darius, Trifarian",
-      "quantity": 2,
+      "name": "Noxus Hopeful",
+      "quantity": 3,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
       "domain": "fury"
     },
     {
@@ -73,22 +80,8 @@
       "domain": "fury"
     },
     {
-      "name": "Scrapheap",
-      "quantity": 3,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
-      "name": "Blood Rush",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
       "name": "Cleave",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "fury"
@@ -98,13 +91,6 @@
       "quantity": 3,
       "type": "Spell",
       "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
-      "name": "Fight or Flight",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
       "domain": "chaos"
     },
     {
@@ -123,40 +109,34 @@
     },
     {
       "name": "Rebuke",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     },
     {
       "name": "Ride the Wind",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
   "battlefields": [
-    "The Dreaming Tree",
-    "Treasure Hoard",
+    "Seat of Power",
+    "The Arena's Greatest",
     "Zaun Warrens"
   ],
-  "sideboard": [],
+  "sideDeck": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 18,
-    "spellCount": 16,
-    "gearCount": 5,
+    "unitCount": 23,
+    "spellCount": 14,
+    "gearCount": 2,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-annie-dark-child-122320"

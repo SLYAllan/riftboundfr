@@ -150,22 +150,16 @@
       "domain": "fury"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
   "battlefields": [
     "Seat of Power",
     "The Arena's Greatest",
     "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Factory Recall",
       "quantity": 2,

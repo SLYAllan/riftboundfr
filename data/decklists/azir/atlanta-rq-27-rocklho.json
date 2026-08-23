@@ -129,22 +129,16 @@
       "domain": "calm/order"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Order": 6
+  },
   "battlefields": [
     "Hall of Legends",
     "Seat of Power",
     "Trifarian War Camp"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Charm",
       "quantity": 1,

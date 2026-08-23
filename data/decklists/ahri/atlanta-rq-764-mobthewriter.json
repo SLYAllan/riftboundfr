@@ -17,10 +17,10 @@
   ],
   "mainDeck": [
     {
-      "name": "Lonely Poro",
+      "name": "Clockwork Keeper",
       "quantity": 2,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "common",
       "domain": "calm"
     },
     {
@@ -31,77 +31,84 @@
       "domain": "mind"
     },
     {
-      "name": "Stalwart Poro",
+      "name": "Eager Apprentice",
       "quantity": 3,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "calm"
-    },
-    {
-      "name": "Lecturing Yordle",
-      "quantity": 2,
       "type": "Unit",
       "rarity": "common",
       "domain": "mind"
     },
     {
-      "name": "Tasty Faefolk",
+      "name": "Janna, Savior",
       "quantity": 2,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Sona, Harmonious",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "calm"
+    },
+    {
+      "name": "Blitzcrank, Impassive",
+      "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
       "domain": "calm"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
       "domain": "mind"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
-      "name": "Charm",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "calm"
-    },
-    {
       "name": "Defy",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
-      "name": "En Garde",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "calm"
-    },
-    {
-      "name": "Retreat",
+      "name": "Block",
       "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
-      "domain": "mind"
+      "domain": "calm"
     },
     {
-      "name": "Stupefy",
-      "quantity": 2,
+      "name": "Desert's Call",
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
-      "domain": "mind"
+      "domain": "calm"
     },
     {
       "name": "Discipline",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Feral Strength",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Meditation",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Not So Fast",
       "quantity": 3,
       "type": "Spell",
       "rarity": "uncommon",
@@ -115,48 +122,71 @@
       "domain": "calm"
     },
     {
-      "name": "Fox-Fire",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "calm"
-    },
-    {
-      "name": "Wages of Pain",
+      "name": "Find Your Center",
       "quantity": 2,
       "type": "Spell",
       "rarity": "common",
-      "domain": "mind"
+      "domain": "calm"
     },
     {
-      "name": "Wind Wall",
+      "name": "Singularity",
       "quantity": 1,
       "type": "Spell",
       "rarity": "uncommon",
-      "domain": "calm"
+      "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Mind Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Mind": 6
+  },
   "battlefields": [
     "Grove of the God-Willow",
-    "Ravenbloom Conservatory",
-    "The Dreaming Tree"
+    "Marai Spire",
+    "Ravenbloom Conservatory"
   ],
-  "sideboard": [],
+  "sideDeck": [
+    {
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Disarming Rake",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Wind Wall",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Ahri, Alluring",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "calm"
+    },
+    {
+      "name": "Time Warp",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "mind"
+    }
+  ],
   "totalCards": 56,
   "stats": {
     "unitCount": 15,
-    "spellCount": 22,
-    "gearCount": 2,
+    "spellCount": 24,
+    "gearCount": 0,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-ahri-nine-tailed-fox-123497"

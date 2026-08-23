@@ -122,22 +122,16 @@
       "domain": "calm"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
   "battlefields": [
     "Monastery of Hirana",
     "Sunken Temple",
     "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Sabotage",
       "quantity": 2,

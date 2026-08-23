@@ -17,20 +17,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Lonely Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "calm"
-    },
-    {
-      "name": "Overzealous Fan",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
       "name": "Tideturner",
       "quantity": 1,
       "type": "Unit",
@@ -38,18 +24,11 @@
       "domain": "chaos"
     },
     {
-      "name": "Disarming Rake",
+      "name": "Fizz, Trickster",
       "quantity": 1,
       "type": "Unit",
-      "rarity": "common",
-      "domain": "calm"
-    },
-    {
-      "name": "Aphelios, Exalted",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "calm"
+      "rarity": "rare",
+      "domain": "chaos"
     },
     {
       "name": "Stellacorn Herder",
@@ -59,25 +38,11 @@
       "domain": "calm"
     },
     {
-      "name": "Irelia, Fervent",
+      "name": "Draven, Audacious",
       "quantity": 2,
       "type": "Unit",
       "rarity": "showcase",
-      "domain": "calm"
-    },
-    {
-      "name": "Vex, Cheerless",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
       "domain": "chaos"
-    },
-    {
-      "name": "Whiteflame Protector",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "epic",
-      "domain": "calm"
     },
     {
       "name": "Guardian Angel",
@@ -87,22 +52,8 @@
       "domain": "calm"
     },
     {
-      "name": "Mask of Foresight",
-      "quantity": 1,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "calm"
-    },
-    {
-      "name": "The Syren",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
       "name": "Zhonya's Hourglass",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "rarity": "rare",
       "domain": "calm"
@@ -116,20 +67,34 @@
     },
     {
       "name": "Charm",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
-      "name": "Defy",
+      "name": "Defiant Dance",
       "quantity": 3,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "calm/chaos"
+    },
+    {
+      "name": "Defy",
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
       "name": "En Garde",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "calm"
+    },
+    {
+      "name": "Desert's Call",
       "quantity": 3,
       "type": "Spell",
       "rarity": "common",
@@ -143,18 +108,32 @@
       "domain": "calm"
     },
     {
-      "name": "Switcheroo",
-      "quantity": 1,
+      "name": "Flash",
+      "quantity": 2,
       "type": "Spell",
-      "rarity": "rare",
+      "rarity": "common",
       "domain": "chaos"
     },
     {
-      "name": "Thwonk!",
-      "quantity": 1,
+      "name": "Not So Fast",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "calm"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
-      "domain": "calm"
+      "domain": "chaos"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
     },
     {
       "name": "Find Your Center",
@@ -162,36 +141,23 @@
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
-    },
-    {
-      "name": "Mystic Reversal",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "calm"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 7
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 5
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
   "battlefields": [
     "Ravenbloom Conservatory",
-    "The Dreaming Tree",
-    "Windswept Hillock"
+    "Sunken Temple",
+    "Zaun Warrens"
   ],
-  "sideboard": [],
+  "sideDeck": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 16,
-    "spellCount": 15,
-    "gearCount": 8,
+    "unitCount": 7,
+    "spellCount": 26,
+    "gearCount": 6,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-irelia-blade-dancer-123042"

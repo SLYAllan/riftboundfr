@@ -17,13 +17,6 @@
   ],
   "mainDeck": [
     {
-      "name": "Beast Below",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
       "name": "Mindsplitter",
       "quantity": 3,
       "type": "Unit",
@@ -38,22 +31,29 @@
       "domain": "body"
     },
     {
-      "name": "Volibear, Imposing",
+      "name": "Pack of Wonders",
       "quantity": 2,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "body"
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
       "name": "Boots of Swiftness",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "rarity": "uncommon",
       "domain": "chaos"
     },
     {
       "name": "Last Rites",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Gear",
       "rarity": "epic",
       "domain": "chaos"
@@ -66,13 +66,6 @@
       "domain": "body"
     },
     {
-      "name": "Called Shot",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
       "name": "Gust",
       "quantity": 3,
       "type": "Spell",
@@ -80,10 +73,17 @@
       "domain": "chaos"
     },
     {
-      "name": "On the Hunt",
-      "quantity": 1,
+      "name": "Punch First",
+      "quantity": 2,
       "type": "Spell",
-      "rarity": "epic",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
       "domain": "body"
     },
     {
@@ -95,24 +95,10 @@
     },
     {
       "name": "Challenge",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "body"
-    },
-    {
-      "name": "Fight or Flight",
       "quantity": 3,
       "type": "Spell",
       "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "chaos"
+      "domain": "body"
     },
     {
       "name": "Mobilize",
@@ -122,6 +108,13 @@
       "domain": "body"
     },
     {
+      "name": "Ride the Wind",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
       "name": "Catalyst of Aeons",
       "quantity": 3,
       "type": "Spell",
@@ -129,27 +122,21 @@
       "domain": "body"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Body": 6,
+    "Chaos": 6
+  },
   "battlefields": [
     "Aspirant's Climb",
-    "Forgotten Monument",
-    "Sigil of the Storm"
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
   ],
-  "sideboard": [],
+  "sideDeck": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 11,
-    "spellCount": 23,
-    "gearCount": 5,
+    "unitCount": 6,
+    "spellCount": 21,
+    "gearCount": 12,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-sivir-battle-mistress-122529"

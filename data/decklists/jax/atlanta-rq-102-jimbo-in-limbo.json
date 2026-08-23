@@ -3,7 +3,7 @@
   "legend": "Jax, Grandmaster At Arms",
   "legendId": null,
   "champion": "Jax, Unmatched",
-  "player": "Jimbo in limbo",
+  "player": "jimbo in limbo",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
   "placement": 102,
@@ -136,22 +136,16 @@
       "domain": "calm"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Body": 6,
+    "Calm": 6
+  },
   "battlefields": [
     "Aspirant's Climb",
     "Sunken Temple",
     "Targon's Peak"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Punch First",
       "quantity": 1,

@@ -129,18 +129,12 @@
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 7
-    },
-    {
-      "name": "Mind Rune",
-      "quantity": 5
-    }
-  ],
+  "runes": {
+    "Chaos": 7,
+    "Mind": 5
+  },
   "battlefields": [],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Acceptable Losses",
       "quantity": 3,

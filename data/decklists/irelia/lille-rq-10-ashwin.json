@@ -136,22 +136,16 @@
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
   "battlefields": [
     "Aspirant's Climb",
     "Sunken Temple",
     "Targon's Peak"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Factory Recall",
       "quantity": 1,

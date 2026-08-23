@@ -24,11 +24,32 @@
       "domain": "chaos"
     },
     {
-      "name": "Volibear, Imposing",
+      "name": "Deadbloom Predator",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "epic",
       "domain": "body"
+    },
+    {
+      "name": "Pack of Wonders",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Treasure Trove",
+      "quantity": 3,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Boots of Swiftness",
+      "quantity": 1,
+      "type": "Gear",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
       "name": "Last Rites",
@@ -45,18 +66,11 @@
       "domain": "body"
     },
     {
-      "name": "Called Shot",
+      "name": "Gust",
       "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
-    },
-    {
-      "name": "On the Hunt",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
-      "domain": "body"
     },
     {
       "name": "Punch First",
@@ -67,7 +81,7 @@
     },
     {
       "name": "Sabotage",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "rare",
       "domain": "body"
@@ -87,20 +101,6 @@
       "domain": "body"
     },
     {
-      "name": "Fight or Flight",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
       "name": "Mobilize",
       "quantity": 3,
       "type": "Spell",
@@ -108,8 +108,8 @@
       "domain": "body"
     },
     {
-      "name": "Rebuke",
-      "quantity": 1,
+      "name": "Ride the Wind",
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
@@ -120,36 +120,73 @@
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "body"
+    }
+  ],
+  "runes": {
+    "Body": 6,
+    "Chaos": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "The Papertree"
+  ],
+  "sideDeck": [
+    {
+      "name": "Sabotage",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
     },
     {
-      "name": "Possession",
+      "name": "Pack of Wonders",
       "quantity": 1,
-      "type": "Spell",
-      "rarity": "epic",
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Fading Memories",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Anivia, Primal",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Soulgorger",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
-  "battlefields": [
-    "Aspirant's Climb",
-    "Obelisk of Power",
-    "The Papertree"
-  ],
-  "sideboard": [],
   "totalCards": 56,
   "stats": {
     "unitCount": 6,
-    "spellCount": 28,
-    "gearCount": 5,
+    "spellCount": 22,
+    "gearCount": 11,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-sivir-battle-mistress-122530"

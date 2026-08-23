@@ -2,7 +2,7 @@
   "id": "deck-yasuo-unforgiven-122533",
   "legend": "Yasuo, Unforgiven",
   "legendId": null,
-  "champion": "Yasuo, Remorseful",
+  "champion": "Yasuo, Windrider",
   "player": "mom sky",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
@@ -18,38 +18,31 @@
   "mainDeck": [
     {
       "name": "Lonely Poro",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "calm"
-    },
-    {
-      "name": "Overzealous Fan",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Treasure Hunter",
       "quantity": 3,
       "type": "Unit",
       "rarity": "common",
-      "domain": "chaos"
+      "domain": "calm"
     },
     {
-      "name": "Ezreal, Prodigy",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "epic",
-      "domain": "chaos"
-    },
-    {
-      "name": "Sona, Harmonious",
+      "name": "Teemo, Scout",
       "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
-      "domain": "calm"
+      "domain": "chaos"
+    },
+    {
+      "name": "Tideturner",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "chaos"
+    },
+    {
+      "name": "Traveling Merchant",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
       "name": "Stellacorn Herder",
@@ -60,38 +53,24 @@
     },
     {
       "name": "Irelia, Fervent",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "epic",
       "domain": "calm"
     },
     {
-      "name": "Vex, Cheerless",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "chaos"
-    },
-    {
-      "name": "Draven, Audacious",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "chaos"
-    },
-    {
-      "name": "Guardian Angel",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "rare",
-      "domain": "calm"
-    },
-    {
-      "name": "Boots of Swiftness",
-      "quantity": 1,
+      "name": "Mask of Foresight",
+      "quantity": 3,
       "type": "Gear",
       "rarity": "uncommon",
-      "domain": "chaos"
+      "domain": "calm"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "rare",
+      "domain": "calm"
     },
     {
       "name": "Heart of Dark Ice",
@@ -102,24 +81,31 @@
     },
     {
       "name": "Charm",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
       "name": "Defy",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
     },
     {
       "name": "En Garde",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "calm"
+    },
+    {
+      "name": "Stacked Deck",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
       "name": "Discipline",
@@ -129,64 +115,37 @@
       "domain": "calm"
     },
     {
-      "name": "Fight or Flight",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
       "name": "Hard Bargain",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "chaos"
-    },
-    {
-      "name": "Not So Fast",
       "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
-      "domain": "calm"
-    },
-    {
-      "name": "Rebuke",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
       "domain": "chaos"
     },
     {
       "name": "Ride the Wind",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
     },
     {
-      "name": "Downwell",
-      "quantity": 1,
+      "name": "Switcheroo",
+      "quantity": 2,
       "type": "Spell",
-      "rarity": "epic",
+      "rarity": "rare",
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
   "battlefields": [
-    "Back-Alley Bar",
-    "Reaver's Row",
+    "Seat of Power",
+    "Sunken Temple",
     "Targon's Peak"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Charm",
       "quantity": 1,
@@ -195,17 +154,10 @@
       "domain": "calm"
     },
     {
-      "name": "Defy",
-      "quantity": 1,
+      "name": "Rebuke",
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "common",
-      "domain": "calm"
-    },
-    {
-      "name": "Factory Recall",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "uncommon",
       "domain": "chaos"
     },
     {
@@ -216,32 +168,32 @@
       "domain": "calm"
     },
     {
-      "name": "Disarming Rake",
-      "quantity": 1,
+      "name": "Adaptatron",
+      "quantity": 2,
       "type": "Unknown",
-      "rarity": "common",
+      "rarity": "uncommon",
       "domain": "calm"
     },
     {
-      "name": "Kog'Maw, Caustic",
-      "quantity": 2,
+      "name": "Irelia, Fervent",
+      "quantity": 1,
       "type": "Unknown",
-      "rarity": "rare",
-      "domain": "chaos"
+      "rarity": "epic",
+      "domain": "calm"
     },
     {
-      "name": "Mindsplitter",
+      "name": "Yasuo, Remorseful",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
-      "domain": "chaos"
+      "domain": "calm"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 16,
+    "unitCount": 14,
     "spellCount": 18,
-    "gearCount": 5,
+    "gearCount": 7,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-yasuo-unforgiven-122533"

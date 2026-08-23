@@ -17,17 +17,17 @@
   ],
   "mainDeck": [
     {
+      "name": "Gem Jammer",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
       "name": "Plundering Poro",
       "quantity": 3,
       "type": "Unit",
-      "rarity": "showcase",
-      "domain": "mind"
-    },
-    {
-      "name": "Ravenbloom Student",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "uncommon",
+      "rarity": "common",
       "domain": "mind"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "name": "Lecturing Yordle",
-      "quantity": 1,
+      "quantity": 2,
       "type": "Unit",
       "rarity": "common",
       "domain": "mind"
@@ -59,11 +59,11 @@
       "domain": "fury"
     },
     {
-      "name": "Mega-Mech",
-      "quantity": 2,
+      "name": "Ferrous Forerunner",
+      "quantity": 3,
       "type": "Unit",
-      "rarity": "common",
-      "domain": "mind"
+      "rarity": "rare",
+      "domain": "fury"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -73,18 +73,11 @@
       "domain": "mind"
     },
     {
-      "name": "Blood Rush",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
-      "name": "Cleave",
+      "name": "Bellows Breath",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "common",
-      "domain": "fury"
+      "rarity": "rare",
+      "domain": "mind"
     },
     {
       "name": "Hextech Ray",
@@ -94,13 +87,6 @@
       "domain": "fury"
     },
     {
-      "name": "Retreat",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "mind"
-    },
-    {
       "name": "Stupefy",
       "quantity": 3,
       "type": "Spell",
@@ -108,15 +94,15 @@
       "domain": "mind"
     },
     {
-      "name": "Against the Odds",
-      "quantity": 2,
+      "name": "Falling Star",
+      "quantity": 3,
       "type": "Spell",
-      "rarity": "common",
+      "rarity": "rare",
       "domain": "fury"
     },
     {
-      "name": "Falling Star",
-      "quantity": 3,
+      "name": "Piercing Light",
+      "quantity": 2,
       "type": "Spell",
       "rarity": "rare",
       "domain": "fury"
@@ -129,11 +115,25 @@
       "domain": "mind"
     },
     {
-      "name": "Icathian Rain",
+      "name": "Rocket Barrage",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
+    },
+    {
+      "name": "Progress Day",
       "quantity": 1,
       "type": "Spell",
-      "rarity": "epic",
-      "domain": "fury"
+      "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "mind"
     },
     {
       "name": "Time Warp",
@@ -143,26 +143,56 @@
       "domain": "mind"
     }
   ],
-  "runes": [
+  "runes": {
+    "Fury": 7,
+    "Mind": 5
+  },
+  "battlefields": [
+    "The Candlelit Sanctum",
+    "Void Gate",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
     {
-      "name": "Fury Rune",
-      "quantity": 7
+      "name": "Bellows Breath",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "mind"
     },
     {
-      "name": "Mind Rune",
-      "quantity": 5
+      "name": "Get Excited!",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "fury"
+    },
+    {
+      "name": "Singularity",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "mind"
     }
   ],
-  "battlefields": [
-    "Grove of the God-Willow",
-    "The Dreaming Tree",
-    "Void Gate"
-  ],
-  "sideboard": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 17,
-    "spellCount": 22,
+    "unitCount": 19,
+    "spellCount": 20,
     "gearCount": 0,
     "averageCost": null
   },

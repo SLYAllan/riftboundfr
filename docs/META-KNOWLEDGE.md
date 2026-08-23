@@ -1,43 +1,43 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
-> Mis à jour le 17 août 2026 (v8). **Corpus Vendetta porté à 1671 decklists sur 15 tournois** (ajout des City Challenge de Shanghai, Shenyang, Qingdao et Tianjin du 16 août). Le field, les conversions, les résultats par tournoi et la tier list Vendetta en base sont recalculés sur ce corpus. Cores par Légende refaits sur les listes réelles dans DECKBUILDING-RULES.md (17 Légendes vues au moins trente fois, contre 8 auparavant).
+> Mis à jour le 21 août 2026 (v9). **Corpus Vendetta porté à 1673 decklists sur 15 tournois** après l'ajout de deux listes Ottawa. Les taux, les résultats par tournoi et les cores par Légende ont été recalculés sur les listes réelles.
 > Mis à jour le 25 juin 2026 (v7). **Analyse de 84 VOD compétitives** (RunesAndRift + RiftlabTCG : casts de rounds/finales, guides « How to Play », tier lists, deck profiles, mises à jour de règles), **reformulée en français** (matière privée, aucune citation — copyright). Apports : tier consensuel des casters, ~40 matchups détaillés, cores/tech des 22 Légendes, surveillance ban (avis casters) et mises à jour de règles/format. **Source de vérité fusionnée : `data/video-insights/unleashed-vod-synthesis-2026-06.md`.** Distillé dans la section « Juin 2026 (v7) — Analyse VOD » ci-dessous. Avis de tier éditoriaux (pas data-backed) ; aucune decklist créée à partir des VOD.
 > Mis à jour le 25 juin 2026 (v6). **Intégration des 4 sources éditoriales riftbound.gg** (par Den) : recaps **Utrecht** (Azir/Squirtle) et **Hartford** (Master Yi/Factor, dernier RQ Unleashed), + deux tier lists hebdo (**« Tianjin Shakes the Power Rankings »** post-Tianjin, **« One More Regional Until Vendetta »** post-Changsha/Utrecht). Ajouts : **dernière tier list éditoriale riftbound.gg (Tier 1-5 avec paires de domaines)** et **dataset des win rates globaux du set Unleashed** (recap Hartford, ~40 légendes). Voir la section « Juin 2026 — Tier lists riftbound.gg (Tianjin → Vendetta) ». Corrections de paires de domaines reportées dans DECKBUILDING-RULES.md (v6).
 > Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
 > Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
-## Vendetta (S4) — corpus compétitif vérifié au 17 août 2026
+## Vendetta (S4) — corpus compétitif vérifié au 21 août 2026
 
-> Analyse produite par `scripts/analyze-vendetta-meta.ts` sur **1671 decklists publiées, complètes et seedées**, réparties sur **15 contextes DB** (ajout des City Challenge de Shanghai, Shenyang, Qingdao et Tianjin du 16 août : 123, 122, 103 et 93 decklists complètes). Les sources partielles restantes sont conservées dans les rapports `*-rejected.json` et ne sont pas incluses. Cette section décrit les résultats observés ; elle ne constitue pas encore une tier list éditoriale.
+> Analyse produite par `scripts/analyze-vendetta-meta.ts` sur **1673 decklists publiées, complètes et seedées**, réparties sur **15 contextes DB**. Les sources partielles restantes sont conservées dans les rapports `*-rejected.json` et ne sont pas incluses. Cette section décrit les résultats observés ; elle ne constitue pas encore une tier list éditoriale.
 
 ### Méthode et limites
 
 Le corpus comprend uniquement les decks `published` avec `setTag = Vendetta` et un `tournamentContext` non nul. Les placements sont lus depuis le champ DB `placement` ; le Top 8 correspond à un placement numérique inférieur ou égal à 8, et une victoire à la première place. Les decks ont été retenus par le pipeline d'intégrité Vendetta : 39 cartes principales, 1 champion, 12 runes, 3 champs de bataille et exactement 10 cartes de réserve.
 
-Les statistiques ne mesurent ni les résultats de rondes, ni les matchups, ni les cartes jouées. Elles ne permettent donc pas encore de déduire des cores ou des règles de construction. Les petits échantillons sont très instables : une seule place en Top 8 peut donner un taux élevé à une légende jouée quatre ou cinq fois. Les tournois n'ont pas tous le même nombre de decklists publiées, et Ottawa ne compte que 38 listes complètes sur 525 pages publiées. Aucune tier list ne doit être attribuée automatiquement depuis ces chiffres.
+Les statistiques ne mesurent ni les résultats de rondes, ni les matchups, ni les cartes jouées. Elles ne permettent donc pas encore de déduire des cores ou des règles de construction. Les petits échantillons sont très instables : une seule place en Top 8 peut donner un taux élevé à une légende jouée quatre ou cinq fois. Les tournois n'ont pas tous le même nombre de decklists publiées, et Ottawa ne compte que 40 listes complètes sur 527 pages publiées. Aucune tier list ne doit être attribuée automatiquement depuis ces chiffres.
 
 ### Field complet
 
 | Légende | Decks | Field | Top 8 | Conversion | Victoires | Tournois |
 |---|---:|---:|---:|---:|---:|---:|
-| Master Yi, Wuju Bladesman | 192 | 11,49 % | 21 | 10,94 % | 3 | 15 |
-| Kai'Sa, Daughter of the Void | 189 | 11,31 % | 14 | 7,41 % | 2 | 14 |
-| Kennen, Heart of the Tempest | 162 | 9,69 % | 20 | 12,35 % | 1 | 15 |
-| Irelia, Blade Dancer | 134 | 8,02 % | 9 | 6,72 % | 0 | 15 |
-| Nasus, Curator of the Sands | 86 | 5,15 % | 4 | 4,65 % | 2 | 15 |
-| Diana, Scorn of the Moon | 84 | 5,03 % | 6 | 7,14 % | 3 | 14 |
-| Rek'sai, Void Burrower | 77 | 4,61 % | 8 | 10,39 % | 0 | 15 |
-| Akali, Rogue Assassin | 74 | 4,43 % | 0 | 0,00 % | 0 | 15 |
-| Jayce, Defender of Tomorrow | 72 | 4,31 % | 3 | 4,17 % | 0 | 15 |
+| Master Yi, Wuju Bladesman | 192 | 11,48 % | 21 | 10,94 % | 3 | 15 |
+| Kai'Sa, Daughter of the Void | 189 | 11,30 % | 14 | 7,41 % | 2 | 14 |
+| Kennen, Heart of the Tempest | 163 | 9,74 % | 20 | 12,27 % | 1 | 15 |
+| Irelia, Blade Dancer | 134 | 8,01 % | 9 | 6,72 % | 0 | 15 |
+| Nasus, Curator of the Sands | 86 | 5,14 % | 4 | 4,65 % | 2 | 15 |
+| Diana, Scorn of the Moon | 84 | 5,02 % | 6 | 7,14 % | 3 | 14 |
+| Rek'sai, Void Burrower | 77 | 4,60 % | 8 | 10,39 % | 0 | 15 |
+| Akali, Rogue Assassin | 74 | 4,42 % | 0 | 0,00 % | 0 | 15 |
+| Jayce, Defender of Tomorrow | 72 | 4,30 % | 3 | 4,17 % | 0 | 15 |
 | Fiora, Grand Duelist | 54 | 3,23 % | 5 | 9,26 % | 1 | 15 |
-| Draven, Glorious Executioner | 51 | 3,05 % | 5 | 9,80 % | 1 | 15 |
+| Draven, Glorious Executioner | 52 | 3,11 % | 5 | 9,62 % | 1 | 15 |
 | Viktor, Herald of the Arcane | 46 | 2,75 % | 2 | 4,35 % | 0 | 12 |
 | Azir, Emperor of the Sands | 37 | 2,21 % | 4 | 10,81 % | 1 | 15 |
 | Mel, Soul's Reflection | 37 | 2,21 % | 0 | 0,00 % | 0 | 14 |
 | Lillia, Bashful Bloom | 35 | 2,09 % | 3 | 8,57 % | 0 | 13 |
 | Ezreal, Prodigal Explorer | 34 | 2,03 % | 3 | 8,82 % | 0 | 14 |
 | LeBlanc, Deceiver | 34 | 2,03 % | 2 | 5,88 % | 0 | 14 |
-| Ornn, Fire Below the Mountain | 27 | 1,62 % | 3 | 11,11 % | 0 | 13 |
-| Pyke, Bloodharbor Ripper | 24 | 1,44 % | 0 | 0,00 % | 0 | 13 |
+| Ornn, Fire Below the Mountain | 27 | 1,61 % | 3 | 11,11 % | 0 | 13 |
+| Pyke, Bloodharbor Ripper | 24 | 1,43 % | 0 | 0,00 % | 0 | 13 |
 | Rengar, Pridestalker | 22 | 1,32 % | 1 | 4,55 % | 1 | 13 |
 | Vex, Gloomist | 22 | 1,32 % | 1 | 4,55 % | 0 | 9 |
 | Zed, Master of Shadows | 19 | 1,14 % | 0 | 0,00 % | 0 | 11 |
@@ -67,11 +67,11 @@ Les statistiques ne mesurent ni les résultats de rondes, ni les matchups, ni le
 | Miss Fortune, Bounty Hunter | 2 | 0,12 % | 0 | 0,00 % | 0 | 2 |
 | Poppy, Keeper of the Hammer | 1 | 0,06 % | 0 | 0,00 % | 0 | 1 |
 
-Total : **1671 decks, 119 places en Top 8 et 15 victoires réparties entre 9 légendes**. Les taux de field sont arrondis à deux décimales.
+Total : **1673 decks, 119 places en Top 8 et 15 victoires réparties entre 9 légendes**. Les taux de field sont arrondis à deux décimales.
 
 ### Top 8, conversion et victoires
 
-Le Top 8 est mené en volume par **Master Yi, Wuju Bladesman** (21 Top 8), devant Kennen (20), Kai'Sa (14), Irelia (9) et Rek'sai (8). Parmi les légendes vues au moins vingt fois, les meilleures conversions sont Kennen (12,35 %), Ornn (11,11 %), Master Yi Bladesman (10,94 %), Azir (10,81 %) et Rek'sai (10,39 %).
+Le Top 8 est mené en volume par **Master Yi, Wuju Bladesman** (21 Top 8), devant Kennen (20), Kai'Sa (14), Irelia (9) et Rek'sai (8). Parmi les légendes vues au moins vingt fois, les meilleures conversions sont Kennen (12,27 %), Ornn (11,11 %), Master Yi Bladesman (10,94 %), Azir (10,81 %) et Rek'sai (10,39 %).
 
 Trois écarts tiennent depuis le relevé du 14 août et se sont creusés avec 441 decks de plus :
 
@@ -99,9 +99,9 @@ Ces taux ne constituent pas un classement de puissance : ils ne contrôlent ni l
 | S4 Qingdao City Challenge (2026-08-16) | 103 | 7 | Diana, Scorn of the Moon |
 | S4 Wuhan City Challenge (2026-08-08) | 99 | 8 | Master Yi, Wuju Bladesman |
 | S4 Tianjin City Challenge (2026-08-16) | 93 | 8 | Nasus, Curator of the Sands |
-| Riftbound Showdown Ottawa (2026-08-08) | 38 | 8 | Rengar, Pridestalker |
+| Riftbound Showdown Ottawa (2026-08-08) | 40 | 8 | Rengar, Pridestalker |
 
-Les quinze contextes totalisent 1671 decks et 119 places de Top 8. Qingdao n'en compte que 7 : la liste de la huitième place est publiée incomplète chez riftdecks et a été écartée, on ne la reconstitue pas. Ottawa reste à part avec 38 listes complètes sur 525 pages publiées.
+Les quinze contextes totalisent 1673 decks et 119 places de Top 8. Qingdao n'en compte que 7 : la liste de la huitième place est publiée incomplète chez riftdecks et a été écartée, on ne la reconstitue pas. Ottawa reste à part avec 40 listes complètes sur 527 pages publiées.
 
 Les fiches Vendetta de Shen et Renekton ne sont toujours pas dans `data/fiches/`. Celles de Kennen, Nasus, Ambessa, Jayce, Akali, Mel et Zed existent. Les statistiques de présence et de résultat ne suffisent pas à établir les domaines, les cores ou les matchups des deux fiches manquantes : il faut lire les listes.
 

@@ -24,22 +24,29 @@
       "domain": "order"
     },
     {
-      "name": "Plundering Poro",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "showcase",
-      "domain": "mind"
-    },
-    {
       "name": "Card Sharp",
-      "quantity": 3,
+      "quantity": 1,
       "type": "Unit",
       "rarity": "rare",
       "domain": "mind"
     },
     {
-      "name": "Xin Zhao, Vigilant",
+      "name": "Faithful Manufactor",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "order"
+    },
+    {
+      "name": "Lecturing Yordle",
       "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Xin Zhao, Vigilant",
+      "quantity": 3,
       "type": "Unit",
       "rarity": "rare",
       "domain": "order"
@@ -52,11 +59,18 @@
       "domain": "mind"
     },
     {
-      "name": "B.F. Sword",
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "mind"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
       "quantity": 2,
-      "type": "Gear",
-      "rarity": "uncommon",
-      "domain": "order"
+      "type": "Unit",
+      "rarity": "rare",
+      "domain": "mind"
     },
     {
       "name": "Vanguard Armory",
@@ -67,17 +81,17 @@
     },
     {
       "name": "Bellows Breath",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "rare",
       "domain": "mind"
     },
     {
-      "name": "Blood Money",
-      "quantity": 1,
+      "name": "Stupefy",
+      "quantity": 3,
       "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
+      "rarity": "common",
+      "domain": "mind"
     },
     {
       "name": "Cull the Weak",
@@ -87,29 +101,15 @@
       "domain": "order"
     },
     {
-      "name": "Deathgrip",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
       "name": "Hidden Blade",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "order"
     },
     {
-      "name": "Salvage",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Consult the Past",
-      "quantity": 2,
+      "name": "Wages of Pain",
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "mind"
@@ -123,83 +123,63 @@
     },
     {
       "name": "Singularity",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "mind"
     }
   ],
-  "runes": [
-    {
-      "name": "Mind Rune",
-      "quantity": 5
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 7
-    }
-  ],
+  "runes": {
+    "Mind": 6,
+    "Order": 6
+  },
   "battlefields": [
     "The Arena's Greatest",
-    "Trifarian War Camp",
-    "Vilemaw's Lair"
+    "Treasure Hoard",
+    "Void Gate"
   ],
-  "sideboard": [
-    {
-      "name": "Seal of Unity",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "epic",
-      "domain": "order"
-    },
-    {
-      "name": "Blood Money",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Hidden Blade",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "common",
-      "domain": "order"
-    },
+  "sideDeck": [
     {
       "name": "Salvage",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "uncommon",
-      "domain": "order"
-    },
-    {
-      "name": "Unsung Hero",
       "quantity": 2,
       "type": "Unknown",
       "rarity": "uncommon",
       "domain": "order"
     },
     {
-      "name": "Xin Zhao, Vigilant",
+      "name": "Card Sharp",
       "quantity": 1,
       "type": "Unknown",
       "rarity": "rare",
+      "domain": "mind"
+    },
+    {
+      "name": "Faithful Manufactor",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "common",
       "domain": "order"
     },
     {
-      "name": "B.F. Sword",
-      "quantity": 1,
+      "name": "Glasc Mixologist",
+      "quantity": 2,
       "type": "Unknown",
       "rarity": "uncommon",
       "domain": "order"
+    },
+    {
+      "name": "Riptide Rex",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "mind"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 14,
+    "unitCount": 16,
     "spellCount": 20,
-    "gearCount": 5,
+    "gearCount": 3,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-viktor-herald-of-the-arcane-122453"

@@ -3,7 +3,7 @@
   "legend": "Sett, The Boss",
   "legendId": null,
   "champion": "Sett, Kingpin",
-  "player": "Kensho",
+  "player": "kensho",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
   "placement": 35,
@@ -136,22 +136,16 @@
       "domain": "order"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 7
-    },
-    {
-      "name": "Order Rune",
-      "quantity": 5
-    }
-  ],
+  "runes": {
+    "Body": 7,
+    "Order": 5
+  },
   "battlefields": [
     "Grove of the God-Willow",
     "Monastery of Hirana",
     "Windswept Hillock"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Sabotage",
       "quantity": 1,

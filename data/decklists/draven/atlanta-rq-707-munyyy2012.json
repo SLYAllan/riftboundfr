@@ -2,7 +2,7 @@
   "id": "deck-draven-glorious-executioner-123249",
   "legend": "Draven, Glorious Executioner",
   "legendId": null,
-  "champion": "Draven, Vanquisher",
+  "champion": "Draven, Showboat",
   "player": "munyyy2012",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
@@ -31,17 +31,31 @@
       "domain": "chaos"
     },
     {
-      "name": "Treasure Hunter",
-      "quantity": 2,
+      "name": "Tideturner",
+      "quantity": 3,
       "type": "Unit",
-      "rarity": "common",
+      "rarity": "rare",
       "domain": "chaos"
     },
     {
-      "name": "Draven, Vanquisher",
+      "name": "Rek'Sai, Breacher",
       "quantity": 2,
       "type": "Unit",
-      "rarity": "rare",
+      "rarity": "showcase",
+      "domain": "fury"
+    },
+    {
+      "name": "Kai'Sa, Survivor",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "epic",
+      "domain": "fury"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "quantity": 3,
+      "type": "Unit",
+      "rarity": "common",
       "domain": "fury"
     },
     {
@@ -52,16 +66,16 @@
       "domain": "fury"
     },
     {
-      "name": "Vex, Cheerless",
-      "quantity": 3,
+      "name": "Brynhir Thundersong",
+      "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
-      "domain": "chaos"
+      "domain": "fury"
     },
     {
-      "name": "Long Sword",
+      "name": "Ferrous Forerunner",
       "quantity": 3,
-      "type": "Gear",
+      "type": "Unit",
       "rarity": "rare",
       "domain": "fury"
     },
@@ -70,42 +84,42 @@
       "quantity": 3,
       "type": "Gear",
       "rarity": "epic",
-      "domain": "fury"
-    },
-    {
-      "name": "Called Shot",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
+      "domain": "fury/chaos"
     },
     {
       "name": "Cleave",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "common",
       "domain": "fury"
     },
     {
       "name": "Stacked Deck",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "uncommon",
       "domain": "chaos"
     },
     {
-      "name": "Fight or Flight",
-      "quantity": 3,
+      "name": "Against the Odds",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "common",
-      "domain": "chaos"
+      "domain": "fury"
     },
     {
-      "name": "Piercing Light",
-      "quantity": 2,
+      "name": "Falling Star",
+      "quantity": 1,
       "type": "Spell",
       "rarity": "rare",
       "domain": "fury"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
       "name": "Rebuke",
@@ -120,36 +134,73 @@
       "type": "Spell",
       "rarity": "common",
       "domain": "chaos"
+    }
+  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Targon's Peak",
+    "Zaun Warrens"
+  ],
+  "sideDeck": [
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
     },
     {
-      "name": "Switcheroo",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "rare",
+      "name": "Angle Shot",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Rebuke",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Thermo Beam",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "fury"
+    },
+    {
+      "name": "Beast Below",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    }
-  ],
-  "battlefields": [
-    "Startipped Peak",
-    "Targon's Peak",
-    "Windswept Hillock"
-  ],
-  "sideboard": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 16,
-    "spellCount": 17,
-    "gearCount": 6,
+    "unitCount": 25,
+    "spellCount": 11,
+    "gearCount": 3,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-draven-glorious-executioner-123249"

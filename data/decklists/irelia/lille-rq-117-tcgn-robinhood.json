@@ -150,22 +150,16 @@
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 5
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 7
-    }
-  ],
+  "runes": {
+    "Calm": 5,
+    "Chaos": 7
+  },
   "battlefields": [
     "Seat of Power",
     "The Arena's Greatest",
     "Windswept Hillock"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Desert's Call",
       "quantity": 1,

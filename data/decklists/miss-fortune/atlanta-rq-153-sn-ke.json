@@ -2,7 +2,7 @@
   "id": "deck-miss-fortune-bounty-hunter-122703",
   "legend": "Miss Fortune, Bounty Hunter",
   "legendId": null,
-  "champion": "Miss Fortune, Buccaneer",
+  "champion": "Miss Fortune, Captain",
   "player": "Snаke",
   "tournament": "Atlanta Regional Qualifier",
   "date": "2026-04-25",
@@ -17,87 +17,66 @@
   ],
   "mainDeck": [
     {
-      "name": "Overzealous Fan",
+      "name": "Mindsplitter",
       "quantity": 3,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Treasure Hunter",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Fiora, Peerless",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Fizz, Trickster",
-      "quantity": 2,
       "type": "Unit",
       "rarity": "rare",
       "domain": "chaos"
     },
     {
-      "name": "Sneaky Deckhand",
+      "name": "Deadbloom Predator",
       "quantity": 2,
       "type": "Unit",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Akshan, Mischievous",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Warwick, Hunter",
-      "quantity": 3,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Ancient Henge",
-      "quantity": 3,
-      "type": "Gear",
       "rarity": "epic",
       "domain": "body"
     },
     {
-      "name": "Spirit Wheel",
+      "name": "Volibear, Imposing",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "showcase",
+      "domain": "body"
+    },
+    {
+      "name": "Last Rites",
+      "quantity": 2,
+      "type": "Gear",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Dazzling Aurora",
       "quantity": 3,
       "type": "Gear",
-      "rarity": "rare",
-      "domain": "chaos"
+      "rarity": "epic",
+      "domain": "body"
     },
     {
       "name": "Bullet Time",
-      "quantity": 3,
+      "quantity": 2,
       "type": "Spell",
       "rarity": "epic",
-      "domain": "body"
+      "domain": "body/chaos"
     },
     {
-      "name": "Flurry of Blades",
+      "name": "Gust",
       "quantity": 3,
       "type": "Spell",
       "rarity": "common",
-      "domain": "body"
+      "domain": "chaos"
     },
     {
       "name": "Punch First",
       "quantity": 2,
       "type": "Spell",
       "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Sabotage",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "rare",
       "domain": "body"
     },
     {
@@ -108,41 +87,106 @@
       "domain": "chaos"
     },
     {
-      "name": "Fight or Flight",
-      "quantity": 3,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "chaos"
-    },
-    {
-      "name": "Ride the Wind",
+      "name": "Challenge",
       "quantity": 2,
       "type": "Spell",
       "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Confront",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Hard Bargain",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Mobilize",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Ride the Wind",
+      "quantity": 1,
+      "type": "Spell",
+      "rarity": "common",
+      "domain": "chaos"
+    },
+    {
+      "name": "Invert Timelines",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "epic",
+      "domain": "chaos"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "quantity": 3,
+      "type": "Spell",
+      "rarity": "uncommon",
+      "domain": "body"
+    }
+  ],
+  "runes": {
+    "Body": 7,
+    "Chaos": 5
+  },
+  "battlefields": [
+    "Aspirant's Climb",
+    "Sigil of the Storm",
+    "Vilemaw's Lair"
+  ],
+  "sideDeck": [
+    {
+      "name": "Factory Recall",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Unyielding Spirit",
+      "quantity": 3,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Fading Memories",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "uncommon",
+      "domain": "chaos"
+    },
+    {
+      "name": "Miss Fortune, Buccaneer",
+      "quantity": 1,
+      "type": "Unknown",
+      "rarity": "showcase",
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
-  "battlefields": [
-    "Back-Alley Bar",
-    "Seat of Power",
-    "Treasure Hoard"
-  ],
-  "sideboard": [],
   "totalCards": 56,
   "stats": {
-    "unitCount": 17,
-    "spellCount": 16,
-    "gearCount": 6,
+    "unitCount": 7,
+    "spellCount": 27,
+    "gearCount": 5,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-miss-fortune-bounty-hunter-122703"

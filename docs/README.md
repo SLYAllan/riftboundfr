@@ -24,6 +24,7 @@ Où trouver quoi. Rangé le 20 août 2026.
 | `DEPLOIEMENT.md` | Coolify, Docker, DNS, SSL, base de données, méthode de seed en production. |
 | `RAPPORT-SESSION-2026-08-14.md` | **Passation complète du chantier Vendetta/S4** : 9 tournois, 982 decks validés et seedés, rejets, changements de code, erreurs rencontrées, audit Codex, vérifications et travaux restants. |
 | `AUDIT-SITE-2026-08-14.md` | Audit fonctionnel et UI/UX vérifié : routes, responsive, accessibilité, corrections locales et limites du contrôle. |
+| `AUDIT-DECKLISTS-2026-08-21.md` | Audit des sources de decklists : nouvelles listes, rangs modifiés et contrôle Vendetta. |
 
 ## Archive
 

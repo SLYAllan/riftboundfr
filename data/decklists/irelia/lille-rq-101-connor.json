@@ -129,22 +129,16 @@
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Calm Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Calm": 6,
+    "Chaos": 6
+  },
   "battlefields": [
     "Sunken Temple",
     "Targon's Peak",
     "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Charm",
       "quantity": 1,

@@ -24,11 +24,18 @@
       "domain": "fury"
     },
     {
-      "name": "Sea Monkey",
+      "name": "Legion Rearguard",
+      "quantity": 2,
+      "type": "Unit",
+      "rarity": "common",
+      "domain": "fury"
+    },
+    {
+      "name": "Pouty Poro",
       "quantity": 3,
       "type": "Unit",
       "rarity": "common",
-      "domain": "body"
+      "domain": "fury"
     },
     {
       "name": "First Mate",
@@ -38,64 +45,36 @@
       "domain": "body"
     },
     {
-      "name": "Lucian, Merciless",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
       "name": "Kai'Sa, Survivor",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "epic",
       "domain": "fury"
     },
     {
-      "name": "Noxus Hopeful",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
-      "name": "Qiyana, Victorious",
-      "quantity": 2,
-      "type": "Unit",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Darius, Trifarian",
+      "name": "Rell, Magnetic",
       "quantity": 1,
       "type": "Unit",
-      "rarity": "showcase",
+      "rarity": "rare",
       "domain": "fury"
     },
     {
       "name": "Ruin Runner",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Unit",
       "rarity": "uncommon",
       "domain": "body"
     },
     {
       "name": "Doran's Blade",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Gear",
       "rarity": "common",
       "domain": "body"
     },
     {
       "name": "Hexdrinker",
-      "quantity": 2,
+      "quantity": 1,
       "type": "Gear",
       "rarity": "uncommon",
       "domain": "body"
@@ -108,126 +87,92 @@
       "domain": "fury"
     },
     {
-      "name": "Boneshiver",
-      "quantity": 2,
-      "type": "Gear",
-      "rarity": "epic",
-      "domain": "body"
-    },
-    {
       "name": "Skyfall of Areion",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Gear",
       "rarity": "epic",
       "domain": "fury"
     },
     {
       "name": "Trinity Force",
-      "quantity": 1,
+      "quantity": 3,
       "type": "Gear",
       "rarity": "rare",
       "domain": "body"
     },
     {
-      "name": "Blood Rush",
-      "quantity": 1,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "fury"
-    },
-    {
       "name": "Punch First",
-      "quantity": 2,
+      "quantity": 3,
       "type": "Spell",
       "rarity": "common",
       "domain": "body"
     },
     {
-      "name": "Angle Shot",
-      "quantity": 1,
+      "name": "Sabotage",
+      "quantity": 2,
       "type": "Spell",
-      "rarity": "uncommon",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Falling Star",
+      "quantity": 2,
+      "type": "Spell",
+      "rarity": "rare",
       "domain": "fury"
-    },
-    {
-      "name": "Challenge",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "body"
-    },
-    {
-      "name": "Confront",
-      "quantity": 2,
-      "type": "Spell",
-      "rarity": "common",
-      "domain": "body"
     },
     {
       "name": "Relentless Pursuit",
       "quantity": 3,
       "type": "Spell",
       "rarity": "epic",
-      "domain": "fury"
+      "domain": "fury/body"
     }
   ],
-  "runes": [
-    {
-      "name": "Body Rune",
-      "quantity": 7
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 5
-    }
-  ],
+  "runes": {
+    "Body": 7,
+    "Fury": 5
+  },
   "battlefields": [
     "Forge of the Fluft",
-    "Ornn's Forge",
-    "Sunken Temple"
+    "Sunken Temple",
+    "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
-      "name": "Sabotage",
+      "name": "Unyielding Spirit",
       "quantity": 2,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Piercing Light",
-      "quantity": 2,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "fury"
-    },
-    {
-      "name": "Akshan, Mischievous",
-      "quantity": 1,
-      "type": "Unknown",
-      "rarity": "rare",
-      "domain": "body"
-    },
-    {
-      "name": "Ruin Runner",
-      "quantity": 1,
       "type": "Unknown",
       "rarity": "uncommon",
       "domain": "body"
     },
     {
-      "name": "Dunebreaker",
+      "name": "Challenge",
       "quantity": 2,
       "type": "Unknown",
-      "rarity": "epic",
+      "rarity": "common",
+      "domain": "body"
+    },
+    {
+      "name": "Akshan, Mischievous",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
+      "domain": "body"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "quantity": 2,
+      "type": "Unknown",
+      "rarity": "rare",
       "domain": "fury"
     }
   ],
   "totalCards": 56,
   "stats": {
-    "unitCount": 18,
-    "spellCount": 11,
-    "gearCount": 10,
+    "unitCount": 17,
+    "spellCount": 10,
+    "gearCount": 12,
     "averageCost": null
   },
   "sourceUrl": "https://riftdecks.com/riftbound-metagame/deck-lucian-purifier-123618"

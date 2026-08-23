@@ -3,7 +3,7 @@
   "legend": "Annie, Dark Child",
   "legendId": null,
   "champion": "Annie, Stubborn",
-  "player": "LordPeT",
+  "player": "lordPeT",
   "tournament": "Lille Regional Qualifier",
   "date": "2026-04-18",
   "placement": 17,
@@ -129,22 +129,16 @@
       "domain": "chaos"
     }
   ],
-  "runes": [
-    {
-      "name": "Chaos Rune",
-      "quantity": 6
-    },
-    {
-      "name": "Fury Rune",
-      "quantity": 6
-    }
-  ],
+  "runes": {
+    "Chaos": 6,
+    "Fury": 6
+  },
   "battlefields": [
     "Seat of Power",
     "The Arena's Greatest",
     "Zaun Warrens"
   ],
-  "sideboard": [
+  "sideDeck": [
     {
       "name": "Acceptable Losses",
       "quantity": 2,
