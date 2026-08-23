@@ -31,7 +31,7 @@ const categoryLabels: Record<string, string> = {
   guide: "Guide",
   tournoi: "Tournoi",
   meta: "Méta",
-  "patch-notes": "Patch Notes",
+  "patch-notes": "Notes de patch",
 };
 
 export default async function ArticlesPage({

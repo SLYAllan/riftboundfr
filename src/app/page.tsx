@@ -99,7 +99,7 @@ const categoryLabels: Record<string, string> = {
   guide: "Guide",
   tournoi: "Tournoi",
   meta: "Méta",
-  "patch-notes": "Patch Notes",
+  "patch-notes": "Notes de patch",
 };
 
 const guides = [
@@ -125,7 +125,7 @@ const guides = [
     href: "/guides/domaines",
     icon: Shield,
     title: "Les 6 Domaines",
-    description: "Fury, Calm, Mind, Body, Chaos, Order : forces et légendes.",
+    description: "Furie, Calme, Esprit, Corps, Chaos, Ordre : forces et légendes.",
   },
   {
     href: "/guides/glossaire",

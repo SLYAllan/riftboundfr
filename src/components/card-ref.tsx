@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { useT } from "@/components/i18n-provider";
+import { isBanned } from "@/lib/banned-cards";
 
 interface CardData {
   name: string;
@@ -86,6 +87,22 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
   // Lien SSR vers la fiche carte quand href est fourni (maillage interne) ; sinon
   // simple ancrage de survol. Le mot reste identique, le hover marche dans les deux cas.
   const cls = "border-b border-dotted border-arcane/40 text-arcane transition-colors hover:border-arcane hover:text-arcane-vivid";
+
+  // Toute mention de carte passe par ici : guides, fiches Légendes, articles. Marquer
+  // le bannissement dans le rendu plutôt que dans chaque texte évite de relire la prose
+  // à chaque mise à jour de la ban list, et couvre les textes qu'on ne réécrit pas.
+  const banni = isBanned(name);
+  const contenu = (
+    <>
+      {children ?? name}
+      {banni && (
+        <span className="ml-1 rounded bg-red-500/15 px-1 py-0.5 text-[10px] font-bold text-red-400">
+          bannie
+        </span>
+      )}
+    </>
+  );
+
   return (
     <>
       {href ? (
@@ -98,7 +115,7 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
           onFocus={show}
           onBlur={() => { setHovered(false); setPos(null); }}
         >
-          {children ?? name}
+          {contenu}
         </a>
       ) : (
         <span
@@ -111,7 +128,7 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
           onFocus={show}
           onBlur={() => { setHovered(false); setPos(null); }}
         >
-          {children ?? name}
+          {contenu}
         </span>
       )}
       {hovered && card?.imageUrl && (
@@ -135,6 +152,11 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
             <span className="block text-sm font-bold leading-tight text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {card.name}
             </span>
+            {banni && (
+              <span className="block text-xs font-semibold text-red-400">
+                {t("Bannie en construit")}
+              </span>
+            )}
             <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
               {card.type && <span className="text-ink-muted">{TYPE_LABELS_FR[card.type] ?? card.type}</span>}
               {/* Énergie en pastille chiffrée, Puissance avec l'épée : c'était

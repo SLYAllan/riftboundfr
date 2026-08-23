@@ -20,6 +20,8 @@ import { LEGEND_GUIDES } from "@/lib/legend-guides";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
+import { isBanned } from "@/lib/banned-cards";
+import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName, formatDate } from "@/lib/utils";
@@ -63,6 +65,8 @@ interface Fiche {
   weaknesses?: string[];
   difficulty?: string;
   sourceUrl?: string;
+  // Porte la vraie date du releve (« Releve du 17 aout 2026 »). Absent de 14 fiches.
+  dataSource?: string;
 }
 
 // Le contenu rendu du site ne doit jamais contenir de tiret cadratin (—) ni demi-cadratin
@@ -264,19 +268,56 @@ function Section({
 // Vignette de carte : l'image quand la carte est en base, le texte seul sinon.
 // Sert aux cartes clés, aux Champions joués et aux champs de bataille, qui
 // étaient trois listes de texte. Les champs de bataille sont en paysage.
+// Deux dates distinctes : celle de l'analyse (le relevé qui a produit les cartes
+// clés et les forces) et celle du dernier deck ajouté. Les confondre laissait une
+// fiche de mai s'annoncer « mise à jour » en août. Sans date de relevé, on ne dit
+// rien de l'analyse plutôt que d'emprunter celle des decks.
+function DatesFiche({
+  analyse,
+  dernierDeck,
+  className,
+}: {
+  analyse: Date | null;
+  dernierDeck: Date | null;
+  className: string;
+}) {
+  if (!analyse && !dernierDeck) return null;
+  return (
+    <p className={`mt-2 text-xs ${className}`}>
+      {analyse && (
+        <>
+          Analyse du{" "}
+          <time dateTime={analyse.toISOString().slice(0, 10)}>{formatDate(analyse)}</time>
+        </>
+      )}
+      {analyse && dernierDeck && " · "}
+      {dernierDeck && (
+        <>
+          dernier deck le{" "}
+          <time dateTime={dernierDeck.toISOString().slice(0, 10)}>{formatDate(dernierDeck)}</time>
+        </>
+      )}
+    </p>
+  );
+}
+
 function CardTile({
   art,
   label,
   sub,
   badge,
   landscape,
+  nom,
 }: {
   art: { name: string; imageUrl: string | null; riftboundId: string } | null;
   label: React.ReactNode;
   sub?: string | null;
   badge?: string | null;
   landscape?: boolean;
+  // Sert au contrôle de bannissement quand la carte n'a pas d'art en base.
+  nom?: string | null;
 }) {
+  const banni = isBanned(nom ?? art?.name ?? "");
   const image = art?.imageUrl ? (
     <Image
       src={art.imageUrl}
@@ -303,6 +344,11 @@ function CardTile({
         <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
           {label}
         </span>
+        {banni && (
+          <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[11px] font-bold text-red-400">
+            Bannie
+          </span>
+        )}
         {badge && (
           <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-bold text-violet-light">
             {badge}
@@ -524,12 +570,17 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     ? [guide.bref, guide.gagne, guide.plan].filter(Boolean).join("\n\n").replace(/\s*[—–]\s*/g, ", ")
     : null;
 
-  // Date de fraîcheur : celle du deck le plus récent affiché. Elle décrit exactement
-  // ce que la page contient, contrairement à une date de publication figée. Les pages
-  // concurrentes affichent la leur dans les résultats de recherche, pas nous.
-  const lastUpdated = legendDecks.length
+  // Deux dates, et pas une seule. Avant, « Mis à jour le » affichait la date du
+  // deck importé le plus récemment : une fiche dont les cartes clés dataient de mai
+  // s'annonçait à jour parce qu'un deck était tombé la veille. La date du relevé dit
+  // quand l'analyse a été calculée, celle des decks quand la liste a bougé.
+  const dernierDeck = legendDecks.length
     ? new Date(Math.max(...legendDecks.map((d) => d.createdAt.getTime())))
     : null;
+  const dateAnalyse = dateAnalyseFiche(fiche.dataSource);
+  // Le JSON-LD annonce la date de l'analyse quand on la connaît : c'est elle qui
+  // décrit le contenu rédigé, pas l'arrivée d'un deck de plus.
+  const lastUpdated = dateAnalyse ?? dernierDeck;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -607,12 +658,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               <p className="mt-1 max-w-2xl text-sm text-white/85 sm:text-base">{fiche.archetype}</p>
             )}
             <div className="mt-3">{Badges}</div>
-            {lastUpdated && (
-              <p className="mt-2 text-xs text-white/70">
-                Mis à jour le{" "}
-                <time dateTime={lastUpdated.toISOString().slice(0, 10)}>{formatDate(lastUpdated)}</time>
-              </p>
-            )}
+            <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-white/70" />
           </div>
         </header>
       ) : (
@@ -622,12 +668,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           </h1>
           {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
           <div className="mt-3">{Badges}</div>
-          {lastUpdated && (
-            <p className="mt-2 text-xs text-ink-muted">
-              Mis à jour le{" "}
-              <time dateTime={lastUpdated.toISOString().slice(0, 10)}>{formatDate(lastUpdated)}</time>
-            </p>
-          )}
+          <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-ink-muted" />
         </header>
       )}
 
@@ -782,6 +823,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       <CardTile
                         key={i}
                         art={art}
+                        nom={display}
                         label={wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
                         sub={kc.role}
                       />
@@ -878,6 +920,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       <CardTile
                         key={bf}
                         art={cardArt[nom] ?? null}
+                        nom={nom}
                         label={<CardRef name={nom}>{nom}</CardRef>}
                         sub={part ? `${part} % des listes` : null}
                         landscape

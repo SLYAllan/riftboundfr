@@ -17,6 +17,104 @@ export interface LegendGuide {
 }
 
 export const LEGEND_GUIDES: Record<string, LegendGuide> = {
+  "mel-souls-reflection": {
+    slug: "mel-souls-reflection",
+    bref: `Mel, Soul's Reflection joue en Esprit et Chaos, sur un plan d'amplification et de sorts pris à l'adversaire. C'est un deck difficile à piloter. Il compte 37 listes en tournoi, sur quatorze tournois, et n'a signé aucun Top 8.`,
+    gagne: `Mel suit le rythme de tes sorts. Chaque fois que tu amplifies une autre carte, elle s'amplifie aussi. Tu peux ensuite la désamplifier et l'épuiser pour retirer 2 à une unité au combat. Elle se charge donc pendant que tu joues, puis se vide au bon moment pour affaiblir une unité adverse.
+
+Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, te donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans toutes les listes, et **[[Stacked Deck]]** (89 %) gardent ta main pleine. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (76 % des listes) rend tes sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (62 %) ferme le terrain. Tu marques pendant que l'adversaire n'a plus de réponse.`,
+    plan: `**Début de partie.** **[[Stupefy]]** et **[[Stacked Deck]]** (89 %) tiennent ta main pleine à une énergie. Tu joues tes cartes à bas coût et tu gardes le rythme.
+
+**Milieu de partie.** **[[Rebuttal]]**, dans toutes les listes, te donne le contrôle d'un sort adverse. **[[Applied Researchers]]** amplifié (41 %) baisse le coût de tes sorts. Tu voles les réponses et tu casses le plan de l'adversaire.
+
+**Fin de partie.** **[[Mel, Newly Awakened]]** amplifiée rend tes sorts impossibles à contrer. **[[Thousand-Tailed Watcher]]** (62 %) ferme le terrain. Tu marques pendant que l'adversaire n'a plus de réponse.
+
+**Ce qui le bat.** Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon Mel reste inerte. Les terrains restent dispersés, aucun au-dessus de 49 %, personne n'a arrêté une liste stable. Et malgré ses 37 listes, aucun Top 8 en quatorze tournois.`,
+  },
+  "zed-master-of-shadows": {
+    slug: "zed-master-of-shadows",
+    bref: `Zed, Master of Shadows joue en Furie et Chaos. Son plan : bannir ses cartes pour amplifier la Légende, puis défausser et piocher à chaque tour. Le deck est Difficile à piloter. En onze tournois, 19 listes ont été jouées, aucune n'a atteint le Top 8.`,
+    gagne: `Chaque carte que tu bannis amplifie Zed. Tu peux ensuite le désamplifier et l'épuiser pour défausser une carte, puis en piocher une. Ta main tourne sans cesse : tu jettes les cartes mortes et tu gardes les bonnes.
+
+Ce moteur tourne grâce à **[[Stacked Deck]]**, dans 95 % des listes, qui te laisse choisir une carte parmi trois. **[[Death Mark]]**, aussi dans 95 % des listes, ouvre le combat. **[[Traveling Merchant]]**, dans 84 % des listes, échange une carte à chacun de tes déplacements. Et **[[Zed, From the Shadows]]**, dans 74 % des listes, arrive avec un Clone d'Ombre quand tu le paies en défausse.`,
+    plan: `**Début de partie.** Tu poses **[[Stacked Deck]]** pour choisir la bonne carte parmi trois. **[[Traveling Merchant]]**, dans 84 % des listes, échange une carte à chacun de tes déplacements. Ta main se met en ordre dès le départ.
+
+**Milieu de partie.** **[[Death Mark]]**, dans 95 % des listes, ouvre le combat. Tu paies **[[Zed, From the Shadows]]** en défausse : il arrive avec un Clone d'Ombre. Deux menaces pèsent là où l'adversaire n'en attendait qu'une.
+
+**Fin de partie.** **[[Perfect Execution]]**, dans 74 % des listes, prépare une unité et lui donne Assaut 3. C'est de quoi reprendre un champ de bataille perdu et marquer.
+
+**Ce qui le bat.** Personne n'a fixé la liste : sept Champions se partagent la place, aucun au-dessus de 74 %. Et bannir demande des cartes qui bannissent, or le deck n'en joue pas tant que ça. Résultat : 19 listes en onze tournois, aucun Top 8.`,
+  },
+  "ambessa-matriarch-of-war": {
+    slug: "ambessa-matriarch-of-war",
+    bref: `Ambessa, Matriarch of War joue les domaines Corps et Ordre, sur un archétype d'amplification et d'unités préparées. Difficulté moyenne. Sur 13 listes en 9 tournois, une seule place en Top 8, aucune victoire : conversion de 7,7 %.`,
+    gagne: `Ton plan tient sur un mot : amplifier. Chaque fois que tu amplifies une carte, ta Légende s'amplifie aussi. Ensuite, tu la désamplifies, tu paies une Puissance et tu l'épuises pour préparer une unité. Une unité préparée deux fois dans le tour attaque, puis défend : c'est elle qui marque tes points.
+
+**[[Punch First]]** porte le moteur, dans 100 % des listes à deux exemplaires : elle donne +5 Puissance à une unité pour une seule énergie. **[[Legion Marauder]]** (92 %, trois exemplaires) et **[[Pit Rookie]]** (85 %, trois exemplaires) posent la pression et laissent un bonus derrière eux. En fin de partie, **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.`,
+    plan: `**Début de partie.** **[[Legion Marauder]]** et **[[Pit Rookie]]** posent la pression tôt et laissent un bonus derrière eux.
+
+**Milieu de partie.** **[[Punch First]]** (100 %) donne +5 Puissance à une unité pour une énergie. Chaque amplification recharge ta Légende.
+
+**Fin de partie.** **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat. Tu cherches une unité préparée deux fois dans le tour, qui attaque puis défend.
+
+**Ce qui le bat.** 13 listes en neuf tournois, c'est trop peu pour parler d'un archétype installé. Sans autre carte à amplifier, ta Légende ne se recharge pas. Et le deck n'a qu'une menace à la fois, pas de plan de repli.`,
+  },
+  "nasus-curator-of-the-sands": {
+    slug: "nasus-curator-of-the-sands",
+    bref: `Nasus, Curator of the Sands joue en Calme et Esprit. Son archétype : poser des grosses unités payées deux fois. Difficulté moyenne. En quinze tournois, il aligne 86 listes et deux titres, dont Tianjin.`,
+    gagne: `Quand tu joues une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, tu épuises Nasus et tu prépares jusqu'à deux runes. Le gros coup se rembourse : tu paies cher, et la Légende te rend de quoi continuer.
+
+Ce plan tourne autour de **[[Thousand-Tailed Watcher]]**, dans 100 % des listes. À 7 énergie, elle baisse toutes les unités adverses de 3 Puissance et te rend deux runes. **[[Defy]]**, aussi dans 100 % des listes, garde la réponse ouverte pendant que tu montes en énergie.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** (97 %) et **[[Ravenbloom Student]]** (78 %) tiennent le terrain pendant que **[[Defy]]** (100 %) et **[[Discipline]]** (97 %) gardent la réponse ouverte. Tu ne poses rien de gros avant 7 énergie : tu défends et tu attends.
+
+**Milieu de partie.** À 7 énergie, **[[Thousand-Tailed Watcher]]** baisse toutes les unités adverses de 3 Puissance et te rend deux runes grâce à la Légende. Tu poses ta première grosse carte, et le remboursement commence.
+
+**Fin de partie.** **[[Tasty Faefolk]]** (66 %) et **[[Astral Heron]]** enchaînent au même coût. **[[Nasus, Ascended]]** (91 %) arrive à 8 énergie avec Protection 2. Ton but : poser une menace à 7 énergie ou plus par tour, sans jamais tomber à court de runes.
+
+**Ce qui le bat.** Rien ne se déclenche sous 7 énergie, alors les premiers tours sont creux et un deck rapide en profite. La conversion est faible : 4,7 % contre 7,1 % pour le champ. Deux titres, mais très peu de Top 8 autour. Les terrains sont dispersés, aucun ne dépasse 57 % : le plan n'est pas stabilisé.`,
+  },
+  "akali-rogue-assassin": {
+    slug: "akali-rogue-assassin",
+    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Vendetta, 74 listes ont été jouées sur 15 tournois, sans aucun Top 8.`,
+    gagne: `La Légende s'épuise pendant ton tour pour ramener une de tes unités engagées à la base, et la remettre prête si elle est amplifiée. En clair : tu sors ton unité d'un combat perdu avant qu'il ne se résolve. L'unité survit et peut attaquer ailleurs.
+
+Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (91 % des listes) pioche à chaque déplacement. En fin de partie, **[[Akali, Silent]]** ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant. Le but : marquer avec des unités que l'adversaire ne peut ni cibler ni coincer.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** (89 % des listes) et **[[Lonely Poro]]** (66 % des listes) occupent le terrain en piochant. **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. Tu poses des unités et tu gardes les retraits pour les combats qui comptent.
+
+**Milieu de partie.** **[[Stellacorn Herder]]** (91 % des listes) pioche à chaque déplacement, ce qui garde ta main pleine. La Légende sort ton unité du combat perdu avant qu'il ne se résolve. **[[Zhonya's Hourglass]]** (76 % des listes) protège une unité.
+
+**Fin de partie.** **[[Akali, Silent]]** échappe aux sorts adverses tant qu'elle reste hors combat, et gagne +2 Puissance en arrivant. Tu marques avec des unités que l'adversaire ne peut ni cibler ni coincer. C'est maintenant que le deck doit gagner.
+
+**Ce qui le bat.** Retirer tes unités du combat ne marque aucun point : le deck se défend bien et gagne mal. 74 listes, quinze tournois, aucun Top 8, le plus gros volume sans résultat du set. L'écart avec la moyenne du champ est net au calcul (p = 0,010), ce n'est pas de la malchance.`,
+  },
+  "jayce-defender-of-tomorrow": {
+    slug: "jayce-defender-of-tomorrow",
+    bref: `Jayce est une Légende Esprit et Corps, un deck d'équipements préparés qui monte en ressources. La difficulté est moyenne. Sur 15 tournois, 72 listes ont été jouées pour 3 places en Top 8, soit 4,2 % de conversion.`,
+    gagne: `Pour une énergie et un épuisement, Jayce prépare un équipement, c'est à dire le rend prêt à resservir. Amplifié, il en prépare deux d'un coup. Et un équipement qui produit des ressources sert deux fois par tour : chaque tour rapporte plus que le précédent.
+
+**[[Bellows Breath]]** (92 % des listes) et **[[Elder Dragon]]** (90 %) sont le cœur du deck. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, donc tu montes vite. En fin de partie, **[[Dazzling Aurora]]** (89 %) rejoue une unité gratuite en fin de tour, puis **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Le but : atteindre les très gros coûts deux tours avant l'adversaire.`,
+    plan: `**Début de partie.** **[[Platewyrm Egg]]** (86 %) et **[[Garbage Grabber]]** (89 %) posent la base. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance. **[[Sigil of the Storm]]** (82 %) te fait tenir le temps de monter.
+
+**Milieu de partie.** Jayce prépare les équipements déjà utilisés. Chaque tour rapporte plus de ressources que le précédent. Les équipements qui produisent des ressources servent deux fois par tour.
+
+**Fin de partie.** **[[Dazzling Aurora]]** rejoue une unité gratuite en fin de tour. **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Tu atteins les très gros coûts deux tours avant l'adversaire.
+
+**Ce qui le bat.** Un adversaire qui te presse tôt gagne avant que tes runes soient montées. Le deck est très joué mais rarement récompensé : 4,2 % de conversion, trois Top 8 pour 72 listes. Et aucun Champion ne dépasse 40 %, les pilotes ne s'accordent pas sur la liste.`,
+  },
+  "kennen-heart-of-the-tempest": {
+    slug: "kennen-heart-of-the-tempest",
+    bref: `Kennen est un deck **Ordre/Chaos** de **cimetière** : il joue ses cartes depuis partout sauf sa main. C'est le meilleur convertisseur du format, 12,3 % de Top 8 contre 7,1 % de moyenne, et le seul écart que le calcul confirme vraiment. C'est aussi un deck **difficile** : tout dépend de ce que tu remplis, et du moment où tu le dépenses.`,
+    gagne: `Chaque carte jouée ailleurs que depuis ta main amplifie Kennen. Désamplifie-le et épuise-le, et une unité gagne **Assaut 2** pour le tour. Le bonus ne te coûte rien d'autre que d'avoir rempli ton cimetière avant.
+
+**[[Rhasa the Sunderer]]** transforme ce remplissage en victoire : 10 d'énergie de base, une de moins par carte au cimetière. Le deck passe ses premiers tours à se défausser, puis pose une menace que personne ne paie au prix fort.`,
+    plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle pioche une carte sur trois et envoie les deux autres au cimetière. **[[Stacked Deck]]**, dans 98 % des listes, choisit ce qui tombe. Tu ne subis pas ton cimetière, tu le construis.
+
+**Milieu de partie.** Les sorts rejoués depuis le cimetière amplifient la Légende sans rien coûter. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 88 % et 79 % des listes, pèsent sur les combats.
+
+**Fin de partie.** **[[Fizz, Trickster]]** rejoue un sort du cimetière en arrivant, **[[Kennen, Storm of Shuriken]]** rend un sort rejouable après une conquête. L'Assaut 2 gratuit tranche le combat qui compte.
+
+**Ce qui le bat.** Les départs rapides. Remplir prend des tours, et tant que rien n'est joué hors de ta main, la Légende reste désamplifiée et ne donne rien. Un seul titre malgré la meilleure conversion du format : le deck arrive loin, il finit rarement.`,
+  },
   "master-yi-wuju-bladesman": {
     slug: "master-yi-wuju-bladesman",
     bref: `Master Yi est un deck **Corps/Calme** de **contrôle de terrain**, classé parmi les meilleurs du format. C'est aussi l'un des meilleurs choix pour débuter en compétition : facile à prendre en main, difficile à mal jouer, et il t'apprend les fondamentaux du jeu, les combats, la pioche et l'interaction.`,
