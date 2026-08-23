@@ -186,7 +186,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     set: "Spiritforged",
     format: "Conquest",
   },
-  "Atlanta RQ 2026": {
+  "Atlanta Regional Qualifier": {
     name: "Atlanta Regional Qualifier 2026",
     shortName: "Atlanta RQ",
     countryCode: "US",
@@ -194,7 +194,7 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
     location: "Atlanta, USA",
     playerCount: 1832,
     type: "regional",
-    date: "2026-04-29",
+    date: "2026-04-25",
     set: "Spiritforged",
     format: "Conquest",
   },
