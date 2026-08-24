@@ -35,7 +35,7 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
         ) : <div className="absolute inset-0 bg-surface-raised" />}
         <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
         {couverture && (
-          <span className={cn("absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow", complet ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40")} title={complet ? "Jouable avec ta collection" : `Il te manque ${couverture.missing} carte${couverture.missing > 1 ? "s" : ""}`}>
+          <span className={cn("absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow", complet ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40")} title={complet ? "Jouable avec votre collection" : `Il vous manque ${couverture.missing} carte${couverture.missing > 1 ? "s" : ""}`}>
             {complet ? "✓ Complet" : `${couverture.owned}/${couverture.required}`}
           </span>
         )}
@@ -85,7 +85,7 @@ export function DecksProgressifs({ initial, filtres }: { initial: LotDecks; filt
       setDecks((courants) => [...courants, ...lot.decks]);
       setSuivant(lot.suivant);
     } catch {
-      setErreur("Le chargement a échoué. Réessaie.");
+      setErreur("Le chargement a échoué. Réessayez.");
     } finally {
       verrou.current = false;
       setChargement(false);

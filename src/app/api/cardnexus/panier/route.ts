@@ -131,7 +131,7 @@ export async function GET(request: Request) {
   const seulementManquantes = searchParams.get("manquantes") === "1";
   const user = seulementManquantes ? await getUserFromSession() : null;
   if (seulementManquantes && !user) {
-    return NextResponse.json({ error: "Connecte-toi pour n'acheter que les cartes qui te manquent." }, { status: 401 });
+    return NextResponse.json({ error: "Connectez-vous pour n’acheter que les cartes qui vous manquent." }, { status: 401 });
   }
 
   const reference = slug ?? (share ? `share:${share}` : `code:${code}`);

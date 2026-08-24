@@ -869,7 +869,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
             </div>
             <div className="overflow-y-auto p-4 space-y-2">
               {savedDecks.length === 0 ? (
-                <p className="text-sm text-ink-muted text-center py-8">{t("Aucun deck sauvegardé")}</p>
+                <p className="text-sm text-ink-muted text-center py-8">{t("Vous n’avez pas encore sauvegardé de deck.")}</p>
               ) : (
                 savedDecks.map((s) => (
                   <div key={s.id} className="flex items-center gap-3 rounded-lg border border-hairline p-4 hover:border-hairline-accent transition-colors">

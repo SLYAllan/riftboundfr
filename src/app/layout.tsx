@@ -31,7 +31,7 @@ const metadataFR: Metadata = {
   description:
     // "tier list" retiré du titre et rétrogradé ici : la page /tier-list vise cette
     // requête et l'accueil la lui prenait (position 4, 109 impressions captées par l'accueil).
-    "La référence francophone Riftbound : decklists de tournois, base de cartes, guides débutants et résultats compétitifs.",
+    "Decklists de tournois, cartes, guides et résultats Riftbound en français.",
   // Fallback sur l'apex PROD (pas localhost) : si NEXT_PUBLIC_SITE_URL manque au build,
   // les og:image/canonical pointent quand même vers la prod, jamais vers localhost.
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr"),
@@ -41,14 +41,14 @@ const metadataFR: Metadata = {
     locale: "fr_FR",
     siteName: "Riftbound France",
     title: "Riftbound France - Decks, cartes et guides du TCG en français",
-    description: "La référence francophone Riftbound : decklists de tournois, base de cartes, guides et résultats.",
+    description: "Decklists de tournois, cartes, guides et résultats Riftbound en français.",
     images: ["/img/og-default.png"],
   },
   twitter: {
     card: "summary_large_image",
     site: "@FRRiftbound",
     title: "Riftbound France",
-    description: "La référence francophone pour le TCG Riftbound.",
+    description: "Decklists, cartes et guides Riftbound en français.",
     images: ["/img/og-default.png"],
   },
   robots: {
@@ -119,7 +119,7 @@ const jsonLd = {
       alternateName: "RiftboundFrance",
       url: "https://riftboundfrance.fr",
       email: "contact@riftboundfrance.fr",
-      description: "La référence francophone pour le TCG Riftbound : tier lists, decks de tournois, guides et base de cartes.",
+      description: "Tier lists, decks de tournois, guides et cartes Riftbound en français.",
       logo: {
         "@type": "ImageObject",
         url: "https://riftboundfrance.fr/logorbfr.png",

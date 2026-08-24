@@ -194,7 +194,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             id="deck-code-a"
             value={codeA}
             onChange={(e) => setCodeA(e.target.value)}
-            placeholder={t("Code binaire du deck A")}
+            placeholder={t("Collez le code du premier deck")}
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
@@ -210,7 +210,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             id="deck-code-b"
             value={codeB}
             onChange={(e) => setCodeB(e.target.value)}
-            placeholder={t("Code binaire du deck B")}
+            placeholder={t("Collez le code du second deck")}
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckB && <div className="mt-1 text-xs text-violet-light">{displayLegendName(deckB.legend)}</div>}

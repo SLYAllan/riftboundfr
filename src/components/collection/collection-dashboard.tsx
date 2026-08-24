@@ -226,7 +226,7 @@ export function CollectionDashboard({
       <section className="mt-10">
         <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h2 className="shrink-0 font-display text-lg font-bold">{t("Tes classeurs")}</h2>
-          <span className="text-xs text-ink-muted">{t("Ouvre un classeur pour parcourir et gérer tes cartes")}</span>
+          <span className="text-xs text-ink-muted">{t("Ouvrez un classeur pour parcourir et gérer vos cartes")}</span>
         </div>
         {error && <p role="alert" className="mb-4 text-sm text-error-light">{error}</p>}
 
@@ -410,7 +410,7 @@ function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
           </div>
 
           {empty ? (
-            <p className="text-sm text-ink-secondary">{t("Vide pour l'instant. Ouvre-le pour ajouter tes cartes.")}</p>
+            <p className="text-sm text-ink-secondary">{t("Ce classeur est vide. Ouvrez-le pour ajouter vos cartes.")}</p>
           ) : (
             <p className="text-sm text-ink-secondary">
               <span className="font-semibold tabular-nums text-ink">{b.distinct.toLocaleString("fr-FR")}</span> cartes

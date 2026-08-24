@@ -29,6 +29,6 @@ describe("accessibilité de l'explorateur de classeur", () => {
 
   it("affiche les erreurs de partage", () => {
     expect(source).toContain('role="alert"');
-    expect(source).toContain("Impossible de modifier le partage");
+    expect(source).toContain("Le partage n’a pas pu être modifié");
   });
 });

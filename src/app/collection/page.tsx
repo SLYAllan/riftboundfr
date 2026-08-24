@@ -13,7 +13,7 @@ import { metaTraduite, tr } from "@/lib/i18n-server";
 const metadata: Metadata = {
   title: { absolute: "Ma collection Riftbound - classeurs, progression et valeur" },
   description:
-    "Gère ta collection de cartes Riftbound en classeurs, suis ta progression par set, type et rareté, et repère tes cartes manquantes.",
+    "Gérez votre collection de cartes Riftbound en classeurs, suivez votre progression par set, type et rareté, et repérez les cartes qui vous manquent.",
   alternates: { canonical: "/collection" },
   robots: { index: false, follow: false },
 };
@@ -37,7 +37,7 @@ export default async function CollectionPage() {
       <main className="mx-auto max-w-7xl px-4 py-8">
         <h1 className="font-display text-2xl font-bold">Ma collection</h1>
         <div className="mt-6 rounded-xl border border-hairline bg-surface-raised/40 p-8 text-center">
-          <p className="mb-4 text-ink-secondary">{t("Connecte-toi avec Discord pour gérer ta collection en classeurs et suivre ta progression.")}</p>
+          <p className="mb-4 text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
           <Link
             href="/api/auth/discord"
             className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-canvas hover:bg-arcane/90"

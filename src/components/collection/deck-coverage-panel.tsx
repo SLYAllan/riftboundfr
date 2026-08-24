@@ -143,8 +143,8 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
       <div className={achat ? "mt-5 border-t border-hairline pt-4" : ""}>
         {!loggedIn ? (
           <p className="text-sm text-ink-muted">
-            <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Connecte-toi avec Discord")}</Link>{" "}
-            pour voir combien de cartes il te manque pour ce deck.{" "}
+            <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Connectez-vous avec Discord")}</Link>{" "}
+            pour voir combien de cartes il vous manque pour ce deck.{" "}
             <Link href="/collection" className="text-arcane hover:underline">
               Ma collection
             </Link>

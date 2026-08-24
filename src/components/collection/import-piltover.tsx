@@ -30,7 +30,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
       const data = await res.json().catch(() => null);
       if (!res.ok) {
         if (Array.isArray(data?.unmatched)) setReport(data as Report);
-        setError(res.status === 401 ? "Connecte-toi avec Discord d'abord." : "Échec de l'import.");
+        setError(res.status === 401 ? "Connectez-vous avec Discord pour importer votre collection." : "L’import a échoué. Réessayez.");
         return;
       }
       if (!Array.isArray(data?.unmatched) || typeof data?.imported !== "number" || typeof data?.rows !== "number") {
@@ -47,7 +47,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
   return (
     <div className="rounded-lg border border-line bg-surface-raised/40 p-4">
       <h2 className="mb-1 font-semibold">Importer depuis Piltover Archive</h2>
-      <p className="mb-3 text-sm text-ink-muted">{t("Exporte ta collection en CSV depuis Piltover Archive, puis dépose le fichier ici. Les quantités existantes seront remplacées par celles du fichier.")}</p>
+      <p className="mb-3 text-sm text-ink-muted">{t("Exportez votre collection en CSV depuis Piltover Archive, puis déposez le fichier ici. Les quantités du fichier remplaceront celles du site.")}</p>
       <input
         type="file"
         accept=".csv,text/csv"

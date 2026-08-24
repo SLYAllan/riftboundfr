@@ -217,7 +217,7 @@ export function TierListTabs({
       </div>
 
       <div className="mt-8 rounded-lg border border-hairline bg-surface p-6 text-center">
-        <p className="text-sm text-ink-muted">{t("Cette tier list est basée sur notre analyse des résultats de tournois publics. Elle ne reflète pas de données statistiques automatisées.")}</p>
+        <p className="text-sm text-ink-muted">{t("Nous classons les Légendes à partir des résultats de tournois publics. Ce classement repose sur notre analyse, pas sur un calcul automatique.")}</p>
       </div>
     </>
   );

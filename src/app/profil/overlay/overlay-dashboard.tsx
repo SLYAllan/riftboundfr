@@ -869,7 +869,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       <section className="space-y-3 border-t border-hairline p-4">
         <div className="space-y-4 rounded-xl border border-hairline bg-surface p-4 text-sm">
           <p className="text-xs text-ink-muted">
-            {t("Colle une decklist par joueur (les terrains sont retirés du défilé). Choisis l’affichage, puis clique une carte pour la montrer, et reclique-la pour la retirer de l’écran. « Diapo auto » les fait tourner tout seul ; sinon tu choisis au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
+            {t("Collez une decklist par joueur (les terrains sont retirés du défilé). Choisissez l’affichage, puis cliquez sur une carte pour la montrer. Cliquez de nouveau pour la retirer. « Diapo auto » fait défiler les cartes ; sans cette option, vous les choisissez au clic. « Deux cadres » cache le chrono et le logo à gauche.")}
           </p>
 
           {/* Tous les réglages ensemble : quel affichage, diapo auto, durée. */}

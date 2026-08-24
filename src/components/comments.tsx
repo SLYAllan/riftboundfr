@@ -159,7 +159,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
         <p className="text-center text-sm text-ink-muted py-8">{t("Chargement…")}</p>
       ) : erreurChargement ? (
         <div role="alert" className="rounded-lg border border-hairline bg-surface p-4 text-center">
-          <p className="text-sm text-ink-secondary mb-2">{t("Impossible de charger cette liste.")}</p>
+          <p className="text-sm text-ink-secondary mb-2">{t("Les commentaires n’ont pas pu se charger. Vérifiez votre connexion, puis réessayez.")}</p>
           <button
             onClick={() => void chargerCommentaires()}
             className="rounded-lg bg-surface-raised px-4 py-1.5 text-sm font-medium text-ink-secondary hover:text-ink transition-colors"

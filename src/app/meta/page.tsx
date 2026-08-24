@@ -60,7 +60,7 @@ export default async function MetaSnapshotPage() {
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
         <h1 className="text-4xl font-bold font-display">{t("Méta Riftbound")}</h1>
-        <p className="mt-4 text-ink-secondary">{t("Aucune donnée disponible pour le moment.")}</p>
+        <p className="mt-4 text-ink-secondary">{t("Les données de la méta ne sont pas encore disponibles. Revenez après la prochaine mise à jour.")}</p>
       </div>
     );
   }

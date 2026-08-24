@@ -29,7 +29,7 @@ export function DeckActions({ shareCode, isPublic, titre }: { shareCode: string;
         // SAFETY: nos routes /api/community-decks repondent { error: string } sur
         // tout statut non-2xx ; un corps illisible retombe sur null via le catch.
         const donnees = (await res.json().catch(() => null)) as { error?: string } | null;
-        const message = donnees?.error || t("Action impossible. Réessaie.");
+        const message = donnees?.error || t("L’action a échoué. Réessayez.");
         setErreur(message);
         setAnnonce(message);
         return;
@@ -37,7 +37,7 @@ export function DeckActions({ shareCode, isPublic, titre }: { shareCode: string;
       setAnnonce(methode === "DELETE" ? t("Deck supprimé") : t("Visibilité modifiée"));
       router.refresh();
     } catch {
-      const message = t("Action impossible. Vérifie ta connexion.");
+      const message = t("L’action a échoué. Vérifiez votre connexion.");
       setErreur(message);
       setAnnonce(message);
     } finally {
@@ -96,13 +96,13 @@ export function BoutonDeconnexion() {
     try {
       const res = await fetch("/api/auth/logout", { method: "POST" });
       if (!res.ok) {
-        setErreur(t("Déconnexion impossible. Réessaie."));
+        setErreur(t("La déconnexion a échoué. Réessayez."));
         setEnCours(false);
         return;
       }
       window.location.href = "/";
     } catch {
-      setErreur(t("Déconnexion impossible. Vérifie ta connexion."));
+      setErreur(t("La déconnexion a échoué. Vérifiez votre connexion."));
       setEnCours(false);
     }
   };

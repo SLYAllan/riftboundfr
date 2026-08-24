@@ -75,7 +75,7 @@ export function ProfileActions({ username, riotGameName, riotTagLine }: ProfileA
         // SAFETY: /api/auth/profile repond { error: string } sur tout statut
         // non-2xx ; un corps illisible retombe sur null via le catch.
         const corps = (await res.json().catch(() => null)) as { error?: string } | null;
-        const message = corps?.error || t("Enregistrement impossible. Réessaie.");
+        const message = corps?.error || t("L’enregistrement a échoué. Réessayez.");
         setErreur(message);
         setAnnonce(message);
         return;
@@ -84,7 +84,7 @@ export function ProfileActions({ username, riotGameName, riotTagLine }: ProfileA
       setEditing(false);
       router.refresh();
     } catch {
-      const message = t("Enregistrement impossible. Vérifie ta connexion.");
+      const message = t("L’enregistrement a échoué. Vérifiez votre connexion.");
       setErreur(message);
       setAnnonce(message);
     } finally {

@@ -12,12 +12,14 @@ export const EN: Record<string, string> = {
   // — Navigation et pied de page —
   "Action impossible. Réessaie.": "Could not do that. Try again.",
   "Action impossible. Vérifie ta connexion.": "Could not do that. Check your connection.",
+  "Actualiser la collection": "Refresh collection",
   "Aller au contenu": "Skip to content",
   "Aucun deck pour ce filtre.": "No deck matches this filter.",
   "classeur": "binder",
   "classeurs": "binders",
   "Compte": "Account",
   "Confirmer la suppression": "Confirm deletion",
+  "Connectez-vous avec Discord": "Sign in with Discord",
   "deck créé": "deck created",
   "Deck supprimé": "Deck deleted",
   "decks créés": "decks created",
@@ -1031,4 +1033,60 @@ export const EN: Record<string, string> = {
   "Utilisez un lien HTTPS fourni par VDO.Ninja.": "Use an HTTPS link provided by VDO.Ninja.",
   "Retirer de l’écran": "Remove from screen",
   "Montrer à l’écran": "Show on screen",
+  "Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.":
+    "Browse all Riftbound cards from Origins, Spiritforged, Unleashed and Vendetta. Filter them by set, type, rarity or domain, then read their text and stats in French.",
+  "Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.":
+    "Sign in with Discord to organise your collection into binders and track your progress.",
+  "Choisissez le gagnant. Le score des manches sera mis à jour sur le stream.":
+    "Choose the winner. The game score will update on stream.",
+  "Aucune carte ne correspond à votre recherche. Modifiez vos filtres.":
+    "No cards match your search. Change your filters.",
+  "Vous n’avez pas encore sauvegardé de deck.": "You have not saved a deck yet.",
+  "Collez le code du premier deck": "Paste the first deck code",
+  "Collez le code du second deck": "Paste the second deck code",
+  "Aucun deck ne correspond à ces filtres. Essayez d’en retirer un.":
+    "No decks match these filters. Try removing one.",
+  "La page n’a pas pu se charger. Réessayez maintenant ou revenez dans quelques minutes.":
+    "The page could not load. Try again now or come back in a few minutes.",
+  "Pour apprendre, partez d’une liste qui a déjà obtenu des résultats. Consultez la tier list du format actuel, copiez le core du deck, puis changez les slots flexibles après quelques parties.":
+    "To learn, start from a list that has already earned results. Check the current format tier list, copy the deck core, then change the flex slots after a few games.",
+  "Vous pouvez jouer gratuitement à Riftbound en ligne, même sans cartes physiques. Voici deux plateformes et la marche à suivre.":
+    "You can play Riftbound online for free, even without physical cards. Here are two platforms and how to use them.",
+  "Les deux plateformes sont gratuites. Choisissez TCG Arena pour chercher un adversaire, ou RiftAtlas pour tester un deck en solo avant une partie.":
+    "Both platforms are free. Choose TCG Arena to find an opponent, or RiftAtlas to test a deck solo before a game.",
+  "Les données de la méta ne sont pas encore disponibles. Revenez après la prochaine mise à jour.":
+    "Meta data is not available yet. Check back after the next update.",
+  "Suivez votre collection Riftbound en classeurs, repérez les cartes qui vous manquent et voyez quels decks méta vous pouvez déjà jouer.":
+    "Track your Riftbound collection in binders, find the cards you are missing and see which meta decks you can already play.",
+  "L’action a échoué. Réessayez.": "The action failed. Try again.",
+  "L’action a échoué. Vérifiez votre connexion.": "The action failed. Check your connection.",
+  "La déconnexion a échoué. Réessayez.": "Sign-out failed. Try again.",
+  "La déconnexion a échoué. Vérifiez votre connexion.": "Sign-out failed. Check your connection.",
+  "L’enregistrement a échoué. Réessayez.": "Saving failed. Try again.",
+  "L’enregistrement a échoué. Vérifiez votre connexion.": "Saving failed. Check your connection.",
+  "Collez une decklist par joueur (les terrains sont retirés du défilé). Choisissez l’affichage, puis cliquez sur une carte pour la montrer. Cliquez de nouveau pour la retirer. « Diapo auto » fait défiler les cartes ; sans cette option, vous les choisissez au clic. « Deux cadres » cache le chrono et le logo à gauche.":
+    "Paste one decklist per player (battlefields are removed from the slideshow). Choose the display, then click a card to show it. Click it again to remove it. Auto slideshow cycles through the cards; without it, you choose them manually. Two frames hides the timer and the logo on the left.",
+  "Comparez les Légendes pour chaque set ou sur l’ensemble du format. Nous les classons selon leurs résultats en tournoi.":
+    "Compare Legends for each set or across the whole format. We rank them by their tournament results.",
+  "Nous classons les Légendes à partir des résultats de tournois publics. Ce classement repose sur notre analyse, pas sur un calcul automatique.":
+    "We rank Legends from public tournament results. This ranking reflects our analysis, not an automated calculation.",
+  "Aucune carte ne correspond à ces filtres. Modifiez-les pour élargir la recherche.":
+    "No cards match these filters. Change them to broaden your search.",
+  "Ouvrez un classeur pour parcourir et gérer vos cartes": "Open a binder to browse and manage your cards",
+  "Ce classeur est vide. Ouvrez-le pour ajouter vos cartes.": "This binder is empty. Open it to add your cards.",
+  "Exportez votre collection en CSV depuis Piltover Archive, puis déposez le fichier ici. Les quantités du fichier remplaceront celles du site.":
+    "Export your collection as CSV from Piltover Archive, then drop the file here. The quantities in the file will replace those on the site.",
+  "Les commentaires n’ont pas pu se charger. Vérifiez votre connexion, puis réessayez.":
+    "Comments could not load. Check your connection, then try again.",
+  "Découvrez qui publie Riftbound France, d’où viennent les données et comment nous contacter.":
+    "Find out who publishes Riftbound France, where the data comes from and how to contact us.",
+  "Qui publie Riftbound France, d’où viennent les données et comment nous contacter.":
+    "Who publishes Riftbound France, where the data comes from and how to contact us.",
+  "Gérez votre collection de cartes Riftbound en classeurs, suivez votre progression par set, type et rareté, et repérez les cartes qui vous manquent.":
+    "Organise your Riftbound card collection into binders, track your progress by set, type and rarity, and find the cards you are missing.",
+  "Decklists de tournois, cartes, guides et résultats Riftbound en français.":
+    "Tournament decklists, cards, guides and Riftbound results in English.",
+  "Decklists, cartes et guides Riftbound en français.": "Riftbound decklists, cards and guides in English.",
+  "Tier lists, decks de tournois, guides et cartes Riftbound en français.":
+    "Riftbound tier lists, tournament decks, guides and cards in English.",
 };

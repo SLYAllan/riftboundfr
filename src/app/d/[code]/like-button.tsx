@@ -44,7 +44,7 @@ export function LikeButton({ shareCode, initialLikes, isLoggedIn }: Props) {
     <button
       onClick={handleToggle}
       disabled={!isLoggedIn || loading}
-      title={isLoggedIn ? (liked ? "Retirer le like" : "Liker ce deck") : "Connectez-vous pour liker"}
+      title={isLoggedIn ? (liked ? "Retirer mon J’aime" : "J’aime ce deck") : "Connectez-vous pour aimer ce deck"}
       className={cn(
         "inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
         liked

@@ -24,7 +24,7 @@ export default function Error({
         {t("Erreur serveur")}
       </h1>
       <p className="mt-2 text-sm text-ink-secondary">
-        {t("Quelque chose s’est mal passé. Réessayez ou revenez plus tard.")}
+        {t("La page n’a pas pu se charger. Réessayez maintenant ou revenez dans quelques minutes.")}
       </p>
       <button
         onClick={reset}

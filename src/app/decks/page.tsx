@@ -184,12 +184,12 @@ export default async function DecksPage({ searchParams }: PageProps) {
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
         On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
-        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, va sur
+        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
         sa page dans les{" "}
         <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
-        Pour savoir quoi jouer, commence par la{" "}
+        Pour savoir quoi jouer, commencez par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
-        puis choisis ta{" "}
+        puis choisissez votre{" "}
         <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
         peux aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
@@ -282,7 +282,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
                             ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
                           )}
-                          title={ok ? "Jouable avec ta collection" : `Il te manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                          title={ok ? "Jouable avec votre collection" : `Il vous manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
                         >
                           {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
                         </span>
@@ -375,12 +375,12 @@ export default async function DecksPage({ searchParams }: PageProps) {
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
       <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
         On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
-        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, va sur
+        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
         sa page dans les{" "}
         <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
-        Pour savoir quoi jouer, commence par la{" "}
+        Pour savoir quoi jouer, commencez par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
-        puis choisis ta{" "}
+        puis choisissez votre{" "}
         <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
         peux aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
@@ -507,7 +507,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
       {vueLegendes ? (
         lignesLegendes.length === 0 ? (
-          <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
+          <p className="mt-12 text-center text-ink-muted">{t("Aucun deck ne correspond à ces filtres. Essayez d’en retirer un.")}</p>
         ) : (
           <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {lignesLegendes.map((ligne) => {
@@ -557,7 +557,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           </div>
         )
       ) : lotInitial.total === 0 ? (
-        <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
+        <p className="mt-12 text-center text-ink-muted">{t("Aucun deck ne correspond à ces filtres. Essayez d’en retirer un.")}</p>
       ) : (
         <>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -584,7 +584,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
                           ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
                         )}
-                        title={ok ? "Jouable avec ta collection" : `Il te manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                        title={ok ? "Jouable avec votre collection" : `Il vous manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
                       >
                         {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
                       </span>

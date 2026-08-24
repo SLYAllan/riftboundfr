@@ -100,7 +100,7 @@ export default async function TierListPage() {
           {t("Tier List Riftbound - Les meilleures Légendes du méta")}
         </h1>
         <p className="mt-2 text-ink-secondary">
-          {t("Classement éditorial par set et global, basé sur les résultats de tournois.")}
+          {t("Comparez les Légendes pour chaque set ou sur l’ensemble du format. Nous les classons selon leurs résultats en tournoi.")}
         </p>
       </div>
       <TierListTabs

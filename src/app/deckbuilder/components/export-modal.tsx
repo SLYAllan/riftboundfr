@@ -295,7 +295,7 @@ export function ExportModal({
                       disabled={!canPublish}
                       className="w-full rounded-lg bg-violet-dark px-3 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition"
                     >
-                      {publishing ? "Publication..." : unlisted ? "Créer le lien" : "Publier le deck"}
+                      {publishing ? "Envoi…" : unlisted ? "Créer le lien" : "Publier le deck"}
                     </button>
 
                     {publishError && (

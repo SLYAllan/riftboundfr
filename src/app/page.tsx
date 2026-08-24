@@ -345,7 +345,7 @@ export default async function HomePage() {
             </div>
             <div className="flex flex-1 flex-col gap-4 p-5">
               <p className="text-sm text-ink-secondary leading-relaxed">
-                {t("Suis ta collection Riftbound en classeurs, repère tes cartes manquantes et vois quels decks méta tu peux déjà jouer.")}
+                {t("Suivez votre collection Riftbound en classeurs, repérez les cartes qui vous manquent et voyez quels decks méta vous pouvez déjà jouer.")}
               </p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">

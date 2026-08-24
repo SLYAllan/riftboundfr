@@ -16,7 +16,7 @@ export function CardGrid({ cards }: CardGridProps) {
   if (cards.length === 0) {
     return (
       <div className="py-20 text-center text-ink-muted">
-        Aucune carte trouvée.
+        Aucune carte ne correspond à votre recherche. Modifiez vos filtres.
       </div>
     );
   }

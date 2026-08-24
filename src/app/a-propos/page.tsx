@@ -5,14 +5,14 @@ import { metaTraduite, tr } from "@/lib/i18n-server";
 const metadata: Metadata = {
   title: { absolute: "À propos - Riftbound France" },
   description:
-    "Qui est derrière Riftbound France, la référence francophone du TCG Riftbound : mission, sources des données et contact.",
+    "Découvrez qui publie Riftbound France, d’où viennent les données et comment nous contacter.",
   alternates: { canonical: "/a-propos" },
   openGraph: {
     type: "website",
     siteName: "Riftbound France",
     locale: "fr_FR",
     title: "À propos - Riftbound France",
-    description: "La référence francophone du TCG Riftbound : mission, sources des données et contact.",
+    description: "Qui publie Riftbound France, d’où viennent les données et comment nous contacter.",
     images: ["/img/og-default.png"],
   },
 };

@@ -23,7 +23,7 @@ const platforms = [
     name: "TCG Arena",
     url: "https://tcgarena.app",
     color: "#0ea5e9",
-    description: "Plateforme web pour jouer à Riftbound en temps réel contre d'autres joueurs. Interface intuitive avec glisser-déposer, discussion intégrée et recherche d'adversaire automatique.",
+    description: "Plateforme web pour jouer à Riftbound en temps réel contre d'autres joueurs. Elle propose le glisser-déposer, une discussion et une recherche d'adversaire automatique.",
     steps: [
       "Rendez-vous sur tcgarena.app et créez un compte gratuit",
       "Cliquez sur « Riftbound » dans la liste des jeux disponibles",
@@ -43,7 +43,7 @@ const platforms = [
     name: "RiftAtlas",
     url: "https://riftatlas.com",
     color: "#a78bfa",
-    description: "Simulateur de parties Riftbound avec gestion complète des règles. Idéal pour tester des decks et s'entraîner en solo ou contre des amis.",
+    description: "Simulateur de parties Riftbound qui gère les règles. Vous pouvez y tester des decks en solo ou jouer contre des amis.",
     steps: [
       "Allez sur riftatlas.com et créez un compte (gratuit)",
       "Dans la section « Decks », créez ou importez votre deck via code de deck",
@@ -67,7 +67,7 @@ export default async function JouerEnLignePage() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Jouer en ligne", href: "/guides/jouer-en-ligne" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Jouer en ligne")}</h1>
-      <p className="mt-2 text-lg text-ink-secondary">{t("Pas de cartes physiques ? Pas de problème. Deux plateformes permettent de jouer à Riftbound gratuitement en ligne.")}</p>
+      <p className="mt-2 text-lg text-ink-secondary">{t("Vous pouvez jouer gratuitement à Riftbound en ligne, même sans cartes physiques. Voici deux plateformes et la marche à suivre.")}</p>
 
       <div className="mt-4 rounded-lg border border-gold/20 bg-gold/5 px-4 py-3 text-sm text-ink-secondary">
         <strong className="text-gold">{t("Prérequis :")}</strong> un deck Riftbound prêt à jouer.{" "}
@@ -156,7 +156,7 @@ export default async function JouerEnLignePage() {
             </ul>
           </div>
         </div>
-        <p className="mt-4 text-sm text-ink-muted">{t("Les deux sont gratuits. Si vous débutez, commencez par TCG Arena pour sa recherche d’adversaire. Si vous voulez tester des decks en solo avant de jouer, utilisez RiftAtlas.")}</p>
+        <p className="mt-4 text-sm text-ink-muted">{t("Les deux plateformes sont gratuites. Choisissez TCG Arena pour chercher un adversaire, ou RiftAtlas pour tester un deck en solo avant une partie.")}</p>
       </section>
 
       <div className="mt-8 text-center">

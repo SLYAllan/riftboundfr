@@ -8,22 +8,22 @@
   "set": "Origins",
   "tier": 5,
   "archetype": "Unité sauvée par son bonus",
-  "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Et quand vous conquérez, Sett se prépare.",
+  "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Sett se prépare aussi quand vous conquérez.",
   "keyCards": [
     {
       "name": "Sett, The Boss (Legend)",
       "id": "Sett, The Boss",
-      "role": "Ability — rappelle les unités vaincues = value infinie."
+      "role": "Ability qui rappelle les unités vaincues et produit de la value à chaque usage."
     },
     {
       "name": "Showstopper",
       "id": "Showstopper",
-      "role": "Signature — buff un unit + contest un battlefield. Staple must-own."
+      "role": "Carte signature : buff une unité et conteste un battlefield."
     },
     {
       "name": "Sett, Brawler",
       "id": "Sett, Brawler",
-      "role": "Champion unit (1 copie en chosen champion)."
+      "role": "Champion unit joué à 1 copie comme chosen champion."
     },
     {
       "name": "Lucian, Merciless",
@@ -33,7 +33,7 @@
     {
       "name": "Fiora, Victorious",
       "id": "Fiora, Victorious",
-      "role": "Unité qui gagne des upsides quand buffée."
+      "role": "Unité qui gagne des upsides quand elle reçoit un buff."
     },
     {
       "name": "Warmog's Armor",
@@ -48,12 +48,12 @@
     {
       "name": "Ruin Runner",
       "id": "Ruin Runner",
-      "role": "Immune aux sorts — parfait pour showdowns."
+      "role": "Immunisée contre les sorts, donc adaptée aux showdowns."
     },
     {
       "name": "Monastery of Hirana",
       "id": "Monastery of Hirana",
-      "role": "Draw en payant un buff — résout le manque de draw de Sett."
+      "role": "Draw contre un buff pour compenser le manque de draw de Sett."
     },
     {
       "name": "Call to Glory",
@@ -63,7 +63,7 @@
     {
       "name": "Hidden Blade",
       "id": "Hidden Blade",
-      "role": "Removal — combo avec l'ability pour sauver l'unité ciblée = 'Draw 2'."
+      "role": "Removal en combo avec l'ability : l'unité ciblée peut être sauvée pour obtenir l'équivalent d'un Draw 2."
     }
   ],
   "strengths": [

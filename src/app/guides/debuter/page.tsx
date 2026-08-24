@@ -155,7 +155,7 @@ export default async function GuideDebuterPage() {
               { phase: "Début de tour", desc: "Si vous contrôlez un champ de bataille, vous marquez 1 point par champ tenu (c'est le Contrôle)." },
               { phase: "Canalisation", desc: "Ajoutez 2 runes de votre deck de runes sur le plateau. C'est votre « croissance » de mana. Au tout premier tour, le second joueur en reçoit 3 pour compenser." },
               { phase: "Pioche", desc: "Piochez 1 carte de votre deck." },
-              { phase: "Phase principale", desc: "Le cœur du tour : jouez des unités, lancez des sorts, équipez vos unités, déplacez-les vers les champs de bataille. Quand vos unités rencontrent celles de l'adversaire, un combat se déclenche." },
+              { phase: "Phase principale", desc: "Jouez des unités et des sorts, équipez vos unités et déplacez-les vers les champs de bataille. Quand vos unités rencontrent celles de l'adversaire, un combat se déclenche." },
               { phase: "Fin de tour", desc: "Tous les dégâts sur les unités sont soignés. Vos unités repartent à pleine vie pour le prochain tour." },
             ].map((p, i) => (
               <div key={t(p.phase)} className="flex gap-3 rounded-lg border border-hairline bg-surface p-3">

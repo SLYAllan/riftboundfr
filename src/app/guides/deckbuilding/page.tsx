@@ -3,7 +3,6 @@ import Link from "@/components/lien";
 import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { legendHref } from "@/lib/legend-fiche";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
@@ -204,14 +203,8 @@ export default async function GuideDeckbuildingPage() {
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quelles légendes sont fortes en ce moment ?")}</h2>
           <p className="mt-2 text-sm text-ink-secondary">
-            Si vous débutez la construction, partir d&apos;une légende éprouvée évite bien des erreurs. Sur le format actuel
-            (Unleashed), quatre légendes dominent les tournois :{" "}
-            <Link href={legendHref("Irelia, Blade Dancer")} className="font-semibold underline">Irelia</Link> (tempo réactif,
-            la plus constante),{" "}
-            <Link href={legendHref("Master Yi, Wuju Bladesman")} className="font-semibold underline">Master Yi, Wuju Bladesman</Link>{" "}
-            (contrôle de terrain Corps/Calme),{" "}
-            <Link href={legendHref("Diana, Scorn of the Moon")} className="font-semibold underline">Diana</Link> (agro-tempo) et{" "}
-            <Link href={legendHref("LeBlanc, Deceiver")} className="font-semibold underline">LeBlanc</Link>{" "}{t("(moteur d’Agonie). Leurs cœurs de deck sont bien établis : copiez-les pour apprendre, puis ajustez vos slots flexibles.")}</p>
+            {t("Pour apprendre, partez d’une liste qui a déjà obtenu des résultats. Consultez la tier list du format actuel, copiez le core du deck, puis changez les slots flexibles après quelques parties.")}
+          </p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
             <strong>Astuce :</strong>{" "}{t("une légende peu jouée mais qui gagne souvent (comme")}{" "}<strong>Annie</strong> ou{" "}
             <strong>Sett</strong>{t(") est souvent un meilleur choix qu’une légende très populaire qui ne convertit pas. Le détail set par set est dans le")}{" "}<Link href="/guides/meta" className="underline">{t("guide Méta & Tier List")}</Link>.

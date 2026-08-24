@@ -54,7 +54,7 @@ export function validateDeck(
   if (counts.mainTotal < 40) {
     issues.push({ id: "main-under", section: "main", severity: "error", message: `Deck principal : ${counts.mainTotal}/40 cartes (minimum 40)` });
   } else if (counts.mainTotal > 40) {
-    issues.push({ id: "main-over", section: "main", severity: "warning", message: `Deck principal : ${counts.mainTotal} cartes (40 recommandé pour la consistance)` });
+    issues.push({ id: "main-over", section: "main", severity: "warning", message: `Deck principal : ${counts.mainTotal} cartes. Gardez-en 40 pour piocher plus souvent les cartes dont vous avez besoin.` });
   }
 
   if (counts.runeTotal !== 12) {

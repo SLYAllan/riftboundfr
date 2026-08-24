@@ -186,7 +186,7 @@ export function BinderExplorer({
         }
       }
     } catch {
-      setErreurPartage("Impossible de modifier le partage. Réessaie.");
+      setErreurPartage("Le partage n’a pas pu être modifié. Réessayez.");
     }
   }
 
@@ -295,7 +295,7 @@ export function BinderExplorer({
 
       {/* Grid */}
       {visible.length === 0 ? (
-        <p className="py-16 text-center text-ink-muted">{t("Aucune carte ne correspond aux filtres.")}</p>
+        <p className="py-16 text-center text-ink-muted">{t("Aucune carte ne correspond à ces filtres. Modifiez-les pour élargir la recherche.")}</p>
       ) : (
         <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7">
           {visible.map((c) => {

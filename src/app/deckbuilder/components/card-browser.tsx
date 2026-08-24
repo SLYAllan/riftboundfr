@@ -394,7 +394,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
           ))}
         </div>
         {filtered.length === 0 && (
-          <div className="py-12 text-center text-sm text-ink-muted">{t("Aucune carte trouvée")}</div>
+          <div className="py-12 text-center text-sm text-ink-muted">{t("Aucune carte ne correspond à votre recherche. Modifiez vos filtres.")}</div>
         )}
       </div>
 

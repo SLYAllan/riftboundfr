@@ -96,7 +96,7 @@ async function loadSummaries(): Promise<FicheSummary[]> {
 const TIER_GROUPS: { tier: number; label: string; note: string; color: string }[] = [
   { tier: 1, label: "S", note: "Le haut du méta", color: "var(--color-tier-s)" },
   { tier: 2, label: "A", note: "Solides et compétitives", color: "var(--color-tier-a)" },
-  { tier: 3, label: "B", note: "Jouables avec un bon pilote", color: "var(--color-tier-b)" },
+  { tier: 3, label: "B", note: "Peuvent obtenir des résultats avec une bonne maîtrise", color: "var(--color-tier-b)" },
   { tier: 4, label: "C", note: "De niche ou en retrait", color: "var(--color-tier-c)" },
 ];
 
