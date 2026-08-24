@@ -10,7 +10,7 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 | 2 | **Refonte de la découverte de deck** (`/decks`) | entrée par Légende posée, à regarder à l'écran |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
-| 5 | **Source chinoise hexgate.cn** | 238, 239 et 240 relevés : 346 listes retenues, 15 écartées. Reste la conversion et le seed |
+| 5 | **Source chinoise hexgate.cn** | 330 listes converties, fiches de tournoi écrites, **seedées en base locale**. Pas de best-of : ce ne sont pas des Regional Qualifiers |
 | 6 | **130 decklists en double sur le disque** | décision d'Allan, rien n'est effacé |
 
 Les points 3 et 4 viennent d'une remarque d'Allan : ces pages ont été écrites par
@@ -48,29 +48,40 @@ La commande est dans le rapport.
 Restent deux constats mineurs non corrigés : des cases à cocher de 16 px sur
 téléphone, et un bloc du deckbuilder qui touche le bord à 430 px sans déborder.
 
-## Source chinoise hexgate.cn — reconnaissance commencée
+## Source chinoise hexgate.cn — trois tournois en base locale
 
-Allan a tranché : la source est **https://hexgate.cn/tournaments/**. Ce qui est
-établi, mesuré et pas supposé :
+Rapport de reconnaissance : `data/raw-scrapes/hexgate/RAPPORT.md`.
 
-- la page répond **200** avec un User-Agent de navigateur (308 sans, simple
-  redirection sans le `/` final), 112 Ko de HTML ;
-- c'est un site **Next.js**, `lang="zh-CN"` : le contenu est rendu côté serveur,
-  donc lisible sans navigateur, et les noms de cartes seront probablement en
-  chinois — à recouper avec la DB cartes avant toute conversion ;
-- rien n'a été scrapé, aucun tournoi n'a été comparé à `data/raw-scrapes/`.
+Le site rend ses decklists dans la charge React, avec pour chaque carte son
+numéro de collection ET son nom anglais. On rattache par le **nom anglais**
+d'abord, par le couple set + numéro ensuite : les deux catalogues ne numérotent
+pas pareil (hexgate écrit « FND-196/298 » ce que la base appelle `ogn-197-298`),
+mais les noms anglais se recoupent.
 
-Un worker `pi` (`wave-hexgate-1`) a été lancé pour la reconnaissance complète
-(forme des URL, page de tournoi, page de decklist, API JSON éventuelle,
-recoupement avec riftdecks). **Il n'a rien rendu au bout de quarante minutes** :
-ne pas croire qu'un worker travaille tant qu'il n'a pas écrit son fichier de
-session dans `~/.pi/agent/sessions/`. Un worker court (`wave-test2`) a répondu
-en quelques secondes sur la même machine : le problème vient de la taille de la
-tâche, pas de la configuration. **Découper plus fin.**
+| Tournoi | Inscrits | Listes publiées | Top 8 relevé |
+|---|---:|---:|---:|
+| S4 Beijing City Challenge (2026-08-23) | 123 | 114 | 8 |
+| S4 Shenzhen City Challenge (2026-08-23) | 128 | 115 | 6 |
+| S4 Suzhou City Challenge (2026-08-23) | 110 | 101 | 7 |
 
-Avant d'importer quoi que ce soit : la règle d'intégrité des decklists
-s'applique telle quelle. Une liste hexgate ne rentre que si elle est complète et
-recoupée, sinon elle est écartée.
+**16 listes écartées** : plusieurs Champions du personnage de la Légende y
+figurent et hexgate ne dit pas lequel a été désigné. On ne choisit pas à la place
+du joueur, d'où deux Top 8 troués — c'est voulu.
+
+Trois outils, à relancer tels quels pour un tournoi de plus :
+
+1. `scripts/scrape-hexgate.mts <id>` — relève la page et chaque decklist, écarte
+   les listes dont les comptes ne tombent pas juste ;
+2. `scripts/parse-hexgate.mts <id>` — convertit au format du site (demande la base) ;
+3. `scripts/tournois-hexgate.mts <id>` — écrit la fiche de tournoi et affiche la
+   ligne à poser dans `src/lib/tournament-flags.ts`.
+
+**Seedées en base locale le 24 août** : 330 decks créés, 0 erreur, 24 568 decks
+au total. **Pas de best-of** : la règle du projet les réserve aux Regional
+Qualifiers, et ce sont des City Challenge. Rien n'est en production.
+
+Les captures HTML brutes (29 Mo, 361 pages) ne sont pas versionnées : les JSON
+`tournoi-*-decks.json` portent tout, et l'URL pour retélécharger.
 
 ## Session du 23 août 2026 — six commits sur main, rien de poussé
 
