@@ -115,3 +115,9 @@ data/cardnexus-brand/
 # une trace des prix à chaque relevé.
 !data/prices/card-prices.json
 data/rules/*.pdf
+
+# Captures HTML brutes de hexgate : 29 Mo pour 361 pages, et tout ce qui compte
+# est déjà extrait dans les JSON `tournoi-*-decks.json` (numéro de collection,
+# nom anglais, quantité, emplacement). Les pages se re-téléchargent par leur URL,
+# gardée dans chaque JSON.
+data/raw-scrapes/hexgate/decks/
