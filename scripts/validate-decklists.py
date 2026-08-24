@@ -18,6 +18,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DECKS = os.path.join(ROOT, 'data', 'decklists')
 RAW   = os.path.join(ROOT, 'data', 'raw-scrapes')
 
+# Les sources n'écrivent pas la casse pareil : hexgate publie « Ride The Wind »
+# là où la base dit « Ride the Wind ». Deux cartes différentes ne se distinguent
+# jamais par la seule casse, donc tout se compare en minuscules.
+def cle_carte(nom):
+    return (nom or '').strip().lower()
+
 # ── .md parser (gère les 2 formats : **N**[Nom] et tableau **N** | [Nom]) ──
 CARD = re.compile(r'\*\*(\d+)\*\*\s*\|?\s*\[([^\]]+)\]')
 SEC  = re.compile(r'group_(legend|champion|unit|gear|spell|battlefields|runes|sideboard)\.png')
@@ -33,7 +39,7 @@ def parse_md(path):
         if ms: sec = ms.group(1); continue
         mc = CARD.search(line)
         if not mc: continue
-        nm = mc.group(2).strip()
+        nm = cle_carte(mc.group(2))
         if sec == 'champion': champs.add(nm)
         if sec in ('unit', 'gear', 'spell'):
             pool[nm] = pool.get(nm, 0) + int(mc.group(1))
@@ -45,9 +51,19 @@ jtruth = {}
 def consider(url, main):
     if not url or main is None: return
     if url not in jtruth or units(main) > units(jtruth[url]): jtruth[url] = main
+# hexgate ne nomme pas ses clés comme riftdecks : `source` au lieu de `url`,
+# `cartes` au lieu de `main`, et l'emplacement dans `slot_type`. Sans cette
+# lecture, les 330 listes chinoises restaient invérifiables — donc jamais
+# recoupées contre leur source, ce que la règle d'intégrité interdit.
+def cartes_hexgate(o):
+    principales = [c for c in o['cartes'] if c.get('slot_type') == 'main']
+    return [{'name': c['en_name'], 'quantity': c['quantity'], 'type': 'unit'} for c in principales]
+
 def walk(o):
     if isinstance(o, dict):
         if o.get('url') and 'main' in o: consider(o['url'], o['main'])
+        if o.get('source') and isinstance(o.get('cartes'), list):
+            consider(o['source'], cartes_hexgate(o))
         for v in o.values(): walk(v)
     elif isinstance(o, list):
         for v in o: walk(v)
@@ -72,7 +88,8 @@ def jpool(main):
     pool = {}
     for c in main:
         if (c.get('type') or '').lower() in skip: continue
-        pool[c['name']] = pool.get(c['name'], 0) + c['quantity']
+        k = cle_carte(c['name'])
+        pool[k] = pool.get(k, 0) + c['quantity']
     return pool
 
 # index .md par stem (id) et par (dossier, joueur)
@@ -87,14 +104,16 @@ for p in glob.glob(os.path.join(RAW, '**', '*.md'), recursive=True):
     except Exception: pass
 
 def fpool(o, drop_champ=True):
-    champ = o.get('champion')
+    champ = cle_carte(o.get('champion'))
     pool = {}
     for c in o.get('mainDeck', []):
-        if drop_champ and c['name'] == champ: continue
-        pool[c['name']] = pool.get(c['name'], 0) + c['quantity']
+        k = cle_carte(c['name'])
+        if drop_champ and k == champ: continue
+        pool[k] = pool.get(k, 0) + c['quantity']
     return pool
 
 def diff_is_champion_only(a, b, champs):
+    champs = {cle_carte(c) for c in champs if c}
     names = set(a) | set(b)
     diff = [n for n in names if a.get(n,0) != b.get(n,0)]
     return all(n in champs for n in diff), diff
@@ -114,7 +133,10 @@ for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
     truth = None; champs = set()
     if idv in md_by_stem:
         _, truth, champs = parse_md(md_by_stem[idv])
-    elif src and src in jtruth and units(jtruth[src]) == 39:
+    # 39 quand la source range le Champion à part (riftdecks), 40 quand elle le
+    # laisse dans le deck principal (hexgate). Au-delà, la source est partielle ou
+    # d'un autre format : on préfère « invérifiable » à une comparaison bancale.
+    elif src and src in jtruth and units(jtruth[src]) in (39, 40):
         truth = jpool(jtruth[src])
     if truth is None:
         unverifiable += 1
