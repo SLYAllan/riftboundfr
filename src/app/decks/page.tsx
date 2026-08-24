@@ -469,15 +469,15 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Link
             href={hrefDecks({ sort: null })}
             className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
-              !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
-            )}
-          >{t("Récents")}</Link>
-          <Link
-            href={hrefDecks({ sort: "placement" })}
-            className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
-              sortParam === "placement" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+              !sortParam || sortParam === "placement" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           ><Trophy size={12} aria-hidden="true" /> {t("Placement")}</Link>
+          <Link
+            href={hrefDecks({ sort: "recent" })}
+            className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
+              sortParam === "recent" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+            )}
+          >{t("Récents")}</Link>
           <Link
             href={hrefDecks({ sort: "popular" })}
             className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",

@@ -98,14 +98,16 @@ export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
   // "Récents" doit trier par date, pas par tier : sinon les tournois tier S
   // (anciens Regional) enterrent les nouveaux City Challenge et l'onglet ne fait
   // rien de visible. Le tier ne départage plus qu'à date égale (même seed).
-  const orderBy: Prisma.DeckOrderByWithRelationInput[] = filtres.sort === "popular"
+  // Le tri par défaut est le placement (voir `FiltresDecks.sort`).
+  const tri = filtres.sort ?? "placement";
+  const orderBy: Prisma.DeckOrderByWithRelationInput[] = tri === "popular"
     ? [{ likes: "desc" }, { createdAt: "desc" }]
     : [{ createdAt: "desc" }, { tournamentTier: "asc" }];
   const utilisateur = await getUserFromSession();
 
   // Prisma trie `placement` comme du texte (`10th` avant `2nd`). On ne charge ici
   // que trois champs légers, puis le lot de decks complet dans l'ordre numérique.
-  const candidatsPlacement = filtres.sort === "placement"
+  const candidatsPlacement = tri === "placement"
     ? (await prisma.deck.findMany({
         where,
         select: { id: true, placement: true, createdAt: true },

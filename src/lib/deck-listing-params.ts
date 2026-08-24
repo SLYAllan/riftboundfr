@@ -6,7 +6,10 @@ export interface FiltresDecks {
   set?: string;
   tournament?: string;
   q: string;
-  sort?: "popular" | "placement";
+  // Sans `sort`, on trie par placement : un visiteur qui arrive sur /decks veut
+  // voir ce qui a gagné, pas ce qui vient d'être importé. « Récents » devient donc
+  // une valeur explicite, sinon il n'y aurait plus moyen de la demander.
+  sort?: "popular" | "placement" | "recent";
   owned: boolean;
   offset: number;
 }
@@ -55,7 +58,10 @@ export function lireFiltresDecks(params: Record<string, string | undefined>): Fi
     set: params.set || undefined,
     tournament: params.tournament || undefined,
     q: (params.q ?? "").trim(),
-    sort: params.sort === "popular" || params.sort === "placement" ? params.sort : undefined,
+    sort:
+      params.sort === "popular" || params.sort === "placement" || params.sort === "recent"
+        ? params.sort
+        : undefined,
     owned: params.owned === "1",
     offset: Number.isFinite(offset) && offset > 0 ? offset : 0,
   };
