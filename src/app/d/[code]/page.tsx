@@ -140,7 +140,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/decks?cat=community" className="text-sm text-ink-muted hover:text-arcane">{t("← Retour aux decks communautaires")}</Link>
+      <Link href="/decks?cat=community" className="inline-flex min-h-6 items-center text-sm text-ink-muted hover:text-arcane">{t("← Retour aux decks communautaires")}</Link>
       <div className="mt-6">
         <h1
           className="text-3xl font-bold leading-tight sm:text-4xl"

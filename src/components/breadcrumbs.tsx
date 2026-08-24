@@ -53,7 +53,7 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
                   {c.name}
                 </span>
               ) : (
-                <Link href={c.href} className="hover:text-arcane">
+                <Link href={c.href} className="inline-flex min-h-6 items-center hover:text-arcane">
                   {c.name}
                 </Link>
               )}

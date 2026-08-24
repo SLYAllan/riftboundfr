@@ -300,7 +300,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
         <SearchBar value={searchQuery} onChange={setSearchQuery} parsed={parsed} />
 
         <div className="flex items-center gap-2 flex-wrap">
-          <div className="flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-1.5">
             {DOMAIN_ORDER.map((d) => {
               const active = selectedDomains.has(d);
               const color = DOMAIN_COLORS[d] ?? "#6b7280";

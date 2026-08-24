@@ -91,7 +91,7 @@ export function HomeTierList({
         </h2>
         <Link
           href="/tier-list"
-          className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
+          className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
         >
           {t("Tier list complète")} <ArrowRight size={14} />
         </Link>

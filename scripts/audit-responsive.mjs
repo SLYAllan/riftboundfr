@@ -19,15 +19,19 @@
 import { chromium } from "playwright";
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { extraireCheminsSitemap, interactionAutorisee } from "./audit-responsive-lib.mjs";
 
 const args = Object.fromEntries(
   process.argv.slice(2).map((a, i, t) => (a.startsWith("--") ? [a.slice(2), t[i + 1]] : [])).filter(Boolean),
 );
 const BASE = args.base ?? "http://localhost:3000";
-const URLS = readFileSync(args.urls ?? "/tmp/urls.txt", "utf8").split("\n").map((l) => l.trim()).filter(Boolean);
+const URLS = args.urls
+  ? [...new Set(readFileSync(args.urls, "utf8").split("\n").map((l) => l.trim()).filter(Boolean))]
+  : extraireCheminsSitemap(await (await fetch(`${BASE}/sitemap.xml`)).text(), BASE);
 const TAG = args.tag ?? "avant";
 const OUT = args.out ?? `./audit-${TAG}`;
 const COOKIE = args.cookie ?? process.env.SESSION_COOKIE ?? "";
+const TESTER_INTERACTIONS = args.interactions !== "false";
 mkdirSync(join(OUT, "captures"), { recursive: true });
 
 const ECRANS = [
@@ -99,13 +103,20 @@ const MESURES = () => {
     if (type === "hidden") continue;
     // Un lien au fil du texte est exclu de la règle des 24 px (WCAG 2.2, exception
     // « inline ») : on ne peut pas agrandir un mot au milieu d'une phrase.
-    const parent = el.parentElement;
     const dansUnePhrase =
       el.tagName === "A" &&
-      parent &&
       getComputedStyle(el).display.startsWith("inline") &&
-      /^(P|LI|SPAN|TD|DD|DT|H1|H2|H3|H4|H5|H6|BLOCKQUOTE)$/.test(parent.tagName);
+      el.closest("p, li, td, dd, dt, h1, h2, h3, h4, h5, h6, blockquote");
     if (dansUnePhrase) continue;
+    // Une case à cocher de 16 px enveloppée dans son `<label>` se clique sur tout
+    // le libellé : c'est le label qu'il faut mesurer. Sans ça, les six cases du
+    // tableau de bord d'overlay sortaient comme trop petites alors que leur cible
+    // fait 44 px.
+    const etiquette = el.closest("label");
+    if (etiquette && etiquette !== el) {
+      const re = etiquette.getBoundingClientRect();
+      if (re.width >= 24 && re.height >= 24) continue;
+    }
     if (r.width < 24 || r.height < 24) petitesCibles.push(decrire(el));
   }
 
@@ -135,6 +146,7 @@ const MESURES = () => {
   // inutilisable : on mesure sa hauteur plutôt que de la deviner.
   const colles = [];
   for (const el of tous) {
+    if (el.matches('[role="dialog"], [aria-modal="true"]') || el.querySelector('[role="dialog"], [aria-modal="true"]')) continue;
     const s = getComputedStyle(el);
     if (s.position !== "fixed" && s.position !== "sticky") continue;
     const r = el.getBoundingClientRect();
@@ -160,6 +172,70 @@ const MESURES = () => {
 
 const nomFichier = (url, ecran) =>
   `${url.replace(/^\//, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "accueil"}--${ecran}.png`;
+
+const LIBELLE_CLIC_SUR = /menu|outils|filtre|affichage|vue |statistiques|comparer|différences|côte à côte|tout ouvrir|tout fermer|importer|mon deck|modifier le profil|nouveau classeur|gérer le classeur|annuler|fermer|réinitialiser|réessayer|précédent|suivant/i;
+const ROUTE_SANS_INTERACTION = /^\/(?:overlay|compagnon|profil\/overlay)(?:\/|$)/;
+const ROUTE_SELECT_SURE = /^\/(?:cartes|decks|meta|tournois|guides\/glossaire|deckbuilder)(?:\/|$)/;
+
+const problemesMesures = (mesures) => {
+  const soucis = [];
+  if (mesures.debordementH > 1) soucis.push(`débordement horizontal de ${mesures.debordementH}px`);
+  if (mesures.debordants.length) soucis.push(`${mesures.debordants.length} élément(s) hors cadre`);
+  if (mesures.petitesCibles.length) soucis.push(`${mesures.petitesCibles.length} cible(s) < 24px`);
+  if (mesures.texteCoupe.length) soucis.push(`${mesures.texteCoupe.length} texte(s) coupé(s)`);
+  if (mesures.medias.length) soucis.push(`${mesures.medias.length} média(s) trop large(s)`);
+  if (mesures.colles.length) soucis.push(`${mesures.colles.length} élément(s) collé(s) haut(s)`);
+  return soucis;
+};
+
+async function auditerInteractions(page, url, ecran) {
+  if (!TESTER_INTERACTIONS || ROUTE_SANS_INTERACTION.test(url)) return [];
+  const resultats = [];
+  const controles = page.locator('button:not([disabled]), [role="tab"], summary');
+  const vus = new Set();
+  for (let i = 0, n = await controles.count(); i < n; i++) {
+    const controle = controles.nth(i);
+    if (!(await controle.isVisible().catch(() => false))) continue;
+    if ((await controle.getAttribute("type")) === "submit") continue;
+    const libelle = ((await controle.getAttribute("aria-label")) ?? (await controle.innerText().catch(() => ""))).trim();
+    const estOnglet = (await controle.getAttribute("role")) === "tab";
+    if (!libelle || vus.has(libelle) || !interactionAutorisee(libelle)) continue;
+    if (!estOnglet && !LIBELLE_CLIC_SUR.test(libelle)) continue;
+    vus.add(libelle);
+    await controle.click().catch(() => {});
+    await page.waitForTimeout(180);
+    const mesures = await page.evaluate(MESURES);
+    const soucis = problemesMesures(mesures);
+    const capture = soucis.length
+      ? `interaction-${nomFichier(`${url}-${libelle}`, ecran.nom)}`
+      : null;
+    if (capture) await page.screenshot({ path: join(OUT, "captures", capture), fullPage: true }).catch(() => {});
+    resultats.push({ type: estOnglet ? "onglet" : "bouton", libelle, soucis, mesures, capture });
+    await page.keyboard.press("Escape").catch(() => {});
+  }
+
+  if (ROUTE_SELECT_SURE.test(url)) {
+    const selects = page.locator("select:not([disabled])");
+    for (let i = 0, n = await selects.count(); i < n; i++) {
+      const select = selects.nth(i);
+      if (!(await select.isVisible().catch(() => false))) continue;
+      const options = await select.locator("option:not([disabled])").evaluateAll((els) => els.map((el) => el.value));
+      const valeur = options.find((v) => v !== "" && v !== "all");
+      if (valeur === undefined) continue;
+      const libelle = (await select.getAttribute("aria-label")) ?? (await select.getAttribute("name")) ?? `select-${i + 1}`;
+      await select.selectOption(valeur).catch(() => {});
+      await page.waitForTimeout(220);
+      const mesures = await page.evaluate(MESURES);
+      const soucis = problemesMesures(mesures);
+      const capture = soucis.length
+        ? `interaction-${nomFichier(`${url}-${libelle}`, ecran.nom)}`
+        : null;
+      if (capture) await page.screenshot({ path: join(OUT, "captures", capture), fullPage: true }).catch(() => {});
+      resultats.push({ type: "select", libelle, soucis, mesures, capture });
+    }
+  }
+  return resultats;
+}
 
 const rapport = [];
 const navigateur = await chromium.launch();
@@ -196,7 +272,7 @@ for (const ecran of ECRANS) {
     try {
       const rep = await page.goto(BASE + url, { waitUntil: "domcontentloaded", timeout: 45000 });
       statut = rep?.status() ?? null;
-      await page.waitForLoadState("networkidle", { timeout: 15000 }).catch(() => {});
+      await page.waitForLoadState("networkidle", { timeout: 1500 }).catch(() => {});
       await page.waitForTimeout(400);
     } catch (e) {
       rapport.push({ url, ecran: ecran.nom, erreurChargement: String(e).slice(0, 200) });
@@ -223,14 +299,13 @@ for (const ecran of ECRANS) {
       void bouton;
     }
 
-    const soucis = [];
-    if (mesures.debordementH > 1) soucis.push(`débordement horizontal de ${mesures.debordementH}px`);
-    if (mesures.debordants.length) soucis.push(`${mesures.debordants.length} élément(s) hors cadre`);
-    if (mesures.petitesCibles.length) soucis.push(`${mesures.petitesCibles.length} cible(s) < 24px`);
-    if (mesures.texteCoupe.length) soucis.push(`${mesures.texteCoupe.length} texte(s) coupé(s)`);
-    if (mesures.medias.length) soucis.push(`${mesures.medias.length} média(s) trop large(s)`);
-    if (mesures.colles.length) soucis.push(`${mesures.colles.length} élément(s) collé(s) haut(s)`);
+    const interactions = await auditerInteractions(page, url, ecran);
+    const soucis = problemesMesures(mesures);
     if (menu && menu.debordementH > 1) soucis.push(`menu ouvert : débordement de ${menu.debordementH}px`);
+    const soucisInteractions = interactions.flatMap((interaction) =>
+      interaction.soucis.map((souci) => `${interaction.type} « ${interaction.libelle} » : ${souci}`),
+    );
+    soucis.push(...soucisInteractions);
     if (erreursConsole.length) soucis.push(`${erreursConsole.length} erreur(s) console`);
     if (requetesRatees.length) soucis.push(`${requetesRatees.length} requête(s) en échec`);
 
@@ -240,7 +315,7 @@ for (const ecran of ECRANS) {
       await page.screenshot({ path: join(OUT, "captures", capture), fullPage: true }).catch(() => {});
     }
 
-    rapport.push({ url, ecran: ecran.nom, statut, soucis, mesures, menu, erreursConsole, requetesRatees, capture });
+    rapport.push({ url, ecran: ecran.nom, statut, soucis, mesures, menu, interactions, erreursConsole, requetesRatees, capture });
     await page.close();
   }
   await contexte.close();

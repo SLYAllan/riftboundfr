@@ -451,7 +451,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
       <div className="mt-12 text-center">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-sm text-ink-muted hover:text-arcane transition-colors"
+          className="inline-flex min-h-6 items-center text-sm text-ink-muted hover:text-arcane transition-colors"
         >{t("Retour en haut")}</button>
       </div>
     </div>

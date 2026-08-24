@@ -179,7 +179,7 @@ export function DeckStats({ mainDeck }: DeckStatsProps) {
                   key={key}
                   onClick={() => setDist(key)}
                   className={cn(
-                    "rounded-md px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider transition-colors",
+                    "min-h-11 rounded-md px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider transition-colors sm:min-h-6",
                     dist === key
                       ? "bg-arcane/15 text-arcane"
                       : "text-ink-muted hover:text-ink-secondary",

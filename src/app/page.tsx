@@ -207,7 +207,7 @@ export default async function HomePage() {
               </h2>
               <Link
                 href="/decks"
-                className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
+                className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
               >
                 {t("Tous les decks Riftbound")} <ArrowRight size={14} />
               </Link>
@@ -306,7 +306,7 @@ export default async function HomePage() {
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 <Newspaper size={18} className="text-violet-light" /> {t("Derniers articles")}
               </h2>
-              <Link href="/articles" className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
+              <Link href="/articles" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
                 {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
@@ -369,7 +369,7 @@ export default async function HomePage() {
               <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 <Trophy size={18} className="text-gold" /> {t("Tournois")}
               </h2>
-              <Link href="/tournois" className="flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
+              <Link href="/tournois" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
                 {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>

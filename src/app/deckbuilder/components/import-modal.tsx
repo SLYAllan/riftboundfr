@@ -111,7 +111,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
               {t("Importer un deck")}
             </h3>
           </div>
-          <button onClick={onClose} aria-label={t("Fermer")} className="text-ink-muted hover:text-ink">
+          <button onClick={onClose} aria-label={t("Fermer")} className="inline-flex min-h-11 min-w-11 items-center justify-center text-ink-muted hover:text-ink">
             <X size={20} />
           </button>
         </div>

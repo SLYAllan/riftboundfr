@@ -304,7 +304,7 @@ function DrawHand({ cards }: { cards: DecklistCard[] }) {
         <h5 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted">{t("Tirer une main")}</h5>
         <button
           onClick={draw}
-          className="inline-flex items-center gap-1 rounded-lg bg-arcane px-2.5 py-1 text-[10px] font-semibold text-canvas hover:opacity-90 transition-opacity"
+          className="inline-flex min-h-6 items-center gap-1 rounded-lg bg-arcane px-2.5 py-1 text-[10px] font-semibold text-canvas hover:opacity-90 transition-opacity"
         >
           <Shuffle size={11} />
           {hand.length ? "Retirer" : "Tirer"}

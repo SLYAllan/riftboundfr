@@ -241,7 +241,7 @@ export default async function GuideDebuterPage() {
             ))}
           </div>
           <div className="mt-3">
-            <Link href="/guides/glossaire" className="inline-flex items-center gap-2 text-sm text-arcane hover:underline">
+            <Link href="/guides/glossaire" className="inline-flex min-h-6 items-center gap-2 text-sm text-arcane hover:underline">
               <BookOpen size={14} />{" "}{t("Voir tous les termes dans le glossaire")}</Link>
           </div>
         </section>
@@ -288,7 +288,7 @@ export default async function GuideDebuterPage() {
           </div>
           <div className="mt-3 rounded-lg bg-surface-raised p-3 text-xs text-ink-muted">
             Pour le détail complet des meilleures légendes par set, consultez le{" "}
-            <Link href="/guides/meta" className="text-arcane hover:underline">{t("guide Méta & Tier List")}</Link>.
+            <Link href="/guides/meta" className="inline-flex min-h-6 items-center text-arcane hover:underline">{t("guide Méta & Tier List")}</Link>.
           </div>
         </section>
 

@@ -207,7 +207,7 @@ export default async function GuideDeckbuildingPage() {
           </p>
           <div className="mt-3 rounded-lg border-2 border-gold/20 bg-gold-glow p-3 text-sm text-gold">
             <strong>Astuce :</strong>{" "}{t("une légende peu jouée mais qui gagne souvent (comme")}{" "}<strong>Annie</strong> ou{" "}
-            <strong>Sett</strong>{t(") est souvent un meilleur choix qu’une légende très populaire qui ne convertit pas. Le détail set par set est dans le")}{" "}<Link href="/guides/meta" className="underline">{t("guide Méta & Tier List")}</Link>.
+            <strong>Sett</strong>{t(") est souvent un meilleur choix qu’une légende très populaire qui ne convertit pas. Le détail set par set est dans le")}{" "}<Link href="/guides/meta" className="inline-flex min-h-6 items-center underline">{t("guide Méta & Tier List")}</Link>.
           </div>
         </section>
 

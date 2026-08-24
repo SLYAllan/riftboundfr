@@ -71,9 +71,9 @@ export default async function JouerEnLignePage() {
 
       <div className="mt-4 rounded-lg border border-gold/20 bg-gold/5 px-4 py-3 text-sm text-ink-secondary">
         <strong className="text-gold">{t("Prérequis :")}</strong> un deck Riftbound prêt à jouer.{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">{t("Créez-en un avec le Deckbuilder")}</Link>{" "}
+        <Link href="/deckbuilder" className="inline-flex min-h-6 items-center text-arcane hover:underline">{t("Créez-en un avec le Deckbuilder")}</Link>{" "}
         ou{" "}
-        <Link href="/decks" className="text-arcane hover:underline">{t("copiez un deck existant")}</Link>.
+        <Link href="/decks" className="inline-flex min-h-6 items-center text-arcane hover:underline">{t("copiez un deck existant")}</Link>.
       </div>
 
       <div className="mt-10 space-y-14">
@@ -162,7 +162,7 @@ export default async function JouerEnLignePage() {
       <div className="mt-8 text-center">
         <Link
           href="/guides"
-          className="text-sm text-ink-muted hover:text-arcane transition-colors"
+          className="inline-flex min-h-6 items-center text-sm text-ink-muted hover:text-arcane transition-colors"
         >{t("← Retour aux guides")}</Link>
       </div>
     </div>

@@ -194,7 +194,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
           {deck.record && <span className="text-arcane">({deck.record})</span>}
           {deck.tournamentContext && (() => {
             const cc = getTournamentCountryCode(deck.tournamentContext);
-            return <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="inline-flex items-center gap-1 hover:text-arcane transition-colors">&middot; {cc && <CountryBadge code={cc} />} {deck.tournamentContext}</Link>;
+            return <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="inline-flex min-h-6 items-center gap-1 hover:text-arcane transition-colors">&middot; {cc && <CountryBadge code={cc} />} {deck.tournamentContext}</Link>;
           })()}
           {deck.tournamentTier && (
             <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
@@ -207,7 +207,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             </span>
           )}
           {deck.sourceUrl && (
-            <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">Source</a>
+            <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center text-arcane hover:underline">Source</a>
           )}
         </div>
         {deck.description && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
@@ -273,7 +273,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             <h2 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               Autres decks {displayLegendName(deck.legendName)}
             </h2>
-            <Link href="/decks" className="text-sm text-arcane hover:text-arcane-light">{t("Tous les decks")}</Link>
+            <Link href="/decks" className="inline-flex min-h-6 items-center text-sm text-arcane hover:text-arcane-light">{t("Tous les decks")}</Link>
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {relatedDecks.map((rd) => (

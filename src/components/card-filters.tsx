@@ -143,7 +143,7 @@ export function CardFilters({ total }: { total: number }) {
           <>
             <span aria-hidden="true">&middot;</span>
             <span>{activeSummary.join(" · ")}</span>
-            <button type="button" onClick={effacerTout} className="text-arcane hover:underline">
+            <button type="button" onClick={effacerTout} className="inline-flex min-h-11 items-center text-arcane hover:underline sm:min-h-6">
               {t("Tout effacer")}
             </button>
           </>

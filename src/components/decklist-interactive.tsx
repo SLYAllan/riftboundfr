@@ -519,7 +519,7 @@ export function DecklistInteractive({
                           onMouseLeave={() => setHoveredCard(null)}
                         >
                           <td className="py-1.5 pr-2 font-medium">
-                            <button type="button" onClick={() => setMobileCard(c)} className="text-left hover:text-arcane">
+                            <button type="button" onClick={() => setMobileCard(c)} className="inline-flex min-h-6 items-center text-left hover:text-arcane">
                               {c.name}
                             </button>
                             {isBanned(c.name) && <span className="ml-1.5 text-[10px] rounded px-1 py-px font-bold bg-surface-raised text-red-400 ring-1 ring-red-500/30">Banni</span>}

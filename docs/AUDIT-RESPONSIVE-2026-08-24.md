@@ -1,97 +1,124 @@
 # Audit responsive du 24 août 2026
 
-Balayage de 43 adresses à quatre tailles d'écran, soit **172 passages**, contre un
-build de production servi par `next start`. Outil : `scripts/audit-responsive.mjs`,
-liste d'adresses : `scripts/audit-urls.txt`.
+Le contrôle porte sur **43 URL valides** et quatre tailles, soit **172 passages**
+sur un build de production. Le navigateur ouvre aussi les menus, filtres, listes,
+onglets et fenêtres sûrs. Il ne lance aucune action qui écrit un deck, une
+collection, un score ou l'état de l'overlay.
 
-Tout est mesuré dans la page (`getBoundingClientRect`, `getComputedStyle`), rien
-n'est lu dans le code. Le menu mobile est ouvert pour de vrai sur les deux tailles
-de téléphone, puis la page est remesurée.
+Le script et la liste relançable vivent dans `scripts/audit-responsive.mjs` et
+`scripts/audit-urls.txt`. Le sitemap contient 5 154 URL, surtout des cartes et des
+decks rendus par les mêmes gabarits. Le contrôle profond couvre chaque famille de
+page, mais pas chaque ligne de données du sitemap.
 
-## Tailles balayées
+## Tailles testées
 
-| Nom | Taille | Passages |
-|---|---|---:|
-| Bureau | 1440 x 900 | 43 |
-| Tablette | 768 x 1024 | 43 |
-| Grand téléphone | 430 x 932 | 43 |
-| Petit téléphone | 375 x 812 | 43 |
+| Taille | Passages |
+|---|---:|
+| 1440 x 900 | 43 |
+| 768 x 1024 | 43 |
+| 430 x 932 | 43 |
+| 375 x 812 | 43 |
 
-## Résultat : deux vrais défauts
+## URL testées
 
-### 1. La barre de navigation sortait de l'écran à 768 px — TOUT le site
-
-Le bloc `hidden items-center gap-1 md:flex` de `src/components/navbar.tsx` mesure
-**926 px**. Il apparaissait dès 768 px, le seuil `md` de Tailwind. À cette largeur
-exacte, la barre dépassait donc de 182 px et poussait la page entière vers la
-droite : **41 des 43 pages** débordaient à l'horizontale sur tablette, 199 px sur
-les pages anglaises, dont le menu est plus large.
-
-Aucune autre taille n'était touchée : le défaut n'existait qu'entre 768 et 1024 px.
-
-**Corrigé** : la barre complète n'apparaît plus qu'à partir de `lg` (1024 px), le
-menu déroulant prend le relais en dessous.
-
-### 2. Le fil d'Ariane de `/outils/regles` menait à une page inexistante
-
-`items={[{ name: "Outils", href: "/outils" }, …]}` : « Outils » est un **menu
-déroulant**, pas une page. `/outils` répond 404. Next préchargeait ce lien, d'où
-l'erreur console relevée sur les quatre tailles, et l'adresse partait aussi dans
-le JSON-LD `BreadcrumbList` lu par Google.
-
-**Corrigé** : le fil d'Ariane ne garde que « Accueil › Règles ».
-
-## Ce qui a été écarté, et pourquoi
-
-Le premier passage a sorti quatre familles de constats qui n'en étaient pas. Le
-détecteur a été resserré ; la mesure sert à trouver, pas à accuser.
-
-| Famille | Compte | Verdict |
-|---|---:|---|
-| Cible sous 24 px | 172 | Le lien « Aller au contenu » (`sr-only`, 1x1 par construction) et les liens au fil du texte, que WCAG 2.2 exclut de la règle des 24 px. |
-| Texte coupé | 172 | **Uniquement** des éléments `sr-only`, rognés exprès pour les lecteurs d'écran. |
-| Requête en échec | 166 | Préchargements `?_rsc=` annulés à la fermeture de l'onglet, plus des vidéos et images interrompues pareil. |
-| Élément collé haut | 1 | La colonne de sommaire de `/outils/regles`, collée sur grand écran seulement : c'est voulu. |
-
-Restent deux constats mineurs, non corrigés :
-
-- des cases à cocher de 16 px sur téléphone (`input.size-4`) : la cible reste
-  petite, même si le libellé à côté est cliquable ;
-- un bloc du deckbuilder dont le bord droit tombe pile sur le bord de l'écran à
-  430 px, sans débordement mesurable.
-
-## Refaire le balayage
-
-```bash
-npx next build && npx next start -p 3001
-node scripts/audit-responsive.mjs --base http://localhost:3001 \
-  --urls scripts/audit-urls.txt --out ./audit --cookie <riftbound_session>
+```text
+/
+/a-propos
+/articles
+/articles/best-of-las-vegas-rq-2026
+/articles/streamer-riftbound-avec-un-telephone
+/cartes
+/cartes/ogn-001-298
+/cartes/ven-021-166
+/deckbuilder
+/decks
+/decks?cat=bestof
+/decks?cat=all
+/decks?cat=guide
+/decks?cat=community
+/decks/deck-kennen-heart-of-the-tempest-225566
+/decks/compare
+/d/essaihist
+/guides
+/guides/ban-list
+/guides/debuter
+/guides/deckbuilding
+/guides/domaines
+/guides/glossaire
+/guides/jouer-en-ligne
+/guides/meta
+/legendes
+/legendes/ahri-nine-tailed-fox
+/legendes/kennen-heart-of-the-tempest
+/meta
+/offline
+/outils/regles
+/tier-list
+/tournois
+/tournois/atlanta-regional-qualifier
+/tournois/riftbound-showdown-ottawa-2026-08-08
+/collection
+/profil
+/profil/overlay
+/community-decks
+/admin/login
+/en
+/en/decks
+/en/guides/debuter
 ```
 
-Deux pièges déjà payés, écrits aussi dans `HANDOFF.md` :
+## Problèmes trouvés et corrigés
 
-1. **Ne pas balayer `next dev`.** Quatre onglets en parallèle le mettent à genoux.
-2. **Ne jamais lancer un `next build` pendant qu'un `next dev` tourne** : le
-   serveur en marche répond alors 500 sur toutes les pages dynamiques, ce qui
-   ressemble à s'y méprendre à un bug du site.
+1. La barre de navigation débordait à 768 px sur 41 pages. Le menu complet passe
+   désormais au seuil `lg`.
+2. Le fil d'Ariane de `/outils/regles` pointait vers `/outils`, qui n'existe pas.
+3. Les filtres de domaines du deckbuilder débordaient de 55 px à 375 px. Ils
+   reviennent à la ligne.
+4. Le bouton de fermeture de l'import faisait 20 x 20 px. Il fait maintenant
+   44 x 44 px.
+5. Les onglets de statistiques du deckbuilder faisaient 23 px de haut. Leur cible
+   fait 44 px sur téléphone.
+6. Quatre liens d'action de l'accueil et « Tout effacer » dans les cartes avaient
+   une cible trop basse sur téléphone. Ils font maintenant 44 px.
+7. Le fil d'Ariane partagé, les liens de retour, les noms de cartes en vue liste
+   et le bouton « Tirer » restaient sous 24 px. La correction vit dans les
+   composants partagés.
+8. Le détecteur comptait les liens au fil d'une phrase et les fenêtres plein
+   écran comme des défauts. Ces deux faux positifs suivent maintenant les
+   exceptions prévues.
 
-## Passage de contrôle, après correction
+Les captures prises avant correction sont dans `docs/audit-responsive-2026-08-24/`.
 
-Même balayage, 172 passages, sur un build qui porte les deux corrections.
+## Contrôle après correction
 
-| Constat | Avant | Après |
-|---|---:|---:|
-| Débordement horizontal | 41 pages | **0** |
-| Éléments hors cadre | 42 | **0** |
-| Médias trop larges | 41 | **0** |
-| Textes coupés (hors `sr-only`) | 0 | **0** |
+- Passage complet : **172 passages**, chaque famille de page et chaque taille.
+- Contrôle ciblé final : **32 passages** sur les huit URL qui exposent les
+  dernières cibles corrigées.
+- Débordement horizontal : **0**.
+- Élément hors cadre : **0**.
+- Média trop large : **0**.
+- Texte coupé hors troncature voulue : **0**.
+- Petite cible sur les huit routes finales : **0**.
+- Tests : **260 sur 260**.
+- `npm run verify` : **sortie 0**.
 
-Reste, non corrigé et assumé : 16 cases à cocher de 16 px sur téléphone
-(`input.size-4`). Les autres « cibles trop petites » sont des liens au fil du
-texte, que WCAG 2.2 exclut de la règle des 24 px.
+## Restes connus
 
-Le décompte des requêtes en échec du passage de contrôle est à ignorer : elles
-tombent toutes après l'arrêt du serveur, en fin de balayage
-(`ERR_CONNECTION_REFUSED`).
+- `/d/essaihist` déclenche une requête privée sans session puis tente le lien
+  Discord. Le navigateur relève des 401 et un refus CSP, mais la page reste
+  utilisable. Ce n'est pas un défaut responsive.
+- `/collection` appelle aussi une route privée sans session et reçoit le 401
+  attendu.
+- Le compagnon et l'overlay réel demandent un jeton et une clé valides. Ils n'ont
+  pas été manipulés : cela aurait changé l'état de direct d'Allan.
+- Les 5 111 autres URL du sitemap n'ont pas été rejouées une par une. Elles
+  réemploient les gabarits de carte, deck, article et tournoi contrôlés ici.
 
-La suite du chantier responsive est passée à Codex.
+## Relancer
+
+```bash
+npm run verify
+npm run start -- -p 3001
+node scripts/audit-responsive.mjs --base http://localhost:3001 \
+  --urls scripts/audit-urls.txt --out ./audit
+```
