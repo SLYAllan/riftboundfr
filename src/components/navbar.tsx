@@ -107,7 +107,11 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
           <Image src="/logorbfr.png" alt="Riftbound France" width={224} height={112} className="h-8 w-auto" priority />
         </Link>
 
-        <div className="hidden items-center gap-1 md:flex">
+        {/* La barre complète mesure 926 px : à 768 px (le seuil `md`) elle sortait de
+            l'écran et poussait TOUTE la page de 182 px vers la droite, sur chaque
+            page du site. Mesuré au balayage responsive du 24 août. Elle n'apparaît
+            donc qu'à partir de 1024 px, le menu déroulant prend le relais en dessous. */}
+        <div className="hidden items-center gap-1 lg:flex">
           {/* Outils dropdown */}
           <div ref={outilsRef} className="relative">
             <button
@@ -165,7 +169,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary lg:hidden"
           aria-label={mobileOpen ? t("Fermer le menu") : t("Ouvrir le menu")}
           aria-expanded={mobileOpen}
           // Pas d'aria-controls : le panneau n'existe dans le DOM que lorsqu'il est
@@ -177,7 +181,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       </nav>
 
       {mobileOpen && (
-        <div id="mobile-menu" className="border-t border-hairline px-4 py-4 md:hidden glass">
+        <div id="mobile-menu" className="border-t border-hairline px-4 py-4 lg:hidden glass">
           <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Outils")}</p>
           {outilsLinks.map((link) => (
             <Link

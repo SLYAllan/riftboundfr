@@ -6,11 +6,11 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 
 | # | Chantier | Où ça en est |
 |---|---|---|
-| 1 | **Audit responsive** de tout le site | passage 1 en cours, aucune correction |
-| 2 | **Refonte de la découverte de deck** (`/decks`) | pas commencée, c'est un travail de conception : comment rendre les decks joignables |
-| 3 | **Re-audit de `/profil`** | refait par Claude sans contexte, relecture lancée |
-| 4 | **Re-audit des pages Légende et des guides** | mêmes réserves, relecture lancée |
-| 5 | **Source chinoise hexgate.cn** | scraper écrit et éprouvé, 238 relevé (123 listes, 0 écartée), 239 et 240 en cours |
+| 1 | **Audit responsive** de tout le site | passage 1 fait, 2 défauts corrigés, contrôle à refaire |
+| 2 | **Refonte de la découverte de deck** (`/decks`) | entrée par Légende posée, à regarder à l'écran |
+| 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
+| 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
+| 5 | **Source chinoise hexgate.cn** | 238, 239 et 240 relevés : 346 listes retenues, 15 écartées. Reste la conversion et le seed |
 | 6 | **130 decklists en double sur le disque** | décision d'Allan, rien n'est effacé |
 
 Les points 3 et 4 viennent d'une remarque d'Allan : ces pages ont été écrites par
@@ -23,57 +23,30 @@ Méthode : déléguer par vagues (`delegate-wave`) tout ce qui est balayage,
 vérification chiffrée ou édition mécanique ; garder le jugement, l'intégrité des
 decklists et la porte `npm run verify` de ce côté-ci.
 
-## Audit responsive — commencé le 24 août 2026, ARRÊTÉ EN COURS
+## Audit responsive — passage 1 fait, deux défauts corrigés
 
-Demande d'Allan : balayer tout le site à 1440x900, 768x1024, 430x932 et 375x812,
-relever débordements, chevauchements, textes coupés, cibles trop petites, erreurs
-console et requêtes en échec, corriger, puis refaire le balayage. **Rien n'est
-corrigé à ce stade** : l'outil est écrit, le premier passage n'est pas allé au bout.
+Rapport complet : **`docs/AUDIT-RESPONSIVE-2026-08-24.md`**. 43 adresses x 4
+tailles = 172 passages, contre un build de production.
 
-### Ce qui existe
+Deux vrais défauts, tous deux corrigés :
 
-- **`scripts/audit-responsive.mjs`** — le balayage. Il mesure DANS la page
-  (`getBoundingClientRect`, `getComputedStyle`) : débordement horizontal du
-  document, éléments hors cadre (en ignorant ceux qui vivent dans un conteneur
-  `overflow-x: auto`, sinon un rail d'onglets sort comme un défaut), cibles sous
-  24 px, textes tronqués sans `ellipsis` ni `line-clamp`, médias plus larges que
-  l'écran, barres collées mangeant plus de 30 % de la hauteur, erreurs console et
-  requêtes en échec. Sur mobile il **ouvre le menu** et remesure.
-- **`scripts/audit-urls.txt`** — 43 adresses : toutes les pages uniques plus deux
-  ou trois exemples par route dynamique, tirées de `/sitemap.xml` (5 124 adresses,
-  dont 1 067 fiches de carte et 1 295 decks : les balayer toutes n'apprendrait
-  rien de plus). La ligne `/compagnon/<jeton>/<cle>` est à remplir en local :
-  la clé est un HMAC du `SESSION_SECRET`, elle ne se commite pas.
+1. **La barre de navigation sortait de l'écran à 768 px**, sur TOUTES les pages.
+   Le bloc `md:flex` de `navbar.tsx` mesure 926 px et s'affichait dès 768 px : la
+   page entière était poussée de 182 px vers la droite (199 px en anglais). Passé
+   à `lg:` (1024 px).
+2. **Le fil d'Ariane de `/outils/regles` pointait vers `/outils`**, qui n'existe
+   pas : « Outils » est un menu déroulant. 404 en console sur les quatre tailles,
+   et l'adresse partait dans le JSON-LD lu par Google.
 
-### Deux pièges déjà payés
+Quatre familles de constats ont été écartées après vérification (liens `sr-only`,
+liens au fil du texte que WCAG exclut, préchargements annulés, colonne collée
+voulue). Le détecteur a été resserré en conséquence : `scripts/audit-responsive.mjs`.
 
-1. **Ne pas balayer `next dev`.** Quatre contextes Playwright en parallèle sur le
-   serveur de développement l'ont mis à genoux : chaque route se recompile, puis
-   plus rien ne répond (60 s sans réponse sur l'accueil). Pire, un `next build`
-   lancé pendant qu'un `next dev` tourne casse le serveur en marche — toutes les
-   pages dynamiques répondaient 500 avec « Jest worker encountered 2 child process
-   exceptions », ce qui ressemble à s'y méprendre à un bug du site. **Balayer un
-   `next build` + `next start -p 3001`.**
-2. **Les 500 vus au début n'étaient pas des bugs** : c'était ce serveur cassé.
-   Vérifié après redémarrage, les mêmes URL répondent 200.
+**Le passage de contrôle reste à faire** : rebâtir, relancer le balayage, comparer.
+La commande est dans le rapport.
 
-### Où ça s'est arrêté
-
-Passage 1 relancé contre le build de production : **30 pages capturées sur 172
-passages prévus** (43 URL x 4 tailles), arrêté à la demande d'Allan pendant la
-tournée 1440x900. Les captures sont dans le dossier de travail de la session, le
-`rapport.json` n'a donc pas été écrit — **il faut relancer le passage depuis le
-début**, c'est une commande, pas un chantier.
-
-### À faire ensuite
-
-1. `npx next build && npx next start -p 3001`, puis lancer le script sur les
-   43 adresses, cookie de session compris.
-2. Trier les constats : les cibles sous 24 px vont sortir en masse (icônes de
-   partage, pastilles de filtre) — vérifier chaque famille sur une capture avant
-   de corriger, comme pour l'audit d'interface précédent où `lab()` et les `alt`
-   d'image donnaient de faux positifs.
-3. Corriger, puis **refaire le balayage entier** et comparer les deux rapports.
+Restent deux constats mineurs non corrigés : des cases à cocher de 16 px sur
+téléphone, et un bloc du deckbuilder qui touche le bord à 430 px sans déborder.
 
 ## Source chinoise hexgate.cn — reconnaissance commencée
 

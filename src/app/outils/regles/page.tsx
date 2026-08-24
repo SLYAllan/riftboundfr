@@ -117,7 +117,9 @@ export default async function ReglesPage({
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <Breadcrumbs
-        items={[{ name: "Outils", href: "/outils" }, { name: "Règles", href: "/outils/regles" }]}
+        // « Outils » est un menu déroulant, pas une page : le fil d'Ariane pointait
+        // vers /outils, qui répond 404. Le lien partait aussi dans le JSON-LD.
+        items={[{ name: "Règles", href: "/outils/regles" }]}
         className="mb-6"
       />
 

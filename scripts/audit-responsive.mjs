@@ -48,6 +48,12 @@ const MESURES = () => {
       el.getAttribute("aria-hidden") !== "true"
     );
   };
+  // `sr-only` est un carré de 1 px volontairement rogné, réservé aux lecteurs
+  // d'écran. Sans cette exception, le lien « Aller au contenu » sortait 172 fois
+  // en « cible trop petite » et en « texte coupé ».
+  const pourLecteurEcran = (el) =>
+    el.closest('.sr-only, [class*="sr-only"]') !== null;
+
   const decrire = (el) => {
     const r = el.getBoundingClientRect();
     return {
@@ -88,9 +94,18 @@ const MESURES = () => {
   for (const el of document.querySelectorAll('a, button, input, select, [role="button"], [role="tab"]')) {
     const r = el.getBoundingClientRect();
     if (!visible(el, r)) continue;
-    if (el.closest('[aria-hidden="true"]')) continue;
+    if (el.closest('[aria-hidden="true"]') || pourLecteurEcran(el)) continue;
     const type = el.getAttribute("type");
     if (type === "hidden") continue;
+    // Un lien au fil du texte est exclu de la règle des 24 px (WCAG 2.2, exception
+    // « inline ») : on ne peut pas agrandir un mot au milieu d'une phrase.
+    const parent = el.parentElement;
+    const dansUnePhrase =
+      el.tagName === "A" &&
+      parent &&
+      getComputedStyle(el).display.startsWith("inline") &&
+      /^(P|LI|SPAN|TD|DD|DT|H1|H2|H3|H4|H5|H6|BLOCKQUOTE)$/.test(parent.tagName);
+    if (dansUnePhrase) continue;
     if (r.width < 24 || r.height < 24) petitesCibles.push(decrire(el));
   }
 
@@ -98,6 +113,7 @@ const MESURES = () => {
   for (const el of tous) {
     const r = el.getBoundingClientRect();
     if (!visible(el, r)) continue;
+    if (pourLecteurEcran(el)) continue;
     const s = getComputedStyle(el);
     if (s.overflowX !== "hidden" && s.overflow !== "hidden") continue;
     if (s.textOverflow === "ellipsis") continue;
@@ -123,7 +139,11 @@ const MESURES = () => {
     if (s.position !== "fixed" && s.position !== "sticky") continue;
     const r = el.getBoundingClientRect();
     if (!visible(el, r)) continue;
-    if (r.height >= window.innerHeight * 0.3) colles.push({ ...decrire(el), position: s.position });
+    // Une colonne de sommaire collée est voulue sur grand écran ; elle ne gêne
+    // que sur un téléphone, où elle mange l'écran.
+    if (W < 700 && r.height >= window.innerHeight * 0.3) {
+      colles.push({ ...decrire(el), position: s.position });
+    }
   }
 
   return {
@@ -162,7 +182,14 @@ for (const ecran of ECRANS) {
     const requetesRatees = [];
     page.on("console", (m) => { if (m.type() === "error") erreursConsole.push(m.text().slice(0, 200)); });
     page.on("pageerror", (e) => erreursConsole.push(`pageerror: ${String(e).slice(0, 200)}`));
-    page.on("requestfailed", (r) => requetesRatees.push(`${r.method()} ${r.url().slice(0, 120)} — ${r.failure()?.errorText}`));
+    // Next précharge les liens ; fermer la page annule ces requêtes. Un
+    // `ERR_ABORTED` sur un préchargement n'est pas une panne, c'était 166 faux
+    // constats sur 172 passages.
+    page.on("requestfailed", (r) => {
+      const abandon = r.failure()?.errorText === "net::ERR_ABORTED";
+      if (abandon) return;
+      requetesRatees.push(`${r.method()} ${r.url().slice(0, 120)} — ${r.failure()?.errorText}`);
+    });
     page.on("response", (r) => { if (r.status() >= 400) requetesRatees.push(`${r.status()} ${r.url().slice(0, 120)}`); });
 
     let statut = null;
