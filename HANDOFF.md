@@ -11,7 +11,30 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
 | 5 | **Source chinoise hexgate.cn** | 330 listes converties, fiches de tournoi écrites, **seedées en base locale**. Pas de best-of : ce ne sont pas des Regional Qualifiers |
-| 6 | **130 decklists en double sur le disque** | décision d'Allan, rien n'est effacé |
+| 6 | **130 decklists en double** | supprimées, plus 128 decks doublonnés en base locale |
+
+### Les doublons du 24 août, et pourquoi ce n'était pas un autre Shanghai
+
+130 fichiers portaient le même identifiant riftdecks qu'un autre, cartes
+comprises : un vieil import du Shanghai City Challenge du 23 novembre 2025,
+doublé par un import propre. Vérifié avant d'effacer, parce que deux City
+Challenge de la même ville à des dates différentes se ressemblent :
+
+- le fichier sans date portait `date: 2025-11-23` et la même URL source que son
+  jumeau ;
+- 128 decks sur 128 se correspondaient par classement ET par joueur, les deux
+  seuls écarts étant `ShiYu\_39` contre `ShiYu_39` (un antislash d'échappement) ;
+- le sans-date était l'ancien : importé le 27 mai contre le 15 juin, aucune URL
+  de source, pseudos tronqués.
+
+`scripts/supprimer-doublons-decklists.mts` et
+`scripts/supprimer-doublons-sans-source.mts` refont ce travail et refusent
+d'effacer si les cartes diffèrent, si un deck porte une source, ou s'il n'a pas
+de jumeau. Rien n'a été touché en production.
+
+Attention : beaucoup de contextes anciens n'ont pas d'URL de source du tout
+(Shenzhen National Open S2, Shanghai National Open…). Ce ne sont pas des
+doublons, c'est la seule copie : le garde-fou du second script les protège.
 
 Les points 3 et 4 viennent d'une remarque d'Allan : ces pages ont été écrites par
 un agent qui n'avait pas le contexte du projet. On ne suppose pas qu'elles sont
