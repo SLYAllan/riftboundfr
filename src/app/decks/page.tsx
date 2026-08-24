@@ -190,8 +190,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
         Pour savoir quoi jouer, commencez par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisissez votre{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
-        peux aussi partir d&apos;une liste et la modifier dans le{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
+        pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
       </p>
 
@@ -381,8 +381,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
         Pour savoir quoi jouer, commencez par la{" "}
         <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
         puis choisissez votre{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Tu
-        peux aussi partir d&apos;une liste et la modifier dans le{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
+        pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
       </p>
 

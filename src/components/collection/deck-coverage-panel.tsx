@@ -30,7 +30,7 @@ interface Props {
 
 // Prix et cartes manquantes répondent à la même question — « qu'est-ce qu'il me
 // faut pour jouer ce deck » — et tenaient dans deux encarts qui se suivaient.
-// Réunis, le prix d'une carte s'affiche sur l'aperçu de celles qui te manquent.
+// Réunis, le prix d'une carte s'affiche sur l'aperçu de celles qui manquent.
 //
 // `quantities` du contexte sert juste de déclencheur : quand la collection change
 // (stepper, import), on recalcule. Le calcul fiable (alt-art) vient du serveur.
@@ -168,7 +168,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                 ) : missing != null ? (
                   <>
                     <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">
-                      Il te manque {missing} carte{missing > 1 ? "s" : ""}
+                      Il vous manque {missing} carte{missing > 1 ? "s" : ""}
                       {resteAAcheter > 0 && <span className="text-ink-muted"> · à partir de {euros.format(resteAAcheter)}</span>}
                     </button>
                     {/* Le bouton qui sert vraiment quand on possède déjà la moitié du
