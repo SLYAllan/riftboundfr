@@ -61,6 +61,14 @@ Ce qui change le plus : Akali passe de « aucun Top 8 » à une place en Top 8 s
 passe de 3 Top 8 pour 72 listes à 6 pour 101, Nasus de 86 à 125 listes, Kennen de
 un à trois titres. La moyenne du champ passe de 7,1 à 6,9 %.
 
+**Les sections écrites à la main des fiches citent aussi des chiffres.**
+`fiches-maj.mts` ne les touche pas, par choix : `strengths` et `weaknesses` sont de
+la prose. Sauf qu'elles restatent des statistiques, et la page Rek'Sai annonçait
+« 10,4 % de conversion sur 77 listes » juste sous un texte qui en disait 110.
+95 phrases réécrites. Le corpus du format passe de 1 671 à 2 365 listes, de quinze
+à vingt et un tournois, la moyenne du champ de 7,1 à 6,9 %. **À refaire à chaque
+recalage des fiches** : le script ne le fera pas à ta place.
+
 **Treize guides ne parlent pas du format mais de toute l'histoire du jeu**
 (« 336 listes pour 2 top 8 »). `fiches-stats.mts` filtre par set : il ne sait pas
 les vérifier. Ils ont été recomptés à part, tous sets confondus. Ne pas leur
@@ -73,9 +81,28 @@ sous une forme, alors les compteurs se coupaient en deux et une page annonçait
 (base locale). Les imports hexgate ne peuvent pas le refaire : ils écrivent le nom
 de la carte trouvée en base, jamais celui de la source.
 
-**Le déploiement n'est pas lancé.** Rien de tout ça n'est en production : ni les
-692 listes chinoises, ni les corrections responsive, ni la passe de textes, ni les
-fiches recalées.
+**Déployé le 24 août.** Le code est poussé sur `main` (Coolify reconstruit tout
+seul) et la base de production a reçu :
+
+- les **692 listes chinoises** (692 créées, 0 erreur, 24 170 -> 24 862 decks) ;
+- les **deux orthographes de Légende** recalées, 40 decks ;
+- **`RQ Atlanta 2026` et `RQ Lille 2026`** renommés en `Atlanta Regional Qualifier`
+  et `Lille Regional Qualifier`, 245 decks ;
+- **Beijing et Chengdu redatées du 9 au 8 août**, 242 decks : la production les
+  datait autrement que `tournament-flags.ts`, donc ces deux pages n'avaient ni
+  pays, ni date, ni nombre de joueurs ;
+- **128 decks abîmés effacés**, sous « Shanghai City Challenge » sans date. Leur
+  deck principal comptait de 21 à 38 cartes au lieu de 40, aucune source, noms de
+  joueurs tronqués. 89 des 128 recoupaient le Shanghai du 23 novembre, déjà en base
+  sous sa vraie date.
+
+Tout passe par `scripts/prod-mise-a-jour-24aout.mts` (essai à blanc par défaut) et
+par `prisma/seed-scraped-decks.ts hexgate`. **Le seed ne se lance jamais sans son
+préfixe.**
+
+Deux écarts prod/local relevés au passage et NON traités, ils ne viennent pas de
+cette session : RQ Hartford (142 listes en local, 47 en production) et RQ Bologna
+(126 contre 148).
 
 **`.next-vieux/` traîne à la racine.** C'est un ancien dossier de build mis de
 côté ; le garde-fou refuse que je l'efface, à faire à la main.
