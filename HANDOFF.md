@@ -100,9 +100,37 @@ Tout passe par `scripts/prod-mise-a-jour-24aout.mts` (essai à blanc par défaut
 par `prisma/seed-scraped-decks.ts hexgate`. **Le seed ne se lance jamais sans son
 préfixe.**
 
-Deux écarts prod/local relevés au passage et NON traités, ils ne viennent pas de
-cette session : RQ Hartford (142 listes en local, 47 en production) et RQ Bologna
-(126 contre 148).
+### Hartford et Bologna : deux bugs de seed derrière l'écart
+
+L'écart prod/local venait de deux défauts de `prisma/seed-scraped-decks.ts`, tous
+deux corrigés :
+
+- **Sa table de traduction allait dans le mauvais sens** pour cinq Regional
+  Qualifiers : elle transformait « Bologna Regional Qualifier », qui est la clé de
+  `tournament-flags.ts`, en « RQ Bologna 2026 », qui n'existe pas. Ces cinq pages
+  s'affichaient sans pays, sans date et sans nombre de joueurs. Le nom corrigé
+  change l'adresse de la page (elle est calculée depuis ce nom) : cinq
+  redirections permanentes sont posées dans `next.config.ts`.
+- **Le suffixe anglais des places ne regardait que 1, 2 et 3** : « 71th »,
+  « 1792th ». 6 107 places en local, 6 089 en production. La place entre dans la
+  clé de dédoublonnage du seed : chaque passage recréait ces decks en double.
+  Même histoire pour le nom de la Légende, qui venait du fichier et non de la
+  carte (« Rek'Sai » contre « Rek'sai »).
+
+`scripts/reparer-decks-24aout.mts` rattrape les lignes déjà écrites, dans les deux
+bases. Il ne supprime jamais un deck qui porte un « j'aime » ou un best-of.
+
+**Les données du disque, elles, étaient bonnes** : les 105 fichiers Hartford et les
+120 de Bologna se vérifient un par un contre le relevé brut, zéro écart. Rien à
+rescraper. Un seul deck reste hors base : ElderKane a deux listes au même rang 41
+sur riftdecks, et la clé de dédoublonnage du seed ne sait pas en tenir deux.
+
+**Reste à trancher, question pour Allan** : les deux bases ne rangent pas les
+best-of pareil. La production en fait des lignes à part (`best-of-hartford-…`,
+`featured`), qui doublent la ligne du classement — 13 sur Hartford, 28 sur
+Bologna. La base locale, elle, pose le drapeau sur la ligne du classement, sans
+doublon. Le modèle local est plus propre ; unifier changerait ce qu'affiche
+`/decks?cat=bestof`, donc je n'ai rien touché en production.
 
 **`.next-vieux/` traîne à la racine.** C'est un ancien dossier de build mis de
 côté ; le garde-fou refuse que je l'efface, à faire à la main.
