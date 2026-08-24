@@ -13,15 +13,15 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stupefy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Falling Star",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Brynhir Thundersong",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stupefy",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
@@ -30,15 +30,15 @@
     },
     {
       "name": "Temporal Breach",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Watchful Sentry",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Time Warp",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
@@ -46,23 +46,23 @@
     },
     {
       "name": "Progress Day",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 1 exemplaire"
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 1 exemplaire"
     }
   ],
   "competitiveResults": {
-    "deckCount": 189,
-    "top8": 14,
+    "deckCount": 241,
+    "top8": 15,
     "titres": 2,
-    "conversion": "7.4 %",
-    "tournois": 14,
+    "conversion": "6.2 %",
+    "tournois": 20,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -99,11 +99,12 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (89 %)",
     "Frozen Fortress (86 %)",
-    "Void Gate (80 %)"
+    "Rockfall Path (86 %)",
+    "Void Gate (80 %)",
+    "Heisho, Shell of the World (33 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 189 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Decklists de tournoi en base : 241 listes, 20 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

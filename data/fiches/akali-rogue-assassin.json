@@ -42,93 +42,97 @@
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Falling Star",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 78 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "En Garde",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
       "name": "Lonely Poro",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 61 % des listes, 2 exemplaires"
+      "role": "Souple, 52 % des listes, 1 exemplaire"
     },
     {
       "name": "Twilight Shroud",
-      "role": "Souple, 55 % des listes, 1 exemplaire"
+      "role": "Souple, 48 % des listes, 1 exemplaire"
     }
   ],
   "champions": {
     "Akali, Silent": {
-      "usage": "77 %",
+      "usage": "74 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jhin, Murderous Artist": {
-      "usage": "62 %",
+      "usage": "60 %",
       "role": "3 exemplaires en moyenne"
     },
     "Akali, Deadly Weapon": {
-      "usage": "50 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "38 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Back-Alley Bar (53 %)",
-    "Star Spring (51 %)",
-    "Sunken Temple (35 %)"
+    "Star Spring (44 %)",
+    "Sunken Temple (37 %)"
   ],
   "competitiveResults": {
-    "deckCount": 74,
-    "top8": 0,
+    "deckCount": 107,
+    "top8": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 15,
+    "conversion": "0.9 %",
+    "tournois": 21,
     "bestPlacements": [
+      {
+        "placement": "4th",
+        "player": "纸传.晓镜",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "11th",
+        "player": "牌牌tgg",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "11th",
+        "player": "猫岛巡礼-Fexico",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "12th",
+        "player": "HBG.孜然",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+      },
       {
         "placement": "14th",
         "player": "澄匿梦霞",
         "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "14th",
-        "player": "ZL-明日的晴天",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "20th",
-        "player": "白色枫叶",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "20th",
-        "player": "аvаlonqq",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "25th",
-        "player": "酒屿上久雨",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 74 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 107 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

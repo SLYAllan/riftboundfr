@@ -22,47 +22,47 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 94 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 94 % des listes, 1.5 exemplaire"
+      "role": "Cœur du deck, 96 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Resolve",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Demacian Diplomat",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 70 % des listes, 1.5 exemplaire"
     },
     {
       "name": "Rampage",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Standard, 65 % des listes, 1 exemplaire"
     },
     {
       "name": "First Mate",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Standard, 61 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -75,16 +75,21 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "deckCount": 17,
+    "deckCount": 23,
     "top8": 1,
     "titres": 0,
-    "conversion": "5.9 %",
-    "tournois": 13,
+    "conversion": "4.3 %",
+    "tournois": 16,
     "bestPlacements": [
       {
         "placement": "8th",
         "player": "高长恭",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "9th",
+        "player": "Minda",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
         "placement": "10th",
@@ -100,11 +105,6 @@
         "placement": "29th",
         "player": "纸传.白子洲",
         "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "33th",
-        "player": "DJS.Ai.Jeremy🐺",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       }
     ]
   },
@@ -132,31 +132,35 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "88 %",
+      "usage": "91 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "71 %",
+      "usage": "78 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "53 %",
+      "usage": "52 %",
       "role": "2 exemplaires en moyenne"
     },
     "Qiyana, Victorious": {
-      "usage": "41 %",
+      "usage": "43 %",
       "role": "3 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "41 %",
+      "usage": "43 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (82 %)",
-    "Forbidding Waste (76 %)",
-    "Star Spring (53 %)",
+    "Forbidding Waste (83 %)",
+    "Monastery of Hirana (78 %)",
+    "Star Spring (61 %)",
     "Sandswept Tomb (35 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 17 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 23 listes, 16 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

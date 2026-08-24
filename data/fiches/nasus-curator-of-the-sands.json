@@ -39,11 +39,11 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Find Your Center",
@@ -51,27 +51,27 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 78 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 72 % des listes, 2 exemplaires"
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Tasty Faefolk",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Retreat",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Standard, 66 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
@@ -80,23 +80,23 @@
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "91 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (57 %)",
-    "The Papertree (41 %)",
-    "Rockfall Path (36 %)",
-    "Altar of Blood (31 %)",
-    "Forgotten Monument (30 %)"
+    "Vilemaw's Lair (54 %)",
+    "The Papertree (39 %)",
+    "Forgotten Monument (35 %)",
+    "Rockfall Path (34 %)",
+    "Altar of Blood (34 %)"
   ],
   "competitiveResults": {
-    "deckCount": 86,
-    "top8": 4,
+    "deckCount": 125,
+    "top8": 6,
     "titres": 2,
-    "conversion": "4.7 %",
-    "tournois": 15,
+    "conversion": "4.8 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -109,21 +109,21 @@
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
+        "placement": "3rd",
+        "player": "DWT-老默",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "4th",
+        "player": "白衣",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+      },
+      {
         "placement": "6th",
         "player": "SD.LD",
         "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "8th",
-        "player": "半日孤独.OST永远的拥趸.MnGD最后的守望者.EW出走的野狼",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "12th",
-        "player": "DWT-老默",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 86 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 125 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

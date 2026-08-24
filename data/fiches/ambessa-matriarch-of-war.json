@@ -30,87 +30,86 @@
   "keyCards": [
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Legion Marauder",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Guttural Roar",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires"
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Guttural Roar",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 80 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Standard, 73 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 69 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Noxian Emissary",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 69 % des listes, 1 exemplaire"
+      "role": "Standard, 67 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     },
     {
       "name": "Profiteer",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "100 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "62 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "46 %",
+      "usage": "40 %",
       "role": "2.5 exemplaires en moyenne"
     },
-    "Kayle, Justified": {
-      "usage": "38 %",
+    "Jayce, Hammer in Hand": {
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Jayce, Hammer in Hand": {
-      "usage": "38 %",
+    "Kayle, Justified": {
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (85 %)",
-    "Sunken Temple (54 %)",
-    "Mystic Vortex (38 %)",
-    "Sandswept Tomb (31 %)"
+    "Risen Altar (80 %)",
+    "Sunken Temple (53 %)",
+    "Mystic Vortex (33 %)"
   ],
   "competitiveResults": {
-    "deckCount": 13,
+    "deckCount": 15,
     "top8": 1,
     "titres": 0,
-    "conversion": "7.7 %",
-    "tournois": 9,
+    "conversion": "6.7 %",
+    "tournois": 10,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -123,6 +122,11 @@
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
       },
       {
+        "placement": "29th",
+        "player": "神夜·神機百煉",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
         "placement": "43th",
         "player": "东莞铁猫",
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
@@ -131,13 +135,8 @@
         "placement": "50th",
         "player": "ZZZ",
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "52th",
-        "player": "紫禁·BOT·元气教父",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 13 listes, 9 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 15 listes, 10 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -18,51 +18,51 @@
   "keyCards": [
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Mirror Image",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Soaring Scout",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "Hidden Blade",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "name": "Mirror Image",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "Glasc Mixologist",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Ruined Rex",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Watchful Sentry",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 81 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Glasc Mixologist",
+      "role": "Standard, 80 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ruined Rex",
+      "role": "Standard, 78 % des listes, 3 exemplaires"
     },
     {
       "name": "Baited Hook",
-      "role": "Standard, 74 % des listes, 3 exemplaires"
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Rift Herald",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "role": "Standard, 63 % des listes, 3 exemplaires"
     },
     {
       "name": "Black Rose Dignitary",
-      "role": "Souple, 56 % des listes, 2 exemplaires"
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Rift Herald",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,22 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "deckCount": 34,
-    "top8": 2,
+    "deckCount": 54,
+    "top8": 6,
     "titres": 0,
-    "conversion": "5.9 %",
-    "tournois": 14,
+    "conversion": "11.1 %",
+    "tournois": 20,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "貓島巡禮-詭術妖姬練習生",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "3rd",
+        "player": "布启",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
       {
         "placement": "5th",
         "player": "猫岛巡礼.Mercy",
@@ -94,19 +104,9 @@
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
-        "placement": "12th",
-        "player": "阳",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "12th",
-        "player": "Don’t mess with Mаhmood coffee",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "17th",
-        "player": "Renfield",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+        "placement": "8th",
+        "player": "LD.咕嘎沐封寒",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       }
     ]
   },
@@ -131,22 +131,22 @@
   },
   "champions": {
     "LeBlanc, Fragmented": {
-      "usage": "82 %",
+      "usage": "80 %",
       "role": "1 exemplaire en moyenne"
     },
     "Karthus, Eternal": {
-      "usage": "79 %",
+      "usage": "78 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "71 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Windswept Hillock (94 %)",
-    "Star Spring (59 %)",
-    "Dusk Rose Lab (47 %)"
+    "Windswept Hillock (96 %)",
+    "Star Spring (56 %)",
+    "Dusk Rose Lab (54 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 34 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 54 listes, 20 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

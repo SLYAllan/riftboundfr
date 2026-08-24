@@ -29,40 +29,40 @@
       "role": "Standard, 89 % des listes, 1 exemplaire"
     },
     {
+      "name": "Discipline",
+      "role": "Standard, 81 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Patched Porobot",
       "role": "Standard, 81 % des listes, 3 exemplaires"
     },
     {
-      "name": "Discipline",
-      "role": "Standard, 74 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 1 exemplaire"
     },
     {
-      "name": "Sterak's Gage",
-      "role": "Souple, 59 % des listes, 3 exemplaires"
+      "name": "Scuttle Crab",
+      "role": "Standard, 73 % des listes, 3 exemplaires"
     },
     {
       "name": "Poro Snax",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 59 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sterak's Gage",
+      "role": "Souple, 57 % des listes, 3 exemplaires"
     },
     {
       "name": "Guardian Angel",
-      "role": "Souple, 52 % des listes, 3 exemplaires"
+      "role": "Souple, 51 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Focus",
-      "role": "Souple, 48 % des listes, 3 exemplaires"
+      "role": "Souple, 49 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
@@ -71,14 +71,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Blacksmith": {
-      "usage": "48 %",
+      "usage": "46 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (81 %)",
-    "Treasure Hoard (52 %)",
-    "Veiled Temple (48 %)"
+    "Ornn's Forge (86 %)",
+    "Veiled Temple (51 %)",
+    "Treasure Hoard (49 %)"
   ],
   "strengths": [
     "11,1 % de conversion, le meilleur du format après Kennen, sur 27 listes",
@@ -92,11 +92,11 @@
     "Deux Champions se partagent la place, aucun ne dépasse 60 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "deckCount": 27,
+    "deckCount": 37,
     "top8": 3,
     "titres": 0,
-    "conversion": "11.1 %",
-    "tournois": 13,
+    "conversion": "8.1 %",
+    "tournois": 17,
     "bestPlacements": [
       {
         "placement": "4th",
@@ -114,21 +114,21 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "13th",
+        "player": "旋木时光的大蠢若鱼",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
         "placement": "20th",
         "player": "Cyder",
         "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "21th",
-        "player": "ALL黑鸦",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Decklists de tournoi en base : 27 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Decklists de tournoi en base : 37 listes, 17 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

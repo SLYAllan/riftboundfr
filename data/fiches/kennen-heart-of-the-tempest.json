@@ -39,76 +39,85 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Standard, 87 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Discord",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Last Rites",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 67 % des listes, 3 exemplaires"
+      "role": "Standard, 68 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Souple, 52 % des listes, 1 exemplaire"
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 51 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Souple, 46 % des listes, 2 exemplaires"
+      "role": "Souple, 52 % des listes, 1 exemplaire"
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 46 % des listes, 2 exemplaires"
+      "role": "Souple, 47 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "91 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "90 %",
+      "usage": "91 %",
       "role": "1 exemplaire en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "75 %",
+      "usage": "79 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (88 %)",
-    "Zaun Warrens (79 %)",
-    "Forbidding Waste (33 %)",
-    "The Candlelit Sanctum (33 %)"
+    "Minefield (90 %)",
+    "Zaun Warrens (82 %)",
+    "The Candlelit Sanctum (34 %)"
   ],
   "competitiveResults": {
-    "deckCount": 162,
-    "top8": 20,
-    "titres": 1,
-    "conversion": "12.3 %",
-    "tournois": 15,
+    "deckCount": 247,
+    "top8": 30,
+    "titres": 3,
+    "conversion": "12.1 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "小运重卡",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": "D.C松饼",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "1st",
+        "player": "收容所218·一凡家老王",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
         "placement": "2nd",
@@ -119,18 +128,8 @@
         "placement": "2nd",
         "player": "Blacksheep",
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "2nd",
-        "player": "Joyspace\\_Jspre",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "2nd",
-        "player": "TheTopDeckHero",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 162 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 247 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

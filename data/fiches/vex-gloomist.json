@@ -26,43 +26,43 @@
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Mutated Mouser",
-      "role": "Standard, 73 % des listes, 2.5 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard, 64 % des listes, 2.5 exemplaires"
-    },
-    {
-      "name": "Back Off",
-      "role": "Standard, 64 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 64 % des listes, 1 exemplaire"
+      "role": "Standard, 75 % des listes, 2 exemplaires"
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 59 % des listes, 3 exemplaires"
+      "role": "Standard, 64 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Back Off",
+      "role": "Standard, 61 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 61 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Mutated Mouser",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Souple, 53 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -76,11 +76,11 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "deckCount": 22,
+    "deckCount": 36,
     "top8": 1,
     "titres": 0,
-    "conversion": "4.5 %",
-    "tournois": 9,
+    "conversion": "2.8 %",
+    "tournois": 15,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -88,24 +88,24 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "28th",
+        "player": "Zuph",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
         "placement": "32th",
         "player": "Saber",
         "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "34th",
-        "player": "TXG·北顾",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "33th",
+        "player": "零崎玖識",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "34th",
-        "player": "泉",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "35th",
-        "player": "顾瞻",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+        "placement": "33th",
+        "player": "汐雫",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       }
     ]
   },
@@ -136,19 +136,18 @@
       "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "55 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "45 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (68 %)",
-    "Targon's Peak (36 %)",
-    "Fortified Position (32 %)",
-    "Abandoned Hall (32 %)"
+    "Startipped Peak (64 %)",
+    "Fortified Position (33 %)",
+    "Bandle Tree (33 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 22 listes, 9 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 36 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

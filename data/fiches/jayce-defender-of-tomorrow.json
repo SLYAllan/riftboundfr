@@ -31,79 +31,86 @@
   "keyCards": [
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Elder Dragon",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Garbage Grabber",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Flurry of Blades",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Dredge Up",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Mobilize",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
     },
     {
       "name": "Clairvoyance",
-      "role": "Standard, 81 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Gutter Palace",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Catalyst of Aeons",
-      "role": "Standard, 72 % des listes, 3 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Jayce, Man of Progress": {
-      "usage": "40 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Jayce, Brilliant Inventor": {
-      "usage": "33 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (82 %)",
-    "Forgotten Monument (53 %)",
-    "The Papertree (47 %)"
+    "Sigil of the Storm (86 %)",
+    "Forgotten Monument (50 %)",
+    "The Papertree (47 %)",
+    "Dragon Roost (39 %)"
   ],
   "competitiveResults": {
-    "deckCount": 72,
-    "top8": 3,
+    "deckCount": 101,
+    "top8": 6,
     "titres": 0,
-    "conversion": "4.2 %",
-    "tournois": 15,
+    "conversion": "5.9 %",
+    "tournois": 21,
     "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "MIO_慈父嘴嘴",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
       {
         "placement": "6th",
         "player": "一氙化氢",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "6th",
+        "player": "林",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       },
       {
         "placement": "7th",
@@ -111,21 +118,11 @@
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
-        "placement": "8th",
-        "player": "Sky",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "12th",
-        "player": "MRR",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "13th",
-        "player": "立风四正",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "7th",
+        "player": "珠光护手牙仙子循环往复杰斯",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 72 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 101 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

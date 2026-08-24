@@ -37,72 +37,76 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stacked Deck",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Ride The Wind",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Ravenbloom Student",
       "role": "Standard, 73 % des listes, 3 exemplaires"
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "name": "Tideturner",
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     },
     {
-      "name": "Tideturner",
-      "role": "Souple, 57 % des listes, 2 exemplaires"
+      "name": "Thousand-Tailed Watcher",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
     },
     {
       "name": "Shock Blast",
-      "role": "Souple, 49 % des listes, 2.5 exemplaires"
+      "role": "Souple, 48 % des listes, 3 exemplaires"
     },
     {
       "name": "Gust",
-      "role": "Souple, 46 % des listes, 2 exemplaires"
+      "role": "Souple, 48 % des listes, 2 exemplaires"
     },
     {
       "name": "Applied Researchers",
-      "role": "Souple, 41 % des listes, 3 exemplaires"
+      "role": "Souple, 42 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 41 % des listes, 2 exemplaires"
+      "role": "Souple, 42 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "89 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
-      "usage": "76 %",
+      "usage": "73 %",
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "49 %",
+      "usage": "60 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "Mel, Defiant Soul": {
+      "usage": "31 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (49 %)",
-    "Rockfall Path (35 %)",
-    "Heisho, Shell of the World (32 %)",
-    "Abandoned Hall (32 %)"
+    "Frozen Fortress (44 %)",
+    "Heisho, Shell of the World (38 %)",
+    "Abandoned Hall (35 %)",
+    "Rockfall Path (33 %)"
   ],
   "competitiveResults": {
-    "deckCount": 37,
+    "deckCount": 48,
     "top8": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 14,
+    "tournois": 18,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -131,5 +135,5 @@
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 37 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 48 listes, 18 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -9,40 +9,44 @@
   "tier": 4,
   "keyCards": [
     {
-      "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Void Seeker",
-      "role": "Standard, 83 % des listes, 1.5 exemplaire"
+      "name": "Bewitching Spirit",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Standard, 83 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Void Seeker",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
     },
     {
       "name": "Blood Rush",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 73 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 63 % des listes, 2 exemplaires"
     },
     {
       "name": "Piercing Light",
@@ -51,18 +55,14 @@
     {
       "name": "Ferrous Forerunner",
       "role": "Standard, 63 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Souple, 58 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 24,
+    "deckCount": 30,
     "top8": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 13,
+    "tournois": 17,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -80,14 +80,14 @@
         "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
       },
       {
+        "placement": "26th",
+        "player": "enforce",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+      },
+      {
         "placement": "42th",
         "player": "牛逼哄哄的能量瓶小伙儿.bJd",
         "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "47th",
-        "player": "FB.眯眼老屍",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       }
     ]
   },
@@ -98,20 +98,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "92 %",
+      "usage": "93 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ripper's Bay (96 %)",
+    "Ripper's Bay (97 %)",
     "Forbidding Waste (83 %)",
-    "Void Gate (33 %)"
+    "Void Gate (40 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 24 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Decklists de tournoi en base : 30 listes, 17 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

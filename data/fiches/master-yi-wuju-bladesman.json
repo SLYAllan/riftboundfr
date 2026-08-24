@@ -25,24 +25,24 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Discipline",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Lonely Poro",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
@@ -58,11 +58,11 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 84 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 79 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,11 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "deckCount": 192,
-    "top8": 21,
-    "titres": 3,
-    "conversion": "10.9 %",
-    "tournois": 15,
+    "deckCount": 285,
+    "top8": 29,
+    "titres": 5,
+    "conversion": "10.2 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -99,14 +99,14 @@
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "2nd",
-        "player": "Yang",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "1st",
+        "player": "ARBD-Yihao.MH",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       },
       {
-        "placement": "3rd",
-        "player": "旋木时光的晴光",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "placement": "1st",
+        "player": "clks",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       }
     ]
   },
@@ -138,14 +138,14 @@
       "role": "3 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "30 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (91 %)",
-    "Emperor's Dais (88 %)",
-    "Seat of Power (70 %)"
+    "Star Spring (92 %)",
+    "Emperor's Dais (86 %)",
+    "Seat of Power (74 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 192 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 285 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

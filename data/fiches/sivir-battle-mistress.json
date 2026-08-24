@@ -11,59 +11,52 @@
   "legendAbility": "Quand vous recyclez une rune, épuisez Sivir pour poser un jeton Or épuisé. Elle se prépare dès qu'une unité adverse meurt.",
   "keyCards": [
     {
-      "name": "Dazzling Aurora",
-      "id": "Dazzling Aurora",
-      "role": "Win condition et gear build-around à 9."
-    },
-    {
-      "name": "Elder Dragon",
-      "id": "Elder Dragon",
-      "role": "Dragon invoqué par Aurora : retire les unités adverses, mais peine contre les armées de petites unités."
-    },
-    {
-      "name": "Mindsplitter",
-      "id": "Mindsplitter",
-      "role": "Disruption qui révèle la main adverse et permet de discard."
-    },
-    {
-      "name": "Last Rites",
-      "id": "Last Rites",
-      "role": "Résurrection qui ramène le dragon du trash."
-    },
-    {
-      "name": "Mobilize",
-      "id": "Mobilize",
-      "role": "Ramp."
-    },
-    {
       "name": "Stacked Deck",
-      "id": "Stacked Deck",
-      "role": "Ramp."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Trove",
-      "id": "Treasure Trove",
-      "role": "Ramp."
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
-      "name": "Lunar Boon",
-      "id": "Lunar Boon",
-      "role": "Draw pour trouver Aurora à temps."
+      "name": "Rampage",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
-      "name": "Scryer's Bloom",
-      "id": "Scryer's Bloom",
-      "role": "Draw complémentaire."
+      "name": "Star-Crossed",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
     },
     {
-      "name": "Gust",
-      "id": "Gust",
-      "role": "Removal d'early game qui gère les petites unités sans recycler de runes."
+      "name": "Traveling Merchant",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
-      "name": "Flurry of Blades",
-      "id": "Flurry of Blades",
-      "role": "Removal d'early game complémentaire."
+      "name": "Gust Monk",
+      "role": "Standard, 70 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Mindsplitter",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Baron Nashor",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -73,14 +66,38 @@
     "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 1,
-    "preRegionals": "6 Top 8",
-    "regionalResults": "Finalist Sydney (14-2-0), Top 4 Suzhou",
-    "sydneyStats": {
-      "winRate": "61%",
-      "matches": 191,
-      "conversionRate": "37.5%"
-    }
+    "deckCount": 10,
+    "top8": 1,
+    "titres": 0,
+    "conversion": "10 %",
+    "tournois": 9,
+    "bestPlacements": [
+      {
+        "placement": "6th",
+        "player": "BOT.QAQ钓鱼王",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "17th",
+        "player": "BonkersForCheese",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "43th",
+        "player": "口国狼队 天狼",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "44th",
+        "player": "酷猫.Rowe ",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "47th",
+        "player": "ZL-真城最高",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      }
+    ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": false,
@@ -100,5 +117,38 @@
       "Heedless Resurrection (miroir)"
     ],
     "note": "Ne pas dépenser avant le tour 3 (de-ramp = défaite). Anti-Aurora : gear hate EN UNITÉ (Adaptatron/Akshan) que Sabotage ne recycle pas. Nuance miroir : gagne vs un Sivir-Aurora (rune economy), mais PERD le miroir vs un Garen-Aurora (Divine Judgment + removal Ordre + recycle)."
-  }
+  },
+  "champions": {
+    "Sivir, Mercenary": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "80 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "80 %",
+      "role": "1.5 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "60 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "60 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "40 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Sigil of the Storm (100 %)",
+    "Forbidding Waste (60 %)",
+    "Sandswept Tomb (40 %)",
+    "The Papertree (40 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 10 listes, 9 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

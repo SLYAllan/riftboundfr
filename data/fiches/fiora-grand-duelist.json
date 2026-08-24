@@ -25,44 +25,44 @@
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "First Mate",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "name": "Rampage",
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
-      "name": "Rampage",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "name": "First Mate",
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Souple, 59 % des listes, 3 exemplaires"
+      "role": "Souple, 56 % des listes, 3 exemplaires"
     },
     {
       "name": "B.F. Sword",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
+      "role": "Souple, 56 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Souple, 50 % des listes, 2 exemplaires"
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     },
     {
       "name": "Grim Resolve",
-      "role": "Souple, 48 % des listes, 2 exemplaires"
+      "role": "Souple, 46 % des listes, 2 exemplaires"
     },
     {
-      "name": "Unsung Hero",
-      "role": "Souple, 44 % des listes, 3 exemplaires"
+      "name": "Call to Glory",
+      "role": "Souple, 38 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -77,16 +77,21 @@
     "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "deckCount": 54,
-    "top8": 5,
+    "deckCount": 99,
+    "top8": 6,
     "titres": 1,
-    "conversion": "9.3 %",
-    "tournois": 15,
+    "conversion": "6.1 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "小橘派派",
         "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "2nd",
+        "player": "徐大王文吱吱最强",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
         "placement": "4th",
@@ -102,11 +107,6 @@
         "placement": "7th",
         "player": "BKM-京門",
         "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "8th",
-        "player": "ARBD.张伯伦",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
@@ -130,34 +130,35 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "81 %",
+      "usage": "79 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "59 %",
+      "usage": "69 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "54 %",
+      "usage": "59 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "48 %",
+      "usage": "53 %",
       "role": "2 exemplaires en moyenne"
     },
     "Poppy, Paragon": {
-      "usage": "39 %",
+      "usage": "34 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Ambessa, The Wolf": {
-      "usage": "37 %",
+    "Kennen, Keeper of Balance": {
+      "usage": "32 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (94 %)",
-    "Trifarian War Camp (33 %)",
-    "Monastery of Hirana (31 %)"
+    "Sunken Temple (96 %)",
+    "Monastery of Hirana (36 %)",
+    "Sandswept Tomb (31 %)",
+    "Seat of Power (30 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 54 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 99 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

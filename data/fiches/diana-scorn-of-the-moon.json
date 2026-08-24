@@ -46,23 +46,23 @@
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "role": "Standard, 69 % des listes, 1 exemplaire"
+      "role": "Standard, 76 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 72 % des listes, 3 exemplaires"
     },
     {
       "name": "Morbid Return",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Standard, 63 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,11 @@
     "84 listes seulement, un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "deckCount": 84,
-    "top8": 6,
+    "deckCount": 121,
+    "top8": 9,
     "titres": 3,
-    "conversion": "7.1 %",
-    "tournois": 14,
+    "conversion": "7.4 %",
+    "tournois": 20,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -135,28 +135,28 @@
       "usage": "100 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Fizz, Trickster": {
-      "usage": "100 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Diana, Lunari": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Fizz, Trickster": {
+      "usage": "99 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Swain, Visionary": {
-      "usage": "70 %",
+      "usage": "69 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "37 %",
+      "usage": "32 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Abandoned Hall (94 %)",
+    "Abandoned Hall (96 %)",
     "Rockfall Path (69 %)",
-    "Veiled Temple (37 %)",
-    "Targon's Peak (36 %)"
+    "Targon's Peak (41 %)",
+    "Veiled Temple (31 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 84 listes, 14 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 121 listes, 20 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

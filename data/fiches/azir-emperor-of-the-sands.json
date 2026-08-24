@@ -34,14 +34,18 @@
     },
     {
       "name": "Brutalizer",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Soul Sword",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
@@ -49,20 +53,16 @@
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Soul Sword",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Guards!",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "Deathgrip",
-      "role": "Standard, 68 % des listes, 1 exemplaire"
+      "name": "Charm",
+      "role": "Standard, 63 % des listes, 1 exemplaire"
     },
     {
-      "name": "Back Off",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "name": "Sacrifice",
+      "role": "Standard, 62 % des listes, 1.5 exemplaire"
     }
   ],
   "strengths": [
@@ -77,11 +77,11 @@
     "37 listes seulement, et un écart de conversion que l'échantillon ne permet pas de trancher"
   ],
   "competitiveResults": {
-    "deckCount": 37,
+    "deckCount": 65,
     "top8": 4,
     "titres": 1,
-    "conversion": "10.8 %",
-    "tournois": 15,
+    "conversion": "6.2 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -104,9 +104,9 @@
         "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "16th",
-        "player": "火伊布",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "10th",
+        "player": "NGNL.NIK",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       }
     ]
   },
@@ -133,14 +133,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "95 %",
+      "usage": "91 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Hall of Legends (97 %)",
-    "Trifarian War Camp (97 %)",
-    "Ornn's Forge (84 %)"
+    "Trifarian War Camp (98 %)",
+    "Hall of Legends (95 %)",
+    "Ornn's Forge (88 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 37 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 65 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

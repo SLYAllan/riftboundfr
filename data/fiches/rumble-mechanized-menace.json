@@ -9,51 +9,87 @@
   "tier": 4,
   "keyCards": [
     {
-      "name": "Forecaster",
-      "id": "Forecaster",
-      "role": "Présente dans 100 % des 166 listes recensées."
+      "name": "Ferrous Forerunner",
+      "role": "Cœur du deck, 100 % des listes, 2.5 exemplaires"
     },
     {
-      "name": "Ferrous Forerunner",
-      "id": "Ferrous Forerunner",
-      "role": "Présente dans 99 % des 166 listes recensées."
+      "name": "Forecaster",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Gem Jammer",
-      "id": "Gem Jammer",
-      "role": "Présente dans 98 % des 166 listes recensées."
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Bubble Bot",
-      "id": "Bubble Bot",
-      "role": "Présente dans 95 % des 166 listes recensées."
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
-      "name": "Rumble, Hotheaded",
-      "id": "Rumble, Hotheaded",
-      "role": "Présente dans 93 % des 166 listes recensées."
+      "name": "Temporal Breach",
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     },
     {
-      "name": "Breakneck Mech",
-      "id": "Breakneck Mech",
-      "role": "Présente dans 89 % des 166 listes recensées."
+      "name": "Brynhir Thundersong",
+      "role": "Standard, 83 % des listes, 1 exemplaire"
     },
     {
-      "name": "Rumble, Scrapper",
-      "id": "Rumble, Scrapper",
-      "role": "Présente dans 85 % des 166 listes recensées."
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Production Surge",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
     },
     {
       "name": "Stupefy",
-      "id": "Stupefy",
-      "role": "Présente dans 82 % des 166 listes recensées."
+      "role": "Standard, 67 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Patched Porobot",
+      "role": "Standard, 67 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Cloth Armor",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 67 % des listes, 1 exemplaire"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 166,
-    "top8": 1,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "deckCount": 12,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 10,
+    "bestPlacements": [
+      {
+        "placement": "13th",
+        "player": "迷死他晓冬",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "24th",
+        "player": "电话手表",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "25th",
+        "player": "NGUSevenStar",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "39th",
+        "player": "菠萝包大王",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "75th",
+        "player": "群魔",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      }
+    ]
   },
   "sourceUrl": null,
   "archetype": "Mechs en défense",
@@ -63,5 +99,21 @@
   ],
   "weaknesses": [
     "9 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
-  ]
+  ],
+  "champions": {
+    "Rumble, Hotheaded": {
+      "usage": "100 %",
+      "role": "2.5 exemplaires en moyenne"
+    },
+    "Rumble, Scrapper": {
+      "usage": "50 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Rockfall Path (50 %)",
+    "Zaun Warrens (42 %)",
+    "Minefield (42 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 12 listes, 10 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

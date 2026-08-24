@@ -22,34 +22,34 @@
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Discipline",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Punch First",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Counter Strike",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Lonely Poro",
-      "role": "Standard, 80 % des listes, 3 exemplaires"
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 80 % des listes, 2.5 exemplaires"
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
       "name": "Challenge",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Souple, 57 % des listes, 2 exemplaires"
     },
     {
-      "name": "Charm",
+      "name": "Ruin Runner",
       "role": "Souple, 50 % des listes, 2 exemplaires"
     },
     {
@@ -58,16 +58,21 @@
     }
   ],
   "competitiveResults": {
-    "deckCount": 10,
+    "deckCount": 14,
     "top8": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 7,
+    "tournois": 10,
     "bestPlacements": [
       {
         "placement": "38th",
         "player": "想桃子111",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "44th",
+        "player": "猫岛巡礼-白龙",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
         "placement": "50th",
@@ -83,38 +88,25 @@
         "placement": "61th",
         "player": "Zeeke",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "76th",
-        "player": "就像发条",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       }
     ]
   },
   "sourceUrl": null,
   "champions": {
     "Jax, Unmatched": {
-      "usage": "90 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Lucian, Merciless": {
-      "usage": "40 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Trophy Hunter": {
-      "usage": "30 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Akshan, Mischievous": {
-      "usage": "30 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (90 %)",
-    "Ornn's Forge (40 %)"
+    "Sunken Temple (79 %)",
+    "Ornn's Forge (57 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 10 listes, 7 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Decklists de tournoi en base : 14 listes, 10 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

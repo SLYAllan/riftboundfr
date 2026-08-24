@@ -11,59 +11,52 @@
   "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Sett se prépare aussi quand vous conquérez.",
   "keyCards": [
     {
-      "name": "Sett, The Boss (Legend)",
-      "id": "Sett, The Boss",
-      "role": "Ability qui rappelle les unités vaincues et produit de la value à chaque usage."
+      "name": "Pit Rookie",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Showstopper",
-      "id": "Showstopper",
-      "role": "Carte signature : buff une unité et conteste un battlefield."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Sett, Brawler",
-      "id": "Sett, Brawler",
-      "role": "Champion unit joué à 1 copie comme chosen champion."
-    },
-    {
-      "name": "Lucian, Merciless",
-      "id": "Lucian, Merciless",
-      "role": "Unité qui veut conquérir chaque tour."
-    },
-    {
-      "name": "Fiora, Victorious",
-      "id": "Fiora, Victorious",
-      "role": "Unité qui gagne des upsides quand elle reçoit un buff."
-    },
-    {
-      "name": "Warmog's Armor",
-      "id": "Warmog's Armor",
-      "role": "Buff d'unités."
-    },
-    {
-      "name": "Sea Monkey",
-      "id": "Sea Monkey",
-      "role": "Unité qui se buff elle-même."
-    },
-    {
-      "name": "Ruin Runner",
-      "id": "Ruin Runner",
-      "role": "Immunisée contre les sorts, donc adaptée aux showdowns."
-    },
-    {
-      "name": "Monastery of Hirana",
-      "id": "Monastery of Hirana",
-      "role": "Draw contre un buff pour compenser le manque de draw de Sett."
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
       "name": "Call to Glory",
-      "id": "Call to Glory",
-      "role": "Support gratuit quand on a un buff à dépenser."
+      "role": "Cœur du deck, 91 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "id": "Hidden Blade",
-      "role": "Removal en combo avec l'ability : l'unité ciblée peut être sauvée pour obtenir l'équivalent d'un Draw 2."
+      "role": "Standard, 82 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "First Mate",
+      "role": "Standard, 82 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Repulse",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Fae Dragon",
+      "role": "Standard, 64 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Souple, 55 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sea Monkey",
+      "role": "Souple, 55 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Warmog's Armor",
+      "role": "Souple, 55 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -73,13 +66,38 @@
     "8 listes seulement sur les 1671 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "2 Wins (City Challenges)",
-    "sydneyStats": {
-      "winRate": "53%",
-      "matches": 159,
-      "bestPlacement": "9th (11-2-0)"
-    }
+    "deckCount": 11,
+    "top8": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 7,
+    "bestPlacements": [
+      {
+        "placement": "10th",
+        "player": "DBSF-weiyi",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "39th",
+        "player": "沉星之间-CBC",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "58th",
+        "player": "起飞",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "88th",
+        "player": "PKC.不系舟",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "94th",
+        "player": "477",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+      }
+    ]
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
@@ -97,5 +115,37 @@
       "Fade Dragon"
     ],
     "note": "Nerf : il faut déjà un buff présent pour le dépenser. Sett Brawler va très tall sur Trifarian War Camp. Compétitif : a gagné le Contenders London en battant un Master Yi-Aurora (Sabotage sur l'Aurora + Divine Judgment = reset non-Defyable). Joue bien sans dépendre d'une seule carte."
-  }
+  },
+  "champions": {
+    "Fiora, Victorious": {
+      "usage": "82 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Sett, Brawler": {
+      "usage": "64 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "55 %",
+      "role": "1.5 exemplaire en moyenne"
+    },
+    "Kayle, Justified": {
+      "usage": "45 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "36 %",
+      "role": "1.5 exemplaire en moyenne"
+    },
+    "Sett, Kingpin": {
+      "usage": "36 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Sunken Temple (91 %)",
+    "Monastery of Hirana (91 %)",
+    "Valley of Idols (73 %)"
+  ],
+  "dataSource": "Decklists de tournoi en base : 11 listes, 7 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

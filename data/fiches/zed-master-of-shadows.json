@@ -36,70 +36,66 @@
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "name": "Noxus Hopeful",
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "name": "Traveling Merchant",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 79 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 74 % des listes, 1.5 exemplaire"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Cleave",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 63 % des listes, 3 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires"
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 53 % des listes, 3 exemplaires"
+      "role": "Souple, 59 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Souple, 59 % des listes, 3 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 53 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Tideturner",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Souple, 55 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Souple, 42 % des listes, 3 exemplaires"
+      "role": "Souple, 45 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "role": "Souple, 41 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Zed, From the Shadows": {
-      "usage": "74 %",
+      "usage": "68 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Zed, Without a Sound": {
+      "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "53 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Zed, Without a Sound": {
-      "usage": "53 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Vi, Destructive": {
-      "usage": "47 %",
+      "usage": "50 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "42 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Unseen": {
-      "usage": "32 %",
-      "role": "1.5 exemplaire en moyenne"
     },
     "Rek'Sai, Breacher": {
       "usage": "32 %",
@@ -107,23 +103,32 @@
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (95 %)",
-    "Minefield (53 %)",
-    "Forbidding Waste (47 %)",
-    "Shadow Temple (42 %)",
-    "Seat of Power (32 %)"
+    "Zaun Warrens (91 %)",
+    "Minefield (59 %)",
+    "Shadow Temple (45 %)",
+    "Forbidding Waste (41 %)"
   ],
   "competitiveResults": {
-    "deckCount": 19,
+    "deckCount": 22,
     "top8": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 11,
+    "tournois": 13,
     "bestPlacements": [
+      {
+        "placement": "9th",
+        "player": "嘴嘴",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
       {
         "placement": "18th",
         "player": "小震",
         "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "20th",
+        "player": "joyspace_宇智波香锅",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
         "placement": "32th",
@@ -134,18 +139,8 @@
         "placement": "39th",
         "player": "利原",
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "40th",
-        "player": "Golden Time.猫岛",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "43th",
-        "player": "小震",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 19 listes, 11 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 22 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -22,47 +22,47 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Apothecary",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Standard, 64 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Souple, 45 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Souple, 45 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 63 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Souple, 57 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -76,16 +76,21 @@
     "22 listes en treize tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "deckCount": 22,
-    "top8": 1,
+    "deckCount": 35,
+    "top8": 2,
     "titres": 1,
-    "conversion": "4.5 %",
-    "tournois": 13,
+    "conversion": "5.7 %",
+    "tournois": 18,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "Prismаticismism",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "猫岛巡礼.澪夜",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       },
       {
         "placement": "15th",
@@ -98,14 +103,9 @@
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
-        "placement": "18th",
-        "player": "华蓝-震刀\\_N1uBro",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "23th",
-        "player": "卡茶.饭团不想听",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+        "placement": "16th",
+        "player": "燃冰",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       }
     ]
   },
@@ -133,26 +133,27 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "91 %",
+      "usage": "94 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "86 %",
+      "usage": "91 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "55 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "66 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "36 %",
+      "usage": "49 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (86 %)",
-    "Emperor's Dais (73 %)",
-    "Forbidding Waste (50 %)"
+    "Star Spring (91 %)",
+    "Emperor's Dais (80 %)",
+    "Seat of Power (51 %)",
+    "Forbidding Waste (31 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 22 listes, 13 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 35 listes, 18 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }

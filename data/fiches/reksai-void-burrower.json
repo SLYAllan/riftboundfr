@@ -13,32 +13,36 @@
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Carrion Dredger",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Cull the Weak",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Undertitan",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Falling Star",
+      "name": "Noxus Hopeful",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Inferna",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "name": "Cull the Weak",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Cleave",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Inferna",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Honest Broker",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Faithful Manufactor",
@@ -49,20 +53,16 @@
       "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
-      "name": "Honest Broker",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Shadow Fiend",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 77,
-    "top8": 8,
+    "deckCount": 110,
+    "top8": 9,
     "titres": 0,
-    "conversion": "10.4 %",
-    "tournois": 15,
+    "conversion": "8.2 %",
+    "tournois": 21,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -98,7 +98,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "65 %",
+      "usage": "66 %",
       "role": "1 exemplaire en moyenne"
     },
     "Zed, From the Shadows": {
@@ -107,13 +107,13 @@
     }
   },
   "topBattlefields": [
-    "The Candlelit Sanctum (96 %)",
-    "Mystic Vortex (56 %)",
+    "The Candlelit Sanctum (95 %)",
+    "Mystic Vortex (55 %)",
     "Zaun Warrens (53 %)",
-    "Trifarian War Camp (40 %)",
-    "Forbidding Waste (35 %)"
+    "Trifarian War Camp (39 %)",
+    "Forbidding Waste (37 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 77 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Decklists de tournoi en base : 110 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

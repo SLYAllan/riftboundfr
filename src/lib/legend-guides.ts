@@ -19,101 +19,101 @@ export interface LegendGuide {
 export const LEGEND_GUIDES: Record<string, LegendGuide> = {
   "mel-souls-reflection": {
     slug: "mel-souls-reflection",
-    bref: `Mel, Soul's Reflection joue en Esprit et Chaos, sur un plan d'amplification et de sorts pris à l'adversaire. C'est un deck difficile à piloter. Il compte 37 listes en tournoi, sur quatorze tournois, et n'a signé aucun Top 8.`,
+    bref: `Mel, Soul's Reflection joue en Esprit et Chaos, sur un plan d'amplification et de sorts pris à l'adversaire. C'est un deck difficile à piloter. Il compte 48 listes en tournoi, sur dix-huit tournois, et n'a signé aucun Top 8.`,
     gagne: `Mel suit le rythme de vos sorts. Chaque fois que vous amplifiez une autre carte, elle s'amplifie aussi. Vous pouvez ensuite la désamplifier et l'épuiser pour retirer 2 à une unité au combat. Elle se charge donc pendant que vous jouez, puis se vide au bon moment pour affaiblir une unité adverse.
 
-Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, vous donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans toutes les listes, et **[[Stacked Deck]]** (89 %) gardent votre main pleine. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (76 % des listes) rend vos sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (62 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.`,
-    plan: `**Début de partie.** **[[Stupefy]]** et **[[Stacked Deck]]** (89 %) tiennent votre main pleine à une énergie. Vous jouez vos cartes à bas coût et vous gardez le rythme.
+Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, vous donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans toutes les listes, et **[[Stacked Deck]]** (90 %) gardent votre main pleine. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (73 % des listes) rend vos sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (58 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.`,
+    plan: `**Début de partie.** **[[Stupefy]]** et **[[Stacked Deck]]** (90 %) tiennent votre main pleine à une énergie. Vous jouez vos cartes à bas coût et vous gardez le rythme.
 
-**Milieu de partie.** **[[Rebuttal]]**, dans toutes les listes, vous donne le contrôle d'un sort adverse. **[[Applied Researchers]]** amplifié (41 %) baisse le coût de vos sorts. Vous prenez les réponses et vous perturbez le plan de l'adversaire.
+**Milieu de partie.** **[[Rebuttal]]**, dans toutes les listes, vous donne le contrôle d'un sort adverse. **[[Applied Researchers]]** amplifié (42 %) baisse le coût de vos sorts. Vous prenez les réponses et vous perturbez le plan de l'adversaire.
 
-**Fin de partie.** **[[Mel, Newly Awakened]]** amplifiée rend vos sorts impossibles à contrer. **[[Thousand-Tailed Watcher]]** (62 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.
+**Fin de partie.** **[[Mel, Newly Awakened]]** amplifiée rend vos sorts impossibles à contrer. **[[Thousand-Tailed Watcher]]** (58 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.
 
-**Ce qui le bat.** Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon Mel reste inerte. Les terrains restent dispersés, aucun au-dessus de 49 %, personne n'a arrêté une liste stable. Et malgré ses 37 listes, aucun Top 8 en quatorze tournois.`,
+**Ce qui le bat.** Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon Mel reste inerte. Les terrains restent dispersés, aucun au-dessus de 44 %, personne n'a arrêté une liste stable. Et malgré ses 48 listes, aucun Top 8 en dix-huit tournois.`,
   },
   "zed-master-of-shadows": {
     slug: "zed-master-of-shadows",
-    bref: `Zed, Master of Shadows joue en Furie et Chaos. Son plan : bannir ses cartes pour amplifier la Légende, puis défausser et piocher à chaque tour. Le deck est Difficile à piloter. En onze tournois, 19 listes ont été jouées, aucune n'a atteint le Top 8.`,
+    bref: `Zed, Master of Shadows joue en Furie et Chaos. Son plan : bannir ses cartes pour amplifier la Légende, puis défausser et piocher à chaque tour. Le deck est Difficile à piloter. En treize tournois, 22 listes ont été jouées, aucune n'a atteint le Top 8.`,
     gagne: `Chaque carte que vous bannissez amplifie Zed. Vous pouvez ensuite le désamplifier et l'épuiser pour défausser une carte, puis en piocher une. Votre main tourne sans cesse : vous écartez les cartes mortes et vous gardez les bonnes.
 
-Ce moteur tourne grâce à **[[Stacked Deck]]**, dans 95 % des listes, qui vous laisse choisir une carte parmi trois. **[[Death Mark]]**, aussi dans 95 % des listes, ouvre le combat. **[[Traveling Merchant]]**, dans 84 % des listes, échange une carte à chacun de vos déplacements. Et **[[Zed, From the Shadows]]**, dans 74 % des listes, arrive avec un Clone d'Ombre quand vous le payez en défausse.`,
-    plan: `**Début de partie.** Vous posez **[[Stacked Deck]]** pour choisir la bonne carte parmi trois. **[[Traveling Merchant]]**, dans 84 % des listes, échange une carte à chacun de vos déplacements. Votre main se met en ordre dès le départ.
+Ce moteur tourne grâce à **[[Stacked Deck]]**, dans 95 % des listes, qui vous laisse choisir une carte parmi trois. **[[Death Mark]]**, aussi dans 95 % des listes, ouvre le combat. **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Et **[[Zed, From the Shadows]]**, dans 68 % des listes, arrive avec un Clone d'Ombre quand vous le payez en défausse.`,
+    plan: `**Début de partie.** Vous posez **[[Stacked Deck]]** pour choisir la bonne carte parmi trois. **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Votre main se met en ordre dès le départ.
 
 **Milieu de partie.** **[[Death Mark]]**, dans 95 % des listes, ouvre le combat. Vous payez **[[Zed, From the Shadows]]** en défausse : il arrive avec un Clone d'Ombre. Deux menaces pèsent là où l'adversaire n'en attendait qu'une.
 
-**Fin de partie.** **[[Perfect Execution]]**, dans 74 % des listes, prépare une unité et lui donne Assaut 3. C'est de quoi reprendre un champ de bataille perdu et marquer.
+**Fin de partie.** **[[Perfect Execution]]**, dans 77 % des listes, prépare une unité et lui donne Assaut 3. C'est de quoi reprendre un champ de bataille perdu et marquer.
 
-**Ce qui le bat.** Personne n'a fixé la liste : sept Champions se partagent la place, aucun au-dessus de 74 %. Et bannir demande des cartes qui bannissent, or le deck n'en joue pas tant que ça. Résultat : 19 listes en onze tournois, aucun Top 8.`,
+**Ce qui le bat.** Personne n'a fixé la liste : six Champions se partagent la place, aucun au-dessus de 68 %. Et bannir demande des cartes qui bannissent, or le deck n'en joue pas tant que ça. Résultat : 22 listes en treize tournois, aucun Top 8.`,
   },
   "ambessa-matriarch-of-war": {
     slug: "ambessa-matriarch-of-war",
-    bref: `Ambessa, Matriarch of War joue les domaines Corps et Ordre, sur un archétype d'amplification et d'unités préparées. Difficulté moyenne. Sur 13 listes en 9 tournois, une seule place en Top 8, aucune victoire : conversion de 7,7 %.`,
+    bref: `Ambessa, Matriarch of War joue les domaines Corps et Ordre, sur un archétype d'amplification et d'unités préparées. Difficulté moyenne. Sur 15 listes en 10 tournois, une seule place en Top 8, aucune victoire : conversion de 6,7 %.`,
     gagne: `Votre plan tient sur un mot : amplifier. Chaque fois que vous amplifiez une carte, votre Légende s'amplifie aussi. Ensuite, vous la désamplifiez, vous payez une Puissance et vous l'épuisez pour préparer une unité. Une unité préparée deux fois dans le tour attaque, puis défend : c'est elle qui marque vos points.
 
-**[[Punch First]]** porte le moteur, dans 100 % des listes à deux exemplaires : elle donne +5 Puissance à une unité pour une seule énergie. **[[Legion Marauder]]** (92 %, trois exemplaires) et **[[Pit Rookie]]** (85 %, trois exemplaires) posent la pression et laissent un bonus derrière eux. En fin de partie, **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.`,
+**[[Punch First]]** porte le moteur, dans 93 % des listes à deux exemplaires : elle donne +5 Puissance à une unité pour une seule énergie. **[[Legion Marauder]]** (87 %, trois exemplaires) et **[[Pit Rookie]]** (73 %, trois exemplaires) posent la pression et laissent un bonus derrière eux. En fin de partie, **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.`,
     plan: `**Début de partie.** **[[Legion Marauder]]** et **[[Pit Rookie]]** posent la pression tôt et laissent un bonus derrière eux.
 
-**Milieu de partie.** **[[Punch First]]** (100 %) donne +5 Puissance à une unité pour une énergie. Chaque amplification recharge votre Légende.
+**Milieu de partie.** **[[Punch First]]** (93 %) donne +5 Puissance à une unité pour une énergie. Chaque amplification recharge votre Légende.
 
 **Fin de partie.** **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat. Vous cherchez une unité préparée deux fois dans le tour, qui attaque puis défend.
 
-**Ce qui le bat.** 13 listes en neuf tournois, c'est trop peu pour parler d'un archétype installé. Sans autre carte à amplifier, votre Légende ne se recharge pas. Et le deck n'a qu'une menace à la fois, pas de plan de repli.`,
+**Ce qui le bat.** 15 listes en dix tournois, c'est trop peu pour parler d'un archétype installé. Sans autre carte à amplifier, votre Légende ne se recharge pas. Et le deck n'a qu'une menace à la fois, pas de plan de repli.`,
   },
   "nasus-curator-of-the-sands": {
     slug: "nasus-curator-of-the-sands",
-    bref: `Nasus, Curator of the Sands joue en Calme et Esprit. Son archétype : poser des grosses unités payées deux fois. Difficulté moyenne. En quinze tournois, il aligne 86 listes et deux titres, dont Tianjin.`,
+    bref: `Nasus, Curator of the Sands joue en Calme et Esprit. Son archétype : poser des grosses unités payées deux fois. Difficulté moyenne. En vingt et un tournois, il aligne 125 listes et deux titres, dont Tianjin.`,
     gagne: `Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, vous épuisez Nasus et vous préparez jusqu'à deux runes. Le gros coup se rembourse : vous payez cher, et la Légende vous rend de quoi continuer.
 
 Ce plan tourne autour de **[[Thousand-Tailed Watcher]]**, dans 100 % des listes. À 7 énergie, elle baisse toutes les unités adverses de 3 Puissance et vous rend deux runes. **[[Defy]]**, aussi dans 100 % des listes, garde la réponse ouverte pendant que vous augmentez en énergie.`,
-    plan: `**Début de partie.** **[[Scuttle Crab]]** (97 %) et **[[Ravenbloom Student]]** (78 %) tiennent le terrain pendant que **[[Defy]]** (100 %) et **[[Discipline]]** (97 %) gardent la réponse ouverte. Vous ne posez rien de gros avant 7 énergie : vous défendez et vous attendez.
+    plan: `**Début de partie.** **[[Scuttle Crab]]** (98 %) et **[[Ravenbloom Student]]** (82 %) tiennent le terrain pendant que **[[Defy]]** (100 %) et **[[Discipline]]** (98 %) gardent la réponse ouverte. Vous ne posez rien de gros avant 7 énergie : vous défendez et vous attendez.
 
 **Milieu de partie.** À 7 énergie, **[[Thousand-Tailed Watcher]]** baisse toutes les unités adverses de 3 Puissance et vous rend deux runes grâce à la Légende. Vous posez votre première grosse carte, et le remboursement commence.
 
-**Fin de partie.** **[[Tasty Faefolk]]** (66 %) et **[[Astral Heron]]** enchaînent au même coût. **[[Nasus, Ascended]]** (91 %) arrive à 8 énergie avec Protection 2. Votre but : poser une menace à 7 énergie ou plus par tour, sans jamais tomber à court de runes.
+**Fin de partie.** **[[Astral Heron]]** (66 %) enchaîne au même coût. **[[Nasus, Ascended]]** (94 %) arrive à 8 énergie avec Protection 2. Votre but : poser une menace à 7 énergie ou plus par tour, sans jamais tomber à court de runes.
 
-**Ce qui le bat.** Rien ne se déclenche sous 7 énergie, alors les premiers tours sont creux et un deck rapide en profite. La conversion est faible : 4,7 % contre 7,1 % pour le champ. Deux titres, mais très peu de Top 8 autour. Les terrains sont dispersés, aucun ne dépasse 57 % : le plan n'est pas stabilisé.`,
+**Ce qui le bat.** Rien ne se déclenche sous 7 énergie, alors les premiers tours sont creux et un deck rapide en profite. La conversion est faible : 4,8 % contre 6,9 % pour le champ. Deux titres, mais très peu de Top 8 autour. Les terrains sont dispersés, aucun ne dépasse 54 % : le plan n'est pas stabilisé.`,
   },
   "akali-rogue-assassin": {
     slug: "akali-rogue-assassin",
-    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Vendetta, 74 listes ont été jouées sur 15 tournois, sans aucun Top 8.`,
+    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Vendetta, 107 listes ont été jouées sur 21 tournois, pour une seule place en Top 8.`,
     gagne: `La Légende s'épuise pendant votre tour pour ramener une de vos unités engagées à la base, et la remettre prête si elle est amplifiée. En clair : vous retirez votre unité d'un combat perdu avant qu'il ne se résolve. L'unité survit et peut attaquer ailleurs.
 
-Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (91 % des listes) pioche à chaque déplacement. En fin de partie, **[[Akali, Silent]]** ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant. Le but : marquer avec des unités que l'adversaire ne peut ni cibler ni coincer.`,
-    plan: `**Début de partie.** **[[Scuttle Crab]]** (89 % des listes) et **[[Lonely Poro]]** (66 % des listes) occupent le terrain en piochant. **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. Vous posez des unités et vous gardez les retraits pour les combats qui comptent.
+Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (92 % des listes) pioche à chaque déplacement. En fin de partie, **[[Akali, Silent]]** ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant. Le but : marquer avec des unités que l'adversaire ne peut ni cibler ni coincer.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** (90 % des listes) et **[[Lonely Poro]]** (67 % des listes) occupent le terrain en piochant. **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. Vous posez des unités et vous gardez les retraits pour les combats qui comptent.
 
-**Milieu de partie.** **[[Stellacorn Herder]]** (91 % des listes) pioche à chaque déplacement, ce qui garde votre main pleine. La Légende sort votre unité du combat perdu avant qu'il ne se résolve. **[[Zhonya's Hourglass]]** (76 % des listes) protège une unité.
+**Milieu de partie.** **[[Stellacorn Herder]]** (92 % des listes) pioche à chaque déplacement, ce qui garde votre main pleine. La Légende sort votre unité du combat perdu avant qu'il ne se résolve. **[[Zhonya's Hourglass]]** (77 % des listes) protège une unité.
 
 **Fin de partie.** **[[Akali, Silent]]** échappe aux sorts adverses tant qu'elle reste hors combat, et gagne +2 Puissance en arrivant. Vous marquez avec des unités que l'adversaire ne peut ni cibler ni coincer. C'est maintenant que le deck doit gagner.
 
-**Ce qui le bat.** Retirer vos unités du combat ne marque aucun point : le deck se défend bien et gagne mal. 74 listes, quinze tournois, aucun Top 8, le plus gros volume sans résultat du set. L'écart avec la moyenne du champ est net au calcul (p = 0,010), ce n'est pas de la malchance.`,
+**Ce qui le bat.** Retirer vos unités du combat ne marque aucun point : le deck se défend bien et gagne mal. 107 listes, vingt et un tournois, une seule place en Top 8 : 0,9 % de conversion, contre 6,9 % pour le champ. Sur ce volume, l'écart ne s'explique pas par la malchance.`,
   },
   "jayce-defender-of-tomorrow": {
     slug: "jayce-defender-of-tomorrow",
-    bref: `Jayce est une Légende Esprit et Corps, un deck d'équipements préparés qui monte en ressources. La difficulté est moyenne. Sur 15 tournois, 72 listes ont été jouées pour 3 places en Top 8, soit 4,2 % de conversion.`,
+    bref: `Jayce est une Légende Esprit et Corps, un deck d'équipements préparés qui monte en ressources. La difficulté est moyenne. Sur 21 tournois, 101 listes ont été jouées pour 6 places en Top 8, soit 5,9 % de conversion.`,
     gagne: `Pour une énergie et un épuisement, Jayce prépare un équipement, c'est à dire le rend prêt à resservir. Amplifié, il en prépare deux d'un coup. Et un équipement qui produit des ressources sert deux fois par tour : chaque tour rapporte plus que le précédent.
 
-**[[Bellows Breath]]** (92 % des listes) et **[[Elder Dragon]]** (90 %) sont le cœur du deck. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, donc vous augmentez vite. En fin de partie, **[[Dazzling Aurora]]** (89 %) rejoue une unité gratuite en fin de tour, puis **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Le but : atteindre les très gros coûts deux tours avant l'adversaire.`,
-    plan: `**Début de partie.** **[[Platewyrm Egg]]** (86 %) et **[[Garbage Grabber]]** (89 %) posent la base. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance. **[[Sigil of the Storm]]** (82 %) vous fait tenir le temps de monter.
+**[[Bellows Breath]]** (94 % des listes) et **[[Elder Dragon]]** (93 %) sont le cœur du deck. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, donc vous augmentez vite. En fin de partie, **[[Dazzling Aurora]]** (92 %) rejoue une unité gratuite en fin de tour, puis **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Le but : atteindre les très gros coûts deux tours avant l'adversaire.`,
+    plan: `**Début de partie.** **[[Platewyrm Egg]]** (89 %) et **[[Garbage Grabber]]** (92 %) posent la base. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance. **[[Sigil of the Storm]]** (86 %) vous fait tenir le temps de monter.
 
 **Milieu de partie.** Jayce prépare les équipements déjà utilisés. Chaque tour rapporte plus de ressources que le précédent. Les équipements qui produisent des ressources servent deux fois par tour.
 
 **Fin de partie.** **[[Dazzling Aurora]]** rejoue une unité gratuite en fin de tour. **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Vous atteignez les très gros coûts deux tours avant l'adversaire.
 
-**Ce qui le bat.** Un adversaire qui vous met sous pression tôt gagne avant que vos runes soient montées. Le deck est très joué mais rarement récompensé : 4,2 % de conversion, trois Top 8 pour 72 listes. Et aucun Champion ne dépasse 40 %, les pilotes ne s'accordent pas sur la liste.`,
+**Ce qui le bat.** Un adversaire qui vous met sous pression tôt gagne avant que vos runes soient montées. Le deck est très joué mais rarement récompensé : 5,9 % de conversion, six Top 8 pour 101 listes. Et son seul Champion n'est dans que 48 % des listes, les pilotes ne s'accordent pas sur la liste.`,
   },
   "kennen-heart-of-the-tempest": {
     slug: "kennen-heart-of-the-tempest",
-    bref: `Kennen est un deck **Ordre/Chaos** de **cimetière** : il joue ses cartes depuis partout sauf sa main. C'est le meilleur convertisseur du format, 12,3 % de Top 8 contre 7,1 % de moyenne, et le seul écart que le calcul confirme vraiment. C'est aussi un deck **difficile** : tout dépend de ce que vous remplissez, et du moment où vous le dépenses.`,
+    bref: `Kennen est un deck **Ordre/Chaos** de **cimetière** : il joue ses cartes depuis partout sauf sa main. C'est le meilleur convertisseur du format, 12,1 % de Top 8 contre 6,9 % de moyenne, et le seul écart que le calcul confirme vraiment. C'est aussi un deck **difficile** : tout dépend de ce que vous remplissez, et du moment où vous le dépenses.`,
     gagne: `Chaque carte jouée ailleurs que depuis votre main amplifie Kennen. Désamplifie-le et épuise-le, et une unité gagne **Assaut 2** pour le tour. Le bonus ne vous coûte rien d'autre que d'avoir rempli votre cimetière avant.
 
 **[[Rhasa the Sunderer]]** transforme ce remplissage en victoire : 10 d'énergie de base, une de moins par carte au cimetière. Le deck passe ses premiers tours à se défausser, puis pose une menace que personne ne paie au prix fort.`,
     plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle pioche une carte sur trois et envoie les deux autres au cimetière. **[[Stacked Deck]]**, dans 98 % des listes, choisit ce qui tombe. Vous ne subissez pas votre cimetière, vous le construisez.
 
-**Milieu de partie.** Les sorts rejoués depuis le cimetière amplifient la Légende sans rien coûter. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 88 % et 79 % des listes, pèsent sur les combats.
+**Milieu de partie.** Les sorts rejoués depuis le cimetière amplifient la Légende sans rien coûter. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 90 % et 82 % des listes, pèsent sur les combats.
 
 **Fin de partie.** **[[Fizz, Trickster]]** rejoue un sort du cimetière en arrivant, **[[Kennen, Storm of Shuriken]]** rend un sort rejouable après une conquête. L'Assaut 2 gratuit tranche le combat qui compte.
 
-**Ce qui le bat.** Les départs rapides. Remplir prend des tours, et tant que rien n'est joué hors de votre main, la Légende reste désamplifiée et ne donne rien. Un seul titre malgré la meilleure conversion du format : le deck arrive loin, il finit rarement.`,
+**Ce qui le bat.** Les départs rapides. Remplir prend des tours, et tant que rien n'est joué hors de votre main, la Légende reste désamplifiée et ne donne rien. Trois titres pour trente Top 8 : la meilleure conversion du format, mais le deck arrive plus souvent qu'il ne conclut.`,
   },
   "master-yi-wuju-bladesman": {
     slug: "master-yi-wuju-bladesman",
@@ -343,7 +343,7 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   // cites viennent du comptage, pas d'une impression.
   "kaisa-daughter-of-the-void": {
     slug: "kaisa-daughter-of-the-void",
-    bref: `Kai'Sa est un deck **Furie/Esprit** de **tempo par les sorts**, et accessoirement la Légende la plus jouée de toute l'histoire du jeu : plus de 3 000 listes recensées et 135 top 8. Si vous ne sais pas quoi jouer, c'est le choix par défaut du format, et ce n'est pas un hasard.`,
+    bref: `Kai'Sa est un deck **Furie/Esprit** de **tempo par les sorts**, et accessoirement la Légende la plus jouée de toute l'histoire du jeu : plus de 3 000 listes recensées et 147 top 8. Si vous ne sais pas quoi jouer, c'est le choix par défaut du format, et ce n'est pas un hasard.`,
     gagne: `Sa capacité tient en une ligne : épuise-la et vous obtenez une rune, mais uniquement pour lancer un sort. Autrement dit, vous avez chaque tour un sort presque gratuit de plus que l'adversaire. Tout le deck est bâti là-dessus.
 
 Le résultat, c'est un deck qui répond à tout. **[[Falling Star]]** inflige 3 dégâts deux fois, de quoi nettoyer deux petites unités ou en abattre une grosse. **[[Hextech Ray]]** frappe à distance sur un champ de bataille. **[[Stupefy]]** affaiblit et repioche pour une énergie. Et quand vous voulez reprendre la main d'un coup, **[[Thousand-Tailed Watcher]]** arrive avec 7 de Puissance et retire 3 à toutes les unités adverses.`,
@@ -355,7 +355,7 @@ Le résultat, c'est un deck qui répond à tout. **[[Falling Star]]** inflige 3 
   },
   "annie-dark-child": {
     slug: "annie-dark-child",
-    bref: `Annie est un deck **Furie/Chaos** de **mouvement**, et l'une des meilleures affaires du format : 500 listes recensées seulement, mais 25 top 8 et 6 victoires, un rendement que peu de Légendes plus jouées atteignent.`,
+    bref: `Annie est un deck **Furie/Chaos** de **mouvement**, et l'une des meilleures affaires du format : 540 listes recensées seulement, mais 29 top 8 et 6 victoires, un rendement que peu de Légendes plus jouées atteignent.`,
     gagne: `Sa capacité prépare jusqu'à deux runes à la fin de votre tour. Concrètement, vous jouez pendant le tour adverse avec des ressources que les autres n'ont plus. C'est une invitation à remplir votre deck de réactions et à ne jamais rester passif.
 
 Le reste du deck sert à déplacer les unités, les tiennes comme celles d'en face. **[[Fight or Flight]]** et **[[Flash]]** renvoient des unités à la base, **[[Rebuke]]** en renvoie une carrément en main, **[[Ride the Wind]]** repositionne au bon moment. Un champ de bataille que l'adversaire croyait tenir se vide juste avant qu'il ne marque.`,
@@ -367,7 +367,7 @@ Le reste du deck sert à déplacer les unités, les tiennes comme celles d'en fa
   },
   "darius-hand-of-noxus": {
     slug: "darius-hand-of-noxus",
-    bref: `Darius est un deck **Furie/Ordre** d'**agression en série**, construit autour du mot-clé Légion. 284 listes, 12 top 8 : régulier en haut de tableau, mais toujours pas de titre à son palmarès.`,
+    bref: `Darius est un deck **Furie/Ordre** d'**agression en série**, construit autour du mot-clé Légion. 304 listes, 13 top 8 : régulier en haut de tableau, mais toujours pas de titre à son palmarès.`,
     gagne: `Sa capacité vous rend une énergie dès que vous avez déjà joué une carte dans le tour. Le deck entier récompense la même chose : enchaîner. **[[Noxus Hopeful]]** coûte deux énergies de moins si ce n'est pas votre première carte du tour, **[[Vanguard Captain]]** amène deux recrues avec lui dans les mêmes conditions.
 
 Vous ne cherchez pas à survivre longtemps, vous cherchez à poser plus de corps que l'adversaire ne peut en gérer, puis à convertir. **[[Cleave]]** ajoute 3 de Puissance à un attaquant, **[[Grand Strategem]]** en ajoute 5 à toute votre armée d'un coup : le combat que l'adversaire pensait tenir est perdu d'avance.`,
@@ -379,19 +379,19 @@ Vous ne cherchez pas à survivre longtemps, vous cherchez à poser plus de corps
   },
   "reksai-void-burrower": {
     slug: "reksai-void-burrower",
-    bref: `Rek'Sai est un deck **Furie/Ordre** d'**agression qui pioche dans son deck**. Peu jouée, 92 listes seulement, mais elle a signé une 5e place au National Open : c'est un choix de joueur qui connaît son deck, pas un choix par défaut.`,
+    bref: `Rek'Sai est un deck **Furie/Ordre** d'**agression qui pioche dans son deck**. 110 listes sur le format, neuf Top 8 et deux deuxièmes places : 8,2 % de conversion contre 6,9 % pour le champ. C'est un choix de joueur qui connaît son deck, pas un choix par défaut.`,
     gagne: `Chaque fois que vous conquérez, vous pouvez l'épuiser pour révéler les deux cartes du dessus de votre deck, en bannir une et la jouer aussitôt. Conquérir ne vous rapporte donc pas qu'un point : ça vous rapporte une carte gratuite. Plus vous avancez, plus vous accédez aux cartes suivantes.
 
 **[[Void Rush]]** fait la même chose pour deux énergies, en réduisant le coût de ce que vous jouez. Et **[[Undertitan]]**, révélé depuis votre deck, ajoute deux énergies au lieu de vous en coûter. Le deck s'auto-alimente tant que vous continuez d'attaquer.`,
     plan: `**Début de partie.** Prenez vite un terrain vite. Sans conquête, votre capacité ne sert à rien et le deck tourne à vide.
 
-**Milieu de partie.** Enchaîne conquête et révélation. **[[Noxus Hopeful]]** à quatre énergies, souvent deux, remplit le plateau pendant que **[[Hidden Blade]]** et **[[Falling Star]]** dégagent ce qui gêne.
+**Milieu de partie.** Enchaîne conquête et révélation. **[[Noxus Hopeful]]** à quatre énergies, souvent deux, remplit le plateau pendant que **[[Falling Star]]** et **[[Cleave]]** dégagent ce qui gêne.
 
 **Fin de partie.** **[[Cull the Weak]]** oblige chacun à sacrifier une unité : jouez-la quand l'adversaire n'a qu'une seule grosse pièce et que vous en avez cinq petites.`,
   },
   "pyke-bloodharbor-ripper": {
     slug: "pyke-bloodharbor-ripper",
-    bref: `Pyke est un deck **Furie/Chaos** de **rebond et de ressources**. 127 listes pour 5 top 8, l'un des meilleurs rendements des Légendes discrètes du format.`,
+    bref: `Pyke est un deck **Furie/Chaos** de **rebond et de ressources**. 206 listes pour 7 top 8, l'un des meilleurs rendements des Légendes discrètes du format.`,
     gagne: `Sa capacité renvoie une de vos unités en main et vous donne un jeton d'or au passage. Ça a l'air défensif, c'est en réalité un moteur : vous sauvez une unité d'un combat perdu, vous récupérez son effet d'arrivée pour plus tard, et vous gagnez une ressource.
 
 Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de vos unités et une unité adverse en main. **[[Treasure Hunter]]** crée de l'or à chaque déplacement. **[[Fizz, Trickster]]** rejoue un sort depuis votre défausse sans payer son énergie. Vous jouez deux fois ce que l'adversaire ne joue qu'une.`,
@@ -403,7 +403,7 @@ Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de v
   },
   "jax-grandmaster-at-arms": {
     slug: "jax-grandmaster-at-arms",
-    bref: `Jax est un deck **Calme/Corps** d'**équipement mobile**. 184 listes, 4 top 8 : jouable, jamais dominant. Un deck de patience plus que de pression.`,
+    bref: `Jax est un deck **Calme/Corps** d'**équipement mobile**. 222 listes, 5 top 8 : jouable, jamais dominant. Un deck de patience plus que de pression.`,
     gagne: `Sa capacité déplace votre équipement d'une unité à l'autre, même déjà attaché. Vous n'avez donc pas besoin de protéger l'unité équipée : si elle meurt, l'équipement repart ailleurs. La menace, c'est le matériel, pas le porteur.
 
 À partir de là, le deck protège ses unités avec ses réactions. **[[Guardian Angel]]** et **[[Brutalizer]]** s'attachent pour une seule rune Calme, et la muraille de réactions fait le reste : **[[Counter Strike]]** empêche les prochains dégâts et repioche, **[[Not So Fast]]** contre tout ce qui vise vos unités ou votre équipement, **[[Defy]]** contre le reste.`,
@@ -415,7 +415,7 @@ Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de v
   },
   "lucian-purifier": {
     slug: "lucian-purifier",
-    bref: `Lucian est un deck **Furie/Corps** d'**équipement agressif**. 233 listes, 2 top 8 seulement : le plan de jeu est clair, mais il convertit mal face aux decks qui savent retirer les unités.`,
+    bref: `Lucian est un deck **Furie/Corps** d'**équipement agressif**. 266 listes, 2 top 8 seulement : le plan de jeu est clair, mais il convertit mal face aux decks qui savent retirer les unités.`,
     gagne: `Sa capacité donne Assaut à tous vos équipements : chaque unité équipée frappe plus fort en attaque. Vous n'équipez donc pas pour survivre, vous équipez pour marquer.
 
 **[[Relentless Pursuit]]**, présente dans la totalité des listes, déplace une unité, y attache un équipement et lui permet de rentrer à la base après avoir conquis. Vous attaquez sans vous exposer au retour de bâton. **[[Lucian, Merciless]]** s'équipe à coût réduit en arrivant et se prépare la première fois qu'il conquiert chaque tour.`,
@@ -427,7 +427,7 @@ Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de v
   },
   "garen-might-of-demacia": {
     slug: "garen-might-of-demacia",
-    bref: `Garen est un deck **Corps/Ordre** de **rampe et de nombre**. 106 listes, 1 top 8 : une Légende de fin de partie, lente à démarrer et vulnérable en attendant.`,
+    bref: `Garen est un deck **Corps/Ordre** de **rampe et de nombre**. 125 listes, 1 top 8 : une Légende de fin de partie, lente à démarrer et vulnérable en attendant.`,
     gagne: `Sa capacité récompense la masse : conquérez un champ de bataille avec au moins quatre unités dessus et vous piochez deux cartes. Ce n'est pas un deck qui frappe fort, c'est un deck qui frappe nombreux.
 
 Avant ça, vous augmentez vos ressources. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, et vous font piocher quand vous ne pouvez plus. Au bout, **[[Dazzling Aurora]]** pose une unité gratuite à chaque fin de tour, indéfiniment.`,
@@ -439,7 +439,7 @@ Avant ça, vous augmentez vos ressources. **[[Mobilize]]** et **[[Catalyst of Ae
   },
   "lux-lady-of-luminosity": {
     slug: "lux-lady-of-luminosity",
-    bref: `Lux est un deck **Esprit/Ordre** de **contrôle par les gros sorts**. 247 listes, 4 top 8 : elle répond à tout, mais elle a du mal à conclure avant que le temps ne tombe.`,
+    bref: `Lux est un deck **Esprit/Ordre** de **contrôle par les gros sorts**. 293 listes, 6 top 8 : elle répond à tout, mais elle a du mal à conclure avant que le temps ne tombe.`,
     gagne: `Sa capacité vous fait piocher chaque fois que vous lancez un sort à cinq énergies ou plus. Là où un deck normal se ruine à jouer cher, Lux se rembourse. Son deck est donc rempli de sorts que personne d'autre ne peut se permettre.
 
 **[[Singularity]]** inflige 6 dégâts à deux unités d'un coup. **[[Imperial Decree]]** tue tout ce qui subit le moindre dégât pendant le tour. **[[Falling Comet]]** et **[[Drag Under]]** règlent les menaces isolées. Et **[[Time Warp]]**, à dix énergies, vous donne carrément un tour de plus.`,
@@ -451,7 +451,7 @@ Avant ça, vous augmentez vos ressources. **[[Mobilize]]** et **[[Catalyst of Ae
   },
   "renata-glasc-chem-baroness": {
     slug: "renata-glasc-chem-baroness",
-    bref: `Renata Glasc est un deck **Esprit/Ordre** de **contrôle par les ressources**. Soyons honnêtes : 106 listes recensées et **aucun top 8**. Le deck est plaisant à piloter, mais il n'a rien prouvé en compétition.`,
+    bref: `Renata Glasc est un deck **Esprit/Ordre** de **contrôle par les ressources**. Soyons honnêtes : 134 listes recensées et **aucun top 8**. Le deck est plaisant à piloter, mais il n'a rien prouvé en compétition.`,
     gagne: `Sa capacité fabrique de l'or dès que vous ou un allié contrôlez un terrain, et cet or rapporte une énergie de plus quand vous approchez du score de victoire. Vous jouez donc de plus en plus vite à mesure que la partie avance.
 
 Le deck accumule les jetons d'or par tous les bouts : **[[Plundering Poro]]** en crée en conquérant, **[[Honest Broker]]** en laisse un en mourant, **[[Wages of Pain]]** en donne un en retirant une unité. Puis vous convertissez, souvent brutalement, avec **[[Hostile Takeover]]** qui prend le contrôle d'une unité adverse et l'active aussitôt.`,
@@ -463,7 +463,7 @@ Le deck accumule les jetons d'or par tous les bouts : **[[Plundering Poro]]** en
   },
   "yasuo-unforgiven": {
     slug: "yasuo-unforgiven",
-    bref: `Yasuo est un deck **Calme/Chaos** de **repositionnement**. 336 listes pour 2 top 8 : très choisi, très rarement payant. À jouer parce qu'il vous plaît, pas parce qu'il gagne.`,
+    bref: `Yasuo est un deck **Calme/Chaos** de **repositionnement**. 366 listes pour 2 top 8 : très choisi, très rarement payant. À jouer parce qu'il vous plaît, pas parce qu'il gagne.`,
     gagne: `Sa capacité déplace une unité amie vers sa base ou depuis sa base, pour deux énergies. Vous pouvez donc retirer un défenseur d'un combat perdu, ou en faire surgir un là où l'adversaire ne l'attendait pas.
 
 Le reste est un socle de réactions solide mais sans surprise : **[[Defy]]** contre les sorts, **[[Discipline]]** et **[[En Garde]]** gonflent une unité et repiochent, **[[Zhonya's Hourglass]]** sauve une unité de la mort en la renvoyant à la base.`,
@@ -475,7 +475,7 @@ Le reste est un socle de réactions solide mais sans surprise : **[[Defy]]** con
   },
   "jinx-loose-cannon": {
     slug: "jinx-loose-cannon",
-    bref: `Jinx est un deck **Furie/Chaos** d'**agression main vide**. 278 listes, 3 top 8 : le plan est direct et amusant, le rendement reste faible.`,
+    bref: `Jinx est un deck **Furie/Chaos** d'**agression main vide**. 325 listes, 3 top 8 : le plan est direct et amusant, le rendement reste faible.`,
     gagne: `Sa capacité vous fait piocher au début de votre tour si vous avez une carte ou moins en main. Vider sa main n'est donc pas une faiblesse ici, c'est la condition pour continuer à jouer.
 
 Tout le deck consomme des cartes volontiers. **[[Chemtech Enforcer]]** défausse en arrivant, **[[Traveling Merchant]]** défausse et repioche à chaque déplacement, et **[[Super Mega Death Rocket!]]** revient de la défausse quand vous conquérez, contre une défausse de plus.`,
@@ -487,7 +487,7 @@ Tout le deck consomme des cartes volontiers. **[[Chemtech Enforcer]]** défausse
   },
   "lee-sin-blind-monk": {
     slug: "lee-sin-blind-monk",
-    bref: `Lee Sin est un deck **Calme/Corps** de **renfort progressif**. 242 listes pour 3 top 8 : honnête en partie libre, en retrait en compétition.`,
+    bref: `Lee Sin est un deck **Calme/Corps** de **renfort progressif**. 265 listes pour 3 top 8 : honnête en partie libre, en retrait en compétition.`,
     gagne: `Sa capacité renforce une unité amie chaque tour pour une énergie. Ce n'est pas décisif, mais c'est gratuit et ça s'accumule : une unité renforcée deux ou trois fois devient un mur que peu de decks savent franchir.
 
 Autour, vous protégez cette pièce. **[[Zhonya's Hourglass]]** la sauve d'une mort certaine, **[[Defy]]** contre le sort qui la viserait, **[[Discipline]]** ajoute 2 de Puissance et repioche au moment du combat.`,
@@ -499,7 +499,7 @@ Autour, vous protégez cette pièce. **[[Zhonya's Hourglass]]** la sauve d'une m
   },
   "rumble-mechanized-menace": {
     slug: "rumble-mechanized-menace",
-    bref: `Rumble est un deck **Furie/Esprit** **tribal Mechs**, le plus thématique du format. 166 listes, 1 top 8 : un deck de passionné, pas un choix de tournoi.`,
+    bref: `Rumble est un deck **Furie/Esprit** **tribal Mechs**, le plus thématique du format. 210 listes, 1 top 8 : un deck de passionné, pas un choix de tournoi.`,
     gagne: `Sa capacité donne Bouclier à tous vos Mechs : ils gagnent en Puissance quand ils défendent. Chaque autre carte du deck empile un bonus supplémentaire sur la même famille. **[[Rumble, Scrapper]]** ajoute 1 de Puissance à tous les Mechs, **[[Rumble, Hotheaded]]** leur donne Assaut, **[[Breakneck Mech]]** leur ajoute Protection et le déplacement libre entre terrains.
 
 Empilés, ces effets transforment des unités quelconques en armée cohérente que l'adversaire ne peut ni cibler facilement ni bloquer proprement.`,

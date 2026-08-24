@@ -42,27 +42,27 @@
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "En Garde",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
       "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "Guardian Angel",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 88 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -90,12 +90,17 @@
     ]
   },
   "competitiveResults": {
-    "deckCount": 134,
-    "top8": 9,
-    "titres": 0,
-    "conversion": "6.7 %",
-    "tournois": 15,
+    "deckCount": 178,
+    "top8": 13,
+    "titres": 1,
+    "conversion": "7.3 %",
+    "tournois": 21,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "旋木时光-绿拐",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
       {
         "placement": "2nd",
         "player": "ARBD-Skyer",
@@ -112,14 +117,9 @@
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
-        "placement": "4th",
-        "player": "CCB.冷静",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "5th",
-        "player": "纸传.晴天",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "placement": "3rd",
+        "player": "EDG.少侠SNnnnn",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       }
     ]
   },
@@ -159,7 +159,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "74 %",
+      "usage": "73 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
@@ -167,14 +167,18 @@
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "46 %",
+      "usage": "47 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "31 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
     "Sunken Temple (93 %)",
-    "Targon's Peak (78 %)"
+    "Targon's Peak (79 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 134 listes, 15 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 178 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
 }
