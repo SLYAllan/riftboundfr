@@ -74,3 +74,24 @@ Deux pièges déjà payés, écrits aussi dans `HANDOFF.md` :
 2. **Ne jamais lancer un `next build` pendant qu'un `next dev` tourne** : le
    serveur en marche répond alors 500 sur toutes les pages dynamiques, ce qui
    ressemble à s'y méprendre à un bug du site.
+
+## Passage de contrôle, après correction
+
+Même balayage, 172 passages, sur un build qui porte les deux corrections.
+
+| Constat | Avant | Après |
+|---|---:|---:|
+| Débordement horizontal | 41 pages | **0** |
+| Éléments hors cadre | 42 | **0** |
+| Médias trop larges | 41 | **0** |
+| Textes coupés (hors `sr-only`) | 0 | **0** |
+
+Reste, non corrigé et assumé : 16 cases à cocher de 16 px sur téléphone
+(`input.size-4`). Les autres « cibles trop petites » sont des liens au fil du
+texte, que WCAG 2.2 exclut de la règle des 24 px.
+
+Le décompte des requêtes en échec du passage de contrôle est à ignorer : elles
+tombent toutes après l'arrêt du serveur, en fin de balayage
+(`ERR_CONNECTION_REFUSED`).
+
+La suite du chantier responsive est passée à Codex.
