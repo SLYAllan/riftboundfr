@@ -22,6 +22,8 @@ export const EN: Record<string, string> = {
   "Deck supprimé": "Deck deleted",
   "decks créés": "decks created",
   "Decks publics": "Public decks",
+  "Déconnexion impossible. Réessaie.": "Could not sign out. Try again.",
+  "Déconnexion impossible. Vérifie ta connexion.": "Could not sign out. Check your connection.",
   "Déconnexion…": "Signing out…",
   "Enregistrement en cours": "Saving",
   "Enregistrement impossible. Réessaie.": "Could not save. Try again.",

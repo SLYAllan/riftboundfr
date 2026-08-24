@@ -56,12 +56,12 @@ export function DeckActions({ shareCode, isPublic, titre }: { shareCode: string;
       >
         {isPublic ? <EyeOff size={13} aria-hidden="true" /> : <Eye size={13} aria-hidden="true" />}
         {isPublic ? t("Rendre privé") : t("Rendre public")}
-        <span className="sr-only"> — {titre}</span>
+        <span className="sr-only">, {titre}</span>
       </button>
 
       {/* Deux temps plutôt qu'une fenêtre de confirmation : la suppression est
           définitive, mais une modale demanderait un piège à focus pour un seul
-          bouton. ponytail: passer à une modale si d'autres actions s'y ajoutent. */}
+          bouton. Passer à une modale le jour où d'autres actions s'y ajoutent. */}
       <button
         onClick={() => (confirme ? appeler("DELETE") : setConfirme(true))}
         onBlur={() => setConfirme(false)}
@@ -71,7 +71,7 @@ export function DeckActions({ shareCode, isPublic, titre }: { shareCode: string;
       >
         <Trash2 size={13} aria-hidden="true" />
         {confirme ? t("Confirmer la suppression") : t("Supprimer")}
-        <span className="sr-only"> — {titre}</span>
+        <span className="sr-only">, {titre}</span>
       </button>
 
       {erreur && (
@@ -85,19 +85,39 @@ export function DeckActions({ shareCode, isPublic, titre }: { shareCode: string;
 export function BoutonDeconnexion() {
   const t = useT();
   const [enCours, setEnCours] = useState(false);
+  const [erreur, setErreur] = useState<string | null>(null);
+
+  // Sans contrôle de `r.ok`, une déconnexion refusée renvoyait quand même vers
+  // l'accueil : l'utilisateur se croyait déconnecté alors que son cookie tenait
+  // toujours. Et un échec réseau laissait le bouton grisé sans un mot.
+  const deconnecter = async () => {
+    setEnCours(true);
+    setErreur(null);
+    try {
+      const res = await fetch("/api/auth/logout", { method: "POST" });
+      if (!res.ok) {
+        setErreur(t("Déconnexion impossible. Réessaie."));
+        setEnCours(false);
+        return;
+      }
+      window.location.href = "/";
+    } catch {
+      setErreur(t("Déconnexion impossible. Vérifie ta connexion."));
+      setEnCours(false);
+    }
+  };
 
   return (
-    <button
-      onClick={async () => {
-        setEnCours(true);
-        await fetch("/api/auth/logout", { method: "POST" });
-        window.location.href = "/";
-      }}
-      disabled={enCours}
-      aria-busy={enCours}
-      className={`${boutonCls} bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-70`}
-    >
-      <LogOut size={13} aria-hidden="true" /> {enCours ? t("Déconnexion…") : t("Déconnexion")}
-    </button>
+    <div className="flex flex-wrap items-center gap-2">
+      <button
+        onClick={deconnecter}
+        disabled={enCours}
+        aria-busy={enCours}
+        className={`${boutonCls} bg-surface-raised text-ink-secondary hover:text-ink disabled:opacity-70`}
+      >
+        <LogOut size={13} aria-hidden="true" /> {enCours ? t("Déconnexion…") : t("Déconnexion")}
+      </button>
+      {erreur && <p role="alert" className="text-xs text-red-400">{erreur}</p>}
+    </div>
   );
 }

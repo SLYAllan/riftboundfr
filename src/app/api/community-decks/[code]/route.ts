@@ -51,7 +51,14 @@ export async function PATCH(
     return NextResponse.json({ error: "Non autorisé" }, { status: 403 });
   }
 
-  const body = await req.json();
+  // Un corps illisible doit rendre 400 avec un message français, pas une 500
+  // muette : c'est ce que fait le reste des routes du site.
+  let body: Record<string, unknown>;
+  try {
+    body = (await req.json()) as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ error: "Corps de requête illisible" }, { status: 400 });
+  }
   // Champs indépendants de la version : ils se calculent une fois, avant le verrou.
   const data: Record<string, unknown> = {};
   if (typeof body.description === "string") data.description = body.description.slice(0, 500) || null;
