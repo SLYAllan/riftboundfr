@@ -4,8 +4,10 @@ import { construireWhere, lireFiltresDecks, type FiltresDecks } from "./deck-lis
 const base: FiltresDecks = { q: "", owned: false, offset: 0 };
 
 describe("construireWhere", () => {
-  it('"Tous" écarte les listes de tournoi non best-of', () => {
-    expect(construireWhere(base).OR).toEqual([{ tournamentContext: null }, { featured: true }]);
+  it('"Tous" montre tous les decks publiés', () => {
+    const where = construireWhere(base);
+    expect(where.OR).toBeUndefined();
+    expect(where.featured).toBeUndefined();
   });
 
   it('"Toutes les listes" ne filtre ni sur featured ni sur le contexte', () => {
@@ -21,9 +23,9 @@ describe("construireWhere", () => {
     expect(where.tournamentContext).toBe("RQ Lille");
   });
 
-  it("le filtre tournoi seul reste sur les best-of", () => {
+  it("le filtre tournoi seul montre toutes ses listes", () => {
     const where = construireWhere({ ...base, tournament: "RQ Lille" });
-    expect(where.featured).toBe(true);
+    expect(where.featured).toBeUndefined();
     expect(where.tournamentContext).toBe("RQ Lille");
   });
 

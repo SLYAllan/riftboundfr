@@ -7,11 +7,39 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 | # | Chantier | Où ça en est |
 |---|---|---|
 | 1 | **Audit responsive** de tout le site | 10 défauts corrigés (2 par Claude, 8 par Codex), 0 débordement au contrôle |
-| 2 | **Refonte de la découverte de deck** (`/decks`) | entrée par Légende en place et vérifiée à l'écran ; Codex y passe derrière |
+| 2 | **Refonte de la découverte de deck** (`/decks`) | faite : filtres réparés, choix visuel des Légendes, drapeaux des tournois et trois tris |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
 | 5 | **Source chinoise hexgate.cn** | 330 listes seedées en local, 3 pages de tournoi en ligne, garde-fou capable de les relire. Pas de best-of : ce ne sont pas des Regional Qualifiers |
 | 6 | **130 decklists en double** | supprimées, plus 128 decks doublonnés en base locale |
+
+## `/decks` repris le 24 août
+
+La page ouvre maintenant sur tous les decks publiés. L'ancien filtre implicite
+ne gardait que les listes sans tournoi ou marquées `featured` : il cachait les
+2 003 decks Vendetta et vidait les liens « Voir tous les decks » de
+`/legendes/[slug]`. Seul l'onglet « Best of » force encore `featured: true`.
+
+Les filtres gardent les autres paramètres de l'adresse et repartent du premier
+lot. Le doublon « Toutes les listes » a disparu. Le choix de Légende montre les
+icônes carrées de `public/img/legend_icon/`. Le choix de tournoi reprend les
+drapeaux SVG locaux de `CountryBadge`. Les deux menus passent par le `Popover` de
+Base UI : un clic hors du menu ou sur l'autre filtre ferme le premier, Échap rend
+le focus au bouton, et les listes partagent la classe `thin-scrollbar`.
+
+Les tris sont « Récents », « Placement » et « Populaire ». `placement` est une
+chaîne en base (`1st`, `2nd`, `10th`) : le tri charge les seuls identifiants et
+rangs, les compare comme des nombres, puis lit les 18 decks du lot. Un tri Prisma
+direct mettrait `10th` avant `2nd`.
+
+Contrôles faits après la dernière retouche : 13 tests ciblés verts,
+`npm run verify` avec `VERIFY_EXIT=0`, et `git diff --check` vert. Les adresses
+`?set=Vendetta`, `?legend=Zed%2C%20Master%20of%20Shadows`, `?sort=placement` et
+`?sort=popular` ont répondu en HTTP 200 ; Vendetta n'affiche plus l'état vide et
+le premier lot trié par place ne contient que des `1st`. Aucun navigateur piloté
+n'était relié lors de la dernière passe : les deux nouveaux `Popover` n'ont pas
+encore de capture ni de clic automatisé après leur pose. Aucun seed, push ou
+déploiement n'a été fait.
 
 ### Ce qui reste, et pourquoi ce n'est pas fait
 
@@ -178,20 +206,6 @@ les mortes. À relancer après tout audit qui renomme ou supprime des fichiers.
 `id`). L'index n'en garde qu'un. Supprimer un fichier de decklist est une
 décision d'Allan, pas d'un agent : rien n'a été effacé. La liste se retrouve
 par l'`id` en double.
-
-### Les deux demandes non faites
-
-1. **La découverte de deck n'a pas été refondue.** Ce qui est commité n'est que
-   de la plomberie : un onglet de plus et un menu qui ne ment plus. `/decks`
-   empile toujours six rangées de pastilles avant le premier deck (catégories,
-   collection, tournois, sets, Légende, tri), de trois couleurs différentes, et
-   chaque lien perd une partie des filtres en cours (changer de set oublie le
-   tournoi). C'est là qu'est le travail.
-2. **La nouvelle source pour les tournois chinois n'est pas commencée.** Aucune
-   trace nulle part : rien dans `scripts/`, aucun domaine autre que riftdecks
-   dans les fichiers, rien dans les docs. `scripts/parse-chinese-tournaments.ts`
-   est l'ancien parseur riftdecks. **Quelle source ?** La question n'a pas de
-   réponse dans le dépôt : à poser à Allan avant d'écrire une ligne.
 
 `public/video/overlay-compagnon-twitter.mp4` reste non suivi : le fichier n'est
 appelé nulle part dans le code ni dans les articles.
@@ -895,11 +909,12 @@ Au-delà de la base exposée (tâche 1) :
 
 ## Chargement progressif de `/decks` et audit Playwright du 14 août 2026
 
-La page rend 51 decks côté serveur, puis `IntersectionObserver` charge les lots
-suivants via `GET /api/decks` quand le sentinel approche du viewport. Le bouton
-`Charger plus de decks` reste disponible comme secours clavier. Playwright prouve :
-51 decks au départ, 102 après arrivée en bas, 102 URL uniques, puis 448 decks et
-448 URL uniques à la fin. Le bouton disparaît et le message
+Cet audit avait validé des lots de 51 decks. La passe du 24 août a ramené
+`TAILLE_LOT_DECKS` à 18 ; ses chiffres de 51 et 102 restent donc un relevé daté,
+pas l'état actuel. `IntersectionObserver` charge toujours les lots suivants via
+`GET /api/decks` quand la sentinelle approche du viewport. Le bouton
+`Charger plus de decks` reste disponible comme secours clavier. Le contrôle du
+14 août avait atteint 448 URL uniques. Le bouton disparaissait et le message
 `Tous les decks sont affichés.` apparaît : aucun doublon et aucune boucle.
 
 `src/lib/deck-listing.ts` porte la requête commune, le tri, la recherche, les

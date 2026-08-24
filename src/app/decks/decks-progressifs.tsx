@@ -15,13 +15,6 @@ const TIER_BG: Record<string, string> = {
   S: "bg-tier-s", A: "bg-tier-a", B: "bg-tier-b", C: "bg-tier-c", D: "bg-tier-d",
 };
 
-const SET_STYLES: Record<string, string> = {
-  Vendetta: "bg-rose-600 text-canvas",
-  Unleashed: "bg-arcane text-canvas",
-  Spiritforged: "bg-emerald-600 text-canvas",
-  Origins: "bg-amber-600 text-canvas",
-};
-
 function CarteDeck({ deck }: { deck: DeckListe }) {
   const bannerUrl = getBannerUrl(deck.legendName);
   const couverture = deck.coverage;
@@ -29,21 +22,21 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
   return (
     <article className="card-hover rounded-card border border-hairline overflow-hidden group relative">
       <Link href={`/decks/${deck.slug}`} className="absolute inset-0 z-10" aria-label={`Voir le deck ${displayLegendName(deck.legendName)}`} />
-      <div className="relative flex h-32 flex-col justify-end">
+      <div className="relative flex h-44 flex-col justify-end">
         {bannerUrl ? (
           <Image src={bannerUrl} alt="" fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
         ) : <div className="absolute inset-0 bg-surface-raised" />}
-        <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent" />
         {couverture && (
           <span className={cn("absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow", complet ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40")} title={complet ? "Jouable avec votre collection" : `Il vous manque ${couverture.missing} carte${couverture.missing > 1 ? "s" : ""}`}>
             {complet ? "✓ Complet" : `${couverture.owned}/${couverture.required}`}
           </span>
         )}
-        <div className="relative p-3">
+        <div className="relative p-4">
           <div className="flex items-end justify-between gap-2">
             <div className="min-w-0">
-              <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{displayLegendName(deck.legendName)}</div>
-              <div className="texte-sur-art mt-1 space-y-0.5 text-xs">
+              <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{displayLegendName(deck.legendName)}</div>
+              <div className="texte-sur-art mt-2 space-y-1 text-xs">
                 <div className="flex items-center gap-2">
                   {deck.tournamentTier && <span className={cn("inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20", TIER_BG[deck.tournamentTier] ?? "bg-ink-muted")} style={{ textShadow: "none" }}>Tier {deck.tournamentTier}</span>}
                   {deck.tournamentContext && <span className="flex min-w-0 items-center gap-1 text-white/90">{getTournamentCountryCode(deck.tournamentContext) && <CountryBadge code={getTournamentCountryCode(deck.tournamentContext)!} />}<span className="truncate">{deck.tournamentContext}</span></span>}
@@ -53,7 +46,7 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
             </div>
             <div className="relative z-20 flex shrink-0 items-center gap-1">
               <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} compact />
-              {SET_STYLES[deck.setTag] && <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", SET_STYLES[deck.setTag])}>{deck.setTag}</span>}
+              <span className="text-[10px] font-semibold uppercase tracking-wide text-white/70">{deck.setTag}</span>
               {deck.featured && <span className="rounded-full bg-gold/80 px-2 py-0.5 text-[10px] font-bold text-canvas">Best of</span>}
             </div>
           </div>

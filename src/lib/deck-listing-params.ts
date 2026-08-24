@@ -6,7 +6,7 @@ export interface FiltresDecks {
   set?: string;
   tournament?: string;
   q: string;
-  sort?: "popular";
+  sort?: "popular" | "placement";
   owned: boolean;
   offset: number;
 }
@@ -41,6 +41,12 @@ export interface LotDecks {
   suivant: number | null;
 }
 
+export function comparerPlacements(a: string | null, b: string | null): number {
+  const rangA = a ? Number.parseInt(a, 10) : Number.POSITIVE_INFINITY;
+  const rangB = b ? Number.parseInt(b, 10) : Number.POSITIVE_INFINITY;
+  return rangA - rangB;
+}
+
 export function lireFiltresDecks(params: Record<string, string | undefined>): FiltresDecks {
   const offset = Number.parseInt(params.offset ?? "0", 10);
   return {
@@ -49,7 +55,7 @@ export function lireFiltresDecks(params: Record<string, string | undefined>): Fi
     set: params.set || undefined,
     tournament: params.tournament || undefined,
     q: (params.q ?? "").trim(),
-    sort: params.sort === "popular" ? "popular" : undefined,
+    sort: params.sort === "popular" || params.sort === "placement" ? params.sort : undefined,
     owned: params.owned === "1",
     offset: Number.isFinite(offset) && offset > 0 ? offset : 0,
   };
@@ -68,17 +74,23 @@ export function parametresDecks(filtres: FiltresDecks): URLSearchParams {
   return params;
 }
 
+export function modifierParametresDecks(
+  courants: URLSearchParams,
+  changements: Record<string, string | null>,
+): URLSearchParams {
+  const suivants = new URLSearchParams(courants);
+  for (const [nom, valeur] of Object.entries(changements)) {
+    if (valeur) suivants.set(nom, valeur);
+    else suivants.delete(nom);
+  }
+  suivants.delete("offset");
+  return suivants;
+}
+
 export function construireWhere(filtres: FiltresDecks): Prisma.DeckWhereInput {
   const where: Prisma.DeckWhereInput = { published: true };
   if (filtres.cat === "guide") where.guide = { not: null };
-  // "all" est le seul onglet qui ne filtre pas sur `featured`. Ailleurs, un deck de
-  // tournoi non marqué best-of ne sortait nulle part sur /decks : ni dans "Tous"
-  // (le OR ci-dessous l'exclut), ni dans "Best of" ni via le filtre tournoi (les
-  // deux forcent featured). Il ne restait accessible que par /tournois et /legendes.
-  else if (filtres.cat !== "all") {
-    if (filtres.cat === "bestof" || filtres.tournament) where.featured = true;
-    else where.OR = [{ tournamentContext: null }, { featured: true }];
-  }
+  else if (filtres.cat === "bestof") where.featured = true;
   // Hors du bloc ci-dessus : sinon `?cat=guide&tournament=X` perdait le tournoi.
   if (filtres.tournament) where.tournamentContext = filtres.tournament;
   if (filtres.legend) where.legendName = { contains: filtres.legend, mode: "insensitive" };

@@ -4,10 +4,11 @@ import { Suspense } from "react";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { Hammer, Users, Trophy, Star, Eye, Heart, ArrowRight } from "lucide-react";
+import { Hammer, Users, Trophy, Star, Eye, Heart, Search, SlidersHorizontal } from "lucide-react";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { DeckLegendFilter } from "@/components/deck-legend-filter";
 import { DeckFiltreSelect } from "@/components/deck-filtre-select";
+import { DeckTournamentFilter } from "@/components/deck-tournament-filter";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
 import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
@@ -19,7 +20,7 @@ import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
-import { construireWhere, lireFiltresDecks, listerDecks, listerLegendes } from "@/lib/deck-listing";
+import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks } from "@/lib/deck-listing";
 import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
@@ -49,42 +50,22 @@ const TIER_BG: Record<string, string> = {
 };
 
 const CATEGORIES = [
-  { key: "deckbuilder", label: "Créer son deck", href: "/deckbuilder", icon: Hammer, color: "violet" as const, isLink: true },
-  { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, color: "arcane" as const, isLink: false },
-  { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, color: "gold" as const, isLink: false },
-  { key: "all", label: "Toutes les listes", href: "/decks?cat=all", icon: Trophy, color: "violet" as const, isLink: false },
+  { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, isLink: false },
+  { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, isLink: false },
   // Pas d'onglet « Avec guide » : aucun deck publié ne porte de guide aujourd'hui,
   // l'onglet ne menait qu'à une page vide.
 ] as const;
 
-const COLOR_CLASSES = {
-  violet: { base: "bg-violet-dark text-white hover:opacity-90", active: "bg-violet-dark text-white ring-2 ring-violet/40 ring-offset-1 ring-offset-canvas" },
-  arcane: { base: "bg-arcane text-canvas hover:opacity-90", active: "bg-arcane text-canvas ring-2 ring-arcane/40 ring-offset-1 ring-offset-canvas" },
-  gold: { base: "bg-gold text-canvas hover:opacity-90", active: "bg-gold text-canvas ring-2 ring-gold/40 ring-offset-1 ring-offset-canvas" },
-};
-
-const SET_STYLES: Record<string, { badge: string; active: string }> = {
-  Vendetta: {
-    badge: "bg-rose-600 text-canvas",
-    active: "bg-rose-500 text-canvas",
-  },
-  Unleashed: {
-    badge: "bg-arcane text-canvas",
-    active: "bg-arcane text-canvas",
-  },
-  Spiritforged: {
-    badge: "bg-emerald-600 text-canvas",
-    active: "bg-emerald-500 text-canvas",
-  },
-  Origins: {
-    badge: "bg-amber-600 text-canvas",
-    active: "bg-amber-500 text-canvas",
-  },
-};
-
 export default async function DecksPage({ searchParams }: PageProps) {
   const t = await tr();
   const params = await searchParams;
+  const parametresCourants = new URLSearchParams(
+    Object.entries(params).filter((entree): entree is [string, string] => typeof entree[1] === "string"),
+  );
+  const hrefDecks = (changements: Record<string, string | null>) => {
+    const suivants = modifierParametresDecks(parametresCourants, changements);
+    return suivants.size ? `/decks?${suivants}` : "/decks";
+  };
   const cat = params.cat;
   const legendFilter = params.legend;
   const setFilter = params.set;
@@ -100,6 +81,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
     if (legendFilter) comWhere.legendName = { contains: legendFilter, mode: "insensitive" };
     if (domainFilter) comWhere.domains = { has: domainFilter };
     if (tagFilter) comWhere.tags = { has: tagFilter };
+    if (search) comWhere.OR = [
+      { title: { contains: search, mode: "insensitive" } },
+      { legendName: { contains: search, mode: "insensitive" } },
+      { authorName: { contains: search, mode: "insensitive" } },
+    ];
 
     const comOrderBy = sortParam === "popular" ? { likes: "desc" as const }
       : sortParam === "views" ? { views: "desc" as const }
@@ -163,26 +149,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
     const TAG_OPTIONS = ["aggro", "contrôle", "combo", "midrange", "tempo", "budget", "compétitif"];
 
     function comLink(overrides: Record<string, string | null>) {
-      const base: Record<string, string> = { cat: "community" };
-      if (legendFilter) base.legend = legendFilter;
-      if (domainFilter) base.domain = domainFilter;
-      if (tagFilter) base.tag = tagFilter;
-      if (sortParam) base.sort = sortParam;
-      for (const [k, v] of Object.entries(overrides)) {
-        if (v === null) delete base[k];
-        else base[k] = v;
-      }
-      const qs = Object.entries(base).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
-      return `/decks?${qs}`;
+      return hrefDecks({ cat: "community", ...overrides });
     }
 
     return (
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-        <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks Riftbound - Decklists compétitives")}</h1>
-        <p className="mt-2 text-ink-secondary">{t("Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.")}</p>
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-arcane">{t("Decklists Riftbound")}</p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Trouvez un deck à jouer")}</h1>
+          <p className="mt-2 text-sm leading-relaxed text-ink-secondary sm:text-base">{t("Parcourez les listes de tournoi et les decks partagés par la communauté.")}</p>
+        </div>
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
-      <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
+      <details className="group mt-3 max-w-3xl text-sm text-ink-secondary">
+        <summary className="min-h-11 cursor-pointer list-none py-3 text-xs font-semibold text-ink-muted hover:text-ink [&::-webkit-details-marker]:hidden">{t("Comment choisir un deck ?")} <span aria-hidden="true" className="ml-1 inline-block transition-transform group-open:rotate-180">↓</span></summary>
+        <p className="pb-2 leading-relaxed">
         On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
         guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
         sa page dans les{" "}
@@ -193,24 +174,34 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
         pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
-      </p>
+        </p>
+      </details>
 
-        <div className="mt-6 flex flex-wrap gap-2.5">
-          <Link href="/decks" className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink")}>{t("Tous")}</Link>
+        <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:border-arcane/70">
+          {Object.entries(params).map(([nom, valeur]) => nom !== "q" && nom !== "offset" && valeur ? <input key={nom} type="hidden" name={nom} value={valeur} /> : null)}
+          <input type="search" name="q" defaultValue={search} placeholder={t("Chercher un deck, une Légende ou un auteur")} aria-label={t("Chercher un deck, une Légende ou un auteur")} className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-ink outline-none placeholder:text-ink-muted" />
+          <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]"><Search size={16} aria-hidden="true" /> <span className="hidden sm:inline">{t("Chercher")}</span></button>
+        </form>
+        {search && <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")} <strong>{search}</strong>. <Link href={hrefDecks({ q: null })} className="text-arcane hover:underline">{t("Effacer la recherche")}</Link></p>}
+
+        <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
+          <Link href={hrefDecks({ cat: null, domain: null, tag: null })} className={cn("inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>{t("Compétitifs")}</Link>
           {CATEGORIES.map((c) => {
             const Icon = c.icon;
             const isActive = !c.isLink && cat === c.key;
-            const colors = COLOR_CLASSES[c.color];
             return (
-              <Link key={c.key} href={c.href} className={cn("inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors", isActive ? colors.active : colors.base)}>
+              <Link key={c.key} href={hrefDecks({ cat: c.key, domain: c.key === "community" ? domainFilter ?? null : null, tag: c.key === "community" ? tagFilter ?? null : null, set: c.key === "community" ? null : setFilter ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })} className={cn("inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors", isActive ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>
                 <Icon size={15} /> {t(c.label)}
               </Link>
             );
           })}
-        </div>
+          <Link href="/deckbuilder" className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
+        </nav>
 
+        <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
+          <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</div>
         {/* Domain filters */}
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5">
           <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !domainFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Tous domaines")}</Link>
           {DOMAIN_OPTIONS.map((d) => (
             <Link key={d} href={comLink({ domain: domainFilter === d ? null : d })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", domainFilter === d ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
@@ -234,7 +225,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Suspense>
             <DeckLegendFilter legends={comLegends.map((l) => l.legendName)} />
           </Suspense>
-          <div className="flex items-center gap-1.5 ml-auto">
+          <div className="flex w-full items-center gap-1.5 sm:ml-auto sm:w-auto">
             <span className="text-xs text-ink-muted">Tri :</span>
             <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Récent")}</Link>
             <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
@@ -244,6 +235,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               <Eye size={10} /> Vues
             </Link>
           </div>
+        </div>
         </div>
 
         <div className="mt-4 text-sm text-ink-muted">
@@ -265,13 +257,13 @@ export default async function DecksPage({ searchParams }: PageProps) {
               const bannerUrl = getBannerUrl(deck.legendName);
               return (
                 <Link key={deck.id} href={`/d/${deck.shareCode}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative flex flex-col">
-                  <div className="relative flex min-h-[7rem] flex-1 flex-col justify-end">
+                  <div className="relative flex h-44 flex-col justify-end">
                     {bannerUrl ? (
                       <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
                     ) : (
                       <div className="absolute inset-0 bg-surface-raised" />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent" />
                     {(() => {
                       const cov = comCoverage.get(deck.id);
                       if (!cov) return null;
@@ -288,10 +280,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
                         </span>
                       );
                     })()}
-                    <div className="relative z-10 p-3">
+                    <div className="relative z-10 p-4">
                       <div className="flex items-end justify-between gap-2">
                         <div className="min-w-0">
-                          <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                          <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                             {deck.title}
                           </div>
                           <div
@@ -338,7 +330,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
     .map((t) => {
       const ctx = t.tournamentContext!;
       const info = getTournamentInfo(ctx);
-      return { ctx, label: info?.shortName ?? ctx, date: info?.date ?? "", set: info?.set };
+      return { ctx, label: info?.shortName ?? ctx, date: info?.date ?? "", set: info?.set, countryCode: getTournamentCountryCode(ctx) };
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 
@@ -357,11 +349,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
     getUserFromSession(),
   ]);
 
-  // Entrée par Légende : sans Légende choisie et sans recherche, la page montre
-  // QUI jouer avant de dérouler 51 bannières presque identiques.
-  const vueLegendes = !filtres.legend && !search;
-  const lignesLegendes = vueLegendes ? await listerLegendes(filtres) : [];
-
   const ownedOnly = filtres.owned;
   const decks = lotInitial.decks;
   const coverageByDeck = new Map(decks.map((deck) => [deck.id, deck.coverage]));
@@ -369,11 +356,16 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks Riftbound - Decklists compétitives")}</h1>
-      <p className="mt-2 text-ink-secondary">{t("Decklists des Regional Qualifiers et tournois officiels Riftbound, builds compétitifs et decks communautaires, classés par Légende - avec guides et explications en français.")}</p>
+      <div className="max-w-3xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-arcane">{t("Decklists Riftbound")}</p>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Trouvez un deck à jouer")}</h1>
+        <p className="mt-2 text-sm leading-relaxed text-ink-secondary sm:text-base">{t("Parcourez les listes qui gagnent en tournoi, puis filtrez par Légende, set ou événement.")}</p>
+      </div>
       {/* Texte d'entrée : /decks n'avait que des filtres, Google renvoyait l'accueil
           sur « riftbound deck » (86 impressions, 1 clic, GSC juillet 2026). */}
-      <p className="mt-3 max-w-3xl text-sm text-ink-secondary">
+      <details className="group mt-3 max-w-3xl text-sm text-ink-secondary">
+        <summary className="min-h-11 cursor-pointer list-none py-3 text-xs font-semibold text-ink-muted hover:text-ink [&::-webkit-details-marker]:hidden">{t("Comment choisir un deck ?")} <span aria-hidden="true" className="ml-1 inline-block transition-transform group-open:rotate-180">↓</span></summary>
+        <p className="pb-2 leading-relaxed">
         On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
         guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
         sa page dans les{" "}
@@ -384,66 +376,64 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
         pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
-      </p>
+        </p>
+      </details>
 
       {/* Recherche : formulaire GET, les filtres en cours partent en champs cachés
           pour ne pas être perdus à la soumission. */}
-      <form method="get" action="/decks" className="mt-5 flex max-w-lg gap-2">
-        {cat && <input type="hidden" name="cat" value={cat} />}
-        {setFilter && <input type="hidden" name="set" value={setFilter} />}
-        {tournamentFilter && <input type="hidden" name="tournament" value={tournamentFilter} />}
-        {legendFilter && <input type="hidden" name="legend" value={legendFilter} />}
+      <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:border-arcane/70">
+        {Object.entries(params).map(([nom, valeur]) => nom !== "q" && nom !== "offset" && valeur ? <input key={nom} type="hidden" name={nom} value={valeur} /> : null)}
         <input
           type="search"
           name="q"
           defaultValue={search}
           placeholder={t("Chercher un deck, une Légende, un joueur ou une carte")}
           aria-label={t("Chercher un deck, une Légende, un joueur ou une carte")}
-          className="min-w-0 flex-1 rounded-full border border-hairline bg-surface px-4 py-2 text-sm text-ink placeholder:text-ink-muted focus:border-arcane"
+          className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-ink outline-none placeholder:text-ink-muted"
         />
-        <button type="submit" className="rounded-full bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">
-          {t("Chercher")}
+        <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]">
+          <Search size={16} aria-hidden="true" /> <span className="hidden sm:inline">{t("Chercher")}</span>
         </button>
       </form>
       {search && (
         <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")}{" "}<strong>{search}</strong>.{" "}
-          <Link href="/decks" className="text-arcane hover:underline">{t("Tout afficher")}</Link>
+          <Link href={hrefDecks({ q: null })} className="text-arcane hover:underline">{t("Effacer la recherche")}</Link>
         </p>
       )}
 
-      <div className="mt-6 flex flex-wrap gap-2.5">
+      <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
         <Link
-          href="/decks"
+          href={hrefDecks({ cat: null, domain: null, tag: null })}
           className={cn(
-            "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
-            !cat && !setFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink",
+            "inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-colors",
+            !cat ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink",
           )}
         >{t("Tous")}</Link>
         {CATEGORIES.map((c) => {
           const Icon = c.icon;
           const isActive = !c.isLink && cat === c.key;
-          const colors = COLOR_CLASSES[c.color];
           return (
             <Link
               key={c.key}
-              href={c.href}
+              href={hrefDecks({ cat: c.key, domain: null, tag: null, set: c.key === "community" ? null : setFilter ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })}
               className={cn(
-                "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
-                isActive ? colors.active : colors.base,
+                "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors",
+                isActive ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink",
               )}
             >
               <Icon size={15} /> {t(c.label)}
             </Link>
           );
         })}
-      </div>
+        <Link href="/deckbuilder" className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
+      </nav>
 
       {/* Filtre collection : n'apparaît qu'une fois connecté (sinon aucune
           couverture à calculer). Garde tous les autres filtres dans l'URL. */}
       {sessionUser && (
         <div className="mt-3">
           <Link
-            href={`/decks${(() => { const q = [!ownedOnly && "owned=1", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
+            href={hrefDecks({ owned: ownedOnly ? null : "1" })}
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
               ownedOnly ? "bg-emerald-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
@@ -457,7 +447,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
       {/* Une seule ligne de filtres. Avant, trois rangées de pastilles construisaient
           leur lien à la main : changer de set effaçait le tournoi en cours, et
           l'ensemble tenait en moins de hauteur qu'une carte de deck. */}
-      <div className="mt-4 flex flex-wrap items-center gap-2">
+      <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
+        <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</div>
+        <div className="flex flex-wrap items-center gap-2">
         <Suspense>
           <DeckLegendFilter legends={legendNames} />
         </Suspense>
@@ -470,29 +462,31 @@ export default async function DecksPage({ searchParams }: PageProps) {
           />
         </Suspense>
         <Suspense>
-          <DeckFiltreSelect
-            nom="tournament"
-            libelle={t("Filtrer par tournoi")}
-            toutes="Tous les tournois"
-            options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label }))}
-          />
+          <DeckTournamentFilter options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label, pays: tf.countryCode }))} />
         </Suspense>
-        <div className="ml-auto flex items-center gap-1.5">
+        <div className="flex w-full items-center gap-1.5 sm:ml-auto sm:w-auto">
           <span className="text-xs text-ink-muted">{t("Tri")}</span>
           <Link
-            href={`/decks${(() => { const q = [cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
-            className={cn("inline-flex min-h-11 items-center rounded-full px-3 text-xs font-semibold transition-colors",
-              sortParam !== "popular" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+            href={hrefDecks({ sort: null })}
+            className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
+              !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >{t("Récents")}</Link>
           <Link
-            href={`/decks?${["sort=popular", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&")}`}
+            href={hrefDecks({ sort: "placement" })}
+            className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
+              sortParam === "placement" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+            )}
+          ><Trophy size={12} aria-hidden="true" /> {t("Placement")}</Link>
+          <Link
+            href={hrefDecks({ sort: "popular" })}
             className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
               sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
             <Heart size={12} aria-hidden="true" /> {t("Populaire")}
           </Link>
+        </div>
         </div>
       </div>
 
@@ -505,75 +499,23 @@ export default async function DecksPage({ searchParams }: PageProps) {
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>
 
-      {vueLegendes ? (
-        lignesLegendes.length === 0 ? (
-          <p className="mt-12 text-center text-ink-muted">{t("Aucun deck ne correspond à ces filtres. Essayez d’en retirer un.")}</p>
-        ) : (
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {lignesLegendes.map((ligne) => {
-              const banniere = getBannerUrl(ligne.legendName);
-              return (
-                <Link
-                  key={ligne.legendName}
-                  href={`/decks?${new URLSearchParams({ ...(cat ? { cat } : {}), ...(setFilter ? { set: setFilter } : {}), ...(tournamentFilter ? { tournament: tournamentFilter } : {}), legend: ligne.legendName }).toString()}`}
-                  className="card-hover group relative flex min-h-[72px] items-center gap-3 overflow-hidden rounded-card border border-hairline bg-surface px-3 py-2"
-                >
-                  {banniere && (
-                    <Image
-                      src={banniere}
-                      alt=""
-                      fill
-                      className="object-cover opacity-30 transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      quality={60}
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/80 to-canvas/30" />
-                  {ligne.tier && (
-                    <span
-                      className={cn(
-                        "relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold text-canvas",
-                        TIER_BG[ligne.tier] ?? "bg-surface-raised",
-                      )}
-                    >
-                      {ligne.tier}
-                    </span>
-                  )}
-                  <span className="relative z-10 min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                      {displayLegendName(ligne.legendName)}
-                    </span>
-                    <span className="block text-xs text-ink-muted">
-                      {ligne.decks} {ligne.decks > 1 ? t("listes") : t("liste")}
-                      {ligne.titres > 0 && (
-                        <> &middot; {ligne.titres} {ligne.titres > 1 ? t("titres") : t("titre")}</>
-                      )}
-                    </span>
-                  </span>
-                  <ArrowRight size={16} className="relative z-10 shrink-0 text-ink-muted" aria-hidden="true" />
-                </Link>
-              );
-            })}
-          </div>
-        )
-      ) : lotInitial.total === 0 ? (
+      {lotInitial.total === 0 ? (
         <p className="mt-12 text-center text-ink-muted">{t("Aucun deck ne correspond à ces filtres. Essayez d’en retirer un.")}</p>
       ) : (
         <>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {decks.map((deck) => {
             const bannerUrl = getBannerUrl(deck.legendName);
-            const style = SET_STYLES[deck.setTag];
             return (
               <article key={deck.id} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
                 <Link href={`/decks/${deck.slug}`} className="absolute inset-0 z-10" aria-label={`Voir le deck ${displayLegendName(deck.legendName)}`} />
-                <div className="relative flex flex-col justify-end" style={{ height: 128 }}>
+                <div className="relative flex h-44 flex-col justify-end">
                   {bannerUrl ? (
                     <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
                   ) : (
                     <div className="absolute inset-0 bg-surface-raised" />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-r from-canvas/70 via-canvas/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent" />
                   {(() => {
                     const cov = coverageByDeck.get(deck.id);
                     if (!cov) return null;
@@ -590,10 +532,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
                       </span>
                     );
                   })()}
-                  <div className="relative p-3">
+                  <div className="relative p-4">
                     <div className="flex items-end justify-between gap-2">
                       <div className="min-w-0">
-                        <div className="line-clamp-2 text-lg font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                        <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                           {displayLegendName(deck.legendName)}
                         </div>
                         {/* Halo sombre porté par le TEXTE, pas par un voile sur
@@ -647,11 +589,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                       </div>
                       <div className="relative z-20 flex shrink-0 items-center gap-1">
                         <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} compact />
-                        {style && (
-                          <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", style.badge)}>
-                            {deck.setTag}
-                          </span>
-                        )}
+                        <span className="text-[10px] font-semibold uppercase tracking-wide text-white/70">{deck.setTag}</span>
                         {deck.featured && (
                           <span className="rounded-full bg-gold/80 px-2 py-0.5 text-[10px] font-bold text-canvas">
                             Best of

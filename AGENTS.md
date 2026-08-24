@@ -160,6 +160,13 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   fichiers, chacun avec le même défaut (une carte introuvable disparaissait en
   silence). Ne jamais refaire la requête carte à la main : la fonction rend les
   cartes trouvées **et** la liste `missing`.
+- **`deck-listing.ts` et `deck-listing-params.ts` — passage unique de `/decks`.**
+  Ils portent la recherche, les filtres, les tris et les lots de 18. La page sans
+  catégorie montre tous les decks publiés ; seul `cat=bestof` force
+  `featured: true`. Ne pas remettre le filtre implicite
+  `tournamentContext: null OR featured: true` : il cachait tous les decks
+  Vendetta et vidait les liens venus de `/legendes`. `placement` est du texte en
+  base ; le tri passe par `comparerPlacements`, sinon `10th` précède `2nd`.
 - `deck-code.ts` / `deck-codec.ts` — lecture d'une decklist en texte, et
   encodage/décodage du code court partagé dans les URL `/d/<code>`.
 - `card-printing.ts` — un nom de carte a plusieurs formes (apostrophe, virgule,

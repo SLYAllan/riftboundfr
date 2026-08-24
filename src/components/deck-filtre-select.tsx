@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLien, useT } from "@/components/i18n-provider";
+import { modifierParametresDecks } from "@/lib/deck-listing-params";
 
 /**
  * Un menu déroulant de filtre pour /decks.
@@ -33,10 +34,7 @@ export function DeckFiltreSelect({
       value={courant}
       aria-label={libelle}
       onChange={(e) => {
-        const suivant = new URLSearchParams(params.toString());
-        if (e.target.value) suivant.set(nom, e.target.value);
-        else suivant.delete(nom);
-        suivant.delete("offset");
+        const suivant = modifierParametresDecks(params, { [nom]: e.target.value || null });
         const q = suivant.toString();
         router.push(lien(q ? `/decks?${q}` : "/decks"));
       }}

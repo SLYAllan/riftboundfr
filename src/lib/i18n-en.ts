@@ -1089,4 +1089,15 @@ export const EN: Record<string, string> = {
   "Decklists, cartes et guides Riftbound en français.": "Riftbound decklists, cards and guides in English.",
   "Tier lists, decks de tournois, guides et cartes Riftbound en français.":
     "Riftbound tier lists, tournament decks, guides and cards in English.",
+  "Decklists Riftbound": "Riftbound decklists",
+  "Trouvez un deck à jouer": "Find a deck to play",
+  "Parcourez les listes qui gagnent en tournoi, puis filtrez par Légende, set ou événement.":
+    "Browse tournament-winning lists, then filter by Legend, set or event.",
+  "Parcourez les listes de tournoi et les decks partagés par la communauté.":
+    "Browse tournament lists and decks shared by the community.",
+  "Comment choisir un deck ?": "How do I choose a deck?",
+  "Catégories de decks": "Deck categories",
+  "Compétitifs": "Competitive",
+  "Affiner les résultats": "Refine results",
+  "Chercher un deck, une Légende ou un auteur": "Search for a deck, Legend or author",
 };

@@ -3,13 +3,13 @@ import { computeDeckCoverage, type DeckCardLike } from "./collection";
 import { getOwnedByName } from "./collection-server";
 import { prisma } from "./prisma";
 import { getUserFromSession } from "./session";
-import { construireWhere } from "./deck-listing-params";
+import { comparerPlacements, construireWhere } from "./deck-listing-params";
 import type { DeckListe, FiltresDecks, LotDecks } from "./deck-listing-params";
 
-export { construireWhere, lireFiltresDecks, parametresDecks } from "./deck-listing-params";
+export { construireWhere, lireFiltresDecks, modifierParametresDecks, parametresDecks } from "./deck-listing-params";
 
-// 51 decks remplit exactement 17 rangées sur la grille desktop à trois colonnes.
-export const TAILLE_LOT_DECKS = 51;
+// Six rangées suffisent pour choisir sans transformer la page en mur de vignettes.
+export const TAILLE_LOT_DECKS = 18;
 
 
 export interface LigneLegende {
@@ -103,19 +103,38 @@ export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
     : [{ createdAt: "desc" }, { tournamentTier: "asc" }];
   const utilisateur = await getUserFromSession();
 
-  const [bruts, totalSansCollection] = await Promise.all([
+  // Prisma trie `placement` comme du texte (`10th` avant `2nd`). On ne charge ici
+  // que trois champs légers, puis le lot de decks complet dans l'ordre numérique.
+  const candidatsPlacement = filtres.sort === "placement"
+    ? (await prisma.deck.findMany({
+        where,
+        select: { id: true, placement: true, createdAt: true },
+      })).sort((a, b) => comparerPlacements(a.placement, b.placement) || b.createdAt.getTime() - a.createdAt.getTime())
+    : null;
+  const idsPlacement = candidatsPlacement
+    ? candidatsPlacement
+        .slice(filtres.owned ? 0 : filtres.offset, filtres.owned ? PLAFOND_SCAN_OWNED : filtres.offset + TAILLE_LOT_DECKS + 1)
+        .map((deck) => deck.id)
+    : null;
+  const ordrePlacement = new Map(idsPlacement?.map((id, index) => [id, index]));
+
+  const [brutsNonTries, totalSansCollection] = await Promise.all([
     prisma.deck.findMany({
-      where,
+      where: idsPlacement ? { ...where, id: { in: idsPlacement } } : where,
       orderBy,
-      skip: filtres.owned ? undefined : filtres.offset,
+      skip: filtres.owned || idsPlacement ? undefined : filtres.offset,
       // Le +1 sert de sonde : s'il revient, c'est qu'une page suivante existe.
-      take: filtres.owned ? PLAFOND_SCAN_OWNED : TAILLE_LOT_DECKS + 1,
+      take: idsPlacement ? undefined : filtres.owned ? PLAFOND_SCAN_OWNED : TAILLE_LOT_DECKS + 1,
       select: deckSelect,
     }),
     // Le total ne sert qu'à l'affichage du premier écran. Le recompter à chaque
     // page de scroll rejouait un COUNT plein table : on ne le lance qu'au 1er lot.
-    filtres.owned || filtres.offset > 0 ? Promise.resolve(0) : prisma.deck.count({ where }),
+    candidatsPlacement ? Promise.resolve(candidatsPlacement.length)
+      : filtres.owned || filtres.offset > 0 ? Promise.resolve(0) : prisma.deck.count({ where }),
   ]);
+  const bruts = ordrePlacement.size
+    ? brutsNonTries.sort((a, b) => ordrePlacement.get(a.id)! - ordrePlacement.get(b.id)!)
+    : brutsNonTries;
 
   let decks = bruts;
   const couvertures = new Map<string, DeckListe["coverage"]>();
