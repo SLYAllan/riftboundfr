@@ -23,13 +23,15 @@ import { prisma } from "../src/lib/prisma";
 const RACINE_BRUT = "data/raw-scrapes/hexgate";
 const RACINE_SORTIE = "data/decklists";
 
-// Les trois villes relevées le 23 août. Table explicite : on ne translittère pas
+// Les villes relevées sur hexgate. Table explicite : on ne translittère pas
 // un nom chinois à la volée, on écrit celui que la base emploie déjà pour les
 // City Challenge précédentes (« S4 Beijing City Challenge (2026-08-15) »).
 const VILLES: Record<string, string> = {
   "北京": "Beijing",
   "深圳": "Shenzhen",
   "苏州": "Suzhou",
+  "上海": "Shanghai",
+  "广州": "Guangzhou",
 };
 
 interface CarteBrute {
