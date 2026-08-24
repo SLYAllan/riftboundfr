@@ -80,6 +80,18 @@ Trois outils, à relancer tels quels pour un tournoi de plus :
 au total. **Pas de best-of** : la règle du projet les réserve aux Regional
 Qualifiers, et ce sont des City Challenge. Rien n'est en production.
 
+### Le validateur ne sait pas encore lire hexgate
+
+`python -X utf8 scripts/validate-decklists.py` donne **22 754 vérifiées, 0
+MISMATCH**, et **1 491 invérifiables** contre 1 161 avant l'import : les 330
+listes hexgate en font partie.
+
+Le validateur reconnaît un objet brut à ses clés `url` et `main` ; les JSON
+hexgate portent `source` et `cartes`, avec `slot_type` au lieu de `type`. Rien
+n'est faux, rien n'est vérifié non plus. Pour fermer la boucle il faut apprendre
+ces deux formes au validateur, en écartant du décompte le Champion désigné, que
+la source ne distingue pas.
+
 Les captures HTML brutes (29 Mo, 361 pages) ne sont pas versionnées : les JSON
 `tournoi-*-decks.json` portent tout, et l'URL pour retélécharger.
 
