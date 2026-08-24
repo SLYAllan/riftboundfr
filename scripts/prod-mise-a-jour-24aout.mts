@@ -70,6 +70,25 @@ async function main() {
     }
   }
 
+  console.log("\n-- 128 decks abîmés sous « Shanghai City Challenge » (sans date)");
+  // Ils datent du 27 mai, n'ont aucune source, et surtout : leur deck principal
+  // compte entre 21 et 38 cartes là où une liste réelle en a 40. Leurs noms de
+  // joueurs sont tronqués (« FG », « XXT », « RS\_MoeNce »). 89 des 128 recoupent
+  // le Shanghai du 23 novembre, déjà en base sous sa vraie date. Aucun j'aime, donc
+  // rien à perdre. Effacés à la demande d'Allan, le 24 août.
+  const abimes = await prisma.deck.findMany({
+    where: { tournamentContext: "Shanghai City Challenge" },
+    select: { id: true, _count: { select: { cards: true } } },
+  });
+  const tailles = abimes.map((d) => d._count.cards).sort((a, b) => a - b);
+  console.log(`   ${abimes.length} decks · cartes par deck : de ${tailles[0] ?? 0} à ${tailles.at(-1) ?? 0}`);
+  if (abimes.length && tailles.at(-1)! >= 40) {
+    console.log("   ARRÊT : au moins un deck est complet, ce ne sont pas les mêmes. Rien effacé.");
+  } else if (ecrire && abimes.length) {
+    const r = await prisma.deck.deleteMany({ where: { id: { in: abimes.map((d) => d.id) } } });
+    console.log(`      effacés : ${r.count}`);
+  }
+
   console.log("\n-- tournois chinois attendus (seed séparé)");
   const attendus = [
     "S4 Beijing City Challenge (2026-08-23)",

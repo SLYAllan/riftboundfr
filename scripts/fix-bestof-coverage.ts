@@ -28,11 +28,11 @@ interface DeckFile {
 }
 
 const rqs: Record<string, { filePattern: string; slug: string; name: string }> = {
-  "atlanta-rq": { filePattern: "atlanta-rq", slug: "best-of-atlanta-rq-2026", name: "RQ Atlanta 2026" },
-  "houston-rq": { filePattern: "houston-rq", slug: "best-of-houston-rq-2025", name: "RQ Houston 2025" },
-  "bologna-rq": { filePattern: "bologna-rq", slug: "best-of-bologna-rq-2026", name: "RQ Bologna 2026" },
-  "las-vegas-rq": { filePattern: "las-vegas-rq", slug: "best-of-las-vegas-rq-2026", name: "RQ Las Vegas 2026" },
-  "lille-rq": { filePattern: "lille-rq", slug: "best-of-lille-rq-2026", name: "RQ Lille 2026" },
+  "atlanta-rq": { filePattern: "atlanta-rq", slug: "best-of-atlanta-rq-2026", name: "Atlanta Regional Qualifier" },
+  "houston-rq": { filePattern: "houston-rq", slug: "best-of-houston-rq-2025", name: "Houston Regional Qualifier" },
+  "bologna-rq": { filePattern: "bologna-rq", slug: "best-of-bologna-rq-2026", name: "Bologna Regional Qualifier" },
+  "las-vegas-rq": { filePattern: "las-vegas-rq", slug: "best-of-las-vegas-rq-2026", name: "Las Vegas Regional Qualifier" },
+  "lille-rq": { filePattern: "lille-rq", slug: "best-of-lille-rq-2026", name: "Lille Regional Qualifier" },
 };
 
 function uid() {

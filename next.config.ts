@@ -40,6 +40,15 @@ const nextConfig: NextConfig = {
         destination: "/legendes/:slug",
         permanent: true,
       },
+      // Cinq Regional Qualifiers portaient en base un nom que `tournament-flags.ts`
+      // ne connaissait pas (« RQ Bologna 2026 »), donc leur page s'affichait sans
+      // pays, sans date et sans nombre de joueurs. Le nom corrigé change l'adresse,
+      // puisqu'elle est calculée depuis ce nom : les anciens liens sont redirigés.
+      { source: "/tournois/rq-atlanta-2026", destination: "/tournois/atlanta-regional-qualifier", permanent: true },
+      { source: "/tournois/rq-bologna-2026", destination: "/tournois/bologna-regional-qualifier", permanent: true },
+      { source: "/tournois/rq-houston-2025", destination: "/tournois/houston-regional-qualifier", permanent: true },
+      { source: "/tournois/rq-las-vegas-2026", destination: "/tournois/las-vegas-regional-qualifier", permanent: true },
+      { source: "/tournois/rq-lille-2026", destination: "/tournois/lille-regional-qualifier", permanent: true },
     ];
   },
   async headers() {

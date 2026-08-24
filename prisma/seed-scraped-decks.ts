@@ -11,11 +11,10 @@ const TOURNAMENT_CTX: Record<string, string> = {
   // un contexte dupliqué à chaque seed.
   "Suzhou Regional": "Suzhou Regional Qualifier",
   "Fuzhou Regional": "Fuzhou Regional Qualifier",
-  "Atlanta Regional Qualifier": "RQ Atlanta 2026",
-  "Bologna Regional Qualifier": "RQ Bologna 2026",
-  "Houston Regional Qualifier": "RQ Houston 2025",
-  "Las Vegas Regional Qualifier": "RQ Las Vegas 2026",
-  "Lille Regional Qualifier": "RQ Lille 2026",
+  // Ces cinq-là allaient dans le mauvais sens : ils traduisaient le nom du fichier,
+  // qui est celui du drapeau, vers un « RQ … 2026 » que tournament-flags.ts ne
+  // connaît pas. Résultat, cinq pages de tournoi sans pays, sans date et sans
+  // nombre de joueurs. On ne les traduit plus du tout.
   "S3 Xi'an Regional Open": "Xi'an Regional Open S3",
   "S2 Shenzhen National Open": "Shenzhen National Open S2",
   "Shanghai National Open": "Shanghai National Open",
@@ -40,10 +39,13 @@ function slugify(text: string): string {
 function ordinal(n: number, ctx: string): string {
   const isFrench = ["Bologna", "Lille"].some((c) => ctx.includes(c));
   if (isFrench) return n === 1 ? "1er" : `${n}e`;
-  if (n === 1) return "1st";
-  if (n === 2) return "2nd";
-  if (n === 3) return "3rd";
-  return `${n}th`;
+  // Le suffixe anglais dépend des DEUX derniers chiffres : 71e s'écrit « 71st »,
+  // pas « 71th ». Ne traiter que 1, 2 et 3 écrivait « 71th » et « 233th » sur le
+  // site, et surtout donnait une clé de dédoublonnage différente de celle des
+  // anciennes lignes : chaque nouveau seed recréait le deck en double.
+  const reste = n % 100;
+  if (reste >= 11 && reste <= 13) return `${n}th`;
+  return `${n}${["th", "st", "nd", "rd"][n % 10] ?? "th"}`;
 }
 
 async function main() {
@@ -61,6 +63,15 @@ async function main() {
   function findLegendId(legendName: string): string | null {
     const match = legends.find((l) => l.name.toLowerCase() === legendName.toLowerCase());
     return match?.riftboundId ?? null;
+  }
+  /**
+   * Le nom de la Légende tel que la carte l'écrit. Les fichiers de decklist disent
+   * « Rek'Sai, Void Burrower », la carte dit « Rek'sai ». Écrire le nom du fichier
+   * coupait les compteurs par Légende en deux et recréait le deck en double au seed
+   * suivant, la clé de dédoublonnage portant sur ce nom.
+   */
+  function nomCanoniqueLegende(legendName: string): string {
+    return legends.find((l) => l.name.toLowerCase() === legendName.toLowerCase())?.name ?? legendName;
   }
 
   const existing = await prisma.deck.findMany({
@@ -99,7 +110,7 @@ async function main() {
 
         const tournamentCtx =
           TOURNAMENT_CTX[data.tournament] ?? data.tournament;
-        const legendName = data.legend;
+        const legendName = nomCanoniqueLegende(data.legend);
         const playerName = data.player;
 
         const placement = data.placement
