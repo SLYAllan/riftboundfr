@@ -151,6 +151,10 @@ const MESURES = () => {
     if (s.position !== "fixed" && s.position !== "sticky") continue;
     const r = el.getBoundingClientRect();
     if (!visible(el, r)) continue;
+    // Un bandeau qui a grandi parce qu'on vient d'ouvrir SON menu n'est pas un
+    // bandeau qui mange l'écran : le balayage clique le bouton, puis mesurait la
+    // barre déployée. Trente-quatre faux constats venaient de là.
+    if (el.querySelector('[aria-expanded="true"]')) continue;
     // Une colonne de sommaire collée est voulue sur grand écran ; elle ne gêne
     // que sur un téléphone, où elle mange l'écran.
     if (W < 700 && r.height >= window.innerHeight * 0.3) {

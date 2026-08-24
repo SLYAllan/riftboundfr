@@ -167,7 +167,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                   <span className="text-sm font-medium text-emerald-400">Deck complet ✓</span>
                 ) : missing != null ? (
                   <>
-                    <button onClick={() => setOpen(!open)} className="text-sm font-medium text-amber-400 hover:underline">
+                    <button onClick={() => setOpen(!open)} className="inline-flex min-h-6 items-center text-sm font-medium text-amber-400 hover:underline">
                       Il vous manque {missing} carte{missing > 1 ? "s" : ""}
                       {resteAAcheter > 0 && <span className="text-ink-muted"> · à partir de {euros.format(resteAAcheter)}</span>}
                     </button>

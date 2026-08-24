@@ -91,8 +91,12 @@ export function UserMenu() {
         <span className="hidden text-sm font-medium text-ink sm:block">{user.username}</span>
       </button>
 
+      {/* `right-0` seul convient à la barre du haut, où le bouton touche le bord
+          droit. Dans le menu mobile il est à GAUCHE d'une rangée : le panneau de
+          192 px partait alors 120 px hors de l'écran, illisible et incliquable.
+          Le menu mobile n'existe qu'en dessous de `lg`, d'où la bascule. */}
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-48 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+        <div className="absolute left-0 top-full mt-2 w-48 rounded-xl border border-hairline bg-surface p-1 shadow-xl lg:left-auto lg:right-0">
           <div className="px-3 py-2 border-b border-hairline mb-1">
             <p className="text-sm font-medium text-ink truncate">{user.username}</p>
             {user.discordName && (
