@@ -1,5 +1,81 @@
 # HANDOFF — état des lieux
 
+## Audit responsive — commencé le 24 août 2026, ARRÊTÉ EN COURS
+
+Demande d'Allan : balayer tout le site à 1440x900, 768x1024, 430x932 et 375x812,
+relever débordements, chevauchements, textes coupés, cibles trop petites, erreurs
+console et requêtes en échec, corriger, puis refaire le balayage. **Rien n'est
+corrigé à ce stade** : l'outil est écrit, le premier passage n'est pas allé au bout.
+
+### Ce qui existe
+
+- **`scripts/audit-responsive.mjs`** — le balayage. Il mesure DANS la page
+  (`getBoundingClientRect`, `getComputedStyle`) : débordement horizontal du
+  document, éléments hors cadre (en ignorant ceux qui vivent dans un conteneur
+  `overflow-x: auto`, sinon un rail d'onglets sort comme un défaut), cibles sous
+  24 px, textes tronqués sans `ellipsis` ni `line-clamp`, médias plus larges que
+  l'écran, barres collées mangeant plus de 30 % de la hauteur, erreurs console et
+  requêtes en échec. Sur mobile il **ouvre le menu** et remesure.
+- **`scripts/audit-urls.txt`** — 43 adresses : toutes les pages uniques plus deux
+  ou trois exemples par route dynamique, tirées de `/sitemap.xml` (5 124 adresses,
+  dont 1 067 fiches de carte et 1 295 decks : les balayer toutes n'apprendrait
+  rien de plus). La ligne `/compagnon/<jeton>/<cle>` est à remplir en local :
+  la clé est un HMAC du `SESSION_SECRET`, elle ne se commite pas.
+
+### Deux pièges déjà payés
+
+1. **Ne pas balayer `next dev`.** Quatre contextes Playwright en parallèle sur le
+   serveur de développement l'ont mis à genoux : chaque route se recompile, puis
+   plus rien ne répond (60 s sans réponse sur l'accueil). Pire, un `next build`
+   lancé pendant qu'un `next dev` tourne casse le serveur en marche — toutes les
+   pages dynamiques répondaient 500 avec « Jest worker encountered 2 child process
+   exceptions », ce qui ressemble à s'y méprendre à un bug du site. **Balayer un
+   `next build` + `next start -p 3001`.**
+2. **Les 500 vus au début n'étaient pas des bugs** : c'était ce serveur cassé.
+   Vérifié après redémarrage, les mêmes URL répondent 200.
+
+### Où ça s'est arrêté
+
+Passage 1 relancé contre le build de production : **30 pages capturées sur 172
+passages prévus** (43 URL x 4 tailles), arrêté à la demande d'Allan pendant la
+tournée 1440x900. Les captures sont dans le dossier de travail de la session, le
+`rapport.json` n'a donc pas été écrit — **il faut relancer le passage depuis le
+début**, c'est une commande, pas un chantier.
+
+### À faire ensuite
+
+1. `npx next build && npx next start -p 3001`, puis lancer le script sur les
+   43 adresses, cookie de session compris.
+2. Trier les constats : les cibles sous 24 px vont sortir en masse (icônes de
+   partage, pastilles de filtre) — vérifier chaque famille sur une capture avant
+   de corriger, comme pour l'audit d'interface précédent où `lab()` et les `alt`
+   d'image donnaient de faux positifs.
+3. Corriger, puis **refaire le balayage entier** et comparer les deux rapports.
+
+## Source chinoise hexgate.cn — reconnaissance commencée
+
+Allan a tranché : la source est **https://hexgate.cn/tournaments/**. Ce qui est
+établi, mesuré et pas supposé :
+
+- la page répond **200** avec un User-Agent de navigateur (308 sans, simple
+  redirection sans le `/` final), 112 Ko de HTML ;
+- c'est un site **Next.js**, `lang="zh-CN"` : le contenu est rendu côté serveur,
+  donc lisible sans navigateur, et les noms de cartes seront probablement en
+  chinois — à recouper avec la DB cartes avant toute conversion ;
+- rien n'a été scrapé, aucun tournoi n'a été comparé à `data/raw-scrapes/`.
+
+Un worker `pi` (`wave-hexgate-1`) a été lancé pour la reconnaissance complète
+(forme des URL, page de tournoi, page de decklist, API JSON éventuelle,
+recoupement avec riftdecks). **Il n'a rien rendu au bout de quarante minutes** :
+ne pas croire qu'un worker travaille tant qu'il n'a pas écrit son fichier de
+session dans `~/.pi/agent/sessions/`. Un worker court (`wave-test2`) a répondu
+en quelques secondes sur la même machine : le problème vient de la taille de la
+tâche, pas de la configuration. **Découper plus fin.**
+
+Avant d'importer quoi que ce soit : la règle d'intégrité des decklists
+s'applique telle quelle. Une liste hexgate ne rentre que si elle est complète et
+recoupée, sinon elle est écartée.
+
 ## Session du 23 août 2026 — six commits sur main, rien de poussé
 
 Tout ce qui traînait dans l'arbre de travail est relu et commité, par sujet :
