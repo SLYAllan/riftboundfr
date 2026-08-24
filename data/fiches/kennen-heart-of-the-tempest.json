@@ -16,13 +16,13 @@
     "winCondition": "Un cimetière plein qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
   },
   "strengths": [
-    "Meilleure conversion du format : 20 Top 8 pour 162 listes, 12,3 % contre 7,1 % de moyenne",
+    "Meilleure conversion du format : 30 Top 8 pour 247 listes, 12,1 % contre 6,9 % de moyenne",
     "Le seul écart nettement confirmé par le calcul (p = 0,014 contre la moyenne du champ)",
     "Lightning Rush dans toutes les listes, Stacked Deck dans 98 % : le deck choisit ce qu'il pioche",
-    "Minefield et Zaun Warrens dans plus de 79 % des listes, les terrains font partie du plan"
+    "Minefield dans 90 % des listes et Zaun Warrens dans 82 % : les terrains font partie du plan"
   ],
   "weaknesses": [
-    "Un seul titre malgré la meilleure conversion : le deck arrive loin, il finit rarement",
+    "Trois titres pour trente Top 8 : même avec la meilleure conversion du format, le deck conclut peu",
     "Remplir le cimetière prend des tours, les départs très rapides le prennent de vitesse",
     "Sans carte jouée hors de la main, la Légende reste désamplifiée et ne donne aucun bonus"
   ],
@@ -131,5 +131,5 @@
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 247 listes, 21 tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Decklists de tournoi en base : 247 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
 }
