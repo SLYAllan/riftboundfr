@@ -6,7 +6,7 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 
 | # | Chantier | Où ça en est |
 |---|---|---|
-| 1 | **Audit responsive** de tout le site | 10 défauts corrigés (2 par Claude, 8 par Codex), 0 débordement au contrôle |
+| 1 | **Audit responsive** de tout le site | 14 défauts corrigés (6 par Claude, 8 par Codex). Contrôle final sur build de production : 172 passages, 0 constat, pages connectées comprises |
 | 2 | **Refonte de la découverte de deck** (`/decks`) | faite : filtres réparés, choix visuel des Légendes, drapeaux des tournois et trois tris |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
@@ -124,8 +124,19 @@ Quatre familles de constats ont été écartées après vérification (liens `sr
 liens au fil du texte que WCAG exclut, préchargements annulés, colonne collée
 voulue). Le détecteur a été resserré en conséquence : `scripts/audit-responsive.mjs`.
 
-**Le passage de contrôle reste à faire** : rebâtir, relancer le balayage, comparer.
-La commande est dans le rapport.
+**Passage de contrôle fait le 24 août**, sur un build de production : 43 URL x
+4 écrans, **172 passages, 0 débordement, 0 texte coupé, 0 média trop large**.
+
+Le balayage anonyme ne voyait pas trois pages : `/collection`, `/profil` et
+`/d/<code>` changent une fois connecté. Repassées avec un cookie de session
+(`scripts/cookie-session-local.ts`), elles ont rendu **deux vrais défauts**,
+corrigés : le menu utilisateur ouvert depuis le menu mobile partait 120 px hors de
+l'écran à gauche, et le bouton « Il vous manque N cartes » ne faisait que 20 px de
+haut. Contrôle après correction : 0 constat.
+
+Le balayage lui-même comptait 34 fois la barre du haut comme un bandeau qui mange
+l'écran, alors qu'il venait d'ouvrir son menu. Il saute maintenant un bandeau qui
+contient un `aria-expanded="true"`.
 
 Restent deux constats mineurs non corrigés : des cases à cocher de 16 px sur
 téléphone, et un bloc du deckbuilder qui touche le bord à 430 px sans déborder.
