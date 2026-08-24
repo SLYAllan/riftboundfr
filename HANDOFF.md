@@ -6,12 +6,36 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 
 | # | Chantier | Où ça en est |
 |---|---|---|
-| 1 | **Audit responsive** de tout le site | passage 1 fait, 2 défauts corrigés, contrôle à refaire |
-| 2 | **Refonte de la découverte de deck** (`/decks`) | entrée par Légende posée, à regarder à l'écran |
+| 1 | **Audit responsive** de tout le site | 10 défauts corrigés (2 par Claude, 8 par Codex), 0 débordement au contrôle |
+| 2 | **Refonte de la découverte de deck** (`/decks`) | entrée par Légende en place et vérifiée à l'écran ; Codex y passe derrière |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
-| 5 | **Source chinoise hexgate.cn** | 330 listes converties, fiches de tournoi écrites, **seedées en base locale**. Pas de best-of : ce ne sont pas des Regional Qualifiers |
+| 5 | **Source chinoise hexgate.cn** | 330 listes seedées en local, 3 pages de tournoi en ligne, garde-fou capable de les relire. Pas de best-of : ce ne sont pas des Regional Qualifiers |
 | 6 | **130 decklists en double** | supprimées, plus 128 decks doublonnés en base locale |
+
+### Ce qui reste, et pourquoi ce n'est pas fait
+
+**Les fiches Légendes datent du relevé du 17 août.** Le corpus a bougé depuis
+(+330 listes) : `scripts/fiches-stats.mts` puis `scripts/fiches-maj.mts`
+changeraient **26 fiches** — Mel passe de 37 à 39 listes, Nasus de 86 à 107. Ce
+n'est pas fait parce que les guides de `src/lib/legend-guides.ts` **citent ces
+chiffres dans leur prose** (« 37 listes en tournoi, sur quatorze tournois ») :
+rafraîchir les fiches sans réécrire les guides ferait mentir l'un des deux. Les
+deux vont ensemble, c'est un chantier à part entière.
+
+**Le déploiement n'est pas lancé.** Rien de tout ça n'est en production : ni les
+330 listes chinoises, ni les corrections responsive, ni la passe de textes.
+
+**`.next-vieux/` traîne à la racine.** C'est un ancien dossier de build mis de
+côté ; le garde-fou refuse que je l'efface, à faire à la main.
+
+### Les pages des trois tournois chinois
+
+Elles répondent au slug tiré du nom du contexte, pas au nom du fichier de fiche :
+`/tournois/s4-beijing-city-challenge-2026-08-23` (et Shenzhen, et Suzhou). Les
+fiches de `data/tournaments/` gardent, elles, l'identifiant de la source
+(`s4-beijing-cc-238`), comme les cent fiches déjà présentes. Aucun fichier de
+`src/` ne lit ce dossier : ce sont des relevés, pas une source de routage.
 
 ### Les doublons du 24 août, et pourquoi ce n'était pas un autre Shanghai
 
