@@ -920,7 +920,11 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       <CardTile
                         key={bf}
                         art={cardArt[nom] ?? null}
-                        nom={nom}
+                        // Le nom de la base d'abord : `isBanned` compare à l'exact, et
+                        // le nom écrit dans la fiche peut porter une apostrophe droite
+                        // là où la carte en a une courbe. Sans ça, un champ de bataille
+                        // banni passerait sans étiquette, en silence.
+                        nom={cardArt[nom]?.name ?? nom}
                         label={<CardRef name={nom}>{nom}</CardRef>}
                         sub={part ? `${part} % des listes` : null}
                         landscape

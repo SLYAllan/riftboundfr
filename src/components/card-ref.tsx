@@ -67,8 +67,8 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
   // viewport. Jamais hors écran, quelle que soit la hauteur du footer.
   useLayoutEffect(() => {
     if (!hovered || !ref.current || !popRef.current) return;
-    // Anchor on the first client rect so a name wrapping across two lines
-    // still positions the preview against where the word actually starts.
+    // On se cale sur le premier rectangle : un nom coupé sur deux lignes plaçait
+    // l'aperçu au milieu du bloc, loin du mot survolé.
     const rects = ref.current.getClientRects();
     const rect = rects.length ? rects[0] : ref.current.getBoundingClientRect();
     const pop = popRef.current.getBoundingClientRect();
@@ -78,8 +78,8 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
     const h = pop.height;
     let left = rect.left + rect.width / 2 - w / 2;
     left = Math.max(8, Math.min(left, vw - w - 8));
-    let top = rect.top - h - 10; // prefer above the word
-    if (top < 8) top = rect.bottom + 10; // otherwise below
+    let top = rect.top - h - 10; // au-dessus du mot de préférence
+    if (top < 8) top = rect.bottom + 10; // en dessous s'il n'y a pas la place
     top = Math.max(8, Math.min(top, vh - h - 8));
     setPos({ top, left });
   }, [hovered, card]);

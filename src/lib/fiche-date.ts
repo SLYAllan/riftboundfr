@@ -9,9 +9,11 @@ const MOIS = [
  * Exemple : « Decklists de tournoi en base : 34 listes, 14 tournois. Relevé du
  * 17 août 2026, calcul par scripts/fiches-stats.mts. » -> 2026-08-17.
  *
- * Renvoie null quand la fiche n'est pas datée (14 fiches sur 43) : mieux vaut ne
- * rien afficher qu'afficher la date du dernier deck importé, qui n'a rien à voir
- * avec la date de l'analyse.
+ * Renvoie null quand la fiche n'est pas datée : 17 fiches sur 43 aujourd'hui, dont
+ * 14 sans `dataSource` du tout et 3 (ahri, leona, volibear) restées au format
+ * « meta-analysis.json — 25 decklists », sans date. Mieux vaut ne rien afficher
+ * qu'afficher la date du dernier deck importé, qui n'a rien à voir avec celle de
+ * l'analyse.
  */
 export function dateAnalyseFiche(dataSource?: string | null): Date | null {
   if (!dataSource) return null;
