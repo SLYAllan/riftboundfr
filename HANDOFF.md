@@ -1,5 +1,59 @@
 # HANDOFF — état des lieux
 
+## Session du 23 août 2026 — six commits sur main, rien de poussé
+
+Tout ce qui traînait dans l'arbre de travail est relu et commité, par sujet :
+
+| Commit | Ce qu'il porte |
+|---|---|
+| `decklists: relève l'audit du 21 août` | données de l'audit + index remis d'aplomb |
+| `legendes: sept guides de plus` | Mel, Zed, Ambessa, Nasus, Akali, Jayce, Kennen + dates de fiche + étiquette « bannie » |
+| `decks: un onglet pour toutes les listes` | onglet `cat=all`, menu Légendes cohérent, `construireWhere` sortie et testée |
+| `profil: filtrer ses decks…` | filtres, actions par deck, route DELETE, passe d'accessibilité |
+| `tournois: Atlanta reprend son nom complet` | drapeau aligné sur `tournamentContext` |
+| `prix: relève CardNexus` | prix + note de travail des decks préfaits |
+
+Porte vérifiée après coup : `npx tsc --noEmit` EXIT=0, `npx vitest run`
+**49 fichiers, 255 tests verts**, `npx next build` EXIT=0. **Rien n'est poussé
+sur le dépôt distant, rien n'est déployé, rien n'est seedé en production.**
+
+### L'index des decklists avait deux défauts
+
+`data/decklists-index.json` gardait 102 chemins vers des fichiers que l'audit
+du 21 avait renommés (c'était le test rouge de `scripts/decklists-index.test.ts`),
+et ignorait 5 427 listes présentes sur le disque, dont 131 des 144 listes de
+Lille. Les deux scripts qui le lisent (`check-bestof-coverage`,
+`fix-bestof-coverage`) comptaient donc mal la couverture des best-of.
+
+`scripts/fix-decklists-index.ts` refait le travail : l'index n'a aucun
+générateur, chaque parseur de tournoi y ajoute ses lignes sans jamais retirer
+les mortes. À relancer après tout audit qui renomme ou supprime des fichiers.
+
+### Ce qui reste à décider : 130 listes en double sur le disque
+
+130 decks existent en deux fichiers, sous l'ancien et le nouveau nom
+(`ahri/shanghai-cc-437-12-de.json` et `ahri/shanghai-cc-12--de.json`, même
+`id`). L'index n'en garde qu'un. Supprimer un fichier de decklist est une
+décision d'Allan, pas d'un agent : rien n'a été effacé. La liste se retrouve
+par l'`id` en double.
+
+### Les deux demandes non faites
+
+1. **La découverte de deck n'a pas été refondue.** Ce qui est commité n'est que
+   de la plomberie : un onglet de plus et un menu qui ne ment plus. `/decks`
+   empile toujours six rangées de pastilles avant le premier deck (catégories,
+   collection, tournois, sets, Légende, tri), de trois couleurs différentes, et
+   chaque lien perd une partie des filtres en cours (changer de set oublie le
+   tournoi). C'est là qu'est le travail.
+2. **La nouvelle source pour les tournois chinois n'est pas commencée.** Aucune
+   trace nulle part : rien dans `scripts/`, aucun domaine autre que riftdecks
+   dans les fichiers, rien dans les docs. `scripts/parse-chinese-tournaments.ts`
+   est l'ancien parseur riftdecks. **Quelle source ?** La question n'a pas de
+   réponse dans le dépôt : à poser à Allan avant d'écrire une ligne.
+
+`public/video/overlay-compagnon-twitter.mp4` reste non suivi : le fichier n'est
+appelé nulle part dans le code ni dans les articles.
+
 ## Decklists du 21 août 2026
 
 L'audit des sources a ajouté 2 listes Ottawa, 45 listes Atlanta et 81 listes
