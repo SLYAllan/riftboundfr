@@ -9,7 +9,7 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 | 1 | **Audit responsive** de tout le site | 14 défauts corrigés (6 par Claude, 8 par Codex). Contrôle final sur build de production : 172 passages, 0 constat, pages connectées comprises |
 | 2 | **Refonte de la découverte de deck** (`/decks`) | faite : filtres réparés, choix visuel des Légendes, drapeaux des tournois et trois tris |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
-| 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
+| 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés. Fiches et guides recalés le 24 août : 28 fiches, 52 chiffres réécrits, 0 écart au contrôle |
 | 5 | **Source chinoise hexgate.cn** | 692 listes seedées en local (6 tournois), 6 pages de tournoi en ligne, garde-fou capable de les relire. Pas de best-of : ce ne sont pas des Regional Qualifiers |
 | 6 | **130 decklists en double** | supprimées, plus 128 decks doublonnés en base locale |
 
@@ -50,16 +50,32 @@ déploiement n'a été fait.
 
 ### Ce qui reste, et pourquoi ce n'est pas fait
 
-**Les fiches Légendes datent du relevé du 17 août.** Le corpus a bougé depuis
-(+330 listes) : `scripts/fiches-stats.mts` puis `scripts/fiches-maj.mts`
-changeraient **26 fiches** — Mel passe de 37 à 39 listes, Nasus de 86 à 107. Ce
-n'est pas fait parce que les guides de `src/lib/legend-guides.ts` **citent ces
-chiffres dans leur prose** (« 37 listes en tournoi, sur quatorze tournois ») :
-rafraîchir les fiches sans réécrire les guides ferait mentir l'un des deux. Les
-deux vont ensemble, c'est un chantier à part entière.
+**Les fiches Légendes et les guides sont recalés** (24 août). Le corpus avait pris
+692 listes depuis le relevé du 17 : `fiches-stats.mts` puis `fiches-maj.mts` ont
+changé **28 fiches**, et les 52 chiffres que la prose de `src/lib/legend-guides.ts`
+cite ont été réécrits avec. Les deux allaient ensemble : rafraîchir les fiches
+seules aurait fait mentir les guides.
+
+Ce qui change le plus : Akali passe de « aucun Top 8 » à une place en Top 8 sur
+107 listes — la phrase sur la malchance et son p = 0,010 ne tenaient plus. Jayce
+passe de 3 Top 8 pour 72 listes à 6 pour 101, Nasus de 86 à 125 listes, Kennen de
+un à trois titres. La moyenne du champ passe de 7,1 à 6,9 %.
+
+**Treize guides ne parlent pas du format mais de toute l'histoire du jeu**
+(« 336 listes pour 2 top 8 »). `fiches-stats.mts` filtre par set : il ne sait pas
+les vérifier. Ils ont été recomptés à part, tous sets confondus. Ne pas leur
+appliquer les chiffres du format.
+
+**Deux Légendes vivaient en base sous deux orthographes** : « Rek'Sai » contre
+« Rek'sai », « Grandmaster at Arms » contre « At Arms ». La carte n'existe que
+sous une forme, alors les compteurs se coupaient en deux et une page annonçait
+347 listes là où il y en a 387. 41 decks recalés sur l'orthographe de la carte
+(base locale). Les imports hexgate ne peuvent pas le refaire : ils écrivent le nom
+de la carte trouvée en base, jamais celui de la source.
 
 **Le déploiement n'est pas lancé.** Rien de tout ça n'est en production : ni les
-330 listes chinoises, ni les corrections responsive, ni la passe de textes.
+692 listes chinoises, ni les corrections responsive, ni la passe de textes, ni les
+fiches recalées.
 
 **`.next-vieux/` traîne à la racine.** C'est un ancien dossier de build mis de
 côté ; le garde-fou refuse que je l'efface, à faire à la main.
