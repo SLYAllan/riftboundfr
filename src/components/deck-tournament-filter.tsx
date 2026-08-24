@@ -38,7 +38,10 @@ export function DeckTournamentFilter({ options }: { options: TournoiOption[] }) 
       </Popover.Trigger>
       <Popover.Portal>
       <Popover.Positioner sideOffset={8} align="start" className="z-50">
-      <Popover.Popup className="thin-scrollbar max-h-[min(65vh,32rem)] w-[min(24rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-hairline-strong bg-surface p-2 shadow-2xl shadow-black/50 focus:outline-none">
+      {/* `--available-height` est la place que Base UI mesure entre le bouton et
+          le bord de l'écran. Sans elle, 65vh dépassait de 136 px sous un écran de
+          812 px : le menu s'ouvre sous un bouton déjà bas dans la page. */}
+      <Popover.Popup className="thin-scrollbar max-h-[min(65vh,32rem,var(--available-height))] w-[min(24rem,calc(100vw-2rem))] overflow-y-auto rounded-xl border border-hairline-strong bg-surface p-2 shadow-2xl shadow-black/50 focus:outline-none">
         <button type="button" onClick={() => choisir("")} className="flex min-h-11 w-full items-center gap-3 rounded-lg px-3 text-left text-sm text-ink-secondary hover:bg-surface-raised hover:text-ink">
           <Trophy size={16} className="shrink-0 text-ink-muted" /> {t("Tous les tournois")}
         </button>
