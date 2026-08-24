@@ -10,7 +10,7 @@ Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
 | 2 | **Refonte de la découverte de deck** (`/decks`) | faite : filtres réparés, choix visuel des Légendes, drapeaux des tournois et trois tris |
 | 3 | **Re-audit de `/profil`** | fait, 5 défauts corrigés |
 | 4 | **Re-audit des pages Légende et des guides** | fait, 3 défauts corrigés, les 63 chiffres des guides sont justes |
-| 5 | **Source chinoise hexgate.cn** | 330 listes seedées en local, 3 pages de tournoi en ligne, garde-fou capable de les relire. Pas de best-of : ce ne sont pas des Regional Qualifiers |
+| 5 | **Source chinoise hexgate.cn** | 692 listes seedées en local (6 tournois), 6 pages de tournoi en ligne, garde-fou capable de les relire. Pas de best-of : ce ne sont pas des Regional Qualifiers |
 | 6 | **130 decklists en double** | supprimées, plus 128 decks doublonnés en base locale |
 
 ## `/decks` repris le 24 août
@@ -26,6 +26,13 @@ icônes carrées de `public/img/legend_icon/`. Le choix de tournoi reprend les
 drapeaux SVG locaux de `CountryBadge`. Les deux menus passent par le `Popover` de
 Base UI : un clic hors du menu ou sur l'autre filtre ferme le premier, Échap rend
 le focus au bouton, et les listes partagent la classe `thin-scrollbar`.
+
+**Les deux menus n'avaient jamais été ouverts à l'écran d'un téléphone.** Bornés à
+une part de la fenêtre (65vh, 60vh), ils passaient sous la page dès qu'on les
+ouvrait sous un bouton déjà bas : 136 px pour les tournois en 375x812, 62 px pour
+les Légendes en 768x1024. Ils se bornent maintenant à `--available-height`, la
+place que Base UI mesure entre le bouton et le bord de l'écran. Contrôlés ouverts
+aux quatre tailles : plus rien hors écran, la page ne déborde pas, Échap ferme.
 
 Les tris sont « Récents », « Placement » et « Populaire ». `placement` est une
 chaîne en base (`1st`, `2nd`, `10th`) : le tri charge les seuls identifiants et
@@ -123,7 +130,7 @@ La commande est dans le rapport.
 Restent deux constats mineurs non corrigés : des cases à cocher de 16 px sur
 téléphone, et un bloc du deckbuilder qui touche le bord à 430 px sans déborder.
 
-## Source chinoise hexgate.cn — trois tournois en base locale
+## Source chinoise hexgate.cn — six tournois en base locale
 
 Rapport de reconnaissance : `data/raw-scrapes/hexgate/RAPPORT.md`.
 
@@ -133,15 +140,22 @@ d'abord, par le couple set + numéro ensuite : les deux catalogues ne numéroten
 pas pareil (hexgate écrit « FND-196/298 » ce que la base appelle `ogn-197-298`),
 mais les noms anglais se recoupent.
 
-| Tournoi | Inscrits | Listes publiées | Top 8 relevé |
-|---|---:|---:|---:|
-| S4 Beijing City Challenge (2026-08-23) | 123 | 114 | 8 |
-| S4 Shenzhen City Challenge (2026-08-23) | 128 | 115 | 6 |
-| S4 Suzhou City Challenge (2026-08-23) | 110 | 101 | 7 |
+| Tournoi | id | Inscrits | Listes publiées | Top 8 relevé |
+|---|---:|---:|---:|---:|
+| S4 Beijing City Challenge (2026-08-23) | 238 | 123 | 114 | 8 |
+| S4 Shenzhen City Challenge (2026-08-23) | 239 | 128 | 115 | 6 |
+| S4 Suzhou City Challenge (2026-08-23) | 240 | 110 | 101 | 7 |
+| S4 Guangzhou City Challenge (2026-08-16) | 230 | 128 | 123 | 8 |
+| S4 Shanghai City Challenge (2026-08-22) | 234 | 128 | 120 | 7 |
+| S4 Guangzhou City Challenge (2026-08-22) | 235 | 128 | 119 | 8 |
 
-**16 listes écartées** : plusieurs Champions du personnage de la Légende y
+**21 listes écartées** : plusieurs Champions du personnage de la Légende y
 figurent et hexgate ne dit pas lequel a été désigné. On ne choisit pas à la place
-du joueur, d'où deux Top 8 troués — c'est voulu.
+du joueur, d'où trois Top 8 troués — c'est voulu.
+
+Les trois derniers ont été retenus parce qu'ils affichaient 128 inscrits, la
+borne posée par Allan. Aucun ne recoupait un tournoi déjà en base : contrôlé
+avant l'import, pas après.
 
 Trois outils, à relancer tels quels pour un tournoi de plus :
 
@@ -151,21 +165,27 @@ Trois outils, à relancer tels quels pour un tournoi de plus :
 3. `scripts/tournois-hexgate.mts <id>` — écrit la fiche de tournoi et affiche la
    ligne à poser dans `src/lib/tournament-flags.ts`.
 
-**Seedées en base locale le 24 août** : 330 decks créés, 0 erreur, 24 568 decks
-au total. **Pas de best-of** : la règle du projet les réserve aux Regional
+**Seedées en base locale le 24 août** : 330 puis 362 decks créés, 24 802 decks au
+total. **Pas de best-of** : la règle du projet les réserve aux Regional
 Qualifiers, et ce sont des City Challenge. Rien n'est en production.
 
-### Le validateur ne sait pas encore lire hexgate
+**Le seed se lance TOUJOURS avec un préfixe de fichier en argument** :
+`npx tsx --env-file=.env prisma/seed-scraped-decks.ts hexgate`. Sans argument il
+parcourt tout `data/decklists/`, et les listes que la base porte sous un libellé
+daté (« S4 Shanghai City Challenge (2026-08-08) ») repassent sous le libellé sans
+date que portent les fichiers : 1 992 decks recréés en double d'un coup. Erreur
+faite le 24 août, réparée en effaçant ce que la passe avait créé hors des trois
+tournois voulus. La clé de dédoublonnage du script est
+`tournoi|joueur|légende|placement` : elle ne voit pas deux libellés du même
+tournoi.
 
-`python -X utf8 scripts/validate-decklists.py` donne **22 754 vérifiées, 0
-MISMATCH**, et **1 491 invérifiables** contre 1 161 avant l'import : les 330
-listes hexgate en font partie.
+### Le validateur relit les listes chinoises
 
-Le validateur reconnaît un objet brut à ses clés `url` et `main` ; les JSON
-hexgate portent `source` et `cartes`, avec `slot_type` au lieu de `type`. Rien
-n'est faux, rien n'est vérifié non plus. Pour fermer la boucle il faut apprendre
-ces deux formes au validateur, en écartant du décompte le Champion désigné, que
-la source ne distingue pas.
+`python -X utf8 scripts/validate-decklists.py` donne **23 318 vérifiées, 0
+MISMATCH**, 1 159 invérifiables. Il reconnaît la forme hexgate (`source` et
+`cartes`, `slot_type` au lieu de `type`) en plus de la forme riftdecks, et compare
+les noms en minuscules : la casse seule (« Ride The Wind ») faisait remonter 106
+faux écarts.
 
 Les captures HTML brutes (29 Mo, 361 pages) ne sont pas versionnées : les JSON
 `tournoi-*-decks.json` portent tout, et l'URL pour retélécharger.
