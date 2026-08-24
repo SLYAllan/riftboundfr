@@ -4,9 +4,10 @@ import { Suspense } from "react";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { Hammer, Users, Trophy, BookOpen, Star, Eye, Heart } from "lucide-react";
+import { Hammer, Users, Trophy, Star, Eye, Heart, ArrowRight } from "lucide-react";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { DeckLegendFilter } from "@/components/deck-legend-filter";
+import { DeckFiltreSelect } from "@/components/deck-filtre-select";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
 import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
@@ -18,7 +19,7 @@ import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
-import { construireWhere, lireFiltresDecks, listerDecks } from "@/lib/deck-listing";
+import { construireWhere, lireFiltresDecks, listerDecks, listerLegendes } from "@/lib/deck-listing";
 import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
@@ -52,7 +53,8 @@ const CATEGORIES = [
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, color: "arcane" as const, isLink: false },
   { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, color: "gold" as const, isLink: false },
   { key: "all", label: "Toutes les listes", href: "/decks?cat=all", icon: Trophy, color: "violet" as const, isLink: false },
-  { key: "guide", label: "Avec guide", href: "/decks?cat=guide", icon: BookOpen, color: "violet" as const, isLink: false },
+  // Pas d'onglet « Avec guide » : aucun deck publié ne porte de guide aujourd'hui,
+  // l'onglet ne menait qu'à une page vide.
 ] as const;
 
 const COLOR_CLASSES = {
@@ -355,6 +357,11 @@ export default async function DecksPage({ searchParams }: PageProps) {
     getUserFromSession(),
   ]);
 
+  // Entrée par Légende : sans Légende choisie et sans recherche, la page montre
+  // QUI jouer avant de dérouler 51 bannières presque identiques.
+  const vueLegendes = !filtres.legend && !search;
+  const lignesLegendes = vueLegendes ? await listerLegendes(filtres) : [];
+
   const ownedOnly = filtres.owned;
   const decks = lotInitial.decks;
   const coverageByDeck = new Map(decks.map((deck) => [deck.id, deck.coverage]));
@@ -447,88 +454,109 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </div>
       )}
 
-      {(!cat || cat === "bestof") && (
-        <div className="mt-3 flex flex-wrap gap-2">
-          <Link
-            href="/decks?cat=bestof"
-            className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-              cat === "bestof" && !tournamentFilter ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
-            )}
-          >
-            <Trophy size={11} />{" "}{t("Best of par tournoi")}</Link>
-          {TOURNAMENT_FILTERS.filter((t) => !setFilter || t.set === setFilter).map((t) => {
-            const cc = getTournamentInfo(t.ctx)?.countryCode;
-            const isActive = tournamentFilter === t.ctx;
-            return (
-              <Link
-                key={t.ctx}
-                href={`/decks?cat=bestof&tournament=${encodeURIComponent(t.ctx)}`}
-                className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-                  isActive ? "bg-gold text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
-                )}
-              >
-                {cc && <CountryBadge code={cc} />}
-                {t.label}
-              </Link>
-            );
-          })}
-        </div>
-      )}
-
-      <div className="mt-3 flex flex-wrap gap-2">
-        <Link
-          href={cat ? `/decks?cat=${cat}` : "/decks"}
-          className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-            !setFilter ? "bg-ink/10 text-ink ring-1 ring-ink/20" : "bg-surface-raised text-ink-muted hover:text-ink"
-          )}
-        >{t("Tous les sets")}</Link>
-        {/* Du plus récent au plus ancien. Un set absent d'ici n'a pas de filtre :
-            ses decks existent en base mais rien ne permet de les isoler. */}
-        {(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => (
-          <Link
-            key={s}
-            href={`/decks?set=${s}${cat ? `&cat=${cat}` : ""}`}
-            className={cn("rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-              setFilter === s ? SET_STYLES[s].active : "bg-surface-raised text-ink-muted hover:text-ink"
-            )}
-          >
-            {s}
-          </Link>
-        ))}
-      </div>
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
+      {/* Une seule ligne de filtres. Avant, trois rangées de pastilles construisaient
+          leur lien à la main : changer de set effaçait le tournoi en cours, et
+          l'ensemble tenait en moins de hauteur qu'une carte de deck. */}
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         <Suspense>
           <DeckLegendFilter legends={legendNames} />
         </Suspense>
-        <div className="flex items-center gap-1.5 ml-auto">
-          <span className="text-xs text-ink-muted">Tri :</span>
+        <Suspense>
+          <DeckFiltreSelect
+            nom="set"
+            libelle={t("Filtrer par set")}
+            toutes="Tous les sets"
+            options={(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => ({ valeur: s, libelle: s }))}
+          />
+        </Suspense>
+        <Suspense>
+          <DeckFiltreSelect
+            nom="tournament"
+            libelle={t("Filtrer par tournoi")}
+            toutes="Tous les tournois"
+            options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label }))}
+          />
+        </Suspense>
+        <div className="ml-auto flex items-center gap-1.5">
+          <span className="text-xs text-ink-muted">{t("Tri")}</span>
           <Link
             href={`/decks${(() => { const q = [cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&"); return q ? `?${q}` : ""; })()}`}
-            className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+            className={cn("inline-flex min-h-11 items-center rounded-full px-3 text-xs font-semibold transition-colors",
               sortParam !== "popular" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >{t("Récents")}</Link>
           <Link
             href={`/decks?${["sort=popular", cat && `cat=${cat}`, setFilter && `set=${setFilter}`, tournamentFilter && `tournament=${encodeURIComponent(tournamentFilter)}`, legendFilter && `legend=${encodeURIComponent(legendFilter)}`].filter(Boolean).join("&")}`}
-            className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+            className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
               sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
             )}
           >
-            <Heart size={10} /> Populaire
+            <Heart size={12} aria-hidden="true" /> {t("Populaire")}
           </Link>
         </div>
       </div>
 
+
       <div className="mt-4 text-sm text-ink-muted">
         {lotInitial.total} deck{lotInitial.total !== 1 ? "s" : ""}
         {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
-        {cat && <span> &middot; {cat === "guide" ? "Avec guide" : cat === "bestof" ? "Best of" : cat === "all" ? "Toutes les listes" : cat}</span>}
+        {cat && <span> &middot; {cat === "bestof" ? t("Best of") : cat === "all" ? t("Toutes les listes") : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
       </div>
 
-      {lotInitial.total === 0 ? (
+      {vueLegendes ? (
+        lignesLegendes.length === 0 ? (
+          <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
+        ) : (
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {lignesLegendes.map((ligne) => {
+              const banniere = getBannerUrl(ligne.legendName);
+              return (
+                <Link
+                  key={ligne.legendName}
+                  href={`/decks?${new URLSearchParams({ ...(cat ? { cat } : {}), ...(setFilter ? { set: setFilter } : {}), ...(tournamentFilter ? { tournament: tournamentFilter } : {}), legend: ligne.legendName }).toString()}`}
+                  className="card-hover group relative flex min-h-[72px] items-center gap-3 overflow-hidden rounded-card border border-hairline bg-surface px-3 py-2"
+                >
+                  {banniere && (
+                    <Image
+                      src={banniere}
+                      alt=""
+                      fill
+                      className="object-cover opacity-30 transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={60}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/80 to-canvas/30" />
+                  {ligne.tier && (
+                    <span
+                      className={cn(
+                        "relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold text-canvas",
+                        TIER_BG[ligne.tier] ?? "bg-surface-raised",
+                      )}
+                    >
+                      {ligne.tier}
+                    </span>
+                  )}
+                  <span className="relative z-10 min-w-0 flex-1">
+                    <span className="block truncate text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                      {displayLegendName(ligne.legendName)}
+                    </span>
+                    <span className="block text-xs text-ink-muted">
+                      {ligne.decks} {ligne.decks > 1 ? t("listes") : t("liste")}
+                      {ligne.titres > 0 && (
+                        <> &middot; {ligne.titres} {ligne.titres > 1 ? t("titres") : t("titre")}</>
+                      )}
+                    </span>
+                  </span>
+                  <ArrowRight size={16} className="relative z-10 shrink-0 text-ink-muted" aria-hidden="true" />
+                </Link>
+              );
+            })}
+          </div>
+        )
+      ) : lotInitial.total === 0 ? (
         <p className="mt-12 text-center text-ink-muted">{t("Aucun deck pour ces filtres.")}</p>
       ) : (
         <>

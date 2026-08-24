@@ -12,6 +12,68 @@ export { construireWhere, lireFiltresDecks, parametresDecks } from "./deck-listi
 export const TAILLE_LOT_DECKS = 51;
 
 
+export interface LigneLegende {
+  legendName: string;
+  decks: number;
+  titres: number;
+  tier: string | null;
+}
+
+const ORDRE_TIER = ["S", "A", "B", "C", "D"];
+
+/**
+ * Une ligne par Légende pour l'entrée de /decks.
+ *
+ * La page ouvrait sur 51 bannières presque identiques : impossible d'y lire quoi
+ * jouer. Un joueur cherche d'abord SA Légende, puis ses listes. On compte donc
+ * les decks et les titres de chacune, dans le filtre en cours (`legend` retiré,
+ * sinon la liste se réduirait au choix déjà fait). Pas de « meilleur classement » :
+ * `placement` est du texte, et « 10th » passe avant « 1st » dans un tri de chaînes.
+ */
+export async function listerLegendes(filtres: FiltresDecks): Promise<LigneLegende[]> {
+  const where = construireWhere({ ...filtres, legend: undefined });
+  const [groupes, titres, entrees] = await Promise.all([
+    prisma.deck.groupBy({
+      by: ["legendName"],
+      where,
+      _count: { _all: true },
+    }),
+    // `placement` est du texte (« 1st », « 1781th ») : un titre se compte sur la
+    // chaîne exacte, pas sur un nombre.
+    prisma.deck.groupBy({
+      by: ["legendName"],
+      where: { ...where, placement: "1st" },
+      _count: { _all: true },
+    }),
+    prisma.tierListEntry.findMany({
+      where: { tierList: { current: true, published: true } },
+      select: { legendName: true, tier: true },
+    }),
+  ]);
+
+  // La base n'écrit pas toujours un nom pareil des deux côtés (« Rek'sai » /
+  // « Rek'Sai ») : on rapproche sur le nom en minuscules, jamais tel quel.
+  const parNom = (nom: string) => nom.trim().toLowerCase();
+  const titresParNom = new Map<string, number>(
+    titres.map((t) => [parNom(t.legendName), t._count?._all ?? 0]),
+  );
+  const tierParNom = new Map(entrees.map((e) => [parNom(e.legendName), e.tier]));
+
+  return groupes
+    .map((g) => ({
+      legendName: g.legendName,
+      decks: g._count._all,
+      titres: titresParNom.get(parNom(g.legendName)) ?? 0,
+      tier: tierParNom.get(parNom(g.legendName)) ?? null,
+    }))
+    .sort((a, b) => {
+      const ta = a.tier ? ORDRE_TIER.indexOf(a.tier) : 99;
+      const tb = b.tier ? ORDRE_TIER.indexOf(b.tier) : 99;
+      if (ta !== tb) return (ta < 0 ? 99 : ta) - (tb < 0 ? 99 : tb);
+      return b.decks - a.decks;
+    });
+}
+
 const deckSelect = {
   id: true, slug: true, title: true, legendName: true, legendId: true,
   playerName: true, authorName: true, placement: true, record: true,
