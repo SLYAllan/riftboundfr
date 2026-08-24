@@ -1,5 +1,28 @@
 # HANDOFF — état des lieux
 
+## Liste de travail au 24 août 2026
+
+Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
+
+| # | Chantier | Où ça en est |
+|---|---|---|
+| 1 | **Audit responsive** de tout le site | passage 1 en cours, aucune correction |
+| 2 | **Refonte de la découverte de deck** (`/decks`) | pas commencée, c'est un travail de conception : comment rendre les decks joignables |
+| 3 | **Re-audit de `/profil`** | refait par Claude sans contexte, relecture lancée |
+| 4 | **Re-audit des pages Légende et des guides** | mêmes réserves, relecture lancée |
+| 5 | **Source chinoise hexgate.cn** | scraper écrit et éprouvé, 238 relevé (123 listes, 0 écartée), 239 et 240 en cours |
+| 6 | **130 decklists en double sur le disque** | décision d'Allan, rien n'est effacé |
+
+Les points 3 et 4 viennent d'une remarque d'Allan : ces pages ont été écrites par
+un agent qui n'avait pas le contexte du projet. On ne suppose pas qu'elles sont
+bonnes parce qu'elles compilent — **on relit chaque chiffre contre sa source**
+(`data/fiches/`, `docs/DECKBUILDING-RULES.md`, `docs/META-KNOWLEDGE.md`) et chaque
+règle d'interface contre `AGENTS.md`.
+
+Méthode : déléguer par vagues (`delegate-wave`) tout ce qui est balayage,
+vérification chiffrée ou édition mécanique ; garder le jugement, l'intégrité des
+decklists et la porte `npm run verify` de ce côté-ci.
+
 ## Audit responsive — commencé le 24 août 2026, ARRÊTÉ EN COURS
 
 Demande d'Allan : balayer tout le site à 1440x900, 768x1024, 430x932 et 375x812,
