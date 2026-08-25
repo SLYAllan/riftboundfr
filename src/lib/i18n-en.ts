@@ -1107,4 +1107,31 @@ export const EN: Record<string, string> = {
   "Compétitifs": "Competitive",
   "Affiner les résultats": "Refine results",
   "Chercher un deck, une Légende ou un auteur": "Search for a deck, Legend or author",
+  "Les données n’ont pas pu se charger.": "The data could not load.",
+  "Aucun deck pour le moment.": "No decks yet.",
+  "Aucun article dans cette catégorie.": "No articles in this category.",
+  "Voir tous les articles": "View all articles",
+  "On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec guide et ceux de la communauté.":
+    "We keep the best deck for each Legend at each tournament, plus decks with guides and community decks.",
+  "Pour toutes les listes d’un tournoi, allez sur sa page dans les":
+    "For every list from a tournament, visit its page under",
+  "Pour savoir quoi jouer, commencez par la": "To choose what to play, start with the",
+  "puis choisissez votre": "then choose your",
+  "Vous pouvez aussi partir d’une liste et la modifier dans le":
+    "You can also start from a list and edit it in the",
+  "tier list Riftbound": "Riftbound tier list",
+  "deck communautaire": "community deck",
+  "decks communautaires": "community decks",
+  "Jouable avec votre collection": "Playable with your collection",
+  "Il vous manque": "You are missing",
+  "Complet": "Complete",
+  "Voir tous les decks": "View all decks",
+  "Decks que je peux jouer avec mes cartes": "Decks I can play with my cards",
+  "Voir le deck": "View deck",
+  "Vues": "Views",
+  "Proving Grounds : quel deck monter avec Annie, Master Yi, Lux ou Garen":
+    "Proving Grounds: which deck should you build with Annie, Master Yi, Lux or Garen?",
+  "Best of du National Open S3 - Toutes les légendes": "National Open S3 best decks - Every Legend",
+  "Best of Hartford — Toutes les légendes": "Hartford best decks - Every Legend",
+  "Best of Hartford - Toutes les légendes": "Hartford best decks - Every Legend",
 };

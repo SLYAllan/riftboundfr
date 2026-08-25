@@ -27,7 +27,9 @@ afterAll(() => serveur.close());
 
 function lanceAudit(route, url = base) {
   return new Promise((resolve, reject) => {
-    const processus = spawn(process.execPath, ["scripts/audit-version-anglaise.mjs", route], {
+    const argumentsAudit = ["scripts/audit-version-anglaise.mjs"];
+    if (route) argumentsAudit.push(route);
+    const processus = spawn(process.execPath, argumentsAudit, {
       cwd: process.cwd(),
       env: { ...process.env, BASE: url },
     });
@@ -50,6 +52,14 @@ describe("audit de la version anglaise", () => {
 
     expect(resultat.code).toBe(0);
     expect(resultat.sortie).toContain("0 phrase(s) en français");
+  });
+
+  it("audite les cartes et les decks sans route explicite", async () => {
+    const resultat = await lanceAudit(undefined);
+
+    expect(resultat.code).toBe(0);
+    expect(resultat.sortie).toContain("=== /cartes");
+    expect(resultat.sortie).toContain("=== /decks");
   });
 
   it("échoue quand une page anglaise contient du français", async () => {

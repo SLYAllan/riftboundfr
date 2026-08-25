@@ -12,4 +12,10 @@ describe("actions principales de l'accueil", () => {
     expect(source).toContain('t("Voir les cartes")');
     expect(source).toContain('t("Débuter")');
   });
+
+  test("distingue une panne des listes vraiment vides", () => {
+    expect(source).toContain("chargementEchoue");
+    expect(source).toContain('t("Les données n’ont pas pu se charger.")');
+    expect(source).toContain("cardCount > 0");
+  });
 });

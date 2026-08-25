@@ -164,16 +164,13 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <details className="group mt-3 max-w-3xl text-sm text-ink-secondary">
         <summary className="min-h-11 cursor-pointer list-none py-3 text-xs font-semibold text-ink-muted hover:text-ink [&::-webkit-details-marker]:hidden">{t("Comment choisir un deck ?")} <span aria-hidden="true" className="ml-1 inline-block transition-transform group-open:rotate-180">↓</span></summary>
         <p className="pb-2 leading-relaxed">
-        On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
-        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
-        sa page dans les{" "}
-        <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
-        Pour savoir quoi jouer, commencez par la{" "}
-        <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
-        puis choisissez votre{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
-        pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
+        {t("On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec guide et ceux de la communauté.")} {t("Pour toutes les listes d’un tournoi, allez sur sa page dans les")} {" "}
+        <Link href="/tournois" className="text-arcane hover:underline">{t("tournois")}</Link>.
+        {" "}{t("Pour savoir quoi jouer, commencez par la")} {" "}
+        <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list Riftbound")}</Link>{" "}
+        {t("puis choisissez votre")}{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. {t("Vous pouvez aussi partir d’une liste et la modifier dans le")} {" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">{t("deckbuilder")}</Link>.
         </p>
       </details>
 
@@ -226,20 +223,20 @@ export default async function DecksPage({ searchParams }: PageProps) {
             <DeckLegendFilter legends={comLegends.map((l) => l.legendName)} />
           </Suspense>
           <div className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
-            <span className="text-xs text-ink-muted">Tri :</span>
+            <span className="text-xs text-ink-muted">{t("Tri")} :</span>
             <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Récent")}</Link>
             <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-              <Heart size={10} /> Populaire
+              <Heart size={10} /> {t("Populaire")}
             </Link>
             <Link href={comLink({ sort: "views" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "views" ? "bg-blue-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-              <Eye size={10} /> Vues
+              <Eye size={10} /> {t("Vues")}
             </Link>
           </div>
         </div>
         </div>
 
         <div className="mt-4 text-sm text-ink-muted">
-          {communityDecks.length} deck{communityDecks.length !== 1 ? "s" : ""} communautaire{communityDecks.length !== 1 ? "s" : ""}
+          {communityDecks.length} {t(communityDecks.length === 1 ? "deck communautaire" : "decks communautaires")}
           {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
           {domainFilter && <span> &middot; <strong>{domainFilter}</strong></span>}
           {tagFilter && <span> &middot; <strong className="capitalize">{tagFilter}</strong></span>}
@@ -274,9 +271,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
                             ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
                           )}
-                          title={ok ? "Jouable avec votre collection" : `Il vous manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                          title={ok ? t("Jouable avec votre collection") : `${t("Il vous manque")} ${cov.missing} ${t(cov.missing > 1 ? "cartes" : "carte")}`}
                         >
-                          {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
+                          {ok ? `✓ ${t("Complet")}` : `${cov.owned}/${cov.required}`}
                         </span>
                       );
                     })()}
@@ -290,7 +287,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             className="texte-sur-art mt-0.5 flex flex-wrap items-center gap-2 text-xs"
                           >
                             <span className="text-arcane-light">{displayLegendName(deck.legendName)}</span>
-                            <span className="text-white/80">par {deck.authorName}</span>
+                            <span className="text-white/80">{t("par")} {deck.authorName}</span>
                           </div>
                           {deck.tags.length > 0 && (
                             <div className="mt-1 flex flex-wrap gap-1">
@@ -366,16 +363,13 @@ export default async function DecksPage({ searchParams }: PageProps) {
       <details className="group mt-3 max-w-3xl text-sm text-ink-secondary">
         <summary className="min-h-11 cursor-pointer list-none py-3 text-xs font-semibold text-ink-muted hover:text-ink [&::-webkit-details-marker]:hidden">{t("Comment choisir un deck ?")} <span aria-hidden="true" className="ml-1 inline-block transition-transform group-open:rotate-180">↓</span></summary>
         <p className="pb-2 leading-relaxed">
-        On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec
-        guide et ceux de la communauté. Pour toutes les listes d&apos;un tournoi, allez sur
-        sa page dans les{" "}
-        <Link href="/tournois" className="text-arcane hover:underline">tournois</Link>.
-        Pour savoir quoi jouer, commencez par la{" "}
-        <Link href="/tier-list" className="text-arcane hover:underline">tier list Riftbound</Link>{" "}
-        puis choisissez votre{" "}
-        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. Vous
-        pouvez aussi partir d&apos;une liste et la modifier dans le{" "}
-        <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>.
+        {t("On garde ici le meilleur deck de chaque Légende par tournoi, les decks avec guide et ceux de la communauté.")} {t("Pour toutes les listes d’un tournoi, allez sur sa page dans les")} {" "}
+        <Link href="/tournois" className="text-arcane hover:underline">{t("tournois")}</Link>.
+        {" "}{t("Pour savoir quoi jouer, commencez par la")} {" "}
+        <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list Riftbound")}</Link>{" "}
+        {t("puis choisissez votre")}{" "}
+        <Link href="/legendes" className="text-arcane hover:underline">{t("Légende")}</Link>. {t("Vous pouvez aussi partir d’une liste et la modifier dans le")} {" "}
+        <Link href="/deckbuilder" className="text-arcane hover:underline">{t("deckbuilder")}</Link>.
         </p>
       </details>
 
@@ -439,7 +433,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               ownedOnly ? "bg-emerald-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
             )}
           >
-            <Hammer size={12} /> {ownedOnly ? "Voir tous les decks" : "Decks que je peux jouer avec mes cartes"}
+            <Hammer size={12} /> {t(ownedOnly ? "Voir tous les decks" : "Decks que je peux jouer avec mes cartes")}
           </Link>
         </div>
       )}
@@ -457,7 +451,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <DeckFiltreSelect
             nom="set"
             libelle={t("Filtrer par set")}
-            toutes="Tous les sets"
+            toutes={t("Tous les sets")}
             options={(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => ({ valeur: s, libelle: s }))}
           />
         </Suspense>
@@ -508,7 +502,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const bannerUrl = getBannerUrl(deck.legendName);
             return (
               <article key={deck.id} className="card-hover rounded-card border border-hairline overflow-hidden group relative">
-                <Link href={`/decks/${deck.slug}`} className="absolute inset-0 z-10" aria-label={`Voir le deck ${displayLegendName(deck.legendName)}`} />
+                <Link href={`/decks/${deck.slug}`} className="absolute inset-0 z-10" aria-label={`${t("Voir le deck")} ${displayLegendName(deck.legendName)}`} />
                 <div className="relative flex h-44 flex-col justify-end">
                   {bannerUrl ? (
                     <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
@@ -526,9 +520,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           "absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow",
                           ok ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40",
                         )}
-                        title={ok ? "Jouable avec votre collection" : `Il vous manque ${cov.missing} carte${cov.missing > 1 ? "s" : ""}`}
+                        title={ok ? t("Jouable avec votre collection") : `${t("Il vous manque")} ${cov.missing} ${t(cov.missing > 1 ? "cartes" : "carte")}`}
                       >
-                        {ok ? "✓ Complet" : `${cov.owned}/${cov.required}`}
+                        {ok ? `✓ ${t("Complet")}` : `${cov.owned}/${cov.required}`}
                       </span>
                     );
                   })()}
@@ -582,7 +576,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           {(deck.placement || deck.playerName || deck.authorName) && (
                             <div className="flex items-center gap-2">
                               {deck.placement && <span className="shrink-0 font-semibold text-ink">{deck.placement}</span>}
-                              {(deck.playerName || deck.authorName) && <span className="truncate text-white/90">par {deck.playerName || deck.authorName}</span>}
+                              {(deck.playerName || deck.authorName) && <span className="truncate text-white/90">{t("par")} {deck.playerName || deck.authorName}</span>}
                             </div>
                           )}
                         </div>

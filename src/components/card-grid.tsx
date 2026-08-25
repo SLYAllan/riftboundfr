@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CardImage } from "@/components/card-image";
 import { RarityBadge } from "@/components/rarity-badge";
 import type { Card } from "@prisma/client";
+import { tr } from "@/lib/i18n-server";
 
 // Seuls ces champs scalaires sont rendus → permet un select Prisma léger côté /cartes
 // (évite de transférer textPlain/textHtml volumineux). Un Card complet reste assignable.
@@ -12,11 +13,12 @@ interface CardGridProps {
   cards: CardGridCard[];
 }
 
-export function CardGrid({ cards }: CardGridProps) {
+export async function CardGrid({ cards }: CardGridProps) {
+  const t = await tr();
   if (cards.length === 0) {
     return (
       <div className="py-20 text-center text-ink-muted">
-        Aucune carte ne correspond à votre recherche. Modifiez vos filtres.
+        {t("Aucune carte ne correspond à votre recherche. Modifiez vos filtres.")}
       </div>
     );
   }
@@ -45,7 +47,7 @@ export function CardGrid({ cards }: CardGridProps) {
                   </div>
                 ) : (
                   <div className="flex h-full items-center justify-center text-ink-muted">
-                    <span className="text-xs">Pas d&apos;image</span>
+                    <span className="text-xs">{t("Pas d’image")}</span>
                   </div>
                 )}
               </div>

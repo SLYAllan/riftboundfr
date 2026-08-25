@@ -6,7 +6,7 @@ const liens = [
   { href: "/cartes", label: "Cartes" },
   { href: "/decks", label: "Decks" },
   { href: "/tier-list", label: "Tier List" },
-  { href: "/guides/debuter", label: "Guides" },
+  { href: "/guides", label: "Guides" },
   { href: "/tournois", label: "Tournois" },
   { href: "/articles", label: "Articles" },
   { href: "/deckbuilder", label: "Deckbuilder" },

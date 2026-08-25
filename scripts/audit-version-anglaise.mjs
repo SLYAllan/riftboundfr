@@ -11,6 +11,7 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const BASE = process.env.BASE ?? "http://localhost:3000";
+const ROUTES_PAR_DEFAUT = ["/", "/cartes", "/decks"];
 
 // Mots qui n'existent qu'en français. Volontairement courts et fréquents : ils
 // suffisent à repérer une phrase entière restée en français.
@@ -69,6 +70,6 @@ export async function auditerRoutes(routes, base = BASE) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href
-  && await auditerRoutes(process.argv.slice(2))) {
+  && await auditerRoutes(process.argv.length > 2 ? process.argv.slice(2) : ROUTES_PAR_DEFAUT)) {
   process.exitCode = 1;
 }

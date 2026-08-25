@@ -147,6 +147,7 @@ export default async function HomePage() {
   let latestArticles: Awaited<ReturnType<typeof getHomeData>>["latestArticles"] = [];
   let derniersTournois: Awaited<ReturnType<typeof getHomeData>>["derniersTournois"] = [];
   let cardCount = 0;
+  let chargementEchoue = false;
   let legendMap = new Map<string, { imageUrl: string | null; domains: string[] }>();
   try {
     const data = await getHomeData();
@@ -156,7 +157,9 @@ export default async function HomePage() {
     derniersTournois = data.derniersTournois;
     cardCount = data.cardCount;
     legendMap = new Map(data.legendEntries);
-  } catch {}
+  } catch {
+    chargementEchoue = true;
+  }
 
   const langue = await langueCourante();
   const t = (texte: string) => traduire(texte, langue);
@@ -203,6 +206,12 @@ export default async function HomePage() {
           </Link>
         </div>
       </section>
+
+      {chargementEchoue && (
+        <p role="alert" className="mx-4 mb-6 rounded-lg border border-hairline bg-surface px-4 py-3 text-center text-sm text-ink-secondary sm:mx-6 lg:mx-8">
+          {t("Les données n’ont pas pu se charger.")}
+        </p>
+      )}
 
       {/* 3-column layout */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8">
@@ -266,6 +275,7 @@ export default async function HomePage() {
                   </Link>
                 );
               })}
+              {!chargementEchoue && topLegends.length === 0 && <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun deck pour le moment.")}</p>}
             </div>
           </div>
 
@@ -304,7 +314,7 @@ export default async function HomePage() {
           </div>
 
           {/* Right - Tier list */}
-          <HomeTierList tierLists={tierLists} legendMap={legendMap} />
+          {!chargementEchoue && <HomeTierList tierLists={tierLists} legendMap={legendMap} />}
         </div>
       </section>
 
@@ -321,7 +331,7 @@ export default async function HomePage() {
                 {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
-            {latestArticles.length === 0 ? (
+            {!chargementEchoue && latestArticles.length === 0 ? (
               <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun article pour le moment.")}</p>
             ) : (
               <div className="divide-y divide-hairline flex-1">
@@ -358,11 +368,11 @@ export default async function HomePage() {
               <p className="text-sm text-ink-secondary leading-relaxed">
                 {t("Suivez votre collection Riftbound en classeurs, repérez les cartes qui vous manquent et voyez quels decks méta vous pouvez déjà jouer.")}
               </p>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
-                  <div className="text-xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{cardCount.toLocaleString(locale)}</div>
-                  <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("cartes à collectionner")}</div>
-                </div>
+              <div className={cardCount > 0 ? "grid grid-cols-2 gap-3" : "grid gap-3"}>
+                {cardCount > 0 && <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
+                    <div className="text-xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{cardCount.toLocaleString(locale)}</div>
+                    <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("cartes à collectionner")}</div>
+                </div>}
                 <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
                   <div className="flex items-center gap-1.5 text-sm font-semibold"><Upload size={14} className="text-arcane" /> Import CSV</div>
                   <div className="mt-1 text-[11px] uppercase tracking-wider text-ink-muted">Piltover Archive</div>
@@ -384,7 +394,7 @@ export default async function HomePage() {
                 {t("Tous")} <ArrowRight size={14} />
               </Link>
             </div>
-            {derniersTournois.length === 0 ? (
+            {!chargementEchoue && derniersTournois.length === 0 ? (
               <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
             ) : (
               <div className="divide-y divide-hairline flex-1">

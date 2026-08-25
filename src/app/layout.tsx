@@ -95,7 +95,7 @@ export const viewport: Viewport = {
 // @graph lie le WebSite et l'Organisation via @id. L'Organization (name + logo +
 // sameAs) est le signal d'entité que Google utilise pour reconnaître la marque
 // "Riftbound France" comme distincte du jeu Riftbound (Riot) → requête de marque.
-const jsonLd = {
+const jsonLd = (langue: "fr" | "en") => ({
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -103,8 +103,10 @@ const jsonLd = {
       "@id": "https://riftboundfrance.fr/#website",
       name: "Riftbound France",
       url: "https://riftboundfrance.fr",
-      description: "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français.",
-      inLanguage: "fr",
+      description: langue === "fr"
+        ? "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français."
+        : "Card database, tier lists, decks, guides and tournaments for the Riftbound TCG.",
+      inLanguage: langue,
       publisher: { "@id": "https://riftboundfrance.fr/#organization" },
       potentialAction: {
         "@type": "SearchAction",
@@ -119,7 +121,9 @@ const jsonLd = {
       alternateName: "RiftboundFrance",
       url: "https://riftboundfrance.fr",
       email: "contact@riftboundfrance.fr",
-      description: "Tier lists, decks de tournois, guides et cartes Riftbound en français.",
+      description: langue === "fr"
+        ? "Tier lists, decks de tournois, guides et cartes Riftbound en français."
+        : "Riftbound tier lists, tournament decks, guides and cards in English.",
       logo: {
         "@type": "ImageObject",
         url: "https://riftboundfrance.fr/logorbfr.png",
@@ -129,7 +133,7 @@ const jsonLd = {
       sameAs: ["https://x.com/FRRiftbound"],
     },
   ],
-};
+});
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const langue = await langueCourante();
@@ -142,7 +146,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(langue)) }}
         />
         <link rel="alternate" type="application/rss+xml" title="Riftbound France" href="/rss.xml" />
         {/* Déclaré ici plutôt que page par page : le middleware nous donne le

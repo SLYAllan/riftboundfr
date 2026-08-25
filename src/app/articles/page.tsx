@@ -3,11 +3,10 @@ export const dynamic = "force-dynamic";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { formatDate, displayLegendName } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
-import type { ArticleBlock } from "@/types";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
@@ -34,6 +33,8 @@ const categoryLabels: Record<string, string> = {
   "patch-notes": "Notes de patch",
 };
 
+const categories = ["actualite", "guide", "tournoi", "meta", "patch-notes"];
+
 export default async function ArticlesPage({
   searchParams,
 }: {
@@ -42,9 +43,10 @@ export default async function ArticlesPage({
 
   const t = await tr();
   const { category } = await searchParams;
+  const categoryValide = category && categories.includes(category) ? category : undefined;
 
   const where: Record<string, unknown> = { published: true };
-  if (category) where.category = category;
+  if (categoryValide) where.category = categoryValide;
 
   const articles = await prisma.article.findMany({
     where,
@@ -56,13 +58,10 @@ export default async function ArticlesPage({
       excerpt: true,
       coverImage: true,
       category: true,
-      blocks: true,
       tournamentName: true,
       publishedAt: true,
     },
   });
-
-  const categories = ["actualite", "guide", "tournoi", "meta", "patch-notes"];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -71,13 +70,13 @@ export default async function ArticlesPage({
       <div className="mt-4 flex flex-wrap gap-2">
         <Link
           href="/articles"
-          className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!category ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+          className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!categoryValide ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
         >{t("Tous")}</Link>
         {categories.map((cat) => (
           <Link
             key={cat}
             href={`/articles?category=${cat}`}
-            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${category === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${categoryValide === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
           >
             {t(categoryLabels[cat] ?? cat)}
           </Link>
@@ -85,18 +84,13 @@ export default async function ArticlesPage({
       </div>
 
       {articles.length === 0 ? (
-        <p className="mt-12 text-center text-ink-muted">{t("Aucun article publié pour le moment.")}</p>
+        <div className="mt-12 text-center text-ink-muted">
+          <p>{t(categoryValide ? "Aucun article dans cette catégorie." : "Aucun article publié pour le moment.")}</p>
+          {categoryValide && <Link href="/articles" className="mt-3 inline-block text-sm text-arcane hover:underline">{t("Voir tous les articles")}</Link>}
+        </div>
       ) : (
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => {
-            const blocks = (article.blocks as ArticleBlock[]) ?? [];
-            const legends = [
-              ...new Set(
-                blocks
-                  .filter((b): b is Extract<ArticleBlock, { type: "decklist" }> => b.type === "decklist")
-                  .map((b) => displayLegendName(b.legendName))
-              ),
-            ];
             const cc = article.tournamentName ? getTournamentCountryCode(article.tournamentName) : null;
             return (
             <Link
@@ -127,20 +121,6 @@ export default async function ArticlesPage({
                 </h2>
                 {article.excerpt && (
                   <p className="mt-2 line-clamp-2 text-sm text-ink-secondary">{t(article.excerpt)}</p>
-                )}
-                {legends.length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-1">
-                    {legends.slice(0, 8).map((l) => (
-                      <span key={l} className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-semibold text-arcane">
-                        {l}
-                      </span>
-                    ))}
-                    {legends.length > 8 && (
-                      <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] text-ink-muted">
-                        +{legends.length - 8}
-                      </span>
-                    )}
-                  </div>
                 )}
               </div>
             </Link>
