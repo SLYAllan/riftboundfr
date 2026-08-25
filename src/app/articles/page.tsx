@@ -72,13 +72,13 @@ export default async function ArticlesPage({
       <div className="mt-4 flex flex-wrap gap-2">
         <Link
           href="/articles"
-          className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${!categoryValide ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+          className={`inline-flex min-h-11 items-center rounded-full px-3 py-1 text-sm font-medium transition-colors sm:min-h-0 ${!categoryValide ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
         >{t("Tous")}</Link>
         {categories.map((cat) => (
           <Link
             key={cat}
             href={`/articles?category=${cat}`}
-            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors ${categoryValide === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
+            className={`inline-flex min-h-11 items-center rounded-full px-3 py-1 text-sm font-medium transition-colors sm:min-h-0 ${categoryValide === cat ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-secondary hover:text-ink"}`}
           >
             {t(categoryLabels[cat] ?? cat)}
           </Link>

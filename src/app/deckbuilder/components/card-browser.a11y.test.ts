@@ -35,4 +35,10 @@ describe("accessibilité du navigateur de cartes", () => {
     expect(source).toContain("filtered.slice(0, 120).map");
     expect(source).toContain("filtered.length > 120");
   });
+
+  it("rend la carte et les filtres utilisables au clavier et au toucher", () => {
+    expect(source).toMatch(/<button\s+type="button"\s+onClick=\{onAddMain\}/);
+    expect(source).toContain("min-h-11 sm:min-h-0");
+    expect(source).toContain("min-h-11 min-w-11");
+  });
 });

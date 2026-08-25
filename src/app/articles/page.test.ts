@@ -23,4 +23,8 @@ describe("liste des articles", () => {
     expect(source).toContain("langueCourante");
     expect(source).toContain("formatDate(article.publishedAt, locale)");
   });
+
+  test("garde les filtres faciles à toucher sur mobile", () => {
+    expect(source.match(/min-h-11/g)).toHaveLength(2);
+  });
 });

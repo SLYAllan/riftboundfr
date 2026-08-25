@@ -43,7 +43,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
         <Link
           href={getPageUrl(currentPage - 1)}
           aria-label={t("Page précédente")}
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink sm:h-9 sm:w-9"
         >
           <ChevronLeft size={16} />
         </Link>
@@ -57,7 +57,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
             href={getPageUrl(p)}
             aria-current={p === currentPage ? "page" : undefined}
             className={cn(
-              "flex h-9 min-w-[36px] items-center justify-center rounded-lg text-sm font-medium",
+              "flex h-11 min-w-11 items-center justify-center rounded-lg text-sm font-medium sm:h-9 sm:min-w-9",
               p === currentPage
                 ? "bg-arcane text-canvas"
                 : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
@@ -71,7 +71,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
         <Link
           href={getPageUrl(currentPage + 1)}
           aria-label={t("Page suivante")}
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink sm:h-9 sm:w-9"
         >
           <ChevronRight size={16} />
         </Link>

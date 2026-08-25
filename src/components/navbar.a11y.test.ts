@@ -15,6 +15,16 @@ describe("accessibilité de la navigation", () => {
   it("rend aussi le focus au bouton Outils et garde le menu mobile compact", () => {
     expect(source).toContain("outilsBoutonRef.current?.focus()");
     expect(source.match(/grid grid-cols-2/g)?.length).toBeGreaterThanOrEqual(2);
-    expect(source.match(/"flex min-h-11 items-center rounded-lg px-3 text-sm font-medium"/g)).toHaveLength(2);
+    expect(source.match(/"flex min-h-11 items-center rounded-lg px-3 text-sm font-medium/g)?.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it("partage un état actif, un focus visible et des cibles de 44 px", () => {
+    expect(source).toContain('const navigationActive = "bg-arcane/5 text-arcane"');
+    expect(source).toContain("focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane");
+    expect(source).toContain("min-h-11 min-w-11");
+  });
+
+  it("ferme le menu Outils quand le focus en sort", () => {
+    expect(source).toMatch(/onBlur=\{\(e\) => \{[\s\S]*e\.currentTarget\.contains\(e\.relatedTarget\)[\s\S]*setOutilsOpen\(false\)/);
   });
 });

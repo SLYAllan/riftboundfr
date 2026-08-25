@@ -25,6 +25,11 @@ describe("erreurs du tableau de bord de collection", () => {
     expect(dashboard).toContain("if (res.ok)");
     expect(dashboard).not.toContain("setPendingDelete(null);\n    }");
   });
+
+  it("garde le menu des classeurs facile à toucher", () => {
+    expect(dashboard).toMatch(/h-11 w-11[^"]*sm:h-9 sm:w-9/);
+    expect(dashboard).toContain("min-h-11");
+  });
 });
 
 describe("rapport d'import Piltover", () => {

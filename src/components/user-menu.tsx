@@ -98,7 +98,7 @@ export function UserMenu() {
     return (
       <div role="alert" className="flex items-center gap-2 text-sm text-red-400">
         <span>{t("Connexion indisponible")}</span>
-        <button onClick={retry} className="underline">
+        <button onClick={retry} className="min-h-11 rounded px-2 underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane">
           {t("Réessayer")}
         </button>
       </div>
@@ -109,7 +109,7 @@ export function UserMenu() {
     return (
       <a
         href="/api/auth/discord"
-        className="flex items-center gap-2 rounded-lg bg-[#5865F2] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#4752C4]"
+        className="flex min-h-11 items-center gap-2 rounded-lg bg-[#5865F2] px-3 text-sm font-medium text-white transition-colors hover:bg-[#4752C4] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
       >
         <svg width="16" height="12" viewBox="0 0 71 55" fill="currentColor">
           <path d="M60.1 4.9A58.5 58.5 0 0045.4.2a.2.2 0 00-.2.1 40.8 40.8 0 00-1.8 3.7 54 54 0 00-16.2 0A37.4 37.4 0 0025.4.3a.2.2 0 00-.2-.1A58.4 58.4 0 0010.5 4.9a.2.2 0 00-.1.1C1.5 18 -.9 30.6.3 43a.3.3 0 00.1.2 58.7 58.7 0 0017.7 9 .2.2 0 00.3-.1 42 42 0 003.6-5.9.2.2 0 00-.1-.3 38.7 38.7 0 01-5.5-2.6.2.2 0 01 0-.4l1.1-.9a.2.2 0 01.2 0 41.9 41.9 0 0035.6 0 .2.2 0 01.2 0l1.1.9a.2.2 0 010 .4 36.4 36.4 0 01-5.5 2.6.2.2 0 00-.1.3 47.2 47.2 0 003.6 5.9.2.2 0 00.3.1A58.5 58.5 0 0070.6 43a.2.2 0 00.1-.2c1.4-14.5-2.4-27-10.1-38.2a.2.2 0 00-.1 0zM23.7 35.2c-3.3 0-6-3-6-6.7s2.7-6.7 6-6.7c3.4 0 6.1 3 6 6.7 0 3.7-2.6 6.7-6 6.7zm22.2 0c-3.3 0-6-3-6-6.7s2.6-6.7 6-6.7c3.3 0 6 3 6 6.7 0 3.7-2.6 6.7-6 6.7z" />
@@ -120,13 +120,19 @@ export function UserMenu() {
   }
 
   return (
-    <div ref={ref} className="relative">
+    <div
+      ref={ref}
+      className="relative"
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setOpen(false);
+      }}
+    >
       <button
         ref={triggerRef}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-label={t("Menu utilisateur")}
-        className="flex items-center gap-2 rounded-lg px-2 py-1 transition-colors hover:bg-surface-raised"
+        className="flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg px-2 transition-colors hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
       >
         <DiscordAvatar
           src={user.avatarUrl}
@@ -158,7 +164,7 @@ export function UserMenu() {
             <Link
               href="/admin"
               onClick={() => setOpen(false)}
-              className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-gold hover:bg-surface-raised transition-colors"
+              className="flex min-h-11 w-full items-center gap-2 rounded-lg px-3 text-sm text-gold transition-colors hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
             >
               <Shield size={14} />
               {t("Administration")}
@@ -167,7 +173,7 @@ export function UserMenu() {
           <Link
             href="/profil"
             onClick={() => setOpen(false)}
-            className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-secondary hover:bg-surface-raised transition-colors"
+            className="flex min-h-11 w-full items-center gap-2 rounded-lg px-3 text-sm text-ink-secondary transition-colors hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
           >
             <UserIcon size={14} />
             {t("Mon profil")}
@@ -175,7 +181,7 @@ export function UserMenu() {
           <button
             onClick={logout}
             disabled={logoutLoading}
-            className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-secondary hover:bg-surface-raised transition-colors"
+            className="flex min-h-11 w-full items-center gap-2 rounded-lg px-3 text-sm text-ink-secondary transition-colors hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
           >
             <LogOut size={14} />
             {logoutLoading ? t("Déconnexion...") : t("Déconnexion")}

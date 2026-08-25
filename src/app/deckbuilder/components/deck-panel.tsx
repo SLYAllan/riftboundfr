@@ -54,7 +54,7 @@ interface RowHoverProps {
 
 function tileBtn(extra?: string) {
   return cn(
-    "flex h-8 w-8 items-center justify-center rounded-md bg-canvas/85 text-ink-secondary shadow transition-colors",
+    "flex h-11 w-11 sm:h-8 sm:w-8 items-center justify-center rounded-md bg-canvas/85 text-ink-secondary shadow transition-colors",
     extra,
   );
 }
@@ -100,7 +100,7 @@ function DeckCardTile({
       </span>
 
       {/* Ces actions doivent rester utilisables sur écran tactile, où le survol n'existe pas. */}
-      <div className="absolute bottom-1 inset-x-1 z-20 flex justify-center gap-1">
+      <div className="absolute bottom-1 inset-x-1 z-20 grid grid-cols-2 justify-center gap-1 sm:flex">
         {onQtyChange && (
           <>
             <button onClick={() => onQtyChange(-1)} className={tileBtn("hover:text-ink hover:bg-canvas")} aria-label={t("Retirer une copie")}>
@@ -148,7 +148,7 @@ function LegendTile({ entry, onRemove, onHover, onLeave }: {
       )}
       <button
         onClick={onRemove}
-        className="absolute top-1.5 right-1.5 z-10 rounded-full bg-canvas/85 p-1.5 text-ink-muted shadow transition-colors hover:text-error"
+        className="absolute top-1.5 right-1.5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-canvas/85 text-ink-muted shadow transition-colors hover:text-error sm:h-8 sm:w-8"
         aria-label={t("Retirer la légende")}
       >
         <Trash2 size={13} />

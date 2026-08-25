@@ -29,6 +29,8 @@ const outilsLinks = [
   { href: "/outils/regles", label: "Chercher une règle" },
 ];
 
+const navigationActive = "bg-arcane/5 text-arcane";
+
 /**
  * Rechargement complet plutôt que navigation client : changer de langue change
  * tout ce que le serveur a rendu, y compris les métadonnées et le `lang` de la
@@ -55,7 +57,7 @@ function SelecteurLangue({ chemin, compact = false }: { chemin: string; compact?
           title={l.nom}
           aria-current={langue === l.code ? "true" : undefined}
           className={cn(
-            "flex h-8 min-w-8 items-center justify-center gap-1.5 rounded-md px-1.5 text-xs font-bold uppercase transition-colors",
+            "flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-md px-1.5 text-xs font-bold uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
             langue === l.code ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink",
           )}
         >
@@ -114,7 +116,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
   return (
     <header data-chrome="site" className="sticky top-0 z-50 glass border-b border-hairline">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex min-h-11 items-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane">
           <Image src="/logorbfr.png" alt="Riftbound France" width={224} height={112} className="h-8 w-auto" priority />
         </Link>
 
@@ -124,14 +126,20 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
             donc qu'à partir de 1024 px, le menu déroulant prend le relais en dessous. */}
         <div className="hidden items-center gap-1 lg:flex">
           {/* Outils dropdown */}
-          <div ref={outilsRef} className="relative">
+          <div
+            ref={outilsRef}
+            className="relative"
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget)) setOutilsOpen(false);
+            }}
+          >
             <button
               ref={outilsBoutonRef}
               onClick={() => setOutilsOpen(!outilsOpen)}
               aria-expanded={outilsOpen}
               className={cn(
-                "flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                isOutilsActive ? "text-arcane" : "text-ink-secondary hover:text-ink"
+                "flex min-h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
+                isOutilsActive ? navigationActive : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
               )}
             >
               {t("Outils")}
@@ -146,9 +154,9 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                     onClick={() => setOutilsOpen(false)}
                     aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                     className={cn(
-                      "block rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                      "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
                       pathname.startsWith(link.href)
-                        ? "text-arcane bg-arcane/5"
+                        ? navigationActive
                         : "text-ink-secondary hover:text-ink hover:bg-surface-raised"
                     )}
                   >
@@ -165,10 +173,10 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
               href={link.href}
               aria-current={pathname.startsWith(link.href) ? "page" : undefined}
               className={cn(
-                "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
                 pathname.startsWith(link.href)
-                  ? "text-arcane"
-                  : "text-ink-secondary hover:text-ink"
+                  ? navigationActive
+                  : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
               )}
             >
               {t(link.label)}
@@ -183,7 +191,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
         <button
           ref={boutonMobileRef}
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary lg:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane lg:hidden"
           aria-label={mobileOpen ? t("Fermer le menu") : t("Ouvrir le menu")}
           aria-expanded={mobileOpen}
           // Pas d'aria-controls : le panneau n'existe dans le DOM que lorsqu'il est
@@ -205,8 +213,8 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                 onClick={() => setMobileOpen(false)}
                 aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 className={cn(
-                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium",
-                  pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
+                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
+                  pathname.startsWith(link.href) ? navigationActive : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
                 )}
               >
                 {t(link.label)}
@@ -222,8 +230,8 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                 onClick={() => setMobileOpen(false)}
                 aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 className={cn(
-                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium",
-                  pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
+                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
+                  pathname.startsWith(link.href) ? navigationActive : "text-ink-secondary hover:bg-surface-raised hover:text-ink"
                 )}
               >
                 {t(link.label)}

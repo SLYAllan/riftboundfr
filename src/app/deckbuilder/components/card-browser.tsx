@@ -86,31 +86,33 @@ function CardTile({
 
   return (
     <div className="group relative">
-      {card.imageUrl ? (
-        <img
-          src={card.imageUrl}
-          alt={card.name}
-          onClick={onAddMain}
-          className={cn(
-            "w-full rounded-lg cursor-pointer transition-colors duration-150",
-            isBattlefield ? "aspect-[5/7] object-contain bg-surface-raised" : "aspect-[5/7] object-cover",
-            atMax ? "brightness-50 saturate-50" : inDeck > 0 ? "ring-2 ring-arcane brightness-95" : "group-hover:brightness-110",
-          )}
-          loading="lazy"
-          draggable
-          onDragStart={(e) => {
-            e.dataTransfer.setData("card-id", card.id);
-            e.dataTransfer.setData("source", "browser");
-          }}
-        />
-      ) : (
-        <div
-          onClick={onAddMain}
-          className="w-full aspect-[5/7] rounded-lg bg-surface-raised flex items-center justify-center text-xs text-ink-muted p-2 text-center cursor-pointer"
-        >
-          {card.name}
-        </div>
-      )}
+      <button
+        type="button"
+        onClick={onAddMain}
+        className="block w-full rounded-lg text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
+        draggable
+        onDragStart={(e) => {
+          e.dataTransfer.setData("card-id", card.id);
+          e.dataTransfer.setData("source", "browser");
+        }}
+      >
+        {card.imageUrl ? (
+          <img
+            src={card.imageUrl}
+            alt={card.name}
+            className={cn(
+              "w-full rounded-lg transition-colors duration-150",
+              isBattlefield ? "aspect-[5/7] object-contain bg-surface-raised" : "aspect-[5/7] object-cover",
+              atMax ? "brightness-50 saturate-50" : inDeck > 0 ? "ring-2 ring-arcane brightness-95" : "group-hover:brightness-110",
+            )}
+            loading="lazy"
+          />
+        ) : (
+          <span className="flex w-full aspect-[5/7] rounded-lg bg-surface-raised items-center justify-center text-xs text-ink-muted p-2 text-center">
+            {card.name}
+          </span>
+        )}
+      </button>
 
       {inDeck > 0 && (
         <span className="absolute -right-1 -top-1 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-arcane text-[10px] font-bold text-canvas shadow-md">
@@ -313,7 +315,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
                   onClick={() => toggleDomain(d)}
                   aria-pressed={active}
                   className={cn(
-                    "rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
+                    "min-h-11 sm:min-h-0 rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
                     active
                       ? "border-current shadow-sm"
                       : isLegendDomain
@@ -342,14 +344,14 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
               onClick={() => setShowSliders(!showSliders)}
               aria-label={t("Filtres")}
               aria-expanded={showSliders}
-              className={cn("rounded-lg p-1.5 border transition-colors", showSliders ? "border-gold text-gold" : "border-hairline text-ink-muted hover:text-ink")}
+              className={cn("min-h-11 min-w-11 sm:min-h-8 sm:min-w-8 rounded-lg p-1.5 border transition-colors", showSliders ? "border-gold text-gold" : "border-hairline text-ink-muted hover:text-ink")}
             >
               <SlidersHorizontal size={14} />
             </button>
           )}
 
           {hasFilters && (
-            <button onClick={resetFilters} className="flex items-center gap-1 text-xs text-ink-muted hover:text-ink">
+            <button onClick={resetFilters} className="flex min-h-11 items-center gap-1 text-xs text-ink-muted hover:text-ink sm:min-h-0">
               <RotateCcw size={12} /> {t("Réinit.")}
             </button>
           )}

@@ -16,4 +16,8 @@ describe("sections repliables du panneau de deck", () => {
       /\{sortedMain\.length > 0 \?[\s\S]*?\) : deck\.legend \? \([\s\S]*?Ajoutez des cartes depuis l’onglet Deck[\s\S]*?\) : EMPTY_HINT\}/,
     );
   });
+
+  it("garde les actions des cartes tactiles sur mobile", () => {
+    expect(source).toContain('"flex h-11 w-11 sm:h-8 sm:w-8');
+  });
 });

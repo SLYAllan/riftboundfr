@@ -36,6 +36,12 @@ describe("menu utilisateur", () => {
     expect(source).toMatch(/triggerRef\.current\?\.focus\(\)/);
   });
 
+  it("reste utilisable au clavier et au doigt", () => {
+    expect(source).toContain("min-h-11 min-w-11");
+    expect(source).toContain("focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane");
+    expect(source).toMatch(/onBlur=\{\(e\) => \{[\s\S]*e\.currentTarget\.contains\(e\.relatedTarget\)[\s\S]*setOpen\(false\)/);
+  });
+
   it("traduit les nouveaux états en anglais", () => {
     for (const texte of ["Connexion indisponible", "Déconnexion...", "La déconnexion a échoué. Réessayez."]) {
       expect(anglais).toContain(`\"${texte}\":`);

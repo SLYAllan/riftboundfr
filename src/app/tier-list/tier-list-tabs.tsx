@@ -57,7 +57,7 @@ export function TierListTabs({
   const t = useT();
   const langue = useLangue();
   const [activeTab, setActiveTab] = useState(defaultTab);
-  const [hoveredEntry, setHoveredEntry] = useState<string | null>(null);
+  const [toucheEntry, setToucheEntry] = useState<string | null>(null);
   const activeTierList = tierLists.find((tl) => tl.id === activeTab)!;
 
   const grouped = activeTierList.entries.reduce(
@@ -79,8 +79,9 @@ export function TierListTabs({
             <button
               key={tl.id}
               onClick={() => setActiveTab(tl.id)}
+              aria-pressed={activeTab === tl.id}
               className={cn(
-                "rounded-md px-4 py-2 text-sm font-semibold transition-colors",
+                "min-h-11 rounded-md px-4 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
                 activeTab === tl.id
                   ? "bg-arcane text-canvas shadow-sm"
                   : "text-ink-secondary hover:text-ink hover:bg-surface-raised",
@@ -132,7 +133,6 @@ export function TierListTabs({
               <div className="flex flex-wrap items-center gap-1 bg-surface p-2 sm:gap-2 sm:p-3 flex-1 min-h-[80px]">
                 {entries.map((entry) => {
                   const card = legendMap[entry.legendId];
-                  const isHovered = hoveredEntry === entry.id;
                   const nom = displayLegendName(entry.legendName);
                   return (
                     <Link
@@ -142,10 +142,15 @@ export function TierListTabs({
                       // /decks filtre déjà sur ?legend=.
                       href={`/decks?legend=${encodeURIComponent(entry.legendName)}`}
                       aria-label={`${t("Voir les decks")} ${nom}`}
+                      aria-describedby={entry.comment ? `tier-comment-${entry.id}` : undefined}
                       title={nom}
                       className="group relative rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
-                      onMouseEnter={() => setHoveredEntry(entry.id)}
-                      onMouseLeave={() => setHoveredEntry(null)}
+                      onClick={(event) => {
+                        if (entry.comment && window.matchMedia("(hover: none)").matches && toucheEntry !== entry.id) {
+                          event.preventDefault();
+                          setToucheEntry(entry.id);
+                        }
+                      }}
                     >
                       {card?.imageUrl ? (
                         <Image
@@ -164,13 +169,15 @@ export function TierListTabs({
                           {displayLegendName(entry.legendName)}
                         </div>
                       )}
-                      {isHovered && (
-                        <div
-                          className={cn(
-                            "absolute left-1/2 z-30 -translate-x-1/2 pointer-events-none",
-                            isFirst ? "top-full mt-1" : "-top-1 -translate-y-full",
-                          )}
-                        >
+                      <div
+                        id={`tier-comment-${entry.id}`}
+                        role="tooltip"
+                        className={cn(
+                          "invisible absolute left-1/2 z-30 -translate-x-1/2 pointer-events-none opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-visible:visible group-focus-visible:opacity-100",
+                          toucheEntry === entry.id && "visible opacity-100",
+                          isFirst ? "top-full mt-1" : "-top-1 -translate-y-full",
+                        )}
+                      >
                           {!isFirst && (
                             <div className="rounded-lg border border-hairline bg-canvas px-3 py-2 shadow-xl whitespace-nowrap max-w-[240px]">
                               <p
@@ -207,8 +214,7 @@ export function TierListTabs({
                               )}
                             </div>
                           )}
-                        </div>
-                      )}
+                      </div>
                     </Link>
                   );
                 })}

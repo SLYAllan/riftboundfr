@@ -447,7 +447,7 @@ function BinderPage({ binder: b, cards, copied, onRename, onShare, onDelete }: {
         aria-expanded={menu}
         aria-haspopup="menu"
         aria-label={`${t("Gérer le classeur")} ${b.name}`}
-        className="absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded-lg text-ink-muted transition-[color,background-color,scale] hover:bg-surface-raised hover:text-ink active:scale-[0.96]"
+        className="absolute right-2 top-2 flex h-11 w-11 items-center justify-center rounded-lg text-ink-muted transition-[color,background-color,scale] hover:bg-surface-raised hover:text-ink active:scale-[0.96] sm:h-9 sm:w-9"
       >
         <MoreVertical size={16} />
       </button>
@@ -476,7 +476,7 @@ function MenuItem({ icon, children, onClick, danger }: {
     <button
       role="menuitem"
       onClick={onClick}
-      className={`flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition-colors hover:bg-surface-overlay ${danger ? "text-error-light" : ""}`}
+      className={`flex min-h-11 w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition-colors hover:bg-surface-overlay ${danger ? "text-error-light" : ""}`}
     >{icon}{children}</button>
   );
 }
