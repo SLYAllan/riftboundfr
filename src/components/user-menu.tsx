@@ -96,7 +96,7 @@ export function UserMenu() {
 
   if (loadError) {
     return (
-      <div role="alert" className="flex items-center gap-2 text-sm text-red-400">
+      <div role="alert" className="flex items-center gap-2 text-sm text-error-light">
         <span>{t("Connexion indisponible")}</span>
         <button onClick={retry} className="min-h-11 rounded px-2 underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane">
           {t("Réessayer")}
@@ -187,7 +187,7 @@ export function UserMenu() {
             {logoutLoading ? t("Déconnexion...") : t("Déconnexion")}
           </button>
           {logoutError && (
-            <p role="alert" className="px-3 py-2 text-xs text-red-400">
+            <p role="alert" className="px-3 py-2 text-xs text-error-light">
               {t("La déconnexion a échoué. Réessayez.")}
             </p>
           )}

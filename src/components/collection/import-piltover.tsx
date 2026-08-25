@@ -42,7 +42,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
         className="text-sm"
       />
       {busy && <p role="status" className="mt-2 text-sm text-ink-muted">{t("Import en cours…")}</p>}
-      {error && <p role="alert" className="mt-2 text-sm text-red-400">{t(error)}</p>}
+      {error && <p role="alert" className="mt-2 text-sm text-error-light">{t(error)}</p>}
       {report && (
         <div role="status" className="mt-3 text-sm">
           <p className="text-arcane">

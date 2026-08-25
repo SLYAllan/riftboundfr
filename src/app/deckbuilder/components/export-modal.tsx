@@ -194,7 +194,7 @@ export function ExportModal({
                     placeholder={t("Ce qui change (optionnel) - ex : +2 Falling Star, -2 Charm")}
                     className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-base sm:text-sm text-ink placeholder:text-ink-muted/50"
                   />
-                  {publishError && <p role="alert" className="text-xs text-red-400">{publishError}</p>}
+                  {publishError && <p role="alert" className="text-xs text-error-light">{publishError}</p>}
                   {updated ? (
                     <a
                       href={`/d/${updateShareCode}`}
@@ -301,7 +301,7 @@ export function ExportModal({
                     </button>
 
                     {publishError && (
-                      <p role="alert" className="text-xs text-red-400">{publishError}</p>
+                      <p role="alert" className="text-xs text-error-light">{publishError}</p>
                     )}
 
                     {publishedUrl && (
@@ -384,7 +384,7 @@ export function ExportModal({
                 </div>
               )}
               {imageState === "error" && (
-                <p role="alert" className="mt-3 text-xs text-red-400">{t("Image impossible à générer. Rechargez la page et réessayez.")}</p>
+                <p role="alert" className="mt-3 text-xs text-error-light">{t("Image impossible à générer. Rechargez la page et réessayez.")}</p>
               )}
             </div>
           )}

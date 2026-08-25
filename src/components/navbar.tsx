@@ -29,7 +29,9 @@ const outilsLinks = [
   { href: "/outils/regles", label: "Chercher une règle" },
 ];
 
-const navigationActive = "bg-arcane/5 text-arcane";
+// Fond neutre sous un texte coloré : un `bg-arcane/5` sous `text-arcane` mettait
+// la teinte des deux côtés, ce que la charte du site interdit.
+const navigationActive = "bg-surface-raised text-arcane";
 
 /**
  * Rechargement complet plutôt que navigation client : changer de langue change

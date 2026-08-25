@@ -48,6 +48,9 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
     }
   }, []);
 
+  // Le détour par la microtâche n'est pas décoratif : `recharger` commence par un
+  // `setLoading(true)` synchrone, que le lint refuse au premier tour d'un effet
+  // (« cascading renders »). Ne pas le retirer.
   useEffect(() => { void Promise.resolve().then(recharger); }, [recharger]);
 
   // Un lot peut porter plusieurs cartes : on les poste l'une après l'autre vers
