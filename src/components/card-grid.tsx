@@ -61,9 +61,9 @@ export async function CardGrid({ cards }: CardGridProps) {
               >
                 {card.name}
               </div>
-              <div className="mt-1 flex items-center gap-2">
-                <RarityBadge rarity={card.rarity} />
-                <span className="text-xs text-ink-muted">{card.setName}</span>
+              <div className="mt-1 flex min-w-0 items-center gap-2">
+                <RarityBadge rarity={card.rarity} className="shrink-0" />
+                <span className="min-w-0 truncate text-xs text-ink-muted" title={card.setName}>{card.setName}</span>
               </div>
             </div>
           </Link>
