@@ -138,7 +138,7 @@ export function ExportModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="export-modal-title" tabIndex={-1} className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="export-modal-title" tabIndex={-1} className="w-full max-w-lg max-h-[85dvh] overflow-y-auto rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
           <h3 id="export-modal-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             Exporter - {deckTitle}
@@ -170,7 +170,7 @@ export function ExportModal({
               <div>
                 <label htmlFor="export-lien" className="text-sm font-semibold text-ink-secondary">{t("Lien de partage")}</label>
                 <div className="mt-1.5 flex gap-2">
-                  <input id="export-lien" readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-sm text-ink font-mono" />
+                  <input id="export-lien" readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-base sm:text-sm text-ink font-mono" />
                   <button
                     onClick={() => copyToClipboard(shareUrl, "url")}
                     className="flex items-center gap-1 rounded-lg bg-arcane px-3 py-1 text-xs font-semibold text-canvas hover:brightness-110"
@@ -190,7 +190,7 @@ export function ExportModal({
                     value={changelog}
                     onChange={(e) => setChangelog(e.target.value.slice(0, 500))}
                     placeholder={t("Ce qui change (optionnel) - ex : +2 Falling Star, -2 Charm")}
-                    className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-sm text-ink placeholder:text-ink-muted/50"
+                    className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-base sm:text-sm text-ink placeholder:text-ink-muted/50"
                   />
                   {publishError && <p role="alert" className="text-xs text-red-400">{publishError}</p>}
                   {updated ? (
@@ -276,7 +276,7 @@ export function ExportModal({
                         onChange={(e) => setDescription(e.target.value.slice(0, 500))}
                         placeholder={t("Décrivez brièvement votre deck...")}
                         rows={2}
-                        className="mt-1.5 w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-sm text-ink placeholder:text-ink-muted/50 resize-none"
+                        className="mt-1.5 w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2 text-base sm:text-sm text-ink placeholder:text-ink-muted/50 resize-none"
                       />
                       <p className="text-[10px] text-ink-muted text-right">{description.length}/500</p>
                     </div>
@@ -319,7 +319,7 @@ export function ExportModal({
 
           {activeTab === "deckcode" && (
             <div className="relative">
-              <textarea readOnly value={textCode} rows={12} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink" />
+              <textarea readOnly value={textCode} rows={12} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-base sm:text-sm font-mono text-ink" />
               <button
                 onClick={() => copyToClipboard(textCode, "code")}
                 className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
@@ -334,7 +334,7 @@ export function ExportModal({
             <div className="space-y-3">
               <p className="text-xs text-ink-muted">{t("Format Tabletop Simulator - collez dans TTS ou Pixelborn.")}</p>
               <div className="relative">
-                <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink break-all" />
+                <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-base sm:text-sm font-mono text-ink break-all" />
                 <button
                   onClick={() => copyToClipboard(ttsCode, "tts")}
                   className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"

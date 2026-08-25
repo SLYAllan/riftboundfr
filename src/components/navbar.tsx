@@ -86,7 +86,10 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       if (outilsRef.current && !outilsRef.current.contains(e.target as Node)) setOutilsOpen(false);
     };
     const keyHandler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOutilsOpen(false);
+      if (e.key === "Escape") {
+        setOutilsOpen(false);
+        setMobileOpen(false);
+      }
     };
     document.addEventListener("mousedown", handler);
     document.addEventListener("keydown", keyHandler);
@@ -132,6 +135,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOutilsOpen(false)}
+                    aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                     className={cn(
                       "block rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                       pathname.startsWith(link.href)
@@ -181,13 +185,14 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       </nav>
 
       {mobileOpen && (
-        <div id="mobile-menu" className="border-t border-hairline px-4 py-4 lg:hidden glass">
+        <nav id="mobile-menu" aria-label={t("Menu de navigation")} className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-hairline px-4 py-4 lg:hidden glass">
           <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Outils")}</p>
           {outilsLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
+              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
               className={cn(
                 "block rounded-lg px-3 py-2 text-sm font-medium",
                 pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
@@ -202,6 +207,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
+              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
               className={cn(
                 "block rounded-lg px-3 py-2 text-sm font-medium",
                 pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
@@ -214,7 +220,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
             <UserMenu />
             <SelecteurLangue chemin={chemin} compact />
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

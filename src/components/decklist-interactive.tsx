@@ -495,8 +495,9 @@ export function DecklistInteractive({
                   <h3 className="text-sm font-semibold text-ink-secondary mb-2" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]}
                   </h3>
-                  <table className="w-full text-sm">
-                    <thead>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
                       <tr className="border-b border-hairline text-xs text-ink-muted">
                         <th className="text-left py-1 pr-2">Nom</th>
                         <th className="text-left py-1 px-2">Type</th>
@@ -541,8 +542,9 @@ export function DecklistInteractive({
                         </tr>
                         );
                       })}
-                    </tbody>
-                  </table>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               );
             })}

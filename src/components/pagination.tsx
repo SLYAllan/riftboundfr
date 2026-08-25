@@ -38,7 +38,7 @@ export function Pagination({ currentPage, totalPages }: PaginationProps) {
   }
 
   return (
-    <nav aria-label="Pagination" className="flex items-center justify-center gap-1">
+    <nav aria-label="Pagination" className="flex flex-wrap items-center justify-center gap-1">
       {currentPage > 1 && (
         <Link
           href={getPageUrl(currentPage - 1)}

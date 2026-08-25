@@ -54,7 +54,7 @@ interface RowHoverProps {
 
 function tileBtn(extra?: string) {
   return cn(
-    "flex h-6 w-6 items-center justify-center rounded-md bg-canvas/85 text-ink-secondary shadow transition-colors",
+    "flex h-8 w-8 items-center justify-center rounded-md bg-canvas/85 text-ink-secondary shadow transition-colors",
     extra,
   );
 }

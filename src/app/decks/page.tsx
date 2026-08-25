@@ -184,7 +184,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </form>
         {search && <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")} <strong>{search}</strong>. <Link href={hrefDecks({ q: null })} className="text-arcane hover:underline">{t("Effacer la recherche")}</Link></p>}
 
-        <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
+        <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-1 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
           <Link href={hrefDecks({ cat: null, domain: null, tag: null })} className={cn("inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>{t("Compétitifs")}</Link>
           {CATEGORIES.map((c) => {
             const Icon = c.icon;
@@ -195,7 +195,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
               </Link>
             );
           })}
-          <Link href="/deckbuilder" className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
+          <Link href="/deckbuilder" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
         </nav>
 
         <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
@@ -225,7 +225,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Suspense>
             <DeckLegendFilter legends={comLegends.map((l) => l.legendName)} />
           </Suspense>
-          <div className="flex w-full items-center gap-1.5 sm:ml-auto sm:w-auto">
+          <div className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
             <span className="text-xs text-ink-muted">Tri :</span>
             <Link href={comLink({ sort: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !sortParam ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Récent")}</Link>
             <Link href={comLink({ sort: "popular" })} className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", sortParam === "popular" ? "bg-red-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>
@@ -401,7 +401,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </p>
       )}
 
-      <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
+      <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-1 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
         <Link
           href={hrefDecks({ cat: null, domain: null, tag: null })}
           className={cn(
@@ -425,7 +425,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             </Link>
           );
         })}
-        <Link href="/deckbuilder" className="col-span-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
+        <Link href="/deckbuilder" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
       </nav>
 
       {/* Filtre collection : n'apparaît qu'une fois connecté (sinon aucune
@@ -464,7 +464,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Suspense>
           <DeckTournamentFilter options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label, pays: tf.countryCode }))} />
         </Suspense>
-        <div className="flex w-full items-center gap-1.5 sm:ml-auto sm:w-auto">
+        <div className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
           <span className="text-xs text-ink-muted">{t("Tri")}</span>
           <Link
             href={hrefDecks({ sort: null })}

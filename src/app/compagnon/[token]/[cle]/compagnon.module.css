@@ -80,6 +80,10 @@
   border-radius: 0.75rem;
 }
 
+@media (orientation: portrait) and (max-height: 520px) {
+  .joueur { min-height: 0; flex: 1 1 0; }
+}
+
 @media (orientation: landscape) {
   .match { flex-direction: row; }
   .joueur { min-width: 13rem; min-height: 100dvh; flex: 1 1 0; }

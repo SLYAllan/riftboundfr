@@ -103,7 +103,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-canvas/80 backdrop-blur-sm p-4" onClick={onClose}>
-      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="import-modal-title" tabIndex={-1} className="w-full max-w-lg rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="import-modal-title" tabIndex={-1} className="w-full max-w-lg max-h-[85dvh] overflow-y-auto rounded-card border border-hairline bg-surface" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between border-b border-hairline px-5 py-4">
           <div className="flex items-center gap-2">
             <Upload size={18} className="text-arcane" />
@@ -142,7 +142,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
               <input
                 value={text}
                 onChange={(e) => { setText(e.target.value); setLinkError(null); }}
-                className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2.5 text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
+                className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2.5 text-base sm:text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
                 placeholder={currentTab.placeholder}
               />
               {linkError && <p className="text-xs text-red-400">{linkError}</p>}
@@ -152,7 +152,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
               value={text}
               onChange={(e) => setText(e.target.value)}
               rows={10}
-              className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
+              className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-base sm:text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
               placeholder={currentTab.placeholder}
             />
           )}

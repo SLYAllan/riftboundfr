@@ -79,7 +79,7 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
 
   return (
     <div className="search-bar-container relative">
-      <div className="relative flex items-center gap-1.5 rounded-lg border border-hairline-strong bg-surface px-3 py-1.5 focus-within:border-arcane transition-colors">
+      <div className="relative flex items-center gap-1.5 rounded-lg border border-hairline-strong bg-surface px-3 py-1.5 min-h-11 sm:min-h-0 focus-within:border-arcane transition-colors">
         <Search className="text-ink-muted shrink-0" size={15} />
 
         {parsed.tokens.map((token, i) => (
@@ -105,7 +105,7 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
           onChange={handleChange}
           placeholder={parsed.tokens.length > 0 ? t("Ajouter un filtre...") : t("Rechercher... (ex: unit fury energy:3)")}
           aria-label={t("Rechercher une carte")}
-          className="flex-1 min-w-[120px] h-7 bg-transparent text-sm text-ink placeholder:text-ink-muted"
+          className="flex-1 min-w-[120px] h-7 bg-transparent text-base sm:text-sm text-ink placeholder:text-ink-muted"
         />
 
         {(value || parsed.tokens.length > 0) && (
