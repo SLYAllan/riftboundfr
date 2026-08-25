@@ -3,17 +3,12 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useT } from "@/components/i18n-provider";
-
-interface Report {
-  imported: number;
-  rows: number;
-  unmatched: { variantNumber: string; name: string; raison: string }[];
-}
+import { ErreurImport, executerImportPiltover, type RapportImport } from "@/lib/reponses-utilisateur";
 
 export function ImportPiltover({ binderId }: { binderId?: string }) {
   const t = useT();
   const router = useRouter();
-  const [report, setReport] = useState<Report | null>(null);
+  const [report, setReport] = useState<RapportImport | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -24,21 +19,11 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
     setError(null);
     setReport(null);
     try {
-      const text = await file.text();
       const url = binderId ? `/api/collection/import?binderId=${binderId}` : "/api/collection/import";
-      const res = await fetch(url, { method: "POST", body: text });
-      const data = await res.json().catch(() => null);
-      if (!res.ok) {
-        if (Array.isArray(data?.unmatched)) setReport(data as Report);
-        setError(res.status === 401 ? "Connectez-vous avec Discord pour importer votre collection." : "L’import a échoué. Réessayez.");
-        return;
-      }
-      if (!Array.isArray(data?.unmatched) || typeof data?.imported !== "number" || typeof data?.rows !== "number") {
-        throw new Error("réponse invalide");
-      }
-      setReport(data as Report);
-    } catch {
-      setError("Fichier illisible.");
+      setReport(await executerImportPiltover(file, url, fetch));
+    } catch (cause) {
+      if (cause instanceof ErreurImport && cause.rapport) setReport(cause.rapport);
+      setError(cause instanceof Error ? cause.message : "L’import a échoué. Réessayez.");
     } finally {
       setBusy(false);
     }
@@ -57,7 +42,7 @@ export function ImportPiltover({ binderId }: { binderId?: string }) {
         className="text-sm"
       />
       {busy && <p role="status" className="mt-2 text-sm text-ink-muted">{t("Import en cours…")}</p>}
-      {error && <p role="alert" className="mt-2 text-sm text-red-400">{error}</p>}
+      {error && <p role="alert" className="mt-2 text-sm text-red-400">{t(error)}</p>}
       {report && (
         <div role="status" className="mt-3 text-sm">
           <p className="text-arcane">

@@ -15,4 +15,9 @@ describe("navigation de la fiche carte vers les decks", () => {
     expect(finBlocDecks).toBeGreaterThan(blocDecks);
     expect(action).toBeGreaterThan(finBlocDecks);
   });
+
+  test("permet de régler la quantité possédée", () => {
+    expect(source).toContain('import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity"');
+    expect(source).toContain("<CardCollectionQuantity cardId={card.id} />");
+  });
 });

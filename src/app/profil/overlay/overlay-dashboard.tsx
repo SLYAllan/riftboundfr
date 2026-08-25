@@ -108,6 +108,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const [state, setState] = useState<OverlayStateData>(initial);
   const [copied, setCopied] = useState(false);
   const [copieCompagnon, setCopieCompagnon] = useState<"repos" | "copie" | "erreur">("repos");
+  const [erreurLien, setErreurLien] = useState<string | null>(null);
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const etatDiffere = useRef<OverlayStateData | null>(null);
@@ -189,6 +190,17 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       setTimeout(() => setCopieCompagnon("repos"), 1500);
     } catch {
       setCopieCompagnon("erreur");
+    }
+  }
+
+  async function renouvelerLienOverlay() {
+    setErreurLien(null);
+    try {
+      const reponse = await fetch("/api/overlay/token", { method: "POST" });
+      if (!reponse.ok) throw new Error("rotation refusée");
+      location.reload();
+    } catch {
+      setErreurLien(t("Impossible de créer un nouveau lien. Réessayez."));
     }
   }
 
@@ -443,13 +455,14 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             libelle={t("Nouveau lien")}
             confirmation={t("Confirmer ?")}
             icone={<KeyRound size={15} aria-hidden />}
-            onConfirme={() => { fetch("/api/overlay/token", { method: "POST" }).then(() => location.reload()); }}
+            onConfirme={() => void renouvelerLienOverlay()}
             className={btnDanger}
           />
         </div>
         <p className="mt-2 text-xs text-ink-muted">
           {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
+        {erreurLien && <p role="alert" className="mt-2 text-xs text-error-light">{erreurLien}</p>}
 
         <p role="status" aria-live="polite" className="sr-only">{copied ? t("Copié") : ""}</p>
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-hairline pt-3">

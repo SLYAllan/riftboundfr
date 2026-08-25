@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState, useCallback, useRef } from "react";
 import { AlertTriangle, RefreshCw } from "lucide-react";
 import { creerFileCollection, type EtatEnvoi, type CartesEnAttente } from "@/lib/collection-envoi";
+import { lireEtatCollection } from "@/lib/reponses-utilisateur";
 
 interface CollectionCtx {
   quantities: Record<string, number>;
@@ -11,6 +12,8 @@ interface CollectionCtx {
   setQuantity: (cardId: string, qty: number) => void;
   etat: EtatEnvoi;
   renvoyer: () => void;
+  erreurChargement: boolean;
+  recharger: () => void;
 }
 
 const Ctx = createContext<CollectionCtx>({
@@ -20,6 +23,8 @@ const Ctx = createContext<CollectionCtx>({
   setQuantity: () => {},
   etat: "a-jour",
   renvoyer: () => {},
+  erreurChargement: false,
+  recharger: () => {},
 });
 
 export function CollectionProvider({ children }: { children: React.ReactNode }) {
@@ -27,19 +32,23 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(true);
   const [etat, setEtat] = useState<EtatEnvoi>("a-jour");
+  const [erreurChargement, setErreurChargement] = useState(false);
 
-  useEffect(() => {
-    fetch("/api/collection")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (data && typeof data === "object" && !("error" in data) && !("anonymous" in data)) {
-          setQuantities(data as Record<string, number>);
-          setLoggedIn(true);
-        }
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
+  const recharger = useCallback(async () => {
+    setLoading(true);
+    setErreurChargement(false);
+    try {
+      const resultat = await lireEtatCollection(await fetch("/api/collection"));
+      setLoggedIn(resultat.type === "connecte");
+      if (resultat.type === "connecte") setQuantities(resultat.quantities);
+    } catch {
+      setErreurChargement(true);
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => { void Promise.resolve().then(recharger); }, [recharger]);
 
   // Un lot peut porter plusieurs cartes : on les poste l'une après l'autre vers
   // le classeur par défaut. Un 4xx/5xx fait échouer le lot entier, qui reste en
@@ -80,7 +89,7 @@ export function CollectionProvider({ children }: { children: React.ReactNode }) 
   const renvoyer = useCallback(() => file.renvoyer(), [file]);
 
   return (
-    <Ctx.Provider value={{ quantities, loggedIn, loading, setQuantity, etat, renvoyer }}>
+    <Ctx.Provider value={{ quantities, loggedIn, loading, setQuantity, etat, renvoyer, erreurChargement, recharger }}>
       {children}
       {etat === "hors-ligne" && (
         <div data-chrome="collection" className="fixed inset-x-0 bottom-0 z-50 p-4">

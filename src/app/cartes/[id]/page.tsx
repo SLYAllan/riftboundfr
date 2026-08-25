@@ -14,6 +14,7 @@ import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import { tr } from "@/lib/i18n-server";
+import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -134,6 +135,7 @@ export default async function CardDetailPage({ params }: PageProps) {
             {errata && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-amber-400 ring-1 ring-amber-500/30">Errata</span>}
             <span className="text-sm text-ink-secondary">{card.riftboundId}</span>
           </div>
+          <CardCollectionQuantity cardId={card.id} />
           <div className="mt-6 space-y-4">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
               <div>

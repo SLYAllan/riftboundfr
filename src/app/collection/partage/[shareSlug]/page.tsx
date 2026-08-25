@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import Link from "@/components/lien";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur partagé - Riftbound France" },
@@ -22,7 +23,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
       user: { select: { username: true } },
       items: {
         where: { quantity: { gt: 0 } },
-        include: { card: { select: { id: true, name: true, imageUrl: true, set: true, collectorNumber: true } } },
+        include: { card: { select: { id: true, riftboundId: true, name: true, imageUrl: true, set: true, collectorNumber: true } } },
       },
     },
   });
@@ -45,7 +46,12 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
       ) : (
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
           {items.map((it) => (
-            <div key={it.id} className="group relative">
+            <Link
+              key={it.id}
+              href={`/cartes/${it.card.riftboundId}`}
+              aria-label={`${t("Voir la carte")} ${it.card.name}`}
+              className="group relative rounded-game-card focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
               <div className="relative overflow-hidden rounded-game-card">
                 <CardImage src={it.card.imageUrl} alt={it.card.name} size="sm" />
                 {it.quantity > 1 && (
@@ -53,7 +59,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
                 )}
               </div>
               <div className="mt-0.5 truncate text-center text-[10px] text-ink-muted" title={it.card.name}>{it.card.name}</div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

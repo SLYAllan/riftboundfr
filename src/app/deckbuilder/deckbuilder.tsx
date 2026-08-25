@@ -30,6 +30,7 @@ import type { CardData, DeckEntry, DeckState, BuilderTab } from "@/types";
 import type { DeckSection } from "@/types";
 import type { SavedDeck } from "@/lib/deck-storage";
 import { useT } from "@/components/i18n-provider";
+import { lirePublicationDeck } from "@/lib/reponses-utilisateur";
 
 const EMPTY_DECK: DeckState = {
   legend: null,
@@ -94,6 +95,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   // Code de partage du deck communautaire en cours de modification (?maj=).
   const [updateShareCode] = useState<string | null>(() => searchParams.get("maj"));
   const [erreurMaj, setErreurMaj] = useState<string | null>(null);
+  const [brouillonRepris, setBrouillonRepris] = useState(false);
   const isCompetitive = true;
   const initialized = useRef(false);
 
@@ -151,6 +153,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
       if (draft?.deck) {
         setDeck(draft.deck);
         setDeckTitle(draft.title || "Nouveau deck");
+        setBrouillonRepris(true);
         if (draft.deck.legend) setActiveTab("main");
       }
     });
@@ -591,13 +594,10 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
           bfCount: bfTotal,
         }),
       });
-      const data = await res.json();
-      if (data.error) return data.error;
-      if (data.shareCode) {
-        return `${window.location.origin}/d/${data.shareCode}`;
-      }
-    } catch { /* ignore */ }
-    return null;
+      return await lirePublicationDeck(res, window.location.origin);
+    } catch {
+      return "Connexion impossible. Vérifiez votre réseau puis réessayez.";
+    }
   }
 
   // Renvoie null si tout va bien, sinon le message d'erreur à afficher.
@@ -655,11 +655,19 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   ];
 
   return (
-    <div className="flex flex-col h-[calc(100dvh-57px)]">
+    <div className="flex h-[calc(100dvh-69px)] flex-col">
       {erreurMaj && (
         <div role="alert" className="flex items-center gap-2 border-b border-hairline bg-surface px-4 py-2 text-sm text-error">
           <span className="min-w-0 flex-1">{erreurMaj}</span>
           <button onClick={() => setErreurMaj(null)} aria-label="Fermer" className="text-ink-muted hover:text-ink">
+            <X size={14} />
+          </button>
+        </div>
+      )}
+      {brouillonRepris && (
+        <div role="status" className="flex items-center gap-2 border-b border-hairline bg-surface px-4 py-2 text-sm text-ink-secondary">
+          <span className="min-w-0 flex-1">{t("Brouillon repris")}</span>
+          <button type="button" onClick={() => setBrouillonRepris(false)} aria-label={t("Fermer")} className="inline-flex min-h-11 min-w-11 items-center justify-center text-ink-muted hover:text-ink sm:min-h-8 sm:min-w-8">
             <X size={14} />
           </button>
         </div>

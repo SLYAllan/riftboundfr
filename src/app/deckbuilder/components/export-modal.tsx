@@ -110,13 +110,15 @@ export function ExportModal({
   async function handlePublish() {
     setPublishing(true);
     setPublishError(null);
-    const result = await onPublish(!unlisted, { tags: selectedTags, description: description.trim() });
-    if (result?.startsWith("http")) {
-      setPublishedUrl(result);
-    } else if (result) {
-      setPublishError(result);
+    try {
+      const result = await onPublish(!unlisted, { tags: selectedTags, description: description.trim() });
+      if (result?.startsWith("http")) setPublishedUrl(result);
+      else setPublishError(t(result || "Publication impossible. Réessayez."));
+    } catch {
+      setPublishError(t("Connexion impossible. Vérifiez votre réseau puis réessayez."));
+    } finally {
+      setPublishing(false);
     }
-    setPublishing(false);
   }
 
   async function handleUpdate() {
