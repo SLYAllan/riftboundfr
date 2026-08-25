@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
     "scripts/**",
     "prisma/**",
     "data/**",
+    ".firecrawl/**",
     "audit-task*.js",
   ]),
 ]);
