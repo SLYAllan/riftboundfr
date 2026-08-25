@@ -1,6 +1,6 @@
 ---
 name: delegate-wave
-description: Délègue le gros du travail (lecture, recherche, édition mécanique) à des workers pi tournant sur DeepSeek, pendant que Claude Code ou Codex ne fait plus que déléguer et relire. À utiliser dès qu'une tâche demande de balayer beaucoup de fichiers, scraper, parser, résumer ou appliquer un changement répétitif. But : couper la dépense de tokens du modèle cher sans jamais relâcher les RÈGLES ABSOLUES du dépôt.
+description: "Use when une tâche demande de balayer beaucoup de fichiers, scraper, parser, résumer ou appliquer un changement répétitif avec des workers pi sur DeepSeek."
 ---
 
 # Déléguer par vagues à pi + DeepSeek
@@ -29,15 +29,21 @@ les identifiants MCP dataforseo) :
 export DEEPSEEK_API_KEY=sk-...      # shell perso, pas un fichier suivi
 ```
 
-**Sur cette machine, la clé n'est PAS dans l'environnement** : elle est posée dans le
-magasin d'identifiants de pi, `~/.pi/agent/auth.json`, sous `deepseek`. Un
-`echo $DEEPSEEK_API_KEY` vide ne veut donc pas dire qu'elle manque. Avant d'annoncer
-que la vague ne peut pas partir, regarder ce fichier, puis confirmer d'un vrai appel :
+**Sur cette machine, la clé peut vivre dans le magasin d'identifiants de pi.** Un
+`echo $DEEPSEEK_API_KEY` vide ne veut donc pas dire qu'elle manque. Ne jamais lire ni
+afficher le fichier d'identifiants. Confirmer avec un appel qui exerce vraiment un
+outil :
 
 ```bash
 pi -p --provider deepseek --model deepseek-v4-flash --approve \
-   --tools read,grep,glob --session-id wave-test "Réponds uniquement : OK"
+   --tools read,grep,find,ls --no-session \
+   "Utilise read pour lire package.json, puis réponds uniquement avec le champ name."
 ```
+
+Le test réussit seulement si la sortie contient le vrai nom du projet. Un code 0 ne
+suffit pas : si la sortie contient du balisage `DSML` ou un appel d'outil écrit en
+texte, DeepSeek n'a pas exécuté l'outil. Ne pas lancer de vague dans ce cas ; utiliser
+les sous-agents disponibles et signaler l'échec de `pi`.
 
 Deux modèles, deux usages :
 
@@ -55,7 +61,7 @@ contexte (donc **pas** de `-nc`) pour que le worker obéisse aux règles du dép
 ```bash
 # Worker LECTURE SEULE (découverte, recherche) : aucun outil d'écriture
 pi -p --provider deepseek --model deepseek-v4-flash --approve \
-   --tools read,grep,glob --session-id wave-<tache>-1 \
+   --tools read,grep,find,ls --session-id wave-<tache>-1 \
    "Liste chaque fichier de src/ qui importe resolveDeckCards et la ligne."
 
 # Worker ÉDITEUR (premier jet d'un changement mécanique)
