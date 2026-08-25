@@ -7,7 +7,8 @@ import { formatDate } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
-import { metaTraduite, tr } from "@/lib/i18n-server";
+import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
+import { etiquetteLocale } from "@/lib/i18n";
 
 const metadata: Metadata = {
   title: { absolute: "Actualités Riftbound - News, analyses méta et résultats" },
@@ -42,6 +43,7 @@ export default async function ArticlesPage({
 }) {
 
   const t = await tr();
+  const locale = etiquetteLocale(await langueCourante());
   const { category } = await searchParams;
   const categoryValide = category && categories.includes(category) ? category : undefined;
 
@@ -110,7 +112,7 @@ export default async function ArticlesPage({
                   </span>
                   {cc && <CountryBadge code={cc} />}
                   {article.publishedAt && (
-                    <span className="text-xs text-ink-muted">{formatDate(article.publishedAt)}</span>
+                    <span className="text-xs text-ink-muted">{formatDate(article.publishedAt, locale)}</span>
                   )}
                 </div>
                 {/* Deux lignes réservées : un titre court faisait remonter la

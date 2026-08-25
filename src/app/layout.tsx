@@ -110,7 +110,7 @@ const jsonLd = (langue: "fr" | "en") => ({
       publisher: { "@id": "https://riftboundfrance.fr/#organization" },
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://riftboundfrance.fr/cartes?q={search_term_string}",
+        target: `https://riftboundfrance.fr${langue === "fr" ? "" : "/en"}/cartes?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     },

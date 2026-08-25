@@ -17,4 +17,10 @@ describe("liste des articles", () => {
     expect(source).not.toContain("blocks: true");
     expect(source).not.toContain("article.blocks");
   });
+
+  test("formate les dates dans la langue de la page", () => {
+    expect(source).toContain("etiquetteLocale");
+    expect(source).toContain("langueCourante");
+    expect(source).toContain("formatDate(article.publishedAt, locale)");
+  });
 });

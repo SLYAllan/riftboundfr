@@ -19,7 +19,8 @@ import { decodeDeck } from "@/lib/deck-codec";
 import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
-import { metaTraduite, tr } from "@/lib/i18n-server";
+import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
+import { etiquetteLocale } from "@/lib/i18n";
 import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks } from "@/lib/deck-listing";
 import { DecksProgressifs } from "./decks-progressifs";
 
@@ -58,6 +59,7 @@ const CATEGORIES = [
 
 export default async function DecksPage({ searchParams }: PageProps) {
   const t = await tr();
+  const locale = etiquetteLocale(await langueCourante());
   const params = await searchParams;
   const parametresCourants = new URLSearchParams(
     Object.entries(params).filter((entree): entree is [string, string] => typeof entree[1] === "string"),
@@ -302,7 +304,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                             <span className="flex items-center gap-0.5"><Heart size={10} /> {deck.likes}</span>
                             <span className="flex items-center gap-0.5"><Eye size={10} /> {deck.views}</span>
                           </div>
-                          <span className="text-white/75">{formatDate(deck.createdAt)}</span>
+                          <span className="text-white/75">{formatDate(deck.createdAt, locale)}</span>
                         </div>
                       </div>
                     </div>

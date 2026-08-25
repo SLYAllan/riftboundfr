@@ -7,4 +7,6 @@ test("traduit les textes explicatifs et les états des decks", () => {
   expect(source).toContain('t(ownedOnly ? "Voir tous les decks"');
   expect(source).toContain('t("Jouable avec votre collection")');
   expect(source).toContain('t("par")');
+  expect(source).toContain("etiquetteLocale");
+  expect(source).toContain("formatDate(deck.createdAt, locale)");
 });

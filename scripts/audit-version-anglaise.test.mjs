@@ -54,12 +54,13 @@ describe("audit de la version anglaise", () => {
     expect(resultat.sortie).toContain("0 phrase(s) en français");
   });
 
-  it("audite les cartes et les decks sans route explicite", async () => {
+  it("audite les listes principales sans route explicite", async () => {
     const resultat = await lanceAudit(undefined);
 
     expect(resultat.code).toBe(0);
     expect(resultat.sortie).toContain("=== /cartes");
     expect(resultat.sortie).toContain("=== /decks");
+    expect(resultat.sortie).toContain("=== /articles");
   });
 
   it("échoue quand une page anglaise contient du français", async () => {

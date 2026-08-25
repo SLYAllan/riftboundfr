@@ -6,4 +6,5 @@ test("le JSON-LD suit la langue de la page", () => {
   expect(source).toContain("jsonLd(langue)");
   expect(source).toContain('inLanguage: langue');
   expect(source).toContain('langue === "fr"');
+  expect(source).toContain('${langue === "fr" ? "" : "/en"}/cartes?q={search_term_string}');
 });
