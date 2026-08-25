@@ -293,7 +293,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
     setPowerLow(0); setPowerHigh(capP); setMightLow(0); setMightHigh(capM);
   }
 
-  const selectClass = "h-8 rounded-lg border border-hairline-strong bg-surface px-2.5 text-xs text-ink focus:border-arcane cursor-pointer";
+  const selectClass = "min-h-11 sm:h-8 rounded-lg border border-hairline-strong bg-surface px-2.5 text-xs text-ink focus:border-arcane cursor-pointer";
   const showSliderToggle = activeTab === "main" || activeTab === "rune";
 
   return (
