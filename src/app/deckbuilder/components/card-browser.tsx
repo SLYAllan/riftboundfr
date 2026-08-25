@@ -382,7 +382,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
         )}
 
         <div className="grid gap-2 grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8">
-          {filtered.map((card) => (
+          {filtered.slice(0, 120).map((card) => (
             <CardTile
               key={card.id}
               card={card}
@@ -395,6 +395,11 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
             />
           ))}
         </div>
+        {filtered.length > 120 && (
+          <p className="mt-3 text-center text-xs text-ink-muted">
+            120 {t("cartes")} · {t("Affiner les résultats")}
+          </p>
+        )}
         {filtered.length === 0 && (
           <div className="py-12 text-center text-sm text-ink-muted">{t("Aucune carte ne correspond à votre recherche. Modifiez vos filtres.")}</div>
         )}

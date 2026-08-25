@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const source = readFileSync(resolve(__dirname, "card-browser.tsx"), "utf8");
+const recherche = readFileSync(resolve(__dirname, "search-bar.tsx"), "utf8");
 
 describe("accessibilité du navigateur de cartes", () => {
   it("nomme les deux bornes de chaque curseur", () => {
@@ -26,5 +27,11 @@ describe("accessibilité du navigateur de cartes", () => {
 
   it("expose l'état des filtres de domaine", () => {
     expect(source).toContain("aria-pressed={active}");
+  });
+
+  it("garde la recherche tactile et borne les résultats rendus", () => {
+    expect(recherche).toContain("min-h-11");
+    expect(source).toContain("filtered.slice(0, 120).map");
+    expect(source).toContain("filtered.length > 120");
   });
 });

@@ -80,6 +80,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [outilsOpen, setOutilsOpen] = useState(false);
   const outilsRef = useRef<HTMLDivElement>(null);
+  const outilsBoutonRef = useRef<HTMLButtonElement>(null);
   const boutonMobileRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -88,7 +89,10 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
     };
     const keyHandler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setOutilsOpen(false);
+        if (outilsOpen) {
+          setOutilsOpen(false);
+          outilsBoutonRef.current?.focus();
+        }
         if (mobileOpen) {
           setMobileOpen(false);
           boutonMobileRef.current?.focus();
@@ -101,7 +105,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("keydown", keyHandler);
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, outilsOpen]);
 
   if (pathname.startsWith("/admin")) return null;
 
@@ -122,6 +126,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
           {/* Outils dropdown */}
           <div ref={outilsRef} className="relative">
             <button
+              ref={outilsBoutonRef}
               onClick={() => setOutilsOpen(!outilsOpen)}
               aria-expanded={outilsOpen}
               className={cn(
@@ -192,35 +197,39 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       {mobileOpen && (
         <nav id="mobile-menu" aria-label={t("Menu de navigation")} className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-hairline px-4 py-4 lg:hidden glass">
           <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Outils")}</p>
-          {outilsLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
-              className={cn(
-                "block rounded-lg px-3 py-2 text-sm font-medium",
-                pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
-              )}
-            >
-              {t(link.label)}
-            </Link>
-          ))}
+          <div className="grid grid-cols-2 gap-1">
+            {outilsLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                aria-current={pathname.startsWith(link.href) ? "page" : undefined}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium",
+                  pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
+                )}
+              >
+                {t(link.label)}
+              </Link>
+            ))}
+          </div>
           <div className="my-2 border-t border-hairline" />
-          {mainLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              aria-current={pathname.startsWith(link.href) ? "page" : undefined}
-              className={cn(
-                "block rounded-lg px-3 py-2 text-sm font-medium",
-                pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
-              )}
-            >
-              {t(link.label)}
-            </Link>
-          ))}
+          <div className="grid grid-cols-2 gap-1">
+            {mainLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                aria-current={pathname.startsWith(link.href) ? "page" : undefined}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium",
+                  pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
+                )}
+              >
+                {t(link.label)}
+              </Link>
+            ))}
+          </div>
           <div className="mt-2 flex flex-wrap items-center gap-3 border-t border-hairline pt-3 px-3">
             <UserMenu />
             <SelecteurLangue chemin={chemin} compact />

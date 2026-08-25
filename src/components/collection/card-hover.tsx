@@ -89,8 +89,21 @@ export function CardHover({
     <div
       ref={ref}
       className={className}
+      tabIndex={0}
+      role="button"
+      aria-label={name}
+      aria-expanded={hovered}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setHovered(false); setPos(null); }}
+      onFocus={() => setHovered(true)}
+      onBlur={() => { setHovered(false); setPos(null); }}
+      onClick={() => setHovered(true)}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          setHovered(false);
+          setPos(null);
+        }
+      }}
     >
       {children}
       {hovered && src && (

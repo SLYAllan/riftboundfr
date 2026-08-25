@@ -11,4 +11,9 @@ describe("accessibilité de la navigation", () => {
     );
     expect(source).toContain("ref={boutonMobileRef}");
   });
+
+  it("rend aussi le focus au bouton Outils et garde le menu mobile compact", () => {
+    expect(source).toContain("outilsBoutonRef.current?.focus()");
+    expect(source.match(/grid grid-cols-2/g)?.length).toBeGreaterThanOrEqual(2);
+  });
 });

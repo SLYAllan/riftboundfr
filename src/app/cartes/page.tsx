@@ -34,7 +34,7 @@ const metadata: Metadata = {
   },
 };
 
-const PER_PAGE = 48;
+const PER_PAGE = 24;
 
 interface PageProps {
   searchParams: Promise<Record<string, string | undefined>>;
@@ -88,14 +88,14 @@ export default async function CartesPage({ searchParams }: PageProps) {
   const totalPages = Math.ceil(total / PER_PAGE);
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold font-display">{t("Base de données des cartes Riftbound")}</h1>
-      <p className="mt-2 max-w-3xl text-ink-secondary">
+    <div className="mx-auto max-w-[1400px] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
+      <h1 className="text-3xl font-bold font-display sm:text-4xl">{t("Base de données des cartes Riftbound")}</h1>
+      <p className="mt-2 max-w-3xl text-sm leading-6 text-ink-secondary sm:text-base">
         {t("Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.")}
       </p>
-      <div className="mt-8"><Suspense><SearchBar /></Suspense></div>
+      <div className="mt-4 sm:mt-8"><Suspense><SearchBar /></Suspense></div>
       <div className="mt-4"><Suspense><CardFilters total={total} /></Suspense></div>
-      <div className="mt-8"><CardGrid cards={cards} /></div>
+      <div className="mt-6 sm:mt-8"><CardGrid cards={cards} /></div>
       <div className="mt-8"><Suspense><Pagination currentPage={page} totalPages={totalPages} /></Suspense></div>
     </div>
   );

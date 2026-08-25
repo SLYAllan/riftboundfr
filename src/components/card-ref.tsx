@@ -49,12 +49,24 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
     if (fetched.current) return;
     fetched.current = true;
     fetch(`/api/cards/preview?name=${encodeURIComponent(name)}`)
-      .then((r) => (r.ok ? r.json() : null))
+      .then((r) => {
+        if (r.status === 404) {
+          cache.set(name, null);
+          setCard(null);
+          return undefined;
+        }
+        if (!r.ok) throw new Error(`Aperçu indisponible (${r.status})`);
+        return r.json();
+      })
       .then((data) => {
+        if (data === undefined) return;
+        if (data === null || typeof data !== "object" || !("name" in data)) {
+          throw new Error("Aperçu invalide");
+        }
         cache.set(name, data);
         setCard(data);
       })
-      .catch(() => {});
+      .catch(() => { fetched.current = false; });
   }, [name]);
 
   const show = useCallback(() => {
