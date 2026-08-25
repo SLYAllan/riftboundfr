@@ -29,11 +29,10 @@ describe("accessibilité du navigateur de cartes", () => {
     expect(source).toContain("aria-pressed={active}");
   });
 
-  it("garde la recherche tactile et borne les résultats rendus", () => {
+  it("garde la recherche tactile sans tronquer les résultats", () => {
     expect(recherche).toMatch(/<input[\s\S]{0,400}className="[^"]*h-11[^"]*sm:h-7/);
     expect(source).toContain('const selectClass = "min-h-11 sm:min-h-8 sm:h-8');
-    expect(source).toContain("filtered.slice(0, 120).map");
-    expect(source).toContain("filtered.length > 120");
+    expect(source).not.toContain("filtered.slice(");
   });
 
   it("rend la carte et les filtres utilisables au clavier et au toucher", () => {

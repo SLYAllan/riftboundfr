@@ -2,6 +2,11 @@
 
 ## Session du 25 août 2026 — audit global du parcours utilisateur
 
+Correctif ajouté après la passe : le deckbuilder ne tronque plus sa grille à
+120 cartes et propose un filtre « Mot-clé » tiré des tags réels de l'onglet.
+Contrôle : 54 fichiers et 290 tests verts, lint sans erreur, puis
+`npm run verify` avec un code de sortie 0.
+
 Les 29 commits de la passe sont poussés sur `origin/main`, de `cc2486c9` à
 `71e10e90`. Aucun seed ni changement de base n'a été fait.
 

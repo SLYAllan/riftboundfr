@@ -9,6 +9,8 @@
  * officielle anglaise de Riftbound, pas une traduction littérale du français.
  */
 export const EN: Record<string, string> = {
+  "Mot-clé": "Keyword",
+  "Tous les mots-clés": "All keywords",
   // — Navigation et pied de page —
   "Action impossible. Réessaie.": "Could not do that. Try again.",
   "Action impossible. Vérifie ta connexion.": "Could not do that. Check your connection.",

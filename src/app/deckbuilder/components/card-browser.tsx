@@ -7,6 +7,7 @@ import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { CardDetailModal } from "./card-detail-modal";
 import { SearchBar } from "./search-bar";
 import { parseSearchQuery, getSetCodesFromAlias, type ParsedSearch } from "../lib/search-parser";
+import { filtrerParMotCle, listerMotsCles } from "../lib/card-keywords";
 import type { CardData, BuilderTab } from "@/types";
 import { useT } from "@/components/i18n-provider";
 
@@ -177,6 +178,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
   const [mightHigh, setMightHigh] = useState(capM);
   const [showSliders, setShowSliders] = useState(false);
   const [sortBy, setSortBy] = useState<SortKey>("energy");
+  const [selectedKeyword, setSelectedKeyword] = useState("");
   const [detailCard, setDetailCard] = useState<CardData | null>(null);
 
   const parsed = useMemo(() => parseSearchQuery(searchQuery), [searchQuery]);
@@ -190,6 +192,9 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       return true;
     });
   }, [cards, activeTab]);
+
+  const keywords = useMemo(() => listerMotsCles(tabCards), [tabCards]);
+  const activeKeyword = keywords.includes(selectedKeyword) ? selectedKeyword : "";
 
   const toggleDomain = useCallback((d: string) => {
     setSelectedDomains((prev) => {
@@ -282,15 +287,15 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       return a.name.localeCompare(b.name);
     });
 
-    return result;
-  }, [tabCards, parsed, selectedDomains, activeTab, sortBy, energyLow, energyHigh, powerLow, powerHigh, mightLow, mightHigh, hasLegend, legendDomains, legendFirstName]);
+    return filtrerParMotCle(result, activeKeyword);
+  }, [tabCards, parsed, selectedDomains, activeTab, sortBy, activeKeyword, energyLow, energyHigh, powerLow, powerHigh, mightLow, mightHigh, hasLegend, legendDomains, legendFirstName]);
 
   const hasFilters =
-    selectedDomains.size > 0 || searchQuery.trim() !== "" ||
+    selectedDomains.size > 0 || activeKeyword !== "" || searchQuery.trim() !== "" ||
     energyLow > 0 || energyHigh < capE || powerLow > 0 || powerHigh < capP || mightLow > 0 || mightHigh < capM;
 
   function resetFilters() {
-    setSearchQuery(""); setSelectedDomains(new Set());
+    setSearchQuery(""); setSelectedDomains(new Set()); setSelectedKeyword("");
     setEnergyLow(0); setEnergyHigh(capE);
     setPowerLow(0); setPowerHigh(capP); setMightLow(0); setMightHigh(capM);
   }
@@ -339,6 +344,11 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
             {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
 
+          <select aria-label={t("Mot-clé")} className={selectClass} value={activeKeyword} onChange={(e) => setSelectedKeyword(e.target.value)}>
+            <option value="">{t("Tous les mots-clés")}</option>
+            {keywords.map((keyword) => <option key={keyword} value={keyword}>{keyword}</option>)}
+          </select>
+
           {showSliderToggle && (
             <button
               onClick={() => setShowSliders(!showSliders)}
@@ -384,7 +394,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
         )}
 
         <div className="grid gap-2 grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8">
-          {filtered.slice(0, 120).map((card) => (
+          {filtered.map((card) => (
             <CardTile
               key={card.id}
               card={card}
@@ -397,11 +407,6 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
             />
           ))}
         </div>
-        {filtered.length > 120 && (
-          <p className="mt-3 text-center text-xs text-ink-muted">
-            120 {t("cartes")} · {t("Affiner les résultats")}
-          </p>
-        )}
         {filtered.length === 0 && (
           <div className="py-12 text-center text-sm text-ink-muted">{t("Aucune carte ne correspond à votre recherche. Modifiez vos filtres.")}</div>
         )}
