@@ -50,12 +50,31 @@ export function comparerPlacements(a: string | null, b: string | null): number {
   return rangA - rangB;
 }
 
+/**
+ * Vendetta par défaut, mais seulement sur la vue de départ. Un lien qui porte déjà
+ * une intention (Légende, tournoi, best-of, recherche) ne doit pas se faire vider
+ * par un set qu'il n'a pas demandé : aucun des 431 decks best-of n'est en Vendetta,
+ * et « Best of » rendait « Aucun deck ». Même piège pour `/decks?legend=` venu de
+ * `/legendes` et de la tier list.
+ */
+export function setParDefaut(params: Record<string, string | undefined>): string | undefined {
+  if (params.set === "all") return undefined;
+  if (params.set) return params.set;
+  const intentionDejaPosee =
+    params.cat === "community" ||
+    params.cat === "bestof" ||
+    Boolean(params.legend) ||
+    Boolean(params.tournament) ||
+    Boolean((params.q ?? "").trim());
+  return intentionDejaPosee ? undefined : "Vendetta";
+}
+
 export function lireFiltresDecks(params: Record<string, string | undefined>): FiltresDecks {
   const offset = Number.parseInt(params.offset ?? "0", 10);
   return {
     cat: params.cat === "bestof" || params.cat === "guide" || params.cat === "all" ? params.cat : undefined,
     legend: params.legend || undefined,
-    set: params.cat === "community" || params.set === "all" ? undefined : params.set || "Vendetta",
+    set: setParDefaut(params),
     tournament: params.tournament || undefined,
     q: (params.q ?? "").trim(),
     sort:

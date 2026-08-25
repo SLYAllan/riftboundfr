@@ -6,7 +6,7 @@ import { getUserFromSession } from "./session";
 import { comparerPlacements, construireWhere } from "./deck-listing-params";
 import type { DeckListe, FiltresDecks, LotDecks } from "./deck-listing-params";
 
-export { construireWhere, lireFiltresDecks, modifierParametresDecks, parametresDecks } from "./deck-listing-params";
+export { construireWhere, lireFiltresDecks, modifierParametresDecks, parametresDecks, setParDefaut } from "./deck-listing-params";
 
 // Six rangées suffisent pour choisir sans transformer la page en mur de vignettes.
 export const TAILLE_LOT_DECKS = 18;

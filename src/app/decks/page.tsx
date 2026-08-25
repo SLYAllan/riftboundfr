@@ -21,7 +21,7 @@ import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
-import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks } from "@/lib/deck-listing";
+import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks, setParDefaut } from "@/lib/deck-listing";
 import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
@@ -71,7 +71,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
   const cat = params.cat;
   const legendFilter = params.legend;
   const setParam = params.set;
-  const setFilter = setParam === "all" ? undefined : setParam ?? "Vendetta";
+  const setFilter = setParDefaut(params);
   const tournamentFilter = params.tournament;
   const sortParam = params.sort;
   const search = (params.q ?? "").trim();
@@ -458,7 +458,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             nom="set"
             libelle={t("Filtrer par set")}
             toutes={t("Tous les sets")}
-            valeurParDefaut="Vendetta"
+            valeurParDefaut={setFilter ?? "all"}
             options={(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => ({ valeur: s, libelle: s }))}
           />
         </Suspense>

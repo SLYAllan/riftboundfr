@@ -26,6 +26,24 @@ describe("construireWhere", () => {
     expect(lireFiltresDecks({ cat: "community" }).set).toBeUndefined();
   });
 
+  // Aucun des 431 decks best-of n'est en Vendetta : le défaut rendait « Aucun deck ».
+  it("ne donne pas de set par défaut au best-of", () => {
+    expect(lireFiltresDecks({ cat: "bestof" }).set).toBeUndefined();
+    expect(construireWhere(lireFiltresDecks({ cat: "bestof" })).setTag).toBeUndefined();
+  });
+
+  // Liens venus de /legendes, de la tier list et des pages de tournoi.
+  it("ne donne pas de set par défaut quand le lien porte déjà une intention", () => {
+    expect(lireFiltresDecks({ legend: "Garen, Might of Demacia" }).set).toBeUndefined();
+    expect(lireFiltresDecks({ tournament: "hartford-rq" }).set).toBeUndefined();
+    expect(lireFiltresDecks({ q: "Draven" }).set).toBeUndefined();
+  });
+
+  it("garde un set demandé même sur un lien qui porte une intention", () => {
+    expect(lireFiltresDecks({ cat: "bestof", set: "Unleashed" }).set).toBe("Unleashed");
+    expect(lireFiltresDecks({ legend: "Annie", set: "Vendetta" }).set).toBe("Vendetta");
+  });
+
   it('"Tous" montre tous les decks publiés', () => {
     const where = construireWhere(base);
     expect(where.OR).toBeUndefined();
