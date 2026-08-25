@@ -1,6 +1,6 @@
 ---
 name: delegate-wave
-description: "Use when une tâche demande de balayer beaucoup de fichiers, scraper, parser, résumer ou appliquer un changement répétitif avec des workers pi sur DeepSeek."
+description: Délègue le gros du travail (lecture, recherche, édition mécanique) à des workers pi tournant sur DeepSeek, pendant que Claude Code ou Codex ne fait plus que déléguer et relire. À utiliser dès qu'une tâche demande de balayer beaucoup de fichiers, scraper, parser, résumer ou appliquer un changement répétitif. But : couper la dépense de tokens du modèle cher sans jamais relâcher les RÈGLES ABSOLUES du dépôt.
 ---
 
 # Déléguer par vagues à pi + DeepSeek

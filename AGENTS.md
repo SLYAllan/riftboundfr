@@ -474,7 +474,8 @@ aucun skill du dépôt, et `delegate-wave` n'était employé que d'un côté. Ch
 a maintenant son panneau dans `.claude/skills/<nom>/SKILL.md`, qui ne porte que le
 nom, la description et « lis `.agents/skills/<nom>/SKILL.md` ». **Un nouveau skill
 se pose des deux côtés** : le fond dans `.agents/skills/`, le panneau dans
-`.claude/skills/`.
+`.claude/skills/`. Une description qui change se recopie dans le panneau :
+elles ont déjà divergé une fois.
 
 Les six règles d'écriture française ne sont donc plus réservées à Claude Code : le
 skill `reecrire` les porte des deux côtés. Une tâche qui produit du texte français
