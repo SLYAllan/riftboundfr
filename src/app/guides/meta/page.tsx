@@ -246,6 +246,7 @@ export default async function GuideMetaPage() {
 
         <div className="flex flex-wrap gap-3">
           <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Voir la Tier List complète")}</Link>
+          <Link href="/meta" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink hover:opacity-90">{t("Les chiffres à jour")}</Link>
           <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Guide de deckbuilding")}</Link>
           <Link href="/tournois" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">{t("Résultats de tournois")}</Link>
         </div>
