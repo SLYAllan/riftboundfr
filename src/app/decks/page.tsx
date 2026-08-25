@@ -70,7 +70,8 @@ export default async function DecksPage({ searchParams }: PageProps) {
   };
   const cat = params.cat;
   const legendFilter = params.legend;
-  const setFilter = params.set;
+  const setParam = params.set;
+  const setFilter = setParam === "all" ? undefined : setParam ?? "Vendetta";
   const tournamentFilter = params.tournament;
   const sortParam = params.sort;
   const search = (params.q ?? "").trim();
@@ -189,7 +190,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             const Icon = c.icon;
             const isActive = !c.isLink && cat === c.key;
             return (
-              <Link key={c.key} href={hrefDecks({ cat: c.key, domain: c.key === "community" ? domainFilter ?? null : null, tag: c.key === "community" ? tagFilter ?? null : null, set: c.key === "community" ? null : setFilter ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })} className={cn("inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors", isActive ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>
+              <Link key={c.key} href={hrefDecks({ cat: c.key, domain: c.key === "community" ? domainFilter ?? null : null, tag: c.key === "community" ? tagFilter ?? null : null, set: c.key === "community" ? null : setParam ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })} className={cn("inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors", isActive ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>
                 <Icon size={15} /> {t(c.label)}
               </Link>
             );
@@ -411,7 +412,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           return (
             <Link
               key={c.key}
-              href={hrefDecks({ cat: c.key, domain: null, tag: null, set: c.key === "community" ? null : setFilter ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })}
+              href={hrefDecks({ cat: c.key, domain: null, tag: null, set: c.key === "community" ? null : setParam ?? null, tournament: c.key === "community" ? null : tournamentFilter ?? null })}
               className={cn(
                 "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition-colors",
                 isActive ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink",
@@ -454,6 +455,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             nom="set"
             libelle={t("Filtrer par set")}
             toutes={t("Tous les sets")}
+            valeurParDefaut="Vendetta"
             options={(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => ({ valeur: s, libelle: s }))}
           />
         </Suspense>

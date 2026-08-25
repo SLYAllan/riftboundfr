@@ -55,7 +55,7 @@ export function lireFiltresDecks(params: Record<string, string | undefined>): Fi
   return {
     cat: params.cat === "bestof" || params.cat === "guide" || params.cat === "all" ? params.cat : undefined,
     legend: params.legend || undefined,
-    set: params.set || undefined,
+    set: params.cat === "community" || params.set === "all" ? undefined : params.set || "Vendetta",
     tournament: params.tournament || undefined,
     q: (params.q ?? "").trim(),
     sort:

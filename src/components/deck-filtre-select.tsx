@@ -16,31 +16,33 @@ export function DeckFiltreSelect({
   nom,
   libelle,
   toutes,
+  valeurParDefaut = "",
   options,
 }: {
   nom: string;
   libelle: string;
   toutes: string;
+  valeurParDefaut?: string;
   options: Array<{ valeur: string; libelle: string }>;
 }) {
   const t = useT();
   const router = useRouter();
   const lien = useLien();
   const params = useSearchParams();
-  const courant = params.get(nom) ?? "";
+  const courant = params.get(nom) ?? valeurParDefaut;
 
   return (
     <select
       value={courant}
       aria-label={libelle}
       onChange={(e) => {
-        const suivant = modifierParametresDecks(params, { [nom]: e.target.value || null });
+        const suivant = modifierParametresDecks(params, { [nom]: e.target.value });
         const q = suivant.toString();
         router.push(lien(q ? `/decks?${q}` : "/decks"));
       }}
       className="h-11 min-h-11 cursor-pointer rounded-lg border border-hairline-strong bg-surface px-3 text-sm text-ink focus:border-arcane"
     >
-      <option value="">{t(toutes)}</option>
+      <option value="all">{t(toutes)}</option>
       {options.map((o) => (
         <option key={o.valeur} value={o.valeur}>
           {o.libelle}
