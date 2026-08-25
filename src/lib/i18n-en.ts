@@ -262,6 +262,7 @@ export const EN: Record<string, string> = {
   "Collez un lien de deck communautaire pour l’importer dans le deckbuilder.":
     "Paste a community deck link to load it into the deckbuilder.",
   "Cliquez sur une légende pour commencer": "Pick a Legend to get started",
+  "Ajoutez des cartes depuis l’onglet Deck": "Add cards from the Deck tab",
   "Retirer une copie": "Remove one copy",
   "Ajouter une copie": "Add one copy",
   "Déplacer vers l’autre section": "Move to the other section",

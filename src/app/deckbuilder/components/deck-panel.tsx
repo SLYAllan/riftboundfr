@@ -308,6 +308,8 @@ export function DeckPanelV2({
               />
             ))}
           </div>
+        ) : deck.legend ? (
+          <div className="px-2 py-1.5 text-xs italic text-ink-muted">{t("Ajoutez des cartes depuis l’onglet Deck")}</div>
         ) : EMPTY_HINT}
       </CollapsibleSection>
 

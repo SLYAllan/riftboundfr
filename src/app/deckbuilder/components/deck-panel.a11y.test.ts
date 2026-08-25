@@ -10,4 +10,10 @@ describe("sections repliables du panneau de deck", () => {
     // un lecteur d'écran ne sait pas si « Légende » est ouvert ou fermé.
     expect(source).toContain("aria-expanded={open}");
   });
+
+  it("guide l’ajout de cartes quand une Légende existe dans un deck vide", () => {
+    expect(source).toMatch(
+      /\{sortedMain\.length > 0 \?[\s\S]*?\) : deck\.legend \? \([\s\S]*?Ajoutez des cartes depuis l’onglet Deck[\s\S]*?\) : EMPTY_HINT\}/,
+    );
+  });
 });
