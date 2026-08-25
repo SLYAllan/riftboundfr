@@ -59,6 +59,7 @@ export function TierListTabs({
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [toucheEntry, setToucheEntry] = useState<string | null>(null);
   const activeTierList = tierLists.find((tl) => tl.id === activeTab)!;
+  const setOnglet = !activeTierList.setContext || activeTierList.setContext === "Global" ? "all" : activeTierList.setContext;
 
   const grouped = activeTierList.entries.reduce(
     (acc, entry) => {
@@ -100,6 +101,8 @@ export function TierListTabs({
         </div>
       </div>
 
+      {/* Le set de l'onglet suit le lien vers /decks : sans lui, cliquer une Légende
+          dans l'onglet Origins tombait sur les listes du set par défaut. */}
       <p className="mt-4 text-center text-sm text-ink-muted">
         {t("Dernière mise à jour")} : {formatDate(activeTierList.updatedAt, etiquetteLocale(langue))}
         {activeTierList.setContext && ` - Set ${activeTierList.setContext}`}
@@ -139,8 +142,8 @@ export function TierListTabs({
                       key={entry.id}
                       // L'infobulle ne se déclenche jamais au doigt : sur mobile
                       // la vignette était muette. Le lien donne une sortie, et
-                      // /decks filtre déjà sur ?legend=.
-                      href={`/decks?legend=${encodeURIComponent(entry.legendName)}`}
+                      // /decks filtre déjà sur ?legend= et ?set=.
+                      href={`/decks?legend=${encodeURIComponent(entry.legendName)}&set=${encodeURIComponent(setOnglet)}`}
                       aria-label={`${t("Voir les decks")} ${nom}`}
                       aria-describedby={entry.comment ? `tier-comment-${entry.id}` : undefined}
                       title={nom}
