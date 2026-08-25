@@ -5,9 +5,10 @@ import { RotateCcw, Plus, SlidersHorizontal, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { CardDetailModal } from "./card-detail-modal";
+import { KeywordFilter } from "./keyword-filter";
 import { SearchBar } from "./search-bar";
 import { parseSearchQuery, getSetCodesFromAlias, type ParsedSearch } from "../lib/search-parser";
-import { filtrerParMotCle, listerMotsCles } from "../lib/card-keywords";
+import { filtrerParMotCle, listerMotsCles } from "@/lib/card-keywords";
 import type { CardData, BuilderTab } from "@/types";
 import { useT } from "@/components/i18n-provider";
 
@@ -193,9 +194,6 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
     });
   }, [cards, activeTab]);
 
-  const keywords = useMemo(() => listerMotsCles(tabCards), [tabCards]);
-  const activeKeyword = keywords.includes(selectedKeyword) ? selectedKeyword : "";
-
   const toggleDomain = useCallback((d: string) => {
     setSelectedDomains((prev) => {
       const next = new Set(prev);
@@ -205,7 +203,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
     });
   }, []);
 
-  const filtered = useMemo(() => {
+  const filteredWithoutKeyword = useMemo(() => {
     const freeText = parsed.freeText.toLowerCase();
     const seenRuneNames = new Set<string>();
 
@@ -218,7 +216,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
             if (c.type.toLowerCase() !== token.value) return false;
             break;
           case "domain":
-            if (!c.domains.some((d) => d.toLowerCase() === token.value) && c.domains.length > 0) return false;
+            if (!c.domains.some((d) => d.toLowerCase() === token.value)) return false;
             break;
           case "set": {
             const setCodes = getSetCodesFromAlias(token.value);
@@ -249,7 +247,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
         }
       }
 
-      if (selectedDomains.size > 0 && !c.domains.some((d) => selectedDomains.has(d)) && c.domains.length > 0) return false;
+      if (selectedDomains.size > 0 && !c.domains.some((d) => selectedDomains.has(d))) return false;
 
       if (activeTab !== "legend") {
         if (c.energy != null && (c.energy < energyLow || c.energy > energyHigh)) return false;
@@ -287,8 +285,12 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       return a.name.localeCompare(b.name);
     });
 
-    return filtrerParMotCle(result, activeKeyword);
-  }, [tabCards, parsed, selectedDomains, activeTab, sortBy, activeKeyword, energyLow, energyHigh, powerLow, powerHigh, mightLow, mightHigh, hasLegend, legendDomains, legendFirstName]);
+    return result;
+  }, [tabCards, parsed, selectedDomains, activeTab, sortBy, energyLow, energyHigh, powerLow, powerHigh, mightLow, mightHigh, hasLegend, legendDomains, legendFirstName]);
+
+  const keywords = useMemo(() => listerMotsCles(filteredWithoutKeyword), [filteredWithoutKeyword]);
+  const activeKeyword = keywords.some(({ value }) => value === selectedKeyword) ? selectedKeyword : "";
+  const filtered = useMemo(() => filtrerParMotCle(filteredWithoutKeyword, activeKeyword), [filteredWithoutKeyword, activeKeyword]);
 
   const hasFilters =
     selectedDomains.size > 0 || activeKeyword !== "" || searchQuery.trim() !== "" ||
@@ -344,10 +346,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
             {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
           </select>
 
-          <select aria-label={t("Mot-clé")} className={selectClass} value={activeKeyword} onChange={(e) => setSelectedKeyword(e.target.value)}>
-            <option value="">{t("Tous les mots-clés")}</option>
-            {keywords.map((keyword) => <option key={keyword} value={keyword}>{keyword}</option>)}
-          </select>
+          <KeywordFilter options={keywords} value={activeKeyword} onChange={setSelectedKeyword} />
 
           {showSliderToggle && (
             <button

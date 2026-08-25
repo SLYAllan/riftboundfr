@@ -3,8 +3,11 @@
 ## Session du 25 août 2026 — audit global du parcours utilisateur
 
 Correctif ajouté après la passe : le deckbuilder ne tronque plus sa grille à
-120 cartes et propose un filtre « Mot-clé » tiré des tags réels de l'onglet.
-Contrôle : 54 fichiers et 290 tests verts, lint sans erreur, puis
+120 cartes. Son menu « Mécaniques » lit le texte des cartes pour reconnaître les
+mots-clés officiels, l'XP et les déclencheurs. Il ne propose que les choix encore
+présents après les filtres de domaine, Légende, coût, type et recherche, avec le
+nombre de cartes pour chaque choix.
+Contrôle : 55 fichiers et 292 tests verts, lint sans erreur, puis
 `npm run verify` avec un code de sortie 0.
 
 Les 29 commits de la passe sont poussés sur `origin/main`, de `cc2486c9` à
