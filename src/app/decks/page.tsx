@@ -212,9 +212,9 @@ export default async function DecksPage({ searchParams }: PageProps) {
         {/* Tag filters */}
         <div className="mt-2 flex flex-wrap gap-1.5">
           <Link href={comLink({ tag: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !tagFilter ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Tous styles")}</Link>
-          {TAG_OPTIONS.map((t) => (
-            <Link key={t} href={comLink({ tag: tagFilter === t ? null : t })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors capitalize", tagFilter === t ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
-              {t}
+          {TAG_OPTIONS.map((tag) => (
+            <Link key={tag} href={comLink({ tag: tagFilter === tag ? null : tag })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors capitalize", tagFilter === tag ? "bg-violet-dark text-white" : "bg-surface-raised text-ink-muted hover:text-ink")}>
+              {t(tag)}
             </Link>
           ))}
         </div>
@@ -241,7 +241,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           {communityDecks.length} {t(communityDecks.length === 1 ? "deck communautaire" : "decks communautaires")}
           {legendFilter && <span>{" "}{t("pour")}{" "}<strong className="text-arcane">{legendFilter}</strong></span>}
           {domainFilter && <span> &middot; <strong>{domainFilter}</strong></span>}
-          {tagFilter && <span> &middot; <strong className="capitalize">{tagFilter}</strong></span>}
+          {tagFilter && <span> &middot; <strong className="capitalize">{t(tagFilter)}</strong></span>}
         </div>
 
         {communityDecks.length === 0 ? (

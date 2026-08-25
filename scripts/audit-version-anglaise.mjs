@@ -11,7 +11,7 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const BASE = process.env.BASE ?? "http://localhost:3000";
-const ROUTES_PAR_DEFAUT = ["/", "/cartes", "/decks", "/articles"];
+const ROUTES_PAR_DEFAUT = ["/", "/cartes", "/decks", "/decks?cat=community", "/articles"];
 
 // Mots qui n'existent qu'en français. Volontairement courts et fréquents : ils
 // suffisent à repérer une phrase entière restée en français.

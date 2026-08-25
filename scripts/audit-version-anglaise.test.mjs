@@ -61,6 +61,7 @@ describe("audit de la version anglaise", () => {
     expect(resultat.sortie).toContain("=== /cartes");
     expect(resultat.sortie).toContain("=== /decks");
     expect(resultat.sortie).toContain("=== /articles");
+    expect(resultat.sortie).toContain("=== /decks?cat=community");
   });
 
   it("échoue quand une page anglaise contient du français", async () => {

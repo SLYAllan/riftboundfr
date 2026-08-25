@@ -9,4 +9,7 @@ test("traduit les textes explicatifs et les états des decks", () => {
   expect(source).toContain('t("par")');
   expect(source).toContain("etiquetteLocale");
   expect(source).toContain("formatDate(deck.createdAt, locale)");
+  expect(source).toContain("TAG_OPTIONS.map((tag)");
+  expect(source).toContain("{t(tag)}");
+  expect(source).toContain("{t(tagFilter)}");
 });

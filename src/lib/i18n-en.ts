@@ -1132,4 +1132,6 @@ export const EN: Record<string, string> = {
   "Connexion indisponible": "Sign-in unavailable",
   "Déconnexion...": "Signing out...",
   "Contenu à importer": "Content to import",
+  "contrôle": "control",
+  "compétitif": "competitive",
 };
