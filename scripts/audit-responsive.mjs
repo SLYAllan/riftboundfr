@@ -39,6 +39,7 @@ const ECRANS = [
   { nom: "tablette-768x1024", width: 768, height: 1024, mobile: false },
   { nom: "mobile-430x932", width: 430, height: 932, mobile: true },
   { nom: "mobile-375x812", width: 375, height: 812, mobile: true },
+  { nom: "mobile-320x568", width: 320, height: 568, mobile: true },
 ];
 
 // Tout se mesure dans la page : une supposition sur une classe Tailwind ne prouve rien.
