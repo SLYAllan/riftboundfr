@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useLien, useT } from "@/components/i18n-provider";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Link2 } from "lucide-react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CARD_TYPES, RARITIES } from "@/lib/utils";
 import { DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
@@ -39,6 +40,7 @@ export function CardFilters({ total }: { total: number }) {
   const lien = useLien();
   const t = useT();
   const searchParams = useSearchParams();
+  const [copie, setCopie] = useState<"ok" | "erreur" | null>(null);
 
   function set(key: string, value: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -50,6 +52,15 @@ export function CardFilters({ total }: { total: number }) {
 
   function effacerTout() {
     router.push(lien("/cartes"));
+  }
+
+  async function copierLien() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopie("ok");
+    } catch {
+      setCopie("erreur");
+    }
   }
 
   const get = (key: string) => searchParams.get(key) ?? "all";
@@ -146,6 +157,12 @@ export function CardFilters({ total }: { total: number }) {
             <button type="button" onClick={effacerTout} className="inline-flex min-h-11 items-center text-arcane hover:underline sm:min-h-6">
               {t("Tout effacer")}
             </button>
+            <button type="button" onClick={copierLien} className="inline-flex min-h-11 items-center gap-1 text-arcane hover:underline sm:min-h-6">
+              <Link2 size={14} aria-hidden="true" /> {t("Copier le lien")}
+            </button>
+            <span aria-live="polite" className="sr-only">
+              {copie === "ok" ? t("Lien copié") : copie === "erreur" ? t("Impossible de copier le lien") : ""}
+            </span>
           </>
         )}
       </div>

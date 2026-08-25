@@ -12,4 +12,14 @@ describe("liste des cartes", () => {
     expect(source).toContain("text-3xl");
     expect(source).toContain("sm:text-4xl");
   });
+
+  it("borne une page trop grande après avoir compté les cartes", () => {
+    expect(source).toContain("const pageDemandee = Math.max(1, Number(params.page) || 1)");
+    expect(source).toContain("const page = Math.min(pageDemandee, Math.max(1, totalPages))");
+    expect(source.indexOf("prisma.card.count")).toBeLessThan(source.indexOf("prisma.card.findMany"));
+  });
+
+  it("ignore une recherche vide après nettoyage", () => {
+    expect(source).toContain("const search = params.q?.trim()");
+  });
 });

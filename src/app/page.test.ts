@@ -18,4 +18,9 @@ describe("actions principales de l'accueil", () => {
     expect(source).toContain('t("Les données n’ont pas pu se charger.")');
     expect(source).toContain("cardCount > 0");
   });
+
+  test("ouvre la page méta depuis la carte dédiée", () => {
+    expect(source).toContain('href: "/meta"');
+    expect(source).not.toContain('href: "/guides/meta"');
+  });
 });

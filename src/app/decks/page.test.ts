@@ -26,3 +26,9 @@ test("affiche Vendetta par défaut et garde Tous les sets explicite", () => {
   const source = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
   expect(source).toContain('valeurParDefaut="Vendetta"');
 });
+
+test("permet d'effacer tous les filtres d'un coup", () => {
+  const source = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
+  expect(source).toContain('t("Effacer les filtres")');
+  expect(source).toContain('href="/decks?set=all"');
+});

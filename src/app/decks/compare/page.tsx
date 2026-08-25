@@ -1,13 +1,12 @@
 export const dynamic = "force-dynamic";
 
 import type { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { DeckCompare } from "./deck-compare";
 import type { DecklistCard, DeckSection } from "@/types";
 import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
 import { findCard } from "@/lib/card-printing";
-import { metaTraduite } from "@/lib/i18n-server";
+import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: "Comparaison de decks",
@@ -18,7 +17,8 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
   const decoded = decodeDeck(code);
   if (!decoded) return null;
 
-  const { map: cardMap } = await resolveDeckCards(deckIdentifiers(decoded));
+  const { map: cardMap, missing } = await resolveDeckCards(deckIdentifiers(decoded));
+  if (missing.length > 0) return null;
 
   const deckCards: DecklistCard[] = [];
   let legendName = "";
@@ -58,6 +58,7 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
 }
 
 export default async function ComparePage({ searchParams }: { searchParams: Promise<{ a?: string; b?: string }> }) {
+  const t = await tr();
   const { a, b } = await searchParams;
 
   const deckA = a ? await resolveCode(a) : null;
@@ -66,11 +67,15 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <h1 className="text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-        Comparaison de decks
+        {t("Comparaison de decks")}
       </h1>
       <DeckCompare
         initialA={deckA ? { code: a!, legend: deckA.legend, cards: deckA.cards } : null}
         initialB={deckB ? { code: b!, legend: deckB.legend, cards: deckB.cards } : null}
+        invalidA={Boolean(a && !deckA)}
+        invalidB={Boolean(b && !deckB)}
+        codeAInitial={a ?? ""}
+        codeBInitial={b ?? ""}
       />
     </div>
   );

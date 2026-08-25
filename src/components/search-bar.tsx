@@ -21,8 +21,9 @@ export function SearchBar({ placeholder = "Rechercher une carte...", basePath = 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const params = new URLSearchParams(searchParams.toString());
-    if (query) {
-      params.set("q", query);
+    const recherche = query.trim();
+    if (recherche) {
+      params.set("q", recherche);
     } else {
       params.delete("q");
     }

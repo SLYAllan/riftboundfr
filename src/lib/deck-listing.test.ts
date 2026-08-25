@@ -24,11 +24,11 @@ describe("lireFiltresDecks", () => {
     });
   });
 
-  it("ignore les valeurs de tri et de catégorie inconnues", () => {
+  it("ignore les valeurs inconnues et garde Vendetta par défaut", () => {
     expect(lireFiltresDecks({ cat: "brut", sort: "alphabetique", offset: "abc" })).toEqual({
       cat: undefined,
       legend: undefined,
-      set: undefined,
+      set: "Vendetta",
       tournament: undefined,
       q: "",
       sort: undefined,

@@ -220,6 +220,12 @@ export default async function DeckDetailPage({ params }: PageProps) {
             playerName={deck.playerName ?? deck.authorName ?? undefined}
             tournamentContext={deck.tournamentContext ?? undefined}
           />
+          <Link
+            href={`/decks/compare?a=${encodeURIComponent(deckbuilderCode)}`}
+            className="inline-flex min-h-11 items-center rounded-lg border border-hairline px-4 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink"
+          >
+            {t("Comparer ce deck")}
+          </Link>
         </div>
       </div>
 

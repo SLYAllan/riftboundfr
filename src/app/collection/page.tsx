@@ -18,7 +18,7 @@ const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
+const SET_ORDER = ["VEN", "OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 // Une page de classeur = 9 pochettes. C'est l'aperçu montré sur chaque classeur.
 const POCKETS = 9;
 

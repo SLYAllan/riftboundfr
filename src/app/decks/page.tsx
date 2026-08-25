@@ -445,7 +445,10 @@ export default async function DecksPage({ searchParams }: PageProps) {
           leur lien à la main : changer de set effaçait le tournoi en cours, et
           l'ensemble tenait en moins de hauteur qu'une carte de deck. */}
       <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
-        <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</div>
+        <div className="mb-3 flex items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
+          <span className="flex items-center gap-2"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</span>
+          <Link href="/decks?set=all" className="inline-flex min-h-11 items-center text-arcane hover:underline sm:min-h-6">{t("Effacer les filtres")}</Link>
+        </div>
         <div className="flex flex-wrap items-center gap-2">
         <Suspense>
           <DeckLegendFilter legends={legendNames} />

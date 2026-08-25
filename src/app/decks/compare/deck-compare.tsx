@@ -17,6 +17,10 @@ interface DeckData {
 interface Props {
   initialA: DeckData | null;
   initialB: DeckData | null;
+  invalidA: boolean;
+  invalidB: boolean;
+  codeAInitial: string;
+  codeBInitial: string;
 }
 
 type ViewMode = "side-by-side" | "diff";
@@ -83,6 +87,7 @@ function StatBar({ label, valueA, valueB, color }: { label: string; valueA: numb
 }
 
 function DeckStats({ cards, label, color }: { cards: DecklistCard[]; label: string; color: string }) {
+  const t = useT();
   const nonLegend = cards.filter((c) => c.section !== "legend");
   const total = nonLegend.reduce((s, c) => s + c.quantity, 0);
   const avgEnergy = nonLegend.filter((c) => c.energy != null && c.section === "main").reduce((s, c) => s + (c.energy ?? 0) * c.quantity, 0) / Math.max(1, nonLegend.filter((c) => c.energy != null && c.section === "main").reduce((s, c) => s + c.quantity, 0));
@@ -103,7 +108,7 @@ function DeckStats({ cards, label, color }: { cards: DecklistCard[]; label: stri
     <div className="space-y-2">
       <h4 className={cn("text-sm font-bold", color)}>{label}</h4>
       <div className="text-xs text-ink-secondary space-y-1">
-        <div>{total} cartes &middot; Coût moyen : {avgEnergy.toFixed(1)}</div>
+        <div>{total} {t("cartes")} &middot; {t("Coût moyen")} : {avgEnergy.toFixed(1)}</div>
         <div className="flex flex-wrap gap-1.5">
           {Object.entries(typeCounts).sort((a, b) => b[1] - a[1]).map(([type, count]) => (
             <span key={type} className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px]">
@@ -130,10 +135,10 @@ const SECTION_LABELS: Record<string, string> = {
   side: "Réserve",
 };
 
-export function DeckCompare({ initialA, initialB }: Props) {
+export function DeckCompare({ initialA, initialB, invalidA, invalidB, codeAInitial, codeBInitial }: Props) {
   const t = useT();
-  const [codeA, setCodeA] = useState(initialA?.code ?? "");
-  const [codeB, setCodeB] = useState(initialB?.code ?? "");
+  const [codeA, setCodeA] = useState(codeAInitial);
+  const [codeB, setCodeB] = useState(codeBInitial);
   const [deckA] = useState<DeckData | null>(initialA);
   const [deckB] = useState<DeckData | null>(initialB);
   const [view, setView] = useState<ViewMode>("diff");
@@ -177,8 +182,8 @@ export function DeckCompare({ initialA, initialB }: Props) {
 
   function handleCompare() {
     const url = new URL(window.location.href);
-    url.searchParams.set("a", codeA);
-    url.searchParams.set("b", codeB);
+    url.searchParams.set("a", codeA.trim());
+    url.searchParams.set("b", codeB.trim());
     window.location.href = url.toString();
   }
 
@@ -198,11 +203,12 @@ export function DeckCompare({ initialA, initialB }: Props) {
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
+          {invalidA && <p role="alert" className="mt-1 text-xs text-red-400">{t("Code du deck A invalide")}</p>}
         </div>
         {/* order-last : en une colonne le bouton tombait entre les deux champs */}
-        <button onClick={handleCompare} className="order-last sm:order-none rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane-light transition-colors">
+        <button disabled={!codeA.trim() || !codeB.trim()} onClick={handleCompare} className="order-last sm:order-none rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas transition-colors hover:bg-arcane-light disabled:cursor-not-allowed disabled:opacity-50">
           <ArrowLeftRight size={16} className="inline mr-1" />
-          Comparer
+          {t("Comparer")}
         </button>
         <div>
           <label htmlFor="deck-code-b" className="block text-xs text-ink-muted mb-1">Deck B</label>
@@ -214,6 +220,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckB && <div className="mt-1 text-xs text-violet-light">{displayLegendName(deckB.legend)}</div>}
+          {invalidB && <p role="alert" className="mt-1 text-xs text-red-400">{t("Code du deck B invalide")}</p>}
         </div>
       </div>
 
@@ -226,23 +233,23 @@ export function DeckCompare({ initialA, initialB }: Props) {
           {/* Summary badges */}
           <div className="flex flex-wrap gap-3">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
-              <Equal size={12} /> {stats.shared} communes
+              <Equal size={12} /> {stats.shared} {t("communes")}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-arcane/10 px-3 py-1 text-xs font-semibold text-arcane">
-              <Plus size={12} /> {stats.onlyA} uniques A
+              <Plus size={12} /> {stats.onlyA} {t("uniques A")}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-violet/10 px-3 py-1 text-xs font-semibold text-violet-light">
-              <Plus size={12} /> {stats.onlyB} uniques B
+              <Plus size={12} /> {stats.onlyB} {t("uniques B")}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-400">
-              <ArrowLeftRight size={12} /> {stats.changed} quantités diff.
+              <ArrowLeftRight size={12} /> {stats.changed} {t("quantités diff.")}
             </span>
           </div>
 
           {/* View toggle */}
           <div className="flex gap-2">
             <button onClick={() => setView("diff")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "diff" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>
-              Vue diff
+              {t("Vue diff")}
             </button>
             <button onClick={() => setView("side-by-side")} className={cn("rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors", view === "side-by-side" ? "bg-arcane text-canvas" : "bg-surface text-ink-muted hover:text-ink")}>{t("Côte à côte")}</button>
           </div>
@@ -286,7 +293,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
                 return (
                   <div key={section}>
                     <div className="bg-surface-raised px-4 py-2 text-xs font-bold text-ink-secondary border-b border-hairline">
-                      {SECTION_LABELS[section]}
+                      {t(SECTION_LABELS[section])}
                     </div>
                     <div className="divide-y divide-hairline/50">
                       {sectionDiff.map((d) => {
@@ -353,7 +360,7 @@ export function DeckCompare({ initialA, initialB }: Props) {
                       return (
                         <div key={section}>
                           <h4 className="text-[10px] font-bold uppercase tracking-wider text-ink-muted mb-2">
-                            {SECTION_LABELS[section] ?? "Légende"}
+                            {t(SECTION_LABELS[section] ?? "Légende")}
                           </h4>
                           <div className="grid grid-cols-4 sm:grid-cols-6 gap-1.5">
                             {sectionCards.map((c) => {

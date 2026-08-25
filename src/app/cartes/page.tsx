@@ -43,8 +43,8 @@ interface PageProps {
 export default async function CartesPage({ searchParams }: PageProps) {
   const t = await tr();
   const params = await searchParams;
-  const page = Math.max(1, Number(params.page) || 1);
-  const search = params.q;
+  const pageDemandee = Math.max(1, Number(params.page) || 1);
+  const search = params.q?.trim();
   const set = params.set;
   const type = params.type;
   const rarity = params.rarity;
@@ -73,19 +73,17 @@ export default async function CartesPage({ searchParams }: PageProps) {
 
   const orderBy = SORTS[params.sort ?? "numero"] ?? SORTS.numero;
 
-  const [cards, total] = await Promise.all([
-    prisma.card.findMany({
-      where,
-      // select léger : pas de textPlain/textHtml (lourds, inutiles dans la grille).
-      select: { id: true, riftboundId: true, name: true, imageUrl: true, rarity: true, setName: true, type: true },
-      orderBy,
-      skip: (page - 1) * PER_PAGE,
-      take: PER_PAGE,
-    }),
-    prisma.card.count({ where }),
-  ]);
-
+  const total = await prisma.card.count({ where });
   const totalPages = Math.ceil(total / PER_PAGE);
+  const page = Math.min(pageDemandee, Math.max(1, totalPages));
+  const cards = await prisma.card.findMany({
+    where,
+    // select léger : pas de textPlain/textHtml (lourds, inutiles dans la grille).
+    select: { id: true, riftboundId: true, name: true, imageUrl: true, rarity: true, setName: true, type: true },
+    orderBy,
+    skip: (page - 1) * PER_PAGE,
+    take: PER_PAGE,
+  });
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
