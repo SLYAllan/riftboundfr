@@ -3,22 +3,16 @@
 ## Session du 25 août 2026 — audit global du parcours utilisateur
 
 Les 29 commits de la passe sont poussés sur `origin/main`, de `cc2486c9` à
-`71e10e90`. L'arbre était propre au push. La dernière porte donne :
-`npx vitest run` avec **83 fichiers et 344 tests verts**, `npm run lint` avec
-**0 erreur et 98 avertissements**, puis `npm run verify` avec un code de sortie
-**0**. Aucun seed ni changement de base n'a été fait.
+`71e10e90`. Aucun seed ni changement de base n'a été fait.
 
-La passe ne s'est pas limitée au responsive. Elle a aussi rendu les parcours
-plus simples et les échecs visibles :
+La passe a rendu les parcours plus simples et les échecs visibles :
 
 - `/decks` ouvre sur Vendetta ; `?set=all` garde l'accès à tous les sets ;
-- la comparaison est liée depuis chaque deck et refuse les données invalides ;
+- la comparaison est liée depuis chaque deck et signale un code illisible ;
 - les filtres de decks peuvent être effacés et l'adresse filtrée des cartes peut
   être copiée ;
 - la fiche d'une carte règle sa quantité dans la collection et lie les classeurs
   partagés ;
-- les guides montrent un point de départ clair et les cartes de méta mènent à
-  `/meta` ;
 - le brouillon repris, les sauvegardes et les erreurs de publication, collection,
   import, j'aime et overlay donnent maintenant un retour visible ;
 - les menus, aperçus, infobulles et actions principales restent utilisables au
@@ -26,9 +20,51 @@ plus simples et les échecs visibles :
 - les pages anglaises gardent leurs titres, chapôs, dates, recherches et styles
   communautaires traduits.
 
-Le serveur de développement répondait en HTTP 200 sur `/`, `/decks`, `/cartes`,
-`/guides`, `/tier-list` et `/decks/compare` à la fin de la passe. Il peut encore
-tourner dans un processus local ; le vérifier avant d'en lancer un second.
+## Relecture du 25 août 2026 — ce que la passe avait cassé
+
+Sept défauts relevés en relisant les 29 commits, tous corrigés depuis.
+
+**Le set par défaut vidait des pages entières.** Vendetta s'appliquait aussi au
+best-of, alors qu'aucun des 431 decks best-of n'est en Vendetta : « Best of »
+rendait « Aucun deck ». Même piège pour les liens `?legend=` venus de
+`/legendes` et de la tier list, et pour `?tournament=`. Le défaut vit maintenant
+dans `setParDefaut` (`src/lib/deck-listing-params.ts`), employé par la page et
+par la liste : il ne s'applique que sur la vue de départ, jamais sur un lien qui
+porte déjà une intention. Le menu de set affiche le filtre réellement appliqué au
+lieu d'un « Vendetta » figé.
+
+**La tier list envoyait vers le mauvais set.** Cliquer une Légende dans l'onglet
+Origins ouvrait les listes du set par défaut. Le lien porte maintenant le set de
+l'onglet (`Global` devient `set=all`).
+
+**`/guides/meta` avait été à moitié déplacé vers `/meta`.** L'index des guides et
+l'accueil pointaient sur la page de chiffres, alors que le guide rédigé existe
+toujours, garde son canonical, reste au sitemap et reste lié depuis quatre pages.
+Les deux listes de guides repointent sur le guide ; le guide renvoie vers `/meta`
+pour les chiffres à jour, et `/meta` est déjà dans la barre du site.
+
+**Le comparateur appelait « code invalide » un deck lisible.** Une seule carte
+absente de la base faisait rejeter toute la liste. Le deck s'affiche, et les
+cartes manquantes sont nommées, comme partout ailleurs.
+
+**30 des 32 nouveaux fichiers de test lisaient leur propre source** et y
+cherchaient une chaîne (`expect(source).toContain('href="/decks"')`). Ils passent
+que le composant marche ou non et cassent au moindre renommage. Supprimés. La
+suite passe de 344 à 288 tests, tous verts, et le vrai test des filtres de decks
+a été étoffé. **Quinze fichiers de la même forme restent, antérieurs à cette
+passe** : à traiter séparément.
+
+**La navbar mettait un fond teinté sous un texte de la même couleur**
+(`bg-arcane/5 text-arcane`), ce que la charte interdit. Fond neutre désormais.
+
+**Le skill `delegate-wave` avait divergé des deux côtés** : description en
+franglais dans `.agents/skills/`, ancienne description dans le panneau
+`.claude/skills/`. Les deux sont de nouveau identiques.
+
+Plus petit : la couverture de Changsha passe de 2,7 Mo à 473 Ko (elle sortait en
+7008x4672, les autres couvertures font 2048 de large) ; les alertes emploient le
+jeton `text-error-light` au lieu de `text-red-400`. Le `Promise.resolve().then()` du fournisseur de collection n'était pas du bruit : il évite le `setState` synchrone dans un effet que le lint refuse. Gardé, avec le pourquoi écrit à côté. Le message du commit
+`dd114499` porte un « aper?us » abîmé, laissé tel quel : l'historique est poussé.
 
 Les idées plus lourdes n'ont pas été commencées : recherche globale, accueil
 guidé pour les débutants, historique des pages vues et refonte commune des
