@@ -7,6 +7,9 @@
 // Usage (serveur de dev lancé) :
 //   node scripts/audit-version-anglaise.mjs / /guides/debuter /legendes/annie-dark-child
 // Sous Git Bash, préfixer par MSYS_NO_PATHCONV=1 (sinon « / » devient un chemin).
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+
 const BASE = process.env.BASE ?? "http://localhost:3000";
 
 // Mots qui n'existent qu'en français. Volontairement courts et fréquents : ils
@@ -19,7 +22,7 @@ const MOTS_FR = [
   "jeu", "deck de", "joueur", "joueurs", "règles", "domaine", "domaines",
 ];
 
-function texteVisible(html) {
+export function texteVisible(html) {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
@@ -29,7 +32,7 @@ function texteVisible(html) {
     .trim();
 }
 
-function phrasesFrancaises(texte) {
+export function phrasesFrancaises(texte) {
   const phrases = texte.split(/(?<=[.!?:])\s+/);
   const trouvees = [];
   for (const phrase of phrases) {
@@ -41,17 +44,31 @@ function phrasesFrancaises(texte) {
   return trouvees;
 }
 
-const routes = process.argv.slice(2);
-for (const route of routes) {
-  try {
-    const r = await fetch(`${BASE}/en${route}`, { headers: { "Accept-Language": "en" } });
-    if (!r.ok) { console.log(`${route}\tHTTP ${r.status}`); continue; }
-    const phrases = phrasesFrancaises(texteVisible(await r.text()));
-    // On dédoublonne : navigation et pied de page reviennent sur chaque page.
-    const uniques = [...new Set(phrases)];
-    console.log(`\n=== ${route} — ${uniques.length} phrase(s) en français`);
-    for (const p of uniques.slice(0, 12)) console.log("   · " + p);
-  } catch (e) {
-    console.log(`${route}\tERREUR ${e.message}`);
+export async function auditerRoutes(routes, base = BASE) {
+  let echec = false;
+  for (const route of routes) {
+    try {
+      const r = await fetch(`${base}/en${route}`, { headers: { "Accept-Language": "en" } });
+      if (!r.ok) {
+        console.log(`${route}\tHTTP ${r.status}`);
+        echec = true;
+        continue;
+      }
+      const phrases = phrasesFrancaises(texteVisible(await r.text()));
+      // On dédoublonne : navigation et pied de page reviennent sur chaque page.
+      const uniques = [...new Set(phrases)];
+      console.log(`\n=== ${route} — ${uniques.length} phrase(s) en français`);
+      for (const p of uniques.slice(0, 12)) console.log("   · " + p);
+      if (uniques.length > 0) echec = true;
+    } catch (e) {
+      console.log(`${route}\tERREUR ${e.message}`);
+      echec = true;
+    }
   }
+  return echec;
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href
+  && await auditerRoutes(process.argv.slice(2))) {
+  process.exitCode = 1;
 }

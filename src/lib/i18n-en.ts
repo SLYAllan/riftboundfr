@@ -93,6 +93,7 @@ export const EN: Record<string, string> = {
   Tous: "All",
   decks: "decks",
   "Derniers articles": "Latest articles",
+  "Dernière mise à jour": "Last updated",
   "Aucun article pour le moment.": "No articles yet.",
   "Aucun tournoi pour le moment.": "No tournaments yet.",
   "Suis ta collection Riftbound en classeurs, repère tes cartes manquantes et vois quels decks méta tu peux déjà jouer.":

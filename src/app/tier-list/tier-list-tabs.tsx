@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
-import { useT } from "@/components/i18n-provider";
+import { etiquetteLocale } from "@/lib/i18n";
+import { useLangue, useT } from "@/components/i18n-provider";
 
 interface TierListData {
   id: string;
@@ -54,6 +55,7 @@ export function TierListTabs({
   defaultTab,
 }: Props) {
   const t = useT();
+  const langue = useLangue();
   const [activeTab, setActiveTab] = useState(defaultTab);
   const [hoveredEntry, setHoveredEntry] = useState<string | null>(null);
   const activeTierList = tierLists.find((tl) => tl.id === activeTab)!;
@@ -98,7 +100,7 @@ export function TierListTabs({
       </div>
 
       <p className="mt-4 text-center text-sm text-ink-muted">
-        Dernière mise à jour : {formatDate(activeTierList.updatedAt)}
+        {t("Dernière mise à jour")} : {formatDate(activeTierList.updatedAt, etiquetteLocale(langue))}
         {activeTierList.setContext && ` - Set ${activeTierList.setContext}`}
       </p>
 
