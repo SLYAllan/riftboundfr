@@ -20,24 +20,47 @@ export function UserMenu() {
   const [user, setUser] = useState<UserData | null>(null);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [reload, setReload] = useState(0);
+  const [logoutLoading, setLogoutLoading] = useState(false);
+  const [logoutError, setLogoutError] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    setLoading(true);
+    setLoadError(false);
     fetch("/api/auth/me")
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error();
+        return r.json();
+      })
       .then((data) => {
+        if (
+          data !== null &&
+          (typeof data !== "object" ||
+            typeof data.id !== "string" ||
+            typeof data.username !== "string" ||
+            typeof data.role !== "string")
+        ) throw new Error();
         setUser(data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
-  }, []);
+      .catch(() => {
+        setLoadError(true);
+        setLoading(false);
+      });
+  }, [reload]);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     };
     const keyHandler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
     };
     document.addEventListener("mousedown", handler);
     document.addEventListener("keydown", keyHandler);
@@ -45,15 +68,35 @@ export function UserMenu() {
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("keydown", keyHandler);
     };
-  }, []);
+  }, [open]);
 
   const logout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    setUser(null);
-    setOpen(false);
+    setLogoutLoading(true);
+    setLogoutError(false);
+    try {
+      const r = await fetch("/api/auth/logout", { method: "POST" });
+      if (!r.ok) throw new Error();
+      setUser(null);
+      setOpen(false);
+    } catch {
+      setLogoutError(true);
+    } finally {
+      setLogoutLoading(false);
+    }
   };
 
   if (loading) return null;
+
+  if (loadError) {
+    return (
+      <div role="alert" className="flex items-center gap-2 text-sm text-red-400">
+        <span>{t("Connexion indisponible")}</span>
+        <button onClick={() => setReload((value) => value + 1)} className="underline">
+          {t("Réessayer")}
+        </button>
+      </div>
+    );
+  }
 
   if (!user) {
     return (
@@ -72,6 +115,7 @@ export function UserMenu() {
   return (
     <div ref={ref} className="relative">
       <button
+        ref={triggerRef}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-label={t("Menu utilisateur")}
@@ -123,11 +167,17 @@ export function UserMenu() {
           </Link>
           <button
             onClick={logout}
+            disabled={logoutLoading}
             className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-secondary hover:bg-surface-raised transition-colors"
           >
             <LogOut size={14} />
-            {t("Déconnexion")}
+            {logoutLoading ? t("Déconnexion...") : t("Déconnexion")}
           </button>
+          {logoutError && (
+            <p role="alert" className="px-3 py-2 text-xs text-red-400">
+              {t("La déconnexion a échoué. Réessayez.")}
+            </p>
+          )}
         </div>
       )}
     </div>

@@ -121,6 +121,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
             <button
               key={tab.key}
               onClick={() => { setActiveTab(tab.key); setText(""); }}
+              aria-pressed={activeTab === tab.key}
               className={cn(
                 "flex-1 flex items-center justify-center gap-1.5 py-2.5 text-xs font-semibold transition-colors relative",
                 activeTab === tab.key ? "text-arcane" : "text-ink-muted hover:text-ink",
@@ -140,6 +141,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
                 {t("Collez un lien de deck communautaire pour l’importer dans le deckbuilder.")}
               </p>
               <input
+                aria-label={t("Contenu à importer")}
                 value={text}
                 onChange={(e) => { setText(e.target.value); setLinkError(null); }}
                 className="w-full rounded-lg border border-hairline-strong bg-surface-raised px-3 py-2.5 text-base sm:text-sm font-mono text-ink focus:border-arcane placeholder:text-ink-muted/50"
@@ -149,6 +151,7 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
             </div>
           ) : (
             <textarea
+              aria-label={t("Contenu à importer")}
               value={text}
               onChange={(e) => setText(e.target.value)}
               rows={10}
