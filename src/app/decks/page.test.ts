@@ -13,3 +13,11 @@ test("traduit les textes explicatifs et les états des decks", () => {
   expect(source).toContain("{t(tag)}");
   expect(source).toContain("{t(tagFilter)}");
 });
+
+test("garde les traductions des styles communautaires courts", () => {
+  const page = readFileSync(new URL("./page.tsx", import.meta.url), "utf8");
+  const dictionnaire = readFileSync(new URL("../../lib/i18n-en.ts", import.meta.url), "utf8");
+  expect(page).toContain("{t(tag)}");
+  expect(dictionnaire).toContain('"contrôle": "control"');
+  expect(dictionnaire).toContain('"compétitif": "competitive"');
+});
