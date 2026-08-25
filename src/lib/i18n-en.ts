@@ -1134,4 +1134,7 @@ export const EN: Record<string, string> = {
   "Best of du National Open S3 - Toutes les légendes": "National Open S3 best decks - Every Legend",
   "Best of Hartford — Toutes les légendes": "Hartford best decks - Every Legend",
   "Best of Hartford - Toutes les légendes": "Hartford best decks - Every Legend",
+  "Connexion indisponible": "Sign-in unavailable",
+  "Déconnexion...": "Signing out...",
+  "Contenu à importer": "Content to import",
 };

@@ -41,7 +41,10 @@ export function UserMenu() {
           (typeof data !== "object" ||
             typeof data.id !== "string" ||
             typeof data.username !== "string" ||
-            typeof data.role !== "string")
+            typeof data.role !== "string" ||
+            (data.avatarUrl !== null && typeof data.avatarUrl !== "string") ||
+            (data.discordName !== null && typeof data.discordName !== "string") ||
+            (data.riotGameName !== null && typeof data.riotGameName !== "string"))
         ) throw new Error();
         setUser(data);
         setLoading(false);
