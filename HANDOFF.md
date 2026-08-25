@@ -1,8 +1,43 @@
 # HANDOFF — état des lieux
 
+## Session du 25 août 2026 — audit global du parcours utilisateur
+
+Les 29 commits de la passe sont poussés sur `origin/main`, de `cc2486c9` à
+`71e10e90`. L'arbre était propre au push. La dernière porte donne :
+`npx vitest run` avec **83 fichiers et 344 tests verts**, `npm run lint` avec
+**0 erreur et 98 avertissements**, puis `npm run verify` avec un code de sortie
+**0**. Aucun seed ni changement de base n'a été fait.
+
+La passe ne s'est pas limitée au responsive. Elle a aussi rendu les parcours
+plus simples et les échecs visibles :
+
+- `/decks` ouvre sur Vendetta ; `?set=all` garde l'accès à tous les sets ;
+- la comparaison est liée depuis chaque deck et refuse les données invalides ;
+- les filtres de decks peuvent être effacés et l'adresse filtrée des cartes peut
+  être copiée ;
+- la fiche d'une carte règle sa quantité dans la collection et lie les classeurs
+  partagés ;
+- les guides montrent un point de départ clair et les cartes de méta mènent à
+  `/meta` ;
+- le brouillon repris, les sauvegardes et les erreurs de publication, collection,
+  import, j'aime et overlay donnent maintenant un retour visible ;
+- les menus, aperçus, infobulles et actions principales restent utilisables au
+  clavier et au toucher, avec des cibles plus grandes sur mobile ;
+- les pages anglaises gardent leurs titres, chapôs, dates, recherches et styles
+  communautaires traduits.
+
+Le serveur de développement répondait en HTTP 200 sur `/`, `/decks`, `/cartes`,
+`/guides`, `/tier-list` et `/decks/compare` à la fin de la passe. Il peut encore
+tourner dans un processus local ; le vérifier avant d'en lancer un second.
+
+Les idées plus lourdes n'ont pas été commencées : recherche globale, accueil
+guidé pour les débutants, historique des pages vues et refonte commune des
+jetons visuels. Elles demandent un choix de produit avant du code.
+
 ## Liste de travail au 24 août 2026
 
-Dans l'ordre où Allan l'a posée. Rien n'est poussé sur le dépôt distant.
+Dans l'ordre où Allan l'a posée. Cette liste garde l'état relevé ce jour-là ; la
+section du 25 août ci-dessus donne l'état courant du dépôt distant.
 
 | # | Chantier | Où ça en est |
 |---|---|---|
