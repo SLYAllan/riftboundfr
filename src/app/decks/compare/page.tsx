@@ -13,12 +13,14 @@ const metadata: Metadata = {
   description: "Comparez deux decks Riftbound côte à côte : cartes communes, exclusives, statistiques.",
 };
 
-async function resolveCode(code: string): Promise<{ legend: string; cards: DecklistCard[] } | null> {
+async function resolveCode(code: string): Promise<{ legend: string; cards: DecklistCard[]; manquantes: string[] } | null> {
   const decoded = decodeDeck(code);
   if (!decoded) return null;
 
+  // Une carte absente de la base ne rend pas le code faux. Le rejeter en bloc
+  // affichait « Code invalide » sur une liste parfaitement lisible : on montre le
+  // deck et on nomme ce qui manque.
   const { map: cardMap, missing } = await resolveDeckCards(deckIdentifiers(decoded));
-  if (missing.length > 0) return null;
 
   const deckCards: DecklistCard[] = [];
   let legendName = "";
@@ -54,7 +56,7 @@ async function resolveCode(code: string): Promise<{ legend: string; cards: Deckl
     }
   }
 
-  return { legend: legendName, cards: deckCards };
+  return { legend: legendName, cards: deckCards, manquantes: missing };
 }
 
 export default async function ComparePage({ searchParams }: { searchParams: Promise<{ a?: string; b?: string }> }) {
@@ -74,6 +76,8 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
         initialB={deckB ? { code: b!, legend: deckB.legend, cards: deckB.cards } : null}
         invalidA={Boolean(a && !deckA)}
         invalidB={Boolean(b && !deckB)}
+        manquantesA={deckA?.manquantes ?? []}
+        manquantesB={deckB?.manquantes ?? []}
         codeAInitial={a ?? ""}
         codeBInitial={b ?? ""}
       />

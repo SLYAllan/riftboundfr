@@ -19,6 +19,8 @@ interface Props {
   initialB: DeckData | null;
   invalidA: boolean;
   invalidB: boolean;
+  manquantesA: string[];
+  manquantesB: string[];
   codeAInitial: string;
   codeBInitial: string;
 }
@@ -135,7 +137,7 @@ const SECTION_LABELS: Record<string, string> = {
   side: "Réserve",
 };
 
-export function DeckCompare({ initialA, initialB, invalidA, invalidB, codeAInitial, codeBInitial }: Props) {
+export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantesA, manquantesB, codeAInitial, codeBInitial }: Props) {
   const t = useT();
   const [codeA, setCodeA] = useState(codeAInitial);
   const [codeB, setCodeB] = useState(codeBInitial);
@@ -203,7 +205,8 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, codeAIniti
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckA && <div className="mt-1 text-xs text-arcane">{displayLegendName(deckA.legend)}</div>}
-          {invalidA && <p role="alert" className="mt-1 text-xs text-red-400">{t("Code du deck A invalide")}</p>}
+          {invalidA && <p role="alert" className="mt-1 text-xs text-error-light">{t("Code du deck A invalide")}</p>}
+          {manquantesA.length > 0 && <p role="alert" className="mt-1 text-xs text-gold">{t("Cartes absentes de la base")} : {manquantesA.join(", ")}</p>}
         </div>
         {/* order-last : en une colonne le bouton tombait entre les deux champs */}
         <button disabled={!codeA.trim() || !codeB.trim()} onClick={handleCompare} className="order-last sm:order-none rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas transition-colors hover:bg-arcane-light disabled:cursor-not-allowed disabled:opacity-50">
@@ -220,7 +223,8 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, codeAIniti
             className="w-full rounded-lg bg-surface border border-hairline px-3 py-2 text-sm text-ink placeholder:text-ink-muted"
           />
           {deckB && <div className="mt-1 text-xs text-violet-light">{displayLegendName(deckB.legend)}</div>}
-          {invalidB && <p role="alert" className="mt-1 text-xs text-red-400">{t("Code du deck B invalide")}</p>}
+          {invalidB && <p role="alert" className="mt-1 text-xs text-error-light">{t("Code du deck B invalide")}</p>}
+          {manquantesB.length > 0 && <p role="alert" className="mt-1 text-xs text-gold">{t("Cartes absentes de la base")} : {manquantesB.join(", ")}</p>}
         </div>
       </div>
 
