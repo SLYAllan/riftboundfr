@@ -12,6 +12,14 @@ describe("accessibilité du navigateur de cartes", () => {
     expect(source).toContain("aria-label={`${label} maximum`}");
   });
 
+  it("donne une cible tactile de 24 px aux poignées", () => {
+    expect(source.match(/\[&::-webkit-slider-thumb\]:h-6/g)).toHaveLength(2);
+    expect(source.match(/\[&::-webkit-slider-thumb\]:w-6/g)).toHaveLength(2);
+    expect(source.match(/\[&::-moz-range-thumb\]:pointer-events-auto/g)).toHaveLength(2);
+    expect(source.match(/\[&::-moz-range-thumb\]:h-6/g)).toHaveLength(2);
+    expect(source.match(/\[&::-moz-range-thumb\]:w-6/g)).toHaveLength(2);
+  });
+
   it("expose l'état du bouton qui ouvre les curseurs", () => {
     expect(source).toContain("aria-expanded={showSliders}");
   });

@@ -80,6 +80,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [outilsOpen, setOutilsOpen] = useState(false);
   const outilsRef = useRef<HTMLDivElement>(null);
+  const boutonMobileRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -88,7 +89,10 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
     const keyHandler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOutilsOpen(false);
-        setMobileOpen(false);
+        if (mobileOpen) {
+          setMobileOpen(false);
+          boutonMobileRef.current?.focus();
+        }
       }
     };
     document.addEventListener("mousedown", handler);
@@ -97,7 +101,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("keydown", keyHandler);
     };
-  }, []);
+  }, [mobileOpen]);
 
   if (pathname.startsWith("/admin")) return null;
 
@@ -172,6 +176,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
         </div>
 
         <button
+          ref={boutonMobileRef}
           onClick={() => setMobileOpen(!mobileOpen)}
           className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-secondary lg:hidden"
           aria-label={mobileOpen ? t("Fermer le menu") : t("Ouvrir le menu")}
