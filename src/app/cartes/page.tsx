@@ -9,6 +9,7 @@ import { Pagination } from "@/components/pagination";
 import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { preparerFiltreMotCle } from "@/lib/card-keywords";
 
 // Ordres proposés dans le filtre "Tri". Défaut = numéro de collection par set.
 const SORTS: Record<string, Prisma.CardOrderByWithRelationInput[]> = {
@@ -71,6 +72,14 @@ export default async function CartesPage({ searchParams }: PageProps) {
   if (rarity && rarity !== "all") where.rarity = rarity;
   if (domain && domain !== "all") where.domains = { has: domain };
 
+  const candidates = await prisma.card.findMany({
+    where,
+    select: { id: true, textPlain: true },
+  });
+  const filtreMecanique = preparerFiltreMotCle(candidates, params.mechanic);
+  const mecaniques = filtreMecanique.options;
+  if (filtreMecanique.value) where.id = { in: filtreMecanique.cartes.map(({ id }) => id) };
+
   const orderBy = SORTS[params.sort ?? "numero"] ?? SORTS.numero;
 
   const total = await prisma.card.count({ where });
@@ -92,7 +101,7 @@ export default async function CartesPage({ searchParams }: PageProps) {
         {t("Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.")}
       </p>
       <div className="mt-4 sm:mt-8"><Suspense><SearchBar /></Suspense></div>
-      <div className="mt-4"><Suspense><CardFilters total={total} /></Suspense></div>
+      <div className="mt-4"><Suspense><CardFilters total={total} mecaniques={mecaniques} /></Suspense></div>
       <div className="mt-6 sm:mt-8"><CardGrid cards={cards} /></div>
       <div className="mt-8"><Suspense><Pagination currentPage={page} totalPages={totalPages} /></Suspense></div>
     </div>

@@ -8,6 +8,8 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CARD_TYPES, RARITIES } from "@/lib/utils";
 import { DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
+import { KeywordFilter } from "@/components/keyword-filter";
+import type { FiltreMotCle } from "@/lib/card-keywords";
 
 const DOMAIN_ORDER = ["Fury", "Calm", "Order", "Chaos", "Mind", "Body"];
 
@@ -35,7 +37,7 @@ function pill(active: boolean) {
   );
 }
 
-export function CardFilters({ total }: { total: number }) {
+export function CardFilters({ total, mecaniques }: { total: number; mecaniques: FiltreMotCle[] }) {
   const router = useRouter();
   const lien = useLien();
   const t = useT();
@@ -66,6 +68,8 @@ export function CardFilters({ total }: { total: number }) {
   const get = (key: string) => searchParams.get(key) ?? "all";
   const domain = get("domain");
   const type = get("type");
+  const mechanic = get("mechanic");
+  const mecanique = mecaniques.find(({ value }) => value === mechanic);
 
   const selectClass =
     "h-9 rounded-lg border border-hairline-strong bg-surface pl-3 pr-8 text-sm text-ink focus:border-arcane cursor-pointer appearance-none";
@@ -75,6 +79,7 @@ export function CardFilters({ total }: { total: number }) {
     type !== "all" && t(TYPE_LABELS_FR[type] ?? type),
     get("set") !== "all" && (SET_LABELS[get("set")] ?? get("set")),
     get("rarity") !== "all" && t(RARITY_LABELS_FR[get("rarity")] ?? get("rarity")),
+    mecanique && t(mecanique.label),
     searchParams.get("q") && `« ${searchParams.get("q")} »`,
   ].filter(Boolean) as string[];
 
@@ -122,6 +127,8 @@ export function CardFilters({ total }: { total: number }) {
             <option key={r} value={r}>{t(RARITY_LABELS_FR[r] ?? r)}</option>
           ))}
         </select>
+
+        <KeywordFilter options={mecaniques} value={mecanique?.value ?? ""} onChange={(value) => set("mechanic", value)} />
 
         <div className="ml-auto flex items-center gap-1.5">
           <span className="text-xs text-ink-muted">{t("Tri :")}</span>

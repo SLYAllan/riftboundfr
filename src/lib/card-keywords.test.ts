@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { filtrerParMotCle, listerMotsCles, rechercherMotsCles } from "./card-keywords";
+import { filtrerParMotCle, listerMotsCles, preparerFiltreMotCle, rechercherMotsCles } from "./card-keywords";
 
 const cartes = [
   { nom: "A", textPlain: "[Hunt 2] When you play me, gain 1 XP." },
@@ -17,6 +17,22 @@ describe("filtres de mots-clés du deckbuilder", () => {
       { value: "when-you-play", label: "Quand vous jouez", labelEn: "When you play", categorie: "declencheur", count: 1 },
       { value: "xp", label: "XP", labelEn: "XP", categorie: "ressource", count: 1 },
     ]);
+  });
+
+  it("garde une mécanique connue visible quand le contexte ne contient aucun résultat", () => {
+    const resultat = preparerFiltreMotCle([{ textPlain: "[Action]" }], "hunt");
+
+    expect(resultat.value).toBe("hunt");
+    expect(resultat.cartes).toEqual([]);
+    expect(resultat.options.find(({ value }) => value === "hunt")?.count).toBe(0);
+  });
+
+  it("ignore une mécanique inconnue dans l'URL", () => {
+    const cartes = [{ textPlain: "[Action]" }];
+    const resultat = preparerFiltreMotCle(cartes, "inconnue");
+
+    expect(resultat.value).toBe("");
+    expect(resultat.cartes).toEqual(cartes);
   });
 
   it("filtre sur la mécanique choisie et non sur les tags de carte", () => {

@@ -38,6 +38,11 @@ const DECLENCHEURS: Array<MecaniqueCarte & { motif: RegExp }> = [
 ];
 
 const XP: MecaniqueCarte = { value: "xp", label: "XP", labelEn: "XP", categorie: "ressource" };
+const TOUTES_LES_MECANIQUES: MecaniqueCarte[] = [
+  ...MOTS_CLES,
+  ...DECLENCHEURS.map(({ value, label, labelEn, categorie }) => ({ value, label, labelEn, categorie })),
+  XP,
+];
 
 function mecaniquesDuTexte(textPlain: string | null): MecaniqueCarte[] {
   if (!textPlain) return [];
@@ -70,4 +75,12 @@ export function rechercherMotsCles(options: FiltreMotCle[], recherche: string): 
 export function filtrerParMotCle<T extends CarteAvecTexte>(cartes: T[], motCle: string): T[] {
   if (!motCle) return cartes;
   return cartes.filter((carte) => mecaniquesDuTexte(carte.textPlain).some(({ value }) => value === motCle));
+}
+
+export function preparerFiltreMotCle<T extends CarteAvecTexte>(cartes: T[], valeurDemandee?: string) {
+  const options = listerMotsCles(cartes);
+  const mecanique = TOUTES_LES_MECANIQUES.find(({ value }) => value === valeurDemandee);
+  if (!mecanique) return { cartes, options, value: "" };
+  if (!options.some(({ value }) => value === mecanique.value)) options.push({ ...mecanique, count: 0 });
+  return { cartes: filtrerParMotCle(cartes, mecanique.value), options, value: mecanique.value };
 }

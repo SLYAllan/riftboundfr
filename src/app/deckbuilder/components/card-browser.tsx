@@ -5,7 +5,7 @@ import { RotateCcw, Plus, SlidersHorizontal, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { CardDetailModal } from "./card-detail-modal";
-import { KeywordFilter } from "./keyword-filter";
+import { KeywordFilter } from "@/components/keyword-filter";
 import { SearchBar } from "./search-bar";
 import { parseSearchQuery, getSetCodesFromAlias, type ParsedSearch } from "../lib/search-parser";
 import { filtrerParMotCle, listerMotsCles } from "@/lib/card-keywords";
