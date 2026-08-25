@@ -899,6 +899,7 @@ export const EN: Record<string, string> = {
   "Tier list Riftbound complète, avec les decks": "The full Riftbound tier list, with decks",
   "Tier list complète": "Full tier list",
   "Tier list à venir": "Tier list coming soon",
+  "Mis à jour le": "Updated on",
   "Voir sur X": "View on X",
   "Voir tous les erratas": "See every errata",
 

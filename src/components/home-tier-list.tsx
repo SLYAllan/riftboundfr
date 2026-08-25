@@ -4,15 +4,17 @@ import { useState } from "react";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { cn, displayLegendName } from "@/lib/utils";
+import { cn, displayLegendName, formatDate } from "@/lib/utils";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
-import { useT } from "@/components/i18n-provider";
+import { etiquetteLocale } from "@/lib/i18n";
+import { useLangue, useT } from "@/components/i18n-provider";
 
 interface TierListData {
   id: string;
   title: string;
   setContext: string | null;
   current: boolean;
+  updatedAt: Date;
   entries: {
     id: string;
     legendId: string;
@@ -47,6 +49,7 @@ export function HomeTierList({
   legendMap: Map<string, CardData>;
 }) {
   const t = useT();
+  const langue = useLangue();
   const currentIdx = tierLists.findIndex((tl) => tl.current);
   const [activeIdx, setActiveIdx] = useState(
     currentIdx >= 0 ? currentIdx : 0,
@@ -116,6 +119,10 @@ export function HomeTierList({
           ))}
         </div>
       )}
+
+      <p className="px-4 py-2 text-center text-xs text-ink-muted">
+        {t("Mis à jour le")} {formatDate(active.updatedAt, etiquetteLocale(langue))}
+      </p>
 
       {tierLists.some((tl) => tl.entries.length > 0) ? (
         <div className="grid">
