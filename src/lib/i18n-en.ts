@@ -889,6 +889,7 @@ export const EN: Record<string, string> = {
   "Champs de bataille fréquents": "Common battlefields",
   "Decks sauvegardés": "Saved decks",
   "Decks utilisant cette carte": "Decks playing this card",
+  "Voir tous les decks avec cette carte": "See every deck with this card",
   "Errata du 23 juillet 2026": "Errata of 23 July 2026",
   "Les règles de Riftbound, en français": "The Riftbound rules",
   "Légende :": "Legend:",

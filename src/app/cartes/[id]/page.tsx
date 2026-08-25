@@ -217,30 +217,38 @@ export default async function CardDetailPage({ params }: PageProps) {
             )}
             {card.artist && <div className="text-sm text-ink-muted">Artiste : <span className="text-ink-secondary">{card.artist}</span></div>}
           </div>
-          {relatedDecks.length > 0 && (
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks utilisant cette carte")}</h2>
-              <div className="mt-3 space-y-2">
-                {relatedDecks.map(({ deck }) => (
-                  <Link key={deck.id} href={`/decks/${deck.slug}`} className="block rounded-lg border border-hairline bg-surface p-3 transition-colors hover:border-hairline-accent">
-                    <div className="flex items-center gap-2">
-                      <span className="font-medium">{deck.title}</span>
-                      {deck.placement && (
-                        <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{deck.placement}</span>
-                      )}
-                      {deck.featured && (
-                        <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
-                      )}
-                    </div>
-                    <div className="mt-0.5 flex items-center gap-2 text-sm">
-                      <span className="text-arcane">{displayLegendName(deck.legendName)}</span>
-                      {deck.tournamentContext && <span className="text-ink-muted">&middot; {deck.tournamentContext}</span>}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="mt-8">
+            {relatedDecks.length > 0 && (
+              <>
+                <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks utilisant cette carte")}</h2>
+                <div className="mt-3 space-y-2">
+                  {relatedDecks.map(({ deck }) => (
+                    <Link key={deck.id} href={`/decks/${deck.slug}`} className="block rounded-lg border border-hairline bg-surface p-3 transition-colors hover:border-hairline-accent">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">{deck.title}</span>
+                        {deck.placement && (
+                          <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{deck.placement}</span>
+                        )}
+                        {deck.featured && (
+                          <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
+                        )}
+                      </div>
+                      <div className="mt-0.5 flex items-center gap-2 text-sm">
+                        <span className="text-arcane">{displayLegendName(deck.legendName)}</span>
+                        {deck.tournamentContext && <span className="text-ink-muted">&middot; {deck.tournamentContext}</span>}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+            <Link
+              href={`/decks?q=${encodeURIComponent(card.name)}`}
+              className="mt-3 inline-flex text-sm text-arcane hover:underline"
+            >
+              {t("Voir tous les decks avec cette carte")}
+            </Link>
+          </div>
         </div>
       </div>
     </div>
