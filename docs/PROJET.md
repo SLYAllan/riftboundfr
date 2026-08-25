@@ -61,7 +61,8 @@ Deux pièges de nommage à retenir :
 
 43 pages, plus le back-office. Toutes existent aussi sous `/en`.
 
-**Découverte** — `/` (accueil avec tier list), `/cartes` et `/cartes/[id]`,
+**Découverte** — `/` (accueil avec tier list), `/cartes` (recherche et filtres
+partageables par set, type, rareté, domaine et mécanique) et `/cartes/[id]`,
 `/legendes` et `/legendes/[slug]`, `/meta`, `/tier-list`.
 
 **Tournois et decks** — `/tournois` et `/tournois/[slug]`, `/decks` et
@@ -71,7 +72,8 @@ Règle de contenu : **`/decks` ne montre que les « best of » par tournoi**, pl
 guides et les decks de la communauté. Les listes brutes vivent sur
 `/tournois/[slug]`.
 
-**Outils** — `/deckbuilder`, `/collection` (+ `/collection/[binderId]` et
+**Outils** — `/deckbuilder` (filtre contextuel par mécanique sans plafond de
+cartes), `/collection` (+ `/collection/[binderId]` et
 `/collection/partage/[shareSlug]`), `/community-decks`, `/outils/regles`.
 Le compteur de points autonome a été retiré le 21 août 2026 : le compagnon de
 match (`/compagnon/…`, ouvert par lien depuis `/profil/overlay`) fait la même

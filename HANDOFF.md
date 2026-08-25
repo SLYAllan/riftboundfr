@@ -1,5 +1,21 @@
 # HANDOFF — état des lieux
 
+## Session du 26 août 2026 — filtre de mécaniques dans `/cartes`
+
+Le menu « Mécaniques » du deckbuilder est maintenant partagé avec `/cartes`.
+La page filtre côté serveur, garde le choix dans l'adresse et recalcule les choix
+et leurs nombres après la recherche, le set, le type, la rareté et le domaine.
+Une mécanique connue qui n'existe plus dans le contexte reste visible avec zéro
+résultat ; une valeur d'adresse inconnue est ignorée. Le menu reste borné à
+l'écran sur mobile et les libellés anglais passent par le dictionnaire existant.
+
+Le composant commun vit dans `src/components/keyword-filter.tsx` et la logique
+dans `src/lib/card-keywords.ts`. Ne pas recréer un parseur ou un menu propre à une
+page. Commit poussé sur `origin/main` : `0f6cc001`.
+
+Contrôle : lint sans erreur et 97 avertissements connus, 56 fichiers et 294 tests
+verts, puis `npm run verify` avec un code de sortie 0.
+
 ## Session du 25 août 2026 — audit global du parcours utilisateur
 
 Correctif ajouté après la passe : le deckbuilder ne tronque plus sa grille à

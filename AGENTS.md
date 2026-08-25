@@ -169,6 +169,11 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   base ; le tri passe par `comparerPlacements`, sinon `10th` précède `2nd`.
 - `deck-code.ts` / `deck-codec.ts` — lecture d'une decklist en texte, et
   encodage/décodage du code court partagé dans les URL `/d/<code>`.
+- **`card-keywords.ts` — passage commun des filtres de mécaniques.** Le
+  deckbuilder et `/cartes` lisent tous les deux les mots-clés officiels, l'XP et
+  les déclencheurs depuis ce fichier, puis affichent le même menu
+  `src/components/keyword-filter.tsx`. Ne pas recopier le parseur ou le menu dans
+  une page.
 - `card-printing.ts` — un nom de carte a plusieurs formes (apostrophe, virgule,
   suffixe de variante). `findCard` et `normalizeCardName` réconcilient tout ça.
 - `auth.ts` / `session.ts` — deux sessions distinctes, deux cookies :
