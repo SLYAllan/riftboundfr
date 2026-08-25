@@ -908,6 +908,9 @@ export const EN: Record<string, string> = {
 
   // — Accueil, méta, tier list —
   "Decks de tournoi": "Tournament decks",
+  "Trouver un deck": "Find a deck",
+  "Voir les cartes": "Browse cards",
+  "Débuter": "Get started",
   "tier list du méta": "meta tier list",
   " et base de cartes Riftbound, en français.": " and the Riftbound card database.",
   "Tous les decks Riftbound": "All Riftbound decks",

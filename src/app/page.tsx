@@ -191,6 +191,17 @@ export default async function HomePage() {
           <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list du méta")}</Link>
           {t(" et base de cartes Riftbound, en français.")}
         </p>
+        <div className="flex w-full max-w-xl flex-wrap justify-center gap-2">
+          <Link href="/decks" className="inline-flex min-h-11 flex-1 basis-32 items-center justify-center rounded-lg bg-arcane px-3 py-2 text-sm font-semibold text-canvas transition-colors hover:bg-arcane/90">
+            {t("Trouver un deck")}
+          </Link>
+          <Link href="/cartes" className="inline-flex min-h-11 flex-1 basis-32 items-center justify-center rounded-lg border border-arcane px-3 py-2 text-sm font-semibold text-arcane transition-colors hover:bg-arcane/10">
+            {t("Voir les cartes")}
+          </Link>
+          <Link href="/guides/debuter" className="inline-flex min-h-11 flex-1 basis-32 items-center justify-center rounded-lg border border-hairline px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-surface-raised">
+            {t("Débuter")}
+          </Link>
+        </div>
       </section>
 
       {/* 3-column layout */}
