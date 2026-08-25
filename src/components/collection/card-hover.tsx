@@ -95,10 +95,18 @@ export function CardHover({
       aria-expanded={hovered}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setHovered(false); setPos(null); }}
-      onFocus={() => setHovered(true)}
+      onFocus={(e) => {
+        if (e.currentTarget.matches(":focus-visible")) setHovered(true);
+      }}
       onBlur={() => { setHovered(false); setPos(null); }}
-      onClick={() => setHovered(true)}
+      onClick={(e) => {
+        if (e.detail > 0) setHovered((visible) => !visible);
+      }}
       onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setHovered((visible) => !visible);
+        }
         if (e.key === "Escape") {
           setHovered(false);
           setPos(null);

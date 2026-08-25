@@ -205,7 +205,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                 onClick={() => setMobileOpen(false)}
                 aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium",
+                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium",
                   pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
                 )}
               >
@@ -222,7 +222,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
                 onClick={() => setMobileOpen(false)}
                 aria-current={pathname.startsWith(link.href) ? "page" : undefined}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium",
+                  "flex min-h-11 items-center rounded-lg px-3 text-sm font-medium",
                   pathname.startsWith(link.href) ? "text-arcane" : "text-ink-secondary"
                 )}
               >
