@@ -28,8 +28,6 @@ export function UserMenu() {
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    setLoading(true);
-    setLoadError(false);
     fetch("/api/auth/me")
       .then((r) => {
         if (!r.ok) throw new Error();
@@ -73,6 +71,12 @@ export function UserMenu() {
     };
   }, [open]);
 
+  const retry = () => {
+    setLoading(true);
+    setLoadError(false);
+    setReload((value) => value + 1);
+  };
+
   const logout = async () => {
     setLogoutLoading(true);
     setLogoutError(false);
@@ -94,7 +98,7 @@ export function UserMenu() {
     return (
       <div role="alert" className="flex items-center gap-2 text-sm text-red-400">
         <span>{t("Connexion indisponible")}</span>
-        <button onClick={() => setReload((value) => value + 1)} className="underline">
+        <button onClick={retry} className="underline">
           {t("Réessayer")}
         </button>
       </div>

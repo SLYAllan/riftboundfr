@@ -16,6 +16,14 @@ describe("menu utilisateur", () => {
     expect(source).toMatch(/Réessayer/);
   });
 
+  it("prépare la relance dans l'action utilisateur, pas dans l'effet", () => {
+    const effet = source.slice(source.indexOf("useEffect(() =>"), source.indexOf("}, [reload])"));
+    expect(effet).not.toContain("setLoading(true)");
+    expect(effet).not.toContain("setLoadError(false)");
+    expect(source).toMatch(/const retry = \(\) => \{[\s\S]+setLoading\(true\)[\s\S]+setLoadError\(false\)[\s\S]+setReload/);
+    expect(source).toMatch(/onClick=\{retry\}/);
+  });
+
   it("ne masque le compte qu'après une déconnexion réussie", () => {
     const logout = source.slice(source.indexOf("const logout"), source.indexOf("if (loading)"));
     expect(logout).toMatch(/fetch\("\/api\/auth\/logout", \{ method: "POST" \}\)/);
