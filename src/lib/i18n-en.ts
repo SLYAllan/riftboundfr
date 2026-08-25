@@ -1129,11 +1129,6 @@ export const EN: Record<string, string> = {
   "Decks que je peux jouer avec mes cartes": "Decks I can play with my cards",
   "Voir le deck": "View deck",
   "Vues": "Views",
-  "Proving Grounds : quel deck monter avec Annie, Master Yi, Lux ou Garen":
-    "Proving Grounds: which deck should you build with Annie, Master Yi, Lux or Garen?",
-  "Best of du National Open S3 - Toutes les légendes": "National Open S3 best decks - Every Legend",
-  "Best of Hartford — Toutes les légendes": "Hartford best decks - Every Legend",
-  "Best of Hartford - Toutes les légendes": "Hartford best decks - Every Legend",
   "Connexion indisponible": "Sign-in unavailable",
   "Déconnexion...": "Signing out...",
   "Contenu à importer": "Content to import",

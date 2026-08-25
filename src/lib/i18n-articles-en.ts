@@ -10,10 +10,106 @@
  * dans `scripts/gen-i18n-article-overlay.mts`, puis on relance ce script.
  */
 export const EN_ARTICLES: Record<string, string> = {
+  "Best of Atlanta - Toutes les légendes":
+    "Atlanta best decks - Every Legend",
+  "Les meilleures decklists pour chaque légende au Regional Qualifier d'Atlanta 2026 (~1500 joueurs). Dernier Regional Spiritforged.":
+    "The best decklists for each Legend at the 2026 Atlanta Regional Qualifier, with about 1,500 players. The final Spiritforged Regional.",
+  "Best of Bologna RQ 2026":
+    "2026 Bologna RQ best decks",
+  "Les decklists les plus créatives du Regional Qualifier de Bologne 2026 - 1719 joueurs, premier RQ Spiritforged. Draven domine mais la diversité surprend.":
+    "The most creative decklists from the 2026 Bologna Regional Qualifier, with 1,719 players at the first Spiritforged RQ. Draven dominates, but the diversity is surprising.",
+  "Best of Changsha - Toutes les légendes":
+    "Changsha best decks - Every Legend",
+  "Le meilleur deck de chaque légende au Regional Open de Changsha (640 joueurs, set Unleashed). 咕咕嘎嘎.阿门.Gambit champion avec Irelia.":
+    "The best deck for each Legend at the Changsha Regional Open, with 640 players in the Unleashed set. 咕咕嘎嘎.阿门.Gambit won with Irelia.",
+  "Best of Hartford - Toutes les légendes":
+    "Hartford best decks - Every Legend",
+  "Les meilleures decklists pour chaque légende au Regional Qualifier de Hartford, dernier RQ Unleashed. Factor champion avec Master Yi.":
+    "The best decklists for each Legend at the Hartford Regional Qualifier, the final Unleashed RQ. Factor won with Master Yi.",
+  "Best of Houston RQ 2025":
+    "2025 Houston RQ best decks",
+  "Sélection des decklists les plus intéressantes et surprenantes du Regional Qualifier de Houston 2025 - 1347 joueurs, format Origins.":
+    "A selection of the most interesting and surprising decklists from the 2025 Houston Regional Qualifier, with 1,347 players in the Origins format.",
+  "Best of Las Vegas RQ 2026":
+    "2026 Las Vegas RQ best decks",
+  "Les meilleures decklists du Regional Qualifier de Las Vegas 2026 - 1670 joueurs. Draven verrouille le Top 4 mais les rebelles résistent.":
+    "The best decklists from the 2026 Las Vegas Regional Qualifier, with 1,670 players. Draven locks up the Top 4, but the rebels hold out.",
+  "Best of Lille RQ 2026":
+    "2026 Lille RQ best decks",
+  "Le meilleur du Regional Qualifier de Lille 2026 - 1949 joueurs, plus gros RQ Spiritforged. Azir invaincu, Irelia dominante, et des picks spicy.":
+    "The best of the 2026 Lille Regional Qualifier: 1,949 players at the largest Spiritforged RQ. Undefeated Azir, dominant Irelia and spicy picks.",
+  "Best of du National Open S3 - Toutes les légendes":
+    "National Open S3 best decks - Every Legend",
+  "La meilleure decklist de chaque Légende au National Open S3, le plus gros tournoi Unleashed jamais joué : 2 048 joueurs, 1 957 listes publiées, une finale entre deux Irelia.":
+    "The best decklist for each Legend at National Open S3, the largest Unleashed tournament ever played: 2,048 players, 1,957 published lists and an Irelia mirror in the final.",
+  "Best of Sydney - Toutes les legendes":
+    "Sydney best decks - Every Legend",
+  "Les meilleures decklists pour chaque legende au Regional Qualifier de Sydney 2026 (1405 joueurs).":
+    "The best decklists for each Legend at the 2026 Sydney Regional Qualifier, with 1,405 players.",
+  "Best of Tianjin - Toutes les légendes":
+    "Tianjin best decks - Every Legend",
+  "Le meilleur deck de chaque légende au Regional Open de Tianjin (640 joueurs, set Unleashed). 陈千语 champion avec Master Yi.":
+    "The best deck for each Legend at the Tianjin Regional Open, with 640 players in the Unleashed set. 陈千语 won with Master Yi.",
+  "Best of Utrecht - Toutes les légendes":
+    "Utrecht best decks - Every Legend",
+  "Les meilleures decklists pour chaque légende au Regional Qualifier d'Utrecht (1900+ joueurs). Squirtle champion avec Azir.":
+    "The best decklists for each Legend at the Utrecht Regional Qualifier, with more than 1,900 players. Squirtle won with Azir.",
+  "Best of Vancouver - Toutes les légendes":
+    "Vancouver best decks - Every Legend",
+  "Les meilleures decklists pour chaque légende au Regional Qualifier de Vancouver (1800+ joueurs). AlanZQ champion avec Diana.":
+    "The best decklists for each Legend at the Vancouver Regional Qualifier, with more than 1,800 players. AlanZQ won with Diana.",
+  "Best of Xi'an Regional Open S3":
+    "Xi'an Regional Open S3 best decks",
+  "Le meilleur du Xi'an Regional Open S3 - 640 joueurs, 636 decklists, format Unleashed. Le plus gros tournoi compétitif chinois.":
+    "The best of Xi'an Regional Open S3: 640 players, 636 decklists and the Unleashed format. The largest competitive tournament in China.",
+  "Le Rift Tour : le premier circuit compétitif français de Riftbound":
+    "Le Rift Tour: France's first competitive Riftbound circuit",
+  "Riot Games lance Le Rift Tour, un circuit national en trois phases qui emmènera les joueurs français des boutiques locales jusqu'à la Paris Games Week, avec deux places pour le Regional Championship Europe 2026 à la clé.":
+    "Riot Games launches Le Rift Tour, a three-stage national circuit taking French players from local stores to Paris Games Week, with two places at the 2026 European Regional Championship at stake.",
+  "Proving Grounds : quel deck monter avec Annie, Master Yi, Lux ou Garen":
+    "Proving Grounds: which deck should you build with Annie, Master Yi, Lux or Garen?",
+  "Vous avez ouvert le set d'initiation et vous voulez jouer en tournoi. Voici, pour chacune des quatre Légendes, la meilleure liste vraiment classée et ce qu'elle demande.":
+    "You opened the starter set and want to play in tournaments. For each of its four Legends, here is the best list that actually placed and what it requires.",
+  "RQ Hartford : Factor sacre Master Yi et venge sa défaite de Vancouver":
+    "Hartford RQ: Factor crowns Master Yi and avenges his Vancouver loss",
+  "Sur le dernier Regional Qualifier du format Unleashed, Factor porte Master Yi à son premier titre de RQ occidental et prend sa revanche sur bsweitz, qui l'avait battu à Vancouver. Récap du Top 8 de Hartford.":
+    "At the final Regional Qualifier of the Unleashed format, Factor takes Master Yi to his first Western RQ title and gets revenge on bsweitz, who beat him in Vancouver. A recap of Hartford's Top 8.",
+  "RQ Vancouver : AlanZQ entre dans l'histoire avec Diana":
+    "Vancouver RQ: AlanZQ makes history with Diana",
+  "Récap du Top 8 du Regional Qualifier Vancouver : AlanZQ devient le premier double champion sur Diana, le Rengar surprise de Sam D Sherman, decks et analyses méta.":
+    "A recap of the Vancouver Regional Qualifier Top 8: AlanZQ becomes the first two-time champion with Diana, Sam D Sherman's surprise Rengar, decklists and meta analysis.",
+  "RQ Utrecht : Squirtle conserve sa couronne et entre dans l'histoire":
+    "Utrecht RQ: Squirtle keeps his crown and makes history",
+  "Squirtle défend son titre européen avec Azir et devient le deuxième double champion de Regional Qualifier de Riftbound. Récap du Top 8 d'Utrecht, le plus ouvert à ce jour.":
+    "Squirtle defends his European title with Azir and becomes Riftbound's second two-time Regional Qualifier champion. A recap of the most open Utrecht Top 8 yet.",
   "Comment streamer une partie de Riftbound avec un téléphone":
     "How to stream a Riftbound game with a phone",
   "Un téléphone filme la table, les joueurs comptent leurs points sur un second appareil et l'overlay se met à jour. Voici le matériel et les réglages nécessaires.":
     "One phone films the table, the players track points on a second device, and the overlay updates. Here is the gear and setup you need.",
+  "Top 8 Atlanta Regional Qualifier 2026":
+    "2026 Atlanta Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier d'Atlanta 2026 - dernier Regional Spiritforged. Annie championne, Draven finaliste.":
+    "The eight decklists from the 2026 Atlanta Regional Qualifier Top 8, the final Spiritforged Regional. Annie won and Draven finished second.",
+  "Top 8 Bologna Regional Qualifier 2026":
+    "2026 Bologna Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier de Bologne 2026 - 1719 joueurs, format Spiritforged. Ezreal champion (Alanzq).":
+    "The eight decklists from the 2026 Bologna Regional Qualifier Top 8, with 1,719 players in the Spiritforged format. Alanzq won with Ezreal.",
+  "Top 8 Houston Regional Qualifier 2025":
+    "2025 Houston Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier de Houston 2025 - 1347 joueurs, format Origins. Annie domine avec 4/8 top 8.":
+    "The eight decklists from the 2025 Houston Regional Qualifier Top 8, with 1,347 players in the Origins format. Annie dominates with four of the eight places.",
+  "Top 8 Las Vegas Regional Qualifier 2026":
+    "2026 Las Vegas Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier de Las Vegas 2026 - 1670 joueurs. Draven écrase tout : TOP 5 entièrement Draven.":
+    "The eight decklists from the 2026 Las Vegas Regional Qualifier Top 8, with 1,670 players. Draven crushes the field: the entire Top 5 plays Draven.",
+  "Top 8 Lille Regional Qualifier 2026":
+    "2026 Lille Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier de Lille 2026 - 1949 joueurs, post-ban. Azir champion invaincu (14-0-2).":
+    "The eight decklists from the 2026 Lille Regional Qualifier Top 8, with 1,949 players after the ban. Azir went undefeated at 14-0-2.",
+  "Top 8 Sydney Regional Qualifier 2026":
+    "2026 Sydney Regional Qualifier Top 8",
+  "Les 8 decklists du Top 8 au Regional Qualifier de Sydney 2026 - 1405 joueurs, format Unleashed. Irelia championne.":
+    "The eight decklists from the 2026 Sydney Regional Qualifier Top 8, with 1,405 players in the Unleashed format. Irelia won.",
   "L'overlay du site permet de filmer une partie avec OBS. Pour un tournoi en boutique ou une partie entre amis, un PC, une caméra et un second écran prennent vite trop de place.\n\nCette nouvelle version tient sur deux appareils : un téléphone sur un trépied filme la table et affiche l'overlay ; une tablette, ou un vieux téléphone, reste entre les joueurs pour compter les points. Les joueurs gèrent leur match, le score suit à l'écran et vous pouvez vous concentrer sur le direct.":
     "The site's overlay lets you stream a game with OBS. At a local tournament or a game with friends, a PC, a camera and a second screen quickly take up too much room.\n\nThis new version runs on two devices: a phone on a tripod films the table and displays the overlay; a tablet, or an old phone, sits between the players to track points. The players manage their match, the score updates on stream, and you can focus on the broadcast.",
   "Le téléphone filme la table pendant que les joueurs comptent leurs points sur la tablette.":
