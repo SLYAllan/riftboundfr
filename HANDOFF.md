@@ -1,5 +1,89 @@
 # HANDOFF — état des lieux
 
+## Session du 27 août 2026 (3) — poussé sur main ET en production
+
+Trois commits sur `origin/main` : `573e4050` (tournois), `298845ec` (stats),
+`e46bf078` (site), puis `026932f3` (article Best-Of).
+
+**La production est à jour côté DONNÉES** : 25 008 decks publiés, Barcelone
+(106 decks, 36 best-of) et Dongguan (98) seedés, les cinq tier lists refaites,
+les deux articles publiés. **Le déploiement Coolify du CODE reste à déclencher**
+pour que les changements de pages passent en ligne.
+
+### La règle qui change tout
+
+**On compte les joueurs CLASSÉS, plus les decklists publiées.** Une part de méta
+calculée sur les listes suppose que ceux qui publient ressemblent aux autres.
+C'est faux : Barcelone publie 106 listes pour 2 127 joueurs, Utrecht 55 pour
+1 807. Ce sont ceux qui performent qui envoient leur liste.
+
+Corpus : **35 597 joueurs classés sur 111 tournois**, dont 30 au classement
+complet scrapé. Contrôlé contre le tableau officiel de Riot pour Barcelone :
+9 places d'écart sur 2 131.
+
+`scripts/corpus-tournois.ts` porte la définition unique. Avant lui, la tier list
+donnait 802 joueurs à Ahri et sa fiche 283 : deux pages, deux chiffres.
+
+**`npm run maj:stats` enchaîne les cinq étapes dans l'ordre.** Ne jamais relancer
+ces scripts un par un, ils se lisent l'un l'autre.
+
+### Ce que le corpus a corrigé
+
+- **Miss Fortune** était en D sur « 0,4 %, la pire du set ». Elle est à 10,7 %
+  sur 394 joueurs, soit la moyenne.
+- **Vex** était en C pour « piège volume ». L'écart ne tient aucun test.
+- **Akali** n'avait pas « zéro Top 8 » : 11 places en coupe sur 201 joueurs.
+- **L'accueil** classait les Légendes toutes ères : il ouvrait sur le méta
+  d'Origines, sans Kennen.
+
+### Quatre pièges payés cette session
+
+1. **riftdecks marque ses pages.** Dans le titre H1 d'un deck, des lettres
+   latines sont remplacées par des cyrilliques identiques à l'oeil (U+0430).
+   `sansHomoglyphes` les rend. **336 decks déjà en base en portent encore un**
+   (Lille 78, Suzhou 61, Atlanta 56, Fuzhou 51…), à reparser et reseeder.
+2. **`spawnSync` sous Windows.** Avec `shell: true` les guillemets sautent, sans
+   shell rien ne se lance. Le premier seed prod a écrit « Barcelona » au lieu de
+   « Barcelona Regional Qualifier », set « Regional », tag « Qualifier », tout
+   décalé d'un argument, **sans le moindre message d'erreur**. Passer la variable
+   d'environnement au shell directement. Et vérifier le résultat EN BASE, pas
+   dans la sortie du script.
+3. **Un tournoi à moitié scrapé** entrait en silence dans le corpus, et une page
+   complète qui ne couvre qu'une fraction du champ aussi. Deux garde-fous dans
+   `classements-tournois.mts`.
+4. **`.next/dev/types/validator.ts`** garde la liste des routes du dernier build.
+   Supprimer une page fait échouer le build tant qu'on ne l'a pas retiré.
+
+### Limite des sources, vérifiée
+
+**Riftdecks ne publie pas le classement complet de six tournois** : Bologna
+(120 classés annoncés pour 1 719 joueurs), Las Vegas (130 pour 1 670), Houston
+(66 pour 1 347), Fuzhou RQ, Beijing RO jour 1, Chengdu CC du 9 novembre. Environ
+5 200 joueurs hors corpus. Vérifié en les scrapant : **la donnée n'existe pas**,
+ce n'est pas un scrape à relancer. `couverture-tournois.mts` les marque
+« indispo. ».
+
+### Autres changements
+
+- **`/guides/meta` supprimée**, redirigée en 301 vers `/tier-list`. Elle portait
+  une seconde tier list écrite en dur et se disputait 16 requêtes avec
+  `/tier-list` : 438 impressions pour 14 clics, dont 98 impressions et zéro clic
+  sur « riftbound meta ». Vérifié dans Search Console avant de supprimer.
+- **Fiche carte** : le prix CardNexus et le bouton d'achat sont affichés, et
+  l'offre JSON-LD correspond. Search Console refusait le `Product` sans offre.
+  Ajouter l'offre seule aurait été un balisage sans contrepartie visible, ce qui
+  est pire. Les 48 cartes sans prix passent en `Thing`.
+- **Fiche Légende** : la première decklist proposée vient du set le plus récent.
+  Une 1re place de Déchaînement passait devant un best-of de Vendetta.
+- **Deux articles Barcelone** : le récap du Top 8 et le Best-Of (36 listes).
+
+### Reste à faire
+
+- **Déclencher le déploiement Coolify** pour le code.
+- Les 336 pseudos marqués, en local et en prod.
+- Quatre tournois hexgate écartés par la règle des 128 joueurs (Jinan 78,
+  Coupe du Tsar 93, Xi'an 67, 233 à 64). Leur brut est scrapé.
+
 ## Session du 27 août 2026 (2) — les quatre sets sur le même corpus
 
 Suite de la précédente. Tout le site compte désormais les joueurs CLASSÉS, plus
