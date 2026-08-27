@@ -32,6 +32,20 @@ const VILLES: Record<string, string> = {
   "苏州": "Suzhou",
   "上海": "Shanghai",
   "广州": "Guangzhou",
+  "济南": "Jinan",
+  "西安": "Xi'an",
+  "东莞": "Dongguan",
+};
+
+/**
+ * Les épreuves qui ne sont pas des City Challenge n'ont pas de nom déductible :
+ * « 东莞·符文战场 漫博杯 » ne suit aucun gabarit. On les nomme ici une par une,
+ * par identifiant hexgate, plutôt que de traduire un titre chinois à la volée —
+ * un nom inventé se retrouverait ensuite dans les URL et les drapeaux.
+ * 符文战场 est le nom chinois de Riftbound lui-même ; 漫博杯 est translittéré.
+ */
+const NOMS_PARTICULIERS: Record<number, string> = {
+  220: "Dongguan Manbo Cup",
 };
 
 interface CarteBrute {
@@ -88,6 +102,8 @@ function slugJoueur(nom: string): string {
 
 /** « 【城市挑战赛】北京站-8.23 » → « S4 Beijing City Challenge (2026-08-23) ». */
 function nomTournoi(brut: DeckBrut["tournoi"]): string | null {
+  const particulier = NOMS_PARTICULIERS[brut.id];
+  if (particulier) return `${particulier} (${brut.date})`;
   const ville = Object.keys(VILLES).find((cn) => brut.nom.includes(cn));
   if (!ville || !brut.nom.includes("城市挑战赛")) return null;
   return `S4 ${VILLES[ville]} City Challenge (${brut.date})`;

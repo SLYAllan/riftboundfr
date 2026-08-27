@@ -6,57 +6,57 @@
     "Order"
   ],
   "set": "Origins",
-  "tier": 5,
+  "tier": 4,
   "archetype": "Unité sauvée par son bonus",
   "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Sett se prépare aussi quand vous conquérez.",
   "keyCards": [
-    {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
     {
       "name": "Showstopper",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
+      "name": "Pit Rookie",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, 91 % des listes, 2.5 exemplaires"
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2.5 exemplaires"
     },
     {
-      "name": "Sacrifice",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "name": "Hidden Blade",
+      "role": "Standard, 83 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     },
     {
       "name": "Fae Dragon",
-      "role": "Standard, 64 % des listes, 1 exemplaire"
+      "role": "Standard, 67 % des listes, 1 exemplaire"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Souple, 55 % des listes, 3 exemplaires"
+      "role": "Souple, 58 % des listes, 3 exemplaires"
     },
     {
-      "name": "Sea Monkey",
-      "role": "Souple, 55 % des listes, 2.5 exemplaires"
+      "name": "Challenge",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
     },
     {
-      "name": "Warmog's Armor",
-      "role": "Souple, 55 % des listes, 2 exemplaires"
+      "name": "Arena Bar",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -66,11 +66,12 @@
     "11 listes sur les 2365 du set Vendetta, sept tournois, aucun Top 8 : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "deckCount": 11,
-    "top8": 0,
+    "joueursClasses": 17,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 7,
+    "conversion": "5.9 %",
+    "tournois": 11,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -93,9 +94,9 @@
         "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
       },
       {
-        "placement": "94th",
-        "player": "477",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+        "placement": "92th",
+        "player": "mio",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -118,34 +119,38 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "82 %",
+      "usage": "83 %",
       "role": "3 exemplaires en moyenne"
-    },
-    "Sett, Brawler": {
-      "usage": "64 %",
-      "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "55 %",
-      "role": "1.5 exemplaire en moyenne"
+      "usage": "58 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Sett, Brawler": {
+      "usage": "58 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "45 %",
+      "usage": "42 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Rengar, Trophy Hunter": {
-      "usage": "36 %",
+    "Sett, Kingpin": {
+      "usage": "42 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ambessa, The Wolf": {
+      "usage": "33 %",
       "role": "1.5 exemplaire en moyenne"
     },
-    "Sett, Kingpin": {
-      "usage": "36 %",
-      "role": "1 exemplaire en moyenne"
+    "Rengar, Trophy Hunter": {
+      "usage": "33 %",
+      "role": "1.5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (91 %)",
-    "Monastery of Hirana (91 %)",
-    "Valley of Idols (73 %)"
+    "Monastery of Hirana (92 %)",
+    "Sunken Temple (92 %)",
+    "Valley of Idols (75 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 11 listes, 7 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 17 joueurs classés, 11 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

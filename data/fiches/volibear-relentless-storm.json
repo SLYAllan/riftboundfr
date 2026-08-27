@@ -83,30 +83,43 @@
     "6 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 3,
-    "deckCount": 14,
+    "joueursClasses": 402,
+    "coupe10": 14,
+    "titres": 0,
+    "conversion": "3.5 %",
+    "tournois": 70,
     "bestPlacements": [
       {
-        "placement": "41st",
-        "player": "Antyn V",
-        "tournament": "Atlanta RQ"
+        "placement": "5th",
+        "player": "元气幻界小江",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
-        "placement": "98th",
-        "player": "FOF 麦克阿瑟",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "6th",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-09-27)"
       },
       {
-        "placement": "106th",
-        "player": "大喷菇",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "8th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+      },
+      {
+        "placement": "11th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+      },
+      {
+        "placement": "12th",
+        "player": null,
+        "tournament": "Chengdu City Challenge (2025-10-12)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 14 decklists (Xi'an + Atlanta)",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 402 joueurs classés sur 70 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

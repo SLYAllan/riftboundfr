@@ -78,14 +78,38 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 3,
-    "preRegionals": "1 Top 8",
-    "regionalResults": "Top 8 Sydney (11-2-1)",
-    "sydneyStats": {
-      "winRate": "44%",
-      "matches": 165,
-      "conversionRate": "10%"
-    }
+    "joueursClasses": 711,
+    "coupe10": 48,
+    "titres": 0,
+    "conversion": "6.8 %",
+    "tournois": 83,
+    "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-11-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-11-23)"
+      }
+    ]
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
@@ -104,5 +128,6 @@
       "Gear Head (double le bonus des gears — build Spiritforged)"
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
-  }
+  },
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 711 joueurs classés sur 83 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

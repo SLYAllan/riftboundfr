@@ -51,8 +51,18 @@ for (const id of ids) {
     continue;
   }
 
-  const ville = conv.contexte.replace(/^S4 /, "").replace(/ City Challenge.*/, "");
-  const slug = `s4-${ville.toLowerCase()}-cc-${id}`;
+  // « S4 Suzhou City Challenge (2026-08-23) » → ville « Suzhou », épreuve de ville.
+  // Une épreuve qui n'est pas une City Challenge (« Dongguan Manbo Cup (…) ») ne
+  // suit pas ce gabarit : la découper pareil donnait une ville nommée
+  // « Dongguan Manbo Cup (2026-08-08) » et un slug avec des espaces et des
+  // parenthèses. On lit alors la ville dans le premier mot du nom.
+  const estCityChallenge = conv.contexte.includes("City Challenge");
+  const sansDate = conv.contexte.replace(/\s*\(\d{4}-\d{2}-\d{2}\)\s*$/, "");
+  const ville = estCityChallenge
+    ? sansDate.replace(/^S4 /, "").replace(/ City Challenge.*/, "")
+    : sansDate.split(" ")[0];
+  const slugSource = estCityChallenge ? `s4-${ville}-cc-${id}` : `${sansDate}-${id}`;
+  const slug = slugSource.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
   const parLegende = new Map<string, number>();
   for (const d of decks) parLegende.set(d.legend, (parLegende.get(d.legend) ?? 0) + 1);
@@ -90,8 +100,10 @@ for (const id of ids) {
 
   writeFileSync(join("data/tournaments", `${slug}.json`), `${JSON.stringify(fiche, null, 2)}\n`);
 
+  const nomAffiche = estCityChallenge ? `S4 ${ville} City Challenge` : sansDate;
+  const nomCourt = estCityChallenge ? `${ville} CC` : sansDate.replace(/^S4 /, "");
   const drapeau =
-    `  "${conv.contexte}": { name: "S4 ${ville} City Challenge", shortName: "${ville} CC", ` +
+    `  "${conv.contexte}": { name: "${nomAffiche}", shortName: "${nomCourt}", ` +
     `countryCode: "CN", city: "${ville}", location: "${ville}, Chine", playerCount: ${fiche.playerCount}, ` +
     `type: "city_challenge", date: "${fiche.date}", set: "Vendetta", format: "Standard" },`;
 

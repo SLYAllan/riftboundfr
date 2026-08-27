@@ -16,47 +16,47 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 80 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 70 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Mindsplitter",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 60 % des listes, 1 exemplaire"
+      "role": "Standard, 81 % des listes, 2 exemplaires"
     },
     {
       "name": "Baron Nashor",
-      "role": "Standard, 60 % des listes, 1 exemplaire"
+      "role": "Standard, 75 % des listes, 2 exemplaires"
     },
     {
-      "name": "Pack of Wonders",
-      "role": "Standard, 60 % des listes, 1 exemplaire"
+      "name": "Sabotage",
+      "role": "Standard, 69 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Souple, 56 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Souple, 56 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Souple, 56 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 50 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Souple, 50 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Scryer's Bloom",
+      "role": "Souple, 44 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Souple, 44 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -66,11 +66,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "deckCount": 10,
-    "top8": 1,
+    "joueursClasses": 37,
+    "coupe10": 6,
     "titres": 0,
-    "conversion": "10 %",
-    "tournois": 9,
+    "conversion": "16.2 %",
+    "tournois": 13,
+    "listesPubliees": 16,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -78,24 +79,24 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "9th",
+        "player": "A·霜月之七",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "10th",
+        "player": "gambit.纯爱.黑罗洛🐺",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
         "placement": "17th",
         "player": "BonkersForCheese",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
-        "placement": "43th",
-        "player": "口国狼队 天狼",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "44th",
-        "player": "酷猫.Rowe ",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "47th",
-        "player": "ZL-真城最高",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "25th",
+        "player": "树懒.宵星.Andrew",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       }
     ]
   },
@@ -124,31 +125,32 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "80 %",
+      "usage": "56 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "80 %",
-      "role": "1.5 exemplaire en moyenne"
+      "usage": "56 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "60 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "60 %",
+      "usage": "44 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "40 %",
+      "usage": "31 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Sigil of the Storm (100 %)",
-    "Forbidding Waste (60 %)",
-    "Sandswept Tomb (40 %)",
-    "The Papertree (40 %)"
+    "Forbidding Waste (44 %)",
+    "Forgotten Monument (38 %)",
+    "Dragon Roost (31 %)",
+    "Sandswept Tomb (31 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 10 listes, 9 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 37 joueurs classés, 13 tournois, dont 16 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

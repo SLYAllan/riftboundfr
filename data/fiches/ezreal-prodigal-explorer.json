@@ -6,7 +6,7 @@
     "Mind"
   ],
   "set": "Spiritforged",
-  "tier": 3,
+  "tier": 2,
   "archetype": "Sorts en chaîne, pioche conditionnelle",
   "legendAbility": "Épuisez Ezreal pour piocher, à condition d'avoir ciblé deux fois des unités ou des équipements adverses dans le tour. Il récompense les tours où l'on répond deux fois.",
   "gameplan": {
@@ -46,23 +46,23 @@
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 84 % des listes, 2 exemplaires"
+      "role": "Standard, 85 % des listes, 2 exemplaires"
     },
     {
       "name": "The List",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     },
     {
       "name": "Deadly Flourish",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,21 +77,22 @@
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "deckCount": 51,
-    "top8": 4,
+    "joueursClasses": 129,
+    "coupe10": 20,
     "titres": 0,
-    "conversion": "7.8 %",
-    "tournois": 20,
+    "conversion": "15.5 %",
+    "tournois": 22,
+    "listesPubliees": 54,
     "bestPlacements": [
-      {
-        "placement": "3rd",
-        "player": "无所畏惧",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
       {
         "placement": "3rd",
         "player": "霆霆",
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "无所畏惧",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
         "placement": "7th",
@@ -138,14 +139,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "75 %",
+      "usage": "76 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (90 %)",
-    "Sigil of the Storm (80 %)",
-    "Heisho, Shell of the World (73 %)"
+    "Frozen Fortress (91 %)",
+    "Sigil of the Storm (81 %)",
+    "Heisho, Shell of the World (74 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 51 listes, 20 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 129 joueurs classés, 22 tournois, dont 54 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

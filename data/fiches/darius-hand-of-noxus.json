@@ -40,10 +40,38 @@
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 284,
-    "top8": 12,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "joueursClasses": 415,
+    "coupe10": 46,
+    "titres": 0,
+    "conversion": "11.1 %",
+    "tournois": 69,
+    "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2026-01-31)"
+      },
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+      }
+    ]
   },
   "sourceUrl": null,
   "archetype": "Énergie supplémentaire après la première carte",
@@ -53,5 +81,6 @@
   ],
   "weaknesses": [
     "2 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
-  ]
+  ],
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 415 joueurs classés sur 69 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

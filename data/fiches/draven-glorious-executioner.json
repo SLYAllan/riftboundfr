@@ -30,15 +30,11 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "Rebuke",
       "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
@@ -46,6 +42,10 @@
     },
     {
       "name": "Ferrous Forerunner",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
       "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
@@ -58,11 +58,11 @@
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 81 % des listes, 1 exemplaire"
+      "role": "Standard, 79 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "deckCount": 67,
-    "top8": 6,
+    "joueursClasses": 184,
+    "coupe10": 24,
     "titres": 1,
-    "conversion": "9 %",
-    "tournois": 20,
+    "conversion": "13 %",
+    "tournois": 21,
+    "listesPubliees": 68,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -90,13 +91,13 @@
       },
       {
         "placement": "2nd",
-        "player": ">171",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "player": "GGBoom",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
         "placement": "2nd",
-        "player": "GGBoom",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "player": ">171",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       },
       {
         "placement": "5th",
@@ -143,7 +144,7 @@
       "role": "3 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "73 %",
+      "usage": "74 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Returned": {
@@ -151,7 +152,7 @@
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "61 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
@@ -160,9 +161,9 @@
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (87 %)",
+    "Treasure Hoard (85 %)",
     "Zaun Warrens (76 %)",
-    "Amateur Recital (48 %)"
+    "Amateur Recital (49 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 67 listes, 20 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 184 joueurs classés, 21 tournois, dont 68 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

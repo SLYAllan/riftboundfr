@@ -6,53 +6,91 @@
     "Chaos"
   ],
   "set": "Proving Grounds",
-  "tier": 5,
+  "tier": 4,
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "id": "Stacked Deck",
-      "role": "Présente dans 94 % des 503 listes recensées."
-    },
-    {
-      "name": "Kai'Sa, Survivor",
-      "id": "Kai'Sa, Survivor",
-      "role": "Présente dans 91 % des 503 listes recensées."
-    },
-    {
-      "name": "Traveling Merchant",
-      "id": "Traveling Merchant",
-      "role": "Présente dans 87 % des 503 listes recensées."
-    },
-    {
-      "name": "Ride the Wind",
-      "id": "Ride The Wind",
-      "role": "Présente dans 77 % des 503 listes recensées."
-    },
-    {
-      "name": "Fight or Flight",
-      "role": "Présente dans 77 % des 503 listes recensées."
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "id": "Flash",
-      "role": "Présente dans 72 % des 503 listes recensées."
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
-      "name": "Rebuke",
-      "id": "Rebuke",
-      "role": "Présente dans 66 % des 503 listes recensées."
+      "name": "Traveling Merchant",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
-      "name": "Vi, Destructive",
-      "id": "Vi, Destructive",
-      "role": "Présente dans 64 % des 503 listes recensées."
+      "name": "Gust Monk",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 80 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 70 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 70 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Long Sword",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Cleave",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Against the Odds",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 503,
-    "top8": 25,
-    "victoires": 6,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "joueursClasses": 20,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "10 %",
+    "tournois": 10,
+    "listesPubliees": 10,
+    "bestPlacements": [
+      {
+        "placement": "19th",
+        "player": "羽芒丨3+x丨不吃糖",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "36th",
+        "player": "善良的可可云",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "38th",
+        "player": "善良的可可云",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "39th",
+        "player": "NickGauthier",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "49th",
+        "player": "Acc.Muk.真夜",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      }
+    ]
   },
   "sourceUrl": null,
   "archetype": "Runes préparées en fin de tour",
@@ -62,5 +100,36 @@
   ],
   "weaknesses": [
     "8 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
-  ]
+  ],
+  "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Annie, Stubborn": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "70 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Pouncing": {
+      "usage": "50 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "30 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Darius, Trifarian": {
+      "usage": "30 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Seat of Power (80 %)",
+    "Zaun Warrens (80 %)"
+  ],
+  "dataSource": "Classement complet des tournois : 20 joueurs classés, 10 tournois, dont 10 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

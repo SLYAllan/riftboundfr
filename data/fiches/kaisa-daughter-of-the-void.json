@@ -6,7 +6,7 @@
     "Mind"
   ],
   "set": "Origins",
-  "tier": 2,
+  "tier": 3,
   "keyCards": [
     {
       "name": "Thousand-Tailed Watcher",
@@ -33,24 +33,24 @@
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "Watchful Sentry",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Time Warp",
       "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
+      "name": "Watchful Sentry",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Progress Day",
-      "role": "Cœur du deck, 92 % des listes, 1 exemplaire"
+      "role": "Cœur du deck, 91 % des listes, 1 exemplaire"
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
@@ -58,11 +58,12 @@
     }
   ],
   "competitiveResults": {
-    "deckCount": 241,
-    "top8": 15,
+    "joueursClasses": 285,
+    "coupe10": 23,
     "titres": 2,
-    "conversion": "6.2 %",
-    "tournois": 20,
+    "conversion": "8.1 %",
+    "tournois": 23,
+    "listesPubliees": 257,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -99,12 +100,12 @@
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (86 %)",
-    "Rockfall Path (86 %)",
+    "Rockfall Path (87 %)",
+    "Frozen Fortress (85 %)",
     "Void Gate (80 %)",
     "Heisho, Shell of the World (33 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 241 listes, 20 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 285 joueurs classés, 23 tournois, dont 257 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

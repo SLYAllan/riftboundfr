@@ -63,13 +63,38 @@
     "2 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 2,
-    "preRegionals": "1 Win / 4 Top 8",
-    "sydneyStats": {
-      "winRate": "55%",
-      "matches": 329,
-      "bestPlacement": "35th (10-3-0)"
-    }
+    "joueursClasses": 917,
+    "coupe10": 85,
+    "titres": 1,
+    "conversion": "9.3 %",
+    "tournois": 86,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Fuzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "S3 Tianjin City Challenge (2026-04-19)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Hangzhou City Challenge (2025-12-20)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-06)"
+      }
+    ]
   },
   "difficulty": "Moyen-Difficile",
   "beginnerFriendly": false,
@@ -89,5 +114,6 @@
       "Mindsplitter"
     ],
     "note": "MF préférée à Sivir hors miroir (ganking pour conquérir 2 terrains). Baron en finisher = quasi-imbattable pour Diana."
-  }
+  },
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 917 joueurs classés sur 86 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

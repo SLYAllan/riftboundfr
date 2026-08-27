@@ -29,91 +29,96 @@
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Death Mark",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 82 % des listes, 2.5 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     },
     {
       "name": "Cleave",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Shadow Order Disciple",
-      "role": "Souple, 59 % des listes, 3 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust Monk",
-      "role": "Souple, 59 % des listes, 3 exemplaires"
+      "role": "Standard, 66 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Souple, 55 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Last Rites",
+      "role": "Souple, 48 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Souple, 48 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 55 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Treasure Hunter",
-      "role": "Souple, 45 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Rhasa the Sunderer",
-      "role": "Souple, 41 % des listes, 3 exemplaires"
+      "role": "Souple, 48 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
-    "Zed, From the Shadows": {
-      "usage": "68 %",
+    "Zed, Without a Sound": {
+      "usage": "62 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Zed, Without a Sound": {
+    "Zed, From the Shadows": {
       "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Fizz, Trickster": {
+      "usage": "52 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Kai'Sa, Survivor": {
-      "usage": "50 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Destructive": {
-      "usage": "50 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Fizz, Trickster": {
-      "usage": "45 %",
-      "role": "2 exemplaires en moyenne"
+    "Kennen, Storm of Shuriken": {
+      "usage": "31 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Rek'Sai, Breacher": {
-      "usage": "32 %",
+      "usage": "31 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (91 %)",
-    "Minefield (59 %)",
-    "Shadow Temple (45 %)",
-    "Forbidding Waste (41 %)"
+    "Zaun Warrens (93 %)",
+    "Minefield (66 %)",
+    "Forbidding Waste (38 %)",
+    "Shadow Temple (34 %)"
   ],
   "competitiveResults": {
-    "deckCount": 22,
-    "top8": 0,
+    "joueursClasses": 62,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 13,
+    "conversion": "3.2 %",
+    "tournois": 16,
+    "listesPubliees": 29,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -142,5 +147,5 @@
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 22 listes, 13 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 62 joueurs classés, 16 tournois, dont 29 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

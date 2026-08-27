@@ -13,32 +13,32 @@
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "Falling Star",
+      "name": "Carrion Dredger",
       "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "Carrion Dredger",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Undertitan",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "name": "Falling Star",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Cull the Weak",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Cleave",
+      "name": "Noxus Hopeful",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
+      "name": "Cleave",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Inferna",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Honest Broker",
@@ -46,23 +46,24 @@
     },
     {
       "name": "Faithful Manufactor",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Blood Rush",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Shadow Fiend",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Souple, 57 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 110,
-    "top8": 9,
+    "joueursClasses": 246,
+    "coupe10": 29,
     "titres": 0,
-    "conversion": "8.2 %",
-    "tournois": 21,
+    "conversion": "11.8 %",
+    "tournois": 23,
+    "listesPubliees": 121,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -71,7 +72,7 @@
       },
       {
         "placement": "2nd",
-        "player": "灵花祭.ECG.Chаnce",
+        "player": "灵花祭.ECG.Chance",
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
@@ -81,13 +82,13 @@
       },
       {
         "placement": "5th",
-        "player": "Sаtаme",
+        "player": "Satame",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
         "placement": "6th",
-        "player": "超级无敌暴龙",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "player": "游城十代@罗比军校",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -102,18 +103,18 @@
       "role": "1 exemplaire en moyenne"
     },
     "Zed, From the Shadows": {
-      "usage": "57 %",
+      "usage": "54 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "The Candlelit Sanctum (95 %)",
-    "Mystic Vortex (55 %)",
-    "Zaun Warrens (53 %)",
-    "Trifarian War Camp (39 %)",
-    "Forbidding Waste (37 %)"
+    "Mystic Vortex (53 %)",
+    "Zaun Warrens (50 %)",
+    "Trifarian War Camp (42 %)",
+    "Forbidding Waste (38 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 110 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 246 joueurs classés, 23 tournois, dont 121 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

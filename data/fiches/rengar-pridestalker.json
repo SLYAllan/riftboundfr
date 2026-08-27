@@ -6,7 +6,7 @@
     "Fury"
   ],
   "set": "Origins",
-  "tier": 3,
+  "tier": 2,
   "archetype": "Embuscades, unités posées en combat",
   "legendAbility": "Quand vous jouez une unité, donnez +1 Puissance à une unité pour le tour. Chaque arrivée fait pencher un combat.",
   "gameplan": {
@@ -22,47 +22,47 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Apothecary",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Souple, 57 % des listes, 1 exemplaire"
+      "role": "Standard, 62 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -76,15 +76,16 @@
     "35 listes en dix-huit tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "deckCount": 35,
-    "top8": 2,
+    "joueursClasses": 150,
+    "coupe10": 20,
     "titres": 1,
-    "conversion": "5.7 %",
-    "tournois": 18,
+    "conversion": "13.3 %",
+    "tournois": 20,
+    "listesPubliees": 39,
     "bestPlacements": [
       {
         "placement": "1st",
-        "player": "Prismаticismism",
+        "player": "Prismaticismism",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
@@ -93,19 +94,19 @@
         "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       },
       {
-        "placement": "15th",
-        "player": "雷汐",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "6th",
+        "player": "Prismaticismism",
+        "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "14th",
+        "player": "MICE ColaKaKAO",
+        "tournament": "Barcelona Regional Qualifier"
       },
       {
         "placement": "15th",
-        "player": "象象和刘刘",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "16th",
-        "player": "燃冰",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "player": "Erlinskaaa",
+        "tournament": "Barcelona Regional Qualifier"
       }
     ]
   },
@@ -133,15 +134,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "91 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "66 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
@@ -150,10 +151,10 @@
     }
   },
   "topBattlefields": [
-    "Star Spring (91 %)",
-    "Emperor's Dais (80 %)",
-    "Seat of Power (51 %)",
+    "Star Spring (92 %)",
+    "Emperor's Dais (82 %)",
+    "Seat of Power (54 %)",
     "Forbidding Waste (31 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 35 listes, 18 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 150 joueurs classés, 20 tournois, dont 39 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

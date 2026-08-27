@@ -6,7 +6,7 @@
     "Order"
   ],
   "set": "Vendetta",
-  "tier": 4,
+  "tier": 5,
   "archetype": "Amplification et unités préparées",
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
   "gameplan": {
@@ -30,86 +30,87 @@
   "keyCards": [
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Legion Marauder",
-      "role": "Standard, 87 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Rampage",
-      "role": "Standard, 87 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 87 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
-      "name": "Guttural Roar",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "name": "Rampage",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 80 % des listes, 1.5 exemplaire"
+      "role": "Standard, 83 % des listes, 1 exemplaire"
     },
     {
-      "name": "Pit Rookie",
-      "role": "Standard, 73 % des listes, 3 exemplaires"
+      "name": "Guttural Roar",
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 67 % des listes, 2.5 exemplaires"
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     },
     {
       "name": "Repulse",
       "role": "Standard, 67 % des listes, 1 exemplaire"
     },
     {
-      "name": "Noxian Emissary",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "name": "Pit Rookie",
+      "role": "Standard, 61 % des listes, 3 exemplaires"
     },
     {
-      "name": "Profiteer",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "name": "Noxian Emissary",
+      "role": "Standard, 61 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Solari Sunhawk",
+      "role": "Souple, 50 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "60 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "67 %",
+      "role": "1.5 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "40 %",
-      "role": "2.5 exemplaires en moyenne"
-    },
-    "Jayce, Hammer in Hand": {
-      "usage": "40 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
+      "usage": "39 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Jayce, Hammer in Hand": {
       "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (80 %)",
-    "Sunken Temple (53 %)",
-    "Mystic Vortex (33 %)"
+    "Risen Altar (83 %)",
+    "Sunken Temple (56 %)",
+    "Sandswept Tomb (33 %)"
   ],
   "competitiveResults": {
-    "deckCount": 15,
-    "top8": 1,
+    "joueursClasses": 65,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "6.7 %",
-    "tournois": 10,
+    "conversion": "1.5 %",
+    "tournois": 12,
+    "listesPubliees": 18,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -138,5 +139,5 @@
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 15 listes, 10 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 65 joueurs classés, 12 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

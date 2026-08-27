@@ -6,14 +6,14 @@
     "Chaos"
   ],
   "set": "Unleashed",
-  "tier": 4,
+  "tier": 5,
   "keyCards": [
     {
-      "name": "Stacked Deck",
+      "name": "Falling Star",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
-      "name": "Falling Star",
+      "name": "Stacked Deck",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
@@ -22,47 +22,48 @@
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Treasure Hunter",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
+      "role": "Standard, 84 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Standard, 81 % des listes, 3 exemplaires"
     },
     {
       "name": "Void Seeker",
-      "role": "Standard, 80 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Blood Rush",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 81 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
-      "name": "Tideturner",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Piercing Light",
-      "role": "Standard, 63 % des listes, 1 exemplaire"
+      "name": "Blood Rush",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 63 % des listes, 1 exemplaire"
+      "role": "Standard, 65 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Piercing Light",
+      "role": "Standard, 65 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 61 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 30,
-    "top8": 0,
+    "joueursClasses": 66,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 17,
+    "conversion": "1.5 %",
+    "tournois": 18,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -102,16 +103,16 @@
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Ripper's Bay (97 %)",
-    "Forbidding Waste (83 %)",
-    "Void Gate (40 %)"
+    "Forbidding Waste (81 %)",
+    "Void Gate (42 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 30 listes, 17 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 66 joueurs classés, 18 tournois, dont 31 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

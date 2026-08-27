@@ -6,63 +6,64 @@
     "Mind"
   ],
   "set": "Spiritforged",
-  "tier": 4,
+  "tier": 5,
   "keyCards": [
     {
       "name": "Ferrous Forerunner",
-      "role": "Cœur du deck, 100 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Forecaster",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Gem Jammer",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Bubble Bot",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Standard, 83 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Production Surge",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 67 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Production Surge",
+      "role": "Standard, 76 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Patched Porobot",
-      "role": "Standard, 67 % des listes, 2.5 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 65 % des listes, 2 exemplaires"
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 65 % des listes, 2 exemplaires"
     },
     {
-      "name": "Perfect Execution",
-      "role": "Standard, 67 % des listes, 1 exemplaire"
+      "name": "Brynhir Thundersong",
+      "role": "Standard, 65 % des listes, 1 exemplaire"
     }
   ],
   "competitiveResults": {
-    "deckCount": 12,
-    "top8": 0,
+    "joueursClasses": 66,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 10,
+    "conversion": "1.5 %",
+    "tournois": 13,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -85,8 +86,8 @@
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
-        "placement": "75th",
-        "player": "群魔",
+        "placement": "43th",
+        "player": "易",
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       }
     ]
@@ -103,17 +104,17 @@
   "champions": {
     "Rumble, Hotheaded": {
       "usage": "100 %",
-      "role": "2.5 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     },
     "Rumble, Scrapper": {
-      "usage": "50 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (50 %)",
-    "Zaun Warrens (42 %)",
-    "Minefield (42 %)"
+    "Zaun Warrens (53 %)",
+    "Rockfall Path (41 %)",
+    "Minefield (41 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 12 listes, 10 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 66 joueurs classés, 13 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

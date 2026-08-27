@@ -31,7 +31,7 @@
   "keyCards": [
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Elder Dragon",
@@ -51,7 +51,7 @@
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Dredge Up",
@@ -71,11 +71,11 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "role": "Standard, 75 % des listes, 2 exemplaires"
     },
     {
-      "name": "Temporal Breach",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "name": "Catalyst of Aeons",
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
@@ -85,17 +85,18 @@
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (86 %)",
-    "Forgotten Monument (50 %)",
+    "Sigil of the Storm (84 %)",
+    "Forgotten Monument (51 %)",
     "The Papertree (47 %)",
-    "Dragon Roost (39 %)"
+    "Dragon Roost (37 %)"
   ],
   "competitiveResults": {
-    "deckCount": 101,
-    "top8": 6,
+    "joueursClasses": 193,
+    "coupe10": 19,
     "titres": 0,
-    "conversion": "5.9 %",
-    "tournois": 21,
+    "conversion": "9.8 %",
+    "tournois": 23,
+    "listesPubliees": 107,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -104,25 +105,25 @@
       },
       {
         "placement": "6th",
-        "player": "一氙化氢",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "6th",
         "player": "林",
         "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       },
       {
-        "placement": "7th",
-        "player": "🐊",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+        "placement": "6th",
+        "player": "一氙化氢",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
         "placement": "7th",
         "player": "珠光护手牙仙子循环往复杰斯",
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "7th",
+        "player": "🐊",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 101 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 193 joueurs classés, 23 tournois, dont 107 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

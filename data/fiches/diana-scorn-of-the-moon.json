@@ -6,7 +6,7 @@
     "Mind"
   ],
   "set": "Unleashed",
-  "tier": 2,
+  "tier": 3,
   "archetype": "Combats gagnés à la réaction",
   "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
@@ -50,19 +50,19 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "role": "Standard, 76 % des listes, 1 exemplaire"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 72 % des listes, 3 exemplaires"
+      "role": "Standard, 68 % des listes, 3 exemplaires"
     },
     {
       "name": "Morbid Return",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,18 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "deckCount": 121,
-    "top8": 9,
-    "titres": 3,
-    "conversion": "7.4 %",
-    "tournois": 20,
+    "joueursClasses": 235,
+    "coupe10": 22,
+    "titres": 4,
+    "conversion": "9.4 %",
+    "tournois": 23,
+    "listesPubliees": 133,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "Gambit.叶",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
       {
         "placement": "1st",
         "player": "抖音老油条.KaLioS",
@@ -95,18 +101,13 @@
       },
       {
         "placement": "1st",
-        "player": "AkirаAI",
+        "player": "AkiraAI",
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
         "placement": "2nd",
         "player": "火星.化作蝴蝶飞舞",
         "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "3rd",
-        "player": "无极卡牌.牢底",
-        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
       }
     ]
   },
@@ -144,19 +145,19 @@
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "69 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "32 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (96 %)",
-    "Rockfall Path (69 %)",
-    "Targon's Peak (41 %)",
-    "Veiled Temple (31 %)"
+    "Rockfall Path (67 %)",
+    "Targon's Peak (44 %)",
+    "Veiled Temple (30 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 121 listes, 20 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 235 joueurs classés, 23 tournois, dont 133 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

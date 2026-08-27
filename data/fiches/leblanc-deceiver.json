@@ -6,7 +6,7 @@
     "Order"
   ],
   "set": "Unleashed",
-  "tier": 3,
+  "tier": 2,
   "archetype": "Copies et morts rentables",
   "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
   "gameplan": {
@@ -18,39 +18,39 @@
   "keyCards": [
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Watchful Sentry",
-      "role": "Standard, 81 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Glasc Mixologist",
-      "role": "Standard, 80 % des listes, 3 exemplaires"
+      "role": "Standard, 81 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 81 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruined Rex",
-      "role": "Standard, 78 % des listes, 3 exemplaires"
+      "role": "Standard, 80 % des listes, 3 exemplaires"
     },
     {
       "name": "Baited Hook",
-      "role": "Standard, 67 % des listes, 3 exemplaires"
+      "role": "Standard, 66 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
@@ -77,11 +77,12 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "deckCount": 54,
-    "top8": 6,
+    "joueursClasses": 143,
+    "coupe10": 17,
     "titres": 0,
-    "conversion": "11.1 %",
-    "tournois": 20,
+    "conversion": "11.9 %",
+    "tournois": 22,
+    "listesPubliees": 59,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -130,23 +131,23 @@
     "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit). Perd vs Volibear Dragon Storm (out-value). Se contre via Challenge (tue le Karthus T2 = déni du moteur Death Knell) plutôt qu'en l'affrontant tard. Existe aussi en variante BLUE sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors)."
   },
   "champions": {
+    "Karthus, Eternal": {
+      "usage": "80 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "LeBlanc, Fragmented": {
       "usage": "80 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Karthus, Eternal": {
-      "usage": "78 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Vi, Peacekeeper": {
-      "usage": "72 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Windswept Hillock (96 %)",
-    "Star Spring (56 %)",
-    "Dusk Rose Lab (54 %)"
+    "Windswept Hillock (97 %)",
+    "Star Spring (54 %)",
+    "Dusk Rose Lab (53 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 54 listes, 20 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 143 joueurs classés, 22 tournois, dont 59 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

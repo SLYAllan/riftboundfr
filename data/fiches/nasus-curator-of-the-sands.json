@@ -6,7 +6,7 @@
     "Mind"
   ],
   "set": "Vendetta",
-  "tier": 2,
+  "tier": 4,
   "archetype": "Grosses unités payées deux fois",
   "legendAbility": "Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, épuisez Nasus pour préparer jusqu'à deux runes. Le gros coup se rembourse.",
   "gameplan": {
@@ -38,16 +38,16 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Discipline",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Find Your Center",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
@@ -58,16 +58,16 @@
       "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "Charm",
-      "role": "Standard, 72 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Steel Paws",
       "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
+      "name": "Charm",
+      "role": "Standard, 70 % des listes, 2 exemplaires"
+    },
+    {
       "name": "Retreat",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Astral Heron",
@@ -85,18 +85,19 @@
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (54 %)",
-    "The Papertree (39 %)",
+    "Vilemaw's Lair (56 %)",
+    "The Papertree (37 %)",
     "Forgotten Monument (35 %)",
-    "Rockfall Path (34 %)",
-    "Altar of Blood (34 %)"
+    "Altar of Blood (34 %)",
+    "Rockfall Path (33 %)"
   ],
   "competitiveResults": {
-    "deckCount": 125,
-    "top8": 6,
+    "joueursClasses": 258,
+    "coupe10": 16,
     "titres": 2,
-    "conversion": "4.8 %",
-    "tournois": 21,
+    "conversion": "6.2 %",
+    "tournois": 23,
+    "listesPubliees": 132,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -105,7 +106,7 @@
       },
       {
         "placement": "1st",
-        "player": "灵花祭.ecg.Asukа",
+        "player": "灵花祭.ecg.Asuka",
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
@@ -125,5 +126,5 @@
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 125 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 258 joueurs classés, 23 tournois, dont 132 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

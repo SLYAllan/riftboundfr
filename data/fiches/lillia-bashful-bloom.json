@@ -34,14 +34,14 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Ravenbloom Student",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Smoke and Mirrors",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ravenbloom Student",
       "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
@@ -50,19 +50,19 @@
     },
     {
       "name": "Lilting Lullaby",
-      "role": "Standard, 86 % des listes, 1 exemplaire"
+      "role": "Standard, 83 % des listes, 1 exemplaire"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires"
     },
     {
       "name": "Heart of Dark Ice",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,12 @@
     "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "deckCount": 49,
-    "top8": 5,
+    "joueursClasses": 123,
+    "coupe10": 9,
     "titres": 1,
-    "conversion": "10.2 %",
-    "tournois": 19,
+    "conversion": "7.3 %",
+    "tournois": 22,
+    "listesPubliees": 53,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -134,15 +135,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "35 %",
+      "usage": "34 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Dusk Rose Lab (96 %)",
-    "Black Flame Altar (69 %)",
-    "Seat of Power (57 %)",
-    "Forbidding Waste (33 %)"
+    "Dusk Rose Lab (94 %)",
+    "Black Flame Altar (68 %)",
+    "Seat of Power (55 %)",
+    "Forbidding Waste (32 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 49 listes, 19 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 123 joueurs classés, 22 tournois, dont 53 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

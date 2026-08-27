@@ -6,63 +6,64 @@
     "Body"
   ],
   "set": "Spiritforged",
-  "tier": 4,
+  "tier": 5,
   "keyCards": [
-    {
-      "name": "Brutalizer",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Guardian Angel",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
     {
       "name": "Defy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "First Mate",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "name": "Brutalizer",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Guardian Angel",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Counter Strike",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "First Mate",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Lonely Poro",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Standard, 71 % des listes, 3 exemplaires"
     },
     {
       "name": "Challenge",
-      "role": "Souple, 57 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Rampage",
+      "role": "Souple, 47 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 50 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Boneshiver",
-      "role": "Souple, 50 % des listes, 2 exemplaires"
+      "role": "Souple, 47 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 14,
-    "top8": 0,
+    "joueursClasses": 41,
+    "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 10,
+    "tournois": 13,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "38th",
@@ -75,6 +76,11 @@
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
+        "placement": "45th",
+        "player": "冰梅雨",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
         "placement": "50th",
         "player": "空想空想想",
         "tournament": "S4 Nanjing City Challenge (2026-08-15)"
@@ -83,30 +89,25 @@
         "placement": "53th",
         "player": "薯片",
         "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "61th",
-        "player": "Zeeke",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       }
     ]
   },
   "sourceUrl": null,
   "champions": {
     "Jax, Unmatched": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "43 %",
+      "usage": "35 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (79 %)",
-    "Ornn's Forge (57 %)"
+    "Sunken Temple (76 %)",
+    "Ornn's Forge (53 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 14 listes, 10 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 41 joueurs classés, 13 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

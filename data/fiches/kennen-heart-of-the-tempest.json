@@ -35,7 +35,7 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
@@ -47,23 +47,23 @@
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Discord",
-      "role": "Standard, 87 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Last Rites",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Last Rites",
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     },
     {
       "name": "Switcheroo",
@@ -71,16 +71,16 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 52 % des listes, 1 exemplaire"
+      "role": "Souple, 51 % des listes, 1 exemplaire"
     },
     {
-      "name": "Cull the Weak",
+      "name": "Up from the Deep",
       "role": "Souple, 47 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "94 %",
+      "usage": "93 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
@@ -93,16 +93,17 @@
     }
   },
   "topBattlefields": [
-    "Minefield (90 %)",
-    "Zaun Warrens (82 %)",
-    "The Candlelit Sanctum (34 %)"
+    "Minefield (89 %)",
+    "Zaun Warrens (81 %)",
+    "The Candlelit Sanctum (33 %)"
   ],
   "competitiveResults": {
-    "deckCount": 247,
-    "top8": 30,
+    "joueursClasses": 568,
+    "coupe10": 105,
     "titres": 3,
-    "conversion": "12.1 %",
-    "tournois": 21,
+    "conversion": "18.5 %",
+    "tournois": 23,
+    "listesPubliees": 264,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -111,25 +112,25 @@
       },
       {
         "placement": "1st",
-        "player": "D.C松饼",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "1st",
         "player": "收容所218·一凡家老王",
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
-        "placement": "2nd",
-        "player": "粉皮土豆",
-        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+        "placement": "1st",
+        "player": "D.C松饼",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
       },
       {
         "placement": "2nd",
-        "player": "Blacksheep",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+        "player": "CTCG Koko Lopez",
+        "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "2nd",
+        "player": "LineKa·黑天使",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Decklists de tournoi en base : 247 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 568 joueurs classés, 23 tournois, dont 264 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

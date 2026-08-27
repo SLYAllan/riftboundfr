@@ -6,7 +6,7 @@
     "Order"
   ],
   "set": "Spiritforged",
-  "tier": 5,
+  "tier": 4,
   "keyCards": [
     {
       "name": "Hidden Blade",
@@ -50,10 +50,38 @@
     }
   ],
   "competitiveResults": {
-    "decklistsRecensees": 106,
-    "top8": 0,
-    "victoires": 0,
-    "source": "Decklists de tournoi scrapées, data/decklists."
+    "joueursClasses": 239,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 44,
+    "bestPlacements": [
+      {
+        "placement": "30th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-12-20)"
+      },
+      {
+        "placement": "35th",
+        "player": "月魔夜小",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "35th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-12-28)"
+      },
+      {
+        "placement": "35th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-12-27)"
+      },
+      {
+        "placement": "41th",
+        "player": null,
+        "tournament": "S2 Shanghai City Challenge (2026-03-07)"
+      }
+    ]
   },
   "sourceUrl": null,
   "archetype": "Or gagné en tenant",
@@ -63,5 +91,6 @@
   ],
   "weaknesses": [
     "5 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
-  ]
+  ],
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 239 joueurs classés sur 44 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

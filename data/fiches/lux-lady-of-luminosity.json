@@ -14,55 +14,56 @@
     },
     {
       "name": "Forge of the Future",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Time Warp",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 80 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "The Ruination",
-      "role": "Standard, 80 % des listes, 1 exemplaire"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Soaring Scout",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Standard, 75 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Standard, 75 % des listes, 3 exemplaires"
     },
     {
       "name": "Dredge Up",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Standard, 75 % des listes, 3 exemplaires"
     },
     {
       "name": "Shadow's Call",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Standard, 75 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "The Ruination",
+      "role": "Standard, 75 % des listes, 1 exemplaire"
     },
     {
       "name": "Seal of Insight",
-      "role": "Standard, 60 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Sprite Burst",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     },
     {
       "name": "Retreat",
-      "role": "Standard, 60 % des listes, 1.5 exemplaire"
+      "role": "Standard, 67 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Promising Future",
+      "role": "Souple, 58 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "deckCount": 10,
-    "top8": 1,
+    "joueursClasses": 29,
+    "coupe10": 4,
     "titres": 0,
-    "conversion": "10 %",
-    "tournois": 8,
+    "conversion": "13.8 %",
+    "tournois": 10,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -75,19 +76,19 @@
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
+        "placement": "31th",
+        "player": "jasoniltg",
+        "tournament": "Barcelona Regional Qualifier"
+      },
+      {
         "placement": "34th",
         "player": "幻灵卡域·耿鬼",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       },
       {
-        "placement": "52th",
-        "player": "LineKa·DNY",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "77th",
-        "player": "i开TV·i光·幸若杳晚·白开老师最帅",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+        "placement": "40th",
+        "player": "Nuge",
+        "tournament": "Barcelona Regional Qualifier"
       }
     ]
   },
@@ -98,24 +99,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Ekko, Recurrent": {
-      "usage": "80 %",
+      "usage": "83 %",
       "role": "3 exemplaires en moyenne"
-    },
-    "Renata Glasc, Mastermind": {
-      "usage": "30 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Ashe, Focused": {
-      "usage": "30 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forgotten Monument (80 %)",
-    "The Papertree (60 %)",
-    "Sigil of the Storm (50 %)"
+    "Forgotten Monument (83 %)",
+    "The Papertree (67 %)",
+    "Sigil of the Storm (58 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 10 listes, 8 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 29 joueurs classés, 10 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Gros sorts et pioche",
   "legendAbility": "Quand vous jouez un sort qui coûte 5 énergie ou plus, piochez une carte.",
   "gameplan": {

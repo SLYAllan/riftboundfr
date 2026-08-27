@@ -83,30 +83,43 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 2,
-    "deckCount": 25,
+    "joueursClasses": 802,
+    "coupe10": 33,
+    "titres": 1,
+    "conversion": "4.1 %",
+    "tournois": 79,
     "bestPlacements": [
       {
-        "placement": "31st",
-        "player": "Teh Bestest One",
-        "tournament": "Atlanta RQ"
+        "placement": "1st",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-12)"
       },
       {
-        "placement": "68th",
-        "player": "白泽",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Nanjing City Challenge (2025-10-12)"
       },
       {
-        "placement": "76th",
-        "player": "Brennan D",
-        "tournament": "Atlanta RQ"
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 25 decklists (Xi'an + Atlanta + Sydney)",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 802 joueurs classés sur 79 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

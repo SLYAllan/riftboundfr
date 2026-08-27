@@ -6,7 +6,7 @@
     "Order"
   ],
   "set": "Unleashed",
-  "tier": 4,
+  "tier": 5,
   "archetype": "Étourdir puis renforcer",
   "legendAbility": "Quand vous étourdissez une ou plusieurs unités adverses, améliorez une de vos unités.",
   "keyCards": [
@@ -83,30 +83,43 @@
     "9 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 3,
-    "deckCount": 20,
+    "joueursClasses": 473,
+    "coupe10": 7,
+    "titres": 0,
+    "conversion": "1.5 %",
+    "tournois": 73,
     "bestPlacements": [
       {
-        "placement": "66th",
-        "player": "逆转 懒人疗程",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "9th",
+        "player": "公爵",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
-        "placement": "146th",
-        "player": "窥瞳",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "10th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
       },
       {
-        "placement": "255th",
-        "player": "丹柯",
-        "tournament": "S3 Xi'an Regional Open"
+        "placement": "10th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-11-08)"
+      },
+      {
+        "placement": "11th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "11th",
+        "player": null,
+        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "meta-analysis.json — 20 decklists (Xi'an + Sydney)",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 473 joueurs classés sur 73 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

@@ -6,7 +6,7 @@
     "Body"
   ],
   "set": "Unleashed",
-  "tier": 4,
+  "tier": 3,
   "archetype": "XP et combats gagnés",
   "legendAbility": "Chaque combat gagné donne 1 XP. Un XP et un épuisement pour améliorer une unité, deux XP pour ramener une unité épuisée à la base.",
   "gameplan": {
@@ -25,44 +25,44 @@
       "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 96 % des listes, 1 exemplaire"
     },
     {
+      "name": "Punch First",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+    },
+    {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Resolve",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Punch First",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Demacian Diplomat",
-      "role": "Standard, 74 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 70 % des listes, 1.5 exemplaire"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 70 % des listes, 1.5 exemplaire"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Demacian Diplomat",
+      "role": "Standard, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Standard, 70 % des listes, 1 exemplaire"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "role": "Standard, 70 % des listes, 1 exemplaire"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 61 % des listes, 2 exemplaires"
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -75,11 +75,12 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "deckCount": 23,
-    "top8": 1,
+    "joueursClasses": 123,
+    "coupe10": 12,
     "titres": 0,
-    "conversion": "4.3 %",
-    "tournois": 16,
+    "conversion": "9.8 %",
+    "tournois": 18,
+    "listesPubliees": 27,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -102,9 +103,9 @@
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
-        "placement": "29th",
-        "player": "纸传.白子洲",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+        "placement": "28th",
+        "player": "ASC JUN",
+        "tournament": "Barcelona Regional Qualifier"
       }
     ]
   },
@@ -132,7 +133,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "91 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
@@ -140,27 +141,27 @@
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "52 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     },
     "Qiyana, Victorious": {
-      "usage": "43 %",
+      "usage": "41 %",
       "role": "3 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "43 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "39 %",
+      "usage": "37 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (83 %)",
-    "Monastery of Hirana (78 %)",
-    "Star Spring (61 %)",
-    "Sandswept Tomb (35 %)"
+    "Forbidding Waste (85 %)",
+    "Monastery of Hirana (74 %)",
+    "Star Spring (63 %)",
+    "Sandswept Tomb (37 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 23 listes, 16 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 123 joueurs classés, 18 tournois, dont 27 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

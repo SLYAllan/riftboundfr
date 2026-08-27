@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { decklistVendettaComplete } from "./decklist-integrity";
-import { sortiesObsoletes } from "./parse-riftdecks-integrity";
+import { sansHomoglyphes, sortiesObsoletes } from "./parse-riftdecks-integrity";
 
 interface DeckCard {
   name: string;
@@ -90,9 +90,13 @@ function parseDeckMarkdown(md: string, sourceUrl: string, meta: MetaTournoi): De
   // nom du corps « decklist by <nom>. <place> ». Les tournois occidentaux (Ottawa,
   // via Jeux Face à Face) mettent le VRAI nom dans le corps mais le pseudo dans le
   // H1 ; on veut le pseudo partout, comme le valideur qui lit déjà le H1.
+  //
+  // Le H1 est marqué : riftdecks y remplace des lettres latines par des
+  // cyrilliques identiques à l'oeil. `sansHomoglyphes` les rend, sinon le pseudo
+  // ne se rapproche plus de rien (cf. son commentaire).
   let player = "";
   const h1Player = md.match(/^#\s+.+?\s+by\s+(.+?)\s*$/m);
-  if (h1Player) player = h1Player[1].trim();
+  if (h1Player) player = sansHomoglyphes(h1Player[1].trim());
   else {
     const playerMatch = md.match(/decklist by (.+?)\.\s+\d/);
     if (playerMatch) player = playerMatch[1].trim();

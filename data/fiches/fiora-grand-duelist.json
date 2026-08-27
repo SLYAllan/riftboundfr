@@ -38,31 +38,31 @@
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
+      "role": "Standard, 72 % des listes, 3 exemplaires"
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Souple, 58 % des listes, 2 exemplaires"
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
       "name": "B.F. Sword",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Souple, 52 % des listes, 2 exemplaires"
+      "role": "Souple, 54 % des listes, 2 exemplaires"
     },
     {
       "name": "Grim Resolve",
       "role": "Souple, 46 % des listes, 2 exemplaires"
     },
     {
-      "name": "Call to Glory",
-      "role": "Souple, 38 % des listes, 3 exemplaires"
+      "name": "Unsung Hero",
+      "role": "Souple, 40 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,12 @@
     "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "deckCount": 99,
-    "top8": 6,
+    "joueursClasses": 167,
+    "coupe10": 15,
     "titres": 1,
-    "conversion": "6.1 %",
-    "tournois": 21,
+    "conversion": "9 %",
+    "tournois": 23,
+    "listesPubliees": 108,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -94,9 +95,9 @@
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "4th",
-        "player": "DWT-阿龙",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "3rd",
+        "player": "鬼鬼@帝防士",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       },
       {
         "placement": "4th",
@@ -104,9 +105,9 @@
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "7th",
-        "player": "BKM-京門",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "4th",
+        "player": "DWT-阿龙",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ]
   },
@@ -130,19 +131,19 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "79 %",
+      "usage": "78 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "69 %",
+      "usage": "68 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "59 %",
+      "usage": "58 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "53 %",
+      "usage": "54 %",
       "role": "2 exemplaires en moyenne"
     },
     "Poppy, Paragon": {
@@ -150,15 +151,14 @@
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "32 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (96 %)",
-    "Monastery of Hirana (36 %)",
-    "Sandswept Tomb (31 %)",
-    "Seat of Power (30 %)"
+    "Sunken Temple (95 %)",
+    "Monastery of Hirana (39 %)",
+    "Sandswept Tomb (31 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 99 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 167 joueurs classés, 23 tournois, dont 108 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

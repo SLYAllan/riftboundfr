@@ -74,13 +74,38 @@
     "7 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "tier": 4,
-    "preRegionals": "1 Top 8",
-    "sydneyStats": {
-      "winRate": "45%",
-      "matches": 88,
-      "bestPlacement": "41st (10-3-0)"
-    }
+    "joueursClasses": 210,
+    "coupe10": 6,
+    "titres": 0,
+    "conversion": "2.9 %",
+    "tournois": 20,
+    "bestPlacements": [
+      {
+        "placement": "8th",
+        "player": null,
+        "tournament": "S3 Changsha Regional Open (2026-06-14)"
+      },
+      {
+        "placement": "8th",
+        "player": null,
+        "tournament": "S3 Changsha Regional Open (2026-06-14)"
+      },
+      {
+        "placement": "19th",
+        "player": "星辉的月光",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "31th",
+        "player": "月若离风起",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "38th",
+        "player": "EDG.YNN2001",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      }
+    ]
   },
   "difficulty": "Difficile",
   "beginnerFriendly": false,
@@ -100,5 +125,6 @@
       "Concentrate"
     ],
     "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable. ⚠️ À NE PAS confondre avec le Master Yi mid-range/'proving grounds' (+2 en défense seul) qui, lui, gagne des events (Régional Suzhou, top cut Win-A-Box via Trophy Hunter + Vilemaw + double Zhonya's) — c'est une autre légende."
-  }
+  },
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 210 joueurs classés sur 20 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

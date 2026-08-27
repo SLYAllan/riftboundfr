@@ -33,12 +33,12 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Scuttle Crab",
+      "name": "Stellacorn Herder",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Tideturner",
@@ -54,15 +54,15 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
       "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 88 % des listes, 1 exemplaire"
+      "name": "Guardian Angel",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -90,11 +90,12 @@
     ]
   },
   "competitiveResults": {
-    "deckCount": 178,
-    "top8": 13,
+    "joueursClasses": 393,
+    "coupe10": 44,
     "titres": 1,
-    "conversion": "7.3 %",
-    "tournois": 21,
+    "conversion": "11.2 %",
+    "tournois": 23,
+    "listesPubliees": 190,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -113,13 +114,13 @@
       },
       {
         "placement": "3rd",
-        "player": "旋木时光绿拐",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+        "player": "EDG.少侠SNnnnn",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       },
       {
         "placement": "3rd",
-        "player": "EDG.少侠SNnnnn",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+        "player": "旋木时光绿拐",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
@@ -163,7 +164,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "67 %",
+      "usage": "66 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
@@ -171,7 +172,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "31 %",
+      "usage": "32 %",
       "role": "1 exemplaire en moyenne"
     }
   },
@@ -180,5 +181,5 @@
     "Sunken Temple (93 %)",
     "Targon's Peak (79 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 178 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 393 joueurs classés, 23 tournois, dont 190 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

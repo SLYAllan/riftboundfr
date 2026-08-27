@@ -6,7 +6,7 @@
     "Order"
   ],
   "set": "Origins",
-  "tier": 3,
+  "tier": 2,
   "archetype": "Équipements et jetons Soldat des Sables",
   "legendAbility": "Vos Soldats des Sables sont Experts en armes. Pour une énergie, épuisez Azir et posez un Soldat de 2 Puissance, à condition d'avoir joué un Équipement ce tour-là.",
   "gameplan": {
@@ -25,20 +25,20 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "B.F. Sword",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Arise!",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Brutalizer",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "B.F. Sword",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
@@ -46,23 +46,23 @@
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
-      "name": "Charm",
-      "role": "Standard, 63 % des listes, 1 exemplaire"
+      "name": "Deathgrip",
+      "role": "Standard, 63 % des listes, 2 exemplaires"
     },
     {
-      "name": "Sacrifice",
-      "role": "Standard, 62 % des listes, 1.5 exemplaire"
+      "name": "Hand Hammer",
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,11 +77,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "deckCount": 65,
-    "top8": 4,
+    "joueursClasses": 180,
+    "coupe10": 20,
     "titres": 1,
-    "conversion": "6.2 %",
-    "tournois": 21,
+    "conversion": "11.1 %",
+    "tournois": 23,
+    "listesPubliees": 72,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -99,14 +100,14 @@
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
-        "placement": "8th",
-        "player": "风又音理",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+        "placement": "3rd",
+        "player": "MICE Squirtle",
+        "tournament": "Barcelona Regional Qualifier"
       },
       {
-        "placement": "10th",
-        "player": "NGNL.NIK",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+        "placement": "7th",
+        "player": "D.C-YL.Rexr",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -133,14 +134,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "91 %",
+      "usage": "88 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (98 %)",
-    "Hall of Legends (95 %)",
-    "Ornn's Forge (88 %)"
+    "Trifarian War Camp (97 %)",
+    "Hall of Legends (96 %)",
+    "Ornn's Forge (86 %)"
   ],
-  "dataSource": "Decklists de tournoi en base : 65 listes, 21 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 180 joueurs classés, 23 tournois, dont 72 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
 }

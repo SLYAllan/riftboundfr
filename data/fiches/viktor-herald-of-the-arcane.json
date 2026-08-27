@@ -33,51 +33,51 @@
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
-      "name": "Shadow's Call",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "name": "Wages of Pain",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
-      "name": "Wages of Pain",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "name": "Shadow's Call",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Sprite Fountain",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
+      "role": "Standard, 71 % des listes, 3 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
       "name": "Singularity",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
-      "name": "Blood Money",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "name": "Safety Inspector",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "87 %",
+      "usage": "88 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "47 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (75 %)",
-    "Ravenbloom Conservatory (60 %)",
+    "Forbidding Waste (76 %)",
+    "Ravenbloom Conservatory (59 %)",
     "Rockfall Path (55 %)",
     "Treasure Hoard (38 %)"
   ],
@@ -93,21 +93,22 @@
     "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "deckCount": 60,
-    "top8": 3,
+    "joueursClasses": 90,
+    "coupe10": 7,
     "titres": 0,
-    "conversion": "5 %",
-    "tournois": 17,
+    "conversion": "7.8 %",
+    "tournois": 21,
+    "listesPubliees": 66,
     "bestPlacements": [
-      {
-        "placement": "6th",
-        "player": "云也会失重",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
       {
         "placement": "6th",
         "player": "ARBD-729",
         "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "6th",
+        "player": "云也会失重",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
         "placement": "7th",
@@ -116,12 +117,12 @@
       },
       {
         "placement": "11th",
-        "player": "无赞助·刘沛松",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+        "player": "CHASHAO",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       },
       {
-        "placement": "12th",
-        "player": "矢岛透",
+        "placement": "11th",
+        "player": "无赞助·刘沛松",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       }
     ]
@@ -129,7 +130,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Decklists de tournoi en base : 60 listes, 17 tournois. Relevé du 24 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 90 joueurs classés, 21 tournois, dont 66 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
