@@ -88,6 +88,11 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 
 **Commandes one-shot** (codes de sortie réels — NE PAS passer par `rtk` comme garde dans un `&&`, `rtk` masque l'exit code) :
 - `npm run verify` → `tsc --noEmit && next build` (à lancer avant tout push ; vérifier l'EXIT).
+- **`npm run maj:stats` → LA routine de mise à jour des stats.** Corpus des classements,
+  tier lists, fiches Légendes et sections chiffrées de `DECKBUILDING-RULES`, dans l'ordre.
+  **Ne jamais relancer ces scripts un par un** : ils se lisent l'un l'autre, et les lancer
+  dans le désordre laissait la tier list refaite mais pas les fiches, l'accueil sur un méta
+  mort, et deux chiffres différents pour la même Légende sur deux pages.
 - `npm run fix:names <doc.md>` → auto-corrige les noms Whisper (distance ≤ 2 vs DB cartes) ; `npm run validate:names` = gate (exit 1 si suspects).
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (exit 1 si MISMATCH vs scrape brut).
 
@@ -95,6 +100,11 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (10 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
 - Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
 - Méta/tier/rulings → `docs/META-KNOWLEDGE.md` · règles deckbuilding/cores → `docs/DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
+  **Tous se refont par `npm run maj:stats`, jamais à la main.** Le corpus qu'ils partagent est
+  `scripts/corpus-tournois.ts` : les joueurs CLASSÉS d'un tournoi, pas ses decklists publiées.
+  L'écart n'est pas un détail, sur Barcelone c'est 106 listes pour 2 127 joueurs, et ce sont
+  ceux qui performent qui publient. `scripts/couverture-tournois.mts` dit quel tournoi est
+  trop peu publié pour être mesuré.
 - Architecture, commandes vérifiées et conventions → **plus bas dans ce fichier** · état du chantier et pièges → `HANDOFF.md` · index des docs → `docs/README.md` · le projet en entier → `docs/PROJET.md`.
 
 **Réflexes :**
@@ -307,6 +317,7 @@ son travail.
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
 | `npm test` | ✅ | Vitest. **29 fichiers, 180 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
+| `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 102 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |

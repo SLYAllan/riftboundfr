@@ -19,6 +19,11 @@ import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
+
+/** « 26 août 2026 », le format que relit `dateAnalyseFiche`. */
+const MOIS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const maintenant = new Date();
+const AUJOURDHUI = `${maintenant.getDate()} ${MOIS_FR[maintenant.getMonth()]} ${maintenant.getFullYear()}`;
 const chemin = process.argv[2];
 const ecrire = process.argv.includes("--ecrire");
 if (!chemin) throw new Error("Donne le chemin du JSON produit par fiches-stats.mts");
@@ -73,6 +78,28 @@ for (const f of fichiers) {
     continue;
   }
 
+  // Une Légende qui n'est plus jouée dans le format en cours n'a pas de cartes
+  // calculables : on met à jour ses seuls RÉSULTATS, sur toutes les ères, et on
+  // laisse ses cartes telles quelles plutôt que de les vider.
+  if (s.toutesEres) {
+    fiche.competitiveResults = {
+      joueursClasses: s.joueurs,
+      coupe10: s.coupe,
+      titres: s.titres,
+      conversion: `${s.conversion} %`,
+      tournois: s.tournois,
+      bestPlacements: s.meilleuresPlaces,
+    };
+    fiche.dataSource =
+      `Classement complet des tournois, TOUTES ÈRES : ${s.joueurs} joueurs classés sur ${s.tournois} tournois. ` +
+      `Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. ` +
+      `Relevé du ${AUJOURDHUI}, calcul par scripts/fiches-stats.mts.`;
+    journal.push(`  ${f.padEnd(38)} résultats toutes ères (${s.joueurs} joueurs), cartes inchangées`);
+    touchees++;
+    if (ecrire) await fs.writeFile(p, JSON.stringify(fiche, null, 2) + "\n", "utf-8");
+    continue;
+  }
+
   const ancienRole = new Map((fiche.keyCards ?? []).map((k) => [k.name, k.role]));
   const ancienChamp = new Map(Object.entries(fiche.champions ?? {}).map(([n, v]) => [n, v.role]));
   const avant = JSON.stringify([fiche.keyCards, fiche.champions, fiche.topBattlefields]);
@@ -92,15 +119,24 @@ for (const f of fichiers) {
 
   fiche.topBattlefields = s.terrains.slice(0, 5).map((t) => `${t.nom} (${t.part} %)`);
 
+  // Les résultats se comptent sur les joueurs CLASSÉS, les cartes sur les listes
+  // publiées. `listesPubliees` reste là pour qu'on voie l'écart entre les deux :
+  // à Barcelone il vaut 106 contre 2 127.
   fiche.competitiveResults = {
-    deckCount: s.decks,
-    top8: s.top8,
+    joueursClasses: s.joueurs,
+    coupe10: s.coupe,
     titres: s.titres,
     conversion: `${s.conversion} %`,
     tournois: s.tournois,
+    listesPubliees: s.decks,
     bestPlacements: s.meilleuresPlaces,
   };
-  fiche.dataSource = `Decklists de tournoi en base : ${s.decks} listes, ${s.tournois} tournois. Relevé du 17 août 2026, calcul par scripts/fiches-stats.mts.`;
+  // La date était codée en dur : toutes les fiches annonçaient « 17 août 2026 »
+  // quel que soit le jour du relevé, et /legendes affichait cette date.
+  fiche.dataSource =
+    `Classement complet des tournois : ${s.joueurs} joueurs classés, ${s.tournois} tournois, ` +
+    `dont ${s.decks} listes publiées d\u2019où viennent les cartes. ` +
+    `Relevé du ${AUJOURDHUI}, calcul par scripts/fiches-stats.mts.`;
 
   const change = JSON.stringify([fiche.keyCards, fiche.champions, fiche.topBattlefields]) !== avant;
   if (change) touchees++;
@@ -121,11 +157,24 @@ const bloc = seed.slice(seed.indexOf("const vendettaTier"), seed.indexOf("async 
 const tiers = new Map(
   [...bloc.matchAll(/legendName:\s*"([^"]+)",\s*tier:\s*"([SABCD])"/g)].map((m) => [cle(m[1]), m[2]]),
 );
+const CHIFFRE: Record<string, number> = { S: 1, A: 2, B: 3, C: 4, D: 5 };
 const ecarts: string[] = [];
 for (const f of fichiers) {
-  const fiche = JSON.parse(await fs.readFile(path.join(FICHES, f), "utf-8"));
+  const chemin = path.join(FICHES, f);
+  const fiche = JSON.parse(await fs.readFile(chemin, "utf-8"));
   const attendu = tiers.get(cle(fiche.legendName ?? ""));
   const pose = LETTRE[fiche.tier as number];
-  if (attendu && pose && attendu !== pose) ecarts.push(`  ${f} : fiche ${pose}, tier list ${attendu}`);
+  if (!attendu || !pose || attendu === pose) continue;
+  ecarts.push(`  ${f} : fiche ${pose}, tier list ${attendu}`);
+  // Le rang de la tier list fait foi : il se calcule sur le classement complet
+  // des tournois, la fiche ne fait que le recopier. Le script se contentait de
+  // signaler l'écart, donc les divergences restaient d'un relevé à l'autre.
+  if (ecrire) {
+    fiche.tier = CHIFFRE[attendu];
+    await fs.writeFile(chemin, JSON.stringify(fiche, null, 2) + "\n", "utf-8");
+  }
 }
-if (ecarts.length) console.log(`\nTiers à recaler sur la tier list Vendetta :\n${ecarts.join("\n")}`);
+if (ecarts.length) {
+  const verbe = ecrire ? "recalés sur" : "à recaler sur";
+  console.log(`\n${ecarts.length} tiers ${verbe} la tier list Vendetta :\n${ecarts.join("\n")}`);
+}

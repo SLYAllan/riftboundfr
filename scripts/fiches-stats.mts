@@ -13,10 +13,16 @@
  * en dessous, c'est un choix personnel, pas le cœur d'un archétype.
  */
 import { PrismaClient } from "@prisma/client";
+import { bilanParLegende, chargerCorpus } from "./corpus-tournois";
 
 export type StatsLegende = {
+  /** Listes publiées : ce sur quoi les CARTES sont comptées. */
   decks: number;
-  top8: number;
+  /** Vrai quand les résultats portent sur toutes les ères et non sur le set demandé. */
+  toutesEres?: boolean;
+  /** Joueurs classés, listes publiées ou non : ce sur quoi les RÉSULTATS le sont. */
+  joueurs: number;
+  coupe: number;
   titres: number;
   conversion: number;
   tournois: number;
@@ -78,6 +84,18 @@ const mediane = (xs: number[]): number => {
 
 type Compte = { listes: number; copies: number[]; type: string; supertype: string | null };
 
+/**
+ * Les résultats se comptent sur LE corpus partagé (`corpus-tournois.mts`), le
+ * même que la tier list. Chacun avait le sien : la tier list donnait 802 joueurs
+ * à Ahri, la fiche 283, et les deux pages du site se contredisaient.
+ *
+ * `classement` porte le set demandé, `classementToutesEres` toutes les ères. Le
+ * second sert aux Légendes qui ne sont plus jouées dans le format en cours : leur
+ * fiche restait sinon figée sur un ancien relevé, sans le dire.
+ */
+const classement = bilanParLegende((await chargerCorpus(set)).places);
+const classementToutesEres = bilanParLegende((await chargerCorpus(null)).places);
+
 const parLegende = new Map<string, typeof decks>();
 for (const d of decks) {
   const l = parLegende.get(d.legendName) ?? [];
@@ -88,7 +106,24 @@ for (const d of decks) {
 const sortie: Record<string, unknown> = {};
 
 for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].length)) {
-  if (lot.length < minDecks) continue;
+  if (lot.length < minDecks) {
+    const global = classementToutesEres.get(legende);
+    if (!global) continue;
+    sortie[legende] = {
+      decks: lot.length,
+      toutesEres: true,
+      joueurs: global.joueurs,
+      coupe: global.coupe,
+      titres: global.titres,
+      conversion: +((global.coupe / global.joueurs) * 100).toFixed(1),
+      tournois: global.tournois,
+      meilleuresPlaces: global.meilleures,
+      // Aucune carte : sous le seuil, un « cœur » n'est qu'une coïncidence, et
+      // `fiches-maj` ne touche pas aux cartes quand la liste est vide.
+      cartes: [], champions: [], terrains: [], runes: [],
+    };
+    continue;
+  }
 
   const cartes = new Map<string, Compte>();
   for (const d of lot) {
@@ -124,20 +159,28 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
   const estTerrain = (c: (typeof lignes)[number]) => c.type === "Battlefield";
   const estRune = (c: (typeof lignes)[number]) => c.type === "Rune";
 
-  const top8 = lot.filter((d) => place(d.placement) <= 8).length;
-  const titres = lot.filter((d) => place(d.placement) === 1).length;
+  // Les RÉSULTATS se comptent sur le classement complet, jamais sur `lot` :
+  // `lot` ne contient que les listes publiées, et ce sont les joueurs qui
+  // performent qui publient. Sur Barcelone, 106 listes pour 2 127 classés. Les
+  // CARTES, elles, restent comptées sur `lot` : on ne peut pas lire le deck d'un
+  // joueur qui n'a pas envoyé sa liste.
+  const cl = classement.get(legende);
+  const joueurs = cl?.joueurs ?? lot.length;
+  const coupe = cl?.coupe ?? 0;
+  const titres = cl?.titres ?? lot.filter((d) => place(d.placement) === 1).length;
 
   sortie[legende] = {
     decks: lot.length,
-    top8,
+    joueurs,
+    coupe,
     titres,
-    conversion: +((top8 / lot.length) * 100).toFixed(1),
-    tournois: new Set(lot.map((d) => d.tournamentContext)).size,
-    meilleuresPlaces: lot
+    conversion: +((coupe / joueurs) * 100).toFixed(1),
+    tournois: cl?.tournois ?? new Set(lot.map((d) => d.tournamentContext)).size,
+    meilleuresPlaces: (cl?.meilleures ?? lot
       .filter((d) => Number.isFinite(place(d.placement)))
       .sort((a, b) => place(a.placement) - place(b.placement))
       .slice(0, 5)
-      .map((d) => ({ placement: d.placement, player: d.playerName, tournament: d.tournamentContext })),
+      .map((d) => ({ placement: d.placement, player: d.playerName, tournament: d.tournamentContext }))),
     cartes: lignes
       .filter((c) => !estChampion(c) && !estTerrain(c) && !estRune(c))
       .slice(0, 14)
@@ -145,6 +188,25 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
     champions: lignes.filter(estChampion).map((c) => ({ nom: c.nom, part: Math.round(c.part * 100), copies: c.copies })),
     terrains: lignes.filter(estTerrain).map((c) => ({ nom: c.nom, part: Math.round(c.part * 100) })),
     runes: lignes.filter(estRune).map((c) => ({ nom: c.nom, part: Math.round(c.part * 100), copies: c.copies })),
+  };
+}
+
+// Les Légendes qui n'ont AUCUNE liste dans le format en cours n'entrent jamais
+// dans la boucle ci-dessus, qui part des decks du set. Garen en est le cas :
+// zéro deck Vendetta, donc sa fiche restait figée sur un vieux relevé. On leur
+// donne ici leur bilan toutes ères, comme aux Légendes sous le seuil.
+for (const [legende, global] of classementToutesEres) {
+  if (sortie[legende]) continue;
+  sortie[legende] = {
+    decks: 0,
+    toutesEres: true,
+    joueurs: global.joueurs,
+    coupe: global.coupe,
+    titres: global.titres,
+    conversion: +((global.coupe / global.joueurs) * 100).toFixed(1),
+    tournois: global.tournois,
+    meilleuresPlaces: global.meilleures,
+    cartes: [], champions: [], terrains: [], runes: [],
   };
 }
 

@@ -44,6 +44,8 @@ de scraping et de seed. Voici la carte.
 | Chemin | Ce que c'est | Statut |
 |---|---|---|
 | `data/raw-scrapes/` | **Scrapes bruts de riftdecks, par tournoi et par page.** La source de vérité contre laquelle `validate-decklists.py` vérifie qu'aucune decklist n'a été fabriquée. Voir `AGENT-INSTRUCTIONS.md` du dossier. | Source de vérité |
+| `data/tournaments/classements.json` | Le classement COMPLET des tournois relevés : un joueur par ligne, decklist publiée ou non. Produit par `scripts/classements-tournois.mts`. C'est la base de toutes les parts de méta et de tous les taux de conversion. | Source de vérité |
+| `data/tournaments/meta-parts.json` | Le même corpus, agrégé par Légende et par tournoi. Lu par `/meta` et par l'accueil. Écrit par la même commande. | Engendré |
 | `data/fiches/*.json` | Fiche par Légende, lue par `/legendes`. **Deux moitiés qui ne se modifient pas de la même façon** : les sections chiffrées (cartes clés, champions, terrains, résultats) sont recalculées depuis la base par `scripts/fiches-stats.mts` puis posées par `scripts/fiches-maj.mts` ; la prose (archétype, capacité, plan de jeu, forces, faiblesses) est écrite à la main dans `data/fiches-prose.json` et appliquée par `scripts/fiches-prose.mts`. Ne pas éditer une section chiffrée à la main, le prochain calcul l'écrase. | Source de vérité |
 | `data/fiches-prose.json` | La prose des fiches Légendes, relue à la main. C'est là qu'on écrit, jamais dans `data/fiches/` directement. | Source de vérité |
 | `data/fiches-stats-vendetta.json` | Ce que les decklists du format disent de chaque Légende : parts de cartes, champions, terrains, places. Régénéré par `scripts/fiches-stats.mts`. | Dérivé |
