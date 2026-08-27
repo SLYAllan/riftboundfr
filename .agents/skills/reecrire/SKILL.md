@@ -1,6 +1,6 @@
 ---
 name: reecrire
-description: Réécrit un texte français selon les six règles d'écriture du projet. À utiliser pour toute prose rendue sur le site (article, guide, texte de page, description), et pour un message de commit ou une description de PR. Ne pas utiliser pour du code ni pour des termes techniques.
+description: Réécrit un texte français selon les six règles du projet et retire les tics d'écriture IA. À utiliser pour toute prose rendue sur le site (article, guide, texte de page, description), et pour un message de commit ou une description de PR. Ne pas utiliser pour du code ni pour des termes techniques.
 ---
 
 # Réécrire selon les six règles
@@ -26,6 +26,26 @@ D'abord lister chaque infraction, séparément :
 - chaque passif, avec sa version active.
 
 Ensuite seulement, donner la réécriture.
+
+## Éviter le ton IA
+
+Un texte naturel ne cherche pas un effet à chaque phrase. À la relecture :
+
+- remplacer les phrases nominales et les fragments par des phrases ordinaires ;
+- couper les annonces creuses comme « les chiffres parlent », « ce que X raconte »,
+  « à l'autre bout » ou « prochaine étape » ;
+- ne pas interpeller le lecteur pour commenter une donnée (« regardez », « notez ») :
+  dire ce qu'elle montre ;
+- éviter les oppositions montées de toutes pièces et les phrases en miroir ;
+- retirer les images vagues comme « mètre étalon », « sortir du sac », « laisser de
+  la place » ou « trouver un angle » ;
+- varier la longueur sans fabriquer un rythme de slogans ;
+- relier chaque avis à un fait précis. Si le fait suffit, supprimer l'avis.
+
+Ne pas rendre le texte plat pour autant. Garder une voix franche, des verbes précis
+et les détails qui donnent envie de lire. Lire le résultat à voix haute : si une
+phrase ressemble à une légende de réseau social ou à une conclusion de dissertation,
+la reprendre.
 
 ## Ce qui ne bouge pas
 

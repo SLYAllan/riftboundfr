@@ -9,12 +9,13 @@ import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib
 import { isBanned } from "@/lib/banned-cards";
 import { getErrata } from "@/lib/errata-2026-07";
 import { ErrataDiff } from "@/components/errata-diff";
-import { displayLegendName } from "@/lib/utils";
+import { displayLegendName, formatDate } from "@/lib/utils";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import { tr } from "@/lib/i18n-server";
 import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity";
+import { chargerPrix, lienProduit } from "@/lib/cardnexus";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -97,11 +98,22 @@ export default async function CardDetailPage({ params }: PageProps) {
     })
     .slice(0, 5);
 
+  // Le prix vient de `data/prices/card-prices.json`, relevé par `npm run sync-prices`,
+  // et le lien d'achat de `src/lib/cardnexus.ts`, seul endroit qui porte
+  // l'identifiant d'affiliation. 1 227 cartes sur 1 275 en ont un.
+  const prixCarte = chargerPrix()?.cards[card.riftboundId] ?? null;
+  const releveLe = chargerPrix()?.fetchedAt ?? null;
+
   // JSON-LD d'entité (M14) : rend la fiche carte citable (Google rich results / GEO).
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
   const cardJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    // `Product` seulement quand on peut citer un prix affiché. Sinon `Thing` :
+    // un Product sans `offers` est refusé par Google (« Either offers, review,
+    // or aggregateRating should be specified »), et inventer une offre pour une
+    // carte dont on n'affiche pas le prix serait un balisage qui ne correspond
+    // pas au contenu visible, ce qui est pire qu'un avertissement.
+    "@type": prixCarte ? "Product" : "Thing",
     name: card.name,
     ...(card.imageUrl ? { image: card.imageUrl } : {}),
     description: card.textPlain?.replace(/\s+/g, " ").trim() || `${card.name}, carte ${card.type} du set ${card.setName} de Riftbound.`,
@@ -113,6 +125,19 @@ export default async function CardDetailPage({ params }: PageProps) {
       { "@type": "PropertyValue", name: "Rareté", value: card.rarity },
       ...(card.domains?.length ? [{ "@type": "PropertyValue", name: "Domaines", value: card.domains.join(", ") }] : []),
     ],
+    ...(prixCarte
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: prixCarte.eur.toFixed(2),
+            priceCurrency: "EUR",
+            url: lienProduit(prixCarte.productId, prixCarte.nom),
+            seller: { "@type": "Organization", name: "CardNexus" },
+            // Pas d'`availability` : le stock est celui de vendeurs tiers, on ne
+            // le connaît pas. Annoncer « InStock » sans le savoir serait faux.
+          },
+        }
+      : {}),
   };
 
   return (
@@ -135,6 +160,27 @@ export default async function CardDetailPage({ params }: PageProps) {
             {errata && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-amber-400 ring-1 ring-amber-500/30">Errata</span>}
             <span className="text-sm text-ink-secondary">{card.riftboundId}</span>
           </div>
+          {prixCarte && (
+            <div className="mt-4 flex flex-wrap items-center gap-3 rounded-card border border-hairline bg-surface p-3">
+              <div>
+                <div className="text-2xl font-bold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                  {prixCarte.eur.toFixed(2).replace(".", ",")} &euro;
+                </div>
+                <div className="text-xs text-ink-muted">
+                  {t("chez CardNexus")}
+                  {releveLe ? ` · ${t("relevé le")} ${formatDate(new Date(releveLe))}` : ""}
+                </div>
+              </div>
+              <a
+                href={lienProduit(prixCarte.productId, prixCarte.nom)}
+                target="_blank"
+                rel="sponsored noopener"
+                className="ml-auto inline-flex min-h-11 items-center rounded-lg bg-gold px-4 text-sm font-semibold text-canvas transition-opacity hover:opacity-90"
+              >
+                {t("Acheter cette carte")}
+              </a>
+            </div>
+          )}
           <CardCollectionQuantity cardId={card.id} />
           <div className="mt-6 space-y-4">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">

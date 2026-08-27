@@ -412,8 +412,6 @@ export const EN: Record<string, string> = {
     "Fury, Calm, Mind, Body, Chaos, Order: the thinking, the strengths and the Legends tied to each domain.",
   "Méta & Tier List": "Meta & tier list",
   "Résultats de tournois, tendances et lecture du méta.": "Tournament results, trends and meta analysis.",
-  "Le méta compétitif set par set, les meilleures légendes et les archétypes. Basé sur 109 tournois analysés.":
-    "The competitive meta set by set, the best Legends and the archetypes. Based on 109 tournaments.",
   "Tous les termes du jeu expliqués en français : mots-clés, mécaniques, jargon TCG.":
     "Every game term explained: keywords, mechanics, TCG jargon.",
   "Ban list": "Ban list",
@@ -795,7 +793,6 @@ export const EN: Record<string, string> = {
   "de votre main, piocher autant de nouvelles cartes, puis recycler les cartes mises de côté sous votre deck.": "from your hand, draw that many new cards, then recycle the set-aside cards under your deck.",
   "depuis Vendetta et permet d’adapter votre deck entre les manches en Bo3.": "since Vendetta, and it lets you adapt your deck between games in Bo3.",
   "en même temps": "at the same time",
-  "et plus de 24 000 decklists classées (Chine, Europe, États-Unis, Océanie). Les tiers ci-dessous mesurent la part du field, le nombre de top 8, les victoires et le taux de conversion - pas une opinion.": "and more than 24,000 ranked decklists (China, Europe, United States, Oceania). The tiers below measure field share, number of top 8s, wins and conversion rate - not an opinion.",
   "et un": "and one",
   "gagne. Ce guide vous apprend tout ce qu’il faut savoir pour jouer votre première partie.": "wins. This guide covers everything you need to play your first game.",
   "gagne. Il y a deux grandes approches pour y arriver.": "wins. There are two broad ways to get there.",

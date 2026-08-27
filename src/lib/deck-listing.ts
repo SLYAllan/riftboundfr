@@ -3,6 +3,7 @@ import { computeDeckCoverage, type DeckCardLike } from "./collection";
 import { getOwnedByName } from "./collection-server";
 import { prisma } from "./prisma";
 import { getUserFromSession } from "./session";
+import { getTournamentTier } from "./tournament-flags";
 import { comparerPlacements, construireWhere } from "./deck-listing-params";
 import type { DeckListe, FiltresDecks, LotDecks } from "./deck-listing-params";
 
@@ -106,12 +107,26 @@ export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
   const utilisateur = await getUserFromSession();
 
   // Prisma trie `placement` comme du texte (`10th` avant `2nd`). On ne charge ici
-  // que trois champs légers, puis le lot de decks complet dans l'ordre numérique.
+  // que quatre champs légers, puis le lot de decks complet dans l'ordre voulu.
+  //
+  // Le tier du TOURNOI passe avant le placement : un Regional (tier S) pèse plus
+  // qu'un City Challenge, et sans ça la page ouvrait sur des dizaines de « 1st »
+  // de petits tournois. Il se calcule ici, jamais en base : la colonne
+  // `tournamentTier` d'un deck dit tout autre chose (la qualité de SON résultat,
+  // S = top 3), et la confondre casserait le classement de /legendes.
+  //
+  // Le tri se fait sur TOUS les candidats avant la découpe en lots. Trier après
+  // la découpe ne trierait qu'à l'intérieur d'une page.
+  const rangTier = (contexte: string | null) =>
+    contexte && getTournamentTier(contexte) === "S" ? 0 : 1;
   const candidatsPlacement = tri === "placement"
     ? (await prisma.deck.findMany({
         where,
-        select: { id: true, placement: true, createdAt: true },
-      })).sort((a, b) => comparerPlacements(a.placement, b.placement) || b.createdAt.getTime() - a.createdAt.getTime())
+        select: { id: true, placement: true, createdAt: true, tournamentContext: true },
+      })).sort((a, b) =>
+        rangTier(a.tournamentContext) - rangTier(b.tournamentContext) ||
+        comparerPlacements(a.placement, b.placement) ||
+        b.createdAt.getTime() - a.createdAt.getTime())
     : null;
   const idsPlacement = candidatsPlacement
     ? candidatsPlacement

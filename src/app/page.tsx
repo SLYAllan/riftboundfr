@@ -11,7 +11,8 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { BookOpen, Layers, BookText, Shield, ArrowRight, Gamepad2, Newspaper, Trophy, Library, Upload } from "lucide-react";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
-import { legendsWithDecks } from "@/lib/legend-fiche";
+import { legendFicheSlug, legendsWithDecks } from "@/lib/legend-fiche";
+import partsDeClassement from "../../data/tournaments/meta-parts.json";
 import { displayLegendName, formatDate, slugify } from "@/lib/utils";
 import { getTournamentInfo } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
@@ -86,7 +87,30 @@ const getHomeData = unstable_cache(
     // pendant que `/decks` reste bloqué en 13,5 derrière elle. Le bloc renvoyait vers
     // six decklists tirées au sort, sans rapport avec la recherche. Il renvoie
     // maintenant vers les pages de Légende, qui visent « deck <légende> ».
-    const topLegends = legends.slice(0, 6);
+    // Les six Légendes du FORMAT EN COURS, comptées sur les joueurs classés.
+    //
+    // `legendsWithDecks()` classe toutes ères confondues : l'accueil ouvrait donc
+    // sur Kai'Sa, Master Yi, Draven, Irelia, Viktor et Fiora, c'est-à-dire le méta
+    // d'Origines et de Spiritforged. Kennen, qui domine Vendetta, n'y figurait
+    // même pas. La page d'accueil annonçait un méta mort.
+    //
+    // `meta-parts.json` est la même source que /meta : les joueurs classés, pas
+    // les decklists publiées. Une Légende sans page (aucun deck publié) est
+    // écartée, sinon le lien mènerait nulle part.
+    const parSlug = new Map(legends.map((l) => [l.slug, l]));
+    const joueursParLegende = new Map<string, number>();
+    for (const part of partsDeClassement) {
+      if (part.set !== SET_COURANT) continue;
+      const slug = legendFicheSlug(part.legendName);
+      joueursParLegende.set(slug, (joueursParLegende.get(slug) ?? 0) + part.joueurs);
+    }
+    const topLegends = [...joueursParLegende.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .flatMap(([slug, joueurs]) => {
+        const l = parSlug.get(slug);
+        return l ? [{ ...l, joueurs }] : [];
+      })
+      .slice(0, 6);
 
     return { tierLists, topLegends, legendEntries, latestArticles, derniersTournois, cardCount };
   },
@@ -116,10 +140,10 @@ const guides = [
     description: "Courbe d'énergie, ratios et synergies de domaines.",
   },
   {
-    href: "/guides/meta",
+    href: "/guides/ban-list",
     icon: Trophy,
-    title: "Méta & Tier List",
-    description: "Résultats de tournois, tendances et lecture du méta.",
+    title: "Liste des bans",
+    description: "Les cartes interdites en tournoi, et depuis quand.",
   },
   {
     href: "/guides/domaines",
@@ -140,6 +164,9 @@ const guides = [
     description: "TCG Arena et RiftAtlas : comment jouer depuis chez vous.",
   },
 ];
+
+/** Le set en cours. Le même que le défaut de /decks (`setParDefaut`). */
+const SET_COURANT = "Vendetta";
 
 export default async function HomePage() {
   let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
@@ -269,7 +296,7 @@ export default async function HomePage() {
                         {displayLegendName(legend.legendName)}
                       </span>
                       <div className="mt-0.5 truncate text-xs text-ink-muted">
-                        {legend.deckCount.toLocaleString(locale)} {t("decks")}
+                        {legend.joueurs.toLocaleString(locale)} {t("joueurs en Vendetta")}
                       </div>
                     </div>
                   </Link>

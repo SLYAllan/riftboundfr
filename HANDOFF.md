@@ -1,5 +1,376 @@
 # HANDOFF — état des lieux
 
+## Session du 27 août 2026 (2) — les quatre sets sur le même corpus
+
+Suite de la précédente. Tout le site compte désormais les joueurs CLASSÉS, plus
+les decklists publiées, sur les quatre sets et le cumul toutes ères.
+
+### Le corpus
+
+**35 597 joueurs classés sur 111 tournois**, dont 30 au classement complet
+scrapé. Par set : Vendetta 5 260, Unleashed 13 979, Spiritforged 9 685,
+Origines 6 673. Produit par `scripts/classements-tournois.mts`, calculé par
+`scripts/tier-stats.mts [set|tous]`.
+
+Les cinq tier lists en base sont réécrites dessus : Origines 16, Spiritforged 28,
+Unleashed 40, Vendetta 48, Globale 49. Chacune vérifiée contre le corpus, aucune
+Légende en trop ni manquante.
+
+### La limite, et elle est nette
+
+**Riftdecks ne publie pas le classement complet de six tournois** : Bologna
+(120 listes annoncées pour 1 719 joueurs), Las Vegas (130 pour 1 670), Houston
+(66 pour 1 347), Fuzhou RQ, Beijing Regional Open jour 1 et la City Challenge de
+Chengdu du 9 novembre. Environ 5 200 joueurs restent invisibles.
+
+**Vérifié en les scrapant : ce n'est pas un scrape à relancer, la donnée n'existe
+pas.** `scripts/couverture-tournois.mts` les marque « indispo. » pour qu'on ne
+les réclame plus, et sépare dans son total les joueurs récupérables de ceux qui
+ne le sont pas.
+
+### Deux garde-fous ajoutés au corpus
+
+- **Un tournoi à moitié scrapé** est refusé : le script compare ses lignes au
+  total que riftdecks annonce lui-même en pied de page. Lille à 74 % a été écarté
+  en cours de scrape, puis accepté une fois complet.
+- **Une page complète mais qui ne couvre qu'une fraction du vrai champ** est
+  refusée aussi. Bologna annonce 120 classés pour 1 719 joueurs : sans ce second
+  refus, un top 120 passait pour un tournoi entier, avec une coupe à 10 % de
+  douze joueurs. C'est exactement le biais qu'on corrige, il ne fallait pas le
+  réintroduire par la porte du corpus.
+
+### Ce que le nouveau corpus a corrigé
+
+- **Miss Fortune** : classée D en Unleashed sur « 0,4 %, la pire conversion du
+  set ». Elle est à 10,7 % sur 394 joueurs, la moyenne exacte.
+- **Vex** : classée C sur « le piège volume est démontré ». Il ne l'était pas,
+  8,6 % sur 537 joueurs, écart non significatif.
+- **Akali** : « zéro Top 8 » sur 74 listes publiées ; 11 places dans la coupe des
+  10 % sur 201 joueurs classés.
+- **Kai'Sa** n'est pas la deuxième Légende de Vendetta mais la quatrième, et elle
+  est chinoise : 10,3 % du champ en Chine, 0,8 % à Barcelone.
+
+### Pages et documents
+
+- **`/meta`** compte les joueurs classés. Vérifié : le total Hartford y vaut
+  1 647 et non 104. La clé du cache porte la taille de l'agrégat, sinon la page
+  servait l'ancien jeu de données après chaque régénération.
+- **`/legendes`** : rangs alignés sur les tier lists, date du relevé réelle (elle
+  était **codée en dur au 17 août** dans `fiches-maj`), et une pastille nouvelle
+  qui donne la présence en tournoi (« 568 joueurs en tournoi · 18,5 % en coupe »).
+- **`docs/META-KNOWLEDGE.md` v12** : les quatre sets et le cumul toutes ères
+  refaits. Les lectures éditoriales de mai 2026 sont gardées, marquées comme
+  historiques.
+- **`docs/DECKBUILDING-RULES.md` v11** : ratio, 30 cartes, 15 terrains, paires de
+  domaines et 18 titres de section recalculés sur **24 962 listes** au lieu des
+  7 987 annoncés depuis mai. Sections 7 et 9 marquées historiques.
+
+### Outils
+
+| Script | Ce qu'il fait |
+|---|---|
+| `scrape-classement.sh <slug> <url>` | les pages de classement seules, 26 appels au lieu de centaines |
+| `classements-tournois.mts` | le corpus, avec ses deux garde-fous |
+| `tier-stats.mts [set\|tous]` | Wilson + binomial, coupe proportionnelle, fusion des deux sources |
+| `couverture-tournois.mts [set]` | l'état de la couverture par set |
+| `stats-deckbuilding.mts [set]` | les sections chiffrées de DECKBUILDING-RULES |
+
+`tier-stats-vendetta.mts` a été renommé `tier-stats.mts` : il ne pouvait plus
+s'appeler « vendetta » en calculant les quatre sets.
+
+### Contrôles
+
+`npx tsc --noEmit` sortie 0 · `npx next build` sortie 0 · 56 fichiers et 300
+tests verts · `npm run lint` 0 erreur, 97 avertissements connus.
+
+### Reste à faire
+
+- 336 pseudos marqués par les homoglyphes riftdecks, encore en base.
+- Quatre tournois hexgate écartés par la règle des 128 joueurs.
+- Rien n'est commité ni poussé.
+
+## Session du 27 août 2026 — le méta Unleashed était faux, et on sait pourquoi
+
+### Ce qui s'est passé
+
+Suite directe de la veille : le corpus des tier lists compte désormais les joueurs
+CLASSÉS, plus les decklists publiées. Allan a signalé que le méta Unleashed
+paraissait faux. Il l'était, et la cause est mesurable.
+
+Les Regional Qualifier occidentaux ne publient presque aucune liste :
+
+| Tournoi | Listes | Classés | Couverture |
+|---|---:|---:|---:|
+| RQ Utrecht | 55 | 1 807 | 3 % |
+| RQ Sydney | 36 | 1 234 | 3 % |
+| RQ Hartford | 104 | 1 651 | 5 % |
+| RQ Vancouver | 128 | 1 496 | 7 % |
+| Suzhou Regional | 511 | 638 | 80 % |
+| City Challenges chinoises | ~128 | 128 | > 90 % |
+
+Le « méta Unleashed » n'était donc qu'un méta chinois. **6 826 joueurs
+n'existaient pas dans l'ancien corpus.** Leur classement est maintenant relevé.
+
+### Deux verdicts retournés
+
+- **Miss Fortune** était en D : « 228 decks pour 1 seul Top 8, 0,4 %, la pire
+  conversion du set, dix fois sous la moyenne ». Elle est à **10,7 % sur
+  394 joueurs**, soit la moyenne exacte du format.
+- **Vex** était en C : « le piège volume est démontré, pas supposé ». Il ne
+  l'était pas. **8,6 % sur 537 joueurs**, écart à la moyenne non significatif.
+
+Les deux décrivaient la publication, pas le jeu.
+
+### Outils posés
+
+- **`scripts/scrape-classement.sh <slug> <url>`** : scrape UNIQUEMENT les pages
+  de classement. 26 appels pour Hartford là où le scrape des decks en coûte des
+  centaines. La Légende figure dans la ligne **même sans decklist publiée**,
+  vérifié avant de lancer.
+- **`scripts/couverture-tournois.mts [set]`** : dit, par set, quels tournois sont
+  sous-publiés et lesquels ont déjà leur classement relevé. C'est le tableau
+  ci-dessus, en une commande.
+- **`scripts/tier-stats.mts [set]`** (ex-`tier-stats-vendetta.mts`, renommé : il
+  ne pouvait plus s'appeler « vendetta » en calculant Unleashed). Il **fusionne**
+  les deux sources : classement complet là où il existe, listes publiées ailleurs
+  mais seulement au-dessus de 90 % de couverture. Ne prendre que le classement
+  serait aussi faux : les cinq tournois relevés d'Unleashed sont tous occidentaux.
+
+### Trois pièges corrigés dans le corpus
+
+- **Un tournoi à moitié scrapé entrait en silence.** `classements-tournois.mts`
+  compare maintenant le nombre de lignes au total annoncé par riftdecks
+  (« out of 1,659 total ») et refuse sous 90 %. Une part bâtie sur les premières
+  pages n'est pas approximative, elle est à l'envers.
+- **Deux nommages de fichiers de deck coexistent** sur le disque
+  (`deck-1-0-153021.md` et `deck-153021.md`) selon le scrape qui a produit le
+  dossier. Suzhou ressortait à 0 % de Légendes sans ça.
+- **`/meta` servait un cache périmé.** La clé `unstable_cache` ne bougeait pas
+  quand `meta-parts.json` changeait. Elle porte maintenant la taille de
+  l'agrégat.
+
+### Ce qui a été refait
+
+- **Tier list Unleashed** : 40 Légendes, exactement celles du corpus, sur
+  13 979 joueurs classés (34 tournois). Cinq écarts tiennent un test binomial
+  au-dessus de la moyenne, quatorze en dessous.
+- **`docs/META-KNOWLEDGE.md` v11** : section 2.2 réécrite, avec le tableau de
+  couverture et les deux verdicts retournés.
+- **Les fiches Légendes** : `competitiveResults` vient désormais du classement
+  (Kennen : 568 joueurs classés, 18,5 %, au lieu de 264 listes et 12,9 %), et la
+  date du relevé n'est plus **codée en dur au 17 août** dans `fiches-maj`.
+  Toutes les fiches affichaient cette date-là quel que soit le jour du calcul.
+- **`/meta`** : vérifié au navigateur, le total Hartford y vaut 1 647, le nombre
+  de joueurs classés, et non 104, le nombre de listes.
+
+### Pour demain : Spiritforged et Origines
+
+Le diagnostic est fait, le remède est le même, les adresses sont déjà dans le
+dépôt. `npx tsx scripts/couverture-tournois.mts` donne l'état à jour.
+
+| Set | Joueurs invisibles | À relever |
+|---|---:|---|
+| Spiritforged | 6 967 | Atlanta 6 %, Bologna 7 %, Lille 7 %, Las Vegas 9 %, Fuzhou 64 % |
+| Origines | 1 934 | Beijing RO J1 1 %, Houston 6 %, Chengdu CC 50 % |
+
+Compter environ 90 pages pour Spiritforged et 30 pour Origines, soit une
+vingtaine de minutes de scrape. Les URL « final standings » d'Atlanta, Bologna,
+Lille, Las Vegas et Houston sont déjà dans `data/raw-scrapes/`.
+
+**Vendetta est à zéro joueur invisible.**
+
+### Reste à faire, inchangé
+
+- 336 pseudos marqués par les homoglyphes riftdecks, encore en base.
+- Quatre tournois hexgate écartés par la règle des 128 joueurs (Jinan 78,
+  Coupe du Tsar 93, Xi'an 67, 233 à 64).
+- Rien n'est commité ni poussé.
+
+## Session du 26 août 2026 (3) — article Barcelone réécrit
+
+L'article `recap-barcelone-rq-top8` a été réécrit pour retirer les formules et le
+rythme typiques d'un texte produit par IA. La source reste
+`scripts/seed-barcelone-article.mts`. Le skill commun
+`.agents/skills/reecrire/SKILL.md` porte désormais les règles de ton naturel ; le
+panneau `.claude/skills/reecrire/SKILL.md` y renvoie toujours.
+
+Publication en production le 26 août via le tunnel PostgreSQL public
+`178.104.237.33:15432`. `npm run validate:decks` : 23 522 listes vérifiées, aucun
+écart, sortie 0. Seed : sortie 0. La page de production répond 200. Le port public
+était encore ouvert après le seed : le fermer côté serveur.
+
+## Session du 26 août 2026 (2) — le méta se compte sur les classements, plus sur les listes
+
+### Le changement de fond
+
+Tout se comptait jusqu'ici sur `data/decklists/`, donc sur les listes **publiées**.
+Ce corpus est biaisé, et lourdement : Barcelone publie 106 listes pour 2 127
+joueurs classés (5 %), Ottawa 40 pour 579 (7 %). Ce ne sont pas des joueurs tirés
+au hasard, ce sont ceux qui ont assez bien fini pour envoyer leur liste.
+
+Une liste incomplète reste écartée de la publication, et c'est la bonne règle.
+Mais elle dit quand même **quelle Légende a joué et à quelle place**, et c'est
+tout ce dont une part de champ et une conversion ont besoin.
+
+`scripts/classements-tournois.mts` reconstruit donc le classement complet de
+chaque tournoi : **5 260 joueurs classés sur 23 tournois Vendetta, 100 % avec une
+Légende identifiée.** Il écrit `data/tournaments/classements.json` (corpus) et
+`data/tournaments/meta-parts.json` (agrégat léger pour le site).
+
+**Contrôlé contre le tableau officiel de Riot pour Barcelone : 9 places d'écart
+sur 2 131, soit 0,42 %, aucune Légende en trop ni manquante.**
+
+Deux pièges déjà payés, tous les deux dans le script :
+
+- **hexgate se rattache par `card_no`, jamais par le nom.** Il appelle
+  « Wuju Bladesman - Starter » la carte OGS-19, qui est Master Yi, Wuju Bladesman.
+  Sur le nom, 134 joueurs partaient dans une Légende fantôme et Master Yi perdait
+  autant.
+- **La taille d'un tournoi, c'est le nombre de lignes relevées, pas le rang le
+  plus élevé.** riftdecks laisse des trous dans sa numérotation : 2 216 comme
+  dernier rang à Barcelone pour 2 127 lignes.
+
+**La coupe est proportionnelle, 10 % du champ de chaque tournoi.** Un Top 8 sur
+128 joueurs vaut 6,3 % du champ, sur 2 127 il vaut 0,4 %. Un Top 8 fixe notait
+les Regional et les City Challenge sur deux barèmes.
+
+### Ce qui a été refait dessus
+
+- **Tier list Vendetta** (`scripts/seed-tier-lists.ts`, seedée) : 48 Légendes,
+  exactement celles du corpus. Deux écarts seulement tiennent un test binomial,
+  Kennen (18,5 %, p < 0,001) et Master Yi Wuju Bladesman (14,4 %, p = 0,002) ;
+  onze sont établies en dessous. Le reste est un classement de lecture, et le dit.
+- **`docs/META-KNOWLEDGE.md` v10** : section Vendetta réécrite sur le corpus.
+- **`docs/DECKBUILDING-RULES.md` v10** : cores recalculés sur 2 569 decklists,
+  21 Légendes au-dessus du seuil de 30 listes (17 avant).
+- **`data/fiches/`** : 30 fiches recalées par `fiches-maj`, et **18 tiers alignés
+  sur la tier list**. Le script signalait l'écart depuis toujours sans pouvoir le
+  corriger ; il l'écrit maintenant avec `--ecrire`. Sans ça `/legendes` et
+  `/tier-list` classaient 18 Légendes différemment.
+- **`/meta`** lit `meta-parts.json` pour les tournois dont le classement est
+  relevé, et retombe sur le comptage par decklist pour les autres (les sets
+  antérieurs à Vendetta). Vérifié au navigateur : Kennen à Barcelone y vaut 270,
+  le nombre de joueurs classés, et non 10, le nombre de listes publiées.
+
+### Deux corrections que le changement de corpus a révélées
+
+- **Akali n'était pas « à zéro Top 8 ».** L'ancien relevé lisait 0 sur 74 listes
+  publiées ; sur 201 joueurs classés elle place 11 fois dans la coupe des 10 %.
+  Elle reste établie sous la moyenne, mais à 5,5 %, pas à zéro.
+- **Kai'Sa n'est pas la deuxième Légende du format.** Elle est quatrième, et
+  surtout elle est chinoise : 10,3 % du champ en Chine, 0,8 % à Barcelone.
+
+### La rotation des Best-Of, à ne pas confondre avec une faiblesse
+
+Huit Légendes n'ont eu aucun pilote à Barcelone : Ahri, Darius, Garen, Jinx,
+Lee Sin, Leona, Volibear, Yasuo. Toutes d'Origines. Elles n'ont plus de Best-Of
+à gagner, donc plus personne pour les jouer. **Leur part de champ ne mesure plus
+rien**, et une tier list qui les descend pour ça se trompe de cause. C'est écrit
+dans le commentaire de chacune.
+
+### Reste à faire
+
+- **`/meta` pour Unleashed paraît faux**, signalé par Allan, pas encore regardé.
+  Les sets antérieurs à Vendetta n'ont pas de classement relevé et retombent sur
+  le comptage par decklist : c'est la première piste.
+- **336 pseudos marqués par les homoglyphes riftdecks** sont encore en base
+  (Lille 78, Suzhou 61, Atlanta 56, Fuzhou 51…). Reparse + reseed, local ET prod.
+- **Quatre tournois hexgate écartés** par la règle des 128 joueurs : 233 (64),
+  Jinan (78), Coupe du Tsar (93), Xi'an (67). Le brut est scrapé, la conversion
+  est à un mot près. Jinan et Xi'an sont de vraies City Challenges.
+- Rien n'est commité ni poussé. Tout est en base locale.
+
+### Contrôles
+
+`npx tsc --noEmit` sortie 0 · `npx next build` sortie 0 · 56 fichiers et 300 tests
+verts · `validate-decklists.py` 0 MISMATCH.
+
+Un test a bougé : `banned-cards.test.ts` listait quatre fiches citant une carte
+bannie, il en liste trois. `fiches-maj` a recalculé les cartes clés d'Annie sur
+les decklists réelles et la carte bannie a disparu d'elle-même. Les trois qui
+restent sont des Légendes d'Origines désertées, sous le seuil de dix listes, donc
+le script ne les touche pas et leurs cartes datent.
+
+## Session du 26 août 2026 — RQ Barcelone, hexgate, pastille de tier
+
+### Ce qui est en base locale, pas en prod
+
+**Regional Qualifier de Barcelone (23 août 2026, 2 224 joueurs, Vendetta).**
+106 decklists seedées sous le contexte `Barcelona Regional Qualifier`, 36 best-of
+levés, drapeau posé dans `tournament-flags.ts`, page `/tournois/barcelona-regional-qualifier`
+vérifiée au navigateur. Article `recap-barcelone-rq-top8` publié en local.
+
+Deux sources couplées, et c'est le point qui compte :
+
+- riftdecks ne publie que 118 listes sur 2 131 classés, dont 88 complètes
+  (30 sans réserve ou sans runes, écartées par le garde-fou Vendetta).
+- L'article officiel de Riot (`data/raw-scrapes/barcelona-rq-officiel.md`) donne
+  37 listes complètes : 34 Best-Of et le Top 8. `scripts/parse-playriftbound.ts`
+  le convertit et n'écrit que les 18 joueurs absents de riftdecks.
+- **Les 19 joueurs présents des deux côtés concordent carte pour carte.** Zéro
+  divergence. C'est ce qui valide le lot.
+- Sans l'apport de Riot, Renata Glasc n'aurait eu aucune liste, et plusieurs
+  best-of seraient tombés sur le mauvais deck.
+
+**Dongguan Manbo Cup (8 août 2026, 109 joueurs)**, relevée sur hexgate : 98 listes
+seedées. Sur les 25 tournois d'hexgate, 20 étaient déjà en base. Des 5 absents,
+seul Dongguan passe la règle « proche de 128 joueurs » (les City Challenge publiées
+vont de 101 à 128). Restent dehors, scrapés en brut mais non convertis :
+233 (64 joueurs), 236 Jinan (78), 237 Coupe du Tsar (93), 241 Xi'an (67).
+Le nom « Dongguan Manbo Cup » est une translittération de 漫博杯, à renommer si
+Allan préfère autre chose : il vit dans `NOMS_PARTICULIERS` de
+`scripts/parse-hexgate.mts` et dans la clé de `tournament-flags.ts`.
+
+### Le piège riftdecks : des homoglyphes cyrilliques dans les pseudos
+
+riftdecks marque ses pages contre le scraping. Dans le **titre H1** d'une page de
+deck, des lettres latines sont remplacées par des cyrilliques identiques à l'oeil :
+`ASC HаruKаze` porte deux U+0430 au lieu de deux `a`. La phrase du corps et l'URL
+restent propres. `parse-riftdecks.ts` préférait le H1, donc recopiait la marque.
+
+Un pseudo marqué ne se rapproche plus de rien : ni la recherche, ni le même joueur
+d'un tournoi à l'autre, ni la comparaison avec la source officielle. Ça se voit
+jusque dans les noms de fichiers (`icebre-ker` pour `icebreaker`).
+
+Corrigé par `sansHomoglyphes` dans `scripts/parse-riftdecks-integrity.ts`, avec ses
+tests. Elle ne latinise que si le pseudo ne contient AUCUNE autre lettre
+cyrillique : un vrai pseudo russe reste intact, les noms chinois aussi. Relevé sur
+les données : un seul homoglyphe employé, U+0430, 402 fois.
+
+**Reste à faire : 336 decks déjà en base portent encore un pseudo marqué.**
+Lille 78, Suzhou 61, Atlanta 56, Fuzhou 51, Tianjin CC 24, Shanghai CC 20,
+Sydney 18, Ottawa 16, Qingdao 6, Shenyang 5, Tianjin RO 1. Le brut est sur le
+disque : reparser puis reseeder chaque tournoi suffit. À faire en local ET en prod.
+
+### `/decks` : pastille de tier du tournoi et tri
+
+La pastille de tier existait déjà mais lisait `deck.tournamentTier`, jamais
+remplie par le seeder. **Ne pas confondre les deux :** cette colonne dit la qualité
+du RÉSULTAT du deck (S = top 3), elle n'est posée que sur 193 decks, et
+`/legendes` s'en sert pour classer. La pastille de `/decks` lit désormais
+`getTournamentTier(deck.tournamentContext)`, une fonction pure (S = Regional,
+A = le reste). Les deux rendus, première page et scroll, montrent la même chose.
+
+Le tri par défaut place les tournois tier S devant, puis le placement. Il se fait
+dans `deck-listing.ts` sur TOUS les candidats avant la découpe en lots : trier
+après la découpe ne trierait qu'à l'intérieur d'une page.
+
+`mark-bestof-tournois.mts` accepte `--sauf "<Légende>"`. Barcelone en a besoin
+pour Annie et Viktor : leurs vrais n°1 (#148 et #69) n'ont pas publié de liste,
+le mieux classé publié est #683 et #107. Sans ce filtre, deux best-of faux
+partaient en ligne. La commande exacte est dans le corps de l'article de session.
+
+### Contrôles
+
+`npx tsc --noEmit` sortie 0 · `npx next build` sortie 0 · 56 fichiers et 300 tests
+verts · `npm run lint` 0 erreur, 97 avertissements connus ·
+`validate-decklists.py` 0 MISMATCH sur 23 522 vérifiés.
+
+### Ce qui manque
+
+Rien n'est poussé ni déployé. Tout est en base locale. Couverture de l'article
+posée : `public/img/articles/barcelone.webp`, la salle entière sous la bannière.
+
 ## Session du 26 août 2026 — filtre de mécaniques dans `/cartes`
 
 Le menu « Mécaniques » du deckbuilder est maintenant partagé avec `/cartes`.

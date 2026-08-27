@@ -67,6 +67,16 @@ interface Fiche {
   sourceUrl?: string;
   // Porte la vraie date du releve (« Releve du 17 aout 2026 »). Absent de 14 fiches.
   dataSource?: string;
+  // Compté sur le CLASSEMENT complet des tournois, pas sur les listes publiées :
+  // `joueursClasses` compte tous ceux qui ont joué la Légende, `coupe10` ceux qui
+  // ont fini dans les 10 % de tête de leur tournoi. Voir `scripts/fiches-stats.mts`.
+  competitiveResults?: {
+    joueursClasses?: number;
+    coupe10?: number;
+    conversion?: string;
+    tournois?: number;
+    listesPubliees?: number;
+  };
 }
 
 // Le contenu rendu du site ne doit jamais contenir de tiret cadratin (—) ni demi-cadratin
@@ -142,6 +152,20 @@ const TIER_LABELS: Record<number, string> = {
 
 // Ordre de tri des decks par niveau de tournoi, identique à la page /decks.
 const TIER_ORDER: Record<string, number> = { S: 0, A: 1, B: 2, C: 3, D: 4 };
+
+/**
+ * Les sets du plus récent au plus ancien.
+ *
+ * Une fiche Légende doit ouvrir sur une liste JOUABLE aujourd'hui. Sans ce
+ * critère, le tri partait du niveau de tournoi et du classement : une 1re place
+ * de Déchaînement passait devant un best-of de Vendetta, et le visiteur copiait
+ * une liste qui n'est plus légale dans le format en cours.
+ *
+ * Une Légende qui n'a aucun deck dans le set courant ouvre sur le set le plus
+ * récent où elle en a un : le tri s'en charge tout seul, il n'y a rien à filtrer.
+ */
+const ORDRE_SET: Record<string, number> = { Vendetta: 0, Unleashed: 1, Spiritforged: 2, Origins: 3 };
+const rangSet = (setTag: string | null) => (setTag ? ORDRE_SET[setTag] ?? 9 : 9);
 function placementRank(p: string | null): number {
   if (!p) return 9999;
   const m = p.match(/\d+/);
@@ -172,13 +196,19 @@ async function fetchLegendDecks(legendName: string) {
   try {
     const keys = await prisma.deck.findMany({
       where: { published: true, legendName: { contains: legendName, mode: "insensitive" } },
-      select: { id: true, featured: true, tournamentTier: true, placement: true, createdAt: true },
+      select: { id: true, featured: true, tournamentTier: true, placement: true, createdAt: true, setTag: true },
     });
     keys.sort((a, b) => {
-      // `featured` d'abord : ce sont les best-of, la meilleure liste retenue par tournoi
+      // Le SET d'abord : la première liste proposée doit être jouable dans le
+      // format en cours. Un best-of d'Origines reste un beau résultat, il n'aide
+      // personne à monter un deck aujourd'hui.
+      const sa = rangSet(a.setTag);
+      const sb = rangSet(b.setTag);
+      if (sa !== sb) return sa - sb;
+      // Puis `featured` : ce sont les best-of, la meilleure liste retenue par tournoi
       // pour cette Légende. Le classer après le niveau de tournoi remontait un 48e
-      // d'Utrecht devant eux, parce que `tournamentTier` n'est renseigné que sur 221
-      // decks sur 22 500 et vaut null sur la plupart des best-of.
+      // d'Utrecht devant eux, parce que `tournamentTier` n'est renseigné que sur 193
+      // decks sur 24 962 et vaut null sur la plupart des best-of.
       if (a.featured !== b.featured) return a.featured ? -1 : 1;
       const ta = a.tournamentTier ? (TIER_ORDER[a.tournamentTier] ?? 5) : 5;
       const tb = b.tournamentTier ? (TIER_ORDER[b.tournamentTier] ?? 5) : 5;
@@ -561,6 +591,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
   const domains = fiche.domains ?? [];
   const tierLabel = fiche.tier ? TIER_LABELS[fiche.tier] ?? `Tier ${fiche.tier}` : null;
+
+  // La présence en tournoi, quand la fiche a été recalculée sur le classement.
+  const cr = fiche.competitiveResults;
+  const presence =
+    cr?.joueursClasses && cr.joueursClasses > 0
+      ? {
+          joueurs: cr.joueursClasses,
+          coupe: cr.coupe10 ?? 0,
+          tournois: cr.tournois ?? 0,
+          conversion: cr.conversion?.replace(".", ","),
+        }
+      : null;
   const decksHref = `/decks?legend=${encodeURIComponent(legendName)}`;
 
   // Guide "Comment jouer" : prose HUMAINE recopiée des fiches-articles (src/lib/legend-guides.ts),
@@ -615,6 +657,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
       {fiche.difficulty && (
         <span className="rounded bg-surface-raised px-2 py-0.5 text-ink-muted">
           Difficulté : {fiche.difficulty}
+        </span>
+      )}
+      {presence && (
+        // Les joueurs CLASSÉS, pas les listes publiées. L'écart n'est pas un
+        // détail : à Barcelone, 106 listes pour 2 127 joueurs, et ce sont ceux
+        // qui performent qui publient.
+        <span
+          className="rounded bg-surface-raised px-2 py-0.5 text-ink-muted"
+          title={`${presence.joueurs} joueurs classés sur ${presence.tournois} tournois du format, dont ${presence.coupe} dans les 10 % de tête`}
+        >
+          {presence.joueurs.toLocaleString("fr-FR")} joueurs en tournoi
+          {presence.conversion ? ` · ${presence.conversion} en coupe` : ""}
         </span>
       )}
     </div>

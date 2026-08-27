@@ -11,7 +11,7 @@ import { DeckFiltreSelect } from "@/components/deck-filtre-select";
 import { DeckTournamentFilter } from "@/components/deck-tournament-filter";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
-import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
+import { getTournamentCountryCode, getTournamentInfo, getTournamentTier } from "@/lib/tournament-flags";
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
@@ -547,7 +547,15 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           className="texte-sur-art mt-1 space-y-0.5 text-xs"
                         >
                           <div className="flex items-center gap-2">
-                            {deck.tournamentTier && (
+                            {/* Le tier du TOURNOI d'où vient le deck, calculé par
+                                `getTournamentTier` (S = Regional, A = le reste).
+                                Pas `deck.tournamentTier` : cette colonne dit la
+                                qualité du résultat du deck (S = top 3), n'est
+                                remplie que sur 193 decks, et afficher les deux
+                                donnerait deux pastilles « Tier » contradictoires. */}
+                            {deck.tournamentContext && (() => {
+                              const tier = getTournamentTier(deck.tournamentContext);
+                              return (
                               <span
                                 // Classe littérale et pas `var(--color-tier-*)` en style
                                 // inline : avec `@theme inline`, Tailwind n'émet pas ces
@@ -556,17 +564,18 @@ export default async function DecksPage({ searchParams }: PageProps) {
                                 // sombre, donc en remplissage le libellé passe en encre.
                                 className={cn(
                                   "inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20",
-                                  TIER_BG[deck.tournamentTier] ?? "bg-ink-muted",
+                                  TIER_BG[tier] ?? "bg-ink-muted",
                                 )}
                                 // Pas de halo ici : la pastille a un fond plein.
                                 // Hérité du conteneur, il bavait autour du texte
                                 // sombre posé sur l'or.
                                 style={{ textShadow: "none" }}
-                                title={`Tier ${deck.tournamentTier}`}
+                                title={`Tournoi tier ${tier}`}
                               >
-                                Tier {deck.tournamentTier}
+                                Tier {tier}
                               </span>
-                            )}
+                              );
+                            })()}
                             {deck.tournamentContext && (() => {
                               const cc = getTournamentCountryCode(deck.tournamentContext);
                               return (

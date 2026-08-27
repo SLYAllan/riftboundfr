@@ -1,6 +1,6 @@
 ---
 name: reecrire
-description: Réécrit un texte français selon les six règles d'écriture du projet. À utiliser pour toute prose rendue sur le site (article, guide, texte de page, description), et pour un message de commit ou une description de PR. Ne pas utiliser pour du code ni pour des termes techniques.
+description: Réécrit un texte français selon les six règles du projet et retire les tics d'écriture IA. À utiliser pour toute prose rendue sur le site (article, guide, texte de page, description), et pour un message de commit ou une description de PR. Ne pas utiliser pour du code ni pour des termes techniques.
 ---
 
 # reecrire

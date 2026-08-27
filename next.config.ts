@@ -49,6 +49,14 @@ const nextConfig: NextConfig = {
       { source: "/tournois/rq-houston-2025", destination: "/tournois/houston-regional-qualifier", permanent: true },
       { source: "/tournois/rq-las-vegas-2026", destination: "/tournois/las-vegas-regional-qualifier", permanent: true },
       { source: "/tournois/rq-lille-2026", destination: "/tournois/lille-regional-qualifier", permanent: true },
+      // `/guides/meta` portait une seconde tier list, écrite en dur, avec les
+      // chiffres de mai 2026. Elle se disputait 16 requêtes avec `/tier-list`
+      // (« tier list riftbound », « riftbound meta »…) : Google alternait entre
+      // les deux et aucune ne s'installait. Sur 90 jours elle faisait 438
+      // impressions pour 14 clics, dont 98 impressions et ZÉRO clic sur
+      // « riftbound meta ». Supprimée, redirigée vers la vraie tier list, celle
+      // qui se recalcule depuis la base.
+      { source: "/guides/meta", destination: "/tier-list", permanent: true },
     ];
   },
   async headers() {

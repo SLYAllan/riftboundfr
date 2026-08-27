@@ -7,7 +7,7 @@ import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
 import { parametresDecks, type DeckListe, type FiltresDecks, type LotDecks } from "@/lib/deck-listing-params";
-import { getTournamentCountryCode } from "@/lib/tournament-flags";
+import { getTournamentCountryCode, getTournamentTier } from "@/lib/tournament-flags";
 import { cn, displayLegendName } from "@/lib/utils";
 import { useT } from "@/components/i18n-provider";
 
@@ -38,7 +38,8 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
               <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{displayLegendName(deck.legendName)}</div>
               <div className="texte-sur-art mt-2 space-y-1 text-xs">
                 <div className="flex items-center gap-2">
-                  {deck.tournamentTier && <span className={cn("inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20", TIER_BG[deck.tournamentTier] ?? "bg-ink-muted")} style={{ textShadow: "none" }}>Tier {deck.tournamentTier}</span>}
+                  {/* Même pastille que la première page de /decks : le tier du TOURNOI, pas `deck.tournamentTier` qui dit la qualité du résultat. Les deux rendus doivent montrer la même chose, sinon la pastille change au scroll. */}
+                  {deck.tournamentContext && <span className={cn("inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20", TIER_BG[getTournamentTier(deck.tournamentContext)] ?? "bg-ink-muted")} style={{ textShadow: "none" }} title={`Tournoi tier ${getTournamentTier(deck.tournamentContext)}`}>Tier {getTournamentTier(deck.tournamentContext)}</span>}
                   {deck.tournamentContext && <span className="flex min-w-0 items-center gap-1 text-white/90">{getTournamentCountryCode(deck.tournamentContext) && <CountryBadge code={getTournamentCountryCode(deck.tournamentContext)!} />}<span className="truncate">{deck.tournamentContext}</span></span>}
                 </div>
                 {(deck.placement || deck.playerName || deck.authorName) && <div className="flex items-center gap-2">{deck.placement && <span className="shrink-0 font-semibold text-ink">{deck.placement}</span>}{(deck.playerName || deck.authorName) && <span className="truncate text-white/90">par {deck.playerName || deck.authorName}</span>}</div>}

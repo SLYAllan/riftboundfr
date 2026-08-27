@@ -7,42 +7,47 @@ import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
+import partsDeClassement from "../../../data/tournaments/meta-parts.json";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import Link from "@/components/lien";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const getMetaData = unstable_cache(
   async () => {
-    const [groupes, tierList] = await Promise.all([
-      prisma.deck.groupBy({
-        by: ["legendName", "tournamentContext", "setTag"],
-        where: { published: true, tournamentContext: { not: null } },
-        _count: { _all: true },
-      }),
-      prisma.tierList.findFirst({
-        where: { current: true, published: true },
-        select: { updatedAt: true, setContext: true },
-      }),
-    ]);
+    const tierList = await prisma.tierList.findFirst({
+      where: { current: true, published: true },
+      select: { updatedAt: true, setContext: true },
+    });
 
-    return {
-      tranches: groupes.map((groupe) => ({
-        legendName: groupe.legendName,
-        tournament: groupe.tournamentContext!,
-        set: groupe.setTag,
-        count: groupe._count._all,
-      })),
-      tierList,
-    };
+    // Une seule source : `meta-parts.json`, écrit par `npm run maj:stats` depuis
+    // le corpus partagé avec les tier lists. Il compte les joueurs CLASSÉS, pas
+    // les decklists publiées, et il écarte déjà les tournois trop peu publiés
+    // pour être mesurés.
+    //
+    // Le repli sur un groupBy des decks a été retiré : il rajoutait les tournois
+    // que le corpus écarte, et /meta annonçait alors 10 470 joueurs en
+    // Spiritforged là où la tier list en comptait 9 685. Deux pages du site
+    // donnaient deux chiffres pour le même set.
+    const tranches = partsDeClassement.map((p) => ({
+      legendName: p.legendName,
+      tournament: p.tournament,
+      set: p.set,
+      count: p.joueurs,
+    }));
+
+    return { tranches, tierList, tournoisClasses: new Set(partsDeClassement.map((p) => p.tournament)).size };
   },
-  ["meta-snapshot-v3"],
+  // La clé porte la taille de l'agrégat : sans ça, régénérer
+  // `meta-parts.json` laissait /meta servir l'ancien cache pendant cinq
+  // minutes, et bien plus en développement où il survit aux redémarrages.
+  ["meta-snapshot", String(partsDeClassement.length)],
   { revalidate: 300, tags: ["meta"] },
 );
 
 const metadata: Metadata = {
   title: { absolute: "Méta Riftbound Vendetta - Decks et Légendes les plus joués en tournoi" },
   description:
-    "Le méta deck Riftbound par set et tournoi : les decks et Légendes les plus joués, avec parts de terrain et conversions, recalculés sur les decklists complètes publiées.",
+    "Le méta deck Riftbound par set et tournoi : les decks et Légendes les plus joués, comptés sur le classement complet des tournois, pas seulement sur les listes publiées.",
   alternates: { canonical: "/meta" },
 };
 
@@ -53,7 +58,7 @@ export default async function MetaSnapshotPage() {
   try {
     data = await getMetaData();
   } catch {
-    data = { tranches: [], tierList: null };
+    data = { tranches: [], tierList: null, tournoisClasses: 0 };
   }
 
   if (data.tranches.length === 0) {
@@ -99,7 +104,7 @@ export default async function MetaSnapshotPage() {
 
       <footer className="mt-8 border-t border-hairline pt-5">
         <p className="max-w-4xl text-sm leading-relaxed text-ink-muted">
-          {t("Ces chiffres mesurent la représentation dans les decklists publiées, pas le taux de victoire. Les listes incomplètes ne sont pas comptabilisées.")}
+          {t("Ces chiffres mesurent la représentation, pas le taux de victoire. Chaque joueur classé est compté, avec ou sans decklist publiée. Un tournoi qui publie moins de 90 % de ses listes est écarté : on ne mesurerait plus le tournoi, mais son top.")}
         </p>
       </footer>
     </div>

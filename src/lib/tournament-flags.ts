@@ -388,7 +388,15 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   "S4 Shanghai City Challenge (2026-08-22)": { name: "S4 Shanghai City Challenge", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-22", set: "Vendetta", format: "Standard" },
   "S4 Guangzhou City Challenge (2026-08-22)": { name: "S4 Guangzhou City Challenge", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-08-22", set: "Vendetta", format: "Standard" },
   "S4 Suzhou City Challenge (2026-08-23)": { name: "S4 Suzhou City Challenge", shortName: "Suzhou CC", countryCode: "CN", city: "Suzhou", location: "Suzhou, Chine", playerCount: 110, type: "city_challenge", date: "2026-08-23", set: "Vendetta", format: "Standard" },
+  // Pas une City Challenge : une épreuve de boutique relevée sur hexgate, gardée
+  // parce qu'elle fait 109 joueurs, dans la fourchette des City Challenge publiées
+  // (101 à 128). Les quatre autres épreuves chinoises absentes du site font 64 à
+  // 93 joueurs et restent dehors.
+  "Dongguan Manbo Cup (2026-08-08)": { name: "Dongguan Manbo Cup", shortName: "Dongguan Manbo Cup", countryCode: "CN", city: "Dongguan", location: "Dongguan, Chine", playerCount: 109, type: "city_challenge", date: "2026-08-08", set: "Vendetta", format: "Standard" },
   "Riftbound Showdown Ottawa (2026-08-08)": { name: "Riftbound Showdown Ottawa", shortName: "Ottawa Showdown", countryCode: "CA", city: "Ottawa", location: "Ottawa, Canada", playerCount: 594, type: "regional", date: "2026-08-08", set: "Vendetta", format: "Standard" },
+  // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
+  // le nombre de listes publiées (118 seulement, dont 88 complètes).
+  "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },
   "Hangzhou Regional Open (2025-09-14)": { name: "Hangzhou Regional Open (2025-09-14)", shortName: "Hangzhou RO", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 510, type: "regional", date: "2025-09-14", set: "Origins", format: "Conquest" },
   "Fuzhou City Challenge (2025-09-27)": { name: "Fuzhou City Challenge (2025-09-27)", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shenzhen City Challenge (2025-09-27)": { name: "Shenzhen City Challenge (2025-09-27)", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
