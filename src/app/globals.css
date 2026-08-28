@@ -7,8 +7,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta);
-  --font-display: var(--font-rubik);
+  /* Ni Rubik ni Jakarta n'ont de glyphes chinois. Noto Sans TC vient APRÈS elles :
+     les lettres latines gardent la police du site, seuls les idéogrammes y
+     retombent. Elle n'est chargée que sur les pages /zh (voir layout.tsx) ; la
+     nommer ici ne coûte rien ailleurs, une famille absente est sautée. */
+  --font-sans: var(--font-jakarta), "Noto Sans TC";
+  --font-display: var(--font-rubik), "Noto Sans TC";
   --font-mono: var(--font-geist-mono);
 
   /* Canvas & Surfaces */
@@ -168,7 +172,7 @@
   }
   body {
     @apply bg-canvas text-ink antialiased;
-    font-family: var(--font-jakarta), sans-serif;
+    font-family: var(--font-jakarta), "Noto Sans TC", sans-serif;
   }
   /* Coupure des lignes : titres équilibrés, paragraphes sans mot orphelin en
      dernière ligne. Les blocs longs sont ignorés par le navigateur, c'est voulu. */

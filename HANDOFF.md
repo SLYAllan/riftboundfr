@@ -1,5 +1,71 @@
 # HANDOFF — état des lieux
 
+## Session du 28 août 2026 — overlay en chinois (EN LOCAL, non commité)
+
+Tout est vert (`tsc` 0, 58 fichiers de test / 308 tests, `lint` 0 erreur,
+`next build` 0) et **rien n'est poussé**. Rien ne touche à la base ni à la prod.
+
+### Ce qui existe maintenant
+
+**`/zh` est une troisième langue du site, traduite pour le SEUL overlay** : sa page,
+le tableau de bord `/profil/overlay`, le compagnon et la barre de navigation.
+Dictionnaire `src/lib/i18n-zh.ts` (188 entrées), indexé par le texte français comme
+l'anglais. Le reste du site sort en français sous `/zh`, d'où le `noindex` posé par
+le middleware sur tout `/zh`.
+
+Le choix de langue **n'est pas dans la barre du site** : il est dans les réglages du
+tableau de bord, parce que c'est là qu'on copie les liens OBS et compagnon, qui
+portent le préfixe de la page. Un streamer qui choisit le chinois donne à ses joueurs
+un compagnon en chinois, sans autre réglage.
+
+Police **Noto Sans TC**, chargée depuis Google Fonts uniquement sur `/zh`, placée
+APRÈS Rubik, Jakarta et Arpona dans les piles : le latin garde les polices du site.
+
+**Cartes chinoises** : images et noms, relevés par `npm run maj:cartes-zh` dans
+`data/cards-zh.json` (**1 148 images, 1 127 noms**, tous sets). Résolution dans
+`src/lib/cards-zh.ts`, branchée sur `/api/cards/preview?langue=zh`, le passage unique
+des images de l'overlay, et sur `/api/cards/noms-zh` + `use-noms-zh` pour les noms.
+Les listes déroulantes affichent le nom chinois mais gardent le nom d'origine en
+VALEUR : c'est lui qui voyage dans l'état et retrouve la carte en base.
+
+**La source est le figurier OFFICIEL de l'éditeur chinois**,
+`lol-api.playloltcg.com/xcx/card/searchCardCraftWeb`. Son adresse n'est documentée
+nulle part : elle est dans le `js/request/request.js` de playloltcg.com, et la page
+du figurier est `card.html`, pas `cardgallery`. Elle rend les 1 261 cartes d'un coup,
+avec le nom, le texte et l'adresse de l'image sur le CDN de l'éditeur.
+
+Le premier jet passait par un miroir communautaire sur GitHub, dont le figurier
+s'arrêtait à Spiritforged : Unleashed et Vendetta n'avaient donc aucun nom chinois, et
+son README interdisait l'usage commercial. Le figurier officiel a réglé les deux d'un
+coup : 543 noms de plus, et plus rien qui vienne d'un dépôt tiers.
+
+### Les limites, à dire avant de promettre
+
+1. **Les cartes chinoises sont en SIMPLIFIÉ**, pas en traditionnel (le code « SC » est
+   imprimé en bas de chaque carte). Aucune source en traditionnel n'existe : Riftcodex
+   n'a pas de locale, `tc.playloltcg.com` n'a pas de figurier, l'API Riot est limitée à
+   l'anglais pendant la bêta. Allan a tranché : interface en traditionnel, images en
+   simplifié.
+2. **Les champs de bataille gardent leur image d'origine.** L'éditeur range ces cartes
+   paysage dans un fichier portrait, tournées d'un quart de tour : leur texte chinois
+   s'affichait à la verticale dans le cadre. Leur NOM, lui, est bien traduit.
+3. **10 cartes sont refusées** par le contrôle énergie + puissance, et restent en
+   anglais. C'est voulu : mieux vaut l'anglais qu'un nom pris à une autre carte.
+
+### Deux pièges payés
+
+- **La clé d'une carte chinoise est le `riftboundId`, jamais `set` + `collectorNumber`.**
+  Dans Vendetta, les cartes des decks de départ (`ven-sp4-006`) portent aussi les numéros
+  1 à 4 : « VEN numéro 1 » rendait Kai'Sa, Survivor au lieu de Baccai Sandspinner.
+- **Un dataset communautaire peut être périmé sans le dire.** Le figurier recopié dans le
+  miroir GitHub n'avait ni Unleashed ni Vendetta, alors que le figurier officiel, lui, les
+  a. Deux heures de « ces noms n'existent pas » pour une copie vieille de quelques mois :
+  chercher la source d'origine avant de conclure qu'une donnée n'existe pas.
+- **Un numéro qui concorde ne prouve pas que c'est la même carte.** La routine n'accepte
+  un nom que si l'énergie ET la puissance concordent aussi. Un nom a déjà été refusé par
+  ce test au premier relevé.
+
+
 ## Session du 27 août 2026 (3) — poussé sur main ET en production
 
 Trois commits sur `origin/main` : `573e4050` (tournois), `298845ec` (stats),

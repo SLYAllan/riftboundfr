@@ -11,7 +11,8 @@ import { traduire, traduireCanonical, type Langue } from "./i18n";
 /** Langue de la requete en cours, posee par le middleware. */
 export async function langueCourante(): Promise<Langue> {
   const h = await headers();
-  return h.get("x-langue") === "en" ? "en" : "fr";
+  const posee = h.get("x-langue");
+  return posee === "en" || posee === "zh" ? posee : "fr";
 }
 
 /** Chemin demande, sans le prefixe de langue. Sert aux liens hreflang. */
@@ -60,7 +61,7 @@ export async function metaTraduite(m: Metadata): Promise<Metadata> {
     openGraph: m.openGraph
       ? {
           ...m.openGraph,
-          locale: "en_GB",
+          locale: langue === "zh" ? "zh_TW" : "en_GB",
           title: t(m.openGraph.title) as never,
           description: t(m.openGraph.description) as string | undefined,
         }

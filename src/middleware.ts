@@ -20,26 +20,30 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Version anglaise : /en/decks sert la page /decks avec la langue posée en
-  // en-tête. Aucun fichier n'est dupliqué, et une page pas encore traduite
-  // reste lisible en français au lieu de renvoyer un 404.
+  // Version traduite : /en/decks et /zh/decks servent la page /decks avec la
+  // langue posée en en-tête. Aucun fichier n'est dupliqué, et une page pas encore
+  // traduite reste lisible en français au lieu de renvoyer un 404.
   const chemin = request.nextUrl.pathname;
-  const enAnglais = chemin === "/en" || chemin.startsWith("/en/");
-  const cheminNu = enAnglais ? chemin.slice(3) || "/" : chemin;
+  const langue = chemin === "/en" || chemin.startsWith("/en/")
+    ? "en"
+    : chemin === "/zh" || chemin.startsWith("/zh/")
+      ? "zh"
+      : "fr";
+  const cheminNu = langue === "fr" ? chemin : chemin.slice(3) || "/";
 
   const entrees = new Headers(request.headers);
-  entrees.set("x-langue", enAnglais ? "en" : "fr");
+  entrees.set("x-langue", langue);
   entrees.set("x-chemin", cheminNu);
 
   let response: NextResponse;
-  if (enAnglais) {
+  if (langue !== "fr") {
     const cible = request.nextUrl.clone();
     cible.pathname = cheminNu;
     response = NextResponse.rewrite(cible, { request: { headers: entrees } });
   } else {
     response = NextResponse.next({ request: { headers: entrees } });
   }
-  response.headers.set("Content-Language", enAnglais ? "en" : "fr");
+  response.headers.set("Content-Language", langue === "zh" ? "zh-Hant" : langue);
 
   // L'habillage de stream est la seule page qui encadre un site tiers (la caméra
   // VDO.Ninja) et affiche une image venue de n'importe où (le logo du tournoi). La
@@ -53,7 +57,10 @@ export function middleware(request: NextRequest) {
   // l'en-tête ne serait jamais lu) et on interdit l'indexation.
   // Même raison pour le compagnon : son adresse porte de quoi ÉCRIRE sur
   // l'habillage, elle n'a rien à faire dans un index.
-  if (estOverlay || cheminNu.startsWith("/compagnon/")) {
+  // Le chinois ne traduit que l'overlay : sous /zh, tout le reste du site sort en
+  // français. Indexé, ce serait la même page à deux adresses, dans la mauvaise
+  // langue. À retirer le jour où /zh sera traduit en entier.
+  if (estOverlay || cheminNu.startsWith("/compagnon/") || langue === "zh") {
     response.headers.set("X-Robots-Tag", "noindex, nofollow");
   }
 

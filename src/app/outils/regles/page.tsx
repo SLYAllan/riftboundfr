@@ -11,9 +11,9 @@ import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
 import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
-import { loadCoreRules, loadRuleChapters, pdfDesRegles, CORE_RULES_UPDATED, type CoreRule } from "@/lib/core-rules";
+import { loadCoreRules, loadRuleChapters, pdfDesRegles, langueRegles, CORE_RULES_UPDATED, type CoreRule, type LangueRegles } from "@/lib/core-rules";
 import { langueCourante, metaTraduite, tr } from "@/lib/i18n-server";
-import { etiquetteLocale, type Langue } from "@/lib/i18n";
+import { etiquetteLocale } from "@/lib/i18n";
 
 const metadata: Metadata = {
   title: { absolute: "Règles de Riftbound en français - le texte officiel, cherchable" },
@@ -40,7 +40,7 @@ function fold(s: string): string {
 // Raccourcis sous la barre : les questions qui reviennent le plus souvent.
 // Ces mots sont cherchés DANS le texte des règles : ils doivent être écrits dans la
 // langue du règlement affiché, sinon aucun ne rend de résultat sur la version anglaise.
-const SUGGESTIONS: Record<Langue, string[]> = {
+const SUGGESTIONS: Record<LangueRegles, string[]> = {
   fr: ["Réserve", "Amplifié", "Flux", "Bannir", "Épuiser", "Conquête", "Caché", "Mulligan"],
   en: ["Sideboard", "Amplified", "Flux", "Banish", "Exhaust", "Conquer", "Hidden", "Mulligan"],
 };
@@ -155,7 +155,7 @@ export default async function ReglesPage({
       </form>
 
       <div className="mt-3 flex flex-wrap gap-2">
-        {SUGGESTIONS[langue].map((s) => (
+        {SUGGESTIONS[langueRegles(langue)].map((s) => (
           <Link
             key={s}
             href={`/outils/regles?q=${encodeURIComponent(s)}`}

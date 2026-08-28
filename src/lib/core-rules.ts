@@ -11,14 +11,25 @@ import type { Langue } from "./i18n";
 // françaises à un lecteur anglophone — 2 600 phrases dans la mauvaise langue.
 export const CORE_RULES_UPDATED = "16 juillet 2026";
 
-const PDF: Record<Langue, string> = {
+/**
+ * Langues où le règlement officiel existe. Le chinois n'a pas de PDF chez Riot : il
+ * n'est là que pour l'overlay, et retombe sur l'anglais plutôt que sur le français,
+ * qui laisserait un lecteur chinois devant 2 600 phrases dans une langue de moins.
+ */
+export type LangueRegles = "fr" | "en";
+
+export function langueRegles(langue: Langue): LangueRegles {
+  return langue === "fr" ? "fr" : "en";
+}
+
+const PDF: Record<LangueRegles, string> = {
   fr: "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/f668751be265e4bdf828145b593a74e0ddab6a9f.pdf",
   en: "https://static.dotgg.gg/media/sites/67/2026/03/Riftbound-Core-Rules-RUP4-July-16-2026.pdf",
 };
 
 /** Le PDF officiel de la langue demandée. */
 export function pdfDesRegles(langue: Langue): string {
-  return PDF[langue];
+  return PDF[langueRegles(langue)];
 }
 
 export interface CoreRule {
@@ -30,9 +41,10 @@ export interface CoreRule {
 
 // Le fichier est lu une fois par processus et par langue : 2 300 règles, on ne relit
 // pas à chaque recherche.
-const cache = new Map<Langue, CoreRule[]>();
+const cache = new Map<LangueRegles, CoreRule[]>();
 
-export async function loadCoreRules(langue: Langue = "fr"): Promise<CoreRule[]> {
+export async function loadCoreRules(demandee: Langue = "fr"): Promise<CoreRule[]> {
+  const langue = langueRegles(demandee);
   const deja = cache.get(langue);
   if (deja) return deja;
   let rules: CoreRule[];
@@ -54,9 +66,10 @@ export interface RuleChapter {
 
 // Le regroupement par chapitre ne dépend pas de la requête : on le calcule une fois
 // par processus et par langue, pas à chaque affichage de la page.
-const chapters = new Map<Langue, RuleChapter[]>();
+const chapters = new Map<LangueRegles, RuleChapter[]>();
 
-export async function loadRuleChapters(langue: Langue = "fr"): Promise<RuleChapter[]> {
+export async function loadRuleChapters(demandee: Langue = "fr"): Promise<RuleChapter[]> {
+  const langue = langueRegles(demandee);
   const deja = chapters.get(langue);
   if (deja) return deja;
   const rules = await loadCoreRules(langue);

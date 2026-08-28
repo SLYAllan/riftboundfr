@@ -15,6 +15,7 @@
     "test": "vitest run",
     "sync-cards": "npx tsx scripts/sync-cards.ts",
     "sync-prices": "npx tsx --env-file=.env scripts/sync-prices.mts",
+    "maj:cartes-zh": "npx tsx --env-file=.env scripts/sync-cartes-zh.mts",
     "verify": "tsc --noEmit && next build",
     "validate:names": "npx tsx scripts/validate-card-names.mts",
     "fix:names": "npx tsx scripts/validate-card-names.mts --fix",

@@ -7,7 +7,7 @@ import { CollectionProvider } from "@/components/collection/collection-provider"
 
 import { ServiceWorkerRegister } from "@/components/sw-register";
 import { FournisseurLangue } from "@/components/i18n-provider";
-import { traduire, PREFIXE_EN } from "@/lib/i18n";
+import { traduire, PREFIXE_EN, type Langue } from "@/lib/i18n";
 import { cheminCourant, langueCourante } from "@/lib/i18n-server";
 import "./globals.css";
 
@@ -95,7 +95,7 @@ export const viewport: Viewport = {
 // @graph lie le WebSite et l'Organisation via @id. L'Organization (name + logo +
 // sameAs) est le signal d'entité que Google utilise pour reconnaître la marque
 // "Riftbound France" comme distincte du jeu Riftbound (Riot) → requête de marque.
-const jsonLd = (langue: "fr" | "en") => ({
+const jsonLd = (langue: Langue) => ({
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -106,11 +106,11 @@ const jsonLd = (langue: "fr" | "en") => ({
       description: langue === "fr"
         ? "Base de cartes, tier lists, decks, guides et tournois pour le TCG Riftbound. Tout en français."
         : "Card database, tier lists, decks, guides and tournaments for the Riftbound TCG.",
-      inLanguage: langue,
+      inLanguage: langue === "zh" ? "zh-Hant" : langue,
       publisher: { "@id": "https://riftboundfrance.fr/#organization" },
       potentialAction: {
         "@type": "SearchAction",
-        target: `https://riftboundfrance.fr${langue === "fr" ? "" : "/en"}/cartes?q={search_term_string}`,
+        target: `https://riftboundfrance.fr${langue === "fr" ? "" : `/${langue}`}/cartes?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     },
@@ -142,7 +142,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const cheminFr = chemin === "/" ? "" : chemin;
 
   return (
-    <html lang={langue} className={`dark ${rubik.variable} ${jakarta.variable}`}>
+    <html lang={langue === "zh" ? "zh-Hant" : langue} className={`dark ${rubik.variable} ${jakarta.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -154,6 +154,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="alternate" hrefLang="fr" href={`${site}${cheminFr}`} />
         <link rel="alternate" hrefLang="en" href={`${site}${PREFIXE_EN}${cheminFr}`} />
         <link rel="alternate" hrefLang="x-default" href={`${site}${cheminFr}`} />
+        {/* Le chinois n'a de glyphes dans aucune des polices du site (Rubik, Jakarta,
+            Arpona) : sans elle, chaque machine choisit la sienne et deux streams ne
+            se ressemblent pas. Chargée UNIQUEMENT sur /zh — une page française ne
+            paie rien. Google découpe le chinois par `unicode-range`, donc seules les
+            tranches des idéogrammes réellement affichés sont téléchargées. */}
+        {langue === "zh" && (
+          <>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+            <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..900&display=swap"
+            />
+          </>
+        )}
         {/* Vérification de propriété du site pour Impact. Leur balise attend `value`
             et non `content` : elle est écrite telle qu'ils la donnent, sinon la
             vérification échoue. L'API Metadata de Next ne sait produire que

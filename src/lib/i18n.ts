@@ -1,10 +1,16 @@
 import { EN } from "./i18n-en";
 import { EN_ARTICLES } from "./i18n-articles-en";
+import { ZH } from "./i18n-zh";
 
-export type Langue = "fr" | "en";
+export type Langue = "fr" | "en" | "zh";
 
 /** Préfixe d'URL de la version anglaise. Le site français reste à la racine. */
 export const PREFIXE_EN = "/en";
+/** Chinois traditionnel. Seul l'overlay est traduit ; voir `i18n-zh.ts`. */
+export const PREFIXE_ZH = "/zh";
+
+/** Le préfixe d'URL de chaque langue autre que le français. */
+export const PREFIXES: Record<Exclude<Langue, "fr">, string> = { en: PREFIXE_EN, zh: PREFIXE_ZH };
 
 /**
  * Le dictionnaire est indexé par le texte français lui-même : pas de clés à
@@ -14,6 +20,9 @@ export const PREFIXE_EN = "/en";
  */
 export function traduire(texte: string, langue: Langue): string {
   if (langue === "fr") return texte;
+  // Le chinois ne couvre que l'overlay : un seul dictionnaire, et le reste retombe
+  // sur le français, comme l'anglais le faisait pendant sa propre traduction.
+  if (langue === "zh") return ZH[texte] ?? texte;
   // Deux dictionnaires : l'interface, puis la prose des articles. Séparés parce
   // qu'un seul paragraphe d'article pèse plus que dix phrases de menu, et qu'un
   // article se traduit d'un bloc alors que l'interface se traduit par pages.
@@ -22,7 +31,8 @@ export function traduire(texte: string, langue: Langue): string {
 
 /** Étiquette de langue pour les nombres et les dates. */
 export function etiquetteLocale(langue: Langue): string {
-  return langue === "en" ? "en-GB" : "fr-FR";
+  if (langue === "en") return "en-GB";
+  return langue === "zh" ? "zh-Hant" : "fr-FR";
 }
 
 /**
@@ -31,8 +41,11 @@ export function etiquetteLocale(langue: Langue): string {
  * échouent sur la version anglaise.
  */
 export function sansPrefixe(chemin: string): string {
-  if (chemin === PREFIXE_EN) return "/";
-  return chemin.startsWith(`${PREFIXE_EN}/`) ? chemin.slice(PREFIXE_EN.length) : chemin;
+  for (const prefixe of Object.values(PREFIXES)) {
+    if (chemin === prefixe) return "/";
+    if (chemin.startsWith(`${prefixe}/`)) return chemin.slice(prefixe.length);
+  }
+  return chemin;
 }
 
 /**
@@ -43,12 +56,13 @@ export function sansPrefixe(chemin: string): string {
 export function prefixerLien(href: string, langue: Langue): string {
   if (langue === "fr") return href;
   if (!href.startsWith("/")) return href;
+  const prefixe = PREFIXES[langue];
   // Déjà préfixé : la pagination et les filtres reconstruisent leurs liens à
-  // partir de l'URL courante, qui contient déjà « /en ».
-  if (href.startsWith("/api/") || href === PREFIXE_EN || /^\/en[/?#]/.test(href)) {
+  // partir de l'URL courante, qui contient déjà « /en » ou « /zh ».
+  if (href.startsWith("/api/") || href === prefixe || href.startsWith(`${prefixe}/`) || href.startsWith(`${prefixe}?`) || href.startsWith(`${prefixe}#`)) {
     return href;
   }
-  return href === "/" ? PREFIXE_EN : `${PREFIXE_EN}${href}`;
+  return href === "/" ? prefixe : `${prefixe}${href}`;
 }
 
 /** Le canonical doit désigner la page dans la langue réellement rendue. */

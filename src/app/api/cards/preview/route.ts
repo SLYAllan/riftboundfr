@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { imageChinoise } from "@/lib/cards-zh";
 
 // Sets promotionnels : Organized Play, promos génériques, cartes de juge.
 const PROMO_SETS = new Set(["OPP", "PR", "JDG"]);
@@ -20,6 +21,10 @@ function canonicalScore(c: { set: string; overnumbered: boolean; signature: bool
 export async function GET(req: NextRequest) {
   const name = req.nextUrl.searchParams.get("name");
   if (!name) return NextResponse.json(null, { status: 400 });
+  // `langue=zh` : l'overlay d'un stream chinois montre la carte chinoise. Le repli
+  // sur l'image d'origine est voulu — le miroir n'a pas toutes les cartes, et un
+  // trou en plein direct serait pire qu'une carte dans la mauvaise langue.
+  const enChinois = req.nextUrl.searchParams.get("langue") === "zh";
 
   const cards = await prisma.card.findMany({
     where: {
@@ -34,7 +39,7 @@ export async function GET(req: NextRequest) {
       // L'effet, illisible sur une image de 300 px de large. Décisif pour un
       // Équipement, dont le texte EST la carte.
       textPlain: true,
-      set: true, collectorNumber: true, overnumbered: true, signature: true,
+      set: true, collectorNumber: true, overnumbered: true, signature: true, riftboundId: true,
     },
   });
 
@@ -46,9 +51,20 @@ export async function GET(req: NextRequest) {
     return (a.collectorNumber ?? 9999) <= (b.collectorNumber ?? 9999) ? a : b;
   });
 
-  const { set: _set, collectorNumber: _n, overnumbered: _o, signature: _s, ...card } = best;
+  const { set: _set, collectorNumber: _n, overnumbered: _o, signature: _s, riftboundId, ...card } = best;
+  // Les champs de bataille sont exclus : le miroir range ces cartes paysage dans un
+  // fichier portrait, tournées d'un quart de tour. L'overlay en montre un morceau
+  // d'illustration, et le texte chinois s'y retrouvait à la verticale. L'art est le
+  // même des deux côtés, seul le texte change : on ne perd rien à garder l'original.
+  if (enChinois && card.type !== "Battlefield") {
+    card.imageUrl = imageChinoise(riftboundId) ?? card.imageUrl;
+  }
 
   return NextResponse.json(card, {
-    headers: { "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=7200" },
+    headers: {
+      "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=7200",
+      // La réponse dépend du paramètre `langue`, qui est dans l'URL : rien à varier
+      // côté en-têtes. Ce commentaire est là pour qu'on ne le déplace pas en cookie.
+    },
   });
 }

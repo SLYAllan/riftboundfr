@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { traduireCanonical } from "./i18n";
+import { prefixerLien, sansPrefixe, traduire, traduireCanonical } from "./i18n";
 
 describe("traduireCanonical", () => {
   it("préfixe le canonical anglais une seule fois", () => {
@@ -23,5 +23,23 @@ describe("traduireCanonical", () => {
       url: "/en/tier-list",
       title: "Tier list",
     });
+  });
+});
+
+describe("chinois traditionnel", () => {
+  it("préfixe et dé-préfixe /zh comme /en", () => {
+    expect(prefixerLien("/profil/overlay", "zh")).toBe("/zh/profil/overlay");
+    expect(prefixerLien("/zh/profil/overlay", "zh")).toBe("/zh/profil/overlay");
+    expect(prefixerLien("/", "zh")).toBe("/zh");
+    expect(prefixerLien("/api/overlay/state", "zh")).toBe("/api/overlay/state");
+    expect(sansPrefixe("/zh/profil/overlay")).toBe("/profil/overlay");
+    expect(sansPrefixe("/zh")).toBe("/");
+    expect(sansPrefixe("/en/decks")).toBe("/decks");
+  });
+
+  it("retombe sur le français hors de l’overlay", () => {
+    expect(traduire("Compagnon de match", "zh")).toBe("對戰助手");
+    // Une phrase du site non traduite doit sortir en français, pas en clé vide.
+    expect(traduire("Phrase jamais traduite", "zh")).toBe("Phrase jamais traduite");
   });
 });

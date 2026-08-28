@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { useNomsZh } from "@/hooks/use-noms-zh";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import {
@@ -28,6 +29,9 @@ function MessageErreurListe({ message, relancer, libelle }: { message?: string; 
 
 export function Compagnon({ token, cle, initial }: { token: string; cle: string; initial: OverlayStateData }) {
   const t = useT();
+  // Nom chinois à l'affichage, nom d'origine en valeur : c'est lui qui part dans
+  // l'état et qui retrouve la carte en base.
+  const nomsZh = useNomsZh();
   const [state, setState] = useState(initial);
   const [etape, setEtape] = useState<0 | 1 | 2>(0);
   const [enMatch, setEnMatch] = useState(false);
@@ -170,9 +174,9 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
         <MessageErreurListe message={erreursListes.legendes} relancer={chargerLegendes} libelle={t("Réessayer")} /><MessageErreurListe message={erreursListes.terrains} relancer={chargerTerrains} libelle={t("Réessayer")} />
         {([0, 1] as const).map((i) => { const joueur = state.players[i]; return <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
           <h3 className="truncate text-base font-semibold">{joueur.name || `${t("Joueur")} ${i + 1}`}</h3>
-          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span><select name={`legende-${i + 1}`} autoComplete="off" value={joueur.legendId ?? ""} onChange={(e) => { const l = legendes.find((x) => x.id === e.target.value); setJoueur(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }} className={champCls}><option value="">{t("Aucune")}</option>{legendes.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}</select></label>
-          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span><select name={`champion-${i + 1}`} autoComplete="off" aria-describedby={!joueur.legendName ? `aide-champion-${i}` : undefined} value={joueur.championName} onChange={(e) => setJoueur(i, { championName: e.target.value })} disabled={!joueur.legendName} className={champCls}><option value="">{t("Aucun")}</option>{champions[i].map((c) => <option key={c}>{c}</option>)}</select>{!joueur.legendName && <span id={`aide-champion-${i}`} className="mt-1 block text-xs text-ink-muted">{t("Choisissez d’abord une Légende")}</span>}</label>
-          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille")}</span><select name={`terrain-${i + 1}`} autoComplete="off" value={joueur.battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b}>{b}</option>)}</select></label>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span><select name={`legende-${i + 1}`} autoComplete="off" value={joueur.legendId ?? ""} onChange={(e) => { const l = legendes.find((x) => x.id === e.target.value); setJoueur(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }} className={champCls}><option value="">{t("Aucune")}</option>{legendes.map((l) => <option key={l.id} value={l.id}>{nomsZh(l.name)}</option>)}</select></label>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span><select name={`champion-${i + 1}`} autoComplete="off" aria-describedby={!joueur.legendName ? `aide-champion-${i}` : undefined} value={joueur.championName} onChange={(e) => setJoueur(i, { championName: e.target.value })} disabled={!joueur.legendName} className={champCls}><option value="">{t("Aucun")}</option>{champions[i].map((c) => <option key={c} value={c}>{nomsZh(c)}</option>)}</select>{!joueur.legendName && <span id={`aide-champion-${i}`} className="mt-1 block text-xs text-ink-muted">{t("Choisissez d’abord une Légende")}</span>}</label>
+          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille")}</span><select name={`terrain-${i + 1}`} autoComplete="off" value={joueur.battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}</select></label>
         </div>; })}
         <MessageErreurListe message={erreursListes.champions} relancer={rechargerChampions} libelle={t("Réessayer")} />
       </section>}
@@ -231,7 +235,7 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
           champ porte le nom de son joueur. */}
       {([0, 1] as const).map((i) => <label key={i} className="block">
         <span className="mb-1 block text-xs text-ink-muted">{state.players[i].name || `${t("Joueur")} ${i + 1}`}</span>
-        <select name={`terrain-manche-${i + 1}`} autoComplete="off" value={state.players[i].battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b}>{b}</option>)}</select>
+        <select name={`terrain-manche-${i + 1}`} autoComplete="off" value={state.players[i].battlefields[0] ?? ""} onChange={(e) => setJoueur(i, { battlefields: e.target.value ? [e.target.value] : [] })} className={champCls}><option value="">{t("Aucun")}</option>{terrains.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}</select>
       </label>)}
       <MessageErreurListe message={erreursListes.terrains} relancer={chargerTerrains} libelle={t("Réessayer")} />
       <button type="button" onClick={() => setDemandeTerrain(false)} className="min-h-12 rounded-xl bg-gold px-6 py-3 text-base font-bold text-canvas active:scale-[0.96]">{t("Continuer")}</button>

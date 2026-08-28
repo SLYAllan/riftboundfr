@@ -93,6 +93,13 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   **Ne jamais relancer ces scripts un par un** : ils se lisent l'un l'autre, et les lancer
   dans le désordre laissait la tier list refaite mais pas les fiches, l'accueil sur un méta
   mort, et deux chiffres différents pour la même Légende sur deux pages.
+- **`npm run maj:cartes-zh` → LA routine des cartes chinoises.** Relève les noms et les
+  adresses d'images du figurier chinois officiel, écrit `data/cards-zh.json`, et dit ce
+  qui a bougé depuis le dernier relevé. `-- --sec` pour un essai à blanc. À lancer à
+  chaque sortie de set. Deux refus plutôt qu'une relève amputée, qui retirerait leurs
+  images à des cartes en plein direct : une page incomplète (reçues ≠ total annoncé), et
+  une relève qui a maigri de plus de 10 %. `-- --force` passe outre le second, en
+  connaissance de cause.
 - `npm run fix:names <doc.md>` → auto-corrige les noms Whisper (distance ≤ 2 vs DB cartes) ; `npm run validate:names` = gate (exit 1 si suspects).
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (exit 1 si MISMATCH vs scrape brut).
 
@@ -105,6 +112,17 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   L'écart n'est pas un détail, sur Barcelone c'est 106 listes pour 2 127 joueurs, et ce sont
   ceux qui performent qui publient. `scripts/couverture-tournois.mts` dit quel tournoi est
   trop peu publié pour être mesuré.
+- **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
+  Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
+  source est le **figurier OFFICIEL de l'éditeur chinois**,
+  `lol-api.playloltcg.com/xcx/card/searchCardCraftWeb` (adresse trouvée dans le
+  `js/request/request.js` de playloltcg.com, elle n'est documentée nulle part). Il rend
+  le nom ET l'adresse officielle de l'image de chaque carte, tous sets confondus, et les
+  images sont servies depuis SON CDN : rien n'est réhébergé. **Rien n'est composé à la
+  main** : un nom n'est retenu que si l'énergie et la puissance concordent avec notre
+  carte, sinon il est jeté ; ce qui manque reste en anglais, jamais en approximation.
+  La limite qui reste : ces cartes sont en chinois **simplifié** (aucune source en
+  traditionnel n'existe), alors que l'interface de l'overlay est en traditionnel.
 - Architecture, commandes vérifiées et conventions → **plus bas dans ce fichier** · état du chantier et pièges → `HANDOFF.md` · index des docs → `docs/README.md` · le projet en entier → `docs/PROJET.md`.
 
 **Réflexes :**
@@ -206,6 +224,25 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   Les cartes d'article de l'accueil, de `/articles` et les articles liés doivent
   aussi passer leur titre et leur chapô dans `traduire` : traduire la page seule
   laisse encore le titre français dans ces listes.
+  **Le chinois traditionnel est un TROISIÈME dictionnaire**, `i18n-zh.ts`, servi sous
+  `/zh`. Il ne couvre QUE l'overlay : sa page, le tableau de bord, le compagnon et la
+  barre de navigation. Le reste du site sort en français sous `/zh`, d'où le `noindex`
+  posé par le middleware sur tout `/zh` — la même page à deux adresses, dans la mauvaise
+  langue, n'a rien à faire dans un index. Le choix de langue n'est PAS dans la barre du
+  site : il vit dans les réglages du tableau de bord de l'overlay, parce que c'est là
+  qu'on copie les liens OBS et compagnon, qui portent le préfixe de la page.
+  `src/lib/i18n-zh.test.ts` échoue si une phrase de l'overlay perd sa traduction.
+- **`cards-zh.ts` — passage unique des cartes chinoises.** `imageChinoise(riftboundId)`
+  et `nomChinois(nom)`. La clé est le `riftboundId`, JAMAIS `set` + `collectorNumber` :
+  dans Vendetta les cartes des decks de départ (`ven-sp4-006`) portent aussi les numéros
+  1 à 4, et « VEN numéro 1 » rendait Kai'Sa, Survivor au lieu de Baccai Sandspinner. Le
+  suffixe fait partie de la clé (`116a` art alternatif, `229*` surnuméroté) : le figurier
+  chinois numérote pareil. Les champs de bataille sont exclus des IMAGES : l'éditeur
+  range ces cartes paysage dans un fichier portrait, tournées d'un quart de tour, et leur
+  texte chinois s'affichait à la verticale dans le cadre. Leur NOM, lui, est bien traduit.
+  Les noms passent par `/api/cards/noms-zh` et le hook `use-noms-zh`, lus par l'overlay,
+  le tableau de bord et le compagnon : les listes déroulantes AFFICHENT le nom chinois et
+  gardent le nom d'origine en VALEUR, qui seul retrouve la carte en base.
 - `collection.ts` / `collection-server.ts` — même découpage client/serveur.
 - `banned-cards.ts`, `bans.ts`, `core-rules.ts`, `domains.ts`,
   `tournament-flags.ts`, `errata-2026-07.ts` — règles du jeu et métadonnées de
@@ -315,11 +352,12 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **29 fichiers, 180 tests, tous verts.** |
+| `npm test` | ✅ | Vitest. **58 fichiers, 308 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
-| `npm run lint` | ✅ | **0 erreur, 102 avertissements.** Les avertissements restent à réduire. |
+| `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
+| `npm run maj:cartes-zh` | ✅ | **La routine des cartes chinoises** (~20 s). Demande la base. `-- --sec` pour un essai à blanc. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
 | `docker compose up -d db` | ✅ | PostgreSQL 16 local sur le port **5433**. |
@@ -327,8 +365,8 @@ son travail.
 Lancer un seul test : `npx vitest run src/lib/deck-code.test.ts`
 Un seul cas : `npx vitest run -t "nom du test"`
 
-**`npm run lint` passe au dernier relevé du 20 août 2026** — 0 erreur et
-102 avertissements. La commande fait désormais partie de la porte CI ; les
+**`npm run lint` passe au dernier relevé du 28 août 2026** — 0 erreur et
+98 avertissements. La commande fait désormais partie de la porte CI ; les
 avertissements restent à réduire sans les confondre avec des erreurs.
 
 **Trois pièges de plateforme déjà payés :**

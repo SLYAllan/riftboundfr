@@ -54,6 +54,7 @@ de scraping et de seed. Voici la carte.
 | `data/decklists/`, `data/tournaments/` | Decklists et tournois convertis, prêts à seeder. | Dérivé |
 | `data/articles-drafts/` | Brouillons d'articles non publiés. | En chantier |
 | `data/rules/`, `data/riftbound-rules-fr*` | Règles officielles du jeu en français. | Source de vérité |
+| `data/cards-zh.json` | **Cartes chinoises : le nom et l'adresse de l'image de chaque carte.** Relevé par `npm run maj:cartes-zh` depuis le figurier OFFICIEL de l'éditeur chinois. Lu par `src/lib/cards-zh.ts`, qui sert l'overlay sous `/zh`. Ces cartes sont en chinois SIMPLIFIÉ : aucune source en traditionnel n'existe. | Engendré |
 | `data/prices/`, `data/videos/` | Régénérés, ignorés par git. | Jetable |
 | `content/articles/` | Articles rédigés à la main. | Source de vérité |
 | `content/aide-de-jeu/` | Textes de l'aide de jeu. | Source de vérité |

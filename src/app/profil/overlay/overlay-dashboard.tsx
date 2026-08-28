@@ -6,9 +6,12 @@ import {
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
+import { useNomsZh } from "@/hooks/use-noms-zh";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { parseDeckCode } from "@/lib/deck-code";
-import { useLien, useT } from "@/components/i18n-provider";
+import { useLangue, useLien, useT } from "@/components/i18n-provider";
+import { usePathname } from "next/navigation";
+import { prefixerLien, sansPrefixe, type Langue } from "@/lib/i18n";
 
 
 /** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
@@ -99,8 +102,61 @@ function BoutonConfirme({
   );
 }
 
+const LANGUES: { code: Langue; drapeau: string; hreflang: string; nom: string }[] = [
+  { code: "fr", drapeau: "fr", hreflang: "fr", nom: "Français" },
+  { code: "en", drapeau: "gb", hreflang: "en", nom: "English" },
+  { code: "zh", drapeau: "tw", hreflang: "zh-Hant", nom: "繁體中文" },
+];
+
+/**
+ * Langue de l'overlay. Elle se choisit ICI parce que c'est ici qu'on copie les
+ * liens : le préfixe de cette page part dans le lien OBS et dans celui du
+ * compagnon (`useLien`), donc un streamer qui choisit le chinois donne à ses
+ * joueurs un compagnon en chinois, sans rien d'autre à régler.
+ *
+ * Rechargement complet plutôt que navigation client, comme dans la barre de
+ * navigation : la langue change tout ce que le serveur a rendu, jusqu'au `lang`
+ * de la page.
+ */
+function ChoixLangue({ t }: { t: (texte: string) => string }) {
+  const langue = useLangue();
+  const nu = sansPrefixe(usePathname());
+  return (
+    <section className="rounded-xl border border-hairline bg-surface p-4">
+      <h2 className="text-sm font-semibold">{t("Langue de l’overlay")}</h2>
+      <div className="mt-2 flex flex-wrap items-center gap-1">
+        {LANGUES.map((l) => (
+          <a
+            key={l.code}
+            href={prefixerLien(nu, l.code)}
+            hrefLang={l.hreflang}
+            lang={l.hreflang}
+            aria-current={langue === l.code ? "true" : undefined}
+            className={`flex min-h-11 items-center gap-2 rounded-lg px-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane ${
+              langue === l.code ? "bg-arcane text-canvas" : "text-ink-muted hover:text-ink"
+            }`}
+          >
+            {/* Le drapeau vient de `public/img/flags/`, comme dans la barre de
+                navigation : les emojis drapeaux sortent en lettres sous Windows. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`/img/flags/${l.drapeau}.svg`} alt="" width={18} height={12} className="h-3 w-[18px] shrink-0 rounded-[2px] object-cover" />
+            {l.nom}
+          </a>
+        ))}
+      </div>
+      <p className="mt-2 text-xs text-ink-muted">
+        {t("Elle vaut pour cette page, pour l’overlay et pour le compagnon. Copiez les liens après l’avoir choisie.")}
+      </p>
+    </section>
+  );
+}
+
 export function OverlayDashboard({ token, cleCompagnon, initial }: { token: string; cleCompagnon: string; initial: OverlayStateData }) {
   const t = useT();
+  // Les listes déroulantes AFFICHENT le nom chinois quand il existe, mais gardent le
+  // nom d'origine en valeur : c'est lui qui part dans l'état, retrouve la carte en
+  // base et donne son illustration. Traduire la valeur casserait les trois.
+  const nomsZh = useNomsZh();
   // Les trois adresses portent le préfixe de langue de CETTE page. Un streamer
   // anglophone copiait sinon un lien français : son habillage et le compagnon de
   // ses joueurs démarraient en français, sans qu'il puisse rien y faire.
@@ -389,7 +445,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-4 py-8 sm:px-6">
       <header>
-        <h1 className="text-balance text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+        <h1 className="text-balance text-3xl font-bold" style={{ fontFamily: "var(--font-rubik), \"Noto Sans TC\", sans-serif" }}>
           {t("Overlay de stream")}
         </h1>
         <p className="mt-2 max-w-2xl text-pretty text-sm text-ink-secondary">
@@ -422,6 +478,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           <span className="hidden text-sm font-normal text-ink-muted group-open:inline">{t("Fermer")}</span>
         </summary>
         <div className="space-y-4 border-t border-hairline p-4">
+      <ChoixLangue t={t} />
       <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
         <h2 className="font-semibold text-ink">{t("Première fois ? Trois étapes.")}</h2>
         <ol className="mt-2 space-y-1.5 text-sm text-ink-secondary">
@@ -651,7 +708,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     className={inputCls}
                   >
                     <option value="">{t("À choisir…")}</option>
-                    {legends.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
+                    {legends.map((l) => <option key={l.id} value={l.id}>{nomsZh(l.name)}</option>)}
                   </select>
                 </label>
 
@@ -659,7 +716,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                   <span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span>
                   <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
                     <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
-                    {champs[i].map((c) => <option key={c} value={c}>{c}</option>)}
+                    {champs[i].map((c) => <option key={c} value={c}>{nomsZh(c)}</option>)}
                   </select>
                 </label>
 
@@ -671,7 +728,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                     className={inputCls}
                   >
                     <option value="">{t("Aucun")}</option>
-                    {battlefields.map((b) => <option key={b} value={b}>{b}</option>)}
+                    {battlefields.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}
                   </select>
                 </label>
                 <div className="rounded-lg bg-surface-raised/50 p-3">

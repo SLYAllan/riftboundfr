@@ -6,7 +6,8 @@ import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { echelleOverlay, entrelace, secondesChrono, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
-import { useT } from "@/components/i18n-provider";
+import { useLangue, useT } from "@/components/i18n-provider";
+import { useNomsZh } from "@/hooks/use-noms-zh";
 
 // Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
 // transparent pour la zone de jeu. Tout est en pixels sur une toile de 1920x1080,
@@ -102,25 +103,29 @@ const FOND_SANS_CAM = "/stream/layout_sanscam.webp";
 const bfArt = new Map<string, string | null>();
 
 function useBattlefieldArt(names: string[]): Record<string, string | null> {
+  // La langue de la page décide de la langue des cartes : un overlay ouvert sous
+  // /zh montre les cartes chinoises. Elle entre dans la clé du cache, sinon la
+  // première carte résolue figerait la langue de toutes les suivantes.
+  const langue = useLangue();
   const [art, setArt] = useState<Record<string, string | null>>({});
-  const key = names.join("|");
-  const cached = Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null]));
+  const key = `${langue}|${names.join("|")}`;
+  const cached = Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(`${langue}|${n}`) ?? null]));
   useEffect(() => {
     let annule = false;
-    const manquants = names.filter((n) => n && !bfArt.has(n));
+    const manquants = names.filter((n) => n && !bfArt.has(`${langue}|${n}`));
     if (manquants.length === 0) return;
     Promise.all(
       manquants.map(async (n) => {
         try {
-          const r = await fetch(`/api/cards/preview?name=${encodeURIComponent(n)}`);
+          const r = await fetch(`/api/cards/preview?name=${encodeURIComponent(n)}${langue === "zh" ? "&langue=zh" : ""}`);
           const c = r.ok ? await r.json() : null;
-          bfArt.set(n, c?.imageUrl ?? null);
+          bfArt.set(`${langue}|${n}`, c?.imageUrl ?? null);
         } catch {
-          bfArt.set(n, null);
+          bfArt.set(`${langue}|${n}`, null);
         }
       }),
     ).then(() => {
-      if (!annule) setArt(Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(n) ?? null])));
+      if (!annule) setArt(Object.fromEntries(names.filter(Boolean).map((n) => [n, bfArt.get(`${langue}|${n}`) ?? null])));
     });
     return () => {
       annule = true;
@@ -204,16 +209,17 @@ function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
 function EtiquetteLegende({
   legende, champion, charsLegende = 26, charsChampion = 34,
 }: { legende: string; champion: string; charsLegende?: number; charsChampion?: number }) {
+  const nomZh = useNomsZh();
   const t = useT();
   return (
     <>
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
         <FitText chars={charsLegende} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-          {legende || t("Légende")}
+          {legende ? nomZh(legende) : t("Légende")}
         </FitText>
         <FitText chars={charsChampion} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-          {champion || "Champion"}
+          {champion ? nomZh(champion) : "Champion"}
         </FitText>
       </div>
     </>
@@ -234,6 +240,7 @@ function Side({
   footer: React.ReactNode;
 }) {
   const t = useT();
+  const nomsZh = useNomsZh();
   // Bannière large plutôt que la vignette carrée : c'est ce que montre la
   // retransmission officielle, et l'illustration porte le panneau.
   const banner = p.legendName ? getBannerUrl(p.legendName) : null;
@@ -334,7 +341,7 @@ function Side({
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
         <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
           <FitText chars={24} className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {bf || "Champ de bataille"}
+            {bf ? nomsZh(bf) : t("Champ de bataille")}
           </FitText>
           {rounds > 0 && (
             // mb-2 : posées au ras du bas de la découpe, les pastilles touchaient
@@ -687,6 +694,8 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
  * l'habillage complet.
  */
 function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left" | "right"; format: OverlayStateData["format"] }) {
+  const t = useT();
+  const nomsZh = useNomsZh();
   const cote = CADRE_COMPACT[side];
   const banner = p.legendName ? getBannerUrl(p.legendName) : null;
   const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
@@ -723,7 +732,7 @@ function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left"
             illisible. Les pastilles sont réduites, la découpe ne fait que 62 px. */}
         <div className="relative z-20 flex h-full flex-col justify-center overflow-hidden px-1">
           <FitText chars={charsLarge} lines={rounds > 0 ? 1 : 2} className="text-base font-bold uppercase leading-tight tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {bf || "Champ de bataille"}
+            {bf ? nomsZh(bf) : t("Champ de bataille")}
           </FitText>
           {rounds > 0 && (
             <div className="mt-1 flex justify-center gap-2">
