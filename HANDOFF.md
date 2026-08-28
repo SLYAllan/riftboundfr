@@ -2,8 +2,8 @@
 
 ## Session du 28 août 2026 — overlay en chinois (poussé sur main)
 
-Commit `cd3d4711` sur `origin/main`. Tout est vert (`tsc` 0, 58 fichiers de test /
-308 tests, `lint` 0 erreur, `next build` 0). Rien ne touche à la base ni à la prod :
+Poussé sur `origin/main`. Tout est vert (`tsc` 0, 59 fichiers de test / 312 tests,
+`lint` 0 erreur, `next build` 0). Rien ne touche à la base ni à la prod :
 `data/cards-zh.json` est un fichier, pas un seed. **Le déploiement Coolify reste à
 déclencher** pour que /zh existe en ligne.
 
@@ -40,6 +40,14 @@ Le premier jet passait par un miroir communautaire sur GitHub, dont le figurier
 s'arrêtait à Spiritforged : Unleashed et Vendetta n'avaient donc aucun nom chinois, et
 son README interdisait l'usage commercial. Le figurier officiel a réglé les deux d'un
 coup : 543 noms de plus, et plus rien qui vienne d'un dépôt tiers.
+
+### La routine de l'overlay
+
+`npm run maj:overlay` (`-- --sec` pour un essai à blanc), à lancer après chaque
+sortie de set, une fois `sync-cards` passé. Deux étapes : les cartes chinoises, puis
+l'inventaire des Légendes sans bannière ni icône — la panne silencieuse de l'overlay,
+qu'on ne voyait jusqu'ici qu'en direct. Au 28 août 2026 : 48 Légendes en base, 48 avec
+bannière, 48 avec icône, rien à fournir.
 
 ### Les limites, à dire avant de promettre
 

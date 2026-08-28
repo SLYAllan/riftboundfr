@@ -1,4 +1,4 @@
-const BANNER_MAP: Record<string, string> = {
+export const BANNER_MAP: Record<string, string> = {
   irelia: "irelia",
   sivir: "sivir",
   diana: "diana",
@@ -52,9 +52,20 @@ const BANNER_MAP: Record<string, string> = {
   zed: "zed",
 };
 
+/**
+ * La clé des deux tables : le nom du champion seul, avant la virgule.
+ * « Annie, Dark Child » et « Annie - Fiery » cherchent tous deux « annie ».
+ *
+ * Exportée pour que la routine `maj:overlay` inventorie les Légendes sans habillage
+ * avec CETTE règle et pas une copie : une copie finit par diverger, et l'inventaire
+ * déclarerait alors complet un cadre qui reste vide à l'écran.
+ */
+export function cleLegende(legendName: string): string {
+  return legendName.toLowerCase().split(",")[0].split(" -")[0].trim();
+}
+
 export function getBannerUrl(legendName: string): string | null {
-  const lower = legendName.toLowerCase().split(",")[0].split(" -")[0].trim();
-  const file = BANNER_MAP[lower];
+  const file = BANNER_MAP[cleLegende(legendName)];
   return file ? `/bannieres/${file}.webp` : null;
 }
 
@@ -113,10 +124,10 @@ export const ICON_MAP: Record<string, string> = {
 };
 
 export function getLegendIconUrl(legendName: string): string | null {
-  const lower = legendName.toLowerCase();
-  if (lower.includes("wuju master")) return "/img/legend_icon/masteryi_2.webp";
-  const key = lower.split(",")[0].split(" -")[0].trim();
-  const file = ICON_MAP[key];
+  // Deux Légendes Master Yi : le Wuju Master a sa propre icône, le Bladesman garde
+  // celle de la table. Sans ce test, les deux tombaient sur la même image.
+  if (legendName.toLowerCase().includes("wuju master")) return "/img/legend_icon/masteryi_2.webp";
+  const file = ICON_MAP[cleLegende(legendName)];
   return file ? `/img/legend_icon/${file}.webp` : null;
 }
 

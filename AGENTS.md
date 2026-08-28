@@ -93,6 +93,15 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   **Ne jamais relancer ces scripts un par un** : ils se lisent l'un l'autre, et les lancer
   dans le désordre laissait la tier list refaite mais pas les fiches, l'accueil sur un méta
   mort, et deux chiffres différents pour la même Légende sur deux pages.
+- **`npm run maj:overlay` → LA routine de mise à jour de l'overlay.** À lancer après
+  chaque sortie de set, une fois `npm run sync-cards` passé. Elle relève les cartes
+  chinoises (étape 1, c'est `maj:cartes-zh`), puis inventorie les Légendes de la base
+  SANS bannière ni icône. C'est la panne silencieuse de l'overlay : une Légende neuve
+  entre dans les listes du tableau de bord, un streamer la choisit, et son cadre reste
+  vide sans que rien ne le dise. Elle ne fabrique aucune image — elle dit lesquelles
+  manquent — et elle SORT EN ERREUR si une entrée de `banners.ts` désigne un fichier
+  absent du disque, qui est une faute de frappe et pas un visuel à dessiner.
+  `-- --sec` pour un essai à blanc.
 - **`npm run maj:cartes-zh` → LA routine des cartes chinoises.** Relève les noms et les
   adresses d'images du figurier chinois officiel, écrit `data/cards-zh.json`, et dit ce
   qui a bougé depuis le dernier relevé. `-- --sec` pour un essai à blanc. À lancer à
@@ -244,6 +253,11 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   le tableau de bord et le compagnon : les listes déroulantes AFFICHENT le nom chinois et
   gardent le nom d'origine en VALEUR, qui seul retrouve la carte en base.
 - `collection.ts` / `collection-server.ts` — même découpage client/serveur.
+- **`banners.ts` — bannière et icône d'une Légende, par nom de champion.** `cleLegende`
+  porte la règle de clé (le nom avant la virgule) et se PARTAGE avec la routine
+  `maj:overlay` : recopiée là-bas, elle aurait fini par diverger et l'inventaire aurait
+  déclaré complet un cadre resté vide. Une Légende absente des deux tables n'affiche
+  rien, en silence.
 - `banned-cards.ts`, `bans.ts`, `core-rules.ts`, `domains.ts`,
   `tournament-flags.ts`, `errata-2026-07.ts` — règles du jeu et métadonnées de
   tournoi codées en dur, relues par plusieurs pages.
@@ -352,12 +366,13 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **58 fichiers, 308 tests, tous verts.** |
+| `npm test` | ✅ | Vitest. **59 fichiers, 312 tests, tous verts.** |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
-| `npm run maj:cartes-zh` | ✅ | **La routine des cartes chinoises** (~20 s). Demande la base. `-- --sec` pour un essai à blanc. |
+| `npm run maj:overlay` | ✅ | **La routine de l'overlay**, deux étapes. Demande la base. `-- --sec` pour un essai à blanc. |
+| `npm run maj:cartes-zh` | ✅ | **La routine des cartes chinoises** (~20 s), étape 1 de la précédente. Demande la base. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
 | `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
 | `docker compose up -d db` | ✅ | PostgreSQL 16 local sur le port **5433**. |
