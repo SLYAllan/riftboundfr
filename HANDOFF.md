@@ -1,9 +1,11 @@
 # HANDOFF — état des lieux
 
-## Session du 28 août 2026 — overlay en chinois (EN LOCAL, non commité)
+## Session du 28 août 2026 — overlay en chinois (poussé sur main)
 
-Tout est vert (`tsc` 0, 58 fichiers de test / 308 tests, `lint` 0 erreur,
-`next build` 0) et **rien n'est poussé**. Rien ne touche à la base ni à la prod.
+Commit `cd3d4711` sur `origin/main`. Tout est vert (`tsc` 0, 58 fichiers de test /
+308 tests, `lint` 0 erreur, `next build` 0). Rien ne touche à la base ni à la prod :
+`data/cards-zh.json` est un fichier, pas un seed. **Le déploiement Coolify reste à
+déclencher** pour que /zh existe en ligne.
 
 ### Ce qui existe maintenant
 
