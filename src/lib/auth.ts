@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import crypto from "crypto";
 import { getUserFromSession } from "@/lib/session";
+import { libelleAdminDiscord } from "@/lib/bulking-auth";
 
 export const SESSION_COOKIE = "riftbound_admin";
 
@@ -51,6 +52,15 @@ export async function verifyAdmin() {
 
 export async function isAdmin(): Promise<boolean> {
   return (await isAdminByPassword()) || (await isAdminByDiscord());
+}
+
+export async function getBulkAdminActor() {
+  const user = await getUserFromSession();
+  if (user?.role === "admin") {
+    return { adminUserId: user.id, adminLabel: libelleAdminDiscord(user) };
+  }
+  if (await isAdminByPassword()) return { adminUserId: null, adminLabel: "password-admin" };
+  return null;
 }
 
 export function checkPassword(password: string): boolean {
