@@ -197,7 +197,6 @@ export default async function AdminDecksPage({ searchParams }: Props) {
                 <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[8%]">Cartes</th>
                 <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[10%]">Statut</th>
                 <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[12%]">Date</th>
-                <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[14%]">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -225,17 +224,12 @@ export default async function AdminDecksPage({ searchParams }: Props) {
                     </div>
                   </td>
                   <td className="px-4 py-3 text-sm text-ink-muted whitespace-nowrap">{formatDate(deck.createdAt)}</td>
-                  <td className="px-4 py-3">
-                    <Link href={`/admin/bulking/decks/${deck.id}`} className="text-sm text-arcane hover:underline whitespace-nowrap">
-                      Stock Bulking
-                    </Link>
-                  </td>
                 </tr>
                 );
               })}
               {decks.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-4 py-8 text-center text-ink-muted">Aucun deck best-of / éditorial</td>
+                  <td colSpan={5} className="px-4 py-8 text-center text-ink-muted">Aucun deck best-of / éditorial</td>
                 </tr>
               )}
             </tbody>
@@ -316,7 +310,6 @@ export default async function AdminDecksPage({ searchParams }: Props) {
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[6%]">Cartes</th>
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[12%]">Statut</th>
               <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[14%]">Date</th>
-              <th className="text-left px-4 py-3 text-sm text-ink-muted font-medium w-[14%]">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -339,17 +332,12 @@ export default async function AdminDecksPage({ searchParams }: Props) {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-sm text-ink-muted whitespace-nowrap">{formatDate(deck.createdAt)}</td>
-                <td className="px-4 py-3">
-                  <Link href={`/admin/bulking/decks/${deck.id}`} className="text-sm text-arcane hover:underline whitespace-nowrap">
-                    Stock Bulking
-                  </Link>
-                </td>
               </tr>
               );
             })}
             {decks.length === 0 && (
               <tr>
-                <td colSpan={8} className="px-4 py-8 text-center text-ink-muted">Aucun deck tournoi</td>
+                <td colSpan={7} className="px-4 py-8 text-center text-ink-muted">Aucun deck tournoi</td>
               </tr>
             )}
           </tbody>

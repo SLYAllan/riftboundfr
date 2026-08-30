@@ -34,7 +34,6 @@ Où trouver quoi. Rangé le 25 août 2026.
 | `AUDITS.md` | **Les 15 audits et rapports du projet en un seul fichier**, du plus récent (11 août 2026) au plus ancien (24 mai 2026). Chaque section garde son texte d'origine et la mention de son fichier source. C'est un état des lieux daté, pas la vérité d'aujourd'hui : pour l'état courant, lire `HANDOFF.md`. |
 | `prompts/` | Les prompts réutilisables : scraping riftdecks, scraping Firecrawl, analyse de VOD, apprentissage de la méta, refonte du deckbuilder, modification d'articles et de decks. |
 | `superpowers/` | Plans et spécifications de sessions passées. |
-| `superpowers/plans/2026-08-29-bulking-inventory.md` | **Chantier ouvert.** Le plan du module bulking : stock, entrées en lot, recettes, decks. Les phases 1 à 5 tournent en local ; la production n'a pas encore le schéma, donc la tâche 13 reste à faire. |
 
 ## Où vivent les données
 
