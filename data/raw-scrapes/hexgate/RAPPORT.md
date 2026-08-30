@@ -60,12 +60,31 @@ d'épreuve locale chinoise n'apparaît pas dans nos scrapes riftdecks. **Reste �
 vérifier tournoi par tournoi** : le recoupement des 21 identifiants avec
 `data/raw-scrapes/index-fragments/` n'a pas été fait.
 
+## L'API JSON existe — relevé du 30 août 2026
+
+Le site est servi par une API FastAPI sous `/api`, sans documentation exposée
+(`/docs` et `/openapi.json` répondent 404). Trois adresses suffisent, avec un
+User-Agent de navigateur comme pour les pages :
+
+| Adresse | Ce qu'elle rend |
+|---|---|
+| `/api/tournaments` | la liste, avec date, joueurs, set et Légende gagnante |
+| `/api/tournaments/<id>` | l'en-tête, `top8`, `all_placements` et les camemberts |
+| `/api/tournaments/<id>/decks/<deck_id>` | la liste entière, mêmes champs que la charge React |
+
+`scripts/scrape-hexgate.mts` lit encore la charge React, et ça marche : l'API n'a
+été trouvée qu'après. Elle serait plus courte à lire si le parseur devait être
+repris.
+
+**`all_placements` porte TOUS les joueurs, pas le seul top cut**, et chacun a un
+`deck_id`. Le Regional Open de Wuhan (243) donne 1 280 places et 1 280 listes. La
+page HTML ne montre les noms que jusqu'au 64e : lire la page à l'œil fait croire
+que le reste n'a pas publié.
+
 ## Ce qui n'est pas vérifié
 
 - La pagination : 21 tournois sont visibles sur `/tournaments`, rien ne dit qu'il
   n'y en a pas d'autres derrière un paramètre de page.
-- L'existence d'une API JSON propre. La charge React suffit, mais un point d'entrée
-  officiel serait plus stable.
 - Le rythme de publication, et si les listes anciennes restent en ligne.
 - La correspondance des noms de Légendes chinois (无双剑姬 = Fiora, Grand Duelist)
   au-delà de l'exemple lu : elle se fera par `card_no`, jamais à l'oreille.
