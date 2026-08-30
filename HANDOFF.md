@@ -1,5 +1,73 @@
 # HANDOFF — état des lieux
 
+## Session du 30 août 2026 — bulking retiré, Regional Open de Wuhan importé
+
+Trois commits **en local, rien de poussé, rien en prod**. `npm run verify` vert,
+59 fichiers de test / 312 tests verts, `validate:decks` à 0 MISMATCH.
+
+### Le module bulking est annulé
+
+Les cinq commits du stock en lot (`f151bc41` à `03a255b1`) sont annulés d'un bloc :
+pages d'admin, routes d'API, `src/lib/bulking-*`, six modèles et six énumérations
+Prisma. La base locale porte encore ces tables, `prisma db push` les retirera.
+
+Piège au passage : `tsc` échouait après coup sur `.next/dev/types/validator.ts`, qui
+gardait la liste des routes du dernier `next dev` et cherchait encore les pages
+bulking. Supprimer ce fichier suffit, il se régénère.
+
+### hexgate 243 — S4 Wuhan Regional Open (2026-08-29)
+
+**1 280 joueurs classés et 1 280 listes publiées.** C'est le premier gros tournoi
+qui publie presque tout : Barcelone donne 106 listes pour 2 127 joueurs, et ce sont
+ceux qui performent qui publient.
+
+Le pipeline hexgate existait déjà (`scrape-hexgate.mts`, `parse-hexgate.mts`). Deux
+retouches au parseur :
+
+- il ne savait nommer que les City Challenge. Il reconnaît maintenant les
+  区域公开赛, sur le gabarit déjà en base (« S4 Wuhan Regional Open (2026-08-29) ») ;
+- il additionne les lignes qui portent le même numéro de collection. hexgate publie
+  parfois deux fois la même carte (`SFD-057/221` en double) ; le deck ressortait
+  « Champion ambigu (Irelia, Fervent, Irelia, Fervent) » et sautait pour un doublon
+  d'affichage. 25 listes récupérées.
+
+Compte final : 1 242 relevés (38 listes partielles écartées), 1 161 convertis et
+seedés, 38 best-of levés.
+
+**Trois Légendes sont écartées du best-of à la main** (`--sauf`) : Ornn, Lillia et
+Ambessa. Leur vraie première liste EST dans le tournoi (#21, #41, #191) mais n'a pas
+pu être convertie ; sans ce filtre le script aurait couronné le mieux classé des
+listes gardées (#39, #61, #196), c'est-à-dire un faux best-of. La vérification se
+refait en comparant, par Légende, le meilleur rang du classement complet au meilleur
+rang gardé.
+
+`npm run maj:stats` derrière. Vendetta passe de 5 260 à 6 501 joueurs classés, le
+cumul toutes ères de 35 597 à 36 838. `META-KNOWLEDGE.md` (v13) et
+`DECKBUILDING-RULES.md` (v12) sont refaits dessus, cores Vendetta compris.
+
+### Ce qui reste à décider
+
+- **Pousser sur `origin/main` et déployer.** Un déploiement Coolify ne seede rien :
+  la prod aurait le tournoi dans `tournament-flags.ts` et aucun deck derrière.
+  Le seed prod se fait par le tunnel, méthode dans `docs/DEPLOIEMENT.md`.
+- **80 decks écartés pour « Champion ambigu »**, dont trois premières places. Ce ne
+  sont pas des données douteuses : ces decks jouent DEUX Champions différents du même
+  personnage (Master Yi Tempered + Unstoppable, Rumble Hotheaded + Scrapper), et
+  hexgate ne dit pas lequel est désigné — il n'y en a peut-être pas. Notre modèle
+  veut un champion unique par deck, alors on jette les 40 cartes pour un champ
+  d'affichage. `champion: null` est accepté par le type et par le seeder : c'est la
+  piste, mais elle demande de décider ce qu'affiche une page de deck sans champion.
+- **1 deck écarté pour Volibear** : hexgate le nomme « Relentless Storm », sans le
+  personnage, et `FND-249/298` ne correspond à aucun set de la base. Un alias
+  FND→OGN marcherait ici (OGN-249 est bien Volibear, Relentless Storm), mais le
+  parseur note que les numéros ne se correspondent pas d'un set à l'autre : à
+  vérifier avant de l'écrire, pas à supposer.
+- **Les rangs de la tier list ne sont pas touchés.** Les chiffres ont bougé : Irelia
+  passe « établie au-dessus » de la moyenne (12,8 %, p = 0,041) et rejoint Kennen et
+  Master Yi ; Akali et Vex sortent des « établies en dessous » sans que leur
+  conversion change, l'échantillon a simplement grandi. Les tableaux de
+  `scripts/seed-tier-lists.ts` sont écrits à la main : c'est un jugement.
+
 ## Session du 28 août 2026 — overlay en chinois (poussé sur main)
 
 Poussé sur `origin/main`. Tout est vert (`tsc` 0, 59 fichiers de test / 312 tests,
