@@ -35,6 +35,7 @@ const VILLES: Record<string, string> = {
   "济南": "Jinan",
   "西安": "Xi'an",
   "东莞": "Dongguan",
+  "武汉": "Wuhan",
 };
 
 /**
@@ -86,6 +87,24 @@ function meilleurTirage(a: CarteBase, b: CarteBase): CarteBase {
   return note(a) <= note(b) ? a : b;
 }
 
+/**
+ * Additionne les lignes qui portent le même numéro de collection.
+ *
+ * hexgate rend parfois deux lignes pour la même carte — « SFD-057/221 » deux fois,
+ * une copie chacune. Le compte total reste juste, mais le deck ressortait avec
+ * « Champion ambigu (Irelia, Fervent, Irelia, Fervent) », c'est-à-dire écarté pour
+ * un doublon d'affichage. Vingt listes sautaient comme ça sur le seul Wuhan.
+ */
+function fusionnerDoublons(cartes: CarteBrute[]): CarteBrute[] {
+  const parNumero = new Map<string, CarteBrute>();
+  for (const c of cartes) {
+    const vu = parNumero.get(c.card_no);
+    if (vu) vu.quantity += c.quantity;
+    else parNumero.set(c.card_no, { ...c });
+  }
+  return [...parNumero.values()];
+}
+
 function slugLegende(nom: string): string {
   return nom
     .split(",")[0]
@@ -100,13 +119,24 @@ function slugJoueur(nom: string): string {
   return s || "sans-nom";
 }
 
-/** « 【城市挑战赛】北京站-8.23 » → « S4 Beijing City Challenge (2026-08-23) ». */
+/**
+ * « 【城市挑战赛】北京站-8.23 » → « S4 Beijing City Challenge (2026-08-23) »
+ * « 第四赛季区域公开赛 - 武汉站 » → « S4 Wuhan Regional Open (2026-08-29) »
+ *
+ * Les deux gabarits suivent le nom déjà employé en base (`tournament-flags.ts`) :
+ * « S3 Tianjin Regional Open (2026-06-07) ». La saison vient de `set` (« S4 »),
+ * pas du 第四赛季 du titre : c'est le champ que hexgate remplit toujours.
+ */
 function nomTournoi(brut: DeckBrut["tournoi"]): string | null {
   const particulier = NOMS_PARTICULIERS[brut.id];
   if (particulier) return `${particulier} (${brut.date})`;
   const ville = Object.keys(VILLES).find((cn) => brut.nom.includes(cn));
-  if (!ville || !brut.nom.includes("城市挑战赛")) return null;
-  return `S4 ${VILLES[ville]} City Challenge (${brut.date})`;
+  if (!ville) return null;
+  if (brut.nom.includes("城市挑战赛")) return `S4 ${VILLES[ville]} City Challenge (${brut.date})`;
+  if (brut.nom.includes("区域公开赛")) {
+    return `${brut.set} ${VILLES[ville]} Regional Open (${brut.date})`;
+  }
+  return null;
 }
 
 async function main() {
@@ -177,7 +207,7 @@ async function main() {
       // Le Champion du deck est la carte Champion qui porte le nom du personnage de
       // la Légende. Quand plusieurs y répondent, hexgate ne dit pas laquelle a été
       // désignée : on écarte plutôt que de choisir à sa place.
-      const principales = deck.cartes.filter((c) => c.slot_type === "main");
+      const principales = fusionnerDoublons(deck.cartes.filter((c) => c.slot_type === "main"));
       const champions = principales.filter((c) => {
         const base = trouver(c)!;
         return base.supertype === "Champion" && base.name.split(",")[0].trim().toLowerCase() === personnage;
