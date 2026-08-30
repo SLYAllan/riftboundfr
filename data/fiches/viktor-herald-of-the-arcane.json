@@ -26,60 +26,60 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Wages of Pain",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Shadow's Call",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Stupefy",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Sprite Fountain",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
-      "name": "Carrion Dredger",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "name": "Stupefy",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Singularity",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
-      "name": "Safety Inspector",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "name": "Carrion Dredger",
+      "role": "Standard, 68 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 66 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Blood Money",
+      "role": "Standard, 61 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "88 %",
+      "usage": "86 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "45 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (76 %)",
-    "Ravenbloom Conservatory (59 %)",
+    "Forbidding Waste (74 %)",
+    "Ravenbloom Conservatory (57 %)",
     "Rockfall Path (55 %)",
-    "Treasure Hoard (38 %)"
+    "Treasure Hoard (36 %)"
   ],
   "strengths": [
     "Six cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
@@ -93,12 +93,12 @@
     "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "joueursClasses": 90,
+    "joueursClasses": 101,
     "coupe10": 7,
     "titres": 0,
-    "conversion": "7.8 %",
-    "tournois": 21,
-    "listesPubliees": 66,
+    "conversion": "6.9 %",
+    "tournois": 22,
+    "listesPubliees": 77,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -130,7 +130,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 90 joueurs classés, 21 tournois, dont 66 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 101 joueurs classés, 22 tournois, dont 77 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

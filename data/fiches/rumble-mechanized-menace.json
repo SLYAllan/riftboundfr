@@ -14,56 +14,56 @@
     },
     {
       "name": "Forecaster",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Gem Jammer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Bubble Bot",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Stupefy",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Production Surge",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Stupefy",
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
       "name": "Patched Porobot",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 79 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Production Surge",
+      "role": "Standard, 71 % des listes, 3 exemplaires"
     },
     {
       "name": "Temporal Breach",
       "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
-      "name": "Falling Star",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Cloth Armor",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "role": "Standard, 67 % des listes, 1.5 exemplaire"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 66,
+    "joueursClasses": 90,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "1.5 %",
-    "tournois": 13,
-    "listesPubliees": 17,
+    "conversion": "1.1 %",
+    "tournois": 14,
+    "listesPubliees": 24,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -105,16 +105,11 @@
     "Rumble, Hotheaded": {
       "usage": "100 %",
       "role": "3 exemplaires en moyenne"
-    },
-    "Rumble, Scrapper": {
-      "usage": "41 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (53 %)",
-    "Rockfall Path (41 %)",
-    "Minefield (41 %)"
+    "Zaun Warrens (46 %)",
+    "Rockfall Path (42 %)"
   ],
-  "dataSource": "Classement complet des tournois : 66 joueurs classés, 13 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 90 joueurs classés, 14 tournois, dont 24 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

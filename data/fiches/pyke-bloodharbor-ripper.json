@@ -9,61 +9,61 @@
   "tier": 5,
   "keyCards": [
     {
-      "name": "Falling Star",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 84 % des listes, 1.5 exemplaire"
-    },
-    {
-      "name": "Treasure Hunter",
-      "role": "Standard, 81 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Void Seeker",
-      "role": "Standard, 81 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
       "name": "Blood Rush",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "name": "Treasure Hunter",
+      "role": "Standard, 72 % des listes, 3 exemplaires"
     },
     {
-      "name": "Piercing Light",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "name": "Void Seeker",
+      "role": "Standard, 72 % des listes, 1.5 exemplaire"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 61 % des listes, 3 exemplaires"
+      "role": "Standard, 69 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 69 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 67 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 64 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 66,
-    "coupe10": 1,
+    "joueursClasses": 74,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "1.5 %",
-    "tournois": 18,
-    "listesPubliees": 31,
+    "conversion": "2.7 %",
+    "tournois": 19,
+    "listesPubliees": 39,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -94,25 +94,25 @@
   },
   "sourceUrl": null,
   "champions": {
-    "Pyke, Dockside Butcher": {
-      "usage": "100 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Fizz, Trickster": {
       "usage": "97 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Pyke, Dockside Butcher": {
+      "usage": "97 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Ezreal, Prodigy": {
-      "usage": "94 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ripper's Bay (97 %)",
-    "Forbidding Waste (81 %)",
-    "Void Gate (42 %)"
+    "Ripper's Bay (95 %)",
+    "Forbidding Waste (74 %)",
+    "Void Gate (38 %)"
   ],
-  "dataSource": "Classement complet des tournois : 66 joueurs classés, 18 tournois, dont 31 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 74 joueurs classés, 19 tournois, dont 39 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

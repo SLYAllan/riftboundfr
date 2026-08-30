@@ -1,136 +1,136 @@
-# 24962 listes, sur 24962 decks du corpus
+# 26123 listes, sur 26123 decks du corpus
 
-### Ratio unités / sorts / équipements (moyenne sur 24960 listes)
+### Ratio unités / sorts / équipements (moyenne sur 26121 listes)
 
 | Type | Moyenne par deck | Part |
 |---|---:|---:|
 | Unités | 16,2 | 41,6 % |
-| Sorts | 18,6 | 47,8 % |
-| Équipements | 4,1 | 10,5 % |
+| Sorts | 18,6 | 47,7 % |
+| Équipements | 4,1 | 10,6 % |
 
-### Les 30 cartes les plus jouées (toutes Légendes, 24960 listes)
+### Les 30 cartes les plus jouées (toutes Légendes, 26121 listes)
 
 | Carte | Listes | Part | Copies moyennes |
 |---|---:|---:|---:|
-| Defy | 8634 | 34,6 % | 2,70 |
-| Discipline | 8314 | 33,3 % | 2,91 |
-| Thousand-Tailed Watcher | 7889 | 31,6 % | 2,32 |
-| Stupefy | 7495 | 30,0 % | 2,87 |
-| Stacked Deck | 7213 | 28,9 % | 2,72 |
-| Charm | 6935 | 27,8 % | 2,35 |
-| Ride The Wind | 6382 | 25,6 % | 2,17 |
-| Kai'Sa, Survivor | 6155 | 24,7 % | 1,93 |
-| Falling Star | 5771 | 23,1 % | 2,54 |
-| Noxus Hopeful | 5768 | 23,1 % | 2,52 |
-| Zhonya's Hourglass | 5601 | 22,4 % | 2,35 |
-| Hidden Blade | 5442 | 21,8 % | 2,50 |
-| Darius, Trifarian | 5123 | 20,5 % | 2,41 |
-| En Garde | 5078 | 20,3 % | 2,25 |
-| Ravenbloom Student | 5032 | 20,2 % | 2,82 |
-| Tideturner | 4669 | 18,7 % | 2,31 |
-| First Mate | 4497 | 18,0 % | 2,53 |
-| Gust | 4459 | 17,9 % | 2,10 |
-| Rebuke | 4348 | 17,4 % | 1,64 |
-| Retreat | 4326 | 17,3 % | 2,09 |
-| Singularity | 4303 | 17,2 % | 1,90 |
-| Fight or Flight | 4288 | 17,2 % | 2,47 |
-| Cleave | 4142 | 16,6 % | 2,27 |
-| Watchful Sentry | 4106 | 16,5 % | 2,79 |
-| Punch First | 4010 | 16,1 % | 2,27 |
-| Challenge | 3808 | 15,3 % | 2,14 |
-| Sabotage | 3778 | 15,1 % | 1,77 |
-| Lecturing Yordle | 3675 | 14,7 % | 2,21 |
-| Time Warp | 3607 | 14,5 % | 1,51 |
-| Not So Fast | 3587 | 14,4 % | 1,67 |
+| Defy | 9112 | 34,9 % | 2,71 |
+| Discipline | 8757 | 33,5 % | 2,91 |
+| Thousand-Tailed Watcher | 8123 | 31,1 % | 2,32 |
+| Stupefy | 7748 | 29,7 % | 2,87 |
+| Stacked Deck | 7624 | 29,2 % | 2,71 |
+| Charm | 7340 | 28,1 % | 2,33 |
+| Ride The Wind | 6756 | 25,9 % | 2,18 |
+| Kai'Sa, Survivor | 6351 | 24,3 % | 1,93 |
+| Falling Star | 5986 | 22,9 % | 2,54 |
+| Noxus Hopeful | 5964 | 22,8 % | 2,52 |
+| Zhonya's Hourglass | 5900 | 22,6 % | 2,34 |
+| Hidden Blade | 5652 | 21,6 % | 2,48 |
+| En Garde | 5375 | 20,6 % | 2,23 |
+| Ravenbloom Student | 5191 | 19,9 % | 2,82 |
+| Darius, Trifarian | 5180 | 19,8 % | 2,40 |
+| Tideturner | 5003 | 19,2 % | 2,30 |
+| First Mate | 4740 | 18,1 % | 2,53 |
+| Gust | 4646 | 17,8 % | 2,08 |
+| Singularity | 4450 | 17,0 % | 1,88 |
+| Rebuke | 4435 | 17,0 % | 1,64 |
+| Retreat | 4419 | 16,9 % | 2,08 |
+| Fight or Flight | 4288 | 16,4 % | 2,47 |
+| Punch First | 4280 | 16,4 % | 2,30 |
+| Cleave | 4255 | 16,3 % | 2,25 |
+| Watchful Sentry | 4195 | 16,1 % | 2,78 |
+| Sabotage | 4034 | 15,4 % | 1,77 |
+| Challenge | 3836 | 14,7 % | 2,14 |
+| Lecturing Yordle | 3762 | 14,4 % | 2,21 |
+| Time Warp | 3743 | 14,3 % | 1,51 |
+| Not So Fast | 3699 | 14,2 % | 1,66 |
 
-### Les 15 champs de bataille les plus joués (24960 listes)
+### Les 15 champs de bataille les plus joués (26121 listes)
 
 | Champ de bataille | Listes | Part |
 |---|---:|---:|
-| Obelisk of Power | 5007 | 20,1 % |
-| The Dreaming Tree | 4354 | 17,4 % |
-| Zaun Warrens | 4041 | 16,2 % |
-| Aspirant's Climb | 3527 | 14,1 % |
-| Targon's Peak | 3484 | 14,0 % |
-| Sunken Temple | 3377 | 13,5 % |
-| Void Gate | 3330 | 13,3 % |
-| Trifarian War Camp | 2945 | 11,8 % |
-| Sigil of the Storm | 2769 | 11,1 % |
-| The Arena's Greatest | 2745 | 11,0 % |
-| Reaver's Row | 2745 | 11,0 % |
-| Vilemaw's Lair | 2641 | 10,6 % |
-| Grove of the God-Willow | 2411 | 9,7 % |
-| Monastery of Hirana | 1839 | 7,4 % |
-| Star Spring | 1819 | 7,3 % |
+| Obelisk of Power | 5007 | 19,2 % |
+| The Dreaming Tree | 4354 | 16,7 % |
+| Zaun Warrens | 4239 | 16,2 % |
+| Targon's Peak | 3661 | 14,0 % |
+| Sunken Temple | 3564 | 13,6 % |
+| Aspirant's Climb | 3527 | 13,5 % |
+| Void Gate | 3421 | 13,1 % |
+| Trifarian War Camp | 3043 | 11,6 % |
+| Sigil of the Storm | 2892 | 11,1 % |
+| The Arena's Greatest | 2745 | 10,5 % |
+| Reaver's Row | 2745 | 10,5 % |
+| Vilemaw's Lair | 2687 | 10,3 % |
+| Grove of the God-Willow | 2445 | 9,4 % |
+| Star Spring | 2013 | 7,7 % |
+| Monastery of Hirana | 1888 | 7,2 % |
 
 ### Listes par Légende (pour recaler les titres de section)
 
-- Kai'Sa, Daughter of the Void : 3306
-- Master Yi, Wuju Bladesman : 3081
-- Draven, Glorious Executioner : 1803
-- Irelia, Blade Dancer : 1772
-- Viktor, Herald of the Arcane : 1557
-- Fiora, Grand Duelist : 859
-- Miss Fortune, Bounty Hunter : 740
-- Sett, The Boss : 714
-- Diana, Scorn of the Moon : 708
-- Azir, Emperor of the Sands : 635
-- Teemo, Swift Scout : 577
-- Ahri, Nine-Tailed Fox : 575
-- LeBlanc, Deceiver : 568
+- Kai'Sa, Daughter of the Void : 3354
+- Master Yi, Wuju Bladesman : 3176
+- Irelia, Blade Dancer : 1872
+- Draven, Glorious Executioner : 1828
+- Viktor, Herald of the Arcane : 1568
+- Fiora, Grand Duelist : 912
+- Diana, Scorn of the Moon : 751
+- Miss Fortune, Bounty Hunter : 742
+- Sett, The Boss : 715
+- Azir, Emperor of the Sands : 672
+- LeBlanc, Deceiver : 601
+- Teemo, Swift Scout : 578
+- Ahri, Nine-Tailed Fox : 576
+- Ezreal, Prodigal Explorer : 558
 - Annie, Dark Child : 541
-- Ezreal, Prodigal Explorer : 538
-- Sivir, Battle Mistress : 416
-- Vex, Gloomist : 405
-- Rek'sai, Void Burrower : 396
-- Lillia, Bashful Bloom : 389
+- Vex, Gloomist : 441
+- Rek'sai, Void Burrower : 433
+- Sivir, Battle Mistress : 426
+- Lillia, Bashful Bloom : 416
+- Ornn, Fire Below the Mountain : 416
+- Kennen, Heart of the Tempest : 393
 - Yasuo, Unforgiven : 365
-- Ornn, Fire Below the Mountain : 363
 - Jinx, Loose Cannon : 324
-- Leona, Radiant Dawn : 309
+- Leona, Radiant Dawn : 312
 - Darius, Hand of Noxus : 303
-- Lux, Lady of Luminosity : 294
+- Lux, Lady of Luminosity : 295
+- Rengar, Pridestalker : 284
+- Lucian, Purifier : 282
 - Volibear, Relentless Storm : 278
-- Lucian, Purifier : 266
-- Kennen, Heart of the Tempest : 264
 - Lee Sin, Blind Monk : 264
-- Rengar, Pridestalker : 241
-- Kha'Zix, Voidreaver : 235
-- Jax, Grandmaster At Arms : 223
-- Rumble, Mechanized Menace : 213
-- Pyke, Bloodharbor Ripper : 206
-- Renata Glasc, Chem-Baroness : 134
-- Nasus, Curator of the Sands : 132
+- Kha'Zix, Voidreaver : 260
+- Jax, Grandmaster At Arms : 239
+- Rumble, Mechanized Menace : 220
+- Pyke, Bloodharbor Ripper : 214
+- Akali, Rogue Assassin : 170
+- Nasus, Curator of the Sands : 170
+- Jayce, Defender of Tomorrow : 164
+- Renata Glasc, Chem-Baroness : 145
+- Jhin, Virtuoso : 135
 - Garen, Might of Demacia : 124
-- Jhin, Virtuoso : 122
-- Akali, Rogue Assassin : 115
-- Jayce, Defender of Tomorrow : 107
-- Vi, Piltover Enforcer : 105
-- Ivern, Green Father : 98
+- Vi, Piltover Enforcer : 115
+- Ivern, Green Father : 104
+- Poppy, Keeper of the Hammer : 100
 - Master Yi, Wuju Master : 91
-- Poppy, Keeper of the Hammer : 89
-- Mel, Soul's Reflection : 50
-- Zed, Master of Shadows : 29
-- Ambessa, Matriarch of War : 18
-- Shen, Eye of Twilight : 13
-- Renekton, Butcher of the Sands : 7
+- Mel, Soul's Reflection : 83
+- Zed, Master of Shadows : 44
+- Ambessa, Matriarch of War : 26
+- Shen, Eye of Twilight : 24
+- Renekton, Butcher of the Sands : 19
 
 ### Paires de domaines
 
 | Paire | Listes | Part |
 |---|---:|---:|
-| Body/Calm | 3655 | 14,7 % |
-| Fury/Mind | 3630 | 14,6 % |
-| Chaos/Fury | 2855 | 11,5 % |
-| Mind/Order | 2541 | 10,2 % |
-| Calm/Chaos | 2538 | 10,2 % |
-| Chaos/Mind | 1862 | 7,5 % |
-| Body/Order | 1790 | 7,2 % |
-| Calm/Mind | 1456 | 5,9 % |
-| Body/Chaos | 1390 | 5,6 % |
-| Calm/Order | 1056 | 4,3 % |
-| Body/Fury | 791 | 3,2 % |
-| Fury/Order | 781 | 3,1 % |
-| Chaos/Order | 264 | 1,1 % |
-| Calm/Fury | 115 | 0,5 % |
-| Body/Mind | 107 | 0,4 % |
+| Body/Calm | 3766 | 14,5 % |
+| Fury/Mind | 3698 | 14,2 % |
+| Chaos/Fury | 2903 | 11,2 % |
+| Calm/Chaos | 2674 | 10,3 % |
+| Mind/Order | 2597 | 10,0 % |
+| Chaos/Mind | 1959 | 7,5 % |
+| Body/Order | 1863 | 7,2 % |
+| Calm/Mind | 1575 | 6,1 % |
+| Body/Chaos | 1427 | 5,5 % |
+| Calm/Order | 1113 | 4,3 % |
+| Body/Fury | 862 | 3,3 % |
+| Fury/Order | 827 | 3,2 % |
+| Chaos/Order | 393 | 1,5 % |
+| Calm/Fury | 170 | 0,7 % |
+| Body/Mind | 164 | 0,6 % |

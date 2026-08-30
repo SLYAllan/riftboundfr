@@ -22,47 +22,47 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "Charm",
+      "name": "Switcheroo",
       "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Switcheroo",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Star-Crossed",
       "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "name": "Charm",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 63 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 73 % des listes, 2 exemplaires"
     },
     {
       "name": "Back Off",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Mutated Mouser",
-      "role": "Souple, 58 % des listes, 2.5 exemplaires"
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Souple, 58 % des listes, 1 exemplaire"
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
       "name": "Tornado Warrior",
-      "role": "Souple, 53 % des listes, 3 exemplaires"
+      "role": "Standard, 65 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 64 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 62 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -76,17 +76,22 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 86,
-    "coupe10": 2,
+    "joueursClasses": 125,
+    "coupe10": 6,
     "titres": 0,
-    "conversion": "2.3 %",
-    "tournois": 21,
-    "listesPubliees": 38,
+    "conversion": "4.8 %",
+    "tournois": 22,
+    "listesPubliees": 74,
     "bestPlacements": [
       {
         "placement": "8th",
         "player": "热水加冰",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "17th",
+        "player": "BKM-叶英@CN.R",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       },
       {
         "placement": "28th",
@@ -102,11 +107,6 @@
         "placement": "33th",
         "player": "汐雫",
         "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "33th",
-        "player": "零崎玖識",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       }
     ]
   },
@@ -133,22 +133,22 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "63 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Fizz, Trickster": {
-      "usage": "47 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "39 %",
+      "usage": "47 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "32 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (61 %)",
-    "Bandle Tree (34 %)",
-    "Fortified Position (32 %)"
+    "Startipped Peak (70 %)",
+    "Fortified Position (46 %)",
+    "Bandle Tree (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 86 joueurs classés, 21 tournois, dont 38 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 125 joueurs classés, 22 tournois, dont 74 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

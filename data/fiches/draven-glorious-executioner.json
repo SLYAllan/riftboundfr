@@ -30,22 +30,26 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
       "name": "Rebuke",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Overzealous Fan",
       "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
@@ -53,12 +57,8 @@
       "role": "Standard, 88 % des listes, 1 exemplaire"
     },
     {
-      "name": "Overzealous Fan",
-      "role": "Standard, 84 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Perfect Execution",
-      "role": "Standard, 79 % des listes, 1 exemplaire"
+      "role": "Standard, 80 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust Monk",
@@ -77,12 +77,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 184,
-    "coupe10": 24,
+    "joueursClasses": 209,
+    "coupe10": 25,
     "titres": 1,
-    "conversion": "13 %",
-    "tournois": 21,
-    "listesPubliees": 68,
+    "conversion": "12 %",
+    "tournois": 22,
+    "listesPubliees": 93,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -132,7 +132,7 @@
   },
   "champions": {
     "Draven, Showboat": {
-      "usage": "100 %",
+      "usage": "99 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
@@ -140,30 +140,30 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "90 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "74 %",
+      "usage": "80 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "63 %",
+      "usage": "70 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "60 %",
+      "usage": "62 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "51 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (85 %)",
-    "Zaun Warrens (76 %)",
-    "Amateur Recital (49 %)"
+    "Treasure Hoard (84 %)",
+    "Zaun Warrens (75 %)",
+    "Amateur Recital (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 184 joueurs classés, 21 tournois, dont 68 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 209 joueurs classés, 22 tournois, dont 93 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -28,97 +28,96 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "name": "Death Mark",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Death Mark",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "name": "Stacked Deck",
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 80 % des listes, 3 exemplaires"
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 79 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Cleave",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 61 % des listes, 2 exemplaires"
     },
     {
       "name": "Shadow Order Disciple",
       "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
-      "name": "Last Rites",
-      "role": "Souple, 48 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Souple, 48 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Falling Star",
-      "role": "Souple, 48 % des listes, 2 exemplaires"
+      "role": "Souple, 55 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Last Rites",
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "62 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Zed, From the Shadows": {
-      "usage": "55 %",
+      "usage": "68 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "52 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "41 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Vi, Destructive": {
-      "usage": "41 %",
+    "Zed, From the Shadows": {
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "31 %",
+      "usage": "36 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Vi, Destructive": {
+      "usage": "34 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Rek'Sai, Breacher": {
-      "usage": "31 %",
+      "usage": "32 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (93 %)",
-    "Minefield (66 %)",
-    "Forbidding Waste (38 %)",
-    "Shadow Temple (34 %)"
+    "Zaun Warrens (95 %)",
+    "Minefield (68 %)",
+    "Forbidding Waste (39 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 62,
+    "joueursClasses": 79,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "3.2 %",
-    "tournois": 16,
-    "listesPubliees": 29,
+    "conversion": "2.5 %",
+    "tournois": 17,
+    "listesPubliees": 44,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -147,5 +146,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 62 joueurs classés, 16 tournois, dont 29 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 79 joueurs classés, 17 tournois, dont 44 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

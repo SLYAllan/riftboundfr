@@ -47,7 +47,7 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
@@ -55,14 +55,18 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Steel Paws",
       "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
-      "name": "Charm",
+      "name": "Bellows Breath",
       "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
@@ -71,33 +75,29 @@
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Bellows Breath",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (56 %)",
-    "The Papertree (37 %)",
-    "Forgotten Monument (35 %)",
+    "Vilemaw's Lair (52 %)",
+    "Forgotten Monument (38 %)",
+    "The Papertree (38 %)",
     "Altar of Blood (34 %)",
     "Rockfall Path (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 258,
-    "coupe10": 16,
+    "joueursClasses": 296,
+    "coupe10": 19,
     "titres": 2,
-    "conversion": "6.2 %",
-    "tournois": 23,
-    "listesPubliees": 132,
+    "conversion": "6.4 %",
+    "tournois": 24,
+    "listesPubliees": 170,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -126,5 +126,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 258 joueurs classés, 23 tournois, dont 132 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 296 joueurs classés, 24 tournois, dont 170 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

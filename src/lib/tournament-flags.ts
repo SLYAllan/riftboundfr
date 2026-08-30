@@ -398,6 +398,13 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },
   "Hangzhou Regional Open (2025-09-14)": { name: "Hangzhou Regional Open (2025-09-14)", shortName: "Hangzhou RO", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 510, type: "regional", date: "2025-09-14", set: "Origins", format: "Conquest" },
+  // 1 280 joueurs classés ET 1 280 listes publiées : hexgate publie tout le champ,
+  // là où riftdecks n'a que ce que les joueurs envoient (118 listes sur 2 224 à
+  // Barcelone). On en garde 1 161, les autres sont partielles ou jouent deux
+  // Champions du même personnage sans dire lequel est désigné.
+  // `format` suit les autres épreuves S4 de la table : hexgate ne le publie pas,
+  // et chaque joueur n'a qu'une liste, ce que Conquest ne donnerait pas.
+  "S4 Wuhan Regional Open (2026-08-29)": { name: "S4 Wuhan Regional Open", shortName: "Wuhan RO S4", countryCode: "CN", city: "Wuhan", location: "Wuhan, Chine", playerCount: 1280, type: "regional", date: "2026-08-29", set: "Vendetta", format: "Standard" },
   "Fuzhou City Challenge (2025-09-27)": { name: "Fuzhou City Challenge (2025-09-27)", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shenzhen City Challenge (2025-09-27)": { name: "Shenzhen City Challenge (2025-09-27)", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shanghai City Challenge (2025-09-27)": { name: "Shanghai City Challenge (2025-09-27)", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },

@@ -20,7 +20,7 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
       "name": "Call to Glory",
@@ -28,35 +28,35 @@
     },
     {
       "name": "First Mate",
-      "role": "Standard, 83 % des listes, 2.5 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 83 % des listes, 2.5 exemplaires"
+      "role": "Standard, 85 % des listes, 2 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Fae Dragon",
-      "role": "Standard, 67 % des listes, 1 exemplaire"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Souple, 58 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Challenge",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
+      "role": "Standard, 62 % des listes, 3 exemplaires"
     },
     {
       "name": "Arena Bar",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
+      "role": "Standard, 62 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Fae Dragon",
+      "role": "Standard, 62 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Sea Monkey",
+      "role": "Souple, 54 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -66,12 +66,12 @@
     "11 listes sur les 2365 du set Vendetta, sept tournois, aucun Top 8 : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "joueursClasses": 17,
+    "joueursClasses": 18,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "5.9 %",
-    "tournois": 11,
-    "listesPubliees": 12,
+    "conversion": "5.6 %",
+    "tournois": 12,
+    "listesPubliees": 13,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -119,38 +119,38 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "83 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "58 %",
+      "usage": "62 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "58 %",
+      "usage": "62 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "42 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "46 %",
+      "role": "2.5 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "38 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Sett, Kingpin": {
-      "usage": "42 %",
+      "usage": "38 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ambessa, The Wolf": {
-      "usage": "33 %",
-      "role": "1.5 exemplaire en moyenne"
-    },
-    "Rengar, Trophy Hunter": {
-      "usage": "33 %",
+      "usage": "31 %",
       "role": "1.5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Monastery of Hirana (92 %)",
-    "Sunken Temple (92 %)",
-    "Valley of Idols (75 %)"
+    "Sunken Temple (85 %)",
+    "Valley of Idols (77 %)"
   ],
-  "dataSource": "Classement complet des tournois : 17 joueurs classés, 11 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 12 tournois, dont 13 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

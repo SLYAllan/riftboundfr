@@ -22,47 +22,47 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Apothecary",
-      "role": "Standard, 87 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 84 % des listes, 2 exemplaires"
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 62 % des listes, 1 exemplaire"
+      "role": "Standard, 80 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -76,12 +76,12 @@
     "35 listes en dix-huit tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 150,
-    "coupe10": 20,
+    "joueursClasses": 198,
+    "coupe10": 24,
     "titres": 1,
-    "conversion": "13.3 %",
-    "tournois": 20,
-    "listesPubliees": 39,
+    "conversion": "12.1 %",
+    "tournois": 21,
+    "listesPubliees": 82,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -134,27 +134,26 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "95 %",
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "92 %",
+      "usage": "96 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "67 %",
+      "usage": "80 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "49 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (92 %)",
-    "Emperor's Dais (82 %)",
-    "Seat of Power (54 %)",
-    "Forbidding Waste (31 %)"
+    "Star Spring (94 %)",
+    "Emperor's Dais (88 %)",
+    "Seat of Power (74 %)"
   ],
-  "dataSource": "Classement complet des tournois : 150 joueurs classés, 20 tournois, dont 39 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 198 joueurs classés, 21 tournois, dont 82 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

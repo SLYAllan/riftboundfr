@@ -25,60 +25,61 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Shurelya's Requiem",
-      "role": "Standard, 86 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Discipline",
-      "role": "Standard, 81 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Patched Porobot",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 76 % des listes, 1.5 exemplaire"
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 85 % des listes, 2 exemplaires"
     },
     {
       "name": "Poro Snax",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Sterak's Gage",
-      "role": "Standard, 60 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Seal of Focus",
+      "role": "Standard, 77 % des listes, 3 exemplaires"
     },
     {
       "name": "Guardian Angel",
-      "role": "Souple, 52 % des listes, 3 exemplaires"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Brutalizer",
-      "role": "Souple, 52 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Pit Crew",
+      "role": "Standard, 72 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Clockwork Keeper",
+      "role": "Standard, 60 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ornn, Forge God": {
-      "usage": "55 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Blacksmith": {
-      "usage": "50 %",
+      "usage": "49 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (83 %)",
-    "Veiled Temple (52 %)",
-    "Treasure Hoard (45 %)"
+    "Ornn's Forge (86 %)",
+    "Veiled Temple (63 %)",
+    "Seat of Power (51 %)",
+    "Treasure Hoard (43 %)"
   ],
   "strengths": [
     "8,1 % de conversion, au-dessus du champ, sur 37 listes",
@@ -92,12 +93,12 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 96,
-    "coupe10": 7,
+    "joueursClasses": 153,
+    "coupe10": 10,
     "titres": 1,
-    "conversion": "7.3 %",
-    "tournois": 20,
-    "listesPubliees": 42,
+    "conversion": "6.5 %",
+    "tournois": 21,
+    "listesPubliees": 95,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -129,7 +130,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 96 joueurs classés, 20 tournois, dont 42 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 153 joueurs classés, 21 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

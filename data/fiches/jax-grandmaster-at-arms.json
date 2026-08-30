@@ -13,57 +13,57 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Brutalizer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Counter Strike",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Lonely Poro",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Challenge",
-      "role": "Souple, 53 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Boneshiver",
+      "role": "Souple, 48 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Souple, 45 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 41,
+    "joueursClasses": 57,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 13,
-    "listesPubliees": 17,
+    "tournois": 14,
+    "listesPubliees": 33,
     "bestPlacements": [
       {
         "placement": "38th",
@@ -98,16 +98,24 @@
       "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Rengar, Trophy Hunter": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Lucian, Merciless": {
+      "usage": "39 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Akshan, Mischievous": {
-      "usage": "35 %",
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Sunken Temple (76 %)",
-    "Ornn's Forge (53 %)"
+    "Ornn's Forge (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 41 joueurs classés, 13 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 57 joueurs classés, 14 tournois, dont 33 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

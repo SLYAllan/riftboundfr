@@ -17,16 +17,16 @@
   },
   "keyCards": [
     {
-      "name": "Sacrifice",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -34,35 +34,35 @@
     },
     {
       "name": "Watchful Sentry",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Glasc Mixologist",
-      "role": "Standard, 81 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 3 exemplaires"
     },
     {
       "name": "Ruined Rex",
       "role": "Standard, 80 % des listes, 3 exemplaires"
     },
     {
-      "name": "Baited Hook",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 63 % des listes, 3 exemplaires"
+      "name": "Hidden Blade",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Black Rose Dignitary",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Standard, 61 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Baited Hook",
+      "role": "Souple, 57 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Souple, 57 % des listes, 3 exemplaires"
     },
     {
       "name": "Rift Herald",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Souple, 54 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 143,
-    "coupe10": 17,
+    "joueursClasses": 178,
+    "coupe10": 25,
     "titres": 0,
-    "conversion": "11.9 %",
-    "tournois": 22,
-    "listesPubliees": 59,
+    "conversion": "14 %",
+    "tournois": 23,
+    "listesPubliees": 92,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -131,23 +131,28 @@
     "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit). Perd vs Volibear Dragon Storm (out-value). Se contre via Challenge (tue le Karthus T2 = déni du moteur Death Knell) plutôt qu'en l'affrontant tard. Existe aussi en variante BLUE sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors)."
   },
   "champions": {
-    "Karthus, Eternal": {
-      "usage": "80 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "LeBlanc, Fragmented": {
       "usage": "80 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Karthus, Eternal": {
+      "usage": "79 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Vi, Peacekeeper": {
       "usage": "75 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "30 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Windswept Hillock (97 %)",
-    "Star Spring (54 %)",
-    "Dusk Rose Lab (53 %)"
+    "Windswept Hillock (98 %)",
+    "Dusk Rose Lab (57 %)",
+    "Star Spring (47 %)",
+    "Forbidding Waste (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 143 joueurs classés, 22 tournois, dont 59 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 178 joueurs classés, 23 tournois, dont 92 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

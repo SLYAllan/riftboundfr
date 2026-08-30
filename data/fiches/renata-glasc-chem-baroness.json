@@ -10,76 +10,85 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "id": "Hidden Blade",
-      "role": "Présente dans 95 % des 106 listes recensées."
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
     },
     {
       "name": "Hostile Takeover",
-      "id": "Hostile Takeover",
-      "role": "Présente dans 95 % des 106 listes recensées."
-    },
-    {
-      "name": "Plundering Poro",
-      "id": "Plundering Poro",
-      "role": "Présente dans 82 % des 106 listes recensées."
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Honest Broker",
-      "id": "Honest Broker",
-      "role": "Présente dans 78 % des 106 listes recensées."
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "Wages of Pain",
-      "id": "Wages of Pain",
-      "role": "Présente dans 76 % des 106 listes recensées."
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
-      "name": "Time Warp",
-      "id": "Time Warp",
-      "role": "Présente dans 74 % des 106 listes recensées."
+      "name": "Plundering Poro",
+      "role": "Standard, 65 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Patched Porobot",
+      "role": "Souple, 59 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Forge of the Future",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Stupefy",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Vanguard Armory",
+      "role": "Souple, 53 % des listes, 3 exemplaires"
     },
     {
       "name": "Cull the Weak",
-      "id": "Cull the Weak",
-      "role": "Présente dans 67 % des 106 listes recensées."
+      "role": "Souple, 53 % des listes, 2 exemplaires"
     },
     {
-      "name": "Card Sharp",
-      "id": "Card Sharp",
-      "role": "Présente dans 61 % des 106 listes recensées."
+      "name": "Sprite Fountain",
+      "role": "Souple, 47 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Souple, 47 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 239,
+    "joueursClasses": 38,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 44,
+    "tournois": 8,
+    "listesPubliees": 17,
     "bestPlacements": [
-      {
-        "placement": "30th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-12-20)"
-      },
       {
         "placement": "35th",
         "player": "月魔夜小",
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
-        "placement": "35th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-12-28)"
+        "placement": "63th",
+        "player": "白泽-Diva",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
-        "placement": "35th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-12-27)"
+        "placement": "66th",
+        "player": "龆年",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
-        "placement": "41th",
-        "player": null,
-        "tournament": "S2 Shanghai City Challenge (2026-03-07)"
+        "placement": "72th",
+        "player": "月魔夜小",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "72th",
+        "player": "龆年",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
       }
     ]
   },
@@ -92,5 +101,32 @@
   "weaknesses": [
     "5 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 239 joueurs classés sur 44 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 38 joueurs classés, 8 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
+  "champions": {
+    "Renata Glasc, Industrialist": {
+      "usage": "65 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Jayce, Man of Progress": {
+      "usage": "53 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Lillia, Fae Fawn": {
+      "usage": "35 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "35 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Renata Glasc, Mastermind": {
+      "usage": "35 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Treasure Hoard (82 %)",
+    "Veiled Temple (41 %)",
+    "Rockfall Path (35 %)"
+  ]
 }

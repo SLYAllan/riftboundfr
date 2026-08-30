@@ -16,47 +16,47 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Standard, 77 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Baron Nashor",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
-      "name": "Ride The Wind",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "name": "Baron Nashor",
+      "role": "Standard, 62 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Trove",
-      "role": "Souple, 56 % des listes, 2 exemplaires"
+      "role": "Souple, 54 % des listes, 2 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Souple, 56 % des listes, 1 exemplaire"
+      "role": "Souple, 54 % des listes, 1 exemplaire"
     },
     {
       "name": "Traveling Merchant",
       "role": "Souple, 50 % des listes, 3 exemplaires"
     },
     {
-      "name": "Gust Monk",
-      "role": "Souple, 50 % des listes, 1 exemplaire"
+      "name": "Ride The Wind",
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     },
     {
       "name": "Scryer's Bloom",
-      "role": "Souple, 44 % des listes, 3 exemplaires"
+      "role": "Souple, 46 % des listes, 3 exemplaires"
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Souple, 44 % des listes, 3 exemplaires"
+      "role": "Souple, 46 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "role": "Souple, 46 % des listes, 3 exemplaires"
     }
   ],
   "strengths": [
@@ -66,12 +66,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "joueursClasses": 37,
-    "coupe10": 6,
+    "joueursClasses": 48,
+    "coupe10": 7,
     "titres": 0,
-    "conversion": "16.2 %",
-    "tournois": 13,
-    "listesPubliees": 16,
+    "conversion": "14.6 %",
+    "tournois": 14,
+    "listesPubliees": 26,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -125,32 +125,25 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "56 %",
+      "usage": "54 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "56 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Vex, Apathetic": {
-      "usage": "44 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "44 %",
+      "usage": "38 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Pyke, Returned": {
-      "usage": "31 %",
-      "role": "3 exemplaires en moyenne"
+    "Vex, Apathetic": {
+      "usage": "35 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (100 %)",
-    "Forbidding Waste (44 %)",
-    "Forgotten Monument (38 %)",
-    "Dragon Roost (31 %)",
-    "Sandswept Tomb (31 %)"
+    "Sigil of the Storm (96 %)",
+    "Forgotten Monument (42 %)"
   ],
-  "dataSource": "Classement complet des tournois : 37 joueurs classés, 13 tournois, dont 16 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 48 joueurs classés, 14 tournois, dont 26 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

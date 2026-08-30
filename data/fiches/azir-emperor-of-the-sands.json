@@ -42,11 +42,11 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
@@ -54,15 +54,15 @@
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires"
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Standard, 61 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 180,
-    "coupe10": 20,
+    "joueursClasses": 217,
+    "coupe10": 24,
     "titres": 1,
     "conversion": "11.1 %",
-    "tournois": 23,
-    "listesPubliees": 72,
+    "tournois": 24,
+    "listesPubliees": 109,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -105,9 +105,9 @@
         "tournament": "Barcelona Regional Qualifier"
       },
       {
-        "placement": "7th",
-        "player": "D.C-YL.Rexr",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+        "placement": "6th",
+        "player": "NGF.Miner",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       }
     ]
   },
@@ -134,14 +134,18 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "88 %",
+      "usage": "85 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (97 %)",
-    "Hall of Legends (96 %)",
-    "Ornn's Forge (86 %)"
+    "Trifarian War Camp (98 %)",
+    "Hall of Legends (97 %)",
+    "Ornn's Forge (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 180 joueurs classés, 23 tournois, dont 72 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 217 joueurs classés, 24 tournois, dont 109 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

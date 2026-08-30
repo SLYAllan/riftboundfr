@@ -22,47 +22,47 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 1 exemplaire"
+      "role": "Cœur du deck, 98 % des listes, 1 exemplaire"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Grim Resolve",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Demacian Diplomat",
-      "role": "Standard, 70 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 70 % des listes, 1 exemplaire"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 70 % des listes, 1 exemplaire"
+      "role": "Standard, 83 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 81 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 77 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Standard, 71 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Demacian Diplomat",
+      "role": "Standard, 69 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -75,12 +75,12 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 123,
-    "coupe10": 12,
+    "joueursClasses": 148,
+    "coupe10": 14,
     "titres": 0,
-    "conversion": "9.8 %",
-    "tournois": 18,
-    "listesPubliees": 27,
+    "conversion": "9.5 %",
+    "tournois": 19,
+    "listesPubliees": 52,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -98,14 +98,14 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "15th",
+        "player": "信仰.Rui",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+      },
+      {
         "placement": "27th",
         "player": "淘金巢.Yuuj",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "28th",
-        "player": "ASC JUN",
-        "tournament": "Barcelona Regional Qualifier"
       }
     ]
   },
@@ -133,35 +133,39 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "93 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "78 %",
+      "usage": "87 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "48 %",
+      "usage": "62 %",
       "role": "2 exemplaires en moyenne"
     },
     "Qiyana, Victorious": {
-      "usage": "41 %",
+      "usage": "44 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Sett, Brawler": {
-      "usage": "41 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Evelynn, Entrancing": {
-      "usage": "37 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Zed, Without a Sound": {
+      "usage": "33 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Sett, Brawler": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (85 %)",
-    "Monastery of Hirana (74 %)",
+    "Forbidding Waste (90 %)",
+    "Monastery of Hirana (67 %)",
     "Star Spring (63 %)",
-    "Sandswept Tomb (37 %)"
+    "Sandswept Tomb (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 123 joueurs classés, 18 tournois, dont 27 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 148 joueurs classés, 19 tournois, dont 52 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -35,75 +35,74 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Discord",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Last Rites",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 85 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 67 % des listes, 3 exemplaires"
+      "role": "Standard, 72 % des listes, 3 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 52 % des listes, 1 exemplaire"
+      "role": "Standard, 62 % des listes, 1 exemplaire"
     },
     {
-      "name": "Hidden Blade",
-      "role": "Souple, 51 % des listes, 1 exemplaire"
+      "name": "Tideturner",
+      "role": "Souple, 51 % des listes, 2 exemplaires"
     },
     {
       "name": "Up from the Deep",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "91 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "79 %",
+      "usage": "84 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (89 %)",
-    "Zaun Warrens (81 %)",
-    "The Candlelit Sanctum (33 %)"
+    "Minefield (91 %)",
+    "Zaun Warrens (86 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 568,
-    "coupe10": 105,
+    "joueursClasses": 702,
+    "coupe10": 126,
     "titres": 3,
-    "conversion": "18.5 %",
-    "tournois": 23,
-    "listesPubliees": 264,
+    "conversion": "17.9 %",
+    "tournois": 24,
+    "listesPubliees": 393,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -132,5 +131,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 568 joueurs classés, 23 tournois, dont 264 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 702 joueurs classés, 24 tournois, dont 393 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

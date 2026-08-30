@@ -37,12 +37,12 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Star-Crossed",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Tideturner",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust",
@@ -50,19 +50,19 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
+      "role": "Standard, 66 % des listes, 3 exemplaires"
     },
     {
       "name": "Morbid Return",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Souple, 56 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 235,
-    "coupe10": 22,
+    "joueursClasses": 278,
+    "coupe10": 28,
     "titres": 4,
-    "conversion": "9.4 %",
-    "tournois": 23,
-    "listesPubliees": 133,
+    "conversion": "10.1 %",
+    "tournois": 24,
+    "listesPubliees": 176,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -145,19 +145,18 @@
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "67 %",
+      "usage": "61 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "33 %",
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Abandoned Hall (96 %)",
-    "Rockfall Path (67 %)",
-    "Targon's Peak (44 %)",
-    "Veiled Temple (30 %)"
+    "Abandoned Hall (97 %)",
+    "Rockfall Path (63 %)",
+    "Targon's Peak (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 235 joueurs classés, 23 tournois, dont 133 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 278 joueurs classés, 24 tournois, dont 176 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

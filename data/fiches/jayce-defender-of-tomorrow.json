@@ -31,27 +31,27 @@
   "keyCards": [
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Elder Dragon",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Garbage Grabber",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Flurry of Blades",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Dredge Up",
@@ -59,44 +59,48 @@
     },
     {
       "name": "Mobilize",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Clairvoyance",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Gutter Palace",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     },
     {
       "name": "Catalyst of Aeons",
-      "role": "Standard, 74 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Jayce, Man of Progress": {
-      "usage": "48 %",
+      "usage": "49 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Jayce, Brilliant Inventor": {
+      "usage": "34 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (84 %)",
-    "Forgotten Monument (51 %)",
-    "The Papertree (47 %)",
-    "Dragon Roost (37 %)"
+    "Sigil of the Storm (87 %)",
+    "Forgotten Monument (57 %)",
+    "Dragon Roost (48 %)",
+    "The Papertree (40 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 193,
-    "coupe10": 19,
+    "joueursClasses": 250,
+    "coupe10": 23,
     "titres": 0,
-    "conversion": "9.8 %",
-    "tournois": 23,
-    "listesPubliees": 107,
+    "conversion": "9.2 %",
+    "tournois": 24,
+    "listesPubliees": 164,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -125,5 +129,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 193 joueurs classés, 23 tournois, dont 107 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 250 joueurs classés, 24 tournois, dont 164 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

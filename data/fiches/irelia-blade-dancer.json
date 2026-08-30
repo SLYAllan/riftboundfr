@@ -37,32 +37,32 @@
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Tideturner",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
       "name": "En Garde",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
-      "name": "Guardian Angel",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "name": "Stacked Deck",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -90,17 +90,22 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 393,
-    "coupe10": 44,
-    "titres": 1,
-    "conversion": "11.2 %",
-    "tournois": 23,
-    "listesPubliees": 190,
+    "joueursClasses": 493,
+    "coupe10": 63,
+    "titres": 2,
+    "conversion": "12.8 %",
+    "tournois": 24,
+    "listesPubliees": 290,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "旋木时光-绿拐",
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "1st",
+        "player": "konaha",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       },
       {
         "placement": "2nd",
@@ -116,11 +121,6 @@
         "placement": "3rd",
         "player": "EDG.少侠SNnnnn",
         "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "3rd",
-        "player": "旋木时光绿拐",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
@@ -160,26 +160,26 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "73 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Fizz, Trickster": {
-      "usage": "66 %",
+      "usage": "63 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "47 %",
+      "usage": "56 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "32 %",
+      "usage": "44 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
-    "Sunken Temple (93 %)",
-    "Targon's Peak (79 %)"
+    "Sunken Temple (90 %)",
+    "Targon's Peak (85 %)"
   ],
-  "dataSource": "Classement complet des tournois : 393 joueurs classés, 23 tournois, dont 190 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 493 joueurs classés, 24 tournois, dont 290 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }

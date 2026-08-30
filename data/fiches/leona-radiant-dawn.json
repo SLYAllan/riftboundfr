@@ -12,69 +12,88 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Core — protection, 100% à 2.9x."
+      "role": "Cœur du deck, protection, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
-      "role": "Core — removal/buff, 100% à 2.9x."
+      "role": "Cœur du deck, removal/buff, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Back Off",
-      "role": "Core — bounce, 90% à 2.9x."
-    },
-    {
-      "name": "Vi, Peacekeeper",
-      "role": "Core — unité menace principale, 90% à 2.5x."
-    },
-    {
-      "name": "Call to Glory",
-      "role": "Standard — rally surprise, 85% à 2.5x."
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard — combat trick, 80% à 2x."
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard — early game, 75% à 3x."
-    },
-    {
-      "name": "Fiora, Victorious",
-      "role": "Standard — threat mid, 70% à 2.5x."
-    },
-    {
-      "name": "Zenith Blade",
-      "role": "Standard — spell signature, 65% à 2x."
-    },
-    {
-      "name": "Vex, Mocking",
-      "role": "Standard — contrôle, 65% à 2x."
-    },
-    {
-      "name": "Emperor's Divide",
-      "role": "Standard — finisher, 65% à 1.8x."
+      "role": "Cœur du deck, bounce, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard — protection gear, 65% à 2.2x."
+      "role": "Cœur du deck, protection gear, 100 % des listes, 2.5 exemplaires"
+    },
+    {
+      "name": "Call to Glory",
+      "role": "Cœur du deck, rally surprise, 92 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, early game, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Zenith Blade",
+      "role": "Standard, spell signature, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Standard, finisher, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Affectionate Poro",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, combat trick, 50 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Thwonk!",
+      "role": "Souple, 50 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 42 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
+    "Vi, Peacekeeper": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Leona, Determined": {
-      "usage": "65%",
-      "role": "Champion principal — résilience en combat."
+      "usage": "92 %",
+      "role": "Champion principal, 1 exemplaire en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "83 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Fiora, Victorious": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Nami, Headstrong": {
+      "usage": "33 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vex, Mocking": {
+      "usage": "33 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Leona, Zealot": {
-      "usage": "35%",
-      "role": "Variante agressive — pression plus directe."
+      "usage": "33 %",
+      "role": "Variante agressive, 1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (90%)",
-    "Monastery of Hirana (65%)",
-    "Targon's Peak (15%)",
-    "Star Spring (15%)",
-    "Amateur Recital (15%)"
+    "Monastery of Hirana (100 %)",
+    "Sunken Temple (83 %)",
+    "Heisho, Shell of the World (42 %)",
+    "Amateur Recital (33 %)"
   ],
   "strengths": [
     "Chaque effet d'étourdissement paie deux fois : l'unité adverse ne frappe pas, la vôtre grossit."
@@ -83,11 +102,12 @@
     "9 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 473,
-    "coupe10": 7,
+    "joueursClasses": 16,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "1.5 %",
-    "tournois": 73,
+    "conversion": "6.3 %",
+    "tournois": 9,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -95,31 +115,31 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
-        "placement": "10th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
+        "placement": "56th",
+        "player": "麦芽",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       },
       {
-        "placement": "10th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-08)"
+        "placement": "57th",
+        "player": "era",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "70th",
+        "player": "公爵",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
+        "placement": "72th",
+        "player": "xyz-心火",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 473 joueurs classés sur 73 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 16 joueurs classés, 9 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

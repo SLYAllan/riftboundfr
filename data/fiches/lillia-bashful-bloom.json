@@ -17,10 +17,6 @@
   },
   "keyCards": [
     {
-      "name": "Sprite Fountain",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Defy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
@@ -33,36 +29,40 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
+      "name": "Sprite Fountain",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+    },
+    {
       "name": "Stupefy",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Smoke and Mirrors",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Lilting Lullaby",
-      "role": "Standard, 83 % des listes, 1 exemplaire"
+      "role": "Standard, 81 % des listes, 1 exemplaire"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 79 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
-      "name": "Heart of Dark Ice",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "name": "Unchecked Power",
+      "role": "Standard, 68 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "joueursClasses": 123,
-    "coupe10": 9,
+    "joueursClasses": 150,
+    "coupe10": 10,
     "titres": 1,
-    "conversion": "7.3 %",
-    "tournois": 22,
-    "listesPubliees": 53,
+    "conversion": "6.7 %",
+    "tournois": 23,
+    "listesPubliees": 80,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -134,16 +134,20 @@
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Hwei, Brooding Painter": {
+      "usage": "30 %",
+      "role": "2.5 exemplaires en moyenne"
+    },
     "Akali, Silent": {
-      "usage": "34 %",
+      "usage": "30 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Dusk Rose Lab (94 %)",
-    "Black Flame Altar (68 %)",
-    "Seat of Power (55 %)",
-    "Forbidding Waste (32 %)"
+    "Black Flame Altar (70 %)",
+    "Seat of Power (59 %)",
+    "Forbidding Waste (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 123 joueurs classés, 22 tournois, dont 53 listes publiées d’où viennent les cartes. Relevé du 27 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 150 joueurs classés, 23 tournois, dont 80 listes publiées d’où viennent les cartes. Relevé du 30 août 2026, calcul par scripts/fiches-stats.mts."
 }
