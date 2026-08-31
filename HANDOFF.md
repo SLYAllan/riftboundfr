@@ -2,6 +2,40 @@
 
 ## Session du 31 août 2026 — Wuhan poussé et seedé en prod
 
+### Les tier lists entrent dans la routine
+
+`npm run maj:stats` a une sixième étape, `scripts/tier-ecarts.mts`. Elle n'écrit
+rien et dit trois choses : le rang qui contredit le test binomial, celui qui pose
+une question, le commentaire dont le chiffre est périmé. Elle existe parce que la
+routine conseillait de « relire les écarts » sans dire lesquels : la tier list
+Vendetta est restée deux relevés de suite sur des effectifs morts.
+
+Les tableaux vivent maintenant dans `scripts/tier-tables.ts`, plus dans
+`seed-tier-lists.ts` — c'est là qu'on édite un rang. Le test binomial est dans
+`scripts/stats-binomial.ts`. Un rang assumé contre le test porte un champ
+`assume` qui fait taire le contrôle, sinon le rapport répète chaque fois ce qu'on
+a déjà tranché.
+
+Vendetta et Globale sont refaites sur le corpus avec Wuhan, EN LOCAL ET EN PROD.
+Six rangs bougent : Irelia A→S (p = 0,041), Vex D→C (l'écart ne tient plus),
+Mel, Zed, Shen et Renekton →D (l'écart est établi).
+
+**Piège payé** : `fiches-maj.mts` lisait les lettres au motif dans le source de
+`seed-tier-lists.ts`. Le déménagement les lui aurait retirées sans erreur, en
+laissant /legendes et /tier-list se contredire. Il importe le tableau.
+
+### Deux corrections d'interface
+
+- **`/legendes/<slug>`** : une ligne de deck disait « konaha (1st) par konaha
+  1st », et pour les listes dont le titre reprend le tournoi, celui-ci sortait
+  deux fois. La ligne mène maintenant avec le tournoi, sauf si le deck porte un
+  titre écrit à la main.
+- **L'écran d'attente** de toutes les pages était une ligne de texte gris. C'est
+  maintenant une barre indéterminée (`src/components/chargement.tsx`), sans
+  `aria-valuenow` : à la navigation on ignore ce qu'il reste à charger.
+
+
+
 Tout est poussé sur `origin/main` et la prod porte le tournoi : 1 161 listes,
 38 best-of, 26 169 decks publiés (25 008 avant). Le seed est passé par le tunnel,
 sur `178.104.237.33:15432` — l'URL en `127.0.0.1:5435` reste un leurre, rien
