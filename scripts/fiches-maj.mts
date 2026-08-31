@@ -18,6 +18,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
 import { role, roleChampion } from "./fiches-roles";
+import { vendettaTier } from "./tier-tables";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
 
@@ -130,11 +131,11 @@ console.log(`\n${touchees} fiches modifiées${ecrire ? "" : " (essai à blanc, r
 // La page /legendes classe par le `tier` de la fiche, /tier-list par le tableau du seed.
 // Les deux ont déjà divergé une fois sans que personne ne le voie : on le dit ici.
 const LETTRE: Record<number, string> = { 1: "S", 2: "A", 3: "B", 4: "C", 5: "D" };
-const seed = await fs.readFile(path.join(process.cwd(), "scripts", "seed-tier-lists.ts"), "utf-8");
-const bloc = seed.slice(seed.indexOf("const vendettaTier"), seed.indexOf("async function seedTierList"));
-const tiers = new Map(
-  [...bloc.matchAll(/legendName:\s*"([^"]+)",\s*tier:\s*"([SABCD])"/g)].map((m) => [cle(m[1]), m[2]]),
-);
+// Le tableau s'importe, il ne se relit plus au motif dans le source : la version
+// à l'expression régulière lisait `seed-tier-lists.ts`, et le jour où les tableaux
+// ont déménagé dans `tier-tables.ts` elle n'a plus rien trouvé — sans une erreur,
+// en laissant les rangs des fiches là où ils étaient.
+const tiers = new Map(vendettaTier.map((e) => [cle(e.legendName), e.tier]));
 const CHIFFRE: Record<string, number> = { S: 1, A: 2, B: 3, C: 4, D: 5 };
 const ecarts: string[] = [];
 for (const f of fichiers) {

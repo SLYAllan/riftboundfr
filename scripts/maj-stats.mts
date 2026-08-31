@@ -23,6 +23,8 @@
  *                                  sur la tier list (sinon /legendes et /tier-list
  *                                  se contredisent)
  *   5. `stats-deckbuilding.mts`    les sections chiffrées de DECKBUILDING-RULES
+ *   6. `tier-ecarts.mts`           ce qui ne colle plus entre les tier lists
+ *                                  rédigées (`tier-tables.ts`) et le corpus
  *
  * Ce qu'elle ne fait PAS, et pourquoi : elle ne réécrit ni les lettres de tier ni
  * la prose des documents. Un rang est un choix éditorial appuyé sur un test
@@ -30,8 +32,8 @@
  * que de le maquiller en science. La routine sort donc les chiffres à jour et
  * signale les écarts ; c'est un humain qui tranche les lettres.
  *
- * Après elle : relire le rapport, ajuster `seed-tier-lists.ts` si un rang bouge,
- * relancer, puis `npm run verify`.
+ * Après elle : relire le rapport de l'étape 6, ajuster `tier-tables.ts` si un rang
+ * ou un chiffre bouge, relancer, puis `npm run verify`.
  */
 import { spawnSync } from "node:child_process";
 
@@ -48,30 +50,39 @@ interface Etape {
 
 const etapes: Etape[] = [
   {
-    titre: "1/5  Corpus des classements (classements.json + meta-parts.json)",
+    titre: "1/6  Corpus des classements (classements.json + meta-parts.json)",
     cmd: ["tsx", "--env-file=.env", "scripts/classements-tournois.mts"],
     ecrit: true,
   },
   {
-    titre: "2/5  Tier lists en base",
+    titre: "2/6  Tier lists en base",
     cmd: ["tsx", "scripts/seed-tier-lists.ts"],
     ecrit: true,
   },
   {
-    titre: "3/5  Chiffres par Légende",
+    titre: "3/6  Chiffres par Légende",
     cmd: ["tsx", "--env-file=.env", "scripts/fiches-stats.mts", "Vendetta", "10"],
     vers: "data/fiches-stats-vendetta.json",
     ecrit: true,
   },
   {
-    titre: "4/5  Fiches Légendes (cartes, résultats, rangs)",
+    titre: "4/6  Fiches Légendes (cartes, résultats, rangs)",
     cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats-vendetta.json", ...(sec ? [] : ["--ecrire"])],
   },
   {
-    titre: "5/5  Sections chiffrées de DECKBUILDING-RULES",
+    titre: "5/6  Sections chiffrées de DECKBUILDING-RULES",
     cmd: ["tsx", "--env-file=.env", "scripts/stats-deckbuilding.mts"],
     vers: "data/deckbuilding-stats.md",
     ecrit: true,
+  },
+  {
+    // En dernier, et sans `ecrit` : il n'écrit rien, donc il tourne aussi en marche
+    // à sec, et son rapport est la dernière chose qu'on lit. Il existe parce que la
+    // routine disait « relire les écarts » sans dire lesquels : la tier list Vendetta
+    // est restée deux relevés de suite sur des effectifs morts sans que rien ne le
+    // signale.
+    titre: "6/6  Écarts entre les tier lists rédigées et les chiffres",
+    cmd: ["tsx", "--env-file=.env", "scripts/tier-ecarts.mts"],
   },
 ];
 
@@ -105,8 +116,10 @@ console.log(`
 
 Ce qui reste à faire À LA MAIN, et qui ne peut pas être automatisé :
 
-  - Relire les écarts signalés par l'étape 4 et, si un rang doit bouger, éditer
-    les tableaux de \`scripts/seed-tier-lists.ts\` puis relancer cette routine.
+  - Trancher les écarts de l'étape 6, dans \`scripts/tier-tables.ts\`, puis relancer
+    cette routine. « RANG À REVOIR » est une contradiction, « À REGARDER » une
+    question (chaque liste pose sa propre condition d'effectif), « CHIFFRE PÉRIMÉ »
+    un commentaire à réécrire.
   - Reporter les chiffres dans \`docs/META-KNOWLEDGE.md\` (tableaux par set) et
     \`docs/DECKBUILDING-RULES.md\` (sections chiffrées) depuis :
         npx tsx scripts/tier-stats.mts <set|tous>
