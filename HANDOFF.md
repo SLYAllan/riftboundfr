@@ -24,6 +24,24 @@ Mel, Zed, Shen et Renekton →D (l'écart est établi).
 `seed-tier-lists.ts`. Le déménagement les lui aurait retirées sans erreur, en
 laissant /legendes et /tier-list se contredire. Il importe le tableau.
 
+### Les pages Légende reçoivent enfin des liens
+
+`/tier-list`, `/decks` et `/tournois/<slug>` ne pointaient jamais vers
+`/legendes/<slug>`, la page qui vise « deck <légende> ». `/meta` le faisait déjà,
+48 fois. C'est réparé : 48 liens sur la tier list, 18 sur /decks, 19 sur une page
+de tournoi.
+
+Sur les cartes, la nappe cliquable qui mène au deck est devenue une SOEUR du
+contenu au lieu de l'envelopper — deux `<a>` imbriqués ne sont pas du HTML valide,
+et le lien intérieur serait de toute façon mangé par la nappe. Le motif existait
+déjà sur `/decks`, il est repris dans `tournament-deck-grid.tsx` et sur les cartes
+« Méta du tournoi ». Vérifié au clic réel : le nom mène à la Légende, le reste de
+la carte au deck.
+
+Sur `/tier-list`, la vignette menait à `/decks?legend=&set=`. Une Légende sans un
+seul deck publié n'a pas de page : la liste des slugs valides vient du serveur, et
+ces Légendes-là gardent le filtre.
+
 ### Deux corrections d'interface
 
 - **`/legendes/<slug>`** : une ligne de deck disait « konaha (1st) par konaha
