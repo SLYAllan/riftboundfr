@@ -1,9 +1,32 @@
 # HANDOFF — état des lieux
 
+## Session du 31 août 2026 — Wuhan poussé et seedé en prod
+
+Tout est poussé sur `origin/main` et la prod porte le tournoi : 1 161 listes,
+38 best-of, 26 169 decks publiés (25 008 avant). Le seed est passé par le tunnel,
+sur `178.104.237.33:15432` — l'URL en `127.0.0.1:5435` reste un leurre, rien
+n'écoute dessus.
+
+Les tier lists n'ont pas été touchées : la prod portait déjà, entrée par entrée,
+ce que la locale porte. Les rangs restent à trancher (voir plus bas).
+
+### La routine des stats s'effaçait elle-même
+
+Relancée, `npm run maj:stats` a vidé onze descripteurs de la fiche de Leona
+(« protection », « finisher », « combat trick »…). Le premier passage écrit
+« Cœur du deck, protection, 100 % des listes, 3 exemplaires » ; le deuxième y
+voyait sa propre sortie et jetait le mot. Réparé : le texte du rôle vit
+maintenant dans `scripts/fiches-roles.ts`, avec son test, et le descripteur se
+retrouve quelle que soit la forme du rôle. Deux passages de suite ne changent
+plus que la date. Aucune autre fiche n'avait été touchée, l'historique le dit.
+
+`/meta` lit `data/tournaments/meta-parts.json`, `/legendes` lit `data/fiches/` :
+les deux sont dans le dépôt, poussés, et à jour.
+
 ## Session du 30 août 2026 — bulking retiré, Regional Open de Wuhan importé
 
-Trois commits **en local, rien de poussé, rien en prod**. `npm run verify` vert,
-59 fichiers de test / 312 tests verts, `validate:decks` à 0 MISMATCH.
+Cinq commits, poussés depuis. `npm run verify` vert, 60 fichiers de test /
+318 tests verts, `validate:decks` à 0 MISMATCH.
 
 ### Le module bulking est annulé
 
@@ -47,9 +70,6 @@ cumul toutes ères de 35 597 à 36 838. `META-KNOWLEDGE.md` (v13) et
 
 ### Ce qui reste à décider
 
-- **Pousser sur `origin/main` et déployer.** Un déploiement Coolify ne seede rien :
-  la prod aurait le tournoi dans `tournament-flags.ts` et aucun deck derrière.
-  Le seed prod se fait par le tunnel, méthode dans `docs/DEPLOIEMENT.md`.
 - **80 decks écartés pour « Champion ambigu »**, dont trois premières places. Ce ne
   sont pas des données douteuses : ces decks jouent DEUX Champions différents du même
   personnage (Master Yi Tempered + Unstoppable, Rumble Hotheaded + Scrapper), et
