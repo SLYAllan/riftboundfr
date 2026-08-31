@@ -17,6 +17,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
+import { role, roleChampion } from "./fiches-roles";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
 
@@ -30,26 +31,6 @@ if (!chemin) throw new Error("Donne le chemin du JSON produit par fiches-stats.m
 
 // PowerShell écrit ses redirections en UTF-8 avec BOM : JSON.parse s'y casse les dents.
 const stats: Record<string, StatsLegende> = JSON.parse((await fs.readFile(chemin, "utf-8")).replace(/^﻿/, ""));
-
-/** Ce que ce script écrit lui-même : à ne jamais reprendre pour descripteur, sinon il s'empile à chaque passage. */
-const DEJA_GENERE = /exemplaires? en moyenne|% des listes/i;
-
-/** « Core, protection, 100% à 2.9x. » garde son mot utile : il décrit la carte, pas le méta. */
-function descripteurExistant(role: string | undefined): string | null {
-  if (!role || DEJA_GENERE.test(role)) return null;
-  const m = role.match(/^(?:Core|Standard|Flex|Tech|Cœur du deck|Souple)\s*[—–-]?\s*([^,.0-9]+?)\s*(?:,|$)/i);
-  const d = m?.[1]?.trim();
-  if (!d || d.length < 3 || /^\d/.test(d)) return null;
-  return d;
-}
-
-const exemplaires = (n: number) => `${n % 1 === 0 ? n : n.toFixed(1)} exemplaire${n >= 2 ? "s" : ""}`;
-
-function role(part: number, copies: number, ancien?: string): string {
-  const rang = part >= 90 ? "Cœur du deck" : part >= 60 ? "Standard" : "Souple";
-  const d = descripteurExistant(ancien);
-  return [rang, d, `${part} % des listes`, exemplaires(copies)].filter(Boolean).join(", ");
-}
 
 type Fiche = {
   legendName?: string;
@@ -110,10 +91,7 @@ for (const f of fichiers) {
 
   fiche.champions = Object.fromEntries(
     s.champions.map((c) => {
-      const brut = ancienChamp.get(c.nom);
-      const d =
-        descripteurExistant(brut) ?? (brut && !DEJA_GENERE.test(brut) ? brut.split(/[—–,]/)[0]?.trim() : undefined);
-      return [c.nom, { usage: `${c.part} %`, role: [d, `${exemplaires(c.copies)} en moyenne`].filter(Boolean).join(", ") }];
+      return [c.nom, { usage: `${c.part} %`, role: roleChampion(c.copies, ancienChamp.get(c.nom)) }];
     }),
   );
 
