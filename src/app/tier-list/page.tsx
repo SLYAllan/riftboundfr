@@ -5,6 +5,7 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { getLegendIconUrl } from "@/lib/banners";
 import { TierListTabs } from "./tier-list-tabs";
+import { legendsWithDecks } from "@/lib/legend-fiche";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { metaTraduite, tr } from "@/lib/i18n-server";
@@ -108,6 +109,7 @@ export default async function TierListPage() {
         legendMap={legendMap}
         deckSlugMap={deckSlugMap}
         defaultTab={defaultTab}
+        slugsAvecPage={(await legendsWithDecks()).map((l) => l.slug)}
       />
     </div>
   );

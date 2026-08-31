@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
+import { legendFicheSlug } from "@/lib/legend-fiche";
 import { TIER_BANNER, TIER_ORDER } from "@/lib/tier-colors";
 import { etiquetteLocale } from "@/lib/i18n";
 import { useLangue, useT } from "@/components/i18n-provider";
@@ -36,6 +37,11 @@ interface Props {
   legendMap: Record<string, CardData>;
   deckSlugMap: Record<string, string>;
   defaultTab: string;
+  /**
+   * Les Légendes qui ont une page. Une entrée de tier list peut nommer une Légende
+   * sans un seul deck publié : sa page n'existe pas, et le lien tomberait sur un 404.
+   */
+  slugsAvecPage: string[];
 }
 
 const SET_LABELS: Record<string, string> = {
@@ -53,7 +59,9 @@ export function TierListTabs({
   legendMap,
   deckSlugMap,
   defaultTab,
+  slugsAvecPage,
 }: Props) {
+  const avecPage = new Set(slugsAvecPage);
   const t = useT();
   const langue = useLangue();
   const [activeTab, setActiveTab] = useState(defaultTab);
@@ -141,9 +149,18 @@ export function TierListTabs({
                     <Link
                       key={entry.id}
                       // L'infobulle ne se déclenche jamais au doigt : sur mobile
-                      // la vignette était muette. Le lien donne une sortie, et
-                      // /decks filtre déjà sur ?legend= et ?set=.
-                      href={`/decks?legend=${encodeURIComponent(entry.legendName)}&set=${encodeURIComponent(setOnglet)}`}
+                      // la vignette était muette. Le lien donne une sortie.
+                      //
+                      // Il mène à la page de la Légende, qui porte le guide, ses
+                      // meilleures listes ET toutes ses listes de tournoi : plus que
+                      // /decks filtré, et c'est la page qu'on veut faire remonter. Une
+                      // Légende sans un seul deck publié n'a pas de page, elle garde
+                      // donc le filtre /decks.
+                      href={
+                        avecPage.has(legendFicheSlug(entry.legendName))
+                          ? `/legendes/${legendFicheSlug(entry.legendName)}`
+                          : `/decks?legend=${encodeURIComponent(entry.legendName)}&set=${encodeURIComponent(setOnglet)}`
+                      }
                       aria-label={`${t("Voir les decks")} ${nom}`}
                       aria-describedby={entry.comment ? `tier-comment-${entry.id}` : undefined}
                       title={nom}

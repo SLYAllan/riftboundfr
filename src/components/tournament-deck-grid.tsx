@@ -6,6 +6,7 @@ import { useLien } from "@/components/i18n-provider";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { cn, displayLegendName } from "@/lib/utils";
+import { legendHref } from "@/lib/legend-fiche";
 import { Trophy, Eye, ChevronDown, Swords } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
 
@@ -217,15 +218,23 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
   const medalBg = MEDAL_BG[deck.placementNum];
   const medalBadge = MEDAL_BADGE[deck.placementNum];
 
+  // La carte mène au deck, mais le nom de la Légende mène à SA page. Il faut donc
+  // que la nappe cliquable soit une soeur du contenu et non son parent : deux <a>
+  // imbriqués ne sont pas du HTML valide, et le lien intérieur serait de toute
+  // façon mangé par la nappe.
   return (
-    <Link
-      href={`/decks/${deck.slug}`}
+    <article
       className={cn(
         "group relative rounded-card border overflow-hidden transition-colors duration-200",
         "hover:border-hairline-strong hover:shadow-lg hover:shadow-black/20",
         medalBg ?? "border-hairline",
       )}
     >
+      <Link
+        href={`/decks/${deck.slug}`}
+        aria-label={`${displayLegendName(deck.legendName)} — ${deck.playerName ?? "joueur inconnu"}`}
+        className="absolute inset-0 z-10"
+      />
       {/* Banner image - tall */}
       <div className="relative h-36 sm:h-40">
         {deck.bannerUrl ? (
@@ -275,9 +284,12 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
                 className="h-6 w-6 rounded-lg ring-1 ring-white/10"
               />
             )}
-            <span className="text-xs text-ink-secondary truncate">
+            <Link
+              href={legendHref(deck.legendName)}
+              className="relative z-20 truncate text-xs text-ink-secondary hover:text-arcane-light hover:underline"
+            >
               {displayLegendName(deck.legendName)}
-            </span>
+            </Link>
           </div>
           <div className="flex items-baseline gap-2">
             <span
@@ -295,7 +307,7 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
           </div>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }
 
@@ -307,15 +319,23 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
   const hasMedal = deck.placementNum <= 8;
   const medalText = MEDAL_TEXT[deck.placementNum];
 
+  // La carte mène au deck, mais le nom de la Légende mène à SA page. Il faut donc
+  // que la nappe cliquable soit une soeur du contenu et non son parent : deux <a>
+  // imbriqués ne sont pas du HTML valide, et le lien intérieur serait de toute
+  // façon mangé par la nappe.
   return (
-    <Link
-      href={`/decks/${deck.slug}`}
+    <article
       className={cn(
-        "group flex items-center gap-3 rounded-card border border-hairline p-3",
+        "group relative flex items-center gap-3 rounded-card border border-hairline p-3",
         "bg-surface/40 transition-colors duration-150",
         "hover:bg-surface-raised/60 hover:border-hairline-strong",
       )}
     >
+      <Link
+        href={`/decks/${deck.slug}`}
+        aria-label={`${displayLegendName(deck.legendName)} — ${deck.playerName ?? "joueur inconnu"}`}
+        className="absolute inset-0 z-10"
+      />
       {/* Placement : colonne fixe en tête, la grille se lit par classement */}
       <span
         className={cn(
@@ -346,9 +366,12 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
           </span>
         </div>
         <div className="flex items-center gap-1.5 mt-0.5">
-          <span className="text-xs text-ink-secondary truncate">
+          <Link
+            href={legendHref(deck.legendName)}
+            className="relative z-20 truncate text-xs text-ink-secondary hover:text-arcane-light hover:underline"
+          >
             {displayLegendName(deck.legendName)}
-          </span>
+          </Link>
           {deck.record && (
             <span className="text-[10px] text-ink-muted font-mono shrink-0">
               {deck.record}
@@ -356,6 +379,6 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
           )}
         </div>
       </div>
-    </Link>
+    </article>
   );
 }

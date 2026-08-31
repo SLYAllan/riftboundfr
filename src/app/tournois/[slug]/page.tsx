@@ -7,6 +7,7 @@ import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from 
 import { articleDuTournoi } from "@/lib/tournament-articles";
 import { voisinsDuTournoi } from "@/lib/tournament-order";
 import { getLegendIconUrl, getBannerUrl } from "@/lib/banners";
+import { legendHref } from "@/lib/legend-fiche";
 import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
 import { Users, MapPin, Calendar, Swords, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
@@ -358,11 +359,19 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
             {legendStats.slice(0, 8).map((l) => {
               const banner = getBannerUrl(l.name);
               return (
-                <Link
+                // La carte entière filtre le tournoi sur cette Légende, mais son NOM
+                // mène à sa page. Deux destinations, donc la nappe cliquable est une
+                // soeur du contenu et non son parent : deux <a> imbriqués ne sont pas
+                // du HTML valide, et le nom serait de toute façon mangé par la nappe.
+                <div
                   key={l.name}
-                  href={`/tournois/${slug}?legend=${encodeURIComponent(l.name)}`}
                   className="group relative h-28 overflow-hidden rounded-card border border-hairline transition duration-200 hover:border-hairline-strong hover:shadow-lg hover:shadow-black/20"
                 >
+                  <Link
+                    href={`/tournois/${slug}?legend=${encodeURIComponent(l.name)}`}
+                    aria-label={`${t("Voir les decklists")} ${displayLegendName(l.name)}`}
+                    className="absolute inset-0 z-10"
+                  />
                   {banner ? (
                     <img
                       src={banner}
@@ -391,11 +400,16 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                     </div>
                     <div className="mt-1 flex items-start gap-1.5 text-xs text-ink-secondary">
                       {l.icon && <img src={l.icon} alt="" className="h-4 w-4 rounded" />}
-                      <span className="min-w-0 line-clamp-2 leading-tight sm:truncate">{displayLegendName(l.name)}</span>
+                      <Link
+                        href={legendHref(l.name)}
+                        className="relative z-20 min-w-0 line-clamp-2 leading-tight hover:text-arcane-light hover:underline sm:truncate"
+                      >
+                        {displayLegendName(l.name)}
+                      </Link>
                       <span className="shrink-0 text-ink-muted">&middot; {l.count.toLocaleString("fr-FR")}</span>
                     </div>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>

@@ -11,6 +11,7 @@ import { DeckFiltreSelect } from "@/components/deck-filtre-select";
 import { DeckTournamentFilter } from "@/components/deck-tournament-filter";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { getBannerUrl } from "@/lib/banners";
+import { legendHref } from "@/lib/legend-fiche";
 import { getTournamentCountryCode, getTournamentInfo, getTournamentTier } from "@/lib/tournament-flags";
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
@@ -289,7 +290,14 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           <div
                             className="texte-sur-art mt-0.5 flex flex-wrap items-center gap-2 text-xs"
                           >
-                            <span className="text-arcane-light">{displayLegendName(deck.legendName)}</span>
+                            {/* Au-dessus de la nappe cliquable de la carte (z-10), sinon
+                                le lien est mangé par elle et on part sur le deck. */}
+                            <Link
+                              href={legendHref(deck.legendName)}
+                              className="relative z-20 text-arcane-light hover:underline"
+                            >
+                              {displayLegendName(deck.legendName)}
+                            </Link>
                             <span className="text-white/80">{t("par")} {deck.authorName}</span>
                           </div>
                           {deck.tags.length > 0 && (
@@ -536,9 +544,17 @@ export default async function DecksPage({ searchParams }: PageProps) {
                   <div className="relative p-4">
                     <div className="flex items-end justify-between gap-2">
                       <div className="min-w-0">
-                        <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                        {/* Le titre de la carte EST le nom de la Légende : il mène à sa
+                            page, le reste de la carte au deck. Il passe donc au-dessus de
+                            la nappe cliquable (z-10). C'est une soeur de cette nappe, pas
+                            un enfant : deux <a> imbriqués ne sont pas du HTML valide. */}
+                        <Link
+                          href={legendHref(deck.legendName)}
+                          className="relative z-20 line-clamp-2 block text-xl font-bold leading-tight text-ink drop-shadow-md hover:text-arcane-light"
+                          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                        >
                           {displayLegendName(deck.legendName)}
-                        </div>
+                        </Link>
                         {/* Halo sombre porté par le TEXTE, pas par un voile sur
                             l'image : les dégradés des bannières ont été allégés
                             exprès. Sans lui, « RQ Utrecht 2026 » en or disparaît
