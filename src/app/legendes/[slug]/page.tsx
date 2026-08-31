@@ -172,14 +172,37 @@ function placementRank(p: string | null): number {
   return m ? parseInt(m[0], 10) : 9999;
 }
 
-// Nom de deck affiché sur la page d'une Légende : pas de tiret cadratin (règle du site),
-// FR ("Best of" -> "Meilleur de"), et on retire le préfixe redondant du nom de la Légende
-// (on est déjà sur sa page).
-function displayDeckName(title: string, legendName: string): string {
-  let t = title.replace(/\s*[—–]\s*/g, " · ").replace(/\bBest of\b/gi, "Meilleur de");
-  const legPrefix = legendName.replace(/\s*[—–]\s*/g, " · ");
-  if (t.startsWith(legPrefix)) t = t.slice(legPrefix.length).replace(/^[\s·:,-]+/, "");
-  return t.trim() || title;
+// Ce qu'une ligne de deck annonce, sur la page d'une Légende.
+//
+// Une decklist de tournoi s'intitule « Irelia, Blade Dancer · konaha (1st) », et
+// la ligne montre déjà, chacun à sa place, la Légende, le joueur, le rang et le
+// tournoi. Elle disait donc « konaha (1st) par konaha 1st », et pour les listes
+// dont le titre reprend le tournoi, celui-ci sortait deux fois.
+//
+// `nomDeDeck` ne garde que ce qui reste APRÈS avoir retiré les quatre, et rend
+// null s'il ne reste rien : le titre d'un guide écrit à la main, jamais un
+// résumé de ce qui est déjà là. La ligne mène alors avec le tournoi.
+function nomDeDeck(
+  deck: {
+    title: string;
+    playerName?: string | null;
+    placement?: string | null;
+    tournamentContext?: string | null;
+  },
+  legendName: string,
+): string | null {
+  let t = deck.title.replace(/\s*[—–]\s*/g, " · ").replace(/\bBest of\b/gi, "Meilleur de");
+  for (const doublon of [
+    legendName.replace(/\s*[—–]\s*/g, " · "),
+    deck.playerName,
+    deck.placement && `(${deck.placement})`,
+    deck.placement,
+    deck.tournamentContext,
+  ]) {
+    if (doublon) t = t.split(doublon).join(" ");
+  }
+  // On ne rabote que les bords : « (2026-08-22) » perdait ses traits au milieu.
+  return t.replace(/\s+/g, " ").replace(/^[\s·:,-]+|[\s·:,-]+$/g, "") || null;
 }
 
 // Decklists réelles de la Légende (uniquement des decks publiés en base, jamais
@@ -784,7 +807,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             <DecklistInteractive
               compact
               cards={decklists[0].cards}
-              deckName={displayDeckName(decklists[0].deck.title, legendName)}
+              deckName={nomDeDeck(decklists[0].deck, legendName) ?? decklists[0].deck.title}
               legendName={legendName}
               playerName={decklists[0].deck.playerName ?? undefined}
               context={
@@ -805,7 +828,9 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                   className="group rounded-card border border-hairline bg-surface"
                 >
                   <summary className="flex cursor-pointer flex-wrap items-center gap-2 px-4 py-3 text-sm font-semibold">
-                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{displayDeckName(deck.title, legendName)}</span>
+                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                      {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
+                    </span>
                     {deck.playerName && (
                       <span className="font-normal text-ink-muted">par {deck.playerName}</span>
                     )}
@@ -824,7 +849,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                     <DecklistInteractive
                       compact
                       cards={cards}
-                      deckName={displayDeckName(deck.title, legendName)}
+                      deckName={nomDeDeck(deck, legendName) ?? deck.title}
                       legendName={legendName}
                       playerName={deck.playerName ?? undefined}
                       context={deck.tournamentContext ?? undefined}
@@ -1008,7 +1033,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       className="font-semibold text-arcane"
                       style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                     >
-                      {displayDeckName(deck.title, legendName)}
+                      {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
                     </span>
                     {deck.playerName && (
                       <span className="text-ink-muted">par {deck.playerName}</span>
@@ -1018,7 +1043,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                         {deck.placement}
                       </span>
                     )}
-                    {deck.tournamentContext && (
+                    {deck.tournamentContext && nomDeDeck(deck, legendName) && (
                       <span className="ml-auto truncate text-xs text-ink-muted">
                         {deck.tournamentContext}
                       </span>
