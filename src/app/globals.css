@@ -138,6 +138,30 @@
   to { opacity: 1; }
 }
 
+/* Barre de chargement indéterminée : le segment TRAVERSE la piste au lieu de la
+   remplir. Une barre qui se remplit promet une fin proche ; à la navigation on ne
+   sait pas ce qu'il reste à charger. */
+@keyframes barre-indeterminee {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(300%); }
+}
+
+.barre-chargement > span {
+  animation: barre-indeterminee 1.4s ease-in-out infinite;
+}
+
+/* Le bloc « réduire les animations » plus bas coupe la boucle après un tour. Sans
+   cette reprise, le segment s'immobilisait hors de la piste et la barre paraissait
+   vide : l'attente ne s'annonçait plus du tout. */
+@media (prefers-reduced-motion: reduce) {
+  .barre-chargement > span {
+    animation: none !important;
+    transform: none !important;
+    width: 100%;
+    opacity: 0.45;
+  }
+}
+
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

@@ -1,10 +1,5 @@
-import { tr } from "@/lib/i18n-server";
+import { Chargement } from "@/components/chargement";
 
-export default async function Loading() {
-  const t = await tr();
-  return (
-    <div role="status" aria-live="polite" className="mx-auto max-w-7xl px-4 py-12 text-sm text-ink-muted sm:px-6">
-      {t("Chargement…")}
-    </div>
-  );
+export default function Loading() {
+  return <Chargement />;
 }
