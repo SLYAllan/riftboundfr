@@ -6,6 +6,8 @@ import { formatDate } from "@/lib/utils";
 import { ArticleBlockRenderer } from "@/components/article-block-renderer";
 import { BestOfDeckBrowser, type BestOfEntry } from "@/components/best-of-deck-browser";
 import { parseDeckCode } from "@/lib/deck-code";
+import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
+import { findCard } from "@/lib/card-printing";
 import { decodeDeck, encodeDeckBase64, type DeckCodeEntry } from "@/lib/deck-codec";
 import Link from "@/components/lien";
 import Image from "next/image";
@@ -67,29 +69,44 @@ function toListCard(card: { id: string; name: string; imageUrl: string | null; t
   };
 }
 
+/** Une carte citée par la decklist mais absente de la base : elle s'affiche, avec
+ * son nom et son nombre. La faire disparaître donnait une liste amputée sans un
+ * mot — c'est ce que faisait la branche binaire. La branche texte, elle, le
+ * faisait déjà. */
+function carteInconnue(nom: string, quantity: number, section: DeckSection): DecklistCard {
+  return {
+    cardId: `unknown-${nom}`,
+    name: nom,
+    artUrl: null,
+    type: "Unknown",
+    rarity: "Common",
+    description: null,
+    quantity,
+    section,
+  };
+}
+
 async function resolveBinaryDeck(block: Extract<ArticleBlock, { type: "decklist" }>): Promise<{ cards: DecklistCard[]; code: string }> {
   const decoded = decodeDeck(block.deckCode)!;
-  const allIds: string[] = [];
-  if (decoded.legend) allIds.push(decoded.legend.cardId);
-  if (decoded.champion) allIds.push(decoded.champion.cardId);
-  for (const e of [...decoded.main, ...decoded.rune, ...decoded.battlefield, ...decoded.side]) allIds.push(e.cardId);
-
-  const cards = await prisma.card.findMany({ where: { riftboundId: { in: allIds } } });
-  const cardMap = new Map(cards.map((c) => [c.riftboundId, c]));
+  // Passage unique vers la base : la requête était refaite ici à la main, avec un
+  // `if (c)` muet qui jetait toute carte introuvable.
+  const { map: cardMap } = await resolveDeckCards(deckIdentifiers(decoded));
 
   const deckCards: DecklistCard[] = [];
   let hasRealLegend = false;
 
   if (decoded.legend) {
-    const c = cardMap.get(decoded.legend.cardId);
+    const c = findCard(cardMap, decoded.legend.cardId);
     if (c) {
       deckCards.push(toListCard(c, 1, "legend"));
       if (c.type === "Legend") hasRealLegend = true;
+    } else {
+      deckCards.push(carteInconnue(decoded.legend.cardId, 1, "legend"));
     }
   }
   if (decoded.champion) {
-    const c = cardMap.get(decoded.champion.cardId);
-    if (c) deckCards.push(toListCard(c, 1, "legend"));
+    const c = findCard(cardMap, decoded.champion.cardId);
+    deckCards.push(c ? toListCard(c, 1, "legend") : carteInconnue(decoded.champion.cardId, 1, "legend"));
   }
 
   if (!hasRealLegend && block.legendName) {
@@ -119,8 +136,8 @@ async function resolveBinaryDeck(block: Extract<ArticleBlock, { type: "decklist"
   ];
   for (const [entries, section] of sectionMap) {
     for (const e of entries) {
-      const c = cardMap.get(e.cardId);
-      if (c) deckCards.push(toListCard(c, e.quantity, section));
+      const c = findCard(cardMap, e.cardId);
+      deckCards.push(c ? toListCard(c, e.quantity, section) : carteInconnue(e.cardId, e.quantity, section));
     }
   }
 

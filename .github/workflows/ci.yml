@@ -27,3 +27,17 @@ jobs:
       - run: npm run build
         env:
           DATABASE_URL: postgresql://build:build@localhost:5432/build
+
+  # Job à part : la vérification des decklists parcourt 25 000 fichiers et dépasse
+  # cinq minutes. La laisser hors CI revenait à ne compter que sur le lancement à
+  # la main, alors que c'est le garde-fou anti-fabrication du dépôt.
+  donnees:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest scripts.validate_decklists_rules_test
+      - run: python -X utf8 scripts/validate-decklists.py

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes } from "./cardnexus";
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {
@@ -220,5 +220,21 @@ describe("impressionsAchat", () => {
     });
 
     expect(choix.conseillees).toEqual(["normale", "recrue"]);
+  });
+});
+
+describe("prixPerimes", () => {
+  const maintenant = Date.parse("2026-09-02T12:00:00.000Z");
+
+  it("laisse passer un relevé du jour", () => {
+    expect(prixPerimes({ fetchedAt: "2026-09-01T12:00:00.000Z", cards: {} }, maintenant)).toBe(false);
+  });
+
+  it("signale un relevé de plus de quinze jours", () => {
+    expect(prixPerimes({ fetchedAt: "2026-08-15T12:00:00.000Z", cards: {} }, maintenant)).toBe(true);
+  });
+
+  it("ne dit rien quand il n’y a pas de relevé", () => {
+    expect(prixPerimes(null, maintenant)).toBe(false);
   });
 });

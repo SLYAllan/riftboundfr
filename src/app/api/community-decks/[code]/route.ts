@@ -1,6 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
+import { verifierCodeDeck } from "@/lib/deck-publication";
 
 export async function GET(
   _req: NextRequest,
@@ -32,6 +34,9 @@ export async function PATCH(
   req: NextRequest,
   { params }: { params: Promise<{ code: string }> }
 ) {
+  // Chaque PATCH crée une version dans l'historique : sans limite, seul le POST
+  // était bridé et une boucle faisait grossir la table à volonté.
+  if (!rateLimit(req, { bucket: "community-decks-patch", limit: 20 })) return tooMany();
   const { code } = await params;
   const user = await getUserFromSession();
   if (!user) {
@@ -71,6 +76,20 @@ export async function PATCH(
   const nouveauDeckCode = typeof body.deckCode === "string" ? body.deckCode : "";
   const changelog = typeof body.changelog === "string" ? body.changelog.slice(0, 500) || null : null;
 
+  // Même règle qu'à la publication. Ici, toute chaîne non vide passait : on
+  // pouvait rendre illisible un deck déjà publié, pour /d, l'image et le panier.
+  let legendeMaj: { legendId: string; legendName: string; domains: string[] } | null = null;
+  if (nouveauDeckCode.trim()) {
+    if (nouveauDeckCode.length > 10000) {
+      return NextResponse.json({ error: "Données trop longues" }, { status: 400 });
+    }
+    const verification = await verifierCodeDeck(nouveauDeckCode);
+    if (!verification.ok) {
+      return NextResponse.json({ error: verification.erreur }, { status: 400 });
+    }
+    legendeMaj = verification.deck;
+  }
+
   const updated = await prisma.$transaction(async (tx) => {
     // Verrou sur la ligne : deux PATCH en parallèle liraient le même numéro de
     // version et écriraient deux entrées d'historique pour le même numéro. Le
@@ -102,6 +121,13 @@ export async function PATCH(
       });
       dataFinal.deckCode = nouveauDeckCode.slice(0, 10000);
       dataFinal.version = courant.version + 1;
+      // La Légende peut changer avec la liste : la laisser figée faisait sortir le
+      // deck dans le mauvais filtre de /decks.
+      if (legendeMaj) {
+        dataFinal.legendId = legendeMaj.legendId;
+        dataFinal.legendName = legendeMaj.legendName;
+        dataFinal.domains = legendeMaj.domains;
+      }
     }
 
     if (Object.keys(dataFinal).length === 0) {

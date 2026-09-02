@@ -13,6 +13,7 @@
 //   npx tsx --env-file=.env scripts/sync-prices.mts            met à jour data/prices/card-prices.json
 //   npx tsx --env-file=.env scripts/sync-prices.mts --deck <slug>   chiffre un deck publié
 //   npx tsx --env-file=.env scripts/sync-prices.mts --test     auto-contrôle
+//   npx tsx --env-file=.env scripts/sync-prices.mts --force    écrit même si le relevé a maigri
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
 import { prisma } from "../src/lib/prisma";
@@ -116,6 +117,27 @@ async function sync() {
       continue;
     }
     out[c.riftboundId] = { eur: px.eur, productId: p.id, nom: p.name, source: px.source, finition: px.finition };
+  }
+
+  // Un relevé qui maigrit veut presque toujours dire que le catalogue a mal
+  // répondu, pas que des cartes ont perdu leur prix. Sans ce garde-fou, un
+  // relevé amputé remplaçait le bon fichier et des decks s'affichaient sans
+  // montant. Même règle que la relève chinoise, même échappatoire.
+  if (existsSync(OUT_FILE)) {
+    try {
+      const precedent = JSON.parse(readFileSync(OUT_FILE, "utf-8")) as { cards?: Record<string, unknown> };
+      const avant = Object.keys(precedent.cards ?? {}).length;
+      const perte = avant - Object.keys(out).length;
+      if (perte > avant * 0.1 && !process.argv.includes("--force")) {
+        console.error(`
+Refus d'écrire : ${perte} cartes tarifées en moins qu'au relevé précédent (${avant}). Relancer, ou --force si c'est voulu.`);
+        process.exit(1);
+      }
+    } catch {
+      console.error(`
+Refus d'écrire : ${OUT_FILE} existe mais n'est pas lisible. Le réparer ou le supprimer d'abord.`);
+      process.exit(1);
+    }
   }
 
   mkdirSync(OUT_DIR, { recursive: true });

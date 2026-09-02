@@ -113,10 +113,24 @@ let cache: FichierPrix | null = null;
  * conteneur, et une page deck ne doit pas attendre un appel réseau pour afficher
  * un montant. Un relevé absent n'est pas une erreur : le site rend sans prix.
  */
+/** Au-delà, le relevé est trop vieux pour qu'on affiche ses montants sans le dire. */
+export const JOURS_PRIX_PERIMES = 14;
+
+export function prixPerimes(prix: FichierPrix | null, maintenant = Date.now()): boolean {
+  if (!prix?.fetchedAt) return false;
+  const age = maintenant - new Date(prix.fetchedAt).getTime();
+  return Number.isFinite(age) && age > JOURS_PRIX_PERIMES * 86_400_000;
+}
+
 export function chargerPrix(): FichierPrix | null {
   if (cache) return cache;
   try {
     cache = JSON.parse(readFileSync(join(process.cwd(), "data", "prices", "card-prices.json"), "utf-8"));
+    // La tâche de relevé peut s'arrêter sans bruit : le site continuait alors
+    // d'afficher des prix de plusieurs semaines comme s'ils dataient du jour.
+    if (prixPerimes(cache)) {
+      console.warn(`[prix] relevé du ${cache!.fetchedAt} : plus de ${JOURS_PRIX_PERIMES} jours. Relancer « npm run sync-prices ».`);
+    }
     return cache;
   } catch {
     return null;

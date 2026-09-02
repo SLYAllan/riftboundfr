@@ -117,6 +117,18 @@ export function validateDeck(
   return issues;
 }
 
+/**
+ * Ce qui empêche VRAIMENT de jouer le deck : les avertissements n'en sont pas.
+ * Un deck de 41 cartes se publie, il est seulement moins régulier.
+ *
+ * La règle vivait en trois exemplaires : celle-ci, une plus courte pour le bouton
+ * « Publier » du deckbuilder, et une troisième dans la route serveur qui lisait
+ * des compteurs déclarés par le navigateur. Les trois passent maintenant ici.
+ */
+export function erreursDeck(counts: DeckCounts, mainCards: DeckCardInfo[], runeCards: DeckCardInfo[], sideCards: DeckCardInfo[], legendDomains: string[]): DeckValidationIssue[] {
+  return validateDeck(counts, mainCards, runeCards, sideCards, legendDomains).filter((p) => p.severity === "error");
+}
+
 export function isDeckValid(counts: DeckCounts, mainCards: DeckCardInfo[], runeCards: DeckCardInfo[], sideCards: DeckCardInfo[], legendDomains: string[]): boolean {
-  return validateDeck(counts, mainCards, runeCards, sideCards, legendDomains).length === 0;
+  return erreursDeck(counts, mainCards, runeCards, sideCards, legendDomains).length === 0;
 }

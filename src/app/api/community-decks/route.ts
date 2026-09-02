@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { rateLimit, tooMany } from "@/lib/rate-limit";
+import { verifierCodeDeck } from "@/lib/deck-publication";
 import crypto from "crypto";
 
 function generateShareCode(): string {
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { title, legendId, legendName, deckCode, description, isPublic, mainCount, runeCount, bfCount, tags, domains } = body;
+    const { title, deckCode, description, isPublic, tags } = body;
 
     if (!title || typeof title !== "string" || !deckCode || typeof deckCode !== "string") {
       return NextResponse.json({ error: "Titre et deck code requis" }, { status: 400 });
@@ -40,23 +41,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Données trop longues" }, { status: 400 });
     }
 
-    if (!legendId || typeof legendId !== "string") {
-      return NextResponse.json({ error: "Une légende est requise" }, { status: 400 });
-    }
-    if (typeof mainCount === "number" && mainCount < 40) {
-      return NextResponse.json({ error: "Le main deck doit contenir au minimum 40 cartes" }, { status: 400 });
-    }
-    if (typeof runeCount === "number" && runeCount !== 12) {
-      return NextResponse.json({ error: "Le pool de runes doit contenir exactement 12 runes" }, { status: 400 });
-    }
-    if (typeof bfCount === "number" && (bfCount < 1 || bfCount > 3)) {
-      return NextResponse.json({ error: "Il faut entre 1 et 3 champs de bataille" }, { status: 400 });
+    // Le navigateur envoyait aussi mainCount, runeCount, bfCount, legendId et
+    // domains. Trois compteurs qu'il déclarait lui-même, ignorés s'ils
+    // manquaient : un appel direct à l'API publiait n'importe quoi. Tout se
+    // recalcule ici depuis le code de deck et la base.
+    const verification = await verifierCodeDeck(deckCode);
+    if (!verification.ok) {
+      return NextResponse.json({ error: verification.erreur }, { status: 400 });
     }
 
     const safeTitle = title.slice(0, TITLE_MAX).trim();
     const safeDesc = typeof description === "string" ? description.slice(0, DESC_MAX).trim() || null : null;
-    const safeLegendId = typeof legendId === "string" ? legendId.slice(0, 100) : "";
-    const safeLegendName = typeof legendName === "string" ? legendName.slice(0, 200) : "Inconnu";
+    const safeLegendId = verification.deck.legendId;
+    const safeLegendName = verification.deck.legendName;
+    const safeDomains = verification.deck.domains;
 
     let shareCode = generateShareCode();
     let attempts = 0;
@@ -69,7 +67,6 @@ export async function POST(req: NextRequest) {
 
     const VALID_TAGS = ["aggro", "contrôle", "combo", "midrange", "tempo", "budget", "compétitif"];
     const safeTags = Array.isArray(tags) ? tags.filter((t: string) => VALID_TAGS.includes(t)).slice(0, 5) : [];
-    const safeDomains = Array.isArray(domains) ? domains.filter((d: string) => typeof d === "string").slice(0, 2) : [];
 
     const deck = await prisma.communityDeck.create({
       data: {

@@ -8,7 +8,18 @@ Règle projet : on n'invente JAMAIS de deck. Si la donnée n'est pas vérifiable
 on skip/supprime — on ne publie pas de données fausses ou incertaines.
 
 Usage:  python -X utf8 scripts/validate-decklists.py
-Exit 1 si au moins un MISMATCH (carte différente de la source) est trouvé.
+Exit 1 dans QUATRE cas :
+  - un MISMATCH (cartes différentes de la source brute) ;
+  - une réserve Vendetta incomplète ;
+  - un fichier illisible, source brute ou decklist ;
+  - une decklist sans source brute qui n'est pas au relevé
+    data/decklists-inverifiables.json.
+
+Les erreurs de lecture étaient toutes avalées : une source brute cassée ou un
+deck illisible laissait la commande verte, ce qui vide le garde-fou de son sens.
+Le relevé, lui, fige les 1 159 listes déjà publiées sans source brute (import
+d'avant les scrapes) : elles ne repassent pas rouge, mais une NOUVELLE liste
+invérifiable, elle, arrête tout.
 """
 import re, glob, os, json, sys
 from collections import Counter
@@ -17,6 +28,15 @@ from validate_decklists_rules import vendetta_decklist_missing
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DECKS = os.path.join(ROOT, 'data', 'decklists')
 RAW   = os.path.join(ROOT, 'data', 'raw-scrapes')
+RELEVE_INVERIFIABLES = os.path.join(ROOT, 'data', 'decklists-inverifiables.json')
+
+# Tout fichier qu'on n'a pas su lire atterrit ici et fait sortir en 1. Avant, un
+# « except Exception: pass » les cachait : la commande restait verte alors qu'elle
+# n'avait comparé qu'une partie du corpus.
+erreurs_lecture = []
+
+def note_erreur(chemin, cause):
+    erreurs_lecture.append((os.path.relpath(chemin, ROOT), str(cause)[:160]))
 
 # Les sources n'écrivent pas la casse pareil : hexgate publie « Ride The Wind »
 # là où la base dit « Ride the Wind ». Deux cartes différentes ne se distinguent
@@ -76,13 +96,18 @@ for d in sorted(os.listdir(RAW)):
             obj = json.loads(open(f, encoding='utf-8').read())
             if isinstance(obj, str): obj = json.loads(obj)
             walk(obj)
-        except Exception: pass
+        except Exception as cause: note_erreur(f, cause)
     for f in glob.glob(os.path.join(RAW, d, '*.jsonl')):
-        for line in open(f, encoding='utf-8'):
+        try:
+            lignes = open(f, encoding='utf-8').readlines()
+        except Exception as cause:
+            note_erreur(f, cause); continue
+        for numero, line in enumerate(lignes, 1):
+            if not line.strip(): continue
             try:
                 o = json.loads(line)
                 if o.get('url'): consider(o['url'], o.get('main'))
-            except Exception: pass
+            except Exception as cause: note_erreur(f, 'ligne %d : %s' % (numero, cause))
 def jpool(main):
     skip = {'legend','champion','runes','battlefields'}
     pool = {}
@@ -101,7 +126,7 @@ for p in glob.glob(os.path.join(RAW, '**', '*.md'), recursive=True):
     try:
         pl, pool, champs = parse_md(p)
         if pl: md_by_player.setdefault((os.path.basename(os.path.dirname(p)), pl), (pool, champs))
-    except Exception: pass
+    except Exception as cause: note_erreur(p, cause)
 
 def fpool(o, drop_champ=True):
     champ = cle_carte(o.get('champion'))
@@ -119,11 +144,13 @@ def diff_is_champion_only(a, b, champs):
     return all(n in champs for n in diff), diff
 
 verified = mismatch = unverifiable = incomplete_side_deck = 0
+inverifiables = []
 mism_list = []
 incomplete_side_decks = []
 for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
     try: o = json.loads(open(f, encoding='utf-8').read())
-    except Exception: continue
+    except Exception as cause:
+        note_erreur(f, cause); continue
     missing = vendetta_decklist_missing(o)
     if missing:
         incomplete_side_deck += 1
@@ -140,6 +167,7 @@ for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
         truth = jpool(jtruth[src])
     if truth is None:
         unverifiable += 1
+        inverifiables.append(os.path.relpath(f, ROOT).replace(os.sep, '/'))
         continue
     fp = fpool(o, drop_champ=True)
     if fp == truth:
@@ -152,6 +180,31 @@ for f in glob.glob(os.path.join(DECKS, '**', '*.json'), recursive=True):
             mismatch += 1
             mism_list.append((os.path.relpath(f, ROOT), o.get('player'), diff[:5]))
 
+# Relevé des listes déjà publiées sans source brute. Il gèle l'existant pour que
+# le compteur ne serve pas d'alibi : ce qui n'y est pas et n'a pas de source brute
+# est une NOUVELLE liste invérifiable, donc un refus.
+try:
+    releve = set(json.loads(open(RELEVE_INVERIFIABLES, encoding='utf-8').read())['fichiers'])
+except FileNotFoundError:
+    releve = set()
+except Exception as cause:
+    note_erreur(RELEVE_INVERIFIABLES, cause)
+    releve = set()
+
+nouvelles_inverifiables = sorted(set(inverifiables) - releve)
+reparees = sorted(releve - set(inverifiables))
+
+# « --ecrire-releve » refige l'existant. À lancer en connaissance de cause, jamais
+# pour faire taire un refus : une liste neuve sans source brute se source ou se
+# supprime, elle n'entre pas au relevé.
+if '--ecrire-releve' in sys.argv:
+    open(RELEVE_INVERIFIABLES, 'w', encoding='utf-8', newline='').write(json.dumps({
+        'commentaire': "Decklists publiées sans source brute dans data/raw-scrapes/. Figées pour que le compteur ne serve pas d'alibi : toute NOUVELLE liste invérifiable fait sortir validate-decklists.py en 1.",
+        'fichiers': sorted(inverifiables),
+    }, ensure_ascii=False, indent=1))
+    print(f"Relevé réécrit : {len(inverifiables)} listes sans source brute.")
+    sys.exit(0)
+
 print(f"verified={verified}  MISMATCH(fabriqué?)={mismatch}  réserve Vendetta incomplète={incomplete_side_deck}  unverifiable(pas de source brute)={unverifiable}")
 if mism_list:
     print("\n=== MISMATCH (cartes != source brute — à corriger ou supprimer) ===")
@@ -161,4 +214,22 @@ if incomplete_side_decks:
     print("\n=== RÉSERVE VENDETTA INCOMPLÈTE — deck à supprimer ===")
     for f, total in incomplete_side_decks[:50]:
         sys.stdout.buffer.write(f"  {f}  réserve={total}/10\n".encode('utf-8','replace'))
-sys.exit(1 if mismatch or incomplete_side_deck else 0)
+if erreurs_lecture:
+    print("\n=== FICHIERS ILLISIBLES — la comparaison n'a pas pu se faire ===")
+    for f, cause in erreurs_lecture[:50]:
+        sys.stdout.buffer.write(f"  {f}  {cause}\n".encode('utf-8','replace'))
+    if len(erreurs_lecture) > 50:
+        print(f"  … et {len(erreurs_lecture) - 50} autres")
+if nouvelles_inverifiables:
+    print("\n=== SANS SOURCE BRUTE et hors relevé — à sourcer ou à supprimer ===")
+    for f in nouvelles_inverifiables[:50]:
+        sys.stdout.buffer.write(f"  {f}\n".encode('utf-8','replace'))
+    if len(nouvelles_inverifiables) > 50:
+        print(f"  … et {len(nouvelles_inverifiables) - 50} autres")
+    print(f"\n  Le relevé est {os.path.relpath(RELEVE_INVERIFIABLES, ROOT)}.")
+if reparees:
+    # Pas bloquant : une liste qui a retrouvé sa source est une bonne nouvelle. Mais
+    # la laisser au relevé rendrait le garde-fou plus lâche qu'il n'a besoin.
+    print(f"\n{len(reparees)} liste(s) du relevé ont retrouvé leur source brute : à retirer du relevé.")
+
+sys.exit(1 if (mismatch or incomplete_side_deck or erreurs_lecture or nouvelles_inverifiables) else 0)

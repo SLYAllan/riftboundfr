@@ -21,6 +21,7 @@
     "validate:names": "npx tsx scripts/validate-card-names.mts",
     "fix:names": "npx tsx scripts/validate-card-names.mts --fix",
     "validate:decks": "python -X utf8 scripts/validate-decklists.py",
+    "validate:regles": "python -m unittest scripts.validate_decklists_rules_test",
     "maj:stats": "tsx scripts/maj-stats.mts"
   },
   "dependencies": {

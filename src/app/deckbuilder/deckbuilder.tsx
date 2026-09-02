@@ -20,7 +20,7 @@ import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "@/lib/export-formats";
 import { generateDeckImage } from "@/lib/export-image";
-import { SIDE_SIZE } from "./lib/deck-rules";
+import { SIDE_SIZE, isDeckValid } from "./lib/deck-rules";
 import { findMatchingChampion, splitChampion } from "./lib/champion";
 import { preferredPrinting } from "@/lib/card-printing";
 import { downloadBlob } from "@/lib/download";
@@ -220,6 +220,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
 
   const legendDomains = useMemo(() => deck.legend?.domains ?? [], [deck.legend]);
 
+
   const deckCardCounts = useMemo(() => {
     const counts = new Map<string, number>();
     const all = [...deck.main, ...deck.rune, ...deck.battlefield, ...deck.side];
@@ -234,6 +235,24 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   const sideTotal = deck.side.reduce((s, e) => s + e.quantity, 0);
   const runeTotal = deck.rune.reduce((s, e) => s + e.quantity, 0);
   const bfTotal = deck.battlefield.reduce((s, e) => s + e.quantity, 0);
+  // Même règle que le panneau de deck et que le serveur. Le bouton « Publier »
+  // avait sa propre version, plus courte : elle laissait passer un deck sans
+  // Champion, avec une carte bannie ou hors des domaines de la Légende, et la
+  // route de publication ne recomptait rien.
+  const deckValide = isDeckValid(
+    {
+      legend: !!deck.legend,
+      legendFirstName: deck.legend?.name.split(",")[0] ?? null,
+      mainTotal,
+      runeTotal,
+      battlefieldTotal: bfTotal,
+      sideTotal,
+    },
+    deck.main,
+    deck.rune,
+    deck.side,
+    legendDomains,
+  );
 
   // Items pour le calcul « cartes manquantes ». La réserve en fait partie : elle
   // était oubliée ici, donc le compteur annonçait moins de manquantes qu'en vrai.
@@ -921,7 +940,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
           ttsCode={getTTSCode()}
           deckTitle={deckTitle}
           isEmpty={isEmpty}
-          isDeckValid={!!deck.legend && mainTotal >= 40 && runeTotal === 12 && bfTotal >= 1 && bfTotal <= 3}
+          isDeckValid={deckValide}
           onPublish={handlePublish}
           updateShareCode={updateShareCode}
           onUpdatePublished={handleUpdatePublished}
