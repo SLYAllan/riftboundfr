@@ -12,9 +12,15 @@
  * (#148 et #69) n'ont pas publié leur liste, et le mieux classé publié finit
  * #683 et #107. Le présenter comme un Best-Of serait faux. Voir l'option
  * `--sauf` de `mark-bestof-tournois.mts`.
+ *
+ * La question a été reposée le 2 septembre 2026 et retranchée pareil : une liste
+ * existe pour les deux, mais ce n'est pas celle du meilleur joueur, et l'article
+ * promet « pour chacune, la liste la mieux classée ». Ne pas y revenir sans que
+ * les n°1 aient publié.
  */
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, readdirSync, statSync } from "node:fs";
+import { vendettaTier } from "./tier-tables";
 import { join } from "node:path";
 
 const prisma = new PrismaClient();
@@ -45,6 +51,7 @@ function buildDeckCode(d: DeckJson): string {
 
 const ordinal = (n: number) => (n === 1 ? "1re" : `${n}e`);
 
+
 async function main() {
   // Les decks marqués best-of en base, source unique.
   const featured = await prisma.deck.findMany({
@@ -69,13 +76,17 @@ async function main() {
     throw new Error(`${featured.length} best-of en base mais ${fichiers.length} fichiers retrouvés : ne pas publier un article incomplet.`);
   }
 
-  // Le rang de chaque Légende, lu dans la tier list Vendetta déjà seedée.
+  // Le rang de chaque Légende, IMPORTÉ de la table Vendetta.
+  //
+  // Il était relu au motif dans le source de `seed-tier-lists.ts`. Le 31 août les
+  // tableaux ont déménagé dans `tier-tables.ts` : le motif n'a plus rien trouvé, et
+  // sans une erreur, les 38 decks sont tombés d'un bloc en Tier D. `fiches-maj.mts`
+  // avait déjà payé exactement ça. On importe, on ne relit pas du texte.
   const rangs = new Map<string, string>();
-  const seed = readFileSync("scripts/seed-tier-lists.ts", "utf-8");
-  const bloc = seed.slice(seed.indexOf("const vendettaTier"), seed.indexOf("async function seedTierList"));
-  for (const m of bloc.matchAll(/legendName:\s*"([^"]+)",\s*tier:\s*"([SABCD])"/g)) {
-    rangs.set(m[1].toLowerCase().replace(/[^a-z0-9]/g, ""), m[2]);
+  for (const entree of vendettaTier) {
+    rangs.set(entree.legendName.toLowerCase().replace(/[^a-z0-9]/g, ""), entree.tier);
   }
+  if (rangs.size === 0) throw new Error("Table Vendetta vide : ne pas publier un article sans classement.");
   const rangDe = (nom: string) => rangs.get(nom.toLowerCase().replace(/[^a-z0-9]/g, "")) ?? "D";
 
   fichiers.sort((a, b) => (a.placement ?? 9999) - (b.placement ?? 9999));
@@ -97,6 +108,8 @@ async function main() {
 Le **Regional Qualifier de Barcelone** a réuni **2 224 inscrits** le 23 août 2026, dont 2 131 classés et 379 au dimanche. C'est le plus gros tournoi de l'ère Vendetta.
 
 Voici le meilleur deck de chaque Légende jouée à Barcelone : pour chacune, la liste la mieux classée. Les decks sont regroupés par rang de la tier list Vendetta.
+
+Deux Légendes manquent, Annie et Viktor : leur meilleur joueur n'a pas publié sa liste, et donner celle d'un joueur bien plus bas au classement ne serait pas un best-of.
 
 > 💡 Survolez les noms de cartes surlignés pour voir la carte. Sur mobile, touchez-les pour ouvrir la fiche.`,
     },
