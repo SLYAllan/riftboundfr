@@ -1,5 +1,141 @@
 # HANDOFF — état des lieux
 
+## Session du 2 septembre 2026 — l'audit Codex traité, cloche de notifications
+
+L'audit est dans `docs/AUDIT-SITE-2026-09-02-CODEX.md` : 3 défauts critiques,
+10 élevés, 22 moyens, 6 faibles. Tous traités sauf un, cadré plus bas.
+
+### À FAIRE AVANT LE DÉPLOIEMENT — trois colonnes en base
+
+La cloche de notifications a besoin de trois colonnes. `prisma db push` ne
+convient PAS ici : la base locale porte aussi des tables `Bulk*` d'un autre
+projet, et `push` veut les supprimer. Le SQL à passer, en local comme en prod :
+
+```sql
+ALTER TABLE "User" ADD COLUMN IF NOT EXISTS "notificationsVuesLe" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE "CommunityDeckLike" ADD COLUMN IF NOT EXISTS "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE "CommentVote" ADD COLUMN IF NOT EXISTS "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+CREATE INDEX IF NOT EXISTS "CommunityDeckLike_createdAt_idx" ON "CommunityDeckLike"("createdAt");
+CREATE INDEX IF NOT EXISTS "CommentVote_commentId_idx" ON "CommentVote"("commentId");
+CREATE INDEX IF NOT EXISTS "CommentVote_createdAt_idx" ON "CommentVote"("createdAt");
+UPDATE "User" SET "notificationsVuesLe" = CURRENT_TIMESTAMP;
+```
+
+Le dernier `UPDATE` compte : sans lui, les j'aime et les votes existants
+prennent l'heure de la migration comme date de création, et chaque membre
+découvrirait un arriéré de fausses notifications à sa première visite.
+
+Le déploiement du CODE avant ce SQL fait répondre 500 à `/api/notifications` ;
+la cloche se cache alors d'elle-même, elle ne casse aucune page.
+
+### La cloche de notifications
+
+`src/lib/notifications.ts`, `/api/notifications`, `src/components/notifications.tsx`.
+Elle ne stocke RIEN : tout se recalcule à la lecture depuis les commentaires,
+les j'aime et les votes déjà en base. Quatre sources — réponses à mes
+commentaires, commentaires sur mes decks, j'aime sur mes decks, votes positifs
+sur mes commentaires. Le seul état est la date du dernier passage, sur le compte.
+
+Deux pièges déjà payés, pendant la vérification au navigateur :
+
+- **Elle ne peut pas vivre dans le panneau déroulant mobile.** Ce panneau porte
+  `overflow-y-auto` : il rognait le menu des notifications et ajoutait une barre
+  de défilement horizontale à toute la page. Elle vit dans la BARRE, aux deux
+  tailles d'écran.
+- **Le panneau est ancré à droite, jamais à gauche.** Aligné à gauche depuis une
+  cloche déjà collée au bord droit, il sortait de l'écran. Ce n'est PAS le même
+  cas que `UserMenu`, qui bascule gauche/droite parce qu'il vit, lui, dans le
+  panneau mobile.
+
+`CommentVote` n'a pas de relation Prisma vers `Comment`, exprès : la clé
+étrangère échouerait sur les votes orphelins des commentaires déjà supprimés. On
+passe par les identifiants de mes 300 derniers commentaires.
+
+### Le validateur de decklists devient vraiment rouge
+
+`npm run validate:decks` avalait toute erreur de lecture. Une source brute
+cassée ou un deck illisible le laissait vert, ce qui vide le garde-fou
+anti-fabrication de son sens. Elles sont maintenant visibles et bloquantes.
+
+Les **1 159 listes sans source brute** sont figées dans
+`data/decklists-inverifiables.json`. Une NOUVELLE liste invérifiable fait sortir
+en 1. `--ecrire-releve` refige l'existant : à lancer en connaissance de cause,
+JAMAIS pour faire taire un refus — une liste neuve sans source se source ou se
+supprime.
+
+Relevé du jour : `verified=24683 MISMATCH=0 réserve incomplète=0 unverifiable=1159`,
+sortie 0. Le validateur et son test Python entrent en CI, dans un job à part
+(25 min de limite : le parcours des 25 842 fichiers dépasse cinq minutes).
+
+### Démarrage du conteneur : deux échecs, deux codes de sortie
+
+`migrate.mjs` distingue enfin le schéma vide ou incomplet (sortie 1, bloquant :
+aucun redémarrage ne le répare, il faut un `prisma db push`) de la vérification
+impossible (sortie 2, toléré : c'est l'accroc DB qui avait mis le site à terre
+en boucle de redémarrage le 16 août). `entrypoint.sh` s'arrête sur le premier,
+passe sur le second. L'image porte un `HEALTHCHECK` qui appelle `/api/health`,
+lequel interroge la base.
+
+### Le tableau de bord de l'overlay poste des PATCHS
+
+Il postait l'état ENTIER : un point marqué depuis le compagnon pendant qu'on
+changeait un réglage repartait en arrière à l'écran, en direct. La fusion des
+patchs existait en deux exemplaires (`overlay.ts` et `overlay-compagnon-client.ts`),
+elle n'en a plus qu'un. La clé du compagnon, qui ouvrait TOUT l'habillage — titre,
+logo, décor, liens de caméra — est bornée aux champs que son interface envoie
+(`validerPatchCompagnon`).
+
+**Non vérifié dans OBS.** Les changements touchent l'écriture, pas le rendu, et
+je n'ai pas voulu changer l'état de l'habillage d'Allan pour prendre une capture.
+À passer sous OBS avant le prochain direct.
+
+### Le seul constat de l'audit NON corrigé — et pourquoi
+
+**Constat 11 : toutes les pages sont en rendu dynamique.** C'est vrai, et mesuré :
+au build, la table des routes ne porte que des `ƒ`, `/guides/glossaire` et
+`/offline` compris. La cause est le `headers()` que `langueCourante()` lit dans
+le layout racine.
+
+Ce n'est pas réparable au niveau où l'audit le place. Le layout a BESOIN de la
+langue : `<html lang>`, les liens hreflang, le fournisseur de langue. La sortir
+de là voudrait dire dupliquer les 44 pages sous un segment `[locale]`, ce que
+l'architecture refuse exprès. Et `use cache`, la réponse de Next 16, demande
+`cacheComponents: true` — une migration du modèle de cache du site entier, pas
+un correctif d'audit. `unstable_cache` marcherait, mais Next 16 le déclare
+remplacé : l'introduire partout serait à refaire.
+
+**Conséquence à connaître : les `export const revalidate` des pages ne mettent
+aucun HTML en cache.** Ne pas en rajouter en croyant le contraire. Ce qui a été
+fait à la place : les requêtes Prisma dupliquées entre `generateMetadata` et la
+page passent par le `cache` de React, ce qui divise par deux les allers-retours
+en base sur toutes les pages de détail.
+
+### Best-of Barcelone : un bug muet, trouvé en relançant
+
+`seed-barcelone-bestof.mts` lisait les lettres de tier au MOTIF dans le source de
+`seed-tier-lists.ts`. Les tableaux ont déménagé dans `tier-tables.ts` le 31 août :
+le motif ne trouvait plus rien, et **sans la moindre erreur**, les 36 decks
+seraient tombés d'un bloc en Tier D au prochain passage. Il importe la table
+maintenant, et refuse de publier si elle est vide. `fiches-maj.mts` avait déjà
+payé exactement ça — c'est la deuxième fois.
+
+**Annie et Viktor restent hors du best-of**, question reposée et retranchée
+pareil le 2 septembre. Une liste existe pour les deux (683e et 107e), mais leurs
+vrais premiers (148e et 69e) n'ont rien publié, et l'article promet « pour
+chacune, la liste la mieux classée ». L'intro le dit maintenant au lecteur au
+lieu de les passer sous silence. Ne pas y revenir sans que les n°1 aient publié.
+
+L'article est réécrit par `upsert` sur son slug : il garde son identifiant, donc
+ses commentaires. **Reste à refaire en PROD** : `mark-bestof-tournois.mts` puis
+`seed-barcelone-bestof.mts`, sinon la prod garde l'article d'avant.
+
+### Le menu d'incrustations existait déjà
+
+Rien à ajouter côté commentaires : `EmotePicker` est branché sur le champ
+principal ET sur le champ de réponse depuis la session du 11 août, et les
+`:nom:` sont rendus par `TexteAvecEmotes`. Les cibles tactiles des commentaires
+(voter, répondre, envoyer) sont passées à 44 px au passage.
+
 ## Session du 31 août 2026 — Wuhan poussé et seedé en prod
 
 ### Les tier lists entrent dans la routine

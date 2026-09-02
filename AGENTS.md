@@ -79,8 +79,12 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - Ne pas "compléter" un deck partiel : si riftdecks affiche "Missing / Not available",
   le deck n'a pas de liste → on ne la fabrique pas.
 - **Avant tout seed/publication**, lancer le validateur :
-  `python -X utf8 scripts/validate-decklists.py` (exit 1 si une decklist ne correspond
-  pas à sa source brute = fabrication). Corriger ou supprimer tout MISMATCH.
+  `python -X utf8 scripts/validate-decklists.py`. Il sort en 1 sur QUATRE cas : une
+  decklist qui ne correspond pas à sa source brute (= fabrication), une réserve
+  Vendetta incomplète, un fichier illisible, et une liste sans source brute qui
+  n'est pas au relevé `data/decklists-inverifiables.json`. Ce relevé fige les
+  1 159 listes importées avant les scrapes ; `--ecrire-releve` le refige, JAMAIS
+  pour faire taire un refus — une liste neuve sans source se source ou se supprime.
 - Les articles Top 8 avec decklists codées en dur (`prisma/seed-top8-articles.ts`)
   doivent refléter le scrape fidèle, pas une couche approximée.
 
@@ -110,7 +114,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   une relève qui a maigri de plus de 10 %. `-- --force` passe outre le second, en
   connaissance de cause.
 - `npm run fix:names <doc.md>` → auto-corrige les noms Whisper (distance ≤ 2 vs DB cartes) ; `npm run validate:names` = gate (exit 1 si suspects).
-- `npm run validate:decks` → garde-fou anti-fabrication decklists (exit 1 si MISMATCH vs scrape brut).
+- `npm run validate:decks` → garde-fou anti-fabrication decklists (voir plus haut les quatre cas de refus) ; `npm run validate:regles` = ses tests Python. Les deux tournent en CI, dans un job à part.
 
 **Sources de vérité (où vit quoi) :**
 - Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (10 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
@@ -267,6 +271,20 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   `admin/block-editor.tsx`. La liste blanche refuse les types inconnus : en
   oublier une fait répondre « type inconnu » à tout enregistrement depuis
   l'admin, alors que la page publique, elle, s'affiche très bien.
+- **`deck-publication.ts` — passage unique pour PUBLIER un deck communautaire.**
+  `verifierCodeDeck` décode le code, résout les cartes par `resolveDeckCards` et
+  rejoue `erreursDeck`. Trois règles décidaient qu'un deck était valide : celle du
+  deckbuilder, celle du bouton « Publier » (plus courte), et celle de l'API, qui
+  lisait trois compteurs DÉCLARÉS par le navigateur et les ignorait s'ils
+  manquaient. Ne jamais recompter côté serveur autrement qu'ici.
+- **`json-ld.ts` — le seul échappement d'un bloc JSON-LD.** Le motif vivait dans
+  six pages et l'une écrivait `"<"` avec un seul antislash, qui ne remplace
+  rien. `urlLangue` et `langueSchema` posent l'adresse et la langue du schéma
+  depuis la langue rendue : ils étaient figés en français, y compris sous `/en`.
+- **`notifications.ts` — la cloche de la barre.** Elle ne stocke rien : tout se
+  recalcule à la lecture depuis les commentaires, les j'aime et les votes. Le seul
+  état est `User.notificationsVuesLe`. Elle ne peut PAS vivre dans le panneau
+  déroulant mobile, qui porte `overflow-y-auto` et rogne son menu.
 - `export-image.ts` — rendu paysage 2258x1518 dans un canvas côté navigateur,
   déclenché par le bouton « Exporter » d'une page de deck.
 - **`overlay-cam.ts` — passage unique pour le lien de caméra.** La règle (https
@@ -317,8 +335,12 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   4. élargit la CSP pour `/overlay/` seulement (iframe VDO.Ninja + images de
      n'importe quel hôte). Ne pas élargir ailleurs.
 - **`src/app/layout.tsx`** — coquille du site, `metadataBase`, polices, analytics.
-- **`entrypoint.sh`** — démarrage du conteneur : `node migrate.mjs` (vérifie les
-  18 tables et refuse une base vide ou incomplète) puis `node server.js`.
+- **`entrypoint.sh`** — démarrage du conteneur : `node migrate.mjs` puis
+  `node server.js`. **Deux échecs, deux codes de sortie** : sortie 1 = schéma vide
+  ou incomplet, bloquant (aucun redémarrage ne le répare, il faut un
+  `prisma db push`) ; sortie 2 = vérification impossible, toléré (c'est l'accroc
+  DB passager qui avait mis le site à terre en boucle de redémarrage le 16 août).
+  L'image porte un `HEALTHCHECK` qui appelle `/api/health`, lequel interroge la base.
 
 ## API
 
@@ -374,7 +396,8 @@ son travail.
 | `npm run maj:overlay` | ✅ | **La routine de l'overlay**, deux étapes. Demande la base. `-- --sec` pour un essai à blanc. |
 | `npm run maj:cartes-zh` | ✅ | **La routine des cartes chinoises** (~20 s), étape 1 de la précédente. Demande la base. |
 | `npm run validate:names` | ⚠️ | Demande la base. Corrige avec `npm run fix:names`. |
-| `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. |
+| `npm run validate:decks` | ⚠️ | **Dépasse 5 minutes.** Lancer avec une longue limite. Sort en 1 sur un MISMATCH, une réserve incomplète, un fichier illisible, ou une liste sans source brute hors relevé. |
+| `npm run validate:regles` | ✅ | Les 4 tests Python du validateur de decklists. |
 | `docker compose up -d db` | ✅ | PostgreSQL 16 local sur le port **5433**. |
 
 Lancer un seul test : `npx vitest run src/lib/deck-code.test.ts`
@@ -384,7 +407,14 @@ Un seul cas : `npx vitest run -t "nom du test"`
 98 avertissements. La commande fait désormais partie de la porte CI ; les
 avertissements restent à réduire sans les confondre avec des erreurs.
 
-**Trois pièges de plateforme déjà payés :**
+**Quatre pièges de plateforme déjà payés :**
+- **`export const revalidate` ne met AUCUN HTML en cache sur ce site.** Le layout
+  racine lit la langue dans les en-têtes (`headers()`), ce qui met TOUTES les
+  routes en rendu dynamique — mesuré au build, `/guides/glossaire` et `/offline`
+  compris. C'est le prix de « une seule page pour trois langues » et ça ne se
+  répare pas sans dupliquer les 44 pages sous un segment `[locale]`. Ne pas
+  ajouter de `revalidate` en croyant qu'il cache quelque chose ; pour épargner la
+  base, mémoriser la requête avec le `cache` de React, comme les pages de détail.
 - **`startsWith` de Prisma compare la casse sur PostgreSQL.** La base n'écrit pas
   toujours un nom pareil des deux côtés (« Rek'sai » la Légende, « Rek'Sai » ses
   champions) : passer `mode: "insensitive"` sur toute recherche de nom.
