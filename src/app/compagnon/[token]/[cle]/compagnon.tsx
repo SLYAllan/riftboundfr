@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Minus, Plus, RotateCcw } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
@@ -14,7 +14,7 @@ import {
 } from "@/lib/overlay-compagnon-client";
 import { creerFileEnvoi, type EtatEnvoi } from "@/lib/overlay-envoi";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
-import { applyStateUpdate, clampPoints, type OverlayStateData } from "@/lib/overlay";
+import { adopterChampsPartages, applyStateUpdate, clampPoints, type OverlayStateData } from "@/lib/overlay";
 import styles from "./compagnon.module.css";
 
 const champCls = "w-full min-h-11 rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
@@ -56,6 +56,14 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     { combiner: fusionnerPatchs, surEtat: setEtatEnvoi },
   ));
 
+  // Recopiée dans une ref pour la relecture : la lire depuis l'état ferait
+  // remonter l'effet — donc repartir le minuteur — à chaque bascule. L'écrire
+  // dans un effet et non au rendu, où React interdit de toucher une ref.
+  const preparationRef = useRef(false);
+  useEffect(() => {
+    preparationRef.current = nouveauMatchEnPreparation && !enMatch;
+  }, [nouveauMatchEnPreparation, enMatch]);
+
   const legende0 = state.players[0].legendName;
   const legende1 = state.players[1].legendName;
   const {
@@ -75,6 +83,45 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
     window.addEventListener("pagehide", auDepart);
     return () => window.removeEventListener("pagehide", auDepart);
   }, [cle, file, token]);
+
+  // Relecture de l'état, toutes les 3 s.
+  //
+  // Le téléphone ne relisait rien après l'ouverture de la page : une Légende, un
+  // pseudo ou un format changés depuis le tableau de bord n'y arrivaient jamais,
+  // et le joueur validait des manches sur des réglages périmés.
+  //
+  // Deux refus d'adopter, tous les deux nécessaires :
+  //   - pendant qu'un match SE PRÉPARE, rien ne bouge. Ce qui est saisi reste sur
+  //     le téléphone jusqu'à « Lancer la partie », et l'état de l'habillage porte
+  //     encore le match précédent : adopter effacerait la préparation ;
+  //   - tant que la file a du retard à pousser, on ne reprend rien, sinon un point
+  //     tapé revient en arrière sous le doigt le temps d'un aller-retour.
+  useEffect(() => {
+    let arrete = false;
+    let enVol = false;
+    async function relire() {
+      if (enVol || file.occupee() || preparationRef.current) return;
+      enVol = true;
+      try {
+        const r = await fetch(`/api/overlay/${token}`, { cache: "no-store" });
+        if (!r.ok) return;
+        const distant = (await r.json()) as OverlayStateData;
+        if (!distant || typeof distant !== "object" || !Array.isArray(distant.players)) return;
+        // Revérifié APRÈS l'attente : le joueur a pu marquer entre-temps.
+        if (arrete || file.occupee() || preparationRef.current) return;
+        setState((courant) => adopterChampsPartages(courant, applyStateUpdate(distant, {})));
+      } catch {
+        /* réseau : on retentera au prochain tour */
+      } finally {
+        enVol = false;
+      }
+    }
+    const minuteur = setInterval(() => void relire(), 3000);
+    return () => {
+      arrete = true;
+      clearInterval(minuteur);
+    };
+  }, [file, token]);
 
   function envoyer(patch: PatchCompagnon) {
     setState((courant) => applyStateUpdate(courant, patch));

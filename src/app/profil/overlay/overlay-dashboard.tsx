@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
-import { adopterEtatDistant, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
+import { adopterChampsPartages, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
 import { useNomsZh } from "@/hooks/use-noms-zh";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
@@ -236,7 +236,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         if (!corps?.state || typeof corps.state !== "object") return;
         // Revérifié APRÈS l'attente : le streamer a pu taper entre-temps.
         if (arrete || fileSauvegarde.occupee() || patchDiffere.current) return;
-        setState((courant) => adopterEtatDistant(courant, applyStateUpdate(corps.state!, {})));
+        setState((courant) => adopterChampsPartages(courant, applyStateUpdate(corps.state!, {})));
       } catch {
         /* réseau : on retentera au prochain tour */
       } finally {

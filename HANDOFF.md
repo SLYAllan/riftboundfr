@@ -85,13 +85,27 @@ elle n'en a plus qu'un. La clé du compagnon, qui ouvrait TOUT l'habillage — t
 logo, décor, liens de caméra — est bornée aux champs que son interface envoie
 (`validerPatchCompagnon`).
 
-**Le tableau de bord relit maintenant l'état, toutes les 3 s.** Le patch
-l'empêchait d'écraser le compagnon, mais il AFFICHAIT toujours un score périmé :
-il ne relisait rien après l'ouverture de la page, donc le streamer pilotait un
-0-0 pendant que l'écran montrait 2-1. Il n'adopte que les champs du compagnon
-(`adopterEtatDistant`, liste partagée avec la liste blanche de la route), et
-seulement quand il n'a rien en retard à pousser — sinon un nom en cours de
-frappe reviendrait en arrière sous les doigts.
+**Les deux outils relisent maintenant l'état, toutes les 3 s, DANS LES DEUX
+SENS.** Le patch empêchait le tableau de bord d'écraser le compagnon, mais aucun
+des deux ne relisait rien après l'ouverture de sa page : chacun pilotait une
+copie figée. Le streamer voyait 0-0 pendant que l'écran montrait 2-1, et le
+téléphone ne voyait jamais une Légende ou un format changés depuis le tableau
+de bord.
+
+`adopterChampsPartages` ne reprend que les champs PARTAGÉS — la liste vit dans
+`overlay.ts` et sert aussi de liste blanche à la route compagnon. Le titre, le
+chrono, le décor et les caméras appartiennent au tableau de bord seul.
+
+Trois refus d'adopter, tous nécessaires :
+
+- tant que la file a du retard à pousser, on ne reprend rien : un point tapé
+  reviendrait en arrière sous le doigt le temps d'un aller-retour ;
+- l'état est revérifié APRÈS l'attente réseau, pas seulement avant ;
+- côté compagnon, **rien n'est adopté pendant qu'un match SE PRÉPARE**. Ce qui
+  est saisi reste sur le téléphone jusqu'à « Lancer la partie », et l'état porte
+  encore le match précédent : adopter effacerait la préparation. Le drapeau se
+  lit dans une ref écrite par un effet — l'écrire au rendu fait sortir
+  `npm run lint` en erreur (« Cannot access refs during render »).
 
 **Vérifié dans OBS et au navigateur, le 2 septembre**, sur la source
 « Navigateur web » (`?compact=1`, 1600x900), Allan ni en direct ni en
@@ -105,7 +119,12 @@ enregistrement :
 - la clé du compagnon refuse le titre (400) et un lien de caméra (400), et marque
   toujours les points (200) ;
 - un point marqué au téléphone apparaît sur le tableau de bord en moins de 4,5 s ;
-- une saisie en cours dans le champ de ronde survit à trois tours de relecture.
+- une saisie en cours dans le champ de ronde survit à trois tours de relecture ;
+- dans l'autre sens : un format passé en BO5 et un pseudo écrits depuis le
+  tableau de bord arrivent sur le téléphone en moins de 4,5 s ;
+- match mené jusqu'à son terme sur le compagnon, puis écriture distante pendant
+  la préparation du suivant : la saisie du téléphone tient sur deux tours de
+  relecture. Revérifié après le passage de la ref au rendu vers un effet.
 
 L'état d'Allan a été copié avant, remis après, et la capture OBS d'après est
 identique à celle d'avant. **Le mode `cams` (avec webcams) n'a pas été vu** : sa

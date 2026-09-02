@@ -210,15 +210,19 @@ export const CHAMPS_COMPAGNON = ["format", "maxPoints", "points", "players", "ca
 export const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon"] as const;
 
 /**
- * L'état du tableau de bord, remis d'accord avec ce que le serveur porte.
+ * Un état local remis d'accord avec ce que le serveur porte, DANS LES DEUX SENS.
  *
- * Le tableau de bord ne relisait JAMAIS l'état après l'ouverture de la page :
- * un point marqué au téléphone n'y apparaissait pas, et le streamer voyait 0-0
- * pendant que l'écran du stream affichait 2-1. Il ne reprend que les champs du
- * compagnon — le titre, le décor, le chrono et les caméras restent à celui qui
- * les tient, sinon un réglage en cours de frappe reviendrait en arrière.
+ * Ni le tableau de bord ni le compagnon ne relisaient l'état après l'ouverture
+ * de leur page. Chacun pilotait donc une copie figée : un point marqué au
+ * téléphone n'apparaissait pas sur le tableau de bord, et une Légende changée
+ * sur le tableau de bord n'apparaissait pas sur le téléphone.
+ *
+ * Seuls les champs PARTAGÉS sont repris — ceux que les deux affichent et que les
+ * deux peuvent écrire. Le titre, le chrono, le décor et les caméras appartiennent
+ * au tableau de bord seul : les adopter ferait revenir en arrière un réglage en
+ * cours de frappe, et le compagnon ne les montre même pas.
  */
-export function adopterEtatDistant(local: OverlayStateData, distant: OverlayStateData): OverlayStateData {
+export function adopterChampsPartages(local: OverlayStateData, distant: OverlayStateData): OverlayStateData {
   return {
     ...local,
     format: distant.format,
