@@ -37,6 +37,11 @@ RUN mkdir -p .next/cache && chown -R nextjs:nodejs .next
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
+# Docker pose HOSTNAME = identifiant du conteneur, et le serveur standalone de
+# Next fait `process.env.HOSTNAME || "0.0.0.0"` : il n'écoutait donc QUE sur
+# l'adresse du conteneur. Traefik y arrive, mais pas la boucle locale — la sonde
+# se prenait « Connection refused » à chaque essai alors que le serveur tournait.
+ENV HOSTNAME=0.0.0.0
 # La sonde prouve que le serveur SERT. Elle ne juge pas la base : /api/health rend
 # 200 avec l'état de la base dans son corps, parce qu'un accroc d'une seconde ne
 # doit pas faire remplacer un conteneur qui sait servir en dégradé.

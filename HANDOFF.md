@@ -42,6 +42,28 @@ La sonde est maintenant `wget` de busybox, présent dans `node:24-alpine`, et
 essayée dans l'image pour les trois cas : 0 sur 2xx, 1 sur une erreur HTTP, 1 sur
 un refus de connexion, avec la raison en clair.
 
+**Et elle a révélé une ligne qui manquait au `Dockerfile` depuis toujours :
+`ENV HOSTNAME=0.0.0.0`.** Docker pose `HOSTNAME` à l'identifiant du conteneur, et
+le serveur standalone de Next fait `process.env.HOSTNAME || "0.0.0.0"` : il
+n'écoutait donc QUE sur l'adresse du conteneur. Traefik y arrive — d'où un site
+qui a toujours marché — mais rien sur la boucle locale. La sonde était la
+première chose à l'essayer, et elle se prenait « Connection refused » à chaque
+tour pendant que le journal affichait « Ready ». La ligne est dans l'image
+d'exemple officielle de Next ; elle manquait ici parce que rien n'avait jamais
+eu besoin de la boucle locale.
+
+Vérifié en construisant l'image et en la faisant tourner, les deux chemins :
+
+- base injoignable → `Vérif schéma impossible — on démarre quand même`, serveur
+  en route, `/api/health` rend 200 avec `base: "injoignable"`, conteneur
+  **healthy**, zéro échec consécutif ;
+- base réelle mais vide → `Schéma vide ou incomplet : le conteneur ne démarre
+  pas`, sortie **1**.
+
+La leçon, écrite ici parce qu'elle a coûté deux déploiements : **une commande
+ajoutée à une image se lance DANS l'image avant d'être poussée.** Les deux échecs
+viennent d'avoir supposé qu'une ligne de sonde ne pouvait pas mal tourner.
+
 **Et elle ne juge plus la base.** `/api/health` rend 200 avec l'état de la base
 dans son corps ; `?base=1` seulement rend 503. Lier la santé du CONTENEUR à la
 base recréait la boucle de redémarrage du 16 août un étage plus haut : un accroc
