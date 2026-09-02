@@ -85,7 +85,11 @@ data/videos/utrecht-day1.json
 data/videos/utrecht-day1-frames/
 data/videos/_*.log
 data/raw-scrapes/**/_*.log
-data/raw-scrapes/**/*.jsonl
+# Les .jsonl NE SONT PAS des intermédiaires : ce sont les seules sources brutes
+# de Changsha, Vancouver, Utrecht, Hartford, Sydney et du National S3 — 2 578
+# decklists publiées. Les ignorer rendait `validate:decks` rouge partout sauf sur
+# la machine qui avait scrapé : la CI comptait 3 737 listes invérifiables au lieu
+# de 1 159. 7,6 Mo, à côté des 23 726 .md déjà versionnés.
 dev-server.log
 
 # --- Nettoyage audit 26 juin : médias VOD + python + logs ---

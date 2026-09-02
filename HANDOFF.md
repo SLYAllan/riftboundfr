@@ -29,6 +29,32 @@ marquerait sinon tout comme lu, pour tout le monde, à chaque passage.
 d'un autre projet, et il veut aligner tout le schéma d'un coup, donc les
 supprimer.
 
+### Deux casses du 2 septembre, et leur cause
+
+**Coolify a refusé le déploiement sur le HEALTHCHECK que j'avais ajouté.** La
+commande était `node -e "fetch(...).then(r=>process.exit(...))"` : appeler
+`process.exit()` depuis le gestionnaire du fetch tue Node avant la fermeture de
+ses descripteurs. Résultat, sortie non nulle et AUCUNE sortie texte, à chaque
+essai — reproduit en local, code 127 et une assertion libuv. Le site n'est jamais
+tombé : Coolify n'a pas basculé, l'ancien conteneur servait toujours.
+
+La sonde est maintenant `wget` de busybox, présent dans `node:24-alpine`, et
+essayée dans l'image pour les trois cas : 0 sur 2xx, 1 sur une erreur HTTP, 1 sur
+un refus de connexion, avec la raison en clair.
+
+**Et elle ne juge plus la base.** `/api/health` rend 200 avec l'état de la base
+dans son corps ; `?base=1` seulement rend 503. Lier la santé du CONTENEUR à la
+base recréait la boucle de redémarrage du 16 août un étage plus haut : un accroc
+d'une seconde aurait fait remplacer un conteneur qui, lui, sait servir en dégradé.
+
+**La CI est passée rouge sur `validate:decks`** : 3 737 listes invérifiables
+contre 1 159 en local. Cause : `.gitignore` rangeait
+`data/raw-scrapes/**/*.jsonl` en « intermédiaires de scraping, local only ».
+Ce sont en fait les seules sources brutes de Changsha, Vancouver, Utrecht,
+Hartford et du National S3 — 2 578 decklists publiées. Le garde-fou
+anti-fabrication n'était donc vert que sur la machine qui avait scrapé. Les cinq
+fichiers (7,6 Mo) sont versionnés.
+
 ### La cloche de notifications
 
 `src/lib/notifications.ts`, `/api/notifications`, `src/components/notifications.tsx`.
