@@ -92,8 +92,13 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
           >
             <span className="opacity-60">{FIELD_LABELS[token.type] ?? token.type}:</span>
             {token.value}
-            <button onClick={() => removeToken(i)} className="ml-0.5 opacity-60 hover:opacity-100">
-              <X size={10} />
+            <button
+              type="button"
+              onClick={() => removeToken(i)}
+              aria-label={`${t("Retirer le filtre")} ${FIELD_LABELS[token.type] ?? token.type} : ${token.value}`}
+              className="ml-0.5 flex min-h-11 min-w-11 items-center justify-center opacity-60 hover:opacity-100"
+            >
+              <X size={10} aria-hidden />
             </button>
           </span>
         ))}
@@ -110,10 +115,12 @@ export function SearchBar({ value, onChange, parsed }: SearchBarProps) {
 
         {(value || parsed.tokens.length > 0) && (
           <button
+            type="button"
             onClick={() => { onChange(""); inputRef.current?.focus(); }}
-            className="text-ink-muted hover:text-ink shrink-0"
+            aria-label={t("Effacer la recherche")}
+            className="flex min-h-11 min-w-11 shrink-0 items-center justify-center text-ink-muted hover:text-ink"
           >
-            <X size={15} />
+            <X size={15} aria-hidden />
           </button>
         )}
       </div>

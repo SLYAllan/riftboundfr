@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
             autoComplete="current-password"
             className="w-full px-4 py-3 rounded-lg bg-surface-raised border border-hairline text-ink placeholder:text-ink-muted focus:border-arcane"
           />
-          {error && <p className="text-error text-sm">{error}</p>}
+          {error && <p className="text-error-light text-sm">{error}</p>}
           <button
             type="submit"
             disabled={loading}

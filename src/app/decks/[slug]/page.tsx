@@ -17,16 +17,30 @@ import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { chiffrerDeck } from "@/lib/cardnexus";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
-import { tr } from "@/lib/i18n-server";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const chargerDeck = cache((slug: string) =>
+  prisma.deck.findUnique({
+    where: { slug },
+    include: {
+      cards: { include: { card: true }, orderBy: [{ section: "asc" }, { card: { name: "asc" } }] },
+      sourceArticle: { select: { slug: true, title: true } },
+    },
+  }),
+);
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const deck = await prisma.deck.findUnique({ where: { slug } });
+  const deck = await chargerDeck(slug);
   if (!deck) return { title: "Deck introuvable" };
   const legend = displayLegendName(deck.legendName);
   const title = `Deck ${deck.title}`;
@@ -35,25 +49,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` - ${deck.tournamentContext}` : ""}. Guide complet : gameplan, mulligan et matchups.`;
   const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trimEnd()}…` : rawDesc;
   const image = `/api/decklist-image?slug=${slug}`;
-  return {
+  return metaTraduite({
     title,
     description,
     alternates: { canonical: `/decks/${slug}` },
     openGraph: { type: "article", siteName: "Riftbound France", locale: "fr_FR", title, description, images: [image] },
     twitter: { card: "summary_large_image", title, description, images: [image] },
-  };
+  });
 }
 
 export default async function DeckDetailPage({ params }: PageProps) {
   const t = await tr();
+  const langue = await langueCourante();
   const { slug } = await params;
-  const deck = await prisma.deck.findUnique({
-    where: { slug },
-    include: {
-      cards: { include: { card: true }, orderBy: [{ section: "asc" }, { card: { name: "asc" } }] },
-      sourceArticle: { select: { slug: true, title: true } },
-    },
-  });
+  const deck = await chargerDeck(slug);
   if (!deck || !deck.published) notFound();
 
   const [setTagRow] = await prisma.$queryRaw<Array<{ setTag: string }>>`
@@ -154,10 +163,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: deck.title,
-    url: `${SITE}/decks/${slug}`,
+    url: urlLangue(SITE, `/decks/${slug}`, langue),
     about: `Deck Riftbound ${displayLegendName(deck.legendName)} (${deck.format})`,
-    inLanguage: "fr",
-    isPartOf: { "@type": "WebSite", name: "Riftbound France", url: SITE },
+    inLanguage: langueSchema(langue),
+    isPartOf: { "@type": "WebSite", name: "Riftbound France", url: urlLangue(SITE, "/", langue) },
   };
 
   return (

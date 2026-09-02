@@ -111,7 +111,7 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
             </span>
           </div>
           {erreur && (
-            <p role="alert" className="text-sm text-error">
+            <p role="alert" className="text-sm text-error-light">
               {erreur}
             </p>
           )}

@@ -22,23 +22,31 @@ import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
 import { diffDecks } from "@/lib/deck-diff";
 import { chiffrerDeck } from "@/lib/cardnexus";
-import { tr } from "@/lib/i18n-server";
+import { tr, metaTraduite } from "@/lib/i18n-server";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ code: string }>;
 }
 
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const chargerDeckPartage = cache((code: string) =>
+  prisma.communityDeck.findUnique({
+    where: { shareCode: code },
+    include: { history: { orderBy: { version: "desc" }, take: 10 } },
+  }),
+);
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { code } = await params;
-  const deck = await prisma.communityDeck.findUnique({
-    where: { shareCode: code },
-    select: { title: true, legendName: true, description: true, authorName: true, domains: true },
-  });
+  const deck = await chargerDeckPartage(code);
   if (!deck) return { title: "Deck introuvable" };
   const title = `${deck.title} - ${displayLegendName(deck.legendName)}`;
   const description = deck.description || `Deck ${deck.title} par ${deck.authorName}`;
   const image = `/api/decklist-image?share=${code}`;
-  return {
+  return metaTraduite({
     title,
     description,
     openGraph: {
@@ -53,19 +61,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       images: [image],
     },
-  };
+  });
 }
 
 export default async function CommunityDeckPage({ params }: PageProps) {
   const t = await tr();
   const { code } = await params;
 
-  const deck = await prisma.communityDeck.findUnique({
-    where: { shareCode: code },
-    include: {
-      history: { orderBy: { version: "desc" }, take: 10 },
-    },
-  });
+  const deck = await chargerDeckPartage(code);
   if (!deck) notFound();
 
   await prisma.communityDeck.update({

@@ -36,7 +36,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
   const copies = items.reduce((s, i) => s + i.quantity, 0);
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       <h1 className="text-2xl font-bold" style={{ fontFamily: "var(--font-rajdhani), sans-serif" }}>{binder.name}</h1>
       <p className="mb-6 mt-1 text-sm text-ink-muted">
         Classeur partagé par {binder.user.username} · {items.length} cartes · {copies} exemplaires
@@ -63,7 +63,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
           ))}
         </div>
       )}
-    </main>
+    </div>
   );
 }
 

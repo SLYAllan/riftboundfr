@@ -2,8 +2,8 @@
 
 import Link from "@/components/lien";
 import { ChevronRight } from "lucide-react";
-import { useT } from "@/components/i18n-provider";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { useLangue, useT } from "@/components/i18n-provider";
+import { jsonLdHtml, urlLangue } from "@/lib/json-ld";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
 
@@ -22,6 +22,7 @@ export interface Crumb {
  */
 export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: string }) {
   const t = useT();
+  const langue = useLangue();
   const all: Crumb[] = [{ name: "Accueil", href: "/" }, ...items].map((c) => ({ ...c, name: t(c.name) }));
   const jsonLd = {
     "@context": "https://schema.org",
@@ -30,7 +31,8 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      item: `${SITE}${c.href}`,
+      // L'adresse suit la langue rendue : le fil d'Ariane de /en désignait la page française.
+      item: urlLangue(SITE, c.href, langue),
     })),
   };
 

@@ -34,7 +34,7 @@ export default async function CollectionPage() {
 
   if (!user) {
     return (
-      <main className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-8">
         <h1 className="font-display text-2xl font-bold">Ma collection</h1>
         <div className="mt-6 rounded-xl border border-hairline bg-surface-raised/40 p-8 text-center">
           <p className="mb-4 text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
@@ -43,7 +43,7 @@ export default async function CollectionPage() {
             className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-canvas hover:bg-arcane/90"
           >{t("Se connecter avec Discord")}</Link>
         </div>
-      </main>
+      </div>
     );
   }
 
@@ -103,7 +103,7 @@ export default async function CollectionPage() {
   }
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       <CollectionDashboard
         cards={cards}
         sets={sets}
@@ -112,7 +112,7 @@ export default async function CollectionPage() {
         pockets={pockets}
         maxBinders={MAX_BINDERS}
       />
-    </main>
+    </div>
   );
 }
 

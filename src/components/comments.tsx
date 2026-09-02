@@ -136,7 +136,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
               </button>
             </div>
             {erreurEnvoi && (
-              <p role="alert" className="mt-2 text-xs text-error">
+              <p role="alert" className="mt-2 text-xs text-error-light">
                 Impossible d&apos;enregistrer votre commentaire.
               </p>
             )}
@@ -261,7 +261,7 @@ function CommentThread({
           <button onClick={() => vote(1)} aria-label={t("Voter pour")} className="text-ink-muted hover:text-arcane transition-colors">
             <ChevronUp size={18} />
           </button>
-          <span className={`text-xs font-bold tabular-nums ${score > 0 ? "text-arcane" : score < 0 ? "text-error" : "text-ink-muted"}`}>
+          <span className={`text-xs font-bold tabular-nums ${score > 0 ? "text-arcane" : score < 0 ? "text-error-light" : "text-ink-muted"}`}>
             {score}
           </span>
           <button onClick={() => vote(-1)} aria-label={t("Voter contre")} className="text-ink-muted hover:text-error transition-colors">
@@ -284,7 +284,7 @@ function CommentThread({
           </p>
 
           {erreurVote && (
-            <p role="alert" className="mt-1 text-xs text-error">
+            <p role="alert" className="mt-1 text-xs text-error-light">
               Impossible d&apos;enregistrer votre vote.
             </p>
           )}
@@ -324,7 +324,7 @@ function CommentThread({
                 </div>
               </div>
               {erreurReponse && (
-                <p role="alert" className="mt-1 text-xs text-error">
+                <p role="alert" className="mt-1 text-xs text-error-light">
                   Impossible d&apos;enregistrer votre réponse.
                 </p>
               )}

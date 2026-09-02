@@ -108,4 +108,18 @@ export default async function CartesPage({ searchParams }: PageProps) {
   );
 }
 
-export const generateMetadata = () => metaTraduite(metadata);
+/**
+ * Les 24 cartes changent d'une page à l'autre, mais toutes annonçaient `/cartes`
+ * en canonical : Google ne voyait donc qu'une page sur quarante.
+ *
+ * Chaque page numérotée se désigne elle-même. Les vues FILTRÉES, elles, se
+ * regroupent bien sur `/cartes` : ce sont des combinaisons de la même liste, pas
+ * des pages à indexer une par une.
+ */
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const page = Math.max(1, Number(params.page) || 1);
+  const filtre = ["q", "set", "type", "rarity", "domain", "mechanic", "sort"].some((c) => params[c]);
+  const canonical = !filtre && page > 1 ? `/cartes?page=${page}` : "/cartes";
+  return metaTraduite({ ...metadata, alternates: { ...metadata.alternates, canonical } });
+}

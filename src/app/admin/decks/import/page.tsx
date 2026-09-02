@@ -217,7 +217,7 @@ export default function ImportDeckPage() {
           </div>
 
           {error && (
-            <div className="rounded-lg bg-error/5 border border-error/20 p-3 text-sm text-error whitespace-pre-line">
+            <div className="rounded-lg bg-error/5 border border-error/20 p-3 text-sm text-error-light whitespace-pre-line">
               <AlertCircle size={14} className="inline mr-1" />
               {error}
             </div>

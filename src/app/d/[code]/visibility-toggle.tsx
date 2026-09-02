@@ -51,7 +51,7 @@ export function VisibilityToggle({ shareCode, initialIsPublic }: Props) {
         {isPublic ? "Public" : "Non listé"}
       </button>
       {erreur && (
-        <span role="alert" className="text-xs text-error">
+        <span role="alert" className="text-xs text-error-light">
           Impossible d&apos;enregistrer la visibilité.
         </span>
       )}

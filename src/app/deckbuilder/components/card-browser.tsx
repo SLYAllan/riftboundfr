@@ -88,10 +88,15 @@ function CardTile({
 
   return (
     <div className="group relative">
+      {/* Le nom du bouton venait de l'image : un lecteur d'écran annonçait
+          « Vilemaw » sans dire que le bouton ajoute la carte. Et la carte
+          assombrie « quantité maximale » restait cliquable, sans le dire. */}
       <button
         type="button"
         onClick={onAddMain}
-        className="block w-full rounded-lg text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
+        aria-label={atMax ? `${card.name} : ${t("quantité maximale atteinte")}` : `${t("Ajouter au deck")} : ${card.name}`}
+        disabled={atMax}
+        className="block w-full rounded-lg text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane disabled:cursor-not-allowed"
         draggable
         onDragStart={(e) => {
           e.dataTransfer.setData("card-id", card.id);

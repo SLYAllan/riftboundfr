@@ -18,16 +18,22 @@ import { Calendar, MapPin, Users } from "lucide-react";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { CommentsSection } from "@/components/comments";
-import { tr, metaTraduite } from "@/lib/i18n-server";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const chargerArticle = cache((slug: string) => prisma.article.findUnique({ where: { slug } }));
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = await prisma.article.findUnique({ where: { slug } });
+  const article = await chargerArticle(slug);
   if (!article) return { title: "Article introuvable" };
   const rawDescription = article.excerpt || `${article.title} - Riftbound France`;
   const description =
@@ -349,8 +355,9 @@ function buildBestOf(
 
 export default async function ArticleDetailPage({ params }: PageProps) {
   const t = await tr();
+  const langue = await langueCourante();
   const { slug } = await params;
-  const article = await prisma.article.findUnique({ where: { slug } });
+  const article = await chargerArticle(slug);
   if (!article || !article.published) notFound();
 
   const blocks = (article.blocks as ArticleBlock[]) ?? [];
@@ -412,8 +419,8 @@ export default async function ArticleDetailPage({ params }: PageProps) {
       url: "https://riftboundfrance.fr",
       logo: { "@type": "ImageObject", url: "https://riftboundfrance.fr/logorbfr.png" },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}/articles/${slug}` },
-    inLanguage: "fr",
+    mainEntityOfPage: { "@type": "WebPage", "@id": urlLangue(SITE, `/articles/${slug}`, langue) },
+    inLanguage: langueSchema(langue),
   };
   // Le BreadcrumbList est emis par le composant Breadcrumbs ci-dessous (evite le doublon).
 

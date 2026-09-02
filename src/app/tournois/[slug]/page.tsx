@@ -14,8 +14,9 @@ import { Users, MapPin, Calendar, Swords, ArrowLeft, ArrowRight, BookOpen } from
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
-import { tr } from "@/lib/i18n-server";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -38,10 +39,13 @@ async function getTournamentContexts(): Promise<string[]> {
   return contexts.map((c) => c.tournamentContext);
 }
 
-async function findTournamentContext(slug: string): Promise<string | null> {
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const findTournamentContext = cache(async (slug: string): Promise<string | null> => {
   const contexts = await getTournamentContexts();
   return contexts.find((context) => slugify(context) === slug) ?? null;
-}
+});
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -55,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const meta = bits.length ? ` (${bits.join(", ")})` : "";
   const title = `${name} - Tournoi Riftbound`;
   const description = `Résultats, top 8 et decklists du tournoi Riftbound ${name}${meta}.`;
-  return {
+  return metaTraduite({
     title,
     description,
     alternates: { canonical: `/tournois/${slug}` },
@@ -67,11 +71,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       images: ["/img/og-default.png"],
     },
-  };
+  });
 }
 
 export default async function TournamentDetailPage({ params, searchParams }: PageProps) {
   const t = await tr();
+  const langue = await langueCourante();
   const { slug } = await params;
   const sp = await searchParams;
   const legendFilter = sp.legend;
@@ -231,12 +236,12 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     "@context": "https://schema.org",
     "@type": "Event",
     name,
-    url: `${SITE}/tournois/${slug}`,
+    url: urlLangue(SITE, `/tournois/${slug}`, langue),
     ...(date ? { startDate: date } : {}),
     ...(location ? { location: { "@type": "Place", name: location } } : {}),
     ...(playerCount ? { maximumAttendeeCapacity: playerCount } : {}),
     description: `Tournoi compétitif Riftbound : résultats, Top 8 et decklists${location ? ` (${location})` : ""}.`,
-    inLanguage: "fr",
+    inLanguage: langueSchema(langue),
   };
 
   return (

@@ -26,8 +26,9 @@ import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
-import { tr } from "@/lib/i18n-server";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { jsonLdHtml, langueSchema } from "@/lib/json-ld";
+import { cache } from "react";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
@@ -132,14 +133,17 @@ async function ficheFromDb(legendName: string): Promise<Fiche> {
 
 // Fiche rédigée si elle existe, sinon repli sur la base. `null` = ni l'une ni l'autre,
 // la page n'existe pas.
-async function resolveLegend(
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const resolveLegend = cache(async (
   slug: string,
-): Promise<{ fiche: Fiche; deckCount: number } | null> {
+): Promise<{ fiche: Fiche; deckCount: number } | null> => {
   const [fiche, fromDecks] = await Promise.all([getFiche(slug), legendWithDecks(slug)]);
   if (fiche) return { fiche, deckCount: fromDecks?.deckCount ?? 0 };
   if (!fromDecks) return null;
   return { fiche: await ficheFromDb(fromDecks.legendName), deckCount: fromDecks.deckCount };
-}
+});
 
 // S/A/B/C comme /tier-list et /legendes : un seul vocabulaire de classement.
 // « Tier » reste réservé au niveau des tournois.
@@ -281,7 +285,7 @@ export async function generateMetadata({
     ? "decklists de tournoi, plan de jeu, cartes clés, forces et faiblesses."
     : "decklists de tournoi, cartes clés et résultats mesurés en compétition.";
   const description = `Les meilleurs decks ${name} à Riftbound : ${archetype}${promise}`.slice(0, 158);
-  return {
+  return metaTraduite({
     title: { absolute: `${title} | Riftbound France` },
     description,
     alternates: { canonical: `/legendes/${slug}` },
@@ -293,7 +297,7 @@ export async function generateMetadata({
       description,
       images: ["/img/og-default.png"],
     },
-  };
+  });
 }
 
 function Section({
@@ -416,6 +420,7 @@ function CardTile({
 
 export default async function LegendePage({ params }: { params: Promise<{ slug: string }> }) {
   const t = await tr();
+  const langue = await langueCourante();
   const { slug } = await params;
   const resolved = await resolveLegend(slug);
   if (!resolved) notFound();
@@ -654,7 +659,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     headline: `Decks ${name} : les meilleures listes et le guide`,
     ...(lastUpdated ? { dateModified: lastUpdated.toISOString() } : {}),
     description: fiche.archetype ?? `Guide de la Légende ${name} à Riftbound.`,
-    inLanguage: "fr",
+    inLanguage: langueSchema(langue),
     about: "Riftbound",
     author: { "@type": "Person", name: "Allan", url: "https://twitter.com/solary_allan" },
     publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },

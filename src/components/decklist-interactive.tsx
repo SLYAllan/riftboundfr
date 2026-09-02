@@ -222,7 +222,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
           <h3 id="export-panel-title" className="text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             Exporter - {deckName}
           </h3>
-          <button onClick={onClose} aria-label={t("Fermer")} className="text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
+          <button onClick={onClose} aria-label={t("Fermer")} className="flex min-h-11 min-w-11 items-center justify-center text-ink-muted hover:text-ink text-xl leading-none">&times;</button>
         </div>
 
         <div className="flex border-b border-hairline overflow-x-auto">
@@ -232,7 +232,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
               onClick={() => setActiveTab(tab.key)}
               aria-pressed={activeTab === tab.key}
               className={cn(
-                "flex items-center gap-1.5 px-3 py-2.5 text-xs font-semibold transition-colors relative whitespace-nowrap",
+                "flex min-h-11 items-center gap-1.5 px-3 py-2.5 text-xs font-semibold transition-colors relative whitespace-nowrap",
                 activeTab === tab.key ? "text-arcane" : "text-ink-muted hover:text-ink",
               )}
             >
@@ -249,7 +249,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
               <textarea readOnly value={textCode} rows={12} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink" />
               <button
                 onClick={() => copyToClipboard(textCode, "code")}
-                className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
+                className="absolute top-2 right-2 flex min-h-11 items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
               >
                 {copied === "code" ? <Check size={11} /> : <Copy size={11} />}
                 {copied === "code" ? "Copié !" : "Copier"}
@@ -264,7 +264,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
                 <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink break-all" />
                 <button
                   onClick={() => copyToClipboard(ttsCode, "tts")}
-                  className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
+                  className="absolute top-2 right-2 flex min-h-11 items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
                 >
                   {copied === "tts" ? <Check size={11} /> : <Copy size={11} />}
                   {copied === "tts" ? "Copié !" : "Copier"}

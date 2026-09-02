@@ -13,18 +13,24 @@ import { displayLegendName, formatDate } from "@/lib/utils";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
-import { tr } from "@/lib/i18n-server";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity";
 import { chargerPrix, lienProduit } from "@/lib/cardnexus";
-import { jsonLdHtml } from "@/lib/json-ld";
+import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
+// Une seule requête pour la page ET ses métadonnées : Next appelle
+// generateMetadata puis le composant, et la même ligne partait deux fois en
+// base à chaque visite. `cache` de React les réunit le temps d'une requête.
+const chargerCarte = cache((id: string) => prisma.card.findUnique({ where: { riftboundId: id } }));
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
-  const card = await prisma.card.findUnique({ where: { riftboundId: id } });
+  const card = await chargerCarte(id);
   if (!card) return { title: "Carte introuvable" };
   // Title/description orientés recherche FR : les internautes cherchent "<nom> riftbound"
   // et "riftbound fr / french cards" (cf. Search Console). On met le nom + "Carte Riftbound
@@ -44,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Anti index-bloat : les variantes (alt-art / overnumbered / signature) ne sont pas
   // indexées (l'impression principale l'est) - elles partagent le même contenu jouable.
   const isVariant = card.alternateArt || card.overnumbered || card.signature;
-  return {
+  return metaTraduite({
     title: { absolute: title },
     description,
     robots: isVariant ? { index: false, follow: true } : undefined,
@@ -57,13 +63,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       images: card.imageUrl ? [card.imageUrl] : ["/img/og-default.png"],
     },
-  };
+  });
 }
 
 export default async function CardDetailPage({ params }: PageProps) {
   const t = await tr();
+  const langue = await langueCourante();
   const { id } = await params;
-  const card = await prisma.card.findUnique({ where: { riftboundId: id } });
+  const card = await chargerCarte(id);
   if (!card) notFound();
 
   const errata = getErrata(card.name);
@@ -120,7 +127,8 @@ export default async function CardDetailPage({ params }: PageProps) {
     description: card.textPlain?.replace(/\s+/g, " ").trim() || `${card.name}, carte ${card.type} du set ${card.setName} de Riftbound.`,
     category: card.supertype ?? card.type,
     brand: { "@type": "Brand", name: "Riftbound" },
-    url: `${SITE}/cartes/${card.riftboundId}`,
+    url: urlLangue(SITE, `/cartes/${card.riftboundId}`, langue),
+    inLanguage: langueSchema(langue),
     additionalProperty: [
       { "@type": "PropertyValue", name: "Set", value: card.setName },
       { "@type": "PropertyValue", name: "Rareté", value: card.rarity },

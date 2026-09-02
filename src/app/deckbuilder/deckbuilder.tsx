@@ -676,7 +676,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
   return (
     <div className="flex h-[calc(100dvh-69px)] flex-col">
       {erreurMaj && (
-        <div role="alert" className="flex items-center gap-2 border-b border-hairline bg-surface px-4 py-2 text-sm text-error">
+        <div role="alert" className="flex items-center gap-2 border-b border-hairline bg-surface px-4 py-2 text-sm text-error-light">
           <span className="min-w-0 flex-1">{erreurMaj}</span>
           <button onClick={() => setErreurMaj(null)} aria-label="Fermer" className="text-ink-muted hover:text-ink">
             <X size={14} />
@@ -713,7 +713,7 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
             <button onClick={() => setShowImport(true)} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-secondary hover:text-ink hover:bg-surface-raised transition-colors">
               <Upload size={13} /> Importer
             </button>
-            <button onClick={clearDeck} disabled={isEmpty} aria-label={t("Vider le deck")} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error hover:bg-error/10 transition-colors disabled:opacity-30">
+            <button onClick={clearDeck} disabled={isEmpty} aria-label={t("Vider le deck")} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs text-ink-muted hover:text-error-light hover:bg-error/10 transition-colors disabled:opacity-30">
               <X size={13} />
             </button>
           </div>
