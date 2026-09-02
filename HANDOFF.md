@@ -5,28 +5,29 @@
 L'audit est dans `docs/AUDIT-SITE-2026-09-02-CODEX.md` : 3 défauts critiques,
 10 élevés, 22 moyens, 6 faibles. Tous traités sauf un, cadré plus bas.
 
-### À FAIRE AVANT LE DÉPLOIEMENT — trois colonnes en base
+### Les trois colonnes de la cloche sont EN PROD
 
-La cloche de notifications a besoin de trois colonnes. `prisma db push` ne
-convient PAS ici : la base locale porte aussi des tables `Bulk*` d'un autre
-projet, et `push` veut les supprimer. Le SQL à passer, en local comme en prod :
+Passées le 2 septembre 2026 par `scripts/maj-notifications-schema.mts`, sur la
+base de production (26 169 decks publiés, 336 comptes) via le tunnel public :
 
-```sql
-ALTER TABLE "User" ADD COLUMN IF NOT EXISTS "notificationsVuesLe" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE "CommunityDeckLike" ADD COLUMN IF NOT EXISTS "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE "CommentVote" ADD COLUMN IF NOT EXISTS "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
-CREATE INDEX IF NOT EXISTS "CommunityDeckLike_createdAt_idx" ON "CommunityDeckLike"("createdAt");
-CREATE INDEX IF NOT EXISTS "CommentVote_commentId_idx" ON "CommentVote"("commentId");
-CREATE INDEX IF NOT EXISTS "CommentVote_createdAt_idx" ON "CommentVote"("createdAt");
-UPDATE "User" SET "notificationsVuesLe" = CURRENT_TIMESTAMP;
+```
+npx tsx --env-file=.env.prod.local scripts/maj-notifications-schema.mts --hote 178.104.237.33:15432 --sec
+npx tsx --env-file=.env.prod.local scripts/maj-notifications-schema.mts --hote 178.104.237.33:15432
 ```
 
-Le dernier `UPDATE` compte : sans lui, les j'aime et les votes existants
-prennent l'heure de la migration comme date de création, et chaque membre
-découvrirait un arriéré de fausses notifications à sa première visite.
+`--sec` d'abord : il annonce la base visée, son nombre de decks et de comptes,
+et ce qui manque. Le `--hote` existe parce que `.env.prod.local` porte
+`127.0.0.1:5435`, une adresse où rien n'écoute — la prod se joint par le tunnel.
+Le mot de passe reste dans le fichier, le script ne l'ouvre ni ne l'affiche.
 
-Le déploiement du CODE avant ce SQL fait répondre 500 à `/api/notifications` ;
-la cloche se cache alors d'elle-même, elle ne casse aucune page.
+Résultat : 3 colonnes créées, 3 index, et les 336 comptes partent avec la
+cloche vide. Le script est rejouable : il ne recrée rien, et **il ne remet les
+dates de lecture à zéro que si la colonne vient d'être créée** — la rejouer
+marquerait sinon tout comme lu, pour tout le monde, à chaque passage.
+
+`prisma db push` reste à proscrire ici : la base locale porte aussi les tables
+d'un autre projet, et il veut aligner tout le schéma d'un coup, donc les
+supprimer.
 
 ### La cloche de notifications
 
