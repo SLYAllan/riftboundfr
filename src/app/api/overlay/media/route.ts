@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
-import { getOrCreateOverlayState } from "@/lib/overlay-server";
-import { TYPES_IMAGE, estGenreMedia, TAILLE_MAX_MEDIA, typeReel } from "@/lib/overlay";
+import { getOrCreateOverlayState, saveState } from "@/lib/overlay-server";
+import { TYPES_IMAGE, estGenreMedia, TAILLE_MAX_MEDIA, typeReel, CLE_URL_MEDIA } from "@/lib/overlay";
 
 export const dynamic = "force-dynamic";
 
@@ -59,6 +59,10 @@ export async function DELETE(req: Request) {
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const genre = new URL(req.url).searchParams.get("kind") ?? "logo";
   if (!estGenreMedia(genre)) return NextResponse.json({ error: "Genre d’image inconnu." }, { status: 400 });
+  // Les octets ET l'adresse partent ensemble. Le tableau de bord vidait l'adresse
+  // de son côté puis lançait ce DELETE sans en lire la réponse : quand il échouait,
+  // l'image restait en base pour toujours, invisible et impossible à retirer.
   await prisma.overlayMedia.deleteMany({ where: { userId: user.id, kind: genre } });
-  return NextResponse.json({ ok: true });
+  const etat = await saveState(user.id, { event: { [CLE_URL_MEDIA[genre]]: "" } });
+  return NextResponse.json({ ok: true, state: etat });
 }

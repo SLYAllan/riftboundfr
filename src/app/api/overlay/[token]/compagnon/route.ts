@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { saveStateByToken } from "@/lib/overlay-server";
 import { cleCompagnonValide } from "@/lib/overlay-compagnon";
-import { TAILLE_MAX_PATCH_OVERLAY, validerPatchOverlay } from "@/lib/overlay-validation";
+import { TAILLE_MAX_PATCH_OVERLAY, validerPatchCompagnon } from "@/lib/overlay-validation";
 import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -32,7 +32,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ token: 
   } catch {
     return NextResponse.json({ error: "JSON invalide" }, { status: 400 });
   }
-  const validation = validerPatchOverlay(patch);
+  const validation = validerPatchCompagnon(patch);
   if (!validation.ok) return NextResponse.json({ error: validation.error }, { status: 400 });
   const merged = await saveStateByToken(token, validation.value);
   if (!merged) return NextResponse.json({ error: "Habillage introuvable" }, { status: 404 });

@@ -8,8 +8,11 @@ export interface LegendeOverlay {
   domains: string[];
 }
 
-export type GenreListe = "legendes" | "terrains" | "champions";
-export type ErreursListes = Partial<Record<GenreListe, string>>;
+// Une clé de champions PAR JOUEUR. Avec une seule, le chargement réussi d'un
+// joueur effaçait l'échec de l'autre : la bannière disparaissait et sa liste
+// restait vide sans rien dire.
+export type GenreListe = "legendes" | "terrains" | "champions0" | "champions1";
+export type ErreursListes = Partial<Record<"legendes" | "terrains" | "champions", string>>;
 
 /**
  * Les trois listes que remplissent le tableau de bord et le compagnon : Légendes,
@@ -30,7 +33,7 @@ export function useListesOverlay(legendes: [string, string], messageErreur: stri
   const [listeLegendes, setListeLegendes] = useState<LegendeOverlay[]>([]);
   const [terrains, setTerrains] = useState<string[]>([]);
   const [champions, setChampions] = useState<[string[], string[]]>([[], []]);
-  const [erreurs, setErreurs] = useState<ErreursListes>({});
+  const [erreurs, setErreurs] = useState<Partial<Record<GenreListe, string>>>({});
   const requetes = useRef<[AbortController | null, AbortController | null]>([null, null]);
 
   const marquer = useCallback((genre: GenreListe, message?: string) => {
@@ -76,7 +79,7 @@ export function useListesOverlay(legendes: [string, string], messageErreur: stri
       requetes.current[i] = controleur;
       void charger<string>(
         `/api/legends/champions?legend=${encodeURIComponent(nom)}`,
-        "champions",
+        i === 0 ? "champions0" : "champions1",
         (liste) => setChampions((c) => (i === 0 ? [liste, c[1]] : [c[0], liste])),
         controleur.signal,
       );
@@ -106,7 +109,13 @@ export function useListesOverlay(legendes: [string, string], messageErreur: stri
     legendes: listeLegendes,
     terrains,
     champions,
-    erreurs,
+    // Les deux côtés n'affichent qu'une bannière « Réessayer » pour les champions :
+    // on rend le premier échec en cours, et le bouton relance les deux joueurs.
+    erreurs: {
+      legendes: erreurs.legendes,
+      terrains: erreurs.terrains,
+      champions: erreurs.champions0 ?? erreurs.champions1,
+    } as ErreursListes,
     chargerLegendes,
     chargerTerrains,
     rechargerChampions: () => {

@@ -1,26 +1,15 @@
-import { applyStateUpdate, manchesPourGagner, type OverlayStateData } from "./overlay";
+import { manchesPourGagner, type OverlayStateData, type PatchOverlay } from "./overlay";
 
-export type PatchCompagnon = Parameters<typeof applyStateUpdate>[1];
+export type PatchCompagnon = PatchOverlay;
+
+// Le tableau de bord empile lui aussi des patchs depuis qu'il a cessé de poster
+// l'état entier. La fusion vit donc dans `overlay.ts`, avec le reste de la forme
+// de l'état, et n'existe qu'une fois.
+export { fusionnerPatchs } from "./overlay";
 
 export interface MemoireManche {
   points: OverlayStateData["points"];
   manches: [number, number];
-}
-
-export function fusionnerPatchs(a: PatchCompagnon, b: PatchCompagnon): PatchCompagnon {
-  const joueurs = a.players || b.players;
-  return {
-    ...a,
-    ...b,
-    event: a.event || b.event ? { ...a.event, ...b.event } : undefined,
-    points: a.points || b.points ? { ...a.points, ...b.points } : undefined,
-    players: joueurs
-      ? [
-          { ...a.players?.[0], ...b.players?.[0] },
-          { ...a.players?.[1], ...b.players?.[1] },
-        ]
-      : undefined,
-  } as PatchCompagnon;
 }
 
 export function bornerEtape(etape: number): 0 | 1 | 2 {

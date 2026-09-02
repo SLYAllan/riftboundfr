@@ -14,6 +14,15 @@ export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"
  * n'ont pas les mêmes découpes, un seul fond pour tous tomberait à côté. */
 export type GenreMedia = "logo" | "background" | "backgroundNocam" | "backgroundCompact";
 
+/** Où vit l'adresse d'une image envoyée, dans `event`. Partagée par le tableau de
+ * bord et par la route qui supprime : les deux doivent viser le même champ. */
+export const CLE_URL_MEDIA: Record<GenreMedia, "logoUrl" | "backgroundUrl" | "backgroundNocamUrl" | "backgroundCompactUrl"> = {
+  logo: "logoUrl",
+  background: "backgroundUrl",
+  backgroundNocam: "backgroundNocamUrl",
+  backgroundCompact: "backgroundCompactUrl",
+};
+
 export function estGenreMedia(v: string): v is GenreMedia {
   return v === "logo" || v === "background" || v === "backgroundNocam" || v === "backgroundCompact";
 }
@@ -177,6 +186,34 @@ export function clampPoints(n: number, max: number): number {
 }
 
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };
+
+export type PatchOverlay = DeepPartial<OverlayStateData> & { players?: Array<Partial<OverlayPlayer>> };
+
+/**
+ * Deux patchs en un, le second l'emporte champ par champ.
+ *
+ * Le tableau de bord postait l'ÉTAT ENTIER. Le compagnon, lui, poste des patchs :
+ * un score marqué au téléphone pendant que le streamer changeait un réglage depuis
+ * une copie plus ancienne de l'état revenait en arrière à l'écran. Les deux
+ * envoient maintenant des patchs, et la file d'envoi les empile avec cette
+ * fonction quand plusieurs attendent leur tour.
+ */
+export function fusionnerPatchs(a: PatchOverlay, b: PatchOverlay): PatchOverlay {
+  const sortie: PatchOverlay = { ...a, ...b };
+  if (a.event || b.event) sortie.event = { ...a.event, ...b.event };
+  if (a.points || b.points) sortie.points = { ...a.points, ...b.points };
+  // `cards` porte des tableaux (listes, index) : on remplace, on ne concatène pas.
+  if (a.cards || b.cards) sortie.cards = { ...a.cards, ...b.cards };
+  if (a.players || b.players) {
+    // Le cast tient à l'intersection du type : `players` y est à la fois un tuple
+    // profond et un tableau de Partial, et TypeScript ne réconcilie pas les deux.
+    sortie.players = [
+      { ...a.players?.[0], ...b.players?.[0] },
+      { ...a.players?.[1], ...b.players?.[1] },
+    ] as PatchOverlay["players"];
+  }
+  return sortie;
+}
 
 // Remise en forme de l'état.
 //

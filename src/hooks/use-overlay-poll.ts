@@ -8,20 +8,33 @@ export function useOverlayPoll(token: string, intervalMs = 1500) {
 
   useEffect(() => {
     let cancelled = false;
+    // Un seul appel en vol. Sans ce verrou, une réponse lente arrivait APRÈS la
+    // suivante et remettait à l'écran un score, une manche ou une carte périmés,
+    // en plein direct. La requête en cours est aussi coupée au démontage.
+    let enCours = false;
+    let controleur: AbortController | null = null;
+
     async function tick() {
+      if (enCours) return;
+      enCours = true;
+      controleur = new AbortController();
       try {
-        const r = await fetch(`/api/overlay/${token}`, { cache: "no-store" });
+        const r = await fetch(`/api/overlay/${token}`, { cache: "no-store", signal: controleur.signal });
         if (!r.ok) return;
         const data = (await r.json()) as OverlayStateData;
         if (!cancelled) setState(data);
       } catch {
-        /* réseau : on retentera au prochain tick */
+        /* réseau ou requête coupée : on retentera au prochain tick */
+      } finally {
+        enCours = false;
       }
     }
-    tick();
-    timer.current = setInterval(tick, intervalMs);
+
+    void tick();
+    timer.current = setInterval(() => void tick(), intervalMs);
     return () => {
       cancelled = true;
+      controleur?.abort();
       if (timer.current) clearInterval(timer.current);
     };
   }, [token, intervalMs]);

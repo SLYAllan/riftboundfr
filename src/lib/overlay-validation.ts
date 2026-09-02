@@ -1,6 +1,9 @@
-import type { OverlayPlayer, OverlayStateData } from "./overlay";
+import type { PatchOverlay } from "./overlay";
 
-export type PatchOverlay = Partial<OverlayStateData> & { players?: Array<Partial<OverlayPlayer>> };
+// Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
+// il en existait ici une seconde définition, plus plate, et les deux avaient
+// commencé à ne plus décrire la même chose.
+export type { PatchOverlay };
 type ValidationOverlay = { ok: true; value: PatchOverlay } | { ok: false; error: string };
 
 const LIMITES = {
@@ -179,4 +182,30 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
   }
 
   return { ok: true, value: value as PatchOverlay };
+}
+
+/**
+ * Champs que le compagnon a le droit d'écrire.
+ *
+ * Sa clé voyage dans un lien collé dans OBS : un viewer attentif finit par la
+ * lire. Avec le validateur général, cette clé ouvrait TOUT l'habillage — le titre
+ * du tournoi, le logo, le décor, les liens de caméra. Le compagnon n'envoie que
+ * le score, les manches, les joueurs et le format : il n'a besoin de rien d'autre.
+ */
+const CHAMPS_COMPAGNON = ["format", "maxPoints", "points", "players", "cards"];
+const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon"];
+
+export function validerPatchCompagnon(value: unknown): ValidationOverlay {
+  if (!estObjet(value)) return { ok: false, error: "Le patch overlay doit être un objet JSON" };
+  const inconnu = champsConnus(value, CHAMPS_COMPAGNON, "compagnon");
+  if (inconnu) return { ok: false, error: inconnu };
+  if (Array.isArray(value.players)) {
+    for (const [i, joueur] of value.players.entries()) {
+      if (!estObjet(joueur)) return { ok: false, error: `players.${i} doit être un objet` };
+      const champ = champsConnus(joueur, CHAMPS_JOUEUR_COMPAGNON, `compagnon players.${i}`);
+      if (champ) return { ok: false, error: champ };
+    }
+  }
+  // Les bornes et les types restent ceux du validateur général : une seule règle.
+  return validerPatchOverlay(value);
 }

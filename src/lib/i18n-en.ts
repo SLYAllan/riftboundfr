@@ -203,6 +203,7 @@ export const EN: Record<string, string> = {
   "Depuis un fichier": "From a file",
   "Envoi…": "Uploading…",
   "L’envoi de l’image a échoué.": "The image upload failed.",
+  "L’image n’a pas pu être retirée.": "The image could not be removed.",
   "Cliquez de nouveau pour la retirer de l’écran": "Click again to take it off screen",
   "Votre propre décor": "Your own overlay art",
   "Votre propre décor (avec cadres caméra)": "Your own overlay art (with camera frames)",

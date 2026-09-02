@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
+import { fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
 import { useNomsZh } from "@/hooks/use-noms-zh";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
@@ -167,14 +168,17 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const [erreurLien, setErreurLien] = useState<string | null>(null);
   const [origin, setOrigin] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const etatDiffere = useRef<OverlayStateData | null>(null);
+  const patchDiffere = useRef<PatchOverlay | null>(null);
   const [erreur, setErreur] = useState<string | null>(null);
-  const [fileSauvegarde] = useState(() => creerFileEnvoi<OverlayStateData>(async (etat) => {
+  // On envoie un PATCH, jamais l'état entier. Le tableau de bord postait tout : un
+  // point marqué depuis le compagnon pendant qu'on changeait un réglage ici partait
+  // avec l'ancienne copie de l'état et revenait en arrière à l'écran, en direct.
+  const [fileSauvegarde] = useState(() => creerFileEnvoi<PatchOverlay>(async (patch) => {
     try {
       const reponse = await fetch("/api/overlay/state", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(etat),
+        body: JSON.stringify(patch),
         keepalive: true,
       });
       if (!reponse.ok) {
@@ -188,7 +192,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
       setErreur(t("Connexion perdue : rien n’est parti à l’écran."));
       throw cause;
     }
-  }));
+  }, { combiner: fusionnerPatchs }));
 
   useEffect(() => {
     queueMicrotask(() => setOrigin(window.location.origin));
@@ -211,28 +215,27 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
   useEffect(() => {
     const auDepart = () => {
-      if (!etatDiffere.current) return;
+      if (!patchDiffere.current) return;
       if (saveTimer.current) clearTimeout(saveTimer.current);
-      fileSauvegarde.ajouter(etatDiffere.current);
-      etatDiffere.current = null;
+      fileSauvegarde.ajouter(patchDiffere.current);
+      patchDiffere.current = null;
     };
     window.addEventListener("pagehide", auDepart);
     return () => window.removeEventListener("pagehide", auDepart);
   }, [fileSauvegarde]);
 
-  // Le dernier état porte tout ce qui précède, et la file attend la réponse avant
-  // d'envoyer le suivant. Deux POST pleins ne peuvent donc plus s'écraser à l'envers.
-  function update(patch: Parameters<typeof applyStateUpdate>[1]) {
-    setState((s) => {
-      const next = applyStateUpdate(s, patch);
-      etatDiffere.current = next;
-      if (saveTimer.current) clearTimeout(saveTimer.current);
-      saveTimer.current = setTimeout(() => {
-        etatDiffere.current = null;
-        fileSauvegarde.ajouter(next);
-      }, 300);
-      return next;
-    });
+  // L'affichage prend le changement tout de suite ; le serveur ne reçoit que les
+  // champs touchés, empilés pendant les 300 ms d'attente. La file garde un seul
+  // envoi en vol, donc deux POST ne peuvent pas arriver à l'envers.
+  function update(patch: PatchOverlay) {
+    patchDiffere.current = patchDiffere.current ? fusionnerPatchs(patchDiffere.current, patch) : patch;
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(() => {
+      const aEnvoyer = patchDiffere.current;
+      patchDiffere.current = null;
+      if (aEnvoyer) fileSauvegarde.ajouter(aEnvoyer);
+    }, 300);
+    setState((s) => applyStateUpdate(s, patch));
   }
 
   const overlayUrl = `${origin}${lien(`/overlay/${token}`)}`;
@@ -304,11 +307,21 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
     }
   }
 
-  /** Retire une image envoyée : l'adresse dans l'état, et les octets en base. */
-  function retirerMedia(genre: GenreMedia) {
-    update({ event: genre === "logo" ? { logoUrl: "" } : { [cleFond(genre)]: "" } });
-    if (genre === "logo") setBrouillonLogo("");
-    void fetch(`/api/overlay/media?kind=${genre}`, { method: "DELETE" }).catch(() => {});
+  /** Retire une image envoyée. Le serveur efface les octets ET l'adresse d'un bloc :
+   * les vider ici sans attendre laissait l'image en base quand l'appel échouait. */
+  async function retirerMedia(genre: GenreMedia) {
+    setErreurMedia(null);
+    try {
+      const r = await fetch(`/api/overlay/media?kind=${genre}`, { method: "DELETE" });
+      if (!r.ok) {
+        setErreurMedia(t("L’image n’a pas pu être retirée."));
+        return;
+      }
+      update({ event: genre === "logo" ? { logoUrl: "" } : { [cleFond(genre)]: "" } });
+      if (genre === "logo") setBrouillonLogo("");
+    } catch {
+      setErreurMedia(t("L’image n’a pas pu être retirée."));
+    }
   }
   const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
   // Coercition volontaire : un état sauvé sous l'ANCIENNE forme portait `auto` en

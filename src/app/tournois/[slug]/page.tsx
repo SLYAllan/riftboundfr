@@ -15,6 +15,7 @@ import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import { tr } from "@/lib/i18n-server";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -240,7 +241,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
 
   return (
     <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(eventJsonLd) }} />
       {/* Back nav + fil d'Ariane */}
       <Breadcrumbs
         items={[

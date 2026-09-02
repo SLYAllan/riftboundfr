@@ -16,6 +16,7 @@ import type { Metadata } from "next";
 import { tr } from "@/lib/i18n-server";
 import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity";
 import { chargerPrix, lienProduit } from "@/lib/cardnexus";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -142,7 +143,7 @@ export default async function CardDetailPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cardJsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(cardJsonLd) }} />
       <Breadcrumbs
         items={[
           { name: "Cartes", href: "/cartes" },

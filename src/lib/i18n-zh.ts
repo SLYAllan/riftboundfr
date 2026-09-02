@@ -18,6 +18,7 @@ export const ZH: Record<string, string> = {
   "Impossible de charger cette liste.": "無法載入這份清單。",
   "Impossible de créer un nouveau lien. Réessayez.": "無法產生新連結，請再試一次。",
   "L’envoi de l’image a échoué.": "圖片上傳失敗。",
+  "L’image n’a pas pu être retirée.": "圖片移除失敗。",
   "Overlay de stream": "直播 Overlay",
   "Cette page pilote ce qui s’affiche à l’écran pendant votre diffusion. Tout ce que vous changez ici part en direct, sans rien relancer.": "這個頁面控制直播時畫面上顯示的內容。你在這裡改的每一項都會即時生效，不必重開任何程式。",
   "Rien n’est enregistré.": "沒有任何內容存下來。",

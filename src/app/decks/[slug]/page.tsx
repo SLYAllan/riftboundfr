@@ -18,6 +18,7 @@ import { chiffrerDeck } from "@/lib/cardnexus";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr } from "@/lib/i18n-server";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -161,7 +162,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deckJsonLd).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(deckJsonLd) }} />
       <Breadcrumbs
         items={[
           { name: "Decks", href: "/decks" },

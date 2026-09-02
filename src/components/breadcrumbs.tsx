@@ -3,6 +3,7 @@
 import Link from "@/components/lien";
 import { ChevronRight } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
 
@@ -40,7 +41,7 @@ export function Breadcrumbs({ items, className }: { items: Crumb[]; className?: 
     >
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
       <ol className="flex flex-wrap items-center gap-1">
         {all.map((c, i) => {

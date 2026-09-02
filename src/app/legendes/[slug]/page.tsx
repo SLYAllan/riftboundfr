@@ -27,6 +27,7 @@ import { legendWithDecks } from "@/lib/legend-fiche";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr } from "@/lib/i18n-server";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
@@ -701,7 +702,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
       <Breadcrumbs
         items={[

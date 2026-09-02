@@ -37,4 +37,8 @@ RUN mkdir -p .next/cache && chown -R nextjs:nodejs .next
 USER nextjs
 EXPOSE 3000
 ENV PORT=3000
+# Sans sonde, un conteneur dont la base est tombée restait « healthy » pendant que
+# toutes les pages répondaient en erreur. Le délai de démarrage laisse à Next le
+# temps d'ouvrir son port avant le premier appel.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=45s --retries=3 CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||3000)+'/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 CMD ["./entrypoint.sh"]

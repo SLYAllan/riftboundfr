@@ -17,6 +17,7 @@ import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { CommentsSection } from "@/components/comments";
 import { tr, metaTraduite } from "@/lib/i18n-server";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -398,11 +399,10 @@ export default async function ArticleDetailPage({ params }: PageProps) {
     inLanguage: "fr",
   };
   // Le BreadcrumbList est emis par le composant Breadcrumbs ci-dessous (evite le doublon).
-  const jsonLdHtml = JSON.stringify(articleJsonLd).replace(/</g, "\u003c");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(articleJsonLd) }} />
       <Breadcrumbs
         items={[
           { name: "Actualités", href: "/articles" },
