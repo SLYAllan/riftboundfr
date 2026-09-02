@@ -85,7 +85,12 @@ export default async function CardDetailPage({ params }: PageProps) {
         },
       },
     },
-    take: 30,
+    // Le tri fin (mis en avant, puis le classement, qui est du TEXTE en base) se
+    // fait plus bas en mémoire. Mais couper 30 lignes au hasard AVANT ce tri
+    // pouvait écarter le deck vedette ou le vainqueur. On trie donc déjà ici sur
+    // ce que la base sait trier, et on prend large avant de garder les cinq.
+    orderBy: [{ deck: { featured: "desc" } }, { deck: { createdAt: "desc" } }],
+    take: 120,
   });
 
   function parsePlacement(p: string | null): number {

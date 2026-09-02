@@ -9,6 +9,7 @@ import { CollectionDashboard, type DashCard, type DashSet, type PocketCard } fro
 import { MAX_BINDERS } from "@/app/api/collection/binders/route";
 import type { Metadata } from "next";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { ORDRE_SETS } from "@/lib/collection";
 
 const metadata: Metadata = {
   title: { absolute: "Ma collection Riftbound - classeurs, progression et valeur" },
@@ -18,7 +19,6 @@ const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const SET_ORDER = ["VEN", "OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 // Une page de classeur = 9 pochettes. C'est l'aperçu montré sur chaque classeur.
 const POCKETS = 9;
 
@@ -77,7 +77,7 @@ export default async function CollectionPage() {
 
   const presentSets = new Set(cards.map((c) => c.set));
   const rank = (setId: string) => {
-    const i = SET_ORDER.indexOf(setId);
+    const i = ORDRE_SETS.indexOf(setId);
     return i === -1 ? 99 : i;
   };
   const countOf = (setId: string) => cards.filter((c) => c.set === setId).length;

@@ -6,13 +6,13 @@ import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 import Link from "@/components/lien";
+import { ORDRE_SETS } from "@/lib/collection";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur partagé - Riftbound France" },
   robots: { index: false, follow: false },
 };
 
-const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function SharedBinderPage({ params }: { params: Promise<{ shareSlug: string }> }) {
   const t = await tr();
@@ -30,7 +30,7 @@ export default async function SharedBinderPage({ params }: { params: Promise<{ s
   if (!binder) notFound();
 
   const items = [...binder.items].sort((a, b) => {
-    const ia = SET_ORDER.indexOf(a.card.set), ib = SET_ORDER.indexOf(b.card.set);
+    const ia = ORDRE_SETS.indexOf(a.card.set), ib = ORDRE_SETS.indexOf(b.card.set);
     return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || (a.card.collectorNumber ?? 0) - (b.card.collectorNumber ?? 0);
   });
   const copies = items.reduce((s, i) => s + i.quantity, 0);

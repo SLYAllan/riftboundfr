@@ -37,8 +37,43 @@ export async function POST(req: NextRequest) {
   }
 
   const { articleId, communityDeckId, body, parentId } = await req.json();
-  if ((!articleId && !communityDeckId) || !body?.trim()) {
+  if (!body?.trim()) {
     return NextResponse.json({ error: "Champs requis" }, { status: 400 });
+  }
+  // EXACTEMENT une cible. Avec « au moins une », un commentaire pouvait porter
+  // les deux, apparaître sur un article ET sur un deck, et n'être modérable
+  // depuis aucun des deux.
+  if (Boolean(articleId) === Boolean(communityDeckId)) {
+    return NextResponse.json({ error: "Un commentaire porte sur un article ou sur un deck, pas les deux" }, { status: 400 });
+  }
+
+  // La cible doit exister : sinon on écrivait des lignes rattachées à rien.
+  const cibleExiste = articleId
+    ? await prisma.article.findUnique({ where: { id: articleId }, select: { id: true } })
+    : await prisma.communityDeck.findUnique({ where: { id: communityDeckId }, select: { id: true } });
+  if (!cibleExiste) {
+    return NextResponse.json({ error: "Contenu introuvable" }, { status: 404 });
+  }
+
+  // Une réponse reste sous SON commentaire. Rien ne vérifiait que le parent
+  // portait la même cible : une réponse pouvait se coller sous un fil d'un autre
+  // article, où elle s'affichait sans contexte.
+  if (parentId) {
+    const parent = await prisma.comment.findUnique({
+      where: { id: parentId },
+      select: { articleId: true, communityDeckId: true, parentId: true },
+    });
+    const memeCible = parent
+      && parent.articleId === (articleId || null)
+      && parent.communityDeckId === (communityDeckId || null);
+    if (!memeCible) {
+      return NextResponse.json({ error: "Commentaire parent introuvable" }, { status: 400 });
+    }
+    // Un seul niveau de réponses, comme l'affichage : le fil ne rend que
+    // `replies` des commentaires racine, une réponse de réponse disparaissait.
+    if (parent.parentId) {
+      return NextResponse.json({ error: "On ne répond pas à une réponse" }, { status: 400 });
+    }
   }
 
   const trimmedBody = body.trim().slice(0, 2000);

@@ -11,12 +11,23 @@ import { NextResponse } from "next/server";
  */
 const buckets = new Map<string, Map<string, number[]>>();
 
-/** IP client fiable : x-real-ip (posé par Traefik/Coolify) puis 1er hop de x-forwarded-for.
- *  Accepte Request ou NextRequest (NextRequest hérite de Request). */
+/**
+ * IP du client, telle que le proxy nous la donne.
+ *
+ * `x-real-ip` est posée par Traefik/Coolify et remplace toujours celle qu'un
+ * client aurait écrite. Le repli lit le DERNIER hop de `x-forwarded-for`, pas le
+ * premier : un proxy AJOUTE l'adresse qu'il voit à la fin de la liste, donc le
+ * premier élément est celui que le client a écrit lui-même. Le lire revenait à
+ * laisser n'importe qui changer d'identité à chaque requête et passer sous
+ * toutes les limites, en faisant grossir les compteurs en mémoire au passage.
+ *
+ * Accepte Request ou NextRequest (NextRequest hérite de Request).
+ */
 export function clientIp(req: Request): string {
+  const transmises = req.headers.get("x-forwarded-for")?.split(",") ?? [];
   return (
     req.headers.get("x-real-ip")?.trim() ||
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    transmises[transmises.length - 1]?.trim() ||
     "unknown"
   );
 }

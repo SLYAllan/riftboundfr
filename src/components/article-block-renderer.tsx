@@ -3,6 +3,7 @@
 import type { ArticleBlock, DecklistCard } from "@/types";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { SponsorCard } from "@/components/sponsor-card";
+import { tailleImage } from "@/lib/images-articles";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { TournamentBracket } from "@/components/tournament-bracket";
 import { useT } from "@/components/i18n-provider";
@@ -87,7 +88,17 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
                 className={block.width === "narrow" ? "my-6 mx-auto max-w-sm" : "my-6 mx-auto max-w-3xl"}
               >
                 <div className="overflow-hidden rounded-card">
-                  <img src={block.src} alt={t(block.alt)} loading="lazy" decoding="async" className="w-full object-cover" />
+                  {/* width/height servent au seul rapport de forme (la largeur reste
+                      w-full) : sans eux le navigateur ne peut rien réserver et le
+                      texte saute sous chaque illustration au chargement. */}
+                  <img
+                    src={block.src}
+                    alt={t(block.alt)}
+                    loading="lazy"
+                    decoding="async"
+                    {...(tailleImage(block.src) ?? {})}
+                    className="h-auto w-full object-cover"
+                  />
                 </div>
                 {block.caption && (
                   <figcaption className="mt-2 text-center text-sm text-ink-muted">{t(block.caption)}</figcaption>
@@ -125,7 +136,7 @@ export function ArticleBlockRenderer({ blocks, resolvedDecks, deckbuilderCodes, 
                   <p className="mt-3 whitespace-pre-line text-ink-secondary">{block.content}</p>
                   {block.media && (
                     <div className="mt-3 overflow-hidden rounded-2xl border border-hairline">
-                      <img src={block.media} alt={block.mediaAlt ?? ""} loading="lazy" decoding="async" className="w-full object-cover" />
+                      <img src={block.media} alt={block.mediaAlt ?? ""} loading="lazy" decoding="async" {...(tailleImage(block.media) ?? {})} className="h-auto w-full object-cover" />
                     </div>
                   )}
                   {block.date && <div className="mt-3 text-sm text-ink-muted">{block.date}</div>}

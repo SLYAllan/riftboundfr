@@ -9,13 +9,13 @@ import { getBinderQuantities } from "@/lib/collection-server";
 import { BinderExplorer, type BinderCard, type BinderSetMeta } from "@/components/collection/binder-explorer";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 import { impressionsAchat } from "@/lib/cardnexus";
+import { ORDRE_SETS } from "@/lib/collection";
 
 const metadata: Metadata = {
   title: { absolute: "Classeur - Ma collection Riftbound" },
   robots: { index: false, follow: false },
 };
 
-const SET_ORDER = ["OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export default async function BinderPage({ params }: { params: Promise<{ binderId: string }> }) {
   const t = await tr();
@@ -52,7 +52,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
     .filter((s) => presentSets.has(s.setId))
     .map((s) => ({ setId: s.setId, name: s.name }))
     .sort((a, b) => {
-      const ia = SET_ORDER.indexOf(a.setId), ib = SET_ORDER.indexOf(b.setId);
+      const ia = ORDRE_SETS.indexOf(a.setId), ib = ORDRE_SETS.indexOf(b.setId);
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     });
 
