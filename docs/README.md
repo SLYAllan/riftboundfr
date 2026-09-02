@@ -26,6 +26,7 @@ Où trouver quoi. Rangé le 25 août 2026.
 | `AUDIT-SITE-2026-08-14.md` | Audit fonctionnel et UI/UX vérifié : routes, responsive, accessibilité, corrections locales et limites du contrôle. |
 | `AUDIT-DECKLISTS-2026-08-21.md` | Audit des sources de decklists : nouvelles listes, rangs modifiés et contrôle Vendetta. |
 | `AUDIT-RESPONSIVE-2026-08-24.md` | Balayage des 43 pages à quatre tailles d'écran : ce qui débordait, ce qui n'était que du bruit de mesure. |
+| `AUDIT-SITE-2026-09-02-CODEX.md` | Audit par sous-agents Codex : 3 critiques, 10 élevés, 22 moyens, 6 faibles. Tous traités sauf le rendu dynamique (constat 11), cadré dans `HANDOFF.md`. |
 
 ## Archive
 
