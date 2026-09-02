@@ -85,9 +85,32 @@ elle n'en a plus qu'un. La clé du compagnon, qui ouvrait TOUT l'habillage — t
 logo, décor, liens de caméra — est bornée aux champs que son interface envoie
 (`validerPatchCompagnon`).
 
-**Non vérifié dans OBS.** Les changements touchent l'écriture, pas le rendu, et
-je n'ai pas voulu changer l'état de l'habillage d'Allan pour prendre une capture.
-À passer sous OBS avant le prochain direct.
+**Le tableau de bord relit maintenant l'état, toutes les 3 s.** Le patch
+l'empêchait d'écraser le compagnon, mais il AFFICHAIT toujours un score périmé :
+il ne relisait rien après l'ouverture de la page, donc le streamer pilotait un
+0-0 pendant que l'écran montrait 2-1. Il n'adopte que les champs du compagnon
+(`adopterEtatDistant`, liste partagée avec la liste blanche de la route), et
+seulement quand il n'a rien en retard à pousser — sinon un nom en cours de
+frappe reviendrait en arrière sous les doigts.
+
+**Vérifié dans OBS et au navigateur, le 2 septembre**, sur la source
+« Navigateur web » (`?compact=1`, 1600x900), Allan ni en direct ni en
+enregistrement :
+
+- le décor compact rend les deux cadres Légende, leurs champs de bataille et la
+  rangée de points ; le relevé tourne à 1,5 s, 37 appels tous en 200, 19 à 26 ms ;
+- l'ancien défaut reproduit à la main : l'état entier renvoyé depuis une copie
+  périmée ramène le point de 1 à 0. Avec le patch, le point tient et le réglage
+  passe quand même ;
+- la clé du compagnon refuse le titre (400) et un lien de caméra (400), et marque
+  toujours les points (200) ;
+- un point marqué au téléphone apparaît sur le tableau de bord en moins de 4,5 s ;
+- une saisie en cours dans le champ de ronde survit à trois tours de relecture.
+
+L'état d'Allan a été copié avant, remis après, et la capture OBS d'après est
+identique à celle d'avant. **Le mode `cams` (avec webcams) n'a pas été vu** : sa
+source OBS pointe le décor compact, et changer son URL aurait touché à son
+installation.
 
 ### Le seul constat de l'audit NON corrigé — et pourquoi
 

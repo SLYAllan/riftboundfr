@@ -1,4 +1,4 @@
-import type { PatchOverlay } from "./overlay";
+import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, type PatchOverlay } from "./overlay";
 
 // Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
 // il en existait ici une seconde définition, plus plate, et les deux avaient
@@ -192,17 +192,14 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
  * du tournoi, le logo, le décor, les liens de caméra. Le compagnon n'envoie que
  * le score, les manches, les joueurs et le format : il n'a besoin de rien d'autre.
  */
-const CHAMPS_COMPAGNON = ["format", "maxPoints", "points", "players", "cards"];
-const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon"];
-
 export function validerPatchCompagnon(value: unknown): ValidationOverlay {
   if (!estObjet(value)) return { ok: false, error: "Le patch overlay doit être un objet JSON" };
-  const inconnu = champsConnus(value, CHAMPS_COMPAGNON, "compagnon");
+  const inconnu = champsConnus(value, [...CHAMPS_COMPAGNON], "compagnon");
   if (inconnu) return { ok: false, error: inconnu };
   if (Array.isArray(value.players)) {
     for (const [i, joueur] of value.players.entries()) {
       if (!estObjet(joueur)) return { ok: false, error: `players.${i} doit être un objet` };
-      const champ = champsConnus(joueur, CHAMPS_JOUEUR_COMPAGNON, `compagnon players.${i}`);
+      const champ = champsConnus(joueur, [...CHAMPS_JOUEUR_COMPAGNON], `compagnon players.${i}`);
       if (champ) return { ok: false, error: champ };
     }
   }

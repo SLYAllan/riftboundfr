@@ -76,6 +76,10 @@ export function creerFileEnvoi<T>(
       bloquee = false;
       void vider();
     },
+    /** Vrai tant qu'un envoi est en vol ou en attente. Le tableau de bord s'en
+     *  sert pour ne PAS adopter l'état du serveur pendant qu'il a du retard à
+     *  pousser : il reverrait revenir ce que le streamer vient de changer. */
+    occupee: () => enCours || attente !== undefined,
     quandCalme: () => (enCours ? new Promise<void>((resoudre) => calme.push(resoudre)) : Promise.resolve()),
     quandVide: () => (!enCours && attente === undefined ? Promise.resolve() : new Promise<void>((resoudre) => vide.push(resoudre))),
     prendreEnAttente(): T | null {

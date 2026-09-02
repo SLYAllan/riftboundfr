@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
-import { fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
+import { adopterEtatDistant, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
 import { useNomsZh } from "@/hooks/use-noms-zh";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
@@ -212,6 +212,43 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
 
   // Le minuteur de 300 ms survivait au démontage et tirait sur un composant parti.
   useEffect(() => () => { if (saveTimer.current) clearTimeout(saveTimer.current); }, []);
+
+  // Relecture de l'état, toutes les 3 s.
+  //
+  // Le tableau de bord ne relisait jamais rien après l'ouverture de la page : un
+  // point marqué au téléphone n'y apparaissait pas, et le streamer pilotait un
+  // score qu'il croyait à 0-0 pendant que l'écran du stream affichait 2-1.
+  //
+  // On n'adopte QUE les champs du compagnon, et seulement quand on n'a rien en
+  // retard à pousser : sinon un nom en cours de frappe reviendrait en arrière
+  // sous les doigts. Un seul appel en vol, comme pour l'habillage — une réponse
+  // lente arrivant après la suivante remettrait un score périmé.
+  useEffect(() => {
+    let arrete = false;
+    let enVol = false;
+    async function relire() {
+      if (enVol || fileSauvegarde.occupee() || patchDiffere.current) return;
+      enVol = true;
+      try {
+        const r = await fetch("/api/overlay/state", { cache: "no-store" });
+        if (!r.ok) return;
+        const corps = (await r.json()) as { state?: OverlayStateData };
+        if (!corps?.state || typeof corps.state !== "object") return;
+        // Revérifié APRÈS l'attente : le streamer a pu taper entre-temps.
+        if (arrete || fileSauvegarde.occupee() || patchDiffere.current) return;
+        setState((courant) => adopterEtatDistant(courant, applyStateUpdate(corps.state!, {})));
+      } catch {
+        /* réseau : on retentera au prochain tour */
+      } finally {
+        enVol = false;
+      }
+    }
+    const minuteur = setInterval(() => void relire(), 3000);
+    return () => {
+      arrete = true;
+      clearInterval(minuteur);
+    };
+  }, [fileSauvegarde]);
 
   useEffect(() => {
     const auDepart = () => {

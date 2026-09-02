@@ -198,6 +198,43 @@ export type PatchOverlay = DeepPartial<OverlayStateData> & { players?: Array<Par
  * envoient maintenant des patchs, et la file d'envoi les empile avec cette
  * fonction quand plusieurs attendent leur tour.
  */
+/**
+ * Ce que le COMPAGNON a le droit d'écrire, et lui seul en cours de match.
+ *
+ * Deux lectures s'appuient dessus : la liste blanche de la route compagnon, et
+ * l'adoption de l'état distant par le tableau de bord. Les recopier chacune de
+ * son côté les aurait fait diverger, et l'une des deux aurait fini par laisser
+ * passer un champ que l'autre refuse.
+ */
+export const CHAMPS_COMPAGNON = ["format", "maxPoints", "points", "players", "cards"] as const;
+export const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon"] as const;
+
+/**
+ * L'état du tableau de bord, remis d'accord avec ce que le serveur porte.
+ *
+ * Le tableau de bord ne relisait JAMAIS l'état après l'ouverture de la page :
+ * un point marqué au téléphone n'y apparaissait pas, et le streamer voyait 0-0
+ * pendant que l'écran du stream affichait 2-1. Il ne reprend que les champs du
+ * compagnon — le titre, le décor, le chrono et les caméras restent à celui qui
+ * les tient, sinon un réglage en cours de frappe reviendrait en arrière.
+ */
+export function adopterEtatDistant(local: OverlayStateData, distant: OverlayStateData): OverlayStateData {
+  return {
+    ...local,
+    format: distant.format,
+    maxPoints: distant.maxPoints,
+    points: { ...distant.points },
+    cards: { ...distant.cards },
+    players: [0, 1].map((i) => {
+      const joueur = { ...local.players[i] };
+      for (const cle of CHAMPS_JOUEUR_COMPAGNON) {
+        (joueur as Record<string, unknown>)[cle] = distant.players[i][cle];
+      }
+      return joueur;
+    }) as [OverlayPlayer, OverlayPlayer],
+  };
+}
+
 export function fusionnerPatchs(a: PatchOverlay, b: PatchOverlay): PatchOverlay {
   const sortie: PatchOverlay = { ...a, ...b };
   if (a.event || b.event) sortie.event = { ...a.event, ...b.event };
