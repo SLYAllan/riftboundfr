@@ -103,7 +103,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
   };
 
   return (
-    <div className="mt-12 border-t border-hairline pt-8">
+    <div id="commentaires" className="mt-12 border-t border-hairline pt-8">
       <h2 className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-rubik)" }}>
         <MessageSquare size={20} className="inline mr-2 -mt-0.5" />
         Commentaires ({comments.reduce((a, c) => a + 1 + (c.replies?.length || 0), 0)})
@@ -129,7 +129,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
               <button
                 onClick={() => submit()}
                 disabled={!body.trim() || sending}
-                className="flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-1.5 text-sm font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
+                className="flex min-h-11 items-center gap-1.5 rounded-lg bg-arcane px-4 text-sm font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
               >
                 <Send size={14} />
                 Envoyer
@@ -162,7 +162,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
           <p className="text-sm text-ink-secondary mb-2">{t("Les commentaires n’ont pas pu se charger. Vérifiez votre connexion, puis réessayez.")}</p>
           <button
             onClick={() => void chargerCommentaires()}
-            className="rounded-lg bg-surface-raised px-4 py-1.5 text-sm font-medium text-ink-secondary hover:text-ink transition-colors"
+            className="min-h-11 rounded-lg bg-surface-raised px-4 text-sm font-medium text-ink-secondary hover:text-ink transition-colors"
           >
             {t("Réessayer")}
           </button>
@@ -258,13 +258,13 @@ function CommentThread({
       <div className="flex gap-3">
         {/* Vote buttons */}
         <div className="flex flex-col items-center gap-0.5 pt-1">
-          <button onClick={() => vote(1)} aria-label={t("Voter pour")} className="text-ink-muted hover:text-arcane transition-colors">
+          <button onClick={() => vote(1)} aria-label={t("Voter pour")} className="flex min-h-11 min-w-11 items-center justify-center text-ink-muted hover:text-arcane transition-colors">
             <ChevronUp size={18} />
           </button>
           <span className={`text-xs font-bold tabular-nums ${score > 0 ? "text-arcane" : score < 0 ? "text-error-light" : "text-ink-muted"}`}>
             {score}
           </span>
-          <button onClick={() => vote(-1)} aria-label={t("Voter contre")} className="text-ink-muted hover:text-error transition-colors">
+          <button onClick={() => vote(-1)} aria-label={t("Voter contre")} className="flex min-h-11 min-w-11 items-center justify-center text-ink-muted hover:text-error transition-colors">
             <ChevronDown size={18} />
           </button>
         </div>
@@ -293,7 +293,7 @@ function CommentThread({
           {user && depth === 0 && (
             <button
               onClick={() => setReplying(!replying)}
-              className="mt-1 text-xs text-ink-muted hover:text-arcane transition-colors"
+              className="mt-1 flex min-h-11 items-center text-xs text-ink-muted hover:text-arcane transition-colors"
             >{t("Répondre")}</button>
           )}
 

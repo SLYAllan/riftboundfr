@@ -188,6 +188,10 @@ model User {
   role          String   @default("user")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  // Dernier passage dans la cloche. Tout ce qui est postérieur est « non lu ».
+  // Défaut à maintenant : un compte existant ne découvre pas six mois d'arriéré
+  // le jour où la fonction arrive.
+  notificationsVuesLe DateTime @default(now())
 
   communityDecks CommunityDeck[]
   comments       Comment[]
@@ -229,8 +233,11 @@ model CommentVote {
   userId    String
   commentId String
   value     Int
+  createdAt DateTime @default(now())
 
   @@unique([userId, commentId])
+  @@index([commentId])
+  @@index([createdAt])
 }
 
 model CommunityDeck {
@@ -282,11 +289,15 @@ model CommunityDeckLike {
   id            String @id @default(cuid())
   userId        String
   communityDeckId String
+  // Sans date, la cloche ne peut pas dire quel j'aime est arrivé depuis la
+  // dernière visite : elle ne saurait que compter un total.
+  createdAt     DateTime @default(now())
 
   communityDeck CommunityDeck @relation(fields: [communityDeckId], references: [id], onDelete: Cascade)
 
   @@unique([userId, communityDeckId])
   @@index([communityDeckId])
+  @@index([createdAt])
 }
 
 model DeckLike {

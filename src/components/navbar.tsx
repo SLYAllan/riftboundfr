@@ -7,6 +7,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { UserMenu } from "@/components/user-menu";
+import { Notifications } from "@/components/notifications";
 import { useLangue, useT } from "@/components/i18n-provider";
 import { PREFIXE_EN, sansPrefixe } from "@/lib/i18n";
 
@@ -186,11 +187,18 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
           ))}
           <div className="ml-2 flex items-center gap-2 border-l border-hairline pl-3">
             <SelecteurLangue chemin={chemin} />
+            <Notifications />
             <UserMenu />
           </div>
         </div>
 
-        <button
+        {/* Sous `lg`, la cloche vit dans la BARRE, pas dans le panneau déroulant :
+            celui-ci porte `overflow-y-auto`, qui rognait le panneau des
+            notifications et ajoutait une barre de défilement horizontale. Elle est
+            aussi mieux là : on voit qu'on a du neuf sans ouvrir le menu. */}
+        <div className="flex items-center gap-1 lg:hidden">
+          <Notifications />
+          <button
           ref={boutonMobileRef}
           onClick={() => setMobileOpen(!mobileOpen)}
           className="-mr-2 flex h-11 w-11 items-center justify-center rounded-lg text-ink-secondary hover:bg-surface-raised hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane lg:hidden"
@@ -201,7 +209,8 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
           // aria-expanded + le panneau juste après le bouton suffisent.
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          </button>
+        </div>
       </nav>
 
       {mobileOpen && (
