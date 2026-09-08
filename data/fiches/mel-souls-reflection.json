@@ -29,12 +29,12 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Rebuttal",
+      "name": "Stupefy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stupefy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "name": "Rebuttal",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Stacked Deck",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
@@ -50,36 +50,36 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 61 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Applied Researchers",
-      "role": "Souple, 55 % des listes, 3 exemplaires"
+      "role": "Standard, 62 % des listes, 3 exemplaires"
     },
     {
       "name": "Tideturner",
       "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
-      "name": "Up from the Deep",
-      "role": "Souple, 47 % des listes, 3 exemplaires"
+      "name": "Applied Researchers",
+      "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
-      "name": "Traveling Merchant",
+      "name": "Up from the Deep",
       "role": "Souple, 46 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Souple, 46 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "71 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
@@ -91,27 +91,27 @@
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
-      "usage": "46 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "35 %",
+      "usage": "36 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ravenbloom Conservatory (35 %)",
-    "Heisho, Shell of the World (31 %)",
-    "Frozen Fortress (31 %)",
-    "Forbidding Waste (30 %)"
+    "Frozen Fortress (34 %)",
+    "Ravenbloom Conservatory (33 %)",
+    "Forbidding Waste (30 %)",
+    "Heisho, Shell of the World (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 128,
+    "joueursClasses": 134,
     "coupe10": 5,
     "titres": 0,
-    "conversion": "3.9 %",
-    "tournois": 20,
-    "listesPubliees": 83,
+    "conversion": "3.7 %",
+    "tournois": 21,
+    "listesPubliees": 89,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -140,5 +140,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 128 joueurs classés, 20 tournois, dont 83 listes publiées d’où viennent les cartes. Relevé du 31 août 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 134 joueurs classés, 21 tournois, dont 89 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -34,37 +34,42 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
+      "role": "Standard, 69 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Ruin Runner",
-      "role": "Standard, 60 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Blighted Battleaxe",
-      "role": "Souple, 56 % des listes, 2 exemplaires"
+      "role": "Souple, 58 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ruin Runner",
+      "role": "Souple, 58 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Souple, 52 % des listes, 2 exemplaires"
+      "role": "Souple, 54 % des listes, 2 exemplaires"
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 48 % des listes, 3 exemplaires"
+      "role": "Souple, 50 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 59,
-    "coupe10": 4,
+    "joueursClasses": 60,
+    "coupe10": 5,
     "titres": 0,
-    "conversion": "6.8 %",
-    "tournois": 12,
-    "listesPubliees": 25,
+    "conversion": "8.3 %",
+    "tournois": 13,
+    "listesPubliees": 26,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "TXG·万舞寒天",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+      },
       {
         "placement": "13th",
         "player": "酷猫.黑科技整活",
@@ -84,11 +89,6 @@
         "placement": "25th",
         "player": "BANRATE DEMON",
         "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "28th",
-        "player": "门口汽水",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
@@ -101,7 +101,7 @@
   "weaknesses": [
     "8 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 59 joueurs classés, 12 tournois, dont 25 listes publiées d’où viennent les cartes. Relevé du 31 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 60 joueurs classés, 13 tournois, dont 26 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Lucian, Merciless": {
       "usage": "100 %",
@@ -114,9 +114,9 @@
   },
   "topBattlefields": [
     "Forge of the Fluft (88 %)",
-    "Sunken Temple (60 %)",
-    "Forbidding Waste (36 %)",
-    "Windswept Hillock (32 %)",
-    "Zaun Warrens (32 %)"
+    "Sunken Temple (58 %)",
+    "Forbidding Waste (38 %)",
+    "Windswept Hillock (35 %)",
+    "Zaun Warrens (31 %)"
   ]
 }

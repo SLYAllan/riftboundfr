@@ -1,5 +1,175 @@
 # HANDOFF — état des lieux
 
+## Session du 8 septembre 2026 — import Hexgate sans délégation
+
+Shanghai du 5 septembre (Hexgate 246) : 128 listes consultées, 120 converties
+et ajoutées en base locale ; Top 8 conservé. Huit exclusions documentées.
+Les quatre nouveaux City Challenge sous 128 joueurs restent dehors, ainsi que
+l'Open par équipes 244, dont le format dépasse la routine actuelle.
+
+Validation : 24 803 listes vérifiées, zéro écart, sortie 0. Seed ciblé
+`prisma/seed-scraped-decks.ts hexgate-246` : 120 créations, zéro erreur.
+`npm run maj:stats` exécuté ; 58 commentaires chiffrés et le rang S d'Irelia
+(p = 0,051) restent à revoir. Aucun rang modifié. Page locale contrôlée :
+`/tournois/s4-shanghai-city-challenge-2026-09-05`, 128 joueurs, 120 listes.
+
+Rapport : `data/raw-scrapes/hexgate/IMPORT-2026-09-08.md`.
+Livraison dans un commit consacré à cet import : sources, 120 listes, fiche de
+tournoi, drapeau et statistiques recalculées. `npm run verify` : sortie 0.
+Le push ne seede pas les decks : l'ajout des 120 listes en production reste à
+faire. Les changements de code du 3 septembre restent hors de ce commit.
+
+## Session du 3 septembre 2026 — six correctifs, trois fonctions, RIEN N'EST COMMITÉ
+
+Tout est en local sur `main`. La porte est verte : `npx vitest run` (66 fichiers,
+367 tests), `npm run verify` (EXIT=0), `npm run lint` (0 erreur, 98
+avertissements, le niveau d'avant la session).
+
+**Une chose à faire avant de déployer** : la table `Abonnement` n'existe qu'en
+local. Voir « Ce qui reste » plus bas.
+
+### La cause des 12 100 listes CardNexus
+
+Le bouton « Acheter ce deck » était un lien ordinaire vers
+`/api/cardnexus/panier`, et **chaque GET crée une liste sur le compte CardNexus
+d'Allan**. Les robots qui balaient les 26 000 pages de deck le suivaient : une
+liste par deck, portant le nom du deck. `robots.txt` interdit `/api/` et le lien
+portait `nofollow`, mais ce sont des consignes, pas des barrières.
+
+La route est passée en `POST` — un explorateur ne poste pas — et les deux boutons
+sont devenus des `<form method="POST" target="_blank">`. La redirection est en
+303 et plus en 302 : après un POST, 303 dit explicitement au navigateur d'aller
+CHERCHER la page. Vérifié : un GET répond maintenant **405**.
+
+Allan a décidé de ne PAS purger les 12 100 listes déjà créées (c'est son compte).
+
+### /deckbuilder au téléphone
+
+Mesuré à 390 px avant de toucher quoi que ce soit : le bloc de filtres pesait
+**253 px** des 775 px de la page, et il ne restait que **261 px** pour les cartes,
+soit une rangée et demie. Le bouton « voir la carte » d'une tuile faisait
+**31 x 28 px**, sous les 44 px minimum au doigt — c'était ça, « on peut pas
+cliquer sur les cartes ».
+
+Trois changements : les filtres se replient derrière un bouton au téléphone
+(253 -> 151 px, grille 261 -> 363 px), la grille passe de 3 à 2 colonnes (tuile
+113 -> 174 px), et les boutons de tuile prennent 44 px sous `@media(hover:none)`.
+Le bureau ne bouge pas : bouton caché, filtres dépliés, 6 colonnes.
+
+### /decks : choisir une Légende n'efface plus le set
+
+Le set Vendetta est IMPLICITE tant que l'URL ne le porte pas (`setParDefaut`).
+Choisir une Légende posait une « intention », et `setParDefaut` cessait alors de
+l'appliquer : le menu affichait Vendetta et sautait tout seul sur « Tous les
+sets ». `modifierParametresDecks` fige donc le set AFFICHÉ dans l'URL dès qu'un
+autre filtre bouge. Les liens de catégorie posent `set` eux-mêmes et gardent leur
+règle : « Best of » doit bien vider le set.
+
+### /decks : le tri par accessibilité remplace la pastille
+
+La pastille « Decks que je peux jouer » flottait seule entre deux blocs. Elle
+devient un TRI, dans la rangée des tris, à cinq paliers : jouable sans achat,
+1 à 3 cartes, moins de 10 EUR, moins de 25 EUR, le reste. Le prix est celui des
+cartes MANQUANTES, chiffré par `chiffrerDeck`. Un prix inconnu n'est pas un prix
+bas : le deck part au dernier palier. La pastille d'une carte de deck dit ce qui
+reste (« 2 cartes · 4 € ») au lieu du décompte possédé, pour ne pas donner deux
+fois le même chiffre.
+
+`?owned=1` marche toujours en code mais n'a plus de bouton. **À trancher** : le
+supprimer ou lui rendre une porte.
+
+### Suppression de compte
+
+`DELETE /api/auth/profile`, bouton en deux temps dans la section « Compte » du
+profil. Trois tables portent un `userId` **sans relation Prisma** — `DeckLike`,
+`CommunityDeckLike`, `CommentVote` — donc rien ne les efface en cascade : elles
+sont vidées à la main dans la même transaction. Les decks publiés survivent
+(`onDelete: SetNull` au schéma) et repassent à « Anonyme » ; l'écran de
+confirmation le dit.
+
+### Fiche carte : « En tournoi »
+
+`src/lib/card-play.ts`, passage unique. La section existait mais comptait sur
+`card.id`, donc sur UNE impression : une carte réimprimée avait autant de
+compteurs que de numéros. Tout part maintenant du NOM.
+
+Deux erreurs attrapées au navigateur, pas à la lecture :
+- l'URL d'une carte est son `riftboundId`, pas son id de base — les liens « Par
+  impression » pointaient dans le vide ;
+- il y a **six** sections en base (`main`, `side`, `legend`, `rune`,
+  `battlefield`, `champion`), pas deux. « Tout ce qui n'est pas principal =
+  réserve » comptait les champs de bataille comme de la réserve.
+
+La table par impression rend visible le doublon OPP/OGS connu (Lux, Crownguard :
+181 + 138 lignes pour 301 decks).
+
+### Comparaison de versions d'un deck communautaire
+
+`resumerVersion` s'ajoute à `deck-diff.ts` : cartes entrées et sorties, écart de
+coût, écart de courbe. Tout se déduit du diff déjà en mémoire, aucune requête de
+plus. La courbe s'affiche en BARRES : en texte, elle donnait « +4 à 1 énergie,
++1 à 2 énergie, -6 à 3 énergie... », douze pastilles à déchiffrer pour une
+information qui est une forme.
+
+**Le retour arrière n'a demandé aucune route** : renvoyer un ancien code au PATCH
+existant range la version courante dans l'historique et repart d'elle. Le serveur
+revalide la liste, donc une version que les règles ne passent plus (réserve à 8,
+carte bannie depuis) est refusée avec sa raison affichée en place. Les deux
+chemins sont éprouvés en local.
+
+Le panneau est dans une barre latérale de **300 px** : `sm:grid-cols-2` regarde
+la FENÊTRE, pas le conteneur, et coupait « Master Yi, Wuju Bladesman » sur trois
+lignes dans deux colonnes de 130 px. Une seule colonne.
+
+### Alertes choisies par le membre
+
+Même principe que la cloche : **on stocke l'abonnement, jamais la notification**.
+Nouvelle table `Abonnement` (`userId`, `genre`, `cible`), API
+`/api/abonnements`, composant `BoutonSuivre`. On suit une Légende sur sa fiche,
+un deck sur sa page, et les deux sujets globaux (tournois français, règles) dans
+une section « Alertes » du profil. La cloche gagne trois onglets : Tout, Mon
+contenu, Ce que je suis.
+
+Les abonnements globaux portent une cible vide, pas `null` : une colonne nulle
+laisse passer les doublons dans une contrainte d'unicité PostgreSQL.
+
+**Les alertes de Légende ne remontent que les BEST-OF.** Sans ce filtre, suivre
+une Légende remontait dix listes classées 1262e et 1280e d'un import de masse,
+ce qui n'est pas une nouvelle. C'est la règle de `/decks`.
+
+Le pays d'un tournoi vient de `tournament-flags.ts`, pas de la base : vérifié,
+Lille est bien reconnu. Les dates de bans sont désormais exportées
+(`DATES_BANS` dans `banned-cards.ts`) — elles ne vivaient que dans un
+commentaire, et la cloche ne sait pas lire un commentaire.
+
+### Ce qui reste
+
+1. **Créer la table `Abonnement` en prod.** `prisma db push` reste à proscrire
+   (il veut supprimer les huit tables `Bulk*` d'un autre projet — reproduit
+   pendant cette session, il a refusé tout seul). Script fait sur le modèle de
+   `maj-notifications-schema.mts`, les deux chemins éprouvés en local (création
+   à partir de rien, puis rejeu sans effet) :
+
+   ```
+   npx tsx --env-file=.env.prod.local scripts/maj-abonnements-schema.mts --hote 178.104.237.33:15432 --sec
+   npx tsx --env-file=.env.prod.local scripts/maj-abonnements-schema.mts --hote 178.104.237.33:15432
+   ```
+
+   `Abonnement` est volontairement ABSENTE de `TABLES_ATTENDUES`
+   (`migrate-schema.mjs`) : sinon le conteneur refuse de démarrer entre le
+   déploiement du code et le passage du script.
+
+2. **Errata de traduction française**, non fait. La page officielle
+   (`playriftbound.com/fr-fr/news/announcements/errata-de-traduction-franaise/`)
+   donne 55 cartes avec leurs noms **français seulement**, sans lien ni nom
+   anglais. La base ne stocke que les noms anglais (`Card` n'a aucun champ
+   français) et aucune table FR vers EN n'existe dans le dépôt. Deviner 55 noms
+   est exclu. Allan vérifie la correspondance de son côté.
+
+3. Le deck communautaire local `essaihist` a servi aux essais du retour arrière :
+   son contenu est maintenant une vraie liste de tournoi, plus le jeu d'essai
+   d'origine. Sans conséquence hors du local.
+
 ## Session du 2 septembre 2026 — l'audit Codex traité, cloche de notifications
 
 L'audit est dans `docs/AUDIT-SITE-2026-09-02-CODEX.md` : 3 défauts critiques,

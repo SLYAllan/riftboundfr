@@ -26,31 +26,31 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sterak's Gage",
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Poro Snax",
       "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
-      "name": "Sterak's Gage",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Seal of Focus",
-      "role": "Standard, 77 % des listes, 3 exemplaires"
+      "role": "Standard, 78 % des listes, 3 exemplaires"
     },
     {
       "name": "Guardian Angel",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
       "name": "Brutalizer",
@@ -76,10 +76,10 @@
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (86 %)",
+    "Ornn's Forge (87 %)",
     "Veiled Temple (63 %)",
     "Seat of Power (51 %)",
-    "Treasure Hoard (43 %)"
+    "Treasure Hoard (45 %)"
   ],
   "strengths": [
     "8,1 % de conversion, au-dessus du champ, sur 37 listes",
@@ -93,17 +93,22 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 153,
-    "coupe10": 10,
+    "joueursClasses": 160,
+    "coupe10": 11,
     "titres": 1,
-    "conversion": "6.5 %",
-    "tournois": 21,
-    "listesPubliees": 95,
+    "conversion": "6.9 %",
+    "tournois": 22,
+    "listesPubliees": 100,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "MICE TheManLand",
         "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "3rd",
+        "player": "karn",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       },
       {
         "placement": "4th",
@@ -119,18 +124,13 @@
         "placement": "7th",
         "player": "KD",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "13th",
-        "player": "旋木时光的大蠢若鱼",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 153 joueurs classés, 21 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 31 août 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 160 joueurs classés, 22 tournois, dont 100 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
