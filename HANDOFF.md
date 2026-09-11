@@ -1,6 +1,10 @@
 # HANDOFF — état des lieux
 
-## Session du 11 septembre 2026 — RQ Singapour importé, article best-of
+## Session du 11 septembre 2026 — RQ Singapour poussé et seedé en prod
+
+Commits `9076bc37` (Singapour et stats) et `c0adf447` (lanceur de prod), poussés
+sur `main`. En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
+(26 169 avant). Les tier lists de prod n'ont pas bougé, aucune lettre n'a changé.
 
 Deux sources. Les listes viennent de l'article officiel de Riot,
 `https://playriftbound.com/en-us/news/organizedplay/singapores-top-decks/`,
@@ -75,6 +79,14 @@ Et 88 commentaires chiffrés sont périmés (Vendetta et Globale), dont ceux de
 Kennen (702 joueurs écrits, 934 comptés). Les tier lists en base, locale et prod,
 n'ont pas changé : rien à reseeder de ce côté.
 
+### `prod-tunnel.mts` ne lançait jamais son script
+
+Il démarrait `npx.cmd` sans shell. Depuis Node 20, Windows refuse un `.cmd`
+lancé ainsi (EINVAL) : le fils ne partait pas, et le lanceur sortait en 1 sans
+un mot. La note du 31 août parlait d'une « sortie avalée » : c'était ça. Il lance
+maintenant la CLI de tsx avec Node lui-même, et affiche l'erreur si le fils ne
+démarre pas. Le seed de Singapour est passé par lui, sortie visible.
+
 ### Hexgate au 11 septembre : rien de neuf
 
 Le dernier identifiant de `hexgate.cn/api/tournaments` est **249**, celui du
@@ -83,7 +95,7 @@ relevé du 8 septembre. Les six épreuves depuis Wuhan sont déjà tranchées da
 
 ### Ce qui reste
 
-- Rien n'est commité. La pile du 3 septembre est toujours en local.
+- La pile du 3 septembre est toujours en local, hors de ces deux commits.
 - Les 114 listes riftdecks de Singapour ne sont pas importées. Les 38 de Riot
   couvrent déjà le Top 8 et le n°1 de chaque Légende ; les autres donneraient la
   page du tournoi et `/decks`, pas les stats, qui passent par le classement. Le
