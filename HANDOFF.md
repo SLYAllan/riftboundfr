@@ -4,7 +4,11 @@
 
 Commits `9076bc37` (Singapour et stats) et `c0adf447` (lanceur de prod), poussés
 sur `main`. En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
-(26 169 avant). Les tier lists de prod n'ont pas bougé, aucune lettre n'a changé.
+(26 169 avant). Les tier lists refaites (plus bas) partent en prod APRÈS le
+déploiement de leur commit, pour que `/tier-list` (base) et `/legendes` (fichiers)
+ne se contredisent pas : `npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts`,
+puis `npx tsx scripts/prod-tunnel.mts --etat`, qui doit dater les cinq listes du
+11 septembre.
 
 Deux sources. Les listes viennent de l'article officiel de Riot,
 `https://playriftbound.com/en-us/news/organizedplay/singapores-top-decks/`,
@@ -67,17 +71,22 @@ moins que les 1 893 annoncés). Le corpus Vendetta passe à 8 508 places sur 26
 tournois ; conversion moyenne inchangée, 9,9 %.
 
 Fiches, `meta-parts.json`, `classements.json` et `deckbuilding-stats.md` sont
-refaits. **Aucune lettre de tier list n'a bougé** : la routine ne les touche pas,
-et deux décisions reviennent à Allan (étape 6) :
+refaits. Puis, à la demande d'Allan, les tier lists sont refaites sur ces chiffres
+dans `scripts/tier-tables.ts` :
 
-- **Irelia en S ne tient plus le test** : 12,2 % contre 9,9 %, p = 0,055. Elle
-  était déjà à p = 0,051 le 8 septembre. La règle écrite en tête de la table
-  Vendetta dit que seul un écart qui tient le test entre en S.
-- **LeBlanc, classée A, le tient désormais** : 14,3 % sur 259 joueurs, p = 0,022.
+- **Vendetta** : Irelia passe de S à A, son écart ne tient plus le test
+  (p = 0,055) ; LeBlanc passe de A à S (p = 0,022).
+- **Globale** : Annie (p = 0,040) et LeBlanc (p = 0,030) entrent en S, comme les
+  six autres écarts qui tiennent le test. De justesse : à revérifier au prochain
+  relevé.
+- Les 97 commentaires des deux listes sont réécrits sur les chiffres du jour.
+  L'étape 6 de `maj:stats` rend maintenant « Les cinq tier lists collent aux
+  chiffres ». Les fiches d'Irelia et de LeBlanc ont suivi leur rang.
 
-Et 88 commentaires chiffrés sont périmés (Vendetta et Globale), dont ceux de
-Kennen (702 joueurs écrits, 934 comptés). Les tier lists en base, locale et prod,
-n'ont pas changé : rien à reseeder de ce côté.
+`docs/META-KNOWLEDGE.md` (section Vendetta, cumul toutes ères) et
+`docs/DECKBUILDING-RULES.md` (tableaux, cores Vendetta, 25 titres de section) sont
+recalés sur le même relevé. Les cores se refont par
+`npx tsx scripts/cores-vendetta.mts Vendetta 30`.
 
 ### `prod-tunnel.mts` ne lançait jamais son script
 
