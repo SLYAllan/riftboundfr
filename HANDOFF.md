@@ -1,5 +1,105 @@
 # HANDOFF — état des lieux
 
+## Session du 11 septembre 2026 — RQ Singapour importé, article best-of
+
+Deux sources. Les listes viennent de l'article officiel de Riot,
+`https://playriftbound.com/en-us/news/organizedplay/singapores-top-decks/`,
+relevé dans `data/raw-scrapes/singapore-rq-officiel.md` et lu par le parseur
+écrit pour Barcelone, `scripts/parse-playriftbound.ts`. Le classement complet
+vient de riftdecks (tournoi 16407), relevé dans
+`data/raw-scrapes/singapore-rq-classement/` : 1 893 classés annoncés et 114
+listes publiées, qui ne sont PAS importées (voir « Ce qui reste »).
+
+38 listes : le Top 8 entier et les 34 Best-Of, trois decks comptant pour les
+deux. 34 Légendes, les deux Master Yi bien séparés. Vainqueur Gorica, Akali.
+
+Date et effectif, tous deux sourcés :
+
+- du 4 au 6 septembre 2026, dit par « All Eyes on Singapore » ; la fiche porte
+  le dimanche, comme Barcelone ;
+- 1 893 joueurs : riftdecks l'annonce, et la somme de la colonne « jour 1 » du
+  tableau de l'article tombe sur le même chiffre (218 Kennen sur 1 893 = 11,5 %,
+  juste sur toute la colonne). 303 le dimanche.
+
+### Une correction au parseur
+
+Riot a oublié la quantité d'un champ de bataille chez Big Willy Dfoe
+(« Abandoned Hall » au lieu de « 1 Abandoned Hall ») et `lireArticle` refusait
+tout le fichier. Il lit maintenant un nom seul comme un exemplaire, **sous
+`Battlefields` et nulle part ailleurs** : un champ de bataille est toujours en un
+exemplaire, c'est la seule lecture possible du nom seul. Partout ailleurs, le
+refus tient.
+
+### Ne pas croire la prose de Riot, lire ses tableaux
+
+L'article écrit que le Top 8 tenait en « trois Légendes : cinq Kennen, deux
+Master Yi et une Akali ». Ses propres fiches de deck disent quatre Légendes :
+quatre Kennen, deux Master Yi Wuju Bladesman, une Fiora et une Akali. Les
+dénominateurs du « Legend Rank » tranchent (Kennen #1/218, Fiora #1/54, Akali
+#1/72) et concordent avec le tableau du jour 1. Les données ont raison, la phrase
+a tort. Le site suit les données.
+
+### Best-of et article
+
+34 decks marqués `featured` par `mark-bestof-tournois.mts`, recoupés un à un
+contre les 34 « Legend Rank #1 » de Riot : aucun en trop, aucun manquant. Aucune
+Légende retirée, contrairement à Barcelone (Annie et Viktor).
+
+Article `/articles/best-of-singapour-rq`, seedé par
+`scripts/seed-singapour-bestof.mts`. Couverture
+`public/img/articles/singapore.webp`, posée par Allan.
+
+`buildDeckCode` était sur le point d'exister en trois exemplaires : il vit
+maintenant dans `scripts/deck-code-article.ts`, importé par les scripts Barcelone
+et Singapour. Ce n'est PAS celui de `seed-tournament-decks.ts`, qui laisse le
+Champion dehors exprès, parce que le seed le lie à part.
+
+### Singapour entre dans les stats
+
+Le classement riftdecks donne la Légende de chaque joueur dans sa ligne, comme à
+Barcelone : une entrée dans `CONTEXTES` de `classements-tournois.mts` suffit.
+`npm run maj:stats` : sortie 0, **1 883 places, Légende connue à 100 %** (dix de
+moins que les 1 893 annoncés). Le corpus Vendetta passe à 8 508 places sur 26
+tournois ; conversion moyenne inchangée, 9,9 %.
+
+Fiches, `meta-parts.json`, `classements.json` et `deckbuilding-stats.md` sont
+refaits. **Aucune lettre de tier list n'a bougé** : la routine ne les touche pas,
+et deux décisions reviennent à Allan (étape 6) :
+
+- **Irelia en S ne tient plus le test** : 12,2 % contre 9,9 %, p = 0,055. Elle
+  était déjà à p = 0,051 le 8 septembre. La règle écrite en tête de la table
+  Vendetta dit que seul un écart qui tient le test entre en S.
+- **LeBlanc, classée A, le tient désormais** : 14,3 % sur 259 joueurs, p = 0,022.
+
+Et 88 commentaires chiffrés sont périmés (Vendetta et Globale), dont ceux de
+Kennen (702 joueurs écrits, 934 comptés). Les tier lists en base, locale et prod,
+n'ont pas changé : rien à reseeder de ce côté.
+
+### Hexgate au 11 septembre : rien de neuf
+
+Le dernier identifiant de `hexgate.cn/api/tournaments` est **249**, celui du
+relevé du 8 septembre. Les six épreuves depuis Wuhan sont déjà tranchées dans
+`data/raw-scrapes/hexgate/IMPORT-2026-09-08.md`. Rien à importer.
+
+### Ce qui reste
+
+- Rien n'est commité. La pile du 3 septembre est toujours en local.
+- Les 114 listes riftdecks de Singapour ne sont pas importées. Les 38 de Riot
+  couvrent déjà le Top 8 et le n°1 de chaque Légende ; les autres donneraient la
+  page du tournoi et `/decks`, pas les stats, qui passent par le classement. Le
+  chemin : `scrape-tournoi.sh`, puis `parse-playriftbound.ts` compare les joueurs
+  présents des deux côtés.
+- La prod portait 26 169 decks le 11 septembre, le chiffre du 2 septembre : les
+  120 listes de Shanghai (hexgate 246) n'y sont toujours pas.
+- L'intitulé du Tier S de l'article de Barcelone dit « les deux Légendes » ;
+  elles sont trois depuis Wuhan. La page best-of supprime les titres de rang
+  (`isTierHeading` dans `src/app/articles/[slug]/page.tsx`), donc rien ne se voit,
+  mais la phrase reste fausse en base. Celui de Singapour ne compte rien, exprès.
+
+Porte : `npx tsc --noEmit` EXIT=0, `npx next build` EXIT=0, `npx vitest run`
+66 fichiers et 367 tests, `python -X utf8 scripts/validate-decklists.py` sortie 0
+(24 841 listes, aucun écart, aucune réserve incomplète).
+
 ## Session du 8 septembre 2026 — import Hexgate sans délégation
 
 Shanghai du 5 septembre (Hexgate 246) : 128 listes consultées, 120 converties

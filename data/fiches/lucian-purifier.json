@@ -22,48 +22,48 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 69 % des listes, 3 exemplaires"
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 69 % des listes, 2.5 exemplaires"
+      "role": "Standard, 70 % des listes, 3 exemplaires"
     },
     {
       "name": "Blighted Battleaxe",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
+      "role": "Souple, 59 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Rampage",
-      "role": "Souple, 54 % des listes, 2 exemplaires"
+      "role": "Souple, 56 % des listes, 2 exemplaires"
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
+      "role": "Souple, 52 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Rampage",
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 60,
-    "coupe10": 5,
+    "joueursClasses": 85,
+    "coupe10": 6,
     "titres": 0,
-    "conversion": "8.3 %",
-    "tournois": 13,
-    "listesPubliees": 26,
+    "conversion": "7.1 %",
+    "tournois": 14,
+    "listesPubliees": 27,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -101,7 +101,7 @@
   "weaknesses": [
     "8 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 60 joueurs classés, 13 tournois, dont 26 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 85 joueurs classés, 14 tournois, dont 27 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Lucian, Merciless": {
       "usage": "100 %",
@@ -113,10 +113,9 @@
     }
   },
   "topBattlefields": [
-    "Forge of the Fluft (88 %)",
-    "Sunken Temple (58 %)",
-    "Forbidding Waste (38 %)",
-    "Windswept Hillock (35 %)",
-    "Zaun Warrens (31 %)"
+    "Forge of the Fluft (89 %)",
+    "Sunken Temple (56 %)",
+    "Forbidding Waste (41 %)",
+    "Windswept Hillock (37 %)"
   ]
 }

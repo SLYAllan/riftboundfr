@@ -29,7 +29,7 @@
   "keyCards": [
     {
       "name": "Death Mark",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Stacked Deck",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Cleave",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust Monk",
@@ -61,36 +61,36 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 61 % des listes, 2 exemplaires"
+      "role": "Standard, 62 % des listes, 2 exemplaires"
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 55 % des listes, 3 exemplaires"
+      "role": "Souple, 56 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 53 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 55 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Last Rites",
-      "role": "Souple, 52 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "68 %",
+      "usage": "69 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "50 %",
+      "usage": "49 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "43 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
     "Zed, From the Shadows": {
-      "usage": "43 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Storm of Shuriken": {
@@ -98,26 +98,26 @@
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Destructive": {
-      "usage": "34 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rek'Sai, Breacher": {
-      "usage": "32 %",
+      "usage": "31 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (95 %)",
-    "Minefield (68 %)",
-    "Forbidding Waste (39 %)"
+    "Zaun Warrens (96 %)",
+    "Minefield (69 %)",
+    "Forbidding Waste (40 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 79,
+    "joueursClasses": 106,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "2.5 %",
-    "tournois": 17,
-    "listesPubliees": 44,
+    "conversion": "1.9 %",
+    "tournois": 18,
+    "listesPubliees": 45,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -146,5 +146,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 79 joueurs classés, 17 tournois, dont 44 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 106 joueurs classés, 18 tournois, dont 45 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

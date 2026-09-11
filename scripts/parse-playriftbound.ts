@@ -94,6 +94,11 @@ export function lireArticle(md: string): DeckOfficiel[] {
       const titre = bout.match(/^\*\*(.+?):\*\*$/);
       if (titre) { cle = titre[1]; continue; }
       const carte = bout.match(/^(\d+)\s+(.+)$/);
+      // Riot oublie parfois la quantité d'un champ de bataille (« Abandoned Hall »
+      // au lieu de « 1 Abandoned Hall », deck de Big Willy Dfoe à Singapour). Un
+      // champ de bataille est toujours en un exemplaire : c'est la seule lecture
+      // possible du nom seul, pas une quantité devinée. Ailleurs, on refuse.
+      if (!carte && cle === "Battlefields") { deck.battlefields.push(bout); continue; }
       if (!carte) throw new Error(`Ligne illisible sous « ${cle} » : ${bout}`);
       const quantite = +carte[1];
       const nom = carte[2].trim();

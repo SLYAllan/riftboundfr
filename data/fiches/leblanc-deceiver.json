@@ -26,7 +26,7 @@
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Watchful Sentry",
@@ -54,15 +54,15 @@
     },
     {
       "name": "Baited Hook",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
       "name": "Rift Herald",
-      "role": "Souple, 54 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 181,
-    "coupe10": 26,
+    "joueursClasses": 259,
+    "coupe10": 37,
     "titres": 0,
-    "conversion": "14.4 %",
-    "tournois": 24,
-    "listesPubliees": 95,
+    "conversion": "14.3 %",
+    "tournois": 25,
+    "listesPubliees": 96,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -142,13 +142,17 @@
     "Vi, Peacekeeper": {
       "usage": "76 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "30 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (98 %)",
     "Dusk Rose Lab (57 %)",
-    "Star Spring (46 %)",
+    "Star Spring (47 %)",
     "Forbidding Waste (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 181 joueurs classés, 24 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 259 joueurs classés, 25 tournois, dont 96 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

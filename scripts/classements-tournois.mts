@@ -78,6 +78,10 @@ const CONTEXTES: Record<string, { contexte: string; set: string; decks?: string 
   "bologna-rq-classement": { contexte: "Bologna Regional Qualifier", set: "Spiritforged", decks: "bologna-rq" },
   "vegas-rq-classement": { contexte: "Las Vegas Regional Qualifier", set: "Spiritforged", decks: "las-vegas-rq" },
 
+  // Vendetta : Singapour, 38 listes publiées par Riot seulement. Pas de dossier
+  // de decks riftdecks : la Légende se lit dans la ligne, comme à Barcelone.
+  "singapore-rq-classement": { contexte: "Singapore Regional Qualifier", set: "Vendetta" },
+
   // Origines : Houston, 80 listes publiées sur 1 347 joueurs.
   "houston-rq-classement": { contexte: "Houston Regional Qualifier", set: "Origins", decks: "houston-rq" },
 };

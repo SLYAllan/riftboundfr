@@ -398,6 +398,9 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },
+  // 1 893 classés : le classement riftdecks et la somme de la colonne « jour 1 »
+  // de l'article officiel tombent sur le même chiffre. 303 joueurs le dimanche.
+  "Singapore Regional Qualifier": { name: "Singapore Regional Qualifier 2026", shortName: "Singapour RQ", countryCode: "SG", city: "Singapour", location: "Singapour", playerCount: 1893, type: "regional", date: "2026-09-06", set: "Vendetta", format: "Standard" },
   "Hangzhou Regional Open (2025-09-14)": { name: "Hangzhou Regional Open (2025-09-14)", shortName: "Hangzhou RO", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 510, type: "regional", date: "2025-09-14", set: "Origins", format: "Conquest" },
   // 1 280 joueurs classés ET 1 280 listes publiées : hexgate publie tout le champ,
   // là où riftdecks n'a que ce que les joueurs envoient (118 listes sur 2 224 à

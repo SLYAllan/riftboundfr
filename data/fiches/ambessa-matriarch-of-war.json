@@ -30,11 +30,11 @@
   "keyCards": [
     {
       "name": "Public Execution",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Punch First",
@@ -46,67 +46,67 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires"
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "First Mate",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "role": "Standard, 67 % des listes, 1.5 exemplaire"
+    },
+    {
+      "name": "First Mate",
+      "role": "Standard, 63 % des listes, 2 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 62 % des listes, 1 exemplaire"
+      "role": "Standard, 63 % des listes, 1 exemplaire"
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 58 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Noxian Emissary",
-      "role": "Souple, 54 % des listes, 2 exemplaires"
+      "role": "Souple, 59 % des listes, 3 exemplaires"
     },
     {
       "name": "Solari Sunhawk",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
+      "role": "Souple, 52 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "92 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "65 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "50 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "38 %",
-      "role": "2.5 exemplaires en moyenne"
+      "usage": "41 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (77 %)",
-    "Sunken Temple (58 %)",
-    "Sandswept Tomb (35 %)"
+    "Risen Altar (78 %)",
+    "Sunken Temple (59 %)",
+    "Sandswept Tomb (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 76,
+    "joueursClasses": 102,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "1.3 %",
-    "tournois": 14,
-    "listesPubliees": 26,
+    "conversion": "1 %",
+    "tournois": 15,
+    "listesPubliees": 27,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -135,5 +135,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 76 joueurs classés, 14 tournois, dont 26 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 102 joueurs classés, 15 tournois, dont 27 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -11,60 +11,52 @@
   "legendAbility": "À 6 XP, vos unités gagnent +1 Puissance. À 11 XP, elles arrivent prêtes.",
   "keyCards": [
     {
-      "name": "Master Yi, Unstoppable",
-      "id": "Master Yi, Unstoppable",
-      "cost": 6,
-      "role": "Objectif ultime — unité massive qui entre ready."
-    },
-    {
-      "name": "Master Yi, Tempered",
-      "id": "Master Yi, Tempered",
-      "role": "Chosen champion — doit survivre pour gagner de l'XP."
-    },
-    {
       "name": "Gemhand Hunter",
-      "id": "Gemhand Hunter",
-      "role": "Unité early."
+      "role": "Cœur du deck, Unité early, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Wuju Apprentice",
-      "id": "Wuju Apprentice",
-      "role": "Unité early."
-    },
-    {
-      "name": "Voracious Gromp",
-      "id": "Voracious Gromp",
-      "role": "Alternative en allant second — attendre level 6."
-    },
-    {
-      "name": "Grim Resolve",
-      "id": "Grim Resolve",
-      "role": "Staple buff + XP gain."
+      "role": "Cœur du deck, Unité early, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Defy",
-      "id": "Defy",
-      "role": "Contresort."
+      "role": "Cœur du deck, Contresort, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "id": "Zhonya's Hourglass",
-      "role": "Protection."
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
-      "id": "Discipline",
-      "role": "Buff."
+      "role": "Cœur du deck, Buff, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Combat Experience",
-      "id": "Combat Experience",
-      "role": "XP spell (mid-late seulement)."
+      "name": "Grim Resolve",
+      "role": "Cœur du deck, Staple buff + XP gain, 100 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, Protection, 90 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
     },
     {
       "name": "Concentrate",
-      "id": "Concentrate",
-      "role": "XP spell (mid-late seulement)."
+      "role": "Cœur du deck, XP spell (mid-late seulement), 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Back Off",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Herald of Spring",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Voracious Gromp",
+      "role": "Standard, Alternative en allant second, 70 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -74,22 +66,13 @@
     "7 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 225,
-    "coupe10": 8,
+    "joueursClasses": 91,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "3.6 %",
-    "tournois": 21,
+    "conversion": "3.3 %",
+    "tournois": 12,
+    "listesPubliees": 10,
     "bestPlacements": [
-      {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S3 Changsha Regional Open (2026-06-14)"
-      },
-      {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S3 Changsha Regional Open (2026-06-14)"
-      },
       {
         "placement": "19th",
         "player": "星辉的月光",
@@ -104,6 +87,16 @@
         "placement": "38th",
         "player": "EDG.YNN2001",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "45th",
+        "player": "弓🏹",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "55th",
+        "player": "东轩",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ]
   },
@@ -126,5 +119,24 @@
     ],
     "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable. ⚠️ À NE PAS confondre avec le Master Yi mid-range/'proving grounds' (+2 en défense seul) qui, lui, gagne des events (Régional Suzhou, top cut Win-A-Box via Trophy Hunter + Vilemaw + double Zhonya's) — c'est une autre légende."
   },
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 225 joueurs classés sur 21 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 91 joueurs classés, 12 tournois, dont 10 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "champions": {
+    "Master Yi, Unstoppable": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Master Yi, Tempered": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Poppy, Paragon": {
+      "usage": "40 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Gardens of Becoming (90 %)",
+    "Reckoner's Arena (90 %)",
+    "Targon's Peak (60 %)"
+  ]
 }

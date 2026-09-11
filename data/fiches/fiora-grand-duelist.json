@@ -22,7 +22,7 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Rampage",
@@ -30,15 +30,15 @@
     },
     {
       "name": "First Mate",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 84 % des listes, 2 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 75 % des listes, 3 exemplaires"
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
@@ -49,11 +49,11 @@
       "role": "Souple, 55 % des listes, 2 exemplaires"
     },
     {
-      "name": "B.F. Sword",
+      "name": "Shepherd's Heirloom",
       "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
-      "name": "Shepherd's Heirloom",
+      "name": "B.F. Sword",
       "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
@@ -77,12 +77,12 @@
     "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "joueursClasses": 226,
-    "coupe10": 20,
+    "joueursClasses": 279,
+    "coupe10": 25,
     "titres": 1,
-    "conversion": "8.8 %",
-    "tournois": 25,
-    "listesPubliees": 166,
+    "conversion": "9 %",
+    "tournois": 26,
+    "listesPubliees": 167,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -131,7 +131,7 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "80 %",
+      "usage": "79 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
@@ -147,11 +147,11 @@
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "42 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     },
     "Poppy, Paragon": {
-      "usage": "33 %",
+      "usage": "34 %",
       "role": "2 exemplaires en moyenne"
     }
   },
@@ -159,5 +159,5 @@
     "Sunken Temple (95 %)",
     "Monastery of Hirana (43 %)"
   ],
-  "dataSource": "Classement complet des tournois : 226 joueurs classés, 25 tournois, dont 166 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 279 joueurs classés, 26 tournois, dont 167 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -59,15 +59,15 @@
     },
     {
       "name": "Charm",
-      "role": "Standard, 72 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Steel Paws",
       "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Bellows Breath",
       "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 70 % des listes, 2 exemplaires"
     },
     {
       "name": "Retreat",
@@ -85,19 +85,19 @@
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (51 %)",
+    "Vilemaw's Lair (52 %)",
     "The Papertree (39 %)",
-    "Forgotten Monument (38 %)",
-    "Altar of Blood (35 %)",
+    "Forgotten Monument (37 %)",
+    "Altar of Blood (34 %)",
     "Rockfall Path (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 299,
-    "coupe10": 19,
+    "joueursClasses": 365,
+    "coupe10": 20,
     "titres": 2,
-    "conversion": "6.4 %",
-    "tournois": 25,
-    "listesPubliees": 173,
+    "conversion": "5.5 %",
+    "tournois": 26,
+    "listesPubliees": 174,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -126,5 +126,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 299 joueurs classés, 25 tournois, dont 173 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 365 joueurs classés, 26 tournois, dont 174 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

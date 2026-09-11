@@ -30,7 +30,7 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Rebuke",
@@ -38,18 +38,18 @@
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
       "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "name": "Overzealous Fan",
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
-      "name": "Overzealous Fan",
+      "name": "Ferrous Forerunner",
       "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
@@ -58,11 +58,11 @@
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 80 % des listes, 1 exemplaire"
+      "role": "Standard, 79 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,13 +77,18 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 210,
-    "coupe10": 25,
+    "joueursClasses": 258,
+    "coupe10": 30,
     "titres": 1,
-    "conversion": "11.9 %",
-    "tournois": 23,
-    "listesPubliees": 94,
+    "conversion": "11.6 %",
+    "tournois": 24,
+    "listesPubliees": 95,
     "bestPlacements": [
+      {
+        "placement": "0th",
+        "player": "mikomiko",
+        "tournament": "Singapore Regional Qualifier"
+      },
       {
         "placement": "1st",
         "player": "JHM.太子",
@@ -102,11 +107,6 @@
       {
         "placement": "5th",
         "player": "CCC",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "6th",
-        "player": "TIE.TAI选手",
         "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
       }
     ]
@@ -148,7 +148,7 @@
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "70 %",
+      "usage": "71 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
@@ -156,14 +156,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "53 %",
+      "usage": "54 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (84 %)",
-    "Zaun Warrens (76 %)",
+    "Treasure Hoard (83 %)",
+    "Zaun Warrens (75 %)",
     "Amateur Recital (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 210 joueurs classés, 23 tournois, dont 94 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 258 joueurs classés, 24 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

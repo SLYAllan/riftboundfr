@@ -54,7 +54,7 @@
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
@@ -62,7 +62,7 @@
     },
     {
       "name": "En Garde",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Lonely Poro",
@@ -74,20 +74,20 @@
     },
     {
       "name": "Long Sword",
-      "role": "Souple, 49 % des listes, 2 exemplaires"
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Akali, Deadly Weapon": {
-      "usage": "58 %",
+      "usage": "59 %",
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "53 %",
+      "usage": "52 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "48 %",
+      "usage": "49 %",
       "role": "3 exemplaires en moyenne"
     },
     "Jhin, Murderous Artist": {
@@ -96,19 +96,24 @@
     }
   },
   "topBattlefields": [
-    "Back-Alley Bar (51 %)",
+    "Back-Alley Bar (50 %)",
     "Void Gate (39 %)",
     "Star Spring (38 %)",
     "Targon's Peak (34 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 277,
-    "coupe10": 18,
-    "titres": 0,
-    "conversion": "6.5 %",
-    "tournois": 25,
-    "listesPubliees": 180,
+    "joueursClasses": 349,
+    "coupe10": 21,
+    "titres": 1,
+    "conversion": "6 %",
+    "tournois": 26,
+    "listesPubliees": 181,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "Gorica",
+        "tournament": "Singapore Regional Qualifier"
+      },
       {
         "placement": "4th",
         "player": "东东菠菠的卡牌妙妙屋",
@@ -128,13 +133,8 @@
         "placement": "9th",
         "player": "HBG.孜然",
         "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "9th",
-        "player": "梦之星.粉毛奶龙",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 277 joueurs classés, 25 tournois, dont 180 listes publiées d’où viennent les cartes. Relevé du 8 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 349 joueurs classés, 26 tournois, dont 181 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
 }
