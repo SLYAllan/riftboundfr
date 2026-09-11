@@ -8,9 +8,9 @@ sur `main`. En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
 `npx tsx scripts/prod-tunnel.mts --etat` date les cinq listes du 11 septembre.
 
 **Le déploiement Coolify est manuel.** Les fiches d'Irelia et de LeBlanc sont des
-fichiers (`590869a2`) : elles n'arrivent en ligne qu'au prochain Deploy lancé par
-Allan. D'ici là, `/tier-list` (base) et `/legendes` (fichiers) se contredisent sur
-ces deux Légendes.
+fichiers (`590869a2`) : elles ne passent en ligne qu'avec un Deploy lancé par Allan.
+C'est fait : depuis 21 h 08 UTC, `/legendes/irelia-blade-dancer` affiche « A » et
+`/legendes/leblanc-deceiver` « S », comme `/tier-list`.
 
 Le site a répondu 503 « no available server » de 20 h 37 à 20 h 42 UTC environ,
 pendant les seeds en prod par le tunnel ; Allan a tout redémarré. **Cause non
