@@ -20,6 +20,7 @@
  */
 import { readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
+import { createRequire } from "node:module";
 
 const TUNNEL = process.env.PROD_TUNNEL ?? "178.104.237.33:15432";
 
@@ -69,8 +70,17 @@ console.log(`Lancement de ${cible} contre la PRODUCTION (${TUNNEL}).`);
 // Sans `shell`, les arguments passent tels quels. Avec, Windows recoupe sur les
 // espaces : `--sauf "Annie, Dark Child"` devenait trois arguments, et le script
 // cherchait des tournois nommés « Annie, » puis « Dark » puis « Child ».
-const r = spawnSync(process.platform === "win32" ? "npx.cmd" : "npx", ["tsx", cible, ...process.argv.slice(3)], {
+//
+// Et on lance Node lui-même sur la CLI de tsx, pas `npx.cmd` : depuis Node 20,
+// un `.cmd` démarré sans shell est refusé (EINVAL). Le fils ne partait jamais,
+// le lanceur sortait en 1 sans un mot, et ça passait pour « sortie avalée ».
+const cliTsx = createRequire(import.meta.url).resolve("tsx/cli");
+const r = spawnSync(process.execPath, [cliTsx, cible, ...process.argv.slice(3)], {
   stdio: "inherit",
   env,
 });
+if (r.error) {
+  console.error(`Le script n'a pas pu démarrer : ${r.error.message}`);
+  process.exit(1);
+}
 process.exit(r.status ?? 1);
