@@ -64,7 +64,8 @@ Attendre la propagation (~5 min a 1h).
 5. Configurer :
    - **Domains** : `https://riftboundfrance.fr,https://www.riftboundfrance.fr`
    - **Port** : `3000`
-   - Cocher **Auto Deploy** pour deployer a chaque push
+   - **Auto Deploy** : NON activé. Un push ne déploie rien : Allan lance le
+     déploiement à la main dans Coolify.
 
 ---
 

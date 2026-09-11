@@ -4,11 +4,18 @@
 
 Commits `9076bc37` (Singapour et stats) et `c0adf447` (lanceur de prod), poussés
 sur `main`. En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
-(26 169 avant). Les tier lists refaites (plus bas) partent en prod APRÈS le
-déploiement de leur commit, pour que `/tier-list` (base) et `/legendes` (fichiers)
-ne se contredisent pas : `npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts`,
-puis `npx tsx scripts/prod-tunnel.mts --etat`, qui doit dater les cinq listes du
-11 septembre.
+(26 169 avant). Les tier lists refaites (plus bas) sont en prod depuis 21 h 05 UTC :
+`npx tsx scripts/prod-tunnel.mts --etat` date les cinq listes du 11 septembre.
+
+**Le déploiement Coolify est manuel.** Les fiches d'Irelia et de LeBlanc sont des
+fichiers (`590869a2`) : elles n'arrivent en ligne qu'au prochain Deploy lancé par
+Allan. D'ici là, `/tier-list` (base) et `/legendes` (fichiers) se contredisent sur
+ces deux Légendes.
+
+Le site a répondu 503 « no available server » de 20 h 37 à 20 h 42 UTC environ,
+pendant les seeds en prod par le tunnel ; Allan a tout redémarré. **Cause non
+trouvée.** Les pushs n'y sont pour rien, puisqu'ils ne déploient pas. Le seed des
+tier lists à 21 h 05 n'a rien fait tomber.
 
 Deux sources. Les listes viennent de l'article officiel de Riot,
 `https://playriftbound.com/en-us/news/organizedplay/singapores-top-decks/`,
@@ -2074,8 +2081,10 @@ déclaré ; le SVG est refusé exprès.
 ne se voyait pas en relecture de code : il a fallu mesurer image par image dans OBS.
 L'opacité doit être posée sur l'élément positionné lui-même.
 
-**Le piège de l'ordre de déploiement.** Coolify déploie tout seul au push. Le code est
-donc en production **avant** le schéma, puisqu'il n'y a pas de migrations. `OverlayMedia`
+**Le piège de l'ordre de déploiement.** Le code part en production quand Allan lance le
+déploiement dans Coolify, à la main : un push seul ne déploie rien (corrigé le 11
+septembre 2026, cette note disait l'inverse). Sans migrations, le code peut donc
+arriver **avant** le schéma. `OverlayMedia`
 a rendu 500 en prod jusqu'à sa création à la main. Pour toute nouvelle table : sortir le
 DDL exact avec `npx prisma migrate diff --from-empty --to-schema-datamodel
 prisma/schema.prisma --script`, puis le faire jouer dans le conteneur `/app`, où
