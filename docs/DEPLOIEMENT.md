@@ -220,3 +220,31 @@ docker ps
 - [ ] Test : publication d'un deck fonctionne
 - [ ] Backup DB configure
 - [ ] ADMIN_PASSWORD est un vrai mot de passe (pas "changeme")
+
+---
+
+## Écrire en base de production : `scripts/prod-tunnel.mts`
+
+Un déploiement ne touche pas aux données : decks, best-of, articles et tier lists
+passent par la base, jamais par le Deploy. Le lanceur lit `.env.prod.local`,
+remplace l'hôte par le tunnel public `178.104.237.33:15432` (l'adresse
+`127.0.0.1:5435` du fichier ne répond pas) et lance le script avec cette base. Le
+mot de passe n'est jamais affiché.
+
+```bash
+npx tsx scripts/prod-tunnel.mts --etat                  # lecture seule : cartes, decks, tier lists
+npx tsx scripts/prod-tunnel.mts scripts/seed-tournament-decks.ts <prefixe> "<contexte>" <set> "<tags>"
+npx tsx scripts/prod-tunnel.mts scripts/mark-bestof-tournois.mts "<contexte>"
+npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts
+```
+
+- Toujours `--etat` avant d'écrire, pour voir ce qu'on va remplacer, et après,
+  pour vérifier en base plutôt que dans la sortie du script.
+- Les arguments à espaces passent intacts : le lanceur n'utilise pas de shell.
+- Jusqu'au 11 septembre 2026, il lançait `npx.cmd` sans shell, ce que Node refuse
+  sous Windows : le script ne partait jamais et le lanceur sortait en 1 sans rien
+  dire. Corrigé : il lance la CLI de tsx avec Node et affiche l'erreur de démarrage.
+- Des fichiers servis par le site (`data/fiches/`, `meta-parts.json`) ne passent en
+  ligne qu'avec le Deploy. Seeder une tier list sans déployer les fiches qui vont
+  avec fait se contredire `/tier-list` et `/legendes`.
+

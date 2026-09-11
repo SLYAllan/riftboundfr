@@ -2,8 +2,9 @@
 
 ## Session du 11 septembre 2026 — RQ Singapour poussé et seedé en prod
 
-Commits `9076bc37` (Singapour et stats) et `c0adf447` (lanceur de prod), poussés
-sur `main`. En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
+Six commits poussés sur `main` : `9076bc37` (Singapour et stats), `c0adf447`
+(lanceur de prod), `590869a2` (tier lists et docs de stats), et trois de docs
+(`eed96630`, `7a8a3ad4`, `e3e34298`). En prod : 38 listes, 34 best-of, l'article ; 26 207 decks publiés
 (26 169 avant). Les tier lists refaites (plus bas) sont en prod depuis 21 h 05 UTC :
 `npx tsx scripts/prod-tunnel.mts --etat` date les cinq listes du 11 septembre.
 
@@ -111,14 +112,20 @@ relevé du 8 septembre. Les six épreuves depuis Wuhan sont déjà tranchées da
 
 ### Ce qui reste
 
-- La pile du 3 septembre est toujours en local, hors de ces deux commits.
+- La pile du 3 septembre est toujours en local, hors des commits du jour.
+- **La CI est rouge depuis le commit Shanghai du 8 septembre** (`2f839b14`), donc
+  avant cette session. Le job « donnees » voit 70 listes de Changsha qui ne collent
+  pas à leur source (`validate-decklists.py`, 24 771 vérifiées), alors qu'en local
+  le même script n'en voit aucune (24 841 vérifiées). Les sources de Changsha sont
+  bien suivies par git : la cause n'est pas trouvée. Voir
+  `gh run view 34645085765 --log-failed`.
 - Les 114 listes riftdecks de Singapour ne sont pas importées. Les 38 de Riot
   couvrent déjà le Top 8 et le n°1 de chaque Légende ; les autres donneraient la
   page du tournoi et `/decks`, pas les stats, qui passent par le classement. Le
   chemin : `scrape-tournoi.sh`, puis `parse-playriftbound.ts` compare les joueurs
   présents des deux côtés.
-- La prod portait 26 169 decks le 11 septembre, le chiffre du 2 septembre : les
-  120 listes de Shanghai (hexgate 246) n'y sont toujours pas.
+- Les 120 listes de Shanghai (hexgate 246) ne sont toujours pas en prod : avant
+  le seed de Singapour, elle portait 26 169 decks, le chiffre du 2 septembre.
 - L'intitulé du Tier S de l'article de Barcelone dit « les deux Légendes » ;
   elles sont trois depuis Wuhan. La page best-of supprime les titres de rang
   (`isTierHeading` dans `src/app/articles/[slug]/page.tsx`), donc rien ne se voit,

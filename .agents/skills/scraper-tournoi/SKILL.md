@@ -102,6 +102,25 @@ Pour chaque Légende jouée, la liste la mieux classée passe en `featured`. Le
 script ne crée rien et il est idempotent. **Best-of = le meilleur deck de chaque
 Légende**, pas le top 8.
 
+### Regional Qualifier : l'article de Riot et le classement
+
+riftdecks ne publie que les listes que les joueurs envoient (Barcelone 106 sur
+2 127, Singapour 114 sur 1 893). Deux sources complètent :
+
+- **L'article officiel de Riot**, `playriftbound.com/.../<ville>s-top-decks/`,
+  publie le Top 8 et le n°1 de chaque Légende avec leur liste complète.
+  `bash scripts/fc.sh scrape <url> -f markdown --only-main-content -o
+  data/raw-scrapes/<slug>-officiel.md` (firecrawl garde les tableaux), puis
+  `npx tsx scripts/parse-playriftbound.ts <slug> "<nom>" <date> <joueurs> <set> <url>`.
+  Lire ses FICHES, pas sa prose : à Singapour le texte annonçait cinq Kennen dans
+  le Top 8, les fiches en donnent quatre. Après `mark-bestof-tournois.mts`,
+  recouper les decks `featured` contre les « Legend Rank #1 » de l'article.
+- **Le classement complet**, pour les stats :
+  `bash scripts/scrape-classement.sh <slug>-classement <url-riftdecks>`, puis une
+  entrée dans `CONTEXTES` de `scripts/classements-tournois.mts` quand le contexte
+  ne se retrouve pas seul, puis `npm run maj:stats`. Sans lui, le tournoi reste
+  hors du corpus des tier lists (90 % de couverture exigés).
+
 ## 5. Drapeau, pays et set
 
 `src/lib/tournament-flags.ts` porte le pays, le continent et le set de chaque
@@ -114,3 +133,7 @@ les decks une des 14 Légendes exclusives à Déchaînement.
 `npm run verify`, puis le skill `verifier`. Regarder la page du tournoi dans un
 navigateur avant de pousser : un nombre de joueurs ou une date faux se voient
 tout de suite et ne se voient jamais dans un diff.
+
+Pousser ne déploie rien : Allan lance le Deploy dans Coolify. Les données (decks,
+best-of, articles) partent en prod par `scripts/prod-tunnel.mts`, voir
+`docs/DEPLOIEMENT.md`.

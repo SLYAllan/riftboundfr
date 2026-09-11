@@ -388,7 +388,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **59 fichiers, 312 tests, tous verts.** |
+| `npm test` | ✅ | Vitest. **66 fichiers, 367 tests, tous verts** (relevé du 11 septembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
@@ -447,6 +447,15 @@ Coolify construit l'image depuis le `Dockerfile` et gère le reverse proxy ; le
 `docker-compose.yml` du dépôt sert **uniquement au développement local**. Les
 variables d'environnement sont posées dans Coolify, pas dans un fichier.
 Le détail est dans `docs/DEPLOIEMENT.md`.
+
+**Le déploiement est MANUEL.** Un push sur `main` ne déploie rien : Allan lance
+le Deploy dans Coolify. Ne jamais attendre un déploiement après un push, et ne
+jamais supposer que le code poussé est en ligne. Des notes ont affirmé l'inverse
+pendant des semaines ; elles étaient fausses.
+
+Pour écrire en base de production : `npx tsx scripts/prod-tunnel.mts --etat`,
+puis `npx tsx scripts/prod-tunnel.mts <script> <arguments>`. Détail dans
+`docs/DEPLOIEMENT.md`.
 
 Un déploiement Coolify ne seede pas les decks. Pour pousser du contenu en
 production, voir `docs/DEPLOIEMENT.md` — et lire d'abord la mise en garde sur la
