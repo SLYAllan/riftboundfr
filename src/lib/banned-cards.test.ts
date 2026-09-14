@@ -21,20 +21,21 @@ function cartesDesFiches() {
 
 describe("cartes bannies dans les fiches Légendes", () => {
   it("reconnaît les noms tels qu'ils sont écrits dans les fiches", () => {
-    // Ces trois fiches conseillent une carte bannie (relevé du 26 août 2026).
+    // Ces deux fiches conseillent une carte bannie (relevé du 15 septembre 2026).
     // Le badge « Bannie » de CardTile repose sur cette correspondance exacte :
     // si un nom change d'un côté sans l'autre, le badge disparaît en silence.
     //
     // Elles étaient quatre le 23 août. `fiches-maj` a recalculé les cartes clés
     // d'Annie sur les decklists Vendetta réelles, et la carte bannie a disparu
-    // d'elle-même. Les trois qui restent sont des Légendes d'Origines désertées
-    // depuis la rotation des Best-Of : moins de dix listes chacune dans le
-    // format, donc le script les laisse telles quelles et leurs cartes datent.
+    // d'elle-même. Volibear a suivi le 15 septembre : `parse-hexgate` rattache
+    // enfin sa Légende, il passe les dix listes et sa fiche est recalculée. Les
+    // deux qui restent sont des Légendes d'Origines désertées depuis la rotation
+    // des Best-Of : moins de dix listes chacune dans le format, donc le script
+    // les laisse telles quelles et leurs cartes datent.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
       "jinx-loose-cannon.json",
-      "volibear-relentless-storm.json",
       "yasuo-unforgiven.json",
     ]);
   });
