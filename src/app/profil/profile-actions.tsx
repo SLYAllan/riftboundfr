@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Pencil, Check, X } from "lucide-react";
+import { Pencil, Check, X, Trash2 } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
 
 interface ProfileActionsProps {
@@ -174,6 +174,89 @@ export function ProfileActions({ username, riotGameName, riotTagLine }: ProfileA
         </button>
       </div>
       <span role="status" aria-live="polite" className="sr-only">{annonce}</span>
+    </div>
+  );
+}
+
+/**
+ * Suppression du compte. Deux temps, exprès : rien ne se répare après.
+ *
+ * L'écran de confirmation dit ce qui part et ce qui reste. Les decks publiés
+ * restent en ligne sous « Anonyme » : d'autres les ont likés, commentés, mis en
+ * lien, et les faire disparaître casserait leurs pages. Le taire aurait été pire
+ * que de le dire.
+ */
+export function SupprimerCompte() {
+  const t = useT();
+  const [confirme, setConfirme] = useState(false);
+  const [enCours, setEnCours] = useState(false);
+  const [erreur, setErreur] = useState<string | null>(null);
+
+  const supprimer = async () => {
+    setEnCours(true);
+    setErreur(null);
+    try {
+      const res = await fetch("/api/auth/profile", { method: "DELETE" });
+      if (!res.ok) {
+        const corps = (await res.json().catch(() => null)) as { error?: string } | null;
+        setErreur(corps?.error || t("La suppression a échoué. Réessayez."));
+        return;
+      }
+      // Rechargement complet et pas router.push : le cookie vient d'être retiré,
+      // et tout l'état client encore en mémoire (collection, notifications)
+      // parle d'un compte qui n'existe plus. Une navigation Next garderait ces
+      // fournisseurs montés avec leurs données.
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+      window.location.href = "/";
+    } catch {
+      setErreur(t("La suppression a échoué. Vérifiez votre connexion."));
+    } finally {
+      setEnCours(false);
+    }
+  };
+
+  if (!confirme) {
+    return (
+      <button
+        onClick={() => setConfirme(true)}
+        className={`${boutonCls} mt-3 text-error-light hover:bg-error/10`}
+      >
+        <Trash2 size={14} aria-hidden="true" /> {t("Supprimer mon compte")}
+      </button>
+    );
+  }
+
+  return (
+    <div className="mt-3 space-y-3 rounded-lg border border-error/40 bg-error/5 p-4">
+      <h3 className="text-sm font-semibold text-error-light">{t("Supprimer mon compte ?")}</h3>
+      <p className="text-sm text-ink-secondary">
+        Ta collection, tes classeurs, tes commentaires, tes j&apos;aime et ton overlay de stream
+        seront effacés. C&apos;est sans retour.
+      </p>
+      <p className="text-sm text-ink-muted">
+        Tes decks publiés restent en ligne, signés « Anonyme » : d&apos;autres joueurs les ont
+        commentés et mis en lien.
+      </p>
+      {erreur && (
+        <p role="alert" className="rounded-lg bg-error/10 px-3 py-2 text-sm text-error-light">{erreur}</p>
+      )}
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          onClick={supprimer}
+          disabled={enCours}
+          aria-busy={enCours}
+          className={`${boutonCls} bg-error font-medium text-canvas hover:bg-error/80 disabled:opacity-70`}
+        >
+          <Trash2 size={14} aria-hidden="true" />
+          {enCours ? t("Suppression…") : t("Supprimer définitivement")}
+        </button>
+        <button
+          onClick={() => { setConfirme(false); setErreur(null); }}
+          className={`${boutonCls} bg-surface-raised text-ink-secondary hover:text-ink`}
+        >
+          <X size={14} aria-hidden="true" /> {t("Annuler")}
+        </button>
+      </div>
     </div>
   );
 }

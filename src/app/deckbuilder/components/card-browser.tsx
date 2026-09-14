@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { RotateCcw, Plus, SlidersHorizontal, Eye } from "lucide-react";
+import { RotateCcw, Plus, SlidersHorizontal, Eye, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { CardDetailModal } from "./card-detail-modal";
@@ -137,7 +137,7 @@ function CardTile({
         {!atMax && (
           <button
             onClick={(e) => { e.stopPropagation(); onAddMain(); }}
-            className="flex-1 rounded-md bg-arcane/90 py-1.5 text-xs font-semibold text-canvas hover:bg-arcane transition-colors flex items-center justify-center gap-1 shadow-lg"
+            className="flex-1 rounded-md bg-arcane/90 py-1.5 text-xs font-semibold text-canvas hover:bg-arcane transition-colors flex items-center justify-center gap-1 shadow-lg [@media(hover:none)]:min-h-11"
           >
             <Plus size={12} /> {addLabel}
           </button>
@@ -145,7 +145,7 @@ function CardTile({
         {showSideButton && (
           <button
             onClick={(e) => { e.stopPropagation(); onAddSide(); }}
-            className="rounded-md bg-gold/90 px-2 py-1.5 text-xs font-semibold text-canvas hover:bg-gold transition-colors shadow-lg"
+            className="rounded-md bg-gold/90 px-2 py-1.5 text-xs font-semibold text-canvas hover:bg-gold transition-colors shadow-lg [@media(hover:none)]:min-h-11"
           >
             Side
           </button>
@@ -153,7 +153,7 @@ function CardTile({
         <button
           onClick={(e) => { e.stopPropagation(); onDetail(); }}
           aria-label={t("Voir le détail de la carte")}
-          className="rounded-md bg-surface/90 backdrop-blur-sm px-2 py-1.5 text-xs text-ink hover:bg-surface transition-colors shadow-lg border border-hairline"
+          className="rounded-md bg-surface/90 backdrop-blur-sm px-2 py-1.5 text-xs text-ink hover:bg-surface transition-colors shadow-lg border border-hairline [@media(hover:none)]:min-h-11 [@media(hover:none)]:min-w-11"
         >
           <Eye size={13} />
         </button>
@@ -183,6 +183,11 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
   const [mightLow, setMightLow] = useState(0);
   const [mightHigh, setMightHigh] = useState(capM);
   const [showSliders, setShowSliders] = useState(false);
+  // Au telephone, les domaines, le tri et les mots-cles pesaient 253 px des
+  // 775 px de la page : il ne restait que 261 px pour les cartes, soit une
+  // rangee et demie. Ils se replient derriere un bouton ; sur ecran large ils
+  // restent deplies, la place ne manque pas.
+  const [filtresOuverts, setFiltresOuverts] = useState(false);
   const [sortBy, setSortBy] = useState<SortKey>("energy");
   const [selectedKeyword, setSelectedKeyword] = useState("");
   const [detailCard, setDetailCard] = useState<CardData | null>(null);
@@ -315,7 +320,20 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       <div className="shrink-0 space-y-2.5 p-3 border-b border-hairline">
         <SearchBar value={searchQuery} onChange={setSearchQuery} parsed={parsed} />
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <button
+          type="button"
+          onClick={() => setFiltresOuverts(!filtresOuverts)}
+          aria-expanded={filtresOuverts}
+          className="flex min-h-11 w-full items-center justify-between rounded-lg border border-hairline px-3 text-xs font-semibold text-ink-secondary sm:hidden"
+        >
+          <span className="flex items-center gap-2">
+            <SlidersHorizontal size={14} /> {t("Filtres")}
+            {hasFilters && <span className="rounded-full bg-arcane px-1.5 text-[10px] text-canvas">!</span>}
+          </span>
+          <ChevronDown size={14} className={cn("transition-transform", filtresOuverts && "rotate-180")} />
+        </button>
+
+        <div className={cn("items-center gap-2 flex-wrap", filtresOuverts ? "flex" : "hidden sm:flex")}>
           <div className="flex flex-wrap items-center gap-1.5">
             {DOMAIN_ORDER.map((d) => {
               const active = selectedDomains.has(d);
@@ -372,7 +390,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
         </div>
 
         {showSliders && showSliderToggle && (
-          <div className="flex gap-4">
+          <div className={cn("gap-4", filtresOuverts ? "flex" : "hidden sm:flex")}>
             <RangeSlider label={t("Énergie")} min={0} max={capE} valueLow={energyLow} valueHigh={energyHigh} onChange={(l, h) => { setEnergyLow(l); setEnergyHigh(h); }} />
             <RangeSlider label="Pouvoir" min={0} max={capP} valueLow={powerLow} valueHigh={powerHigh} onChange={(l, h) => { setPowerLow(l); setPowerHigh(h); }} />
             <RangeSlider label="Puissance" min={0} max={capM} valueLow={mightLow} valueHigh={mightHigh} onChange={(l, h) => { setMightLow(l); setMightHigh(h); }} />
@@ -397,7 +415,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
           </div>
         )}
 
-        <div className="grid gap-2 grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8">
+        <div className="grid gap-2 grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8">
           {filtered.map((card) => (
             <CardTile
               key={card.id}

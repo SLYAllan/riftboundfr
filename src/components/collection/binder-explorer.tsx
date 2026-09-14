@@ -315,8 +315,9 @@ export function BinderExplorer({
                   note={has ? <span className="font-semibold text-arcane">×{qty} en collection</span> : <span className="text-ink-muted">{t("Non possédée")}</span>}
                 >
                   <div className={`relative overflow-hidden rounded-game-card transition group-hover:ring-2 group-hover:ring-arcane/70 ${has ? "" : "opacity-40 grayscale"}`}>
+                    {/* Pas de pastille de quantité sur l'image : le compteur est
+                        juste en dessous et donnait le même nombre deux fois. */}
                     <CardImage src={c.imageUrl} alt={c.name} size="sm" />
-                    {has && <span className="absolute right-1 top-1 flex h-6 min-w-6 items-center justify-center rounded-full bg-arcane px-1.5 text-xs font-bold text-canvas shadow">×{qty}</span>}
                   </div>
                 </CardHover>
                 <div className="mt-1 flex items-center justify-center gap-2">

@@ -51,6 +51,10 @@ const TIER_BG: Record<string, string> = {
   S: "bg-tier-s", A: "bg-tier-a", B: "bg-tier-b", C: "bg-tier-c", D: "bg-tier-d",
 };
 
+// Sans décimales : la pastille est étroite, et « 12 € » se lit d'un coup d'œil
+// là où « 12,40 € » se lit deux fois.
+const eurosCourts = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+
 const CATEGORIES = [
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, isLink: false },
   { key: "bestof", label: "Best of", href: "/decks?cat=bestof", icon: Star, isLink: false },
@@ -357,7 +361,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
     getUserFromSession(),
   ]);
 
-  const ownedOnly = filtres.owned;
   const decks = lotInitial.decks;
   const coverageByDeck = new Map(decks.map((deck) => [deck.id, deck.coverage]));
   const legendNames = legends.map((l) => l.legendName);
@@ -433,21 +436,6 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Link href="/deckbuilder" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
       </nav>
 
-      {/* Filtre collection : n'apparaît qu'une fois connecté (sinon aucune
-          couverture à calculer). Garde tous les autres filtres dans l'URL. */}
-      {sessionUser && (
-        <div className="mt-3">
-          <Link
-            href={hrefDecks({ owned: ownedOnly ? null : "1" })}
-            className={cn(
-              "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors",
-              ownedOnly ? "bg-emerald-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
-            )}
-          >
-            <Hammer size={12} /> {t(ownedOnly ? "Voir tous les decks" : "Decks que je peux jouer avec mes cartes")}
-          </Link>
-        </div>
-      )}
 
       {/* Une seule ligne de filtres. Avant, trois rangées de pastilles construisaient
           leur lien à la main : changer de set effaçait le tournoi en cours, et
@@ -473,6 +461,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Suspense>
           <DeckTournamentFilter options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label, pays: tf.countryCode }))} />
         </Suspense>
+
         <div className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
           <span className="text-xs text-ink-muted">{t("Tri")}</span>
           <Link
@@ -495,6 +484,20 @@ export default async function DecksPage({ searchParams }: PageProps) {
           >
             <Heart size={12} aria-hidden="true" /> {t("Populaire")}
           </Link>
+          {/* Le tri par accessibilité ne s'affiche qu'une fois connecté : sans
+              collection, il n'y a rien à comparer. Il remplace la pastille
+              « Decks que je peux jouer », qui flottait seule au-dessus des
+              filtres et cachait tout le reste au lieu de le classer. */}
+          {sessionUser && (
+            <Link
+              href={hrefDecks({ sort: "accessible" })}
+              className={cn("inline-flex min-h-11 items-center gap-1 rounded-full px-3 text-xs font-semibold transition-colors",
+                sortParam === "accessible" ? "bg-emerald-500 text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+              )}
+            >
+              <Hammer size={12} aria-hidden="true" /> {t("Jouables avec mes cartes")}
+            </Link>
+          )}
         </div>
         </div>
       </div>
@@ -529,6 +532,16 @@ export default async function DecksPage({ searchParams }: PageProps) {
                     const cov = coverageByDeck.get(deck.id);
                     if (!cov) return null;
                     const ok = cov.missing === 0;
+                    // Sous le tri par accessibilité, la pastille dit CE QU'IL RESTE
+                    // À FAIRE plutôt que le décompte possédé : c'est la question
+                    // qu'on vient de poser à la page. Une seconde pastille aurait
+                    // répété le même chiffre à côté de la première.
+                    const acc = deck.accessibilite;
+                    const reste = acc && acc.manquantes > 0
+                      ? acc.eur != null
+                        ? `${acc.manquantes} ${t(acc.manquantes > 1 ? "cartes" : "carte")} · ${eurosCourts.format(acc.eur)}`
+                        : `${acc.manquantes} ${t(acc.manquantes > 1 ? "cartes" : "carte")}`
+                      : null;
                     return (
                       <span
                         className={cn(
@@ -537,7 +550,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                         )}
                         title={ok ? t("Jouable avec votre collection") : `${t("Il vous manque")} ${cov.missing} ${t(cov.missing > 1 ? "cartes" : "carte")}`}
                       >
-                        {ok ? `✓ ${t("Complet")}` : `${cov.owned}/${cov.required}`}
+                        {ok ? `✓ ${t("Complet")}` : reste ?? `${cov.owned}/${cov.required}`}
                       </span>
                     );
                   })()}

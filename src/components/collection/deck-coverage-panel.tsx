@@ -124,17 +124,21 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                   ` ${prix.exemplairesSansPrix} carte${prix.exemplairesSansPrix > 1 ? "s" : ""} sans prix connu.`}
               </p>
             </div>
-            <a
-              href={lienAchat}
-              target="_blank"
-              rel="noopener sponsored nofollow"
-              // scale au clic : le seul retour tactile d'un lien qui part sur un autre site.
-              className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2.5 font-semibold text-canvas transition-[background-color,transform] duration-150 hover:bg-arcane-light active:scale-[0.96]"
-            >
-              {/* Logo blanc : le site n'a que le thème sombre, et le fond du bouton est foncé. */}
-              <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
-              Acheter ce deck
-            </a>
+            {/* Un formulaire et pas un lien : la route CRÉE une liste sur le compte
+                CardNexus d'Allan. En lien ordinaire, les robots qui balaient les
+                pages de deck la suivaient et en avaient créé 12 100. Un POST ne se
+                suit pas. */}
+            <form action={lienAchat} method="POST" target="_blank" rel="noopener sponsored nofollow">
+              <button
+                type="submit"
+                // scale au clic : le seul retour tactile d'un bouton qui part sur un autre site.
+                className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2.5 font-semibold text-canvas transition-[background-color,transform] duration-150 hover:bg-arcane-light active:scale-[0.96]"
+              >
+                {/* Logo blanc : le site n'a que le thème sombre, et le fond du bouton est foncé. */}
+                <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
+                Acheter ce deck
+              </button>
+            </form>
           </div>
 
         </>
@@ -176,15 +180,15 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                         cartes déjà en boîte. Le serveur retranche la collection, il
                         ne reçoit aucune liste du navigateur. */}
                     {lienAchat && (
-                      <a
-                        href={`${lienAchat}&manquantes=1`}
-                        target="_blank"
-                        rel="noopener sponsored nofollow"
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-arcane/60 px-2.5 py-1.5 text-sm font-semibold text-arcane transition-[background-color,transform] duration-150 hover:bg-arcane/10 active:scale-[0.96]"
-                      >
-                        <Image src="/cardnexus/mini-blanc.svg" alt="" width={101} height={100} className="h-4 w-4 opacity-80" />
-                        Acheter ce qui me manque
-                      </a>
+                      <form action={`${lienAchat}&manquantes=1`} method="POST" target="_blank" rel="noopener sponsored nofollow">
+                        <button
+                          type="submit"
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-arcane/60 px-2.5 py-1.5 text-sm font-semibold text-arcane transition-[background-color,transform] duration-150 hover:bg-arcane/10 active:scale-[0.96]"
+                        >
+                          <Image src="/cardnexus/mini-blanc.svg" alt="" width={101} height={100} className="h-4 w-4 opacity-80" />
+                          Acheter ce qui me manque
+                        </button>
+                      </form>
                     )}
                   </>
                 ) : null}

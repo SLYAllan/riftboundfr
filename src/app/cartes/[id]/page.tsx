@@ -16,6 +16,7 @@ import type { Metadata } from "next";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { CardCollectionQuantity } from "@/components/collection/card-collection-quantity";
 import { chargerPrix, lienProduit } from "@/lib/cardnexus";
+import { libelleSection, nomEvenement, placeSection, statsJeuCarte } from "@/lib/card-play";
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
 import { cache } from "react";
 
@@ -75,41 +76,11 @@ export default async function CardDetailPage({ params }: PageProps) {
 
   const errata = getErrata(card.name);
 
-  const relatedDeckCards = await prisma.deckCard.findMany({
-    where: { cardId: card.id, deck: { published: true } },
-    include: {
-      deck: {
-        select: {
-          id: true, slug: true, title: true, legendName: true,
-          featured: true, placement: true, tournamentContext: true,
-        },
-      },
-    },
-    // Le tri fin (mis en avant, puis le classement, qui est du TEXTE en base) se
-    // fait plus bas en mémoire. Mais couper 30 lignes au hasard AVANT ce tri
-    // pouvait écarter le deck vedette ou le vainqueur. On trie donc déjà ici sur
-    // ce que la base sait trier, et on prend large avant de garder les cinq.
-    orderBy: [{ deck: { featured: "desc" } }, { deck: { createdAt: "desc" } }],
-    take: 120,
-  });
-
-  function parsePlacement(p: string | null): number {
-    if (!p) return 9999;
-    const n = parseInt(p.replace(/[^0-9]/g, ""));
-    return isNaN(n) ? 9999 : n;
-  }
-
-  const relatedDecks = relatedDeckCards
-    .sort((a, b) => {
-      if (a.deck.featured !== b.deck.featured) return a.deck.featured ? -1 : 1;
-      const aP = parsePlacement(a.deck.placement);
-      const bP = parsePlacement(b.deck.placement);
-      if (aP !== bP) return aP - bP;
-      if (a.deck.tournamentContext && !b.deck.tournamentContext) return -1;
-      if (!a.deck.tournamentContext && b.deck.tournamentContext) return 1;
-      return 0;
-    })
-    .slice(0, 5);
+  // Les chiffres de jeu passent par `statsJeuCarte`, jamais par une requête à la
+  // main : ils comptent TOUTES les impressions du même nom. La page comptait sur
+  // le seul `card.id`, donc une carte réimprimée avait autant de compteurs que de
+  // numéros et aucun ne disait la vérité.
+  const jeu = await statsJeuCarte(card.name);
 
   // Le prix vient de `data/prices/card-prices.json`, relevé par `npm run sync-prices`,
   // et le lien d'achat de `src/lib/cardnexus.ts`, seul endroit qui porte
@@ -280,39 +251,163 @@ export default async function CardDetailPage({ params }: PageProps) {
             {card.artist && <div className="text-sm text-ink-muted">Artiste : <span className="text-ink-secondary">{card.artist}</span></div>}
           </div>
           <div className="mt-8">
-            {relatedDecks.length > 0 && (
+            <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              {t("En tournoi")}
+            </h2>
+
+            {!jeu || jeu.decks === 0 ? (
+              // Le dire plutôt que de masquer la section : « aucun deck ne la joue »
+              // est une réponse, une section absente n'en est pas une.
+              <p className="mt-3 text-sm text-ink-muted">
+                {t("Aucun deck de tournoi publié ne joue cette carte pour l’instant.")}
+              </p>
+            ) : (
               <>
-                <h2 className="text-xl font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Decks utilisant cette carte")}</h2>
-                <div className="mt-3 space-y-2">
-                  {relatedDecks.map(({ deck }) => (
-                    <Link key={deck.id} href={`/decks/${deck.slug}`} className="block rounded-lg border border-hairline bg-surface p-3 transition-colors hover:border-hairline-accent">
-                      <div className="flex items-center gap-2">
-                        <span className="font-medium">{deck.title}</span>
-                        {deck.placement && (
-                          <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{deck.placement}</span>
-                        )}
-                        {deck.featured && (
-                          <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
-                        )}
-                      </div>
-                      <div className="mt-0.5 flex items-center gap-2 text-sm">
-                        <span className="text-arcane">{displayLegendName(deck.legendName)}</span>
-                        {deck.tournamentContext && <span className="text-ink-muted">&middot; {deck.tournamentContext}</span>}
-                      </div>
-                    </Link>
-                  ))}
+                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                  <Chiffre valeur={jeu.decks.toLocaleString("fr-FR")} libelle={t(jeu.decks > 1 ? "decks de tournoi" : "deck de tournoi")} />
+                  <Chiffre valeur={jeu.decksClasses.toLocaleString("fr-FR")} libelle={t(jeu.decksClasses > 1 ? "listes classées" : "liste classée")} />
+                  <Chiffre
+                    valeur={jeu.emplacements[0]?.moyenne != null ? String(jeu.emplacements[0].moyenne) : "-"}
+                    libelle={`${t("exemplaires en moyenne")}${jeu.emplacements[0] ? ` (${libelleSection(jeu.emplacements[0].section)})` : ""}`}
+                  />
                 </div>
+
+                {/* Une ligne par emplacement réellement occupé. Une carte peut
+                    être au deck principal chez les uns et en réserve chez les
+                    autres, et une rune ou un champ de bataille n'est ni l'un ni
+                    l'autre. */}
+                <ul className="mt-2 space-y-0.5 text-sm text-ink-secondary">
+                  {jeu.emplacements.map((e) => (
+                    <li key={e.section}>
+                      {e.decks.toLocaleString("fr-FR")}{" "}
+                      {t(e.decks > 1 ? "listes" : "liste")} {placeSection(e.section)}
+                      {e.moyenne != null && <span className="text-ink-muted"> &middot; &times;{e.moyenne} {t("en moyenne")}</span>}
+                    </li>
+                  ))}
+                </ul>
+
+                {jeu.legendes.length > 0 && (
+                  <div className="mt-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Légendes qui l’emploient")}</h3>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {jeu.legendes.map((l) => (
+                        <Link
+                          key={l.nom}
+                          href={`/decks?legend=${encodeURIComponent(l.nom)}&set=all`}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-surface px-2.5 py-1.5 text-sm transition-colors hover:border-hairline-accent"
+                        >
+                          <span className="text-arcane">{displayLegendName(l.nom)}</span>
+                          <span className="tabular-nums text-xs text-ink-muted">{l.decks}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {jeu.evenements.length > 0 && (
+                  <div className="mt-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Événements")}</h3>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {jeu.evenements.map((e) => (
+                        <span key={e.nom} className="inline-flex items-center gap-1.5 rounded-lg border border-hairline bg-surface px-2.5 py-1.5 text-sm">
+                          <span className="text-ink-secondary">{nomEvenement(e.nom)}</span>
+                          {e.date && <span className="text-xs text-ink-muted">{formatDate(new Date(e.date))}</span>}
+                          <span className="tabular-nums text-xs text-ink-muted">{e.decks}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Comparaison des impressions : à la table elles sont la MÊME
+                    carte, le règlement les accepte toutes. Une seule ligne ne
+                    servirait à rien, on ne l'affiche donc qu'à partir de deux. */}
+                {jeu.impressions.length > 1 && (
+                  <div className="mt-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Par impression")}</h3>
+                    <div className="mt-2 overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="text-left text-xs uppercase tracking-wider text-ink-muted">
+                            <th className="pb-1 font-semibold">{t("Impression")}</th>
+                            <th className="pb-1 font-semibold">Set</th>
+                            <th className="pb-1 text-right font-semibold">{t("Listes")}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {jeu.impressions.map((i) => (
+                            <tr key={i.cardId} className={i.cardId === card.id ? "border-t border-hairline text-arcane" : "border-t border-hairline"}>
+                              <td className="py-1.5">
+                                {i.cardId === card.id ? (
+                                  <span className="font-semibold">{i.riftboundId}</span>
+                                ) : (
+                                  <Link href={`/cartes/${i.riftboundId}`} className="hover:underline">{i.riftboundId}</Link>
+                                )}
+                                {i.alternateArt && <span className="ml-1.5 text-xs text-ink-muted">{t("art alternatif")}</span>}
+                                {i.overnumbered && <span className="ml-1.5 text-xs text-ink-muted">{t("surnumérotée")}</span>}
+                              </td>
+                              <td className="py-1.5 text-ink-secondary">{i.set}</td>
+                              <td className="py-1.5 text-right tabular-nums">{i.decks.toLocaleString("fr-FR")}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {jeu.meilleurs.length > 0 && (
+                  <div className="mt-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Les mieux classées")}</h3>
+                    <div className="mt-2 space-y-2">
+                      {jeu.meilleurs.map((d) => (
+                        <Link key={d.slug} href={`/decks/${d.slug}`} className="block rounded-lg border border-hairline bg-surface p-3 transition-colors hover:border-hairline-accent">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="font-medium">{d.title}</span>
+                            {d.placement && (
+                              <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{d.placement}</span>
+                            )}
+                            {d.featured && (
+                              <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
+                            )}
+                            <span className="ml-auto text-xs text-ink-muted">
+                              &times;{d.quantite}{d.section !== "main" ? ` ${t("en réserve")}` : ""}
+                            </span>
+                          </div>
+                          <div className="mt-0.5 flex flex-wrap items-center gap-2 text-sm">
+                            <span className="text-arcane">{displayLegendName(d.legendName)}</span>
+                            {d.tournamentContext && <span className="text-ink-muted">&middot; {nomEvenement(d.tournamentContext)}</span>}
+                            {d.date && <span className="text-ink-muted">&middot; {formatDate(new Date(d.date))}</span>}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </>
             )}
+
             <Link
-              href={`/decks?q=${encodeURIComponent(card.name)}`}
-              className="mt-3 inline-flex text-sm text-arcane hover:underline"
+              href={`/decks?q=${encodeURIComponent(card.name)}&set=all`}
+              className="mt-4 inline-flex text-sm text-arcane hover:underline"
             >
               {t("Voir tous les decks avec cette carte")}
             </Link>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+/** Un chiffre et sa légende. Trois fois le même bloc, une seule écriture. */
+function Chiffre({ valeur, libelle }: { valeur: string; libelle: string }) {
+  return (
+    <div className="rounded-lg border border-hairline bg-surface p-3">
+      <div className="text-2xl font-bold tabular-nums text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+        {valeur}
+      </div>
+      <div className="text-xs text-ink-muted">{libelle}</div>
     </div>
   );
 }

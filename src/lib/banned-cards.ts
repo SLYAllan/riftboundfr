@@ -26,6 +26,16 @@ export const BANNED_CARD_NAMES = new Set([
 // juillet 2026 en bannit une en 2v2 construit, format qu'on ne suit pas : ne pas la
 // remonter ici, tout le site l'afficherait bannie à tort.
 
+/**
+ * Les annonces, avec leur date. Les mêmes que le commentaire d'en-tête, mais
+ * lisibles par le code : la cloche s'en sert pour prévenir les membres abonnés
+ * aux changements de règles, et elle ne peut pas lire un commentaire.
+ */
+export const DATES_BANS: Array<{ date: string; libelle: string }> = [
+  { date: "2026-03-31", libelle: "7 cartes interdites en construit" },
+  { date: "2026-07-24", libelle: "3 cartes interdites en Standard" },
+];
+
 export function isBanned(cardName: string): boolean {
   return BANNED_CARD_NAMES.has(cardName);
 }

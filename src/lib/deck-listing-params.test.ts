@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { construireWhere, lireFiltresDecks, type FiltresDecks } from "./deck-listing-params";
+import { construireWhere, lireFiltresDecks, modifierParametresDecks, palierAccessibilite, PALIERS_ACCESSIBILITE, type FiltresDecks } from "./deck-listing-params";
 
 const base: FiltresDecks = { q: "", owned: false, offset: 0 };
 
@@ -78,5 +78,61 @@ describe("construireWhere", () => {
   it('lireFiltresDecks accepte "all" et rejette le reste', () => {
     expect(lireFiltresDecks({ cat: "all" }).cat).toBe("all");
     expect(lireFiltresDecks({ cat: "nimporte" }).cat).toBeUndefined();
+  });
+});
+
+describe("modifierParametresDecks garde le set affiché", () => {
+  it("fige Vendetta quand on choisit une Légende depuis la vue de départ", () => {
+    const suivants = modifierParametresDecks(new URLSearchParams(), { legend: "Ahri" });
+    expect(suivants.get("legend")).toBe("Ahri");
+    // Sans ce report, `setParDefaut` voyait l'« intention » Légende et rendait
+    // undefined : le menu des sets sautait de Vendetta à « Tous les sets ».
+    expect(suivants.get("set")).toBe("Vendetta");
+  });
+
+  it("ne pose pas de set quand la vue n'en affichait aucun", () => {
+    const courants = new URLSearchParams({ legend: "Ahri" });
+    expect(modifierParametresDecks(courants, { legend: "Jinx" }).get("set")).toBeNull();
+  });
+
+  it("laisse un changement de set explicite décider", () => {
+    const suivants = modifierParametresDecks(new URLSearchParams(), { set: "all" });
+    expect(suivants.get("set")).toBe("all");
+  });
+
+  it("laisse « Best of » vider le set, comme avant", () => {
+    const suivants = modifierParametresDecks(new URLSearchParams(), { cat: "bestof", set: null });
+    expect(suivants.get("set")).toBeNull();
+    expect(suivants.get("cat")).toBe("bestof");
+  });
+});
+
+describe("palierAccessibilite", () => {
+  it("range un deck complet en tête", () => {
+    expect(palierAccessibilite(0, 0)).toBe(0);
+  });
+
+  it("met une à trois cartes manquantes avant le prix", () => {
+    // Trois cartes chères passent devant quinze cartes bon marché : une commande
+    // contre un projet.
+    expect(palierAccessibilite(3, 90)).toBe(1);
+    expect(palierAccessibilite(15, 8)).toBe(2);
+  });
+
+  it("sépare moins de 10 EUR, moins de 25 EUR, et le reste", () => {
+    expect(palierAccessibilite(6, 9.99)).toBe(2);
+    expect(palierAccessibilite(6, 10)).toBe(3);
+    expect(palierAccessibilite(6, 24.99)).toBe(3);
+    expect(palierAccessibilite(6, 25)).toBe(4);
+  });
+
+  it("renvoie un prix inconnu au dernier palier", () => {
+    // Une carte hors catalogue n'est pas une carte gratuite : le deck ne doit pas
+    // passer devant ceux qu'on sait vraiment compléter.
+    expect(palierAccessibilite(6, null)).toBe(4);
+  });
+
+  it("a un libellé par palier", () => {
+    expect(PALIERS_ACCESSIBILITE).toHaveLength(5);
   });
 });

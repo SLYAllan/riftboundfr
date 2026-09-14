@@ -9,7 +9,7 @@ export interface FiltresDecks {
   // Sans `sort`, on trie par placement : un visiteur qui arrive sur /decks veut
   // voir ce qui a gagné, pas ce qui vient d'être importé. « Récents » devient donc
   // une valeur explicite, sinon il n'y aurait plus moyen de la demander.
-  sort?: "popular" | "placement" | "recent";
+  sort?: "popular" | "placement" | "recent" | "accessible";
   owned: boolean;
   offset: number;
 }
@@ -36,12 +36,43 @@ export interface DeckListe {
   likes: number;
   sourceArticle: { slug: string; title: string } | null;
   coverage?: { owned: number; required: number; missing: number };
+  /** Ce qu'il reste à faire pour jouer ce deck. Rempli par le tri « accessible ». */
+  accessibilite?: { palier: number; manquantes: number; eur: number | null };
 }
 
 export interface LotDecks {
   decks: DeckListe[];
   total: number;
   suivant: number | null;
+}
+
+/**
+ * Cinq paliers, du deck jouable ce soir à celui qui reste à acheter.
+ *
+ * L'ordre est celui de la dépense à consentir, pas celui du nombre de cartes :
+ * un deck à trois cartes près se complète en une commande, même chère, alors
+ * qu'un deck à quinze cartes à 8 EUR reste un projet. C'est le classement que
+ * fait un joueur devant sa boîte.
+ */
+export const PALIERS_ACCESSIBILITE = [
+  "Jouable sans achat",
+  "1 à 3 cartes à trouver",
+  "Moins de 10 EUR à compléter",
+  "Moins de 25 EUR à compléter",
+  "Plus de 25 EUR à compléter",
+] as const;
+
+/** Le palier d'un deck : 0 = jouable tout de suite, 4 = le reste. */
+export function palierAccessibilite(manquantes: number, eur: number | null): number {
+  if (manquantes <= 0) return 0;
+  if (manquantes <= 3) return 1;
+  // Un prix inconnu n'est pas un prix bas : la carte n'est pas au catalogue, donc
+  // on ne sait pas la trouver. Le deck part au dernier palier plutôt que de
+  // passer devant ceux qu'on peut vraiment compléter.
+  if (eur == null) return PALIERS_ACCESSIBILITE.length - 1;
+  if (eur < 10) return 2;
+  if (eur < 25) return 3;
+  return PALIERS_ACCESSIBILITE.length - 1;
 }
 
 export function comparerPlacements(a: string | null, b: string | null): number {
@@ -78,7 +109,7 @@ export function lireFiltresDecks(params: Record<string, string | undefined>): Fi
     tournament: params.tournament || undefined,
     q: (params.q ?? "").trim(),
     sort:
-      params.sort === "popular" || params.sort === "placement" || params.sort === "recent"
+      params.sort === "popular" || params.sort === "placement" || params.sort === "recent" || params.sort === "accessible"
         ? params.sort
         : undefined,
     owned: params.owned === "1",
@@ -104,6 +135,17 @@ export function modifierParametresDecks(
   changements: Record<string, string | null>,
 ): URLSearchParams {
   const suivants = new URLSearchParams(courants);
+  // Le set Vendetta est IMPLICITE tant que l'URL ne le porte pas (`setParDefaut`).
+  // Choisir une Légende pose une « intention », et `setParDefaut` cesse alors de
+  // l'appliquer : le menu affichait Vendetta, et il sautait sur « Tous les sets »
+  // tout seul, en même temps que la Légende. On fige donc le set AFFICHÉ dans
+  // l'URL dès qu'un autre filtre bouge. Les liens de catégorie posent `set`
+  // eux-mêmes et gardent leur règle : « Best of » doit bien vider le set, aucun
+  // des 431 decks best-of n'étant en Vendetta.
+  if (!("set" in changements) && !courants.get("set")) {
+    const affiche = setParDefaut(Object.fromEntries(courants));
+    if (affiche) suivants.set("set", affiche);
+  }
   for (const [nom, valeur] of Object.entries(changements)) {
     if (valeur) suivants.set(nom, valeur);
     else suivants.delete(nom);
