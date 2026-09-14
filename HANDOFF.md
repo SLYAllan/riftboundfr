@@ -26,12 +26,13 @@ Validateur : 25 934 listes, 0 écart. `maj:stats` : Vendetta 9 643 places, Ezrea
 « À REGARDER » (A, p = 0,030). 41 best-of en local (`--sauf` Master Yi Wuju Bladesman
 et Ornn : leur n°1, #8 et #70, n'a pas été converti).
 
-**Reste, refusé par le garde-fou d'écriture en prod, à lancer par Allan :**
-- best-of en prod : `npx tsx scripts/prod-tunnel.mts scripts/mark-bestof-tournois.mts "S4 Shenyang Regional Open (2026-09-12)" --sauf "Master Yi, Wuju Bladesman" --sauf "Ornn, Fire Below the Mountain"` ;
-- table `Abonnement` en prod (demande de Codex, avant le prochain Deploy) :
-  `scripts/maj-abonnements-schema.mts`, avec `--sec` d'abord, voir plus bas.
+**En prod depuis** : 41 best-of Shenyang, Volibear de Wuhan (+1, 1 161 sautés :
+la clé au numéro du rang tient aussi en prod) et son best-of (39), les 122 listes
+de Shanghai 246, qui n'y étaient pas.
 
-Rien n'est commité.
+**Reste, refusé par le garde-fou, à lancer par Allan** : la table `Abonnement` en
+prod (demande de Codex, AVANT le prochain Deploy), `scripts/maj-abonnements-schema.mts`
+avec `--sec` d'abord, voir plus bas.
 
 ## Session du 11 septembre 2026 — RQ Singapour poussé et seedé en prod
 
