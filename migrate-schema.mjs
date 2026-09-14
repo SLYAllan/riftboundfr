@@ -6,6 +6,9 @@
 // conteneur entre le déploiement du code et le `prisma db push`, donc mettrait le
 // site à terre pour un détail d'habillage. Sans la table, seul l'envoi d'image
 // répond en erreur (500, le 19 août 2026, jusqu'à sa création à la main en prod).
+//
+// \`Abonnement\`, lui, est lu par la cloche dès qu'un membre ouvre le site. Il doit
+// donc exister avant le déploiement qui active cette fonctionnalité.
 export const TABLES_ATTENDUES = Object.freeze([
   "Card",
   "sets",
@@ -25,6 +28,7 @@ export const TABLES_ATTENDUES = Object.freeze([
   "CollectionItem",
   "Binder",
   "OverlayState",
+  "Abonnement",
 ]);
 
 export function tablesManquantes(tableNames) {

@@ -2,12 +2,16 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "@/components/lien";
-import { Bell, Heart, MessageSquare, Reply, ThumbsUp } from "lucide-react";
+import { Bell, Heart, MessageSquare, Reply, ThumbsUp, Crown, GitBranch, Trophy, Scale } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+
+type Genre =
+  | "reponse" | "commentaire" | "jaime" | "vote"
+  | "legende" | "deck" | "tournois-fr" | "regles";
 
 interface Notification {
   id: string;
-  genre: "reponse" | "commentaire" | "jaime" | "vote";
+  genre: Genre;
   auteur: string | null;
   sujet: string;
   extrait: string | null;
@@ -16,7 +20,18 @@ interface Notification {
   nouvelle: boolean;
 }
 
-const ICONES = { reponse: Reply, commentaire: MessageSquare, jaime: Heart, vote: ThumbsUp };
+const ICONES: Record<Genre, typeof Reply> = {
+  reponse: Reply, commentaire: MessageSquare, jaime: Heart, vote: ThumbsUp,
+  legende: Crown, deck: GitBranch, "tournois-fr": Trophy, regles: Scale,
+};
+
+/**
+ * Deux familles, deux onglets. « Mon contenu » = ce qui arrive sur ce que le
+ * membre a écrit ; « Ce que je suis » = ce qu'il a demandé à voir. Mélangées,
+ * une Légende très jouée noyait les réponses à ses commentaires.
+ */
+const GENRES_SUIVIS: Genre[] = ["legende", "deck", "tournois-fr", "regles"];
+type Filtre = "tout" | "mien" | "suivi";
 
 /**
  * Cloche des notifications.
@@ -33,6 +48,7 @@ export function Notifications() {
   const [visible, setVisible] = useState(false);
   const [ouvert, setOuvert] = useState(false);
   const [erreur, setErreur] = useState(false);
+  const [filtre, setFiltre] = useState<Filtre>("tout");
   const panneauRef = useRef<HTMLDivElement>(null);
   const boutonRef = useRef<HTMLButtonElement>(null);
 
@@ -105,6 +121,12 @@ export function Notifications() {
 
   if (!visible) return null;
 
+  const affichees = liste.filter((n) =>
+    filtre === "tout" ? true
+    : filtre === "suivi" ? GENRES_SUIVIS.includes(n.genre)
+    : !GENRES_SUIVIS.includes(n.genre),
+  );
+
   return (
     <div className="relative">
       <button
@@ -113,14 +135,12 @@ export function Notifications() {
         onClick={() => void basculer()}
         aria-expanded={ouvert}
         aria-haspopup="dialog"
-        aria-label={nonLues > 0 ? `${t("Notifications")} : ${nonLues} ${t("non lues")}` : t("Notifications")}
+        aria-label={nonLues > 0 ? t("Nouvelles notifications") : t("Notifications")}
         className="relative flex min-h-11 min-w-11 items-center justify-center rounded-lg text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
       >
         <Bell size={18} aria-hidden />
         {nonLues > 0 && (
-          <span className="absolute right-1 top-1 min-w-4 rounded-full bg-arcane px-1 text-[10px] font-bold leading-4 text-canvas">
-            {nonLues > 9 ? "9+" : nonLues}
-          </span>
+          <span aria-hidden="true" className="absolute right-2 top-2 size-2 rounded-full bg-arcane" />
         )}
       </button>
 
@@ -135,9 +155,32 @@ export function Notifications() {
           // défilement horizontale à toute la page.
           className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2rem)] rounded-xl border border-hairline bg-surface p-1 shadow-xl"
         >
-          <p className="border-b border-hairline px-3 py-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
+          <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("Notifications")}
           </p>
+
+          {/* Le filtre n'apparaît que s'il a quelque chose à trier : sur un
+              compte qui ne suit rien, trois onglets dont deux vides seraient du
+              bruit. */}
+          {liste.some((n) => GENRES_SUIVIS.includes(n.genre)) && (
+            <div className="flex gap-1 border-b border-hairline px-2 pb-2">
+              {([["tout", "Tout"], ["mien", "Mon contenu"], ["suivi", "Ce que je suis"]] as const).map(([cle, libelleFiltre]) => (
+                <button
+                  key={cle}
+                  type="button"
+                  onClick={() => setFiltre(cle)}
+                  aria-pressed={filtre === cle}
+                  className={
+                    filtre === cle
+                      ? "rounded-md bg-arcane px-2 py-1 text-xs font-semibold text-canvas"
+                      : "rounded-md px-2 py-1 text-xs font-semibold text-ink-muted transition-colors hover:bg-surface-raised hover:text-ink"
+                  }
+                >
+                  {t(libelleFiltre)}
+                </button>
+              ))}
+            </div>
+          )}
 
           {erreur && (
             <div role="alert" className="flex items-center justify-between gap-2 px-3 py-2 text-xs text-error-light">
@@ -148,12 +191,12 @@ export function Notifications() {
             </div>
           )}
 
-          {!erreur && liste.length === 0 && (
+          {!erreur && affichees.length === 0 && (
             <p className="px-3 py-6 text-center text-sm text-ink-muted">{t("Rien de neuf pour le moment.")}</p>
           )}
 
           <div className="thin-scrollbar max-h-96 overflow-y-auto">
-            {liste.map((n) => {
+            {affichees.map((n) => {
               const Icone = ICONES[n.genre];
               return (
                 <Link
@@ -184,6 +227,10 @@ function libelle(t: (s: string) => string, n: Notification): string {
   if (n.genre === "reponse") return `${n.auteur} ${t("a répondu à votre commentaire")}${sujet}`;
   if (n.genre === "commentaire") return `${n.auteur} ${t("a commenté votre deck")}${sujet}`;
   if (n.genre === "jaime") return `${t("Nouveau j’aime sur votre deck")}${sujet}`;
+  if (n.genre === "legende") return `${t("Nouvelle liste de tournoi")}${sujet}`;
+  if (n.genre === "deck") return `${t("Nouvelle version du deck")}${sujet}`;
+  if (n.genre === "tournois-fr") return `${t("Nouveau tournoi français")}${sujet}`;
+  if (n.genre === "regles") return `${t("Changement de règles")}${sujet}`;
   return `${t("Votre commentaire a reçu un vote")}${sujet}`;
 }
 

@@ -1,28 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  // CSRF (L8) : refuse les écritures cross-origin sur l'API (défense en profondeur
-  // au-dessus de SameSite=Lax). Origin absent (clients non-navigateur) = toléré.
-  if (
-    ["POST", "PUT", "PATCH", "DELETE"].includes(request.method) &&
-    request.nextUrl.pathname.startsWith("/api/")
-  ) {
-    const origin = request.headers.get("origin");
-    if (origin) {
-      try {
-        if (new URL(origin).host !== request.headers.get("host")) {
-          return NextResponse.json({ error: "Origine non autorisée" }, { status: 403 });
-        }
-      } catch {
-        return NextResponse.json({ error: "Origine invalide" }, { status: 403 });
-      }
-    }
-  }
-
-  // Version traduite : /en/decks et /zh/decks servent la page /decks avec la
-  // langue posée en en-tête. Aucun fichier n'est dupliqué, et une page pas encore
-  // traduite reste lisible en français au lieu de renvoyer un 404.
+export function proxy(request: NextRequest) {
   const chemin = request.nextUrl.pathname;
   const langue = chemin === "/en" || chemin.startsWith("/en/")
     ? "en"
@@ -31,6 +10,24 @@ export function middleware(request: NextRequest) {
       : "fr";
   const cheminNu = langue === "fr" ? chemin : chemin.slice(3) || "/";
 
+  // Le préfixe de langue doit partir avant le contrôle : /en/api/* reste une API.
+  if (
+    ["POST", "PUT", "PATCH", "DELETE"].includes(request.method) &&
+    cheminNu.startsWith("/api/")
+  ) {
+    const origin = request.headers.get("origin");
+    if (origin) {
+      try {
+        if (new URL(origin).origin !== new URL(process.env.NEXT_PUBLIC_SITE_URL || request.nextUrl.origin).origin) {
+          return NextResponse.json({ error: "Origine non autorisée" }, { status: 403 });
+        }
+      } catch {
+        return NextResponse.json({ error: "Origine invalide" }, { status: 403 });
+      }
+    }
+  }
+
+  // /en/decks et /zh/decks servent la page /decks sans dupliquer les routes.
   const entrees = new Headers(request.headers);
   entrees.set("x-langue", langue);
   entrees.set("x-chemin", cheminNu);
@@ -45,21 +42,8 @@ export function middleware(request: NextRequest) {
   }
   response.headers.set("Content-Language", langue === "zh" ? "zh-Hant" : langue);
 
-  // L'habillage de stream est la seule page qui encadre un site tiers (la caméra
-  // VDO.Ninja) et affiche une image venue de n'importe où (le logo du tournoi). La
-  // politique du site interdit les deux, à juste titre : on ne l'ouvre donc que sur
-  // cette route, et seulement pour ce qu'elle a besoin.
+  // Seul l'overlay encadre VDO.Ninja et affiche une image venue de l'organisateur.
   const estOverlay = cheminNu.startsWith("/overlay/");
-
-  // L'adresse d'un habillage porte son jeton, qui donne accès à l'état en lecture.
-  // Elle ne doit jamais finir dans un index : il suffit d'un lien collé quelque part
-  // de public pour qu'elle y entre et y reste. On la laisse explorable (sinon
-  // l'en-tête ne serait jamais lu) et on interdit l'indexation.
-  // Même raison pour le compagnon : son adresse porte de quoi ÉCRIRE sur
-  // l'habillage, elle n'a rien à faire dans un index.
-  // Le chinois ne traduit que l'overlay : sous /zh, tout le reste du site sort en
-  // français. Indexé, ce serait la même page à deux adresses, dans la mauvaise
-  // langue. À retirer le jour où /zh sera traduit en entier.
   if (estOverlay || cheminNu.startsWith("/compagnon/") || langue === "zh") {
     response.headers.set("X-Robots-Tag", "noindex, nofollow");
   }
@@ -88,13 +72,10 @@ export function middleware(request: NextRequest) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       estOverlay
-        ? // Le logo du tournoi est une image que l'organisateur héberge où il veut.
-          "img-src 'self' data: blob: https:"
+        ? "img-src 'self' data: blob: https:"
         : "img-src 'self' data: blob: https://cmsassets.rgpub.io https://cdn.discordapp.com https://www.google-analytics.com https://*.google-analytics.com https://*.g.doubleclick.net",
       "connect-src 'self' https://cmsassets.rgpub.io https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://stats.g.doubleclick.net",
       "frame-ancestors 'none'",
-      // Sans ça, `default-src 'self'` interdit l'iframe et la caméra n'apparaît
-      // jamais : c'était la cause du cadre vide, pas le code de l'overlay.
       estOverlay ? "frame-src https://vdo.ninja https://*.vdo.ninja" : "frame-src 'none'",
     ].join("; "),
   );

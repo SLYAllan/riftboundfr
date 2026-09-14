@@ -75,7 +75,6 @@ export async function GET(req: NextRequest) {
     where: { discordId: discordUser.id },
     update: {
       discordName: discordUser.username,
-      username: displayName,
       avatarUrl,
     },
     create: {

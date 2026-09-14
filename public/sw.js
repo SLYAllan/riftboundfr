@@ -1,7 +1,7 @@
 /// Riftbound France — Service Worker
 /// Cache-first for static assets, network-first for pages/API
 
-const CACHE_NAME = "riftbound-fr-v3";
+const CACHE_NAME = "riftbound-fr-v4";
 const OFFLINE_URL = "/offline";
 
 // Static assets to pre-cache on install
@@ -53,19 +53,14 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // API routes: network-only (no caching)
-  if (url.pathname.startsWith("/api/")) {
-    return;
+  // Les pages et réponses React peuvent porter une session ou une clé compagnon.
+  // Aucun cache persistant : hors ligne, seule la page générique est disponible.
+  if (request.mode === "navigate") {
+    event.respondWith(fetch(request).catch(async () =>
+      (await caches.match(OFFLINE_URL)) || new Response("Hors ligne", { status: 503 })
+    ));
   }
 
-  // HTML pages: network-first with offline fallback
-  if (request.headers.get("accept")?.includes("text/html")) {
-    event.respondWith(networkFirstWithOfflineFallback(request));
-    return;
-  }
-
-  // Everything else: network-first
-  event.respondWith(networkFirst(request));
 });
 
 // --- Strategies ---
@@ -86,51 +81,8 @@ async function cacheFirst(request) {
   }
 }
 
-async function networkFirst(request) {
-  try {
-    const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
-    }
-    return response;
-  } catch {
-    const cached = await caches.match(request);
-    return cached || new Response("", { status: 408, statusText: "Offline" });
-  }
-}
-
-async function networkFirstWithOfflineFallback(request) {
-  try {
-    const response = await fetch(request);
-    if (response.ok) {
-      const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
-    }
-    return response;
-  } catch {
-    const cached = await caches.match(request);
-    if (cached) return cached;
-
-    // Return the offline page
-    const offlinePage = await caches.match(OFFLINE_URL);
-    return offlinePage || new Response("Hors ligne", { status: 503 });
-  }
-}
-
-// --- Helpers ---
-
-// Cache-first uniquement pour les assets vraiment statiques (images, polices).
-// PAS pour /_next/static ni .js/.css : ces chunks Next sont déjà hashés, le cache
-// HTTP du navigateur suffit. Les mettre en cache-first servait du CSS/JS PÉRIMÉ
-// après déploiement (cause des bugs de mise en page post-deploy). Ils passent
-// désormais en network-first (voir le handler fetch).
+// Les ressources publiques connues seulement : une URL d'API peut aussi finir en .png.
 function isStaticAsset(pathname) {
-  if (pathname.startsWith("/_next/static/")) return false;
-  return (
-    pathname.startsWith("/icons/") ||
-    pathname.startsWith("/bannieres/") ||
-    pathname.startsWith("/img/") ||
-    /\.(png|jpg|jpeg|webp|svg|gif|ico|woff2?|ttf)$/i.test(pathname)
-  );
+  return ["/icons/", "/bannieres/", "/img/", "/fonts/"].some((prefixe) => pathname.startsWith(prefixe))
+    || ["/icon.png", "/logorbfr.png"].includes(pathname);
 }

@@ -17,6 +17,18 @@ import { prisma } from "../src/lib/prisma";
 const SLUG_OVERLAY = "streamer-riftbound-avec-un-telephone";
 
 const TRADUCTIONS_ARTICLES: Record<string, { title: string; excerpt: string }> = {
+  "best-of-singapour-rq": {
+    title: "Best of Singapore: the best deck for each Legend",
+    excerpt: "The 34 best decklists, one for each Legend, from the Singapore Regional Qualifier (1,893 players). Gorica won with Akali, ahead of a Top 8 half-filled by Kennen.",
+  },
+  "best-of-barcelone-rq": {
+    title: "Best of Barcelona: the best deck for each Legend",
+    excerpt: "The 36 best decklists, one for each Legend, from the Barcelona Regional Qualifier (2,224 players). Ornn won ahead of Kennen.",
+  },
+  "recap-barcelone-rq-top8": {
+    title: "Barcelona RQ: Ornn beats Kennen on his home turf",
+    excerpt: "MICE TheManLand wins Barcelona with Ornn, played by 2% of the 2,224 participants. See the Top 8, the meta share and the decks from the final.",
+  },
   "streamer-riftbound-avec-un-telephone": {
     title: "How to stream a Riftbound game with a phone",
     excerpt: "One phone films the table, the players track points on a second device, and the overlay updates. Here is the gear and setup you need.",

@@ -22,6 +22,7 @@ interface CommentData {
   createdAt: string;
   user: CommentUser;
   replies?: CommentData[];
+  _count?: { replies: number };
 }
 
 interface CurrentUser {
@@ -38,6 +39,7 @@ interface CommentsSectionProps {
 export function CommentsSection({ articleId, communityDeckId }: CommentsSectionProps) {
   const t = useT();
   const [comments, setComments] = useState<CommentData[]>([]);
+  const [suivant, setSuivant] = useState<string | null>(null);
   const [chargement, setChargement] = useState(true);
   const [erreurChargement, setErreurChargement] = useState(false);
   const [user, setUser] = useState<CurrentUser | null>(null);
@@ -54,12 +56,14 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
   // `r.ok` puis la forme : un 500 `{ error: … }` ou un corps qui n'est pas une
   // liste ne doivent jamais atterrir dans `comments` (le `.map` du rendu levait).
   const chargerCommentaires = useCallback(
-    async (silencieux = false) => {
+    async (silencieux = false, offset?: string) => {
       if (!silencieux) setChargement(true);
       setErreurChargement(false);
       try {
-        const reponse = await fetch(`/api/comments?${queryParam}`);
-        setComments(await lireTableauJson<CommentData>(reponse));
+        const reponse = await fetch(`/api/comments?${queryParam}&offset=${offset ?? "0"}`);
+        const lot = await lireTableauJson<CommentData>(reponse);
+        setComments((avant) => offset ? [...avant, ...lot] : lot);
+        setSuivant(reponse.headers.get("X-Suivant") || null);
       } catch {
         setErreurChargement(true);
       } finally {
@@ -175,6 +179,7 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
             ))}
           </div>
 
+          {suivant && <button disabled={chargement} onClick={() => void chargerCommentaires(false, suivant)} className="mt-4 min-h-11 rounded-lg border border-hairline px-4">{t("Charger la suite")}</button>}
           {comments.length === 0 && (
             <p className="text-center text-sm text-ink-muted py-8">{t("Aucun commentaire pour le moment. Soyez le premier !")}</p>
           )}
@@ -201,6 +206,22 @@ function CommentThread({
 }) {
   const t = useT();
   const [replying, setReplying] = useState(false);
+  const [suiteReponses, setSuiteReponses] = useState<CommentData[]>([]);
+  const [chargeReponses, setChargeReponses] = useState(false);
+  const reponses = [...(comment.replies ?? []), ...suiteReponses];
+  const chargerReponses = async () => {
+    setChargeReponses(true);
+    setErreurReponse(false);
+    try {
+      const r = await fetch(`/api/comments?${queryParam}&parentId=${comment.id}&offset=${reponses.length}`);
+      const lot = await lireTableauJson<CommentData>(r);
+      setSuiteReponses((avant) => [...avant, ...lot]);
+    } catch {
+      setErreurReponse(true);
+    } finally {
+      setChargeReponses(false);
+    }
+  };
   const [replyBody, setReplyBody] = useState("");
   const reponseRef = useRef<HTMLTextAreaElement>(null);
   const [sending, setSending] = useState(false);
@@ -331,10 +352,14 @@ function CommentThread({
             </>
           )}
 
+          {depth === 0 && reponses.length < (comment._count?.replies ?? 0) && (
+            <button disabled={chargeReponses} onClick={() => void chargerReponses()} className="min-h-11 px-2 text-sm">{t("Charger les réponses suivantes")}</button>
+          )}
+          {erreurReponse && !replying && <p role="alert">{t("Les réponses n’ont pas pu se charger. Réessayez.")}</p>}
           {/* Replies */}
-          {comment.replies && comment.replies.length > 0 && (
+          {reponses.length > 0 && (
             <div className="mt-3 space-y-3">
-              {comment.replies.map((reply) => (
+              {reponses.map((reply) => (
                 <CommentThread key={reply.id} comment={reply} postPayload={postPayload} queryParam={queryParam} user={user} onRefresh={onRefresh} depth={depth + 1} />
               ))}
             </div>

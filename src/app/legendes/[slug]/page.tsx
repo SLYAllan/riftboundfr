@@ -24,6 +24,9 @@ import { isBanned } from "@/lib/banned-cards";
 import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendWithDecks } from "@/lib/legend-fiche";
+import { BoutonSuivre } from "@/components/bouton-suivre";
+import { getUserFromSession } from "@/lib/session";
+import { estAbonne } from "@/lib/abonnements";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
@@ -665,6 +668,24 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     publisher: { "@type": "Organization", name: "Riftbound France", url: "https://riftboundfrance.fr" },
   };
 
+  // Suivre cette Légende : la cloche remontera les listes de tournoi qui
+  // arrivent avec elle. Sans compte, le bouton ne s'affiche pas — il n'y aurait
+  // nulle part où envoyer l'alerte.
+  const membre = await getUserFromSession();
+  const abonnements = membre
+    ? await prisma.abonnement.findMany({ where: { userId: membre.id }, select: { genre: true, cible: true } })
+    : [];
+  const BoutonSuivreLegende = (
+    <BoutonSuivre
+      genre="legende"
+      cible={name}
+      connecte={!!membre}
+      suiviInitial={estAbonne(abonnements, "legende", name)}
+      libelle="Suivre cette Légende"
+      libelleSuivi="Légende suivie"
+    />
+  );
+
   const Badges = (
     <div className="flex flex-wrap items-center gap-2 text-xs">
       {domains.map((d) => (
@@ -742,6 +763,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             )}
             <div className="mt-3">{Badges}</div>
             <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-white/70" />
+            <div className="mt-3">{BoutonSuivreLegende}</div>
           </div>
         </header>
       ) : (
@@ -752,6 +774,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
           <div className="mt-3">{Badges}</div>
           <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-ink-muted" />
+          <div className="mt-3">{BoutonSuivreLegende}</div>
         </header>
       )}
 

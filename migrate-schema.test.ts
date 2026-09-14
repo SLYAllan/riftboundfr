@@ -2,8 +2,9 @@ import { describe, expect, it } from "vitest";
 import { TABLES_ATTENDUES, tablesManquantes } from "./migrate-schema.mjs";
 
 describe("contrôle du schéma au démarrage", () => {
-  it("attend les 18 tables du schéma Prisma, sans WishlistItem", () => {
-    expect(TABLES_ATTENDUES).toHaveLength(18);
+  it("attend aussi la table qui porte les abonnements de la cloche", () => {
+    expect(TABLES_ATTENDUES).toHaveLength(19);
+    expect(tablesManquantes(TABLES_ATTENDUES.filter((table) => table !== "Abonnement"))).toEqual(["Abonnement"]);
     expect(TABLES_ATTENDUES).not.toContain("WishlistItem");
   });
 

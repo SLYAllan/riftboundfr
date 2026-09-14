@@ -183,7 +183,7 @@ src/app/          Routes (App Router). Un dossier = une URL.
   compagnon/…     Compteur de match sur téléphone, ouvert par lien, sans compte.
 src/lib/          TOUTE la logique métier. Pas de logique dans les pages.
 src/components/   Composants partagés entre plusieurs pages.
-src/middleware.ts CSRF, version anglaise, en-têtes de sécurité.
+src/proxy.ts      CSRF, version anglaise, en-têtes de sécurité.
 prisma/           Schéma + scripts de seed par tournoi.
 scripts/          ~77 scripts one-shot : scraping, seed, audit, validation.
 data/             Sources de vérité hors base : scrapes bruts, fiches, insights VOD.
@@ -323,7 +323,7 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
 
 ## Points d'entrée
 
-- **`src/middleware.ts`** tourne avant toute page. Il fait quatre choses :
+- **`src/proxy.ts`** tourne avant toute page. Il fait quatre choses :
   1. refuse les écritures API cross-origin (403) ;
   2. réécrit `/en/...` vers la page française et pose les en-têtes `x-langue` et
      `x-chemin` que lit `i18n-server.ts` — aucune page n'est dupliquée. Un lien

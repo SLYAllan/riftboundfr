@@ -958,6 +958,8 @@ export const EN: Record<string, string> = {
   "Trouver un deck": "Find a deck",
   "Voir les cartes": "Browse cards",
   "Débuter": "Get started",
+  "Liste des bans": "Ban list",
+  "Les cartes interdites en tournoi, et depuis quand.": "Cards banned from tournaments and when each ban began.",
   "tier list du méta": "meta tier list",
   " et base de cartes Riftbound, en français.": " and the Riftbound card database.",
   "Tous les decks Riftbound": "All Riftbound decks",

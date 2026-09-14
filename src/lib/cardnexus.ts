@@ -164,6 +164,10 @@ export interface LigneListe {
   quantity: number;
 }
 
+export function cleListeAchat(lignes: LigneListe[]): string {
+  return JSON.stringify(lignes.map(({ productId, finish, language, quantity }) => [productId, finish, language, quantity]));
+}
+
 export interface Carte {
   riftboundId: string;
   name: string;

@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 // force-dynamic: the page queries the DB, but with `revalidate` it was
 // statically generated at Docker build (no DB) and frozen empty in prod.
 export const dynamic = "force-dynamic";
@@ -35,7 +36,7 @@ function parsePlacement(p: string | null): number {
   return isNaN(n) ? 9999 : n;
 }
 
-async function getTournamentData() {
+const getTournamentData = unstable_cache(async () => {
   const [articles, decks] = await Promise.all([
     prisma.article.findMany({
       where: { published: true, tournamentName: { not: null } },
@@ -174,7 +175,7 @@ async function getTournamentData() {
     if (a.date) return -1;
     return 1;
   });
-}
+}, ["index-tournois"], { revalidate: 60 });
 
 export type TournamentData = Awaited<ReturnType<typeof getTournamentData>>[number];
 

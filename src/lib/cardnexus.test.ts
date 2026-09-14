@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, cleListeAchat } from "./cardnexus";
+
+it("le panier change quand ses cartes, quantités, finitions ou langues changent", () => {
+  const ligne = { productId: 1, quantity: 2, finish: "Standard", language: "en" };
+  for (const changement of [{ productId: 2 }, { quantity: 3 }, { finish: "Foil" }, { language: "fr" }]) {
+    expect(cleListeAchat([ligne])).not.toBe(cleListeAchat([{ ...ligne, ...changement }]));
+  }
+});
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {

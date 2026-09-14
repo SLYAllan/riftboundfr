@@ -71,18 +71,12 @@ export async function DELETE(
     return NextResponse.json({ error: "Deck introuvable" }, { status: 404 });
   }
 
-  // Ne décrémente que si l'utilisateur avait bien un like enregistré.
-  const removed = await prisma.deckLike.deleteMany({
-    where: { userId: user.id, deckId: deck.id },
-  });
-  if (removed.count === 0) {
-    return NextResponse.json({ likes: deck.likes });
-  }
-
-  const updated = await prisma.deck.update({
-    where: { id: deck.id },
-    data: { likes: { decrement: deck.likes > 0 ? 1 : 0 } },
-    select: { likes: true },
+  const updated = await prisma.$transaction(async (tx) => {
+    const removed = await tx.deckLike.deleteMany({ where: { userId: user.id, deckId: deck.id } });
+    if (removed.count > 0) {
+      await tx.$executeRaw`UPDATE "Deck" SET likes = GREATEST(0, likes - ${removed.count}) WHERE id = ${deck.id}`;
+    }
+    return tx.deck.findUniqueOrThrow({ where: { id: deck.id }, select: { likes: true } });
   });
 
   return NextResponse.json({ likes: updated.likes });

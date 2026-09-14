@@ -199,6 +199,7 @@ model User {
   binders        Binder[]
   overlayState   OverlayState?
   overlayMedia   OverlayMedia[]
+  abonnements    Abonnement[]
 
 
   @@index([discordId])
@@ -379,4 +380,29 @@ model OverlayMedia {
   updatedAt DateTime @updatedAt
 
   @@id([userId, kind])
+}
+
+// Ce qu'un membre veut savoir. On stocke l'ABONNEMENT, jamais la notification :
+// la cloche recalcule tout à la lecture (voir src/lib/notifications.ts), et une
+// table de notifications aurait demandé d'écrire à chaque geste de chaque
+// visiteur puis de la tenir en accord avec les suppressions en cascade.
+//
+// `genre` dit à quoi on s'abonne, `cible` à quelle instance : ("legende",
+// "Ahri, Nine-Tailed Fox") ou ("deck", "<shareCode>"). Les abonnements globaux
+// ("tournois-fr", "regles") n'ont pas de cible et portent une chaîne vide, qui
+// permet à la contrainte d'unicité de jouer son rôle.
+//
+// PAS dans TABLES_ATTENDUES de migrate-schema.mjs, exprès : sinon le conteneur
+// refuse de démarrer entre le déploiement du code et le `prisma db push`.
+model Abonnement {
+  id        String   @id @default(cuid())
+  userId    String
+  genre     String
+  cible     String   @default("")
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, genre, cible])
+  @@index([genre, cible])
 }

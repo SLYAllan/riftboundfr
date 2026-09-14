@@ -160,8 +160,9 @@ Tout est en local sur `main`. La porte est verte : `npx vitest run` (66 fichiers
 367 tests), `npm run verify` (EXIT=0), `npm run lint` (0 erreur, 98
 avertissements, le niveau d'avant la session).
 
-**Une chose à faire avant de déployer** : la table `Abonnement` n'existe qu'en
-local. Voir « Ce qui reste » plus bas.
+**Avant le prochain déploiement, Claude doit créer `Abonnement` en production.**
+Le code l'exige désormais au démarrage : voir « Alertes choisies par le membre »
+pour le script, l'essai à blanc et l'ordre exact. Ne pas lancer `prisma db push`.
 
 ### La cause des 12 100 listes CardNexus
 
@@ -290,9 +291,15 @@ commentaire, et la cloche ne sait pas lire un commentaire.
    npx tsx --env-file=.env.prod.local scripts/maj-abonnements-schema.mts --hote 178.104.237.33:15432
    ```
 
-   `Abonnement` est volontairement ABSENTE de `TABLES_ATTENDUES`
-   (`migrate-schema.mjs`) : sinon le conteneur refuse de démarrer entre le
-   déploiement du code et le passage du script.
+  `Abonnement` est désormais dans `TABLES_ATTENDUES` (`migrate-schema.mjs`).
+  Lancer le script avant ce déploiement : le conteneur doit refuser de démarrer
+  tant que la table manque, au lieu de casser la cloche au premier membre connecté.
+
+   **Passation Claude Code :** lancer d'abord la commande avec `--sec`, relire
+   qu'elle ne prépare que `Abonnement`, puis lancer la commande sans `--sec`.
+   Vérifier `npm run verify` avant de pousser. Le code, l'API et l'interface
+   des abonnements sont déjà prêts ; cette création de table est la seule action
+   restante pour les mettre en production.
 
 2. **Errata de traduction française**, non fait. La page officielle
    (`playriftbound.com/fr-fr/news/announcements/errata-de-traduction-franaise/`)
@@ -2249,13 +2256,12 @@ une phrase française dans une page casse sa traduction en silence : la phrase
 retombe en français au lieu de lever une erreur. Après toute retouche de texte,
 répercuter la clé dans `src/lib/i18n-en.ts`.
 
-## La CSP du middleware, et son exception unique
+## La CSP du proxy, et son exception unique
 
-Le guide Next.js 16 local appelle désormais ce fichier `proxy.ts` et indique que
-le comportement reste le même. Le renommage n'est pas fait dans cette passe : il
-ne règle pas le démarrage et la borne de ce chantier est le contrôle de schéma.
+Next.js 16 appelle ce point d'entrée `proxy.ts`. Le renommage est fait :
+`src/proxy.ts` et son test remplacent les anciens fichiers `middleware`.
 
-`src/middleware.ts` pose la CSP pour tout le site. `/overlay/` est **la seule
+`src/proxy.ts` pose la CSP pour tout le site. `/overlay/` est **la seule
 route** autorisée à encadrer un site tiers (la caméra VDO.Ninja) et à afficher
 une image venue de n'importe quel hôte (le logo du tournoi). Élargir la CSP
 ailleurs ouvre le site entier. À l'inverse, une image distante ajoutée dans une

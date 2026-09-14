@@ -14,6 +14,11 @@
 
 **Déployer.** Coolify construit depuis le `Dockerfile` ; le `docker-compose.yml` est local uniquement. Un déploiement **ne seede pas** les decks. Voir `docs/DEPLOIEMENT.md`.
 
+**Avant le prochain déploiement.** Créer la table `Abonnement` en production
+avec `scripts/maj-abonnements-schema.mts` : d'abord `--sec`, puis la commande
+réelle. Ne pas utiliser `prisma db push`. Le détail et les commandes sont dans
+`HANDOFF.md`, section « Alertes choisies par le membre ».
+
 **Router.** Ce que Codex peut finir seul : TypeScript, tests, refactors — tout ce que `npm run verify` sait juger. Ce qui revient à Claude Code : la prose française rendue (les commandes `/reecrire` et `/accroche` n'existent pas dans Codex) et les passes d'interface (skills `better-*`). Ce qui ne se délègue pas : décider si une decklist est sourcée ou fabriquée. Détail dans la section « Ce qui n'existe que d'un côté » d'`AGENTS.md`.
 
 **Ne jamais toucher.**

@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { deckCoverageItems, resolveDeckCards } from "@/lib/deck-cards";
 import { findCard } from "@/lib/card-printing";
-import { lienPanier, lignesListe, type Carte } from "@/lib/cardnexus";
+import { lienPanier, lignesListe, cleListeAchat, type Carte } from "@/lib/cardnexus";
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
@@ -103,7 +103,12 @@ async function cartesManquantes(cartes: CarteDeck[], userId: string): Promise<Ca
  * et compose le panier le moins cher, frais de port compris, sans que le
  * visiteur ait besoin d'un compte.
  */
-export async function GET(request: Request) {
+// POST et pas GET, exprès. En GET, le bouton était un lien ordinaire : les
+// robots qui balaient les pages de deck le suivaient et créaient une liste par
+// deck sur le compte d'Allan. 12 100 listes de decks du site avaient été créées
+// ainsi. `robots.txt` et `nofollow` sont des consignes, pas des barrières ; un
+// POST, lui, n'est jamais suivi par un explorateur.
+export async function POST(request: Request) {
   // Chaque clic crée une liste sur le compte CardNexus la première fois : on
   // limite le débit par IP avant tout appel réseau, comme les autres écritures.
   if (!rateLimit(request, { bucket: "cardnexus-panier", limit: 10 })) {
@@ -166,9 +171,9 @@ export async function GET(request: Request) {
 
   // La liste des manquantes dépend de la collection, qui bouge : la clé porte les
   // articles demandés, sinon un joueur récupérerait le panier d'un autre.
-  const cleCache = user ? `${reference}|${user.id}|${items.map((i) => `${i.productId}x${i.quantity}`).join(",")}` : reference;
+  const cleCache = `${reference}|${user?.id ?? ""}|${cleListeAchat(items)}`;
   const dejaVue = listesConnues.get(cleCache);
-  if (dejaVue) return NextResponse.redirect(lienPanier(dejaVue), 302);
+  if (dejaVue) return NextResponse.redirect(lienPanier(dejaVue), 303);
 
   const entetes = { Authorization: `Bearer ${cle}`, "Content-Type": "application/json" };
   let id: string;
@@ -217,5 +222,5 @@ export async function GET(request: Request) {
     const plusAncienne = listesConnues.keys().next().value as string | undefined;
     if (plusAncienne !== undefined) listesConnues.delete(plusAncienne);
   }
-  return NextResponse.redirect(lienPanier(id), 302);
+  return NextResponse.redirect(lienPanier(id), 303);
 }

@@ -91,13 +91,13 @@ def walk(o):
 # arrive « invérifiable » tant que personne ne pense à l'ajouter ici.
 for d in sorted(os.listdir(RAW)):
     if not os.path.isdir(os.path.join(RAW, d)): continue
-    for f in glob.glob(os.path.join(RAW, d, '*.json')):
+    for f in sorted(glob.glob(os.path.join(RAW, d, '*.json'))):
         try:
             obj = json.loads(open(f, encoding='utf-8').read())
             if isinstance(obj, str): obj = json.loads(obj)
             walk(obj)
         except Exception as cause: note_erreur(f, cause)
-    for f in glob.glob(os.path.join(RAW, d, '*.jsonl')):
+    for f in sorted(glob.glob(os.path.join(RAW, d, '*.jsonl'))):
         try:
             lignes = open(f, encoding='utf-8').readlines()
         except Exception as cause:

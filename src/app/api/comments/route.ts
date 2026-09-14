@@ -8,25 +8,31 @@ export async function GET(req: NextRequest) {
   const communityDeckId = req.nextUrl.searchParams.get("communityDeckId");
   if (!articleId && !communityDeckId) return NextResponse.json([]);
 
-  const where: Record<string, unknown> = { parentId: null };
-  if (articleId) where.articleId = articleId;
-  if (communityDeckId) where.communityDeckId = communityDeckId;
+  const parentId = req.nextUrl.searchParams.get("parentId");
+  const offset = Math.max(0, Math.min(100000, Math.floor(Number(req.nextUrl.searchParams.get("offset")) || 0)));
+  const where = { parentId: parentId || null, ...(articleId ? { articleId } : {}), ...(communityDeckId ? { communityDeckId } : {}) };
 
   const comments = await prisma.comment.findMany({
     where,
+    skip: offset,
+    take: 21,
     include: {
       user: { select: { id: true, username: true, avatarUrl: true } },
+      _count: { select: { replies: true } },
       replies: {
+        take: 20,
         include: {
           user: { select: { id: true, username: true, avatarUrl: true } },
         },
-        orderBy: { createdAt: "asc" },
+        orderBy: [{ createdAt: "asc" }, { id: "asc" }],
       },
     },
-    orderBy: { createdAt: "desc" },
+    orderBy: [{ createdAt: parentId ? "asc" : "desc" }, { id: "asc" }],
   });
 
-  return NextResponse.json(comments);
+  return NextResponse.json(comments.slice(0, 20), {
+    headers: { "X-Suivant": comments.length > 20 ? String(offset + 20) : "" },
+  });
 }
 
 export async function POST(req: NextRequest) {

@@ -8,8 +8,10 @@ import { getBannerUrl } from "@/lib/banners";
 import { getBinders, getCollectionMap } from "@/lib/collection-server";
 import Link from "@/components/lien";
 import Image from "next/image";
-import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Radio, BarChart3, UserCog } from "lucide-react";
-import { ProfileActions } from "./profile-actions";
+import { Hammer, Eye, Heart, Clock, Shield, Library, ArrowRight, Radio, BarChart3, UserCog, BellRing } from "lucide-react";
+import { ProfileActions, SupprimerCompte } from "./profile-actions";
+import { BoutonSuivre } from "@/components/bouton-suivre";
+import { estAbonne } from "@/lib/abonnements";
 import { DeckActions, BoutonDeconnexion } from "./deck-actions";
 import { lienFiltreProfil, type FiltresProfil } from "./filtres";
 import { DiscordAvatar } from "@/components/discord-avatar";
@@ -104,6 +106,9 @@ export default async function ProfilPage({
 }) {
   const t = await tr();
   const user = await getUserFromSession();
+  const abonnements = user
+    ? await prisma.abonnement.findMany({ where: { userId: user.id }, select: { genre: true, cible: true } })
+    : [];
   if (!user) redirect("/api/auth/discord");
 
   const params = await searchParams;
@@ -417,6 +422,39 @@ export default async function ProfilPage({
         </p>
       </section>
 
+      {/* Alertes : les deux sujets qui ne visent aucune page en particulier. Les
+          autres se suivent là où ils vivent — une Légende sur sa fiche, un deck
+          sur sa page. Poser tous les abonnements ici aurait demandé une liste
+          déroulante de 51 Légendes, alors que le geste naturel est de cliquer
+          quand on est déjà sur la fiche. */}
+      <section id="alertes" className="mt-10 scroll-mt-24">
+        <div className="flex items-center gap-2">
+          <BellRing size={18} className="text-ink-muted" aria-hidden="true" />
+          <h2 className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+            {t("Alertes")}
+          </h2>
+        </div>
+        <p className="mt-2 text-sm text-ink-muted">
+          {t("Ce que vous voulez voir arriver dans la cloche. Les Légendes et les decks se suivent depuis leur page.")}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2 rounded-card border border-hairline bg-surface p-4">
+          <BoutonSuivre
+            genre="tournois-fr"
+            connecte
+            suiviInitial={estAbonne(abonnements, "tournois-fr")}
+            libelle={t("Suivre les tournois français")}
+            libelleSuivi={t("Tournois français suivis")}
+          />
+          <BoutonSuivre
+            genre="regles"
+            connecte
+            suiviInitial={estAbonne(abonnements, "regles")}
+            libelle={t("Suivre les règles et interdictions")}
+            libelleSuivi={t("Règles suivies")}
+          />
+        </div>
+      </section>
+
       {/* Compte : la déconnexion n'existait que dans le menu de la barre. */}
       <section id="compte" className="mt-10 scroll-mt-24">
         <div className="flex items-center gap-2">
@@ -427,6 +465,7 @@ export default async function ProfilPage({
         </div>
         <div className="mt-4 rounded-card border border-hairline bg-surface p-4">
           <BoutonDeconnexion />
+          <SupprimerCompte />
         </div>
       </section>
     </div>

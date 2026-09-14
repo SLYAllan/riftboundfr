@@ -14,6 +14,10 @@ export const EN_ARTICLES: Record<string, string> = {
     "Atlanta best decks - Every Legend",
   "Les meilleures decklists pour chaque légende au Regional Qualifier d'Atlanta 2026 (~1500 joueurs). Dernier Regional Spiritforged.":
     "The best decklists for each Legend at the 2026 Atlanta Regional Qualifier, with about 1,500 players. The final Spiritforged Regional.",
+  "Best of Barcelone : le meilleur deck de chaque Légende":
+    "Best of Barcelona: the best deck for each Legend",
+  "Les 36 meilleures decklists, une par Légende, au Regional Qualifier de Barcelone (2 224 joueurs). Ornn champion devant Kennen.":
+    "The 36 best decklists, one for each Legend, from the Barcelona Regional Qualifier (2,224 players). Ornn won ahead of Kennen.",
   "Best of Bologna RQ 2026":
     "2026 Bologna RQ best decks",
   "Les decklists les plus créatives du Regional Qualifier de Bologne 2026 - 1719 joueurs, premier RQ Spiritforged. Draven domine mais la diversité surprend.":
@@ -42,6 +46,10 @@ export const EN_ARTICLES: Record<string, string> = {
     "National Open S3 best decks - Every Legend",
   "La meilleure decklist de chaque Légende au National Open S3, le plus gros tournoi Unleashed jamais joué : 2 048 joueurs, 1 957 listes publiées, une finale entre deux Irelia.":
     "The best decklist for each Legend at National Open S3, the largest Unleashed tournament ever played: 2,048 players, 1,957 published lists and an Irelia mirror in the final.",
+  "Best of Singapour : le meilleur deck de chaque Légende":
+    "Best of Singapore: the best deck for each Legend",
+  "Les 34 meilleures decklists, une par Légende, au Regional Qualifier de Singapour (1 893 joueurs). Gorica champion avec Akali, devant un Top 8 pris pour moitié par Kennen.":
+    "The 34 best decklists, one for each Legend, from the Singapore Regional Qualifier (1,893 players). Gorica won with Akali, ahead of a Top 8 half-filled by Kennen.",
   "Best of Sydney - Toutes les legendes":
     "Sydney best decks - Every Legend",
   "Les meilleures decklists pour chaque legende au Regional Qualifier de Sydney 2026 (1405 joueurs).":
@@ -70,6 +78,10 @@ export const EN_ARTICLES: Record<string, string> = {
     "Proving Grounds: which deck should you build with Annie, Master Yi, Lux or Garen?",
   "Vous avez ouvert le set d'initiation et vous voulez jouer en tournoi. Voici, pour chacune des quatre Légendes, la meilleure liste vraiment classée et ce qu'elle demande.":
     "You opened the starter set and want to play in tournaments. For each of its four Legends, here is the best list that actually placed and what it requires.",
+  "RQ Barcelone : Ornn bat Kennen sur son propre terrain":
+    "Barcelona RQ: Ornn beats Kennen on his home turf",
+  "MICE TheManLand gagne Barcelone avec Ornn, joué par 2 % des 2 224 participants. Retrouvez le Top 8, le partage du méta et les decks de la finale.":
+    "MICE TheManLand wins Barcelona with Ornn, played by 2% of the 2,224 participants. See the Top 8, the meta share and the decks from the final.",
   "RQ Hartford : Factor sacre Master Yi et venge sa défaite de Vancouver":
     "Hartford RQ: Factor crowns Master Yi and avenges his Vancouver loss",
   "Sur le dernier Regional Qualifier du format Unleashed, Factor porte Master Yi à son premier titre de RQ occidental et prend sa revanche sur bsweitz, qui l'avait battu à Vancouver. Récap du Top 8 de Hartford.":

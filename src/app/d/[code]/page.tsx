@@ -15,13 +15,15 @@ import { LikeButton } from "./like-button";
 import { VisibilityToggle } from "./visibility-toggle";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { getUserFromSession } from "@/lib/session";
+import { BoutonSuivre } from "@/components/bouton-suivre";
+import { estAbonne } from "@/lib/abonnements";
 import Link from "@/components/lien";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
-import { diffDecks } from "@/lib/deck-diff";
-import { chiffrerDeck } from "@/lib/cardnexus";
+import { diffDecks, resumerVersion } from "@/lib/deck-diff";
+import { chargerPrix, chiffrerDeck } from "@/lib/cardnexus";
 import { tr, metaTraduite } from "@/lib/i18n-server";
 import { cache } from "react";
 
@@ -139,7 +141,23 @@ export default async function CommunityDeckPage({ params }: PageProps) {
     [...new Set(historique.flatMap((v) => v.changements.map((c) => c.cardId)))],
   );
 
+  // Coût et courbe d'une mise à jour se déduisent du seul diff : inutile de
+  // relire chaque version entière. Le prix est celui de l'impression la moins
+  // chère, comme partout ailleurs sur le site.
+  const releve = chargerPrix();
+  const infosCartes = new Map(
+    [...cartesHistorique.values()].map((c) => [
+      c.id,
+      { energie: c.energy ?? null, eur: releve?.cards[c.riftboundId]?.eur ?? null },
+    ]),
+  );
+
   const user = await getUserFromSession();
+  // Suivre ce deck : la cloche préviendra à chaque nouvelle version publiée par
+  // son auteur. Inutile pour l'auteur lui-même, qui vient de la publier.
+  const abonnements = user
+    ? await prisma.abonnement.findMany({ where: { userId: user.id }, select: { genre: true, cible: true } })
+    : [];
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -239,11 +257,21 @@ export default async function CommunityDeckPage({ params }: PageProps) {
           <DeckStatsPanel cards={decklistCards} />
           <VersionHistory
             currentVersion={deck.version}
+            shareCode={deck.shareCode}
+            // Le bouton de retour arrière n'existe que pour l'auteur : la route
+            // refuse déjà les autres (403), mais montrer un bouton qui échoue
+            // n'aide personne.
+            estAuteur={!!user && deck.userId === user.id}
             history={historique.map(({ ligne, changements }) => ({
               id: ligne.id,
               version: ligne.version,
               changelog: ligne.changelog,
               createdAt: ligne.createdAt.toISOString(),
+              deckCode: ligne.deckCode,
+              resume: resumerVersion(
+                changements.map((c) => ({ ...c, cardId: findCard(cartesHistorique, c.cardId)?.id ?? c.cardId })),
+                infosCartes,
+              ),
               changements: changements.map((c) => ({
                 nom: findCard(cartesHistorique, c.cardId)?.name ?? c.cardId,
                 section: c.section,
@@ -253,6 +281,16 @@ export default async function CommunityDeckPage({ params }: PageProps) {
             }))}
           />
           <UpdateDeckButton shareCode={deck.shareCode} ownerId={deck.userId} />
+          {deck.userId !== user?.id && (
+            <BoutonSuivre
+              genre="deck"
+              cible={deck.shareCode}
+              connecte={!!user}
+              suiviInitial={estAbonne(abonnements, "deck", deck.shareCode)}
+              libelle="Suivre ce deck"
+              libelleSuivi="Deck suivi"
+            />
+          )}
         </div>
       </div>
 

@@ -3,6 +3,8 @@ import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getOrCreateOverlayState, saveState } from "@/lib/overlay-server";
 import { TYPES_IMAGE, estGenreMedia, TAILLE_MAX_MEDIA, typeReel, CLE_URL_MEDIA } from "@/lib/overlay";
+import { lireCorpsBorne } from "@/lib/corps-borne";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -14,6 +16,7 @@ export const dynamic = "force-dynamic";
  * Un décor pèse plus lourd qu'un logo : il fait 1920x1080 et garde sa transparence.
  */
 export async function POST(req: Request) {
+  if (!rateLimit(req, { bucket: "overlay-media", limit: 10 })) return tooMany();
   const user = await getUserFromSession();
   if (!user) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
@@ -31,7 +34,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `L’image dépasse ${kio} Kio.` }, { status: 413 });
   }
 
-  const octets = new Uint8Array(await req.arrayBuffer());
+  let octets: Uint8Array<ArrayBuffer>;
+  try {
+    octets = await lireCorpsBorne(req, maxi);
+  } catch (cause) {
+    const tropGrand = cause instanceof Error && cause.message === "Taille maximale dépassée";
+    return NextResponse.json({ error: tropGrand ? `L’image dépasse ${kio} Kio.` : "Lecture de l’image interrompue." }, { status: tropGrand ? 413 : 400 });
+  }
   if (octets.length === 0) return NextResponse.json({ error: "Fichier vide." }, { status: 400 });
   if (octets.length > maxi) return NextResponse.json({ error: `L’image dépasse ${kio} Kio.` }, { status: 413 });
 
