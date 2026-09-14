@@ -7,7 +7,14 @@
  */
 
 /** Les morceaux que la routine écrit elle-même : la part, le nombre d'exemplaires. */
-const CHIFFRE = /^\d|% des listes|exemplaires? en moyenne/i;
+const CHIFFRE = /^\d|% des (?:listes|builds)|exemplaires? en moyenne/i;
+/**
+ * La queue chiffrée des rôles d'avant la routine, collée au mot sans virgule :
+ * « Combat trick joué dans 71 % des builds à 2 exemplaires ». Sans la couper, la
+ * phrase entière passait pour le mot écrit à la main et revenait à chaque passage
+ * devant les chiffres du jour (fiche de Volibear, 15 septembre 2026).
+ */
+const QUEUE_CHIFFREE = /\s+(?:jouée?s?\s+)?(?:en flex\s+)?dans\s+\d.*$/i;
 /** Le rang, que `role` remet devant à chaque passage. */
 const RANG = /^(?:Core|Standard|Flex|Tech|Cœur du deck|Souple)$/i;
 
@@ -25,13 +32,16 @@ export function descripteurExistant(role: string | undefined): string | null {
   if (!role) return null;
   const mots = role
     .split(/[,;—–]/)
-    .map((m) => m.trim().replace(/\.$/, ""))
+    .map((m) => m.trim().replace(/\.$/, "").replace(QUEUE_CHIFFREE, "").trim())
     .filter((m) => m.length >= 3 && !CHIFFRE.test(m) && !RANG.test(m));
   return mots[0] ?? null;
 }
 
+// Virgule décimale : la fiche est lue en français, « 2.5 exemplaires » n'y a pas
+// sa place. Au passage suivant, « 2,5 » se découpe en « 2 » et « 5 exemplaires »,
+// que le filtre ci-dessus écarte tous les deux.
 export const exemplaires = (n: number) =>
-  `${n % 1 === 0 ? n : n.toFixed(1)} exemplaire${n >= 2 ? "s" : ""}`;
+  `${n % 1 === 0 ? n : n.toFixed(1).replace(".", ",")} exemplaire${n >= 2 ? "s" : ""}`;
 
 export function role(part: number, copies: number, ancien?: string): string {
   const rang = part >= 90 ? "Cœur du deck" : part >= 60 ? "Standard" : "Souple";

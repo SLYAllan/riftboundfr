@@ -50,7 +50,7 @@
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
@@ -58,12 +58,12 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 380,
+    "joueursClasses": 385,
     "coupe10": 29,
     "titres": 2,
-    "conversion": "7.6 %",
-    "tournois": 27,
-    "listesPubliees": 342,
+    "conversion": "7.5 %",
+    "tournois": 28,
+    "listesPubliees": 347,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -100,12 +100,12 @@
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (86 %)",
     "Rockfall Path (86 %)",
-    "Void Gate (77 %)",
-    "Heisho, Shell of the World (35 %)"
+    "Frozen Fortress (86 %)",
+    "Void Gate (78 %)",
+    "Heisho, Shell of the World (34 %)"
   ],
-  "dataSource": "Classement complet des tournois : 380 joueurs classés, 27 tournois, dont 342 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 385 joueurs classés, 28 tournois, dont 347 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

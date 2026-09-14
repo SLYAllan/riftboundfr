@@ -30,11 +30,15 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Tideturner",
       "role": "Standard, 80 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 79 % des listes, 2 exemplaires"
     },
     {
       "name": "Charm",
@@ -45,24 +49,20 @@
       "role": "Standard, 78 % des listes, 1 exemplaire"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Tornado Warrior",
       "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 72 % des listes, 3 exemplaires"
+      "role": "Standard, 73 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 67 % des listes, 1 exemplaire"
+      "role": "Standard, 68 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -76,12 +76,12 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 218,
-    "coupe10": 18,
+    "joueursClasses": 227,
+    "coupe10": 20,
     "titres": 0,
-    "conversion": "8.3 %",
-    "tournois": 25,
-    "listesPubliees": 112,
+    "conversion": "8.8 %",
+    "tournois": 26,
+    "listesPubliees": 121,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -89,24 +89,24 @@
         "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       },
       {
+        "placement": "7th",
+        "player": "收容所076·豆芽",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
+      },
+      {
         "placement": "8th",
         "player": "热水加冰",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "10th",
+        "player": "玖尤",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
+      },
+      {
         "placement": "12th",
         "player": "XXT.Cyber",
         "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "15th",
-        "player": "卡茶.团不溜秋",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "17th",
-        "player": "BKM-叶英@CN.R",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       }
     ]
   },
@@ -137,13 +137,13 @@
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "56 %",
+      "usage": "59 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (71 %)",
+    "Startipped Peak (69 %)",
     "Fortified Position (56 %)"
   ],
-  "dataSource": "Classement complet des tournois : 218 joueurs classés, 25 tournois, dont 112 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 227 joueurs classés, 26 tournois, dont 121 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

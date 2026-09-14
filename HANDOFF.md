@@ -26,6 +26,16 @@ Validateur : 25 934 listes, 0 écart. `maj:stats` : Vendetta 9 643 places, Ezrea
 « À REGARDER » (A, p = 0,030). 41 best-of en local (`--sauf` Master Yi Wuju Bladesman
 et Ornn : leur n°1, #8 et #70, n'a pas été converti).
 
+**Relevé hexgate suivant** : 250, S4 Guangzhou City Challenge du 5 septembre
+(128 joueurs), 110 listes seedées en local et en prod ; Top 8 à 5 places (3e et 6e
+en réserve incomplète, 5e à deux Champions Fiora). 251, « 区域赛预热赛 » du 11
+septembre (259 joueurs), **écarté par Allan** : épreuve de boutique d'échauffement,
+format `rune_competition`, sans ville vérifiable. Sa capture HTML traîne encore,
+non suivie.
+
+`fiches-roles.ts` coupe maintenant la queue chiffrée des anciens rôles sans virgule
+(« Combat trick joué dans 71 % des builds… ») et écrit « 2,5 exemplaires ».
+
 **En prod depuis** : 41 best-of Shenyang, Volibear de Wuhan (+1, 1 161 sautés :
 la clé au numéro du rang tient aussi en prod) et son best-of (39), les 122 listes
 de Shanghai 246, qui n'y étaient pas.

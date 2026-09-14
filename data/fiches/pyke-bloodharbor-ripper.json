@@ -18,7 +18,7 @@
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Stacked Deck",
@@ -26,44 +26,44 @@
     },
     {
       "name": "Blood Rush",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Void Seeker",
       "role": "Standard, 79 % des listes, 2 exemplaires"
     },
     {
+      "name": "Traveling Merchant",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
+    },
+    {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Piercing Light",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 126,
+    "joueursClasses": 130,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "1.6 %",
-    "tournois": 22,
-    "listesPubliees": 67,
+    "conversion": "1.5 %",
+    "tournois": 23,
+    "listesPubliees": 70,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -86,9 +86,9 @@
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "40th",
-        "player": "enforce",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "placement": "35th",
+        "player": "猫岛巡礼-oldtea",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
       }
     ]
   },
@@ -107,16 +107,16 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "42 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Ripper's Bay (97 %)",
-    "Forbidding Waste (81 %)",
+    "Forbidding Waste (80 %)",
     "Void Gate (51 %)"
   ],
-  "dataSource": "Classement complet des tournois : 126 joueurs classés, 22 tournois, dont 67 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 130 joueurs classés, 23 tournois, dont 70 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

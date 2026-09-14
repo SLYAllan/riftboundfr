@@ -17,10 +17,6 @@
   },
   "keyCards": [
     {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Stupefy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
@@ -30,6 +26,10 @@
     },
     {
       "name": "Moonfall",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ravenbloom Student",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
     },
     {
       "name": "Patched Porobot",
@@ -54,15 +54,15 @@
     },
     {
       "name": "Flash",
-      "role": "Standard, 82 % des listes, 1 exemplaire"
+      "role": "Standard, 81 % des listes, 1 exemplaire"
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
+      "role": "Souple, 56 % des listes, 3 exemplaires"
     },
     {
       "name": "Abandon",
-      "role": "Souple, 48 % des listes, 1 exemplaire"
+      "role": "Souple, 47 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 392,
+    "joueursClasses": 399,
     "coupe10": 37,
     "titres": 4,
-    "conversion": "9.4 %",
-    "tournois": 27,
-    "listesPubliees": 223,
+    "conversion": "9.3 %",
+    "tournois": 28,
+    "listesPubliees": 230,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -145,18 +145,18 @@
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "50 %",
+      "usage": "49 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "46 %",
+      "usage": "47 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (97 %)",
-    "Targon's Peak (59 %)",
+    "Targon's Peak (58 %)",
     "Rockfall Path (57 %)"
   ],
-  "dataSource": "Classement complet des tournois : 392 joueurs classés, 27 tournois, dont 223 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 399 joueurs classés, 28 tournois, dont 230 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

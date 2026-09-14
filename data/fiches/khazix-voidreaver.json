@@ -50,19 +50,19 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Hard Bargain",
-      "role": "Standard, 71 % des listes, 1 exemplaire"
+      "role": "Standard, 72 % des listes, 1 exemplaire"
     },
     {
       "name": "Demacian Diplomat",
-      "role": "Standard, 68 % des listes, 3 exemplaires"
+      "role": "Standard, 69 % des listes, 3 exemplaires"
     },
     {
-      "name": "First Mate",
-      "role": "Souple, 43 % des listes, 2 exemplaires"
+      "name": "Edge of Night",
+      "role": "Souple, 44 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -75,17 +75,22 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 224,
-    "coupe10": 23,
+    "joueursClasses": 226,
+    "coupe10": 24,
     "titres": 0,
-    "conversion": "10.3 %",
-    "tournois": 22,
-    "listesPubliees": 76,
+    "conversion": "10.6 %",
+    "tournois": 23,
+    "listesPubliees": 78,
     "bestPlacements": [
       {
         "placement": "8th",
         "player": "高长恭",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "9th",
+        "player": "绫形",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
       },
       {
         "placement": "9th",
@@ -101,11 +106,6 @@
         "placement": "12th",
         "player": "MtyAlley Kuroji",
         "tournament": "Singapore Regional Qualifier"
-      },
-      {
-        "placement": "15th",
-        "player": "信仰.Rui",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       }
     ]
   },
@@ -137,31 +137,31 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "84 %",
+      "usage": "85 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "72 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Zed, Without a Sound": {
-      "usage": "43 %",
+      "usage": "73 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "42 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Zed, Without a Sound": {
+      "usage": "44 %",
+      "role": "1,5 exemplaire en moyenne"
+    },
     "Qiyana, Victorious": {
-      "usage": "38 %",
+      "usage": "37 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (93 %)",
-    "Star Spring (64 %)",
-    "Monastery of Hirana (59 %)",
-    "Sandswept Tomb (47 %)"
+    "Forbidding Waste (94 %)",
+    "Star Spring (65 %)",
+    "Monastery of Hirana (58 %)",
+    "Sandswept Tomb (49 %)"
   ],
-  "dataSource": "Classement complet des tournois : 224 joueurs classés, 22 tournois, dont 76 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 226 joueurs classés, 23 tournois, dont 78 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }
