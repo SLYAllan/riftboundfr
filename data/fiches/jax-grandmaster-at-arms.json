@@ -14,7 +14,7 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Counter Strike",
@@ -26,19 +26,19 @@
     },
     {
       "name": "Brutalizer",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "First Mate",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "First Mate",
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 78 % des listes, 3 exemplaires"
     },
     {
       "name": "Lonely Poro",
@@ -46,24 +46,24 @@
     },
     {
       "name": "Rampage",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
-      "name": "Challenge",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "name": "Back Off",
+      "role": "Souple, 52 % des listes, 1 exemplaire"
     },
     {
       "name": "Boneshiver",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Souple, 42 % des listes, 2 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 70,
+    "joueursClasses": 86,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 15,
-    "listesPubliees": 34,
+    "tournois": 16,
+    "listesPubliees": 50,
     "bestPlacements": [
       {
         "placement": "38th",
@@ -95,27 +95,31 @@
   "sourceUrl": null,
   "champions": {
     "Jax, Unmatched": {
-      "usage": "94 %",
+      "usage": "92 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "44 %",
+      "usage": "52 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "41 %",
+      "usage": "50 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Irelia, Fervent": {
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "32 %",
+      "usage": "38 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (74 %)",
-    "Ornn's Forge (53 %)"
+    "Sunken Temple (70 %)",
+    "Ornn's Forge (48 %)"
   ],
-  "dataSource": "Classement complet des tournois : 70 joueurs classés, 15 tournois, dont 34 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 86 joueurs classés, 16 tournois, dont 50 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

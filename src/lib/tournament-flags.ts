@@ -409,6 +409,8 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // `format` suit les autres épreuves S4 de la table : hexgate ne le publie pas,
   // et chaque joueur n'a qu'une liste, ce que Conquest ne donnerait pas.
   "S4 Wuhan Regional Open (2026-08-29)": { name: "S4 Wuhan Regional Open", shortName: "Wuhan RO S4", countryCode: "CN", city: "Wuhan", location: "Wuhan, Chine", playerCount: 1280, type: "regional", date: "2026-08-29", set: "Vendetta", format: "Standard" },
+  // Même source et même règle que Wuhan : 1 080 listes gardées sur 1 188 publiées.
+  "S4 Shenyang Regional Open (2026-09-12)": { name: "S4 Shenyang Regional Open", shortName: "Shenyang RO S4", countryCode: "CN", city: "Shenyang", location: "Shenyang, Chine", playerCount: 1191, type: "regional", date: "2026-09-12", set: "Vendetta", format: "Standard" },
   "Fuzhou City Challenge (2025-09-27)": { name: "Fuzhou City Challenge (2025-09-27)", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shenzhen City Challenge (2025-09-27)": { name: "Shenzhen City Challenge (2025-09-27)", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },
   "Shanghai City Challenge (2025-09-27)": { name: "Shanghai City Challenge (2025-09-27)", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2025-09-27", set: "Origins", format: "Standard" },

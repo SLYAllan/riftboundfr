@@ -21,10 +21,6 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Stupefy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
@@ -38,7 +34,11 @@
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
@@ -46,23 +46,23 @@
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "role": "Standard, 79 % des listes, 1 exemplaire"
+      "role": "Standard, 82 % des listes, 1 exemplaire"
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Souple, 57 % des listes, 3 exemplaires"
     },
     {
-      "name": "Morbid Return",
-      "role": "Souple, 54 % des listes, 2 exemplaires"
+      "name": "Abandon",
+      "role": "Souple, 48 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 351,
-    "coupe10": 32,
+    "joueursClasses": 392,
+    "coupe10": 37,
     "titres": 4,
-    "conversion": "9.1 %",
-    "tournois": 26,
-    "listesPubliees": 182,
+    "conversion": "9.4 %",
+    "tournois": 27,
+    "listesPubliees": 223,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -141,22 +141,22 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "99 %",
+      "usage": "100 %",
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "59 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "41 %",
+      "usage": "46 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (97 %)",
-    "Rockfall Path (62 %)",
-    "Targon's Peak (53 %)"
+    "Targon's Peak (59 %)",
+    "Rockfall Path (57 %)"
   ],
-  "dataSource": "Classement complet des tournois : 351 joueurs classés, 26 tournois, dont 182 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 392 joueurs classés, 27 tournois, dont 223 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

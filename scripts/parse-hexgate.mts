@@ -36,6 +36,7 @@ const VILLES: Record<string, string> = {
   "西安": "Xi'an",
   "东莞": "Dongguan",
   "武汉": "Wuhan",
+  "沈阳": "Shenyang",
 };
 
 /**
@@ -187,7 +188,19 @@ async function main() {
         if (parLeNom) return parLeNom;
         const m = c.card_no.match(/^([A-Za-z]+)-(\d+)/);
         if (!m) return null;
-        return parNumero.get(`${m[1].toLowerCase()}|${Number(m[2])}`) ?? null;
+        const parLeNumero = parNumero.get(`${m[1].toLowerCase()}|${Number(m[2])}`);
+        if (parLeNumero) return parLeNumero;
+        // Les Légendes d'Origins arrivent sans le personnage : « Relentless Storm »
+        // (FND-249) pour « Volibear, Relentless Storm » (ogn-249), et FND n'est pas
+        // un set de la base. On ne rattache que si DEUX clés concordent : le titre
+        // après la virgule ET le numéro, sur une Légende, avec une seule candidate.
+        // Sans ça, Volibear, Viktor, Yasuo et Jinx sautaient à chaque tournoi.
+        if (c.slot_type !== "legend") return null;
+        const titre = `, ${c.en_name.trim().toLowerCase()}`;
+        const candidates = cartes.filter(
+          (b) => b.type === "Legend" && b.collectorNumber === Number(m[2]) && b.name.trim().toLowerCase().endsWith(titre),
+        );
+        return candidates.length === 1 ? candidates[0] : null;
       };
 
       const inconnues = deck.cartes.filter((c) => !trouver(c)).map((c) => `${c.en_name} (${c.card_no})`);

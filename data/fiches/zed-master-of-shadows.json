@@ -29,95 +29,91 @@
   "keyCards": [
     {
       "name": "Death Mark",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 80 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires"
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires"
     },
     {
       "name": "Cleave",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 64 % des listes, 2 exemplaires"
+      "role": "Standard, 73 % des listes, 2 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Standard, 60 % des listes, 3 exemplaires"
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 53 % des listes, 2 exemplaires"
+      "role": "Standard, 60 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 53 % des listes, 2 exemplaires"
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "69 %",
+      "usage": "75 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "49 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "44 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Zed, From the Shadows": {
-      "usage": "42 %",
+    "Vi, Destructive": {
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "36 %",
+      "usage": "33 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Vi, Destructive": {
-      "usage": "36 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Rek'Sai, Breacher": {
-      "usage": "31 %",
+    "Zed, From the Shadows": {
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (96 %)",
-    "Minefield (69 %)",
-    "Forbidding Waste (40 %)"
+    "Zaun Warrens (93 %)",
+    "Minefield (67 %)",
+    "Forbidding Waste (45 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 106,
-    "coupe10": 2,
+    "joueursClasses": 122,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "1.9 %",
-    "tournois": 18,
-    "listesPubliees": 45,
+    "conversion": "2.5 %",
+    "tournois": 19,
+    "listesPubliees": 60,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -146,5 +142,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 106 joueurs classés, 18 tournois, dont 45 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 122 joueurs classés, 19 tournois, dont 60 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

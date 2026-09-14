@@ -41,28 +41,28 @@
       "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
     },
     {
-      "name": "Gust",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Gust",
+      "role": "Standard, 87 % des listes, 2 exemplaires"
     },
     {
       "name": "The List",
-      "role": "Standard, 84 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Deadly Flourish",
-      "role": "Standard, 84 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "joueursClasses": 197,
-    "coupe10": 28,
+    "joueursClasses": 215,
+    "coupe10": 31,
     "titres": 0,
-    "conversion": "14.2 %",
-    "tournois": 25,
-    "listesPubliees": 77,
+    "conversion": "14.4 %",
+    "tournois": 26,
+    "listesPubliees": 95,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -105,9 +105,9 @@
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "11th",
-        "player": "胰脏",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "10th",
+        "player": "羽芒丨3+x丨不吃糖",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       }
     ]
   },
@@ -132,21 +132,21 @@
   "champions": {
     "Fizz, Trickster": {
       "usage": "100 %",
-      "role": "2 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "79 %",
+      "usage": "82 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (91 %)",
+    "Frozen Fortress (89 %)",
     "Sigil of the Storm (86 %)",
-    "Heisho, Shell of the World (74 %)"
+    "Heisho, Shell of the World (73 %)"
   ],
-  "dataSource": "Classement complet des tournois : 197 joueurs classés, 25 tournois, dont 77 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 215 joueurs classés, 26 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

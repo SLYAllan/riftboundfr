@@ -57,10 +57,16 @@ for (const id of ids) {
   // « Dongguan Manbo Cup (2026-08-08) » et un slug avec des espaces et des
   // parenthèses. On lit alors la ville dans le premier mot du nom.
   const estCityChallenge = conv.contexte.includes("City Challenge");
+  // « S4 Shenyang Regional Open » : le premier mot est la saison, pas la ville.
+  // Lu comme une épreuve particulière, il donnait « S4, Chine » et un drapeau
+  // `city_challenge` pour un tournoi de 1 191 joueurs.
+  const estRegionalOpen = conv.contexte.includes("Regional Open");
   const sansDate = conv.contexte.replace(/\s*\(\d{4}-\d{2}-\d{2}\)\s*$/, "");
   const ville = estCityChallenge
     ? sansDate.replace(/^S4 /, "").replace(/ City Challenge.*/, "")
-    : sansDate.split(" ")[0];
+    : estRegionalOpen
+      ? sansDate.replace(/^S\d+ /, "").replace(/ Regional Open.*/, "")
+      : sansDate.split(" ")[0];
   const slugSource = estCityChallenge ? `s4-${ville}-cc-${id}` : `${sansDate}-${id}`;
   const slug = slugSource.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -101,11 +107,17 @@ for (const id of ids) {
   writeFileSync(join("data/tournaments", `${slug}.json`), `${JSON.stringify(fiche, null, 2)}\n`);
 
   const nomAffiche = estCityChallenge ? `S4 ${ville} City Challenge` : sansDate;
-  const nomCourt = estCityChallenge ? `${ville} CC` : sansDate.replace(/^S4 /, "");
+  const saison = sansDate.match(/^(S\d+) /)?.[1] ?? "S4";
+  // Même gabarit que la ligne de Wuhan déjà en table : « Wuhan RO S4 », `regional`.
+  const nomCourt = estCityChallenge
+    ? `${ville} CC`
+    : estRegionalOpen
+      ? `${ville} RO ${saison}`
+      : sansDate.replace(/^S4 /, "");
   const drapeau =
     `  "${conv.contexte}": { name: "${nomAffiche}", shortName: "${nomCourt}", ` +
     `countryCode: "CN", city: "${ville}", location: "${ville}, Chine", playerCount: ${fiche.playerCount}, ` +
-    `type: "city_challenge", date: "${fiche.date}", set: "Vendetta", format: "Standard" },`;
+    `type: "${estRegionalOpen ? "regional" : "city_challenge"}", date: "${fiche.date}", set: "Vendetta", format: "Standard" },`;
 
   console.log(`\n=== ${slug} · ${decks.length} listes publiées sur ${fiche.playerCount} joueurs`);
   console.log(`    Top 8 relevé : ${fiche.topPlacements.length} places`);

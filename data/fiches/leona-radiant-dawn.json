@@ -24,39 +24,39 @@
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, protection gear, 100 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, protection gear, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, rally surprise, 93 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, early game, 83 % des listes, 3 exemplaires"
+      "role": "Standard, early game, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 75 % des listes, 2 exemplaires"
+      "role": "Standard, spell signature, 73 % des listes, 2 exemplaires"
     },
     {
       "name": "Emperor's Divide",
       "role": "Standard, finisher, 67 % des listes, 2 exemplaires"
     },
     {
+      "name": "Thwonk!",
+      "role": "Standard, 60 % des listes, 1 exemplaire"
+    },
+    {
       "name": "Affectionate Poro",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2.5 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, combat trick, 50 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Thwonk!",
-      "role": "Souple, 50 % des listes, 1 exemplaire"
+      "role": "Souple, combat trick, 47 % des listes, 2 exemplaires"
     },
     {
       "name": "Lonely Poro",
-      "role": "Souple, 42 % des listes, 3 exemplaires"
+      "role": "Souple, 40 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
@@ -65,34 +65,26 @@
       "role": "3 exemplaires en moyenne"
     },
     "Leona, Determined": {
-      "usage": "92 %",
+      "usage": "93 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "83 %",
+      "usage": "87 %",
       "role": "3 exemplaires en moyenne"
     },
     "Fiora, Victorious": {
-      "usage": "42 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "40 %",
+      "role": "2.5 exemplaires en moyenne"
     },
     "Nami, Headstrong": {
-      "usage": "33 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Vex, Mocking": {
-      "usage": "33 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Leona, Zealot": {
-      "usage": "33 %",
-      "role": "Variante agressive, 1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Monastery of Hirana (100 %)",
-    "Sunken Temple (83 %)",
-    "Heisho, Shell of the World (42 %)",
+    "Sunken Temple (80 %)",
+    "Heisho, Shell of the World (33 %)",
     "Amateur Recital (33 %)"
   ],
   "strengths": [
@@ -102,12 +94,12 @@
     "9 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 16,
+    "joueursClasses": 19,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "6.3 %",
-    "tournois": 9,
-    "listesPubliees": 12,
+    "conversion": "5.3 %",
+    "tournois": 10,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -139,7 +131,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 16 joueurs classés, 9 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 10 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

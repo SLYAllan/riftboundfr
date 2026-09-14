@@ -42,11 +42,11 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
@@ -54,15 +54,15 @@
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 62 % des listes, 1 exemplaire"
+      "role": "Standard, 66 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 315,
-    "coupe10": 41,
+    "joueursClasses": 358,
+    "coupe10": 45,
     "titres": 2,
-    "conversion": "13 %",
-    "tournois": 26,
-    "listesPubliees": 116,
+    "conversion": "12.6 %",
+    "tournois": 27,
+    "listesPubliees": 159,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -134,18 +134,19 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "85 %",
+      "usage": "83 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "38 %",
+      "usage": "47 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (98 %)",
+    "Trifarian War Camp (99 %)",
     "Hall of Legends (97 %)",
-    "Ornn's Forge (77 %)"
+    "Ornn's Forge (68 %)",
+    "Seat of Power (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 315 joueurs classés, 26 tournois, dont 116 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 358 joueurs classés, 27 tournois, dont 159 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

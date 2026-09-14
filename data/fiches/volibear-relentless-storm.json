@@ -12,69 +12,76 @@
   "keyCards": [
     {
       "name": "Kadregrin the Infernal",
-      "role": "Core et finisher dragon, joué dans 100 % des builds à 2,9 exemplaires en moyenne."
-    },
-    {
-      "name": "Elder Dragon",
-      "role": "Menace majeure, jouée dans 93 % des builds à 2,7 exemplaires en moyenne."
-    },
-    {
-      "name": "Challenge",
-      "role": "Core qui force les trades, joué dans 93 % des builds à 2,5 exemplaires en moyenne."
+      "role": "Cœur du deck, Core et finisher dragon, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Mobilize",
-      "role": "Ramp essentiel, joué dans 86 % des builds à 3 exemplaires."
-    },
-    {
-      "name": "Sabotage",
-      "role": "Disruption jouée dans 79 % des builds à 2 exemplaires."
+      "role": "Standard, Ramp essentiel, 80 % des listes, 3 exemplaires"
     },
     {
       "name": "Sky Splitter",
-      "role": "Removal et board control, joué dans 79 % des builds à 2,6 exemplaires en moyenne."
-    },
-    {
-      "name": "Flurry of Blades",
-      "role": "Combat trick joué dans 71 % des builds à 2 exemplaires."
+      "role": "Standard, Removal et board control, 80 % des listes, 3 exemplaires"
     },
     {
       "name": "Gentle Gemdragon",
-      "role": "Dragon de mid game, joué dans 64 % des builds à 2,9 exemplaires en moyenne."
+      "role": "Standard, Dragon de mid game, 80 % des listes, 3 exemplaires"
     },
     {
-      "name": "Confront",
-      "role": "Challenger joué dans 64 % des builds à 2,7 exemplaires en moyenne."
+      "name": "Elder Dragon",
+      "role": "Standard, Menace majeure, 80 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Dragonsoul Sage",
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Herald of Scales",
-      "role": "Dragon d'early game, joué en flex dans 57 % des builds à 3 exemplaires."
+      "role": "Standard, Dragon d'early game, 70 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 70 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Show of Strength",
+      "role": "Standard, 60 % des listes, 3 exemplaires"
     },
     {
       "name": "Blazing Scorcher",
-      "role": "Dragon d'early game, joué en flex dans 57 % des builds à 3 exemplaires."
+      "role": "Standard, Dragon d'early game, 60 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stormbringer",
-      "role": "Spell signature joué en flex dans 57 % des builds à 1,5 exemplaire en moyenne."
+      "name": "Flurry of Blades",
+      "role": "Standard, Combat trick joué dans 71 % des builds à 2 exemplaires, 60 % des listes, 2.5 exemplaires"
     },
     {
-      "name": "Punch First",
-      "role": "Removal joué en flex dans 57 % des builds à 1,5 exemplaire en moyenne."
+      "name": "Sabotage",
+      "role": "Standard, Disruption jouée dans 79 % des builds à 2 exemplaires, 60 % des listes, 1 exemplaire"
     }
   ],
   "champions": {
     "Volibear, Furious": {
-      "usage": "100%",
-      "role": "Seul champion du build, centré sur l'agression et l'overwhelm."
+      "usage": "100 %",
+      "role": "Seul champion du build, 1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "70 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Jayce, Hammer in Hand": {
+      "usage": "40 %",
+      "role": "1.5 exemplaire en moyenne"
+    },
+    "Akshan, Mischievous": {
+      "usage": "40 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Aspirant's Climb (100%)",
-    "Sigil of the Storm (79%)",
-    "Forgotten Monument (43%)",
-    "Sunken Temple (21%)",
-    "Frozen Fortress (21%)"
+    "Sigil of the Storm (90 %)",
+    "Dragon Roost (60 %)",
+    "Mystic Vortex (40 %)",
+    "Frozen Fortress (30 %)"
   ],
   "strengths": [
     "Les grosses unités se paient elles-mêmes, en partie."
@@ -83,11 +90,12 @@
     "6 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 403,
-    "coupe10": 14,
+    "joueursClasses": 10,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "3.5 %",
-    "tournois": 71,
+    "conversion": "10 %",
+    "tournois": 8,
+    "listesPubliees": 10,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -95,31 +103,31 @@
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
-        "placement": "6th",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-09-27)"
+        "placement": "33th",
+        "player": "魔王Jun",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       },
       {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+        "placement": "47th",
+        "player": "青鸟",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+        "placement": "56th",
+        "player": "三鲜馅饺子",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "12th",
-        "player": null,
-        "tournament": "Chengdu City Challenge (2025-10-12)"
+        "placement": "59th",
+        "player": "紫枫",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 403 joueurs classés sur 71 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 10 joueurs classés, 8 tournois, dont 10 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

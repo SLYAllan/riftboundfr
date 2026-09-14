@@ -1,5 +1,38 @@
 # HANDOFF — état des lieux
 
+## Session du 15 septembre 2026 — Regional Open S4 de Shenyang (hexgate 252)
+
+1 191 joueurs, 1 188 listes publiées, 1 148 relevées (40 partielles), **1 093
+converties et seedées EN LOCAL ET EN PROD** (prod : 27 300 decks publiés, vérifié
+par `--etat`). 55 écartées pour « Champion ambigu ». Top 8 : 7 places, la 8e a une
+réserve à 9 cartes.
+
+`parse-hexgate.mts` rattache maintenant les Légendes d'Origins que hexgate donne
+sans le personnage (« Relentless Storm », FND-249 → « Volibear, Relentless Storm »,
+ogn-249) : titre après la virgule ET numéro, sur une Légende, une seule candidate.
+13 listes récupérées ici (Volibear, Viktor, Yasuo, Jinx). Wuhan 243 (+1 Volibear)
+et Shanghai 246 (+2 Viktor) sont reconvertis : trois fichiers neufs, aucune liste
+existante modifiée.
+
+**Piège payé** : relancer `seed-scraped-decks.ts hexgate-243` a créé 309 doublons
+en local. L'import d'origine de Wuhan écrit les rangs « 22th », « 303th », le seeder
+« 22nd », « 303rd », et sa clé comparait le texte. Doublons supprimés (1 162 decks
+Wuhan en local), clé passée au numéro du rang. La prod n'a rien reçu : le seed y
+avait été bloqué. Les rangs « 22th » restent faux en base, local et prod.
+`tournois-hexgate.mts` écrivait la ville « S4 » et `city_challenge` pour un Regional
+Open : corrigé.
+
+Validateur : 25 934 listes, 0 écart. `maj:stats` : Vendetta 9 643 places, Ezreal
+« À REGARDER » (A, p = 0,030). 41 best-of en local (`--sauf` Master Yi Wuju Bladesman
+et Ornn : leur n°1, #8 et #70, n'a pas été converti).
+
+**Reste, refusé par le garde-fou d'écriture en prod, à lancer par Allan :**
+- best-of en prod : `npx tsx scripts/prod-tunnel.mts scripts/mark-bestof-tournois.mts "S4 Shenyang Regional Open (2026-09-12)" --sauf "Master Yi, Wuju Bladesman" --sauf "Ornn, Fire Below the Mountain"` ;
+- table `Abonnement` en prod (demande de Codex, avant le prochain Deploy) :
+  `scripts/maj-abonnements-schema.mts`, avec `--sec` d'abord, voir plus bas.
+
+Rien n'est commité.
+
 ## Session du 11 septembre 2026 — RQ Singapour poussé et seedé en prod
 
 Six commits poussés sur `main` : `9076bc37` (Singapour et stats), `c0adf447`

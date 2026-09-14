@@ -77,10 +77,13 @@ async function main() {
   const existing = await prisma.deck.findMany({
     select: { playerName: true, tournamentContext: true, legendName: true, placement: true },
   });
+  // La clé compare le NUMÉRO du rang, pas son texte. L'import de Wuhan (243) a
+  // écrit « 22th » là où `ordinal` écrit « 22nd » : relancer ce seed y a créé
+  // 309 doublons exacts le 15 septembre, un pour chaque rang finissant par 1, 2 ou 3.
+  const cleDeck = (ctx: string | null, joueur: string | null, legende: string | null, placement: string | null) =>
+    `${ctx}|${joueur}|${legende}|${placement ? Number.parseInt(placement.replace(/\D/g, ""), 10) : ""}`;
   const existingSet = new Set(
-    existing.map(
-      (d) => `${d.tournamentContext}|${d.playerName}|${d.legendName}|${d.placement ?? ""}`,
-    ),
+    existing.map((d) => cleDeck(d.tournamentContext, d.playerName, d.legendName, d.placement)),
   );
 
   const baseDir = path.join(process.cwd(), "data", "decklists");
@@ -116,7 +119,7 @@ async function main() {
         const placement = data.placement
           ? ordinal(data.placement, tournamentCtx)
           : null;
-        const key = `${tournamentCtx}|${playerName}|${legendName}|${placement ?? ""}`;
+        const key = cleDeck(tournamentCtx, playerName, legendName, placement);
         if (existingSet.has(key)) {
           skipped++;
           continue;

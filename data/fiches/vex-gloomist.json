@@ -22,47 +22,47 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 95 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 88 % des listes, 2 exemplaires"
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "name": "Charm",
+      "role": "Standard, 79 % des listes, 1 exemplaire"
     },
     {
       "name": "Back Off",
-      "role": "Standard, 73 % des listes, 1.5 exemplaire"
+      "role": "Standard, 78 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 77 % des listes, 2 exemplaires"
     },
     {
       "name": "Tornado Warrior",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 65 % des listes, 1 exemplaire"
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Standard, 72 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 67 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -76,13 +76,18 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 185,
-    "coupe10": 14,
+    "joueursClasses": 218,
+    "coupe10": 18,
     "titres": 0,
-    "conversion": "7.6 %",
-    "tournois": 24,
-    "listesPubliees": 80,
+    "conversion": "8.3 %",
+    "tournois": 25,
+    "listesPubliees": 112,
     "bestPlacements": [
+      {
+        "placement": "5th",
+        "player": "闪电家.ai.小老虎",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
+      },
       {
         "placement": "8th",
         "player": "热水加冰",
@@ -102,11 +107,6 @@
         "placement": "17th",
         "player": "BKM-叶英@CN.R",
         "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "27th",
-        "player": "大白",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       }
     ]
   },
@@ -133,26 +133,17 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "66 %",
+      "usage": "69 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "50 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Pyke, Returned": {
-      "usage": "33 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Fizz, Trickster": {
-      "usage": "30 %",
+      "usage": "56 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (70 %)",
-    "Fortified Position (48 %)",
-    "Bandle Tree (34 %)"
+    "Startipped Peak (71 %)",
+    "Fortified Position (56 %)"
   ],
-  "dataSource": "Classement complet des tournois : 185 joueurs classés, 24 tournois, dont 80 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 218 joueurs classés, 25 tournois, dont 112 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

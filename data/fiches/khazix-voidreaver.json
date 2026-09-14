@@ -22,27 +22,27 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 98 % des listes, 1.5 exemplaire"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
     },
     {
       "name": "Stacked Deck",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Grim Resolve",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "name": "Rampage",
+      "role": "Standard, 88 % des listes, 1 exemplaire"
     },
     {
-      "name": "Rampage",
-      "role": "Standard, 84 % des listes, 1 exemplaire"
+      "name": "Grim Resolve",
+      "role": "Standard, 82 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
@@ -50,7 +50,7 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 76 % des listes, 1.5 exemplaire"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Hard Bargain",
@@ -58,11 +58,11 @@
     },
     {
       "name": "Demacian Diplomat",
-      "role": "Standard, 69 % des listes, 3 exemplaires"
+      "role": "Standard, 68 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Souple, 49 % des listes, 2 exemplaires"
+      "role": "Souple, 43 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -75,12 +75,12 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 203,
-    "coupe10": 21,
+    "joueursClasses": 224,
+    "coupe10": 23,
     "titres": 0,
     "conversion": "10.3 %",
-    "tournois": 21,
-    "listesPubliees": 55,
+    "tournois": 22,
+    "listesPubliees": 76,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -133,39 +133,35 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "96 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "97 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "85 %",
+      "usage": "84 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "64 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Qiyana, Victorious": {
-      "usage": "44 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Evelynn, Entrancing": {
-      "usage": "44 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Zed, Without a Sound": {
-      "usage": "36 %",
-      "role": "1.5 exemplaire en moyenne"
+      "usage": "43 %",
+      "role": "2 exemplaires en moyenne"
     },
-    "Sett, Brawler": {
-      "usage": "31 %",
-      "role": "1 exemplaire en moyenne"
+    "Evelynn, Entrancing": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Qiyana, Victorious": {
+      "usage": "38 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (91 %)",
-    "Monastery of Hirana (67 %)",
-    "Star Spring (62 %)",
-    "Sandswept Tomb (42 %)"
+    "Forbidding Waste (93 %)",
+    "Star Spring (64 %)",
+    "Monastery of Hirana (59 %)",
+    "Sandswept Tomb (47 %)"
   ],
-  "dataSource": "Classement complet des tournois : 203 joueurs classés, 21 tournois, dont 55 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 224 joueurs classés, 22 tournois, dont 76 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

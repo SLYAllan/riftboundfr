@@ -10,60 +10,60 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 100 % des listes, 2.5 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
     },
     {
       "name": "Hostile Takeover",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Honest Broker",
-      "role": "Standard, 78 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 67 % des listes, 3 exemplaires"
+      "role": "Standard, 74 % des listes, 3 exemplaires"
     },
     {
-      "name": "Patched Porobot",
-      "role": "Standard, 61 % des listes, 3 exemplaires"
+      "name": "Honest Broker",
+      "role": "Standard, 71 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 61 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Forge of the Future",
-      "role": "Souple, 56 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Vanguard Armory",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires"
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 50 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires"
     },
     {
-      "name": "Wages of Pain",
-      "role": "Souple, 44 % des listes, 2 exemplaires"
+      "name": "Patched Porobot",
+      "role": "Souple, 50 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Souple, 47 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Forge of the Future",
+      "role": "Souple, 45 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Vanguard Armory",
+      "role": "Souple, 39 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, 39 % des listes, 3 exemplaires"
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 59,
+    "joueursClasses": 79,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 18,
+    "tournois": 10,
+    "listesPubliees": 38,
     "bestPlacements": [
       {
         "placement": "35th",
@@ -101,32 +101,28 @@
   "weaknesses": [
     "5 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 59 joueurs classés, 9 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 11 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 79 joueurs classés, 10 tournois, dont 38 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Renata Glasc, Industrialist": {
-      "usage": "61 %",
+      "usage": "55 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Jayce, Man of Progress": {
-      "usage": "50 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Vi, Peacekeeper": {
-      "usage": "39 %",
-      "role": "2 exemplaires en moyenne"
     },
     "Renata Glasc, Mastermind": {
-      "usage": "39 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Lillia, Fae Fawn": {
-      "usage": "33 %",
+    "Vi, Peacekeeper": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Jayce, Man of Progress": {
+      "usage": "37 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (83 %)",
-    "Veiled Temple (39 %)",
-    "Rockfall Path (33 %)"
+    "Treasure Hoard (74 %)",
+    "Dusk Rose Lab (34 %)",
+    "Veiled Temple (32 %)"
   ]
 }

@@ -1,11 +1,157 @@
 {
+  "Kennen, Heart of the Tempest": {
+    "decks": 527,
+    "joueurs": 1051,
+    "coupe": 197,
+    "titres": 3,
+    "conversion": 18.7,
+    "tournois": 27,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": "小运重卡",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": "收容所218·一凡家老王",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "1st",
+        "player": "D.C松饼",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "2nd",
+        "player": "CTCG Koko Lopez",
+        "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "2nd",
+        "player": "LineKa·黑天使",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Lightning Rush",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Stacked Deck",
+        "part": 99,
+        "copies": 3
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Rhasa the Sunderer",
+        "part": 93,
+        "copies": 3
+      },
+      {
+        "nom": "Seal of Discord",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 89,
+        "copies": 3
+      },
+      {
+        "nom": "Last Rites",
+        "part": 87,
+        "copies": 2
+      },
+      {
+        "nom": "Treasure Hunter",
+        "part": 72,
+        "copies": 3
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 71,
+        "copies": 1
+      },
+      {
+        "nom": "Tideturner",
+        "part": 57,
+        "copies": 1
+      },
+      {
+        "nom": "Gust",
+        "part": 46,
+        "copies": 2
+      },
+      {
+        "nom": "Up from the Deep",
+        "part": 46,
+        "copies": 2
+      },
+      {
+        "nom": "Salvage",
+        "part": 44,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Kennen, Storm of Shuriken",
+        "part": 94,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Nocturne, Horrifying",
+        "part": 88,
+        "copies": 3
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Minefield",
+        "part": 93
+      },
+      {
+        "nom": "Zaun Warrens",
+        "part": 89
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 8
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 4
+      }
+    ]
+  },
   "Master Yi, Wuju Bladesman": {
-    "decks": 417,
-    "joueurs": 760,
-    "coupe": 103,
+    "decks": 476,
+    "joueurs": 819,
+    "coupe": 110,
     "titres": 5,
-    "conversion": 13.6,
-    "tournois": 26,
+    "conversion": 13.4,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "0th",
@@ -45,13 +191,8 @@
         "copies": 3
       },
       {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Punch First",
-        "part": 100,
+        "part": 99,
         "copies": 3
       },
       {
@@ -60,8 +201,13 @@
         "copies": 2
       },
       {
-        "nom": "Scuttle Crab",
+        "nom": "Discipline",
         "part": 99,
+        "copies": 3
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 98,
         "copies": 3
       },
       {
@@ -71,7 +217,7 @@
       },
       {
         "nom": "First Mate",
-        "part": 98,
+        "part": 97,
         "copies": 3
       },
       {
@@ -81,7 +227,7 @@
       },
       {
         "nom": "Rampage",
-        "part": 88,
+        "part": 89,
         "copies": 2
       },
       {
@@ -96,12 +242,12 @@
       },
       {
         "nom": "Pit Rookie",
-        "part": 80,
+        "part": 81,
         "copies": 2
       },
       {
         "nom": "Onslaught",
-        "part": 50,
+        "part": 53,
         "copies": 1
       }
     ],
@@ -125,11 +271,11 @@
     "terrains": [
       {
         "nom": "Star Spring",
-        "part": 92
+        "part": 91
       },
       {
         "nom": "Emperor's Dais",
-        "part": 88
+        "part": 89
       },
       {
         "nom": "Seat of Power",
@@ -149,159 +295,173 @@
       }
     ]
   },
-  "Kennen, Heart of the Tempest": {
-    "decks": 412,
-    "joueurs": 934,
-    "coupe": 170,
-    "titres": 3,
-    "conversion": 18.2,
-    "tournois": 26,
+  "Irelia, Blade Dancer": {
+    "decks": 370,
+    "joueurs": 712,
+    "coupe": 86,
+    "titres": 2,
+    "conversion": 12.1,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
-        "player": "小运重卡",
+        "player": "旋木时光-绿拐",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "1st",
+        "player": "konaha",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+      },
+      {
+        "placement": "2nd",
+        "player": "ARBD-Skyer",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "2nd",
+        "player": "guubums",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
+      },
+      {
+        "placement": "3rd",
+        "player": "极大",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "1st",
-        "player": "收容所218·一凡家老王",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "1st",
-        "player": "D.C松饼",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "2nd",
-        "player": "CTCG Koko Lopez",
-        "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "2nd",
-        "player": "LineKa·黑天使",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ],
     "cartes": [
       {
-        "nom": "Lightning Rush",
+        "nom": "Boots of Swiftness",
         "part": 100,
         "copies": 3
       },
       {
-        "nom": "Stacked Deck",
-        "part": 98,
+        "nom": "Defiant Dance",
+        "part": 100,
         "copies": 3
       },
       {
-        "nom": "Star-Crossed",
-        "part": 94,
-        "copies": 2
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Stellacorn Herder",
+        "part": 99,
+        "copies": 3
       },
       {
         "nom": "Ride The Wind",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Rhasa the Sunderer",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Seal of Discord",
-        "part": 89,
-        "copies": 3
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 87,
-        "copies": 3
-      },
-      {
-        "nom": "Last Rites",
-        "part": 85,
+        "part": 98,
         "copies": 2
-      },
-      {
-        "nom": "Treasure Hunter",
-        "part": 72,
-        "copies": 3
-      },
-      {
-        "nom": "Switcheroo",
-        "part": 64,
-        "copies": 1
       },
       {
         "nom": "Tideturner",
-        "part": 51,
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "En Garde",
+        "part": 92,
         "copies": 2
       },
       {
-        "nom": "Up from the Deep",
-        "part": 51,
+        "nom": "Zhonya's Hourglass",
+        "part": 89,
+        "copies": 1
+      },
+      {
+        "nom": "Stacked Deck",
+        "part": 88,
         "copies": 2
       },
       {
-        "nom": "Hidden Blade",
-        "part": 42,
-        "copies": 1
+        "nom": "Charm",
+        "part": 87,
+        "copies": 2
       },
       {
-        "nom": "Abandon",
-        "part": 41,
-        "copies": 1
+        "nom": "Star-Crossed",
+        "part": 86,
+        "copies": 2
+      },
+      {
+        "nom": "Guardian Angel",
+        "part": 68,
+        "copies": 2
       }
     ],
     "champions": [
       {
-        "nom": "Fizz, Trickster",
-        "part": 94,
-        "copies": 2
-      },
-      {
-        "nom": "Kennen, Storm of Shuriken",
-        "part": 93,
+        "nom": "Irelia, Fervent",
+        "part": 100,
         "copies": 1
       },
       {
-        "nom": "Nocturne, Horrifying",
-        "part": 84,
-        "copies": 3
+        "nom": "Pyke, Returned",
+        "part": 59,
+        "copies": 1
+      },
+      {
+        "nom": "Akali, Silent",
+        "part": 58,
+        "copies": 1
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 49,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 46,
+        "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Minefield",
-        "part": 91
+        "nom": "Abandoned Hall",
+        "part": 100
       },
       {
-        "nom": "Zaun Warrens",
-        "part": 86
+        "nom": "Sunken Temple",
+        "part": 89
+      },
+      {
+        "nom": "Targon's Peak",
+        "part": 87
       }
     ],
     "runes": [
       {
-        "nom": "Chaos Rune",
+        "nom": "Calm Rune",
         "part": 100,
-        "copies": 8
+        "copies": 6
       },
       {
-        "nom": "Order Rune",
+        "nom": "Chaos Rune",
         "part": 100,
-        "copies": 4
+        "copies": 6
       }
     ]
   },
   "Kai'Sa, Daughter of the Void": {
-    "decks": 311,
-    "joueurs": 349,
-    "coupe": 26,
+    "decks": 342,
+    "joueurs": 380,
+    "coupe": 29,
     "titres": 2,
-    "conversion": 7.4,
-    "tournois": 26,
+    "conversion": 7.6,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -341,14 +501,14 @@
         "copies": 3
       },
       {
-        "nom": "Brynhir Thundersong",
-        "part": 99,
-        "copies": 2
-      },
-      {
         "nom": "Stupefy",
         "part": 99,
         "copies": 3
+      },
+      {
+        "nom": "Brynhir Thundersong",
+        "part": 99,
+        "copies": 2
       },
       {
         "nom": "Hextech Ray",
@@ -372,7 +532,7 @@
       },
       {
         "nom": "Noxus Hopeful",
-        "part": 92,
+        "part": 93,
         "copies": 2
       },
       {
@@ -387,7 +547,7 @@
       },
       {
         "nom": "Bellows Breath",
-        "part": 85,
+        "part": 86,
         "copies": 1
       },
       {
@@ -410,20 +570,20 @@
     ],
     "terrains": [
       {
-        "nom": "Rockfall Path",
-        "part": 87
-      },
-      {
         "nom": "Frozen Fortress",
         "part": 86
       },
       {
+        "nom": "Rockfall Path",
+        "part": 86
+      },
+      {
         "nom": "Void Gate",
-        "part": 79
+        "part": 77
       },
       {
         "nom": "Heisho, Shell of the World",
-        "part": 33
+        "part": 35
       }
     ],
     "runes": [
@@ -439,53 +599,48 @@
       }
     ]
   },
-  "Irelia, Blade Dancer": {
-    "decks": 297,
-    "joueurs": 639,
-    "coupe": 78,
+  "Akali, Rogue Assassin": {
+    "decks": 238,
+    "joueurs": 417,
+    "coupe": 29,
     "titres": 2,
-    "conversion": 12.2,
-    "tournois": 26,
+    "conversion": 7,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
-        "player": "旋木时光-绿拐",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "player": "闪电家乐事糖果雨",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       },
       {
         "placement": "1st",
-        "player": "konaha",
+        "player": "Gorica",
+        "tournament": "Singapore Regional Qualifier"
+      },
+      {
+        "placement": "4th",
+        "player": "东东菠菠的卡牌妙妙屋",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "纸传.晓镜",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "5th",
+        "player": "东东卡牌妙妙屋",
         "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "2nd",
-        "player": "ARBD-Skyer",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "3rd",
-        "player": "极大",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "3rd",
-        "player": "EDG.少侠SNnnnn",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       }
     ],
     "cartes": [
       {
-        "nom": "Boots of Swiftness",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Defiant Dance",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Shuriken Flip",
         "part": 100,
         "copies": 3
       },
@@ -496,94 +651,94 @@
       },
       {
         "nom": "Stellacorn Herder",
-        "part": 99,
-        "copies": 3
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 97,
-        "copies": 2
-      },
-      {
-        "nom": "Tideturner",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "En Garde",
-        "part": 96,
-        "copies": 2
-      },
-      {
-        "nom": "Scuttle Crab",
         "part": 95,
         "copies": 3
       },
       {
-        "nom": "Charm",
-        "part": 92,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 91,
-        "copies": 2
-      },
-      {
-        "nom": "Stacked Deck",
+        "nom": "Falling Star",
         "part": 88,
-        "copies": 2
+        "copies": 3
       },
       {
         "nom": "Zhonya's Hourglass",
         "part": 87,
-        "copies": 1
+        "copies": 3
       },
       {
-        "nom": "Guardian Angel",
-        "part": 76,
+        "nom": "Scuttle Crab",
+        "part": 82,
+        "copies": 3
+      },
+      {
+        "nom": "Charm",
+        "part": 74,
         "copies": 2
+      },
+      {
+        "nom": "Back Off",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "En Garde",
+        "part": 66,
+        "copies": 2
+      },
+      {
+        "nom": "Long Sword",
+        "part": 60,
+        "copies": 2
+      },
+      {
+        "nom": "Lonely Poro",
+        "part": 54,
+        "copies": 3
+      },
+      {
+        "nom": "Astral Heron",
+        "part": 51,
+        "copies": 3
+      },
+      {
+        "nom": "Mournful Witness",
+        "part": 43,
+        "copies": 3
       }
     ],
     "champions": [
       {
-        "nom": "Irelia, Fervent",
-        "part": 100,
+        "nom": "Akali, Deadly Weapon",
+        "part": 67,
         "copies": 1
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 60,
+        "copies": 3
       },
       {
         "nom": "Akali, Silent",
-        "part": 62,
+        "part": 42,
         "copies": 1
       },
       {
-        "nom": "Pyke, Returned",
-        "part": 57,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 54,
-        "copies": 1
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 45,
-        "copies": 1
+        "nom": "Jhin, Murderous Artist",
+        "part": 38,
+        "copies": 3
       }
     ],
     "terrains": [
       {
-        "nom": "Abandoned Hall",
-        "part": 100
+        "nom": "Void Gate",
+        "part": 53
       },
       {
-        "nom": "Sunken Temple",
-        "part": 90
+        "nom": "Back-Alley Bar",
+        "part": 41
       },
       {
         "nom": "Targon's Peak",
-        "part": 85
+        "part": 34
       }
     ],
     "runes": [
@@ -593,19 +748,329 @@
         "copies": 6
       },
       {
-        "nom": "Chaos Rune",
+        "nom": "Fury Rune",
         "part": 100,
         "copies": 6
       }
     ]
   },
+  "Jayce, Defender of Tomorrow": {
+    "decks": 233,
+    "joueurs": 375,
+    "coupe": 37,
+    "titres": 0,
+    "conversion": 9.9,
+    "tournois": 27,
+    "meilleuresPlaces": [
+      {
+        "placement": "3rd",
+        "player": "MIO_慈父嘴嘴",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "6th",
+        "player": "林",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "6th",
+        "player": "一氙化氢",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "7th",
+        "player": "珠光护手牙仙子循环往复杰斯",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "7th",
+        "player": "🐊",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Bellows Breath",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Elder Dragon",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Dazzling Aurora",
+        "part": 93,
+        "copies": 3
+      },
+      {
+        "nom": "Garbage Grabber",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Flurry of Blades",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Platewyrm Egg",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Dredge Up",
+        "part": 89,
+        "copies": 3
+      },
+      {
+        "nom": "Mobilize",
+        "part": 88,
+        "copies": 3
+      },
+      {
+        "nom": "Clairvoyance",
+        "part": 87,
+        "copies": 3
+      },
+      {
+        "nom": "Gutter Palace",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 82,
+        "copies": 2
+      },
+      {
+        "nom": "Catalyst of Aeons",
+        "part": 77,
+        "copies": 3
+      },
+      {
+        "nom": "Deadly Flourish",
+        "part": 75,
+        "copies": 2
+      },
+      {
+        "nom": "Temporal Breach",
+        "part": 70,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Jayce, Man of Progress",
+        "part": 47,
+        "copies": 1
+      },
+      {
+        "nom": "Jayce, Brilliant Inventor",
+        "part": 40,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Sigil of the Storm",
+        "part": 88
+      },
+      {
+        "nom": "Forgotten Monument",
+        "part": 64
+      },
+      {
+        "nom": "Dragon Roost",
+        "part": 56
+      },
+      {
+        "nom": "The Papertree",
+        "part": 32
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
+  "Fiora, Grand Duelist": {
+    "decks": 225,
+    "joueurs": 337,
+    "coupe": 30,
+    "titres": 1,
+    "conversion": 8.9,
+    "tournois": 27,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": "小橘派派",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "2nd",
+        "player": "徐大王文吱吱最强",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "3rd",
+        "player": "鬼鬼@帝防士",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "遁去的一",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "4th",
+        "player": "DWT-阿龙",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Riposte",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Rampage",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "First Mate",
+        "part": 84,
+        "copies": 3
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 81,
+        "copies": 2
+      },
+      {
+        "nom": "Pit Rookie",
+        "part": 75,
+        "copies": 3
+      },
+      {
+        "nom": "Harnessed Dragon",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Shepherd's Heirloom",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Sacrifice",
+        "part": 53,
+        "copies": 2
+      },
+      {
+        "nom": "Call to Glory",
+        "part": 52,
+        "copies": 3
+      },
+      {
+        "nom": "B.F. Sword",
+        "part": 47,
+        "copies": 3
+      },
+      {
+        "nom": "Sea Monkey",
+        "part": 44,
+        "copies": 3
+      },
+      {
+        "nom": "Grim Resolve",
+        "part": 35,
+        "copies": 2
+      },
+      {
+        "nom": "Unsung Hero",
+        "part": 34,
+        "copies": 3
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Fiora, Victorious",
+        "part": 80,
+        "copies": 1
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 72,
+        "copies": 3
+      },
+      {
+        "nom": "Kayle, Justified",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 59,
+        "copies": 2
+      },
+      {
+        "nom": "Kennen, Keeper of Balance",
+        "part": 49,
+        "copies": 2
+      },
+      {
+        "nom": "Poppy, Paragon",
+        "part": 44,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Sunken Temple",
+        "part": 94
+      },
+      {
+        "nom": "Monastery of Hirana",
+        "part": 41
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Diana, Scorn of the Moon": {
-    "decks": 182,
-    "joueurs": 351,
-    "coupe": 32,
+    "decks": 223,
+    "joueurs": 392,
+    "coupe": 37,
     "titres": 4,
-    "conversion": 9.1,
-    "tournois": 26,
+    "conversion": 9.4,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -640,11 +1105,6 @@
         "copies": 3
       },
       {
-        "nom": "Stacked Deck",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Stupefy",
         "part": 100,
         "copies": 3
@@ -661,7 +1121,12 @@
       },
       {
         "nom": "Tideturner",
-        "part": 99,
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Stacked Deck",
+        "part": 100,
         "copies": 3
       },
       {
@@ -671,38 +1136,38 @@
       },
       {
         "nom": "Gust",
-        "part": 98,
+        "part": 99,
         "copies": 2
       },
       {
         "nom": "Patched Porobot",
-        "part": 91,
+        "part": 92,
         "copies": 3
       },
       {
         "nom": "Flash",
-        "part": 79,
+        "part": 82,
         "copies": 1
       },
       {
         "nom": "Temporal Breach",
-        "part": 64,
+        "part": 57,
         "copies": 3
       },
       {
+        "nom": "Abandon",
+        "part": 48,
+        "copies": 1
+      },
+      {
         "nom": "Morbid Return",
-        "part": 54,
+        "part": 46,
         "copies": 2
       },
       {
-        "nom": "Abandon",
-        "part": 49,
-        "copies": 1
-      },
-      {
-        "nom": "Eclipse",
-        "part": 38,
-        "copies": 1
+        "nom": "Acceptable Losses",
+        "part": 45,
+        "copies": 2
       }
     ],
     "champions": [
@@ -718,17 +1183,17 @@
       },
       {
         "nom": "Fizz, Trickster",
-        "part": 99,
+        "part": 100,
         "copies": 2
       },
       {
         "nom": "Swain, Visionary",
-        "part": 59,
+        "part": 50,
         "copies": 2
       },
       {
         "nom": "Vex, Apathetic",
-        "part": 41,
+        "part": 46,
         "copies": 2
       }
     ],
@@ -738,12 +1203,12 @@
         "part": 97
       },
       {
-        "nom": "Rockfall Path",
-        "part": 62
+        "nom": "Targon's Peak",
+        "part": 59
       },
       {
-        "nom": "Targon's Peak",
-        "part": 53
+        "nom": "Rockfall Path",
+        "part": 57
       }
     ],
     "runes": [
@@ -759,172 +1224,171 @@
       }
     ]
   },
-  "Akali, Rogue Assassin": {
-    "decks": 181,
-    "joueurs": 349,
-    "coupe": 21,
-    "titres": 1,
-    "conversion": 6,
-    "tournois": 26,
+  "Rek'sai, Void Burrower": {
+    "decks": 201,
+    "joueurs": 394,
+    "coupe": 46,
+    "titres": 0,
+    "conversion": 11.7,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
-        "placement": "1st",
-        "player": "Gorica",
-        "tournament": "Singapore Regional Qualifier"
+        "placement": "2nd",
+        "player": "XYZ.媄猗",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "4th",
-        "player": "东东菠菠的卡牌妙妙屋",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+        "placement": "2nd",
+        "player": "灵花祭.ECG.Chance",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
-        "placement": "4th",
-        "player": "纸传.晓镜",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "placement": "3rd",
+        "player": "skilliton",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
         "placement": "5th",
-        "player": "东东卡牌妙妙屋",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+        "player": "Satame",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
-        "placement": "9th",
-        "player": "HBG.孜然",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "placement": "6th",
+        "player": "游城十代@罗比军校",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ],
     "cartes": [
       {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Shuriken Flip",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
+        "nom": "Void Rush",
         "part": 99,
         "copies": 3
       },
       {
-        "nom": "Stellacorn Herder",
-        "part": 93,
+        "nom": "Cull the Weak",
+        "part": 97,
         "copies": 3
       },
       {
-        "nom": "Scuttle Crab",
-        "part": 88,
-        "copies": 3
-      },
-      {
-        "nom": "Falling Star",
-        "part": 85,
-        "copies": 3
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 85,
-        "copies": 3
-      },
-      {
-        "nom": "Charm",
-        "part": 80,
-        "copies": 2
-      },
-      {
-        "nom": "En Garde",
-        "part": 76,
-        "copies": 2
-      },
-      {
-        "nom": "Lonely Poro",
-        "part": 65,
-        "copies": 3
-      },
-      {
-        "nom": "Back Off",
-        "part": 59,
-        "copies": 2
-      },
-      {
-        "nom": "Long Sword",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Mournful Witness",
-        "part": 40,
+        "nom": "Carrion Dredger",
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Noxus Hopeful",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Undertitan",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Cleave",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Inferna",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Honest Broker",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Faithful Manufactor",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Blood Rush",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Shadow Fiend",
+        "part": 49,
+        "copies": 2
+      },
+      {
+        "nom": "Sharkling",
+        "part": 44,
+        "copies": 2
+      },
+      {
+        "nom": "Dragon Form",
         "part": 39,
         "copies": 2
       }
     ],
     "champions": [
       {
-        "nom": "Akali, Deadly Weapon",
-        "part": 59,
+        "nom": "Rek'Sai, Breacher",
+        "part": 99,
         "copies": 1
       },
       {
-        "nom": "Akali, Silent",
-        "part": 52,
+        "nom": "Vi, Peacekeeper",
+        "part": 67,
         "copies": 1
       },
       {
-        "nom": "Kai'Sa, Survivor",
-        "part": 49,
-        "copies": 3
-      },
-      {
-        "nom": "Jhin, Murderous Artist",
-        "part": 46,
-        "copies": 3
+        "nom": "Zed, From the Shadows",
+        "part": 51,
+        "copies": 2
       }
     ],
     "terrains": [
       {
-        "nom": "Back-Alley Bar",
-        "part": 50
+        "nom": "The Candlelit Sanctum",
+        "part": 96
       },
       {
-        "nom": "Void Gate",
-        "part": 39
+        "nom": "Forbidding Waste",
+        "part": 51
       },
       {
-        "nom": "Star Spring",
-        "part": 38
+        "nom": "Mystic Vortex",
+        "part": 48
       },
       {
-        "nom": "Targon's Peak",
-        "part": 34
+        "nom": "Trifarian War Camp",
+        "part": 44
+      },
+      {
+        "nom": "Zaun Warrens",
+        "part": 42
       }
     ],
     "runes": [
       {
-        "nom": "Calm Rune",
+        "nom": "Order Rune",
         "part": 100,
-        "copies": 6
+        "copies": 5
       },
       {
         "nom": "Fury Rune",
         "part": 100,
-        "copies": 6
+        "copies": 7
       }
     ]
   },
   "Nasus, Curator of the Sands": {
-    "decks": 174,
-    "joueurs": 365,
-    "coupe": 20,
+    "decks": 200,
+    "joueurs": 391,
+    "coupe": 21,
     "titres": 2,
-    "conversion": 5.5,
-    "tournois": 26,
+    "conversion": 5.4,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -970,7 +1434,7 @@
       },
       {
         "nom": "Find Your Center",
-        "part": 97,
+        "part": 96,
         "copies": 3
       },
       {
@@ -980,77 +1444,77 @@
       },
       {
         "nom": "Stupefy",
-        "part": 93,
+        "part": 92,
         "copies": 3
       },
       {
         "nom": "Ravenbloom Student",
-        "part": 84,
+        "part": 85,
         "copies": 3
       },
       {
-        "nom": "Charm",
-        "part": 71,
-        "copies": 2
-      },
-      {
         "nom": "Bellows Breath",
-        "part": 71,
+        "part": 74,
         "copies": 2
       },
       {
-        "nom": "Steel Paws",
-        "part": 70,
-        "copies": 2
-      },
-      {
-        "nom": "Retreat",
-        "part": 69,
+        "nom": "Charm",
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "Astral Heron",
-        "part": 67,
+        "part": 69,
         "copies": 3
       },
       {
         "nom": "Temporal Breach",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Retreat",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Steel Paws",
         "part": 66,
         "copies": 2
       },
       {
         "nom": "Zhonya's Hourglass",
-        "part": 59,
+        "part": 60,
         "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "Nasus, Ascended",
-        "part": 95,
+        "part": 94,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Vilemaw's Lair",
-        "part": 52
+        "part": 50
       },
       {
         "nom": "The Papertree",
-        "part": 39
+        "part": 40
       },
       {
         "nom": "Forgotten Monument",
-        "part": 37
+        "part": 38
       },
       {
         "nom": "Altar of Blood",
-        "part": 34
+        "part": 37
       },
       {
         "nom": "Rockfall Path",
-        "part": 33
+        "part": 34
       },
       {
         "nom": "Sigil of the Storm",
@@ -1070,481 +1534,13 @@
       }
     ]
   },
-  "Jayce, Defender of Tomorrow": {
-    "decks": 169,
-    "joueurs": 311,
-    "coupe": 32,
-    "titres": 0,
-    "conversion": 10.3,
-    "tournois": 26,
-    "meilleuresPlaces": [
-      {
-        "placement": "3rd",
-        "player": "MIO_慈父嘴嘴",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "6th",
-        "player": "林",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "6th",
-        "player": "一氙化氢",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "7th",
-        "player": "珠光护手牙仙子循环往复杰斯",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "7th",
-        "player": "🐊",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Bellows Breath",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Elder Dragon",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Dazzling Aurora",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Garbage Grabber",
-        "part": 93,
-        "copies": 2
-      },
-      {
-        "nom": "Flurry of Blades",
-        "part": 92,
-        "copies": 2
-      },
-      {
-        "nom": "Platewyrm Egg",
-        "part": 89,
-        "copies": 3
-      },
-      {
-        "nom": "Dredge Up",
-        "part": 88,
-        "copies": 3
-      },
-      {
-        "nom": "Mobilize",
-        "part": 87,
-        "copies": 3
-      },
-      {
-        "nom": "Clairvoyance",
-        "part": 86,
-        "copies": 3
-      },
-      {
-        "nom": "Gutter Palace",
-        "part": 80,
-        "copies": 2
-      },
-      {
-        "nom": "Sabotage",
-        "part": 79,
-        "copies": 2
-      },
-      {
-        "nom": "Catalyst of Aeons",
-        "part": 76,
-        "copies": 3
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 72,
-        "copies": 2
-      },
-      {
-        "nom": "Deadly Flourish",
-        "part": 69,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Jayce, Man of Progress",
-        "part": 49,
-        "copies": 1
-      },
-      {
-        "nom": "Jayce, Brilliant Inventor",
-        "part": 34,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Sigil of the Storm",
-        "part": 87
-      },
-      {
-        "nom": "Forgotten Monument",
-        "part": 57
-      },
-      {
-        "nom": "Dragon Roost",
-        "part": 49
-      },
-      {
-        "nom": "The Papertree",
-        "part": 38
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 5
-      }
-    ]
-  },
-  "Fiora, Grand Duelist": {
-    "decks": 167,
-    "joueurs": 279,
-    "coupe": 25,
-    "titres": 1,
-    "conversion": 9,
-    "tournois": 26,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": "小橘派派",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "2nd",
-        "player": "徐大王文吱吱最强",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "3rd",
-        "player": "鬼鬼@帝防士",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
-      },
-      {
-        "placement": "4th",
-        "player": "遁去的一",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "4th",
-        "player": "DWT-阿龙",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Riposte",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Punch First",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Rampage",
-        "part": 92,
-        "copies": 3
-      },
-      {
-        "nom": "First Mate",
-        "part": 84,
-        "copies": 3
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 84,
-        "copies": 2
-      },
-      {
-        "nom": "Pit Rookie",
-        "part": 74,
-        "copies": 3
-      },
-      {
-        "nom": "Harnessed Dragon",
-        "part": 58,
-        "copies": 2
-      },
-      {
-        "nom": "Sacrifice",
-        "part": 55,
-        "copies": 2
-      },
-      {
-        "nom": "Shepherd's Heirloom",
-        "part": 54,
-        "copies": 3
-      },
-      {
-        "nom": "B.F. Sword",
-        "part": 54,
-        "copies": 3
-      },
-      {
-        "nom": "Call to Glory",
-        "part": 45,
-        "copies": 3
-      },
-      {
-        "nom": "Unsung Hero",
-        "part": 40,
-        "copies": 3
-      },
-      {
-        "nom": "Grim Resolve",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Sea Monkey",
-        "part": 38,
-        "copies": 3
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Fiora, Victorious",
-        "part": 79,
-        "copies": 1
-      },
-      {
-        "nom": "Kayle, Justified",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Rengar, Trophy Hunter",
-        "part": 65,
-        "copies": 3
-      },
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 55,
-        "copies": 2
-      },
-      {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 41,
-        "copies": 2
-      },
-      {
-        "nom": "Poppy, Paragon",
-        "part": 34,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Sunken Temple",
-        "part": 95
-      },
-      {
-        "nom": "Monastery of Hirana",
-        "part": 43
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Rek'sai, Void Burrower": {
-    "decks": 161,
-    "joueurs": 354,
-    "coupe": 41,
-    "titres": 0,
-    "conversion": 11.6,
-    "tournois": 26,
-    "meilleuresPlaces": [
-      {
-        "placement": "2nd",
-        "player": "XYZ.媄猗",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "2nd",
-        "player": "灵花祭.ECG.Chance",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "3rd",
-        "player": "skilliton",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "5th",
-        "player": "Satame",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "6th",
-        "player": "游城十代@罗比军校",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Void Rush",
-        "part": 99,
-        "copies": 3
-      },
-      {
-        "nom": "Cull the Weak",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Falling Star",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Undertitan",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Carrion Dredger",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Cleave",
-        "part": 94,
-        "copies": 3
-      },
-      {
-        "nom": "Inferna",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Honest Broker",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Faithful Manufactor",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Blood Rush",
-        "part": 89,
-        "copies": 3
-      },
-      {
-        "nom": "Shadow Fiend",
-        "part": 52,
-        "copies": 2
-      },
-      {
-        "nom": "Dragon Form",
-        "part": 43,
-        "copies": 2
-      },
-      {
-        "nom": "Sharkling",
-        "part": 40,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Rek'Sai, Breacher",
-        "part": 99,
-        "copies": 1
-      },
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 66,
-        "copies": 1
-      },
-      {
-        "nom": "Zed, From the Shadows",
-        "part": 53,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "The Candlelit Sanctum",
-        "part": 96
-      },
-      {
-        "nom": "Mystic Vortex",
-        "part": 48
-      },
-      {
-        "nom": "Zaun Warrens",
-        "part": 48
-      },
-      {
-        "nom": "Forbidding Waste",
-        "part": 47
-      },
-      {
-        "nom": "Trifarian War Camp",
-        "part": 40
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 5
-      },
-      {
-        "nom": "Fury Rune",
-        "part": 99,
-        "copies": 7
-      }
-    ]
-  },
   "Azir, Emperor of the Sands": {
-    "decks": 116,
-    "joueurs": 315,
-    "coupe": 41,
+    "decks": 159,
+    "joueurs": 358,
+    "coupe": 45,
     "titres": 2,
-    "conversion": 13,
-    "tournois": 26,
+    "conversion": 12.6,
+    "tournois": 27,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -1605,12 +1601,12 @@
       },
       {
         "nom": "Discipline",
-        "part": 98,
+        "part": 99,
         "copies": 3
       },
       {
         "nom": "Soul Sword",
-        "part": 97,
+        "part": 98,
         "copies": 3
       },
       {
@@ -1620,28 +1616,28 @@
       },
       {
         "nom": "Guards!",
-        "part": 93,
+        "part": 95,
         "copies": 2
       },
       {
         "nom": "Deathgrip",
-        "part": 67,
+        "part": 71,
         "copies": 2
       },
       {
         "nom": "Hand Hammer",
-        "part": 62,
-        "copies": 1
-      },
-      {
-        "nom": "En Garde",
-        "part": 61,
+        "part": 66,
         "copies": 1
       },
       {
         "nom": "Back Off",
-        "part": 59,
+        "part": 65,
         "copies": 2
+      },
+      {
+        "nom": "En Garde",
+        "part": 62,
+        "copies": 1
       }
     ],
     "champions": [
@@ -1652,19 +1648,19 @@
       },
       {
         "nom": "Vi, Peacekeeper",
-        "part": 85,
+        "part": 83,
         "copies": 1
       },
       {
         "nom": "Kennen, Keeper of Balance",
-        "part": 38,
+        "part": 47,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Trifarian War Camp",
-        "part": 98
+        "part": 99
       },
       {
         "nom": "Hall of Legends",
@@ -1672,7 +1668,11 @@
       },
       {
         "nom": "Ornn's Forge",
-        "part": 77
+        "part": 68
+      },
+      {
+        "nom": "Seat of Power",
+        "part": 31
       }
     ],
     "runes": [
@@ -1689,12 +1689,12 @@
     ]
   },
   "Ornn, Fire Below the Mountain": {
-    "decks": 101,
-    "joueurs": 208,
-    "coupe": 14,
+    "decks": 134,
+    "joueurs": 252,
+    "coupe": 15,
     "titres": 1,
-    "conversion": 6.7,
-    "tournois": 23,
+    "conversion": 6,
+    "tournois": 24,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -1730,78 +1730,78 @@
       },
       {
         "nom": "Defy",
-        "part": 100,
+        "part": 99,
         "copies": 3
       },
       {
         "nom": "Patched Porobot",
-        "part": 90,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Scuttle Crab",
-        "part": 86,
+        "part": 88,
         "copies": 3
       },
       {
         "nom": "Charm",
-        "part": 86,
+        "part": 87,
         "copies": 2
       },
       {
         "nom": "Sterak's Gage",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Seal of Focus",
         "part": 83,
         "copies": 3
       },
       {
         "nom": "Poro Snax",
-        "part": 82,
-        "copies": 3
-      },
-      {
-        "nom": "Seal of Focus",
-        "part": 78,
+        "part": 83,
         "copies": 3
       },
       {
         "nom": "Guardian Angel",
-        "part": 78,
+        "part": 80,
         "copies": 2
       },
       {
         "nom": "Brutalizer",
-        "part": 76,
+        "part": 78,
         "copies": 3
       },
       {
         "nom": "Pit Crew",
-        "part": 72,
+        "part": 76,
         "copies": 3
       },
       {
         "nom": "Clockwork Keeper",
-        "part": 60,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 56,
+        "part": 64,
         "copies": 3
       },
       {
         "nom": "Mask of Foresight",
-        "part": 55,
+        "part": 60,
         "copies": 1
+      },
+      {
+        "nom": "Discipline",
+        "part": 50,
+        "copies": 3
       }
     ],
     "champions": [
       {
-        "nom": "Ornn, Forge God",
-        "part": 52,
+        "nom": "Ornn, Blacksmith",
+        "part": 51,
         "copies": 1
       },
       {
-        "nom": "Ornn, Blacksmith",
+        "nom": "Ornn, Forge God",
         "part": 50,
         "copies": 1
       }
@@ -1809,19 +1809,19 @@
     "terrains": [
       {
         "nom": "Ornn's Forge",
-        "part": 87
+        "part": 88
       },
       {
         "nom": "Veiled Temple",
-        "part": 63
+        "part": 66
       },
       {
         "nom": "Seat of Power",
-        "part": 51
+        "part": 57
       },
       {
         "nom": "Treasure Hoard",
-        "part": 45
+        "part": 42
       }
     ],
     "runes": [
@@ -1838,12 +1838,12 @@
     ]
   },
   "LeBlanc, Deceiver": {
-    "decks": 96,
-    "joueurs": 259,
-    "coupe": 37,
+    "decks": 129,
+    "joueurs": 294,
+    "coupe": 43,
     "titres": 0,
-    "conversion": 14.3,
-    "tournois": 25,
+    "conversion": 14.6,
+    "tournois": 26,
     "meilleuresPlaces": [
       {
         "placement": "2nd",
@@ -1874,7 +1874,7 @@
     "cartes": [
       {
         "nom": "Soaring Scout",
-        "part": 94,
+        "part": 95,
         "copies": 3
       },
       {
@@ -1889,22 +1889,17 @@
       },
       {
         "nom": "Watchful Sentry",
-        "part": 85,
+        "part": 87,
         "copies": 3
       },
       {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 84,
-        "copies": 2
-      },
-      {
         "nom": "Glasc Mixologist",
-        "part": 81,
+        "part": 84,
         "copies": 3
       },
       {
         "nom": "Ruined Rex",
-        "part": 81,
+        "part": 84,
         "copies": 3
       },
       {
@@ -1913,56 +1908,56 @@
         "copies": 2
       },
       {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 81,
+        "copies": 2
+      },
+      {
         "nom": "Black Rose Dignitary",
-        "part": 60,
+        "part": 57,
         "copies": 2
       },
       {
         "nom": "Baited Hook",
-        "part": 55,
+        "part": 53,
         "copies": 3
       },
       {
         "nom": "Harnessed Dragon",
-        "part": 55,
+        "part": 53,
         "copies": 3
       },
       {
         "nom": "Rift Herald",
-        "part": 53,
+        "part": 47,
         "copies": 2
       },
       {
-        "nom": "Honest Broker",
-        "part": 46,
+        "nom": "Deathgrip",
+        "part": 47,
         "copies": 2
       },
       {
         "nom": "Cull the Weak",
-        "part": 45,
-        "copies": 3
+        "part": 47,
+        "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "LeBlanc, Fragmented",
-        "part": 81,
+        "part": 84,
         "copies": 1
       },
       {
         "nom": "Karthus, Eternal",
-        "part": 80,
+        "part": 81,
         "copies": 3
       },
       {
         "nom": "Vi, Peacekeeper",
-        "part": 76,
+        "part": 81,
         "copies": 2
-      },
-      {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 30,
-        "copies": 1
       }
     ],
     "terrains": [
@@ -1980,7 +1975,7 @@
       },
       {
         "nom": "Forbidding Waste",
-        "part": 40
+        "part": 43
       }
     ],
     "runes": [
@@ -1996,13 +1991,173 @@
       }
     ]
   },
+  "Mel, Soul's Reflection": {
+    "decks": 116,
+    "joueurs": 181,
+    "coupe": 6,
+    "titres": 0,
+    "conversion": 3.3,
+    "tournois": 23,
+    "meilleuresPlaces": [
+      {
+        "placement": "10th",
+        "player": "3+X END.明涌",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "18th",
+        "player": "TwistedTCG",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "19th",
+        "player": "CTG Alanzq",
+        "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "19th",
+        "player": "星游.九思",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "20th",
+        "player": "卓卡-777🤪",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Rebuttal",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Stacked Deck",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 72,
+        "copies": 2
+      },
+      {
+        "nom": "Ravenbloom Student",
+        "part": 69,
+        "copies": 3
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Shock Blast",
+        "part": 66,
+        "copies": 3
+      },
+      {
+        "nom": "Applied Researchers",
+        "part": 55,
+        "copies": 3
+      },
+      {
+        "nom": "Tideturner",
+        "part": 52,
+        "copies": 3
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 48,
+        "copies": 2
+      },
+      {
+        "nom": "Up from the Deep",
+        "part": 46,
+        "copies": 3
+      },
+      {
+        "nom": "Singularity",
+        "part": 46,
+        "copies": 1
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 45,
+        "copies": 3
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Fizz, Trickster",
+        "part": 66,
+        "copies": 2
+      },
+      {
+        "nom": "Mel, Newly Awakened",
+        "part": 55,
+        "copies": 1
+      },
+      {
+        "nom": "Hwei, Brooding Painter",
+        "part": 49,
+        "copies": 3
+      },
+      {
+        "nom": "Mel, Defiant Soul",
+        "part": 47,
+        "copies": 1
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 39,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Ravenbloom Conservatory",
+        "part": 34
+      },
+      {
+        "nom": "Threshold of the Gray",
+        "part": 32
+      },
+      {
+        "nom": "Frozen Fortress",
+        "part": 31
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
   "Draven, Glorious Executioner": {
-    "decks": 95,
-    "joueurs": 258,
-    "coupe": 30,
+    "decks": 116,
+    "joueurs": 279,
+    "coupe": 32,
     "titres": 1,
-    "conversion": 11.6,
-    "tournois": 24,
+    "conversion": 11.5,
+    "tournois": 25,
     "meilleuresPlaces": [
       {
         "placement": "0th",
@@ -2043,7 +2198,12 @@
       },
       {
         "nom": "Tideturner",
-        "part": 99,
+        "part": 98,
+        "copies": 2
+      },
+      {
+        "nom": "Rebuke",
+        "part": 94,
         "copies": 2
       },
       {
@@ -2052,13 +2212,8 @@
         "copies": 2
       },
       {
-        "nom": "Rebuke",
-        "part": 93,
-        "copies": 2
-      },
-      {
         "nom": "Falling Star",
-        "part": 92,
+        "part": 91,
         "copies": 2
       },
       {
@@ -2068,12 +2223,7 @@
       },
       {
         "nom": "Overzealous Fan",
-        "part": 88,
-        "copies": 2
-      },
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 88,
+        "part": 89,
         "copies": 2
       },
       {
@@ -2082,24 +2232,29 @@
         "copies": 1
       },
       {
+        "nom": "Ferrous Forerunner",
+        "part": 87,
+        "copies": 2
+      },
+      {
         "nom": "Perfect Execution",
-        "part": 79,
+        "part": 75,
         "copies": 1
       },
       {
         "nom": "Gust Monk",
-        "part": 76,
-        "copies": 2
-      },
-      {
-        "nom": "Edge of Night",
-        "part": 71,
+        "part": 73,
         "copies": 2
       },
       {
         "nom": "Brynhir Thundersong",
-        "part": 69,
+        "part": 68,
         "copies": 1
+      },
+      {
+        "nom": "Edge of Night",
+        "part": 67,
+        "copies": 2
       }
     ],
     "champions": [
@@ -2110,47 +2265,47 @@
       },
       {
         "nom": "Kai'Sa, Survivor",
-        "part": 96,
+        "part": 97,
         "copies": 2
       },
       {
         "nom": "Vex, Apathetic",
-        "part": 93,
+        "part": 94,
         "copies": 3
       },
       {
         "nom": "Evelynn, Entrancing",
-        "part": 80,
+        "part": 81,
         "copies": 3
       },
       {
         "nom": "Pyke, Returned",
-        "part": 71,
+        "part": 67,
         "copies": 2
       },
       {
         "nom": "Kha'Zix, Mutating Horror",
-        "part": 63,
+        "part": 59,
         "copies": 1
       },
       {
         "nom": "Pyke, Dockside Butcher",
-        "part": 54,
+        "part": 47,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Treasure Hoard",
-        "part": 83
+        "part": 77
       },
       {
         "nom": "Zaun Warrens",
-        "part": 75
+        "part": 66
       },
       {
         "nom": "Amateur Recital",
-        "part": 52
+        "part": 53
       }
     ],
     "runes": [
@@ -2166,177 +2321,13 @@
       }
     ]
   },
-  "Mel, Soul's Reflection": {
-    "decks": 90,
-    "joueurs": 155,
-    "coupe": 6,
-    "titres": 0,
-    "conversion": 3.9,
-    "tournois": 22,
-    "meilleuresPlaces": [
-      {
-        "placement": "10th",
-        "player": "3+X END.明涌",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "18th",
-        "player": "TwistedTCG",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "19th",
-        "player": "CTG Alanzq",
-        "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "19th",
-        "player": "星游.九思",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "20th",
-        "player": "卓卡-777🤪",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Stupefy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Rebuttal",
-        "part": 99,
-        "copies": 3
-      },
-      {
-        "nom": "Stacked Deck",
-        "part": 94,
-        "copies": 3
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 93,
-        "copies": 2
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 72,
-        "copies": 2
-      },
-      {
-        "nom": "Ravenbloom Student",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 69,
-        "copies": 2
-      },
-      {
-        "nom": "Shock Blast",
-        "part": 62,
-        "copies": 3
-      },
-      {
-        "nom": "Applied Researchers",
-        "part": 54,
-        "copies": 3
-      },
-      {
-        "nom": "Tideturner",
-        "part": 54,
-        "copies": 3
-      },
-      {
-        "nom": "Up from the Deep",
-        "part": 47,
-        "copies": 3
-      },
-      {
-        "nom": "Bellows Breath",
-        "part": 47,
-        "copies": 2
-      },
-      {
-        "nom": "Dredge Up",
-        "part": 46,
-        "copies": 2
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 44,
-        "copies": 3
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Fizz, Trickster",
-        "part": 71,
-        "copies": 2
-      },
-      {
-        "nom": "Mel, Newly Awakened",
-        "part": 57,
-        "copies": 1
-      },
-      {
-        "nom": "Hwei, Brooding Painter",
-        "part": 51,
-        "copies": 3
-      },
-      {
-        "nom": "Mel, Defiant Soul",
-        "part": 46,
-        "copies": 1
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 36,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Ravenbloom Conservatory",
-        "part": 33
-      },
-      {
-        "nom": "Frozen Fortress",
-        "part": 33
-      },
-      {
-        "nom": "Forbidding Waste",
-        "part": 30
-      },
-      {
-        "nom": "Heisho, Shell of the World",
-        "part": 30
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "Rengar, Pridestalker": {
-    "decks": 87,
-    "joueurs": 317,
-    "coupe": 41,
+    "decks": 115,
+    "joueurs": 346,
+    "coupe": 45,
     "titres": 1,
-    "conversion": 12.9,
-    "tournois": 23,
+    "conversion": 13,
+    "tournois": 24,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -2387,47 +2378,47 @@
       },
       {
         "nom": "Pit Rookie",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Kinkou Initiate",
-        "part": 95,
+        "part": 97,
         "copies": 3
       },
       {
         "nom": "Noxus Hopeful",
-        "part": 95,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Grim Apothecary",
-        "part": 94,
+        "part": 95,
         "copies": 2
       },
       {
+        "nom": "Kinkou Initiate",
+        "part": 94,
+        "copies": 3
+      },
+      {
         "nom": "First Mate",
-        "part": 91,
+        "part": 92,
         "copies": 2
       },
       {
         "nom": "Rampage",
-        "part": 85,
+        "part": 88,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 83,
         "copies": 2
       },
       {
         "nom": "Ferrous Forerunner",
-        "part": 82,
+        "part": 83,
         "copies": 1
       },
       {
-        "nom": "Sabotage",
-        "part": 79,
-        "copies": 2
-      },
-      {
         "nom": "Pakaa Cub",
-        "part": 52,
+        "part": 48,
         "copies": 1
       }
     ],
@@ -2449,27 +2440,27 @@
       },
       {
         "nom": "Pyke, Dockside Butcher",
-        "part": 80,
+        "part": 83,
         "copies": 1
       },
       {
         "nom": "Darius, Trifarian",
-        "part": 68,
+        "part": 69,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Star Spring",
-        "part": 94
+        "part": 96
       },
       {
         "nom": "Emperor's Dais",
-        "part": 89
+        "part": 87
       },
       {
         "nom": "Seat of Power",
-        "part": 76
+        "part": 81
       }
     ],
     "runes": [
@@ -2485,13 +2476,159 @@
       }
     ]
   },
-  "Lillia, Bashful Bloom": {
-    "decks": 84,
-    "joueurs": 203,
-    "coupe": 14,
-    "titres": 1,
-    "conversion": 6.9,
+  "Vex, Gloomist": {
+    "decks": 112,
+    "joueurs": 218,
+    "coupe": 18,
+    "titres": 0,
+    "conversion": 8.3,
     "tournois": 25,
+    "meilleuresPlaces": [
+      {
+        "placement": "5th",
+        "player": "闪电家.ai.小老虎",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
+      },
+      {
+        "placement": "8th",
+        "player": "热水加冰",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "12th",
+        "player": "XXT.Cyber",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "15th",
+        "player": "卡茶.团不溜秋",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "17th",
+        "player": "BKM-叶英@CN.R",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Boots of Swiftness",
+        "part": 88,
+        "copies": 2
+      },
+      {
+        "nom": "Tideturner",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Charm",
+        "part": 79,
+        "copies": 1
+      },
+      {
+        "nom": "Back Off",
+        "part": 78,
+        "copies": 1
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 77,
+        "copies": 2
+      },
+      {
+        "nom": "Tornado Warrior",
+        "part": 74,
+        "copies": 3
+      },
+      {
+        "nom": "Steel Paws",
+        "part": 72,
+        "copies": 3
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 71,
+        "copies": 2
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 67,
+        "copies": 1
+      },
+      {
+        "nom": "Edge of Night",
+        "part": 61,
+        "copies": 1
+      },
+      {
+        "nom": "Abandon",
+        "part": 54,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Vex, Apathetic",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Evelynn, Entrancing",
+        "part": 69,
+        "copies": 2
+      },
+      {
+        "nom": "Irelia, Fervent",
+        "part": 56,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Startipped Peak",
+        "part": 71
+      },
+      {
+        "nom": "Fortified Position",
+        "part": 56
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
+  "Lillia, Bashful Bloom": {
+    "decks": 111,
+    "joueurs": 230,
+    "coupe": 15,
+    "titres": 1,
+    "conversion": 6.5,
+    "tournois": 26,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -2531,64 +2668,64 @@
         "copies": 3
       },
       {
-        "nom": "Sprite Burst",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Sprite Fountain",
         "part": 99,
         "copies": 3
       },
       {
-        "nom": "Stupefy",
-        "part": 96,
+        "nom": "Sprite Burst",
+        "part": 98,
         "copies": 3
       },
       {
         "nom": "Smoke and Mirrors",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Ravenbloom Student",
-        "part": 94,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Charm",
-        "part": 94,
+        "part": 95,
         "copies": 2
       },
       {
+        "nom": "Ravenbloom Student",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 95,
+        "copies": 3
+      },
+      {
         "nom": "Lilting Lullaby",
-        "part": 80,
+        "part": 85,
         "copies": 1
       },
       {
         "nom": "Thousand-Tailed Watcher",
-        "part": 77,
+        "part": 79,
         "copies": 2
       },
       {
         "nom": "Mask of Foresight",
-        "part": 73,
+        "part": 75,
         "copies": 2
       },
       {
         "nom": "Unchecked Power",
-        "part": 69,
-        "copies": 1
-      },
-      {
-        "nom": "Heart of Dark Ice",
-        "part": 67,
+        "part": 75,
         "copies": 1
       },
       {
         "nom": "En Garde",
-        "part": 64,
+        "part": 68,
         "copies": 2
+      },
+      {
+        "nom": "Heart of Dark Ice",
+        "part": 65,
+        "copies": 1
       }
     ],
     "champions": [
@@ -2599,7 +2736,7 @@
       },
       {
         "nom": "Akali, Silent",
-        "part": 31,
+        "part": 39,
         "copies": 2
       }
     ],
@@ -2610,11 +2747,11 @@
       },
       {
         "nom": "Black Flame Altar",
-        "part": 71
+        "part": 76
       },
       {
         "nom": "Seat of Power",
-        "part": 61
+        "part": 67
       }
     ],
     "runes": [
@@ -2630,168 +2767,158 @@
       }
     ]
   },
-  "Vex, Gloomist": {
-    "decks": 80,
-    "joueurs": 185,
-    "coupe": 14,
+  "Ezreal, Prodigal Explorer": {
+    "decks": 95,
+    "joueurs": 215,
+    "coupe": 31,
     "titres": 0,
-    "conversion": 7.6,
-    "tournois": 24,
+    "conversion": 14.4,
+    "tournois": 26,
     "meilleuresPlaces": [
       {
+        "placement": "3rd",
+        "player": "霆霆",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "无所畏惧",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "7th",
+        "player": "Berkunn",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
         "placement": "8th",
-        "player": "热水加冰",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "player": "胰脏@牌客盟",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "12th",
-        "player": "XXT.Cyber",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "15th",
-        "player": "卡茶.团不溜秋",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "17th",
-        "player": "BKM-叶英@CN.R",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "27th",
-        "player": "大白",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "placement": "10th",
+        "player": "羽芒丨3+x丨不吃糖",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       }
     ],
     "cartes": [
       {
-        "nom": "Defy",
+        "nom": "Bellows Breath",
         "part": 100,
         "copies": 3
       },
       {
-        "nom": "Discipline",
+        "nom": "Stupefy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Wages of Pain",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Stacked Deck",
         "part": 99,
         "copies": 3
       },
       {
-        "nom": "Switcheroo",
-        "part": 95,
-        "copies": 2.5
-      },
-      {
-        "nom": "Boots of Swiftness",
-        "part": 89,
-        "copies": 2
-      },
-      {
-        "nom": "Charm",
-        "part": 85,
-        "copies": 2
-      },
-      {
         "nom": "Star-Crossed",
-        "part": 80,
+        "part": 99,
         "copies": 2
       },
       {
-        "nom": "Tideturner",
-        "part": 78,
-        "copies": 2
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 74,
-        "copies": 2
-      },
-      {
-        "nom": "Back Off",
-        "part": 73,
-        "copies": 1.5
-      },
-      {
-        "nom": "Tornado Warrior",
-        "part": 66,
+        "nom": "Bewitching Spirit",
+        "part": 91,
         "copies": 3
       },
       {
-        "nom": "Ride The Wind",
-        "part": 65,
-        "copies": 1
-      },
-      {
-        "nom": "Steel Paws",
-        "part": 64,
+        "nom": "Pack of Wonders",
+        "part": 87,
         "copies": 3
       },
       {
-        "nom": "Edge of Night",
-        "part": 55,
+        "nom": "Treasure Trove",
+        "part": 87,
+        "copies": 2
+      },
+      {
+        "nom": "Gust",
+        "part": 87,
+        "copies": 2
+      },
+      {
+        "nom": "The List",
+        "part": 86,
+        "copies": 2
+      },
+      {
+        "nom": "Deadly Flourish",
+        "part": 86,
+        "copies": 2
+      },
+      {
+        "nom": "Turn to Dust",
+        "part": 58,
         "copies": 1
       },
       {
-        "nom": "Abandon",
-        "part": 54,
+        "nom": "Singularity",
+        "part": 53,
         "copies": 1
       }
     ],
     "champions": [
       {
-        "nom": "Vex, Apathetic",
+        "nom": "Fizz, Trickster",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Ezreal, Prodigy",
         "part": 100,
         "copies": 1
       },
       {
-        "nom": "Evelynn, Entrancing",
-        "part": 66,
-        "copies": 2
-      },
-      {
-        "nom": "Irelia, Fervent",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Pyke, Returned",
-        "part": 33,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 30,
+        "nom": "Vex, Apathetic",
+        "part": 82,
         "copies": 2
       }
     ],
     "terrains": [
       {
-        "nom": "Startipped Peak",
-        "part": 70
+        "nom": "Frozen Fortress",
+        "part": 89
       },
       {
-        "nom": "Fortified Position",
-        "part": 48
+        "nom": "Sigil of the Storm",
+        "part": 86
       },
       {
-        "nom": "Bandle Tree",
-        "part": 34
+        "nom": "Heisho, Shell of the World",
+        "part": 73
       }
     ],
     "runes": [
       {
-        "nom": "Calm Rune",
+        "nom": "Chaos Rune",
         "part": 100,
         "copies": 6
       },
       {
-        "nom": "Chaos Rune",
+        "nom": "Mind Rune",
         "part": 100,
         "copies": 6
       }
     ]
   },
   "Viktor, Herald of the Arcane": {
-    "decks": 77,
+    "decks": 88,
     "joueurs": 128,
     "coupe": 7,
     "titres": 0,
@@ -2847,64 +2974,64 @@
       },
       {
         "nom": "Wages of Pain",
-        "part": 94,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Shadow's Call",
-        "part": 91,
+        "part": 92,
         "copies": 2
       },
       {
         "nom": "Sprite Fountain",
-        "part": 86,
+        "part": 85,
         "copies": 3
       },
       {
         "nom": "Stupefy",
-        "part": 83,
+        "part": 84,
         "copies": 3
       },
       {
         "nom": "Singularity",
-        "part": 74,
+        "part": 76,
         "copies": 2
       },
       {
         "nom": "Carrion Dredger",
-        "part": 68,
+        "part": 65,
         "copies": 3
       },
       {
         "nom": "Thousand-Tailed Watcher",
-        "part": 66,
+        "part": 63,
         "copies": 2
       },
       {
         "nom": "Blood Money",
-        "part": 61,
+        "part": 60,
         "copies": 2
       },
       {
         "nom": "Safety Inspector",
-        "part": 58,
+        "part": 57,
         "copies": 2
       },
       {
         "nom": "Salvage",
-        "part": 51,
+        "part": 55,
         "copies": 1
       }
     ],
     "champions": [
       {
         "nom": "Viktor, Leader",
-        "part": 86,
+        "part": 85,
         "copies": 1
       },
       {
         "nom": "Vi, Peacekeeper",
-        "part": 43,
+        "part": 42,
         "copies": 2
       }
     ],
@@ -2914,16 +3041,16 @@
         "part": 74
       },
       {
-        "nom": "Ravenbloom Conservatory",
-        "part": 57
+        "nom": "Rockfall Path",
+        "part": 56
       },
       {
-        "nom": "Rockfall Path",
+        "nom": "Ravenbloom Conservatory",
         "part": 55
       },
       {
         "nom": "Treasure Hoard",
-        "part": 36
+        "part": 35
       }
     ],
     "runes": [
@@ -2939,163 +3066,13 @@
       }
     ]
   },
-  "Ezreal, Prodigal Explorer": {
-    "decks": 77,
-    "joueurs": 197,
-    "coupe": 28,
-    "titres": 0,
-    "conversion": 14.2,
-    "tournois": 25,
-    "meilleuresPlaces": [
-      {
-        "placement": "3rd",
-        "player": "霆霆",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "3rd",
-        "player": "无所畏惧",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "7th",
-        "player": "Berkunn",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "8th",
-        "player": "胰脏@牌客盟",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "11th",
-        "player": "胰脏",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Bellows Breath",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Stupefy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Wages of Pain",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Stacked Deck",
-        "part": 99,
-        "copies": 3
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 99,
-        "copies": 2
-      },
-      {
-        "nom": "Gust",
-        "part": 92,
-        "copies": 2
-      },
-      {
-        "nom": "Bewitching Spirit",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Pack of Wonders",
-        "part": 86,
-        "copies": 3
-      },
-      {
-        "nom": "Treasure Trove",
-        "part": 86,
-        "copies": 2
-      },
-      {
-        "nom": "The List",
-        "part": 84,
-        "copies": 2
-      },
-      {
-        "nom": "Deadly Flourish",
-        "part": 84,
-        "copies": 2
-      },
-      {
-        "nom": "Turn to Dust",
-        "part": 53,
-        "copies": 1
-      },
-      {
-        "nom": "Eclipse",
-        "part": 48,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Fizz, Trickster",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Ezreal, Prodigy",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 79,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Frozen Fortress",
-        "part": 91
-      },
-      {
-        "nom": "Sigil of the Storm",
-        "part": 86
-      },
-      {
-        "nom": "Heisho, Shell of the World",
-        "part": 74
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "Kha'Zix, Voidreaver": {
-    "decks": 55,
-    "joueurs": 203,
-    "coupe": 21,
+    "decks": 76,
+    "joueurs": 224,
+    "coupe": 23,
     "titres": 0,
     "conversion": 10.3,
-    "tournois": 21,
+    "tournois": 22,
     "meilleuresPlaces": [
       {
         "placement": "8th",
@@ -3131,17 +3108,17 @@
       },
       {
         "nom": "Irresistible Faefolk",
-        "part": 98,
+        "part": 99,
         "copies": 3
       },
       {
         "nom": "Star-Crossed",
-        "part": 98,
-        "copies": 1.5
+        "part": 99,
+        "copies": 2
       },
       {
         "nom": "Punch First",
-        "part": 96,
+        "part": 97,
         "copies": 2
       },
       {
@@ -3150,14 +3127,14 @@
         "copies": 3
       },
       {
-        "nom": "Grim Resolve",
-        "part": 85,
-        "copies": 3
+        "nom": "Rampage",
+        "part": 88,
+        "copies": 1
       },
       {
-        "nom": "Rampage",
-        "part": 84,
-        "copies": 1
+        "nom": "Grim Resolve",
+        "part": 82,
+        "copies": 3
       },
       {
         "nom": "Ride The Wind",
@@ -3167,7 +3144,7 @@
       {
         "nom": "Sabotage",
         "part": 76,
-        "copies": 1.5
+        "copies": 2
       },
       {
         "nom": "Hard Bargain",
@@ -3176,22 +3153,22 @@
       },
       {
         "nom": "Demacian Diplomat",
-        "part": 69,
+        "part": 68,
         "copies": 3
       },
       {
         "nom": "First Mate",
-        "part": 49,
+        "part": 43,
         "copies": 2
       },
       {
         "nom": "Edge of Night",
-        "part": 44,
+        "part": 43,
         "copies": 1
       },
       {
-        "nom": "Ruin Runner",
-        "part": 38,
+        "nom": "Switcheroo",
+        "part": 39,
         "copies": 1
       }
     ],
@@ -3203,56 +3180,51 @@
       },
       {
         "nom": "Fizz, Trickster",
-        "part": 96,
-        "copies": 1
+        "part": 97,
+        "copies": 2
       },
       {
         "nom": "Vex, Apathetic",
-        "part": 85,
+        "part": 84,
         "copies": 2
       },
       {
         "nom": "Rengar, Trophy Hunter",
-        "part": 64,
-        "copies": 2
-      },
-      {
-        "nom": "Qiyana, Victorious",
-        "part": 44,
-        "copies": 3
-      },
-      {
-        "nom": "Evelynn, Entrancing",
-        "part": 44,
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "Zed, Without a Sound",
-        "part": 36,
-        "copies": 1.5
+        "part": 43,
+        "copies": 2
       },
       {
-        "nom": "Sett, Brawler",
-        "part": 31,
-        "copies": 1
+        "nom": "Evelynn, Entrancing",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Qiyana, Victorious",
+        "part": 38,
+        "copies": 3
       }
     ],
     "terrains": [
       {
         "nom": "Forbidding Waste",
-        "part": 91
-      },
-      {
-        "nom": "Monastery of Hirana",
-        "part": 67
+        "part": 93
       },
       {
         "nom": "Star Spring",
-        "part": 62
+        "part": 64
+      },
+      {
+        "nom": "Monastery of Hirana",
+        "part": 59
       },
       {
         "nom": "Sandswept Tomb",
-        "part": 42
+        "part": 47
       }
     ],
     "runes": [
@@ -3268,183 +3240,13 @@
       }
     ]
   },
-  "Zed, Master of Shadows": {
-    "decks": 45,
-    "joueurs": 106,
-    "coupe": 2,
-    "titres": 0,
-    "conversion": 1.9,
-    "tournois": 18,
-    "meilleuresPlaces": [
-      {
-        "placement": "9th",
-        "player": "嘴嘴",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "18th",
-        "player": "小震",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "20th",
-        "player": "joyspace_宇智波香锅",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "32th",
-        "player": "皮皮有活",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "39th",
-        "player": "利原",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Death Mark",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Stacked Deck",
-        "part": 89,
-        "copies": 3
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 84,
-        "copies": 3
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 84,
-        "copies": 3
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 80,
-        "copies": 3
-      },
-      {
-        "nom": "Perfect Execution",
-        "part": 80,
-        "copies": 2
-      },
-      {
-        "nom": "Cleave",
-        "part": 69,
-        "copies": 2
-      },
-      {
-        "nom": "Gust Monk",
-        "part": 64,
-        "copies": 2
-      },
-      {
-        "nom": "Switcheroo",
-        "part": 62,
-        "copies": 2
-      },
-      {
-        "nom": "Shadow Order Disciple",
-        "part": 56,
-        "copies": 3
-      },
-      {
-        "nom": "Tideturner",
-        "part": 53,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 53,
-        "copies": 2
-      },
-      {
-        "nom": "Last Rites",
-        "part": 51,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 44,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Zed, Without a Sound",
-        "part": 69,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 49,
-        "copies": 2
-      },
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 44,
-        "copies": 2
-      },
-      {
-        "nom": "Zed, From the Shadows",
-        "part": 42,
-        "copies": 1
-      },
-      {
-        "nom": "Kennen, Storm of Shuriken",
-        "part": 36,
-        "copies": 3
-      },
-      {
-        "nom": "Vi, Destructive",
-        "part": 36,
-        "copies": 1
-      },
-      {
-        "nom": "Rek'Sai, Breacher",
-        "part": 31,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Zaun Warrens",
-        "part": 96
-      },
-      {
-        "nom": "Minefield",
-        "part": 69
-      },
-      {
-        "nom": "Forbidding Waste",
-        "part": 40
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 5
-      }
-    ]
-  },
   "Pyke, Bloodharbor Ripper": {
-    "decks": 41,
-    "joueurs": 99,
+    "decks": 67,
+    "joueurs": 126,
     "coupe": 2,
     "titres": 0,
-    "conversion": 2,
-    "tournois": 21,
+    "conversion": 1.6,
+    "tournois": 22,
     "meilleuresPlaces": [
       {
         "placement": "11th",
@@ -3475,104 +3277,109 @@
     "cartes": [
       {
         "nom": "Star-Crossed",
-        "part": 98,
+        "part": 99,
         "copies": 2
       },
       {
         "nom": "Falling Star",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Stacked Deck",
-        "part": 95,
+        "part": 97,
         "copies": 3
       },
       {
         "nom": "Bewitching Spirit",
-        "part": 93,
+        "part": 94,
         "copies": 3
       },
       {
-        "nom": "Tail-Cloaked Matriarch",
-        "part": 80,
-        "copies": 2
+        "nom": "Stacked Deck",
+        "part": 87,
+        "copies": 3
       },
       {
         "nom": "Blood Rush",
-        "part": 78,
+        "part": 85,
         "copies": 2
       },
       {
         "nom": "Treasure Hunter",
-        "part": 73,
-        "copies": 3
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 71,
+        "part": 82,
         "copies": 3
       },
       {
         "nom": "Void Seeker",
-        "part": 71,
-        "copies": 1
-      },
-      {
-        "nom": "Gust Monk",
-        "part": 68,
+        "part": 79,
         "copies": 2
       },
       {
-        "nom": "Ferrous Forerunner",
-        "part": 66,
-        "copies": 1
+        "nom": "Tail-Cloaked Matriarch",
+        "part": 78,
+        "copies": 2
       },
       {
-        "nom": "Tideturner",
-        "part": 63,
+        "nom": "Gust Monk",
+        "part": 76,
+        "copies": 2
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 76,
+        "copies": 2
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 70,
         "copies": 2
       },
       {
         "nom": "Piercing Light",
-        "part": 61,
+        "part": 69,
+        "copies": 2
+      },
+      {
+        "nom": "Ferrous Forerunner",
+        "part": 69,
         "copies": 1
       },
       {
-        "nom": "Switcheroo",
-        "part": 59,
-        "copies": 1
+        "nom": "Tideturner",
+        "part": 55,
+        "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "Fizz, Trickster",
-        "part": 98,
+        "part": 99,
         "copies": 2
       },
       {
         "nom": "Pyke, Dockside Butcher",
-        "part": 98,
+        "part": 99,
         "copies": 1
       },
       {
         "nom": "Ezreal, Prodigy",
-        "part": 93,
+        "part": 94,
+        "copies": 2
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 42,
         "copies": 2
       }
     ],
     "terrains": [
       {
         "nom": "Ripper's Bay",
-        "part": 95
+        "part": 97
       },
       {
         "nom": "Forbidding Waste",
-        "part": 76
+        "part": 81
       },
       {
         "nom": "Void Gate",
-        "part": 37
+        "part": 51
       }
     ],
     "runes": [
@@ -3588,13 +3395,178 @@
       }
     ]
   },
+  "Zed, Master of Shadows": {
+    "decks": 60,
+    "joueurs": 122,
+    "coupe": 3,
+    "titres": 0,
+    "conversion": 2.5,
+    "tournois": 19,
+    "meilleuresPlaces": [
+      {
+        "placement": "9th",
+        "player": "嘴嘴",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "18th",
+        "player": "小震",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "20th",
+        "player": "joyspace_宇智波香锅",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "32th",
+        "player": "皮皮有活",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "39th",
+        "player": "利原",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Death Mark",
+        "part": 92,
+        "copies": 3
+      },
+      {
+        "nom": "Stacked Deck",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 88,
+        "copies": 3
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Perfect Execution",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Cleave",
+        "part": 73,
+        "copies": 2
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Gust Monk",
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Shadow Order Disciple",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Tideturner",
+        "part": 60,
+        "copies": 2
+      },
+      {
+        "nom": "Falling Star",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Up from the Deep",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Last Rites",
+        "part": 45,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Zed, Without a Sound",
+        "part": 75,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 48,
+        "copies": 2
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Vi, Destructive",
+        "part": 40,
+        "copies": 1
+      },
+      {
+        "nom": "Kennen, Storm of Shuriken",
+        "part": 33,
+        "copies": 3
+      },
+      {
+        "nom": "Zed, From the Shadows",
+        "part": 33,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Zaun Warrens",
+        "part": 93
+      },
+      {
+        "nom": "Minefield",
+        "part": 67
+      },
+      {
+        "nom": "Forbidding Waste",
+        "part": 45
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Jax, Grandmaster At Arms": {
-    "decks": 34,
-    "joueurs": 70,
+    "decks": 50,
+    "joueurs": 86,
     "coupe": 0,
     "titres": 0,
     "conversion": 0,
-    "tournois": 15,
+    "tournois": 16,
     "meilleuresPlaces": [
       {
         "placement": "38th",
@@ -3630,7 +3602,7 @@
       },
       {
         "nom": "Guardian Angel",
-        "part": 97,
+        "part": 96,
         "copies": 3
       },
       {
@@ -3645,22 +3617,22 @@
       },
       {
         "nom": "Brutalizer",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "First Mate",
-        "part": 91,
+        "part": 90,
         "copies": 3
       },
       {
         "nom": "Punch First",
-        "part": 91,
+        "part": 90,
         "copies": 2
       },
       {
+        "nom": "First Mate",
+        "part": 88,
+        "copies": 3
+      },
+      {
         "nom": "Scuttle Crab",
-        "part": 82,
+        "part": 78,
         "copies": 3
       },
       {
@@ -3670,60 +3642,65 @@
       },
       {
         "nom": "Rampage",
-        "part": 65,
-        "copies": 2
-      },
-      {
-        "nom": "Challenge",
-        "part": 47,
-        "copies": 2
-      },
-      {
-        "nom": "Boneshiver",
-        "part": 47,
+        "part": 76,
         "copies": 2
       },
       {
         "nom": "Back Off",
-        "part": 47,
+        "part": 52,
         "copies": 1
       },
       {
-        "nom": "Ruin Runner",
-        "part": 44,
+        "nom": "Boneshiver",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Not So Fast",
+        "part": 42,
+        "copies": 1
+      },
+      {
+        "nom": "Challenge",
+        "part": 40,
         "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "Jax, Unmatched",
-        "part": 94,
+        "part": 92,
         "copies": 1
       },
       {
         "nom": "Rengar, Trophy Hunter",
-        "part": 44,
+        "part": 52,
         "copies": 2
       },
       {
         "nom": "Lucian, Merciless",
-        "part": 41,
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Irelia, Fervent",
+        "part": 40,
         "copies": 2
       },
       {
         "nom": "Akshan, Mischievous",
-        "part": 32,
+        "part": 38,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Sunken Temple",
-        "part": 74
+        "part": 70
       },
       {
         "nom": "Ornn's Forge",
-        "part": 53
+        "part": 48
       }
     ],
     "runes": [
@@ -3739,614 +3716,182 @@
       }
     ]
   },
-  "Sivir, Battle Mistress": {
-    "decks": 27,
-    "joueurs": 62,
-    "coupe": 9,
+  "Ivern, Green Father": {
+    "decks": 46,
+    "joueurs": 113,
+    "coupe": 2,
     "titres": 0,
-    "conversion": 14.5,
-    "tournois": 15,
+    "conversion": 1.8,
+    "tournois": 14,
     "meilleuresPlaces": [
       {
-        "placement": "6th",
-        "player": "BOT.QAQ钓鱼王",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "placement": "38th",
+        "player": "拯救周末",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "9th",
-        "player": "A·霜月之七",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "39th",
+        "player": "E1egy",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
       },
       {
-        "placement": "10th",
-        "player": "gambit.纯爱.黑罗洛🐺",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+        "placement": "47th",
+        "player": "叨叨魄罗-doge",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
-        "placement": "17th",
-        "player": "BonkersForCheese",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+        "placement": "51th",
+        "player": "XXT.FG.NANA",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       },
       {
-        "placement": "25th",
-        "player": "树懒.宵星.Andrew",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+        "placement": "54th",
+        "player": "ARBD-楓◎凱·i开TV",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       }
     ],
     "cartes": [
       {
-        "nom": "Stacked Deck",
-        "part": 100,
+        "nom": "Mutated Mouser",
+        "part": 98,
         "copies": 3
       },
       {
-        "nom": "Punch First",
-        "part": 78,
+        "nom": "Defy",
+        "part": 98,
         "copies": 3
       },
       {
-        "nom": "Rampage",
-        "part": 78,
-        "copies": 2
+        "nom": "Trusty Ramhound",
+        "part": 96,
+        "copies": 3
       },
       {
-        "nom": "Sabotage",
-        "part": 74,
-        "copies": 2
+        "nom": "Frisky Hunter",
+        "part": 96,
+        "copies": 3
       },
       {
-        "nom": "Baron Nashor",
-        "part": 63,
+        "nom": "Stalwart Poro",
+        "part": 93,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 93,
+        "copies": 3
+      },
+      {
+        "nom": "Emperor's Divide",
+        "part": 93,
         "copies": 1
       },
       {
-        "nom": "Ride The Wind",
-        "part": 52,
+        "nom": "Back Off",
+        "part": 87,
         "copies": 2
       },
       {
-        "nom": "Treasure Trove",
-        "part": 52,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 52,
-        "copies": 1
-      },
-      {
-        "nom": "Elder Dragon",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Scryer's Bloom",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Dazzling Aurora",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Catalyst of Aeons",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Lunar Boon",
-        "part": 44,
-        "copies": 3
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Sivir, Mercenary",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 52,
-        "copies": 2
-      },
-      {
-        "nom": "Ezreal, Prodigy",
-        "part": 48,
-        "copies": 2
-      },
-      {
-        "nom": "Rengar, Trophy Hunter",
-        "part": 37,
-        "copies": 1
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 33,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Sigil of the Storm",
-        "part": 96
-      },
-      {
-        "nom": "Forgotten Monument",
-        "part": 44
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Ambessa, Matriarch of War": {
-    "decks": 27,
-    "joueurs": 102,
-    "coupe": 1,
-    "titres": 0,
-    "conversion": 1,
-    "tournois": 15,
-    "meilleuresPlaces": [
-      {
-        "placement": "7th",
-        "player": "肉松饼",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "22th",
-        "player": "氐",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "29th",
-        "player": "神夜·神機百煉",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "43th",
-        "player": "东莞铁猫",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "50th",
-        "player": "ZZZ",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Public Execution",
-        "part": 89,
-        "copies": 2
-      },
-      {
-        "nom": "Rampage",
-        "part": 89,
-        "copies": 2
-      },
-      {
-        "nom": "Punch First",
+        "nom": "Daisy!",
         "part": 85,
         "copies": 2
       },
       {
-        "nom": "Legion Marauder",
-        "part": 81,
-        "copies": 3
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 78,
-        "copies": 2
-      },
-      {
-        "nom": "Guttural Roar",
-        "part": 74,
-        "copies": 2
-      },
-      {
-        "nom": "Sabotage",
-        "part": 67,
-        "copies": 1.5
-      },
-      {
-        "nom": "First Mate",
-        "part": 63,
-        "copies": 2
-      },
-      {
-        "nom": "Repulse",
-        "part": 63,
+        "nom": "Salvage",
+        "part": 65,
         "copies": 1
       },
       {
-        "nom": "Pit Rookie",
-        "part": 59,
-        "copies": 3
+        "nom": "Zhonya's Hourglass",
+        "part": 63,
+        "copies": 2
       },
       {
         "nom": "Solari Sunhawk",
-        "part": 52,
-        "copies": 3
-      },
-      {
-        "nom": "Noxian Emissary",
-        "part": 52,
+        "part": 57,
         "copies": 2
       },
       {
-        "nom": "Challenge",
-        "part": 48,
+        "nom": "Hidden Blade",
+        "part": 54,
         "copies": 2
       },
       {
-        "nom": "Shadow's Call",
-        "part": 44,
+        "nom": "Vilemaw",
+        "part": 54,
         "copies": 2
       }
     ],
     "champions": [
       {
-        "nom": "Ambessa, The Wolf",
-        "part": 93,
+        "nom": "Ivern, Friend to All",
+        "part": 76,
+        "copies": 2
+      },
+      {
+        "nom": "Azir, Sovereign",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Blitzcrank, Impassive",
+        "part": 43,
         "copies": 1
       },
       {
         "nom": "Vi, Peacekeeper",
-        "part": 67,
-        "copies": 2
-      },
-      {
-        "nom": "Rengar, Trophy Hunter",
-        "part": 48,
-        "copies": 2
-      },
-      {
-        "nom": "Kayle, Justified",
         "part": 41,
-        "copies": 3
+        "copies": 2
+      },
+      {
+        "nom": "Kennen, Keeper of Balance",
+        "part": 35,
+        "copies": 2
+      },
+      {
+        "nom": "Ivern, Nurturer",
+        "part": 30,
+        "copies": 2
       }
     ],
     "terrains": [
-      {
-        "nom": "Risen Altar",
-        "part": 78
-      },
-      {
-        "nom": "Sunken Temple",
-        "part": 59
-      },
-      {
-        "nom": "Sandswept Tomb",
-        "part": 33
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 5
-      }
-    ]
-  },
-  "Lucian, Purifier": {
-    "decks": 27,
-    "joueurs": 85,
-    "coupe": 6,
-    "titres": 0,
-    "conversion": 7.1,
-    "tournois": 14,
-    "meilleuresPlaces": [
-      {
-        "placement": "2nd",
-        "player": "TXG·万舞寒天",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "13th",
-        "player": "酷猫.黑科技整活",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "19th",
-        "player": "TXG·万舞寒天",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "23th",
-        "player": "酷猫.黑科技整活",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "25th",
-        "player": "BANRATE DEMON",
-        "tournament": "Barcelona Regional Qualifier"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "First Mate",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Relentless Pursuit",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Doran's Blade",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Punch First",
-        "part": 96,
-        "copies": 2.5
-      },
-      {
-        "nom": "Sabotage",
-        "part": 93,
-        "copies": 2
-      },
-      {
-        "nom": "Long Sword",
-        "part": 89,
-        "copies": 3
-      },
-      {
-        "nom": "Irresistible Faefolk",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Pit Rookie",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Blighted Battleaxe",
-        "part": 59,
-        "copies": 2
-      },
-      {
-        "nom": "Ruin Runner",
-        "part": 56,
-        "copies": 2
-      },
-      {
-        "nom": "Kinkou Initiate",
-        "part": 52,
-        "copies": 3
-      },
-      {
-        "nom": "Rampage",
-        "part": 52,
-        "copies": 2
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 48,
-        "copies": 3
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Lucian, Merciless",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 96,
-        "copies": 3
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Forge of the Fluft",
-        "part": 89
-      },
-      {
-        "nom": "Sunken Temple",
-        "part": 56
-      },
       {
         "nom": "Forbidding Waste",
-        "part": 41
+        "part": 83
       },
       {
-        "nom": "Windswept Hillock",
+        "nom": "Vaults of Helia",
+        "part": 72
+      },
+      {
+        "nom": "Vilemaw's Lair",
+        "part": 50
+      },
+      {
+        "nom": "Frozen Fortress",
         "part": 37
       }
     ],
     "runes": [
       {
-        "nom": "Body Rune",
+        "nom": "Calm Rune",
         "part": 100,
         "copies": 6
       },
       {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Rumble, Mechanized Menace": {
-    "decks": 26,
-    "joueurs": 103,
-    "coupe": 1,
-    "titres": 0,
-    "conversion": 1,
-    "tournois": 16,
-    "meilleuresPlaces": [
-      {
-        "placement": "13th",
-        "player": "迷死他晓冬",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "24th",
-        "player": "电话手表",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "25th",
-        "player": "NGUSevenStar",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "39th",
-        "player": "菠萝包大王",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "43th",
-        "player": "易",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Forecaster",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Gem Jammer",
-        "part": 96,
-        "copies": 3
-      },
-      {
-        "nom": "Bubble Bot",
-        "part": 88,
-        "copies": 3
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 85,
-        "copies": 2
-      },
-      {
-        "nom": "Stupefy",
-        "part": 81,
-        "copies": 3
-      },
-      {
-        "nom": "Patched Porobot",
-        "part": 81,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 77,
-        "copies": 2
-      },
-      {
-        "nom": "Cloth Armor",
-        "part": 73,
-        "copies": 2
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 69,
-        "copies": 2
-      },
-      {
-        "nom": "Production Surge",
-        "part": 65,
-        "copies": 3
-      },
-      {
-        "nom": "Brynhir Thundersong",
-        "part": 65,
-        "copies": 1
-      },
-      {
-        "nom": "Perfect Execution",
-        "part": 62,
-        "copies": 1
-      },
-      {
-        "nom": "Cleave",
-        "part": 58,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Rumble, Hotheaded",
-        "part": 100,
-        "copies": 2.5
-      },
-      {
-        "nom": "Rumble, Scrapper",
-        "part": 31,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Zaun Warrens",
-        "part": 46
-      },
-      {
-        "nom": "Rockfall Path",
-        "part": 42
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
+        "nom": "Order Rune",
         "part": 100,
         "copies": 6
       }
     ]
   },
   "Shen, Eye of Twilight": {
-    "decks": 25,
-    "joueurs": 81,
+    "decks": 45,
+    "joueurs": 102,
     "coupe": 0,
     "titres": 0,
     "conversion": 0,
-    "tournois": 15,
+    "tournois": 16,
     "meilleuresPlaces": [
       {
         "placement": "36th",
@@ -4387,7 +3932,7 @@
       },
       {
         "nom": "Ki Barrier",
-        "part": 88,
+        "part": 87,
         "copies": 2
       },
       {
@@ -4396,95 +3941,91 @@
         "copies": 2
       },
       {
-        "nom": "Disciple of Shen",
-        "part": 76,
-        "copies": 3
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 68,
-        "copies": 3
-      },
-      {
-        "nom": "Shadow Dash",
-        "part": 68,
-        "copies": 2
-      },
-      {
         "nom": "Emperor's Divide",
-        "part": 60,
+        "part": 73,
         "copies": 2
-      },
-      {
-        "nom": "Hand Hammer",
-        "part": 56,
-        "copies": 3
       },
       {
         "nom": "Back Off",
-        "part": 56,
+        "part": 67,
         "copies": 2
       },
       {
         "nom": "Hidden Blade",
-        "part": 56,
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 62,
+        "copies": 3
+      },
+      {
+        "nom": "Disciple of Shen",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Shadow Dash",
+        "part": 47,
         "copies": 2
       },
       {
         "nom": "Mournful Witness",
-        "part": 52,
+        "part": 44,
         "copies": 3
+      },
+      {
+        "nom": "Hand Hammer",
+        "part": 44,
+        "copies": 2.5
       },
       {
         "nom": "Affectionate Poro",
-        "part": 52,
+        "part": 42,
         "copies": 3
       },
       {
-        "nom": "Vilemaw",
-        "part": 40,
-        "copies": 1.5
+        "nom": "Trusty Ramhound",
+        "part": 38,
+        "copies": 3
       }
     ],
     "champions": [
       {
         "nom": "Vi, Peacekeeper",
-        "part": 88,
+        "part": 87,
         "copies": 2
       },
       {
         "nom": "Shen, Kinkou",
-        "part": 76,
+        "part": 82,
         "copies": 1
       },
       {
-        "nom": "Fiora, Victorious",
-        "part": 48,
-        "copies": 2.5
+        "nom": "Kennen, Keeper of Balance",
+        "part": 62,
+        "copies": 2
       },
       {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 48,
+        "nom": "Fiora, Victorious",
+        "part": 47,
         "copies": 2
       },
       {
         "nom": "Sona, Harmonious",
-        "part": 36,
+        "part": 44,
         "copies": 3
       }
     ],
     "terrains": [
       {
         "nom": "Kinkou Temple",
-        "part": 96
+        "part": 98
       },
       {
-        "nom": "Forbidding Waste",
-        "part": 36
-      },
-      {
-        "nom": "Fortified Position",
-        "part": 36
+        "nom": "Startipped Peak",
+        "part": 38
       }
     ],
     "runes": [
@@ -4500,13 +4041,763 @@
       }
     ]
   },
+  "Ambessa, Matriarch of War": {
+    "decks": 43,
+    "joueurs": 118,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 0.8,
+    "tournois": 16,
+    "meilleuresPlaces": [
+      {
+        "placement": "7th",
+        "player": "肉松饼",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "22th",
+        "player": "氐",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "29th",
+        "player": "神夜·神機百煉",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "43th",
+        "player": "东莞铁猫",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "50th",
+        "player": "ZZZ",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Rampage",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Public Execution",
+        "part": 79,
+        "copies": 2
+      },
+      {
+        "nom": "Legion Marauder",
+        "part": 74,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 74,
+        "copies": 3
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 70,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Guttural Roar",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Repulse",
+        "part": 63,
+        "copies": 1
+      },
+      {
+        "nom": "First Mate",
+        "part": 51,
+        "copies": 2
+      },
+      {
+        "nom": "Pit Rookie",
+        "part": 47,
+        "copies": 3
+      },
+      {
+        "nom": "Solari Sunhawk",
+        "part": 44,
+        "copies": 3
+      },
+      {
+        "nom": "Challenge",
+        "part": 44,
+        "copies": 2
+      },
+      {
+        "nom": "Noxian Emissary",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Forge of the Future",
+        "part": 37,
+        "copies": 3
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Ambessa, The Wolf",
+        "part": 95,
+        "copies": 1
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 60,
+        "copies": 2
+      },
+      {
+        "nom": "Kayle, Justified",
+        "part": 47,
+        "copies": 3
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 44,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Risen Altar",
+        "part": 72
+      },
+      {
+        "nom": "Sunken Temple",
+        "part": 51
+      },
+      {
+        "nom": "Sandswept Tomb",
+        "part": 33
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
+  "Sivir, Battle Mistress": {
+    "decks": 40,
+    "joueurs": 75,
+    "coupe": 10,
+    "titres": 0,
+    "conversion": 13.3,
+    "tournois": 16,
+    "meilleuresPlaces": [
+      {
+        "placement": "6th",
+        "player": "BOT.QAQ钓鱼王",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "9th",
+        "player": "A·霜月之七",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "10th",
+        "player": "gambit.纯爱.黑罗洛🐺",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "17th",
+        "player": "BonkersForCheese",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+      },
+      {
+        "placement": "25th",
+        "player": "树懒.宵星.Andrew",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Stacked Deck",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Sabotage",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Rampage",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Punch First",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Treasure Trove",
+        "part": 60,
+        "copies": 2.5
+      },
+      {
+        "nom": "Elder Dragon",
+        "part": 57,
+        "copies": 3
+      },
+      {
+        "nom": "Scryer's Bloom",
+        "part": 57,
+        "copies": 3
+      },
+      {
+        "nom": "Dazzling Aurora",
+        "part": 57,
+        "copies": 3
+      },
+      {
+        "nom": "Catalyst of Aeons",
+        "part": 57,
+        "copies": 3
+      },
+      {
+        "nom": "Lunar Boon",
+        "part": 55,
+        "copies": 3
+      },
+      {
+        "nom": "Last Rites",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Baron Nashor",
+        "part": 55,
+        "copies": 1.5
+      },
+      {
+        "nom": "Flurry of Blades",
+        "part": 53,
+        "copies": 3
+      },
+      {
+        "nom": "Gust",
+        "part": 53,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Sivir, Mercenary",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 43,
+        "copies": 2
+      },
+      {
+        "nom": "Ezreal, Prodigy",
+        "part": 38,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Sigil of the Storm",
+        "part": 93
+      },
+      {
+        "nom": "Forgotten Monument",
+        "part": 55
+      },
+      {
+        "nom": "Dragon Roost",
+        "part": 40
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Rumble, Mechanized Menace": {
+    "decks": 39,
+    "joueurs": 122,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 0.8,
+    "tournois": 17,
+    "meilleuresPlaces": [
+      {
+        "placement": "13th",
+        "player": "迷死他晓冬",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "24th",
+        "player": "电话手表",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "25th",
+        "player": "NGUSevenStar",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "39th",
+        "player": "菠萝包大王",
+        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "43th",
+        "player": "易",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Ferrous Forerunner",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Forecaster",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Gem Jammer",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Bubble Bot",
+        "part": 92,
+        "copies": 3
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 79,
+        "copies": 2
+      },
+      {
+        "nom": "Patched Porobot",
+        "part": 77,
+        "copies": 2
+      },
+      {
+        "nom": "Cloth Armor",
+        "part": 74,
+        "copies": 1
+      },
+      {
+        "nom": "Temporal Breach",
+        "part": 69,
+        "copies": 2
+      },
+      {
+        "nom": "Brynhir Thundersong",
+        "part": 69,
+        "copies": 1
+      },
+      {
+        "nom": "Production Surge",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Cleave",
+        "part": 64,
+        "copies": 2
+      },
+      {
+        "nom": "Long Sword",
+        "part": 62,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Rumble, Hotheaded",
+        "part": 100,
+        "copies": 3
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Zaun Warrens",
+        "part": 44
+      },
+      {
+        "nom": "Rockfall Path",
+        "part": 41
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Lucian, Purifier": {
+    "decks": 39,
+    "joueurs": 97,
+    "coupe": 7,
+    "titres": 0,
+    "conversion": 7.2,
+    "tournois": 15,
+    "meilleuresPlaces": [
+      {
+        "placement": "2nd",
+        "player": "TXG·万舞寒天",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "13th",
+        "player": "酷猫.黑科技整活",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "19th",
+        "player": "TXG·万舞寒天",
+        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+      },
+      {
+        "placement": "23th",
+        "player": "酷猫.黑科技整活",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "25th",
+        "player": "BANRATE DEMON",
+        "tournament": "Barcelona Regional Qualifier"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "First Mate",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Relentless Pursuit",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Doran's Blade",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Sabotage",
+        "part": 95,
+        "copies": 2
+      },
+      {
+        "nom": "Long Sword",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Irresistible Faefolk",
+        "part": 79,
+        "copies": 3
+      },
+      {
+        "nom": "Pit Rookie",
+        "part": 77,
+        "copies": 3
+      },
+      {
+        "nom": "Blighted Battleaxe",
+        "part": 72,
+        "copies": 2
+      },
+      {
+        "nom": "Kinkou Initiate",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Rampage",
+        "part": 62,
+        "copies": 2
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 59,
+        "copies": 3
+      },
+      {
+        "nom": "Ferrous Forerunner",
+        "part": 59,
+        "copies": 2
+      },
+      {
+        "nom": "Ruin Runner",
+        "part": 51,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Lucian, Merciless",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Akshan, Mischievous",
+        "part": 31,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Forge of the Fluft",
+        "part": 87
+      },
+      {
+        "nom": "Forbidding Waste",
+        "part": 54
+      },
+      {
+        "nom": "Windswept Hillock",
+        "part": 46
+      },
+      {
+        "nom": "Sunken Temple",
+        "part": 46
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Renata Glasc, Chem-Baroness": {
+    "decks": 38,
+    "joueurs": 79,
+    "coupe": 0,
+    "titres": 0,
+    "conversion": 0,
+    "tournois": 10,
+    "meilleuresPlaces": [
+      {
+        "placement": "35th",
+        "player": "月魔夜小",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "63th",
+        "player": "白泽-Diva",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "66th",
+        "player": "龆年",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "72th",
+        "player": "月魔夜小",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "72th",
+        "player": "龆年",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Hidden Blade",
+        "part": 92,
+        "copies": 2
+      },
+      {
+        "nom": "Hostile Takeover",
+        "part": 82,
+        "copies": 2
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 76,
+        "copies": 2
+      },
+      {
+        "nom": "Plundering Poro",
+        "part": 74,
+        "copies": 3
+      },
+      {
+        "nom": "Honest Broker",
+        "part": 71,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 66,
+        "copies": 2
+      },
+      {
+        "nom": "Cull the Weak",
+        "part": 53,
+        "copies": 2
+      },
+      {
+        "nom": "Patched Porobot",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 47,
+        "copies": 2
+      },
+      {
+        "nom": "Forge of the Future",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "Vanguard Armory",
+        "part": 39,
+        "copies": 3
+      },
+      {
+        "nom": "Sprite Fountain",
+        "part": 39,
+        "copies": 3
+      },
+      {
+        "nom": "Time Warp",
+        "part": 39,
+        "copies": 2
+      },
+      {
+        "nom": "Lecturing Yordle",
+        "part": 39,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Renata Glasc, Industrialist",
+        "part": 55,
+        "copies": 1
+      },
+      {
+        "nom": "Renata Glasc, Mastermind",
+        "part": 45,
+        "copies": 1
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Jayce, Man of Progress",
+        "part": 37,
+        "copies": 3
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Treasure Hoard",
+        "part": 74
+      },
+      {
+        "nom": "Dusk Rose Lab",
+        "part": 34
+      },
+      {
+        "nom": "Veiled Temple",
+        "part": 32
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
   "Jhin, Virtuoso": {
-    "decks": 24,
-    "joueurs": 72,
+    "decks": 34,
+    "joueurs": 84,
     "coupe": 2,
     "titres": 0,
-    "conversion": 2.8,
-    "tournois": 13,
+    "conversion": 2.4,
+    "tournois": 14,
     "meilleuresPlaces": [
       {
         "placement": "38th",
@@ -4546,89 +4837,89 @@
         "copies": 3
       },
       {
-        "nom": "Plundering Poro",
-        "part": 96,
-        "copies": 3
-      },
-      {
         "nom": "Thousand-Tailed Watcher",
-        "part": 96,
+        "part": 97,
         "copies": 2
       },
       {
         "nom": "Sprite Burst",
-        "part": 96,
+        "part": 97,
+        "copies": 2
+      },
+      {
+        "nom": "Plundering Poro",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Consult the Past",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Time Warp",
+        "part": 94,
         "copies": 2
       },
       {
         "nom": "Singularity",
-        "part": 96,
-        "copies": 2
-      },
-      {
-        "nom": "Time Warp",
-        "part": 96,
-        "copies": 2
-      },
-      {
-        "nom": "Consult the Past",
-        "part": 92,
+        "part": 91,
         "copies": 2
       },
       {
         "nom": "Rocket Barrage",
-        "part": 79,
-        "copies": 1
-      },
-      {
-        "nom": "Unchecked Power",
-        "part": 79,
-        "copies": 1
-      },
-      {
-        "nom": "Progress Day",
-        "part": 75,
+        "part": 82,
         "copies": 1
       },
       {
         "nom": "Downstage Dramatics",
-        "part": 71,
+        "part": 76,
         "copies": 2
       },
       {
+        "nom": "Progress Day",
+        "part": 74,
+        "copies": 1
+      },
+      {
+        "nom": "Unchecked Power",
+        "part": 74,
+        "copies": 1
+      },
+      {
         "nom": "Watchful Sentry",
-        "part": 63,
+        "part": 65,
         "copies": 2
       },
       {
         "nom": "Stupefy",
-        "part": 54,
-        "copies": 3
+        "part": 59,
+        "copies": 2.5
       }
     ],
     "champions": [
       {
         "nom": "Jhin, Meticulous Killer",
-        "part": 96,
+        "part": 97,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Frozen Fortress",
-        "part": 88
+        "part": 85
       },
       {
         "nom": "Rockfall Path",
-        "part": 54
+        "part": 56
       },
       {
         "nom": "Heisho, Shell of the World",
-        "part": 50
+        "part": 47
       },
       {
         "nom": "Void Gate",
-        "part": 42
+        "part": 44
       }
     ],
     "runes": [
@@ -4645,17 +4936,22 @@
     ]
   },
   "Vi, Piltover Enforcer": {
-    "decks": 20,
-    "joueurs": 110,
-    "coupe": 1,
+    "decks": 32,
+    "joueurs": 125,
+    "coupe": 3,
     "titres": 0,
-    "conversion": 0.9,
-    "tournois": 12,
+    "conversion": 2.4,
+    "tournois": 13,
     "meilleuresPlaces": [
       {
         "placement": "33th",
         "player": "雪球大王",
         "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+      },
+      {
+        "placement": "41th",
+        "player": "GAOA",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       },
       {
         "placement": "64th",
@@ -4671,11 +4967,6 @@
         "placement": "72th",
         "player": "艾克索迪亚",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "73th",
-        "player": "口过狼丶不澜",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       }
     ],
     "cartes": [
@@ -4686,21 +4977,21 @@
       },
       {
         "nom": "Hidden Blade",
-        "part": 90,
+        "part": 91,
         "copies": 2
       },
       {
-        "nom": "Perfect Execution",
-        "part": 80,
-        "copies": 1
-      },
-      {
         "nom": "Long Sword",
-        "part": 75,
+        "part": 81,
         "copies": 2
       },
       {
         "nom": "Ferrous Forerunner",
+        "part": 81,
+        "copies": 2
+      },
+      {
+        "nom": "Tactical Retreat",
         "part": 75,
         "copies": 2
       },
@@ -4710,113 +5001,94 @@
         "copies": 2
       },
       {
-        "nom": "Tactical Retreat",
-        "part": 70,
+        "nom": "Perfect Execution",
+        "part": 75,
+        "copies": 1
+      },
+      {
+        "nom": "Gem Jammer",
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "Carrion Dredger",
-        "part": 60,
-        "copies": 3
-      },
-      {
-        "nom": "Gem Jammer",
-        "part": 60,
-        "copies": 3
-      },
-      {
-        "nom": "Honest Broker",
-        "part": 60,
+        "part": 66,
         "copies": 3
       },
       {
         "nom": "Seal of Rage",
-        "part": 55,
+        "part": 66,
         "copies": 2
       },
       {
         "nom": "Deathgrip",
-        "part": 55,
+        "part": 66,
         "copies": 2
       },
       {
-        "nom": "Unsung Hero",
-        "part": 50,
-        "copies": 2.5
+        "nom": "Salvage",
+        "part": 59,
+        "copies": 1
       },
       {
-        "nom": "Salvage",
-        "part": 50,
-        "copies": 1
+        "nom": "Honest Broker",
+        "part": 56,
+        "copies": 3
+      },
+      {
+        "nom": "Cleave",
+        "part": 56,
+        "copies": 1.5
       }
     ],
     "champions": [
       {
-        "nom": "Kai'Sa, Survivor",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Vi, Peacekeeper",
-        "part": 95,
+        "part": 97,
         "copies": 1
       },
       {
+        "nom": "Kai'Sa, Survivor",
+        "part": 94,
+        "copies": 3
+      },
+      {
         "nom": "Rengar, Unseen",
-        "part": 90,
+        "part": 91,
         "copies": 2
       },
       {
         "nom": "Jhin, Murderous Artist",
-        "part": 55,
+        "part": 63,
         "copies": 3
-      },
-      {
-        "nom": "Shen, Kinkou",
-        "part": 40,
-        "copies": 1
       },
       {
         "nom": "Kennen, Keeper of Balance",
-        "part": 35,
-        "copies": 3
+        "part": 47,
+        "copies": 2
       },
       {
         "nom": "Rek'Sai, Breacher",
-        "part": 35,
-        "copies": 2
-      },
-      {
-        "nom": "Fiora, Victorious",
-        "part": 30,
-        "copies": 2
-      },
-      {
-        "nom": "Pyke, Dockside Butcher",
-        "part": 30,
-        "copies": 1.5
+        "part": 34,
+        "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Sunken Temple",
-        "part": 60
-      },
-      {
-        "nom": "Vilemaw's Lair",
-        "part": 45
+        "part": 66
       },
       {
         "nom": "Forge of the Fluft",
-        "part": 40
-      },
-      {
-        "nom": "Forbidding Waste",
-        "part": 40
+        "part": 59
       },
       {
         "nom": "Trapping Grounds",
-        "part": 35
+        "part": 44
+      },
+      {
+        "nom": "Vilemaw's Lair",
+        "part": 38
       }
     ],
     "runes": [
@@ -4833,12 +5105,12 @@
     ]
   },
   "Renekton, Butcher of the Sands": {
-    "decks": 20,
-    "joueurs": 58,
+    "decks": 31,
+    "joueurs": 69,
     "coupe": 0,
     "titres": 0,
     "conversion": 0,
-    "tournois": 9,
+    "tournois": 10,
     "meilleuresPlaces": [
       {
         "placement": "35th",
@@ -4869,110 +5141,110 @@
     "cartes": [
       {
         "nom": "Rampage",
-        "part": 90,
+        "part": 94,
         "copies": 2
       },
       {
         "nom": "First Mate",
-        "part": 85,
+        "part": 87,
         "copies": 3
       },
       {
         "nom": "Punch First",
-        "part": 80,
+        "part": 87,
         "copies": 3
       },
       {
         "nom": "Sabotage",
-        "part": 75,
+        "part": 81,
         "copies": 2
       },
       {
-        "nom": "Kinkou Initiate",
-        "part": 70,
-        "copies": 3
-      },
-      {
         "nom": "Noxus Hopeful",
-        "part": 70,
+        "part": 68,
         "copies": 3
       },
       {
-        "nom": "Pit Rookie",
+        "nom": "Kinkou Initiate",
         "part": 65,
         "copies": 3
       },
       {
+        "nom": "Pit Rookie",
+        "part": 61,
+        "copies": 3
+      },
+      {
         "nom": "Inferna",
-        "part": 60,
-        "copies": 3
-      },
-      {
-        "nom": "Irresistible Faefolk",
-        "part": 45,
-        "copies": 3
-      },
-      {
-        "nom": "Gem Jammer",
-        "part": 45,
+        "part": 55,
         "copies": 3
       },
       {
         "nom": "Ferrous Forerunner",
-        "part": 45,
+        "part": 55,
         "copies": 2
       },
       {
-        "nom": "Cleave",
-        "part": 45,
-        "copies": 1
+        "nom": "Irresistible Faefolk",
+        "part": 48,
+        "copies": 3
       },
       {
-        "nom": "Grim Apothecary",
-        "part": 40,
+        "nom": "Cleave",
+        "part": 48,
         "copies": 1
       },
       {
         "nom": "Dominus",
-        "part": 30,
+        "part": 45,
         "copies": 2
+      },
+      {
+        "nom": "Gem Jammer",
+        "part": 42,
+        "copies": 3
+      },
+      {
+        "nom": "Grim Apothecary",
+        "part": 35,
+        "copies": 1
       }
     ],
     "champions": [
       {
         "nom": "Renekton, Rage Fueled",
-        "part": 90,
+        "part": 94,
         "copies": 1
       },
       {
         "nom": "Kai'Sa, Survivor",
-        "part": 75,
+        "part": 81,
         "copies": 3
       },
       {
         "nom": "Rengar, Trophy Hunter",
-        "part": 70,
+        "part": 74,
         "copies": 3
       },
       {
         "nom": "Nidalee, Cat Form",
-        "part": 55,
+        "part": 48,
         "copies": 3
       },
       {
         "nom": "Darius, Trifarian",
-        "part": 40,
+        "part": 32,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Protective Sands",
-        "part": 75
+        "part": 65
       },
       {
         "nom": "Seat of Power",
-        "part": 45
+        "part": 52
       },
       {
         "nom": "Star Spring",
@@ -4992,173 +5264,13 @@
       }
     ]
   },
-  "Renata Glasc, Chem-Baroness": {
-    "decks": 18,
-    "joueurs": 59,
-    "coupe": 0,
-    "titres": 0,
-    "conversion": 0,
-    "tournois": 9,
-    "meilleuresPlaces": [
-      {
-        "placement": "35th",
-        "player": "月魔夜小",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "63th",
-        "player": "白泽-Diva",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "66th",
-        "player": "龆年",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "72th",
-        "player": "月魔夜小",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "72th",
-        "player": "龆年",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Hidden Blade",
-        "part": 100,
-        "copies": 2.5
-      },
-      {
-        "nom": "Hostile Takeover",
-        "part": 94,
-        "copies": 2
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 83,
-        "copies": 2
-      },
-      {
-        "nom": "Honest Broker",
-        "part": 78,
-        "copies": 3
-      },
-      {
-        "nom": "Plundering Poro",
-        "part": 67,
-        "copies": 3
-      },
-      {
-        "nom": "Patched Porobot",
-        "part": 61,
-        "copies": 3
-      },
-      {
-        "nom": "Stupefy",
-        "part": 61,
-        "copies": 2
-      },
-      {
-        "nom": "Forge of the Future",
-        "part": 56,
-        "copies": 2
-      },
-      {
-        "nom": "Vanguard Armory",
-        "part": 50,
-        "copies": 3
-      },
-      {
-        "nom": "Sprite Fountain",
-        "part": 50,
-        "copies": 3
-      },
-      {
-        "nom": "Cull the Weak",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Wages of Pain",
-        "part": 44,
-        "copies": 2
-      },
-      {
-        "nom": "Bellows Breath",
-        "part": 44,
-        "copies": 2
-      },
-      {
-        "nom": "Time Warp",
-        "part": 39,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Renata Glasc, Industrialist",
-        "part": 61,
-        "copies": 1
-      },
-      {
-        "nom": "Jayce, Man of Progress",
-        "part": 50,
-        "copies": 3
-      },
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 39,
-        "copies": 2
-      },
-      {
-        "nom": "Renata Glasc, Mastermind",
-        "part": 39,
-        "copies": 1
-      },
-      {
-        "nom": "Lillia, Fae Fawn",
-        "part": 33,
-        "copies": 3
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Treasure Hoard",
-        "part": 83
-      },
-      {
-        "nom": "Veiled Temple",
-        "part": 39
-      },
-      {
-        "nom": "Rockfall Path",
-        "part": 33
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "Poppy, Keeper of the Hammer": {
-    "decks": 16,
-    "joueurs": 52,
-    "coupe": 1,
+    "decks": 27,
+    "joueurs": 63,
+    "coupe": 2,
     "titres": 0,
-    "conversion": 1.9,
-    "tournois": 8,
+    "conversion": 3.2,
+    "tournois": 9,
     "meilleuresPlaces": [
       {
         "placement": "45th",
@@ -5171,6 +5283,11 @@
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       },
       {
+        "placement": "90th",
+        "player": "i开tv丶鹿宫shikamiya",
+        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
+      },
+      {
         "placement": "91th",
         "player": "GREY-梁龙",
         "tournament": "S4 Wuhan Regional Open (2026-08-29)"
@@ -5179,83 +5296,78 @@
         "placement": "100th",
         "player": "非洲游鱼",
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "122th",
-        "player": "小居头.JuiceJU",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       }
     ],
     "cartes": [
       {
         "nom": "Forge of the Future",
-        "part": 81,
+        "part": 74,
         "copies": 3
       },
       {
         "nom": "Elder Dragon",
-        "part": 81,
+        "part": 74,
         "copies": 3
       },
       {
         "nom": "Catalyst of Aeons",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Confront",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Dazzling Aurora",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Flurry of Blades",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Mobilize",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Sabotage",
-        "part": 75,
+        "part": 70,
         "copies": 2
       },
       {
         "nom": "Harnessed Dragon",
-        "part": 69,
+        "part": 67,
+        "copies": 3
+      },
+      {
+        "nom": "Sacrifice",
+        "part": 67,
         "copies": 3
       },
       {
         "nom": "Rift Herald",
-        "part": 69,
-        "copies": 2
-      },
-      {
-        "nom": "Sacrifice",
         "part": 63,
-        "copies": 3
+        "copies": 1
       },
       {
         "nom": "Cull the Weak",
-        "part": 63,
+        "part": 59,
         "copies": 2
+      },
+      {
+        "nom": "Salvage",
+        "part": 59,
+        "copies": 1
       },
       {
         "nom": "The Ruination",
-        "part": 50,
+        "part": 52,
         "copies": 2
-      },
-      {
-        "nom": "Shadow's Call",
-        "part": 44,
-        "copies": 3
       }
     ],
     "champions": [
@@ -5267,20 +5379,20 @@
     ],
     "terrains": [
       {
-        "nom": "Forgotten Monument",
-        "part": 63
-      },
-      {
         "nom": "Sigil of the Storm",
         "part": 63
       },
       {
+        "nom": "Forgotten Monument",
+        "part": 59
+      },
+      {
         "nom": "Dragon Roost",
-        "part": 38
+        "part": 41
       },
       {
         "nom": "Gardens of Becoming",
-        "part": 31
+        "part": 33
       }
     ],
     "runes": [
@@ -5296,177 +5408,13 @@
       }
     ]
   },
-  "Ivern, Green Father": {
-    "decks": 15,
-    "joueurs": 80,
-    "coupe": 0,
-    "titres": 0,
-    "conversion": 0,
-    "tournois": 13,
-    "meilleuresPlaces": [
-      {
-        "placement": "38th",
-        "player": "拯救周末",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "39th",
-        "player": "E1egy",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "47th",
-        "player": "叨叨魄罗-doge",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "51th",
-        "player": "XXT.FG.NANA",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "54th",
-        "player": "ARBD-楓◎凱·i开TV",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Trusty Ramhound",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Frisky Hunter",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Mutated Mouser",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Stalwart Poro",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Defy",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Daisy!",
-        "part": 87,
-        "copies": 2
-      },
-      {
-        "nom": "Emperor's Divide",
-        "part": 87,
-        "copies": 2
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 80,
-        "copies": 2
-      },
-      {
-        "nom": "Flurry of Feathers",
-        "part": 73,
-        "copies": 1
-      },
-      {
-        "nom": "Back Off",
-        "part": 67,
-        "copies": 1.5
-      },
-      {
-        "nom": "Ki Barrier",
-        "part": 60,
-        "copies": 2
-      },
-      {
-        "nom": "Meditation",
-        "part": 60,
-        "copies": 2
-      },
-      {
-        "nom": "Charm",
-        "part": 53,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Ivern, Friend to All",
-        "part": 87,
-        "copies": 1
-      },
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 67,
-        "copies": 2
-      },
-      {
-        "nom": "Azir, Sovereign",
-        "part": 53,
-        "copies": 2
-      },
-      {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Ivern, Nurturer",
-        "part": 33,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Forbidding Waste",
-        "part": 80
-      },
-      {
-        "nom": "Vaults of Helia",
-        "part": 80
-      },
-      {
-        "nom": "Vilemaw's Lair",
-        "part": 47
-      },
-      {
-        "nom": "Frozen Fortress",
-        "part": 33
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "Lux, Lady of Luminosity": {
-    "decks": 14,
-    "joueurs": 42,
+    "decks": 15,
+    "joueurs": 43,
     "coupe": 5,
     "titres": 0,
-    "conversion": 11.9,
-    "tournois": 13,
+    "conversion": 11.6,
+    "tournois": 14,
     "meilleuresPlaces": [
       {
         "placement": "3rd",
@@ -5502,67 +5450,67 @@
       },
       {
         "nom": "Forge of the Future",
-        "part": 86,
+        "part": 87,
         "copies": 3
       },
       {
         "nom": "Time Warp",
-        "part": 86,
-        "copies": 2.5
+        "part": 87,
+        "copies": 3
       },
       {
         "nom": "Sacrifice",
-        "part": 79,
+        "part": 80,
         "copies": 3
       },
       {
         "nom": "Soaring Scout",
-        "part": 71,
+        "part": 73,
         "copies": 3
       },
       {
         "nom": "Stupefy",
-        "part": 71,
+        "part": 73,
         "copies": 3
       },
       {
         "nom": "Shadow's Call",
-        "part": 71,
+        "part": 73,
         "copies": 3
       },
       {
-        "nom": "The Ruination",
-        "part": 71,
-        "copies": 1
-      },
-      {
         "nom": "Dredge Up",
-        "part": 64,
+        "part": 67,
         "copies": 3
       },
       {
         "nom": "Retreat",
-        "part": 64,
+        "part": 67,
         "copies": 2
       },
       {
+        "nom": "The Ruination",
+        "part": 67,
+        "copies": 1
+      },
+      {
         "nom": "Seal of Insight",
-        "part": 57,
+        "part": 60,
         "copies": 3
       },
       {
         "nom": "Sprite Burst",
-        "part": 57,
+        "part": 60,
         "copies": 2
       },
       {
         "nom": "Promising Future",
-        "part": 50,
+        "part": 47,
         "copies": 3
       },
       {
         "nom": "Wages of Pain",
-        "part": 50,
+        "part": 47,
         "copies": 3
       }
     ],
@@ -5574,22 +5522,22 @@
       },
       {
         "nom": "Ekko, Recurrent",
-        "part": 79,
+        "part": 80,
         "copies": 3
       }
     ],
     "terrains": [
       {
         "nom": "Forgotten Monument",
-        "part": 79
+        "part": 80
       },
       {
         "nom": "The Papertree",
-        "part": 64
+        "part": 67
       },
       {
         "nom": "Sigil of the Storm",
-        "part": 57
+        "part": 53
       }
     ],
     "runes": [
@@ -5602,6 +5550,170 @@
         "nom": "Order Rune",
         "part": 100,
         "copies": 5
+      }
+    ]
+  },
+  "Leona, Radiant Dawn": {
+    "decks": 15,
+    "joueurs": 19,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 5.3,
+    "tournois": 10,
+    "meilleuresPlaces": [
+      {
+        "placement": "9th",
+        "player": "公爵",
+        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "56th",
+        "player": "麦芽",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "57th",
+        "player": "era",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "70th",
+        "player": "公爵",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "72th",
+        "player": "xyz-心火",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Back Off",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Call to Glory",
+        "part": 93,
+        "copies": 2.5
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 87,
+        "copies": 3
+      },
+      {
+        "nom": "Zenith Blade",
+        "part": 73,
+        "copies": 2
+      },
+      {
+        "nom": "Emperor's Divide",
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Thwonk!",
+        "part": 60,
+        "copies": 1
+      },
+      {
+        "nom": "Affectionate Poro",
+        "part": 53,
+        "copies": 2.5
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 47,
+        "copies": 2
+      },
+      {
+        "nom": "Lonely Poro",
+        "part": 40,
+        "copies": 3
+      },
+      {
+        "nom": "Mournful Witness",
+        "part": 40,
+        "copies": 3
+      },
+      {
+        "nom": "Charm",
+        "part": 40,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Leona, Determined",
+        "part": 93,
+        "copies": 1
+      },
+      {
+        "nom": "Kennen, Keeper of Balance",
+        "part": 87,
+        "copies": 3
+      },
+      {
+        "nom": "Fiora, Victorious",
+        "part": 40,
+        "copies": 2.5
+      },
+      {
+        "nom": "Nami, Headstrong",
+        "part": 40,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Monastery of Hirana",
+        "part": 100
+      },
+      {
+        "nom": "Sunken Temple",
+        "part": 80
+      },
+      {
+        "nom": "Heisho, Shell of the World",
+        "part": 33
+      },
+      {
+        "nom": "Amateur Recital",
+        "part": 33
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 6
       }
     ]
   },
@@ -5775,187 +5887,13 @@
       }
     ]
   },
-  "Leona, Radiant Dawn": {
-    "decks": 12,
-    "joueurs": 16,
-    "coupe": 1,
-    "titres": 0,
-    "conversion": 6.3,
-    "tournois": 9,
-    "meilleuresPlaces": [
-      {
-        "placement": "9th",
-        "player": "公爵",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "56th",
-        "player": "麦芽",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "57th",
-        "player": "era",
-        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "70th",
-        "player": "公爵",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "72th",
-        "player": "xyz-心火",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Back Off",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 100,
-        "copies": 2.5
-      },
-      {
-        "nom": "Call to Glory",
-        "part": 92,
-        "copies": 2
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 83,
-        "copies": 3
-      },
-      {
-        "nom": "Zenith Blade",
-        "part": 75,
-        "copies": 2
-      },
-      {
-        "nom": "Emperor's Divide",
-        "part": 67,
-        "copies": 2
-      },
-      {
-        "nom": "Affectionate Poro",
-        "part": 58,
-        "copies": 2
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Thwonk!",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Lonely Poro",
-        "part": 42,
-        "copies": 3
-      },
-      {
-        "nom": "Mournful Witness",
-        "part": 42,
-        "copies": 3
-      },
-      {
-        "nom": "Charm",
-        "part": 42,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Leona, Determined",
-        "part": 92,
-        "copies": 1
-      },
-      {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 83,
-        "copies": 3
-      },
-      {
-        "nom": "Fiora, Victorious",
-        "part": 42,
-        "copies": 2
-      },
-      {
-        "nom": "Nami, Headstrong",
-        "part": 33,
-        "copies": 2
-      },
-      {
-        "nom": "Vex, Mocking",
-        "part": 33,
-        "copies": 2
-      },
-      {
-        "nom": "Leona, Zealot",
-        "part": 33,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Monastery of Hirana",
-        "part": 100
-      },
-      {
-        "nom": "Sunken Temple",
-        "part": 83
-      },
-      {
-        "nom": "Heisho, Shell of the World",
-        "part": 42
-      },
-      {
-        "nom": "Amateur Recital",
-        "part": 33
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "Master Yi, Wuju Master": {
     "decks": 10,
-    "joueurs": 91,
-    "coupe": 3,
+    "joueurs": 102,
+    "coupe": 4,
     "titres": 0,
-    "conversion": 3.3,
-    "tournois": 12,
+    "conversion": 3.9,
+    "tournois": 13,
     "meilleuresPlaces": [
       {
         "placement": "19th",
@@ -6261,13 +6199,12 @@
     ]
   },
   "Volibear, Relentless Storm": {
-    "decks": 7,
-    "toutesEres": true,
-    "joueurs": 403,
-    "coupe": 14,
+    "decks": 10,
+    "joueurs": 10,
+    "coupe": 1,
     "titres": 0,
-    "conversion": 3.5,
-    "tournois": 71,
+    "conversion": 10,
+    "tournois": 8,
     "meilleuresPlaces": [
       {
         "placement": "5th",
@@ -6275,39 +6212,159 @@
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
       },
       {
-        "placement": "6th",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-09-27)"
+        "placement": "33th",
+        "player": "魔王Jun",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       },
       {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+        "placement": "47th",
+        "player": "青鸟",
+        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+        "placement": "56th",
+        "player": "三鲜馅饺子",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "12th",
-        "player": null,
-        "tournament": "Chengdu City Challenge (2025-10-12)"
+        "placement": "59th",
+        "player": "紫枫",
+        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       }
     ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
+    "cartes": [
+      {
+        "nom": "Kadregrin the Infernal",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Mobilize",
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Sky Splitter",
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Gentle Gemdragon",
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Elder Dragon",
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Dragonsoul Sage",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Herald of Scales",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 70,
+        "copies": 2
+      },
+      {
+        "nom": "Show of Strength",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Blazing Scorcher",
+        "part": 60,
+        "copies": 3
+      },
+      {
+        "nom": "Flurry of Blades",
+        "part": 60,
+        "copies": 2.5
+      },
+      {
+        "nom": "Sabotage",
+        "part": 60,
+        "copies": 1
+      },
+      {
+        "nom": "Dazzling Aurora",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Minotaur Reckoner",
+        "part": 50,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Volibear, Furious",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 70,
+        "copies": 2
+      },
+      {
+        "nom": "Jayce, Hammer in Hand",
+        "part": 40,
+        "copies": 1.5
+      },
+      {
+        "nom": "Akshan, Mischievous",
+        "part": 40,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Sigil of the Storm",
+        "part": 90
+      },
+      {
+        "nom": "Dragon Roost",
+        "part": 60
+      },
+      {
+        "nom": "Mystic Vortex",
+        "part": 40
+      },
+      {
+        "nom": "Frozen Fortress",
+        "part": 30
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
   },
   "Ahri, Nine-Tailed Fox": {
-    "decks": 6,
+    "decks": 8,
     "toutesEres": true,
-    "joueurs": 804,
+    "joueurs": 806,
     "coupe": 33,
     "titres": 1,
     "conversion": 4.1,
-    "tournois": 81,
+    "tournois": 82,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -6333,6 +6390,46 @@
         "placement": "5th",
         "player": null,
         "tournament": "Beijing City Challenge (2025-09-27)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Yasuo, Unforgiven": {
+    "decks": 7,
+    "toutesEres": true,
+    "joueurs": 519,
+    "coupe": 15,
+    "titres": 1,
+    "conversion": 2.9,
+    "tournois": 75,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "9th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "11th",
+        "player": "𝙶𝙻𝚇-归来",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "11th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
       }
     ],
     "cartes": [],
@@ -6380,54 +6477,14 @@
     "terrains": [],
     "runes": []
   },
-  "Yasuo, Unforgiven": {
-    "decks": 6,
-    "toutesEres": true,
-    "joueurs": 519,
-    "coupe": 15,
-    "titres": 1,
-    "conversion": 2.9,
-    "tournois": 75,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-07)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "9th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "11th",
-        "player": "𝙶𝙻𝚇-归来",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "11th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
   "Miss Fortune, Bounty Hunter": {
-    "decks": 4,
+    "decks": 5,
     "toutesEres": true,
-    "joueurs": 923,
+    "joueurs": 924,
     "coupe": 85,
     "titres": 1,
     "conversion": 9.2,
-    "tournois": 88,
+    "tournois": 89,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -6461,7 +6518,7 @@
     "runes": []
   },
   "Jinx, Loose Cannon": {
-    "decks": 3,
+    "decks": 4,
     "toutesEres": true,
     "joueurs": 453,
     "coupe": 11,
@@ -6540,6 +6597,46 @@
     "terrains": [],
     "runes": []
   },
+  "Garen, Might of Demacia": {
+    "decks": 1,
+    "toutesEres": true,
+    "joueurs": 211,
+    "coupe": 2,
+    "titres": 0,
+    "conversion": 0.9,
+    "tournois": 37,
+    "meilleuresPlaces": [
+      {
+        "placement": "8th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-05-10)"
+      },
+      {
+        "placement": "43th",
+        "player": null,
+        "tournament": "S2 Guangzhou City Challenge (2026-03-08)"
+      },
+      {
+        "placement": "47th",
+        "player": null,
+        "tournament": "S3 Guangzhou City Challenge (2026-05-17)"
+      },
+      {
+        "placement": "48th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-11-23)"
+      },
+      {
+        "placement": "56th",
+        "player": "草莓蛋糕",
+        "tournament": "Suzhou Regional Qualifier"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
   "Lee Sin, Blind Monk": {
     "decks": 1,
     "toutesEres": true,
@@ -6573,46 +6670,6 @@
         "placement": "12th",
         "player": null,
         "tournament": "Guangzhou City Challenge (2025-09-27)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Garen, Might of Demacia": {
-    "decks": 0,
-    "toutesEres": true,
-    "joueurs": 210,
-    "coupe": 2,
-    "titres": 0,
-    "conversion": 1,
-    "tournois": 36,
-    "meilleuresPlaces": [
-      {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-05-10)"
-      },
-      {
-        "placement": "43th",
-        "player": null,
-        "tournament": "S2 Guangzhou City Challenge (2026-03-08)"
-      },
-      {
-        "placement": "47th",
-        "player": null,
-        "tournament": "S3 Guangzhou City Challenge (2026-05-17)"
-      },
-      {
-        "placement": "48th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-23)"
-      },
-      {
-        "placement": "56th",
-        "player": "草莓蛋糕",
-        "tournament": "Suzhou Regional Qualifier"
       }
     ],
     "cartes": [],
