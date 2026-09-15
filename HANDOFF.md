@@ -40,9 +40,13 @@ non suivie.
 la clé au numéro du rang tient aussi en prod) et son best-of (39), les 122 listes
 de Shanghai 246, qui n'y étaient pas.
 
-**Reste, refusé par le garde-fou, à lancer par Allan** : la table `Abonnement` en
-prod (demande de Codex, AVANT le prochain Deploy), `scripts/maj-abonnements-schema.mts`
-avec `--sec` d'abord, voir plus bas.
+**Table `Abonnement` créée en prod le 15 septembre** par Allan, en SQL direct dans
+le conteneur PostgreSQL (le même SQL que `scripts/maj-abonnements-schema.mts`) :
+table, deux index, clé étrangère vers `User`, 0 ligne. Le Deploy peut partir.
+
+Tier lists refaites et seedées en prod le même jour : Ezreal passe en S en
+Vendetta (p = 0,022), commentaires Vendetta et Globale sur le relevé du 15
+septembre. La lettre de sa fiche `/legendes` arrive avec le Deploy.
 
 ## Session du 11 septembre 2026 — RQ Singapour poussé et seedé en prod
 
