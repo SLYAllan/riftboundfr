@@ -112,14 +112,18 @@ export default async function CardDetailPage({ params }: PageProps) {
     ],
     ...(prixCarte
       ? {
+          // `AggregateOffer` et pas `Offer` : avec un `Offer`, Google prenait la
+          // page pour une boutique (« fiche marchand ») et réclamait livraison,
+          // retours et stock. Le site ne vend rien, ces champs sont ceux des
+          // vendeurs CardNexus et on ne les connaît pas : les inventer serait
+          // faux. `AggregateOffer` = prix constaté chez plusieurs vendeurs, que
+          // Google ne lit que pour l'extrait produit, où ces champs ne sont pas
+          // demandés.
           offers: {
-            "@type": "Offer",
-            price: prixCarte.eur.toFixed(2),
+            "@type": "AggregateOffer",
+            lowPrice: prixCarte.eur.toFixed(2),
             priceCurrency: "EUR",
             url: lienProduit(prixCarte.productId, prixCarte.nom),
-            seller: { "@type": "Organization", name: "CardNexus" },
-            // Pas d'`availability` : le stock est celui de vendeurs tiers, on ne
-            // le connaît pas. Annoncer « InStock » sans le savoir serait faux.
           },
         }
       : {}),
