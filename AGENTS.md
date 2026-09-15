@@ -117,7 +117,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (voir plus haut les quatre cas de refus) ; `npm run validate:regles` = ses tests Python. Les deux tournent en CI, dans un job à part.
 
 **Sources de vérité (où vit quoi) :**
-- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (10 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
+- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (12 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026 + 2 du 18 septembre 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
 - Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
 - Méta/tier/rulings → `docs/META-KNOWLEDGE.md` · règles deckbuilding/cores → `docs/DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
   **Tous se refont par `npm run maj:stats`, jamais à la main.** Le corpus qu'ils partagent est

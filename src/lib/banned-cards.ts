@@ -7,6 +7,10 @@
 //  - 24 juillet 2026 (July Ban List Updates, patch Vendetta) : 1 unité et 2 champs
 //    de bataille bannis en Standard.
 //    https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/
+//  - 15 septembre 2026 (September Ban List Updates, en vigueur le 18) : 1 unité et
+//    1 sort bannis en Standard et en 2v2. Appliqués dès l'annonce, pour que les
+//    listes montées cette semaine soient déjà légales le 18.
+//    https://playriftbound.com/en-us/news/announcements/september-ban-list-updates-effective-september-18-2026/
 export const BANNED_CARD_NAMES = new Set([
   // 31 mars 2026
   "Called Shot",
@@ -20,6 +24,9 @@ export const BANNED_CARD_NAMES = new Set([
   "Stealthy Pursuer",
   "The Arena's Greatest",
   "Aspirant's Climb",
+  // 18 septembre 2026
+  "Ekko, Recurrent",
+  "Stacked Deck",
 ]);
 
 // Aucune Légende n'est bannie dans les formats couverts par le site. L'annonce de
@@ -34,6 +41,7 @@ export const BANNED_CARD_NAMES = new Set([
 export const DATES_BANS: Array<{ date: string; libelle: string }> = [
   { date: "2026-03-31", libelle: "7 cartes interdites en construit" },
   { date: "2026-07-24", libelle: "3 cartes interdites en Standard" },
+  { date: "2026-09-15", libelle: "2 cartes interdites en Standard le 18 septembre" },
 ];
 
 export function isBanned(cardName: string): boolean {

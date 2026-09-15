@@ -12,6 +12,9 @@ export interface BanEntry {
 const ANNONCE_MARS = "Annonce design du 31 mars 2026";
 const ANNONCE_JUILLET =
   "https://playriftbound.com/fr-fr/news/announcements/july-ban-list-updates/";
+// Publiée en anglais seulement : pas de nom français officiel à reprendre.
+const ANNONCE_SEPTEMBRE =
+  "https://playriftbound.com/en-us/news/announcements/september-ban-list-updates-effective-september-18-2026/";
 
 export const BAN_ENTRIES: BanEntry[] = [
   { en: "Called Shot", type: "Sort", date: "31 mars 2026", source: ANNONCE_MARS },
@@ -24,4 +27,6 @@ export const BAN_ENTRIES: BanEntry[] = [
   { en: "Stealthy Pursuer", fr: "Traqueuse furtive", type: "Unité", date: "24 juillet 2026", source: ANNONCE_JUILLET },
   { en: "The Arena's Greatest", fr: "Légende de l'arène", type: "Champ de bataille", date: "24 juillet 2026", source: ANNONCE_JUILLET },
   { en: "Aspirant's Climb", fr: "Ascension des aspirants", type: "Champ de bataille", date: "24 juillet 2026", source: ANNONCE_JUILLET },
+  { en: "Ekko, Recurrent", type: "Unité", date: "18 septembre 2026", source: ANNONCE_SEPTEMBRE },
+  { en: "Stacked Deck", type: "Sort", date: "18 septembre 2026", source: ANNONCE_SEPTEMBRE },
 ];

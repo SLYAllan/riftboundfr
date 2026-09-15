@@ -32,11 +32,26 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // deux qui restent sont des Légendes d'Origines désertées depuis la rotation
     // des Best-Of : moins de dix listes chacune dans le format, donc le script
     // les laisse telles quelles et leurs cartes datent.
+    //
+    // Le ban de Stacked Deck (18 septembre) en ajoute onze d'un coup : les fiches
+    // sont calculées sur des listes jouées avant le ban. Elles retomberont quand
+    // `maj:stats` tournera sur des listes d'après le 18.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
+      "annie-dark-child.json",
+      "diana-scorn-of-the-moon.json",
+      "draven-glorious-executioner.json",
+      "ezreal-prodigal-explorer.json",
+      "irelia-blade-dancer.json",
       "jinx-loose-cannon.json",
+      "kennen-heart-of-the-tempest.json",
+      "khazix-voidreaver.json",
+      "mel-souls-reflection.json",
+      "pyke-bloodharbor-ripper.json",
+      "sivir-battle-mistress.json",
       "yasuo-unforgiven.json",
+      "zed-master-of-shadows.json",
     ]);
   });
 

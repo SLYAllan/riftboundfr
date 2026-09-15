@@ -29,6 +29,12 @@ const metadata: Metadata = {
 
 // Les noms EN sont ceux de la base de cartes, ils font foi pour le deckbuilder
 // (cf. src/lib/banned-cards.ts). Les noms FR viennent des annonces officielles.
+// Annonce publiée en anglais seulement : noms EN tant que Riot n'a pas traduit.
+const SEPTEMBRE = [
+  { en: "Ekko, Recurrent", type: "Unité" },
+  { en: "Stacked Deck", type: "Sort" },
+];
+
 const JUILLET = [
   { en: "Stealthy Pursuer", fr: "Traqueuse furtive", type: "Unité" },
   { en: "The Arena's Greatest", fr: "Légende de l'arène", type: "Champ de bataille" },
@@ -62,7 +68,7 @@ const PROMO_SETS = new Set(["PR", "OPP", "JDG"]);
 // Les cartes bannies/erratées ne changent pas d'une visite à l'autre → cache long.
 const getBanCards = unstable_cache(
   async (): Promise<BanCard[]> => {
-    const names = [...new Set([...JUILLET.map((c) => c.en), ...MARS, ...ERRATA_2026_07.map((e) => e.name)])];
+    const names = [...new Set([...SEPTEMBRE.map((c) => c.en), ...JUILLET.map((c) => c.en), ...MARS, ...ERRATA_2026_07.map((e) => e.name)])];
     return prisma.card.findMany({
       where: { OR: names.map((n) => ({ name: { startsWith: n } })) },
       select: {
@@ -71,7 +77,7 @@ const getBanCards = unstable_cache(
       },
     });
   },
-  ["ban-list-cards-v1"],
+  ["ban-list-cards-v2"],
   { revalidate: 3600, tags: ["cards"] },
 );
 
@@ -119,10 +125,22 @@ export default async function BanListPage() {
 
       <h1 className="mt-4 text-4xl font-bold" style={heading}>Ban list Riftbound</h1>
       <p className="mt-3 text-ink-secondary">
-        Dix cartes n&apos;ont plus leur place en Standard. Si l&apos;une d&apos;elles traîne encore
+        Douze cartes n&apos;ont plus leur place en Standard. Si l&apos;une d&apos;elles traîne encore
         dans ta liste, ton deck est illégal en tournoi : mieux vaut le découvrir maintenant que
         devant un arbitre. Elles restent jouables en draft et en scellé, et le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>{" "}{t("te prévient si tu en glisses une.")}</p>
+
+      <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("18 septembre 2026")}</h2>
+      <p className="mt-2 text-ink-secondary">{t("Deux cartes tombent avant le Regional Qualifier de Los Angeles. Stacked Deck quitte les listes Chaos, et c’est Kennen qui le sentira le plus : son moteur comptait dessus pour trier sa pioche. Ekko, Recurrent part avec le combo infini de Lux, rare en tournoi mais trop long à subir en face.")}</p>
+      <div className="mt-5 flex flex-wrap justify-center gap-5 sm:justify-start">
+        {SEPTEMBRE.map((c) => (
+          <CardThumb key={c.en} card={bestEdition(cards, c.en)} caption={c.en} sub={c.type} />
+        ))}
+      </div>
+      <p className="mt-3 text-sm text-ink-muted">
+        {t("Annonce publiée en anglais :")}{" "}
+        <a href="https://playriftbound.com/en-us/news/announcements/september-ban-list-updates-effective-september-18-2026/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">{t("lire l’annonce de Riot")}</a>
+      </p>
 
       <h2 className="mt-10 text-2xl font-bold" style={heading}>24 juillet 2026, patch Vendetta</h2>
       <p className="mt-2 text-ink-secondary">{t("Trois cartes tombent, et ce sont surtout les deux champs de bataille qui vont se sentir. Aspirant’s Climb tournait dans près d’un deck de tournoi sur quatre, The Arena’s Greatest dans presque un sur cinq. Si tu joues de la rampe Corps ou de l’agression Fureur, il va falloir leur trouver un remplaçant avant ton prochain tournoi.")}</p>

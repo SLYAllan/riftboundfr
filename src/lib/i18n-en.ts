@@ -1225,4 +1225,8 @@ export const EN: Record<string, string> = {
   "Ajouter au deck": "Add to deck",
   "quantité maximale atteinte": "maximum quantity reached",
   "Retirer le filtre": "Remove filter",
+  "18 septembre 2026": "September 18, 2026",
+  "Deux cartes tombent avant le Regional Qualifier de Los Angeles. Stacked Deck quitte les listes Chaos, et c’est Kennen qui le sentira le plus : son moteur comptait dessus pour trier sa pioche. Ekko, Recurrent part avec le combo infini de Lux, rare en tournoi mais trop long à subir en face.": "Two cards go before the Los Angeles Regional Qualifier. Stacked Deck leaves Chaos lists, and Kennen will feel it most: his engine relied on it to sort his draws. Ekko, Recurrent goes with the Lux infinite combo, rare in tournaments but too long to sit through.",
+  "Annonce publiée en anglais :": "Riot's announcement:",
+  "lire l’annonce de Riot": "read it here",
 };

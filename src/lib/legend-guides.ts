@@ -22,8 +22,8 @@ export const LEGEND_GUIDES: Record<string, LegendGuide> = {
     bref: `Mel, Soul's Reflection joue en Esprit et Chaos, sur un plan d'amplification et de sorts pris à l'adversaire. C'est un deck difficile à piloter. Il compte 48 listes en tournoi, sur dix-huit tournois, et n'a signé aucun Top 8.`,
     gagne: `Mel suit le rythme de vos sorts. Chaque fois que vous amplifiez une autre carte, elle s'amplifie aussi. Vous pouvez ensuite la désamplifier et l'épuiser pour retirer 2 à une unité au combat. Elle se charge donc pendant que vous jouez, puis se vide au bon moment pour affaiblir une unité adverse.
 
-Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, vous donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans toutes les listes, et **[[Stacked Deck]]** (90 %) gardent votre main pleine. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (73 % des listes) rend vos sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (58 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.`,
-    plan: `**Début de partie.** **[[Stupefy]]** et **[[Stacked Deck]]** (90 %) tiennent votre main pleine à une énergie. Vous jouez vos cartes à bas coût et vous gardez le rythme.
+Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, vous donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans toutes les listes, garde votre main pleine. **[[Stacked Deck]]** (90 %) faisait le même travail, mais il est interdit depuis le 18 septembre 2026. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (73 % des listes) rend vos sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (58 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.`,
+    plan: `**Début de partie.** **[[Stupefy]]** tient votre main pleine à une énergie. Vous jouez vos cartes à bas coût et vous gardez le rythme.
 
 **Milieu de partie.** **[[Rebuttal]]**, dans toutes les listes, vous donne le contrôle d'un sort adverse. **[[Applied Researchers]]** amplifié (42 %) baisse le coût de vos sorts. Vous prenez les réponses et vous perturbez le plan de l'adversaire.
 
@@ -36,8 +36,8 @@ Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en
     bref: `Zed, Master of Shadows joue en Furie et Chaos. Son plan : bannir ses cartes pour amplifier la Légende, puis défausser et piocher à chaque tour. Le deck est Difficile à piloter. En treize tournois, 22 listes ont été jouées, aucune n'a atteint le Top 8.`,
     gagne: `Chaque carte que vous bannissez amplifie Zed. Vous pouvez ensuite le désamplifier et l'épuiser pour défausser une carte, puis en piocher une. Votre main tourne sans cesse : vous écartez les cartes mortes et vous gardez les bonnes.
 
-Ce moteur tourne grâce à **[[Stacked Deck]]**, dans 95 % des listes, qui vous laisse choisir une carte parmi trois. **[[Death Mark]]**, aussi dans 95 % des listes, ouvre le combat. **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Et **[[Zed, From the Shadows]]**, dans 68 % des listes, arrive avec un Clone d'Ombre quand vous le payez en défausse.`,
-    plan: `**Début de partie.** Vous posez **[[Stacked Deck]]** pour choisir la bonne carte parmi trois. **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Votre main se met en ordre dès le départ.
+Ce moteur tournait grâce à **[[Stacked Deck]]**, dans 95 % des listes, interdit depuis le 18 septembre 2026 : les listes jouées avant le ban ne disent pas encore ce qui le remplace. **[[Death Mark]]**, dans 95 % des listes lui aussi, ouvre le combat. **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Et **[[Zed, From the Shadows]]**, dans 68 % des listes, arrive avec un Clone d'Ombre quand vous le payez en défausse.`,
+    plan: `**Début de partie.** **[[Traveling Merchant]]**, dans 82 % des listes, échange une carte à chacun de vos déplacements. Votre main se met en ordre dès le départ.
 
 **Milieu de partie.** **[[Death Mark]]**, dans 95 % des listes, ouvre le combat. Vous payez **[[Zed, From the Shadows]]** en défausse : il arrive avec un Clone d'Ombre. Deux menaces pèsent là où l'adversaire n'en attendait qu'une.
 
@@ -107,7 +107,7 @@ Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) i
     gagne: `Chaque carte jouée ailleurs que depuis votre main amplifie Kennen. Désamplifie-le et épuise-le, et une unité gagne **Assaut 2** pour le tour. Le bonus ne vous coûte rien d'autre que d'avoir rempli votre cimetière avant.
 
 **[[Rhasa the Sunderer]]** transforme ce remplissage en victoire : 10 d'énergie de base, une de moins par carte au cimetière. Le deck passe ses premiers tours à se défausser, puis pose une menace que personne ne paie au prix fort.`,
-    plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle pioche une carte sur trois et envoie les deux autres au cimetière. **[[Stacked Deck]]**, dans 98 % des listes, choisit ce qui tombe. Vous ne subissez pas votre cimetière, vous le construisez.
+    plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle pioche une carte sur trois et envoie les deux autres au cimetière. **[[Stacked Deck]]**, qui choisissait ce qui tombe dans 98 % des listes, est interdit depuis le 18 septembre 2026 : le tri est moins fin, et le moteur plus lent.
 
 **Milieu de partie.** Les sorts rejoués depuis le cimetière amplifient la Légende sans rien coûter. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 90 % et 82 % des listes, pèsent sur les combats.
 
@@ -130,7 +130,7 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   "diana-scorn-of-the-moon": {
     slug: "diana-scorn-of-the-moon",
     bref: `Diana est un deck **Esprit/Chaos** d'**aggro-tempo**, parmi les tout meilleurs du format mais aussi l'un des plus exigeants. Énormément de décisions à chaque tour et une faible marge d'erreur : ce n'est pas un premier deck idéal, mais c'est l'un des plus intéressants à apprendre.`,
-    gagne: `Une grande partie de Riftbound se joue en confrontation : quand deux armées se croisent sur un champ de bataille, chacun peut jouer des sorts pour prendre l'avantage au combat. Diana est faite pour gagner ces échanges. Vos unités grossissent dès que vous lancez un sort grâce à **[[Ravenbloom Student]]**, et vous disposez d'un arsenal de réactions à 1 d'énergie : **[[Gust]]** renvoie un attaquant, **[[Stupefy]]** affaiblit une unité, **[[Stacked Deck]]** vous trouve la bonne carte. À chaque combat, vous avez une réponse de plus que l'adversaire.`,
+    gagne: `Une grande partie de Riftbound se joue en confrontation : quand deux armées se croisent sur un champ de bataille, chacun peut jouer des sorts pour prendre l'avantage au combat. Diana est faite pour gagner ces échanges. Vos unités grossissent dès que vous lancez un sort grâce à **[[Ravenbloom Student]]**, et vous disposez d'un arsenal de réactions à 1 d'énergie : **[[Gust]]** renvoie un attaquant, **[[Stupefy]]** affaiblit une unité. À chaque combat, vous avez une réponse de plus que l'adversaire.`,
     plan: `**Début de partie.** Prenez le contrôle des premiers combats. Vos petites unités, gonflées par vos sorts, gagnent des échanges qu'elles ne devraient pas, et vous prenez la tête au score.
 
 **Milieu de partie.** **[[Hwei, Brooding Painter]]** devient votre moteur : il pioche et défausse à chaque déplacement. **[[Moonfall]]** et **[[Star-Crossed]]** repositionnent vos unités pour transformer un combat perdu en combat gagné.
@@ -183,7 +183,7 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
     gagne: `Tout tourne autour du ciblage. **[[Deadly Flourish]]** inflige des dégâts et laisse une récompense, **[[Stupefy]]** affaiblit, **[[Bellows Breath]]** répond. Chaque carte que vous visez côté adverse fait avancer votre capacité et vous fait piocher. **[[Fizz, Trickster]]** rejoue un sort depuis votre défausse, et vous finissez par enchaîner plus de réponses que l'adversaire n'a de menaces. Quand il n'a plus rien, vous conquérez le plateau vide.`,
     plan: `**Début de partie.** Installez votre économie et gérez les premières menaces sans vous précipiter : vos grosses cartes arrivent plus tard.
 
-**Milieu de partie.** Prenez le contrôle avec **[[Deadly Flourish]]** et **[[Stacked Deck]]**, et commencez à piocher gratuitement en visant la main et le plateau adverses.
+**Milieu de partie.** Prenez le contrôle avec **[[Deadly Flourish]]**, et commencez à piocher gratuitement en visant la main et le plateau adverses.
 
 **Fin de partie.** Votre capacité tourne à plein, vous rejouez vos meilleurs sorts avec **[[Fizz, Trickster]]**, et l'adversaire n'a tout simplement plus les ressources pour suivre.`,
   },
@@ -359,7 +359,7 @@ Le résultat, c'est un deck qui répond à tout. **[[Falling Star]]** inflige 3 
     gagne: `Sa capacité prépare jusqu'à deux runes à la fin de votre tour. Concrètement, vous jouez pendant le tour adverse avec des ressources que les autres n'ont plus. C'est une invitation à remplir votre deck de réactions et à ne jamais rester passif.
 
 Le reste du deck sert à déplacer les unités, les tiennes comme celles d'en face. **[[Fight or Flight]]** et **[[Flash]]** renvoient des unités à la base, **[[Rebuke]]** en renvoie une carrément en main, **[[Ride the Wind]]** repositionne au bon moment. Un champ de bataille que l'adversaire croyait tenir se vide juste avant qu'il ne marque.`,
-    plan: `**Début de partie.** Développez sans vous exposer. **[[Traveling Merchant]]** échange une carte morte contre une neuve à chaque déplacement, **[[Stacked Deck]]** va chercher la pièce manquante.
+    plan: `**Début de partie.** Développez sans vous exposer. **[[Traveling Merchant]]** échange une carte morte contre une neuve à chaque déplacement.
 
 **Milieu de partie.** Choisissez vos combats et refusez les autres. Vous n'avez pas besoin de gagner un affrontement : sortir votre unité au dernier moment suffit à annuler celui de l'adversaire.
 
