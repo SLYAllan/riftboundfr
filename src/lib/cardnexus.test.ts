@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, cleListeAchat } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, cleListeAchat, releveAMaigri } from "./cardnexus";
 
 it("le panier change quand ses cartes, quantités, finitions ou langues changent", () => {
   const ligne = { productId: 1, quantity: 2, finish: "Standard", language: "en" };
@@ -243,5 +243,21 @@ describe("prixPerimes", () => {
 
   it("ne dit rien quand il n’y a pas de relevé", () => {
     expect(prixPerimes(null, maintenant)).toBe(false);
+  });
+});
+
+describe("releveAMaigri", () => {
+  const releve = (n: number) => ({
+    fetchedAt: "",
+    cards: Object.fromEntries(Array.from({ length: n }, (_, i) => [`c${i}`, { eur: 1, productId: i, nom: "", source: "", finition: "" }])),
+  });
+
+  it("accepte une petite baisse et refuse une chute de plus de 10 %", () => {
+    expect(releveAMaigri(releve(100), releve(95))).toBe(false);
+    expect(releveAMaigri(releve(100), releve(80))).toBe(true);
+  });
+
+  it("accepte tout quand il n'y avait pas de relevé", () => {
+    expect(releveAMaigri(null, releve(0))).toBe(false);
   });
 });

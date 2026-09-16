@@ -99,19 +99,61 @@ export interface PrixCarte {
   finition: string;
 }
 
-interface FichierPrix {
+export interface FichierPrix {
+  source?: string;
   fetchedAt: string;
+  currency?: string;
   cards: Record<string, PrixCarte>;
 }
 
 let cache: FichierPrix | null = null;
 
 /**
+ * Un relevé qui maigrit de plus de 10 % veut presque toujours dire que le
+ * catalogue a mal répondu, pas que des cartes ont perdu leur prix. Sans ce
+ * garde-fou, un relevé amputé remplaçait le bon et des decks s'affichaient sans
+ * montant.
+ */
+export function releveAMaigri(avant: FichierPrix | null, apres: FichierPrix): boolean {
+  const n = Object.keys(avant?.cards ?? {}).length;
+  return n - Object.keys(apres.cards).length > n * 0.1;
+}
+
+/** Âge à partir duquel le serveur relève lui-même les prix. */
+const RELEVE_AUTO_MS = 24 * 3_600_000;
+/** Délai avant de retenter après un échec : ne pas marteler l'API à chaque visite. */
+const RETENTE_MS = 3_600_000;
+let derniereTentative = 0;
+
+// Relevé en tâche de fond : la page en cours garde l'ancien relevé, les
+// suivantes prennent le neuf. Il ne vit qu'en mémoire : le conteneur ne peut pas
+// écrire dans /app, et un redémarrage repart du fichier puis se relève.
+function releverEnFond(maintenant = Date.now()) {
+  const cle = process.env.CARDNEXUS_API_KEY;
+  if (!cle || process.env.NEXT_PHASE === "phase-production-build") return;
+  if (maintenant - derniereTentative < RETENTE_MS) return;
+  const age = cache?.fetchedAt ? maintenant - new Date(cache.fetchedAt).getTime() : Infinity;
+  if (age < RELEVE_AUTO_MS) return;
+  derniereTentative = maintenant;
+  import("./cardnexus-releve")
+    .then(({ releverPrix }) => releverPrix(cle))
+    .then(({ prix }) => {
+      if (releveAMaigri(cache, prix)) {
+        console.warn(`[prix] relevé auto refusé : ${Object.keys(prix.cards).length} cartes tarifées, trop peu.`);
+        return;
+      }
+      cache = prix;
+    })
+    .catch((e) => console.warn("[prix] relevé auto échoué :", e));
+}
+
+/**
  * Le relevé de prix produit par `scripts/sync-prices.mts`.
  *
- * Lu une fois par processus : les prix ne bougent pas pendant la vie d'un
- * conteneur, et une page deck ne doit pas attendre un appel réseau pour afficher
- * un montant. Un relevé absent n'est pas une erreur : le site rend sans prix.
+ * Lu une fois par processus, puis relevé à nouveau en tâche de fond chaque jour
+ * (voir `releverEnFond`) : une page deck ne doit pas attendre un appel réseau
+ * pour afficher un montant. Un relevé absent n'est pas une erreur : le site rend
+ * sans prix.
  */
 /** Au-delà, le relevé est trop vieux pour qu'on affiche ses montants sans le dire. */
 export const JOURS_PRIX_PERIMES = 14;
@@ -123,18 +165,20 @@ export function prixPerimes(prix: FichierPrix | null, maintenant = Date.now()): 
 }
 
 export function chargerPrix(): FichierPrix | null {
-  if (cache) return cache;
-  try {
-    cache = JSON.parse(readFileSync(join(process.cwd(), "data", "prices", "card-prices.json"), "utf-8"));
-    // La tâche de relevé peut s'arrêter sans bruit : le site continuait alors
-    // d'afficher des prix de plusieurs semaines comme s'ils dataient du jour.
-    if (prixPerimes(cache)) {
-      console.warn(`[prix] relevé du ${cache!.fetchedAt} : plus de ${JOURS_PRIX_PERIMES} jours. Relancer « npm run sync-prices ».`);
+  if (!cache) {
+    try {
+      cache = JSON.parse(readFileSync(join(process.cwd(), "data", "prices", "card-prices.json"), "utf-8"));
+      // La tâche de relevé peut s'arrêter sans bruit : le site continuait alors
+      // d'afficher des prix de plusieurs semaines comme s'ils dataient du jour.
+      if (prixPerimes(cache)) {
+        console.warn(`[prix] relevé du ${cache!.fetchedAt} : plus de ${JOURS_PRIX_PERIMES} jours. Relancer « npm run sync-prices ».`);
+      }
+    } catch {
+      // Pas de fichier : le site rend sans prix, et le relevé auto peut le combler.
     }
-    return cache;
-  } catch {
-    return null;
   }
+  releverEnFond();
+  return cache;
 }
 
 export interface LigneChiffree {

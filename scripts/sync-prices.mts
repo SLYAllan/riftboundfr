@@ -6,8 +6,8 @@
 // et vend les cartes, ce qui rend le chiffre cohérent avec le bouton d'achat.
 //
 // Le fichier produit est lu par src/lib/cardnexus.ts au rendu des pages deck.
-// Rien n'appelle l'API au moment d'une visite : les prix bougent lentement, un
-// relevé par jour suffit et la page reste rapide.
+// Le serveur se relève aussi tout seul une fois par jour, en mémoire : ce fichier
+// n'est plus que le point de départ d'un conteneur neuf.
 //
 // Usage :
 //   npx tsx --env-file=.env scripts/sync-prices.mts            met à jour data/prices/card-prices.json
@@ -17,150 +17,40 @@
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
 import { prisma } from "../src/lib/prisma";
-import { cleCatalogue, prixRetenu, type BlocPrix } from "../src/lib/cardnexus";
+import { releveAMaigri } from "../src/lib/cardnexus";
+import { normalizeName, releverPrix } from "../src/lib/cardnexus-releve";
 
-const API = "https://public-api.cardnexus.com/v1";
 const OUT_DIR = join(process.cwd(), "data", "prices");
 const OUT_FILE = join(OUT_DIR, "card-prices.json");
 
-const CLE = process.env.CARDNEXUS_API_KEY;
-if (!CLE) throw new Error("CARDNEXUS_API_KEY manquante : la poser dans .env (et dans Coolify pour la prod).");
-
-export function normalizeName(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[’'`]/g, "")
-    // CardNexus écrit « Annie - Fiery » là où Riftcodex écrit « Annie, Fiery ».
-    .replace(/\s*[-,]\s*/g, " ")
-    .replace(/[^a-z0-9 ]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-interface Produit {
-  id: number;
-  name: string;
-  printNumber: string;
-  expansion: { code: string };
-  pricesByFinish?: Record<string, BlocPrix>;
-}
-
-/** Le catalogue Riftbound entier, 200 par appel. 1400 cartes = 8 requêtes. */
-async function catalogue(): Promise<Produit[]> {
-  const out: Produit[] = [];
-  for (let offset = 0; ; offset += 200) {
-    const res = await fetch(`${API}/products/search`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${CLE}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        gameFilters: { game: "riftbound" },
-        productType: { op: "or", values: ["card"] },
-        limit: 200,
-        offset,
-      }),
-    });
-    if (!res.ok) throw new Error(`POST /products/search -> ${res.status} ${await res.text()}`);
-    const j = (await res.json()) as { data: Produit[]; pagination: { hasMore: boolean } };
-    out.push(...j.data);
-    process.stdout.write(`\r  ${out.length} produits`);
-    if (!j.pagination.hasMore) break;
-  }
-  console.log();
-  return out;
-}
-
 async function sync() {
+  const cle = process.env.CARDNEXUS_API_KEY;
+  if (!cle) throw new Error("CARDNEXUS_API_KEY manquante : la poser dans .env (et dans Coolify pour la prod).");
   console.log("Relevé des prix (source : CardNexus, marché européen, en euros)");
-  const produits = await catalogue();
+  const r = await releverPrix(cle);
 
-  const parNumero = new Map<string, Produit>();
-  const parNom = new Map<string, Produit>();
-  for (const p of produits) {
-    parNumero.set(`${p.expansion.code}-${p.printNumber}`.toUpperCase(), p);
-    // Plusieurs impressions d'une même carte : on garde la moins chère, c'est
-    // l'exemplaire qu'un joueur achète pour jouer.
-    const cle = normalizeName(p.name);
-    const prec = parNom.get(cle);
-    const px = prixRetenu(p.pricesByFinish);
-    const pxPrec = prec ? prixRetenu(prec.pricesByFinish) : null;
-    if (!prec || (px && (!pxPrec || px.eur < pxPrec.eur))) parNom.set(cle, p);
-  }
-
-  const cartes = await prisma.card.findMany({
-    select: { riftboundId: true, name: true, cleanName: true, set: true },
-  });
-
-  const out: Record<string, { eur: number; productId: number; nom: string; source: string; finition: string }> = {};
-  let parNum = 0;
-  let parNomHit = 0;
-  const sansPrix: string[] = [];
-  const introuvables: string[] = [];
-
-  for (const c of cartes) {
-    let p = cleCatalogue(c.riftboundId)
-      .map((k) => parNumero.get(k))
-      .find(Boolean);
-    if (p) parNum++;
-    else {
-      // Nos préfixes OPP, PR et JDG ne sont pas des codes d'extension CardNexus :
-      // pour ces cartes le numéro ne peut pas trancher, seul le nom le peut.
-      p = parNom.get(normalizeName(c.name)) ?? (c.cleanName ? parNom.get(normalizeName(c.cleanName)) : undefined);
-      if (p) parNomHit++;
-    }
-    if (!p) {
-      introuvables.push(`${c.set} ${c.name}`);
-      continue;
-    }
-    const px = prixRetenu(p.pricesByFinish);
-    if (!px) {
-      sansPrix.push(`${c.set} ${c.name}`);
-      continue;
-    }
-    out[c.riftboundId] = { eur: px.eur, productId: p.id, nom: p.name, source: px.source, finition: px.finition };
-  }
-
-  // Un relevé qui maigrit veut presque toujours dire que le catalogue a mal
-  // répondu, pas que des cartes ont perdu leur prix. Sans ce garde-fou, un
-  // relevé amputé remplaçait le bon fichier et des decks s'affichaient sans
-  // montant. Même règle que la relève chinoise, même échappatoire.
   if (existsSync(OUT_FILE)) {
+    let precedent;
     try {
-      const precedent = JSON.parse(readFileSync(OUT_FILE, "utf-8")) as { cards?: Record<string, unknown> };
-      const avant = Object.keys(precedent.cards ?? {}).length;
-      const perte = avant - Object.keys(out).length;
-      if (perte > avant * 0.1 && !process.argv.includes("--force")) {
-        console.error(`
-Refus d'écrire : ${perte} cartes tarifées en moins qu'au relevé précédent (${avant}). Relancer, ou --force si c'est voulu.`);
-        process.exit(1);
-      }
+      precedent = JSON.parse(readFileSync(OUT_FILE, "utf-8"));
     } catch {
-      console.error(`
-Refus d'écrire : ${OUT_FILE} existe mais n'est pas lisible. Le réparer ou le supprimer d'abord.`);
+      console.error(`\nRefus d'écrire : ${OUT_FILE} existe mais n'est pas lisible. Le réparer ou le supprimer d'abord.`);
+      process.exit(1);
+    }
+    if (releveAMaigri(precedent, r.prix) && !process.argv.includes("--force")) {
+      console.error(`\nRefus d'écrire : ${Object.keys(r.prix.cards).length} cartes tarifées, plus de 10 % de moins qu'au relevé précédent. Relancer, ou --force si c'est voulu.`);
       process.exit(1);
     }
   }
 
   mkdirSync(OUT_DIR, { recursive: true });
-  writeFileSync(
-    OUT_FILE,
-    JSON.stringify(
-      {
-        source: "CardNexus (public-api.cardnexus.com), marché européen, en euros",
-        fetchedAt: new Date().toISOString(),
-        currency: "EUR",
-        cards: out,
-      },
-      null,
-      1,
-    ),
-    "utf-8",
-  );
+  writeFileSync(OUT_FILE, JSON.stringify(r.prix, null, 1), "utf-8");
 
-  const n = Object.keys(out).length;
-  console.log(`\n${n}/${cartes.length} cartes tarifées -> ${OUT_FILE}`);
-  console.log(`  appariées par numéro : ${parNum}, par nom : ${parNomHit}`);
-  console.log(`  au catalogue mais sans prix : ${sansPrix.length}${sansPrix.length ? ` (ex. ${sansPrix.slice(0, 3).join(", ")})` : ""}`);
-  console.log(`  absentes du catalogue : ${introuvables.length}${introuvables.length ? ` (ex. ${introuvables.slice(0, 3).join(", ")})` : ""}`);
+  const n = Object.keys(r.prix.cards).length;
+  console.log(`\n${n}/${r.cartes} cartes tarifées -> ${OUT_FILE}`);
+  console.log(`  appariées par numéro : ${r.parNumero}, par nom : ${r.parNom}`);
+  console.log(`  au catalogue mais sans prix : ${r.sansPrix.length}${r.sansPrix.length ? ` (ex. ${r.sansPrix.slice(0, 3).join(", ")})` : ""}`);
+  console.log(`  absentes du catalogue : ${r.introuvables.length}${r.introuvables.length ? ` (ex. ${r.introuvables.slice(0, 3).join(", ")})` : ""}`);
 }
 
 function loadPrices(): Record<string, { eur: number }> {

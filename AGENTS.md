@@ -31,7 +31,9 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
 - **Prix et achat d'un deck** → `src/lib/cardnexus.ts`, et lui seul. Il porte les
   liens affiliés (identifiant de partenaire Impact) : un lien CardNexus écrit à la
   main ailleurs est un lien non tracké, donc une vente perdue en silence.
-  Prix affichés = `data/prices/card-prices.json`, relevé par `npm run sync-prices`.
+  Prix affichés = `data/prices/card-prices.json`, relevé par `npm run sync-prices`,
+  puis relevé à nouveau par le serveur lui-même une fois par jour, en mémoire
+  (`releverEnFond`, qui demande `CARDNEXUS_API_KEY` dans Coolify).
   Le prix retenu est **l'impression la moins chère du même nom** : une decklist qui
   cite une surnumérotée ne fait pas payer la surnumérotée.
   Panier prêt à payer = `/api/cardnexus/panier?slug=` ou `?code=`.
