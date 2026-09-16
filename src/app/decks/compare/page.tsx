@@ -11,6 +11,10 @@ import { metaTraduite, tr } from "@/lib/i18n-server";
 const metadata: Metadata = {
   title: "Comparaison de decks",
   description: "Comparez deux decks Riftbound côte à côte : cartes communes, exclusives, statistiques.",
+  // Chaque page deck pointe ici avec son code : Google relevait des centaines de
+  // comparaisons presque vides comme « doublons sans canonical ».
+  alternates: { canonical: "/decks/compare" },
+  robots: { index: false, follow: true },
 };
 
 async function resolveCode(code: string): Promise<{ legend: string; cards: DecklistCard[]; manquantes: string[] } | null> {
