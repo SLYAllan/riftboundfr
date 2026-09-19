@@ -18,11 +18,11 @@
   "keyCards": [
     {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
     },
     {
       "name": "Sacrifice",
@@ -30,7 +30,7 @@
     },
     {
       "name": "Watchful Sentry",
-      "role": "Standard, 87 % des listes, 3 exemplaires"
+      "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Glasc Mixologist",
@@ -46,23 +46,23 @@
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires"
     },
     {
       "name": "Black Rose Dignitary",
       "role": "Souple, 57 % des listes, 2 exemplaires"
     },
     {
-      "name": "Baited Hook",
-      "role": "Souple, 54 % des listes, 3 exemplaires"
+      "name": "Harnessed Dragon",
+      "role": "Souple, 51 % des listes, 3 exemplaires"
     },
     {
-      "name": "Harnessed Dragon",
-      "role": "Souple, 54 % des listes, 3 exemplaires"
+      "name": "Baited Hook",
+      "role": "Souple, 51 % des listes, 3 exemplaires"
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 48 % des listes, 2 exemplaires"
+      "role": "Souple, 50 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 299,
-    "coupe10": 44,
+    "joueursClasses": 328,
+    "coupe10": 45,
     "titres": 0,
-    "conversion": "14.7 %",
-    "tournois": 27,
-    "listesPubliees": 132,
+    "conversion": "13.7 %",
+    "tournois": 32,
+    "listesPubliees": 160,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -135,20 +135,24 @@
       "usage": "84 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Vi, Peacekeeper": {
+      "usage": "83 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Karthus, Eternal": {
       "usage": "82 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Vi, Peacekeeper": {
-      "usage": "81 %",
-      "role": "2 exemplaires en moyenne"
+    "Kennen, Keeper of Balance": {
+      "usage": "30 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (98 %)",
-    "Dusk Rose Lab (57 %)",
-    "Star Spring (48 %)",
-    "Forbidding Waste (42 %)"
+    "Dusk Rose Lab (58 %)",
+    "Star Spring (46 %)",
+    "Forbidding Waste (44 %)"
   ],
-  "dataSource": "Classement complet des tournois : 299 joueurs classés, 27 tournois, dont 132 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 328 joueurs classés, 32 tournois, dont 160 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -48,6 +48,11 @@ const VILLES: Record<string, string> = {
  */
 const NOMS_PARTICULIERS: Record<number, string> = {
   220: "Dongguan Manbo Cup",
+  // « 第四赛季 区域公开赛 城市赛特别场A » : épreuves annexes du Regional Open, le
+  // lendemain de Shenyang. hexgate ne donne aucune ville : on n'en écrit pas.
+  253: "S4 Regional Open Side Event A",
+  254: "S4 Regional Open Side Event B",
+  255: "S4 Regional Open Side Event C",
 };
 
 interface CarteBrute {

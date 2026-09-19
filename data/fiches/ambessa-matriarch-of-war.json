@@ -30,56 +30,56 @@
   "keyCards": [
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Public Execution",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
       "name": "Legion Marauder",
-      "role": "Standard, 75 % des listes, 3 exemplaires"
+      "role": "Standard, 76 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Public Execution",
+      "role": "Standard, 76 % des listes, 2 exemplaires"
     },
     {
       "name": "Punch First",
-      "role": "Standard, 75 % des listes, 3 exemplaires"
+      "role": "Standard, 73 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 2 exemplaires"
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 65 % des listes, 2 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 64 % des listes, 1,5 exemplaire"
+      "role": "Standard, 65 % des listes, 1,5 exemplaire"
     },
     {
       "name": "First Mate",
-      "role": "Souple, 50 % des listes, 2 exemplaires"
+      "role": "Souple, 49 % des listes, 2 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 48 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Solari Sunhawk",
-      "role": "Souple, 43 % des listes, 3 exemplaires"
+      "role": "Souple, 45 % des listes, 3 exemplaires"
     },
     {
       "name": "Challenge",
       "role": "Souple, 43 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Solari Sunhawk",
+      "role": "Souple, 41 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "95 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
@@ -87,26 +87,26 @@
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "48 %",
+      "usage": "49 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "43 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Risen Altar (73 %)",
-    "Sunken Temple (52 %)",
-    "Sandswept Tomb (32 %)"
+    "Sunken Temple (49 %)",
+    "Sandswept Tomb (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 120,
+    "joueursClasses": 125,
     "coupe10": 1,
     "titres": 0,
     "conversion": "0.8 %",
-    "tournois": 17,
-    "listesPubliees": 44,
+    "tournois": 20,
+    "listesPubliees": 49,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -124,16 +124,16 @@
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
-        "placement": "43th",
-        "player": "东莞铁猫",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+        "placement": "36th",
+        "player": "SJTU.我的刀盾",
+        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       },
       {
-        "placement": "50th",
-        "player": "ZZZ",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+        "placement": "37th",
+        "player": "逆转成步堂",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 120 joueurs classés, 17 tournois, dont 44 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 125 joueurs classés, 20 tournois, dont 49 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

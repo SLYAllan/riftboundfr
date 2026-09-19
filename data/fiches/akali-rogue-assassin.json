@@ -46,67 +46,71 @@
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
       "name": "Back Off",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 73 % des listes, 2 exemplaires"
     },
     {
-      "name": "En Garde",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "name": "Charm",
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 61 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires"
     },
     {
-      "name": "Lonely Poro",
-      "role": "Souple, 53 % des listes, 3 exemplaires"
+      "name": "En Garde",
+      "role": "Souple, 59 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Souple, 58 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Akali, Deadly Weapon": {
-      "usage": "67 %",
+      "usage": "71 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "60 %",
+      "usage": "65 %",
       "role": "3 exemplaires en moyenne"
     },
     "Akali, Silent": {
-      "usage": "41 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jhin, Murderous Artist": {
-      "usage": "38 %",
+      "usage": "35 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "Darius, Trifarian": {
+      "usage": "34 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Void Gate (54 %)",
-    "Back-Alley Bar (41 %)",
-    "Targon's Peak (35 %)"
+    "Void Gate (60 %)",
+    "Back-Alley Bar (37 %)",
+    "Targon's Peak (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 425,
-    "coupe10": 29,
+    "joueursClasses": 463,
+    "coupe10": 33,
     "titres": 2,
-    "conversion": "6.8 %",
-    "tournois": 28,
-    "listesPubliees": 243,
+    "conversion": "7.1 %",
+    "tournois": 33,
+    "listesPubliees": 277,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -130,10 +134,10 @@
       },
       {
         "placement": "5th",
-        "player": "东东卡牌妙妙屋",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
+        "player": "青浦.KID1999",
+        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 425 joueurs classés, 28 tournois, dont 243 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 463 joueurs classés, 33 tournois, dont 277 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

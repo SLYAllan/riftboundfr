@@ -35,74 +35,74 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Discord",
       "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
     },
     {
-      "name": "Star-Crossed",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "name": "Traveling Merchant",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "name": "Star-Crossed",
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Last Rites",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Treasure Hunter",
-      "role": "Standard, 72 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires"
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 72 % des listes, 1 exemplaire"
+      "role": "Standard, 75 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Standard, 71 % des listes, 3 exemplaires"
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 57 % des listes, 1 exemplaire"
+      "role": "Standard, 60 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust",
-      "role": "Souple, 46 % des listes, 2 exemplaires"
+      "role": "Souple, 52 % des listes, 2 exemplaires"
     }
   ],
   "champions": {
     "Kennen, Storm of Shuriken": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "93 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "88 %",
+      "usage": "89 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (93 %)",
+    "Minefield (94 %)",
     "Zaun Warrens (89 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1066,
-    "coupe10": 200,
-    "titres": 4,
-    "conversion": "18.8 %",
-    "tournois": 28,
-    "listesPubliees": 542,
+    "joueursClasses": 1141,
+    "coupe10": 212,
+    "titres": 8,
+    "conversion": "18.6 %",
+    "tournois": 33,
+    "listesPubliees": 616,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -121,15 +121,15 @@
       },
       {
         "placement": "1st",
-        "player": "D.C松饼",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
+        "player": "ARBD-加州旅馆",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
       },
       {
-        "placement": "2nd",
-        "player": "CTCG Koko Lopez",
-        "tournament": "Barcelona Regional Qualifier"
+        "placement": "1st",
+        "player": "GOAT-版本t0",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1066 joueurs classés, 28 tournois, dont 542 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 1141 joueurs classés, 33 tournois, dont 616 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

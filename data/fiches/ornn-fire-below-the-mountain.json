@@ -26,11 +26,11 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 88 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
     },
     {
       "name": "Charm",
@@ -38,47 +38,47 @@
     },
     {
       "name": "Sterak's Gage",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Seal of Focus",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires"
     },
     {
       "name": "Poro Snax",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires"
     },
     {
       "name": "Guardian Angel",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires"
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 77 % des listes, 3 exemplaires"
+      "role": "Standard, 79 % des listes, 3 exemplaires"
     },
     {
       "name": "Pit Crew",
-      "role": "Standard, 76 % des listes, 3 exemplaires"
+      "role": "Standard, 78 % des listes, 3 exemplaires"
     },
     {
       "name": "Clockwork Keeper",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Standard, 66 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "51 %",
+      "usage": "52 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Forge God": {
-      "usage": "50 %",
+      "usage": "49 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Ornn's Forge (88 %)",
-    "Veiled Temple (65 %)",
-    "Seat of Power (58 %)",
+    "Veiled Temple (68 %)",
+    "Seat of Power (57 %)",
     "Treasure Hoard (42 %)"
   ],
   "strengths": [
@@ -93,17 +93,22 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 255,
-    "coupe10": 15,
+    "joueursClasses": 274,
+    "coupe10": 18,
     "titres": 1,
-    "conversion": "5.9 %",
-    "tournois": 25,
-    "listesPubliees": 137,
+    "conversion": "6.6 %",
+    "tournois": 30,
+    "listesPubliees": 154,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "MICE TheManLand",
         "tournament": "Barcelona Regional Qualifier"
+      },
+      {
+        "placement": "2nd",
+        "player": "xyz.李泳垚",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
         "placement": "3rd",
@@ -112,25 +117,20 @@
       },
       {
         "placement": "4th",
+        "player": "晚风林-狄J",
+        "tournament": "S4 Regional Open Side Event B (2026-09-13)"
+      },
+      {
+        "placement": "4th",
         "player": "天津cardtime-金角大王",
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "5th",
-        "player": "solo｜蓝白",
-        "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "7th",
-        "player": "KD",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 255 joueurs classés, 25 tournois, dont 137 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 274 joueurs classés, 30 tournois, dont 154 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

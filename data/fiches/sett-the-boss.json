@@ -24,39 +24,39 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "First Mate",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 86 % des listes, 3 exemplaires"
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Repulse",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Sacrifice",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 62 % des listes, 3 exemplaires"
+      "role": "Standard, 64 % des listes, 3 exemplaires"
     },
     {
       "name": "Arena Bar",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Standard, 64 % des listes, 2 exemplaires"
     },
     {
       "name": "Fae Dragon",
-      "role": "Standard, 62 % des listes, 1 exemplaire"
+      "role": "Standard, 64 % des listes, 1 exemplaire"
     },
     {
       "name": "Sea Monkey",
-      "role": "Souple, 54 % des listes, 3 exemplaires"
+      "role": "Souple, 57 % des listes, 2,5 exemplaires"
     }
   ],
   "strengths": [
@@ -66,17 +66,22 @@
     "11 listes sur les 2365 du set Vendetta, sept tournois, aucun Top 8 : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "joueursClasses": 23,
+    "joueursClasses": 24,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "4.3 %",
-    "tournois": 13,
-    "listesPubliees": 13,
+    "conversion": "4.2 %",
+    "tournois": 14,
+    "listesPubliees": 14,
     "bestPlacements": [
       {
         "placement": "10th",
         "player": "DBSF-weiyi",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "13th",
+        "player": "唯安",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
         "placement": "39th",
@@ -92,11 +97,6 @@
         "placement": "88th",
         "player": "PKC.不系舟",
         "tournament": "S4 Shenzhen City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "92th",
-        "player": "mio",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -119,38 +119,34 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "85 %",
+      "usage": "86 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "62 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "62 %",
+      "usage": "57 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "46 %",
+      "usage": "43 %",
       "role": "2,5 exemplaires en moyenne"
     },
-    "Rengar, Trophy Hunter": {
-      "usage": "38 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Sett, Kingpin": {
-      "usage": "38 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Ambessa, The Wolf": {
-      "usage": "31 %",
-      "role": "1,5 exemplaire en moyenne"
+    "Rengar, Trophy Hunter": {
+      "usage": "36 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (92 %)",
-    "Sunken Temple (85 %)",
-    "Valley of Idols (77 %)"
+    "Monastery of Hirana (93 %)",
+    "Valley of Idols (79 %)",
+    "Sunken Temple (79 %)"
   ],
-  "dataSource": "Classement complet des tournois : 23 joueurs classés, 13 tournois, dont 13 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 24 joueurs classés, 14 tournois, dont 14 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

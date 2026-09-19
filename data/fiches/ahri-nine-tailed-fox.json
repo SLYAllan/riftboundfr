@@ -11,70 +11,63 @@
   "legendAbility": "Quand une unité adverse attaque un champ de bataille que vous contrôlez, elle perd 1 Puissance pour le tour, sans descendre sous 1.",
   "keyCards": [
     {
-      "name": "Defy",
-      "role": "Core de protection, joué dans 100 % des builds à 2,8 exemplaires en moyenne."
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Menace principale, jouée dans 96 % des builds."
-    },
-    {
-      "name": "Discipline",
-      "role": "Removal et combat trick, joué dans 88 % des builds à 3 exemplaires."
-    },
-    {
-      "name": "Back Off",
-      "role": "Bounce et tempo, joué dans 72 % des builds à 2,2 exemplaires en moyenne."
-    },
-    {
-      "name": "Emperor's Divide",
-      "role": "Finisher spell, joué dans 72 % des builds à 1,7 exemplaire en moyenne."
-    },
-    {
-      "name": "Charm",
-      "role": "CC signature d'Ahri, joué dans 68 % des builds à 1,7 exemplaire en moyenne."
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Gear de protection, joué dans 68 % des builds à 2,2 exemplaires en moyenne."
-    },
-    {
       "name": "Ravenbloom Student",
-      "role": "Unité d'early game, jouée dans 64 % des builds à 2,8 exemplaires en moyenne."
+      "role": "Cœur du deck, Unité d'early game, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Stupefy",
-      "role": "Flex de disruption, joué dans 56 % des builds à 2,6 exemplaires en moyenne."
+      "role": "Cœur du deck, Flex de disruption, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Vilemaw",
-      "role": "Finisher alternatif, joué dans 56 % des builds à 1,5 exemplaire en moyenne."
+      "name": "Discipline",
+      "role": "Cœur du deck, Removal et combat trick, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Blitzcrank, Impassive",
-      "role": "Removal sur pattes, joué dans 52 % des builds à 1,5 exemplaire en moyenne."
+      "name": "Back Off",
+      "role": "Cœur du deck, Bounce et tempo, 92 % des listes, 1 exemplaire"
     },
     {
-      "name": "Not So Fast",
-      "role": "Counter-spell, joué dans 52 % des builds à 1,5 exemplaire en moyenne."
+      "name": "Defy",
+      "role": "Standard, Core de protection, 83 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, Menace principale, 83 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 83 % des listes, 1,5 exemplaire"
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, CC signature d'Ahri, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 67 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Standard, Finisher spell, 67 % des listes, 1 exemplaire"
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Souple, Gear de protection, 58 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Desert's Call",
+      "role": "Souple, 50 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
     "Ahri, Inquisitive": {
-      "usage": "76%",
-      "role": "Champion principal, adapté au gameplan spell-heavy."
-    },
-    "Ahri, Alluring": {
-      "usage": "24%",
-      "role": "Variante agressive, centrée sur le combat et l'évasion."
+      "usage": "83 %",
+      "role": "Champion principal, 1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Grove of the God-Willow (52%)",
-    "Ravenbloom Conservatory (24%)",
-    "Trifarian War Camp (24%)",
-    "Startipped Peak (20%)",
-    "Star Spring (20%)"
+    "Forgotten Monument (33 %)",
+    "Forge of the Fluft (33 %)"
   ],
   "strengths": [
     "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
@@ -83,43 +76,44 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 806,
-    "coupe10": 33,
-    "titres": 1,
-    "conversion": "4.1 %",
-    "tournois": 82,
+    "joueursClasses": 14,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 12,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "33th",
+        "player": "Stanleny",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Nanjing City Challenge (2025-10-12)"
+        "placement": "34th",
+        "player": "大师盯狗",
+        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-07)"
+        "placement": "58th",
+        "player": "大师盯狗",
+        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
+        "placement": "68th",
+        "player": "知雾vv",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
       },
       {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-09-27)"
+        "placement": "84th",
+        "player": "大师盯狗",
+        "tournament": "S4 Regional Open Side Event C (2026-09-13)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 806 joueurs classés sur 82 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 12 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

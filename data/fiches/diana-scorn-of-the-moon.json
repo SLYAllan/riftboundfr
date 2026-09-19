@@ -21,15 +21,7 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Moonfall",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Ravenbloom Student",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
@@ -37,12 +29,20 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Stacked Deck",
+      "name": "Ride The Wind",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Gust",
@@ -50,19 +50,19 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Flash",
-      "role": "Standard, 81 % des listes, 1 exemplaire"
+      "role": "Standard, 82 % des listes, 1 exemplaire"
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 56 % des listes, 3 exemplaires"
+      "role": "Souple, 51 % des listes, 3 exemplaires"
     },
     {
-      "name": "Abandon",
-      "role": "Souple, 47 % des listes, 1 exemplaire"
+      "name": "Hard Bargain",
+      "role": "Souple, 49 % des listes, 2 exemplaires"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 399,
-    "coupe10": 37,
-    "titres": 4,
-    "conversion": "9.3 %",
-    "tournois": 28,
-    "listesPubliees": 230,
+    "joueursClasses": 426,
+    "coupe10": 39,
+    "titres": 5,
+    "conversion": "9.2 %",
+    "tournois": 33,
+    "listesPubliees": 257,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -105,9 +105,9 @@
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
       },
       {
-        "placement": "2nd",
-        "player": "火星.化作蝴蝶飞舞",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+        "placement": "1st",
+        "player": "𝙆𝙈𝙆.董帅帅",
+        "tournament": "S4 Regional Open Side Event C (2026-09-13)"
       }
     ]
   },
@@ -132,31 +132,31 @@
     "note": "Souvent « un shell pour Hwei » : les games avec Hwei sont radicalement différentes. Double championne au plus gros Régional du set (Vancouver, ~2000 joueurs). Doit jouer Unchecked Power / Downwell vs les decks de Hold (perd vs Vex sinon)."
   },
   "champions": {
-    "Hwei, Brooding Painter": {
-      "usage": "100 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Diana, Lunari": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Hwei, Brooding Painter": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
       "usage": "100 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Swain, Visionary": {
+    "Vex, Apathetic": {
       "usage": "49 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Vex, Apathetic": {
-      "usage": "47 %",
+    "Swain, Visionary": {
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Abandoned Hall (97 %)",
-    "Targon's Peak (58 %)",
-    "Rockfall Path (57 %)"
+    "Abandoned Hall (96 %)",
+    "Targon's Peak (60 %)",
+    "Rockfall Path (53 %)"
   ],
-  "dataSource": "Classement complet des tournois : 399 joueurs classés, 28 tournois, dont 230 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 426 joueurs classés, 33 tournois, dont 257 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

@@ -16,19 +16,19 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 81 % des listes, 2 exemplaires"
     },
     {
       "name": "Rampage",
-      "role": "Standard, 65 % des listes, 2 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Standard, 62 % des listes, 2,5 exemplaires"
     },
     {
       "name": "Punch First",
       "role": "Standard, 60 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Standard, 60 % des listes, 2,5 exemplaires"
     },
     {
       "name": "Elder Dragon",
@@ -47,16 +47,16 @@
       "role": "Souple, 57 % des listes, 3 exemplaires"
     },
     {
+      "name": "Baron Nashor",
+      "role": "Souple, 57 % des listes, 1,5 exemplaire"
+    },
+    {
       "name": "Lunar Boon",
       "role": "Souple, 55 % des listes, 3 exemplaires"
     },
     {
       "name": "Last Rites",
       "role": "Souple, 55 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Baron Nashor",
-      "role": "Souple, 55 % des listes, 1,5 exemplaire"
     }
   ],
   "strengths": [
@@ -66,12 +66,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "joueursClasses": 75,
+    "joueursClasses": 77,
     "coupe10": 10,
     "titres": 0,
-    "conversion": "13.3 %",
-    "tournois": 16,
-    "listesPubliees": 40,
+    "conversion": "13 %",
+    "tournois": 18,
+    "listesPubliees": 42,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -138,5 +138,5 @@
     "Forgotten Monument (55 %)",
     "Dragon Roost (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 75 joueurs classés, 16 tournois, dont 40 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 77 joueurs classés, 18 tournois, dont 42 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

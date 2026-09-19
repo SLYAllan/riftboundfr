@@ -38,7 +38,7 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "Star-Crossed",
@@ -54,11 +54,11 @@
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 68 % des listes, 2,5 exemplaires"
+      "role": "Standard, 68 % des listes, 3 exemplaires"
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Standard, 63 % des listes, 3 exemplaires"
     },
     {
       "name": "Applied Researchers",
@@ -66,7 +66,7 @@
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 52 % des listes, 3 exemplaires"
+      "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
       "name": "Bellows Breath",
@@ -74,7 +74,7 @@
     },
     {
       "name": "Traveling Merchant",
-      "role": "Souple, 45 % des listes, 3 exemplaires"
+      "role": "Souple, 46 % des listes, 3 exemplaires"
     }
   ],
   "champions": {
@@ -87,7 +87,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "49 %",
+      "usage": "50 %",
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
@@ -100,18 +100,23 @@
     }
   },
   "topBattlefields": [
-    "Ravenbloom Conservatory (34 %)",
+    "Ravenbloom Conservatory (33 %)",
     "Threshold of the Gray (32 %)",
     "Frozen Fortress (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 183,
+    "joueursClasses": 188,
     "coupe10": 6,
     "titres": 0,
-    "conversion": "3.3 %",
-    "tournois": 24,
-    "listesPubliees": 118,
+    "conversion": "3.2 %",
+    "tournois": 27,
+    "listesPubliees": 123,
     "bestPlacements": [
+      {
+        "placement": "10th",
+        "player": "從龍.疯狐狸",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+      },
       {
         "placement": "10th",
         "player": "3+X END.明涌",
@@ -131,13 +136,8 @@
         "placement": "19th",
         "player": "星游.九思",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "20th",
-        "player": "卓卡-777🤪",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 183 joueurs classés, 24 tournois, dont 118 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 188 joueurs classés, 27 tournois, dont 123 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

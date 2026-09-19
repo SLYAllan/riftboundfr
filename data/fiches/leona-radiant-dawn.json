@@ -28,35 +28,35 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 93 % des listes, 2,5 exemplaires"
+      "role": "Cœur du deck, rally surprise, 94 % des listes, 3 exemplaires"
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, early game, 87 % des listes, 3 exemplaires"
+      "role": "Standard, early game, 88 % des listes, 3 exemplaires"
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 73 % des listes, 2 exemplaires"
+      "role": "Standard, spell signature, 71 % des listes, 2 exemplaires"
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, finisher, 67 % des listes, 2 exemplaires"
+      "role": "Standard, finisher, 65 % des listes, 2 exemplaires"
     },
     {
       "name": "Thwonk!",
-      "role": "Standard, 60 % des listes, 1 exemplaire"
+      "role": "Souple, 59 % des listes, 1 exemplaire"
     },
     {
       "name": "Affectionate Poro",
-      "role": "Souple, 53 % des listes, 2,5 exemplaires"
+      "role": "Souple, 53 % des listes, 3 exemplaires"
     },
     {
-      "name": "Hidden Blade",
-      "role": "Souple, combat trick, 47 % des listes, 2 exemplaires"
+      "name": "Mournful Witness",
+      "role": "Souple, 47 % des listes, 3 exemplaires"
     },
     {
-      "name": "Lonely Poro",
-      "role": "Souple, 40 % des listes, 3 exemplaires"
+      "name": "Charm",
+      "role": "Souple, 47 % des listes, 1,5 exemplaire"
     }
   ],
   "champions": {
@@ -65,27 +65,26 @@
       "role": "3 exemplaires en moyenne"
     },
     "Leona, Determined": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "87 %",
+      "usage": "88 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Fiora, Victorious": {
-      "usage": "40 %",
-      "role": "2,5 exemplaires en moyenne"
-    },
     "Nami, Headstrong": {
-      "usage": "40 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Fiora, Victorious": {
+      "usage": "35 %",
+      "role": "2,5 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Monastery of Hirana (100 %)",
-    "Sunken Temple (80 %)",
-    "Heisho, Shell of the World (33 %)",
-    "Amateur Recital (33 %)"
+    "Sunken Temple (82 %)",
+    "Amateur Recital (35 %)"
   ],
   "strengths": [
     "Chaque effet d'étourdissement paie deux fois : l'unité adverse ne frappe pas, la vôtre grossit."
@@ -94,17 +93,22 @@
     "9 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 19,
+    "joueursClasses": 21,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "5.3 %",
-    "tournois": 10,
-    "listesPubliees": 15,
+    "conversion": "4.8 %",
+    "tournois": 11,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "9th",
         "player": "公爵",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "45th",
+        "player": "公爵",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
         "placement": "56th",
@@ -120,18 +124,13 @@
         "placement": "70th",
         "player": "公爵",
         "tournament": "S4 Tianjin City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "72th",
-        "player": "xyz-心火",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 19 joueurs classés, 10 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 21 joueurs classés, 11 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

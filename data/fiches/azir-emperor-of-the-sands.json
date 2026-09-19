@@ -25,10 +25,6 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Arise!",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Brutalizer",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
@@ -37,7 +33,7 @@
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
-      "name": "B.F. Sword",
+      "name": "Arise!",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
@@ -46,6 +42,10 @@
     },
     {
       "name": "Soul Sword",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "B.F. Sword",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
@@ -58,11 +58,11 @@
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 72 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires"
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 67 % des listes, 1 exemplaire"
+      "role": "Standard, 69 % des listes, 1 exemplaire"
     }
   ],
   "strengths": [
@@ -77,12 +77,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 367,
-    "coupe10": 45,
+    "joueursClasses": 393,
+    "coupe10": 47,
     "titres": 2,
-    "conversion": "12.3 %",
-    "tournois": 28,
-    "listesPubliees": 168,
+    "conversion": "12 %",
+    "tournois": 33,
+    "listesPubliees": 194,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -134,19 +134,19 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "82 %",
+      "usage": "81 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "49 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Trifarian War Camp (99 %)",
     "Hall of Legends (97 %)",
-    "Ornn's Forge (68 %)",
+    "Ornn's Forge (66 %)",
     "Seat of Power (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 367 joueurs classés, 28 tournois, dont 168 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 393 joueurs classés, 33 tournois, dont 194 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

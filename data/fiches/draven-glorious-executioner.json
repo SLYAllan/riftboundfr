@@ -22,7 +22,7 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
     },
     {
       "name": "Tideturner",
@@ -30,11 +30,11 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
     },
     {
       "name": "Rebuke",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
     },
     {
       "name": "Falling Star",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 74 % des listes, 1 exemplaire"
+      "role": "Standard, 73 % des listes, 1 exemplaire"
     },
     {
       "name": "Gust Monk",
@@ -77,12 +77,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 282,
+    "joueursClasses": 291,
     "coupe10": 32,
     "titres": 1,
-    "conversion": "11.3 %",
-    "tournois": 26,
-    "listesPubliees": 119,
+    "conversion": "11 %",
+    "tournois": 30,
+    "listesPubliees": 128,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -140,30 +140,30 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "94 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "95 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
       "usage": "80 %",
-      "role": "3 exemplaires en moyenne"
+      "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "67 %",
+      "usage": "66 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "59 %",
+      "usage": "57 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "46 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (77 %)",
-    "Zaun Warrens (66 %)",
-    "Amateur Recital (54 %)"
+    "Treasure Hoard (76 %)",
+    "Zaun Warrens (63 %)",
+    "Amateur Recital (55 %)"
   ],
-  "dataSource": "Classement complet des tournois : 282 joueurs classés, 26 tournois, dont 119 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 291 joueurs classés, 30 tournois, dont 128 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

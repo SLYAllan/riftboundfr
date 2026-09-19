@@ -21,12 +21,12 @@
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "name": "Rampage",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "name": "Punch First",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
     },
     {
       "name": "First Mate",
@@ -34,34 +34,34 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 81 % des listes, 2 exemplaires"
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 75 % des listes, 3 exemplaires"
+      "role": "Standard, 77 % des listes, 3 exemplaires"
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Standard, 63 % des listes, 2 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires"
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Standard, 61 % des listes, 3 exemplaires"
+      "role": "Standard, 64 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Call to Glory",
+      "role": "Souple, 54 % des listes, 3 exemplaires"
     },
     {
       "name": "Sacrifice",
       "role": "Souple, 54 % des listes, 2 exemplaires"
     },
     {
-      "name": "Call to Glory",
-      "role": "Souple, 52 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "B.F. Sword",
+      "name": "Sea Monkey",
       "role": "Souple, 46 % des listes, 3 exemplaires"
     },
     {
-      "name": "Sea Monkey",
+      "name": "B.F. Sword",
       "role": "Souple, 44 % des listes, 3 exemplaires"
     }
   ],
@@ -77,12 +77,12 @@
     "Cœur court, sept cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "joueursClasses": 342,
-    "coupe10": 31,
+    "joueursClasses": 369,
+    "coupe10": 36,
     "titres": 1,
-    "conversion": "9.1 %",
-    "tournois": 28,
-    "listesPubliees": 228,
+    "conversion": "9.8 %",
+    "tournois": 33,
+    "listesPubliees": 255,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -131,33 +131,33 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "80 %",
+      "usage": "81 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "72 %",
+      "usage": "74 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "64 %",
+      "usage": "63 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "60 %",
+      "usage": "62 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "50 %",
+      "usage": "51 %",
       "role": "2 exemplaires en moyenne"
     },
     "Poppy, Paragon": {
-      "usage": "44 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Sunken Temple (94 %)",
-    "Monastery of Hirana (41 %)"
+    "Monastery of Hirana (42 %)"
   ],
-  "dataSource": "Classement complet des tournois : 342 joueurs classés, 28 tournois, dont 228 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 369 joueurs classés, 33 tournois, dont 255 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

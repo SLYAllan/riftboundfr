@@ -1,5 +1,23 @@
 # HANDOFF — état des lieux
 
+## Session du 19 septembre 2026 — hexgate 253 à 257, EN LOCAL SEULEMENT
+
+507 listes seedées en local (27 994 decks), rien en prod, rien de commité.
+- 253, 254, 255 : « 区域公开赛 城市赛特别场 A/B/C » du 13 septembre (94, 93, 94
+  joueurs ; 91, 87, 86 listes). Épreuves annexes du Regional Open, hexgate ne donne
+  AUCUNE ville : nommées « S4 Regional Open Side Event A/B/C », lieu « Chine ».
+  Dans `tournament-flags.ts`, `city` vaut le nom court : une ville vide ferait
+  répondre Side Event A à tout tournoi inconnu (`includes("")` dans
+  `getTournamentInfo`). Passées sous la borne de 128 joueurs à la demande d'Allan.
+- 256 Shanghai CC et 257 Guangzhou CC du 19 septembre (120 et 123 listes).
+- Stacked Deck reste joué en Chine le 19 (38 listes à Shanghai, 26 à Guangzhou) :
+  ce ne sont pas des tournois « d'après le ban ». `maj:stats` relancé quand même
+  à la demande d'Allan : 85 chiffres périmés et Rengar « À REGARDER » (p = 0,029)
+  restent à trancher dans `scripts/tier-tables.ts`.
+- Écartés : 258, 259 (épreuves de boutique `rune_competition`, comme 251),
+  260 Yantai (71 joueurs).
+Validateur : 26 554 listes, 0 écart. `tsc` EXIT=0.
+
 ## Session du 15 septembre 2026 — Regional Open S4 de Shenyang (hexgate 252)
 
 1 191 joueurs, 1 188 listes publiées, 1 148 relevées (40 partielles), **1 093

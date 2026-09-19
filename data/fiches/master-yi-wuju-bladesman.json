@@ -17,20 +17,20 @@
   },
   "keyCards": [
     {
-      "name": "Charm",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
       "name": "Defy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "name": "Charm",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
     },
     {
       "name": "Zhonya's Hourglass",
       "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
     },
     {
       "name": "Discipline",
@@ -46,7 +46,7 @@
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
     },
     {
       "name": "En Garde",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 85 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires"
     },
     {
       "name": "Ruin Runner",
@@ -77,12 +77,12 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "joueursClasses": 830,
-    "coupe10": 110,
+    "joueursClasses": 881,
+    "coupe10": 116,
     "titres": 5,
-    "conversion": "13.3 %",
-    "tournois": 28,
-    "listesPubliees": 487,
+    "conversion": "13.2 %",
+    "tournois": 33,
+    "listesPubliees": 538,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -144,9 +144,9 @@
     }
   },
   "topBattlefields": [
-    "Star Spring (92 %)",
+    "Star Spring (91 %)",
     "Emperor's Dais (89 %)",
     "Seat of Power (73 %)"
   ],
-  "dataSource": "Classement complet des tournois : 830 joueurs classés, 28 tournois, dont 487 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 881 joueurs classés, 33 tournois, dont 538 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }

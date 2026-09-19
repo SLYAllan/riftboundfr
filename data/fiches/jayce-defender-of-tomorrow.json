@@ -31,11 +31,15 @@
   "keyCards": [
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
     },
     {
       "name": "Elder Dragon",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
       "name": "Dazzling Aurora",
@@ -46,28 +50,24 @@
       "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
     },
     {
-      "name": "Flurry of Blades",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
-    },
-    {
       "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
     },
     {
       "name": "Dredge Up",
       "role": "Standard, 89 % des listes, 3 exemplaires"
     },
     {
-      "name": "Mobilize",
+      "name": "Clairvoyance",
       "role": "Standard, 88 % des listes, 3 exemplaires"
     },
     {
-      "name": "Clairvoyance",
+      "name": "Mobilize",
       "role": "Standard, 87 % des listes, 3 exemplaires"
     },
     {
       "name": "Gutter Palace",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
+      "role": "Standard, 84 % des listes, 2 exemplaires"
     },
     {
       "name": "Sabotage",
@@ -80,27 +80,26 @@
   ],
   "champions": {
     "Jayce, Man of Progress": {
-      "usage": "47 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jayce, Brilliant Inventor": {
-      "usage": "41 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (88 %)",
-    "Forgotten Monument (64 %)",
-    "Dragon Roost (56 %)",
-    "The Papertree (32 %)"
+    "Sigil of the Storm (89 %)",
+    "Forgotten Monument (66 %)",
+    "Dragon Roost (56 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 378,
-    "coupe10": 37,
+    "joueursClasses": 403,
+    "coupe10": 40,
     "titres": 0,
-    "conversion": "9.8 %",
-    "tournois": 28,
-    "listesPubliees": 236,
+    "conversion": "9.9 %",
+    "tournois": 33,
+    "listesPubliees": 261,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -129,5 +128,5 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 378 joueurs classés, 28 tournois, dont 236 listes publiées d’où viennent les cartes. Relevé du 15 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 403 joueurs classés, 33 tournois, dont 261 listes publiées d’où viennent les cartes. Relevé du 19 septembre 2026, calcul par scripts/fiches-stats.mts."
 }
