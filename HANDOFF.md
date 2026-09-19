@@ -18,7 +18,23 @@ attendent un push puis un Deploy. Le tunnel de prod était fermé, Allan l'a rou
   restent à trancher dans `scripts/tier-tables.ts`.
 - Écartés : 258, 259 (épreuves de boutique `rune_competition`, comme 251),
   260 Yantai (71 joueurs).
-Validateur : 26 554 listes, 0 écart. `tsc` EXIT=0.
+Validateur : 26 554 listes, 0 écart. `npm run verify` EXIT=0, 377 tests verts.
+
+**Tier lists et docs refaits dans la foulée.** Les 84 chiffres périmés de
+`scripts/tier-tables.ts` sont réécrits depuis le corpus, et trois verdicts ont
+changé de sens avec eux : **Rengar passe en S** (13,4 % sur 373 joueurs,
+p = 0,029, la règle du S du fichier), **Akali et Ornn sortent des « établies en
+dessous »** (p = 0,051 et 0,068). Kennen compte 8 titres, il a gagné les deux
+City Challenge du 19. `maj:stats` relancé derrière : « les cinq tier lists
+collent aux chiffres ».
+Les tableaux chiffrés de `docs/META-KNOWLEDGE.md` (champ complet, résultats par
+tournoi, toutes ères) et de `docs/DECKBUILDING-RULES.md` sont regénérés, pas
+retapés : le nouveau `scripts/tables-meta.mts` sort les deux premiers, les autres
+viennent de `tier-stats.mts` et de `data/deckbuilding-stats.md`.
+Piège payé : une réécriture automatique des chiffres avait aussi touché les trois
+listes NON signalées et pris une part de champ pour une conversion (Viktor en
+Origines, « 776 joueurs (11,6 %) »). Ne réécrire que ce que l'étape 6 signale, et
+relire chaque ligne : un chiffre juste peut rendre la phrase fausse.
 
 ## Session du 15 septembre 2026 — Regional Open S4 de Shenyang (hexgate 252)
 

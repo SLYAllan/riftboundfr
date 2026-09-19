@@ -1,4 +1,5 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
+> Mis à jour le 20 septembre 2026 (v14). **Cinq épreuves chinoises entrent au corpus** : les trois matchs spéciaux du Regional Open du 13 septembre (94, 93 et 94 joueurs) et les City Challenge de Shanghai et de Guangzhou du 19 septembre (128 chacune). Vendetta passe de 9 762 à 10 285 joueurs classés, le cumul de 40 099 à 40 622. Rengar entre parmi les écarts établis au-dessus de la moyenne (13,4 %, p = 0,029) ; Akali et Ornn sortent des « établies en dessous », d'un cheveu (p = 0,051 et 0,068). Kennen compte huit titres : il a gagné les deux City Challenge du 19 septembre.
 > Mis à jour le 30 août 2026 (v13). **Le Regional Open S4 de Wuhan entre au corpus : 1 241 joueurs classés**, relevés sur hexgate, qui publie aussi 1 161 de leurs listes — 91 % du champ, du jamais vu sur un tournoi de cette taille. Vendetta passe de 5 260 à 6 501 joueurs classés, le cumul de 35 597 à 36 838. Irelia gagne le tournoi, son deuxième titre du format, et rejoint Kennen et Master Yi parmi les trois Légendes établies au-dessus de la moyenne. Akali et Vex sortent des « établies en dessous » : leur conversion n'a pas bougé, l'échantillon a grandi.
 > Mis à jour le 27 août 2026 (v12). **Les quatre sets et le cumul toutes ères sont refaits sur le même corpus** : 35 597 joueurs classés sur 111 tournois, dont 30 au classement complet scrapé. Vendetta 5 260, Unleashed 13 979, Spiritforged 9 685, Origines 6 673. Les cinq tier lists en base sont réécrites dessus. Une limite reste, et elle est nette : **riftdecks ne publie pas le classement complet de Bologna, Las Vegas, Houston, Fuzhou RQ, Beijing RO jour 1 ni de la City Challenge de Chengdu du 9 novembre** ; ces six tournois, environ 6 200 joueurs, restent hors corpus. Vérifié en les scrapant, ce n'est pas un scrape à relancer.
 > Mis à jour le 27 août 2026 (v11). **Le méta Unleashed est refait sur 13 979 joueurs classés** après le scrape du classement complet des cinq tournois qui ne publiaient presque aucune liste (Utrecht 3 %, Sydney 3 %, Hartford 5 %, Vancouver 7 %, Suzhou 80 %). Deux verdicts de la tier list de juillet sont retournés : Miss Fortune passe de D à la moyenne du format, Vex de C à la moyenne. Les deux étaient des artefacts du biais de publication. L'état de la couverture par set se relève avec `npx tsx scripts/couverture-tournois.mts`.
@@ -9,9 +10,9 @@
 > Mis à jour le 8 juin 2026 (v4). **≈19 330 decks sur 89 tournois** en base. Ajout v4 : **S3 Tianjin Regional Open (Unleashed, 640 joueurs, 638 decklists)** → **Unleashed 5 105 classés** (39 lég). Best of Tianjin (39 légendes, article + decks) + tier lists Unleashed/Globale recalculés. **Vainqueur : Master Yi, Wuju Bladesman** (陈千语), Diana 2e, Rek'sai 3e (surprise), Pyke 4e. ⚠️ Correction v4 : « Master Yi, Wuju Master » était une mauvaise classification (fallback set==Unleashed) — preuve par image que les champions Master Yi appartiennent à Wuju Bladesman ; ~395 decks reclassés, « Wuju Master » retiré des tier lists.
 > Mis à jour le 31 mai 2026 (v3). **18 652 decks sur 88 tournois** en base. Ajouts v3 : **25 S3 City Challenges (Unleashed)** + Hangzhou RO (Origins) + 21 anciennes City Challenges (Origins) = +6 298 decks. Répartition par set : **Origins 6 799 classés** (16 légendes), **Spiritforged 7 294** (29 lég), **Unleashed (v3) 4 501** (41 lég). DECKBUILDING-RULES.md + tier list DB (Origins/Spiritforged/Unleashed/Globale) recalculés sur ces données. Légendes en DB normalisées en virgule canonique (40 distinctes, Master Yi = 2 légendes légitimes).
 
-## Vendetta (S4) — refait le 11 septembre 2026 sur **8 508 joueurs classés**
+## Vendetta (S4) — refait le 20 septembre 2026 sur **10 285 joueurs classés**
 
-> Corpus produit par `scripts/classements-tournois.mts`, chiffres par `scripts/tier-stats.mts`. **8 508 joueurs classés sur 26 tournois.** Contrôlé contre les tableaux officiels publiés par Riot : pour Barcelone, écart absolu de 9 places sur 2 131, soit 0,42 %, aucune Légende en trop ni manquante ; pour Singapour, riftdecks annonce 1 893 classés et la somme du tableau de Riot tombe sur le même chiffre, le corpus en lit 1 883.
+> Corpus produit par `scripts/classements-tournois.mts`, chiffres par `scripts/tier-stats.mts`. **10 285 joueurs classés sur 33 tournois.** Contrôlé contre les tableaux officiels publiés par Riot : pour Barcelone, écart absolu de 9 places sur 2 131, soit 0,42 %, aucune Légende en trop ni manquante ; pour Singapour, riftdecks annonce 1 893 classés et la somme du tableau de Riot tombe sur le même chiffre, le corpus en lit 1 883.
 
 ### Méthode, et pourquoi elle a changé
 
@@ -35,74 +36,78 @@ Ce que ces chiffres ne mesurent toujours pas : les résultats de rondes, les mat
 
 | Légende | Joueurs | Part | Coupe 10 % | Conversion | Titres | Tournois |
 |---|---:|---:|---:|---:|---:|---:|
-| Kennen, Heart of the Tempest | 934 | 10,98 % | 170 | 18,2 % | 3 | 26 |
-| Master Yi, Wuju Bladesman | 760 | 8,93 % | 103 | 13,6 % | 5 | 26 |
-| Irelia, Blade Dancer | 639 | 7,51 % | 78 | 12,2 % | 2 | 26 |
-| Nasus, Curator of the Sands | 365 | 4,29 % | 20 | 5,5 % | 2 | 26 |
-| Rek'sai, Void Burrower | 354 | 4,16 % | 41 | 11,6 % | 0 | 26 |
-| Diana, Scorn of the Moon | 351 | 4,13 % | 32 | 9,1 % | 4 | 26 |
-| Akali, Rogue Assassin | 349 | 4,10 % | 21 | 6,0 % | 1 | 26 |
-| Kai'Sa, Daughter of the Void | 349 | 4,10 % | 26 | 7,4 % | 2 | 26 |
-| Rengar, Pridestalker | 317 | 3,73 % | 41 | 12,9 % | 1 | 23 |
-| Azir, Emperor of the Sands | 315 | 3,70 % | 41 | 13,0 % | 2 | 26 |
-| Jayce, Defender of Tomorrow | 311 | 3,66 % | 32 | 10,3 % | 0 | 26 |
-| Fiora, Grand Duelist | 279 | 3,28 % | 25 | 9,0 % | 1 | 26 |
-| LeBlanc, Deceiver | 259 | 3,04 % | 37 | 14,3 % | 0 | 25 |
-| Draven, Glorious Executioner | 258 | 3,03 % | 30 | 11,6 % | 1 | 24 |
-| Ornn, Fire Below the Mountain | 208 | 2,44 % | 14 | 6,7 % | 1 | 23 |
-| Kha'Zix, Voidreaver | 203 | 2,39 % | 21 | 10,3 % | 0 | 21 |
-| Lillia, Bashful Bloom | 203 | 2,39 % | 14 | 6,9 % | 1 | 25 |
-| Ezreal, Prodigal Explorer | 197 | 2,32 % | 28 | 14,2 % | 0 | 25 |
-| Vex, Gloomist | 185 | 2,17 % | 14 | 7,6 % | 0 | 24 |
-| Mel, Soul's Reflection | 155 | 1,82 % | 6 | 3,9 % | 0 | 22 |
-| Viktor, Herald of the Arcane | 128 | 1,50 % | 7 | 5,5 % | 0 | 23 |
-| Vi, Piltover Enforcer | 110 | 1,29 % | 1 | 0,9 % | 0 | 12 |
-| Zed, Master of Shadows | 106 | 1,25 % | 2 | 1,9 % | 0 | 18 |
-| Rumble, Mechanized Menace | 103 | 1,21 % | 1 | 1,0 % | 0 | 16 |
-| Ambessa, Matriarch of War | 102 | 1,20 % | 1 | 1,0 % | 0 | 15 |
-| Pyke, Bloodharbor Ripper | 99 | 1,16 % | 2 | 2,0 % | 0 | 21 |
-| Master Yi, Wuju Master | 91 | 1,07 % | 3 | 3,3 % | 0 | 12 |
-| Lucian, Purifier | 85 | 1,00 % | 6 | 7,1 % | 0 | 14 |
-| Shen, Eye of Twilight | 81 | 0,95 % | 0 | 0,0 % | 0 | 15 |
-| Ivern, Green Father | 80 | 0,94 % | 0 | 0,0 % | 0 | 13 |
-| Jhin, Virtuoso | 72 | 0,85 % | 2 | 2,8 % | 0 | 13 |
-| Jax, Grandmaster At Arms | 70 | 0,82 % | 0 | 0,0 % | 0 | 15 |
-| Sivir, Battle Mistress | 62 | 0,73 % | 9 | 14,5 % | 0 | 15 |
-| Renata Glasc, Chem-Baroness | 59 | 0,69 % | 0 | 0,0 % | 0 | 9 |
-| Renekton, Butcher of the Sands | 58 | 0,68 % | 0 | 0,0 % | 0 | 9 |
-| Poppy, Keeper of the Hammer | 52 | 0,61 % | 1 | 1,9 % | 0 | 8 |
-| Lux, Lady of Luminosity | 42 | 0,49 % | 5 | 11,9 % | 0 | 13 |
-| Sett, The Boss | 23 | 0,27 % | 1 | 4,3 % | 0 | 13 |
-| Annie, Dark Child | 22 | 0,26 % | 3 | 13,6 % | 0 | 11 |
-| Leona, Radiant Dawn | 16 | 0,19 % | 1 | 6,2 % | 0 | 9 |
-| Teemo, Swift Scout | 15 | 0,18 % | 1 | 6,7 % | 0 | 11 |
-| Miss Fortune, Bounty Hunter | 10 | 0,12 % | 1 | 10,0 % | 0 | 6 |
-| Volibear, Relentless Storm | 10 | 0,12 % | 1 | 10,0 % | 0 | 8 |
-| Ahri, Nine-Tailed Fox | 8 | 0,09 % | 0 | 0,0 % | 0 | 7 |
-| Yasuo, Unforgiven | 7 | 0,08 % | 1 | 14,3 % | 0 | 6 |
-| Jinx, Loose Cannon | 3 | 0,04 % | 0 | 0,0 % | 0 | 3 |
-| Darius, Hand of Noxus | 2 | 0,02 % | 0 | 0,0 % | 0 | 2 |
-| Lee Sin, Blind Monk | 1 | 0,01 % | 0 | 0,0 % | 0 | 1 |
+| Kennen, Heart of the Tempest | 1141 | 11,09 % | 212 | 18,6 % | 8 | 33 |
+| Master Yi, Wuju Bladesman | 881 | 8,57 % | 116 | 13,2 % | 5 | 33 |
+| Irelia, Blade Dancer | 747 | 7,26 % | 87 | 11,6 % | 2 | 33 |
+| Akali, Rogue Assassin | 463 | 4,50 % | 33 | 7,1 % | 2 | 33 |
+| Diana, Scorn of the Moon | 426 | 4,14 % | 39 | 9,2 % | 5 | 33 |
+| Rek'sai, Void Burrower | 409 | 3,98 % | 48 | 11,7 % | 0 | 33 |
+| Kai'Sa, Daughter of the Void | 408 | 3,97 % | 33 | 8,1 % | 2 | 33 |
+| Jayce, Defender of Tomorrow | 403 | 3,92 % | 40 | 9,9 % | 0 | 33 |
+| Nasus, Curator of the Sands | 403 | 3,92 % | 21 | 5,2 % | 2 | 32 |
+| Azir, Emperor of the Sands | 393 | 3,82 % | 47 | 12,0 % | 2 | 33 |
+| Rengar, Pridestalker | 373 | 3,63 % | 50 | 13,4 % | 1 | 30 |
+| Fiora, Grand Duelist | 369 | 3,59 % | 36 | 9,8 % | 1 | 33 |
+| LeBlanc, Deceiver | 328 | 3,19 % | 45 | 13,7 % | 0 | 32 |
+| Draven, Glorious Executioner | 291 | 2,83 % | 32 | 11,0 % | 1 | 30 |
+| Ornn, Fire Below the Mountain | 274 | 2,66 % | 18 | 6,6 % | 1 | 30 |
+| Vex, Gloomist | 244 | 2,37 % | 21 | 8,6 % | 0 | 30 |
+| Lillia, Bashful Bloom | 241 | 2,34 % | 16 | 6,6 % | 1 | 32 |
+| Kha'Zix, Voidreaver | 237 | 2,30 % | 24 | 10,1 % | 0 | 26 |
+| Ezreal, Prodigal Explorer | 222 | 2,16 % | 32 | 14,4 % | 0 | 32 |
+| Mel, Soul's Reflection | 188 | 1,83 % | 6 | 3,2 % | 0 | 27 |
+| Pyke, Bloodharbor Ripper | 135 | 1,31 % | 2 | 1,5 % | 0 | 26 |
+| Viktor, Herald of the Arcane | 133 | 1,29 % | 7 | 5,3 % | 0 | 26 |
+| Zed, Master of Shadows | 128 | 1,24 % | 3 | 2,3 % | 0 | 24 |
+| Vi, Piltover Enforcer | 127 | 1,23 % | 3 | 2,4 % | 0 | 15 |
+| Ambessa, Matriarch of War | 125 | 1,22 % | 1 | 0,8 % | 0 | 20 |
+| Rumble, Mechanized Menace | 122 | 1,19 % | 1 | 0,8 % | 0 | 17 |
+| Ivern, Green Father | 116 | 1,13 % | 2 | 1,7 % | 0 | 17 |
+| Master Yi, Wuju Master | 104 | 1,01 % | 4 | 3,8 % | 0 | 15 |
+| Shen, Eye of Twilight | 104 | 1,01 % | 0 | 0,0 % | 0 | 18 |
+| Lucian, Purifier | 99 | 0,96 % | 7 | 7,1 % | 0 | 17 |
+| Jhin, Virtuoso | 89 | 0,87 % | 2 | 2,2 % | 0 | 18 |
+| Jax, Grandmaster At Arms | 87 | 0,85 % | 0 | 0,0 % | 0 | 17 |
+| Renata Glasc, Chem-Baroness | 79 | 0,77 % | 0 | 0,0 % | 0 | 10 |
+| Sivir, Battle Mistress | 77 | 0,75 % | 10 | 13,0 % | 0 | 18 |
+| Renekton, Butcher of the Sands | 71 | 0,69 % | 0 | 0,0 % | 0 | 12 |
+| Poppy, Keeper of the Hammer | 64 | 0,62 % | 2 | 3,1 % | 0 | 10 |
+| Lux, Lady of Luminosity | 44 | 0,43 % | 5 | 11,4 % | 0 | 15 |
+| Sett, The Boss | 24 | 0,23 % | 1 | 4,2 % | 0 | 14 |
+| Annie, Dark Child | 22 | 0,21 % | 3 | 13,6 % | 0 | 11 |
+| Leona, Radiant Dawn | 21 | 0,20 % | 1 | 4,8 % | 0 | 11 |
+| Teemo, Swift Scout | 19 | 0,18 % | 1 | 5,3 % | 0 | 14 |
+| Ahri, Nine-Tailed Fox | 14 | 0,14 % | 0 | 0,0 % | 0 | 12 |
+| Miss Fortune, Bounty Hunter | 11 | 0,11 % | 1 | 9,1 % | 0 | 7 |
+| Volibear, Relentless Storm | 10 | 0,10 % | 1 | 10,0 % | 0 | 8 |
+| Yasuo, Unforgiven | 8 | 0,08 % | 1 | 12,5 % | 0 | 7 |
+| Jinx, Loose Cannon | 4 | 0,04 % | 0 | 0,0 % | 0 | 4 |
+| Darius, Hand of Noxus | 3 | 0,03 % | 0 | 0,0 % | 0 | 3 |
+| Lee Sin, Blind Monk | 3 | 0,03 % | 0 | 0,0 % | 0 | 3 |
+| Garen, Might of Demacia | 1 | 0,01 % | 0 | 0,0 % | 0 | 1 |
 
-Total : **8 508 joueurs classés, 843 places dans la coupe des 10 %, 26 titres**. Conversion moyenne du format : **9,9 %**.
+Total : **10 285 joueurs classés, 1 014 places dans la coupe des 10 %, 33 titres**. Conversion moyenne du format : **9,9 %**.
+
 
 ### Ce qui se détache
 
-Trois écarts au-dessus de la moyenne (9,91 %) tiennent un test binomial bilatéral :
+Cinq écarts au-dessus de la moyenne (9,86 %) tiennent un test binomial bilatéral :
 
-- **Kennen, Heart of the Tempest** : 934 joueurs, 18,2 % de conversion, p < 0,001. La Légende de la période, et de loin. Finaliste à Barcelone et à Singapour ; à Singapour il prend quatre des huit places du Top 8, et sa part monte de 11,5 % le samedi à 19,3 % le dimanche.
-- **Master Yi, Wuju Bladesman** : 760 joueurs, 13,6 %, p = 0,001. Cinq titres sur les 26 tournois, le plus gros total du format.
-- **LeBlanc, Deceiver** : 259 joueurs, 14,3 %, p = 0,022. Elle passe le seuil au relevé de Singapour, sans un seul titre.
+- **Kennen, Heart of the Tempest** : 1 141 joueurs, 18,6 % de conversion, p < 0,001. La Légende de la période, et de loin. Huit titres, dont les deux City Challenge du 19 septembre. Finaliste à Barcelone et à Singapour ; à Singapour il prend quatre des huit places du Top 8.
+- **Ezreal, Prodigal Explorer** : 222 joueurs, 14,4 %, p = 0,031. Peu joué, il rend. Toujours sans titre.
+- **LeBlanc, Deceiver** : 328 joueurs, 13,7 %, p = 0,026. Elle passe le seuil au relevé de Singapour, sans un seul titre.
+- **Rengar, Pridestalker** : 373 joueurs, 13,4 %, p = 0,029. Il entre au relevé du 20 septembre, après trois relevés au-dessus de la moyenne sans jamais tenir le test. Un titre, au Showdown d'Ottawa.
+- **Master Yi, Wuju Bladesman** : 881 joueurs, 13,2 %, p = 0,002. Cinq titres sur les 33 tournois, à égalité avec Diana.
 
-**Irelia sort du lot** : 12,2 % sur 639 joueurs, p = 0,055. Elle y était entrée avec le Regional Open de Wuhan, qu'elle avait gagné (p = 0,041). Sa conversion n'a presque pas bougé : un rang posé sur un p juste sous 0,05 ne tient pas d'un relevé à l'autre, et c'est ce qui arrive ici.
+**Irelia reste dehors** : 11,6 % sur 747 joueurs, p = 0,110. Elle y était entrée avec le Regional Open de Wuhan, qu'elle avait gagné (p = 0,041), et s'en éloigne depuis. Un rang posé sur un p juste sous 0,05 ne tient pas d'un relevé à l'autre.
 
-Quinze Légendes sont établies **en dessous** : Akali (6,0 %), Nasus (5,5 %), Mel (3,9 %), Master Yi, Wuju Master (3,3 %), Jhin (2,8 %), Pyke (2,0 %), Zed (1,9 %), Ambessa, Rumble et Vi (une place en coupe chacune), puis Renekton, Ivern, Jax, Renata Glasc et Shen, toutes à zéro.
+Quatorze Légendes sont établies **en dessous** : Nasus (5,2 %), Master Yi, Wuju Master (3,8 %), Mel (3,2 %), Vi (2,4 %), Zed (2,3 %), Jhin (2,2 %), Ivern (1,7 %), Pyke (1,5 %), Ambessa et Rumble (une place en coupe chacune), puis Renekton, Jax, Renata Glasc et Shen, toutes à zéro.
 
-**Akali** est le cas le plus parlant : championne de Singapour avec Gorica, et pourtant de nouveau établie en dessous (p = 0,012). Son titre est réel, mais ses 348 autres pilotes ont peu placé.
+**Akali en sort, d'un cheveu** : championne de Singapour avec Gorica et du Regional Open de Shenyang, 7,1 % sur 463 joueurs, p = 0,051. Elle gagne, elle ne place pas ; l'écart en dessous ne tient plus tout à fait le test.
 
-Tout le reste est du bruit d'échantillon. **Ezreal** reste le cas le plus intéressant : 14,2 % sur 197 joueurs, p = 0,055, juste au-dessus du seuil. Peu joué, il rend.
+**Ornn aussi** : 6,6 % sur 274 joueurs, p = 0,068. Vainqueur de Barcelone, le plus gros tournoi jamais joué, et rien depuis.
 
-**Kai'Sa n'est pas une Légende de tête.** 349 joueurs, 7,4 %, et presque absente des Regional Qualifier occidentaux : 18 joueurs à Barcelone, 10 à Singapour. Le méta européen, le méta asiatique hors Chine et le méta chinois ne sont pas le même méta.
+**Kai'Sa n'est pas une Légende de tête.** 408 joueurs, 8,1 %, et presque absente des Regional Qualifier occidentaux : 18 joueurs à Barcelone, 10 à Singapour. Le méta européen, le méta asiatique hors Chine et le méta chinois ne sont pas le même méta.
 
 ### La rotation des Best-Of vide le bas du tableau
 
@@ -114,7 +119,8 @@ Huit Légendes n'ont eu **aucun pilote** à Barcelone : Ahri, Darius, Garen, Jin
 |---|---:|---:|---|---:|
 | Barcelona Regional Qualifier | 2127 | 213 | Ornn, Fire Below the Mountain | 106 |
 | Singapore Regional Qualifier | 1883 | 188 | Akali, Rogue Assassin | 38 |
-| S4 Wuhan Regional Open (2026-08-29) | 1241 | 124 | Irelia, Blade Dancer | 1161 |
+| S4 Wuhan Regional Open (2026-08-29) | 1241 | 124 | Irelia, Blade Dancer | 1162 |
+| S4 Shenyang Regional Open (2026-09-12) | 1135 | 114 | Akali, Rogue Assassin | 1093 |
 | Riftbound Showdown Ottawa (2026-08-08) | 579 | 58 | Rengar, Pridestalker | 40 |
 | S4 Beijing City Challenge (2026-08-08) | 128 | 13 | Diana, Scorn of the Moon | 123 |
 | S4 Beijing City Challenge (2026-08-15) | 128 | 13 | Master Yi, Wuju Bladesman | 124 |
@@ -127,19 +133,26 @@ Huit Légendes n'ont eu **aucun pilote** à Barcelone : Ahri, Darius, Garen, Jin
 | S4 Shenyang City Challenge (2026-08-16) | 128 | 13 | Master Yi, Wuju Bladesman | 122 |
 | S4 Shenzhen City Challenge (2026-08-08) | 128 | 13 | Kai'Sa, Daughter of the Void | 118 |
 | S4 Guangzhou City Challenge (2026-08-16) | 125 | 13 | Master Yi, Wuju Bladesman | 123 |
+| S4 Guangzhou City Challenge (2026-09-19) | 125 | 13 | Kennen, Heart of the Tempest | 123 |
 | S4 Hangzhou City Challenge (2026-08-09) | 124 | 12 | Diana, Scorn of the Moon | 118 |
-| S4 Shanghai City Challenge (2026-09-05) | 124 | 12 | Azir, Emperor of the Sands | 120 |
+| S4 Shanghai City Challenge (2026-09-05) | 124 | 12 | Azir, Emperor of the Sands | 122 |
+| S4 Shanghai City Challenge (2026-09-19) | 124 | 12 | Kennen, Heart of the Tempest | 120 |
 | S4 Beijing City Challenge (2026-08-23) | 123 | 12 | Irelia, Blade Dancer | 114 |
 | S4 Guangzhou City Challenge (2026-08-22) | 123 | 12 | Kennen, Heart of the Tempest | 119 |
 | S4 Shanghai City Challenge (2026-08-22) | 123 | 12 | Master Yi, Wuju Bladesman | 120 |
 | S4 Shenzhen City Challenge (2026-08-23) | 120 | 12 | Kennen, Heart of the Tempest | 115 |
+| S4 Guangzhou City Challenge (2026-09-05) | 119 | 12 | Kennen, Heart of the Tempest | 110 |
 | S4 Qingdao City Challenge (2026-08-16) | 115 | 12 | Diana, Scorn of the Moon | 103 |
 | S4 Wuhan City Challenge (2026-08-08) | 114 | 11 | Master Yi, Wuju Bladesman | 99 |
 | Dongguan Manbo Cup (2026-08-08) | 103 | 10 | Diana, Scorn of the Moon | 98 |
 | S4 Suzhou City Challenge (2026-08-23) | 103 | 10 | Lillia, Bashful Bloom | 101 |
 | S4 Tianjin City Challenge (2026-08-16) | 101 | 10 | Nasus, Curator of the Sands | 93 |
+| S4 Regional Open Side Event A (2026-09-13) | 93 | 9 | Kennen, Heart of the Tempest | 91 |
+| S4 Regional Open Side Event B (2026-09-13) | 92 | 9 | Kennen, Heart of the Tempest | 87 |
+| S4 Regional Open Side Event C (2026-09-13) | 89 | 9 | Diana, Scorn of the Moon | 86 |
 
-Le tableau confronte les joueurs classés et les listes publiées. L'écart est le sujet : Barcelone publie 106 listes pour 2 127 joueurs, Singapour 38 pour 1 883, Ottawa 40 pour 579, là où les City Challenge chinoises en publient de 87 % à 98 %. **Le Regional Open de Wuhan est le premier gros tournoi à publier presque tout : 1 161 listes sur 1 280 joueurs, soit 91 %.** C'est hexgate qui les publie, pas riftdecks, et c'est pour cette raison que le corpus part du classement partout ailleurs. Les 38 listes de Singapour viennent de l'article officiel de Riot, qui publie le Top 8 et le meilleur deck de chaque Légende.
+
+Le tableau confronte les joueurs classés et les listes publiées. L'écart est le sujet : Barcelone publie 106 listes pour 2 127 joueurs, Singapour 38 pour 1 883, Ottawa 40 pour 579, là où les City Challenge chinoises en publient de 87 % à 98 %. **Les deux Regional Open chinois publient presque tout : Wuhan 1 162 listes sur 1 280 joueurs, Shenyang 1 093 sur 1 191, soit 91 et 92 %.** C'est hexgate qui les publie, pas riftdecks, et c'est pour cette raison que le corpus part du classement partout ailleurs. Les 38 listes de Singapour viennent de l'article officiel de Riot, qui publie le Top 8 et le meilleur deck de chaque Légende.
 
 ## Juin 2026 (v7) — Analyse VOD compétitives (84 VOD, distillé)
 
@@ -268,7 +281,7 @@ Rendus côté site dans `/guides/glossaire`. PDF des règles : voir `data/meta-r
 - **Can't beats Can** : les effets interdisant > les effets autorisant
 - Source : `data/meta-reports/riftbound-rules-rgpub.pdf` (98 pages)
 
-## 2. Tier lists par set — Vendetta et cumul refaits le 11 septembre 2026
+## 2. Tier lists par set — Vendetta et cumul refaits le 20 septembre 2026
 
 > Les quatre sets et le cumul toutes ères sont calculés sur **le même corpus** : 38 845 joueurs classés sur 114 tournois, dont 33 au classement complet scrapé. Vendetta 8 508, Unleashed 13 979, Spiritforged 9 685, Origines 6 673.
 >
@@ -424,61 +437,63 @@ Les titres, toutes sources confondues : Irelia 9, Master Yi Wuju Bladesman 7, Di
 | Renata Glasc, Chem-Baroness | 107 | 0.8 % | 0 | 0.0 % | 0.0–3.5 % | 0.000 | OUI, en dessous |
 | Rumble, Mechanized Menace | 108 | 0.8 % | 0 | 0.0 % | 0.0–3.4 % | 0.000 | OUI, en dessous |
 
-### Toutes ères confondues — refait le 11 septembre 2026 sur **38 845 joueurs classés**
+### Toutes ères confondues — refait le 20 septembre 2026 sur **40 622 joueurs classés**
 
-> 114 tournois d'Origines à Vendetta, dont 33 au classement complet. Chiffres par `npx tsx scripts/tier-stats.mts tous 0.10 100`. Conversion moyenne : **10,2 %**.
+> 121 tournois d'Origines à Vendetta, dont 40 au classement complet. Chiffres par `npx tsx scripts/tier-stats.mts tous 0.10 100`. Conversion moyenne : **10,1 %**.
 >
 > **Lire ce classement pour ce qu'il est** : un cumul de quatre formats qui n'ont ni la même liste de cartes ni les mêmes bans. Une Légende n'a pas la même puissance dans chacun, et une moyenne sur quatre ères ne remplace pas la tier list du format en cours. Pour jouer aujourd'hui, c'est la section Vendetta qui compte.
 
 | Légende | Joueurs | Part | Coupe | Conv. | IC 95 % | p | Écart établi |
 |---|---:|---:|---:|---:|---|---:|---|
-| Kennen, Heart of the Tempest | 934 | 2.4 % | 170 | 18.2 % | 15.9–20.8 % | 0.000 | OUI, au-dessus |
-| Draven, Glorious Executioner | 2282 | 5.9 % | 375 | 16.4 % | 15.0–18.0 % | 0.000 | OUI, au-dessus |
-| Irelia, Blade Dancer | 2992 | 7.7 % | 434 | 14.5 % | 13.3–15.8 % | 0.000 | OUI, au-dessus |
-| Master Yi, Wuju Bladesman | 4168 | 10.7 % | 579 | 13.9 % | 12.9–15.0 % | 0.000 | OUI, au-dessus |
-| Diana, Scorn of the Moon | 1360 | 3.5 % | 181 | 13.3 % | 11.6–15.2 % | 0.000 | OUI, au-dessus |
+| Kennen, Heart of the Tempest | 1141 | 2.8 % | 212 | 18.6 % | 16.4–20.9 % | 0.000 | OUI, au-dessus |
+| Draven, Glorious Executioner | 2315 | 5.7 % | 377 | 16.3 % | 14.8–17.8 % | 0.000 | OUI, au-dessus |
+| Irelia, Blade Dancer | 3100 | 7.6 % | 443 | 14.3 % | 13.1–15.6 % | 0.000 | OUI, au-dessus |
+| Master Yi, Wuju Bladesman | 4289 | 10.6 % | 592 | 13.8 % | 12.8–14.9 % | 0.000 | OUI, au-dessus |
+| Diana, Scorn of the Moon | 1435 | 3.5 % | 188 | 13.1 % | 11.5–14.9 % | 0.000 | OUI, au-dessus |
 | Annie, Dark Child | 755 | 1.9 % | 94 | 12.5 % | 10.3–15.0 % | 0.040 | OUI, au-dessus |
-| LeBlanc, Deceiver | 1128 | 2.9 % | 137 | 12.1 % | 10.4–14.2 % | 0.030 | OUI, au-dessus |
-| Sivir, Battle Mistress | 692 | 1.8 % | 82 | 11.8 % | 9.6–14.5 % | 0.147 | non, bruit |
-| Kai'Sa, Daughter of the Void | 3698 | 9.5 % | 435 | 11.8 % | 10.8–12.8 % | 0.002 | OUI, au-dessus |
-| Rengar, Pridestalker | 665 | 1.7 % | 75 | 11.3 % | 9.1–13.9 % | 0.335 | non, bruit |
-| Darius, Hand of Noxus | 415 | 1.1 % | 46 | 11.1 % | 8.4–14.5 % | 0.516 | non, bruit |
-| Ezreal, Prodigal Explorer | 928 | 2.4 % | 98 | 10.6 % | 8.7–12.7 % | 0.664 | non, bruit |
-| Azir, Emperor of the Sands | 1175 | 3.0 % | 122 | 10.4 % | 8.8–12.3 % | 0.772 | non, bruit |
-| Jayce, Defender of Tomorrow | 311 | 0.8 % | 32 | 10.3 % | 7.4–14.2 % | 0.925 | non, bruit |
-| Rek'sai, Void Burrower | 825 | 2.1 % | 80 | 9.7 % | 7.9–11.9 % | 0.729 | non, bruit |
-| Viktor, Herald of the Arcane | 1954 | 5.0 % | 182 | 9.3 % | 8.1–10.7 % | 0.231 | non, bruit |
-| Miss Fortune, Bounty Hunter | 923 | 2.4 % | 85 | 9.2 % | 7.5–11.2 % | 0.383 | non, bruit |
-| Fiora, Grand Duelist | 1229 | 3.2 % | 112 | 9.1 % | 7.6–10.9 % | 0.238 | non, bruit |
-| Kha'Zix, Voidreaver | 560 | 1.4 % | 50 | 8.9 % | 6.8–11.6 % | 0.363 | non, bruit |
-| Sett, The Boss | 856 | 2.2 % | 76 | 8.9 % | 7.2–11.0 % | 0.235 | non, bruit |
-| Vex, Gloomist | 722 | 1.9 % | 60 | 8.3 % | 6.5–10.6 % | 0.109 | non, bruit |
-| Lillia, Bashful Bloom | 692 | 1.8 % | 57 | 8.2 % | 6.4–10.5 % | 0.102 | non, bruit |
-| Lucian, Purifier | 506 | 1.3 % | 40 | 7.9 % | 5.9–10.6 % | 0.105 | non, bruit |
-| Lux, Lady of Luminosity | 459 | 1.2 % | 32 | 7.0 % | 5.0–9.7 % | 0.025 | OUI, en dessous |
-| Teemo, Swift Scout | 717 | 1.8 % | 49 | 6.8 % | 5.2–8.9 % | 0.002 | OUI, en dessous |
-| Akali, Rogue Assassin | 349 | 0.9 % | 21 | 6.0 % | 4.0–9.0 % | 0.010 | OUI, en dessous |
-| Pyke, Bloodharbor Ripper | 444 | 1.1 % | 26 | 5.9 % | 4.0–8.4 % | 0.002 | OUI, en dessous |
-| Nasus, Curator of the Sands | 365 | 0.9 % | 20 | 5.5 % | 3.6–8.3 % | 0.002 | OUI, en dessous |
-| Ornn, Fire Below the Mountain | 684 | 1.8 % | 33 | 4.8 % | 3.5–6.7 % | 0.000 | OUI, en dessous |
-| Poppy, Keeper of the Hammer | 218 | 0.6 % | 10 | 4.6 % | 2.5–8.2 % | 0.005 | OUI, en dessous |
-| Jax, Grandmaster At Arms | 371 | 1.0 % | 16 | 4.3 % | 2.7–6.9 % | 0.000 | OUI, en dessous |
-| Ahri, Nine-Tailed Fox | 804 | 2.1 % | 33 | 4.1 % | 2.9–5.7 % | 0.000 | OUI, en dessous |
-| Lee Sin, Blind Monk | 372 | 1.0 % | 15 | 4.0 % | 2.5–6.5 % | 0.000 | OUI, en dessous |
-| Mel, Soul's Reflection | 155 | 0.4 % | 6 | 3.9 % | 1.8–8.2 % | 0.007 | OUI, en dessous |
-| Master Yi, Wuju Master | 255 | 0.7 % | 9 | 3.5 % | 1.9–6.6 % | 0.000 | OUI, en dessous |
+| LeBlanc, Deceiver | 1197 | 2.9 % | 145 | 12.1 % | 10.4–14.1 % | 0.027 | OUI, au-dessus |
+| Kai'Sa, Daughter of the Void | 3757 | 9.2 % | 442 | 11.8 % | 10.8–12.8 % | 0.001 | OUI, au-dessus |
+| Sivir, Battle Mistress | 707 | 1.7 % | 83 | 11.7 % | 9.6–14.3 % | 0.170 | non, bruit |
+| Rengar, Pridestalker | 721 | 1.8 % | 84 | 11.7 % | 9.5–14.2 % | 0.175 | non, bruit |
+| Darius, Hand of Noxus | 416 | 1.0 % | 46 | 11.1 % | 8.4–14.4 % | 0.516 | non, bruit |
+| Ezreal, Prodigal Explorer | 953 | 2.3 % | 102 | 10.7 % | 8.9–12.8 % | 0.555 | non, bruit |
+| Azir, Emperor of the Sands | 1253 | 3.1 % | 128 | 10.2 % | 8.7–12.0 % | 0.925 | non, bruit |
+| Jayce, Defender of Tomorrow | 403 | 1.0 % | 40 | 9.9 % | 7.4–13.2 % | 1.000 | non, bruit |
+| Rek'sai, Void Burrower | 880 | 2.2 % | 87 | 9.9 % | 8.1–12.0 % | 0.867 | non, bruit |
+| Fiora, Grand Duelist | 1319 | 3.2 % | 123 | 9.3 % | 7.9–11.0 % | 0.361 | non, bruit |
+| Viktor, Herald of the Arcane | 1959 | 4.8 % | 182 | 9.3 % | 8.1–10.7 % | 0.231 | non, bruit |
+| Miss Fortune, Bounty Hunter | 924 | 2.3 % | 85 | 9.2 % | 7.5–11.2 % | 0.383 | non, bruit |
+| Kha'Zix, Voidreaver | 594 | 1.5 % | 53 | 8.9 % | 6.9–11.5 % | 0.376 | non, bruit |
+| Sett, The Boss | 857 | 2.1 % | 76 | 8.9 % | 7.1–11.0 % | 0.235 | non, bruit |
+| Vex, Gloomist | 781 | 1.9 % | 67 | 8.6 % | 6.8–10.8 % | 0.155 | non, bruit |
+| Lillia, Bashful Bloom | 730 | 1.8 % | 59 | 8.1 % | 6.3–10.3 % | 0.066 | non, bruit |
+| Lucian, Purifier | 520 | 1.3 % | 41 | 7.9 % | 5.9–10.5 % | 0.094 | non, bruit |
+| Akali, Rogue Assassin | 463 | 1.1 % | 33 | 7.1 % | 5.1–9.8 % | 0.031 | OUI, en dessous |
+| Lux, Lady of Luminosity | 461 | 1.1 % | 32 | 6.9 % | 5.0–9.6 % | 0.021 | OUI, en dessous |
+| Teemo, Swift Scout | 721 | 1.8 % | 49 | 6.8 % | 5.2–8.9 % | 0.002 | OUI, en dessous |
+| Pyke, Bloodharbor Ripper | 480 | 1.2 % | 26 | 5.4 % | 3.7–7.8 % | 0.000 | OUI, en dessous |
+| Nasus, Curator of the Sands | 403 | 1.0 % | 21 | 5.2 % | 3.4–7.8 % | 0.000 | OUI, en dessous |
+| Ornn, Fire Below the Mountain | 750 | 1.8 % | 37 | 4.9 % | 3.6–6.7 % | 0.000 | OUI, en dessous |
+| Poppy, Keeper of the Hammer | 230 | 0.6 % | 11 | 4.8 % | 2.7–8.4 % | 0.006 | OUI, en dessous |
+| Jax, Grandmaster At Arms | 388 | 1.0 % | 16 | 4.1 % | 2.6–6.6 % | 0.000 | OUI, en dessous |
+| Ahri, Nine-Tailed Fox | 810 | 2.0 % | 33 | 4.1 % | 2.9–5.7 % | 0.000 | OUI, en dessous |
+| Lee Sin, Blind Monk | 374 | 0.9 % | 15 | 4.0 % | 2.4–6.5 % | 0.000 | OUI, en dessous |
+| Master Yi, Wuju Master | 268 | 0.7 % | 10 | 3.7 % | 2.0–6.7 % | 0.000 | OUI, en dessous |
 | Volibear, Relentless Storm | 403 | 1.0 % | 14 | 3.5 % | 2.1–5.7 % | 0.000 | OUI, en dessous |
-| Yasuo, Unforgiven | 519 | 1.3 % | 15 | 2.9 % | 1.8–4.7 % | 0.000 | OUI, en dessous |
-| Vi, Piltover Enforcer | 282 | 0.7 % | 8 | 2.8 % | 1.4–5.5 % | 0.000 | OUI, en dessous |
-| Jhin, Virtuoso | 282 | 0.7 % | 7 | 2.5 % | 1.2–5.0 % | 0.000 | OUI, en dessous |
-| Jinx, Loose Cannon | 453 | 1.2 % | 11 | 2.4 % | 1.4–4.3 % | 0.000 | OUI, en dessous |
-| Zed, Master of Shadows | 106 | 0.3 % | 2 | 1.9 % | 0.5–6.6 % | 0.002 | OUI, en dessous |
-| Leona, Radiant Dawn | 478 | 1.2 % | 7 | 1.5 % | 0.7–3.0 % | 0.000 | OUI, en dessous |
-| Rumble, Mechanized Menace | 397 | 1.0 % | 5 | 1.3 % | 0.5–2.9 % | 0.000 | OUI, en dessous |
-| Ambessa, Matriarch of War | 102 | 0.3 % | 1 | 1.0 % | 0.2–5.3 % | 0.000 | OUI, en dessous |
-| Garen, Might of Demacia | 210 | 0.5 % | 2 | 1.0 % | 0.3–3.4 % | 0.000 | OUI, en dessous |
-| Ivern, Green Father | 240 | 0.6 % | 1 | 0.4 % | 0.1–2.3 % | 0.000 | OUI, en dessous |
-| Renata Glasc, Chem-Baroness | 271 | 0.7 % | 0 | 0.0 % | 0.0–1.4 % | 0.000 | OUI, en dessous |
+| Vi, Piltover Enforcer | 299 | 0.7 % | 10 | 3.3 % | 1.8–6.0 % | 0.000 | OUI, en dessous |
+| Mel, Soul's Reflection | 188 | 0.5 % | 6 | 3.2 % | 1.5–6.8 % | 0.001 | OUI, en dessous |
+| Yasuo, Unforgiven | 520 | 1.3 % | 15 | 2.9 % | 1.8–4.7 % | 0.000 | OUI, en dessous |
+| Jinx, Loose Cannon | 454 | 1.1 % | 11 | 2.4 % | 1.4–4.3 % | 0.000 | OUI, en dessous |
+| Zed, Master of Shadows | 128 | 0.3 % | 3 | 2.3 % | 0.8–6.7 % | 0.001 | OUI, en dessous |
+| Jhin, Virtuoso | 299 | 0.7 % | 7 | 2.3 % | 1.1–4.8 % | 0.000 | OUI, en dessous |
+| Leona, Radiant Dawn | 483 | 1.2 % | 7 | 1.4 % | 0.7–3.0 % | 0.000 | OUI, en dessous |
+| Rumble, Mechanized Menace | 416 | 1.0 % | 5 | 1.2 % | 0.5–2.8 % | 0.000 | OUI, en dessous |
+| Ivern, Green Father | 276 | 0.7 % | 3 | 1.1 % | 0.4–3.1 % | 0.000 | OUI, en dessous |
+| Garen, Might of Demacia | 211 | 0.5 % | 2 | 0.9 % | 0.3–3.4 % | 0.000 | OUI, en dessous |
+| Ambessa, Matriarch of War | 125 | 0.3 % | 1 | 0.8 % | 0.1–4.4 % | 0.000 | OUI, en dessous |
+| Renata Glasc, Chem-Baroness | 291 | 0.7 % | 0 | 0.0 % | 0.0–1.3 % | 0.000 | OUI, en dessous |
+| Renekton, Butcher of the Sands | 71 | 0.2 % | 0 | 0.0 % | 0.0–5.1 % | 0.001 | OUI, en dessous |
+| Shen, Eye of Twilight | 104 | 0.3 % | 0 | 0.0 % | 0.0–3.6 % | 0.000 | OUI, en dessous |
 
 #### Lecture éditoriale de mai 2026
 
