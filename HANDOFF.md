@@ -1,8 +1,10 @@
 # HANDOFF — état des lieux
 
-## Session du 19 septembre 2026 — hexgate 253 à 257, EN LOCAL SEULEMENT
+## Session du 19 septembre 2026 — hexgate 253 à 257, en local ET en prod
 
-507 listes seedées en local (27 994 decks), rien en prod, rien de commité.
+507 listes seedées en local (27 994 decks) et en PROD (28 040, vérifié par
+`--etat`). Commit `da090c81`, pas poussé : les fiches et les stats refaites
+attendent un push puis un Deploy. Le tunnel de prod était fermé, Allan l'a rouvert.
 - 253, 254, 255 : « 区域公开赛 城市赛特别场 A/B/C » du 13 septembre (94, 93, 94
   joueurs ; 91, 87, 86 listes). Épreuves annexes du Regional Open, hexgate ne donne
   AUCUNE ville : nommées « S4 Regional Open Side Event A/B/C », lieu « Chine ».
