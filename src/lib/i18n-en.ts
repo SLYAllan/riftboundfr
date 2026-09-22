@@ -445,8 +445,8 @@ export const EN: Record<string, string> = {
   "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.":
     "Search by name, set, type, rarity and domain. Origins, Spiritforged, Unleashed and Vendetta sets.",
   "Classeur - Ma collection Riftbound": "Binder - My Riftbound collection",
-  "Ma collection Riftbound - classeurs, progression et valeur":
-    "My Riftbound collection - binders, progress and value",
+  "Ma collection Riftbound - classeurs et progression":
+    "My Riftbound collection - binders and progress",
   "Gère ta collection de cartes Riftbound en classeurs, suis ta progression par set, type et rareté, et repère tes cartes manquantes.":
     "Manage your Riftbound card collection in binders, track your progress by set, type and rarity, and spot the cards you are missing.",
   "Classeur partagé - Riftbound France": "Shared binder - Riftbound France",

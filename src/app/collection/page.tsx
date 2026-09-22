@@ -12,7 +12,9 @@ import { metaTraduite, tr } from "@/lib/i18n-server";
 import { ORDRE_SETS } from "@/lib/collection";
 
 const metadata: Metadata = {
-  title: { absolute: "Ma collection Riftbound - classeurs, progression et valeur" },
+  // Pas de « valeur » : la page n'affiche aucun prix, et Allan ne veut pas de
+  // fonction bâtie sur le prix des cartes (hors cartes manquantes d'un deck).
+  title: { absolute: "Ma collection Riftbound - classeurs et progression" },
   description:
     "Gérez votre collection de cartes Riftbound en classeurs, suivez votre progression par set, type et rareté, et repérez les cartes qui vous manquent.",
   alternates: { canonical: "/collection" },
