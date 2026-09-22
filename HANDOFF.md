@@ -1,5 +1,61 @@
 # HANDOFF — état des lieux
 
+## Session du 22 septembre 2026 — hexgate 245, 247, 249 et 263, en local seulement
+
+**Règle changée par Allan** : une City Challenge qui approche les 100 joueurs entre,
+même sous la borne de 128. Relevé hexgate : 261 Nanning (77) et 262 Hefei (74)
+restent dehors. Entrent 263 Hangzhou du 19 septembre (120 joueurs, 106 listes),
+et trois tournois écartés le 8 septembre pour la seule borne : 249 Fuzhou (122,
+114), 247 Foshan (99, 94), 245 Wuhan du 5 septembre (92, 81). **395 listes seedées
+EN LOCAL** (28 389 decks), commitées (`498c5ee8`), **pas en prod ni poussées**. `parse-hexgate.mts` connaît
+maintenant 杭州, 福州 et 佛山 ; drapeaux posés dans `tournament-flags.ts`.
+Top 8 : #8 manque à Fuzhou et à Foshan (liste partielle).
+
+Les tournois déjà importés n'ont publié aucune liste de plus depuis nos relevés.
+Cinq listes du 13 et du 19 septembre, écartées comme « partielles », sont en fait
+complètes : elles jouent `T1S-001/005`, un Champion Ambessa que hexgate ne nomme
+pas en anglais (`en_name` à `null`) et que le figurier chinois officiel n'a pas. La
+regex de `scrape-hexgate.mts` saute ces lignes, d'où le faux motif. Le rejet reste
+juste (aucune source ne dit quelle carte c'est), seul le motif ment. Même cas pour
+`T1S-002` à `004` (Xin Zhao, Galio, Miss Fortune) à Shenyang et pour deux Légendes
+promo `SGN-00x/003-P-SC` à Wuhan 243.
+
+Routines : `maj:overlay` sortie 0 (une seule image changée, `OGN-110` Ekko,
+Recurrent, remplacée par l'éditeur le 21 septembre ; 48 Légendes habillées).
+`maj:stats` sortie 0 : Vendetta 10 693 places sur 37 tournois. **83 points restent
+à trancher dans `scripts/tier-tables.ts`** : LeBlanc classée S en Vendetta alors
+que son écart ne tient plus (13,0 % contre 9,8 %, p = 0,057), et 82 chiffres de
+commentaires périmés. Rien n'y est réécrit.
+Porte partielle : validateur 26 949 listes, 0 écart ; `tsc` 0 ; Vitest 70 fichiers,
+377 tests. `next build` pas relancé.
+
+`docs/IDEES-FONCTIONNALITES-SANS-API-TOURNOI.md` (non suivi par git) est relu :
+état de chaque idée, six idées nouvelles et un ordre proposé. La première : 35 %
+des listes Vendetta (47 best-of sur 150) jouent une carte interdite le 18
+septembre, et rien ne le dit sur `/decks`.
+
+**Deux fonctions faites dans la foulée, commitées (`049945c6`), pas poussées :**
+- **Listes injouables.** `cartesInterdites` (`banned-cards.ts`) et
+  `interdictionsParDate` (`bans.ts`, la date vient de `BAN_ENTRIES`). Pastille
+  `src/components/pastille-interdite.tsx` sur `/decks` (les deux rendus), les
+  pages de tournoi, les best-of et « Autres listes » de la fiche Légende ; filtre
+  `?legales=1` « Sans carte interdite » (3 923 listes Vendetta sur 5 996) ;
+  encadré sur la page d'un deck. Un test tient `BAN_ENTRIES` et
+  `BANNED_CARD_NAMES` d'accord.
+- **Noyau et cartes flex** sur la fiche Légende. `fiches-stats` ne coupe plus à
+  14 cartes ; `fiches-maj` écrit tout le noyau (`estNoyau`, 90 %, le seuil du rang
+  « Cœur du deck ») puis 12 cartes flex, chacune avec `noyau`, et le set compté
+  dans `setDesChiffres`. Sans ce champ, la page tait cartes, champions et
+  terrains : Darius, Garen, Jinx, Lee Sin, Miss Fortune et Yasuo n'ont plus de
+  cartes d'un ancien set affichées comme actuelles. `maj:stats` relancé.
+Allan ne veut aucune fonction autour du prix, sauf pour les cartes manquantes
+d'un deck (ce qu'il reste à acheter), via CardNexus ; le titre de `/collection`
+ne promet plus de « valeur » (`432bf02d`). Il n'aime pas non plus la méta par
+période et par région, ni la main d'essai : cinq autres pistes sont au fichier
+d'idées. « Tirer une main », qui existe déjà, tire 5 cartes au lieu de 4 : la
+retirer ou la corriger reste à trancher avec lui. Porte : Vitest 70 fichiers, 384
+tests ; `npm run verify` EXIT=0 ; lint 0 erreur sur les fichiers touchés.
+
 ## Session du 19 septembre 2026 — hexgate 253 à 257, en local ET en prod
 
 507 listes seedées en local (27 994 decks) et en PROD (28 040, vérifié par
