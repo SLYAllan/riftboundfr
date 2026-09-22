@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/deckbuilding`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/glossaire`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/outils/regles`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/outils/tier-list`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/guides/domaines`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/jouer-en-ligne`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/guides/ban-list`, changeFrequency: "monthly", priority: 0.7 },

@@ -48,6 +48,15 @@ septembre, et rien ne le dit sur `/decks`.
   dans `setDesChiffres`. Sans ce champ, la page tait cartes, champions et
   terrains : Darius, Garen, Jinx, Lee Sin, Miss Fortune et Yasuo n'ont plus de
   cartes d'un ancien set affichées comme actuelles. `maj:stats` relancé.
+**Outil « Créer une tier list »** (`/outils/tier-list`, choisi par Allan), pas
+commité : chaque visiteur range les 48 Légendes de la tier list en cours en S, A,
+B, C et D, au toucher ou en glissant, et partage le lien. Le classement vit tout
+entier dans l'adresse (`?titre=…&s=slug.slug&a=…`), rien n'est stocké en base.
+Logique pure et tests dans `src/lib/tier-list-perso.ts`. Il peut partir de la
+tier list du site. Un lien partagé s'annonce avec son titre et le haut de son
+classement dans l'aperçu Discord. Pas d'image de la tier list : le seul rendu
+existant est un script. Lien depuis `/tier-list` et le menu « Outils ».
+
 Allan ne veut aucune fonction autour du prix, sauf pour les cartes manquantes
 d'un deck (ce qu'il reste à acheter), via CardNexus ; le titre de `/collection`
 ne promet plus de « valeur » (`432bf02d`). Il n'aime pas non plus la méta par

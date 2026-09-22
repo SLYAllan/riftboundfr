@@ -121,8 +121,8 @@ retirer ou la corriger reste à trancher.
 4. **Les errata dans les listes.** `getErrata` (`src/lib/errata-2026-07.ts`) ne
    sert qu'à la fiche carte. Une étiquette « errata » dans les listes, comme
    « Banni », dirait que le texte imprimé ne fait plus foi. Coût faible.
-5. **Ta tier list.** Ranger les Légendes en S, A, B, C et D, puis partager le
-   lien. Aucun outil de ce genre sur le site. Pas d'image au départ : le seul
+5. **Ta tier list.** Faite le 22 septembre : `/outils/tier-list`. Ranger les
+   Légendes en S, A, B, C et D, puis partager le lien. Aucun outil de ce genre sur le site. Pas d'image au départ : le seul
    rendu de tier list est un script (`scripts/gen-tierlist-image.mts`), pas une
    route. Coût moyen.
 

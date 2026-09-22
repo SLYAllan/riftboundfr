@@ -28,6 +28,7 @@ const outilsLinks = [
   { href: "/deckbuilder", label: "Deckbuilder" },
   { href: "/collection", label: "Ma collection" },
   { href: "/outils/regles", label: "Chercher une règle" },
+  { href: "/outils/tier-list", label: "Créer une tier list" },
 ];
 
 // Fond neutre sous un texte coloré : un `bg-arcane/5` sous `text-arcane` mettait

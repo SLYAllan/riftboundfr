@@ -1254,4 +1254,31 @@ export const EN: Record<string, string> = {
   "dans 3 à 9 listes sur 10, là où les listes diffèrent": "in 3 to 9 lists out of 10, where lists differ",
   "Trop peu de listes de cette Légende dans le set en cours pour montrer ses cartes.": "Too few lists of this Legend in the current set to show its cards.",
   "Voir les listes qui la jouent": "See the lists that play it",
+  // Outil « Créer une tier list ».
+  "Créer une tier list": "Create a tier list",
+  "Créer une tier list Riftbound - classez les Légendes": "Create a Riftbound tier list - rank the Legends",
+  "Créer une tier list Riftbound": "Create a Riftbound tier list",
+  "Rangez les Légendes de Riftbound en S, A, B, C et D, en partant de zéro ou de la tier list du site, puis partagez votre classement par un simple lien.":
+    "Rank the Riftbound Legends in S, A, B, C and D, from scratch or from the site's tier list, then share your ranking with a single link.",
+  "Rangez les Légendes en S, A, B, C et D, puis partagez votre classement par un simple lien.":
+    "Rank the Legends in S, A, B, C and D, then share your ranking with a single link.",
+  "Rangez les Légendes en S, A, B, C et D, puis partagez le lien : votre classement tient tout entier dedans.":
+    "Rank the Legends in S, A, B, C and D, then share the link: your whole ranking lives in it.",
+  "Voir la tier list du site": "See the site's tier list",
+  "La liste des Légendes n’a pas pu être chargée. Réessayez dans un instant.": "The Legend list could not be loaded. Try again in a moment.",
+  "Titre de votre tier list (facultatif)": "Title of your tier list (optional)",
+  "Titre de votre tier list": "Title of your tier list",
+  "Partir de la tier list du site": "Start from the site's tier list",
+  "Tier list Riftbound": "Riftbound tier list",
+  "Tout remettre à classer": "Unrank everything",
+  "Remplacer votre classement ?": "Replace your ranking?",
+  "La copie a échoué. Copiez l’adresse à la main :": "Copying failed. Copy the address by hand:",
+  "Lien de votre tier list": "Link to your tier list",
+  "Touchez une Légende, puis la lettre de son rang. À la souris, vous pouvez aussi la faire glisser.":
+    "Tap a Legend, then the letter of its tier. With a mouse, you can also drag it.",
+  "Ranger en": "Put in",
+  "À classer": "To rank",
+  "Remettre à classer": "Unrank",
+  "Toutes les Légendes sont classées.": "Every Legend is ranked.",
+  "Pas d’accord ? Créez la vôtre et partagez-la": "Disagree? Make your own and share it",
 };

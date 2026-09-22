@@ -8,6 +8,7 @@ import { TierListTabs } from "./tier-list-tabs";
 import { legendsWithDecks } from "@/lib/legend-fiche";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import Link from "@/components/lien";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 // Cache runtime (5 min, tag "tier-list") : tier lists + cartes légende + decks liés
@@ -102,6 +103,11 @@ export default async function TierListPage() {
         </h1>
         <p className="mt-2 text-ink-secondary">
           {t("Comparez les Légendes pour chaque set ou sur l’ensemble du format. Nous les classons selon leurs résultats en tournoi.")}
+        </p>
+        <p className="mt-2 text-sm">
+          <Link href="/outils/tier-list" className="text-arcane hover:underline">
+            {t("Pas d’accord ? Créez la vôtre et partagez-la")}
+          </Link>
         </p>
       </div>
       <TierListTabs
