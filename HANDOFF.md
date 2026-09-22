@@ -57,6 +57,12 @@ tier list du site. Un lien partagé s'annonce avec son titre et le haut de son
 classement dans l'aperçu Discord. Pas d'image de la tier list : le seul rendu
 existant est un script. Lien depuis `/tier-list` et le menu « Outils ».
 
+**Carte inclinable** sur la grande image de la fiche carte
+(`src/components/carte-inclinable.tsx`) : 6° au plus, sans reflet, à la souris
+seulement. Allan l'a choisie sur une page d'essai (6°, 12°, 12° avec reflet),
+idée reprise du « Trading Card » d'obsidianui.dev sans sa dépendance `motion`.
+Le classeur feuilleté essayé le même jour est écarté.
+
 Allan ne veut aucune fonction autour du prix, sauf pour les cartes manquantes
 d'un deck (ce qu'il reste à acheter), via CardNexus ; le titre de `/collection`
 ne promet plus de « valeur » (`432bf02d`). Il n'aime pas non plus la méta par

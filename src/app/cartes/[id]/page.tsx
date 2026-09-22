@@ -3,6 +3,7 @@ export const revalidate = 3600;
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { CardImage } from "@/components/card-image";
+import { CarteInclinable } from "@/components/carte-inclinable";
 import { RarityBadge } from "@/components/rarity-badge";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib/domains";
@@ -139,7 +140,7 @@ export default async function CardDetailPage({ params }: PageProps) {
         ]}
       />
       <div className="mt-6 grid gap-8 lg:grid-cols-[400px_1fr]">
-        <div><CardImage src={card.imageUrl} alt={card.name} size="xl" priority /></div>
+        <div><CarteInclinable><CardImage src={card.imageUrl} alt={card.name} size="xl" priority hoverZoom={false} /></CarteInclinable></div>
         <div>
           <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
