@@ -18,51 +18,88 @@
   "keyCards": [
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Moonfall",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Flash",
-      "role": "Standard, 82 % des listes, 1 exemplaire"
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Souple, 51 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 49 % des listes, 2 exemplaires"
+      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Acceptable Losses",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Eclipse",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Morbid Return",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -77,12 +114,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 426,
-    "coupe10": 39,
+    "joueursClasses": 443,
+    "coupe10": 40,
     "titres": 5,
-    "conversion": "9.2 %",
-    "tournois": 33,
-    "listesPubliees": 257,
+    "conversion": "9 %",
+    "tournois": 37,
+    "listesPubliees": 274,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -145,18 +182,19 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "49 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "44 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (96 %)",
-    "Targon's Peak (60 %)",
-    "Rockfall Path (53 %)"
+    "Targon's Peak (59 %)",
+    "Rockfall Path (51 %)"
   ],
-  "dataSource": "Classement complet des tournois : 426 joueurs classés, 33 tournois, dont 257 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 443 joueurs classés, 37 tournois, dont 274 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

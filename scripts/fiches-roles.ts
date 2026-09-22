@@ -43,8 +43,15 @@ export function descripteurExistant(role: string | undefined): string | null {
 export const exemplaires = (n: number) =>
   `${n % 1 === 0 ? n : n.toFixed(1).replace(".", ",")} exemplaire${n >= 2 ? "s" : ""}`;
 
+/**
+ * Au moins 9 listes sur 10 : le noyau de la Légende. Le reste est flex, les choix
+ * qui changent d'une liste à l'autre. Même seuil que le rang « Cœur du deck » :
+ * une carte ne doit pas être « Cœur du deck » sous sa vignette et flex au-dessus.
+ */
+export const estNoyau = (part: number) => part >= 90;
+
 export function role(part: number, copies: number, ancien?: string): string {
-  const rang = part >= 90 ? "Cœur du deck" : part >= 60 ? "Standard" : "Souple";
+  const rang = estNoyau(part) ? "Cœur du deck" : part >= 60 ? "Standard" : "Souple";
   return [rang, descripteurExistant(ancien), `${part} % des listes`, exemplaires(copies)]
     .filter(Boolean)
     .join(", ");

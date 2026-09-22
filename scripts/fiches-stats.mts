@@ -16,6 +16,12 @@ import { PrismaClient } from "@prisma/client";
 import { bilanParLegende, chargerCorpus } from "./corpus-tournois";
 
 export type StatsLegende = {
+  /**
+   * Le set dont viennent les listes comptées. Une Légende d'Origins ne joue pas
+   * les mêmes cartes en Vendetta : la fiche le recopie, et la page n'affiche que
+   * des cartes du set en cours.
+   */
+  set: string;
   /** Listes publiées : ce sur quoi les CARTES sont comptées. */
   decks: number;
   /** Vrai quand les résultats portent sur toutes les ères et non sur le set demandé. */
@@ -110,6 +116,7 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
     const global = classementToutesEres.get(legende);
     if (!global) continue;
     sortie[legende] = {
+      set,
       decks: lot.length,
       toutesEres: true,
       joueurs: global.joueurs,
@@ -170,6 +177,7 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
   const titres = cl?.titres ?? lot.filter((d) => place(d.placement) === 1).length;
 
   sortie[legende] = {
+    set,
     decks: lot.length,
     joueurs,
     coupe,
@@ -181,9 +189,11 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
       .sort((a, b) => place(a.placement) - place(b.placement))
       .slice(0, 5)
       .map((d) => ({ placement: d.placement, player: d.playerName, tournament: d.tournamentContext }))),
+    // Toutes les cartes au-dessus du seuil, sans coupe : couper aux quatorze
+    // premières gardait le noyau et jetait les cartes flex, celles qui changent
+    // d'une liste à l'autre. `fiches-maj` choisit ce qu'il affiche.
     cartes: lignes
       .filter((c) => !estChampion(c) && !estTerrain(c) && !estRune(c))
-      .slice(0, 14)
       .map((c) => ({ nom: c.nom, part: Math.round(c.part * 100), copies: c.copies })),
     champions: lignes.filter(estChampion).map((c) => ({ nom: c.nom, part: Math.round(c.part * 100), copies: c.copies })),
     terrains: lignes.filter(estTerrain).map((c) => ({ nom: c.nom, part: Math.round(c.part * 100) })),
@@ -198,6 +208,7 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
 for (const [legende, global] of classementToutesEres) {
   if (sortie[legende]) continue;
   sortie[legende] = {
+    set,
     decks: 0,
     toutesEres: true,
     joueurs: global.joueurs,

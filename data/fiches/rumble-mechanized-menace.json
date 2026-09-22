@@ -10,60 +10,97 @@
   "keyCards": [
     {
       "name": "Ferrous Forerunner",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Forecaster",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Gem Jammer",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Bubble Bot",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 79 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Patched Porobot",
-      "role": "Standard, 77 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 74 % des listes, 1 exemplaire"
+      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 69 % des listes, 1 exemplaire"
+      "role": "Standard, 70 % des listes, 1,5 exemplaire",
+      "noyau": false
     },
     {
       "name": "Production Surge",
-      "role": "Standard, 64 % des listes, 3 exemplaires"
+      "role": "Standard, 65 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cleave",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Long Sword",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 122,
+    "joueursClasses": 125,
     "coupe10": 1,
     "titres": 0,
     "conversion": "0.8 %",
-    "tournois": 17,
-    "listesPubliees": 39,
+    "tournois": 19,
+    "listesPubliees": 40,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -81,14 +118,14 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
+        "placement": "37th",
+        "player": "Raven",
+        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
+      },
+      {
         "placement": "39th",
         "player": "菠萝包大王",
         "tournament": "S4 Qingdao City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "43th",
-        "player": "易",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       }
     ]
   },
@@ -108,8 +145,9 @@
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (44 %)",
-    "Rockfall Path (41 %)"
+    "Rockfall Path (43 %)",
+    "Zaun Warrens (43 %)"
   ],
-  "dataSource": "Classement complet des tournois : 122 joueurs classés, 17 tournois, dont 39 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 125 joueurs classés, 19 tournois, dont 40 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

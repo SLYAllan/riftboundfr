@@ -30,87 +30,124 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Shuriken Flip",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 89 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
+      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 71 % des listes, 2 exemplaires"
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "En Garde",
-      "role": "Souple, 59 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 58 % des listes, 3 exemplaires"
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mournful Witness",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mischievous Marai",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
     "Akali, Deadly Weapon": {
-      "usage": "71 %",
+      "usage": "73 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "65 %",
+      "usage": "67 %",
       "role": "3 exemplaires en moyenne"
     },
     "Akali, Silent": {
-      "usage": "36 %",
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Darius, Trifarian": {
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jhin, Murderous Artist": {
-      "usage": "35 %",
+      "usage": "32 %",
       "role": "3 exemplaires en moyenne"
-    },
-    "Darius, Trifarian": {
-      "usage": "34 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Void Gate (60 %)",
-    "Back-Alley Bar (37 %)",
-    "Targon's Peak (33 %)"
+    "Void Gate (62 %)",
+    "Back-Alley Bar (36 %)",
+    "Targon's Peak (34 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 463,
-    "coupe10": 33,
+    "joueursClasses": 482,
+    "coupe10": 34,
     "titres": 2,
     "conversion": "7.1 %",
-    "tournois": 33,
-    "listesPubliees": 277,
+    "tournois": 37,
+    "listesPubliees": 296,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -123,6 +160,11 @@
         "tournament": "Singapore Regional Qualifier"
       },
       {
+        "placement": "3rd",
+        "player": "飞鸟_白色枫叶🍁",
+        "tournament": "S4 Foshan City Challenge (2026-09-06)"
+      },
+      {
         "placement": "4th",
         "player": "东东菠菠的卡牌妙妙屋",
         "tournament": "Dongguan Manbo Cup (2026-08-08)"
@@ -131,13 +173,9 @@
         "placement": "4th",
         "player": "纸传.晓镜",
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "5th",
-        "player": "青浦.KID1999",
-        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 463 joueurs classés, 33 tournois, dont 277 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 482 joueurs classés, 37 tournois, dont 296 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

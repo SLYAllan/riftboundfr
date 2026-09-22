@@ -1,5 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { parcourirLots } from "./collection-lots";
+import { cartesInterdites } from "./banned-cards";
 import { chargerPrix, chiffrerDeck, prixPerimes } from "./cardnexus";
 import type { Prisma } from "@prisma/client";
 import { computeDeckCoverage, type DeckCardLike } from "./collection";
@@ -153,6 +154,7 @@ export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
             .map((e) => ({ riftboundId: e.cardId, name: e.name, quantity: e.missing })), prix);
           const eur = prixAnciens || chiffre.exemplairesSansPrix > 0 ? null : chiffre.total;
           retenus.push({ ...deck, createdAt: deck.createdAt.toISOString(),
+            interdites: cartesInterdites(cards.map((dc) => dc.card.name)),
             coverage: { owned, required, missing },
             accessibilite: tri === "accessible" ? { palier: palierAccessibilite(missing, eur), manquantes: missing, eur } : undefined,
           });
@@ -221,9 +223,10 @@ export async function listerDecks(filtres: FiltresDecks): Promise<LotDecks> {
     decks = [];
   }
 
-  const versListe = ({ cards: _cards, ...deck }: (typeof decks)[number]): DeckListe => ({
+  const versListe = ({ cards, ...deck }: (typeof decks)[number]): DeckListe => ({
     ...deck,
     createdAt: deck.createdAt.toISOString(),
+    interdites: cartesInterdites(cards.map((dc) => dc.card.name)),
     coverage: couvertures.get(deck.id),
   });
 

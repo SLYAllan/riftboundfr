@@ -1,4 +1,5 @@
 import type { Prisma } from "@prisma/client";
+import { BANNED_CARD_NAMES } from "./banned-cards";
 
 export interface FiltresDecks {
   cat?: "bestof" | "guide" | "all";
@@ -11,6 +12,8 @@ export interface FiltresDecks {
   // une valeur explicite, sinon il n'y aurait plus moyen de la demander.
   sort?: "popular" | "placement" | "recent" | "accessible";
   owned: boolean;
+  /** Écarte les listes qui jouent une carte interdite aujourd'hui. */
+  legales?: boolean;
   offset: number;
 }
 
@@ -38,6 +41,8 @@ export interface DeckListe {
   coverage?: { owned: number; required: number; missing: number };
   /** Ce qu'il reste à faire pour jouer ce deck. Rempli par le tri « accessible ». */
   accessibilite?: { palier: number; manquantes: number; eur: number | null };
+  /** Cartes de la liste interdites aujourd'hui. Vide : la liste se joue encore. */
+  interdites: string[];
 }
 
 export interface LotDecks {
@@ -113,6 +118,7 @@ export function lireFiltresDecks(params: Record<string, string | undefined>): Fi
         ? params.sort
         : undefined,
     owned: params.owned === "1",
+    legales: params.legales === "1",
     offset: Number.isFinite(offset) && offset > 0 ? offset : 0,
   };
 }
@@ -126,6 +132,7 @@ export function parametresDecks(filtres: FiltresDecks): URLSearchParams {
   if (filtres.q) params.set("q", filtres.q);
   if (filtres.sort) params.set("sort", filtres.sort);
   if (filtres.owned) params.set("owned", "1");
+  if (filtres.legales) params.set("legales", "1");
   if (filtres.offset) params.set("offset", String(filtres.offset));
   return params;
 }
@@ -162,6 +169,9 @@ export function construireWhere(filtres: FiltresDecks): Prisma.DeckWhereInput {
   if (filtres.tournament) where.tournamentContext = filtres.tournament;
   if (filtres.legend) where.legendName = { contains: filtres.legend, mode: "insensitive" };
   if (filtres.set) where.setTag = filtres.set;
+  // Hors de `AND` : la recherche y pose déjà son `cards: { some }`, les deux
+  // conditions portent sur la même relation sans se gêner.
+  if (filtres.legales) where.cards = { none: { card: { name: { in: [...BANNED_CARD_NAMES] } } } };
   if (filtres.q) {
     const like = { contains: filtres.q, mode: "insensitive" as const };
     where.AND = [{ OR: [

@@ -7,6 +7,7 @@ import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from 
 import { articleDuTournoi } from "@/lib/tournament-articles";
 import { voisinsDuTournoi } from "@/lib/tournament-order";
 import { getLegendIconUrl, getBannerUrl } from "@/lib/banners";
+import { BANNED_CARD_NAMES, cartesInterdites } from "@/lib/banned-cards";
 import { legendHref } from "@/lib/legend-fiche";
 import { CountryBadge } from "@/components/country-badge";
 import { TournamentDeckGrid } from "@/components/tournament-deck-grid";
@@ -114,6 +115,12 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
         tournamentTier: true,
         featured: true,
         sourceArticleId: true,
+        // Seulement les cartes interdites de chaque liste : un Regional Open
+        // compte plus de mille decks, la pastille n'a besoin de rien d'autre.
+        cards: {
+          where: { card: { name: { in: [...BANNED_CARD_NAMES] } } },
+          select: { card: { select: { name: true } } },
+        },
       },
       orderBy: { createdAt: "desc" },
     }),
@@ -188,11 +195,12 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     : deduped;
 
   const sorted = decks
-    .map((d) => ({
+    .map(({ cards, ...d }) => ({
       ...d,
       placementNum: parsePlacement(d.placement),
       legendIcon: getLegendIconUrl(d.legendName),
       bannerUrl: getBannerUrl(d.legendName),
+      interdites: cartesInterdites(cards.map((c) => c.card.name)),
     }))
     .sort((a, b) => a.placementNum - b.placementNum);
 

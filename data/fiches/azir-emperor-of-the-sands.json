@@ -18,51 +18,98 @@
   "keyCards": [
     {
       "name": "Doran's Shield",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Eye of the Herald",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Brutalizer",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Arise!",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "B.F. Sword",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 69 % des listes, 1 exemplaire"
+      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shadow's Call",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -77,12 +124,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 393,
-    "coupe10": 47,
+    "joueursClasses": 416,
+    "coupe10": 49,
     "titres": 2,
-    "conversion": "12 %",
-    "tournois": 33,
-    "listesPubliees": 194,
+    "conversion": "11.8 %",
+    "tournois": 37,
+    "listesPubliees": 217,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -138,15 +185,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "53 %",
+      "usage": "56 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (99 %)",
+    "Trifarian War Camp (98 %)",
     "Hall of Legends (97 %)",
-    "Ornn's Forge (66 %)",
-    "Seat of Power (31 %)"
+    "Ornn's Forge (65 %)",
+    "Seat of Power (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 393 joueurs classés, 33 tournois, dont 194 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 416 joueurs classés, 37 tournois, dont 217 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

@@ -15,6 +15,7 @@ import { DeckLikeButton } from "@/components/deck-like-button";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { chiffrerDeck } from "@/lib/cardnexus";
+import { interdictionsParDate } from "@/lib/bans";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
@@ -157,6 +158,11 @@ export default async function DeckDetailPage({ params }: PageProps) {
     side: deck.cards.filter((dc) => dc.section === "side").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),
   });
 
+  // Chaque carte porte déjà son étiquette « Banni » dans la liste, plus bas. Sans
+  // l'encadré, on lisait le titre, le joueur et le rang d'une liste gagnante, et
+  // on partait la monter sans voir qu'elle ne se jouait plus.
+  const interdictions = interdictionsParDate(deck.cards.map((dc) => dc.card.name));
+
   // JSON-LD d'entité (M14) : deck = CreativeWork citable.
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
   const deckJsonLd = {
@@ -221,6 +227,18 @@ export default async function DeckDetailPage({ params }: PageProps) {
           )}
         </div>
         {deck.description && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
+        {interdictions.length > 0 && (
+          <p className="mt-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
+            <strong className="text-red-400">{t("Liste injouable aujourd’hui.")}</strong>
+            {interdictions.map(({ date, cartes }) => (
+              <span key={date}>
+                {" "}{cartes.join(` ${t("et")} `)}{" "}
+                {t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
+              </span>
+            ))}
+            {deck.tournamentContext && <>{" "}{t("La liste reste affichée telle qu’elle a été jouée.")}</>}
+          </p>
+        )}
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} />
           <ShareDecklistButton

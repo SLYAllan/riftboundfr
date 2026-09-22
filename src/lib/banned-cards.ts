@@ -47,3 +47,11 @@ export const DATES_BANS: Array<{ date: string; libelle: string }> = [
 export function isBanned(cardName: string): boolean {
   return BANNED_CARD_NAMES.has(cardName);
 }
+
+/**
+ * Les cartes interdites d'une liste, une fois chacune, dans l'ordre de la liste.
+ * Une carte jouée en principal ET en réserve compterait deux fois sans le Set.
+ */
+export function cartesInterdites(noms: Iterable<string>): string[] {
+  return [...new Set(noms)].filter(isBanned);
+}

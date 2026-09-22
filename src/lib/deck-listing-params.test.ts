@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { construireWhere, lireFiltresDecks, modifierParametresDecks, palierAccessibilite, PALIERS_ACCESSIBILITE, type FiltresDecks } from "./deck-listing-params";
+import { construireWhere, lireFiltresDecks, modifierParametresDecks, palierAccessibilite, PALIERS_ACCESSIBILITE, parametresDecks, type FiltresDecks } from "./deck-listing-params";
 
 const base: FiltresDecks = { q: "", owned: false, offset: 0 };
 
@@ -78,6 +78,29 @@ describe("construireWhere", () => {
   it('lireFiltresDecks accepte "all" et rejette le reste', () => {
     expect(lireFiltresDecks({ cat: "all" }).cat).toBe("all");
     expect(lireFiltresDecks({ cat: "nimporte" }).cat).toBeUndefined();
+  });
+
+  it("« Sans carte interdite » écarte toute liste qui en joue une", () => {
+    const filtres = lireFiltresDecks({ legales: "1" });
+    expect(filtres.legales).toBe(true);
+    const noms = (construireWhere(filtres).cards as { none: { card: { name: { in: string[] } } } }).none.card.name.in;
+    expect(noms).toContain("Stacked Deck");
+    expect(noms).toContain("Ekko, Recurrent");
+    expect(parametresDecks(filtres).get("legales")).toBe("1");
+  });
+
+  it("montre les listes injouables par défaut", () => {
+    // Une liste de tournoi reste un résultat, même quand elle ne se joue plus.
+    expect(lireFiltresDecks({}).legales).toBe(false);
+    expect(construireWhere(lireFiltresDecks({})).cards).toBeUndefined();
+  });
+
+  it("garde la recherche par carte avec « Sans carte interdite »", () => {
+    // Les deux portent sur `cards` : la recherche passe par `AND`, sinon l'une
+    // écraserait l'autre.
+    const where = construireWhere({ ...base, q: "Jinx", legales: true });
+    expect(where.cards).toBeDefined();
+    expect(JSON.stringify(where.AND)).toContain("Jinx");
   });
 });
 

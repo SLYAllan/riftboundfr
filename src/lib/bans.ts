@@ -30,3 +30,21 @@ export const BAN_ENTRIES: BanEntry[] = [
   { en: "Ekko, Recurrent", type: "Unité", date: "18 septembre 2026", source: ANNONCE_SEPTEMBRE },
   { en: "Stacked Deck", type: "Sort", date: "18 septembre 2026", source: ANNONCE_SEPTEMBRE },
 ];
+
+/**
+ * Les cartes interdites d'une liste, regroupées par date d'interdiction, de la
+ * plus ancienne à la plus récente (l'ordre de `BAN_ENTRIES`). Sert à dire depuis
+ * QUAND une liste de tournoi ne se joue plus : elle était légale le jour où elle
+ * a été jouée, et le lecteur doit le comprendre.
+ */
+export function interdictionsParDate(noms: Iterable<string>): Array<{ date: string; cartes: string[] }> {
+  const presentes = new Set(noms);
+  const groupes: Array<{ date: string; cartes: string[] }> = [];
+  for (const ban of BAN_ENTRIES) {
+    if (!presentes.has(ban.en)) continue;
+    const dernier = groupes.at(-1);
+    if (dernier?.date === ban.date) dernier.cartes.push(ban.en);
+    else groupes.push({ date: ban.date, cartes: [ban.en] });
+  }
+  return groupes;
+}

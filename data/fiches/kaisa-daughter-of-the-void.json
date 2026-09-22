@@ -10,60 +10,117 @@
   "keyCards": [
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Hextech Ray",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Temporal Breach",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Time Warp",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Watchful Sentry",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Progress Day",
-      "role": "Cœur du deck, 91 % des listes, 1 exemplaire"
+      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "noyau": true
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 87 % des listes, 1 exemplaire"
+      "role": "Standard, 86 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 79 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Brittle Steel",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cleave",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Forecaster",
+      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 408,
-    "coupe10": 33,
+    "joueursClasses": 422,
+    "coupe10": 35,
     "titres": 2,
-    "conversion": "8.1 %",
-    "tournois": 33,
-    "listesPubliees": 370,
+    "conversion": "8.3 %",
+    "tournois": 37,
+    "listesPubliees": 384,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -100,12 +157,12 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (87 %)",
-    "Frozen Fortress (85 %)",
-    "Void Gate (76 %)",
+    "Rockfall Path (86 %)",
+    "Frozen Fortress (84 %)",
+    "Void Gate (77 %)",
     "Heisho, Shell of the World (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 408 joueurs classés, 33 tournois, dont 370 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 422 joueurs classés, 37 tournois, dont 384 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {
@@ -124,5 +181,6 @@
     "Sa conversion est sous celle du champ, 6,2 % contre 6,9 % : beaucoup de listes, peu de Top 8",
     "Le moteur coûte cher, 7 énergie pour Thousand-Tailed Watcher et 10 pour Time Warp",
     "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
-  ]
+  ],
+  "setDesChiffres": "Vendetta"
 }

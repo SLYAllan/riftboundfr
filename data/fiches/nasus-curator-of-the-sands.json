@@ -31,51 +31,93 @@
   "keyCards": [
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Find Your Center",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 69 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Standard, 69 % des listes, 2 exemplaires"
+      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tasty Faefolk",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Siphoning Strike",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Queen",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
@@ -85,19 +127,19 @@
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (49 %)",
+    "Vilemaw's Lair (48 %)",
     "The Papertree (40 %)",
-    "Forgotten Monument (38 %)",
-    "Altar of Blood (37 %)",
-    "Rockfall Path (33 %)"
+    "Forgotten Monument (39 %)",
+    "Altar of Blood (39 %)",
+    "Rockfall Path (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 403,
-    "coupe10": 21,
+    "joueursClasses": 413,
+    "coupe10": 23,
     "titres": 2,
-    "conversion": "5.2 %",
-    "tournois": 32,
-    "listesPubliees": 212,
+    "conversion": "5.6 %",
+    "tournois": 35,
+    "listesPubliees": 222,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -120,11 +162,12 @@
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "6th",
-        "player": "SD.LD",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
+        "placement": "5th",
+        "player": "ForGot",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 403 joueurs classés, 32 tournois, dont 212 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 413 joueurs classés, 35 tournois, dont 222 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

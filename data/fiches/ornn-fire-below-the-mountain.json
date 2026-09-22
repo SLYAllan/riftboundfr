@@ -18,56 +18,88 @@
   "keyCards": [
     {
       "name": "Sprite Fountain",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 87 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Sterak's Gage",
-      "role": "Standard, 86 % des listes, 3 exemplaires"
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Seal of Focus",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Poro Snax",
-      "role": "Standard, 83 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Guardian Angel",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 79 % des listes, 3 exemplaires"
+      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Pit Crew",
-      "role": "Standard, 78 % des listes, 3 exemplaires"
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Clockwork Keeper",
-      "role": "Standard, 66 % des listes, 3 exemplaires"
+      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mask of Foresight",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Aspiring Engineer",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cloth Armor",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Discipline",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "52 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Forge God": {
@@ -77,8 +109,8 @@
   },
   "topBattlefields": [
     "Ornn's Forge (88 %)",
-    "Veiled Temple (68 %)",
-    "Seat of Power (57 %)",
+    "Veiled Temple (70 %)",
+    "Seat of Power (58 %)",
     "Treasure Hoard (42 %)"
   ],
   "strengths": [
@@ -93,12 +125,12 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 274,
-    "coupe10": 18,
+    "joueursClasses": 294,
+    "coupe10": 19,
     "titres": 1,
-    "conversion": "6.6 %",
-    "tournois": 30,
-    "listesPubliees": 154,
+    "conversion": "6.5 %",
+    "tournois": 34,
+    "listesPubliees": 173,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -130,7 +162,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 274 joueurs classés, 30 tournois, dont 154 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 294 joueurs classés, 34 tournois, dont 173 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -145,5 +177,6 @@
       "Unchecked Power"
     ],
     "note": "Build aggro/tempo (sprites) plus consistant qu'un seul gros Ornn."
-  }
+  },
+  "setDesChiffres": "Vendetta"
 }

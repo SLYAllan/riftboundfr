@@ -18,51 +18,78 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Lonely Poro",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "En Garde",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 83 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Onslaught",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -77,12 +104,12 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "joueursClasses": 881,
-    "coupe10": 116,
-    "titres": 5,
-    "conversion": "13.2 %",
-    "tournois": 33,
-    "listesPubliees": 538,
+    "joueursClasses": 924,
+    "coupe10": 121,
+    "titres": 6,
+    "conversion": "13.1 %",
+    "tournois": 37,
+    "listesPubliees": 581,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -144,9 +171,10 @@
     }
   },
   "topBattlefields": [
-    "Star Spring (91 %)",
+    "Star Spring (92 %)",
     "Emperor's Dais (89 %)",
-    "Seat of Power (73 %)"
+    "Seat of Power (74 %)"
   ],
-  "dataSource": "Classement complet des tournois : 881 joueurs classés, 33 tournois, dont 538 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 924 joueurs classés, 37 tournois, dont 581 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

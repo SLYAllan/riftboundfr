@@ -12,51 +12,68 @@
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 81 % des listes, 2 exemplaires"
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 64 % des listes, 2 exemplaires"
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 62 % des listes, 2,5 exemplaires"
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 60 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Elder Dragon",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Scryer's Bloom",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Dazzling Aurora",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Catalyst of Aeons",
-      "role": "Souple, 57 % des listes, 3 exemplaires"
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Baron Nashor",
-      "role": "Souple, 57 % des listes, 1,5 exemplaire"
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Scryer's Bloom",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Lunar Boon",
-      "role": "Souple, 55 % des listes, 3 exemplaires"
+      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Last Rites",
-      "role": "Souple, 55 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -66,12 +83,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "joueursClasses": 77,
+    "joueursClasses": 78,
     "coupe10": 10,
     "titres": 0,
-    "conversion": "13 %",
-    "tournois": 18,
-    "listesPubliees": 42,
+    "conversion": "12.8 %",
+    "tournois": 19,
+    "listesPubliees": 43,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -125,18 +142,19 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "43 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "38 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Sigil of the Storm (93 %)",
-    "Forgotten Monument (55 %)",
+    "Forgotten Monument (53 %)",
     "Dragon Roost (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 77 joueurs classés, 18 tournois, dont 42 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 78 joueurs classés, 19 tournois, dont 43 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

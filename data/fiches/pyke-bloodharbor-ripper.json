@@ -10,61 +10,93 @@
   "keyCards": [
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Blood Rush",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 85 % des listes, 3 exemplaires"
+      "role": "Standard, 84 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Void Seeker",
-      "role": "Standard, 78 % des listes, 2 exemplaires"
+      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 74 % des listes, 2 exemplaires"
+      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 73 % des listes, 2 exemplaires"
+      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Piercing Light",
-      "role": "Standard, 68 % des listes, 2 exemplaires"
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 135,
-    "coupe10": 2,
+    "joueursClasses": 140,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "1.5 %",
-    "tournois": 26,
-    "listesPubliees": 74,
+    "conversion": "2.1 %",
+    "tournois": 29,
+    "listesPubliees": 79,
     "bestPlacements": [
+      {
+        "placement": "11th",
+        "player": "未白",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+      },
       {
         "placement": "11th",
         "player": "notxy99",
@@ -84,11 +116,6 @@
         "placement": "26th",
         "player": "enforce",
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "35th",
-        "player": "猫岛巡礼-oldtea",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
       }
     ]
   },
@@ -107,16 +134,16 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "42 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Ripper's Bay (97 %)",
-    "Forbidding Waste (81 %)",
-    "Void Gate (51 %)"
+    "Forbidding Waste (78 %)",
+    "Void Gate (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 135 joueurs classés, 26 tournois, dont 74 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 140 joueurs classés, 29 tournois, dont 79 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {
@@ -134,5 +161,6 @@
     "Zéro Top 8 en dix-sept tournois sur 30 listes : les résultats ne suivent pas",
     "Renvoyer ses propres unités coûte du tempo à chaque fois",
     "Le deck n'a pas de vraie fin de partie, il vise l'usure"
-  ]
+  ],
+  "setDesChiffres": "Vendetta"
 }

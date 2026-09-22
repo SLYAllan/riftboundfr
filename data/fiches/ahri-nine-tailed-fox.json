@@ -12,63 +12,92 @@
   "keyCards": [
     {
       "name": "Ravenbloom Student",
-      "role": "Cœur du deck, Unité d'early game, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, Unité d'early game, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, Flex de disruption, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, Flex de disruption, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, Removal et combat trick, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, Removal et combat trick, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, Bounce et tempo, 92 % des listes, 1 exemplaire"
+      "role": "Cœur du deck, Bounce et tempo, 93 % des listes, 1 exemplaire",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Standard, Core de protection, 83 % des listes, 3 exemplaires"
+      "role": "Standard, Core de protection, 86 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, Menace principale, 83 % des listes, 2 exemplaires"
+      "role": "Standard, Menace principale, 71 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Standard, 83 % des listes, 1,5 exemplaire"
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, CC signature d'Ahri, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 1,5 exemplaire",
+      "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 67 % des listes, 2 exemplaires"
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, Finisher spell, 67 % des listes, 1 exemplaire"
+      "role": "Standard, Finisher spell, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, CC signature d'Ahri, 57 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Souple, Gear de protection, 58 % des listes, 2 exemplaires"
+      "role": "Souple, Gear de protection, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Desert's Call",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Fox-Fire",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trevor Snoozebottom",
+      "role": "Souple, 36 % des listes, 3 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
     "Ahri, Inquisitive": {
-      "usage": "83 %",
+      "usage": "86 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     }
   },
-  "topBattlefields": [
-    "Forgotten Monument (33 %)",
-    "Forge of the Fluft (33 %)"
-  ],
+  "topBattlefields": [],
   "strengths": [
     "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
   ],
@@ -76,12 +105,12 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 14,
+    "joueursClasses": 16,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 12,
-    "listesPubliees": 12,
+    "tournois": 14,
+    "listesPubliees": 14,
     "bestPlacements": [
       {
         "placement": "33th",
@@ -113,7 +142,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 14 joueurs classés, 12 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 16 joueurs classés, 14 tournois, dont 14 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -125,5 +154,6 @@
       "Sona + Jana"
     ],
     "note": "Deck Hold (conquérir 1 fois puis hold/hold). Oublier la capacité légende (-1) coûte des games."
-  }
+  },
+  "setDesChiffres": "Vendetta"
 }

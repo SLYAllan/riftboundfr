@@ -17,52 +17,89 @@
   },
   "keyCards": [
     {
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Imperial Decree",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Wages of Pain",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Shadow's Call",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Standard, 84 % des listes, 3 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 82 % des listes, 3 exemplaires"
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
-    },
-    {
-      "name": "Carrion Dredger",
-      "role": "Standard, 63 % des listes, 3 exemplaires"
+      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 62 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Safety Inspector",
-      "role": "Souple, 58 % des listes, 2 exemplaires"
+      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Blood Money",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Deadly Flourish",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lacerate",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dragon Form",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
@@ -71,15 +108,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "43 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Forbidding Waste (74 %)",
-    "Ravenbloom Conservatory (54 %)",
-    "Rockfall Path (54 %)",
-    "Treasure Hoard (34 %)"
+    "Rockfall Path (51 %)",
+    "Ravenbloom Conservatory (49 %)",
+    "Treasure Hoard (33 %)"
   ],
   "strengths": [
     "Six cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
@@ -93,13 +130,18 @@
     "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "joueursClasses": 133,
-    "coupe10": 7,
+    "joueursClasses": 143,
+    "coupe10": 9,
     "titres": 0,
-    "conversion": "5.3 %",
-    "tournois": 26,
-    "listesPubliees": 95,
+    "conversion": "6.3 %",
+    "tournois": 29,
+    "listesPubliees": 105,
     "bestPlacements": [
+      {
+        "placement": "6th",
+        "player": "萝卜",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+      },
       {
         "placement": "6th",
         "player": "ARBD-729",
@@ -116,21 +158,16 @@
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       },
       {
-        "placement": "11th",
-        "player": "CHASHAO",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
-      },
-      {
-        "placement": "11th",
-        "player": "无赞助·刘沛松",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+        "placement": "9th",
+        "player": "aa建材王总",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 133 joueurs classés, 26 tournois, dont 95 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 143 joueurs classés, 29 tournois, dont 105 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -145,5 +182,6 @@
       "Vanguard Armory (+ Veiled Temple le re-ready)"
     ],
     "note": "Combo Bellows Breath + Imperial Decree = wipe 2 battlefields + base. Faible à Moonfall (-2 vs son -1) et Pickpocket."
-  }
+  },
+  "setDesChiffres": "Vendetta"
 }

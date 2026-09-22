@@ -10,60 +10,87 @@
   "keyCards": [
     {
       "name": "Void Rush",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Carrion Dredger",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Undertitan",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Cleave",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Cleave",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Honest Broker",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Faithful Manufactor",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Blood Rush",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Shadow Fiend",
-      "role": "Souple, 49 % des listes, 2 exemplaires"
+      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sharkling",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dragon Form",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 409,
-    "coupe10": 48,
+    "joueursClasses": 426,
+    "coupe10": 49,
     "titres": 0,
-    "conversion": "11.7 %",
-    "tournois": 33,
-    "listesPubliees": 216,
+    "conversion": "11.5 %",
+    "tournois": 37,
+    "listesPubliees": 233,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -81,14 +108,14 @@
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
+        "placement": "3rd",
+        "player": "欧派",
+        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
+      },
+      {
         "placement": "5th",
         "player": "Satame",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "6th",
-        "player": "游城十代@罗比军校",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -99,7 +126,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "67 %",
+      "usage": "69 %",
       "role": "1 exemplaire en moyenne"
     },
     "Zed, From the Shadows": {
@@ -109,12 +136,12 @@
   },
   "topBattlefields": [
     "The Candlelit Sanctum (95 %)",
-    "Forbidding Waste (53 %)",
+    "Forbidding Waste (55 %)",
     "Mystic Vortex (46 %)",
-    "Trifarian War Camp (44 %)",
-    "Zaun Warrens (42 %)"
+    "Trifarian War Camp (45 %)",
+    "Zaun Warrens (41 %)"
   ],
-  "dataSource": "Classement complet des tournois : 409 joueurs classés, 33 tournois, dont 216 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 426 joueurs classés, 37 tournois, dont 233 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {
@@ -133,5 +160,6 @@
     "Aucun titre : le deck arrive en Top 8 mais ne finit pas",
     "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
     "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
-  ]
+  ],
+  "setDesChiffres": "Vendetta"
 }

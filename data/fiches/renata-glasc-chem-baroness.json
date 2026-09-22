@@ -10,51 +10,68 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Hostile Takeover",
-      "role": "Standard, 82 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 76 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 74 % des listes, 3 exemplaires"
+      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
+      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 66 % des listes, 2 exemplaires"
+      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 53 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Patched Porobot",
-      "role": "Souple, 50 % des listes, 3 exemplaires"
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 47 % des listes, 2 exemplaires"
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Forge of the Future",
-      "role": "Souple, 45 % des listes, 2 exemplaires"
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Vanguard Armory",
-      "role": "Souple, 39 % des listes, 3 exemplaires"
+      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 39 % des listes, 3 exemplaires"
+      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "competitiveResults": {
@@ -101,7 +118,7 @@
   "weaknesses": [
     "5 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 79 joueurs classés, 10 tournois, dont 38 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 79 joueurs classés, 10 tournois, dont 38 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Renata Glasc, Industrialist": {
       "usage": "55 %",
@@ -124,5 +141,6 @@
     "Treasure Hoard (74 %)",
     "Dusk Rose Lab (34 %)",
     "Veiled Temple (32 %)"
-  ]
+  ],
+  "setDesChiffres": "Vendetta"
 }

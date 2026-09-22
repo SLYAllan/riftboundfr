@@ -9,6 +9,7 @@ import { cn, displayLegendName } from "@/lib/utils";
 import { legendHref } from "@/lib/legend-fiche";
 import { Trophy, Eye, ChevronDown, Swords } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { PastilleInterdite } from "@/components/pastille-interdite";
 
 /* ------------------------------------------------------------------ */
 /*  Medal styling                                                      */
@@ -46,6 +47,8 @@ interface DeckEntry {
   tournamentTier: string | null;
   legendIcon: string | null;
   bannerUrl: string | null;
+  /** Cartes de la liste interdites aujourd'hui. */
+  interdites: string[];
 }
 
 interface Props {
@@ -276,6 +279,8 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
 
         {/* Content overlay at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10 p-3">
+          {/* En bas et pas en haut : le coin gauche porte déjà le rang. */}
+          <PastilleInterdite cartes={deck.interdites} className="mb-1.5 inline-block max-w-full" />
           <div className="flex items-center gap-2 mb-1">
             {deck.legendIcon && (
               <img
@@ -377,6 +382,7 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
               {deck.record}
             </span>
           )}
+          <PastilleInterdite cartes={deck.interdites} compacte className="shrink-0" />
         </div>
       </div>
     </article>

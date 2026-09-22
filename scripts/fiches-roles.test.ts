@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { descripteurExistant, role, roleChampion } from "./fiches-roles";
+import { descripteurExistant, estNoyau, role, roleChampion } from "./fiches-roles";
 
 describe("descripteurExistant", () => {
   it("prend le mot d'un rôle écrit à la main", () => {
@@ -53,5 +53,16 @@ describe("roleChampion", () => {
     const un = roleChampion(1, "Variante agressive — pression plus directe.");
     expect(un).toBe("Variante agressive, 1 exemplaire en moyenne");
     expect(roleChampion(1, un)).toBe(un);
+  });
+});
+
+describe("estNoyau", () => {
+  it("coupe au même seuil que le rang « Cœur du deck »", () => {
+    // Sous la vignette, le rôle dit « Cœur du deck » ; au-dessus, la carte est
+    // rangée dans le noyau. Les deux doivent tomber d'accord à 89 comme à 90 %.
+    expect(estNoyau(90)).toBe(true);
+    expect(role(90, 3).startsWith("Cœur du deck")).toBe(true);
+    expect(estNoyau(89)).toBe(false);
+    expect(role(89, 3).startsWith("Cœur du deck")).toBe(false);
   });
 });

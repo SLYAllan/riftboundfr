@@ -20,7 +20,8 @@ import { LEGEND_GUIDES } from "@/lib/legend-guides";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
-import { isBanned } from "@/lib/banned-cards";
+import { cartesInterdites, isBanned } from "@/lib/banned-cards";
+import { PastilleInterdite } from "@/components/pastille-interdite";
 import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendWithDecks } from "@/lib/legend-fiche";
@@ -47,6 +48,8 @@ interface KeyCard {
   id?: string;
   cost?: number | null;
   role?: string;
+  /** Posé par `fiches-maj` : la carte est dans au moins 9 listes sur 10. */
+  noyau?: boolean;
 }
 interface Gameplan {
   earlyGame?: string;
@@ -72,6 +75,9 @@ interface Fiche {
   sourceUrl?: string;
   // Porte la vraie date du releve (« Releve du 17 aout 2026 »). Absent de 14 fiches.
   dataSource?: string;
+  // Le set dont viennent cartes, champions et terrains. Absent : ils datent d'un
+  // ancien set, et une Kai'Sa d'Origins ne joue pas les cartes de sa version Vendetta.
+  setDesChiffres?: string;
   // Compté sur le CLASSEMENT complet des tournois, pas sur les listes publiées :
   // `joueursClasses` compte tous ceux qui ont joué la Légende, `coupe10` ceux qui
   // ont fini dans les 10 % de tête de leur tournoi. Voir `scripts/fiches-stats.mts`.
@@ -369,6 +375,7 @@ function CardTile({
   badge,
   landscape,
   nom,
+  lien,
 }: {
   art: { name: string; imageUrl: string | null; riftboundId: string } | null;
   label: React.ReactNode;
@@ -377,6 +384,7 @@ function CardTile({
   landscape?: boolean;
   // Sert au contrôle de bannissement quand la carte n'a pas d'art en base.
   nom?: string | null;
+  lien?: { href: string; texte: string } | null;
 }) {
   const banni = isBanned(nom ?? art?.name ?? "");
   const image = art?.imageUrl ? (
@@ -417,6 +425,11 @@ function CardTile({
         )}
       </div>
       {sub && <p className="text-xs text-ink-secondary">{sub}</p>}
+      {lien && (
+        <Link href={lien.href} className="text-xs text-arcane hover:underline">
+          {lien.texte}
+        </Link>
+      )}
     </div>
   );
 }
@@ -521,6 +534,41 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   const cardMap: Record<string, string> = Object.fromEntries(
     Object.entries(cardArt).map(([k, v]) => [k, v.name]),
   );
+
+  // Noyau et cartes flex : le partage vient de `fiches-maj`, au même seuil que le
+  // rang « Cœur du deck » écrit sous chaque vignette.
+  const setDesChiffres = fiche.setDesChiffres ?? null;
+  const noyau = (fiche.keyCards ?? []).filter((kc) => kc.noyau);
+  const flex = (fiche.keyCards ?? []).filter((kc) => !kc.noyau);
+  const listesDuSet = fiche.competitiveResults?.listesPubliees ?? null;
+  const listesHref = (carte?: string) => {
+    const q = new URLSearchParams({ legend: legendName, set: setDesChiffres ?? "all" });
+    if (carte) q.set("q", carte);
+    return `/decks?${q}`;
+  };
+  const tuileCarte = (kc: KeyCard, i: number, avecLien = false) => {
+    const code =
+      kc.id && CODE_RE.test(kc.id)
+        ? kc.id
+        : kc.name && CODE_RE.test(kc.name)
+          ? kc.name
+          : null;
+    const art = (code ? cardArt[code] : null) ?? (kc.name ? cardArt[kc.name] : null);
+    const nameIsCode = !!kc.name && CODE_RE.test(kc.name);
+    const display = art?.name ?? kc.name ?? code ?? "";
+    const wrapName = art?.name ?? (!nameIsCode ? kc.name : null);
+    return (
+      <CardTile
+        key={i}
+        art={art}
+        nom={display}
+        label={wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
+        sub={kc.role}
+        // Une carte flex est un choix : on montre qui le fait, liste par liste.
+        lien={avecLien && wrapName ? { href: listesHref(wrapName), texte: t("Voir les listes qui la jouent") } : null}
+      />
+    );
+  };
 
   // Pool déjà trié (niveau de tournoi, puis classement) : les 3 premiers dépliés.
   const legendDecks = await fetchLegendDecks(legendName);
@@ -902,92 +950,104 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           </Section>
         )}
 
-        {/* À savoir : cartes clés + forces/faiblesses côte à côte */}
-        {((fiche.keyCards?.length ?? 0) > 0 ||
-          (fiche.strengths?.length ?? 0) > 0 ||
-          (fiche.weaknesses?.length ?? 0) > 0) && (
-          <div className="grid gap-6 lg:grid-cols-2">
-            {(fiche.keyCards?.length ?? 0) > 0 && (
-              <section>
-                <h2
-                  className="flex items-center gap-2 text-xl font-semibold text-arcane"
-                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                >
-                  <TrendingUp size={18} /> {t("Cartes clés")}
-                </h2>
-                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  {fiche.keyCards!.map((kc, i) => {
-                    const code =
-                      kc.id && CODE_RE.test(kc.id)
-                        ? kc.id
-                        : kc.name && CODE_RE.test(kc.name)
-                          ? kc.name
-                          : null;
-                    const art = (code ? cardArt[code] : null) ?? (kc.name ? cardArt[kc.name] : null);
-                    const nameIsCode = !!kc.name && CODE_RE.test(kc.name);
-                    const display = art?.name ?? kc.name ?? code ?? "";
-                    const wrapName = art?.name ?? (!nameIsCode ? kc.name : null);
-                    return (
-                      <CardTile
-                        key={i}
-                        art={art}
-                        nom={display}
-                        label={wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
-                        sub={kc.role}
-                      />
-                    );
-                  })}
-                </div>
-              </section>
-            )}
+        {/* Noyau et cartes flex, comptés sur les seules listes du set en cours.
+            Pleine largeur : jusqu'à vingt-trois cartes, qui tenaient mal dans une
+            demi-colonne. Une fiche dont les cartes datent d'un ancien set les tait
+            au lieu de les montrer comme celles du format en cours. */}
+        {(fiche.keyCards?.length ?? 0) > 0 &&
+          (setDesChiffres ? (
+            <section>
+              <h2
+                className="flex items-center gap-2 text-xl font-semibold text-arcane"
+                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              >
+                <TrendingUp size={18} /> {t("Noyau et cartes flex")}
+              </h2>
+              <p className="mt-1 text-sm text-ink-secondary">
+                {listesDuSet ? (
+                  <>
+                    {t("Compté sur")} {listesDuSet} {t("listes publiées en tournoi")} ({setDesChiffres}).{" "}
+                  </>
+                ) : null}
+                <Link href={listesHref()} className="text-arcane hover:underline">
+                  {t("Voir ces listes")}
+                </Link>
+              </p>
+              {noyau.length > 0 && (
+                <>
+                  <h3 className="mt-5 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                    {t("Noyau")} <span className="font-normal text-ink-muted">{t("dans au moins 9 listes sur 10")}</span>
+                  </h3>
+                  <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+                    {noyau.map((kc, i) => tuileCarte(kc, i))}
+                  </div>
+                </>
+              )}
+              {flex.length > 0 && (
+                <>
+                  <h3 className="mt-6 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                    {t("Cartes flex")}{" "}
+                    <span className="font-normal text-ink-muted">{t("dans 3 à 9 listes sur 10, là où les listes diffèrent")}</span>
+                  </h3>
+                  <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
+                    {flex.map((kc, i) => tuileCarte(kc, i, true))}
+                  </div>
+                </>
+              )}
+            </section>
+          ) : (
+            <p className="rounded-lg border border-hairline bg-surface px-4 py-3 text-sm text-ink-secondary">
+              {t("Trop peu de listes de cette Légende dans le set en cours pour montrer ses cartes.")}
+            </p>
+          ))}
 
-            {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
-              <section>
-                <h2
-                  className="text-xl font-semibold text-arcane"
-                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                >
-                  Forces &amp; faiblesses
-                </h2>
-                <div className="mt-3 space-y-4">
-                  {(fiche.strengths?.length ?? 0) > 0 && (
-                    <div className="rounded-lg border border-hairline bg-surface p-4">
-                      <h3
-                        className="text-sm font-semibold text-emerald-500"
-                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                      >
-                        Forces
-                      </h3>
-                      <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                        {fiche.strengths!.map((s, i) => (
-                          <li key={i}>{s}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  {(fiche.weaknesses?.length ?? 0) > 0 && (
-                    <div className="rounded-lg border border-hairline bg-surface p-4">
-                      <h3
-                        className="flex items-center gap-1.5 text-sm font-semibold text-red-400"
-                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                      >
-                        <AlertTriangle size={15} /> Faiblesses
-                      </h3>
-                      <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                        {fiche.weaknesses!.map((w, i) => (
-                          <li key={i}>{w}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+        {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
+          <section>
+            <h2
+              className="text-xl font-semibold text-arcane"
+              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+            >
+              Forces &amp; faiblesses
+            </h2>
+            <div className="mt-3 grid gap-4 sm:grid-cols-2">
+              {(fiche.strengths?.length ?? 0) > 0 && (
+                <div className="rounded-lg border border-hairline bg-surface p-4">
+                  <h3
+                    className="text-sm font-semibold text-emerald-500"
+                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                  >
+                    Forces
+                  </h3>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                    {fiche.strengths!.map((s, i) => (
+                      <li key={i}>{s}</li>
+                    ))}
+                  </ul>
                 </div>
-              </section>
-            )}
-          </div>
+              )}
+              {(fiche.weaknesses?.length ?? 0) > 0 && (
+                <div className="rounded-lg border border-hairline bg-surface p-4">
+                  <h3
+                    className="flex items-center gap-1.5 text-sm font-semibold text-red-400"
+                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                  >
+                    <AlertTriangle size={15} /> Faiblesses
+                  </h3>
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                    {fiche.weaknesses!.map((w, i) => (
+                      <li key={i}>{w}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
         )}
 
         {/* Champions + Champs de bataille côte à côte */}
-        {((fiche.champions && Object.keys(fiche.champions).length > 0) ||
+        {/* Même règle que les cartes : rien d'un ancien set. */}
+        {setDesChiffres &&
+          ((fiche.champions && Object.keys(fiche.champions).length > 0) ||
           (fiche.topBattlefields?.length ?? 0) > 0) && (
           <div className="grid gap-6 lg:grid-cols-2">
             {fiche.champions && Object.keys(fiche.champions).length > 0 && (
@@ -1072,6 +1132,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                         {deck.placement}
                       </span>
                     )}
+                    <PastilleInterdite cartes={cartesInterdites(deck.cards.map((dc) => dc.card.name))} className="max-w-[45%]" />
                     {deck.tournamentContext && nomDeDeck(deck, legendName) && (
                       <span className="ml-auto truncate text-xs text-ink-muted">
                         {deck.tournamentContext}

@@ -11,64 +11,69 @@
   "legendAbility": "Vous pouvez payer une énergie au lieu d'une Puissance pour cacher une carte. Une énergie et un épuisement ramènent un Teemo en main depuis la zone de Champion ou le terrain.",
   "keyCards": [
     {
-      "name": "Startipped Peak",
-      "id": "Startipped Peak",
-      "role": "Hold d'un battlefield."
-    },
-    {
-      "name": "Grove of the God-Willow",
-      "id": "Grove of the God-Willow",
-      "role": "Hold complémentaire."
-    },
-    {
-      "name": "Teemo, Strategist",
-      "id": "Teemo, Strategist",
-      "role": "Avec Nocturne, Horrifying, élimine les unités cheap grâce aux Hidden cards."
-    },
-    {
-      "name": "Nocturne, Horrifying",
-      "id": "Nocturne, Horrifying",
-      "role": "Combo avec Teemo, Strategist, au centre de l'early game."
-    },
-    {
-      "name": "Windsinger",
-      "id": "Windsinger",
-      "role": "Removal de petites unités."
-    },
-    {
-      "name": "Sprite Call",
-      "id": "Sprite Call",
-      "role": "Removal cheap."
-    },
-    {
-      "name": "Sprite Fountain",
-      "id": "Sprite Fountain",
-      "role": "Removal Unleashed."
-    },
-    {
       "name": "Switcheroo",
-      "id": "Switcheroo",
-      "role": "Gère les gros attaquants."
-    },
-    {
-      "name": "Bone Skewer",
-      "id": "Bone Skewer",
-      "role": "Removal en combo avec Evelynn, Entrancing."
-    },
-    {
-      "name": "Evelynn, Entrancing",
-      "id": "Evelynn, Entrancing",
-      "role": "Removal en combo avec Bone Skewer."
+      "role": "Cœur du deck, Gère les gros attaquants, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Consult the Past",
-      "id": "Consult the Past",
-      "role": "Refill de main."
+      "role": "Standard, Refill de main, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Guerilla Warfare",
-      "id": "Guerilla Warfare",
-      "role": "Refill complémentaire."
+      "role": "Standard, Refill complémentaire, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, Removal Unleashed, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 55 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Call",
+      "role": "Souple, Removal cheap, 36 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Windsinger",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -78,36 +83,37 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 721,
-    "coupe10": 49,
+    "joueursClasses": 21,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "6.8 %",
-    "tournois": 89,
+    "conversion": "9.5 %",
+    "tournois": 16,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-12)"
+        "placement": "9th",
+        "player": "请叫我猫星人",
+        "tournament": "S4 Foshan City Challenge (2026-09-06)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-08)"
+        "placement": "25th",
+        "player": "GAOA",
+        "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-07)"
+        "placement": "36th",
+        "player": "ibtv.蹙损他淡淡春山",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "42th",
+        "player": "FG.流萤",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-23)"
+        "placement": "42th",
+        "player": "puco",
+        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       }
     ]
   },
@@ -129,5 +135,41 @@
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
   },
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 721 joueurs classés sur 89 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 21 joueurs classés, 16 tournois, dont 11 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "champions": {
+    "Pyke, Returned": {
+      "usage": "73 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Teemo, Strategist": {
+      "usage": "64 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "55 %",
+      "role": "1,5 exemplaire en moyenne"
+    },
+    "Teemo, Scout": {
+      "usage": "55 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Nocturne, Horrifying": {
+      "usage": "36 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Hwei, Brooding Painter": {
+      "usage": "36 %",
+      "role": "2,5 exemplaires en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "36 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Bandle Tree (64 %)",
+    "Startipped Peak (45 %)",
+    "Grove of the God-Willow (45 %)"
+  ],
+  "setDesChiffres": "Vendetta"
 }

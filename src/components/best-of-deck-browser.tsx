@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { PastilleInterdite } from "@/components/pastille-interdite";
+import { cartesInterdites } from "@/lib/banned-cards";
 import { cn, displayLegendName } from "@/lib/utils";
 import type { DecklistCard } from "@/types";
 import { useT } from "@/components/i18n-provider";
@@ -99,6 +101,8 @@ export function BestOfDeckBrowser({ entries }: { entries: BestOfEntry[] }) {
                     </div>
                   )}
                 </div>
+                {/* Visible replié : c'est replié qu'on choisit quelle liste ouvrir. */}
+                <PastilleInterdite cartes={cartesInterdites(e.cards.map((c) => c.name))} className="max-w-[45%]" />
                 <ChevronDown
                   size={18}
                   className={cn("shrink-0 text-ink-muted transition-transform", isOpen && "rotate-180")}

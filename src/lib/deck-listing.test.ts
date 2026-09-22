@@ -11,6 +11,7 @@ describe("lireFiltresDecks", () => {
       q: "  carte  ",
       sort: "popular",
       owned: "1",
+      legales: "1",
       offset: "-4",
     })).toEqual({
       cat: "bestof",
@@ -20,6 +21,7 @@ describe("lireFiltresDecks", () => {
       q: "carte",
       sort: "popular",
       owned: true,
+      legales: true,
       offset: 0,
     });
   });
@@ -33,6 +35,7 @@ describe("lireFiltresDecks", () => {
       q: "",
       sort: undefined,
       owned: false,
+      legales: false,
       offset: 0,
     });
   });

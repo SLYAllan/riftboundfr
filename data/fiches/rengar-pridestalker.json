@@ -18,51 +18,68 @@
   "keyCards": [
     {
       "name": "Thrill of the Hunt",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Grim Apothecary",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Grim Apothecary",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 84 % des listes, 1 exemplaire"
+      "role": "Standard, 84 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Pakaa Cub",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -76,12 +93,12 @@
     "35 listes en dix-huit tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 373,
-    "coupe10": 50,
+    "joueursClasses": 386,
+    "coupe10": 52,
     "titres": 1,
-    "conversion": "13.4 %",
-    "tournois": 30,
-    "listesPubliees": 140,
+    "conversion": "13.5 %",
+    "tournois": 34,
+    "listesPubliees": 152,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -99,14 +116,14 @@
         "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
       },
       {
-        "placement": "4th",
-        "player": "猫岛巡礼.澪夜",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+        "placement": "3rd",
+        "player": "GREY—神切ipe001",
+        "tournament": "S4 Hangzhou City Challenge (2026-09-19)"
       },
       {
         "placement": "4th",
-        "player": "酷猫.Rowe ",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "player": "SD.Whit1xX",
+        "tournament": "S4 Foshan City Challenge (2026-09-06)"
       }
     ]
   },
@@ -138,11 +155,11 @@
       "role": "3 exemplaires en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "85 %",
+      "usage": "86 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
@@ -153,7 +170,8 @@
   "topBattlefields": [
     "Star Spring (95 %)",
     "Emperor's Dais (86 %)",
-    "Seat of Power (82 %)"
+    "Seat of Power (83 %)"
   ],
-  "dataSource": "Classement complet des tournois : 373 joueurs classés, 30 tournois, dont 140 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 386 joueurs classés, 34 tournois, dont 152 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

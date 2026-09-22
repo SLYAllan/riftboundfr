@@ -12,51 +12,68 @@
   "keyCards": [
     {
       "name": "Kadregrin the Infernal",
-      "role": "Cœur du deck, Core et finisher dragon, 90 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, Core et finisher dragon, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Mobilize",
-      "role": "Standard, Ramp essentiel, 80 % des listes, 3 exemplaires"
+      "role": "Standard, Ramp essentiel, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sky Splitter",
-      "role": "Standard, Removal et board control, 80 % des listes, 3 exemplaires"
+      "role": "Standard, Removal et board control, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Gentle Gemdragon",
-      "role": "Standard, Dragon de mid game, 80 % des listes, 3 exemplaires"
+      "role": "Standard, Dragon de mid game, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Elder Dragon",
-      "role": "Standard, Menace majeure, 80 % des listes, 3 exemplaires"
+      "role": "Standard, Menace majeure, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Dragonsoul Sage",
-      "role": "Standard, 80 % des listes, 2 exemplaires"
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Herald of Scales",
-      "role": "Standard, Dragon d'early game, 70 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Falling Star",
-      "role": "Standard, 70 % des listes, 2 exemplaires"
+      "role": "Standard, Dragon d'early game, 73 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Show of Strength",
-      "role": "Standard, 60 % des listes, 3 exemplaires"
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Blazing Scorcher",
-      "role": "Standard, Dragon d'early game, 60 % des listes, 3 exemplaires"
+      "role": "Standard, Dragon d'early game, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Flurry of Blades",
-      "role": "Standard, Combat trick, 60 % des listes, 2,5 exemplaires"
+      "role": "Standard, Combat trick, 64 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, Disruption, 60 % des listes, 1 exemplaire"
+      "role": "Standard, Disruption, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
@@ -65,23 +82,22 @@
       "role": "Seul champion du build, 1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "70 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
     "Jayce, Hammer in Hand": {
-      "usage": "40 %",
+      "usage": "36 %",
       "role": "1,5 exemplaire en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "40 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (90 %)",
-    "Dragon Roost (60 %)",
-    "Mystic Vortex (40 %)",
-    "Frozen Fortress (30 %)"
+    "Sigil of the Storm (91 %)",
+    "Dragon Roost (55 %)",
+    "Mystic Vortex (36 %)"
   ],
   "strengths": [
     "Les grosses unités se paient elles-mêmes, en partie."
@@ -90,12 +106,12 @@
     "6 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 10,
+    "joueursClasses": 11,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "10 %",
-    "tournois": 8,
-    "listesPubliees": 10,
+    "conversion": "9.1 %",
+    "tournois": 9,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -127,7 +143,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 10 joueurs classés, 8 tournois, dont 10 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 11 joueurs classés, 9 tournois, dont 11 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -142,5 +158,6 @@
       "Dragonsoul Sage (libère de la dépendance Aurora)"
     ],
     "note": "Tendance : on coupe de plus en plus Aurora des listes Dragons (la légende donne une rune gratuite par unité mighty)."
-  }
+  },
+  "setDesChiffres": "Vendetta"
 }

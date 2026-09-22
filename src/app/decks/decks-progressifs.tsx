@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "@/components/lien";
 import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
+import { PastilleInterdite } from "@/components/pastille-interdite";
 import { getBannerUrl } from "@/lib/banners";
 import { parametresDecks, type DeckListe, type FiltresDecks, type LotDecks } from "@/lib/deck-listing-params";
 import { getTournamentCountryCode, getTournamentTier } from "@/lib/tournament-flags";
@@ -27,6 +28,7 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
           <Image src={bannerUrl} alt="" fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
         ) : <div className="absolute inset-0 bg-surface-raised" />}
         <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent" />
+        <PastilleInterdite cartes={deck.interdites} className="absolute left-2 top-2 z-20 max-w-[55%]" />
         {couverture && (
           <span className={cn("absolute right-2 top-2 z-20 rounded-full px-2 py-0.5 text-[11px] font-bold shadow", complet ? "bg-emerald-500/90 text-white" : "bg-canvas/85 text-amber-300 ring-1 ring-amber-400/40")} title={complet ? "Jouable avec votre collection" : `Il vous manque ${couverture.missing} carte${couverture.missing > 1 ? "s" : ""}`}>
             {complet ? "✓ Complet" : `${couverture.owned}/${couverture.required}`}

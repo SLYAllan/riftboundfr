@@ -1,7 +1,8 @@
 import { readFileSync, readdirSync } from "fs";
 import path from "path";
 import { describe, expect, it } from "vitest";
-import { isBanned } from "./banned-cards";
+import { BANNED_CARD_NAMES, cartesInterdites, isBanned } from "./banned-cards";
+import { BAN_ENTRIES, interdictionsParDate } from "./bans";
 
 // Même découpage que `nomTerrain` dans legendes/[slug]/page.tsx : les terrains
 // sont stockés « Aspirant's Climb (100%) ».
@@ -36,6 +37,9 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // Le ban de Stacked Deck (18 septembre) en ajoute onze d'un coup : les fiches
     // sont calculées sur des listes jouées avant le ban. Elles retomberont quand
     // `maj:stats` tournera sur des listes d'après le 18.
+    //
+    // Vex s'y ajoute le 22 septembre : les fiches montrent maintenant leurs cartes
+    // flex, et Stacked Deck est l'une des siennes (54 % des listes).
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
@@ -50,6 +54,7 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "mel-souls-reflection.json",
       "pyke-bloodharbor-ripper.json",
       "sivir-battle-mistress.json",
+      "vex-gloomist.json",
       "yasuo-unforgiven.json",
       "zed-master-of-shadows.json",
     ]);
@@ -59,5 +64,31 @@ describe("cartes bannies dans les fiches Légendes", () => {
     expect(nomTerrain("Aspirant's Climb (100%)")).toBe("Aspirant's Climb");
     expect(isBanned(nomTerrain("Aspirant's Climb (100%)"))).toBe(true);
     expect(isBanned("Aspirant's Climb (100%)")).toBe(false);
+  });
+});
+
+describe("listes qui jouent une carte interdite", () => {
+  it("rend chaque carte interdite une fois, dans l'ordre de la liste", () => {
+    // Principal puis réserve : la même carte revient deux fois dans une liste.
+    expect(cartesInterdites(["Stacked Deck", "Ride the Wind", "Ekko, Recurrent", "Stacked Deck"])).toEqual([
+      "Stacked Deck",
+      "Ekko, Recurrent",
+    ]);
+    expect(cartesInterdites(["Ride the Wind"])).toEqual([]);
+  });
+
+  it("regroupe par date d'interdiction, la plus ancienne d'abord", () => {
+    expect(interdictionsParDate(["Stacked Deck", "Called Shot", "Ekko, Recurrent"])).toEqual([
+      { date: "31 mars 2026", cartes: ["Called Shot"] },
+      { date: "18 septembre 2026", cartes: ["Ekko, Recurrent", "Stacked Deck"] },
+    ]);
+    expect(interdictionsParDate([])).toEqual([]);
+  });
+
+  // La pastille lit `isBanned`, l'encadré de la page deck lit `BAN_ENTRIES` pour
+  // la date. Une carte ajoutée d'un seul côté donnerait une pastille sans date,
+  // ou une date sans pastille.
+  it("tient les deux listes de cartes interdites d'accord", () => {
+    expect(new Set(BAN_ENTRIES.map((b) => b.en))).toEqual(BANNED_CARD_NAMES);
   });
 });

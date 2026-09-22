@@ -19,6 +19,7 @@ import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { decodeDeck } from "@/lib/deck-codec";
 import { deckCoverageItems } from "@/lib/deck-cards";
 import { CountryBadge } from "@/components/country-badge";
+import { PastilleInterdite } from "@/components/pastille-interdite";
 import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
@@ -461,6 +462,14 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <Suspense>
           <DeckTournamentFilter options={TOURNAMENT_FILTERS.map((tf) => ({ valeur: tf.ctx, libelle: tf.label, pays: tf.countryCode }))} />
         </Suspense>
+        {/* Un filtre et pas un défaut : une liste de tournoi reste un résultat à
+            consulter, même quand elle ne se joue plus. */}
+        <Link
+          href={hrefDecks({ legales: filtres.legales ? null : "1" })}
+          className={cn("inline-flex min-h-11 items-center rounded-full px-3 text-xs font-semibold transition-colors",
+            filtres.legales ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink"
+          )}
+        >{t("Sans carte interdite")}</Link>
 
         <div className="flex w-full flex-wrap items-center gap-1.5 sm:ml-auto sm:w-auto">
           <span className="text-xs text-ink-muted">{t("Tri")}</span>
@@ -509,6 +518,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         {cat && <span> &middot; {cat === "bestof" ? t("Best of") : cat === "all" ? t("Toutes les listes") : cat}</span>}
         {setFilter && <span> &middot; <strong>{setFilter}</strong></span>}
         {tournamentFilter && <span> &middot; <strong>{TOURNAMENT_FILTERS.find((t) => t.ctx === tournamentFilter)?.label ?? tournamentFilter}</strong></span>}
+        {filtres.legales && <span> &middot; {t("sans carte interdite")}</span>}
       </div>
 
       {lotInitial.total === 0 ? (
@@ -528,6 +538,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                     <div className="absolute inset-0 bg-surface-raised" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/30 to-transparent" />
+                  <PastilleInterdite cartes={deck.interdites} className="absolute left-2 top-2 z-20 max-w-[55%]" />
                   {(() => {
                     const cov = coverageByDeck.get(deck.id);
                     if (!cov) return null;

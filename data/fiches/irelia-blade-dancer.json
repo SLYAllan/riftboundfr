@@ -18,51 +18,98 @@
   "keyCards": [
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defiant Dance",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "En Garde",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "En Garde",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 84 % des listes, 2 exemplaires"
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Guardian Angel",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flash",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Twilight Shroud",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -90,12 +137,12 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 747,
-    "coupe10": 87,
+    "joueursClasses": 777,
+    "coupe10": 89,
     "titres": 2,
-    "conversion": "11.6 %",
-    "tournois": 33,
-    "listesPubliees": 405,
+    "conversion": "11.5 %",
+    "tournois": 37,
+    "listesPubliees": 435,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -164,22 +211,23 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "55 %",
+      "usage": "52 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "50 %",
+      "usage": "51 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "43 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
     "Sunken Temple (89 %)",
-    "Targon's Peak (86 %)"
+    "Targon's Peak (85 %)"
   ],
-  "dataSource": "Classement complet des tournois : 747 joueurs classés, 33 tournois, dont 405 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 777 joueurs classés, 37 tournois, dont 435 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

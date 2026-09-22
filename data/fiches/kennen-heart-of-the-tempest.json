@@ -31,51 +31,93 @@
   "keyCards": [
     {
       "name": "Lightning Rush",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Last Rites",
-      "role": "Standard, 89 % des listes, 2 exemplaires"
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 75 % des listes, 2 exemplaires"
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 71 % des listes, 3 exemplaires"
+      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 60 % des listes, 1 exemplaire"
+      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 52 % des listes, 2 exemplaires"
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flash",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Deathgrip",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "champions": {
@@ -94,20 +136,30 @@
   },
   "topBattlefields": [
     "Minefield (94 %)",
-    "Zaun Warrens (89 %)"
+    "Zaun Warrens (90 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1141,
-    "coupe10": 212,
-    "titres": 8,
-    "conversion": "18.6 %",
-    "tournois": 33,
-    "listesPubliees": 616,
+    "joueursClasses": 1191,
+    "coupe10": 220,
+    "titres": 10,
+    "conversion": "18.5 %",
+    "tournois": 37,
+    "listesPubliees": 665,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "小运重卡",
         "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": "𝙆𝙈𝙆.奇力王",
+        "tournament": "S4 Foshan City Challenge (2026-09-06)"
+      },
+      {
+        "placement": "1st",
+        "player": "不滅の群青",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
       },
       {
         "placement": "1st",
@@ -118,18 +170,9 @@
         "placement": "1st",
         "player": "SD.Elemental",
         "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "1st",
-        "player": "ARBD-加州旅馆",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
-      },
-      {
-        "placement": "1st",
-        "player": "GOAT-版本t0",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1141 joueurs classés, 33 tournois, dont 616 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 1191 joueurs classés, 37 tournois, dont 665 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

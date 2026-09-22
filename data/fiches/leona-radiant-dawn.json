@@ -12,51 +12,78 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, protection, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, protection, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, removal/buff, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, removal/buff, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, bounce, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, bounce, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, protection gear, 100 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, protection gear, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 94 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, rally surprise, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, early game, 88 % des listes, 3 exemplaires"
+      "role": "Standard, early game, 88 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 71 % des listes, 2 exemplaires"
+      "role": "Standard, spell signature, 71 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, finisher, 65 % des listes, 2 exemplaires"
+      "role": "Standard, finisher, 65 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Thwonk!",
-      "role": "Souple, 59 % des listes, 1 exemplaire"
+      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Affectionate Poro",
-      "role": "Souple, 53 % des listes, 3 exemplaires"
+      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Mournful Witness",
-      "role": "Souple, 47 % des listes, 3 exemplaires"
+      "role": "Souple, 47 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Souple, 47 % des listes, 1,5 exemplaire"
+      "role": "Souple, 47 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ki Barrier",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
@@ -130,7 +157,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 21 joueurs classés, 11 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 21 joueurs classés, 11 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -144,5 +171,6 @@
       "Back Off (stun)"
     ],
     "note": "Support de stun ; honeyfruit jugée mauvaise (n'aide pas quand on perd le tempo)."
-  }
+  },
+  "setDesChiffres": "Vendetta"
 }

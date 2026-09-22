@@ -18,51 +18,88 @@
   "keyCards": [
     {
       "name": "Spinning Axe",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires"
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires"
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Rebuke",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires"
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Overzealous Fan",
-      "role": "Standard, 88 % des listes, 2 exemplaires"
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Standard, 87 % des listes, 1 exemplaire"
+      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 86 % des listes, 2 exemplaires"
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 73 % des listes, 1 exemplaire"
+      "role": "Standard, 72 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 72 % des listes, 2 exemplaires"
+      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Souple, 31 % des listes, 1,5 exemplaire",
+      "noyau": false
     }
   ],
   "strengths": [
@@ -77,12 +114,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 291,
+    "joueursClasses": 299,
     "coupe10": 32,
     "titres": 1,
-    "conversion": "11 %",
-    "tournois": 30,
-    "listesPubliees": 128,
+    "conversion": "10.7 %",
+    "tournois": 34,
+    "listesPubliees": 136,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -140,7 +177,7 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "95 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
@@ -148,7 +185,7 @@
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "66 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
@@ -156,14 +193,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "45 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Treasure Hoard (76 %)",
-    "Zaun Warrens (63 %)",
-    "Amateur Recital (55 %)"
+    "Zaun Warrens (62 %)",
+    "Amateur Recital (56 %)"
   ],
-  "dataSource": "Classement complet des tournois : 291 joueurs classés, 30 tournois, dont 128 listes publiées d’où viennent les cartes. Relevé du 20 septembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 299 joueurs classés, 34 tournois, dont 136 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta"
 }

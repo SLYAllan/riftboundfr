@@ -17,7 +17,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
-import { role, roleChampion } from "./fiches-roles";
+import { estNoyau, role, roleChampion } from "./fiches-roles";
 import { vendettaTier } from "./tier-tables";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
@@ -35,11 +35,13 @@ const stats: Record<string, StatsLegende> = JSON.parse((await fs.readFile(chemin
 
 type Fiche = {
   legendName?: string;
-  keyCards?: { name: string; role?: string }[];
+  keyCards?: { name: string; role?: string; noyau?: boolean }[];
   champions?: Record<string, { usage?: string; role?: string }>;
   topBattlefields?: string[];
   competitiveResults?: Record<string, unknown>;
   dataSource?: string;
+  /** Le set sur lequel cartes, champions et terrains ont été comptés. Absent : ils datent d'un ancien set. */
+  setDesChiffres?: string;
   [k: string]: unknown;
 };
 
@@ -57,6 +59,12 @@ for (const f of fichiers) {
   const s = fiche.legendName ? parCle.get(cle(fiche.legendName)) : undefined;
   if (!s) {
     journal.push(`  ${f.padEnd(38)} laissée telle quelle (moins de dix listes dans le format)`);
+    // Ses cartes ne sont plus celles du set en cours : la page ne doit plus les
+    // présenter comme telles.
+    if (fiche.setDesChiffres && ecrire) {
+      delete fiche.setDesChiffres;
+      await fs.writeFile(p, JSON.stringify(fiche, null, 2) + "\n", "utf-8");
+    }
     continue;
   }
 
@@ -76,6 +84,9 @@ for (const f of fichiers) {
       `Classement complet des tournois, TOUTES ÈRES : ${s.joueurs} joueurs classés sur ${s.tournois} tournois. ` +
       `Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. ` +
       `Relevé du ${AUJOURDHUI}, calcul par scripts/fiches-stats.mts.`;
+    // Cartes gardées, mais d'un ancien set : la page les tait plutôt que de les
+    // montrer comme celles du format en cours.
+    delete fiche.setDesChiffres;
     journal.push(`  ${f.padEnd(38)} résultats toutes ères (${s.joueurs} joueurs), cartes inchangées`);
     touchees++;
     if (ecrire) await fs.writeFile(p, JSON.stringify(fiche, null, 2) + "\n", "utf-8");
@@ -86,9 +97,17 @@ for (const f of fichiers) {
   const ancienChamp = new Map(Object.entries(fiche.champions ?? {}).map(([n, v]) => [n, v.role]));
   const avant = JSON.stringify([fiche.keyCards, fiche.champions, fiche.topBattlefields]);
 
-  fiche.keyCards = s.cartes
-    .slice(0, 12)
-    .map((c) => ({ name: c.nom, role: role(c.part, c.copies, ancienRole.get(c.nom)) }));
+  // Tout le noyau, puis les douze cartes flex les plus jouées. Couper la liste
+  // aux douze premières parts ne gardait que le noyau : les choix qui changent
+  // d'une liste à l'autre, ceux qu'un joueur vient chercher, n'apparaissaient pas.
+  const noyau = s.cartes.filter((c) => estNoyau(c.part));
+  const flex = s.cartes.filter((c) => !estNoyau(c.part)).slice(0, 12);
+  fiche.keyCards = [...noyau, ...flex].map((c) => ({
+    name: c.nom,
+    role: role(c.part, c.copies, ancienRole.get(c.nom)),
+    noyau: estNoyau(c.part),
+  }));
+  fiche.setDesChiffres = s.set;
 
   fiche.champions = Object.fromEntries(
     s.champions.map((c) => {
