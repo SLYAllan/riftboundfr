@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Pencil, Check, X } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { useT } from "@/components/i18n-provider";
 import { EmotePicker } from "@/components/emote-picker";
@@ -91,21 +92,12 @@ export function CommunityDeckGuide({ shareCode, initialGuide, ownerId }: Props) 
           />
           <div className="flex items-center gap-2">
             <EmotePicker champRef={champRef} onTexte={setDraft} />
-            <button
-              onClick={save}
-              disabled={saving}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110 disabled:opacity-50"
-            >
-              <Check size={14} />
+            <Bouton onClick={save} disabled={saving} icone={<Check />}>
               {saving ? "Sauvegarde..." : "Sauvegarder"}
-            </button>
-            <button
-              onClick={() => setEditing(false)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-4 py-2 text-sm text-ink-secondary hover:text-ink"
-            >
-              <X size={14} />
+            </Bouton>
+            <Bouton onClick={() => setEditing(false)} variante="neutre" icone={<X />}>
               Annuler
-            </button>
+            </Bouton>
             <span className="ml-auto text-xs text-ink-muted">
               {draft.length}/5000
             </span>

@@ -1,6 +1,8 @@
 "use client";
 
 import { useT } from "@/components/i18n-provider";
+import { Bouton } from "@/components/bouton";
+import { RotateCw } from "lucide-react";
 
 export default function OfflinePage() {
   const t = useT();
@@ -40,13 +42,9 @@ export default function OfflinePage() {
         {t("Impossible de charger cette page. Vérifiez votre connexion internet puis réessayez.")}
       </p>
 
-      <button
-        type="button"
-        onClick={() => window.location.reload()}
-        className="rounded-xl bg-arcane px-6 py-3 font-semibold text-canvas transition-colors hover:bg-arcane-light"
-      >
+      <Bouton onClick={() => window.location.reload()} icone={<RotateCw />}>
         {t("Réessayer")}
-      </button>
+      </Bouton>
     </div>
   );
 }

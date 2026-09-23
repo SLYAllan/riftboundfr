@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronUp, ChevronDown, MessageSquare, Send, User as UserIcon } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { DiscordAvatar } from "@/components/discord-avatar";
 import { useT } from "@/components/i18n-provider";
 import { EmotePicker } from "@/components/emote-picker";
@@ -130,14 +131,9 @@ export function CommentsSection({ articleId, communityDeckId }: CommentsSectionP
             />
             <div className="flex items-center justify-between mt-2">
               <EmotePicker champRef={champRef} onTexte={setBody} />
-              <button
-                onClick={() => submit()}
-                disabled={!body.trim() || sending}
-                className="flex min-h-11 items-center gap-1.5 rounded-lg bg-arcane px-4 text-sm font-medium text-canvas disabled:opacity-40 hover:bg-arcane-light transition-colors"
-              >
-                <Send size={14} />
+              <Bouton onClick={() => submit()} disabled={!body.trim() || sending} icone={<Send />}>
                 Envoyer
-              </button>
+              </Bouton>
             </div>
             {erreurEnvoi && (
               <p role="alert" className="mt-2 text-xs text-error-light">

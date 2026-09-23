@@ -15,6 +15,28 @@
   --font-display: var(--font-rubik), "Noto Sans TC";
   --font-mono: var(--font-geist-mono);
 
+  /* Ombres : les trois niveaux « beautiful shadows » de MengTo (petite, moyenne,
+     forte), posés à la place de l'échelle Tailwind pour que tout le site en change
+     d'un coup. Même construction en couches, neutre et sans couleur ; l'opacité
+     est multipliée (x4, x3 pour la forte) parce que le site est sombre : à 6 %,
+     sur #1c1c1e, les menus perdaient tout relief. Menus et fenêtres flottantes
+     (shadow-xl) prennent la moyenne, comme le demande le guide ; la forte ne sert
+     qu'aux aperçus qui flottent sur du texte (shadow-2xl). */
+  --shadow-xs: 0 2px 3px -1px rgb(0 0 0 / 0.4), 0 1px 0 0 rgb(0 0 0 / 0.08), 0 0 0 1px rgb(0 0 0 / 0.32);
+  --shadow-sm: 0 2px 3px -1px rgb(0 0 0 / 0.4), 0 1px 0 0 rgb(0 0 0 / 0.08), 0 0 0 1px rgb(0 0 0 / 0.32);
+  --shadow-md: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
+  --shadow-lg: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
+  --shadow-xl: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
+  --shadow-2xl: 0 2.8px 2.2px rgb(0 0 0 / 0.1), 0 6.7px 5.3px rgb(0 0 0 / 0.14), 0 12.5px 10px rgb(0 0 0 / 0.18), 0 22.3px 17.9px rgb(0 0 0 / 0.22), 0 41.8px 33.4px rgb(0 0 0 / 0.26), 0 100px 80px rgb(0 0 0 / 0.36);
+
+  /* Courbes du guide « interaction design » : décélérer pour entrer, accélérer
+     pour sortir. Posées à la place de celles de Tailwind, et comme courbe par
+     défaut de toutes les transitions du site. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --default-transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
   /* Canvas & Surfaces */
   --color-canvas: #1c1c1e;
   --color-surface: #232328;
@@ -208,6 +230,22 @@
   h1, h2, h3, h4 {
     text-wrap: balance;
   }
+  /* Approche resserrée à mesure que la taille monte, corps de texte à 0 (guide
+     « apple design », typographie). Une classe tracking-* garde la main : les
+     utilitaires passent devant cette couche. */
+  h1 {
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    letter-spacing: -0.01em;
+  }
+  /* Réponse à l'appui et pas au relâchement : un bouton s'enfonce dès qu'on le
+     presse (guide « apple design », « Response »). `scale` et non `transform`,
+     pour ne pas écraser un décalage posé par ailleurs. */
+  button:not(:disabled):active,
+  [role="button"]:not([aria-disabled="true"]):active {
+    scale: 0.97;
+  }
   p, li, figcaption, blockquote {
     text-wrap: pretty;
   }
@@ -269,10 +307,20 @@
   .glow-gold {
     border-color: var(--color-gold);
   }
+  /* Matière translucide (guide « apple design », matières) : la saturation garde
+     les couleurs qui défilent dessous lisibles au lieu de les délaver. */
   .glass {
     background: var(--color-surface-glass);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+  }
+  /* « Réduire la transparence » du système : un fond plein, sans flou. */
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--color-canvas);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
   }
   /* Texte posé sur une illustration de carte ou de bannière. Les dégradés des
      bannières sont volontairement légers pour laisser voir l'art : c'est donc le
@@ -314,5 +362,130 @@
   select.border-hairline-strong,
   textarea.border-hairline-strong {
     border-color: var(--color-hairline-field);
+  }
+}
+
+/* Bouton du site : l'« Arrow Fill Button » d'obsidianui.dev, réglage B choisi
+   par Allan (mêmes coins que rounded-lg, var(--radius) : 10 px). Un calque rogné en pastille à
+   droite s'étend à tout le bouton au survol ou au focus clavier. Le composant est
+   src/components/bouton.tsx ; ces classes ne s'écrivent pas à la main. */
+@layer components {
+  .bouton {
+    --fond: var(--color-arcane);
+    --texte: var(--color-canvas);
+    --bord: transparent;
+    --rond: var(--color-ink);
+    --texte-rond: var(--color-canvas);
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 3.25rem 0 1.25rem;
+    border: 1px solid var(--bord);
+    border-radius: var(--radius);
+    background: var(--fond);
+    color: var(--texte);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: scale 100ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bouton:not(:disabled):active {
+    scale: 0.97;
+  }
+  .bouton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .bouton-calque {
+    position: absolute;
+    inset: -1px;
+    display: flex;
+    align-items: center;
+    padding: 0 3.25rem 0 1.25rem;
+    border-radius: var(--radius);
+    background: var(--rond);
+    color: var(--texte-rond);
+    pointer-events: none;
+    clip-path: inset(0.35rem 0.35rem 0.35rem calc(100% - 2.45rem) round 2rem);
+    transition: clip-path 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  /* Dans le calque, le libellé passe en sombre, dans toutes les variantes. Le
+     logo blanc de CardNexus (« Acheter ce deck ») y devenait invisible sur le
+     remplissage clair : on l'inverse avec le texte. */
+  .bouton-calque img {
+    filter: invert(1);
+  }
+  .bouton-icone {
+    position: absolute;
+    right: 0.95rem;
+    display: flex;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .bouton-icone svg {
+    width: 100%;
+    height: 100%;
+  }
+  .bouton-fleche g {
+    transform-origin: center;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  .bouton-fleche g:first-child {
+    transform: translateX(-120%) scale(0);
+  }
+  /* Survol seulement là où la souris existe : au doigt, le remplissage restait
+     collé après le toucher. Le clavier, lui, le déclenche partout. */
+  @media (hover: hover) {
+    .bouton:not(:disabled):hover .bouton-calque {
+      clip-path: inset(0 round var(--radius));
+    }
+    .bouton:not(:disabled):hover .bouton-fleche g:first-child {
+      transform: none;
+    }
+    .bouton:not(:disabled):hover .bouton-fleche g:last-child {
+      transform: translateX(120%) scale(0);
+    }
+  }
+  .bouton:focus-visible .bouton-calque {
+    clip-path: inset(0 round var(--radius));
+  }
+  .bouton:focus-visible .bouton-fleche g:first-child {
+    transform: none;
+  }
+  .bouton:focus-visible .bouton-fleche g:last-child {
+    transform: translateX(120%) scale(0);
+  }
+  /* Rempli de la couleur du fond de page, le bouton plein semblait se vider au
+     survol : il se remplit de clair. */
+  .bouton-contour {
+    --fond: transparent;
+    --texte: var(--color-arcane);
+    --bord: var(--color-arcane);
+    --rond: var(--color-arcane);
+    --texte-rond: var(--color-canvas);
+  }
+  .bouton-neutre {
+    --fond: transparent;
+    --texte: var(--color-ink);
+    --bord: var(--color-hairline-strong);
+    --rond: var(--color-ink);
+    --texte-rond: var(--color-canvas);
+  }
+
+  /* Un menu naît de son bouton (guide « apple design », cohérence spatiale) :
+     il descend de quelques pixels depuis son bord d'attache. L'origine se pose
+     sur le menu (origin-top-left, origin-top-right). */
+  .menu-deroulant {
+    animation: menu-entree 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes menu-entree {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
   }
 }

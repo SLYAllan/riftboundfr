@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
 import { getBinders, getCollectionItems } from "@/lib/collection-server";
@@ -40,10 +40,7 @@ export default async function CollectionPage() {
         <h1 className="font-display text-2xl font-bold">Ma collection</h1>
         <div className="mt-6 rounded-xl border border-hairline bg-surface-raised/40 p-8 text-center">
           <p className="mb-4 text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
-          <Link
-            href="/api/auth/discord"
-            className="inline-block rounded-lg bg-arcane px-5 py-2.5 font-semibold text-canvas hover:bg-arcane/90"
-          >{t("Se connecter avec Discord")}</Link>
+          <BoutonLien href="/api/auth/discord">{t("Se connecter avec Discord")}</BoutonLien>
         </div>
       </div>
     );

@@ -63,7 +63,7 @@ function TournamentRow({
             alt=""
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover object-[center_20%] opacity-60 transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover object-[center_20%] opacity-60 transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/45 to-canvas/10" />
           {winner && (

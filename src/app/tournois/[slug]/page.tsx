@@ -391,7 +391,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                       src={banner}
                       alt=""
                       loading="lazy"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       style={{ objectPosition: "center 20%" }}
                     />
                   ) : (

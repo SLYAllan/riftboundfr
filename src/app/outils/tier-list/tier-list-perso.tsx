@@ -6,6 +6,7 @@ import { Check, Copy, RotateCcw, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TIER_BANNER } from "@/lib/tier-colors";
 import { useT } from "@/components/i18n-provider";
+import { Bouton } from "@/components/bouton";
 import {
   RANGS,
   TITRE_MAX,
@@ -30,9 +31,6 @@ interface Props {
   /** La tier list en cours du site, pour partir d'elle plutôt que de zéro. */
   officiel: Classement | null;
 }
-
-const bouton =
-  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane disabled:cursor-not-allowed disabled:opacity-50";
 
 export function TierListPerso({ legendes, initial, titreInitial, officiel }: Props) {
   const t = useT();
@@ -152,22 +150,16 @@ export function TierListPerso({ legendes, initial, titreInitial, officiel }: Pro
         />
         <div className="flex flex-wrap gap-2">
           {officiel && (
-            <button type="button" onClick={() => remplacer(officiel)} className={cn(bouton, "bg-surface-raised text-ink hover:bg-surface")}>
-              <Sparkles size={15} aria-hidden="true" /> {t("Partir de la tier list du site")}
-            </button>
+            <Bouton onClick={() => remplacer(officiel)} variante="neutre" icone={<Sparkles />}>
+              {t("Partir de la tier list du site")}
+            </Bouton>
           )}
-          <button
-            type="button"
-            onClick={() => remplacer(classementVide())}
-            disabled={rangees.size === 0}
-            className={cn(bouton, "bg-surface-raised text-ink hover:bg-surface")}
-          >
-            <RotateCcw size={15} aria-hidden="true" /> {t("Tout remettre à classer")}
-          </button>
-          <button type="button" onClick={() => void copier()} className={cn(bouton, "bg-arcane text-canvas hover:opacity-90")}>
-            {copie === "ok" ? <Check size={15} aria-hidden="true" /> : <Copy size={15} aria-hidden="true" />}
+          <Bouton onClick={() => remplacer(classementVide())} disabled={rangees.size === 0} variante="neutre" icone={<RotateCcw />}>
+            {t("Tout remettre à classer")}
+          </Bouton>
+          <Bouton onClick={() => void copier()} icone={copie === "ok" ? <Check /> : <Copy />}>
             {copie === "ok" ? t("Lien copié") : t("Copier le lien")}
-          </button>
+          </Bouton>
         </div>
       </div>
       {copie === "erreur" && (
@@ -230,9 +222,9 @@ export function TierListPerso({ legendes, initial, titreInitial, officiel }: Pro
             {t("À classer")} <span className="font-normal text-ink-muted">({reserve.length})</span>
           </h2>
           {choisie && rangees.has(choisie) && (
-            <button type="button" onClick={() => poser(null)} className={cn(bouton, "bg-surface-raised text-ink hover:bg-surface")}>
+            <Bouton onClick={() => poser(null)} variante="neutre" icone={<RotateCcw />}>
               {t("Remettre à classer")}
-            </button>
+            </Bouton>
           )}
         </div>
         <div

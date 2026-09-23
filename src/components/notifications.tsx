@@ -153,7 +153,7 @@ export function Notifications() {
           // barre en grand écran comme en petit. Aligné à gauche, le panneau de
           // 320 px sortait de l'écran par la droite et ajoutait une barre de
           // défilement horizontale à toute la page.
-          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2rem)] rounded-xl border border-hairline bg-surface p-1 shadow-xl"
+          className="menu-deroulant absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2rem)] origin-top-right rounded-xl border border-hairline bg-surface p-1 shadow-xl"
         >
           <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
             {t("Notifications")}

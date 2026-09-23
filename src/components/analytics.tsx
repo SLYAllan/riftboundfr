@@ -3,6 +3,8 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { useT } from "@/components/i18n-provider";
+import { Bouton } from "@/components/bouton";
+import { Check, X } from "lucide-react";
 
 // Measurement ID hardcoded as the default (a GA4 ID is a public, client-side
 // value, not a secret). NEXT_PUBLIC_GA_ID can still override it if needed.
@@ -78,18 +80,12 @@ export function CookieBanner() {
       <div className="mx-auto max-w-2xl rounded-card border border-hairline bg-surface p-4 shadow-xl backdrop-blur-sm">
         <p className="text-sm text-ink-secondary">{t("Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience. Aucune donnée personnelle n’est partagée avec des tiers.")}</p>
         <div className="mt-3 flex items-center gap-3">
-          <button
-            onClick={accept}
-            className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:bg-arcane/90 transition-colors"
-          >
+          <Bouton onClick={accept} icone={<Check />}>
             Accepter
-          </button>
-          <button
-            onClick={refuse}
-            className="rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:text-ink transition-colors"
-          >
+          </Bouton>
+          <Bouton onClick={refuse} variante="neutre" icone={<X />}>
             Refuser
-          </button>
+          </Bouton>
         </div>
       </div>
     </div>

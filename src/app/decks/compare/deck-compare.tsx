@@ -5,6 +5,7 @@ import { cn, displayLegendName } from "@/lib/utils";
 import { CardImage } from "@/components/card-image";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { ArrowLeftRight, Plus, Minus, Equal } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import type { DecklistCard } from "@/types";
 import { useT } from "@/components/i18n-provider";
 
@@ -209,10 +210,9 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantes
           {manquantesA.length > 0 && <p role="alert" className="mt-1 text-xs text-gold">{t("Cartes absentes de la base")} : {manquantesA.join(", ")}</p>}
         </div>
         {/* order-last : en une colonne le bouton tombait entre les deux champs */}
-        <button disabled={!codeA.trim() || !codeB.trim()} onClick={handleCompare} className="order-last sm:order-none rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas transition-colors hover:bg-arcane-light disabled:cursor-not-allowed disabled:opacity-50">
-          <ArrowLeftRight size={16} className="inline mr-1" />
+        <Bouton disabled={!codeA.trim() || !codeB.trim()} onClick={handleCompare} icone={<ArrowLeftRight />} className="order-last sm:order-none">
           {t("Comparer")}
-        </button>
+        </Bouton>
         <div>
           <label htmlFor="deck-code-b" className="block text-xs text-ink-muted mb-1">Deck B</label>
           <input

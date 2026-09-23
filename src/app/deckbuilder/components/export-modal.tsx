@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X, Copy, Check, Link2, Hash, Gamepad2, Image } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { cn } from "@/lib/utils";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import { useT } from "@/components/i18n-provider";
@@ -351,14 +352,9 @@ export function ExportModal({
           {activeTab === "image" && (
             <div className="text-center py-6">
               <p className="text-sm text-ink-secondary mb-4">{t("Exportez votre deck en image PNG.")}</p>
-              <button
-                onClick={handleExportImage}
-                disabled={imageState === "loading"}
-                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-canvas hover:brightness-110 disabled:opacity-50 transition"
-              >
-                <Image size={15} className="inline mr-1.5" />
+              <Bouton onClick={handleExportImage} disabled={imageState === "loading"} icone={<Image />}>
                 {imageState === "loading" ? "Génération..." : "Générer l'image"}
-              </button>
+              </Bouton>
               {imageState === "loading" && (
                 <p className="mt-3 text-xs text-ink-muted">{t("Les images des cartes sont chargées une à une, comptez quelques secondes.")}</p>
               )}

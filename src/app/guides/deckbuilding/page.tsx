@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import { Hammer, AlertTriangle } from "lucide-react";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -227,7 +228,7 @@ export default async function GuideDeckbuildingPage() {
         <div className="flex flex-wrap gap-3">
           <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
             <Hammer size={16} />{" "}{t("Créer un deck")}</Link>
-          <Link href="/decks" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Voir des decks de tournoi")}</Link>
+          <BoutonLien href="/decks">{t("Voir des decks de tournoi")}</BoutonLien>
           <Link href="/guides/debuter" className="inline-flex items-center gap-2 rounded-lg border border-hairline px-4 py-2 text-sm font-semibold text-ink hover:bg-surface">{t("Guide du débutant")}</Link>
         </div>
       </div>

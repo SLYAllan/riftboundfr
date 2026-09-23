@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { CardRef } from "@/components/card-ref";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -255,7 +256,7 @@ export default async function DomainesGuidePage() {
       </section>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Guide de deckbuilding")}</Link>
+        <BoutonLien href="/guides/deckbuilding">{t("Guide de deckbuilding")}</BoutonLien>
         <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Tier list")}</Link>
         <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
           Tier List actuelle

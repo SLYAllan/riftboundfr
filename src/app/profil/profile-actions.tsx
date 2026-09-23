@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Pencil, Check, X, Trash2 } from "lucide-react";
 import { useT } from "@/components/i18n-provider";
+import { Bouton } from "@/components/bouton";
 
 interface ProfileActionsProps {
   username: string;
@@ -161,17 +162,12 @@ export function ProfileActions({ username, riotGameName, riotTagLine }: ProfileA
         </div>
       </div>
       <div className="flex items-center gap-2">
-        <button
-          onClick={save}
-          disabled={saving}
-          aria-busy={saving}
-          className={`${boutonCls} bg-arcane font-medium text-canvas hover:bg-arcane-light disabled:opacity-70`}
-        >
-          <Check size={14} aria-hidden="true" /> {saving ? t("Enregistrement…") : t("Enregistrer")}
-        </button>
-        <button onClick={fermer} className={`${boutonCls} bg-surface-raised text-ink-secondary hover:text-ink`}>
-          <X size={14} aria-hidden="true" /> {t("Annuler")}
-        </button>
+        <Bouton onClick={save} disabled={saving} aria-busy={saving} icone={<Check />}>
+          {saving ? t("Enregistrement…") : t("Enregistrer")}
+        </Bouton>
+        <Bouton onClick={fermer} variante="neutre" icone={<X />}>
+          {t("Annuler")}
+        </Bouton>
       </div>
       <span role="status" aria-live="polite" className="sr-only">{annonce}</span>
     </div>

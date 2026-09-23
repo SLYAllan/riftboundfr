@@ -42,7 +42,7 @@ export function DeckLegendFilter({ legends }: { legends: string[] }) {
       {/* Même piège que le menu des tournois : la grille défilait à 60vh, ce qui
           laissait 62 px du panneau sous l'écran en 768x1024. On borne le panneau
           entier à la place annoncée et la grille prend ce qui reste. */}
-      <Popover.Popup className="flex max-h-[min(70vh,36rem,var(--available-height))] flex-col overflow-hidden w-[min(36rem,calc(100vw-2rem))] rounded-xl border border-hairline-strong bg-surface p-3 shadow-2xl shadow-black/50 focus:outline-none">
+      <Popover.Popup className="flex max-h-[min(70vh,36rem,var(--available-height))] flex-col overflow-hidden w-[min(36rem,calc(100vw-2rem))] rounded-xl border border-hairline-strong bg-surface p-3 shadow-xl shadow-black/50 focus:outline-none">
         <div className="mb-2 flex items-center justify-between gap-3">
           <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Choisir une Légende")}</span>
           {current && <button type="button" onClick={() => choisir("")} className="min-h-9 rounded-lg px-2 text-xs font-semibold text-arcane hover:bg-surface-raised">{t("Voir toutes")}</button>}

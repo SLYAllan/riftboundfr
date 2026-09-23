@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { History, ChevronDown, Undo2 } from "lucide-react";
+import { History, ChevronDown, Undo2, X } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { cn } from "@/lib/utils";
 import { useT } from "@/components/i18n-provider";
 import type { ResumeVersion, SectionDeck } from "@/lib/deck-diff";
@@ -267,20 +268,12 @@ export function VersionHistory({ currentVersion, history, shareCode, estAuteur }
                       </span>
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      <button
-                        onClick={() => revenir(v)}
-                        disabled={enCours}
-                        aria-busy={enCours}
-                        className="inline-flex min-h-9 items-center rounded-lg bg-arcane px-3 text-sm font-semibold text-canvas transition-colors hover:bg-arcane-light disabled:opacity-70"
-                      >
+                      <Bouton onClick={() => revenir(v)} disabled={enCours} aria-busy={enCours} icone={<Undo2 />}>
                         {enCours ? t("Retour en cours…") : t("Revenir à cette version")}
-                      </button>
-                      <button
-                        onClick={() => { setAConfirmer(null); setErreur(null); }}
-                        className="inline-flex min-h-9 items-center rounded-lg bg-surface-raised px-3 text-sm text-ink-secondary transition-colors hover:text-ink"
-                      >
+                      </Bouton>
+                      <Bouton onClick={() => { setAConfirmer(null); setErreur(null); }} variante="neutre" icone={<X />}>
                         {t("Annuler")}
-                      </button>
+                      </Bouton>
                     </div>
                   </div>
                 )}

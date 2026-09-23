@@ -9,6 +9,7 @@ import path from "path";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import Image from "next/image";
 import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-react";
 import { prisma } from "@/lib/prisma";
@@ -1153,24 +1154,11 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         )}
 
         <div className="flex flex-wrap gap-3">
-          <Link
-            href={decksHref}
-            className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90"
-          >
-            Voir tous les decks de {name}
-          </Link>
-          <Link
-            href="/tier-list"
-            className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:text-ink"
-          >
-            Tier List
-          </Link>
-          <Link
-            href="/legendes"
-            className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:text-ink"
-          >
+          <BoutonLien href={decksHref}>Voir tous les decks de {name}</BoutonLien>
+          <BoutonLien href="/tier-list" variante="neutre">Tier List</BoutonLien>
+          <BoutonLien href="/legendes" variante="neutre">
             {t("Toutes les Légendes")}
-          </Link>
+          </BoutonLien>
         </div>
       </div>
     </div>

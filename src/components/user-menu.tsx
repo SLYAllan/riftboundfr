@@ -153,7 +153,7 @@ export function UserMenu() {
           192 px partait alors 120 px hors de l'écran, illisible et incliquable.
           Le menu mobile n'existe qu'en dessous de `lg`, d'où la bascule. */}
       {open && (
-        <div className="absolute left-0 top-full mt-2 w-48 rounded-xl border border-hairline bg-surface p-1 shadow-xl lg:left-auto lg:right-0">
+        <div className="menu-deroulant absolute left-0 top-full mt-2 w-48 origin-top-left rounded-xl border border-hairline bg-surface p-1 shadow-xl lg:left-auto lg:right-0 lg:origin-top-right">
           <div className="px-3 py-2 border-b border-hairline mb-1">
             <p className="text-sm font-medium text-ink truncate">{user.username}</p>
             {user.discordName && (

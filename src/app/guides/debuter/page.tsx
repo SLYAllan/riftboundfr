@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import { Hammer, BookOpen } from "lucide-react";
 import { DOMAIN_ICONS, DOMAIN_COLORS } from "@/lib/domains";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -293,7 +294,7 @@ export default async function GuideDebuterPage() {
         </section>
 
         <div className="flex flex-wrap gap-3">
-          <Link href="/guides/deckbuilding" className="inline-flex items-center gap-2 rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Guide de deckbuilding")}</Link>
+          <BoutonLien href="/guides/deckbuilding">{t("Guide de deckbuilding")}</BoutonLien>
           <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Tier list")}</Link>
           <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">{t("Les 6 Domaines")}</Link>
           <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:opacity-90">

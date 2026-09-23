@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X, Upload, FileText, Hash, Gamepad2, Link2 } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { cn } from "@/lib/utils";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import { useT } from "@/components/i18n-provider";
@@ -161,19 +162,12 @@ export function ImportModal({ onImport, onClose }: ImportModalProps) {
           )}
 
           <div className="flex justify-end gap-2">
-            <button
-              onClick={onClose}
-              className="rounded-lg px-4 py-2 text-sm text-ink-secondary hover:text-ink transition-colors"
-            >
+            <Bouton onClick={onClose} variante="neutre" icone={<X />}>
               Annuler
-            </button>
-            <button
-              onClick={handleDetectAndImport}
-              disabled={!text.trim() || linkLoading}
-              className="rounded-lg bg-arcane px-4 py-2 text-sm font-semibold text-canvas hover:brightness-110 transition disabled:opacity-30"
-            >
+            </Bouton>
+            <Bouton onClick={handleDetectAndImport} disabled={!text.trim() || linkLoading} icone={<Upload />}>
               {linkLoading ? "Chargement..." : "Importer"}
-            </button>
+            </Bouton>
           </div>
         </div>
       </div>

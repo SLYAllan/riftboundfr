@@ -150,7 +150,7 @@ export function Navbar({ chemin = "/" }: { chemin?: string }) {
               <ChevronDown size={14} className={cn("transition-transform", outilsOpen && "rotate-180")} />
             </button>
             {outilsOpen && (
-              <div className="absolute left-0 top-full mt-1 w-44 rounded-xl border border-hairline bg-surface p-1 shadow-xl">
+              <div className="menu-deroulant absolute left-0 top-full mt-1 w-44 origin-top-left rounded-xl border border-hairline bg-surface p-1 shadow-xl">
                 {outilsLinks.map((link) => (
                   <Link
                     key={link.href}

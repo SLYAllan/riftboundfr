@@ -38,7 +38,7 @@ export function KeywordFilter({ options, value, onChange }: {
       </Popover.Trigger>
       <Popover.Portal>
         <Popover.Positioner sideOffset={8} align="start" className="z-50">
-          <Popover.Popup className="flex max-h-[min(70vh,34rem,var(--available-height))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-hairline-strong bg-surface p-2 shadow-2xl shadow-black/50 focus:outline-none">
+          <Popover.Popup className="flex max-h-[min(70vh,34rem,var(--available-height))] w-[min(24rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-hairline-strong bg-surface p-2 shadow-xl shadow-black/50 focus:outline-none">
             <div className="relative mb-2">
               <Search size={15} aria-hidden="true" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted" />
               <input autoFocus value={recherche} onChange={(event) => setRecherche(event.target.value)} aria-label={t("Rechercher une mécanique")} placeholder={t("Rechercher une mécanique")} className="h-11 w-full rounded-lg border border-hairline bg-canvas pl-9 pr-9 text-sm text-ink placeholder:text-ink-muted focus:border-arcane focus:outline-none" />

@@ -5,6 +5,7 @@ import { CardImage } from "@/components/card-image";
 import { cn, displayLegendName } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS, TYPE_LABELS_FR, RARITY_LABELS_FR } from "@/lib/domains";
 import { Grid3X3, List, Copy, Check, Image, Hash, Gamepad2, BarChart3, Hammer, Download } from "lucide-react";
+import { Bouton } from "@/components/bouton";
 import { useIsAdmin } from "@/hooks/use-is-admin";
 import { useDialogA11y } from "@/hooks/use-dialog-a11y";
 import { DeckSummary } from "@/components/deck-summary";
@@ -276,14 +277,9 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
           {activeTab === "image" && (
             <div className="text-center py-6">
               <p className="text-sm text-ink-secondary mb-4">{t("Exportez votre deck en image PNG.")}</p>
-              <button
-                onClick={handleExportImage}
-                disabled={exporting}
-                className="rounded-lg bg-arcane px-5 py-2.5 text-sm font-semibold text-canvas hover:brightness-110 transition disabled:opacity-50"
-              >
-                <Image size={15} className="inline mr-1.5" />
+              <Bouton onClick={handleExportImage} disabled={exporting} icone={<Image />}>
                 {exporting ? "Génération..." : "Générer l’image"}
-              </button>
+              </Bouton>
             </div>
           )}
         </div>

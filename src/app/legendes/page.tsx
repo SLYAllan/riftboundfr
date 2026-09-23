@@ -115,7 +115,7 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
           width={640}
           height={280}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="aspect-[16/7] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="aspect-[16/7] w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
         />
       ) : (
         <div className="aspect-[16/7] w-full bg-surface-raised" />

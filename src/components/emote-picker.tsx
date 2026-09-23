@@ -92,7 +92,7 @@ export function EmotePicker({ champRef, onTexte }: Props) {
           ref={panneauRef}
           role="dialog"
           aria-label={t("Icônes")}
-          className="absolute bottom-11 left-0 z-30 w-72 rounded-xl border border-hairline-strong bg-surface-raised p-3 shadow-2xl"
+          className="absolute bottom-11 left-0 z-30 w-72 rounded-xl border border-hairline-strong bg-surface-raised p-3 shadow-xl"
         >
           <input
             autoFocus
