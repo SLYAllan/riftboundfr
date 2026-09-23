@@ -15,20 +15,6 @@
   --font-display: var(--font-rubik), "Noto Sans TC";
   --font-mono: var(--font-geist-mono);
 
-  /* Ombres : les trois niveaux « beautiful shadows » de MengTo (petite, moyenne,
-     forte), posés à la place de l'échelle Tailwind pour que tout le site en change
-     d'un coup. Même construction en couches, neutre et sans couleur ; l'opacité
-     est multipliée (x4, x3 pour la forte) parce que le site est sombre : à 6 %,
-     sur #1c1c1e, les menus perdaient tout relief. Menus et fenêtres flottantes
-     (shadow-xl) prennent la moyenne, comme le demande le guide ; la forte ne sert
-     qu'aux aperçus qui flottent sur du texte (shadow-2xl). */
-  --shadow-xs: 0 2px 3px -1px rgb(0 0 0 / 0.4), 0 1px 0 0 rgb(0 0 0 / 0.08), 0 0 0 1px rgb(0 0 0 / 0.32);
-  --shadow-sm: 0 2px 3px -1px rgb(0 0 0 / 0.4), 0 1px 0 0 rgb(0 0 0 / 0.08), 0 0 0 1px rgb(0 0 0 / 0.32);
-  --shadow-md: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
-  --shadow-lg: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
-  --shadow-xl: 0 0 0 1px rgb(0 0 0 / 0.24), 0 1px 1px -0.5px rgb(0 0 0 / 0.24), 0 3px 3px -1.5px rgb(0 0 0 / 0.24), 0 6px 6px -3px rgb(0 0 0 / 0.24), 0 12px 12px -6px rgb(0 0 0 / 0.24), 0 24px 24px -12px rgb(0 0 0 / 0.24);
-  --shadow-2xl: 0 2.8px 2.2px rgb(0 0 0 / 0.1), 0 6.7px 5.3px rgb(0 0 0 / 0.14), 0 12.5px 10px rgb(0 0 0 / 0.18), 0 22.3px 17.9px rgb(0 0 0 / 0.22), 0 41.8px 33.4px rgb(0 0 0 / 0.26), 0 100px 80px rgb(0 0 0 / 0.36);
-
   /* Courbes du guide « interaction design » : décélérer pour entrer, accélérer
      pour sortir. Posées à la place de celles de Tailwind, et comme courbe par
      défaut de toutes les transitions du site. */

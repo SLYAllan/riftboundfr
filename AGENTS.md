@@ -577,11 +577,11 @@ comprendre à la première lecture.
   pastille : une flèche sur « Copier » ferait croire qu'on change de page).
   Variantes `primaire`, `contour`, `neutre`. Ne jamais réécrire un bouton plein
   classe par classe. Les bascules (onglets, filtres, vues) n'y passent pas.
-- **Ombres et courbes sont des jetons de `globals.css`**, posés à la place de
-  l'échelle Tailwind : `shadow-sm` petite, `shadow-md`/`lg`/`xl` moyenne (menus,
-  fenêtres flottantes), `shadow-2xl` forte (aperçus sur du texte). Pas d'ombre
-  en valeur libre ni colorée. Une animation de survol dure 150 ms, un menu
-  200 à 300 ms (guides « interaction design » et « apple design »).
+- **Les courbes d'animation sont des jetons de `globals.css`**, posés à la place
+  de ceux de Tailwind. Les ombres restent celles de Tailwind : des jetons plus
+  marqués pour le fond sombre ont été essayés le 23 septembre 2026, puis retirés
+  à la demande d'Allan. Une animation de survol dure 150 ms, un menu 200 à
+  300 ms (guides « interaction design » et « apple design »).
 - Élargir les pages de contenu : viser `max-w-5xl` et plus, pas `max-w-3xl`.
 - Un aperçu de carte au survol ne doit jamais sortir de l'écran.
 - La grande image d'une fiche carte s'incline sous la souris
