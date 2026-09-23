@@ -413,7 +413,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **71 fichiers, 389 tests, tous verts** (relevé du 23 septembre 2026). |
+| `npm test` | ✅ | Vitest. **73 fichiers, 396 tests, tous verts** (relevé du 23 septembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
@@ -593,6 +593,40 @@ comprendre à la première lecture.
 
 ---
 
+# SEO : une page, un changement, une semaine
+
+La stratégie (piliers, paysage, ce qu'on refuse) est dans `docs/SEO-STRATEGY.md`. La
+boucle de chaque semaine suit le skill `seo-semaine` et tient dans trois fichiers :
+`docs/seo/brief.md` (ce que le site doit produire), `docs/seo/etat.json` (les relevés
+datés, on en ajoute, on n'en écrase aucun) et `docs/seo/journal.md` (une entrée par
+passe, jamais réécrite).
+
+- **Une conversion non mesurée ne se juge pas.** Les conversions sont des événements
+  GA4 lancés par UN écouteur, dans `src/components/analytics.tsx`, selon la règle de
+  `src/lib/suivi-clics.ts`. Les liens CardNexus et la connexion Discord se reconnaissent
+  seuls. Pour mesurer une autre action, poser `data-suivi="nom_en_minuscules"` sur
+  l'élément, jamais un second écouteur ni un `gtag` dans un composant. Un nom
+  d'événement nouveau s'ajoute à la liste du brief.
+- **Une page, un changement, puis on attend.** Changer le titre, le chapô et les liens
+  la même semaine empêche de savoir ce qui a joué. Rien n'est rédigé ni publié avant
+  le oui d'Allan.
+- **Deux semaines au moins avant de juger**, à compter du déploiement, pas du commit.
+  Les positions bougent seules. Ne pas toucher une page qui marche sans raison forte.
+- **Juger sur les deux côtés.** Monter dans Google sans un `clic_cardnexus` de plus est
+  un échec ; rester au même rang et convertir mieux est un succès.
+- **Chaque constat porte sa source** : URL, requête, relevé daté. Une donnée qui
+  manque s'écrit « manque », jamais une estimation à la place. Les chiffres DataForSEO
+  sont des estimations : ils ne remplacent pas Search Console.
+- **Pas de recette pour les IA.** Ni `llms.txt` ni schéma ne font citer une page. Le
+  schéma se pose quand la page a droit à un résultat enrichi, pas pour les IA.
+- **DataForSEO coûte.** SERP et Labs seulement, jamais de crawl on-page. Une réponse
+  trop longue part dans un fichier : la trier par script.
+- **Search Console arrive avec deux ou trois jours de retard**, et perd des lignes quand
+  on croise page et requête. Le fichier client OAuth vit dans
+  `~/.config/claude-seo/client_secret.json`, jamais dans Téléchargements.
+
+---
+
 # Travailler à deux : Claude Code et Codex
 
 Ce dépôt est travaillé par deux exécutants, Claude Code et Codex. Ils lisent tous
@@ -610,8 +644,8 @@ chacun, et comment se passer le travail sans le refaire.
 | Réglages Codex, garde-fous, sous-agents | `.codex/` — voir son `README.md` | Codex, si le dépôt est de confiance |
 | Réglages Claude Code | `.claude/settings.json` | Claude Code |
 
-Sept skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
-`decklists`, `scraper-tournoi`, `outils-existants`, `delegate-wave`. Ils
+Huit skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
+`decklists`, `scraper-tournoi`, `outils-existants`, `delegate-wave`, `seo-semaine`. Ils
 **renvoient** à ce fichier au lieu de le recopier : deux copies de la même règle
 finissent toujours par diverger.
 
