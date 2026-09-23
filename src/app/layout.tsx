@@ -142,7 +142,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const cheminFr = chemin === "/" ? "" : chemin;
 
   return (
-    <html lang={langue === "zh" ? "zh-Hant" : langue} className={`dark ${rubik.variable} ${jakarta.variable}`}>
+    // Le site ne touche pas <html> avant l'hydratation : un écart ici vient d'une
+    // extension du navigateur (thème sombre, correcteur) qui pose ses attributs. Ne
+    // couvre que les attributs de cette balise, pas ses enfants.
+    <html lang={langue === "zh" ? "zh-Hant" : langue} className={`dark ${rubik.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
