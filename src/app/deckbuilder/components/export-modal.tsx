@@ -176,6 +176,7 @@ export function ExportModal({
                   <input id="export-lien" readOnly value={shareUrl} className="flex-1 h-9 rounded-lg border border-hairline-strong bg-surface-raised px-3 text-base sm:text-sm text-ink font-mono" />
                   <button
                     onClick={() => copyToClipboard(shareUrl, "url")}
+                    data-suivi="copie_lien_deck"
                     className="flex items-center gap-1 rounded-lg bg-arcane px-3 py-1 text-xs font-semibold text-canvas hover:brightness-110"
                   >
                     {copied === "url" ? <Check size={13} /> : <Copy size={13} />}
@@ -295,6 +296,7 @@ export function ExportModal({
 
                     <button
                       onClick={handlePublish}
+                      data-suivi="publication_deck"
                       disabled={!canPublish}
                       className="w-full rounded-lg bg-violet-dark px-3 py-2 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-30 transition"
                     >
@@ -325,6 +327,7 @@ export function ExportModal({
               <textarea readOnly value={textCode} rows={12} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-base sm:text-sm font-mono text-ink" />
               <button
                 onClick={() => copyToClipboard(textCode, "code")}
+                data-suivi="copie_code_deck"
                 className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
               >
                 {copied === "code" ? <Check size={11} /> : <Copy size={11} />}
@@ -340,6 +343,7 @@ export function ExportModal({
                 <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-base sm:text-sm font-mono text-ink break-all" />
                 <button
                   onClick={() => copyToClipboard(ttsCode, "tts")}
+                  data-suivi="copie_tts_deck"
                   className="absolute top-2 right-2 flex items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
                 >
                   {copied === "tts" ? <Check size={11} /> : <Copy size={11} />}
@@ -352,7 +356,7 @@ export function ExportModal({
           {activeTab === "image" && (
             <div className="text-center py-6">
               <p className="text-sm text-ink-secondary mb-4">{t("Exportez votre deck en image PNG.")}</p>
-              <Bouton onClick={handleExportImage} disabled={imageState === "loading"} icone={<Image />}>
+              <Bouton data-suivi="export_image_deck" onClick={handleExportImage} disabled={imageState === "loading"} icone={<Image />}>
                 {imageState === "loading" ? "Génération..." : "Générer l'image"}
               </Bouton>
               {imageState === "loading" && (

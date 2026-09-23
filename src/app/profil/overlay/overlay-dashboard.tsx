@@ -552,6 +552,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           {/* Largeur fixée : « Copier » et « Copié » n'ont pas la même longueur,
               et le bouton sautait sous le curseur au moment du clic. */}
           <button
+            data-suivi="copie_lien_overlay"
             onClick={() => { navigator.clipboard.writeText(overlayUrl); setCopied(true); setTimeout(() => setCopied(false), 1500); }}
             className={`${btnPlein} min-w-[7.5rem]`}
           >
@@ -654,6 +655,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[240px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompagnon}</code>
           <button
+            data-suivi="copie_lien_compagnon"
             onClick={() => void copierCompagnon()}
             className={`${btnPlein} min-w-[7.5rem]`}
           >
@@ -690,7 +692,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </p>
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <code className="min-w-[220px] flex-1 truncate rounded-lg bg-surface-raised px-3 py-2 text-sm">{urlCompact}</code>
-          <button onClick={() => navigator.clipboard.writeText(urlCompact)} className={btnVide}>
+          <button data-suivi="copie_lien_overlay_compact" onClick={() => navigator.clipboard.writeText(urlCompact)} className={btnVide}>
             <Copy size={15} aria-hidden />
             {t("Copier l’overlay compact")}
           </button>

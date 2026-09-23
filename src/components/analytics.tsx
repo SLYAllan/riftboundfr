@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useT } from "@/components/i18n-provider";
 import { Bouton } from "@/components/bouton";
 import { Check, X } from "lucide-react";
+import { evenementClic } from "@/lib/suivi-clics";
 
 // Measurement ID hardcoded as the default (a GA4 ID is a public, client-side
 // value, not a secret). NEXT_PUBLIC_GA_ID can still override it if needed.
@@ -24,6 +25,37 @@ export function Analytics() {
   useEffect(() => {
     const consentTimer = setTimeout(() => setConsent(getConsent()), 0);
     return () => clearTimeout(consentTimer);
+  }, []);
+
+  // Un seul écouteur pour tout le site : les liens d'achat sont posés par des
+  // pages serveur, qui ne peuvent pas porter un onClick. « Acheter ce deck »
+  // est un formulaire POST, pas un lien : sans l'écoute de `submit`, la
+  // conversion qui rapporte le plus n'était jamais comptée.
+  useEffect(() => {
+    const envoyer = (href: string | null, suivi: string | null) => {
+      const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
+      const evt = gtag && evenementClic(href, suivi, location.origin);
+      if (evt) gtag("event", evt.nom, { ...evt.params, page_origine: location.pathname });
+    };
+    const surClic = (e: MouseEvent) => {
+      const cible = e.target as Element | null;
+      if (!cible?.closest) return;
+      envoyer(
+        cible.closest("a[href]")?.getAttribute("href") ?? null,
+        cible.closest("[data-suivi]")?.getAttribute("data-suivi") ?? null,
+      );
+    };
+    const surEnvoi = (e: SubmitEvent) => {
+      envoyer((e.target as HTMLFormElement).getAttribute("action"), null);
+    };
+    document.addEventListener("click", surClic, true);
+    document.addEventListener("auxclick", surClic, true);
+    document.addEventListener("submit", surEnvoi, true);
+    return () => {
+      document.removeEventListener("click", surClic, true);
+      document.removeEventListener("auxclick", surClic, true);
+      document.removeEventListener("submit", surEnvoi, true);
+    };
   }, []);
 
   if (!GA_ID || consent !== true) return null;

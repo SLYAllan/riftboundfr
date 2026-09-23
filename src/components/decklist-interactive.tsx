@@ -250,6 +250,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
               <textarea readOnly value={textCode} rows={12} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink" />
               <button
                 onClick={() => copyToClipboard(textCode, "code")}
+                data-suivi="copie_code_deck"
                 className="absolute top-2 right-2 flex min-h-11 items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
               >
                 {copied === "code" ? <Check size={11} /> : <Copy size={11} />}
@@ -265,6 +266,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
                 <textarea readOnly value={ttsCode} rows={6} className="w-full rounded-lg border border-hairline-strong bg-surface-raised p-3 text-sm font-mono text-ink break-all" />
                 <button
                   onClick={() => copyToClipboard(ttsCode, "tts")}
+                  data-suivi="copie_tts_deck"
                   className="absolute top-2 right-2 flex min-h-11 items-center gap-1 rounded bg-surface px-2 py-1 text-[10px] text-ink-secondary hover:text-ink"
                 >
                   {copied === "tts" ? <Check size={11} /> : <Copy size={11} />}
@@ -277,7 +279,7 @@ function ExportPanel({ cards, deckName, onClose }: { cards: DecklistCard[]; deck
           {activeTab === "image" && (
             <div className="text-center py-6">
               <p className="text-sm text-ink-secondary mb-4">{t("Exportez votre deck en image PNG.")}</p>
-              <Bouton onClick={handleExportImage} disabled={exporting} icone={<Image />}>
+              <Bouton data-suivi="export_image_deck" onClick={handleExportImage} disabled={exporting} icone={<Image />}>
                 {exporting ? "Génération..." : "Générer l’image"}
               </Bouton>
             </div>

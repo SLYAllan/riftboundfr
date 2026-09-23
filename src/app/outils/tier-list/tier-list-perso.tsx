@@ -157,7 +157,7 @@ export function TierListPerso({ legendes, initial, titreInitial, officiel }: Pro
           <Bouton onClick={() => remplacer(classementVide())} disabled={rangees.size === 0} variante="neutre" icone={<RotateCcw />}>
             {t("Tout remettre à classer")}
           </Bouton>
-          <Bouton onClick={() => void copier()} icone={copie === "ok" ? <Check /> : <Copy />}>
+          <Bouton data-suivi="partage_tier_list" onClick={() => void copier()} icone={copie === "ok" ? <Check /> : <Copy />}>
             {copie === "ok" ? t("Lien copié") : t("Copier le lien")}
           </Bouton>
         </div>
