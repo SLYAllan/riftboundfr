@@ -63,6 +63,20 @@ seulement. Allan l'a choisie sur une page d'essai (6°, 12°, 12° avec reflet),
 idée reprise du « Trading Card » d'obsidianui.dev sans sa dépendance `motion`.
 Le classeur feuilleté essayé le même jour est écarté.
 
+**Passe d'interface sur tout le site** (demandée par Allan, d'après quatre guides
+de ui-skills.com : apple-design, beautiful-shadows, shadcn, interaction-design) :
+- tous les boutons principaux passent par `src/components/bouton.tsx`
+  (« Arrow Fill Button » d'obsidianui.dev, réglage B), 32 boutons dans 18
+  fichiers ; admin et compagnon de stream laissés tels quels ;
+- ombres « beautiful shadows » à la place de l'échelle Tailwind, opacité
+  renforcée pour le fond sombre ; courbes du guide comme courbe par défaut ;
+- enfoncement à l'appui sur tous les boutons, menus qui s'ouvrent depuis leur
+  bouton, titres resserrés, agrandissements au survol ramenés de 500 à 300 ms,
+  en-tête translucide saturé avec repli « réduire la transparence ».
+Non appliqué : ressorts et gestes (le site n'a rien qu'on fasse glisser),
+réécriture de chaque page en composants shadcn (refonte entière, sans gain
+visible). La règle vit dans `AGENTS.md`, section Interface.
+
 Allan ne veut aucune fonction autour du prix, sauf pour les cartes manquantes
 d'un deck (ce qu'il reste à acheter), via CardNexus ; le titre de `/collection`
 ne promet plus de « valeur » (`432bf02d`). Il n'aime pas non plus la méta par

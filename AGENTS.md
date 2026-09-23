@@ -37,6 +37,9 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   Le prix retenu est **l'impression la moins chère du même nom** : une decklist qui
   cite une surnumérotée ne fait pas payer la surnumérotée.
   Panier prêt à payer = `/api/cardnexus/panier?slug=` ou `?code=`.
+  **Pas de nouvelle fonction bâtie sur le prix** (choix d'Allan, 22 septembre
+  2026 : ni valeur de collection, ni historique, ni comparateur d'échange), sauf
+  le prix des cartes manquantes d'un deck, via CardNexus.
 - **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
   `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
   Carré **2000x2000** par défaut, `&format=story` pour le 9:16 **1620x2880**
@@ -127,6 +130,16 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   L'écart n'est pas un détail, sur Barcelone c'est 106 listes pour 2 127 joueurs, et ce sont
   ceux qui performent qui publient. `scripts/couverture-tournois.mts` dit quel tournoi est
   trop peu publié pour être mesuré.
+  Une fiche ne montre ses cartes (noyau et cartes flex), ses champions et ses terrains
+  que s'ils sont comptés sur le set en cours : `fiches-maj` pose alors `setDesChiffres`.
+  Sans lui, la page les tait : une Kai'Sa d'Origins ne joue pas les cartes de sa version
+  Vendetta, et des chiffres d'un ancien set passaient pour actuels.
+- **Tournois hexgate** → `scrape-hexgate.mts`, `parse-hexgate.mts`, `tournois-hexgate.mts`
+  (détail dans `HANDOFF.md`). Une City Challenge entre à partir d'une centaine de joueurs
+  (règle d'Allan du 22 septembre 2026, qui remplace la borne de 128) ; les épreuves de
+  boutique `rune_competition` restent dehors. Une carte que hexgate ne nomme pas en anglais
+  (`T1S-00x`, Légendes promo `SGN-…-P-SC`) fait écarter la liste : aucune source ne dit
+  laquelle c'est.
 - **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
   Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
   source est le **figurier OFFICIEL de l'éditeur chinois**,
@@ -289,6 +302,16 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   déroulant mobile, qui porte `overflow-y-auto` et rogne son menu.
 - `export-image.ts` — rendu paysage 2258x1518 dans un canvas côté navigateur,
   déclenché par le bouton « Exporter » d'une page de deck.
+- **`banned-cards.ts` et `bans.ts` — les listes injouables.** `cartesInterdites`
+  nourrit la pastille (`src/components/pastille-interdite.tsx`) sur `/decks`, les
+  pages de tournoi, les best-of et la fiche Légende ; `interdictionsParDate` date
+  l'encadré de la page deck ; `/decks?legales=1` les écarte. Une liste injouable
+  reste telle qu'elle a été jouée : on la signale, on ne la retouche pas. Un test
+  tient `BAN_ENTRIES` et `BANNED_CARD_NAMES` d'accord : une carte bannie s'ajoute
+  aux deux.
+- `tier-list-perso.ts` — la tier list d'un visiteur (`/outils/tier-list`). Le
+  classement vit tout entier dans l'adresse, rien en base : partager, c'est
+  partager le lien.
 - **`overlay-cam.ts` — passage unique pour le lien de caméra.** La règle (https
   chez VDO.Ninja, et rien d'autre) a vécu en trois exemplaires : la page
   d'habillage, le tableau de bord, et une copie à la main dans un test. La copie du
@@ -390,7 +413,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **66 fichiers, 367 tests, tous verts** (relevé du 11 septembre 2026). |
+| `npm test` | ✅ | Vitest. **71 fichiers, 389 tests, tous verts** (relevé du 23 septembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
@@ -549,8 +572,22 @@ comprendre à la première lecture.
 
 - Pastille de couleur unie + texte neutre, **ou** texte coloré sur fond neutre.
   Jamais de fond teinté sous un texte de la même couleur, jamais de dégradé.
+- **Un bouton principal passe par `src/components/bouton.tsx`** : `BoutonLien`
+  pour aller quelque part, `Bouton` pour une action (avec son icône dans la
+  pastille : une flèche sur « Copier » ferait croire qu'on change de page).
+  Variantes `primaire`, `contour`, `neutre`. Ne jamais réécrire un bouton plein
+  classe par classe. Les bascules (onglets, filtres, vues) n'y passent pas.
+- **Ombres et courbes sont des jetons de `globals.css`**, posés à la place de
+  l'échelle Tailwind : `shadow-sm` petite, `shadow-md`/`lg`/`xl` moyenne (menus,
+  fenêtres flottantes), `shadow-2xl` forte (aperçus sur du texte). Pas d'ombre
+  en valeur libre ni colorée. Une animation de survol dure 150 ms, un menu
+  200 à 300 ms (guides « interaction design » et « apple design »).
 - Élargir les pages de contenu : viser `max-w-5xl` et plus, pas `max-w-3xl`.
 - Un aperçu de carte au survol ne doit jamais sortir de l'écran.
+- La grande image d'une fiche carte s'incline sous la souris
+  (`src/components/carte-inclinable.tsx`, 6° choisis par Allan sur une page
+  d'essai). Un effet d'interface se montre sur une page d'essai locale avant
+  d'entrer dans le site.
 - Les classes Tailwind construites par concaténation ne sont pas générées :
   utiliser une valeur arbitraire ou un style en ligne.
 
