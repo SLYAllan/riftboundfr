@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { deckCoverageItems, resolveDeckCards } from "@/lib/deck-cards";
@@ -18,6 +18,46 @@ const API = "https://public-api.cardnexus.com/v1";
 // temps du conteneur : au pire on recrée une liste après un redémarrage, ce qui
 // est sans conséquence — mieux que d'ajouter une colonne en base pour ça.
 const listesConnues = new Map<string, string>();
+
+// Une liste ne sert que le temps d'un passage au Cart Wizard. CardNexus plafonne à
+// 200 listes par compte depuis septembre 2026, et nos 12 000 listes faisaient
+// expirer le panier de nos acheteurs : chaque ajout au panier les relisait toutes.
+const LISTES_GARDEES = 50;
+
+/** Supprime les listes les plus anciennes au-delà de LISTES_GARDEES. */
+async function menageListes(entetes: Record<string, string>) {
+  try {
+    // CardNexus rend les listes de la plus récente à la plus ancienne.
+    const r = await fetch(`${API}/lists?limit=100&offset=${LISTES_GARDEES}`, {
+      headers: entetes,
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!r.ok) {
+      console.warn(`[cardnexus] ménage des listes : lecture refusée (${r.status}).`);
+      return;
+    }
+    const anciennes: unknown = (await r.json())?.data;
+    if (!Array.isArray(anciennes)) return;
+    for (const liste of anciennes) {
+      const id = liste?.id;
+      if (typeof id !== "string") continue;
+      const d = await fetch(`${API}/lists/${id}`, {
+        method: "DELETE",
+        headers: entetes,
+        signal: AbortSignal.timeout(10_000),
+      });
+      if (!d.ok) {
+        // 429 compris : on reprendra au prochain achat, pas la peine d'insister.
+        console.warn(`[cardnexus] ménage des listes : suppression refusée (${d.status}).`);
+        return;
+      }
+      // Sinon le cache renverrait le prochain acheteur vers une liste supprimée.
+      for (const [cle, valeur] of listesConnues) if (valeur === id) listesConnues.delete(cle);
+    }
+  } catch (e) {
+    console.warn("[cardnexus] ménage des listes échoué :", e);
+  }
+}
 
 // `cleanName` ne sert pas à l'achat mais au calcul des cartes manquantes : c'est
 // la clé qui fait qu'une illustration alternative déjà possédée compte comme la
@@ -222,5 +262,6 @@ export async function POST(request: Request) {
     const plusAncienne = listesConnues.keys().next().value as string | undefined;
     if (plusAncienne !== undefined) listesConnues.delete(plusAncienne);
   }
+  after(() => menageListes(entetes));
   return NextResponse.redirect(lienPanier(id), 303);
 }
