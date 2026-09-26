@@ -14,25 +14,31 @@ import { VARIANT_SUFFIX } from "./card-printing";
 /** Identifiant de partenaire Impact d'Allan, lu dans le lien de parrainage fourni. */
 const MP_ID = "7595319";
 
-// Lien profond Impact : les deux nombres viennent du lien de parrainage
-// (go.cardnexus.link/oNJoLY redirige vers .../c/7595319/3770197/48046?u=...).
-// Le paramètre `u` accepte n'importe quelle page de cardnexus.com, vérifié à la
-// main : le tracking (irpid=7595319) survit à la redirection.
-const LIEN_PROFOND = `https://go.cardnexus.link/c/${MP_ID}/3770197/48046?u=`;
-
 /** Page d'un produit, tracké. Le nom en fin d'URL sert de repli si l'id ne résout plus. */
 export function lienProduit(productId: number, nom: string): string {
   return `https://af.cardnexus.link/${MP_ID}/cn/${productId}/${encodeURIComponent(nom)}`;
 }
 
+// CardNexus accepte « n'importe quelle langue », mais le Cart Wizard prendrait
+// alors l'impression chinoise si elle est moins chère. Vendetta n'existe pas
+// encore en français : `fr` rendrait les paniers récents incomplets. Repasser à
+// `fr` quand tout le format sera disponible.
+const LANGUE = "en";
+
 /**
- * Le « Cart Wizard » pré-rempli avec une liste : CardNexus compare tous les
- * vendeurs et compose le panier le moins cher, frais de port compris. C'est la
- * seule façon de remplir le panier d'un visiteur — l'API panier ne remplit que
- * celui du porteur de la clé.
+ * Le « Cart Wizard » pré-rempli : CardNexus compare tous les vendeurs et compose
+ * le panier le moins cher, frais de port compris.
+ *
+ * Le lien porte les cartes lui-même (`{id}.{quantité}.{langue}`, lignes séparées
+ * par `~`, format « product list links » de leur doc affiliés). Avant, il fallait
+ * créer une liste publique sur le compte d'Allan à chaque achat, et CardNexus
+ * plafonne à 200 listes par compte. La finition est laissée libre : le prix
+ * affiché est déjà celui de la finition la moins chère du produit, et le Cart
+ * Wizard la choisira de lui-même.
  */
-export function lienPanier(listId: string): string {
-  return LIEN_PROFOND + encodeURIComponent(`https://cardnexus.com/cart-wizard?list=${listId}`);
+export function lienPanier(lignes: LigneListe[]): string {
+  const liste = lignes.map((l) => `${l.productId}.${l.quantity}.${LANGUE}`).join("~");
+  return `https://af.cardnexus.link/${MP_ID}/products/cn/${liste}`;
 }
 
 /** La boutique Riftbound, tracké. Sert de repli quand un deck n'a pas de liste. */
@@ -95,7 +101,7 @@ export interface PrixCarte {
   productId: number;
   nom: string;
   source: string;
-  /** La finition qui porte ce prix. Une liste CardNexus l'exige pour chaque ligne. */
+  /** La finition qui porte ce prix. */
   finition: string;
 }
 
@@ -203,13 +209,7 @@ export interface DeckChiffre {
 
 export interface LigneListe {
   productId: number;
-  finish: string;
-  language: string;
   quantity: number;
-}
-
-export function cleListeAchat(lignes: LigneListe[]): string {
-  return JSON.stringify(lignes.map(({ productId, finish, language, quantity }) => [productId, finish, language, quantity]));
 }
 
 export interface Carte {
@@ -306,13 +306,8 @@ function regrouper(cartes: Carte[], prix: FichierPrix | null): Regroupee[] {
   return [...parArticle.values()];
 }
 
-// CardNexus exige une langue par ligne, il n'accepte pas « n'importe laquelle ».
-// Vendetta n'existe pas encore en français : demander du français rendrait les
-// paniers récents incomplets. Repasser à `fr` quand tout le format sera disponible.
-const LANGUE = "en";
-
 /**
- * Les lignes d'une liste CardNexus pour un deck, et ce qui n'a pas pu y entrer.
+ * Les lignes du panier CardNexus pour un deck, et ce qui n'a pas pu y entrer.
  *
  * Une carte absente du relevé n'a pas d'identifiant produit : elle ne peut pas
  * être achetée et on le dit, plutôt que de livrer un panier incomplet sans le
@@ -326,7 +321,7 @@ export function lignesListe(
   const absentes: string[] = [];
   for (const c of regrouper(cartes, prix)) {
     if (!c.prix) absentes.push(c.name);
-    else items.push({ productId: c.prix.productId, finish: c.prix.finition, language: LANGUE, quantity: c.quantity });
+    else items.push({ productId: c.prix.productId, quantity: c.quantity });
   }
   return { items, absentes };
 }

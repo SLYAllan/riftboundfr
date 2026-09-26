@@ -23,10 +23,11 @@ export function typeClicAchat(href: string, origine: string): TypeAchat | null {
     // Le panier des seules cartes qui manquent à la collection : compté à part.
     return url.searchParams.has("manquantes") ? "manquantes" : "panier";
   }
-  if (url.hostname === "go.cardnexus.link") return "panier";
   if (url.hostname !== "af.cardnexus.link") return null;
-  // af.cardnexus.link/<partenaire>/cn/<id>/<nom> = produit, le reste = boutique.
-  return url.pathname.split("/")[2] === "cn" ? "produit" : "boutique";
+  // af.cardnexus.link/<partenaire>/cn/<id>/<nom> = produit,
+  // /<partenaire>/products/cn/<lignes> = panier, le reste = boutique.
+  const segment = url.pathname.split("/")[2];
+  return segment === "cn" ? "produit" : segment === "products" ? "panier" : "boutique";
 }
 
 export interface Evenement {

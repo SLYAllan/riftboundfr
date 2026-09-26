@@ -1,63 +1,15 @@
-import { NextResponse, after } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { decodeDeck } from "@/lib/deck-codec";
 import { deckCoverageItems, resolveDeckCards } from "@/lib/deck-cards";
 import { findCard } from "@/lib/card-printing";
-import { lienPanier, lignesListe, cleListeAchat, type Carte } from "@/lib/cardnexus";
+import { lienPanier, lignesListe, type Carte } from "@/lib/cardnexus";
 import { getUserFromSession } from "@/lib/session";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
 import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
-
-const API = "https://public-api.cardnexus.com/v1";
-
-// Une liste CardNexus par deck, créée à la première demande et réutilisée ensuite.
-// Sans ce cache, chaque clic créerait une liste de plus sur le compte. Il vit le
-// temps du conteneur : au pire on recrée une liste après un redémarrage, ce qui
-// est sans conséquence — mieux que d'ajouter une colonne en base pour ça.
-const listesConnues = new Map<string, string>();
-
-// Une liste ne sert que le temps d'un passage au Cart Wizard. CardNexus plafonne à
-// 200 listes par compte depuis septembre 2026, et nos 12 000 listes faisaient
-// expirer le panier de nos acheteurs : chaque ajout au panier les relisait toutes.
-const LISTES_GARDEES = 50;
-
-/** Supprime les listes les plus anciennes au-delà de LISTES_GARDEES. */
-async function menageListes(entetes: Record<string, string>) {
-  try {
-    // CardNexus rend les listes de la plus récente à la plus ancienne.
-    const r = await fetch(`${API}/lists?limit=100&offset=${LISTES_GARDEES}`, {
-      headers: entetes,
-      signal: AbortSignal.timeout(10_000),
-    });
-    if (!r.ok) {
-      console.warn(`[cardnexus] ménage des listes : lecture refusée (${r.status}).`);
-      return;
-    }
-    const anciennes: unknown = (await r.json())?.data;
-    if (!Array.isArray(anciennes)) return;
-    for (const liste of anciennes) {
-      const id = liste?.id;
-      if (typeof id !== "string") continue;
-      const d = await fetch(`${API}/lists/${id}`, {
-        method: "DELETE",
-        headers: entetes,
-        signal: AbortSignal.timeout(10_000),
-      });
-      if (!d.ok) {
-        // 429 compris : on reprendra au prochain achat, pas la peine d'insister.
-        console.warn(`[cardnexus] ménage des listes : suppression refusée (${d.status}).`);
-        return;
-      }
-      // Sinon le cache renverrait le prochain acheteur vers une liste supprimée.
-      for (const [cle, valeur] of listesConnues) if (valeur === id) listesConnues.delete(cle);
-    }
-  } catch (e) {
-    console.warn("[cardnexus] ménage des listes échoué :", e);
-  }
-}
 
 // `cleanName` ne sert pas à l'achat mais au calcul des cartes manquantes : c'est
 // la clé qui fait qu'une illustration alternative déjà possédée compte comme la
@@ -137,27 +89,16 @@ async function cartesManquantes(cartes: CarteDeck[], userId: string): Promise<Ca
 /**
  * Envoie le visiteur sur le « Cart Wizard » de CardNexus, panier déjà composé.
  *
- * L'API panier de CardNexus ne remplit que le panier du porteur de la clé, donc
- * jamais celui d'un visiteur. Le chemin qui marche : créer une liste publique
- * sur notre compte, puis ouvrir le Cart Wizard dessus — il compare les vendeurs
- * et compose le panier le moins cher, frais de port compris, sans que le
- * visiteur ait besoin d'un compte.
+ * Le lien porte les cartes lui-même (voir `lienPanier`). La route ne sert plus
+ * qu'à calculer ces cartes côté serveur : le deck entier, ou seulement ce qui
+ * manque à la collection du joueur connecté.
  */
-// POST et pas GET, exprès. En GET, le bouton était un lien ordinaire : les
-// robots qui balaient les pages de deck le suivaient et créaient une liste par
-// deck sur le compte d'Allan. 12 100 listes de decks du site avaient été créées
-// ainsi. `robots.txt` et `nofollow` sont des consignes, pas des barrières ; un
-// POST, lui, n'est jamais suivi par un explorateur.
+// POST et pas GET : une route qui lit la base et la session n'a rien à faire
+// dans l'exploration des robots. Avant, elle créait aussi une liste sur le
+// compte d'Allan, et les robots en avaient créé 12 100 en suivant le lien.
 export async function POST(request: Request) {
-  // Chaque clic crée une liste sur le compte CardNexus la première fois : on
-  // limite le débit par IP avant tout appel réseau, comme les autres écritures.
   if (!rateLimit(request, { bucket: "cardnexus-panier", limit: 10 })) {
     return tooMany();
-  }
-
-  const cle = process.env.CARDNEXUS_API_KEY;
-  if (!cle) {
-    return NextResponse.json({ error: "Achat indisponible : clé CardNexus absente." }, { status: 503 });
   }
 
   // Mêmes entrées que /api/decklist-image, pour qu'un deck se désigne partout de
@@ -178,8 +119,6 @@ export async function POST(request: Request) {
   if (seulementManquantes && !user) {
     return NextResponse.json({ error: "Connectez-vous pour n’acheter que les cartes qui vous manquent." }, { status: 401 });
   }
-
-  const reference = slug ?? (share ? `share:${share}` : `code:${code}`);
 
   let deck: Awaited<ReturnType<typeof cartesDuDeck>> = null;
   if (slug) {
@@ -209,59 +148,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Aucune carte de ce deck n'est au catalogue CardNexus." }, { status: 404 });
   }
 
-  // La liste des manquantes dépend de la collection, qui bouge : la clé porte les
-  // articles demandés, sinon un joueur récupérerait le panier d'un autre.
-  const cleCache = `${reference}|${user?.id ?? ""}|${cleListeAchat(items)}`;
-  const dejaVue = listesConnues.get(cleCache);
-  if (dejaVue) return NextResponse.redirect(lienPanier(dejaVue), 303);
-
-  const entetes = { Authorization: `Bearer ${cle}`, "Content-Type": "application/json" };
-  let id: string;
-  try {
-    const creation = await fetch(`${API}/lists`, {
-      method: "POST",
-      headers: entetes,
-      signal: AbortSignal.timeout(10_000),
-      body: JSON.stringify({
-        name: (user ? `${deck.titre} - ce qu'il me manque` : deck.titre).slice(0, 100),
-        game: "riftbound",
-        status: "toComplete",
-        isPublic: true,
-        currency: "EUR",
-        description: "Liste composée par Riftbound France.",
-      }),
-    });
-    if (!creation.ok) {
-      return NextResponse.json({ error: "CardNexus a refusé la création de la liste." }, { status: 502 });
-    }
-    const donnees = await creation.json();
-    id = donnees?.id;
-    if (typeof id !== "string" || id.length === 0) {
-      return NextResponse.json({ error: "CardNexus a rendu une liste invalide." }, { status: 502 });
-    }
-
-    const ajout = await fetch(`${API}/lists/${id}/items`, {
-      method: "POST",
-      headers: entetes,
-      signal: AbortSignal.timeout(10_000),
-      body: JSON.stringify({ items }),
-    });
-    if (!ajout.ok) {
-      return NextResponse.json({ error: "CardNexus a refusé les cartes du deck." }, { status: 502 });
-    }
-  } catch {
-    return NextResponse.json({ error: "CardNexus ne répond pas." }, { status: 502 });
-  }
-
-  listesConnues.set(cleCache, id);
-  // Borne simple : au-delà de 1000 listes en mémoire, on jette la plus ancienne.
-  // La Map conserve l'ordre d'insertion, donc sa première clé est la plus vieille.
-  // Sans cette borne, un grand nombre de decks ou de joueurs ferait grossir le
-  // cache sans fin pendant la vie du conteneur.
-  if (listesConnues.size > 1000) {
-    const plusAncienne = listesConnues.keys().next().value as string | undefined;
-    if (plusAncienne !== undefined) listesConnues.delete(plusAncienne);
-  }
-  after(() => menageListes(entetes));
-  return NextResponse.redirect(lienPanier(id), 303);
+  return NextResponse.redirect(lienPanier(items), 303);
 }

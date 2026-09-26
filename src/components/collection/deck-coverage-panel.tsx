@@ -125,10 +125,9 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                   ` ${prix.exemplairesSansPrix} carte${prix.exemplairesSansPrix > 1 ? "s" : ""} sans prix connu.`}
               </p>
             </div>
-            {/* Un formulaire et pas un lien : la route CRÉE une liste sur le compte
-                CardNexus d'Allan. En lien ordinaire, les robots qui balaient les
-                pages de deck la suivaient et en avaient créé 12 100. Un POST ne se
-                suit pas. */}
+            {/* Un formulaire et pas un lien : les robots qui balaient les pages
+                de deck suivaient le lien, et la route lit la base à chaque appel.
+                Un POST ne se suit pas. */}
             <form action={lienAchat} method="POST" target="_blank" rel="noopener sponsored nofollow">
               <Bouton type="submit">
                 {/* Logo blanc : le site n'a que le thème sombre. Dans le calque clair du

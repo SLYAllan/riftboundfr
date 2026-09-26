@@ -7,7 +7,7 @@ const O = "https://riftboundfrance.fr";
 describe("typeClicAchat", () => {
   it("reconnaît les trois liens fabriqués par cardnexus.ts", () => {
     expect(typeClicAchat(lienProduit(151340, "Jinx - Rebel"), O)).toBe("produit");
-    expect(typeClicAchat(lienPanier("abc"), O)).toBe("panier");
+    expect(typeClicAchat(lienPanier([{ productId: 1, quantity: 2 }]), O)).toBe("panier");
     expect(typeClicAchat(lienBoutique(), O)).toBe("boutique");
     expect(typeClicAchat(lienBoutique("Jinx"), O)).toBe("boutique");
   });
@@ -19,7 +19,7 @@ describe("typeClicAchat", () => {
   });
 
   it("evenementClic : achat, connexion, data-suivi, rien", () => {
-    expect(evenementClic(lienPanier("a"), null, O)?.nom).toBe("clic_cardnexus");
+    expect(evenementClic(lienPanier([{ productId: 1, quantity: 2 }]), null, O)?.nom).toBe("clic_cardnexus");
     expect(evenementClic("/en/api/auth/discord", null, O)?.nom).toBe("connexion_discord");
     expect(evenementClic(null, "copie_code_deck", O)?.nom).toBe("copie_code_deck");
     expect(evenementClic("/decks/x", "export_image_deck", O)?.nom).toBe("export_image_deck");

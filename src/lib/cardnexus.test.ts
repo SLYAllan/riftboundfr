@@ -1,12 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, cleListeAchat, releveAMaigri } from "./cardnexus";
-
-it("le panier change quand ses cartes, quantités, finitions ou langues changent", () => {
-  const ligne = { productId: 1, quantity: 2, finish: "Standard", language: "en" };
-  for (const changement of [{ productId: 2 }, { quantity: 3 }, { finish: "Foil" }, { language: "fr" }]) {
-    expect(cleListeAchat([ligne])).not.toBe(cleListeAchat([{ ...ligne, ...changement }]));
-  }
-});
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, releveAMaigri } from "./cardnexus";
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {
@@ -64,10 +57,10 @@ describe("liens", () => {
     expect(l).toContain("Jinx%20-%20Rebel");
   });
 
-  it("envoie le panier vers le Cart Wizard, destination encodée", () => {
-    const l = lienPanier("abc123");
-    expect(l).toContain("go.cardnexus.link/c/7595319/");
-    expect(l).toContain(encodeURIComponent("https://cardnexus.com/cart-wizard?list=abc123"));
+  it("met les cartes du panier dans le lien, une ligne par produit", () => {
+    expect(lienPanier([{ productId: 151526, quantity: 3 }, { productId: 151525, quantity: 1 }])).toBe(
+      "https://af.cardnexus.link/7595319/products/cn/151526.3.en~151525.1.en",
+    );
   });
 });
 
@@ -137,7 +130,7 @@ describe("chiffrerDeck", () => {
         { riftboundId: "opp-009-024", name: "Master Yi, Honed", quantity: 1 },
       ],
       prix,
-    ).items).toEqual([{ productId: 9, finish: "Standard", language: "en", quantity: 2 }]);
+    ).items).toEqual([{ productId: 9, quantity: 2 }]);
   });
 
   it("additionne une carte présente deux fois, sinon CardNexus remplace la quantité", () => {
@@ -149,7 +142,7 @@ describe("chiffrerDeck", () => {
       ],
       prix,
     );
-    expect(items).toEqual([{ productId: 1, finish: "Standard", language: "en", quantity: 5 }]);
+    expect(items).toEqual([{ productId: 1, quantity: 5 }]);
     expect(absentes).toEqual(["Inconnue"]);
   });
 
@@ -164,7 +157,7 @@ describe("chiffrerDeck", () => {
 
   it("met la moins chère au panier, pas celle de la decklist", () => {
     expect(lignesListe([{ riftboundId: "ven-179-166", name: "Rengar, Trophy Hunter", quantity: 3 }], prix).items).toEqual([
-      { productId: 20, finish: "Foil", language: "en", quantity: 3 },
+      { productId: 20, quantity: 3 },
     ]);
   });
 
