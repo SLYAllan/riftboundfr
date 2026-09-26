@@ -67,7 +67,10 @@ export function proxy(request: NextRequest) {
       "default-src 'self'",
       "base-uri 'self'",
       "object-src 'none'",
-      "form-action 'self'",
+      // Le bouton « Acheter ce deck » est un formulaire qui redirige chez
+      // CardNexus (af → go.cardnexus.link → cardnexus.com). Chrome applique
+      // form-action à toute la chaîne : sans ces hôtes, l'onglet restait vide.
+      "form-action 'self' https://af.cardnexus.link https://go.cardnexus.link https://cardnexus.com",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
