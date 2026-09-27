@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "@/components/lien";
-import { useT } from "@/components/i18n-provider";
+import { useLangue, useT } from "@/components/i18n-provider";
 import { legendHref } from "@/lib/legend-fiche";
 import { cn } from "@/lib/utils";
 import { calculerMeta, type TrancheMeta } from "@/lib/meta-stats";
@@ -22,6 +22,10 @@ interface Props {
 
 export function MetaFilters({ tranches, legendes, sets }: Props) {
   const t = useT();
+  // « 11.1% » sur une page française : /tournois écrit déjà « 11,1 % ».
+  const anglais = useLangue() === "en";
+  const pourcent = (n: number) =>
+    `${n.toLocaleString(anglais ? "en-US" : "fr-FR", { maximumFractionDigits: 1 })}${anglais ? "" : "\u00a0"}%`;
   const setInitial = sets.includes("Vendetta") ? "Vendetta" : "all";
   const [selectedTournament, setSelectedTournament] = useState("all");
   const [selectedSet, setSelectedSet] = useState(setInitial);
@@ -155,7 +159,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
                     )}
                     <div className="min-w-0">
                       <p className="truncate font-semibold text-ink group-hover:text-arcane">{detail?.shortName ?? legende.legendName}</p>
-                      <p className="mt-1 text-xs text-ink-muted sm:hidden">{legende.deckCount} decks · {legende.popularity}%</p>
+                      <p className="mt-1 text-xs text-ink-muted sm:hidden">{legende.deckCount} decks · {pourcent(legende.popularity)}</p>
                     </div>
                     <div className="col-start-2 col-span-2 h-2 overflow-hidden rounded-full bg-surface-raised sm:col-start-auto sm:col-span-1">
                       <div
@@ -164,7 +168,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
                       />
                     </div>
                     <div className="hidden text-right sm:block">
-                      <p className="font-bold tabular-nums text-ink">{legende.popularity}%</p>
+                      <p className="font-bold tabular-nums text-ink">{pourcent(legende.popularity)}</p>
                       <p className="text-xs tabular-nums text-ink-muted">{legende.deckCount} decks</p>
                     </div>
                   </Link>
