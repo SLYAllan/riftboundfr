@@ -7,7 +7,10 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const user = await getUserFromSession();
-  if (!user) return NextResponse.json({ error: "Non connecté" }, { status: 401 });
+  // Même marqueur que /api/collection : la cloche est montée deux fois dans la
+  // barre, et chaque 401 sortait en erreur dans la console à chaque page vue par
+  // un visiteur. Le POST garde son 401.
+  if (!user) return NextResponse.json({ anonymous: true });
 
   const compte = await prisma.user.findUnique({
     where: { id: user.id },

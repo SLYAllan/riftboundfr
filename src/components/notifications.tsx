@@ -36,7 +36,7 @@ type Filtre = "tout" | "mien" | "suivi";
 /**
  * Cloche des notifications.
  *
- * Elle ne s'affiche que pour un membre connecté : la route répond 401 sinon, et
+ * Elle ne s'affiche que pour un membre connecté : la route répond `anonymous` sinon, et
  * on ne montre pas une cloche vide à un visiteur. Le compte se relit à
  * l'ouverture du panneau et toutes les deux minutes — pas plus souvent, ce sont
  * des réponses de forum, pas une messagerie.
@@ -54,15 +54,17 @@ export function Notifications() {
 
   // `r.ok` puis la FORME : une route en panne rend `{ error: … }` avec un 500, et
   // sans ce contrôle l'objet finissait dans l'état, où le `.map` du rendu levait.
-  const charger = useCallback(async () => {
+  // Rend `false` pour un visiteur sans compte : il n'a pas de cloche, inutile de
+  // redemander toutes les deux minutes.
+  const charger = useCallback(async (): Promise<boolean> => {
     try {
       const r = await fetch("/api/notifications");
-      if (r.status === 401) {
-        setVisible(false);
-        return;
-      }
       if (!r.ok) throw new Error(String(r.status));
       const corps: unknown = await r.json();
+      if (corps && typeof corps === "object" && (corps as { anonymous?: unknown }).anonymous === true) {
+        setVisible(false);
+        return false;
+      }
       if (!corps || typeof corps !== "object" || !Array.isArray((corps as { liste?: unknown }).liste)) {
         throw new Error("réponse inattendue");
       }
@@ -71,15 +73,24 @@ export function Notifications() {
       setNonLues(typeof donnees.nonLues === "number" ? donnees.nonLues : 0);
       setVisible(true);
       setErreur(false);
+      return true;
     } catch {
       setErreur(true);
+      return true;
     }
   }, []);
 
   useEffect(() => {
-    queueMicrotask(() => void charger());
-    const minuteur = setInterval(() => void charger(), 120_000);
-    return () => clearInterval(minuteur);
+    let demonte = false;
+    let minuteur: ReturnType<typeof setInterval> | undefined;
+    queueMicrotask(async () => {
+      if (!(await charger()) || demonte) return;
+      minuteur = setInterval(() => void charger(), 120_000);
+    });
+    return () => {
+      demonte = true;
+      clearInterval(minuteur);
+    };
   }, [charger]);
 
   useEffect(() => {
