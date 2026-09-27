@@ -58,7 +58,7 @@ export default async function BinderPage({ params }: { params: Promise<{ binderI
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <Link href="/collection" className="inline-flex min-h-11 items-center text-sm text-ink-muted hover:text-ink sm:min-h-0">{t("← Retour à la collection")}</Link>
+      <Link href="/collection" className="inline-flex min-h-11 items-center text-sm text-ink-muted hover:text-ink sm:min-h-6">{t("← Retour à la collection")}</Link>
       <BinderExplorer
         binder={{ id: binder.id, name: binder.name, isPublic: binder.isPublic, shareSlug: binder.shareSlug }}
         cards={cards}

@@ -1195,7 +1195,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               className={inputCls + " resize-none"}
             />
           </label>
-          <div className="min-w-[280px] flex-1">
+          <div className="min-w-[min(280px,100%)] flex-1">
             <span className="mb-1 block text-xs text-ink-muted">{t("Logo (lien d’image)")}</span>
             {/* Même raison que la caméra : à deux boutons, le champ tombait à 98 px
                 sur un téléphone. On ne colle pas une adresse dans 98 px.

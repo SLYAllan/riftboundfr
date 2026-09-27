@@ -6,6 +6,7 @@ vérité d'aujourd'hui. Pour l'état courant du projet, lire `HANDOFF.md`.
 
 ## Sommaire
 
+- 27 septembre 2026 — Audit d'interface (axe-core, audit-responsive)
 - 11 août 2026 — Audit et correctifs (collection, decklists, wishlist)
 - 9 août 2026 — Analyse GEO (visibilité dans les moteurs IA)
 - 2 août 2026 — Rapport Google APIs (Search Console, GA4, PageSpeed)
@@ -22,6 +23,103 @@ vérité d'aujourd'hui. Pour l'état courant du projet, lire `HANDOFF.md`.
 - 25 mai 2026 — Rapport d'audit initial
 - 24 mai 2026 — Audit de sécurité
 
+
+---
+
+# 27 septembre 2026 — Audit d'interface (axe-core, audit-responsive)
+
+## Méthode
+
+Build de production local (`next start -p 3001`). Skills `better-*` : accessibilité,
+mise en page, écriture, typographie, couleurs, finitions.
+
+- **Balayage axe-core** : 63 adresses, 46 publiques et 17 derrière la connexion ou
+  l'admin (compte de test local, `scripts/seed-test-user.mts --admin`), à 1440 et
+  375 px. Règles WCAG 2.2 AA et bonnes pratiques, capture pleine page, 30 tabulations
+  pour vérifier que le focus se voit, erreurs console et requêtes en échec.
+- **`scripts/audit-responsive.mjs`** sur les pages publiques, aux cinq largeurs
+  (1440, 768, 430, 375, 320) : débordements, cibles, textes coupés, éléments collés.
+- **Scénarios** : 35 fonctions déclenchées pour de vrai (menus, filtres, deckbuilder,
+  export d'image, tier list perso, collection, overlay, compagnon). 34 passent ;
+  l'aperçu d'une carte dans un article n'a pas été capturé.
+
+## Corrigé
+
+| Commit | Ce qui change |
+|---|---|
+| `ebaa17d3` | `/api/cardnexus/panier` en GET renvoie au deck au lieu d'un 405 ; test mort retiré, CI rouge depuis le 26 septembre |
+| `f07698e2` | « Acheter ce deck » passe par la page : journal `[CardNexus]` dans la console, message d'échec sous le bouton |
+| `4b3aa909` | Plus de 401 de la cloche pour un visiteur ; plus de préchargement de `/api/auth/discord` jusqu'à discord.com |
+| `72d4cd01` | Cartes de decks communautaires : plus de lien dans un lien (erreur d'hydratation #418) ; bouton « Chercher » nommé sur mobile |
+| `5c79436e` | Liens au fil du texte soulignés ; filtres de domaine du deckbuilder lisibles ; bandeau cookies en repère et traduit ; glossaire en `<dl>` valides ; `h2` de la liste de deck ; cibles portées à 24 px ; boutons qui passent à la ligne au lieu d'être rognés ; boutons de l'accueil empilés sur mobile ; flèche des listes de `/cartes` ; bouton de `/meta` |
+| `6440e3ac` | `/meta` écrit « 11,1 % » |
+| ce commit | `/api/community-decks/me` répond `null` au lieu d'un 401 ; listes d'un classeur et lien retour à 24 px et plus ; champ logo du tableau de bord de l'overlay qui dépassait de 10 px à 320 px |
+
+## Avant / après (axe-core, 126 passages)
+
+| Règle | Avant | Après |
+|---|---|---|
+| Liens repérés par la seule couleur | 1 152 | 1 118 (glossaire de `/outils/regles`, écarté) |
+| Terme de glossaire hors `<dl>` | 244 | 0 |
+| Cibles trop petites | 205 | 0 |
+| Zone hors repère | 122 | 15 (toutes sur la page Discord de `/profil` anonyme) |
+| Contraste | 12 | 0 |
+| Bouton sans nom | 7 | 0 |
+| Saut de niveau de titre | 6 | 0 |
+| Erreurs console | 225 | 40 (page Discord de `/profil`, 403 local, et `/api/community-decks/me`, corrigé depuis) |
+| Requêtes en échec | 196 | 12 |
+
+`scripts/audit-responsive.mjs`, pages publiques, 230 passages (46 adresses × 5 largeurs) :
+
+| Mesure | Avant | Après |
+|---|---|---|
+| Éléments hors cadre | 6 | 0 |
+| Cibles sous 24 px | 246 | 0 |
+| Débordement horizontal, texte coupé | 0 | 0 |
+| Élément collé de plus de 30 % de l'écran | 45 | 45 (bandeau cookies à 320×568, écarté) |
+| Erreurs console | 500 | 10 |
+
+Le retour à la ligne des boutons ne crée ni débordement ni texte coupé, à aucune des
+cinq largeurs.
+
+Pages connectées et admin, 85 passages (mesurés après les correctifs seulement) : les
+listes d'un classeur (20 px) et le lien « Retour à la collection » (20 px) sont passés
+à 34 et 24 px, et le champ logo du tableau de bord de l'overlay ne dépasse plus à
+320 px. Restent dans l'admin, qui ne sert qu'à Allan : cases à cocher de 13 px,
+boutons « Preview » de 16 px, liens d'articles de 20 px.
+
+## Écarté, avec la raison
+
+- **Liens du glossaire de `/outils/regles`** (558 par passage) : ils portent déjà un fond
+  en pastille, repère autre que la couleur ; 558 soulignements chargeraient la page.
+- **548 `transition: all`** : faux constat. Le balayage tournait en « réduire les
+  animations », et la règle globale pose alors 1 ms sur tout élément.
+- **Noto Sans TC bloquée par `connect-src`** : c'est axe qui relit la feuille par `fetch`.
+- **403 sur `/api/collection/coverage`** : local seulement, le build porte l'adresse de
+  production et le proxy refuse les POST de localhost.
+- **Icône rognée en haut d'une carte de deck** : elle fait partie du dessin de la
+  bannière, recadré par `object-cover`.
+- **Bandeau cookies à 39 % d'un écran de 320×568** : première visite seulement.
+
+## Reste
+
+- « Acheter ce deck » : un testeur voit encore un onglet vierge. Piste : Safari sur
+  iPhone suspend la page d'origine dès que l'onglet ouvert par `window.open` passe
+  devant, et l'onglet n'est jamais rempli. Proposé : un vrai lien `<a href>` calculé
+  par le serveur au rendu. En attente de la décision d'Allan.
+- `aria-label` sur un `div` de caméra de l'overlay (`aria-prohibited-attr`) : toute
+  retouche de l'overlay se vérifie dans OBS.
+- 212 images dont l'`alt` répète le nom affiché juste à côté (mineur).
+- La cloche est montée deux fois dans la barre : deux requêtes par page pour un membre.
+- 502 de la production à 13 h 17, sans déploiement en cours. Une sonde toutes les 15 s
+  pendant une heure n'a rien relevé ensuite. Les journaux du conteneur Coolify à cette
+  heure-là diraient s'il a redémarré.
+
+## Captures
+
+Dossier `RiftboundFr-captures-2026-09-27`, à côté du dépôt, hors git : 63 pages à
+1440 px, 63 à 375 px, 36 captures de fonctions en action, 9 paires avant/après.
+`index.html` les montre toutes.
 
 ---
 

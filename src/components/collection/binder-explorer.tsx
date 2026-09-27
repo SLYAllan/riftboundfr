@@ -353,7 +353,7 @@ function FilterPill({ label, value, onChange, children }: {
     // pastille à 361px et fait défiler toute la page sur mobile.
     <div className={`relative flex h-11 max-w-full items-center gap-1.5 rounded-lg border bg-surface pl-2.5 pr-7 transition-colors hover:border-arcane/40 sm:h-9 ${active ? "border-arcane/50" : "border-hairline"}`}>
       <span className="shrink-0 text-[10px] font-bold uppercase tracking-wide text-ink-muted">{label}</span>
-      <select value={value} onChange={onChange} aria-label={label} className="min-w-0 max-w-[150px] cursor-pointer appearance-none bg-transparent text-sm text-ink">
+      <select value={value} onChange={onChange} aria-label={label} className="h-full min-w-0 max-w-[150px] cursor-pointer appearance-none bg-transparent text-sm text-ink">
         {children}
       </select>
       <ChevronDown size={14} className="pointer-events-none absolute right-2 text-ink-muted" />
