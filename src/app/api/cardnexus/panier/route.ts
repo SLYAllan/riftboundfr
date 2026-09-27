@@ -159,5 +159,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Aucune carte de ce deck n'est au catalogue CardNexus." }, { status: 404 });
   }
 
-  return NextResponse.redirect(lienPanier(items), 303);
+  const url = lienPanier(items);
+  // Le bouton appelle la route en fetch pour journaliser chaque étape et montrer
+  // un échec sur la page (voir `FormulaireAchat`). Le formulaire nu, sans
+  // JavaScript, garde la redirection.
+  if (request.headers.get("accept")?.includes("application/json")) {
+    return NextResponse.json({ url });
+  }
+  return NextResponse.redirect(url, 303);
 }
