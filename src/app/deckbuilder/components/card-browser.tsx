@@ -344,19 +344,20 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
                   key={d}
                   onClick={() => toggleDomain(d)}
                   aria-pressed={active}
+                  // Au repos, le texte coloré passait à 35 % d'opacité : 1,7 à 2,2:1,
+                  // illisible (axe). Le domaine se lit à sa pastille, le texte reste
+                  // neutre ; actif, texte coloré sur fond neutre, jamais sur sa teinte.
                   className={cn(
-                    "min-h-11 sm:min-h-0 rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
+                    "inline-flex items-center gap-1.5 min-h-11 sm:min-h-0 rounded-md border px-2.5 py-1 text-xs font-bold uppercase tracking-wide transition-colors",
                     active
-                      ? "border-current shadow-sm"
+                      ? "border-current bg-surface-raised shadow-sm"
                       : isLegendDomain
-                        ? "border-transparent opacity-70 hover:opacity-100 ring-1 ring-gold/30"
-                        : "border-transparent opacity-35 hover:opacity-70",
+                        ? "border-transparent text-ink-secondary ring-1 ring-gold/30 hover:text-ink"
+                        : "border-transparent text-ink-muted hover:text-ink",
                   )}
-                  style={{
-                    color,
-                    backgroundColor: active ? `${color}20` : "transparent",
-                  }}
+                  style={active ? { color } : undefined}
                 >
+                  <span aria-hidden="true" className="size-2 shrink-0 rounded-full" style={{ backgroundColor: color }} />
                   {DOMAIN_LABELS_FR[d] ?? d}
                 </button>
               );

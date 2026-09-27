@@ -141,28 +141,33 @@ function TermCard({
       id={slug}
       className="group rounded-lg border border-hairline bg-surface p-4 scroll-mt-32 transition-colors duration-150 hover:border-hairline-strong hover:bg-surface-raised"
     >
-      <div className="flex flex-wrap items-center gap-2">
-        <dt
-          className={`font-semibold ${isMechanic ? "text-arcane" : "text-gold"}`}
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          {item.term}
-          {item.en && item.en !== item.term && (
-            <span className="ml-1.5 text-xs font-normal text-ink-muted">({item.en})</span>
+      {/* Un `<dl>` par fiche : sous le `<dl>` de la page, les `<dt>` étaient pris
+          dans des `<section>` et des `<div>`, et un lecteur d'écran ne liait plus
+          le terme à sa définition (axe, 244 éléments). */}
+      <dl>
+        <dt className="flex flex-wrap items-center gap-2">
+          <span
+            className={`font-semibold ${isMechanic ? "text-arcane" : "text-gold"}`}
+            style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+          >
+            {item.term}
+            {item.en && item.en !== item.term && (
+              <span className="ml-1.5 text-xs font-normal text-ink-muted">({item.en})</span>
+            )}
+          </span>
+          <span
+            className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${CATEGORY_COLORS[item.category]}`}
+          >
+            {item.category}
+          </span>
+          {item.subcategory && (
+            <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] text-ink-muted">
+              {item.subcategory}
+            </span>
           )}
         </dt>
-        <span
-          className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${CATEGORY_COLORS[item.category]}`}
-        >
-          {item.category}
-        </span>
-        {item.subcategory && (
-          <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[10px] text-ink-muted">
-            {item.subcategory}
-          </span>
-        )}
-      </div>
-      <dd className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{item.definition}</dd>
+        <dd className="mt-1.5 text-sm leading-relaxed text-ink-secondary">{item.definition}</dd>
+      </dl>
       <CardTooltip item={item} card={card} />
       {item.related && item.related.length > 0 && (
         <div className="mt-2.5 flex flex-wrap items-center gap-1.5 text-xs">
@@ -417,7 +422,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
           >{t("Réinitialiser les filtres")}</button>
         </div>
       ) : (
-        <dl className="mt-4 space-y-8">
+        <div className="mt-4 space-y-8">
           {letters.map((letter) => (
             <section key={letter} id={`letter-${letter}`} className="scroll-mt-24">
               <div className="sticky top-16 z-10 mb-3 flex items-center gap-3 bg-canvas/95 py-2 backdrop-blur-sm">
@@ -444,7 +449,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
               </div>
             </section>
           ))}
-        </dl>
+        </div>
       )}
 
       {/* Scroll to top */}

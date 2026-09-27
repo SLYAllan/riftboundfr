@@ -351,6 +351,24 @@
   }
 }
 
+/* Un lien au fil d'une phrase se voit à son soulignement, pas à sa seule
+   couleur : le bleu des liens sur le gris du texte ne fait que 1,08:1, et
+   « Decks de tournoi » se confondait avec la phrase pour qui distingue mal les
+   couleurs (axe, « link-in-text-block », 18 pages). Trait discret au repos,
+   plein au survol ; `no-underline` sur un lien l'en retire. Même raison que la
+   règle du dessus : une ligne ici plutôt que la retouche dans 26 fichiers. */
+@layer base {
+  :is(p, dd) > a:is(.text-arcane, .text-arcane-light) {
+    text-decoration-line: underline;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in oklab, currentColor 45%, transparent);
+  }
+  :is(p, dd) > a:is(.text-arcane, .text-arcane-light):hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 /* Bouton du site : l'« Arrow Fill Button » d'obsidianui.dev, réglage B choisi
    par Allan (mêmes coins que rounded-lg, var(--radius) : 10 px). Un calque rogné en pastille à
    droite s'étend à tout le bouton au survol ou au focus clavier. Le composant est
@@ -367,14 +385,17 @@
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;
-    padding: 0 3.25rem 0 1.25rem;
+    padding: 0.5rem 3.25rem 0.5rem 1.25rem;
     border: 1px solid var(--bord);
     border-radius: var(--radius);
     background: var(--fond);
     color: var(--texte);
     font-size: 0.875rem;
     font-weight: 600;
-    white-space: nowrap;
+    /* Un libellé long passe à la ligne au lieu d'être rogné : sur mobile,
+       « Voir tous les decks de Kennen, Heart of the Tempest » sortait du bouton
+       et on n'en lisait que la moitié. Un libellé qui tient reste sur une ligne. */
+    text-wrap: balance;
     overflow: hidden;
     transition: scale 100ms cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -390,12 +411,18 @@
     inset: -1px;
     display: flex;
     align-items: center;
-    padding: 0 3.25rem 0 1.25rem;
+    /* Le calque couvre aussi la bordure (inset -1px) : 1 px de plus de chaque
+       côté pour que le libellé tombe au même endroit et passe à la ligne au
+       même mot que celui du bouton. */
+    padding: 0.5rem calc(3.25rem + 1px) 0.5rem calc(1.25rem + 1px);
     border-radius: var(--radius);
     background: var(--rond);
     color: var(--texte-rond);
     pointer-events: none;
-    clip-path: inset(0.35rem 0.35rem 0.35rem calc(100% - 2.45rem) round 2rem);
+    /* Pastille de hauteur fixe, centrée : calée sur les bords, elle s'étirait
+       en gélule dès que le libellé passait sur deux lignes. Sur un bouton d'une
+       ligne (44 px), elle est identique à l'ancienne. */
+    clip-path: inset(calc(50% - 1.025rem) 0.35rem calc(50% - 1.025rem) calc(100% - 2.45rem) round 2rem);
     transition: clip-path 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
   /* Dans le calque, le libellé passe en sombre, dans toutes les variantes. Le

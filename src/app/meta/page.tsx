@@ -9,7 +9,7 @@ import { displayLegendName } from "@/lib/utils";
 import { MetaFilters } from "./meta-filters";
 import partsDeClassement from "../../../data/tournaments/meta-parts.json";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import Link from "@/components/lien";
+import { BoutonLien } from "@/components/bouton";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const getMetaData = unstable_cache(
@@ -92,12 +92,9 @@ export default async function MetaSnapshotPage() {
             {t("Comparez la présence des Légendes par set ou par événement. Chaque classement est recalculé sur la sélection affichée.")}
           </p>
         </div>
-        <Link
-          href="/tier-list"
-          className="inline-flex min-h-11 items-center justify-center rounded-lg border border-hairline bg-surface px-4 text-sm font-semibold text-ink transition-colors hover:bg-surface-raised"
-        >
+        <BoutonLien href="/tier-list" variante="neutre">
           {t("Voir la tier list")}
-        </Link>
+        </BoutonLien>
       </header>
 
       <MetaFilters tranches={data.tranches} legendes={legendes} sets={sets} />

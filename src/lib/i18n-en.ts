@@ -615,6 +615,8 @@ export const EN: Record<string, string> = {
   "Bon à savoir :": "Worth knowing:",
   "Carré 2000x2000": "Square 2000x2000",
   "Ce classeur est vide.": "This binder is empty.",
+  "Accepter": "Accept",
+  "Refuser": "Decline",
   "Ce site utilise des cookies pour analyser le trafic et améliorer votre expérience. Aucune donnée personnelle n’est partagée avec des tiers.": "This site uses cookies to measure traffic and improve your experience. No personal data is shared with third parties.",
   "Certaines unités ont des effets qui se déclenchent en attaque ou en défense. Ensuite, les deux joueurs peuvent jouer des cartes pour renforcer leur camp ou affaiblir l’adversaire. Quand les deux passent, on passe aux dégâts.": "Some units have effects that trigger on attack or defence. Then both players can play cards to strengthen their side or weaken the opponent. When both pass, damage happens.",
   "Cette tier list est basée sur notre analyse des résultats de tournois publics. Elle ne reflète pas de données statistiques automatisées.": "This tier list comes from our reading of public tournament results. It is not automated statistics.",

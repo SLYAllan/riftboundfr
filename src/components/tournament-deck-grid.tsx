@@ -291,7 +291,7 @@ function TopDeckCard({ deck }: { deck: DeckEntry }) {
             )}
             <Link
               href={legendHref(deck.legendName)}
-              className="relative z-20 truncate text-xs text-ink-secondary hover:text-arcane-light hover:underline"
+              className="relative z-20 truncate text-xs leading-6 text-ink-secondary hover:text-arcane-light hover:underline"
             >
               {displayLegendName(deck.legendName)}
             </Link>
@@ -373,7 +373,7 @@ function DeckMiniCard({ deck }: { deck: DeckEntry }) {
         <div className="flex items-center gap-1.5 mt-0.5">
           <Link
             href={legendHref(deck.legendName)}
-            className="relative z-20 truncate text-xs text-ink-secondary hover:text-arcane-light hover:underline"
+            className="relative z-20 truncate text-xs leading-6 text-ink-secondary hover:text-arcane-light hover:underline"
           >
             {displayLegendName(deck.legendName)}
           </Link>

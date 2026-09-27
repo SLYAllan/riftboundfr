@@ -427,7 +427,7 @@ function CardTile({
       </div>
       {sub && <p className="text-xs text-ink-secondary">{sub}</p>}
       {lien && (
-        <Link href={lien.href} className="text-xs text-arcane hover:underline">
+        <Link href={lien.href} className="inline-flex min-h-6 items-center text-xs text-arcane hover:underline">
           {lien.texte}
         </Link>
       )}

@@ -71,8 +71,10 @@ export function CardFilters({ total, mecaniques }: { total: number; mecaniques: 
   const mechanic = get("mechanic");
   const mecanique = mecaniques.find(({ value }) => value === mechanic);
 
+  // Flèche native, comme sur /meta : `appearance-none` la retirait sans rien mettre
+  // à la place, et les trois listes avaient l'air de simples champs.
   const selectClass =
-    "h-9 rounded-lg border border-hairline-strong bg-surface pl-3 pr-8 text-sm text-ink focus:border-arcane cursor-pointer appearance-none";
+    "h-9 rounded-lg border border-hairline-strong bg-surface px-3 text-sm text-ink focus:border-arcane cursor-pointer";
 
   const activeSummary = [
     domain !== "all" && t(DOMAIN_LABELS_FR[domain] ?? domain),

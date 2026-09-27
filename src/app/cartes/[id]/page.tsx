@@ -394,7 +394,7 @@ export default async function CardDetailPage({ params }: PageProps) {
 
             <Link
               href={`/decks?q=${encodeURIComponent(card.name)}&set=all`}
-              className="mt-4 inline-flex text-sm text-arcane hover:underline"
+              className="mt-4 inline-flex min-h-6 items-center text-sm text-arcane hover:underline"
             >
               {t("Voir tous les decks avec cette carte")}
             </Link>

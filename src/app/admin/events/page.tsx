@@ -15,7 +15,7 @@ export default async function AdminEventsPage() {
         Événements
       </h1>
 
-      <div className="rounded-xl bg-surface border border-hairline overflow-x-auto">
+      <div tabIndex={0} role="region" aria-label="Tableau des événements" className="rounded-xl bg-surface border border-hairline overflow-x-auto">
         <table className="min-w-[650px] w-full">
           <thead>
             <tr className="border-b border-hairline">

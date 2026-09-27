@@ -416,7 +416,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
                       {l.icon && <img src={l.icon} alt="" className="h-4 w-4 rounded" />}
                       <Link
                         href={legendHref(l.name)}
-                        className="relative z-20 min-w-0 line-clamp-2 leading-tight hover:text-arcane-light hover:underline sm:truncate"
+                        className="relative z-20 min-h-6 min-w-0 line-clamp-2 leading-tight hover:text-arcane-light hover:underline sm:truncate"
                       >
                         {displayLegendName(l.name)}
                       </Link>

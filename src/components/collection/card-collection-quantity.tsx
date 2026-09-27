@@ -28,7 +28,7 @@ export function CardCollectionQuantity({ cardId }: { cardId: string }) {
     return (
       <div className="mt-5 flex flex-wrap items-center gap-3 text-sm">
         <span className="font-semibold">{t("Ma collection")}</span>
-        <Link href="/api/auth/discord" className="text-arcane underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2">
+        <Link href="/api/auth/discord" className="inline-flex min-h-6 items-center text-arcane underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2">
           {t("Se connecter avec Discord")}
         </Link>
       </div>

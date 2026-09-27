@@ -408,6 +408,10 @@ export function DecklistInteractive({
 
       {compact && (
         <div className="flex items-center justify-between border-b border-hairline px-4 py-2">
+          {/* Sans l'en-tête complet, les sections h3 suivaient directement le h1
+              de la page deck (axe, heading-order). Titre pour les lecteurs d'écran
+              seulement : la page porte déjà le nom du deck. */}
+          <h2 className="sr-only">{t("Decklist")}</h2>
           <div className="text-xs text-ink-muted">{totalCards} cartes</div>
           <div className="flex items-center gap-1">
             <button onClick={() => setView("grid")} aria-label={t("Affichage en grille")} aria-pressed={view === "grid"} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>

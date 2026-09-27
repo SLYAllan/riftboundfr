@@ -222,10 +222,12 @@ export default async function HomePage() {
           <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list du méta")}</Link>
           {t(" et base de cartes Riftbound, en français.")}
         </p>
-        <div className="flex w-full max-w-xl flex-wrap justify-center gap-2">
-          <BoutonLien href="/decks" className="flex-1 basis-32">{t("Trouver un deck")}</BoutonLien>
-          <BoutonLien href="/cartes" variante="contour" className="flex-1 basis-32">{t("Voir les cartes")}</BoutonLien>
-          <BoutonLien href="/guides/debuter" variante="neutre" className="flex-1 basis-32">{t("Débuter")}</BoutonLien>
+        {/* Empilés sous 640 px : deux par rangée, « Trouver un deck » tenait dans
+            168 px pour 182 de libellé et touchait sa pastille. */}
+        <div className="flex w-full max-w-xl flex-col gap-2 sm:flex-row">
+          <BoutonLien href="/decks" className="sm:flex-1">{t("Trouver un deck")}</BoutonLien>
+          <BoutonLien href="/cartes" variante="contour" className="sm:flex-1">{t("Voir les cartes")}</BoutonLien>
+          <BoutonLien href="/guides/debuter" variante="neutre" className="sm:flex-1">{t("Débuter")}</BoutonLien>
         </div>
       </section>
 
