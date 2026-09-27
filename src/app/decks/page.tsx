@@ -186,7 +186,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:border-arcane/70">
           {Object.entries(params).map(([nom, valeur]) => nom !== "q" && nom !== "offset" && valeur ? <input key={nom} type="hidden" name={nom} value={valeur} /> : null)}
           <input type="search" name="q" defaultValue={search} placeholder={t("Chercher un deck, une Légende ou un auteur")} aria-label={t("Chercher un deck, une Légende ou un auteur")} className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-ink outline-none placeholder:text-ink-muted" />
-          <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]"><Search size={16} aria-hidden="true" /> <span className="hidden sm:inline">{t("Chercher")}</span></button>
+          <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]"><Search size={16} aria-hidden="true" /> <span className="sr-only sm:not-sr-only">{t("Chercher")}</span></button>
         </form>
         {search && <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")} <strong>{search}</strong>. <Link href={hrefDecks({ q: null })} className="text-arcane hover:underline">{t("Effacer la recherche")}</Link></p>}
 
@@ -262,7 +262,12 @@ export default async function DecksPage({ searchParams }: PageProps) {
             {communityDecks.map((deck) => {
               const bannerUrl = getBannerUrl(deck.legendName);
               return (
-                <Link key={deck.id} href={`/d/${deck.shareCode}`} className="card-hover rounded-card border border-hairline overflow-hidden group relative flex flex-col">
+                <article key={deck.id} className="card-hover rounded-card border border-hairline overflow-hidden group relative flex flex-col">
+                  {/* Une nappe, comme les cartes de decks officiels, et pas toute la
+                      carte en lien : le lien de Légende tombait dans le lien du deck.
+                      Un <a> dans un <a>, le navigateur le défait, et React
+                      reconstruisait la grille à chaque visite (erreur #418). */}
+                  <Link href={`/d/${deck.shareCode}`} className="absolute inset-0 z-10" aria-label={`${t("Voir le deck")} ${deck.title}`} />
                   <div className="relative flex h-44 flex-col justify-end">
                     {bannerUrl ? (
                       <Image src={bannerUrl} alt={deck.legendName} fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} />
@@ -286,7 +291,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                         </span>
                       );
                     })()}
-                    <div className="relative z-10 p-4">
+                    <div className="relative p-4">
                       <div className="flex items-end justify-between gap-2">
                         <div className="min-w-0">
                           <div className="line-clamp-2 text-xl font-bold leading-tight text-ink drop-shadow-md" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
@@ -299,7 +304,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                                 le lien est mangé par elle et on part sur le deck. */}
                             <Link
                               href={legendHref(deck.legendName)}
-                              className="relative z-20 text-arcane-light hover:underline"
+                              className="relative z-20 inline-flex min-h-6 items-center text-arcane-light hover:underline"
                             >
                               {displayLegendName(deck.legendName)}
                             </Link>
@@ -323,7 +328,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </article>
               );
             })}
           </div>
@@ -401,7 +406,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-ink outline-none placeholder:text-ink-muted"
         />
         <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]">
-          <Search size={16} aria-hidden="true" /> <span className="hidden sm:inline">{t("Chercher")}</span>
+          <Search size={16} aria-hidden="true" /> <span className="sr-only sm:not-sr-only">{t("Chercher")}</span>
         </button>
       </form>
       {search && (
