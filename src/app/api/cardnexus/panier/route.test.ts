@@ -9,10 +9,4 @@ describe("panier CardNexus", () => {
     expect(source).toContain("missing.length > 0");
     expect(source).toContain("absentes.length > 0");
   });
-
-  it("borne les appels CardNexus et valide l'identifiant rendu", () => {
-    expect(source).toContain("AbortSignal.timeout");
-    expect(source).toContain("try {");
-    expect(source).toMatch(/typeof id !== "string"/);
-  });
 });

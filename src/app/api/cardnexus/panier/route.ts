@@ -93,6 +93,17 @@ async function cartesManquantes(cartes: CarteDeck[], userId: string): Promise<Ca
  * qu'à calculer ces cartes côté serveur : le deck entier, ou seulement ce qui
  * manque à la collection du joueur connecté.
  */
+// Un GET arrive quand l'adresse est collée, rouverte ou rechargée depuis
+// l'onglet que le bouton a ouvert. Il répondait 405 : il renvoie maintenant à la
+// page du deck, sans lire la base, où le bouton refait le POST.
+export function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const slug = searchParams.get("slug");
+  const share = searchParams.get("share");
+  const page = slug ? `/decks/${encodeURIComponent(slug)}` : share ? `/d/${encodeURIComponent(share)}` : "/decks";
+  return NextResponse.redirect(new URL(page, request.url), 303);
+}
+
 // POST et pas GET : une route qui lit la base et la session n'a rien à faire
 // dans l'exploration des robots. Avant, elle créait aussi une liste sur le
 // compte d'Allan, et les robots en avaient créé 12 100 en suivant le lien.
