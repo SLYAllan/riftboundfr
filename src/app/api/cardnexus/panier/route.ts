@@ -102,7 +102,9 @@ export function GET(request: Request) {
   const slug = searchParams.get("slug");
   const share = searchParams.get("share");
   const page = slug ? `/decks/${encodeURIComponent(slug)}` : share ? `/d/${encodeURIComponent(share)}` : "/decks";
-  return NextResponse.redirect(new URL(page, request.url), 303);
+  // Derrière le proxy de Coolify, `request.url` porte l'adresse interne du
+  // serveur : la redirection partait vers https://0.0.0.0:3000/decks/…
+  return NextResponse.redirect(new URL(page, process.env.NEXT_PUBLIC_SITE_URL || request.url), 303);
 }
 
 // POST et pas GET : une route qui lit la base et la session n'a rien à faire

@@ -9,4 +9,9 @@ describe("panier CardNexus", () => {
     expect(source).toContain("missing.length > 0");
     expect(source).toContain("absentes.length > 0");
   });
+
+  it("renvoie un GET vers l'adresse publique du site, pas celle du serveur", () => {
+    // Derrière le proxy, `request.url` valait https://0.0.0.0:3000/… en production.
+    expect(source).toContain("new URL(page, process.env.NEXT_PUBLIC_SITE_URL || request.url)");
+  });
 });
