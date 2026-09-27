@@ -53,7 +53,9 @@ mise en page, écriture, typographie, couleurs, finitions.
 | `72d4cd01` | Cartes de decks communautaires : plus de lien dans un lien (erreur d'hydratation #418) ; bouton « Chercher » nommé sur mobile |
 | `5c79436e` | Liens au fil du texte soulignés ; filtres de domaine du deckbuilder lisibles ; bandeau cookies en repère et traduit ; glossaire en `<dl>` valides ; `h2` de la liste de deck ; cibles portées à 24 px ; boutons qui passent à la ligne au lieu d'être rognés ; boutons de l'accueil empilés sur mobile ; flèche des listes de `/cartes` ; bouton de `/meta` |
 | `6440e3ac` | `/meta` écrit « 11,1 % » |
-| ce commit | `/api/community-decks/me` répond `null` au lieu d'un 401 ; listes d'un classeur et lien retour à 24 px et plus ; champ logo du tableau de bord de l'overlay qui dépassait de 10 px à 320 px |
+| `f577c2c8` | `/api/community-decks/me` répond `null` au lieu d'un 401 ; listes d'un classeur et lien retour à 24 px et plus ; champ logo du tableau de bord de l'overlay qui dépassait de 10 px à 320 px |
+| `3b02191d` | « Acheter ce deck » et « Acheter ce qui me manque » redeviennent de vrais liens, écrits par la page : l'onglet ouvert par `window.open` restait vierge sur iPhone |
+| `4c189369` | Une adresse de panier ouverte en GET renvoyait vers `https://0.0.0.0:3000/…` en production (adresse interne derrière le proxy) |
 
 ## Avant / après (axe-core, 126 passages)
 
@@ -103,10 +105,6 @@ boutons « Preview » de 16 px, liens d'articles de 20 px.
 
 ## Reste
 
-- « Acheter ce deck » : un testeur voit encore un onglet vierge. Piste : Safari sur
-  iPhone suspend la page d'origine dès que l'onglet ouvert par `window.open` passe
-  devant, et l'onglet n'est jamais rempli. Proposé : un vrai lien `<a href>` calculé
-  par le serveur au rendu. En attente de la décision d'Allan.
 - `aria-label` sur un `div` de caméra de l'overlay (`aria-prohibited-attr`) : toute
   retouche de l'overlay se vérifie dans OBS.
 - 212 images dont l'`alt` répète le nom affiché juste à côté (mineur).
