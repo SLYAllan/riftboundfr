@@ -2387,11 +2387,12 @@ sélecteur de la navbar, les `hreflang`).
 
 Les endroits où une modification qui a l'air juste casse autre chose.
 
-## `rtk` masque le code de sortie
+## Lire le code de sortie à part
 
-`rtk tsc && git commit` a déjà committé du code cassé : `rtk` renvoie 0 même
-quand la commande qu'il enveloppe échoue. **Ne jamais utiliser `rtk` comme garde
-dans un `&&`.** Pour vérifier :
+Une ancienne version de `rtk` renvoyait 0 même quand la commande qu'il enveloppe
+échouait : `rtk tsc && git commit` a committé du code cassé. La 0.35 transmet le
+code (vérifié le 27 septembre 2026), mais un `| grep` le perd encore. Pour juger
+une porte :
 
 ```bash
 npx tsc --noEmit ; echo "EXIT=$?"

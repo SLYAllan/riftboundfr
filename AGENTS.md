@@ -99,7 +99,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 
 # Automatismes & sources de vérité (lire avant d'agir)
 
-**Commandes one-shot** (codes de sortie réels — NE PAS passer par `rtk` comme garde dans un `&&`, `rtk` masque l'exit code) :
+**Commandes one-shot** (codes de sortie réels, à lire à part : voir « Commandes ») :
 - `npm run verify` → `tsc --noEmit && next build` (à lancer avant tout push ; vérifier l'EXIT).
 - **`npm run maj:stats` → LA routine de mise à jour des stats.** Corpus des classements,
   tier lists, fiches Légendes et sections chiffrées de `DECKBUILDING-RULES`, dans l'ordre.
@@ -455,10 +455,14 @@ avertissements restent à réduire sans les confondre avec des erreurs.
   `.next/types/validator.ts` garde la liste des routes du dernier build. Lancer
   `npx next build` avant `npm run verify`, dont `tsc` est la première étape.
 
-**`rtk` masque le code de sortie.** Ne jamais écrire `rtk tsc && git commit` :
-du code cassé a déjà été committé comme ça. Pour vérifier, toujours
-en PowerShell `npx tsc --noEmit; Write-Output "EXIT=$LASTEXITCODE"`, et en bash
-`npx tsc --noEmit; echo "EXIT=$?"`.
+**Lire le code de sortie à part.** `rtk` 0.35 le transmet (vérifié le 27 septembre
+2026 : `rtk tsc` rend 2 sur une erreur de type, et le `&&` s'arrête). Une version
+plus ancienne rendait 0, et `rtk tsc && git commit` a laissé committer du code
+cassé. Pour juger une porte : en PowerShell
+`npx tsc --noEmit; Write-Output "EXIT=$LASTEXITCODE"`, en bash
+`npx tsc --noEmit; echo "EXIT=$?"`. Un `| grep` perd le code (en bash :
+`echo "EXIT=${PIPESTATUS[0]}"`). Le hook Codex avertit encore sur `rtk … &&` :
+son message date d'avant la 0.35.
 
 ## Base de données locale
 

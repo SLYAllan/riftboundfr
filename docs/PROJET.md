@@ -224,8 +224,9 @@ npm run dev                      # http://localhost:3000
 `SESSION_SECRET` n'est pas facultatif : sans lui, toute page qui lit une session
 lève une erreur. Le générer avec `openssl rand -hex 32`.
 
-Avant tout push : `npm run verify` (c'est `tsc --noEmit && next build`). Vérifier le
-code de sortie pour de vrai — `rtk` le masque et a déjà laissé passer du code cassé.
+Avant tout push : `npm run verify` (c'est `tsc --noEmit && next build`). Lire son
+code de sortie à part : une ancienne version de `rtk` le masquait et a laissé passer
+du code cassé.
 
 L'état exact de chaque commande, y compris celles qui échouent, est dans `AGENTS.md`
 et `HANDOFF.md`.

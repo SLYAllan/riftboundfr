@@ -15,9 +15,10 @@ Vert = on peut committer. Rien d'autre ne fait office de porte.
 
 ## Les trois pièges
 
-**1. `rtk` masque le code de sortie.** `rtk tsc && git commit` a déjà laissé
-committer du code cassé : `rtk` rend 0 même quand la commande dessous échoue.
-Pour juger un résultat, jamais de `&&` derrière `rtk` :
+**1. Lire le code de sortie à part.** Une ancienne version de `rtk` rendait 0
+même quand la commande dessous échouait, et `rtk tsc && git commit` a laissé
+committer du code cassé. La 0.35 transmet le code (vérifié le 27 septembre 2026),
+mais un `| grep` le perd encore. Pour juger un résultat :
 
 ```bash
 # PowerShell
