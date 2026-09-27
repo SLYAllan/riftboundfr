@@ -93,9 +93,10 @@ async function cartesManquantes(cartes: CarteDeck[], userId: string): Promise<Ca
  * qu'à calculer ces cartes côté serveur : le deck entier, ou seulement ce qui
  * manque à la collection du joueur connecté.
  */
-// Un GET arrive quand l'adresse est collée, rouverte ou rechargée depuis
-// l'onglet que le bouton a ouvert. Il répondait 405 : il renvoie maintenant à la
-// page du deck, sans lire la base, où le bouton refait le POST.
+// Les pages deck portent maintenant le lien du Cart Wizard lui-même
+// (`lienAchatDeck`) : la route ne sert plus qu'aux anciens liens et aux pages
+// restées ouvertes. Un GET (adresse collée, onglet rouvert) renvoie au deck, sans
+// lire la base.
 export function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get("slug");
@@ -159,12 +160,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Aucune carte de ce deck n'est au catalogue CardNexus." }, { status: 404 });
   }
 
-  const url = lienPanier(items);
-  // Le bouton appelle la route en fetch pour journaliser chaque étape et montrer
-  // un échec sur la page (voir `FormulaireAchat`). Le formulaire nu, sans
-  // JavaScript, garde la redirection.
-  if (request.headers.get("accept")?.includes("application/json")) {
-    return NextResponse.json({ url });
-  }
-  return NextResponse.redirect(url, 303);
+  return NextResponse.redirect(lienPanier(items), 303);
 }

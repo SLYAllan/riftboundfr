@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState, useMemo, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "@/components/lien";
 import { LayoutGrid, List, ChevronDown } from "lucide-react";
-import { Bouton, type VarianteBouton } from "@/components/bouton";
-import { lireReponsePanier } from "@/lib/panier-achat";
+import { BoutonLien } from "@/components/bouton";
 import { useCollection } from "@/components/collection/collection-provider";
 import { CardImage } from "@/components/card-image";
 import { CardHover } from "@/components/collection/card-hover";
@@ -26,8 +25,11 @@ interface Props {
   items: CoverageItem[];
   /** Chiffrage du deck. Absent sur le deckbuilder, qui ne lit pas le relevé de prix. */
   prix?: DeckChiffre;
-  /** Où mène « Acheter ce deck ». Voir /api/cardnexus/panier. */
-  lienAchat?: string;
+  /**
+   * Le lien du Cart Wizard, écrit par la page (`lienAchatDeck`). `null` : une carte
+   * manque au catalogue CardNexus. Absent : pas d'achat ici (deckbuilder).
+   */
+  lienAchat?: string | null;
 }
 
 // Prix et cartes manquantes répondent à la même question — « qu'est-ce qu'il me
@@ -39,7 +41,7 @@ interface Props {
 export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
   const t = useT();
   const { loggedIn, quantities } = useCollection();
-  const [resultat, setResultat] = useState<{ cle: string; valeur: DeckCoverage } | null>(null);
+  const [resultat, setResultat] = useState<{ cle: string; valeur: DeckCoverage; lienManquantes: string | null } | null>(null);
   const [loading, setLoading] = useState(false);
   const [erreurCle, setErreurCle] = useState<string | null>(null);
   const [tentative, setTentative] = useState(0);
@@ -81,7 +83,8 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
         })
         .then((data) => {
           if (!Array.isArray(data?.coverage?.entries) || typeof data?.coverage?.totals?.missing !== "number") throw new Error();
-          if (!cancelled) setResultat({ cle: cleDonnees, valeur: data.coverage });
+          const lienManquantes = typeof data.lienManquantes === "string" ? data.lienManquantes : null;
+          if (!cancelled) setResultat({ cle: cleDonnees, valeur: data.coverage, lienManquantes });
         })
         .catch(() => !cancelled && setErreurCle(cleRequete))
         .finally(() => !cancelled && setLoading(false));
@@ -94,6 +97,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
   }, [loggedIn, itemsKey, collKey, tentative, cleDonnees, cleRequete]);
 
   const coverage = resultat?.cle === cleDonnees ? resultat.valeur : null;
+  const lienManquantes = resultat?.cle === cleDonnees ? resultat.lienManquantes : null;
   const erreur = erreurCle === cleRequete;
   const missing = coverage?.totals.missing ?? null;
   const manquantes = coverage?.entries.filter((e) => e.missing > 0) ?? [];
@@ -101,7 +105,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
   // Ce que coûterait le complément : le chiffre qui décide vraiment de l'achat.
   const resteAAcheter = manquantes.reduce((s, e) => s + (prixParNom.get(e.name)?.unitaire ?? 0) * e.missing, 0);
 
-  const achat = prix && prix.total > 0 && lienAchat;
+  const achat = prix && prix.total > 0 && lienAchat !== undefined;
   const releve = prix?.releveLe ? new Date(prix.releveLe).toLocaleDateString("fr-FR") : null;
 
   return (
@@ -126,15 +130,21 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                   ` ${prix.exemplairesSansPrix} carte${prix.exemplairesSansPrix > 1 ? "s" : ""} sans prix connu.`}
               </p>
             </div>
-            {/* Un formulaire et pas un lien : les robots qui balaient les pages
-                de deck suivaient le lien, et la route lit la base à chaque appel.
-                Un POST ne se suit pas. */}
-            <FormulaireAchat action={lienAchat}>
-              {/* Logo blanc : le site n'a que le thème sombre. Dans le calque clair du
-                  survol, globals.css l'inverse avec le texte. */}
-              <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
-              Acheter ce deck
-            </FormulaireAchat>
+            {/* Un vrai lien, écrit par le serveur. Le formulaire d'avant ouvrait un
+                onglet puis attendait la réponse : sur iPhone, Safari met en pause la
+                page d'origine et l'onglet restait vide. */}
+            {lienAchat ? (
+              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener">
+                {/* Logo blanc : le site n'a que le thème sombre. Dans le calque clair du
+                    survol, globals.css l'inverse avec le texte. */}
+                <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
+                Acheter ce deck
+              </BoutonLien>
+            ) : (
+              <p className="max-w-xs text-sm text-ink-muted">
+                {t("Certaines cartes de ce deck ne sont pas au catalogue CardNexus : pas de panier complet.")}
+              </p>
+            )}
           </div>
 
         </>
@@ -175,11 +185,11 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                         deck : acheter le deck entier ferait payer trois fois les
                         cartes déjà en boîte. Le serveur retranche la collection, il
                         ne reçoit aucune liste du navigateur. */}
-                    {lienAchat && (
-                      <FormulaireAchat action={`${lienAchat}&manquantes=1`} variante="contour">
+                    {lienAchat !== undefined && lienManquantes && (
+                      <BoutonLien href={lienManquantes} target="_blank" rel="sponsored nofollow noopener" variante="contour" data-suivi="manquantes">
                         <Image src="/cardnexus/mini-blanc.svg" alt="" width={101} height={100} className="h-4 w-4 opacity-80" />
                         Acheter ce qui me manque
-                      </FormulaireAchat>
+                      </BoutonLien>
                     )}
                   </>
                 ) : null}
@@ -320,64 +330,5 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
         </div>
       )}
     </div>
-  );
-}
-
-/**
- * « Acheter » sans onglet vide. Le formulaire nu ouvrait l'onglet et laissait le
- * serveur rediriger : un 502 ou un refus y restait affiché, page blanche ou JSON
- * brut, sans une ligne dans la console de la page. Ici la page appelle la route,
- * journalise chaque étape (`[CardNexus]` dans la console) et montre l'échec sous
- * le bouton. Le `<form>` reste : il sert sans JavaScript, et analytics.tsx compte
- * la conversion sur son `submit`, qui part avant ce gestionnaire.
- */
-function FormulaireAchat({ action, variante, children }: { action: string; variante?: VarianteBouton; children: ReactNode }) {
-  const t = useT();
-  const [envoi, setEnvoi] = useState(false);
-  const [erreur, setErreur] = useState<string | null>(null);
-
-  async function acheter(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (envoi) return;
-    setEnvoi(true);
-    setErreur(null);
-    // Ouvert pendant le clic : ouvert après la réponse, le bloqueur de fenêtres le refuse.
-    const onglet = window.open("", "_blank");
-    console.info("[CardNexus] Envoi du panier :", action);
-    try {
-      const r = await fetch(action, { method: "POST", headers: { Accept: "application/json" } });
-      const corps: unknown = await r.json().catch(() => null);
-      console.info("[CardNexus] Réponse du serveur :", r.status, corps);
-      const issue = lireReponsePanier(r.status, corps);
-      if ("erreur" in issue) {
-        console.error("[CardNexus] Échec :", issue.erreur);
-        onglet?.close();
-        setErreur(issue.erreur);
-        return;
-      }
-      console.info("[CardNexus] Ouverture du Cart Wizard :", issue.url);
-      if (onglet) {
-        onglet.opener = null;
-        onglet.location.href = issue.url;
-      } else {
-        console.warn("[CardNexus] Nouvel onglet refusé par le navigateur : ouverture dans celui-ci.");
-        window.location.href = issue.url;
-      }
-    } catch (err) {
-      console.error("[CardNexus] Requête impossible :", err);
-      onglet?.close();
-      setErreur("Connexion impossible. Vérifiez votre réseau et réessayez.");
-    } finally {
-      setEnvoi(false);
-    }
-  }
-
-  return (
-    <form action={action} method="POST" target="_blank" rel="noopener sponsored nofollow" onSubmit={acheter}>
-      <Bouton type="submit" variante={variante} aria-busy={envoi}>
-        {children}
-      </Bouton>
-      {erreur && <p role="alert" className="mt-2 max-w-xs text-sm text-red-400">{t(erreur)}</p>}
-    </form>
   );
 }

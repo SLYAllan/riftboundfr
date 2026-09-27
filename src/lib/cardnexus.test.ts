@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, releveAMaigri } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, lienAchatDeck, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, releveAMaigri } from "./cardnexus";
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {
@@ -165,6 +165,14 @@ describe("chiffrerDeck", () => {
     const d = chiffrerDeck([{ riftboundId: "ven-185-166", name: "Kayle, Justified", quantity: 3 }], prix);
     expect(d.total).toBeCloseTo(0.54);
     expect(d.lignes[0].lien).toContain("/22/");
+  });
+
+  it("lienAchatDeck : le lien du panier, ou rien si une carte manque au catalogue", () => {
+    const pitCrew = { riftboundId: "ogn-091-298", name: "Pit Crew", quantity: 3 };
+    expect(lienAchatDeck([pitCrew], prix)).toBe(lienPanier([{ productId: 1, quantity: 3 }]));
+    expect(lienAchatDeck([pitCrew, { riftboundId: "inconnue", name: "Inconnue", quantity: 1 }], prix)).toBeNull();
+    expect(lienAchatDeck([], prix)).toBeNull();
+    expect(lienAchatDeck([pitCrew], null)).toBeNull();
   });
 
   it("sans relevé, rend un total nul et tout en manquant plutôt que de planter", () => {

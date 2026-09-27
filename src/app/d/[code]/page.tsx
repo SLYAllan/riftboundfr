@@ -23,7 +23,7 @@ import type { DecklistCard, DeckSection } from "@/types";
 import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
 import { diffDecks, resumerVersion } from "@/lib/deck-diff";
-import { chargerPrix, chiffrerDeck } from "@/lib/cardnexus";
+import { chargerPrix, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { tr, metaTraduite } from "@/lib/i18n-server";
 import { cache } from "react";
 
@@ -299,7 +299,7 @@ export default async function CommunityDeckPage({ params }: PageProps) {
       <div className="mt-6">
         <DeckCoveragePanel
           prix={chiffrerDeck(cartesChiffrables)}
-          lienAchat={`/api/cardnexus/panier?share=${deck.shareCode}`}
+          lienAchat={lienAchatDeck(cartesChiffrables)}
           items={decklistCards.map((c) => ({
             cardId: c.cardId,
             quantity: c.quantity,

@@ -20,6 +20,8 @@ describe("typeClicAchat", () => {
 
   it("evenementClic : achat, connexion, data-suivi, rien", () => {
     expect(evenementClic(lienPanier([{ productId: 1, quantity: 2 }]), null, O)?.nom).toBe("clic_cardnexus");
+    expect(evenementClic(lienPanier([{ productId: 1, quantity: 2 }]), null, O)?.params.type_achat).toBe("panier");
+    expect(evenementClic(lienPanier([{ productId: 1, quantity: 2 }]), "manquantes", O)?.params.type_achat).toBe("manquantes");
     expect(evenementClic("/en/api/auth/discord", null, O)?.nom).toBe("connexion_discord");
     expect(evenementClic(null, "copie_code_deck", O)?.nom).toBe("copie_code_deck");
     expect(evenementClic("/decks/x", "export_image_deck", O)?.nom).toBe("export_image_deck");

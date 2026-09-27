@@ -28,9 +28,9 @@ export function Analytics() {
   }, []);
 
   // Un seul écouteur pour tout le site : les liens d'achat sont posés par des
-  // pages serveur, qui ne peuvent pas porter un onClick. « Acheter ce deck »
-  // est un formulaire POST, pas un lien : sans l'écoute de `submit`, la
-  // conversion qui rapporte le plus n'était jamais comptée.
+  // pages serveur, qui ne peuvent pas porter un onClick. « Acheter ce deck » est
+  // redevenu un vrai lien (le formulaire laissait un onglet vide sur iPhone) : le
+  // clic suffit, plus besoin d'écouter `submit`.
   useEffect(() => {
     const envoyer = (href: string | null, suivi: string | null) => {
       const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
@@ -45,16 +45,11 @@ export function Analytics() {
         cible.closest("[data-suivi]")?.getAttribute("data-suivi") ?? null,
       );
     };
-    const surEnvoi = (e: SubmitEvent) => {
-      envoyer((e.target as HTMLFormElement).getAttribute("action"), null);
-    };
     document.addEventListener("click", surClic, true);
     document.addEventListener("auxclick", surClic, true);
-    document.addEventListener("submit", surEnvoi, true);
     return () => {
       document.removeEventListener("click", surClic, true);
       document.removeEventListener("auxclick", surClic, true);
-      document.removeEventListener("submit", surEnvoi, true);
     };
   }, []);
 

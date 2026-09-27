@@ -3,6 +3,7 @@ import { getUserFromSession } from "@/lib/session";
 import { prisma } from "@/lib/prisma";
 import { getOwnedByName } from "@/lib/collection-server";
 import { computeDeckCoverage, type DeckCardLike } from "@/lib/collection";
+import { lienAchatDeck } from "@/lib/cardnexus";
 
 interface InItem {
   cardId: string;
@@ -71,5 +72,13 @@ export async function POST(req: Request) {
 
   const owned = await getOwnedByName(user.id);
   const coverage = computeDeckCoverage(owned, deckCards);
-  return NextResponse.json({ loggedIn: true, coverage });
+  // Le lien « Acheter ce qui me manque », calculé sur les mêmes entrées que le
+  // « Il vous manque N cartes » affiché : le panier correspond au chiffre. Il
+  // arrive avec la page, pas au clic (voir lienAchatDeck).
+  const lienManquantes = lienAchatDeck(
+    coverage.entries
+      .filter((e) => e.missing > 0)
+      .map((e) => ({ riftboundId: byId.get(e.cardId)!.riftboundId, name: e.name, quantity: e.missing })),
+  );
+  return NextResponse.json({ loggedIn: true, coverage, lienManquantes });
 }

@@ -14,7 +14,7 @@ import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
-import { chiffrerDeck } from "@/lib/cardnexus";
+import { chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { interdictionsParDate } from "@/lib/bans";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
@@ -175,6 +175,13 @@ export default async function DeckDetailPage({ params }: PageProps) {
     isPartOf: { "@type": "WebSite", name: "Riftbound France", url: urlLangue(SITE, "/", langue) },
   };
 
+  // Les mêmes cartes pour le prix affiché et pour le lien du panier.
+  const cartesAchat = deck.cards.map((dc) => ({
+    riftboundId: dc.card.riftboundId,
+    name: dc.card.name,
+    quantity: dc.quantity,
+  }));
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(deckJsonLd) }} />
@@ -278,14 +285,8 @@ export default async function DeckDetailPage({ params }: PageProps) {
 
       <div className="mt-6">
         <DeckCoveragePanel
-          prix={chiffrerDeck(
-            deck.cards.map((dc) => ({
-              riftboundId: dc.card.riftboundId,
-              name: dc.card.name,
-              quantity: dc.quantity,
-            })),
-          )}
-          lienAchat={`/api/cardnexus/panier?slug=${deck.slug}`}
+          prix={chiffrerDeck(cartesAchat)}
+          lienAchat={lienAchatDeck(cartesAchat)}
           items={decklistCards.map((c) => ({
             cardId: c.cardId,
             quantity: c.quantity,

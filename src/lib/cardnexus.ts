@@ -326,6 +326,19 @@ export function lignesListe(
   return { items, absentes };
 }
 
+/**
+ * Le lien du Cart Wizard pour ces cartes, écrit tel quel dans la page.
+ *
+ * Un vrai lien marche partout. Le formulaire qui passait par /api/cardnexus/panier
+ * ouvrait un onglet puis attendait le serveur : sur iPhone, Safari met en pause la
+ * page qui l'a ouvert, et l'onglet restait vide. `null` si une carte manque au
+ * catalogue : un panier incomplet ne s'appelle pas « Acheter ce deck ».
+ */
+export function lienAchatDeck(cartes: Carte[], prix: FichierPrix | null = chargerPrix()): string | null {
+  const { items, absentes } = lignesListe(cartes, prix);
+  return absentes.length === 0 && items.length > 0 ? lienPanier(items) : null;
+}
+
 /** Chiffre un deck à partir du relevé. Les cartes sans prix ne sont jamais escamotées. */
 export function chiffrerDeck(cartes: Carte[], prix: FichierPrix | null = chargerPrix()): DeckChiffre {
   let total = 0;

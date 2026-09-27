@@ -36,7 +36,11 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   (`releverEnFond`, qui demande `CARDNEXUS_API_KEY` dans Coolify).
   Le prix retenu est **l'impression la moins chère du même nom** : une decklist qui
   cite une surnumérotée ne fait pas payer la surnumérotée.
-  Panier prêt à payer = `/api/cardnexus/panier?slug=` ou `?code=`.
+  Panier prêt à payer = `lienAchatDeck(cartes)`, un vrai lien écrit par la page
+  (et `lienManquantes` de `/api/collection/coverage` pour les cartes qui manquent).
+  Pas de formulaire ni de `window.open` : sur iPhone, Safari met en pause la page
+  d'origine et l'onglet restait vide. `/api/cardnexus/panier` ne sert plus
+  qu'aux anciens liens.
   **Pas de nouvelle fonction bâtie sur le prix** (choix d'Allan, 22 septembre
   2026 : ni valeur de collection, ni historique, ni comparateur d'échange), sauf
   le prix des cartes manquantes d'un deck, via CardNexus.

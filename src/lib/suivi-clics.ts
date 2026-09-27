@@ -43,6 +43,9 @@ export interface Evenement {
 export function evenementClic(href: string | null, suivi: string | null, origine: string): Evenement | null {
   if (href) {
     const achat = typeClicAchat(href, origine);
+    // Le panier des seules cartes manquantes est un lien direct, pareil à celui du
+    // deck entier : seul son `data-suivi="manquantes"` les distingue.
+    if (achat === "panier" && suivi === "manquantes") return { nom: "clic_cardnexus", params: { type_achat: "manquantes" } };
     if (achat) return { nom: "clic_cardnexus", params: { type_achat: achat } };
     try {
       const url = new URL(href, origine);
