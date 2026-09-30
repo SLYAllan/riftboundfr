@@ -20,14 +20,17 @@ seedées en local (28 878 decks). Dehors : 264 Pékin (74), 265 Shenyang (87),
 269 Shenzhen (79), 272 Tianjin (75). **Premières listes d'après le ban du 18** :
 Stacked Deck quitte les cartes flex de Vex.
 
-`maj:stats` sortie 0 : Vendetta 13 168 places sur 43 tournois. **Irelia « À
-REGARDER »** (classée A, 12,3 % contre 9,9 %, p = 0,013) et 16 chiffres périmés
-dans `scripts/tier-tables.ts`, à trancher. Validateur 27 493 listes, 0 écart ;
-`npm run verify` EXIT=0 ; Vitest 396 verts.
+`maj:stats` sortie 0 : Vendetta 13 168 places sur 43 tournois. **Irelia passe
+en S** (12,3 % contre 9,9 %, p = 0,013), à la demande d'Allan. Tous les
+commentaires des tier lists Vendetta et Globale sont réécrits sur le relevé ;
+l'étape 6 dit « les cinq tier lists collent aux chiffres ». `META-KNOWLEDGE.md`
+(section Vendetta, tier toutes ères) et `DECKBUILDING-RULES.md` (tableaux
+globaux, cores de 34 Légendes, titres de section, v13) sont régénérés.
+Validateur 27 493 listes, 0 écart ; `npm run verify` EXIT=0 ; Vitest 396 verts.
 
 **Seedé en prod le 30** : 489 listes hexgate, 55 listes de LA et leurs 28 best-of ;
 prod à 28 979 decks publiés (vérifié par `--etat`). **Reste** : le Deploy Coolify
-(fiches, stats et drapeaux sont des fichiers), et les points de `tier-tables.ts`.
+(fiches, stats et drapeaux sont des fichiers). Tier lists seedées en prod le 30.
 
 ## Session du 22 septembre 2026 — hexgate 245, 247, 249 et 263, en local seulement
 
