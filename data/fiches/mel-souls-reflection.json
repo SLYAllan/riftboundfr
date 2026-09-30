@@ -35,18 +35,18 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -54,12 +54,12 @@
       "noyau": false
     },
     {
-      "name": "Ravenbloom Student",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "name": "Ride The Wind",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ride The Wind",
+      "name": "Ravenbloom Student",
       "role": "Standard, 66 % des listes, 3 exemplaires",
       "noyau": false
     },
@@ -69,12 +69,12 @@
       "noyau": false
     },
     {
-      "name": "Applied Researchers",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "name": "Tideturner",
+      "role": "Souple, 54 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tideturner",
+      "name": "Applied Researchers",
       "role": "Souple, 52 % des listes, 3 exemplaires",
       "noyau": false
     },
@@ -100,18 +100,13 @@
     },
     {
       "name": "Dredge Up",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Smoke Screen",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "65 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
@@ -119,7 +114,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "49 %",
+      "usage": "51 %",
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
@@ -127,22 +122,22 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "41 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ravenbloom Conservatory (33 %)",
-    "Threshold of the Gray (32 %)",
+    "Ravenbloom Conservatory (32 %)",
+    "Threshold of the Gray (31 %)",
     "Frozen Fortress (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 199,
+    "joueursClasses": 211,
     "coupe10": 6,
     "titres": 0,
-    "conversion": "3 %",
-    "tournois": 30,
-    "listesPubliees": 134,
+    "conversion": "2.8 %",
+    "tournois": 34,
+    "listesPubliees": 140,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -155,6 +150,11 @@
         "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       },
       {
+        "placement": "14th",
+        "player": "特特丨自在游戏屋",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-27)"
+      },
+      {
         "placement": "18th",
         "player": "TwistedTCG",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
@@ -163,14 +163,9 @@
         "placement": "19th",
         "player": "CTG Alanzq",
         "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "19th",
-        "player": "星游.九思",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 199 joueurs classés, 30 tournois, dont 134 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 211 joueurs classés, 34 tournois, dont 140 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -12,67 +12,67 @@
   "keyCards": [
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, Gère les gros attaquants, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, Gère les gros attaquants, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Consult the Past",
-      "role": "Standard, Refill de main, 73 % des listes, 3 exemplaires",
+      "role": "Standard, Refill de main, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Guerilla Warfare",
-      "role": "Standard, Refill complémentaire, 64 % des listes, 2 exemplaires",
+      "role": "Standard, Refill complémentaire, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, Removal Unleashed, 55 % des listes, 3 exemplaires",
+      "role": "Souple, Removal Unleashed, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 55 % des listes, 2,5 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Sprite Call",
-      "role": "Souple, Removal cheap, 36 % des listes, 3 exemplaires",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Windsinger",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "name": "Sprite Call",
+      "role": "Souple, Removal cheap, 33 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stupefy",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -83,12 +83,12 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 21,
+    "joueursClasses": 25,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "9.5 %",
-    "tournois": 16,
-    "listesPubliees": 11,
+    "conversion": "8 %",
+    "tournois": 19,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -101,6 +101,11 @@
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
+        "placement": "32th",
+        "player": "西洲读曲",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
+      },
+      {
         "placement": "36th",
         "player": "ibtv.蹙损他淡淡春山",
         "tournament": "S4 Shanghai City Challenge (2026-09-05)"
@@ -109,11 +114,6 @@
         "placement": "42th",
         "player": "FG.流萤",
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "42th",
-        "player": "puco",
-        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
       }
     ]
   },
@@ -135,41 +135,45 @@
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
   },
-  "dataSource": "Classement complet des tournois : 21 joueurs classés, 16 tournois, dont 11 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 25 joueurs classés, 19 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Pyke, Returned": {
-      "usage": "73 %",
+      "usage": "75 %",
       "role": "3 exemplaires en moyenne"
     },
     "Teemo, Strategist": {
-      "usage": "64 %",
+      "usage": "58 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Vex, Apathetic": {
-      "usage": "55 %",
-      "role": "1,5 exemplaire en moyenne"
-    },
     "Teemo, Scout": {
-      "usage": "55 %",
+      "usage": "58 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "58 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "36 %",
+      "usage": "33 %",
       "role": "3 exemplaires en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "36 %",
+      "usage": "33 %",
       "role": "2,5 exemplaires en moyenne"
     },
-    "Evelynn, Entrancing": {
-      "usage": "36 %",
+    "Kha'Zix, Mutating Horror": {
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Tree (64 %)",
-    "Startipped Peak (45 %)",
-    "Grove of the God-Willow (45 %)"
+    "Bandle Tree (58 %)",
+    "Grove of the God-Willow (50 %)",
+    "Startipped Peak (42 %)"
   ],
   "setDesChiffres": "Vendetta"
 }

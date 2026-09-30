@@ -39,7 +39,9 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // `maj:stats` tournera sur des listes d'après le 18.
     //
     // Vex s'y ajoute le 22 septembre : les fiches montrent maintenant leurs cartes
-    // flex, et Stacked Deck est l'une des siennes (54 % des listes).
+    // flex, et Stacked Deck est l'une des siennes (54 % des listes). Elle en
+    // ressort le 30 septembre, avec les City Challenge chinoises du 26 et du 27 :
+    // premières listes d'après le ban, Stacked Deck quitte ses cartes flex.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
@@ -54,7 +56,6 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "mel-souls-reflection.json",
       "pyke-bloodharbor-ripper.json",
       "sivir-battle-mistress.json",
-      "vex-gloomist.json",
       "yasuo-unforgiven.json",
       "zed-master-of-shadows.json",
     ]);

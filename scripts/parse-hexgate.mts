@@ -40,6 +40,8 @@ const VILLES: Record<string, string> = {
   "杭州": "Hangzhou",
   "福州": "Fuzhou",
   "佛山": "Foshan",
+  "重庆": "Chongqing",
+  "南京": "Nanjing",
 };
 
 /**

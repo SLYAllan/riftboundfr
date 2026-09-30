@@ -12,7 +12,7 @@
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "name": "Rampage",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -36,28 +36,33 @@
       "noyau": false
     },
     {
-      "name": "Baron Nashor",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "name": "Last Rites",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Elder Dragon",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Scryer's Bloom",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Catalyst of Aeons",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -66,13 +71,8 @@
       "noyau": false
     },
     {
-      "name": "Last Rites",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Flurry of Blades",
-      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "name": "Baron Nashor",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -83,12 +83,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "joueursClasses": 78,
-    "coupe10": 10,
+    "joueursClasses": 101,
+    "coupe10": 11,
     "titres": 0,
-    "conversion": "12.8 %",
-    "tournois": 19,
-    "listesPubliees": 43,
+    "conversion": "10.9 %",
+    "tournois": 22,
+    "listesPubliees": 47,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -142,7 +142,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "44 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
@@ -151,10 +151,10 @@
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (93 %)",
+    "Sigil of the Storm (94 %)",
     "Forgotten Monument (53 %)",
     "Dragon Roost (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 78 joueurs classés, 19 tournois, dont 43 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 101 joueurs classés, 22 tournois, dont 47 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

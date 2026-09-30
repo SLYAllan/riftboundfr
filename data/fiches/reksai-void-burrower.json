@@ -15,7 +15,7 @@
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -39,34 +39,29 @@
       "noyau": true
     },
     {
-      "name": "Inferna",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Cleave",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Inferna",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Honest Broker",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Faithful Manufactor",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Blood Rush",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Shadow Fiend",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
-      "noyau": false
     },
     {
       "name": "Sharkling",
@@ -74,24 +69,39 @@
       "noyau": false
     },
     {
-      "name": "Dragon Form",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "name": "Shadow Fiend",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Hidden Blade",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "name": "Dragon Form",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 426,
-    "coupe10": 49,
+    "joueursClasses": 523,
+    "coupe10": 56,
     "titres": 0,
-    "conversion": "11.5 %",
-    "tournois": 37,
-    "listesPubliees": 233,
+    "conversion": "10.7 %",
+    "tournois": 43,
+    "listesPubliees": 257,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "猫岛巡礼.No.Jay",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-27)"
+      },
+      {
+        "placement": "2nd",
+        "player": "HBG.windman",
+        "tournament": "S4 Shanghai City Challenge (2026-09-27)"
+      },
       {
         "placement": "2nd",
         "player": "XYZ.媄猗",
@@ -106,16 +116,6 @@
         "placement": "3rd",
         "player": "skilliton",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "3rd",
-        "player": "欧派",
-        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "5th",
-        "player": "Satame",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       }
     ]
   },
@@ -126,22 +126,22 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "69 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Zed, From the Shadows": {
-      "usage": "50 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "The Candlelit Sanctum (95 %)",
-    "Forbidding Waste (55 %)",
-    "Mystic Vortex (46 %)",
-    "Trifarian War Camp (45 %)",
-    "Zaun Warrens (41 %)"
+    "Forbidding Waste (58 %)",
+    "Mystic Vortex (45 %)",
+    "Trifarian War Camp (44 %)",
+    "Zaun Warrens (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 426 joueurs classés, 37 tournois, dont 233 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 523 joueurs classés, 43 tournois, dont 257 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

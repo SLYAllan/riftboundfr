@@ -63,7 +63,7 @@
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "name": "Back Off",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -88,27 +88,27 @@
     },
     {
       "name": "Charm",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Cull the Weak",
       "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Shadow's Call",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -124,13 +124,18 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 416,
-    "coupe10": 49,
-    "titres": 2,
-    "conversion": "11.8 %",
-    "tournois": 37,
-    "listesPubliees": 217,
+    "joueursClasses": 516,
+    "coupe10": 59,
+    "titres": 3,
+    "conversion": "11.4 %",
+    "tournois": 43,
+    "listesPubliees": 240,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "KuSel",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
+      },
       {
         "placement": "1st",
         "player": "🐊司书🐊",
@@ -150,11 +155,6 @@
         "placement": "2nd",
         "player": "Nephox FL",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "3rd",
-        "player": "MICE Squirtle",
-        "tournament": "Barcelona Regional Qualifier"
       }
     ]
   },
@@ -181,11 +181,11 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "81 %",
+      "usage": "80 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "56 %",
+      "usage": "57 %",
       "role": "1 exemplaire en moyenne"
     }
   },
@@ -193,8 +193,8 @@
     "Trifarian War Camp (98 %)",
     "Hall of Legends (97 %)",
     "Ornn's Forge (65 %)",
-    "Seat of Power (33 %)"
+    "Seat of Power (34 %)"
   ],
-  "dataSource": "Classement complet des tournois : 416 joueurs classés, 37 tournois, dont 217 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 516 joueurs classés, 43 tournois, dont 240 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

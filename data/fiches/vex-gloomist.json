@@ -28,17 +28,32 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Standard, 81 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -47,53 +62,38 @@
       "noyau": false
     },
     {
-      "name": "Tornado Warrior",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Charm",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Steel Paws",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Abandon",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Stacked Deck",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "name": "Abandon",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -108,12 +108,12 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 255,
-    "coupe10": 25,
+    "joueursClasses": 363,
+    "coupe10": 37,
     "titres": 1,
-    "conversion": "9.8 %",
-    "tournois": 33,
-    "listesPubliees": 147,
+    "conversion": "10.2 %",
+    "tournois": 39,
+    "listesPubliees": 175,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -127,6 +127,11 @@
       },
       {
         "placement": "4th",
+        "player": "修修",
+        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
+      },
+      {
+        "placement": "4th",
         "player": "扶光",
         "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
       },
@@ -134,11 +139,6 @@
         "placement": "5th",
         "player": "闪电家.ai.小老虎",
         "tournament": "S4 Shenyang Regional Open (2026-09-12)"
-      },
-      {
-        "placement": "5th",
-        "player": "EN",
-        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
       }
     ]
   },
@@ -165,18 +165,18 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "71 %",
+      "usage": "74 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "61 %",
+      "usage": "60 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (67 %)",
-    "Fortified Position (58 %)"
+    "Startipped Peak (63 %)",
+    "Fortified Position (62 %)"
   ],
-  "dataSource": "Classement complet des tournois : 255 joueurs classés, 33 tournois, dont 147 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 363 joueurs classés, 39 tournois, dont 175 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

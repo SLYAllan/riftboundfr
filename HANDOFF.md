@@ -1,5 +1,34 @@
 # HANDOFF — état des lieux
 
+## Session du 30 septembre 2026 — RQ Los Angeles et hexgate 266 à 271, en local seulement
+
+**RQ Los Angeles** (riftdecks 17978, 26 septembre, 2 165 joueurs, 1 966 classés) :
+85 listes publiées, 55 seedées en local, 28 best-of. Les 30 autres n'ont pas de
+réserve à la source (56 cartes, pas 66), dont le vainqueur Rengar et six du Top 8 :
+écartées, pas complétées. Pas encore d'article Riot `los-angeless-top-decks` (404
+le 30) : quand il sort, `parse-playriftbound.ts` rattrape le Top 8 complet.
+
+Le classement de LA n'affiche qu'une tranche (« Top64 », « Other ») après le 3e.
+`classements-tournois.mts` lit alors la position de la ligne : recoupée sur les
+pages de deck, elle donne le rang exact jusqu'au 415e, puis un décalage d'une
+place. La coupe des stats (10 %, ~197e) tombe avant. Le dossier des decks porte
+aussi les pages de classement : un contexte déjà compté est maintenant sauté.
+
+**Hexgate** : 264 à 272 relevés. Entrent 266 Chongqing (95 joueurs), 267 Nanjing
+(101), 268 Guangzhou (105), 270 Fuzhou (98), 271 Shanghai (128) : 489 listes
+seedées en local (28 878 decks). Dehors : 264 Pékin (74), 265 Shenyang (87),
+269 Shenzhen (79), 272 Tianjin (75). **Premières listes d'après le ban du 18** :
+Stacked Deck quitte les cartes flex de Vex.
+
+`maj:stats` sortie 0 : Vendetta 13 168 places sur 43 tournois. **Irelia « À
+REGARDER »** (classée A, 12,3 % contre 9,9 %, p = 0,013) et 16 chiffres périmés
+dans `scripts/tier-tables.ts`, à trancher. Validateur 27 493 listes, 0 écart ;
+`npm run verify` EXIT=0 ; Vitest 396 verts.
+
+**Reste** : seed prod (`scripts/prod-tunnel.mts`, `seed-scraped-decks.ts` pour
+hexgate-266…271, `seed-tournament-decks.ts` puis `mark-bestof-tournois.mts` pour
+LA), puis le Deploy.
+
 ## Session du 22 septembre 2026 — hexgate 245, 247, 249 et 263, en local seulement
 
 **Règle changée par Allan** : une City Challenge qui approche les 100 joueurs entre,

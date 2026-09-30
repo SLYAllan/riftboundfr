@@ -27,11 +27,6 @@
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Switcheroo",
       "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
@@ -52,13 +47,8 @@
       "noyau": true
     },
     {
-      "name": "Overzealous Fan",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Cleave",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "name": "Stacked Deck",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -67,18 +57,28 @@
       "noyau": false
     },
     {
-      "name": "Perfect Execution",
-      "role": "Standard, 72 % des listes, 1 exemplaire",
+      "name": "Cleave",
+      "role": "Standard, 85 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Overzealous Fan",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -98,7 +98,7 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Souple, 31 % des listes, 1,5 exemplaire",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -114,12 +114,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 299,
-    "coupe10": 32,
+    "joueursClasses": 354,
+    "coupe10": 33,
     "titres": 1,
-    "conversion": "10.7 %",
-    "tournois": 34,
-    "listesPubliees": 136,
+    "conversion": "9.3 %",
+    "tournois": 39,
+    "listesPubliees": 149,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -142,9 +142,9 @@
         "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
       },
       {
-        "placement": "5th",
-        "player": "CCC",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+        "placement": "4th",
+        "player": "ZL-Hasashi🦁",
+        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
       }
     ]
   },
@@ -169,39 +169,39 @@
   },
   "champions": {
     "Draven, Showboat": {
-      "usage": "99 %",
+      "usage": "98 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "97 %",
+      "usage": "96 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "94 %",
+      "usage": "93 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "80 %",
+      "usage": "81 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "65 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "57 %",
+      "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "43 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (76 %)",
-    "Zaun Warrens (62 %)",
-    "Amateur Recital (56 %)"
+    "Treasure Hoard (73 %)",
+    "Zaun Warrens (57 %)",
+    "Amateur Recital (54 %)"
   ],
-  "dataSource": "Classement complet des tournois : 299 joueurs classés, 34 tournois, dont 136 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 354 joueurs classés, 39 tournois, dont 149 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

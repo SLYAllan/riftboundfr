@@ -37,33 +37,33 @@
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "name": "Ride The Wind",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ride The Wind",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "name": "Stacked Deck",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Grim Resolve",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -83,12 +83,12 @@
     },
     {
       "name": "First Mate",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -102,12 +102,12 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 242,
-    "coupe10": 24,
+    "joueursClasses": 309,
+    "coupe10": 33,
     "titres": 0,
-    "conversion": "9.9 %",
-    "tournois": 30,
-    "listesPubliees": 94,
+    "conversion": "10.7 %",
+    "tournois": 36,
+    "listesPubliees": 104,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -172,7 +172,7 @@
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "46 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Zed, Without a Sound": {
@@ -180,16 +180,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Qiyana, Victorious": {
-      "usage": "35 %",
+      "usage": "34 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (93 %)",
+    "Forbidding Waste (92 %)",
     "Star Spring (63 %)",
     "Monastery of Hirana (60 %)",
-    "Sandswept Tomb (51 %)"
+    "Sandswept Tomb (53 %)"
   ],
-  "dataSource": "Classement complet des tournois : 242 joueurs classés, 30 tournois, dont 94 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 309 joueurs classés, 36 tournois, dont 104 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -17,11 +17,6 @@
   },
   "keyCards": [
     {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Stupefy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -37,7 +32,7 @@
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
+      "name": "Bellows Breath",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -48,32 +43,42 @@
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pack of Wonders",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "The List",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Deadly Flourish",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Trove",
       "role": "Standard, 86 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The List",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -82,33 +87,18 @@
       "noyau": false
     },
     {
-      "name": "Singularity",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Hard Bargain",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Eclipse",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Wind and Ghosts",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -124,13 +114,18 @@
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "joueursClasses": 231,
-    "coupe10": 34,
+    "joueursClasses": 292,
+    "coupe10": 40,
     "titres": 0,
-    "conversion": "14.7 %",
-    "tournois": 36,
-    "listesPubliees": 111,
+    "conversion": "13.7 %",
+    "tournois": 42,
+    "listesPubliees": 128,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "无极卡牌.牢底",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
+      },
       {
         "placement": "3rd",
         "player": "霆霆",
@@ -150,11 +145,6 @@
         "placement": "7th",
         "player": "Berkunn",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "7th",
-        "player": "羽芒丨3+x丨不吃糖",
-        "tournament": "S4 Foshan City Challenge (2026-09-06)"
       }
     ]
   },
@@ -186,15 +176,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "81 %",
+      "usage": "82 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (89 %)",
-    "Sigil of the Storm (87 %)",
-    "Heisho, Shell of the World (72 %)"
+    "Frozen Fortress (90 %)",
+    "Sigil of the Storm (86 %)",
+    "Heisho, Shell of the World (66 %)"
   ],
-  "dataSource": "Classement complet des tournois : 231 joueurs classés, 36 tournois, dont 111 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 292 joueurs classés, 42 tournois, dont 128 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

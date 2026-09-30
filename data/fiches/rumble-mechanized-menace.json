@@ -50,27 +50,27 @@
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 70 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Production Surge",
-      "role": "Standard, 65 % des listes, 2,5 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Production Surge",
+      "role": "Standard, 63 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
@@ -80,27 +80,27 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 125,
+    "joueursClasses": 149,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "0.8 %",
-    "tournois": 19,
-    "listesPubliees": 40,
+    "conversion": "0.7 %",
+    "tournois": 20,
+    "listesPubliees": 41,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -145,9 +145,9 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (43 %)",
-    "Zaun Warrens (43 %)"
+    "Rockfall Path (44 %)",
+    "Zaun Warrens (44 %)"
   ],
-  "dataSource": "Classement complet des tournois : 125 joueurs classés, 19 tournois, dont 40 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 149 joueurs classés, 20 tournois, dont 41 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

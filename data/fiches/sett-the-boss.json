@@ -32,62 +32,62 @@
     },
     {
       "name": "First Mate",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Repulse",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Repulse",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Arena Bar",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Sea Monkey",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Fae Dragon",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Warmog's Armor",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -98,12 +98,12 @@
     "11 listes sur les 2365 du set Vendetta, sept tournois, aucun Top 8 : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "joueursClasses": 28,
+    "joueursClasses": 31,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "3.6 %",
-    "tournois": 16,
-    "listesPubliees": 17,
+    "conversion": "3.2 %",
+    "tournois": 18,
+    "listesPubliees": 18,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -126,9 +126,9 @@
         "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
       },
       {
-        "placement": "58th",
-        "player": "起飞",
-        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+        "placement": "49th",
+        "player": "沉星之间-CBC",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
       }
     ]
   },
@@ -151,35 +151,35 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "82 %",
+      "usage": "83 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "71 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "59 %",
+      "usage": "61 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "47 %",
-      "role": "2,5 exemplaires en moyenne"
+      "usage": "50 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "41 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Kingpin": {
-      "usage": "41 %",
+      "usage": "39 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Monastery of Hirana (94 %)",
-    "Valley of Idols (82 %)",
-    "Sunken Temple (82 %)"
+    "Valley of Idols (83 %)",
+    "Sunken Temple (83 %)"
   ],
-  "dataSource": "Classement complet des tournois : 28 joueurs classés, 16 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 31 joueurs classés, 18 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

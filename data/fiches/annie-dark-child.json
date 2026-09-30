@@ -9,89 +9,89 @@
   "tier": 4,
   "keyCards": [
     {
-      "name": "Stacked Deck",
+      "name": "Flash",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Flash",
-      "role": "Cœur du deck, 100 % des listes, 2,5 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Gust Monk",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tideturner",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 80 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Star-Crossed",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Against the Odds",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "name": "Tideturner",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Against the Odds",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Blood Rush",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 24,
+    "joueursClasses": 28,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "12.5 %",
-    "tournois": 13,
-    "listesPubliees": 12,
+    "conversion": "10.7 %",
+    "tournois": 16,
+    "listesPubliees": 15,
     "bestPlacements": [
+      {
+        "placement": "16th",
+        "player": "Acc·Muk真夜",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
+      },
       {
         "placement": "19th",
         "player": "羽芒丨3+x丨不吃糖",
@@ -111,11 +111,6 @@
         "placement": "38th",
         "player": "善良的可可云",
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "39th",
-        "player": "NickGauthier",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       }
     ]
   },
@@ -138,22 +133,27 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "75 %",
+      "usage": "80 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Pouncing": {
-      "usage": "50 %",
+      "usage": "60 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Returned": {
+      "usage": "40 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kha'Zix, Mutating Horror": {
       "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Seat of Power (83 %)",
-    "Zaun Warrens (75 %)"
+    "Seat of Power (87 %)",
+    "Zaun Warrens (67 %)",
+    "Grove of the God-Willow (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 24 joueurs classés, 13 tournois, dont 12 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 16 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -35,13 +35,13 @@
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -51,12 +51,12 @@
     },
     {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -76,7 +76,7 @@
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -86,32 +86,32 @@
     },
     {
       "name": "Gust",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Shadow Order Disciple",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
       "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Abandon",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -130,21 +130,21 @@
       "role": "2 exemplaires en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "89 %",
+      "usage": "86 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (94 %)",
-    "Zaun Warrens (90 %)"
+    "Minefield (93 %)",
+    "Zaun Warrens (89 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1191,
-    "coupe10": 220,
+    "joueursClasses": 1381,
+    "coupe10": 263,
     "titres": 10,
-    "conversion": "18.5 %",
-    "tournois": 37,
-    "listesPubliees": 665,
+    "conversion": "19 %",
+    "tournois": 43,
+    "listesPubliees": 695,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -173,6 +173,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1191 joueurs classés, 37 tournois, dont 665 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1381 joueurs classés, 43 tournois, dont 695 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

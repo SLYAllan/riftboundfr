@@ -81,6 +81,8 @@ const CONTEXTES: Record<string, { contexte: string; set: string; decks?: string 
   // Vendetta : Singapour, 38 listes publiées par Riot seulement. Pas de dossier
   // de decks riftdecks : la Légende se lit dans la ligne, comme à Barcelone.
   "singapore-rq-classement": { contexte: "Singapore Regional Qualifier", set: "Vendetta" },
+  // Los Angeles, 2 165 joueurs, 85 listes publiées sur riftdecks.
+  "los-angeles-rq-classement": { contexte: "Los Angeles Regional Qualifier", set: "Vendetta", decks: "los-angeles-rq" },
 
   // Origines : Houston, 80 listes publiées sur 1 347 joueurs.
   "houston-rq-classement": { contexte: "Houston Regional Qualifier", set: "Origins", decks: "houston-rq" },
@@ -143,8 +145,14 @@ function lignesRiftdecks(dossier: string, dossierDecks?: string): Array<{ rang: 
   for (const page of pages) {
     for (const ligne of readFileSync(join(RAW, dossier, page), "utf8").split("\n")) {
       const rang = ligne.match(/^\|\s*\*\*(\d+)(?:st|nd|rd|th)\*\*/);
-      if (!rang) continue;
-      const n = Number(rang[1]);
+      // Los Angeles n'affiche qu'une tranche (« Top64 », « Other ») après le 3e.
+      // L'ordre des lignes suit le classement : recoupé sur les pages de deck, il
+      // donne le rang exact jusqu'au 415e et se décale d'une place vers le 434e.
+      // La coupe à 10 % du champ tombe bien avant. On ne lit que le rendu large,
+      // l'étroit répète la même ligne.
+      const tranche = !rang && /^\|\s*\*\*(?:Top\d+|Other)\*\*<br>[^|]*\|\s*\|/.test(ligne);
+      if (!rang && !tranche) continue;
+      const n = rang ? Number(rang[1]) : parRang.size + 1;
       // Chaque deck paraît deux fois par page (rendu large et rendu étroit).
       if (parRang.has(n)) continue;
 
@@ -253,6 +261,11 @@ async function main() {
     //    1 670, Houston 66 pour 1 347. Les laisser entrer ferait passer un top 120
     //    pour un tournoi entier, avec une coupe à 10 % de douze joueurs. C'est
     //    exactement le biais qu'on corrige : ne pas le réintroduire par le corpus.
+    // `scrape-tournoi.sh` garde aussi les pages de classement dans le dossier des
+    // decks : Los Angeles se lisait deux fois, par `los-angeles-rq` et par
+    // `los-angeles-rq-classement`.
+    if (rapport.some((r) => r.contexte === contexte)) continue;
+
     const reels = joueursDeclares(contexte);
     if (reels && lignes.length < reels * 0.5) {
       console.log(

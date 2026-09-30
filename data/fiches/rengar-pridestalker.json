@@ -23,21 +23,26 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pit Rookie",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Grim Apothecary",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -47,38 +52,33 @@
       "noyau": true
     },
     {
-      "name": "Grim Apothecary",
+      "name": "Kinkou Initiate",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "First Mate",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 84 % des listes, 1 exemplaire",
+      "role": "Standard, 85 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Pakaa Cub",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -93,13 +93,18 @@
     "35 listes en dix-huit tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 386,
-    "coupe10": 52,
-    "titres": 1,
-    "conversion": "13.5 %",
-    "tournois": 34,
-    "listesPubliees": 152,
+    "joueursClasses": 497,
+    "coupe10": 66,
+    "titres": 2,
+    "conversion": "13.3 %",
+    "tournois": 40,
+    "listesPubliees": 169,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "DSG Prismaticism",
+        "tournament": "Los Angeles Regional Qualifier"
+      },
       {
         "placement": "1st",
         "player": "Prismaticismism",
@@ -112,18 +117,13 @@
       },
       {
         "placement": "3rd",
-        "player": "Ai.No.天一",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
+        "player": "DFL.诺亚",
+        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
       },
       {
         "placement": "3rd",
-        "player": "GREY—神切ipe001",
-        "tournament": "S4 Hangzhou City Challenge (2026-09-19)"
-      },
-      {
-        "placement": "4th",
-        "player": "SD.Whit1xX",
-        "tournament": "S4 Foshan City Challenge (2026-09-06)"
+        "player": "Ai.No.天一",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
       }
     ]
   },
@@ -163,15 +163,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "65 %",
+      "usage": "66 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (95 %)",
-    "Emperor's Dais (86 %)",
-    "Seat of Power (83 %)"
+    "Star Spring (96 %)",
+    "Emperor's Dais (87 %)",
+    "Seat of Power (84 %)"
   ],
-  "dataSource": "Classement complet des tournois : 386 joueurs classés, 34 tournois, dont 152 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 497 joueurs classés, 40 tournois, dont 169 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

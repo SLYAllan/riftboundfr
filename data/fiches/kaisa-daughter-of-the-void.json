@@ -29,12 +29,12 @@
       "noyau": true
     },
     {
-      "name": "Hextech Ray",
+      "name": "Temporal Breach",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Temporal Breach",
+      "name": "Hextech Ray",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -60,12 +60,12 @@
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 86 % des listes, 1 exemplaire",
+      "role": "Standard, 87 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -80,7 +80,7 @@
     },
     {
       "name": "Retreat",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
+      "role": "Standard, 79 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -105,7 +105,7 @@
     },
     {
       "name": "Cleave",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -115,12 +115,12 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 422,
-    "coupe10": 35,
+    "joueursClasses": 449,
+    "coupe10": 37,
     "titres": 2,
-    "conversion": "8.3 %",
-    "tournois": 37,
-    "listesPubliees": 384,
+    "conversion": "8.2 %",
+    "tournois": 43,
+    "listesPubliees": 402,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -157,12 +157,12 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (86 %)",
-    "Frozen Fortress (84 %)",
+    "Rockfall Path (87 %)",
+    "Frozen Fortress (85 %)",
     "Void Gate (77 %)",
     "Heisho, Shell of the World (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 422 joueurs classés, 37 tournois, dont 384 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 449 joueurs classés, 43 tournois, dont 402 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

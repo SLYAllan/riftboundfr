@@ -43,12 +43,12 @@
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Lilting Lullaby",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "role": "Standard, 84 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -67,43 +67,43 @@
       "noyau": false
     },
     {
-      "name": "Mask of Foresight",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "name": "Unchecked Power",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Unchecked Power",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "name": "Mask of Foresight",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Heart of Dark Ice",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Plundering Poro",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -119,12 +119,12 @@
     "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "joueursClasses": 245,
-    "coupe10": 16,
+    "joueursClasses": 320,
+    "coupe10": 21,
     "titres": 1,
-    "conversion": "6.5 %",
-    "tournois": 34,
-    "listesPubliees": 126,
+    "conversion": "6.6 %",
+    "tournois": 40,
+    "listesPubliees": 148,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -177,15 +177,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "40 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Dusk Rose Lab (94 %)",
+    "Dusk Rose Lab (95 %)",
     "Black Flame Altar (75 %)",
-    "Seat of Power (69 %)"
+    "Seat of Power (71 %)"
   ],
-  "dataSource": "Classement complet des tournois : 245 joueurs classés, 34 tournois, dont 126 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 320 joueurs classés, 40 tournois, dont 148 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

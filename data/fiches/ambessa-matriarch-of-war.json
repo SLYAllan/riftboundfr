@@ -30,27 +30,22 @@
   "keyCards": [
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Legion Marauder",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "role": "Standard, 76 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -60,37 +55,42 @@
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Standard, 63 % des listes, 1,5 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tactical Retreat",
       "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Solari Sunhawk",
       "role": "Souple, 39 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tactical Retreat",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -100,30 +100,30 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "61 %",
+      "usage": "63 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "49 %",
+      "usage": "50 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "43 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (73 %)",
-    "Sunken Temple (47 %)",
-    "Sandswept Tomb (33 %)"
+    "Risen Altar (74 %)",
+    "Sunken Temple (46 %)",
+    "Sandswept Tomb (35 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 127,
+    "joueursClasses": 165,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "0.8 %",
-    "tournois": 22,
-    "listesPubliees": 51,
+    "conversion": "0.6 %",
+    "tournois": 24,
+    "listesPubliees": 54,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -152,6 +152,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 127 joueurs classés, 22 tournois, dont 51 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 165 joueurs classés, 24 tournois, dont 54 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

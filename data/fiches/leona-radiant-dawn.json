@@ -26,63 +26,68 @@
       "noyau": true
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, protection gear, 100 % des listes, 3 exemplaires",
+      "name": "Call to Glory",
+      "role": "Cœur du deck, rally surprise, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 94 % des listes, 3 exemplaires",
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, protection gear, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, early game, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, early game, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 71 % des listes, 2 exemplaires",
+      "role": "Standard, spell signature, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, finisher, 65 % des listes, 2 exemplaires",
+      "role": "Standard, finisher, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thwonk!",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Affectionate Poro",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mournful Witness",
-      "role": "Souple, 47 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Souple, 47 % des listes, 1,5 exemplaire",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lonely Poro",
-      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ki Barrier",
       "role": "Souple, 35 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Meditation",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -92,25 +97,25 @@
       "role": "3 exemplaires en moyenne"
     },
     "Leona, Determined": {
-      "usage": "94 %",
+      "usage": "90 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "88 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Nami, Headstrong": {
-      "usage": "41 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "40 %",
+      "role": "2,5 exemplaires en moyenne"
     },
     "Fiora, Victorious": {
       "usage": "35 %",
-      "role": "2,5 exemplaires en moyenne"
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (100 %)",
-    "Sunken Temple (82 %)",
+    "Monastery of Hirana (95 %)",
+    "Sunken Temple (80 %)",
     "Amateur Recital (35 %)"
   ],
   "strengths": [
@@ -120,17 +125,22 @@
     "9 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 21,
+    "joueursClasses": 25,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "4.8 %",
-    "tournois": 11,
-    "listesPubliees": 17,
+    "conversion": "4 %",
+    "tournois": 15,
+    "listesPubliees": 20,
     "bestPlacements": [
       {
         "placement": "9th",
         "player": "公爵",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "10th",
+        "player": "TDF.忘了",
+        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
       },
       {
         "placement": "45th",
@@ -146,18 +156,13 @@
         "placement": "57th",
         "player": "era",
         "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "70th",
-        "player": "公爵",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 21 joueurs classés, 11 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 25 joueurs classés, 15 tournois, dont 20 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

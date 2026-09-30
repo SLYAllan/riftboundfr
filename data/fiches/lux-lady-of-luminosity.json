@@ -19,73 +19,73 @@
       "noyau": true
     },
     {
+      "name": "Time Warp",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Sacrifice",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Standard, 80 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Dredge Up",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shadow's Call",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dredge Up",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Soaring Scout",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Seal of Insight",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Promising Future",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "The Ruination",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Seal of Insight",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Promising Future",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 48,
+    "joueursClasses": 50,
     "coupe10": 5,
     "titres": 0,
-    "conversion": "10.4 %",
-    "tournois": 17,
-    "listesPubliees": 20,
+    "conversion": "10 %",
+    "tournois": 19,
+    "listesPubliees": 21,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -98,6 +98,11 @@
         "tournament": "S4 Hangzhou City Challenge (2026-09-19)"
       },
       {
+        "placement": "21th",
+        "player": "不凡·风色",
+        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
+      },
+      {
         "placement": "23th",
         "player": "元气幻界-冷漠降临",
         "tournament": "S4 Wuhan City Challenge (2026-08-08)"
@@ -106,11 +111,6 @@
         "placement": "31th",
         "player": "jasoniltg",
         "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "33th",
-        "player": "真新人",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       }
     ]
   },
@@ -121,20 +121,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Ekko, Recurrent": {
-      "usage": "80 %",
+      "usage": "76 %",
       "role": "3 exemplaires en moyenne"
     },
     "Renata Glasc, Mastermind": {
-      "usage": "35 %",
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forgotten Monument (80 %)",
-    "The Papertree (70 %)",
-    "Sigil of the Storm (55 %)"
+    "Forgotten Monument (76 %)",
+    "The Papertree (67 %)",
+    "Sigil of the Storm (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 48 joueurs classés, 17 tournois, dont 20 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 50 joueurs classés, 19 tournois, dont 21 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Gros sorts et pioche",
   "legendAbility": "Quand vous jouez un sort qui coûte 5 énergie ou plus, piochez une carte.",
   "gameplan": {

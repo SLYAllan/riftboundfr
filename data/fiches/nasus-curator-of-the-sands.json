@@ -45,18 +45,18 @@
       "noyau": true
     },
     {
-      "name": "Find Your Center",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Scuttle Crab",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Find Your Center",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Stupefy",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -66,42 +66,42 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Retreat",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "name": "Charm",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tasty Faefolk",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -111,35 +111,35 @@
     },
     {
       "name": "Siphoning Strike",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Sprite Queen",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "name": "Time Warp",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "94 %",
+      "usage": "93 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Vilemaw's Lair (48 %)",
-    "The Papertree (40 %)",
-    "Forgotten Monument (39 %)",
-    "Altar of Blood (39 %)",
+    "Vilemaw's Lair (47 %)",
+    "Altar of Blood (40 %)",
+    "The Papertree (39 %)",
+    "Forgotten Monument (38 %)",
     "Rockfall Path (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 413,
-    "coupe10": 23,
+    "joueursClasses": 465,
+    "coupe10": 26,
     "titres": 2,
     "conversion": "5.6 %",
-    "tournois": 35,
-    "listesPubliees": 222,
+    "tournois": 41,
+    "listesPubliees": 238,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -158,16 +158,16 @@
       },
       {
         "placement": "4th",
-        "player": "白衣",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+        "player": "DWT-老默（恩师杰哥）",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-27)"
       },
       {
-        "placement": "5th",
-        "player": "ForGot",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+        "placement": "4th",
+        "player": "白衣",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 413 joueurs classés, 35 tournois, dont 222 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 465 joueurs classés, 41 tournois, dont 238 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

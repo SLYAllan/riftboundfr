@@ -53,7 +53,7 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -63,52 +63,57 @@
     },
     {
       "name": "En Garde",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Guardian Angel",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Flash",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Gust",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flash",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Twilight Shroud",
       "role": "Souple, 31 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -137,12 +142,12 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 777,
-    "coupe10": 89,
+    "joueursClasses": 1010,
+    "coupe10": 124,
     "titres": 2,
-    "conversion": "11.5 %",
-    "tournois": 37,
-    "listesPubliees": 435,
+    "conversion": "12.3 %",
+    "tournois": 43,
+    "listesPubliees": 480,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -156,6 +161,11 @@
       },
       {
         "placement": "2nd",
+        "player": "Xeno",
+        "tournament": "Los Angeles Regional Qualifier"
+      },
+      {
+        "placement": "2nd",
         "player": "ARBD-Skyer",
         "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
       },
@@ -163,11 +173,6 @@
         "placement": "2nd",
         "player": "guubums",
         "tournament": "S4 Shenyang Regional Open (2026-09-12)"
-      },
-      {
-        "placement": "3rd",
-        "player": "极大",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       }
     ]
   },
@@ -207,27 +212,27 @@
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "60 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Akali, Silent": {
-      "usage": "52 %",
+      "usage": "61 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
       "usage": "51 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Akali, Silent": {
+      "usage": "49 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Fizz, Trickster": {
-      "usage": "42 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
     "Sunken Temple (89 %)",
-    "Targon's Peak (85 %)"
+    "Targon's Peak (84 %)"
   ],
-  "dataSource": "Classement complet des tournois : 777 joueurs classés, 37 tournois, dont 435 listes publiées d’où viennent les cartes. Relevé du 22 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1010 joueurs classés, 43 tournois, dont 480 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }
