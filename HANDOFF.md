@@ -25,9 +25,9 @@ REGARDER »** (classée A, 12,3 % contre 9,9 %, p = 0,013) et 16 chiffres périm
 dans `scripts/tier-tables.ts`, à trancher. Validateur 27 493 listes, 0 écart ;
 `npm run verify` EXIT=0 ; Vitest 396 verts.
 
-**Reste** : seed prod (`scripts/prod-tunnel.mts`, `seed-scraped-decks.ts` pour
-hexgate-266…271, `seed-tournament-decks.ts` puis `mark-bestof-tournois.mts` pour
-LA), puis le Deploy.
+**Seedé en prod le 30** : 489 listes hexgate, 55 listes de LA et leurs 28 best-of ;
+prod à 28 979 decks publiés (vérifié par `--etat`). **Reste** : le Deploy Coolify
+(fiches, stats et drapeaux sont des fichiers), et les points de `tier-tables.ts`.
 
 ## Session du 22 septembre 2026 — hexgate 245, 247, 249 et 263, en local seulement
 
