@@ -22,11 +22,11 @@ Hangzhou (71), 278 Pékin (88), 280 épreuve de boutique. `parse-hexgate.mts`
 connaît 成都.
 
 Validateur 27 837 listes, 0 écart ; `npm run verify` EXIT=0 ; Vitest 397 verts.
-`maj:stats` sortie 0 : Vendetta 13 494 places sur 46 tournois. **À trancher
-par Allan** : Ezreal classée S alors que son écart ne tient plus (13,4 % contre
-9,9 %, p = 0,052), et 74 chiffres périmés dans les commentaires de
-`scripts/tier-tables.ts`. Rien n'y est réécrit. Docs META et DECKBUILDING non
-refaites.
+`maj:stats` sortie 0 : Vendetta 13 494 places sur 46 tournois. **Ezreal passe
+de S en A** (13,4 % contre 9,9 %, p = 0,052), à la demande d'Allan. Les
+commentaires des tier lists Vendetta et Globale reprennent le relevé ; Jhin
+n'a plus d'écart établi en dessous (p = 0,056). L'étape 6 dit « les cinq tier
+lists collent aux chiffres ».
 
 **Tout est en local** : ni seedé en prod, ni déployé.
 
