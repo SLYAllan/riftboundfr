@@ -11,11 +11,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 # Ce fichier est la source unique
 
 **Tout le fond est ici** : règles de travail, architecture, commandes, conventions,
-et ce qui n'existe que d'un côté (dernière section). Raison : **Codex lit
-`AGENTS.md` et ne lit pas `CLAUDE.md`**, alors que Claude Code lit les deux
-(`CLAUDE.md` commence par `@AGENTS.md`). `CLAUDE.md` est donc vide de fond, exprès :
-une consigne posée là serait invisible à Codex, puis divergerait. **Toute nouvelle
-consigne va ici.**
+et les outils propres au dépôt (dernière section). `CLAUDE.md` ne fait que l'importer
+(`@AGENTS.md`). Le découpage date du travail à deux avec Codex, arrêté le 7 octobre
+2026 ; il reste parce qu'une seule source suffit. **Toute nouvelle consigne va ici**,
+jamais dans `CLAUDE.md`.
 
 Autres portes d'entrée : `HANDOFF.md` (état du chantier, ce qui est cassé, pièges) ·
 `docs/PROJET.md` (le projet en entier) · `docs/README.md` (index des docs et carte
@@ -471,8 +470,7 @@ plus ancienne rendait 0, et `rtk tsc && git commit` a laissé committer du code
 cassé. Pour juger une porte : en PowerShell
 `npx tsc --noEmit; Write-Output "EXIT=$LASTEXITCODE"`, en bash
 `npx tsc --noEmit; echo "EXIT=$?"`. Un `| grep` perd le code (en bash :
-`echo "EXIT=${PIPESTATUS[0]}"`). Le hook Codex avertit encore sur `rtk … &&` :
-son message date d'avant la 0.35.
+`echo "EXIT=${PIPESTATUS[0]}"`).
 
 ## Base de données locale
 
@@ -645,77 +643,44 @@ passe, jamais réécrite).
 
 ---
 
-# Travailler à deux : Claude Code et Codex
+# Outils propres au dépôt
 
-Ce dépôt est travaillé par deux exécutants, Claude Code et Codex. Ils lisent tous
-les deux ce fichier. Cette section dit ce qu'ils partagent, ce qui reste propre à
-chacun, et comment se passer le travail sans le refaire.
+Codex a travaillé sur ce dépôt avec Claude Code jusqu'au 7 octobre 2026. Il n'y
+travaille plus : `.codex/` et `~/.codex/AGENTS.md` ne sont plus lus.
 
-## Ce qui est partagé
+## Skills du dépôt
 
-| Quoi | Où | Lu par |
-|---|---|---|
-| Règles, architecture, commandes, conventions | `AGENTS.md` (ce fichier) | les deux |
-| État du chantier, ce qui est cassé, pièges | `HANDOFF.md` | les deux |
-| Skills du dépôt | `.agents/skills/` | Codex, depuis n'importe quel sous-dossier |
-| Panneaux vers ces skills | `.claude/skills/` | Claude Code |
-| Réglages Codex, garde-fous, sous-agents | `.codex/` — voir son `README.md` | Codex, si le dépôt est de confiance |
-| Réglages Claude Code | `.claude/settings.json` | Claude Code |
+Huit skills : `reecrire`, `accroche`, `verifier`, `decklists`, `scraper-tournoi`,
+`outils-existants`, `delegate-wave`, `seo-semaine`. Le fond vit dans
+`.agents/skills/<nom>/SKILL.md`, un panneau dans `.claude/skills/<nom>/SKILL.md` ne
+porte que le nom, la description et « lis `.agents/skills/<nom>/SKILL.md` » : sans
+panneau, Claude Code ne voit pas le skill. Un nouveau skill se pose de la même façon,
+et une description qui change se recopie dans le panneau. Un skill **renvoie** à ce
+fichier au lieu de le recopier : deux copies de la même règle finissent toujours par
+diverger.
 
-Huit skills vivent dans `.agents/skills/` : `reecrire`, `accroche`, `verifier`,
-`decklists`, `scraper-tournoi`, `outils-existants`, `delegate-wave`, `seo-semaine`. Ils
-**renvoient** à ce fichier au lieu de le recopier : deux copies de la même règle
-finissent toujours par diverger.
-
-**Les deux exécutants ne les cherchent pas au même endroit** : Codex lit
-`.agents/skills/`, Claude Code lit `.claude/skills/`. Claude Code ne voyait donc
-aucun skill du dépôt, et `delegate-wave` n'était employé que d'un côté. Chaque skill
-a maintenant son panneau dans `.claude/skills/<nom>/SKILL.md`, qui ne porte que le
-nom, la description et « lis `.agents/skills/<nom>/SKILL.md` ». **Un nouveau skill
-se pose des deux côtés** : le fond dans `.agents/skills/`, le panneau dans
-`.claude/skills/`. Une description qui change se recopie dans le panneau :
-elles ont déjà divergé une fois.
-
-Les six règles d'écriture française ne sont donc plus réservées à Claude Code : le
-skill `reecrire` les porte des deux côtés. Une tâche qui produit du texte français
-pour les visiteurs peut se terminer de chaque côté.
-
-## Ce qui reste d'un seul côté
-
-- **Passes d'interface** (`better-*`) et **scraping par `firecrawl`** : côté Claude
-  Code, ces skills vivent dans `~/.claude/`. `.hermes/SKILLS.md` dit lequel sert à
-  quoi ici ; `.hermes/skills/` en garde une copie de secours (ils ne viennent
-  d'aucun marketplace et se sont déjà perdus une fois dans System32). Pour les
-  rapatrier côté Codex : `/import` dans une session, choisir Claude Code.
-- **Mémoire par projet** : côté Claude Code, pour des faits absents du dépôt.
-  Un fait déjà écrit ici, dans `HANDOFF.md` ou dans `docs/` n'y a pas sa place.
-- **Serveur MCP `dataforseo`** : demande des identifiants, donc il reste dans la
-  config personnelle de chacun, jamais dans le dépôt.
+Les passes d'interface (`better-*`) et le scraping par `firecrawl` vivent dans
+`~/.claude/`. `.hermes/SKILLS.md` dit lequel sert à quoi ici ; `.hermes/skills/` en
+garde une copie de secours (ils ne viennent d'aucun marketplace et se sont déjà
+perdus une fois dans System32). Le serveur MCP `dataforseo` demande des
+identifiants : il reste dans la config personnelle, jamais dans le dépôt.
 
 Un skill propose une méthode, il ne connaît pas le projet. Ce fichier prime.
 
-## Garde-fous : deux fichiers, à faire bouger ensemble
+## Garde-fous
 
-`.claude/settings.json` et `.codex/hooks/garde-fous.py` refusent la même chose :
-`rm -rf`, `push --force`, les remises à zéro de base, la lecture des `.env`.
+`.claude/settings.json` refuse `rm -rf`, `push --force`, les remises à zéro de
+base, la lecture des `.env`. Ça compte ici plus qu'ailleurs : `prisma db push` n'a
+aucun retour arrière, et la base de production est encore joignable depuis Internet
+(cf. `HANDOFF.md`).
 
-**Chacun ne protège que son exécutant.** Une règle ajoutée d'un seul côté laisse
-l'autre à découvert. Ça compte ici plus qu'ailleurs : `prisma db push` n'a aucun
-retour arrière, et la base de production est encore joignable depuis Internet
-(cf. `HANDOFF.md`). Après toute modification du hook : `python
-.codex/hooks/garde-fous.py --test`, et le réapprouver par `/hooks` — Codex retient
-son empreinte et l'ignore tant qu'il n'est pas relu.
+## Passer le travail d'une session à l'autre
 
-## Se passer le travail
+Qui s'arrête en cours de route écrit dans `HANDOFF.md` : ce qui est fait, ce qui ne
+l'est pas, et la commande qui le prouve. Un diff ne dit pas pourquoi une piste a été
+abandonnée.
 
-Celui qui s'arrête en cours de route écrit dans `HANDOFF.md` : ce qui est fait, ce
-qui ne l'est pas, et la commande qui le prouve. Un diff ne dit pas pourquoi une
-piste a été abandonnée.
-
-Les deux ne travaillent pas sur le même fichier en même temps : le dernier à
-écrire écrase l'autre sans prévenir. Se répartir par fichier, pas par tâche.
-
-## Mémoire : côté Claude Code seulement
+## Mémoire
 
 Claude Code tient un dossier de mémoire par projet, pour des faits qui ne sont pas
 dans le dépôt (préférences d'Allan, pièges d'API, historique de décisions). Un fait
