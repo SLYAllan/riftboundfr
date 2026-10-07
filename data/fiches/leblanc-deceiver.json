@@ -10,7 +10,7 @@
   "archetype": "Copies et morts rentables",
   "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
   "gameplan": {
-    "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans toutes les listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
+    "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans 90 % des listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
     "midGame": "Karthus, Eternal double tous vos effets de mort. Glasc Mixologist rejoue une unité du cimetière en mourant.",
     "lateGame": "Mirror Image et la Légende copient la plus grosse unité du terrain, la vôtre ou celle d'en face.",
     "winCondition": "Marquer avec des copies gratuites pendant que chaque mort rapporte une carte."
@@ -98,13 +98,13 @@
     }
   ],
   "strengths": [
-    "Sacrifice et Mirror Image dans 91 % des listes : la copie est le vrai plan",
-    "Karthus, Eternal dans 78 % des listes, il double tout ce qui meurt",
-    "Windswept Hillock dans 96 % des listes",
+    "Sacrifice dans 90 % des listes et Mirror Image dans 93 % : la copie est le vrai plan",
+    "Karthus, Eternal dans 85 % des listes, il double tout ce qui meurt",
+    "Windswept Hillock dans 97 % des listes",
     "Chaque conquête donne une unité de plus, sans carte jouée"
   ],
   "weaknesses": [
-    "11,1 % de conversion, bien au-dessus du champ, mais aucun titre en vingt tournois",
+    "Un seul titre en 45 tournois, malgré la troisième conversion du format",
     "La Légende demande de défausser : la main s'épuise vite",
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],

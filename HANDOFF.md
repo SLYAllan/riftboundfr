@@ -28,7 +28,21 @@ commentaires des tier lists Vendetta et Globale reprennent le relevé ; Jhin
 n'a plus d'écart établi en dessous (p = 0,056). L'étape 6 dit « les cinq tier
 lists collent aux chiffres ».
 
-**Tout est en local** : ni seedé en prod, ni déployé.
+**Seedé en prod le 7** : LA reseedé (86 listes, 36 best-of), hexgate 273, 276
+et 279 (313 listes), tier lists du 7 octobre. Prod à 29 323 decks publiés
+(`--etat`). **Reste le Deploy** : fiches, guides, drapeaux et overlay sont du code.
+
+**Guides et fiches recalés.** `legend-guides.ts` et la prose des fiches dataient
+du 24 août (« 6,9 % pour le champ », « N listes sur les 2 365 du set »). Leurs
+chiffres reprennent ceux des fiches : joueurs classés, 10 % de tête, titres,
+moyenne du format 9,9 %. Une faiblesse que les chiffres démentent est retirée,
+pas remplacée. **Piège payé** : le commit du 24 août avait écrit la prose
+directement dans `data/fiches/`, sans `fiches-prose.json`. Relancer
+`fiches-prose.mts` sur l'ancien `fiches-prose.json` faisait revenir le texte du
+17 août. `fiches-prose.json` a été resynchronisé sur les fiches avant les
+corrections : les deux portent maintenant le même texte.
+
+META-KNOWLEDGE (v15) et DECKBUILDING-RULES (v14) refaits sur le relevé.
 
 **Overlay** : deux couleurs au choix dans le bloc « Décor » du tableau de bord
 (fond du point marqué, chiffres). Vu dans le navigateur sur l'état local

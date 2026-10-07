@@ -10,7 +10,7 @@
   "archetype": "Sorts en chaîne, pioche conditionnelle",
   "legendAbility": "Épuisez Ezreal pour piocher, à condition d'avoir ciblé deux fois des unités ou des équipements adverses dans le tour. Il récompense les tours où l'on répond deux fois.",
   "gameplan": {
-    "earlyGame": "Bellows Breath et Stupefy, dans toutes les listes, touchent plusieurs unités et remplissent la condition de la Légende.",
+    "earlyGame": "Bellows Breath et Stupefy, dans au moins 99 % des listes, touchent plusieurs unités et remplissent la condition de la Légende.",
     "midGame": "Fizz, Trickster rejoue un sort du cimetière en arrivant. Star-Crossed renvoie une menace et une des vôtres pour la rejouer.",
     "lateGame": "Wages of Pain et Deadly Flourish finissent les unités entamées et laissent un jeton Or derrière elles.",
     "winCondition": "Répondre deux fois par tour, piocher, et gagner le combat que l'adversaire croyait acquis."
@@ -108,14 +108,14 @@
     }
   ],
   "strengths": [
-    "Quatre cartes dans 100 % des listes et sept au-dessus de 90 %",
-    "7,8 % de conversion sur 51 listes, au-dessus du champ",
+    "Deux cartes dans 100 % des listes et cinq au-dessus de 90 %",
+    "13,4 % de conversion sur 299 joueurs classés, au-dessus du champ",
     "Frozen Fortress dans 90 % des listes et Sigil of the Storm dans 80 %",
     "La pioche de la Légende ne coûte ni carte ni énergie"
   ],
   "weaknesses": [
     "La condition de deux cibles par tour tombe à l'eau contre un terrain vide",
-    "51 listes, aucun titre : le deck reste une affaire de spécialistes",
+    "299 joueurs classés, aucun titre : le deck reste une affaire de spécialistes",
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {

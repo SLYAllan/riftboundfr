@@ -10,7 +10,7 @@
   "archetype": "Équipements et jetons Soldat des Sables",
   "legendAbility": "Vos Soldats des Sables sont Experts en armes. Pour une énergie, épuisez Azir et posez un Soldat de 2 Puissance, à condition d'avoir joué un Équipement ce tour-là.",
   "gameplan": {
-    "earlyGame": "Doran's Shield, Eye of the Herald et B.F. Sword, tous dans 100 % des listes, arment le premier jeton dès le tour deux.",
+    "earlyGame": "Doran's Shield, Eye of the Herald et B.F. Sword, tous dans au moins 99 % des listes, arment le premier jeton dès le tour deux.",
     "midGame": "Chaque Équipement joué ouvre un Soldat gratuit. Brutalizer et Soul Sword s'attachent en arrivant grâce à Expert en armes.",
     "lateGame": "Arise! pose un Soldat par Équipement contrôlé et en prépare deux. Azir, Sovereign les emmène tous au même champ de bataille.",
     "winCondition": "Un tapis de jetons armés qui conquiert deux champs de bataille dans le même tour."
@@ -113,15 +113,14 @@
     }
   ],
   "strengths": [
-    "Dix cartes au-dessus de 90 %, dont quatre dans toutes les listes : la courbe est réglée",
-    "6,2 % de conversion et un titre, sur 65 listes",
-    "Trifarian War Camp dans 98 % des listes et Hall of Legends dans 95 %",
+    "Dix cartes au-dessus de 90 %, dont cinq dans toutes les listes : la courbe est réglée",
+    "536 joueurs classés sur 46 tournois, 61 dans les 10 % de tête (11,4 %), 3 titres",
+    "Trifarian War Camp dans 98 % des listes et Hall of Legends dans 97 %",
     "Les jetons arrivent équipés, donc rentables dès le tour où ils tombent"
   ],
   "weaknesses": [
     "Sans Équipement joué dans le tour, la Légende ne produit rien",
-    "Le retrait d'Équipement coupe le moteur d'un coup",
-    "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
+    "Le retrait d'Équipement coupe le moteur d'un coup"
   ],
   "competitiveResults": {
     "joueursClasses": 536,
