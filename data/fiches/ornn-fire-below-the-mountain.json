@@ -23,17 +23,17 @@
     },
     {
       "name": "Defy",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -42,13 +42,13 @@
       "noyau": false
     },
     {
-      "name": "Charm",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "name": "Seal of Focus",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Seal of Focus",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "name": "Charm",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -58,7 +58,12 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Pit Crew",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -67,51 +72,46 @@
       "noyau": false
     },
     {
-      "name": "Pit Crew",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Clockwork Keeper",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Aspiring Engineer",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Helm of Suppression",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "53 %",
+      "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Forge God": {
-      "usage": "48 %",
+      "usage": "46 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Ornn's Forge (88 %)",
-    "Veiled Temple (70 %)",
+    "Veiled Temple (72 %)",
     "Seat of Power (59 %)",
-    "Treasure Hoard (41 %)"
+    "Treasure Hoard (40 %)"
   ],
   "strengths": [
     "8,1 % de conversion, au-dessus du champ, sur 37 listes",
@@ -125,12 +125,12 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 357,
+    "joueursClasses": 366,
     "coupe10": 25,
     "titres": 1,
-    "conversion": "7 %",
-    "tournois": 40,
-    "listesPubliees": 181,
+    "conversion": "6.8 %",
+    "tournois": 43,
+    "listesPubliees": 191,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -162,7 +162,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 357 joueurs classés, 40 tournois, dont 181 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 366 joueurs classés, 43 tournois, dont 191 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

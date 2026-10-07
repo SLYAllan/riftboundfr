@@ -10,77 +10,77 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Hostile Takeover",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Plundering Poro",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Patched Porobot",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Forge of the Future",
       "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Vanguard Armory",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "name": "Forge of the Future",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Burst",
+      "role": "Souple, 40 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 103,
+    "joueursClasses": 104,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 11,
-    "listesPubliees": 38,
+    "tournois": 12,
+    "listesPubliees": 40,
     "bestPlacements": [
       {
         "placement": "35th",
@@ -118,29 +118,29 @@
   "weaknesses": [
     "5 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 103 joueurs classés, 11 tournois, dont 38 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 104 joueurs classés, 12 tournois, dont 40 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Renata Glasc, Industrialist": {
       "usage": "55 %",
       "role": "1 exemplaire en moyenne"
     },
     "Renata Glasc, Mastermind": {
-      "usage": "45 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "42 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     },
     "Jayce, Man of Progress": {
-      "usage": "37 %",
+      "usage": "35 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (74 %)",
-    "Dusk Rose Lab (34 %)",
-    "Veiled Temple (32 %)"
+    "Treasure Hoard (73 %)",
+    "Dusk Rose Lab (35 %)",
+    "Veiled Temple (30 %)"
   ],
   "setDesChiffres": "Vendetta"
 }

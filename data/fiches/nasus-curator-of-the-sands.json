@@ -46,7 +46,7 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -91,12 +91,17 @@
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -105,41 +110,36 @@
       "noyau": false
     },
     {
-      "name": "Back Off",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Siphoning Strike",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Vilemaw's Lair (47 %)",
     "Altar of Blood (40 %)",
+    "Forgotten Monument (39 %)",
     "The Papertree (39 %)",
-    "Forgotten Monument (38 %)",
     "Rockfall Path (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 465,
-    "coupe10": 26,
+    "joueursClasses": 477,
+    "coupe10": 27,
     "titres": 2,
-    "conversion": "5.6 %",
-    "tournois": 41,
-    "listesPubliees": 238,
+    "conversion": "5.7 %",
+    "tournois": 44,
+    "listesPubliees": 250,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -168,6 +168,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 465 joueurs classés, 41 tournois, dont 238 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 477 joueurs classés, 44 tournois, dont 250 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -17,7 +17,7 @@ Riftbound Regional Qualifier - Los Angeles - Final Standings 2165 players on
 
 [ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
 \|
-56 Cards \|
+66 Cards \|
 
 
 
@@ -30,58 +30,67 @@ Export this Deck
 
 Submit Missing Cards or Errors
 
-![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-197-221_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-177a-221_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-210-221_cropped.png)
+![](https://riftdecks.com/img/cards/riftbound/UNL/unl-169-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-197-221_cropped.png)![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-177a-221_cropped.png)
 
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Azir, Emperor of the Sands](https://riftdecks.com/cards/details-azir-emperor-of-the-sands) | $0.22 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Azir, Emperor of the Sands](https://riftdecks.com/cards/details-azir-emperor-of-the-sands) | $0.20 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Azir, Sovereign](https://riftdecks.com/cards/details-azir-sovereign) | $8.90 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Azir, Sovereign](https://riftdecks.com/cards/details-azir-sovereign) | $8.49 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $5.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.73 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (17) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Doran's Shield](https://riftdecks.com/cards/details-dorans-shield) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Eye of the Herald](https://riftdecks.com/cards/details-eye-of-the-herald) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Soul Sword](https://riftdecks.com/cards/details-soul-sword) | $0.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Doran's Shield](https://riftdecks.com/cards/details-dorans-shield) | $0.11 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Eye of the Herald](https://riftdecks.com/cards/details-eye-of-the-herald) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Soul Sword](https://riftdecks.com/cards/details-soul-sword) | $0.09 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Brutalizer](https://riftdecks.com/cards/details-brutalizer) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hand Hammer](https://riftdecks.com/cards/details-hand-hammer) | $0.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [B.F. Sword](https://riftdecks.com/cards/details-b-f-sword) | $0.37 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hand Hammer](https://riftdecks.com/cards/details-hand-hammer) | $0.11 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [B.F. Sword](https://riftdecks.com/cards/details-b-f-sword) | $0.36 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (21) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.17 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sacrifice](https://riftdecks.com/cards/details-sacrifice) | $4.32 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Deathgrip](https://riftdecks.com/cards/details-deathgrip) | $0.48 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.32 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sacrifice](https://riftdecks.com/cards/details-sacrifice) | $2.70 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Deathgrip](https://riftdecks.com/cards/details-deathgrip) | $0.58 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Desert's Call](https://riftdecks.com/cards/details-deserts-call) | $0.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Discipline](https://riftdecks.com/cards/details-discipline) | $0.92 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.93 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Discipline](https://riftdecks.com/cards/details-discipline) | $1.03 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.81 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Guards!](https://riftdecks.com/cards/details-guards) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Arise!](https://riftdecks.com/cards/details-arise) | $26.81 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Arise!](https://riftdecks.com/cards/details-arise) | $26.07 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Hall of Legends](https://riftdecks.com/cards/details-hall-of-legends) | $0.13 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Seat of Power](https://riftdecks.com/cards/details-seat-of-power) | $0.18 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Trifarian War Camp](https://riftdecks.com/cards/details-trifarian-war-camp) | $0.35 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Hall of Legends](https://riftdecks.com/cards/details-hall-of-legends) | $0.14 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Seat of Power](https://riftdecks.com/cards/details-seat-of-power) | $0.16 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Trifarian War Camp](https://riftdecks.com/cards/details-trifarian-war-camp) | $0.32 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Charm](https://riftdecks.com/cards/details-charm) | $0.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.34 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sacrifice](https://riftdecks.com/cards/details-sacrifice) | $2.70 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Salvage](https://riftdecks.com/cards/details-salvage) | $3.51 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Disarming Rake](https://riftdecks.com/cards/details-disarming-rake) | $0.18 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ashe, Focused](https://riftdecks.com/cards/details-ashe-focused) | $1.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.73 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$121.98
+![](https://riftdecks.com/img/logos/tcg_player.png)$129.9
 @TCGPlayer
 
 Affiliate link disclaimer
 
-x6
+x1
 
-![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-214a-298_full.png)
+![](https://riftdecks.com/img/cards/riftbound/UNL/unl-176a-219_full.png)
 
 ## Visual Decklist
 
@@ -205,25 +214,55 @@ x3
 
 [![Arise!](https://riftdecks.com/img/cards/riftbound/SFD/sfd-198-221_full.png)](https://riftdecks.com/cards/details-arise)
 
+## Sideboard
+
+x2
+
+[![Charm](https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png)](https://riftdecks.com/cards/details-charm)
+
+x2
+
+[![Decree of Focus](https://riftdecks.com/img/cards/riftbound/VEN/ven-040-166_full.png)](https://riftdecks.com/cards/details-decree-of-focus)
+
+x1
+
+[![Sacrifice](https://riftdecks.com/img/cards/riftbound/UNL/unl-173-219_full.png)](https://riftdecks.com/cards/details-sacrifice)
+
+x2
+
+[![Salvage](https://riftdecks.com/img/cards/riftbound/OGN/ogn-224-298_full.png)](https://riftdecks.com/cards/details-salvage)
+
+x1
+
+[![Disarming Rake](https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png)](https://riftdecks.com/cards/details-disarming-rake)
+
+x1
+
+[![Ashe, Focused](https://riftdecks.com/img/cards/riftbound/UNL/unl-169-219_full.png)](https://riftdecks.com/cards/details-ashe-focused)
+
+x1
+
+[![Vi, Peacekeeper](https://riftdecks.com/img/cards/riftbound/UNL/unl-176a-219_full.png)](https://riftdecks.com/cards/details-vi-peacekeeper)
+
 ## Deck Stats
 
 | types |
 | --- |
-| battlefield | 6% (3) | 6% |
-| gear | 31% (17) | 31% |
+| battlefield | 5% (3) | 5% |
+| gear | 26% (17) | 26% |
 | legend | 2% (1) | 2% |
-| rune | 22% (12) | 22% |
-| spell | 38% (21) | 38% |
-| unit | 4% (2) | 4% |
+| rune | 19% (12) | 19% |
+| spell | 43% (28) | 43% |
+| unit | 8% (5) | 8% |
 | cmc |
-| 0 | 29% (16) | 29% |
-| 1 | 22% (12) | 22% |
-| 2 | 31% (17) | 31% |
-| 3 | 6% (3) | 6% |
-| 4 | 8% (4) | 8% |
-| 5 | 2% (1) | 2% |
-| 6 | 6% (3) | 6% |
+| 0 | 25% (16) | 25% |
+| 1 | 26% (17) | 26% |
+| 2 | 29% (19) | 29% |
+| 3 | 7% (4) | 7% |
+| 4 | 7% (4) | 7% |
+| 5 | 5% (3) | 5% |
+| 6 | 5% (3) | 5% |
 | domains |
-| calm | 54% (30) | 54% |
-| colorless | 6% (3) | 6% |
-| order | 49% (27) | 49% |
+| calm | 54% (35) | 54% |
+| colorless | 5% (3) | 5% |
+| order | 49% (32) | 49% |

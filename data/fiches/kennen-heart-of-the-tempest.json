@@ -40,13 +40,8 @@
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -60,12 +55,17 @@
       "noyau": true
     },
     {
-      "name": "Last Rites",
+      "name": "Stacked Deck",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Star-Crossed",
       "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Star-Crossed",
+      "name": "Last Rites",
       "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
@@ -76,7 +76,7 @@
     },
     {
       "name": "Treasure Hunter",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -86,17 +86,17 @@
     },
     {
       "name": "Gust",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -106,23 +106,18 @@
     },
     {
       "name": "Abandon",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Deathgrip",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Kennen, Storm of Shuriken": {
-      "usage": "95 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
@@ -130,7 +125,7 @@
       "role": "2 exemplaires en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "86 %",
+      "usage": "84 %",
       "role": "3 exemplaires en moyenne"
     }
   },
@@ -139,12 +134,12 @@
     "Zaun Warrens (89 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1381,
-    "coupe10": 263,
+    "joueursClasses": 1410,
+    "coupe10": 269,
     "titres": 10,
-    "conversion": "19 %",
-    "tournois": 43,
-    "listesPubliees": 695,
+    "conversion": "19.1 %",
+    "tournois": 46,
+    "listesPubliees": 722,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -173,6 +168,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1381 joueurs classés, 43 tournois, dont 695 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1410 joueurs classés, 46 tournois, dont 722 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -23,7 +23,7 @@
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -33,12 +33,12 @@
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ruined Rex",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -48,47 +48,52 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Black Rose Dignitary",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Cull the Weak",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "name": "Black Rose Dignitary",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Souple, 49 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Baited Hook",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Baited Hook",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rift Herald",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -104,12 +109,12 @@
     "Sans unité intéressante sur le terrain, la copie ne vaut rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 534,
-    "coupe10": 72,
+    "joueursClasses": 552,
+    "coupe10": 75,
     "titres": 1,
-    "conversion": "13.5 %",
-    "tournois": 42,
-    "listesPubliees": 214,
+    "conversion": "13.6 %",
+    "tournois": 45,
+    "listesPubliees": 235,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -123,6 +128,11 @@
       },
       {
         "placement": "3rd",
+        "player": "不凡.西凉马藤",
+        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      },
+      {
+        "placement": "3rd",
         "player": "布启",
         "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
@@ -130,11 +140,6 @@
         "placement": "5th",
         "player": "福州晖宸_沐雪x.",
         "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
-      },
-      {
-        "placement": "5th",
-        "player": "猫岛巡礼.Mercy",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
       }
     ]
   },
@@ -163,24 +168,24 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "84 %",
+      "usage": "85 %",
       "role": "2 exemplaires en moyenne"
     },
     "Karthus, Eternal": {
-      "usage": "84 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "31 %",
+      "usage": "30 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (97 %)",
-    "Dusk Rose Lab (64 %)",
+    "Dusk Rose Lab (65 %)",
     "Forbidding Waste (46 %)",
     "Star Spring (45 %)"
   ],
-  "dataSource": "Classement complet des tournois : 534 joueurs classés, 42 tournois, dont 214 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 552 joueurs classés, 45 tournois, dont 235 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

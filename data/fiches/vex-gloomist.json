@@ -33,13 +33,8 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Tideturner",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
-      "noyau": false
     },
     {
       "name": "Back Off",
@@ -52,13 +47,18 @@
       "noyau": false
     },
     {
-      "name": "Steel Paws",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "name": "Tideturner",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -83,17 +83,17 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Abandon",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -108,12 +108,12 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 363,
-    "coupe10": 37,
+    "joueursClasses": 373,
+    "coupe10": 40,
     "titres": 1,
-    "conversion": "10.2 %",
-    "tournois": 39,
-    "listesPubliees": 175,
+    "conversion": "10.7 %",
+    "tournois": 42,
+    "listesPubliees": 187,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -127,6 +127,11 @@
       },
       {
         "placement": "4th",
+        "player": "不凡.lerriuqs",
+        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      },
+      {
+        "placement": "4th",
         "player": "修修",
         "tournament": "S4 Chongqing City Challenge (2026-09-26)"
       },
@@ -134,11 +139,6 @@
         "placement": "4th",
         "player": "扶光",
         "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
-      },
-      {
-        "placement": "5th",
-        "player": "闪电家.ai.小老虎",
-        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
       }
     ]
   },
@@ -165,18 +165,18 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "74 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "60 %",
+      "usage": "59 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Startipped Peak (63 %)",
-    "Fortified Position (62 %)"
+    "Fortified Position (64 %)",
+    "Startipped Peak (62 %)"
   ],
-  "dataSource": "Classement complet des tournois : 363 joueurs classés, 39 tournois, dont 175 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 373 joueurs classés, 42 tournois, dont 187 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

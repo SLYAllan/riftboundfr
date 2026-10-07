@@ -35,52 +35,52 @@ Submit Missing Cards or Errors
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Green Father](https://riftdecks.com/cards/details-ivern-green-father) | $0.18 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Green Father](https://riftdecks.com/cards/details-ivern-green-father) | $0.14 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Nurturer](https://riftdecks.com/cards/details-ivern-nurturer) | $0.21 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Nurturer](https://riftdecks.com/cards/details-ivern-nurturer) | $0.22 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (25) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Fallen Feline](https://riftdecks.com/cards/details-fallen-feline) | $0.19 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Mutated Mouser](https://riftdecks.com/cards/details-mutated-mouser) | $0.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Fallen Feline](https://riftdecks.com/cards/details-fallen-feline) | $0.16 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Mutated Mouser](https://riftdecks.com/cards/details-mutated-mouser) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Stalwart Poro](https://riftdecks.com/cards/details-stalwart-poro) | $0.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Trusty Ramhound](https://riftdecks.com/cards/details-trusty-ramhound) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Affectionate Poro](https://riftdecks.com/cards/details-affectionate-poro) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Frisky Hunter](https://riftdecks.com/cards/details-frisky-hunter) | $0.06 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Trusty Ramhound](https://riftdecks.com/cards/details-trusty-ramhound) | $0.07 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Affectionate Poro](https://riftdecks.com/cards/details-affectionate-poro) | $0.09 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Frisky Hunter](https://riftdecks.com/cards/details-frisky-hunter) | $0.07 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Tomb-Raider Barbara](https://riftdecks.com/cards/details-tomb-raider-barbara) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Blitzcrank, Impassive](https://riftdecks.com/cards/details-blitzcrank-impassive) | $2.36 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Nurturer](https://riftdecks.com/cards/details-ivern-nurturer) | $0.21 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ultrasoft Poro](https://riftdecks.com/cards/details-ultrasoft-poro) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $4.91 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $38.55 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Vilemaw](https://riftdecks.com/cards/details-vilemaw) | $19.03 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Blitzcrank, Impassive](https://riftdecks.com/cards/details-blitzcrank-impassive) | $2.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ivern, Nurturer](https://riftdecks.com/cards/details-ivern-nurturer) | $0.22 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ultrasoft Poro](https://riftdecks.com/cards/details-ultrasoft-poro) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.73 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $40.00 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Vilemaw](https://riftdecks.com/cards/details-vilemaw) | $17.11 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Daisy!](https://riftdecks.com/cards/details-daisy) | $1.36 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (2) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $19.07 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $15.92 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (12) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.35 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.32 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Friendship](https://riftdecks.com/cards/details-friendship) | $0.18 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Emperor's Divide](https://riftdecks.com/cards/details-emperors-divide) | $0.34 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Ki Barrier](https://riftdecks.com/cards/details-ki-barrier) | $0.12 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.31 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Call to Glory](https://riftdecks.com/cards/details-call-to-glory) | $0.23 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Grand Strategem](https://riftdecks.com/cards/details-grand-strategem) | $0.40 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Emperor's Divide](https://riftdecks.com/cards/details-emperors-divide) | $0.32 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Ki Barrier](https://riftdecks.com/cards/details-ki-barrier) | $0.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Call to Glory](https://riftdecks.com/cards/details-call-to-glory) | $0.14 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Grand Strategem](https://riftdecks.com/cards/details-grand-strategem) | $0.36 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Rockfall Path](https://riftdecks.com/cards/details-rockfall-path) | $0.15 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Vaults of Helia](https://riftdecks.com/cards/details-vaults-of-helia) | $0.07 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Vilemaw's Lair](https://riftdecks.com/cards/details-vilemaws-lair) | $0.33 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Rockfall Path](https://riftdecks.com/cards/details-rockfall-path) | $0.16 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Vaults of Helia](https://riftdecks.com/cards/details-vaults-of-helia) | $0.08 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Vilemaw's Lair](https://riftdecks.com/cards/details-vilemaws-lair) | $0.27 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$192.61
+![](https://riftdecks.com/img/logos/tcg_player.png)$189.73
 @TCGPlayer
 
 Affiliate link disclaimer

@@ -17,7 +17,7 @@ Riftbound Regional Qualifier - Los Angeles - Final Standings 2165 players on
 
 [ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
 \|
-56 Cards \|
+66 Cards \|
 
 
 
@@ -30,58 +30,66 @@ Export this Deck
 
 Submit Missing Cards or Errors
 
-![](https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-236-298_cropped.png)![](https://riftdecks.com/img/cards/riftbound/UNL/unl-199-219_cropped.png)
+![](https://riftdecks.com/img/cards/riftbound/UNL/unl-169-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-236-298_cropped.png)
 
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Leblanc, Deceiver](https://riftdecks.com/cards/details-leblanc-deceiver) | $0.22 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Leblanc, Deceiver](https://riftdecks.com/cards/details-leblanc-deceiver) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [LeBlanc, Fragmented](https://riftdecks.com/cards/details-leblanc-fragmented) | $0.34 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [LeBlanc, Fragmented](https://riftdecks.com/cards/details-leblanc-fragmented) | $0.32 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (29) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Honest Broker](https://riftdecks.com/cards/details-honest-broker) | $0.17 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Soaring Scout](https://riftdecks.com/cards/details-soaring-scout) | $0.16 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Watchful Sentry](https://riftdecks.com/cards/details-watchful-sentry) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Black Rose Dignitary](https://riftdecks.com/cards/details-black-rose-dignitary) | $0.06 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Karthus, Eternal](https://riftdecks.com/cards/details-karthus-eternal) | $2.67 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Glasc Mixologist](https://riftdecks.com/cards/details-glasc-mixologist) | $0.24 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $5.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Ruined Rex](https://riftdecks.com/cards/details-ruined-rex) | $0.07 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $19.62 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Harnessed Dragon](https://riftdecks.com/cards/details-harnessed-dragon) | $3.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Rift Herald](https://riftdecks.com/cards/details-rift-herald) | $11.50 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Honest Broker](https://riftdecks.com/cards/details-honest-broker) | $0.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Soaring Scout](https://riftdecks.com/cards/details-soaring-scout) | $0.17 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Watchful Sentry](https://riftdecks.com/cards/details-watchful-sentry) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Black Rose Dignitary](https://riftdecks.com/cards/details-black-rose-dignitary) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Karthus, Eternal](https://riftdecks.com/cards/details-karthus-eternal) | $2.35 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Glasc Mixologist](https://riftdecks.com/cards/details-glasc-mixologist) | $0.27 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.73 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Ruined Rex](https://riftdecks.com/cards/details-ruined-rex) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $19.88 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Harnessed Dragon](https://riftdecks.com/cards/details-harnessed-dragon) | $3.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Rift Herald](https://riftdecks.com/cards/details-rift-herald) | $10.00 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (3) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Baited Hook](https://riftdecks.com/cards/details-baited-hook) | $61.52 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Baited Hook](https://riftdecks.com/cards/details-baited-hook) | $54.77 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (7) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sacrifice](https://riftdecks.com/cards/details-sacrifice) | $4.32 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Deathgrip](https://riftdecks.com/cards/details-deathgrip) | $0.48 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.93 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Mirror Image](https://riftdecks.com/cards/details-mirror-image) | $19.05 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sacrifice](https://riftdecks.com/cards/details-sacrifice) | $2.70 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Deathgrip](https://riftdecks.com/cards/details-deathgrip) | $0.58 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.81 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Mirror Image](https://riftdecks.com/cards/details-mirror-image) | $12.09 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Dusk Rose Lab](https://riftdecks.com/cards/details-dusk-rose-lab) | $0.08 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Star Spring](https://riftdecks.com/cards/details-star-spring) | $0.12 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Windswept Hillock](https://riftdecks.com/cards/details-windswept-hillock) | $0.29 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Dusk Rose Lab](https://riftdecks.com/cards/details-dusk-rose-lab) | $0.13 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Star Spring](https://riftdecks.com/cards/details-star-spring) | $0.14 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Windswept Hillock](https://riftdecks.com/cards/details-windswept-hillock) | $0.32 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **4** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **8** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **8** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $2.81 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Unity](https://riftdecks.com/cards/details-decree-of-unity) | $0.29 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Salvage](https://riftdecks.com/cards/details-salvage) | $3.51 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Mirror Image](https://riftdecks.com/cards/details-mirror-image) | $12.09 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ashe, Focused](https://riftdecks.com/cards/details-ashe-focused) | $1.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $19.88 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$331.05
+![](https://riftdecks.com/img/logos/tcg_player.png)$330.02
 @TCGPlayer
 
 Affiliate link disclaimer
 
-x8
+x1
 
-![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-214a-298_full.png)
+![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png)
 
 ## Visual Decklist
 
@@ -205,26 +213,52 @@ x2
 
 [![Mirror Image](https://riftdecks.com/img/cards/riftbound/UNL/unl-200-219_full.png)](https://riftdecks.com/cards/details-mirror-image)
 
+## Sideboard
+
+x2
+
+[![Bellows Breath](https://riftdecks.com/img/cards/riftbound/SFD/sfd-080-221_full.png)](https://riftdecks.com/cards/details-bellows-breath)
+
+x2
+
+[![Decree of Unity](https://riftdecks.com/img/cards/riftbound/VEN/ven-131-166_full.png)](https://riftdecks.com/cards/details-decree-of-unity)
+
+x3
+
+[![Salvage](https://riftdecks.com/img/cards/riftbound/OGN/ogn-224-298_full.png)](https://riftdecks.com/cards/details-salvage)
+
+x1
+
+[![Mirror Image](https://riftdecks.com/img/cards/riftbound/UNL/unl-200-219_full.png)](https://riftdecks.com/cards/details-mirror-image)
+
+x1
+
+[![Ashe, Focused](https://riftdecks.com/img/cards/riftbound/UNL/unl-169-219_full.png)](https://riftdecks.com/cards/details-ashe-focused)
+
+x1
+
+[![Thousand-Tailed Watcher](https://riftdecks.com/img/cards/riftbound/OGN/ogn-116-298_full.png)](https://riftdecks.com/cards/details-thousand-tailed-watcher)
+
 ## Deck Stats
 
 | types |
 | --- |
-| battlefield | 6% (3) | 6% |
-| gear | 6% (3) | 6% |
+| battlefield | 5% (3) | 5% |
+| gear | 5% (3) | 5% |
 | legend | 2% (1) | 2% |
-| rune | 22% (12) | 22% |
-| spell | 13% (7) | 13% |
-| unit | 54% (30) | 54% |
+| rune | 19% (12) | 19% |
+| spell | 23% (15) | 23% |
+| unit | 49% (32) | 49% |
 | cmc |
-| 0 | 29% (16) | 29% |
-| 1 | 6% (3) | 6% |
-| 2 | 17% (9) | 17% |
-| 3 | 22% (12) | 22% |
-| 5 | 11% (6) | 11% |
-| 6 | 6% (3) | 6% |
-| 7 | 2% (1) | 2% |
-| 8 | 11% (6) | 11% |
+| 0 | 25% (16) | 25% |
+| 1 | 8% (5) | 8% |
+| 2 | 22% (14) | 22% |
+| 3 | 20% (13) | 20% |
+| 5 | 11% (7) | 11% |
+| 6 | 5% (3) | 5% |
+| 7 | 4% (2) | 4% |
+| 8 | 10% (6) | 10% |
 | domains |
-| colorless | 6% (3) | 6% |
-| mind | 24% (13) | 24% |
-| order | 77% (43) | 77% |
+| colorless | 5% (3) | 5% |
+| mind | 26% (17) | 26% |
+| order | 76% (50) | 76% |

@@ -35,45 +35,45 @@ Submit Missing Cards or Errors
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ambessa, Matriarch of War](https://riftdecks.com/cards/details-ambessa-matriarch-of-war) | $0.11 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ambessa, Matriarch of War](https://riftdecks.com/cards/details-ambessa-matriarch-of-war) | $0.09 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ambessa, The Wolf](https://riftdecks.com/cards/details-ambessa-the-wolf) | $0.17 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Ambessa, The Wolf](https://riftdecks.com/cards/details-ambessa-the-wolf) | $0.13 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (23) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Irresistible Faefolk](https://riftdecks.com/cards/details-irresistible-faefolk) | $6.44 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Legion Marauder](https://riftdecks.com/cards/details-legion-marauder) | $0.07 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Noxian Emissary](https://riftdecks.com/cards/details-noxian-emissary) | $0.12 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Kayle, Justified](https://riftdecks.com/cards/details-kayle-justified) | $0.29 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Kennen, Keeper of Balance](https://riftdecks.com/cards/details-kennen-keeper-of-balance) | $0.25 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Nidalee, Cat Form](https://riftdecks.com/cards/details-nidalee-cat-form) | $2.77 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Solari Sunhawk](https://riftdecks.com/cards/details-solari-sunhawk) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Irresistible Faefolk](https://riftdecks.com/cards/details-irresistible-faefolk) | $4.77 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Legion Marauder](https://riftdecks.com/cards/details-legion-marauder) | $0.09 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Noxian Emissary](https://riftdecks.com/cards/details-noxian-emissary) | $0.13 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Kayle, Justified](https://riftdecks.com/cards/details-kayle-justified) | $0.28 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Kennen, Keeper of Balance](https://riftdecks.com/cards/details-kennen-keeper-of-balance) | $0.30 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Nidalee, Cat Form](https://riftdecks.com/cards/details-nidalee-cat-form) | $2.76 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Solari Sunhawk](https://riftdecks.com/cards/details-solari-sunhawk) | $0.12 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Baccai Witherclaw](https://riftdecks.com/cards/details-baccai-witherclaw) | $0.05 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $4.91 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.73 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (16) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Punch First](https://riftdecks.com/cards/details-punch-first) | $0.23 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $13.75 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Guttural Roar](https://riftdecks.com/cards/details-guttural-roar) | $0.06 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.99 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Public Execution](https://riftdecks.com/cards/details-public-execution) | $1.02 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Tactical Retreat](https://riftdecks.com/cards/details-tactical-retreat) | $0.29 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Rampage](https://riftdecks.com/cards/details-rampage) | $0.27 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Onslaught](https://riftdecks.com/cards/details-onslaught) | $0.17 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Punch First](https://riftdecks.com/cards/details-punch-first) | $0.25 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $12.72 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Guttural Roar](https://riftdecks.com/cards/details-guttural-roar) | $0.07 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.81 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Public Execution](https://riftdecks.com/cards/details-public-execution) | $0.85 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Tactical Retreat](https://riftdecks.com/cards/details-tactical-retreat) | $0.26 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Rampage](https://riftdecks.com/cards/details-rampage) | $0.22 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Onslaught](https://riftdecks.com/cards/details-onslaught) | $0.13 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Forbidding Waste](https://riftdecks.com/cards/details-forbidding-waste) | $0.12 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Forbidding Waste](https://riftdecks.com/cards/details-forbidding-waste) | $0.16 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Risen Altar](https://riftdecks.com/cards/details-risen-altar) | $0.10 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Sunken Temple](https://riftdecks.com/cards/details-sunken-temple) | $0.16 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Sunken Temple](https://riftdecks.com/cards/details-sunken-temple) | $0.17 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **7** | [Body Rune](https://riftdecks.com/cards/details-body-rune) | $0.10 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **7** | [Body Rune](https://riftdecks.com/cards/details-body-rune) | $0.09 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$79.97
+![](https://riftdecks.com/img/logos/tcg_player.png)$66.65
 @TCGPlayer
 
 Affiliate link disclaimer

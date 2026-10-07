@@ -40,7 +40,7 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -55,12 +55,12 @@
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -70,12 +70,12 @@
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -85,17 +85,22 @@
     },
     {
       "name": "Lonely Poro",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Mischievous Marai",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -104,47 +109,42 @@
       "noyau": false
     },
     {
-      "name": "Not So Fast",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Noxus Hopeful",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Akali, Deadly Weapon": {
-      "usage": "76 %",
+      "usage": "78 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "70 %",
+      "usage": "72 %",
       "role": "3 exemplaires en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "40 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     },
     "Blitzcrank, Impassive": {
-      "usage": "35 %",
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Void Gate (66 %)",
-    "Back-Alley Bar (32 %)",
-    "Forgotten Monument (31 %)",
-    "Targon's Peak (31 %)"
+    "Void Gate (68 %)",
+    "Forgotten Monument (34 %)",
+    "Sigil of the Storm (32 %)",
+    "Back-Alley Bar (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 609,
-    "coupe10": 45,
+    "joueursClasses": 637,
+    "coupe10": 46,
     "titres": 4,
-    "conversion": "7.4 %",
-    "tournois": 43,
-    "listesPubliees": 342,
+    "conversion": "7.2 %",
+    "tournois": 46,
+    "listesPubliees": 366,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -173,6 +173,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 609 joueurs classés, 43 tournois, dont 342 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 637 joueurs classés, 46 tournois, dont 366 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

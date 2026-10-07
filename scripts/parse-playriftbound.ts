@@ -68,10 +68,12 @@ export function lireArticle(md: string): DeckOfficiel[] {
 
   for (let i = 0; i < lignes.length; i++) {
     if (/^#\s+Best-of Decks/.test(lignes[i])) { section = "bestof"; continue; }
-    if (/^##\s+Top 8 Decks/.test(lignes[i])) { section = "top8"; continue; }
+    // Los Angeles : titre « # Top 8 » et espace avant chaque `<br>`, là où
+    // Singapour écrivait « ## Top 8 » sans espace. Sans ça, 0 deck lu, en silence.
+    if (/^#{1,2}\s+Top 8 Decks/.test(lignes[i])) { section = "top8"; continue; }
 
     const entete = lignes[i].match(
-      /^\|\s*### (.+?)<br>\*\*Legend Rank:\*\*\s*#(\d+)\/(\d+)<br>\*\*Overall Ranking:\*\*\s*#(\d+)\s*\|/,
+      /^\|\s*### (.+?)<br>\*\*Legend Rank:\*\*\s*#(\d+)\/(\d+)\s*<br>\*\*Overall Ranking:\*\*\s*#(\d+)\s*\|/,
     );
     if (!entete) continue;
     const corps = lignes[i + 1];
@@ -178,6 +180,16 @@ async function main() {
     for (const nom of [c.name, c.cleanName, c.name.replace(/ - /g, ", ")]) {
       if (nom && !parNom.has(cleNom(nom))) parNom.set(cleNom(nom), c);
     }
+  }
+  // Coquilles de Riot, une par une, jamais de rapprochement flou : une distance
+  // d'édition aurait fini par confondre deux vraies cartes.
+  const COQUILLES: Record<string, string> = {
+    // Los Angeles : « Trapping Ground » sous Battlefields, seul champ de bataille approchant.
+    "trapping ground": "trapping grounds",
+  };
+  for (const [faux, vrai] of Object.entries(COQUILLES)) {
+    const c = parNom.get(vrai);
+    if (c && !parNom.has(faux)) parNom.set(faux, c);
   }
 
   // Préflight : on résout TOUT avant d'écrire quoi que ce soit. Une carte

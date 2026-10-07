@@ -23,7 +23,7 @@
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -43,17 +43,17 @@
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Stacked Deck",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "name": "Stacked Deck",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -63,17 +63,22 @@
     },
     {
       "name": "Overzealous Fan",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -82,23 +87,18 @@
       "noyau": false
     },
     {
-      "name": "Edge of Night",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Noxus Hopeful",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
       "role": "Souple, 32 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -114,12 +114,12 @@
     "Volume modeste, 67 listes : peu de références pour affiner la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 354,
+    "joueursClasses": 358,
     "coupe10": 33,
     "titres": 1,
-    "conversion": "9.3 %",
-    "tournois": 39,
-    "listesPubliees": 149,
+    "conversion": "9.2 %",
+    "tournois": 42,
+    "listesPubliees": 155,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -177,15 +177,15 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "93 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "94 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
       "usage": "81 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "64 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
@@ -193,15 +193,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "40 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Treasure Hoard (73 %)",
     "Zaun Warrens (57 %)",
-    "Amateur Recital (54 %)"
+    "Amateur Recital (53 %)"
   ],
-  "dataSource": "Classement complet des tournois : 354 joueurs classés, 39 tournois, dont 149 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 358 joueurs classés, 42 tournois, dont 155 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

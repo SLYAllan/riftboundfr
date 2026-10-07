@@ -1,5 +1,39 @@
 # HANDOFF — état des lieux
 
+## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
+
+**RQ Los Angeles, second passage.** riftdecks publie maintenant 108 listes (85 au
+30 septembre) : 86 complètes, 22 encore sans réserve, écartées. Les 30 listes
+sans réserve du premier passage ont été relues : la plupart ont reçu leur
+réserve depuis, dont le vainqueur Rengar (DSG Prismaticism) et tout le Top 8.
+L'article Riot est sorti sous `los-angeles-top-decks` (pas `los-angeless`) : ses
+36 decks sont tous couverts par riftdecks et concordent, sauf ASC nalkpas
+(Diana) : Riot écrit 3 Vex, Apathetic, le brut riftdecks 2 Apathetic et 1
+Cheerless. On garde riftdecks. `parse-playriftbound.ts` lit maintenant le
+format de LA (« # Top 8 », espace avant `<br>`) et connaît la coquille
+« Trapping Ground ». 36 best-of ; recoupés avec les « Legend Rank #1 » de Riot,
+32 sur 33 concordent, Rumble excepté (Riot publie le n°2, le n°1 n'a rien donné
+à Riot mais a publié sur riftdecks).
+
+**Hexgate** : 273 à 280 relevés. Entrent 273 Shanghai du 3 octobre (114
+joueurs, 104 listes), 276 Chengdu du 2 octobre (120, 107), 279 Guangzhou du
+1er octobre (111, 102). Dehors : 274 Harbin (85), 275 Taiyuan (64), 277
+Hangzhou (71), 278 Pékin (88), 280 épreuve de boutique. `parse-hexgate.mts`
+connaît 成都.
+
+Validateur 27 837 listes, 0 écart ; `npm run verify` EXIT=0 ; Vitest 397 verts.
+`maj:stats` sortie 0 : Vendetta 13 494 places sur 46 tournois. **À trancher
+par Allan** : Ezreal classée S alors que son écart ne tient plus (13,4 % contre
+9,9 %, p = 0,052), et 74 chiffres périmés dans les commentaires de
+`scripts/tier-tables.ts`. Rien n'y est réécrit. Docs META et DECKBUILDING non
+refaites.
+
+**Tout est en local** : ni seedé en prod, ni déployé.
+
+**Overlay** : deux couleurs au choix dans le bloc « Décor » du tableau de bord
+(fond du point marqué, chiffres). Vu dans le navigateur sur l'état local
+(sauvé puis remis), **pas encore dans OBS**.
+
 ## Session du 30 septembre 2026 — RQ Los Angeles et hexgate 266 à 271, en local seulement
 
 **RQ Los Angeles** (riftdecks 17978, 26 septembre, 2 165 joueurs, 1 966 classés) :

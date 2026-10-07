@@ -12,31 +12,36 @@
   "keyCards": [
     {
       "name": "Stacked Deck",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "role": "Souple, 59 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Last Rites",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
       "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
@@ -61,18 +66,8 @@
       "noyau": false
     },
     {
-      "name": "Gust",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Lunar Boon",
       "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Baron Nashor",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -83,12 +78,12 @@
     "10 listes sur les 2365 du set Vendetta : un Top 8 en neuf tournois, mais l'échantillon ne prouve rien."
   ],
   "competitiveResults": {
-    "joueursClasses": 101,
+    "joueursClasses": 103,
     "coupe10": 11,
     "titres": 0,
-    "conversion": "10.9 %",
-    "tournois": 22,
-    "listesPubliees": 47,
+    "conversion": "10.7 %",
+    "tournois": 24,
+    "listesPubliees": 49,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -111,9 +106,9 @@
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
-        "placement": "25th",
-        "player": "树懒.宵星.Andrew",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+        "placement": "17th",
+        "player": "拳力斗技",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
       }
     ]
   },
@@ -146,15 +141,15 @@
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "40 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Sigil of the Storm (94 %)",
     "Forgotten Monument (53 %)",
-    "Dragon Roost (40 %)"
+    "Dragon Roost (41 %)"
   ],
-  "dataSource": "Classement complet des tournois : 101 joueurs classés, 22 tournois, dont 47 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 103 joueurs classés, 24 tournois, dont 49 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

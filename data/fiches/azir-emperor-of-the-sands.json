@@ -58,7 +58,7 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -73,17 +73,17 @@
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 72 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -93,7 +93,7 @@
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -102,12 +102,12 @@
       "noyau": false
     },
     {
-      "name": "Cull the Weak",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "name": "Shadow's Call",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Shadow's Call",
+      "name": "Cull the Weak",
       "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     }
@@ -124,12 +124,12 @@
     "65 listes, et une conversion sous la moyenne du champ : 6,2 % contre 6,9 %"
   ],
   "competitiveResults": {
-    "joueursClasses": 516,
-    "coupe10": 59,
+    "joueursClasses": 536,
+    "coupe10": 61,
     "titres": 3,
     "conversion": "11.4 %",
-    "tournois": 43,
-    "listesPubliees": 240,
+    "tournois": 46,
+    "listesPubliees": 263,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -181,11 +181,11 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "80 %",
+      "usage": "79 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "57 %",
+      "usage": "56 %",
       "role": "1 exemplaire en moyenne"
     }
   },
@@ -195,6 +195,6 @@
     "Ornn's Forge (65 %)",
     "Seat of Power (34 %)"
   ],
-  "dataSource": "Classement complet des tournois : 516 joueurs classés, 43 tournois, dont 240 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 536 joueurs classés, 46 tournois, dont 263 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

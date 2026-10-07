@@ -24,23 +24,23 @@
       "noyau": true
     },
     {
-      "name": "Doran's Blade",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "name": "Sabotage",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Sabotage",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "name": "Doran's Blade",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Long Sword",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -50,37 +50,37 @@
     },
     {
       "name": "Blighted Battleaxe",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -90,12 +90,12 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 140,
-    "coupe10": 10,
+    "joueursClasses": 144,
+    "coupe10": 11,
     "titres": 0,
-    "conversion": "7.1 %",
-    "tournois": 23,
-    "listesPubliees": 46,
+    "conversion": "7.6 %",
+    "tournois": 25,
+    "listesPubliees": 51,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -108,6 +108,11 @@
         "tournament": "S4 Shanghai City Challenge (2026-09-27)"
       },
       {
+        "placement": "7th",
+        "player": "TXG·万舞寒天",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      },
+      {
         "placement": "13th",
         "player": "酷猫.黑科技整活",
         "tournament": "S4 Shanghai City Challenge (2026-08-16)"
@@ -116,11 +121,6 @@
         "placement": "19th",
         "player": "TXG·万舞寒天",
         "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "20th",
-        "player": "不爱飞的雕",
-        "tournament": "S4 Hangzhou City Challenge (2026-09-19)"
       }
     ]
   },
@@ -133,7 +133,7 @@
   "weaknesses": [
     "8 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois : 140 joueurs classés, 23 tournois, dont 46 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 144 joueurs classés, 25 tournois, dont 51 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Lucian, Merciless": {
       "usage": "100 %",
@@ -144,15 +144,15 @@
       "role": "3 exemplaires en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "33 %",
+      "usage": "35 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forge of the Fluft (87 %)",
+    "Forge of the Fluft (88 %)",
     "Forbidding Waste (57 %)",
-    "Windswept Hillock (48 %)",
-    "Sunken Temple (43 %)"
+    "Windswept Hillock (49 %)",
+    "Sunken Temple (39 %)"
   ],
   "setDesChiffres": "Vendetta"
 }

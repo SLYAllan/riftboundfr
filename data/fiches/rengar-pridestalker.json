@@ -53,7 +53,7 @@
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -63,7 +63,7 @@
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -73,12 +73,12 @@
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 85 % des listes, 1 exemplaire",
+      "role": "Standard, 86 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Pakaa Cub",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -93,12 +93,12 @@
     "35 listes en dix-huit tournois : personne n'a stabilisé la liste"
   ],
   "competitiveResults": {
-    "joueursClasses": 497,
-    "coupe10": 66,
-    "titres": 2,
-    "conversion": "13.3 %",
-    "tournois": 40,
-    "listesPubliees": 169,
+    "joueursClasses": 514,
+    "coupe10": 68,
+    "titres": 3,
+    "conversion": "13.2 %",
+    "tournois": 43,
+    "listesPubliees": 186,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -111,6 +111,11 @@
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       },
       {
+        "placement": "1st",
+        "player": "Rasyou",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      },
+      {
         "placement": "2nd",
         "player": "SVE.Love",
         "tournament": "S4 Regional Open Side Event C (2026-09-13)"
@@ -119,11 +124,6 @@
         "placement": "3rd",
         "player": "DFL.诺亚",
         "tournament": "S4 Chongqing City Challenge (2026-09-26)"
-      },
-      {
-        "placement": "3rd",
-        "player": "Ai.No.天一",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-19)"
       }
     ]
   },
@@ -159,19 +159,19 @@
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "86 %",
+      "usage": "87 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "66 %",
+      "usage": "68 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Star Spring (96 %)",
-    "Emperor's Dais (87 %)",
+    "Emperor's Dais (88 %)",
     "Seat of Power (84 %)"
   ],
-  "dataSource": "Classement complet des tournois : 497 joueurs classés, 40 tournois, dont 169 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 514 joueurs classés, 43 tournois, dont 186 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

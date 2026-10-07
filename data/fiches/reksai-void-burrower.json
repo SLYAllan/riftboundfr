@@ -34,12 +34,12 @@
       "noyau": true
     },
     {
-      "name": "Falling Star",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "name": "Cleave",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Cleave",
+      "name": "Falling Star",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -70,7 +70,7 @@
     },
     {
       "name": "Shadow Fiend",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -80,17 +80,17 @@
     },
     {
       "name": "Salvage",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 523,
+    "joueursClasses": 535,
     "coupe10": 56,
     "titres": 0,
-    "conversion": "10.7 %",
-    "tournois": 43,
-    "listesPubliees": 257,
+    "conversion": "10.5 %",
+    "tournois": 46,
+    "listesPubliees": 269,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -126,22 +126,22 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "67 %",
+      "usage": "68 %",
       "role": "1 exemplaire en moyenne"
     },
     "Zed, From the Shadows": {
-      "usage": "48 %",
+      "usage": "47 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "The Candlelit Sanctum (95 %)",
-    "Forbidding Waste (58 %)",
+    "Forbidding Waste (59 %)",
     "Mystic Vortex (45 %)",
-    "Trifarian War Camp (44 %)",
-    "Zaun Warrens (39 %)"
+    "Trifarian War Camp (45 %)",
+    "Zaun Warrens (38 %)"
   ],
-  "dataSource": "Classement complet des tournois : 523 joueurs classés, 43 tournois, dont 257 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 535 joueurs classés, 46 tournois, dont 269 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

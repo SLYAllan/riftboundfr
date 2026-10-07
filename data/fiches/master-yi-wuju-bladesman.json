@@ -47,12 +47,12 @@
       "noyau": true
     },
     {
-      "name": "Scuttle Crab",
+      "name": "First Mate",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "First Mate",
+      "name": "Scuttle Crab",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -67,13 +67,13 @@
       "noyau": false
     },
     {
-      "name": "Sabotage",
+      "name": "Ruin Runner",
       "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ruin Runner",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "name": "Sabotage",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -83,12 +83,7 @@
     },
     {
       "name": "Onslaught",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Not So Fast",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -104,12 +99,12 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "joueursClasses": 1041,
-    "coupe10": 143,
-    "titres": 6,
-    "conversion": "13.7 %",
-    "tournois": 43,
-    "listesPubliees": 625,
+    "joueursClasses": 1074,
+    "coupe10": 149,
+    "titres": 7,
+    "conversion": "13.9 %",
+    "tournois": 46,
+    "listesPubliees": 658,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -123,6 +118,11 @@
       },
       {
         "placement": "1st",
+        "player": "友友@一昂扬",
+        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      },
+      {
+        "placement": "1st",
         "player": "ARBD-Yihao.MH",
         "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       },
@@ -130,11 +130,6 @@
         "placement": "1st",
         "player": "clks",
         "tournament": "S4 Shanghai City Challenge (2026-08-22)"
-      },
-      {
-        "placement": "1st",
-        "player": "紫蝎",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       }
     ]
   },
@@ -175,6 +170,6 @@
     "Emperor's Dais (89 %)",
     "Seat of Power (75 %)"
   ],
-  "dataSource": "Classement complet des tournois : 1041 joueurs classés, 43 tournois, dont 625 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1074 joueurs classés, 46 tournois, dont 658 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

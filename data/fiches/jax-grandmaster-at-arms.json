@@ -15,7 +15,7 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -40,12 +40,17 @@
     },
     {
       "name": "First Mate",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
       "role": "Standard, 78 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -54,28 +59,23 @@
       "noyau": false
     },
     {
-      "name": "Rampage",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Back Off",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Boneshiver",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Boneshiver",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -85,17 +85,17 @@
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 126,
+    "joueursClasses": 128,
     "coupe10": 2,
     "titres": 0,
     "conversion": "1.6 %",
-    "tournois": 21,
-    "listesPubliees": 55,
+    "tournois": 23,
+    "listesPubliees": 58,
     "bestPlacements": [
       {
         "placement": "38th",
@@ -131,7 +131,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "51 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
@@ -139,19 +139,19 @@
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "38 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "38 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Sunken Temple (69 %)",
-    "Ornn's Forge (51 %)"
+    "Ornn's Forge (52 %)"
   ],
-  "dataSource": "Classement complet des tournois : 126 joueurs classés, 21 tournois, dont 55 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 128 joueurs classés, 23 tournois, dont 58 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

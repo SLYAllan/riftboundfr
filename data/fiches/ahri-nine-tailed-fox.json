@@ -27,77 +27,79 @@
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, Bounce et tempo, 94 % des listes, 1,5 exemplaire",
+      "role": "Cœur du deck, Bounce et tempo, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Defy",
-      "role": "Standard, Core de protection, 88 % des listes, 3 exemplaires",
+      "role": "Standard, Core de protection, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, Menace principale, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "role": "Standard, Menace principale, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, Gear de protection, 65 % des listes, 2 exemplaires",
+      "role": "Standard, Gear de protection, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 59 % des listes, 2,5 exemplaires",
+      "role": "Souple, 56 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Souple, CC signature d'Ahri, 53 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Astral Heron",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, CC signature d'Ahri, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Souple, Finisher spell, 53 % des listes, 1 exemplaire",
+      "role": "Souple, Finisher spell, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Time Warp",
-      "role": "Souple, 47 % des listes, 3 exemplaires",
+      "name": "Astral Heron",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Desert's Call",
-      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Eager Apprentice",
-      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "role": "Souple, 39 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Fox-Fire",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Ahri, Inquisitive": {
-      "usage": "88 %",
+      "usage": "89 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     }
   },
-  "topBattlefields": [],
+  "topBattlefields": [
+    "Grove of the God-Willow (33 %)"
+  ],
   "strengths": [
     "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
   ],
@@ -105,12 +107,12 @@
     "4 listes seulement sur les 2365 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 19,
+    "joueursClasses": 20,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 16,
-    "listesPubliees": 17,
+    "tournois": 17,
+    "listesPubliees": 18,
     "bestPlacements": [
       {
         "placement": "24th",
@@ -142,7 +144,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 19 joueurs classés, 16 tournois, dont 17 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 20 joueurs classés, 17 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

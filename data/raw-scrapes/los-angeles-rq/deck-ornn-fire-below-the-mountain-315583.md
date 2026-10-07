@@ -17,7 +17,7 @@ Riftbound Regional Qualifier - Los Angeles - Final Standings 2165 players on
 
 [ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
 \|
-56 Cards \|
+66 Cards \|
 
 
 
@@ -35,52 +35,61 @@ Submit Missing Cards or Errors
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Ornn, Fire Below the Mountain](https://riftdecks.com/cards/details-ornn-fire-below-the-mountain) | $0.19 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Ornn, Fire Below the Mountain](https://riftdecks.com/cards/details-ornn-fire-below-the-mountain) | $0.14 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Ornn, Blacksmith](https://riftdecks.com/cards/details-ornn-blacksmith) | $2.20 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Ornn, Blacksmith](https://riftdecks.com/cards/details-ornn-blacksmith) | $2.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
-| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (14) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Clockwork Keeper](https://riftdecks.com/cards/details-clockwork-keeper) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Patched Porobot](https://riftdecks.com/cards/details-patched-porobot) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Scuttle Crab](https://riftdecks.com/cards/details-scuttle-crab) | $4.43 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Aspiring Engineer](https://riftdecks.com/cards/details-aspiring-engineer) | $0.07 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Pit Crew](https://riftdecks.com/cards/details-pit-crew) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (15) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Clockwork Keeper](https://riftdecks.com/cards/details-clockwork-keeper) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Patched Porobot](https://riftdecks.com/cards/details-patched-porobot) | $0.14 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Scuttle Crab](https://riftdecks.com/cards/details-scuttle-crab) | $4.11 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Aspiring Engineer](https://riftdecks.com/cards/details-aspiring-engineer) | $0.06 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Lecturing Yordle](https://riftdecks.com/cards/details-lecturing-yordle) | $0.16 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Pit Crew](https://riftdecks.com/cards/details-pit-crew) | $0.12 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (19) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Seal of Focus](https://riftdecks.com/cards/details-seal-of-focus) | $19.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Seal of Focus](https://riftdecks.com/cards/details-seal-of-focus) | $18.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Cloth Armor](https://riftdecks.com/cards/details-cloth-armor) | $0.07 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Poro Snax](https://riftdecks.com/cards/details-poro-snax) | $0.17 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Poro Snax](https://riftdecks.com/cards/details-poro-snax) | $0.16 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Brutalizer](https://riftdecks.com/cards/details-brutalizer) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Guardian Angel](https://riftdecks.com/cards/details-guardian-angel) | $1.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.60 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sprite Fountain](https://riftdecks.com/cards/details-sprite-fountain) | $3.31 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.37 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Guardian Angel](https://riftdecks.com/cards/details-guardian-angel) | $1.19 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sprite Fountain](https://riftdecks.com/cards/details-sprite-fountain) | $3.23 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
-| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (6) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Charm](https://riftdecks.com/cards/details-charm) | $0.46 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.17 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (5) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Charm](https://riftdecks.com/cards/details-charm) | $0.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.32 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Ornn's Forge](https://riftdecks.com/cards/details-ornns-forge) | $0.10 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Seat of Power](https://riftdecks.com/cards/details-seat-of-power) | $0.18 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Veiled Temple](https://riftdecks.com/cards/details-veiled-temple) | $0.11 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Seat of Power](https://riftdecks.com/cards/details-seat-of-power) | $0.16 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Veiled Temple](https://riftdecks.com/cards/details-veiled-temple) | $0.12 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **8** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **4** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Charm](https://riftdecks.com/cards/details-charm) | $0.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.34 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.30 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Twilight Shroud](https://riftdecks.com/cards/details-twilight-shroud) | $0.06 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Not So Fast](https://riftdecks.com/cards/details-not-so-fast) | $1.46 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Disarming Rake](https://riftdecks.com/cards/details-disarming-rake) | $0.18 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$96.02
+![](https://riftdecks.com/img/logos/tcg_player.png)$99.62
 @TCGPlayer
 
 Affiliate link disclaimer
 
-x4
+x3
 
-![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-089a-298_full.png)
+![](https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png)
 
 ## Visual Decklist
 
@@ -156,6 +165,10 @@ x2
 
 [![Aspiring Engineer](https://riftdecks.com/img/cards/riftbound/SFD/sfd-061-221_full.png)](https://riftdecks.com/cards/details-aspiring-engineer)
 
+x1
+
+[![Lecturing Yordle](https://riftdecks.com/img/cards/riftbound/OGN/ogn-087-298_full.png)](https://riftdecks.com/cards/details-lecturing-yordle)
+
 x3
 
 [![Pit Crew](https://riftdecks.com/img/cards/riftbound/OGN/ogn-091-298_full.png)](https://riftdecks.com/cards/details-pit-crew)
@@ -192,7 +205,7 @@ x3
 
 [![Sterak's Gage](https://riftdecks.com/img/cards/riftbound/SFD/sfd-056-221_full.png)](https://riftdecks.com/cards/details-steraks-gage)
 
-x3
+x2
 
 [![Charm](https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png)](https://riftdecks.com/cards/details-charm)
 
@@ -200,23 +213,49 @@ x3
 
 [![Defy](https://riftdecks.com/img/cards/riftbound/OGN/ogn-045-298_full.png)](https://riftdecks.com/cards/details-defy)
 
+## Sideboard
+
+x1
+
+[![Charm](https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png)](https://riftdecks.com/cards/details-charm)
+
+x2
+
+[![Decree of Focus](https://riftdecks.com/img/cards/riftbound/VEN/ven-040-166_full.png)](https://riftdecks.com/cards/details-decree-of-focus)
+
+x2
+
+[![Decree of Insight](https://riftdecks.com/img/cards/riftbound/VEN/ven-061-166_full.png)](https://riftdecks.com/cards/details-decree-of-insight)
+
+x1
+
+[![Twilight Shroud](https://riftdecks.com/img/cards/riftbound/VEN/ven-031-166_full.png)](https://riftdecks.com/cards/details-twilight-shroud)
+
+x1
+
+[![Not So Fast](https://riftdecks.com/img/cards/riftbound/SFD/sfd-045-221_full.png)](https://riftdecks.com/cards/details-not-so-fast)
+
+x3
+
+[![Disarming Rake](https://riftdecks.com/img/cards/riftbound/SFD/sfd-032-221_full.png)](https://riftdecks.com/cards/details-disarming-rake)
+
 ## Deck Stats
 
 | types |
 | --- |
-| battlefield | 6% (3) | 6% |
-| gear | 34% (19) | 34% |
+| battlefield | 5% (3) | 5% |
+| gear | 29% (19) | 29% |
 | legend | 2% (1) | 2% |
-| rune | 22% (12) | 22% |
-| spell | 11% (6) | 11% |
-| unit | 27% (15) | 27% |
+| rune | 19% (12) | 19% |
+| spell | 19% (12) | 19% |
+| unit | 29% (19) | 29% |
 | cmc |
-| 0 | 34% (19) | 34% |
-| 1 | 18% (10) | 18% |
-| 2 | 33% (18) | 33% |
-| 3 | 15% (8) | 15% |
+| 0 | 29% (19) | 29% |
+| 1 | 23% (15) | 23% |
+| 2 | 29% (19) | 29% |
+| 3 | 19% (12) | 19% |
 | 5 | 2% (1) | 2% |
 | domains |
-| calm | 67% (37) | 67% |
-| colorless | 6% (3) | 6% |
-| mind | 31% (17) | 31% |
+| calm | 67% (44) | 67% |
+| colorless | 5% (3) | 5% |
+| mind | 31% (20) | 31% |

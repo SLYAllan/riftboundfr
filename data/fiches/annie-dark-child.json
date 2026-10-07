@@ -15,77 +15,77 @@
     },
     {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 80 % des listes, 2,5 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 81 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Tideturner",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "name": "Stacked Deck",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 75 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 75 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust Monk",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Against the Odds",
-      "role": "Standard, 67 % des listes, 1,5 exemplaire",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 28,
+    "joueursClasses": 29,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "10.7 %",
-    "tournois": 16,
-    "listesPubliees": 15,
+    "conversion": "10.3 %",
+    "tournois": 17,
+    "listesPubliees": 16,
     "bestPlacements": [
       {
         "placement": "16th",
@@ -133,27 +133,31 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "80 %",
+      "usage": "81 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Pouncing": {
-      "usage": "60 %",
+      "usage": "56 %",
       "role": "3 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "40 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "33 %",
+      "usage": "38 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Evelynn, Entrancing": {
+      "usage": "31 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Seat of Power (87 %)",
-    "Zaun Warrens (67 %)",
-    "Grove of the God-Willow (33 %)"
+    "Seat of Power (88 %)",
+    "Zaun Warrens (69 %)",
+    "Grove of the God-Willow (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 28 joueurs classés, 16 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 29 joueurs classés, 17 tournois, dont 16 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

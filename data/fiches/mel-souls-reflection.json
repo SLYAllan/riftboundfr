@@ -35,7 +35,7 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -60,12 +60,12 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -75,17 +75,17 @@
     },
     {
       "name": "Applied Researchers",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Souple, 47 % des listes, 3 exemplaires",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
       "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -95,7 +95,7 @@
     },
     {
       "name": "Singularity",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -106,7 +106,7 @@
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "64 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
@@ -122,7 +122,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "40 %",
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     }
   },
@@ -132,12 +132,12 @@
     "Frozen Fortress (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 211,
+    "joueursClasses": 213,
     "coupe10": 6,
     "titres": 0,
     "conversion": "2.8 %",
-    "tournois": 34,
-    "listesPubliees": 140,
+    "tournois": 35,
+    "listesPubliees": 142,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -166,6 +166,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 211 joueurs classés, 34 tournois, dont 140 listes publiées d’où viennent les cartes. Relevé du 30 septembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 213 joueurs classés, 35 tournois, dont 142 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }
