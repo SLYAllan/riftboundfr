@@ -91,3 +91,14 @@ describe("validerPatchOverlay", () => {
     });
   });
 });
+
+describe("couleurs des points", () => {
+  it("garde une couleur #rrggbb, efface le reste, et la validation suit la même règle", () => {
+    const etat = applyStateUpdate(defaultOverlayState(), { event: { couleurPoint: "#B02028", couleurChiffres: "red" } });
+    expect(etat.event.couleurPoint).toBe("#b02028");
+    expect(etat.event.couleurChiffres).toBe("");
+    expect(validerPatchOverlay(JSON.parse(JSON.stringify(etat)))).toMatchObject({ ok: true });
+    expect(validerPatchOverlay({ event: { couleurPoint: "" } })).toMatchObject({ ok: true });
+    expect(validerPatchOverlay({ event: { couleurChiffres: "url(x)" } })).toMatchObject({ ok: false });
+  });
+});

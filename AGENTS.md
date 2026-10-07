@@ -349,6 +349,10 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   type dans `overlay.ts`, `normaliserEvent` juste en dessous, et la liste blanche
   de `overlay-validation.ts`. Cette liste refuse les champs inconnus : un champ
   oublié là fait répondre 400 à toute écriture du tableau de bord.
+  **Couleurs des points** (`couleurPoint`, `couleurChiffres`) : sans couleur, les
+  pastilles d'origine ; avec, trois calques tirés d'elles par
+  `scripts/gen-pastilles-calques.py` (`public/stream/points/`). Une pastille
+  redessinée oblige à relancer ce script, sinon les deux rendus divergent.
 
 ## Points d'entrée
 

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   AlertTriangle, ArrowLeftRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
 import { adopterChampsPartages, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
@@ -625,6 +625,35 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <p className="w-full text-xs text-ink-muted">
               {t("Ce décor ne sert qu’au mode choisi ci-dessus. L’autre mode garde le sien.")}
             </p>
+          </div>
+          {/* Les couleurs valent pour les trois modes : la rangée de points est la
+              même partout. */}
+          <div className="flex w-full flex-wrap items-center gap-3 border-t border-hairline pt-3">
+            <span className="text-sm text-ink-secondary">{t("Couleurs des points")}</span>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="color"
+                value={state.event.couleurPoint || COULEURS_POINTS.fond}
+                onChange={(e) => update({ event: { couleurPoint: e.target.value } })}
+                className="h-8 w-10 cursor-pointer rounded border border-hairline bg-transparent"
+              />
+              {t("Fond du point marqué")}
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="color"
+                value={state.event.couleurChiffres || COULEURS_POINTS.chiffres}
+                onChange={(e) => update({ event: { couleurChiffres: e.target.value } })}
+                className="h-8 w-10 cursor-pointer rounded border border-hairline bg-transparent"
+              />
+              {t("Chiffres")}
+            </label>
+            {(state.event.couleurPoint || state.event.couleurChiffres) && (
+              <button onClick={() => update({ event: { couleurPoint: "", couleurChiffres: "" } })} className={btnVide}>
+                <RotateCcw size={15} aria-hidden />
+                {t("Couleurs d’origine")}
+              </button>
+            )}
           </div>
         </div>
       </section>

@@ -100,7 +100,9 @@ export interface OverlayStateData {
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
   // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
   // découpes diffèrent. Vide = le décor du site pour ce mode.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string };
+  // `couleurPoint` / `couleurChiffres` : fond du point marqué et couleur des chiffres
+  // des pastilles, en `#rrggbb`. Vide = les pastilles d'origine, au pixel près.
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string; couleurPoint?: string; couleurChiffres?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -131,7 +133,7 @@ function emptyPlayer(name: string): OverlayPlayer {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "", backgroundCompactUrl: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "", backgroundCompactUrl: "", couleurPoint: "", couleurChiffres: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -301,6 +303,18 @@ function normaliserJoueur(v: unknown, nomParDefaut: string): OverlayPlayer {
   return joueur;
 }
 
+/**
+ * Couleurs des pastilles d'origine, mesurées sur `public/stream/<n>_full.webp` :
+ * le disque bleu sous le point marqué, et le blanc des chiffres. Le sélecteur du
+ * tableau de bord part de là.
+ */
+export const COULEURS_POINTS = { fond: "#1c60a6", chiffres: "#ffffff" };
+
+/** Une couleur `#rrggbb`, ou "" : rien d'autre n'entre dans un `style` de l'overlay. */
+export function couleurHex(v: unknown): string {
+  return typeof v === "string" && /^#[0-9a-f]{6}$/i.test(v) ? v.toLowerCase() : "";
+}
+
 function normaliserEvent(v: unknown): OverlayStateData["event"] {
   const e = (v ?? {}) as Record<string, unknown>;
   return {
@@ -320,6 +334,8 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
     backgroundNocamUrl: texte(e.backgroundNocamUrl, URL_MAX),
     backgroundCompactUrl: texte(e.backgroundCompactUrl, URL_MAX),
+    couleurPoint: couleurHex(e.couleurPoint),
+    couleurChiffres: couleurHex(e.couleurChiffres),
   };
 }
 

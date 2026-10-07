@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
-import { echelleOverlay, entrelace, secondesChrono, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { COULEURS_POINTS, echelleOverlay, entrelace, secondesChrono, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useLangue, useT } from "@/components/i18n-provider";
@@ -135,7 +135,32 @@ function useBattlefieldArt(names: string[]): Record<string, string | null> {
   return Object.fromEntries(names.filter(Boolean).map((n) => [n, art[n] ?? cached[n] ?? null]));
 }
 
-function Points({ max, a, b, visible }: { max: number; a: number; b: number; visible: boolean }) {
+/**
+ * Une pastille recolorée, en trois calques tirés de l'image d'origine par
+ * `scripts/gen-pastilles-calques.py` : le disque du point marqué (dessiné ici,
+ * l'image « full » n'est que la « empty » posée sur un disque), le socle sans son
+ * chiffre, puis le chiffre en masque. Ses bords cachés sous l'anneau blanc opaque,
+ * le disque n'a pas besoin d'être une image.
+ */
+function PastilleRecoloree({ v, full, fond, chiffres, className }: { v: number; full: boolean; fond: string; chiffres: string; className: string }) {
+  const masque = `url(/stream/points/${v}_chiffre.webp)`;
+  return (
+    <span className={`relative block shrink-0 ${className}`}>
+      {full && <span className="absolute inset-[15%] rounded-full" style={{ backgroundColor: fond }} />}
+      <img src={`/stream/points/${v}_socle.webp`} alt="" className="absolute inset-0 h-full w-full" />
+      {/* Préfixe -webkit- : le navigateur d'OBS n'a pas toujours `mask-image` nu. */}
+      <span
+        className="absolute inset-0"
+        style={{ backgroundColor: chiffres, WebkitMaskImage: masque, maskImage: masque, WebkitMaskSize: "100% 100%", maskSize: "100% 100%" }}
+      />
+    </span>
+  );
+}
+
+function Points({ max, a, b, visible, couleurPoint, couleurChiffres }: { max: number; a: number; b: number; visible: boolean; couleurPoint?: string; couleurChiffres?: string }) {
+  // Sans couleur choisie, les images d'origine : le chiffre y est placé à un pixel
+  // près autrement entre « empty » et « full », les calques ne le reproduisent pas.
+  const recolore = Boolean(couleurPoint || couleurChiffres);
   const cells: { side: "a" | "b"; v: number }[] = [];
   for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
   for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
@@ -153,12 +178,25 @@ function Points({ max, a, b, visible }: { max: number; a: number; b: number; vis
         // Le point final (celui qui donne la manche) est mis en avant : un poil plus
         // gros et un peu détaché du reste. Les autres restent à 50 px, collés.
         const finalPoint = c.v === max;
+        const taille = finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]";
+        if (recolore) {
+          return (
+            <PastilleRecoloree
+              key={i}
+              v={c.v}
+              full={full}
+              fond={couleurPoint || COULEURS_POINTS.fond}
+              chiffres={couleurChiffres || COULEURS_POINTS.chiffres}
+              className={taille}
+            />
+          );
+        }
         return (
           <img
             key={i}
             src={`/stream/${c.v}_${full ? "full" : "empty"}.webp`}
             alt=""
-            className={`object-contain ${finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]"}`}
+            className={`object-contain ${taille}`}
           />
         );
       })}
@@ -613,7 +651,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
         className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
         style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
       />
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={event.pointsVisible !== false} />
+      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={event.pointsVisible !== false} couleurPoint={event.couleurPoint} couleurChiffres={event.couleurChiffres} />
       <Side
         p={state.players[0]}
         side="left"
@@ -809,7 +847,7 @@ function OverlayCompact({ state }: { state: OverlayStateData }) {
   const { gauche, droite } = cartesParCadre(cards);
   return (
     <div className={styles.root}>
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} />
+      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} couleurPoint={state.event.couleurPoint} couleurChiffres={state.event.couleurChiffres} />
       <BlocJoueurCompact p={a} side="left" format={state.format} />
       <BlocJoueurCompact p={b} side="right" format={state.format} />
       {/* Le décor PAR-DESSUS le contenu : ses traits dorés encadrent alors les images,

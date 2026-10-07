@@ -1,4 +1,4 @@
-import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, type PatchOverlay } from "./overlay";
+import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, couleurHex, type PatchOverlay } from "./overlay";
 
 // Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
 // il en existait ici une seconde définition, plus plate, et les deux avaient
@@ -91,7 +91,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "timerDepassement", "timerMonte", "layout", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "timerDepassement", "timerMonte", "layout", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl", "couleurPoint", "couleurChiffres"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -121,6 +121,13 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
     }
     if (value.event.layout !== undefined && !["cams", "nocam"].includes(String(value.event.layout))) {
       return { ok: false, error: "event.layout doit être cams ou nocam" };
+    }
+    for (const cle of ["couleurPoint", "couleurChiffres"] as const) {
+      const v = value.event[cle];
+      // "" remet la couleur d'origine.
+      if (v !== undefined && v !== "" && couleurHex(v) === "") {
+        return { ok: false, error: `event.${cle} doit être une couleur #rrggbb` };
+      }
     }
   }
 
