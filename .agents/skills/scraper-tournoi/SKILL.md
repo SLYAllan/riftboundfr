@@ -115,6 +115,14 @@ riftdecks ne publie que les listes que les joueurs envoient (Barcelone 106 sur
   Lire ses FICHES, pas sa prose : à Singapour le texte annonçait cinq Kennen dans
   le Top 8, les fiches en donnent quatre. Après `mark-bestof-tournois.mts`,
   recouper les decks `featured` contre les « Legend Rank #1 » de l'article.
+  L'adresse ne se devine pas toujours : Los Angeles est `los-angeles-top-decks`,
+  pas `los-angeless-top-decks`. Un 404 sur la forme attendue ne prouve pas que
+  l'article manque : essayer les variantes.
+- **Repasser sur riftdecks une semaine après.** Les joueurs complètent leurs
+  listes après coup : à Los Angeles, 30 listes sans réserve le 30 septembre l'avaient
+  presque toutes le 7 octobre, Top 8 compris, et 23 listes nouvelles étaient
+  sorties (55 publiées, puis 86). Relever les pages de liste, refaire les listes
+  écartées, puis reseeder le tournoi et relever ses best-of.
 - **Le classement complet**, pour les stats :
   `bash scripts/scrape-classement.sh <slug>-classement <url-riftdecks>`, puis une
   entrée dans `CONTEXTES` de `scripts/classements-tournois.mts` quand le contexte

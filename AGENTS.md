@@ -138,6 +138,12 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   que s'ils sont comptés sur le set en cours : `fiches-maj` pose alors `setDesChiffres`.
   Sans lui, la page les tait : une Kai'Sa d'Origins ne joue pas les cartes de sa version
   Vendetta, et des chiffres d'un ancien set passaient pour actuels.
+  **La prose d'une fiche (archétype, plan, forces, faiblesses) s'écrit dans
+  `data/fiches-prose.json`, jamais dans `data/fiches/`**, puis `fiches-prose.mts
+  --ecrire` la pose. Le 24 août, elle avait été écrite dans les fiches : relancer le
+  script le 7 octobre ramenait le texte du 17 août. Les chiffres cités dans cette
+  prose et dans les guides (`src/lib/legend-guides.ts`) se relisent dans la fiche à
+  chaque `maj:stats` : moyenne du format, joueurs classés, 10 % de tête, titres.
 - **Tournois hexgate** → `scrape-hexgate.mts`, `parse-hexgate.mts`, `tournois-hexgate.mts`
   (détail dans `HANDOFF.md`). Une City Challenge entre à partir d'une centaine de joueurs
   (règle d'Allan du 22 septembre 2026, qui remplace la borne de 128) ; les épreuves de
@@ -160,7 +166,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 **Réflexes :**
 - **Coupler le nouveau à l'ancien** : recouper toute donnée importée contre les sources ci-dessus AVANT de la figer ; ne jamais traiter une info isolément.
 - **Agents/Workflow par vagues de 3-4 max** (jamais plus → rate-limit API). Pas 2 gros workflows en même temps.
-- **Déléguer par défaut** : le gros du travail (lecture, recherche, scrape, parse, édition mécanique) part à une vague de workers `pi` sur DeepSeek — voir le skill `delegate-wave`. Tu ne fais plus que découper, relire chaque diff et trancher. Ce qui reste chez toi : le jugement, l'intégrité des decklists, la base de prod, la sécurité. La porte reste `npm run verify`, lancée par toi.
+- **Déléguer par défaut** : le gros du travail (lecture, recherche, scrape, parse, édition mécanique) part à une vague de workers `pi` sur DeepSeek — voir le skill `delegate-wave`. Tu ne fais plus que découper, relire chaque diff et trancher. Ce qui reste chez toi : le jugement, l'intégrité des decklists, la base de prod, la sécurité. La porte reste `npm run verify`, lancée par toi. Plusieurs workers sur un même fichier : chacun écrit des propositions (`ancien`, `nouveau`, `source`) dans un JSON à part, et toi tu les appliques par script, en refusant un passage introuvable. Relire chacune : sur les guides, le 7 octobre, un worker gardait l'ancienne moyenne du champ et rangeait un bon chiffre parmi les faiblesses.
 - Contenu **site** rendu : **pas de tiret cadratin (—)**, terminologie FR officielle. Docs internes (META/DECKBUILDING/video-insights) : em-dash toléré.
 
 ---
