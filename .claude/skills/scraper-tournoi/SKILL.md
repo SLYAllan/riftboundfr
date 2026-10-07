@@ -3,11 +3,145 @@ name: scraper-tournoi
 description: Ajoute un tournoi riftdecks.com au site, du scraping jusqu'à la mise en ligne. À utiliser quand on donne une ou plusieurs URL de tournoi riftdecks à importer, ou quand il faut re-scraper un tournoi existant. Couvre le scraping, la validation, le seed, les best-of et les drapeaux.
 ---
 
-# scraper-tournoi
+# Ajouter un tournoi
 
-Le skill vit dans `.agents/skills/scraper-tournoi/SKILL.md`. **Lis ce fichier et suis-le.**
+Sept étapes, dans cet ordre. Aucune ne se saute, surtout pas la 0 et la 2.
 
-Ce fichier-ci n'est qu'un panneau indicateur : Codex lit `.agents/skills/`, Claude
-Code lit `.claude/skills/`. Sans lui, Claude Code ne voyait aucun des skills du
-dépôt — d'où un `delegate-wave` employé d'un seul côté. Le fond n'est recopié nulle
-part : deux copies de la même règle finissent toujours par diverger.
+**Déléguer le grain (skill `delegate-wave`).** Le balayage des scrapes bruts, le
+recoupement d'un lot de decklists ou tout audit de masse partent à une vague de
+workers pi/DeepSeek ; toi tu relis et tu tranches. Ce qui NE se délègue PAS : la
+décision de garder/supprimer une decklist (étape 2, intégrité), le seed **prod**,
+les flags. La porte `npm run verify` reste chez toi.
+
+## 0. Vérifier que les Légendes du set sont connues
+
+```bash
+npx tsx scripts/maj-legend-map.mts          # dit ce qui manque
+npx tsx scripts/maj-legend-map.mts --apply  # écrit
+```
+
+Le scraper reconnaît la Légende d'un deck par `data/raw-scrapes/legend-map.json`.
+**Une Légende absente fait sauter le deck entier, en silence.** Un tournoi sur un
+set plus récent que la carte perd donc la moitié de ses decks sans que rien ne
+prévienne : c'est arrivé avec Vendetta, dont les 9 Légendes étaient en base mais
+pas dans la carte.
+
+## 1. Scraper
+
+La marche à suivre existe déjà et fait foi : **`data/raw-scrapes/AGENT-INSTRUCTIONS.md`**.
+La lire en entier avant de commencer. Elle donne le découpage par pages, la
+reconnaissance de la Légende par `legend-map.json`, le format exact des fichiers
+à écrire, et quoi faire d'un deck sans Légende (le sauter, pas le deviner).
+
+En pratique, tout est fait par un script :
+
+```bash
+bash scripts/scrape-tournoi.sh <slug> <url-du-tournoi> <nb-pages>
+```
+
+Il collecte les URL de decks page par page, puis récupère chaque deck. Il est
+reprenable : un deck déjà sur le disque n'est pas repris, et un fichier trop
+court est rejeté plutôt que gardé (sinon une page de défi Cloudflare compterait
+comme un deck).
+
+Quatre points qui coûtent cher si on les rate :
+
+- **Seul le CLI `firecrawl` traverse le Cloudflare de riftdecks.** `curl`,
+  `WebFetch`, le serveur MCP `scrapeur` et `cloudscraper` 1.2.71 y prennent tous
+  un 403, vérifié le 13 août 2026.
+- **Les appels passent par `scripts/fc.sh`, pas par `firecrawl` en direct.** Il
+  change de clé quand la clé courante n'a plus de crédit. Sans lui, un run s'est
+  arrêté net au milieu d'un tournoi et n'a jamais atteint les deux suivants.
+- **Les clés vivent dans `.firecrawl/keys`, une par ligne. Ce fichier n'est pas
+  dans git** (ce sont des secrets) : sur un clone neuf il faut le recréer, sinon
+  `fc.sh` retombe sur la config du CLI. La variable `FIRECRAWL_API_KEYS`
+  (séparée par des virgules) fait la même chose et gagne sur le fichier.
+- **Un tournoi à la fois.** Une clé plafonne à 18 requêtes par minute. Deux
+  scrapes en parallèle ne vont pas deux fois plus vite : ils se volent le quota
+  et repartent en erreur. À 1 s d'écart, deux appels sur cinq revenaient vides —
+  ça ressemble à des decks manquants, ce sont des refus de débit.
+
+Sortie : `data/decklists/<legende>/<slug>-*.json`, plus le résumé
+`data/tournaments/<slug>.json` et le fragment d'index
+`data/raw-scrapes/index-fragments/<slug>.json`. **Ne pas toucher au
+`data/decklists-index.json` global.**
+
+## 2. Valider — jamais sauter
+
+```bash
+npm run validate:decks     # dépasse 5 min, prévoir une limite large
+```
+
+Sortie 1 = une decklist ne correspond pas à son scrape brut, donc a été
+fabriquée. Corriger ou supprimer avant de seeder. Voir le skill `decklists`.
+
+## 3. Seeder
+
+```bash
+npx tsx scripts/seed-tournament-decks.ts <prefixe> "<contexte tournoi>" <set> "<tags,csv>"
+# ex. : ... s4-chengdu "S4 Chengdu City Challenge (2026-08-02)" Unleashed "city-challenge,s4"
+```
+
+Le `<contexte tournoi>` sert de clé partout ensuite : le réutiliser à l'identique.
+
+## 4. Lever les best-of — Regional Qualifiers UNIQUEMENT
+
+**Un City Challenge n'a pas de best-of.** Ni un weekly, ni un tournoi de boutique :
+seuls les Regional Qualifiers en portent. Un City Challenge se lit sur sa page
+`/tournois/<slug>`, pas dans `/decks?cat=bestof`. Sauter cette étape pour eux
+n'est pas un oubli, c'est la règle. (Des best-of ont déjà été levés à tort sur
+trois City Challenges le 17 août 2026, puis retirés.)
+
+Pour un Regional Qualifier :
+
+```bash
+npx tsx scripts/mark-bestof-tournois.mts "<contexte tournoi>"
+```
+
+Pour chaque Légende jouée, la liste la mieux classée passe en `featured`. Le
+script ne crée rien et il est idempotent. **Best-of = le meilleur deck de chaque
+Légende**, pas le top 8.
+
+### Regional Qualifier : l'article de Riot et le classement
+
+riftdecks ne publie que les listes que les joueurs envoient (Barcelone 106 sur
+2 127, Singapour 114 sur 1 893). Deux sources complètent :
+
+- **L'article officiel de Riot**, `playriftbound.com/.../<ville>s-top-decks/`,
+  publie le Top 8 et le n°1 de chaque Légende avec leur liste complète.
+  `bash scripts/fc.sh scrape <url> -f markdown --only-main-content -o
+  data/raw-scrapes/<slug>-officiel.md` (firecrawl garde les tableaux), puis
+  `npx tsx scripts/parse-playriftbound.ts <slug> "<nom>" <date> <joueurs> <set> <url>`.
+  Lire ses FICHES, pas sa prose : à Singapour le texte annonçait cinq Kennen dans
+  le Top 8, les fiches en donnent quatre. Après `mark-bestof-tournois.mts`,
+  recouper les decks `featured` contre les « Legend Rank #1 » de l'article.
+  L'adresse ne se devine pas toujours : Los Angeles est `los-angeles-top-decks`,
+  pas `los-angeless-top-decks`. Un 404 sur la forme attendue ne prouve pas que
+  l'article manque : essayer les variantes.
+- **Repasser sur riftdecks une semaine après.** Les joueurs complètent leurs
+  listes après coup : à Los Angeles, 30 listes sans réserve le 30 septembre l'avaient
+  presque toutes le 7 octobre, Top 8 compris, et 23 listes nouvelles étaient
+  sorties (55 publiées, puis 86). Relever les pages de liste, refaire les listes
+  écartées, puis reseeder le tournoi et relever ses best-of.
+- **Le classement complet**, pour les stats :
+  `bash scripts/scrape-classement.sh <slug>-classement <url-riftdecks>`, puis une
+  entrée dans `CONTEXTES` de `scripts/classements-tournois.mts` quand le contexte
+  ne se retrouve pas seul, puis `npm run maj:stats`. Sans lui, le tournoi reste
+  hors du corpus des tier lists (90 % de couverture exigés).
+
+## 5. Drapeau, pays et set
+
+`src/lib/tournament-flags.ts` porte le pays, le continent et le set de chaque
+tournoi. Un set mal étiqueté fausse les tier lists : six tournois s'étaient
+retrouvés dans le mauvais set en juillet. La méthode qui tranche : chercher dans
+les decks une des 14 Légendes exclusives à Déchaînement.
+
+## 6. Vérifier et pousser
+
+`npm run verify`, puis le skill `verifier`. Regarder la page du tournoi dans un
+navigateur avant de pousser : un nombre de joueurs ou une date faux se voient
+tout de suite et ne se voient jamais dans un diff.
+
+Pousser ne déploie rien : Allan lance le Deploy dans Coolify. Les données (decks,
+best-of, articles) partent en prod par `scripts/prod-tunnel.mts`, voir
+`docs/DEPLOIEMENT.md`.

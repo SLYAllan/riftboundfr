@@ -646,18 +646,14 @@ passe, jamais réécrite).
 # Outils propres au dépôt
 
 Codex a travaillé sur ce dépôt avec Claude Code jusqu'au 7 octobre 2026. Il n'y
-travaille plus : `.codex/` et `~/.codex/AGENTS.md` ne sont plus lus.
+travaille plus : `.codex/` et `.agents/` ont été retirés le même jour.
 
 ## Skills du dépôt
 
 Huit skills : `reecrire`, `accroche`, `verifier`, `decklists`, `scraper-tournoi`,
-`outils-existants`, `delegate-wave`, `seo-semaine`. Le fond vit dans
-`.agents/skills/<nom>/SKILL.md`, un panneau dans `.claude/skills/<nom>/SKILL.md` ne
-porte que le nom, la description et « lis `.agents/skills/<nom>/SKILL.md` » : sans
-panneau, Claude Code ne voit pas le skill. Un nouveau skill se pose de la même façon,
-et une description qui change se recopie dans le panneau. Un skill **renvoie** à ce
-fichier au lieu de le recopier : deux copies de la même règle finissent toujours par
-diverger.
+`outils-existants`, `delegate-wave`, `seo-semaine`, chacun dans
+`.claude/skills/<nom>/SKILL.md`. Un skill **renvoie** à ce fichier au lieu de le
+recopier : deux copies de la même règle finissent toujours par diverger.
 
 Les passes d'interface (`better-*`) et le scraping par `firecrawl` vivent dans
 `~/.claude/`. `.hermes/SKILLS.md` dit lequel sert à quoi ici ; `.hermes/skills/` en
