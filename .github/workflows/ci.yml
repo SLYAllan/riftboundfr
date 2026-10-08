@@ -37,3 +37,59 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest scripts.validate_decklists_rules_test
       - run: python -X utf8 scripts/validate-decklists.py
+
+  # Image de prod pour la maison : construite ici, jamais sur le mini PC, dont la
+  # mémoire est comptée (D4 du dépôt serveur). Sur une PR, l'image reçoit une adresse
+  # témoin puis est jetée : le contrôle prouve que NEXT_PUBLIC_SITE_URL entre bien dans
+  # le build. Chercher l'adresse réelle ne prouverait rien, le code l'écrit déjà en dur
+  # comme valeur de repli. Sur main, l'image part dans GHCR, taguée par le SHA.
+  image:
+    needs: [verify, donnees]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/slyallan/riftboundfr
+      PUBLIER: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Adresse du site
+        id: adresse
+        env:
+          ADRESSE_DEPOT: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+        run: |
+          if [ "$PUBLIER" = true ]; then
+            # Sans elle, la connexion Discord renverrait vers « undefined/api/... ».
+            [ -n "$ADRESSE_DEPOT" ] || { echo "Variable de dépôt NEXT_PUBLIC_SITE_URL absente"; exit 1; }
+            echo "valeur=$ADRESSE_DEPOT" >> "$GITHUB_OUTPUT"
+          else
+            echo "valeur=https://sonde-ci.invalid" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          load: true
+          tags: riftboundfr:essai
+          build-args: NEXT_PUBLIC_SITE_URL=${{ steps.adresse.outputs.valeur }}
+          labels: org.opencontainers.image.source=https://github.com/SLYAllan/riftboundfr
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: L'adresse est figée dans le build
+        env:
+          ADRESSE: ${{ steps.adresse.outputs.valeur }}
+        run: docker run --rm --entrypoint sh -e ADRESSE riftboundfr:essai -c 'grep -rqF "$ADRESSE" /app/.next'
+      - if: env.PUBLIER == 'true'
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publication
+        if: env.PUBLIER == 'true'
+        run: |
+          for tag in "${{ github.sha }}" main; do
+            docker tag riftboundfr:essai "$IMAGE:$tag"
+            docker push "$IMAGE:$tag"
+          done
