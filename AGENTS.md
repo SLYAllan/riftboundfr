@@ -123,6 +123,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   connaissance de cause.
 - `npm run fix:names <doc.md>` → auto-corrige les noms Whisper (distance ≤ 2 vs DB cartes) ; `npm run validate:names` = gate (exit 1 si suspects).
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (voir plus haut les quatre cas de refus) ; `npm run validate:regles` = ses tests Python. Les deux tournent en CI, dans un job à part.
+- Job `image` de `ci.yml` → sur `main`, construit l'image de prod et la pousse dans GHCR (`ghcr.io/slyallan/riftboundfr:<sha>` et `:main`) pour le serveur maison. Sur une PR, il la construit avec une adresse témoin pour prouver que `NEXT_PUBLIC_SITE_URL` entre dans le build. Coolify ne s'en sert pas : il construit lui-même jusqu'à la migration.
 
 **Sources de vérité (où vit quoi) :**
 - Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (12 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026 + 2 du 18 septembre 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
