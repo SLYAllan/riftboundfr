@@ -32,12 +32,24 @@ en dessous, Jhin le tient de nouveau, aucun rang ne bouge. « Les cinq tier list
 collent aux chiffres ».
 
 **Seedé en prod le 17** : 2 035 listes, 44 best-of, tier lists du jour ; prod à
-31 358 decks publiés (`--etat`). **Reste** : le Deploy (fiches, drapeaux) ;
-META-KNOWLEDGE et DECKBUILDING, la prose des fiches et des guides. **Avant les
-articles « meilleur deck » d'après le ban** : 12 fiches conseillent encore une
-carte bannie, parce qu'elles comptent leurs cartes sur toutes les listes
-Vendetta, d'avant et d'après le 18 septembre. Demander à Allan s'il faut
-compter sur les seules listes d'après le ban.
+31 358 decks publiés (`--etat`). **Reste le Deploy** (fiches, guides, drapeaux).
+
+**Cartes des fiches et cores sur l'après-ban** (choix d'Allan) :
+`scripts/apres-ban.ts`, lu par `fiches-stats` et `cores-vendetta`. 13 tournois
+retenus ; les City Challenge chinoises du 19 septembre jouaient encore Stacked
+Deck (21 à 35 % des listes) et restent dehors. Plus aucune fiche visible ne
+conseille une carte bannie. 8 Légendes ont moins de dix listes depuis le ban :
+leur page tait leurs cartes. **Un seul des 13 tournois est occidental** (Los
+Angeles, 86 listes) : ces cartes décrivent surtout le méta chinois.
+
+META-KNOWLEDGE (v16) et DECKBUILDING (v15) refaits. Guides et prose des fiches
+recalés par trois workers pi (133 propositions relues, 25 reprises) ; le
+contrôle des restes est propre.
+
+**Reste, à trancher par Allan** : les articles « meilleur deck »
+(`scripts/seed-fiche-articles.mts`, 23 articles) prennent encore leurs listes en
+Unleashed. Les refaire sur l'après-ban veut dire des listes presque toutes
+chinoises.
 
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
