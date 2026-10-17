@@ -26,10 +26,18 @@ du même personnage), dont 100 au National Open.
 
 Validateur : 29 872 listes, 0 écart. Seed local : 2 035 créées, 31 312 decks.
 `maj:stats` sortie 0 : Vendetta 15 642 places sur 50 tournois, aucune
-contradiction de rang ni « À REGARDER ». **Reste** : 93 effectifs périmés dans
-les commentaires de `scripts/tier-tables.ts` (Vendetta et Globale), puis
-META-KNOWLEDGE et DECKBUILDING, la prose des fiches et des guides, les articles
-« meilleur deck » d'après le ban ; le seed en prod et le Deploy.
+contradiction de rang ni « À REGARDER ». Les 93 commentaires des tier lists
+Vendetta et Globale sont réécrits sur le relevé : Lillia ne tient plus l'écart
+en dessous, Jhin le tient de nouveau, aucun rang ne bouge. « Les cinq tier lists
+collent aux chiffres ».
+
+**Seedé en prod le 17** : 2 035 listes, 44 best-of, tier lists du jour ; prod à
+31 358 decks publiés (`--etat`). **Reste** : le Deploy (fiches, drapeaux) ;
+META-KNOWLEDGE et DECKBUILDING, la prose des fiches et des guides. **Avant les
+articles « meilleur deck » d'après le ban** : 12 fiches conseillent encore une
+carte bannie, parce qu'elles comptent leurs cartes sur toutes les listes
+Vendetta, d'avant et d'après le 18 septembre. Demander à Allan s'il faut
+compter sur les seules listes d'après le ban.
 
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
