@@ -52,6 +52,11 @@ contrôle des restes est propre.
 (958 clics, position 5,0) et elles portent maintenant l'après-ban. Leur texte a
 changé le 17 : à compter dans la passe SEO à partir du Deploy.
 
+**Article « Best of Chengdu »** (`scripts/seed-chengdu-bestof.mts`) : seedé en
+LOCAL seulement, `/articles/best-of-national-open-chengdu`, en attente de la
+relecture d'Allan. Pour la prod, après son accord :
+`npx tsx scripts/prod-tunnel.mts scripts/seed-chengdu-bestof.mts`.
+
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
 **RQ Los Angeles, second passage.** riftdecks publie maintenant 108 listes (85 au
