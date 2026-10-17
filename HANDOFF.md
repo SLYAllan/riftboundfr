@@ -52,10 +52,10 @@ contrôle des restes est propre.
 (958 clics, position 5,0) et elles portent maintenant l'après-ban. Leur texte a
 changé le 17 : à compter dans la passe SEO à partir du Deploy.
 
-**Article « Best of Chengdu »** (`scripts/seed-chengdu-bestof.mts`) : seedé en
-LOCAL seulement, `/articles/best-of-national-open-chengdu`, en attente de la
-relecture d'Allan. Pour la prod, après son accord :
-`npx tsx scripts/prod-tunnel.mts scripts/seed-chengdu-bestof.mts`.
+**Article « Best of Chengdu »** (`scripts/seed-chengdu-bestof.mts`) : relu par
+Allan, seedé en local et EN PROD le 17 octobre, en ligne sur
+`/articles/best-of-national-open-chengdu` (vérifié, HTTP 200). C'est de la
+donnée : il n'attend pas le Deploy.
 
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
