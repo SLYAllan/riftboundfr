@@ -9,78 +9,88 @@
   "tier": 2,
   "keyCards": [
     {
-      "name": "Void Rush",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "name": "Carrion Dredger",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Carrion Dredger",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Undertitan",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "name": "Void Rush",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Cleave",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Undertitan",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Honest Broker",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Blood Rush",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Faithful Manufactor",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Sharkling",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shadow Fiend",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Salvage",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Escaped Grayback",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sharkling",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Fiend",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -90,7 +100,7 @@
     "titres": 1,
     "conversion": "10 %",
     "tournois": 50,
-    "listesPubliees": 353,
+    "listesPubliees": 120,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -122,25 +132,21 @@
   "sourceUrl": null,
   "champions": {
     "Rek'Sai, Breacher": {
-      "usage": "99 %",
+      "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "69 %",
+      "usage": "68 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Zed, From the Shadows": {
-      "usage": "39 %",
-      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "The Candlelit Sanctum (93 %)",
-    "Forbidding Waste (63 %)",
-    "Trifarian War Camp (46 %)",
+    "The Candlelit Sanctum (88 %)",
+    "Forbidding Waste (81 %)",
+    "Trifarian War Camp (48 %)",
     "Mystic Vortex (46 %)"
   ],
-  "dataSource": "Classement complet des tournois : 619 joueurs classés, 50 tournois, dont 353 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 619 joueurs classés, 50 tournois, dont 120 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {
@@ -160,5 +166,6 @@
     "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
     "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

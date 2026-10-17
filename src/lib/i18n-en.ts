@@ -1254,6 +1254,7 @@ export const EN: Record<string, string> = {
   "Noyau et cartes flex": "Core and flex cards",
   "Compté sur": "Counted on",
   "listes publiées en tournoi": "tournament lists",
+  "depuis le dernier ban": "since the latest ban list",
   "Voir ces listes": "See these lists",
   "Noyau": "Core",
   "dans au moins 9 listes sur 10": "in at least 9 lists out of 10",

@@ -17,68 +17,73 @@
   },
   "keyCards": [
     {
-      "name": "Thrill of the Hunt",
+      "name": "Inferna",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Inferna",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Punch First",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Grim Apothecary",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Grim Apothecary",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Thrill of the Hunt",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Sabotage",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 98 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Sabotage",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Pakaa Cub",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -96,7 +101,7 @@
     "titres": 3,
     "conversion": "13.3 %",
     "tournois": 47,
-    "listesPubliees": 270,
+    "listesPubliees": 118,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -144,32 +149,33 @@
     "note": "Aggro Ambush ultra-rapide, quasi pas de top end ; score au tour adverse."
   },
   "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Rengar, Trophy Hunter": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Kai'Sa, Survivor": {
-      "usage": "98 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Nidalee, Cat Form": {
-      "usage": "98 %",
+      "usage": "99 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "90 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "75 %",
+      "usage": "87 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (97 %)",
-    "Emperor's Dais (92 %)",
-    "Seat of Power (87 %)"
+    "Emperor's Dais (99 %)",
+    "Star Spring (99 %)",
+    "Seat of Power (92 %)"
   ],
-  "dataSource": "Classement complet des tournois : 602 joueurs classés, 47 tournois, dont 270 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 602 joueurs classés, 47 tournois, dont 118 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

@@ -22,7 +22,7 @@ function cartesDesFiches() {
 
 describe("cartes bannies dans les fiches Légendes", () => {
   it("reconnaît les noms tels qu'ils sont écrits dans les fiches", () => {
-    // Ces deux fiches conseillent une carte bannie (relevé du 15 septembre 2026).
+    // Les fiches qui citent une carte bannie.
     // Le badge « Bannie » de CardTile repose sur cette correspondance exacte :
     // si un nom change d'un côté sans l'autre, le badge disparaît en silence.
     //
@@ -43,24 +43,12 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // ressort le 30 septembre, avec les City Challenge chinoises du 26 et du 27 :
     // premières listes d'après le ban, Stacked Deck quitte ses cartes flex.
     //
-    // Yasuo en sort le 17 octobre, avec le National Open S4 de Chengdu :
-    // Fight or Flight quitte ses cartes.
+    // Le 17 octobre, `fiches-stats` ne compte plus les cartes que sur les
+    // tournois d'après le dernier ban (choix d'Allan) : onze fiches en sortent
+    // d'un coup. Reste Jinx, Légende d'Origines dont la page tait les cartes.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
-    expect(fiches).toEqual([
-      "annie-dark-child.json",
-      "diana-scorn-of-the-moon.json",
-      "draven-glorious-executioner.json",
-      "ezreal-prodigal-explorer.json",
-      "irelia-blade-dancer.json",
-      "jinx-loose-cannon.json",
-      "kennen-heart-of-the-tempest.json",
-      "khazix-voidreaver.json",
-      "mel-souls-reflection.json",
-      "pyke-bloodharbor-ripper.json",
-      "sivir-battle-mistress.json",
-      "zed-master-of-shadows.json",
-    ]);
+    expect(fiches).toEqual(["jinx-loose-cannon.json"]);
   });
 
   it("retire le pourcentage du nom de terrain avant le contrôle", () => {

@@ -10,42 +10,62 @@
   "keyCards": [
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Hostile Takeover",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Cull the Weak",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Burst",
       "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cull the Weak",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -54,23 +74,8 @@
       "noyau": false
     },
     {
-      "name": "Patched Porobot",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Wages of Pain",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "name": "Ki Barrier",
+      "role": "Souple, 43 % des listes, 1,5 exemplaire",
       "noyau": false
     }
   ],
@@ -80,7 +85,7 @@
     "titres": 0,
     "conversion": "0 %",
     "tournois": 14,
-    "listesPubliees": 61,
+    "listesPubliees": 23,
     "bestPlacements": [
       {
         "placement": "35th",
@@ -118,28 +123,34 @@
   "weaknesses": [
     "104 joueurs classés sur 12 tournois, aucun dans les 10 % de tête, aucun titre : le deck est joué mais ne convertit pas"
   ],
-  "dataSource": "Classement complet des tournois : 126 joueurs classés, 14 tournois, dont 61 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 126 joueurs classés, 14 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
-    "Renata Glasc, Industrialist": {
-      "usage": "52 %",
-      "role": "1 exemplaire en moyenne"
+    "Kennen, Keeper of Balance": {
+      "usage": "57 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Renata Glasc, Mastermind": {
-      "usage": "49 %",
+      "usage": "57 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "46 %",
+      "usage": "52 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Kennen, Keeper of Balance": {
-      "usage": "38 %",
-      "role": "2 exemplaires en moyenne"
+    "Renata Glasc, Industrialist": {
+      "usage": "48 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ornn, Forge God": {
+      "usage": "39 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Treasure Hoard (74 %)",
-    "Dusk Rose Lab (36 %)"
+    "Dusk Rose Lab (39 %)",
+    "Seat of Power (30 %)"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

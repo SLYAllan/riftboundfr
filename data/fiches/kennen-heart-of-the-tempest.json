@@ -35,8 +35,18 @@
       "noyau": true
     },
     {
+      "name": "Traveling Merchant",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -50,93 +60,94 @@
       "noyau": true
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "name": "Last Rites",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Star-Crossed",
+      "name": "Switcheroo",
       "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Last Rites",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Switcheroo",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tideturner",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Hunter",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "name": "Shadow Order Disciple",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Salvage",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Shadow Order Disciple",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Flash",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Abandon",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flash",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shadows of the Past",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
-    "Kennen, Storm of Shuriken": {
-      "usage": "95 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Fizz, Trickster": {
-      "usage": "92 %",
+      "usage": "95 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Nocturne, Horrifying": {
-      "usage": "72 %",
-      "role": "3 exemplaires en moyenne"
+    "Kennen, Storm of Shuriken": {
+      "usage": "93 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "84 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (94 %)",
-    "Zaun Warrens (90 %)"
+    "Minefield (95 %)",
+    "Zaun Warrens (93 %)",
+    "Shadow Temple (62 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 1547,
@@ -144,7 +155,7 @@
     "titres": 10,
     "conversion": "18.8 %",
     "tournois": 50,
-    "listesPubliees": 854,
+    "listesPubliees": 189,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -173,6 +184,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1547 joueurs classés, 50 tournois, dont 854 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 1547 joueurs classés, 50 tournois, dont 189 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

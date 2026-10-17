@@ -17,17 +17,7 @@
   },
   "keyCards": [
     {
-      "name": "Doran's Shield",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Eye of the Herald",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Brutalizer",
+      "name": "Arise!",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -37,68 +27,78 @@
       "noyau": true
     },
     {
-      "name": "Arise!",
+      "name": "Discipline",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "name": "Guards!",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Eye of the Herald",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Doran's Shield",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "B.F. Sword",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Guards!",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "name": "Hand Hammer",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Back Off",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hand Hammer",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -118,7 +118,7 @@
     "titres": 4,
     "conversion": "11.3 %",
     "tournois": 50,
-    "listesPubliees": 362,
+    "listesPubliees": 145,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -170,20 +170,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "77 %",
+      "usage": "72 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "52 %",
+      "usage": "47 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (98 %)",
-    "Hall of Legends (98 %)",
-    "Ornn's Forge (59 %)",
-    "Seat of Power (40 %)"
+    "Hall of Legends (99 %)",
+    "Trifarian War Camp (99 %)",
+    "Seat of Power (50 %)",
+    "Ornn's Forge (49 %)"
   ],
-  "dataSource": "Classement complet des tournois : 635 joueurs classés, 50 tournois, dont 362 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 635 joueurs classés, 50 tournois, dont 145 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

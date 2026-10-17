@@ -137,6 +137,11 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   que s'ils sont comptés sur le set en cours : `fiches-maj` pose alors `setDesChiffres`.
   Sans lui, la page les tait : une Kai'Sa d'Origins ne joue pas les cartes de sa version
   Vendetta, et des chiffres d'un ancien set passaient pour actuels.
+  **Les cartes ne se comptent que sur les tournois d'après le dernier ban** (choix
+  d'Allan, 17 octobre 2026) : daté après la dernière entrée de `DATES_BANS`, et sans
+  AUCUNE liste qui joue une carte bannie (la Chine jouait encore Stacked Deck le
+  19 septembre). Les résultats restent comptés sur tout le set, comme la tier list.
+  Sous dix listes depuis le ban, la fiche garde ses résultats et tait ses cartes.
   **La prose d'une fiche (archétype, plan, forces, faiblesses) s'écrit dans
   `data/fiches-prose.json`, jamais dans `data/fiches/`**, puis `fiches-prose.mts
   --ecrire` la pose. Le 24 août, elle avait été écrite dans les fiches : relancer le

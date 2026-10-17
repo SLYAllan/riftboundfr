@@ -79,6 +79,8 @@ interface Fiche {
   // Le set dont viennent cartes, champions et terrains. Absent : ils datent d'un
   // ancien set, et une Kai'Sa d'Origins ne joue pas les cartes de sa version Vendetta.
   setDesChiffres?: string;
+  // Présent quand les cartes ne viennent que des tournois joués depuis le dernier ban.
+  cartesDepuisBan?: string;
   // Compté sur le CLASSEMENT complet des tournois, pas sur les listes publiées :
   // `joueursClasses` compte tous ceux qui ont joué la Légende, `coupe10` ceux qui
   // ont fini dans les 10 % de tête de leur tournoi. Voir `scripts/fiches-stats.mts`.
@@ -967,7 +969,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               <p className="mt-1 text-sm text-ink-secondary">
                 {listesDuSet ? (
                   <>
-                    {t("Compté sur")} {listesDuSet} {t("listes publiées en tournoi")} ({setDesChiffres}).{" "}
+                    {t("Compté sur")} {listesDuSet} {t("listes publiées en tournoi")} ({setDesChiffres}
+                    {fiche.cartesDepuisBan ? `, ${t("depuis le dernier ban")}` : ""}).{" "}
                   </>
                 ) : null}
                 <Link href={listesHref()} className="text-arcane hover:underline">

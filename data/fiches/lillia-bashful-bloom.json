@@ -27,13 +27,18 @@
       "noyau": true
     },
     {
+      "name": "Sprite Burst",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Sprite Fountain",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Sprite Burst",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "name": "Charm",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -42,33 +47,28 @@
       "noyau": true
     },
     {
-      "name": "Charm",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Unchecked Power",
+      "role": "Cœur du deck, 92 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
       "role": "Standard, 83 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Lilting Lullaby",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Unchecked Power",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -77,33 +77,48 @@
       "noyau": false
     },
     {
-      "name": "En Garde",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Heart of Dark Ice",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "name": "Lilting Lullaby",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Heart of Dark Ice",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Plundering Poro",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tomb-Raider Barbara",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -124,7 +139,7 @@
     "titres": 2,
     "conversion": "7.3 %",
     "tournois": 46,
-    "listesPubliees": 201,
+    "listesPubliees": 75,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -177,15 +192,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "45 %",
+      "usage": "55 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Janna, Savior": {
+      "usage": "31 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Dusk Rose Lab (95 %)",
-    "Black Flame Altar (77 %)",
-    "Seat of Power (74 %)"
+    "Seat of Power (83 %)",
+    "Black Flame Altar (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 372 joueurs classés, 46 tournois, dont 201 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 372 joueurs classés, 46 tournois, dont 75 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

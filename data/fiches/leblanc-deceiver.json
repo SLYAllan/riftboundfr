@@ -18,87 +18,92 @@
   "keyCards": [
     {
       "name": "Soaring Scout",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Watchful Sentry",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Watchful Sentry",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Ruined Rex",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Glasc Mixologist",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 84 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Black Rose Dignitary",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Harnessed Dragon",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Baited Hook",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rift Herald",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Seal of Unity",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -119,7 +124,7 @@
     "titres": 1,
     "conversion": "13.3 %",
     "tournois": 49,
-    "listesPubliees": 341,
+    "listesPubliees": 166,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -168,25 +173,26 @@
     "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit). Perd vs Volibear Dragon Storm (out-value). Se contre via Challenge (tue le Karthus T2 = déni du moteur Death Knell) plutôt qu'en l'affrontant tard. Existe aussi en variante BLUE sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors)."
   },
   "champions": {
+    "Karthus, Eternal": {
+      "usage": "95 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Vi, Peacekeeper": {
-      "usage": "89 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     },
     "LeBlanc, Fragmented": {
-      "usage": "89 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Karthus, Eternal": {
-      "usage": "89 %",
-      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (98 %)",
-    "Dusk Rose Lab (69 %)",
-    "Star Spring (47 %)",
-    "Forbidding Waste (41 %)"
+    "Dusk Rose Lab (79 %)",
+    "Star Spring (51 %)",
+    "Forbidding Waste (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 668 joueurs classés, 49 tournois, dont 341 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 668 joueurs classés, 49 tournois, dont 166 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

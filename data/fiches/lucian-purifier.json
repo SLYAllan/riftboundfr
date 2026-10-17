@@ -9,7 +9,22 @@
   "tier": 4,
   "keyCards": [
     {
+      "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "First Mate",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Long Sword",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -19,73 +34,63 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Long Sword",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "name": "Blighted Battleaxe",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Doran's Blade",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Sabotage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Irresistible Faefolk",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Blighted Battleaxe",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "name": "Sabotage",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Ruin Runner",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ruin Runner",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gem Jammer",
+      "role": "Souple, 30 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -95,7 +100,7 @@
     "titres": 0,
     "conversion": "7.5 %",
     "tournois": 28,
-    "listesPubliees": 66,
+    "listesPubliees": 23,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -133,26 +138,26 @@
   "weaknesses": [
     "7,6 % de conversion, aucun titre : le deck place mais ne gagne pas"
   ],
-  "dataSource": "Classement complet des tournois : 159 joueurs classés, 28 tournois, dont 66 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 159 joueurs classés, 28 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Lucian, Merciless": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Kai'Sa, Survivor": {
-      "usage": "97 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Akshan, Mischievous": {
-      "usage": "35 %",
+      "usage": "39 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forge of the Fluft (88 %)",
-    "Forbidding Waste (59 %)",
-    "Windswept Hillock (47 %)",
-    "Sunken Temple (36 %)"
+    "Forge of the Fluft (87 %)",
+    "Forbidding Waste (61 %)",
+    "Windswept Hillock (43 %)"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

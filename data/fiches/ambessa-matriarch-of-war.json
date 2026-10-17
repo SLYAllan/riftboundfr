@@ -29,97 +29,96 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Legion Marauder",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Public Execution",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "name": "Rampage",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Public Execution",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Repulse",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "First Mate",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tactical Retreat",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Onslaught",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxian Emissary",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "97 %",
+      "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "63 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Kayle, Justified": {
-      "usage": "54 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Trophy Hunter": {
-      "usage": "43 %",
+      "usage": "68 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "36 %",
+      "usage": "68 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kayle, Justified": {
+      "usage": "68 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Lucian, Merciless": {
+      "usage": "32 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (74 %)",
-    "Sunken Temple (46 %)",
-    "Sandswept Tomb (39 %)"
+    "Risen Altar (79 %)",
+    "Sandswept Tomb (53 %)",
+    "Sunken Temple (42 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 183,
@@ -127,7 +126,7 @@
     "titres": 0,
     "conversion": "0.5 %",
     "tournois": 29,
-    "listesPubliees": 70,
+    "listesPubliees": 19,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -156,6 +155,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 183 joueurs classés, 29 tournois, dont 70 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 183 joueurs classés, 29 tournois, dont 19 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

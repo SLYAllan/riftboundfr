@@ -14,6 +14,8 @@
  */
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { getTournamentInfo } from "../src/lib/tournament-flags";
+import { DERNIER_BAN, tournoisApresBan } from "./apres-ban";
 
 const set = process.argv[2] ?? "Vendetta";
 const minListes = Number(process.argv[3] ?? 30);
@@ -22,7 +24,9 @@ const RACINE = join(import.meta.dirname, "../data/decklists");
 interface Decklist {
   legend: string;
   set: string;
+  tournament: string;
   mainDeck: { name: string; quantity: number }[];
+  sideDeck?: { name: string; quantity: number }[];
 }
 
 function fichiersJson(dossier: string): string[] {
@@ -37,6 +41,7 @@ function fichiersJson(dossier: string): string[] {
 
 const parLegende = new Map<string, { listes: number; cartes: Map<string, number[]> }>();
 
+const decks: Decklist[] = [];
 for (const chemin of fichiersJson(RACINE)) {
   let deck: Decklist;
   try {
@@ -45,7 +50,20 @@ for (const chemin of fichiersJson(RACINE)) {
     continue; // un index ou un fragment, pas une decklist
   }
   if (deck.set !== set || !deck.legend || !Array.isArray(deck.mainDeck)) continue;
+  decks.push(deck);
+}
 
+// Les mêmes tournois que les fiches Légendes : ceux d'après le dernier ban.
+const apresBan = tournoisApresBan(
+  decks.map((d) => ({
+    tournoi: d.tournament,
+    date: getTournamentInfo(d.tournament)?.date,
+    cartes: [...d.mainDeck, ...(d.sideDeck ?? [])].map((c) => c?.name).filter(Boolean),
+  })),
+);
+if (apresBan.retenus.size) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
+
+for (const deck of decks.filter((d) => apresBan.garder(d.tournament))) {
   const e = parLegende.get(deck.legend) ?? { listes: 0, cartes: new Map<string, number[]>() };
   e.listes++;
   // Une carte comptée UNE fois par liste, même si le JSON la répète.

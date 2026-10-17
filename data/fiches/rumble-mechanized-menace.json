@@ -9,88 +9,108 @@
   "tier": 5,
   "keyCards": [
     {
-      "name": "Ferrous Forerunner",
+      "name": "Forecaster",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Forecaster",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Gem Jammer",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Bubble Bot",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Temporal Breach",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "name": "Long Sword",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Patched Porobot",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Long Sword",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Production Surge",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bellows Breath",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Perfect Execution",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Patched Porobot",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Production Surge",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Consult the Past",
+      "role": "Souple, 59 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -100,7 +120,7 @@
     "titres": 0,
     "conversion": "0.6 %",
     "tournois": 21,
-    "listesPubliees": 57,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -145,9 +165,12 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (51 %)",
-    "Zaun Warrens (40 %)"
+    "Rockfall Path (71 %)",
+    "Zaun Warrens (35 %)",
+    "Heisho, Shell of the World (35 %)",
+    "Startipped Peak (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 171 joueurs classés, 21 tournois, dont 57 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 171 joueurs classés, 21 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

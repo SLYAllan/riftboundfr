@@ -22,83 +22,83 @@
       "noyau": true
     },
     {
-      "name": "Tideturner",
+      "name": "Switcheroo",
       "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Switcheroo",
+      "name": "Tideturner",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Falling Star",
       "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rebuke",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Falling Star",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Cleave",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
-      "noyau": false
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Overzealous Fan",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "name": "Edge of Night",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Edge of Night",
+      "name": "Cleave",
       "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
+      "name": "Gust",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Overzealous Fan",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
       "name": "Gust Monk",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Souple, 30 % des listes, 2 exemplaires",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -119,7 +119,7 @@
     "titres": 1,
     "conversion": "9.3 %",
     "tournois": 46,
-    "listesPubliees": 184,
+    "listesPubliees": 48,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -168,40 +168,38 @@
     "note": "Vanquisher banni → garde Showboat/Audacious. En Unleashed, Falling Star = boogeyman anti-Diana."
   },
   "champions": {
-    "Draven, Showboat": {
-      "usage": "97 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Kai'Sa, Survivor": {
+    "Evelynn, Entrancing": {
       "usage": "96 %",
-      "role": "2 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "95 %",
+      "usage": "96 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Evelynn, Entrancing": {
-      "usage": "84 %",
+    "Kai'Sa, Survivor": {
+      "usage": "94 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "Draven, Showboat": {
+      "usage": "92 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "68 %",
+      "usage": "79 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "58 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Pyke, Dockside Butcher": {
-      "usage": "37 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "60 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Treasure Hoard (74 %)",
-    "Amateur Recital (54 %)",
-    "Zaun Warrens (54 %)"
+    "Treasure Hoard (71 %)",
+    "Amateur Recital (50 %)",
+    "Forge of the Fluft (35 %)",
+    "Zaun Warrens (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 387 joueurs classés, 46 tournois, dont 184 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 387 joueurs classés, 46 tournois, dont 48 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

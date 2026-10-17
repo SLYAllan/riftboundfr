@@ -117,7 +117,7 @@
     "titres": 0,
     "conversion": "0 %",
     "tournois": 19,
-    "listesPubliees": 23,
+    "listesPubliees": 9,
     "bestPlacements": [
       {
         "placement": "24th",
@@ -149,7 +149,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 25 joueurs classés, 19 tournois, dont 23 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 25 joueurs classés, 19 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -161,6 +161,5 @@
       "Sona + Jana"
     ],
     "note": "Deck Hold (conquérir 1 fois puis hold/hold). Oublier la capacité légende (-1) coûte des games."
-  },
-  "setDesChiffres": "Vendetta"
+  }
 }

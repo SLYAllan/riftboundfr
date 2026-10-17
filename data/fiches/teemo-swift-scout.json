@@ -83,7 +83,7 @@
     "titres": 0,
     "conversion": "7.1 %",
     "tournois": 22,
-    "listesPubliees": 14,
+    "listesPubliees": 3,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -130,7 +130,7 @@
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
   },
-  "dataSource": "Classement complet des tournois : 28 joueurs classés, 22 tournois, dont 14 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 22 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Pyke, Returned": {
       "usage": "71 %",
@@ -161,6 +161,5 @@
     "Bandle Tree (57 %)",
     "Grove of the God-Willow (50 %)",
     "Startipped Peak (36 %)"
-  ],
-  "setDesChiffres": "Vendetta"
+  ]
 }

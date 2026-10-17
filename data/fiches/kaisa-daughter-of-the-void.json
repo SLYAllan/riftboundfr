@@ -14,28 +14,23 @@
       "noyau": true
     },
     {
+      "name": "Temporal Breach",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Falling Star",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Brynhir Thundersong",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Stupefy",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Hextech Ray",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -49,13 +44,13 @@
       "noyau": true
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "name": "Hextech Ray",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Progress Day",
-      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -64,53 +59,53 @@
       "noyau": true
     },
     {
-      "name": "Bellows Breath",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "name": "Progress Day",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Retreat",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ravenbloom Student",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "name": "Retreat",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brittle Steel",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Forecaster",
-      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "role": "Souple, 34 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Cleave",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "name": "Ravenbloom Student",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -120,7 +115,7 @@
     "titres": 2,
     "conversion": "8.4 %",
     "tournois": 50,
-    "listesPubliees": 451,
+    "listesPubliees": 67,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -157,12 +152,11 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (87 %)",
-    "Frozen Fortress (85 %)",
-    "Void Gate (76 %)",
-    "Heisho, Shell of the World (34 %)"
+    "Rockfall Path (90 %)",
+    "Frozen Fortress (87 %)",
+    "Void Gate (76 %)"
   ],
-  "dataSource": "Classement complet des tournois : 498 joueurs classés, 50 tournois, dont 451 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 498 joueurs classés, 50 tournois, dont 67 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {
@@ -182,5 +176,6 @@
     "Le moteur coûte cher, 7 énergie pour Thousand-Tailed Watcher et 10 pour Time Warp",
     "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

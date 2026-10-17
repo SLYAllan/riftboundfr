@@ -17,17 +17,17 @@
   },
   "keyCards": [
     {
+      "name": "Tideturner",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Stupefy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Moonfall",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Tideturner",
+      "name": "Gust",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -37,68 +37,73 @@
       "noyau": true
     },
     {
+      "name": "Moonfall",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Gust",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Patched Porobot",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Flash",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 56 % des listes, 1,5 exemplaire",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Eclipse",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Temporal Breach",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "name": "Ravenbloom Student",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Abandon",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "name": "Patched Porobot",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Morbid Return",
-      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "name": "Abandon",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Baron Nashor",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -119,7 +124,7 @@
     "titres": 5,
     "conversion": "8.1 %",
     "tournois": 50,
-    "listesPubliees": 347,
+    "listesPubliees": 73,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -169,32 +174,30 @@
     "note": "Souvent « un shell pour Hwei » : les games avec Hwei sont radicalement différentes. Double championne au plus gros Régional du set (Vancouver, ~2000 joueurs). Doit jouer Unchecked Power / Downwell vs les decks de Hold (perd vs Vex sinon)."
   },
   "champions": {
-    "Diana, Lunari": {
-      "usage": "100 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Fizz, Trickster": {
       "usage": "100 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Diana, Lunari": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Hwei, Brooding Painter": {
-      "usage": "98 %",
+      "usage": "93 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "53 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Swain, Visionary": {
-      "usage": "33 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Abandoned Hall (85 %)",
-    "Targon's Peak (63 %)",
-    "Rockfall Path (45 %)"
+    "Targon's Peak (75 %)",
+    "Abandoned Hall (47 %)",
+    "Seat of Power (33 %)",
+    "Zaun Warrens (30 %)"
   ],
-  "dataSource": "Classement complet des tournois : 556 joueurs classés, 50 tournois, dont 347 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 556 joueurs classés, 50 tournois, dont 73 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

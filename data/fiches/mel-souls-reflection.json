@@ -30,106 +30,97 @@
   "keyCards": [
     {
       "name": "Rebuttal",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ravenbloom Student",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shock Blast",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Applied Researchers",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Dredge Up",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bellows Breath",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "name": "Ride The Wind",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Up from the Deep",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "name": "Dredge Up",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Applied Researchers",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shock Blast",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
-    "Fizz, Trickster": {
-      "usage": "64 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Mel, Newly Awakened": {
-      "usage": "55 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Hwei, Brooding Painter": {
-      "usage": "53 %",
+      "usage": "69 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Fizz, Trickster": {
+      "usage": "62 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Mel, Newly Awakened": {
+      "usage": "52 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Mel, Defiant Soul": {
-      "usage": "47 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "40 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "38 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Threshold of the Gray (34 %)",
-    "Forbidding Waste (30 %)",
-    "Frozen Fortress (30 %)"
+    "Forbidding Waste (41 %)",
+    "Threshold of the Gray (41 %)",
+    "Targon's Peak (41 %)",
+    "Rockfall Path (31 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 234,
@@ -137,7 +128,7 @@
     "titres": 0,
     "conversion": "3 %",
     "tournois": 38,
-    "listesPubliees": 163,
+    "listesPubliees": 29,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -166,6 +157,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 234 joueurs classés, 38 tournois, dont 163 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 234 joueurs classés, 38 tournois, dont 29 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

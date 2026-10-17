@@ -42,7 +42,23 @@ type Fiche = {
   dataSource?: string;
   /** Le set sur lequel cartes, champions et terrains ont été comptés. Absent : ils datent d'un ancien set. */
   setDesChiffres?: string;
+  /** Date ISO du dernier ban quand les cartes ne viennent que des tournois joués depuis. */
+  cartesDepuisBan?: string;
   [k: string]: unknown;
+};
+
+const resultats = (s: StatsLegende) => ({
+  joueursClasses: s.joueurs,
+  coupe10: s.coupe,
+  titres: s.titres,
+  conversion: `${s.conversion} %`,
+  tournois: s.tournois,
+  listesPubliees: s.decks,
+  bestPlacements: s.meilleuresPlaces,
+});
+const dateFr = (iso: string) => {
+  const [a, m, j] = iso.split("-").map(Number);
+  return `${j} ${MOIS_FR[m - 1]} ${a}`;
 };
 
 // « Rek'Sai » dans la fiche, « Rek'sai » en base : sans ça, la fiche la plus jouée passe à la trappe.
@@ -93,6 +109,23 @@ for (const f of fichiers) {
     continue;
   }
 
+  // Jouée dans le format, mais moins de dix listes depuis le dernier ban : ses
+  // résultats se mettent à jour, ses cartes ne se recomptent pas. La page les tait
+  // plutôt que de montrer celles d'avant le ban, qui conseillaient une carte bannie.
+  if (s.cartesNonComptees) {
+    fiche.competitiveResults = resultats(s);
+    fiche.dataSource =
+      `Classement complet des tournois : ${s.joueurs} joueurs classés, ${s.tournois} tournois. ` +
+      `Moins de dix listes publiées depuis la ban list du ${dateFr(s.depuisBan!)} : cartes non recomptées. ` +
+      `Relevé du ${AUJOURDHUI}, calcul par scripts/fiches-stats.mts.`;
+    delete fiche.setDesChiffres;
+    delete fiche.cartesDepuisBan;
+    journal.push(`  ${f.padEnd(38)} ${String(s.decks).padStart(3)} listes depuis le ban, cartes tues`);
+    touchees++;
+    if (ecrire) await fs.writeFile(p, JSON.stringify(fiche, null, 2) + "\n", "utf-8");
+    continue;
+  }
+
   const ancienRole = new Map((fiche.keyCards ?? []).map((k) => [k.name, k.role]));
   const ancienChamp = new Map(Object.entries(fiche.champions ?? {}).map(([n, v]) => [n, v.role]));
   const avant = JSON.stringify([fiche.keyCards, fiche.champions, fiche.topBattlefields]);
@@ -108,6 +141,8 @@ for (const f of fichiers) {
     noyau: estNoyau(c.part),
   }));
   fiche.setDesChiffres = s.set;
+  if (s.depuisBan) fiche.cartesDepuisBan = s.depuisBan;
+  else delete fiche.cartesDepuisBan;
 
   fiche.champions = Object.fromEntries(
     s.champions.map((c) => {
@@ -120,20 +155,13 @@ for (const f of fichiers) {
   // Les résultats se comptent sur les joueurs CLASSÉS, les cartes sur les listes
   // publiées. `listesPubliees` reste là pour qu'on voie l'écart entre les deux :
   // à Barcelone il vaut 106 contre 2 127.
-  fiche.competitiveResults = {
-    joueursClasses: s.joueurs,
-    coupe10: s.coupe,
-    titres: s.titres,
-    conversion: `${s.conversion} %`,
-    tournois: s.tournois,
-    listesPubliees: s.decks,
-    bestPlacements: s.meilleuresPlaces,
-  };
+  fiche.competitiveResults = resultats(s);
   // La date était codée en dur : toutes les fiches annonçaient « 17 août 2026 »
   // quel que soit le jour du relevé, et /legendes affichait cette date.
   fiche.dataSource =
     `Classement complet des tournois : ${s.joueurs} joueurs classés, ${s.tournois} tournois, ` +
-    `dont ${s.decks} listes publiées d\u2019où viennent les cartes. ` +
+    `dont ${s.decks} listes publiées d\u2019où viennent les cartes` +
+    (s.depuisBan ? `, depuis la ban list du ${dateFr(s.depuisBan)}. ` : ". ") +
     `Relevé du ${AUJOURDHUI}, calcul par scripts/fiches-stats.mts.`;
 
   const change = JSON.stringify([fiche.keyCards, fiche.champions, fiche.topBattlefields]) !== avant;

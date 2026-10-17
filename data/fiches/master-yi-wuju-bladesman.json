@@ -17,6 +17,11 @@
   },
   "keyCards": [
     {
+      "name": "Punch First",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Defy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -27,23 +32,18 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Zhonya's Hourglass",
       "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Lonely Poro",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -52,8 +52,8 @@
       "noyau": true
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -62,33 +62,38 @@
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Onslaught",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Onslaught",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Alpha Strike",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -109,7 +114,7 @@
     "titres": 7,
     "conversion": "13.8 %",
     "tournois": 50,
-    "listesPubliees": 804,
+    "listesPubliees": 223,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -162,19 +167,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "98 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "34 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "35 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (93 %)",
-    "Emperor's Dais (89 %)",
-    "Seat of Power (76 %)"
+    "Star Spring (95 %)",
+    "Emperor's Dais (87 %)",
+    "Seat of Power (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 1220 joueurs classés, 50 tournois, dont 804 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 1220 joueurs classés, 50 tournois, dont 223 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

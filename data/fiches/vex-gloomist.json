@@ -22,78 +22,88 @@
       "noyau": true
     },
     {
-      "name": "Discipline",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Switcheroo",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Switcheroo",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Discipline",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Rebuke",
+      "role": "Cœur du deck, 92 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Standard, 84 % des listes, 1 exemplaire",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "noyau": true
     },
     {
       "name": "Tornado Warrior",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tideturner",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Star-Crossed",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Standard, 72 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Edge of Night",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rebuke",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Mutated Mouser",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -113,7 +123,7 @@
     "titres": 1,
     "conversion": "11.2 %",
     "tournois": 46,
-    "listesPubliees": 265,
+    "listesPubliees": 118,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -165,19 +175,25 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "80 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "59 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "57 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "34 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Fortified Position (68 %)",
-    "Startipped Peak (62 %)",
-    "Bandle Tree (31 %)"
+    "Fortified Position (81 %)",
+    "Startipped Peak (56 %)",
+    "Targon's Peak (40 %)",
+    "Bandle Tree (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 455 joueurs classés, 46 tournois, dont 265 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 455 joueurs classés, 46 tournois, dont 118 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

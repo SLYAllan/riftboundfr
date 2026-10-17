@@ -9,73 +9,88 @@
   "tier": 4,
   "keyCards": [
     {
+      "name": "Traveling Merchant",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Flash",
       "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "name": "Against the Odds",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Switcheroo",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Against the Odds",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Tideturner",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 68 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Long Sword",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Stacked Deck",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "name": "Long Sword",
+      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Gust Monk",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "name": "Star-Crossed",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Acceptable Losses",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Heedless Resurrection",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Grim Apothecary",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -85,7 +100,7 @@
     "titres": 0,
     "conversion": "10.5 %",
     "tournois": 21,
-    "listesPubliees": 25,
+    "listesPubliees": 13,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -128,37 +143,39 @@
       "usage": "100 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Vex, Apathetic": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Annie, Stubborn": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Vex, Apathetic": {
-      "usage": "88 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Pyke, Returned": {
-      "usage": "64 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Pouncing": {
-      "usage": "56 %",
-      "role": "3 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "56 %",
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "52 %",
+      "usage": "85 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Rengar, Pouncing": {
+      "usage": "62 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Seat of Power (80 %)",
-    "Zaun Warrens (64 %)",
-    "Grove of the God-Willow (40 %)",
-    "Startipped Peak (32 %)"
+    "Seat of Power (77 %)",
+    "Grove of the God-Willow (54 %)",
+    "Startipped Peak (54 %)",
+    "Zaun Warrens (54 %)",
+    "Heisho, Shell of the World (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 38 joueurs classés, 21 tournois, dont 25 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 38 joueurs classés, 21 tournois, dont 13 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

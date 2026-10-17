@@ -9,83 +9,78 @@
   "tier": 5,
   "keyCards": [
     {
+      "name": "Counter Strike",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Defy",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Guardian Angel",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Counter Strike",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Discipline",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Guardian Angel",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Brutalizer",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2,5 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rampage",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lonely Poro",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Not So Fast",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Boneshiver",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Boneshiver",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ruin Runner",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Challenge",
-      "role": "Souple, 30 % des listes, 2 exemplaires",
+      "name": "Back Off",
+      "role": "Souple, 32 % des listes, 1,5 exemplaire",
       "noyau": false
     }
   ],
@@ -95,7 +90,7 @@
     "titres": 0,
     "conversion": "1.3 %",
     "tournois": 26,
-    "listesPubliees": 83,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
         "placement": "18th",
@@ -127,31 +122,32 @@
   "sourceUrl": null,
   "champions": {
     "Jax, Unmatched": {
-      "usage": "95 %",
+      "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "53 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "61 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "52 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Irelia, Fervent": {
-      "usage": "42 %",
+      "usage": "55 %",
       "role": "2 exemplaires en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "42 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Irelia, Fervent": {
+      "usage": "45 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (73 %)",
-    "Ornn's Forge (46 %)"
+    "Sunken Temple (81 %)",
+    "Ornn's Forge (39 %)",
+    "Sandswept Tomb (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 153 joueurs classés, 26 tournois, dont 83 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 153 joueurs classés, 26 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {
@@ -167,5 +163,6 @@
     "128 joueurs classés sur 23 tournois, 2 dans les 10 % de tête, aucun titre : le deck est joué mais ne convertit pas",
     "Deux points de rupture, l'unité et l'équipement, et le retrait de l'un suffit"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

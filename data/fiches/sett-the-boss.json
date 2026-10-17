@@ -108,7 +108,7 @@
     "titres": 0,
     "conversion": "3 %",
     "tournois": 19,
-    "listesPubliees": 20,
+    "listesPubliees": 3,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -185,6 +185,5 @@
     "Sunken Temple (85 %)",
     "Valley of Idols (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 33 joueurs classés, 19 tournois, dont 20 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 33 joueurs classés, 19 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts."
 }

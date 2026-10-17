@@ -23,77 +23,77 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Grim Resolve",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Demacian Diplomat",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Switcheroo",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Edge of Night",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "First Mate",
-      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "name": "Demacian Diplomat",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ruin Runner",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "name": "Grim Resolve",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Souple, 31 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -112,7 +112,7 @@
     "titres": 0,
     "conversion": "11.5 %",
     "tournois": 42,
-    "listesPubliees": 145,
+    "listesPubliees": 51,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -173,28 +173,29 @@
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "78 %",
+      "usage": "84 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "54 %",
-      "role": "1,5 exemplaire en moyenne"
+      "usage": "69 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Zed, Without a Sound": {
-      "usage": "48 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ambessa, The Wolf": {
-      "usage": "32 %",
+      "usage": "49 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (85 %)",
-    "Star Spring (66 %)",
-    "Sandswept Tomb (58 %)",
-    "Monastery of Hirana (56 %)"
+    "Forbidding Waste (71 %)",
+    "Sandswept Tomb (71 %)",
+    "Star Spring (71 %)",
+    "Monastery of Hirana (49 %)"
   ],
-  "dataSource": "Classement complet des tournois : 349 joueurs classés, 42 tournois, dont 145 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 349 joueurs classés, 42 tournois, dont 51 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

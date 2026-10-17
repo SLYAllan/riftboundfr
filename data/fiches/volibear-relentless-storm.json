@@ -107,7 +107,7 @@
     "titres": 0,
     "conversion": "12.5 %",
     "tournois": 12,
-    "listesPubliees": 15,
+    "listesPubliees": 4,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -139,7 +139,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 16 joueurs classés, 12 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 16 joueurs classés, 12 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -154,6 +154,5 @@
       "Dragonsoul Sage (libère de la dépendance Aurora)"
     ],
     "note": "Tendance : on coupe de plus en plus Aurora des listes Dragons (la légende donne une rune gratuite par unité mighty)."
-  },
-  "setDesChiffres": "Vendetta"
+  }
 }

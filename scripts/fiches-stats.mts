@@ -13,6 +13,8 @@
  * en dessous, c'est un choix personnel, pas le cœur d'un archétype.
  */
 import { PrismaClient } from "@prisma/client";
+import { getTournamentInfo } from "../src/lib/tournament-flags";
+import { DERNIER_BAN, tournoisApresBan } from "./apres-ban";
 import { bilanParLegende, chargerCorpus } from "./corpus-tournois";
 
 export type StatsLegende = {
@@ -24,6 +26,10 @@ export type StatsLegende = {
   set: string;
   /** Listes publiées : ce sur quoi les CARTES sont comptées. */
   decks: number;
+  /** Date du dernier ban quand les cartes ne viennent que des tournois joués depuis. */
+  depuisBan?: string;
+  /** Jouée dans le set, mais moins de `minDecks` listes depuis le ban : résultats seuls. */
+  cartesNonComptees?: boolean;
   /** Vrai quand les résultats portent sur toutes les ères et non sur le set demandé. */
   toutesEres?: boolean;
   /** Joueurs classés, listes publiées ou non : ce sur quoi les RÉSULTATS le sont. */
@@ -75,6 +81,18 @@ if (process.argv.includes("--debug")) {
   console.log("sections :", [...sections]);
   process.exit(0);
 }
+
+// Les CARTES ne se comptent que sur les tournois d'après le dernier ban.
+const apresBan = tournoisApresBan(
+  decks.map((d) => ({
+    tournoi: d.tournamentContext!,
+    date: getTournamentInfo(d.tournamentContext!)?.date,
+    cartes: d.cards.map((c) => c.card.name),
+  })),
+);
+// Sur stderr : stdout est le JSON que `maj:stats` écrit dans un fichier.
+for (const c of apresBan.ecartes) console.error(`Après le ban mais joue une carte bannie, écarté : ${c}`);
+console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
 
 /** Place d'un deck, ou l'infini quand riftdecks ne la donne pas : ça ne doit pas passer devant un vrai Top 8. */
 const place = (p: string | null): number => {
@@ -132,8 +150,12 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
     continue;
   }
 
+  const lotCartes = lot.filter((d) => apresBan.garder(d.tournamentContext!));
+  // Jouée dans le set mais trop peu depuis le ban : ses résultats restent ceux du
+  // set, comme la tier list ; ses cartes ne se comptent pas sur trois listes.
+  const sousSeuil = lotCartes.length < minDecks;
   const cartes = new Map<string, Compte>();
-  for (const d of lot) {
+  for (const d of lotCartes) {
     // Une carte comptée une fois par deck, même si elle est en main ET en réserve.
     const vues = new Map<string, number>();
     for (const c of d.cards) {
@@ -156,10 +178,10 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
       nom,
       type: e.type,
       supertype: e.supertype,
-      part: e.listes / lot.length,
+      part: e.listes / lotCartes.length,
       copies: mediane(e.copies),
     }))
-    .filter((c) => c.part >= 0.3)
+    .filter((c) => !sousSeuil && c.part >= 0.3)
     .sort((a, b) => b.part - a.part || b.copies - a.copies);
 
   const estChampion = (c: (typeof lignes)[number]) => c.supertype === "Champion";
@@ -178,7 +200,9 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
 
   sortie[legende] = {
     set,
-    decks: lot.length,
+    decks: lotCartes.length,
+    ...(apresBan.retenus.size ? { depuisBan: DERNIER_BAN } : {}),
+    ...(sousSeuil ? { cartesNonComptees: true } : {}),
     joueurs,
     coupe,
     titres,

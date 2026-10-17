@@ -11,38 +11,23 @@
   "legendAbility": "Quand vous recyclez une rune, épuisez Sivir pour poser un jeton Or épuisé. Elle se prépare dès qu'une unité adverse meurt.",
   "keyCards": [
     {
-      "name": "Sabotage",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
+      "name": "Gust",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Gust",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "name": "Sabotage",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Last Rites",
+      "role": "Standard, 84 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Last Rites",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Punch First",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -51,23 +36,48 @@
       "noyau": false
     },
     {
-      "name": "Dazzling Aurora",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Scryer's Bloom",
-      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "name": "Treasure Trove",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Flurry of Blades",
-      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mobilize",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lunar Boon",
-      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -83,7 +93,7 @@
     "titres": 0,
     "conversion": "9.4 %",
     "tournois": 27,
-    "listesPubliees": 74,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -136,20 +146,26 @@
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Fizz, Trickster": {
-      "usage": "46 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Ezreal, Prodigy": {
-      "usage": "43 %",
+      "usage": "48 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "48 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "35 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (91 %)",
-    "Forgotten Monument (50 %)",
+    "Sigil of the Storm (87 %)",
+    "Zaun Warrens (48 %)",
+    "Forgotten Monument (45 %)",
     "Dragon Roost (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 128 joueurs classés, 27 tournois, dont 74 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta"
+  "dataSource": "Classement complet des tournois : 128 joueurs classés, 27 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }

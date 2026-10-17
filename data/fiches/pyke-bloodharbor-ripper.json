@@ -15,67 +15,67 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
+      "name": "Switcheroo",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Treasure Hunter",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Blood Rush",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bewitching Spirit",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Traveling Merchant",
       "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Switcheroo",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Void Seeker",
-      "role": "Standard, 71 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Piercing Light",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 62 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "name": "Traveling Merchant",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sharkling",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Piercing Light",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Void Seeker",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Downwell",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -85,7 +85,7 @@
     "titres": 0,
     "conversion": "2.3 %",
     "tournois": 37,
-    "listesPubliees": 115,
+    "listesPubliees": 36,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -117,28 +117,32 @@
   "sourceUrl": null,
   "champions": {
     "Fizz, Trickster": {
-      "usage": "98 %",
+      "usage": "97 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "97 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "94 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "92 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "54 %",
+      "usage": "78 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ripper's Bay (97 %)",
-    "Forbidding Waste (81 %)",
-    "Void Gate (48 %)"
+    "Ripper's Bay (94 %)",
+    "Forbidding Waste (86 %)",
+    "Void Gate (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 217 joueurs classés, 37 tournois, dont 115 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 217 joueurs classés, 37 tournois, dont 36 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {
@@ -157,5 +161,6 @@
     "Renvoyer ses propres unités coûte du tempo à chaque fois",
     "Le deck n'a pas de vraie fin de partie, il vise l'usure"
   ],
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15"
 }
