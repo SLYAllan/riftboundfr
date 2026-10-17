@@ -5,30 +5,41 @@ const apres = "2099-01-01";
 
 describe("tournoisApresBan", () => {
   it("garde un tournoi d'après le ban sans carte bannie", () => {
-    const r = tournoisApresBan([{ tournoi: "propre", date: apres, cartes: ["Defy"] }]);
+    const r = tournoisApresBan([{ tournoi: "propre", date: apres, cartes: ["Defy"] }], false);
     expect(r.garder("propre")).toBe(true);
   });
 
   it("écarte un tournoi d'après le ban où une liste joue encore une carte bannie", () => {
-    const r = tournoisApresBan([
-      { tournoi: "propre", date: apres, cartes: ["Defy"] },
-      { tournoi: "en retard", date: apres, cartes: ["Defy"] },
-      { tournoi: "en retard", date: apres, cartes: ["Stacked Deck"] },
-    ]);
+    const r = tournoisApresBan(
+      [
+        { tournoi: "propre", date: apres, cartes: ["Defy"] },
+        { tournoi: "en retard", date: apres, cartes: ["Defy"] },
+        { tournoi: "en retard", date: apres, cartes: ["Stacked Deck"] },
+      ],
+      false,
+    );
     expect(r.garder("en retard")).toBe(false);
     expect(r.ecartes).toEqual(["en retard"]);
   });
 
   it("écarte un tournoi d'avant le ban", () => {
-    const r = tournoisApresBan([
-      { tournoi: "propre", date: apres, cartes: ["Defy"] },
-      { tournoi: "avant", date: "2000-01-01", cartes: ["Defy"] },
-    ]);
+    const r = tournoisApresBan(
+      [
+        { tournoi: "propre", date: apres, cartes: ["Defy"] },
+        { tournoi: "avant", date: "2000-01-01", cartes: ["Defy"] },
+      ],
+      false,
+    );
     expect(r.garder("avant")).toBe(false);
   });
 
-  it("garde tout quand aucun tournoi n'est d'après le ban", () => {
-    const r = tournoisApresBan([{ tournoi: "ancien set", date: "2000-01-01", cartes: ["Stacked Deck"] }]);
+  it("set en cours sans tournoi d'après le ban : ne garde rien", () => {
+    const r = tournoisApresBan([{ tournoi: "avant", date: "2000-01-01", cartes: ["Stacked Deck"] }], false);
+    expect(r.garder("avant")).toBe(false);
+  });
+
+  it("ancien set : garde tout", () => {
+    const r = tournoisApresBan([{ tournoi: "ancien set", date: "2000-01-01", cartes: ["Stacked Deck"] }], true);
     expect(r.garder("ancien set")).toBe(true);
   });
 

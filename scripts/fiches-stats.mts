@@ -14,7 +14,7 @@
  */
 import { PrismaClient } from "@prisma/client";
 import { getTournamentInfo } from "../src/lib/tournament-flags";
-import { DERNIER_BAN, tournoisApresBan } from "./apres-ban";
+import { DERNIER_BAN, setEnCours, tournoisApresBan } from "./apres-ban";
 import { bilanParLegende, chargerCorpus } from "./corpus-tournois";
 
 export type StatsLegende = {
@@ -83,16 +83,18 @@ if (process.argv.includes("--debug")) {
 }
 
 // Les CARTES ne se comptent que sur les tournois d'après le dernier ban.
+const ancienSet = set !== setEnCours();
 const apresBan = tournoisApresBan(
   decks.map((d) => ({
     tournoi: d.tournamentContext!,
     date: getTournamentInfo(d.tournamentContext!)?.date,
     cartes: d.cards.map((c) => c.card.name),
   })),
+  ancienSet,
 );
 // Sur stderr : stdout est le JSON que `maj:stats` écrit dans un fichier.
 for (const c of apresBan.ecartes) console.error(`Après le ban mais joue une carte bannie, écarté : ${c}`);
-console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
+if (!ancienSet) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
 
 /** Place d'un deck, ou l'infini quand riftdecks ne la donne pas : ça ne doit pas passer devant un vrai Top 8. */
 const place = (p: string | null): number => {
@@ -201,7 +203,7 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
   sortie[legende] = {
     set,
     decks: lotCartes.length,
-    ...(apresBan.retenus.size ? { depuisBan: DERNIER_BAN } : {}),
+    ...(ancienSet ? {} : { depuisBan: DERNIER_BAN }),
     ...(sousSeuil ? { cartesNonComptees: true } : {}),
     joueurs,
     coupe,

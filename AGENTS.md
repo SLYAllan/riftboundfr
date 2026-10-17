@@ -142,6 +142,9 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   AUCUNE liste qui joue une carte bannie (la Chine jouait encore Stacked Deck le
   19 septembre). Les résultats restent comptés sur tout le set, comme la tier list.
   Sous dix listes depuis le ban, la fiche garde ses résultats et tait ses cartes.
+  Au lendemain d'un nouveau ban, avant tout tournoi importé, toutes les fiches du set
+  en cours (celui du tournoi le plus récent de `tournament-flags.ts`) taisent leurs
+  cartes : c'est voulu, l'ancien repli recomptait tout le set, carte bannie comprise.
   **La prose d'une fiche (archétype, plan, forces, faiblesses) s'écrit dans
   `data/fiches-prose.json`, jamais dans `data/fiches/`**, puis `fiches-prose.mts
   --ecrire` la pose. Le 24 août, elle avait été écrite dans les fiches : relancer le

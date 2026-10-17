@@ -1,7 +1,15 @@
 import { cartesInterdites, DATES_BANS } from "../src/lib/banned-cards";
+import { TOURNAMENTS } from "../src/lib/tournament-flags";
 
 /** La dernière annonce de `DATES_BANS`, en date ISO. */
 export const DERNIER_BAN = DATES_BANS.map((b) => b.date).sort().at(-1)!;
+
+/** Le set du tournoi le plus récent de `tournament-flags.ts`. */
+export function setEnCours(): string {
+  const datés = Object.values(TOURNAMENTS).filter((t) => t.date && t.set);
+  const dernier = datés.reduce((a, b) => (b.date! > a.date! ? b : a));
+  return dernier.set!;
+}
 
 /**
  * Les tournois dont les CARTES se comptent : ceux d'après le dernier ban (choix
@@ -10,10 +18,15 @@ export const DERNIER_BAN = DATES_BANS.map((b) => b.date).sort().at(-1)!;
  *
  * Un tournoi daté après l'annonce n'entre que si AUCUNE de ses listes ne joue une
  * carte bannie : la Chine jouait encore Stacked Deck le 19 septembre, au lendemain
- * du ban. Un corpus sans tournoi d'après le ban (un ancien set) garde tout.
+ * du ban.
+ *
+ * Un ancien set garde tout : ses tournois précèdent le ban. Le set en cours ne
+ * garde que l'après-ban, même vide : au lendemain d'un ban, avant tout tournoi
+ * importé, recompter tout le set ramenait la carte bannie dans les fiches.
  */
 export function tournoisApresBan(
   listes: Iterable<{ tournoi: string; date: string | undefined; cartes: string[] }>,
+  ancienSet: boolean,
 ) {
   const tournois = new Map<string, { date: string | undefined; interdite: boolean }>();
   for (const l of listes) {
@@ -28,5 +41,5 @@ export function tournoisApresBan(
     if (t.interdite) ecartes.push(nom);
     else retenus.add(nom);
   }
-  return { retenus, ecartes, garder: (tournoi: string) => retenus.size === 0 || retenus.has(tournoi) };
+  return { retenus, ecartes, garder: (tournoi: string) => ancienSet || retenus.has(tournoi) };
 }

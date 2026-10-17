@@ -15,7 +15,7 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { getTournamentInfo } from "../src/lib/tournament-flags";
-import { DERNIER_BAN, tournoisApresBan } from "./apres-ban";
+import { DERNIER_BAN, setEnCours, tournoisApresBan } from "./apres-ban";
 
 const set = process.argv[2] ?? "Vendetta";
 const minListes = Number(process.argv[3] ?? 30);
@@ -54,14 +54,16 @@ for (const chemin of fichiersJson(RACINE)) {
 }
 
 // Les mêmes tournois que les fiches Légendes : ceux d'après le dernier ban.
+const ancienSet = set !== setEnCours();
 const apresBan = tournoisApresBan(
   decks.map((d) => ({
     tournoi: d.tournament,
     date: getTournamentInfo(d.tournament)?.date,
     cartes: [...d.mainDeck, ...(d.sideDeck ?? [])].map((c) => c?.name).filter(Boolean),
   })),
+  ancienSet,
 );
-if (apresBan.retenus.size) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
+if (!ancienSet) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
 
 for (const deck of decks.filter((d) => apresBan.garder(d.tournament))) {
   const e = parLegende.get(deck.legend) ?? { listes: 0, cartes: new Map<string, number[]>() };
