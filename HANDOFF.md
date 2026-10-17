@@ -46,10 +46,11 @@ META-KNOWLEDGE (v16) et DECKBUILDING (v15) refaits. Guides et prose des fiches
 recalés par trois workers pi (133 propositions relues, 25 reprises) ; le
 contrôle des restes est propre.
 
-**Reste, à trancher par Allan** : les articles « meilleur deck »
-(`scripts/seed-fiche-articles.mts`, 23 articles) prennent encore leurs listes en
-Unleashed. Les refaire sur l'après-ban veut dire des listes presque toutes
-chinoises.
+**Pas d'articles « meilleur deck » à refaire** : ils n'existent plus depuis le
+28 juin (doublon de `/legendes`), et `next.config.ts` redirige leurs adresses en
+301 vers `/legendes/<légende>`. Ce sont ces fiches qui captent les recherches
+(958 clics, position 5,0) et elles portent maintenant l'après-ban. Leur texte a
+changé le 17 : à compter dans la passe SEO à partir du Deploy.
 
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
