@@ -18,12 +18,12 @@
   "keyCards": [
     {
       "name": "Riposte",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -33,32 +33,32 @@
     },
     {
       "name": "First Mate",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Call to Glory",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "role": "Souple, 54 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -72,23 +72,23 @@
       "noyau": false
     },
     {
-      "name": "B.F. Sword",
-      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "name": "Salvage",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Grim Resolve",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Salvage",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "B.F. Sword",
+      "role": "Souple, 33 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -104,12 +104,12 @@
     "Cœur court, huit cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "joueursClasses": 467,
-    "coupe10": 42,
+    "joueursClasses": 575,
+    "coupe10": 52,
     "titres": 3,
     "conversion": "9 %",
-    "tournois": 46,
-    "listesPubliees": 312,
+    "tournois": 50,
+    "listesPubliees": 418,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -158,35 +158,34 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "83 %",
+      "usage": "84 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "77 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Kayle, Justified": {
-      "usage": "63 %",
+      "usage": "80 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
       "usage": "62 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Kayle, Justified": {
+      "usage": "57 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Kennen, Keeper of Balance": {
       "usage": "55 %",
       "role": "2 exemplaires en moyenne"
     },
     "Poppy, Paragon": {
-      "usage": "51 %",
+      "usage": "55 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (94 %)",
-    "Monastery of Hirana (44 %)",
-    "Seat of Power (31 %)"
+    "Sunken Temple (95 %)",
+    "Monastery of Hirana (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 467 joueurs classés, 46 tournois, dont 312 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 575 joueurs classés, 50 tournois, dont 418 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

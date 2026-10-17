@@ -38,8 +38,13 @@
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Ride The Wind",
@@ -47,48 +52,48 @@
       "noyau": false
     },
     {
-      "name": "Sabotage",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Grim Resolve",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Demacian Diplomat",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "First Mate",
+      "name": "Kinkou Initiate",
       "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
+      "name": "First Mate",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Ruin Runner",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -102,17 +107,22 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 313,
-    "coupe10": 34,
+    "joueursClasses": 349,
+    "coupe10": 40,
     "titres": 0,
-    "conversion": "10.9 %",
-    "tournois": 38,
-    "listesPubliees": 109,
+    "conversion": "11.5 %",
+    "tournois": 42,
+    "listesPubliees": 145,
     "bestPlacements": [
       {
         "placement": "2nd",
         "player": "信仰.Rui",
         "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      },
+      {
+        "placement": "5th",
+        "player": "闪电家.乐事.阿迪打野",
+        "tournament": "S4 Chengdu National Open (2026-10-10)"
       },
       {
         "placement": "8th",
@@ -128,11 +138,6 @@
         "placement": "9th",
         "player": "Minda",
         "tournament": "S4 Suzhou City Challenge (2026-08-23)"
-      },
-      {
-        "placement": "10th",
-        "player": "FB.大泽小橙",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
       }
     ]
   },
@@ -164,32 +169,32 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "87 %",
+      "usage": "88 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "74 %",
+      "usage": "78 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "52 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "54 %",
+      "role": "1,5 exemplaire en moyenne"
     },
     "Zed, Without a Sound": {
-      "usage": "47 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Qiyana, Victorious": {
+    "Ambessa, The Wolf": {
       "usage": "32 %",
-      "role": "3 exemplaires en moyenne"
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (91 %)",
-    "Star Spring (61 %)",
-    "Monastery of Hirana (61 %)",
-    "Sandswept Tomb (52 %)"
+    "Forbidding Waste (85 %)",
+    "Star Spring (66 %)",
+    "Sandswept Tomb (58 %)",
+    "Monastery of Hirana (56 %)"
   ],
-  "dataSource": "Classement complet des tournois : 313 joueurs classés, 38 tournois, dont 109 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 349 joueurs classés, 42 tournois, dont 145 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

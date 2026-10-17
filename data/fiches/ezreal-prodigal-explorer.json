@@ -38,13 +38,18 @@
     },
     {
       "name": "Wages of Pain",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Deadly Flourish",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Bewitching Spirit",
@@ -52,13 +57,8 @@
       "noyau": false
     },
     {
-      "name": "Deadly Flourish",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Pack of Wonders",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -72,18 +72,23 @@
       "noyau": false
     },
     {
-      "name": "Stacked Deck",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Singularity",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Turn to Dust",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -93,17 +98,7 @@
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Eclipse",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -119,12 +114,12 @@
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "joueursClasses": 299,
-    "coupe10": 40,
+    "joueursClasses": 347,
+    "coupe10": 41,
     "titres": 0,
-    "conversion": "13.4 %",
-    "tournois": 45,
-    "listesPubliees": 135,
+    "conversion": "11.8 %",
+    "tournois": 49,
+    "listesPubliees": 183,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -173,23 +168,23 @@
   },
   "champions": {
     "Fizz, Trickster": {
-      "usage": "100 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "99 %",
+      "role": "2,5 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "100 %",
+      "usage": "99 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "82 %",
+      "usage": "84 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (90 %)",
-    "Sigil of the Storm (86 %)",
-    "Heisho, Shell of the World (64 %)"
+    "Frozen Fortress (89 %)",
+    "Sigil of the Storm (85 %)",
+    "Heisho, Shell of the World (60 %)"
   ],
-  "dataSource": "Classement complet des tournois : 299 joueurs classés, 45 tournois, dont 135 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 347 joueurs classés, 49 tournois, dont 183 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

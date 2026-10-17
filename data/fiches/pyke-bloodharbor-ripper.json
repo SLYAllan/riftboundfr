@@ -9,19 +9,19 @@
   "tier": 5,
   "keyCards": [
     {
-      "name": "Star-Crossed",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Falling Star",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Bewitching Spirit",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Blood Rush",
@@ -29,38 +29,28 @@
       "noyau": false
     },
     {
-      "name": "Treasure Hunter",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "name": "Bewitching Spirit",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Void Seeker",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Gust Monk",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "name": "Void Seeker",
+      "role": "Standard, 71 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust Monk",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -69,28 +59,33 @@
       "noyau": false
     },
     {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Souple, 57 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tornado Warrior",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 191,
-    "coupe10": 4,
+    "joueursClasses": 217,
+    "coupe10": 5,
     "titres": 0,
-    "conversion": "2.1 %",
-    "tournois": 35,
-    "listesPubliees": 89,
+    "conversion": "2.3 %",
+    "tournois": 37,
+    "listesPubliees": 115,
     "bestPlacements": [
       {
         "placement": "11th",
@@ -122,11 +117,11 @@
   "sourceUrl": null,
   "champions": {
     "Fizz, Trickster": {
-      "usage": "99 %",
+      "usage": "98 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "99 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
@@ -134,16 +129,16 @@
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "47 %",
+      "usage": "54 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Ripper's Bay (97 %)",
-    "Forbidding Waste (78 %)",
-    "Void Gate (52 %)"
+    "Forbidding Waste (81 %)",
+    "Void Gate (48 %)"
   ],
-  "dataSource": "Classement complet des tournois : 191 joueurs classés, 35 tournois, dont 89 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 217 joueurs classés, 37 tournois, dont 115 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

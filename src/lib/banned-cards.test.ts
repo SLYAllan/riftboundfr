@@ -42,6 +42,9 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // flex, et Stacked Deck est l'une des siennes (54 % des listes). Elle en
     // ressort le 30 septembre, avec les City Challenge chinoises du 26 et du 27 :
     // premières listes d'après le ban, Stacked Deck quitte ses cartes flex.
+    //
+    // Yasuo en sort le 17 octobre, avec le National Open S4 de Chengdu :
+    // Fight or Flight quitte ses cartes.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
@@ -56,7 +59,6 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "mel-souls-reflection.json",
       "pyke-bloodharbor-ripper.json",
       "sivir-battle-mistress.json",
-      "yasuo-unforgiven.json",
       "zed-master-of-shadows.json",
     ]);
   });

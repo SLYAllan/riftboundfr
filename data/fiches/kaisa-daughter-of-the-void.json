@@ -39,13 +39,13 @@
       "noyau": true
     },
     {
-      "name": "Watchful Sentry",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "name": "Time Warp",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Time Warp",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "name": "Watchful Sentry",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -60,8 +60,8 @@
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Bellows Breath",
@@ -70,57 +70,57 @@
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
+      "role": "Standard, 77 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brittle Steel",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Cleave",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Forecaster",
-      "role": "Souple, 31 % des listes, 3 exemplaires",
+      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cleave",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 458,
-    "coupe10": 38,
+    "joueursClasses": 498,
+    "coupe10": 42,
     "titres": 2,
-    "conversion": "8.3 %",
-    "tournois": 46,
-    "listesPubliees": 411,
+    "conversion": "8.4 %",
+    "tournois": 50,
+    "listesPubliees": 451,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -138,14 +138,14 @@
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
       },
       {
-        "placement": "3rd",
-        "player": "BKM-Vita",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "2nd",
+        "player": "星旅.sve.朔月礼弥",
+        "tournament": "S4 Chengdu National Open Side Event B (2026-10-11)"
       },
       {
         "placement": "3rd",
-        "player": "鹿人甲",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+        "player": "BKM-Vita",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
       }
     ]
   },
@@ -159,10 +159,10 @@
   "topBattlefields": [
     "Rockfall Path (87 %)",
     "Frozen Fortress (85 %)",
-    "Void Gate (77 %)",
-    "Heisho, Shell of the World (35 %)"
+    "Void Gate (76 %)",
+    "Heisho, Shell of the World (34 %)"
   ],
-  "dataSource": "Classement complet des tournois : 458 joueurs classés, 46 tournois, dont 411 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 498 joueurs classés, 50 tournois, dont 451 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

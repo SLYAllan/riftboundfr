@@ -48,17 +48,12 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Patched Porobot",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -67,18 +62,28 @@
       "noyau": false
     },
     {
+      "name": "Stacked Deck",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Hard Bargain",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Eclipse",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 49 % des listes, 3 exemplaires",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -87,18 +92,13 @@
       "noyau": false
     },
     {
-      "name": "Eclipse",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "name": "Retreat",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Morbid Return",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Retreat",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -114,12 +114,12 @@
     "Un pilote qui découvre le deck perd les combats serrés"
   ],
   "competitiveResults": {
-    "joueursClasses": 504,
-    "coupe10": 42,
+    "joueursClasses": 556,
+    "coupe10": 45,
     "titres": 5,
-    "conversion": "8.3 %",
-    "tournois": 46,
-    "listesPubliees": 295,
+    "conversion": "8.1 %",
+    "tournois": 50,
+    "listesPubliees": 347,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -178,23 +178,23 @@
       "role": "2 exemplaires en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "99 %",
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "51 %",
+      "usage": "53 %",
       "role": "2 exemplaires en moyenne"
     },
     "Swain, Visionary": {
-      "usage": "39 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Abandoned Hall (91 %)",
-    "Targon's Peak (59 %)",
-    "Rockfall Path (49 %)"
+    "Abandoned Hall (85 %)",
+    "Targon's Peak (63 %)",
+    "Rockfall Path (45 %)"
   ],
-  "dataSource": "Classement complet des tournois : 504 joueurs classés, 46 tournois, dont 295 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 556 joueurs classés, 50 tournois, dont 347 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -40,111 +40,105 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Charm",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Lonely Poro",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "En Garde",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "name": "Scuttle Crab",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mischievous Marai",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Mournful Witness",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "name": "En Garde",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Akali, Deadly Weapon": {
-      "usage": "78 %",
+      "usage": "83 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "72 %",
+      "usage": "79 %",
       "role": "3 exemplaires en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "42 %",
+      "usage": "54 %",
       "role": "1 exemplaire en moyenne"
     },
     "Blitzcrank, Impassive": {
-      "usage": "39 %",
+      "usage": "51 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Void Gate (68 %)",
-    "Forgotten Monument (34 %)",
-    "Sigil of the Storm (32 %)",
-    "Back-Alley Bar (30 %)"
+    "Void Gate (76 %)",
+    "Sigil of the Storm (45 %)",
+    "Forgotten Monument (39 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 637,
-    "coupe10": 46,
+    "joueursClasses": 792,
+    "coupe10": 60,
     "titres": 4,
-    "conversion": "7.2 %",
-    "tournois": 46,
-    "listesPubliees": 366,
+    "conversion": "7.6 %",
+    "tournois": 50,
+    "listesPubliees": 502,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -167,12 +161,12 @@
         "tournament": "Singapore Regional Qualifier"
       },
       {
-        "placement": "3rd",
-        "player": "飞鸟_白色枫叶🍁",
-        "tournament": "S4 Foshan City Challenge (2026-09-06)"
+        "placement": "2nd",
+        "player": "kke",
+        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 637 joueurs classés, 46 tournois, dont 366 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 792 joueurs classés, 50 tournois, dont 502 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

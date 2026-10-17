@@ -58,27 +58,27 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hand Hammer",
-      "role": "Standard, 72 % des listes, 1 exemplaire",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -88,27 +88,17 @@
     },
     {
       "name": "Charm",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Sacrifice",
-      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Shadow's Call",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Cull the Weak",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "name": "Sacrifice",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -123,13 +113,18 @@
     "Le retrait d'Équipement coupe le moteur d'un coup"
   ],
   "competitiveResults": {
-    "joueursClasses": 536,
-    "coupe10": 61,
-    "titres": 3,
-    "conversion": "11.4 %",
-    "tournois": 46,
-    "listesPubliees": 263,
+    "joueursClasses": 635,
+    "coupe10": 72,
+    "titres": 4,
+    "conversion": "11.3 %",
+    "tournois": 50,
+    "listesPubliees": 362,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "燐川",
+        "tournament": "S4 Chengdu National Open (2026-10-10)"
+      },
       {
         "placement": "1st",
         "player": "KuSel",
@@ -149,11 +144,6 @@
         "placement": "2nd",
         "player": "酷猫.泡泡刀听见你说",
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "2nd",
-        "player": "Nephox FL",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       }
     ]
   },
@@ -180,20 +170,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "79 %",
+      "usage": "77 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "56 %",
+      "usage": "52 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Trifarian War Camp (98 %)",
-    "Hall of Legends (97 %)",
-    "Ornn's Forge (65 %)",
-    "Seat of Power (34 %)"
+    "Hall of Legends (98 %)",
+    "Ornn's Forge (59 %)",
+    "Seat of Power (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 536 joueurs classés, 46 tournois, dont 263 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 635 joueurs classés, 50 tournois, dont 362 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

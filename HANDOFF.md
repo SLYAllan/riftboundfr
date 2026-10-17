@@ -1,5 +1,36 @@
 # HANDOFF — état des lieux
 
+## Session du 17 octobre 2026 — hexgate 281 à 289, National Open S4 de Chengdu
+
+**Relevé hexgate** : 281 à 289 (rien au-delà, 404). La liste `/api/tournaments`
+répond vide : les identifiants se sondent un par un. Entrent 281 Shanghai du
+7 octobre (104 joueurs, 94 listes), 287 et 288, annexes A et B du National Open
+du 11 (128 chacune ; 122 et 124 listes), et **289, le National Open S4 de Chengdu
+du 10 octobre** (1 835 joueurs, 1 695 listes, Top 8 complet, Azir vainqueur). C'est
+le premier gros tournoi d'après le ban du 18 septembre. Dehors : 282 Nanjing,
+283 Guangzhou, 284 Wuhan (83 chacun), 285 Shenzhen (73), 286 épreuve de boutique.
+44 best-of pour le National Open (`--sauf` Rengar, Pridestalker, n°1 au 29e rang
+écarté, et Master Yi, Wuju Master, n°1 au 257e contre 1 347e converti).
+
+**hexgate écrit les Champions sans titre depuis le 281** (« Kennen » pour VEN-113
+et VEN-135, deux cartes). `scripts/hexgate-sans-titre.mts` écrit
+`data/hexgate-cartes-sans-titre.json` (114 lignes), lu par la conversion ET le
+validateur. Une ligne n'entre que si l'image de l'API et le numéro désignent la
+même carte (personnage et énergie compris). Cinq lignes à la main, chacune avec
+sa preuve : Vi et Viktor du coffret `ARC`, Teemo `FND-196`, Ezreal `SFD-082` (image
+promo absente de la base) et la coquille « Corinna » pour Corina Veraza
+(`coquille: true`, seul cas où le validateur ne contrôle pas le personnage).
+`parse-hexgate.mts` fusionne maintenant les lignes par carte résolue, plus par
+numéro. 113 listes écartées pour « Champion ambigu » (deux Champions différents
+du même personnage), dont 100 au National Open.
+
+Validateur : 29 872 listes, 0 écart. Seed local : 2 035 créées, 31 312 decks.
+`maj:stats` sortie 0 : Vendetta 15 642 places sur 50 tournois, aucune
+contradiction de rang ni « À REGARDER ». **Reste** : 93 effectifs périmés dans
+les commentaires de `scripts/tier-tables.ts` (Vendetta et Globale), puis
+META-KNOWLEDGE et DECKBUILDING, la prose des fiches et des guides, les articles
+« meilleur deck » d'après le ban ; le seed en prod et le Deploy.
+
 ## Session du 7 octobre 2026 — LA complété, hexgate 273, 276, 279, couleurs des points
 
 **RQ Los Angeles, second passage.** riftdecks publie maintenant 108 listes (85 au
@@ -1797,6 +1828,8 @@ Trois outils, à relancer tels quels pour un tournoi de plus :
 
 1. `scripts/scrape-hexgate.mts <id>` — relève la page et chaque decklist, écarte
    les listes dont les comptes ne tombent pas juste ;
+   1 bis. `scripts/hexgate-sans-titre.mts <id>` — depuis le tournoi 281, rend leur titre
+   aux Champions (voir `AGENTS.md`, « Tournois hexgate ») ;
 2. `scripts/parse-hexgate.mts <id>` — convertit au format du site (demande la base) ;
 3. `scripts/tournois-hexgate.mts <id>` — écrit la fiche de tournoi et affiche la
    ligne à poser dans `src/lib/tournament-flags.ts`.

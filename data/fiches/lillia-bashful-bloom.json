@@ -28,12 +28,12 @@
     },
     {
       "name": "Sprite Fountain",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -47,48 +47,48 @@
       "noyau": true
     },
     {
-      "name": "Stupefy",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Ravenbloom Student",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Lilting Lullaby",
-      "role": "Standard, 84 % des listes, 1 exemplaire",
-      "noyau": false
+      "name": "Stupefy",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lilting Lullaby",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Unchecked Power",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 76 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Heart of Dark Ice",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -98,12 +98,12 @@
     },
     {
       "name": "Plundering Poro",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -119,13 +119,18 @@
     "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "joueursClasses": 323,
-    "coupe10": 21,
-    "titres": 1,
-    "conversion": "6.5 %",
-    "tournois": 42,
-    "listesPubliees": 152,
+    "joueursClasses": 372,
+    "coupe10": 27,
+    "titres": 2,
+    "conversion": "7.3 %",
+    "tournois": 46,
+    "listesPubliees": 201,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "MYZ",
+        "tournament": "S4 Chengdu National Open Side Event B (2026-10-11)"
+      },
       {
         "placement": "1st",
         "player": "杨杨",
@@ -144,11 +149,6 @@
       {
         "placement": "4th",
         "player": "优极客.无痕",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "5th",
-        "player": "XXT.zyoung",
         "tournament": "S4 Shanghai City Challenge (2026-08-08)"
       }
     ]
@@ -177,15 +177,15 @@
       "role": "1 exemplaire en moyenne"
     },
     "Akali, Silent": {
-      "usage": "43 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Dusk Rose Lab (95 %)",
-    "Black Flame Altar (74 %)",
-    "Seat of Power (72 %)"
+    "Black Flame Altar (77 %)",
+    "Seat of Power (74 %)"
   ],
-  "dataSource": "Classement complet des tournois : 323 joueurs classés, 42 tournois, dont 152 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 372 joueurs classés, 46 tournois, dont 201 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

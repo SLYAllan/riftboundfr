@@ -9,66 +9,118 @@
   "tier": 5,
   "keyCards": [
     {
-      "name": "Ride the Wind",
-      "id": "Ride The Wind",
-      "role": "Présente dans 99 % des 336 listes recensées."
+      "name": "Discipline",
+      "role": "Cœur du deck, Présente, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Discipline",
-      "id": "Discipline",
-      "role": "Présente dans 98 % des 336 listes recensées."
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Defy",
-      "id": "Defy",
-      "role": "Présente dans 94 % des 336 listes recensées."
+      "role": "Cœur du deck, Présente, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Fight or Flight",
-      "role": "Présente dans 82 % des 336 listes recensées."
+      "name": "Tideturner",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
-      "name": "En Garde",
-      "id": "En Garde",
-      "role": "Présente dans 78 % des 336 listes recensées."
+      "name": "Star-Crossed",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "id": "Zhonya's Hourglass",
-      "role": "Présente dans 76 % des 336 listes recensées."
+      "role": "Standard, Présente, 73 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stellacorn Herder",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Boots of Swiftness",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mask of Foresight",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 55 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Souple, Présente, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Adaptatron",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 521,
-    "coupe10": 15,
-    "titres": 1,
-    "conversion": "2.9 %",
-    "tournois": 77,
+    "joueursClasses": 11,
+    "coupe10": 1,
+    "titres": 0,
+    "conversion": "9.1 %",
+    "tournois": 9,
+    "listesPubliees": 11,
     "bestPlacements": [
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-07)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "9th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-12)"
-      },
       {
         "placement": "11th",
         "player": "𝙶𝙻𝚇-归来",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
+        "placement": "27th",
+        "player": "天使投资人",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "48th",
+        "player": "给我取个名儿",
+        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "49th",
+        "player": "疾风起司",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+      },
+      {
+        "placement": "55th",
+        "player": "不染",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
       }
     ]
   },
@@ -81,5 +133,32 @@
   "weaknesses": [
     "9 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 521 joueurs classés sur 77 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 11 joueurs classés, 9 tournois, dont 11 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Vendetta",
+  "champions": {
+    "Yasuo, Windrider": {
+      "usage": "82 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Akali, Silent": {
+      "usage": "73 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "55 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "36 %",
+      "role": "1,5 exemplaire en moyenne"
+    },
+    "Zed, Without a Sound": {
+      "usage": "36 %",
+      "role": "1,5 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Sunken Temple (36 %)",
+    "Forbidding Waste (36 %)"
+  ]
 }

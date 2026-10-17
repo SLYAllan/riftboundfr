@@ -25,77 +25,82 @@
     },
     {
       "name": "Bubble Bot",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Patched Porobot",
+      "name": "Temporal Breach",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
       "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Temporal Breach",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Production Surge",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Cleave",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "name": "Patched Porobot",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Perfect Execution",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "name": "Cleave",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Production Surge",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 149,
+    "joueursClasses": 171,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "0.7 %",
-    "tournois": 20,
-    "listesPubliees": 42,
+    "conversion": "0.6 %",
+    "tournois": 21,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -140,9 +145,9 @@
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (45 %)",
-    "Rockfall Path (43 %)"
+    "Rockfall Path (51 %)",
+    "Zaun Warrens (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 149 joueurs classés, 20 tournois, dont 42 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 171 joueurs classés, 21 tournois, dont 57 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

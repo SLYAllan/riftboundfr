@@ -15,42 +15,42 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Counter Strike",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Brutalizer",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -59,44 +59,49 @@
       "noyau": false
     },
     {
-      "name": "Back Off",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "name": "Not So Fast",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Not So Fast",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "name": "Back Off",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Boneshiver",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Challenge",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ruin Runner",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ruin Runner",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Challenge",
+      "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 128,
+    "joueursClasses": 153,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "1.6 %",
-    "tournois": 23,
-    "listesPubliees": 58,
+    "conversion": "1.3 %",
+    "tournois": 26,
+    "listesPubliees": 83,
     "bestPlacements": [
+      {
+        "placement": "18th",
+        "player": "HBG_77",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+      },
       {
         "placement": "38th",
         "player": "想桃子111",
@@ -113,45 +118,40 @@
         "tournament": "Dongguan Manbo Cup (2026-08-08)"
       },
       {
-        "placement": "46th",
-        "player": "再未得见",
-        "tournament": "S4 Shanghai City Challenge (2026-09-27)"
-      },
-      {
-        "placement": "47th",
-        "player": "Yang",
-        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
+        "placement": "45th",
+        "player": "对酒当歌",
+        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
       }
     ]
   },
   "sourceUrl": null,
   "champions": {
     "Jax, Unmatched": {
-      "usage": "93 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Rengar, Trophy Hunter": {
-      "usage": "50 %",
+    "Lucian, Merciless": {
+      "usage": "53 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Lucian, Merciless": {
-      "usage": "47 %",
+    "Rengar, Trophy Hunter": {
+      "usage": "52 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "40 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     },
     "Akshan, Mischievous": {
-      "usage": "36 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (69 %)",
-    "Ornn's Forge (52 %)"
+    "Sunken Temple (73 %)",
+    "Ornn's Forge (46 %)"
   ],
-  "dataSource": "Classement complet des tournois : 128 joueurs classés, 23 tournois, dont 58 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 153 joueurs classés, 26 tournois, dont 83 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {

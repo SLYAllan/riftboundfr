@@ -11,38 +11,38 @@
   "legendAbility": "Quand vous recyclez une rune, épuisez Sivir pour poser un jeton Or épuisé. Elle se prépare dès qu'une unité adverse meurt.",
   "keyCards": [
     {
-      "name": "Stacked Deck",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Sabotage",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rampage",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Punch First",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Last Rites",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Last Rites",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Souple, 59 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stacked Deck",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Souple, 57 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -51,23 +51,23 @@
       "noyau": false
     },
     {
-      "name": "Scryer's Bloom",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Dazzling Aurora",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Catalyst of Aeons",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "name": "Scryer's Bloom",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lunar Boon",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -78,17 +78,22 @@
     "Peu jouée : 103 joueurs classés sur 24 tournois, aucun titre"
   ],
   "competitiveResults": {
-    "joueursClasses": 103,
-    "coupe10": 11,
+    "joueursClasses": 128,
+    "coupe10": 12,
     "titres": 0,
-    "conversion": "10.7 %",
-    "tournois": 24,
-    "listesPubliees": 49,
+    "conversion": "9.4 %",
+    "tournois": 27,
+    "listesPubliees": 74,
     "bestPlacements": [
       {
         "placement": "6th",
         "player": "BOT.QAQ钓鱼王",
         "tournament": "S4 Beijing City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "7th",
+        "player": "拳力斗技",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       },
       {
         "placement": "9th",
@@ -104,11 +109,6 @@
         "placement": "17th",
         "player": "BonkersForCheese",
         "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
-      },
-      {
-        "placement": "17th",
-        "player": "拳力斗技",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
       }
     ]
   },
@@ -137,19 +137,19 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "45 %",
+      "usage": "46 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "41 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "43 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (94 %)",
-    "Forgotten Monument (53 %)",
-    "Dragon Roost (41 %)"
+    "Sigil of the Storm (91 %)",
+    "Forgotten Monument (50 %)",
+    "Dragon Roost (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 103 joueurs classés, 24 tournois, dont 49 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 128 joueurs classés, 27 tournois, dont 74 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -31,113 +31,118 @@
   "keyCards": [
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Elder Dragon",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Garbage Grabber",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Flurry of Blades",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Clairvoyance",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dredge Up",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mobilize",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Gutter Palace",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Catalyst of Aeons",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Deadly Flourish",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "role": "Standard, 72 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Promising Future",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
-    "Jayce, Man of Progress": {
-      "usage": "48 %",
+    "Jayce, Brilliant Inventor": {
+      "usage": "54 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Jayce, Brilliant Inventor": {
-      "usage": "44 %",
+    "Jayce, Man of Progress": {
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (90 %)",
-    "Forgotten Monument (67 %)",
-    "Dragon Roost (62 %)"
+    "Sigil of the Storm (93 %)",
+    "Forgotten Monument (74 %)",
+    "Dragon Roost (71 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 639,
-    "coupe10": 57,
-    "titres": 0,
-    "conversion": "8.9 %",
-    "tournois": 46,
-    "listesPubliees": 344,
+    "joueursClasses": 791,
+    "coupe10": 69,
+    "titres": 1,
+    "conversion": "8.7 %",
+    "tournois": 50,
+    "listesPubliees": 496,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "Akashic丶剑南春",
+        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
+      },
       {
         "placement": "2nd",
         "player": "冲刺丸子",
@@ -154,17 +159,12 @@
         "tournament": "S4 Nanjing City Challenge (2026-09-26)"
       },
       {
-        "placement": "6th",
-        "player": "赢细节输卡手不分",
-        "tournament": "S4 Foshan City Challenge (2026-09-06)"
-      },
-      {
-        "placement": "6th",
-        "player": "林",
-        "tournament": "S4 Shanghai City Challenge (2026-08-22)"
+        "placement": "5th",
+        "player": "淘金巢.羽光.从没觉得玩符文战场开心过",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 639 joueurs classés, 46 tournois, dont 344 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 791 joueurs classés, 50 tournois, dont 496 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

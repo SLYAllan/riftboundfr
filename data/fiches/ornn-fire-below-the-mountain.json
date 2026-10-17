@@ -28,21 +28,26 @@
     },
     {
       "name": "Patched Porobot",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sterak's Gage",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Seal of Focus",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Poro Snax",
       "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
@@ -52,38 +57,33 @@
       "noyau": false
     },
     {
-      "name": "Poro Snax",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Guardian Angel",
-      "role": "Standard, 83 % des listes, 1 exemplaire",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Crew",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Clockwork Keeper",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 68 % des listes, 1 exemplaire",
+      "role": "Standard, 72 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Aspiring Engineer",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -92,26 +92,31 @@
       "noyau": false
     },
     {
+      "name": "Discipline",
+      "role": "Souple, 37 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Helm of Suppression",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "55 %",
+      "usage": "59 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ornn, Forge God": {
-      "usage": "46 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (88 %)",
+    "Ornn's Forge (89 %)",
     "Veiled Temple (72 %)",
-    "Seat of Power (59 %)",
-    "Treasure Hoard (40 %)"
+    "Seat of Power (63 %)",
+    "Treasure Hoard (39 %)"
   ],
   "strengths": [
     "Vainqueur du Regional Qualifier de Barcelone, le plus gros tournoi du format",
@@ -125,12 +130,12 @@
     "Deux Champions se partagent la place, aucun ne dépasse 59 % : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 366,
-    "coupe10": 25,
+    "joueursClasses": 433,
+    "coupe10": 33,
     "titres": 1,
-    "conversion": "6.8 %",
-    "tournois": 43,
-    "listesPubliees": 191,
+    "conversion": "7.6 %",
+    "tournois": 47,
+    "listesPubliees": 243,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -149,20 +154,20 @@
       },
       {
         "placement": "4th",
-        "player": "晚风林-狄J",
-        "tournament": "S4 Regional Open Side Event B (2026-09-13)"
+        "player": "超级阿巴怪@友间",
+        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
       },
       {
         "placement": "4th",
-        "player": "天津cardtime-金角大王",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+        "player": "幻灵卡域·牌王贤",
+        "tournament": "S4 Chengdu National Open Side Event B (2026-10-11)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 366 joueurs classés, 43 tournois, dont 191 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 433 joueurs classés, 47 tournois, dont 243 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

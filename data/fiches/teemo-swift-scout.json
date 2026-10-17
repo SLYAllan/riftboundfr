@@ -12,62 +12,62 @@
   "keyCards": [
     {
       "name": "Switcheroo",
-      "role": "Standard, Gère les gros attaquants, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Consult the Past",
-      "role": "Standard, Refill de main, 77 % des listes, 3 exemplaires",
+      "role": "Standard, Gère les gros attaquants, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Consult the Past",
+      "role": "Standard, Refill de main, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Guerilla Warfare",
-      "role": "Standard, Refill complémentaire, 69 % des listes, 2 exemplaires",
+      "role": "Standard, Refill complémentaire, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 62 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Edge of Night",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Souple, Removal Unleashed, 54 % des listes, 3 exemplaires",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, Removal Unleashed, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Sprite Call",
-      "role": "Souple, Removal cheap, 38 % des listes, 3 exemplaires",
+      "name": "Wages of Pain",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Stupefy",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "name": "Baron Nashor",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -78,12 +78,12 @@
     "13 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 28,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "7.4 %",
-    "tournois": 21,
-    "listesPubliees": 13,
+    "conversion": "7.1 %",
+    "tournois": 22,
+    "listesPubliees": 14,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -130,45 +130,37 @@
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
   },
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 21 tournois, dont 13 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 22 tournois, dont 14 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Pyke, Returned": {
-      "usage": "77 %",
+      "usage": "71 %",
       "role": "3 exemplaires en moyenne"
     },
     "Teemo, Scout": {
-      "usage": "62 %",
+      "usage": "64 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "62 %",
+      "usage": "57 %",
       "role": "1 exemplaire en moyenne"
     },
     "Teemo, Strategist": {
-      "usage": "54 %",
+      "usage": "50 %",
       "role": "3 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "46 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "38 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Nocturne, Horrifying": {
-      "usage": "31 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Hwei, Brooding Painter": {
-      "usage": "31 %",
-      "role": "2,5 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Tree (62 %)",
-    "Grove of the God-Willow (46 %)",
-    "Startipped Peak (38 %)"
+    "Bandle Tree (57 %)",
+    "Grove of the God-Willow (50 %)",
+    "Startipped Peak (36 %)"
   ],
   "setDesChiffres": "Vendetta"
 }

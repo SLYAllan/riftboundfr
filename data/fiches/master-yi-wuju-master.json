@@ -51,48 +51,48 @@
       "noyau": true
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Concentrate",
-      "role": "Standard, XP spell (mid-late seulement), 79 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Alpha Strike",
-      "role": "Standard, 79 % des listes, 1 exemplaire",
+      "role": "Standard, 80 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Herald of Spring",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "name": "Scuttle Crab",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Voracious Gromp",
-      "role": "Standard, Alternative en allant second, 71 % des listes, 2 exemplaires",
+      "role": "Standard, Alternative en allant second, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Concentrate",
+      "role": "Standard, XP spell (mid-late seulement), 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Arachnoid Horror",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Herald of Spring",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Skyward Strike",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -103,12 +103,12 @@
     "14 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 135,
+    "joueursClasses": 170,
     "coupe10": 5,
     "titres": 0,
-    "conversion": "3.7 %",
-    "tournois": 23,
-    "listesPubliees": 14,
+    "conversion": "2.9 %",
+    "tournois": 25,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -156,21 +156,21 @@
     ],
     "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable. ⚠️ À NE PAS confondre avec le Master Yi mid-range/'proving grounds' (+2 en défense seul) qui, lui, gagne des events (Régional Suzhou, top cut Win-A-Box via Trophy Hunter + Vilemaw + double Zhonya's) — c'est une autre légende."
   },
-  "dataSource": "Classement complet des tournois : 135 joueurs classés, 23 tournois, dont 14 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 170 joueurs classés, 25 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Master Yi, Tempered": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Master Yi, Unstoppable": {
-      "usage": "86 %",
+      "usage": "80 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Gardens of Becoming (93 %)",
     "Reckoner's Arena (93 %)",
-    "Targon's Peak (57 %)"
+    "Targon's Peak (53 %)"
   ],
   "setDesChiffres": "Vendetta"
 }

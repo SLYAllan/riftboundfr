@@ -23,62 +23,62 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Grim Apothecary",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 86 % des listes, 1 exemplaire",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "noyau": true
     },
     {
       "name": "Pakaa Cub",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -91,12 +91,12 @@
     "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
   ],
   "competitiveResults": {
-    "joueursClasses": 514,
-    "coupe10": 68,
+    "joueursClasses": 602,
+    "coupe10": 80,
     "titres": 3,
-    "conversion": "13.2 %",
-    "tournois": 43,
-    "listesPubliees": 186,
+    "conversion": "13.3 %",
+    "tournois": 47,
+    "listesPubliees": 270,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -145,31 +145,31 @@
   },
   "champions": {
     "Rengar, Trophy Hunter": {
-      "usage": "99 %",
+      "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Nidalee, Cat Form": {
-      "usage": "97 %",
+    "Kai'Sa, Survivor": {
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Kai'Sa, Survivor": {
-      "usage": "97 %",
-      "role": "3 exemplaires en moyenne"
+    "Nidalee, Cat Form": {
+      "usage": "98 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "87 %",
+      "usage": "90 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "68 %",
+      "usage": "75 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (96 %)",
-    "Emperor's Dais (88 %)",
-    "Seat of Power (84 %)"
+    "Star Spring (97 %)",
+    "Emperor's Dais (92 %)",
+    "Seat of Power (87 %)"
   ],
-  "dataSource": "Classement complet des tournois : 514 joueurs classés, 43 tournois, dont 186 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 602 joueurs classés, 47 tournois, dont 270 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -35,47 +35,57 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Stacked Deck",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Applied Researchers",
-      "role": "Souple, 51 % des listes, 3 exemplaires",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dredge Up",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -84,29 +94,19 @@
       "noyau": false
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "name": "Gust",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Up from the Deep",
       "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Dredge Up",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
-      "noyau": false
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "65 %",
+      "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
@@ -114,30 +114,30 @@
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "51 %",
+      "usage": "53 %",
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
-      "usage": "46 %",
+      "usage": "47 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "39 %",
+      "usage": "40 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Ravenbloom Conservatory (32 %)",
-    "Threshold of the Gray (31 %)",
-    "Frozen Fortress (31 %)"
+    "Threshold of the Gray (34 %)",
+    "Forbidding Waste (30 %)",
+    "Frozen Fortress (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 213,
-    "coupe10": 6,
+    "joueursClasses": 234,
+    "coupe10": 7,
     "titres": 0,
-    "conversion": "2.8 %",
-    "tournois": 35,
-    "listesPubliees": 142,
+    "conversion": "3 %",
+    "tournois": 38,
+    "listesPubliees": 163,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -166,6 +166,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 213 joueurs classés, 35 tournois, dont 142 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 234 joueurs classés, 38 tournois, dont 163 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

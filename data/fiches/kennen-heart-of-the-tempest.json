@@ -41,7 +41,7 @@
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -51,18 +51,13 @@
     },
     {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Stacked Deck",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Last Rites",
@@ -71,53 +66,63 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Treasure Hunter",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "name": "Stacked Deck",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Hunter",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Abandon",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Abandon",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Souple, 32 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Kennen, Storm of Shuriken": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
@@ -125,21 +130,21 @@
       "role": "2 exemplaires en moyenne"
     },
     "Nocturne, Horrifying": {
-      "usage": "84 %",
+      "usage": "72 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (93 %)",
-    "Zaun Warrens (89 %)"
+    "Minefield (94 %)",
+    "Zaun Warrens (90 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1410,
-    "coupe10": 269,
+    "joueursClasses": 1547,
+    "coupe10": 291,
     "titres": 10,
-    "conversion": "19.1 %",
-    "tournois": 46,
-    "listesPubliees": 722,
+    "conversion": "18.8 %",
+    "tournois": 50,
+    "listesPubliees": 854,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -168,6 +173,6 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1410 joueurs classés, 46 tournois, dont 722 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1547 joueurs classés, 50 tournois, dont 854 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

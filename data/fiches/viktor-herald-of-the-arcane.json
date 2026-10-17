@@ -23,7 +23,7 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -38,17 +38,17 @@
     },
     {
       "name": "Wages of Pain",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Shadow's Call",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -58,22 +58,22 @@
     },
     {
       "name": "Singularity",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Safety Inspector",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -82,41 +82,36 @@
       "noyau": false
     },
     {
-      "name": "Deadly Flourish",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Salvage",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Sprite Burst",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "name": "Deadly Flourish",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Lacerate",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "86 %",
+      "usage": "87 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "45 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (72 %)",
-    "Rockfall Path (50 %)",
-    "Ravenbloom Conservatory (50 %)",
-    "Treasure Hoard (31 %)"
+    "Forbidding Waste (73 %)",
+    "Rockfall Path (52 %)",
+    "Ravenbloom Conservatory (45 %)",
+    "Treasure Hoard (30 %)"
   ],
   "strengths": [
     "Cinq cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
@@ -130,12 +125,12 @@
     "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "joueursClasses": 174,
-    "coupe10": 12,
+    "joueursClasses": 197,
+    "coupe10": 16,
     "titres": 0,
-    "conversion": "6.9 %",
-    "tournois": 34,
-    "listesPubliees": 119,
+    "conversion": "8.1 %",
+    "tournois": 38,
+    "listesPubliees": 142,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -167,7 +162,7 @@
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 174 joueurs classés, 34 tournois, dont 119 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 197 joueurs classés, 38 tournois, dont 142 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

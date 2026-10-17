@@ -27,52 +27,52 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sacrifice",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Arena Bar",
-      "role": "Standard, 67 % des listes, 1,5 exemplaire",
+      "name": "Sacrifice",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sea Monkey",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Arena Bar",
+      "role": "Standard, 60 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Fae Dragon",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -82,12 +82,17 @@
     },
     {
       "name": "Challenge",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Warmog's Armor",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Kinkou Monk",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -98,12 +103,12 @@
     "18 listes sur les 6 884 du set Vendetta, 31 joueurs classés : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "joueursClasses": 31,
+    "joueursClasses": 33,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "3.2 %",
-    "tournois": 18,
-    "listesPubliees": 18,
+    "conversion": "3 %",
+    "tournois": 19,
+    "listesPubliees": 20,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -151,15 +156,15 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "83 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "72 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Brawler": {
-      "usage": "61 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kayle, Justified": {
@@ -167,19 +172,19 @@
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "44 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     },
     "Sett, Kingpin": {
-      "usage": "39 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (94 %)",
-    "Valley of Idols (83 %)",
-    "Sunken Temple (83 %)"
+    "Monastery of Hirana (95 %)",
+    "Sunken Temple (85 %)",
+    "Valley of Idols (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 31 joueurs classés, 18 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 33 joueurs classés, 19 tournois, dont 20 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -12,67 +12,67 @@
   "keyCards": [
     {
       "name": "Kadregrin the Infernal",
-      "role": "Cœur du deck, Core et finisher dragon, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, Core et finisher dragon, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mobilize",
-      "role": "Standard, Ramp essentiel, 82 % des listes, 3 exemplaires",
+      "role": "Standard, Ramp essentiel, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sky Splitter",
-      "role": "Standard, Removal et board control, 82 % des listes, 3 exemplaires",
+      "role": "Standard, Removal et board control, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gentle Gemdragon",
-      "role": "Standard, Dragon de mid game, 82 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon de mid game, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Elder Dragon",
-      "role": "Standard, Menace majeure, 82 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Dragonsoul Sage",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Herald of Scales",
-      "role": "Standard, Dragon d'early game, 73 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Show of Strength",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "role": "Standard, Menace majeure, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Blazing Scorcher",
-      "role": "Standard, Dragon d'early game, 64 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon d'early game, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Falling Star",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "name": "Herald of Scales",
+      "role": "Standard, Dragon d'early game, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Flurry of Blades",
-      "role": "Standard, Combat trick, 64 % des listes, 2 exemplaires",
+      "role": "Standard, Combat trick, 67 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dragonsoul Sage",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Show of Strength",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, Disruption, 64 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Minotaur Reckoner",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Standard, Disruption, 60 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -82,22 +82,18 @@
       "role": "Seul champion du build, 1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "64 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "67 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Jayce, Hammer in Hand": {
-      "usage": "36 %",
-      "role": "1,5 exemplaire en moyenne"
-    },
-    "Akshan, Mischievous": {
-      "usage": "36 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "40 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (91 %)",
-    "Dragon Roost (55 %)",
-    "Mystic Vortex (36 %)"
+    "Sigil of the Storm (87 %)",
+    "Dragon Roost (53 %)",
+    "Forgotten Monument (33 %)"
   ],
   "strengths": [
     "Les grosses unités se paient elles-mêmes, en partie."
@@ -106,12 +102,12 @@
     "11 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 12,
-    "coupe10": 1,
+    "joueursClasses": 16,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "8.3 %",
-    "tournois": 10,
-    "listesPubliees": 11,
+    "conversion": "12.5 %",
+    "tournois": 12,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -143,7 +139,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 12 joueurs classés, 10 tournois, dont 11 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 16 joueurs classés, 12 tournois, dont 15 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

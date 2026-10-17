@@ -26,79 +26,84 @@
       "noyau": true
     },
     {
-      "name": "Back Off",
-      "role": "Cœur du deck, Bounce et tempo, 94 % des listes, 2 exemplaires",
+      "name": "Defy",
+      "role": "Cœur du deck, Core de protection, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Defy",
-      "role": "Standard, Core de protection, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "name": "Back Off",
+      "role": "Cœur du deck, Bounce et tempo, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, Menace principale, 78 % des listes, 2 exemplaires",
+      "role": "Standard, Menace principale, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, Gear de protection, 67 % des listes, 2 exemplaires",
+      "role": "Standard, Gear de protection, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Souple, 56 % des listes, 2,5 exemplaires",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Souple, CC signature d'Ahri, 56 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Emperor's Divide",
-      "role": "Souple, Finisher spell, 56 % des listes, 1 exemplaire",
+      "role": "Souple, CC signature d'Ahri, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Desert's Call",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "role": "Souple, 52 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Souple, Finisher spell, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Eager Apprentice",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Fox-Fire",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "name": "Desert's Call",
+      "role": "Souple, 43 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Premonition",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Trevor Snoozebottom",
+      "role": "Souple, 35 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Ahri, Inquisitive": {
-      "usage": "89 %",
+      "usage": "83 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Grove of the God-Willow (33 %)"
+    "Grove of the God-Willow (43 %)"
   ],
   "strengths": [
     "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
@@ -107,12 +112,12 @@
     "18 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 20,
+    "joueursClasses": 25,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 17,
-    "listesPubliees": 18,
+    "tournois": 19,
+    "listesPubliees": 23,
     "bestPlacements": [
       {
         "placement": "24th",
@@ -135,16 +140,16 @@
         "tournament": "S4 Shanghai City Challenge (2026-09-27)"
       },
       {
-        "placement": "51th",
-        "player": "米缸",
-        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
+        "placement": "36th",
+        "player": "知雾vv",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 20 joueurs classés, 17 tournois, dont 18 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 25 joueurs classés, 19 tournois, dont 23 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

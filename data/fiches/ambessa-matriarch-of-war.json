@@ -30,100 +30,104 @@
   "keyCards": [
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Legion Marauder",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Challenge",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tactical Retreat",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Solari Sunhawk",
-      "role": "Souple, 38 % des listes, 3 exemplaires",
+      "name": "Challenge",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Ambessa, The Wolf": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "62 %",
+      "usage": "63 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "51 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "54 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "44 %",
+      "usage": "43 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "36 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (75 %)",
-    "Sunken Temple (47 %)",
-    "Sandswept Tomb (36 %)"
+    "Risen Altar (74 %)",
+    "Sunken Temple (46 %)",
+    "Sandswept Tomb (39 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 167,
+    "joueursClasses": 183,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "0.6 %",
-    "tournois": 26,
-    "listesPubliees": 55,
+    "conversion": "0.5 %",
+    "tournois": 29,
+    "listesPubliees": 70,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -146,12 +150,12 @@
         "tournament": "S4 Beijing City Challenge (2026-08-23)"
       },
       {
-        "placement": "36th",
-        "player": "SJTU.我的刀盾",
-        "tournament": "S4 Shanghai City Challenge (2026-09-19)"
+        "placement": "30th",
+        "player": "XXT丶kuro",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 167 joueurs classés, 26 tournois, dont 55 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 183 joueurs classés, 29 tournois, dont 70 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

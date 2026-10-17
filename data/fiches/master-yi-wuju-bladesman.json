@@ -27,13 +27,13 @@
       "noyau": true
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "name": "Punch First",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -63,12 +63,12 @@
     },
     {
       "name": "Rampage",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -78,12 +78,17 @@
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Onslaught",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tomb-Raider Barbara",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -99,12 +104,12 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "joueursClasses": 1074,
-    "coupe10": 149,
+    "joueursClasses": 1220,
+    "coupe10": 168,
     "titres": 7,
-    "conversion": "13.9 %",
-    "tournois": 46,
-    "listesPubliees": 658,
+    "conversion": "13.8 %",
+    "tournois": 50,
+    "listesPubliees": 804,
     "bestPlacements": [
       {
         "placement": "0th",
@@ -157,19 +162,19 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "99 %",
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "33 %",
+      "usage": "34 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (92 %)",
+    "Star Spring (93 %)",
     "Emperor's Dais (89 %)",
-    "Seat of Power (75 %)"
+    "Seat of Power (76 %)"
   ],
-  "dataSource": "Classement complet des tournois : 1074 joueurs classés, 46 tournois, dont 658 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 1220 joueurs classés, 50 tournois, dont 804 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Vendetta"
 }

@@ -27,37 +27,27 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, rally surprise, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, protection gear, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, protection gear, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, early game, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, early game, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 70 % des listes, 2 exemplaires",
+      "role": "Standard, spell signature, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, finisher, 60 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thwonk!",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Affectionate Poro",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "role": "Standard, finisher, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -66,28 +56,38 @@
       "noyau": false
     },
     {
-      "name": "Lonely Poro",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "name": "Thwonk!",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Charm",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "name": "Affectionate Poro",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ki Barrier",
-      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Meditation",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "name": "Charm",
+      "role": "Souple, 42 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 38 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -96,27 +96,27 @@
       "usage": "100 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Leona, Determined": {
-      "usage": "90 %",
-      "role": "Champion principal, 1 exemplaire en moyenne"
-    },
     "Kennen, Keeper of Balance": {
-      "usage": "85 %",
+      "usage": "88 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Leona, Determined": {
+      "usage": "88 %",
+      "role": "Champion principal, 1 exemplaire en moyenne"
+    },
     "Nami, Headstrong": {
-      "usage": "40 %",
-      "role": "2,5 exemplaires en moyenne"
+      "usage": "46 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Fiora, Victorious": {
-      "usage": "35 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (95 %)",
-    "Sunken Temple (80 %)",
-    "Amateur Recital (35 %)"
+    "Monastery of Hirana (96 %)",
+    "Sunken Temple (79 %)",
+    "Amateur Recital (42 %)"
   ],
   "strengths": [
     "Chaque effet d'étourdissement paie deux fois : l'unité adverse ne frappe pas, la vôtre grossit."
@@ -125,12 +125,12 @@
     "20 listes seulement sur les 6 884 du set Vendetta : la Légende n'est plus jouée en tournoi, et les cartes clés ci-dessous datent du set précédent."
   ],
   "competitiveResults": {
-    "joueursClasses": 25,
+    "joueursClasses": 29,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "4 %",
-    "tournois": 15,
-    "listesPubliees": 20,
+    "conversion": "3.4 %",
+    "tournois": 16,
+    "listesPubliees": 24,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -162,7 +162,7 @@
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 25 joueurs classés, 15 tournois, dont 20 listes publiées d’où viennent les cartes. Relevé du 7 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 29 joueurs classés, 16 tournois, dont 24 listes publiées d’où viennent les cartes. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
