@@ -13,6 +13,17 @@ workers pi/DeepSeek ; toi tu relis et tu tranches. Ce qui NE se délègue PAS : 
 décision de garder/supprimer une decklist (étape 2, intégrité), le seed **prod**,
 les flags. La porte `npm run verify` reste chez toi.
 
+## Avant tout : le tournoi est-il déjà en base par hexgate ?
+
+riftdecks republie des tournois chinois que le site a déjà relevés sur hexgate,
+sous un autre nom. La clé de dédoublonnage du seed compare le nom du tournoi :
+elle ne voit pas le doublon, et le tournoi compte deux fois dans les tier lists
+et les fiches. Pour un tournoi chinois, chercher d'abord sa date et son effectif
+dans `src/lib/tournament-flags.ts`. S'il y est, ne pas l'importer.
+
+Cas connu : `s4-chengdu-national-open-tournament-decks-18203` est le National
+Open S4 de Chengdu, déjà en base par hexgate 289 (1 695 listes).
+
 ## 0. Vérifier que les Légendes du set sont connues
 
 ```bash
