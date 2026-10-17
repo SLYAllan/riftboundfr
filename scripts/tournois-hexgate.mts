@@ -60,12 +60,15 @@ for (const id of ids) {
   // « S4 Shenyang Regional Open » : le premier mot est la saison, pas la ville.
   // Lu comme une épreuve particulière, il donnait « S4, Chine » et un drapeau
   // `city_challenge` pour un tournoi de 1 191 joueurs.
-  const estRegionalOpen = conv.contexte.includes("Regional Open");
+  const open = conv.contexte.match(/ (Regional|National) Open/)?.[1];
+  // « S4 Chengdu National Open Side Event A » : une annexe, pas l'Open lui-même.
+  const annexe = conv.contexte.match(/Side Event \w+/)?.[0];
+  const estRegionalOpen = !!open && !annexe;
   const sansDate = conv.contexte.replace(/\s*\(\d{4}-\d{2}-\d{2}\)\s*$/, "");
   const ville = estCityChallenge
     ? sansDate.replace(/^S4 /, "").replace(/ City Challenge.*/, "")
-    : estRegionalOpen
-      ? sansDate.replace(/^S\d+ /, "").replace(/ Regional Open.*/, "")
+    : open
+      ? sansDate.replace(/^S\d+ /, "").replace(/ (Regional|National) Open.*/, "")
       : sansDate.split(" ")[0];
   const slugSource = estCityChallenge ? `s4-${ville}-cc-${id}` : `${sansDate}-${id}`;
   const slug = slugSource.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
@@ -109,11 +112,14 @@ for (const id of ids) {
   const nomAffiche = estCityChallenge ? `S4 ${ville} City Challenge` : sansDate;
   const saison = sansDate.match(/^(S\d+) /)?.[1] ?? "S4";
   // Même gabarit que la ligne de Wuhan déjà en table : « Wuhan RO S4 », `regional`.
+  // Le National Open de S3 s'appelle « National Open S3 » en table.
   const nomCourt = estCityChallenge
     ? `${ville} CC`
-    : estRegionalOpen
-      ? `${ville} RO ${saison}`
-      : sansDate.replace(/^S4 /, "");
+    : annexe && open
+      ? `${ville} ${annexe}`
+      : estRegionalOpen
+        ? open === "National" ? `National Open ${saison}` : `${ville} RO ${saison}`
+        : sansDate.replace(/^S4 /, "");
   const drapeau =
     `  "${conv.contexte}": { name: "${nomAffiche}", shortName: "${nomCourt}", ` +
     `countryCode: "CN", city: "${ville}", location: "${ville}, Chine", playerCount: ${fiche.playerCount}, ` +

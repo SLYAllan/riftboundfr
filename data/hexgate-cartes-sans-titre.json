@@ -1,0 +1,462 @@
+{
+ "commentaire": "Cartes que hexgate nomme sans leur titre (« Viktor » pour Viktor, Leader). Chaque entrée est prouvée par l'image et le texte que l'API hexgate rend pour ce card_no, jamais par l'énergie seule : Viktor, Leader et Viktor, Innovator coûtent tous deux 4. Lue par scripts/parse-hexgate.mts et scripts/validate-decklists.py. « coquille » ne se pose qu'à la main, quand hexgate écrit mal le nom : elle seule lève le contrôle du personnage dans le validateur.",
+ "cartes": {
+  "ARC-001/006": {
+   "nom": "Vi, Destructive",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30554 : image card_images/VEN-167.webp, 2 énergie"
+  },
+  "ARC-006/006": {
+   "nom": "Viktor, Leader",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30651 : image card_images/OGN-246a_298.webp, 4 énergie"
+  },
+  "FND-196/298": {
+   "nom": "Teemo, Scout",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30597 : image card_images/OGN-197_298.webp, 2 énergie"
+  },
+  "OGN-027/298": {
+   "nom": "Darius, Trifarian",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30591 : image card_images/OGN-027a_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-028/298": {
+   "nom": "Draven, Showboat",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30635 : image card_images/OGN-028_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-034/298": {
+   "nom": "Tryndamere, Barbarian",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32560 : image card_images/OGN-034_298.webp, 7 énergie, numéro concordant"
+  },
+  "OGN-035/298": {
+   "nom": "Vayne, Hunter",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30590 : image card_images/OGN-035_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-039/298": {
+   "nom": "Kai'Sa, Survivor",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/OGN-039_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-041/298": {
+   "nom": "Volibear, Furious",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30619 : image card_images/OGN-041a_298.webp, 10 énergie, numéro concordant"
+  },
+  "OGN-066/298": {
+   "nom": "Ahri, Alluring",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30588 : image card_images/OGN-066a_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-067/298": {
+   "nom": "Blitzcrank, Impassive",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30588 : image card_images/OGN-067_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-073/298": {
+   "nom": "Sona, Harmonious",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31180 : image card_images/OGN-073_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-074/298": {
+   "nom": "Taric, Protector",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32435 : image card_images/OGN-074_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-076/298": {
+   "nom": "Yasuo, Remorseful",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32853 : image card_images/OGN-076a_298.webp, 6 énergie, numéro concordant"
+  },
+  "OGN-079/298": {
+   "nom": "Leona, Zealot",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32241 : image card_images/OGN-079_298.webp, 6 énergie, numéro concordant"
+  },
+  "OGN-109/298": {
+   "nom": "Dr. Mundo, Expert",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30597 : image card_images/OGN-109_298.webp, 8 énergie, numéro concordant"
+  },
+  "OGN-112/298": {
+   "nom": "Kai'Sa, Evolutionary",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31149 : image card_images/OGN-112a_298.webp, 6 énergie, numéro concordant"
+  },
+  "OGN-117/298": {
+   "nom": "Viktor, Innovator",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31639 : image card_images/VEN-176.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-119/298": {
+   "nom": "Ahri, Inquisitive",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30588 : image card_images/SFD-227_221.webp, 3 énergie, numéro concordant"
+  },
+  "OGN-155/298": {
+   "nom": "Qiyana, Victorious",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30576 : image card_images/OGN-155_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-158/298": {
+   "nom": "Volibear, Imposing",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32852 : image card_images/OGN-158a_298.webp, 12 énergie, numéro concordant"
+  },
+  "OGN-162/298": {
+   "nom": "Miss Fortune, Captain",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31851 : image card_images/OGN-162a_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-164/298": {
+   "nom": "Sett, Brawler",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30643 : image card_images/OGN-164_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-194/298": {
+   "nom": "Nocturne, Horrifying",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30651 : image card_images/OGN-194_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-205/298": {
+   "nom": "Yasuo, Windrider",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31120 : image card_images/OGN-205_298.webp, 5 énergie, numéro concordant"
+  },
+  "OGN-232/298": {
+   "nom": "Fiora, Victorious",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30561 : image card_images/OGN-232_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-236/298": {
+   "nom": "Karthus, Eternal",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30557 : image card_images/OGN-236_298.webp, 3 énergie, numéro concordant"
+  },
+  "OGN-238/298": {
+   "nom": "Leona, Determined",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31810 : image card_images/VEN-184.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-240/298": {
+   "nom": "Sett, Kingpin",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32419 : image card_images/OGN-240a_298.webp, 4 énergie, numéro concordant"
+  },
+  "OGN-241/298": {
+   "nom": "Shen, Kinkou",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31119 : image card_images/OGN-241_298.webp, 3 énergie, numéro concordant"
+  },
+  "OGS-010/024": {
+   "nom": "Annie, Stubborn",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/OGS-010_024.webp, 4 énergie, numéro concordant"
+  },
+  "OGS-013/024": {
+   "nom": "Garen, Commander",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/33159 : image card_images/OGS-013_024.webp, 6 énergie, numéro concordant"
+  },
+  "OGS-014/024": {
+   "nom": "Lux, Crownguard",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31850 : image card_images/VEN-SP6.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-024/221": {
+   "nom": "Rell, Magnetic",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32416 : image card_images/SFD-024_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-025/221": {
+   "nom": "Rengar, Pouncing",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31141 : image card_images/SFD-025_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-026/221": {
+   "nom": "Rumble, Hotheaded",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31520 : image card_images/SFD-026a_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-029/221": {
+   "nom": "Rek'Sai, Breacher",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30554 : image card_images/SFD-029a_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-050/221": {
+   "nom": "Azir, Ascendant",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32715 : image card_images/SFD-050_221.webp, 6 énergie, numéro concordant"
+  },
+  "SFD-053/221": {
+   "nom": "Janna, Savior",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30615 : image card_images/SFD-053_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-054/221": {
+   "nom": "Jax, Unmatched",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30571 : image card_images/SFD-054a_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-057/221": {
+   "nom": "Irelia, Fervent",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30556 : image card_images/SFD-057_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-058/221": {
+   "nom": "Ornn, Blacksmith",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30614 : image card_images/SFD-058a_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-079/221": {
+   "nom": "Bard, Mercurial",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/33116 : image card_images/SFD-079_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-082/221": {
+   "nom": "Ezreal, Dashing",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32178 : image card_images/SFD-082b_221-P.webp, impression promo absente de la base ; le numéro sfd-082 est Ezreal, Dashing, 4 énergie, même texte que l'API"
+  },
+  "SFD-084/221": {
+   "nom": "Jayce, Man of Progress",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30570 : image card_images/VEN-175.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-085/221": {
+   "nom": "Ornn, Forge God",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30596 : image card_images/SFD-085a_221.webp, 6 énergie, numéro concordant"
+  },
+  "SFD-088/221": {
+   "nom": "Renata Glasc, Mastermind",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31744 : image card_images/SFD-088a_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-089/221": {
+   "nom": "Rumble, Scrapper",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31621 : image card_images/SFD-089a_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-109/221": {
+   "nom": "Akshan, Mischievous",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30560 : image card_images/SFD-109_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-110/221": {
+   "nom": "Fiora, Peerless",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30583 : image card_images/SFD-110_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-113/221": {
+   "nom": "Lucian, Merciless",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30559 : image card_images/SFD-113a_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-116/221": {
+   "nom": "Yone, Blademaster",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31851 : image card_images/SFD-233_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-140/221": {
+   "nom": "Fizz, Trickster",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30560 : image card_images/SFD-140_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-143/221": {
+   "nom": "Sivir, Mercenary",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30560 : image card_images/SFD-143a_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-146/221": {
+   "nom": "Vex, Cheerless",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30574 : image card_images/SFD-146_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-148/221": {
+   "nom": "Draven, Audacious",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30567 : image card_images/SFD-148a_221.webp, 6 énergie, numéro concordant"
+  },
+  "SFD-149/221": {
+   "nom": "Ezreal, Prodigy",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30560 : image card_images/SFD-149a_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-170/221": {
+   "nom": "Rek'Sai, Swarm Queen",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31158 : image card_images/SFD-170_221.webp, 5 énergie, numéro concordant"
+  },
+  "SFD-171/221": {
+   "nom": "Renata Glasc, Industrialist",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30628 : image card_images/SFD-171a_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-173/221": {
+   "nom": "Soraka, Wanderer",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32789 : image card_images/SFD-173_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-176/221": {
+   "nom": "Xin Zhao, Vigilant",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30623 : image card_images/SFD-176_221.webp, 3 énergie, numéro concordant"
+  },
+  "SFD-177/221": {
+   "nom": "Azir, Sovereign",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30564 : image card_images/SFD-177_221.webp, 4 énergie, numéro concordant"
+  },
+  "SFD-179/221": {
+   "nom": "Corina Veraza",
+   "coquille": true,
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31814 : hexgate écrit « Corinna » ; image card_images/SFD-179_221.webp et numéro sfd-179 désignent Corina Veraza"
+  },
+  "SFD-180/221": {
+   "nom": "Fiora, Worthy",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31095 : image card_images/SFD-180_221.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-022/219": {
+   "nom": "Jhin, Murderous Artist",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30585 : image card_images/UNL-022a_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-023/219": {
+   "nom": "Katarina, Reckless",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31794 : image card_images/UNL-023_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-024/219": {
+   "nom": "Rengar, Unseen",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30590 : image card_images/UNL-024_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-028/219": {
+   "nom": "Pyke, Dockside Butcher",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30590 : image card_images/UNL-028_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-030/219": {
+   "nom": "Vi, Hotheaded",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32109 : image card_images/UNL-030a_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-051/219": {
+   "nom": "Ivern, Nurturer",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31623 : image card_images/UNL-051a_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-052/219": {
+   "nom": "Nami, Headstrong",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31623 : image card_images/UNL-052_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-055/219": {
+   "nom": "Vex, Mocking",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31810 : image card_images/UNL-055a_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-059/219": {
+   "nom": "Master Yi, Unstoppable",
+   "preuve": "https://hexgate.cn/api/tournaments/288/decks/31325 : image card_images/UNL-059a_219.webp, 12 énergie, numéro concordant"
+  },
+  "UNL-079/219": {
+   "nom": "Diana, Lunari",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30572 : image card_images/UNL-079a_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-080/219": {
+   "nom": "Hwei, Brooding Painter",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30574 : image card_images/UNL-080_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-082/219": {
+   "nom": "Lillia, Fae Fawn",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30615 : image card_images/UNL-082_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-086/219": {
+   "nom": "Zilean, Time Mage",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32116 : image card_images/UNL-086_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-089/219": {
+   "nom": "Jhin, Meticulous Killer",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30563 : image card_images/UNL-089a_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-090/219": {
+   "nom": "LeBlanc, Everywhere At Once",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30581 : image card_images/UNL-090a_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-113/219": {
+   "nom": "Master Yi, Tempered",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30556 : image card_images/UNL-113_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-114/219": {
+   "nom": "Nidalee, Cat Form",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30590 : image card_images/UNL-114_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-116/219": {
+   "nom": "Poppy, Paragon",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30561 : image card_images/UNL-116a_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-120/219": {
+   "nom": "Rengar, Trophy Hunter",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30556 : image card_images/UNL-120_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-141/219": {
+   "nom": "Evelynn, Entrancing",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/UNL-141_219.webp, 2 énergie, numéro concordant"
+  },
+  "UNL-143/219": {
+   "nom": "Kha'Zix, Mutating Horror",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/UNL-143_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-145/219": {
+   "nom": "Pyke, Returned",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/UNL-145a_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-149/219": {
+   "nom": "Diana, No Longer Human",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32727 : image card_images/UNL-149_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-150/219": {
+   "nom": "Vex, Apathetic",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30555 : image card_images/UNL-150_219.webp, 4 énergie, numéro concordant"
+  },
+  "UNL-169/219": {
+   "nom": "Ashe, Focused",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30554 : image card_images/UNL-169_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-171/219": {
+   "nom": "Galio, Indefatigable",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31497 : image card_images/UNL-171_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-172/219": {
+   "nom": "LeBlanc, Fragmented",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30557 : image card_images/UNL-172a_219.webp, 3 énergie, numéro concordant"
+  },
+  "UNL-176/219": {
+   "nom": "Vi, Peacekeeper",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30554 : image card_images/UNL-176_219.webp, 5 énergie, numéro concordant"
+  },
+  "UNL-177/219": {
+   "nom": "Ivern, Friend to All",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32119 : image card_images/UNL-177a_219.webp, 6 énergie, numéro concordant"
+  },
+  "VEN-017": {
+   "nom": "Morgana, Vindictive",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32903 : image card_images/VEN-017.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-019": {
+   "nom": "Renekton, Rage Fueled",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31486 : image card_images/VEN-019.webp, 6 énergie, numéro concordant"
+  },
+  "VEN-021": {
+   "nom": "Akali, Deadly Weapon",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30575 : image card_images/VEN-021a.webp, 3 énergie, numéro concordant"
+  },
+  "VEN-023": {
+   "nom": "Zed, From the Shadows",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31109 : image card_images/VEN-023a.webp, 4 énergie, numéro concordant"
+  },
+  "VEN-038": {
+   "nom": "Akali, Silent",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30562 : image card_images/VEN-038.webp, 4 énergie, numéro concordant"
+  },
+  "VEN-042": {
+   "nom": "Shen, Scourge of Shadows",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31180 : image card_images/VEN-042a.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-046": {
+   "nom": "Nasus, Ascended",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31157 : image card_images/VEN-046a.webp, 8 énergie, numéro concordant"
+  },
+  "VEN-068": {
+   "nom": "Jayce, Brilliant Inventor",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30558 : image card_images/VEN-068.webp, 6 énergie, numéro concordant"
+  },
+  "VEN-069": {
+   "nom": "Mel, Newly Awakened",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30563 : image card_images/VEN-069a.webp, 4 énergie, numéro concordant"
+  },
+  "VEN-084": {
+   "nom": "Ambessa, The Wolf",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30556 : image card_images/VEN-084.webp, 4 énergie, numéro concordant"
+  },
+  "VEN-086": {
+   "nom": "Gangplank, Naval",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/32816 : image card_images/VEN-086.webp, 6 énergie, numéro concordant"
+  },
+  "VEN-088": {
+   "nom": "Jayce, Hammer in Hand",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30566 : image card_images/VEN-088a.webp, 4 énergie, numéro concordant"
+  },
+  "VEN-092": {
+   "nom": "Renekton, Brute",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30611 : image card_images/VEN-092a.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-109": {
+   "nom": "Illaoi, Prophet of the Great Kraken",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30651 : image card_images/VEN-109.webp, 6 énergie, numéro concordant"
+  },
+  "VEN-110": {
+   "nom": "Mel, Defiant Soul",
+   "preuve": "https://hexgate.cn/api/tournaments/287/decks/31144 : image card_images/VEN-110a.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-112": {
+   "nom": "Zed, Without a Sound",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30572 : image card_images/VEN-112.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-113": {
+   "nom": "Kennen, Storm of Shuriken",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30569 : image card_images/VEN-113a.webp, 3 énergie, numéro concordant"
+  },
+  "VEN-134": {
+   "nom": "Kayle, Justified",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30561 : image card_images/VEN-134.webp, 3 énergie, numéro concordant"
+  },
+  "VEN-135": {
+   "nom": "Kennen, Keeper of Balance",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30561 : image card_images/VEN-135.webp, 3 énergie, numéro concordant"
+  },
+  "VEN-136": {
+   "nom": "Ambessa, Respected and Feared",
+   "preuve": "https://hexgate.cn/api/tournaments/281/decks/30582 : image card_images/VEN-136a.webp, 5 énergie, numéro concordant"
+  },
+  "VEN-138": {
+   "nom": "Shen, Leader of the Kinkou Order",
+   "preuve": "https://hexgate.cn/api/tournaments/289/decks/31798 : image card_images/VEN-138a.webp, 6 énergie, numéro concordant"
+  }
+ }
+}

@@ -23,7 +23,7 @@ invérifiable, elle, arrête tout.
 """
 import re, glob, os, json, sys
 from collections import Counter
-from validate_decklists_rules import vendetta_decklist_missing
+from validate_decklists_rules import nom_hexgate, vendetta_decklist_missing
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DECKS = os.path.join(ROOT, 'data', 'decklists')
@@ -75,9 +75,10 @@ def consider(url, main):
 # `cartes` au lieu de `main`, et l'emplacement dans `slot_type`. Sans cette
 # lecture, les 330 listes chinoises restaient invérifiables — donc jamais
 # recoupées contre leur source, ce que la règle d'intégrité interdit.
+SANS_TITRE = json.loads(open(os.path.join(ROOT, 'data', 'hexgate-cartes-sans-titre.json'), encoding='utf-8').read())['cartes']
 def cartes_hexgate(o):
     principales = [c for c in o['cartes'] if c.get('slot_type') == 'main']
-    return [{'name': c['en_name'], 'quantity': c['quantity'], 'type': 'unit'} for c in principales]
+    return [{'name': nom_hexgate(c, SANS_TITRE), 'quantity': c['quantity'], 'type': 'unit'} for c in principales]
 
 def walk(o):
     if isinstance(o, dict):

@@ -59,6 +59,10 @@ const NOMS_PARTICULIERS: Record<number, string> = {
   253: "S4 Regional Open Side Event A",
   254: "S4 Regional Open Side Event B",
   255: "S4 Regional Open Side Event C",
+  // « 成都全国公开赛 城市赛特别场A » : les annexes du National Open, le lendemain.
+  // Cette fois le titre porte la ville.
+  287: "S4 Chengdu National Open Side Event A",
+  288: "S4 Chengdu National Open Side Event B",
 };
 
 interface CarteBrute {
@@ -100,21 +104,24 @@ function meilleurTirage(a: CarteBase, b: CarteBase): CarteBase {
 }
 
 /**
- * Additionne les lignes qui portent le même numéro de collection.
+ * Additionne les lignes qui portent la même carte.
  *
  * hexgate rend parfois deux lignes pour la même carte — « SFD-057/221 » deux fois,
  * une copie chacune. Le compte total reste juste, mais le deck ressortait avec
  * « Champion ambigu (Irelia, Fervent, Irelia, Fervent) », c'est-à-dire écarté pour
  * un doublon d'affichage. Vingt listes sautaient comme ça sur le seul Wuhan.
+ * La clé est la carte retrouvée en base : Vi `ARC-001` et Vi `VEN-167` sont la
+ * même carte sous deux impressions, alors que les deux « Kennen » que hexgate
+ * écrit sans titre (VEN-113, VEN-135) sont deux cartes.
  */
-function fusionnerDoublons(cartes: CarteBrute[]): CarteBrute[] {
-  const parNumero = new Map<string, CarteBrute>();
+function fusionnerDoublons(cartes: CarteBrute[], cle: (c: CarteBrute) => string): CarteBrute[] {
+  const parCarte = new Map<string, CarteBrute>();
   for (const c of cartes) {
-    const vu = parNumero.get(c.card_no);
+    const vu = parCarte.get(cle(c));
     if (vu) vu.quantity += c.quantity;
-    else parNumero.set(c.card_no, { ...c });
+    else parCarte.set(cle(c), { ...c });
   }
-  return [...parNumero.values()];
+  return [...parCarte.values()];
 }
 
 function slugLegende(nom: string): string {
@@ -148,6 +155,9 @@ function nomTournoi(brut: DeckBrut["tournoi"]): string | null {
   if (brut.nom.includes("区域公开赛")) {
     return `${brut.set} ${VILLES[ville]} Regional Open (${brut.date})`;
   }
+  if (brut.nom.includes("全国公开赛")) {
+    return `${brut.set} ${VILLES[ville]} National Open (${brut.date})`;
+  }
   return null;
 }
 
@@ -174,10 +184,17 @@ async function main() {
     }
   }
 
+  // hexgate écrit « Viktor » pour Viktor, Leader : sans le titre, la carte est
+  // introuvable et la liste sautait. La table, prouvée par l'image que hexgate
+  // donne pour chaque numéro, est la même que relit le validateur.
+  const sansTitre = JSON.parse(await readFile("data/hexgate-cartes-sans-titre.json", "utf8"))
+    .cartes as Record<string, { nom: string }>;
+
   for (const id of ids) {
     const brut = JSON.parse(
       await readFile(join(RACINE_BRUT, `tournoi-${id}-decks.json`), "utf8"),
     ) as DeckBrut[];
+    for (const c of brut.flatMap((d) => d.cartes)) c.en_name = sansTitre[c.card_no]?.nom ?? c.en_name;
     if (!brut.length) {
       console.log(`${id} : relevé vide`);
       continue;
@@ -231,7 +248,10 @@ async function main() {
       // Le Champion du deck est la carte Champion qui porte le nom du personnage de
       // la Légende. Quand plusieurs y répondent, hexgate ne dit pas laquelle a été
       // désignée : on écarte plutôt que de choisir à sa place.
-      const principales = fusionnerDoublons(deck.cartes.filter((c) => c.slot_type === "main"));
+      const principales = fusionnerDoublons(
+        deck.cartes.filter((c) => c.slot_type === "main"),
+        (c) => trouver(c)!.name,
+      );
       const champions = principales.filter((c) => {
         const base = trouver(c)!;
         return base.supertype === "Champion" && base.name.split(",")[0].trim().toLowerCase() === personnage;

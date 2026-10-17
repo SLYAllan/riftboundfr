@@ -12,6 +12,28 @@ def vendetta_side_deck_is_complete(deck):
     return side_deck_size(deck) == 10
 
 
+def nom_hexgate(carte, sans_titre):
+    """Le nom d'une carte hexgate, titre compris.
+
+    hexgate écrit « Viktor » pour Viktor, Leader. Comparé tel quel, le brut ne
+    retrouvait pas la carte de la decklist et le validateur criait à l'écart.
+    `sans_titre` est la table de data/hexgate-cartes-sans-titre.json.
+
+    La conversion lit la même table : une ligne fausse les tromperait ensemble.
+    Seul contrôle propre au validateur, le personnage : une ligne qui fait de
+    « Viktor » une autre carte que Viktor est ignorée, et l'écart ressort. Une
+    ligne `coquille`, posée à la main quand hexgate écrit mal le nom (« Corinna »
+    pour Corina Veraza), passe outre.
+    """
+    nom = carte["en_name"]
+    entree = sans_titre.get(carte.get("card_no"))
+    if not entree:
+        return nom
+    if not entree.get("coquille") and entree["nom"].split(",")[0].strip().lower() != nom.strip().lower():
+        return nom
+    return entree["nom"]
+
+
 def vendetta_decklist_missing(deck):
     if deck.get("set") != "Vendetta":
         return []

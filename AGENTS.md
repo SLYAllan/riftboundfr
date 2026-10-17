@@ -148,7 +148,15 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   (règle d'Allan du 22 septembre 2026, qui remplace la borne de 128) ; les épreuves de
   boutique `rune_competition` restent dehors. Une carte que hexgate ne nomme pas en anglais
   (`T1S-00x`, Légendes promo `SGN-…-P-SC`) fait écarter la liste : aucune source ne dit
-  laquelle c'est.
+  laquelle c'est. La liste générale `/api/tournaments` répond vide depuis octobre 2026 :
+  sonder les identifiants un par un (`/api/tournaments/<id>`, 404 au-delà du dernier).
+  **Depuis le 7 octobre 2026 (tournoi 281), hexgate écrit les Champions sans titre** :
+  « Kennen » pour deux cartes différentes. Entre le scrape et `parse-hexgate.mts`, lancer
+  `npx tsx --env-file=.env scripts/hexgate-sans-titre.mts <id>` : il écrit
+  `data/hexgate-cartes-sans-titre.json`, que lisent la conversion ET le validateur. Une
+  ligne n'y entre que si l'image hexgate et le numéro désignent la même carte de la base
+  (personnage et énergie compris) ; le reste sort en 1, à trancher à la main sur l'image
+  de l'API, jamais sur l'énergie seule.
 - **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
   Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
   source est le **figurier OFFICIEL de l'éditeur chinois**,
