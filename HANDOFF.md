@@ -32,7 +32,7 @@ en dessous, Jhin le tient de nouveau, aucun rang ne bouge. « Les cinq tier list
 collent aux chiffres ».
 
 **Seedé en prod le 17** : 2 035 listes, 44 best-of, tier lists du jour ; prod à
-31 358 decks publiés (`--etat`). **Reste le Deploy** (fiches, guides, drapeaux).
+31 358 decks publiés (`--etat`). **Deploy fait le 17** par Allan : fiches et guides d'après le ban vérifiés en ligne (Kennen).
 
 **Cartes des fiches et cores sur l'après-ban** (choix d'Allan) :
 `scripts/apres-ban.ts`, lu par `fiches-stats` et `cores-vendetta`. 13 tournois
@@ -55,11 +55,7 @@ changé le 17 : à compter dans la passe SEO à partir du Deploy.
 **Article « Best of Chengdu »** (`scripts/seed-chengdu-bestof.mts`) : relu par
 Allan, seedé en local et EN PROD le 17 octobre, en ligne sur
 `/articles/best-of-national-open-chengdu` (vérifié, HTTP 200). C'est de la
-donnée : il n'attend pas le Deploy. **Sauf sa couverture** : l'affiche officielle
-du National Open (`public/img/articles/chengdu.webp`, compte 符文战场 sur bilibili)
-n'existe en ligne qu'après le Deploy. La prod garde la bannière d'Azir et la date
-« le 10 octobre » (le tournoi a duré deux jours) jusqu'à ce qu'on relance, APRÈS le
-Deploy : `npx tsx scripts/prod-tunnel.mts scripts/seed-chengdu-bestof.mts`.
+donnée : il n'attend pas le Deploy. Sa couverture est l'affiche officielle du National Open (`public/img/articles/chengdu.webp`, compte 符文战场 sur bilibili) ; reseedé après le Deploy du 17, vérifié en ligne.
 
 **riftdecks publie aussi ce National Open** (`s4-chengdu-national-open-tournament-decks-18203`) :
 ne pas l'importer, il est déjà en base par hexgate.
