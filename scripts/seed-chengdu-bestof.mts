@@ -90,7 +90,7 @@ async function main() {
       id: "intro",
       content: `## Best of Chengdu, National Open
 
-Le **National Open S4 de Chengdu** s'est joué le 10 octobre 2026 : **1 835 joueurs** inscrits. C'est le premier grand tournoi depuis le ban du 18 septembre, qui a retiré Stacked Deck et Ekko, Recurrent du format.
+Le **National Open S4 de Chengdu** s'est joué les 10 et 11 octobre 2026 : **1 835 joueurs** inscrits. C'est le premier grand tournoi depuis le ban du 18 septembre, qui a retiré Stacked Deck et Ekko, Recurrent du format.
 
 **Azir** l'emporte, alors que notre tier list Vendetta le classe en A. Vex finit deuxième et Nasus troisième, deux Légendes classées en C. Irelia est la Légende la plus jouée du tournoi, avec 194 joueurs, soit 10,6 % du champ, et place deux decks dans le Top 8.
 
@@ -128,12 +128,14 @@ Toutes ces listes viennent d'un tournoi chinois : le méta européen peut s'en �
     title: "Best of Chengdu : le meilleur deck de chaque Légende au National Open",
     slug: "best-of-national-open-chengdu",
     excerpt: `Les ${total} meilleures decklists, une par Légende, au National Open S4 de Chengdu (1 835 joueurs), le premier grand tournoi d'après le ban. Azir l'emporte, Vex et Nasus complètent le podium.`,
-    coverImage: "/bannieres/azir.webp",
+    // L'affiche officielle du National Open S4, publiée par le compte 符文战场
+    // (miniature de la rediffusion du jour 2, bilibili BV1YHp76hE1X).
+    coverImage: "/img/articles/chengdu.webp",
     category: "tournoi",
     tags: ["chengdu", "national-open", "best-of", "meta", "vendetta"],
     blocks,
     tournamentName: CONTEXTE,
-    tournamentDate: new Date("2026-10-10"),
+    tournamentDate: new Date("2026-10-11"),
     tournamentLocation: "Chengdu, Chine",
     tournamentPlayerCount: 1835,
     published: true,

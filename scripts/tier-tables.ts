@@ -299,7 +299,7 @@ export const vendettaTier: TierEntry[] = [
   { legendName: "Irelia, Blade Dancer", tier: "S", comment: "1 267 joueurs, 13,0 % (p < 0,001), 2 titres dont le Regional Open de Wuhan, et la finale de Los Angeles. La Légende la plus jouée du National Open de Chengdu (194 joueurs), et l'écart tient le test plus nettement qu'au dernier relevé." },
 
   { legendName: "Ezreal, Prodigal Explorer", tier: "A", comment: "347 joueurs, 11,8 % de conversion, la sixième du format, mais l'écart ne tient pas le test (p = 0,242). Sorti du S au relevé du 7 octobre. Sans titre." },
-  { legendName: "Azir, Emperor of the Sands", tier: "A", comment: "11,3 % sur 635 joueurs, 4 titres, dont le National Open de Chengdu du 10 octobre et les City Challenge de Shanghai du 5 septembre et de Fuzhou du 27. Deux Azir dans le Top 4 de Los Angeles." },
+  { legendName: "Azir, Emperor of the Sands", tier: "A", comment: "11,3 % sur 635 joueurs, 4 titres, dont le National Open de Chengdu et les City Challenge de Shanghai du 5 septembre et de Fuzhou du 27. Deux Azir dans le Top 4 de Los Angeles." },
   { legendName: "Rek'sai, Void Burrower", tier: "A", comment: "619 joueurs, 10,0 %, 1 titre, au City Challenge de Shanghai du 7 octobre. Solide partout, dominante nulle part." },
   { legendName: "Draven, Glorious Executioner", tier: "A", comment: "9,3 % sur 387 joueurs, 1 titre. Retombé à la moyenne du format." },
 
