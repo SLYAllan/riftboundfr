@@ -1,5 +1,34 @@
 # HANDOFF — état des lieux
 
+## Session du 18 octobre 2026 — Radiance (RAD) en base locale
+
+**Source** : Riftcodex s'arrête à Vendetta (`/sets`, 8 sets). La galerie officielle de
+Riot (playriftbound.com) a Radiance en anglais : 219 fiches, dont 167 cartes de base,
+18 arts alternatifs, 17 surnumérotés, 12 runes et 5 cartes de decks de départ. Les
+versions signées « * » n'y sont pas encore (le figurier chinois les a).
+`scripts/sync-set-riot.mts RAD` les a écrites en base LOCALE ; 13 types manquaient chez
+Riot et viennent du figurier chinois. Recoupement : 36 écarts sur 1 135 cartes déjà en
+base, tous côté base (surnumérotés Vendetta sans suffixe, « Rek'sai », « Corina »).
+
+**Neuf Légendes** : Ekko, Evelynn, Jarvan IV, K'Sante, Mordekaiser, Orianna, Riven,
+Seraphine, Ziggs. Aucune n'a de bannière ni d'icône (`npm run maj:overlay`).
+
+**Branché** : filtre de set de `/cartes`, `set:radiance` du deckbuilder, ordre de la
+collection, textes de `/cartes` (FR et EN), noms et images chinois (`data/cards-zh.json`,
+198 cartes RAD).
+
+**Reste** :
+- bannières et icônes des 9 Légendes (Allan), puis `banners.ts` ;
+- seed en PROD : `sync-set-riot.mts RAD` par `prod-tunnel.mts`, sur le oui d'Allan ;
+- errata Radiance du 9 octobre (Elnuk Herd, Last Caress, Forbidden Technique, Neeko) :
+  pas posé, la galerie garde l'ancien texte ;
+- mots-clés nouveaux `Deploy`, `Disarm`, `Show Off` : absents du glossaire, faute de
+  nom français officiel ; le texte des cartes les affiche quand même ;
+- les listes de sets liées aux tournois (`tournament-flags.ts`, `/decks`, tier list,
+  méta, `tournament-order.ts`) attendent le premier tournoi Radiance ;
+- 47 cartes d'avant Radiance ont un texte différent chez Riot et en base : pas lié à
+  l'errata Radiance, à trier.
+
 ## Session du 17 octobre 2026 — hexgate 281 à 289, National Open S4 de Chengdu
 
 **Relevé hexgate** : 281 à 289 (rien au-delà, 404). La liste `/api/tournaments`

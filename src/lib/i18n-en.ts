@@ -444,10 +444,10 @@ export const EN: Record<string, string> = {
     "Meta analysis, tournament results, guides and Riftbound announcements.",
   "Cartes Riftbound en français - base de données complète et filtres":
     "Riftbound cards - full database and filters",
-  "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.":
-    "Every Riftbound card: search by name, set, type, rarity and domain. Origins, Spiritforged, Unleashed and Vendetta sets.",
-  "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.":
-    "Search by name, set, type, rarity and domain. Origins, Spiritforged, Unleashed and Vendetta sets.",
+  "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed, Vendetta et Radiance.":
+    "Every Riftbound card: search by name, set, type, rarity and domain. Origins, Spiritforged, Unleashed, Vendetta and Radiance sets.",
+  "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed, Vendetta et Radiance.":
+    "Search by name, set, type, rarity and domain. Origins, Spiritforged, Unleashed, Vendetta and Radiance sets.",
   "Classeur - Ma collection Riftbound": "Binder - My Riftbound collection",
   "Ma collection Riftbound - classeurs et progression":
     "My Riftbound collection - binders and progress",
@@ -1092,8 +1092,8 @@ export const EN: Record<string, string> = {
   "Utilisez un lien HTTPS fourni par VDO.Ninja.": "Use an HTTPS link provided by VDO.Ninja.",
   "Retirer de l’écran": "Remove from screen",
   "Montrer à l’écran": "Show on screen",
-  "Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.":
-    "Browse all Riftbound cards from Origins, Spiritforged, Unleashed and Vendetta. Filter them by set, type, rarity or domain, then read their text and stats in French.",
+  "Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed, Vendetta et Radiance. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.":
+    "Browse all Riftbound cards from Origins, Spiritforged, Unleashed, Vendetta and Radiance. Filter them by set, type, rarity or domain, then read their text and stats in French.",
   "Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.":
     "Sign in with Discord to organise your collection into binders and track your progress.",
   "Choisissez le gagnant. Le score des manches sera mis à jour sur le stream.":

@@ -165,6 +165,11 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   ligne n'y entre que si l'image hexgate et le numéro désignent la même carte de la base
   (personnage et énergie compris) ; le reste sort en 1, à trancher à la main sur l'image
   de l'API, jamais sur l'énergie seule.
+- **Un set que Riftcodex n'a pas encore → `npx tsx --env-file=.env scripts/sync-set-riot.mts <SET> [--sec]`**,
+  depuis la galerie officielle de Riot (Radiance, `RAD`, en octobre 2026). Upsert par
+  `riftboundId`, la clé de Riftcodex aussi. Il recoupe d'abord sa conversion sur les cartes
+  déjà en base et en affiche les écarts. La galerie montre le texte IMPRIMÉ : le relancer
+  défait un errata posé en base, à reposer après. Puis `npm run maj:overlay`.
 - **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
   Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
   source est le **figurier OFFICIEL de l'éditeur chinois**,

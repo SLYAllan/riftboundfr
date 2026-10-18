@@ -34,23 +34,13 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { PrismaClient } from "@prisma/client";
+import { API, figurierOfficiel, type CarteZh } from "./figurier-chinois";
 
-const API = "https://lol-api.playloltcg.com/xcx/card/searchCardCraftWeb";
 const FICHIER = join(process.cwd(), "data", "cards-zh.json");
 
 const sec = process.argv.includes("--sec");
 const force = process.argv.includes("--force");
 
-type CarteZh = {
-  cardNo: string;
-  cardName: string;
-  subTitle: string;
-  hero: string;
-  energy: number | null;
-  power: number | null;
-  cardCategoryNameList: string[];
-  frontImage: string;
-};
 type Sortie = {
   source: string;
   langue: string;
@@ -90,28 +80,6 @@ function nomChinois(c: CarteZh): string {
     ? [c.hero, c.cardName]
     : [c.cardName, c.subTitle];
   return moities.filter(Boolean).join("，");
-}
-
-async function figurierOfficiel(): Promise<CarteZh[]> {
-  const reponse = await fetch(API, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Le figurier est appelé depuis le site de l'éditeur : on se présente comme lui.
-      "User-Agent": "Mozilla/5.0",
-      Referer: "https://www.playloltcg.com/",
-    },
-    body: JSON.stringify({ pageNum: 1, pageSize: 5000 }),
-  });
-  if (!reponse.ok) throw new Error(`Figurier chinois : ${reponse.status}`);
-  const recu = (await reponse.json()) as { result?: { total?: number; list?: CarteZh[] } };
-  const liste = recu.result?.list ?? [];
-  const total = recu.result?.total ?? 0;
-  // Une page partielle passerait inaperçue et retirerait leurs images à des centaines
-  // de cartes. On refuse plutôt que d'écrire une relève amputée.
-  if (liste.length !== total) throw new Error(`Figurier tronqué : ${liste.length} reçues sur ${total}`);
-  if (liste.length === 0) throw new Error("Figurier vide");
-  return liste;
 }
 
 async function relever() {
