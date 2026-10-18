@@ -22,7 +22,10 @@ export async function GET(req: Request) {
   let base: "ok" | "injoignable" = "ok";
   try {
     await prisma.card.count();
-  } catch {
+  } catch (cause) {
+    // Sans la raison, un 503 ne dit pas si la base est tombée ou si l'appli n'a plus
+    // de connexion libre : c'était le cas des coupures de 2 minutes du 17 octobre.
+    console.error("[sante] base injoignable :", cause instanceof Error ? cause.message : cause);
     base = "injoignable";
   }
   return NextResponse.json(
