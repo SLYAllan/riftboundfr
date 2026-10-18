@@ -26,8 +26,10 @@ collection, textes de `/cartes` (FR et EN), noms et images chinois (`data/cards-
   nom français officiel ; le texte des cartes les affiche quand même ;
 - les listes de sets liées aux tournois (`tournament-flags.ts`, `/decks`, tier list,
   méta, `tournament-order.ts`) attendent le premier tournoi Radiance ;
-- 47 cartes d'avant Radiance ont un texte différent chez Riot et en base : pas lié à
-  l'errata Radiance, à trier.
+- 47 cartes d'avant Radiance ont un texte différent chez Riot et en base. Ce n'est pas
+  une faute de la base : la galerie garde le texte imprimé (Astral Heron y a encore son
+  texte d'avant l'errata du 23 juillet, la base a le bon). Ne JAMAIS recopier un texte de
+  la galerie sur une carte déjà en base sans l'annonce d'errata de Riot qui le prouve.
 
 ## Session du 17 octobre 2026 — hexgate 281 à 289, National Open S4 de Chengdu
 
