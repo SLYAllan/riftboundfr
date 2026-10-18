@@ -137,9 +137,24 @@ function legendSize(slack: number, frameH: number) {
   return { w: Math.round(h / 1.4), h };
 }
 
+// Le CDN de Riot redimensionne à la demande. Sans `w`, chaque image tirait 45 cartes
+// en 744 px (700 Ko pièce) pour les dessiner à 200 px : 11 s et 75 Mo par image, et
+// une rafale de robots sur les pages de deck mettait le site à terre (coupures du
+// 17 octobre). Le PNG reste : les coins des cartes sont transparents.
+//
+// Pas d'`overflow: hidden` dans cette image : satori le traduit en masque SVG, et
+// sharp calcule chaque masque sur toute la surface. Les cadres racine, corps et carte
+// s'emboîtaient en 141 masques, 8,8 s de conversion par image. L'arrondi d'une carte
+// passe par le `borderRadius` de son <img>, qui reste une simple découpe.
+function imageALaTaille(url: string, largeur: number): string {
+  if (!url.includes("cmsassets.rgpub.io")) return url;
+  // Arrondie à 50 px : chaque nouvelle largeur est fabriquée par le CDN au premier
+  // appel (10 s pour une story), et la taille des cartes varie de 4 px en 4 px.
+  return `${url}${url.includes("?") ? "&" : "?"}w=${Math.ceil(largeur / 50) * 50}`;
+}
+
 function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
-  // Use card image URL directly - satori fetches server-side, no CORS issues
-  const imgSrc = card.imageUrl || null;
+  const imgSrc = card.imageUrl ? imageALaTaille(card.imageUrl, w) : null;
 
   return (
     <div
@@ -149,7 +164,6 @@ function CardSlot({ card, w, h }: { card: CardInfo; w: number; h: number }) {
         width: w,
         height: h,
         borderRadius: 12,
-        overflow: "hidden",
         flexShrink: 0,
       }}
     >
@@ -473,22 +487,31 @@ function getLegendDomains(cards: CardInfo[]): string[] {
   return legend?.domains ?? [];
 }
 
+// Fond de l'export, lu sur le disque et posé en data URI. Le chercher par
+// req.nextUrl.origin échoue en prod : derrière le proxy de Coolify, l'origine est
+// l'hôte interne du conteneur, que satori ne joint pas (« Can't load image »).
+// Préparé une seule fois : le PNG de 2,8 Mo était relu et encodé à chaque image.
+// En JPEG, sans perte visible : il n'a pas de transparence et passe sous un voile à 82 %.
+let fondEnCache: Promise<string | null> | undefined;
+function fondExport(): Promise<string | null> {
+  fondEnCache ??= (async () => {
+    try {
+      const sharp = (await import("sharp")).default;
+      const brut = await readFile(join(process.cwd(), "public", "img", "fond-export.png"));
+      const jpeg = await sharp(brut).jpeg({ quality: 85 }).toBuffer();
+      return `data:image/jpeg;base64,${jpeg.toString("base64")}`;
+    } catch (cause) {
+      console.error("[decklist-image] fond illisible :", cause instanceof Error ? cause.message : cause);
+      return null;
+    }
+  })();
+  return fondEnCache;
+}
+
 export async function GET(req: NextRequest) {
   await allowSvgInSharp();
   const { searchParams } = req.nextUrl;
-  // Branded export background - read from disk and inline as a data URI.
-  // Fetching it via req.nextUrl.origin fails in prod: behind Coolify's reverse
-  // proxy the origin is the internal container host (https://<id>:3000) which
-  // satori cannot reach ("Can't load image ... fetch failed").
-  let bgUrl: string | null = null;
-  try {
-    const bgBuf = await readFile(
-      join(process.cwd(), "public", "img", "fond-export.png"),
-    );
-    bgUrl = `data:image/png;base64,${bgBuf.toString("base64")}`;
-  } catch {
-    bgUrl = null;
-  }
+  const bgUrl = await fondExport();
   const slug = searchParams.get("slug");
   const code = searchParams.get("code");
   const shareCode = searchParams.get("share");
@@ -600,7 +623,6 @@ export async function GET(req: NextRequest) {
           flexDirection: "column",
           backgroundColor: "#0a0a12",
           position: "relative",
-          overflow: "hidden",
         }}
       >
         {/* Branded background image */}
@@ -663,16 +685,14 @@ export async function GET(req: NextRequest) {
                   display: "flex",
                   width: legend.w,
                   height: legend.h,
-                  borderRadius: 16,
-                  overflow: "hidden",
                   flexShrink: 0,
                 }}
               >
                 <img
-                  src={legendImgUrl}
+                  src={imageALaTaille(legendImgUrl, legend.w)}
                   width={legend.w}
                   height={legend.h}
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", borderRadius: 16 }}
                 />
               </div>
             )}
@@ -832,7 +852,6 @@ export async function GET(req: NextRequest) {
             justifyContent: "space-between",
             padding: `32px ${SIDE_PAD}px`,
             gap: 8,
-            overflow: "hidden",
           }}
         >
           {/* Main deck section */}
