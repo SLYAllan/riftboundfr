@@ -1,6 +1,21 @@
 # HANDOFF — état des lieux
 
-## Session du 18 octobre 2026 — Radiance (RAD) en base locale
+## Session du 18 octobre 2026 — coupures du site, Radiance en local, riot.txt
+
+**Coupures de 2 minutes, 3 à 4 fois par jour (alertes « HTTP 503 » du tableau de bord).**
+Base, mémoire (8 Go, rien de tué), table des connexions et réseau écartés, preuves dans
+la conversation. Les pics de connexions sortantes ratées (`UND_ERR_CONNECT_TIMEOUT`)
+tombent pile sur les coupures, et ils sortent de `/api/decklist-image` : chaque page de
+deck annonce cette image en aperçu, et une image coûtait 9 s de processeur (32 s en
+prod). Mécanisme probable, pas prouvé : la sonde Docker (5 s, 3 essais) déclare le
+conteneur malade et le proxy de Coolify répond 503. Corrigé (`decklist-image: …`) :
+141 masques SVG emboîtés retirés, cartes demandées à leur taille. 40 images en même
+temps : 29 s au lieu de 138 s en local. **À juger après le Deploy** : si une coupure
+revient sans ligne `[sante]` dans les journaux, c'est la sonde Docker, pas la base.
+
+**`public/riot.txt`** : vérification du domaine pour une clé d'API Riot. En ligne au Deploy.
+
+### Radiance (RAD) en base locale
 
 **Source** : Riftcodex s'arrête à Vendetta (`/sets`, 8 sets). La galerie officielle de
 Riot (playriftbound.com) a Radiance en anglais : 219 fiches, dont 167 cartes de base,
