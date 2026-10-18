@@ -22,7 +22,7 @@ const SORTS: Record<string, Prisma.CardOrderByWithRelationInput[]> = {
 const metadata: Metadata = {
   title: { absolute: "Cartes Riftbound en français - base de données complète et filtres" },
   description:
-    "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed, Vendetta et Radiance.",
+    "Toutes les cartes Riftbound en français : recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.",
   alternates: { canonical: "/cartes" },
   openGraph: {
     type: "website",
@@ -30,7 +30,7 @@ const metadata: Metadata = {
     locale: "fr_FR",
     title: "Cartes Riftbound en français - base de données complète et filtres",
     description:
-      "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed, Vendetta et Radiance.",
+      "Recherche par nom, set, type, rareté et domaine. Sets Origins, Spiritforged, Unleashed et Vendetta.",
     images: ["/img/og-default.png"],
   },
 };
@@ -59,7 +59,6 @@ export default async function CartesPage({ searchParams }: PageProps) {
       spiritforged: ["SFD"],
       unleashed: ["UNL"],
       vendetta: ["VEN"],
-      radiance: ["RAD"],
       promo: ["PR", "OPP", "JDG"],
     };
     const setIds = setMap[set];
@@ -99,7 +98,7 @@ export default async function CartesPage({ searchParams }: PageProps) {
     <div className="mx-auto max-w-[1400px] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
       <h1 className="text-3xl font-bold font-display sm:text-4xl">{t("Base de données des cartes Riftbound")}</h1>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-ink-secondary sm:text-base">
-        {t("Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed, Vendetta et Radiance. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.")}
+        {t("Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.")}
       </p>
       <div className="mt-4 sm:mt-8"><Suspense><SearchBar /></Suspense></div>
       <div className="mt-4"><Suspense><CardFilters total={total} mecaniques={mecaniques} /></Suspense></div>
