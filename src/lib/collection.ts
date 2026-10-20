@@ -4,7 +4,7 @@
  * Il vivait en trois exemplaires, et deux avaient oublié Vendetta : les cartes
  * du set le plus récent tombaient en fin de liste, après les promos.
  */
-export const ORDRE_SETS = ["VEN", "OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
+export const ORDRE_SETS = ["RAD", "VEN", "OGN", "OGS", "SFD", "UNL", "PR", "OPP", "JDG"];
 
 export type OwnedByName = Map<string, number>;
 

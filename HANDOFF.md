@@ -1,6 +1,11 @@
 # HANDOFF — état des lieux
 
-## 20 octobre 2026 — relevé avant l'import de Radiance
+## 20 octobre 2026 — Radiance en prod, côté visible remis
+
+**Radiance importé en PROD** le 20 (`sync-set-riot.mts RAD` par `prod-tunnel.mts`,
+sur le oui d'Allan) : 1 275 → 1 494 cartes. L'essai à blanc sur la prod donnait les
+mêmes 36 écarts qu'en local. **Filtres remis sur `main`** (`git show 5927e03b4 -- src/
+| git apply`), `npm run verify` sortie 0. **En ligne au prochain Deploy.**
 
 Rien n'a bougé depuis le 18. Riftcodex : toujours 8 sets, pas de RAD. Galerie Riot :
 les 219 cartes RAD identiques à la base locale (texte et image), errata du 9 octobre
@@ -37,19 +42,13 @@ Riot et viennent du figurier chinois. Recoupement : 36 écarts sur 1 135 cartes 
 base, tous côté base (surnumérotés Vendetta sans suffixe, « Rek'sai », « Corina »).
 
 **Neuf Légendes** : Ekko, Evelynn, Jarvan IV, K'Sante, Mordekaiser, Orianna, Riven,
-Seraphine, Ziggs. Aucune n'a de bannière ni d'icône (`npm run maj:overlay`).
+Seraphine, Ziggs. Bannières et icônes posées le 20.
 
 **Noms et images chinois** : `data/cards-zh.json`, 198 cartes RAD.
 
-**Le côté visible est RETIRÉ de `main`** le soir du 18, à la demande d'Allan : seul
-`riot.txt` devait partir au Deploy, et le filtre Radiance aurait été vide en prod. Le
-remettre le jour de l'import en prod :
-`git show 5927e03b4 -- src/ | git apply` (filtre de `/cartes`, `set:radiance` du
-deckbuilder, ordre de la collection, textes de `/cartes` en FR et EN), puis `npm run verify`.
+Le côté visible, retiré de `main` le 18, est revenu le 20 avec l'import en prod.
 
 **Reste** :
-- seed en PROD : `sync-set-riot.mts RAD` par `prod-tunnel.mts`, sur le oui d'Allan, en
-  même temps que le retour du côté visible ;
 - errata Radiance du 9 octobre (Elnuk Herd, Last Caress, Forbidden Technique, Neeko) :
   pas posé, la galerie garde l'ancien texte ;
 - mots-clés nouveaux `Deploy`, `Disarm`, `Show Off` : absents du glossaire, faute de
