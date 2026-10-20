@@ -156,8 +156,9 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   (règle d'Allan du 22 septembre 2026, qui remplace la borne de 128) ; les épreuves de
   boutique `rune_competition` restent dehors. Une carte que hexgate ne nomme pas en anglais
   (`T1S-00x`, Légendes promo `SGN-…-P-SC`) fait écarter la liste : aucune source ne dit
-  laquelle c'est. La liste générale `/api/tournaments` répond vide depuis octobre 2026 :
-  sonder les identifiants un par un (`/api/tournaments/<id>`, 404 au-delà du dernier).
+  laquelle c'est. La liste `/api/tournaments` répond vide sans paramètre : elle demande
+  `?season=all` (ou `S1` à `S5`), qui rend id, date, type et nombre de joueurs de chaque
+  tournoi (vérifié le 20 octobre 2026, 169 tournois).
   **Depuis le 7 octobre 2026 (tournoi 281), hexgate écrit les Champions sans titre** :
   « Kennen » pour deux cartes différentes. Entre le scrape et `parse-hexgate.mts`, lancer
   `npx tsx --env-file=.env scripts/hexgate-sans-titre.mts <id>` : il écrit

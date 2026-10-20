@@ -1,5 +1,13 @@
 # HANDOFF — état des lieux
 
+## 20 octobre 2026 — relevé avant l'import de Radiance
+
+Rien n'a bougé depuis le 18. Riftcodex : toujours 8 sets, pas de RAD. Galerie Riot :
+les 219 cartes RAD identiques à la base locale (texte et image), errata du 9 octobre
+toujours absents, pas de signées, 13 types encore vides. Figurier chinois : +0 / -0.
+hexgate : dernier tournoi 289 (Chengdu) ; la saison `S5` existe mais reste vide. La
+liste marche avec `?season=all` (voir `AGENTS.md`).
+
 ## Session du 18 octobre 2026 — coupures du site, Radiance en local, riot.txt
 
 **Coupures de 2 minutes, 3 à 4 fois par jour (alertes « HTTP 503 » du tableau de bord).**
