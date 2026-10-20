@@ -5,7 +5,9 @@
 **Radiance importé en PROD** le 20 (`sync-set-riot.mts RAD` par `prod-tunnel.mts`,
 sur le oui d'Allan) : 1 275 → 1 494 cartes. L'essai à blanc sur la prod donnait les
 mêmes 36 écarts qu'en local. **Filtres remis sur `main`** (`git show 5927e03b4 -- src/
-| git apply`), `npm run verify` sortie 0. **En ligne au prochain Deploy.**
+| git apply`), `npm run verify` sortie 0. **Deploy fait le 20 par Allan**, vérifié en
+ligne : `/cartes?set=radiance` ne rend que des cartes RAD, le deckbuilder porte 207
+cartes RAD et les Légendes, bannières, icônes et `riot.txt` répondent 200.
 
 Rien n'a bougé depuis le 18. Riftcodex : toujours 8 sets, pas de RAD. Galerie Riot :
 les 219 cartes RAD identiques à la base locale (texte et image), errata du 9 octobre
