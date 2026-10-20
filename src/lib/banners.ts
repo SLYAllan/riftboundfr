@@ -50,6 +50,16 @@ export const BANNER_MAP: Record<string, string> = {
   renekton: "renekton",
   shen: "shen",
   zed: "zed",
+  ekko: "ekko",
+  evelynn: "evelynn",
+  "jarvan iv": "jarvaniv",
+  "k'sante": "ksante",
+  ksante: "ksante",
+  mordekaiser: "mordekaiser",
+  orianna: "orianna",
+  riven: "riven",
+  seraphine: "seraphine",
+  ziggs: "ziggs",
 };
 
 /**
@@ -121,6 +131,16 @@ export const ICON_MAP: Record<string, string> = {
   renekton: "renekton",
   shen: "shen",
   zed: "zed",
+  ekko: "ekko",
+  evelynn: "evelynn",
+  "jarvan iv": "jarvaniv",
+  "k'sante": "ksante",
+  ksante: "ksante",
+  mordekaiser: "mordekaiser",
+  orianna: "orianna",
+  riven: "riven",
+  seraphine: "seraphine",
+  ziggs: "ziggs",
 };
 
 export function getLegendIconUrl(legendName: string): string | null {

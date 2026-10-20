@@ -8,6 +8,9 @@ toujours absents, pas de signées, 13 types encore vides. Figurier chinois : +0 
 hexgate : dernier tournoi 289 (Chengdu) ; la saison `S5` existe mais reste vide. La
 liste marche avec `?season=all` (voir `AGENTS.md`).
 
+**Bannières et icônes des 9 Légendes Radiance** posées (visuels d'Allan, webp
+qualité 85) ; `maj:overlay` : 57 Légendes sur 57. Pas encore vues dans OBS.
+
 ## Session du 18 octobre 2026 — coupures du site, Radiance en local, riot.txt
 
 **Coupures de 2 minutes, 3 à 4 fois par jour (alertes « HTTP 503 » du tableau de bord).**
@@ -45,7 +48,6 @@ remettre le jour de l'import en prod :
 deckbuilder, ordre de la collection, textes de `/cartes` en FR et EN), puis `npm run verify`.
 
 **Reste** :
-- bannières et icônes des 9 Légendes (Allan, pas tout de suite), puis `banners.ts` ;
 - seed en PROD : `sync-set-riot.mts RAD` par `prod-tunnel.mts`, sur le oui d'Allan, en
   même temps que le retour du côté visible ;
 - errata Radiance du 9 octobre (Elnuk Herd, Last Caress, Forbidden Technique, Neeko) :
