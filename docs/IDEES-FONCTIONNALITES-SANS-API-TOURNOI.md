@@ -118,7 +118,7 @@ retirer ou la corriger reste à trancher.
    22 septembre ne couvrent que les decks de tournoi. Les étendre à `/d/[code]` et
    à l'onglet communautaire, et prévenir l'auteur par la cloche quand un ban
    touche son deck. Coût faible à moyen.
-4. **Les errata dans les listes.** `getErrata` (`src/lib/errata-2026-07.ts`) ne
+4. **Les errata dans les listes.** `getErrata` (`src/lib/errata.ts`) ne
    sert qu'à la fiche carte. Une étiquette « errata » dans les listes, comme
    « Banni », dirait que le texte imprimé ne fait plus foi. Coût faible.
 5. **Ta tier list.** Faite le 22 septembre : `/outils/tier-list`. Ranger les

@@ -8,13 +8,13 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ErrataDiff } from "@/components/errata-diff";
-import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
+import { ERRATA, ERRATA_2026_07, ERRATA_2026_10, type ErrataEntry } from "@/lib/errata";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 
 const metadata: Metadata = {
   title: { absolute: "Ban list Riftbound - Toutes les cartes interdites en tournoi" },
   description:
-    "La ban list officielle Riftbound à jour : cartes et champs de bataille interdits en tournoi, avec leur date, et les erratas de cartes de juillet 2026.",
+    "La ban list officielle Riftbound à jour : cartes et champs de bataille interdits en tournoi, avec leur date, et les erratas de cartes de Vendetta et de Radiance.",
   alternates: { canonical: "/guides/ban-list" },
   openGraph: {
     type: "article",
@@ -68,7 +68,7 @@ const PROMO_SETS = new Set(["PR", "OPP", "JDG"]);
 // Les cartes bannies/erratées ne changent pas d'une visite à l'autre → cache long.
 const getBanCards = unstable_cache(
   async (): Promise<BanCard[]> => {
-    const names = [...new Set([...SEPTEMBRE.map((c) => c.en), ...JUILLET.map((c) => c.en), ...MARS, ...ERRATA_2026_07.map((e) => e.name)])];
+    const names = [...new Set([...SEPTEMBRE.map((c) => c.en), ...JUILLET.map((c) => c.en), ...MARS, ...ERRATA.map((e) => e.name)])];
     return prisma.card.findMany({
       where: { OR: names.map((n) => ({ name: { startsWith: n } })) },
       select: {
@@ -77,7 +77,7 @@ const getBanCards = unstable_cache(
       },
     });
   },
-  ["ban-list-cards-v2"],
+  ["ban-list-cards-v3"],
   { revalidate: 3600, tags: ["cards"] },
 );
 
@@ -111,6 +111,39 @@ function CardThumb({ card, caption, sub }: { card: BanCard | null; caption: stri
       <span className="mt-2 block max-w-[11rem] text-center text-sm font-medium text-ink group-hover:text-arcane">{caption}</span>
       {sub && <span className="text-center text-xs text-ink-muted">{sub}</span>}
     </Link>
+  );
+}
+
+function ListeErrata({ errata, cards, t }: { errata: ErrataEntry[]; cards: BanCard[]; t: (texte: string) => string }) {
+  return (
+    <ul className="mt-5 space-y-4">
+      {errata.map((e) => {
+        const card = bestEdition(cards, e.name);
+        return (
+          <li key={e.name} className="flex flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 sm:flex-row">
+            {card?.imageUrl && (
+              <Link href={`/cartes/${card.riftboundId}`} className="shrink-0 self-center sm:self-start">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={resize(card.imageUrl, 460)}
+                  alt={card.name}
+                  loading="lazy"
+                  className="h-72 w-auto rounded-lg ring-1 ring-hairline transition hover:ring-arcane/50"
+                />
+              </Link>
+            )}
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-semibold text-ink">{t(e.name)}</span>
+                <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[11px] text-ink-muted">{e.set}</span>
+              </div>
+              <div className="mt-2"><ErrataDiff before={e.before} after={e.after} /></div>
+              <p className="mt-2 text-sm text-ink-secondary">{e.change}</p>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -158,36 +191,17 @@ export default async function BanListPage() {
         ))}
       </div>
 
+      <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("Erratas du 9 octobre 2026")}</h2>
+      <p className="mt-2 text-ink-secondary">{t("Riot a corrigé le texte de quatre cartes de Radiance le 9 octobre, avant la sortie du set. Elles se jouent avec leur nouveau texte, et c’est celui que tu verras partout sur le site.")}</p>
+      <ListeErrata errata={ERRATA_2026_10} cards={cards} t={t} />
+      <p className="mt-3 text-sm text-ink-muted">
+        {t("Annonce publiée en anglais :")}{" "}
+        <a href="https://playriftbound.com/en-us/news/announcements/radiance-errata-updates/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">{t("lire l’annonce de Riot")}</a>
+      </p>
+
       <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("Erratas du 23 juillet 2026")}</h2>
       <p className="mt-2 text-ink-secondary">{t("En plus des bans, huit cartes changent de texte avec la sortie de Vendetta. Rien n’est interdit ici : ces cartes se jouent avec leur nouveau texte, et c’est ce texte que tu verras partout sur le site.")}</p>
-      <ul className="mt-5 space-y-4">
-        {ERRATA_2026_07.map((e) => {
-          const card = bestEdition(cards, e.name);
-          return (
-            <li key={t(e.name)} className="flex flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 sm:flex-row">
-              {card?.imageUrl && (
-                <Link href={`/cartes/${card.riftboundId}`} className="shrink-0 self-center sm:self-start">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={resize(card.imageUrl, 460)}
-                    alt={card.name}
-                    loading="lazy"
-                    className="h-72 w-auto rounded-lg ring-1 ring-hairline transition hover:ring-arcane/50"
-                  />
-                </Link>
-              )}
-              <div className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-semibold text-ink">{t(e.name)}</span>
-                  <span className="rounded-full bg-surface-raised px-2 py-0.5 text-[11px] text-ink-muted">{e.set}</span>
-                </div>
-                <div className="mt-2"><ErrataDiff before={e.before} after={e.after} /></div>
-                <p className="mt-2 text-sm text-ink-secondary">{e.change}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <ListeErrata errata={ERRATA_2026_07} cards={cards} t={t} />
 
       <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("Pour aller plus loin")}</h2>
       <p className="mt-2 text-sm text-ink-secondary">

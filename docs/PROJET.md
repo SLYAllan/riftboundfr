@@ -182,7 +182,7 @@ sort en erreur au moindre écart.
   hiérarchie des documents sont dans `data/video-insights/README.md`.
 - **Les règles du jeu** (bans, domaines, errata) sont codées en dur dans
   `src/lib/`, pas en base : `banned-cards.ts` (10 cartes, deux annonces cumulées),
-  `domains.ts`, `errata-2026-07.ts`, `core-rules.ts`.
+  `domains.ts`, `errata.ts`, `core-rules.ts`.
 
 ### Le réflexe qui compte
 

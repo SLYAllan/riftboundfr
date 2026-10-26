@@ -5,6 +5,14 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-10-26 · hors passe, description de `/guides/ban-list`
+
+Changée à la demande d'Allan, pour coller au contenu : la page porte maintenant les
+errata Radiance du 9 octobre en plus de ceux de juillet. Avant : « … et les erratas
+de cartes de juillet 2026. » Après : « … et les erratas de cartes de Vendetta et de
+Radiance. » Titre, chapô et liens inchangés. Le compte à rebours de deux semaines
+part du Deploy, pas de ce commit.
+
 ## 2026-09-23 · semaine 1, Search Console rebranché
 
 **Fait**

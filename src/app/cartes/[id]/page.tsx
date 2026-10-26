@@ -8,7 +8,7 @@ import { RarityBadge } from "@/components/rarity-badge";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib/domains";
 import { isBanned } from "@/lib/banned-cards";
-import { getErrata } from "@/lib/errata-2026-07";
+import { getErrata } from "@/lib/errata";
 import { ErrataDiff } from "@/components/errata-diff";
 import { displayLegendName, formatDate } from "@/lib/utils";
 import Link from "@/components/lien";
@@ -236,7 +236,7 @@ export default async function CardDetailPage({ params }: PageProps) {
             {errata && (
               <div className="rounded-lg border border-hairline bg-surface p-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Errata du 23 juillet 2026")}</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t(`Errata du ${errata.date}`)}</span>
                 </div>
                 <div className="mt-2"><ErrataDiff before={errata.before} after={errata.after} /></div>
                 <p className="mt-2 text-sm text-ink-secondary">{errata.change}</p>

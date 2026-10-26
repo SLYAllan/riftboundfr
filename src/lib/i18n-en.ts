@@ -471,8 +471,8 @@ export const EN: Record<string, string> = {
     "Tournament decklists, competitive builds and guides for every Riftbound Legend.",
   "Ban list Riftbound - Toutes les cartes interdites en tournoi":
     "Riftbound ban list - every card banned in tournament play",
-  "La ban list officielle Riftbound à jour : cartes et champs de bataille interdits en tournoi, avec leur date, et les erratas de cartes de juillet 2026.":
-    "The current official Riftbound ban list: cards and battlefields banned in tournament play, with their dates, plus the July 2026 card errata.",
+  "La ban list officielle Riftbound à jour : cartes et champs de bataille interdits en tournoi, avec leur date, et les erratas de cartes de Vendetta et de Radiance.":
+    "The current official Riftbound ban list: cards and battlefields banned in tournament play, with their dates, plus the Vendetta and Radiance card errata.",
   "Toutes les cartes et les champs de bataille interdits en tournoi Riftbound, avec leur date.":
     "Every card and battlefield banned in Riftbound tournament play, with its date.",
   "Riftbound : premiers pas, règles et comment jouer (guide débutant FR)":
@@ -668,6 +668,9 @@ export const EN: Record<string, string> = {
   "En net déclin": "Clearly on the way down",
   "En plus des bans, huit cartes changent de texte avec la sortie de Vendetta. Rien n’est interdit ici : ces cartes se jouent avec leur nouveau texte, et c’est ce texte que tu verras partout sur le site.": "On top of the bans, eight cards change their text with the Vendetta release. Nothing is banned here: these cards are played with their new text, and that is the text you will see everywhere on the site.",
   "Erratas du 23 juillet 2026": "Errata of 23 July 2026",
+  "Erratas du 9 octobre 2026": "Errata of 9 October 2026",
+  "Riot a corrigé le texte de quatre cartes de Radiance le 9 octobre, avant la sortie du set. Elles se jouent avec leur nouveau texte, et c’est celui que tu verras partout sur le site.":
+    "Riot changed the text of four Radiance cards on 9 October, before the set came out. They play with their new text, and that is the text you will see everywhere on the site.",
   "Essayer le Deckbuilder": "Try the deckbuilder",
   "Exporte ta collection en CSV depuis Piltover Archive, puis dépose le fichier ici. Les quantités existantes seront remplacées par celles du fichier.": "Export your collection as CSV from Piltover Archive, then drop the file here. Existing quantities will be replaced by those in the file.",
   "Exportez votre deck en image PNG.": "Export your deck as a PNG image.",
@@ -943,6 +946,7 @@ export const EN: Record<string, string> = {
   "Decks utilisant cette carte": "Decks playing this card",
   "Voir tous les decks avec cette carte": "See every deck with this card",
   "Errata du 23 juillet 2026": "Errata of 23 July 2026",
+  "Errata du 9 octobre 2026": "Errata of 9 October 2026",
   "Les règles de Riftbound, en français": "The Riftbound rules",
   "Légende :": "Legend:",
   "Pas encore de decklist classée pour cette Légende.": "No ranked decklist for this Legend yet.",

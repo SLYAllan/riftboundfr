@@ -7,7 +7,7 @@ import Link from "@/components/lien";
 import { prisma, safeQuery } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { GLOSSARY_TERMS } from "@/lib/glossary";
-import { ERRATA_2026_07 } from "@/lib/errata-2026-07";
+import { ERRATA } from "@/lib/errata";
 import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
@@ -73,7 +73,7 @@ export default async function ReglesPage({
     : [];
 
   const erratas = hasQuery
-    ? ERRATA_2026_07.filter(
+    ? ERRATA.filter(
         (e) => fold(e.name).includes(needle) || fold(e.change).includes(needle) || fold(e.after).includes(needle),
       )
     : [];

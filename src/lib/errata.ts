@@ -1,7 +1,8 @@
-// Errata officiel du 23 juillet 2026 (publié avec les règles Vendetta) :
-// https://playriftbound.com/en-us/news/announcements/vendetta-errata-updates/
-// Source unique : la page /guides/ban-list affiche before/after + explication,
-// et scripts/apply-errata-2026-07.ts applique before -> after dans la DB.
+// Les errata officiels de Riot, une liste par annonce :
+//   23 juillet 2026 : https://playriftbound.com/en-us/news/announcements/vendetta-errata-updates/
+//   9 octobre 2026  : https://playriftbound.com/en-us/news/announcements/radiance-errata-updates/
+// Source unique : /guides/ban-list affiche before/after + explication, la fiche
+// carte le rappelle, et scripts/apply-errata.ts applique before -> after en base.
 // `before`/`after` = le fragment de texte qui change (codes :rb_...: rendus en
 // icônes par CardTextRenderer). NE PAS retoucher : le script matche `before` à
 // l'identique dans textPlain.
@@ -13,10 +14,16 @@ export interface ErrataEntry {
   change: string; // explication en français
 }
 
-// Retrouve l'errata d'une carte par son nom. Les variantes (alt-art, overnumbered,
-// « (Metal) »…) partagent le texte de l'impression de base -> même errata.
-export function getErrata(cardName: string): ErrataEntry | undefined {
-  return ERRATA_2026_07.find((e) => cardName === e.name || cardName.startsWith(e.name + " ("));
+// Retrouve l'errata d'une carte par son nom, avec la date de l'annonce. Les
+// variantes (alt-art, overnumbered, « (Metal) »…) partagent le texte de
+// l'impression de base -> même errata. La fiche carte écrivait « 23 juillet » en
+// dur : un errata Radiance y aurait porté la date de Vendetta.
+export function getErrata(cardName: string): (ErrataEntry & { date: string }) | undefined {
+  for (const [date, liste] of VAGUES) {
+    const e = liste.find((x) => cardName === x.name || cardName.startsWith(x.name + " ("));
+    if (e) return { ...e, date };
+  }
+  return undefined;
 }
 
 export const ERRATA_2026_07: ErrataEntry[] = [
@@ -77,3 +84,43 @@ export const ERRATA_2026_07: ErrataEntry[] = [
     change: "La Réaction se joue à tout moment, même avant la résolution des sorts et capacités, pas seulement à ton tour.",
   },
 ];
+
+// La française ne cite que trois cartes : Last Caress n'y figure pas.
+export const ERRATA_2026_10: ErrataEntry[] = [
+  {
+    name: "Elnuk Herd",
+    set: "Radiance",
+    before: "give another friendly unit +3 :rb_might: this turn",
+    after: "give a friendly unit +3 :rb_might: this turn",
+    change: "Le Troupeau d'elnuks peut se donner le +3 à lui-même : « une unité alliée » remplace « une autre unité alliée ».",
+  },
+  {
+    name: "Last Caress",
+    set: "Radiance",
+    before: "The next unit you play this turn (even from face down) can be played",
+    after: "The next unit you play this turn, even from face down, can be played",
+    change: "Les mots « même face cachée » sortent des parenthèses et entrent dans le texte de la carte. Riot ne la cite pas dans l'errata en français.",
+  },
+  {
+    name: "Forbidden Technique",
+    set: "Radiance",
+    before: "you may play this from your trash for :rb_energy_1::rb_rune_fury::rb_rune_fury:. Banish this.",
+    after: "you may play this from your trash for :rb_energy_1::rb_rune_fury::rb_rune_fury:. Then banish this.",
+    change: "Le bannissement devient la suite de l'effet : « Puis bannissez ceci » remplace « Bannissez ceci ».",
+  },
+  {
+    name: "Neeko, Blending In",
+    set: "Radiance",
+    before: "choose 3 different legends",
+    after: "choose up to 3 different legends",
+    change: "On peut choisir moins de trois Légendes : « jusqu'à 3 » remplace « 3 ».",
+  },
+];
+
+/** De la plus récente à la plus ancienne. */
+const VAGUES: [string, ErrataEntry[]][] = [
+  ["9 octobre 2026", ERRATA_2026_10],
+  ["23 juillet 2026", ERRATA_2026_07],
+];
+
+export const ERRATA: ErrataEntry[] = VAGUES.flatMap(([, liste]) => liste);
