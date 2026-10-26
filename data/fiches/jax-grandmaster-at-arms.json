@@ -85,36 +85,37 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 454,
-    "coupe10": 18,
+    "joueursClasses": 153,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "4 %",
-    "tournois": 73,
+    "conversion": "1.3 %",
+    "tournois": 26,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2026-02-07)"
+        "placement": "18th",
+        "player": "HBG_77",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       },
       {
-        "placement": "6th",
-        "player": null,
-        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
+        "placement": "38th",
+        "player": "想桃子111",
+        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
       },
       {
-        "placement": "8th",
-        "player": null,
-        "tournament": "S2 Regional Open - Dalian (2026-02-01)"
+        "placement": "44th",
+        "player": "猫岛巡礼-白龙",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
       },
       {
-        "placement": "9th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2026-01-24)"
+        "placement": "45th",
+        "player": "冰梅雨",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       },
       {
-        "placement": "17th",
-        "player": null,
-        "tournament": "S3 Beijing City Challenge (2026-05-03)"
+        "placement": "45th",
+        "player": "对酒当歌",
+        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
       }
     ]
   },
@@ -146,7 +147,7 @@
     "Ornn's Forge (39 %)",
     "Sandswept Tomb (35 %)"
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 454 joueurs classés sur 73 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 153 joueurs classés, 26 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements déplacés d'une unité à l'autre",
   "legendAbility": "Une énergie et un épuisement attachent un équipement libre à une de vos unités ; sans énergie, il déplace un équipement déjà attaché.",
   "gameplan": {
@@ -162,5 +163,6 @@
     "153 joueurs classés sur 26 tournois, 2 dans les 10 % de tête, aucun titre : le deck est joué mais ne convertit pas",
     "Deux points de rupture, l'unité et l'équipement, et le retrait de l'un suffit"
   ],
-  "cartesDepuisBan": "2026-09-15"
+  "cartesDepuisBan": "2026-09-15",
+  "setDesChiffres": "Vendetta"
 }

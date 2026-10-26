@@ -16,10 +16,20 @@ avec le classement de la page. Validateur : 30 591 listes, 0 écart. **Seedés e
 liste complète (66 cartes, réserve de 10) couvre Radiance dans le parseur et le
 validateur : écrit `set === "Vendetta"`, il laissait passer une liste Radiance amputée.
 `legend-map.json` a reçu les 9 Légendes Radiance ; sans elles, leurs decks sautaient en
-silence. `maj:stats` (sortie 0) met les fiches sur Radiance : 16 Légendes ont 10 listes
-ou plus, les autres gardent leurs résultats toutes ères et taisent leurs cartes.
-`data/fiches-stats-vendetta.json` devient `data/fiches-stats.json`. La tier list
-courante reste Vendetta tant qu'Allan n'a pas validé les lettres Radiance.
+silence. `data/fiches-stats-vendetta.json` devient `data/fiches-stats.json`.
+
+**Fiches : Radiance, et repli sur Vendetta** (choix d'Allan). Sur deux tournois, 15
+fiches sur 43 seulement ont 10 listes Radiance (le premier commit disait 16, compté à
+vue : faux). Les autres prennent leurs chiffres Vendetta, d'après le ban, avec
+« Vendetta » écrit sur la fiche : `maj:stats` calcule le set précédent
+(`data/fiches-stats-repli.json`) et `fiches-maj --repli` s'en sert. 31 fiches montrent
+des cartes ; les 12 autres sont des Légendes ni Vendetta ni Radiance, comme avant. La
+règle de l'après-ban (`apres-ban.ts`) vaut maintenant pour tout set joué après le ban :
+devenu « ancien », Vendetta recomptait sinon Stacked Deck.
+
+**Tier list Radiance**, lettres validées par Allan : `radianceTier`, 26 Légendes d'au
+moins 15 joueurs (seuil abaissé : à 40, trois passaient), courante sur `/tier-list`,
+l'accueil et `/meta`. S : Riven et Kennen, seuls à tenir le test.
 
 **Errata Radiance du 9 octobre posés** (annonce Riot `radiance-errata-updates`) :
 `src/lib/errata.ts` (ex-`errata-2026-07.ts`), une section sur `/guides/ban-list`, la
@@ -33,10 +43,9 @@ tronçons de la liste d'URL, arrêtés à la première liste déjà sur le disqu
 les 717 listes de Sacramento en 1 h 30 environ, contre 2 h 30 pour un seul.
 
 **Reste** :
-- prod : seed des deux tournois et `apply-errata.ts` par `prod-tunnel.mts`, puis Deploy ;
-- tier list Radiance : lettres à valider par Allan, puis `radianceTier` dans
-  `tier-tables.ts`, courante dans `seed-tier-lists.ts`, ajoutée à `tier-ecarts.mts`,
-  et lue par `fiches-maj.mts`, qui aligne encore les rangs des fiches sur `vendettaTier` ;
+- prod : seed des deux tournois et `apply-errata.ts` par `prod-tunnel.mts`. Le tunnel
+  (`178.104.237.33:15432`) était fermé le 26 au soir : Allan doit relancer le socat ;
+- prod : `seed-tier-lists.ts` APRÈS le Deploy (les fiches viennent avec le code) ;
 - les 9 Légendes Radiance n'ont pas de fiche dans `data/fiches/` : leur page montre les
   decks, sans chiffres ni guide. La prose s'écrit dans `fiches-prose.json` ;
 - les guides (`legend-guides.ts`) et la prose des fiches citent des chiffres Vendetta ;

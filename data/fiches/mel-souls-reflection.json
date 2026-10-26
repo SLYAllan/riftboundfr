@@ -123,11 +123,12 @@
     "Rockfall Path (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 247,
+    "joueursClasses": 234,
     "coupe10": 7,
     "titres": 0,
-    "conversion": "2.8 %",
-    "tournois": 40,
+    "conversion": "3 %",
+    "tournois": 38,
+    "listesPubliees": 29,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -156,6 +157,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 247 joueurs classés sur 40 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "cartesDepuisBan": "2026-09-15"
+  "dataSource": "Classement complet des tournois : 234 joueurs classés, 38 tournois, dont 29 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "cartesDepuisBan": "2026-09-15",
+  "setDesChiffres": "Vendetta"
 }

@@ -107,11 +107,12 @@
     "Trop peu de données pour parler d'un cœur stable"
   ],
   "competitiveResults": {
-    "joueursClasses": 720,
-    "coupe10": 70,
+    "joueursClasses": 349,
+    "coupe10": 40,
     "titres": 0,
-    "conversion": "9.7 %",
-    "tournois": 78,
+    "conversion": "11.5 %",
+    "tournois": 42,
+    "listesPubliees": 51,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -119,24 +120,24 @@
         "tournament": "S4 Chengdu City Challenge (2026-10-02)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
-      },
-      {
         "placement": "5th",
         "player": "闪电家.乐事.阿迪打野",
         "tournament": "S4 Chengdu National Open (2026-10-10)"
       },
       {
-        "placement": "5th",
-        "player": null,
-        "tournament": "S3 Wuhan City Challenge (2026-04-25)"
+        "placement": "8th",
+        "player": "高长恭",
+        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "6th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+        "placement": "9th",
+        "player": "绫形",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "9th",
+        "player": "Minda",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       }
     ]
   },
@@ -194,6 +195,7 @@
     "Star Spring (71 %)",
     "Monastery of Hirana (49 %)"
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 720 joueurs classés sur 78 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "cartesDepuisBan": "2026-09-15"
+  "dataSource": "Classement complet des tournois : 349 joueurs classés, 42 tournois, dont 51 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "cartesDepuisBan": "2026-09-15",
+  "setDesChiffres": "Vendetta"
 }

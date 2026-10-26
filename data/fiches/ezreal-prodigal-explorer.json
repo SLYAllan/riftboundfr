@@ -114,11 +114,12 @@
     "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
   ],
   "competitiveResults": {
-    "joueursClasses": 1083,
-    "coupe10": 111,
+    "joueursClasses": 347,
+    "coupe10": 41,
     "titres": 0,
-    "conversion": "10.2 %",
-    "tournois": 108,
+    "conversion": "11.8 %",
+    "tournois": 49,
+    "listesPubliees": 72,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -126,24 +127,24 @@
         "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
       },
       {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "S2 Hangzhou City Challenge (2026-03-08)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "S2 Regional Open - Dalian (2026-02-01)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-12-21)"
+        "placement": "3rd",
+        "player": "霆霆",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
       },
       {
         "placement": "3rd",
-        "player": "Bradykin",
-        "tournament": "RQ Hartford 2026"
+        "player": "无所畏惧",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "4th",
+        "player": "LineKa·Pokuey",
+        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
+      },
+      {
+        "placement": "7th",
+        "player": "Berkunn",
+        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
       }
     ]
   },
@@ -185,6 +186,7 @@
     "Heisho, Shell of the World (40 %)",
     "Vilemaw's Lair (38 %)"
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 1083 joueurs classés sur 108 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "cartesDepuisBan": "2026-09-15"
+  "dataSource": "Classement complet des tournois : 347 joueurs classés, 49 tournois, dont 72 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "cartesDepuisBan": "2026-09-15",
+  "setDesChiffres": "Vendetta"
 }

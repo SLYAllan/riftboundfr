@@ -109,11 +109,12 @@
     "Cœur court, huit cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "joueursClasses": 1528,
-    "coupe10": 139,
-    "titres": 7,
-    "conversion": "9.1 %",
-    "tournois": 114,
+    "joueursClasses": 575,
+    "coupe10": 52,
+    "titres": 3,
+    "conversion": "9 %",
+    "tournois": 50,
+    "listesPubliees": 145,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -131,14 +132,14 @@
         "tournament": "S4 Nanjing City Challenge (2026-09-26)"
       },
       {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2026-01-01)"
+        "placement": "2nd",
+        "player": "徐大王文吱吱最强",
+        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
       },
       {
-        "placement": "1st",
-        "player": null,
-        "tournament": "S3 Beijing City Challenge (2026-05-03)"
+        "placement": "3rd",
+        "player": "鬼鬼@帝防士",
+        "tournament": "Dongguan Manbo Cup (2026-08-08)"
       }
     ]
   },
@@ -190,6 +191,7 @@
     "Sunken Temple (96 %)",
     "Monastery of Hirana (31 %)"
   ],
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 1528 joueurs classés sur 114 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "cartesDepuisBan": "2026-09-15"
+  "dataSource": "Classement complet des tournois : 575 joueurs classés, 50 tournois, dont 145 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "cartesDepuisBan": "2026-09-15",
+  "setDesChiffres": "Vendetta"
 }
