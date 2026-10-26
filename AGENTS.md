@@ -135,13 +135,18 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   ceux qui performent qui publient. `scripts/couverture-tournois.mts` dit quel tournoi est
   trop peu publié pour être mesuré.
   Une fiche ne montre ses cartes (noyau et cartes flex), ses champions et ses terrains
-  que s'ils sont comptés sur le set en cours : `fiches-maj` pose alors `setDesChiffres`.
-  Sans lui, la page les tait : une Kai'Sa d'Origins ne joue pas les cartes de sa version
-  Vendetta, et des chiffres d'un ancien set passaient pour actuels.
+  que s'ils sont comptés sur le set en cours, ou à défaut sur le set précédent :
+  `fiches-maj` pose alors `setDesChiffres`, que la page affiche. Sans lui, la page les
+  tait : une Kai'Sa d'Origins ne joue pas les cartes de sa version Vendetta, et des
+  chiffres d'un ancien set passaient pour actuels. Le repli sur le set précédent (choix
+  d'Allan, 26 octobre 2026) sert au début d'un set : sur les deux premiers tournois
+  Radiance, 28 fiches sur 43 perdaient leurs cartes, Viktor compris.
   **Les cartes ne se comptent que sur les tournois d'après le dernier ban** (choix
   d'Allan, 17 octobre 2026) : daté après la dernière entrée de `DATES_BANS`, et sans
   AUCUNE liste qui joue une carte bannie (la Chine jouait encore Stacked Deck le
-  19 septembre). Les résultats restent comptés sur tout le set, comme la tier list.
+  19 septembre). La règle vaut pour tout set joué après le ban, en cours ou non :
+  Vendetta, devenu le set de repli, la garde. Les résultats restent comptés sur tout
+  le set, comme la tier list.
   Sous dix listes depuis le ban, la fiche garde ses résultats et tait ses cartes.
   Au lendemain d'un nouveau ban, avant tout tournoi importé, toutes les fiches du set
   en cours (celui du tournoi le plus récent de `tournament-flags.ts`) taisent leurs

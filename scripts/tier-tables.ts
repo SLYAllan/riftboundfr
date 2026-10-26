@@ -346,3 +346,46 @@ export const vendettaTier: TierEntry[] = [
   { legendName: "Darius, Hand of Noxus", tier: "D", comment: "4 joueurs. Origines, hors rotation." },
   { legendName: "Lee Sin, Blind Monk", tier: "D", comment: "6 joueurs sur 13 494. Origines, hors rotation." },
 ];
+
+export const radianceTier: TierEntry[] = [
+  // Relevé du 26 octobre 2026, sur le CLASSEMENT COMPLET des deux premiers
+  // tournois Radiance : les Showdowns de Sacramento (719 classés) et de Melbourne
+  // (239), 958 joueurs. Même méthode que Vendetta : joueurs classés, coupe à 10 %
+  // du champ de chaque tournoi. Chiffres par `scripts/tier-stats.mts Radiance 0.10 15`.
+  //
+  // Conversion moyenne du format : 10,0 %.
+  //
+  // Seuil abaissé à 15 joueurs (40 ailleurs) : à 40, trois Légendes seulement
+  // passaient. Lettres validées par Allan le 26 octobre. Sur deux tournois, seuls
+  // Riven et Kennen tiennent le test au-dessus, Mordekaiser et Seraphine en
+  // dessous ; tout le reste est une lecture, à revoir à chaque tournoi. Les 20
+  // Légendes sous 15 joueurs n'y sont pas, dont Viktor (7 joueurs), pourtant
+  // deuxième à Sacramento.
+
+  { legendName: "Riven, The Exile", tier: "S", comment: "116 joueurs, la Légende la plus jouée du set, et 30,2 % de conversion contre 10,0 % pour le format (p < 0,001). A gagné le Showdown de Sacramento, avec quatre places dans son Top 8." },
+  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "64 joueurs, 26,6 % de conversion (p < 0,001). Le maître de Vendetta tient son rang avec le nouveau set." },
+  { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "A gagné le Showdown de Melbourne. 21,7 % de conversion sur 23 joueurs, trop peu pour que l'écart tienne le test (p = 0,07)." },
+  { legendName: "LeBlanc, Deceiver", tier: "A", comment: "20,0 % sur 30 joueurs, le double de la moyenne, sans que l'écart tienne le test (p = 0,12)." },
+  { legendName: "Akali, Rogue Assassin", tier: "B", comment: "12,8 % sur 39 joueurs, troisième à Sacramento." },
+  { legendName: "Vex, Gloomist", tier: "B", comment: "12,1 % sur 33 joueurs." },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "B", comment: "11,8 % sur 34 joueurs." },
+  { legendName: "Vi, Piltover Enforcer", tier: "B", comment: "11,8 % sur 17 joueurs." },
+  { legendName: "Rengar, Pridestalker", tier: "B", comment: "11,1 % sur 36 joueurs, huitième à Sacramento." },
+  { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "7,4 % sur 27 joueurs." },
+  { legendName: "Jayce, Defender of Tomorrow", tier: "C", comment: "6,3 % sur 16 joueurs." },
+  { legendName: "Jhin, Virtuoso", tier: "C", comment: "5,6 % sur 18 joueurs." },
+  { legendName: "Master Yi, Wuju Bladesman", tier: "C", comment: "5,0 % sur 20 joueurs." },
+  { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "42 joueurs, la troisième Légende la plus jouée du set, pour 4,8 % de conversion." },
+  { legendName: "Master Yi, Wuju Master", tier: "C", comment: "3,8 % sur 26 joueurs." },
+  { legendName: "Ekko, Boy Who Shattered Time", tier: "C", comment: "3,6 % sur 28 joueurs." },
+  { legendName: "Orianna, Lady of Clockwork", tier: "C", comment: "2,7 % sur 37 joueurs." },
+  { legendName: "Evelynn, Agony's Embrace", tier: "C", comment: "2,6 % sur 39 joueurs." },
+  { legendName: "Mordekaiser, Iron Revenant", tier: "D", comment: "34 joueurs, aucune place en coupe, écart établi (p = 0,045)." },
+  { legendName: "Seraphine, Starry-Eyed Songstress", tier: "D", comment: "36 joueurs, aucune place en coupe, écart établi (p = 0,046)." },
+  { legendName: "Jarvan IV, Exemplar of Demacia", tier: "D", comment: "20 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Ziggs, Hexplosives Expert", tier: "D", comment: "19 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Shen, Eye of Twilight", tier: "D", comment: "18 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Pyke, Bloodharbor Ripper", tier: "D", comment: "17 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "K'Sante, Pride of Nazumah", tier: "D", comment: "17 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Zed, Master of Shadows", tier: "D", comment: "17 joueurs, aucune place en coupe. Trop peu pour un test." },
+];

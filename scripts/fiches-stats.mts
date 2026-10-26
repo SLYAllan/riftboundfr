@@ -94,7 +94,7 @@ const apresBan = tournoisApresBan(
 );
 // Sur stderr : stdout est le JSON que `maj:stats` écrit dans un fichier.
 for (const c of apresBan.ecartes) console.error(`Après le ban mais joue une carte bannie, écarté : ${c}`);
-if (!ancienSet) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
+if (apresBan.depuisBan) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
 
 /** Place d'un deck, ou l'infini quand riftdecks ne la donne pas : ça ne doit pas passer devant un vrai Top 8. */
 const place = (p: string | null): number => {
@@ -203,7 +203,7 @@ for (const [legende, lot] of [...parLegende].sort((a, b) => b[1].length - a[1].l
   sortie[legende] = {
     set,
     decks: lotCartes.length,
-    ...(ancienSet ? {} : { depuisBan: DERNIER_BAN }),
+    ...(apresBan.depuisBan ? { depuisBan: DERNIER_BAN } : {}),
     ...(sousSeuil ? { cartesNonComptees: true } : {}),
     joueurs,
     coupe,

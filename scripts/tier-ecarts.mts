@@ -19,7 +19,7 @@
  */
 import { chargerCorpus, bilanParLegende } from "./corpus-tournois";
 import { pBinomial } from "./stats-binomial";
-import { globalTier, vendettaTier, originsTier, spiritforgedTier, unleashedTier, type TierEntry } from "./tier-tables";
+import { globalTier, radianceTier, vendettaTier, originsTier, spiritforgedTier, unleashedTier, type TierEntry } from "./tier-tables";
 
 const SEUIL_P = 0.05;
 /** Sous 40 joueurs, aucun test ne tranche : on ne dit rien. */
@@ -93,6 +93,7 @@ async function controler(titre: string, set: string | null, table: TierEntry[]) 
 }
 
 const listes: [string, string | null, TierEntry[]][] = [
+  ["Tier List Radiance", "Radiance", radianceTier],
   ["Tier List Vendetta", "Vendetta", vendettaTier],
   ["Tier List Globale", null, globalTier],
   ["Tier List Unleashed", "Unleashed", unleashedTier],

@@ -8,7 +8,7 @@
  * faiblesses sont écrits à la main et relus à la main.
  *
  *   npx tsx --env-file=.env scripts/fiches-stats.mts Radiance 10 > data/fiches-stats.json
- *   npx tsx scripts/fiches-maj.mts data/fiches-stats.json [--ecrire]
+ *   npx tsx scripts/fiches-maj.mts data/fiches-stats.json [--repli data/fiches-stats-repli.json] [--ecrire]
  *
  * Sans `--ecrire`, il n'écrit rien et se contente de dire ce qu'il changerait.
  * Une Légende vue moins de dix fois n'est pas touchée : on ne réécrit pas une
@@ -18,7 +18,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
 import { estNoyau, role, roleChampion } from "./fiches-roles";
-import { vendettaTier } from "./tier-tables";
+import { radianceTier } from "./tier-tables";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
 
@@ -31,7 +31,20 @@ const ecrire = process.argv.includes("--ecrire");
 if (!chemin) throw new Error("Donne le chemin du JSON produit par fiches-stats.mts");
 
 // PowerShell écrit ses redirections en UTF-8 avec BOM : JSON.parse s'y casse les dents.
-const stats: Record<string, StatsLegende> = JSON.parse((await fs.readFile(chemin, "utf-8")).replace(/^﻿/, ""));
+const lireStats = async (c: string): Promise<Record<string, StatsLegende>> =>
+  JSON.parse((await fs.readFile(c, "utf-8")).replace(/^﻿/, ""));
+const stats = await lireStats(chemin);
+
+// Le repli : une Légende sans cartes comptées dans le set en cours prend celles
+// du set précédent, dont le nom s'écrit sur sa fiche. Au passage à Radiance, sur
+// deux tournois, 28 fiches sur 43 perdaient leurs cartes et leurs chiffres
+// Vendetta pour un cumul de toutes les ères, Viktor compris, deuxième à Sacramento.
+const iRepli = process.argv.indexOf("--repli");
+if (iRepli > 0) {
+  const repli = await lireStats(process.argv[iRepli + 1]);
+  const complet = (s?: StatsLegende) => Boolean(s && !s.toutesEres && !s.cartesNonComptees);
+  for (const [nom, r] of Object.entries(repli)) if (!complet(stats[nom]) && complet(r)) stats[nom] = r;
+}
 
 type Fiche = {
   legendName?: string;
@@ -182,7 +195,7 @@ const LETTRE: Record<number, string> = { 1: "S", 2: "A", 3: "B", 4: "C", 5: "D" 
 // à l'expression régulière lisait `seed-tier-lists.ts`, et le jour où les tableaux
 // ont déménagé dans `tier-tables.ts` elle n'a plus rien trouvé — sans une erreur,
 // en laissant les rangs des fiches là où ils étaient.
-const tiers = new Map(vendettaTier.map((e) => [cle(e.legendName), e.tier]));
+const tiers = new Map(radianceTier.map((e) => [cle(e.legendName), e.tier]));
 const CHIFFRE: Record<string, number> = { S: 1, A: 2, B: 3, C: 4, D: 5 };
 const ecarts: string[] = [];
 for (const f of fichiers) {
@@ -202,5 +215,5 @@ for (const f of fichiers) {
 }
 if (ecarts.length) {
   const verbe = ecrire ? "recalés sur" : "à recaler sur";
-  console.log(`\n${ecarts.length} tiers ${verbe} la tier list Vendetta :\n${ecarts.join("\n")}`);
+  console.log(`\n${ecarts.length} tiers ${verbe} la tier list Radiance :\n${ecarts.join("\n")}`);
 }

@@ -18,7 +18,9 @@
  *                                  → data/tournaments/meta-parts.json  (lu par /meta et l'accueil)
  *   2. `seed-tier-lists.ts`        les 5 tier lists en base, écrites à la main
  *                                  d'après `tier-stats.mts`, seedées ici
- *   3. `fiches-stats.mts`          les chiffres par Légende, sur LE corpus partagé
+ *   3. `fiches-stats.mts`          les chiffres par Légende, sur LE corpus partagé ;
+ *                                  3b, les mêmes sur le set précédent, repli des
+ *                                  fiches sous le seuil du set en cours
  *   4. `fiches-maj.mts`            les pose dans data/fiches/, et aligne les rangs
  *                                  sur la tier list (sinon /legendes et /tier-list
  *                                  se contredisent)
@@ -36,7 +38,7 @@
  * ou un chiffre bouge, relancer, puis `npm run verify`.
  */
 import { spawnSync } from "node:child_process";
-import { SET_EN_COURS } from "../src/lib/tournament-order";
+import { ORDRE_SETS, SET_EN_COURS } from "../src/lib/tournament-order";
 
 const sec = process.argv.includes("--sec");
 
@@ -67,8 +69,16 @@ const etapes: Etape[] = [
     ecrit: true,
   },
   {
+    // Le set précédent, pour les fiches sous le seuil du set en cours : sans lui,
+    // au début de Radiance, 28 fiches sur 43 perdaient leurs cartes.
+    titre: "3b/6 Chiffres par Légende, set précédent (repli des fiches)",
+    cmd: ["tsx", "--env-file=.env", "scripts/fiches-stats.mts", ORDRE_SETS[1], "10"],
+    vers: "data/fiches-stats-repli.json",
+    ecrit: true,
+  },
+  {
     titre: "4/6  Fiches Légendes (cartes, résultats, rangs)",
-    cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats.json", ...(sec ? [] : ["--ecrire"])],
+    cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats.json", "--repli", "data/fiches-stats-repli.json", ...(sec ? [] : ["--ecrire"])],
   },
   {
     titre: "5/6  Sections chiffrées de DECKBUILDING-RULES",

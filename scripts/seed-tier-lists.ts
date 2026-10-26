@@ -6,6 +6,7 @@ import {
   unleashedTier,
   globalTier,
   vendettaTier,
+  radianceTier,
   type TierEntry,
 } from "./tier-tables";
 
@@ -78,9 +79,10 @@ async function main() {
 
   await seedTierList("Tier List Origins", "Origins", originsTier, false);
   await seedTierList("Tier List Spiritforged", "Spiritforged", spiritforgedTier, false);
-  // Vendetta = format actuel → liste « courante » affichée par défaut (/meta + /tier-list).
   await seedTierList("Tier List Unleashed", "Unleashed", unleashedTier, false);
-  await seedTierList("Tier List Vendetta", "Vendetta", vendettaTier, true);
+  await seedTierList("Tier List Vendetta", "Vendetta", vendettaTier, false);
+  // Radiance = format actuel → liste « courante » affichée par défaut (/meta + /tier-list).
+  await seedTierList("Tier List Radiance", "Radiance", radianceTier, true);
   await seedTierList("Tier List Globale", "Global", globalTier, false);
 
   console.log("\n✅ All tier lists seeded.");

@@ -63,7 +63,7 @@ const apresBan = tournoisApresBan(
   })),
   ancienSet,
 );
-if (!ancienSet) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
+if (apresBan.depuisBan) console.error(`Cartes comptées sur ${apresBan.retenus.size} tournois d'après le ban du ${DERNIER_BAN}.`);
 
 for (const deck of decks.filter((d) => apresBan.garder(d.tournament))) {
   const e = parLegende.get(deck.legend) ?? { listes: 0, cartes: new Map<string, number[]>() };

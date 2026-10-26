@@ -41,6 +41,20 @@ describe("tournoisApresBan", () => {
   it("ancien set : garde tout", () => {
     const r = tournoisApresBan([{ tournoi: "ancien set", date: "2000-01-01", cartes: ["Stacked Deck"] }], true);
     expect(r.garder("ancien set")).toBe(true);
+    expect(r.depuisBan).toBe(false);
+  });
+
+  it("ancien set joué après le ban : ne garde que l'après-ban", () => {
+    const r = tournoisApresBan(
+      [
+        { tournoi: "avant", date: "2000-01-01", cartes: ["Stacked Deck"] },
+        { tournoi: "après", date: apres, cartes: ["Defy"] },
+      ],
+      true,
+    );
+    expect(r.garder("avant")).toBe(false);
+    expect(r.garder("après")).toBe(true);
+    expect(r.depuisBan).toBe(true);
   });
 
   it("date le dernier ban sur la plus récente des annonces", () => {

@@ -20,9 +20,10 @@ export function setEnCours(): string {
  * carte bannie : la Chine jouait encore Stacked Deck le 19 septembre, au lendemain
  * du ban.
  *
- * Un ancien set garde tout : ses tournois précèdent le ban. Le set en cours ne
- * garde que l'après-ban, même vide : au lendemain d'un ban, avant tout tournoi
- * importé, recompter tout le set ramenait la carte bannie dans les fiches.
+ * Un ancien set garde tout, à condition qu'aucun de ses tournois ne suive le ban.
+ * Le set en cours ne garde que l'après-ban, même vide : au lendemain d'un ban,
+ * avant tout tournoi importé, recompter tout le set ramenait la carte bannie dans
+ * les fiches. `depuisBan` dit lequel des deux s'applique.
  */
 export function tournoisApresBan(
   listes: Iterable<{ tournoi: string; date: string | undefined; cartes: string[] }>,
@@ -41,5 +42,8 @@ export function tournoisApresBan(
     if (t.interdite) ecartes.push(nom);
     else retenus.add(nom);
   }
-  return { retenus, ecartes, garder: (tournoi: string) => ancienSet || retenus.has(tournoi) };
+  // Vendetta, devenu ancien avec Radiance, a joué après le ban du 18 septembre :
+  // tout garder remettait Stacked Deck dans les fiches qui se replient sur lui.
+  const depuisBan = !(ancienSet && retenus.size === 0 && ecartes.length === 0);
+  return { retenus, ecartes, depuisBan, garder: (tournoi: string) => !depuisBan || retenus.has(tournoi) };
 }
