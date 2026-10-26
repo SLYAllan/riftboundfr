@@ -1,0 +1,263 @@
+1. [Home](https://riftdecks.com/)
+2. [Riftbound Meta](https://riftdecks.com/legends/constructed)
+3. [Lillia, Bashful Bloom](https://riftdecks.com/legends/constructed/lillia-bashful-bloom)
+
+# Lillia, Bashful Bloom by roy werbel
+
+"Lillia, Bashful Bloom" decklist by Roy werbel. 242nd at Riftbound Showdown 25k - LDXP Sacramento - Final Standings by Laughing Dragon on 2026-10-24
+
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Lillia, Bashful Bloom](https://riftdecks.com/legends/constructed/lillia-bashful-bloom) [Calm Mind](https://riftdecks.com/riftbound-metagame/constructed/calm-mind) [roy werbel](https://riftdecks.com/riftbound-decks?player=roy+werbel&deck_type=all) [Riftbound Showdown 25k - LDXP Sacramento - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-showdown-25k-ldxp-sacramento-final-standings-tournament-decks-18559) [Riftbound Decks](https://riftdecks.com/)
+
+**![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)Lillia, Bashful Bloom**
+**, a deck by [roy werbel](https://riftdecks.com/riftbound-decks?player=roy+werbel&deck_type=all)**
+
+242nd at
+Riftbound Showdown 25k - LDXP Sacramento - Final Standings 755 players on
+2026-10-24
+
+[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
+\|
+66 Cards \|
+
+
+
+## Text Decklist
+
+[Bookmark](https://riftdecks.com/riftbound-metagame/deck-lillia-bashful-bloom-337489#) Similar Decks
+
+Export this Deck
+
+
+Submit Missing Cards or Errors
+
+![](https://riftdecks.com/img/cards/riftbound/UNL/unl-208-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_cropped.png)![](https://riftdecks.com/img/cards/riftbound/UNL/unl-230-219_cropped.png)
+
+|     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Lillia, Bashful Bloom](https://riftdecks.com/cards/details-lillia-bashful-bloom) | $0.23 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (1) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Lillia, Fae Fawn](https://riftdecks.com/cards/details-lillia-fae-fawn) | $0.30 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (4) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Ravenbloom Student](https://riftdecks.com/cards/details-ravenbloom-student) | $0.26 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Scuttle Crab](https://riftdecks.com/cards/details-scuttle-crab) | $4.49 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (12) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Blossoming Dreamroot](https://riftdecks.com/cards/details-blossoming-dreamroot) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Brutalizer](https://riftdecks.com/cards/details-brutalizer) | $0.34 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.52 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sprite Fountain](https://riftdecks.com/cards/details-sprite-fountain) | $2.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Heart of Dark Ice](https://riftdecks.com/cards/details-heart-of-dark-ice) | $0.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (23) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Charm](https://riftdecks.com/cards/details-charm) | $0.49 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Defy](https://riftdecks.com/cards/details-defy) | $2.39 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Stupefy](https://riftdecks.com/cards/details-stupefy) | $0.27 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Battle Preparations](https://riftdecks.com/cards/details-battle-preparations) | $0.28 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Discipline](https://riftdecks.com/cards/details-discipline) | $0.99 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Smoke and Mirrors](https://riftdecks.com/cards/details-smoke-and-mirrors) | $0.50 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Smoke Screen](https://riftdecks.com/cards/details-smoke-screen) | $0.16 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.30 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Sprite Burst](https://riftdecks.com/cards/details-sprite-burst) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Unchecked Power](https://riftdecks.com/cards/details-unchecked-power) | $24.06 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (3) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Black Flame Altar](https://riftdecks.com/cards/details-black-flame-altar) | $0.07 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Dusk Rose Lab](https://riftdecks.com/cards/details-dusk-rose-lab) | $0.08 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Seat of Power](https://riftdecks.com/cards/details-seat-of-power) | $0.18 | ![colorless](https://riftdecks.com/img/symbols/riftbound/rune_colorless.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **6** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **6** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.08 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+| ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.38 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Turn to Dust](https://riftdecks.com/cards/details-turn-to-dust) | $0.08 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Heart of Dark Ice](https://riftdecks.com/cards/details-heart-of-dark-ice) | $0.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Singularity](https://riftdecks.com/cards/details-singularity) | $0.55 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Unchecked Power](https://riftdecks.com/cards/details-unchecked-power) | $24.06 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+|  |  |
+
+Buy this deck
+
+![](https://riftdecks.com/img/logos/tcg_player.png)$82.08
+@TCGPlayer
+
+Affiliate link disclaimer
+
+x1
+
+![](https://riftdecks.com/img/cards/riftbound/OGN/ogn-123-298_full.png)
+
+## Visual Decklist
+
+Deck Style
+
+Grouped
+
+Horizontal
+
+Grid
+
+Download Image
+
+
+![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)
+
+242nd
+
+Lillia, Bashful Bloom
+
+
+**by roy werbel**
+
+Riftbound Showdown 25k - LDXP Sacramento - Final Standings
+
+@ Laughing Dragon 2026-10-24
+
+755 Players
+
+![](https://static.riftdecks.com/images/organization_logos/e436b6a7-8218-4582-816a-b7f04669911a.jpeg)
+
+x1
+
+[![Lillia, Bashful Bloom](https://riftdecks.com/img/cards/riftbound/UNL/unl-230-219_full.png)](https://riftdecks.com/cards/details-lillia-bashful-bloom)
+
+x6
+
+[![Calm Rune](https://riftdecks.com/img/cards/riftbound/OGN/ogn-042-298_full.png)](https://riftdecks.com/cards/details-calm-rune)
+
+x6
+
+[![Mind Rune](https://riftdecks.com/img/cards/riftbound/OGN/ogn-089a-298_full.png)](https://riftdecks.com/cards/details-mind-rune)
+
+x1
+
+[![Black Flame Altar](https://riftdecks.com/img/cards/riftbound/UNL/unl-208-219_full.png)](https://riftdecks.com/cards/details-black-flame-altar)
+
+x1
+
+[![Dusk Rose Lab](https://riftdecks.com/img/cards/riftbound/UNL/unl-209-219_full.png)](https://riftdecks.com/cards/details-dusk-rose-lab)
+
+x1
+
+[![Seat of Power](https://riftdecks.com/img/cards/riftbound/SFD/sfd-217-221_full.png)](https://riftdecks.com/cards/details-seat-of-power)
+
+x1
+
+[![Lillia, Fae Fawn](https://riftdecks.com/img/cards/riftbound/UNL/unl-082a-219_full.png)](https://riftdecks.com/cards/details-lillia-fae-fawn)
+
+x2
+
+[![Ravenbloom Student](https://riftdecks.com/img/cards/riftbound/OGN/ogn-103-298_full.png)](https://riftdecks.com/cards/details-ravenbloom-student)
+
+x2
+
+[![Scuttle Crab](https://riftdecks.com/img/cards/riftbound/UNL/unl-053-219_full.png)](https://riftdecks.com/cards/details-scuttle-crab)
+
+x2
+
+[![Blossoming Dreamroot](https://riftdecks.com/img/cards/riftbound/RAD/rad-024-167_full.png)](https://riftdecks.com/cards/details-blossoming-dreamroot)
+
+x3
+
+[![Brutalizer](https://riftdecks.com/img/cards/riftbound/SFD/sfd-042-221_full.png)](https://riftdecks.com/cards/details-brutalizer)
+
+x3
+
+[![Mask of Foresight](https://riftdecks.com/img/cards/riftbound/OGN/ogn-060-298_full.png)](https://riftdecks.com/cards/details-mask-of-foresight)
+
+x3
+
+[![Sprite Fountain](https://riftdecks.com/img/cards/riftbound/UNL/unl-078-219_full.png)](https://riftdecks.com/cards/details-sprite-fountain)
+
+x1
+
+[![Heart of Dark Ice](https://riftdecks.com/img/cards/riftbound/SFD/sfd-052-221_full.png)](https://riftdecks.com/cards/details-heart-of-dark-ice)
+
+x3
+
+[![Charm](https://riftdecks.com/img/cards/riftbound/OGN/ogn-043-298_full.png)](https://riftdecks.com/cards/details-charm)
+
+x3
+
+[![Defy](https://riftdecks.com/img/cards/riftbound/OGN/ogn-045-298_full.png)](https://riftdecks.com/cards/details-defy)
+
+x2
+
+[![Stupefy](https://riftdecks.com/img/cards/riftbound/OGN/ogn-095-298_full.png)](https://riftdecks.com/cards/details-stupefy)
+
+x3
+
+[![Battle Preparations](https://riftdecks.com/img/cards/riftbound/RAD/rad-032-167_full.png)](https://riftdecks.com/cards/details-battle-preparations)
+
+x3
+
+[![Discipline](https://riftdecks.com/img/cards/riftbound/OGN/ogn-058-298_full.png)](https://riftdecks.com/cards/details-discipline)
+
+x2
+
+[![Smoke and Mirrors](https://riftdecks.com/img/cards/riftbound/UNL/unl-083-219_full.png)](https://riftdecks.com/cards/details-smoke-and-mirrors)
+
+x2
+
+[![Smoke Screen](https://riftdecks.com/img/cards/riftbound/OGN/ogn-093-298_full.png)](https://riftdecks.com/cards/details-smoke-screen)
+
+x1
+
+[![Back Off](https://riftdecks.com/img/cards/riftbound/UNL/unl-042-219_full.png)](https://riftdecks.com/cards/details-back-off)
+
+x3
+
+[![Sprite Burst](https://riftdecks.com/img/cards/riftbound/UNL/unl-069-219_full.png)](https://riftdecks.com/cards/details-sprite-burst)
+
+x1
+
+[![Unchecked Power](https://riftdecks.com/img/cards/riftbound/OGN/ogn-123-298_full.png)](https://riftdecks.com/cards/details-unchecked-power)
+
+## Sideboard
+
+x3
+
+[![Decree of Insight](https://riftdecks.com/img/cards/riftbound/VEN/ven-061-166_full.png)](https://riftdecks.com/cards/details-decree-of-insight)
+
+x3
+
+[![Turn to Dust](https://riftdecks.com/img/cards/riftbound/UNL/unl-070-219_full.png)](https://riftdecks.com/cards/details-turn-to-dust)
+
+x1
+
+[![Heart of Dark Ice](https://riftdecks.com/img/cards/riftbound/SFD/sfd-052-221_full.png)](https://riftdecks.com/cards/details-heart-of-dark-ice)
+
+x2
+
+[![Singularity](https://riftdecks.com/img/cards/riftbound/OGN/ogn-105-298_full.png)](https://riftdecks.com/cards/details-singularity)
+
+x1
+
+[![Unchecked Power](https://riftdecks.com/img/cards/riftbound/OGN/ogn-123-298_full.png)](https://riftdecks.com/cards/details-unchecked-power)
+
+## Deck Stats
+
+| types |
+| --- |
+| battlefield | 5% (3) | 5% |
+| gear | 20% (13) | 20% |
+| legend | 2% (1) | 2% |
+| rune | 19% (12) | 19% |
+| spell | 49% (32) | 49% |
+| unit | 8% (5) | 8% |
+| cmc |
+| 0 | 25% (16) | 25% |
+| 1 | 17% (11) | 17% |
+| 2 | 43% (28) | 43% |
+| 3 | 7% (4) | 7% |
+| 5 | 5% (3) | 5% |
+| 6 | 4% (2) | 4% |
+| 7 | 4% (2) | 4% |
+| domains |
+| calm | 49% (32) | 49% |
+| colorless | 5% (3) | 5% |
+| mind | 49% (32) | 49% |

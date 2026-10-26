@@ -35,7 +35,7 @@ export interface TournamentInfo {
   playerCount?: number;
   type: "regional" | "city_challenge" | "worlds" | "online" | "other";
   date?: string;
-  set?: "Origins" | "Unleashed" | "Spiritforged" | "Vendetta";
+  set?: "Origins" | "Unleashed" | "Spiritforged" | "Vendetta" | "Radiance";
   format?: "Conquest" | "Standard";
   hidden?: boolean;
 }
@@ -396,6 +396,10 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // 93 joueurs et restent dehors.
   "Dongguan Manbo Cup (2026-08-08)": { name: "Dongguan Manbo Cup", shortName: "Dongguan Manbo Cup", countryCode: "CN", city: "Dongguan", location: "Dongguan, Chine", playerCount: 109, type: "city_challenge", date: "2026-08-08", set: "Vendetta", format: "Standard" },
   "Riftbound Showdown Ottawa (2026-08-08)": { name: "Riftbound Showdown Ottawa", shortName: "Ottawa Showdown", countryCode: "CA", city: "Ottawa", location: "Ottawa, Canada", playerCount: 594, type: "regional", date: "2026-08-08", set: "Vendetta", format: "Standard" },
+  // Les deux premiers tournois Radiance du site. Effectifs relevés sur la page
+  // riftdecks (« N Players »), pas le nombre de listes publiées.
+  "Riftbound Showdown Sacramento (2026-10-24)": { name: "Riftbound Showdown Sacramento", shortName: "Sacramento Showdown", countryCode: "US", city: "Sacramento", location: "Sacramento, CA, USA", playerCount: 755, type: "regional", date: "2026-10-24", set: "Radiance", format: "Standard" },
+  "Riftbound Showdown Melbourne (2026-10-23)": { name: "Riftbound Showdown Melbourne", shortName: "Melbourne Showdown", countryCode: "AU", city: "Melbourne", location: "Melbourne, Australie", playerCount: 251, type: "regional", date: "2026-10-23", set: "Radiance", format: "Standard" },
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },
