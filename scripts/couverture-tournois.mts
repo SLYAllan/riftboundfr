@@ -22,6 +22,7 @@
 import { readFileSync } from "node:fs";
 import { PrismaClient } from "@prisma/client";
 import { getTournamentInfo } from "../src/lib/tournament-flags";
+import { rangSet } from "../src/lib/tournament-order";
 
 /**
  * Tournois dont riftdecks NE PUBLIE PAS le classement complet, seulement les
@@ -68,8 +69,7 @@ async function main() {
     parSet.set(g.setTag, liste);
   }
 
-  const ORDRE = ["Vendetta", "Unleashed", "Spiritforged", "Origins"];
-  for (const set of [...parSet.keys()].sort((a, b) => ORDRE.indexOf(a) - ORDRE.indexOf(b))) {
+  for (const set of [...parSet.keys()].sort((a, b) => rangSet(a) - rangSet(b))) {
     const lignes = parSet.get(set)!.sort((a, b) => {
       const ca = a.joueurs ? a.listes / a.joueurs : 9;
       const cb = b.joueurs ? b.listes / b.joueurs : 9;

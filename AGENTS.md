@@ -88,9 +88,10 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   le deck n'a pas de liste → on ne la fabrique pas.
 - **Avant tout seed/publication**, lancer le validateur :
   `python -X utf8 scripts/validate-decklists.py`. Il sort en 1 sur QUATRE cas : une
-  decklist qui ne correspond pas à sa source brute (= fabrication), une réserve
-  Vendetta incomplète, un fichier illisible, et une liste sans source brute qui
-  n'est pas au relevé `data/decklists-inverifiables.json`. Ce relevé fige les
+  decklist qui ne correspond pas à sa source brute (= fabrication), une liste
+  Vendetta ou Radiance incomplète (66 cartes, réserve de 10 comprise), un fichier
+  illisible, et une liste sans source brute qui n'est pas au relevé
+  `data/decklists-inverifiables.json`. Ce relevé fige les
   1 159 listes importées avant les scrapes ; `--ecrire-releve` le refige, JAMAIS
   pour faire taire un refus — une liste neuve sans source se source ou se supprime.
 - Les articles Top 8 avec decklists codées en dur (`prisma/seed-top8-articles.ts`)
@@ -170,7 +171,8 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   depuis la galerie officielle de Riot (Radiance, `RAD`, en octobre 2026). Upsert par
   `riftboundId`, la clé de Riftcodex aussi. Il recoupe d'abord sa conversion sur les cartes
   déjà en base et en affiche les écarts. La galerie montre le texte IMPRIMÉ : le relancer
-  défait un errata posé en base, à reposer après. Puis `npm run maj:overlay`.
+  défait un errata posé en base, que `scripts/apply-errata.ts` repose (il rejoue
+  tous ceux de `src/lib/errata.ts`). Puis `npm run maj:overlay`.
 - **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
   Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
   source est le **figurier OFFICIEL de l'éditeur chinois**,
@@ -254,6 +256,10 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   `tournamentContext: null OR featured: true` : il cachait tous les decks
   Vendetta et vidait les liens venus de `/legendes`. `placement` est du texte en
   base ; le tri passe par `comparerPlacements`, sinon `10th` précède `2nd`.
+- **`tournament-order.ts` — le set en cours.** `ORDRE_SETS` range les sets de
+  tournoi du plus récent au plus ancien ; son premier, `SET_EN_COURS`, ouvre
+  l'accueil, `/decks`, `/meta` et la routine `maj:stats`. Un nouveau set s'ajoute
+  en tête, et rien d'autre : il était écrit en dur à huit endroits.
 - `deck-code.ts` / `deck-codec.ts` — lecture d'une decklist en texte, et
   encodage/décodage du code court partagé dans les URL `/d/<code>`.
 - **`card-keywords.ts` — passage commun des filtres de mécaniques.** Le
@@ -309,7 +315,7 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   déclaré complet un cadre resté vide. Une Légende absente des deux tables n'affiche
   rien, en silence.
 - `banned-cards.ts`, `bans.ts`, `core-rules.ts`, `domains.ts`,
-  `tournament-flags.ts`, `errata-2026-07.ts` — règles du jeu et métadonnées de
+  `tournament-flags.ts`, `errata.ts` — règles du jeu et métadonnées de
   tournoi codées en dur, relues par plusieurs pages.
 - **Ajouter un type de bloc d'article demande QUATRE retouches**, comme `event`
   pour l'overlay : le type dans `src/types/index.ts`, le rendu dans
@@ -549,7 +555,7 @@ Déduites du code existant. À suivre, pas à discuter.
 - **Aucun tiret cadratin (—) dans le contenu rendu du site.** Toléré dans les
   docs internes et les commentaires.
 - Terminologie française officielle du jeu : voir `docs/META-KNOWLEDGE.md`.
-- Le libellé court du set Vendetta est `VEN` sur l’accueil ; `/tier-list` affiche `Vendetta`.
+- Le libellé court d'un set sur l’accueil est son code (`VEN`, `RAD`) ; `/tier-list` affiche son nom (`Vendetta`, `Radiance`).
 
 ## Nommage
 

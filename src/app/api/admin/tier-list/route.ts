@@ -9,6 +9,7 @@ const SET_CODES: Record<string, string[]> = {
   Spiritforged: ["SFD"],
   Unleashed: ["UNL"],
   Vendetta: ["VEN"],
+  Radiance: ["RAD"],
 };
 
 export async function GET() {

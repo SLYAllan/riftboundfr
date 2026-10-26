@@ -11,6 +11,7 @@ import partsDeClassement from "../../../data/tournaments/meta-parts.json";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { BoutonLien } from "@/components/bouton";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { rangSet } from "@/lib/tournament-order";
 
 const getMetaData = unstable_cache(
   async () => {
@@ -45,7 +46,7 @@ const getMetaData = unstable_cache(
 );
 
 const metadata: Metadata = {
-  title: { absolute: "Méta Riftbound Vendetta - Decks et Légendes les plus joués en tournoi" },
+  title: { absolute: "Méta Riftbound Radiance - Decks et Légendes les plus joués en tournoi" },
   description:
     "Le méta deck Riftbound par set et tournoi : les decks et Légendes les plus joués, comptés sur le classement complet des tournois, pas seulement sur les listes publiées.",
   alternates: { canonical: "/meta" },
@@ -78,7 +79,7 @@ export default async function MetaSnapshotPage() {
   }));
   const sets = [...new Set(data.tranches.map((tranche) => tranche.set))]
     .filter(Boolean)
-    .sort((a, b) => (a === "Vendetta" ? -1 : b === "Vendetta" ? 1 : a.localeCompare(b)));
+    .sort((a, b) => rangSet(a) - rangSet(b));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">

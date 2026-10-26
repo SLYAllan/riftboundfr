@@ -33,6 +33,7 @@ import { displayLegendName, formatDate } from "@/lib/utils";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { jsonLdHtml, langueSchema } from "@/lib/json-ld";
+import { rangSet } from "@/lib/tournament-order";
 import { cache } from "react";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
@@ -181,8 +182,6 @@ const TIER_ORDER: Record<string, number> = { S: 0, A: 1, B: 2, C: 3, D: 4 };
  * Une Légende qui n'a aucun deck dans le set courant ouvre sur le set le plus
  * récent où elle en a un : le tri s'en charge tout seul, il n'y a rien à filtrer.
  */
-const ORDRE_SET: Record<string, number> = { Vendetta: 0, Unleashed: 1, Spiritforged: 2, Origins: 3 };
-const rangSet = (setTag: string | null) => (setTag ? ORDRE_SET[setTag] ?? 9 : 9);
 function placementRank(p: string | null): number {
   if (!p) return 9999;
   const m = p.match(/\d+/);

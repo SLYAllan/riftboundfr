@@ -10,7 +10,7 @@ on skip/supprime — on ne publie pas de données fausses ou incertaines.
 Usage:  python -X utf8 scripts/validate-decklists.py
 Exit 1 dans QUATRE cas :
   - un MISMATCH (cartes différentes de la source brute) ;
-  - une réserve Vendetta incomplète ;
+  - une liste Vendetta ou Radiance incomplète ;
   - un fichier illisible, source brute ou decklist ;
   - une decklist sans source brute qui n'est pas au relevé
     data/decklists-inverifiables.json.
@@ -206,13 +206,13 @@ if '--ecrire-releve' in sys.argv:
     print(f"Relevé réécrit : {len(inverifiables)} listes sans source brute.")
     sys.exit(0)
 
-print(f"verified={verified}  MISMATCH(fabriqué?)={mismatch}  réserve Vendetta incomplète={incomplete_side_deck}  unverifiable(pas de source brute)={unverifiable}")
+print(f"verified={verified}  MISMATCH(fabriqué?)={mismatch}  liste Vendetta-Radiance incomplète={incomplete_side_deck}  unverifiable(pas de source brute)={unverifiable}")
 if mism_list:
     print("\n=== MISMATCH (cartes != source brute — à corriger ou supprimer) ===")
     for f, pl, diff in mism_list[:50]:
         sys.stdout.buffer.write(f"  {f}  player={pl}  diff={diff}\n".encode('utf-8','replace'))
 if incomplete_side_decks:
-    print("\n=== RÉSERVE VENDETTA INCOMPLÈTE — deck à supprimer ===")
+    print("\n=== LISTE VENDETTA OU RADIANCE INCOMPLÈTE — deck à supprimer ===")
     for f, total in incomplete_side_decks[:50]:
         sys.stdout.buffer.write(f"  {f}  réserve={total}/10\n".encode('utf-8','replace'))
 if erreurs_lecture:

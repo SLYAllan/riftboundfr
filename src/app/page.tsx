@@ -20,6 +20,7 @@ import { CountryBadge } from "@/components/country-badge";
 import { HomeTierList } from "@/components/home-tier-list";
 import { etiquetteLocale, traduire } from "@/lib/i18n";
 import { langueCourante, metaTraduite } from "@/lib/i18n-server";
+import { SET_EN_COURS } from "@/lib/tournament-order";
 
 const getHomeData = unstable_cache(
   async () => {
@@ -101,7 +102,7 @@ const getHomeData = unstable_cache(
     const parSlug = new Map(legends.map((l) => [l.slug, l]));
     const joueursParLegende = new Map<string, number>();
     for (const part of partsDeClassement) {
-      if (part.set !== SET_COURANT) continue;
+      if (part.set !== SET_EN_COURS) continue;
       const slug = legendFicheSlug(part.legendName);
       joueursParLegende.set(slug, (joueursParLegende.get(slug) ?? 0) + part.joueurs);
     }
@@ -166,8 +167,6 @@ const guides = [
   },
 ];
 
-/** Le set en cours. Le même que le défaut de /decks (`setParDefaut`). */
-const SET_COURANT = "Vendetta";
 
 export default async function HomePage() {
   let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
@@ -293,7 +292,7 @@ export default async function HomePage() {
                         {displayLegendName(legend.legendName)}
                       </span>
                       <div className="mt-0.5 truncate text-xs text-ink-muted">
-                        {legend.joueurs.toLocaleString(locale)} {t("joueurs en Vendetta")}
+                        {legend.joueurs.toLocaleString(locale)} {t(`joueurs en ${SET_EN_COURS}`)}
                       </div>
                     </div>
                   </Link>

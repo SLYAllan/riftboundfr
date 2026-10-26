@@ -13,6 +13,10 @@ describe("reserveVendettaComplete", () => {
     expect(reserveVendettaComplete("Vendetta", [{ quantity: 9 }])).toBe(false);
   });
 
+  it("s'applique aussi à Radiance", () => {
+    expect(reserveVendettaComplete("Radiance", [{ quantity: 9 }])).toBe(false);
+  });
+
   it("ne s'applique pas aux anciens sets", () => {
     expect(reserveVendettaComplete("Unleashed", [])).toBe(true);
   });

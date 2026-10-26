@@ -10,11 +10,12 @@
  */
 import { chargerCorpus, bilanParLegende, seuilsDeCoupe } from "./corpus-tournois";
 import { prisma } from "../src/lib/prisma";
+import { SET_EN_COURS } from "../src/lib/tournament-order";
 
 const fr = (n: number, d = 2) => n.toFixed(d).replace(".", ",");
 const mil = (n: number) => n.toLocaleString("fr-FR").replace(/ /g, " ");
 
-const set = process.argv[2] === "tous" ? null : (process.argv[2] ?? "Vendetta");
+const set = process.argv[2] === "tous" ? null : (process.argv[2] ?? SET_EN_COURS);
 const corpus = await chargerCorpus(set);
 const bilans = bilanParLegende(corpus.places);
 const total = [...bilans.values()].reduce((s, b) => s + b.joueurs, 0);

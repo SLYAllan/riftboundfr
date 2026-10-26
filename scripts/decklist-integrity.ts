@@ -1,5 +1,9 @@
 type CarteReserve = { quantity: number };
 
+// Radiance garde la construction de Vendetta (66 cartes, réserve de 10). Écrit
+// `set !== "Vendetta"`, le contrôle laissait passer une liste Radiance amputée.
+const SETS_A_RESERVE = new Set(["Vendetta", "Radiance"]);
+
 interface DecklistVendetta {
   set: string;
   mainDeck: CarteReserve[];
@@ -10,12 +14,12 @@ interface DecklistVendetta {
 }
 
 export function reserveVendettaComplete(set: string, sideDeck: CarteReserve[]): boolean {
-  if (set !== "Vendetta") return true;
+  if (!SETS_A_RESERVE.has(set)) return true;
   return sideDeck.reduce((total, carte) => total + carte.quantity, 0) === 10;
 }
 
 export function decklistVendettaComplete(deck: DecklistVendetta): { complete: boolean; missing: string[] } {
-  if (deck.set !== "Vendetta") return { complete: true, missing: [] };
+  if (!SETS_A_RESERVE.has(deck.set)) return { complete: true, missing: [] };
 
   const main = deck.mainDeck.reduce((total, carte) => total + carte.quantity, 0);
   const runes = Object.values(deck.runes).reduce((total, quantity) => total + quantity, 0);

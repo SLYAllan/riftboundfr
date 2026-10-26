@@ -7,6 +7,7 @@ import { useLangue, useT } from "@/components/i18n-provider";
 import { legendHref } from "@/lib/legend-fiche";
 import { cn } from "@/lib/utils";
 import { calculerMeta, type TrancheMeta } from "@/lib/meta-stats";
+import { SET_EN_COURS } from "@/lib/tournament-order";
 
 interface LegendeMeta {
   legendName: string;
@@ -26,7 +27,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
   const anglais = useLangue() === "en";
   const pourcent = (n: number) =>
     `${n.toLocaleString(anglais ? "en-US" : "fr-FR", { maximumFractionDigits: 1 })}${anglais ? "" : "\u00a0"}%`;
-  const setInitial = sets.includes("Vendetta") ? "Vendetta" : "all";
+  const setInitial = sets.includes(SET_EN_COURS) ? SET_EN_COURS : "all";
   const [selectedTournament, setSelectedTournament] = useState("all");
   const [selectedSet, setSelectedSet] = useState(setInitial);
 

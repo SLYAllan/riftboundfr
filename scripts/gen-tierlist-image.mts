@@ -23,15 +23,15 @@ const TIER_COLORS: Record<string, string> = {
 };
 // Numéro de saison, pour dire de quel format parle le visuel.
 const SET_NUMBER: Record<string, string> = {
-  Origins: "Set 1", Spiritforged: "Set 2", Unleashed: "Set 3", Vendetta: "Set 4",
+  Origins: "Set 1", Spiritforged: "Set 2", Unleashed: "Set 3", Vendetta: "Set 4", Radiance: "Set 5",
 };
 const SET_COLORS: Record<string, string> = {
-  Origins: "#f59e0b", Spiritforged: "#10b981", Unleashed: "#0ea5e9", Vendetta: "#a855f7",
+  Origins: "#f59e0b", Spiritforged: "#10b981", Unleashed: "#0ea5e9", Vendetta: "#a855f7", Radiance: "#f43f5e",
 };
 // Noms de set en français, tels qu'affichés sur les visuels.
 const SET_FR: Record<string, string> = {
   Origins: "Origines", Spiritforged: "Armes spirituelles",
-  Unleashed: "Déchaînement", Vendetta: "Vendetta",
+  Unleashed: "Déchaînement", Vendetta: "Vendetta", Radiance: "Radiance",
 };
 
 // Même table que src/lib/banners.ts, dupliquée ici pour garder le script autonome.

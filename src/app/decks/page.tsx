@@ -24,6 +24,7 @@ import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
 import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks, setParDefaut } from "@/lib/deck-listing";
+import { ORDRE_SETS } from "@/lib/tournament-order";
 import { DecksProgressifs } from "./decks-progressifs";
 
 const metadata: Metadata = {
@@ -461,7 +462,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             libelle={t("Filtrer par set")}
             toutes={t("Tous les sets")}
             valeurParDefaut={setFilter ?? "all"}
-            options={(["Vendetta", "Unleashed", "Spiritforged", "Origins"] as const).map((s) => ({ valeur: s, libelle: s }))}
+            options={ORDRE_SETS.map((s) => ({ valeur: s, libelle: s }))}
           />
         </Suspense>
         <Suspense>

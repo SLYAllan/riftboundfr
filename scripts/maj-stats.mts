@@ -36,6 +36,7 @@
  * ou un chiffre bouge, relancer, puis `npm run verify`.
  */
 import { spawnSync } from "node:child_process";
+import { SET_EN_COURS } from "../src/lib/tournament-order";
 
 const sec = process.argv.includes("--sec");
 
@@ -61,13 +62,13 @@ const etapes: Etape[] = [
   },
   {
     titre: "3/6  Chiffres par Légende",
-    cmd: ["tsx", "--env-file=.env", "scripts/fiches-stats.mts", "Vendetta", "10"],
-    vers: "data/fiches-stats-vendetta.json",
+    cmd: ["tsx", "--env-file=.env", "scripts/fiches-stats.mts", SET_EN_COURS, "10"],
+    vers: "data/fiches-stats.json",
     ecrit: true,
   },
   {
     titre: "4/6  Fiches Légendes (cartes, résultats, rangs)",
-    cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats-vendetta.json", ...(sec ? [] : ["--ecrire"])],
+    cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats.json", ...(sec ? [] : ["--ecrire"])],
   },
   {
     titre: "5/6  Sections chiffrées de DECKBUILDING-RULES",

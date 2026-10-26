@@ -7,8 +7,8 @@
  * touche à rien d'autre : l'archétype, le plan de jeu, les forces et les
  * faiblesses sont écrits à la main et relus à la main.
  *
- *   npx tsx --env-file=.env scripts/fiches-stats.mts Vendetta 10 > data/fiches-stats-vendetta.json
- *   npx tsx scripts/fiches-maj.mts data/fiches-stats-vendetta.json [--ecrire]
+ *   npx tsx --env-file=.env scripts/fiches-stats.mts Radiance 10 > data/fiches-stats.json
+ *   npx tsx scripts/fiches-maj.mts data/fiches-stats.json [--ecrire]
  *
  * Sans `--ecrire`, il n'écrit rien et se contente de dire ce qu'il changerait.
  * Une Légende vue moins de dix fois n'est pas touchée : on ne réécrit pas une

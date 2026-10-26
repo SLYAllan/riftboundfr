@@ -32,6 +32,7 @@
  */
 import { chargerCorpus, seuilsDeCoupe } from "./corpus-tournois";
 import { wilson, pBinomial } from "./stats-binomial";
+import { SET_EN_COURS } from "../src/lib/tournament-order";
 
 if (process.argv.includes("--autotest")) {
   // La densité en 0 vaut 0,929^74 ; le p bilatéral l'englobe et lui ajoute la
@@ -47,7 +48,7 @@ if (process.argv.includes("--autotest")) {
 }
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
-const setDemande = args[0] ?? "Vendetta";
+const setDemande = args[0] ?? SET_EN_COURS;
 /** « tous » : toutes les ères confondues, pour la tier list globale. */
 const tousSets = setDemande.toLowerCase() === "tous";
 const coupe = Number(args[1] ?? 0.10);

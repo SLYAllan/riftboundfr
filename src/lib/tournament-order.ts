@@ -1,4 +1,17 @@
-const ORDRE_SETS = ["Vendetta", "Unleashed", "Spiritforged", "Origins"];
+/**
+ * Les sets de tournoi, du plus récent au plus ancien. Le premier est le set en
+ * cours : l'accueil, /decks, /meta et les fiches Légendes s'ouvrent dessus. Il
+ * était écrit en dur à huit endroits, et passer à Radiance obligeait à tous les
+ * retrouver.
+ */
+export const ORDRE_SETS = ["Radiance", "Vendetta", "Unleashed", "Spiritforged", "Origins"] as const;
+export const SET_EN_COURS: string = ORDRE_SETS[0];
+
+/** Rang d'un set dans `ORDRE_SETS` ; un set inconnu passe après tous les autres. */
+export function rangSet(set: string | null): number {
+  const rang = set ? (ORDRE_SETS as readonly string[]).indexOf(set) : -1;
+  return rang < 0 ? ORDRE_SETS.length : rang;
+}
 
 interface TournoiOrdonne {
   slug: string;
@@ -16,13 +29,9 @@ function comparerTournois(a: TournoiOrdonne, b: TournoiOrdonne) {
 
 export function grouperTournoisParSet<T extends TournoiOrdonne>(tournois: T[]) {
   const groupes = Map.groupBy(tournois, (tournoi) => tournoi.set ?? "Autres");
-  return [...groupes].map(([set, membres]) => ({ set, tournois: membres.sort(comparerTournois) })).sort(
-    (a, b) => {
-      const rangA = ORDRE_SETS.indexOf(a.set);
-      const rangB = ORDRE_SETS.indexOf(b.set);
-      return (rangA < 0 ? ORDRE_SETS.length : rangA) - (rangB < 0 ? ORDRE_SETS.length : rangB);
-    },
-  );
+  return [...groupes]
+    .map(([set, membres]) => ({ set, tournois: membres.sort(comparerTournois) }))
+    .sort((a, b) => rangSet(a.set) - rangSet(b.set));
 }
 
 export function voisinsDuTournoi<T extends TournoiOrdonne>(tournois: T[], slug: string) {

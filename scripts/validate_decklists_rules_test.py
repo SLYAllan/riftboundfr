@@ -46,6 +46,11 @@ class VendettaSideDeckRulesTest(unittest.TestCase):
 
         self.assertFalse(vendetta_side_deck_is_complete(deck))
 
+    def test_applies_to_radiance_too(self):
+        deck = {"set": "Radiance", "sideDeck": [{"name": "Charm", "quantity": 9}]}
+
+        self.assertFalse(vendetta_side_deck_is_complete(deck))
+
     def test_does_not_apply_to_older_sets(self):
         deck = {"set": "Unleashed", "sideboard": []}
 

@@ -34,6 +34,7 @@ const SET_SHORT: Record<string, string> = {
   Spiritforged: "SFD",
   Unleashed: "UNL",
   Vendetta: "VEN",
+  Radiance: "RAD",
   // OGN/SFD/UNL sont les codes officiels des sets. « Global » n'en est pas un :
   // c'est un libellé, il se dit en français.
   Global: "TOUS",

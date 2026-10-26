@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 """Règles d'intégrité communes aux decklists structurées."""
 
+# Radiance garde la construction de Vendetta (66 cartes, réserve de 10). Écrit
+# `!= "Vendetta"`, le contrôle laissait passer une liste Radiance amputée.
+SETS_A_RESERVE = {"Vendetta", "Radiance"}
+
 
 def side_deck_size(deck):
     return sum(card.get("quantity", 0) for card in deck.get("sideDeck", []))
 
 
 def vendetta_side_deck_is_complete(deck):
-    if deck.get("set") != "Vendetta":
+    if deck.get("set") not in SETS_A_RESERVE:
         return True
     return side_deck_size(deck) == 10
 
@@ -35,7 +39,7 @@ def nom_hexgate(carte, sans_titre):
 
 
 def vendetta_decklist_missing(deck):
-    if deck.get("set") != "Vendetta":
+    if deck.get("set") not in SETS_A_RESERVE:
         return []
 
     main = sum(card.get("quantity", 0) for card in deck.get("mainDeck", []))

@@ -1,13 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { construireWhere, lireFiltresDecks, modifierParametresDecks, palierAccessibilite, PALIERS_ACCESSIBILITE, parametresDecks, type FiltresDecks } from "./deck-listing-params";
+import { SET_EN_COURS } from "./tournament-order";
 
 const base: FiltresDecks = { q: "", owned: false, offset: 0 };
 
 describe("construireWhere", () => {
-  it("filtre Vendetta quand aucun set n'est demandé", () => {
+  it("filtre le set en cours quand aucun set n'est demandé", () => {
     const filtres = lireFiltresDecks({});
-    expect(filtres.set).toBe("Vendetta");
-    expect(construireWhere(filtres).setTag).toBe("Vendetta");
+    expect(filtres.set).toBe(SET_EN_COURS);
+    expect(construireWhere(filtres).setTag).toBe(SET_EN_COURS);
   });
 
   it("garde un autre set demandé", () => {
@@ -105,12 +106,12 @@ describe("construireWhere", () => {
 });
 
 describe("modifierParametresDecks garde le set affiché", () => {
-  it("fige Vendetta quand on choisit une Légende depuis la vue de départ", () => {
+  it("fige le set en cours quand on choisit une Légende depuis la vue de départ", () => {
     const suivants = modifierParametresDecks(new URLSearchParams(), { legend: "Ahri" });
     expect(suivants.get("legend")).toBe("Ahri");
     // Sans ce report, `setParDefaut` voyait l'« intention » Légende et rendait
     // undefined : le menu des sets sautait de Vendetta à « Tous les sets ».
-    expect(suivants.get("set")).toBe("Vendetta");
+    expect(suivants.get("set")).toBe(SET_EN_COURS);
   });
 
   it("ne pose pas de set quand la vue n'en affichait aucun", () => {

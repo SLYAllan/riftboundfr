@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { comparerPlacements, lireFiltresDecks, modifierParametresDecks, parametresDecks } from "./deck-listing-params";
+import { SET_EN_COURS } from "./tournament-order";
 
 describe("lireFiltresDecks", () => {
   it("conserve tous les filtres publics et borne le décalage", () => {
@@ -26,11 +27,11 @@ describe("lireFiltresDecks", () => {
     });
   });
 
-  it("ignore les valeurs inconnues et garde Vendetta par défaut", () => {
+  it("ignore les valeurs inconnues et garde le set en cours par défaut", () => {
     expect(lireFiltresDecks({ cat: "brut", sort: "alphabetique", offset: "abc" })).toEqual({
       cat: undefined,
       legend: undefined,
-      set: "Vendetta",
+      set: SET_EN_COURS,
       tournament: undefined,
       q: "",
       sort: undefined,

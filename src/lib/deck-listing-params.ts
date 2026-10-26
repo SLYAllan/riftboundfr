@@ -1,5 +1,6 @@
 import type { Prisma } from "@prisma/client";
 import { BANNED_CARD_NAMES } from "./banned-cards";
+import { SET_EN_COURS } from "./tournament-order";
 
 export interface FiltresDecks {
   cat?: "bestof" | "guide" | "all";
@@ -87,7 +88,7 @@ export function comparerPlacements(a: string | null, b: string | null): number {
 }
 
 /**
- * Vendetta par défaut, mais seulement sur la vue de départ. Un lien qui porte déjà
+ * Le set en cours par défaut, mais seulement sur la vue de départ. Un lien qui porte déjà
  * une intention (Légende, tournoi, best-of, recherche) ne doit pas se faire vider
  * par un set qu'il n'a pas demandé : aucun des 431 decks best-of n'est en Vendetta,
  * et « Best of » rendait « Aucun deck ». Même piège pour `/decks?legend=` venu de
@@ -102,7 +103,7 @@ export function setParDefaut(params: Record<string, string | undefined>): string
     Boolean(params.legend) ||
     Boolean(params.tournament) ||
     Boolean((params.q ?? "").trim());
-  return intentionDejaPosee ? undefined : "Vendetta";
+  return intentionDejaPosee ? undefined : SET_EN_COURS;
 }
 
 export function lireFiltresDecks(params: Record<string, string | undefined>): FiltresDecks {
@@ -142,9 +143,9 @@ export function modifierParametresDecks(
   changements: Record<string, string | null>,
 ): URLSearchParams {
   const suivants = new URLSearchParams(courants);
-  // Le set Vendetta est IMPLICITE tant que l'URL ne le porte pas (`setParDefaut`).
+  // Le set en cours est IMPLICITE tant que l'URL ne le porte pas (`setParDefaut`).
   // Choisir une Légende pose une « intention », et `setParDefaut` cesse alors de
-  // l'appliquer : le menu affichait Vendetta, et il sautait sur « Tous les sets »
+  // l'appliquer : le menu affichait le set en cours, et il sautait sur « Tous les sets »
   // tout seul, en même temps que la Légende. On fige donc le set AFFICHÉ dans
   // l'URL dès qu'un autre filtre bouge. Les liens de catégorie posent `set`
   // eux-mêmes et gardent leur règle : « Best of » doit bien vider le set, aucun
