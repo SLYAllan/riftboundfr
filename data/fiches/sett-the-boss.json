@@ -103,37 +103,36 @@
     "20 listes sur les 8 919 du set Vendetta, 33 joueurs classés : trop peu pour conclure quoi que ce soit."
   ],
   "competitiveResults": {
-    "joueursClasses": 33,
-    "coupe10": 1,
-    "titres": 0,
-    "conversion": "3 %",
-    "tournois": 19,
-    "listesPubliees": 3,
+    "joueursClasses": 868,
+    "coupe10": 76,
+    "titres": 8,
+    "conversion": "8.8 %",
+    "tournois": 105,
     "bestPlacements": [
       {
-        "placement": "10th",
-        "player": "DBSF-weiyi",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-06)"
       },
       {
-        "placement": "13th",
-        "player": "唯安",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "Nanjing City Challenge (2025-10-12)"
       },
       {
-        "placement": "18th",
-        "player": "沉星之间-CBC",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Nanjing City Challenge (2026-04-18)"
       },
       {
-        "placement": "39th",
-        "player": "沉星之间-CBC",
-        "tournament": "S4 Fuzhou City Challenge (2026-08-09)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-04-25)"
       },
       {
-        "placement": "49th",
-        "player": "沉星之间-CBC",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
       }
     ]
   },
@@ -185,5 +184,5 @@
     "Sunken Temple (85 %)",
     "Valley of Idols (80 %)"
   ],
-  "dataSource": "Classement complet des tournois : 33 joueurs classés, 19 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 868 joueurs classés sur 105 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts."
 }

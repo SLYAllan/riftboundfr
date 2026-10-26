@@ -95,17 +95,21 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 619,
-    "coupe10": 62,
-    "titres": 1,
-    "conversion": "10 %",
-    "tournois": 50,
-    "listesPubliees": 120,
+    "joueursClasses": 1096,
+    "coupe10": 101,
+    "titres": 2,
+    "conversion": "9.2 %",
+    "tournois": 101,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "HBG.windman",
         "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+      },
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "S2 Hangzhou City Challenge (2026-03-08)"
       },
       {
         "placement": "2nd",
@@ -121,11 +125,6 @@
         "placement": "2nd",
         "player": "XYZ.媄猗",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      },
-      {
-        "placement": "2nd",
-        "player": "灵花祭.ECG.Chance",
-        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
       }
     ]
   },
@@ -146,7 +145,7 @@
     "Trifarian War Camp (48 %)",
     "Mystic Vortex (46 %)"
   ],
-  "dataSource": "Classement complet des tournois : 619 joueurs classés, 50 tournois, dont 120 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 1096 joueurs classés sur 101 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {
@@ -166,6 +165,5 @@
     "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
     "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
   ],
-  "setDesChiffres": "Vendetta",
   "cartesDepuisBan": "2026-09-15"
 }

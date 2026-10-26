@@ -90,37 +90,36 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 11,
-    "coupe10": 1,
-    "titres": 0,
-    "conversion": "9.1 %",
-    "tournois": 9,
-    "listesPubliees": 2,
+    "joueursClasses": 523,
+    "coupe10": 15,
+    "titres": 1,
+    "conversion": "2.9 %",
+    "tournois": 78,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "9th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-10-12)"
+      },
       {
         "placement": "11th",
         "player": "𝙶𝙻𝚇-归来",
         "tournament": "S4 Shenyang City Challenge (2026-08-16)"
       },
       {
-        "placement": "27th",
-        "player": "天使投资人",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "48th",
-        "player": "给我取个名儿",
-        "tournament": "S4 Wuhan City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "49th",
-        "player": "疾风起司",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
-      },
-      {
-        "placement": "55th",
-        "player": "不染",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-16)"
+        "placement": "11th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
       }
     ]
   },
@@ -133,7 +132,7 @@
   "weaknesses": [
     "11 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
   ],
-  "dataSource": "Classement complet des tournois : 11 joueurs classés, 9 tournois. Moins de dix listes publiées depuis la ban list du 15 septembre 2026 : cartes non recomptées. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 523 joueurs classés sur 78 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Yasuo, Windrider": {
       "usage": "82 %",

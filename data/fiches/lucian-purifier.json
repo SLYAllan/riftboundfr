@@ -95,12 +95,11 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 159,
-    "coupe10": 12,
+    "joueursClasses": 582,
+    "coupe10": 46,
     "titres": 0,
-    "conversion": "7.5 %",
-    "tournois": 28,
-    "listesPubliees": 23,
+    "conversion": "7.9 %",
+    "tournois": 81,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -118,14 +117,14 @@
         "tournament": "S4 Shanghai City Challenge (2026-10-07)"
       },
       {
+        "placement": "6th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-12-27)"
+      },
+      {
         "placement": "7th",
         "player": "TXG·万舞寒天",
         "tournament": "S4 Shanghai City Challenge (2026-10-03)"
-      },
-      {
-        "placement": "13th",
-        "player": "酷猫.黑科技整活",
-        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
       }
     ]
   },
@@ -138,7 +137,7 @@
   "weaknesses": [
     "7,5 % de conversion, aucun titre : le deck place mais ne gagne pas"
   ],
-  "dataSource": "Classement complet des tournois : 159 joueurs classés, 28 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 582 joueurs classés sur 81 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Kai'Sa, Survivor": {
       "usage": "100 %",
@@ -158,6 +157,5 @@
     "Forbidding Waste (61 %)",
     "Windswept Hillock (43 %)"
   ],
-  "setDesChiffres": "Vendetta",
   "cartesDepuisBan": "2026-09-15"
 }

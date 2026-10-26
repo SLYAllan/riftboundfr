@@ -88,37 +88,36 @@
     "Peu jouée : 128 joueurs classés sur 27 tournois, aucun titre"
   ],
   "competitiveResults": {
-    "joueursClasses": 128,
-    "coupe10": 12,
-    "titres": 0,
-    "conversion": "9.4 %",
-    "tournois": 27,
-    "listesPubliees": 31,
+    "joueursClasses": 758,
+    "coupe10": 85,
+    "titres": 2,
+    "conversion": "11.2 %",
+    "tournois": 85,
     "bestPlacements": [
       {
-        "placement": "6th",
-        "player": "BOT.QAQ钓鱼王",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
       },
       {
-        "placement": "7th",
-        "player": "拳力斗技",
-        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Hangzhou City Challenge (2026-04-19)"
       },
       {
-        "placement": "9th",
-        "player": "A·霜月之七",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "2nd",
+        "player": "TSS SouledOut",
+        "tournament": "RQ Sydney 2026"
       },
       {
-        "placement": "10th",
-        "player": "gambit.纯爱.黑罗洛🐺",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+        "placement": "2nd",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-05)"
       },
       {
-        "placement": "17th",
-        "player": "BonkersForCheese",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+        "placement": "2nd",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
       }
     ]
   },
@@ -165,7 +164,6 @@
     "Forgotten Monument (45 %)",
     "Dragon Roost (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 128 joueurs classés, 27 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 758 joueurs classés sur 85 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15"
 }

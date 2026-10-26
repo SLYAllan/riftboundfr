@@ -30,132 +30,153 @@
   "keyCards": [
     {
       "name": "Legion Marauder",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Public Execution",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Guttural Roar",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2,5 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Pit Rookie",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "name": "Public Execution",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tactical Retreat",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Onslaught",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "name": "Sabotage",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxian Emissary",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Hidden Blade",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "name": "Onslaught",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Repulse",
+      "role": "Souple, 55 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Solari Sunhawk",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
+    "Kayle, Justified": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Ambessa, The Wolf": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "68 %",
+      "usage": "91 %",
+      "role": "2,5 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "91 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "68 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Kayle, Justified": {
-      "usage": "68 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Trophy Hunter": {
-      "usage": "42 %",
+      "usage": "73 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "32 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (79 %)",
-    "Sandswept Tomb (53 %)",
-    "Sunken Temple (42 %)"
+    "Risen Altar (100 %)",
+    "Sandswept Tomb (73 %)",
+    "Sunken Temple (36 %)",
+    "Star Spring (36 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 183,
-    "coupe10": 1,
+    "joueursClasses": 14,
+    "coupe10": 0,
     "titres": 0,
-    "conversion": "0.5 %",
-    "tournois": 29,
-    "listesPubliees": 19,
+    "conversion": "0 %",
+    "tournois": 2,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
-        "placement": "7th",
-        "player": "肉松饼",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+        "placement": "64th",
+        "player": "Dragku",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "19th",
-        "player": "天堂制造",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+        "placement": "68th",
+        "player": "Boogiezone",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "22th",
-        "player": "氐",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+        "placement": "162th",
+        "player": "energizer",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "29th",
-        "player": "神夜·神機百煉",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "placement": "172th",
+        "player": "Archy18",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "30th",
-        "player": "XXT丶kuro",
-        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+        "placement": "204th",
+        "player": "GTPL smaeke",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 183 joueurs classés, 29 tournois, dont 19 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 2 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

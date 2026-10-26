@@ -147,13 +147,17 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 1267,
-    "coupe10": 165,
-    "titres": 2,
-    "conversion": "13 %",
-    "tournois": 50,
-    "listesPubliees": 304,
+    "joueursClasses": 3627,
+    "coupe10": 521,
+    "titres": 15,
+    "conversion": "14.4 %",
+    "tournois": 113,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "EDG Rico1997",
+        "tournament": "RQ Sydney 2026"
+      },
       {
         "placement": "1st",
         "player": "旋木时光-绿拐",
@@ -165,19 +169,14 @@
         "tournament": "S4 Wuhan Regional Open (2026-08-29)"
       },
       {
-        "placement": "2nd",
-        "player": "Xeno",
-        "tournament": "Los Angeles Regional Qualifier"
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 National Open (2026-07-19)"
       },
       {
-        "placement": "2nd",
-        "player": "ARBD-Skyer",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-09)"
-      },
-      {
-        "placement": "2nd",
-        "player": "guubums",
-        "tournament": "S4 Shenyang Regional Open (2026-09-12)"
+        "placement": "1st",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-12-28)"
       }
     ]
   },
@@ -234,7 +233,6 @@
     "Sunken Temple (90 %)",
     "Targon's Peak (87 %)"
   ],
-  "dataSource": "Classement complet des tournois : 1267 joueurs classés, 50 tournois, dont 304 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 3627 joueurs classés sur 113 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15"
 }

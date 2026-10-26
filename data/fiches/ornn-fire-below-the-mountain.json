@@ -126,12 +126,11 @@
     "Ornn, Blacksmith n'est que dans 74 % des listes : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 433,
-    "coupe10": 33,
+    "joueursClasses": 913,
+    "coupe10": 52,
     "titres": 1,
-    "conversion": "7.6 %",
-    "tournois": 47,
-    "listesPubliees": 70,
+    "conversion": "5.7 %",
+    "tournois": 108,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -144,26 +143,26 @@
         "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Fuzhou City Challenge (2025-12-27)"
+      },
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2026-01-02)"
+      },
+      {
         "placement": "3rd",
         "player": "karn",
         "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      },
-      {
-        "placement": "4th",
-        "player": "超级阿巴怪@友间",
-        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
-      },
-      {
-        "placement": "4th",
-        "player": "幻灵卡域·牌王贤",
-        "tournament": "S4 Chengdu National Open Side Event B (2026-10-11)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 433 joueurs classés, 47 tournois, dont 70 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 913 joueurs classés sur 108 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -179,6 +178,5 @@
     ],
     "note": "Build aggro/tempo (sprites) plus consistant qu'un seul gros Ornn."
   },
-  "setDesChiffres": "Vendetta",
   "cartesDepuisBan": "2026-09-15"
 }

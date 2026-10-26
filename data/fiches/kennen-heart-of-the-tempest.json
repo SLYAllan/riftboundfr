@@ -30,161 +30,160 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
+      "name": "Traveling Merchant",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Trifarian Captain",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Lightning Rush",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Last Rites",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Gust",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Shadow Order Disciple",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "name": "Bedeviling Stranger",
+      "role": "Cœur du deck, 91 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Flash",
+      "role": "Standard, 81 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Gust",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Salvage",
-      "role": "Standard, 83 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Tornado Warrior",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "name": "An Offer You Can't Refuse",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Flash",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "name": "Reckless Innovator",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Shadows of the Past",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Carrion Dredger",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Fizz, Trickster": {
-      "usage": "95 %",
+      "usage": "100 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Nocturne, Horrifying": {
+      "usage": "98 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Kennen, Storm of Shuriken": {
-      "usage": "93 %",
+      "usage": "98 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "84 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "57 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (95 %)",
-    "Zaun Warrens (93 %)",
-    "Shadow Temple (62 %)"
+    "Minefield (98 %)",
+    "Zaun Warrens (98 %)",
+    "Ruined Monastery (43 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 1547,
-    "coupe10": 291,
-    "titres": 10,
-    "conversion": "18.8 %",
-    "tournois": 50,
-    "listesPubliees": 189,
+    "joueursClasses": 64,
+    "coupe10": 17,
+    "titres": 0,
+    "conversion": "26.6 %",
+    "tournois": 2,
+    "listesPubliees": 54,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": "小运重卡",
-        "tournament": "S4 Chengdu City Challenge (2026-08-08)"
+        "placement": "5th",
+        "player": "Fel Peon U",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "1st",
-        "player": "𝙆𝙈𝙆.奇力王",
-        "tournament": "S4 Foshan City Challenge (2026-09-06)"
+        "placement": "6th",
+        "player": "Dylan Sumner",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "1st",
-        "player": "不滅の群青",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-06)"
+        "placement": "7th",
+        "player": "DingCilia",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "1st",
-        "player": "收容所218·一凡家老王",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+        "placement": "9th",
+        "player": "Phi Nguyen",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "1st",
-        "player": "SD.Elemental",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-05)"
+        "placement": "10th",
+        "player": "deb",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 1547 joueurs classés, 50 tournois, dont 189 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta",
+  "dataSource": "Classement complet des tournois : 64 joueurs classés, 2 tournois, dont 54 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

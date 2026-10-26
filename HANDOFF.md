@@ -1,5 +1,51 @@
 # HANDOFF — état des lieux
 
+## Session du 26 octobre 2026 — premiers tournois Radiance, le site passe sur Radiance
+
+**Showdowns de Sacramento et de Melbourne** (riftdecks 18559 et 18554), les deux
+premiers tournois Radiance du site. Sacramento : 24 octobre, 755 inscrits, 719 classés,
+717 listes publiées, 695 complètes ; 22 écartées (réserve de 0 à 9 cartes, ou deck
+principal à 40), pas complétées. Melbourne : 23 octobre, 251 inscrits, 239 classés,
+24 listes publiées, toutes complètes. Contextes `Riftbound Showdown Sacramento
+(2026-10-24)` et `Riftbound Showdown Melbourne (2026-10-23)`, tags `showdown,radiance`,
+aucun best-of (un Showdown n'est pas un RQ, comme Ottawa). Top 8 de Sacramento recoupé
+avec le classement de la page. Validateur : 30 591 listes, 0 écart. **Seedés en LOCAL.**
+
+**Le set en cours est Radiance** (choix d'Allan, 26 octobre). `SET_EN_COURS`
+(`src/lib/tournament-order.ts`) remplace huit copies écrites en dur. Le contrôle de
+liste complète (66 cartes, réserve de 10) couvre Radiance dans le parseur et le
+validateur : écrit `set === "Vendetta"`, il laissait passer une liste Radiance amputée.
+`legend-map.json` a reçu les 9 Légendes Radiance ; sans elles, leurs decks sautaient en
+silence. `maj:stats` (sortie 0) met les fiches sur Radiance : 16 Légendes ont 10 listes
+ou plus, les autres gardent leurs résultats toutes ères et taisent leurs cartes.
+`data/fiches-stats-vendetta.json` devient `data/fiches-stats.json`. La tier list
+courante reste Vendetta tant qu'Allan n'a pas validé les lettres Radiance.
+
+**Errata Radiance du 9 octobre posés** (annonce Riot `radiance-errata-updates`) :
+`src/lib/errata.ts` (ex-`errata-2026-07.ts`), une section sur `/guides/ban-list`, la
+bonne date sur la fiche carte. **En base LOCALE** par `scripts/apply-errata.ts`. La
+description de `/guides/ban-list` les cite (journal SEO du 26). Pas de ban avec
+Radiance : aucune annonce de Riot entre le 28 septembre et le 22 octobre.
+
+**Scrape à plusieurs clés.** `fc.sh` accepte plusieurs ouvriers, chacun avec sa clé
+(`FIRECRAWL_API_KEYS`) et son fichier d'état (`FC_ETAT`). Des ouvriers lancés sur des
+tronçons de la liste d'URL, arrêtés à la première liste déjà sur le disque, ont pris
+les 717 listes de Sacramento en 1 h 30 environ, contre 2 h 30 pour un seul.
+
+**Reste** :
+- prod : seed des deux tournois et `apply-errata.ts` par `prod-tunnel.mts`, puis Deploy ;
+- tier list Radiance : lettres à valider par Allan, puis `radianceTier` dans
+  `tier-tables.ts`, courante dans `seed-tier-lists.ts`, ajoutée à `tier-ecarts.mts`,
+  et lue par `fiches-maj.mts`, qui aligne encore les rangs des fiches sur `vendettaTier` ;
+- les 9 Légendes Radiance n'ont pas de fiche dans `data/fiches/` : leur page montre les
+  decks, sans chiffres ni guide. La prose s'écrit dans `fiches-prose.json` ;
+- les guides (`legend-guides.ts`) et la prose des fiches citent des chiffres Vendetta ;
+- hexgate : `parse-hexgate.mts`, `tournois-hexgate.mts` et `classements-tournois.mts`
+  écrivent `set: "Vendetta"` en dur. La liste hexgate donne la saison de chaque tournoi
+  (`expansion: "S4"`) : la lire au premier tournoi S5, sinon il entre en Vendetta sans
+  bruit. S5 est vide le 26 octobre ;
+- `META-KNOWLEDGE.md` et `DECKBUILDING-RULES.md` n'ont pas de section Radiance.
+
 ## 20 octobre 2026 — Radiance en prod, côté visible remis
 
 **Radiance importé en PROD** le 20 (`sync-set-riot.mts RAD` par `prod-tunnel.mts`,

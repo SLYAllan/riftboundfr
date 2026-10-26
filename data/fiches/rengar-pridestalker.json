@@ -27,7 +27,7 @@
       "noyau": true
     },
     {
-      "name": "Kinkou Initiate",
+      "name": "Pit Rookie",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -43,47 +43,42 @@
     },
     {
       "name": "Thrill of the Hunt",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "name": "Kinkou Initiate",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Cœur du deck, 98 % des listes, 1 exemplaire",
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Pakaa Cub",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "name": "Rampage",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 79 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Brynhir Thundersong",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "name": "Elnuk Herd",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -96,37 +91,37 @@
     "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
   ],
   "competitiveResults": {
-    "joueursClasses": 602,
-    "coupe10": 80,
-    "titres": 3,
-    "conversion": "13.3 %",
-    "tournois": 47,
-    "listesPubliees": 118,
+    "joueursClasses": 36,
+    "coupe10": 4,
+    "titres": 0,
+    "conversion": "11.1 %",
+    "tournois": 2,
+    "listesPubliees": 29,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": "DSG Prismaticism",
-        "tournament": "Los Angeles Regional Qualifier"
+        "placement": "8th",
+        "player": "Daniel Vu",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "1st",
-        "player": "Prismaticismism",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+        "placement": "17th",
+        "player": "Timothy K",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "1st",
-        "player": "Rasyou",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+        "placement": "30th",
+        "player": "Cardinality",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "2nd",
-        "player": "SVE.Love",
-        "tournament": "S4 Regional Open Side Event C (2026-09-13)"
+        "placement": "44th",
+        "player": "Philip Ve",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "3rd",
-        "player": "DFL.诺亚",
-        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
+        "placement": "57th",
+        "player": "Vollka",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
@@ -158,24 +153,28 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "99 %",
+      "usage": "97 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "95 %",
+      "usage": "66 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Graves, Blasting Through": {
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "87 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (99 %)",
-    "Star Spring (99 %)",
-    "Seat of Power (92 %)"
+    "Star Spring (100 %)",
+    "Emperor's Dais (97 %)",
+    "Seat of Power (86 %)"
   ],
-  "dataSource": "Classement complet des tournois : 602 joueurs classés, 47 tournois, dont 118 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 17 octobre 2026, calcul par scripts/fiches-stats.mts.",
-  "setDesChiffres": "Vendetta",
+  "dataSource": "Classement complet des tournois : 36 joueurs classés, 2 tournois, dont 29 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }
