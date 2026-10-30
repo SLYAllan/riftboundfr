@@ -427,8 +427,6 @@ export const EN: Record<string, string> = {
 
   // — Page Cartes —
   "Base de données des cartes Riftbound": "The Riftbound card database",
-  "Parcourez toutes les cartes du TCG Riftbound - sets Origins, Spiritforged, Unleashed et Vendetta. Filtrez par set, type, rareté et domaine, et consultez le texte complet et les statistiques de chaque carte en français.":
-    "Browse every card in the Riftbound TCG - the Origins, Spiritforged, Unleashed and Vendetta sets. Filter by set, type, rarity and domain, and read the full text and stats of every card.",
 
   // — Titres et descriptions de pages (métadonnées) —
   "À propos - Riftbound France": "About - Riftbound France",
@@ -504,8 +502,6 @@ export const EN: Record<string, string> = {
   "Jouer à Riftbound en ligne - TCG Arena & RiftAtlas":
     "Play Riftbound online - TCG Arena & RiftAtlas",
   "Méta & Tier List Riftbound": "Riftbound meta & tier list",
-  "Le méta compétitif Riftbound set par set, d'Origins à Vendetta : meilleures Légendes, archétypes et cartes clés.":
-    "The competitive Riftbound meta set by set, from Origins to Vendetta: best Legends, archetypes and key cards.",
   "Guides Riftbound - Débuter, deckbuilding, méta et règles":
     "Riftbound guides - getting started, deckbuilding, meta and rules",
   "Tous les guides Riftbound en français : règles pour débuter, deckbuilding, les 6 domaines, méta et tier list, glossaire et comment jouer en ligne.":
@@ -777,7 +773,6 @@ export const EN: Record<string, string> = {
   "Le set actuel": "The current set",
   "Le 3e set": "The third set",
   "résultats en cours d’analyse": "results are being analysed",
-  "Les résultats Vendetta sont intégrés au site au fil des tournois. Consultez la Tier List pour le classement à jour.": "Vendetta results are added as tournaments take place. See the Tier List for the latest ranking.",
   "Une légende beaucoup jouée n’est pas forcément forte. Certaines sont populaires mais convertissent mal en top 8 (Lucian, Yasuo et Sivir à Spiritforged, Miss Fortune à Unleashed). À l’inverse, des sleepers comme": "A heavily played Legend is not automatically a strong one. Some are popular but convert poorly into top 8 (Lucian, Yasuo and Sivir in Spiritforged, Miss Fortune in Unleashed). The other way round, sleepers like",
   "Une poignée de cartes oriente la construction de tous les decks. Les connaître, c’est comprendre pourquoi le méta ressemble à ce qu’il est.": "A handful of cards shape how every deck is built. Knowing them is understanding why the meta looks the way it does.",
   "Une unité est éliminée quand les dégâts reçus ≥ sa Puissance": "A unit is destroyed when the damage it has taken is greater than or equal to its Might",
@@ -917,6 +912,11 @@ export const EN: Record<string, string> = {
   // — Passe automatique : textes des guides, du deckbuilder, de la collection —
   "Aperçu du méta": "Meta at a glance",
   "Méta Riftbound": "Riftbound meta",
+  "Méta Riftbound Radiance - Decks et Légendes les plus joués en tournoi":
+    "Riftbound Radiance meta - the most played decks and Legends in tournaments",
+  "Le méta deck Riftbound par set et tournoi : les decks et Légendes les plus joués, comptés sur le classement complet des tournois, pas seulement sur les listes publiées.":
+    "The Riftbound deck meta by set and tournament: the most played decks and Legends, counted on the full tournament standings, not only on published lists.",
+  "joueurs en": "players in",
 
   "Données de tournoi": "Tournament data",
   "Le méta Riftbound, tournoi par tournoi": "The Riftbound meta, tournament by tournament",

@@ -292,7 +292,7 @@ export default async function HomePage() {
                         {displayLegendName(legend.legendName)}
                       </span>
                       <div className="mt-0.5 truncate text-xs text-ink-muted">
-                        {legend.joueurs.toLocaleString(locale)} {t(`joueurs en ${SET_EN_COURS}`)}
+                        {legend.joueurs.toLocaleString(locale)} {t("joueurs en")} {SET_EN_COURS}
                       </div>
                     </div>
                   </Link>

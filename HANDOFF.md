@@ -1,5 +1,24 @@
 # HANDOFF — état des lieux
 
+## 30 octobre 2026 — audit « Vendetta » avant le passage de la prod sur Radiance
+
+95 pages françaises de la prod relues (sitemap sans les pages de deck, de carte et de
+tournoi). Ce qui y dit « Vendetta » comme set actuel (tier list « Vendetta (actuelle) »,
+titre de `/meta`, `/decks` ouvert sur Vendetta) vient du code d'avant le 26 : `main` le
+règle déjà par `SET_EN_COURS`. Il part en ligne avec le seed et le Deploy de la section
+suivante. Le reste est historique et reste : articles, ban de juillet, glossaire, réserve
+à 10 « depuis Vendetta », fiches en repli sur Vendetta. L'overlay ne nomme aucun set, et
+ses listes en prod ont les 9 Légendes et les champs de bataille Radiance.
+
+Corrigé : `llms.txt` (Radiance, chiffres arrondis, fiches Légendes au lieu des articles
+« meilleur deck » supprimés en juin), traduction anglaise du titre et de la description
+de `/meta` et de « joueurs en » sur l'accueil (absentes déjà du temps de Vendetta), trois
+phrases mortes du dictionnaire anglais.
+
+Pas fait, à décider : la prose de 15 fiches (`fiches-prose.json`, « N listes sur les 8 919
+du set Vendetta ») et 3 guides (`legend-guides.ts`) citent des chiffres Vendetta. Les
+réécrire demande une passe d'analyse sur les listes Radiance.
+
 ## Session du 26 octobre 2026 — premiers tournois Radiance, le site passe sur Radiance
 
 **Showdowns de Sacramento et de Melbourne** (riftdecks 18559 et 18554), les deux
