@@ -15,9 +15,21 @@ Corrigé : `llms.txt` (Radiance, chiffres arrondis, fiches Légendes au lieu des
 de `/meta` et de « joueurs en » sur l'accueil (absentes déjà du temps de Vendetta), trois
 phrases mortes du dictionnaire anglais.
 
-Pas fait, à décider : la prose de 15 fiches (`fiches-prose.json`, « N listes sur les 8 919
-du set Vendetta ») et 3 guides (`legend-guides.ts`) citent des chiffres Vendetta. Les
-réécrire demande une passe d'analyse sur les listes Radiance.
+**Badge de méta du deckbuilder retiré** (choix d'Allan) : il appelait `/api/legends/meta`,
+une route absente du dépôt depuis le premier commit. Il ne s'affichait jamais et
+laissait un 404 dans la console à chaque Légende choisie. `npm run verify` sortie 0.
+
+**Prose des fiches et guides : on attend plus de tournois Radiance** (Allan). 15 fiches
+(`fiches-prose.json`, « N listes sur les 8 919 du set Vendetta ») et 3 guides
+(`legend-guides.ts`) citent des chiffres Vendetta. En attendant, proposé à Allan, pas
+encore validé : une phrase en tête des fiches en repli (« Radiance ne compte encore que
+deux tournois : ces chiffres viennent de Vendetta… »), affichée tant que
+`setDesChiffres` n'est pas le set en cours.
+
+**Seed de prod du 26 : en cours le 30.** Tunnel rouvert par Allan. Ordre : validateur
+de decklists, puis `seed-tournament-decks.ts` pour `sacramento-showdown` et
+`melbourne-showdown` (set `Radiance`, tags `showdown,radiance`), puis
+`apply-errata.ts`. Ensuite Deploy d'Allan, puis `seed-tier-lists.ts`, jamais avant.
 
 ## Session du 26 octobre 2026 — premiers tournois Radiance, le site passe sur Radiance
 
