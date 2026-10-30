@@ -17,7 +17,6 @@ import { DeckPanelV2 } from "./components/deck-panel";
 import { ImportModal } from "./components/import-modal";
 import { ExportModal } from "./components/export-modal";
 import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
-import { MetaIndicator } from "./components/meta-indicator";
 import { exportAsCardNames, exportAsTTS, parseCardNamesImport, parseTTSImport } from "@/lib/export-formats";
 import { generateDeckImage } from "@/lib/export-image";
 import { SIDE_SIZE, isDeckValid } from "./lib/deck-rules";
@@ -731,7 +730,6 @@ export function DeckbuilderV2({ initialCards, idAliases = {}, isAdmin = false }:
                 {DOMAIN_LABELS_FR[d] ?? d}
               </span>
             ))}
-            <MetaIndicator legendName={deck.legend?.name.split(",")[0] ?? null} />
           </div>
         )}
 
