@@ -26,10 +26,16 @@ encore validé : une phrase en tête des fiches en repli (« Radiance ne compte 
 deux tournois : ces chiffres viennent de Vendetta… »), affichée tant que
 `setDesChiffres` n'est pas le set en cours.
 
-**Seed de prod du 26 : en cours le 30.** Tunnel rouvert par Allan. Ordre : validateur
-de decklists, puis `seed-tournament-decks.ts` pour `sacramento-showdown` et
-`melbourne-showdown` (set `Radiance`, tags `showdown,radiance`), puis
-`apply-errata.ts`. Ensuite Deploy d'Allan, puis `seed-tier-lists.ts`, jamais avant.
+**Radiance en ligne le 30.** Validateur : 30 591 listes, 0 écart. Seed PROD :
+`sacramento-showdown` (695) et `melbourne-showdown` (24), set `Radiance`, tags
+`showdown,radiance` ; prod 31 358 → 32 077 decks. `apply-errata.ts` : les 4 errata
+Radiance posés, les 8 de Vendetta déjà en place. Deploy d'Allan, puis
+`seed-tier-lists.ts` : Tier List Radiance courante, 26 Légendes. Vérifié en ligne :
+`/tier-list` et l'accueil sur Radiance (S : Riven, Kennen), `/decks` 719 decks
+Radiance, `/tournois` 2 tournois Radiance, fiches comptées sur Radiance (Kennen 54
+listes). Juste après le Deploy, l'accueil, `/decks` et `/tournois` ont montré l'état
+d'avant le seed (tier list absente, 0 deck) : leur cache d'une minute s'était rempli
+entre le Deploy et le seed, il s'est rafraîchi seul. Le seed ne fait rien de cassé.
 
 ## Session du 26 octobre 2026 — premiers tournois Radiance, le site passe sur Radiance
 
