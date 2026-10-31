@@ -9,7 +9,7 @@
  * n'a rien à faire en production.
  */
 import { PrismaClient } from "@prisma/client";
-import crypto from "node:crypto";
+import { creerJetonMembre } from "../src/lib/jeton-signe";
 
 const DISCORD_ID = "audit-local-test-user";
 const prisma = new PrismaClient();
@@ -62,14 +62,9 @@ async function seed() {
     });
   }
 
-  const secret = process.env.SESSION_SECRET;
-  if (!secret) throw new Error("SESSION_SECRET manquant dans .env");
-  const payload = `${user.id}:${Date.now()}:${crypto.randomBytes(8).toString("hex")}`;
-  const hmac = crypto.createHmac("sha256", secret).update(payload).digest("hex");
-
   console.log(`userId       ${user.id}`);
   console.log(`cartes       ${cards.length}`);
-  console.log(`COOKIE       ${payload}.${hmac}`);
+  console.log(`COOKIE       ${creerJetonMembre(user.id)}`);
 }
 
 assertLocal();
