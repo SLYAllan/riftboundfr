@@ -1,5 +1,33 @@
 # HANDOFF — état des lieux
 
+## 31 octobre 2026 — hexgate 290 à 293, premières City Challenge S5 (Radiance)
+
+**Relevé** (`/api/tournaments?season=all`, 173 tournois) : rien de neuf en S4 depuis le
+289. Quatre City Challenge S5 du 31 octobre entrent, toutes d'au moins 100 joueurs :
+290 Shenyang (111), 291 Suzhou (128), 292 Shenzhen (128), 293 Fuzhou (115).
+481 listes publiées, 460 complètes, **442 converties et seedées en LOCAL** (32 473 decks).
+Écartées : 15 Champions ambigus, 3 listes qui jouent une carte `T1S`. Validateur :
+31 033 vérifiées, 0 MISMATCH. `maj:stats` passé : Radiance compte 1 418 joueurs
+classés sur 6 tournois.
+
+**Ce que S5 a changé chez hexgate**, corrigé dans les scripts :
+- un champ `canonical_card_no` entre `card_no` et `card_name` : le motif de
+  `scrape-hexgate.mts` ne lisait plus aucune carte, les 481 listes sortaient écartées ;
+- des images à empreinte (`RAD-110_167.6930bfff.webp`) et l'étoile des signées écrite
+  `__` : `hexgate-sans-titre.mts` ne trouvait pas la carte, 25 Champions sans titre ;
+- les numéros de deck de départ (`VEN-SP2`) ne passaient pas le contrôle de numéro.
+- le set n'est plus écrit « Vendetta » en dur : `parse-hexgate.mts` le lit dans la
+  saison (`SETS_PAR_SAISON`, S4 et S5 ; une saison inconnue arrête la conversion),
+  `tournois-hexgate.mts` et `classements-tournois.mts` le lisent dans les listes.
+
+Deux lignes posées à la main dans `hexgate-cartes-sans-titre.json`, prouvées par le
+numéro, l'énergie et le texte de l'API : Rengar `SFD-025a/221-P` et Sett `RAD-183*/167`.
+
+**Reste** : les lettres de la tier list Radiance (`scripts/tier-tables.ts`, 23 chiffres
+périmés et 5 Légendes nouvelles au seuil de 15), puis le seed en prod par
+`prod-tunnel.mts`, le Deploy, et `seed-tier-lists.ts` après le Deploy. La tier list
+Globale avait déjà 42 chiffres périmés avant cet import.
+
 ## 31 octobre 2026 — audit de la bascule vers le serveur maison
 
 Le plan de la bascule (Hetzner et Coolify vers Dokploy à la maison) vit dans le dépôt
@@ -122,10 +150,8 @@ les 717 listes de Sacramento en 1 h 30 environ, contre 2 h 30 pour un seul.
 - les 9 Légendes Radiance n'ont pas de fiche dans `data/fiches/` : leur page montre les
   decks, sans chiffres ni guide. La prose s'écrit dans `fiches-prose.json` ;
 - les guides (`legend-guides.ts`) et la prose des fiches citent des chiffres Vendetta ;
-- hexgate : `parse-hexgate.mts`, `tournois-hexgate.mts` et `classements-tournois.mts`
-  écrivent `set: "Vendetta"` en dur. La liste hexgate donne la saison de chaque tournoi
-  (`expansion: "S4"`) : la lire au premier tournoi S5, sinon il entre en Vendetta sans
-  bruit. S5 est vide le 26 octobre ;
+- ~~hexgate : `set: "Vendetta"` en dur dans trois scripts~~ réglé le 31 octobre, au
+  premier tournoi S5 ;
 - `META-KNOWLEDGE.md` et `DECKBUILDING-RULES.md` n'ont pas de section Radiance.
 
 ## 20 octobre 2026 — Radiance en prod, côté visible remis

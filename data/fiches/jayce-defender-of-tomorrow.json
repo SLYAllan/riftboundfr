@@ -56,7 +56,7 @@
     },
     {
       "name": "Garbage Grabber",
-      "role": "Cœur du deck, 100 % des listes, 2,5 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -71,113 +71,102 @@
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dredge Up",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mobilize",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Promising Future",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rocket Barrage",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stupefy",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Deadly Flourish",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Progress Day",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "name": "Temporal Breach",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Downstage Dramatics",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "name": "Rocket Barrage",
+      "role": "Souple, 52 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Jayce, Brilliant Inventor": {
-      "usage": "90 %",
+      "usage": "83 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forgotten Monument (100 %)",
     "Sigil of the Storm (100 %)",
-    "The Papertree (40 %)",
-    "Dragon Roost (30 %)"
+    "Forgotten Monument (87 %)",
+    "Dragon Roost (65 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 16,
-    "coupe10": 1,
+    "joueursClasses": 29,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "6.3 %",
-    "tournois": 2,
-    "listesPubliees": 10,
+    "conversion": "6.9 %",
+    "tournois": 6,
+    "listesPubliees": 23,
     "bestPlacements": [
+      {
+        "placement": "5th",
+        "player": "CCB.老万",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
       {
         "placement": "6th",
         "player": "Templar",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "66th",
-        "player": "nicL",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "18th",
+        "player": "团团团团团团长",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "111th",
-        "player": "RasMan",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "20th",
+        "player": "WWX",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "190th",
-        "player": "Akira Bui",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "191th",
-        "player": "John Lam",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "25th",
+        "player": "神掏",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 16 joueurs classés, 2 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 29 joueurs classés, 6 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

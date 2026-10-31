@@ -41,90 +41,95 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Find Your Center",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Discipline",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Find Your Center",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "The Empyrean",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Not So Fast",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Lonely Poro",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "name": "The Empyrean",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (91 %)",
-    "Ruined Monastery (48 %)",
-    "The Papertree (35 %)",
-    "Vilemaw's Lair (35 %)"
+    "Rockfall Path (88 %)",
+    "The Papertree (42 %)",
+    "Vilemaw's Lair (36 %)",
+    "Ruined Monastery (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 37,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "7.4 %",
-    "tournois": 2,
-    "listesPubliees": 23,
+    "conversion": "5.4 %",
+    "tournois": 6,
+    "listesPubliees": 33,
     "bestPlacements": [
+      {
+        "placement": "27th",
+        "player": "Azucar",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "34th",
         "player": "Kenny Tran",
@@ -136,23 +141,18 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "61th",
-        "player": "Francis Cruz",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "44th",
+        "player": "鸽子",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "78th",
-        "player": "chickencatmandog",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "113th",
-        "player": "Glorp Honkmimimi",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "48th",
+        "player": "DWT-老默（恩师杰哥）",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 2 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 37 joueurs classés, 6 tournois, dont 33 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

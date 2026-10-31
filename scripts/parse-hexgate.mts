@@ -45,6 +45,14 @@ const VILLES: Record<string, string> = {
   "成都": "Chengdu",
 };
 
+// La saison hexgate (`expansion`) donne le set joué. Écrit « Vendetta » en dur
+// jusqu'au 31 octobre 2026, le premier tournoi S5 serait entré en Vendetta sans
+// bruit. Une saison absente de la table arrête la conversion : on ne devine pas.
+const SETS_PAR_SAISON: Record<string, string> = {
+  S4: "Vendetta",
+  S5: "Radiance",
+};
+
 /**
  * Les épreuves qui ne sont pas des City Challenge n'ont pas de nom déductible :
  * « 东莞·符文战场 漫博杯 » ne suit aucun gabarit. On les nomme ici une par une,
@@ -151,7 +159,7 @@ function nomTournoi(brut: DeckBrut["tournoi"]): string | null {
   if (particulier) return `${particulier} (${brut.date})`;
   const ville = Object.keys(VILLES).find((cn) => brut.nom.includes(cn));
   if (!ville) return null;
-  if (brut.nom.includes("城市挑战赛")) return `S4 ${VILLES[ville]} City Challenge (${brut.date})`;
+  if (brut.nom.includes("城市挑战赛")) return `${brut.set} ${VILLES[ville]} City Challenge (${brut.date})`;
   if (brut.nom.includes("区域公开赛")) {
     return `${brut.set} ${VILLES[ville]} Regional Open (${brut.date})`;
   }
@@ -200,6 +208,12 @@ async function main() {
       continue;
     }
 
+    const set = SETS_PAR_SAISON[brut[0].tournoi.set];
+    if (!set) {
+      console.error(`${id} : saison hexgate « ${brut[0].tournoi.set} » inconnue — rien écrit`);
+      process.exitCode = 1;
+      continue;
+    }
     const contexte = nomTournoi(brut[0].tournoi);
     if (!contexte) {
       console.log(`${id} : nom de tournoi non reconnu (« ${brut[0].tournoi.nom} ») — rien écrit`);
@@ -311,7 +325,7 @@ async function main() {
         date: deck.tournoi.date,
         placement: deck.rang,
         playerCount: deck.tournoi.joueurs,
-        set: "Vendetta",
+        set,
         format: "Constructed",
         archetype: null,
         domains: [...new Set(mainDeck.flatMap((c) => c.domain.split("/")))].filter((d) => d && d !== "colorless"),

@@ -400,6 +400,11 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // riftdecks (« N Players »), pas le nombre de listes publiées.
   "Riftbound Showdown Sacramento (2026-10-24)": { name: "Riftbound Showdown Sacramento", shortName: "Sacramento Showdown", countryCode: "US", city: "Sacramento", location: "Sacramento, CA, USA", playerCount: 755, type: "regional", date: "2026-10-24", set: "Radiance", format: "Standard" },
   "Riftbound Showdown Melbourne (2026-10-23)": { name: "Riftbound Showdown Melbourne", shortName: "Melbourne Showdown", countryCode: "AU", city: "Melbourne", location: "Melbourne, Australie", playerCount: 251, type: "regional", date: "2026-10-23", set: "Radiance", format: "Standard" },
+  // Les quatre premières City Challenge S5 (Radiance) de hexgate, le 31 octobre.
+  "S5 Shenyang City Challenge (2026-10-31)": { name: "S5 Shenyang City Challenge", shortName: "Shenyang CC", countryCode: "CN", city: "Shenyang", location: "Shenyang, Chine", playerCount: 111, type: "city_challenge", date: "2026-10-31", set: "Radiance", format: "Standard" },
+  "S5 Suzhou City Challenge (2026-10-31)": { name: "S5 Suzhou City Challenge", shortName: "Suzhou CC", countryCode: "CN", city: "Suzhou", location: "Suzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-10-31", set: "Radiance", format: "Standard" },
+  "S5 Shenzhen City Challenge (2026-10-31)": { name: "S5 Shenzhen City Challenge", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 128, type: "city_challenge", date: "2026-10-31", set: "Radiance", format: "Standard" },
+  "S5 Fuzhou City Challenge (2026-10-31)": { name: "S5 Fuzhou City Challenge", shortName: "Fuzhou CC", countryCode: "CN", city: "Fuzhou", location: "Fuzhou, Chine", playerCount: 115, type: "city_challenge", date: "2026-10-31", set: "Radiance", format: "Standard" },
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },

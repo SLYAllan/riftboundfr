@@ -70,14 +70,23 @@ for (const [numero, { carte, source }] of aVoir) {
   }
   const image = corps.cards.find((c) => c.card_no === numero)?.image_path ?? null;
   // « card_images/OGN-246a_298.webp » → « ogn-246a-298 » ; « VEN-167.webp » → « ven-167- » + total.
-  const cle = image?.replace(/^.*\//, "").replace(/\.\w+$/, "").toLowerCase().replace("_", "-");
+  // Depuis S5, deux formes de plus : une empreinte avant l'extension
+  // (« RAD-110_167.6930bfff.webp ») et l'étoile d'un surnuméroté écrite « _ »
+  // (« SFD-225__221 » pour SFD-225*/221). Sans elles, 25 Champions restaient sans titre.
+  const cle = image
+    ?.replace(/^.*\//, "")
+    .replace(/(\.[0-9a-f]{8})?\.\w+$/, "")
+    .toLowerCase()
+    .replace("__", "*-")
+    .replace("_", "-");
   const candidates = cle
     ? base.filter((c) => c.riftboundId === cle || c.riftboundId.startsWith(`${cle}-`))
     : [];
   const nomsCandidats = [...new Set(candidates.map((c) => c.name.replace(/\s*\(.*\)$/, "")))];
   // Le numéro et l'image peuvent désigner deux impressions de la même carte
   // (Jayce SFD-084 affiché avec sa réimpression VEN-175) : on compare les cartes.
-  const [setHex, numHex] = numero.toLowerCase().match(/^([a-z0-9]+)-(\d+)/)?.slice(1) ?? [];
+  // `sp` : les cartes des decks de départ (« VEN-SP2 »), que `\d+` seul ne lisait pas.
+  const [setHex, numHex] = numero.toLowerCase().match(/^([a-z0-9]+)-((?:sp)?\d+)/)?.slice(1) ?? [];
   const motifNumero = new RegExp(`^${setHex}-${numHex?.padStart(3, "0")}[a-z*]*-`);
   const nomsAuNumero = new Set(
     base.filter((c) => motifNumero.test(c.riftboundId)).map((c) => c.name.replace(/\s*\(.*\)$/, "")),

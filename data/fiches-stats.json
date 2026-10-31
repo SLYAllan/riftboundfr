@@ -1,13 +1,13 @@
 {
   "Riven, The Exile": {
     "set": "Radiance",
-    "decks": 95,
+    "decks": 165,
     "depuisBan": "2026-09-15",
-    "joueurs": 116,
-    "coupe": 35,
-    "titres": 1,
-    "conversion": 30.2,
-    "tournois": 2,
+    "joueurs": 186,
+    "coupe": 50,
+    "titres": 3,
+    "conversion": 26.9,
+    "tournois": 6,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -15,32 +15,27 @@
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
+        "placement": "1st",
+        "player": "DWT-演员",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "1st",
+        "player": "GREY-海岛",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
         "placement": "2nd",
         "player": "his sion",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "4th",
-        "player": "dunkMATTic",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "4th",
-        "player": "Bo Su",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "5th",
-        "player": "Capt.Dewgong",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "2nd",
+        "player": "β东o肃",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
-      {
-        "nom": "Reckless Innovator",
-        "part": 100,
-        "copies": 3
-      },
       {
         "nom": "Blade of the Exile",
         "part": 100,
@@ -52,6 +47,11 @@
         "copies": 3
       },
       {
+        "nom": "Reckless Innovator",
+        "part": 99,
+        "copies": 3
+      },
+      {
         "nom": "Discipline",
         "part": 99,
         "copies": 3
@@ -59,32 +59,27 @@
       {
         "nom": "Bedeviling Stranger",
         "part": 97,
-        "copies": 3
-      },
-      {
-        "nom": "Tideturner",
-        "part": 97,
         "copies": 2
       },
       {
+        "nom": "Tideturner",
+        "part": 96,
+        "copies": 3
+      },
+      {
         "nom": "Zhonya's Hourglass",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Astral Heron",
         "part": 95,
         "copies": 3
       },
       {
         "nom": "Stellacorn Herder",
-        "part": 93,
+        "part": 94,
         "copies": 3
-      },
-      {
-        "nom": "Astral Heron",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Rebuke",
-        "part": 92,
-        "copies": 1
       },
       {
         "nom": "Star-Crossed",
@@ -92,48 +87,48 @@
         "copies": 1
       },
       {
+        "nom": "Rebuke",
+        "part": 88,
+        "copies": 1
+      },
+      {
         "nom": "Switcheroo",
-        "part": 80,
-        "copies": 1
-      },
-      {
-        "nom": "Baron Nashor",
-        "part": 77,
-        "copies": 1
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 73,
+        "part": 88,
         "copies": 2
       },
       {
-        "nom": "Gust",
-        "part": 69,
-        "copies": 1
+        "nom": "Scuttle Crab",
+        "part": 82,
+        "copies": 3
       },
       {
-        "nom": "Ride The Wind",
-        "part": 59,
+        "nom": "Gust",
+        "part": 77,
+        "copies": 2
+      },
+      {
+        "nom": "Baron Nashor",
+        "part": 62,
         "copies": 1
       },
       {
         "nom": "Battle Preparations",
-        "part": 48,
+        "part": 61,
         "copies": 2
       },
       {
         "nom": "Not So Fast",
-        "part": 46,
+        "part": 56,
+        "copies": 1
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 50,
         "copies": 1
       },
       {
         "nom": "Ki Burst",
-        "part": 42,
-        "copies": 1
-      },
-      {
-        "nom": "The Good Stuff",
-        "part": 35,
+        "part": 33,
         "copies": 1
       }
     ],
@@ -145,27 +140,22 @@
       },
       {
         "nom": "Blitzcrank, Impassive",
-        "part": 82,
-        "copies": 1
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 35,
+        "part": 87,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Star Spring",
-        "part": 99
-      },
-      {
-        "nom": "Hunters' Circle",
-        "part": 94
+        "part": 95
       },
       {
         "nom": "Emperor's Dais",
-        "part": 86
+        "part": 82
+      },
+      {
+        "nom": "Hunters' Circle",
+        "part": 79
       }
     ],
     "runes": [
@@ -183,14 +173,19 @@
   },
   "Kennen, Heart of the Tempest": {
     "set": "Radiance",
-    "decks": 54,
+    "decks": 90,
     "depuisBan": "2026-09-15",
-    "joueurs": 64,
-    "coupe": 17,
+    "joueurs": 100,
+    "coupe": 20,
     "titres": 0,
-    "conversion": 26.6,
-    "tournois": 2,
+    "conversion": 20,
+    "tournois": 6,
     "meilleuresPlaces": [
+      {
+        "placement": "2nd",
+        "player": "酷猫.Leo",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "5th",
         "player": "Fel Peon U",
@@ -202,27 +197,17 @@
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
+        "placement": "6th",
+        "player": "沈阳阿深",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
         "placement": "7th",
         "player": "DingCilia",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "9th",
-        "player": "Phi Nguyen",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "10th",
-        "player": "deb",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ],
     "cartes": [
-      {
-        "nom": "Traveling Merchant",
-        "part": 100,
-        "copies": 3
-      },
       {
         "nom": "Trifarian Captain",
         "part": 100,
@@ -234,23 +219,28 @@
         "copies": 3
       },
       {
+        "nom": "Traveling Merchant",
+        "part": 97,
+        "copies": 3
+      },
+      {
         "nom": "Star-Crossed",
-        "part": 100,
+        "part": 97,
         "copies": 1
       },
       {
         "nom": "Rhasa the Sunderer",
-        "part": 98,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Seal of Discord",
-        "part": 98,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Last Rites",
-        "part": 98,
+        "part": 96,
         "copies": 2
       },
       {
@@ -265,89 +255,94 @@
       },
       {
         "nom": "Switcheroo",
-        "part": 96,
+        "part": 93,
         "copies": 2
       },
       {
         "nom": "Bedeviling Stranger",
-        "part": 91,
-        "copies": 1
-      },
-      {
-        "nom": "Flash",
         "part": 81,
         "copies": 1
       },
       {
         "nom": "An Offer You Can't Refuse",
-        "part": 70,
+        "part": 68,
+        "copies": 1
+      },
+      {
+        "nom": "Flash",
+        "part": 67,
         "copies": 1
       },
       {
         "nom": "Tideturner",
-        "part": 57,
+        "part": 56,
         "copies": 1
       },
       {
         "nom": "Reckless Innovator",
-        "part": 52,
-        "copies": 2
-      },
-      {
-        "nom": "Tail-Cloaked Matriarch",
-        "part": 52,
+        "part": 51,
         "copies": 2
       },
       {
         "nom": "Hard Bargain",
-        "part": 52,
+        "part": 51,
         "copies": 1
       },
       {
+        "nom": "Tail-Cloaked Matriarch",
+        "part": 48,
+        "copies": 2
+      },
+      {
         "nom": "Rebuke",
-        "part": 41,
+        "part": 40,
         "copies": 1
       },
       {
         "nom": "Tornado Warrior",
-        "part": 37,
+        "part": 38,
+        "copies": 2
+      },
+      {
+        "nom": "Shadow Order Disciple",
+        "part": 34,
         "copies": 2
       }
     ],
     "champions": [
-      {
-        "nom": "Fizz, Trickster",
-        "part": 100,
-        "copies": 2
-      },
       {
         "nom": "Nocturne, Horrifying",
         "part": 98,
         "copies": 3
       },
       {
+        "nom": "Fizz, Trickster",
+        "part": 97,
+        "copies": 2
+      },
+      {
         "nom": "Kennen, Storm of Shuriken",
-        "part": 98,
+        "part": 96,
         "copies": 1
       },
       {
         "nom": "Ezreal, Prodigy",
-        "part": 57,
+        "part": 47,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Minefield",
-        "part": 98
+        "part": 96
       },
       {
         "nom": "Zaun Warrens",
-        "part": 98
+        "part": 96
       },
       {
         "nom": "Ruined Monastery",
-        "part": 43
+        "part": 42
       }
     ],
     "runes": [
@@ -363,15 +358,167 @@
       }
     ]
   },
+  "Kai'Sa, Daughter of the Void": {
+    "set": "Radiance",
+    "decks": 84,
+    "depuisBan": "2026-09-15",
+    "joueurs": 84,
+    "coupe": 12,
+    "titres": 0,
+    "conversion": 14.3,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "4th",
+        "player": "福州橙禄.蓝",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "4th",
+        "player": "澄匿梦霞@Ld.sz",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "4th",
+        "player": "MRR@牌客盟",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "6th",
+        "player": "腾飞的巨龙",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "7th",
+        "player": "lilpick拨片",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Stupefy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Brynhir Thundersong",
+        "part": 99,
+        "copies": 3
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 99,
+        "copies": 3
+      },
+      {
+        "nom": "Time Warp",
+        "part": 99,
+        "copies": 2
+      },
+      {
+        "nom": "Watchful Sentry",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Bilgewater Tracker",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Temporal Breach",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Plundering Poro",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 95,
+        "copies": 2
+      },
+      {
+        "nom": "Lecturing Yordle",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Hextech Ray",
+        "part": 90,
+        "copies": 2.5
+      },
+      {
+        "nom": "Smoke Screen",
+        "part": 89,
+        "copies": 2
+      },
+      {
+        "nom": "The Empyrean",
+        "part": 89,
+        "copies": 2
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 81,
+        "copies": 3
+      },
+      {
+        "nom": "Lost to the Sands",
+        "part": 44,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 100,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Rockfall Path",
+        "part": 100
+      },
+      {
+        "nom": "Frozen Fortress",
+        "part": 95
+      },
+      {
+        "nom": "Void Gate",
+        "part": 92
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Akali, Rogue Assassin": {
     "set": "Radiance",
-    "decks": 35,
+    "decks": 46,
     "depuisBan": "2026-09-15",
-    "joueurs": 39,
+    "joueurs": 52,
     "coupe": 5,
     "titres": 0,
-    "conversion": 12.8,
-    "tournois": 2,
+    "conversion": 9.6,
+    "tournois": 6,
     "meilleuresPlaces": [
       {
         "placement": "3rd",
@@ -384,19 +531,19 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "19th",
+        "player": "魔王魔法少女",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
         "placement": "29th",
         "player": "Int is win",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "43th",
-        "player": "R650 Kuako",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "55th",
-        "player": "Nathan Lassen",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "42th",
+        "player": "float.",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
@@ -442,48 +589,48 @@
       },
       {
         "nom": "Long Sword",
-        "part": 97,
+        "part": 98,
         "copies": 2
       },
       {
         "nom": "Mischievous Marai",
-        "part": 94,
+        "part": 96,
         "copies": 2
       },
       {
         "nom": "Not So Fast",
-        "part": 77,
-        "copies": 1
-      },
-      {
-        "nom": "Block",
-        "part": 71,
+        "part": 80,
         "copies": 1
       },
       {
         "nom": "Mournful Witness",
-        "part": 69,
-        "copies": 2.5
+        "part": 70,
+        "copies": 3
       },
       {
-        "nom": "Sterak's Gage",
-        "part": 57,
+        "nom": "Block",
+        "part": 67,
         "copies": 1
       },
       {
         "nom": "Scuttle Crab",
-        "part": 54,
+        "part": 48,
         "copies": 2
       },
       {
-        "nom": "Battle Preparations",
-        "part": 34,
-        "copies": 2
+        "nom": "Sterak's Gage",
+        "part": 48,
+        "copies": 1
       },
       {
         "nom": "Tomb-Raider Barbara",
-        "part": 34,
+        "part": 37,
         "copies": 1
+      },
+      {
+        "nom": "Battle Preparations",
+        "part": 30,
+        "copies": 1.5
       }
     ],
     "champions": [
@@ -494,17 +641,17 @@
       },
       {
         "nom": "Kai'Sa, Survivor",
-        "part": 94,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Blitzcrank, Impassive",
-        "part": 94,
+        "part": 93,
         "copies": 2
       },
       {
         "nom": "Darius, Trifarian",
-        "part": 54,
+        "part": 52,
         "copies": 1
       }
     ],
@@ -515,11 +662,11 @@
       },
       {
         "nom": "Sigil of the Storm",
-        "part": 89
+        "part": 87
       },
       {
         "nom": "Forgotten Monument",
-        "part": 83
+        "part": 85
       }
     ],
     "runes": [
@@ -535,158 +682,197 @@
       }
     ]
   },
-  "Kai'Sa, Daughter of the Void": {
+  "Vex, Gloomist": {
     "set": "Radiance",
-    "decks": 34,
+    "decks": 46,
     "depuisBan": "2026-09-15",
-    "joueurs": 34,
-    "coupe": 4,
-    "titres": 0,
-    "conversion": 11.8,
-    "tournois": 2,
+    "joueurs": 55,
+    "coupe": 8,
+    "titres": 1,
+    "conversion": 14.5,
+    "tournois": 5,
     "meilleuresPlaces": [
       {
-        "placement": "10th",
-        "player": "Angelo Lirazan",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "1st",
+        "player": "福州橙逯 · 初醒",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "2nd",
+        "player": "正月",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "7th",
+        "player": "Zlywt.不是咸鱼市区",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "8th",
+        "player": "常磐星海·巽岐",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
         "placement": "12th",
-        "player": "Kekoa Montalbo",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "31th",
-        "player": "Kevin Houde",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "51th",
-        "player": "Dat Nguyen",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "79th",
-        "player": "Shayn Voon",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "player": "Mord",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ],
     "cartes": [
       {
-        "nom": "Plundering Poro",
+        "nom": "Defy",
         "part": 100,
         "copies": 3
       },
       {
-        "nom": "Watchful Sentry",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Brynhir Thundersong",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Stupefy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Falling Star",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Bilgewater Tracker",
-        "part": 100,
+        "nom": "Switcheroo",
+        "part": 98,
         "copies": 2
       },
       {
-        "nom": "Hextech Ray",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Time Warp",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Bellows Breath",
-        "part": 97,
-        "copies": 2
-      },
-      {
-        "nom": "Smoke Screen",
-        "part": 97,
-        "copies": 2
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 94,
+        "nom": "Discipline",
+        "part": 93,
         "copies": 3
       },
       {
-        "nom": "Lecturing Yordle",
+        "nom": "Bedeviling Stranger",
         "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Astral Heron",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Boots of Swiftness",
+        "part": 89,
         "copies": 2
       },
       {
-        "nom": "The Empyrean",
+        "nom": "Zhonya's Hourglass",
+        "part": 89,
+        "copies": 2
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 87,
+        "copies": 1
+      },
+      {
+        "nom": "Back Off",
         "part": 85,
+        "copies": 2
+      },
+      {
+        "nom": "Rebuke",
+        "part": 72,
         "copies": 1
       },
       {
-        "nom": "Lost to the Sands",
-        "part": 59,
+        "nom": "Steel Paws",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Tornado Warrior",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Tideturner",
+        "part": 65,
         "copies": 1
       },
       {
-        "nom": "Ferrous Forerunner",
-        "part": 32,
+        "nom": "Gust",
+        "part": 63,
+        "copies": 1
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Edge of Night",
+        "part": 50,
+        "copies": 1
+      },
+      {
+        "nom": "Charm",
+        "part": 48,
+        "copies": 1
+      },
+      {
+        "nom": "Mutated Mouser",
+        "part": 46,
+        "copies": 3
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 43,
+        "copies": 1
+      },
+      {
+        "nom": "An Offer You Can't Refuse",
+        "part": 30,
+        "copies": 1
+      },
+      {
+        "nom": "Not So Fast",
+        "part": 30,
         "copies": 1
       }
     ],
     "champions": [
       {
-        "nom": "Kai'Sa, Survivor",
+        "nom": "Vex, Apathetic",
         "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Evelynn, Entrancing",
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Irelia, Fervent",
+        "part": 39,
+        "copies": 1
+      },
+      {
+        "nom": "Blitzcrank, Impassive",
+        "part": 33,
         "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Frozen Fortress",
-        "part": 100
+        "nom": "Bandle Scouts' Academy",
+        "part": 70
       },
       {
-        "nom": "Rockfall Path",
-        "part": 100
+        "nom": "Startipped Peak",
+        "part": 54
       },
       {
-        "nom": "Void Gate",
-        "part": 100
+        "nom": "Fortified Position",
+        "part": 43
+      },
+      {
+        "nom": "Bandle Tree",
+        "part": 33
       }
     ],
     "runes": [
       {
-        "nom": "Fury Rune",
+        "nom": "Chaos Rune",
         "part": 100,
         "copies": 7
       },
       {
-        "nom": "Mind Rune",
+        "nom": "Calm Rune",
         "part": 100,
         "copies": 5
       }
@@ -694,170 +880,170 @@
   },
   "Evelynn, Agony's Embrace": {
     "set": "Radiance",
-    "decks": 32,
+    "decks": 46,
     "depuisBan": "2026-09-15",
-    "joueurs": 39,
-    "coupe": 1,
+    "joueurs": 53,
+    "coupe": 2,
     "titres": 0,
-    "conversion": 2.6,
-    "tournois": 2,
+    "conversion": 3.8,
+    "tournois": 6,
     "meilleuresPlaces": [
+      {
+        "placement": "10th",
+        "player": "喵喵.熳城",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "21th",
         "player": "John Riftbound",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "67th",
-        "player": "mimi",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "22th",
+        "player": "GoodGa_嗚呼哈哈",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
-        "placement": "76th",
-        "player": "IBL Yoyoyagi",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "40th",
+        "player": "shef",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "84th",
-        "player": "Sean Hool",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "101th",
-        "player": "Weilun Wang",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "49th",
+        "player": "Tyk.St.柯基",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
       {
+        "nom": "Edge of Night",
+        "part": 89,
+        "copies": 2
+      },
+      {
         "nom": "Punch First",
-        "part": 88,
+        "part": 85,
         "copies": 2
       },
       {
         "nom": "Switcheroo",
-        "part": 88,
-        "copies": 2
-      },
-      {
-        "nom": "Edge of Night",
-        "part": 84,
+        "part": 83,
         "copies": 2
       },
       {
         "nom": "Star-Crossed",
-        "part": 84,
-        "copies": 2
-      },
-      {
-        "nom": "Bedeviling Stranger",
-        "part": 78,
+        "part": 83,
         "copies": 2
       },
       {
         "nom": "Rampage",
-        "part": 78,
+        "part": 80,
         "copies": 2
       },
       {
         "nom": "Gutter Guardian",
-        "part": 75,
+        "part": 74,
         "copies": 3
       },
       {
-        "nom": "Gust",
-        "part": 56,
-        "copies": 1.5
-      },
-      {
-        "nom": "Momentary Companion",
-        "part": 53,
-        "copies": 3
+        "nom": "Bedeviling Stranger",
+        "part": 65,
+        "copies": 2
       },
       {
         "nom": "Hold 'Em",
+        "part": 59,
+        "copies": 2
+      },
+      {
+        "nom": "Gust",
+        "part": 54,
+        "copies": 1
+      },
+      {
+        "nom": "Boots of Swiftness",
         "part": 50,
         "copies": 2
       },
       {
-        "nom": "Boots of Swiftness",
-        "part": 44,
-        "copies": 2
+        "nom": "Momentary Companion",
+        "part": 48,
+        "copies": 3
       },
       {
         "nom": "The Good Stuff",
-        "part": 44,
-        "copies": 2
+        "part": 48,
+        "copies": 1
       },
       {
         "nom": "Sabotage",
-        "part": 44,
-        "copies": 1.5
+        "part": 46,
+        "copies": 1
       },
       {
         "nom": "Tail-Cloaked Matriarch",
-        "part": 41,
+        "part": 39,
         "copies": 3
       },
       {
         "nom": "Tornado Warrior",
-        "part": 38,
+        "part": 37,
         "copies": 3
       },
       {
-        "nom": "Existential Dread",
-        "part": 38,
-        "copies": 1
-      },
-      {
-        "nom": "Siren's Song",
-        "part": 34,
-        "copies": 2
-      },
-      {
-        "nom": "Reckless Innovator",
-        "part": 34,
-        "copies": 2
+        "nom": "Ember Monk",
+        "part": 35,
+        "copies": 3
       },
       {
         "nom": "Portable Portal",
-        "part": 31,
+        "part": 35,
+        "copies": 1
+      },
+      {
+        "nom": "Reckless Innovator",
+        "part": 30,
+        "copies": 2
+      },
+      {
+        "nom": "Onslaught",
+        "part": 30,
         "copies": 1
       }
     ],
     "champions": [
       {
         "nom": "Evelynn, Entrancing",
-        "part": 100,
+        "part": 98,
         "copies": 1
       },
       {
-        "nom": "Pyke, Returned",
-        "part": 91,
-        "copies": 3
-      },
-      {
         "nom": "Vex, Apathetic",
-        "part": 91,
+        "part": 89,
         "copies": 2
       },
       {
+        "nom": "Pyke, Returned",
+        "part": 87,
+        "copies": 3
+      },
+      {
         "nom": "Rengar, Trophy Hunter",
-        "part": 81,
+        "part": 78,
         "copies": 2
       },
       {
         "nom": "Fizz, Trickster",
-        "part": 47,
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "K'Sante, Courageous",
+        "part": 43,
         "copies": 2
       },
       {
         "nom": "Ezreal, Prodigy",
-        "part": 44,
-        "copies": 3
-      },
-      {
-        "nom": "K'Sante, Courageous",
         "part": 41,
         "copies": 2
       }
@@ -865,19 +1051,15 @@
     "terrains": [
       {
         "nom": "Bandle Scouts' Academy",
-        "part": 97
-      },
-      {
-        "nom": "Startipped Peak",
-        "part": 47
+        "part": 96
       },
       {
         "nom": "Packed Amphitheater",
-        "part": 41
+        "part": 46
       },
       {
-        "nom": "Grove of the God-Willow",
-        "part": 34
+        "nom": "Startipped Peak",
+        "part": 39
       }
     ],
     "runes": [
@@ -893,16 +1075,168 @@
       }
     ]
   },
+  "Master Yi, Wuju Bladesman": {
+    "set": "Radiance",
+    "decks": 46,
+    "depuisBan": "2026-09-15",
+    "joueurs": 49,
+    "coupe": 3,
+    "titres": 0,
+    "conversion": 6.1,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "10th",
+        "player": "CCB.秋裤",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "10th",
+        "player": "YK胡马依北风",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "16th",
+        "player": "阿力",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "17th",
+        "player": "华蓝-dh9",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "21th",
+        "player": "巴巴博一",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Lonely Poro",
+        "part": 98,
+        "copies": 3
+      },
+      {
+        "nom": "Charm",
+        "part": 93,
+        "copies": 3
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "First Mate",
+        "part": 91,
+        "copies": 3
+      },
+      {
+        "nom": "Rampage",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 89,
+        "copies": 3
+      },
+      {
+        "nom": "Pit Rookie",
+        "part": 87,
+        "copies": 2
+      },
+      {
+        "nom": "Ruin Runner",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "En Garde",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Onslaught",
+        "part": 80,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Master Yi, Tempered",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 98,
+        "copies": 3
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Emperor's Dais",
+        "part": 80
+      },
+      {
+        "nom": "Star Spring",
+        "part": 78
+      },
+      {
+        "nom": "Seat of Power",
+        "part": 65
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Rengar, Pridestalker": {
     "set": "Radiance",
-    "decks": 29,
+    "decks": 45,
     "depuisBan": "2026-09-15",
-    "joueurs": 36,
-    "coupe": 4,
+    "joueurs": 53,
+    "coupe": 5,
     "titres": 0,
-    "conversion": 11.1,
-    "tournois": 2,
+    "conversion": 9.4,
+    "tournois": 6,
     "meilleuresPlaces": [
+      {
+        "placement": "3rd",
+        "player": "福州橙逯·漓泱",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "8th",
         "player": "Daniel Vu",
@@ -914,29 +1248,19 @@
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "30th",
-        "player": "Cardinality",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "25th",
+        "player": "徐大王文吱吱最强",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "44th",
-        "player": "Philip Ve",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "57th",
-        "player": "Vollka",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "29th",
+        "player": "约德尔专爱",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
       {
         "nom": "Inferna",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Irresistible Faefolk",
         "part": 100,
         "copies": 3
       },
@@ -966,34 +1290,44 @@
         "copies": 2
       },
       {
+        "nom": "Irresistible Faefolk",
+        "part": 98,
+        "copies": 3
+      },
+      {
         "nom": "Kinkou Initiate",
-        "part": 97,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Noxus Hopeful",
-        "part": 93,
+        "part": 96,
         "copies": 3
       },
       {
         "nom": "Sabotage",
-        "part": 93,
+        "part": 96,
         "copies": 2
       },
       {
         "nom": "Rampage",
-        "part": 93,
+        "part": 96,
+        "copies": 2
+      },
+      {
+        "nom": "Elnuk Herd",
+        "part": 73,
         "copies": 2
       },
       {
         "nom": "Ferrous Forerunner",
-        "part": 79,
+        "part": 71,
         "copies": 1
       },
       {
-        "nom": "Elnuk Herd",
-        "part": 69,
-        "copies": 2
+        "nom": "Brynhir Thundersong",
+        "part": 31,
+        "copies": 1
       }
     ],
     "champions": [
@@ -1009,37 +1343,37 @@
       },
       {
         "nom": "Nidalee, Cat Form",
-        "part": 97,
+        "part": 93,
         "copies": 2
       },
       {
         "nom": "Pyke, Dockside Butcher",
-        "part": 66,
-        "copies": 1
-      },
-      {
-        "nom": "Graves, Blasting Through",
-        "part": 45,
+        "part": 69,
         "copies": 1
       },
       {
         "nom": "Darius, Trifarian",
-        "part": 41,
+        "part": 44,
+        "copies": 1
+      },
+      {
+        "nom": "Graves, Blasting Through",
+        "part": 38,
         "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Star Spring",
-        "part": 100
+        "nom": "Emperor's Dais",
+        "part": 98
       },
       {
-        "nom": "Emperor's Dais",
-        "part": 97
+        "nom": "Star Spring",
+        "part": 96
       },
       {
         "nom": "Seat of Power",
-        "part": 86
+        "part": 84
       }
     ],
     "runes": [
@@ -1055,40 +1389,369 @@
       }
     ]
   },
+  "Mordekaiser, Iron Revenant": {
+    "set": "Radiance",
+    "decks": 38,
+    "depuisBan": "2026-09-15",
+    "joueurs": 50,
+    "coupe": 0,
+    "titres": 0,
+    "conversion": 0,
+    "tournois": 5,
+    "meilleuresPlaces": [
+      {
+        "placement": "17th",
+        "player": "天自",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "23th",
+        "player": "lilSPARK",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "25th",
+        "player": "3+X丨冰箫茶丶",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "38th",
+        "player": "Trasterisk",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "47th",
+        "player": "TCC_炫冰封",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Realm of Death",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Ferrous Forerunner",
+        "part": 74,
+        "copies": 2
+      },
+      {
+        "nom": "Honest Broker",
+        "part": 71,
+        "copies": 3
+      },
+      {
+        "nom": "Trifarian Captain",
+        "part": 66,
+        "copies": 3
+      },
+      {
+        "nom": "Long Sword",
+        "part": 66,
+        "copies": 2
+      },
+      {
+        "nom": "Bilgewater Tracker",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Falling Star",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Carrion Dredger",
+        "part": 61,
+        "copies": 3
+      },
+      {
+        "nom": "Vanguard Captain",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 42,
+        "copies": 3
+      },
+      {
+        "nom": "Salvage",
+        "part": 34,
+        "copies": 1
+      },
+      {
+        "nom": "Soaring Scout",
+        "part": 32,
+        "copies": 3
+      },
+      {
+        "nom": "Spectral Matron",
+        "part": 32,
+        "copies": 2
+      },
+      {
+        "nom": "Sacrifice",
+        "part": 32,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 87,
+        "copies": 3
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 71,
+        "copies": 2
+      },
+      {
+        "nom": "Mordekaiser, Dominating",
+        "part": 61,
+        "copies": 1
+      },
+      {
+        "nom": "Mordekaiser, Twice Slain",
+        "part": 47,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Zaun Warrens",
+        "part": 92
+      },
+      {
+        "nom": "Minefield",
+        "part": 76
+      },
+      {
+        "nom": "Ruined Monastery",
+        "part": 50
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Rek'sai, Void Burrower": {
+    "set": "Radiance",
+    "decks": 37,
+    "depuisBan": "2026-09-15",
+    "joueurs": 38,
+    "coupe": 4,
+    "titres": 0,
+    "conversion": 10.5,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "3rd",
+        "player": "克烈同学.KDX.神切",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "8th",
+        "player": "莫非",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "9th",
+        "player": "Zlywt.芜哈哈哈哈哈",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "9th",
+        "player": "enforce",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "11th",
+        "player": "铁头-不灭狂雷的信徒",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Carrion Dredger",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Cull the Weak",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Inferna",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Faithful Manufactor",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Undertitan",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Bilgewater Tracker",
+        "part": 78,
+        "copies": 3
+      },
+      {
+        "nom": "Trifarian Captain",
+        "part": 73,
+        "copies": 3
+      },
+      {
+        "nom": "Shimmering Swimmer",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Concert Poster",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Hunting Dog",
+        "part": 51,
+        "copies": 1
+      },
+      {
+        "nom": "Banner of Conquest",
+        "part": 49,
+        "copies": 1
+      },
+      {
+        "nom": "Blood Rush",
+        "part": 38,
+        "copies": 3
+      },
+      {
+        "nom": "Imperial Decree",
+        "part": 38,
+        "copies": 2
+      },
+      {
+        "nom": "Honest Broker",
+        "part": 32,
+        "copies": 2.5
+      },
+      {
+        "nom": "Cleave",
+        "part": 32,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Rek'Sai, Breacher",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Rengar, Pouncing",
+        "part": 59,
+        "copies": 2
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 43,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "The Candlelit Sanctum",
+        "part": 92
+      },
+      {
+        "nom": "Forbidding Waste",
+        "part": 49
+      },
+      {
+        "nom": "Hunters' Circle",
+        "part": 38
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Orianna, Lady of Clockwork": {
     "set": "Radiance",
-    "decks": 28,
+    "decks": 33,
     "depuisBan": "2026-09-15",
-    "joueurs": 37,
+    "joueurs": 43,
     "coupe": 1,
     "titres": 0,
-    "conversion": 2.7,
-    "tournois": 2,
+    "conversion": 2.3,
+    "tournois": 5,
     "meilleuresPlaces": [
+      {
+        "placement": "13th",
+        "player": "DWT-二麻",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "19th",
+        "player": "留鑫-Veil",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "19th",
+        "player": "S.T.没在摸鱼",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
       {
         "placement": "22th",
         "player": "Jimmythefish7",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "40th",
-        "player": "lem0n",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "41th",
-        "player": "TSQ James",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "84th",
-        "player": "Roukunz",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "123th",
-        "player": "Beog",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "34th",
+        "player": "牛家庄.雨.Tirzepatide",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
@@ -1099,99 +1762,104 @@
       },
       {
         "nom": "The Ball",
-        "part": 96,
+        "part": 97,
         "copies": 3
       },
       {
         "nom": "Discipline",
-        "part": 96,
+        "part": 97,
         "copies": 3
       },
       {
         "nom": "Stupefy",
-        "part": 89,
+        "part": 91,
         "copies": 3
       },
       {
         "nom": "Cloth Armor",
-        "part": 82,
-        "copies": 2
+        "part": 79,
+        "copies": 2.5
       },
       {
         "nom": "Thousand-Tailed Watcher",
-        "part": 75,
+        "part": 79,
         "copies": 2
       },
       {
         "nom": "Zhonya's Hourglass",
-        "part": 68,
-        "copies": 3
-      },
-      {
-        "nom": "Frigid Jewel",
-        "part": 68,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Mask of Foresight",
-        "part": 68,
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Frigid Jewel",
+        "part": 61,
         "copies": 3
       },
       {
         "nom": "Battle Preparations",
-        "part": 61,
+        "part": 58,
+        "copies": 2
+      },
+      {
+        "nom": "Back Off",
+        "part": 58,
         "copies": 2
       },
       {
         "nom": "Patched Porobot",
-        "part": 54,
+        "part": 48,
         "copies": 3
       },
       {
-        "nom": "Back Off",
-        "part": 54,
-        "copies": 2
-      },
-      {
         "nom": "Not So Fast",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Command: Attack",
-        "part": 43,
-        "copies": 2
-      },
-      {
-        "nom": "Sterak's Gage",
-        "part": 43,
-        "copies": 2
-      },
-      {
-        "nom": "Resplendent Rostrum",
-        "part": 43,
+        "part": 48,
         "copies": 1
       },
       {
         "nom": "Charm",
-        "part": 43,
+        "part": 48,
         "copies": 1
       },
       {
-        "nom": "Helm of Suppression",
+        "nom": "Command: Attack",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Sterak's Gage",
         "part": 39,
+        "copies": 2
+      },
+      {
+        "nom": "Resplendent Rostrum",
+        "part": 36,
         "copies": 1
       },
       {
         "nom": "Astral Heron",
-        "part": 32,
+        "part": 33,
         "copies": 3
+      },
+      {
+        "nom": "Helm of Suppression",
+        "part": 33,
+        "copies": 1
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 30,
+        "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "Orianna, Exquisite",
-        "part": 82,
+        "part": 85,
         "copies": 1
       }
     ],
@@ -1222,16 +1890,389 @@
       }
     ]
   },
+  "Nasus, Curator of the Sands": {
+    "set": "Radiance",
+    "decks": 33,
+    "depuisBan": "2026-09-15",
+    "joueurs": 37,
+    "coupe": 2,
+    "titres": 0,
+    "conversion": 5.4,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "27th",
+        "player": "Azucar",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "34th",
+        "player": "Kenny Tran",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "36th",
+        "player": "Jovan",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "44th",
+        "player": "鸽子",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "48th",
+        "player": "DWT-老默（恩师杰哥）",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 94,
+        "copies": 2
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 88,
+        "copies": 3
+      },
+      {
+        "nom": "Temporal Breach",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 82,
+        "copies": 3
+      },
+      {
+        "nom": "Find Your Center",
+        "part": 82,
+        "copies": 3
+      },
+      {
+        "nom": "Time Warp",
+        "part": 76,
+        "copies": 1
+      },
+      {
+        "nom": "Ravenbloom Student",
+        "part": 73,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 73,
+        "copies": 3
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 70,
+        "copies": 2
+      },
+      {
+        "nom": "The Empyrean",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Steel Paws",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Not So Fast",
+        "part": 58,
+        "copies": 1
+      },
+      {
+        "nom": "Retreat",
+        "part": 52,
+        "copies": 2
+      },
+      {
+        "nom": "Life from Stone",
+        "part": 48,
+        "copies": 2
+      },
+      {
+        "nom": "Lonely Poro",
+        "part": 42,
+        "copies": 3
+      },
+      {
+        "nom": "Back Off",
+        "part": 36,
+        "copies": 1
+      },
+      {
+        "nom": "Astral Heron",
+        "part": 33,
+        "copies": 3
+      },
+      {
+        "nom": "Tomb-Raider Barbara",
+        "part": 30,
+        "copies": 1
+      },
+      {
+        "nom": "Charm",
+        "part": 30,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Nasus, Ascended",
+        "part": 97,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Rockfall Path",
+        "part": 88
+      },
+      {
+        "nom": "The Papertree",
+        "part": 42
+      },
+      {
+        "nom": "Vilemaw's Lair",
+        "part": 36
+      },
+      {
+        "nom": "Ruined Monastery",
+        "part": 33
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Irelia, Blade Dancer": {
+    "set": "Radiance",
+    "decks": 31,
+    "depuisBan": "2026-09-15",
+    "joueurs": 31,
+    "coupe": 2,
+    "titres": 1,
+    "conversion": 6.5,
+    "tournois": 5,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": "CCB.春",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "5th",
+        "player": "Step.JBG.Sa",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "14th",
+        "player": "D.C.粉毛奶龙",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "20th",
+        "player": "3+X I 明涌",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "30th",
+        "player": "福州橙逯.企鹅",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Defiant Dance",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Tideturner",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Boots of Swiftness",
+        "part": 97,
+        "copies": 3
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Stellacorn Herder",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 84,
+        "copies": 1
+      },
+      {
+        "nom": "Not So Fast",
+        "part": 77,
+        "copies": 1
+      },
+      {
+        "nom": "Battle Preparations",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Charm",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Twilight Shroud",
+        "part": 65,
+        "copies": 1
+      },
+      {
+        "nom": "En Garde",
+        "part": 61,
+        "copies": 2
+      },
+      {
+        "nom": "Guardian Angel",
+        "part": 58,
+        "copies": 1
+      },
+      {
+        "nom": "Gust",
+        "part": 52,
+        "copies": 1
+      },
+      {
+        "nom": "Reckless Innovator",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 39,
+        "copies": 1
+      },
+      {
+        "nom": "Astral Heron",
+        "part": 32,
+        "copies": 3
+      },
+      {
+        "nom": "Flash",
+        "part": 32,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Irelia, Fervent",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 65,
+        "copies": 1
+      },
+      {
+        "nom": "Akali, Silent",
+        "part": 35,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Abandoned Hall",
+        "part": 100
+      },
+      {
+        "nom": "Sunken Temple",
+        "part": 87
+      },
+      {
+        "nom": "Targon's Peak",
+        "part": 68
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
   "Seraphine, Starry-Eyed Songstress": {
     "set": "Radiance",
-    "decks": 25,
+    "decks": 28,
     "depuisBan": "2026-09-15",
-    "joueurs": 36,
+    "joueurs": 40,
     "coupe": 0,
     "titres": 0,
     "conversion": 0,
-    "tournois": 2,
+    "tournois": 4,
     "meilleuresPlaces": [
+      {
+        "placement": "51th",
+        "player": "阳子",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "54th",
         "player": "PotatoCrumb",
@@ -1243,19 +2284,14 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "107th",
-        "player": "Cameron",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "62th",
+        "player": "亚当当当当",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "108th",
-        "player": "Kaisamaxxing",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "114th",
-        "player": "TFT Pengu",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "103th",
+        "player": "SYGY.廖叔",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
@@ -1266,77 +2302,82 @@
       },
       {
         "nom": "Concert Poster",
-        "part": 84,
+        "part": 86,
         "copies": 3
       },
       {
         "nom": "Imperial Decree",
-        "part": 80,
+        "part": 82,
         "copies": 2
       },
       {
         "nom": "Bellows Breath",
-        "part": 76,
+        "part": 75,
         "copies": 3
       },
       {
         "nom": "Hidden Blade",
-        "part": 72,
+        "part": 71,
         "copies": 2
       },
       {
         "nom": "Vanguard Armory",
-        "part": 60,
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Plundering Poro",
+        "part": 61,
         "copies": 3
       },
       {
         "nom": "Thousand-Tailed Watcher",
-        "part": 60,
+        "part": 61,
+        "copies": 2
+      },
+      {
+        "nom": "Wages of Pain",
+        "part": 61,
         "copies": 2
       },
       {
         "nom": "Raucous Anthem",
-        "part": 60,
+        "part": 61,
         "copies": 1
       },
       {
-        "nom": "Plundering Poro",
-        "part": 56,
+        "nom": "Stupefy",
+        "part": 50,
         "copies": 3
       },
       {
-        "nom": "Wages of Pain",
-        "part": 56,
-        "copies": 2
-      },
-      {
-        "nom": "Stupefy",
-        "part": 52,
+        "nom": "Carrion Dredger",
+        "part": 46,
         "copies": 3
       },
       {
         "nom": "Vanguard Captain",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Eclipse",
-        "part": 48,
-        "copies": 1.5
-      },
-      {
-        "nom": "Carrion Dredger",
-        "part": 44,
-        "copies": 3
-      },
-      {
-        "nom": "Trifarian Captain",
-        "part": 44,
+        "part": 46,
         "copies": 3
       },
       {
         "nom": "Honest Broker",
-        "part": 40,
+        "part": 43,
+        "copies": 2
+      },
+      {
+        "nom": "Eclipse",
+        "part": 43,
+        "copies": 1.5
+      },
+      {
+        "nom": "Trifarian Captain",
+        "part": 39,
+        "copies": 3
+      },
+      {
+        "nom": "Cull the Weak",
+        "part": 36,
         "copies": 2
       },
       {
@@ -1345,40 +2386,20 @@
         "copies": 2
       },
       {
-        "nom": "Cull the Weak",
-        "part": 32,
-        "copies": 2
-      },
-      {
         "nom": "Sprite Burst",
         "part": 32,
         "copies": 2
-      },
-      {
-        "nom": "Faithful Manufactor",
-        "part": 32,
-        "copies": 2
-      },
-      {
-        "nom": "Seal of Unity",
-        "part": 32,
-        "copies": 2
-      },
-      {
-        "nom": "Singularity",
-        "part": 32,
-        "copies": 1
       }
     ],
     "champions": [
       {
         "nom": "Seraphine, Inspiring",
-        "part": 80,
+        "part": 79,
         "copies": 1
       },
       {
         "nom": "Jayce, Man of Progress",
-        "part": 52,
+        "part": 57,
         "copies": 3
       },
       {
@@ -1394,7 +2415,7 @@
       },
       {
         "nom": "Forbidding Waste",
-        "part": 56
+        "part": 54
       },
       {
         "nom": "Treasure Hoard",
@@ -1414,908 +2435,15 @@
       }
     ]
   },
-  "Vex, Gloomist": {
-    "set": "Radiance",
-    "decks": 24,
-    "depuisBan": "2026-09-15",
-    "joueurs": 33,
-    "coupe": 4,
-    "titres": 0,
-    "conversion": 12.1,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "12th",
-        "player": "Mord",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "17th",
-        "player": "Parisofthesouth",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "26th",
-        "player": "Sparrows",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "26th",
-        "player": "Joshua L",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "50th",
-        "player": "Bourne",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Back Off",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Switcheroo",
-        "part": 96,
-        "copies": 2
-      },
-      {
-        "nom": "Bedeviling Stranger",
-        "part": 92,
-        "copies": 3
-      },
-      {
-        "nom": "Astral Heron",
-        "part": 92,
-        "copies": 2
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 88,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 88,
-        "copies": 1
-      },
-      {
-        "nom": "Boots of Swiftness",
-        "part": 83,
-        "copies": 2
-      },
-      {
-        "nom": "Tideturner",
-        "part": 71,
-        "copies": 1
-      },
-      {
-        "nom": "Gust",
-        "part": 71,
-        "copies": 1
-      },
-      {
-        "nom": "Mutated Mouser",
-        "part": 63,
-        "copies": 3
-      },
-      {
-        "nom": "Steel Paws",
-        "part": 63,
-        "copies": 3
-      },
-      {
-        "nom": "Tornado Warrior",
-        "part": 63,
-        "copies": 3
-      },
-      {
-        "nom": "Rebuke",
-        "part": 58,
-        "copies": 1
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 46,
-        "copies": 3
-      },
-      {
-        "nom": "Edge of Night",
-        "part": 46,
-        "copies": 1
-      },
-      {
-        "nom": "Charm",
-        "part": 42,
-        "copies": 1
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 42,
-        "copies": 1
-      },
-      {
-        "nom": "Kharox",
-        "part": 33,
-        "copies": 2
-      },
-      {
-        "nom": "Siren's Song",
-        "part": 33,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Vex, Apathetic",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Evelynn, Entrancing",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Blitzcrank, Impassive",
-        "part": 46,
-        "copies": 1
-      },
-      {
-        "nom": "Sona, Harmonious",
-        "part": 42,
-        "copies": 2
-      },
-      {
-        "nom": "Irelia, Fervent",
-        "part": 33,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Startipped Peak",
-        "part": 75
-      },
-      {
-        "nom": "Bandle Scouts' Academy",
-        "part": 71
-      },
-      {
-        "nom": "Bandle Tree",
-        "part": 46
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Nasus, Curator of the Sands": {
-    "set": "Radiance",
-    "decks": 23,
-    "depuisBan": "2026-09-15",
-    "joueurs": 27,
-    "coupe": 2,
-    "titres": 0,
-    "conversion": 7.4,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "34th",
-        "player": "Kenny Tran",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "36th",
-        "player": "Jovan",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "61th",
-        "player": "Francis Cruz",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "78th",
-        "player": "chickencatmandog",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "113th",
-        "player": "Glorp Honkmimimi",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Bellows Breath",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 83,
-        "copies": 3
-      },
-      {
-        "nom": "Find Your Center",
-        "part": 83,
-        "copies": 3
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 83,
-        "copies": 2
-      },
-      {
-        "nom": "Discipline",
-        "part": 74,
-        "copies": 3
-      },
-      {
-        "nom": "Time Warp",
-        "part": 74,
-        "copies": 1
-      },
-      {
-        "nom": "Ravenbloom Student",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "The Empyrean",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Stupefy",
-        "part": 65,
-        "copies": 3
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 65,
-        "copies": 2
-      },
-      {
-        "nom": "Not So Fast",
-        "part": 61,
-        "copies": 1
-      },
-      {
-        "nom": "Lonely Poro",
-        "part": 57,
-        "copies": 3
-      },
-      {
-        "nom": "Steel Paws",
-        "part": 52,
-        "copies": 3
-      },
-      {
-        "nom": "Life from Stone",
-        "part": 43,
-        "copies": 2
-      },
-      {
-        "nom": "Back Off",
-        "part": 43,
-        "copies": 1
-      },
-      {
-        "nom": "Retreat",
-        "part": 39,
-        "copies": 2
-      },
-      {
-        "nom": "Tomb-Raider Barbara",
-        "part": 39,
-        "copies": 1
-      },
-      {
-        "nom": "Piltovan Guidebot",
-        "part": 30,
-        "copies": 3
-      },
-      {
-        "nom": "Astral Heron",
-        "part": 30,
-        "copies": 3
-      },
-      {
-        "nom": "Sprite Burst",
-        "part": 30,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Nasus, Ascended",
-        "part": 96,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Rockfall Path",
-        "part": 91
-      },
-      {
-        "nom": "Ruined Monastery",
-        "part": 48
-      },
-      {
-        "nom": "The Papertree",
-        "part": 35
-      },
-      {
-        "nom": "Vilemaw's Lair",
-        "part": 35
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Mordekaiser, Iron Revenant": {
-    "set": "Radiance",
-    "decks": 23,
-    "depuisBan": "2026-09-15",
-    "joueurs": 34,
-    "coupe": 0,
-    "titres": 0,
-    "conversion": 0,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "38th",
-        "player": "Trasterisk",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "58th",
-        "player": "Regulus",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "71th",
-        "player": "IBL Ninkata",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "89th",
-        "player": "Christian Mukai",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "108th",
-        "player": "RaD Mr Jawsh",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Realm of Death",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Trifarian Captain",
-        "part": 74,
-        "copies": 3
-      },
-      {
-        "nom": "Honest Broker",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 70,
-        "copies": 2
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 70,
-        "copies": 1.5
-      },
-      {
-        "nom": "Long Sword",
-        "part": 65,
-        "copies": 2
-      },
-      {
-        "nom": "Bilgewater Tracker",
-        "part": 61,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 61,
-        "copies": 2
-      },
-      {
-        "nom": "Carrion Dredger",
-        "part": 52,
-        "copies": 3
-      },
-      {
-        "nom": "Vanguard Captain",
-        "part": 48,
-        "copies": 3
-      },
-      {
-        "nom": "Soaring Scout",
-        "part": 39,
-        "copies": 3
-      },
-      {
-        "nom": "Spectral Matron",
-        "part": 35,
-        "copies": 2.5
-      },
-      {
-        "nom": "Deathgrip",
-        "part": 30,
-        "copies": 2
-      },
-      {
-        "nom": "Shadow's Call",
-        "part": 30,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 87,
-        "copies": 3
-      },
-      {
-        "nom": "Mordekaiser, Dominating",
-        "part": 74,
-        "copies": 1
-      },
-      {
-        "nom": "Vi, Peacekeeper",
-        "part": 70,
-        "copies": 2
-      },
-      {
-        "nom": "Mordekaiser, Twice Slain",
-        "part": 39,
-        "copies": 1
-      },
-      {
-        "nom": "Rengar, Unseen",
-        "part": 30,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Zaun Warrens",
-        "part": 96
-      },
-      {
-        "nom": "Minefield",
-        "part": 70
-      },
-      {
-        "nom": "Ruined Monastery",
-        "part": 65
-      },
-      {
-        "nom": "Seat of Power",
-        "part": 30
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Order Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Lillia, Bashful Bloom": {
-    "set": "Radiance",
-    "decks": 22,
-    "depuisBan": "2026-09-15",
-    "joueurs": 42,
-    "coupe": 2,
-    "titres": 0,
-    "conversion": 4.8,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "14th",
-        "player": "Jellyleaf",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "25th",
-        "player": "CBL wags",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "28th",
-        "player": "Mimikyu",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "30th",
-        "player": "ivee",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "46th",
-        "player": "Michael Fladung",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Ravenbloom Student",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Sprite Fountain",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Sprite Burst",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Unchecked Power",
-        "part": 95,
-        "copies": 1
-      },
-      {
-        "nom": "Stupefy",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Charm",
-        "part": 91,
-        "copies": 2
-      },
-      {
-        "nom": "Mask of Foresight",
-        "part": 82,
-        "copies": 3
-      },
-      {
-        "nom": "Smoke and Mirrors",
-        "part": 82,
-        "copies": 3
-      },
-      {
-        "nom": "Brutalizer",
-        "part": 73,
-        "copies": 2
-      },
-      {
-        "nom": "Lonely Poro",
-        "part": 68,
-        "copies": 3
-      },
-      {
-        "nom": "En Garde",
-        "part": 68,
-        "copies": 3
-      },
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 68,
-        "copies": 1
-      },
-      {
-        "nom": "Battle Preparations",
-        "part": 64,
-        "copies": 2
-      },
-      {
-        "nom": "Smoke Screen",
-        "part": 64,
-        "copies": 2
-      },
-      {
-        "nom": "Tomb-Raider Barbara",
-        "part": 41,
-        "copies": 1
-      },
-      {
-        "nom": "Disarming Rake",
-        "part": 32,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Lillia, Fae Fawn",
-        "part": 100,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Seat of Power",
-        "part": 95
-      },
-      {
-        "nom": "Dusk Rose Lab",
-        "part": 91
-      },
-      {
-        "nom": "Black Flame Altar",
-        "part": 55
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Ekko, Boy Who Shattered Time": {
-    "set": "Radiance",
-    "decks": 22,
-    "depuisBan": "2026-09-15",
-    "joueurs": 28,
-    "coupe": 1,
-    "titres": 0,
-    "conversion": 3.6,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "51th",
-        "player": "Boodius",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "60th",
-        "player": "Tristan Baltazar",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "80th",
-        "player": "elicz1",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "118th",
-        "player": "Shane Clark",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "122th",
-        "player": "TheBeardless",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Stupefy",
-        "part": 95,
-        "copies": 3
-      },
-      {
-        "nom": "Plundering Poro",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Bilgewater Tracker",
-        "part": 86,
-        "copies": 2
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 77,
-        "copies": 3
-      },
-      {
-        "nom": "Shock Blast",
-        "part": 77,
-        "copies": 2
-      },
-      {
-        "nom": "Inferna",
-        "part": 73,
-        "copies": 3
-      },
-      {
-        "nom": "Brynhir Thundersong",
-        "part": 68,
-        "copies": 2
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 68,
-        "copies": 2
-      },
-      {
-        "nom": "Time Warp",
-        "part": 55,
-        "copies": 1
-      },
-      {
-        "nom": "Watchful Sentry",
-        "part": 45,
-        "copies": 3
-      },
-      {
-        "nom": "Lecturing Yordle",
-        "part": 45,
-        "copies": 2
-      },
-      {
-        "nom": "Cleave",
-        "part": 45,
-        "copies": 2
-      },
-      {
-        "nom": "Singularity",
-        "part": 41,
-        "copies": 1
-      },
-      {
-        "nom": "Sprite Fountain",
-        "part": 32,
-        "copies": 2
-      },
-      {
-        "nom": "Brittle Steel",
-        "part": 32,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 91,
-        "copies": 3
-      },
-      {
-        "nom": "Ekko, Ingenious",
-        "part": 77,
-        "copies": 1
-      },
-      {
-        "nom": "Ekko, Revolutionary",
-        "part": 73,
-        "copies": 1
-      },
-      {
-        "nom": "Pyke, Dockside Butcher",
-        "part": 68,
-        "copies": 2
-      },
-      {
-        "nom": "Vayne, Hunter",
-        "part": 64,
-        "copies": 2
-      },
-      {
-        "nom": "Darius, Trifarian",
-        "part": 36,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Rockfall Path",
-        "part": 82
-      },
-      {
-        "nom": "Seat of Power",
-        "part": 50
-      },
-      {
-        "nom": "Ripper's Bay",
-        "part": 45
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
   "LeBlanc, Deceiver": {
     "set": "Radiance",
-    "decks": 20,
+    "decks": 27,
     "depuisBan": "2026-09-15",
-    "joueurs": 30,
+    "joueurs": 38,
     "coupe": 6,
     "titres": 0,
-    "conversion": 20,
-    "tournois": 2,
+    "conversion": 15.8,
+    "tournois": 6,
     "meilleuresPlaces": [
       {
         "placement": "11th",
@@ -2333,55 +2461,45 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "47th",
-        "player": "GYATarina",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "34th",
+        "player": "KB-圆圆",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
-        "placement": "56th",
-        "player": "MajiinBae",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "45th",
+        "player": "Gengu",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
       {
-        "nom": "Mirror Image",
-        "part": 100,
+        "nom": "Thousand-Tailed Watcher",
+        "part": 96,
         "copies": 2
       },
       {
-        "nom": "Thousand-Tailed Watcher",
-        "part": 95,
+        "nom": "Mirror Image",
+        "part": 96,
         "copies": 2
       },
       {
         "nom": "Soaring Scout",
-        "part": 90,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Sacrifice",
-        "part": 90,
+        "part": 93,
         "copies": 3
-      },
-      {
-        "nom": "Watchful Sentry",
-        "part": 90,
-        "copies": 2
       },
       {
         "nom": "Deathgrip",
-        "part": 90,
+        "part": 93,
         "copies": 1
       },
       {
-        "nom": "Black Rose Dignitary",
-        "part": 85,
-        "copies": 3
-      },
-      {
         "nom": "Glasc Mixologist",
-        "part": 85,
+        "part": 89,
         "copies": 3
       },
       {
@@ -2390,51 +2508,56 @@
         "copies": 2
       },
       {
-        "nom": "Ruined Rex",
-        "part": 80,
+        "nom": "Watchful Sentry",
+        "part": 85,
+        "copies": 2
+      },
+      {
+        "nom": "Black Rose Dignitary",
+        "part": 81,
         "copies": 3
       },
       {
-        "nom": "Rift Herald",
-        "part": 80,
+        "nom": "Ruined Rex",
+        "part": 81,
         "copies": 3
       },
       {
         "nom": "Hidden Blade",
-        "part": 80,
+        "part": 81,
         "copies": 1
       },
       {
+        "nom": "Rift Herald",
+        "part": 74,
+        "copies": 2
+      },
+      {
         "nom": "Harnessed Dragon",
-        "part": 75,
+        "part": 70,
         "copies": 3
       },
       {
         "nom": "Baited Hook",
-        "part": 75,
+        "part": 67,
         "copies": 3
       }
     ],
     "champions": [
       {
-        "nom": "Vi, Peacekeeper",
-        "part": 95,
-        "copies": 3
+        "nom": "LeBlanc, Fragmented",
+        "part": 96,
+        "copies": 1
       },
       {
-        "nom": "LeBlanc, Fragmented",
-        "part": 95,
-        "copies": 1
+        "nom": "Vi, Peacekeeper",
+        "part": 93,
+        "copies": 3
       },
       {
         "nom": "Karthus, Eternal",
-        "part": 90,
+        "part": 89,
         "copies": 3
-      },
-      {
-        "nom": "Kennen, Keeper of Balance",
-        "part": 30,
-        "copies": 1
       }
     ],
     "terrains": [
@@ -2443,12 +2566,12 @@
         "part": 100
       },
       {
-        "nom": "Star Spring",
-        "part": 90
+        "nom": "Dusk Rose Lab",
+        "part": 74
       },
       {
-        "nom": "Dusk Rose Lab",
-        "part": 70
+        "nom": "Star Spring",
+        "part": 67
       }
     ],
     "runes": [
@@ -2464,55 +2587,45 @@
       }
     ]
   },
-  "Master Yi, Wuju Bladesman": {
+  "Lillia, Bashful Bloom": {
     "set": "Radiance",
-    "decks": 18,
+    "decks": 27,
     "depuisBan": "2026-09-15",
-    "joueurs": 20,
-    "coupe": 1,
+    "joueurs": 47,
+    "coupe": 3,
     "titres": 0,
-    "conversion": 5,
-    "tournois": 2,
+    "conversion": 6.4,
+    "tournois": 6,
     "meilleuresPlaces": [
       {
-        "placement": "45th",
-        "player": "Falo",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "3rd",
+        "player": "胰脏@牌客盟",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "114th",
-        "player": "Frank Zheng",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "115th",
-        "player": "Max Noman",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "129th",
-        "player": "Psycho0917",
+        "placement": "14th",
+        "player": "Jellyleaf",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "139th",
-        "player": "MacGyver March",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "24th",
+        "player": "P9.爱喝咖啡的狼",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "25th",
+        "player": "CBL wags",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "28th",
+        "player": "Mimikyu",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ],
     "cartes": [
       {
-        "nom": "Lonely Poro",
-        "part": 100,
-        "copies": 3
-      },
-      {
         "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Punch First",
         "part": 100,
         "copies": 3
       },
@@ -2522,269 +2635,448 @@
         "copies": 3
       },
       {
-        "nom": "Pit Rookie",
-        "part": 94,
+        "nom": "Ravenbloom Student",
+        "part": 96,
         "copies": 3
       },
       {
-        "nom": "First Mate",
-        "part": 94,
+        "nom": "Sprite Fountain",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Sprite Burst",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Charm",
-        "part": 94,
-        "copies": 3
-      },
-      {
-        "nom": "Rampage",
-        "part": 94,
+        "part": 93,
         "copies": 2
       },
       {
-        "nom": "Onslaught",
-        "part": 94,
+        "nom": "Unchecked Power",
+        "part": 93,
         "copies": 1
       },
       {
-        "nom": "Zhonya's Hourglass",
-        "part": 89,
-        "copies": 2
-      },
-      {
-        "nom": "Sabotage",
-        "part": 89,
-        "copies": 2
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 83,
+        "nom": "Mask of Foresight",
+        "part": 85,
         "copies": 3
       },
       {
-        "nom": "Ruin Runner",
-        "part": 83,
-        "copies": 2
+        "nom": "Smoke and Mirrors",
+        "part": 85,
+        "copies": 3
       },
       {
         "nom": "En Garde",
-        "part": 83,
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Brutalizer",
+        "part": 70,
         "copies": 2
       },
       {
-        "nom": "Not So Fast",
+        "nom": "Lonely Poro",
+        "part": 67,
+        "copies": 3
+      },
+      {
+        "nom": "Battle Preparations",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 63,
+        "copies": 1
+      },
+      {
+        "nom": "Smoke Screen",
+        "part": 56,
+        "copies": 2
+      },
+      {
+        "nom": "Tomb-Raider Barbara",
         "part": 33,
         "copies": 1
       }
     ],
     "champions": [
       {
-        "nom": "Rengar, Trophy Hunter",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Master Yi, Tempered",
+        "nom": "Lillia, Fae Fawn",
         "part": 100,
         "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Emperor's Dais",
-        "part": 83
-      },
-      {
-        "nom": "Star Spring",
-        "part": 83
-      },
-      {
         "nom": "Seat of Power",
-        "part": 61
+        "part": 96
       },
       {
-        "nom": "Grove of the God-Willow",
-        "part": 44
+        "nom": "Dusk Rose Lab",
+        "part": 93
+      },
+      {
+        "nom": "Black Flame Altar",
+        "part": 56
       }
     ],
     "runes": [
       {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
         "nom": "Calm Rune",
         "part": 100,
-        "copies": 5
+        "copies": 6
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
       }
     ]
   },
-  "Jarvan IV, Exemplar of Demacia": {
+  "Ekko, Boy Who Shattered Time": {
     "set": "Radiance",
-    "decks": 17,
+    "decks": 24,
     "depuisBan": "2026-09-15",
-    "joueurs": 20,
-    "coupe": 0,
+    "joueurs": 33,
+    "coupe": 1,
     "titres": 0,
-    "conversion": 0,
-    "tournois": 2,
+    "conversion": 3,
+    "tournois": 5,
     "meilleuresPlaces": [
       {
-        "placement": "77th",
-        "player": "Braden Van't Hof",
+        "placement": "32th",
+        "player": "卓卡-懒大块头",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "41th",
+        "player": "箬殇",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "51th",
+        "player": "Boodius",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "55th",
+        "player": "归零者-dblbd",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "60th",
+        "player": "Tristan Baltazar",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "89th",
-        "player": "Thalum",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "97th",
-        "player": "Jimmy",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "112th",
-        "player": "DuMumMay",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "210th",
-        "player": "StartRestarts",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ],
     "cartes": [
       {
-        "nom": "Pillaged Armory",
-        "part": 88,
-        "copies": 3
-      },
-      {
-        "nom": "Punch First",
-        "part": 88,
+        "nom": "Thousand-Tailed Watcher",
+        "part": 100,
         "copies": 2
       },
       {
-        "nom": "Demacian Standard",
-        "part": 82,
+        "nom": "Stupefy",
+        "part": 96,
         "copies": 3
       },
       {
-        "nom": "Rampage",
-        "part": 82,
-        "copies": 2.5
-      },
-      {
-        "nom": "Concert Poster",
-        "part": 82,
+        "nom": "Falling Star",
+        "part": 96,
         "copies": 2
       },
       {
-        "nom": "Trifarian Captain",
-        "part": 76,
+        "nom": "Plundering Poro",
+        "part": 92,
         "copies": 3
       },
       {
-        "nom": "Call to Glory",
-        "part": 76,
+        "nom": "Bilgewater Tracker",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 75,
         "copies": 3
       },
       {
-        "nom": "Pit Rookie",
+        "nom": "Inferna",
+        "part": 75,
+        "copies": 3
+      },
+      {
+        "nom": "Shock Blast",
         "part": 71,
-        "copies": 3
-      },
-      {
-        "nom": "Kinkou Initiate",
-        "part": 71,
-        "copies": 3
-      },
-      {
-        "nom": "Skystrike Squadron",
-        "part": 65,
-        "copies": 3
-      },
-      {
-        "nom": "Irresistible Faefolk",
-        "part": 53,
-        "copies": 3
-      },
-      {
-        "nom": "Overloaded Traveler",
-        "part": 47,
-        "copies": 3
-      },
-      {
-        "nom": "First Mate",
-        "part": 47,
-        "copies": 2.5
-      },
-      {
-        "nom": "Portable Portal",
-        "part": 35,
         "copies": 2
       },
       {
-        "nom": "Repulse",
-        "part": 35,
+        "nom": "Temporal Breach",
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Brynhir Thundersong",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Time Warp",
+        "part": 54,
+        "copies": 1
+      },
+      {
+        "nom": "Watchful Sentry",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Lecturing Yordle",
+        "part": 46,
+        "copies": 2
+      },
+      {
+        "nom": "Cleave",
+        "part": 46,
+        "copies": 2
+      },
+      {
+        "nom": "Singularity",
+        "part": 38,
+        "copies": 1
+      },
+      {
+        "nom": "Sprite Fountain",
+        "part": 33,
+        "copies": 2
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 33,
+        "copies": 2
+      },
+      {
+        "nom": "Retreat",
+        "part": 33,
         "copies": 1
       }
     ],
     "champions": [
       {
-        "nom": "Jarvan IV, Martial Paragon",
-        "part": 94,
+        "nom": "Kai'Sa, Survivor",
+        "part": 92,
+        "copies": 3
+      },
+      {
+        "nom": "Ekko, Revolutionary",
+        "part": 75,
         "copies": 1
       },
       {
-        "nom": "Rengar, Trophy Hunter",
-        "part": 82,
+        "nom": "Ekko, Ingenious",
+        "part": 71,
+        "copies": 1
+      },
+      {
+        "nom": "Vayne, Hunter",
+        "part": 67,
         "copies": 2
       },
       {
-        "nom": "Nidalee, Cat Form",
-        "part": 65,
+        "nom": "Pyke, Dockside Butcher",
+        "part": 63,
         "copies": 2
       },
       {
-        "nom": "Vi, Peacekeeper",
-        "part": 65,
-        "copies": 2
-      },
-      {
-        "nom": "Lucian, Merciless",
-        "part": 35,
-        "copies": 2.5
+        "nom": "Darius, Trifarian",
+        "part": 33,
+        "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Monastery of Hirana",
-        "part": 76
-      },
-      {
-        "nom": "Hunters' Circle",
-        "part": 53
+        "nom": "Rockfall Path",
+        "part": 79
       },
       {
         "nom": "Seat of Power",
-        "part": 35
+        "part": 50
       },
       {
-        "nom": "Ornn's Forge",
-        "part": 35
-      },
-      {
-        "nom": "Sunken Temple",
-        "part": 35
+        "nom": "Ripper's Bay",
+        "part": 42
       }
     ],
     "runes": [
       {
-        "nom": "Body Rune",
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Azir, Emperor of the Sands": {
+    "set": "Radiance",
+    "decks": 23,
+    "depuisBan": "2026-09-15",
+    "joueurs": 25,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 4,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "19th",
+        "player": "XYZ-咸盐一勺半",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "29th",
+        "player": "PKC.光子",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "36th",
+        "player": "清水雷鸣",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "38th",
+        "player": "开放世界的袁神",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "40th",
+        "player": "Andrew L McDonald",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Doran's Shield",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Eye of the Herald",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Brutalizer",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "B.F. Sword",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Guards!",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Arise!",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Soul Sword",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Hand Hammer",
+        "part": 96,
+        "copies": 2
+      },
+      {
+        "nom": "Back Off",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 87,
+        "copies": 3
+      },
+      {
+        "nom": "Deathgrip",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Battle Preparations",
+        "part": 48,
+        "copies": 2
+      },
+      {
+        "nom": "Salvage",
+        "part": 39,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Azir, Sovereign",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 70,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Hall of Legends",
+        "part": 100
+      },
+      {
+        "nom": "Trifarian War Camp",
+        "part": 91
+      },
+      {
+        "nom": "Seat of Power",
+        "part": 48
+      },
+      {
+        "nom": "Ornn's Forge",
+        "part": 43
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Calm Rune",
         "part": 100,
         "copies": 7
       },
@@ -2795,15 +3087,177 @@
       }
     ]
   },
+  "Jayce, Defender of Tomorrow": {
+    "set": "Radiance",
+    "decks": 23,
+    "depuisBan": "2026-09-15",
+    "joueurs": 29,
+    "coupe": 2,
+    "titres": 0,
+    "conversion": 6.9,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "5th",
+        "player": "CCB.老万",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "6th",
+        "player": "Templar",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "18th",
+        "player": "团团团团团团长",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "20th",
+        "player": "WWX",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "25th",
+        "player": "神掏",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Elder Dragon",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Dazzling Aurora",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Bellows Breath",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Catalyst of Aeons",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Clairvoyance",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Garbage Grabber",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Gutter Palace",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Flurry of Blades",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Platewyrm Egg",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Dredge Up",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Mobilize",
+        "part": 96,
+        "copies": 3
+      },
+      {
+        "nom": "Sabotage",
+        "part": 87,
+        "copies": 2
+      },
+      {
+        "nom": "Sprite Burst",
+        "part": 83,
+        "copies": 2
+      },
+      {
+        "nom": "Promising Future",
+        "part": 74,
+        "copies": 2
+      },
+      {
+        "nom": "Deadly Flourish",
+        "part": 61,
+        "copies": 2
+      },
+      {
+        "nom": "Temporal Breach",
+        "part": 57,
+        "copies": 1
+      },
+      {
+        "nom": "Rocket Barrage",
+        "part": 52,
+        "copies": 1.5
+      },
+      {
+        "nom": "Wages of Pain",
+        "part": 30,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Jayce, Brilliant Inventor",
+        "part": 83,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Sigil of the Storm",
+        "part": 100
+      },
+      {
+        "nom": "Forgotten Monument",
+        "part": 87
+      },
+      {
+        "nom": "Dragon Roost",
+        "part": 65
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Diana, Scorn of the Moon": {
     "set": "Radiance",
-    "decks": 16,
+    "decks": 22,
     "depuisBan": "2026-09-15",
-    "joueurs": 23,
-    "coupe": 5,
+    "joueurs": 29,
+    "coupe": 6,
     "titres": 1,
-    "conversion": 21.7,
-    "tournois": 2,
+    "conversion": 20.7,
+    "tournois": 6,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -2821,96 +3275,86 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "23th",
-        "player": "ahdenny",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "11th",
+        "player": "少吃萝卜",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "39th",
-        "player": "Jash",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "15th",
+        "player": "无极卡牌.牢底",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
-      {
-        "nom": "Tideturner",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Stupefy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Moonfall",
-        "part": 100,
-        "copies": 3
-      },
       {
         "nom": "Gust",
         "part": 100,
         "copies": 2
       },
       {
-        "nom": "Ride The Wind",
-        "part": 100,
-        "copies": 2
+        "nom": "Tideturner",
+        "part": 95,
+        "copies": 3
       },
       {
-        "nom": "Eclipse",
-        "part": 94,
+        "nom": "Stupefy",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Moonfall",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 95,
         "copies": 2
       },
       {
         "nom": "Star-Crossed",
-        "part": 94,
+        "part": 95,
+        "copies": 2
+      },
+      {
+        "nom": "Eclipse",
+        "part": 86,
         "copies": 2
       },
       {
         "nom": "Flash",
-        "part": 94,
+        "part": 86,
         "copies": 1
       },
       {
         "nom": "Ravenbloom Student",
-        "part": 88,
+        "part": 77,
         "copies": 3
       },
       {
         "nom": "Hard Bargain",
-        "part": 88,
-        "copies": 2
-      },
-      {
-        "nom": "Smoke Screen",
-        "part": 81,
-        "copies": 1
-      },
-      {
-        "nom": "Traveling Merchant",
-        "part": 75,
+        "part": 77,
         "copies": 2
       },
       {
         "nom": "Switcheroo",
-        "part": 75,
+        "part": 77,
+        "copies": 1
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Smoke Screen",
+        "part": 64,
         "copies": 1
       },
       {
         "nom": "Sprite Fountain",
-        "part": 63,
-        "copies": 2
-      },
-      {
-        "nom": "Rebuke",
-        "part": 63,
-        "copies": 1
-      },
-      {
-        "nom": "Acceptable Losses",
         "part": 50,
-        "copies": 1.5
+        "copies": 2
       },
       {
         "nom": "An Offer You Can't Refuse",
@@ -2918,54 +3362,64 @@
         "copies": 1
       },
       {
-        "nom": "Abandon",
-        "part": 31,
+        "nom": "Rebuke",
+        "part": 50,
         "copies": 1
+      },
+      {
+        "nom": "Acceptable Losses",
+        "part": 41,
+        "copies": 1
+      },
+      {
+        "nom": "Abandon",
+        "part": 36,
+        "copies": 1.5
       }
     ],
     "champions": [
-      {
-        "nom": "Hwei, Brooding Painter",
-        "part": 100,
-        "copies": 3
-      },
       {
         "nom": "Diana, Lunari",
         "part": 100,
         "copies": 1
       },
       {
+        "nom": "Hwei, Brooding Painter",
+        "part": 95,
+        "copies": 3
+      },
+      {
         "nom": "Vex, Apathetic",
-        "part": 94,
+        "part": 91,
         "copies": 3
       },
       {
         "nom": "Fizz, Trickster",
-        "part": 94,
+        "part": 91,
         "copies": 1
       },
       {
         "nom": "Vex, Cheerless",
-        "part": 38,
+        "part": 32,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Targon's Peak",
-        "part": 94
+        "part": 91
       },
       {
         "nom": "Abandoned Hall",
-        "part": 88
+        "part": 77
       },
       {
         "nom": "Seat of Power",
-        "part": 56
+        "part": 45
       },
       {
         "nom": "Rockfall Path",
-        "part": 31
+        "part": 36
       }
     ],
     "runes": [
@@ -2981,16 +3435,383 @@
       }
     ]
   },
+  "Jarvan IV, Exemplar of Demacia": {
+    "set": "Radiance",
+    "decks": 20,
+    "depuisBan": "2026-09-15",
+    "joueurs": 23,
+    "coupe": 0,
+    "titres": 0,
+    "conversion": 0,
+    "tournois": 5,
+    "meilleuresPlaces": [
+      {
+        "placement": "24th",
+        "player": "铁头-迦楼罗水镜",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "37th",
+        "player": "浅笑",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "77th",
+        "player": "Braden Van't Hof",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "89th",
+        "player": "Thalum",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "97th",
+        "player": "Jimmy",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Pillaged Armory",
+        "part": 90,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 90,
+        "copies": 2.5
+      },
+      {
+        "nom": "Demacian Standard",
+        "part": 85,
+        "copies": 3
+      },
+      {
+        "nom": "Rampage",
+        "part": 85,
+        "copies": 2
+      },
+      {
+        "nom": "Call to Glory",
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Concert Poster",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Trifarian Captain",
+        "part": 75,
+        "copies": 3
+      },
+      {
+        "nom": "Pit Rookie",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Skystrike Squadron",
+        "part": 70,
+        "copies": 3
+      },
+      {
+        "nom": "Kinkou Initiate",
+        "part": 70,
+        "copies": 2.5
+      },
+      {
+        "nom": "Irresistible Faefolk",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Overloaded Traveler",
+        "part": 45,
+        "copies": 3
+      },
+      {
+        "nom": "First Mate",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "Repulse",
+        "part": 40,
+        "copies": 1
+      },
+      {
+        "nom": "Portable Portal",
+        "part": 35,
+        "copies": 2
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 35,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 30,
+        "copies": 2
+      },
+      {
+        "nom": "Dockside Lock-Up",
+        "part": 30,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Jarvan IV, Martial Paragon",
+        "part": 95,
+        "copies": 1
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 80,
+        "copies": 2
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 65,
+        "copies": 2
+      },
+      {
+        "nom": "Nidalee, Cat Form",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Lucian, Merciless",
+        "part": 35,
+        "copies": 3
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Monastery of Hirana",
+        "part": 80
+      },
+      {
+        "nom": "Hunters' Circle",
+        "part": 55
+      },
+      {
+        "nom": "Ornn's Forge",
+        "part": 35
+      },
+      {
+        "nom": "Sunken Temple",
+        "part": 35
+      },
+      {
+        "nom": "Seat of Power",
+        "part": 30
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
+  "Ziggs, Hexplosives Expert": {
+    "set": "Radiance",
+    "decks": 19,
+    "depuisBan": "2026-09-15",
+    "joueurs": 25,
+    "coupe": 0,
+    "titres": 0,
+    "conversion": 0,
+    "tournois": 6,
+    "meilleuresPlaces": [
+      {
+        "placement": "53th",
+        "player": "Meka",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "62th",
+        "player": "哈叶叶",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "71th",
+        "player": "Vina",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "72th",
+        "player": "迷",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "79th",
+        "player": "isme",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Seal of Rage",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Detonate",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Shimmering Swimmer",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 95,
+        "copies": 3
+      },
+      {
+        "nom": "Pack of Wonders",
+        "part": 84,
+        "copies": 3
+      },
+      {
+        "nom": "Treasure Trove",
+        "part": 84,
+        "copies": 3
+      },
+      {
+        "nom": "Amateur Demolitionist",
+        "part": 79,
+        "copies": 3
+      },
+      {
+        "nom": "The List",
+        "part": 79,
+        "copies": 2
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 79,
+        "copies": 1
+      },
+      {
+        "nom": "Bilgewater Tracker",
+        "part": 68,
+        "copies": 3
+      },
+      {
+        "nom": "Acceptable Losses",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Runeblade Anvil",
+        "part": 63,
+        "copies": 2
+      },
+      {
+        "nom": "Bewitching Spirit",
+        "part": 58,
+        "copies": 3
+      },
+      {
+        "nom": "Piercing Light",
+        "part": 37,
+        "copies": 2
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 37,
+        "copies": 1
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 32,
+        "copies": 2.5
+      },
+      {
+        "nom": "An Offer You Can't Refuse",
+        "part": 32,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Ziggs, Explosive",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 84,
+        "copies": 2
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 68,
+        "copies": 2
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 32,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Void Gate",
+        "part": 84
+      },
+      {
+        "nom": "Rockfall Path",
+        "part": 53
+      },
+      {
+        "nom": "Sigil of the Storm",
+        "part": 42
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 7
+      },
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 5
+      }
+    ]
+  },
   "Master Yi, Wuju Master": {
     "set": "Radiance",
     "decks": 16,
     "depuisBan": "2026-09-15",
-    "joueurs": 26,
+    "joueurs": 28,
     "coupe": 1,
     "titres": 0,
-    "conversion": 3.8,
-    "tournois": 2,
+    "conversion": 3.6,
+    "tournois": 4,
     "meilleuresPlaces": [
+      {
+        "placement": "28th",
+        "player": "维渟",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "32th",
         "player": "TacoDog",
@@ -3010,11 +3831,6 @@
         "placement": "58th",
         "player": "Lorenzo Tran",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "74th",
-        "player": "devasx",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ],
     "cartes": [
@@ -3162,187 +3978,30 @@
       }
     ]
   },
-  "Ziggs, Hexplosives Expert": {
+  "K'Sante, Pride of Nazumah": {
     "set": "Radiance",
-    "decks": 14,
+    "decks": 15,
     "depuisBan": "2026-09-15",
     "joueurs": 19,
     "coupe": 0,
     "titres": 0,
     "conversion": 0,
-    "tournois": 2,
+    "tournois": 4,
     "meilleuresPlaces": [
       {
-        "placement": "79th",
-        "player": "isme",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "45th",
+        "player": "拉嘉",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
-      {
-        "placement": "80th",
-        "player": "HccDespoiler",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "85th",
-        "player": "Kevin Kim",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "99th",
-        "player": "Kemosabe",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "211th",
-        "player": "Baldy",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Amateur Demolitionist",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Seal of Rage",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Detonate",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Shimmering Swimmer",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Falling Star",
-        "part": 93,
-        "copies": 3
-      },
-      {
-        "nom": "Acceptable Losses",
-        "part": 86,
-        "copies": 2
-      },
-      {
-        "nom": "Pack of Wonders",
-        "part": 79,
-        "copies": 3
-      },
-      {
-        "nom": "Treasure Trove",
-        "part": 79,
-        "copies": 3
-      },
-      {
-        "nom": "The List",
-        "part": 71,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 71,
-        "copies": 1.5
-      },
-      {
-        "nom": "Bilgewater Tracker",
-        "part": 57,
-        "copies": 2
-      },
-      {
-        "nom": "Runeblade Anvil",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Bewitching Spirit",
-        "part": 43,
-        "copies": 2.5
-      },
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 36,
-        "copies": 2
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 36,
-        "copies": 2
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Ziggs, Explosive",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 79,
-        "copies": 2
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 57,
-        "copies": 1.5
-      },
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 43,
-        "copies": 2
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Void Gate",
-        "part": 86
-      },
-      {
-        "nom": "Rakelstake",
-        "part": 36
-      },
-      {
-        "nom": "Rockfall Path",
-        "part": 36
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 5
-      }
-    ]
-  },
-  "K'Sante, Pride of Nazumah": {
-    "set": "Radiance",
-    "decks": 13,
-    "depuisBan": "2026-09-15",
-    "joueurs": 17,
-    "coupe": 0,
-    "titres": 0,
-    "conversion": 0,
-    "tournois": 2,
-    "meilleuresPlaces": [
       {
         "placement": "46th",
         "player": "SantyMax",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "83th",
+        "player": "melo",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
         "placement": "95th",
@@ -3353,16 +4012,6 @@
         "placement": "105th",
         "player": "Zelq",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "146th",
-        "player": "Makai Benjamin Bush",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "279th",
-        "player": "TimIsCat",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ],
     "cartes": [
@@ -3373,123 +4022,119 @@
       },
       {
         "nom": "Punch First",
-        "part": 92,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Discipline",
-        "part": 92,
+        "part": 93,
         "copies": 3
       },
       {
         "nom": "Scuttle Crab",
-        "part": 85,
-        "copies": 3
-      },
-      {
-        "nom": "Nazuman Ntofo",
-        "part": 85,
+        "part": 87,
         "copies": 3
       },
       {
         "nom": "Ntofo Strikes",
-        "part": 85,
+        "part": 80,
+        "copies": 3
+      },
+      {
+        "nom": "Nazuman Ntofo",
+        "part": 80,
+        "copies": 2.5
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 73,
         "copies": 3
       },
       {
         "nom": "Stalwart Poro",
-        "part": 85,
-        "copies": 3
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 69,
+        "part": 73,
         "copies": 3
       },
       {
         "nom": "Consult the Heavens",
-        "part": 69,
+        "part": 67,
+        "copies": 2.5
+      },
+      {
+        "nom": "Block",
+        "part": 67,
+        "copies": 2
+      },
+      {
+        "nom": "Charm",
+        "part": 60,
         "copies": 2
       },
       {
         "nom": "Mutated Mouser",
-        "part": 62,
+        "part": 53,
         "copies": 3
       },
       {
-        "nom": "Charm",
-        "part": 62,
-        "copies": 2
-      },
-      {
-        "nom": "Block",
-        "part": 62,
+        "nom": "First Mate",
+        "part": 47,
         "copies": 2
       },
       {
         "nom": "Ruin Runner",
-        "part": 46,
-        "copies": 2
-      },
-      {
-        "nom": "First Mate",
-        "part": 38,
-        "copies": 2
-      },
-      {
-        "nom": "Sabotage",
-        "part": 38,
-        "copies": 2
-      },
-      {
-        "nom": "Back Off",
-        "part": 38,
+        "part": 40,
         "copies": 2
       },
       {
         "nom": "Stoic Ferryman",
-        "part": 38,
+        "part": 40,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 40,
+        "copies": 1.5
+      },
+      {
+        "nom": "Back Off",
+        "part": 33,
         "copies": 2
       }
     ],
     "champions": [
       {
         "nom": "K'Sante, Courageous",
-        "part": 69,
+        "part": 67,
         "copies": 1
       },
       {
         "nom": "Rengar, Trophy Hunter",
-        "part": 54,
-        "copies": 3
-      },
-      {
-        "nom": "Graves, Blasting Through",
-        "part": 46,
-        "copies": 2
+        "part": 53,
+        "copies": 2.5
       },
       {
         "nom": "K'Sante, Dauntless",
-        "part": 46,
+        "part": 47,
         "copies": 1
+      },
+      {
+        "nom": "Graves, Blasting Through",
+        "part": 40,
+        "copies": 2
       }
     ],
     "terrains": [
       {
         "nom": "Grove of the God-Willow",
-        "part": 62
-      },
-      {
-        "nom": "Fortified Position",
-        "part": 38
+        "part": 60
       },
       {
         "nom": "Seat of Power",
-        "part": 31
+        "part": 33
       },
       {
-        "nom": "Durand Memorial",
-        "part": 31
+        "nom": "Fortified Position",
+        "part": 33
       }
     ],
     "runes": [
@@ -3502,6 +4147,409 @@
         "nom": "Calm Rune",
         "part": 100,
         "copies": 6
+      }
+    ]
+  },
+  "Viktor, Herald of the Arcane": {
+    "set": "Radiance",
+    "decks": 14,
+    "depuisBan": "2026-09-15",
+    "joueurs": 14,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 7.1,
+    "tournois": 5,
+    "meilleuresPlaces": [
+      {
+        "placement": "2nd",
+        "player": "Calvin Jin",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "13th",
+        "player": "雪风",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "27th",
+        "player": "树懒·苍天",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "42th",
+        "player": "卓卡-星沉屿",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "62th",
+        "player": "不吃蔑视",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Bellows Breath",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Cull the Weak",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Hidden Blade",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Imperial Decree",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Stupefy",
+        "part": 86,
+        "copies": 3
+      },
+      {
+        "nom": "Wages of Pain",
+        "part": 86,
+        "copies": 3
+      },
+      {
+        "nom": "Sprite Fountain",
+        "part": 79,
+        "copies": 3
+      },
+      {
+        "nom": "Carrion Dredger",
+        "part": 71,
+        "copies": 3
+      },
+      {
+        "nom": "Shadow's Call",
+        "part": 71,
+        "copies": 2.5
+      },
+      {
+        "nom": "Sprite Burst",
+        "part": 71,
+        "copies": 1.5
+      },
+      {
+        "nom": "Concert Poster",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Salvage",
+        "part": 64,
+        "copies": 1
+      },
+      {
+        "nom": "Thousand-Tailed Watcher",
+        "part": 57,
+        "copies": 1
+      },
+      {
+        "nom": "Blood Money",
+        "part": 57,
+        "copies": 1
+      },
+      {
+        "nom": "Singularity",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "B.F. Sword",
+        "part": 50,
+        "copies": 1
+      },
+      {
+        "nom": "Facebreaker",
+        "part": 43,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Viktor, Leader",
+        "part": 86,
+        "copies": 1
+      },
+      {
+        "nom": "Vi, Peacekeeper",
+        "part": 43,
+        "copies": 2
+      },
+      {
+        "nom": "Xin Zhao, Vigilant",
+        "part": 36,
+        "copies": 2
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Forbidding Waste",
+        "part": 71
+      },
+      {
+        "nom": "Rockfall Path",
+        "part": 64
+      },
+      {
+        "nom": "Ravenbloom Conservatory",
+        "part": 43
+      },
+      {
+        "nom": "Void Gate",
+        "part": 36
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Order Rune",
+        "part": 100,
+        "copies": 6.5
+      },
+      {
+        "nom": "Mind Rune",
+        "part": 100,
+        "copies": 5.5
+      }
+    ]
+  },
+  "Zed, Master of Shadows": {
+    "set": "Radiance",
+    "decks": 12,
+    "depuisBan": "2026-09-15",
+    "joueurs": 19,
+    "coupe": 0,
+    "titres": 0,
+    "conversion": 0,
+    "tournois": 4,
+    "meilleuresPlaces": [
+      {
+        "placement": "60th",
+        "player": "Nimda",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "92th",
+        "player": "prooved",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "118th",
+        "player": "赤木·莱·哀奏",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "133th",
+        "player": "Closed on Sunday",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "158th",
+        "player": "CBL COINPURSE",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Ride The Wind",
+        "part": 92,
+        "copies": 2
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 83,
+        "copies": 3
+      },
+      {
+        "nom": "Runeblade Anvil",
+        "part": 75,
+        "copies": 3
+      },
+      {
+        "nom": "Tideturner",
+        "part": 75,
+        "copies": 2
+      },
+      {
+        "nom": "Noxus Hopeful",
+        "part": 67,
+        "copies": 3
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 67,
+        "copies": 1
+      },
+      {
+        "nom": "Gust",
+        "part": 58,
+        "copies": 1
+      },
+      {
+        "nom": "Falling Star",
+        "part": 58,
+        "copies": 1
+      },
+      {
+        "nom": "Pack of Wonders",
+        "part": 50,
+        "copies": 3
+      },
+      {
+        "nom": "Treasure Trove",
+        "part": 50,
+        "copies": 2.5
+      },
+      {
+        "nom": "Reckless Innovator",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Baron Nashor",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Perfect Execution",
+        "part": 50,
+        "copies": 2
+      },
+      {
+        "nom": "Bedeviling Stranger",
+        "part": 50,
+        "copies": 1.5
+      },
+      {
+        "nom": "Detonate",
+        "part": 42,
+        "copies": 3
+      },
+      {
+        "nom": "Rhasa the Sunderer",
+        "part": 42,
+        "copies": 3
+      },
+      {
+        "nom": "Up from the Deep",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 42,
+        "copies": 1
+      },
+      {
+        "nom": "Rebuke",
+        "part": 42,
+        "copies": 1
+      },
+      {
+        "nom": "Seal of Discord",
+        "part": 33,
+        "copies": 3
+      },
+      {
+        "nom": "Battering Ram",
+        "part": 33,
+        "copies": 3
+      },
+      {
+        "nom": "Cleave",
+        "part": 33,
+        "copies": 2
+      },
+      {
+        "nom": "The Harrowing",
+        "part": 33,
+        "copies": 2
+      },
+      {
+        "nom": "Bushwhack",
+        "part": 33,
+        "copies": 1.5
+      },
+      {
+        "nom": "Ferrous Forerunner",
+        "part": 33,
+        "copies": 1
+      },
+      {
+        "nom": "Last Rites",
+        "part": 33,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Zed, Without a Sound",
+        "part": 67,
+        "copies": 1
+      },
+      {
+        "nom": "Fizz, Trickster",
+        "part": 67,
+        "copies": 1
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 42,
+        "copies": 2
+      },
+      {
+        "nom": "Vi, Destructive",
+        "part": 42,
+        "copies": 1
+      },
+      {
+        "nom": "Ezreal, Prodigy",
+        "part": 33,
+        "copies": 2
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 33,
+        "copies": 1.5
+      },
+      {
+        "nom": "Zed, From the Shadows",
+        "part": 33,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Zaun Warrens",
+        "part": 92
+      },
+      {
+        "nom": "Minefield",
+        "part": 67
+      },
+      {
+        "nom": "Ruined Monastery",
+        "part": 33
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6.5
+      },
+      {
+        "nom": "Fury Rune",
+        "part": 100,
+        "copies": 5.5
       }
     ]
   },
@@ -3878,155 +4926,196 @@
       }
     ]
   },
-  "Azir, Emperor of the Sands": {
+  "Pyke, Bloodharbor Ripper": {
     "set": "Radiance",
-    "decks": 12,
+    "decks": 11,
     "depuisBan": "2026-09-15",
-    "joueurs": 13,
-    "coupe": 1,
+    "joueurs": 20,
+    "coupe": 0,
     "titres": 0,
-    "conversion": 7.7,
-    "tournois": 2,
+    "conversion": 0,
+    "tournois": 5,
     "meilleuresPlaces": [
       {
-        "placement": "40th",
-        "player": "Andrew L McDonald",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "106th",
-        "player": "Charlie Luo",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "168th",
-        "player": "Josh Huey",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "174th",
-        "player": "IonicAdept",
+        "placement": "27th",
+        "player": "XDPOW",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "184th",
-        "player": "Yibu Wu",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "56th",
+        "player": "DD DEXTERREIGNS",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "59th",
+        "player": "铁头-梦幻泡影",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "88th",
+        "player": "AbyssTCG W1LTI",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "96th",
+        "player": "天宜",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ],
     "cartes": [
       {
-        "nom": "Doran's Shield",
-        "part": 100,
+        "nom": "Falling Star",
+        "part": 91,
         "copies": 3
       },
       {
-        "nom": "Eye of the Herald",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Brutalizer",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "B.F. Sword",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Hidden Blade",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Guards!",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Arise!",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Deathgrip",
-        "part": 100,
+        "nom": "Star-Crossed",
+        "part": 91,
         "copies": 2
       },
       {
-        "nom": "Back Off",
-        "part": 92,
+        "nom": "Switcheroo",
+        "part": 73,
+        "copies": 2
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 55,
         "copies": 3
       },
       {
-        "nom": "Soul Sword",
-        "part": 92,
+        "nom": "Noxus Hopeful",
+        "part": 55,
+        "copies": 2.5
+      },
+      {
+        "nom": "Bedeviling Stranger",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Tideturner",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Bilgewater Tracker",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Tail-Cloaked Matriarch",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "The List",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "The Good Stuff",
+        "part": 45,
+        "copies": 1
+      },
+      {
+        "nom": "Piercing Light",
+        "part": 45,
+        "copies": 1
+      },
+      {
+        "nom": "Bewitching Spirit",
+        "part": 36,
         "copies": 3
       },
       {
-        "nom": "Hand Hammer",
-        "part": 92,
+        "nom": "Pack of Wonders",
+        "part": 36,
+        "copies": 3
+      },
+      {
+        "nom": "Shimmering Swimmer",
+        "part": 36,
+        "copies": 2.5
+      },
+      {
+        "nom": "Inferna",
+        "part": 36,
         "copies": 2
       },
       {
-        "nom": "Battle Preparations",
-        "part": 42,
-        "copies": 2
+        "nom": "Hard Bargain",
+        "part": 36,
+        "copies": 1
       },
       {
-        "nom": "En Garde",
-        "part": 33,
-        "copies": 2
+        "nom": "Baron Nashor",
+        "part": 36,
+        "copies": 1
+      },
+      {
+        "nom": "Gust",
+        "part": 36,
+        "copies": 1
+      },
+      {
+        "nom": "Void Seeker",
+        "part": 36,
+        "copies": 1
       }
     ],
     "champions": [
       {
-        "nom": "Azir, Sovereign",
-        "part": 100,
+        "nom": "Fizz, Trickster",
+        "part": 82,
+        "copies": 2
+      },
+      {
+        "nom": "Pyke, Dockside Butcher",
+        "part": 82,
         "copies": 1
       },
       {
-        "nom": "Vi, Peacekeeper",
-        "part": 67,
+        "nom": "Vex, Apathetic",
+        "part": 73,
+        "copies": 2
+      },
+      {
+        "nom": "Ezreal, Prodigy",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 36,
+        "copies": 2
+      },
+      {
+        "nom": "Pyke, Returned",
+        "part": 36,
         "copies": 1
       }
     ],
     "terrains": [
       {
-        "nom": "Hall of Legends",
-        "part": 100
+        "nom": "Ripper's Bay",
+        "part": 82
       },
       {
-        "nom": "Trifarian War Camp",
-        "part": 92
-      },
-      {
-        "nom": "Seat of Power",
-        "part": 75
+        "nom": "Forbidding Waste",
+        "part": 36
       }
     ],
     "runes": [
       {
-        "nom": "Calm Rune",
+        "nom": "Chaos Rune",
         "part": 100,
-        "copies": 7
+        "copies": 6
       },
       {
-        "nom": "Order Rune",
+        "nom": "Fury Rune",
         "part": 100,
-        "copies": 5
+        "copies": 6
       }
     ]
   },
@@ -4216,6 +5305,188 @@
       }
     ]
   },
+  "Kha'Zix, Voidreaver": {
+    "set": "Radiance",
+    "decks": 11,
+    "depuisBan": "2026-09-15",
+    "joueurs": 16,
+    "coupe": 1,
+    "titres": 0,
+    "conversion": 6.3,
+    "tournois": 4,
+    "meilleuresPlaces": [
+      {
+        "placement": "31th",
+        "player": "Phœnix",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "32th",
+        "player": "Nathan Chan",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "93th",
+        "player": "Ariel Kimmok",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "96th",
+        "player": "HE MAN",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "115th",
+        "player": "赢了我就要玩熔钥秘境",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Irresistible Faefolk",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Punch First",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Void Assault",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Rampage",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Star-Crossed",
+        "part": 100,
+        "copies": 2
+      },
+      {
+        "nom": "Sabotage",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Ride The Wind",
+        "part": 73,
+        "copies": 1
+      },
+      {
+        "nom": "Shadow Order Disciple",
+        "part": 64,
+        "copies": 3
+      },
+      {
+        "nom": "Up from the Deep",
+        "part": 64,
+        "copies": 2
+      },
+      {
+        "nom": "Traveling Merchant",
+        "part": 55,
+        "copies": 2
+      },
+      {
+        "nom": "Switcheroo",
+        "part": 55,
+        "copies": 1
+      },
+      {
+        "nom": "Onslaught",
+        "part": 55,
+        "copies": 1
+      },
+      {
+        "nom": "Reckless Innovator",
+        "part": 45,
+        "copies": 3
+      },
+      {
+        "nom": "Grim Resolve",
+        "part": 45,
+        "copies": 2
+      },
+      {
+        "nom": "Hard Bargain",
+        "part": 45,
+        "copies": 1
+      },
+      {
+        "nom": "Tail-Cloaked Matriarch",
+        "part": 36,
+        "copies": 2
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Fizz, Trickster",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Kha'Zix, Mutating Horror",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Vex, Apathetic",
+        "part": 91,
+        "copies": 2
+      },
+      {
+        "nom": "Rengar, Trophy Hunter",
+        "part": 73,
+        "copies": 2
+      },
+      {
+        "nom": "Nidalee, Cat Form",
+        "part": 45,
+        "copies": 3
+      },
+      {
+        "nom": "Graves, Blasting Through",
+        "part": 36,
+        "copies": 2
+      },
+      {
+        "nom": "Evelynn, Entrancing",
+        "part": 36,
+        "copies": 1.5
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Star Spring",
+        "part": 100
+      },
+      {
+        "nom": "Sandswept Tomb",
+        "part": 91
+      },
+      {
+        "nom": "Forbidding Waste",
+        "part": 45
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Body Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
   "Shen, Eye of Twilight": {
     "set": "Radiance",
     "decks": 11,
@@ -4398,571 +5669,40 @@
       }
     ]
   },
-  "Zed, Master of Shadows": {
-    "set": "Radiance",
-    "decks": 10,
-    "depuisBan": "2026-09-15",
-    "joueurs": 17,
-    "coupe": 0,
-    "titres": 0,
-    "conversion": 0,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "60th",
-        "player": "Nimda",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "133th",
-        "player": "Closed on Sunday",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "158th",
-        "player": "CBL COINPURSE",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "169th",
-        "player": "Ksubi",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "208th",
-        "player": "DD Liger",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Traveling Merchant",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Runeblade Anvil",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Ride The Wind",
-        "part": 90,
-        "copies": 2
-      },
-      {
-        "nom": "Noxus Hopeful",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Tideturner",
-        "part": 70,
-        "copies": 2
-      },
-      {
-        "nom": "Star-Crossed",
-        "part": 70,
-        "copies": 1
-      },
-      {
-        "nom": "Pack of Wonders",
-        "part": 60,
-        "copies": 3
-      },
-      {
-        "nom": "Treasure Trove",
-        "part": 60,
-        "copies": 2.5
-      },
-      {
-        "nom": "Bedeviling Stranger",
-        "part": 60,
-        "copies": 1.5
-      },
-      {
-        "nom": "Gust",
-        "part": 60,
-        "copies": 1
-      },
-      {
-        "nom": "Detonate",
-        "part": 50,
-        "copies": 3
-      },
-      {
-        "nom": "Rhasa the Sunderer",
-        "part": 50,
-        "copies": 3
-      },
-      {
-        "nom": "Perfect Execution",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Rebuke",
-        "part": 50,
-        "copies": 1
-      },
-      {
-        "nom": "Seal of Discord",
-        "part": 40,
-        "copies": 3
-      },
-      {
-        "nom": "Battering Ram",
-        "part": 40,
-        "copies": 3
-      },
-      {
-        "nom": "Reckless Innovator",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Baron Nashor",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Cleave",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Switcheroo",
-        "part": 40,
-        "copies": 1.5
-      },
-      {
-        "nom": "Bushwhack",
-        "part": 40,
-        "copies": 1.5
-      },
-      {
-        "nom": "Ferrous Forerunner",
-        "part": 40,
-        "copies": 1
-      },
-      {
-        "nom": "Last Rites",
-        "part": 40,
-        "copies": 1
-      },
-      {
-        "nom": "Up from the Deep",
-        "part": 30,
-        "copies": 2
-      },
-      {
-        "nom": "Shadows of the Past",
-        "part": 30,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Zed, Without a Sound",
-        "part": 70,
-        "copies": 1
-      },
-      {
-        "nom": "Fizz, Trickster",
-        "part": 70,
-        "copies": 1
-      },
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 50,
-        "copies": 2
-      },
-      {
-        "nom": "Vex, Apathetic",
-        "part": 40,
-        "copies": 1.5
-      },
-      {
-        "nom": "Vi, Destructive",
-        "part": 40,
-        "copies": 1
-      },
-      {
-        "nom": "Ezreal, Prodigy",
-        "part": 30,
-        "copies": 2
-      },
-      {
-        "nom": "Zed, From the Shadows",
-        "part": 30,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Zaun Warrens",
-        "part": 100
-      },
-      {
-        "nom": "Minefield",
-        "part": 60
-      },
-      {
-        "nom": "Ruined Monastery",
-        "part": 40
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Chaos Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
-      }
-    ]
-  },
-  "Jayce, Defender of Tomorrow": {
-    "set": "Radiance",
-    "decks": 10,
-    "depuisBan": "2026-09-15",
-    "joueurs": 16,
-    "coupe": 1,
-    "titres": 0,
-    "conversion": 6.3,
-    "tournois": 2,
-    "meilleuresPlaces": [
-      {
-        "placement": "6th",
-        "player": "Templar",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "66th",
-        "player": "nicL",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "111th",
-        "player": "RasMan",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "190th",
-        "player": "Akira Bui",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "191th",
-        "player": "John Lam",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Elder Dragon",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Dazzling Aurora",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Bellows Breath",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Catalyst of Aeons",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Clairvoyance",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Garbage Grabber",
-        "part": 100,
-        "copies": 2.5
-      },
-      {
-        "nom": "Gutter Palace",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Flurry of Blades",
-        "part": 100,
-        "copies": 2
-      },
-      {
-        "nom": "Platewyrm Egg",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Dredge Up",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Mobilize",
-        "part": 90,
-        "copies": 3
-      },
-      {
-        "nom": "Sabotage",
-        "part": 90,
-        "copies": 2
-      },
-      {
-        "nom": "Sprite Burst",
-        "part": 90,
-        "copies": 2
-      },
-      {
-        "nom": "Promising Future",
-        "part": 70,
-        "copies": 3
-      },
-      {
-        "nom": "Rocket Barrage",
-        "part": 70,
-        "copies": 2
-      },
-      {
-        "nom": "Stupefy",
-        "part": 40,
-        "copies": 2
-      },
-      {
-        "nom": "Temporal Breach",
-        "part": 40,
-        "copies": 1
-      },
-      {
-        "nom": "Deadly Flourish",
-        "part": 30,
-        "copies": 1
-      },
-      {
-        "nom": "Progress Day",
-        "part": 30,
-        "copies": 1
-      },
-      {
-        "nom": "Downstage Dramatics",
-        "part": 30,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Jayce, Brilliant Inventor",
-        "part": 90,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Forgotten Monument",
-        "part": 100
-      },
-      {
-        "nom": "Sigil of the Storm",
-        "part": 100
-      },
-      {
-        "nom": "The Papertree",
-        "part": 40
-      },
-      {
-        "nom": "Dragon Roost",
-        "part": 30
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Body Rune",
-        "part": 100,
-        "copies": 7
-      },
-      {
-        "nom": "Mind Rune",
-        "part": 100,
-        "copies": 5
-      }
-    ]
-  },
-  "Kha'Zix, Voidreaver": {
+  "Ezreal, Prodigal Explorer": {
     "set": "Radiance",
     "decks": 9,
     "toutesEres": true,
-    "joueurs": 720,
-    "coupe": 70,
+    "joueurs": 1087,
+    "coupe": 112,
     "titres": 0,
-    "conversion": 9.7,
-    "tournois": 78,
+    "conversion": 10.3,
+    "tournois": 111,
     "meilleuresPlaces": [
       {
         "placement": "2nd",
-        "player": "信仰.Rui",
-        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+        "player": "无极卡牌.牢底",
+        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
       },
       {
-        "placement": "4th",
+        "placement": "2nd",
         "player": null,
-        "tournament": "S3 Chengdu City Challenge (2026-04-25)"
+        "tournament": "S2 Hangzhou City Challenge (2026-03-08)"
       },
       {
-        "placement": "5th",
-        "player": "闪电家.乐事.阿迪打野",
-        "tournament": "S4 Chengdu National Open (2026-10-10)"
-      },
-      {
-        "placement": "5th",
+        "placement": "2nd",
         "player": null,
-        "tournament": "S3 Wuhan City Challenge (2026-04-25)"
+        "tournament": "S2 Regional Open - Dalian (2026-02-01)"
       },
       {
-        "placement": "6th",
+        "placement": "2nd",
         "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Pyke, Bloodharbor Ripper": {
-    "set": "Radiance",
-    "decks": 8,
-    "toutesEres": true,
-    "joueurs": 579,
-    "coupe": 29,
-    "titres": 0,
-    "conversion": 5,
-    "tournois": 72,
-    "meilleuresPlaces": [
+        "tournament": "Shenzhen City Challenge (2025-12-21)"
+      },
       {
         "placement": "3rd",
-        "player": null,
-        "tournament": "S3 Fuzhou City Challenge (2026-04-26)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "S3 Guangzhou City Challenge (2026-04-19)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "S3 Tianjin Regional Open (2026-06-07)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "S3 Tianjin Regional Open (2026-06-07)"
-      },
-      {
-        "placement": "6th",
-        "player": null,
-        "tournament": "S3 Guangzhou City Challenge (2026-05-30)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Renekton, Butcher of the Sands": {
-    "set": "Radiance",
-    "decks": 7,
-    "toutesEres": true,
-    "joueurs": 109,
-    "coupe": 2,
-    "titres": 0,
-    "conversion": 1.8,
-    "tournois": 18,
-    "meilleuresPlaces": [
-      {
-        "placement": "30th",
-        "player": "FSW.TPQ.老登亚索🤤",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
-      },
-      {
-        "placement": "35th",
-        "player": "小窝-Thierry",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "49th",
-        "player": "LRDN",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "59th",
-        "player": "一个单纯的人",
-        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
-      },
-      {
-        "placement": "61th",
-        "player": "一个单纯的人",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Viktor, Herald of the Arcane": {
-    "set": "Radiance",
-    "decks": 7,
-    "toutesEres": true,
-    "joueurs": 2030,
-    "coupe": 192,
-    "titres": 4,
-    "conversion": 9.5,
-    "tournois": 127,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Chengdu City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-07)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Fuzhou City Challenge (2025-12-27)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-12-20)"
-      },
-      {
-        "placement": "2nd",
-        "player": "Calvin Jin",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "player": "Bradykin",
+        "tournament": "RQ Hartford 2026"
       }
     ],
     "cartes": [],
@@ -4972,13 +5712,13 @@
   },
   "Mel, Soul's Reflection": {
     "set": "Radiance",
-    "decks": 7,
+    "decks": 9,
     "toutesEres": true,
-    "joueurs": 247,
+    "joueurs": 249,
     "coupe": 7,
     "titres": 0,
     "conversion": 2.8,
-    "tournois": 40,
+    "tournois": 41,
     "meilleuresPlaces": [
       {
         "placement": "10th",
@@ -5011,40 +5751,163 @@
     "terrains": [],
     "runes": []
   },
-  "Irelia, Blade Dancer": {
+  "Volibear, Relentless Storm": {
     "set": "Radiance",
-    "decks": 7,
+    "decks": 9,
     "toutesEres": true,
-    "joueurs": 3627,
-    "coupe": 521,
-    "titres": 15,
-    "conversion": 14.4,
-    "tournois": 113,
+    "joueurs": 418,
+    "coupe": 15,
+    "titres": 0,
+    "conversion": 3.6,
+    "tournois": 79,
+    "meilleuresPlaces": [
+      {
+        "placement": "5th",
+        "player": "元气幻界小江",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "6th",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "8th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+      },
+      {
+        "placement": "11th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+      },
+      {
+        "placement": "12th",
+        "player": null,
+        "tournament": "Chengdu City Challenge (2025-10-12)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Renekton, Butcher of the Sands": {
+    "set": "Radiance",
+    "decks": 8,
+    "toutesEres": true,
+    "joueurs": 110,
+    "coupe": 2,
+    "titres": 0,
+    "conversion": 1.8,
+    "tournois": 19,
+    "meilleuresPlaces": [
+      {
+        "placement": "30th",
+        "player": "FSW.TPQ.老登亚索🤤",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+      },
+      {
+        "placement": "35th",
+        "player": "小窝-Thierry",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "49th",
+        "player": "LRDN",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "59th",
+        "player": "一个单纯的人",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+      },
+      {
+        "placement": "61th",
+        "player": "一个单纯的人",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Fiora, Grand Duelist": {
+    "set": "Radiance",
+    "decks": 8,
+    "toutesEres": true,
+    "joueurs": 1534,
+    "coupe": 139,
+    "titres": 7,
+    "conversion": 9.1,
+    "tournois": 118,
     "meilleuresPlaces": [
       {
         "placement": "1st",
-        "player": "EDG Rico1997",
-        "tournament": "RQ Sydney 2026"
+        "player": "ARBD-Nolan",
+        "tournament": "S4 Guangzhou City Challenge (2026-10-01)"
       },
       {
         "placement": "1st",
-        "player": "旋木时光-绿拐",
-        "tournament": "S4 Beijing City Challenge (2026-08-23)"
+        "player": "小橘派派",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
       },
       {
         "placement": "1st",
-        "player": "konaha",
-        "tournament": "S4 Wuhan Regional Open (2026-08-29)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "S3 National Open (2026-07-19)"
+        "player": "花生桌游仙林店",
+        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
       },
       {
         "placement": "1st",
         "player": null,
-        "tournament": "Guangzhou City Challenge (2025-12-28)"
+        "tournament": "Shenzhen City Challenge (2026-01-01)"
+      },
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "S3 Beijing City Challenge (2026-05-03)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Ivern, Green Father": {
+    "set": "Radiance",
+    "decks": 6,
+    "toutesEres": true,
+    "joueurs": 337,
+    "coupe": 4,
+    "titres": 0,
+    "conversion": 1.2,
+    "tournois": 54,
+    "meilleuresPlaces": [
+      {
+        "placement": "19th",
+        "player": null,
+        "tournament": "S3 Beijing City Challenge (2026-04-25)"
+      },
+      {
+        "placement": "24th",
+        "player": null,
+        "tournament": "S3 Hangzhou City Challenge (2026-04-19)"
+      },
+      {
+        "placement": "24th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-04-19)"
+      },
+      {
+        "placement": "34th",
+        "player": "玖离啾啾",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      },
+      {
+        "placement": "34th",
+        "player": null,
+        "tournament": "S3 Shanghai City Challenge (2026-04-25)"
       }
     ],
     "cartes": [],
@@ -5093,138 +5956,15 @@
     "terrains": [],
     "runes": []
   },
-  "Ivern, Green Father": {
-    "set": "Radiance",
-    "decks": 5,
-    "toutesEres": true,
-    "joueurs": 336,
-    "coupe": 4,
-    "titres": 0,
-    "conversion": 1.2,
-    "tournois": 53,
-    "meilleuresPlaces": [
-      {
-        "placement": "19th",
-        "player": null,
-        "tournament": "S3 Beijing City Challenge (2026-04-25)"
-      },
-      {
-        "placement": "24th",
-        "player": null,
-        "tournament": "S3 Hangzhou City Challenge (2026-04-19)"
-      },
-      {
-        "placement": "24th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-04-19)"
-      },
-      {
-        "placement": "34th",
-        "player": "玖离啾啾",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
-      },
-      {
-        "placement": "34th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-04-25)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Ezreal, Prodigal Explorer": {
-    "set": "Radiance",
-    "decks": 5,
-    "toutesEres": true,
-    "joueurs": 1083,
-    "coupe": 111,
-    "titres": 0,
-    "conversion": 10.2,
-    "tournois": 108,
-    "meilleuresPlaces": [
-      {
-        "placement": "2nd",
-        "player": "无极卡牌.牢底",
-        "tournament": "S4 Fuzhou City Challenge (2026-09-27)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "S2 Hangzhou City Challenge (2026-03-08)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "S2 Regional Open - Dalian (2026-02-01)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-12-21)"
-      },
-      {
-        "placement": "3rd",
-        "player": "Bradykin",
-        "tournament": "RQ Hartford 2026"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Rek'sai, Void Burrower": {
-    "set": "Radiance",
-    "decks": 5,
-    "toutesEres": true,
-    "joueurs": 1096,
-    "coupe": 101,
-    "titres": 2,
-    "conversion": 9.2,
-    "tournois": 101,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": "HBG.windman",
-        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "S2 Hangzhou City Challenge (2026-03-08)"
-      },
-      {
-        "placement": "2nd",
-        "player": "猫岛巡礼.No.Jay",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-27)"
-      },
-      {
-        "placement": "2nd",
-        "player": "HBG.windman",
-        "tournament": "S4 Shanghai City Challenge (2026-09-27)"
-      },
-      {
-        "placement": "2nd",
-        "player": "XYZ.媄猗",
-        "tournament": "S4 Shenyang City Challenge (2026-08-16)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
   "Leona, Radiant Dawn": {
     "set": "Radiance",
-    "decks": 3,
+    "decks": 5,
     "toutesEres": true,
-    "joueurs": 494,
+    "joueurs": 496,
     "coupe": 7,
     "titres": 0,
     "conversion": 1.4,
-    "tournois": 82,
+    "tournois": 84,
     "meilleuresPlaces": [
       {
         "placement": "9th",
@@ -5257,97 +5997,15 @@
     "terrains": [],
     "runes": []
   },
-  "Fiora, Grand Duelist": {
-    "set": "Radiance",
-    "decks": 2,
-    "toutesEres": true,
-    "joueurs": 1528,
-    "coupe": 139,
-    "titres": 7,
-    "conversion": 9.1,
-    "tournois": 114,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": "ARBD-Nolan",
-        "tournament": "S4 Guangzhou City Challenge (2026-10-01)"
-      },
-      {
-        "placement": "1st",
-        "player": "小橘派派",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
-      },
-      {
-        "placement": "1st",
-        "player": "花生桌游仙林店",
-        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2026-01-01)"
-      },
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "S3 Beijing City Challenge (2026-05-03)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Ornn, Fire Below the Mountain": {
-    "set": "Radiance",
-    "decks": 2,
-    "toutesEres": true,
-    "joueurs": 913,
-    "coupe": 52,
-    "titres": 1,
-    "conversion": 5.7,
-    "tournois": 108,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": "MICE TheManLand",
-        "tournament": "Barcelona Regional Qualifier"
-      },
-      {
-        "placement": "2nd",
-        "player": "xyz.李泳垚",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Fuzhou City Challenge (2025-12-27)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2026-01-02)"
-      },
-      {
-        "placement": "3rd",
-        "player": "karn",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
   "Sett, The Boss": {
     "set": "Radiance",
-    "decks": 2,
+    "decks": 5,
     "toutesEres": true,
-    "joueurs": 868,
+    "joueurs": 871,
     "coupe": 76,
     "titres": 8,
-    "conversion": 8.8,
-    "tournois": 105,
+    "conversion": 8.7,
+    "tournois": 107,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -5380,40 +6038,40 @@
     "terrains": [],
     "runes": []
   },
-  "Volibear, Relentless Storm": {
+  "Ornn, Fire Below the Mountain": {
     "set": "Radiance",
-    "decks": 2,
+    "decks": 3,
     "toutesEres": true,
-    "joueurs": 411,
-    "coupe": 15,
-    "titres": 0,
-    "conversion": 3.6,
-    "tournois": 76,
+    "joueurs": 914,
+    "coupe": 52,
+    "titres": 1,
+    "conversion": 5.7,
+    "tournois": 109,
     "meilleuresPlaces": [
       {
-        "placement": "5th",
-        "player": "元气幻界小江",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+        "placement": "1st",
+        "player": "MICE TheManLand",
+        "tournament": "Barcelona Regional Qualifier"
       },
       {
-        "placement": "6th",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-09-27)"
+        "placement": "2nd",
+        "player": "xyz.李泳垚",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
       },
       {
-        "placement": "8th",
+        "placement": "2nd",
         "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-04-18)"
+        "tournament": "Fuzhou City Challenge (2025-12-27)"
       },
       {
-        "placement": "11th",
+        "placement": "2nd",
         "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+        "tournament": "Shanghai City Challenge (2026-01-02)"
       },
       {
-        "placement": "12th",
-        "player": null,
-        "tournament": "Chengdu City Challenge (2025-10-12)"
+        "placement": "3rd",
+        "player": "karn",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
       }
     ],
     "cartes": [],
@@ -5423,13 +6081,13 @@
   },
   "Rumble, Mechanized Menace": {
     "set": "Radiance",
-    "decks": 1,
+    "decks": 3,
     "toutesEres": true,
-    "joueurs": 466,
+    "joueurs": 470,
     "coupe": 5,
     "titres": 0,
     "conversion": 1.1,
-    "tournois": 57,
+    "tournois": 59,
     "meilleuresPlaces": [
       {
         "placement": "6th",
@@ -5462,15 +6120,56 @@
     "terrains": [],
     "runes": []
   },
+  "Draven, Glorious Executioner": {
+    "set": "Radiance",
+    "decks": 3,
+    "toutesEres": true,
+    "joueurs": 2414,
+    "coupe": 381,
+    "titres": 14,
+    "conversion": 15.8,
+    "tournois": 110,
+    "meilleuresPlaces": [
+      {
+        "placement": "0th",
+        "player": "mikomiko",
+        "tournament": "Singapore Regional Qualifier"
+      },
+      {
+        "placement": "1st",
+        "player": "JHM.太子",
+        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Fuzhou City Challenge (2026-01-02)"
+      },
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2026-02-07)"
+      },
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Hangzhou City Challenge (2025-12-20)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
   "Teemo, Swift Scout": {
     "set": "Radiance",
-    "decks": 1,
+    "decks": 2,
     "toutesEres": true,
-    "joueurs": 731,
+    "joueurs": 733,
     "coupe": 50,
     "titres": 0,
     "conversion": 6.8,
-    "tournois": 98,
+    "tournois": 99,
     "meilleuresPlaces": [
       {
         "placement": "2nd",
@@ -5503,40 +6202,40 @@
     "terrains": [],
     "runes": []
   },
-  "Draven, Glorious Executioner": {
+  "Lee Sin, Blind Monk": {
     "set": "Radiance",
-    "decks": 1,
+    "decks": 2,
     "toutesEres": true,
-    "joueurs": 2412,
-    "coupe": 381,
-    "titres": 14,
-    "conversion": 15.8,
-    "tournois": 109,
+    "joueurs": 379,
+    "coupe": 16,
+    "titres": 0,
+    "conversion": 4.2,
+    "tournois": 61,
     "meilleuresPlaces": [
       {
-        "placement": "0th",
-        "player": "mikomiko",
-        "tournament": "Singapore Regional Qualifier"
-      },
-      {
-        "placement": "1st",
-        "player": "JHM.太子",
-        "tournament": "S4 Shanghai City Challenge (2026-08-08)"
-      },
-      {
-        "placement": "1st",
+        "placement": "3rd",
         "player": null,
-        "tournament": "Fuzhou City Challenge (2026-01-02)"
+        "tournament": "Beijing City Challenge (2025-10-06)"
       },
       {
-        "placement": "1st",
+        "placement": "6th",
         "player": null,
-        "tournament": "Guangzhou City Challenge (2026-02-07)"
+        "tournament": "Shenyang City Challenge (2025-10-12)"
       },
       {
-        "placement": "1st",
+        "placement": "8th",
         "player": null,
-        "tournament": "Hangzhou City Challenge (2025-12-20)"
+        "tournament": "Guangzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "9th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-10-18)"
+      },
+      {
+        "placement": "12th",
+        "player": "桐人",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ],
     "cartes": [],
@@ -5585,15 +6284,56 @@
     "terrains": [],
     "runes": []
   },
+  "Ahri, Nine-Tailed Fox": {
+    "set": "Radiance",
+    "decks": 1,
+    "toutesEres": true,
+    "joueurs": 822,
+    "coupe": 33,
+    "titres": 1,
+    "conversion": 4,
+    "tournois": 94,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Nanjing City Challenge (2025-10-12)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Shenzhen City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
   "Annie, Dark Child": {
     "set": "Radiance",
-    "decks": 0,
+    "decks": 1,
     "toutesEres": true,
-    "joueurs": 771,
+    "joueurs": 772,
     "coupe": 95,
     "titres": 5,
     "conversion": 12.3,
-    "tournois": 105,
+    "tournois": 106,
     "meilleuresPlaces": [
       {
         "placement": "1st",
@@ -5619,6 +6359,88 @@
         "placement": "1st",
         "player": null,
         "tournament": "S2 Regional Open - Nanjing (2026-02-08)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Darius, Hand of Noxus": {
+    "set": "Radiance",
+    "decks": 1,
+    "toutesEres": true,
+    "joueurs": 418,
+    "coupe": 46,
+    "titres": 0,
+    "conversion": 11,
+    "tournois": 72,
+    "meilleuresPlaces": [
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2026-01-31)"
+      },
+      {
+        "placement": "2nd",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Guangzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
+      }
+    ],
+    "cartes": [],
+    "champions": [],
+    "terrains": [],
+    "runes": []
+  },
+  "Miss Fortune, Bounty Hunter": {
+    "set": "Radiance",
+    "decks": 1,
+    "toutesEres": true,
+    "joueurs": 926,
+    "coupe": 85,
+    "titres": 1,
+    "conversion": 9.2,
+    "tournois": 91,
+    "meilleuresPlaces": [
+      {
+        "placement": "1st",
+        "player": null,
+        "tournament": "Fuzhou City Challenge (2025-09-27)"
+      },
+      {
+        "placement": "3rd",
+        "player": null,
+        "tournament": "S3 Tianjin City Challenge (2026-04-19)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Shanghai City Challenge (2025-10-07)"
+      },
+      {
+        "placement": "4th",
+        "player": null,
+        "tournament": "Hangzhou City Challenge (2025-12-20)"
+      },
+      {
+        "placement": "5th",
+        "player": null,
+        "tournament": "Beijing City Challenge (2025-10-06)"
       }
     ],
     "cartes": [],
@@ -5667,88 +6489,6 @@
     "terrains": [],
     "runes": []
   },
-  "Darius, Hand of Noxus": {
-    "set": "Radiance",
-    "decks": 0,
-    "toutesEres": true,
-    "joueurs": 417,
-    "coupe": 46,
-    "titres": 0,
-    "conversion": 11,
-    "tournois": 71,
-    "meilleuresPlaces": [
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2026-01-31)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "5th",
-        "player": null,
-        "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Ahri, Nine-Tailed Fox": {
-    "set": "Radiance",
-    "decks": 0,
-    "toutesEres": true,
-    "joueurs": 821,
-    "coupe": 33,
-    "titres": 1,
-    "conversion": 4,
-    "tournois": 93,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Nanjing City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-07)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-09-27)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
   "Sivir, Battle Mistress": {
     "set": "Radiance",
     "decks": 0,
@@ -5783,47 +6523,6 @@
         "placement": "2nd",
         "player": null,
         "tournament": "S3 Shenzhen City Challenge (2026-05-16)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Lee Sin, Blind Monk": {
-    "set": "Radiance",
-    "decks": 0,
-    "toutesEres": true,
-    "joueurs": 377,
-    "coupe": 15,
-    "titres": 0,
-    "conversion": 4,
-    "tournois": 59,
-    "meilleuresPlaces": [
-      {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-06)"
-      },
-      {
-        "placement": "6th",
-        "player": null,
-        "tournament": "Shenyang City Challenge (2025-10-12)"
-      },
-      {
-        "placement": "8th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "9th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-10-18)"
-      },
-      {
-        "placement": "12th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
       }
     ],
     "cartes": [],
@@ -5906,47 +6605,6 @@
         "placement": "11th",
         "player": null,
         "tournament": "S3 Shanghai City Challenge (2026-05-02)"
-      }
-    ],
-    "cartes": [],
-    "champions": [],
-    "terrains": [],
-    "runes": []
-  },
-  "Miss Fortune, Bounty Hunter": {
-    "set": "Radiance",
-    "decks": 0,
-    "toutesEres": true,
-    "joueurs": 925,
-    "coupe": 85,
-    "titres": 1,
-    "conversion": 9.2,
-    "tournois": 90,
-    "meilleuresPlaces": [
-      {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Fuzhou City Challenge (2025-09-27)"
-      },
-      {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "S3 Tianjin City Challenge (2026-04-19)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-07)"
-      },
-      {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Hangzhou City Challenge (2025-12-20)"
-      },
-      {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-06)"
       }
     ],
     "cartes": [],

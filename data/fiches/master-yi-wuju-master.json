@@ -113,13 +113,18 @@
     "15 listes seulement sur les 8 919 du set Vendetta, pour 170 joueurs classés : trop peu pour décrire ses cartes."
   ],
   "competitiveResults": {
-    "joueursClasses": 26,
+    "joueursClasses": 28,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "3.8 %",
-    "tournois": 2,
+    "conversion": "3.6 %",
+    "tournois": 4,
     "listesPubliees": 16,
     "bestPlacements": [
+      {
+        "placement": "28th",
+        "player": "维渟",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "32th",
         "player": "TacoDog",
@@ -139,11 +144,6 @@
         "placement": "58th",
         "player": "Lorenzo Tran",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "74th",
-        "player": "devasx",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
@@ -166,7 +166,7 @@
     ],
     "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable. ⚠️ À NE PAS confondre avec le Master Yi mid-range/'proving grounds' (+2 en défense seul) qui, lui, gagne des events (Régional Suzhou, top cut Win-A-Box via Trophy Hunter + Vilemaw + double Zhonya's) — c'est une autre légende."
   },
-  "dataSource": "Classement complet des tournois : 26 joueurs classés, 2 tournois, dont 16 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 4 tournois, dont 16 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Master Yi, Tempered": {
       "usage": "100 %",

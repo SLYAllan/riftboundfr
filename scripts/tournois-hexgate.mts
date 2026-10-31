@@ -29,6 +29,7 @@ interface Decklist {
   placement: number;
   playerCount: number;
   date: string;
+  set: string;
   domains: string[];
   sourceUrl: string;
 }
@@ -65,12 +66,16 @@ for (const id of ids) {
   const annexe = conv.contexte.match(/Side Event \w+/)?.[0];
   const estRegionalOpen = !!open && !annexe;
   const sansDate = conv.contexte.replace(/\s*\(\d{4}-\d{2}-\d{2}\)\s*$/, "");
+  // « S5 Suzhou City Challenge » : la saison vient du nom écrit par
+  // `parse-hexgate.mts`. Figée à S4 dans le slug et le nom affiché jusqu'au
+  // premier tournoi S5.
+  const saison = sansDate.match(/^(S\d+) /)?.[1] ?? "S4";
   const ville = estCityChallenge
-    ? sansDate.replace(/^S4 /, "").replace(/ City Challenge.*/, "")
+    ? sansDate.replace(/^S\d+ /, "").replace(/ City Challenge.*/, "")
     : open
       ? sansDate.replace(/^S\d+ /, "").replace(/ (Regional|National) Open.*/, "")
       : sansDate.split(" ")[0];
-  const slugSource = estCityChallenge ? `s4-${ville}-cc-${id}` : `${sansDate}-${id}`;
+  const slugSource = estCityChallenge ? `${saison}-${ville}-cc-${id}` : `${sansDate}-${id}`;
   const slug = slugSource.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
   const parLegende = new Map<string, number>();
@@ -83,7 +88,8 @@ for (const id of ids) {
     location: `${ville}, Chine`,
     playerCount: decks[0].playerCount,
     format: "Constructed",
-    set: "Vendetta",
+    // Écrit par `parse-hexgate.mts` d'après la saison hexgate.
+    set: decks[0].set,
     organizer: null,
     // Ce que le site publie, pas ce que la source annonce : les listes écartées
     // (Champion ambigu) n'apparaissent nulle part, donc elles ne se comptent pas.
@@ -109,8 +115,7 @@ for (const id of ids) {
 
   writeFileSync(join("data/tournaments", `${slug}.json`), `${JSON.stringify(fiche, null, 2)}\n`);
 
-  const nomAffiche = estCityChallenge ? `S4 ${ville} City Challenge` : sansDate;
-  const saison = sansDate.match(/^(S\d+) /)?.[1] ?? "S4";
+  const nomAffiche = estCityChallenge ? `${saison} ${ville} City Challenge` : sansDate;
   // Même gabarit que la ligne de Wuhan déjà en table : « Wuhan RO S4 », `regional`.
   // Le National Open de S3 s'appelle « National Open S3 » en table.
   const nomCourt = estCityChallenge
@@ -119,11 +124,11 @@ for (const id of ids) {
       ? `${ville} ${annexe}`
       : estRegionalOpen
         ? open === "National" ? `National Open ${saison}` : `${ville} RO ${saison}`
-        : sansDate.replace(/^S4 /, "");
+        : sansDate.replace(/^S\d+ /, "");
   const drapeau =
     `  "${conv.contexte}": { name: "${nomAffiche}", shortName: "${nomCourt}", ` +
     `countryCode: "CN", city: "${ville}", location: "${ville}, Chine", playerCount: ${fiche.playerCount}, ` +
-    `type: "${estRegionalOpen ? "regional" : "city_challenge"}", date: "${fiche.date}", set: "Vendetta", format: "Standard" },`;
+    `type: "${estRegionalOpen ? "regional" : "city_challenge"}", date: "${fiche.date}", set: "${fiche.set}", format: "Standard" },`;
 
   console.log(`\n=== ${slug} · ${decks.length} listes publiées sur ${fiche.playerCount} joueurs`);
   console.log(`    Top 8 relevé : ${fiche.topPlacements.length} places`);

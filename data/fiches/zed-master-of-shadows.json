@@ -28,128 +28,128 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Traveling Merchant",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Runeblade Anvil",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Pack of Wonders",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Standard, 60 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bedeviling Stranger",
-      "role": "Standard, 60 % des listes, 1,5 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Detonate",
+      "name": "Falling Star",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Pack of Wonders",
       "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Rhasa the Sunderer",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "name": "Treasure Trove",
+      "role": "Souple, 50 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Reckless Innovator",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Baron Nashor",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
       "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
-    },
-    {
-      "name": "Falling Star",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Rebuke",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "70 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "70 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "50 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Vex, Apathetic": {
-      "usage": "40 %",
-      "role": "1,5 exemplaire en moyenne"
-    },
     "Vi, Destructive": {
-      "usage": "40 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "30 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     },
+    "Vex, Apathetic": {
+      "usage": "33 %",
+      "role": "1,5 exemplaire en moyenne"
+    },
     "Zed, From the Shadows": {
-      "usage": "30 %",
+      "usage": "33 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (100 %)",
-    "Minefield (60 %)",
-    "Ruined Monastery (40 %)"
+    "Zaun Warrens (92 %)",
+    "Minefield (67 %)",
+    "Ruined Monastery (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 17,
+    "joueursClasses": 19,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 2,
-    "listesPubliees": 10,
+    "tournois": 4,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "60th",
         "player": "Nimda",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "92th",
+        "player": "prooved",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "118th",
+        "player": "赤木·莱·哀奏",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
         "placement": "133th",
@@ -160,20 +160,10 @@
         "placement": "158th",
         "player": "CBL COINPURSE",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "169th",
-        "player": "Ksubi",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "208th",
-        "player": "DD Liger",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 17 joueurs classés, 2 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 4 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

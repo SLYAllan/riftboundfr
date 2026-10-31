@@ -295,7 +295,14 @@ async function main() {
       if (!brut.length) continue;
       const conv = join(hexgate, `tournoi-${brut[0].tournoi.id}-conversion.json`);
       if (!existsSync(conv)) continue;
-      const contexte: string = JSON.parse(readFileSync(conv, "utf8")).contexte;
+      const { contexte, ecrits } = JSON.parse(readFileSync(conv, "utf8")) as { contexte: string; ecrits: string[] };
+      // Le set vient des listes converties, qui le lisent dans la saison hexgate.
+      // Figé à « Vendetta » ici, un tournoi S5 aurait compté pour le mauvais set.
+      if (!ecrits.length) {
+        console.log(`  hexgate/${brut[0].tournoi.id} : aucune liste convertie, set inconnu, ignoré`);
+        continue;
+      }
+      const set: string = JSON.parse(readFileSync(join("data/decklists", ecrits[0]), "utf8")).set;
       // riftdecks a déjà donné ce tournoi : ne pas compter les joueurs deux fois.
       if (dejaVu.has(contexte)) continue;
       dejaVu.add(contexte);
@@ -304,7 +311,7 @@ async function main() {
       for (const d of brut) {
         if (parRang.has(d.rang)) continue;
         parRang.set(d.rang, {
-          contexte, set: "Vendetta", rang: d.rang,
+          contexte, set, rang: d.rang,
           player: d.joueur || null,
           // Par le NUMÉRO de collection d'abord, jamais par le nom : hexgate
           // appelle « Wuju Bladesman - Starter » la carte OGS-19, qui est

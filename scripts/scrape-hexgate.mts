@@ -105,8 +105,11 @@ function lireTournoi(charge: string, id: number): Tournoi {
 
 function lireCartes(charge: string): CarteLue[] {
   const cartes: CarteLue[] = [];
+  // `canonical_card_no` apparaît avec la saison S5 (tournois du 31 octobre 2026) :
+  // sans lui dans le motif, aucune carte n'était lue et les 481 listes sortaient
+  // écartées. On garde `card_no`, la clé de toute la chaîne.
   for (const m of charge.matchAll(
-    /\{"card_no":"([^"]+)","card_name":"(?:[^"\\]|\\.)*","cn_name":"((?:[^"\\]|\\.)*)","en_name":"((?:[^"\\]|\\.)*)","quantity":(\d+),"card_type":"((?:[^"\\]|\\.)*)","slot_type":"([^"]*)"[^}]*?"energy":(null|\d+)/g,
+    /\{"card_no":"([^"]+)",(?:"canonical_card_no":"[^"]*",)?"card_name":"(?:[^"\\]|\\.)*","cn_name":"((?:[^"\\]|\\.)*)","en_name":"((?:[^"\\]|\\.)*)","quantity":(\d+),"card_type":"((?:[^"\\]|\\.)*)","slot_type":"([^"]*)"[^}]*?"energy":(null|\d+)/g,
   )) {
     cartes.push({
       card_no: m[1],

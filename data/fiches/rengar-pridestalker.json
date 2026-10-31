@@ -22,11 +22,6 @@
       "noyau": true
     },
     {
-      "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Pit Rookie",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -52,33 +47,43 @@
       "noyau": true
     },
     {
+      "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 79 % des listes, 1 exemplaire",
+      "name": "Elnuk Herd",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Elnuk Herd",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -91,13 +96,18 @@
     "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
   ],
   "competitiveResults": {
-    "joueursClasses": 36,
-    "coupe10": 4,
+    "joueursClasses": 53,
+    "coupe10": 5,
     "titres": 0,
-    "conversion": "11.1 %",
-    "tournois": 2,
-    "listesPubliees": 29,
+    "conversion": "9.4 %",
+    "tournois": 6,
+    "listesPubliees": 45,
     "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "福州橙逯·漓泱",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
       {
         "placement": "8th",
         "player": "Daniel Vu",
@@ -109,19 +119,14 @@
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "30th",
-        "player": "Cardinality",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "25th",
+        "player": "徐大王文吱吱最强",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "44th",
-        "player": "Philip Ve",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "57th",
-        "player": "Vollka",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "29th",
+        "player": "约德尔专爱",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ]
   },
@@ -153,28 +158,28 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "97 %",
+      "usage": "93 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "66 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Graves, Blasting Through": {
-      "usage": "45 %",
+      "usage": "69 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "41 %",
+      "usage": "44 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Graves, Blasting Through": {
+      "usage": "38 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (100 %)",
-    "Emperor's Dais (97 %)",
-    "Seat of Power (86 %)"
+    "Emperor's Dais (98 %)",
+    "Star Spring (96 %)",
+    "Seat of Power (84 %)"
   ],
-  "dataSource": "Classement complet des tournois : 36 joueurs classés, 2 tournois, dont 29 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 26 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 53 joueurs classés, 6 tournois, dont 45 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }
