@@ -213,7 +213,7 @@ sources de vérité) sont plus haut. Ce qui suit décrit la machine.
 
 | Quoi | Version | Où c'est fixé |
 |---|---|---|
-| Next.js, App Router, `output: standalone` | 16.3 | `next.config.ts` |
+| Next.js, App Router, `output: standalone` | 16.4 | `next.config.ts` |
 | React | 19.2.4 | `package.json` |
 | TypeScript, `strict` | 5 | `tsconfig.json` |
 | Prisma + PostgreSQL 16 | 6.19 | `prisma/schema.prisma` |

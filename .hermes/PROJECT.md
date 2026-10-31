@@ -2,7 +2,7 @@
 
 **But.** Site francophone du jeu de cartes Riftbound (riftboundfrance.fr, en prod) : base de cartes, decks de tournoi, tier lists, articles, deckbuilder, collection.
 
-**Stack.** Next.js 16.3 (App Router) · React 19 · Prisma 6 / PostgreSQL 16 · Tailwind 4 · TypeScript strict · Vitest · Node >= 22. Déployé par Coolify (Docker). Toute la logique métier vit dans `src/lib/` ; les pages assemblent, ne calculent pas.
+**Stack.** Next.js 16.4 (App Router) · React 19 · Prisma 6 / PostgreSQL 16 · Tailwind 4 · TypeScript strict · Vitest · Node >= 22. Déployé par Coolify (Docker). Toute la logique métier vit dans `src/lib/` ; les pages assemblent, ne calculent pas.
 
 **Lancer.** `docker compose up -d db` (Postgres sur le port **5433**) → `cp .env.example .env` et remplir `DATABASE_URL` + `SESSION_SECRET` → `npx prisma db push && npx prisma generate` → `npm run dev`.
 

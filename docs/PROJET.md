@@ -95,7 +95,7 @@ articles, des decks, des événements et des tier lists.
 
 ## 4. Comment c'est fait
 
-Détail complet dans `AGENTS.md`. En bref : **Next.js 16.3** en App Router,
+Détail complet dans `AGENTS.md`. En bref : **Next.js 16.4** en App Router,
 **React 19**, **Prisma 6** sur **PostgreSQL 16**, **Tailwind 4**, TypeScript strict,
 Vitest. Sortie `standalone`, image Docker, déployée par Coolify derrière Caddy sur
 un serveur Hetzner.
