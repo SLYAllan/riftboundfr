@@ -1,5 +1,25 @@
 # HANDOFF — état des lieux
 
+## 31 octobre 2026 — audit de la bascule vers le serveur maison
+
+Le plan de la bascule (Hetzner et Coolify vers Dokploy à la maison) vit dans le dépôt
+du serveur : `C:\Users\Allan\Documents\Claude\serveur\docs\superpowers\plans\2026-10-10-phase-4-migration.md`,
+tâches 4, 10, 11, 12 et 16. Rien n'en est fait côté site. L'audit qui le relit contre le
+code d'aujourd'hui : `docs/AUDIT-BASCULE-MAISON-2026-10-31.md`.
+
+**Fait le 31 : `next` 16.4.3 et `sharp` 0.35.5 sur `main`** (failles critiques, dont une
+exécution de code à distance dans `next/og`). Porte verte, essai du build en local
+(détail dans l'audit). **Pas en ligne tant qu'Allan n'a pas lancé le Deploy dans Coolify.**
+
+Reste, dans l'ordre : changer les NS chez OVH avant le 5 novembre (sinon Cloudflare
+supprime la zone en attente), Deploy Coolify, fermer le panneau Coolify
+(`http://178.104.237.33:8000`). Ensuite R1 (IP des visiteurs), à lire par une variable
+pour que Coolify reste sûr d'ici la bascule.
+
+Les deux balayages du 31 (6 907 adresses en HTTP, 86 pages en navigateur, propres sauf
+`/favicon.ico` et un 502 passager) se rejouent sur `essai.riftboundfrance.fr` avec
+`scripts/audit-bascule-http.mjs` et `scripts/audit-bascule-pages.mjs`.
+
 ## 30 octobre 2026 — audit « Vendetta » avant le passage de la prod sur Radiance
 
 95 pages françaises de la prod relues (sitemap sans les pages de deck, de carte et de
