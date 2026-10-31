@@ -14,6 +14,10 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npx prisma generate
 ENV DATABASE_URL=postgresql://build:build@localhost:5432/build
+# Les NEXT_PUBLIC_* sont figées au build. Coolify ajoutait ces ARG de lui-même ; la CI
+# du serveur maison les passe en argument, depuis les variables du dépôt. ARG seul,
+# sans ENV : absent, il reste absent ; un ENV figerait une adresse vide.
+ARG NEXT_PUBLIC_SITE_URL
 RUN npm run build
 
 FROM base AS runner
