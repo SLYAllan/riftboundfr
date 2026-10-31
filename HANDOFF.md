@@ -23,10 +23,13 @@ classés sur 6 tournois.
 Deux lignes posées à la main dans `hexgate-cartes-sans-titre.json`, prouvées par le
 numéro, l'énergie et le texte de l'API : Rengar `SFD-025a/221-P` et Sett `RAD-183*/167`.
 
-**Reste** : les lettres de la tier list Radiance (`scripts/tier-tables.ts`, 23 chiffres
-périmés et 5 Légendes nouvelles au seuil de 15), puis le seed en prod par
-`prod-tunnel.mts`, le Deploy, et `seed-tier-lists.ts` après le Deploy. La tier list
-Globale avait déjà 42 chiffres périmés avant cet import.
+**Tier list Radiance** refaite le même jour (`scripts/tier-tables.ts`), lettres
+validées par Allan : celles du 26 gardées, Rek'Sai en B, Irelia, Kha'Zix et Azir en C,
+Mel en D. `maj:stats` : « rien à revoir » sur Radiance, 31 Légendes seedées en local.
+
+**Reste** : le seed des 4 tournois en prod par `prod-tunnel.mts`, le Deploy, puis
+`seed-tier-lists.ts` après le Deploy. La tier list Globale avait déjà 42 chiffres
+périmés avant cet import.
 
 ## 31 octobre 2026 — audit de la bascule vers le serveur maison
 
