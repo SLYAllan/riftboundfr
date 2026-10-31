@@ -8,6 +8,7 @@ import { displayLegendName } from "@/lib/utils";
 import { allowSvgInSharp } from "@/lib/og-sharp";
 import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
+import { rateLimit, tooMany } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -509,6 +510,14 @@ function fondExport(): Promise<string | null> {
 }
 
 export async function GET(req: NextRequest) {
+  // Chaque rendu coûte plusieurs secondes de processeur, et n'importe qui peut en
+  // demander un pour n'importe quel code : les coupures 503 du 17 octobre venaient
+  // de rafales sur cette route. Dix par minute couvrent un visiteur (export carré
+  // et 9:16) et l'aperçu d'un lien collé dans Discord. Le serveur de dev n'est pas
+  // limité : on y génère les visuels des best-of à la suite, sous une seule adresse.
+  if (process.env.NODE_ENV === "production" && !rateLimit(req, { bucket: "decklist-image", limit: 10 })) {
+    return tooMany();
+  }
   await allowSvgInSharp();
   const { searchParams } = req.nextUrl;
   const bgUrl = await fondExport();

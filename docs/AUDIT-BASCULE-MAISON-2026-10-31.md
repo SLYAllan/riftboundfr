@@ -149,7 +149,7 @@ Vérifié, rien à faire :
 |---|---|---|---|
 | S1 | Next 16.3.5 et sharp 0.35.4 (urgence 2) | critique | `next@16.4.3`, en ligne le 31 |
 | S2 | IP des visiteurs (B1) | élevée à la maison | R1 avec variable, fait le 31 |
-| S3 | `/api/decklist-image` rend n'importe quel code de deck, sans limite : le plus gros consommateur de processeur, sur une machine partagée avec les bots | moyenne | `rateLimit` par IP sur la route, une fois R1 fait |
+| S3 | `/api/decklist-image` rend n'importe quel code de deck, sans limite : le plus gros consommateur de processeur, sur une machine partagée avec les bots | moyenne | **Fait le 31** : 10 rendus par minute et par IP, en production seulement (le serveur de dev génère les visuels des best-of à la suite). Essayé sur le build de prod : la 11ᵉ requête d'un visiteur reçoit 429, les autres visiteurs passent. Un robot d'aperçu (Discord, X) qui dépasse obtient un aperçu sans image pour ce lien ; la règle de cache Cloudflare (B4) évitera de rendre deux fois la même |
 | S4 | `.dockerignore` n'exclut ni `.env.prod.local`, ni `riftbound-france-*.json` (clé Google), ni `dump*.sql` (87 Mo de base), ni `node_modules` | faible tant que l'image se construit depuis GitHub | ajouter `.env*`, `*.sql`, `riftbound-france-*.json`, `node_modules`, `.agents`, `.playwright-mcp`, `.firecrawl` |
 | S5 | Signature de la session admin comparée par `!==`, pas en temps constant ; la déconnexion ne révoque rien côté serveur (cookie de 7 jours, accepté 30) | faible | `timingSafeEqual` ; durée serveur alignée sur 7 jours |
 | S6 | CSP `script-src 'unsafe-inline' 'unsafe-eval'` | faible, connu | hors bascule |
