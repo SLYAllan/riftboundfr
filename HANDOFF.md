@@ -27,8 +27,9 @@ numéro, l'énergie et le texte de l'API : Rengar `SFD-025a/221-P` et Sett `RAD-
 validées par Allan : celles du 26 gardées, Rek'Sai en B, Irelia, Kha'Zix et Azir en C,
 Mel en D. `maj:stats` : « rien à revoir » sur Radiance, 31 Légendes seedées en local.
 
-**Reste** : le seed des 4 tournois en prod par `prod-tunnel.mts`, le Deploy, puis
-`seed-tier-lists.ts` après le Deploy. La tier list Globale avait déjà 42 chiffres
+**Seed prod fait le 1er novembre** : 442 listes créées, 0 erreur, prod à 32 519 decks
+publiés (`prod-tunnel.mts --etat`). **Reste** : le Deploy, puis `seed-tier-lists.ts`
+par `prod-tunnel.mts` après le Deploy. La tier list Globale avait déjà 42 chiffres
 périmés avant cet import.
 
 ## 31 octobre 2026 — audit de la bascule vers le serveur maison
