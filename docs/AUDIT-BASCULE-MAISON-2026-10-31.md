@@ -12,6 +12,8 @@ coupé pour ne pas compter de fausses visites.
 
 ## Urgences, avant même la bascule
 
+0. **Trouvé le 31 au soir : n'importe quel compte Discord pouvait passer admin** (S0,
+   plus bas). Corrigé sur `main` (`21405807d`), en ligne au prochain Deploy Coolify.
 1. **La zone Cloudflare de riftboundfrance.fr sera supprimée vers le 5 novembre.** Elle
    est « pending » depuis le 8 octobre : les serveurs DNS sont toujours ceux d'OVH
    (`dns109.ovh.net`, `ns109.ovh.net`, relevé du 31 octobre). DNSSEC est coupé (aucun DS
@@ -129,7 +131,9 @@ maison : une session sur ce dépôt ignore que le plan existe (tâche 12, étape
 Vérifié, rien à faire :
 
 - Les routes `/api/admin/*` et `/api/sync-cards` vérifient toutes `isAdmin()` (relevé des
-  54 routes, méthode par méthode).
+  54 routes, méthode par méthode). Mais `isAdmin()` elle-même se laissait tromper : voir
+  S0, trouvé ensuite en relisant les sessions. Un relevé des appels ne suffit pas, il
+  faut lire la fonction appelée.
 - `/api/auth/dev-login` répond 404 en production (`NODE_ENV=production` posé par le
   `Dockerfile`).
 - OAuth Discord : `state` aléatoire, en cookie `httpOnly`, comparé au retour.
@@ -147,11 +151,12 @@ Vérifié, rien à faire :
 
 | # | Constat | Gravité | Correction |
 |---|---|---|---|
+| S0 | **Trouvé le 31 en faisant S5.** Les sessions admin et Discord partagent `SESSION_SECRET` et le même format, et la vérification admin ne regardait pas le contenu du jeton : un membre qui recopiait son cookie `riftbound_session` dans `riftbound_admin` devenait admin (articles, decks, tier lists, suppressions). Prouvé en local sur le build de prod : 401 en cookie normal, 200 en cookie admin sur `/api/admin/decks` | **critique**, en ligne jusqu'au Deploy | **Fait le 31** (`21405807d`) : `src/lib/jeton-signe.ts` signe et vérifie les deux sessions ; le jeton admin doit commencer par `admin:`. Rejoué : 401. Les sessions en cours restent valables. Impossible de savoir d'ici si quelqu'un s'en est servi : aucune action admin n'est journalisée |
 | S1 | Next 16.3.5 et sharp 0.35.4 (urgence 2) | critique | `next@16.4.3`, en ligne le 31 |
 | S2 | IP des visiteurs (B1) | élevée à la maison | R1 avec variable, fait le 31 |
 | S3 | `/api/decklist-image` rend n'importe quel code de deck, sans limite : le plus gros consommateur de processeur, sur une machine partagée avec les bots | moyenne | **Fait le 31** : 10 rendus par minute et par IP, en production seulement (le serveur de dev génère les visuels des best-of à la suite). Essayé sur le build de prod : la 11ᵉ requête d'un visiteur reçoit 429, les autres visiteurs passent. Un robot d'aperçu (Discord, X) qui dépasse obtient un aperçu sans image pour ce lien ; la règle de cache Cloudflare (B4) évitera de rendre deux fois la même |
-| S4 | `.dockerignore` n'exclut ni `.env.prod.local`, ni `riftbound-france-*.json` (clé Google), ni `dump*.sql` (87 Mo de base), ni `node_modules` | faible tant que l'image se construit depuis GitHub | ajouter `.env*`, `*.sql`, `riftbound-france-*.json`, `node_modules`, `.agents`, `.playwright-mcp`, `.firecrawl` |
-| S5 | Signature de la session admin comparée par `!==`, pas en temps constant ; la déconnexion ne révoque rien côté serveur (cookie de 7 jours, accepté 30) | faible | `timingSafeEqual` ; durée serveur alignée sur 7 jours |
+| S4 | `.dockerignore` n'excluait ni `.env.prod.local`, ni `riftbound-france-*.json` (clé Google), ni `dump*.sql` (87 Mo de base). Il excluait déjà `node_modules`, contrairement à ce que disait la première version de cet audit | faible tant que l'image se construit depuis GitHub | **Fait le 31** : secrets, dumps et dossiers d'outils exclus. Vérifié par un build qui liste son contexte : tous absents, et `package.json`, `prisma/`, `data/`, `public/`, `src/` présents |
+| S5 | Signature de la session admin comparée par `!==`, pas en temps constant ; session admin acceptée 30 jours pour un cookie de 7 | faible | **Fait le 31** avec S0, dans `jeton-signe.ts` : `timingSafeEqual`, 7 jours côté serveur, date future refusée |
 | S6 | CSP `script-src 'unsafe-inline' 'unsafe-eval'` | faible, connu | hors bascule |
 
 ## Ce que Coolify fait aujourd'hui, et qui le reprend

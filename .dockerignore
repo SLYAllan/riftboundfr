@@ -1,10 +1,28 @@
 node_modules
 .next
 .git
-.env
-.env.local
 *.md
 !README.md
 Caddyfile
 docker-compose.yml
 .dockerignore
+
+# Secrets et données locales. Coolify et la CI construisent depuis un clone propre,
+# mais un `docker build .` lancé depuis le dossier d'Allan embarquait
+# `.env.prod.local` (base de prod), la clé Google et 87 Mo de dumps de la base
+# dans l'étage de build, d'une image destinée à GHCR, public.
+.env*
+*.sql
+*.pem
+riftbound-france-*.json
+client_secret_*.json
+*service-account*.json
+
+# Outils et médias locaux : rien que le build lise.
+.agents
+.claude
+.hermes
+.firecrawl
+.playwright-mcp
+data/videos
+*.log

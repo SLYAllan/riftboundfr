@@ -275,9 +275,12 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
 - `card-printing.ts` — un nom de carte a plusieurs formes (apostrophe, virgule,
   suffixe de variante). `findCard` et `normalizeCardName` réconcilient tout ça.
 - `auth.ts` / `session.ts` — deux sessions distinctes, deux cookies :
-  `riftbound_admin` pour le back-office, `riftbound_session` pour le compte
-  Discord. Les deux sont signées HMAC-SHA256 avec `SESSION_SECRET` et expirent
-  au bout de 30 jours. Aucun repli si le secret manque : le code lève.
+  `riftbound_admin` pour le back-office (7 jours), `riftbound_session` pour le
+  compte Discord (30 jours). **Un seul module les signe et les vérifie :
+  `jeton-signe.ts`.** Elles partagent `SESSION_SECRET` et le même format : le type
+  d'un jeton se lit dans son contenu (préfixe `admin:`), jamais dans le nom du
+  cookie. Jusqu'au 31 octobre 2026, la session d'un membre recopiée dans le cookie
+  admin ouvrait le back-office. Aucun repli si le secret manque : le code lève.
 - `prisma.ts` — client unique (`globalThis` en dev pour survivre au rechargement).
   `safeQuery(fn, fallback)` sert aux pages qui doivent s'afficher même si la base
   répond mal.

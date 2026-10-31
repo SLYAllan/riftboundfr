@@ -25,6 +25,13 @@ sans Cloudflare devant, le visiteur forgerait l'en-tête. Elle ira dans
 en production seulement. Le serveur de dev n'est pas limité : on y génère les visuels
 des best-of à la suite. Part en ligne avec le prochain Deploy Coolify.
 
+**Faille critique trouvée et corrigée le 31 (S0, `21405807d`)** : la session Discord
+d'un membre, recopiée dans le cookie `riftbound_admin`, ouvrait le back-office (même
+secret, même format, préfixe jamais vérifié). `src/lib/jeton-signe.ts` signe et vérifie
+désormais les deux sessions. **En ligne seulement après le Deploy Coolify.** Avec elle
+S5 (comparaison en temps constant, session admin à 7 jours côté serveur) et S4
+(`.dockerignore` ferme les secrets et les dumps).
+
 Les deux balayages du 31 (6 907 adresses en HTTP, 86 pages en navigateur, propres sauf
 `/favicon.ico` et un 502 passager) se rejouent sur `essai.riftboundfrance.fr` avec
 `scripts/audit-bascule-http.mjs` et `scripts/audit-bascule-pages.mjs`.
