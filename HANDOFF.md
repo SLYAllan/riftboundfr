@@ -14,8 +14,13 @@ midi (détail dans l'audit).
 
 Reste, dans l'ordre : changer les NS chez OVH avant le 5 novembre (sinon Cloudflare
 supprime la zone en attente), fermer le panneau Coolify
-(`http://178.104.237.33:8000`). Ensuite R1 (IP des visiteurs), à lire par une variable
-pour que Coolify reste sûr d'ici la bascule.
+(`http://178.104.237.33:8000`).
+
+**R1 fait le 31** (`a9154d937`) : l'IP des visiteurs vient de `cf-connecting-ip`, mais
+seulement si `DERRIERE_CLOUDFLARE=1`. **Ne jamais poser cette variable dans Coolify** :
+sans Cloudflare devant, le visiteur forgerait l'en-tête. Elle ira dans
+`compose.dokploy.yaml` (plan du serveur mis à jour, `d24026d`). Suite possible : limiter
+`/api/decklist-image` par IP (constat S3 de l'audit).
 
 Les deux balayages du 31 (6 907 adresses en HTTP, 86 pages en navigateur, propres sauf
 `/favicon.ico` et un 502 passager) se rejouent sur `essai.riftboundfrance.fr` avec

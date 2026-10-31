@@ -54,9 +54,9 @@ coupé pour ne pas compter de fausses visites.
 
 ## Ce qui bloque la bascule (code de ce dépôt)
 
-### B1. L'IP des visiteurs (R1, pas fait)
+### B1. L'IP des visiteurs (R1, fait le 31 octobre)
 
-`clientIp` (`src/lib/rate-limit.ts`) lit `x-real-ip`. À la maison, Traefik ne voit
+`clientIp` (`src/lib/rate-limit.ts`) lisait `x-real-ip`. À la maison, Traefik ne voit
 qu'un client : cloudflared. Tous les visiteurs auraient donc la même IP, et chaque limite
 deviendrait commune à tout le site :
 
@@ -66,17 +66,18 @@ deviendrait commune à tout le site :
 | likes, commentaires, votes, publication | `api/*/like`, `comments`, `community-decks` | le premier pic de visites bloque tout le monde |
 | compagnon, overlay, médias | `api/overlay/*` | deux streamers en même temps se gênent |
 
-Le plan (tâche 4) lit `cf-connecting-ip` en premier, et interdit ensuite tout Deploy
+Le plan (tâche 4) lisait `cf-connecting-ip` en premier, puis interdisait tout Deploy
 Coolify, puisque sur le Hetzner cet en-tête vient du visiteur et se forge. Le piège : tu
-déploies souvent par Coolify (fiches, Radiance le 20 et le 30), et rien ne t'arrêterait.
-Proposition : ne lire `cf-connecting-ip` que si une variable le dit, posée dans le seul
-compose de Dokploy. Coolify reste alors sûr jusqu'au bout.
+déploies souvent par Coolify (fiches, Radiance le 20 et le 30), et rien ne t'aurait
+arrêté.
 
-```ts
-const derriereCloudflare = process.env.DERRIERE_CLOUDFLARE === "1";
-// ...
-(derriereCloudflare && req.headers.get("cf-connecting-ip")?.trim()) || req.headers.get("x-real-ip")?.trim() || ...
-```
+**Fait le 31 octobre (`a9154d937`)** : `cf-connecting-ip` n'est lu que si
+`DERRIERE_CLOUDFLARE=1`. La variable ira dans le seul compose de Dokploy (plan mis à
+jour dans le dépôt du serveur, `d24026d` : compose et contrôle de la CI). Coolify reste
+donc sûr jusqu'au bout, tant que personne n'y pose la variable. Test :
+`src/lib/rate-limit.test.ts`, qui prouve aussi que deux visiteurs derrière cloudflared ne
+partagent plus leur limite. Porte : verify 0, 413 tests, lint sans erreur. Sans la
+variable, le site se comporte comme avant : rien à vérifier en ligne.
 
 L'en-tête n'est sûr que si personne ne joint Traefik sans passer par le tunnel. La
 chaîne `DOCKER-USER` (`serveur/reseau/docker-user.sh`) ferme 80, 443 et 3000 au réseau
@@ -147,7 +148,7 @@ Vérifié, rien à faire :
 | # | Constat | Gravité | Correction |
 |---|---|---|---|
 | S1 | Next 16.3.5 et sharp 0.35.4 (urgence 2) | critique | `next@16.4.3`, en ligne le 31 |
-| S2 | IP des visiteurs (B1) | élevée à la maison | R1 avec variable |
+| S2 | IP des visiteurs (B1) | élevée à la maison | R1 avec variable, fait le 31 |
 | S3 | `/api/decklist-image` rend n'importe quel code de deck, sans limite : le plus gros consommateur de processeur, sur une machine partagée avec les bots | moyenne | `rateLimit` par IP sur la route, une fois R1 fait |
 | S4 | `.dockerignore` n'exclut ni `.env.prod.local`, ni `riftbound-france-*.json` (clé Google), ni `dump*.sql` (87 Mo de base), ni `node_modules` | faible tant que l'image se construit depuis GitHub | ajouter `.env*`, `*.sql`, `riftbound-france-*.json`, `node_modules`, `.agents`, `.playwright-mcp`, `.firecrawl` |
 | S5 | Signature de la session admin comparée par `!==`, pas en temps constant ; la déconnexion ne révoque rien côté serveur (cookie de 7 jours, accepté 30) | faible | `timingSafeEqual` ; durée serveur alignée sur 7 jours |
@@ -245,8 +246,8 @@ juste.
 
 ## Ce qu'il faut ajouter au plan de la phase 4
 
-- **Tâche 4** : R1 avec `DERRIERE_CLOUDFLARE=1` dans le compose (`next@16.4.3` est
-  déjà en ligne depuis le 31).
+- **Tâche 4** : fait le 31 dans le plan (`d24026d`) : R1 coché, `DERRIERE_CLOUDFLARE=1`
+  dans le compose et dans le contrôle de la CI.
 - **Tâche 10, étape 6** : Bot Fight Mode coupé sur riftboundfrance.fr ; Email
   Obfuscation coupé ; la règle de cache des images. Corriger la spec §7.4 (pas
   d'exemption de chemin sur l'offre gratuite).
