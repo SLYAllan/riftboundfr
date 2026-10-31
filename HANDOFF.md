@@ -7,12 +7,13 @@ du serveur : `C:\Users\Allan\Documents\Claude\serveur\docs\superpowers\plans\202
 tâches 4, 10, 11, 12 et 16. Rien n'en est fait côté site. L'audit qui le relit contre le
 code d'aujourd'hui : `docs/AUDIT-BASCULE-MAISON-2026-10-31.md`.
 
-**Fait le 31 : `next` 16.4.3 et `sharp` 0.35.5 sur `main`** (failles critiques, dont une
-exécution de code à distance dans `next/og`). Porte verte, essai du build en local
-(détail dans l'audit). **Pas en ligne tant qu'Allan n'a pas lancé le Deploy dans Coolify.**
+**Fait le 31 : `next` 16.4.3 et `sharp` 0.35.5, en ligne** (failles critiques, dont une
+exécution de code à distance dans `next/og`). Le premier Deploy Coolify a échoué (cause
+non relevée), le second a pris. Les deux balayages rejoués après : mêmes résultats qu'à
+midi (détail dans l'audit).
 
 Reste, dans l'ordre : changer les NS chez OVH avant le 5 novembre (sinon Cloudflare
-supprime la zone en attente), Deploy Coolify, fermer le panneau Coolify
+supprime la zone en attente), fermer le panneau Coolify
 (`http://178.104.237.33:8000`). Ensuite R1 (IP des visiteurs), à lire par une variable
 pour que Coolify reste sûr d'ici la bascule.
 

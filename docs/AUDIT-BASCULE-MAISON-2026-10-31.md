@@ -34,8 +34,9 @@ coupé pour ne pas compter de fausses visites.
    Dashboard, qui tourne sur la même machine que le futur site, est en `next@16.4.0` :
    touché aussi.
 
-   **Fait le 31 octobre sur `main`, pas encore en ligne** : il faut un Deploy dans
-   Coolify, **avant** de fusionner R1 (voir plus bas). Porte : `npm run verify` sortie 0,
+   **Fait le 31 octobre, en ligne le même jour vers 16 h 30** (deuxième Deploy Coolify :
+   le premier a échoué, cause non relevée). Vérifié sur le site : le JavaScript servi
+   porte `version:"16.4.3"`. Porte : `npm run verify` sortie 0,
    408 tests, lint sans erreur ; build de prod lancé en local sur la base locale : 86
    pages sans erreur au balayage navigateur, images de deck en 2000x2000 et 1620x2880,
    images Open Graph, proxy d'images et optimiseur sur image distante en 200. `npm audit
@@ -145,7 +146,7 @@ Vérifié, rien à faire :
 
 | # | Constat | Gravité | Correction |
 |---|---|---|---|
-| S1 | Next 16.3.5 et sharp 0.35.4 (urgence 2) | critique | `next@16.4.3`, fait sur `main` le 31 ; reste le Deploy |
+| S1 | Next 16.3.5 et sharp 0.35.4 (urgence 2) | critique | `next@16.4.3`, en ligne le 31 |
 | S2 | IP des visiteurs (B1) | élevée à la maison | R1 avec variable |
 | S3 | `/api/decklist-image` rend n'importe quel code de deck, sans limite : le plus gros consommateur de processeur, sur une machine partagée avec les bots | moyenne | `rateLimit` par IP sur la route, une fois R1 fait |
 | S4 | `.dockerignore` n'exclut ni `.env.prod.local`, ni `riftbound-france-*.json` (clé Google), ni `dump*.sql` (87 Mo de base), ni `node_modules` | faible tant que l'image se construit depuis GitHub | ajouter `.env*`, `*.sql`, `riftbound-france-*.json`, `node_modules`, `.agents`, `.playwright-mcp`, `.firecrawl` |
@@ -219,6 +220,20 @@ français, 41 en anglais, plus `/zh`, `/zh/profil/overlay` et `/zh/tier-list`) :
   `/tournois` envoie 36 requêtes au serveur. À surveiller dans Dozzle la première
   semaine ; si le processeur monte, `prefetch={false}` sur les longues listes de liens.
 
+**Après le Deploy de Next 16.4.3** (31 octobre, vers 17 h) : mêmes passages, mêmes
+résultats. HTTP : 6 906 sur 6 907 en 200, aucun statut changé, aucune fuite, seul
+`/favicon.ico` en 404. Navigateur : 86 pages sans aucun problème, le 502 de `/tournois`
+n'est pas revenu. Le 90ᵉ centile passe de 270 à 386 ms, mais ce passage tournait à trois
+requêtes à la fois au lieu de deux, juste après le Deploy qui vide les caches. Une
+requête seule : `/tournois` entre 0,7 et 1 s, `/guides/glossaire` 0,2 s (1,75 s à midi).
+Images de deck (carré et 9:16), aperçus d'article et de partage, proxy d'images et
+optimiseur sur image distante : tous en 200 sur le site.
+
+Vu en passant, sans lien avec la bascule : un code de partage inconnu (`/d/essaihist`)
+rend « Deck introuvable » avec un statut 200 et deux balises `robots` contraires
+(`noindex` puis `index, follow`). Google garde la plus stricte, mais un 404 serait plus
+juste.
+
 **Ce que ces passages ne couvrent pas** :
 
 - Les pages connectées (`/collection`, `/profil`, publication de deck, likes, admin) :
@@ -230,8 +245,8 @@ français, 41 en anglais, plus `/zh`, `/zh/profil/overlay` et `/zh/tier-list`) :
 
 ## Ce qu'il faut ajouter au plan de la phase 4
 
-- **Tâche 4** : R1 avec `DERRIERE_CLOUDFLARE=1` dans le compose ; `next@16.4.3` (sur
-  `main` depuis le 31) déployé par Coolify avant.
+- **Tâche 4** : R1 avec `DERRIERE_CLOUDFLARE=1` dans le compose (`next@16.4.3` est
+  déjà en ligne depuis le 31).
 - **Tâche 10, étape 6** : Bot Fight Mode coupé sur riftboundfrance.fr ; Email
   Obfuscation coupé ; la règle de cache des images. Corriger la spec §7.4 (pas
   d'exemption de chemin sur l'offre gratuite).
