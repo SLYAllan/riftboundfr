@@ -85,7 +85,7 @@ export default async function CardDetailPage({ params }: PageProps) {
 
   // Le prix vient de `data/prices/card-prices.json`, relevé par `npm run sync-prices`,
   // et le lien d'achat de `src/lib/cardnexus.ts`, seul endroit qui porte
-  // l'identifiant d'affiliation. 1 227 cartes sur 1 275 en ont un.
+  // l'identifiant d'affiliation. 1 441 cartes sur 1 494 en ont un (2 novembre 2026).
   const prixCarte = chargerPrix()?.cards[card.riftboundId] ?? null;
   const releveLe = chargerPrix()?.fetchedAt ?? null;
 

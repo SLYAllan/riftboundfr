@@ -38,7 +38,8 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   Le fichier reste le point de départ d'un conteneur neuf : le refaire à chaque sortie
   de set, sinon une clé morte fait disparaître le bouton d'achat de tout le set en
   silence. `/api/health?achat=1` rend 503 si les dernières listes du set en cours n'ont
-  plus de lien, à pointer depuis la supervision.
+  plus de lien, à pointer depuis la supervision. La clé est dans `.env.prod.local`, pas
+  dans `.env` : `CARDNEXUS_API_KEY="$(sed -n 's/^CARDNEXUS_API_KEY=//p' .env.prod.local | tr -d '\r\"')" npm run sync-prices`.
   Panier prêt à payer = `lienAchatDeck(cartes)`, un vrai lien écrit par la page
   (et `lienManquantes` de `/api/collection/coverage` pour les cartes qui manquent).
   Pas de formulaire ni de `window.open` : sur iPhone, Safari met en pause la page
