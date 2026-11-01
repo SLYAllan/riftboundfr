@@ -2,7 +2,7 @@
 
 ## 2 novembre 2026 — lien d'achat sur les pages de Légende
 
-**Fait, en ligne au prochain Deploy.** L'encart de la page de deck (`DeckCoveragePanel` :
+**Fait, en ligne depuis le Deploy du 2 novembre.** L'encart de la page de deck (`DeckCoveragePanel` :
 prix, « Acheter ce deck », collection) passe sous les trois premières listes de
 `/legendes/[slug]`, sauf une liste qui joue une carte bannie. Point de départ de la mesure
 dans `docs/seo/journal.md`. La fiche carte dit maintenant qu'un achat rapporte une
@@ -10,9 +10,10 @@ commission. Le texte d'achat est traduit sous `/en`, il sortait en français.
 `cartesDeck` remplace la conversion recopiée, `achatDisponible` porte la règle du contrôle.
 
 **`/api/health?achat=1`** rend 503 si aucune des cinq dernières listes du set en cours n'a
-de lien d'achat : `lienAchatDeck` rend `null` et le bouton disparaît sans erreur. À ajouter
-aux adresses de `sante` du projet `riftboundfr` dans le Dashboard, sinon personne n'est
-prévenu. Pas relié au `HEALTHCHECK` : une clé morte ne justifie pas de remplacer le conteneur.
+de lien d'achat : `lienAchatDeck` rend `null` et le bouton disparaît sans erreur. Pas relié au
+`HEALTHCHECK` : une clé morte ne justifie pas de remplacer le conteneur. L'adresse est dans
+`projets.ts` du Dashboard (`5ab56ff`, image construite et essayée sur la machine). **Tant
+qu'Allan n'a pas déployé cette version depuis la fiche du Dashboard, personne n'est prévenu.**
 
 **Relevé refait** : `data/prices/card-prices.json` passe de 1 227 cartes (21 août, aucune
 Radiance) à 1 441 sur 1 494, dont 213 Radiance sur 219. La clé vit dans `.env.prod.local`,
