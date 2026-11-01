@@ -1293,4 +1293,22 @@ export const EN: Record<string, string> = {
   "Remettre à classer": "Unrank",
   "Toutes les Légendes sont classées.": "Every Legend is ranked.",
   "Pas d’accord ? Créez la vôtre et partagez-la": "Disagree? Make your own and share it",
+
+  // Achat sur CardNexus (fiche carte, page de deck, page de Légende)
+  "Acheter cette carte": "Buy this card",
+  "Acheter ce deck": "Buy this deck",
+  "chez CardNexus": "on CardNexus",
+  "relevé le": "as of",
+  "relevés le": "as of",
+  "Somme des prix les plus bas sur CardNexus": "Sum of the lowest prices on CardNexus",
+  "hors frais de port": "before shipping",
+  "Le panier réel coûte plus : les cartes viennent de plusieurs vendeurs.":
+    "The real cart costs more: the cards come from several sellers.",
+  "carte sans prix connu.": "card with no known price.",
+  "cartes sans prix connu.": "cards with no known price.",
+  "pour voir combien de cartes il vous manque pour ce deck.": "to see how many cards you are missing for this deck.",
+  "Un achat passé par ce lien nous verse une commission, sans changer ton prix.":
+    "A purchase through this link earns us a commission and does not change your price.",
+  "Riftbound France est partenaire de CardNexus. CardNexus compare les vendeurs et retient le total le plus bas, frais de port compris. Un achat passé par ces liens nous verse une commission, sans changer ton prix.":
+    "Riftbound France is a CardNexus partner. CardNexus compares sellers and picks the lowest total, shipping included. A purchase through these links earns us a commission and does not change your price.",
 };

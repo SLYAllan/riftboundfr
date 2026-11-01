@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { cleCatalogue, prixRetenu, lienProduit, lienPanier, lienAchatDeck, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, releveAMaigri } from "./cardnexus";
+import { cleCatalogue, prixRetenu, lienProduit, lienPanier, lienAchatDeck, achatDisponible, cartesDeck, chiffrerDeck, lignesListe, impressionsAchat, prixPerimes, releveAMaigri } from "./cardnexus";
 
 describe("cleCatalogue", () => {
   it("propose le numéro avec et sans zéro de tête", () => {
@@ -173,6 +173,20 @@ describe("chiffrerDeck", () => {
     expect(lienAchatDeck([pitCrew, { riftboundId: "inconnue", name: "Inconnue", quantity: 1 }], prix)).toBeNull();
     expect(lienAchatDeck([], prix)).toBeNull();
     expect(lienAchatDeck([pitCrew], null)).toBeNull();
+  });
+
+  it("achatDisponible : une liste vendable suffit, aucune veut dire que le relevé a lâché", () => {
+    const vendable = [{ riftboundId: "ogn-091-298", name: "Pit Crew", quantity: 3 }];
+    const invendable = [{ riftboundId: "inconnue", name: "Inconnue", quantity: 1 }];
+    expect(achatDisponible([invendable, vendable], prix)).toBe(true);
+    expect(achatDisponible([invendable], prix)).toBe(false);
+    expect(achatDisponible([vendable], null)).toBe(false);
+    expect(achatDisponible([], prix)).toBe(true);
+  });
+
+  it("cartesDeck : la forme d'un deck en base devient celle du panier", () => {
+    const lignes = [{ quantity: 3, card: { riftboundId: "ogn-091-298", name: "Pit Crew" } }];
+    expect(cartesDeck(lignes)).toEqual([{ riftboundId: "ogn-091-298", name: "Pit Crew", quantity: 3 }]);
   });
 
   it("sans relevé, rend un total nul et tout en manquant plutôt que de planter", () => {

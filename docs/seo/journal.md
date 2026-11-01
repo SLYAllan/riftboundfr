@@ -5,6 +5,26 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-02 · hors passe, lien d'achat sur `/legendes/[slug]`
+
+Demandé par Allan. **Changé** : l'encart de la page de deck (prix, « Acheter ce deck »,
+collection) passe sous chacune des trois premières listes, sauf une liste qui joue une
+carte bannie. Titre, chapô et liens internes inchangés.
+
+**Point de départ** (GA4, 4 octobre au 1er novembre, visiteurs qui acceptent les cookies) :
+`/legendes/*` 2 913 vues et `/en/legendes/*` 494 vues, 0 `clic_cardnexus`. `/decks/*`
+1 974 vues, 55 clics (27,9 pour 1 000). Tout le site : 90 clics, 27 personnes. Search
+Console (30 septembre au 28 octobre) : famille `/legendes` 1 644 clics, 13 635 impressions.
+
+**À juger** deux semaines après le Deploy : les clics de `/legendes/*`, sans perte de
+position sur la famille. Hypothèse à tenir : 14 clics pour 1 000 vues, la moitié du taux
+des pages de deck. Une sortie de set fausse la mesure : les clics montent seuls (10 en
+semaine 42, 50 en semaine 43).
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-10-26 · hors passe, description de `/guides/ban-list`
 
 Changée à la demande d'Allan, pour coller au contenu : la page porte maintenant les

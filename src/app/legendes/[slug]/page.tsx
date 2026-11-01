@@ -19,6 +19,8 @@ import { CardTextRenderer } from "@/components/card-text-renderer";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { LEGEND_GUIDES } from "@/lib/legend-guides";
 import { DecklistInteractive } from "@/components/decklist-interactive";
+import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
+import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
 import { cartesInterdites, isBanned } from "@/lib/banned-cards";
@@ -671,6 +673,24 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     }),
   );
 
+  // Le même encart que la page de deck. Ces pages sont la première porte d'entrée du
+  // site (1 644 clics Google sur 28 jours en octobre) et n'avaient aucun lien d'achat :
+  // 0 clic CardNexus, contre 28 pour 1 000 vues sur les pages de deck. Rien sur une
+  // liste injouable : on la signale, on ne la vend pas.
+  const encartAchat = (deck: (typeof topDecks)[number], cards: DecklistCard[]) => {
+    if (cartesInterdites(deck.cards.map((dc) => dc.card.name)).length > 0) return null;
+    const cartesAchat = cartesDeck(deck.cards);
+    return (
+      <div className="mt-3">
+        <DeckCoveragePanel
+          prix={chiffrerDeck(cartesAchat)}
+          lienAchat={lienAchatDeck(cartesAchat)}
+          items={cards.map((c) => ({ cardId: c.cardId, quantity: c.quantity, section: c.section, name: c.name }))}
+        />
+      </div>
+    );
+  };
+
   const domains = fiche.domains ?? [];
   const tierLabel = fiche.tier ? TIER_LABELS[fiche.tier] ?? `Tier ${fiche.tier}` : null;
 
@@ -883,21 +903,24 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               {t("Pas encore de decklist classée pour cette Légende.")}
             </p>
           ) : decklists.length === 1 ? (
-            <DecklistInteractive
-              compact
-              cards={decklists[0].cards}
-              deckName={nomDeDeck(decklists[0].deck, legendName) ?? decklists[0].deck.title}
-              legendName={legendName}
-              playerName={decklists[0].deck.playerName ?? undefined}
-              context={
-                [decklists[0].deck.tournamentContext, decklists[0].deck.placement]
-                  .filter(Boolean)
-                  .join(" · ") || undefined
-              }
-              showCopyCode
-              showExportPng
-              deckbuilderCode={decklists[0].deckbuilderCode}
-            />
+            <>
+              <DecklistInteractive
+                compact
+                cards={decklists[0].cards}
+                deckName={nomDeDeck(decklists[0].deck, legendName) ?? decklists[0].deck.title}
+                legendName={legendName}
+                playerName={decklists[0].deck.playerName ?? undefined}
+                context={
+                  [decklists[0].deck.tournamentContext, decklists[0].deck.placement]
+                    .filter(Boolean)
+                    .join(" · ") || undefined
+                }
+                showCopyCode
+                showExportPng
+                deckbuilderCode={decklists[0].deckbuilderCode}
+              />
+              {encartAchat(decklists[0].deck, decklists[0].cards)}
+            </>
           ) : (
             <div className="space-y-3">
               {decklists.map(({ deck, cards, deckbuilderCode }, i) => (
@@ -936,6 +959,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                       showExportPng
                       deckbuilderCode={deckbuilderCode}
                     />
+                    {encartAchat(deck, cards)}
                   </div>
                 </details>
               ))}

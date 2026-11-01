@@ -169,6 +169,9 @@ export default async function CardDetailPage({ params }: PageProps) {
               >
                 {t("Acheter cette carte")}
               </a>
+              <p className="w-full text-xs text-ink-muted">
+                {t("Un achat passé par ce lien nous verse une commission, sans changer ton prix.")}
+              </p>
             </div>
           )}
           <CardCollectionQuantity cardId={card.id} />

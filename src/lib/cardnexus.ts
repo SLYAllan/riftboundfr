@@ -339,6 +339,22 @@ export function lienAchatDeck(cartes: Carte[], prix: FichierPrix | null = charge
   return absentes.length === 0 && items.length > 0 ? lienPanier(items) : null;
 }
 
+/** Les cartes d'un deck en base, sous la forme que lisent le prix et le panier. */
+export function cartesDeck(lignes: { quantity: number; card: { riftboundId: string; name: string } }[]): Carte[] {
+  return lignes.map((l) => ({ riftboundId: l.card.riftboundId, name: l.card.name, quantity: l.quantity }));
+}
+
+/**
+ * Faux si AUCUNE de ces listes n'a de lien d'achat.
+ *
+ * Une liste peut perdre le sien pour une seule carte absente du catalogue. Toutes à
+ * la fois, c'est le relevé qui a lâché (clé morte, API tombée) : `lienAchatDeck` rend
+ * `null`, le bouton disparaît, et rien ne le signale. Sans liste, rien à perdre.
+ */
+export function achatDisponible(listes: Carte[][], prix: FichierPrix | null = chargerPrix()): boolean {
+  return listes.length === 0 || listes.some((cartes) => lienAchatDeck(cartes, prix) !== null);
+}
+
 /** Chiffre un deck à partir du relevé. Les cartes sans prix ne sont jamais escamotées. */
 export function chiffrerDeck(cartes: Carte[], prix: FichierPrix | null = chargerPrix()): DeckChiffre {
   let total = 0;

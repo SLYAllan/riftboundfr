@@ -35,6 +35,10 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   (`releverEnFond`, qui demande `CARDNEXUS_API_KEY` dans Coolify).
   Le prix retenu est **l'impression la moins chère du même nom** : une decklist qui
   cite une surnumérotée ne fait pas payer la surnumérotée.
+  Le fichier reste le point de départ d'un conteneur neuf : le refaire à chaque sortie
+  de set, sinon une clé morte fait disparaître le bouton d'achat de tout le set en
+  silence. `/api/health?achat=1` rend 503 si les dernières listes du set en cours n'ont
+  plus de lien, à pointer depuis la supervision.
   Panier prêt à payer = `lienAchatDeck(cartes)`, un vrai lien écrit par la page
   (et `lienManquantes` de `/api/collection/coverage` pour les cartes qui manquent).
   Pas de formulaire ni de `window.open` : sur iPhone, Safari met en pause la page
@@ -177,7 +181,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   `riftboundId`, la clé de Riftcodex aussi. Il recoupe d'abord sa conversion sur les cartes
   déjà en base et en affiche les écarts. La galerie montre le texte IMPRIMÉ : le relancer
   défait un errata posé en base, que `scripts/apply-errata.ts` repose (il rejoue
-  tous ceux de `src/lib/errata.ts`). Puis `npm run maj:overlay`.
+  tous ceux de `src/lib/errata.ts`). Puis `npm run maj:overlay` et `npm run sync-prices`.
 - **Cartes chinoises (images et noms) → `data/cards-zh.json`, écrit par `npm run maj:cartes-zh`.**
   Riftcodex n'a AUCUNE notion de langue : ni locale, ni traduction dans son OpenAPI. La
   source est le **figurier OFFICIEL de l'éditeur chinois**,

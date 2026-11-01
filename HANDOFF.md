@@ -1,5 +1,25 @@
 # HANDOFF — état des lieux
 
+## 2 novembre 2026 — lien d'achat sur les pages de Légende
+
+**Fait, en ligne au prochain Deploy.** L'encart de la page de deck (`DeckCoveragePanel` :
+prix, « Acheter ce deck », collection) passe sous les trois premières listes de
+`/legendes/[slug]`, sauf une liste qui joue une carte bannie. Point de départ de la mesure
+dans `docs/seo/journal.md`. La fiche carte dit maintenant qu'un achat rapporte une
+commission. Le texte d'achat est traduit sous `/en`, il sortait en français.
+`cartesDeck` remplace la conversion recopiée, `achatDisponible` porte la règle du contrôle.
+
+**`/api/health?achat=1`** rend 503 si aucune des cinq dernières listes du set en cours n'a
+de lien d'achat : `lienAchatDeck` rend `null` et le bouton disparaît sans erreur. À ajouter
+aux adresses de `sante` du projet `riftboundfr` dans le Dashboard, sinon personne n'est
+prévenu. Pas relié au `HEALTHCHECK` : une clé morte ne justifie pas de remplacer le conteneur.
+
+**Pas fait, attend Allan.** `data/prices/card-prices.json` date du 21 août et n'a aucune carte
+Radiance : `.env` n'a pas `CARDNEXUS_API_KEY`, qui ne vit que dans Coolify. La poser dans
+`.env`, lancer `npm run sync-prices`, committer le fichier. En production les liens marchent
+grâce au relevé en mémoire ; sans clé valide, un redémarrage les retirerait de tout Radiance.
+Tant que ce n'est pas fait, `?achat=1` répond 503 en local, c'est normal.
+
 ## 31 octobre 2026 — hexgate 290 à 293, premières City Challenge S5 (Radiance)
 
 **Relevé** (`/api/tournaments?season=all`, 173 tournois) : rien de neuf en S4 depuis le

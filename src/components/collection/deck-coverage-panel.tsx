@@ -124,10 +124,11 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                 {euros.format(prix.total)}
               </div>
               <p className="mt-1 text-xs text-ink-muted">
-                Somme des prix les plus bas sur CardNexus{releve ? `, relevés le ${releve}` : ""}, hors frais de port.
-                Le panier réel coûte plus : les cartes viennent de plusieurs vendeurs.
+                {t("Somme des prix les plus bas sur CardNexus")}
+                {releve ? `, ${t("relevés le")} ${releve}` : ""}, {t("hors frais de port")}.{" "}
+                {t("Le panier réel coûte plus : les cartes viennent de plusieurs vendeurs.")}
                 {prix.exemplairesSansPrix > 0 &&
-                  ` ${prix.exemplairesSansPrix} carte${prix.exemplairesSansPrix > 1 ? "s" : ""} sans prix connu.`}
+                  ` ${prix.exemplairesSansPrix} ${t(prix.exemplairesSansPrix > 1 ? "cartes sans prix connu." : "carte sans prix connu.")}`}
               </p>
             </div>
             {/* Un vrai lien, écrit par le serveur. Le formulaire d'avant ouvrait un
@@ -138,7 +139,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                 {/* Logo blanc : le site n'a que le thème sombre. Dans le calque clair du
                     survol, globals.css l'inverse avec le texte. */}
                 <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
-                Acheter ce deck
+                {t("Acheter ce deck")}
               </BoutonLien>
             ) : (
               <p className="max-w-xs text-sm text-ink-muted">
@@ -154,9 +155,9 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
         {!loggedIn ? (
           <p className="text-sm text-ink-muted">
             <Link href="/api/auth/discord" className="text-arcane hover:underline">{t("Connectez-vous avec Discord")}</Link>{" "}
-            pour voir combien de cartes il vous manque pour ce deck.{" "}
+            {t("pour voir combien de cartes il vous manque pour ce deck.")}{" "}
             <Link href="/collection" className="text-arcane hover:underline">
-              Ma collection
+              {t("Ma collection")}
             </Link>
           </p>
         ) : (
@@ -323,9 +324,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
             className="mt-0.5 h-4 w-auto shrink-0 opacity-60"
           />
           <p className="text-xs text-ink-muted">
-            Riftbound France est partenaire de CardNexus. CardNexus compare les vendeurs et retient le total le
-            plus bas, frais de port compris. Un achat passé par ces liens nous verse une commission, sans changer
-            ton prix.
+            {t("Riftbound France est partenaire de CardNexus. CardNexus compare les vendeurs et retient le total le plus bas, frais de port compris. Un achat passé par ces liens nous verse une commission, sans changer ton prix.")}
           </p>
         </div>
       )}
