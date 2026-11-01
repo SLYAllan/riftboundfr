@@ -21,6 +21,12 @@ position sur la famille. Hypothèse à tenir : 14 clics pour 1 000 vues, la moit
 des pages de deck. Une sortie de set fausse la mesure : les clics montent seuls (10 en
 semaine 42, 50 en semaine 43).
 
+**Changé aussi, famille à part** : `/cartes` a un lien « Acheter » sous chaque carte qui a un
+prix, et la mention de commission sous la grille. Titre et chapô inchangés. **Point de
+départ** : 5 266 vues GA4 et 0 clic sur 28 jours ; Search Console 612 clics, 6 557
+impressions, position 5,6. Les fiches `/cartes/*` restent à 1 795 vues et 11 clics : à
+surveiller, le lien de la liste peut leur prendre des clics plutôt qu'en ajouter.
+
 **Attend :** le Deploy dans Coolify.
 
 ---

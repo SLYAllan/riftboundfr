@@ -34,7 +34,7 @@ Chiffres Search Console du 26 août au 20 septembre 2026 (`etat.json`, relevé d
 |---|---|---|
 | `/` et `/en` en France | `/` : 2 893 impressions, 18,8 % de clics. `/en` : 6 440 impressions, 4,1 % | Google montre l'accueil anglais aux Français sur « deck riftbound », « riftbound meta », « tier list riftbound ». Hors marque, à position égale : 5,8 % de clics pour `/`, 4,0 % pour `/en`. Cause non établie : `hreflang` justes et dans le `<head>`, deux pages indexées chacune pour elle-même. |
 | `/legendes/[slug]` | 958 clics, position 5,0, 50 pages | Captent déjà. Master Yi, Wuju Bladesman fait 263 clics en 3,8e position : n'y pas toucher. Lien d'achat posé le 2 novembre 2026 sous les trois premières listes, à juger après le Deploy (`journal.md`). |
-| `/cartes` | 641 clics, 6 194 impressions, position 5,7 | L'achat se fait sur `/cartes/[id]` (lien `produit`). |
+| `/cartes` | 641 clics, 6 194 impressions, position 5,7 | L'achat se fait sur `/cartes/[id]`, et depuis le 2 novembre 2026 sous chaque carte de la liste (lien `produit`). |
 | `/guides/*` | 1 050 clics, position 4,9 | Ban list en tête (489 clics). Pas de lien d'achat. |
 
 DataForSEO sous-estime nettement : il voyait les pages de Légende absentes du top 10.

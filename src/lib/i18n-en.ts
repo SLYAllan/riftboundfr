@@ -1294,7 +1294,10 @@ export const EN: Record<string, string> = {
   "Toutes les Légendes sont classées.": "Every Legend is ranked.",
   "Pas d’accord ? Créez la vôtre et partagez-la": "Disagree? Make your own and share it",
 
-  // Achat sur CardNexus (fiche carte, page de deck, page de Légende)
+  // Achat sur CardNexus (liste et fiche des cartes, page de deck, page de Légende)
+  "Acheter": "Buy",
+  "Les liens « Acheter » mènent à CardNexus. Un achat passé par ces liens nous verse une commission, sans changer ton prix.":
+    "The “Buy” links go to CardNexus. A purchase through these links earns us a commission and does not change your price.",
   "Acheter cette carte": "Buy this card",
   "Acheter ce deck": "Buy this deck",
   "chez CardNexus": "on CardNexus",

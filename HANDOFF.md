@@ -14,11 +14,13 @@ de lien d'achat : `lienAchatDeck` rend `null` et le bouton disparaît sans erreu
 aux adresses de `sante` du projet `riftboundfr` dans le Dashboard, sinon personne n'est
 prévenu. Pas relié au `HEALTHCHECK` : une clé morte ne justifie pas de remplacer le conteneur.
 
-**Pas fait, attend Allan.** `data/prices/card-prices.json` date du 21 août et n'a aucune carte
-Radiance : `.env` n'a pas `CARDNEXUS_API_KEY`, qui ne vit que dans Coolify. La poser dans
-`.env`, lancer `npm run sync-prices`, committer le fichier. En production les liens marchent
-grâce au relevé en mémoire ; sans clé valide, un redémarrage les retirerait de tout Radiance.
-Tant que ce n'est pas fait, `?achat=1` répond 503 en local, c'est normal.
+**Relevé refait** : `data/prices/card-prices.json` passe de 1 227 cartes (21 août, aucune
+Radiance) à 1 441 sur 1 494, dont 213 Radiance sur 219. La clé vit dans `.env.prod.local`,
+pas dans `.env` (commande dans `AGENTS.md`).
+
+**`/cartes` a aussi son lien** : un « Acheter » sous chaque carte qui a un prix, vers le
+produit, avec la mention de commission sous la grille. Sans prix affiché, selon le choix
+d'Allan du 22 septembre. Point de départ dans `docs/seo/journal.md`.
 
 ## 31 octobre 2026 — hexgate 290 à 293, premières City Challenge S5 (Radiance)
 
