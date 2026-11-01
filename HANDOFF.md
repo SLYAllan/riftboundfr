@@ -12,8 +12,9 @@ commission. Le texte d'achat est traduit sous `/en`, il sortait en français.
 **`/api/health?achat=1`** rend 503 si aucune des cinq dernières listes du set en cours n'a
 de lien d'achat : `lienAchatDeck` rend `null` et le bouton disparaît sans erreur. Pas relié au
 `HEALTHCHECK` : une clé morte ne justifie pas de remplacer le conteneur. L'adresse est dans
-`projets.ts` du Dashboard (`5ab56ff`, image construite et essayée sur la machine). **Tant
-qu'Allan n'a pas déployé cette version depuis la fiche du Dashboard, personne n'est prévenu.**
+`projets.ts` du Dashboard (`5ab56ff`, en service depuis le 2 novembre) : contrôlée chaque
+minute, 200 au premier tour. L'échec n'a été vu qu'en local (503 avant le relevé), jamais
+provoqué en production.
 
 **Relevé refait** : `data/prices/card-prices.json` passe de 1 227 cartes (21 août, aucune
 Radiance) à 1 441 sur 1 494, dont 213 Radiance sur 219. La clé vit dans `.env.prod.local`,
