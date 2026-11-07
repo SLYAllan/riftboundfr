@@ -10,10 +10,10 @@
   "archetype": "Duel : une grosse unité, protégée",
   "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
   "gameplan": {
-    "earlyGame": "Pit Rookie et First Mate posent une unité et en préparent une autre. Shepherd's Heirloom lance l'XP.",
-    "midGame": "Punch First et Rampage font passer la barre des 5 Puissance et déclenchent la Légende. Riposte, dans 99 % des listes, contre le sort qui devait répondre.",
-    "lateGame": "Fiora, Victorious devient intouchable une fois Puissante : protection, déplacement libre et bonus en défense.",
-    "winCondition": "Une unité au-dessus de 5 Puissance que rien ne peut ni cibler ni bloquer."
+    "earlyGame": "Pit Rookie, dans 75 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
+    "midGame": "Fiora, Victorious, dans 92 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 92 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
+    "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 83 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+    "winCondition": "Rendre une unité Puissante, la protéger, et gagner ses combats un par un."
   },
   "keyCards": [
     {
@@ -88,15 +88,12 @@
     }
   ],
   "strengths": [
-    "Riposte dans 99 % des listes et Punch First dans 92 % : la protection est systématique",
-    "Trois titres en 50 tournois, pour 9,0 % de conversion, sous la moyenne du format (9,9 %)",
-    "Sunken Temple dans 96 % des listes, un terrain qui récompense l'unité unique",
-    "Six Champions différents au-dessus de 30 % : la liste s'adapte au tournoi"
+    "Rampage et Riposte dans toutes les listes, Punch First et Fiora, Victorious dans 92 %",
+    "Chaque unité qui devient Puissante rapporte une rune"
   ],
   "weaknesses": [
-    "Sans buff, la Légende ne canalise rien et le deck n'avance plus",
-    "Une seule menace à la fois : un retrait bien placé annule le tour",
-    "Cœur court, huit cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
+    "13 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une treizième, à la City Challenge de Fuzhou"
   ],
   "competitiveResults": {
     "joueursClasses": 13,

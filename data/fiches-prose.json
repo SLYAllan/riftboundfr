@@ -103,21 +103,18 @@
     "archetype": "Duel : une grosse unité, protégée",
     "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
     "gameplan": {
-      "earlyGame": "Pit Rookie et First Mate posent une unité et en préparent une autre. Shepherd's Heirloom lance l'XP.",
-      "midGame": "Punch First et Rampage font passer la barre des 5 Puissance et déclenchent la Légende. Riposte, dans 99 % des listes, contre le sort qui devait répondre.",
-      "lateGame": "Fiora, Victorious devient intouchable une fois Puissante : protection, déplacement libre et bonus en défense.",
-      "winCondition": "Une unité au-dessus de 5 Puissance que rien ne peut ni cibler ni bloquer."
+      "earlyGame": "Pit Rookie, dans 75 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
+      "midGame": "Fiora, Victorious, dans 92 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 92 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
+      "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 83 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+      "winCondition": "Rendre une unité Puissante, la protéger, et gagner ses combats un par un."
     },
     "strengths": [
-      "Riposte dans 99 % des listes et Punch First dans 92 % : la protection est systématique",
-      "Trois titres en 50 tournois, pour 9,0 % de conversion, sous la moyenne du format (9,9 %)",
-      "Sunken Temple dans 96 % des listes, un terrain qui récompense l'unité unique",
-      "Six Champions différents au-dessus de 30 % : la liste s'adapte au tournoi"
+      "Rampage et Riposte dans toutes les listes, Punch First et Fiora, Victorious dans 92 %",
+      "Chaque unité qui devient Puissante rapporte une rune"
     ],
     "weaknesses": [
-      "Sans buff, la Légende ne canalise rien et le deck n'avance plus",
-      "Une seule menace à la fois : un retrait bien placé annule le tour",
-      "Cœur court, huit cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
+      "13 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une treizième, à la City Challenge de Fuzhou"
     ]
   },
   "draven-glorious-executioner.json": {
@@ -221,21 +218,18 @@
     "archetype": "Sorts en chaîne, pioche conditionnelle",
     "legendAbility": "Épuisez Ezreal pour piocher, à condition d'avoir ciblé deux fois des unités ou des équipements adverses dans le tour. Il récompense les tours où l'on répond deux fois.",
     "gameplan": {
-      "earlyGame": "Bellows Breath et Stupefy, dans au moins 99 % des listes, touchent plusieurs unités et remplissent la condition de la Légende.",
-      "midGame": "Fizz, Trickster rejoue un sort du cimetière en arrivant. Star-Crossed renvoie une menace et une des vôtres pour la rejouer.",
-      "lateGame": "Wages of Pain et Deadly Flourish finissent les unités entamées et laissent un jeton Or derrière elles.",
-      "winCondition": "Répondre deux fois par tour, piocher, et gagner le combat que l'adversaire croyait acquis."
+      "earlyGame": "Bellows Breath, Stupefy et Gust, dans toutes les listes, coûtent une énergie et choisissent des unités adverses : deux fois dans le tour, et la Légende pioche. Ezreal, Prodigy, dans toutes les listes, défausse une carte puis en pioche deux en arrivant.",
+      "midGame": "Wages of Pain et Deadly Flourish, dans 90 % des listes, infligent 3 dégâts à une unité et laissent un jeton d'or. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
+      "lateGame": "Thousand-Tailed Watcher, dans 90 % des listes, retire 3 Puissance à toutes les unités adverses. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Singularity inflige 6 dégâts à deux unités.",
+      "winCondition": "Répondre deux fois par tour pour piocher, et ne rien laisser en face."
     },
     "strengths": [
-      "Quatre cartes dans 100 % des listes et trois au-dessus de 90 %",
-      "11,8 % de conversion sur 347 joueurs classés, au-dessus du champ",
-      "Frozen Fortress dans 88 % des listes et Sigil of the Storm dans 81 %",
-      "La pioche de la Légende ne coûte ni carte ni énergie"
+      "Sept cartes dans au moins 90 % des listes : la liste est fixée",
+      "Beaucoup de sorts à une énergie : la Légende pioche presque chaque tour"
     ],
     "weaknesses": [
-      "La condition de deux cibles par tour tombe à l'eau contre un terrain vide",
-      "347 joueurs classés, aucun titre : le deck reste une affaire de spécialistes",
-      "Peu d'unités propres, les parties se gagnent tard ou pas du tout"
+      "10 joueurs classés sur 5 tournois, 1 dans les 10 % de tête : 10,0 % de conversion, la moyenne du format, sur trop peu de joueurs pour conclure",
+      "Sa meilleure place est une dixième, à la City Challenge de Shenzhen"
     ]
   },
   "ornn-fire-below-the-mountain.json": {
@@ -512,12 +506,20 @@
   "sett-the-boss.json": {
     "archetype": "Unité sauvée par son bonus",
     "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Sett se prépare aussi quand vous conquérez.",
-    "gameplan": null,
+    "gameplan": {
+      "earlyGame": "Pit Rookie, dans 90 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
+      "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 90 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
+      "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans toutes les listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
+      "winCondition": "Donner des bonus partout, et ne perdre aucune unité qui en porte un."
+    },
     "strengths": [
-      "Le bonus posé sur une unité sert aussi d'assurance-vie."
+      "10 joueurs classés, 3 dans les 10 % de tête : 30,0 % de conversion contre 10,0 % pour le format",
+      "Deuxième à la City Challenge de Pékin, septième et huitième à Shanghai",
+      "Pillaged Armory, Punch First, Showstopper et Call to Glory dans toutes les listes, Fiora, Victorious aussi"
     ],
     "weaknesses": [
-      "20 listes sur les 8 919 du set Vendetta, 33 joueurs classés : trop peu pour conclure quoi que ce soit."
+      "10 joueurs seulement : trop peu pour conclure, malgré la conversion",
+      "Aucun titre sur Radiance"
     ]
   },
   "sivir-battle-mistress.json": {
@@ -545,12 +547,20 @@
   "volibear-relentless-storm.json": {
     "archetype": "Rune canalisée sur chaque grosse unité",
     "legendAbility": "Quand vous jouez une unité Puissante, cinq Puissance ou plus, épuisez Volibear pour canaliser une rune épuisée.",
-    "gameplan": null,
+    "gameplan": {
+      "earlyGame": "Mobilize, dans toutes les listes, canalise une rune épuisée, ou pioche si vous ne pouvez pas. Dragonsoul Sage s'épuise en réaction pour une énergie. Herald of Scales baisse de 2 énergie le coût de vos Dragons.",
+      "midGame": "Blazing Scorcher, 5 Puissance et Accélération, déclenche la Légende dès qu'il arrive. Gentle Gemdragon, dans 86 % des listes, prépare deux runes quand vous jouez un Dragon. Seraphic Wyvern ajoute une rune épuisée chaque fois que vous en canalisez.",
+      "lateGame": "Kadregrin the Infernal, dans toutes les listes, pioche une carte par unité Puissante que vous contrôlez. Elder Dragon, dans toutes les listes aussi, rend mortel le moindre dégât que vous infligez. Sky Splitter inflige 5 dégâts et coûte moins cher selon votre plus grosse unité.",
+      "winCondition": "Accélérer les runes avec chaque grosse unité, puis poser les Dragons avant l'adversaire."
+    },
     "strengths": [
-      "Les grosses unités se paient elles-mêmes, en partie."
+      "Kadregrin the Infernal, Elder Dragon et Mobilize dans toutes les listes",
+      "Chaque unité de 5 Puissance ou plus rapporte une rune"
     ],
     "weaknesses": [
-      "15 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
+      "14 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une vingt et unième, à la City Challenge de Fuzhou",
+      "Les premiers tours servent à préparer les runes : peu d'unités tôt"
     ]
   },
   "yasuo-unforgiven.json": {
@@ -969,6 +979,24 @@
     "weaknesses": [
       "16 joueurs classés sur 4 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une quarantième, à la City Challenge de Suzhou"
+    ]
+  },
+  "ambessa-matriarch-of-war.json": {
+    "archetype": "Amplification et unités préparées",
+    "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
+    "gameplan": {
+      "earlyGame": "Legion Marauder, dans toutes les listes, s'amplifie pour une énergie ou une Puissance de Corps et gagne +1 Puissance : Ambessa s'amplifie avec lui. Noxian Emissary s'amplifie lui aussi, et laisse deux jetons Recrue en mourant une fois amplifié.",
+      "midGame": "Guttural Roar, dans 91 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
+      "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 91 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+      "winCondition": "Amplifier ses unités pour charger Ambessa, et préparer la meilleure pour un second combat."
+    },
+    "strengths": [
+      "Legion Marauder, Rampage, Kayle, Justified et Ambessa, The Wolf dans toutes les listes",
+      "Chaque amplification charge aussi la Légende"
+    ],
+    "weaknesses": [
+      "14 joueurs classés sur 2 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une soixante-quatrième, au Showdown de Melbourne"
     ]
   }
 }

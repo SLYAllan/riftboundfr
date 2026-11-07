@@ -10,20 +10,18 @@
   "archetype": "Amplification et unités préparées",
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
   "gameplan": {
-    "earlyGame": "Legion Marauder et Pit Rookie posent la pression et laissent un bonus derrière eux.",
-    "midGame": "Punch First, dans toutes les listes, gagne le combat pour une énergie. Chaque amplification recharge la Légende.",
-    "lateGame": "Ambessa, The Wolf amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.",
-    "winCondition": "Une unité préparée deux fois dans le tour, qui attaque puis défend."
+    "earlyGame": "Legion Marauder, dans toutes les listes, s'amplifie pour une énergie ou une Puissance de Corps et gagne +1 Puissance : Ambessa s'amplifie avec lui. Noxian Emissary s'amplifie lui aussi, et laisse deux jetons Recrue en mourant une fois amplifié.",
+    "midGame": "Guttural Roar, dans 91 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
+    "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 91 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+    "winCondition": "Amplifier ses unités pour charger Ambessa, et préparer la meilleure pour un second combat."
   },
   "strengths": [
-    "Punch First dans 93 % des listes, trois autres cartes à 87 %",
-    "Un Top 8 malgré quinze listes",
-    "Risen Altar dans 80 % des listes"
+    "Legion Marauder, Rampage, Kayle, Justified et Ambessa, The Wolf dans toutes les listes",
+    "Chaque amplification charge aussi la Légende"
   ],
   "weaknesses": [
-    "15 listes en dix tournois : trop peu pour parler d'un archétype installé",
-    "Sans autre carte à amplifier, la Légende ne se recharge pas",
-    "Le deck n'a qu'une menace à la fois et pas de plan de repli"
+    "14 joueurs classés sur 2 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une soixante-quatrième, au Showdown de Melbourne"
   ],
   "difficulty": "Moyenne",
   "beginnerFriendly": false,

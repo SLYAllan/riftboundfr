@@ -39,10 +39,13 @@ refermé après le seed du 1er novembre. À rouvrir par Allan, puis
 `npx tsx scripts/prod-tunnel.mts prisma/seed-scraped-decks.ts hexgate-295 hexgate-296 hexgate-297`,
 puis le Deploy, puis `seed-tier-lists.ts` par le tunnel.
 
-**Prose des fiches et des guides sur Radiance : 5 Légendes sur 25 faites** (Kennen,
-Kai'Sa, Vex, Master Yi Wuju Bladesman, Akali), par un sous-agent Sonnet, contrôlées
-par script et relues. La prose citait les cartes Vendetta alors que la page affiche
-les cartes Radiance. Reste 20 fiches (`setDesChiffres: "Radiance"`). Méthode :
+**Prose des fiches et des guides sur Radiance : les 25 fiches faites.** La prose
+citait les cartes Vendetta alors que la page affiche les cartes Radiance. Kennen,
+Kai'Sa, Vex, Master Yi Wuju Bladesman et Akali par un sous-agent Sonnet, relus ; les
+20 autres écrites à la main, en quatre commits, archétype et capacité gardés, guides
+raccourcis. Chaque carte citée a été contrôlée sur la fiche, les 20 pages répondent
+200 après build. « Stacked Deck » qui reste sur certaines pages est la pastille des
+listes jouées avant le ban, voulue. Méthode pour la prochaine passe :
 `scripts/prose-radiance-dossiers.mts <dossier>`, un rédacteur par lot avec
 `docs/prose-radiance-consignes.md`, puis `node scripts/prose-radiance-appliquer.mjs
 <dossier>` (contrôle), `--ecrire`, et `npx tsx scripts/fiches-prose.mts --ecrire`.

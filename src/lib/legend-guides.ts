@@ -47,17 +47,17 @@ Le deck gagne aussi les échanges de sorts. **[[Rebuttal]]**, dans toutes les li
   },
   "ambessa-matriarch-of-war": {
     slug: "ambessa-matriarch-of-war",
-    bref: `Ambessa, Matriarch of War joue les domaines Corps et Ordre, sur un archétype d'amplification et d'unités préparées. Difficulté moyenne. 183 joueurs classés sur 29 tournois, 1 dans les 10 % de tête (0,5 %), aucun titre.`,
-    gagne: `Votre plan tient sur un mot : amplifier. Chaque fois que vous amplifiez une carte, votre Légende s'amplifie aussi. Ensuite, vous la désamplifiez, vous payez une Puissance et vous l'épuisez pour préparer une unité. Une unité préparée deux fois dans le tour attaque, puis défend : c'est elle qui marque vos points.
+    bref: `Ambessa est un deck **Corps/Ordre** d'**amplification** : chaque unité amplifiée la charge, et elle prépare une unité pour un second combat. Sur Radiance, 14 joueurs classés sur 2 tournois, aucun dans les 10 % de tête, aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Chaque fois que vous amplifiez une autre carte, Ambessa s'amplifie aussi. Vous pouvez ensuite la désamplifier, payer une Puissance et l'épuiser pour préparer une unité. Le deck amplifie beaucoup : **[[Legion Marauder]]** pour une énergie, **[[Ambessa, The Wolf]]** pour 3 énergie et une Puissance de Corps, **[[Kayle, Justified]]** jusqu'à trois fois.
 
-**[[Punch First]]** porte le moteur, dans 84 % des listes à trois exemplaires : elle donne +5 Puissance à une unité pour une seule énergie. **[[Legion Marauder]]** (89 %, trois exemplaires) et **[[Pit Rookie]]** (63 %, deux exemplaires) posent la pression et laissent un bonus derrière eux. En fin de partie, **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat.`,
-    plan: `**Début de partie.** **[[Legion Marauder]]** et **[[Pit Rookie]]** posent la pression tôt et laissent un bonus derrière eux.
+**[[Guttural Roar]]** donne +4 Puissance à une unité amplifiée, +2 sinon.`,
+    plan: `**Début de partie.** **[[Legion Marauder]]** se pose et s'amplifie tôt. **[[Irresistible Faefolk]]** attire une unité adverse là où il se déplace.
 
-**Milieu de partie.** **[[Punch First]]** (84 %) donne +5 Puissance à une unité pour une énergie. Chaque amplification recharge votre Légende.
+**Milieu de partie.** **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne subit de dégâts qu'en combat. **[[Rampage]]** et **[[Punch First]]** gagnent les combats serrés.
 
-**Fin de partie.** **[[Ambessa, The Wolf]]** amplifiée gagne +3 Puissance et ne peut plus être blessée hors combat. Vous cherchez une unité préparée deux fois dans le tour, qui attaque puis défend.
+**Fin de partie.** **[[Kayle, Justified]]**, amplifiée trois fois, a Protection 3 et Gank. **[[Rengar, Trophy Hunter]]** se pose sur un champ de bataille occupé.
 
-**Ce qui le bat.** 70 listes publiées sur 29 tournois, c'est trop peu pour parler d'un archétype installé. Sans autre carte à amplifier, votre Légende ne se recharge pas. Et le deck n'a qu'une menace à la fois, pas de plan de repli.`,
+**Ce qui le bat.** Sur Radiance, 14 joueurs seulement, sur deux tournois : trop peu pour juger la liste.`,
   },
   "nasus-curator-of-the-sands": {
     slug: "nasus-curator-of-the-sands",
@@ -195,23 +195,31 @@ Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos uni
   },
   "ezreal-prodigal-explorer": {
     slug: "ezreal-prodigal-explorer",
-    bref: `Ezreal est un deck **Esprit/Chaos** de **contrôle**, l'un des plus exigeants du format mais aussi l'un des plus puissants entre de bonnes mains. Ce n'est pas un deck pour débuter, c'est un deck pour progresser.`,
-    gagne: `Tout tourne autour du ciblage. **[[Deadly Flourish]]** inflige des dégâts et laisse une récompense, **[[Stupefy]]** affaiblit, **[[Bellows Breath]]** répond. Chaque carte que vous visez côté adverse fait avancer votre capacité et vous fait piocher. **[[Fizz, Trickster]]** rejoue un sort depuis votre défausse, et vous finissez par enchaîner plus de réponses que l'adversaire n'a de menaces. Quand il n'a plus rien, vous conquérez le plateau vide.`,
-    plan: `**Début de partie.** Installez votre économie et gérez les premières menaces sans vous précipiter : vos grosses cartes arrivent plus tard.
+    bref: `Ezreal est un deck **Chaos/Esprit** de **sorts en chaîne** : chaque tour où il répond deux fois, il pioche. Sur Radiance, 10 joueurs classés sur 5 tournois, 1 dans les 10 % de tête (10,0 %), aucun titre. Le deck est Très Difficile à piloter.`,
+    gagne: `La Légende pioche une carte si vous avez choisi deux fois des unités ou des équipements adverses dans le tour. Le deck est fait pour ça : **[[Bellows Breath]]**, **[[Stupefy]]** et **[[Gust]]**, dans toutes les listes, coûtent une énergie et visent l'adversaire.
 
-**Milieu de partie.** Prenez le contrôle avec **[[Deadly Flourish]]**, et commencez à piocher gratuitement en visant la main et le plateau adverses.
+**[[Ezreal, Prodigy]]** remplit la main en arrivant, **[[Wages of Pain]]** et **[[Deadly Flourish]]** retirent une unité et laissent de l'or.`,
+    plan: `**Début de partie.** **[[Bellows Breath]]** et **[[Stupefy]]** gênent les premières unités adverses, et la Légende pioche.
 
-**Fin de partie.** Votre capacité tourne à plein, vous rejouez vos meilleurs sorts avec **[[Fizz, Trickster]]**, et l'adversaire n'a tout simplement plus les ressources pour suivre.`,
+**Milieu de partie.** **[[Ezreal, Prodigy]]** défausse une carte puis en pioche deux. **[[Wages of Pain]]** et **[[Star-Crossed]]** répondent aux menaces.
+
+**Fin de partie.** **[[Thousand-Tailed Watcher]]** affaiblit tout le terrain adverse. **[[Fizz, Trickster]]** rejoue un sort depuis la défausse. **[[Singularity]]** inflige 6 dégâts à deux unités.
+
+**Ce qui le bat.** Un adversaire qui pose peu d'unités : sans cibles, la Légende ne pioche pas. Sur Radiance, 10 joueurs seulement, trop peu pour juger.`,
   },
   "fiora-grand-duelist": {
     slug: "fiora-grand-duelist",
-    bref: `Fiora est un deck **Corps/Ordre** de **midrange**, régulièrement présent en Top 8. Le plan est direct et lisible : c'est un bon deck pour qui veut un style proactif sans la complexité des decks de contrôle.`,
-    gagne: `L'idée est de rendre vos unités « puissantes », c'est-à-dire assez grosses pour franchir un seuil de Puissance. **[[Fiora, Victorious]]** devient alors quasi imprenable, avec protection, mobilité et bouclier d'un coup. **[[Akshan, Mischievous]]** attache des équipements à prix réduit, **[[Sett, Brawler]]** grossit à chaque conquête, et tout ce petit monde devient vite trop gros à gérer pour l'adversaire.`,
-    plan: `**Début de partie.** Déployez vos premières unités et commencez à les renforcer pour viser le seuil de puissance.
+    bref: `Fiora est un deck **Ordre/Corps** de **duel** : une grosse unité, protégée, qui gagne ses combats un par un. Sur Radiance, 13 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Quand une de vos unités atteint 5 Puissance, la Légende canalise une rune épuisée. **[[Punch First]]** et **[[Rampage]]** y suffisent en un sort. **[[Fiora, Victorious]]**, dans 92 % des listes, en tire le plus : tant qu'elle est Puissante, elle a Protection, Gank et Bouclier.
 
-**Milieu de partie.** **[[Fiora, Victorious]]** et **[[Sett, Brawler]]** prennent le contrôle des combats. Une fois « puissantes », vos unités encaissent et débordent.
+**[[Riposte]]**, dans toutes les listes, protège l'ensemble : elle contre un sort adverse et donne à votre unité autant de Puissance que le coût de ce sort.`,
+    plan: `**Début de partie.** **[[Pit Rookie]]** et **[[Pillaged Armory]]** donnent les premiers bonus. **[[First Mate]]** prépare une autre unité.
 
-**Fin de partie.** Vos menaces sont devenues impossibles à retirer proprement, et **[[Elder Dragon]]** vient sceller la partie en verrouillant les combats.`,
+**Milieu de partie.** **[[Punch First]]** rend **[[Fiora, Victorious]]** Puissante pour une énergie. **[[Riposte]]** répond au sort qui devait l'abattre.
+
+**Fin de partie.** **[[Harnessed Dragon]]** tue une unité adverse en arrivant. **[[Rengar, Trophy Hunter]]** se pose sur un champ de bataille occupé.
+
+**Ce qui le bat.** Tout repose sur peu d'unités : un retrait au bon moment coûte cher. Sur Radiance, 13 joueurs seulement, et une treizième place pour meilleur résultat.`,
   },
   "vex-gloomist": {
     slug: "vex-gloomist",
@@ -287,13 +295,17 @@ Le deck sert à créer ce face-à-face. **[[Irresistible Faefolk]]** attire une 
   },
   "sett-the-boss": {
     slug: "sett-the-boss",
-    bref: `Sett est un deck **Corps/Ordre** de **midrange** résistant. Exigeant à piloter mais au plafond très élevé, c'est une Légende pour les joueurs qui aiment bâtir un plateau impossible à démanteler.`,
-    gagne: `Tout repose sur la résilience. Vos unités sont renforcées en permanence par **[[Pit Rookie]]**, **[[Arena Bar]]** et **[[Showstopper]]**, et quand l'une tombe, la capacité de Sett la rappelle. **[[Fiora, Victorious]]** et **[[Rengar, Trophy Hunter]]** deviennent des menaces que l'adversaire ne peut pas retirer durablement, et **[[Punch First]]** vole les combats serrés. Votre puissance totale grimpe tour après tour, jusqu'à déborder.`,
-    plan: `**Début de partie.** Déployez vos unités et commencez à les renforcer dès que possible.
+    bref: `Sett est un deck **Corps/Ordre** de **bonus** : chaque unité qui en porte un se défend mieux, et la Légende la sauve si elle devait mourir. Sur Radiance, 10 joueurs classés sur 6 tournois, 3 dans les 10 % de tête (30,0 %, contre 10,0 % pour le format), aucun titre. Le deck est Difficile à piloter.`,
+    gagne: `Si une de vos unités avec un bonus devait mourir, la Légende dépense ce bonus pour la soigner et la ramener à la base, pour une Puissance. Le deck en donne partout : **[[Pit Rookie]]**, **[[Pillaged Armory]]**, **[[Showstopper]]**.
 
-**Milieu de partie.** Tenez vos positions avec des créatures massives. Chaque unité rappelée par la capacité de Sett relance votre avantage.
+**[[Sett, Kingpin]]**, dans 90 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. **[[Call to Glory]]** donne +3 Puissance, sans rien coûter si vous dépensez un bonus.`,
+    plan: `**Début de partie.** **[[Pit Rookie]]** et **[[Pillaged Armory]]** posent les premiers bonus. **[[Irresistible Faefolk]]** attire une unité adverse là où il se déplace.
 
-**Fin de partie.** Votre plateau est devenu ingérable : les unités reviennent toujours, plus grosses. Vous conquérez et vous gardez.`,
+**Milieu de partie.** **[[Showstopper]]** renforce une unité de votre base et l'envoie au combat. **[[Sett, Kingpin]]** grossit avec chaque unité renforcée à ses côtés.
+
+**Fin de partie.** **[[Fiora, Victorious]]**, Puissante, a Protection, Gank et Bouclier. **[[Call to Glory]]** et **[[Punch First]]** gagnent les combats serrés.
+
+**Ce qui le bat.** Sur Radiance, 10 joueurs seulement : la conversion de 30,0 % est belle, mais trop fragile pour conclure. Le deck n'a pas encore de titre, sa meilleure place est une deuxième, à Pékin.`,
   },
   "ahri-nine-tailed-fox": {
     slug: "ahri-nine-tailed-fox",
@@ -351,13 +363,17 @@ Le deck sert à créer ce face-à-face. **[[Irresistible Faefolk]]** attire une 
   },
   "volibear-relentless-storm": {
     slug: "volibear-relentless-storm",
-    bref: `Volibear est un deck **Corps/Furie** de **rampe** à grosses unités. Facile à prendre en main, c'est un bon deck pour qui aime accélérer et claquer des menaces démesurées.`,
-    gagne: `Le plan tient en deux temps : accélérer, puis frapper fort. **[[Mobilize]]** et **[[Catalyst of Aeons]]** vous donnent de l'avance sur l'énergie, et **[[Gentle Gemdragon]]** relance vos runes dès que vous posez un dragon. Vous jouez ensuite **[[Kadregrin the Infernal]]** et **[[Elder Dragon]]**, des finishers que personne ne bat en combat. **[[Sabotage]]** retire la réponse adverse avant qu'elle ne pose problème, et vous contrôlez le plateau.`,
-    plan: `**Début de partie.** Accélérez votre énergie avec vos sorts de rampe et tenez le coup face aux premières unités adverses.
+    bref: `Volibear est un deck **Corps/Furie** de **Dragons** : chaque grosse unité rapporte une rune, et les runes paient des Dragons de plus en plus gros. Sur Radiance, 14 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Quand vous jouez une unité de 5 Puissance ou plus, la Légende canalise une rune épuisée. Le deck en joue beaucoup : **[[Blazing Scorcher]]**, **[[Gentle Gemdragon]]**, **[[Kadregrin the Infernal]]**. **[[Gentle Gemdragon]]** prépare deux runes à chaque Dragon joué, **[[Seraphic Wyvern]]** ajoute une rune chaque fois que vous en canalisez.
 
-**Milieu de partie.** **[[Gentle Gemdragon]]** lance la cascade de dragons et vous permet de jouer vos menaces bien plus tôt que prévu.
+Au bout, **[[Elder Dragon]]**, dans toutes les listes, rend mortel le moindre dégât que vous infligez.`,
+    plan: `**Début de partie.** **[[Mobilize]]** canalise une rune. **[[Dragonsoul Sage]]** donne une énergie en réaction. **[[Herald of Scales]]** baisse le coût de vos Dragons.
 
-**Fin de partie.** **[[Kadregrin the Infernal]]** et **[[Elder Dragon]]** verrouillent les combats. L'adversaire n'a pas les moyens de répondre, vous conquérez.`,
+**Milieu de partie.** **[[Blazing Scorcher]]** arrive prêt et déclenche la Légende. **[[Gentle Gemdragon]]** et **[[Seraphic Wyvern]]** accélèrent les runes.
+
+**Fin de partie.** **[[Kadregrin the Infernal]]** pioche une carte par unité de 5 Puissance ou plus. **[[Elder Dragon]]** et **[[Volibear, Furious]]** finissent la partie. **[[Sky Splitter]]** retire une unité adverse.
+
+**Ce qui le bat.** Les decks rapides : le deck passe ses premiers tours à préparer ses runes. Sur Radiance, 14 joueurs seulement, et une vingt et unième place pour meilleur résultat.`,
   },
   "master-yi-wuju-master": {
     slug: "master-yi-wuju-master",
