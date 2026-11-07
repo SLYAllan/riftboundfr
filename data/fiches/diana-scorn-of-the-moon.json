@@ -10,10 +10,10 @@
   "archetype": "Combats gagnés à la réaction",
   "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
-    "earlyGame": "Ravenbloom Student grossit à chaque sort. Stupefy, dans toutes les listes, tient la main pleine.",
-    "midGame": "Moonfall et Star-Crossed, présents partout, pèsent sur un combat déjà engagé. Tideturner arrive caché et déplace la menace.",
-    "lateGame": "Hwei, Brooding Painter et Diana, Lunari piochent en bougeant. Swain, Visionary marque un point supplémentaire quand la conquête est propre.",
-    "winCondition": "Gagner chaque combat d'une Puissance et marquer sans jamais surexposer le terrain."
+    "earlyGame": "Tideturner, dans 96 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
+    "midGame": "Diana, Lunari, dans toutes les listes, regarde le dessus du deck au début d'un combat là où elle est, pour une énergie, et pioche la carte si c'est un sort. Moonfall attire une unité adverse sur votre champ de bataille et retire 2 Puissance aux unités adverses là-bas. Avec l'énergie de la Légende, vous jouez un sort de plus pendant le combat.",
+    "lateGame": "Hwei, Brooding Painter, dans 96 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
+    "winCondition": "Gagner les combats avec un sort d'avance, en réaction."
   },
   "keyCards": [
     {
@@ -108,15 +108,13 @@
     }
   ],
   "strengths": [
-    "Cinq cartes dans 100 % des listes : c'est le cœur le plus fermé du format",
-    "Cinq titres en 50 tournois",
-    "L'énergie de la Légende ne sert qu'en combat, là où l'adversaire a déjà dépensé la sienne",
-    "Abandoned Hall dans 47 % des listes, taillé pour les déplacements"
+    "Un titre, le Showdown de Melbourne, et une troisième place au même tournoi",
+    "33 joueurs classés sur 8 tournois, 7 dans les 10 % de tête : 21,2 % de conversion contre 10,0 % pour le format, un écart qui tient le test (p = 0,04)",
+    "Gust, Stupefy, Star-Crossed, Eclipse et Hard Bargain répondent pendant le combat"
   ],
   "weaknesses": [
-    "Conversion de 8,1 %, sous la moyenne du format (9,9 %) : elle gagne ou elle sort tôt",
-    "Sans sort en main, la Légende ne sert à rien",
-    "Un pilote qui découvre le deck perd les combats serrés"
+    "33 joueurs seulement : l'écart tient le test, mais de justesse",
+    "L'énergie de la Légende ne sert que pendant un combat"
   ],
   "competitiveResults": {
     "joueursClasses": 33,

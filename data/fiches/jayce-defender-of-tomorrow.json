@@ -10,21 +10,19 @@
   "archetype": "Équipements préparés, montée en ressources",
   "legendAbility": "Une énergie et un épuisement préparent un équipement ; amplifié, Jayce en prépare deux. Les équipements qui produisent des ressources servent deux fois par tour.",
   "gameplan": {
-    "earlyGame": "Platewyrm Egg et Garbage Grabber posent la base. Mobilize et Catalyst of Aeons canalisent des runes en avance.",
-    "midGame": "La Légende prépare les équipements déjà utilisés : chaque tour rapporte plus de ressources que le précédent.",
-    "lateGame": "Dazzling Aurora rejoue une unité gratuite en fin de tour, Elder Dragon arrive à 12 énergie et tue tout ce qu'il touche.",
-    "winCondition": "Arriver aux très gros coûts deux tours avant l'adversaire."
+    "earlyGame": "Platewyrm Egg, dans 97 % des listes, arrive épuisé ; amplifié, il donne 2 énergie au lieu d'une. Garbage Grabber, dans toutes les listes, recycle trois cartes de la défausse pour piocher. Dredge Up pioche, puis se rejoue depuis la défausse grâce à Flux.",
+    "midGame": "Catalyst of Aeons, dans toutes les listes, canalise deux runes épuisées. La Légende prépare un équipement, et Jayce, Brilliant Inventor, dans 78 % des listes, prépare quelque chose d'épuisé à son arrivée et au premier équipement joué chaque tour : Platewyrm Egg sert alors deux fois. Clairvoyance pioche en réaction.",
+    "lateGame": "Dazzling Aurora, dans 91 % des listes, révèle à chaque fin de tour la première unité du deck et la joue gratuitement. Elder Dragon, dans 97 % des listes, rend mortel le moindre dégât que vous infligez. Gutter Palace gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.",
+    "winCondition": "Multiplier les ressources avec les équipements, puis poser Elder Dragon ou Dazzling Aurora avant l'adversaire."
   },
   "strengths": [
-    "101 listes vues aux vingt et un tournois : le deck fait partie du paysage",
-    "Bellows Breath et Elder Dragon dans plus de 90 % des listes",
-    "Sigil of the Storm dans 86 % des listes, choisi pour tenir le temps de monter",
-    "La Légende double l'usage des équipements à ressources"
+    "Dix cartes dans au moins 91 % des listes : la liste est fixée",
+    "Cinquième à la City Challenge de Shenyang, sixième au Showdown de Melbourne",
+    "Gutter Palace donne une seconde façon de gagner"
   ],
   "weaknesses": [
-    "5,9 % de conversion, six Top 8 pour 101 listes : très joué, rarement récompensé",
-    "Le deck perd s'il est pressé avant d'avoir monté ses runes",
-    "Un seul Champion, et dans 48 % des listes : les pilotes ne s'accordent pas sur la liste"
+    "38 joueurs classés sur 9 tournois, 3 dans les 10 % de tête : 7,9 % de conversion contre 10,0 % pour le format, aucun titre",
+    "Peu d'unités avant Elder Dragon : le deck tient surtout avec ses sorts"
   ],
   "difficulty": "Moyenne",
   "beginnerFriendly": false,

@@ -61,17 +61,17 @@ Ce moteur tournait grâce à **[[Stacked Deck]]**, dans 83 % des listes, interdi
   },
   "nasus-curator-of-the-sands": {
     slug: "nasus-curator-of-the-sands",
-    bref: `Nasus, Curator of the Sands joue en Calme et Esprit. Son archétype : poser des grosses unités payées deux fois. Difficulté moyenne. En 44 tournois, il aligne 250 listes publiées et deux titres, dont Tianjin.`,
-    gagne: `Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, vous épuisez Nasus et vous préparez jusqu'à deux runes. Le gros coup se rembourse : vous payez cher, et la Légende vous rend de quoi continuer.
+    bref: `Nasus est un deck **Calme/Esprit** de **gros coûts remboursés** : chaque carte à 7 énergie ou plus lui rend deux runes. Sur Radiance, 43 joueurs classés sur 8 tournois, 3 dans les 10 % de tête (7,0 %), aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, la Légende prépare jusqu'à deux runes. **[[Thousand-Tailed Watcher]]**, dans toutes les listes, coûte 7 et retire 3 Puissance à toutes les unités adverses. **[[Steel Paws]]** s'amplifie pour 7 énergie et gagne +7 Puissance.
 
-Ce plan tourne autour de **[[Thousand-Tailed Watcher]]**, dans 100 % des listes. À 7 énergie, elle baisse toutes les unités adverses de 3 Puissance et vous rend deux runes. **[[Defy]]**, aussi dans 100 % des listes, garde la réponse ouverte pendant que vous augmentez en énergie.`,
-    plan: `**Début de partie.** **[[Scuttle Crab]]** (96 %) et **[[Ravenbloom Student]]** (91 %) tiennent le terrain pendant que **[[Defy]]** (100 %) et **[[Discipline]]** (100 %) gardent la réponse ouverte. Vous ne posez rien de gros avant 7 énergie : vous défendez et vous attendez.
+Au bout, **[[Nasus, Ascended]]**, dans 97 % des listes, a Protection 2. Amplifié pour 8 énergie, il marque un point à chaque conquête.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** pioche en arrivant. **[[Defy]]**, **[[Stupefy]]** et **[[Discipline]]** répondent pendant le tour adverse.
 
-**Milieu de partie.** À 7 énergie, **[[Thousand-Tailed Watcher]]** baisse toutes les unités adverses de 3 Puissance et vous rend deux runes grâce à la Légende. Vous posez votre première grosse carte, et le remboursement commence.
+**Milieu de partie.** **[[Find Your Center]]** pioche et canalise une rune. **[[Steel Paws]]**, amplifié, gagne 7 Puissance, et la Légende vous rend deux runes.
 
-**Fin de partie.** **[[Astral Heron]]** (70 %) enchaîne au même coût. **[[Nasus, Ascended]]** (97 %) arrive à 8 énergie avec Protection 2. Votre but : poser une menace à 7 énergie ou plus par tour, sans jamais tomber à court de runes.
+**Fin de partie.** **[[Thousand-Tailed Watcher]]** affaiblit tout le terrain adverse. **[[Nasus, Ascended]]** marque à chaque conquête. **[[Time Warp]]** donne un tour de plus.
 
-**Ce qui le bat.** Rien ne se déclenche sous 7 énergie, alors les premiers tours sont creux et un deck rapide en profite. La conversion est faible : 5,6 % contre 9,9 % pour le champ. Deux titres, mais peu de places dans les 10 % de tête autour : 29 sur 519 joueurs classés. Les terrains sont dispersés, aucun ne dépasse 47 % : le plan n'est pas stabilisé.`,
+**Ce qui le bat.** Les premiers tours : le deck attend ses cartes à 7 énergie. Sur Radiance, 7,0 % de conversion, sous la moyenne du format, et une septième place à Guangzhou.`,
   },
   "akali-rogue-assassin": {
     slug: "akali-rogue-assassin",
@@ -89,17 +89,17 @@ Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) i
   },
   "jayce-defender-of-tomorrow": {
     slug: "jayce-defender-of-tomorrow",
-    bref: `Jayce est une Légende Esprit et Corps, un deck d'équipements préparés qui monte en ressources. La difficulté est moyenne. Sur 50 tournois, 496 listes publiées : 791 joueurs classés, 69 dans les 10 % de tête (8,7 %), un titre.`,
-    gagne: `Pour une énergie et un épuisement, Jayce prépare un équipement, c'est à dire le rend prêt à resservir. Amplifié, il en prépare deux d'un coup. Et un équipement qui produit des ressources sert deux fois par tour : chaque tour rapporte plus que le précédent.
+    bref: `Jayce est un deck **Esprit/Corps** de **montée en ressources** : ses équipements produisent de l'énergie, et il les prépare pour qu'ils servent deux fois. Sur Radiance, 38 joueurs classés sur 9 tournois, 3 dans les 10 % de tête (7,9 %), aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Pour une énergie, la Légende prépare un équipement ; amplifiée, elle en prépare deux. **[[Platewyrm Egg]]**, dans 97 % des listes, donne 2 énergie une fois amplifié : préparé, il en donne de nouveau. **[[Jayce, Brilliant Inventor]]** prépare lui aussi quelque chose à son arrivée et au premier équipement joué chaque tour.
 
-**[[Bellows Breath]]** (100 % des listes) et **[[Elder Dragon]]** (100 %) sont le cœur du deck. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance, donc vous augmentez vite. En fin de partie, **[[Dazzling Aurora]]** (100 %) rejoue une unité gratuite en fin de tour, puis **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Le but : atteindre les très gros coûts deux tours avant l'adversaire.`,
-    plan: `**Début de partie.** **[[Platewyrm Egg]]** (100 %) et **[[Garbage Grabber]]** (100 %) posent la base. **[[Mobilize]]** et **[[Catalyst of Aeons]]** canalisent des runes en avance. **[[Sigil of the Storm]]** (98 %) vous fait tenir le temps de monter.
+Ce surplus paie le haut du deck. **[[Dazzling Aurora]]** joue gratuitement une unité du deck à chaque fin de tour, **[[Elder Dragon]]** rend mortel le moindre dégât que vous infligez.`,
+    plan: `**Début de partie.** **[[Platewyrm Egg]]** et **[[Garbage Grabber]]** se posent tôt. **[[Dredge Up]]** pioche, puis se rejoue depuis la défausse grâce à Flux. **[[Bellows Breath]]** et **[[Flurry of Blades]]** nettoient les petites unités.
 
-**Milieu de partie.** Jayce prépare les équipements déjà utilisés. Chaque tour rapporte plus de ressources que le précédent. Les équipements qui produisent des ressources servent deux fois par tour.
+**Milieu de partie.** **[[Catalyst of Aeons]]** canalise deux runes. **[[Clairvoyance]]** regarde les cinq cartes du dessus, les range, puis en pioche deux, en réaction.
 
-**Fin de partie.** **[[Dazzling Aurora]]** rejoue une unité gratuite en fin de tour. **[[Elder Dragon]]** arrive à 12 énergie et tue tout ce qu'il touche. Vous atteignez les très gros coûts deux tours avant l'adversaire.
+**Fin de partie.** **[[Dazzling Aurora]]** et **[[Elder Dragon]]** arrivent bien avant leur heure. **[[Gutter Palace]]** gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.
 
-**Ce qui le bat.** Un adversaire qui vous met sous pression tôt gagne avant que vos runes soient montées. Le deck est très joué : 496 listes publiées, 791 joueurs classés sur 50 tournois, 69 dans les 10 % de tête (8,7 %), un titre. Et son Champion le plus joué n'est que dans 70 % des listes : les pilotes ne s'accordent pas tout à fait sur la liste.`,
+**Ce qui le bat.** Les decks qui frappent tôt : avant Elder Dragon, le deck a peu d'unités. Sur Radiance, 7,9 % de conversion, sous la moyenne du format, et une cinquième place à Shenyang.`,
   },
   "kennen-heart-of-the-tempest": {
     slug: "kennen-heart-of-the-tempest",
@@ -129,13 +129,17 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   },
   "diana-scorn-of-the-moon": {
     slug: "diana-scorn-of-the-moon",
-    bref: `Diana est un deck **Esprit/Chaos** d'**aggro-tempo**, parmi les tout meilleurs du format mais aussi l'un des plus exigeants. Énormément de décisions à chaque tour et une faible marge d'erreur : ce n'est pas un premier deck idéal, mais c'est l'un des plus intéressants à apprendre.`,
-    gagne: `Une grande partie de Riftbound se joue en confrontation : quand deux armées se croisent sur un champ de bataille, chacun peut jouer des sorts pour prendre l'avantage au combat. Diana est faite pour gagner ces échanges. Vos unités grossissent dès que vous lancez un sort grâce à **[[Ravenbloom Student]]**, et vous disposez d'un arsenal de réactions à 1 d'énergie : **[[Gust]]** renvoie un attaquant, **[[Stupefy]]** affaiblit une unité. À chaque combat, vous avez une réponse de plus que l'adversaire.`,
-    plan: `**Début de partie.** Prenez le contrôle des premiers combats. Vos petites unités, gonflées par vos sorts, gagnent des échanges qu'elles ne devraient pas, et vous prenez la tête au score.
+    bref: `Diana est un deck **Chaos/Esprit** de **combats gagnés à la réaction** : elle garde toujours un sort d'avance. Sur Radiance, 33 joueurs classés sur 8 tournois, 7 dans les 10 % de tête (21,2 %, contre 10,0 % pour le format), et un titre, le Showdown de Melbourne. Le deck est Difficile à piloter.`,
+    gagne: `La Légende s'épuise en réaction et vous donne une énergie, à dépenser pendant un combat. À chaque combat, vous avez donc un sort de plus que prévu : **[[Gust]]** renvoie en main une petite unité, **[[Stupefy]]** affaiblit et pioche, **[[Eclipse]]** retire 4 Puissance.
 
-**Milieu de partie.** **[[Hwei, Brooding Painter]]** devient votre moteur : il pioche et défausse à chaque déplacement. **[[Moonfall]]** et **[[Star-Crossed]]** repositionnent vos unités pour transformer un combat perdu en combat gagné.
+**[[Diana, Lunari]]**, dans toutes les listes, remplit la main pendant ces combats : pour une énergie, elle regarde le dessus du deck et pioche la carte si c'est un sort.`,
+    plan: `**Début de partie.** **[[Tideturner]]** se pose caché. **[[Ravenbloom Student]]** gagne +1 Puissance à chaque sort joué.
 
-**Fin de partie.** Vous concluez avec ce que l'adversaire ne peut pas anticiper, un déplacement surprise ou un sort de tempo au bon moment. **[[Vex, Apathetic]]** limite les options adverses en fin de partie en punissant chaque unité déployée en face.`,
+**Milieu de partie.** **[[Moonfall]]** attire une unité adverse sur votre champ de bataille et retire 2 Puissance aux unités adverses là-bas. **[[Ride The Wind]]** déplace une de vos unités et la prépare.
+
+**Fin de partie.** **[[Hwei, Brooding Painter]]** pioche en se déplaçant. **[[Fizz, Trickster]]** rejoue un sort depuis la défausse. **[[Star-Crossed]]** renvoie en main une unité de chaque camp.
+
+**Ce qui le bat.** Les adversaires qui évitent le combat : l'énergie de la Légende n'y sert pas. Sur Radiance, 33 joueurs seulement : l'écart tient le test, mais de justesse.`,
   },
   "irelia-blade-dancer": {
     slug: "irelia-blade-dancer",
@@ -177,13 +181,17 @@ Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos uni
   },
   "azir-emperor-of-the-sands": {
     slug: "azir-emperor-of-the-sands",
-    bref: `Azir est un deck **Calme/Ordre** de **jetons et équipements**, double vainqueur de Regional. Le plan est limpide et l'un des plus clairs à dérouler : c'est un bon deck pour qui aime voir un plateau se construire et déborder l'adversaire.`,
-    gagne: `Le moteur d'Azir, ce sont ses équipements bon marché : **[[Soul Sword]]**, **[[B.F. Sword]]**, **[[Brutalizer]]**. Chacun déclenche la capacité de Légende et fait apparaître un Sand Soldier. Vous vous retrouvez vite avec plus d'unités que l'adversaire, et comme l'équipement passe d'une créature à l'autre, un seul arsenal sert toute votre armée. Pendant ce temps, **[[Defy]]** et **[[Discipline]]** protègent vos positions, et vous conquérez terrain après terrain.`,
-    plan: `**Début de partie.** Posez vos premiers équipements pour lancer la machine à Sand Soldiers et occupez un champ de bataille.
+    bref: `Azir est un deck **Calme/Ordre** d'**équipements et de jetons** : il arme une armée de Soldats des Sables. Sur Radiance, 30 joueurs classés sur 8 tournois, 1 dans les 10 % de tête (3,3 %), aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Chaque tour où vous jouez un équipement, la Légende pose un Soldat des Sables de 2 Puissance pour une énergie. Vos Soldats sont Experts en armes : ils s'équipent à moindre coût. Huit cartes sont dans toutes les listes : quatre équipements, **[[Guards!]]** et **[[Arise!]]** qui posent des Soldats, **[[Defy]]** et **[[Discipline]]**.
 
-**Milieu de partie.** Empilez l'équipement sur vos meilleures unités, transmettez-le au fil des combats, et commencez à conquérir sur deux fronts.
+**[[Arise!]]** pose un Soldat par équipement que vous contrôlez et en prépare deux. **[[Azir, Sovereign]]** amène tous vos jetons sur son champ de bataille quand il attaque.`,
+    plan: `**Début de partie.** **[[Doran's Shield]]** et **[[Eye of the Herald]]** coûtent une énergie : chacun ouvre la Légende. **[[Guards!]]** pose un Soldat caché.
 
-**Fin de partie.** Votre armée de soldats équipés est partout. **[[Deathgrip]]** vous permet de passer par-dessus un mur adverse pour aller chercher les derniers points, et l'empire se referme.`,
+**Milieu de partie.** **[[Brutalizer]]** et **[[B.F. Sword]]** équipent vos Soldats. **[[Back Off]]** étourdit une unité adverse et pioche.
+
+**Fin de partie.** **[[Arise!]]** remplit le terrain de Soldats. **[[Azir, Sovereign]]** les amène tous au combat.
+
+**Ce qui le bat.** Sans équipement joué dans le tour, la Légende ne fait rien. Sur Radiance, 3,3 % de conversion, loin de la moyenne du format, et une dix-neuvième place pour meilleur résultat.`,
   },
   "ezreal-prodigal-explorer": {
     slug: "ezreal-prodigal-explorer",
@@ -345,13 +353,17 @@ Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos uni
   },
   "master-yi-wuju-master": {
     slug: "master-yi-wuju-master",
-    bref: `Master Yi, Wuju Master est un deck **Corps/Calme** de **montée en niveau** (Hunt), une variante de niche à ne pas confondre avec le Bladesman. Difficile et un peu casse-gueule, c'est un deck pour qui aime les plans à fort potentiel.`,
-    gagne: `Tout repose sur l'expérience. Vos unités à Chasse, comme **[[Mosstomper]]** et **[[Master Yi, Tempered]]**, gagnent de l'XP en conquérant et en tenant les champs de bataille, et **[[Herald of Spring]]** en offre d'entrée. À mesure que vous augmentez en niveau, vos unités deviennent plus grosses, puis entrent prêtes : aux paliers les plus élevés, c'est toute votre armée qui frappe sans s'épuiser, un plateau difficile à contenir. **[[Concentrate]]** repioche pour entretenir la pression.`,
-    plan: `**Début de partie.** Déployez vos unités à Chasse et commencez à accumuler de l'expérience en tenant les champs de bataille. Attention, vous n'avez pas d'avantage immédiat : il faut survivre.
+    bref: `Master Yi, Wuju Master est un deck **Corps/Calme** de **montée en niveau** : chaque combat gagné rapporte de l'XP, et l'XP rend toute l'armée plus forte. Sur Radiance, 29 joueurs classés sur 5 tournois, 1 dans les 10 % de tête (3,4 %), aucun titre. Le deck est Difficile à piloter.`,
+    gagne: `La Légende ne fait rien au début. À 6 XP, toutes vos unités gagnent +1 Puissance ; à 11 XP, elles arrivent prêtes. L'XP vient des combats : **[[Gemhand Hunter]]** et **[[Wuju Apprentice]]** ont Chasse, **[[Grim Resolve]]** donne 2 XP quand l'unité qu'il renforce gagne son combat.
 
-**Milieu de partie.** Atteins les premiers paliers : vos unités gagnent en puissance et deviennent plus dures à retirer.
+Au bout, **[[Master Yi, Unstoppable]]** coûte 12 énergie, mais de moins en moins à chaque palier d'XP.`,
+    plan: `**Début de partie.** **[[Gemhand Hunter]]** et **[[Wuju Apprentice]]** se posent pour deux énergie et cherchent le combat. **[[Defy]]** et **[[Discipline]]** les protègent.
 
-**Fin de partie.** Au palier maximal, toute votre armée entre prête et renforcée. À ce stade, l'adversaire ne peut plus suivre le rythme.`,
+**Milieu de partie.** **[[Master Yi, Tempered]]** a Chasse 2, puis Protection et Gank au niveau 6. **[[Punch First]]** et **[[Grim Resolve]]** font gagner les combats qui comptent.
+
+**Fin de partie.** À 11 XP, vos unités arrivent prêtes. **[[Master Yi, Unstoppable]]** arrive à prix réduit.
+
+**Ce qui le bat.** Un adversaire qui refuse les combats vous prive d'XP, et la Légende reste muette. Sur Radiance, 3,4 % de conversion, et une vingt-huitième place pour meilleur résultat.`,
   },
   // ── Legendes ajoutees le 22 juillet 2026 ──────────────────────────────────
   // Ecrits a partir de la capacite reelle de chaque Legende et des cartes coeur

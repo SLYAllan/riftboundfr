@@ -107,10 +107,12 @@
     }
   ],
   "strengths": [
-    "Deux paliers qui transforment tout le deck, sans carte à jouer."
+    "Six cartes dans toutes les listes : la liste est fixée",
+    "Master Yi, Tempered dans toutes les listes, Master Yi, Unstoppable dans 94 %"
   ],
   "weaknesses": [
-    "15 listes seulement sur les 8 919 du set Vendetta, pour 170 joueurs classés : trop peu pour décrire ses cartes."
+    "29 joueurs classés sur 5 tournois, 1 dans les 10 % de tête : 3,4 % de conversion contre 10,0 % pour le format, aucun titre",
+    "La Légende ne fait rien avant 6 XP"
   ],
   "competitiveResults": {
     "joueursClasses": 29,
@@ -188,5 +190,11 @@
     "Amateur Recital (44 %)"
   ],
   "setDesChiffres": "Radiance",
-  "cartesDepuisBan": "2026-09-15"
+  "cartesDepuisBan": "2026-09-15",
+  "gameplan": {
+    "earlyGame": "Gemhand Hunter et Wuju Apprentice, dans toutes les listes, coûtent deux énergie et ont Chasse : ils gagnent de l'XP en combat. Defy et Discipline répondent pendant le tour adverse.",
+    "midGame": "Grim Resolve, dans 88 % des listes, donne +3 Puissance, et 2 XP si l'unité gagne son combat. Master Yi, Tempered, dans toutes les listes, a Chasse 2, puis Protection et Gank au niveau 6. À 6 XP, la Légende donne +1 Puissance à toutes vos unités.",
+    "lateGame": "Master Yi, Unstoppable, dans 94 % des listes, coûte 12 énergie, mais moins à chaque palier d'XP. À 11 XP, la Légende fait arriver vos unités préparées. Alpha Strike répartit des dégâts et donne 1 XP par unité tuée.",
+    "winCondition": "Gagner des combats pour monter en XP, puis jouer Master Yi, Unstoppable à prix réduit."
+  }
 }

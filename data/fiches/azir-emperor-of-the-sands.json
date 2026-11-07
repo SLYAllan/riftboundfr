@@ -10,10 +10,10 @@
   "archetype": "Équipements et jetons Soldat des Sables",
   "legendAbility": "Vos Soldats des Sables sont Experts en armes. Pour une énergie, épuisez Azir et posez un Soldat de 2 Puissance, à condition d'avoir joué un Équipement ce tour-là.",
   "gameplan": {
-    "earlyGame": "Doran's Shield, Eye of the Herald et B.F. Sword, tous dans au moins 99 % des listes, arment le premier jeton dès le tour deux.",
-    "midGame": "Chaque Équipement joué ouvre un Soldat gratuit. Brutalizer et Soul Sword s'attachent en arrivant grâce à Expert en armes.",
-    "lateGame": "Arise! pose un Soldat par Équipement contrôlé et en prépare deux. Azir, Sovereign les emmène tous au même champ de bataille.",
-    "winCondition": "Un tapis de jetons armés qui conquiert deux champs de bataille dans le même tour."
+    "earlyGame": "Doran's Shield, Eye of the Herald et Soul Sword coûtent une énergie et s'équipent pour une Puissance. Chaque équipement joué ouvre la Légende, qui pose un Soldat des Sables de 2 Puissance.",
+    "midGame": "Guards!, dans toutes les listes, se joue caché et pose un Soldat des Sables, préparé si vous payez une Puissance d'Ordre. Les Soldats sont Experts en armes : ils s'équipent à moindre coût. Brutalizer et B.F. Sword, dans toutes les listes, les rendent dangereux.",
+    "lateGame": "Arise!, dans toutes les listes, pose un Soldat par équipement que vous contrôlez, et en prépare deux. Azir, Sovereign, dans toutes les listes, amène tous vos jetons sur son champ de bataille quand il attaque.",
+    "winCondition": "Poser des équipements, les mettre sur des Soldats des Sables, et attaquer en masse avec Azir, Sovereign."
   },
   "keyCards": [
     {
@@ -93,14 +93,13 @@
     }
   ],
   "strengths": [
-    "Douze cartes au-dessus de 90 %, dont neuf dans toutes les listes : la courbe est réglée",
-    "635 joueurs classés sur 50 tournois, 72 dans les 10 % de tête (11,3 %), 4 titres",
-    "Trifarian War Camp dans 99 % des listes et Hall of Legends dans 99 %",
-    "Les jetons arrivent équipés, donc rentables dès le tour où ils tombent"
+    "Huit cartes dans toutes les listes : la liste est fixée",
+    "Arise! pose d'un coup autant de Soldats que vous avez d'équipements"
   ],
   "weaknesses": [
-    "Sans Équipement joué dans le tour, la Légende ne produit rien",
-    "Le retrait d'Équipement coupe le moteur d'un coup"
+    "30 joueurs classés sur 8 tournois, 1 dans les 10 % de tête : 3,3 % de conversion contre 10,0 % pour le format, aucun titre",
+    "Sa meilleure place est une dix-neuvième, à la City Challenge de Shenyang",
+    "Sans équipement joué dans le tour, la Légende ne fait rien"
   ],
   "competitiveResults": {
     "joueursClasses": 30,
