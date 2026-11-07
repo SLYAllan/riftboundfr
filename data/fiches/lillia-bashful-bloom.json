@@ -10,10 +10,10 @@
   "archetype": "Jetons temporaires, tempo à répétition",
   "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
   "gameplan": {
-    "earlyGame": "Sprite Fountain, dans toutes les listes, pose un premier Esprit et rend la capacité moins chère. Ravenbloom Student grossit sur chaque sort.",
-    "midGame": "Sprite Burst pose deux Esprits prêts d'un coup. Charm et Defy protègent la conquête du tour.",
-    "lateGame": "Lillia, Fae Fawn laisse un Esprit derrière elle à chaque déplacement. Unchecked Power nettoie un terrain saturé.",
-    "winCondition": "Poser plus d'unités par tour que l'adversaire ne peut en retirer, et marquer avant qu'elles ne disparaissent."
+    "earlyGame": "Sprite Fountain, dans 97 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+    "midGame": "Sprite Burst, dans 97 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
+    "lateGame": "Unchecked Power, dans 94 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
+    "winCondition": "Couvrir les champs de bataille d'Esprits qui ne coûtent presque rien, et vider le terrain avec Unchecked Power si besoin."
   },
   "keyCards": [
     {
@@ -108,15 +108,13 @@
     }
   ],
   "strengths": [
-    "Neuf cartes au-dessus de 90 %, dont quatre dans toutes les listes",
-    "Deux titres, dont le City Challenge de Suzhou du 23 août",
-    "Dusk Rose Lab dans 95 % des listes : le terrain récompense les jetons",
-    "Chaque Esprit en jeu rend le suivant moins cher"
+    "Huit cartes dans au moins 94 % des listes : la liste est fixée",
+    "Troisième à la City Challenge de Suzhou",
+    "Defy, Discipline, Stupefy, En Garde et Battle Preparations répondent pendant le tour adverse"
   ],
   "weaknesses": [
-    "Les jetons meurent au début de votre tour : rater la conquête, c'est tout perdre",
-    "Deux titres en 46 tournois",
-    "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
+    "52 joueurs classés sur 9 tournois, 3 dans les 10 % de tête : 5,8 % de conversion contre 10,0 % pour le format, aucun titre",
+    "Les Esprits sont temporaires : ils ne restent pas d'un tour à l'autre"
   ],
   "competitiveResults": {
     "joueursClasses": 52,

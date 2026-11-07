@@ -139,23 +139,31 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   },
   "irelia-blade-dancer": {
     slug: "irelia-blade-dancer",
-    bref: `Irelia est un deck **Calme/Chaos** de **tempo**, l'un des plus solides et des mieux définis du format. Le pilotage demande un peu d'habitude, savoir quand protéger et quand pousser, mais le deck pardonne davantage que Diana tout en restant au plus haut niveau.`,
-    gagne: `Irelia ne cherche pas à envahir le plateau : elle veut garder UNE menace et marquer avec. **[[Irelia, Fervent]]** grossit à chaque fois que vous la choisissez ou la préparez, et elle est difficile à viser puisque l'adversaire doit payer une rune de plus pour la cibler. Autour, vous jouez une muraille de réactions à 1 d'énergie : **[[Defy]]** contre un sort, **[[Discipline]]** et **[[Defiant Dance]]** gonflent votre défenseuse et repiochent, **[[Charm]]** déplace un attaquant. **[[Zhonya's Hourglass]]** sauve votre pièce maîtresse d'un combat perdu.`,
-    plan: `**Début de partie.** Posez **[[Tideturner]]** et **[[Stellacorn Herder]]**, qui pioche à chaque déplacement, et gardez vos positions avec vos sorts bon marché.
+    bref: `Irelia est un deck **Calme/Ordre** de **tempo** : elle prépare ses unités pour qu'elles combattent deux fois. Sur Radiance, 46 joueurs classés sur 8 tournois, 2 dans les 10 % de tête (4,3 %), et un titre, la City Challenge de Shenyang. Le deck est de difficulté Moyenne à Difficile.`,
+    gagne: `Quand vous choisissez une de vos unités, la Légende peut la préparer pour une Puissance. Une unité qui a déjà attaqué ou s'est déplacée repart. Le deck est plein de sorts qui choisissent vos unités : **[[Discipline]]**, **[[Defiant Dance]]**, **[[Ride The Wind]]**.
 
-**Milieu de partie.** Installez **[[Irelia, Fervent]]**, protégez-la avec vos contresorts et vos équipements cachés, et commencez à pousser des points en déplaçant vos unités au bon moment.
+**[[Irelia, Fervent]]**, dans toutes les listes, en profite le plus : elle a Protection, et gagne +1 Puissance chaque fois qu'on la choisit ou qu'on la prépare.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** pioche en arrivant. **[[Tideturner]]**, caché, échange sa place avec une de vos unités au bon moment.
 
-**Fin de partie.** Le timing fait tout : trop tôt, vous manquez de runes ; trop tard, l'adversaire s'installe. Quand la fenêtre s'ouvre, vous enchaînez mouvements et bonus, et vous concluez la partie d'un coup.`,
+**Milieu de partie.** **[[Defiant Dance]]** donne +2 Puissance à une unité et en retire 2 à une autre, pour une énergie. **[[Discipline]]** donne +2 Puissance et pioche. Chacun permet à la Légende de préparer l'unité choisie.
+
+**Fin de partie.** **[[Stellacorn Herder]]** pioche à chaque déplacement. **[[Zhonya's Hourglass]]** sauve une unité qui devait mourir.
+
+**Ce qui le bat.** Chaque unité préparée coûte une Puissance : le deck manque vite de runes. Sur Radiance, 4,3 % de conversion, sous la moyenne du format, malgré le titre de Shenyang.`,
   },
   "leblanc-deceiver": {
     slug: "leblanc-deceiver",
-    bref: `LeBlanc est un deck **Esprit/Ordre** à moteur d'**Agonie** : vos unités meurent, et chaque mort vous rapporte quelque chose. Accessible une fois le principe compris, c'est l'un des decks les plus clairs à faire tourner.`,
-    gagne: `Avec LeBlanc, perdre une unité n'est jamais une mauvaise nouvelle. **[[Soaring Scout]]** vous rend une rune en mourant, **[[Watchful Sentry]]** vous fait piocher, **[[Ruined Rex]]** inflige 4 dégâts. Et **[[Karthus, Eternal]]** double tous ces déclenchements. Ajoutez **[[Sacrifice]]**, qui tue votre propre unité au bon moment pour réactiver les effets, et **[[Mirror Image]]**, qui crée des copies vouées à mourir, et vous obtenez un flot de valeur que l'adversaire ne peut pas tarir.`,
-    plan: `**Début de partie.** Mettez en place vos petites unités d'Agonie et cherchez **[[Karthus, Eternal]]**, la pièce qui double tout.
+    bref: `LeBlanc est un deck **Esprit/Ordre** de **morts rentables** : ses unités valent plus mortes que vivantes. Sur Radiance, 46 joueurs classés sur 9 tournois, 7 dans les 10 % de tête (15,2 %, contre 10,0 % pour le format), aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `Presque chaque unité du deck laisse quelque chose en mourant : une rune avec **[[Soaring Scout]]**, une carte avec **[[Watchful Sentry]]**, 4 dégâts avec **[[Ruined Rex]]**. **[[Karthus, Eternal]]**, dans 91 % des listes, fait déclencher ces effets deux fois.
 
-**Milieu de partie.** Sacrifiez sans hésiter : chaque échange vous fait piocher et avancer. **[[Glasc Mixologist]]** rejoue une unité depuis la défausse, et le moteur s'emballe.
+Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos unités Puissantes en réaction, pioche deux cartes et canalise une rune. La Légende, elle, pose une copie temporaire d'une unité quand vous conquérez ou contrôlez un champ de bataille.`,
+    plan: `**Début de partie.** **[[Soaring Scout]]** et **[[Watchful Sentry]]** se posent pour deux énergie et rendent une rune ou une carte en mourant.
 
-**Fin de partie.** Vous avez plus de cartes et plus de menaces que l'adversaire. **[[Harnessed Dragon]]** retire une unité en arrivant, **[[Vi, Peacekeeper]]** surgit en embuscade et étourdit, et vous concluez pendant qu'en face on manque de ressources.`,
+**Milieu de partie.** **[[Karthus, Eternal]]** arrive, et chaque Agonie compte double. **[[Mirror Image]]** copie une unité, la vôtre ou celle de l'adversaire. **[[Sacrifice]]** change une unité condamnée en deux cartes.
+
+**Fin de partie.** **[[Glasc Mixologist]]** rejoue en mourant une petite unité depuis la défausse. **[[Thousand-Tailed Watcher]]** retire 3 Puissance à toutes les unités adverses.
+
+**Ce qui le bat.** Sans Karthus, chaque Agonie ne compte qu'une fois. Sur Radiance, aucun titre : sa meilleure place est une quatrième, à Pékin.`,
   },
   "sivir-battle-mistress": {
     slug: "sivir-battle-mistress",
@@ -219,13 +227,17 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   },
   "rengar-pridestalker": {
     slug: "rengar-pridestalker",
-    bref: `Rengar est un deck **Corps/Furie** d'**aggro** proactif basé sur l'embuscade. Facile à prendre en main, c'est un excellent deck pour qui aime dicter le rythme et mettre la pression sans relâche.`,
-    gagne: `Le jeu de Rengar repose sur l'imprévu. **[[Nidalee, Cat Form]]**, **[[Grim Apothecary]]** et **[[Pyke, Dockside Butcher]]** se jouent en embuscade, en réaction, sur un champ de bataille où l'adversaire pensait être en sécurité. **[[Irresistible Faefolk]]** force ses unités à se déplacer pour créer des combats à votre avantage, et **[[Pit Rookie]]** renforce votre plateau. Vous prenez le lead tôt et vous ne le rendez plus.`,
-    plan: `**Début de partie.** Prenez l'initiative avec vos petites unités agressives et installez-vous sur un champ de bataille.
+    bref: `Rengar est un deck **Corps/Furie** d'**embuscades** : il pose ses unités en plein combat et gagne les échanges d'un point de Puissance. Sur Radiance, 60 joueurs classés sur 9 tournois, 6 dans les 10 % de tête (10,0 %, la moyenne du format), aucun titre.`,
+    gagne: `Chaque unité que vous jouez donne +1 Puissance à une unité pour le tour. Le deck en joue beaucoup, et souvent là où l'adversaire ne les attend pas : **[[Inferna]]** et **[[Grim Apothecary]]** arrivent en Embuscade, **[[Rengar, Trophy Hunter]]** se pose sur un champ de bataille occupé par l'adversaire.
 
-**Milieu de partie.** Gardez des runes ouvertes et frappe en embuscade au pire moment pour l'adversaire. **[[Kai'Sa, Survivor]]** et **[[Pit Rookie]]** renforcent la poussée.
+**[[Thrill of the Hunt]]**, dans toutes les listes, bannit une de vos unités et la rejoue gratuitement sur le champ de bataille de votre choix, en réaction. Elle compte comme une unité jouée : la Légende donne son bonus une fois de plus.`,
+    plan: `**Début de partie.** **[[Pit Rookie]]** et **[[Inferna]]** se posent pour deux énergie. **[[Irresistible Faefolk]]** attire une unité adverse sur le champ de bataille où il se déplace. **[[Sabotage]]** vous montre la main adverse et lui fait recycler une carte qui n'est pas une unité.
 
-**Fin de partie.** L'adversaire ne peut pas anticiper vos attaques. Vous concluez la partie avec des unités qu'il n'a pas vues arriver.`,
+**Milieu de partie.** **[[Grim Apothecary]]** arrive en Embuscade et peut renvoyer en main une de vos unités, pour la rejouer plus tard. **[[First Mate]]** prépare une autre unité. **[[Punch First]]** donne +5 Puissance pour une énergie.
+
+**Fin de partie.** **[[Rengar, Trophy Hunter]]** frappe là où l'adversaire se croyait tranquille. **[[Kai'Sa, Survivor]]**, avec Accélération, pioche à chaque conquête.
+
+**Ce qui le bat.** Une main sans unités : la Légende ne donne rien. Sur Radiance, le deck reste dans la moyenne du format, 10,0 % de conversion, et sa meilleure place est une troisième.`,
   },
   "khazix-voidreaver": {
     slug: "khazix-voidreaver",
@@ -279,13 +291,17 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   },
   "lillia-bashful-bloom": {
     slug: "lillia-bashful-bloom",
-    bref: `Lillia est un deck **Calme/Esprit** de **tempo** bâti sur ses jetons Sprites. Accessible et malin, c'est un deck qui récompense ceux qui aiment gagner la partie un petit avantage à la fois.`,
-    gagne: `Le cœur du deck, ce sont les Sprites. **[[Sprite Fountain]]** et vos générateurs créent des jetons de 3 de Puissance qui entrent prêts, donc immédiatement menaçants. L'adversaire perd de vraies cartes pour les arrêter, ou encaisse des conquêtes. Pendant ce temps, **[[Ravenbloom Student]]** grossit à chaque sort, **[[Charm]]** déplace un attaquant gênant, et **[[Thousand-Tailed Watcher]]** vient conclure. Vous marquez en continu sur des échanges toujours favorables.`,
-    plan: `**Début de partie.** Gardez votre première unité hors des combats et laissez l'adversaire choisir ses échanges : vos Sprites arrivent vite.
+    bref: `Lillia est un deck **Calme/Esprit** de **jetons temporaires** : elle remplit le terrain d'Esprits de 3 Puissance qui ne restent qu'un temps. Sur Radiance, 52 joueurs classés sur 9 tournois, 3 dans les 10 % de tête (5,8 %), aucun titre. Le deck est de difficulté Moyenne.`,
+    gagne: `La Légende pose un Esprit de 3 Puissance, temporaire, pour quatre énergie. Chaque unité temporaire déjà en jeu lui retire une énergie : plus vous avez d'Esprits, moins le suivant coûte.
 
-**Milieu de partie.** Générez des Sprites tour après tour. Chaque jeton échangé contre une vraie unité adverse est une victoire.
+**[[Sprite Fountain]]** et **[[Sprite Burst]]**, dans 97 % des listes, en posent d'autres, et **[[Lillia, Fae Fawn]]** en laisse un derrière elle chaque fois qu'elle quitte un endroit. Autour, **[[Defy]]**, **[[Discipline]]** et **[[Stupefy]]** répondent en plein combat.`,
+    plan: `**Début de partie.** **[[Sprite Fountain]]** pose un Esprit préparé, puis un autre quand il meurt. **[[Ravenbloom Student]]** gagne +1 Puissance à chaque sort joué.
 
-**Fin de partie.** Continue de produire des jetons et conclus avec **[[Thousand-Tailed Watcher]]** pendant que l'adversaire s'épuise.`,
+**Milieu de partie.** **[[Sprite Burst]]** pose deux Esprits d'un coup, et la Légende devient presque gratuite. **[[Smoke and Mirrors]]** échange deux de vos unités de place et pioche une carte. **[[Charm]]** déplace une unité adverse.
+
+**Fin de partie.** **[[Unchecked Power]]** épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille. Vous y perdez des jetons, l'adversaire de vraies unités.
+
+**Ce qui le bat.** Les Esprits ne restent pas : un adversaire qui tient le temps qu'ils disparaissent reprend la main. Sur Radiance, 5,8 % de conversion, sous la moyenne du format, et une troisième place à Suzhou.`,
   },
   "leona-radiant-dawn": {
     slug: "leona-radiant-dawn",
@@ -379,15 +395,17 @@ Vous ne cherchez pas à survivre longtemps, vous cherchez à poser plus de corps
   },
   "reksai-void-burrower": {
     slug: "reksai-void-burrower",
-    bref: `Rek'Sai est un deck **Furie/Ordre** d'**agression qui pioche dans son deck**. 619 joueurs classés sur le format, 62 dans les 10 % de tête : 10,0 % de conversion contre 9,9 % pour le champ. C'est un choix de joueur qui connaît son deck, pas un choix par défaut.`,
-    gagne: `Chaque fois que vous conquérez, vous pouvez l'épuiser pour révéler les deux cartes du dessus de votre deck, en bannir une et la jouer aussitôt. Conquérir ne vous rapporte donc pas qu'un point : ça vous rapporte une carte gratuite. Plus vous avancez, plus vous accédez aux cartes suivantes.
+    bref: `Rek'Sai est un deck **Furie/Ordre** d'**agression large** : beaucoup de petites unités, et des cartes tirées du deck à chaque conquête. Sur Radiance, 58 joueurs classés sur 9 tournois, 8 dans les 10 % de tête (13,8 %, contre 10,0 % pour le format), aucun titre.`,
+    gagne: `Quand vous conquérez, la Légende révèle les deux cartes du dessus de votre deck : vous en jouez une, le reste repart sous le deck. **[[Rek'Sai, Breacher]]**, dans toutes les listes, donne Accélération à ces unités-là, qui arrivent prêtes à combattre. Et **[[Undertitan]]** rend 2 énergie quand il est révélé ainsi.
 
-**[[Void Rush]]** fait la même chose pour deux énergies, en réduisant le coût de ce que vous jouez. Et **[[Undertitan]]**, révélé depuis votre deck, ajoute deux énergies au lieu de vous en coûter. Le deck s'auto-alimente tant que vous continuez d'attaquer.`,
-    plan: `**Début de partie.** Prenez vite un terrain vite. Sans conquête, votre capacité ne sert à rien et le deck tourne à vide.
+Le reste du deck sert à conquérir. **[[Cull the Weak]]** oblige chaque joueur à tuer une de ses unités : avec vos jetons, vous y perdez peu. **[[Falling Star]]** inflige 3 dégâts deux fois.`,
+    plan: `**Début de partie.** **[[Inferna]]** arrive en Embuscade avec Assaut 2. **[[Carrion Dredger]]** laisse un Oiseau en mourant, **[[Faithful Manufactor]]** pose un jeton Recrue en arrivant : de quoi nourrir **[[Cull the Weak]]**.
 
-**Milieu de partie.** Enchaîne conquête et révélation. **[[Noxus Hopeful]]** à quatre énergies, souvent deux, remplit le plateau pendant que **[[Falling Star]]** et **[[Cleave]]** dégagent ce qui gêne.
+**Milieu de partie.** Chaque conquête déclenche la Légende. **[[Falling Star]]** et **[[Bilgewater Tracker]]** dégagent le chemin.
 
-**Fin de partie.** **[[Cull the Weak]]** oblige chacun à sacrifier une unité : jouez-la quand l'adversaire n'a qu'une seule grosse pièce et que vous en avez cinq petites.`,
+**Fin de partie.** **[[Undertitan]]** donne +2 Puissance à toutes vos autres unités pour le tour. **[[Noxus Hopeful]]** coûte 2 énergie de moins grâce à Légion.
+
+**Ce qui le bat.** Un adversaire qui vous empêche de conquérir : sans conquête, la Légende ne fait rien. Sur Radiance, aucun titre, et sa meilleure place est une troisième, à Shenyang.`,
   },
   "pyke-bloodharbor-ripper": {
     slug: "pyke-bloodharbor-ripper",

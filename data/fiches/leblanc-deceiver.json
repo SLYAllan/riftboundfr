@@ -10,10 +10,10 @@
   "archetype": "Copies et morts rentables",
   "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
   "gameplan": {
-    "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans 96 % des listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
-    "midGame": "Karthus, Eternal double tous vos effets de mort. Glasc Mixologist rejoue une unité du cimetière en mourant.",
-    "lateGame": "Mirror Image et la Légende copient la plus grosse unité du terrain, la vôtre ou celle d'en face.",
-    "winCondition": "Marquer avec des copies gratuites pendant que chaque mort rapporte une carte."
+    "earlyGame": "Soaring Scout, dans 94 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
+    "midGame": "Sacrifice, dans 94 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 91 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 97 % des listes, pose une copie préparée et temporaire d'une unité.",
+    "lateGame": "Glasc Mixologist, en mourant, rejoue gratuitement une unité de 3 énergie ou moins depuis la défausse. Ruined Rex inflige 4 dégâts à une unité adverse en mourant. Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses.",
+    "winCondition": "Faire mourir ses propres unités au bon moment, et en tirer le double avec Karthus."
   },
   "keyCards": [
     {
@@ -93,15 +93,13 @@
     }
   ],
   "strengths": [
-    "Sacrifice dans 96 % des listes et Mirror Image dans 98 % : la copie est le vrai plan",
-    "Karthus, Eternal dans 95 % des listes, il double tout ce qui meurt",
-    "Windswept Hillock dans 98 % des listes",
-    "Chaque conquête donne une unité de plus, sans carte jouée"
+    "46 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 15,2 % de conversion contre 10,0 % pour le format",
+    "Quatrième à la City Challenge de Pékin, onzième au Showdown de Sacramento",
+    "Karthus, Eternal dans 91 % des listes : chaque Agonie compte double"
   ],
   "weaknesses": [
-    "Un seul titre en 49 tournois, malgré la troisième conversion du format",
-    "La Légende demande de défausser : la main s'épuise vite",
-    "Sans unité intéressante sur le terrain, la copie ne vaut rien"
+    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,22)",
+    "La Légende demande de défausser une carte à chaque copie"
   ],
   "competitiveResults": {
     "joueursClasses": 46,

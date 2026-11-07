@@ -46,21 +46,19 @@
     "archetype": "Tempo et mouvement, une unité préparée deux fois",
     "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab et Stellacorn Herder piochent en se déplaçant. Boots of Swiftness, dans toutes les listes, rend une unité mobile.",
-      "midGame": "Irelia, Fervent grossit à chaque fois qu'on la choisit. Ride The Wind la déplace et la prépare, la Légende la prépare une seconde fois.",
-      "lateGame": "Guardian Angel et Zhonya's Hourglass la gardent en vie, Defy et Charm écartent la réponse adverse.",
-      "winCondition": "Une seule unité qui attaque, revient et repart : deux points par tour sans jamais perdre le contrôle."
+      "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
+      "midGame": "Chaque sort qui choisit une de vos unités, comme Discipline ou Defiant Dance, permet à la Légende de la préparer : elle combat ou se déplace une fois de plus. Irelia, Fervent, dans toutes les listes, a Protection et gagne +1 Puissance chaque fois qu'on la choisit ou qu'on la prépare.",
+      "lateGame": "Stellacorn Herder pioche à chaque déplacement. Ride The Wind déplace une de vos unités et la prépare. Zhonya's Hourglass sauve une unité qui devait mourir.",
+      "winCondition": "Choisir ses unités avec des sorts bon marché pour les préparer, et combattre deux fois par tour."
     },
     "strengths": [
-      "Neuf cartes au-dessus de 90 %, dont trois dans 100 % des listes : le cœur est fermé",
-      "Abandoned Hall dans 99 % des listes, Sunken Temple dans 90 % : les terrains font partie du plan",
-      "Présente aux 50 tournois du set Vendetta, 739 listes publiées",
-      "Defy et Charm couvrent à la fois les sorts et les blocages"
+      "Un titre : la City Challenge de Shenyang",
+      "Neuf cartes dans au moins 91 % des listes : la liste est fixée",
+      "Irelia, Fervent dans toutes les listes : chaque sort qui la choisit la renforce"
     ],
     "weaknesses": [
-      "Deux titres seulement en 50 tournois, pour la troisième Légende la plus jouée du format",
-      "Sans Irelia, Fervent en jeu, la Légende n'a plus rien à préparer",
-      "La liste est connue de tous, il n'y a presque pas de place pour surprendre"
+      "46 joueurs classés sur 8 tournois, 2 dans les 10 % de tête : 4,3 % de conversion contre 10,0 % pour le format",
+      "La Légende coûte une Puissance à chaque unité préparée"
     ]
   },
   "diana-scorn-of-the-moon.json": {
@@ -88,21 +86,19 @@
     "archetype": "Agression large, unités qui reviennent du deck",
     "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
     "gameplan": {
-      "earlyGame": "Carrion Dredger et Noxus Hopeful, à 2 et 4 énergie, prennent le terrain tôt. Inferna arrive en embuscade au milieu du combat.",
-      "midGame": "Void Rush rejoue une carte du dessus à coût réduit. Cull the Weak et Falling Star vident le champ d'en face.",
-      "lateGame": "Undertitan donne +2 Puissance à tout le reste. Blood Rush et Cleave transforment une unité moyenne en menace.",
-      "winCondition": "Conquérir tôt, rejouer gratuitement à chaque conquête et ne jamais laisser l'adversaire respirer."
+      "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Carrion Dredger, dans 96 % des listes, laisse un Oiseau à Protection en mourant, Faithful Manufactor pose un jeton Recrue en arrivant.",
+      "midGame": "Cull the Weak, dans toutes les listes, oblige chaque joueur à tuer une de ses unités : vous sacrifiez un jeton, l'adversaire perd une vraie unité. Rek'Sai, Breacher, dans toutes les listes, donne Accélération aux unités jouées d'ailleurs que de la main, comme celles que révèle la Légende. Falling Star inflige 3 dégâts deux fois.",
+      "lateGame": "Undertitan, dans 95 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
+      "winCondition": "Conquérir, puis enchaîner sur les cartes que la Légende révèle, avec des unités qui arrivent prêtes."
     },
     "strengths": [
-      "Onze cartes au-dessus de 90 %, dont Void Rush dans 98 % des listes",
-      "10,0 % de conversion contre 9,9 % pour le champ, sur 619 joueurs classés et 50 tournois",
-      "The Candlelit Sanctum dans 88 % des listes : le terrain est choisi, pas subi",
-      "La Légende transforme chaque conquête en carte gratuite"
+      "58 joueurs classés sur 9 tournois, 8 dans les 10 % de tête : 13,8 % de conversion contre 10,0 % pour le format",
+      "Quatre Top 8 en City Challenge : troisième à Shenyang, sixième à Guangzhou et à Shanghai, huitième à Shenzhen",
+      "Sept cartes dans au moins 95 % des listes, dont Cull the Weak et Falling Star dans toutes"
     ],
     "weaknesses": [
-      "Un seul titre, au City Challenge de Shanghai du 7 octobre",
-      "La capacité ne se déclenche qu'en conquérant, donc jamais quand on est derrière",
-      "Peu de réponses aux sorts, il faut gagner avant que l'adversaire ne s'installe"
+      "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,38)",
+      "La Légende ne sert qu'après une conquête"
     ]
   },
   "fiora-grand-duelist.json": {
@@ -192,42 +188,38 @@
     "archetype": "Jetons temporaires, tempo à répétition",
     "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
     "gameplan": {
-      "earlyGame": "Sprite Fountain, dans toutes les listes, pose un premier Esprit et rend la capacité moins chère. Ravenbloom Student grossit sur chaque sort.",
-      "midGame": "Sprite Burst pose deux Esprits prêts d'un coup. Charm et Defy protègent la conquête du tour.",
-      "lateGame": "Lillia, Fae Fawn laisse un Esprit derrière elle à chaque déplacement. Unchecked Power nettoie un terrain saturé.",
-      "winCondition": "Poser plus d'unités par tour que l'adversaire ne peut en retirer, et marquer avant qu'elles ne disparaissent."
+      "earlyGame": "Sprite Fountain, dans 97 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+      "midGame": "Sprite Burst, dans 97 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
+      "lateGame": "Unchecked Power, dans 94 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
+      "winCondition": "Couvrir les champs de bataille d'Esprits qui ne coûtent presque rien, et vider le terrain avec Unchecked Power si besoin."
     },
     "strengths": [
-      "Neuf cartes au-dessus de 90 %, dont quatre dans toutes les listes",
-      "Deux titres, dont le City Challenge de Suzhou du 23 août",
-      "Dusk Rose Lab dans 95 % des listes : le terrain récompense les jetons",
-      "Chaque Esprit en jeu rend le suivant moins cher"
+      "Huit cartes dans au moins 94 % des listes : la liste est fixée",
+      "Troisième à la City Challenge de Suzhou",
+      "Defy, Discipline, Stupefy, En Garde et Battle Preparations répondent pendant le tour adverse"
     ],
     "weaknesses": [
-      "Les jetons meurent au début de votre tour : rater la conquête, c'est tout perdre",
-      "Deux titres en 46 tournois",
-      "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
+      "52 joueurs classés sur 9 tournois, 3 dans les 10 % de tête : 5,8 % de conversion contre 10,0 % pour le format, aucun titre",
+      "Les Esprits sont temporaires : ils ne restent pas d'un tour à l'autre"
     ]
   },
   "leblanc-deceiver.json": {
     "archetype": "Copies et morts rentables",
     "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
     "gameplan": {
-      "earlyGame": "Soaring Scout et Watchful Sentry paient leur mort en rune ou en pioche. Sacrifice, dans 96 % des listes, se paie en tuant une de vos unités Puissantes, en pleine réaction.",
-      "midGame": "Karthus, Eternal double tous vos effets de mort. Glasc Mixologist rejoue une unité du cimetière en mourant.",
-      "lateGame": "Mirror Image et la Légende copient la plus grosse unité du terrain, la vôtre ou celle d'en face.",
-      "winCondition": "Marquer avec des copies gratuites pendant que chaque mort rapporte une carte."
+      "earlyGame": "Soaring Scout, dans 94 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
+      "midGame": "Sacrifice, dans 94 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 91 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 97 % des listes, pose une copie préparée et temporaire d'une unité.",
+      "lateGame": "Glasc Mixologist, en mourant, rejoue gratuitement une unité de 3 énergie ou moins depuis la défausse. Ruined Rex inflige 4 dégâts à une unité adverse en mourant. Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses.",
+      "winCondition": "Faire mourir ses propres unités au bon moment, et en tirer le double avec Karthus."
     },
     "strengths": [
-      "Sacrifice dans 96 % des listes et Mirror Image dans 98 % : la copie est le vrai plan",
-      "Karthus, Eternal dans 95 % des listes, il double tout ce qui meurt",
-      "Windswept Hillock dans 98 % des listes",
-      "Chaque conquête donne une unité de plus, sans carte jouée"
+      "46 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 15,2 % de conversion contre 10,0 % pour le format",
+      "Quatrième à la City Challenge de Pékin, onzième au Showdown de Sacramento",
+      "Karthus, Eternal dans 91 % des listes : chaque Agonie compte double"
     ],
     "weaknesses": [
-      "Un seul titre en 49 tournois, malgré la troisième conversion du format",
-      "La Légende demande de défausser : la main s'épuise vite",
-      "Sans unité intéressante sur le terrain, la copie ne vaut rien"
+      "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,22)",
+      "La Légende demande de défausser une carte à chaque copie"
     ]
   },
   "ezreal-prodigal-explorer.json": {
@@ -317,18 +309,19 @@
     "archetype": "Embuscades, unités posées en combat",
     "legendAbility": "Quand vous jouez une unité, donnez +1 Puissance à une unité pour le tour. Chaque arrivée fait pencher un combat.",
     "gameplan": {
-      "earlyGame": "Irresistible Faefolk et Kinkou Initiate posent la pression tôt. Pit Rookie laisse un buff derrière lui.",
-      "midGame": "Thrill of the Hunt, dans toutes les listes, rejoue une de vos unités sur n'importe quel champ de bataille au milieu du combat.",
-      "lateGame": "Rengar, Trophy Hunter arrive directement là où l'adversaire a ses unités. Nidalee, Cat Form pioche à chaque combat gagné.",
-      "winCondition": "Gagner des combats que l'adversaire croyait remportés, en posant des unités après sa déclaration."
+      "earlyGame": "Inferna et Pit Rookie, dans toutes les listes, se posent pour deux énergie : la première arrive en Embuscade avec Assaut 2, le second donne un bonus à une autre unité. Irresistible Faefolk, dans 98 % des listes, attire une unité adverse sur le champ de bataille où il se déplace. Sabotage fait révéler la main adverse et recycler une carte qui n'est pas une unité.",
+      "midGame": "Grim Apothecary, dans toutes les listes, arrive en Embuscade et peut renvoyer en main une de vos unités, pour la rejouer. Thrill of the Hunt, en réaction, bannit une de vos unités et la rejoue gratuitement sur le champ de bataille de votre choix. Chaque unité jouée déclenche la Légende.",
+      "lateGame": "Rengar, Trophy Hunter, dans toutes les listes, se pose sur un champ de bataille occupé par l'adversaire. Kai'Sa, Survivor a Accélération et pioche à chaque conquête. Punch First donne +5 Puissance pour une énergie.",
+      "winCondition": "Poser ses unités en plein combat, là où l'adversaire ne les attend pas, et gagner chaque échange avec les bonus."
     },
     "strengths": [
-      "Six cartes dans toutes les listes, dont Thrill of the Hunt, et deux autres à 98 %",
-      "3 titres sur 47 tournois",
-      "Star Spring dans 99 % des listes"
+      "Onze cartes dans au moins 96 % des listes : la liste est fixée",
+      "Deux troisièmes places, aux City Challenge de Fuzhou et de Guangzhou",
+      "Inferna, Grim Apothecary, Nidalee, Cat Form et Rengar, Trophy Hunter arrivent en Embuscade"
     ],
     "weaknesses": [
-      "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
+      "60 joueurs classés sur 9 tournois, 6 dans les 10 % de tête : 10,0 % de conversion, la moyenne du format, et aucun titre",
+      "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
     ]
   },
   "khazix-voidreaver.json": {

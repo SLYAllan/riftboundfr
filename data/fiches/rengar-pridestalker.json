@@ -10,10 +10,10 @@
   "archetype": "Embuscades, unités posées en combat",
   "legendAbility": "Quand vous jouez une unité, donnez +1 Puissance à une unité pour le tour. Chaque arrivée fait pencher un combat.",
   "gameplan": {
-    "earlyGame": "Irresistible Faefolk et Kinkou Initiate posent la pression tôt. Pit Rookie laisse un buff derrière lui.",
-    "midGame": "Thrill of the Hunt, dans toutes les listes, rejoue une de vos unités sur n'importe quel champ de bataille au milieu du combat.",
-    "lateGame": "Rengar, Trophy Hunter arrive directement là où l'adversaire a ses unités. Nidalee, Cat Form pioche à chaque combat gagné.",
-    "winCondition": "Gagner des combats que l'adversaire croyait remportés, en posant des unités après sa déclaration."
+    "earlyGame": "Inferna et Pit Rookie, dans toutes les listes, se posent pour deux énergie : la première arrive en Embuscade avec Assaut 2, le second donne un bonus à une autre unité. Irresistible Faefolk, dans 98 % des listes, attire une unité adverse sur le champ de bataille où il se déplace. Sabotage fait révéler la main adverse et recycler une carte qui n'est pas une unité.",
+    "midGame": "Grim Apothecary, dans toutes les listes, arrive en Embuscade et peut renvoyer en main une de vos unités, pour la rejouer. Thrill of the Hunt, en réaction, bannit une de vos unités et la rejoue gratuitement sur le champ de bataille de votre choix. Chaque unité jouée déclenche la Légende.",
+    "lateGame": "Rengar, Trophy Hunter, dans toutes les listes, se pose sur un champ de bataille occupé par l'adversaire. Kai'Sa, Survivor a Accélération et pioche à chaque conquête. Punch First donne +5 Puissance pour une énergie.",
+    "winCondition": "Poser ses unités en plein combat, là où l'adversaire ne les attend pas, et gagner chaque échange avec les bonus."
   },
   "keyCards": [
     {
@@ -88,12 +88,13 @@
     }
   ],
   "strengths": [
-    "Six cartes dans toutes les listes, dont Thrill of the Hunt, et deux autres à 98 %",
-    "3 titres sur 47 tournois",
-    "Star Spring dans 99 % des listes"
+    "Onze cartes dans au moins 96 % des listes : la liste est fixée",
+    "Deux troisièmes places, aux City Challenge de Fuzhou et de Guangzhou",
+    "Inferna, Grim Apothecary, Nidalee, Cat Form et Rengar, Trophy Hunter arrivent en Embuscade"
   ],
   "weaknesses": [
-    "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
+    "60 joueurs classés sur 9 tournois, 6 dans les 10 % de tête : 10,0 % de conversion, la moyenne du format, et aucun titre",
+    "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
   ],
   "competitiveResults": {
     "joueursClasses": 60,
