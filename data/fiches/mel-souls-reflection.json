@@ -10,20 +10,18 @@
   "archetype": "Amplification et sorts pris à l'adversaire",
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
   "gameplan": {
-    "earlyGame": "Stupefy et Stacked Deck, présents dans presque toutes les listes, tiennent la main pleine à une énergie.",
-    "midGame": "Rebuttal, dans toutes les listes, prend le contrôle d'un sort adverse. Applied Researchers amplifié fait baisser le coût de vos sorts.",
-    "lateGame": "Mel, Newly Awakened amplifiée rend vos sorts incontrables. Thousand-Tailed Watcher referme le terrain.",
-    "winCondition": "Gagner les échanges de sorts, puis marquer pendant que l'adversaire n'a plus de réponse."
+    "earlyGame": "Rebuttal et Stupefy, dans toutes les listes, coûtent une énergie : le premier prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon ; le second affaiblit une unité et pioche. Traveling Merchant trie la main à chaque déplacement.",
+    "midGame": "Applied Researchers, dans 70 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
+    "lateGame": "Mel, Defiant Soul, dans 60 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 70 % des listes, donne un tour de plus.",
+    "winCondition": "Amplifier ses cartes pour charger Mel, répondre à chaque sort adverse, et prendre un tour d'avance avec Time Warp."
   },
   "strengths": [
     "Rebuttal et Stupefy dans toutes les listes",
-    "Mel, Newly Awakened amplifiée met vos sorts hors de portée des contres",
-    "48 listes réparties sur dix-huit tournois"
+    "Chaque carte amplifiée charge aussi la Légende"
   ],
   "weaknesses": [
-    "Aucun Top 8 en dix-huit tournois",
-    "Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon la Légende reste inerte",
-    "Terrains dispersés, aucun au-dessus de 44 % : personne n'a arrêté la liste"
+    "16 joueurs classés sur 4 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une quarantième, à la City Challenge de Suzhou"
   ],
   "difficulty": "Difficile",
   "beginnerFriendly": false,

@@ -145,21 +145,19 @@
     "archetype": "Contrôle par le retrait, jetons en défense",
     "legendAbility": "Une énergie et épuiser Viktor jouent un jeton Recrue de 1 Puissance. Un bloqueur gratuit à chaque tour.",
     "gameplan": {
-      "earlyGame": "Les Recrues de la Légende occupent le terrain pendant que Bellows Breath et Stupefy nettoient les petites unités.",
-      "midGame": "Cull the Weak et Hidden Blade, au-dessus de 90 %, et Wages of Pain, dans 81 % des listes, retirent la menace principale d'en face.",
-      "lateGame": "Imperial Decree tue tout ce qui prend un dégât ce tour-là. Viktor, Leader recrée un jeton à chaque unité perdue.",
-      "winCondition": "Vider le terrain adverse et marquer avec ce qui reste."
+      "earlyGame": "Bellows Breath, dans toutes les listes, inflige 1 à trois unités au même endroit. Carrion Dredger laisse un Oiseau à Protection en mourant. Chaque tour, la Légende pose un jeton Recrue pour une énergie.",
+      "midGame": "Cull the Weak, dans toutes les listes, oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité. Hidden Blade et Wages of Pain retirent une unité adverse. Viktor, Leader, dans 89 % des listes, pose une Recrue chaque fois qu'une de vos autres unités meurt, sauf une Recrue.",
+      "lateGame": "Imperial Decree, dans toutes les listes, tue toute unité qui subit des dégâts ce tour-là : avec Bellows Breath, il vide un champ de bataille. Sprite Burst pose deux Esprits de 3 Puissance.",
+      "winCondition": "Tout retirer en face, et garder assez de Recrues pour tenir les champs de bataille."
     },
     "strengths": [
-      "Cinq cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
-      "Imperial Decree dans toutes les listes : une réponse aux tapis d'unités",
-      "La Légende fournit un bloqueur par tour, sans carte dépensée",
-      "Forbidding Waste dans 68 % des listes, choisi pour tenir"
+      "Deuxième au Showdown de Sacramento",
+      "Bellows Breath, Cull the Weak, Hidden Blade et Imperial Decree dans toutes les listes",
+      "La Légende pose un jeton chaque tour, à donner à Cull the Weak"
     ],
     "weaknesses": [
-      "8,1 % de conversion contre 9,9 % pour le champ, aucun titre",
-      "Absent de 12 tournois sur 50 : le deck s'efface quand le format accélère",
-      "Sans menace propre, les parties longues se terminent à égalité de terrain"
+      "19 joueurs classés sur 7 tournois, 1 dans les 10 % de tête : 5,3 % de conversion contre 10,0 % pour le format, aucun titre",
+      "Peu d'unités qui frappent fort : le deck gagne en retirant celles d'en face"
     ]
   },
   "azir-emperor-of-the-sands.json": {
@@ -265,20 +263,19 @@
     "archetype": "Retours en main et or",
     "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
     "gameplan": {
-      "earlyGame": "Bewitching Spirit fait défausser en arrivant, Treasure Hunter pose de l'or à chaque déplacement.",
-      "midGame": "Star-Crossed, dans 92 % des listes, et Falling Star, dans 97 % des listes, cassent le tempo adverse. Void Seeker inflige 4 dégâts et pioche.",
-      "lateGame": "Pyke, Dockside Butcher se déplace d'un champ de bataille à l'autre et revient caché.",
-      "winCondition": "Rejouer les mêmes arrivées rentables jusqu'à épuiser les réponses adverses."
+      "earlyGame": "Traveling Merchant défausse puis pioche à chaque déplacement. Tideturner et Bedeviling Stranger se jouent cachés. Pyke, Dockside Butcher, dans 82 % des listes, caché lui aussi, arrive préparé avec +2 Puissance si vous payez une Puissance de Furie en plus.",
+      "midGame": "La Légende renvoie une de vos unités en main et pose un jeton d'or : de quoi sauver une unité condamnée et la rejouer. Falling Star, dans 91 % des listes, inflige 3 dégâts deux fois. Star-Crossed, dans 91 % aussi, renvoie en main une de vos unités et une unité adverse.",
+      "lateGame": "Fizz, Trickster, dans 82 % des listes, rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+      "winCondition": "Rejouer ses unités pour en tirer l'effet d'arrivée une fois de plus, et accumuler l'or."
     },
     "strengths": [
-      "Deux cartes au-dessus de 95 %, Ripper's Bay dans 94 % des listes",
-      "Fizz, Trickster et Ezreal, Prodigy dans plus de 90 % des listes : la chaîne de sorts est réglée",
-      "La Légende sauve une unité menacée tout en produisant de l'or"
+      "Falling Star et Star-Crossed dans 91 % des listes",
+      "La Légende sauve une unité et rend un jeton d'or au passage"
     ],
     "weaknesses": [
-      "217 joueurs classés sur 37 tournois, 5 dans les 10 % de tête, aucun titre : les résultats ne suivent pas",
-      "Renvoyer ses propres unités coûte du tempo à chaque fois",
-      "Le deck n'a pas de vraie fin de partie, il vise l'usure"
+      "20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une vingt-septième, au Showdown de Melbourne",
+      "Deux cartes seulement au-dessus de 90 % : personne n'a fixé la liste"
     ]
   },
   "vex-gloomist.json": {
@@ -325,19 +322,18 @@
     "archetype": "XP et combats gagnés",
     "legendAbility": "Chaque combat gagné donne 1 XP. Un XP et un épuisement pour améliorer une unité, deux XP pour ramener une unité épuisée à la base.",
     "gameplan": {
-      "earlyGame": "Poser tôt et gagner un premier combat pour lancer l'XP.",
-      "midGame": "Dépenser l'XP en buffs pour enchaîner les combats gagnés sans dépenser de carte.",
-      "lateGame": "Ramener les unités épuisées à la base pour rejouer les mêmes attaques au tour suivant.",
-      "winCondition": "Une accumulation d'XP qui rend chaque combat plus rentable que le précédent."
+      "earlyGame": "Irresistible Faefolk, dans toutes les listes, attire une unité adverse sur le champ de bataille où il se déplace. Void Assault, dans toutes les listes aussi, déplace une de vos unités, puis une unité adverse. Sabotage fait révéler la main adverse.",
+      "midGame": "Kha'Zix, Mutating Horror, dans toutes les listes, arrive en Embuscade, et gagne +2 Puissance et 2 XP quand il combat une unité adverse seule. Faefolk et Void Assault servent à isoler cette unité. Punch First donne +5 Puissance pour une énergie.",
+      "lateGame": "Rengar, Trophy Hunter, dans 75 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Fizz, Trickster rejoue un sort depuis la défausse. Star-Crossed renvoie en main une unité de chaque camp.",
+      "winCondition": "Isoler les unités adverses, gagner les combats, et dépenser l'XP pour renforcer ou sauver ses unités."
     },
     "strengths": [
-      "La Légende transforme un combat gagné en ressource durable",
-      "349 joueurs classés sur 42 tournois, 40 dans les 10 % de tête (11,5 %)"
+      "Six cartes dans au moins 92 % des listes, dont Irresistible Faefolk, Punch First et Void Assault dans toutes",
+      "Fizz, Trickster et Kha'Zix, Mutating Horror dans toutes les listes"
     ],
     "weaknesses": [
-      "145 listes publiées sur 42 tournois : la liste change à chaque joueur",
-      "Sans premier combat gagné, la Légende ne fait rien du tout",
-      "Trop peu de données pour parler d'un cœur stable"
+      "17 joueurs classés sur 5 tournois, 1 dans les 10 % de tête : 5,9 % de conversion contre 10,0 % pour le format, trop peu pour conclure",
+      "Sa meilleure place est une trente et unième, au Showdown de Melbourne"
     ]
   },
   "jax-grandmaster-at-arms.json": {
@@ -936,6 +932,43 @@
     "weaknesses": [
       "38 joueurs classés sur 9 tournois, 3 dans les 10 % de tête : 7,9 % de conversion contre 10,0 % pour le format, aucun titre",
       "Peu d'unités avant Elder Dragon : le deck tient surtout avec ses sorts"
+    ]
+  },
+  "zed-master-of-shadows.json": {
+    "archetype": "Bannissement et rotation de main",
+    "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
+    "gameplan": {
+      "earlyGame": "Traveling Merchant, dans 85 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
+      "midGame": "Ride The Wind, dans 92 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 69 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
+      "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 54 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
+      "winCondition": "Bannir pour amplifier Zed, trier sa main chaque tour, et frapper là où l'adversaire ne l'attend pas avec les Clones d'Ombre."
+    },
+    "strengths": [
+      "Ride The Wind dans 92 % des listes",
+      "La Légende trie la main à chaque tour où elle est amplifiée"
+    ],
+    "weaknesses": [
+      "20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une soixantième, au Showdown de Melbourne",
+      "Une seule carte au-dessus de 90 % : personne n'a fixé la liste"
+    ]
+  },
+  "mel-souls-reflection.json": {
+    "archetype": "Amplification et sorts pris à l'adversaire",
+    "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
+    "gameplan": {
+      "earlyGame": "Rebuttal et Stupefy, dans toutes les listes, coûtent une énergie : le premier prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon ; le second affaiblit une unité et pioche. Traveling Merchant trie la main à chaque déplacement.",
+      "midGame": "Applied Researchers, dans 70 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
+      "lateGame": "Mel, Defiant Soul, dans 60 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 70 % des listes, donne un tour de plus.",
+      "winCondition": "Amplifier ses cartes pour charger Mel, répondre à chaque sort adverse, et prendre un tour d'avance avec Time Warp."
+    },
+    "strengths": [
+      "Rebuttal et Stupefy dans toutes les listes",
+      "Chaque carte amplifiée charge aussi la Légende"
+    ],
+    "weaknesses": [
+      "16 joueurs classés sur 4 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une quarantième, à la City Challenge de Suzhou"
     ]
   }
 }

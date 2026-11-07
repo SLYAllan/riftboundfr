@@ -19,31 +19,31 @@ export interface LegendGuide {
 export const LEGEND_GUIDES: Record<string, LegendGuide> = {
   "mel-souls-reflection": {
     slug: "mel-souls-reflection",
-    bref: `Mel, Soul's Reflection joue en Esprit et Chaos, sur un plan d'amplification et de sorts pris à l'adversaire. C'est un deck difficile à piloter. Il compte 163 listes publiées sur 38 tournois : 234 joueurs classés, 7 dans les 10 % de tête (3,0 %), aucun titre.`,
-    gagne: `Mel suit le rythme de vos sorts. Chaque fois que vous amplifiez une autre carte, elle s'amplifie aussi. Vous pouvez ensuite la désamplifier et l'épuiser pour retirer 2 à une unité au combat. Elle se charge donc pendant que vous jouez, puis se vide au bon moment pour affaiblir une unité adverse.
+    bref: `Mel est un deck **Esprit/Chaos** d'**amplification et de sorts pris à l'adversaire**. Sur Radiance, 16 joueurs classés sur 4 tournois, aucun dans les 10 % de tête, aucun titre. Le deck est Difficile à piloter.`,
+    gagne: `Chaque fois que vous amplifiez une autre carte, Mel s'amplifie aussi. Vous pouvez ensuite la désamplifier et l'épuiser pour retirer 2 Puissance à une unité au combat. **[[Applied Researchers]]** s'amplifie pour 3 énergie et baisse le coût de vos sorts ; **[[Mel, Defiant Soul]]** s'amplifie en défaussant un sort et bannit une unité adverse de 3 Puissance ou moins.
 
-Le deck gagne les échanges de sorts. **[[Rebuttal]]**, dans 100 % des listes en 3 exemplaires, vous donne le contrôle d'un sort adverse. **[[Stupefy]]**, aussi dans 86 % des listes, garde votre main pleine. **[[Stacked Deck]]** (88 %) faisait le même travail, mais il est interdit depuis le 18 septembre 2026. En fin de partie, **[[Mel, Newly Awakened]]** amplifiée (52 % des listes) rend vos sorts impossibles à contrer, et **[[Thousand-Tailed Watcher]]** (62 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.`,
-    plan: `**Début de partie.** **[[Stupefy]]** tient votre main pleine à une énergie. Vous jouez vos cartes à bas coût et vous gardez le rythme.
+Le deck gagne aussi les échanges de sorts. **[[Rebuttal]]**, dans toutes les listes, prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon.`,
+    plan: `**Début de partie.** **[[Rebuttal]]** et **[[Stupefy]]** répondent pour une énergie. **[[Traveling Merchant]]** trie votre main à chaque déplacement.
 
-**Milieu de partie.** **[[Rebuttal]]**, dans 100 % des listes, vous donne le contrôle d'un sort adverse. **[[Applied Researchers]]** amplifié (55 %) baisse le coût de vos sorts. Vous prenez les réponses et vous perturbez le plan de l'adversaire.
+**Milieu de partie.** **[[Applied Researchers]]** amplifié baisse le coût de vos sorts. **[[Shock Blast]]** inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.
 
-**Fin de partie.** **[[Mel, Newly Awakened]]** amplifiée rend vos sorts impossibles à contrer. **[[Thousand-Tailed Watcher]]** (62 %) contrôle le terrain. Vous marquez pendant que l'adversaire n'a plus de réponse.
+**Fin de partie.** **[[Mel, Defiant Soul]]** bannit une unité adverse. **[[Time Warp]]** donne un tour de plus.
 
-**Ce qui le bat.** Le deck ne prend l'avantage que si l'adversaire joue des sorts, sinon Mel reste inerte. Les terrains restent dispersés, aucun au-dessus de 41 %, personne n'a arrêté une liste stable. Et malgré ses 163 listes publiées : 234 joueurs classés sur 38 tournois, 7 dans les 10 % de tête (3,0 %), aucun titre.`,
+**Ce qui le bat.** Sur Radiance, 16 joueurs seulement et aucun dans les 10 % de tête : la liste ne s'est pas encore montrée, il faut d'autres tournois pour en juger.`,
   },
   "zed-master-of-shadows": {
     slug: "zed-master-of-shadows",
-    bref: `Zed, Master of Shadows joue en Furie et Chaos. Son plan : bannir ses cartes pour amplifier la Légende, puis défausser et piocher à chaque tour. Le deck est Difficile à piloter. En 29 tournois, 83 listes publiées : 170 joueurs classés, 3 dans les 10 % de tête (1,8 %), aucun titre.`,
-    gagne: `Chaque carte que vous bannissez amplifie Zed. Vous pouvez ensuite le désamplifier et l'épuiser pour défausser une carte, puis en piocher une. Votre main tourne sans cesse : vous écartez les cartes mortes et vous gardez les bonnes.
+    bref: `Zed est un deck **Furie/Chaos** de **bannissement et de rotation de main** : chaque carte bannie l'amplifie, et il s'en sert pour trier sa main. Sur Radiance, 20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre. Le deck est Difficile à piloter.`,
+    gagne: `Chaque carte que vous bannissez amplifie Zed. Vous pouvez ensuite le désamplifier et l'épuiser pour défausser une carte, puis en piocher une. **[[Runeblade Anvil]]** bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : deux bannissements pour une carte.
 
-Ce moteur tournait grâce à **[[Stacked Deck]]**, dans 83 % des listes, interdit depuis le 18 septembre 2026 : les listes jouées avant le ban ne disent pas encore ce qui le remplace. **[[Death Mark]]**, dans 88 % des listes lui aussi, ouvre le combat. **[[Traveling Merchant]]**, dans 81 % des listes, échange une carte à chacun de vos déplacements. Et **[[Zed, From the Shadows]]** arrive avec un Clone d'Ombre quand vous le payez en défausse.`,
-    plan: `**Début de partie.** **[[Traveling Merchant]]**, dans 81 % des listes, échange une carte à chacun de vos déplacements. Votre main se met en ordre dès le départ.
+**[[Zed, Without a Sound]]**, dans 69 % des listes, pose un Clone d'Ombre à chaque conquête, puis échange sa place avec lui pour frapper ailleurs.`,
+    plan: `**Début de partie.** **[[Traveling Merchant]]** échange une carte à chacun de ses déplacements. **[[Runeblade Anvil]]** commence à amplifier Zed.
 
-**Milieu de partie.** **[[Death Mark]]**, dans 88 % des listes, ouvre le combat. Vous payez **[[Zed, From the Shadows]]** en défausse : il arrive avec un Clone d'Ombre. Deux menaces pèsent là où l'adversaire n'en attendait qu'une.
+**Milieu de partie.** **[[Ride The Wind]]**, dans 92 % des listes, déplace une de vos unités et la prépare. La Légende trie votre main à chaque tour.
 
-**Fin de partie.** **[[Perfect Execution]]**, dans 94 % des listes, prépare une unité et lui donne Assaut 3. C'est de quoi reprendre un champ de bataille perdu et marquer.
+**Fin de partie.** **[[Zed, Without a Sound]]** et ses Clones d'Ombre frappent là où l'adversaire ne les attend pas. **[[Baron Nashor]]** donne +2 Puissance à vos autres unités.
 
-**Ce qui le bat.** Personne n'a fixé la liste : quatre Champions se partagent la place, aucun au-dessus de 88 %. Et bannir demande des cartes qui bannissent, or le deck n'en joue pas tant que ça. Résultat : 83 listes publiées sur 29 tournois, 170 joueurs classés, 3 dans les 10 % de tête (1,8 %), aucun titre.`,
+**Ce qui le bat.** Une seule carte est fixée : chaque liste est différente. Sur Radiance, 20 joueurs seulement, aucun dans les 10 % de tête.`,
   },
   "ambessa-matriarch-of-war": {
     slug: "ambessa-matriarch-of-war",
@@ -225,13 +225,17 @@ Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos uni
   },
   "viktor-herald-of-the-arcane": {
     slug: "viktor-herald-of-the-arcane",
-    bref: `Viktor est un deck **Esprit/Ordre** de **contrôle**, le plus dense en sorts du format. Exigeant et patient, il récompense les joueurs qui savent gérer leurs ressources et lire la partie sur la durée.`,
-    gagne: `Viktor gagne par attrition. **[[Cull the Weak]]** et **[[Imperial Decree]]** nettoient le plateau, **[[Hidden Blade]]** élimine une menace en réaction. Et quand ses propres unités tombent, elles laissent quelque chose : **[[Carrion Dredger]]** invoque un oiseau, **[[Honest Broker]]** crée un équipement. Vous répondez, vous échangez et vous ressortez toujours avec une carte d'avance. À la fin, l'adversaire n'a plus de menaces et vous avez encore tout votre arsenal.`,
-    plan: `**Début de partie.** Répondez aux premières menaces avec vos sorts bon marché et vos petites unités à valeur.
+    bref: `Viktor est un deck **Esprit/Ordre** de **contrôle** : il retire tout en face et tient le terrain avec des jetons Recrue. Sur Radiance, 19 joueurs classés sur 7 tournois, 1 dans les 10 % de tête (5,3 %), aucun titre, mais une deuxième place au Showdown de Sacramento. Le deck est d'un niveau Élevé.`,
+    gagne: `Pour une énergie, la Légende pose un jeton Recrue de 1 Puissance, chaque tour. Ces jetons tiennent le terrain et nourrissent **[[Cull the Weak]]**, dans toutes les listes, qui oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité.
 
-**Milieu de partie.** **[[Cull the Weak]]** et **[[Imperial Decree]]** prennent le contrôle du plateau pendant que **[[Card Sharp]]** alimente votre moteur.
+Le reste retire. **[[Hidden Blade]]** tue une unité, **[[Bellows Breath]]** inflige 1 à trois unités, et **[[Imperial Decree]]** tue toute unité blessée ce tour-là.`,
+    plan: `**Début de partie.** **[[Bellows Breath]]** et **[[Stupefy]]** gênent les premières unités adverses. La Légende pose sa première Recrue.
 
-**Fin de partie.** L'adversaire est à court de ressources. Vous posez une menace, **[[Vi, Peacekeeper]]** surgit pour étourdir, et vous conquérez tranquillement.`,
+**Milieu de partie.** **[[Cull the Weak]]**, **[[Hidden Blade]]** et **[[Wages of Pain]]** retirent une unité à chaque tour. **[[Viktor, Leader]]** pose une Recrue chaque fois qu'une de vos autres unités meurt.
+
+**Fin de partie.** **[[Imperial Decree]]**, suivi de **[[Bellows Breath]]**, vide un champ de bataille. **[[Sprite Burst]]** pose deux Esprits pour conclure.
+
+**Ce qui le bat.** Les decks qui posent plus d'unités que vous n'en retirez. Sur Radiance, 19 joueurs seulement, 5,3 % de conversion, mais une deuxième place à Sacramento.`,
   },
   "rengar-pridestalker": {
     slug: "rengar-pridestalker",
@@ -249,13 +253,17 @@ Pour les faire mourir quand vous le voulez, **[[Sacrifice]]** tue une de vos uni
   },
   "khazix-voidreaver": {
     slug: "khazix-voidreaver",
-    bref: `Kha'Zix est un deck **Corps/Chaos** de **tempo** qui carbure à l'expérience. Un peu technique, mais intéressant : c'est une Légende sous-estimée qui récompense ceux qui la maîtrisent.`,
-    gagne: `Le plan, c'est de gagner des combats pour gagner de l'XP, et de convertir cette XP en avantage. **[[Demacian Diplomat]]** active le plan, **[[Grim Resolve]]** offre +3 de Puissance pour remporter un échange, et **[[Void Assault]]** déplace vos unités et celles de l'adversaire pour créer la bonne confrontation. **[[Qiyana, Victorious]]** verrouille un terrain en résistant au retrait. Et quand vous conquérez, votre capacité ramène vos unités à l'abri, prêtes à recommencer.`,
-    plan: `**Début de partie.** Gagne vos premiers combats pour accumuler de l'expérience et lancer vos capacités.
+    bref: `Kha'Zix est un deck **Furie/Corps** d'**XP et de combats gagnés** : il isole une unité adverse, la bat, et dépense l'XP pour la suite. Sur Radiance, 17 joueurs classés sur 5 tournois, 1 dans les 10 % de tête (5,9 %), aucun titre. Le deck est de difficulté Moyenne à Difficile.`,
+    gagne: `Chaque combat gagné donne 1 XP à la Légende, qui le dépense pour renforcer une unité ou ramener une unité épuisée à la base. **[[Kha'Zix, Mutating Horror]]**, dans toutes les listes, arrive en Embuscade, et gagne +2 Puissance et 2 XP quand il combat une unité adverse seule.
 
-**Milieu de partie.** **[[Qiyana, Victorious]]** et vos unités renforcées prennent le contrôle. **[[Void Assault]]** met en place les échanges qui vous arrangent.
+Le deck sert à créer ce face-à-face. **[[Irresistible Faefolk]]** attire une unité adverse là où il se déplace, **[[Void Assault]]** déplace une de vos unités puis une unité adverse.`,
+    plan: `**Début de partie.** **[[Irresistible Faefolk]]** se pose pour deux énergie. **[[Sabotage]]** vous montre la main adverse.
 
-**Fin de partie.** Visez les deux champs de bataille : votre capacité protège vos unités après la conquête, ce qui rend la double poussée bien plus sûre qu'elle n'en a l'air.`,
+**Milieu de partie.** **[[Void Assault]]** isole une unité adverse, **[[Kha'Zix, Mutating Horror]]** la combat. **[[Punch First]]** et **[[Rampage]]** gagnent les combats serrés.
+
+**Fin de partie.** **[[Rengar, Trophy Hunter]]** se pose sur un champ de bataille occupé. **[[Fizz, Trickster]]** rejoue un sort depuis la défausse.
+
+**Ce qui le bat.** Un adversaire qui ne laisse jamais une unité seule. Sur Radiance, 17 joueurs seulement, et une trente et unième place pour meilleur résultat.`,
   },
   "miss-fortune-bounty-hunter": {
     slug: "miss-fortune-bounty-hunter",
@@ -421,15 +429,17 @@ Le reste du deck sert à conquérir. **[[Cull the Weak]]** oblige chaque joueur 
   },
   "pyke-bloodharbor-ripper": {
     slug: "pyke-bloodharbor-ripper",
-    bref: `Pyke est un deck **Furie/Chaos** de **rebond et de ressources**. 217 joueurs classés sur 37 tournois, 5 dans les 10 % de tête (2,3 %), aucun titre.`,
-    gagne: `Sa capacité renvoie une de vos unités en main et vous donne un jeton d'or au passage. Ça a l'air défensif, c'est en réalité un moteur : vous sauvez une unité d'un combat perdu, vous récupérez son effet d'arrivée pour plus tard, et vous gagnez une ressource.
+    bref: `Pyke est un deck **Furie/Chaos** de **retours en main** : il rejoue ses unités pour en tirer deux fois l'effet, et récupère de l'or au passage. Sur Radiance, 20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre.`,
+    gagne: `Pour une énergie, la Légende renvoie une de vos unités en main et pose un jeton d'or épuisé. Une unité condamnée est sauvée, et une unité qui fait quelque chose en arrivant peut le refaire. **[[Pyke, Dockside Butcher]]**, dans 82 % des listes, s'y prête : rejoué en payant une Puissance de Furie de plus, il arrive préparé avec +2 Puissance.
 
-Autour, tout tourne autour du même geste. **[[Star-Crossed]]** renvoie une de vos unités et une unité adverse en main. **[[Treasure Hunter]]** crée de l'or à chaque déplacement. **[[Fizz, Trickster]]** rejoue un sort depuis votre défausse sans payer son énergie. Vous jouez deux fois ce que l'adversaire ne joue qu'une.`,
-    plan: `**Début de partie.** Posez des unités bon marché à effet d'arrivée. Elles vaudront double quand vous les renverrez en main.
+Autour, **[[Falling Star]]** et **[[Star-Crossed]]**, dans 91 % des listes, nettoient le terrain adverse.`,
+    plan: `**Début de partie.** **[[Traveling Merchant]]** trie la main à chaque déplacement. **[[Tideturner]]** et **[[Bedeviling Stranger]]** attendent cachés.
 
-**Milieu de partie.** Refusez les échanges défavorables : au lieu de perdre une unité, reprenez-la. **[[Bewitching Spirit]]** vide la main adverse pendant que vous augmentez votre réserve d'or.
+**Milieu de partie.** La Légende sauve vos unités et rapporte de l'or. **[[Falling Star]]** inflige 3 dégâts deux fois. **[[Switcheroo]]** échange la Puissance de deux unités.
 
-**Fin de partie.** **[[Mindsplitter]]** arrache la carte que l'adversaire gardait pour vous répondre. Une fois sa réponse partie, vous posez votre menace et vous marquez.`,
+**Fin de partie.** **[[Fizz, Trickster]]** rejoue un sort depuis la défausse. **[[Vex, Apathetic]]** étourdit les unités que l'adversaire joue.
+
+**Ce qui le bat.** Le deck n'a que deux cartes fixées : chaque liste est différente, et aucune n'a encore fait ses preuves. Sur Radiance, 20 joueurs seulement, aucun dans les 10 % de tête.`,
   },
   "jax-grandmaster-at-arms": {
     slug: "jax-grandmaster-at-arms",

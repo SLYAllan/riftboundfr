@@ -10,10 +10,10 @@
   "archetype": "XP et combats gagnés",
   "legendAbility": "Chaque combat gagné donne 1 XP. Un XP et un épuisement pour améliorer une unité, deux XP pour ramener une unité épuisée à la base.",
   "gameplan": {
-    "earlyGame": "Poser tôt et gagner un premier combat pour lancer l'XP.",
-    "midGame": "Dépenser l'XP en buffs pour enchaîner les combats gagnés sans dépenser de carte.",
-    "lateGame": "Ramener les unités épuisées à la base pour rejouer les mêmes attaques au tour suivant.",
-    "winCondition": "Une accumulation d'XP qui rend chaque combat plus rentable que le précédent."
+    "earlyGame": "Irresistible Faefolk, dans toutes les listes, attire une unité adverse sur le champ de bataille où il se déplace. Void Assault, dans toutes les listes aussi, déplace une de vos unités, puis une unité adverse. Sabotage fait révéler la main adverse.",
+    "midGame": "Kha'Zix, Mutating Horror, dans toutes les listes, arrive en Embuscade, et gagne +2 Puissance et 2 XP quand il combat une unité adverse seule. Faefolk et Void Assault servent à isoler cette unité. Punch First donne +5 Puissance pour une énergie.",
+    "lateGame": "Rengar, Trophy Hunter, dans 75 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Fizz, Trickster rejoue un sort depuis la défausse. Star-Crossed renvoie en main une unité de chaque camp.",
+    "winCondition": "Isoler les unités adverses, gagner les combats, et dépenser l'XP pour renforcer ou sauver ses unités."
   },
   "keyCards": [
     {
@@ -103,13 +103,12 @@
     }
   ],
   "strengths": [
-    "La Légende transforme un combat gagné en ressource durable",
-    "349 joueurs classés sur 42 tournois, 40 dans les 10 % de tête (11,5 %)"
+    "Six cartes dans au moins 92 % des listes, dont Irresistible Faefolk, Punch First et Void Assault dans toutes",
+    "Fizz, Trickster et Kha'Zix, Mutating Horror dans toutes les listes"
   ],
   "weaknesses": [
-    "145 listes publiées sur 42 tournois : la liste change à chaque joueur",
-    "Sans premier combat gagné, la Légende ne fait rien du tout",
-    "Trop peu de données pour parler d'un cœur stable"
+    "17 joueurs classés sur 5 tournois, 1 dans les 10 % de tête : 5,9 % de conversion contre 10,0 % pour le format, trop peu pour conclure",
+    "Sa meilleure place est une trente et unième, au Showdown de Melbourne"
   ],
   "competitiveResults": {
     "joueursClasses": 17,

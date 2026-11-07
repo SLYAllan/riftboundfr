@@ -10,19 +10,19 @@
   "archetype": "Bannissement et rotation de main",
   "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
   "gameplan": {
-    "earlyGame": "Stacked Deck choisit la bonne carte parmi trois. Traveling Merchant échange une carte à chaque déplacement.",
-    "midGame": "Death Mark, dans 95 % des listes, ouvre le combat. Zed, From the Shadows arrive avec un Clone d'Ombre s'il est payé en défausse.",
-    "lateGame": "Perfect Execution prépare une unité et lui donne Assaut 3, de quoi reprendre un champ de bataille perdu.",
-    "winCondition": "Une main tenue à jour tour après tour, et deux menaces là où l'adversaire n'en attendait qu'une."
+    "earlyGame": "Traveling Merchant, dans 85 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
+    "midGame": "Ride The Wind, dans 92 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 69 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
+    "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 54 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
+    "winCondition": "Bannir pour amplifier Zed, trier sa main chaque tour, et frapper là où l'adversaire ne l'attend pas avec les Clones d'Ombre."
   },
   "strengths": [
-    "Stacked Deck et Death Mark dans 95 % des listes",
-    "Zaun Warrens dans 91 % des listes : le terrain est arrêté, même si la liste ne l'est pas"
+    "Ride The Wind dans 92 % des listes",
+    "La Légende trie la main à chaque tour où elle est amplifiée"
   ],
   "weaknesses": [
-    "22 listes en treize tournois, aucun Top 8",
-    "Six Champions se partagent la place, aucun au-dessus de 68 % : personne n'a fixé la liste",
-    "Bannir demande des cartes qui bannissent, et le deck n'en joue pas tant que ça"
+    "20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une soixantième, au Showdown de Melbourne",
+    "Une seule carte au-dessus de 90 % : personne n'a fixé la liste"
   ],
   "difficulty": "Difficile",
   "beginnerFriendly": false,
