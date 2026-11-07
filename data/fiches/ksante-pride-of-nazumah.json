@@ -143,5 +143,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 22 joueurs classés, 7 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 22 joueurs classés, 7 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Bouclier qui devient Assaut",
+  "legendAbility": "Pour une énergie, épuisez K'Sante : une de vos unités gagne ce tour un Assaut égal à son Bouclier.",
+  "gameplan": {
+    "earlyGame": "Scuttle Crab, dans 88 % des listes, pioche en arrivant. Stalwart Poro et Mutated Mouser ont Bouclier. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
+    "midGame": "Ntofo Strikes, dans 82 % des listes, donne Bouclier 2 à une de vos unités, puis inflige à une unité adverse autant de dégâts que son Bouclier. Block donne Bouclier 3 et Tank pour le tour. Avec la Légende, ce Bouclier devient aussi de l'Assaut.",
+    "lateGame": "K'Sante, Courageous, dans 65 % des listes, a Accélération et Bouclier 2, et canalise une rune quand il tient un champ de bataille. K'Sante, Dauntless double le Bouclier d'une de vos unités quand il attaque ou défend.",
+    "winCondition": "Empiler du Bouclier sur une unité, puis l'envoyer attaquer avec autant d'Assaut."
+  },
+  "strengths": [
+    "Defy dans toutes les listes, Punch First et Discipline dans 94 %",
+    "Ntofo Strikes, Block, Consult the Heavens et K'Sante, Dauntless donnent ou doublent le Bouclier"
+  ],
+  "weaknesses": [
+    "22 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une quarante-cinquième, à la City Challenge de Fuzhou",
+    "La Légende coûte une énergie et ne sert que sur une unité qui a déjà du Bouclier"
+  ]
 }

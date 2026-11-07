@@ -27,10 +27,10 @@ local, contrôler `echo $DATABASE_URL` et lancer avec `env -u DATABASE_URL …`.
 Riven (272 joueurs, en S), Evelynn, Mordekaiser, Orianna, Seraphine, Ekko, Jarvan IV,
 Ziggs, K'Sante, Vi, Jhin, Shen sur Radiance ; Ivern, Poppy et Renekton sur le repli
 Vendetta. 58 fiches en tout. Pages vérifiées sur un `next start` local (200,
-cartes affichées). **Prose écrite à la main pour cinq** (Riven, Evelynn,
-Mordekaiser, Orianna, Seraphine), sur le texte des cartes de la base et les
-chiffres de la fiche, dans `fiches-prose.json`. **Les dix autres n'ont ni prose ni
-guide** : la routine les liste en fin d'étape 4. Aucune des quinze n'a de guide
+cartes affichées). **Prose écrite à la main pour les quinze**, sur le texte des
+cartes de la base et les chiffres de la fiche, dans `fiches-prose.json` ; un script
+a contrôlé que chaque carte citée est sur la fiche. Ivern, Poppy et Renekton disent
+que leurs chiffres viennent de Vendetta. Aucune des quinze n'a de guide
 (`legend-guides.ts`) ni de `difficulty`.
 
 **Seed prod PAS fait** : le port du tunnel (15432) refuse la connexion, il a été

@@ -126,5 +126,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 97 joueurs classés, 16 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 97 joueurs classés, 16 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Grosses unités posées plus tôt",
+  "legendAbility": "En réaction, payez 2 Puissance et épuisez Renekton : gagnez 2 énergie, à dépenser seulement pour jouer des unités ou activer leurs capacités.",
+  "gameplan": {
+    "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Sabotage, dans 71 % des listes, fait révéler la main adverse et recycler une carte qui n'est pas une unité. Irresistible Faefolk attire une unité adverse sur le champ de bataille où il se déplace.",
+    "midGame": "La Légende change 2 Puissance en 2 énergie pour les unités. Renekton, Rage Fueled, dans 86 % des listes, a Accélération et inflige 2 à chaque unité adverse quand il attaque, si vous contrôlez 4 runes ou moins. Punch First donne +5 Puissance pour une énergie.",
+    "lateGame": "Rengar, Trophy Hunter se pose sur un champ de bataille occupé par l'adversaire. Avec Elder Dragon en jeu, le moindre dégât que vous infligez tue une unité adverse. Brynhir Thundersong empêche l'adversaire de jouer des cartes le tour où elle arrive.",
+    "winCondition": "Poser ses grosses unités plus tôt grâce à la Légende, et gagner les combats."
+  },
+  "strengths": [
+    "Renekton, Rage Fueled dans 86 % des listes",
+    "La Légende change la Puissance en énergie pour poser les unités plus tôt"
+  ],
+  "weaknesses": [
+    "Sur Vendetta, 97 joueurs classés sur 16 tournois, 2 dans les 10 % de tête : 2,1 % de conversion contre 9,9 % pour le format, aucun titre",
+    "Moins de dix listes publiées en Radiance : ces cartes et ces chiffres viennent de Vendetta",
+    "Renekton, Rage Fueled ne blesse les unités adverses que si vous contrôlez 4 runes ou moins"
+  ]
 }

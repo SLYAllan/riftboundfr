@@ -143,5 +143,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Défense et réactions",
+  "legendAbility": "En Action, épuisez Shen : une de vos unités gagne Tank pour le tour.",
+  "gameplan": {
+    "earlyGame": "Scuttle Crab, dans 82 % des listes, pioche en arrivant. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+    "midGame": "Shen, Kinkou, dans 91 % des listes, se joue en réaction, avec Bouclier 2 et Tank. Mournful Witness s'amplifie à la fin de chaque combat où il était, et gagne alors +2 Puissance. Charm déplace une unité adverse pour une énergie.",
+    "lateGame": "Astral Heron, posé sur un champ de bataille, baisse le coût de la deuxième carte du tour. Ki Barrier empêche les 7 prochains dégâts sur une unité.",
+    "winCondition": "Tenir les champs de bataille avec des unités dures à tuer, et répondre à chaque sort."
+  },
+  "strengths": [
+    "Defy et Discipline dans toutes les listes, Shen, Kinkou dans 91 %",
+    "La Légende donne Tank à une unité, chaque tour"
+  ],
+  "weaknesses": [
+    "18 joueurs classés sur 2 tournois, aucun dans les 10 % de tête : trop peu pour conclure",
+    "Sa meilleure place est une quarante-septième, au Showdown de Melbourne",
+    "Seules Defy et Discipline sont dans toutes les listes : personne n'a fixé le reste"
+  ]
 }

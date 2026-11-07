@@ -144,5 +144,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 7 tournois, dont 24 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 7 tournois, dont 24 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Équipements posés sur les champs de bataille, bonus de combat",
+  "legendAbility": "Quand vous jouez un équipement qui se pose sur un champ de bataille, vous pouvez épuiser Jarvan IV et payer une Puissance pour déplacer une de vos unités sur ce champ de bataille.",
+  "gameplan": {
+    "earlyGame": "Pillaged Armory, dans 92 % des listes, se pose sur un champ de bataille pour une énergie et donne un bonus à une de vos unités, à son arrivée puis à chaque conquête. Concert Poster, dans 83 % des listes, y pose un jeton Recrue de la même façon.",
+    "midGame": "Jarvan IV, Martial Paragon, dans 96 % des listes, permet de jouer ces équipements en Action, et canalise une rune épuisée quand il conquiert un champ de bataille où l'un d'eux se trouve. Avec la Légende, chaque équipement posé amène une unité au combat. Punch First donne +5 Puissance pour une énergie.",
+    "lateGame": "Rengar, Trophy Hunter, dans 83 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Call to Glory donne +3 Puissance en réaction, sans rien coûter si vous dépensez un bonus.",
+    "winCondition": "Poser un équipement là où l'on veut combattre, y amener une unité, et gagner le combat avec les bonus."
+  },
+  "strengths": [
+    "Jarvan IV, Martial Paragon dans 96 % des listes, Pillaged Armory et Punch First dans 92 %",
+    "Punch First, Call to Glory et Demacian Standard donnent de la Puissance en combat, Rampage force un combat"
+  ],
+  "weaknesses": [
+    "27 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu de joueurs pour conclure",
+    "Sa meilleure place est une vingt-quatrième, à la City Challenge de Shenyang",
+    "La Légende ne sert que si l'on joue un équipement qui se pose sur un champ de bataille"
+  ]
 }

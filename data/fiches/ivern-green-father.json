@@ -172,5 +172,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 164 joueurs classés, 24 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 164 joueurs classés, 24 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Quatre familles d'animaux et unités défensives",
+  "legendAbility": "Quand vous conquérez ou tenez un champ de bataille, vous pouvez épuiser Ivern pour le remplacer par un jeton de champ de bataille Brush.",
+  "gameplan": {
+    "earlyGame": "Stalwart Poro et Defy, dans toutes les listes, puis Mutated Mouser et Trusty Ramhound, dans 93 % des listes, tiennent le terrain dès les premiers tours. Frisky Hunter pose un Oiseau de 1 Puissance à Protection en arrivant.",
+    "midGame": "Back Off étourdit une unité, et pioche si vous le jouez depuis la main. Emperor's Divide ramène à la base toutes vos unités d'un champ de bataille. Ivern, Friend to All, dans 67 % des listes, marque un point quand il conquiert ou tient un champ de bataille si vos unités réunissent un Oiseau, un Chat, un Chien et un Poro.",
+    "lateGame": "Daisy! coûte une énergie de moins par famille réunie parmi vos unités, et arrive préparée. Vilemaw empêche les unités adverses plus faibles que lui d'infliger des dégâts de combat, et pioche quand il tient.",
+    "winCondition": "Réunir les quatre familles pour marquer avec Ivern, Friend to All, en tenant le terrain avec des unités à Bouclier."
+  },
+  "strengths": [
+    "Sept cartes dans au moins 93 % des listes : la liste est fixée",
+    "Une condition de victoire à part : Ivern, Friend to All marque un point de plus quand les quatre familles sont réunies"
+  ],
+  "weaknesses": [
+    "Sur Vendetta, 164 joueurs classés sur 24 tournois, 3 dans les 10 % de tête : 1,8 % de conversion contre 9,9 % pour le format, aucun titre",
+    "Moins de dix listes publiées en Radiance : ces cartes et ces chiffres viennent de Vendetta",
+    "Réunir les quatre familles demande des unités précises, et du temps"
+  ]
 }

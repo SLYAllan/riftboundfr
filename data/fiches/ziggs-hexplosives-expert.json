@@ -140,5 +140,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 28 joueurs classés, 9 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 9 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Équipements sacrifiés et Bombes",
+  "legendAbility": "Pour une énergie et une Puissance, épuisez Ziggs : posez un jeton d'équipement Bombe sur un champ de bataille.",
+  "gameplan": {
+    "earlyGame": "Seal of Rage, dans toutes les listes, ne coûte rien et s'épuise pour donner une Puissance de Furie, même en réaction. Amateur Demolitionist pose un jeton Bombe en arrivant. Detonate, dans toutes les listes, tue un équipement pour une énergie, et son propriétaire pioche deux cartes.",
+    "midGame": "Shimmering Swimmer, dans 95 % des listes, inflige 2 dégâts si vous tuez une de vos unités ou un de vos équipements pour le jouer. Treasure Trove pioche une carte et canalise une rune épuisée quand il quitte le terrain. Ziggs, Explosive, dans toutes les listes, pose lui aussi des Bombes, et gagne +2 Puissance en défense en tuant un de vos équipements.",
+    "lateGame": "Fizz, Trickster, dans 86 % des listes, rejoue depuis la défausse un sort de 3 énergie ou moins sans payer son énergie, Falling Star par exemple. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+    "winCondition": "Sacrifier ses équipements pour piocher et blesser, et garder la main pleine."
+  },
+  "strengths": [
+    "Seal of Rage, Detonate et Ziggs, Explosive dans toutes les listes",
+    "Detonate et Treasure Trove changent chaque équipement sacrifié en cartes"
+  ],
+  "weaknesses": [
+    "28 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre",
+    "Sa meilleure place est une quarante-septième, à la City Challenge de Pékin",
+    "Sans équipement à sacrifier, Detonate et Shimmering Swimmer perdent leur intérêt"
+  ]
 }

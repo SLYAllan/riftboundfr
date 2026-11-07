@@ -130,5 +130,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 103 joueurs classés, 16 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 103 joueurs classés, 16 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Champs de bataille tenus, XP et pioche",
+  "legendAbility": "Quand vous tenez un champ de bataille, gagnez 1 XP. Dépensez 3 XP et épuisez Poppy : piochez une carte.",
+  "gameplan": {
+    "earlyGame": "Forge of the Future, dans la moitié des listes, pose un jeton Recrue en arrivant. Mobilize canalise une rune épuisée, ou pioche si vous ne pouvez pas.",
+    "midGame": "Chaque champ de bataille tenu donne 1 XP, et 3 XP font piocher une carte. Grim Resolve donne +3 Puissance, et 2 XP si l'unité gagne son combat. Keeper's Verdict renvoie une unité adverse sur le dessus ou le dessous de son deck.",
+    "lateGame": "Poppy, Paragon, dans toutes les listes, a Protection, et arrive préparée avec 3 XP quand un adversaire est à 3 points de la victoire ou moins. The Ruination, dans la moitié des listes, tue toutes les unités.",
+    "winCondition": "Tenir les champs de bataille pour accumuler l'XP et la pioche, et garder Poppy, Paragon pour la fin de partie."
+  },
+  "strengths": [
+    "Poppy, Paragon dans toutes les listes",
+    "La Légende transforme chaque champ de bataille tenu en XP, puis en cartes"
+  ],
+  "weaknesses": [
+    "Sur Vendetta, 103 joueurs classés sur 16 tournois, 2 dans les 10 % de tête : 1,9 % de conversion contre 9,9 % pour le format, aucun titre",
+    "Moins de dix listes publiées en Radiance : ces cartes et ces chiffres viennent de Vendetta",
+    "Aucune carte au-dessus de 73 % en dehors de Poppy, Paragon : personne n'a fixé la liste"
+  ]
 }

@@ -157,5 +157,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Sorts à 4 énergie et plus",
+  "legendAbility": "Quand vous jouez un sort en dépensant 4 énergie ou plus, vous pouvez le bannir sous Jhin. Au quatrième sort banni, ils retournent tous dans votre défausse, vous canalisez 4 runes et piochez une carte.",
+  "gameplan": {
+    "earlyGame": "Plundering Poro, dans 83 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy affaiblit une unité et pioche pour une énergie.",
+    "midGame": "Curtain Call, Deadly Flourish et Sprite Burst, dans toutes les listes, coûtent 4 énergie ou plus et nourrissent la Légende. Jhin, Meticulous Killer, dans 92 % des listes, se joue pour une seule Puissance d'Esprit le tour où vous avez dépensé 4 énergie pour un sort. Consult the Past pioche deux cartes en réaction.",
+    "lateGame": "Au quatrième sort banni, la Légende canalise 4 runes d'un coup. Singularity inflige 6 dégâts à deux unités, Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses, Time Warp donne un tour de plus.",
+    "winCondition": "Enchaîner les gros sorts jusqu'à ce que la Légende rende quatre runes, puis s'en servir pour les sorts les plus chers."
+  },
+  "strengths": [
+    "Neuf cartes dans au moins 92 % des listes : la liste est fixée",
+    "La Légende rend quatre runes d'un coup, de quoi lancer les sorts les plus chers"
+  ],
+  "weaknesses": [
+    "18 joueurs classés sur 2 tournois, 1 dans les 10 % de tête : 5,6 % de conversion contre 10,0 % pour le format, trop peu pour conclure",
+    "Sa meilleure place est une vingt-septième, au Showdown de Sacramento",
+    "Beaucoup de sorts à 4 énergie ou plus : les premiers tours sont lents"
+  ]
 }
