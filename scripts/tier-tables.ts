@@ -364,24 +364,30 @@ export const radianceTier: TierEntry[] = [
   // Diana tiennent le test au-dessus, Mordekaiser et Seraphine en dessous ; tout
   // le reste est une lecture, à revoir à chaque tournoi. Les 20 Légendes sous
   // 15 joueurs n'y sont pas, dont Ambessa, Renekton et Volibear (14 chacune).
-  // Viktor passe le seuil le 7 novembre (19 joueurs) : il attend sa lettre.
+  //
+  // Le 7 novembre, à la demande d'Allan (« fais pour la tier list »), trois lettres
+  // suivent la règle déjà posée : S pour un écart établi au-dessus, la lettre des
+  // voisins de conversion pour le reste. Diana passe de A à S, Master Yi, Wuju
+  // Bladesman de C à B (10,8 %, entre Akali et Rengar), et Viktor, qui passe le
+  // seuil avec 19 joueurs, entre en C (5,3 %, à côté de Jhin).
 
   { legendName: "Riven, The Exile", tier: "S", comment: "272 joueurs, la Légende la plus jouée du set, et 22,1 % de conversion contre 10,0 % pour le format (p < 0,001). Cinq titres : le Showdown de Sacramento et les City Challenge de Suzhou, de Shenzhen, de Pékin et de Guangzhou, avec cinq places du Top 8 à Shenzhen." },
   { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "145 joueurs, 15,9 % de conversion (p = 0,025). Le maître de Vendetta tient son rang avec le nouveau set." },
-  { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "A gagné le Showdown de Melbourne. 21,2 % de conversion sur 33 joueurs : l'écart tient le test (p = 0,04), de justesse et sur peu de joueurs." },
+  { legendName: "Diana, Scorn of the Moon", tier: "S", comment: "A gagné le Showdown de Melbourne. 21,2 % de conversion sur 33 joueurs : l'écart tient le test (p = 0,04), de justesse et sur peu de joueurs." },
   { legendName: "LeBlanc, Deceiver", tier: "A", comment: "15,2 % sur 46 joueurs, sans que l'écart tienne le test (p = 0,22)." },
   { legendName: "Vex, Gloomist", tier: "B", comment: "12,0 % sur 75 joueurs. A gagné la City Challenge de Fuzhou." },
   { legendName: "Kai'Sa, Daughter of the Void", tier: "B", comment: "12,5 % sur 120 joueurs, la troisième Légende la plus jouée du set. Quatre places dans le Top 8 de Suzhou." },
   { legendName: "Vi, Piltover Enforcer", tier: "B", comment: "11,8 % sur 17 joueurs." },
   { legendName: "Rek'Sai, Void Burrower", tier: "B", comment: "13,8 % sur 58 joueurs, sans que l'écart tienne le test (p = 0,38)." },
   { legendName: "Akali, Rogue Assassin", tier: "B", comment: "11,5 % sur 61 joueurs, troisième à Sacramento." },
+  { legendName: "Master Yi, Wuju Bladesman", tier: "B", comment: "10,8 % sur 74 joueurs. A gagné la City Challenge de Shanghai du 1er novembre." },
   { legendName: "Rengar, Pridestalker", tier: "B", comment: "10,0 % sur 60 joueurs, la moyenne du format. Huitième à Sacramento." },
   { legendName: "Jayce, Defender of Tomorrow", tier: "C", comment: "7,9 % sur 38 joueurs." },
   { legendName: "Irelia, Blade Dancer", tier: "C", comment: "A gagné la City Challenge de Shenyang, mais 4,3 % de conversion sur 46 joueurs." },
   { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "5,8 % sur 52 joueurs." },
   { legendName: "Kha'Zix, Voidreaver", tier: "C", comment: "5,9 % sur 17 joueurs." },
-  { legendName: "Master Yi, Wuju Bladesman", tier: "C", comment: "10,8 % sur 74 joueurs. A gagné la City Challenge de Shanghai du 1er novembre." },
   { legendName: "Jhin, Virtuoso", tier: "C", comment: "5,6 % sur 18 joueurs." },
+  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "5,3 % sur 19 joueurs, mais deuxième au Showdown de Sacramento." },
   { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "7,0 % sur 43 joueurs." },
   { legendName: "Azir, Emperor of the Sands", tier: "C", comment: "3,3 % sur 30 joueurs." },
   { legendName: "Evelynn, Agony's Embrace", tier: "C", comment: "3,1 % sur 64 joueurs." },
