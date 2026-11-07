@@ -38,9 +38,10 @@ que leurs chiffres viennent de Vendetta. Aucune des quinze n'a de guide
 jour, vérifiées sur `/api/v1/tier-list` : Radiance à 32 entrées (Diana en S, Master
 Yi Wuju Bladesman en B, Viktor entre en C), Globale à 50 (recalée sur le relevé du
 7 novembre, Riven entre en S, Lillia passe en C). Ces lettres suivent la règle des
-listes, tranchées sur « fais pour la tier list » d'Allan. **Reste le Deploy
-Coolify** pour les fiches, les guides, `/meta` et la routine. Refermer le tunnel
-après usage.
+listes, tranchées sur « fais pour la tier list » d'Allan. **Deploy fait le
+7 novembre**, en ligne après environ 5 minutes : fiches de Riven et Mordekaiser,
+prose et guide de Kennen et Zed, `/tournois/s5-beijing-cc-296` vérifiés (200).
+Refermer le tunnel après usage.
 
 **Prose des fiches et des guides sur Radiance : les 25 fiches faites.** La prose
 citait les cartes Vendetta alors que la page affiche les cartes Radiance. Kennen,
