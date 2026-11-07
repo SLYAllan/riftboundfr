@@ -10,10 +10,10 @@
   "archetype": "Contrôle de terrain, une seule unité qui tient",
   "legendAbility": "Tant qu'une de vos unités défend seule, elle gagne +2 Puissance. Toute la construction sert ce bonus : une unité par champ de bataille, jamais deux.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab et Lonely Poro, à 2 énergie, dans 94 % et 97 % des listes, occupent un champ de bataille en piochant. Discipline garde la main ouverte.",
-    "midGame": "Master Yi, Tempered et Rengar, Trophy Hunter prennent un deuxième champ de bataille. Punch First et En Garde gagnent le combat pour une énergie.",
-    "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass encaisse le premier retrait.",
-    "winCondition": "Tenir deux champs de bataille avec une unité chacun et marquer tour après tour."
+    "earlyGame": "Lonely Poro et Scuttle Crab, à 2 énergie, dans 97 % et 91 % des listes, occupent un champ de bataille. Le Crabe pioche en arrivant, Lonely Poro pioche si elle meurt seule. Discipline, dans toutes les listes, garde la main ouverte.",
+    "midGame": "Master Yi, Tempered, dans 99 % des listes, gagne de l'XP à chaque conquête ou contrôle. Rengar, Trophy Hunter, en Embuscade, se pose sur un champ de bataille où l'adversaire a des unités. Punch First donne +5 Puissance pour une énergie.",
+    "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass, dans 96 % des listes, encaisse la première mort.",
+    "winCondition": "Tenir des champs de bataille avec une seule unité sur chacun, et marquer tour après tour."
   },
   "keyCards": [
     {
@@ -93,15 +93,15 @@
     }
   ],
   "strengths": [
-    "Huit cartes dans plus de 95 % des listes : la construction ne varie presque pas d'un joueur à l'autre",
-    "Deuxième Légende du format en volume, 223 listes publiées sur 50 tournois, et l'un des cinq écarts au-dessus de la moyenne qui tiennent le test : 13,8 % de conversion contre 9,9 %",
-    "Sept titres en 50 tournois",
-    "Zhonya's Hourglass, présent dans 99 % des listes, annule le premier retrait adverse"
+    "74 joueurs classés sur 9 tournois, 8 dans les 10 % de tête : 10,8 % de conversion contre 10,0 % de moyenne, et un titre",
+    "Dix cartes dans 90 % des listes ou plus : la construction varie peu d'un joueur à l'autre",
+    "Zhonya's Hourglass, dans 96 % des listes, sauve une unité qui allait mourir",
+    "Ruin Runner, dans 84 % des listes, échappe aux sorts et aux capacités adverses"
   ],
   "weaknesses": [
-    "Tout repose sur une unité isolée : deux retraits d'affilée cassent le plan",
-    "Peu de pioche en dehors de Discipline et Scuttle Crab, la main se vide vite",
-    "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
+    "Tout repose sur une unité isolée : sans elle, la Légende ne donne plus rien",
+    "Peu de pioche : Discipline, Scuttle Crab, et Lonely Poro qui ne pioche que si elle meurt seule",
+    "Un seul titre sur 9 tournois, à peine au-dessus de la moyenne du format : 74 joueurs classés ne suffisent pas à trancher"
   ],
   "competitiveResults": {
     "joueursClasses": 74,

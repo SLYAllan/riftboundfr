@@ -10,8 +10,8 @@
   "archetype": "Contrôle d'un seul champ de bataille",
   "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Vex pour piocher. Tenir rapporte une carte par tour.",
   "gameplan": {
-    "earlyGame": "Mutated Mouser et Scuttle Crab tiennent une position à moindres frais. Defy et Discipline gardent la réponse ouverte.",
-    "midGame": "Vex, Apathetic étourdit chaque unité posée en face et l'empêche de bouger. Boots of Swiftness rendent la vôtre mobile.",
+    "earlyGame": "Scuttle Crab pioche en arrivant et, avec 0 Puissance, peut conquérir et tenir un champ de bataille à moindres frais. Defy et Discipline gardent la réponse ouverte.",
+    "midGame": "Vex, Apathetic, dans toutes les listes, étourdit chaque unité que l'adversaire pose tant qu'elle est sur un champ de bataille, et l'empêche de la déplacer. Bedeviling Stranger et Tideturner attendent face cachée.",
     "lateGame": "Zhonya's Hourglass et Back Off protègent la position pendant que la Légende pioche à chaque tour tenu.",
     "winCondition": "Tenir un champ de bataille, piocher chaque tour, et laisser l'adversaire s'user dessus."
   },
@@ -113,13 +113,14 @@
     }
   ],
   "strengths": [
-    "Defy dans toutes les listes, Discipline et Switcheroo dans 98 %",
-    "Vex, Apathetic dans toutes les listes : elle bloque la pose d'unités adverses",
-    "Startipped Peak dans 56 % des listes, un terrain fait pour tenir"
+    "75 joueurs classés sur 8 tournois, 9 dans les 10 % de tête : 12,0 % de conversion contre 10,0 % de moyenne, et un titre",
+    "Defy dans toutes les listes, Switcheroo dans 98 %, Discipline et Bedeviling Stranger dans 94 %",
+    "Vex, Apathetic dans toutes les listes : elle étourdit les unités que l'adversaire pose",
+    "Startipped Peak dans 47 % des listes : tenir ce terrain canalise une rune épuisée"
   ],
   "weaknesses": [
-    "Un seul titre en 46 tournois",
-    "Partout sans dominer : 2,8 % du champ, un seul titre",
+    "Un seul titre sur 8 tournois, pour 75 joueurs classés : trop peu pour tirer une conclusion nette",
+    "Difficile à jouer : beaucoup de cartes cachées ou en Réaction, à poser au bon moment",
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {

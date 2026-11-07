@@ -25,6 +25,23 @@ local, contrôler `echo $DATABASE_URL` et lancer avec `env -u DATABASE_URL …`.
 **Aucune Légende nouvelle de Radiance n'a de fiche** dans `data/fiches/` (Riven,
 272 joueurs, la plus jouée du set, n'en a pas).
 
+**Seed prod PAS fait** : le port du tunnel (15432) refuse la connexion, il a été
+refermé après le seed du 1er novembre. À rouvrir par Allan, puis
+`npx tsx scripts/prod-tunnel.mts --etat` et
+`npx tsx scripts/prod-tunnel.mts prisma/seed-scraped-decks.ts hexgate-295 hexgate-296 hexgate-297`,
+puis le Deploy, puis `seed-tier-lists.ts` par le tunnel.
+
+**Prose des fiches et des guides sur Radiance : 5 Légendes sur 25 faites** (Kennen,
+Kai'Sa, Vex, Master Yi Wuju Bladesman, Akali), par un sous-agent Sonnet, contrôlées
+par script et relues. La prose citait les cartes Vendetta alors que la page affiche
+les cartes Radiance. Reste 20 fiches (`setDesChiffres: "Radiance"`). Méthode :
+`scripts/prose-radiance-dossiers.mts <dossier>`, un rédacteur par lot avec
+`docs/prose-radiance-consignes.md`, puis `node scripts/prose-radiance-appliquer.mjs
+<dossier>` (contrôle), `--ecrire`, et `npx tsx scripts/fiches-prose.mts --ecrire`.
+Relire à la main ce que le contrôle ne voit pas : chez Kennen, « cimetière » au lieu
+de « défausse », et une capacité réduite aux sorts. DeepSeek (pi) est à court de
+crédit ce jour-là.
+
 ## 2 novembre 2026 — lien d'achat sur les pages de Légende
 
 **Fait, en ligne depuis le Deploy du 2 novembre.** L'encart de la page de deck (`DeckCoveragePanel` :

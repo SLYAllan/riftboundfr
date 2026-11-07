@@ -75,17 +75,17 @@ Ce plan tourne autour de **[[Thousand-Tailed Watcher]]**, dans 100 % des listes.
   },
   "akali-rogue-assassin": {
     slug: "akali-rogue-assassin",
-    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Vendetta, 366 listes publiées : 792 joueurs classés sur 50 tournois, 60 dans les 10 % de tête (7,6 %), 4 titres.`,
+    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Radiance, 55 listes publiées : 61 joueurs classés sur 9 tournois, 7 dans les 10 % de tête (11,5 %), aucun titre.`,
     gagne: `La Légende s'épuise pendant votre tour pour ramener une de vos unités engagées à la base, et la remettre prête si elle est amplifiée. En clair : vous retirez votre unité d'un combat perdu avant qu'il ne se résolve. L'unité survit et peut attaquer ailleurs.
 
-Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (100 % des listes) pioche à chaque déplacement. En fin de partie, **[[Akali, Silent]]** ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant. Le but : marquer avec des unités que l'adversaire ne peut ni cibler ni coincer.`,
-    plan: `**Début de partie.** **[[Scuttle Crab]]** (61 % des listes) et **[[Lonely Poro]]** (56 % des listes) occupent le terrain en piochant. **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. Vous posez des unités et vous gardez les retraits pour les combats qui comptent.
+Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (100 % des listes) pioche à chaque déplacement. **[[Akali, Deadly Weapon]]** (100 % des listes) inflige des dégâts à chaque déplacement. Le but : garder la main pleine et ne rien perdre dans un combat perdu.`,
+    plan: `**Début de partie.** **[[Scuttle Crab]]** (49 % des listes) occupe le terrain en piochant. **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. Vous posez des unités et vous gardez les retraits pour les combats qui comptent.
 
-**Milieu de partie.** **[[Stellacorn Herder]]** (100 % des listes) pioche à chaque déplacement, ce qui garde votre main pleine. La Légende sort votre unité du combat perdu avant qu'il ne se résolve. **[[Zhonya's Hourglass]]** (99 % des listes) protège une unité.
+**Milieu de partie.** **[[Stellacorn Herder]]** (100 % des listes) pioche à chaque déplacement, ce qui garde votre main pleine. La Légende sort votre unité du combat perdu avant qu'il ne se résolve. **[[Zhonya's Hourglass]]** (100 % des listes) protège une unité.
 
-**Fin de partie.** **[[Akali, Silent]]** échappe aux sorts adverses tant qu'elle reste hors combat, et gagne +2 Puissance en arrivant. Vous marquez avec des unités que l'adversaire ne peut ni cibler ni coincer. C'est maintenant que le deck doit gagner.
+**Fin de partie.** **[[Falling Star]]** inflige 3 dégâts deux fois, **[[Blitzcrank, Impassive]]** attire une unité adverse sur son champ de bataille, et **[[Astral Heron]]** baisse le coût de la carte suivante. C'est maintenant que le deck doit gagner.
 
-**Ce qui le bat.** Retirer vos unités du combat ne marque aucun point : le deck se défend bien et gagne mal. 502 listes publiées sur 50 tournois : 792 joueurs classés, 60 dans les 10 % de tête (7,6 %), 4 titres, sous la moyenne du format (9,9 %). Sur ce volume, l'écart ne s'explique pas par la malchance.`,
+**Ce qui le bat.** Retirer vos unités du combat ne marque aucun point. Sur Radiance, 61 joueurs classés, 7 dans les 10 % de tête (11,5 %, contre 10,0 % de moyenne), aucun titre : l'échantillon est petit, et la meilleure place est une troisième.`,
   },
   "jayce-defender-of-tomorrow": {
     slug: "jayce-defender-of-tomorrow",
@@ -103,29 +103,29 @@ Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) i
   },
   "kennen-heart-of-the-tempest": {
     slug: "kennen-heart-of-the-tempest",
-    bref: `Kennen est un deck **Ordre/Chaos** de **cimetière** : il joue ses cartes depuis partout sauf sa main. C'est le meilleur convertisseur du format, 18,8 % de conversion contre 9,9 % de moyenne, et l'écart le plus net que le calcul confirme. C'est aussi un deck **difficile** : tout dépend de ce que vous remplissez, et du moment où vous le dépenses.`,
-    gagne: `Chaque carte jouée ailleurs que depuis votre main amplifie Kennen. Désamplifie-le et épuise-le, et une unité gagne **Assaut 2** pour le tour. Le bonus ne vous coûte rien d'autre que d'avoir rempli votre cimetière avant.
+    bref: `Kennen est un deck **Ordre/Chaos** de **défausse** : il joue ses cartes depuis partout sauf sa main. Sur Radiance, 145 joueurs classés sur 9 tournois, 23 dans les 10 % de tête : 15,9 % de conversion contre 10,0 % de moyenne, mais aucun titre. C'est aussi un deck **difficile** : tout dépend de ce que vous remplissez, et du moment où vous le dépensez.`,
+    gagne: `Chaque carte jouée ailleurs que depuis votre main amplifie Kennen. Désamplifiez-le et épuisez-le, et une unité gagne **Assaut 2** pour le tour. Le bonus ne vous coûte rien d'autre que d'avoir rempli votre défausse avant.
 
-**[[Rhasa the Sunderer]]** transforme ce remplissage en victoire : 10 d'énergie de base, une de moins par carte au cimetière. Le deck passe ses premiers tours à se défausser, puis pose une menace que personne ne paie au prix fort.`,
-    plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle pioche une carte sur trois et envoie les deux autres au cimetière. **[[Stacked Deck]]**, qui choisissait ce qui tombe dans 91 % des listes, est interdit depuis le 18 septembre 2026 : le tri est moins fin, et le moteur plus lent.
+**[[Rhasa the Sunderer]]** transforme ce remplissage en victoire : 10 d'énergie de base, une de moins par carte dans la défausse. Le deck passe ses premiers tours à remplir sa défausse, puis pose une menace que personne ne paie au prix fort.`,
+    plan: `**Début de partie.** **[[Lightning Rush]]** est dans toutes les listes, en trois exemplaires : elle regarde trois cartes, en pioche une et envoie les deux autres dans la défausse. **[[Trifarian Captain]]**, aussi dans toutes les listes, cherche une petite unité ou un équipement dans les quatre cartes du dessus.
 
-**Milieu de partie.** Les sorts rejoués depuis le cimetière amplifient la Légende sans rien coûter. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 95 % et 93 % des listes, pèsent sur les combats.
+**Milieu de partie.** **[[Lightning Rush]]** se rejoue depuis la défausse grâce à Flux, et chaque carte jouée hors de la main amplifie la Légende. C'est là que **[[Rhasa the Sunderer]]** devient payable, et que **[[Minefield]]** et **[[Zaun Warrens]]**, dans 93 % des listes chacun, pèsent sur les combats : le premier envoie deux cartes dans la défausse à chaque conquête, le second défausse puis pioche.
 
-**Fin de partie.** **[[Fizz, Trickster]]** rejoue un sort du cimetière en arrivant, **[[Kennen, Storm of Shuriken]]** rend un sort rejouable après une conquête. L'Assaut 2 gratuit tranche le combat qui compte.
+**Fin de partie.** **[[Fizz, Trickster]]** rejoue un sort de la défausse en arrivant, **[[Kennen, Storm of Shuriken]]** rend un sort de la défausse rejouable après une conquête. L'Assaut 2 gratuit tranche le combat qui compte.
 
-**Ce qui le bat.** Les départs rapides. Remplir prend des tours, et tant que rien n'est joué hors de votre main, la Légende reste désamplifiée et ne donne rien. 10 titres et 291 joueurs dans les 10 % de tête : la meilleure conversion du format.`,
+**Ce qui le bat.** Les départs rapides. Remplir prend des tours, et tant que rien n'est joué hors de votre main, la Légende reste désamplifiée et ne donne rien. Sur Radiance, le deck n'a décroché aucun titre : sa meilleure place est une deuxième, à Suzhou.`,
   },
   "master-yi-wuju-bladesman": {
     slug: "master-yi-wuju-bladesman",
-    bref: `Master Yi est un deck **Corps/Calme** de **contrôle de terrain**, classé parmi les meilleurs du format. C'est aussi l'un des meilleurs choix pour débuter en compétition : facile à prendre en main, difficile à mal jouer, et il vous apprend les fondamentaux du jeu, les combats, la pioche et l'interaction.`,
-    gagne: `Il y a deux façons de marquer à Riftbound : conquérir un champ de bataille, ou le **contrôler**, c'est-à-dire commencer votre tour en tenant un terrain déjà conquis. Master Yi est bâti pour la seconde. Vous conquérez une fois, votre capacité rend la reconquête adverse presque impossible, et chaque tour vous rapporte un point.
+    bref: `Master Yi est un deck **Corps/Calme** de **contrôle de terrain**, de difficulté facile à moyenne. Sur Radiance, 74 joueurs classés sur 9 tournois, 8 dans les 10 % de tête : 10,8 % de conversion contre 10,0 % de moyenne, et un titre. Il apprend les fondamentaux du jeu : les combats, la pioche et l'interaction.`,
+    gagne: `Il y a deux façons de marquer à Riftbound : conquérir un champ de bataille, ou le **contrôler**, c'est-à-dire commencer votre tour en tenant un terrain déjà conquis. Master Yi est bâti pour la seconde. Vous conquérez une fois, votre unité seule défend avec +2 Puissance, et chaque tour tenu rapporte un point.
 
-La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de Puissance que **les sorts et capacités adverses ne peuvent pas cibler**. En défense avec le +2 de la Légende, elle encaisse 7, ne part pas sur un retrait, et verrouille un terrain à elle seule. Ajoutez **[[Zhonya's Hourglass]]**, un équipement caché qui sauve une unité de la mort, et vous obtenez une position que l'adversaire ne sait pas comment franchir.`,
+La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de Puissance que **les sorts et capacités adverses ne peuvent pas cibler**. En défense avec le +2 de la Légende, elle encaisse 7, ne part pas sur un retrait ciblé, et verrouille un terrain à elle seule. Ajoutez **[[Zhonya's Hourglass]]**, un équipement caché qui sauve une unité de la mort, et vous obtenez une position difficile à franchir.`,
     plan: `**Début de partie.** Posez tôt un défenseur, comme **[[Scuttle Crab]]**, qui pioche et révèle la main adverse, ou **[[Lonely Poro]]**, et installez-vous sur un premier terrain. Les premiers tours servent à exister et à tenir, pas à tuer.
 
-**Milieu de partie.** Déployez vos grosses unités, **[[Rengar, Trophy Hunter]]** puis **[[Ruin Runner]]**, et marquez en contrôlant. Vos réactions **[[Discipline]]** et **[[En Garde]]** gonflent un défenseur au bon moment et repiochent dans la foulée.
+**Milieu de partie.** Déployez vos grosses unités, **[[Rengar, Trophy Hunter]]**, qui arrive en Embuscade là où l'adversaire a des unités, puis **[[Ruin Runner]]**, et marquez en contrôlant. **[[Discipline]]** donne +2 Puissance à un défenseur au bon moment et fait piocher, **[[En Garde]]** ajoute +1, et +1 de plus si l'unité est seule.
 
-**Fin de partie.** Vous avez plus de cartes, des murs intuables et un terrain qui rapporte un point par tour. Il ne reste qu'à conserver le terrain : **[[Sabotage]]** retire la meilleure carte adverse, **[[Charm]]** déplace un attaquant gênant, **[[Defy]]** contre le sort qui renverserait tout.`,
+**Fin de partie.** Il reste à conserver le terrain : **[[Sabotage]]** retire de la main adverse une carte qui n'est pas une unité, **[[Charm]]** déplace une unité adverse, **[[Defy]]** contre le sort qui renverserait la partie.`,
   },
   "diana-scorn-of-the-moon": {
     slug: "diana-scorn-of-the-moon",
@@ -199,13 +199,13 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   },
   "vex-gloomist": {
     slug: "vex-gloomist",
-    bref: `Vex est un deck **Calme/Chaos** de **contrôle défensif** bâti sur les cartes cachées et l'attrition. Exigeant à piloter, c'est l'un des meilleurs decks de tenue du format pour qui aime frustrer l'adversaire.`,
-    gagne: `Le principe, c'est l'incertitude. **[[Tideturner]]**, **[[Evelynn, Entrancing]]** et **[[Edge of Night]]** se posent face cachée et se révèlent en réaction, au moment où ça fait le plus mal. L'adversaire ne sait jamais ce que vous tenez, donc il attaque mal. Autour, **[[Defy]]** contre ses sorts et **[[Discipline]]** renforce vos défenseurs. Vous ne perdez presque jamais un combat que vous avez décidé de gagner, et la partie s'étire à votre avantage.`,
-    plan: `**Début de partie.** Installez **[[Tideturner]]** et vos unités clés sur un champ de bataille, et gardez-les en vie à tout prix.
+    bref: `Vex est un deck **Calme/Chaos** de **contrôle défensif** bâti sur les cartes cachées et l'attrition. Sur Radiance, 75 joueurs classés sur 8 tournois, 9 dans les 10 % de tête : 12,0 % de conversion contre 10,0 % de moyenne, et un titre. C'est un deck **difficile** à piloter, pour qui aime frustrer l'adversaire.`,
+    gagne: `Le principe, c'est l'incertitude. **[[Tideturner]]**, **[[Evelynn, Entrancing]]** et **[[Edge of Night]]** se posent face cachée et se révèlent en réaction, au moment où ça fait le plus mal. L'adversaire ne sait jamais ce que vous tenez, donc il attaque mal. Autour, **[[Defy]]** contre ses sorts de 4 énergie ou moins et **[[Discipline]]** donne +2 Puissance à une unité en plein combat, en vous faisant piocher. La Légende pioche en plus à chaque champ de bataille tenu.`,
+    plan: `**Début de partie.** Posez **[[Scuttle Crab]]** et vos unités clés sur un champ de bataille, et gardez-les en vie à tout prix. Chaque tour tenu fait piocher la Légende.
 
-**Milieu de partie.** Posez vos cartes face cachée et protégez vos positions avec vos réactions Calme. Chaque combat retourné vous donne l'avantage.
+**Milieu de partie.** Posez vos cartes face cachée et protégez vos positions avec vos réactions Calme. **[[Vex, Apathetic]]** étourdit les unités que l'adversaire pose tant qu'elle est sur un champ de bataille, et **[[Bedeviling Stranger]]** renvoie une unité adverse en main quand le champ de bataille compte 4 unités ou plus.
 
-**Fin de partie.** L'adversaire s'est épuisé sur vos défenses. Vous prenez l'initiative au moment où il n'a plus de ressources et vous concluez.`,
+**Fin de partie.** **[[Zhonya's Hourglass]]** sauve une unité qui allait mourir, **[[Back Off]]** étourdit un attaquant et fait piocher. L'adversaire s'use sur vos défenses, et vous gardez l'initiative tant que votre position tient.`,
   },
   "viktor-herald-of-the-arcane": {
     slug: "viktor-herald-of-the-arcane",
@@ -343,15 +343,15 @@ La carte centrale est **[[Ruin Runner]]** : une unité à 6 d'énergie et 5 de P
   // cites viennent du comptage, pas d'une impression.
   "kaisa-daughter-of-the-void": {
     slug: "kaisa-daughter-of-the-void",
-    bref: `Kai'Sa est un deck **Furie/Esprit** de **tempo par les sorts**, très joué en Chine : 498 joueurs classés en Vendetta, 42 dans les 10 % de tête (8,4 %) et deux titres. Si vous ne sais pas quoi jouer, c'est le choix par défaut du format, et ce n'est pas un hasard.`,
+    bref: `Kai'Sa est un deck **Furie/Esprit** de **tempo par les sorts**. Sur Radiance, 120 joueurs classés sur 9 tournois, 15 dans les 10 % de tête : 12,5 % de conversion contre 10,0 % de moyenne, mais aucun titre.`,
     gagne: `Sa capacité tient en une ligne : épuise-la et vous obtenez une rune, mais uniquement pour lancer un sort. Autrement dit, vous avez chaque tour un sort presque gratuit de plus que l'adversaire. Tout le deck est bâti là-dessus.
 
 Le résultat, c'est un deck qui répond à tout. **[[Falling Star]]** inflige 3 dégâts deux fois, de quoi nettoyer deux petites unités ou en abattre une grosse. **[[Hextech Ray]]** frappe à distance sur un champ de bataille. **[[Stupefy]]** affaiblit et repioche pour une énergie. Et quand vous voulez reprendre la main d'un coup, **[[Thousand-Tailed Watcher]]** arrive avec 7 de Puissance et retire 3 à toutes les unités adverses.`,
     plan: `**Début de partie.** Ne vous précipitez pas. Posez **[[Watchful Sentry]]** ou **[[Lecturing Yordle]]**, qui piochent en mourant ou en arrivant, et laissez l'adversaire s'engager le premier.
 
-**Milieu de partie.** C'est là que vous prenez le dessus. Chaque combat où vous lancez un sort de plus se gagne, et votre capacité vous en offre un. **[[Retreat]]** sauve une unité condamnée et vous rend une rune au passage.
+**Milieu de partie.** C'est là que vous prenez le dessus. Chaque combat où vous lancez un sort de plus se gagne, et votre capacité vous en offre un. **[[Smoke Screen]]** et **[[Stupefy]]**, jouables en Réaction, affaiblissent l'unité adverse au bon moment, et **[[Brynhir Thundersong]]** empêche l'adversaire de jouer des cartes le tour où elle arrive.
 
-**Fin de partie.** **[[Thousand-Tailed Watcher]]** remet le plateau à plat, **[[Darius, Trifarian]]** se prépare tout seul dès que vous jouez votre deuxième carte du tour. Vous concluez avec une avance en cartes que l'adversaire n'a jamais comblée.`,
+**Fin de partie.** **[[Thousand-Tailed Watcher]]** remet le plateau à plat, **[[Time Warp]]** vous donne un tour de plus pour 10 énergie. Sur Radiance, ce plan n'a pas décroché de titre : la meilleure place est une quatrième.`,
   },
   "annie-dark-child": {
     slug: "annie-dark-child",

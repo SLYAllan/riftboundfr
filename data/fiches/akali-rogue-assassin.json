@@ -10,20 +10,20 @@
   "archetype": "Mouvement et retrait ciblé",
   "legendAbility": "Épuisez Akali pendant votre tour pour ramener une de vos unités engagées à la base, et la préparer si elle est amplifiée. On retire une unité du combat au dernier moment.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab et Lonely Poro piochent en occupant le terrain. Shuriken Flip inflige 2 dégâts et déplace une unité pour une énergie.",
-    "midGame": "Stellacorn Herder pioche à chaque déplacement. La Légende sort l'unité du combat perdu avant qu'il ne se résolve.",
-    "lateGame": "Akali, Silent ne peut pas être choisie par les sorts adverses tant qu'elle n'est pas en combat, et gagne +2 Puissance en arrivant.",
-    "winCondition": "Marquer avec des unités que l'adversaire n'arrive ni à cibler ni à coincer."
+    "earlyGame": "Scuttle Crab pioche en arrivant et, avec 0 Puissance, peut conquérir et tenir un champ de bataille. Shuriken Flip, dans toutes les listes, inflige 2 dégâts à une unité adverse sur un champ de bataille et déplace une de vos unités, pour une énergie.",
+    "midGame": "Stellacorn Herder pioche à chaque déplacement. Akali, Deadly Weapon inflige 1 dégât en se déplaçant, 2 si elle est amplifiée. La Légende sort l'unité du combat perdu avant qu'il ne se résolve.",
+    "lateGame": "Falling Star inflige 3 dégâts deux fois. Blitzcrank, Impassive attire une unité adverse sur son champ de bataille, et Astral Heron baisse le coût de la carte suivante.",
+    "winCondition": "Déplacer ses unités pour piocher et frapper, et ne perdre aucune unité dans un combat perdu."
   },
   "strengths": [
-    "Cinq cartes au-dessus de 90 %, dont Defy et Shuriken Flip dans toutes les listes",
-    "Akali, Silent échappe aux sorts tant qu'elle reste hors combat",
-    "Vue aux vingt et un tournois du set : la Légende plaît, même sans résultats"
+    "61 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 11,5 % de conversion contre 10,0 % de moyenne",
+    "Sept cartes dans toutes les listes, dont Defy, Shuriken Flip et Falling Star",
+    "Akali, Deadly Weapon dans toutes les listes : chaque déplacement inflige des dégâts"
   ],
   "weaknesses": [
-    "107 listes, vingt et un tournois, un seul Top 8 : 0,9 % de conversion contre 6,9 % pour le champ",
-    "L'écart avec la moyenne du champ est net au calcul (p = 0,010), ce n'est pas de la malchance",
-    "Retirer ses unités du combat ne marque aucun point : le deck se défend bien et gagne mal"
+    "Aucun titre sur 9 tournois : la meilleure place est une troisième, à Sacramento",
+    "61 joueurs classés seulement : l'échantillon reste petit",
+    "Retirer ses unités du combat ne marque aucun point : le deck demande plusieurs tours de déplacements avant de conclure"
   ],
   "difficulty": "Difficile",
   "beginnerFriendly": false,

@@ -4,41 +4,41 @@
     "archetype": "Contrôle de terrain, une seule unité qui tient",
     "legendAbility": "Tant qu'une de vos unités défend seule, elle gagne +2 Puissance. Toute la construction sert ce bonus : une unité par champ de bataille, jamais deux.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab et Lonely Poro, à 2 énergie, dans 94 % et 97 % des listes, occupent un champ de bataille en piochant. Discipline garde la main ouverte.",
-      "midGame": "Master Yi, Tempered et Rengar, Trophy Hunter prennent un deuxième champ de bataille. Punch First et En Garde gagnent le combat pour une énergie.",
-      "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass encaisse le premier retrait.",
-      "winCondition": "Tenir deux champs de bataille avec une unité chacun et marquer tour après tour."
+      "earlyGame": "Lonely Poro et Scuttle Crab, à 2 énergie, dans 97 % et 91 % des listes, occupent un champ de bataille. Le Crabe pioche en arrivant, Lonely Poro pioche si elle meurt seule. Discipline, dans toutes les listes, garde la main ouverte.",
+      "midGame": "Master Yi, Tempered, dans 99 % des listes, gagne de l'XP à chaque conquête ou contrôle. Rengar, Trophy Hunter, en Embuscade, se pose sur un champ de bataille où l'adversaire a des unités. Punch First donne +5 Puissance pour une énergie.",
+      "lateGame": "Ruin Runner, que les sorts adverses ne peuvent pas choisir, tient seul sous le +2. Zhonya's Hourglass, dans 96 % des listes, encaisse la première mort.",
+      "winCondition": "Tenir des champs de bataille avec une seule unité sur chacun, et marquer tour après tour."
     },
     "strengths": [
-      "Huit cartes dans plus de 95 % des listes : la construction ne varie presque pas d'un joueur à l'autre",
-      "Deuxième Légende du format en volume, 223 listes publiées sur 50 tournois, et l'un des cinq écarts au-dessus de la moyenne qui tiennent le test : 13,8 % de conversion contre 9,9 %",
-      "Sept titres en 50 tournois",
-      "Zhonya's Hourglass, présent dans 99 % des listes, annule le premier retrait adverse"
+      "74 joueurs classés sur 9 tournois, 8 dans les 10 % de tête : 10,8 % de conversion contre 10,0 % de moyenne, et un titre",
+      "Dix cartes dans 90 % des listes ou plus : la construction varie peu d'un joueur à l'autre",
+      "Zhonya's Hourglass, dans 96 % des listes, sauve une unité qui allait mourir",
+      "Ruin Runner, dans 84 % des listes, échappe aux sorts et aux capacités adverses"
     ],
     "weaknesses": [
-      "Tout repose sur une unité isolée : deux retraits d'affilée cassent le plan",
-      "Peu de pioche en dehors de Discipline et Scuttle Crab, la main se vide vite",
-      "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
+      "Tout repose sur une unité isolée : sans elle, la Légende ne donne plus rien",
+      "Peu de pioche : Discipline, Scuttle Crab, et Lonely Poro qui ne pioche que si elle meurt seule",
+      "Un seul titre sur 9 tournois, à peine au-dessus de la moyenne du format : 74 joueurs classés ne suffisent pas à trancher"
     ]
   },
   "kaisa-daughter-of-the-void.json": {
     "archetype": "Sorts et tempo, pioche massive",
     "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
     "gameplan": {
-      "earlyGame": "Watchful Sentry et Lecturing Yordle piochent en arrivant ou en mourant. Hextech Ray nettoie une petite unité pour une énergie.",
-      "midGame": "Falling Star et Temporal Breach ouvrent le combat. Brynhir Thundersong, dans toutes les listes, coupe le tour de l'adversaire quand elle arrive.",
-      "lateGame": "Thousand-Tailed Watcher baisse toutes les unités adverses de 3 Puissance. Progress Day pioche 4, Time Warp rejoue un tour entier.",
+      "earlyGame": "Watchful Sentry pioche en mourant, Lecturing Yordle en arrivant, et son Tank protège le reste. Hextech Ray inflige 3 dégâts à une unité sur un champ de bataille pour une énergie.",
+      "midGame": "Falling Star, dans toutes les listes, inflige 3 dégâts deux fois. Stupefy et Smoke Screen, en Réaction, affaiblissent l'unité adverse en plein combat. Brynhir Thundersong, dans 98 % des listes, empêche l'adversaire de jouer des cartes le tour où elle arrive.",
+      "lateGame": "Thousand-Tailed Watcher, 7 énergie et 7 Puissance, retire 3 Puissance à toutes les unités adverses pour le tour. Time Warp, à 10 énergie, offre un tour de plus.",
       "winCondition": "Enchaîner les tours et les sorts jusqu'à ce que l'adversaire n'ait plus de réponse."
     },
     "strengths": [
-      "Sixième deck du format en listes publiées : 451 sur 50 tournois",
-      "Sept cartes au-dessus de 95 %, dont Thousand-Tailed Watcher, Stupefy et Falling Star",
+      "120 joueurs classés sur 9 tournois, 15 dans les 10 % de tête : 12,5 % de conversion contre 10,0 % de moyenne",
+      "Huit cartes à 97 % ou plus, dont Stupefy et Falling Star dans toutes les listes",
       "Time Warp dans 97 % des listes : un tour de plus décide une partie serrée",
       "La Légende paie les sorts sans toucher aux runes du tour"
     ],
     "weaknesses": [
-      "Sa conversion est sous la moyenne du format, 8,4 % contre 9,9 %, malgré deux titres",
-      "Le moteur coûte cher, 7 énergie pour Thousand-Tailed Watcher et 10 pour Time Warp",
+      "Aucun titre sur 9 tournois : la meilleure place est une quatrième, obtenue à quatre reprises",
+      "Le moteur coûte cher, 6 énergie pour Brynhir Thundersong, 7 pour Thousand-Tailed Watcher et 10 pour Time Warp",
       "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
     ]
   },
@@ -296,19 +296,20 @@
     "archetype": "Contrôle d'un seul champ de bataille",
     "legendAbility": "Quand vous ou un allié contrôlez un champ de bataille, épuisez Vex pour piocher. Tenir rapporte une carte par tour.",
     "gameplan": {
-      "earlyGame": "Mutated Mouser et Scuttle Crab tiennent une position à moindres frais. Defy et Discipline gardent la réponse ouverte.",
-      "midGame": "Vex, Apathetic étourdit chaque unité posée en face et l'empêche de bouger. Boots of Swiftness rendent la vôtre mobile.",
+      "earlyGame": "Scuttle Crab pioche en arrivant et, avec 0 Puissance, peut conquérir et tenir un champ de bataille à moindres frais. Defy et Discipline gardent la réponse ouverte.",
+      "midGame": "Vex, Apathetic, dans toutes les listes, étourdit chaque unité que l'adversaire pose tant qu'elle est sur un champ de bataille, et l'empêche de la déplacer. Bedeviling Stranger et Tideturner attendent face cachée.",
       "lateGame": "Zhonya's Hourglass et Back Off protègent la position pendant que la Légende pioche à chaque tour tenu.",
       "winCondition": "Tenir un champ de bataille, piocher chaque tour, et laisser l'adversaire s'user dessus."
     },
     "strengths": [
-      "Defy dans toutes les listes, Discipline et Switcheroo dans 98 %",
-      "Vex, Apathetic dans toutes les listes : elle bloque la pose d'unités adverses",
-      "Startipped Peak dans 56 % des listes, un terrain fait pour tenir"
+      "75 joueurs classés sur 8 tournois, 9 dans les 10 % de tête : 12,0 % de conversion contre 10,0 % de moyenne, et un titre",
+      "Defy dans toutes les listes, Switcheroo dans 98 %, Discipline et Bedeviling Stranger dans 94 %",
+      "Vex, Apathetic dans toutes les listes : elle étourdit les unités que l'adversaire pose",
+      "Startipped Peak dans 47 % des listes : tenir ce terrain canalise une rune épuisée"
     ],
     "weaknesses": [
-      "Un seul titre en 46 tournois",
-      "Partout sans dominer : 2,8 % du champ, un seul titre",
+      "Un seul titre sur 8 tournois, pour 75 joueurs classés : trop peu pour tirer une conclusion nette",
+      "Difficile à jouer : beaucoup de cartes cachées ou en Réaction, à poser au bon moment",
       "Sans position tenue, la Légende ne pioche plus rien"
     ]
   },
@@ -568,6 +569,47 @@
     ],
     "weaknesses": [
       "11 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
+    ]
+  },
+  "akali-rogue-assassin.json": {
+    "archetype": "Mouvement et retrait ciblé",
+    "legendAbility": "Épuisez Akali pendant votre tour pour ramener une de vos unités engagées à la base, et la préparer si elle est amplifiée. On retire une unité du combat au dernier moment.",
+    "gameplan": {
+      "earlyGame": "Scuttle Crab pioche en arrivant et, avec 0 Puissance, peut conquérir et tenir un champ de bataille. Shuriken Flip, dans toutes les listes, inflige 2 dégâts à une unité adverse sur un champ de bataille et déplace une de vos unités, pour une énergie.",
+      "midGame": "Stellacorn Herder pioche à chaque déplacement. Akali, Deadly Weapon inflige 1 dégât en se déplaçant, 2 si elle est amplifiée. La Légende sort l'unité du combat perdu avant qu'il ne se résolve.",
+      "lateGame": "Falling Star inflige 3 dégâts deux fois. Blitzcrank, Impassive attire une unité adverse sur son champ de bataille, et Astral Heron baisse le coût de la carte suivante.",
+      "winCondition": "Déplacer ses unités pour piocher et frapper, et ne perdre aucune unité dans un combat perdu."
+    },
+    "strengths": [
+      "61 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 11,5 % de conversion contre 10,0 % de moyenne",
+      "Sept cartes dans toutes les listes, dont Defy, Shuriken Flip et Falling Star",
+      "Akali, Deadly Weapon dans toutes les listes : chaque déplacement inflige des dégâts"
+    ],
+    "weaknesses": [
+      "Aucun titre sur 9 tournois : la meilleure place est une troisième, à Sacramento",
+      "61 joueurs classés seulement : l'échantillon reste petit",
+      "Retirer ses unités du combat ne marque aucun point : le deck demande plusieurs tours de déplacements avant de conclure"
+    ]
+  },
+  "kennen-heart-of-the-tempest.json": {
+    "archetype": "Défausse : jouer ses cartes ailleurs que depuis la main",
+    "legendAbility": "Chaque carte jouée depuis autre chose que votre main amplifie Kennen. Désamplifiez-le et épuisez-le pour donner Assaut 2 à une unité le temps du tour.",
+    "gameplan": {
+      "earlyGame": "Lightning Rush, dans toutes les listes, regarde trois cartes, en pioche une et envoie les deux autres dans la défausse. Le deck se remplit exprès. Trifarian Captain, aussi dans toutes les listes, va chercher une petite unité ou un équipement.",
+      "midGame": "Lightning Rush se rejoue depuis la défausse grâce à Flux, et chaque carte jouée hors de la main amplifie la Légende. Rhasa the Sunderer, à 10 énergie de base, descend d'une énergie par carte dans la défausse.",
+      "lateGame": "Fizz, Trickster rejoue un sort de la défausse en arrivant. Kennen, Storm of Shuriken rend un sort de la défausse rejouable après une conquête.",
+      "winCondition": "Une défausse pleine qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
+    },
+    "strengths": [
+      "145 joueurs classés sur 9 tournois, 23 dans les 10 % de tête : 15,9 % de conversion contre 10,0 % de moyenne",
+      "Lightning Rush et Trifarian Captain dans toutes les listes : le deck choisit ce qu'il pioche et ce qu'il envoie dans la défausse",
+      "Minefield et Zaun Warrens dans 93 % des listes : les terrains remplissent la défausse et filtrent la main, ils font partie du plan",
+      "Gust, Star-Crossed et Switcheroo, peu chers, répondent en plein combat"
+    ],
+    "weaknesses": [
+      "Aucun titre sur 9 tournois : la meilleure place est une deuxième à Suzhou",
+      "Remplir la défausse prend des tours, les départs très rapides le prennent de vitesse",
+      "Sans carte jouée hors de la main, la Légende reste désamplifiée et ne donne aucun bonus"
     ]
   }
 }
