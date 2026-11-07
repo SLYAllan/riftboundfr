@@ -30,27 +30,7 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Elder Dragon",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Dazzling Aurora",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Catalyst of Aeons",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Clairvoyance",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -60,84 +40,104 @@
       "noyau": true
     },
     {
-      "name": "Gutter Palace",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Flurry of Blades",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "name": "Elder Dragon",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dredge Up",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Clairvoyance",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Gutter Palace",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Mobilize",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Sprite Burst",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "name": "Sabotage",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Promising Future",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Burst",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Deadly Flourish",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rocket Barrage",
-      "role": "Souple, 52 % des listes, 1,5 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Souple, 30 % des listes, 2 exemplaires",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Jayce, Brilliant Inventor": {
-      "usage": "83 %",
+      "usage": "78 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Sigil of the Storm (100 %)",
-    "Forgotten Monument (87 %)",
-    "Dragon Roost (65 %)"
+    "Forgotten Monument (81 %)",
+    "Dragon Roost (69 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 29,
-    "coupe10": 2,
+    "joueursClasses": 38,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "6.9 %",
-    "tournois": 6,
-    "listesPubliees": 23,
+    "conversion": "7.9 %",
+    "tournois": 9,
+    "listesPubliees": 32,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -150,6 +150,11 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "13th",
+        "player": "淘金巢.羽光.从没觉得玩符文战场开心过",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+      },
+      {
         "placement": "18th",
         "player": "团团团团团团长",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
@@ -158,15 +163,10 @@
         "placement": "20th",
         "player": "WWX",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "25th",
-        "player": "神掏",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 29 joueurs classés, 6 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 38 joueurs classés, 9 tournois, dont 32 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

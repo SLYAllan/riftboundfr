@@ -41,12 +41,17 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -55,33 +60,33 @@
       "noyau": false
     },
     {
-      "name": "Discipline",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Find Your Center",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Standard, 76 % des listes, 1 exemplaire",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Standard, 77 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Steel Paws",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -90,18 +95,18 @@
       "noyau": false
     },
     {
-      "name": "Steel Paws",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "name": "Retreat",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Retreat",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "name": "Life from Stone",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -112,19 +117,29 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (88 %)",
-    "The Papertree (42 %)",
-    "Vilemaw's Lair (36 %)",
-    "Ruined Monastery (33 %)"
+    "Rockfall Path (87 %)",
+    "The Papertree (36 %)",
+    "Ruined Monastery (33 %)",
+    "Vilemaw's Lair (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 37,
-    "coupe10": 2,
+    "joueursClasses": 43,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "5.4 %",
-    "tournois": 6,
-    "listesPubliees": 33,
+    "conversion": "7 %",
+    "tournois": 8,
+    "listesPubliees": 39,
     "bestPlacements": [
+      {
+        "placement": "7th",
+        "player": "PLRI.伟大封印",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "21th",
+        "player": "酷猫-的狗",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
       {
         "placement": "27th",
         "player": "Azucar",
@@ -139,20 +154,10 @@
         "placement": "36th",
         "player": "Jovan",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "44th",
-        "player": "鸽子",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "48th",
-        "player": "DWT-老默（恩师杰哥）",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 37 joueurs classés, 6 tournois, dont 33 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 43 joueurs classés, 8 tournois, dont 39 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

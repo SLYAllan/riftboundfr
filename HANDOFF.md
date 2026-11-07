@@ -1,5 +1,30 @@
 # HANDOFF — état des lieux
 
+## 7 novembre 2026 — hexgate 295 à 297, trois City Challenge S5 de plus
+
+**Relevé** (`/api/tournaments?season=all`, 177 tournois, rien après 297) : entrent
+295 Shanghai (1er novembre), 296 Pékin (31 octobre) et 297 Guangzhou (1er novembre),
+128 joueurs chacun. 294 Xi'an (72) reste dehors. 381 listes publiées, 365 complètes,
+**355 converties et seedées en LOCAL** (32 828 decks). Écartées : 8 Champions ambigus,
+5 listes qui jouent une carte `T1S` (Ambessa et Xin Zhao, sans nom anglais).
+Validateur : 31 388 vérifiées, 0 MISMATCH. 18 Champions sans titre ajoutés à
+`hexgate-cartes-sans-titre.json`, tous prouvés par le script.
+
+`maj:stats` : Radiance compte 1 786 joueurs classés sur 9 tournois. Les commentaires
+de la tier list Radiance sont réécrits sur ces chiffres, **lettres inchangées** ; trois
+lectures attendent Allan : Diana tient maintenant le test au-dessus (p = 0,04, en A),
+Master Yi, Wuju Bladesman monte à 10,8 % (en C), Viktor passe le seuil (19 joueurs)
+et n'a pas de lettre. La Globale garde 44 effectifs périmés (42 avant l'import).
+
+**Piège de l'environnement** : la session Claude Code de ce jour portait dans son
+environnement `DATABASE_URL` (hôte interne Coolify), `SESSION_SECRET`,
+`ADMIN_PASSWORD`, `CARDNEXUS_API_KEY`… Elles passent AVANT `--env-file=.env`, donc
+les scripts visaient la prod (injoignable d'ici, rien n'a été écrit). Avant un script
+local, contrôler `echo $DATABASE_URL` et lancer avec `env -u DATABASE_URL …`.
+
+**Aucune Légende nouvelle de Radiance n'a de fiche** dans `data/fiches/` (Riven,
+272 joueurs, la plus jouée du set, n'en a pas).
+
 ## 2 novembre 2026 — lien d'achat sur les pages de Légende
 
 **Fait, en ligne depuis le Deploy du 2 novembre.** L'encart de la page de deck (`DeckCoveragePanel` :

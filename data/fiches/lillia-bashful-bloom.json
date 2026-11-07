@@ -28,77 +28,82 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sprite Fountain",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Unchecked Power",
-      "role": "Cœur du deck, 93 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 94 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
-      "name": "Mask of Foresight",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Smoke and Mirrors",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "En Garde",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "name": "Mask of Foresight",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Lonely Poro",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -114,12 +119,12 @@
     "Le premier Esprit coûte 4 énergie, un tour trop lent contre les départs rapides"
   ],
   "competitiveResults": {
-    "joueursClasses": 47,
+    "joueursClasses": 52,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "6.4 %",
-    "tournois": 6,
-    "listesPubliees": 27,
+    "conversion": "5.8 %",
+    "tournois": 9,
+    "listesPubliees": 32,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -132,6 +137,11 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "16th",
+        "player": "逆转大鱼",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
+      {
         "placement": "24th",
         "player": "P9.爱喝咖啡的狼",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
@@ -139,11 +149,6 @@
       {
         "placement": "25th",
         "player": "CBL wags",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "28th",
-        "player": "Mimikyu",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
@@ -173,11 +178,11 @@
     }
   },
   "topBattlefields": [
-    "Seat of Power (96 %)",
-    "Dusk Rose Lab (93 %)",
-    "Black Flame Altar (56 %)"
+    "Dusk Rose Lab (94 %)",
+    "Seat of Power (91 %)",
+    "Black Flame Altar (50 %)"
   ],
-  "dataSource": "Classement complet des tournois : 47 joueurs classés, 6 tournois, dont 27 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 52 joueurs classés, 9 tournois, dont 32 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

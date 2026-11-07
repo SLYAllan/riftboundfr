@@ -78,7 +78,7 @@
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -96,17 +96,22 @@
     "Le bonus de la Légende ne dure qu'un tour et ne sauve pas d'un retrait"
   ],
   "competitiveResults": {
-    "joueursClasses": 53,
-    "coupe10": 5,
+    "joueursClasses": 60,
+    "coupe10": 6,
     "titres": 0,
-    "conversion": "9.4 %",
-    "tournois": 6,
-    "listesPubliees": 45,
+    "conversion": "10 %",
+    "tournois": 9,
+    "listesPubliees": 49,
     "bestPlacements": [
       {
         "placement": "3rd",
         "player": "福州橙逯·漓泱",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "3rd",
+        "player": "古方.MH",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
         "placement": "8th",
@@ -119,14 +124,9 @@
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       },
       {
-        "placement": "25th",
-        "player": "徐大王文吱吱最强",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "29th",
-        "player": "约德尔专爱",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+        "placement": "24th",
+        "player": "旋木时光.三哥",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       }
     ]
   },
@@ -158,7 +158,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
@@ -166,20 +166,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "44 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     },
     "Graves, Blasting Through": {
-      "usage": "38 %",
+      "usage": "35 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Emperor's Dais (98 %)",
     "Star Spring (96 %)",
-    "Seat of Power (84 %)"
+    "Seat of Power (86 %)"
   ],
-  "dataSource": "Classement complet des tournois : 53 joueurs classés, 6 tournois, dont 45 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 60 joueurs classés, 9 tournois, dont 49 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

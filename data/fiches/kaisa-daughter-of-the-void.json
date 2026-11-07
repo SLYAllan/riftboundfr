@@ -19,18 +19,8 @@
       "noyau": true
     },
     {
-      "name": "Brynhir Thundersong",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Thousand-Tailed Watcher",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Time Warp",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -39,13 +29,23 @@
       "noyau": true
     },
     {
-      "name": "Bilgewater Tracker",
+      "name": "Brynhir Thundersong",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Bilgewater Tracker",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Temporal Breach",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Time Warp",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -54,24 +54,24 @@
       "noyau": true
     },
     {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "name": "Lecturing Yordle",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Lecturing Yordle",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Hextech Ray",
-      "role": "Cœur du deck, 90 % des listes, 2,5 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Smoke Screen",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "The Empyrean",
@@ -80,27 +80,32 @@
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lost to the Sands",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 84,
-    "coupe10": 12,
+    "joueursClasses": 120,
+    "coupe10": 15,
     "titres": 0,
-    "conversion": "14.3 %",
-    "tournois": 6,
-    "listesPubliees": 84,
+    "conversion": "12.5 %",
+    "tournois": 9,
+    "listesPubliees": 119,
     "bestPlacements": [
       {
         "placement": "4th",
         "player": "福州橙禄.蓝",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "4th",
+        "player": "XXT.BING",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
         "placement": "4th",
@@ -113,14 +118,9 @@
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "6th",
-        "player": "腾飞的巨龙",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "7th",
-        "player": "lilpick拨片",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+        "placement": "5th",
+        "player": "白鼠",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       }
     ]
   },
@@ -132,11 +132,11 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (100 %)",
+    "Rockfall Path (99 %)",
     "Frozen Fortress (95 %)",
     "Void Gate (92 %)"
   ],
-  "dataSource": "Classement complet des tournois : 84 joueurs classés, 6 tournois, dont 84 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 120 joueurs classés, 9 tournois, dont 119 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

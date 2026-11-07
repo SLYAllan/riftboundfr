@@ -68,22 +68,22 @@
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2,5 exemplaires",
       "noyau": true
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -103,12 +103,12 @@
     "Le retrait d'Équipement coupe le moteur d'un coup"
   ],
   "competitiveResults": {
-    "joueursClasses": 25,
+    "joueursClasses": 30,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "4 %",
-    "tournois": 6,
-    "listesPubliees": 23,
+    "conversion": "3.3 %",
+    "tournois": 8,
+    "listesPubliees": 28,
     "bestPlacements": [
       {
         "placement": "19th",
@@ -160,17 +160,17 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "70 %",
+      "usage": "71 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Hall of Legends (100 %)",
-    "Trifarian War Camp (91 %)",
-    "Seat of Power (48 %)",
+    "Trifarian War Camp (93 %)",
+    "Seat of Power (46 %)",
     "Ornn's Forge (43 %)"
   ],
-  "dataSource": "Classement complet des tournois : 25 joueurs classés, 6 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 30 joueurs classés, 8 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

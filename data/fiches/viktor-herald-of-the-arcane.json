@@ -38,84 +38,87 @@
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shadow's Call",
-      "role": "Standard, 71 % des listes, 2,5 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Standard, 71 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Concert Poster",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Concert Poster",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Blood Money",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "B.F. Sword",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Blood Money",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "86 %",
+      "usage": "89 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Vi, Peacekeeper": {
-      "usage": "43 %",
-      "role": "2 exemplaires en moyenne"
+    "Kennen, Keeper of Balance": {
+      "usage": "47 %",
+      "role": "1 exemplaire en moyenne"
     },
     "Xin Zhao, Vigilant": {
-      "usage": "36 %",
+      "usage": "37 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "37 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (71 %)",
-    "Rockfall Path (64 %)",
-    "Ravenbloom Conservatory (43 %)",
-    "Void Gate (36 %)"
+    "Forbidding Waste (79 %)",
+    "Rockfall Path (74 %)",
+    "Ravenbloom Conservatory (53 %)"
   ],
   "strengths": [
     "Cinq cartes au-dessus de 90 %, toutes du retrait ou de la pioche",
@@ -129,12 +132,12 @@
     "Sans menace propre, les parties longues se terminent à égalité de terrain"
   ],
   "competitiveResults": {
-    "joueursClasses": 14,
+    "joueursClasses": 19,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "7.1 %",
-    "tournois": 5,
-    "listesPubliees": 14,
+    "conversion": "5.3 %",
+    "tournois": 7,
+    "listesPubliees": 19,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -147,26 +150,26 @@
         "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
+        "placement": "21th",
+        "player": "花",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "26th",
+        "player": "ada",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
         "placement": "27th",
         "player": "树懒·苍天",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "42th",
-        "player": "卓卡-星沉屿",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "62th",
-        "player": "不吃蔑视",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 14 joueurs classés, 5 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 7 tournois, dont 19 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

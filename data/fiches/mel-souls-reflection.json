@@ -35,129 +35,139 @@
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tideturner",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Dredge Up",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Switcheroo",
-      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "name": "Star-Crossed",
+      "role": "Standard, 80 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "name": "Ravenbloom Student",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Applied Researchers",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Smoke Screen",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
+    "Vex, Apathetic": {
+      "usage": "70 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Hwei, Brooding Painter": {
-      "usage": "69 %",
+      "usage": "60 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Mel, Defiant Soul": {
+      "usage": "60 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Fizz, Trickster": {
-      "usage": "62 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Mel, Newly Awakened": {
-      "usage": "52 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Mel, Defiant Soul": {
-      "usage": "48 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Vex, Apathetic": {
-      "usage": "38 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (41 %)",
-    "Threshold of the Gray (41 %)",
-    "Targon's Peak (41 %)",
-    "Rockfall Path (31 %)"
+    "Frozen Fortress (60 %)",
+    "Rockfall Path (40 %)",
+    "Targon's Peak (40 %)",
+    "Threshold of the Gray (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 234,
-    "coupe10": 7,
+    "joueursClasses": 16,
+    "coupe10": 0,
     "titres": 0,
-    "conversion": "3 %",
-    "tournois": 38,
-    "listesPubliees": 29,
+    "conversion": "0 %",
+    "tournois": 4,
+    "listesPubliees": 10,
     "bestPlacements": [
       {
-        "placement": "10th",
-        "player": "從龍.疯狐狸",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+        "placement": "40th",
+        "player": "卓卡-777🤪",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "10th",
-        "player": "3+X END.明涌",
-        "tournament": "S4 Shenzhen City Challenge (2026-08-08)"
+        "placement": "55th",
+        "player": "seas0n",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "14th",
-        "player": "特特丨自在游戏屋",
-        "tournament": "S4 Guangzhou City Challenge (2026-09-27)"
+        "placement": "55th",
+        "player": "No.Soul",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
-        "placement": "18th",
-        "player": "TwistedTCG",
-        "tournament": "Riftbound Showdown Ottawa (2026-08-08)"
+        "placement": "56th",
+        "player": "xwh",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "19th",
-        "player": "CTG Alanzq",
-        "tournament": "Barcelona Regional Qualifier"
+        "placement": "75th",
+        "player": "jiminhavemykids",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 234 joueurs classés, 38 tournois, dont 29 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 16 joueurs classés, 4 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Radiance"
 }

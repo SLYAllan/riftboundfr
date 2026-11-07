@@ -17,13 +17,13 @@
   },
   "keyCards": [
     {
-      "name": "Riposte",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "name": "Riposte",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -32,68 +32,58 @@
       "noyau": true
     },
     {
-      "name": "Shepherd's Heirloom",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "name": "Pit Rookie",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Pit Rookie",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "name": "Harnessed Dragon",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pillaged Armory",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Salvage",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Sacrifice",
-      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Call to Glory",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Elder Dragon",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sea Monkey",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rift Herald",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 50 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Grim Resolve",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "name": "Rift Herald",
+      "role": "Souple, 33 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Portable Portal",
+      "role": "Souple, 33 % des listes, 1,5 exemplaire",
       "noyau": false
     }
   ],
@@ -109,37 +99,37 @@
     "Cœur court, huit cartes au-dessus de 60 % : le reste de la liste change à chaque pilote"
   ],
   "competitiveResults": {
-    "joueursClasses": 575,
-    "coupe10": 52,
-    "titres": 3,
-    "conversion": "9 %",
-    "tournois": 50,
-    "listesPubliees": 145,
+    "joueursClasses": 13,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 9,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": "ARBD-Nolan",
-        "tournament": "S4 Guangzhou City Challenge (2026-10-01)"
+        "placement": "13th",
+        "player": "Step.NN",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "1st",
-        "player": "小橘派派",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "28th",
+        "player": "遁去的一",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
-        "placement": "1st",
-        "player": "花生桌游仙林店",
-        "tournament": "S4 Nanjing City Challenge (2026-09-26)"
+        "placement": "29th",
+        "player": "QC 81",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "2nd",
-        "player": "徐大王文吱吱最强",
-        "tournament": "S4 Suzhou City Challenge (2026-08-23)"
+        "placement": "72th",
+        "player": "QC-小何",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "3rd",
-        "player": "鬼鬼@帝防士",
-        "tournament": "Dongguan Manbo Cup (2026-08-08)"
+        "placement": "77th",
+        "player": "甲甲",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
@@ -162,36 +152,32 @@
     "note": "Veut franchir le seuil mighty via ÉQUIPEMENT (deflect/ganking/shield), offense > défense. Faiblesse : la pioche."
   },
   "champions": {
+    "Fiora, Victorious": {
+      "usage": "92 %",
+      "role": "1 exemplaire en moyenne"
+    },
     "Rengar, Trophy Hunter": {
-      "usage": "89 %",
+      "usage": "83 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Fiora, Victorious": {
-      "usage": "87 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Poppy, Paragon": {
-      "usage": "64 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Vi, Peacekeeper": {
-      "usage": "61 %",
+    "Kayle, Justified": {
+      "usage": "58 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "57 %",
+      "usage": "58 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Kayle, Justified": {
-      "usage": "44 %",
-      "role": "3 exemplaires en moyenne"
+    "Vi, Peacekeeper": {
+      "usage": "58 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (96 %)",
-    "Monastery of Hirana (31 %)"
+    "Sunken Temple (92 %)",
+    "Monastery of Hirana (42 %)"
   ],
-  "dataSource": "Classement complet des tournois : 575 joueurs classés, 50 tournois, dont 145 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 13 joueurs classés, 9 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Radiance"
 }

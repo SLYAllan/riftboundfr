@@ -27,13 +27,18 @@
       "noyau": true
     },
     {
-      "name": "Discipline",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "name": "Bedeviling Stranger",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Bedeviling Stranger",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "name": "Discipline",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Boots of Swiftness",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -42,53 +47,48 @@
       "noyau": true
     },
     {
-      "name": "Boots of Swiftness",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rebuke",
-      "role": "Standard, 72 % des listes, 1 exemplaire",
+      "role": "Standard, 89 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tornado Warrior",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tideturner",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "name": "Back Off",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -98,7 +98,17 @@
     },
     {
       "name": "Charm",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -113,12 +123,12 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 55,
-    "coupe10": 8,
+    "joueursClasses": 75,
+    "coupe10": 9,
     "titres": 1,
-    "conversion": "14.5 %",
-    "tournois": 5,
-    "listesPubliees": 46,
+    "conversion": "12 %",
+    "tournois": 8,
+    "listesPubliees": 66,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -137,13 +147,13 @@
       },
       {
         "placement": "8th",
-        "player": "常磐星海·巽岐",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+        "player": "猫岛巡礼.Qve.",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
-        "placement": "12th",
-        "player": "Mord",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+        "placement": "8th",
+        "player": "常磐星海·巽岐",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
@@ -170,25 +180,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "67 %",
+      "usage": "68 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
       "usage": "39 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Blitzcrank, Impassive": {
-      "usage": "33 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Scouts' Academy (70 %)",
-    "Startipped Peak (54 %)",
-    "Fortified Position (43 %)",
-    "Bandle Tree (33 %)"
+    "Bandle Scouts' Academy (76 %)",
+    "Fortified Position (50 %)",
+    "Startipped Peak (47 %)"
   ],
-  "dataSource": "Classement complet des tournois : 55 joueurs classés, 5 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 75 joueurs classés, 8 tournois, dont 66 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

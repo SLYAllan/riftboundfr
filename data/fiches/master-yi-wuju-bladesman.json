@@ -22,32 +22,37 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Discipline",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Punch First",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Lonely Poro",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Scuttle Crab",
       "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -57,33 +62,33 @@
       "noyau": true
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Pit Rookie",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Onslaught",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tomb-Raider Barbara",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -99,37 +104,37 @@
     "Le deck le plus attendu du format, donc celui que les autres préparent en priorité"
   ],
   "competitiveResults": {
-    "joueursClasses": 49,
-    "coupe10": 3,
-    "titres": 0,
-    "conversion": "6.1 %",
-    "tournois": 6,
-    "listesPubliees": 46,
+    "joueursClasses": 74,
+    "coupe10": 8,
+    "titres": 1,
+    "conversion": "10.8 %",
+    "tournois": 9,
+    "listesPubliees": 67,
     "bestPlacements": [
       {
-        "placement": "10th",
-        "player": "CCB.秋裤",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+        "placement": "1st",
+        "player": "真是PCQ！",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "2nd",
+        "player": "ARBD-lay",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "5th",
+        "player": "不吃糖的乙酸盐、灵花祭",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "5th",
+        "player": "JHM.clks",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
         "placement": "10th",
-        "player": "YK胡马依北风",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "16th",
-        "player": "阿力",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "17th",
-        "player": "华蓝-dh9",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "21th",
-        "player": "巴巴博一",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+        "player": "沧州市第六中学",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
@@ -153,20 +158,20 @@
   },
   "champions": {
     "Master Yi, Tempered": {
-      "usage": "100 %",
+      "usage": "99 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "98 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (80 %)",
-    "Star Spring (78 %)",
-    "Seat of Power (65 %)"
+    "Emperor's Dais (78 %)",
+    "Star Spring (76 %)",
+    "Seat of Power (72 %)"
   ],
-  "dataSource": "Classement complet des tournois : 49 joueurs classés, 6 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 31 octobre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 74 joueurs classés, 9 tournois, dont 67 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }
