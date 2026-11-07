@@ -33,11 +33,14 @@ a contrôlé que chaque carte citée est sur la fiche. Ivern, Poppy et Renekton 
 que leurs chiffres viennent de Vendetta. Aucune des quinze n'a de guide
 (`legend-guides.ts`) ni de `difficulty`.
 
-**Seed prod PAS fait** : le port du tunnel (15432) refuse la connexion, il a été
-refermé après le seed du 1er novembre. À rouvrir par Allan, puis
-`npx tsx scripts/prod-tunnel.mts --etat` et
-`npx tsx scripts/prod-tunnel.mts prisma/seed-scraped-decks.ts hexgate-295 hexgate-296 hexgate-297`,
-puis le Deploy, puis `seed-tier-lists.ts` par le tunnel.
+**Seed prod fait le 7 novembre**, tunnel rouvert par Allan : 355 listes créées,
+0 erreur, prod à 32 874 decks publiés (`--etat`). Tier lists seedées en prod le même
+jour, vérifiées sur `/api/v1/tier-list` : Radiance à 32 entrées (Diana en S, Master
+Yi Wuju Bladesman en B, Viktor entre en C), Globale à 50 (recalée sur le relevé du
+7 novembre, Riven entre en S, Lillia passe en C). Ces lettres suivent la règle des
+listes, tranchées sur « fais pour la tier list » d'Allan. **Reste le Deploy
+Coolify** pour les fiches, les guides, `/meta` et la routine. Refermer le tunnel
+après usage.
 
 **Prose des fiches et des guides sur Radiance : les 25 fiches faites.** La prose
 citait les cartes Vendetta alors que la page affiche les cartes Radiance. Kennen,
