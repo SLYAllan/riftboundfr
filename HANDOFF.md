@@ -22,8 +22,13 @@ environnement `DATABASE_URL` (hôte interne Coolify), `SESSION_SECRET`,
 les scripts visaient la prod (injoignable d'ici, rien n'a été écrit). Avant un script
 local, contrôler `echo $DATABASE_URL` et lancer avec `env -u DATABASE_URL …`.
 
-**Aucune Légende nouvelle de Radiance n'a de fiche** dans `data/fiches/` (Riven,
-272 joueurs, la plus jouée du set, n'en a pas).
+**15 fiches créées le même jour, par la routine** : `fiches-maj.mts` (étape 4 de
+`maj:stats`) crée maintenant la fiche de toute Légende comptée qui n'en a pas.
+Riven (272 joueurs, en S), Evelynn, Mordekaiser, Orianna, Seraphine, Ekko, Jarvan IV,
+Ziggs, K'Sante, Vi, Jhin, Shen sur Radiance ; Ivern, Poppy et Renekton sur le repli
+Vendetta. Chiffres seulement : **aucune n'a de prose ni de guide**, la routine les
+liste en fin d'étape 4. Pages vérifiées sur un `next start` local (200, cartes
+affichées). 58 fiches en tout.
 
 **Seed prod PAS fait** : le port du tunnel (15432) refuse la connexion, il a été
 refermé après le seed du 1er novembre. À rouvrir par Allan, puis

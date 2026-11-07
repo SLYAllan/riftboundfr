@@ -156,6 +156,9 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   Au lendemain d'un nouveau ban, avant tout tournoi importé, toutes les fiches du set
   en cours (celui du tournoi le plus récent de `tournament-flags.ts`) taisent leurs
   cartes : c'est voulu, l'ancien repli recomptait tout le set, carte bannie comprise.
+  **Une Légende comptée sans fiche reçoit la sienne à l'étape 4 de `maj:stats`**
+  (`fiches-maj.mts`, depuis le 7 novembre 2026 : Riven, la plus jouée de Radiance,
+  n'en avait pas). Chiffres seulement ; la routine liste ensuite les fiches sans prose.
   **La prose d'une fiche (archétype, plan, forces, faiblesses) s'écrit dans
   `data/fiches-prose.json`, jamais dans `data/fiches/`**, puis `fiches-prose.mts
   --ecrire` la pose. Le 24 août, elle avait été écrite dans les fiches : relancer le

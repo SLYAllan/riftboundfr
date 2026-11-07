@@ -1,0 +1,147 @@
+{
+  "legendName": "Shen, Eye of Twilight",
+  "legendId": "Shen, Eye of Twilight",
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "set": "Vendetta",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Mournful Witness",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ki Barrier",
+      "role": "Souple, 55 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Dash",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Shen, Kinkou": {
+      "usage": "91 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "55 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kayle, Justified": {
+      "usage": "45 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "45 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Sona, Harmonious": {
+      "usage": "36 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Kinkou Temple (73 %)",
+    "Forgotten Monument (36 %)",
+    "Grove of the God-Willow (36 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 18,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 2,
+    "listesPubliees": 11,
+    "bestPlacements": [
+      {
+        "placement": "47th",
+        "player": "CBL OmniDmension",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "85th",
+        "player": "Zerø",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "102th",
+        "player": "VigilanteDuck",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "126th",
+        "player": "GAG Flynn",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "167th",
+        "player": "WoolworthsOnline",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

@@ -1,0 +1,148 @@
+{
+  "legendName": "Jarvan IV, Exemplar of Demacia",
+  "legendId": "Jarvan IV, Exemplar of Demacia",
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "set": "Radiance",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Pillaged Armory",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Demacian Standard",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Call to Glory",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Concert Poster",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trifarian Captain",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Skystrike Squadron",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Kinkou Initiate",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Overloaded Traveler",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Souple, 42 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Jarvan IV, Martial Paragon": {
+      "usage": "96 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "83 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "58 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Nidalee, Cat Form": {
+      "usage": "50 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Lucian, Merciless": {
+      "usage": "38 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Monastery of Hirana (75 %)",
+    "Hunters' Circle (58 %)",
+    "Sunken Temple (38 %)",
+    "Ornn's Forge (33 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 27,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 7,
+    "listesPubliees": 24,
+    "bestPlacements": [
+      {
+        "placement": "24th",
+        "player": "铁头-迦楼罗水镜",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "37th",
+        "player": "浅笑",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "59th",
+        "player": "漂白剂不能喝？",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "77th",
+        "player": "Braden Van't Hof",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "87th",
+        "player": "王",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 7 tournois, dont 24 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

@@ -1,0 +1,144 @@
+{
+  "legendName": "Ziggs, Hexplosives Expert",
+  "legendId": "Ziggs, Hexplosives Expert",
+  "domains": [
+    "Fury",
+    "Chaos"
+  ],
+  "set": "Radiance",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Seal of Rage",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Detonate",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Shimmering Swimmer",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The List",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Amateur Demolitionist",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Runeblade Anvil",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bewitching Spirit",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Acceptable Losses",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Piercing Light",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Ziggs, Explosive": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "86 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "68 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Void Gate (82 %)",
+    "Rockfall Path (55 %)",
+    "Sigil of the Storm (50 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 28,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 9,
+    "listesPubliees": 22,
+    "bestPlacements": [
+      {
+        "placement": "47th",
+        "player": "怪兽营地.夏洛",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "53th",
+        "player": "Meka",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "58th",
+        "player": "野菜",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "62th",
+        "player": "哈叶叶",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "71th",
+        "player": "Vina",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 28 joueurs classés, 9 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

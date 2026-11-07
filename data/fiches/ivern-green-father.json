@@ -1,0 +1,176 @@
+{
+  "legendName": "Ivern, Green Father",
+  "legendId": "Ivern, Green Father",
+  "domains": [
+    "Calm",
+    "Order"
+  ],
+  "set": "Unleashed",
+  "keyCards": [
+    {
+      "name": "Stalwart Poro",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Mutated Mouser",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Frisky Hunter",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Trusty Ramhound",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Back Off",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Cœur du deck, 93 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Daisy!",
+      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Vilemaw",
+      "role": "Standard, 80 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flurry of Feathers",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Affectionate Poro",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ki Barrier",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Fallen Feline",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Blitzcrank, Impassive": {
+      "usage": "73 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ivern, Friend to All": {
+      "usage": "67 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "60 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Azir, Sovereign": {
+      "usage": "53 %",
+      "role": "2,5 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "47 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ivern, Nurturer": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Forbidding Waste (87 %)",
+    "Vilemaw's Lair (73 %)",
+    "Vaults of Helia (67 %)",
+    "Rockfall Path (40 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 164,
+    "coupe10": 3,
+    "titres": 0,
+    "conversion": "1.8 %",
+    "tournois": 24,
+    "listesPubliees": 15,
+    "bestPlacements": [
+      {
+        "placement": "34th",
+        "player": "玖离啾啾",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      },
+      {
+        "placement": "38th",
+        "player": "拯救周末",
+        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+      },
+      {
+        "placement": "39th",
+        "player": "E1egy",
+        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+      },
+      {
+        "placement": "47th",
+        "player": "叨叨魄罗-doge",
+        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+      },
+      {
+        "placement": "51th",
+        "player": "XXT.FG.NANA",
+        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 164 joueurs classés, 24 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

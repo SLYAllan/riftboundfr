@@ -19,6 +19,7 @@ import path from "path";
 import type { StatsLegende } from "./fiches-stats.mts";
 import { estNoyau, role, roleChampion } from "./fiches-roles";
 import { radianceTier } from "./tier-tables";
+import { legendFicheSlug } from "../src/lib/legend-fiche";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
 
@@ -77,6 +78,45 @@ const dateFr = (iso: string) => {
 // « Rek'Sai » dans la fiche, « Rek'sai » en base : sans ça, la fiche la plus jouée passe à la trappe.
 const cle = (n: string) => n.toLowerCase().replace(/['’,.\s-]/g, "");
 const parCle = new Map(Object.entries(stats).map(([n, s]) => [cle(n), s]));
+
+const CHIFFRE: Record<string, number> = { S: 1, A: 2, B: 3, C: 4, D: 5 };
+
+// Une Légende comptée sur le set sans fiche n'avait qu'une page de repli, sans
+// cartes ni résultats : Riven, la plus jouée de Radiance avec 272 joueurs, l'est
+// restée deux semaines (relevé du 7 novembre 2026), et dix autres avec elle. La
+// fiche naît ici, ses chiffres se posent dans la boucle juste en dessous. Sa prose
+// ne s'invente pas : elle s'écrit à la main dans `data/fiches-prose.json`.
+const nommees = new Set<string>();
+for (const f of (await fs.readdir(FICHES)).filter((f) => f.endsWith(".json"))) {
+  nommees.add(cle(JSON.parse(await fs.readFile(path.join(FICHES, f), "utf-8")).legendName ?? ""));
+}
+const aCreer = Object.entries(stats).filter(([nom, s]) => !s.toutesEres && !s.cartesNonComptees && !nommees.has(cle(nom)));
+if (aCreer.length) {
+  const { prisma } = await import("../src/lib/prisma");
+  for (const [nom] of aCreer) {
+    const carte = await prisma.card.findFirst({
+      where: {
+        type: "Legend",
+        OR: [
+          { name: { equals: nom, mode: "insensitive" } },
+          { name: { equals: nom.replace(", ", " - "), mode: "insensitive" } },
+        ],
+      },
+      select: { domains: true, setName: true },
+    });
+    if (!carte) {
+      console.error(`  ${nom} : Légende introuvable en base, fiche NON créée`);
+      process.exitCode = 1;
+      continue;
+    }
+    const lettre = radianceTier.find((e) => cle(e.legendName) === cle(nom))?.tier;
+    const fiche = { legendName: nom, legendId: nom, domains: carte.domains, set: carte.setName, ...(lettre ? { tier: CHIFFRE[lettre] } : {}) };
+    const fichier = `${legendFicheSlug(nom)}.json`;
+    console.log(`  ${fichier} : fiche créée${ecrire ? "" : " (essai à blanc)"}`);
+    if (ecrire) await fs.writeFile(path.join(FICHES, fichier), JSON.stringify(fiche, null, 2) + "\n", "utf-8");
+  }
+  await prisma.$disconnect();
+}
 
 const fichiers = (await fs.readdir(FICHES)).filter((f) => f.endsWith(".json"));
 const journal: string[] = [];
@@ -196,7 +236,6 @@ const LETTRE: Record<number, string> = { 1: "S", 2: "A", 3: "B", 4: "C", 5: "D" 
 // ont déménagé dans `tier-tables.ts` elle n'a plus rien trouvé — sans une erreur,
 // en laissant les rangs des fiches là où ils étaient.
 const tiers = new Map(radianceTier.map((e) => [cle(e.legendName), e.tier]));
-const CHIFFRE: Record<string, number> = { S: 1, A: 2, B: 3, C: 4, D: 5 };
 const ecarts: string[] = [];
 for (const f of fichiers) {
   const chemin = path.join(FICHES, f);
@@ -216,4 +255,15 @@ for (const f of fichiers) {
 if (ecarts.length) {
   const verbe = ecrire ? "recalés sur" : "à recaler sur";
   console.log(`\n${ecarts.length} tiers ${verbe} la tier list Radiance :\n${ecarts.join("\n")}`);
+}
+
+// Une fiche née plus haut n'a que ses chiffres. Sans ce rappel, elle restait
+// muette sur le plan de jeu sans que personne ne s'en aperçoive.
+const sansProse: string[] = [];
+for (const f of (await fs.readdir(FICHES)).filter((f) => f.endsWith(".json"))) {
+  const fiche = JSON.parse(await fs.readFile(path.join(FICHES, f), "utf-8"));
+  if (fiche.setDesChiffres && !fiche.archetype) sansProse.push(f.replace(/\.json$/, ""));
+}
+if (sansProse.length) {
+  console.log(`\n${sansProse.length} fiche(s) sans prose, à écrire dans data/fiches-prose.json (docs/prose-radiance-consignes.md) :\n  ${sansProse.join(", ")}`);
 }

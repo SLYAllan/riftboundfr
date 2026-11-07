@@ -1,0 +1,130 @@
+{
+  "legendName": "Renekton, Butcher of the Sands",
+  "legendId": "Renekton, Butcher of the Sands",
+  "domains": [
+    "Fury",
+    "Body"
+  ],
+  "set": "Vendetta",
+  "keyCards": [
+    {
+      "name": "Punch First",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Kinkou Initiate",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dominus",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Inferna",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Renekton, Rage Fueled": {
+      "usage": "86 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "64 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "57 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Protective Sands (43 %)",
+    "Seat of Power (43 %)",
+    "Sigil of the Storm (43 %)",
+    "Star Spring (36 %)",
+    "Dragon Roost (36 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 97,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "2.1 %",
+    "tournois": 16,
+    "listesPubliees": 14,
+    "bestPlacements": [
+      {
+        "placement": "30th",
+        "player": "FSW.TPQ.老登亚索🤤",
+        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+      },
+      {
+        "placement": "35th",
+        "player": "小窝-Thierry",
+        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+      },
+      {
+        "placement": "59th",
+        "player": "一个单纯的人",
+        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+      },
+      {
+        "placement": "61th",
+        "player": "一个单纯的人",
+        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+      },
+      {
+        "placement": "65th",
+        "player": "ZL-某种蘑菇",
+        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 97 joueurs classés, 16 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

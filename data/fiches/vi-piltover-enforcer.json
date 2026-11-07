@@ -1,0 +1,155 @@
+{
+  "legendName": "Vi, Piltover Enforcer",
+  "legendId": "Vi, Piltover Enforcer",
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "set": "Unleashed",
+  "tier": 3,
+  "keyCards": [
+    {
+      "name": "Hextech Gauntlets",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Long Sword",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Deathgrip",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gem Jammer",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trifarian Captain",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Seal of Rage",
+      "role": "Souple, 50 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Perfect Execution",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Unsung Hero",
+      "role": "Souple, 42 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Honest Broker",
+      "role": "Souple, 42 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Vi, Peacekeeper": {
+      "usage": "92 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Kai'Sa, Survivor": {
+      "usage": "83 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Pyke, Dockside Butcher": {
+      "usage": "83 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Jhin, Murderous Artist": {
+      "usage": "58 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "50 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Unseen": {
+      "usage": "42 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Rek'Sai, Breacher": {
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Fiora, Victorious": {
+      "usage": "33 %",
+      "role": "1,5 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Forge of the Fluft (58 %)",
+    "Sunken Temple (42 %)",
+    "Vilemaw's Lair (42 %)",
+    "Star Spring (33 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 17,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "11.8 %",
+    "tournois": 2,
+    "listesPubliees": 12,
+    "bestPlacements": [
+      {
+        "placement": "57th",
+        "player": "Violetexe",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "65th",
+        "player": "SirKibble42",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "77th",
+        "player": "Hour",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "90th",
+        "player": "JasperSnail",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "99th",
+        "player": "tomsterbruh",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 17 joueurs classés, 2 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

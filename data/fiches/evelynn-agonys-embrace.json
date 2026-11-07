@@ -1,0 +1,145 @@
+{
+  "legendName": "Evelynn, Agony's Embrace",
+  "legendId": "Evelynn, Agony's Embrace",
+  "domains": [
+    "Body",
+    "Chaos"
+  ],
+  "set": "Radiance",
+  "tier": 4,
+  "keyCards": [
+    {
+      "name": "Edge of Night",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gutter Guardian",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hold 'Em",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Boots of Swiftness",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The Good Stuff",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Momentary Companion",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Evelynn, Entrancing": {
+      "usage": "98 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vex, Apathetic": {
+      "usage": "91 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "88 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "77 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Fizz, Trickster": {
+      "usage": "52 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "K'Sante, Courageous": {
+      "usage": "46 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "46 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Bandle Scouts' Academy (96 %)",
+    "Packed Amphitheater (46 %)",
+    "Startipped Peak (36 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 64,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "3.1 %",
+    "tournois": 9,
+    "listesPubliees": 56,
+    "bestPlacements": [
+      {
+        "placement": "10th",
+        "player": "喵喵.熳城",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "21th",
+        "player": "John Riftbound",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "22th",
+        "player": "GoodGa_嗚呼哈哈",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "30th",
+        "player": "NGNL·咕嘎雨辰",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "40th",
+        "player": "shef",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 64 joueurs classés, 9 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

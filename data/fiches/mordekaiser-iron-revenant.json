@@ -1,0 +1,138 @@
+{
+  "legendName": "Mordekaiser, Iron Revenant",
+  "legendId": "Mordekaiser, Iron Revenant",
+  "domains": [
+    "Fury",
+    "Order"
+  ],
+  "set": "Radiance",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Realm of Death",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Honest Broker",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Long Sword",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trifarian Captain",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Vanguard Captain",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Salvage",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Soaring Scout",
+      "role": "Souple, 33 % des listes, 3 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "88 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "74 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Mordekaiser, Dominating": {
+      "usage": "62 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Mordekaiser, Twice Slain": {
+      "usage": "45 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Zaun Warrens (90 %)",
+    "Minefield (76 %)",
+    "Ruined Monastery (52 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 54,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 7,
+    "listesPubliees": 42,
+    "bestPlacements": [
+      {
+        "placement": "17th",
+        "player": "天自",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "23th",
+        "player": "lilSPARK",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "25th",
+        "player": "3+X丨冰箫茶丶",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "38th",
+        "player": "Trasterisk",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "47th",
+        "player": "TCC_炫冰封",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 54 joueurs classés, 7 tournois, dont 42 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

@@ -21,9 +21,10 @@
  *   3. `fiches-stats.mts`          les chiffres par Légende, sur LE corpus partagé ;
  *                                  3b, les mêmes sur le set précédent, repli des
  *                                  fiches sous le seuil du set en cours
- *   4. `fiches-maj.mts`            les pose dans data/fiches/, et aligne les rangs
- *                                  sur la tier list (sinon /legendes et /tier-list
- *                                  se contredisent)
+ *   4. `fiches-maj.mts`            les pose dans data/fiches/, crée la fiche d'une
+ *                                  Légende comptée qui n'en a pas, et aligne les
+ *                                  rangs sur la tier list (sinon /legendes et
+ *                                  /tier-list se contredisent)
  *   5. `stats-deckbuilding.mts`    les sections chiffrées de DECKBUILDING-RULES
  *   6. `tier-ecarts.mts`           ce qui ne colle plus entre les tier lists
  *                                  rédigées (`tier-tables.ts`) et le corpus
@@ -78,7 +79,8 @@ const etapes: Etape[] = [
   },
   {
     titre: "4/6  Fiches Légendes (cartes, résultats, rangs)",
-    cmd: ["tsx", "scripts/fiches-maj.mts", "data/fiches-stats.json", "--repli", "data/fiches-stats-repli.json", ...(sec ? [] : ["--ecrire"])],
+    // La base sert à créer la fiche d'une Légende comptée qui n'en a pas.
+    cmd: ["tsx", "--env-file=.env", "scripts/fiches-maj.mts", "data/fiches-stats.json", "--repli", "data/fiches-stats-repli.json", ...(sec ? [] : ["--ecrire"])],
   },
   {
     titre: "5/6  Sections chiffrées de DECKBUILDING-RULES",
@@ -127,6 +129,9 @@ console.log(`
 
 Ce qui reste à faire À LA MAIN, et qui ne peut pas être automatisé :
 
+  - Écrire la prose des fiches « sans prose » de l'étape 4 dans
+    \`data/fiches-prose.json\`, méthode dans \`docs/prose-radiance-consignes.md\`,
+    puis \`npx tsx scripts/fiches-prose.mts --ecrire\`.
   - Trancher les écarts de l'étape 6, dans \`scripts/tier-tables.ts\`, puis relancer
     cette routine. « RANG À REVOIR » est une contradiction, « À REGARDER » une
     question (chaque liste pose sa propre condition d'effectif), « CHIFFRE PÉRIMÉ »

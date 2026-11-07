@@ -1,0 +1,136 @@
+{
+  "legendName": "Orianna, Lady of Clockwork",
+  "legendId": "Orianna, Lady of Clockwork",
+  "domains": [
+    "Calm",
+    "Mind"
+  ],
+  "set": "Radiance",
+  "tier": 4,
+  "keyCards": [
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "The Ball",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stupefy",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Cloth Armor",
+      "role": "Standard, 82 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mask of Foresight",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Frigid Jewel",
+      "role": "Souple, 59 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Battle Preparations",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Command: Attack",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Patched Porobot",
+      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Orianna, Exquisite": {
+      "usage": "85 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Veiled Temple (100 %)",
+    "Ornn's Forge (82 %)",
+    "Rockfall Path (38 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 49,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "4.1 %",
+    "tournois": 8,
+    "listesPubliees": 39,
+    "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "优极客·司书魔灵",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "13th",
+        "player": "DWT-二麻",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "19th",
+        "player": "留鑫-Veil",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "19th",
+        "player": "S.T.没在摸鱼",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "22th",
+        "player": "Jimmythefish7",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 49 joueurs classés, 8 tournois, dont 39 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

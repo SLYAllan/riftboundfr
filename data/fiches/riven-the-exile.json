@@ -1,0 +1,156 @@
+{
+  "legendName": "Riven, The Exile",
+  "legendId": "Riven, The Exile",
+  "domains": [
+    "Calm",
+    "Chaos"
+  ],
+  "set": "Radiance",
+  "tier": 1,
+  "keyCards": [
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Reckless Innovator",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Blade of the Exile",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Tideturner",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Astral Heron",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stellacorn Herder",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Rebuke",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Battle Preparations",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Baron Nashor",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Riven, Broken Blade": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Blitzcrank, Impassive": {
+      "usage": "88 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Star Spring (94 %)",
+    "Emperor's Dais (81 %)",
+    "Hunters' Circle (71 %)",
+    "Rakelstake (35 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 272,
+    "coupe10": 60,
+    "titres": 5,
+    "conversion": "22.1 %",
+    "tournois": 9,
+    "listesPubliees": 251,
+    "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "Nam Dang",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "1st",
+        "player": "向神迈进的人",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "1st",
+        "player": "YYP·今今抽卡",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "1st",
+        "player": "DWT-演员",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "1st",
+        "player": "GREY-海岛",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 272 joueurs classés, 9 tournois, dont 251 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

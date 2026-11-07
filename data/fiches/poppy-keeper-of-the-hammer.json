@@ -1,0 +1,134 @@
+{
+  "legendName": "Poppy, Keeper of the Hammer",
+  "legendId": "Poppy, Keeper of the Hammer",
+  "domains": [
+    "Body",
+    "Order"
+  ],
+  "set": "Unleashed",
+  "keyCards": [
+    {
+      "name": "Salvage",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Keeper's Verdict",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Grim Resolve",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Forge of the Future",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dazzling Aurora",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mobilize",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Challenge",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The Ruination",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Vendetta",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Poppy, Paragon": {
+      "usage": "100 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "50 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Master Yi, Tempered": {
+      "usage": "45 %",
+      "role": "2,5 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "41 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Gardens of Becoming (50 %)",
+    "Sigil of the Storm (50 %)",
+    "Reckoner's Arena (45 %)",
+    "Amateur Recital (41 %)",
+    "Forgotten Monument (41 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 103,
+    "coupe10": 2,
+    "titres": 0,
+    "conversion": "1.9 %",
+    "tournois": 16,
+    "listesPubliees": 22,
+    "bestPlacements": [
+      {
+        "placement": "16th",
+        "player": "友友@呆鹿",
+        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      },
+      {
+        "placement": "45th",
+        "player": "從龍.云开月明",
+        "tournament": "S4 Shanghai City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "47th",
+        "player": "天津cardtime-肚子",
+        "tournament": "S4 Tianjin City Challenge (2026-08-16)"
+      },
+      {
+        "placement": "48th",
+        "player": "小居头.JuiceJU",
+        "tournament": "S4 Shanghai City Challenge (2026-09-27)"
+      },
+      {
+        "placement": "67th",
+        "player": "我的企鹅猴呢",
+        "tournament": "S4 Chengdu City Challenge (2026-10-02)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 103 joueurs classés, 16 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

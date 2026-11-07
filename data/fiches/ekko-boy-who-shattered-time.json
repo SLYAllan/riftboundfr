@@ -1,0 +1,161 @@
+{
+  "legendName": "Ekko, Boy Who Shattered Time",
+  "legendId": "Ekko, Boy Who Shattered Time",
+  "domains": [
+    "Fury",
+    "Mind"
+  ],
+  "set": "Radiance",
+  "tier": 4,
+  "keyCards": [
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stupefy",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Falling Star",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Inferna",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shock Blast",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cleave",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Watchful Sentry",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lecturing Yordle",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Souple, 37 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "93 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Ekko, Ingenious": {
+      "usage": "70 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ekko, Revolutionary": {
+      "usage": "70 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Vayne, Hunter": {
+      "usage": "63 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Pyke, Dockside Butcher": {
+      "usage": "56 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Darius, Trifarian": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Rockfall Path (78 %)",
+    "Seat of Power (44 %)",
+    "Ripper's Bay (41 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 37,
+    "coupe10": 1,
+    "titres": 0,
+    "conversion": "2.7 %",
+    "tournois": 8,
+    "listesPubliees": 27,
+    "bestPlacements": [
+      {
+        "placement": "32th",
+        "player": "卓卡-懒大块头",
+        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "33th",
+        "player": "鱼人桌游-比港老船长",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "41th",
+        "player": "箬殇",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "51th",
+        "player": "Boodius",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "55th",
+        "player": "归零者-dblbd",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 37 joueurs classés, 8 tournois, dont 27 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

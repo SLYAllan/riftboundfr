@@ -1,0 +1,147 @@
+{
+  "legendName": "K'Sante, Pride of Nazumah",
+  "legendId": "K'Sante, Pride of Nazumah",
+  "domains": [
+    "Calm",
+    "Body"
+  ],
+  "set": "Radiance",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Discipline",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ntofo Strikes",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Nazuman Ntofo",
+      "role": "Standard, 82 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stalwart Poro",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Consult the Heavens",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Block",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mutated Mouser",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ruin Runner",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "K'Sante, Courageous": {
+      "usage": "65 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "53 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "K'Sante, Dauntless": {
+      "usage": "47 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Graves, Blasting Through": {
+      "usage": "41 %",
+      "role": "2 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Grove of the God-Willow (59 %)",
+    "Fortified Position (35 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 22,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 7,
+    "listesPubliees": 17,
+    "bestPlacements": [
+      {
+        "placement": "45th",
+        "player": "拉嘉",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "46th",
+        "player": "SantyMax",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "70th",
+        "player": "艾斯歪歪",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "83th",
+        "player": "melo",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "95th",
+        "player": "IBL lambkittle",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 22 joueurs classés, 7 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}

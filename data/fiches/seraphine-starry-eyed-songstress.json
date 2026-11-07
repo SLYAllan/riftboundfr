@@ -1,0 +1,130 @@
+{
+  "legendName": "Seraphine, Starry-Eyed Songstress",
+  "legendId": "Seraphine, Starry-Eyed Songstress",
+  "domains": [
+    "Mind",
+    "Order"
+  ],
+  "set": "Radiance",
+  "tier": 5,
+  "keyCards": [
+    {
+      "name": "Encore",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Concert Poster",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Imperial Decree",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Vanguard Armory",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Raucous Anthem",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stupefy",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Vanguard Captain",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "noyau": false
+    }
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15",
+  "champions": {
+    "Seraphine, Inspiring": {
+      "usage": "77 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Jayce, Man of Progress": {
+      "usage": "55 %",
+      "role": "3 exemplaires en moyenne"
+    }
+  },
+  "topBattlefields": [
+    "Trifarian War Camp (65 %)",
+    "Forbidding Waste (55 %)",
+    "Treasure Hoard (35 %)"
+  ],
+  "competitiveResults": {
+    "joueursClasses": 43,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 6,
+    "listesPubliees": 31,
+    "bestPlacements": [
+      {
+        "placement": "51th",
+        "player": "阳子",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "54th",
+        "player": "PotatoCrumb",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "59th",
+        "player": "Piero",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "62th",
+        "player": "亚当当当当",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "80th",
+        "player": "铺满地钱@DDG",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      }
+    ]
+  },
+  "dataSource": "Classement complet des tournois : 43 joueurs classés, 6 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+}
