@@ -611,5 +611,105 @@
       "Remplir la défausse prend des tours, les départs très rapides le prennent de vitesse",
       "Sans carte jouée hors de la main, la Légende reste désamplifiée et ne donne aucun bonus"
     ]
+  },
+  "riven-the-exile.json": {
+    "archetype": "Tempo et réactions, unités qui arrivent préparées",
+    "legendAbility": "Les unités que vous jouez sur un champ de bataille que vous contrôlez arrivent préparées. Une unité posée là peut servir tout de suite, sans attendre le tour suivant.",
+    "gameplan": {
+      "earlyGame": "Scuttle Crab, dans 87 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
+      "midGame": "Riven, Broken Blade, dans toutes les listes, choisit un effet chaque fois qu'elle s'épuise, un effet différent à chaque fois dans le tour : prendre un bonus, le dépenser pour étourdir une unité adverse, ou le dépenser pour se préparer. Blade of the Exile peut s'équiper en épuisant une unité alliée, ce qui déclenche Riven. Stellacorn Herder pioche à chaque déplacement.",
+      "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 57 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
+      "winCondition": "Tenir les champs de bataille avec des unités qui arrivent prêtes, et répondre à chaque sort adverse."
+    },
+    "strengths": [
+      "272 joueurs classés sur 9 tournois, 60 dans les 10 % de tête : 22,1 % de conversion contre 10,0 % pour le format",
+      "Cinq titres : le Showdown de Sacramento et les City Challenge de Pékin, de Guangzhou, de Shenzhen et de Suzhou",
+      "Neuf cartes dans au moins 95 % des listes : la liste est fixée",
+      "Defy, Discipline, Star-Crossed, Gust et Not So Fast répondent pendant le tour adverse"
+    ],
+    "weaknesses": [
+      "La Légende n'aide que sur un champ de bataille que vous contrôlez déjà",
+      "Le deck vit de ses réactions et de ses cartes cachées : il faut garder des runes pour le tour adverse, et choisir le bon moment"
+    ]
+  },
+  "evelynn-agonys-embrace.json": {
+    "archetype": "Cartes cachées et pioche",
+    "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
+    "gameplan": {
+      "earlyGame": "Gutter Guardian, dans 75 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
+      "midGame": "Evelynn, Entrancing, dans 98 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 89 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
+      "lateGame": "Rengar, Trophy Hunter, dans 77 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Vex, Apathetic, dans 91 % des listes, étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+      "winCondition": "Surprendre en combat avec des cartes cachées, et piocher plus que l'adversaire."
+    },
+    "strengths": [
+      "Evelynn, Entrancing et Vex, Apathetic dans plus de 90 % des listes",
+      "La Légende pioche une carte par tour, dès qu'une carte sort de face cachée",
+      "Gutter Guardian, Bedeviling Stranger, Switcheroo et Edge of Night se jouent cachés : l'adversaire ne sait pas ce qui l'attend"
+    ],
+    "weaknesses": [
+      "64 joueurs classés sur 9 tournois, 2 dans les 10 % de tête : 3,1 % de conversion contre 10,0 % pour le format, aucun titre",
+      "Sa meilleure place est une dixième, à la City Challenge de Fuzhou",
+      "Hors de votre tour, la Légende ne fait que trier la main : elle pioche, puis défausse"
+    ]
+  },
+  "mordekaiser-iron-revenant.json": {
+    "archetype": "Unités à Agonie et combats forcés",
+    "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
+    "gameplan": {
+      "earlyGame": "Honest Broker et Carrion Dredger laissent quelque chose en mourant : un jeton d'or épuisé pour le premier, un Oiseau de 1 Puissance à Protection pour le second. Trifarian Captain va chercher une unité ou un équipement dans les quatre cartes du dessus.",
+      "midGame": "Realm of Death, dans 98 % des listes, retire 2 Puissance à une unité adverse, en donne 2 à une des vôtres, et les fait se blesser l'une l'autre. Chaque unité morte rejoint la défausse, où la Légende la bannit pour payer la suivante.",
+      "lateGame": "Ferrous Forerunner, dans 74 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 62 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
+      "winCondition": "Échanger des unités qui laissent quelque chose derrière elles, puis finir avec Mordekaiser."
+    },
+    "strengths": [
+      "Realm of Death dans 98 % des listes : un combat forcé pour deux énergie",
+      "Honest Broker, Carrion Dredger, Ferrous Forerunner et Soaring Scout laissent un jeton ou une rune en mourant",
+      "La Légende transforme la défausse en Puissance pour les unités et les équipements"
+    ],
+    "weaknesses": [
+      "54 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,006)",
+      "Sa meilleure place est une dix-septième, à la City Challenge de Shenzhen",
+      "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
+    ]
+  },
+  "orianna-lady-of-clockwork.json": {
+    "archetype": "Équipements qui deviennent des unités",
+    "legendAbility": "Au début de votre phase principale, vous pouvez payer une énergie pour choisir un de vos équipements : il devient une unité dont la Puissance égale son coût en énergie, jusqu'à ce que vous en choisissiez un autre.",
+    "gameplan": {
+      "earlyGame": "Cloth Armor, dans 82 % des listes, et Mask of Foresight, dans 69 %, se posent pour une ou deux énergie. Defy, dans toutes les listes, et Stupefy répondent pendant le tour adverse.",
+      "midGame": "The Ball, dans 97 % des listes, pioche une carte ou inflige 2 à chaque unité adverse là où il arrive ou se déplace. Avec la Légende, il devient une unité de 5 Puissance. Orianna, Exquisite, dans 85 % des listes, a Bouclier, mais n'inflige de dégâts de combat que si un de vos équipements est avec elle.",
+      "lateGame": "Thousand-Tailed Watcher, dans 82 % des listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Zhonya's Hourglass sauve une unité qui devait mourir.",
+      "winCondition": "Faire de The Ball une unité qui pioche ou blesse à chaque déplacement, et tenir le terrain avec des réactions."
+    },
+    "strengths": [
+      "Defy, The Ball et Discipline dans au moins 97 % des listes",
+      "Defy contre un sort pour une énergie, Discipline et Stupefy piochent une carte en plein combat",
+      "Troisième à la City Challenge de Shanghai du 1er novembre"
+    ],
+    "weaknesses": [
+      "49 joueurs classés sur 9 tournois, 2 dans les 10 % de tête : 4,1 % de conversion contre 10,0 % pour le format, aucun titre",
+      "La Légende coûte une énergie à chaque tour où l'on s'en sert",
+      "Orianna, Exquisite n'inflige aucun dégât de combat sans équipement à ses côtés"
+    ]
+  },
+  "seraphine-starry-eyed-songstress.json": {
+    "archetype": "Jetons Recrue et sorts moins chers",
+    "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
+    "gameplan": {
+      "earlyGame": "Concert Poster, dans 87 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 97 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
+      "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 77 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
+      "lateGame": "Vanguard Armory, dans 65 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 84 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
+      "winCondition": "Remplir le terrain de jetons, et s'en servir pour payer ses sorts moins cher."
+    },
+    "strengths": [
+      "Encore dans 97 % des listes, Concert Poster dans 87 %",
+      "La Légende et Seraphine, Inspiring vont ensemble : épuiser trois unités baisse le coût du sort et fait piocher",
+      "Imperial Decree, Hidden Blade et Wages of Pain retirent des unités adverses"
+    ],
+    "weaknesses": [
+      "43 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,019)",
+      "Sa meilleure place est une cinquante et unième, à la City Challenge de Fuzhou",
+      "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
+    ]
   }
 }

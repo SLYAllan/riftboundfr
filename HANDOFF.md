@@ -26,9 +26,12 @@ local, contrôler `echo $DATABASE_URL` et lancer avec `env -u DATABASE_URL …`.
 `maj:stats`) crée maintenant la fiche de toute Légende comptée qui n'en a pas.
 Riven (272 joueurs, en S), Evelynn, Mordekaiser, Orianna, Seraphine, Ekko, Jarvan IV,
 Ziggs, K'Sante, Vi, Jhin, Shen sur Radiance ; Ivern, Poppy et Renekton sur le repli
-Vendetta. Chiffres seulement : **aucune n'a de prose ni de guide**, la routine les
-liste en fin d'étape 4. Pages vérifiées sur un `next start` local (200, cartes
-affichées). 58 fiches en tout.
+Vendetta. 58 fiches en tout. Pages vérifiées sur un `next start` local (200,
+cartes affichées). **Prose écrite à la main pour cinq** (Riven, Evelynn,
+Mordekaiser, Orianna, Seraphine), sur le texte des cartes de la base et les
+chiffres de la fiche, dans `fiches-prose.json`. **Les dix autres n'ont ni prose ni
+guide** : la routine les liste en fin d'étape 4. Aucune des quinze n'a de guide
+(`legend-guides.ts`) ni de `difficulty`.
 
 **Seed prod PAS fait** : le port du tunnel (15432) refuse la connexion, il a été
 refermé après le seed du 1er novembre. À rouvrir par Allan, puis

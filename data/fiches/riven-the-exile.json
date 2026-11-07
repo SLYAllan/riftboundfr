@@ -152,5 +152,23 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 272 joueurs classés, 9 tournois, dont 251 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts."
+  "dataSource": "Classement complet des tournois : 272 joueurs classés, 9 tournois, dont 251 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "archetype": "Tempo et réactions, unités qui arrivent préparées",
+  "legendAbility": "Les unités que vous jouez sur un champ de bataille que vous contrôlez arrivent préparées. Une unité posée là peut servir tout de suite, sans attendre le tour suivant.",
+  "gameplan": {
+    "earlyGame": "Scuttle Crab, dans 87 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
+    "midGame": "Riven, Broken Blade, dans toutes les listes, choisit un effet chaque fois qu'elle s'épuise, un effet différent à chaque fois dans le tour : prendre un bonus, le dépenser pour étourdir une unité adverse, ou le dépenser pour se préparer. Blade of the Exile peut s'équiper en épuisant une unité alliée, ce qui déclenche Riven. Stellacorn Herder pioche à chaque déplacement.",
+    "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 57 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
+    "winCondition": "Tenir les champs de bataille avec des unités qui arrivent prêtes, et répondre à chaque sort adverse."
+  },
+  "strengths": [
+    "272 joueurs classés sur 9 tournois, 60 dans les 10 % de tête : 22,1 % de conversion contre 10,0 % pour le format",
+    "Cinq titres : le Showdown de Sacramento et les City Challenge de Pékin, de Guangzhou, de Shenzhen et de Suzhou",
+    "Neuf cartes dans au moins 95 % des listes : la liste est fixée",
+    "Defy, Discipline, Star-Crossed, Gust et Not So Fast répondent pendant le tour adverse"
+  ],
+  "weaknesses": [
+    "La Légende n'aide que sur un champ de bataille que vous contrôlez déjà",
+    "Le deck vit de ses réactions et de ses cartes cachées : il faut garder des runes pour le tour adverse, et choisir le bon moment"
+  ]
 }
