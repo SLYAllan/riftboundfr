@@ -10,17 +10,17 @@
   "archetype": "Bannissement et rotation de main",
   "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
   "gameplan": {
-    "earlyGame": "Traveling Merchant, dans 85 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
-    "midGame": "Ride The Wind, dans 92 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 69 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
-    "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 54 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
+    "earlyGame": "Traveling Merchant, dans 86 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
+    "midGame": "Ride The Wind, dans 93 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 71 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
+    "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 57 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
     "winCondition": "Bannir pour amplifier Zed, trier sa main chaque tour, et frapper là où l'adversaire ne l'attend pas avec les Clones d'Ombre."
   },
   "strengths": [
-    "Ride The Wind dans 92 % des listes",
+    "Ride The Wind dans 93 % des listes",
     "La Légende trie la main à chaque tour où elle est amplifiée"
   ],
   "weaknesses": [
-    "20 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "21 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une soixantième, au Showdown de Melbourne",
     "Une seule carte au-dessus de 90 % : personne n'a fixé la liste"
   ],
@@ -29,117 +29,113 @@
   "keyCards": [
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Runeblade Anvil",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Baron Nashor",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Falling Star",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Pack of Wonders",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Treasure Trove",
-      "role": "Souple, 46 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Reckless Innovator",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Up from the Deep",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Treasure Trove",
+      "role": "Souple, 43 % des listes, 2,5 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "69 %",
+      "usage": "71 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "69 %",
+      "usage": "64 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "46 %",
+      "usage": "43 %",
       "role": "2,5 exemplaires en moyenne"
     },
     "Vi, Destructive": {
-      "usage": "38 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Ezreal, Prodigy": {
-      "usage": "31 %",
-      "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "31 %",
-      "role": "1,5 exemplaire en moyenne"
-    },
-    "Zed, From the Shadows": {
-      "usage": "31 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "36 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (92 %)",
-    "Minefield (69 %)",
-    "Ruined Monastery (31 %)"
+    "Zaun Warrens (86 %)",
+    "Minefield (71 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 20,
+    "joueursClasses": 21,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 5,
-    "listesPubliees": 13,
+    "tournois": 6,
+    "listesPubliees": 14,
     "bestPlacements": [
       {
         "placement": "60th",
         "player": "Nimda",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "71th",
+        "player": "拯救周末@老翁",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
         "placement": "92th",
@@ -155,15 +151,10 @@
         "placement": "122th",
         "player": "TZ",
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "133th",
-        "player": "Closed on Sunday",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 20 joueurs classés, 5 tournois, dont 13 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 21 joueurs classés, 6 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

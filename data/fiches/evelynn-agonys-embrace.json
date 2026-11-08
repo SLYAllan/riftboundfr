@@ -10,42 +10,42 @@
   "keyCards": [
     {
       "name": "Edge of Night",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gutter Guardian",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bedeviling Stranger",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hold 'Em",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -55,17 +55,17 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "The Good Stuff",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Momentary Companion",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The Good Stuff",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -89,35 +89,46 @@
       "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "52 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "K'Sante, Courageous": {
-      "usage": "46 %",
+      "usage": "47 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "46 %",
+      "usage": "42 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "K'Sante, Courageous": {
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Scouts' Academy (96 %)",
-    "Packed Amphitheater (46 %)",
-    "Startipped Peak (36 %)"
+    "Bandle Scouts' Academy (97 %)",
+    "Packed Amphitheater (48 %)",
+    "Startipped Peak (33 %)",
+    "Rakelstake (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 64,
-    "coupe10": 2,
+    "joueursClasses": 75,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "3.1 %",
-    "tournois": 9,
-    "listesPubliees": 56,
+    "conversion": "4 %",
+    "tournois": 11,
+    "listesPubliees": 66,
     "bestPlacements": [
+      {
+        "placement": "6th",
+        "player": "一只花园",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
+      },
       {
         "placement": "10th",
         "player": "喵喵.熳城",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "16th",
+        "player": "AhriH",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
       },
       {
         "placement": "21th",
@@ -128,25 +139,15 @@
         "placement": "22th",
         "player": "GoodGa_嗚呼哈哈",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "30th",
-        "player": "NGNL·咕嘎雨辰",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "40th",
-        "player": "shef",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 64 joueurs classés, 9 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 75 joueurs classés, 11 tournois, dont 66 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Cartes cachées et pioche",
   "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
   "gameplan": {
-    "earlyGame": "Gutter Guardian, dans 75 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
-    "midGame": "Evelynn, Entrancing, dans 98 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 89 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
+    "earlyGame": "Gutter Guardian, dans 73 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
+    "midGame": "Evelynn, Entrancing, dans 98 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 88 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
     "lateGame": "Rengar, Trophy Hunter, dans 77 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Vex, Apathetic, dans 91 % des listes, étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
     "winCondition": "Surprendre en combat avec des cartes cachées, et piocher plus que l'adversaire."
   },
@@ -156,8 +157,8 @@
     "Gutter Guardian, Bedeviling Stranger, Switcheroo et Edge of Night se jouent cachés : l'adversaire ne sait pas ce qui l'attend"
   ],
   "weaknesses": [
-    "64 joueurs classés sur 9 tournois, 2 dans les 10 % de tête : 3,1 % de conversion contre 10,0 % pour le format, aucun titre",
-    "Sa meilleure place est une dixième, à la City Challenge de Fuzhou",
+    "75 joueurs classés sur 11 tournois, 3 dans les 10 % de tête : 4,0 % de conversion contre 9,9 % pour le format, aucun titre",
+    "Sa meilleure place est une sixième, à la City Challenge de Shanghai du 7 novembre",
     "Hors de votre tour, la Légende ne fait que trier la main : elle pioche, puis défausse"
   ]
 }

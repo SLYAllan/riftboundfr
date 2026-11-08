@@ -42,13 +42,13 @@
       "noyau": true
     },
     {
-      "name": "First Mate",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "name": "First Mate",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -62,47 +62,42 @@
       "noyau": true
     },
     {
-      "name": "Sabotage",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Rampage",
       "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
+      "name": "Sabotage",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Elnuk Herd",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "strengths": [
-    "Onze cartes dans au moins 96 % des listes : la liste est fixée",
+    "Dix cartes dans au moins 96 % des listes : la liste est fixée",
     "Deux troisièmes places, aux City Challenge de Fuzhou et de Guangzhou",
     "Inferna, Grim Apothecary, Nidalee, Cat Form et Rengar, Trophy Hunter arrivent en Embuscade"
   ],
   "weaknesses": [
-    "60 joueurs classés sur 9 tournois, 6 dans les 10 % de tête : 10,0 % de conversion, la moyenne du format, et aucun titre",
+    "69 joueurs classés sur 11 tournois, 7 dans les 10 % de tête : 10,1 % de conversion, la moyenne du format, et aucun titre",
     "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
   ],
   "competitiveResults": {
-    "joueursClasses": 60,
-    "coupe10": 6,
+    "joueursClasses": 69,
+    "coupe10": 7,
     "titres": 0,
-    "conversion": "10 %",
-    "tournois": 9,
-    "listesPubliees": 49,
+    "conversion": "10.1 %",
+    "tournois": 11,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -115,6 +110,11 @@
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
+        "placement": "5th",
+        "player": "氐",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
+      },
+      {
         "placement": "8th",
         "player": "Daniel Vu",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
@@ -123,11 +123,6 @@
         "placement": "17th",
         "player": "Timothy K",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "24th",
-        "player": "旋木时光.三哥",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       }
     ]
   },
@@ -159,28 +154,28 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "69 %",
+      "usage": "70 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "41 %",
+      "usage": "44 %",
       "role": "1 exemplaire en moyenne"
     },
     "Graves, Blasting Through": {
-      "usage": "35 %",
+      "usage": "32 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (98 %)",
+    "Emperor's Dais (96 %)",
     "Star Spring (96 %)",
-    "Seat of Power (86 %)"
+    "Seat of Power (88 %)"
   ],
-  "dataSource": "Classement complet des tournois : 60 joueurs classés, 9 tournois, dont 49 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 69 joueurs classés, 11 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

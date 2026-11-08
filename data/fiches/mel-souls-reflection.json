@@ -11,8 +11,8 @@
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
   "gameplan": {
     "earlyGame": "Rebuttal et Stupefy, dans toutes les listes, coûtent une énergie : le premier prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon ; le second affaiblit une unité et pioche. Traveling Merchant trie la main à chaque déplacement.",
-    "midGame": "Applied Researchers, dans 70 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
-    "lateGame": "Mel, Defiant Soul, dans 60 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 70 % des listes, donne un tour de plus.",
+    "midGame": "Applied Researchers, dans 73 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
+    "lateGame": "Mel, Defiant Soul, dans 64 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 73 % des listes, donne un tour de plus.",
     "winCondition": "Amplifier ses cartes pour charger Mel, répondre à chaque sort adverse, et prendre un tour d'avance avec Time Warp."
   },
   "strengths": [
@@ -20,7 +20,7 @@
     "Chaque carte amplifiée charge aussi la Légende"
   ],
   "weaknesses": [
-    "16 joueurs classés sur 4 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "17 joueurs classés sur 5 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une quarantième, à la City Challenge de Suzhou"
   ],
   "difficulty": "Difficile",
@@ -38,105 +38,104 @@
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Traveling Merchant",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Dredge Up",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 80 % des listes, 1,5 exemplaire",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Applied Researchers",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 73 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Vex, Apathetic": {
-      "usage": "70 %",
+      "usage": "73 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Hwei, Brooding Painter": {
-      "usage": "60 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Mel, Defiant Soul": {
-      "usage": "60 %",
+      "usage": "64 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "60 %",
+      "usage": "64 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Hwei, Brooding Painter": {
+      "usage": "55 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Mel, Newly Awakened": {
-      "usage": "40 %",
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (60 %)",
-    "Rockfall Path (40 %)",
-    "Targon's Peak (40 %)",
-    "Threshold of the Gray (30 %)"
+    "Frozen Fortress (55 %)",
+    "Rockfall Path (45 %)",
+    "Targon's Peak (36 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 16,
+    "joueursClasses": 17,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 4,
-    "listesPubliees": 10,
+    "tournois": 5,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
         "placement": "40th",
@@ -165,7 +164,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 16 joueurs classés, 4 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 17 joueurs classés, 5 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

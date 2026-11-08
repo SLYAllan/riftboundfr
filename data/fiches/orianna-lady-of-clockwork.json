@@ -15,72 +15,72 @@
     },
     {
       "name": "The Ball",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 82 % des listes, 2,5 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Frigid Jewel",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Command: Attack",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Patched Porobot",
-      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -94,16 +94,16 @@
   },
   "topBattlefields": [
     "Veiled Temple (100 %)",
-    "Ornn's Forge (82 %)",
-    "Rockfall Path (38 %)"
+    "Ornn's Forge (83 %)",
+    "Rockfall Path (40 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 49,
+    "joueursClasses": 50,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "4.1 %",
-    "tournois": 8,
-    "listesPubliees": 39,
+    "conversion": "4 %",
+    "tournois": 9,
+    "listesPubliees": 40,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -132,22 +132,22 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 49 joueurs classés, 8 tournois, dont 39 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 50 joueurs classés, 9 tournois, dont 40 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements qui deviennent des unités",
   "legendAbility": "Au début de votre phase principale, vous pouvez payer une énergie pour choisir un de vos équipements : il devient une unité dont la Puissance égale son coût en énergie, jusqu'à ce que vous en choisissiez un autre.",
   "gameplan": {
-    "earlyGame": "Cloth Armor, dans 82 % des listes, et Mask of Foresight, dans 69 %, se posent pour une ou deux énergie. Defy, dans toutes les listes, et Stupefy répondent pendant le tour adverse.",
-    "midGame": "The Ball, dans 97 % des listes, pioche une carte ou inflige 2 à chaque unité adverse là où il arrive ou se déplace. Avec la Légende, il devient une unité de 5 Puissance. Orianna, Exquisite, dans 85 % des listes, a Bouclier, mais n'inflige de dégâts de combat que si un de vos équipements est avec elle.",
-    "lateGame": "Thousand-Tailed Watcher, dans 82 % des listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Zhonya's Hourglass sauve une unité qui devait mourir.",
+    "earlyGame": "Cloth Armor, dans 83 % des listes, et Mask of Foresight, dans 70 %, se posent pour une ou deux énergie. Defy, dans toutes les listes, et Stupefy répondent pendant le tour adverse.",
+    "midGame": "The Ball, dans 98 % des listes, pioche une carte ou inflige 2 à chaque unité adverse là où il arrive ou se déplace. Avec la Légende, il devient une unité de 5 Puissance. Orianna, Exquisite, dans 85 % des listes, a Bouclier, mais n'inflige de dégâts de combat que si un de vos équipements est avec elle.",
+    "lateGame": "Thousand-Tailed Watcher, dans 83 % des listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Zhonya's Hourglass sauve une unité qui devait mourir.",
     "winCondition": "Faire de The Ball une unité qui pioche ou blesse à chaque déplacement, et tenir le terrain avec des réactions."
   },
   "strengths": [
-    "Defy, The Ball et Discipline dans au moins 97 % des listes",
+    "Defy, The Ball et Discipline dans au moins 98 % des listes",
     "Defy contre un sort pour une énergie, Discipline et Stupefy piochent une carte en plein combat",
     "Troisième à la City Challenge de Shanghai du 1er novembre"
   ],
   "weaknesses": [
-    "49 joueurs classés sur 9 tournois, 2 dans les 10 % de tête : 4,1 % de conversion contre 10,0 % pour le format, aucun titre",
+    "50 joueurs classés sur 9 tournois, 2 dans les 10 % de tête : 4,0 % de conversion contre 9,9 % pour le format, aucun titre",
     "La Légende coûte une énergie à chaque tour où l'on s'en sert",
     "Orianna, Exquisite n'inflige aucun dégât de combat sans équipement à ses côtés"
   ]

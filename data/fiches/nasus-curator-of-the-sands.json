@@ -11,17 +11,17 @@
   "legendAbility": "Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, épuisez Nasus pour préparer jusqu'à deux runes. Le gros coup se rembourse.",
   "gameplan": {
     "earlyGame": "Scuttle Crab, dans 90 % des listes, pioche en arrivant. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie. Bellows Breath inflige 1 à trois unités au même endroit.",
-    "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 69 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
-    "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 97 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
+    "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 68 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
+    "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 98 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
     "winCondition": "Payer de gros coûts, se faire rendre deux runes par la Légende, et finir avec Nasus, Ascended."
   },
   "strengths": [
-    "Thousand-Tailed Watcher et Defy dans toutes les listes, Nasus, Ascended dans 97 %",
+    "Thousand-Tailed Watcher et Defy dans toutes les listes, Nasus, Ascended dans 98 %",
     "Septième à la City Challenge de Guangzhou",
     "Chaque coût de 7 énergie ou plus rend deux runes"
   ],
   "weaknesses": [
-    "43 joueurs classés sur 8 tournois, 3 dans les 10 % de tête : 7,0 % de conversion contre 10,0 % pour le format, aucun titre",
+    "45 joueurs classés sur 10 tournois, 3 dans les 10 % de tête : 6,7 % de conversion contre 9,9 % pour le format, aucun titre",
     "Le deck attend ses cartes à 7 énergie : les premiers tours servent surtout à tenir"
   ],
   "difficulty": "Moyenne",
@@ -39,7 +39,7 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -64,37 +64,32 @@
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The Empyrean",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Retreat",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -106,27 +101,32 @@
       "name": "Life from Stone",
       "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
+    },
+    {
+      "name": "Retreat",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "97 %",
+      "usage": "98 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (87 %)",
-    "The Papertree (36 %)",
-    "Ruined Monastery (33 %)",
-    "Vilemaw's Lair (33 %)"
+    "Rockfall Path (85 %)",
+    "The Papertree (34 %)",
+    "Ruined Monastery (32 %)",
+    "Vilemaw's Lair (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 43,
+    "joueursClasses": 45,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "7 %",
-    "tournois": 8,
-    "listesPubliees": 39,
+    "conversion": "6.7 %",
+    "tournois": 10,
+    "listesPubliees": 41,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -155,7 +155,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 43 joueurs classés, 8 tournois, dont 39 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 45 joueurs classés, 10 tournois, dont 41 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

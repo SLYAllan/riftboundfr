@@ -10,7 +10,7 @@
   "archetype": "Tempo et mouvement, une unité préparée deux fois",
   "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
+    "earlyGame": "Scuttle Crab, dans 90 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
     "midGame": "Chaque sort qui choisit une de vos unités, comme Discipline ou Defiant Dance, permet à la Légende de la préparer : elle combat ou se déplace une fois de plus. Irelia, Fervent, dans toutes les listes, a Protection et gagne +1 Puissance chaque fois qu'on la choisit ou qu'on la prépare.",
     "lateGame": "Stellacorn Herder pioche à chaque déplacement. Ride The Wind déplace une de vos unités et la prépare. Zhonya's Hourglass sauve une unité qui devait mourir.",
     "winCondition": "Choisir ses unités avec des sorts bon marché pour les préparer, et combattre deux fois par tour."
@@ -52,43 +52,48 @@
       "noyau": true
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "name": "Stellacorn Herder",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "name": "Scuttle Crab",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 83 % des listes, 1 exemplaire",
+      "role": "Standard, 84 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Guardian Angel",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Twilight Shroud",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -97,38 +102,33 @@
       "noyau": false
     },
     {
-      "name": "Gust",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Reckless Innovator",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Astral Heron",
-      "role": "Souple, 35 % des listes, 3 exemplaires",
+      "name": "Flash",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "strengths": [
     "Un titre : la City Challenge de Shenyang",
-    "Neuf cartes dans au moins 91 % des listes : la liste est fixée",
+    "Neuf cartes dans au moins 90 % des listes : la liste est fixée",
     "Irelia, Fervent dans toutes les listes : chaque sort qui la choisit la renforce"
   ],
   "weaknesses": [
-    "46 joueurs classés sur 8 tournois, 2 dans les 10 % de tête : 4,3 % de conversion contre 10,0 % pour le format",
+    "50 joueurs classés sur 10 tournois, 2 dans les 10 % de tête : 4,0 % de conversion contre 9,9 % pour le format",
     "La Légende coûte une Puissance à chaque unité préparée"
   ],
   "matchups": {
@@ -145,12 +145,12 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 46,
+    "joueursClasses": 50,
     "coupe10": 2,
     "titres": 1,
-    "conversion": "4.3 %",
-    "tournois": 8,
-    "listesPubliees": 46,
+    "conversion": "4 %",
+    "tournois": 10,
+    "listesPubliees": 50,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -169,13 +169,13 @@
       },
       {
         "placement": "20th",
-        "player": "3+X I 明涌",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+        "player": "山渐青",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
-        "placement": "30th",
-        "player": "福州橙逯.企鹅",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+        "placement": "20th",
+        "player": "3+X I 明涌",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
@@ -215,20 +215,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "63 %",
+      "usage": "66 %",
       "role": "1 exemplaire en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "35 %",
+      "usage": "32 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
-    "Sunken Temple (85 %)",
+    "Sunken Temple (86 %)",
     "Targon's Peak (70 %)"
   ],
-  "dataSource": "Classement complet des tournois : 46 joueurs classés, 8 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 50 joueurs classés, 10 tournois, dont 50 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

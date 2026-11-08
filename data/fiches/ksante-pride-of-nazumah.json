@@ -10,77 +10,67 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Discipline",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Discipline",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ntofo Strikes",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Nazuman Ntofo",
-      "role": "Standard, 82 % des listes, 2,5 exemplaires",
+      "role": "Standard, 84 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stalwart Poro",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stalwart Poro",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Consult the Heavens",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Block",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Mutated Mouser",
       "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "First Mate",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ruin Runner",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -88,33 +78,33 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "K'Sante, Courageous": {
-      "usage": "65 %",
+      "usage": "58 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
       "usage": "53 %",
-      "role": "2 exemplaires en moyenne"
+      "role": "2,5 exemplaires en moyenne"
     },
     "K'Sante, Dauntless": {
-      "usage": "47 %",
+      "usage": "53 %",
       "role": "1 exemplaire en moyenne"
     },
     "Graves, Blasting Through": {
-      "usage": "41 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Grove of the God-Willow (59 %)",
-    "Fortified Position (35 %)"
+    "Grove of the God-Willow (58 %)",
+    "Fortified Position (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 22,
+    "joueursClasses": 25,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 7,
-    "listesPubliees": 17,
+    "tournois": 9,
+    "listesPubliees": 19,
     "bestPlacements": [
       {
         "placement": "45th",
@@ -132,32 +122,32 @@
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
+        "placement": "73th",
+        "player": "33",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
+      {
         "placement": "83th",
         "player": "melo",
         "tournament": "S5 Shenyang City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "95th",
-        "player": "IBL lambkittle",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 22 joueurs classés, 7 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 25 joueurs classés, 9 tournois, dont 19 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Bouclier qui devient Assaut",
   "legendAbility": "Pour une énergie, épuisez K'Sante : une de vos unités gagne ce tour un Assaut égal à son Bouclier.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab, dans 88 % des listes, pioche en arrivant. Stalwart Poro et Mutated Mouser ont Bouclier. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
-    "midGame": "Ntofo Strikes, dans 82 % des listes, donne Bouclier 2 à une de vos unités, puis inflige à une unité adverse autant de dégâts que son Bouclier. Block donne Bouclier 3 et Tank pour le tour. Avec la Légende, ce Bouclier devient aussi de l'Assaut.",
-    "lateGame": "K'Sante, Courageous, dans 65 % des listes, a Accélération et Bouclier 2, et canalise une rune quand il tient un champ de bataille. K'Sante, Dauntless double le Bouclier d'une de vos unités quand il attaque ou défend.",
+    "earlyGame": "Scuttle Crab, dans 89 % des listes, pioche en arrivant. Stalwart Poro et Mutated Mouser ont Bouclier. Defy, dans 95 % des listes, contre un sort adverse jusqu'à 4 énergie.",
+    "midGame": "Ntofo Strikes, dans 84 % des listes, donne Bouclier 2 à une de vos unités, puis inflige à une unité adverse autant de dégâts que son Bouclier. Block donne Bouclier 3 et Tank pour le tour. Avec la Légende, ce Bouclier devient aussi de l'Assaut.",
+    "lateGame": "K'Sante, Courageous, dans 58 % des listes, a Accélération et Bouclier 2, et canalise une rune quand il tient un champ de bataille. K'Sante, Dauntless double le Bouclier d'une de vos unités quand il attaque ou défend.",
     "winCondition": "Empiler du Bouclier sur une unité, puis l'envoyer attaquer avec autant d'Assaut."
   },
   "strengths": [
-    "Defy dans toutes les listes, Punch First et Discipline dans 94 %",
+    "Defy dans 95 % des listes, Punch First et Discipline dans 89 %",
     "Ntofo Strikes, Block, Consult the Heavens et K'Sante, Dauntless donnent ou doublent le Bouclier"
   ],
   "weaknesses": [
-    "22 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "25 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une quarante-cinquième, à la City Challenge de Fuzhou",
     "La Légende coûte une énergie et ne sert que sur une unité qui a déjà du Bouclier"
   ]

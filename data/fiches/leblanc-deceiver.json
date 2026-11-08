@@ -10,36 +10,31 @@
   "archetype": "Copies et morts rentables",
   "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
   "gameplan": {
-    "earlyGame": "Soaring Scout, dans 94 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
-    "midGame": "Sacrifice, dans 94 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 91 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 97 % des listes, pose une copie préparée et temporaire d'une unité.",
+    "earlyGame": "Soaring Scout, dans 95 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
+    "midGame": "Sacrifice, dans 95 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 92 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 95 % des listes, pose une copie préparée et temporaire d'une unité.",
     "lateGame": "Glasc Mixologist, en mourant, rejoue gratuitement une unité de 3 énergie ou moins depuis la défausse. Ruined Rex inflige 4 dégâts à une unité adverse en mourant. Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses.",
     "winCondition": "Faire mourir ses propres unités au bon moment, et en tirer le double avec Karthus."
   },
   "keyCards": [
     {
-      "name": "Mirror Image",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Mirror Image",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Glasc Mixologist",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Watchful Sentry",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
@@ -47,23 +42,28 @@
       "noyau": false
     },
     {
+      "name": "Watchful Sentry",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Ruined Rex",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 86 % des listes, 1 exemplaire",
+      "role": "Standard, 87 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -83,31 +83,31 @@
     },
     {
       "name": "Baited Hook",
-      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 34 % des listes, 2,5 exemplaires",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "strengths": [
-    "46 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 15,2 % de conversion contre 10,0 % pour le format",
+    "49 joueurs classés sur 11 tournois, 7 dans les 10 % de tête : 14,3 % de conversion contre 9,9 % pour le format",
     "Quatrième à la City Challenge de Pékin, onzième au Showdown de Sacramento",
-    "Karthus, Eternal dans 91 % des listes : chaque Agonie compte double"
+    "Karthus, Eternal dans 92 % des listes : chaque Agonie compte double"
   ],
   "weaknesses": [
-    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,22)",
+    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,33)",
     "La Légende demande de défausser une carte à chaque copie"
   ],
   "competitiveResults": {
-    "joueursClasses": 46,
+    "joueursClasses": 49,
     "coupe10": 7,
     "titres": 0,
-    "conversion": "15.2 %",
-    "tournois": 9,
-    "listesPubliees": 35,
+    "conversion": "14.3 %",
+    "tournois": 11,
+    "listesPubliees": 38,
     "bestPlacements": [
       {
         "placement": "4th",
@@ -156,25 +156,25 @@
     "note": "Deck d'INÉVITABILITÉ (pas aggro). Runes 8 Ordre / 4 Esprit. Windswept Hillock = battlefield cassé (ganking gratuit). Perd vs Volibear Dragon Storm (out-value). Se contre via Challenge (tue le Karthus T2 = déni du moteur Death Knell) plutôt qu'en l'affrontant tard. Existe aussi en variante BLUE sprite-aggro (Lillia Fae Fawn, Petal Pixie, Smoke and Mirrors)."
   },
   "champions": {
-    "LeBlanc, Fragmented": {
-      "usage": "94 %",
-      "role": "1 exemplaire en moyenne"
-    },
     "Karthus, Eternal": {
-      "usage": "91 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "91 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "LeBlanc, Fragmented": {
+      "usage": "92 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (100 %)",
     "Dusk Rose Lab (74 %)",
-    "Star Spring (63 %)"
+    "Star Spring (61 %)"
   ],
-  "dataSource": "Classement complet des tournois : 46 joueurs classés, 9 tournois, dont 35 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 49 joueurs classés, 11 tournois, dont 38 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

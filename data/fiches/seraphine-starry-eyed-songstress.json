@@ -15,17 +15,17 @@
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -50,27 +50,27 @@
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Raucous Anthem",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Vanguard Captain",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -78,26 +78,26 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Seraphine, Inspiring": {
-      "usage": "77 %",
+      "usage": "74 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jayce, Man of Progress": {
-      "usage": "55 %",
+      "usage": "53 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (65 %)",
-    "Forbidding Waste (55 %)",
-    "Treasure Hoard (35 %)"
+    "Trifarian War Camp (62 %)",
+    "Forbidding Waste (50 %)",
+    "Treasure Hoard (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 43,
+    "joueursClasses": 46,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 6,
-    "listesPubliees": 31,
+    "tournois": 7,
+    "listesPubliees": 34,
     "bestPlacements": [
       {
         "placement": "51th",
@@ -120,28 +120,28 @@
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "80th",
-        "player": "铺满地钱@DDG",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+        "placement": "64th",
+        "player": "影流$_$",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 43 joueurs classés, 6 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 46 joueurs classés, 7 tournois, dont 34 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Jetons Recrue et sorts moins chers",
   "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
   "gameplan": {
-    "earlyGame": "Concert Poster, dans 87 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 97 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
-    "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 77 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
-    "lateGame": "Vanguard Armory, dans 65 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 84 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
+    "earlyGame": "Concert Poster, dans 85 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 97 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
+    "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 74 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
+    "lateGame": "Vanguard Armory, dans 65 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 85 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
     "winCondition": "Remplir le terrain de jetons, et s'en servir pour payer ses sorts moins cher."
   },
   "strengths": [
-    "Encore dans 97 % des listes, Concert Poster dans 87 %",
+    "Encore dans 97 % des listes, Concert Poster dans 85 %",
     "La Légende et Seraphine, Inspiring vont ensemble : épuiser trois unités baisse le coût du sort et fait piocher",
     "Imperial Decree, Hidden Blade et Wages of Pain retirent des unités adverses"
   ],
   "weaknesses": [
-    "43 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,019)",
+    "46 joueurs classés sur 7 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,013)",
     "Sa meilleure place est une cinquante et unième, à la City Challenge de Fuzhou",
     "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
   ]

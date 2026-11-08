@@ -10,9 +10,9 @@
   "archetype": "Jetons temporaires, tempo à répétition",
   "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
   "gameplan": {
-    "earlyGame": "Sprite Fountain, dans 97 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
-    "midGame": "Sprite Burst, dans 97 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
-    "lateGame": "Unchecked Power, dans 94 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
+    "earlyGame": "Sprite Fountain, dans 98 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+    "midGame": "Sprite Burst, dans 95 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
+    "lateGame": "Unchecked Power, dans 93 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
     "winCondition": "Couvrir les champs de bataille d'Esprits qui ne coûtent presque rien, et vider le terrain avec Unchecked Power si besoin."
   },
   "keyCards": [
@@ -27,102 +27,102 @@
       "noyau": true
     },
     {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Sprite Fountain",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Sprite Fountain",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Stupefy",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Stupefy",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Unchecked Power",
-      "role": "Cœur du deck, 94 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 93 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Smoke and Mirrors",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Brutalizer",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Lonely Poro",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Lonely Poro",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Smoke Screen",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tomb-Raider Barbara",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "name": "Smoke Screen",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Life from Stone",
+      "role": "Souple, 30 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "strengths": [
-    "Huit cartes dans au moins 94 % des listes : la liste est fixée",
+    "Huit cartes dans au moins 93 % des listes : la liste est fixée",
     "Troisième à la City Challenge de Suzhou",
     "Defy, Discipline, Stupefy, En Garde et Battle Preparations répondent pendant le tour adverse"
   ],
   "weaknesses": [
-    "52 joueurs classés sur 9 tournois, 3 dans les 10 % de tête : 5,8 % de conversion contre 10,0 % pour le format, aucun titre",
+    "60 joueurs classés sur 11 tournois, 5 dans les 10 % de tête : 8,3 % de conversion contre 9,9 % pour le format, aucun titre",
     "Les Esprits sont temporaires : ils ne restent pas d'un tour à l'autre"
   ],
   "competitiveResults": {
-    "joueursClasses": 52,
-    "coupe10": 3,
+    "joueursClasses": 60,
+    "coupe10": 5,
     "titres": 0,
-    "conversion": "5.8 %",
-    "tournois": 9,
-    "listesPubliees": 32,
+    "conversion": "8.3 %",
+    "tournois": 11,
+    "listesPubliees": 40,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -130,23 +130,23 @@
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
+        "placement": "9th",
+        "player": "XXT.zyoung",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
+      },
+      {
+        "placement": "12th",
+        "player": "van",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
+      {
+        "placement": "13th",
+        "player": "电飞鼠VMAX",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
+      {
         "placement": "14th",
         "player": "Jellyleaf",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "16th",
-        "player": "逆转大鱼",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "24th",
-        "player": "P9.爱喝咖啡的狼",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "25th",
-        "player": "CBL wags",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
@@ -176,11 +176,12 @@
     }
   },
   "topBattlefields": [
-    "Dusk Rose Lab (94 %)",
-    "Seat of Power (91 %)",
-    "Black Flame Altar (50 %)"
+    "Dusk Rose Lab (95 %)",
+    "Seat of Power (88 %)",
+    "Black Flame Altar (45 %)",
+    "Abandoned Hall (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 52 joueurs classés, 9 tournois, dont 32 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 60 joueurs classés, 11 tournois, dont 40 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

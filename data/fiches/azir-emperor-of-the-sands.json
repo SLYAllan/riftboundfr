@@ -58,17 +58,17 @@
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Hand Hammer",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 93 % des listes, 2,5 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -78,12 +78,12 @@
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -97,18 +97,23 @@
     "Arise! pose d'un coup autant de Soldats que vous avez d'équipements"
   ],
   "weaknesses": [
-    "30 joueurs classés sur 8 tournois, 1 dans les 10 % de tête : 3,3 % de conversion contre 10,0 % pour le format, aucun titre",
-    "Sa meilleure place est une dix-neuvième, à la City Challenge de Shenyang",
+    "35 joueurs classés sur 10 tournois, 2 dans les 10 % de tête : 5,7 % de conversion contre 9,9 % pour le format, aucun titre",
+    "Sa meilleure place est une huitième, à la City Challenge de Hangzhou",
     "Sans équipement joué dans le tour, la Légende ne fait rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 30,
-    "coupe10": 1,
+    "joueursClasses": 35,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "3.3 %",
-    "tournois": 8,
-    "listesPubliees": 28,
+    "conversion": "5.7 %",
+    "tournois": 10,
+    "listesPubliees": 33,
     "bestPlacements": [
+      {
+        "placement": "8th",
+        "player": "JHM· 豆浆",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
       {
         "placement": "19th",
         "player": "XYZ-咸盐一勺半",
@@ -125,14 +130,9 @@
         "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
-        "placement": "38th",
-        "player": "开放世界的袁神",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "40th",
-        "player": "Andrew L McDonald",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "37th",
+        "player": "Alan",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       }
     ]
   },
@@ -159,17 +159,17 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "71 %",
+      "usage": "70 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Hall of Legends (100 %)",
-    "Trifarian War Camp (93 %)",
-    "Seat of Power (46 %)",
-    "Ornn's Forge (43 %)"
+    "Trifarian War Camp (94 %)",
+    "Seat of Power (48 %)",
+    "Ornn's Forge (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 30 joueurs classés, 8 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 35 joueurs classés, 10 tournois, dont 33 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

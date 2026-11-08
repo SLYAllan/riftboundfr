@@ -16,13 +16,13 @@
     "winCondition": "Déplacer ses unités pour piocher et frapper, et ne perdre aucune unité dans un combat perdu."
   },
   "strengths": [
-    "61 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 11,5 % de conversion contre 10,0 % de moyenne",
+    "63 joueurs classés sur 11 tournois, 7 dans les 10 % de tête : 11,1 % de conversion contre 9,9 % de moyenne",
     "Sept cartes dans toutes les listes, dont Defy, Shuriken Flip et Falling Star",
     "Akali, Deadly Weapon dans toutes les listes : chaque déplacement inflige des dégâts"
   ],
   "weaknesses": [
-    "Aucun titre sur 9 tournois : la meilleure place est une troisième, à Sacramento",
-    "61 joueurs classés seulement : l'échantillon reste petit",
+    "Aucun titre sur 11 tournois : la meilleure place est une troisième, à Sacramento",
+    "63 joueurs classés seulement : l'échantillon reste petit",
     "Retirer ses unités du combat ne marque aucun point : le deck demande plusieurs tours de déplacements avant de conclure"
   ],
   "difficulty": "Difficile",
@@ -75,7 +75,7 @@
     },
     {
       "name": "Mischievous Marai",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -90,7 +90,7 @@
     },
     {
       "name": "Block",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -100,12 +100,12 @@
     },
     {
       "name": "Sterak's Gage",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -114,31 +114,31 @@
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Blitzcrank, Impassive": {
-      "usage": "95 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Kai'Sa, Survivor": {
       "usage": "93 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Blitzcrank, Impassive": {
+      "usage": "93 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Darius, Trifarian": {
-      "usage": "51 %",
+      "usage": "49 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Void Gate (100 %)",
-    "Sigil of the Storm (87 %)",
+    "Sigil of the Storm (88 %)",
     "Forgotten Monument (82 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 61,
+    "joueursClasses": 63,
     "coupe10": 7,
     "titres": 0,
-    "conversion": "11.5 %",
-    "tournois": 9,
-    "listesPubliees": 55,
+    "conversion": "11.1 %",
+    "tournois": 11,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -167,7 +167,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 61 joueurs classés, 9 tournois, dont 55 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 63 joueurs classés, 11 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

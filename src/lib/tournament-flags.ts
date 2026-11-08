@@ -409,6 +409,9 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   "S5 Beijing City Challenge (2026-10-31)": { name: "S5 Beijing City Challenge", shortName: "Beijing CC", countryCode: "CN", city: "Beijing", location: "Beijing, Chine", playerCount: 128, type: "city_challenge", date: "2026-10-31", set: "Radiance", format: "Standard" },
   "S5 Shanghai City Challenge (2026-11-01)": { name: "S5 Shanghai City Challenge", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-01", set: "Radiance", format: "Standard" },
   "S5 Guangzhou City Challenge (2026-11-01)": { name: "S5 Guangzhou City Challenge", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-01", set: "Radiance", format: "Standard" },
+  // Relevé du 8 novembre : 298 et 301. Foshan (299, 71 joueurs) et Tianjin (300, 85) restent dehors.
+  "S5 Shanghai City Challenge (2026-11-07)": { name: "S5 Shanghai City Challenge", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
+  "S5 Hangzhou City Challenge (2026-11-07)": { name: "S5 Hangzhou City Challenge", shortName: "Hangzhou CC", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },

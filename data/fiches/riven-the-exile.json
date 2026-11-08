@@ -19,13 +19,13 @@
       "noyau": true
     },
     {
-      "name": "Reckless Innovator",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "name": "Blade of the Exile",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Blade of the Exile",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "name": "Reckless Innovator",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -44,58 +44,58 @@
       "noyau": true
     },
     {
-      "name": "Astral Heron",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Stellacorn Herder",
       "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Astral Heron",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rebuke",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "role": "Standard, 89 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 86 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "role": "Standard, 65 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Baron Nashor",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -103,27 +103,27 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Riven, Broken Blade": {
-      "usage": "100 %",
+      "usage": "99 %",
       "role": "1 exemplaire en moyenne"
     },
     "Blitzcrank, Impassive": {
-      "usage": "88 %",
+      "usage": "90 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (94 %)",
+    "Star Spring (93 %)",
     "Emperor's Dais (81 %)",
-    "Hunters' Circle (71 %)",
-    "Rakelstake (35 %)"
+    "Hunters' Circle (67 %)",
+    "Rakelstake (40 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 272,
-    "coupe10": 60,
+    "joueursClasses": 328,
+    "coupe10": 68,
     "titres": 5,
-    "conversion": "22.1 %",
-    "tournois": 9,
-    "listesPubliees": 251,
+    "conversion": "20.7 %",
+    "tournois": 11,
+    "listesPubliees": 307,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -152,17 +152,17 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 272 joueurs classés, 9 tournois, dont 251 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 328 joueurs classés, 11 tournois, dont 307 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Tempo et réactions, unités qui arrivent préparées",
   "legendAbility": "Les unités que vous jouez sur un champ de bataille que vous contrôlez arrivent préparées. Une unité posée là peut servir tout de suite, sans attendre le tour suivant.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab, dans 87 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
-    "midGame": "Riven, Broken Blade, dans toutes les listes, choisit un effet chaque fois qu'elle s'épuise, un effet différent à chaque fois dans le tour : prendre un bonus, le dépenser pour étourdir une unité adverse, ou le dépenser pour se préparer. Blade of the Exile peut s'équiper en épuisant une unité alliée, ce qui déclenche Riven. Stellacorn Herder pioche à chaque déplacement.",
-    "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 57 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
+    "earlyGame": "Scuttle Crab, dans 86 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
+    "midGame": "Riven, Broken Blade, dans 99 % des listes, choisit un effet chaque fois qu'elle s'épuise, un effet différent à chaque fois dans le tour : prendre un bonus, le dépenser pour étourdir une unité adverse, ou le dépenser pour se préparer. Blade of the Exile peut s'équiper en épuisant une unité alliée, ce qui déclenche Riven. Stellacorn Herder pioche à chaque déplacement.",
+    "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 56 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
     "winCondition": "Tenir les champs de bataille avec des unités qui arrivent prêtes, et répondre à chaque sort adverse."
   },
   "strengths": [
-    "272 joueurs classés sur 9 tournois, 60 dans les 10 % de tête : 22,1 % de conversion contre 10,0 % pour le format",
+    "328 joueurs classés sur 11 tournois, 68 dans les 10 % de tête : 20,7 % de conversion contre 9,9 % pour le format",
     "Cinq titres : le Showdown de Sacramento et les City Challenge de Pékin, de Guangzhou, de Shenzhen et de Suzhou",
     "Neuf cartes dans au moins 95 % des listes : la liste est fixée",
     "Defy, Discipline, Star-Crossed, Gust et Not So Fast répondent pendant le tour adverse"

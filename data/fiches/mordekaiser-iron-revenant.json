@@ -14,63 +14,63 @@
       "noyau": true
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Honest Broker",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Carrion Dredger",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "name": "Carrion Dredger",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Vanguard Captain",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Spectral Matron",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Soaring Scout",
-      "role": "Souple, 33 % des listes, 3 exemplaires",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -78,34 +78,34 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "88 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "74 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
-      "usage": "62 %",
+      "usage": "63 %",
       "role": "1 exemplaire en moyenne"
     },
     "Mordekaiser, Twice Slain": {
-      "usage": "45 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (90 %)",
-    "Minefield (76 %)",
-    "Ruined Monastery (52 %)"
+    "Zaun Warrens (91 %)",
+    "Minefield (74 %)",
+    "Ruined Monastery (54 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 54,
+    "joueursClasses": 60,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 7,
-    "listesPubliees": 42,
+    "tournois": 9,
+    "listesPubliees": 46,
     "bestPlacements": [
       {
         "placement": "17th",
@@ -134,13 +134,13 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 54 joueurs classés, 7 tournois, dont 42 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 60 joueurs classés, 9 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Unités à Agonie et combats forcés",
   "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
   "gameplan": {
     "earlyGame": "Honest Broker et Carrion Dredger laissent quelque chose en mourant : un jeton d'or épuisé pour le premier, un Oiseau de 1 Puissance à Protection pour le second. Trifarian Captain va chercher une unité ou un équipement dans les quatre cartes du dessus.",
     "midGame": "Realm of Death, dans 98 % des listes, retire 2 Puissance à une unité adverse, en donne 2 à une des vôtres, et les fait se blesser l'une l'autre. Chaque unité morte rejoint la défausse, où la Légende la bannit pour payer la suivante.",
-    "lateGame": "Ferrous Forerunner, dans 74 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 62 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
+    "lateGame": "Ferrous Forerunner, dans 72 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 63 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
     "winCondition": "Échanger des unités qui laissent quelque chose derrière elles, puis finir avec Mordekaiser."
   },
   "strengths": [
@@ -149,7 +149,7 @@
     "La Légende transforme la défausse en Puissance pour les unités et les équipements"
   ],
   "weaknesses": [
-    "54 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,006)",
+    "60 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,004)",
     "Sa meilleure place est une dix-septième, à la City Challenge de Shenzhen",
     "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
   ]

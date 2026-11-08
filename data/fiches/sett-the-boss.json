@@ -16,11 +16,6 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Showstopper",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -32,81 +27,91 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Punch First",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
+      "name": "Pit Rookie",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Trifarian Captain",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Arena Bar",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Cithria of Cloudfield",
-      "role": "Souple, 40 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shepherd's Heirloom",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 40 % des listes, 1,5 exemplaire",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cithria of Cloudfield",
+      "role": "Souple, 38 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Portable Portal",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shepherd's Heirloom",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "strengths": [
-    "10 joueurs classés, 3 dans les 10 % de tête : 30,0 % de conversion contre 10,0 % pour le format",
+    "13 joueurs classés, 3 dans les 10 % de tête : 23,1 % de conversion contre 9,9 % pour le format",
     "Deuxième à la City Challenge de Pékin, septième et huitième à Shanghai",
-    "Pillaged Armory, Punch First, Showstopper et Call to Glory dans toutes les listes, Fiora, Victorious aussi"
+    "Pillaged Armory, Showstopper et Call to Glory dans toutes les listes, Punch First dans 92 %, Fiora, Victorious dans 85 %"
   ],
   "weaknesses": [
-    "10 joueurs seulement : trop peu pour conclure, malgré la conversion",
+    "13 joueurs seulement : trop peu pour conclure, malgré la conversion",
     "Aucun titre sur Radiance"
   ],
   "competitiveResults": {
-    "joueursClasses": 10,
+    "joueursClasses": 13,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "30 %",
-    "tournois": 6,
-    "listesPubliees": 10,
+    "conversion": "23.1 %",
+    "tournois": 8,
+    "listesPubliees": 13,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -153,44 +158,43 @@
     "note": "Nerf : il faut déjà un buff présent pour le dépenser. Sett Brawler va très tall sur Trifarian War Camp. Compétitif : a gagné le Contenders London en battant un Master Yi-Aurora (Sabotage sur l'Aurora + Divine Judgment = reset non-Defyable). Joue bien sans dépendre d'une seule carte."
   },
   "champions": {
-    "Fiora, Victorious": {
-      "usage": "100 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Sett, Kingpin": {
-      "usage": "90 %",
+      "usage": "92 %",
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "80 %",
+      "usage": "85 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Fiora, Victorious": {
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "80 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Lucian, Merciless": {
-      "usage": "40 %",
-      "role": "2,5 exemplaires en moyenne"
-    },
     "Rengar, Trophy Hunter": {
-      "usage": "40 %",
+      "usage": "38 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Lucian, Merciless": {
+      "usage": "31 %",
+      "role": "2,5 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (70 %)",
-    "Valley of Idols (60 %)",
-    "Sunken Temple (60 %)",
-    "Packed Amphitheater (30 %)"
+    "Monastery of Hirana (77 %)",
+    "Valley of Idols (54 %)",
+    "Sunken Temple (54 %)"
   ],
-  "dataSource": "Classement complet des tournois : 10 joueurs classés, 6 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 13 joueurs classés, 8 tournois, dont 13 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "gameplan": {
-    "earlyGame": "Pit Rookie, dans 90 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
-    "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 90 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
-    "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans toutes les listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
+    "earlyGame": "Pit Rookie, dans 85 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
+    "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 92 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
+    "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans 85 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
     "winCondition": "Donner des bonus partout, et ne perdre aucune unité qui en porte un."
   }
 }

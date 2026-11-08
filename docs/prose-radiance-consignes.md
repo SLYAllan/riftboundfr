@@ -7,7 +7,7 @@ Tu écris seulement les fichiers de sortie demandés.
 ## Ce qui a changé
 
 Les fiches Légendes affichent maintenant les cartes et les résultats du set **Radiance**
-(9 tournois, 1 786 joueurs classés au relevé du 7 novembre 2026 ; à relire dans
+(11 tournois, 2 033 joueurs classés au relevé du 8 novembre 2026 ; à relire dans
 l'en-tête de `radianceTier`, `scripts/tier-tables.ts`, avant chaque passe). Leur prose, elle, décrit encore les listes de
 **Vendetta** : des cartes qui ne sont plus jouées, des chiffres d'un autre set. Tu la
 réécris pour qu'elle colle à ce que la page affiche.
@@ -24,7 +24,7 @@ Pour chaque Légende, un fichier `packs/<slug>.json` contient :
   `gameplan` {earlyGame, midGame, lateGame, winCondition}, `strengths`, `weaknesses`).
 - `guide_actuel` : le guide à remplacer (`bref`, `gagne`, `plan`), en markdown.
 - `cartes` : le texte réel (anglais) de chaque carte nommée, et `jouee_en_radiance`.
-- `contexte` : moyenne du format (10,0 %), ban.
+- `contexte` : moyenne du format (9,9 %), ban.
 
 ## Règles absolues
 
@@ -44,9 +44,9 @@ Pour chaque Légende, un fichier `packs/<slug>.json` contient :
 ## Chiffres
 
 - Conversion : `coupe10 / joueursClasses`, écrite « 11,5 % », comparée à la moyenne du
-  format, 10,0 %. Virgule décimale, espace avant `%`, espace fine ou normale dans les
-  milliers (« 1 786 »).
-- Écrire « N joueurs classés sur 9 tournois », « N dans les 10 % de tête », « aucun
+  format, 9,9 %. Virgule décimale, espace avant `%`, espace fine ou normale dans les
+  milliers (« 2 033 »).
+- Écrire « N joueurs classés sur M tournois », « N dans les 10 % de tête », « aucun
   titre » / « un titre » / « N titres ». « Sur Radiance » ou « en Radiance » si le set
   doit être nommé.
 - Ne recopie AUCUN chiffre de l'ancien texte : ils sont tous de Vendetta.

@@ -48,6 +48,43 @@ quatre titres touchaient son bord en compact. Une autre police oblige à remesur
 4. Refaire les captures des articles : `public/img/articles/overlay-*.webp` montrent
    l'ancien overlay.
 
+## 8 novembre 2026 — hexgate 298 et 301, deux City Challenge du 7 novembre
+
+**Relevé** (`/api/tournaments?season=all`, 181 tournois, rien après 301) : entrent 298
+Shanghai et 301 Hangzhou, 128 joueurs chacun. 299 Foshan (71) et 300 Tianjin (85) restent
+dehors. 256 listes publiées, 247 complètes, **239 converties et seedées en LOCAL**
+(33 067 decks). Écartées : 7 Champions ambigus, 1 liste qui joue Ambessa `T1S`. Validateur :
+31 627 vérifiées, 0 MISMATCH. 11 Champions sans titre ajoutés à
+`hexgate-cartes-sans-titre.json` : 9 par le script, 2 à la main (Teemo `OGN-197b/298`, Mel
+`VEN-069b`), prouvés par `canonical_card_no`, l'image lue et le texte de la base.
+
+`maj:stats` : Radiance compte 2 033 joueurs classés sur 11 tournois, moyenne 9,9 %. Les
+commentaires de la Radiance et de la Globale sont réécrits, et l'étape 6 dit « collent aux
+chiffres ». Kha'Zix gagne son premier titre, toutes ères confondues. Allan valide trois
+lectures de la Radiance selon la règle du 7 novembre : Diana passe de S à A (p = 0,075),
+Kha'Zix de C à B (9,5 %, à côté de Rengar à 10,1 %), Ivern et Volibear entrent en D
+(16 et 15 joueurs, aucune place en coupe). La table compte 34 entrées, en local.
+
+**Prose recalée** (`data/fiches-prose.json`, `legend-guides.ts`, 34 fiches posées par
+`fiches-prose.mts --ecrire`) : comptes, conversions, moyenne, pourcentages de cartes, valeurs
+de p, meilleures places. Les plans de jeu n'ont pas été réécrits. Kha'Zix gagne son titre,
+Master Yi, Wuju Bladesman son deuxième, Diana perd « tient le test ». Azir, Evelynn, Kennen,
+Kai'Sa et Rek'Sai changent de meilleure place ou de nombre de Top. Lux cite ses chiffres de
+Vendetta et le dit désormais. **Reste vrai** : 12 guides de Légendes hors du set en cours
+(Ahri, Annie, Draven, Jax, Leona, Lucian, Lux, Miss Fortune, Ornn, Rumble, Sivir, Teemo)
+citent des cartes absentes de leur fiche ; ce relevé ne les concerne pas, pas touchés.
+
+**Pas fait** : commit, seed prod, tier lists prod, push, Deploy. `npm run verify` n'a pas
+tourné depuis le relevé, seulement `tsc`. `META-KNOWLEDGE` et `DECKBUILDING-RULES` n'ont pas
+bougé depuis le 17 octobre.
+
+**Une adresse de tournoi vient du libellé, pas du fichier** :
+`/tournois/s5-hangzhou-city-challenge-2026-11-07`, pas `/tournois/s5-hangzhou-cc-301`. Une
+adresse fausse répond 200 avec le titre « Tournoi introuvable » et un `noindex`, en local
+comme en prod : lire le titre, pas le code. Le contrôle du 7 novembre sur
+`/tournois/s5-beijing-cc-296` ne prouvait donc rien ; la vraie adresse de ce tournoi est
+bien en ligne (relu le 8 novembre).
+
 ## 7 novembre 2026 — hexgate 295 à 297, trois City Challenge S5 de plus
 
 **Relevé** (`/api/tournaments?season=all`, 177 tournois, rien après 297) : entrent

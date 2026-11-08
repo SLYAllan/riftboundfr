@@ -6,7 +6,7 @@
     "Mind"
   ],
   "set": "Unleashed",
-  "tier": 1,
+  "tier": 2,
   "archetype": "Combats gagnés à la réaction",
   "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
@@ -48,12 +48,12 @@
     },
     {
       "name": "Eclipse",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "role": "Standard, 89 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -68,61 +68,61 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Abandon",
-      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "strengths": [
     "Un titre, le Showdown de Melbourne, et une troisième place au même tournoi",
-    "33 joueurs classés sur 8 tournois, 7 dans les 10 % de tête : 21,2 % de conversion contre 10,0 % pour le format, un écart qui tient le test (p = 0,04)",
+    "34 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 20,6 % de conversion contre 9,9 % pour le format",
     "Gust, Stupefy, Star-Crossed, Eclipse et Hard Bargain répondent pendant le combat"
   ],
   "weaknesses": [
-    "33 joueurs seulement : l'écart tient le test, mais de justesse",
+    "34 joueurs seulement : l'écart ne tient plus le test (p = 0,075)",
     "L'énergie de la Légende ne sert que pendant un combat"
   ],
   "competitiveResults": {
-    "joueursClasses": 33,
+    "joueursClasses": 34,
     "coupe10": 7,
     "titres": 1,
-    "conversion": "21.2 %",
-    "tournois": 8,
-    "listesPubliees": 26,
+    "conversion": "20.6 %",
+    "tournois": 9,
+    "listesPubliees": 27,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -181,21 +181,20 @@
       "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "88 %",
+      "usage": "89 %",
       "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "88 %",
+      "usage": "89 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Targon's Peak (92 %)",
-    "Abandoned Hall (77 %)",
-    "Seat of Power (38 %)",
-    "Rockfall Path (31 %)"
+    "Targon's Peak (93 %)",
+    "Abandoned Hall (78 %)",
+    "Seat of Power (37 %)"
   ],
-  "dataSource": "Classement complet des tournois : 33 joueurs classés, 8 tournois, dont 26 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 34 joueurs classés, 9 tournois, dont 27 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

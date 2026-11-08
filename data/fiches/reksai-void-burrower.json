@@ -19,73 +19,63 @@
       "noyau": true
     },
     {
-      "name": "Inferna",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Carrion Dredger",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Inferna",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Faithful Manufactor",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Undertitan",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Trifarian Captain",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trifarian Captain",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hunting Dog",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Banner of Conquest",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Blood Rush",
-      "role": "Souple, 35 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Honest Broker",
-      "role": "Souple, 35 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Void Rush",
-      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -95,12 +85,12 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 58,
-    "coupe10": 8,
+    "joueursClasses": 73,
+    "coupe10": 9,
     "titres": 0,
-    "conversion": "13.8 %",
-    "tournois": 9,
-    "listesPubliees": 57,
+    "conversion": "12.3 %",
+    "tournois": 11,
+    "listesPubliees": 72,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -118,14 +108,14 @@
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
+        "placement": "7th",
+        "player": "Nothing",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
+      },
+      {
         "placement": "8th",
         "player": "莫非",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "9th",
-        "player": "Zlywt.芜哈哈哈哈哈",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
@@ -136,36 +126,36 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Pouncing": {
-      "usage": "60 %",
+      "usage": "63 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "42 %",
+      "usage": "39 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "The Candlelit Sanctum (93 %)",
-    "Forbidding Waste (49 %)",
+    "The Candlelit Sanctum (94 %)",
+    "Forbidding Waste (53 %)",
     "Hunters' Circle (44 %)",
-    "Ruined Monastery (33 %)"
+    "Ruined Monastery (35 %)"
   ],
-  "dataSource": "Classement complet des tournois : 58 joueurs classés, 9 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 73 joueurs classés, 11 tournois, dont 72 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {
-    "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Carrion Dredger, dans 96 % des listes, laisse un Oiseau à Protection en mourant, Faithful Manufactor pose un jeton Recrue en arrivant.",
+    "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Carrion Dredger, dans 97 % des listes, laisse un Oiseau à Protection en mourant, Faithful Manufactor pose un jeton Recrue en arrivant.",
     "midGame": "Cull the Weak, dans toutes les listes, oblige chaque joueur à tuer une de ses unités : vous sacrifiez un jeton, l'adversaire perd une vraie unité. Rek'Sai, Breacher, dans toutes les listes, donne Accélération aux unités jouées d'ailleurs que de la main, comme celles que révèle la Légende. Falling Star inflige 3 dégâts deux fois.",
-    "lateGame": "Undertitan, dans 95 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
+    "lateGame": "Undertitan, dans 96 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
     "winCondition": "Conquérir, puis enchaîner sur les cartes que la Légende révèle, avec des unités qui arrivent prêtes."
   },
   "strengths": [
-    "58 joueurs classés sur 9 tournois, 8 dans les 10 % de tête : 13,8 % de conversion contre 10,0 % pour le format",
-    "Quatre Top 8 en City Challenge : troisième à Shenyang, sixième à Guangzhou et à Shanghai, huitième à Shenzhen",
+    "73 joueurs classés sur 11 tournois, 9 dans les 10 % de tête : 12,3 % de conversion contre 9,9 % pour le format",
+    "Cinq Top 8 en City Challenge : troisième à Shenyang, sixième à Guangzhou et à Shanghai, septième à Shanghai le 7 novembre, huitième à Shenzhen",
     "Sept cartes dans au moins 95 % des listes, dont Cull the Weak et Falling Star dans toutes"
   ],
   "weaknesses": [
-    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,38)",
+    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,44)",
     "La Légende ne sert qu'après une conquête"
   ],
   "cartesDepuisBan": "2026-09-15",

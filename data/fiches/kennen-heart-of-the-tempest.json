@@ -16,13 +16,13 @@
     "winCondition": "Une défausse pleine qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
   },
   "strengths": [
-    "145 joueurs classés sur 9 tournois, 23 dans les 10 % de tête : 15,9 % de conversion contre 10,0 % de moyenne",
+    "166 joueurs classés sur 11 tournois, 26 dans les 10 % de tête : 15,7 % de conversion contre 9,9 % de moyenne",
     "Lightning Rush et Trifarian Captain dans toutes les listes : le deck choisit ce qu'il pioche et ce qu'il envoie dans la défausse",
-    "Minefield et Zaun Warrens dans 93 % des listes : les terrains remplissent la défausse et filtrent la main, ils font partie du plan",
+    "Minefield et Zaun Warrens dans 94 % des listes : les terrains remplissent la défausse et filtrent la main, ils font partie du plan",
     "Gust, Star-Crossed et Switcheroo, peu chers, répondent en plein combat"
   ],
   "weaknesses": [
-    "Aucun titre sur 9 tournois : la meilleure place est une deuxième à Suzhou",
+    "Aucun titre sur 11 tournois : la meilleure place est une deuxième, à Suzhou et à Hangzhou",
     "Remplir la défausse prend des tours, les départs très rapides le prennent de vitesse",
     "Sans carte jouée hors de la main, la Légende reste désamplifiée et ne donne aucun bonus"
   ],
@@ -46,7 +46,17 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 95 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Rhasa the Sunderer",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Last Rites",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -55,63 +65,53 @@
       "noyau": true
     },
     {
-      "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Seal of Discord",
       "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Last Rites",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Gust",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Bedeviling Stranger",
-      "role": "Standard, 77 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Reckless Innovator",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -121,18 +121,23 @@
     },
     {
       "name": "Tornado Warrior",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Shadow Order Disciple",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Nocturne, Horrifying": {
-      "usage": "98 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
@@ -140,27 +145,32 @@
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "47 %",
+      "usage": "43 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (93 %)",
-    "Zaun Warrens (93 %)",
+    "Minefield (94 %)",
+    "Zaun Warrens (94 %)",
     "Ruined Monastery (37 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 145,
-    "coupe10": 23,
+    "joueursClasses": 166,
+    "coupe10": 26,
     "titres": 0,
-    "conversion": "15.9 %",
-    "tournois": 9,
-    "listesPubliees": 134,
+    "conversion": "15.7 %",
+    "tournois": 11,
+    "listesPubliees": 155,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "猫岛巡礼 赤木柿子",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
       {
         "placement": "2nd",
         "player": "酷猫.Leo",
@@ -180,15 +190,10 @@
         "placement": "6th",
         "player": "Dylan Sumner",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "6th",
-        "player": "KD",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 145 joueurs classés, 9 tournois, dont 134 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 7 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 166 joueurs classés, 11 tournois, dont 155 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }
