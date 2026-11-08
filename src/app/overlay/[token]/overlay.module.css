@@ -1,15 +1,7 @@
-/* Arpona Bold partout, sauf le titre du tournoi et sa phase en Regular : choix d'Allan
-   sur essais. La Regular sur les noms et les points lui a déplu, même mêlée à la Bold.
-   Les woff2 sont produits depuis ses fichiers (fontTools) : c'est le format que tous
-   les navigateurs chargent vite.
+/* Arpona en gras, la police de la retransmission officielle. Le woff2 est produit
+   depuis l'OTF fourni par Allan (fontTools) : 42 Ko contre 107, et c'est le seul
+   format que tous les navigateurs chargent vite. L'OTF reste en secours.
    Elle ne sert QUE sur l'overlay : le reste du site garde ses polices. */
-@font-face {
-  font-family: "Arpona";
-  src: url("/fonts/arpona-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 @font-face {
   font-family: "Arpona";
   src: url("/fonts/arpona-bold.woff2") format("woff2"), url("/fonts/arpona-bold.otf") format("opentype");

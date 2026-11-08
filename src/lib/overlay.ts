@@ -10,8 +10,8 @@ export type OverlayLayout = "cams" | "nocam";
  */
 export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"];
 
-/** Les images qu'un streamer peut fournir. Un décor par mode : le compact n'a pas les
- * découpes des deux autres, et avec ou sans caméra on ne veut pas forcément le même. */
+/** Les images qu'un streamer peut fournir. Un décor par mode : les gabarits
+ * n'ont pas les mêmes découpes, un seul fond pour tous tomberait à côté. */
 export type GenreMedia = "logo" | "background" | "backgroundNocam" | "backgroundCompact";
 
 /** Où vit l'adresse d'une image envoyée, dans `event`. Partagée par le tableau de
@@ -63,9 +63,6 @@ export interface OverlayPlayer {
   championName: string;
   battlefields: string[];
   gamesWon: number;
-  // Texte libre (« 2nd », « Top 8 », « 13-0-3 ») : aucun site ne le fournit pour une
-  // locale. Vide, la pastille dorée disparaît.
-  classement?: string;
   // Lien « view » VDO.Ninja : chacun colle le sien, la camera arrive dans le cadre
   // sans passer par OBS. Vide = cadre laisse transparent (une source OBS peut se
   // poser dessous).
@@ -97,13 +94,14 @@ export interface OverlayStateData {
   // `timerMonte` : chrono qui monte. Il part de zéro, ne s'arrête jamais, et
   // s'affiche comme un temps écoulé ordinaire — ni plus, ni rouge : rien n'est
   // dépassé, on mesure. Sert aux rondes libres et aux pauses annoncées.
-  // `layout` : "cams" = une caméra par joueur. "nocam" = pour les locales qui n'ont
-  // qu'une caméra plateau : la Légende occupe alors la case de la caméra.
+  // `layout` : quel décor. "cams" = celui d'origine, avec un cadre webcam par joueur.
+  // "nocam" = le décor sans ces cadres, pour les locales qui n'ont qu'une caméra
+  // plateau : la Légende occupe alors la grande case.
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
-  // depuis un fichier à partir du gabarit Photoshop. Un par mode. Vide = le décor du
-  // site.
-  // `couleurPoint` / `couleurChiffres` : fond du point marqué et couleur des chiffres,
-  // en `#rrggbb`. Vide = les couleurs de `COULEURS_POINTS`.
+  // depuis un fichier à partir du gabarit Photoshop. Un par mode, parce que les
+  // découpes diffèrent. Vide = le décor du site pour ce mode.
+  // `couleurPoint` / `couleurChiffres` : fond du point marqué et couleur des chiffres
+  // des pastilles, en `#rrggbb`. Vide = les pastilles d'origine, au pixel près.
   event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string; couleurPoint?: string; couleurChiffres?: string };
   format: OverlayFormat;
   maxPoints: number;
@@ -130,23 +128,7 @@ export interface OverlayStateData {
 }
 
 function emptyPlayer(name: string): OverlayPlayer {
-  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, classement: "", camUrl: "", camBackground: false };
-}
-
-/**
- * Pas une limite d'usage : la pastille s'élargit avec le texte, et un score ou une phase
- * n'en approchent pas. C'est ce qu'un texte ordinaire peut faire sans être coupé dans la
- * pastille la plus large, une fois réduit par `FitText`.
- */
-export const CLASSEMENT_MAX = 40;
-
-/**
- * « Kai'Sa, Daughter of the Void » en deux lignes : le nom, puis le titre. La virgule
- * chinoise compte aussi, les noms du figurier chinois l'emploient.
- */
-export function nomEtTitre(nom: string): [string, string] {
-  const m = nom.match(/^(.+?)\s*(?:[,，]|\s-\s)\s*(.+)$/);
-  return m ? [m[1], m[2]] : [nom, ""];
+  return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, camUrl: "", camBackground: false };
 }
 
 export function defaultOverlayState(): OverlayStateData {
@@ -227,7 +209,7 @@ export type PatchOverlay = DeepPartial<OverlayStateData> & { players?: Array<Par
  * passer un champ que l'autre refuse.
  */
 export const CHAMPS_COMPAGNON = ["format", "maxPoints", "points", "players", "cards"] as const;
-export const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "classement"] as const;
+export const CHAMPS_JOUEUR_COMPAGNON = ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon"] as const;
 
 /**
  * Un état local remis d'accord avec ce que le serveur porte, DANS LES DEUX SENS.
@@ -312,7 +294,6 @@ function normaliserJoueur(v: unknown, nomParDefaut: string): OverlayPlayer {
     championName: texte(p.championName),
     battlefields: listeDeNoms(p.battlefields, 3),
     gamesWon: entier(p.gamesWon, 0, 5, 0),
-    classement: texte(p.classement, CLASSEMENT_MAX),
     camUrl: texte(p.camUrl, URL_MAX),
     camBackground: p.camBackground === true,
   };
@@ -323,25 +304,11 @@ function normaliserJoueur(v: unknown, nomParDefaut: string): OverlayPlayer {
 }
 
 /**
- * Couleurs des points, mesurées sur la retransmission officielle : l'or du point
- * marqué et le blanc des chiffres. Le sélecteur du tableau de bord part de là.
+ * Couleurs des pastilles d'origine, mesurées sur `public/stream/<n>_full.webp` :
+ * le disque bleu sous le point marqué, et le blanc des chiffres. Le sélecteur du
+ * tableau de bord part de là.
  */
-export const COULEURS_POINTS = { fond: "#d2a548", chiffres: "#ffffff" };
-
-/**
- * Le chiffre posé sur un point marqué : sombre sur un fond clair, blanc sur un fond
- * sombre. Le streamer choisit le fond, le chiffre doit rester lisible sans qu'il y
- * pense. Le seuil vient du contraste WCAG : 0,179 est le point où noir et blanc se
- * valent.
- */
-export function encreSur(fond: string): string {
-  const canal = (i: number) => {
-    const v = parseInt(fond.slice(i, i + 2), 16) / 255;
-    return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4;
-  };
-  const luminance = 0.2126 * canal(1) + 0.7152 * canal(3) + 0.0722 * canal(5);
-  return luminance > 0.179 ? "#211a29" : "#ffffff";
-}
+export const COULEURS_POINTS = { fond: "#1c60a6", chiffres: "#ffffff" };
 
 /** Une couleur `#rrggbb`, ou "" : rien d'autre n'entre dans un `style` de l'overlay. */
 export function couleurHex(v: unknown): string {

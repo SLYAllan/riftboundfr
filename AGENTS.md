@@ -56,22 +56,22 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
   `content/tweets/README.md`.
-- **Décors de l'overlay** (`public/stream/decor*.webp`, `Chrono.webp`, `layout*.psd`) →
-  **ne jamais les retoucher à la main : `src/lib/overlay-decor.ts` porte le dessin ET
-  les cases que le code remplit**, et `npm run gen:decor` en tire les images et les deux
-  gabarits Photoshop (demande `pip install psd-tools`). Le script relit les PSD et sort
-  en 1 s'ils s'écartent du décor. `cartes_gauche.webp` et `cartes_droite.webp` restent
-  les dessins d'Allan. Un décor envoyé par un streamer se pose à la place du nôtre : il
-  doit partir du gabarit, et changer une découpe décale ceux déjà en ligne.
+- **Décors d'habillage** (`public/stream/*.webp`) → **les découpes se mesurent sur
+  le canal alpha de l'image, jamais à l'œil.** Le code ne redessine rien : il
+  remplit les trous du décor. Deux pièges déjà payés : la boîte du dessin n'est pas
+  l'intérieur du cadre (l'illustration passait par-dessus les traits dorés), et une
+  coupure dans un rail est décorative, pas un séparateur (dans `compact.webp` elle
+  faisait croire à deux cadres, d'où un trou en plein milieu de la colonne). Les
+  deux côtés ne sont pas forcément symétriques : chacun porte ses mesures.
 - **Habillage de stream** → **toute vérification passe par OBS, pas par le
   navigateur, et sans qu'Allan ait à le demander.** C'est le seul endroit où l'on
   voit la transparence composée et le vrai rendu. OBS expose un WebSocket sur
-  `ws://127.0.0.1:4455` ; le mot de passe est dans `server_password` de
-  `%APPDATA%/obs-studio/plugin_config/obs-websocket/config.json` (relevé sur OBS 32),
-  Node 24 a `WebSocket` en natif, et `GetSourceScreenshot` sur la source navigateur
-  rend l'image. `PressInputPropertiesButton` avec `refreshnocache` recharge la source
-  avant la capture. Une source hors antenne rend une capture vide, sans erreur. Se fier
-  au port, pas aux fichiers de réglages : OBS peut ne les écrire qu'en quittant.
+  `ws://127.0.0.1:4455` ; le mot de passe est dans
+  `%APPDATA%/obs-studio/user.ini` (`ServerPassword=`), Node 24 a `WebSocket` en
+  natif, et `GetSourceScreenshot` sur la source « Navigateur web » rend l'image.
+  `PressInputPropertiesButton` avec `refreshnocache` recharge la source avant la
+  capture. Ne pas croire `ServerEnabled=` dans `user.ini` : OBS ne l'écrit qu'en
+  quittant, il disait `false` alors que le serveur tournait. Tester le port.
   Une mesure dans le navigateur ne prouve rien toute seule : elle sert à trouver,
   la capture OBS sert à conclure. Ne jamais changer l'état de l'habillage
   d'Allan pour prendre une capture : le lui demander.
@@ -398,13 +398,10 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   type dans `overlay.ts`, `normaliserEvent` juste en dessous, et la liste blanche
   de `overlay-validation.ts`. Cette liste refuse les champs inconnus : un champ
   oublié là fait répondre 400 à toute écriture du tableau de bord.
-  **Couleurs des points** (`couleurPoint`, `couleurChiffres`) : sans couleur, l'or et le
-  blanc de la retransmission officielle (`COULEURS_POINTS`). La rangée est dessinée dans
-  le composant `Points`, plus aucune image. `encreSur` choisit le chiffre posé sur un
-  point marqué, tant que le streamer n'a pas fixé le sien.
-  **Le classement** (`classement`, texte libre, la pastille s'élargit avec lui) suit le joueur : tableau de bord ET
-  compagnon l'écrivent. Sans le champ côté compagnon, celui du match d'avant restait à
-  l'écran sous le pseudo du nouveau joueur.
+  **Couleurs des points** (`couleurPoint`, `couleurChiffres`) : sans couleur, les
+  pastilles d'origine ; avec, trois calques tirés d'elles par
+  `scripts/gen-pastilles-calques.py` (`public/stream/points/`). Une pastille
+  redessinée oblige à relancer ce script, sinon les deux rendus divergent.
 
 ## Points d'entrée
 

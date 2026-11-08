@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   AlertTriangle, ArrowLeftRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, entrelace, manchesPourGagner, CLASSEMENT_MAX, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, entrelace, manchesPourGagner, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
 import { adopterChampsPartages, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
@@ -585,13 +585,15 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <option value="nocam">{t("Sans cadres caméra")}</option>
           </select>
           <p className="w-full text-xs text-ink-muted">
-            {t("Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : la Légende prend la place des deux caméras.")}
+            {t("Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : les deux cadres portrait disparaissent et la Légende prend la place.")}
           </p>
           {/* Décor maison. Le gabarit est fourni juste à côté : sans lui, une image
               quelconque décale tout, parce que les découpes doivent tomber au pixel
               près sur les cases que le code remplit. */}
-          {/* Le décor envoyé vaut pour le mode CHOISI juste au-dessus : on garde les
-              deux, et on montre celui du mode courant. Le gabarit, lui, est le même. */}
+          {/* Le décor envoyé vaut pour le mode CHOISI juste au-dessus : les deux
+              gabarits n'ont pas les mêmes découpes, un seul fond pour les deux
+              tomberait à côté. On garde donc les deux, et on montre celui du mode
+              courant. */}
           <div className="flex w-full flex-wrap items-center gap-2 border-t border-hairline pt-3">
             <span className="text-sm text-ink-secondary">
               {sansCam ? t("Votre propre décor (sans cadres caméra)") : t("Votre propre décor (avec cadres caméra)")}
@@ -777,11 +779,6 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                 <label className="block">
                   <span className="mb-1 block text-xs text-ink-muted">{t("Pseudo")}</span>
                   <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder={t("Son pseudo")} className={inputCls} />
-                </label>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
-                  <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} className={inputCls} />
                 </label>
 
                 <label className="block">

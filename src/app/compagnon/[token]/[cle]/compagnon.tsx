@@ -14,7 +14,7 @@ import {
 } from "@/lib/overlay-compagnon-client";
 import { creerFileEnvoi, type EtatEnvoi } from "@/lib/overlay-envoi";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
-import { adopterChampsPartages, applyStateUpdate, clampPoints, CLASSEMENT_MAX, type OverlayStateData } from "@/lib/overlay";
+import { adopterChampsPartages, applyStateUpdate, clampPoints, type OverlayStateData } from "@/lib/overlay";
 import styles from "./compagnon.module.css";
 
 const champCls = "w-full min-h-11 rounded-lg border border-hairline bg-surface-raised px-3 py-2.5 text-base text-ink placeholder:text-ink-muted focus:border-arcane/50 focus:outline-none";
@@ -210,16 +210,10 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
           <label><span className="mb-1 block text-sm text-ink-secondary">{t("Format")}</span><select name="format" autoComplete="off" value={state.format} onChange={(e) => modifierReglage({ format: e.target.value as OverlayStateData["format"] })} className={champCls}><option>BO1</option><option>BO3</option><option>BO5</option></select></label>
           <label><span className="mb-1 block text-sm text-ink-secondary">{t("Points pour gagner")}</span><select name="points" autoComplete="off" value={state.maxPoints} onChange={(e) => modifierReglage({ maxPoints: Number(e.target.value) })} className={champCls}><option value={8}>8</option><option value={9}>9</option><option value={10}>10</option></select></label>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => <div key={i} className="rounded-xl border border-hairline bg-surface p-4">
-          <span className="mb-2 block text-sm font-semibold">{t("Joueur")} {i + 1}</span>
-          <label className="block"><span className="mb-1 block text-xs text-ink-muted">{t("Pseudo du joueur")}</span>
-            <input name={`joueur-${i + 1}`} autoComplete="off" value={state.players[i].name} onChange={(e) => setJoueur(i, { name: e.target.value })} placeholder={`${t("Joueur")} ${i + 1}`} className={champCls} />
-          </label>
-          {/* Le classement suit le joueur : sans ce champ, celui du match d'avant restait à l'écran sous le pseudo du nouveau. */}
-          <label className="mt-3 block"><span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
-            <input name={`classement-${i + 1}`} autoComplete="off" maxLength={CLASSEMENT_MAX} value={state.players[i].classement ?? ""} onChange={(e) => setJoueur(i, { classement: e.target.value })} className={champCls} />
-          </label>
-        </div>)}</div>
+        <div className="grid gap-3 sm:grid-cols-2">{([0, 1] as const).map((i) => <label key={i} className="block rounded-xl border border-hairline bg-surface p-4">
+          <span className="mb-2 block text-sm font-semibold">{t("Joueur")} {i + 1}</span><span className="mb-1 block text-xs text-ink-muted">{t("Pseudo du joueur")}</span>
+          <input name={`joueur-${i + 1}`} autoComplete="off" value={state.players[i].name} onChange={(e) => setJoueur(i, { name: e.target.value })} placeholder={`${t("Joueur")} ${i + 1}`} className={champCls} />
+        </label>)}</div>
       </section>}
 
       {etape === 1 && <section aria-labelledby="etape-decks" className="space-y-4">

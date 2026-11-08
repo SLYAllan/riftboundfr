@@ -1,4 +1,4 @@
-import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, CLASSEMENT_MAX, couleurHex, type PatchOverlay } from "./overlay";
+import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, couleurHex, type PatchOverlay } from "./overlay";
 
 // Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
 // il en existait ici une seconde définition, plus plate, et les deux avaient
@@ -39,12 +39,8 @@ function nombre(value: unknown, chemin: string, min: number, max: number): strin
 function validerJoueur(value: unknown, index: number): string | null {
   if (!estObjet(value)) return `players.${index} doit être un objet`;
   const prefixe = `players.${index}`;
-  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "classement", "camUrl", "camBackground", "camNonce"], prefixe);
+  const inconnu = champsConnus(value, ["name", "legendId", "legendName", "championName", "battlefields", "gamesWon", "camUrl", "camBackground", "camNonce"], prefixe);
   if (inconnu) return inconnu;
-  if (value.classement !== undefined) {
-    const erreur = chaine(value.classement, `${prefixe}.classement`, CLASSEMENT_MAX);
-    if (erreur) return erreur;
-  }
   for (const cle of ["name", "legendName", "championName"] as const) {
     if (value[cle] !== undefined) {
       const erreur = chaine(value[cle], `${prefixe}.${cle}`);

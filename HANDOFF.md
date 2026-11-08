@@ -2,6 +2,14 @@
 
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
+**Retiré de `main` le 8 novembre, à la demande d'Allan** : les tournois et les guides partent
+sans lui. Les commits `4db12b8de` et `dd5bf6d20` restent dans l'historique, et le commit
+« overlay: retiré de main pour l'instant » les annule. Pour le remettre, `git revert` de ce
+commit. Avant le Deploy qui le mettra en ligne, compter les décors déjà envoyés par des
+streamers (`backgroundUrl`, `backgroundNocamUrl`, `backgroundCompactUrl` dans `OverlayState`) :
+le nouveau décor peut les décaler. Tout ce qui suit décrit donc un travail qui n'est plus sur
+`main`.
+
 Demandé par Allan sur deux captures du Regional Championship Europe. Couleurs et
 positions mesurées sur les captures. **Vu dans OBS** (trois modes, sans vraie caméra),
 sur un état simulé, sans toucher à celui d'Allan.
@@ -74,9 +82,8 @@ Vendetta et le dit désormais. **Reste vrai** : 12 guides de Légendes hors du s
 (Ahri, Annie, Draven, Jax, Leona, Lucian, Lux, Miss Fortune, Ornn, Rumble, Sivir, Teemo)
 citent des cartes absentes de leur fiche ; ce relevé ne les concerne pas, pas touchés.
 
-**Pas fait** : commit, seed prod, tier lists prod, push, Deploy. `npm run verify` n'a pas
-tourné depuis le relevé, seulement `tsc`. `META-KNOWLEDGE` et `DECKBUILDING-RULES` n'ont pas
-bougé depuis le 17 octobre.
+**Pas fait** : seed prod, tier lists prod, Deploy. `META-KNOWLEDGE` et `DECKBUILDING-RULES`
+n'ont pas bougé depuis le 17 octobre.
 
 **Une adresse de tournoi vient du libellé, pas du fichier** :
 `/tournois/s5-hangzhou-city-challenge-2026-11-07`, pas `/tournois/s5-hangzhou-cc-301`. Une
