@@ -63,7 +63,7 @@ describe("file d’envoi du compagnon", () => {
       format: "BO3",
       maxPoints: 8,
       players: [
-        { name: "Nouveau A", legendId: "1", legendName: "Ahri", championName: "Ahri", battlefields: ["Arena"] },
+        { name: "Nouveau A", legendId: "1", legendName: "Ahri", championName: "Ahri", battlefields: ["Arena"], classement: "Top 8" },
         { name: "Nouveau B", legendId: "2", legendName: "Sett", championName: "Sett", battlefields: ["Mine"] },
       ],
     });
@@ -76,8 +76,8 @@ describe("file d’envoi du compagnon", () => {
       maxPoints: 8,
       points: { a: 0, b: 0 },
       players: [
-        { name: "Nouveau A", legendId: "1", legendName: "Ahri", championName: "Ahri", battlefields: ["Arena"], gamesWon: 0 },
-        { name: "Nouveau B", legendId: "2", legendName: "Sett", championName: "Sett", battlefields: ["Mine"], gamesWon: 0 },
+        { name: "Nouveau A", legendId: "1", legendName: "Ahri", championName: "Ahri", battlefields: ["Arena"], gamesWon: 0, classement: "Top 8" },
+        { name: "Nouveau B", legendId: "2", legendName: "Sett", championName: "Sett", battlefields: ["Mine"], gamesWon: 0, classement: "" },
       ],
       cards: { lists: [[], []], ignored: [[], []], mode: "none", auto: false, index: [0, 0] },
     });

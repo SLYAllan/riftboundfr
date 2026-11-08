@@ -19,6 +19,7 @@ export function FitText({
   lines = 1,
   className = "",
   fondu = true,
+  alignement = "text-center",
 }: {
   children: string;
   /** Nombre de caracteres qui tiennent sur une ligne a taille pleine. */
@@ -31,13 +32,16 @@ export function FitText({
    *  qui change une fois par match, insupportable pour un chrono : il clignotait a
    *  chaque seconde. `fondu={false}` pour ce qui bouge tout seul. */
   fondu?: boolean;
+  /** Une prop plutôt que `className` : deux classes `text-*` se disputeraient, et
+   *  c'est l'ordre de la feuille de style qui trancherait, pas celui du composant. */
+  alignement?: "text-center" | "text-left" | "text-right";
 }) {
   const n = children.length;
   const capacite = chars * lines;
   const k = n > capacite ? Math.max(0.45, capacite / n) : 1;
   const multi = lines > 1;
   return (
-    <span className={`block w-full overflow-hidden text-center ${className}`}>
+    <span className={`block w-full overflow-hidden ${alignement} ${className}`}>
       <span
         key={fondu ? children : undefined}
         className={`${fondu ? styles.apparait : ""} ${multi ? "block [text-wrap:balance]" : "inline-block whitespace-nowrap"}`}

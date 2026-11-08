@@ -3,99 +3,51 @@ import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
-import { COULEURS_POINTS, echelleOverlay, entrelace, secondesChrono, TOILE, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { caseOverlay, decoupeCss, type Cote, type NomCase } from "@/lib/overlay-decor";
+import { COULEURS_POINTS, echelleOverlay, encreSur, entrelace, nomEtTitre, secondesChrono, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useLangue, useT } from "@/components/i18n-provider";
 import { useNomsZh } from "@/hooks/use-noms-zh";
 
-// Gabarit calé sur la maquette : deux colonnes de 300 px, le centre laissé
-// transparent pour la zone de jeu. Tout est en pixels sur une toile de 1920x1080,
-// que `useEchelle` met ensuite à la taille de la source d'OBS.
-// Le fond fourni (public/stream/test.webp) porte les cadres dorés et ses découpes
-// sont transparentes. Tout ce qui suit est mesuré dessus au pixel, en 1920x1080 :
-// on remplit ses trous, on ne redessine rien.
-const SLOT = {
-  x: { left: 43, right: 1606 },
-  width: 275,
-  name: { top: 24, height: 56 },
-  // Décor sans caméra : il n'y a pas de bandeau en haut, le pseudo flottait seul à
-  // 160 px au-dessus du cadre. Le trait doré du cadre commence à y 243 (mesuré sur
-  // layout_sanscam.webp) : on pose le pseudo juste dessus.
-  nameSansCam: { top: 181, height: 56 },
-  legend: { top: 88, height: 141 },
-  cam: { top: 246, height: 299 },
-  bf: { top: 545, height: 90 },
-  // Case dorée du bas relevée au pixel sur le fond : x 102-253, y 968-1019.
-  timer: { left: 102, top: 968, width: 152, height: 52 },
-  // Descendue de 906 à 900 pour ne plus chevaucher le bas du logo (qui finit à 892).
-  round: { top: 900, height: 50 },
-  // Calés sur l'intérieur des cadres dessinés dans cartes_gauche/droite.webp
-  // (contours dorés, bbox : gauche 41-316 x 682-1045, droite 1604-1879 x 682-1045),
-  // avec un léger retrait pour que la carte tienne dans le contour.
-  // La carte tient DANS le cadre, pas dessus : plus petite, centrée dans le contour
-  // (cadre gauche 41-316 x 682-1045, droite 1604-1879). ~30px de marge par côté.
-  cardsLeft: { left: 61, top: 708, width: 235, height: 310 },
-  cards: { left: 1624, top: 708, width: 235, height: 310 },
+// Toile de 1920x1080, que `useEchelle` met ensuite à la taille de la source d'OBS.
+// Le décor et les cases du joueur viennent de `src/lib/overlay-decor.ts`, ce fichier
+// ne garde que ce qui n'existe qu'à gauche, sous le joueur.
+const BAS_GAUCHE = {
+  x: 36,
+  largeur: 275,
+  // Descendu de 12 px quand il y a un logo : ancré en bas de sa case, le titre collait
+  // aux manches au-dessus.
+  titreAvecLogo: { top: 640, height: 66 },
+  titreSeul: { top: 700, height: 190 },
+  logo: { top: 708, height: 184 },
+  ronde: { top: 930, height: 38 },
+  chrono: { left: 98, top: 968, width: 150, height: 50 },
 } as const;
 
-// Découpes de public/stream/compact.webp, relevées au pixel sur son canal alpha.
-//
-// UN SEUL panneau par joueur : les rails dorés portent une coupure décorative de
-// 130 à 206, ce n'est pas un séparateur. La Légende passe dessous et descend jusqu'au
-// trait plein (246-248), le champ de bataille occupe tout ce qui reste. Découper la
-// Légende à la coupure laissait un trou en plein milieu.
-//
-// Les mesures sont celles de l'INTÉRIEUR des rails, pas de la boîte du dessin :
-// rails verticaux à 30-32 et 249-251 à gauche, bordures à 26-28 et 254-255. Se caler
-// sur la boîte faisait passer l'illustration par-dessus les traits, et ça se voyait.
-//
-// Le pseudo, lui, tombe SOUS le panneau, à l'air libre : comme dans le décor sans
-// caméra, il ne prend pas de place dans l'encadré.
-//
-// Le décor du 22 août rend les deux côtés identiques au pixel : le cadre de droite
-// est celui de gauche décalé de 1635 px (rails 1665-1667 et 1884-1886, mêmes lignes
-// horizontales). Avant, il était plus large de 8 px et descendait de 7, d'où deux
-// jeux de mesures. On garde deux jeux quand même : rien ne garantit que le prochain
-// décor reste symétrique, et c'est ce qu'on avait supposé la dernière fois.
-const CADRE_COMPACT = {
-  left: {
-    x: 33, largeur: 216,
-    hero: { top: 26, hauteur: 220 },
-    bf: { top: 249, hauteur: 62 },
-    pseudo: { top: 333, hauteur: 38 },
-    // Le cadre de cartes est dessiné à demeure dans cartes_gauche.webp : on ne peut
-    // pas le déplacer, seulement transformer son calque. Réduit de 0,85 et ancré au
-    // coin du bas — d'où le décalage, `transform-origin` étant en haut à gauche.
-    cartes: { echelle: 0.85, x: 0, y: 162 },
-  },
-  right: {
-    x: 1668, largeur: 216,
-    hero: { top: 26, hauteur: 220 },
-    bf: { top: 249, hauteur: 62 },
-    pseudo: { top: 333, hauteur: 38 },
-    // Le cadre de cartes se cale sur le panneau du dessus, pas sur le milieu de la
-    // toile. Les deux images de cadre sont la même à 1563 px d'écart, les deux
-    // panneaux à 1635 px : le décalage est donc 1635 - 1563 x 0,85 = 306,45, et le
-    // cadre de droite retombe au même retrait qu'à gauche. 288 le posait 18 px trop
-    // à gauche depuis que le panneau a bougé.
-    cartes: { echelle: 0.85, x: 306.45, y: 162 },
-  },
+// Le cadre de cartes est dessiné à demeure dans une image pleine toile : on ne peut que
+// transformer le calque entier, et la carte suit parce qu'elle est dedans. Ces images
+// sont centrées 6 px à côté de la colonne, d'où le décalage. En compact, elles sont
+// réduites et ramenées sous le bloc du joueur : les deux images sont la même à 1563 px
+// d'écart, et chacune se cale sur le milieu de son bloc.
+const CARTES = {
+  complet: { left: "translateX(-6px)", right: "translateX(6px)" },
+  compact: { left: "translate(16.3px, 162px) scale(0.85)", right: "translate(271.7px, 162px) scale(0.85)" },
 } as const;
-const FOND_COMPACT = "/stream/compact.webp";
+const CASE_CARTE = {
+  left: { left: 61, top: 708, width: 235, height: 310 },
+  right: { left: 1624, top: 708, width: 235, height: 310 },
+} as const;
 
+// Les décors du site, tirés de `overlay-decor.ts` par `npm run gen:decor`. Avec ou sans
+// caméra, c'est le même : sans caméra, la Légende occupe simplement la case.
+const FOND = "/stream/decor.webp";
+const FOND_COMPACT = "/stream/decor_compact.webp";
 
-// Deux décors possibles, même gabarit 1920x1080, mêmes découpes — sauf les deux
-// cadres portrait de webcam, absents du second. Beaucoup de locales n'ont qu'une
-// caméra plateau : le cadre vide se voyait, et on ne pouvait rien y faire.
-const FOND = "/stream/test.webp";
-const FOND_SANS_CAM = "/stream/layout_sanscam.webp";
-
-// Le décor sans caméra n'a QUE deux ouvertures par colonne, relevées sur son canal
-// alpha : y 251-543 (l'ancienne case caméra) et y 547-630 (le champ de bataille). La
-// fenêtre à bannière de Légende n'existe plus. La Légende prend donc la grande case,
-// et comme celle-ci est presque carrée (278 x 293), on y met l'icône carrée et non la
-// bannière large, qui serait rognée des deux côtés.
+// Combien de caractères tiennent par pixel de largeur, à la taille de chaque texte.
+// `FitText` compte les caractères plutôt que de mesurer (la mesure ment dans le
+// navigateur d'OBS). Relevé sur les noms les plus larges, en majuscules Arpona.
+const PX_PAR_CARACTERE = { nom: 10.2, titre: 8, pseudo: 15.5, terrain: 9 };
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
@@ -136,70 +88,51 @@ function useBattlefieldArt(names: string[]): Record<string, string | null> {
 }
 
 /**
- * Une pastille recolorée, en trois calques tirés de l'image d'origine par
- * `scripts/gen-pastilles-calques.py` : le disque du point marqué (dessiné ici,
- * l'image « full » n'est que la « empty » posée sur un disque), le socle sans son
- * chiffre, puis le chiffre en masque. Ses bords cachés sous l'anneau blanc opaque,
- * le disque n'a pas besoin d'être une image.
+ * La rangée de points, comme sur la retransmission : 1 à 7 de chaque côté et un seul 8
+ * au milieu, dans un écu, puisque les deux joueurs visent le même. Dessinée ici et pas
+ * en image : elle se pose sur tous les décors, et ses couleurs se changent.
  */
-function PastilleRecoloree({ v, full, fond, chiffres, className }: { v: number; full: boolean; fond: string; chiffres: string; className: string }) {
-  const masque = `url(/stream/points/${v}_chiffre.webp)`;
-  return (
-    <span className={`relative block shrink-0 ${className}`}>
-      {full && <span className="absolute inset-[15%] rounded-full" style={{ backgroundColor: fond }} />}
-      <img src={`/stream/points/${v}_socle.webp`} alt="" className="absolute inset-0 h-full w-full" />
-      {/* Préfixe -webkit- : le navigateur d'OBS n'a pas toujours `mask-image` nu. */}
+function Points({ max, a, b, visible, couleurPoint, couleurChiffres, echelle = 1 }: { max: number; a: number; b: number; visible: boolean; couleurPoint?: string; couleurChiffres?: string; echelle?: number }) {
+  const fond = couleurPoint || COULEURS_POINTS.fond;
+  const chiffre = couleurChiffres || COULEURS_POINTS.chiffres;
+  const chiffreMarque = couleurChiffres || encreSur(fond);
+  const pastille = (v: number, score: number, cle: string) => {
+    const marque = v === score;
+    return (
       <span
-        className="absolute inset-0"
-        style={{ backgroundColor: chiffres, WebkitMaskImage: masque, maskImage: masque, WebkitMaskSize: "100% 100%", maskSize: "100% 100%" }}
-      />
-    </span>
-  );
-}
-
-function Points({ max, a, b, visible, couleurPoint, couleurChiffres }: { max: number; a: number; b: number; visible: boolean; couleurPoint?: string; couleurChiffres?: string }) {
-  // Sans couleur choisie, les images d'origine : le chiffre y est placé à un pixel
-  // près autrement entre « empty » et « full », les calques ne le reproduisent pas.
-  const recolore = Boolean(couleurPoint || couleurChiffres);
-  const cells: { side: "a" | "b"; v: number }[] = [];
-  for (let i = 1; i <= max; i++) cells.push({ side: "a", v: i });
-  for (let i = max; i >= 1; i--) cells.push({ side: "b", v: i });
+        key={cle}
+        className="mt-[14.5px] flex size-[33px] shrink-0 items-center justify-center rounded-full text-[20px] leading-none transition-colors duration-200 ease-out"
+        style={{
+          backgroundColor: marque ? fond : "#172636",
+          color: marque ? chiffreMarque : chiffre,
+          boxShadow: marque ? undefined : "inset 0 0 0 1.2px #a38d5c",
+        }}
+      >
+        {v}
+      </span>
+    );
+  };
+  const montants = Array.from({ length: max - 1 }, (_, i) => i + 1);
+  const ecuMarque = a === max || b === max;
   return (
-    // Pastilles = images fournies (public/stream/<n>_empty|full.webp), pas de rond
-    // dessiné en code. La pastille du score courant de chaque joueur est « full »,
-    // les autres « empty ». Espacement régulier : l'ancienne marge centrale (ml-3)
-    // créait un écart de 62px au milieu contre 50px ailleurs.
     <div
-      className="absolute left-1/2 top-4 z-20 flex -translate-x-1/2 items-center transition-opacity duration-300 ease-out"
-      style={{ opacity: visible ? 1 : 0 }}
+      className="absolute left-1/2 top-0 z-20 transition-opacity duration-300 ease-out"
+      style={{ opacity: visible ? 1 : 0, transform: `translateX(-50%) scale(${echelle})`, transformOrigin: "top center" }}
     >
-      {cells.map((c, i) => {
-        const full = (c.side === "a" && c.v === a) || (c.side === "b" && c.v === b);
-        // Le point final (celui qui donne la manche) est mis en avant : un poil plus
-        // gros et un peu détaché du reste. Les autres restent à 50 px, collés.
-        const finalPoint = c.v === max;
-        const taille = finalPoint ? "mx-1.5 h-[58px] w-[58px]" : "h-[50px] w-[50px]";
-        if (recolore) {
-          return (
-            <PastilleRecoloree
-              key={i}
-              v={c.v}
-              full={full}
-              fond={couleurPoint || COULEURS_POINTS.fond}
-              chiffres={couleurChiffres || COULEURS_POINTS.chiffres}
-              className={taille}
-            />
-          );
-        }
-        return (
-          <img
-            key={i}
-            src={`/stream/${c.v}_${full ? "full" : "empty"}.webp`}
-            alt=""
-            className={`object-contain ${taille}`}
-          />
-        );
-      })}
+      {/* Le bandeau et son filet s'éteignent avec les points, ils sont donc ici et pas dans le décor. */}
+      {/* Pas opaque : le bandeau couvrait la vidéo d'un bloc, et ses bords se voyaient. */}
+      <div className="absolute -inset-x-24 top-0 h-[61px]" style={{ background: "linear-gradient(90deg, transparent, rgba(23,36,51,.2) 6%, rgba(23,36,51,.55) 12%, rgba(23,36,51,.8) 20%, rgba(23,36,51,.8) 80%, rgba(23,36,51,.55) 88%, rgba(23,36,51,.2) 94%, transparent)" }} />
+      <div className="absolute -inset-x-3 top-[60px] h-[1.5px]" style={{ background: "linear-gradient(90deg, transparent, #c8a55c 42%, #c8a55c 58%, transparent)" }} />
+      <div className="relative flex items-start gap-[5.33px]">
+        {montants.map((v) => pastille(v, a, `a${v}`))}
+        <svg viewBox="929 4 62 70" width={62} height={70} className="mx-[3px] mt-[4px] shrink-0" aria-hidden>
+          <polygon points="930,15 938,8 982,8 990,15 990,55 960,73 930,55" fill="#0f1b28" stroke="#c8a55c" strokeWidth="1.5" />
+          <polygon points="936,19 941,13 979,13 984,19 984,52 960,67 936,52" fill={ecuMarque ? fond : "#0f2a3c"} stroke="#6f6240" strokeWidth="1" className="transition-colors duration-200 ease-out" />
+          <rect x="955.5" y="6.5" width="9" height="9" transform="rotate(45 960 11)" fill="#172938" stroke="#c8a55c" strokeWidth="1.2" />
+          <text x="960" y="53" textAnchor="middle" fontSize={max >= 10 ? 32 : 40} fill={ecuMarque ? chiffreMarque : chiffre}>{max}</text>
+        </svg>
+        {[...montants].reverse().map((v) => pastille(v, b, `b${v}`))}
+      </div>
     </div>
   );
 }
@@ -210,7 +143,7 @@ function Points({ max, a, b, visible, couleurPoint, couleurChiffres }: { max: nu
  * Composant à part pour que « Relancer » suffise : on le remonte par sa clé et
  * l'état du témoin repart de zéro tout seul.
  */
-function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
+function CadreCamera({ cam, nom, hauteur }: { cam: string; nom: string; hauteur: number }) {
   const t = useT();
   const [charge, setCharge] = useState(false);
   return (
@@ -227,14 +160,15 @@ function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
         onLoad={() => setCharge(true)}
         className="absolute left-1/2 top-0 border-0 transition-opacity duration-300 ease-out"
         style={{
-          width: Math.round((SLOT.cam.height * 16) / 9),
-          height: SLOT.cam.height,
+          width: Math.round((hauteur * 16) / 9),
+          height: hauteur,
           transform: "translateX(-50%)",
           opacity: charge ? 1 : 0,
         }}
       />
+      {/* bottom-5 : le bas de la case passe sous la plaque du pseudo. */}
       <span
-        className="absolute inset-x-0 bottom-1 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70 transition-opacity duration-300 ease-out"
+        className="absolute inset-x-0 bottom-5 text-center text-[11px] font-semibold uppercase tracking-wide text-white/70 transition-opacity duration-300 ease-out"
         style={{ opacity: charge ? 0 : 1 }}
       >
         {t("caméra en attente")}
@@ -243,165 +177,116 @@ function CadreCamera({ cam, nom }: { cam: string; nom: string }) {
   );
 }
 
-/** Nom de Légende et Champion posés en bas d'une case, sur un dégradé. */
-function EtiquetteLegende({
-  legende, champion, charsLegende = 26, charsChampion = 34,
-}: { legende: string; champion: string; charsLegende?: number; charsChampion?: number }) {
+/** Une ligne du panneau : le nom de la carte, puis son titre en plus petit. */
+function NomCarte({ nom, repli, cas, side, compact }: { nom: string; repli: string; cas: NomCase; side: Cote; compact: boolean }) {
   const nomZh = useNomsZh();
-  const t = useT();
+  const place = caseOverlay(cas, side, compact);
+  const [principal, titre] = nomEtTitre(nom ? nomZh(nom) : repli);
+  const alignement = side === "left" ? "text-left" : "text-right";
+  // La bannière se referme en flèche : au bas de sa case, le titre du champion n'a plus
+  // que 171 px sur 196. « Leader of the Kinkou Order » (Shen) en sortait de 16 px.
+  const largeurTitre = cas === "champion" ? (place.width * 171) / 196 : place.width;
   return (
-    <>
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 z-20 overflow-hidden px-2 pb-2">
-        <FitText chars={charsLegende} className="text-base font-bold uppercase leading-tight text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-          {legende ? nomZh(legende) : t("Légende")}
+    <div className="absolute z-20 flex flex-col justify-center overflow-hidden" style={place}>
+      <FitText chars={Math.floor(place.width / PX_PAR_CARACTERE.nom)} alignement={alignement} className="text-[18px] uppercase leading-[1.1] tracking-[0.3px] text-white">
+        {principal}
+      </FitText>
+      {titre && (
+        <FitText chars={Math.floor(largeurTitre / PX_PAR_CARACTERE.titre)} alignement={alignement} className="mt-px text-[11.9px] uppercase leading-[1.2] tracking-[0.2px] text-[#e6edf1]">
+          {titre}
         </FitText>
-        <FitText chars={charsChampion} className="text-sm leading-tight text-white/85 drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-          {champion ? nomZh(champion) : "Champion"}
-        </FitText>
-      </div>
-    </>
-  );
-}
-
-function Side({
-  p,
-  side,
-  format,
-  sansCam,
-  footer,
-}: {
-  p: OverlayPlayer;
-  side: "left" | "right";
-  format: OverlayStateData["format"];
-  sansCam: boolean;
-  footer: React.ReactNode;
-}) {
-  const t = useT();
-  const nomsZh = useNomsZh();
-  // Bannière large plutôt que la vignette carrée : c'est ce que montre la
-  // retransmission officielle, et l'illustration porte le panneau.
-  const banner = p.legendName ? getBannerUrl(p.legendName) : null;
-  const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
-  const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
-  // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
-  const bf = p.battlefields[0] ?? "";
-  const art = useBattlefieldArt(bf ? [bf] : []);
-  const cam = normaliserLienCamera(p.camUrl);
-  return (
-    <div className="absolute inset-0">
-      {/* Pseudo, juste au-dessus du premier cadre. */}
-      <div
-        className="absolute z-20 flex flex-col justify-center overflow-hidden px-2"
-        style={{
-          left: SLOT.x[side],
-          width: SLOT.width,
-          top: (sansCam ? SLOT.nameSansCam : SLOT.name).top,
-          height: (sansCam ? SLOT.nameSansCam : SLOT.name).height,
-        }}
-      >
-        <FitText chars={13} className="text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {p.name}
-        </FitText>
-      </div>
-
-      {/* Légende : la bannière remplit la découpe, le nom et le champion par-dessus.
-          Le décor sans caméra n'a pas cette fenêtre : la Légende passe dans la grande
-          case en dessous. */}
-      {!sansCam && (
-        <div
-          className="absolute overflow-hidden"
-          style={{ left: SLOT.x[side], width: SLOT.width, top: SLOT.legend.top, height: SLOT.legend.height }}
-        >
-          <ImageFondu src={banner ?? icon} imgClassName="object-cover object-[50%_28%]" />
-          <EtiquetteLegende legende={p.legendName} champion={p.championName} />
-        </div>
       )}
-
-      {/* Caméra : le lien VDO.Ninja s'affiche dans le cadre. Sans lien, le cadre
-          reste vide et transparent, la source se pose dessous dans OBS. */}
-      {/* Le cadre caméra est toujours là : transparent si rien (une source OBS peut se
-          poser dessous), le fond webcam s'il est coché, le flux VDO.Ninja par-dessus. */}
-      {/* Décor sans caméra : la grande case porte la Légende, en icône carrée. */}
-      {sansCam && (
-        <div
-          style={{ left: SLOT.x[side] - 3, width: SLOT.width + 6, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
-          className="absolute overflow-hidden"
-        >
-          {/* L'icône d'abord, la bannière seulement en secours : la case est presque
-              carrée, une bannière large y perdrait les deux côtés du dessin. */}
-          <ImageFondu src={icon ?? banner} imgClassName="object-cover" />
-          <EtiquetteLegende legende={p.legendName} champion={p.championName} />
-        </div>
-      )}
-
-      {!sansCam && (
-        <div
-          // Élargi de 3 px de chaque côté (centre conservé), comme le champ de
-          // bataille en dessous : l'ouverture dessinée dans le décor est un peu plus
-          // large que la case mesurée, et il restait un trait clair de 2 px à gauche
-          // et 1 px à droite sur toute la hauteur — transparent dans OBS, blanc au
-          // navigateur. Le cadre doré passe au-dessus, on ne fait que combler.
-          style={{ left: SLOT.x[side] - 3, width: SLOT.width + 6, top: SLOT.cam.top, height: SLOT.cam.height } as React.CSSProperties}
-          className="absolute overflow-hidden"
-          aria-label={t("Caméra")}
-        >
-          {/* Fond de webcam en OPTION (case à cocher par joueur) : le cadre n'est pas
-              vide sans caméra. Le flux VDO.Ninja, quand il arrive, se pose par-dessus. */}
-          <ImageFondu src={p.camBackground ? "/stream/webcam_default.png" : null} imgClassName="object-cover" />
-          {/* Bac à sable rétabli : sans lui la page encadrée peut naviguer la fenêtre
-              du dessus. `allow-scripts` et `allow-same-origin` sont le minimum pour que
-              WebRTC tourne. Une webcam est en 16:9, le cadre est en portrait : on
-              agrandit le flux jusqu'à couvrir le cadre et on garde le centre — c'est le
-              buste qu'on veut voir. Le témoin dit si le cadre a fini de charger. */}
-          {/* La clé porte le nonce : « Relancer » le change, React jette le cadre
-              et en monte un neuf — le flux repart et le témoin d'attente aussi,
-              sans effet de bord à écrire. Sans ça, un VDO.Ninja figé reste figé. */}
-          {cam && <CadreCamera key={`${cam}-${p.camNonce ?? 0}`} cam={cam} nom={p.name} />}
-        </div>
-      )}
-
-      {/* Le champ de bataille en jeu, son illustration en fond, et les manches
-          gagnées posées dessus comme sur la retransmission officielle. */}
-      <div
-        // Élargi de 8px de chaque côté (centre conservé) : l'ombre allait moins
-        // loin que l'ouverture du cadre, il restait une bande bleue à gauche et à
-        // droite. Le cadre doré (dans test.webp) reste au-dessus, on remplit juste
-        // le vide sous ses bords.
-        style={{ left: SLOT.x[side] - 8, width: SLOT.width + 16, top: SLOT.bf.top, height: SLOT.bf.height } as React.CSSProperties}
-        className="absolute overflow-hidden bg-black/70"
-      >
-        {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
-            liseré et le bandeau de titre de l'illustration. Voile léger, et un
-            dégradé sous le texte seulement, pour ne pas éteindre l'art. */}
-        <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
-        <div className="relative z-20 flex h-full flex-col justify-end overflow-hidden px-2 pb-2">
-          <FitText chars={24} className="text-base font-bold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {bf ? nomsZh(bf) : t("Champ de bataille")}
-          </FitText>
-          {rounds > 0 && (
-            // mb-2 : posées au ras du bas de la découpe, les pastilles touchaient
-            // le trait doré du cadre. Remontées de 8 px.
-            <div className="mt-2 mb-2 flex justify-center gap-2.5">
-              {Array.from({ length: rounds }).map((_, i) => (
-                <Manche key={i} gagnee={i < p.gamesWon} />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {footer}
     </div>
   );
 }
 
 /**
- * Manche du Bo3. Les deux pastilles se ressemblent, c'est le logo qui distingue la
- * manche gagnee : un anneau dore sur fond sombre dans les deux cas, comme sur la
- * retransmission. Pas de fond dore delave, qui jurait avec l orange du logo.
+ * Tout ce qu'un joueur a à l'écran, sans le décor : d'abord ce qui se voit à travers
+ * ses découpes (sans z-index, donc dessous), puis les textes, au-dessus.
+ */
+function Colonne({ p, side, format, sansCam = false, compact = false }: { p: OverlayPlayer; side: Cote; format: OverlayStateData["format"]; sansCam?: boolean; compact?: boolean }) {
+  const t = useT();
+  const nomsZh = useNomsZh();
+  const icone = p.legendName ? getLegendIconUrl(p.legendName) : null;
+  const banniere = p.legendName ? getBannerUrl(p.legendName) : null;
+  const manches = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
+  // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
+  const bf = p.battlefields[0] ?? "";
+  const art = useBattlefieldArt(bf ? [bf] : []);
+  const cam = normaliserLienCamera(p.camUrl);
+  const place = (nom: NomCase) => caseOverlay(nom, side, compact);
+  const classement = p.classement?.trim() ?? "";
+  return (
+    <>
+      {/* L'icône d'abord, la bannière en secours : ces deux cases sont presque carrées,
+          une bannière large y perdrait les deux côtés du dessin. */}
+      <div className="absolute overflow-hidden bg-[#0f1824]" style={{ ...place("portrait"), clipPath: decoupeCss("portrait", side) }}>
+        <ImageFondu src={icone ?? banniere} imgClassName="object-cover" />
+      </div>
+
+      {!compact && (
+        <div className={`absolute overflow-hidden ${sansCam ? "bg-[#0f1824]" : ""}`} style={place("camera")} aria-label={t("Caméra")}>
+          {sansCam ? (
+            <ImageFondu src={icone ?? banniere} imgClassName="object-cover" />
+          ) : (
+            <>
+              {/* Sans lien ni fond coché, la case reste transparente : une source OBS
+                  peut se poser dessous. */}
+              {/* Assombri : l'image est dessinée pour l'ancien fond, plus clair, et
+                  sautait aux yeux sur le bleu nuit. */}
+              <ImageFondu src={p.camBackground ? "/stream/webcam_default.png" : null} imgClassName="object-cover brightness-[.55]" />
+              {/* La clé porte le nonce : « Relancer » le change, React jette le cadre
+                  et en monte un neuf. Sans ça, un VDO.Ninja figé reste figé. */}
+              {cam && <CadreCamera key={`${cam}-${p.camNonce ?? 0}`} cam={cam} nom={p.name} hauteur={place("camera").height} />}
+            </>
+          )}
+        </div>
+      )}
+
+      <div className="absolute overflow-hidden bg-[#0f1824]" style={{ ...place("terrainArt"), clipPath: decoupeCss("terrainArt", side) }}>
+        {/* Agrandi de 40 % pour sortir du cadre de la carte : sans ça on voyait le
+            liseré et le bandeau de titre de l'illustration. */}
+        <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
+      </div>
+
+      <NomCarte nom={p.legendName} repli={t("Légende")} cas="legende" side={side} compact={compact} />
+      <NomCarte nom={p.championName} repli="Champion" cas="champion" side={side} compact={compact} />
+
+      <div className="absolute z-20 flex items-center overflow-hidden" style={place("pseudo")}>
+        <FitText chars={Math.floor(place("pseudo").width / PX_PAR_CARACTERE.pseudo)} className="text-[21.5px] uppercase tracking-[0.4px] text-white">
+          {p.name}
+        </FitText>
+      </div>
+
+      {classement && (
+        <div
+          className="absolute z-20 flex items-center overflow-hidden bg-[#d4a745]"
+          style={{ ...place("classement"), clipPath: "polygon(0 0, 100% 0, 82.7% 100%, 17.3% 100%)" }}
+        >
+          <FitText chars={6} className="text-[16px] uppercase leading-none text-[#3a3325]">{classement}</FitText>
+        </div>
+      )}
+
+      <div className="absolute z-20 flex items-center overflow-hidden" style={place("terrainNom")}>
+        <FitText chars={Math.floor(place("terrainNom").width / PX_PAR_CARACTERE.terrain)} className="text-[13px] uppercase leading-none tracking-[0.3px] text-white">
+          {bf ? nomsZh(bf) : t("Champ de bataille")}
+        </FitText>
+      </div>
+
+      {manches > 0 && (
+        <div className="absolute z-20 flex items-center justify-center gap-4" style={place("manches")}>
+          {Array.from({ length: manches }).map((_, i) => (
+            <Manche key={i} gagnee={i < p.gamesWon} petite={compact} />
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+/**
+ * Manche d'un Bo3 : un anneau sur fond sombre dans les deux cas, c'est le logo qui
+ * distingue la manche gagnée.
  */
 // `petite` : la version compacte tombe a 24 px. L'anneau d'une manche perdue a 35 %
 // de blanc y disparaissait sur une illustration sombre, et le score ne se lisait plus.
@@ -409,12 +294,11 @@ function Manche({ gagnee, petite = false }: { gagnee: boolean; petite?: boolean 
   return (
     <span
       key={String(gagnee)}
-      className={`${styles.apparait} flex items-center justify-center rounded-full bg-black/55 ring-2 ${
-        petite ? "h-6 w-6" : "h-8 w-8"
-      } ${gagnee ? "ring-gold" : petite ? "ring-white/60" : "ring-white/35"}`}
-      style={{ boxShadow: gagnee ? "0 0 10px rgba(212,168,67,0.55)" : "0 1px 4px rgba(0,0,0,0.5)" }}
+      className={`${styles.apparait} flex items-center justify-center rounded-full bg-[#0b121b] ring-2 ${
+        petite ? "size-6" : "size-7"
+      } ${gagnee ? "ring-[#c8a55c]" : petite ? "ring-white/60" : "ring-white/35"}`}
     >
-      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className={`${petite ? "h-4 w-4" : "h-5 w-5"} object-contain`} />}
+      {gagnee && <img src="/stream/RB_riftbound_icon.svg" alt="" className={`${petite ? "size-4" : "size-5"} object-contain`} />}
     </span>
   );
 }
@@ -513,11 +397,8 @@ function activesCadre(liste: string[], ignored: string[], auto: boolean): string
 
 /**
  * Ce que montre chaque cadre, selon le mode. "split" = un deck par cadre ; "mixed" =
- * les deux decks mêlés, à droite seulement (dans l'habillage complet, la gauche garde
+ * les deux decks mêlés, à droite seulement (dans l'overlay complet, la gauche garde
  * le chrono). La gauche ne montre des cartes qu'en "split".
- *
- * Lue par l'habillage complet ET par le compact : le calcul était écrit une seule
- * fois, dans le complet, et le compact n'avait donc pas de cartes du tout.
  */
 function cartesParCadre(cards: OverlayStateData["cards"]): { gauche: string[]; droite: string[] } {
   const mode = cards?.mode ?? "none";
@@ -546,6 +427,32 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
   return <CarteMontree nom={nom} slot={slot} />;
 }
 
+/** Un cadre de cartes : le calque du gabarit et sa carte, transformés ensemble. */
+function CadreCartes({ side, visible, cards, actives, compact }: { side: Cote; visible: boolean; cards: OverlayStateData["cards"]; actives: string[]; compact: boolean }) {
+  return (
+    <div
+      className="absolute inset-0 z-[11]"
+      style={{ transform: CARTES[compact ? "compact" : "complet"][side], transformOrigin: "0 0" }}
+    >
+      {/* Le cadre suit le MODE et pas le nombre de cartes : on peut le poser vide, puis
+          y charger le deck. */}
+      <img
+        src={side === "left" ? "/stream/cartes_gauche.webp" : "/stream/cartes_droite.webp"}
+        alt=""
+        className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
+        style={{ opacity: visible ? 1 : 0 }}
+      />
+      <CarteAffiche
+        actives={actives}
+        auto={cards.auto}
+        index={cards.index?.[side === "left" ? 0 : 1] ?? 0}
+        seconds={cards.seconds}
+        slot={CASE_CARTE[side]}
+      />
+    </div>
+  );
+}
+
 function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null; paused?: number | null; depassement?: boolean; monte?: boolean }) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -563,14 +470,11 @@ function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null;
   const ss = left === null ? "--" : String(abs % 60).padStart(2, "0");
   return (
     <div className="flex h-full items-center justify-center overflow-hidden">
-      <div
-        // Encre rouge sombre pour le dépassement : sur la case dorée du décor, un
-        // rouge clair passerait inaperçu.
-        className={`w-full text-[34px] font-bold leading-none tabular-nums ${enRetard ? "text-[#7a1310]" : "text-[#1b1408]"}`}
-        style={{ textShadow: "0 1px 0 rgba(255,255,255,0.35)" }}
-      >
+      {/* Encre rouge sombre pour le dépassement : sur la case orange, un rouge clair
+          passerait inaperçu. */}
+      <div className={`w-full text-[41px] leading-none tabular-nums ${enRetard ? "text-[#5c0b08]" : "text-[#211a29]"}`}>
         {/* Au-delà de 99 minutes il y a un chiffre de plus, et « +180:00 » débordait
-            de la case dorée. `FitText` réduit alors ce qu'il faut, sans jamais couper. */}
+            de la case. `FitText` réduit alors ce qu'il faut, sans jamais couper. */}
         {/* `fondu={false}` : le chrono change chaque seconde, l'apparition en fondu
             le faisait clignoter en continu. */}
         <FitText chars={6} fondu={false}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
@@ -579,11 +483,57 @@ function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null;
   );
 }
 
+/** Sous le joueur de gauche : titre du tournoi, logo, ronde et chrono. */
+function BasGauche({ event, vitrine }: { event: OverlayStateData["event"]; vitrine: boolean }) {
+  const { x, largeur } = BAS_GAUCHE;
+  const titre = event.logoUrl ? BAS_GAUCHE.titreAvecLogo : BAS_GAUCHE.titreSeul;
+  return (
+    <>
+      {/* De haut en bas : titre du tournoi, logo, ronde, chrono. Le titre se pose juste
+          au-dessus du logo ; sans logo il descend dans la place laissée libre pour ne
+          pas flotter tout en haut avec du vide dessous. */}
+      {event.title && (
+        <div
+          className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center transition-opacity duration-300 ease-out ${event.logoUrl ? "justify-end" : "justify-center"}`}
+          style={{ left: x, width: largeur, ...titre, opacity: vitrine ? 0 : 1 }}
+        >
+          {/* Gros titre sur une ou deux lignes : FitText montre TOUT le texte en
+              réduisant si besoin, sans jamais couper ni « … », et sans dépasser deux
+              lignes. Avec logo : ancré juste au-dessus, il grandit vers le haut. */}
+          <FitText chars={13} lines={2} className="text-2xl font-normal uppercase leading-[1.05] tracking-wide text-white">
+            {event.title}
+          </FitText>
+        </div>
+      )}
+      {/* z-20 : sans lui le logo passait sous le fond du décor, donc invisible. */}
+      <div className="absolute z-20" style={{ left: x, width: largeur, ...BAS_GAUCHE.logo }}>
+        <ImageFondu src={!vitrine && event.logoUrl ? event.logoUrl : null} imgClassName="object-contain" />
+      </div>
+      {event.round && (
+        <div
+          className="absolute z-20 flex flex-col justify-center overflow-hidden px-2 transition-opacity duration-300 ease-out"
+          style={{ left: x, width: largeur, ...BAS_GAUCHE.ronde, opacity: vitrine ? 0 : 1 }}
+        >
+          <FitText chars={18} className="text-[25px] font-normal uppercase leading-none tracking-[0.5px] text-white">
+            {event.round}
+          </FitText>
+        </div>
+      )}
+      <div
+        className="absolute z-20 transition-opacity duration-300 ease-out"
+        style={{ ...BAS_GAUCHE.chrono, opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
+      >
+        <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} monte={event.timerMonte} />
+      </div>
+    </>
+  );
+}
+
 /**
  * Met la toile 1920x1080 à la taille de la source d'OBS.
  *
  * Sans ça, une source réglée à autre chose que 1920x1080 gardait la toile ancrée en
- * haut à gauche : le décor débordait à droite et tout l'habillage paraissait poussé
+ * haut à gauche : le décor débordait à droite et tout l'overlay paraissait poussé
  * vers la droite. Le facteur est posé en variable CSS, le centrage est fait par la
  * feuille de style.
  */
@@ -599,12 +549,16 @@ function useEchelle() {
   }, []);
 }
 
+/**
+ * `compact` : les points et le bloc de chaque joueur, sans colonne, sans caméra, sans
+ * chrono ni logo, sur un fond transparent. Pour qui stream depuis un téléphone
+ * (Moblin), où l'image tient dans une main : d'où les points plus gros.
+ */
 export function OverlayFull({ token, compact = false }: { token: string; compact?: boolean }) {
   useEchelle();
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
-  const { event } = state;
-  const cards = state.cards;
+  const { event, cards } = state;
   const mode = cards?.mode ?? "none";
   const { gauche, droite } = cartesParCadre(cards);
   // Le chrono, le logo et le titre vivent dans la colonne GAUCHE. On ne les cache
@@ -612,254 +566,43 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   // la gauche est libre, tout reste. Le score et les Légendes restent toujours.
   const vitrine = mode === "split";
   const sansCam = event.layout === "nocam";
-  // Overlay compact : sans cadre, sans caméra, sans logo. Pour qui n'a ni décor ni
-  // webcam et veut quand même le score, les Légendes et la carte à l'écran.
-  if (compact) return <OverlayCompact state={state} />;
+  const fond = compact ? FOND_COMPACT : FOND;
+  const decorEnvoye = compact ? event.backgroundCompactUrl : sansCam ? event.backgroundNocamUrl : event.backgroundUrl;
   return (
     <div className={styles.root}>
-      {/* Le cadre fourni, en fond : ses découpes sont transparentes, tout le reste
-          de l'habillage vient de lui. */}
-      {/* Décor : celui du streamer s'il en a envoyé un (gabarit Photoshop), sinon
-          celui du site. Repli sur le décor d'origine si l'image ne charge pas : une
-          image cassée en pleine diffusion coûte plus cher qu'un cadre en trop. */}
+      {/* Décor : celui du streamer s'il en a envoyé un (gabarit Photoshop), sinon celui
+          du site. Repli sur celui du site si l'image ne charge pas : une image cassée
+          en pleine diffusion coûte plus cher qu'un cadre en trop. */}
       <img
-        src={(sansCam ? event.backgroundNocamUrl : event.backgroundUrl) || (sansCam ? FOND_SANS_CAM : FOND)}
-        onError={(e) => { if (!e.currentTarget.src.endsWith(FOND)) e.currentTarget.src = FOND; }}
+        src={decorEnvoye || fond}
+        onError={(e) => { if (!e.currentTarget.src.endsWith(fond)) e.currentTarget.src = fond; }}
         alt=""
         className="absolute inset-0 z-10 h-full w-full"
       />
-      {/* Calques cadres, plein écran (le cadre est dessiné à sa place) : la case du
-          chrono avec le timer, les contours des cartes quand l'affiche est visible.
-          Entre le fond (z-10) et le contenu texte/carte (z-20). */}
-      <img
-        src="/stream/Chrono.webp"
-        alt=""
-        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
+      {!compact && (
+        <img
+          src="/stream/Chrono.webp"
+          alt=""
+          className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
+          style={{ opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
+        />
+      )}
+      <Points
+        max={state.maxPoints}
+        a={state.points.a}
+        b={state.points.b}
+        visible={event.pointsVisible !== false}
+        couleurPoint={event.couleurPoint}
+        couleurChiffres={event.couleurChiffres}
+        echelle={compact ? 1.35 : 1}
       />
-      {/* Cadres liés au MODE, pas au nombre de cartes : on peut poser un cadre vide
-          (deck pas encore collé) puis y charger les cartes. */}
-      <img
-        src="/stream/cartes_gauche.webp"
-        alt=""
-        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: mode === "split" ? 1 : 0 }}
-      />
-      <img
-        src="/stream/cartes_droite.webp"
-        alt=""
-        className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: mode === "mixed" || mode === "split" ? 1 : 0 }}
-      />
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={event.pointsVisible !== false} couleurPoint={event.couleurPoint} couleurChiffres={event.couleurChiffres} />
-      <Side
-        p={state.players[0]}
-        side="left"
-        format={state.format}
-        sansCam={sansCam}
-        footer={
-          <>
-            {/* De haut en bas : titre du tournoi, logo, ronde, chrono. Le titre se pose
-                juste au-dessus du logo ; sans logo il descend dans la place laissée
-                libre pour ne pas flotter tout en haut avec du vide dessous. */}
-            {event.title && (
-              <div
-                className={`absolute z-20 flex flex-col overflow-hidden px-1 text-center transition-opacity duration-300 ease-out ${event.logoUrl ? "justify-end" : "justify-center"}`}
-                // Avec logo, le titre est ancré en bas de sa case : il collait au
-                // trait doré du cadre au-dessus. Descendu de 12 px, le logo suit
-                // d'autant pour ne pas se faire recouvrir (il finit toujours à 892,
-                // au-dessus de la ronde).
-                style={{ left: SLOT.x.left, width: SLOT.width, top: event.logoUrl ? 640 : 700, height: event.logoUrl ? 66 : 190, opacity: vitrine ? 0 : 1 }}
-              >
-                {/* Gros titre sur une ou deux lignes : FitText montre TOUT le texte en
-                    réduisant si besoin, sans jamais couper ni « … », et sans dépasser
-                    deux lignes. Avec logo : ancré juste au-dessus, il grandit vers le haut. */}
-                <FitText chars={13} lines={2} className="text-2xl font-bold uppercase leading-[1.05] tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                  {event.title}
-                </FitText>
-              </div>
-            )}
-            {/* z-20 : sans lui le logo passait sous le cadre du fond, donc invisible. */}
-            <div className="absolute z-20" style={{ left: SLOT.x.left, width: SLOT.width, top: 708, height: 184 }}>
-              <ImageFondu src={!vitrine && event.logoUrl ? event.logoUrl : null} imgClassName="object-contain" />
-            </div>
-            {/* La ronde au-dessus, sur le fond bleu ; le chrono dans la case dorée,
-                en encre sombre puisque le fond est jaune. Cachée en vitrine (deux
-                cadres) comme le reste de la colonne gauche. */}
-            {event.round && (
-              <div
-                className="absolute z-20 flex flex-col justify-center overflow-hidden px-2 transition-opacity duration-300 ease-out"
-                style={{ left: SLOT.x.left, width: SLOT.width, top: SLOT.round.top, height: SLOT.round.height, opacity: vitrine ? 0 : 1 }}
-              >
-                <FitText chars={11} className="text-3xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-                  {event.round}
-                </FitText>
-              </div>
-            )}
-            <div
-              className="absolute z-20 transition-opacity duration-300 ease-out"
-              style={{
-                left: SLOT.timer.left, width: SLOT.timer.width, top: SLOT.timer.top, height: SLOT.timer.height,
-                opacity: !vitrine && event.timerVisible !== false ? 1 : 0,
-              }}
-            >
-              <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} monte={event.timerMonte} />
-            </div>
-          </>
-        }
-      />
-      <Side
-        p={state.players[1]}
-        side="right"
-        format={state.format}
-        sansCam={sansCam}
-        footer={null}
-      />
-      {/* Deux cadres, gauche et droite, au-dessus du décor (z-20). Le mode a déjà
-          rempli `gauche`/`droite` : un deck chacun, ou les deux mêlés à droite. */}
-      <CarteAffiche actives={gauche} auto={cards.auto} index={cards.index?.[0] ?? 0} seconds={cards.seconds} slot={SLOT.cardsLeft} />
-      <CarteAffiche actives={droite} auto={cards.auto} index={cards.index?.[1] ?? 0} seconds={cards.seconds} slot={SLOT.cards} />
-    </div>
-  );
-}
-
-/**
- * Le bloc d'un joueur dans le décor compact.
- *
- * `compact.webp` porte deux cadres par côté : la Légende en haut, et en bas un cadre
- * coupé en deux par un trait — le pseudo au-dessus, le champ de bataille et les
- * manches en dessous. On ne redessine rien, on remplit ses découpes, comme pour
- * l'habillage complet.
- */
-function BlocJoueurCompact({ p, side, format }: { p: OverlayPlayer; side: "left" | "right"; format: OverlayStateData["format"] }) {
-  const t = useT();
-  const nomsZh = useNomsZh();
-  const cote = CADRE_COMPACT[side];
-  const banner = p.legendName ? getBannerUrl(p.legendName) : null;
-  const icon = p.legendName ? getLegendIconUrl(p.legendName) : null;
-  const bf = p.battlefields[0] ?? "";
-  const art = useBattlefieldArt(bf ? [bf] : []);
-  const rounds = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
-  const decoupe = (d: { top: number; hauteur: number }) => ({ left: cote.x, width: cote.largeur, top: d.top, height: d.hauteur });
-  // Combien de caractères tiennent. `FitText` ne mesure pas (la mesure ment dans le
-  // navigateur d'OBS) : il compte les caractères. Mesuré au navigateur sur les noms
-  // les plus larges, une majuscule grasse en `text-base` prend 0,70 em ; d'où le
-  // 11,2 px par caractère, moins la marge intérieure. « Ravenbloom Conservatory »
-  // débordait de son cadre de 3 px avec une règle de trois sur 275.
-  const charsLarge = Math.floor((cote.largeur - 8) / 11.2);
-  // La ligne du champion est en `text-sm` et sans majuscules forcées : elle tient
-  // bien plus de caractères.
-  const charsFin = Math.floor((cote.largeur - 8) / 7.6);
-  return (
-    <>
-      <div className="absolute z-20 overflow-hidden" style={decoupe(cote.hero)}>
-        {/* L'icône carrée d'abord, la bannière en secours : la case fait 216x220,
-            presque carrée comme celle du décor sans caméra. Une bannière large y
-            perdrait les deux côtés du dessin. */}
-        <ImageFondu src={icon ?? banner} imgClassName="object-cover" />
-        <EtiquetteLegende legende={p.legendName} champion={p.championName} charsLegende={charsLarge} charsChampion={charsFin} />
-      </div>
-
-      <div className="absolute z-20 overflow-hidden" style={decoupe(cote.bf)}>
-        <ImageFondu src={art[bf] ?? null} imgClassName="scale-[1.4] object-cover object-[50%_38%]" />
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent" />
-        {/* Même disposition que l'habillage complet : le nom en haut sur toute la
-            largeur, les manches dessous. Côte à côte, le nom n'avait plus que la
-            moitié du cadre et un long champ de bataille tombait à une taille
-            illisible. Les pastilles sont réduites, la découpe ne fait que 62 px. */}
-        <div className="relative z-20 flex h-full flex-col justify-center overflow-hidden px-1">
-          <FitText chars={charsLarge} lines={rounds > 0 ? 1 : 2} className="text-base font-bold uppercase leading-tight tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">
-            {bf ? nomsZh(bf) : t("Champ de bataille")}
-          </FitText>
-          {rounds > 0 && (
-            <div className="mt-1 flex justify-center gap-2">
-              {Array.from({ length: rounds }).map((_, i) => (
-                <Manche key={i} gagnee={i < p.gamesWon} petite />
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Le pseudo sous le panneau, sans cadre autour : le décor n'a pas de case pour
-          lui, et le loger dedans mangeait la Légende. */}
-      <div className="absolute z-20 flex flex-col justify-center overflow-hidden px-2" style={decoupe(cote.pseudo)}>
-        <FitText chars={11} className="text-xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-          {p.name}
-        </FitText>
-      </div>
-    </>
-  );
-}
-
-/**
- * Un cadre de cartes du compact : le calque du gabarit et sa carte, ramenés sous le
- * bloc du joueur. Le cadre est dessiné à demeure dans une image pleine toile, on ne
- * peut donc que transformer le calque entier — la carte suit, elle est dedans.
- */
-function CadreCartesCompact({
-  side,
-  visible,
-  cards,
-  actives,
-}: {
-  side: "left" | "right";
-  visible: boolean;
-  cards: NonNullable<OverlayStateData["cards"]>;
-  actives: string[];
-}) {
-  const { echelle, x, y } = CADRE_COMPACT[side].cartes;
-  return (
-    <div
-      className="absolute inset-0 z-[11]"
-      style={{ transform: `translate(${x}px, ${y}px) scale(${echelle})`, transformOrigin: "0 0" }}
-    >
-      <img
-        src={side === "left" ? "/stream/cartes_gauche.webp" : "/stream/cartes_droite.webp"}
-        alt=""
-        className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: visible ? 1 : 0 }}
-      />
-      <CarteAffiche
-        actives={actives}
-        auto={cards.auto}
-        index={cards.index?.[side === "left" ? 0 : 1] ?? 0}
-        seconds={cards.seconds}
-        slot={side === "left" ? SLOT.cardsLeft : SLOT.cards}
-      />
-    </div>
-  );
-}
-
-/**
- * Habillage réduit : les points en haut, le bloc de chaque joueur dans son cadre
- * (Légende, champ de bataille, manches) et les cartes en bas. Rien d'autre, et un
- * fond transparent : ça se pose sur n'importe quelle scène.
- *
- * Tout y est repris du décor sans caméra, en plus petit : cette version part sur un
- * téléphone (Moblin), où l'image du stream tient dans une main.
- */
-function OverlayCompact({ state }: { state: OverlayStateData }) {
-  const [a, b] = state.players;
-  const cards = state.cards;
-  const mode = cards?.mode ?? "none";
-  const { gauche, droite } = cartesParCadre(cards);
-  return (
-    <div className={styles.root}>
-      <Points max={state.maxPoints} a={state.points.a} b={state.points.b} visible={state.event.pointsVisible !== false} couleurPoint={state.event.couleurPoint} couleurChiffres={state.event.couleurChiffres} />
-      <BlocJoueurCompact p={a} side="left" format={state.format} />
-      <BlocJoueurCompact p={b} side="right" format={state.format} />
-      {/* Le décor PAR-DESSUS le contenu : ses traits dorés encadrent alors les images,
-          au lieu de passer dessous et de disparaître. Il est transparent partout
-          ailleurs, il ne masque donc rien. */}
-      <img src={state.event.backgroundCompactUrl || FOND_COMPACT} alt="" className="pointer-events-none absolute inset-0 z-30 h-full w-full" />
-      {/* Les mêmes cadres dorés que l'habillage complet, et les cartes dans leurs
-          découpes : en bas de la toile, aux deux coins, un peu réduits. Comme dans le
-          complet, le cadre suit le MODE et pas le nombre de cartes : on peut le poser
-          vide, puis y charger le deck. */}
-      <CadreCartesCompact side="left" visible={mode === "split"} cards={cards} actives={gauche} />
-      <CadreCartesCompact side="right" visible={mode === "mixed" || mode === "split"} cards={cards} actives={droite} />
+      <Colonne p={state.players[0]} side="left" format={state.format} sansCam={sansCam} compact={compact} />
+      <Colonne p={state.players[1]} side="right" format={state.format} sansCam={sansCam} compact={compact} />
+      {!compact && <BasGauche event={event} vitrine={vitrine} />}
+      {/* Deux cadres, gauche et droite. Le mode a déjà rempli `gauche`/`droite` : un
+          deck chacun, ou les deux mêlés à droite. */}
+      <CadreCartes side="left" visible={mode === "split"} cards={cards} actives={gauche} compact={compact} />
+      <CadreCartes side="right" visible={mode === "mixed" || mode === "split"} cards={cards} actives={droite} compact={compact} />
     </div>
   );
 }

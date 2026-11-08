@@ -198,8 +198,9 @@ export const EN: Record<string, string> = {
   "Décor": "Overlay art",
   "Avec cadres caméra": "With camera frames",
   "Sans cadres caméra": "Without camera frames",
-  "Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : les deux cadres portrait disparaissent et la Légende prend la place.":
-    "Pick “without frames” if a board camera is all you have: the two portrait frames go, and the Legend takes the space.",
+  "Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : la Légende prend la place des deux caméras.":
+    "Pick “without frames” if a board camera is all you have: the Legend takes the place of both cameras.",
+  "Classement": "Standing",
   "Depuis un fichier": "From a file",
   "Envoi…": "Uploading…",
   "L’envoi de l’image a échoué.": "The image upload failed.",

@@ -1,5 +1,52 @@
 # HANDOFF — état des lieux
 
+## 8 novembre 2026 — overlay recalé sur la retransmission officielle
+
+Demandé par Allan sur deux captures du Regional Championship Europe. Couleurs et
+positions mesurées sur les captures. **Vu dans OBS** (trois modes, sans vraie caméra),
+sur un état simulé, sans toucher à celui d'Allan.
+
+**Ce qui change à l'écran** : un seul point final, au milieu, dans un écu ; le point
+marqué en or ; un panneau Légende et champion avec portrait hexagonal ; le pseudo sur
+une plaque au bas de la caméra ; une pastille de classement (champ `classement`, cachée
+si vide) ; le champ de bataille en trapèze ; le chrono orange ; le fond en bleu nuit.
+Les manches gardent les logos : Allan ne veut pas des « GAME 1 / GAME 2 ». Le compact
+reprend les mêmes pièces, réduites à 0,85, sur un socle qui les relie : sans lui le
+panneau dépassait la plaque et la vidéo passait dans les encoches. Le bandeau des points
+laisse passer la vidéo, Allan le trouvait trop opaque.
+
+**Police** : Arpona Bold partout, Regular sur le titre du tournoi et sa phase, choix
+d'Allan après essais. Refusés : la Regular sur les noms et les points, Lorimer No. 2 et
+Bell Centennial Address (linéales étroites), un contour sur la Bold pour l'affiner
+(doubles bords).
+
+**Comment c'est fait** : `src/lib/overlay-decor.ts` porte le dessin et les cases,
+`npm run gen:decor` en tire les images et les deux PSD. Les 40 images de pastilles,
+`points/` et `gen-pastilles-calques.py` sont supprimés. Sans caméra et avec caméra
+partagent le même décor.
+
+**Volontairement hors de ce chantier** : « Cards in hand » et la barre Showdown de
+l'officiel. Il faudrait les remplir en direct depuis le tableau de bord.
+
+**Les 58 Légendes sont passées dans l'overlay**, sur un état simulé, dans les deux
+colonnes, avec leur champion au nom le plus long : image chargée partout, et plus aucun
+texte hors de la bannière en mode complet ou compact (marge la plus courte : 9 px et
+4 px). Deux défauts trouvés et corrigés : le titre de Shen sortait de la flèche, et
+quatre titres touchaient son bord en compact. Une autre police oblige à remesurer
+`PX_PAR_CARACTERE`.
+
+**Reste à faire :**
+1. Essayer une vraie caméra VDO.Ninja dans OBS. L'OBS d'Allan a rouvert le 8 novembre sur
+   une collection vide (« Sans nom ») : sa source d'habillage n'y est plus.
+2. Ouvrir `layout.psd` et `layout_compact.psd` dans Photoshop : ils ne sont relus que
+   par psd-tools. Le calque de fond porte le masque, plus d'objet dynamique.
+3. **Avant le Deploy : les décors déjà envoyés par des streamers vont se décaler**, leurs
+   découpes sont les anciennes. Combien : `backgroundUrl`, `backgroundNocamUrl` et
+   `backgroundCompactUrl` non vides dans `OverlayState`. Pas lu : la lecture de la prod
+   n'a pas été autorisée dans cette session.
+4. Refaire les captures des articles : `public/img/articles/overlay-*.webp` montrent
+   l'ancien overlay.
+
 ## 7 novembre 2026 — hexgate 295 à 297, trois City Challenge S5 de plus
 
 **Relevé** (`/api/tournaments?season=all`, 177 tournois, rien après 297) : entrent
