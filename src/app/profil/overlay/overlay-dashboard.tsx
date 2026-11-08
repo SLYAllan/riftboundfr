@@ -780,8 +780,8 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                 </label>
 
                 <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Classement")}</span>
-                  <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} placeholder={t("Optionnel")} className={inputCls} />
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
+                  <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} className={inputCls} />
                 </label>
 
                 <label className="block">

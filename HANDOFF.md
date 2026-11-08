@@ -8,8 +8,9 @@ sur un état simulé, sans toucher à celui d'Allan.
 
 **Ce qui change à l'écran** : un seul point final, au milieu, dans un écu ; le point
 marqué en or ; un panneau Légende et champion avec portrait hexagonal ; le pseudo sur
-une plaque au bas de la caméra ; une pastille de classement (champ `classement`, cachée
-si vide) ; le champ de bataille en trapèze ; le chrono orange ; le fond en bleu nuit.
+une plaque au bas de la caméra ; une pastille de classement ou de score (champ
+`classement`, vide par défaut et cachée alors ; elle s'élargit avec le texte) ; le champ
+de bataille en trapèze ; le chrono orange ; le fond en bleu nuit.
 Les manches gardent les logos : Allan ne veut pas des « GAME 1 / GAME 2 ». Le compact
 reprend les mêmes pièces, réduites à 0,85, sur un socle qui les relie : sans lui le
 panneau dépassait la plaque et la vidéo passait dans les encoches. Le bandeau des points

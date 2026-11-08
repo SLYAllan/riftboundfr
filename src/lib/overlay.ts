@@ -63,8 +63,8 @@ export interface OverlayPlayer {
   championName: string;
   battlefields: string[];
   gamesWon: number;
-  // Texte libre (« 2nd », « Top 8 ») : aucun site ne le fournit pour une locale. Vide,
-  // la pastille dorée disparaît.
+  // Texte libre (« 2nd », « Top 8 », « 13-0-3 ») : aucun site ne le fournit pour une
+  // locale. Vide, la pastille dorée disparaît.
   classement?: string;
   // Lien « view » VDO.Ninja : chacun colle le sien, la camera arrive dans le cadre
   // sans passer par OBS. Vide = cadre laisse transparent (une source OBS peut se
@@ -133,8 +133,12 @@ function emptyPlayer(name: string): OverlayPlayer {
   return { name, legendId: null, legendName: "", championName: "", battlefields: [], gamesWon: 0, classement: "", camUrl: "", camBackground: false };
 }
 
-/** Longueur maximale d'un classement : il tient dans une pastille de 81 px. */
-export const CLASSEMENT_MAX = 12;
+/**
+ * Pas une limite d'usage : la pastille s'élargit avec le texte, et un score ou une phase
+ * n'en approchent pas. C'est ce qu'un texte ordinaire peut faire sans être coupé dans la
+ * pastille la plus large, une fois réduit par `FitText`.
+ */
+export const CLASSEMENT_MAX = 40;
 
 /**
  * « Kai'Sa, Daughter of the Void » en deux lignes : le nom, puis le titre. La virgule

@@ -200,7 +200,7 @@ export const EN: Record<string, string> = {
   "Sans cadres caméra": "Without camera frames",
   "Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : la Légende prend la place des deux caméras.":
     "Pick “without frames” if a board camera is all you have: the Legend takes the place of both cameras.",
-  "Classement": "Standing",
+  "Classement ou score": "Standing or record",
   "Depuis un fichier": "From a file",
   "Envoi…": "Uploading…",
   "L’envoi de l’image a échoué.": "The image upload failed.",

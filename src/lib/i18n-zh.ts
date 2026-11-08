@@ -48,7 +48,7 @@ export const ZH: Record<string, string> = {
   "Avec cadres caméra": "含攝影機框",
   "Sans cadres caméra": "不含攝影機框",
   "Prenez « sans cadres » si vous n’avez qu’une caméra de plateau : la Légende prend la place des deux caméras.": "如果你只有一台牌桌攝影機，請選「不含攝影機框」：改由傳奇佔用兩個攝影機的位置。",
-  "Classement": "排名",
+  "Classement ou score": "排名或戰績",
   "Votre propre décor (sans cadres caméra)": "你自己的背景圖（不含攝影機框）",
   "Votre propre décor (avec cadres caméra)": "你自己的背景圖（含攝影機框）",
   "Envoi…": "上傳中…",

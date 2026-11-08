@@ -402,7 +402,7 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   blanc de la retransmission officielle (`COULEURS_POINTS`). La rangée est dessinée dans
   le composant `Points`, plus aucune image. `encreSur` choisit le chiffre posé sur un
   point marqué, tant que le streamer n'a pas fixé le sien.
-  **Le classement** (`classement`, texte libre) suit le joueur : tableau de bord ET
+  **Le classement** (`classement`, texte libre, la pastille s'élargit avec lui) suit le joueur : tableau de bord ET
   compagnon l'écrivent. Sans le champ côté compagnon, celui du match d'avant restait à
   l'écran sous le pseudo du nouveau joueur.
 

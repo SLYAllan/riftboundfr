@@ -216,8 +216,8 @@ export function Compagnon({ token, cle, initial }: { token: string; cle: string;
             <input name={`joueur-${i + 1}`} autoComplete="off" value={state.players[i].name} onChange={(e) => setJoueur(i, { name: e.target.value })} placeholder={`${t("Joueur")} ${i + 1}`} className={champCls} />
           </label>
           {/* Le classement suit le joueur : sans ce champ, celui du match d'avant restait à l'écran sous le pseudo du nouveau. */}
-          <label className="mt-3 block"><span className="mb-1 block text-xs text-ink-muted">{t("Classement")}</span>
-            <input name={`classement-${i + 1}`} autoComplete="off" maxLength={CLASSEMENT_MAX} value={state.players[i].classement ?? ""} onChange={(e) => setJoueur(i, { classement: e.target.value })} placeholder={t("Optionnel")} className={champCls} />
+          <label className="mt-3 block"><span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
+            <input name={`classement-${i + 1}`} autoComplete="off" maxLength={CLASSEMENT_MAX} value={state.players[i].classement ?? ""} onChange={(e) => setJoueur(i, { classement: e.target.value })} className={champCls} />
           </label>
         </div>)}</div>
       </section>}

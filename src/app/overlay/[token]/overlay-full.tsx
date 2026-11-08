@@ -47,7 +47,7 @@ const FOND_COMPACT = "/stream/decor_compact.webp";
 // Combien de caractères tiennent par pixel de largeur, à la taille de chaque texte.
 // `FitText` compte les caractères plutôt que de mesurer (la mesure ment dans le
 // navigateur d'OBS). Relevé sur les noms les plus larges, en majuscules Arpona.
-const PX_PAR_CARACTERE = { nom: 10.2, titre: 8, pseudo: 15.5, terrain: 9 };
+const PX_PAR_CARACTERE = { nom: 10.2, titre: 8, pseudo: 15.5, terrain: 9, classement: 9.2 };
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
@@ -201,6 +201,27 @@ function NomCarte({ nom, repli, cas, side, compact }: { nom: string; repli: stri
 }
 
 /**
+ * La pastille grandit avec son texte, autour de son centre, jusqu'à la largeur du bandeau
+ * du champ de bataille. Le texte ne rétrécit qu'une fois cette largeur atteinte.
+ */
+function PastilleClassement({ texte, side, compact }: { texte: string; side: Cote; compact: boolean }) {
+  const place = caseOverlay("classement", side, compact);
+  const largeurMax = caseOverlay("terrainNom", side, compact).width;
+  // En pixels, pas en pourcentage : une pastille large aurait les flancs couchés.
+  const pente = place.width * 0.173;
+  return (
+    <div className="absolute z-20 flex justify-center" style={place}>
+      <div
+        className="flex shrink-0 items-center overflow-hidden bg-[#d4a745]"
+        style={{ minWidth: place.width, maxWidth: largeurMax, paddingInline: pente, clipPath: `polygon(0 0, 100% 0, calc(100% - ${pente}px) 100%, ${pente}px 100%)` }}
+      >
+        <FitText chars={Math.floor((largeurMax - 2 * pente) / PX_PAR_CARACTERE.classement)} className="text-[16px] uppercase leading-none text-[#3a3325]">{texte}</FitText>
+      </div>
+    </div>
+  );
+}
+
+/**
  * Tout ce qu'un joueur a à l'écran, sans le décor : d'abord ce qui se voit à travers
  * ses découpes (sans z-index, donc dessous), puis les textes, au-dessus.
  */
@@ -258,14 +279,7 @@ function Colonne({ p, side, format, sansCam = false, compact = false }: { p: Ove
         </FitText>
       </div>
 
-      {classement && (
-        <div
-          className="absolute z-20 flex items-center overflow-hidden bg-[#d4a745]"
-          style={{ ...place("classement"), clipPath: "polygon(0 0, 100% 0, 82.7% 100%, 17.3% 100%)" }}
-        >
-          <FitText chars={6} className="text-[16px] uppercase leading-none text-[#3a3325]">{classement}</FitText>
-        </div>
-      )}
+      {classement && <PastilleClassement texte={classement} side={side} compact={compact} />}
 
       <div className="absolute z-20 flex items-center overflow-hidden" style={place("terrainNom")}>
         <FitText chars={Math.floor(place("terrainNom").width / PX_PAR_CARACTERE.terrain)} className="text-[13px] uppercase leading-none tracking-[0.3px] text-white">
