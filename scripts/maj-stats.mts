@@ -25,7 +25,7 @@
  *                                  Légende comptée qui n'en a pas, et aligne les
  *                                  rangs sur la tier list (sinon /legendes et
  *                                  /tier-list se contredisent)
- *   5. `stats-deckbuilding.mts`    les sections chiffrées de DECKBUILDING-RULES
+ *   5. `stats-deckbuilding.mts`    les chiffres à reporter dans DECKBUILDING-RULES
  *   6. `tier-ecarts.mts`           ce qui ne colle plus entre les tier lists
  *                                  rédigées (`tier-tables.ts`) et le corpus
  *
@@ -83,7 +83,7 @@ const etapes: Etape[] = [
     cmd: ["tsx", "--env-file=.env", "scripts/fiches-maj.mts", "data/fiches-stats.json", "--repli", "data/fiches-stats-repli.json", ...(sec ? [] : ["--ecrire"])],
   },
   {
-    titre: "5/6  Sections chiffrées de DECKBUILDING-RULES",
+    titre: "5/6  Chiffres à reporter dans DECKBUILDING-RULES",
     cmd: ["tsx", "--env-file=.env", "scripts/stats-deckbuilding.mts"],
     vers: "data/deckbuilding-stats.md",
     ecrit: true,
@@ -136,10 +136,14 @@ Ce qui reste à faire À LA MAIN, et qui ne peut pas être automatisé :
     cette routine. « RANG À REVOIR » est une contradiction, « À REGARDER » une
     question (chaque liste pose sa propre condition d'effectif), « CHIFFRE PÉRIMÉ »
     un commentaire à réécrire.
-  - Reporter les chiffres dans \`docs/META-KNOWLEDGE.md\` (tableaux par set) et
-    \`docs/DECKBUILDING-RULES.md\` (sections chiffrées) depuis :
-        npx tsx scripts/tier-stats.mts <set|tous>
-        data/deckbuilding-stats.md   (écrit à l'étape 5)
+  - À CHAQUE TOURNOI, repasser \`docs/META-KNOWLEDGE.md\` et
+    \`docs/DECKBUILDING-RULES.md\`, dans le commit du relevé. Cette routine ne les
+    touche pas. Les chiffres viennent de :
+        npx tsx --env-file=.env scripts/tier-stats.mts <set|tous>
+        npx tsx --env-file=.env scripts/tables-meta.mts <set|tous>
+        npx tsx --env-file=.env scripts/stats-deckbuilding.mts <set>
+        npx tsx scripts/cores-vendetta.mts <set> 30
+        data/deckbuilding-stats.md   (écrit à l'étape 5, tous sets)
   - Vérifier la couverture :  npx tsx --env-file=.env scripts/couverture-tournois.mts
     Un tournoi sous 90 % de listes publiées fausse les parts : lui scraper son
     classement avec \`scripts/scrape-classement.sh\`.

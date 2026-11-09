@@ -139,6 +139,8 @@ riftdecks ne publie que les listes que les joueurs envoient (Barcelone 106 sur
   entrée dans `CONTEXTES` de `scripts/classements-tournois.mts` quand le contexte
   ne se retrouve pas seul, puis `npm run maj:stats`. Sans lui, le tournoi reste
   hors du corpus des tier lists (90 % de couverture exigés).
+- **Repasser `META-KNOWLEDGE` et `DECKBUILDING-RULES`** dans le même commit : à
+  chaque tournoi, à la main (voir `AGENTS.md`).
 
 ## 5. Drapeau, pays et set
 

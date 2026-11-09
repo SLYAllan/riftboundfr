@@ -107,10 +107,18 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 **Commandes one-shot** (codes de sortie réels, à lire à part : voir « Commandes ») :
 - `npm run verify` → `tsc --noEmit && next build` (à lancer avant tout push ; vérifier l'EXIT).
 - **`npm run maj:stats` → LA routine de mise à jour des stats.** Corpus des classements,
-  tier lists, fiches Légendes et sections chiffrées de `DECKBUILDING-RULES`, dans l'ordre.
+  tier lists, fiches Légendes et chiffres pour `DECKBUILDING-RULES` (dans
+  `data/deckbuilding-stats.md`, pas dans le doc), dans l'ordre.
   **Ne jamais relancer ces scripts un par un** : ils se lisent l'un l'autre, et les lancer
   dans le désordre laissait la tier list refaite mais pas les fiches, l'accueil sur un méta
   mort, et deux chiffres différents pour la même Légende sur deux pages.
+- **`docs/META-KNOWLEDGE.md` et `docs/DECKBUILDING-RULES.md` se repassent à CHAQUE tournoi
+  importé, dans le commit du relevé** (demande d'Allan, 9 novembre 2026). C'est la référence
+  pour construire et juger un deck. Aucun script ne s'en charge, et aucun ne doit le faire :
+  les chiffres sortent de `maj:stats`, `tier-stats.mts <set|tous>`, `tables-meta.mts <set|tous>`,
+  `stats-deckbuilding.mts <set>` et `cores-vendetta.mts <set> 30`, puis on relit et on écrit
+  ce qui change. Sautée du 17 octobre au 9 novembre, cette passe a laissé les deux docs sans
+  un mot de Radiance sur onze tournois, pendant que ce fichier disait la routine responsable.
 - **`npm run maj:overlay` → LA routine de mise à jour de l'overlay.** À lancer après
   chaque sortie de set, une fois `npm run sync-cards` passé. Elle relève les cartes
   chinoises (étape 1, c'est `maj:cartes-zh`), puis inventorie les Légendes de la base
@@ -134,7 +142,8 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (12 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026 + 2 du 18 septembre 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
 - Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
 - Méta/tier/rulings → `docs/META-KNOWLEDGE.md` · règles deckbuilding/cores → `docs/DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
-  **Tous se refont par `npm run maj:stats`, jamais à la main.** Le corpus qu'ils partagent est
+  **Les fiches se refont par `npm run maj:stats`, jamais à la main ; les deux docs se repassent
+  à chaque tournoi (voir plus haut).** Le corpus qu'ils partagent est
   `scripts/corpus-tournois.ts` : les joueurs CLASSÉS d'un tournoi, pas ses decklists publiées.
   L'écart n'est pas un détail, sur Barcelone c'est 106 listes pour 2 127 joueurs, et ce sont
   ceux qui performent qui publient. `scripts/couverture-tournois.mts` dit quel tournoi est
@@ -472,7 +481,7 @@ son travail.
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
 | `npm test` | ✅ | Vitest. **73 fichiers, 396 tests, tous verts** (relevé du 23 septembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
-| `npm run maj:stats` | ✅ | **La routine des stats**, cinq étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
+| `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |
 | `npm run sync-prices` | ✅ | Relève les prix CardNexus (~30 s). Demande la base et `CARDNEXUS_API_KEY`. |
 | `npm run maj:overlay` | ✅ | **La routine de l'overlay**, deux étapes. Demande la base. `-- --sec` pour un essai à blanc. |

@@ -82,8 +82,18 @@ Vendetta et le dit désormais. **Reste vrai** : 12 guides de Légendes hors du s
 (Ahri, Annie, Draven, Jax, Leona, Lucian, Lux, Miss Fortune, Ornn, Rumble, Sivir, Teemo)
 citent des cartes absentes de leur fiche ; ce relevé ne les concerne pas, pas touchés.
 
-**Pas fait** : seed prod, tier lists prod, Deploy. `META-KNOWLEDGE` et `DECKBUILDING-RULES`
-n'ont pas bougé depuis le 17 octobre.
+**Seed prod fait le 9 novembre** : 239 listes créées par `prisma/seed-scraped-decks.ts hexgate-298
+hexgate-301`, 0 erreur, prod à 33 113 decks publiés. Validateur juste avant : 31 627 vérifiées,
+0 MISMATCH. Pas `seed-tournament-decks.ts`, qui écrirait d'autres adresses qu'en local.
+
+**Deploy fait par Allan le 9 novembre, puis `seed-tier-lists.ts`** : `/api/v1/tier-list` rend
+Radiance à 34 entrées (2 S, 2 A, 8 B, 11 C, 11 D). Les deux pages de tournoi ont leur vrai titre,
+la fiche de Kha'Zix cite Hangzhou. **Tout est en ligne, sans l'overlay.**
+
+**`META-KNOWLEDGE` (v17) et `DECKBUILDING-RULES` (v16) repassés le 9 novembre** : ils n'avaient
+pas bougé depuis le 17 octobre et ne disaient rien de Radiance. Règle d'Allan, écrite dans
+`AGENTS.md` : on les repasse à chaque tournoi, à la main, dans le commit du relevé.
+**Manque encore** : les mots-clés de Radiance et l'analyse de VOD Radiance.
 
 **Une adresse de tournoi vient du libellé, pas du fichier** :
 `/tournois/s5-hangzhou-city-challenge-2026-11-07`, pas `/tournois/s5-hangzhou-cc-301`. Une
