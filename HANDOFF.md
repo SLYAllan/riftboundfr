@@ -45,9 +45,10 @@ puis seulement lever les best-of.
 **Poussé et seedé en prod le 10 novembre** : `prisma/seed-scraped-decks.ts hexgate-302 …
 hexgate-305` (472 créées, 0 erreur) et `seed-tournament-decks.ts europe-rc "Europe Regional
 Championship" Radiance "tournoi,radiance,regional"` (45). `--etat` : 33 113 avant, 33 630
-après. **Restent** : le Deploy (Allan), puis `prod-tunnel.mts scripts/seed-tier-lists.ts`
-pour les 36 entrées Radiance. Page du tournoi pas encore regardée dans un navigateur : la
-session porte le `DATABASE_URL` de prod, un serveur de dev lancé d'ici lirait la prod.
+après. **Deploy fait par Allan le 10, puis `seed-tier-lists.ts`** : `/api/v1/tier-list` rend
+Radiance à 36 entrées (2 S, 3 A, 9 B, 9 C, 13 D), Sett en A, Fiora en D. Les cinq pages de
+tournoi ont leur vrai titre (`/tournois/europe-regional-championship` affiche Stuttgart et
+315 joueurs), les fiches de Sett et de Kennen portent la nouvelle prose. **Tout est en ligne.**
 
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
