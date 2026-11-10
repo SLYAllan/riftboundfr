@@ -10,9 +10,9 @@
   "archetype": "Combats gagnés à la réaction",
   "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
-    "earlyGame": "Tideturner, dans 96 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
+    "earlyGame": "Tideturner, dans 97 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
     "midGame": "Diana, Lunari, dans toutes les listes, regarde le dessus du deck au début d'un combat là où elle est, pour une énergie, et pioche la carte si c'est un sort. Moonfall attire une unité adverse sur votre champ de bataille et retire 2 Puissance aux unités adverses là-bas. Avec l'énergie de la Légende, vous jouez un sort de plus pendant le combat.",
-    "lateGame": "Hwei, Brooding Painter, dans 96 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
+    "lateGame": "Hwei, Brooding Painter, dans 97 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
     "winCondition": "Gagner les combats avec un sort d'avance, en réaction."
   },
   "keyCards": [
@@ -114,11 +114,11 @@
   ],
   "strengths": [
     "Un titre, le Showdown de Melbourne, et une troisième place au même tournoi",
-    "34 joueurs classés sur 9 tournois, 7 dans les 10 % de tête : 20,6 % de conversion contre 9,9 % pour le format",
+    "44 joueurs classés sur 14 tournois, 7 dans les 10 % de tête : 15,9 % de conversion contre 9,9 % pour le format",
     "Gust, Stupefy, Star-Crossed, Eclipse et Hard Bargain répondent pendant le combat"
   ],
   "weaknesses": [
-    "34 joueurs seulement : l'écart ne tient plus le test (p = 0,075)",
+    "44 joueurs seulement : l'écart ne tient plus le test (p = 0,20)",
     "L'énergie de la Légende ne sert que pendant un combat"
   ],
   "competitiveResults": {
