@@ -42,10 +42,12 @@ puis seulement lever les best-of.
 **Reste à trancher par Allan** : la règle pour les tournois en ligne relayés par hexgate
 (306, 308).
 
-Puis : push, seed prod (`seed-scraped-decks.ts hexgate-302 … hexgate-305`, et
-`seed-tournament-decks.ts europe-rc …`), Deploy, `seed-tier-lists.ts`. Page du tournoi pas
-encore regardée dans un navigateur : la session porte le `DATABASE_URL` de prod, un serveur de
-dev lancé d'ici lirait la prod.
+**Poussé et seedé en prod le 10 novembre** : `prisma/seed-scraped-decks.ts hexgate-302 …
+hexgate-305` (472 créées, 0 erreur) et `seed-tournament-decks.ts europe-rc "Europe Regional
+Championship" Radiance "tournoi,radiance,regional"` (45). `--etat` : 33 113 avant, 33 630
+après. **Restent** : le Deploy (Allan), puis `prod-tunnel.mts scripts/seed-tier-lists.ts`
+pour les 36 entrées Radiance. Page du tournoi pas encore regardée dans un navigateur : la
+session porte le `DATABASE_URL` de prod, un serveur de dev lancé d'ici lirait la prod.
 
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
