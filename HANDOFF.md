@@ -1,5 +1,34 @@
 # HANDOFF — état des lieux
 
+## 10 novembre 2026 — RC Europe et hexgate 302 à 305, en local seulement
+
+**RC Europe** (riftdecks 18668, Stuttgart, 6 au 8 novembre, Radiance, 315 inscrits, sur
+invitation : Top 64 d'un Regional Qualifier). 309 classés, 302 listes publiées, **45
+complètes et seedées en local** sous le contexte « Europe Regional Championship »
+(`seed-tournament-decks.ts europe-rc … Radiance "tournoi,radiance,regional"`). Les 257 autres
+portent « Missing / Not available » à la source pour le Champion et les champs de bataille :
+écartées, pas complétées. Les pages de classement sont dans `data/raw-scrapes/europe-rc/`,
+d'où les 309 places dans `maj:stats`. **Pas de best-of levé** : la règle les réserve aux
+Regional Qualifier, un Regional Championship est au-dessus et n'a pas été tranché.
+Pas d'article Riot « Top Decks » le 10 novembre (seule `all-eyes-on-rc-europe`, l'annonce).
+**À refaire dans une semaine** : relever les listes complétées, reseeder.
+
+**hexgate relaie maintenant des tournois hors de Chine** (`region: "intl"`). 309 est ce même
+RC Europe : ses 43 listes sont toutes parmi les 45 de riftdecks, son relevé brut a été
+effacé. 307 (Sacramento Showdown) est déjà en base par riftdecks. 306 Convergence IV et
+308 NovaRiftbound sont en ligne : pas importés, règle à poser.
+
+**hexgate 302 à 305** (Pékin, Guangzhou, Chengdu, Wuhan, 7 et 8 novembre, 122 à 128
+joueurs) : 472 listes seedées en local (33 584 decks), 13 écartées pour Champion ambigu,
+aucun Champion sans titre nouveau. 299 Foshan (71) et 300 Tianjin (85) restent dehors.
+hexgate refusait toute connexion le matin du 10, puis a répondu.
+
+Validateur : 32 144 vérifiées, 0 MISMATCH. `maj:stats` sortie 0 : Radiance 2 827 places sur
+16 tournois, aucun rang contredit, **66 « CHIFFRE PÉRIMÉ » à réécrire** dans
+`scripts/tier-tables.ts` (30 Radiance, 36 Globale). **Restent** : ces commentaires, la prose
+des fiches et des guides, `META-KNOWLEDGE` et `DECKBUILDING-RULES`, puis commit, seed prod
+et Deploy.
+
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
 **Retiré de `main` le 8 novembre, à la demande d'Allan** : les tournois et les guides partent

@@ -32,18 +32,18 @@
       "noyau": true
     },
     {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Charm",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -52,58 +52,63 @@
       "noyau": true
     },
     {
-      "name": "Unchecked Power",
-      "role": "Cœur du deck, 93 % des listes, 1 exemplaire",
-      "noyau": true
-    },
-    {
       "name": "Smoke and Mirrors",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "En Garde",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "name": "Unchecked Power",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Lonely Poro",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Souple, 57 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 34 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Life from Stone",
-      "role": "Souple, 30 % des listes, 3 exemplaires",
+      "role": "Souple, 32 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Tomb-Raider Barbara",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -117,37 +122,37 @@
     "Les Esprits sont temporaires : ils ne restent pas d'un tour à l'autre"
   ],
   "competitiveResults": {
-    "joueursClasses": 60,
-    "coupe10": 5,
+    "joueursClasses": 77,
+    "coupe10": 8,
     "titres": 0,
-    "conversion": "8.3 %",
-    "tournois": 11,
-    "listesPubliees": 40,
+    "conversion": "10.4 %",
+    "tournois": 16,
+    "listesPubliees": 56,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "云居孤云",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
+      },
       {
         "placement": "3rd",
         "player": "胰脏@牌客盟",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
+        "placement": "3rd",
+        "player": "Kuro",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "5th",
+        "player": "MYZ",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
+      {
         "placement": "9th",
         "player": "XXT.zyoung",
         "tournament": "S5 Shanghai City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "12th",
-        "player": "van",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "13th",
-        "player": "电飞鼠VMAX",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "14th",
-        "player": "Jellyleaf",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
@@ -177,11 +182,11 @@
   },
   "topBattlefields": [
     "Dusk Rose Lab (95 %)",
-    "Seat of Power (88 %)",
-    "Black Flame Altar (45 %)",
-    "Abandoned Hall (35 %)"
+    "Seat of Power (91 %)",
+    "Black Flame Altar (41 %)",
+    "Abandoned Hall (36 %)"
   ],
-  "dataSource": "Classement complet des tournois : 60 joueurs classés, 11 tournois, dont 40 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 77 joueurs classés, 16 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

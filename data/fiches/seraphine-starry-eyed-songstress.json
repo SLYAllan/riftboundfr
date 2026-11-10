@@ -10,52 +10,52 @@
   "keyCards": [
     {
       "name": "Encore",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Vanguard Armory",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Vanguard Armory",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Plundering Poro",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Raucous Anthem",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -65,12 +65,12 @@
     },
     {
       "name": "Carrion Dredger",
-      "role": "Souple, 47 % des listes, 3 exemplaires",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Vanguard Captain",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "name": "Cull the Weak",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -78,26 +78,26 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Seraphine, Inspiring": {
-      "usage": "74 %",
+      "usage": "71 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jayce, Man of Progress": {
-      "usage": "53 %",
+      "usage": "55 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (62 %)",
+    "Trifarian War Camp (61 %)",
     "Forbidding Waste (50 %)",
     "Treasure Hoard (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 46,
+    "joueursClasses": 50,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 7,
-    "listesPubliees": 34,
+    "tournois": 9,
+    "listesPubliees": 38,
     "bestPlacements": [
       {
         "placement": "51th",
@@ -115,18 +115,18 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "60th",
+        "player": "A.新光一番.冰激凌",
+        "tournament": "S5 Beijing City Challenge (2026-11-08)"
+      },
+      {
         "placement": "62th",
         "player": "亚当当当当",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "64th",
-        "player": "影流$_$",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 46 joueurs classés, 7 tournois, dont 34 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 50 joueurs classés, 9 tournois, dont 38 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Jetons Recrue et sorts moins chers",
   "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
   "gameplan": {

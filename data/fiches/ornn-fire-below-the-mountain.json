@@ -22,97 +22,105 @@
       "noyau": true
     },
     {
+      "name": "Seal of Focus",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Sprite Fountain",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Seal of Focus",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Sterak's Gage",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Defy",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pit Crew",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Poro Snax",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Clockwork Keeper",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Brutalizer",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Mask of Foresight",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "name": "Pit Crew",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Poro Snax",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Defy",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Clockwork Keeper",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Aspiring Engineer",
       "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
-      "name": "Time Warp",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "name": "Mask of Foresight",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Lonely Poro",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "name": "Aspiring Engineer",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shurelya's Requiem",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Forgefire Cape",
+      "role": "Souple, 40 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Invigorating Bloom",
+      "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "74 %",
+      "usage": "60 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Ornn, Forge God": {
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (93 %)",
-    "Veiled Temple (77 %)",
-    "Seat of Power (74 %)",
-    "Treasure Hoard (31 %)"
+    "Ornn's Forge (90 %)",
+    "Veiled Temple (80 %)",
+    "Seat of Power (40 %)"
   ],
   "strengths": [
     "Vainqueur du Regional Qualifier de Barcelone, le plus gros tournoi du format",
@@ -126,44 +134,44 @@
     "Ornn, Blacksmith n'est que dans 74 % des listes : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 433,
-    "coupe10": 33,
-    "titres": 1,
-    "conversion": "7.6 %",
-    "tournois": 47,
-    "listesPubliees": 70,
+    "joueursClasses": 14,
+    "coupe10": 1,
+    "titres": 0,
+    "conversion": "7.1 %",
+    "tournois": 10,
+    "listesPubliees": 10,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": "MICE TheManLand",
-        "tournament": "Barcelona Regional Qualifier"
+        "placement": "11th",
+        "player": "加粗中括号",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
       },
       {
-        "placement": "2nd",
-        "player": "xyz.李泳垚",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+        "placement": "29th",
+        "player": "Watbie and Poppy",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "3rd",
-        "player": "karn",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "placement": "37th",
+        "player": "n0000000000o",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
-        "placement": "4th",
-        "player": "超级阿巴怪@友间",
-        "tournament": "S4 Chengdu National Open Side Event A (2026-10-11)"
+        "placement": "51th",
+        "player": "泉",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
-        "placement": "4th",
-        "player": "幻灵卡域·牌王贤",
-        "tournament": "S4 Chengdu National Open Side Event B (2026-10-11)"
+        "placement": "63th",
+        "player": "PopChase",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 433 joueurs classés, 47 tournois, dont 70 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 10 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -180,5 +188,5 @@
     "note": "Build aggro/tempo (sprites) plus consistant qu'un seul gros Ornn."
   },
   "cartesDepuisBan": "2026-09-15",
-  "setDesChiffres": "Vendetta"
+  "setDesChiffres": "Radiance"
 }

@@ -58,18 +58,18 @@
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Hand Hammer",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Hidden Blade",
@@ -78,17 +78,22 @@
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "En Garde",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -102,12 +107,12 @@
     "Sans équipement joué dans le tour, la Légende ne fait rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 35,
-    "coupe10": 2,
+    "joueursClasses": 48,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "5.7 %",
-    "tournois": 10,
-    "listesPubliees": 33,
+    "conversion": "6.3 %",
+    "tournois": 15,
+    "listesPubliees": 45,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -125,14 +130,14 @@
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
-        "placement": "36th",
-        "player": "清水雷鸣",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
+        "placement": "30th",
+        "player": "Giovanni",
+        "tournament": "Europe Regional Championship"
       },
       {
-        "placement": "37th",
-        "player": "Alan",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+        "placement": "36th",
+        "player": "关水水君",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
       }
     ]
   },
@@ -159,17 +164,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "70 %",
+      "usage": "71 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Hall of Legends (100 %)",
-    "Trifarian War Camp (94 %)",
-    "Seat of Power (48 %)",
-    "Ornn's Forge (39 %)"
+    "Trifarian War Camp (93 %)",
+    "Ornn's Forge (51 %)",
+    "Seat of Power (38 %)"
   ],
-  "dataSource": "Classement complet des tournois : 35 joueurs classés, 10 tournois, dont 33 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 48 joueurs classés, 15 tournois, dont 45 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

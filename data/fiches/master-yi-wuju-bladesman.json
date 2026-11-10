@@ -32,53 +32,53 @@
       "noyau": true
     },
     {
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Charm",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Lonely Poro",
       "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Charm",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Rampage",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -88,7 +88,7 @@
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -104,12 +104,12 @@
     "Deux titres sur 11 tournois, mais une conversion à peine au-dessus de la moyenne du format : 89 joueurs classés ne suffisent pas à trancher"
   ],
   "competitiveResults": {
-    "joueursClasses": 89,
-    "coupe10": 10,
+    "joueursClasses": 149,
+    "coupe10": 15,
     "titres": 2,
-    "conversion": "11.2 %",
-    "tournois": 11,
-    "listesPubliees": 81,
+    "conversion": "10.1 %",
+    "tournois": 16,
+    "listesPubliees": 126,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -127,14 +127,14 @@
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
-        "placement": "5th",
-        "player": "不吃糖的乙酸盐、灵花祭",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+        "placement": "4th",
+        "player": "不凡·风色",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
         "placement": "5th",
-        "player": "JHM.clks",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+        "player": "不吃糖的乙酸盐、灵花祭",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
@@ -162,16 +162,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "95 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
+    "Emperor's Dais (79 %)",
     "Star Spring (78 %)",
-    "Emperor's Dais (77 %)",
-    "Seat of Power (69 %)"
+    "Seat of Power (72 %)"
   ],
-  "dataSource": "Classement complet des tournois : 89 joueurs classés, 11 tournois, dont 81 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 149 joueurs classés, 16 tournois, dont 126 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

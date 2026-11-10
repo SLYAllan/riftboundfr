@@ -9,33 +9,28 @@
   "tier": 5,
   "keyCards": [
     {
-      "name": "Falling Star",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Tideturner",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "name": "Falling Star",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -44,49 +39,54 @@
       "noyau": false
     },
     {
-      "name": "Bedeviling Stranger",
+      "name": "Tideturner",
       "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Baron Nashor",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Piercing Light",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Bewitching Spirit",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "The List",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Blood Rush",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bewitching Spirit",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The List",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Gust",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Shimmering Swimmer",
+      "role": "Souple, 39 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 23,
+    "joueursClasses": 27,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 6,
-    "listesPubliees": 14,
+    "tournois": 8,
+    "listesPubliees": 18,
     "bestPlacements": [
+      {
+        "placement": "23th",
+        "player": "慕月",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
+      },
       {
         "placement": "27th",
         "player": "XDPOW",
@@ -106,38 +106,37 @@
         "placement": "56th",
         "player": "DD DEXTERREIGNS",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "59th",
-        "player": "铁头-梦幻泡影",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
   "sourceUrl": null,
   "champions": {
-    "Fizz, Trickster": {
-      "usage": "86 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "Pyke, Dockside Butcher": {
-      "usage": "86 %",
+      "usage": "89 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Fizz, Trickster": {
+      "usage": "78 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Ezreal, Prodigy": {
-      "usage": "64 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "64 %",
+      "usage": "56 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Pouncing": {
+      "usage": "33 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ripper's Bay (86 %)",
-    "Forbidding Waste (50 %)"
+    "Ripper's Bay (89 %)",
+    "Forbidding Waste (61 %)"
   ],
-  "dataSource": "Classement complet des tournois : 23 joueurs classés, 6 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 8 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {

@@ -37,48 +37,48 @@
       "noyau": true
     },
     {
-      "name": "Wages of Pain",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Deadly Flourish",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Singularity",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The List",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -87,18 +87,13 @@
       "noyau": false
     },
     {
-      "name": "Turn to Dust",
-      "role": "Souple, 40 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Temporal Breach",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Frigid Touch",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "name": "Turn to Dust",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -111,17 +106,22 @@
     "Sa meilleure place est une dixième, à la City Challenge de Shenzhen"
   ],
   "competitiveResults": {
-    "joueursClasses": 10,
+    "joueursClasses": 14,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "10 %",
-    "tournois": 5,
-    "listesPubliees": 10,
+    "conversion": "7.1 %",
+    "tournois": 8,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "10th",
         "player": "篱间雀",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "42th",
+        "player": "Watch",
+        "tournament": "S5 Beijing City Challenge (2026-11-08)"
       },
       {
         "placement": "50th",
@@ -137,11 +137,6 @@
         "placement": "71th",
         "player": "Oze-牌客盟",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "87th",
-        "player": "Ryan Saxby",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
@@ -173,16 +168,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "80 %",
-      "role": "2,5 exemplaires en moyenne"
+      "usage": "83 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (90 %)",
-    "Sigil of the Storm (60 %)",
-    "Heisho, Shell of the World (30 %)"
+    "Frozen Fortress (92 %)",
+    "Sigil of the Storm (58 %)",
+    "Heisho, Shell of the World (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 10 joueurs classés, 5 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 8 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

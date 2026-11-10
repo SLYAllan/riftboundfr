@@ -15,7 +15,7 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -25,62 +25,67 @@
     },
     {
       "name": "Plundering Poro",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Inferna",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Watchful Sentry",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lecturing Yordle",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Bellows Breath",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -88,43 +93,50 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "89 %",
+      "usage": "87 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Ekko, Revolutionary": {
-      "usage": "71 %",
+    "Ekko, Ingenious": {
+      "usage": "70 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Ekko, Ingenious": {
-      "usage": "68 %",
+    "Ekko, Revolutionary": {
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vayne, Hunter": {
-      "usage": "61 %",
+      "usage": "57 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "54 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "32 %",
+      "usage": "30 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (75 %)",
-    "Ripper's Bay (43 %)",
-    "Seat of Power (43 %)"
+    "Rockfall Path (77 %)",
+    "Ripper's Bay (40 %)",
+    "Seat of Power (40 %)",
+    "Frozen Fortress (30 %)",
+    "Vilemaw's Lair (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 38,
-    "coupe10": 1,
+    "joueursClasses": 40,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "2.6 %",
-    "tournois": 9,
-    "listesPubliees": 28,
+    "conversion": "5 %",
+    "tournois": 11,
+    "listesPubliees": 30,
     "bestPlacements": [
+      {
+        "placement": "4th",
+        "player": "虹社-赛符豪低手",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
       {
         "placement": "32th",
         "player": "卓卡-懒大块头",
@@ -144,15 +156,10 @@
         "placement": "51th",
         "player": "Boodius",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "55th",
-        "player": "归零者-dblbd",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 38 joueurs classés, 9 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 40 joueurs classés, 11 tournois, dont 30 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Tempo, unités payées moins cher",
   "legendAbility": "Pour une énergie, épuisez Ekko pour l'amplifier, s'il ne l'est pas déjà. Plus tard, désamplifiez-le et épuisez-le : la prochaine unité que vous jouez ce tour coûte 2 énergie et 1 Puissance de moins, mais elle meurt à la fin du tour.",
   "gameplan": {

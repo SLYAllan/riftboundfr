@@ -18,17 +18,17 @@
   "keyCards": [
     {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Mirror Image",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -38,57 +38,57 @@
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ruined Rex",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Watchful Sentry",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ruined Rex",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Deathgrip",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Deathgrip",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
+      "role": "Standard, 75 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Black Rose Dignitary",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rift Herald",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Standard, 63 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Baited Hook",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -102,13 +102,18 @@
     "La Légende demande de défausser une carte à chaque copie"
   ],
   "competitiveResults": {
-    "joueursClasses": 49,
-    "coupe10": 7,
-    "titres": 0,
-    "conversion": "14.3 %",
-    "tournois": 11,
-    "listesPubliees": 38,
+    "joueursClasses": 64,
+    "coupe10": 8,
+    "titres": 1,
+    "conversion": "12.5 %",
+    "tournois": 16,
+    "listesPubliees": 48,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "No.Sensai",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
       {
         "placement": "4th",
         "player": "宝库卡牌.LD.凯瑞",
@@ -127,11 +132,6 @@
       {
         "placement": "16th",
         "player": "oskilla",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "19th",
-        "player": "ST3LLA ALPINA",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
@@ -171,10 +171,10 @@
   },
   "topBattlefields": [
     "Windswept Hillock (100 %)",
-    "Dusk Rose Lab (74 %)",
-    "Star Spring (61 %)"
+    "Dusk Rose Lab (69 %)",
+    "Star Spring (58 %)"
   ],
-  "dataSource": "Classement complet des tournois : 49 joueurs classés, 11 tournois, dont 38 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 64 joueurs classés, 16 tournois, dont 48 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

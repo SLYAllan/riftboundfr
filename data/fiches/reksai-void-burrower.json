@@ -25,12 +25,12 @@
     },
     {
       "name": "Carrion Dredger",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -45,37 +45,42 @@
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hunting Dog",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Banner of Conquest",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Long Sword",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Blood Rush",
-      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -85,13 +90,18 @@
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 73,
-    "coupe10": 9,
+    "joueursClasses": 108,
+    "coupe10": 11,
     "titres": 0,
-    "conversion": "12.3 %",
-    "tournois": 11,
-    "listesPubliees": 72,
+    "conversion": "10.2 %",
+    "tournois": 16,
+    "listesPubliees": 101,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "Extreme",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
+      },
       {
         "placement": "3rd",
         "player": "克烈同学.KDX.神切",
@@ -111,11 +121,6 @@
         "placement": "7th",
         "player": "Nothing",
         "tournament": "S5 Shanghai City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "8th",
-        "player": "莫非",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
@@ -126,21 +131,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Pouncing": {
-      "usage": "63 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "39 %",
+      "usage": "34 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "The Candlelit Sanctum (94 %)",
+    "The Candlelit Sanctum (96 %)",
     "Forbidding Waste (53 %)",
-    "Hunters' Circle (44 %)",
-    "Ruined Monastery (35 %)"
+    "Hunters' Circle (45 %)",
+    "Ruined Monastery (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 73 joueurs classés, 11 tournois, dont 72 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 108 joueurs classés, 16 tournois, dont 101 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

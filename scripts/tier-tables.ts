@@ -181,8 +181,8 @@ export const unleashedTier: TierEntry[] = [
 // classements complets de Hartford et du S3 National Open inclus. Taux de Top 8 moyen = 3,23 %.
 // Commande : python -X utf8 scripts/tier-unleashed.py Global
 export const globalTier: TierEntry[] = [
-  // Relevé du 8 novembre 2026, toutes ères confondues : **48 012 joueurs classés
-  // sur 149 tournois**, dont 68 au classement complet scrapé. Chiffres par
+  // Relevé du 10 novembre 2026, toutes ères confondues : **48 806 joueurs classés
+  // sur 154 tournois**, dont 73 au classement complet scrapé. Chiffres par
   // `npx tsx scripts/tier-stats.mts tous 0.10 100`, titres par `bilanParLegende`
   // de `corpus-tournois.ts`. Conversion moyenne : 10,1 %, sur une coupe
   // proportionnelle à 10 % du champ de chaque tournoi.
@@ -195,59 +195,59 @@ export const globalTier: TierEntry[] = [
   //
   // Neuf écarts tiennent un test binomial au-dessus de la moyenne, et les neuf
   // sont en S. Riven y est entrée le 7 novembre, sur un seul set. Annie
-  // (p = 0,049) s'y tient de justesse : un p juste sous 0,05 ne tient pas toujours
-  // d'un relevé à l'autre. Lillia, repassée en C le 7 novembre, tient le test en
-  // dessous tout aussi juste (p = 0,049).
+  // (p = 0,048) s'y tient de justesse : un p juste sous 0,05 ne tient pas toujours
+  // d'un relevé à l'autre. Lillia, repassée en C le 7 novembre, l'a montré : elle
+  // tenait le test en dessous (p = 0,049), elle ne le tient plus le 10 (p = 0,074).
 
-  { legendName: "Riven, The Exile", tier: "S", comment: "328 joueurs, tous sur Radiance, et 20,7 % de conversion, la meilleure jamais mesurée, avec 5 titres. Un seul set et onze tournois : il est trop tôt pour dire qu'elle domine le jeu." },
-  { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "4 717 joueurs, la Légende la plus jouée de l'histoire du jeu (9,8 % du champ toutes ères), 13,9 % de conversion et 22 titres. Présente et gagnante d'Origines à Radiance." },
-  { legendName: "Draven, Glorious Executioner", tier: "S", comment: "2 414 joueurs, 15,8 % de conversion, 14 titres. Meilleure conversion des grosses Légendes. Roi du Spiritforged, où il signe l'essentiel de ses titres." },
-  { legendName: "Irelia, Blade Dancer", tier: "S", comment: "3 670 joueurs, 14,3 % de conversion, 16 titres, dont la City Challenge de Shenyang du 31 octobre. Tempo équipement, régulière d'un set à l'autre." },
-  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "3 999 joueurs, 11,7 % de conversion, 18 titres. Reine d'Origines (8,3 % du champ toutes ères à elle seule), toujours jouée en Radiance." },
-  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "1 713 joueurs, 18,5 % de conversion, 10 titres, sur deux sets seulement. Domine Vendetta et tient son rang en Radiance." },
-  { legendName: "Diana, Scorn of the Moon", tier: "S", comment: "1 599 joueurs, 12,6 % de conversion, 9 titres, dont le Showdown de Melbourne. Apparue en Déchaînement, immédiatement au sommet." },
-  { legendName: "Annie, Dark Child", tier: "S", comment: "772 joueurs, 12,3 % de conversion, 5 titres. Au-dessus de la moyenne dans les quatre sets, et toujours sous-jouée. Elle passe le seuil statistique de justesse (p = 0,049) : un rang à revérifier au prochain relevé." },
-  { legendName: "LeBlanc, Deceiver", tier: "S", comment: "1 586 joueurs, 12,4 %, 3 titres. Moteur d'Agonie. Son écart tient le test depuis Singapour (p = 0,004)." },
+  { legendName: "Riven, The Exile", tier: "S", comment: "552 joueurs, tous sur Radiance, et 18,3 % de conversion, la meilleure jamais mesurée, avec 5 titres. Un seul set et seize tournois : il est trop tôt pour dire qu'elle domine le jeu." },
+  { legendName: "Master Yi, Wuju Bladesman", tier: "S", comment: "4 777 joueurs, la Légende la plus jouée de l'histoire du jeu (9,8 % du champ toutes ères), 13,8 % de conversion et 22 titres. Présente et gagnante d'Origines à Radiance." },
+  { legendName: "Draven, Glorious Executioner", tier: "S", comment: "2 416 joueurs, 15,8 % de conversion, 14 titres. Meilleure conversion des grosses Légendes. Roi du Spiritforged, où il signe l'essentiel de ses titres." },
+  { legendName: "Irelia, Blade Dancer", tier: "S", comment: "3 689 joueurs, 14,2 % de conversion, 16 titres, dont la City Challenge de Shenyang du 31 octobre. Tempo équipement, régulière d'un set à l'autre." },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "S", comment: "4 111 joueurs, 11,7 % de conversion, 19 titres. Reine d'Origines (8,4 % du champ toutes ères à elle seule), toujours jouée en Radiance, où elle gagne la City Challenge de Pékin du 8 novembre." },
+  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "1 806 joueurs, 18,1 % de conversion, 12 titres, sur deux sets seulement. Domine Vendetta, et gagne le Regional Championship d'Europe en Radiance." },
+  { legendName: "Diana, Scorn of the Moon", tier: "S", comment: "1 609 joueurs, 12,5 % de conversion, 9 titres, dont le Showdown de Melbourne. Apparue en Déchaînement, immédiatement au sommet." },
+  { legendName: "Annie, Dark Child", tier: "S", comment: "772 joueurs, 12,3 % de conversion, 5 titres. Au-dessus de la moyenne dans les quatre sets, et toujours sous-jouée. Elle passe le seuil statistique de justesse (p = 0,048) : un rang à revérifier au prochain relevé." },
+  { legendName: "LeBlanc, Deceiver", tier: "S", comment: "1 601 joueurs, 12,3 %, 4 titres, dont la City Challenge de Wuhan du 8 novembre. Moteur d'Agonie. Son écart tient le test depuis Singapour (p = 0,004)." },
 
   { legendName: "Sivir, Battle Mistress", tier: "A", comment: "758 joueurs, 11,2 %, 2 titres. Rampe Aurora." },
-  { legendName: "Rengar, Pridestalker", tier: "A", comment: "1 019 joueurs, 11,9 %, 4 titres, dont le Regional Qualifier de Los Angeles et le City Challenge de Shanghai du 3 octobre." },
+  { legendName: "Rengar, Pridestalker", tier: "A", comment: "1 035 joueurs, 11,9 %, 4 titres, dont le Regional Qualifier de Los Angeles et le City Challenge de Shanghai du 3 octobre." },
   { legendName: "Darius, Hand of Noxus", tier: "A", comment: "419 joueurs, 11,0 %, jamais titré. Aggro Corps/Furie régulier en coupe." },
-  { legendName: "Ezreal, Prodigal Explorer", tier: "A", comment: "1 088 joueurs, 10,3 %, sans titre. La moyenne du jeu toutes ères, à peine au-dessus. En Vendetta il convertit mieux (11,8 %), sans que l'écart tienne le test." },
+  { legendName: "Ezreal, Prodigal Explorer", tier: "A", comment: "1 092 joueurs, 10,3 %, sans titre. La moyenne du jeu toutes ères, à peine au-dessus. En Vendetta il convertit mieux (11,8 %), sans que l'écart tienne le test." },
 
-  { legendName: "Azir, Emperor of the Sands", tier: "B", comment: "1 530 joueurs, 10,1 %, 7 titres dont Utrecht, Lille et le National Open de Chengdu." },
-  { legendName: "Jayce, Defender of Tomorrow", tier: "B", comment: "835 joueurs, 8,6 %, 1 titre. Vendetta et Radiance seulement." },
-  { legendName: "Rek'Sai, Void Burrower", tier: "B", comment: "1 163 joueurs, 9,5 %, 2 titres." },
-  { legendName: "Viktor, Herald of the Arcane", tier: "B", comment: "2 046 joueurs, 9,4 %, 4 titres. Beaucoup joué, jamais dominant." },
+  { legendName: "Azir, Emperor of the Sands", tier: "B", comment: "1 543 joueurs, 10,1 %, 7 titres dont Utrecht, Lille et le National Open de Chengdu." },
+  { legendName: "Jayce, Defender of Tomorrow", tier: "B", comment: "858 joueurs, 8,9 %, 1 titre. Vendetta et Radiance seulement." },
+  { legendName: "Rek'Sai, Void Burrower", tier: "B", comment: "1 198 joueurs, 9,3 %, 2 titres." },
+  { legendName: "Viktor, Herald of the Arcane", tier: "B", comment: "2 055 joueurs, 9,3 %, 4 titres. Beaucoup joué, jamais dominant." },
   { legendName: "Miss Fortune, Bounty Hunter", tier: "B", comment: "926 joueurs, 9,2 %, 1 titre. Elle valait mieux que le D que les anciens relevés lui donnaient." },
-  { legendName: "Fiora, Grand Duelist", tier: "B", comment: "1 538 joueurs, 9,0 %, 7 titres. Midrange Corps/Ordre." },
-  { legendName: "Kha'Zix, Voidreaver", tier: "B", comment: "727 joueurs, 9,8 %, 1 titre, la City Challenge de Hangzhou du 7 novembre." },
-  { legendName: "Sett, The Boss", tier: "B", comment: "879 joueurs, 9,0 % mais 8 titres : il gagne plus qu'il ne place." },
-  { legendName: "Vex, Gloomist", tier: "B", comment: "1 077 joueurs, 9,9 %, 2 titres, dont la City Challenge de Fuzhou du 31 octobre. Dans la moyenne, écart non établi (p = 0,92)." },
-  { legendName: "Lucian, Purifier", tier: "B", comment: "582 joueurs, 7,9 %. Sous la moyenne, écart non établi (p = 0,085)." },
+  { legendName: "Fiora, Grand Duelist", tier: "B", comment: "1 544 joueurs, 9,0 %, 7 titres. Midrange Corps/Ordre." },
+  { legendName: "Kha'Zix, Voidreaver", tier: "B", comment: "733 joueurs, 9,7 %, 1 titre, la City Challenge de Hangzhou du 7 novembre." },
+  { legendName: "Sett, The Boss", tier: "B", comment: "886 joueurs, 9,0 % mais 8 titres : il gagne plus qu'il ne place." },
+  { legendName: "Vex, Gloomist", tier: "B", comment: "1 096 joueurs, 9,9 %, 3 titres, dont les City Challenge de Fuzhou du 31 octobre et de Guangzhou du 8 novembre. Dans la moyenne, écart non établi (p = 0,92)." },
+  { legendName: "Lucian, Purifier", tier: "B", comment: "585 joueurs, 7,9 %. Sous la moyenne, écart non établi (p = 0,074)." },
 
-  { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "921 joueurs, 8,1 %, 3 titres. L'écart sous la moyenne tient le test, de justesse (p = 0,049)." },
-  { legendName: "Lux, Lady of Luminosity", tier: "C", comment: "469 joueurs, 6,8 %, écart établi (p = 0,017)." },
-  { legendName: "Teemo, Swift Scout", tier: "C", comment: "735 joueurs, 6,8 %, écart établi (p = 0,002)." },
-  { legendName: "Akali, Rogue Assassin", tier: "C", comment: "855 joueurs, 7,8 %, écart établi (p = 0,027), et pourtant 4 titres : Singapour, le Regional Open de Shenyang, les City Challenge de Shanghai et de Guangzhou du 27 septembre. Vendetta et Radiance." },
-  { legendName: "Pyke, Bloodharbor Ripper", tier: "C", comment: "585 joueurs, 5,0 %, écart établi (p < 0,001)." },
-  { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "564 joueurs, 5,7 %, 2 titres, écart établi (p < 0,001). Vendetta et Radiance." },
-  { legendName: "Poppy, Keeper of the Hammer", tier: "C", comment: "282 joueurs, 3,9 %, écart établi (p < 0,001)." },
-  { legendName: "Ornn, Fire Below the Mountain", tier: "C", comment: "917 joueurs, 5,7 %, écart établi, mais 1 titre : Barcelone, le plus gros tournoi jamais joué." },
-  { legendName: "Jax, Grandmaster At Arms", tier: "C", comment: "454 joueurs, 4,0 %, écart établi (p < 0,001)." },
+  { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "938 joueurs, 8,3 %, 3 titres. Sous la moyenne, mais l'écart ne tient plus le test (p = 0,074)." },
+  { legendName: "Lux, Lady of Luminosity", tier: "C", comment: "470 joueurs, 6,8 %, écart établi (p = 0,017)." },
+  { legendName: "Teemo, Swift Scout", tier: "C", comment: "737 joueurs, 6,9 %, écart établi (p = 0,003)." },
+  { legendName: "Akali, Rogue Assassin", tier: "C", comment: "866 joueurs, 7,7 %, écart établi (p = 0,021), et pourtant 4 titres : Singapour, le Regional Open de Shenyang, les City Challenge de Shanghai et de Guangzhou du 27 septembre. Vendetta et Radiance." },
+  { legendName: "Pyke, Bloodharbor Ripper", tier: "C", comment: "589 joueurs, 4,9 %, écart établi (p < 0,001)." },
+  { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "576 joueurs, 5,6 %, 2 titres, écart établi (p < 0,001). Vendetta et Radiance." },
+  { legendName: "Poppy, Keeper of the Hammer", tier: "C", comment: "283 joueurs, 3,9 %, écart établi (p < 0,001)." },
+  { legendName: "Ornn, Fire Below the Mountain", tier: "C", comment: "923 joueurs, 5,7 %, écart établi, mais 1 titre : Barcelone, le plus gros tournoi jamais joué." },
+  { legendName: "Jax, Grandmaster At Arms", tier: "C", comment: "455 joueurs, 4,0 %, écart établi (p < 0,001)." },
 
   { legendName: "Ahri, Nine-Tailed Fox", tier: "D", comment: "824 joueurs, 4,0 %, 1 titre, écart établi (p < 0,001). Beaucoup jouée sur trois sets, presque jamais récompensée." },
-  { legendName: "Lee Sin, Blind Monk", tier: "D", comment: "379 joueurs, 4,2 %, écart établi (p < 0,001)." },
-  { legendName: "Master Yi, Wuju Master", tier: "D", comment: "363 joueurs, 3,3 %, écart établi. À ne pas confondre avec le Wuju Bladesman, qui est en S." },
-  { legendName: "Volibear, Relentless Storm", tier: "D", comment: "424 joueurs, 3,5 %, écart établi (p < 0,001)." },
+  { legendName: "Lee Sin, Blind Monk", tier: "D", comment: "380 joueurs, 4,2 %, écart établi (p < 0,001)." },
+  { legendName: "Master Yi, Wuju Master", tier: "D", comment: "364 joueurs, 3,3 %, écart établi. À ne pas confondre avec le Wuju Bladesman, qui est en S." },
+  { legendName: "Volibear, Relentless Storm", tier: "D", comment: "427 joueurs, 3,5 %, écart établi (p < 0,001)." },
   { legendName: "Vi, Piltover Enforcer", tier: "D", comment: "357 joueurs, 3,4 %, écart établi (p < 0,001)." },
-  { legendName: "Mel, Soul's Reflection", tier: "D", comment: "251 joueurs, 2,8 %, écart établi (p < 0,001). Vendetta et Radiance." },
-  { legendName: "Yasuo, Unforgiven", tier: "D", comment: "524 joueurs, 2,9 %, 1 titre, écart établi (p < 0,001)." },
+  { legendName: "Mel, Soul's Reflection", tier: "D", comment: "252 joueurs, 2,8 %, écart établi (p < 0,001). Vendetta et Radiance." },
+  { legendName: "Yasuo, Unforgiven", tier: "D", comment: "526 joueurs, 2,9 %, 1 titre, écart établi (p < 0,001)." },
   { legendName: "Zed, Master of Shadows", tier: "D", comment: "191 joueurs, 1,6 %, écart établi (p < 0,001). Vendetta et Radiance." },
   { legendName: "Jinx, Loose Cannon", tier: "D", comment: "456 joueurs, 2,4 %, 1 titre, écart établi (p < 0,001)." },
   { legendName: "Jhin, Virtuoso", tier: "D", comment: "376 joueurs, 3,2 %, écart établi (p < 0,001)." },
-  { legendName: "Leona, Radiant Dawn", tier: "D", comment: "496 joueurs, 1,4 %, écart établi (p < 0,001)." },
-  { legendName: "Rumble, Mechanized Menace", tier: "D", comment: "474 joueurs, 1,1 %, écart établi (p < 0,001)." },
-  { legendName: "Ivern, Green Father", tier: "D", comment: "340 joueurs, quatre places en coupe sur toute l'histoire du jeu." },
+  { legendName: "Leona, Radiant Dawn", tier: "D", comment: "498 joueurs, 1,4 %, écart établi (p < 0,001)." },
+  { legendName: "Rumble, Mechanized Menace", tier: "D", comment: "476 joueurs, 1,1 %, écart établi (p < 0,001)." },
+  { legendName: "Ivern, Green Father", tier: "D", comment: "341 joueurs, quatre places en coupe sur toute l'histoire du jeu." },
   { legendName: "Garen, Might of Demacia", tier: "D", comment: "213 joueurs, 0,9 %, écart établi (p < 0,001)." },
   { legendName: "Ambessa, Matriarch of War", tier: "D", comment: "197 joueurs, une seule place en coupe, écart établi (p < 0,001). Vendetta et Radiance." },
   { legendName: "Renata Glasc, Chem-Baroness", tier: "D", comment: "338 joueurs, zéro place en coupe sur toute l'histoire du jeu." },
@@ -349,11 +349,10 @@ export const vendettaTier: TierEntry[] = [
 ];
 
 export const radianceTier: TierEntry[] = [
-  // Relevé du 8 novembre 2026, sur le CLASSEMENT COMPLET des onze premiers
+  // Relevé du 10 novembre 2026, sur le CLASSEMENT COMPLET des seize premiers
   // tournois Radiance : les Showdowns de Sacramento (719 classés) et de Melbourne
-  // (239), et les neuf City Challenge S5 de hexgate du 31 octobre au 7 novembre
-  // (Shenyang, Suzhou, Shenzhen, Fuzhou, Pékin, Shanghai deux fois, Guangzhou,
-  // Hangzhou : 1 075), 2 033 joueurs. Même méthode que Vendetta : joueurs classés, coupe à 10 %
+  // (239), le Regional Championship d'Europe (309), et les treize City Challenge
+  // S5 de hexgate du 31 octobre au 8 novembre (1 560), 2 827 joueurs. Même méthode que Vendetta : joueurs classés, coupe à 10 %
   // du champ de chaque tournoi. Chiffres par
   // `scripts/tier-stats.mts Radiance 0.10 15`.
   //
@@ -377,38 +376,38 @@ export const radianceTier: TierEntry[] = [
   // Kha'Zix monte de C à B (9,5 %, à côté de Rengar à 10,1 %). Ivern et Volibear
   // passent le seuil (16 et 15 joueurs, aucune place en coupe) et entrent en D.
 
-  { legendName: "Riven, The Exile", tier: "S", comment: "328 joueurs, la Légende la plus jouée du set, et 20,7 % de conversion contre 9,9 % pour le format (p < 0,001). Cinq titres : le Showdown de Sacramento et les City Challenge de Suzhou, de Shenzhen, de Pékin et de Guangzhou, avec cinq places du Top 8 à Shenzhen." },
-  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "166 joueurs, 15,7 % de conversion (p = 0,019). Le maître de Vendetta tient son rang avec le nouveau set." },
-  { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "A gagné le Showdown de Melbourne. 20,6 % de conversion sur 34 joueurs, mais l'écart ne tient plus le test (p = 0,075)." },
-  { legendName: "LeBlanc, Deceiver", tier: "A", comment: "14,3 % sur 49 joueurs, sans que l'écart tienne le test (p = 0,33)." },
-  { legendName: "Vex, Gloomist", tier: "B", comment: "11,8 % sur 85 joueurs. A gagné la City Challenge de Fuzhou." },
-  { legendName: "Kai'Sa, Daughter of the Void", tier: "B", comment: "11,8 % sur 152 joueurs, la troisième Légende la plus jouée du set. Quatre places dans le Top 8 de Suzhou." },
+  { legendName: "Riven, The Exile", tier: "S", comment: "552 joueurs, près d'un joueur sur cinq, et 18,3 % de conversion contre 9,9 % pour le format (p < 0,001). Cinq titres : le Showdown de Sacramento et les City Challenge de Suzhou, de Shenzhen, de Pékin et de Guangzhou. Au Regional Championship d'Europe, 126 joueurs sur 309 et quatre places du Top 8, dont la deuxième." },
+  { legendName: "Kennen, Heart of the Tempest", tier: "S", comment: "259 joueurs, 13,9 % de conversion (p = 0,038). A gagné le Regional Championship d'Europe, avec trois places du Top 8, et la City Challenge de Chengdu du 7 novembre." },
+  { legendName: "Diana, Scorn of the Moon", tier: "A", comment: "A gagné le Showdown de Melbourne. 15,9 % de conversion sur 44 joueurs, mais l'écart ne tient pas le test (p = 0,20)." },
+  { legendName: "LeBlanc, Deceiver", tier: "A", comment: "12,5 % sur 64 joueurs, sans que l'écart tienne le test (p = 0,53). A gagné la City Challenge de Wuhan du 8 novembre." },
+  { legendName: "Vex, Gloomist", tier: "B", comment: "11,5 % sur 104 joueurs. A gagné les City Challenge de Fuzhou du 31 octobre et de Guangzhou du 8 novembre." },
+  { legendName: "Kai'Sa, Daughter of the Void", tier: "B", comment: "10,6 % sur 264 joueurs, la deuxième Légende la plus jouée du set. A gagné la City Challenge de Pékin du 8 novembre, cinquième au Regional Championship d'Europe." },
   { legendName: "Vi, Piltover Enforcer", tier: "B", comment: "11,8 % sur 17 joueurs." },
-  { legendName: "Rek'Sai, Void Burrower", tier: "B", comment: "12,3 % sur 73 joueurs, sans que l'écart tienne le test (p = 0,44)." },
-  { legendName: "Akali, Rogue Assassin", tier: "B", comment: "11,1 % sur 63 joueurs, troisième à Sacramento." },
-  { legendName: "Master Yi, Wuju Bladesman", tier: "B", comment: "11,2 % sur 89 joueurs. A gagné les City Challenge de Shanghai du 1er et du 7 novembre." },
-  { legendName: "Rengar, Pridestalker", tier: "B", comment: "10,1 % sur 69 joueurs, la moyenne du format. Huitième à Sacramento." },
-  { legendName: "Kha'Zix, Voidreaver", tier: "B", comment: "A gagné la City Challenge de Hangzhou du 7 novembre. 9,5 % sur 21 joueurs." },
-  { legendName: "Jayce, Defender of Tomorrow", tier: "C", comment: "6,8 % sur 44 joueurs." },
-  { legendName: "Irelia, Blade Dancer", tier: "C", comment: "A gagné la City Challenge de Shenyang, mais 4,0 % de conversion sur 50 joueurs." },
-  { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "8,3 % sur 60 joueurs." },
+  { legendName: "Rek'Sai, Void Burrower", tier: "B", comment: "10,2 % sur 108 joueurs, la moyenne du format (p = 0,87)." },
+  { legendName: "Akali, Rogue Assassin", tier: "B", comment: "9,5 % sur 74 joueurs, troisième à Sacramento." },
+  { legendName: "Master Yi, Wuju Bladesman", tier: "B", comment: "10,1 % sur 149 joueurs. A gagné les City Challenge de Shanghai du 1er et du 7 novembre." },
+  { legendName: "Rengar, Pridestalker", tier: "B", comment: "10,6 % sur 85 joueurs. Huitième à Sacramento." },
+  { legendName: "Kha'Zix, Voidreaver", tier: "B", comment: "A gagné la City Challenge de Hangzhou du 7 novembre. 7,4 % sur 27 joueurs." },
+  { legendName: "Jayce, Defender of Tomorrow", tier: "C", comment: "10,4 % sur 67 joueurs." },
+  { legendName: "Irelia, Blade Dancer", tier: "C", comment: "A gagné la City Challenge de Shenyang, mais 5,8 % de conversion sur 69 joueurs." },
+  { legendName: "Lillia, Bashful Bloom", tier: "C", comment: "10,4 % sur 77 joueurs." },
   { legendName: "Jhin, Virtuoso", tier: "C", comment: "5,6 % sur 18 joueurs." },
-  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "4,3 % sur 23 joueurs, mais deuxième au Showdown de Sacramento." },
-  { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "6,7 % sur 45 joueurs." },
-  { legendName: "Azir, Emperor of the Sands", tier: "C", comment: "5,7 % sur 35 joueurs." },
-  { legendName: "Evelynn, Agony's Embrace", tier: "C", comment: "4,0 % sur 75 joueurs." },
-  { legendName: "Master Yi, Wuju Master", tier: "C", comment: "3,4 % sur 29 joueurs." },
-  { legendName: "Ekko, Boy Who Shattered Time", tier: "C", comment: "2,6 % sur 38 joueurs." },
-  { legendName: "Orianna, Lady of Clockwork", tier: "C", comment: "4,0 % sur 50 joueurs." },
-  { legendName: "Mordekaiser, Iron Revenant", tier: "D", comment: "60 joueurs, aucune place en coupe, écart établi (p = 0,004)." },
-  { legendName: "Seraphine, Starry-Eyed Songstress", tier: "D", comment: "46 joueurs, aucune place en coupe, écart établi (p = 0,013)." },
-  { legendName: "Ziggs, Hexplosives Expert", tier: "D", comment: "29 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "Jarvan IV, Exemplar of Demacia", tier: "D", comment: "31 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "Pyke, Bloodharbor Ripper", tier: "D", comment: "23 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "K'Sante, Pride of Nazumah", tier: "D", comment: "25 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Viktor, Herald of the Arcane", tier: "C", comment: "3,1 % sur 32 joueurs, mais deuxième au Showdown de Sacramento." },
+  { legendName: "Nasus, Curator of the Sands", tier: "C", comment: "5,3 % sur 57 joueurs." },
+  { legendName: "Azir, Emperor of the Sands", tier: "C", comment: "6,3 % sur 48 joueurs." },
+  { legendName: "Evelynn, Agony's Embrace", tier: "C", comment: "3,5 % sur 86 joueurs, et l'écart sous la moyenne tient le test, de justesse (p = 0,046)." },
+  { legendName: "Master Yi, Wuju Master", tier: "C", comment: "3,3 % sur 30 joueurs." },
+  { legendName: "Ekko, Boy Who Shattered Time", tier: "C", comment: "5,0 % sur 40 joueurs." },
+  { legendName: "Orianna, Lady of Clockwork", tier: "C", comment: "3,2 % sur 62 joueurs." },
+  { legendName: "Mordekaiser, Iron Revenant", tier: "D", comment: "73 joueurs, aucune place en coupe, écart établi (p = 0,001)." },
+  { legendName: "Seraphine, Starry-Eyed Songstress", tier: "D", comment: "50 joueurs, aucune place en coupe, écart établi (p = 0,008)." },
+  { legendName: "Ziggs, Hexplosives Expert", tier: "D", comment: "33 joueurs, aucune place en coupe, sans que l'écart tienne le test (p = 0,072)." },
+  { legendName: "Jarvan IV, Exemplar of Demacia", tier: "D", comment: "34 joueurs, aucune place en coupe, écart établi de justesse (p = 0,045)." },
+  { legendName: "Pyke, Bloodharbor Ripper", tier: "D", comment: "27 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "K'Sante, Pride of Nazumah", tier: "D", comment: "26 joueurs, aucune place en coupe. Trop peu pour un test." },
   { legendName: "Zed, Master of Shadows", tier: "D", comment: "21 joueurs, aucune place en coupe. Trop peu pour un test." },
   { legendName: "Shen, Eye of Twilight", tier: "D", comment: "18 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "Mel, Soul's Reflection", tier: "D", comment: "17 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "Ivern, Green Father", tier: "D", comment: "16 joueurs, aucune place en coupe. Trop peu pour un test." },
-  { legendName: "Volibear, Relentless Storm", tier: "D", comment: "15 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Mel, Soul's Reflection", tier: "D", comment: "18 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Ivern, Green Father", tier: "D", comment: "17 joueurs, aucune place en coupe. Trop peu pour un test." },
+  { legendName: "Volibear, Relentless Storm", tier: "D", comment: "18 joueurs, aucune place en coupe. Trop peu pour un test." },
 ];

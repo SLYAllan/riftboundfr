@@ -27,85 +27,85 @@
     },
     {
       "name": "Sky Splitter",
-      "role": "Cœur du deck, Removal et board control, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, Removal et board control, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Gentle Gemdragon",
-      "role": "Standard, Dragon de mid game, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Dragonsoul Sage",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Blazing Scorcher",
-      "role": "Standard, Dragon d'early game, 80 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon de mid game, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Seraphic Wyvern",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dragonsoul Sage",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Blazing Scorcher",
+      "role": "Standard, Dragon d'early game, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Show of Strength",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Direwing",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Herald of Scales",
-      "role": "Standard, Dragon d'early game, 60 % des listes, 3 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, Disruption, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Flurry of Blades",
-      "role": "Souple, Combat trick, 53 % des listes, 2 exemplaires",
+      "role": "Standard, Combat trick, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Minotaur Reckoner",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "name": "Direwing",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Show of Strength",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Herald of Scales",
+      "role": "Souple, Dragon d'early game, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Souple, Disruption, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Volibear, Furious": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "Seul champion du build, 1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "73 %",
+      "usage": "78 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Dragon Roost (93 %)",
-    "Sigil of the Storm (80 %)",
-    "Black Market (40 %)",
-    "Forgotten Monument (33 %)"
+    "Dragon Roost (83 %)",
+    "Sigil of the Storm (78 %)",
+    "Black Market (39 %)",
+    "Forgotten Monument (39 %)"
   ],
   "strengths": [
     "Kadregrin the Infernal, Elder Dragon et Mobilize dans toutes les listes",
@@ -117,13 +117,18 @@
     "Les premiers tours servent à préparer les runes : peu d'unités tôt"
   ],
   "competitiveResults": {
-    "joueursClasses": 15,
+    "joueursClasses": 18,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 7,
-    "listesPubliees": 15,
+    "tournois": 9,
+    "listesPubliees": 18,
     "bestPlacements": [
+      {
+        "placement": "13th",
+        "player": "信仰.🐺big卫戴",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
+      },
       {
         "placement": "21th",
         "player": "颜艺",
@@ -140,21 +145,16 @@
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "56th",
-        "player": "PLRI.拍黄瓜大师",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "68th",
-        "player": "浪险-赏口瓜吃",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+        "placement": "54th",
+        "player": "慌则乱、小江",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 15 joueurs classés, 7 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 9 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

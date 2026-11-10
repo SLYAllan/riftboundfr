@@ -65,12 +65,12 @@
     },
     {
       "name": "Long Sword",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -80,32 +80,32 @@
     },
     {
       "name": "Not So Fast",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Mournful Witness",
-      "role": "Standard, 65 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Block",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Mournful Witness",
+      "role": "Standard, 63 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sterak's Gage",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Sterak's Gage",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -115,7 +115,7 @@
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "3 exemplaires en moyenne"
     },
     "Blitzcrank, Impassive": {
@@ -123,22 +123,22 @@
       "role": "2 exemplaires en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "49 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Void Gate (100 %)",
-    "Sigil of the Storm (88 %)",
-    "Forgotten Monument (82 %)"
+    "Sigil of the Storm (90 %)",
+    "Forgotten Monument (79 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 63,
+    "joueursClasses": 74,
     "coupe10": 7,
     "titres": 0,
-    "conversion": "11.1 %",
-    "tournois": 11,
-    "listesPubliees": 57,
+    "conversion": "9.5 %",
+    "tournois": 15,
+    "listesPubliees": 67,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -161,13 +161,13 @@
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
-        "placement": "19th",
-        "player": "魔王魔法少女",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
+        "placement": "18th",
+        "player": "WMeng",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 63 joueurs classés, 11 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 74 joueurs classés, 15 tournois, dont 67 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

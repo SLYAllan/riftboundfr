@@ -10,41 +10,41 @@
   "keyCards": [
     {
       "name": "Edge of Night",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gutter Guardian",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bedeviling Stranger",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hold 'Em",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
       "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
@@ -55,17 +55,17 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Momentary Companion",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "The Good Stuff",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "name": "Tornado Warrior",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -73,7 +73,7 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Evelynn, Entrancing": {
-      "usage": "98 %",
+      "usage": "99 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
@@ -81,39 +81,39 @@
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "88 %",
+      "usage": "89 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "77 %",
+      "usage": "80 %",
       "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "47 %",
+      "usage": "49 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "42 %",
+      "usage": "45 %",
       "role": "2 exemplaires en moyenne"
     },
     "K'Sante, Courageous": {
-      "usage": "41 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Bandle Scouts' Academy (97 %)",
-    "Packed Amphitheater (48 %)",
-    "Startipped Peak (33 %)",
-    "Rakelstake (32 %)"
+    "Packed Amphitheater (50 %)",
+    "Rakelstake (35 %)",
+    "Startipped Peak (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 75,
+    "joueursClasses": 86,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "4 %",
-    "tournois": 11,
-    "listesPubliees": 66,
+    "conversion": "3.5 %",
+    "tournois": 16,
+    "listesPubliees": 74,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -142,7 +142,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 75 joueurs classés, 11 tournois, dont 66 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 86 joueurs classés, 16 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Cartes cachées et pioche",
   "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
   "gameplan": {

@@ -10,42 +10,42 @@
   "keyCards": [
     {
       "name": "Pillaged Armory",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Demacian Standard",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Call to Glory",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Call to Glory",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Skystrike Squadron",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -55,27 +55,32 @@
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 64 % des listes, 2,5 exemplaires",
+      "role": "Standard, 65 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Overloaded Traveler",
-      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Portable Portal",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Repulse",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -83,11 +88,11 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Jarvan IV, Martial Paragon": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "82 %",
+      "usage": "77 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
@@ -95,28 +100,28 @@
       "role": "2 exemplaires en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "54 %",
+      "usage": "55 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "39 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (79 %)",
-    "Hunters' Circle (61 %)",
-    "Ornn's Forge (36 %)",
+    "Monastery of Hirana (81 %)",
+    "Hunters' Circle (58 %)",
+    "Ornn's Forge (35 %)",
     "Seat of Power (32 %)",
     "Sunken Temple (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 31,
+    "joueursClasses": 34,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 28,
+    "tournois": 12,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
         "placement": "24th",
@@ -145,7 +150,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 31 joueurs classés, 9 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 34 joueurs classés, 12 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements posés sur les champs de bataille, bonus de combat",
   "legendAbility": "Quand vous jouez un équipement qui se pose sur un champ de bataille, vous pouvez épuiser Jarvan IV et payer une Puissance pour déplacer une de vos unités sur ce champ de bataille.",
   "gameplan": {

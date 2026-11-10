@@ -40,7 +40,7 @@
     },
     {
       "name": "Time Warp",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -54,12 +54,12 @@
       "noyau": true
     },
     {
-      "name": "Watchful Sentry",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "name": "Hextech Ray",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Hextech Ray",
+      "name": "The Empyrean",
       "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
@@ -69,34 +69,39 @@
       "noyau": true
     },
     {
-      "name": "The Empyrean",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "name": "Smoke Screen",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Smoke Screen",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
-      "noyau": true
+      "name": "Watchful Sentry",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lost to the Sands",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 152,
-    "coupe10": 18,
-    "titres": 0,
-    "conversion": "11.8 %",
-    "tournois": 11,
-    "listesPubliees": 151,
+    "joueursClasses": 264,
+    "coupe10": 28,
+    "titres": 1,
+    "conversion": "10.6 %",
+    "tournois": 16,
+    "listesPubliees": 215,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "泽萱.流浪巫妖",
+        "tournament": "S5 Beijing City Challenge (2026-11-08)"
+      },
       {
         "placement": "4th",
         "player": "福州橙禄.蓝",
@@ -116,11 +121,6 @@
         "placement": "4th",
         "player": "澄匿梦霞@Ld.sz",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "4th",
-        "player": "MRR@牌客盟",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ]
   },
@@ -133,10 +133,10 @@
   },
   "topBattlefields": [
     "Rockfall Path (99 %)",
-    "Frozen Fortress (96 %)",
-    "Void Gate (90 %)"
+    "Frozen Fortress (94 %)",
+    "Void Gate (91 %)"
   ],
-  "dataSource": "Classement complet des tournois : 152 joueurs classés, 11 tournois, dont 151 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 264 joueurs classés, 16 tournois, dont 215 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

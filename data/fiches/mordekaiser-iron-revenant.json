@@ -14,33 +14,38 @@
       "noyau": true
     },
     {
-      "name": "Honest Broker",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "name": "Long Sword",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Long Sword",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "name": "Honest Broker",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Trifarian Captain",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 65 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
+      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Trifarian Captain",
       "role": "Standard, 63 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -49,13 +54,8 @@
       "noyau": false
     },
     {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Vanguard Captain",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -64,13 +64,13 @@
       "noyau": false
     },
     {
-      "name": "Spectral Matron",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "name": "Sacrifice",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -78,39 +78,53 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "85 %",
+      "usage": "86 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "72 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
-      "usage": "63 %",
+      "usage": "61 %",
       "role": "1 exemplaire en moyenne"
     },
     "Mordekaiser, Twice Slain": {
-      "usage": "43 %",
+      "usage": "45 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Rengar, Pouncing": {
+      "usage": "30 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (91 %)",
-    "Minefield (74 %)",
-    "Ruined Monastery (54 %)"
+    "Zaun Warrens (93 %)",
+    "Minefield (68 %)",
+    "Ruined Monastery (52 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 60,
+    "joueursClasses": 73,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 46,
+    "tournois": 14,
+    "listesPubliees": 56,
     "bestPlacements": [
+      {
+        "placement": "15th",
+        "player": "Sagiria",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
+      },
       {
         "placement": "17th",
         "player": "天自",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "18th",
+        "player": "不凡.西凉马藤",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
         "placement": "23th",
@@ -121,20 +135,10 @@
         "placement": "25th",
         "player": "3+X丨冰箫茶丶",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "38th",
-        "player": "Trasterisk",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "47th",
-        "player": "TCC_炫冰封",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 60 joueurs classés, 9 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 73 joueurs classés, 14 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Unités à Agonie et combats forcés",
   "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
   "gameplan": {

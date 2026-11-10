@@ -33,110 +33,110 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Dredge Up",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ravenbloom Student",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Dredge Up",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Applied Researchers",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shock Blast",
-      "role": "Standard, 73 % des listes, 2,5 exemplaires",
+      "role": "Standard, 67 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 73 % des listes, 2,5 exemplaires",
+      "role": "Standard, 67 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 73 % des listes, 1,5 exemplaire",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 55 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Vex, Apathetic": {
-      "usage": "73 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
-      "usage": "64 %",
+      "usage": "58 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "64 %",
+      "usage": "58 %",
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "55 %",
+      "usage": "50 %",
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
-      "usage": "36 %",
+      "usage": "42 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (55 %)",
-    "Rockfall Path (45 %)",
-    "Targon's Peak (36 %)"
+    "Frozen Fortress (50 %)",
+    "Rockfall Path (42 %)",
+    "Targon's Peak (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 17,
+    "joueursClasses": 18,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 5,
-    "listesPubliees": 11,
+    "tournois": 6,
+    "listesPubliees": 12,
     "bestPlacements": [
+      {
+        "placement": "35th",
+        "player": "叫我糯米就好了",
+        "tournament": "S5 Beijing City Challenge (2026-11-08)"
+      },
       {
         "placement": "40th",
         "player": "卓卡-777🤪",
@@ -156,15 +156,10 @@
         "placement": "56th",
         "player": "xwh",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "75th",
-        "player": "jiminhavemykids",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 17 joueurs classés, 5 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 6 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

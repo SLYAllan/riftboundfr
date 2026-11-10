@@ -17,73 +17,78 @@
   },
   "keyCards": [
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Riposte",
       "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Rampage",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Pit Rookie",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Pillaged Armory",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Call to Glory",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sea Monkey",
-      "role": "Souple, 50 % des listes, 2,5 exemplaires",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Kinkou Initiate",
+      "name": "Pillaged Armory",
       "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Rift Herald",
-      "role": "Souple, 33 % des listes, 2,5 exemplaires",
+      "name": "Hidden Blade",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Portable Portal",
-      "role": "Souple, 33 % des listes, 1,5 exemplaire",
+      "name": "Call to Glory",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sacrifice",
+      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rift Herald",
+      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Kinkou Initiate",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Elder Dragon",
+      "role": "Souple, 33 % des listes, 2,5 exemplaires",
       "noyau": false
     }
   ],
@@ -96,17 +101,27 @@
     "Sa meilleure place est une treizième, à la City Challenge de Fuzhou"
   ],
   "competitiveResults": {
-    "joueursClasses": 13,
+    "joueursClasses": 19,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 12,
+    "tournois": 13,
+    "listesPubliees": 18,
     "bestPlacements": [
       {
         "placement": "13th",
         "player": "Step.NN",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "15th",
+        "player": "YANG",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "25th",
+        "player": "星游·竖直凌空（已冥想）",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
         "placement": "28th",
@@ -117,16 +132,6 @@
         "placement": "29th",
         "player": "QC 81",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "72th",
-        "player": "QC-小何",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "77th",
-        "player": "甲甲",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
@@ -150,31 +155,31 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "92 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "83 %",
+      "usage": "72 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "58 %",
+      "usage": "61 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "58 %",
+      "usage": "56 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "58 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (92 %)",
-    "Monastery of Hirana (42 %)"
+    "Sunken Temple (89 %)",
+    "Monastery of Hirana (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 13 joueurs classés, 9 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 13 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

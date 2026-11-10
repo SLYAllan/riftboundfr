@@ -39,7 +39,7 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -49,27 +49,27 @@
     },
     {
       "name": "Discipline",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Temporal Breach",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Find Your Center",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -83,55 +83,60 @@
       "noyau": false
     },
     {
-      "name": "Steel Paws",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "The Empyrean",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Not So Fast",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "name": "Steel Paws",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Life from Stone",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "98 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (85 %)",
-    "The Papertree (34 %)",
-    "Ruined Monastery (32 %)",
-    "Vilemaw's Lair (32 %)"
+    "Rockfall Path (83 %)",
+    "The Papertree (35 %)",
+    "Vilemaw's Lair (33 %)",
+    "Ripper's Bay (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 45,
+    "joueursClasses": 57,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "6.7 %",
-    "tournois": 10,
-    "listesPubliees": 41,
+    "conversion": "5.3 %",
+    "tournois": 15,
+    "listesPubliees": 52,
     "bestPlacements": [
       {
         "placement": "7th",
         "player": "PLRI.伟大封印",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "19th",
+        "player": "大都督",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
         "placement": "21th",
@@ -147,15 +152,10 @@
         "placement": "34th",
         "player": "Kenny Tran",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "36th",
-        "player": "Jovan",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 45 joueurs classés, 10 tournois, dont 41 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 57 joueurs classés, 15 tournois, dont 52 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

@@ -30,12 +30,12 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Trifarian Captain",
+      "name": "Lightning Rush",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Lightning Rush",
+      "name": "Trifarian Captain",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -46,42 +46,42 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 95 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Last Rites",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Bedeviling Stranger",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -90,18 +90,18 @@
       "noyau": false
     },
     {
-      "name": "Flash",
-      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "name": "Tideturner",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Tideturner",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "name": "Flash",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Reckless Innovator",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -116,22 +116,22 @@
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Tornado Warrior",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shadow Order Disciple",
-      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tornado Warrior",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -141,31 +141,41 @@
       "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
-      "usage": "95 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "43 %",
+      "usage": "37 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (94 %)",
+    "Minefield (95 %)",
     "Zaun Warrens (94 %)",
-    "Ruined Monastery (37 %)"
+    "Ruined Monastery (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 166,
-    "coupe10": 26,
-    "titres": 0,
-    "conversion": "15.7 %",
-    "tournois": 11,
-    "listesPubliees": 155,
+    "joueursClasses": 259,
+    "coupe10": 36,
+    "titres": 2,
+    "conversion": "13.9 %",
+    "tournois": 16,
+    "listesPubliees": 211,
     "bestPlacements": [
+      {
+        "placement": "1st",
+        "player": "ASC Evansrhim",
+        "tournament": "Europe Regional Championship"
+      },
+      {
+        "placement": "1st",
+        "player": "TDF.忘了@Anakin",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
+      },
       {
         "placement": "2nd",
         "player": "猫岛巡礼 赤木柿子",
@@ -180,20 +190,10 @@
         "placement": "3rd",
         "player": "BHM辣根",
         "tournament": "S5 Beijing City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "5th",
-        "player": "Fel Peon U",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "6th",
-        "player": "Dylan Sumner",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 166 joueurs classés, 11 tournois, dont 155 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 259 joueurs classés, 16 tournois, dont 211 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

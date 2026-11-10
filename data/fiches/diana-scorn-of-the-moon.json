@@ -23,37 +23,42 @@
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Moonfall",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Flash",
+      "role": "Cœur du deck, 92 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Eclipse",
-      "role": "Standard, 89 % des listes, 1,5 exemplaire",
+      "role": "Standard, 89 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Flash",
-      "role": "Standard, 89 % des listes, 1 exemplaire",
+      "name": "Hard Bargain",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -62,48 +67,48 @@
       "noyau": false
     },
     {
-      "name": "Hard Bargain",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Switcheroo",
-      "role": "Standard, 78 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Smoke Screen",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sprite Fountain",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Smoke Screen",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Abandon",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -117,12 +122,12 @@
     "L'énergie de la Légende ne sert que pendant un combat"
   ],
   "competitiveResults": {
-    "joueursClasses": 34,
+    "joueursClasses": 44,
     "coupe10": 7,
     "titres": 1,
-    "conversion": "20.6 %",
-    "tournois": 9,
-    "listesPubliees": 27,
+    "conversion": "15.9 %",
+    "tournois": 14,
+    "listesPubliees": 36,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -177,24 +182,25 @@
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
       "usage": "89 %",
-      "role": "3 exemplaires en moyenne"
+      "role": "2,5 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "89 %",
+      "usage": "86 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Targon's Peak (93 %)",
-    "Abandoned Hall (78 %)",
-    "Seat of Power (37 %)"
+    "Targon's Peak (83 %)",
+    "Abandoned Hall (72 %)",
+    "Seat of Power (36 %)",
+    "Rockfall Path (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 34 joueurs classés, 9 tournois, dont 27 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 44 joueurs classés, 14 tournois, dont 36 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

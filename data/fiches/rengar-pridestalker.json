@@ -43,12 +43,22 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Rampage",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -57,28 +67,18 @@
       "noyau": true
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Rampage",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Sabotage",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "noyau": false
     },
     {
       "name": "Elnuk Herd",
       "role": "Standard, 74 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -92,12 +92,12 @@
     "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
   ],
   "competitiveResults": {
-    "joueursClasses": 69,
-    "coupe10": 7,
+    "joueursClasses": 85,
+    "coupe10": 9,
     "titres": 0,
-    "conversion": "10.1 %",
-    "tournois": 11,
-    "listesPubliees": 57,
+    "conversion": "10.6 %",
+    "tournois": 16,
+    "listesPubliees": 68,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -110,6 +110,11 @@
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       },
       {
+        "placement": "3rd",
+        "player": "SD.不喝冷饮",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
+      },
+      {
         "placement": "5th",
         "player": "氐",
         "tournament": "S5 Shanghai City Challenge (2026-11-07)"
@@ -117,11 +122,6 @@
       {
         "placement": "8th",
         "player": "Daniel Vu",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "17th",
-        "player": "Timothy K",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
@@ -154,28 +154,24 @@
       "role": "1 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "95 %",
+      "usage": "96 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "70 %",
+      "usage": "72 %",
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "44 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Graves, Blasting Through": {
-      "usage": "32 %",
+      "usage": "46 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (96 %)",
-    "Star Spring (96 %)",
-    "Seat of Power (88 %)"
+    "Emperor's Dais (94 %)",
+    "Star Spring (94 %)",
+    "Seat of Power (90 %)"
   ],
-  "dataSource": "Classement complet des tournois : 69 joueurs classés, 11 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 85 joueurs classés, 16 tournois, dont 68 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

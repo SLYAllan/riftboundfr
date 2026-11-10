@@ -32,78 +32,78 @@
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Shadow Order Disciple",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
-      "noyau": false
+      "name": "Rampage",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Up from the Deep",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Standard, 69 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Reckless Innovator",
-      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Onslaught",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "name": "Reckless Innovator",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "The Good Stuff",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Grim Resolve",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Onslaught",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Grim Resolve",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -117,12 +117,12 @@
     "Ses trois meilleures places viennent du même tournoi, Hangzhou : le titre, une quatorzième et une seizième"
   ],
   "competitiveResults": {
-    "joueursClasses": 21,
+    "joueursClasses": 27,
     "coupe10": 2,
     "titres": 1,
-    "conversion": "9.5 %",
-    "tournois": 7,
-    "listesPubliees": 16,
+    "conversion": "7.4 %",
+    "tournois": 11,
+    "listesPubliees": 21,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -172,22 +172,22 @@
   "champions": {
     "Fizz, Trickster": {
       "usage": "100 %",
-      "role": "2,5 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "81 %",
+      "usage": "86 %",
       "role": "2 exemplaires en moyenne"
     },
     "Zed, Without a Sound": {
-      "usage": "38 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
@@ -195,16 +195,16 @@
       "role": "1,5 exemplaire en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "31 %",
+      "usage": "33 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (94 %)",
-    "Sandswept Tomb (88 %)",
-    "Forbidding Waste (50 %)"
+    "Star Spring (95 %)",
+    "Sandswept Tomb (90 %)",
+    "Forbidding Waste (57 %)"
   ],
-  "dataSource": "Classement complet des tournois : 21 joueurs classés, 7 tournois, dont 16 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 8 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 11 tournois, dont 21 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

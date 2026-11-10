@@ -412,12 +412,20 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   // Relevé du 8 novembre : 298 et 301. Foshan (299, 71 joueurs) et Tianjin (300, 85) restent dehors.
   "S5 Shanghai City Challenge (2026-11-07)": { name: "S5 Shanghai City Challenge", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
   "S5 Hangzhou City Challenge (2026-11-07)": { name: "S5 Hangzhou City Challenge", shortName: "Hangzhou CC", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
+  "S5 Beijing City Challenge (2026-11-08)": { name: "S5 Beijing City Challenge", shortName: "Beijing CC", countryCode: "CN", city: "Beijing", location: "Beijing, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-08", set: "Radiance", format: "Standard" },
+  "S5 Guangzhou City Challenge (2026-11-08)": { name: "S5 Guangzhou City Challenge", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-08", set: "Radiance", format: "Standard" },
+  "S5 Chengdu City Challenge (2026-11-07)": { name: "S5 Chengdu City Challenge", shortName: "Chengdu CC", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 122, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
+  "S5 Wuhan City Challenge (2026-11-08)": { name: "S5 Wuhan City Challenge", shortName: "Wuhan CC", countryCode: "CN", city: "Wuhan", location: "Wuhan, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-08", set: "Radiance", format: "Standard" },
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },
   // 1 893 classés : le classement riftdecks et la somme de la colonne « jour 1 »
   // de l'article officiel tombent sur le même chiffre. 303 joueurs le dimanche.
   "Los Angeles Regional Qualifier": { name: "Los Angeles Regional Qualifier 2026", shortName: "Los Angeles RQ", countryCode: "US", city: "Los Angeles", location: "Los Angeles, CA, USA", playerCount: 2165, type: "regional", date: "2026-09-26", set: "Vendetta", format: "Standard" },
+  // Sur invitation (Top 64 d'un Regional Qualifier), du 6 au 8 novembre. hexgate le
+  // relaie aussi (tournoi 309), avec 43 listes toutes présentes chez riftdecks :
+  // une seule source, sinon il compte deux fois.
+  "Europe Regional Championship": { name: "Europe Regional Championship 2026", shortName: "RC Europe", countryCode: "DE", city: "Stuttgart", location: "Stuttgart, Allemagne", playerCount: 315, type: "regional", date: "2026-11-08", set: "Radiance", format: "Standard" },
   "Singapore Regional Qualifier": { name: "Singapore Regional Qualifier 2026", shortName: "Singapour RQ", countryCode: "SG", city: "Singapour", location: "Singapour", playerCount: 1893, type: "regional", date: "2026-09-06", set: "Vendetta", format: "Standard" },
   "Hangzhou Regional Open (2025-09-14)": { name: "Hangzhou Regional Open (2025-09-14)", shortName: "Hangzhou RO", countryCode: "CN", city: "Hangzhou", location: "Hangzhou, Chine", playerCount: 510, type: "regional", date: "2025-09-14", set: "Origins", format: "Conquest" },
   // 1 280 joueurs classés ET 1 280 listes publiées : hexgate publie tout le champ,
