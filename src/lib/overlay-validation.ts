@@ -1,5 +1,4 @@
 import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, couleurHex, type PatchOverlay } from "./overlay";
-import { champsConnus } from "./admin-validation";
 
 // Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
 // il en existait ici une seconde définition, plus plate, et les deux avaient
@@ -18,6 +17,11 @@ export const TAILLE_MAX_PATCH_OVERLAY = LIMITES.corps;
 
 function estObjet(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function champsConnus(objet: Record<string, unknown>, permis: string[], contexte = "overlay"): string | null {
+  const inconnu = Object.keys(objet).find((cle) => !permis.includes(cle));
+  return inconnu ? `Champ ${contexte} inconnu : ${inconnu}` : null;
 }
 
 function chaine(value: unknown, chemin: string, limite = LIMITES.texte): string | null {
@@ -75,7 +79,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
   if (!estObjet(value)) return { ok: false, error: "Le patch overlay doit être un objet JSON" };
   if (JSON.stringify(value).length > LIMITES.corps) return { ok: false, error: "Le patch overlay dépasse 32 Kio" };
 
-  const inconnu = champsConnus(value, ["event", "format", "maxPoints", "points", "players", "cards"], "overlay");
+  const inconnu = champsConnus(value, ["event", "format", "maxPoints", "points", "players", "cards"]);
   if (inconnu) return { ok: false, error: inconnu };
 
   if (value.format !== undefined && !["BO1", "BO3", "BO5"].includes(String(value.format))) {

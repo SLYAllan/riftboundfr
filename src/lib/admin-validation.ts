@@ -19,7 +19,7 @@ function objet(value: unknown, nom: string): ResultatValidation<Objet> {
     : { ok: false, error: `${nom} doit être un objet JSON` };
 }
 
-export function champsConnus(value: Objet, permis: readonly string[], nom: string): string | null {
+function champsConnus(value: Objet, permis: readonly string[], nom: string): string | null {
   const inconnu = Object.keys(value).find((cle) => !permis.includes(cle));
   return inconnu ? `Champ ${nom} inconnu : ${inconnu}` : null;
 }
