@@ -30,14 +30,6 @@ export const DOMAIN_ICONS: Record<string, string> = {
   Order: "/icons/Order.webp",
 };
 
-export const RARITY_ICONS: Record<string, string> = {
-  Common: "/icons/Common.webp",
-  Uncommon: "/icons/Uncommon.webp",
-  Rare: "/icons/Rare.webp",
-  Epic: "/icons/Epic.webp",
-  Legend: "/icons/Legend.webp",
-};
-
 export const TYPE_ICONS: Record<string, string> = {
   Unit: "/icons/Unit.webp",
   Spell: "/icons/Spell.webp",
@@ -82,8 +74,4 @@ export const RARITY_COLORS: Record<string, string> = {
 
 export function rarityRank(rarity: string): number {
   return RARITY_RANK[rarity] ?? 99;
-}
-
-export function getDomainColor(domain: string): string {
-  return DOMAIN_COLORS[domain] ?? "#6b7280";
 }

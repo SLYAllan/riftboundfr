@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useLayoutEffect } from "react";
-import { cn } from "@/lib/utils";
+import { resized } from "@/lib/utils";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { useT } from "@/components/i18n-provider";
@@ -21,14 +21,6 @@ interface CardData {
 const cache = new Map<string, CardData | null>();
 
 const POP_W = 300;
-
-function resized(url: string): string {
-  if (url.includes("cmsassets.rgpub.io")) {
-    const sep = url.includes("?") ? "&" : "?";
-    return `${url}${sep}w=600&q=80&auto=format`;
-  }
-  return url;
-}
 
 export function CardRef({ name, href, children }: { name: string; href?: string; children?: React.ReactNode }) {
   const t = useT();
@@ -153,7 +145,7 @@ export function CardRef({ name, href, children }: { name: string; href?: string;
           {/* aspectRatio réserve la hauteur AVANT chargement du bitmap : la mesure
               de placement est correcte d'emblée, donc pas de débordement post-load */}
           <img
-            src={resized(card.imageUrl)}
+            src={resized(card.imageUrl, POP_W)}
             alt={card.name}
             className="block w-full bg-canvas object-cover"
             // Les champs de bataille sont en paysage (1038x744), tout le reste en

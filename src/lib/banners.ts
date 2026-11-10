@@ -150,7 +150,3 @@ export function getLegendIconUrl(legendName: string): string | null {
   const file = ICON_MAP[cleLegende(legendName)];
   return file ? `/img/legend_icon/${file}.webp` : null;
 }
-
-export function getMasterYiIconUrl(variant: "bladesman" | "master"): string {
-  return variant === "master" ? "/img/legend_icon/masteryi_2.webp" : "/img/legend_icon/masteryi_1.webp";
-}

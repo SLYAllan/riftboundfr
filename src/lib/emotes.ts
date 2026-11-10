@@ -89,7 +89,3 @@ export function decouperEmotes(texte: string): Morceau[] {
   if (dernier < texte.length) morceaux.push({ type: "texte", valeur: texte.slice(dernier) });
   return morceaux;
 }
-
-export function contientEmote(texte: string): boolean {
-  return decouperEmotes(texte).some((m) => m.type === "emote");
-}

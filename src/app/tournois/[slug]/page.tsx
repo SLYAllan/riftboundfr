@@ -2,6 +2,7 @@ export const revalidate = 3600;
 
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { rangPlacement } from "@/lib/card-play";
 import { slugify, formatDate, displayLegendName } from "@/lib/utils";
 import { getTournamentCountryCode, getTournamentInfo, isTournamentHidden } from "@/lib/tournament-flags";
 import { articleDuTournoi } from "@/lib/tournament-articles";
@@ -22,12 +23,6 @@ import { cache } from "react";
 interface PageProps {
   params: Promise<{ slug: string }>;
   searchParams: Promise<Record<string, string | undefined>>;
-}
-
-function parsePlacement(p: string | null): number {
-  if (!p) return 9999;
-  const n = parseInt(p.replace(/[^0-9]/g, ""));
-  return isNaN(n) ? 9999 : n;
 }
 
 async function getTournamentContexts(): Promise<string[]> {
@@ -165,9 +160,9 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     const realRanked = allRaw.filter((d) => !d.slug.startsWith("best-of-") && d.placement !== null);
     let pool: typeof allRaw;
     if (realRanked.length > 0) {
-      const realPlacements = new Set(realRanked.map((d) => parsePlacement(d.placement)));
+      const realPlacements = new Set(realRanked.map((d) => rangPlacement(d.placement)));
       const fillers = allRaw.filter(
-        (d) => d.slug.startsWith("best-of-") && d.placement !== null && !realPlacements.has(parsePlacement(d.placement)),
+        (d) => d.slug.startsWith("best-of-") && d.placement !== null && !realPlacements.has(rangPlacement(d.placement)),
       );
       pool = [...realRanked, ...fillers];
     } else {
@@ -197,7 +192,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   const sorted = decks
     .map(({ cards, ...d }) => ({
       ...d,
-      placementNum: parsePlacement(d.placement),
+      placementNum: Math.min(rangPlacement(d.placement), 9999),
       legendIcon: getLegendIconUrl(d.legendName),
       bannerUrl: getBannerUrl(d.legendName),
       interdites: cartesInterdites(cards.map((c) => c.card.name)),
@@ -205,7 +200,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
     .sort((a, b) => a.placementNum - b.placementNum);
 
   // Vainqueur pris sur le pool complet : le hero ne change pas quand on filtre.
-  const winnerRaw = deduped.find((d) => parsePlacement(d.placement) === 1) ?? null;
+  const winnerRaw = deduped.find((d) => rangPlacement(d.placement) === 1) ?? null;
   const winner = winnerRaw
     ? { ...winnerRaw, bannerUrl: getBannerUrl(winnerRaw.legendName), playerName: winnerRaw.playerName }
     : null;
@@ -230,7 +225,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
         top8: 0,
       };
       e.count++;
-      if (parsePlacement(d.placement) <= 8) e.top8++;
+      if (rangPlacement(d.placement) <= 8) e.top8++;
       m.set(d.legendName, e);
     }
     return [...m.values()].sort((a, b) => b.count - a.count);

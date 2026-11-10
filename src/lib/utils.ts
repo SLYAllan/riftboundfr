@@ -14,6 +14,12 @@ export function slugify(text: string): string {
     .replace(/(^-|-$)/g, "");
 }
 
+/** Fait redimensionner une image de carte par le CDN de Riot, au double de la largeur affichée. */
+export function resized(url: string, w: number): string {
+  if (!url.includes("cmsassets.rgpub.io")) return url;
+  return `${url}${url.includes("?") ? "&" : "?"}w=${Math.round(w * 2)}&q=80&auto=format`;
+}
+
 export function formatDate(date: Date | string, locale = "fr-FR"): string {
   return new Intl.DateTimeFormat(locale, {
     day: "numeric",

@@ -1,31 +1,3 @@
-export const COUNTRY_FLAGS: Record<string, { code: string; country: string; continent: string }> = {
-  US: { code: "US", country: "États-Unis", continent: "Amérique" },
-  AU: { code: "AU", country: "Australie", continent: "Océanie" },
-  FR: { code: "FR", country: "France", continent: "Europe" },
-  DE: { code: "DE", country: "Allemagne", continent: "Europe" },
-  GB: { code: "GB", country: "Royaume-Uni", continent: "Europe" },
-  ES: { code: "ES", country: "Espagne", continent: "Europe" },
-  IT: { code: "IT", country: "Italie", continent: "Europe" },
-  JP: { code: "JP", country: "Japon", continent: "Asie" },
-  KR: { code: "KR", country: "Corée du Sud", continent: "Asie" },
-  CN: { code: "CN", country: "Chine", continent: "Asie" },
-  BR: { code: "BR", country: "Brésil", continent: "Amérique" },
-  CA: { code: "CA", country: "Canada", continent: "Amérique" },
-  NL: { code: "NL", country: "Pays-Bas", continent: "Europe" },
-  BE: { code: "BE", country: "Belgique", continent: "Europe" },
-  CH: { code: "CH", country: "Suisse", continent: "Europe" },
-  PL: { code: "PL", country: "Pologne", continent: "Europe" },
-  SE: { code: "SE", country: "Suède", continent: "Europe" },
-  PT: { code: "PT", country: "Portugal", continent: "Europe" },
-  MX: { code: "MX", country: "Mexique", continent: "Amérique" },
-  AR: { code: "AR", country: "Argentine", continent: "Amérique" },
-  TW: { code: "TW", country: "Taïwan", continent: "Asie" },
-  SG: { code: "SG", country: "Singapour", continent: "Asie" },
-  PH: { code: "PH", country: "Philippines", continent: "Asie" },
-  TH: { code: "TH", country: "Thaïlande", continent: "Asie" },
-  ONLINE: { code: "WEB", country: "En ligne", continent: "Global" },
-};
-
 export interface TournamentInfo {
   name: string;
   shortName: string;
@@ -524,21 +496,6 @@ export function getTournamentCountryCode(tournamentContext: string): string | nu
   if (lower.includes("chine") || lower.includes("china") || lower.includes("changsha") || lower.includes("tianjin")) return "CN";
   if (lower.includes("online") || lower.includes("en ligne")) return "ONLINE";
   return null;
-}
-
-export function getTournamentTypeBadge(type: string): { label: string; className: string } {
-  switch (type) {
-    case "regional":
-      return { label: "Regional", className: "bg-amber-500/15 text-amber-400 border border-amber-500/25" };
-    case "city_challenge":
-      return { label: "City Challenge", className: "bg-arcane/15 text-arcane border border-arcane/25" };
-    case "worlds":
-      return { label: "Worlds", className: "bg-violet-500/15 text-violet-400 border border-violet-500/25" };
-    case "online":
-      return { label: "En ligne", className: "bg-sky-500/15 text-sky-400 border border-sky-500/25" };
-    default:
-      return { label: "Autre", className: "bg-surface-raised text-ink-secondary border border-hairline" };
-  }
 }
 
 export function isTournamentHidden(tournamentContext: string): boolean {

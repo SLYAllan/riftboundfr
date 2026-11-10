@@ -4,6 +4,7 @@ import { unstable_cache } from "next/cache";
 export const dynamic = "force-dynamic";
 
 import { prisma, safeQuery } from "@/lib/prisma";
+import { rangPlacement } from "@/lib/card-play";
 import { slugify } from "@/lib/utils";
 import { getTournamentCountryCode, getTournamentInfo, getTournamentTier, isTournamentHidden } from "@/lib/tournament-flags";
 import { getLegendIconUrl } from "@/lib/banners";
@@ -29,12 +30,6 @@ const metadata: Metadata = {
     images: ["/img/og-default.png"],
   },
 };
-
-function parsePlacement(p: string | null): number {
-  if (!p) return 9999;
-  const n = parseInt(p.replace(/[^0-9]/g, ""));
-  return isNaN(n) ? 9999 : n;
-}
 
 const getTournamentData = unstable_cache(async () => {
   const [articles, decks] = await Promise.all([
@@ -79,9 +74,9 @@ const getTournamentData = unstable_cache(async () => {
   for (const [ctx, list] of decksByContext) {
     const real = list.filter((d) => !d.slug.startsWith("best-of-"));
     if (real.length === 0) continue;
-    const realPlacements = new Set(real.map((d) => parsePlacement(d.placement)));
+    const realPlacements = new Set(real.map((d) => rangPlacement(d.placement)));
     const fillers = list.filter(
-      (d) => d.slug.startsWith("best-of-") && !realPlacements.has(parsePlacement(d.placement)),
+      (d) => d.slug.startsWith("best-of-") && !realPlacements.has(rangPlacement(d.placement)),
     );
     decksByContext.set(ctx, [...real, ...fillers]);
   }
@@ -137,7 +132,7 @@ const getTournamentData = unstable_cache(async () => {
     const sorted = ctxDecks
       .map((d) => ({
         placement: d.placement,
-        placementNum: parsePlacement(d.placement),
+        placementNum: Math.min(rangPlacement(d.placement), 9999),
         playerName: d.playerName,
         legendName: d.legendName,
         legendIcon: getLegendIconUrl(d.legendName),

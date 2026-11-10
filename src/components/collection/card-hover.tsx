@@ -4,18 +4,12 @@ import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR, TYPE_LABELS_FR } from "@/lib/domains";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { useT } from "@/components/i18n-provider";
+import { resized } from "@/lib/utils";
 
 // Aperçu agrandi d'une carte au survol : popup en position fixe (jamais rognée
 // par les conteneurs en overflow-hidden), placée au-dessus de la vignette ou
 // en dessous si pas la place. Footer riche (énergie/might/domaines avec icônes),
 // aligné sur l'aperçu [[carte]] des articles. Réutilise l'image déjà connue.
-function resized(url: string, w: number): string {
-  if (url.includes("cmsassets.rgpub.io")) {
-    const sep = url.includes("?") ? "&" : "?";
-    return `${url}${sep}w=${Math.round(w * 2)}&q=80&auto=format`;
-  }
-  return url;
-}
 
 // Texte d'effet chargé à la demande : ni la couverture de deck ni le classeur ne
 // le transportent, et l'ajouter à leurs deux chaînes de données pour un survol ne

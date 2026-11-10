@@ -25,13 +25,6 @@ export interface SujetAbonnement {
  */
 export const GENRES_GLOBAUX: GenreAbonnement[] = ["tournois-fr", "regles"];
 
-export const LIBELLES_ABONNEMENT: Record<GenreAbonnement, string> = {
-  legende: "Nouvelles listes pour cette Légende",
-  deck: "Nouvelles versions de ce deck",
-  "tournois-fr": "Nouveaux tournois français",
-  regles: "Changements de règles et d’interdictions",
-};
-
 const GENRES: GenreAbonnement[] = ["legende", "deck", "tournois-fr", "regles"];
 
 /** Vrai si le couple genre/cible est demandable. Sert de garde à l'API. */

@@ -27,9 +27,6 @@ export function nomChinois(nom: string): string {
   return NOMS_ZH[nom] ?? nom;
 }
 
-/** L'hôte des images chinoises, à autoriser dans la politique de sécurité. */
-export const HOTE_IMAGES_ZH = "https://cdn.playloltcg.com";
-
 const IMAGES: Record<string, string> = donnees.images;
 
 /**
