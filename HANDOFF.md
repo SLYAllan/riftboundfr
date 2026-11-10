@@ -30,14 +30,17 @@ valeurs de p ; plans de jeu non réécrits), `META-KNOWLEDGE` v18 et `DECKBUILDI
 Seconde passe de `maj:stats` : « Les cinq tier lists collent aux chiffres ». `npm run verify`
 sortie 0.
 
-**Restent, à trancher par Allan** :
-- les lettres Radiance que la règle du 7 novembre remettrait en cause : Jayce et Lillia
-  (10,4 %, en C) au niveau des B, Kha'Zix (7,4 %, en B) plus près des C, Evelynn (écart
-  établi en dessous, p = 0,046) en C ; Sett (20 joueurs, 20,0 %) et Fiora (19, 0 %) passent
-  le seuil de 15 et n'ont pas de ligne. Dans la Globale, Lillia ne tient plus le test en
-  dessous (p = 0,074) et reste en C ;
-- un best-of pour le RC Europe ;
-- la règle pour les tournois en ligne relayés par hexgate (306, 308).
+**Lettres Radiance du 10 novembre**, règle appliquée par Allan à tout le tableau : Jayce et
+Lillia montent de C à B, Kha'Zix descend de B à C, Evelynn de C à D (écart établi en dessous),
+Sett entre en A et Fiora en D. 36 entrées, rangées par conversion dans chaque lettre. Dans la
+Globale, Lillia ne tient plus le test en dessous (p = 0,074) et reste en C.
+
+**Pas de best-of pour le RC Europe** (Allan, 10 novembre) : il attend l'article officiel de
+Riot. Quand il sort, le lire avec `parse-playriftbound.ts` (voir le skill `scraper-tournoi`),
+puis seulement lever les best-of.
+
+**Reste à trancher par Allan** : la règle pour les tournois en ligne relayés par hexgate
+(306, 308).
 
 Puis : push, seed prod (`seed-scraped-decks.ts hexgate-302 … hexgate-305`, et
 `seed-tournament-decks.ts europe-rc …`), Deploy, `seed-tier-lists.ts`. Page du tournoi pas

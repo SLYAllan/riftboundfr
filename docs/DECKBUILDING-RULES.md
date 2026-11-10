@@ -344,7 +344,7 @@ Domaines lus sur la carte en base, archétype et terrains lus dans la fiche (`da
 | Légende | Domaines | Archétype | Listes | Joueurs | Conv. | Lettre | Terrains |
 |---|---|---|---:|---:|---:|---|---|
 | Riven, The Exile | Calm/Chaos | Tempo et réactions, unités qui arrivent préparées | 416 | 552 | 18,3 % | S | Star Spring (93 %), Emperor's Dais (80 %), Hunters' Circle (63 %), Rakelstake (44 %) |
-| Evelynn, Agony's Embrace | Body/Chaos | Cartes cachées et pioche | 74 | 86 | 3,5 % | C | Bandle Scouts' Academy (97 %), Packed Amphitheater (50 %), Rakelstake (35 %), Startipped Peak (32 %) |
+| Evelynn, Agony's Embrace | Body/Chaos | Cartes cachées et pioche | 74 | 86 | 3,5 % | D | Bandle Scouts' Academy (97 %), Packed Amphitheater (50 %), Rakelstake (35 %), Startipped Peak (32 %) |
 | Mordekaiser, Iron Revenant | Fury/Order | Unités à Agonie et combats forcés | 56 | 73 | 0,0 % | D | Zaun Warrens (93 %), Minefield (68 %), Ruined Monastery (52 %) |
 | Orianna, Lady of Clockwork | Calm/Mind | Équipements qui deviennent des unités | 50 | 62 | 3,2 % | C | Veiled Temple (100 %), Ornn's Forge (84 %), Rockfall Path (46 %) |
 | Seraphine, Starry-Eyed Songstress | Mind/Order | Jetons Recrue et sorts moins chers | 38 | 50 | 0,0 % | D | Trifarian War Camp (61 %), Forbidding Waste (50 %), Treasure Hoard (32 %) |

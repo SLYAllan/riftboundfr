@@ -132,19 +132,19 @@ Quatre écarts en dessous : **Mordekaiser** (73 joueurs, aucune place en coupe, 
 
 **Ce qui bouge par rapport à Vendetta**, en part de champ : Riven entre à 19,5 %. Irelia passe de 8,1 % à 2,4 %, Jayce de 5,1 % à 2,4 %, Master Yi, Wuju Bladesman de 7,8 % à 5,3 %. Kai'Sa monte de 3,2 % à 9,3 %. Kennen reste haut, de 9,9 % à 9,2 %.
 
-**Trop peu pour conclure** : Sett place 4 joueurs sur 20 en coupe (20,0 %), Vi 2 sur 17 (11,8 %). Fiora passe le seuil de 15 joueurs (19) sans aucune place en coupe. Ce ne sont pas des signaux.
+**Trop peu pour conclure** : Sett place 4 joueurs sur 20 en coupe (20,0 %), Vi 2 sur 17 (11,8 %). Fiora passe le seuil de 15 joueurs (19) sans aucune place en coupe. Ce ne sont pas des signaux : Sett entre en A par ses voisins de conversion, pas par un écart établi.
 
 Les cartes de ces Légendes, les cores et les neuf Légendes nouvelles (domaines, archétype, terrains) sont dans `DECKBUILDING-RULES.md`.
 
 ### Tier list en ligne
 
-34 Légendes, celles vues au moins 15 fois. Lettres tranchées par Allan le 8 novembre (`scripts/tier-tables.ts`) : S pour un écart établi au-dessus, la lettre des voisins de conversion pour le reste. Commentaires recalés le 10 novembre, lettres inchangées ; Sett et Fiora, qui passent le seuil de 15 joueurs, n'y sont pas encore.
+36 Légendes, celles vues au moins 15 fois, rangées par conversion dans chaque lettre (`scripts/tier-tables.ts`). Règle du 7 novembre, appliquée par Allan à tout le tableau le 10 : S pour un écart établi au-dessus, la lettre des voisins de conversion pour le reste. Ce jour-là, Jayce et Lillia montent en B, Kha'Zix descend en C, et Evelynn, dont l'écart en dessous tient le test, rejoint en D Mordekaiser et Seraphine. Sett (A) et Fiora (D) entrent.
 
 - **S** : Riven, Kennen
-- **A** : Diana, LeBlanc
-- **B** : Vex, Kai'Sa, Vi, Rek'Sai, Akali, Master Yi (Wuju Bladesman), Rengar, Kha'Zix
-- **C** : Jayce, Irelia, Lillia, Jhin, Viktor, Nasus, Azir, Evelynn, Master Yi (Wuju Master), Ekko, Orianna
-- **D** : Mordekaiser, Seraphine, Ziggs, Jarvan IV, Pyke, K'Sante, Zed, Shen, Mel, Ivern, Volibear
+- **A** : Sett, Diana, LeBlanc
+- **B** : Vi, Vex, Kai'Sa, Rengar, Jayce, Lillia, Rek'Sai, Master Yi (Wuju Bladesman), Akali
+- **C** : Kha'Zix, Azir, Irelia, Jhin, Nasus, Ekko, Master Yi (Wuju Master), Orianna, Viktor
+- **D** : Mordekaiser, Seraphine, Evelynn, Jarvan IV, Ziggs, Pyke, K'Sante, Zed, Fiora, Shen, Mel, Volibear, Ivern
 
 ### Résultats par tournoi
 
