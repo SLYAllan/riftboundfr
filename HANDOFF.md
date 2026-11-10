@@ -24,10 +24,25 @@ aucun Champion sans titre nouveau. 299 Foshan (71) et 300 Tianjin (85) restent d
 hexgate refusait toute connexion le matin du 10, puis a répondu.
 
 Validateur : 32 144 vérifiées, 0 MISMATCH. `maj:stats` sortie 0 : Radiance 2 827 places sur
-16 tournois, aucun rang contredit, **66 « CHIFFRE PÉRIMÉ » à réécrire** dans
-`scripts/tier-tables.ts` (30 Radiance, 36 Globale). **Restent** : ces commentaires, la prose
-des fiches et des guides, `META-KNOWLEDGE` et `DECKBUILDING-RULES`, puis commit, seed prod
-et Deploy.
+16 tournois. **Fait le 10, en local et commité** : les 67 commentaires de tier list (lettres
+inchangées), la prose de 33 fiches et des guides (chiffres, titres gagnés, meilleures places,
+valeurs de p ; plans de jeu non réécrits), `META-KNOWLEDGE` v18 et `DECKBUILDING-RULES` v17.
+Seconde passe de `maj:stats` : « Les cinq tier lists collent aux chiffres ». `npm run verify`
+sortie 0.
+
+**Restent, à trancher par Allan** :
+- les lettres Radiance que la règle du 7 novembre remettrait en cause : Jayce et Lillia
+  (10,4 %, en C) au niveau des B, Kha'Zix (7,4 %, en B) plus près des C, Evelynn (écart
+  établi en dessous, p = 0,046) en C ; Sett (20 joueurs, 20,0 %) et Fiora (19, 0 %) passent
+  le seuil de 15 et n'ont pas de ligne. Dans la Globale, Lillia ne tient plus le test en
+  dessous (p = 0,074) et reste en C ;
+- un best-of pour le RC Europe ;
+- la règle pour les tournois en ligne relayés par hexgate (306, 308).
+
+Puis : push, seed prod (`seed-scraped-decks.ts hexgate-302 … hexgate-305`, et
+`seed-tournament-decks.ts europe-rc …`), Deploy, `seed-tier-lists.ts`. Page du tournoi pas
+encore regardée dans un navigateur : la session porte le `DATABASE_URL` de prod, un serveur de
+dev lancé d'ici lirait la prod.
 
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
