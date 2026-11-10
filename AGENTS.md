@@ -239,7 +239,11 @@ sources de vérité) sont plus haut. Ce qui suit décrit la machine.
 | Node | >= 22 | `engines` de `package.json` |
 
 Les composants d'interface viennent de `@base-ui/react` et shadcn
-(`components.json`), les icônes de `lucide-react`.
+(`components.json`), les icônes de `lucide-react`. Le paquet `shadcn` n'est plus
+installé depuis le 10 novembre 2026 : il ne servait qu'à deux variantes CSS
+(`data-open`, `data-closed`), recopiées dans `globals.css`. `npx shadcn add` marche
+toujours ; un composant ajouté qui emploie une autre variante de
+`shadcn/tailwind.css` doit l'apporter avec lui.
 
 ## Arborescence
 

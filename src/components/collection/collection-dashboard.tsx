@@ -312,7 +312,7 @@ export function CollectionDashboard({
           le piège de focus, Échap et le retour du focus au bouton. Un clic à
           côté ferme sans supprimer : ça échoue du bon côté. */}
       <Dialog open={pendingDelete !== null} onOpenChange={(o) => { if (!o) setPendingDelete(null); }}>
-        <DialogContent role="alertdialog" showCloseButton={false}>
+        <DialogContent role="alertdialog">
           <DialogHeader>
             <DialogTitle>{t("Supprimer ce classeur ?")}</DialogTitle>
             <DialogDescription>
