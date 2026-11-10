@@ -255,7 +255,7 @@ src/lib/          TOUTE la logique métier. Pas de logique dans les pages.
 src/components/   Composants partagés entre plusieurs pages.
 src/proxy.ts      CSRF, version anglaise, en-têtes de sécurité.
 prisma/           Schéma + scripts de seed par tournoi.
-scripts/          ~77 scripts one-shot : scraping, seed, audit, validation.
+scripts/          ~100 scripts : routines, scraping, seed, audit, validation.
 data/             Sources de vérité hors base : scrapes bruts, fiches, insights VOD.
 content/          Textes rédigés à la main (articles, aide de jeu, tweets).
 docs/             Connaissance du projet + archive des audits (voir docs/README.md).
