@@ -5,6 +5,20 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-11 · hors passe, bandeau de `/legendes/[slug]` sur téléphone
+
+Constat 1 de l'audit du 11 novembre. **Changé** : sous 600 px de large, le titre de la
+page sortait par le haut du bandeau, invisible. Le bandeau prend désormais la hauteur
+de son texte quand l'image est trop basse. Texte du `h1`, ordre des éléments, titre et
+chapô inchangés ; rien ne bouge au-dessus de 640 px.
+
+**À lire avec** l'entrée du 2 novembre : ce changement tombe pendant sa mesure. Il ne
+touche que l'affichage sur téléphone, pas les liens ni le texte.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-02 · hors passe, lien d'achat sur `/legendes/[slug]`
 
 Demandé par Allan. **Changé** : l'encart de la page de deck (prix, « Acheter ce deck »,

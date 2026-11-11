@@ -810,7 +810,11 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
       {/* Bannière héro */}
       {bannerUrl ? (
-        <header className="relative overflow-hidden rounded-card border border-hairline">
+        // La hauteur suit l'image (7:3) tant que le texte y tient, puis le texte :
+        // sous 600 px, l'image devenait plus basse que le bloc et le h1 sortait
+        // par le haut du bandeau, invisible. `overflow-clip` et non `hidden` :
+        // un bloc qui défile ne grandit plus avec son contenu malgré l'aspect-ratio.
+        <header className="relative flex aspect-[7/3] flex-col justify-end overflow-clip rounded-card border border-hairline">
           <Image
             src={bannerUrl}
             alt={`Bannière ${name}`}
@@ -818,10 +822,10 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             height={300}
             priority
             sizes="(max-width: 1024px) 100vw, 976px"
-            className="block h-auto w-full"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+          <div className="relative p-4 pt-24 sm:p-6">
             <h1
               className="text-3xl font-bold text-white drop-shadow sm:text-4xl"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
