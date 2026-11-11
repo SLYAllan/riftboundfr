@@ -14,6 +14,9 @@ liens inchangés : seule l'allure bouge.
 - **E2, une seule largeur** : toutes les pages à 1 280 px, alignées sur le logo, les
   paragraphes limités à 75 caractères. `/legendes/[slug]` passe de 1 024 à 1 280 px ;
   `/decks/[slug]` gardait déjà 1 280 px.
+- **E5, une échelle de titres** : titres de section à 24 px gras, sous-titres à 18 px
+  demi-gras, tous blancs. Sur `/legendes/[slug]`, les titres bleus passent au blanc ; le
+  texte des titres ne change pas.
 
 **À lire avec** les entrées du 11 novembre : la mesure du lien d'achat (2 novembre) et
 celle des actions de la page deck courent encore. Compter les deux semaines à partir du
