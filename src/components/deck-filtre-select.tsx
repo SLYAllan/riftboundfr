@@ -18,7 +18,10 @@ export function DeckFiltreSelect({
   toutes,
   valeurParDefaut = "",
   options,
+  chemin = "/decks",
 }: {
+  /** Page à recharger avec le nouveau filtre : /tournois emploie le même menu. */
+  chemin?: string;
   nom: string;
   libelle: string;
   toutes: string;
@@ -38,7 +41,7 @@ export function DeckFiltreSelect({
       onChange={(e) => {
         const suivant = modifierParametresDecks(params, { [nom]: e.target.value });
         const q = suivant.toString();
-        router.push(lien(q ? `/decks?${q}` : "/decks"));
+        router.push(lien(q ? `${chemin}?${q}` : chemin));
       }}
       className="h-11 min-h-11 cursor-pointer rounded-lg border border-hairline-strong bg-surface px-3 text-sm text-ink focus:border-arcane"
     >

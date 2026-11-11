@@ -14,6 +14,7 @@ import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
 import { articleDuTournoi } from "@/lib/tournament-articles";
+import { SET_EN_COURS } from "@/lib/tournament-order";
 
 const metadata: Metadata = {
   title: { absolute: "Tournois Riftbound France - Résultats et calendrier 2026" },
@@ -174,11 +175,16 @@ const getTournamentData = unstable_cache(async () => {
 
 export type TournamentData = Awaited<ReturnType<typeof getTournamentData>>[number];
 
-export default async function TournoisPage() {
+export default async function TournoisPage({ searchParams }: { searchParams: Promise<{ set?: string }> }) {
   const t = await tr();
   const locale = etiquetteLocale(await langueCourante());
   const allTournaments = await safeQuery(() => getTournamentData(), []);
   const tournaments = allTournaments.filter((t) => t.deckCount > 5);
+  // La page s'ouvre sur le set en cours. Elle rendait les 160 tournois d'un coup :
+  // 43 écrans sur téléphone, 10 416 nœuds, 1 567 images. « all » rend tout.
+  const { set } = await searchParams;
+  const setChoisi = set === "all" ? "all" : set || SET_EN_COURS;
+  const affiches = setChoisi === "all" ? tournaments : tournaments.filter((tournoi) => tournoi.set === setChoisi);
 
   const totalDecks = tournaments.reduce((sum, t) => sum + t.deckCount, 0);
   const totalPlayers = tournaments.reduce((sum, t) => sum + (t.playerCount ?? 0), 0);
@@ -257,7 +263,12 @@ export default async function TournoisPage() {
       {tournaments.length === 0 ? (
         <p className="mt-12 text-center text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
       ) : (
-        <TournamentList tournaments={tournaments} />
+        <TournamentList
+          tournaments={affiches}
+          setChoisi={setChoisi}
+          comptesParSet={Object.fromEntries([...new Set(tournaments.map((tournoi) => tournoi.set ?? ""))].map((s) => [s, tournaments.filter((tournoi) => (tournoi.set ?? "") === s).length]))}
+          total={tournaments.length}
+        />
       )}
     </div>
   );

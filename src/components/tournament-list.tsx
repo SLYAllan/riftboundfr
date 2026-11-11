@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { getBannerUrl } from "@/lib/banners";
@@ -15,8 +15,7 @@ import {
 import type { TournamentData } from "@/app/tournois/page";
 import { useT } from "@/components/i18n-provider";
 import { grouperTournoisParSet, ORDRE_SETS } from "@/lib/tournament-order";
-
-const SET_FILTERS = ["Tous", ...[...ORDRE_SETS].reverse()];
+import { DeckFiltreSelect } from "@/components/deck-filtre-select";
 
 const MEDAL_RING: Record<number, string> = {
   1: "ring-2 ring-gold",
@@ -195,15 +194,27 @@ function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; co
   );
 }
 
-export function TournamentList({ tournaments }: { tournaments: TournamentData[] }) {
+/**
+ * Le set se choisit côté serveur (`?set=`) : la page ne reçoit que les tournois du
+ * set affiché. La recherche, elle, filtre dans ce qui est déjà là.
+ */
+export function TournamentList({
+  tournaments,
+  setChoisi,
+  comptesParSet,
+  total,
+}: {
+  tournaments: TournamentData[];
+  setChoisi: string;
+  comptesParSet: Record<string, number>;
+  total: number;
+}) {
   const t = useT();
-  const [setFilter, setSetFilter] = useState<string>("Tous");
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return tournaments.filter((t) => {
-      if (setFilter !== "Tous" && t.set !== setFilter) return false;
       if (
         q &&
         !(t.name ?? "").toLowerCase().includes(q) &&
@@ -212,7 +223,7 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
         return false;
       return true;
     });
-  }, [tournaments, setFilter, query]);
+  }, [tournaments, query]);
 
   const groupes = grouperTournoisParSet(filtered);
 
@@ -220,27 +231,16 @@ export function TournamentList({ tournaments }: { tournaments: TournamentData[] 
     <div>
       {/* Filtres */}
       <div className="mb-10 flex flex-col gap-3 border-b border-hairline pb-6 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap gap-1.5">
-          {SET_FILTERS.map((s) => {
-            const active = setFilter === s;
-            const count = s === "Tous" ? tournaments.length : tournaments.filter((t) => t.set === s).length;
-            return (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setSetFilter(s)}
-                className={cn(
-                  "rounded-lg border px-3 py-1.5 text-sm font-semibold transition-colors",
-                  active
-                    ? "border-arcane/40 text-arcane-light"
-                    : "border-transparent text-ink-secondary hover:text-ink",
-                )}
-              >
-                {s} <span className="text-ink-muted">{count}</span>
-              </button>
-            );
-          })}
-        </div>
+        <Suspense>
+          <DeckFiltreSelect
+            nom="set"
+            chemin="/tournois"
+            libelle={t("Filtrer par set")}
+            toutes={`${t("Tous les sets")} (${total})`}
+            valeurParDefaut={setChoisi}
+            options={ORDRE_SETS.filter((s) => comptesParSet[s]).map((s) => ({ valeur: s, libelle: `${s} (${comptesParSet[s]})` }))}
+          />
+        </Suspense>
         <div className="relative sm:w-64">
           <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted" />
           <input
