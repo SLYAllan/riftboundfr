@@ -24,6 +24,8 @@ liens inchangés : seule l'allure bouge.
   cette carte », en haut de `/decks/[slug]` et dans l'encart d'achat (aussi sur
   `/legendes/[slug]`). « Ouvrir dans le Deckbuilder » passe du violet au bouton neutre.
   Libellés et liens inchangés : à surveiller sur `clic_cardnexus`.
+- **E9, texte courant** : la prose passe de 14 à 16 px, plus aucun texte sous 12 px. Les
+  fiches `/legendes/[slug]` s'allongent un peu ; le texte ne change pas.
 
 **À lire avec** les entrées du 11 novembre : la mesure du lien d'achat (2 novembre) et
 celle des actions de la page deck courent encore. Compter les deux semaines à partir du

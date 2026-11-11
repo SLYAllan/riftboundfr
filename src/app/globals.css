@@ -311,6 +311,23 @@ main[data-gabarit="site"] h3 {
   color: var(--color-ink);
 }
 
+/* Le texte courant était petit : 40 des 72 paragraphes longs à 14 px, et 804
+   morceaux de texte entre 9 et 11 px. La prose passe à 16 px, rien ne descend
+   sous 12 px. Choix d'Allan du 12 novembre 2026 (E9, réglage 2). Hors @layer pour
+   passer devant `text-sm` et les tailles arbitraires posées élément par élément ;
+   un `text-sm` sur un paragraphe se lit donc ici en 16 px. */
+main[data-gabarit="site"] p.text-sm,
+main[data-gabarit="site"] li.text-sm,
+main[data-gabarit="site"] .text-\[15px\] {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+main[data-gabarit="site"] .text-\[9px\],
+main[data-gabarit="site"] .text-\[10px\],
+main[data-gabarit="site"] .text-\[11px\] {
+  font-size: 12px;
+}
+
 /* Respecte « réduire les animations » du système. Hors @layer et en !important
    pour passer devant les utilitaires Tailwind (transition-*, animate-*). */
 @media (prefers-reduced-motion: reduce) {
