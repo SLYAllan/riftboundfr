@@ -5,6 +5,21 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-11 · hors passe, sommaire sur `/legendes/[slug]`
+
+Constat 10 de l'audit du 11 novembre, validé par Allan le 11 novembre. **Changé** : une
+rangée de liens d'ancre sous le bandeau (Meilleurs decks, Comment jouer, Noyau et cartes
+flex, Forces et faiblesses, Champions joués, Champs de bataille, Autres listes ; seules
+les parties présentes), un `id` sur chaque `h2`, et une marge de 5 rem pour passer sous
+la barre collée. Titre, chapô, texte des titres et liens vers les decks inchangés.
+
+**À lire avec** l'entrée du 2 novembre (lien d'achat) : sa mesure court encore. Ce
+changement-ci date du 11 novembre ; compter les deux semaines à partir de son Deploy.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-11 · hors passe, actions et achat en haut de `/decks/[slug]`
 
 Constats 3, 12 et 13 de l'audit du 11 novembre, validés par Allan le 11 novembre.

@@ -315,10 +315,12 @@ export async function generateMetadata({
 }
 
 function Section({
+  id,
   title,
   icon,
   children,
 }: {
+  id?: string;
   title: string;
   icon?: React.ReactNode;
   children: React.ReactNode;
@@ -326,7 +328,8 @@ function Section({
   return (
     <section>
       <h2
-        className="flex items-center gap-2 text-2xl font-semibold text-arcane"
+        id={id}
+        className="flex scroll-mt-20 items-center gap-2 text-2xl font-semibold text-arcane"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
         {icon}
@@ -795,6 +798,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     </div>
   );
 
+  // Sommaire : la fiche fait 12 écrans sur téléphone. Chaque entrée reprend la
+  // condition d'affichage de sa partie, pour ne jamais pointer vers un titre absent.
+  const sommaire: Array<[string, string]> = [
+    ["meilleurs-decks", t("Meilleurs decks")],
+    ...(guideProse ? [["comment-jouer", t("Comment jouer")] as [string, string]] : []),
+    ...((fiche.keyCards?.length ?? 0) > 0 && setDesChiffres ? [["noyau", t("Noyau et cartes flex")] as [string, string]] : []),
+    ...((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0 ? [["forces-faiblesses", t("Forces et faiblesses")] as [string, string]] : []),
+    ...(setDesChiffres && fiche.champions && Object.keys(fiche.champions).length > 0 ? [["champions", t("Champions joués")] as [string, string]] : []),
+    ...(setDesChiffres && (fiche.topBattlefields?.length ?? 0) > 0 ? [["champs-de-bataille", t("Champs de bataille")] as [string, string]] : []),
+    ...(otherDecks.length > 0 ? [["autres-listes", t("Autres listes")] as [string, string]] : []),
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
       <script
@@ -853,6 +868,18 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         </header>
       )}
 
+      <nav aria-label={t("Sur cette page")} className="mt-4 flex flex-wrap gap-2">
+        {sommaire.map(([ancre, libelle]) => (
+          <a
+            key={ancre}
+            href={`#${ancre}`}
+            className="inline-flex min-h-11 items-center rounded-lg border border-hairline bg-surface px-3 text-sm text-ink-secondary transition-colors hover:border-hairline-strong hover:text-ink sm:min-h-8"
+          >
+            {libelle}
+          </a>
+        ))}
+      </nav>
+
       {/* Capacité de la Légende : la carte, son texte de règles, puis l'explication.
           Le texte de la carte fait foi et reste en anglais, comme sur /cartes ; la phrase
           en dessous dit ce que ça change en partie. Sans carte en base, l'encart se réduit
@@ -897,7 +924,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
       <div className="mt-10 space-y-12">
         {/* Decklists, contenu principal */}
-        <Section title={`Meilleurs decks ${name}`} icon={<Layers size={20} />}>
+        <Section id="meilleurs-decks" title={`Meilleurs decks ${name}`} icon={<Layers size={20} />}>
           {deckCount > 0 && (
             <p className="mb-3 text-sm text-ink-secondary">
               {`${deckCount.toLocaleString("fr-FR")} decklist${deckCount > 1 ? "s" : ""} ${name} relevée${deckCount > 1 ? "s" : ""} en tournoi. Les meilleures d'abord : niveau du tournoi, puis classement du joueur.`}
@@ -974,7 +1001,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
         {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
         {guideProse && (
-          <Section title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
+          <Section id="comment-jouer" title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
             <div className="max-w-3xl text-[15px] leading-7 text-ink-secondary">
               <MarkdownRenderer content={guideProse} />
             </div>
@@ -989,7 +1016,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           (setDesChiffres ? (
             <section>
               <h2
-                className="flex items-center gap-2 text-xl font-semibold text-arcane"
+                id="noyau"
+                className="flex scroll-mt-20 items-center gap-2 text-xl font-semibold text-arcane"
                 style={{ fontFamily: "var(--font-rubik), sans-serif" }}
               >
                 <TrendingUp size={18} /> {t("Noyau et cartes flex")}
@@ -1036,7 +1064,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
           <section>
             <h2
-              className="text-xl font-semibold text-arcane"
+              id="forces-faiblesses"
+              className="scroll-mt-20 text-xl font-semibold text-arcane"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
               Forces &amp; faiblesses
@@ -1085,7 +1114,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             {fiche.champions && Object.keys(fiche.champions).length > 0 && (
               <section>
                 <h2
-                  className="text-xl font-semibold text-arcane"
+                  id="champions"
+                  className="scroll-mt-20 text-xl font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {t("Champions joués")}
@@ -1107,7 +1137,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             {(fiche.topBattlefields?.length ?? 0) > 0 && (
               <section>
                 <h2
-                  className="text-xl font-semibold text-arcane"
+                  id="champs-de-bataille"
+                  className="scroll-mt-20 text-xl font-semibold text-arcane"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {t("Champs de bataille fréquents")}
@@ -1142,7 +1173,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             calculé (niveau de tournoi, puis classement). Placées après les cartes clés :
             une longue liste de liens entre le guide et le reste coupait la lecture. */}
         {otherDecks.length > 0 && (
-          <Section title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
+          <Section id="autres-listes" title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
             <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
               {otherDecks.map((deck) => (
                 <li key={deck.id}>
