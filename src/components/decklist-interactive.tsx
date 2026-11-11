@@ -394,7 +394,7 @@ export function DecklistInteractive({
       {deckbuilderCode && (
         <Link
           href={`/deckbuilder?deck=${deckbuilderCode}`}
-          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity", tailleAction)}
+          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink ring-1 ring-inset ring-hairline-strong hover:bg-hairline-strong transition-opacity", tailleAction)}
         >
           <Hammer size={14} />{t("Ouvrir dans le Deckbuilder")}</Link>
       )}

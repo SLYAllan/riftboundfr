@@ -20,6 +20,10 @@ liens inchangés : seule l'allure bouge.
 - **E6, couleurs de tier** : les lettres de tier prennent la teinte des bandeaux (S rouge,
   A orange, B jaune, C turquoise). Sur `/decks/[slug]`, la pastille de niveau de tournoi
   (P, S, A) devient cerclée et sans couleur.
+- **E7, l'or pour l'achat** : « Acheter ce deck » passe du bleu à l'or, comme « Acheter
+  cette carte », en haut de `/decks/[slug]` et dans l'encart d'achat (aussi sur
+  `/legendes/[slug]`). « Ouvrir dans le Deckbuilder » passe du violet au bouton neutre.
+  Libellés et liens inchangés : à surveiller sur `clic_cardnexus`.
 
 **À lire avec** les entrées du 11 novembre : la mesure du lien d'achat (2 novembre) et
 celle des actions de la page deck courent encore. Compter les deux semaines à partir du

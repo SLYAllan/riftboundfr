@@ -294,7 +294,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
                 <div className="text-xs text-ink-muted">{t("À partir de")}</div>
                 <div className="text-lg font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix.total)}</div>
               </div>
-              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener">
+              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat">
                 <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
                 {t("Acheter ce deck")}
               </BoutonLien>

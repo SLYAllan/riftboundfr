@@ -530,6 +530,9 @@ main[data-gabarit="site"] h3 {
     --rond: var(--color-arcane);
     --texte-rond: var(--color-canvas);
   }
+  .bouton-achat {
+    --fond: var(--color-gold);
+  }
   .bouton-neutre {
     --fond: transparent;
     --texte: var(--color-ink);

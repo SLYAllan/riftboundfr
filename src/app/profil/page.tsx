@@ -303,7 +303,7 @@ export default async function ProfilPage({
           <h2 className="text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
             {t("Mes decks")}
           </h2>
-          <Link href="/deckbuilder" className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90">
+          <Link href="/deckbuilder" className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-2 text-sm font-medium text-ink ring-1 ring-inset ring-hairline-strong transition-opacity hover:bg-hairline-strong">
             <Hammer size={14} aria-hidden="true" /> {t("Créer un deck")}
           </Link>
         </div>

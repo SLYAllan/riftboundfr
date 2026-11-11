@@ -135,7 +135,7 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
                 onglet puis attendait la réponse : sur iPhone, Safari met en pause la
                 page d'origine et l'onglet restait vide. */}
             {lienAchat ? (
-              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener">
+              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat">
                 {/* Logo blanc : le site n'a que le thème sombre. Dans le calque clair du
                     survol, globals.css l'inverse avec le texte. */}
                 <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />

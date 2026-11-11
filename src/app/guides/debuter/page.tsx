@@ -101,7 +101,7 @@ export default async function GuideDebuterPage() {
             ))}
           </div>
           <div className="mt-4">
-            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">
+            <Link href="/deckbuilder" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink ring-1 ring-inset ring-hairline-strong hover:bg-hairline-strong">
               <Hammer size={16} />{" "}{t("Essayer le Deckbuilder")}</Link>
           </div>
         </section>
@@ -296,7 +296,7 @@ export default async function GuideDebuterPage() {
         <div className="flex flex-wrap gap-3">
           <BoutonLien href="/guides/deckbuilding">{t("Guide de deckbuilding")}</BoutonLien>
           <Link href="/tier-list" className="inline-flex items-center gap-2 rounded-lg bg-gold px-4 py-2 text-sm font-semibold text-canvas hover:opacity-90">{t("Tier list")}</Link>
-          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-violet-dark px-4 py-2 text-sm font-semibold text-white hover:opacity-90">{t("Les 6 Domaines")}</Link>
+          <Link href="/guides/domaines" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink ring-1 ring-inset ring-hairline-strong hover:bg-hairline-strong">{t("Les 6 Domaines")}</Link>
           <Link href="/guides/glossaire" className="inline-flex items-center gap-2 rounded-lg bg-surface-raised px-4 py-2 text-sm font-semibold text-ink-secondary hover:opacity-90">
             <BookOpen size={16} /> Glossaire complet
           </Link>

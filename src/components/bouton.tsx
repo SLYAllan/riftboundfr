@@ -18,6 +18,9 @@ const VARIANTES = {
   primaire: "",
   contour: "bouton-contour",
   neutre: "bouton-neutre",
+  // L'or pour l'achat, partout : « Acheter cette carte » était or, « Acheter ce
+  // deck » bleu. Choix d'Allan du 12 novembre 2026 (E7).
+  achat: "bouton-achat",
 } as const;
 
 export type VarianteBouton = keyof typeof VARIANTES;
