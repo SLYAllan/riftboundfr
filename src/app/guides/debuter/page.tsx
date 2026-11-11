@@ -53,7 +53,7 @@ const keywordsOther = [
 export default async function GuideDebuterPage() {
   const t = await tr();
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Guide débutant", href: "/guides/debuter" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Comment jouer à Riftbound - Guide débutant")}</h1>
       <p className="mt-2 text-lg text-ink-secondary">{t("Riftbound est un jeu de cartes à collectionner dans l’univers de League of Legends. Deux joueurs s’affrontent pour le contrôle de champs de bataille et le premier à")}{" "}<strong>8 points</strong>{" "}{t("gagne. Ce guide vous apprend tout ce qu’il faut savoir pour jouer votre première partie.")}</p>

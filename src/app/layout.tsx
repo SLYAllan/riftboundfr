@@ -138,6 +138,10 @@ const jsonLd = (langue: Langue) => ({
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const langue = await langueCourante();
   const chemin = await cheminCourant();
+  // Les règles de lecture de globals.css (largeur des paragraphes, titres, prose)
+  // visent les pages du site. L'overlay et le compagnon, gelés, sont rendus dans
+  // le même <main> : sans ce repère, elles les auraient changés aussi.
+  const gabarit = /^\/(overlay|compagnon)\/|^\/profil\/overlay/.test(chemin) ? "overlay" : "site";
   const site = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
   const cheminFr = chemin === "/" ? "" : chemin;
 
@@ -186,7 +190,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <FournisseurLangue langue={langue}>
           <CollectionProvider>
             <Navbar chemin={chemin} />
-            <main id="contenu" className="flex-1">{children}</main>
+            <main id="contenu" data-gabarit={gabarit} className="flex-1">{children}</main>
             <Footer />
           </CollectionProvider>
           <CookieBanner />

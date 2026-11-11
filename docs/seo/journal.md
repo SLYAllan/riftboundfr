@@ -5,6 +5,24 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-12 · hors passe, volet esthétique sur tout le site
+
+Choix d'Allan du 12 novembre sur la page de réglages de l'audit (volet esthétique). Un
+commit par point ; chaque ligne ci-dessous arrive avec le sien. Titres, chapôs, texte et
+liens inchangés : seule l'allure bouge.
+
+- **E2, une seule largeur** : toutes les pages à 1 280 px, alignées sur le logo, les
+  paragraphes limités à 75 caractères. `/legendes/[slug]` passe de 1 024 à 1 280 px ;
+  `/decks/[slug]` gardait déjà 1 280 px.
+
+**À lire avec** les entrées du 11 novembre : la mesure du lien d'achat (2 novembre) et
+celle des actions de la page deck courent encore. Compter les deux semaines à partir du
+Deploy qui portera ces changements.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-11 · hors passe, sommaire sur `/legendes/[slug]`
 
 Constat 10 de l'audit du 11 novembre, validé par Allan le 11 novembre. **Changé** : une

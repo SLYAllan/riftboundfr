@@ -115,7 +115,7 @@ export default async function ReglesPage({
   const chapters = hasQuery ? [] : await loadRuleChapters(langue);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs
         // « Outils » est un menu déroulant, pas une page : le fil d'Ariane pointait
         // vers /outils, qui répond 404. Le lien partait aussi dans le JSON-LD.

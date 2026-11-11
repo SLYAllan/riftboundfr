@@ -64,7 +64,7 @@ const mistakes = [
 export default async function GuideDeckbuildingPage() {
   const t = await tr();
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Construire son deck", href: "/guides/deckbuilding" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Construire son deck Riftbound")}</h1>
       <p className="mt-2 text-lg text-ink-secondary">{t("Vous avez compris les règles de base et vous voulez construire votre propre deck ? Ce guide vous montre les bons ratios, la courbe d’énergie idéale et les erreurs à éviter.")}</p>

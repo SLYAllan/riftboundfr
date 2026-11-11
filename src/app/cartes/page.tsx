@@ -103,7 +103,7 @@ export default async function CartesPage({ searchParams }: PageProps) {
   }
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-8">
       <h1 className="text-3xl font-bold font-display sm:text-4xl">{t("Base de données des cartes Riftbound")}</h1>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-ink-secondary sm:text-base">
         {t("Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed, Vendetta et Radiance. Filtrez-les par set, type, rareté ou domaine, puis lisez leurs statistiques et leur texte officiel, en anglais.")}

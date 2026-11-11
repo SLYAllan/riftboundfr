@@ -248,7 +248,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
   };
 
   return (
-    <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(eventJsonLd) }} />
       {/* Back nav + fil d'Ariane */}
       <Breadcrumbs

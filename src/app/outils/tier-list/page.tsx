@@ -109,7 +109,7 @@ export default async function CreerTierListPage({ searchParams }: PageProps) {
   const connues = new Set(legendes.map((l) => l.slug));
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: t("Tier List"), href: "/tier-list" }, { name: t("Créer une tier list"), href: "/outils/tier-list" }]} className="mb-6" />
       <h1 className="text-3xl font-bold sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
         {t("Créer une tier list")}

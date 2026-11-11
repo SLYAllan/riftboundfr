@@ -278,6 +278,18 @@
   }
 }
 
+/* Une seule largeur de page (1 280 px, alignée sur le logo) : les pages de lecture
+   ne limitent que leurs paragraphes, à une longueur de ligne qui se lit. Choix
+   d'Allan du 12 novembre 2026 (volet esthétique, E2, réglage 2). Hors @layer pour
+   passer devant les utilitaires ; un paragraphe centré garde son centre. */
+main[data-gabarit="site"] p {
+  max-width: 75ch;
+}
+main[data-gabarit="site"] p.text-center,
+main[data-gabarit="site"] .text-center > p {
+  margin-inline: auto;
+}
+
 /* Respecte « réduire les animations » du système. Hors @layer et en !important
    pour passer devant les utilitaires Tailwind (transition-*, animate-*). */
 @media (prefers-reduced-motion: reduce) {

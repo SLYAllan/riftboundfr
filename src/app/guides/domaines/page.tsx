@@ -126,7 +126,7 @@ const domains = [
 export default async function DomainesGuidePage() {
   const t = await tr();
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Les 6 domaines", href: "/guides/domaines" }]} className="mb-6" />
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Les 6 Domaines de Riftbound")}</h1>
       <p className="mt-2 text-lg text-ink-secondary">{t("Chaque Légende Riftbound appartient à 2 domaines (couleurs) qui définissent quelles cartes vous pouvez jouer. Comprendre les domaines vous aide à choisir votre Légende et à construire votre deck.")}</p>

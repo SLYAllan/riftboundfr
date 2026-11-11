@@ -191,7 +191,7 @@ export default async function TournoisPage({ searchParams }: { searchParams: Pro
   const countries = new Set(tournaments.map((t) => t.countryCode).filter(Boolean));
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Hero */}
       <div className="relative mb-10 overflow-hidden rounded-2xl border border-hairline bg-surface p-6 sm:p-8 lg:p-10">
         <div
