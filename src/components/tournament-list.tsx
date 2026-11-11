@@ -169,15 +169,12 @@ function TournamentRow({
   );
 }
 
+// Niveau du tournoi, pas tier de Légende : pastille cerclée sans couleur.
 function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; count: number }) {
-  const bg = tier === "S" ? "bg-gold" : "bg-tier-a";
   return (
     <div className="mb-4 flex items-center gap-2.5">
       <span
-        className={cn(
-          "flex h-9 w-9 items-center justify-center rounded-lg text-lg font-black text-canvas",
-          bg,
-        )}
+        className="flex h-9 w-9 items-center justify-center rounded-lg text-lg font-black text-ink ring-1 ring-hairline-field ring-inset"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
         {tier}

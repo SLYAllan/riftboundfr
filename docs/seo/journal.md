@@ -17,6 +17,9 @@ liens inchangés : seule l'allure bouge.
 - **E5, une échelle de titres** : titres de section à 24 px gras, sous-titres à 18 px
   demi-gras, tous blancs. Sur `/legendes/[slug]`, les titres bleus passent au blanc ; le
   texte des titres ne change pas.
+- **E6, couleurs de tier** : les lettres de tier prennent la teinte des bandeaux (S rouge,
+  A orange, B jaune, C turquoise). Sur `/decks/[slug]`, la pastille de niveau de tournoi
+  (P, S, A) devient cerclée et sans couleur.
 
 **À lire avec** les entrées du 11 novembre : la mesure du lien d'achat (2 novembre) et
 celle des actions de la page deck courent encore. Compter les deux semaines à partir du

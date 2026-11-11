@@ -226,13 +226,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
       {cc && <><CountryBadge code={cc} />{" "}</>}{deck.tournamentContext}
     </Link>
   )]);
+  // Le niveau d'un tournoi (P, S, A) n'est pas un tier de Légende : pastille cerclée
+  // sans couleur, pour ne pas reprendre l'or, le bleu ou le violet des tiers.
   if (deck.tournamentTier) morceaux.push(["tier", (
-    <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-      deck.tournamentTier === "P" ? "bg-gold text-canvas"
-        : deck.tournamentTier === "S" ? "bg-arcane text-canvas"
-        : deck.tournamentTier === "A" ? "bg-violet-dark text-white"
-        : "bg-surface-raised text-ink-secondary"
-    }`}>
+    <span className="rounded-full px-2 py-0.5 text-[10px] font-bold text-ink ring-1 ring-hairline-field ring-inset">
       {deck.tournamentTier} Tier
     </span>
   )]);

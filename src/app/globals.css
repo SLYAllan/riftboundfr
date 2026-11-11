@@ -63,15 +63,18 @@
 
   /* Tiers. Les valeurs servent de texte sur surface-raised (#2c2c34) : la
      luminosité est réglée pour tenir 4,5:1, teinte et saturation inchangées. */
-  --color-tier-s: #f59e0b;
-  --color-tier-a: #ff5c58;
-  --color-tier-b: #a77bff;
-  --color-tier-c: #0ea5e9;
+  /* Teintes des bandeaux de tier (S rouge, A orange, B jaune, C turquoise), en
+     version claire pour tenir 4,5:1 en texte. Le rouge voulait dire S sur les
+     bandeaux et A en texte. Choix d'Allan du 12 novembre 2026 (E6). */
+  --color-tier-s: #f87171;
+  --color-tier-a: #fb923c;
+  --color-tier-b: #fde047;
+  --color-tier-c: #2dd4bf;
   --color-tier-d: #949aa6;
-  --color-tier-s-bg: rgba(245, 158, 11, 0.08);
-  --color-tier-a-bg: rgba(239, 68, 68, 0.08);
-  --color-tier-b-bg: rgba(139, 92, 246, 0.08);
-  --color-tier-c-bg: rgba(14, 165, 233, 0.08);
+  --color-tier-s-bg: rgba(248, 113, 113, 0.08);
+  --color-tier-a-bg: rgba(251, 146, 60, 0.08);
+  --color-tier-b-bg: rgba(253, 224, 71, 0.08);
+  --color-tier-c-bg: rgba(45, 212, 191, 0.08);
   --color-tier-d-bg: rgba(107, 114, 128, 0.08);
 
   /* Rarity */
