@@ -264,14 +264,17 @@
   label:has(input[type="checkbox"], input[type="radio"]) {
     cursor: pointer;
   }
-  /* iOS Safari zoome la page dès qu'un champ passe sous 16px. On pose le
-     plancher sur mobile ; au-dessus de 640px les tailles du design reprennent. */
-  @media (max-width: 640px) {
-    input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
-    textarea,
-    select {
-      font-size: 16px;
-    }
+}
+
+/* iOS Safari zoome la page dès qu'un champ passe sous 16px. On pose le
+   plancher sur mobile ; au-dessus de 640px les tailles du design reprennent.
+   Hors @layer : dans `base`, un `text-sm` (calque `utilities`) passait devant et
+   la recherche de /decks, les listes de /cartes restaient à 14px. */
+@media (max-width: 640px) {
+  input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    font-size: 16px;
   }
 }
 
