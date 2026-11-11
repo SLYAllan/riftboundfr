@@ -31,6 +31,14 @@ interface DecklistInteractiveProps {
   compact?: boolean;
   sourceArticleSlug?: string;
   deckbuilderCode?: string;
+  /**
+   * Mise en page de la page deck : copier, exporter et ouvrir dans le deckbuilder
+   * dans la barre du haut, Légende et Champion côte à côte. En bas de la liste, ces
+   * actions tombaient à 3 ou 4 écrans du haut, alors que ce sont les conversions de
+   * la page. Les fiches Légende et les articles gardent l'ancienne disposition :
+   * ce sont d'autres pages, suivies à part.
+   */
+  pageDeck?: boolean;
 }
 
 const sectionOrder: string[] = ["legend", "champion", "main", "rune", "battlefield", "side"];
@@ -301,6 +309,7 @@ export function DecklistInteractive({
   compact = false,
   sourceArticleSlug,
   deckbuilderCode,
+  pageDeck = false,
 }: DecklistInteractiveProps) {
   const t = useT();
   const isAdmin = useIsAdmin();
@@ -347,6 +356,53 @@ export function DecklistInteractive({
     setQuickCopied(true);
     setTimeout(() => setQuickCopied(false), 2000);
   }, [cards]);
+
+  // 44 px sur téléphone en page deck : ce sont les conversions de la page, et les
+  // boutons de 28 px se ratent au pouce.
+  const tailleAction = pageDeck ? "min-h-11 sm:min-h-8" : "";
+  const actions = (
+    <>
+      {showCopyCode && (
+        <button
+          onClick={handleQuickCopy}
+          data-suivi="copie_code_deck"
+          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors", tailleAction)}
+        >
+          {quickCopied ? <Check size={14} className="text-success" /> : <Copy size={14} />}
+          {quickCopied ? t("Copié !") : t("Copier le deck code")}
+        </button>
+      )}
+      {(showExportPng || showCopyCode) && (
+        <button
+          onClick={() => setShowExport(true)}
+          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas hover:opacity-90 transition-opacity", tailleAction)}
+        >
+          <Image size={14} />
+          {t("Exporter")}
+        </button>
+      )}
+      {deckbuilderCode && isAdmin && (
+        <a
+          href={`/api/decklist-image?code=${encodeURIComponent(deckbuilderCode)}&download=1`}
+          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors", tailleAction)}
+          title={t("Admin : image carrée 1000x1000 pour les réseaux")}
+        >
+          <Download size={14} />
+          Image 1:1
+        </a>
+      )}
+      {deckbuilderCode && (
+        <Link
+          href={`/deckbuilder?deck=${deckbuilderCode}`}
+          className={cn("inline-flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity", tailleAction)}
+        >
+          <Hammer size={14} />{t("Ouvrir dans le Deckbuilder")}</Link>
+      )}
+    </>
+  );
+  // Légende et Champion tiennent une carte chacun : sur une rangée entière, ils
+  // prenaient 268 px de haut chacun et repoussaient le deck principal d'un écran.
+  const coteACote = pageDeck && Boolean(grouped.legend?.length && grouped.champion?.length);
 
   return (
     <div className="rounded-card border border-hairline bg-surface-raised/50">
@@ -407,12 +463,13 @@ export function DecklistInteractive({
       )}
 
       {compact && (
-        <div className="flex items-center justify-between border-b border-hairline px-4 py-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-hairline px-4 py-2">
           {/* Sans l'en-tête complet, les sections h3 suivaient directement le h1
               de la page deck (axe, heading-order). Titre pour les lecteurs d'écran
               seulement : la page porte déjà le nom du deck. */}
           <h2 className="sr-only">{t("Decklist")}</h2>
-          <div className="text-xs text-ink-muted">{totalCards} cartes</div>
+          <div className="text-xs text-ink-muted sm:mr-auto">{totalCards} cartes</div>
+          {pageDeck && <div className="order-last flex w-full flex-wrap gap-2 sm:order-none sm:w-auto">{actions}</div>}
           <div className="flex items-center gap-1">
             <button onClick={() => setView("grid")} aria-label={t("Affichage en grille")} aria-pressed={view === "grid"} className={cn("rounded p-1.5", view === "grid" ? "text-arcane" : "text-ink-muted")}>
               <Grid3X3 size={14} />
@@ -431,13 +488,14 @@ export function DecklistInteractive({
         {view === "stats" ? (
           <DeckSummary cards={cards} />
         ) : view === "grid" ? (
-          <div className="space-y-6">
+          <div className={cn("space-y-6", coteACote && "sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0")}>
             {sectionOrder.map((section) => {
               const sectionCards = grouped[section];
               if (!sectionCards?.length) return null;
               const total = sectionCards.reduce((sum, c) => sum + c.quantity, 0);
+              const enPaire = coteACote && (section === "legend" || section === "champion");
               return (
-                <div key={section}>
+                <div key={section} className={cn(coteACote && !enPaire && "sm:col-span-2")}>
                   {/* h3 et pas h2 : ces libellés se répètent à l'identique pour chaque
                       decklist de la page. Sur une page Légende qui en déplie trois, ça
                       faisait 18 h2 « Deck Principal » quasi identiques, qui noyaient les
@@ -445,7 +503,8 @@ export function DecklistInteractive({
                   <h3 className="text-sm font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                     {sectionLabels[section]} <span className="text-ink-muted font-normal">({total})</span>
                   </h3>
-                  <div className="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8">
+                  {/* En demi-largeur, moitié moins de colonnes : les cartes gardent la taille de celles du deck principal. */}
+                  <div className={cn("mt-2 grid grid-cols-4 gap-2", enPaire ? "sm:grid-cols-3 md:grid-cols-4" : "sm:grid-cols-6 md:grid-cols-8")}>
                     {sectionCards.map((c) => {
                       const isBf = c.type === "Battlefield";
                       return (
@@ -554,43 +613,9 @@ export function DecklistInteractive({
         )}
       </div>
 
-      {(showCopyCode || showExportPng || sourceArticleSlug || deckbuilderCode) && (
+      {(pageDeck ? sourceArticleSlug : (showCopyCode || showExportPng || sourceArticleSlug || deckbuilderCode)) && (
         <div className="flex flex-wrap items-center gap-2 border-t border-hairline px-4 py-3">
-          {showCopyCode && (
-            <button
-              onClick={handleQuickCopy}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
-            >
-              {quickCopied ? <Check size={14} className="text-success" /> : <Copy size={14} />}
-              {quickCopied ? t("Copié !") : t("Copier le deck code")}
-            </button>
-          )}
-          {(showExportPng || showCopyCode) && (
-            <button
-              onClick={() => setShowExport(true)}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas hover:opacity-90 transition-opacity"
-            >
-              <Image size={14} />
-              {t("Exporter")}
-            </button>
-          )}
-          {deckbuilderCode && isAdmin && (
-            <a
-              href={`/api/decklist-image?code=${encodeURIComponent(deckbuilderCode)}&download=1`}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
-              title={t("Admin : image carrée 1000x1000 pour les réseaux")}
-            >
-              <Download size={14} />
-              Image 1:1
-            </a>
-          )}
-          {deckbuilderCode && (
-            <Link
-              href={`/deckbuilder?deck=${deckbuilderCode}`}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-violet-dark px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 transition-opacity"
-            >
-              <Hammer size={14} />{t("Ouvrir dans le Deckbuilder")}</Link>
-          )}
+          {!pageDeck && actions}
           {sourceArticleSlug && (
             <Link
               href={`/articles/${sourceArticleSlug}`}

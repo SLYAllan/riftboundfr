@@ -5,6 +5,32 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-11 · hors passe, actions et achat en haut de `/decks/[slug]`
+
+Constats 3, 12 et 13 de l'audit du 11 novembre, validés par Allan le 11 novembre.
+**Changé** :
+- « Copier le deck code », « Exporter » et « Ouvrir dans le Deckbuilder » passent dans
+  la barre du haut de la liste (44 px de haut sur téléphone). Ils étaient à 3 écrans du
+  haut sur téléphone, à 3,8 sur ordinateur ;
+- le prix plancher et « Acheter ce deck » s'ajoutent à la rangée de « J'aime », avec le
+  même lien que le panneau du bas, qui reste. Deux liens d'achat sur la page : un clic
+  donne toujours un seul `clic_cardnexus` ;
+- « Copier le deck code » envoie maintenant `copie_code_deck`, comme dans le deckbuilder ;
+- Légende et Champion côte à côte au-dessus de 640 px ;
+- l'en-tête tient sur une ligne (Légende, set, joueur, place, tournoi) et la description
+  écrite par les scripts d'import, qui répétait cette ligne, ne s'affiche plus. Une
+  description écrite à la main reste. Titre (`h1`) et `title` inchangés.
+
+**Point de départ** : `/decks/*` 1 974 vues et 55 `clic_cardnexus` du 4 octobre au
+1er novembre, soit 27,9 clics pour 1 000 vues (GA4, visiteurs qui acceptent les cookies).
+
+**À juger** deux semaines après le Deploy : les clics pour 1 000 vues de `/decks/*`, et
+la position de la famille dans Search Console.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-11 · hors passe, places et mots anglais sur `/decks/[slug]`, `/legendes/[slug]` et `/cartes`
 
 Constat 11 de l'audit du 11 novembre. **Changé**, à l'affichage seulement :

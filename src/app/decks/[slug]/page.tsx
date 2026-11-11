@@ -21,8 +21,17 @@ import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
+
+const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
+
+// Descriptions écrites par les scripts d'import : « 9th au Showdown (date) par X. Calm/Fury. »
+// ou « Meilleur classement … : 65th par X. » Elles répètent la ligne au-dessus du titre ;
+// une description écrite à la main, elle, reste.
+const DESCRIPTION_GENEREE = /^(\d+(st|nd|rd|th|e|er) au |Meilleur classement )/;
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
-import { cache } from "react";
+import { cache, type ReactNode } from "react";
+import Image from "next/image";
+import { BoutonLien } from "@/components/bouton";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -177,8 +186,57 @@ export default async function DeckDetailPage({ params }: PageProps) {
     isPartOf: { "@type": "WebSite", name: "Riftbound France", url: urlLangue(SITE, "/", langue) },
   };
 
-  // Les mêmes cartes pour le prix affiché et pour le lien du panier.
+  // Les mêmes cartes pour le prix affiché et pour le lien du panier, en haut comme
+  // dans le panneau du bas.
   const cartesAchat = cartesDeck(deck.cards);
+  const prix = chiffrerDeck(cartesAchat);
+  const lienAchat = lienAchatDeck(cartesAchat);
+
+  // Une seule ligne sous le titre, séparée par des points : la Légende, le joueur, la
+  // place et le tournoi tenaient sur deux lignes, puis revenaient dans la description.
+  const pastilleSet = (
+    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+      setTag === "Unleashed" ? "bg-arcane text-canvas"
+        : setTag === "Spiritforged" ? "bg-emerald-500 text-canvas"
+        : setTag === "Origins" ? "bg-amber-500 text-canvas"
+        : "bg-surface-raised text-ink-secondary"
+    }`}>
+      {setTag}
+    </span>
+  );
+  const cc = deck.tournamentContext ? getTournamentCountryCode(deck.tournamentContext) : null;
+  const morceaux: Array<[string, ReactNode]> = [
+    ["legende", (
+      <span className="inline-flex items-center gap-2">
+        {legendHref ? (
+          <Link href={legendHref} className="inline-flex min-h-6 items-center text-base font-semibold text-arcane hover:underline">
+            {displayLegendName(deck.legendName)}
+          </Link>
+        ) : (
+          <span className="text-base font-semibold text-arcane">{displayLegendName(deck.legendName)}</span>
+        )}
+        {pastilleSet}
+      </span>
+    )],
+  ];
+  if (deck.playerName || deck.authorName) morceaux.push(["joueur", <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>]);
+  if (deck.placement) morceaux.push(["place", <span>{afficherPlacement(deck.placement, langue)}{deck.record && <span className="ml-1 text-arcane">({deck.record})</span>}</span>]);
+  if (deck.tournamentContext) morceaux.push(["tournoi", (
+    <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="inline-flex min-h-6 items-center gap-1 transition-colors hover:text-arcane">
+      {cc && <CountryBadge code={cc} />} {deck.tournamentContext}
+    </Link>
+  )]);
+  if (deck.tournamentTier) morceaux.push(["tier", (
+    <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
+      deck.tournamentTier === "P" ? "bg-gold text-canvas"
+        : deck.tournamentTier === "S" ? "bg-arcane text-canvas"
+        : deck.tournamentTier === "A" ? "bg-violet-dark text-white"
+        : "bg-surface-raised text-ink-secondary"
+    }`}>
+      {deck.tournamentTier} Tier
+    </span>
+  )]);
+  if (deck.sourceUrl) morceaux.push(["source", <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center text-arcane hover:underline">Source</a>]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -191,46 +249,15 @@ export default async function DeckDetailPage({ params }: PageProps) {
       />
       <div className="mt-6">
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
-        <div className="mt-2 flex flex-wrap items-center gap-3">
-          {legendHref ? (
-            <Link href={legendHref} className="text-lg text-arcane hover:underline">
-              {displayLegendName(deck.legendName)}
-            </Link>
-          ) : (
-            <span className="text-lg text-arcane">{displayLegendName(deck.legendName)}</span>
-          )}
-          <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
-            setTag === "Unleashed" ? "bg-arcane text-canvas"
-              : setTag === "Spiritforged" ? "bg-emerald-500 text-canvas"
-              : setTag === "Origins" ? "bg-amber-500 text-canvas"
-              : "bg-surface-raised text-ink-secondary"
-          }`}>
-            {setTag}
-          </span>
-        </div>
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
-          {(deck.playerName || deck.authorName) && <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>}
-          {deck.placement && <span>&middot; {afficherPlacement(deck.placement, langue)}</span>}
-          {deck.record && <span className="text-arcane">({deck.record})</span>}
-          {deck.tournamentContext && (() => {
-            const cc = getTournamentCountryCode(deck.tournamentContext);
-            return <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="inline-flex min-h-6 items-center gap-1 hover:text-arcane transition-colors">&middot; {cc && <CountryBadge code={cc} />} {deck.tournamentContext}</Link>;
-          })()}
-          {deck.tournamentTier && (
-            <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-              deck.tournamentTier === "P" ? "bg-gold text-canvas"
-                : deck.tournamentTier === "S" ? "bg-arcane text-canvas"
-                : deck.tournamentTier === "A" ? "bg-violet-dark text-white"
-                : "bg-surface-raised text-ink-secondary"
-            }`}>
-              {deck.tournamentTier} Tier
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+          {morceaux.map(([cle, contenu], i) => (
+            <span key={cle} className="inline-flex items-center gap-2">
+              {i > 0 && <span aria-hidden="true">&middot;</span>}
+              {contenu}
             </span>
-          )}
-          {deck.sourceUrl && (
-            <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center text-arcane hover:underline">Source</a>
-          )}
+          ))}
         </div>
-        {deck.description && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
+        {deck.description && !DESCRIPTION_GENEREE.test(deck.description) && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
         {interdictions.length > 0 && (
           <p className="mt-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
             <strong className="text-red-400">{t("Liste injouable aujourd’hui.")}</strong>
@@ -259,6 +286,21 @@ export default async function DeckDetailPage({ params }: PageProps) {
           >
             {t("Comparer ce deck")}
           </Link>
+          {/* Le même prix et le même lien que le panneau du bas, remontés : le lien
+              d'achat tombait à 3 ou 4 écrans du haut. Un vrai lien écrit par le
+              serveur, jamais un bouton qui attend une réponse (Safari sur iPhone). */}
+          {lienAchat && prix.total > 0 && (
+            <div className="flex w-full items-center gap-3 sm:ml-auto sm:w-auto">
+              <div>
+                <div className="text-xs text-ink-muted">{t("À partir de")}</div>
+                <div className="text-lg font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix.total)}</div>
+              </div>
+              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener">
+                <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
+                {t("Acheter ce deck")}
+              </BoutonLien>
+            </div>
+          )}
         </div>
       </div>
 
@@ -273,6 +315,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
           // dans son h1 et sa sous-ligne : l'en-tête complet les répétait mot
           // pour mot juste en dessous.
           compact
+          pageDeck
           showCopyCode
           showExportPng
           sourceArticleSlug={deck.sourceArticle?.slug}
@@ -282,8 +325,8 @@ export default async function DeckDetailPage({ params }: PageProps) {
 
       <div className="mt-6">
         <DeckCoveragePanel
-          prix={chiffrerDeck(cartesAchat)}
-          lienAchat={lienAchatDeck(cartesAchat)}
+          prix={prix}
+          lienAchat={lienAchat}
           items={decklistCards.map((c) => ({
             cardId: c.cardId,
             quantity: c.quantity,
