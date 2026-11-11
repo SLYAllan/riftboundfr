@@ -34,11 +34,13 @@ retirer par `git worktree remove` quand la comparaison ne sert plus.
 **E5 limité aux titres de section** (`720305e3f`) : les titres de bloc (`titre-bloc`) gardent
 leur taille.
 
-**Temps 4, essai carte blanche : fait sur la branche `essai/carte-blanche` (`f1dc833e1`),
-rien de fusionné.** Routes `/essai`, `/essai/deck/[slug]`, `/essai/legende/[slug]`, en
-`noindex`, styles dans `src/app/essai/essai.css`. Captures côte à côte et note dans
-`comparaison-audit/essai/` (http://localhost:3004/essai/). Attend l'avis d'Allan ; si la
-direction est retenue, l'intégration se fait gabarit par gabarit.
+**Temps 4, essai carte blanche : trois directions sur la branche `essai/carte-blanche`
+(`f1dc833e1`, puis `2b31c247a`), rien de fusionné, `noindex`.** 1. le tapis (`/essai`,
+groupe de routes `(tapis)`), 2. le relevé (`/essai/releve`), 3. l'affiche (`/essai/affiche`),
+chacune avec accueil, page de deck et fiche Légende. Données lues par
+`src/app/essai/donnees.ts` (copie courte des lectures des vraies pages). Comparaison des
+quatre versions, 1440 puis 390 px : `comparaison-audit/essai/` (http://localhost:3004/essai/).
+Attend le choix d'Allan ; l'intégration se fera ensuite gabarit par gabarit.
 
 **Reste** : l'avis d'Allan sur l'essai ; E1 (`docs/DESIGN.MD`). Les 18 `.png` de
 `public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
