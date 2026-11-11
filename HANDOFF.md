@@ -9,7 +9,15 @@ Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Commité sur `main`, rien de p
 3, 10 et 11. Temps 3, points « direct » : E8 (`f81644039`) et E10 (`2f8a6130b`).
 `npm run verify` sortie 0, `npm test` 430 verts.
 
-**Temps 3, points « à choisir » (E2 à E7, E9, E11) : rien d'intégré, Allan choisit.** Page
+**Choix d'Allan du 12 novembre, intégrés et commités** (`e6d6b5d47` à `82fcbe05f`) : E2
+réglage 2, E3 sans changement, E4 réglage 2, E5 réglage 3, E6 teinte des bandeaux avec le
+niveau de tournoi neutre sauf sur /decks, E7 réglage 3, E9 réglage 2, E11 réglage 1.
+E2, E5 et E9 passent par des règles hors calque de `globals.css`, limitées par
+`main[data-gabarit="site"]` (posé dans `layout.tsx`) pour laisser l'overlay et le compagnon
+tels quels. **À trancher** : E5 grossit aussi les titres de colonne de l'accueil (« Légendes
+les plus jouées » sur deux lignes) et l'intertitre de niveau de /tournois.
+
+**Temps 3, points « à choisir » (E2 à E7, E9, E11) : la page de réglages qui a servi au choix.** Page
 de réglages sur http://localhost:3004/reglages/ (et `comparaison-audit/reglages-volet-esthetique.html`,
 un seul fichier). Chaque réglage est du CSS ou un script appliqué à la volée sur le build
 local : le détail est dans `comparaison-audit/outils/reglages.mjs`, c'est la base du commit
