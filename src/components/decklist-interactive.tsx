@@ -594,7 +594,7 @@ export function DecklistInteractive({
           {sourceArticleSlug && (
             <Link
               href={`/articles/${sourceArticleSlug}`}
-              className="inline-flex items-center gap-1.5 text-xs text-arcane hover:underline ml-auto"
+              className="inline-flex min-h-6 items-center gap-1.5 text-xs text-arcane hover:underline ml-auto"
             >{t("Voir l’article associé")}</Link>
           )}
         </div>
