@@ -207,23 +207,23 @@ export default async function DeckDetailPage({ params }: PageProps) {
   const cc = deck.tournamentContext ? getTournamentCountryCode(deck.tournamentContext) : null;
   const morceaux: Array<[string, ReactNode]> = [
     ["legende", (
-      <span className="inline-flex items-center gap-2">
+      <span>
         {legendHref ? (
-          <Link href={legendHref} className="inline-flex min-h-6 items-center text-base font-semibold text-arcane hover:underline">
+          <Link href={legendHref} className="py-1 text-base font-semibold text-arcane hover:underline">
             {displayLegendName(deck.legendName)}
           </Link>
         ) : (
           <span className="text-base font-semibold text-arcane">{displayLegendName(deck.legendName)}</span>
         )}
-        {pastilleSet}
+        {" "}{pastilleSet}
       </span>
     )],
   ];
   if (deck.playerName || deck.authorName) morceaux.push(["joueur", <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>]);
   if (deck.placement) morceaux.push(["place", <span>{afficherPlacement(deck.placement, langue)}{deck.record && <span className="ml-1 text-arcane">({deck.record})</span>}</span>]);
   if (deck.tournamentContext) morceaux.push(["tournoi", (
-    <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="inline-flex min-h-6 items-center gap-1 transition-colors hover:text-arcane">
-      {cc && <CountryBadge code={cc} />} {deck.tournamentContext}
+    <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="py-1 transition-colors hover:text-arcane">
+      {cc && <><CountryBadge code={cc} />{" "}</>}{deck.tournamentContext}
     </Link>
   )]);
   if (deck.tournamentTier) morceaux.push(["tier", (
@@ -236,7 +236,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
       {deck.tournamentTier} Tier
     </span>
   )]);
-  if (deck.sourceUrl) morceaux.push(["source", <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 items-center text-arcane hover:underline">Source</a>]);
+  if (deck.sourceUrl) morceaux.push(["source", <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="py-1 text-arcane hover:underline">Source</a>]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -249,14 +249,16 @@ export default async function DeckDetailPage({ params }: PageProps) {
       />
       <div className="mt-6">
         <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
-        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted">
+        {/* Texte courant et pas flex : en flex, un morceau trop long partait seul à
+            la ligne avec son point devant, isolé. */}
+        <p className="mt-2 text-sm leading-7 text-ink-muted">
           {morceaux.map(([cle, contenu], i) => (
-            <span key={cle} className="inline-flex items-center gap-2">
-              {i > 0 && <span aria-hidden="true">&middot;</span>}
+            <span key={cle}>
+              {i > 0 && <span aria-hidden="true" className="mx-2">&middot;</span>}
               {contenu}
             </span>
           ))}
-        </div>
+        </p>
         {deck.description && !DESCRIPTION_GENEREE.test(deck.description) && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
         {interdictions.length > 0 && (
           <p className="mt-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
