@@ -10,10 +10,11 @@ import type { Metadata } from "next";
 import type { Prisma } from "@prisma/client";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 import { preparerFiltreMotCle } from "@/lib/card-keywords";
+import { comparerCartesParSet } from "@/lib/tournament-order";
 
-// Ordres proposés dans le filtre "Tri". Défaut = numéro de collection par set.
+// Ordres proposés dans le filtre "Tri". Le défaut, « numero », n'est pas ici :
+// Prisma ne trie pas sur une liste de sets, il passe par `comparerCartesParSet`.
 const SORTS: Record<string, Prisma.CardOrderByWithRelationInput[]> = {
-  numero: [{ set: "asc" }, { collectorNumber: "asc" }],
   nom: [{ name: "asc" }],
   "energie-asc": [{ energy: { sort: "asc", nulls: "last" } }, { name: "asc" }],
   "energie-desc": [{ energy: { sort: "desc", nulls: "last" } }, { name: "asc" }],
@@ -75,25 +76,31 @@ export default async function CartesPage({ searchParams }: PageProps) {
 
   const candidates = await prisma.card.findMany({
     where,
-    select: { id: true, textPlain: true },
+    select: { id: true, textPlain: true, set: true, setName: true, collectorNumber: true },
   });
   const filtreMecanique = preparerFiltreMotCle(candidates, params.mechanic);
   const mecaniques = filtreMecanique.options;
   if (filtreMecanique.value) where.id = { in: filtreMecanique.cartes.map(({ id }) => id) };
 
-  const orderBy = SORTS[params.sort ?? "numero"] ?? SORTS.numero;
+  const orderBy = SORTS[params.sort ?? ""];
 
   const total = await prisma.card.count({ where });
   const totalPages = Math.ceil(total / PER_PAGE);
   const page = Math.min(pageDemandee, Math.max(1, totalPages));
-  const cards = await prisma.card.findMany({
-    where,
-    // select léger : pas de textPlain/textHtml (lourds, inutiles dans la grille).
-    select: { id: true, riftboundId: true, name: true, imageUrl: true, rarity: true, setName: true, type: true },
-    orderBy,
-    skip: (page - 1) * PER_PAGE,
-    take: PER_PAGE,
-  });
+  // select léger : pas de textPlain/textHtml (lourds, inutiles dans la grille).
+  const select = { id: true, riftboundId: true, name: true, imageUrl: true, rarity: true, setName: true, type: true } as const;
+  let cards;
+  if (orderBy) {
+    cards = await prisma.card.findMany({ where, select, orderBy, skip: (page - 1) * PER_PAGE, take: PER_PAGE });
+  } else {
+    // Tri en mémoire sur les candidates déjà chargées pour le filtre de mécanique.
+    const ids = filtreMecanique.cartes
+      .sort(comparerCartesParSet)
+      .slice((page - 1) * PER_PAGE, page * PER_PAGE)
+      .map(({ id }) => id);
+    const trouvees = await prisma.card.findMany({ where: { id: { in: ids } }, select });
+    cards = trouvees.sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id));
+  }
 
   return (
     <div className="mx-auto max-w-[1400px] px-4 py-5 sm:px-6 sm:py-8 lg:px-8">

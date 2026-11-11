@@ -13,6 +13,24 @@ export function rangSet(set: string | null): number {
   return rang < 0 ? ORDRE_SETS.length : rang;
 }
 
+/**
+ * Ordre par défaut de /cartes : set en cours d'abord, puis les plus anciens, les
+ * promos à la fin ; dans un set, par numéro. Le tri par code (JDG, OGN, OPP…)
+ * ouvrait la page sur la promo des juges et rangeait Radiance au milieu.
+ * Proving Grounds (OGS) est le deck de départ d'Origins : il suit Origins.
+ */
+export function comparerCartesParSet(
+  a: { set: string; setName: string; collectorNumber: number | null },
+  b: { set: string; setName: string; collectorNumber: number | null },
+): number {
+  const rang = (c: typeof a) => rangSet(c.set === "OGS" ? "Origins" : c.setName);
+  return (
+    rang(a) - rang(b) ||
+    a.set.localeCompare(b.set) ||
+    (a.collectorNumber ?? Number.MAX_SAFE_INTEGER) - (b.collectorNumber ?? Number.MAX_SAFE_INTEGER)
+  );
+}
+
 interface TournoiOrdonne {
   slug: string;
   name: string;

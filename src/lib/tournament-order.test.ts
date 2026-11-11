@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { grouperTournoisParSet, voisinsDuTournoi } from "./tournament-order";
+import { comparerCartesParSet, grouperTournoisParSet, voisinsDuTournoi } from "./tournament-order";
 
 const tournois = [
   { slug: "origins", name: "Origins", set: "Origins", tier: "S" as const, date: "2025-11-09" },
@@ -26,5 +26,28 @@ describe("voisinsDuTournoi", () => {
 
     expect(voisins.precedent?.slug).toBe("vendetta-b");
     expect(voisins.suivant).toBeNull();
+  });
+});
+
+describe("comparerCartesParSet", () => {
+  const carte = (set: string, setName: string, collectorNumber: number | null) => ({ set, setName, collectorNumber });
+
+  it("ouvre sur le set en cours, finit par les promos, Proving Grounds suit Origins", () => {
+    const cartes = [
+      carte("JDG", "Riftbound Judge Promotional Cards", 1),
+      carte("OGN", "Origins", 1),
+      carte("OGS", "Proving Grounds", 1),
+      carte("RAD", "Radiance", 2),
+      carte("PR", "Riftbound Promotional Cards", 1),
+      carte("RAD", "Radiance", 1),
+      carte("VEN", "Vendetta", 1),
+    ];
+    expect([...cartes].sort(comparerCartesParSet).map((c) => `${c.set}-${c.collectorNumber}`)).toEqual([
+      "RAD-1", "RAD-2", "VEN-1", "OGN-1", "OGS-1", "JDG-1", "PR-1",
+    ]);
+  });
+
+  it("range une carte sans numéro après les numérotées de son set", () => {
+    expect(comparerCartesParSet(carte("RAD", "Radiance", null), carte("RAD", "Radiance", 300))).toBeGreaterThan(0);
   });
 });
