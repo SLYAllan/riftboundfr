@@ -120,7 +120,7 @@ function ListeErrata({ errata, cards, t }: { errata: ErrataEntry[]; cards: BanCa
       {errata.map((e) => {
         const card = bestEdition(cards, e.name);
         return (
-          <li key={e.name} className="flex flex-col gap-4 rounded-xl border border-hairline bg-surface p-4 sm:flex-row">
+          <li key={e.name} className="flex flex-col gap-4 rounded-card border border-hairline bg-surface p-4 sm:flex-row">
             {card?.imageUrl && (
               <Link href={`/cartes/${card.riftboundId}`} className="shrink-0 self-center sm:self-start">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

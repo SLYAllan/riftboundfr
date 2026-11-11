@@ -38,7 +38,7 @@ export default async function CollectionPage() {
     return (
       <div className="mx-auto max-w-7xl px-4 py-8">
         <h1 className="font-display text-2xl font-bold">Ma collection</h1>
-        <div className="mt-6 rounded-xl border border-hairline bg-surface-raised/40 p-8 text-center">
+        <div className="mt-6 rounded-card border border-hairline bg-surface-raised/40 p-8 text-center">
           <p className="mb-4 text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
           <BoutonLien href="/api/auth/discord">{t("Se connecter avec Discord")}</BoutonLien>
         </div>

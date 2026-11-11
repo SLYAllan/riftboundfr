@@ -229,7 +229,7 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantes
       </div>
 
       {!hasBoth && (
-        <div className="rounded-xl border border-hairline bg-surface p-12 text-center text-ink-muted">{t("Collez deux codes de decks et cliquez sur Comparer pour voir les différences.")}</div>
+        <div className="rounded-card border border-hairline bg-surface p-12 text-center text-ink-muted">{t("Collez deux codes de decks et cliquez sur Comparer pour voir les différences.")}</div>
       )}
 
       {hasBoth && (
@@ -259,7 +259,7 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantes
           </div>
 
           {/* Energy curve comparison */}
-          <div className="rounded-xl border border-hairline bg-surface p-4">
+          <div className="rounded-card border border-hairline bg-surface p-4">
             <h3 className="text-sm font-bold text-ink mb-3">{t("Courbe d’énergie")}</h3>
             <div className="space-y-1">
               {Array.from({ length: 9 }, (_, i) => i).map((cost) => (
@@ -280,17 +280,17 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantes
 
           {/* Stats comparison */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-xl border border-hairline bg-surface p-4">
+            <div className="rounded-card border border-hairline bg-surface p-4">
               <DeckStats cards={deckA.cards} label={`A - ${displayLegendName(deckA.legend)}`} color="text-arcane" />
             </div>
-            <div className="rounded-xl border border-hairline bg-surface p-4">
+            <div className="rounded-card border border-hairline bg-surface p-4">
               <DeckStats cards={deckB.cards} label={`B - ${displayLegendName(deckB.legend)}`} color="text-violet-light" />
             </div>
           </div>
 
           {/* Diff view */}
           {view === "diff" && (
-            <div className="rounded-xl border border-hairline overflow-hidden">
+            <div className="rounded-card border border-hairline overflow-hidden">
               {["main", "rune", "battlefield", "side"].map((section) => {
                 const sectionDiff = diff.filter((d) => d.section === section);
                 if (sectionDiff.length === 0) return null;
@@ -352,7 +352,7 @@ export function DeckCompare({ initialA, initialB, invalidA, invalidB, manquantes
           {view === "side-by-side" && (
             <div className="grid grid-cols-2 gap-4">
               {[deckA, deckB].map((deck, idx) => (
-                <div key={idx} className="rounded-xl border border-hairline bg-surface overflow-hidden">
+                <div key={idx} className="rounded-card border border-hairline bg-surface overflow-hidden">
                   <div className={cn("px-4 py-2 text-sm font-bold border-b border-hairline", idx === 0 ? "text-arcane" : "text-violet-light")}>
                     {displayLegendName(deck.legend)}
                   </div>

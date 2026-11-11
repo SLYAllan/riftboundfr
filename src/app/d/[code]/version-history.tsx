@@ -178,7 +178,7 @@ export function VersionHistory({ currentVersion, history, shareCode, estAuteur }
   };
 
   return (
-    <div className="rounded-xl border border-hairline bg-surface">
+    <div className="rounded-card border border-hairline bg-surface">
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}

@@ -136,7 +136,7 @@ export function TierListPerso({ legendes, initial, titreInitial, officiel }: Pro
 
   return (
     <div className="mt-6">
-      <div className="flex flex-col gap-3 rounded-xl border border-hairline bg-surface p-3 lg:flex-row lg:items-center">
+      <div className="flex flex-col gap-3 rounded-card border border-hairline bg-surface p-3 lg:flex-row lg:items-center">
         <input
           value={titre}
           onChange={(e) => {
@@ -185,7 +185,7 @@ export function TierListPerso({ legendes, initial, titreInitial, officiel }: Pro
         </h2>
       )}
 
-      <div className="mt-4 overflow-hidden rounded-xl border border-hairline">
+      <div className="mt-4 overflow-hidden rounded-card border border-hairline">
         {RANGS.map((rang) => (
           <div key={rang} className="flex border-b border-hairline last:border-b-0" {...deposer(rang)}>
             {/* La lettre est le bouton : sans souris ni glisser, c'est par elle

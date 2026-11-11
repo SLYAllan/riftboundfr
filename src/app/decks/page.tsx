@@ -218,7 +218,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             l'onglet des decks de tournoi plus bas. */}
         <details
           open={Boolean(legendFilter || domainFilter || tagFilter)}
-          className={cn("group mt-4 rounded-xl border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
+          className={cn("group mt-4 rounded-card border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
         >
           <summary className="flex min-h-11 list-none items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted group-open:mb-3 sm:pointer-events-none sm:mb-3 sm:min-h-6 [&::-webkit-details-marker]:hidden">
             <span className="flex min-w-0 items-center gap-2">
@@ -474,7 +474,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           sinon on ne verrait pas pourquoi la liste est courte. */}
       <details
         open={Boolean(params.legend || (params.set && params.set !== "all") || params.tournament || filtres.legales)}
-        className={cn("group mt-4 rounded-xl border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
+        className={cn("group mt-4 rounded-card border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
       >
         <summary className="flex min-h-11 list-none items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted group-open:mb-3 sm:pointer-events-none sm:mb-3 sm:min-h-6 [&::-webkit-details-marker]:hidden">
           <span className="flex min-w-0 items-center gap-2">

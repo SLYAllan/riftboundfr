@@ -47,7 +47,7 @@ const SUGGESTIONS: Record<LangueRegles, string[]> = {
 
 // Une carte de résultat et un bloc de règle partagent la même géométrie : rayon
 // extérieur 12, rembourrage 16, donc rayon intérieur 8 pour rester concentrique.
-const CARD = "rounded-xl border border-hairline bg-surface p-4 shadow-[0_1px_2px_rgba(0,0,0,0.28)]";
+const CARD = "rounded-card border border-hairline bg-surface p-4 shadow-[0_1px_2px_rgba(0,0,0,0.28)]";
 
 export default async function ReglesPage({
   searchParams,

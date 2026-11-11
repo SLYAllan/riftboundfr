@@ -43,7 +43,7 @@ function TournamentRow({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-xl border border-hairline bg-surface/50 transition-colors duration-200",
+        "group relative overflow-hidden rounded-card border border-hairline bg-surface/50 transition-colors duration-200",
         "hover:border-hairline-accent",
         featured && "border-hairline-strong bg-surface/70",
       )}

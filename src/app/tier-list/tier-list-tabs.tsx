@@ -117,7 +117,7 @@ export function TierListTabs({
         {activeTierList.setContext && ` - Set ${activeTierList.setContext}`}
       </p>
 
-      <div className="mt-8 rounded-xl border border-hairline overflow-visible">
+      <div className="mt-8 rounded-card border border-hairline overflow-visible">
         {tierOrder.map((tier, tierIdx) => {
           const entries = grouped[tier];
           if (!entries || entries.length === 0) return null;

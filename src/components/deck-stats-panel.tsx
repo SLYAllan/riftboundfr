@@ -169,7 +169,7 @@ export function DeckStatsPanel({ cards }: { cards: DecklistCard[] }) {
   if (principal.length === 0) return null;
 
   return (
-    <div className="rounded-xl border border-hairline bg-surface p-5 space-y-5">
+    <div className="rounded-card border border-hairline bg-surface p-5 space-y-5">
       <EnergyCurve cartes={principal} />
       <TypeDistribution cartes={principal} />
       <DomainDistribution cartes={principal} />

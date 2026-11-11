@@ -206,7 +206,7 @@ export function BinderExplorer({
       </div>
 
       {/* Recherche et filtres restent visibles : ce sont les contrôles principaux du classeur. */}
-      <div className="mt-4 rounded-xl border border-hairline bg-surface-raised/30 p-3">
+      <div className="mt-4 rounded-card border border-hairline bg-surface-raised/30 p-3">
         {/* Ligne 1 : recherche + statut + tri */}
         <div className="flex flex-wrap items-center gap-2">
           <input value={q} onChange={(e) => { setQ(e.target.value); setPage(1); }} placeholder={t("Rechercher une carte…")}
@@ -284,7 +284,7 @@ export function BinderExplorer({
       )}
       {erreurPartage && <p role="alert" className="mt-2 text-sm text-error-light">{erreurPartage}</p>}
       {etat === "hors-ligne" && (
-        <div role="alert" className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-hairline bg-surface p-4 text-sm text-error-light">
+        <div role="alert" className="mt-3 flex flex-wrap items-center gap-2 rounded-card border border-hairline bg-surface p-4 text-sm text-error-light">
           <AlertTriangle size={16} className="mt-0.5 shrink-0" aria-hidden />
           <span>Impossible d&apos;enregistrer ce classeur. Vos changements attendent, rien n&apos;est perdu.</span>
           <button type="button" onClick={renvoyer} className="ml-auto inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-sm font-semibold text-ink-secondary hover:text-ink">
