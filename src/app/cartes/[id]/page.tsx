@@ -144,7 +144,10 @@ export default async function CardDetailPage({ params }: PageProps) {
         ]}
       />
       <div className="mt-6 grid gap-8 lg:grid-cols-[400px_1fr]">
-        <div><CarteInclinable><CardImage src={card.imageUrl} alt={card.name} size="xl" priority hoverZoom={false} /></CarteInclinable></div>
+        {/* Collée sous la barre sur ordinateur : la colonne de droite fait 1 000 px de
+            plus que l'image, qui laissait un grand vide en défilant. Choix d'Allan du
+            12 novembre 2026 (E11, réglage 1). */}
+        <div><div className="lg:sticky lg:top-22"><CarteInclinable><CardImage src={card.imageUrl} alt={card.name} size="xl" priority hoverZoom={false} /></CarteInclinable></div></div>
         <div>
           <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
