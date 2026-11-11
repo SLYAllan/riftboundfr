@@ -63,7 +63,7 @@ export default async function GuideDebuterPage() {
         {/* === 1. BUT DU JEU === */}
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Quel est le but du jeu ?")}</h2>
-          <div className="mt-4 rounded-card border-2 border-gold/30 bg-gold-glow p-6">
+          <div className="mt-4 rounded-card border-2 border-gold/30 bg-surface p-6">
             <p className="text-lg font-semibold text-gold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Premier joueur à atteindre 8 points")}</p>
             <p className="mt-2 text-sm text-ink-secondary">{t("Il y a 2 champs de bataille en jeu. Vous marquez des points en y envoyant vos unités :")}</p>
             <div className="mt-4 space-y-3 text-sm text-ink-secondary">

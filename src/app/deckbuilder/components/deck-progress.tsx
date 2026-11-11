@@ -63,9 +63,9 @@ export function DeckProgress({
               onClick={() => onStepClick(step.filterTab)}
               className={cn(
                 "flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold transition-colors whitespace-nowrap",
-                isActive && "bg-arcane/10 text-arcane",
-                !isActive && done && "text-emerald-400 hover:bg-emerald-500/10",
-                !isActive && isOver && "text-error hover:bg-error/10",
+                isActive && "bg-surface-raised text-arcane",
+                !isActive && done && "text-emerald-400 hover:bg-surface-raised",
+                !isActive && isOver && "text-error hover:bg-surface-raised",
                 !isActive && !done && !isOver && "text-ink-muted hover:bg-surface-raised hover:text-ink",
               )}
             >
@@ -92,7 +92,7 @@ export function DeckProgress({
       })}
 
       {allComplete && (
-        <div className="ml-auto flex items-center gap-1 rounded-md bg-emerald-500/10 px-2.5 py-1 text-xs font-bold text-emerald-400 whitespace-nowrap">
+        <div className="ml-auto flex items-center gap-1 rounded-md bg-surface-raised px-2.5 py-1 text-xs font-bold text-emerald-400 whitespace-nowrap">
           <Check size={13} /> Deck valide
         </div>
       )}

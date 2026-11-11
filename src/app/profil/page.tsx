@@ -257,7 +257,7 @@ export default async function ProfilPage({
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         <Link href="/collection" className="card-hover rounded-card border border-hairline bg-surface p-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-arcane to-violet">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-arcane">
               <Library size={22} className="text-white" aria-hidden="true" />
             </div>
             <div className="min-w-0">
@@ -270,12 +270,12 @@ export default async function ProfilPage({
           </div>
           {/* La valeur est écrite juste au-dessus : la barre ne porte rien de plus. */}
           <div className="mt-3 h-1.5 overflow-hidden rounded bg-surface-raised" aria-hidden="true">
-            <div className="h-full rounded bg-gradient-to-r from-arcane to-violet" style={{ width: `${completion}%` }} />
+            <div className="h-full rounded bg-arcane" style={{ width: `${completion}%` }} />
           </div>
         </Link>
 
         <Link href="/profil/overlay" className="card-hover flex items-center gap-3 rounded-card border border-hairline bg-surface p-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet to-violet-dark">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet">
             <Radio size={22} className="text-white" aria-hidden="true" />
           </div>
           <div className="min-w-0">
@@ -286,7 +286,7 @@ export default async function ProfilPage({
         </Link>
 
         <Link href="/deckbuilder" className="card-hover flex items-center gap-3 rounded-card border border-hairline bg-surface p-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-gold to-red-400">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold">
             <Hammer size={22} className="text-white" aria-hidden="true" />
           </div>
           <div className="min-w-0">

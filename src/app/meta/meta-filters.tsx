@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "@/components/lien";
 import { useLangue, useT } from "@/components/i18n-provider";
@@ -115,14 +116,17 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
           </div>
           <label className="block">
             <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Tournoi")}</span>
+            <span className="relative block">
             <select
               value={selectedTournament}
               onChange={(event) => setSelectedTournament(event.target.value)}
-              className="min-h-11 w-full rounded-lg border border-hairline bg-surface-raised px-3 text-sm text-ink focus:border-arcane focus:outline-none focus-visible:ring-2 focus-visible:ring-arcane"
+              className="min-h-11 w-full appearance-none rounded-lg border border-hairline bg-canvas pl-3 pr-9 text-sm text-ink focus:border-arcane focus:outline-none focus-visible:ring-2 focus-visible:ring-arcane"
             >
               <option value="all">{t("Tous les tournois")}</option>
               {tournoisDisponibles.map((tournoi) => <option key={tournoi} value={tournoi}>{tournoi}</option>)}
             </select>
+            <ChevronDown size={15} aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted" />
+            </span>
           </label>
         </div>
       </section>

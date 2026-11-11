@@ -12,15 +12,17 @@ interface SearchBarProps {
   parsed: ParsedSearch;
 }
 
+// Texte coloré sur fond neutre : un fond teinté sous un texte de la même couleur
+// est la seule combinaison que la charte du site écarte (AGENTS.md, « Interface »).
 const TOKEN_COLORS: Record<string, string> = {
-  type: "bg-violet/20 text-violet-light border-violet/30",
-  domain: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-  set: "bg-amber-500/20 text-amber-400 border-amber-500/30",
-  energy: "bg-arcane/20 text-arcane border-arcane/30",
-  power: "bg-gold/20 text-gold border-gold/30",
-  might: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-  rarity: "bg-fuchsia-500/20 text-fuchsia-400 border-fuchsia-500/30",
-  tag: "bg-sky-500/20 text-sky-400 border-sky-500/30",
+  type: "bg-surface-raised text-violet-light border-violet/30",
+  domain: "bg-surface-raised text-emerald-400 border-emerald-500/30",
+  set: "bg-surface-raised text-amber-400 border-amber-500/30",
+  energy: "bg-surface-raised text-arcane border-arcane/30",
+  power: "bg-surface-raised text-gold border-gold/30",
+  might: "bg-surface-raised text-orange-400 border-orange-500/30",
+  rarity: "bg-surface-raised text-fuchsia-400 border-fuchsia-500/30",
+  tag: "bg-surface-raised text-sky-400 border-sky-500/30",
 };
 
 const FIELD_LABELS: Record<string, string> = {

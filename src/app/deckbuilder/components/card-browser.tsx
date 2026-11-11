@@ -405,13 +405,13 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
 
       <div className="flex-1 overflow-y-auto thin-scrollbar p-3">
         {activeTab === "legend" && !hasLegend && !searchQuery && selectedDomains.size === 0 && (
-          <div className="mb-3 rounded-lg bg-gold/5 border border-gold/20 p-2.5 text-center text-sm text-gold">
+          <div className="mb-3 rounded-lg bg-surface-raised border border-gold/20 p-2.5 text-center text-sm text-gold">
             {t("Choisissez une Légende pour commencer votre deck")}
           </div>
         )}
 
         {activeTab !== "legend" && !hasLegend && (
-          <div className="mb-3 rounded-lg bg-gold/5 border border-gold/20 p-2.5 text-center text-sm text-gold">
+          <div className="mb-3 rounded-lg bg-surface-raised border border-gold/20 p-2.5 text-center text-sm text-gold">
             {t("Sélectionnez d’abord une Légende dans l’onglet Légende")}
           </div>
         )}

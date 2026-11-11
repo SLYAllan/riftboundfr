@@ -200,7 +200,7 @@ export function ExportModal({
                   {updated ? (
                     <a
                       href={`/d/${updateShareCode}`}
-                      className="block w-full rounded-lg bg-success/20 px-3 py-2 text-center text-sm font-semibold text-success"
+                      className="block w-full rounded-lg border border-success/40 bg-surface-raised px-3 py-2 text-center text-sm font-semibold text-success"
                     >{t("Deck mis à jour - voir la page du deck")}</a>
                   ) : (
                     <button
@@ -235,7 +235,7 @@ export function ExportModal({
                       {user.avatarUrl ? (
                         <img src={user.avatarUrl} alt="" className="h-8 w-8 rounded-full" />
                       ) : (
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-arcane/20 text-arcane text-xs font-bold">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-raised text-arcane text-xs font-bold">
                           {user.username[0]?.toUpperCase()}
                         </div>
                       )}

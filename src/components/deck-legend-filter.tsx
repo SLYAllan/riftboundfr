@@ -30,7 +30,7 @@ export function DeckLegendFilter({ legends }: { legends: string[] }) {
 
   return (
     <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger className="group flex h-11 min-w-56 cursor-pointer items-center gap-2 rounded-lg border border-hairline-strong bg-canvas px-2.5 text-sm text-ink focus-visible:outline-2 focus-visible:outline-arcane">
+      <Popover.Trigger className="group flex h-11 min-w-56 cursor-pointer items-center gap-2 rounded-lg border border-hairline-field bg-canvas px-2.5 text-sm text-ink focus-visible:outline-2 focus-visible:outline-arcane">
         <span className="relative h-7 w-7 shrink-0 overflow-hidden rounded-md bg-surface-raised">
           {currentIcon ? <Image src={currentIcon} alt="" fill sizes="28px" className="object-cover" /> : <Users className="m-1.5 text-ink-muted" size={16} />}
         </span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { ChevronDown } from "lucide-react";
 import { useLien, useT } from "@/components/i18n-provider";
 import { modifierParametresDecks } from "@/lib/deck-listing-params";
 
@@ -34,7 +35,10 @@ export function DeckFiltreSelect({
   const params = useSearchParams();
   const courant = params.get(nom) ?? valeurParDefaut;
 
+  // Même allure que les menus de Légende et de tournoi posés à côté : sans
+  // `appearance-none`, la flèche du système et son fond tranchaient sur la rangée.
   return (
+    <span className="relative inline-flex">
     <select
       value={courant}
       aria-label={libelle}
@@ -43,7 +47,7 @@ export function DeckFiltreSelect({
         const q = suivant.toString();
         router.push(lien(q ? `${chemin}?${q}` : chemin));
       }}
-      className="h-11 min-h-11 cursor-pointer rounded-lg border border-hairline-strong bg-surface px-3 text-sm text-ink focus:border-arcane"
+      className="h-11 min-h-11 cursor-pointer appearance-none rounded-lg border border-hairline-strong bg-canvas pl-3 pr-9 text-sm text-ink focus:border-arcane"
     >
       <option value="all">{t(toutes)}</option>
       {options.map((o) => (
@@ -52,5 +56,7 @@ export function DeckFiltreSelect({
         </option>
       ))}
     </select>
+    <ChevronDown size={15} aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted" />
+    </span>
   );
 }

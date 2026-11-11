@@ -35,7 +35,7 @@ export function RuneSuggestionPanel({ mainDeck, legendDomains, currentRunes, onA
         {!isSameAsCurrent && (
           <button
             onClick={() => onApply(suggestions)}
-            className="rounded-md bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold hover:bg-gold/20 transition-colors"
+            className="rounded-md bg-surface-raised px-2 py-0.5 text-[10px] font-semibold text-gold hover:bg-hairline-strong transition-colors"
           >
             Appliquer
           </button>

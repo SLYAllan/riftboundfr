@@ -31,7 +31,7 @@ export function DeckTournamentFilter({ options }: { options: TournoiOption[] }) 
 
   return (
     <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger className="group flex h-11 min-w-52 cursor-pointer items-center gap-2 rounded-lg border border-hairline-strong bg-canvas px-3 text-sm text-ink focus-visible:outline-2 focus-visible:outline-arcane">
+      <Popover.Trigger className="group flex h-11 min-w-52 cursor-pointer items-center gap-2 rounded-lg border border-hairline-field bg-canvas px-3 text-sm text-ink focus-visible:outline-2 focus-visible:outline-arcane">
         {selection?.pays ? <CountryBadge code={selection.pays} /> : <Trophy size={16} className="text-ink-muted" />}
         <span className="min-w-0 flex-1 truncate">{selection?.libelle ?? t("Tous les tournois")}</span>
         <ChevronDown size={15} className={`shrink-0 text-ink-muted transition-transform ${open ? "rotate-180" : ""}`} />
