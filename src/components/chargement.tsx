@@ -11,11 +11,14 @@ import { tr } from "@/lib/i18n-server";
  * Les rectangles gris ne sont là que pour tenir la place et éviter le saut de
  * page à l'arrivée du contenu ; ils sont muets pour les lecteurs d'écran, seule
  * la barre annonce l'attente.
+ *
+ * `min-h-dvh` : un écran d'attente plus court que la fenêtre montrait le pied
+ * de page, que le contenu repoussait ensuite hors de l'écran (CLS 0,10 à 0,14).
  */
 export async function Chargement({ lignes = 4 }: { lignes?: number }) {
   const t = await tr();
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <div className="mx-auto min-h-dvh max-w-7xl px-4 py-12 sm:px-6">
       <div
         role="progressbar"
         aria-label={t("Chargement…")}
