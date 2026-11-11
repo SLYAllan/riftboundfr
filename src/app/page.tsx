@@ -302,8 +302,11 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Center - Guides list */}
-          <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
+          {/* Center - Guides list. Sur téléphone, après la tier list : « riftbound
+              meta » et « tier list riftbound » sont les requêtes de tête, et la tier
+              list arrivait au troisième écran. `order-1` seul suffit : les deux
+              autres blocs gardent l'ordre du code. */}
+          <div className="order-1 lg:order-none rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="border-b border-hairline px-5 py-3">
               <h2
                 className="text-lg font-bold"
