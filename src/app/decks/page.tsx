@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { Hammer, Users, Trophy, Star, Eye, Heart, Search, SlidersHorizontal } from "lucide-react";
+import { Hammer, Users, Trophy, Star, Eye, Heart, Search, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { DeckLegendFilter } from "@/components/deck-legend-filter";
 import { DeckFiltreSelect } from "@/components/deck-filtre-select";
@@ -56,6 +56,12 @@ const TIER_BG: Record<string, string> = {
 // Sans décimales : la pastille est étroite, et « 12 € » se lit d'un coup d'œil
 // là où « 12,40 € » se lit deux fois.
 const eurosCourts = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+
+// Le bloc de filtres est un <details> fermé sur téléphone ; au-dessus de 640 px il
+// doit rester ouvert quoi qu'il arrive, sans attendre de JavaScript ni décaler la
+// page. Un navigateur sans `::details-content` montre le bloc replié, qui s'ouvre
+// d'un clic.
+const DETAILS_OUVERT_SM = "sm:[&::details-content]:[content-visibility:visible]";
 
 const CATEGORIES = [
   { key: "community", label: "Communautaires", href: "/decks?cat=community", icon: Users, isLink: false },
@@ -191,7 +197,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </form>
         {search && <p className="mt-2 text-sm text-ink-secondary">{t("Résultats pour")} <strong>{search}</strong>. <Link href={hrefDecks({ q: null })} className="text-arcane hover:underline">{t("Effacer la recherche")}</Link></p>}
 
-        <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-1 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
+        <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
           <Link href={hrefDecks({ cat: null, domain: null, tag: null })} className={cn("inline-flex min-h-11 items-center justify-center rounded-lg px-4 text-sm font-semibold transition-colors", !cat ? "bg-arcane text-canvas" : "text-ink-secondary hover:bg-surface-raised hover:text-ink")}>{t("Compétitifs")}</Link>
           {CATEGORIES.map((c) => {
             const Icon = c.icon;
@@ -205,8 +211,21 @@ export default async function DecksPage({ searchParams }: PageProps) {
           <Link href="/deckbuilder" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold text-violet-light transition-colors hover:bg-surface-raised hover:text-white sm:ml-auto"><Hammer size={15} /> {t("Créer un deck")}</Link>
         </nav>
 
-        <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
-          <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</div>
+        {/* Replié sur téléphone, ouvert dès qu'un filtre est posé : même règle que
+            l'onglet des decks de tournoi plus bas. */}
+        <details
+          open={Boolean(legendFilter || domainFilter || tagFilter)}
+          className={cn("group mt-4 rounded-xl border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
+        >
+          <summary className="flex min-h-11 list-none items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted group-open:mb-3 sm:pointer-events-none sm:mb-3 sm:min-h-6 [&::-webkit-details-marker]:hidden">
+            <span className="flex min-w-0 items-center gap-2">
+              <SlidersHorizontal size={14} className="shrink-0" /> {t("Affiner les résultats")}
+              <span className="truncate font-normal normal-case tracking-normal text-ink-secondary sm:hidden">
+                {[legendFilter, domainFilter, tagFilter && t(tagFilter)].filter(Boolean).join(" · ")}
+              </span>
+            </span>
+            <ChevronDown size={16} aria-hidden="true" className="shrink-0 transition-transform group-open:rotate-180 sm:hidden" />
+          </summary>
         {/* Domain filters */}
         <div className="flex flex-wrap gap-1.5">
           <Link href={comLink({ domain: null })} className={cn("rounded-full px-2.5 py-1 text-xs font-semibold transition-colors", !domainFilter ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink")}>{t("Tous domaines")}</Link>
@@ -243,7 +262,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
             </Link>
           </div>
         </div>
-        </div>
+        </details>
 
         <div className="mt-4 text-sm text-ink-muted">
           {communityDecks.length} {t(communityDecks.length === 1 ? "deck communautaire" : "decks communautaires")}
@@ -416,7 +435,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </p>
       )}
 
-      <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-1 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
+      <nav aria-label={t("Catégories de decks")} className="mt-6 grid grid-cols-2 gap-1 rounded-xl border border-hairline bg-surface p-1.5 sm:flex sm:flex-wrap">
         <Link
           href={hrefDecks({ cat: null, domain: null, tag: null })}
           className={cn(
@@ -447,11 +466,24 @@ export default async function DecksPage({ searchParams }: PageProps) {
       {/* Une seule ligne de filtres. Avant, trois rangées de pastilles construisaient
           leur lien à la main : changer de set effaçait le tournoi en cours, et
           l'ensemble tenait en moins de hauteur qu'une carte de deck. */}
-      <div className="mt-4 rounded-xl border border-hairline bg-surface p-3">
-        <div className="mb-3 flex items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted">
-          <span className="flex items-center gap-2"><SlidersHorizontal size={14} /> {t("Affiner les résultats")}</span>
-          <Link href="/decks?set=all" className="inline-flex min-h-11 items-center text-arcane hover:underline sm:min-h-6">{t("Effacer les filtres")}</Link>
-        </div>
+      {/* Replié sur téléphone : ouvert, il poussait le premier deck à 978 px, sous
+          le premier écran. Il s'ouvre seul quand un filtre est posé dans l'adresse,
+          sinon on ne verrait pas pourquoi la liste est courte. */}
+      <details
+        open={Boolean(params.legend || (params.set && params.set !== "all") || params.tournament || filtres.legales)}
+        className={cn("group mt-4 rounded-xl border border-hairline bg-surface p-3", DETAILS_OUVERT_SM)}
+      >
+        <summary className="flex min-h-11 list-none items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ink-muted group-open:mb-3 sm:pointer-events-none sm:mb-3 sm:min-h-6 [&::-webkit-details-marker]:hidden">
+          <span className="flex min-w-0 items-center gap-2">
+            <SlidersHorizontal size={14} className="shrink-0" /> {t("Affiner les résultats")}
+            <span className="truncate font-normal normal-case tracking-normal text-ink-secondary sm:hidden">
+              {[filtres.legend, filtres.set, filtres.tournament && TOURNAMENT_FILTERS.find((tf) => tf.ctx === filtres.tournament)?.label, filtres.legales && t("Sans carte interdite")].filter(Boolean).join(" · ")}
+            </span>
+          </span>
+          <ChevronDown size={16} aria-hidden="true" className="shrink-0 transition-transform group-open:rotate-180 sm:hidden" />
+          <Link href="/decks?set=all" className="pointer-events-auto hidden min-h-11 items-center text-arcane hover:underline sm:inline-flex sm:min-h-6">{t("Effacer les filtres")}</Link>
+        </summary>
+        <Link href="/decks?set=all" className="mb-2 inline-flex min-h-11 items-center text-xs font-semibold text-arcane hover:underline sm:hidden">{t("Effacer les filtres")}</Link>
         <div className="flex flex-wrap items-center gap-2">
         <Suspense>
           <DeckLegendFilter legends={legendNames} />
@@ -515,7 +547,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
           )}
         </div>
         </div>
-      </div>
+      </details>
 
 
       <div className="mt-4 text-sm text-ink-muted">
