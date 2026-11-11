@@ -1,5 +1,6 @@
 "use client";
 
+import { classePastilleSet } from "@/components/pastille-set";
 import { useState } from "react";
 import Link from "@/components/lien";
 import Image from "next/image";
@@ -102,18 +103,13 @@ export function HomeTierList({
       </div>
 
       {tierLists.length > 1 && (
-        <div className="flex shrink-0 border-b border-hairline">
+        <div className="flex shrink-0 flex-wrap gap-1.5 border-b border-hairline px-4 py-3">
           {tierLists.map((tl, i) => (
             <button
               key={tl.id}
               onClick={() => setActiveIdx(i)}
-              className={cn(
-                "flex-1 py-2 text-xs font-semibold transition-colors",
-                activeIdx === i
-                  ? "text-arcane border-b-2 border-arcane bg-arcane/5"
-                  : "text-ink-muted hover:text-ink hover:bg-surface-raised/50",
-              )}
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              aria-pressed={activeIdx === i}
+              className={classePastilleSet(activeIdx === i)}
             >
               {SET_SHORT[tl.setContext ?? ""] ?? tl.setContext ?? tl.title}
             </button>

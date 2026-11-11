@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "@/components/lien";
 import { cn, formatDate, displayLegendName } from "@/lib/utils";
 import { getBannerUrl } from "@/lib/banners";
@@ -15,7 +15,7 @@ import {
 import type { TournamentData } from "@/app/tournois/page";
 import { useT } from "@/components/i18n-provider";
 import { grouperTournoisParSet, ORDRE_SETS } from "@/lib/tournament-order";
-import { DeckFiltreSelect } from "@/components/deck-filtre-select";
+import { classePastilleSet } from "@/components/pastille-set";
 
 const MEDAL_RING: Record<number, string> = {
   1: "ring-2 ring-gold",
@@ -202,12 +202,10 @@ export function TournamentList({
   tournaments,
   setChoisi,
   comptesParSet,
-  total,
 }: {
   tournaments: TournamentData[];
   setChoisi: string;
   comptesParSet: Record<string, number>;
-  total: number;
 }) {
   const t = useT();
   const [query, setQuery] = useState("");
@@ -231,16 +229,20 @@ export function TournamentList({
     <div>
       {/* Filtres */}
       <div className="mb-10 flex flex-col gap-3 border-b border-hairline pb-6 sm:flex-row sm:items-center sm:justify-between">
-        <Suspense>
-          <DeckFiltreSelect
-            nom="set"
-            chemin="/tournois"
-            libelle={t("Filtrer par set")}
-            toutes={`${t("Tous les sets")} (${total})`}
-            valeurParDefaut={setChoisi}
-            options={ORDRE_SETS.filter((s) => comptesParSet[s]).map((s) => ({ valeur: s, libelle: `${s} (${comptesParSet[s]})` }))}
-          />
-        </Suspense>
+        {/* Le set est le seul filtre de la page : des pastilles, comme sur /meta,
+            plutôt qu'un menu qui cache les choix. */}
+        <nav aria-label={t("Filtrer par set")} className="flex flex-wrap gap-1.5">
+          {["all", ...ORDRE_SETS.filter((s) => comptesParSet[s])].map((s) => (
+            <Link
+              key={s}
+              href={`/tournois?set=${s}`}
+              aria-current={setChoisi === s ? "page" : undefined}
+              className={classePastilleSet(setChoisi === s)}
+            >
+              {s === "all" ? t("Tous") : s}
+            </Link>
+          ))}
+        </nav>
         <div className="relative sm:w-64">
           <Search size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted" />
           <input

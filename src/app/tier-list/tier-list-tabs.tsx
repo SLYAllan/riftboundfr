@@ -1,5 +1,6 @@
 "use client";
 
+import { classePastilleSet } from "@/components/pastille-set";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "@/components/lien";
@@ -84,19 +85,13 @@ export function TierListTabs({
       <div className="mt-8 flex justify-center px-4">
         {/* Les onglets font 412px : sans retour à la ligne, ils débordaient
             l'écran à 320px de large. */}
-        <div className="inline-flex max-w-full flex-wrap justify-center rounded-lg border border-hairline bg-surface p-1 gap-1">
+        <div className="flex max-w-full flex-wrap justify-center gap-1.5">
           {tierLists.map((tl) => (
             <button
               key={tl.id}
               onClick={() => setActiveTab(tl.id)}
               aria-pressed={activeTab === tl.id}
-              className={cn(
-                "min-h-11 rounded-md px-4 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane",
-                activeTab === tl.id
-                  ? "bg-arcane text-canvas shadow-sm"
-                  : "text-ink-secondary hover:text-ink hover:bg-surface-raised",
-              )}
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              className={classePastilleSet(activeTab === tl.id)}
             >
               {SET_LABELS[tl.setContext ?? ""] ?? tl.title}
               {tl.current && (

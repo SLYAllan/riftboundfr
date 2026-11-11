@@ -7,6 +7,7 @@ import Link from "@/components/lien";
 import { useLangue, useT } from "@/components/i18n-provider";
 import { legendHref } from "@/lib/legend-fiche";
 import { cn } from "@/lib/utils";
+import { classePastilleSet } from "@/components/pastille-set";
 import { calculerMeta, type TrancheMeta } from "@/lib/meta-stats";
 import { SET_EN_COURS } from "@/lib/tournament-order";
 
@@ -92,10 +93,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
               <button
                 type="button"
                 onClick={() => choisirSet("all")}
-                className={cn(
-                  "min-h-10 rounded-lg px-3 text-sm font-semibold transition-colors",
-                  selectedSet === "all" ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
-                )}
+                className={classePastilleSet(selectedSet === "all")}
               >
                 {t("Tous")}
               </button>
@@ -104,10 +102,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
                   key={set}
                   type="button"
                   onClick={() => choisirSet(set)}
-                  className={cn(
-                    "min-h-10 rounded-lg px-3 text-sm font-semibold transition-colors",
-                    selectedSet === set ? "bg-arcane text-canvas" : "bg-surface-raised text-ink-muted hover:text-ink",
-                  )}
+                  className={classePastilleSet(selectedSet === set)}
                 >
                   {set}
                 </button>

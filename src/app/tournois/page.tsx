@@ -267,7 +267,6 @@ export default async function TournoisPage({ searchParams }: { searchParams: Pro
           tournaments={affiches}
           setChoisi={setChoisi}
           comptesParSet={Object.fromEntries([...new Set(tournaments.map((tournoi) => tournoi.set ?? ""))].map((s) => [s, tournaments.filter((tournoi) => (tournoi.set ?? "") === s).length]))}
-          total={tournaments.length}
         />
       )}
     </div>
