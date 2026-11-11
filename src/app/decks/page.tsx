@@ -190,7 +190,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
         </p>
       </details>
 
-        <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:border-arcane/70">
+        <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-arcane">
           {Object.entries(params).map(([nom, valeur]) => nom !== "q" && nom !== "offset" && valeur ? <input key={nom} type="hidden" name={nom} value={valeur} /> : null)}
           <input type="search" name="q" defaultValue={search} placeholder={t("Chercher un deck, une Légende ou un auteur")} aria-label={t("Chercher un deck, une Légende ou un auteur")} className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-sm text-ink outline-none placeholder:text-ink-muted" />
           <button type="submit" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-arcane px-4 text-sm font-semibold text-canvas transition-[opacity,scale] hover:opacity-90 active:scale-[0.96]"><Search size={16} aria-hidden="true" /> <span className="sr-only sm:not-sr-only">{t("Chercher")}</span></button>
@@ -415,7 +415,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
 
       {/* Recherche : formulaire GET, les filtres en cours partent en champs cachés
           pour ne pas être perdus à la soumission. */}
-      <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:border-arcane/70">
+      <form method="get" action="/decks" className="mt-5 flex max-w-2xl gap-2 rounded-xl border border-hairline bg-surface p-1.5 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-arcane">
         {Object.entries(params).map(([nom, valeur]) => nom !== "q" && nom !== "offset" && valeur ? <input key={nom} type="hidden" name={nom} value={valeur} /> : null)}
         <input
           type="search"
