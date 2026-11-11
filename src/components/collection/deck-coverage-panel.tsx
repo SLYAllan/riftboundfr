@@ -165,11 +165,11 @@ export function DeckCoveragePanel({ items, prix, lienAchat }: Props) {
             <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
               <button onClick={() => setOpen(!open)} className="flex items-center gap-1.5 font-semibold transition-colors hover:text-arcane">
                 <ChevronDown size={14} className={`text-ink-muted transition-transform duration-200 ${!open ? "-rotate-90" : ""}`} />
-                Ma collection
+                {t("Ma collection")}
               </button>
               <div className="flex items-center gap-3">
                 {loading && missing === null ? (
-                  <span className="text-sm text-ink-muted">Calcul…</span>
+                  <span className="text-sm text-ink-muted">{t("Calcul…")}</span>
                 ) : erreur ? (
                   <span role="alert" className="text-sm text-red-400">
                     Calcul impossible. <button className="underline" onClick={() => setTentative((n) => n + 1)}>Réessayer</button>

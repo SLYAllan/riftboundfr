@@ -32,6 +32,7 @@ import { BoutonSuivre } from "@/components/bouton-suivre";
 import { getUserFromSession } from "@/lib/session";
 import { estAbonne } from "@/lib/abonnements";
 import { displayLegendName, formatDate } from "@/lib/utils";
+import { afficherPlacement } from "@/lib/deck-listing-params";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { jsonLdHtml, langueSchema } from "@/lib/json-ld";
@@ -915,7 +916,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                 legendName={legendName}
                 playerName={decklists[0].deck.playerName ?? undefined}
                 context={
-                  [decklists[0].deck.tournamentContext, decklists[0].deck.placement]
+                  [decklists[0].deck.tournamentContext, decklists[0].deck.placement && afficherPlacement(decklists[0].deck.placement, langue)]
                     .filter(Boolean)
                     .join(" · ") || undefined
                 }
@@ -947,7 +948,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                     )}
                     {deck.placement && (
                       <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
-                        {deck.placement}
+                        {afficherPlacement(deck.placement, langue)}
                       </span>
                     )}
                   </summary>
@@ -1160,7 +1161,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                     )}
                     {deck.placement && (
                       <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
-                        {deck.placement}
+                        {afficherPlacement(deck.placement, langue)}
                       </span>
                     )}
                     <PastilleInterdite cartes={cartesInterdites(deck.cards.map((dc) => dc.card.name))} className="max-w-[45%]" />

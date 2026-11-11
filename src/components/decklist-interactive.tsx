@@ -562,7 +562,7 @@ export function DecklistInteractive({
               className="inline-flex items-center gap-1.5 rounded-lg bg-surface-raised px-3 py-1.5 text-xs font-medium text-ink-secondary hover:text-ink transition-colors"
             >
               {quickCopied ? <Check size={14} className="text-success" /> : <Copy size={14} />}
-              {quickCopied ? "Copié !" : "Copier le deck code"}
+              {quickCopied ? t("Copié !") : t("Copier le deck code")}
             </button>
           )}
           {(showExportPng || showCopyCode) && (
@@ -571,7 +571,7 @@ export function DecklistInteractive({
               className="inline-flex items-center gap-1.5 rounded-lg bg-arcane px-3 py-1.5 text-xs font-medium text-canvas hover:opacity-90 transition-opacity"
             >
               <Image size={14} />
-              Exporter
+              {t("Exporter")}
             </button>
           )}
           {deckbuilderCode && isAdmin && (

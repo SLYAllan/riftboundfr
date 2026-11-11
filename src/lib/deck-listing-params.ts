@@ -81,6 +81,18 @@ export function palierAccessibilite(manquantes: number, eur: number | null): num
   return PALIERS_ACCESSIBILITE.length - 1;
 }
 
+/**
+ * Place affichée d'un deck. `placement` est du texte en base, écrit à l'anglaise
+ * par les sources (« 9th », « 71st ») : la page française affichait « 9th ». On ne
+ * touche qu'à l'affichage, jamais à la donnée ; une forme inconnue passe telle quelle.
+ */
+export function afficherPlacement(placement: string, langue: string): string {
+  if (langue !== "fr") return placement;
+  const m = /^(\d+)(?:st|nd|rd|th)$/i.exec(placement.trim());
+  if (!m) return placement;
+  return m[1] === "1" ? "1er" : `${m[1]}e`;
+}
+
 export function comparerPlacements(a: string | null, b: string | null): number {
   const rangA = a ? Number.parseInt(a, 10) : Number.POSITIVE_INFINITY;
   const rangB = b ? Number.parseInt(b, 10) : Number.POSITIVE_INFINITY;

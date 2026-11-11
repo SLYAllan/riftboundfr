@@ -24,6 +24,8 @@ import type { Metadata } from "next";
 import { metaTraduite, tr, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
 import { construireWhere, lireFiltresDecks, listerDecks, modifierParametresDecks, setParDefaut } from "@/lib/deck-listing";
+import { afficherPlacement } from "@/lib/deck-listing-params";
+
 import { ORDRE_SETS } from "@/lib/tournament-order";
 import { DecksProgressifs } from "./decks-progressifs";
 
@@ -72,7 +74,8 @@ const CATEGORIES = [
 
 export default async function DecksPage({ searchParams }: PageProps) {
   const t = await tr();
-  const locale = etiquetteLocale(await langueCourante());
+  const langue = await langueCourante();
+  const locale = etiquetteLocale(langue);
   const params = await searchParams;
   const parametresCourants = new URLSearchParams(
     Object.entries(params).filter((entree): entree is [string, string] => typeof entree[1] === "string"),
@@ -669,7 +672,7 @@ export default async function DecksPage({ searchParams }: PageProps) {
                           </div>
                           {(deck.placement || deck.playerName || deck.authorName) && (
                             <div className="flex items-center gap-2">
-                              {deck.placement && <span className="shrink-0 font-semibold text-ink">{deck.placement}</span>}
+                              {deck.placement && <span className="shrink-0 font-semibold text-ink">{afficherPlacement(deck.placement, langue)}</span>}
                               {(deck.playerName || deck.authorName) && <span className="truncate text-white/90">{t("par")} {deck.playerName || deck.authorName}</span>}
                             </div>
                           )}

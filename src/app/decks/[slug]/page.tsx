@@ -3,6 +3,7 @@ export const revalidate = 300;
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { slugify, displayLegendName } from "@/lib/utils";
+import { afficherPlacement } from "@/lib/deck-listing-params";
 import { DecklistInteractive } from "@/components/decklist-interactive";
 import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
@@ -19,6 +20,7 @@ import { interdictionsParDate } from "@/lib/bans";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { etiquetteLocale } from "@/lib/i18n";
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
 import { cache } from "react";
 
@@ -197,7 +199,6 @@ export default async function DeckDetailPage({ params }: PageProps) {
           ) : (
             <span className="text-lg text-arcane">{displayLegendName(deck.legendName)}</span>
           )}
-          <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs text-ink-secondary">{deck.format}</span>
           <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
             setTag === "Unleashed" ? "bg-arcane text-canvas"
               : setTag === "Spiritforged" ? "bg-emerald-500 text-canvas"
@@ -209,7 +210,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
         </div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-ink-muted">
           {(deck.playerName || deck.authorName) && <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>}
-          {deck.placement && <span>&middot; {deck.placement}</span>}
+          {deck.placement && <span>&middot; {afficherPlacement(deck.placement, langue)}</span>}
           {deck.record && <span className="text-arcane">({deck.record})</span>}
           {deck.tournamentContext && (() => {
             const cc = getTournamentCountryCode(deck.tournamentContext);
@@ -235,7 +236,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             <strong className="text-red-400">{t("Liste injouable aujourd’hui.")}</strong>
             {interdictions.map(({ date, cartes }) => (
               <span key={date}>
-                {" "}{cartes.join(` ${t("et")} `)}{" "}
+                {" "}{new Intl.ListFormat(etiquetteLocale(langue), { type: "conjunction" }).format(cartes)}{" "}
                 {t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
               </span>
             ))}
@@ -318,7 +319,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
               >
                 <div className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{rd.title}</div>
                 <div className="mt-1 truncate text-xs text-ink-muted">
-                  {[rd.playerName, rd.placement, rd.tournamentContext].filter(Boolean).join(" · ")}
+                  {[rd.playerName, rd.placement && afficherPlacement(rd.placement, langue), rd.tournamentContext].filter(Boolean).join(" · ")}
                 </div>
               </Link>
             ))}

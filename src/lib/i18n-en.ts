@@ -102,6 +102,10 @@ export const EN: Record<string, string> = {
   "Créer son deck": "Build a deck",
   "j'aime": "likes",
   "Ma collection": "My collection",
+  "Calcul…": "Calculating…",
+  "Copier le deck code": "Copy deck code",
+  "Copié !": "Copied!",
+  "Exporter": "Export",
   "Chercher une règle": "Search the rules",
   // — Fil d'Ariane (composant partagé, présent sur 17 pages) —
   Accueil: "Home",
@@ -1096,8 +1100,8 @@ export const EN: Record<string, string> = {
   "Utilisez un lien HTTPS fourni par VDO.Ninja.": "Use an HTTPS link provided by VDO.Ninja.",
   "Retirer de l’écran": "Remove from screen",
   "Montrer à l’écran": "Show on screen",
-  "Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed, Vendetta et Radiance. Filtrez-les par set, type, rareté ou domaine, puis lisez leur texte et leurs statistiques en français.":
-    "Browse all Riftbound cards from Origins, Spiritforged, Unleashed, Vendetta and Radiance. Filter them by set, type, rarity or domain, then read their text and stats in French.",
+  "Consultez toutes les cartes Riftbound des sets Origins, Spiritforged, Unleashed, Vendetta et Radiance. Filtrez-les par set, type, rareté ou domaine, puis lisez leurs statistiques et leur texte officiel, en anglais.":
+    "Browse all Riftbound cards from Origins, Spiritforged, Unleashed, Vendetta and Radiance. Filter them by set, type, rarity or domain, then read their stats and official text.",
   "Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.":
     "Sign in with Discord to organise your collection into binders and track your progress.",
   "Choisissez le gagnant. Le score des manches sera mis à jour sur le stream.":

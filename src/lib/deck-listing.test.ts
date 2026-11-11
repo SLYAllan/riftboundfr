@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { comparerPlacements, lireFiltresDecks, modifierParametresDecks, parametresDecks } from "./deck-listing-params";
+import { afficherPlacement, comparerPlacements, lireFiltresDecks, modifierParametresDecks, parametresDecks } from "./deck-listing-params";
 import { SET_EN_COURS } from "./tournament-order";
 
 describe("lireFiltresDecks", () => {
@@ -79,5 +79,19 @@ describe("comparerPlacements", () => {
   it("trie les places comme des nombres et laisse les absentes à la fin", () => {
     const places = ["10th", null, "2nd", "1st"];
     expect(places.sort((a, b) => comparerPlacements(a, b))).toEqual(["1st", "2nd", "10th", null]);
+  });
+});
+
+describe("afficherPlacement", () => {
+  it("met la place à la française sur le site français", () => {
+    expect(["1st", "2nd", "3rd", "9th", "71st", "1003rd"].map((p) => afficherPlacement(p, "fr"))).toEqual([
+      "1er", "2e", "3e", "9e", "71e", "1003e",
+    ]);
+  });
+
+  it("laisse la place telle quelle ailleurs et sur une forme inconnue", () => {
+    expect(afficherPlacement("9th", "en")).toBe("9th");
+    expect(afficherPlacement("9e", "fr")).toBe("9e");
+    expect(afficherPlacement("Top 8", "fr")).toBe("Top 8");
   });
 });

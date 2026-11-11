@@ -7,16 +7,17 @@ import { CountryBadge } from "@/components/country-badge";
 import { DeckLikeButton } from "@/components/deck-like-button";
 import { PastilleInterdite } from "@/components/pastille-interdite";
 import { getBannerUrl } from "@/lib/banners";
-import { parametresDecks, type DeckListe, type FiltresDecks, type LotDecks } from "@/lib/deck-listing-params";
+import { afficherPlacement, parametresDecks, type DeckListe, type FiltresDecks, type LotDecks } from "@/lib/deck-listing-params";
 import { getTournamentCountryCode, getTournamentTier } from "@/lib/tournament-flags";
 import { cn, displayLegendName } from "@/lib/utils";
-import { useT } from "@/components/i18n-provider";
+import { useLangue, useT } from "@/components/i18n-provider";
 
 const TIER_BG: Record<string, string> = {
   S: "bg-tier-s", A: "bg-tier-a", B: "bg-tier-b", C: "bg-tier-c", D: "bg-tier-d",
 };
 
 function CarteDeck({ deck }: { deck: DeckListe }) {
+  const langue = useLangue();
   const bannerUrl = getBannerUrl(deck.legendName);
   const couverture = deck.coverage;
   const complet = couverture?.missing === 0;
@@ -44,7 +45,7 @@ function CarteDeck({ deck }: { deck: DeckListe }) {
                   {deck.tournamentContext && <span className={cn("inline-flex shrink-0 items-center rounded px-1.5 py-0.5 text-[11px] font-black uppercase leading-none tracking-wide text-canvas shadow-sm ring-1 ring-black/20", TIER_BG[getTournamentTier(deck.tournamentContext)] ?? "bg-ink-muted")} style={{ textShadow: "none" }} title={`Tournoi tier ${getTournamentTier(deck.tournamentContext)}`}>Tier {getTournamentTier(deck.tournamentContext)}</span>}
                   {deck.tournamentContext && <span className="flex min-w-0 items-center gap-1 text-white/90">{getTournamentCountryCode(deck.tournamentContext) && <CountryBadge code={getTournamentCountryCode(deck.tournamentContext)!} />}<span className="truncate">{deck.tournamentContext}</span></span>}
                 </div>
-                {(deck.placement || deck.playerName || deck.authorName) && <div className="flex items-center gap-2">{deck.placement && <span className="shrink-0 font-semibold text-ink">{deck.placement}</span>}{(deck.playerName || deck.authorName) && <span className="truncate text-white/90">par {deck.playerName || deck.authorName}</span>}</div>}
+                {(deck.placement || deck.playerName || deck.authorName) && <div className="flex items-center gap-2">{deck.placement && <span className="shrink-0 font-semibold text-ink">{afficherPlacement(deck.placement, langue)}</span>}{(deck.playerName || deck.authorName) && <span className="truncate text-white/90">par {deck.playerName || deck.authorName}</span>}</div>}
               </div>
             </div>
             <div className="relative z-20 flex shrink-0 items-center gap-1">

@@ -5,6 +5,23 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-11 · hors passe, places et mots anglais sur `/decks/[slug]`, `/legendes/[slug]` et `/cartes`
+
+Constat 11 de l'audit du 11 novembre. **Changé**, à l'affichage seulement :
+- les places s'écrivent à la française (« 9e », « 1er » au lieu de « 9th », « 1st ») sur
+  la page de deck, la fiche Légende, `/decks` et la fiche carte ; inchangées sous `/en`.
+  Les titres de deck en base (« … (9th) ») ne bougent pas ;
+- page de deck : la pastille « constructed », portée par tous les decks, disparaît ; les
+  cartes bannies se lisent « A, B et C » au lieu de « A et B et C » ;
+- `/cartes` : la fin du chapô disait le texte des cartes « en français », il est en
+  anglais. Avant : « … puis lisez leur texte et leurs statistiques en français. »
+  Après : « … puis lisez leurs statistiques et leur texte officiel, en anglais. »
+  Titre inchangé.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-11 · hors passe, bandeau de `/legendes/[slug]` sur téléphone
 
 Constat 1 de l'audit du 11 novembre. **Changé** : sous 600 px de large, le titre de la

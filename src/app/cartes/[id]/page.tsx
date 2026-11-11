@@ -6,11 +6,12 @@ import { CardImage } from "@/components/card-image";
 import { CarteInclinable } from "@/components/carte-inclinable";
 import { RarityBadge } from "@/components/rarity-badge";
 import { CardTextRenderer } from "@/components/card-text-renderer";
-import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, TYPE_ICONS } from "@/lib/domains";
+import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, RARITY_LABELS_FR, TYPE_ICONS } from "@/lib/domains";
 import { isBanned } from "@/lib/banned-cards";
 import { getErrata } from "@/lib/errata";
 import { ErrataDiff } from "@/components/errata-diff";
 import { displayLegendName, formatDate } from "@/lib/utils";
+import { afficherPlacement } from "@/lib/deck-listing-params";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
@@ -20,6 +21,13 @@ import { chargerPrix, lienProduit } from "@/lib/cardnexus";
 import { libelleSection, nomEvenement, placeSection, statsJeuCarte } from "@/lib/card-play";
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
 import { cache } from "react";
+
+// Partagé par le titre de la page et le bloc « Type » : le bloc affichait « Unit »
+// sous un titre qui disait « Unité ».
+const TYPE_FR: Record<string, string> = {
+  Unit: "Unité", Spell: "Sort", Gear: "Équipement", Rune: "Rune",
+  Battlefield: "Champ de bataille", Legend: "Légende", Token: "Jeton",
+};
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -37,10 +45,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // Title/description orientés recherche FR : les internautes cherchent "<nom> riftbound"
   // et "riftbound fr / french cards" (cf. Search Console). On met le nom + "Carte Riftbound
   // FR" en tête, puis le type et les domaines en français pour la pertinence et le CTR.
-  const TYPE_FR: Record<string, string> = {
-    Unit: "Unité", Spell: "Sort", Gear: "Équipement", Rune: "Rune",
-    Battlefield: "Champ de bataille", Legend: "Légende", Token: "Jeton",
-  };
   const typeFR = card.supertype === "Champion Unit" ? "Unité Champion" : (TYPE_FR[card.type] ?? card.type);
   const domFR = (card.domains ?? []).map((d) => DOMAIN_LABELS_FR[d] ?? d);
   const domainPart = domFR.length ? ` ${domFR.join("/")}` : "";
@@ -181,12 +185,12 @@ export default async function CardDetailPage({ params }: PageProps) {
                 <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Type</div>
                 <div className="mt-1 flex items-center gap-1.5 text-sm">
                   {TYPE_ICONS[card.type] && <img src={TYPE_ICONS[card.type]} alt="" className="h-4 w-4" />}
-                  {card.type}
+                  {langue === "fr" ? (TYPE_FR[card.type] ?? card.type) : card.type}
                 </div>
               </div>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">{t("Rareté")}</div>
-                <div className="mt-1 text-sm">{card.rarity}</div>
+                <div className="mt-1 text-sm">{langue === "fr" ? (RARITY_LABELS_FR[card.rarity] ?? card.rarity) : card.rarity}</div>
               </div>
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted">Supertype</div>
@@ -275,7 +279,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                   <Chiffre valeur={jeu.decks.toLocaleString("fr-FR")} libelle={t(jeu.decks > 1 ? "decks de tournoi" : "deck de tournoi")} />
                   <Chiffre valeur={jeu.decksClasses.toLocaleString("fr-FR")} libelle={t(jeu.decksClasses > 1 ? "listes classées" : "liste classée")} />
                   <Chiffre
-                    valeur={jeu.emplacements[0]?.moyenne != null ? String(jeu.emplacements[0].moyenne) : "-"}
+                    valeur={jeu.emplacements[0]?.moyenne != null ? jeu.emplacements[0].moyenne.toLocaleString("fr-FR") : "-"}
                     libelle={`${t("exemplaires en moyenne")}${jeu.emplacements[0] ? ` (${libelleSection(jeu.emplacements[0].section)})` : ""}`}
                   />
                 </div>
@@ -373,7 +377,7 @@ export default async function CardDetailPage({ params }: PageProps) {
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="font-medium">{d.title}</span>
                             {d.placement && (
-                              <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{d.placement}</span>
+                              <span className="rounded-full bg-gold px-2 py-0.5 text-[10px] font-bold text-canvas">{afficherPlacement(d.placement, langue)}</span>
                             )}
                             {d.featured && (
                               <span className="rounded-full bg-violet-dark px-2 py-0.5 text-[10px] font-bold text-white">Best of</span>
