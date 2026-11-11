@@ -1,12 +1,20 @@
 # HANDOFF — état des lieux
 
-## 11 novembre 2026 — audit visiteur, temps 1 et 2 faits, en local seulement
+## 11 novembre 2026 — audit visiteur, temps 1, 2 et 3 faits, en local seulement
 
 Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Commité sur `main`, rien de poussé**
 (Allan : « pousse rien pour le moment, full local »). Temps 1 : constats 1, 2, 4, 5, 6, 7,
 8, 11, 14, 15 (`e6d0ae35d` à `33a522baf`). Temps 2 : 3 avec 12 et 13 (`de84c98ef`, retouche
 `90fb87864`), 9 (`669bc62cd`), 10 (`df15812f0`). Entrées hors passe au journal SEO pour 1,
-3, 10 et 11. `npm run verify` sortie 0, `npm test` 430 verts.
+3, 10 et 11. Temps 3, points « direct » : E8 (`f81644039`) et E10 (`2f8a6130b`).
+`npm run verify` sortie 0, `npm test` 430 verts.
+
+**Temps 3, points « à choisir » (E2 à E7, E9, E11) : rien d'intégré, Allan choisit.** Page
+de réglages sur http://localhost:3004/reglages/ (et `comparaison-audit/reglages-volet-esthetique.html`,
+un seul fichier). Chaque réglage est du CSS ou un script appliqué à la volée sur le build
+local : le détail est dans `comparaison-audit/outils/reglages.mjs`, c'est la base du commit
+une fois le choix fait. E1 attend une réponse (garder ou remplacer `docs/DESIGN.MD`, qui
+décrit Miro). Les cases de Top 8 vides de E11 ne se retrouvent plus (aucune sur 159 tournois).
 
 **Page de comparaison avant/après** : `comparaison-audit/` à la racine, exclu de Git par
 `.git/info/exclude` (local seulement). L'entrée `comparaison-audit` de `.claude/launch.json`
@@ -15,8 +23,8 @@ fichier. La colonne « avant » vient d'un arbre de travail détaché sur `24edd
 dossier temporaire de la session, servi par `avant-audit-base-locale` (port 3003) ; à
 retirer par `git worktree remove` quand la comparaison ne sert plus.
 
-**Reste** : temps 3 (E8, E10, puis page d'essai), temps 4 (branche
-`essai/carte-blanche`). Les 18 `.png` de
+**Reste** : les choix d'Allan sur la page de réglages, puis un commit par point ; temps 4
+(branche `essai/carte-blanche`, captures aux deux largeurs, bureau d'abord). Les 18 `.png` de
 `public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
 
 **Pour revérifier dans le navigateur sans la base de prod** : l'entrée
