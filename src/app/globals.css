@@ -297,8 +297,10 @@ main[data-gabarit="site"] .text-center > p {
    en 600 ou en 700, bleus (la couleur des liens) dans les guides et les fiches,
    dorés en sous-titre. Section 24 px gras, sous-titre 18 px demi-gras, tous blancs.
    Choix d'Allan du 12 novembre 2026 (E5, réglage 3). Hors @layer : la règle passe
-   devant les `text-sm`, `text-arcane` posés titre par titre. */
-main[data-gabarit="site"] h2:not(.sr-only) {
+   devant les `text-sm`, `text-arcane` posés titre par titre. `titre-bloc` marque le
+   titre d'une colonne ou d'une carte (accueil, liste des tournois) : à 24 px, il se
+   coupait sur deux lignes ou dépassait le titre de section au-dessus de lui. */
+main[data-gabarit="site"] h2:not(.sr-only):not(.titre-bloc) {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;

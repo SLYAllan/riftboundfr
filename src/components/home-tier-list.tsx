@@ -89,7 +89,7 @@ export function HomeTierList({
         {/* Titre volontairement différent de « Tier List » : l'accueil captait les
             requêtes à la place de /tier-list, qui porte le vrai classement commenté. */}
         <h2
-          className="text-lg font-bold"
+          className="titre-bloc text-lg font-bold"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
           {t("Aperçu du méta")}

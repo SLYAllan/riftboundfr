@@ -243,7 +243,7 @@ export default async function HomePage() {
           <div className="flex flex-col rounded-card border border-hairline bg-surface overflow-hidden">
             <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
               <h2
-                className="text-lg font-bold"
+                className="titre-bloc text-lg font-bold"
                 style={{ fontFamily: "var(--font-rubik), sans-serif" }}
               >
                 {t("Légendes les plus jouées")}
@@ -309,7 +309,7 @@ export default async function HomePage() {
           <div className="order-1 lg:order-none rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="border-b border-hairline px-5 py-3">
               <h2
-                className="text-lg font-bold"
+                className="titre-bloc text-lg font-bold"
                 style={{ fontFamily: "var(--font-rubik), sans-serif" }}
               >
                 Guides
@@ -350,7 +350,7 @@ export default async function HomePage() {
           {/* Articles */}
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 <Newspaper size={18} className="text-violet-light" /> {t("Derniers articles")}
               </h2>
               <Link href="/articles" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
@@ -386,7 +386,7 @@ export default async function HomePage() {
           {/* Collection */}
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 <Library size={18} className="text-arcane" /> {t("Ma collection")}
               </h2>
             </div>
@@ -411,7 +411,7 @@ export default async function HomePage() {
           {/* Tournois */}
           <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
                 <Trophy size={18} className="text-gold" /> {t("Tournois")}
               </h2>
               <Link href="/tournois" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">

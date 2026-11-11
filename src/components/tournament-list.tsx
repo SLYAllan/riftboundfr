@@ -91,7 +91,7 @@ function TournamentRow({
           )}
           <h2
             className={cn(
-              "min-w-0 truncate font-bold leading-tight tracking-tight group-hover:text-arcane-light transition-colors",
+              "titre-bloc min-w-0 truncate font-bold leading-tight tracking-tight group-hover:text-arcane-light transition-colors",
               featured ? "text-lg" : "text-base",
             )}
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
@@ -180,7 +180,7 @@ function TierHeader({ tier, label, count }: { tier: "S" | "A"; label: string; co
         {tier}
       </span>
       <h2
-        className="text-sm font-bold uppercase tracking-wider text-ink-secondary"
+        className="titre-bloc text-sm font-bold uppercase tracking-wider text-ink-secondary"
         style={{ fontFamily: "var(--font-rubik), sans-serif" }}
       >
         {label}
