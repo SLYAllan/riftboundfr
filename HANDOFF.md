@@ -1,5 +1,22 @@
 # HANDOFF — état des lieux
 
+## 11 novembre 2026 — audit visiteur, temps 1 fait, en local seulement
+
+Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Temps 1 commité sur `main`, pas poussé** :
+constats 1, 2, 4, 5, 6, 7, 8, 11, 14, 15, un commit chacun (`e6d0ae35d` à `33a522baf`).
+Entrées hors passe au journal SEO pour 1 et 11. `npm run verify` sortie 0, `npm test`
+430 verts, `maj:overlay -- --sec` sortie 0. Revérifié sur le build local, base locale.
+
+**Reste** : temps 2 (3 avec 12 et 13, puis 9, puis 10), temps 3 (E8, E10, puis page
+d'essai), temps 4 (branche `essai/carte-blanche`). Les 18 `.png` de
+`public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
+
+**Pour revérifier dans le navigateur sans la base de prod** : l'entrée
+`prod-local-base-locale` de `.claude/launch.json` (port 3002) lance `next start` avec
+`DATABASE_URL` et `SESSION_SECRET` vidés, donc sur la base de `.env`. Une mesure qui
+lit `getBoundingClientRect` dans un `<details>` replié voit une hauteur : le contenu
+est caché par `content-visibility`, pas retiré de la mise en page.
+
 ## 10 novembre 2026 — RC Europe et hexgate 302 à 305, en local seulement
 
 **RC Europe** (riftdecks 18668, Stuttgart, 6 au 8 novembre, Radiance, 315 inscrits, sur
