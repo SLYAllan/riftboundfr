@@ -1,14 +1,22 @@
 # HANDOFF — état des lieux
 
-## 11 novembre 2026 — audit visiteur, temps 1 fait, en local seulement
+## 11 novembre 2026 — audit visiteur, temps 1 et 2 faits, en local seulement
 
-Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Temps 1 commité sur `main`, pas poussé** :
-constats 1, 2, 4, 5, 6, 7, 8, 11, 14, 15, un commit chacun (`e6d0ae35d` à `33a522baf`).
-Entrées hors passe au journal SEO pour 1 et 11. `npm run verify` sortie 0, `npm test`
-430 verts, `maj:overlay -- --sec` sortie 0. Revérifié sur le build local, base locale.
+Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Commité sur `main`, rien de poussé**
+(Allan : « pousse rien pour le moment, full local »). Temps 1 : constats 1, 2, 4, 5, 6, 7,
+8, 11, 14, 15 (`e6d0ae35d` à `33a522baf`). Temps 2 : 3 avec 12 et 13 (`de84c98ef`, retouche
+`90fb87864`), 9 (`669bc62cd`), 10 (`df15812f0`). Entrées hors passe au journal SEO pour 1,
+3, 10 et 11. `npm run verify` sortie 0, `npm test` 430 verts.
 
-**Reste** : temps 2 (3 avec 12 et 13, puis 9, puis 10), temps 3 (E8, E10, puis page
-d'essai), temps 4 (branche `essai/carte-blanche`). Les 18 `.png` de
+**Page de comparaison avant/après** : `comparaison-audit/` à la racine, exclu de Git par
+`.git/info/exclude` (local seulement). L'entrée `comparaison-audit` de `.claude/launch.json`
+la sert sur le port 3004 ; `audit-11-novembre-avant-apres.html` est la même page en un seul
+fichier. La colonne « avant » vient d'un arbre de travail détaché sur `24edd89ae`, dans le
+dossier temporaire de la session, servi par `avant-audit-base-locale` (port 3003) ; à
+retirer par `git worktree remove` quand la comparaison ne sert plus.
+
+**Reste** : temps 3 (E8, E10, puis page d'essai), temps 4 (branche
+`essai/carte-blanche`). Les 18 `.png` de
 `public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
 
 **Pour revérifier dans le navigateur sans la base de prod** : l'entrée
