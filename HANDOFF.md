@@ -31,8 +31,16 @@ fichier. La colonne « avant » vient d'un arbre de travail détaché sur `24edd
 dossier temporaire de la session, servi par `avant-audit-base-locale` (port 3003) ; à
 retirer par `git worktree remove` quand la comparaison ne sert plus.
 
-**Reste** : les choix d'Allan sur la page de réglages, puis un commit par point ; temps 4
-(branche `essai/carte-blanche`, captures aux deux largeurs, bureau d'abord). Les 18 `.png` de
+**E5 limité aux titres de section** (`720305e3f`) : les titres de bloc (`titre-bloc`) gardent
+leur taille.
+
+**Temps 4, essai carte blanche : fait sur la branche `essai/carte-blanche` (`f1dc833e1`),
+rien de fusionné.** Routes `/essai`, `/essai/deck/[slug]`, `/essai/legende/[slug]`, en
+`noindex`, styles dans `src/app/essai/essai.css`. Captures côte à côte et note dans
+`comparaison-audit/essai/` (http://localhost:3004/essai/). Attend l'avis d'Allan ; si la
+direction est retenue, l'intégration se fait gabarit par gabarit.
+
+**Reste** : l'avis d'Allan sur l'essai ; E1 (`docs/DESIGN.MD`). Les 18 `.png` de
 `public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
 
 **Pour revérifier dans le navigateur sans la base de prod** : l'entrée
