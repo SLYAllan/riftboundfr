@@ -89,6 +89,17 @@ proposer, améliorer le site page par page.
 **Audit des autres pages : `docs/AUDIT-AUTRES-PAGES-2026-11-12.md`.** 23 pages mesurées à
 1 440 et 390 px. Deux corrections faites (`cd1b3228a` noms sous les icônes de `/tier-list`,
 `617525d00` libellés de `/meta`), dix propositions classées qui attendent le oui d'Allan.
+Les dix sont codées sur la branche **`propal/autres-pages`** (un commit par proposition,
+table dans le doc d'audit), vues avant/après dans `comparaison-audit/propal/`
+(http://localhost:3004/propal/ ; avant sur 3002, après sur 3006). L'arbre de travail du
+dossier temporaire est sur cette branche ; `essai/carte-blanche` reste intacte. Sur la
+branche : `npx eslint src` EXIT=0, `next build` EXIT=0. À la validation : cherry-pick des
+commits retenus sur `main`, puis `npm run verify`, `npm test` et `npx eslint src`.
+
+**À trancher avant le Deploy** (note relayée à Allan le 12 novembre) : rien n'est en ligne
+depuis le 11. Un seul Deploy mêlerait les corrections du 11, le volet esthétique du 12 et
+la nouvelle mise en page des pages de deck et de Légende ; le journal SEO ne pourrait plus
+dire lequel a joué. Soit deux Deploy à deux semaines d'écart, soit on juge le lot entier.
 
 **L'essai ne se code plus dans ce dossier** : la branche vit dans un arbre de travail à
 part, sous le dossier temporaire de la session (`git worktree list` le montre), pour que

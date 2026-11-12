@@ -20,7 +20,29 @@ le code. Non vu : les pages connectées (`/collection`, `/profil`), Safari sur i
 
 ## À faire, du plus utile au moins utile
 
-Rien n'est appliqué : chaque ligne attend le oui d'Allan.
+Rien n'est appliqué à `main` : chaque ligne attend le oui d'Allan. Les dix sont codées
+sur la branche `propal/autres-pages`, un commit par proposition, et se voient avant/après
+dans `comparaison-audit/propal/` (http://localhost:3004/propal/). Pour en prendre une :
+`git cherry-pick <commit>` sur `main`, puis la porte.
+
+| # | Commits sur `propal/autres-pages` |
+|---|---|
+| 1 | `ab55a2350` `e19713c1a` |
+| 2 | `63c7517a8` |
+| 3 | `8796bdabd` |
+| 4 | `49bd0a2db` `d11a73052` |
+| 5 | `505987345` |
+| 6 | `73e7517ad` |
+| 7 | `5cf6eca8b` (à noter au journal SEO : le texte du `h1` change pour un moteur) |
+| 8 | `b9de00d5a` |
+| 9 | `2954a40bf` |
+| 10 | `1d48a0c0c` |
+| Traductions | `6b7c73491` `a04951952` (phrases anglaises des 4, 7 et 10) |
+
+Deux écarts avec le tableau ci-dessous, vus en codant : la 2 remonte le nom et la rareté,
+pas le prix, qui reste juste sous l'image ; la 3 place « À lire aussi » dans la colonne
+(les titres d'un article n'ont pas d'ancre, un sommaire aurait demandé de toucher au rendu
+des blocs).
 
 | # | Page | Mesure | Proposition |
 |---|---|---|---|
