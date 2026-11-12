@@ -208,8 +208,10 @@ export default async function DeckDetailPage({ params }: PageProps) {
     </span>
   );
   const cc = deck.tournamentContext ? getTournamentCountryCode(deck.tournamentContext) : null;
-  const morceaux: Array<[string, ReactNode]> = [
-    ["legende", (
+  // Des objets `{ cle, contenu }` et pas des paires : un élément JSX posé tel quel dans
+  // un tableau demande une clé (react/jsx-key), or la clé est donnée au rendu, plus bas.
+  const morceaux: Array<{ cle: string; contenu: ReactNode }> = [
+    { cle: "legende", contenu: (
       <span>
         {legendHref ? (
           <Link href={legendHref} className="py-1 text-base font-semibold text-arcane hover:underline">
@@ -220,23 +222,23 @@ export default async function DeckDetailPage({ params }: PageProps) {
         )}
         {" "}{pastilleSet}
       </span>
-    )],
+    ) },
   ];
-  if (deck.playerName || deck.authorName) morceaux.push(["joueur", <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span>]);
-  if (deck.placement) morceaux.push(["place", <span>{afficherPlacement(deck.placement, langue)}{deck.record && <span className="ml-1 text-arcane">({deck.record})</span>}</span>]);
-  if (deck.tournamentContext) morceaux.push(["tournoi", (
+  if (deck.playerName || deck.authorName) morceaux.push({ cle: "joueur", contenu: <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.playerName || deck.authorName}</strong></span> });
+  if (deck.placement) morceaux.push({ cle: "place", contenu: <span>{afficherPlacement(deck.placement, langue)}{deck.record && <span className="ml-1 text-arcane">({deck.record})</span>}</span> });
+  if (deck.tournamentContext) morceaux.push({ cle: "tournoi", contenu: (
     <Link href={`/tournois/${slugify(deck.tournamentContext)}`} className="py-1 transition-colors hover:text-arcane">
       {cc && <><CountryBadge code={cc} />{" "}</>}{deck.tournamentContext}
     </Link>
-  )]);
+  ) });
   // Le niveau d'un tournoi (P, S, A) n'est pas un tier de Légende : pastille cerclée
   // sans couleur, pour ne pas reprendre l'or, le bleu ou le violet des tiers.
-  if (deck.tournamentTier) morceaux.push(["tier", (
+  if (deck.tournamentTier) morceaux.push({ cle: "tier", contenu: (
     <span className="rounded-full px-2 py-0.5 text-[10px] font-bold text-ink ring-1 ring-hairline-field ring-inset">
       {deck.tournamentTier} Tier
     </span>
-  )]);
-  if (deck.sourceUrl) morceaux.push(["source", <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="py-1 text-arcane hover:underline">Source</a>]);
+  ) });
+  if (deck.sourceUrl) morceaux.push({ cle: "source", contenu: <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="py-1 text-arcane hover:underline">Source</a> });
 
   // L'illustration de la Légende en fond d'en-tête, et quatre chiffres lisibles d'un
   // coup d'œil : ils n'existaient que dans la vue « statistiques » de la liste.
@@ -280,7 +282,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             {/* Texte courant et pas flex : en flex, un morceau trop long partait seul à
                 la ligne avec son point devant, isolé. */}
             <p className="mt-2 text-sm leading-7 text-ink-muted">
-              {morceaux.map(([cle, contenu], i) => (
+              {morceaux.map(({ cle, contenu }, i) => (
                 <span key={cle}>
                   {i > 0 && <span aria-hidden="true" className="mx-2">&middot;</span>}
                   {contenu}
