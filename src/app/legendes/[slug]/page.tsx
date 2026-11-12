@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 import Link from "@/components/lien";
 import { BoutonLien } from "@/components/bouton";
 import Image from "next/image";
-import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords } from "lucide-react";
+import { TrendingUp, Sparkles, AlertTriangle, Layers, Swords, Trophy, ChevronDown } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CardRef } from "@/components/card-ref";
@@ -27,11 +27,15 @@ import { cartesInterdites, isBanned } from "@/lib/banned-cards";
 import { PastilleInterdite } from "@/components/pastille-interdite";
 import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
-import { legendWithDecks } from "@/lib/legend-fiche";
+import { legendFicheSlug, legendWithDecks } from "@/lib/legend-fiche";
+import { ecartEnPoints, partsDuSet } from "@/lib/parts-classement";
+import { rangPlacement } from "@/lib/card-play";
+import { TIER_BANNER } from "@/lib/tier-colors";
+import { etiquetteLocale } from "@/lib/i18n";
 import { BoutonSuivre } from "@/components/bouton-suivre";
 import { getUserFromSession } from "@/lib/session";
 import { estAbonne } from "@/lib/abonnements";
-import { displayLegendName, formatDate } from "@/lib/utils";
+import { cn, displayLegendName, formatDate } from "@/lib/utils";
 import { afficherPlacement } from "@/lib/deck-listing-params";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
@@ -40,6 +44,17 @@ import { rangSet } from "@/lib/tournament-order";
 import { cache } from "react";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
+const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
+// « Cœur du deck, 100 % des listes, 3 exemplaires » : le taux et les exemplaires que
+// `fiches-maj` écrit dans le rôle d'une carte. Un rôle écrit autrement rend null.
+const tauxDuRole = (role: string | null | undefined) => {
+  const m = /(\d+(?:[.,]\d+)?)\s*%/.exec(role ?? "");
+  return m ? Number(m[1].replace(",", ".")) : null;
+};
+const exemplairesDuRole = (role: string | null | undefined) => {
+  const m = /(\d+)\s+exemplaires?/.exec(role ?? "");
+  return m ? Number(m[1]) : null;
+};
 const CODE_RE = /^[A-Z]{2,4}-\d+$/;
 
 // Les fiches notent un champ de bataille « Minefield (88 %) ». Cherchée telle quelle,
@@ -94,6 +109,8 @@ interface Fiche {
     conversion?: string;
     tournois?: number;
     listesPubliees?: number;
+    titres?: number;
+    bestPlacements?: { placement?: string; player?: string; tournament?: string }[];
   };
 }
 
@@ -384,6 +401,7 @@ function CardTile({
   landscape,
   nom,
   lien,
+  taux,
 }: {
   art: { name: string; imageUrl: string | null; riftboundId: string } | null;
   label: React.ReactNode;
@@ -393,6 +411,8 @@ function CardTile({
   // Sert au contrôle de bannissement quand la carte n'a pas d'art en base.
   nom?: string | null;
   lien?: { href: string; texte: string } | null;
+  /** Part des listes qui jouent la carte, de 0 à 100 : dessinée en barre sous le nom. */
+  taux?: number | null;
 }) {
   const banni = isBanned(nom ?? art?.name ?? "");
   const image = art?.imageUrl ? (
@@ -432,11 +452,44 @@ function CardTile({
           </span>
         )}
       </div>
+      {taux != null && (
+        <div className="flex items-center gap-2">
+          <span className="h-1 flex-1 overflow-hidden rounded-full bg-surface-raised">
+            <span className="block h-full rounded-full bg-arcane" style={{ width: `${Math.min(100, taux)}%` }} />
+          </span>
+          <span className="shrink-0 text-xs font-semibold tabular-nums text-ink">{taux} %</span>
+        </div>
+      )}
       {sub && <p className="text-xs text-ink-secondary">{sub}</p>}
       {lien && (
         <Link href={lien.href} className="inline-flex min-h-6 items-center text-xs text-arcane hover:underline">
           {lien.texte}
         </Link>
+      )}
+    </div>
+  );
+}
+
+// Une carte en une ligne, pour la colonne de droite : le nom (avec son aperçu au
+// survol), la part des listes en barre, le chiffre. « 93 », « 93 % » ou rien.
+function LigneTaux({ nom, part, sub, banni }: { nom: string; part: string | null; sub?: string | null; banni?: boolean }) {
+  const taux = tauxDuRole(part && !part.includes("%") ? `${part} %` : part);
+  return (
+    <div className="flex min-h-11 items-center gap-3 px-4 py-1.5 sm:min-h-9">
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-baseline gap-1.5 text-sm text-ink-secondary">
+          <CardRef name={nom}>{nom}</CardRef>
+          {banni && <span className="rounded-full bg-red-500/15 px-2 py-0.5 text-[11px] font-bold text-red-400">Bannie</span>}
+        </div>
+        {sub && <div className="truncate text-xs text-ink-muted">{sub}</div>}
+      </div>
+      {taux != null && (
+        <>
+          <span className="h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-surface-raised">
+            <span className="block h-full rounded-full bg-arcane" style={{ width: `${Math.min(100, taux)}%` }} />
+          </span>
+          <span className="w-11 shrink-0 text-right text-sm font-semibold tabular-nums text-ink">{taux} %</span>
+        </>
       )}
     </div>
   );
@@ -571,7 +624,13 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         art={art}
         nom={display}
         label={wrapName ? <CardRef name={wrapName}>{display}</CardRef> : display}
-        sub={kc.role}
+        // Le rôle écrit par `fiches-maj` porte le taux et les exemplaires : la barre
+        // dit le taux, la ligne dessous les exemplaires. Un rôle écrit autrement
+        // s'affiche tel quel.
+        taux={tauxDuRole(kc.role)}
+        sub={tauxDuRole(kc.role) != null
+          ? (exemplairesDuRole(kc.role) != null ? `${exemplairesDuRole(kc.role)} ${t(exemplairesDuRole(kc.role)! > 1 ? "exemplaires" : "exemplaire")}` : null)
+          : kc.role}
         // Une carte flex est un choix : on montre qui le fait, liste par liste.
         lien={avecLien && wrapName ? { href: listesHref(wrapName), texte: t("Voir les listes qui la jouent") } : null}
       />
@@ -583,7 +642,19 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   const topDecks = legendDecks.slice(0, 3);
   // Le reste du pool part en liste de liens (pas de decklist dépliée : la page serait
   // illisible et lourde).
-  const otherDecks = legendDecks.slice(3);
+  const otherDecks = legendDecks.slice(6);
+  // Les six premières en lignes, avec leur prix. Rien à vendre sur une liste
+  // injouable : on la signale, on ne la vend pas.
+  const lignesDecks = legendDecks.slice(0, 6).map((deck) => {
+    const interdites = cartesInterdites(deck.cards.map((dc) => dc.card.name));
+    const cartesAchat = cartesDeck(deck.cards);
+    return {
+      deck,
+      interdites,
+      prix: interdites.length > 0 ? 0 : chiffrerDeck(cartesAchat).total,
+      lienAchat: interdites.length > 0 ? null : lienAchatDeck(cartesAchat),
+    };
+  });
 
   // Mappe un deck (DeckCard[] + carte incluse) vers DecklistCard[], avec le repli
   // d'injection de la Légende (reprise fidèle de /decks/[slug]).
@@ -760,6 +831,51 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     />
   );
 
+  // Rang, part du champ et écart au format : les mêmes parts que l'accueil et /meta
+  // (`parts-classement.ts`), lues sur le set des chiffres de la fiche.
+  const locale = etiquetteLocale(langue);
+  const pourcent = (x: number) => `${(x * 100).toLocaleString(locale, { maximumFractionDigits: 1 })} %`;
+  const partsSet = setDesChiffres ? partsDuSet(setDesChiffres) : null;
+  const lignePart = partsSet?.lignes.find((l) => l.slug === legendFicheSlug(legendName)) ?? null;
+  const tuiles: { valeur: string; libelle: string; ecart?: { texte: string; bon: boolean } }[] = [];
+  if (lignePart && partsSet) {
+    tuiles.push(
+      {
+        valeur: langue === "fr" ? (lignePart.rang === 1 ? "1re" : `${lignePart.rang}e`) : `#${lignePart.rang}`,
+        libelle: `${t("Légende la plus jouée en")} ${setDesChiffres}`,
+      },
+      { valeur: lignePart.joueurs.toLocaleString(locale), libelle: `${t("joueurs classés")}, ${pourcent(lignePart.part)} ${t("du champ")}` },
+      {
+        valeur: pourcent(lignePart.conversion),
+        libelle: t("dans les 10 % de tête"),
+        ecart: {
+          texte: `${ecartEnPoints(lignePart.conversion, partsSet.conversionFormat, locale)} ${t("contre le format")}`,
+          bon: lignePart.conversion >= partsSet.conversionFormat,
+        },
+      },
+    );
+  } else if (presence) {
+    tuiles.push({ valeur: presence.joueurs.toLocaleString(locale), libelle: t("joueurs classés") });
+    if (presence.conversion) tuiles.push({ valeur: presence.conversion, libelle: t("dans les 10 % de tête") });
+  }
+  if (tuiles.length > 0 && cr?.titres != null) tuiles.push({ valeur: String(cr.titres), libelle: t(cr.titres > 1 ? "titres" : "titre") });
+  if (tuiles.length > 0 && cr?.listesPubliees != null) tuiles.push({ valeur: cr.listesPubliees.toLocaleString(locale), libelle: t("listes publiées") });
+
+  const lettreTier = fiche.tier ? (["S", "A", "B", "C", "D"][fiche.tier - 1] ?? null) : null;
+  const BlocTier = lettreTier ? (
+    <div className="hidden items-center gap-3 sm:flex">
+      <span
+        className={cn("flex h-14 w-14 items-center justify-center rounded-lg text-3xl font-black", TIER_BANNER[lettreTier]?.bg, TIER_BANNER[lettreTier]?.text)}
+        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+        aria-label={`Tier ${lettreTier}`}
+      >
+        {lettreTier}
+      </span>
+    </div>
+  ) : null;
+  // Le palmarès de la fiche ne vaut que pour le set de ses chiffres.
+  const palmares = setDesChiffres ? (cr?.bestPlacements ?? []).filter((r) => r.tournament) : [];
+
   const Badges = (
     <div className="flex flex-wrap items-center gap-2 text-xs">
       {domains.map((d) => (
@@ -773,7 +889,8 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         </span>
       ))}
       {tierLabel && (
-        <span className="rounded bg-gold px-2 py-0.5 font-semibold text-canvas">{tierLabel}</span>
+        // Sur ordinateur, la lettre du tier est en grand à droite du bandeau.
+        <span className={cn("rounded bg-gold px-2 py-0.5 font-semibold text-canvas", lettreTier && "sm:hidden")}>{tierLabel}</span>
       )}
       {fiche.set && (
         <span className="rounded bg-violet-dark px-2 py-0.5 font-semibold text-white">{fiche.set}</span>
@@ -783,7 +900,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           Difficulté : {fiche.difficulty}
         </span>
       )}
-      {presence && (
+      {presence && tuiles.length === 0 && (
         // Les joueurs CLASSÉS, pas les listes publiées. L'écart n'est pas un
         // détail : à Barcelone, 106 listes pour 2 127 joueurs, et ce sont ceux
         // qui performent qui publient.
@@ -807,6 +924,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     ...((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0 ? [["forces-faiblesses", t("Forces et faiblesses")] as [string, string]] : []),
     ...(setDesChiffres && fiche.champions && Object.keys(fiche.champions).length > 0 ? [["champions", t("Champions joués")] as [string, string]] : []),
     ...(setDesChiffres && (fiche.topBattlefields?.length ?? 0) > 0 ? [["champs-de-bataille", t("Champs de bataille")] as [string, string]] : []),
+    ...(palmares.length > 0 ? [["palmares", t("Palmarès")] as [string, string]] : []),
     ...(otherDecks.length > 0 ? [["autres-listes", t("Autres listes")] as [string, string]] : []),
   ];
 
@@ -830,42 +948,65 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         // sous 600 px, l'image devenait plus basse que le bloc et le h1 sortait
         // par le haut du bandeau, invisible. `overflow-clip` et non `hidden` :
         // un bloc qui défile ne grandit plus avec son contenu malgré l'aspect-ratio.
-        <header className="relative flex aspect-[7/3] flex-col justify-end overflow-clip rounded-card border border-hairline">
+        // Sur ordinateur le bandeau passe à 16:5 : à 7:3 il prenait 528 px, plus de
+        // la moitié du premier écran, et les chiffres arrivaient au deuxième.
+        <header className="relative flex aspect-[7/3] flex-col justify-end overflow-clip rounded-card border border-hairline lg:aspect-[16/5]">
           <Image
             src={bannerUrl}
             alt={`Bannière ${name}`}
             width={700}
             height={300}
             priority
-            sizes="(max-width: 1024px) 100vw, 976px"
-            className="absolute inset-0 h-full w-full object-cover"
+            sizes="(max-width: 1024px) 100vw, 1232px"
+            className="absolute inset-0 h-full w-full object-cover object-[50%_22%]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-          <div className="relative p-4 pt-24 sm:p-6">
-            <h1
-              className="text-3xl font-bold text-white drop-shadow sm:text-4xl"
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-            >
-              Decks {name}
-            </h1>
-            {fiche.archetype && (
-              <p className="mt-1 max-w-2xl text-sm text-white/85 sm:text-base">{fiche.archetype}</p>
-            )}
-            <div className="mt-3">{Badges}</div>
-            <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-white/70" />
-            <div className="mt-3">{BoutonSuivreLegende}</div>
+          <div className="relative flex flex-wrap items-end justify-between gap-4 p-4 pt-24 sm:p-6">
+            <div className="min-w-0">
+              <h1
+                className="text-3xl font-bold text-white drop-shadow sm:text-4xl"
+                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              >
+                Decks {name}
+              </h1>
+              {fiche.archetype && (
+                <p className="mt-1 max-w-2xl text-sm text-white/85 sm:text-base">{fiche.archetype}</p>
+              )}
+              <div className="mt-3">{Badges}</div>
+              <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-white/70" />
+              <div className="mt-3">{BoutonSuivreLegende}</div>
+            </div>
+            {BlocTier}
           </div>
         </header>
       ) : (
-        <header className="rounded-card border border-hairline bg-surface p-5">
-          <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-            Decks {name}
-          </h1>
-          {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
-          <div className="mt-3">{Badges}</div>
-          <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-ink-muted" />
-          <div className="mt-3">{BoutonSuivreLegende}</div>
+        <header className="flex flex-wrap items-end justify-between gap-4 rounded-card border border-hairline bg-surface p-5">
+          <div className="min-w-0">
+            <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+              Decks {name}
+            </h1>
+            {fiche.archetype && <p className="mt-2 text-lg text-ink-secondary">{fiche.archetype}</p>}
+            <div className="mt-3">{Badges}</div>
+            <DatesFiche analyse={dateAnalyse} dernierDeck={dernierDeck} className="text-ink-muted" />
+            <div className="mt-3">{BoutonSuivreLegende}</div>
+          </div>
+          {BlocTier}
         </header>
+      )}
+
+      {/* Les chiffres sortent du bandeau : ils y tenaient en une pastille de 12 px.
+          Les joueurs CLASSÉS, pas les listes publiées : à Barcelone, 106 listes pour
+          2 127 joueurs, et ce sont ceux qui performent qui publient. */}
+      {tuiles.length > 0 && (
+        <dl className="mt-4 grid grid-cols-2 overflow-hidden rounded-card border border-hairline bg-surface sm:grid-cols-3 lg:grid-cols-5">
+          {tuiles.map((c) => (
+            <div key={c.libelle} className="border-hairline px-5 py-4 max-lg:border-b lg:border-r lg:last:border-r-0">
+              <dd className="text-2xl font-bold tabular-nums text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{c.valeur}</dd>
+              <dt className="text-xs text-ink-muted">{c.libelle}</dt>
+              {c.ecart && <div className={cn("mt-0.5 text-xs font-semibold", c.ecart.bon ? "text-emerald-400" : "text-red-400")}>{c.ecart.texte}</div>}
+            </div>
+          ))}
+        </dl>
       )}
 
       <nav aria-label={t("Sur cette page")} className="mt-4 flex flex-wrap gap-2">
@@ -880,348 +1021,389 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
         ))}
       </nav>
 
-      {/* Capacité de la Légende : la carte, son texte de règles, puis l'explication.
-          Le texte de la carte fait foi et reste en anglais, comme sur /cartes ; la phrase
-          en dessous dit ce que ça change en partie. Sans carte en base, l'encart se réduit
-          à l'explication. */}
-      {(carteLegende || fiche.legendAbility) && (
-        <div className="mt-6 flex flex-col gap-4 rounded-card border border-hairline bg-surface p-4 sm:flex-row">
-          {carteLegende?.imageUrl && (
-            <Link href={`/cartes/${carteLegende.riftboundId}`} className="shrink-0 self-start">
-              <Image
-                src={carteLegende.imageUrl}
-                alt={name}
-                width={214}
-                height={300}
-                sizes="(max-width: 640px) 40vw, 140px"
-                className="w-28 rounded-game-card bg-surface-raised transition-transform duration-200 hover:scale-[1.03] sm:w-36"
-                style={{ aspectRatio: "300 / 419" }}
-              />
-            </Link>
-          )}
-          <div className="min-w-0">
-            <h2
-              className="flex items-center gap-2 text-sm font-semibold text-arcane"
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-            >
-              <Sparkles size={16} /> {t("Capacité de la Légende")}
-            </h2>
-            {carteLegende?.textPlain && (
-              <p className="mt-1.5 text-sm leading-relaxed text-ink">
-                <CardTextRenderer text={carteLegende.textPlain} />
+      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="min-w-0 space-y-12">
+          {/* Decklists, contenu principal. Six lignes avec leur prix là où une seule
+              liste tenait dépliée ; les trois meilleures restent lisibles carte par
+              carte juste dessous, repliées. */}
+          <Section id="meilleurs-decks" title={`Meilleurs decks ${name}`} icon={<Layers size={20} />}>
+            {deckCount > 0 && (
+              <p className="mb-3 text-sm text-ink-secondary">
+                {`${deckCount.toLocaleString("fr-FR")} decklist${deckCount > 1 ? "s" : ""} ${name} relevée${deckCount > 1 ? "s" : ""} en tournoi. Les meilleures d'abord : niveau du tournoi, puis classement du joueur.`}
               </p>
             )}
-            {fiche.legendAbility && (
-              <p
-                className={`text-sm leading-relaxed text-ink-secondary ${carteLegende?.textPlain ? "mt-2.5 border-t border-hairline pt-2.5" : "mt-1.5"}`}
-              >
-                {fiche.legendAbility}
+            {lignesDecks.length === 0 ? (
+              <p className="rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
+                {t("Pas encore de decklist classée pour cette Légende.")}
               </p>
-            )}
-          </div>
-        </div>
-      )}
+            ) : (
+              <>
+                <div className="divide-y divide-hairline rounded-card border border-hairline bg-surface">
+                  {lignesDecks.map(({ deck, prix, lienAchat, interdites }) => (
+                    <div key={deck.id} className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+                      <span className={cn("inline-flex h-8 min-w-11 shrink-0 items-center justify-center rounded-lg px-2 text-sm font-bold tabular-nums", rangPlacement(deck.placement) === 1 ? "bg-gold text-canvas" : "bg-surface-raised text-ink")}>
+                        {deck.placement ? afficherPlacement(deck.placement, langue) : "·"}
+                      </span>
+                      <div className="min-w-0 flex-1 basis-48">
+                        <Link href={`/decks/${deck.slug}`} className="block truncate text-sm font-bold text-ink transition-colors hover:text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                          {deck.playerName ?? nomDeDeck(deck, legendName) ?? deck.title}
+                        </Link>
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-muted">
+                          <span className="truncate">{deck.tournamentContext}</span>
+                          <PastilleInterdite cartes={interdites} className="max-w-[60%]" />
+                        </div>
+                      </div>
+                      {prix > 0 && (
+                        <div className="text-right">
+                          <div className="text-xs text-ink-muted">{t("À partir de")}</div>
+                          <div className="text-sm font-bold tabular-nums text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix)}</div>
+                        </div>
+                      )}
+                      <div className="flex items-center gap-2">
+                        <Link href={`/decks/${deck.slug}`} className="inline-flex min-h-11 items-center rounded-lg border border-hairline px-3 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink sm:min-h-9">
+                          {t("Voir la liste")}
+                        </Link>
+                        {/* Un vrai lien écrit par le serveur. Rien sur une liste injouable :
+                            on la signale, on ne la vend pas. */}
+                        {lienAchat && prix > 0 && (
+                          <a
+                            href={lienAchat}
+                            target="_blank"
+                            rel="sponsored nofollow noopener"
+                            aria-label={`${t("Acheter ce deck")} : ${deck.playerName ?? deck.title}`}
+                            className="inline-flex min-h-11 items-center rounded-lg bg-gold px-3 text-sm font-bold text-canvas transition-colors hover:bg-gold-light sm:min-h-9"
+                          >
+                            {t("Acheter")}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
 
-      <div className="mt-10 space-y-12">
-        {/* Decklists, contenu principal */}
-        <Section id="meilleurs-decks" title={`Meilleurs decks ${name}`} icon={<Layers size={20} />}>
-          {deckCount > 0 && (
-            <p className="mb-3 text-sm text-ink-secondary">
-              {`${deckCount.toLocaleString("fr-FR")} decklist${deckCount > 1 ? "s" : ""} ${name} relevée${deckCount > 1 ? "s" : ""} en tournoi. Les meilleures d'abord : niveau du tournoi, puis classement du joueur.`}
-            </p>
-          )}
-          {decklists.length === 0 ? (
-            <p className="rounded-lg border border-hairline bg-surface p-4 text-sm text-ink-secondary">
-              {t("Pas encore de decklist classée pour cette Légende.")}
-            </p>
-          ) : decklists.length === 1 ? (
-            <>
-              <DecklistInteractive
-                compact
-                cards={decklists[0].cards}
-                deckName={nomDeDeck(decklists[0].deck, legendName) ?? decklists[0].deck.title}
-                legendName={legendName}
-                playerName={decklists[0].deck.playerName ?? undefined}
-                context={
-                  [decklists[0].deck.tournamentContext, decklists[0].deck.placement && afficherPlacement(decklists[0].deck.placement, langue)]
-                    .filter(Boolean)
-                    .join(" · ") || undefined
-                }
-                showCopyCode
-                showExportPng
-                deckbuilderCode={decklists[0].deckbuilderCode}
-              />
-              {encartAchat(decklists[0].deck, decklists[0].cards)}
-            </>
-          ) : (
-            <div className="space-y-3">
-              {decklists.map(({ deck, cards, deckbuilderCode }, i) => (
-                <details
-                  key={deck.id}
-                  open={i === 0}
-                  className="group rounded-card border border-hairline bg-surface"
-                >
-                  <summary className="flex cursor-pointer flex-wrap items-center gap-2 px-4 py-3 text-sm font-semibold">
-                    <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                      {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
-                    </span>
-                    {deck.playerName && (
-                      <span className="font-normal text-ink-muted">par {deck.playerName}</span>
-                    )}
-                    {deck.tournamentTier && (
-                      <span className="rounded bg-gold px-1.5 py-0.5 text-[10px] font-bold text-canvas">
-                        {deck.tournamentTier}
-                      </span>
-                    )}
-                    {deck.placement && (
-                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
-                        {afficherPlacement(deck.placement, langue)}
-                      </span>
-                    )}
+                {/* Les trois meilleures listes, carte par carte. Repliées : elles
+                    poussaient le guide et le noyau à quatre écrans du haut. */}
+                <details className="group mt-3 rounded-card border border-hairline bg-surface">
+                  <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 px-4 py-2.5 text-sm font-semibold text-ink-secondary transition-colors hover:text-ink">
+                    {decklists.length > 1 ? t("Les meilleures listes, carte par carte") : t("La meilleure liste, carte par carte")}
+                    <ChevronDown size={16} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
                   </summary>
-                  <div className="px-3 pb-3">
-                    <DecklistInteractive
-                      compact
-                      cards={cards}
-                      deckName={nomDeDeck(deck, legendName) ?? deck.title}
-                      legendName={legendName}
-                      playerName={deck.playerName ?? undefined}
-                      context={deck.tournamentContext ?? undefined}
-                      showCopyCode
-                      showExportPng
-                      deckbuilderCode={deckbuilderCode}
-                    />
-                    {encartAchat(deck, cards)}
+                  <div className="space-y-6 px-3 pb-3">
+                    {decklists.map(({ deck, cards, deckbuilderCode }) => (
+                      <div key={deck.id}>
+                        <div className="flex flex-wrap items-center gap-2 px-1 pb-2 text-sm font-semibold">
+                          <span style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                            {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
+                          </span>
+                          {deck.playerName && <span className="font-normal text-ink-muted">par {deck.playerName}</span>}
+                          {deck.tournamentTier && (
+                            <span className="rounded bg-gold px-1.5 py-0.5 text-[10px] font-bold text-canvas">{deck.tournamentTier}</span>
+                          )}
+                          {deck.placement && (
+                            <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
+                              {afficherPlacement(deck.placement, langue)}
+                            </span>
+                          )}
+                        </div>
+                        <DecklistInteractive
+                          compact
+                          cards={cards}
+                          deckName={nomDeDeck(deck, legendName) ?? deck.title}
+                          legendName={legendName}
+                          playerName={deck.playerName ?? undefined}
+                          context={deck.tournamentContext ?? undefined}
+                          showCopyCode
+                          showExportPng
+                          deckbuilderCode={deckbuilderCode}
+                        />
+                        {encartAchat(deck, cards)}
+                      </div>
+                    ))}
                   </div>
                 </details>
-              ))}
-            </div>
-          )}
-        </Section>
-
-        {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
-        {guideProse && (
-          <Section id="comment-jouer" title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
-            <div className="max-w-3xl text-[15px] leading-7 text-ink-secondary">
-              <MarkdownRenderer content={guideProse} />
-            </div>
+              </>
+            )}
           </Section>
-        )}
 
-        {/* Noyau et cartes flex, comptés sur les seules listes du set en cours.
-            Pleine largeur : jusqu'à vingt-trois cartes, qui tenaient mal dans une
-            demi-colonne. Une fiche dont les cartes datent d'un ancien set les tait
-            au lieu de les montrer comme celles du format en cours. */}
-        {(fiche.keyCards?.length ?? 0) > 0 &&
-          (setDesChiffres ? (
-            <section>
-              <h2
-                id="noyau"
-                className="flex scroll-mt-20 items-center gap-2 text-xl font-semibold text-arcane"
-                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-              >
-                <TrendingUp size={18} /> {t("Noyau et cartes flex")}
-              </h2>
-              <p className="mt-1 text-sm text-ink-secondary">
-                {listesDuSet ? (
-                  <>
-                    {t("Compté sur")} {listesDuSet} {t("listes publiées en tournoi")} ({setDesChiffres}
-                    {fiche.cartesDepuisBan ? `, ${t("depuis le dernier ban")}` : ""}).{" "}
-                  </>
-                ) : null}
-                <Link href={listesHref()} className="text-arcane hover:underline">
-                  {t("Voir ces listes")}
-                </Link>
-              </p>
-              {noyau.length > 0 && (
-                <>
-                  <h3 className="mt-5 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    {t("Noyau")} <span className="font-normal text-ink-muted">{t("dans au moins 9 listes sur 10")}</span>
-                  </h3>
-                  <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-                    {noyau.map((kc, i) => tuileCarte(kc, i))}
-                  </div>
-                </>
-              )}
-              {flex.length > 0 && (
-                <>
-                  <h3 className="mt-6 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                    {t("Cartes flex")}{" "}
-                    <span className="font-normal text-ink-muted">{t("dans 3 à 9 listes sur 10, là où les listes diffèrent")}</span>
-                  </h3>
-                  <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-                    {flex.map((kc, i) => tuileCarte(kc, i, true))}
-                  </div>
-                </>
-              )}
-            </section>
-          ) : (
-            <p className="rounded-lg border border-hairline bg-surface px-4 py-3 text-sm text-ink-secondary">
-              {t("Trop peu de listes de cette Légende dans le set en cours pour montrer ses cartes.")}
-            </p>
-          ))}
+          {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
+          {guideProse && (
+            <Section id="comment-jouer" title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
+              <div className="max-w-3xl text-[15px] leading-7 text-ink-secondary">
+                <MarkdownRenderer content={guideProse} />
+              </div>
+            </Section>
+          )}
 
-        {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
-          <section>
-            <h2
-              id="forces-faiblesses"
-              className="scroll-mt-20 text-xl font-semibold text-arcane"
-              style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-            >
-              Forces &amp; faiblesses
-            </h2>
-            <div className="mt-3 grid gap-4 sm:grid-cols-2">
-              {(fiche.strengths?.length ?? 0) > 0 && (
-                <div className="rounded-lg border border-hairline bg-surface p-4">
-                  <h3
-                    className="text-sm font-semibold text-emerald-500"
-                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                  >
-                    Forces
-                  </h3>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                    {fiche.strengths!.map((s, i) => (
-                      <li key={i}>{s}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {(fiche.weaknesses?.length ?? 0) > 0 && (
-                <div className="rounded-lg border border-hairline bg-surface p-4">
-                  <h3
-                    className="flex items-center gap-1.5 text-sm font-semibold text-red-400"
-                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                  >
-                    <AlertTriangle size={15} /> Faiblesses
-                  </h3>
-                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
-                    {fiche.weaknesses!.map((w, i) => (
-                      <li key={i}>{w}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Champions + Champs de bataille côte à côte */}
-        {/* Même règle que les cartes : rien d'un ancien set. */}
-        {setDesChiffres &&
-          ((fiche.champions && Object.keys(fiche.champions).length > 0) ||
-          (fiche.topBattlefields?.length ?? 0) > 0) && (
-          <div className="grid gap-6 lg:grid-cols-2">
-            {fiche.champions && Object.keys(fiche.champions).length > 0 && (
+          {/* Noyau et cartes flex, comptés sur les seules listes du set en cours.
+              Une fiche dont les cartes datent d'un ancien set les tait au lieu de
+              les montrer comme celles du format en cours. */}
+          {(fiche.keyCards?.length ?? 0) > 0 &&
+            (setDesChiffres ? (
               <section>
                 <h2
+                  id="noyau"
+                  className="flex scroll-mt-20 items-center gap-2 text-xl font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  <TrendingUp size={18} /> {t("Noyau et cartes flex")}
+                </h2>
+                <p className="mt-1 text-sm text-ink-secondary">
+                  {listesDuSet ? (
+                    <>
+                      {t("Compté sur")} {listesDuSet} {t("listes publiées en tournoi")} ({setDesChiffres}
+                      {fiche.cartesDepuisBan ? `, ${t("depuis le dernier ban")}` : ""}).{" "}
+                    </>
+                  ) : null}
+                  <Link href={listesHref()} className="text-arcane hover:underline">
+                    {t("Voir ces listes")}
+                  </Link>
+                </p>
+                {noyau.length > 0 && (
+                  <>
+                    <h3 className="mt-5 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                      {t("Noyau")} <span className="font-normal text-ink-muted">{t("dans au moins 9 listes sur 10")}</span>
+                    </h3>
+                    <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                      {noyau.map((kc, i) => tuileCarte(kc, i))}
+                    </div>
+                  </>
+                )}
+                {flex.length > 0 && (
+                  <>
+                    <h3 className="mt-6 text-sm font-semibold text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
+                      {t("Cartes flex")}{" "}
+                      <span className="font-normal text-ink-muted">{t("dans 3 à 9 listes sur 10, là où les listes diffèrent")}</span>
+                    </h3>
+                    <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                      {flex.map((kc, i) => tuileCarte(kc, i, true))}
+                    </div>
+                  </>
+                )}
+              </section>
+            ) : (
+              <p className="rounded-lg border border-hairline bg-surface px-4 py-3 text-sm text-ink-secondary">
+                {t("Trop peu de listes de cette Légende dans le set en cours pour montrer ses cartes.")}
+              </p>
+            ))}
+
+          {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
+            <section>
+              <h2
+                id="forces-faiblesses"
+                className="scroll-mt-20 text-xl font-semibold text-arcane"
+                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+              >
+                Forces &amp; faiblesses
+              </h2>
+              <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                {(fiche.strengths?.length ?? 0) > 0 && (
+                  <div className="rounded-lg border border-hairline bg-surface p-4">
+                    <h3
+                      className="text-sm font-semibold text-emerald-500"
+                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                    >
+                      Forces
+                    </h3>
+                    <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                      {fiche.strengths!.map((s, i) => (
+                        <li key={i}>{s}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {(fiche.weaknesses?.length ?? 0) > 0 && (
+                  <div className="rounded-lg border border-hairline bg-surface p-4">
+                    <h3
+                      className="flex items-center gap-1.5 text-sm font-semibold text-red-400"
+                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                    >
+                      <AlertTriangle size={15} /> Faiblesses
+                    </h3>
+                    <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-ink-secondary">
+                      {fiche.weaknesses!.map((w, i) => (
+                        <li key={i}>{w}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Palmarès : les meilleures places relevées par la fiche, sur son set. */}
+          {palmares.length > 0 && (
+            <Section id="palmares" title={t("Palmarès")} icon={<Trophy size={20} />}>
+              <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
+                {palmares.map((r, i) => (
+                  <li key={i} className="flex items-center gap-4 px-4 py-2.5 text-sm">
+                    <span className="w-9 shrink-0 font-bold tabular-nums text-ink">{r.placement ? afficherPlacement(r.placement, langue) : ""}</span>
+                    <span className="min-w-0 flex-1 text-ink-secondary">
+                      {r.player && <strong className="text-ink">{r.player}</strong>}
+                      {r.player && r.tournament ? ", " : ""}
+                      {r.tournament}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          )}
+
+          {/* Les listes suivantes en liens : chemin interne vers les pages deck, que Google
+              n'atteint aujourd'hui que par le sitemap. Rendu dans l'ordre de tri déjà
+              calculé (niveau de tournoi, puis classement). Placées après les cartes clés :
+              une longue liste de liens entre le guide et le reste coupait la lecture. */}
+          {otherDecks.length > 0 && (
+            <Section id="autres-listes" title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
+              <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
+                {otherDecks.map((deck) => (
+                  <li key={deck.id}>
+                    <Link
+                      href={`/decks/${deck.slug}`}
+                      className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-2.5 text-sm hover:bg-surface-raised"
+                    >
+                      <span
+                        className="font-semibold text-arcane"
+                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                      >
+                        {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
+                      </span>
+                      {deck.playerName && (
+                        <span className="text-ink-muted">par {deck.playerName}</span>
+                      )}
+                      {deck.placement && (
+                        <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
+                          {afficherPlacement(deck.placement, langue)}
+                        </span>
+                      )}
+                      <PastilleInterdite cartes={cartesInterdites(deck.cards.map((dc) => dc.card.name))} className="max-w-[45%]" />
+                      {deck.tournamentContext && nomDeDeck(deck, legendName) && (
+                        <span className="ml-auto truncate text-xs text-ink-muted">
+                          {deck.tournamentContext}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {deckCount > legendDecks.length && (
+                <p className="mt-3 text-sm">
+                  <Link href={decksHref} className="text-arcane hover:underline">
+                    Voir les {deckCount.toLocaleString("fr-FR")} decks {name}
+                  </Link>
+                </p>
+              )}
+            </Section>
+          )}
+
+          <div className="flex flex-wrap gap-3">
+            <BoutonLien href={decksHref}>Voir tous les decks de {name}</BoutonLien>
+            <BoutonLien href="/tier-list" variante="neutre">Tier List</BoutonLien>
+            <BoutonLien href="/legendes" variante="neutre">
+              {t("Toutes les Légendes")}
+            </BoutonLien>
+          </div>
+        </div>
+
+        {/* Ce qu'on consulte en lisant le reste : la capacité, les champions, les champs
+            de bataille et l'achat de la liste de tête. Sur ordinateur la colonne suit
+            la lecture ; la cellule s'étire sur toute la hauteur pour que le bloc
+            collant ait où glisser. */}
+        <aside aria-label={t("Capacité, champions et champs de bataille")}>
+          <div className="grid gap-4 lg:sticky lg:top-22">
+            {/* Capacité de la Légende : la carte, son texte de règles, puis l'explication.
+                Le texte de la carte fait foi et reste en anglais, comme sur /cartes ; la
+                phrase en dessous dit ce que ça change en partie. Sans carte en base,
+                l'encart se réduit à l'explication. */}
+            {(carteLegende || fiche.legendAbility) && (
+              <section className="rounded-card border border-hairline bg-surface p-4">
+                <h2
+                  className="titre-bloc flex items-center gap-2 text-sm font-semibold text-arcane"
+                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                >
+                  <Sparkles size={16} /> {t("Capacité de la Légende")}
+                </h2>
+                <div className="mt-3 flex gap-3">
+                  {carteLegende?.imageUrl && (
+                    <Link href={`/cartes/${carteLegende.riftboundId}`} className="shrink-0 self-start">
+                      <Image
+                        src={carteLegende.imageUrl}
+                        alt={name}
+                        width={214}
+                        height={300}
+                        sizes="96px"
+                        className="w-24 rounded-game-card bg-surface-raised transition-transform duration-200 hover:scale-[1.03]"
+                        style={{ aspectRatio: "300 / 419" }}
+                      />
+                    </Link>
+                  )}
+                  <div className="min-w-0">
+                    {carteLegende?.textPlain && (
+                      <p className="text-sm leading-relaxed text-ink">
+                        <CardTextRenderer text={carteLegende.textPlain} />
+                      </p>
+                    )}
+                  </div>
+                </div>
+                {fiche.legendAbility && (
+                  <p className={`text-sm leading-relaxed text-ink-secondary ${carteLegende?.textPlain ? "mt-3 border-t border-hairline pt-3" : "mt-1.5"}`}>
+                    {fiche.legendAbility}
+                  </p>
+                )}
+              </section>
+            )}
+
+            {/* Même règle que les cartes : rien d'un ancien set. */}
+            {setDesChiffres && fiche.champions && Object.keys(fiche.champions).length > 0 && (
+              <section className="rounded-card border border-hairline bg-surface">
+                <h2
                   id="champions"
-                  className="scroll-mt-20 text-xl font-semibold text-arcane"
+                  className="titre-bloc scroll-mt-20 border-b border-hairline px-4 py-3 text-sm font-semibold text-ink"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {t("Champions joués")}
                 </h2>
-                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <div className="py-1">
                   {Object.entries(fiche.champions).map(([champName, info]) => (
-                    <CardTile
-                      key={champName}
-                      art={cardArt[champName] ?? null}
-                      label={<CardRef name={champName}>{champName}</CardRef>}
-                      badge={info?.usage}
-                      sub={info?.role}
-                    />
+                    <LigneTaux key={champName} nom={champName} part={info?.usage ?? null} sub={info?.role ?? null} banni={isBanned(cardArt[champName]?.name ?? champName)} />
                   ))}
                 </div>
               </section>
             )}
 
-            {(fiche.topBattlefields?.length ?? 0) > 0 && (
-              <section>
+            {setDesChiffres && (fiche.topBattlefields?.length ?? 0) > 0 && (
+              <section className="rounded-card border border-hairline bg-surface">
                 <h2
                   id="champs-de-bataille"
-                  className="scroll-mt-20 text-xl font-semibold text-arcane"
+                  className="titre-bloc scroll-mt-20 border-b border-hairline px-4 py-3 text-sm font-semibold text-ink"
                   style={{ fontFamily: "var(--font-rubik), sans-serif" }}
                 >
                   {t("Champs de bataille fréquents")}
                 </h2>
-                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <div className="py-1">
                   {fiche.topBattlefields!.map((bf) => {
                     const nom = nomTerrain(bf);
-                    const part = partTerrain(bf);
-                    return (
-                      <CardTile
-                        key={bf}
-                        art={cardArt[nom] ?? null}
-                        // Le nom de la base d'abord : `isBanned` compare à l'exact, et
-                        // le nom écrit dans la fiche peut porter une apostrophe droite
-                        // là où la carte en a une courbe. Sans ça, un champ de bataille
-                        // banni passerait sans étiquette, en silence.
-                        nom={cardArt[nom]?.name ?? nom}
-                        label={<CardRef name={nom}>{nom}</CardRef>}
-                        sub={part ? `${part} % des listes` : null}
-                        landscape
-                      />
-                    );
+                    // Le nom de la base d'abord : `isBanned` compare à l'exact, et le
+                    // nom écrit dans la fiche peut porter une apostrophe droite là où
+                    // la carte en a une courbe. Sans ça, un champ de bataille banni
+                    // passerait sans étiquette, en silence.
+                    return <LigneTaux key={bf} nom={nom} part={partTerrain(bf)} banni={isBanned(cardArt[nom]?.name ?? nom)} />;
                   })}
                 </div>
               </section>
             )}
-          </div>
-        )}
 
-        {/* Les listes suivantes en liens : chemin interne vers les pages deck, que Google
-            n'atteint aujourd'hui que par le sitemap. Rendu dans l'ordre de tri déjà
-            calculé (niveau de tournoi, puis classement). Placées après les cartes clés :
-            une longue liste de liens entre le guide et le reste coupait la lecture. */}
-        {otherDecks.length > 0 && (
-          <Section id="autres-listes" title={`Autres listes ${name} en tournoi`} icon={<Layers size={20} />}>
-            <ul className="divide-y divide-hairline overflow-hidden rounded-card border border-hairline bg-surface">
-              {otherDecks.map((deck) => (
-                <li key={deck.id}>
-                  <Link
-                    href={`/decks/${deck.slug}`}
-                    className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-2.5 text-sm hover:bg-surface-raised"
-                  >
-                    <span
-                      className="font-semibold text-arcane"
-                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                    >
-                      {nomDeDeck(deck, legendName) ?? deck.tournamentContext}
-                    </span>
-                    {deck.playerName && (
-                      <span className="text-ink-muted">par {deck.playerName}</span>
-                    )}
-                    {deck.placement && (
-                      <span className="rounded bg-surface-raised px-1.5 py-0.5 text-[10px] text-ink-secondary">
-                        {afficherPlacement(deck.placement, langue)}
-                      </span>
-                    )}
-                    <PastilleInterdite cartes={cartesInterdites(deck.cards.map((dc) => dc.card.name))} className="max-w-[45%]" />
-                    {deck.tournamentContext && nomDeDeck(deck, legendName) && (
-                      <span className="ml-auto truncate text-xs text-ink-muted">
-                        {deck.tournamentContext}
-                      </span>
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {deckCount > legendDecks.length && (
-              <p className="mt-3 text-sm">
-                <Link href={decksHref} className="text-arcane hover:underline">
-                  Voir les {deckCount.toLocaleString("fr-FR")} decks {name}
-                </Link>
-              </p>
+            {/* La liste de tête, à acheter sans quitter la fiche. */}
+            {lignesDecks[0]?.lienAchat && lignesDecks[0].prix > 0 && (
+              <div className="rounded-card border border-hairline bg-surface p-4">
+                <div className="text-xs text-ink-muted">
+                  {lignesDecks[0].deck.playerName ? `${t("La liste de")} ${lignesDecks[0].deck.playerName}, ` : ""}{t("À partir de").toLowerCase()}
+                </div>
+                <div className="text-xl font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(lignesDecks[0].prix)}</div>
+                <BoutonLien href={lignesDecks[0].lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat" className="mt-3 w-full">{t("Acheter ce deck")}</BoutonLien>
+              </div>
             )}
-          </Section>
-        )}
-
-        <div className="flex flex-wrap gap-3">
-          <BoutonLien href={decksHref}>Voir tous les decks de {name}</BoutonLien>
-          <BoutonLien href="/tier-list" variante="neutre">Tier List</BoutonLien>
-          <BoutonLien href="/legendes" variante="neutre">
-            {t("Toutes les Légendes")}
-          </BoutonLien>
-        </div>
+          </div>
+        </aside>
       </div>
     </div>
   );

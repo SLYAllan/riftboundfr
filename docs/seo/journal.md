@@ -5,6 +5,45 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-12 · hors passe, fiche resserrée sur `/legendes/[slug]`
+
+La version « actuel en mieux » de l'essai carte blanche, choisie par Allan le 12 novembre.
+C'est la famille qui reçoit le plus de clics Google : le changement est plus gros que
+ceux d'avant, à surveiller de près. **Changé** :
+- le bandeau passe de 7:3 à 16:5 sur ordinateur (528 px de haut, plus de la moitié du
+  premier écran) ; la lettre du tier s'affiche en grand à droite ;
+- les chiffres sortent du bandeau, en tuiles : rang parmi les Légendes du set, joueurs
+  classés et part du champ, part dans les 10 % de tête avec l'écart au format, titres,
+  listes publiées. Rang, part et écart viennent de `parts-classement.ts`, la source de
+  l'accueil et de `/meta` ;
+- « Meilleurs decks » montre six listes en lignes (place, joueur, tournoi, prix, « Voir la
+  liste », « Acheter ») au lieu de trois listes dépliables dont la première ouverte. Les
+  trois meilleures restent dans la page, carte par carte, dans un bloc replié juste
+  dessous, avec leur panneau d'achat. « Autres listes » commence donc à la septième ;
+- noyau et cartes flex : le taux devient une barre sous la carte, les exemplaires dessous ;
+- capacité, champions et champs de bataille passent dans une colonne qui suit la lecture
+  sur ordinateur, avec l'achat de la liste de tête ; champions et champs de bataille
+  deviennent des lignes à barre de taux, sans image ;
+- nouvelle partie « Palmarès » : les meilleures places que la fiche relève sur son set.
+
+Titre (`h1`), `title`, description, JSON-LD, texte du guide et ancres inchangés. Les liens
+vers les pages de deck restent tous là. Liens d'achat : six lignes et la colonne, plus les
+trois panneaux du bloc replié ; rien sur une liste injouable.
+
+**Mesuré** en local (build de production, base locale), sur Riven : page de 7 468 à
+4 458 px de haut à 1 440 px, de 10 449 à 7 781 px à 390 px.
+
+**Risque** : les trois decklists ne sont plus visibles sans un clic. Si la famille perd
+des positions sur « deck <légende> », rouvrir la première liste par défaut (`open` sur le
+bloc) est le premier retour à essayer.
+
+**À juger** deux semaines après le Deploy : la position et les clics de `/legendes/*`
+dans Search Console, et ses `clic_cardnexus` (point de départ : entrée du 2 novembre).
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-12 · hors passe, colonne d'achat et chiffres sur `/decks/[slug]`
 
 La version « actuel en mieux » de l'essai carte blanche, choisie par Allan le 12 novembre
@@ -21,8 +60,9 @@ d'achat à l'écran au lieu de deux sur ordinateur ; un clic donne toujours un s
 `clic_cardnexus`.
 
 **Mesuré** en local (build de production, base locale), sur la liste Akali de Slickk :
-page de 3 099 à 2 843 px de haut à 1 440 px ; le bouton d'achat reste visible pendant
-toute la liste, il sortait de l'écran après 250 px.
+page de 3 099 à 2 843 px de haut à 1 440 px ; le bouton d'achat du haut, posé à 252 px
+(mesure du 11 novembre), quittait l'écran dès qu'on descendait dans la liste : la colonne
+le garde visible.
 
 **À juger** deux semaines après le Deploy, avec l'entrée du 11 novembre : les clics pour
 1 000 vues de `/decks/*` (point de départ 27,9).
