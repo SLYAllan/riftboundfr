@@ -301,32 +301,33 @@ export default async function HomePage() {
             )}
           </div>
 
+          {/* La carte entière mène à la liste : l'illustration la remplit, le texte est
+              posé dessus. En deux étages (image, puis une ligne de texte), le bas de la
+              carte restait vide sur toute la hauteur de la colonne voisine. */}
           {une && (
-            <article className={PANNEAU}>
-              <Link href={`/decks/${une.slug}`} className="group relative block aspect-[7/3] overflow-hidden">
-                {une.banniere && (
-                  <Image src={une.banniere} alt="" width={700} height={300} priority sizes="(max-width: 1024px) 100vw, 512px"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="text-xs text-white/80">{t("Le deck du dernier vainqueur")}</div>
-                  <div className="text-xl font-bold text-white drop-shadow" style={rubik}>
-                    {[une.playerName, displayLegendName(une.legendName)].filter(Boolean).join(", ")}
-                  </div>
+            <Link
+              href={`/decks/${une.slug}`}
+              className="group relative block min-h-52 overflow-hidden rounded-card border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
+            >
+              {une.banniere && (
+                <Image src={une.banniere} alt="" width={700} height={300} priority sizes="(max-width: 1024px) 100vw, 512px"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+                <div className="text-xs text-white/80">{t("Le deck du dernier vainqueur")}</div>
+                <div className="text-xl font-bold text-white drop-shadow" style={rubik}>
+                  {[une.playerName, displayLegendName(une.legendName)].filter(Boolean).join(", ")}
                 </div>
-              </Link>
-              <div className="flex flex-1 flex-wrap items-center justify-between gap-x-4 gap-y-2 p-4">
-                <p className="min-w-0 flex-1 basis-56 text-sm text-ink-secondary">
+                <div className="mt-1 text-sm text-white/80">
                   {[
                     `${afficherPlacement("1st", langue)}, ${une.tournoi}`,
                     une.date ? formatDate(une.date, locale) : null,
                     une.joueurs ? `${une.joueurs.toLocaleString(locale)} ${t("joueurs")}` : null,
                   ].filter(Boolean).join(" · ")}
-                </p>
-                <Link href={`/decks/${une.slug}`} className={LIEN_TETE}>{t("Voir la liste")} <ArrowRight size={14} /></Link>
+                </div>
               </div>
-            </article>
+            </Link>
           )}
         </div>
       </section>
