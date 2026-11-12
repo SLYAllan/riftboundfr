@@ -5,6 +5,32 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-12 · hors passe, colonne d'achat et chiffres sur `/decks/[slug]`
+
+La version « actuel en mieux » de l'essai carte blanche, choisie par Allan le 12 novembre
+(« j'aime bien la version améliorée de l'actuel […] applique »). **Changé** :
+- l'en-tête devient un encadré : l'illustration de la Légende en fond, puis quatre
+  chiffres (place, joueurs du tournoi, cartes au deck principal, énergie moyenne). Ils
+  n'existaient que dans la vue « statistiques » de la liste ;
+- sur ordinateur, une colonne suit la lecture : prix, « Acheter ce deck » et les trois
+  graphiques du site (`DeckStatsPanel`). Sur téléphone, une barre d'achat reste en bas ;
+- la liste (`DecklistInteractive`), le panneau du bas et « Autres decks » ne bougent pas.
+
+Titre (`h1`), `title`, description, JSON-LD et liens internes inchangés. Trois liens
+d'achat à l'écran au lieu de deux sur ordinateur ; un clic donne toujours un seul
+`clic_cardnexus`.
+
+**Mesuré** en local (build de production, base locale), sur la liste Akali de Slickk :
+page de 3 099 à 2 843 px de haut à 1 440 px ; le bouton d'achat reste visible pendant
+toute la liste, il sortait de l'écran après 250 px.
+
+**À juger** deux semaines après le Deploy, avec l'entrée du 11 novembre : les clics pour
+1 000 vues de `/decks/*` (point de départ 27,9).
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-12 · hors passe, volet esthétique sur tout le site
 
 Choix d'Allan du 12 novembre sur la page de réglages de l'audit (volet esthétique). Un
