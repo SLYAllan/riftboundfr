@@ -8,7 +8,9 @@
 // la page se rabat sur la base quand data/fiches/<slug>.json n'existe pas. Un lien
 // posé depuis une page deck est donc toujours valide, sans vérification préalable.
 
-import { prisma } from "@/lib/prisma";
+// Chemin relatif et pas l'alias : Vitest tourne sans config et ne connaît pas `@/`,
+// or `parts-classement` (testé) importe ce fichier.
+import { prisma } from "./prisma";
 
 export function legendFicheSlug(legendName: string): string {
   return legendName

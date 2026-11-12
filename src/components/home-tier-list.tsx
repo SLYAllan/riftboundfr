@@ -46,9 +46,12 @@ const tierOrder = TIER_ORDER;
 export function HomeTierList({
   tierLists,
   legendMap,
+  pages = {},
 }: {
   tierLists: TierListData[];
   legendMap: Map<string, CardData>;
+  /** Slug de la page de chaque Légende, par `legendId`. Sans page, la vignette n'est pas un lien. */
+  pages?: Record<string, string>;
 }) {
   const t = useT();
   const langue = useLangue();
@@ -126,6 +129,10 @@ export function HomeTierList({
           {tierLists.map((tl, listIdx) => {
             const isActive = listIdx === activeIdx;
             const g = groupBy(tl.entries);
+            // Les noms courts portés par deux Légendes de la liste (les deux Master Yi,
+            // parfois dans deux tiers différents) : celles-là gardent leur nom entier.
+            const courts = tl.entries.map((e) => displayLegendName(e.legendName).split(",")[0]);
+            const doublons = new Set(courts.filter((c, i) => courts.indexOf(c) !== i));
             return (
               <div
                 key={tl.id}
@@ -162,32 +169,47 @@ export function HomeTierList({
                           {tier}
                         </span>
                       </div>
-                      <div className="flex flex-wrap items-center gap-1.5 p-2 flex-1 min-h-[52px]">
+                      <div className="flex min-h-[52px] flex-1 flex-wrap gap-x-1 gap-y-1.5 p-2">
                         {entries.map((entry) => {
                           const card = legendMap.get(entry.legendId);
-                          // Onglet inactif : une vignette vide, de la même taille.
-                          // Elle occupe la place sans télécharger d'image.
-                          if (!isActive) {
-                            return <div key={entry.id} className="h-12 w-12 rounded-lg bg-surface-raised" />;
-                          }
-                          return card?.imageUrl ? (
-                            <Image
+                          const court = displayLegendName(entry.legendName).split(",")[0];
+                          const nom = doublons.has(court) ? displayLegendName(entry.legendName) : court;
+                          // Onglet inactif : un carré vide à la place de l'image, pour
+                          // ne rien télécharger. Le nom reste : il fait la hauteur de la
+                          // vignette, et la carte ne doit pas bouger au changement d'onglet.
+                          const contenu = (
+                            <>
+                              {isActive && card?.imageUrl ? (
+                                <Image
+                                  src={card.imageUrl}
+                                  alt=""
+                                  width={48}
+                                  height={48}
+                                  suppressHydrationWarning
+                                  className="h-12 w-12 rounded-lg object-cover transition-transform group-hover:scale-105"
+                                />
+                              ) : (
+                                <span className="h-12 w-12 rounded-lg bg-surface-raised" />
+                              )}
+                              <span className="line-clamp-2 w-full text-center text-xs leading-tight text-ink-secondary group-hover:text-ink">{nom}</span>
+                            </>
+                          );
+                          const classe = "group flex w-[4.5rem] flex-col items-center gap-1 rounded-lg p-1";
+                          const slug = pages[entry.legendId];
+                          // Les noms sous les icônes : 36 visages sans nom demandaient de
+                          // connaître chaque champion de vue.
+                          return slug ? (
+                            <Link
                               key={entry.id}
-                              src={card.imageUrl}
-                              alt={entry.legendName}
-                              title={entry.legendName}
-                              width={48}
-                              height={48}
-                              suppressHydrationWarning
-                              className="h-12 w-12 rounded-lg object-cover hover:scale-110 transition-transform"
-                            />
-                          ) : (
-                            <div
-                              key={entry.id}
-                              className="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-raised text-[8px] text-ink-muted"
-                              title={entry.legendName}
+                              href={`/legendes/${slug}`}
+                              title={displayLegendName(entry.legendName)}
+                              className={cn(classe, "transition-colors hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane")}
                             >
-                              {displayLegendName(entry.legendName).split(",")[0].slice(0, 4)}
+                              {contenu}
+                            </Link>
+                          ) : (
+                            <div key={entry.id} title={displayLegendName(entry.legendName)} className={classe}>
+                              {contenu}
                             </div>
                           );
                         })}

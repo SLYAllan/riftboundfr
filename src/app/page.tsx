@@ -10,17 +10,21 @@ const metadata: Metadata = {
 };
 import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { BookOpen, Layers, BookText, Shield, ArrowRight, Gamepad2, Newspaper, Trophy, Library, Upload } from "lucide-react";
+import { BookOpen, Layers, BookText, Shield, ArrowRight, Gamepad2, Newspaper, Trophy, Library, Search, Upload } from "lucide-react";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { legendFicheSlug, legendsWithDecks } from "@/lib/legend-fiche";
-import partsDeClassement from "../../data/tournaments/meta-parts.json";
-import { displayLegendName, formatDate, slugify } from "@/lib/utils";
+import { cn, displayLegendName, formatDate, slugify } from "@/lib/utils";
 import { getTournamentInfo } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import { HomeTierList } from "@/components/home-tier-list";
 import { etiquetteLocale, traduire } from "@/lib/i18n";
 import { langueCourante, metaTraduite } from "@/lib/i18n-server";
 import { SET_EN_COURS } from "@/lib/tournament-order";
+import { vainqueur } from "@/lib/card-play";
+import { partsDuSet } from "@/lib/parts-classement";
+import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
+import { afficherPlacement } from "@/lib/deck-listing-params";
+import { TIER_TEXT_CLASS } from "@/lib/tier-colors";
 
 const getHomeData = unstable_cache(
   async () => {
@@ -34,7 +38,7 @@ const getHomeData = unstable_cache(
       prisma.article.findMany({
         where: { published: true },
         orderBy: { publishedAt: "desc" },
-        take: 4,
+        take: 3,
         select: { slug: true, title: true, coverImage: true, category: true, publishedAt: true },
       }),
       prisma.card.count(),
@@ -54,15 +58,30 @@ const getHomeData = unstable_cache(
     // « Nouveau » se décide ICI, au chargement des données, et pas dans le rendu :
     // `Date.now()` pendant le rendu est une lecture impure, refusée par le lint.
     const maintenant = Date.now();
+    // Le vainqueur de chaque tournoi affiché, quand sa liste est publiée : la ligne
+    // ne disait que le nom et la date, et il fallait ouvrir le tournoi pour savoir
+    // qui avait gagné, et avec quoi.
+    const contextes = derniersTournoisRaw.map((g) => g.tournamentContext!);
+    const listesClassees = contextes.length
+      ? await prisma.deck.findMany({
+          where: { published: true, tournamentContext: { in: contextes }, placement: { not: null } },
+          select: { slug: true, legendName: true, playerName: true, placement: true, tournamentContext: true },
+        })
+      : [];
     const derniersTournois = derniersTournoisRaw.map((groupe) => {
       const context = groupe.tournamentContext!;
       const info = getTournamentInfo(context);
       const ajouteLe = groupe._max.createdAt;
+      const gagnant = vainqueur(listesClassees.filter((d) => d.tournamentContext === context));
       return {
         slug: slugify(context),
         nom: info?.name ?? context,
         countryCode: info?.countryCode ?? null,
         date: info?.date ?? null,
+        joueurs: info?.playerCount ?? null,
+        vainqueur: gagnant
+          ? { slug: gagnant.slug, legendName: gagnant.legendName, playerName: gagnant.playerName, icone: getLegendIconUrl(gagnant.legendName) }
+          : null,
         ajouteLe: ajouteLe?.toISOString() ?? null,
         // Ajouté au site il y a moins de 7 jours (date de seed), pas la date du
         // tournoi : c'est ce qui vient d'arriver qu'on signale.
@@ -100,21 +119,54 @@ const getHomeData = unstable_cache(
     // les decklists publiées. Une Légende sans page (aucun deck publié) est
     // écartée, sinon le lien mènerait nulle part.
     const parSlug = new Map(legends.map((l) => [l.slug, l]));
-    const joueursParLegende = new Map<string, number>();
-    for (const part of partsDeClassement) {
-      if (part.set !== SET_EN_COURS) continue;
-      const slug = legendFicheSlug(part.legendName);
-      joueursParLegende.set(slug, (joueursParLegende.get(slug) ?? 0) + part.joueurs);
-    }
-    const topLegends = [...joueursParLegende.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .flatMap(([slug, joueurs]) => {
-        const l = parSlug.get(slug);
-        return l ? [{ ...l, joueurs }] : [];
+    const parts = partsDuSet(SET_EN_COURS);
+    // Le tier affiché à côté d'une Légende est celui de la tier list du set en cours.
+    const tierListDuSet = tierLists.find((tl) => tl.setContext === SET_EN_COURS) ?? null;
+    const tierParSlug = new Map((tierListDuSet?.entries ?? []).map((e) => [legendFicheSlug(e.legendName), e.tier]));
+    const topLegends = parts.lignes
+      .flatMap((p) => {
+        const l = parSlug.get(p.slug);
+        return l ? [{ ...l, joueurs: p.joueurs, part: p.part, tier: tierParSlug.get(p.slug) ?? null }] : [];
       })
       .slice(0, 6);
 
-    return { tierLists, topLegends, legendEntries, latestArticles, derniersTournois, cardCount };
+    // Les Légendes de la tier list qui ont une page : la vignette n'y mène que si la
+    // page existe, sinon le lien tomberait sur une 404.
+    const pagesLegendes: [string, string][] = tierLists.flatMap((tl) =>
+      tl.entries.flatMap((e): [string, string][] => {
+        const slug = legendFicheSlug(e.legendName);
+        return parSlug.has(slug) ? [[e.legendId, slug]] : [];
+      }),
+    );
+
+    // À la une : la liste du dernier vainqueur connu, avec son prix. Le même prix et
+    // le même lien que sa page de deck (`cardnexus.ts`), rien de calculé ici.
+    const tournoiGagne = derniersTournois.find((t) => t.vainqueur);
+    const deckUne = tournoiGagne
+      ? await prisma.deck.findUnique({
+          where: { slug: tournoiGagne.vainqueur!.slug },
+          select: { slug: true, legendName: true, playerName: true, cards: { select: { quantity: true, card: { select: { riftboundId: true, name: true } } } } },
+        })
+      : null;
+    const cartesUne = deckUne ? cartesDeck(deckUne.cards) : null;
+    const une = tournoiGagne && deckUne && cartesUne
+      ? {
+          slug: deckUne.slug,
+          legendName: deckUne.legendName,
+          playerName: deckUne.playerName,
+          banniere: getBannerUrl(deckUne.legendName),
+          tournoi: tournoiGagne.nom,
+          date: tournoiGagne.date,
+          joueurs: tournoiGagne.joueurs,
+          prix: chiffrerDeck(cartesUne).total,
+          lienAchat: lienAchatDeck(cartesUne),
+        }
+      : null;
+
+    return {
+      tierLists, topLegends, legendEntries, latestArticles, derniersTournois, cardCount, pagesLegendes, une,
+      chiffres: { joueurs: parts.total, tournois: parts.tournois, tierListLe: tierListDuSet?.updatedAt ?? null },
+    };
   },
   ["home-data"],
   { revalidate: 60, tags: ["home"] },
@@ -168,65 +220,124 @@ const guides = [
 ];
 
 
+const rubik = { fontFamily: "var(--font-rubik), sans-serif" };
+const PANNEAU = "flex flex-col overflow-hidden rounded-card border border-hairline bg-surface";
+const LIEN_TETE = "min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light";
+
 export default async function HomePage() {
-  let tierLists: Awaited<ReturnType<typeof getHomeData>>["tierLists"] = [];
-  let topLegends: Awaited<ReturnType<typeof getHomeData>>["topLegends"] = [];
-  let latestArticles: Awaited<ReturnType<typeof getHomeData>>["latestArticles"] = [];
-  let derniersTournois: Awaited<ReturnType<typeof getHomeData>>["derniersTournois"] = [];
-  let cardCount = 0;
-  let chargementEchoue = false;
-  let legendMap = new Map<string, { imageUrl: string | null; domains: string[] }>();
+  let donnees: Awaited<ReturnType<typeof getHomeData>> | null = null;
   try {
-    const data = await getHomeData();
-    tierLists = data.tierLists;
-    topLegends = data.topLegends;
-    latestArticles = data.latestArticles;
-    derniersTournois = data.derniersTournois;
-    cardCount = data.cardCount;
-    legendMap = new Map(data.legendEntries);
+    donnees = await getHomeData();
   } catch {
-    chargementEchoue = true;
+    donnees = null;
   }
+  const chargementEchoue = donnees === null;
+  const tierLists = donnees?.tierLists ?? [];
+  const topLegends = donnees?.topLegends ?? [];
+  const latestArticles = donnees?.latestArticles ?? [];
+  const derniersTournois = donnees?.derniersTournois ?? [];
+  const cardCount = donnees?.cardCount ?? 0;
+  const legendMap = new Map(donnees?.legendEntries ?? []);
+  const une = donnees?.une ?? null;
+  const chiffres = donnees?.chiffres ?? null;
 
   const langue = await langueCourante();
   const t = (texte: string) => traduire(texte, langue);
   const locale = etiquetteLocale(langue);
+  const partMax = Math.max(0.01, ...topLegends.map((l) => l.part));
 
   return (
     <div>
-      {/* Hero - Logo centered */}
-      <section className="flex flex-col items-center gap-3 px-4 pt-10 pb-6">
-        <Link href="/">
-          <Image
-            src="/logorbfr.png"
-            alt="Riftbound France"
-            width={224}
-            height={112}
-            priority
-            className="h-20 sm:h-28 w-auto drop-shadow-lg"
-          />
-        </Link>
-        <h1
-          className="text-center text-2xl font-bold sm:text-3xl"
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          {t("Riftbound France, la référence du TCG en français")}
-        </h1>
-        {/* Sous-titre : deux liens à ancre forte qui envoient l'intention « deck »
-            vers /decks et « tier list » vers /tier-list. Sans ça, l'accueil captait
-            « riftbound deck » (pos 7) sans jamais laisser /decks (pos 13) gagner. */}
-        <p className="max-w-xl text-center text-sm text-ink-secondary sm:text-base">
-          <Link href="/decks" className="text-arcane hover:underline">{t("Decks de tournoi")}</Link>
-          {", "}
-          <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list du méta")}</Link>
-          {t(" et base de cartes Riftbound, en français.")}
-        </p>
-        {/* Empilés sous 640 px : deux par rangée, « Trouver un deck » tenait dans
-            168 px pour 182 de libellé et touchait sa pastille. */}
-        <div className="flex w-full max-w-xl flex-col gap-2 sm:flex-row">
-          <BoutonLien href="/decks" className="sm:flex-1">{t("Trouver un deck")}</BoutonLien>
-          <BoutonLien href="/cartes" variante="contour" className="sm:flex-1">{t("Voir les cartes")}</BoutonLien>
-          <BoutonLien href="/guides/debuter" variante="neutre" className="sm:flex-1">{t("Débuter")}</BoutonLien>
+      {/* Haut de page. Le logo est déjà dans la barre du site : il était répété ici,
+          en grand, au-dessus d'un titre et de trois boutons. À sa place, la recherche,
+          les chiffres du set et le deck du dernier vainqueur avec son prix. */}
+      <section className="px-4 pt-8 pb-6 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,32rem)] lg:items-stretch">
+          <div className="flex flex-col justify-center gap-4 lg:py-4">
+            <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={rubik}>
+              {t("Riftbound France, la référence du TCG en français")}
+            </h1>
+            {/* Sous-titre : deux liens à ancre forte qui envoient l'intention « deck »
+                vers /decks et « tier list » vers /tier-list. Sans ça, l'accueil captait
+                « riftbound deck » (pos 7) sans jamais laisser /decks (pos 13) gagner. */}
+            <p className="text-sm text-ink-secondary sm:text-base">
+              <Link href="/decks" className="text-arcane hover:underline">{t("Decks de tournoi")}</Link>
+              {", "}
+              <Link href="/tier-list" className="text-arcane hover:underline">{t("tier list du méta")}</Link>
+              {t(" et base de cartes Riftbound, en français.")}
+            </p>
+            {/* Une vraie recherche : elle mène aux résultats de /decks. */}
+            <form action="/decks" method="get" role="search" className="flex h-12 max-w-xl items-center gap-3 rounded-lg border border-hairline-field bg-surface px-4 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-arcane">
+              <Search size={18} className="shrink-0 text-ink-muted" aria-hidden="true" />
+              <input
+                type="search"
+                name="q"
+                placeholder={t("Chercher un deck, une Légende, un joueur")}
+                aria-label={t("Chercher un deck, une Légende, un joueur")}
+                className="h-full min-w-0 flex-1 bg-transparent text-base text-ink outline-none placeholder:text-ink-muted"
+              />
+            </form>
+            {/* Empilés sous 640 px : deux par rangée, « Trouver un deck » tenait dans
+                168 px pour 182 de libellé et touchait sa pastille. */}
+            <div className="flex w-full max-w-xl flex-col gap-2 sm:flex-row">
+              <BoutonLien href="/decks" className="sm:flex-1">{t("Trouver un deck")}</BoutonLien>
+              <BoutonLien href="/cartes" variante="contour" className="sm:flex-1">{t("Voir les cartes")}</BoutonLien>
+              <BoutonLien href="/guides/debuter" variante="neutre" className="sm:flex-1">{t("Débuter")}</BoutonLien>
+            </div>
+            {chiffres && chiffres.joueurs > 0 && (
+              <dl className="flex flex-wrap gap-x-8 gap-y-2 pt-1">
+                {[
+                  [chiffres.joueurs.toLocaleString(locale), `${t("joueurs classés en")} ${SET_EN_COURS}`],
+                  [String(chiffres.tournois), t("tournois comptés")],
+                  ...(chiffres.tierListLe ? [[formatDate(chiffres.tierListLe, locale), t("tier list à jour")]] : []),
+                ].map(([valeur, libelle]) => (
+                  <div key={libelle}>
+                    <dd className="text-xl font-bold text-ink" style={rubik}>{valeur}</dd>
+                    <dt className="text-xs text-ink-muted">{libelle}</dt>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </div>
+
+          {une && (
+            <article className={PANNEAU}>
+              <Link href={`/decks/${une.slug}`} className="group relative block aspect-[7/3] overflow-hidden">
+                {une.banniere && (
+                  <Image src={une.banniere} alt="" width={700} height={300} priority sizes="(max-width: 1024px) 100vw, 512px"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <div className="text-xs text-white/80">{t("Le deck du dernier vainqueur")}</div>
+                  <div className="text-xl font-bold text-white drop-shadow" style={rubik}>
+                    {[une.playerName, displayLegendName(une.legendName)].filter(Boolean).join(", ")}
+                  </div>
+                </div>
+              </Link>
+              <div className="flex flex-1 flex-wrap items-center gap-x-4 gap-y-3 p-4">
+                <p className="min-w-0 flex-1 basis-56 text-sm text-ink-secondary">
+                  {[
+                    `${afficherPlacement("1st", langue)}, ${une.tournoi}`,
+                    une.date ? formatDate(une.date, locale) : null,
+                    une.joueurs ? `${une.joueurs.toLocaleString(locale)} ${t("joueurs")}` : null,
+                  ].filter(Boolean).join(" · ")}
+                </p>
+                {/* Un vrai lien écrit par le serveur, comme sur la page de deck. */}
+                {une.lienAchat && une.prix > 0 && (
+                  <div className="flex items-center gap-3">
+                    <div>
+                      <div className="text-xs text-ink-muted">{t("À partir de")}</div>
+                      <div className="text-lg font-bold leading-tight text-arcane" style={rubik}>
+                        {new Intl.NumberFormat(locale, { style: "currency", currency: "EUR" }).format(une.prix)}
+                      </div>
+                    </div>
+                    <BoutonLien href={une.lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat">{t("Acheter ce deck")}</BoutonLien>
+                  </div>
+                )}
+              </div>
+            </article>
+          )}
         </div>
       </section>
 
@@ -236,215 +347,181 @@ export default async function HomePage() {
         </p>
       )}
 
-      {/* 3-column layout */}
-      <section className="px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1fr_1fr] items-stretch">
-          {/* Left - Légendes les plus jouées */}
-          <div className="flex flex-col rounded-card border border-hairline bg-surface overflow-hidden">
-            <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
-              <h2
-                className="titre-bloc text-lg font-bold"
-                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-              >
-                {t("Légendes les plus jouées")}
-              </h2>
-              <Link
-                href="/decks"
-                className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light"
-              >
-                {t("Tous les decks Riftbound")} <ArrowRight size={14} />
-              </Link>
-            </div>
-            {/* Des lignes, pas des pavés. En vignettes carrées sur deux colonnes,
-                chaque Légende occupait 207 px alors que la même icône fait 48 px
-                dans la tier list juste à droite : la colonne écrasait ses deux
-                voisines, et les deux dernières Légendes sortaient du cadre. Une
-                ligne par Légende reprend le rythme de la colonne Guides et la
-                taille d'icône de la tier list. */}
-            <div className="flex flex-1 flex-col divide-y divide-hairline">
-              {topLegends.map((legend) => {
-                // Icône de légende = image source carrée (800×800), nette en petit ;
-                // fallback bannière large si pas d'icône.
-                const imgUrl = getLegendIconUrl(legend.legendName) ?? getBannerUrl(legend.legendName);
-                return (
-                  <Link
-                    key={legend.slug}
-                    href={`/legendes/${legend.slug}`}
-                    className="group flex flex-1 items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised"
-                  >
-                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-surface-raised">
-                      {imgUrl && (
-                        <Image
-                          src={imgUrl}
-                          alt={legend.legendName}
-                          fill
-                          sizes="48px"
-                          loading="lazy"
-                          className="object-cover"
-                        />
-                      )}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <span
-                        className="block truncate text-sm font-bold text-ink transition-colors group-hover:text-arcane"
-                        style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                      >
-                        {displayLegendName(legend.legendName)}
-                      </span>
-                      <div className="mt-0.5 truncate text-xs text-ink-muted">
-                        {legend.joueurs.toLocaleString(locale)} {t("joueurs en")} {SET_EN_COURS}
+      {/* La tier list passe en premier et prend la place : « riftbound meta » et
+          « tier list riftbound » sont les requêtes de tête. À droite, les Légendes les
+          plus jouées puis les guides, empilés. */}
+      <section className="px-4 pb-6 sm:px-6 lg:px-8">
+        <div className="grid items-start gap-6 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            {!chargementEchoue && <HomeTierList tierLists={tierLists} legendMap={legendMap} pages={Object.fromEntries(donnees?.pagesLegendes ?? [])} />}
+          </div>
+
+          <div className="grid gap-6 lg:col-span-5">
+            <div className={PANNEAU}>
+              <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
+                <h2 className="titre-bloc text-lg font-bold" style={rubik}>{t("Légendes les plus jouées")}</h2>
+                <Link href="/decks" className={LIEN_TETE}>{t("Tous les decks Riftbound")} <ArrowRight size={14} /></Link>
+              </div>
+              {/* Une ligne par Légende, avec son rang, sa part des joueurs classés et
+                  son tier : la ligne ne disait que le nombre de joueurs, sur 105 px de
+                  haut. `meta-parts.json` est la même source que /meta. */}
+              <div className="flex flex-col divide-y divide-hairline">
+                {topLegends.map((legend, i) => {
+                  const imgUrl = getLegendIconUrl(legend.legendName) ?? getBannerUrl(legend.legendName);
+                  return (
+                    <Link key={legend.slug} href={`/legendes/${legend.slug}`} className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-surface-raised">
+                      <span className="w-4 shrink-0 text-center text-sm tabular-nums text-ink-muted">{i + 1}</span>
+                      <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg bg-surface-raised">
+                        {imgUrl && <Image src={imgUrl} alt="" fill sizes="44px" loading="lazy" className="object-cover" />}
                       </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline gap-2">
+                          <span className="truncate text-sm font-bold text-ink transition-colors group-hover:text-arcane" style={rubik}>{displayLegendName(legend.legendName)}</span>
+                          {legend.tier && <span className={cn("shrink-0 text-xs font-bold", TIER_TEXT_CLASS[legend.tier])}>Tier {legend.tier}</span>}
+                        </div>
+                        <div className="mt-1.5 flex items-center gap-3">
+                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-raised">
+                            <div className="h-full rounded-full bg-arcane" style={{ width: `${(legend.part / partMax) * 100}%` }} />
+                          </div>
+                          <span className="shrink-0 text-xs tabular-nums text-ink-muted">
+                            {legend.joueurs.toLocaleString(locale)} {t("joueurs")}, {(legend.part * 100).toLocaleString(locale, { maximumFractionDigits: 1 })} %
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+                {!chargementEchoue && topLegends.length === 0 && <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun deck pour le moment.")}</p>}
+              </div>
+            </div>
+
+            <div className={PANNEAU}>
+              <div className="border-b border-hairline px-4 py-3 flex items-center justify-between">
+                <h2 className="titre-bloc text-lg font-bold" style={rubik}>Guides</h2>
+                <Link href="/guides" className={LIEN_TETE}>{t("Tous")} <ArrowRight size={14} /></Link>
+              </div>
+              <div className="grid sm:grid-cols-2">
+                {guides.map((guide) => (
+                  <Link key={guide.href} href={guide.href} className="group flex min-h-14 items-center gap-3 border-b border-hairline px-4 py-2.5 transition-colors hover:bg-surface-raised sm:odd:border-r">
+                    <guide.icon className="shrink-0 text-arcane" size={20} aria-hidden="true" />
+                    <div className="min-w-0">
+                      <div className="truncate text-sm font-bold text-ink group-hover:text-arcane" style={rubik}>{t(guide.title)}</div>
+                      <div className="truncate text-xs text-ink-muted">{t(guide.description)}</div>
                     </div>
                   </Link>
-                );
-              })}
-              {!chargementEchoue && topLegends.length === 0 && <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun deck pour le moment.")}</p>}
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Center - Guides list. Sur téléphone, après la tier list : « riftbound
-              meta » et « tier list riftbound » sont les requêtes de tête, et la tier
-              list arrivait au troisième écran. `order-1` seul suffit : les deux
-              autres blocs gardent l'ordre du code. */}
-          <div className="order-1 lg:order-none rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
-            <div className="border-b border-hairline px-5 py-3">
-              <h2
-                className="titre-bloc text-lg font-bold"
-                style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-              >
-                Guides
-              </h2>
-            </div>
-            <div className="divide-y divide-hairline flex-1">
-              {guides.map((guide) => (
-                <Link
-                  key={guide.href}
-                  href={guide.href}
-                  className="flex items-start gap-4 px-5 py-5 transition-colors hover:bg-surface-raised/50"
-                >
-                  <guide.icon className="mt-0.5 shrink-0 text-arcane" size={22} />
-                  <div>
-                    <div
-                      className="font-bold text-base"
-                      style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                    >
-                      {t(guide.title)}
-                    </div>
-                    <p className="mt-1 text-sm text-ink-secondary leading-relaxed">
-                      {t(guide.description)}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Right - Tier list */}
-          {!chargementEchoue && <HomeTierList tierLists={tierLists} legendMap={legendMap} />}
         </div>
       </section>
 
-      {/* Encarts - Articles · Collection · Tournois */}
-      <section className="px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-3 items-stretch">
-          {/* Articles */}
-          <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
+      {/* Tournois et articles */}
+      <section className="px-4 pb-6 sm:px-6 lg:px-8">
+        <div className="grid items-stretch gap-6 lg:grid-cols-12">
+          <div className={cn(PANNEAU, "lg:col-span-5")}>
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Newspaper size={18} className="text-violet-light" /> {t("Derniers articles")}
+              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={rubik}>
+                <Trophy size={18} className="text-gold" /> {t("Tournois")}
               </h2>
-              <Link href="/articles" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
-                {t("Tous")} <ArrowRight size={14} />
-              </Link>
+              <Link href="/tournois" className={LIEN_TETE}>{t("Tous")} <ArrowRight size={14} /></Link>
             </div>
-            {!chargementEchoue && latestArticles.length === 0 ? (
-              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun article pour le moment.")}</p>
+            {!chargementEchoue && derniersTournois.length === 0 ? (
+              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
             ) : (
-              <div className="divide-y divide-hairline flex-1">
-                {latestArticles.map((a) => (
-                  <Link key={a.slug} href={`/articles/${a.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
-                    <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md bg-surface-raised">
-                      {a.coverImage ? (
-                        <Image src={a.coverImage} alt="" fill sizes="64px" className="object-cover" />
-                      ) : (
-                        <div className="flex h-full items-center justify-center text-ink-muted"><Newspaper size={16} /></div>
-                      )}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-violet-light">
-                        {t(categoryLabels[a.category] ?? a.category)}
-                        {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt, locale)}</span>}
+              <div className="flex flex-1 flex-col divide-y divide-hairline">
+                {derniersTournois.map((tournoi) => (
+                  <Link key={tournoi.slug} href={`/tournois/${tournoi.slug}`} className="group flex flex-1 items-center gap-3 px-4 py-2.5 transition-colors hover:bg-surface-raised">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-surface-raised">
+                      {tournoi.countryCode ? <CountryBadge code={tournoi.countryCode} /> : <Trophy size={15} className="text-gold" />}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="truncate text-sm font-semibold text-ink transition-colors group-hover:text-arcane" style={rubik}>{tournoi.nom}</span>
+                        {tournoi.recent && <span className="shrink-0 rounded-full bg-arcane px-1.5 py-0.5 text-[10px] font-bold text-canvas">{t("Nouveau")}</span>}
                       </div>
-                      <div className="mt-0.5 truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(a.title)}</div>
+                      <div className="truncate text-xs text-ink-muted">
+                        {[tournoi.date ? formatDate(tournoi.date, locale) : null, tournoi.joueurs ? `${tournoi.joueurs.toLocaleString(locale)} ${t("joueurs")}` : null].filter(Boolean).join(", ")}
+                      </div>
                     </div>
+                    {tournoi.vainqueur && (
+                      <div className="flex shrink-0 items-center gap-2">
+                        <div className="hidden text-right sm:block">
+                          <div className="max-w-32 truncate text-xs font-semibold text-ink-secondary">{tournoi.vainqueur.playerName ?? t("Vainqueur")}</div>
+                          <div className="text-xs text-ink-muted">{displayLegendName(tournoi.vainqueur.legendName).split(",")[0]}</div>
+                        </div>
+                        {tournoi.vainqueur.icone && (
+                          <Image src={tournoi.vainqueur.icone} alt={`${t("Vainqueur")} : ${displayLegendName(tournoi.vainqueur.legendName)}`} width={36} height={36} className="h-9 w-9 rounded-lg object-cover" />
+                        )}
+                      </div>
+                    )}
                   </Link>
                 ))}
               </div>
             )}
           </div>
 
-          {/* Collection */}
-          <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
+          <div className={cn(PANNEAU, "lg:col-span-7")}>
             <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Library size={18} className="text-arcane" /> {t("Ma collection")}
+              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={rubik}>
+                <Newspaper size={18} className="text-violet-light" /> {t("Derniers articles")}
               </h2>
+              <Link href="/articles" className={LIEN_TETE}>{t("Tous")} <ArrowRight size={14} /></Link>
             </div>
-            <div className="flex flex-1 flex-col gap-4 p-5">
-              <p className="text-sm text-ink-secondary leading-relaxed">
-                {t("Suivez votre collection Riftbound en classeurs, repérez les cartes qui vous manquent et voyez quels decks méta vous pouvez déjà jouer.")}
-              </p>
-              <div className={cardCount > 0 ? "grid grid-cols-2 gap-3" : "grid gap-3"}>
-                {cardCount > 0 && <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
-                    <div className="text-xl font-bold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{cardCount.toLocaleString(locale)}</div>
-                    <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("cartes à collectionner")}</div>
-                </div>}
-                <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2.5">
-                  <div className="flex items-center gap-1.5 text-sm font-semibold"><Upload size={14} className="text-arcane" /> Import CSV</div>
-                  <div className="mt-1 text-[11px] uppercase tracking-wider text-ink-muted">Piltover Archive</div>
-                </div>
-              </div>
-              <BoutonLien href="/collection" className="mt-auto">{t("Gérer ma collection")}</BoutonLien>
-            </div>
-          </div>
-
-          {/* Tournois */}
-          <div className="rounded-card border border-hairline bg-surface overflow-hidden flex flex-col">
-            <div className="flex items-center justify-between border-b border-hairline px-4 py-3">
-              <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                <Trophy size={18} className="text-gold" /> {t("Tournois")}
-              </h2>
-              <Link href="/tournois" className="min-h-11 sm:min-h-6 flex items-center gap-1 text-xs text-arcane hover:text-arcane-light">
-                {t("Tous")} <ArrowRight size={14} />
-              </Link>
-            </div>
-            {!chargementEchoue && derniersTournois.length === 0 ? (
-              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun tournoi pour le moment.")}</p>
+            {!chargementEchoue && latestArticles.length === 0 ? (
+              <p className="px-4 py-6 text-sm text-ink-muted">{t("Aucun article pour le moment.")}</p>
             ) : (
-              <div className="divide-y divide-hairline flex-1">
-                {derniersTournois.map((tournoi) => {
-                  const recent = tournoi.recent;
-                  return (
-                    <Link key={tournoi.slug} href={`/tournois/${tournoi.slug}`} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-surface-raised/50">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-md bg-surface-raised">
-                        {tournoi.countryCode ? <CountryBadge code={tournoi.countryCode} /> : <Trophy size={15} className="text-gold" />}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-1.5">
-                          <span className="truncate text-sm font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{tournoi.nom}</span>
-                          {recent && <span className="shrink-0 rounded-full bg-arcane px-1.5 py-0.5 text-[10px] font-bold text-canvas">{t("Nouveau")}</span>}
-                        </div>
-                        {tournoi.date && <div className="text-[11px] text-ink-muted">{formatDate(tournoi.date, locale)}</div>}
-                      </div>
-                    </Link>
-                  );
-                })}
+              // Trois cartes à couverture : le titre tenait sur une ligne tronquée à
+              // côté d'une vignette de 64 px.
+              <div className="grid flex-1 gap-4 p-4 sm:grid-cols-3">
+                {latestArticles.map((a) => (
+                  <Link key={a.slug} href={`/articles/${a.slug}`} className="group flex min-w-0 flex-col">
+                    <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-surface-raised">
+                      {a.coverImage ? (
+                        <Image src={a.coverImage} alt="" fill sizes="(max-width: 640px) 100vw, 260px" className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                      ) : (
+                        <div className="flex h-full items-center justify-center text-ink-muted"><Newspaper size={20} /></div>
+                      )}
+                    </div>
+                    <div className="mt-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-violet-light">
+                      {t(categoryLabels[a.category] ?? a.category)}
+                      {a.publishedAt && <span className="font-normal normal-case text-ink-muted">{formatDate(a.publishedAt, locale)}</span>}
+                    </div>
+                    <div className="mt-1 line-clamp-3 text-sm font-bold leading-snug text-ink group-hover:text-arcane" style={rubik}>{t(a.title)}</div>
+                  </Link>
+                ))}
               </div>
             )}
           </div>
         </div>
       </section>
 
+      {/* Collection : une bande, plus une colonne entière. */}
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-4 rounded-card border border-hairline bg-surface p-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <h2 className="titre-bloc flex items-center gap-2 text-lg font-bold" style={rubik}>
+              <Library size={18} className="text-arcane" /> {t("Ma collection")}
+            </h2>
+            <p className="mt-1 text-sm text-ink-secondary">
+              {t("Suivez votre collection Riftbound en classeurs, repérez les cartes qui vous manquent et voyez quels decks méta vous pouvez déjà jouer.")}
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center gap-3">
+            {cardCount > 0 && (
+              <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2">
+                <div className="text-lg font-bold leading-tight text-arcane" style={rubik}>{cardCount.toLocaleString(locale)}</div>
+                <div className="text-[11px] uppercase tracking-wider text-ink-muted">{t("cartes à collectionner")}</div>
+              </div>
+            )}
+            <div className="rounded-lg border border-hairline bg-canvas/60 px-3 py-2">
+              <div className="flex items-center gap-1.5 text-sm font-semibold"><Upload size={14} className="text-arcane" /> Import CSV</div>
+              <div className="text-[11px] uppercase tracking-wider text-ink-muted">Piltover Archive</div>
+            </div>
+            <BoutonLien href="/collection">{t("Gérer ma collection")}</BoutonLien>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

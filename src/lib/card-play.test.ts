@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { comparerDecksJoues, moyenneExemplaires, nomEvenement, rangPlacement, type DeckQuiJoue } from "./card-play";
+import { comparerDecksJoues, moyenneExemplaires, nomEvenement, rangPlacement, vainqueur, type DeckQuiJoue } from "./card-play";
 
 const deck = (p: Partial<DeckQuiJoue>): DeckQuiJoue => ({
   slug: "d", title: "T", legendName: "L", placement: null,
@@ -19,6 +19,17 @@ describe("rangPlacement", () => {
     expect(rangPlacement(null)).toBe(Number.POSITIVE_INFINITY);
     expect(rangPlacement("Top 8")).toBe(8);
     expect(rangPlacement("—")).toBe(Number.POSITIVE_INFINITY);
+  });
+});
+
+describe("vainqueur", () => {
+  it("rend la liste classée première, où qu'elle soit dans le lot", () => {
+    expect(vainqueur([{ placement: "3rd" }, { placement: "1st" }, { placement: "2nd" }])).toEqual({ placement: "1st" });
+  });
+
+  it("ne promeut pas le deuxième quand la liste du premier manque", () => {
+    expect(vainqueur([{ placement: "2nd" }, { placement: "10th" }, { placement: null }])).toBeNull();
+    expect(vainqueur([])).toBeNull();
   });
 });
 

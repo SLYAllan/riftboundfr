@@ -67,6 +67,15 @@ export function rangPlacement(placement: string | null): number {
 }
 
 /**
+ * Le vainqueur d'un tournoi parmi ses listes publiées : celle classée première, et
+ * rien d'autre. Sans elle on rend `null` : le deuxième n'est pas « le vainqueur »
+ * parce que la liste du premier manque.
+ */
+export function vainqueur<T extends { placement: string | null }>(decks: T[]): T | null {
+  return decks.find((d) => rangPlacement(d.placement) === 1) ?? null;
+}
+
+/**
  * L'ordre des listes à montrer : le mieux classé d'abord, un deck sans
  * classement toujours après un deck classé, puis les mis en avant.
  */
