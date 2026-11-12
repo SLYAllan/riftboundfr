@@ -22,7 +22,6 @@ import { langueCourante, metaTraduite } from "@/lib/i18n-server";
 import { SET_EN_COURS } from "@/lib/tournament-order";
 import { tournoiLePlusRecent, vainqueur } from "@/lib/card-play";
 import { partsDuSet } from "@/lib/parts-classement";
-import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { afficherPlacement } from "@/lib/deck-listing-params";
 import { TIER_TEXT_CLASS } from "@/lib/tier-colors";
 
@@ -139,28 +138,19 @@ const getHomeData = unstable_cache(
       }),
     );
 
-    // À la une : la liste du dernier vainqueur connu, avec son prix. Le même prix et
-    // le même lien que sa page de deck (`cardnexus.ts`), rien de calculé ici.
+    // À la une : la liste du dernier vainqueur connu. Ni prix ni bouton d'achat ici
+    // (choix d'Allan, 12 novembre 2026) : l'achat vit sur la page du deck.
     // « Dernier » se lit sur la date du tournoi : la liste arrive triée par date d'import.
     const tournoiGagne = tournoiLePlusRecent(derniersTournois.filter((t) => t.vainqueur));
-    const deckUne = tournoiGagne
-      ? await prisma.deck.findUnique({
-          where: { slug: tournoiGagne.vainqueur!.slug },
-          select: { slug: true, legendName: true, playerName: true, cards: { select: { quantity: true, card: { select: { riftboundId: true, name: true } } } } },
-        })
-      : null;
-    const cartesUne = deckUne ? cartesDeck(deckUne.cards) : null;
-    const une = tournoiGagne && deckUne && cartesUne
+    const une = tournoiGagne?.vainqueur
       ? {
-          slug: deckUne.slug,
-          legendName: deckUne.legendName,
-          playerName: deckUne.playerName,
-          banniere: getBannerUrl(deckUne.legendName),
+          slug: tournoiGagne.vainqueur.slug,
+          legendName: tournoiGagne.vainqueur.legendName,
+          playerName: tournoiGagne.vainqueur.playerName,
+          banniere: getBannerUrl(tournoiGagne.vainqueur.legendName),
           tournoi: tournoiGagne.nom,
           date: tournoiGagne.date,
           joueurs: tournoiGagne.joueurs,
-          prix: chiffrerDeck(cartesUne).total,
-          lienAchat: lienAchatDeck(cartesUne),
         }
       : null;
 
@@ -249,12 +239,22 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* Haut de page. Le logo est déjà dans la barre du site : il était répété ici,
-          en grand, au-dessus d'un titre et de trois boutons. À sa place, la recherche,
-          les chiffres du set et le deck du dernier vainqueur avec son prix. */}
+      {/* Haut de page : le logo, le titre, la recherche et les chiffres du set à gauche,
+          le deck du dernier vainqueur à droite. Le logo reste ici en grand, en plus de
+          celui de la barre (demande d'Allan, 12 novembre 2026). */}
       <section className="px-4 pt-8 pb-6 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,32rem)] lg:items-stretch">
           <div className="flex flex-col justify-center gap-4 lg:py-4">
+            <Link href="/" className="self-start">
+              <Image
+                src="/logorbfr.png"
+                alt="Riftbound France"
+                width={224}
+                height={112}
+                priority
+                className="h-20 w-auto drop-shadow-lg sm:h-24"
+              />
+            </Link>
             <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={rubik}>
               {t("Riftbound France, la référence du TCG en français")}
             </h1>
@@ -316,7 +316,7 @@ export default async function HomePage() {
                   </div>
                 </div>
               </Link>
-              <div className="flex flex-1 flex-wrap items-center gap-x-4 gap-y-3 p-4">
+              <div className="flex flex-1 flex-wrap items-center justify-between gap-x-4 gap-y-2 p-4">
                 <p className="min-w-0 flex-1 basis-56 text-sm text-ink-secondary">
                   {[
                     `${afficherPlacement("1st", langue)}, ${une.tournoi}`,
@@ -324,18 +324,7 @@ export default async function HomePage() {
                     une.joueurs ? `${une.joueurs.toLocaleString(locale)} ${t("joueurs")}` : null,
                   ].filter(Boolean).join(" · ")}
                 </p>
-                {/* Un vrai lien écrit par le serveur, comme sur la page de deck. */}
-                {une.lienAchat && une.prix > 0 && (
-                  <div className="flex items-center gap-3">
-                    <div>
-                      <div className="text-xs text-ink-muted">{t("À partir de")}</div>
-                      <div className="text-lg font-bold leading-tight text-arcane" style={rubik}>
-                        {new Intl.NumberFormat(locale, { style: "currency", currency: "EUR" }).format(une.prix)}
-                      </div>
-                    </div>
-                    <BoutonLien href={une.lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat">{t("Acheter ce deck")}</BoutonLien>
-                  </div>
-                )}
+                <Link href={`/decks/${une.slug}`} className={LIEN_TETE}>{t("Voir la liste")} <ArrowRight size={14} /></Link>
               </div>
             </article>
           )}
