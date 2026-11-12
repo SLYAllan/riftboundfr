@@ -114,6 +114,10 @@ export function TierListTabs({
 
       <div className="mt-8 rounded-card border border-hairline overflow-visible">
         {tierOrder.map((tier, tierIdx) => {
+          // Les noms courts portés par deux Légendes de la liste (les deux Master Yi)
+          // gardent leur nom entier sous l'icône.
+          const courts = activeTierList.entries.map((e) => displayLegendName(e.legendName).split(",")[0]);
+          const doublons = new Set(courts.filter((c, i) => courts.indexOf(c) !== i));
           const entries = grouped[tier];
           if (!entries || entries.length === 0) return null;
           const colors = TIER_BANNER[tier];
@@ -137,10 +141,11 @@ export function TierListTabs({
                   {tier}
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-1 bg-surface p-2 sm:gap-2 sm:p-3 flex-1 min-h-[80px]">
+              <div className="flex flex-wrap items-start gap-1 bg-surface p-2 sm:gap-2 sm:p-3 flex-1 min-h-[80px]">
                 {entries.map((entry) => {
                   const card = legendMap[entry.legendId];
                   const nom = displayLegendName(entry.legendName);
+                  const court = nom.split(",")[0];
                   return (
                     <Link
                       key={entry.id}
@@ -160,7 +165,7 @@ export function TierListTabs({
                       aria-label={`${t("Voir les decks")} ${nom}`}
                       aria-describedby={entry.comment ? `tier-comment-${entry.id}` : undefined}
                       title={nom}
-                      className="group relative rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
+                      className="group relative flex w-16 flex-col items-center gap-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane sm:w-20"
                       onClick={(event) => {
                         if (entry.comment && window.matchMedia("(hover: none)").matches && toucheEntry !== entry.id) {
                           event.preventDefault();
@@ -185,6 +190,12 @@ export function TierListTabs({
                           {displayLegendName(entry.legendName)}
                         </div>
                       )}
+                      {/* Le nom sous l'icône, comme sur l'accueil : 36 visages sans nom
+                          demandaient de connaître chaque champion de vue, et l'infobulle
+                          ne s'ouvre pas au doigt. */}
+                      <span className="line-clamp-2 w-full text-center text-xs leading-tight text-ink-secondary group-hover:text-ink">
+                        {doublons.has(court) ? nom : court}
+                      </span>
                       <div
                         id={`tier-comment-${entry.id}`}
                         role="tooltip"
