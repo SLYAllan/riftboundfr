@@ -243,7 +243,7 @@ export default async function HomePage() {
           le deck du dernier vainqueur à droite. Le logo reste ici en grand, en plus de
           celui de la barre (demande d'Allan, 12 novembre 2026). */}
       <section className="px-4 pt-8 pb-6 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,32rem)] lg:items-stretch">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,36rem)] lg:items-center">
           <div className="flex flex-col justify-center gap-4 lg:py-4">
             <Link href="/" className="self-start">
               <Image
@@ -302,15 +302,15 @@ export default async function HomePage() {
           </div>
 
           {/* La carte entière mène à la liste : l'illustration la remplit, le texte est
-              posé dessus. En deux étages (image, puis une ligne de texte), le bas de la
-              carte restait vide sur toute la hauteur de la colonne voisine. */}
+              posé dessus. Elle garde les proportions de la bannière (7:3) : étirée à la
+              hauteur de la colonne voisine, l'image de 700 px se rognait et bavait. */}
           {une && (
             <Link
               href={`/decks/${une.slug}`}
-              className="group relative block min-h-52 overflow-hidden rounded-card border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
+              className="group relative block aspect-[7/3] overflow-hidden rounded-card border border-hairline bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-arcane"
             >
               {une.banniere && (
-                <Image src={une.banniere} alt="" width={700} height={300} priority sizes="(max-width: 1024px) 100vw, 512px"
+                <Image src={une.banniere} alt="" width={700} height={300} priority sizes="(max-width: 1024px) 100vw, 576px"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
