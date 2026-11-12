@@ -74,10 +74,21 @@ première liste). **À trancher par Allan avant le Deploy** : le deck à la une 
 suit le tournoi le plus récent, quel qu'il soit ; il peut vouloir les gros tournois
 seulement, ou un choix à la main.
 
-**Quatrième tour d'essais (`essai/carte-blanche`) : 11. épuré (`/essai/epure`) et
-12. illustré (`/essai/illustre`)**, deux variantes sobres qui gardent l'identité du site.
-Comparaison : `comparaison-audit/essai/` (avant et après des trois vraies pages, puis les
-deux essais) ; tours précédents dans `tour-3.html` et `tour-2.html`. Attend le choix d'Allan.
+**Retouches d'Allan le même soir** (« il me faut le logo et j'aime pas le truc acheter sur
+l'accueil ») : `a084b64ec`, `a9d9007be`, `4480194cd`. Le logo revient au-dessus du titre ;
+la carte du dernier vainqueur n'a plus ni prix ni bouton d'achat, elle mène à la liste. La
+question du deck à la une ne porte donc plus sur l'achat, seulement sur quel tournoi montrer.
+`f7ef8cf85` corrige six erreurs `react/jsx-key` de la page de deck (ligne d'en-tête du
+11 novembre) : `npx eslint src` sort en 0. `npm run lint` sort encore en 1 sur
+`.playwright-mcp/places_9nov.mts`, un fichier de travail ignoré par Git (absent de la CI).
+
+**Essais 11 (épuré) et 12 (illustré), sur `essai/carte-blanche` (`fe2175d18`) : refusés**
+(« j'aime pas les essais encore »). Douze directions refusées en quatre tours : ne plus en
+proposer, améliorer le site page par page.
+
+**Audit des autres pages : `docs/AUDIT-AUTRES-PAGES-2026-11-12.md`.** 23 pages mesurées à
+1 440 et 390 px. Deux corrections faites (`cd1b3228a` noms sous les icônes de `/tier-list`,
+`617525d00` libellés de `/meta`), dix propositions classées qui attendent le oui d'Allan.
 
 **L'essai ne se code plus dans ce dossier** : la branche vit dans un arbre de travail à
 part, sous le dossier temporaire de la session (`git worktree list` le montre), pour que
