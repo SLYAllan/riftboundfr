@@ -72,7 +72,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           <div>
             <p className="text-2xl font-bold tabular-nums text-ink">{meta.totalDecks.toLocaleString("fr-FR")}</p>
-            <p className="mt-1 text-xs text-ink-muted">{t("decklists complètes")}</p>
+            <p className="mt-1 text-xs text-ink-muted">{t("joueurs classés")}</p>
           </div>
           <div className="border-l border-hairline pl-4">
             <p className="text-2xl font-bold tabular-nums text-ink">{tournoisSelectionnes}</p>
@@ -133,7 +133,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
             <p className="mt-1 text-sm text-ink-muted">{t("Classement recalculé selon les filtres actifs.")}</p>
           </div>
           <p className="text-sm tabular-nums text-ink-secondary" aria-live="polite">
-            {meta.totalDecks.toLocaleString("fr-FR")} {t("decklists")}
+            {meta.totalDecks.toLocaleString("fr-FR")} {t("joueurs classés")}
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
                     )}
                     <div className="min-w-0">
                       <p className="truncate font-semibold text-ink group-hover:text-arcane">{detail?.shortName ?? legende.legendName}</p>
-                      <p className="mt-1 text-xs text-ink-muted sm:hidden">{legende.deckCount} decks · {pourcent(legende.popularity)}</p>
+                      <p className="mt-1 text-xs text-ink-muted sm:hidden">{legende.deckCount.toLocaleString("fr-FR")} {t("joueurs")} · {pourcent(legende.popularity)}</p>
                     </div>
                     <div className="col-start-2 col-span-2 h-2 overflow-hidden rounded-full bg-surface-raised sm:col-start-auto sm:col-span-1">
                       <div
@@ -169,7 +169,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
                     </div>
                     <div className="hidden text-right sm:block">
                       <p className="font-bold tabular-nums text-ink">{pourcent(legende.popularity)}</p>
-                      <p className="text-xs tabular-nums text-ink-muted">{legende.deckCount} decks</p>
+                      <p className="text-xs tabular-nums text-ink-muted">{legende.deckCount.toLocaleString("fr-FR")} {t("joueurs")}</p>
                     </div>
                   </Link>
                 </li>
