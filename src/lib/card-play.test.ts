@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { comparerDecksJoues, moyenneExemplaires, nomEvenement, rangPlacement, vainqueur, type DeckQuiJoue } from "./card-play";
+import { comparerDecksJoues, moyenneExemplaires, nomEvenement, rangPlacement, tournoiLePlusRecent, vainqueur, type DeckQuiJoue } from "./card-play";
 
 const deck = (p: Partial<DeckQuiJoue>): DeckQuiJoue => ({
   slug: "d", title: "T", legendName: "L", placement: null,
@@ -30,6 +30,23 @@ describe("vainqueur", () => {
   it("ne promeut pas le deuxième quand la liste du premier manque", () => {
     expect(vainqueur([{ placement: "2nd" }, { placement: "10th" }, { placement: null }])).toBeNull();
     expect(vainqueur([])).toBeNull();
+  });
+});
+
+describe("tournoiLePlusRecent", () => {
+  const t = (nom: string, date: string | null, joueurs: number | null) => ({ nom, date, joueurs });
+
+  it("lit la date du tournoi, pas l'ordre du lot", () => {
+    expect(tournoiLePlusRecent([t("importé hier", "2026-10-01", 900), t("joué hier", "2026-11-08", 128)])?.nom).toBe("joué hier");
+  });
+
+  it("à date égale, retient le plus gros", () => {
+    expect(tournoiLePlusRecent([t("City Challenge", "2026-11-08", 128), t("Regional", "2026-11-08", 315)])?.nom).toBe("Regional");
+  });
+
+  it("place un tournoi sans date après les autres, et rend null sur un lot vide", () => {
+    expect(tournoiLePlusRecent([t("sans date", null, 2000), t("daté", "2026-09-01", 64)])?.nom).toBe("daté");
+    expect(tournoiLePlusRecent([])).toBeNull();
   });
 });
 

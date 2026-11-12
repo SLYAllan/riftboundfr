@@ -20,7 +20,7 @@ import { HomeTierList } from "@/components/home-tier-list";
 import { etiquetteLocale, traduire } from "@/lib/i18n";
 import { langueCourante, metaTraduite } from "@/lib/i18n-server";
 import { SET_EN_COURS } from "@/lib/tournament-order";
-import { vainqueur } from "@/lib/card-play";
+import { tournoiLePlusRecent, vainqueur } from "@/lib/card-play";
 import { partsDuSet } from "@/lib/parts-classement";
 import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { afficherPlacement } from "@/lib/deck-listing-params";
@@ -141,7 +141,8 @@ const getHomeData = unstable_cache(
 
     // À la une : la liste du dernier vainqueur connu, avec son prix. Le même prix et
     // le même lien que sa page de deck (`cardnexus.ts`), rien de calculé ici.
-    const tournoiGagne = derniersTournois.find((t) => t.vainqueur);
+    // « Dernier » se lit sur la date du tournoi : la liste arrive triée par date d'import.
+    const tournoiGagne = tournoiLePlusRecent(derniersTournois.filter((t) => t.vainqueur));
     const deckUne = tournoiGagne
       ? await prisma.deck.findUnique({
           where: { slug: tournoiGagne.vainqueur!.slug },

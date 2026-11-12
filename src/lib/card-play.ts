@@ -76,6 +76,19 @@ export function vainqueur<T extends { placement: string | null }>(decks: T[]): T
 }
 
 /**
+ * Le tournoi le plus récent d'un lot, lu sur sa date de jeu et pas sur l'ordre du lot
+ * (l'accueil reçoit ses tournois par date d'import : un vieux tournoi importé hier ne
+ * fait pas de son vainqueur « le dernier »). À date égale, le plus gros. Un tournoi sans
+ * date passe après tous les autres.
+ */
+export function tournoiLePlusRecent<T extends { date: string | null; joueurs: number | null }>(tournois: T[]): T | null {
+  const tries = [...tournois].sort(
+    (a, b) => (b.date ?? "").localeCompare(a.date ?? "") || (b.joueurs ?? 0) - (a.joueurs ?? 0),
+  );
+  return tries[0] ?? null;
+}
+
+/**
  * L'ordre des listes à montrer : le mieux classé d'abord, un deck sans
  * classement toujours après un deck classé, puis les mis en avant.
  */
