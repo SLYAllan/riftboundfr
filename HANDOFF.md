@@ -58,6 +58,27 @@ EXIT=0 ; premier écran de 49 à 547 Ko. Comparaison (existant, actuel en mieux,
 directions, 1440 puis 390 px) : `comparaison-audit/essai/` (http://localhost:3004/essai/) ;
 le tour précédent est gardé dans `tour-2.html`. Attend le choix d'Allan.
 
+**12 novembre, soir : la version « actuel en mieux » est appliquée sur `main`, en local.**
+Allan : « j'aime bien la version améliorée de l'actuel mais le reste est trop brouillon,
+pas pertinent ». Quatre commits, non poussés : `91ecd0775` (accueil : recherche, deck du
+dernier vainqueur, tier list en premier avec noms et liens), `0efba5ae2` (`/decks/[slug]` :
+en-tête illustré, colonne d'achat qui suit, barre d'achat au téléphone), `64c3211a9`
+(`/legendes/[slug]` : chiffres en tuiles, six listes en lignes, colonne), `169450df7` (le
+dernier vainqueur se lit sur la date du tournoi). Neuf dans `src/lib/` :
+`parts-classement.ts` (rang, part et écart au format, lus par l'accueil et la fiche),
+`deck-chiffres.ts`, `vainqueur` et `tournoiLePlusRecent` dans `card-play.ts`, chacun avec
+son test. Porte : `npm run verify` EXIT=0, `npm test` 443 verts (le test
+`scripts/decklists-index` dépasse ses 5 s si un serveur de dev tourne à côté). Le journal
+SEO porte les deux entrées et le retour à essayer si `/legendes/*` recule (rouvrir la
+première liste). **À trancher par Allan avant le Deploy** : le deck à la une de l'accueil
+suit le tournoi le plus récent, quel qu'il soit ; il peut vouloir les gros tournois
+seulement, ou un choix à la main.
+
+**Quatrième tour d'essais (`essai/carte-blanche`) : 11. épuré (`/essai/epure`) et
+12. illustré (`/essai/illustre`)**, deux variantes sobres qui gardent l'identité du site.
+Comparaison : `comparaison-audit/essai/` (avant et après des trois vraies pages, puis les
+deux essais) ; tours précédents dans `tour-3.html` et `tour-2.html`. Attend le choix d'Allan.
+
 **L'essai ne se code plus dans ce dossier** : la branche vit dans un arbre de travail à
 part, sous le dossier temporaire de la session (`git worktree list` le montre), pour que
 `RiftboundFr` reste sur `main` pendant que d'autres sessions y committent. L'entrée
