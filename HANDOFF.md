@@ -42,7 +42,30 @@ Arcane, Valorant, Blitz, U.gg, F1, galeries), 4. Zaun (`/essai/zaun`) et 5. le c
 (`/essai/client`), plus travaillées. Chacune avec accueil, page de deck et fiche Légende. Données lues par
 `src/app/essai/donnees.ts` (copie courte des lectures des vraies pages). Comparaison
 (existant et les cinq directions), 1440 puis 390 px : `comparaison-audit/essai/` (http://localhost:3004/essai/).
-Attend le choix d'Allan ; l'intégration se fera ensuite gabarit par gabarit.
+Les cinq ont été refusées le 12 novembre (« celles-là ne me plaisent pas »).
+
+**Troisième tour, 12 novembre (`01f9a94f4`, `5e793b97f` sur `essai/carte-blanche`) : le
+design actuel en mieux et cinq autres directions.** Allan a recentré la veille sur les
+sites de stats (« deeplol, metasrc, dpmlol, opgg », jeux en ligne et gacha) et demandé une
+version améliorée du design actuel. `/essai/actuel` (mêmes jetons et composants, dont
+`DecklistInteractive` et `BoutonLien`, barre du site gardée), 6. le halo (`/essai/halo`,
+dpm.lol), 7. les bandes (`/essai/bandes`, Untapped), 8. les portraits
+(`/essai/portraits`, gacha), 9. clair (`/essai/clair`, op.gg en clair), 10. hextech
+(`/essai/hextech`, univers LoL). Toutes lisent `src/app/essai/prepare.ts` (mêmes chiffres
+partout : tier list, parts de `meta-parts.json`, taux d'inclusion lus dans les fiches,
+prix par `cardnexus.ts`). Porte dans la copie de travail : `tsc` EXIT=0, `next build`
+EXIT=0 ; premier écran de 49 à 547 Ko. Comparaison (existant, actuel en mieux, cinq
+directions, 1440 puis 390 px) : `comparaison-audit/essai/` (http://localhost:3004/essai/) ;
+le tour précédent est gardé dans `tour-2.html`. Attend le choix d'Allan.
+
+**L'essai ne se code plus dans ce dossier** : la branche vit dans un arbre de travail à
+part, sous le dossier temporaire de la session (`git worktree list` le montre), pour que
+`RiftboundFr` reste sur `main` pendant que d'autres sessions y committent. L'entrée
+`essai-carte-blanche` de `.claude/launch.json` sert son build local sur le port 3006. Si
+le dossier temporaire a disparu : `git worktree prune`, puis
+`git worktree add <dossier> essai/carte-blanche`, une jonction vers `node_modules`, un lien
+dur vers `.env`, et `turbopack: { root: "C:/Users/Allan" }` dans son `next.config.ts`
+(jamais commité).
 
 **Reste** : l'avis d'Allan sur l'essai ; E1 (`docs/DESIGN.MD`). Les 18 `.png` de
 `public/img/legend_icon/` (12 Mo, cités nulle part) restent, en attendant Allan.
