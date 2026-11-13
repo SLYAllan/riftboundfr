@@ -171,9 +171,10 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   **Un ban annoncé ne compte dans les stats qu'une fois en vigueur.** Celui du
   23 novembre 2026 a été annoncé le 13 : `DATES_BANS` porte les deux dates (`date`
   pour la cloche, `effet` pour `scripts/apres-ban.ts`), et `BAN_ENTRIES` porte
-  `effet` pour que la page d'un deck écrive « sera interdite le » jusque-là. Le
-  deckbuilder, les pastilles et l'étiquette « Banni » s'appliquent dès l'annonce,
-  comme en septembre. Le premier `maj:stats` lancé à partir du 23 taira les cartes
+  `effet` pour que la page d'un deck écrive « sera interdite le » jusque-là, et pour
+  que le deckbuilder prévienne sans refuser (`deck-rules.ts` : une erreur bloquait la
+  publication d'un deck encore légal). Les pastilles et l'étiquette « Banni »
+  s'appliquent dès l'annonce, comme en septembre. Le premier `maj:stats` lancé à partir du 23 taira les cartes
   des fiches Radiance, jusqu'aux premières listes jouées sans les dix cartes.
   **Une Légende comptée sans fiche reçoit la sienne à l'étape 4 de `maj:stats`**
   (`fiches-maj.mts`, depuis le 7 novembre 2026 : Riven, la plus jouée de Radiance,
@@ -493,7 +494,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **79 fichiers, 446 tests, tous verts** (relevé du 13 novembre 2026). |
+| `npm test` | ✅ | Vitest. **80 fichiers, 448 tests, tous verts** (relevé du 13 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

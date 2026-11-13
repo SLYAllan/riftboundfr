@@ -1,4 +1,5 @@
-import { BANNED_CARD_NAMES } from "@/lib/banned-cards";
+// En relatif : Vitest tourne sans config et ne connaît pas l'alias `@/`.
+import { interdictionsParDate } from "../../../lib/bans";
 
 // Taille de la Réserve, passée de 8 à 10 avec Vendetta.
 export const SIDE_SIZE = 10;
@@ -34,6 +35,7 @@ export function validateDeck(
   runeCards: DeckCardInfo[],
   sideCards: DeckCardInfo[],
   legendDomains: string[],
+  jour?: string,
 ): DeckValidationIssue[] {
   const issues: DeckValidationIssue[] = [];
 
@@ -91,14 +93,17 @@ export function validateDeck(
 
   const allCards = [...mainCards, ...sideCards];
   for (const card of allCards) {
-    if (BANNED_CARD_NAMES.has(card.name)) {
-      issues.push({
-        id: `banned-${card.cardId}`,
-        section: "main",
-        severity: "error",
-        message: `${card.name} est bannie`,
-      });
-    }
+    // Un ban annoncé mais pas encore en vigueur prévient sans bloquer. Celui du
+    // 23 novembre 2026 a été annoncé dix jours avant : une erreur aurait empêché de
+    // publier un deck encore légal en tournoi, le week-end même de Houston.
+    const [ban] = interdictionsParDate([card.name], jour);
+    if (!ban) continue;
+    issues.push({
+      id: `banned-${card.cardId}`,
+      section: "main",
+      severity: ban.aVenir ? "warning" : "error",
+      message: ban.aVenir ? `${card.name} sera bannie le ${ban.date}` : `${card.name} est bannie`,
+    });
   }
 
   if (legendDomains.length > 0) {

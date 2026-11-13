@@ -2,9 +2,13 @@
 
 ## 13 novembre 2026 — ban du 23 novembre, règles du 9 octobre, best-of du RC Europe, dix propositions appliquées : en local seulement
 
-**Rien n'est poussé, rien n'est en prod** (consigne d'Allan du 11 : « pousse rien pour le
-moment, full local »). Tout est commité sur `main`. La base locale porte les 55 listes du
-RC Europe, ses 22 best-of et l'article ; la prod en est restée au 10 novembre.
+**Poussé sur `main` le 13 au soir, à la demande d'Allan** (sans la vidéo ni l'overlay, qui
+n'étaient pas commités). **Seedé en prod par le tunnel le même soir** : les 10 listes
+officielles (33 640 decks publiés), les 22 best-of, l'article. Les 45 listes déjà en prod
+n'ont pas été supprimées : deux portaient un j'aime, que le reseed du lot entier aurait
+effacés ; les 10 nouvelles sont passées par des copies temporaires au préfixe
+`tmpseed-officiel`. **Reste le Deploy d'Allan** : sans lui, la couverture de l'article
+(`stuttgart.webp`) répond 404 et rien du code du 11 au 13 n'est en ligne.
 
 **Ban list annoncée le 13, en vigueur le lundi 23 novembre** (relevé :
 `data/raw-scrapes/annonces/ban-2026-11-13-en.md`, pas de version française chez Riot) :
@@ -12,8 +16,11 @@ Riven, Broken Blade, Zhonya's Hourglass, Stellacorn Herder, Nocturne, Horrifying
 Sunderer, Brynhir Thundersong, Dazzling Aurora, Baited Hook, Emperor's Dais, Star Spring.
 Les dix noms sont ceux de la base de cartes, vérifiés un à un.
 - **Dès l'annonce** (comme en septembre) : étiquette « Banni », pastille « Interdite »,
-  refus du deckbuilder, filtre `/decks?legales=1`, page `/guides/ban-list` (nouvelle
-  partie, 22 cartes), cloche des membres abonnés aux règles.
+  filtre `/decks?legales=1`, page `/guides/ban-list` (nouvelle partie, 22 cartes), cloche
+  des membres abonnés aux règles. **Le deckbuilder prévient sans refuser jusqu'au 22**
+  (« sera bannie le 23 novembre 2026 ») : en erreur, il aurait empêché de publier un deck
+  encore légal. À partir du 23, l'erreur d'avant revient seule. Il ne contrôle pas les
+  champs de bataille, bannis ou non : c'était déjà le cas, à voir avec Allan.
 - **Daté** : `BAN_ENTRIES` porte `effet: "2026-11-23"`. La page d'un deck écrit « Liste
   bientôt injouable. … seront interdites le 23 novembre 2026 » jusqu'au 22, puis la phrase
   d'avant, sans qu'on y touche.
@@ -75,11 +82,10 @@ sur 2 282 listes, cores de neuf Légendes).
 `b2b0d43de`, table dans `docs/AUDIT-AUTRES-PAGES-2026-11-12.md`). La branche
 `propal/autres-pages` et son arbre de travail ne servent plus.
 
-**Pour mettre en ligne, dans l'ordre, quand Allan le dit** : pousser `main` ; par le tunnel
-de prod, `seed-tournament-decks.ts europe-rc "Europe Regional Championship" Radiance
-"tournoi,radiance,regional"` (il supprime puis recrée les 45 listes du tournoi), le
-`mark-bestof-tournois.mts` ci-dessus, `seed-europe-rc-bestof.mts` ; puis le Deploy dans
-Coolify. Le Deploy enverra aussi tout le lot des 11 et 12 novembre.
+**Pour finir la mise en ligne** : le Deploy dans Coolify, par Allan. Il enverra aussi tout
+le lot des 11 et 12 novembre. **Piège pour le relevé du 17** : `seed-tournament-decks.ts
+europe-rc …` supprime puis recrée tout le lot, j'aime compris. Vérifier d'abord en prod si
+des listes en portent, et ne seeder que les nouvelles si c'est le cas.
 
 **Reste** : relever à nouveau les listes du RC Europe vers le 17 (Master Yi, Lucian et
 Viktor y gagneront peut-être leur best-of) ; les guides après le 23 ; la règle des tournois
