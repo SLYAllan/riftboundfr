@@ -11,6 +11,7 @@ import { ERRATA } from "@/lib/errata";
 import { BAN_ENTRIES } from "@/lib/bans";
 import { CardTextRenderer } from "@/components/card-text-renderer";
 import { RuleText } from "@/components/rule-text";
+import { OuvrirChapitre } from "./ouvrir-chapitre";
 import { loadCoreRules, loadRuleChapters, pdfDesRegles, langueRegles, CORE_RULES_UPDATED, type CoreRule, type LangueRegles } from "@/lib/core-rules";
 import { langueCourante, metaTraduite, tr } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
@@ -318,14 +319,22 @@ export default async function ReglesPage({
               {allRules.length.toLocaleString(etiquetteLocale(langue))}{" "}
               {t("règles, dans l’ordre du document officiel. Le numéro à gauche est celui qu’un arbitre vous demandera, et les termes du glossaire sont cliquables.")}
             </p>
-            {chapters.map((c) => (
-              <section key={c.anchor} id={c.anchor} className="mt-8 scroll-mt-24">
-                <h2
-                  className="text-balance border-b border-hairline pb-2 text-lg font-semibold text-arcane"
-                  style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-                >
-                  {c.title}
-                </h2>
+            {/* Un chapitre ouvert à la fois (`name` commun) : dépliée en entier, la page
+                faisait 149 écrans sur ordinateur et 344 sur téléphone. Le texte reste
+                dans la page ; le sommaire ouvre le chapitre visé (`OuvrirChapitre`). */}
+            <OuvrirChapitre />
+            {chapters.map((c, i) => (
+              <details key={c.anchor} id={c.anchor} name="chapitre-regles" open={i === 0} className="group mt-3 scroll-mt-24 rounded-card border border-hairline bg-surface">
+                <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-4 px-4 py-2.5">
+                  <h2
+                    className="titre-bloc text-balance text-lg font-semibold text-arcane"
+                    style={{ fontFamily: "var(--font-rubik), sans-serif" }}
+                  >
+                    {c.title}
+                  </h2>
+                  <span className="shrink-0 text-xs tabular-nums text-ink-muted">{c.rules.length} {t(c.rules.length > 1 ? "règles" : "règle")}</span>
+                </summary>
+                <div className="border-t border-hairline px-4 pb-4">
                 {/* Les styles sont portés par la liste, pas répétés sur deux mille
                     lignes : la page pesait un tiers de plus rien qu'en attributs. */}
                 <dl className="mt-3 grid grid-cols-[4.5rem_1fr] gap-x-3 gap-y-3 text-sm leading-relaxed [&>dd]:text-pretty [&>dd]:text-ink-secondary [&>dt]:font-mono [&>dt]:text-xs [&>dt]:tabular-nums [&>dt]:text-ink-muted">
@@ -343,7 +352,8 @@ export default async function ReglesPage({
                     ));
                   })()}
                 </dl>
-              </section>
+                </div>
+              </details>
             ))}
           </div>
         </div>
