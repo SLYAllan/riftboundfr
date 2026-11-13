@@ -4,12 +4,15 @@ import type { Langue } from "./i18n";
 
 // Règles de base officielles, extraites des PDF par `scripts/parse-core-rules.py`.
 // Les PDF pèsent plus de 40 Mo et ne sont pas versionnés ; les JSON font foi pour la
-// recherche. Même révision des deux côtés (16 juillet 2026) et MÊME numérotation :
+// recherche. Même révision des deux côtés (9 octobre 2026) et MÊME numérotation :
 // la règle 103.2 porte le même numéro en français et en anglais.
 //
 // La version anglaise a été ajoutée parce que `/en/outils/regles` servait les règles
 // françaises à un lecteur anglophone — 2 600 phrases dans la mauvaise langue.
-export const CORE_RULES_UPDATED = "16 juillet 2026";
+// À chaque révision : relire la date et les deux PDF sur le Rules Hub
+// (playriftbound.com/fr-fr/rules-hub/), les poser dans `data/rules/`, relancer le
+// script dans les deux langues, puis changer cette date et les deux adresses.
+export const CORE_RULES_UPDATED = "9 octobre 2026";
 
 /**
  * Langues où le règlement officiel existe. Le chinois n'a pas de PDF chez Riot : il
@@ -23,8 +26,8 @@ export function langueRegles(langue: Langue): LangueRegles {
 }
 
 const PDF: Record<LangueRegles, string> = {
-  fr: "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/f668751be265e4bdf828145b593a74e0ddab6a9f.pdf",
-  en: "https://static.dotgg.gg/media/sites/67/2026/03/Riftbound-Core-Rules-RUP4-July-16-2026.pdf",
+  fr: "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/bb7eef6a1a8819fc72d77b94c9ef270e970852a0.pdf",
+  en: "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news_live/5c7946f7c3b8c6e0faff85ab6dadc6d2e721ea94.pdf",
 };
 
 /** Le PDF officiel de la langue demandée. */

@@ -126,6 +126,7 @@ export const EN: Record<string, string> = {
     "rules, in the order of the official document. The number on the left is the one a judge will ask you for, and glossary terms are clickable.",
   "Règles de base, mise à jour du": "Core rules, updated",
   "16 juillet 2026": "16 July 2026",
+  "9 octobre 2026": "9 October 2026",
   "Document original": "Official PDF",
   "Toutes les listes": "All lists",
   "Tri": "Sort",
