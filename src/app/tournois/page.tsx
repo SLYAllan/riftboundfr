@@ -210,8 +210,11 @@ export default async function TournoisPage({ searchParams }: { searchParams: Pro
               className="text-balance text-2xl font-bold sm:text-4xl lg:text-5xl"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
-              <span className="sm:hidden">{t("Tournois Riftbound")}</span>
-              <span className="hidden sm:inline">{t("Tournois Riftbound - Résultats et calendrier")}</span>
+              {/* Un seul texte dans le titre : avec deux libellés (un par largeur), le h1
+                  contenait « Tournois RiftboundTournois Riftbound - Résultats et calendrier ».
+                  La fin reste lue par les lecteurs d'écran sur téléphone, où elle ne tient pas. */}
+              {t("Tournois Riftbound")}
+              <span className="max-sm:sr-only">{t(" - Résultats et calendrier")}</span>
             </h1>
           </div>
           <p className="mt-1 max-w-2xl text-sm sm:text-base text-ink-secondary">

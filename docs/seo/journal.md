@@ -5,6 +5,20 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-13 · hors passe, un seul texte dans le titre de `/tournois`
+
+Proposition 7 de l'audit des autres pages, prise par Allan le 13 novembre. Le `h1` portait
+deux libellés, un par largeur d'écran, tous deux dans le HTML : un moteur lisait « Tournois
+RiftboundTournois Riftbound - Résultats et calendrier ». Il ne porte plus qu'un texte,
+« Tournois Riftbound - Résultats et calendrier », dont la fin est masquée à l'œil sur
+téléphone (`sr-only`). Rien ne change à l'affichage. `title` et description inchangés.
+
+**À juger** avec le lot du 12 novembre, deux semaines après le Deploy.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-13 · hors passe, vignettes de la liste `/legendes`
 
 Proposition 1 de l'audit des autres pages (`docs/AUDIT-AUTRES-PAGES-2026-11-12.md`),
