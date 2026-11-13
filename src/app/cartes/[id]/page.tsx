@@ -143,14 +143,17 @@ export default async function CardDetailPage({ params }: PageProps) {
           { name: card.name, href: `/cartes/${card.riftboundId}` },
         ]}
       />
-      <div className="mt-6 grid gap-8 lg:grid-cols-[400px_1fr]">
+      {/* Sur téléphone, le nom et la rareté passent AU-DESSUS de l'image : elle prenait
+          tout le premier écran et le titre arrivait à 719 px. La colonne de droite est
+          « dépliée » (`contents`) pour que `order` range ses enfants avec l'image. */}
+      <div className="mt-6 grid gap-8 max-lg:gap-0 lg:grid-cols-[400px_1fr]">
         {/* Collée sous la barre sur ordinateur : la colonne de droite fait 1 000 px de
             plus que l'image, qui laissait un grand vide en défilant. Choix d'Allan du
             12 novembre 2026 (E11, réglage 1). */}
-        <div><div className="lg:sticky lg:top-22"><CarteInclinable><CardImage src={card.imageUrl} alt={card.name} size="xl" priority hoverZoom={false} /></CarteInclinable></div></div>
-        <div>
-          <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
-          <div className="mt-3 flex flex-wrap items-center gap-3">
+        <div className="max-lg:-order-1 max-lg:my-5"><div className="lg:sticky lg:top-22"><CarteInclinable><CardImage src={card.imageUrl} alt={card.name} size="xl" priority hoverZoom={false} /></CarteInclinable></div></div>
+        <div className="max-lg:contents">
+          <h1 className="text-3xl font-bold leading-tight max-lg:-order-3 sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{card.name}</h1>
+          <div className="mt-3 flex flex-wrap items-center gap-3 max-lg:-order-2">
             <RarityBadge rarity={card.rarity} />
             <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-semibold text-violet-light">{card.setName}</span>
             {isBanned(card.name) && <span className="rounded-full bg-surface-raised px-2.5 py-0.5 text-xs font-bold text-red-400 ring-1 ring-red-500/30">Banni</span>}
