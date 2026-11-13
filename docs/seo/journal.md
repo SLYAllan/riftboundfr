@@ -5,6 +5,26 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-13 · hors passe, vignettes de la liste `/legendes`
+
+Proposition 1 de l'audit des autres pages (`docs/AUDIT-AUTRES-PAGES-2026-11-12.md`),
+prise par Allan le 13 novembre. **Changé** sur la liste, pas sur les fiches :
+- sur téléphone, deux vignettes par ligne au lieu d'une ; l'archétype et les domaines
+  n'y sont plus affichés (ils restent sur ordinateur) ;
+- sous le nom de chaque Légende, ses joueurs classés et sa part du champ sur le set en
+  cours (`parts-classement.ts`, la source de l'accueil et de `/meta`).
+
+Titre (`h1`), `title`, description et liens vers les fiches inchangés : les 54 liens
+restent là, aux mêmes adresses.
+
+**Mesuré** en local (build de production, base locale) : 12,9 écrans à 6,3 sur téléphone.
+
+**À juger** avec le lot du 12 novembre, deux semaines après le Deploy.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-12 · hors passe, fiche resserrée sur `/legendes/[slug]`
 
 La version « actuel en mieux » de l'essai carte blanche, choisie par Allan le 12 novembre.

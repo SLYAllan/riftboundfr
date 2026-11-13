@@ -10,6 +10,8 @@ import { legendsWithDecks } from "@/lib/legend-fiche";
 import { prisma } from "@/lib/prisma";
 import { displayLegendName } from "@/lib/utils";
 import { metaTraduite, tr } from "@/lib/i18n-server";
+import { partsDuSet, type LigneParts } from "@/lib/parts-classement";
+import { SET_EN_COURS } from "@/lib/tournament-order";
 
 // La liste dépend de la base (Légendes sans fiche) : rendu à la requête, comme les
 // autres pages qui lisent la DB, sinon le build Docker la fige à vide.
@@ -100,7 +102,7 @@ const TIER_GROUPS: { tier: number; label: string; note: string; color: string }[
   { tier: 4, label: "C", note: "De niche ou en retrait", color: "var(--color-tier-c)" },
 ];
 
-function LegendCard({ fiche }: { fiche: FicheSummary }) {
+function LegendCard({ fiche, part }: { fiche: FicheSummary; part?: LigneParts }) {
   const name = displayLegendName(fiche.legendName);
   const bannerUrl = getBannerUrl(fiche.legendName);
   return (
@@ -115,10 +117,10 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
           width={640}
           height={280}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="aspect-[16/7] w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          className="aspect-[4/3] w-full object-cover object-top transition-transform duration-300 group-hover:scale-105 sm:aspect-[16/7]"
         />
       ) : (
-        <div className="aspect-[16/7] w-full bg-surface-raised" />
+        <div className="aspect-[4/3] w-full bg-surface-raised sm:aspect-[16/7]" />
       )}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-3">
@@ -126,13 +128,21 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
             quand le nom était court (LeBlanc, Ahri) et dessous sinon (Diana) :
             d'une carte à l'autre, plus rien ne s'alignait. */}
         <div
-          className="text-base font-bold leading-tight text-white drop-shadow"
+          className="text-sm font-bold leading-tight text-white drop-shadow sm:text-base"
           style={{ fontFamily: "var(--font-rubik), sans-serif" }}
         >
           {name}
         </div>
         {fiche.archetype && (
-          <div className="mt-0.5 line-clamp-1 text-[11px] text-white/70">{fiche.archetype}</div>
+          <div className="mt-0.5 line-clamp-1 text-[11px] text-white/70 max-sm:hidden">{fiche.archetype}</div>
+        )}
+        {/* Les joueurs classés du set en cours et leur part du champ : la même source
+            que l'accueil et /meta (`parts-classement.ts`). Une Légende que personne n'a
+            classée dans le set n'affiche rien. */}
+        {part && (
+          <div className="mt-0.5 text-[11px] font-semibold tabular-nums text-white/85">
+            {part.joueurs.toLocaleString("fr-FR")} joueurs, {(part.part * 100).toLocaleString("fr-FR", { maximumFractionDigits: 1 })} %
+          </div>
         )}
         <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
           {fiche.domains.map((d) => (
@@ -140,8 +150,9 @@ function LegendCard({ fiche }: { fiche: FicheSummary }) {
               key={d}
               className="inline-flex items-center gap-1 rounded bg-black/50 px-1.5 py-0.5 text-[10px] font-semibold text-white backdrop-blur-sm"
             >
-              {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt="" className="h-3 w-3" />}
-              {DOMAIN_LABELS_FR[d] ?? d}
+              {DOMAIN_ICONS[d] && <img src={DOMAIN_ICONS[d]} alt={DOMAIN_LABELS_FR[d] ?? d} className="h-3 w-3" />}
+              {/* Sur téléphone la vignette fait 170 px : l'icône seule, le nom du domaine reste dans son `alt`. */}
+              <span className="max-sm:hidden">{DOMAIN_LABELS_FR[d] ?? d}</span>
             </span>
           ))}
         </div>
@@ -160,6 +171,7 @@ export default async function LegendesIndexPage() {
     items: fiches.filter((f) => f.tier === g.tier),
   })).filter((g) => g.items.length > 0);
   const untiered = fiches.filter((f) => !f.tier || !TIER_GROUPS.some((g) => g.tier === f.tier));
+  const parts = new Map(partsDuSet(SET_EN_COURS).lignes.map((l) => [l.slug, l]));
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -186,9 +198,9 @@ export default async function LegendesIndexPage() {
                 <span className="text-xs text-ink-muted">{g.note}</span>
               </div>
             </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
               {g.items.map((f) => (
-                <LegendCard key={f.slug} fiche={f} />
+                <LegendCard key={f.slug} fiche={f} part={parts.get(f.slug)} />
               ))}
             </div>
           </section>
@@ -199,9 +211,9 @@ export default async function LegendesIndexPage() {
             <h2 className="text-2xl font-semibold text-ink-secondary" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
               {t("Autres Légendes")}
             </h2>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-3">
               {untiered.map((f) => (
-                <LegendCard key={f.slug} fiche={f} />
+                <LegendCard key={f.slug} fiche={f} part={parts.get(f.slug)} />
               ))}
             </div>
           </section>
