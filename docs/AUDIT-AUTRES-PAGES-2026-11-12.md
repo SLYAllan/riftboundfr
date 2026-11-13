@@ -18,26 +18,25 @@ le code. Non vu : les pages connectées (`/collection`, `/profil`), Safari sur i
 | `/meta` | Les chiffres comptent les joueurs classés (`meta-parts.json`) mais s'appelaient « decklists complètes » et « decks ». | `617525d00` |
 | `/decks/[slug]` | Six erreurs `react/jsx-key` dans la ligne d'en-tête du 11 novembre : la CI aurait rejeté le push. | `f7ef8cf85` |
 
-## À faire, du plus utile au moins utile
+## Les dix propositions, du plus utile au moins utile
 
-Rien n'est appliqué à `main` : chaque ligne attend le oui d'Allan. Les dix sont codées
-sur la branche `propal/autres-pages`, un commit par proposition, et se voient avant/après
-dans `comparaison-audit/propal/` (http://localhost:3004/propal/). Pour en prendre une :
-`git cherry-pick <commit>` sur `main`, puis la porte.
+**Les dix sont appliquées sur `main` depuis le 13 novembre** (Allan : « ok fait tous »),
+un commit par proposition, rien de poussé. Avant/après toujours visible dans
+`comparaison-audit/propal/` ; la branche `propal/autres-pages` ne sert plus.
 
-| # | Commits sur `propal/autres-pages` |
+| # | Commit sur `main` |
 |---|---|
-| 1 | `ab55a2350` `e19713c1a` |
-| 2 | `63c7517a8` |
-| 3 | `8796bdabd` |
-| 4 | `49bd0a2db` `d11a73052` |
-| 5 | `505987345` |
-| 6 | `73e7517ad` |
-| 7 | `5cf6eca8b` (à noter au journal SEO : le texte du `h1` change pour un moteur) |
-| 8 | `b9de00d5a` |
-| 9 | `2954a40bf` |
-| 10 | `1d48a0c0c` |
-| Traductions | `6b7c73491` `a04951952` (phrases anglaises des 4, 7 et 10) |
+| 1 | `9de19ba36` (avec son entrée au journal SEO) |
+| 2 | `af32cdbf2` |
+| 3 | `c27eaeedb` |
+| 4 | `ebb8cccfc` |
+| 5 | `00a3a350e` |
+| 6 | `b42e665c1` |
+| 7 | `b2b0d43de` (avec son entrée au journal SEO) |
+| 8 | `ab04be00e` |
+| 9 | `605cf1908` |
+| 10 | `6c0b18d74` |
+| Traductions | `024c8baae` (phrases anglaises des 4, 7 et 10) |
 
 Deux écarts avec le tableau ci-dessous, vus en codant : la 2 remonte le nom et la rareté,
 pas le prix, qui reste juste sous l'image ; la 3 place « À lire aussi » dans la colonne

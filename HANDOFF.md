@@ -1,5 +1,89 @@
 # HANDOFF — état des lieux
 
+## 13 novembre 2026 — ban du 23 novembre, règles du 9 octobre, best-of du RC Europe, dix propositions appliquées : en local seulement
+
+**Rien n'est poussé, rien n'est en prod** (consigne d'Allan du 11 : « pousse rien pour le
+moment, full local »). Tout est commité sur `main`. La base locale porte les 55 listes du
+RC Europe, ses 22 best-of et l'article ; la prod en est restée au 10 novembre.
+
+**Ban list annoncée le 13, en vigueur le lundi 23 novembre** (relevé :
+`data/raw-scrapes/annonces/ban-2026-11-13-en.md`, pas de version française chez Riot) :
+Riven, Broken Blade, Zhonya's Hourglass, Stellacorn Herder, Nocturne, Horrifying, Rhasa the
+Sunderer, Brynhir Thundersong, Dazzling Aurora, Baited Hook, Emperor's Dais, Star Spring.
+Les dix noms sont ceux de la base de cartes, vérifiés un à un.
+- **Dès l'annonce** (comme en septembre) : étiquette « Banni », pastille « Interdite »,
+  refus du deckbuilder, filtre `/decks?legales=1`, page `/guides/ban-list` (nouvelle
+  partie, 22 cartes), cloche des membres abonnés aux règles.
+- **Daté** : `BAN_ENTRIES` porte `effet: "2026-11-23"`. La page d'un deck écrit « Liste
+  bientôt injouable. … seront interdites le 23 novembre 2026 » jusqu'au 22, puis la phrase
+  d'avant, sans qu'on y touche.
+- **Stats à partir du 23 seulement** : `DATES_BANS` porte `effet`, et `scripts/apres-ban.ts`
+  ne compte un ban qu'une fois en vigueur. Sans ça, `maj:stats` aurait tu les cartes de
+  toutes les fiches Radiance dès le 13 (72 % des listes jouent une des dix cartes), dix
+  jours trop tôt. **Le premier `maj:stats` lancé à partir du 23 les taira** : c'est la règle
+  du 17 octobre. Il faudra alors raccourcir la liste de 33 fiches de
+  `src/lib/banned-cards.test.ts`.
+- **Repli corrigé** (`fiches-maj.mts`) : le set précédent ne sert de repli que s'il est
+  compté depuis le même ban. Sinon Vendetta, sans tournoi d'après le 23, aurait recompté
+  tout le set et ramené Stacked Deck et les dix cartes dans les fiches.
+- **Guides de Légende non réécrits** : douze guides de `legend-guides.ts` et seize passages
+  de `fiches-prose.json` conseillent une carte visée. Aucune liste jouée sans elles
+  n'existe : la fiche affiche un avis « Écrit avant la ban list. » calculé sur le texte
+  (`interdictionsCitees`, `bans.ts`). **À faire après le 23**, sur les premières listes :
+  réécrire ces plans, à la main, par lots de cinq.
+- Dazzling Aurora et Stellacorn Herder sortent des exemples de `/guides/deckbuilding` et
+  de `/guides/domaines`. `bans.ts` disait Scrapheap champ de bataille : c'est un équipement.
+- **Conséquence sur les ventes** : la fiche Légende ne vend pas une liste qui joue une
+  carte interdite. Riven, Akali, Rengar et Irelia n'ont plus un seul lien d'achat sur leur
+  fiche ; la page d'un deck garde son bouton, avec l'encadré rouge. Journal SEO du 13.
+
+**Règles de base : révision du 9 octobre 2026** (le site servait celle du 16 juillet).
+PDF des deux langues pris sur le Rules Hub, lus par `parse-core-rules.py` : 2 438 règles en
+français comme en anglais (2 317 et 2 316 avant), 414 chapitres, même numérotation. Les PDF
+de juillet restent dans `data/rules/*-2026-07-16.pdf` (hors Git). Pour la prochaine
+révision : la marche à suivre est en commentaire dans `src/lib/core-rules.ts`.
+Lus et NON intégrés : `testing-start-of-game-rules.md` (15 octobre, un essai hors tournois
+majeurs, pas une règle) et `radiance-rules-faq.md` (26 octobre, des réponses officielles sur
+des interactions de Radiance, que le site ne montre nulle part). Les deux sont dans
+`data/raw-scrapes/annonces/`.
+
+**Best-of du Regional Championship d'Europe.** L'article de Riot est sorti le 11
+(`best-ofs-for-the-european-championship`, relevé dans `europe-rc-officiel.md`) : 24 fiches,
+22 joueurs. `parse-playriftbound.ts` en perdait une en silence (« **Legend Rank**: », les
+deux-points hors du gras) : il la lit, et s'arrête désormais sur un en-tête illisible.
+10 listes écrites, 12 déjà couvertes sans divergence. Validateur : 32 154 vérifiées,
+0 MISMATCH, sortie 0. 55 listes seedées en local, **22 best-of**
+(`mark-bestof-tournois.mts "Europe Regional Championship" --sauf "Master Yi, Wuju
+Bladesman" --sauf "Lucian, Purifier" --sauf "Viktor, Herald of the Arcane"`) : les 17
+« Legend Rank #1 » de Riot, retrouvés un à un, et cinq n°1 du classement qui ont publié
+leur liste (Rek'Sai, Sett, Azir, Irelia, Teemo). Les trois écartées ont un n°1 sans liste
+complète (#38, #128, #179). **Écart non tranché** : le classement donne un Jayce au 21e
+rang (Templar), Riot donne Pjax91 (27e) pour n°1 de Jayce ; on suit Riot.
+Article `/articles/best-of-regional-championship-europe` par
+`scripts/seed-europe-rc-bestof.mts` (22 decks, 14 avec une carte du ban, compte fait par
+le script), couverture `public/img/articles/stuttgart.webp` (photo de l'article de Riot).
+Pas de version anglaise de l'article.
+
+**`maj:stats` sortie 0** : tier lists « rien à revoir » (le classement n'a pas bougé), neuf
+fiches recomptées avec leur liste de plus, cinq pourcentages de prose recalés
+(`fiches-prose.json`), `META-KNOWLEDGE` v19 et `DECKBUILDING-RULES` v18 (tableaux Radiance
+sur 2 282 listes, cores de neuf Légendes).
+
+**Les dix propositions de l'audit des autres pages sont sur `main`** (`af32cdbf2` à
+`b2b0d43de`, table dans `docs/AUDIT-AUTRES-PAGES-2026-11-12.md`). La branche
+`propal/autres-pages` et son arbre de travail ne servent plus.
+
+**Pour mettre en ligne, dans l'ordre, quand Allan le dit** : pousser `main` ; par le tunnel
+de prod, `seed-tournament-decks.ts europe-rc "Europe Regional Championship" Radiance
+"tournoi,radiance,regional"` (il supprime puis recrée les 45 listes du tournoi), le
+`mark-bestof-tournois.mts` ci-dessus, `seed-europe-rc-bestof.mts` ; puis le Deploy dans
+Coolify. Le Deploy enverra aussi tout le lot des 11 et 12 novembre.
+
+**Reste** : relever à nouveau les listes du RC Europe vers le 17 (Master Yi, Lucian et
+Viktor y gagneront peut-être leur best-of) ; les guides après le 23 ; la règle des tournois
+en ligne relayés par hexgate (306, 308) ; les décisions du 12 (deck mis en avant sur
+l'accueil, un ou deux Deploy).
+
 ## 11 novembre 2026 — audit visiteur, temps 1, 2 et 3 faits, en local seulement
 
 Brief : `docs/AUDIT-UX-FRONTEND-2026-11-11.md`. **Commité sur `main`, rien de poussé**
