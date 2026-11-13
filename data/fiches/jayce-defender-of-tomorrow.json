@@ -89,32 +89,27 @@
     },
     {
       "name": "Promising Future",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Deadly Flourish",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Deadly Flourish",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Wages of Pain",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rocket Barrage",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -127,7 +122,7 @@
   "topBattlefields": [
     "Sigil of the Storm (98 %)",
     "Forgotten Monument (75 %)",
-    "Dragon Roost (71 %)"
+    "Dragon Roost (72 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 67,
@@ -135,7 +130,7 @@
     "titres": 0,
     "conversion": "10.4 %",
     "tournois": 16,
-    "listesPubliees": 56,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "5th",
@@ -164,7 +159,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 67 joueurs classés, 16 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 67 joueurs classés, 16 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

@@ -20,22 +20,22 @@
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Falling Star",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -50,22 +50,22 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Vanguard Captain",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "role": "Souple, 42 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 41 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -82,7 +82,7 @@
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "75 %",
+      "usage": "74 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
@@ -90,18 +90,14 @@
       "role": "1 exemplaire en moyenne"
     },
     "Mordekaiser, Twice Slain": {
-      "usage": "45 %",
+      "usage": "44 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Rengar, Pouncing": {
-      "usage": "30 %",
-      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Zaun Warrens (93 %)",
-    "Minefield (68 %)",
-    "Ruined Monastery (52 %)"
+    "Minefield (67 %)",
+    "Ruined Monastery (53 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 73,
@@ -109,7 +105,7 @@
     "titres": 0,
     "conversion": "0 %",
     "tournois": 14,
-    "listesPubliees": 56,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "15th",
@@ -138,13 +134,13 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 73 joueurs classés, 14 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 73 joueurs classés, 14 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Unités à Agonie et combats forcés",
   "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
   "gameplan": {
     "earlyGame": "Honest Broker et Carrion Dredger laissent quelque chose en mourant : un jeton d'or épuisé pour le premier, un Oiseau de 1 Puissance à Protection pour le second. Trifarian Captain va chercher une unité ou un équipement dans les quatre cartes du dessus.",
     "midGame": "Realm of Death, dans 98 % des listes, retire 2 Puissance à une unité adverse, en donne 2 à une des vôtres, et les fait se blesser l'une l'autre. Chaque unité morte rejoint la défausse, où la Légende la bannit pour payer la suivante.",
-    "lateGame": "Ferrous Forerunner, dans 73 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
+    "lateGame": "Ferrous Forerunner, dans 72 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
     "winCondition": "Échanger des unités qui laissent quelque chose derrière elles, puis finir avec Mordekaiser."
   },
   "strengths": [

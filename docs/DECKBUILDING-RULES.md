@@ -1,5 +1,6 @@
 # DECKBUILDING-RULES.md — Regles de construction de decks Riftbound
 
+> Mis à jour le 13 novembre 2026 (v18). **Ban list du 23 novembre et dix listes officielles du Regional Championship d'Europe** : les tableaux Radiance passent à 2 282 listes, les cores de neuf Légendes bougent d'un ou deux points (Riven, Vex, Evelynn, Akali, Jayce, Lillia, Mordekaiser, LeBlanc, Diana). Dix cartes annoncées bannies le 13 novembre restent dans les tableaux et les cores jusqu'au 23 : elles se jouent encore. Sections globales sur 33 594 listes.
 > Mis à jour le 10 novembre 2026 (v17). **Le Regional Championship d'Europe et quatre City Challenge du 8 novembre entrent** : ce que jouent les decks sur 2 272 listes Radiance, cores de 21 Légendes (Diana, Jarvan IV et Ekko passent le seuil de trente). Sections chiffrées globales sur 33 584 listes, titres de section recalés. Cores Vendetta recalculés : identiques.
 > Mis à jour le 9 novembre 2026 (v16). **Radiance entre dans ce doc** : ce que jouent les decks sur 1 755 listes, cores de 18 Légendes, domaines et terrains des neuf Légendes nouvelles. Sections chiffrées globales sur 33 067 listes, titres de section recalés. Cores Vendetta recalculés : identiques. Le doc n'avait pas été repassé depuis le 17 octobre, alors qu'il se repasse à chaque tournoi importé.
 > Mis à jour le 17 octobre 2026 (v15). Sections chiffrées globales sur 31 312 listes, tableau des paires de domaines compris (il datait du 30 août). Cores Vendetta comptés sur les seuls tournois d'après le ban : 24 Légendes au-dessus du seuil de trente, aucune carte bannie. Entrent le National Open de Chengdu, ses deux épreuves annexes et le City Challenge de Shanghai du 7 octobre.
@@ -132,99 +133,99 @@ en réserve**. Toute autre composition est incomplète et doit être exclue en e
 des imports, même si Riftdecks la publie ainsi. On conserve le Markdown brut comme
 preuve, sans compléter ni deviner les cartes manquantes.
 
-### Ce que jouent les decks sur Radiance, le set en cours (10 novembre 2026)
+### Ce que jouent les decks sur Radiance, le set en cours (13 novembre 2026)
 
-> Par `npx tsx --env-file=.env scripts/stats-deckbuilding.mts Radiance`, sur **2 272 listes publiées** de 16 tournois : 695 à Sacramento, 24 à Melbourne, 45 au Regional Championship d'Europe, 1 508 dans treize City Challenge chinoises. Aucune ne joue de carte bannie : les 16 tournois passent le filtre de `scripts/apres-ban.ts`.
+> Par `npx tsx --env-file=.env scripts/stats-deckbuilding.mts Radiance`, sur **2 282 listes publiées** de 16 tournois : 695 à Sacramento, 24 à Melbourne, 55 au Regional Championship d'Europe (dix de plus le 13 novembre, lues dans l'article officiel de Riot), 1 508 dans treize City Challenge chinoises. Les 16 tournois passent le filtre de `scripts/apres-ban.ts` : le ban annoncé le 13 novembre n'y compte qu'à partir du 23. **72 % de ces listes jouent une des dix cartes visées**, Zhonya's Hourglass, Stellacorn Herder, Riven, Broken Blade, Star Spring et Emperor's Dais en tête des tableaux ci-dessous : à lire comme le format d'avant le 23 novembre.
 >
-> **Ce qui change** : plus d'unités et moins de sorts que la moyenne depuis Origines (18,5 unités et 15,5 sorts par deck, contre 16,4 et 18,2). Defy et Discipline restent en tête. Un quart des listes joue Calm/Chaos, la paire de Riven, de Vex et d'Irelia. Le Regional Championship d'Europe pèse peu ici : 45 listes complètes sur 302 publiées. Pour construire un deck aujourd'hui, ces tableaux priment sur les tableaux globaux qui suivent.
+> **Ce qui change** : plus d'unités et moins de sorts que la moyenne depuis Origines (18,4 unités et 15,5 sorts par deck, contre 16,4 et 18,2). Defy et Discipline restent en tête. Un quart des listes joue Calm/Chaos, la paire de Riven, de Vex et d'Irelia. Le Regional Championship d'Europe pèse peu ici : 55 listes complètes, dont 45 sur les 302 du relevé et 10 de l'article officiel. Pour construire un deck aujourd'hui, ces tableaux priment sur les tableaux globaux qui suivent.
 
-#### Ratio unités / sorts / équipements (moyenne sur 2272 listes)
+#### Ratio unités / sorts / équipements (moyenne sur 2282 listes)
 
 | Type | Moyenne par deck | Part |
 |---|---:|---:|
-| Unités | 18,5 | 47,3 % |
+| Unités | 18,4 | 47,3 % |
 | Sorts | 15,5 | 39,7 % |
 | Équipements | 5,1 | 13,0 % |
 
-#### Les 30 cartes les plus jouées (toutes Légendes, 2272 listes)
+#### Les 30 cartes les plus jouées (toutes Légendes, 2282 listes)
 
 | Carte | Listes | Part | Copies moyennes |
 |---|---:|---:|---:|
-| Defy | 1043 | 45,9 % | 2,88 |
-| Discipline | 1019 | 44,9 % | 2,95 |
-| Star-Crossed | 873 | 38,4 % | 1,38 |
-| Zhonya's Hourglass | 869 | 38,2 % | 2,62 |
-| Switcheroo | 837 | 36,8 % | 1,69 |
-| Gust | 786 | 34,6 % | 1,71 |
-| Bedeviling Stranger | 752 | 33,1 % | 2,13 |
-| Scuttle Crab | 749 | 33,0 % | 2,58 |
-| Tideturner | 729 | 32,1 % | 2,19 |
-| Astral Heron | 623 | 27,4 % | 2,87 |
-| Reckless Innovator | 621 | 27,3 % | 2,30 |
-| Rebuke | 590 | 26,0 % | 1,26 |
-| Ride The Wind | 541 | 23,8 % | 1,83 |
-| Stellacorn Herder | 541 | 23,8 % | 2,93 |
-| Falling Star | 541 | 23,8 % | 2,72 |
-| Not So Fast | 536 | 23,6 % | 1,08 |
-| Stupefy | 520 | 22,9 % | 2,89 |
-| Thousand-Tailed Watcher | 498 | 21,9 % | 2,41 |
-| Battle Preparations | 491 | 21,6 % | 1,79 |
-| Blitzcrank, Impassive | 476 | 21,0 % | 1,64 |
-| Noxus Hopeful | 470 | 20,7 % | 2,66 |
-| Kai'Sa, Survivor | 466 | 20,5 % | 1,97 |
-| Riven, Broken Blade | 440 | 19,4 % | 1,06 |
-| Bilgewater Tracker | 439 | 19,3 % | 2,55 |
-| Vex, Apathetic | 429 | 18,9 % | 1,56 |
-| Bellows Breath | 422 | 18,6 % | 2,09 |
-| Blade of the Exile | 412 | 18,1 % | 2,97 |
+| Defy | 1047 | 45,9 % | 2,88 |
+| Discipline | 1023 | 44,8 % | 2,95 |
+| Star-Crossed | 877 | 38,4 % | 1,38 |
+| Zhonya's Hourglass | 872 | 38,2 % | 2,62 |
+| Switcheroo | 840 | 36,8 % | 1,69 |
+| Gust | 790 | 34,6 % | 1,71 |
+| Bedeviling Stranger | 755 | 33,1 % | 2,14 |
+| Scuttle Crab | 751 | 32,9 % | 2,58 |
+| Tideturner | 732 | 32,1 % | 2,19 |
+| Astral Heron | 626 | 27,4 % | 2,87 |
+| Reckless Innovator | 622 | 27,3 % | 2,30 |
+| Rebuke | 593 | 26,0 % | 1,26 |
+| Stellacorn Herder | 543 | 23,8 % | 2,93 |
+| Ride The Wind | 542 | 23,8 % | 1,84 |
+| Falling Star | 542 | 23,8 % | 2,72 |
+| Not So Fast | 539 | 23,6 % | 1,08 |
+| Stupefy | 522 | 22,9 % | 2,89 |
+| Thousand-Tailed Watcher | 499 | 21,9 % | 2,41 |
+| Battle Preparations | 494 | 21,6 % | 1,79 |
+| Blitzcrank, Impassive | 479 | 21,0 % | 1,63 |
+| Noxus Hopeful | 470 | 20,6 % | 2,66 |
+| Kai'Sa, Survivor | 468 | 20,5 % | 1,97 |
+| Riven, Broken Blade | 441 | 19,3 % | 1,06 |
+| Bilgewater Tracker | 440 | 19,3 % | 2,55 |
+| Vex, Apathetic | 432 | 18,9 % | 1,56 |
+| Bellows Breath | 423 | 18,5 % | 2,10 |
+| Blade of the Exile | 413 | 18,1 % | 2,97 |
+| Charm | 411 | 18,0 % | 1,94 |
 | Punch First | 410 | 18,0 % | 2,72 |
-| Charm | 408 | 18,0 % | 1,94 |
-| Trifarian Captain | 400 | 17,6 % | 2,87 |
+| Trifarian Captain | 401 | 17,6 % | 2,87 |
 
-#### Les 15 champs de bataille les plus joués (2272 listes)
+#### Les 15 champs de bataille les plus joués (2282 listes)
 
 | Champ de bataille | Listes | Part |
 |---|---:|---:|
-| Star Spring | 621 | 27,3 % |
-| Emperor's Dais | 515 | 22,7 % |
-| Rockfall Path | 431 | 19,0 % |
-| Hunters' Circle | 381 | 16,8 % |
-| Void Gate | 331 | 14,6 % |
-| Seat of Power | 306 | 13,5 % |
-| Zaun Warrens | 295 | 13,0 % |
+| Star Spring | 623 | 27,3 % |
+| Emperor's Dais | 515 | 22,6 % |
+| Rockfall Path | 431 | 18,9 % |
+| Hunters' Circle | 384 | 16,8 % |
+| Void Gate | 332 | 14,5 % |
+| Seat of Power | 307 | 13,5 % |
+| Zaun Warrens | 297 | 13,0 % |
 | Frozen Fortress | 264 | 11,6 % |
-| Minefield | 254 | 11,2 % |
-| Rakelstake | 223 | 9,8 % |
-| Sigil of the Storm | 199 | 8,8 % |
+| Minefield | 254 | 11,1 % |
+| Rakelstake | 224 | 9,8 % |
+| Sigil of the Storm | 202 | 8,9 % |
 | Forbidding Waste | 177 | 7,8 % |
-| Ruined Monastery | 172 | 7,6 % |
-| Bandle Scouts' Academy | 157 | 6,9 % |
-| Forgotten Monument | 141 | 6,2 % |
+| Ruined Monastery | 173 | 7,6 % |
+| Bandle Scouts' Academy | 159 | 7,0 % |
+| Forgotten Monument | 142 | 6,2 % |
 
 #### Paires de domaines
 
 | Paire | Listes | Part |
 |---|---:|---:|
-| Calm/Chaos | 574 | 25,3 % |
+| Calm/Chaos | 576 | 25,3 % |
 | Fury/Mind | 263 | 11,6 % |
-| Chaos/Order | 206 | 9,1 % |
-| Calm/Mind | 171 | 7,5 % |
-| Fury/Order | 171 | 7,5 % |
-| Body/Calm | 165 | 7,3 % |
-| Mind/Order | 114 | 5,0 % |
+| Chaos/Order | 206 | 9,0 % |
+| Calm/Mind | 172 | 7,6 % |
+| Fury/Order | 172 | 7,6 % |
+| Body/Calm | 165 | 7,2 % |
+| Mind/Order | 115 | 5,1 % |
 | Body/Fury | 97 | 4,3 % |
-| Body/Chaos | 96 | 4,2 % |
-| Body/Order | 85 | 3,7 % |
+| Body/Chaos | 97 | 4,3 % |
+| Body/Order | 86 | 3,8 % |
 | Calm/Order | 72 | 3,2 % |
-| Calm/Fury | 67 | 3,0 % |
-| Chaos/Mind | 65 | 2,9 % |
+| Calm/Fury | 68 | 3,0 % |
+| Chaos/Mind | 66 | 2,9 % |
 | Chaos/Fury | 65 | 2,9 % |
-| Body/Mind | 56 | 2,5 % |
+| Body/Mind | 57 | 2,5 % |
 
-### Ce que jouent les decks, toutes ères, recalculé le 10 novembre 2026
+### Ce que jouent les decks, toutes ères, recalculé le 13 novembre 2026
 
 > Sections recalculées par `npx tsx --env-file=.env scripts/stats-deckbuilding.mts`
-> sur **33 584 listes de tournoi**, toutes ères confondues. Le doc annonçait
+> sur **33 594 listes de tournoi**, toutes ères confondues. Le doc annonçait
 > « 7987 decks » depuis un relevé de mai 2026 : trois fois moins que ce que le
 > dépôt porte aujourd'hui. Ces sections se recalculent, elles ne se retapent pas.
 >
@@ -234,11 +235,12 @@ preuve, sans compléter ni deviner les cartes manquantes.
 > sur le classement complet des tournois.
 >
 > **Lire ces tableaux avec la ban list en tête** : ils comptent tous les decks
-> depuis Origines, y compris ceux joués avant les bans. Douze cartes sont
-> aujourd'hui interdites en Standard, dont cinq champs de bataille (source :
-> `src/lib/banned-cards.ts`).
+> depuis Origines, y compris ceux joués avant les bans. Vingt-deux cartes sont
+> sur la ban list du Standard, dont sept champs de bataille ; dix d'entre elles
+> (ban annoncé le 13 novembre 2026) n'y entrent que le 23 novembre (source :
+> `src/lib/banned-cards.ts`, détail dans `META-KNOWLEDGE.md`).
 
-### Ratio unités / sorts / équipements (moyenne sur 33582 listes)
+### Ratio unités / sorts / équipements (moyenne sur 33592 listes)
 
 | Type | Moyenne par deck | Part |
 |---|---:|---:|
@@ -246,56 +248,56 @@ preuve, sans compléter ni deviner les cartes manquantes.
 | Sorts | 18,2 | 46,8 % |
 | Équipements | 4,4 | 11,2 % |
 
-### Les 30 cartes les plus jouées (toutes Légendes, 33582 listes)
+### Les 30 cartes les plus jouées (toutes Légendes, 33592 listes)
 
 | Carte | Listes | Part | Copies moyennes |
 |---|---:|---:|---:|
-| Defy | 12368 | 36,8 % | 2,76 |
-| Discipline | 11858 | 35,3 % | 2,92 |
-| Thousand-Tailed Watcher | 9599 | 28,6 % | 2,30 |
-| Charm | 9262 | 27,6 % | 2,25 |
-| Stupefy | 9244 | 27,5 % | 2,87 |
-| Ride The Wind | 8805 | 26,2 % | 2,15 |
+| Defy | 12372 | 36,8 % | 2,76 |
+| Discipline | 11862 | 35,3 % | 2,92 |
+| Thousand-Tailed Watcher | 9600 | 28,6 % | 2,30 |
+| Charm | 9265 | 27,6 % | 2,25 |
+| Stupefy | 9246 | 27,5 % | 2,87 |
+| Ride The Wind | 8806 | 26,2 % | 2,15 |
 | Stacked Deck | 8391 | 25,0 % | 2,71 |
-| Zhonya's Hourglass | 8315 | 24,8 % | 2,39 |
-| Kai'Sa, Survivor | 7697 | 22,9 % | 2,00 |
-| Falling Star | 7484 | 22,3 % | 2,55 |
+| Zhonya's Hourglass | 8318 | 24,8 % | 2,39 |
+| Kai'Sa, Survivor | 7699 | 22,9 % | 2,00 |
+| Falling Star | 7485 | 22,3 % | 2,55 |
 | Noxus Hopeful | 7245 | 21,6 % | 2,53 |
-| Tideturner | 7143 | 21,3 % | 2,26 |
+| Tideturner | 7146 | 21,3 % | 2,26 |
 | Hidden Blade | 6858 | 20,4 % | 2,42 |
-| En Garde | 6638 | 19,8 % | 2,16 |
-| Gust | 6630 | 19,7 % | 1,97 |
+| En Garde | 6639 | 19,8 % | 2,16 |
+| Gust | 6634 | 19,7 % | 1,97 |
 | First Mate | 5950 | 17,7 % | 2,55 |
-| Ravenbloom Student | 5874 | 17,5 % | 2,81 |
+| Ravenbloom Student | 5876 | 17,5 % | 2,81 |
 | Punch First | 5818 | 17,3 % | 2,43 |
-| Rebuke | 5783 | 17,2 % | 1,57 |
-| Scuttle Crab | 5778 | 17,2 % | 2,67 |
+| Rebuke | 5786 | 17,2 % | 1,57 |
+| Scuttle Crab | 5780 | 17,2 % | 2,67 |
 | Darius, Trifarian | 5731 | 17,1 % | 2,29 |
-| Star-Crossed | 5647 | 16,8 % | 1,71 |
-| Sabotage | 5542 | 16,5 % | 1,79 |
-| Not So Fast | 5176 | 15,4 % | 1,49 |
+| Star-Crossed | 5651 | 16,8 % | 1,71 |
+| Sabotage | 5544 | 16,5 % | 1,79 |
+| Not So Fast | 5179 | 15,4 % | 1,49 |
 | Singularity | 5147 | 15,3 % | 1,81 |
-| Switcheroo | 4911 | 14,6 % | 1,61 |
+| Switcheroo | 4914 | 14,6 % | 1,61 |
 | Retreat | 4891 | 14,6 % | 2,02 |
-| Watchful Sentry | 4878 | 14,5 % | 2,77 |
+| Watchful Sentry | 4879 | 14,5 % | 2,77 |
 | Cleave | 4770 | 14,2 % | 2,23 |
 | Pit Rookie | 4582 | 13,6 % | 2,62 |
 
-### Les 15 champs de bataille les plus joués (33582 listes)
+### Les 15 champs de bataille les plus joués (33592 listes)
 
 | Champ de bataille | Listes | Part |
 |---|---:|---:|
-| Zaun Warrens | 5212 | 15,5 % |
+| Zaun Warrens | 5214 | 15,5 % |
 | Obelisk of Power | 5007 | 14,9 % |
-| Targon's Peak | 4502 | 13,4 % |
+| Targon's Peak | 4503 | 13,4 % |
 | Sunken Temple | 4488 | 13,4 % |
 | The Dreaming Tree | 4354 | 13,0 % |
-| Void Gate | 4284 | 12,8 % |
-| Sigil of the Storm | 3935 | 11,7 % |
-| Trifarian War Camp | 3713 | 11,1 % |
+| Void Gate | 4285 | 12,8 % |
+| Sigil of the Storm | 3938 | 11,7 % |
+| Trifarian War Camp | 3714 | 11,1 % |
 | Aspirant's Climb | 3527 | 10,5 % |
-| Star Spring | 3467 | 10,3 % |
-| Vilemaw's Lair | 3047 | 9,1 % |
+| Star Spring | 3469 | 10,3 % |
+| Vilemaw's Lair | 3048 | 9,1 % |
 | The Arena's Greatest | 2745 | 8,2 % |
 | Reaver's Row | 2745 | 8,2 % |
 | Grove of the God-Willow | 2709 | 8,1 % |
@@ -305,7 +307,7 @@ preuve, sans compléter ni deviner les cartes manquantes.
 
 Classification : **core** (90%+), **standard** (60-89%), **flex** (30-59%), **tech** (10-29%)
 
-### Cores observés — Radiance, le set en cours (10 novembre 2026)
+### Cores observés — Radiance, le set en cours (13 novembre 2026)
 
 > Par `npx tsx scripts/cores-vendetta.mts Radiance 30`, sur les listes validées contre leur scrape brut. « Core » = présent dans 90 % et plus des listes de la Légende, « standard » = 60 à 89 %, copies médianes. Aucune carte n'est déduite ni ajoutée. Seules les Légendes vues au moins trente fois sont listées : 21 sur 53, dont 7 nouvelles.
 >
@@ -313,25 +315,25 @@ Classification : **core** (90%+), **standard** (60-89%), **flex** (30-59%), **te
 >
 > **Sous cinquante listes, un core tient à peu de joueurs.** Ces listes viennent des tournois publiés, Sacramento et la Chine pour l'essentiel. Les conversions et les parts de champ sont dans `META-KNOWLEDGE.md`, sur le classement complet.
 
-- **Riven, The Exile** (416 listes) — core : Defy 3x (100 %), Discipline 3x (100 %), Reckless Innovator 2x (99 %), Blade of the Exile 3x (99 %), Zhonya's Hourglass 3x (97 %), Tideturner 3x (97 %), Bedeviling Stranger 2x (96 %), Stellacorn Herder 3x (96 %), Astral Heron 3x (95 %), Switcheroo 2x (92 %), Blitzcrank, Impassive 2x (90 %). Standard : Rebuke 1x (89 %), Scuttle Crab 3x (86 %), Gust 2x (85 %), Star-Crossed 1x (84 %), Battle Preparations 2x (75 %), Not So Fast 1x (67 %).
+- **Riven, The Exile** (417 listes) — core : Defy 3x (100 %), Discipline 3x (100 %), Reckless Innovator 2x (99 %), Blade of the Exile 3x (99 %), Zhonya's Hourglass 3x (97 %), Tideturner 3x (97 %), Bedeviling Stranger 2x (96 %), Stellacorn Herder 3x (96 %), Astral Heron 3x (95 %), Switcheroo 2x (92 %), Blitzcrank, Impassive 2x (90 %). Standard : Rebuke 1x (89 %), Scuttle Crab 3x (86 %), Gust 2x (85 %), Star-Crossed 1x (84 %), Battle Preparations 2x (76 %), Not So Fast 1x (67 %).
 - **Kai'Sa, Daughter of the Void** (215 listes) — core : Stupefy 3x (100 %), Falling Star 3x (100 %), Thousand-Tailed Watcher 3x (99 %), Brynhir Thundersong 3x (99 %), Bilgewater Tracker 3x (98 %), Temporal Breach 3x (98 %), Time Warp 2x (97 %), Lecturing Yordle 2x (95 %), Bellows Breath 2x (95 %), Hextech Ray 2x (93 %), The Empyrean 2x (92 %), Plundering Poro 3x (91 %), Smoke Screen 2x (90 %). Standard : Watchful Sentry 3x (89 %), Noxus Hopeful 3x (86 %).
 - **Kennen, Heart of the Tempest** (211 listes) — core : Lightning Rush 3x (100 %), Trifarian Captain 3x (100 %), Nocturne, Horrifying 3x (97 %), Fizz, Trickster 2x (97 %), Traveling Merchant 3x (96 %), Star-Crossed 2x (96 %), Rhasa the Sunderer 3x (95 %), Last Rites 2x (95 %), Seal of Discord 3x (94 %), Gust 2x (93 %), Switcheroo 2x (92 %). Standard : Bedeviling Stranger 2x (77 %), Ride The Wind 2x (66 %), An Offer You Can't Refuse 1x (64 %).
 - **Master Yi, Wuju Bladesman** (126 listes) — core : Defy 3x (100 %), Discipline 3x (99 %), Zhonya's Hourglass 2x (98 %), Punch First 3x (98 %), Charm 3x (97 %), Lonely Poro 3x (96 %), Rampage 2x (95 %), First Mate 3x (94 %), Rengar, Trophy Hunter 3x (92 %), Scuttle Crab 3x (92 %). Standard : Pit Rookie 2x (89 %), Sabotage 2x (87 %), Ruin Runner 2x (83 %), En Garde 2x (72 %), Onslaught 1x (65 %).
 - **Rek'sai, Void Burrower** (101 listes) — core : Cull the Weak 3x (100 %), Falling Star 3x (100 %), Noxus Hopeful 3x (99 %), Carrion Dredger 3x (98 %), Inferna 3x (98 %), Faithful Manufactor 3x (97 %), Undertitan 3x (96 %). Standard : Bilgewater Tracker 3x (89 %), Concert Poster 3x (83 %), Shimmering Swimmer 3x (79 %), Trifarian Captain 3x (78 %), Rengar, Pouncing 2x (65 %).
-- **Vex, Gloomist** (93 listes) — core : Defy 3x (99 %), Switcheroo 3x (99 %), Bedeviling Stranger 3x (95 %), Boots of Swiftness 2x (95 %), Discipline 3x (94 %), Zhonya's Hourglass 2x (92 %), Astral Heron 3x (91 %). Standard : Star-Crossed 1x (86 %), Steel Paws 3x (81 %), Tornado Warrior 3x (81 %), Rebuke 1x (74 %), Back Off 1x (74 %), Evelynn, Entrancing 2x (74 %), Gust 1x (65 %).
-- **Evelynn, Agony's Embrace** (74 listes) — core : Vex, Apathetic 2x (91 %). Standard : Pyke, Returned 3x (89 %), Edge of Night 2x (86 %), Rampage 2x (85 %), Star-Crossed 2x (84 %), Punch First 2x (81 %), Rengar, Trophy Hunter 2x (80 %), Switcheroo 2x (78 %), Gutter Guardian 3x (74 %), Hold 'Em 2x (68 %), Bedeviling Stranger 2x (64 %).
+- **Vex, Gloomist** (94 listes) — core : Defy 3x (99 %), Switcheroo 3x (99 %), Bedeviling Stranger 3x (95 %), Boots of Swiftness 2x (95 %), Discipline 3x (94 %), Zhonya's Hourglass 2x (93 %), Astral Heron 3x (91 %). Standard : Star-Crossed 1x (86 %), Steel Paws 3x (81 %), Tornado Warrior 3x (81 %), Back Off 1x (74 %), Rebuke 1x (74 %), Evelynn, Entrancing 2x (73 %), Gust 1x (65 %).
+- **Evelynn, Agony's Embrace** (75 listes) — core : Vex, Apathetic 2x (91 %). Standard : Pyke, Returned 3x (88 %), Edge of Night 2x (87 %), Rampage 2x (85 %), Star-Crossed 2x (84 %), Punch First 2x (80 %), Switcheroo 2x (79 %), Rengar, Trophy Hunter 2x (79 %), Gutter Guardian 3x (75 %), Hold 'Em 2x (68 %), Bedeviling Stranger 2x (64 %), Gust 2x (60 %).
 - **Rengar, Pridestalker** (68 listes) — core : Inferna 3x (100 %), Pit Rookie 3x (100 %), Grim Apothecary 3x (100 %), Kai'Sa, Survivor 3x (100 %), Punch First 3x (100 %), Thrill of the Hunt 3x (100 %), Irresistible Faefolk 3x (99 %), First Mate 2x (99 %), Noxus Hopeful 3x (97 %), Rampage 2x (97 %), Kinkou Initiate 3x (96 %), Nidalee, Cat Form 2x (96 %), Sabotage 2x (91 %). Standard : Ferrous Forerunner 1x (75 %), Elnuk Herd 2x (74 %), Pyke, Dockside Butcher 1x (72 %).
-- **Akali, Rogue Assassin** (67 listes) — core : Stellacorn Herder 3x (100 %), Astral Heron 3x (100 %), Zhonya's Hourglass 3x (100 %), Defy 3x (100 %), Shuriken Flip 3x (100 %), Discipline 3x (100 %), Falling Star 3x (100 %), Long Sword 2x (99 %), Back Off 2x (97 %), Kai'Sa, Survivor 3x (94 %), Mischievous Marai 2x (93 %), Blitzcrank, Impassive 2x (93 %). Standard : Not So Fast 1x (85 %), Block 1x (64 %), Mournful Witness 3x (63 %).
+- **Akali, Rogue Assassin** (68 listes) — core : Stellacorn Herder 3x (100 %), Astral Heron 3x (100 %), Zhonya's Hourglass 3x (100 %), Defy 3x (100 %), Shuriken Flip 3x (100 %), Discipline 3x (100 %), Falling Star 3x (100 %), Long Sword 2x (99 %), Back Off 2x (97 %), Kai'Sa, Survivor 3x (94 %), Mischievous Marai 2x (93 %), Blitzcrank, Impassive 2x (93 %). Standard : Not So Fast 1x (85 %), Mournful Witness 3x (63 %), Block 1x (63 %).
 - **Irelia, Blade Dancer** (62 listes) — core : Defiant Dance 3x (100 %), Defy 3x (100 %), Discipline 3x (100 %), Zhonya's Hourglass 2x (98 %), Boots of Swiftness 3x (98 %), Tideturner 3x (94 %), Stellacorn Herder 3x (92 %). Standard : Scuttle Crab 3x (89 %), Ride The Wind 2x (84 %), Not So Fast 1x (82 %), Star-Crossed 1x (81 %), Vex, Apathetic 1x (68 %), Charm 1x (68 %).
-- **Jayce, Defender of Tomorrow** (56 listes) — core : Elder Dragon 3x (96 %), Garbage Grabber 2x (96 %), Platewyrm Egg 3x (96 %), Dredge Up 3x (95 %), Catalyst of Aeons 3x (95 %), Bellows Breath 3x (93 %). Standard : Clairvoyance 3x (88 %), Dazzling Aurora 3x (88 %), Flurry of Blades 2x (86 %), Sabotage 2x (86 %), Mobilize 3x (84 %), Gutter Palace 2x (84 %), Promising Future 2x (61 %).
-- **Lillia, Bashful Bloom** (56 listes) — core : Defy 3x (100 %), Discipline 3x (100 %), Sprite Fountain 3x (98 %), Charm 2x (96 %), Sprite Burst 3x (96 %), Ravenbloom Student 3x (95 %), Stupefy 3x (93 %), Smoke and Mirrors 3x (91 %). Standard : Mask of Foresight 3x (89 %), Unchecked Power 1x (88 %), En Garde 2x (71 %), Brutalizer 2x (71 %), Battle Preparations 2x (66 %).
-- **Mordekaiser, Iron Revenant** (56 listes) — core : Realm of Death 3x (98 %). Standard : Kai'Sa, Survivor 3x (86 %), Long Sword 2x (77 %), Vi, Peacekeeper 2x (75 %), Honest Broker 3x (73 %), Ferrous Forerunner 2x (73 %), Falling Star 2x (68 %), Carrion Dredger 3x (66 %), Bilgewater Tracker 2x (63 %), Hidden Blade 2x (63 %), Trifarian Captain 3x (63 %).
+- **Jayce, Defender of Tomorrow** (57 listes) — core : Elder Dragon 3x (96 %), Garbage Grabber 2x (96 %), Platewyrm Egg 3x (96 %), Catalyst of Aeons 3x (95 %), Dredge Up 3x (95 %), Bellows Breath 3x (93 %). Standard : Clairvoyance 3x (88 %), Dazzling Aurora 3x (88 %), Flurry of Blades 2x (86 %), Sabotage 2x (86 %), Gutter Palace 2x (84 %), Mobilize 3x (84 %).
+- **Lillia, Bashful Bloom** (57 listes) — core : Defy 3x (100 %), Discipline 3x (100 %), Sprite Fountain 3x (98 %), Charm 2x (96 %), Sprite Burst 3x (96 %), Ravenbloom Student 3x (95 %), Stupefy 3x (93 %), Smoke and Mirrors 3x (91 %). Standard : Mask of Foresight 3x (89 %), Unchecked Power 1x (86 %), Brutalizer 2x (72 %), En Garde 2x (72 %), Battle Preparations 2x (67 %).
+- **Mordekaiser, Iron Revenant** (57 listes) — core : Realm of Death 3x (98 %). Standard : Kai'Sa, Survivor 3x (86 %), Long Sword 2x (77 %), Honest Broker 3x (74 %), Vi, Peacekeeper 2x (74 %), Ferrous Forerunner 2x (72 %), Carrion Dredger 3x (67 %), Falling Star 2x (67 %), Bilgewater Tracker 2x (63 %), Trifarian Captain 3x (63 %), Hidden Blade 2x (61 %).
 - **Nasus, Curator of the Sands** (52 listes) — core : Thousand-Tailed Watcher 3x (100 %), Defy 3x (100 %), Bellows Breath 2x (94 %), Scuttle Crab 3x (90 %). Standard : Discipline 3x (88 %), Temporal Breach 2x (87 %), Find Your Center 3x (87 %), Ravenbloom Student 3x (81 %), Stupefy 3x (81 %), Zhonya's Hourglass 2x (73 %), Time Warp 1x (73 %), Steel Paws 3x (69 %), The Empyrean 3x (69 %).
 - **Orianna, Lady of Clockwork** (50 listes) — core : Defy 3x (100 %), Discipline 3x (98 %), The Ball 3x (94 %). Standard : Stupefy 3x (86 %), Thousand-Tailed Watcher 2x (82 %), Cloth Armor 3x (78 %), Zhonya's Hourglass 3x (74 %), Mask of Foresight 3x (72 %), Charm 1x (64 %), Frigid Jewel 3x (60 %).
-- **LeBlanc, Deceiver** (48 listes) — core : Mirror Image 2x (96 %), Soaring Scout 3x (96 %), Sacrifice 3x (96 %), Glasc Mixologist 3x (92 %), Karthus, Eternal 3x (92 %), Vi, Peacekeeper 3x (92 %). Standard : Thousand-Tailed Watcher 2x (90 %), Ruined Rex 3x (88 %), Watchful Sentry 2x (85 %), Honest Broker 2x (83 %), Deathgrip 1x (83 %), Hidden Blade 2x (75 %), Black Rose Dignitary 2x (69 %), Rift Herald 2x (65 %), Harnessed Dragon 3x (63 %).
+- **LeBlanc, Deceiver** (49 listes) — core : Sacrifice 3x (96 %), Soaring Scout 3x (96 %), Mirror Image 2x (94 %), Glasc Mixologist 3x (92 %), Karthus, Eternal 3x (92 %), Vi, Peacekeeper 3x (92 %). Standard : Thousand-Tailed Watcher 2x (90 %), Ruined Rex 3x (88 %), Watchful Sentry 2x (86 %), Deathgrip 1x (84 %), Honest Broker 2x (84 %), Hidden Blade 2x (73 %), Black Rose Dignitary 3x (69 %), Rift Herald 2x (65 %), Harnessed Dragon 3x (63 %).
 - **Azir, Emperor of the Sands** (45 listes) — core : Doran's Shield 3x (100 %), Eye of the Herald 3x (100 %), Brutalizer 3x (100 %), B.F. Sword 3x (100 %), Defy 3x (100 %), Discipline 3x (100 %), Guards! 3x (100 %), Arise! 3x (100 %), Soul Sword 3x (98 %), Hand Hammer 2x (91 %). Standard : Back Off 2x (89 %), Hidden Blade 3x (82 %), Deathgrip 2x (71 %), Vi, Peacekeeper 2x (71 %).
 - **Seraphine, Starry-Eyed Songstress** (38 listes) — core : Encore 3x (95 %). Standard : Imperial Decree 2x (87 %), Concert Poster 3x (87 %), Bellows Breath 3x (79 %), Thousand-Tailed Watcher 2x (68 %), Hidden Blade 2x (68 %), Wages of Pain 2x (66 %), Vanguard Armory 3x (66 %), Raucous Anthem 2x (63 %).
-- **Diana, Scorn of the Moon** (36 listes) — core : Gust 2x (100 %), Moonfall 3x (97 %), Tideturner 3x (97 %), Stupefy 3x (97 %), Star-Crossed 2x (97 %), Hwei, Brooding Painter 3x (97 %), Flash 1x (92 %). Standard : Eclipse 1x (89 %), Vex, Apathetic 3x (89 %), Fizz, Trickster 1x (86 %), Hard Bargain 2x (83 %), Ravenbloom Student 3x (81 %), Switcheroo 1x (75 %).
+- **Diana, Scorn of the Moon** (37 listes) — core : Gust 2x (100 %), Hwei, Brooding Painter 3x (97 %), Moonfall 3x (97 %), Star-Crossed 2x (97 %), Stupefy 3x (97 %), Tideturner 3x (97 %). Standard : Eclipse 1x (89 %), Vex, Apathetic 3x (89 %), Flash 1x (89 %), Fizz, Trickster 1x (86 %), Hard Bargain 2x (84 %), Ravenbloom Student 3x (81 %), Switcheroo 1x (73 %).
 - **Jarvan IV, Exemplar of Demacia** (31 listes) — core : Punch First 3x (94 %), Pillaged Armory 3x (94 %), Demacian Standard 3x (90 %). Standard : Rampage 2x (87 %), Call to Glory 3x (87 %), Concert Poster 2x (87 %), Trifarian Captain 3x (81 %), Skystrike Squadron 3x (77 %), Rengar, Trophy Hunter 2x (77 %), Pit Rookie 3x (68 %), Kinkou Initiate 3x (65 %), Vi, Peacekeeper 2x (61 %).
 - **Ekko, Boy Who Shattered Time** (30 listes) — core : Thousand-Tailed Watcher 2x (100 %), Stupefy 3x (97 %), Falling Star 2x (93 %), Plundering Poro 3x (90 %). Standard : Kai'Sa, Survivor 3x (87 %), Bilgewater Tracker 2x (80 %), Noxus Hopeful 3x (77 %), Temporal Breach 2x (73 %), Inferna 3x (63 %), Time Warp 1x (63 %), Brynhir Thundersong 2x (63 %), Shock Blast 2x (63 %).
 
@@ -343,9 +345,9 @@ Domaines lus sur la carte en base, archétype et terrains lus dans la fiche (`da
 
 | Légende | Domaines | Archétype | Listes | Joueurs | Conv. | Lettre | Terrains |
 |---|---|---|---:|---:|---:|---|---|
-| Riven, The Exile | Calm/Chaos | Tempo et réactions, unités qui arrivent préparées | 416 | 552 | 18,3 % | S | Star Spring (93 %), Emperor's Dais (80 %), Hunters' Circle (63 %), Rakelstake (44 %) |
-| Evelynn, Agony's Embrace | Body/Chaos | Cartes cachées et pioche | 74 | 86 | 3,5 % | D | Bandle Scouts' Academy (97 %), Packed Amphitheater (50 %), Rakelstake (35 %), Startipped Peak (32 %) |
-| Mordekaiser, Iron Revenant | Fury/Order | Unités à Agonie et combats forcés | 56 | 73 | 0,0 % | D | Zaun Warrens (93 %), Minefield (68 %), Ruined Monastery (52 %) |
+| Riven, The Exile | Calm/Chaos | Tempo et réactions, unités qui arrivent préparées | 417 | 552 | 18,3 % | S | Star Spring (93 %), Emperor's Dais (80 %), Hunters' Circle (63 %), Rakelstake (44 %) |
+| Evelynn, Agony's Embrace | Body/Chaos | Cartes cachées et pioche | 75 | 86 | 3,5 % | D | Bandle Scouts' Academy (97 %), Packed Amphitheater (49 %), Rakelstake (35 %), Startipped Peak (33 %) |
+| Mordekaiser, Iron Revenant | Fury/Order | Unités à Agonie et combats forcés | 57 | 73 | 0,0 % | D | Zaun Warrens (93 %), Minefield (67 %), Ruined Monastery (53 %) |
 | Orianna, Lady of Clockwork | Calm/Mind | Équipements qui deviennent des unités | 50 | 62 | 3,2 % | C | Veiled Temple (100 %), Ornn's Forge (84 %), Rockfall Path (46 %) |
 | Seraphine, Starry-Eyed Songstress | Mind/Order | Jetons Recrue et sorts moins chers | 38 | 50 | 0,0 % | D | Trifarian War Camp (61 %), Forbidding Waste (50 %), Treasure Hoard (32 %) |
 | Ekko, Boy Who Shattered Time | Fury/Mind | Tempo, unités payées moins cher | 30 | 40 | 5,0 % | C | Rockfall Path (77 %), Ripper's Bay (40 %), Seat of Power (40 %), Frozen Fortress (30 %), Vilemaw's Lair (30 %) |
@@ -738,21 +740,20 @@ Champion : Miss Fortune, Captain (100%)
 | Paire | Listes | Part |
 |---|---:|---:|
 | Body/Calm | 4399 | 13,2 % |
-| Fury/Mind | 4198 | 12,6 % |
-| Calm/Chaos | 3893 | 11,6 % |
+| Fury/Mind | 4198 | 12,5 % |
+| Calm/Chaos | 3895 | 11,6 % |
 | Chaos/Fury | 3190 | 9,5 % |
-| Mind/Order | 3079 | 9,2 % |
-| Chaos/Mind | 2393 | 7,2 % |
-| Body/Order | 2294 | 6,9 % |
-| Calm/Mind | 2153 | 6,4 % |
-| Body/Chaos | 1666 | 5,0 % |
+| Mind/Order | 3080 | 9,2 % |
+| Chaos/Mind | 2394 | 7,2 % |
+| Body/Order | 2295 | 6,9 % |
+| Calm/Mind | 2154 | 6,4 % |
+| Body/Chaos | 1667 | 5,0 % |
 | Calm/Order | 1552 | 4,6 % |
 | Body/Fury | 1223 | 3,7 % |
-| Fury/Order | 1222 | 3,7 % |
+| Fury/Order | 1223 | 3,7 % |
 | Chaos/Order | 1058 | 3,2 % |
-| Calm/Fury | 569 | 1,7 % |
-| Body/Mind | 552 | 1,7 % |
-
+| Calm/Fury | 570 | 1,7 % |
+| Body/Mind | 553 | 1,7 % |
 
 ### Fury/Mind (4198 listes) — Kai'Sa, Rumble, Jhin
 
@@ -770,7 +771,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Calm/Chaos (3893 listes) — Irelia, Vex, Yasuo
+### Calm/Chaos (3895 listes) — Irelia, Vex, Yasuo
 
 **Staples (50%+)** : Defy 3x (100%), Discipline 3x (99%), Charm 2x (91%), Boots of Swiftness 2x (89%), En Garde 2x (83%), Not So Fast 2x (79%), Tideturner 3x (78%), Stellacorn Herder 3x (77%), Ride the Wind 2x (77%), Star-Crossed 2x (77%)
 
@@ -780,7 +781,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Body/Order (2294 listes) — Fiora, Sett, Poppy, Garen
+### Body/Order (2295 listes) — Fiora, Sett, Poppy, Garen
 
 **Staples (50%+)** : Challenge 2x (78%), Punch First 2x (74%), Sabotage 2x (69%), First Mate 3x (68%), Hidden Blade 2x (68%), Sacrifice 2x (67%), Pit Rookie 3x (65%), Call to Glory 2x (57%), Akshan Mischievous 1x (53%)
 
@@ -788,7 +789,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Mind/Order (3079 listes) — LeBlanc, Viktor, Lux, Renata Glasc
+### Mind/Order (3080 listes) — LeBlanc, Viktor, Lux, Renata Glasc
 
 **Staples (50%+)** : Cull the Weak 3x (85%), Hidden Blade 3x (78%), Thousand-Tailed Watcher 2x (76%), Watchful Sentry 3x (57%), Soaring Scout 3x (54%), Honest Broker 2x (53%), Sacrifice 2x (51%), Salvage 1x (51%), Vi Peacekeeper 2x (50%), Bellows Breath 2x (50%)
 
@@ -796,7 +797,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Chaos/Mind (2393 listes) — Diana, Ezreal, Teemo
+### Chaos/Mind (2394 listes) — Diana, Ezreal, Teemo
 
 **Staples (50%+)** : Stacked Deck 3x (98%), Star-Crossed 2x (94%), Gust 2x (92%), Stupefy 3x (88%), Fizz Trickster 2x (82%), Tideturner 3x (72%), Vex Apathetic 2x (72%), Ride the Wind 2x (71%), Thousand-Tailed Watcher 2x (69%), Ravenbloom Student 3x (62%)
 
@@ -804,7 +805,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Body/Chaos (1666 listes) — Sivir, Miss Fortune, Kha'Zix
+### Body/Chaos (1667 listes) — Sivir, Miss Fortune, Kha'Zix
 
 **Staples (50%+)** : Stacked Deck 3x (98%), Sabotage 3x (97%), Last Rites 2x (85%), Dazzling Aurora 3x (83%), Mobilize 3x (83%), Catalyst of Aeons 3x (83%), Gust 3x (80%), Elder Dragon 3x (77%), Scryer's Bloom 3x (77%), Lunar Boon 3x (75%)
 
@@ -812,7 +813,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Calm/Mind (2153 listes) — Ahri, Lillia, Ornn
+### Calm/Mind (2154 listes) — Ahri, Lillia, Ornn
 
 **Staples (50%+)** : Defy 3x (100%), Thousand-Tailed Watcher 2x (91%), Charm 2x (79%), Discipline 3x (74%), Stupefy 3x (56%), Sprite Fountain 3x (56%), Sprite Burst 3x (54%), Ravenbloom Student 3x (54%)
 
@@ -846,7 +847,7 @@ Champion : Miss Fortune, Captain (100%)
 
 ---
 
-### Fury/Order (1222 listes) — Darius, Rek'Sai, Vi, Lucian
+### Fury/Order (1223 listes) — Darius, Rek'Sai, Vi, Lucian
 
 **Staples (50%+)** : Hidden Blade 2x (93%), Noxus Hopeful 3x (73%), Falling Star 2x (67%), Ferrous Forerunner 2x (63%), Deathgrip 2x (60%), Honest Broker 3x (57%), Carrion Dredger 3x (53%), Cull the Weak 2x (53%)
 

@@ -1,7 +1,7 @@
 {
   "Riven, The Exile": {
     "set": "Radiance",
-    "decks": 416,
+    "decks": 417,
     "depuisBan": "2026-09-15",
     "joueurs": 552,
     "coupe": 101,
@@ -108,7 +108,7 @@
       },
       {
         "nom": "Battle Preparations",
-        "part": 75,
+        "part": 76,
         "copies": 2
       },
       {
@@ -834,7 +834,7 @@
   },
   "Vex, Gloomist": {
     "set": "Radiance",
-    "decks": 93,
+    "decks": 94,
     "depuisBan": "2026-09-15",
     "joueurs": 104,
     "coupe": 12,
@@ -896,7 +896,7 @@
       },
       {
         "nom": "Zhonya's Hourglass",
-        "part": 92,
+        "part": 93,
         "copies": 2
       },
       {
@@ -960,13 +960,13 @@
         "copies": 1
       },
       {
-        "nom": "Ride The Wind",
-        "part": 37,
+        "nom": "An Offer You Can't Refuse",
+        "part": 36,
         "copies": 1
       },
       {
-        "nom": "An Offer You Can't Refuse",
-        "part": 35,
+        "nom": "Ride The Wind",
+        "part": 36,
         "copies": 1
       },
       {
@@ -993,23 +993,23 @@
       },
       {
         "nom": "Evelynn, Entrancing",
-        "part": 74,
+        "part": 73,
         "copies": 2
       },
       {
         "nom": "Irelia, Fervent",
-        "part": 37,
+        "part": 36,
         "copies": 1
       }
     ],
     "terrains": [
       {
         "nom": "Bandle Scouts' Academy",
-        "part": 76
+        "part": 77
       },
       {
         "nom": "Fortified Position",
-        "part": 57
+        "part": 56
       },
       {
         "nom": "Startipped Peak",
@@ -1031,7 +1031,7 @@
   },
   "Evelynn, Agony's Embrace": {
     "set": "Radiance",
-    "decks": 74,
+    "decks": 75,
     "depuisBan": "2026-09-15",
     "joueurs": 86,
     "coupe": 3,
@@ -1068,7 +1068,7 @@
     "cartes": [
       {
         "nom": "Edge of Night",
-        "part": 86,
+        "part": 87,
         "copies": 2
       },
       {
@@ -1083,17 +1083,17 @@
       },
       {
         "nom": "Punch First",
-        "part": 81,
+        "part": 80,
         "copies": 2
       },
       {
         "nom": "Switcheroo",
-        "part": 78,
+        "part": 79,
         "copies": 2
       },
       {
         "nom": "Gutter Guardian",
-        "part": 74,
+        "part": 75,
         "copies": 3
       },
       {
@@ -1108,7 +1108,7 @@
       },
       {
         "nom": "Gust",
-        "part": 59,
+        "part": 60,
         "copies": 2
       },
       {
@@ -1117,33 +1117,33 @@
         "copies": 2
       },
       {
-        "nom": "Momentary Companion",
-        "part": 46,
+        "nom": "Tornado Warrior",
+        "part": 47,
         "copies": 3
       },
       {
-        "nom": "Tornado Warrior",
-        "part": 46,
+        "nom": "Momentary Companion",
+        "part": 45,
+        "copies": 3
+      },
+      {
+        "nom": "Tail-Cloaked Matriarch",
+        "part": 44,
         "copies": 3
       },
       {
         "nom": "The Good Stuff",
-        "part": 45,
+        "part": 44,
         "copies": 1
       },
       {
-        "nom": "Tail-Cloaked Matriarch",
-        "part": 43,
-        "copies": 3
-      },
-      {
         "nom": "Ember Monk",
-        "part": 38,
+        "part": 39,
         "copies": 3
       },
       {
         "nom": "Sabotage",
-        "part": 38,
+        "part": 37,
         "copies": 1.5
       },
       {
@@ -1165,12 +1165,12 @@
       },
       {
         "nom": "Pyke, Returned",
-        "part": 89,
+        "part": 88,
         "copies": 3
       },
       {
         "nom": "Rengar, Trophy Hunter",
-        "part": 80,
+        "part": 79,
         "copies": 2
       },
       {
@@ -1185,7 +1185,7 @@
       },
       {
         "nom": "K'Sante, Courageous",
-        "part": 42,
+        "part": 41,
         "copies": 2
       }
     ],
@@ -1196,7 +1196,7 @@
       },
       {
         "nom": "Packed Amphitheater",
-        "part": 50
+        "part": 49
       },
       {
         "nom": "Rakelstake",
@@ -1204,7 +1204,7 @@
       },
       {
         "nom": "Startipped Peak",
-        "part": 32
+        "part": 33
       }
     ],
     "runes": [
@@ -1215,6 +1215,173 @@
       },
       {
         "nom": "Chaos Rune",
+        "part": 100,
+        "copies": 6
+      }
+    ]
+  },
+  "Akali, Rogue Assassin": {
+    "set": "Radiance",
+    "decks": 68,
+    "depuisBan": "2026-09-15",
+    "joueurs": 74,
+    "coupe": 7,
+    "titres": 0,
+    "conversion": 9.5,
+    "tournois": 15,
+    "meilleuresPlaces": [
+      {
+        "placement": "3rd",
+        "player": "Alex Gorica",
+        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "7th",
+        "player": "啊飞",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
+      },
+      {
+        "placement": "9th",
+        "player": "Slickk",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
+      },
+      {
+        "placement": "11th",
+        "player": "JHM.KID1999",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "18th",
+        "player": "WMeng",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
+      }
+    ],
+    "cartes": [
+      {
+        "nom": "Stellacorn Herder",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Astral Heron",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Zhonya's Hourglass",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Defy",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Shuriken Flip",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Discipline",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 100,
+        "copies": 3
+      },
+      {
+        "nom": "Long Sword",
+        "part": 99,
+        "copies": 2
+      },
+      {
+        "nom": "Back Off",
+        "part": 97,
+        "copies": 2
+      },
+      {
+        "nom": "Mischievous Marai",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Not So Fast",
+        "part": 85,
+        "copies": 1
+      },
+      {
+        "nom": "Mournful Witness",
+        "part": 63,
+        "copies": 3
+      },
+      {
+        "nom": "Block",
+        "part": 63,
+        "copies": 1
+      },
+      {
+        "nom": "Scuttle Crab",
+        "part": 46,
+        "copies": 2
+      },
+      {
+        "nom": "Tomb-Raider Barbara",
+        "part": 44,
+        "copies": 1
+      },
+      {
+        "nom": "Sterak's Gage",
+        "part": 37,
+        "copies": 1
+      }
+    ],
+    "champions": [
+      {
+        "nom": "Akali, Deadly Weapon",
+        "part": 100,
+        "copies": 1
+      },
+      {
+        "nom": "Kai'Sa, Survivor",
+        "part": 94,
+        "copies": 3
+      },
+      {
+        "nom": "Blitzcrank, Impassive",
+        "part": 93,
+        "copies": 2
+      },
+      {
+        "nom": "Darius, Trifarian",
+        "part": 44,
+        "copies": 1
+      }
+    ],
+    "terrains": [
+      {
+        "nom": "Void Gate",
+        "part": 100
+      },
+      {
+        "nom": "Sigil of the Storm",
+        "part": 90
+      },
+      {
+        "nom": "Forgotten Monument",
+        "part": 78
+      }
+    ],
+    "runes": [
+      {
+        "nom": "Calm Rune",
+        "part": 100,
+        "copies": 6
+      },
+      {
+        "nom": "Fury Rune",
         "part": 100,
         "copies": 6
       }
@@ -1374,173 +1541,6 @@
         "nom": "Fury Rune",
         "part": 100,
         "copies": 4
-      }
-    ]
-  },
-  "Akali, Rogue Assassin": {
-    "set": "Radiance",
-    "decks": 67,
-    "depuisBan": "2026-09-15",
-    "joueurs": 74,
-    "coupe": 7,
-    "titres": 0,
-    "conversion": 9.5,
-    "tournois": 15,
-    "meilleuresPlaces": [
-      {
-        "placement": "3rd",
-        "player": "Alex Gorica",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
-      },
-      {
-        "placement": "7th",
-        "player": "啊飞",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "9th",
-        "player": "Slickk",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "11th",
-        "player": "JHM.KID1999",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "18th",
-        "player": "WMeng",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
-      }
-    ],
-    "cartes": [
-      {
-        "nom": "Stellacorn Herder",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Astral Heron",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Zhonya's Hourglass",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Defy",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Shuriken Flip",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Discipline",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Falling Star",
-        "part": 100,
-        "copies": 3
-      },
-      {
-        "nom": "Long Sword",
-        "part": 99,
-        "copies": 2
-      },
-      {
-        "nom": "Back Off",
-        "part": 97,
-        "copies": 2
-      },
-      {
-        "nom": "Mischievous Marai",
-        "part": 93,
-        "copies": 2
-      },
-      {
-        "nom": "Not So Fast",
-        "part": 85,
-        "copies": 1
-      },
-      {
-        "nom": "Block",
-        "part": 64,
-        "copies": 1
-      },
-      {
-        "nom": "Mournful Witness",
-        "part": 63,
-        "copies": 2.5
-      },
-      {
-        "nom": "Scuttle Crab",
-        "part": 46,
-        "copies": 2
-      },
-      {
-        "nom": "Tomb-Raider Barbara",
-        "part": 43,
-        "copies": 1
-      },
-      {
-        "nom": "Sterak's Gage",
-        "part": 37,
-        "copies": 1
-      }
-    ],
-    "champions": [
-      {
-        "nom": "Akali, Deadly Weapon",
-        "part": 100,
-        "copies": 1
-      },
-      {
-        "nom": "Kai'Sa, Survivor",
-        "part": 94,
-        "copies": 3
-      },
-      {
-        "nom": "Blitzcrank, Impassive",
-        "part": 93,
-        "copies": 2
-      },
-      {
-        "nom": "Darius, Trifarian",
-        "part": 45,
-        "copies": 1
-      }
-    ],
-    "terrains": [
-      {
-        "nom": "Void Gate",
-        "part": 100
-      },
-      {
-        "nom": "Sigil of the Storm",
-        "part": 90
-      },
-      {
-        "nom": "Forgotten Monument",
-        "part": 79
-      }
-    ],
-    "runes": [
-      {
-        "nom": "Calm Rune",
-        "part": 100,
-        "copies": 6
-      },
-      {
-        "nom": "Fury Rune",
-        "part": 100,
-        "copies": 6
       }
     ]
   },
@@ -1743,7 +1743,7 @@
   },
   "Lillia, Bashful Bloom": {
     "set": "Radiance",
-    "decks": 56,
+    "decks": 57,
     "depuisBan": "2026-09-15",
     "joueurs": 77,
     "coupe": 8,
@@ -1825,53 +1825,48 @@
       },
       {
         "nom": "Unchecked Power",
-        "part": 88,
+        "part": 86,
         "copies": 1
       },
       {
         "nom": "Brutalizer",
-        "part": 71,
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "En Garde",
-        "part": 71,
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "Battle Preparations",
-        "part": 66,
+        "part": 67,
         "copies": 2
       },
       {
         "nom": "Lonely Poro",
-        "part": 57,
+        "part": 58,
         "copies": 3
       },
       {
         "nom": "Thousand-Tailed Watcher",
-        "part": 54,
+        "part": 53,
         "copies": 1
       },
       {
         "nom": "Scuttle Crab",
-        "part": 45,
+        "part": 44,
         "copies": 2
       },
       {
         "nom": "Smoke Screen",
-        "part": 34,
+        "part": 35,
         "copies": 1
       },
       {
         "nom": "Life from Stone",
         "part": 32,
         "copies": 3
-      },
-      {
-        "nom": "Tomb-Raider Barbara",
-        "part": 30,
-        "copies": 1
       }
     ],
     "champions": [
@@ -1892,11 +1887,11 @@
       },
       {
         "nom": "Black Flame Altar",
-        "part": 41
+        "part": 40
       },
       {
         "nom": "Abandoned Hall",
-        "part": 36
+        "part": 37
       }
     ],
     "runes": [
@@ -1914,7 +1909,7 @@
   },
   "Mordekaiser, Iron Revenant": {
     "set": "Radiance",
-    "decks": 56,
+    "decks": 57,
     "depuisBan": "2026-09-15",
     "joueurs": 73,
     "coupe": 0,
@@ -1961,23 +1956,23 @@
       },
       {
         "nom": "Honest Broker",
-        "part": 73,
+        "part": 74,
         "copies": 3
       },
       {
         "nom": "Ferrous Forerunner",
-        "part": 73,
-        "copies": 2
-      },
-      {
-        "nom": "Falling Star",
-        "part": 68,
+        "part": 72,
         "copies": 2
       },
       {
         "nom": "Carrion Dredger",
-        "part": 66,
+        "part": 67,
         "copies": 3
+      },
+      {
+        "nom": "Falling Star",
+        "part": 67,
+        "copies": 2
       },
       {
         "nom": "Trifarian Captain",
@@ -1991,22 +1986,22 @@
       },
       {
         "nom": "Hidden Blade",
-        "part": 63,
+        "part": 61,
         "copies": 2
       },
       {
         "nom": "Vanguard Captain",
-        "part": 46,
+        "part": 47,
         "copies": 3
       },
       {
         "nom": "Noxus Hopeful",
-        "part": 43,
+        "part": 42,
         "copies": 3
       },
       {
         "nom": "Sacrifice",
-        "part": 41,
+        "part": 40,
         "copies": 2
       },
       {
@@ -2016,23 +2011,18 @@
       },
       {
         "nom": "Spectral Matron",
-        "part": 32,
+        "part": 33,
         "copies": 2
       },
       {
         "nom": "Imperial Decree",
-        "part": 32,
+        "part": 33,
         "copies": 2
       },
       {
         "nom": "Deathgrip",
         "part": 32,
         "copies": 1
-      },
-      {
-        "nom": "Soaring Scout",
-        "part": 30,
-        "copies": 3
       }
     ],
     "champions": [
@@ -2043,7 +2033,7 @@
       },
       {
         "nom": "Vi, Peacekeeper",
-        "part": 75,
+        "part": 74,
         "copies": 2
       },
       {
@@ -2053,13 +2043,8 @@
       },
       {
         "nom": "Mordekaiser, Twice Slain",
-        "part": 45,
+        "part": 44,
         "copies": 1
-      },
-      {
-        "nom": "Rengar, Pouncing",
-        "part": 30,
-        "copies": 2
       }
     ],
     "terrains": [
@@ -2069,11 +2054,11 @@
       },
       {
         "nom": "Minefield",
-        "part": 68
+        "part": 67
       },
       {
         "nom": "Ruined Monastery",
-        "part": 52
+        "part": 53
       }
     ],
     "runes": [
@@ -2091,7 +2076,7 @@
   },
   "Jayce, Defender of Tomorrow": {
     "set": "Radiance",
-    "decks": 56,
+    "decks": 57,
     "depuisBan": "2026-09-15",
     "joueurs": 67,
     "coupe": 7,
@@ -2188,33 +2173,28 @@
       },
       {
         "nom": "Promising Future",
-        "part": 61,
-        "copies": 2
-      },
-      {
-        "nom": "Deadly Flourish",
-        "part": 59,
+        "part": 60,
         "copies": 2
       },
       {
         "nom": "Temporal Breach",
-        "part": 59,
+        "part": 60,
         "copies": 1
       },
       {
+        "nom": "Deadly Flourish",
+        "part": 58,
+        "copies": 2
+      },
+      {
         "nom": "Sprite Burst",
-        "part": 57,
+        "part": 56,
         "copies": 2
       },
       {
         "nom": "Wages of Pain",
-        "part": 36,
+        "part": 35,
         "copies": 2
-      },
-      {
-        "nom": "Rocket Barrage",
-        "part": 30,
-        "copies": 1
       }
     ],
     "champions": [
@@ -2235,7 +2215,7 @@
       },
       {
         "nom": "Dragon Roost",
-        "part": 71
+        "part": 72
       }
     ],
     "runes": [
@@ -2606,7 +2586,7 @@
   },
   "LeBlanc, Deceiver": {
     "set": "Radiance",
-    "decks": 48,
+    "decks": 49,
     "depuisBan": "2026-09-15",
     "joueurs": 64,
     "coupe": 8,
@@ -2653,7 +2633,7 @@
       },
       {
         "nom": "Mirror Image",
-        "part": 96,
+        "part": 94,
         "copies": 2
       },
       {
@@ -2673,28 +2653,28 @@
       },
       {
         "nom": "Watchful Sentry",
-        "part": 85,
+        "part": 86,
         "copies": 2
       },
       {
         "nom": "Honest Broker",
-        "part": 83,
+        "part": 84,
         "copies": 2
       },
       {
         "nom": "Deathgrip",
-        "part": 83,
+        "part": 84,
         "copies": 1
       },
       {
         "nom": "Hidden Blade",
-        "part": 75,
+        "part": 73,
         "copies": 1.5
       },
       {
         "nom": "Black Rose Dignitary",
         "part": 69,
-        "copies": 2
+        "copies": 2.5
       },
       {
         "nom": "Rift Herald",
@@ -2708,7 +2688,7 @@
       },
       {
         "nom": "Baited Hook",
-        "part": 58,
+        "part": 59,
         "copies": 3
       },
       {
@@ -2745,7 +2725,7 @@
       },
       {
         "nom": "Star Spring",
-        "part": 58
+        "part": 59
       }
     ],
     "runes": [
@@ -3101,7 +3081,7 @@
   },
   "Diana, Scorn of the Moon": {
     "set": "Radiance",
-    "decks": 36,
+    "decks": 37,
     "depuisBan": "2026-09-15",
     "joueurs": 44,
     "coupe": 7,
@@ -3167,18 +3147,18 @@
         "copies": 2
       },
       {
-        "nom": "Flash",
-        "part": 92,
-        "copies": 1
-      },
-      {
         "nom": "Eclipse",
         "part": 89,
         "copies": 1
       },
       {
+        "nom": "Flash",
+        "part": 89,
+        "copies": 1
+      },
+      {
         "nom": "Hard Bargain",
-        "part": 83,
+        "part": 84,
         "copies": 2
       },
       {
@@ -3188,48 +3168,38 @@
       },
       {
         "nom": "Switcheroo",
-        "part": 75,
+        "part": 73,
         "copies": 1
       },
       {
         "nom": "An Offer You Can't Refuse",
-        "part": 56,
+        "part": 57,
         "copies": 1
       },
       {
         "nom": "Traveling Merchant",
-        "part": 53,
+        "part": 54,
         "copies": 2
       },
       {
         "nom": "Sprite Fountain",
-        "part": 50,
+        "part": 51,
         "copies": 2
       },
       {
         "nom": "Smoke Screen",
-        "part": 50,
+        "part": 51,
         "copies": 1
       },
       {
         "nom": "Rebuke",
-        "part": 42,
+        "part": 43,
         "copies": 1
       },
       {
         "nom": "Acceptable Losses",
-        "part": 39,
+        "part": 38,
         "copies": 1.5
-      },
-      {
-        "nom": "Abandon",
-        "part": 31,
-        "copies": 1
-      },
-      {
-        "nom": "Bedeviling Stranger",
-        "part": 31,
-        "copies": 1
       }
     ],
     "champions": [
@@ -3246,7 +3216,7 @@
       {
         "nom": "Vex, Apathetic",
         "part": 89,
-        "copies": 2.5
+        "copies": 3
       },
       {
         "nom": "Fizz, Trickster",
@@ -3257,19 +3227,19 @@
     "terrains": [
       {
         "nom": "Targon's Peak",
-        "part": 83
+        "part": 84
       },
       {
         "nom": "Abandoned Hall",
-        "part": 72
+        "part": 73
       },
       {
         "nom": "Seat of Power",
-        "part": 36
+        "part": 35
       },
       {
         "nom": "Rockfall Path",
-        "part": 33
+        "part": 32
       }
     ],
     "runes": [
@@ -6833,7 +6803,7 @@
   },
   "Poppy, Keeper of the Hammer": {
     "set": "Radiance",
-    "decks": 6,
+    "decks": 7,
     "toutesEres": true,
     "joueurs": 283,
     "coupe": 11,

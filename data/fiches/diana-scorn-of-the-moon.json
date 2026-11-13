@@ -47,18 +47,18 @@
       "noyau": true
     },
     {
-      "name": "Flash",
-      "role": "Cœur du deck, 92 % des listes, 1 exemplaire",
-      "noyau": true
-    },
-    {
       "name": "Eclipse",
       "role": "Standard, 89 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
+      "name": "Flash",
+      "role": "Standard, 89 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
       "name": "Hard Bargain",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -68,47 +68,37 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 73 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 39 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Abandon",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Bedeviling Stranger",
-      "role": "Souple, 31 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1,5 exemplaire",
       "noyau": false
     }
   ],
@@ -127,7 +117,7 @@
     "titres": 1,
     "conversion": "15.9 %",
     "tournois": 14,
-    "listesPubliees": 36,
+    "listesPubliees": 37,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -187,7 +177,7 @@
     },
     "Vex, Apathetic": {
       "usage": "89 %",
-      "role": "2,5 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
       "usage": "86 %",
@@ -195,12 +185,12 @@
     }
   },
   "topBattlefields": [
-    "Targon's Peak (83 %)",
-    "Abandoned Hall (72 %)",
-    "Seat of Power (36 %)",
-    "Rockfall Path (33 %)"
+    "Targon's Peak (84 %)",
+    "Abandoned Hall (73 %)",
+    "Seat of Power (35 %)",
+    "Rockfall Path (32 %)"
   ],
-  "dataSource": "Classement complet des tournois : 44 joueurs classés, 14 tournois, dont 36 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 44 joueurs classés, 14 tournois, dont 37 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

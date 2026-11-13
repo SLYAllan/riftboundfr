@@ -75,7 +75,7 @@ Au bout, **[[Nasus, Ascended]]**, dans 96 % des listes, a Protection 2. Amplifi�
   },
   "akali-rogue-assassin": {
     slug: "akali-rogue-assassin",
-    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Radiance, 67 listes publiées : 74 joueurs classés sur 15 tournois, 7 dans les 10 % de tête (9,5 %), aucun titre.`,
+    bref: `Akali joue en Furie et en Calme. Son archétype : mouvement et retrait ciblé. Le deck est Difficile à piloter. Sur Radiance, 68 listes publiées : 74 joueurs classés sur 15 tournois, 7 dans les 10 % de tête (9,5 %), aucun titre.`,
     gagne: `La Légende s'épuise pendant votre tour pour ramener une de vos unités engagées à la base, et la remettre prête si elle est amplifiée. En clair : vous retirez votre unité d'un combat perdu avant qu'il ne se résolve. L'unité survit et peut attaquer ailleurs.
 
 Les cartes qui font tourner ce plan : **[[Shuriken Flip]]** (100 % des listes) inflige 2 dégâts et déplace une unité pour une énergie. **[[Defy]]** (100 % des listes) annule le sort adverse. **[[Stellacorn Herder]]** (100 % des listes) pioche à chaque déplacement. **[[Akali, Deadly Weapon]]** (100 % des listes) inflige des dégâts à chaque déplacement. Le but : garder la main pleine et ne rien perdre dans un combat perdu.`,

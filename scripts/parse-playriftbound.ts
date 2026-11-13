@@ -67,15 +67,22 @@ export function lireArticle(md: string): DeckOfficiel[] {
   let section = "";
 
   for (let i = 0; i < lignes.length; i++) {
-    if (/^#\s+Best-of Decks/.test(lignes[i])) { section = "bestof"; continue; }
+    // Stuttgart : « ## Best-of Decks », là où les articles d'avant écrivaient « # ».
+    if (/^#{1,2}\s+Best-of Decks/.test(lignes[i])) { section = "bestof"; continue; }
     // Los Angeles : titre « # Top 8 » et espace avant chaque `<br>`, là où
     // Singapour écrivait « ## Top 8 » sans espace. Sans ça, 0 deck lu, en silence.
     if (/^#{1,2}\s+Top 8 Decks/.test(lignes[i])) { section = "top8"; continue; }
 
+    // Stuttgart : un deck sur 24 écrit « **Legend Rank**: » (deux-points hors du
+    // gras). L'ancien motif ne le reconnaissait pas et passait au suivant, sans un mot.
     const entete = lignes[i].match(
-      /^\|\s*### (.+?)<br>\*\*Legend Rank:\*\*\s*#(\d+)\/(\d+)\s*<br>\*\*Overall Ranking:\*\*\s*#(\d+)\s*\|/,
+      /^\|\s*### (.+?)<br>\*\*Legend Rank(?::\*\*|\*\*:)\s*#(\d+)\/(\d+)\s*<br>\*\*Overall Ranking(?::\*\*|\*\*:)\s*#(\d+)\s*\|/,
     );
-    if (!entete) continue;
+    if (!entete) {
+      // Une ligne de joueur que le motif ne lit pas est un deck perdu : on arrête.
+      if (/^\|\s*### /.test(lignes[i])) throw new Error(`En-tête de deck illisible ligne ${i + 1} : ${lignes[i].slice(0, 120)}`);
+      continue;
+    }
     const corps = lignes[i + 1];
     if (!corps || !corps.includes("**Legend:**")) {
       throw new Error(`Deck sans liste de cartes ligne ${i + 2} : ${entete[1]}`);

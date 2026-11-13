@@ -12,7 +12,7 @@
   "gameplan": {
     "earlyGame": "Sprite Fountain, dans 98 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
     "midGame": "Sprite Burst, dans 96 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
-    "lateGame": "Unchecked Power, dans 88 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
+    "lateGame": "Unchecked Power, dans 86 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
     "winCondition": "Couvrir les champs de bataille d'Esprits qui ne coûtent presque rien, et vider le terrain avec Unchecked Power si besoin."
   },
   "keyCards": [
@@ -63,52 +63,47 @@
     },
     {
       "name": "Unchecked Power",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "role": "Standard, 86 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Brutalizer",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Lonely Poro",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
+      "role": "Souple, 58 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 34 % des listes, 1 exemplaire",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Life from Stone",
       "role": "Souple, 32 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tomb-Raider Barbara",
-      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -127,7 +122,7 @@
     "titres": 0,
     "conversion": "10.4 %",
     "tournois": 16,
-    "listesPubliees": 56,
+    "listesPubliees": 57,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -183,10 +178,10 @@
   "topBattlefields": [
     "Dusk Rose Lab (95 %)",
     "Seat of Power (91 %)",
-    "Black Flame Altar (41 %)",
-    "Abandoned Hall (36 %)"
+    "Black Flame Altar (40 %)",
+    "Abandoned Hall (37 %)"
   ],
-  "dataSource": "Classement complet des tournois : 77 joueurs classés, 16 tournois, dont 56 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 77 joueurs classés, 16 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

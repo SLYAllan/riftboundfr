@@ -10,7 +10,7 @@
   "keyCards": [
     {
       "name": "Edge of Night",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -25,17 +25,17 @@
     },
     {
       "name": "Punch First",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gutter Guardian",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "Gust",
-      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -59,13 +59,13 @@
       "noyau": false
     },
     {
-      "name": "Momentary Companion",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "name": "Tornado Warrior",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tornado Warrior",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
+      "name": "Momentary Companion",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -81,11 +81,11 @@
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Returned": {
-      "usage": "89 %",
+      "usage": "88 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "80 %",
+      "usage": "79 %",
       "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
@@ -97,15 +97,15 @@
       "role": "2 exemplaires en moyenne"
     },
     "K'Sante, Courageous": {
-      "usage": "42 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Bandle Scouts' Academy (97 %)",
-    "Packed Amphitheater (50 %)",
+    "Packed Amphitheater (49 %)",
     "Rakelstake (35 %)",
-    "Startipped Peak (32 %)"
+    "Startipped Peak (33 %)"
   ],
   "competitiveResults": {
     "joueursClasses": 86,
@@ -113,7 +113,7 @@
     "titres": 0,
     "conversion": "3.5 %",
     "tournois": 16,
-    "listesPubliees": 74,
+    "listesPubliees": 75,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -142,12 +142,12 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 86 joueurs classés, 16 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 10 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 86 joueurs classés, 16 tournois, dont 75 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Cartes cachées et pioche",
   "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
   "gameplan": {
-    "earlyGame": "Gutter Guardian, dans 74 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
-    "midGame": "Evelynn, Entrancing, dans 99 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 86 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
+    "earlyGame": "Gutter Guardian, dans 75 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
+    "midGame": "Evelynn, Entrancing, dans 99 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 87 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
     "lateGame": "Rengar, Trophy Hunter, dans 80 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Vex, Apathetic, dans 91 % des listes, étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
     "winCondition": "Surprendre en combat avec des cartes cachées, et piocher plus que l'adversaire."
   },

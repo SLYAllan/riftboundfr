@@ -1,4 +1,5 @@
 # META-KNOWLEDGE.md — Riftbound Game Intelligence
+> Mis à jour le 13 novembre 2026 (v19). **Ban list du 23 novembre** : dix cartes annoncées le 13 (Riven, Broken Blade, Zhonya's Hourglass, Stellacorn Herder, Nocturne, Horrifying, Rhasa the Sunderer, Brynhir Thundersong, Dazzling Aurora, Baited Hook, Emperor's Dais, Star Spring), 72 % des listes Radiance touchées ; détail et mesure dans la section « Ban list officielle ». **Dix listes officielles du Regional Championship d'Europe** entrent (article Riot du 11 novembre, 55 listes en tout) et ses 22 best-of sont levés. Le classement ne change pas : parts, conversions et lettres sont celles du 10.
 > Mis à jour le 10 novembre 2026 (v18). **Le Regional Championship d'Europe entre au corpus** (Stuttgart, 6 au 8 novembre, 309 classés, vainqueur Kennen), avec quatre City Challenge chinoises des 7 et 8 novembre (Pékin, Guangzhou, Chengdu, Wuhan). Radiance passe de 2 033 à 2 827 joueurs classés sur 16 tournois, le cumul de 48 012 à 48 806 sur 154. Riven et Kennen restent les deux seuls écarts établis au-dessus ; **Evelynn et Jarvan IV rejoignent Mordekaiser et Seraphine en dessous**, de justesse. Dans le cumul, **Lillia ne tient plus le test en dessous** (p = 0,074).
 > Mis à jour le 9 novembre 2026 (v17). **Radiance entre dans ce doc** : 2 033 joueurs classés sur 11 tournois, du Showdown de Melbourne (23 octobre) aux City Challenge de Shanghai et de Hangzhou (7 novembre). Riven et Kennen sont les deux seuls écarts établis au-dessus de la moyenne, Mordekaiser et Seraphine les deux seuls en dessous. Le cumul passe de 45 979 à 48 012 joueurs, sur 149 tournois. Vendetta ne bouge pas. Le doc n'avait pas été repassé depuis le 17 octobre, alors qu'il se repasse à chaque tournoi importé.
 > Mis à jour le 17 octobre 2026 (v16). **Le National Open S4 de Chengdu entre au corpus** (10 et 11 octobre, 1 795 joueurs relevés sur 1 835 inscrits, 1 695 listes, vainqueur Azir), avec ses deux épreuves annexes et le City Challenge de Shanghai du 7 octobre. Vendetta passe de 13 494 à 15 642 joueurs classés, le cumul de 43 831 à 45 979. Les cinq écarts au-dessus ne bougent pas ; **Jhin revient parmi les établis en dessous** (p = 0,013), **Lillia en sort** (p = 0,098). Les cartes des fiches et les cores ne se comptent plus que sur les tournois d'après le ban.
@@ -377,6 +378,40 @@ mal orthographié.) Dazzling Aurora **non** bannie.
   Aggro/Fury, voir `DECKBUILDING-RULES.md`.
 - **Aucune légende bannie** dans les formats que suit le site. L'annonce en bannit une en 2v2 construit,
   format qu'on ne couvre pas : ne pas la faire remonter côté site.
+
+*18 septembre 2026 ([annonce](https://playriftbound.com/en-us/news/announcements/september-ban-list-updates-effective-september-18-2026/), publiée le 15) :*
+Ekko, Recurrent et Stacked Deck, en Standard et en 2v2.
+
+*23 novembre 2026 ([annonce](https://playriftbound.com/en-us/news/announcements/radiance-ban-list-updates-effective-november-23-2026/), publiée le 13, relevée dans `data/raw-scrapes/annonces/ban-2026-11-13-en.md`) :*
+huit cartes et deux champs de bataille, en Standard et en 2v2. **Jusqu'au 22 novembre inclus elles se
+jouent encore en tournoi** (Houston 50K du 13 au 15, Ningbo et le Showdown de Los Angeles du 20 au 22).
+- **Riven** (43 % des decks inscrits au Regional Championship d'Europe, 3 des 4 premières places, plus de
+  60 % de victoires hors miroir selon Riot) : **Riven, Broken Blade**, **Zhonya's Hourglass**,
+  **Stellacorn Herder**, et les champs de bataille **Star Spring** et **Emperor's Dais** (conquête sans
+  risque, le reproche fait à Reaver's Row).
+- **Kennen** (15 % des inscrits, 3 places du Top 8, vainqueur) : **Nocturne, Horrifying** et
+  **Rhasa the Sunderer**, deux unités à coût nul que Riot « ne ferait plus ainsi ».
+- **Kai'Sa** : **Brynhir Thundersong** (verrouille le tour adverse jouée en phase de début).
+- **Dazzling Aurora** (les decks de rampe Corps finissaient tous par elle) et **Baited Hook** (peu jouée,
+  bannie par précaution avant Legacy et le World Showcase de janvier).
+- **Bans par circuit** : la Corée et les régions en chinois traditionnel gardent ces dix cartes jusqu'à la
+  sortie de Radiance chez elles. La Chine continentale suit la liste : Ningbo, Qingdao et le RC de
+  Guangzhou sont cités par Riot parmi les tournois qui ont fixé la date d'effet.
+- **À partir de 2027, fenêtres de ban** : annonce le vendredi deux semaines avant chaque tournoi
+  continental, et le vendredi deux semaines après. Rien entre les deux.
+
+**Poids mesuré sur les 2 282 listes Radiance en base le 13 novembre** (16 tournois, compte direct des
+cartes de chaque deck, réserve comprise) : **72,1 %** (1 646 listes) jouent au moins une des dix cartes.
+Zhonya's Hourglass 38,3 %, Star Spring 27,3 %, Stellacorn Herder 23,9 %, Emperor's Dais 22,6 %,
+Riven, Broken Blade 19,4 %, Brynhir Thundersong 16,4 %, Rhasa 9,2 %, Nocturne 9,1 %, Dazzling Aurora
+3,4 %, Baited Hook 2,1 %. Touchées dans toutes leurs listes ou presque : Riven (417 sur 417), Akali,
+Rengar, Irelia, les deux Master Yi, Kai'Sa (214 sur 215), Kennen (209 sur 211), Ekko, Kha'Zix, Vex,
+Jayce. **Presque intactes** : Azir (0 liste sur 45), Viktor (0 sur 28), Lillia (1 sur 57), Seraphine
+(1 sur 38), Diana (1 sur 37), Rek'Sai (4 sur 101), Jarvan IV (2 sur 31), Sett (2 sur 19). C'est une mesure des listes jouées, pas une
+prévision : rien ne dit encore ce qui remplace ces cartes.
+
+**Dans le code** : étiquettes, pastilles et deckbuilder dès l'annonce ; stats (`scripts/apres-ban.ts`)
+à partir du 23 seulement. Voir `AGENTS.md`.
 
 Détail des casts inter-sets (matchups Spiritforged/Origins + tech) dans
 `data/video-insights/cross-set-casts-2026-06.md`.
