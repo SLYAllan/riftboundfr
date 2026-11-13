@@ -68,7 +68,7 @@ export function MetaFilters({ tranches, legendes, sets }: Props) {
 
   return (
     <>
-      <section className="mt-8 border-y border-hairline py-5" aria-label={t("Périmètre analysé")}>
+      <section className="border-b border-hairline py-4" aria-label={t("Périmètre analysé")}>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
           <div>
             <p className="text-2xl font-bold tabular-nums text-ink">{meta.totalDecks.toLocaleString("fr-FR")}</p>

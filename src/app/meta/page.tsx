@@ -82,13 +82,14 @@ export default async function MetaSnapshotPage() {
     .sort((a, b) => rangSet(a) - rangSet(b));
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:py-14">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: t("Méta"), href: "/meta" }]} className="mb-6" />
 
-      <header className="grid gap-5 border-b border-hairline pb-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-arcane">{t("Données de tournoi")}</p>
-          <h1 className="mt-2 text-balance text-3xl font-bold font-display sm:text-5xl">{t("Le méta Riftbound : decks et Légendes, tournoi par tournoi")}</h1>
+      {/* En-tête resserré : avec le surtitre, un titre en 48 px et de grandes marges, le
+          titre finissait à 309 px et les filtres arrivaient au bas du premier écran. */}
+      <header className="grid gap-4 border-b border-hairline pb-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+        <div className="max-w-4xl">
+          <h1 className="text-balance text-3xl font-bold font-display sm:text-4xl">{t("Le méta Riftbound : decks et Légendes, tournoi par tournoi")}</h1>
           <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-ink-secondary">
             {t("Comparez la présence des Légendes par set ou par événement. Chaque classement est recalculé sur la sélection affichée.")}
           </p>
