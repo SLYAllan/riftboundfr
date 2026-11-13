@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 
+import { Layers, Library, PackageSearch } from "lucide-react";
 import { BoutonLien } from "@/components/bouton";
 import { prisma } from "@/lib/prisma";
 import { getUserFromSession } from "@/lib/session";
@@ -38,9 +39,26 @@ export default async function CollectionPage() {
     return (
       <div className="mx-auto max-w-7xl px-4 py-8">
         <h1 className="font-display text-2xl font-bold">Ma collection</h1>
-        <div className="mt-6 rounded-card border border-hairline bg-surface-raised/40 p-8 text-center">
-          <p className="mb-4 text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
-          <BoutonLien href="/api/auth/discord">{t("Se connecter avec Discord")}</BoutonLien>
+        <div className="mt-6 rounded-card border border-hairline bg-surface p-6 sm:p-8">
+          <p className="text-ink-secondary">{t("Connectez-vous avec Discord pour gérer votre collection en classeurs et suivre votre progression.")}</p>
+          {/* Ce qu'on y gagne, avant le bouton : la page ne montrait qu'une phrase et un
+              bouton sur un écran vide. */}
+          <ul className="mt-6 grid gap-4 sm:grid-cols-3">
+            {[
+              [Library, t("Rangez vos cartes en classeurs, set par set.")],
+              [PackageSearch, t("Voyez d’un coup d’œil les cartes qui vous manquent.")],
+              [Layers, t("Sachez quels decks de tournoi vous pouvez déjà jouer, et ce qu’il manque aux autres.")],
+            ].map(([Icone, texte]) => {
+              const I = Icone as typeof Library;
+              return (
+                <li key={texte as string} className="flex items-start gap-3 rounded-lg border border-hairline bg-canvas/60 p-4">
+                  <I size={20} className="mt-0.5 shrink-0 text-arcane" aria-hidden="true" />
+                  <span className="text-sm text-ink">{texte as string}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <BoutonLien href="/api/auth/discord" className="mt-6">{t("Se connecter avec Discord")}</BoutonLien>
         </div>
       </div>
     );
