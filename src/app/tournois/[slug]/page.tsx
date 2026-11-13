@@ -355,7 +355,7 @@ export default async function TournamentDetailPage({ params, searchParams }: Pag
         <section className="mt-10">
           <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
             <h2
-              className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-ink-secondary"
+              className="flex items-center gap-2 text-2xl font-bold text-ink"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
               <Swords size={16} className="text-arcane" />{t("Méta du tournoi")}</h2>

@@ -154,7 +154,7 @@ export function TournamentDeckGrid({
           <div className="flex items-center gap-2 mb-4">
             <Trophy size={16} className="text-gold" />
             <h2
-              className="text-sm font-bold uppercase tracking-widest text-ink-secondary"
+              className="text-2xl font-bold text-ink"
               style={{ fontFamily: "var(--font-rubik), sans-serif" }}
             >
               Top 8
@@ -172,7 +172,7 @@ export function TournamentDeckGrid({
       {visibleRest.length > 0 && (
         <section>
           <h2
-            className="text-sm font-bold uppercase tracking-widest text-ink-muted mb-4"
+            className="mb-4 text-2xl font-bold text-ink"
             style={{ fontFamily: "var(--font-rubik), sans-serif" }}
           >
             Toutes les decklists ({rest.length})
