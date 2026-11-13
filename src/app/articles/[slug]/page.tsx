@@ -463,7 +463,10 @@ export default async function ArticleDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        <div className="mt-8">
+        {/* Sur ordinateur, « À lire aussi » passe dans une colonne qui suit la lecture : le
+            texte tient sur 75 caractères et la moitié droite de l'écran restait vide. */}
+        <div className={relatedArticles.length > 0 ? "lg:grid lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-start lg:gap-8" : undefined}>
+        <div className="mt-8 min-w-0">
           {bestOf ? (
             <>
               {bestOf.intro.length > 0 && (
@@ -480,18 +483,18 @@ export default async function ArticleDetailPage({ params }: PageProps) {
         </div>
 
         {relatedArticles.length > 0 && (
-          <section className="mt-12 border-t border-hairline pt-8">
-            <h2 className="mb-4 text-xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("À lire aussi")}</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <section className="mt-12 border-t border-hairline pt-8 lg:sticky lg:top-22 lg:mt-8 lg:border-t-0 lg:pt-0">
+            <h2 className="titre-bloc mb-4 text-2xl font-bold lg:text-lg" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("À lire aussi")}</h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 lg:gap-3">
               {relatedArticles.map((r) => (
-                <Link key={r.slug} href={`/articles/${r.slug}`} className="card-hover overflow-hidden rounded-card border border-hairline bg-surface">
+                <Link key={r.slug} href={`/articles/${r.slug}`} className="card-hover overflow-hidden rounded-card border border-hairline bg-surface lg:flex lg:items-stretch">
                   {r.coverImage && (
-                    <div className="relative aspect-video bg-surface-raised">
+                    <div className="relative aspect-video bg-surface-raised lg:aspect-auto lg:w-24 lg:shrink-0">
                       <Image src={r.coverImage} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
                     </div>
                   )}
-                  <div className="p-4">
-                    <h3 className="text-sm font-semibold leading-snug" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(r.title)}</h3>
+                  <div className="p-4 lg:min-w-0 lg:p-3">
+                    <h3 className="text-sm font-semibold leading-snug lg:line-clamp-3" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t(r.title)}</h3>
                     {r.publishedAt && <span className="mt-1 block text-xs text-ink-muted">{formatDate(r.publishedAt)}</span>}
                   </div>
                 </Link>
@@ -499,6 +502,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             </div>
           </section>
         )}
+        </div>
 
         <CommentsSection articleId={article.id} />
       </article>
