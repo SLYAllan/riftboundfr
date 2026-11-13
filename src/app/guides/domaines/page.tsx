@@ -237,10 +237,6 @@ export default async function DomainesGuidePage() {
         <p className="mt-2 text-sm text-ink-secondary">{t("Pour mieux comprendre l’identité de chaque domaine, voici des cartes qui les représentent bien :")}</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
-            <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef>
-            <span className="text-ink-secondary">{" "}{t("- Équipement à 9 énergie. La bombe ultime des decks d’équipements. Cher mais dévastateur.")}</span>
-          </div>
-          <div className="rounded-lg border border-hairline bg-surface-raised p-3 text-sm">
             <CardRef name="Adaptatron">Adaptatron</CardRef>
             <span className="text-ink-secondary">{" "}{t("- Détruit les équipements adverses. Indispensable si l’adversaire joue des objets.")}</span>
           </div>

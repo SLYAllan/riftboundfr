@@ -139,7 +139,7 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
 - `npm run validate:decks` → garde-fou anti-fabrication decklists (voir plus haut les quatre cas de refus) ; `npm run validate:regles` = ses tests Python. Les deux tournent en CI, dans un job à part.
 
 **Sources de vérité (où vit quoi) :**
-- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (12 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026 + 2 du 18 septembre 2026) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
+- Cartes / noms canoniques → **DB cartes** + `src/lib/banned-cards.ts` (22 bans : 7 du 31 mars 2026 + 3 du 24 juillet 2026 + 2 du 18 septembre 2026 + 10 annoncés le 13 novembre 2026, en vigueur le 23) + `data/raw-scrapes/` (riftdecks). **Les liens web fournis par Allan + la DB priment sur les transcriptions Whisper pour les noms.**
 - Connaissance VOD (méta, matchups, cores) → `data/video-insights/README.md` (index + hiérarchie + pipeline). Matchups = `matchups-reference.md` (source unique).
 - Méta/tier/rulings → `docs/META-KNOWLEDGE.md` · règles deckbuilding/cores → `docs/DECKBUILDING-RULES.md` · par Légende → `data/fiches/*.json`.
   **Les fiches se refont par `npm run maj:stats`, jamais à la main ; les deux docs se repassent
@@ -165,6 +165,16 @@ incertaines. Mieux vaut un deck manquant qu'un deck faux.
   Au lendemain d'un nouveau ban, avant tout tournoi importé, toutes les fiches du set
   en cours (celui du tournoi le plus récent de `tournament-flags.ts`) taisent leurs
   cartes : c'est voulu, l'ancien repli recomptait tout le set, carte bannie comprise.
+  Le set précédent ne sert de repli que s'il est compté depuis ce même ban
+  (`fiches-maj.mts`) : sans tournoi d'après, il recomptait tout et ramenait les
+  cartes bannies dans les fiches.
+  **Un ban annoncé ne compte dans les stats qu'une fois en vigueur.** Celui du
+  23 novembre 2026 a été annoncé le 13 : `DATES_BANS` porte les deux dates (`date`
+  pour la cloche, `effet` pour `scripts/apres-ban.ts`), et `BAN_ENTRIES` porte
+  `effet` pour que la page d'un deck écrive « sera interdite le » jusque-là. Le
+  deckbuilder, les pastilles et l'étiquette « Banni » s'appliquent dès l'annonce,
+  comme en septembre. Le premier `maj:stats` lancé à partir du 23 taira les cartes
+  des fiches Radiance, jusqu'aux premières listes jouées sans les dix cartes.
   **Une Légende comptée sans fiche reçoit la sienne à l'étape 4 de `maj:stats`**
   (`fiches-maj.mts`, depuis le 7 novembre 2026 : Riven, la plus jouée de Radiance,
   n'en avait pas). Chiffres seulement ; la routine liste ensuite les fiches sans prose.
@@ -483,7 +493,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **77 fichiers, 426 tests, tous verts** (relevé du 10 novembre 2026). |
+| `npm test` | ✅ | Vitest. **79 fichiers, 446 tests, tous verts** (relevé du 13 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

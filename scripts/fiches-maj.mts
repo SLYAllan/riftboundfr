@@ -20,6 +20,7 @@ import type { StatsLegende } from "./fiches-stats.mts";
 import { estNoyau, role, roleChampion } from "./fiches-roles";
 import { radianceTier } from "./tier-tables";
 import { legendFicheSlug } from "../src/lib/legend-fiche";
+import { DERNIER_BAN } from "./apres-ban";
 
 const FICHES = path.join(process.cwd(), "data", "fiches");
 
@@ -44,7 +45,11 @@ const iRepli = process.argv.indexOf("--repli");
 if (iRepli > 0) {
   const repli = await lireStats(process.argv[iRepli + 1]);
   const complet = (s?: StatsLegende) => Boolean(s && !s.toutesEres && !s.cartesNonComptees);
-  for (const [nom, r] of Object.entries(repli)) if (!complet(stats[nom]) && complet(r)) stats[nom] = r;
+  // Le repli ne vaut que s'il est compté depuis le dernier ban, lui aussi. Au
+  // lendemain d'un ban, le set précédent n'a aucun tournoi d'après : il recompte
+  // alors tout le set, et ramenait dans les fiches les cartes bannies depuis.
+  const depuisLeBan = (s: StatsLegende) => s.depuisBan === DERNIER_BAN;
+  for (const [nom, r] of Object.entries(repli)) if (!complet(stats[nom]) && complet(r) && depuisLeBan(r)) stats[nom] = r;
 }
 
 type Fiche = {

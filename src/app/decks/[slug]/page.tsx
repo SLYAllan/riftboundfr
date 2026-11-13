@@ -292,11 +292,13 @@ export default async function DeckDetailPage({ params }: PageProps) {
             {deck.description && !DESCRIPTION_GENEREE.test(deck.description) && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
             {interdictions.length > 0 && (
               <p className="mt-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
-                <strong className="text-red-400">{t("Liste injouable aujourd’hui.")}</strong>
-                {interdictions.map(({ date, cartes }) => (
+                <strong className="text-red-400">{t(interdictions.every((i) => i.aVenir) ? "Liste bientôt injouable." : "Liste injouable aujourd’hui.")}</strong>
+                {interdictions.map(({ date, cartes, aVenir }) => (
                   <span key={date}>
                     {" "}{new Intl.ListFormat(etiquetteLocale(langue), { type: "conjunction" }).format(cartes)}{" "}
-                    {t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
+                    {aVenir
+                      ? t(cartes.length > 1 ? "seront interdites le" : "sera interdite le")
+                      : t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
                   </span>
                 ))}
                 {deck.tournamentContext && <>{" "}{t("La liste reste affichée telle qu’elle a été jouée.")}</>}

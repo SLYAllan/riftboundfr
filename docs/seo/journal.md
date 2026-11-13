@@ -5,6 +5,36 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-13 · hors passe, ban du 23 novembre sur `/decks/[slug]` et `/legendes/[slug]`
+
+Riot a annoncé dix interdictions le 13 novembre, en vigueur le 23
+(`data/raw-scrapes/annonces/ban-2026-11-13-en.md`). Le site les applique dès l'annonce,
+comme en septembre. Ce n'est pas un essai SEO, mais les deux familles changent à l'œil :
+- `/decks/[slug]` : l'encadré rouge qui existait pour les bans d'avant apparaît sur toute
+  liste qui joue une des dix cartes. Mesuré en base locale : environ 20 400 decks sur
+  33 594 (61 %), dont 1 646 des 2 282 listes Radiance (72 %). Jusqu'au 22 il écrit « Liste
+  bientôt injouable. … seront interdites le 23 novembre 2026 », puis la phrase d'avant.
+  Titre, `title`, description et bouton d'achat inchangés ;
+- `/legendes/[slug]` : un avis « Écrit avant la ban list. » au-dessus du guide quand le
+  texte écrit à la main nomme une carte interdite (douze guides, seize passages de
+  prose) ; la pastille « Interdite » sur les lignes de « Meilleurs decks ». **Les liens
+  d'achat de ces lignes et de la colonne disparaissent** : la page ne vend pas une liste
+  injouable, règle posée le 2 novembre. Sur Radiance, Riven (417 listes), Akali (68),
+  Rengar (68) et Irelia (62) n'ont plus une seule liste sans carte visée ; Kai'Sa, Kennen
+  et Master Yi, Wuju Bladesman en gardent une ou deux sur plus de cent.
+
+Noyau, cartes flex, champions et champs de bataille restent comptés jusqu'au 23. Le
+premier `maj:stats` lancé à partir de ce jour les taira pour tout Radiance, jusqu'aux
+premières listes jouées sans les dix cartes (règle du 17 octobre).
+
+**À lire avec ça** : une baisse des `clic_cardnexus` de `/legendes/*` après le Deploy
+viendra d'abord de ces liens retirés, pas de la mise en page du 12 novembre. Les deux
+partent dans le même Deploy : le journal ne pourra pas les séparer.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-13 · hors passe, un seul texte dans le titre de `/tournois`
 
 Proposition 7 de l'audit des autres pages, prise par Allan le 13 novembre. Le `h1` portait

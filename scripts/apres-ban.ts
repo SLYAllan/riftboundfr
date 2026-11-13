@@ -1,8 +1,18 @@
-import { cartesInterdites, DATES_BANS } from "../src/lib/banned-cards";
+import { DATES_BANS } from "../src/lib/banned-cards";
+import { interdictionsParDate } from "../src/lib/bans";
 import { TOURNAMENTS } from "../src/lib/tournament-flags";
 
-/** La dernière annonce de `DATES_BANS`, en date ISO. */
-export const DERNIER_BAN = DATES_BANS.map((b) => b.date).sort().at(-1)!;
+const AUJOURDHUI = new Date().toISOString().slice(0, 10);
+
+/**
+ * Le dernier ban EN VIGUEUR au jour donné, en date ISO. Une annonce qui prend effet
+ * plus tard (13 novembre 2026 pour le 23) ne compte pas avant : jusque-là ses cartes
+ * se jouent en tournoi, et les écarter tairait les cartes de toutes les fiches du
+ * set en cours dix jours trop tôt.
+ */
+export const dernierBan = (jour: string) =>
+  DATES_BANS.map((b) => b.effet ?? b.date).filter((d) => d <= jour).sort().at(-1)!;
+export const DERNIER_BAN = dernierBan(AUJOURDHUI);
 
 /** Le set du tournoi le plus récent de `tournament-flags.ts`. */
 export function setEnCours(): string {
@@ -28,17 +38,19 @@ export function setEnCours(): string {
 export function tournoisApresBan(
   listes: Iterable<{ tournoi: string; date: string | undefined; cartes: string[] }>,
   ancienSet: boolean,
+  jour: string = AUJOURDHUI,
 ) {
+  const ban = dernierBan(jour);
   const tournois = new Map<string, { date: string | undefined; interdite: boolean }>();
   for (const l of listes) {
     const t = tournois.get(l.tournoi) ?? { date: l.date, interdite: false };
-    if (cartesInterdites(l.cartes).length) t.interdite = true;
+    if (interdictionsParDate(l.cartes, jour).some((g) => !g.aVenir)) t.interdite = true;
     tournois.set(l.tournoi, t);
   }
   const retenus = new Set<string>();
   const ecartes: string[] = [];
   for (const [nom, t] of tournois) {
-    if (!t.date || t.date < DERNIER_BAN) continue;
+    if (!t.date || t.date < ban) continue;
     if (t.interdite) ecartes.push(nom);
     else retenus.add(nom);
   }

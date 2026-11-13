@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DERNIER_BAN, tournoisApresBan } from "./apres-ban";
+import { DERNIER_BAN, dernierBan, tournoisApresBan } from "./apres-ban";
 
 const apres = "2099-01-01";
 
@@ -59,5 +59,15 @@ describe("tournoisApresBan", () => {
 
   it("date le dernier ban sur la plus récente des annonces", () => {
     expect(DERNIER_BAN >= "2026-09-15").toBe(true);
+  });
+
+  // Annoncé le 13 novembre 2026, en vigueur le 23 : entre les deux, les stats
+  // comptent encore les listes qui jouent ces cartes.
+  it("ignore un ban annoncé tant qu'il n'est pas en vigueur", () => {
+    expect(dernierBan("2026-11-22")).toBe("2026-09-15");
+    expect(dernierBan("2026-11-23")).toBe("2026-11-23");
+    const stuttgart = [{ tournoi: "Stuttgart", date: "2026-11-08", cartes: ["Star Spring"] }];
+    expect(tournoisApresBan(stuttgart, false, "2026-11-22").garder("Stuttgart")).toBe(true);
+    expect(tournoisApresBan(stuttgart, false, "2026-11-23").garder("Stuttgart")).toBe(false);
   });
 });

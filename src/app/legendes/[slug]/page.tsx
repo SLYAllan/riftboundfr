@@ -24,6 +24,7 @@ import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { getBannerUrl } from "@/lib/banners";
 import { cartesInterdites, isBanned } from "@/lib/banned-cards";
+import { interdictionsCitees } from "@/lib/bans";
 import { PastilleInterdite } from "@/components/pastille-interdite";
 import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
@@ -789,6 +790,26 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
     ? [guide.bref, guide.gagne, guide.plan].filter(Boolean).join("\n\n").replace(/\s*[—–]\s*/g, ", ")
     : null;
 
+  // Les textes écrits à la main (guide, plan, forces, faiblesses) ne se refont pas
+  // tout seuls après un ban : la fiche dit lesquelles de leurs cartes sont interdites.
+  const interdictionsDuTexte = interdictionsCitees(
+    [guideProse, ...Object.values(fiche.gameplan ?? {}), ...(fiche.strengths ?? []), ...(fiche.weaknesses ?? [])].filter(Boolean).join(" "),
+  );
+  const avisInterdictions = interdictionsDuTexte.length > 0 && (
+    <p className="mb-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
+      <strong className="text-red-400">{t("Écrit avant la ban list.")}</strong>
+      {interdictionsDuTexte.map(({ date, cartes, aVenir }) => (
+        <span key={date}>
+          {" "}{new Intl.ListFormat(etiquetteLocale(langue), { type: "conjunction" }).format(cartes)}{" "}
+          {aVenir
+            ? t(cartes.length > 1 ? "seront interdites le" : "sera interdite le")
+            : t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
+        </span>
+      ))}
+      {" "}{t("Ce texte sera revu sur les premières listes d’après le ban.")}
+    </p>
+  );
+
   // Deux dates, et pas une seule. Avant, « Mis à jour le » affichait la date du
   // deck importé le plus récemment : une fiche dont les cartes clés dataient de mai
   // s'annonçait à jour parce qu'un deck était tombé la veille. La date du relevé dit
@@ -1128,6 +1149,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
           {/* Comment jouer : prose humaine recopiée des fiches-articles, avec aperçu au survol */}
           {guideProse && (
             <Section id="comment-jouer" title={`Comment jouer ${name}`} icon={<Swords size={20} />}>
+              {avisInterdictions}
               <div className="max-w-3xl text-[15px] leading-7 text-ink-secondary">
                 <MarkdownRenderer content={guideProse} />
               </div>
@@ -1188,6 +1210,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
           {((fiche.strengths?.length ?? 0) > 0 || (fiche.weaknesses?.length ?? 0) > 0) && (
             <section>
+              {!guideProse && avisInterdictions}
               <h2
                 id="forces-faiblesses"
                 className="scroll-mt-20 text-xl font-semibold text-arcane"

@@ -30,7 +30,7 @@ const ratios = [
 
 const curveGuide = [
   { range: "1-2 Énergie", count: "8-12 cartes", role: "Vos cartes pour le Tour 1. Posez des unités tout de suite pour contester les champs de bataille. Exemples : Lonely Poro, Tideturner, Plundering Poro.", color: "#22c55e" },
-  { range: "3-4 Énergie", count: "12-16 cartes", role: "Le gros de votre deck. Unités solides et sorts utiles, jouables dès le Tour 2. Exemples : Noxus Hopeful, Stellacorn Herder, Discipline.", color: "#3b82f6" },
+  { range: "3-4 Énergie", count: "12-16 cartes", role: "Le gros de votre deck. Unités solides et sorts utiles, jouables dès le Tour 2. Exemples : Noxus Hopeful, Discipline.", color: "#3b82f6" },
   { range: "5-6 Énergie", count: "6-10 cartes", role: "Vos grosses menaces. Des unités capables de prendre un champ de bataille toutes seules. Exemples : Darius Trifarian, Ferrous Forerunner.", color: "#f97316" },
   { range: "7+ Énergie", count: "2-4 cartes max", role: "Vos bombes. Très puissantes mais injouables avant Tour 4-5. Trop en avoir = main bloquée au début. Exemple : Thousand-Tailed Watcher.", color: "#ef4444" },
 ];
@@ -184,8 +184,6 @@ export default async function GuideDeckbuildingPage() {
               <CardRef name="Noxus Hopeful">Noxus Hopeful</CardRef>{" "}{t("- Unité 4 énergie. Pilier solide du milieu de courbe.")}</div>
             <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
               <CardRef name="Discipline">Discipline</CardRef>{" "}{t("- Sort 2 énergie. Buff de combat polyvalent qui transforme les échanges en votre faveur.")}</div>
-            <div className="rounded-lg border border-hairline bg-surface p-3 text-sm text-ink-secondary">
-              <CardRef name="Dazzling Aurora">Dazzling Aurora</CardRef>{" "}{t("- Équipement 9 énergie. Finisseur puissant mais jouable tard uniquement.")}</div>
           </div>
         </section>
 

@@ -30,6 +30,19 @@ const metadata: Metadata = {
 // Les noms EN sont ceux de la base de cartes, ils font foi pour le deckbuilder
 // (cf. src/lib/banned-cards.ts). Les noms FR viennent des annonces officielles.
 // Annonce publiée en anglais seulement : noms EN tant que Riot n'a pas traduit.
+const NOVEMBRE = [
+  { en: "Riven, Broken Blade", type: "Unité" },
+  { en: "Zhonya's Hourglass", type: "Équipement" },
+  { en: "Stellacorn Herder", type: "Unité" },
+  { en: "Nocturne, Horrifying", type: "Unité" },
+  { en: "Rhasa the Sunderer", type: "Unité" },
+  { en: "Brynhir Thundersong", type: "Unité" },
+  { en: "Dazzling Aurora", type: "Équipement" },
+  { en: "Baited Hook", type: "Équipement" },
+  { en: "Emperor's Dais", type: "Champ de bataille" },
+  { en: "Star Spring", type: "Champ de bataille" },
+];
+
 const SEPTEMBRE = [
   { en: "Ekko, Recurrent", type: "Unité" },
   { en: "Stacked Deck", type: "Sort" },
@@ -68,7 +81,7 @@ const PROMO_SETS = new Set(["PR", "OPP", "JDG"]);
 // Les cartes bannies/erratées ne changent pas d'une visite à l'autre → cache long.
 const getBanCards = unstable_cache(
   async (): Promise<BanCard[]> => {
-    const names = [...new Set([...SEPTEMBRE.map((c) => c.en), ...JUILLET.map((c) => c.en), ...MARS, ...ERRATA.map((e) => e.name)])];
+    const names = [...new Set([...NOVEMBRE.map((c) => c.en), ...SEPTEMBRE.map((c) => c.en), ...JUILLET.map((c) => c.en), ...MARS, ...ERRATA.map((e) => e.name)])];
     return prisma.card.findMany({
       where: { OR: names.map((n) => ({ name: { startsWith: n } })) },
       select: {
@@ -77,7 +90,7 @@ const getBanCards = unstable_cache(
       },
     });
   },
-  ["ban-list-cards-v3"],
+  ["ban-list-cards-v4"],
   { revalidate: 3600, tags: ["cards"] },
 );
 
@@ -158,10 +171,25 @@ export default async function BanListPage() {
 
       <h1 className="mt-4 text-4xl font-bold" style={heading}>Ban list Riftbound</h1>
       <p className="mt-3 text-ink-secondary">
-        Douze cartes n&apos;ont plus leur place en Standard. Si l&apos;une d&apos;elles traîne encore
+        Vingt-deux cartes sont interdites en Standard, dont dix à partir du 23 novembre 2026.
+        Si l&apos;une d&apos;elles traîne encore
         dans ta liste, ton deck est illégal en tournoi : mieux vaut le découvrir maintenant que
         devant un arbitre. Elles restent jouables en draft et en scellé, et le{" "}
         <Link href="/deckbuilder" className="text-arcane hover:underline">deckbuilder</Link>{" "}{t("te prévient si tu en glisses une.")}</p>
+
+      <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("23 novembre 2026")}</h2>
+      <p className="mt-2 text-ink-secondary">{t("La plus grosse vague depuis la sortie du jeu : huit cartes et deux champs de bataille quittent le Standard et le 2v2. Riot l’a annoncé le 13 novembre, et l’interdiction prend effet le lundi 23. D’ici là, les dix cartes se jouent encore en tournoi.")}</p>
+      <p className="mt-2 text-ink-secondary">{t("Trois decks sont visés, ceux qui ont tenu le Regional Championship d’Europe. Riven, le deck le plus joué à Stuttgart et trois des quatre premières places, perd son champion Riven, Broken Blade, Zhonya’s Hourglass, Stellacorn Herder et ses deux champs de bataille, Star Spring et Emperor’s Dais. Kennen, qui a gagné le tournoi, perd Nocturne, Horrifying et Rhasa the Sunderer. Kai’Sa perd Brynhir Thundersong. Dazzling Aurora part aussi : Riot ne veut plus des grosses menaces qu’elle va chercher gratuitement, Elder Dragon en tête. Baited Hook, peu jouée aujourd’hui, part par précaution : Riot la juge trop risquée avec les cartes des prochains sets.")}</p>
+      <div className="mt-5 flex flex-wrap justify-center gap-5 sm:justify-start">
+        {NOVEMBRE.map((c) => (
+          <CardThumb key={c.en} card={bestEdition(cards, c.en)} caption={c.en} sub={c.type} />
+        ))}
+      </div>
+      <p className="mt-4 text-ink-secondary">{t("En Corée et dans les régions en chinois traditionnel, les dix cartes restent jouables jusqu’à la sortie de Radiance là-bas. Et à partir de 2027, Riot n’annoncera plus de bans que deux fois par tournoi continental : le vendredi deux semaines avant, et le vendredi deux semaines après.")}</p>
+      <p className="mt-3 text-sm text-ink-muted">
+        {t("Annonce publiée en anglais :")}{" "}
+        <a href="https://playriftbound.com/en-us/news/announcements/radiance-ban-list-updates-effective-november-23-2026/" target="_blank" rel="noopener noreferrer" className="text-arcane hover:underline">{t("lire l’annonce de Riot")}</a>
+      </p>
 
       <h2 className="mt-10 text-2xl font-bold" style={heading}>{t("18 septembre 2026")}</h2>
       <p className="mt-2 text-ink-secondary">{t("Deux cartes tombent avant le Regional Qualifier de Los Angeles. Stacked Deck quitte les listes Chaos, et c’est Kennen qui le sentira le plus : son moteur comptait dessus pour trier sa pioche. Ekko, Recurrent part avec le combo infini de Lux, rare en tournoi mais trop long à subir en face.")}</p>
