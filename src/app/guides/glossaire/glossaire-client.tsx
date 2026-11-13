@@ -298,7 +298,7 @@ export function GlossaireClient({ terms, cardByKeyword }: GlossaireClientProps) 
   }, []);
 
   return (
-    <div className="px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <Breadcrumbs items={[{ name: "Guides", href: "/guides" }, { name: "Glossaire", href: "/guides/glossaire" }]} className="mb-6" />
       {/* Header */}
       <h1 className="text-4xl font-bold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
