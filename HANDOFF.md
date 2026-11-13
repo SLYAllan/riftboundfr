@@ -33,9 +33,9 @@ Les dix noms sont ceux de la base de cartes, vérifiés un à un.
   réécrire ces plans, à la main, par lots de cinq.
 - Dazzling Aurora et Stellacorn Herder sortent des exemples de `/guides/deckbuilding` et
   de `/guides/domaines`. `bans.ts` disait Scrapheap champ de bataille : c'est un équipement.
-- **Conséquence sur les ventes** : la fiche Légende ne vend pas une liste qui joue une
-  carte interdite. Riven, Akali, Rengar et Irelia n'ont plus un seul lien d'achat sur leur
-  fiche ; la page d'un deck garde son bouton, avec l'encadré rouge. Journal SEO du 13.
+- **Les liens d'achat restent sur les listes à carte interdite** (Allan, 13 novembre :
+  « les cartes existent même bannies »). La fiche Légende ne les retire plus ; la règle du
+  2 novembre est levée. Pastille et encadré signalent, rien ne disparaît. Journal SEO du 13.
 
 **Règles de base : révision du 9 octobre 2026** (le site servait celle du 16 juillet).
 PDF des deux langues pris sur le Rules Hub, lus par `parse-core-rules.py` : 2 438 règles en

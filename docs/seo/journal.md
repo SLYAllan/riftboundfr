@@ -5,6 +5,23 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-13 · hors passe, les liens d'achat restent sur les listes à carte interdite de `/legendes/[slug]`
+
+Corrige l'entrée du même jour, juste en dessous, avant tout Deploy. Allan, le 13 novembre :
+« on devrait pas faire sauter les boutons d'achat, les cartes existent même bannies ».
+La règle du 2 novembre (la fiche ne vend pas une liste injouable) est levée : les six
+lignes de « Meilleurs decks », l'encart de la colonne et les trois panneaux du bloc
+replié gardent leur prix et leur lien d'achat, que la liste joue une carte interdite ou
+non. La pastille « Interdite » reste à côté. C'est déjà ce que faisait la page d'un deck.
+
+Riven, Akali, Rengar et Irelia retrouvent donc leurs liens d'achat. Le ban du 23 novembre
+ne retire plus aucun lien du site : une baisse des `clic_cardnexus` après le Deploy ne
+viendra pas de là.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-13 · hors passe, ban du 23 novembre sur `/decks/[slug]` et `/legendes/[slug]`
 
 Riot a annoncé dix interdictions le 13 novembre, en vigueur le 23

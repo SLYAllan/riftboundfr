@@ -644,16 +644,19 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
   // Le reste du pool part en liste de liens (pas de decklist dépliée : la page serait
   // illisible et lourde).
   const otherDecks = legendDecks.slice(6);
-  // Les six premières en lignes, avec leur prix. Rien à vendre sur une liste
-  // injouable : on la signale, on ne la vend pas.
+  // Les six premières en lignes, avec leur prix. Une liste qui joue une carte
+  // interdite garde son prix et son lien d'achat (choix d'Allan, 13 novembre 2026 :
+  // « les cartes existent même bannies ») : la pastille la signale, c'est tout. Le
+  // ban annoncé ce jour-là retirait d'un coup tout lien d'achat des fiches de Riven,
+  // d'Akali, de Rengar et d'Irelia.
   const lignesDecks = legendDecks.slice(0, 6).map((deck) => {
     const interdites = cartesInterdites(deck.cards.map((dc) => dc.card.name));
     const cartesAchat = cartesDeck(deck.cards);
     return {
       deck,
       interdites,
-      prix: interdites.length > 0 ? 0 : chiffrerDeck(cartesAchat).total,
-      lienAchat: interdites.length > 0 ? null : lienAchatDeck(cartesAchat),
+      prix: chiffrerDeck(cartesAchat).total,
+      lienAchat: lienAchatDeck(cartesAchat),
     };
   });
 
@@ -751,10 +754,9 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
 
   // Le même encart que la page de deck. Ces pages sont la première porte d'entrée du
   // site (1 644 clics Google sur 28 jours en octobre) et n'avaient aucun lien d'achat :
-  // 0 clic CardNexus, contre 28 pour 1 000 vues sur les pages de deck. Rien sur une
-  // liste injouable : on la signale, on ne la vend pas.
+  // 0 clic CardNexus, contre 28 pour 1 000 vues sur les pages de deck. Une liste qui
+  // joue une carte interdite le garde aussi, comme sur la page du deck.
   const encartAchat = (deck: (typeof topDecks)[number], cards: DecklistCard[]) => {
-    if (cartesInterdites(deck.cards.map((dc) => dc.card.name)).length > 0) return null;
     const cartesAchat = cartesDeck(deck.cards);
     return (
       <div className="mt-3">
@@ -1084,8 +1086,7 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
                         <Link href={`/decks/${deck.slug}`} className="inline-flex min-h-11 items-center rounded-lg border border-hairline px-3 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink sm:min-h-9">
                           {t("Voir la liste")}
                         </Link>
-                        {/* Un vrai lien écrit par le serveur. Rien sur une liste injouable :
-                            on la signale, on ne la vend pas. */}
+                        {/* Un vrai lien écrit par le serveur. */}
                         {lienAchat && prix > 0 && (
                           <a
                             href={lienAchat}
