@@ -61,7 +61,9 @@ complète (#38, #128, #179). **Écart non tranché** : le classement donne un Ja
 rang (Templar), Riot donne Pjax91 (27e) pour n°1 de Jayce ; on suit Riot.
 Article `/articles/best-of-regional-championship-europe` par
 `scripts/seed-europe-rc-bestof.mts` (22 decks, 14 avec une carte du ban, compte fait par
-le script), couverture `public/img/articles/stuttgart.webp` (photo de l'article de Riot).
+le script), couverture `public/img/articles/stuttgart.webp` (le vainqueur et le trophée, photo
+55644388688 de l'album Flickr officiel « Riftbound Regional Championship: Europe », choix
+d'Allan ; firecrawl refuse Flickr, la page se lit par `curl` avec un User-Agent de navigateur).
 Pas de version anglaise de l'article.
 
 **`maj:stats` sortie 0** : tier lists « rien à revoir » (le classement n'a pas bougé), neuf
