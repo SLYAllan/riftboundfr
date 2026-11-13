@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic";
 import Link from "@/components/lien";
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
-import { formatDate } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import { getTournamentCountryCode } from "@/lib/tournament-flags";
 import { CountryBadge } from "@/components/country-badge";
 import type { Metadata } from "next";
@@ -92,20 +92,23 @@ export default async function ArticlesPage({
         </div>
       ) : (
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {articles.map((article) => {
+          {articles.map((article, i) => {
             const cc = article.tournamentName ? getTournamentCountryCode(article.tournamentName) : null;
+            // Sur téléphone, au-delà des trois derniers, une ligne (vignette, titre, date) :
+            // une grande carte par article faisait 14,6 écrans.
+            const ligne = i >= 3;
             return (
             <Link
               key={article.id}
               href={`/articles/${article.slug}`}
-              className="card-hover rounded-card border border-hairline bg-surface overflow-hidden"
+              className={cn("card-hover rounded-card border border-hairline bg-surface overflow-hidden", ligne && "max-sm:flex max-sm:items-stretch")}
             >
               {article.coverImage && (
-                <div className="relative aspect-video bg-surface-raised">
+                <div className={cn("relative aspect-video bg-surface-raised", ligne && "max-sm:aspect-auto max-sm:w-28 max-sm:shrink-0")}>
                   <Image src={article.coverImage} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
                 </div>
               )}
-              <div className="p-5">
+              <div className={cn("p-5", ligne && "max-sm:min-w-0 max-sm:p-3")}>
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-semibold uppercase tracking-wider text-violet-light">
                     {t(categoryLabels[article.category] ?? article.category)}
@@ -122,7 +125,7 @@ export default async function ArticlesPage({
                   {t(article.title)}
                 </h2>
                 {article.excerpt && (
-                  <p className="mt-2 line-clamp-2 text-sm text-ink-secondary">{t(article.excerpt)}</p>
+                  <p className={cn("mt-2 line-clamp-2 text-sm text-ink-secondary", ligne && "max-sm:hidden")}>{t(article.excerpt)}</p>
                 )}
               </div>
             </Link>
