@@ -348,6 +348,12 @@ export const EN: Record<string, string> = {
   "Actualités Riftbound": "Riftbound news",
   "Aucun article publié pour le moment.": "No articles published yet.",
   "Tournois Riftbound - Résultats et calendrier": "Riftbound tournaments - results and calendar",
+  " - Résultats et calendrier": " - results and calendar",
+  "règles": "rules",
+  "règle": "rule",
+  "Rangez vos cartes en classeurs, set par set.": "Sort your cards into binders, set by set.",
+  "Voyez d’un coup d’œil les cartes qui vous manquent.": "See at a glance which cards you are missing.",
+  "Sachez quels decks de tournoi vous pouvez déjà jouer, et ce qu’il manque aux autres.": "Know which tournament decks you can already play, and what the others are missing.",
   "Tournois Riftbound": "Riftbound tournaments",
   "Résultats, decklists et analyses de tous les tournois compétitifs Riftbound.":
     "Results, decklists and analysis for every competitive Riftbound tournament.",
