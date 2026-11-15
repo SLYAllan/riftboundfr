@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { validerPatchOverlay } from "./overlay-validation";
-import { applyStateUpdate, defaultOverlayState } from "./overlay";
+import { applyStateUpdate, CLASSEMENT_MAX, defaultOverlayState } from "./overlay";
 
 describe("validerPatchOverlay", () => {
   // Le tableau de bord envoie l'état ENTIER à chaque sauvegarde. Si un champ d'état
@@ -33,6 +33,14 @@ describe("validerPatchOverlay", () => {
     } as const;
 
     expect(validerPatchOverlay(patch)).toEqual({ ok: true, value: patch });
+  });
+
+  it("prend un classement vide ou long, jusqu'à ce que la pastille la plus large le couperait", () => {
+    const passe = (classement: string) => validerPatchOverlay({ players: [{ classement }, {}] }).ok;
+    expect(passe("")).toBe(true);
+    expect(passe("Quarterfinals 13-0-13")).toBe(true);
+    expect(passe("x".repeat(CLASSEMENT_MAX))).toBe(true);
+    expect(passe("x".repeat(CLASSEMENT_MAX + 1))).toBe(false);
   });
 
   // La panne « aucun bouton ne réagit » : l'état stocké datait d'une version plus

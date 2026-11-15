@@ -263,14 +263,6 @@ tournoi ont leur vrai titre (`/tournois/europe-regional-championship` affiche St
 
 ## 8 novembre 2026 — overlay recalé sur la retransmission officielle
 
-**Retiré de `main` le 8 novembre, à la demande d'Allan** : les tournois et les guides partent
-sans lui. Les commits `4db12b8de` et `dd5bf6d20` restent dans l'historique, et le commit
-« overlay: retiré de main pour l'instant » les annule. Pour le remettre, `git revert` de ce
-commit. Avant le Deploy qui le mettra en ligne, compter les décors déjà envoyés par des
-streamers (`backgroundUrl`, `backgroundNocamUrl`, `backgroundCompactUrl` dans `OverlayState`) :
-le nouveau décor peut les décaler. Tout ce qui suit décrit donc un travail qui n'est plus sur
-`main`.
-
 Demandé par Allan sur deux captures du Regional Championship Europe. Couleurs et
 positions mesurées sur les captures. **Vu dans OBS** (trois modes, sans vraie caméra),
 sur un état simulé, sans toucher à celui d'Allan.

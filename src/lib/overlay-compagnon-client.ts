@@ -54,6 +54,7 @@ export function patchPourNouveauMatch(state: OverlayStateData): PatchCompagnon {
       championName: joueur.championName,
       battlefields: [...joueur.battlefields],
       gamesWon: 0,
+      classement: joueur.classement ?? "",
     })) as OverlayStateData["players"],
     cards: { lists: [[], []], ignored: [[], []], mode: "none", auto: false, index: [0, 0] },
   } as PatchCompagnon;
