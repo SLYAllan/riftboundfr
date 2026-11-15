@@ -73,9 +73,12 @@ capture dans OBS sur une scène d'essai retirée ensuite.
   l'autre, ni les cartes (image de 744 px réduite à 255). C'est le cadre doré, une image
   dessinée à taille réelle : son trait fait 2,6 px dans l'ancienne version et 3,8 px
   agrandi de 15 %. Compact : rendu à 97,75 %, remis à 100 % sur des pixels entiers, net
-  (vu dans OBS). Complet : 3,5 px une fois calé sur des pixels entiers ; le
-  rééchantillonner à l'avance (Lanczos) ne fait pas mieux. **En attente d'Allan** : la
-  source du cadre en double taille, ou un cadre redessiné en vectoriel.
+  (vu dans OBS). Complet : la source n'existe pas en plus grand (les calques
+  « Deck_left » et « Deck_right » de `layout.psd` portent le cadre à la même taille).
+  Le cadre étant un trait d'une seule couleur, `gen:decor` le reconstruit : sa forme
+  agrandie quatre fois trop grand, tranchée net, ramenée à +15 %. Il sort déjà placé
+  (`cadre_cartes_gauche.webp`, `cadre_cartes_droite.webp`) et l'overlay le pose tel
+  quel : trait de 3,3 px au lieu de 3,8, aussi franc que l'original. Vu dans OBS.
 - **« Pas fan du fond sur le compact. »** Le socle sombre des deux coins du haut
   (`fondCompact`, posé le 8 novembre pour que les pièces ne flottent plus). Trois
   variantes rendues sur une photo : A socle opaque, B voile à 55 %, C sans fond.
@@ -126,9 +129,6 @@ et la règle des décors dans `overlay-full.tsx`.
 2. Compter en prod les décors déjà envoyés (`backgroundUrl`, `backgroundNocamUrl`,
    `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
    prévenir. Lecture de la prod pas encore autorisée.
-3. Le cadre de cartes à +15 % : sa source en double taille, ou le redessiner en
-   vectoriel. La source n'existe pas en plus grand : les calques « Deck_left » et
-   « Deck_right » de `layout.psd` portent le cadre à la même taille que le site.
 
 **Trois pièges d'outillage payés ce jour-là :**
 - Un `next dev` relancé après un arrêt forcé rechargeait chaque page en boucle, sans

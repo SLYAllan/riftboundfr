@@ -2,7 +2,8 @@
  * Tire de `src/lib/overlay-decor.ts` les images de l'overlay. À lancer par
  * `npm run gen:decor`, qui enchaîne avec les gabarits Photoshop.
  *
- * Écrit `public/stream/decor.webp`, `decor_compact.webp` et `decor_chrono.webp`, plus les
+ * Écrit `public/stream/decor.webp`, `decor_compact.webp`, `decor_chrono.webp` et les deux
+ * cadres de cartes du complet (`cadre_cartes_*.webp`, tirés des dessins d'Allan), plus les
  * calques en PNG que lit `gen-gabarit-psd.py`, dans `node_modules/.cache/decor-overlay/`
  * (cadres de cartes compris, posés là où l'overlay les pose),
  * puis l'empreinte du dessin, que relit `overlay-decor.test.ts`.
@@ -27,24 +28,50 @@ for (const [nom, svg] of [["fond", svgFond()], ["masque", svgMasqueFond()], ["ca
   await image(svg).png().toFile(`${CALQUES}/${nom}.png`);
 }
 
-// Les cadres de cartes tels que l'overlay les pose : agrandis et décalés par
-// `placementCartes`. Le gabarit les montrait à leur place d'origine, jusqu'à 27 px à côté.
+/**
+ * Un cadre de cartes à la place et à la taille où l'overlay le pose, en pleine toile.
+ *
+ * Le dessin d'Allan est un trait d'une seule couleur, à taille réelle. Agrandi par le
+ * navigateur, il s'étalait : 2,6 px de trait devenaient 3,8 au lieu de 3,0, et Allan le
+ * voyait flou. On agrandit donc sa FORME quatre fois trop grand, on la tranche net, puis
+ * on la ramène à la taille voulue : les bords retrouvent une vraie marche (3,0 px
+ * mesurés). À l'échelle 1, le dessin est déjà juste : on ne fait que le déplacer.
+ */
+async function cadreCartes(fichier: string, { e, dx, dy }: { e: number; dx: number; dy: number }): Promise<Buffer> {
+  const source = `${STREAM}/${fichier}.webp`;
+  const [l, h] = [Math.round(1920 * e), Math.round(1080 * e)];
+  let calque = await sharp(source).ensureAlpha().png().toBuffer();
+  if (e !== 1) {
+    const forme = await sharp(source).ensureAlpha().extractChannel("alpha")
+      .resize(l * 4, h * 4, { kernel: "cubic" }).threshold(128)
+      .resize(l, h, { kernel: "linear" }).raw().toBuffer();
+    const { data } = await sharp(source).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    const plein = data.findIndex((v, i) => i % 4 === 3 && v === 255);
+    if (plein < 0) throw new Error(`${source} : aucun pixel plein, impossible d'en lire la couleur`);
+    const couleur = { r: data[plein - 3], g: data[plein - 2], b: data[plein - 1] };
+    calque = await sharp({ create: { width: l, height: h, channels: 3, background: couleur } })
+      .joinChannel(forme, { raw: { width: l, height: h, channels: 1 } }).png().toBuffer();
+  }
+  // sharp refuse de composer une image plus grande que la toile : on découpe d'abord
+  // la partie du calque qui tombe dans l'écran.
+  const [gauche, haut] = [Math.max(0, -dx), Math.max(0, -dy)];
+  const [x, y] = [Math.max(0, dx), Math.max(0, dy)];
+  const morceau = await sharp(calque)
+    .extract({ left: gauche, top: haut, width: Math.min(l - gauche, 1920 - x), height: Math.min(h - haut, 1080 - y) })
+    .png().toBuffer();
+  return sharp({ create: { width: 1920, height: 1080, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+    .composite([{ input: morceau, left: x, top: y }]).png().toBuffer();
+}
+
+// Les gabarits montrent ces cadres en repère, là où l'overlay les pose (`placementCartes`).
+// Le complet affiche en plus le sien : `cadre_cartes_gauche.webp`, `cadre_cartes_droite.webp`.
 for (const compact of [false, true]) {
   for (const [cote, fichier] of [["left", "cartes_gauche"], ["right", "cartes_droite"]] as const) {
-    const { e, dx, dy } = placementCartes(cote, compact);
-    const [l, h] = [Math.round(1920 * e), Math.round(1080 * e)];
-    // sharp refuse de composer une image plus grande que la toile : on découpe d'abord
-    // la partie du calque agrandi qui tombe dans l'écran.
-    const [gauche, haut] = [Math.max(0, -dx), Math.max(0, -dy)];
-    const [x, y] = [Math.max(0, dx), Math.max(0, dy)];
-    const morceau = await sharp(`${STREAM}/${fichier}.webp`)
-      .resize(l, h, { kernel: "lanczos3" })
-      .extract({ left: gauche, top: haut, width: Math.min(l - gauche, 1920 - x), height: Math.min(h - haut, 1080 - y) })
-      .png()
-      .toBuffer();
-    await sharp({ create: { width: 1920, height: 1080, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
-      .composite([{ input: morceau, left: x, top: y }])
-      .png()
-      .toFile(`${CALQUES}/${fichier}${compact ? "_compact" : ""}.png`);
+    const cadre = await cadreCartes(fichier, placementCartes(cote, compact));
+    await sharp(cadre).toFile(`${CALQUES}/${fichier}${compact ? "_compact" : ""}.png`);
+    if (!compact) {
+      await sharp(cadre).webp({ lossless: true }).toFile(`${STREAM}/cadre_${fichier}.webp`);
+      console.log(`${STREAM}/cadre_${fichier}.webp`);
+    }
   }
 }

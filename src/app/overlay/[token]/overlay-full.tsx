@@ -445,21 +445,32 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
   return <CarteMontree nom={nom} slot={slot} />;
 }
 
-/** Un cadre de cartes : le calque du gabarit et sa carte, transformés ensemble. */
+/**
+ * Un cadre de cartes et sa carte. La carte suit la transformation du calque. Le cadre,
+ * lui, ne la suit qu'en compact, où elle ne fait que le déplacer : en complet elle
+ * l'agrandit, et l'image agrandie par le navigateur était floue. On pose alors le cadre
+ * déjà agrandi et net que sort `npm run gen:decor`, sans y toucher.
+ */
 function CadreCartes({ side, visible, cards, actives, compact }: { side: Cote; visible: boolean; cards: OverlayStateData["cards"]; actives: string[]; compact: boolean }) {
+  const fichier = side === "left" ? "cartes_gauche" : "cartes_droite";
+  // Le cadre suit le MODE et pas le nombre de cartes : on peut le poser vide, puis y
+  // charger le deck.
+  const cadre = (
+    <img
+      src={`/stream/${compact ? "" : "cadre_"}${fichier}.webp`}
+      alt=""
+      className={`absolute inset-0 h-full w-full transition-opacity duration-300 ease-out ${compact ? "" : "z-[11]"}`}
+      style={{ opacity: visible ? 1 : 0 }}
+    />
+  );
   return (
+    <>
+    {!compact && cadre}
     <div
       className="absolute inset-0 z-[11]"
       style={{ transform: calqueCartes(side, compact), transformOrigin: "0 0" }}
     >
-      {/* Le cadre suit le MODE et pas le nombre de cartes : on peut le poser vide, puis
-          y charger le deck. */}
-      <img
-        src={side === "left" ? "/stream/cartes_gauche.webp" : "/stream/cartes_droite.webp"}
-        alt=""
-        className="absolute inset-0 h-full w-full transition-opacity duration-300 ease-out"
-        style={{ opacity: visible ? 1 : 0 }}
-      />
+      {compact && cadre}
       <CarteAffiche
         actives={actives}
         auto={cards.auto}
@@ -468,6 +479,7 @@ function CadreCartes({ side, visible, cards, actives, compact }: { side: Cote; v
         slot={CASE_CARTE[side]}
       />
     </div>
+    </>
   );
 }
 
