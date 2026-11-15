@@ -173,6 +173,48 @@ export function entrelace(a: string[], b: string[]): string[] {
 }
 
 /**
+ * La carte qu'un cadre montre en manuel (0 = gauche, 1 = droite), ou `null` s'il est
+ * vide. En « un cadre », seul celui de droite existe et il lit les deux decks mêlés.
+ */
+export function carteAuCadre(cards: OverlayStateData["cards"], cadre: 0 | 1): string | null {
+  if (cards.mode === "none" || (cards.mode === "mixed" && cadre === 0)) return null;
+  const liste = cards.mode === "mixed" ? entrelace(cards.lists[0], cards.lists[1]) : cards.lists[cadre];
+  return liste.length && cards.index[cadre] >= 0 ? liste[cards.index[cadre] % liste.length] : null;
+}
+
+/**
+ * Pose une carte du côté voulu (0 = gauche, joueur 1 ; 1 = droite, joueur 2) et la montre.
+ *
+ * Une carte cherchée partait toujours dans la liste du joueur 1 : à droite en « un
+ * cadre », à gauche en « deux cadres », sans moyen de choisir ni de la changer de côté.
+ * Ici elle QUITTE l'autre liste : une carte n'est que d'un côté à la fois.
+ *
+ * À gauche il faut les deux cadres : celui de gauche n'existe que là. À droite on garde
+ * l'affichage en cours, ou un seul cadre si rien n'était montré, pour laisser le chrono
+ * et le logo à l'écran.
+ */
+export function montrerCarteDuCote(cards: OverlayStateData["cards"], cote: 0 | 1, nom: string): OverlayStateData["cards"] {
+  const autre = cote === 0 ? 1 : 0;
+  // En diapo auto, c'est l'overlay qui choisit la carte : le tableau de bord l'ignore.
+  const avant = cards.auto ? null : carteAuCadre(cards, autre);
+  const lists: [string[], string[]] = [[...cards.lists[0]], [...cards.lists[1]]];
+  lists[autre] = lists[autre].filter((c) => c !== nom);
+  if (!lists[cote].includes(nom)) lists[cote].push(nom);
+  const ignored: [string[], string[]] = [cards.ignored[0].filter((c) => c !== nom), cards.ignored[1].filter((c) => c !== nom)];
+  const mode = cote === 0 ? "split" : cards.mode === "none" ? "mixed" : cards.mode;
+  const index: [number, number] = [cards.index[0], cards.index[1]];
+  if (mode === "mixed") {
+    index[1] = entrelace(lists[0], lists[1]).indexOf(nom);
+  } else {
+    index[cote] = lists[cote].indexOf(nom);
+    // L'autre cadre garde SA carte, pas son numéro : sa liste vient peut-être de perdre
+    // une ligne. S'il ne montrait rien, ou une carte qui n'est plus chez lui, il reste vide.
+    index[autre] = avant === null ? -1 : lists[autre].indexOf(avant);
+  }
+  return { ...cards, lists, ignored, mode, auto: false, index };
+}
+
+/**
  * Manches à gagner pour emporter le match. Lue par le tableau de bord et par le
  * compagnon : les deux bornaient le compteur de manches chacun de leur côté.
  */

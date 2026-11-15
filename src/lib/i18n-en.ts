@@ -290,8 +290,14 @@ export const EN: Record<string, string> = {
   "Durée par carte": "Seconds per card",
   "Vider les decklists": "Clear decklists",
   "Montrer une carte sans decklist": "Show a card without a decklist",
-  "La carte rejoint la liste du joueur 1 et passe à l’écran tout de suite.":
-    "The card joins player 1’s list and goes on screen right away.",
+  "Choisissez le côté, ou glissez la carte vers un joueur. À gauche, le cadre prend la place du chrono et du logo.":
+    "Pick a side, or drag the card onto a player. On the left, the frame takes the place of the timer and the logo.",
+  "Gauche": "Left",
+  "Droite": "Right",
+  "Montrer à gauche": "Show on the left",
+  "Montrer à droite": "Show on the right",
+  "Passer à gauche": "Move to the left",
+  "Passer à droite": "Move to the right",
   "Aucune carte à ce nom.": "No card by that name.",
   "Joueur 1 (gauche)": "Player 1 (left)",
   "Joueur 2 (droite)": "Player 2 (right)",

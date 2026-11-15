@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, echelleTexte, secondesChrono, encreSur, nomEtTitre } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, echelleTexte, secondesChrono, encreSur, nomEtTitre, carteAuCadre, montrerCarteDuCote } from "./overlay";
 
 describe("nomEtTitre", () => {
   it("coupe à la virgule, chinoise comprise", () => {
@@ -11,6 +11,50 @@ describe("nomEtTitre", () => {
   it("laisse entier un nom sans titre, tiret dans le mot compris", () => {
     expect(nomEtTitre("Légende")).toEqual(["Légende", ""]);
     expect(nomEtTitre("Jarvan-IV")).toEqual(["Jarvan-IV", ""]);
+  });
+});
+
+describe("montrerCarteDuCote", () => {
+  const cartes = (plus: Partial<ReturnType<typeof defaultOverlayState>["cards"]> = {}) => ({ ...defaultOverlayState().cards, ...plus });
+
+  it("pose à droite dans un seul cadre quand rien n'était montré", () => {
+    const c = montrerCarteDuCote(cartes(), 1, "Ahri, Alluring");
+    expect(c.lists).toEqual([[], ["Ahri, Alluring"]]);
+    expect(c.mode).toBe("mixed");
+    expect(carteAuCadre(c, 1)).toBe("Ahri, Alluring");
+  });
+
+  it("ouvre les deux cadres pour poser à gauche, et laisse la droite vide", () => {
+    const c = montrerCarteDuCote(cartes({ lists: [[], ["Jayce, Brilliant Inventor"]] }), 0, "Ahri, Alluring");
+    expect(c.mode).toBe("split");
+    expect(carteAuCadre(c, 0)).toBe("Ahri, Alluring");
+    expect(carteAuCadre(c, 1)).toBeNull();
+  });
+
+  it("change une carte de côté : elle quitte l'autre liste", () => {
+    const c = montrerCarteDuCote(cartes({ lists: [["Ahri, Alluring"], []], mode: "split", index: [0, -1] }), 1, "Ahri, Alluring");
+    expect(c.lists).toEqual([[], ["Ahri, Alluring"]]);
+    expect(carteAuCadre(c, 0)).toBeNull();
+    expect(carteAuCadre(c, 1)).toBe("Ahri, Alluring");
+  });
+
+  it("laisse à l'autre cadre sa carte, même si sa liste a perdu une ligne", () => {
+    const c = montrerCarteDuCote(cartes({ lists: [["A", "B", "C"], ["X"]], mode: "split", index: [2, 0] }), 1, "A");
+    expect(c.lists).toEqual([["B", "C"], ["X", "A"]]);
+    expect(carteAuCadre(c, 0)).toBe("C");
+    expect(carteAuCadre(c, 1)).toBe("A");
+  });
+
+  it("reste dans un seul cadre à droite, sur la carte posée", () => {
+    const c = montrerCarteDuCote(cartes({ lists: [["A"], ["B"]], mode: "mixed", index: [0, 0] }), 1, "Z");
+    expect(c.mode).toBe("mixed");
+    expect(carteAuCadre(c, 1)).toBe("Z");
+  });
+
+  it("coupe la diapo et sort la carte des cartes écartées", () => {
+    const c = montrerCarteDuCote(cartes({ lists: [["A"], []], ignored: [["A"], []], mode: "split", auto: true }), 1, "A");
+    expect(c.auto).toBe(false);
+    expect(c.ignored).toEqual([[], []]);
   });
 });
 

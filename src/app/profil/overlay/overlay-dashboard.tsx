@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type DragEvent, type ReactNode } from "react";
 import {
-  AlertTriangle, ArrowLeftRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
+  AlertTriangle, ArrowLeft, ArrowLeftRight, ArrowRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, entrelace, manchesPourGagner, CLASSEMENT_MAX, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, carteAuCadre, entrelace, manchesPourGagner, montrerCarteDuCote, CLASSEMENT_MAX, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
 import { adopterChampsPartages, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
@@ -14,6 +14,9 @@ import { useLangue, useLien, useT } from "@/components/i18n-provider";
 import { usePathname } from "next/navigation";
 import { prefixerLien, sansPrefixe, type Langue } from "@/lib/i18n";
 
+// Un type à nous : le cadre d'un joueur n'accepte que les cartes glissées depuis cette
+// page. Avec `text/plain`, n'importe quel texte lâché là entrait dans la decklist.
+const TYPE_CARTE = "application/x-riftbound-carte";
 
 /** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
 function cleFond(genre: Exclude<GenreMedia, "logo">): "backgroundUrl" | "backgroundNocamUrl" | "backgroundCompactUrl" {
@@ -378,15 +381,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   // Carte actuellement à l'écran pour le joueur i (pour surligner). En manuel : la
   // carte à l'index de son cadre (gauche = 0, droite = 1 ; en mixed les deux pointent
   // le cadre droit via le défilé mêlé). Un index négatif = cadre vidé à la main.
-  const carteMontree = (i: 0 | 1): string | null => {
-    if (cards.mode === "none" || cards.auto) return null;
-    if (cards.mode === "mixed") {
-      const combine = entrelace(cards.lists[0], cards.lists[1]);
-      return combine.length && cards.index[1] >= 0 ? combine[cards.index[1] % combine.length] : null;
-    }
-    const liste = cards.lists[i];
-    return liste.length && cards.index[i] >= 0 ? liste[cards.index[i] % liste.length] : null;
-  };
+  const carteMontree = (i: 0 | 1): string | null => (cards.auto ? null : carteAuCadre(cards, cards.mode === "mixed" ? 1 : i));
   // Cliquer une carte = la montrer tout de suite, en manuel. Si rien n'est encore
   // affiché, on passe en « un cadre par joueur ». En « mixed » toutes les cartes vont
   // au cadre de droite (index dans le défilé mêlé) ; en « split » chaque joueur a son
@@ -449,19 +444,38 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
     return cartes.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 8);
   })();
 
-  // La carte cherchée rejoint la liste du joueur 1 (celle qui alimente le cadre) et
-  // passe à l'écran. Tout part en UNE sauvegarde : ajouter puis appeler `montrer`
-  // relirait la liste d'avant, et l'index tomberait à côté.
-  function montrerCarteCherchee(nom: string) {
-    const lists: [string[], string[]] = cards.lists[0].includes(nom)
-      ? cards.lists
-      : [[...cards.lists[0], nom], cards.lists[1]];
-    const mode = cards.mode === "none" ? "mixed" : cards.mode;
-    const cadre: 0 | 1 = mode === "mixed" ? 1 : 0;
-    const pos = mode === "mixed" ? entrelace(lists[0], lists[1]).indexOf(nom) : lists[0].indexOf(nom);
-    majCards({ lists, mode, auto: false, index: paire(cards.index, cadre, Math.max(0, pos)) });
+  // Une carte se pose du côté qu'on choisit, au bouton ou en la glissant vers un joueur.
+  // Elle partait toujours chez le joueur 1, sans moyen de la mettre de l'autre côté. La
+  // règle vit dans `montrerCarteDuCote` ; tout part en UNE sauvegarde, sinon l'index
+  // relirait la liste d'avant et tomberait à côté.
+  function poserCarte(cote: 0 | 1, nom: string) {
+    majCards(montrerCarteDuCote(cards, cote, nom));
     setRechCarte("");
   }
+  const [survolDepot, setSurvolDepot] = useState<0 | 1 | null>(null);
+  const saisirCarte = (e: DragEvent, nom: string) => {
+    e.dataTransfer.setData(TYPE_CARTE, nom);
+    e.dataTransfer.effectAllowed = "move";
+  };
+  const depot = (i: 0 | 1) => ({
+    onDragOver: (e: DragEvent) => {
+      if (!e.dataTransfer.types.includes(TYPE_CARTE)) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      setSurvolDepot(i);
+    },
+    // Passer sur un enfant du cadre déclenche aussi « leave » : le contour clignotait.
+    onDragLeave: (e: DragEvent) => {
+      if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setSurvolDepot(null);
+    },
+    onDrop: (e: DragEvent) => {
+      const nom = e.dataTransfer.getData(TYPE_CARTE);
+      setSurvolDepot(null);
+      if (!nom) return;
+      e.preventDefault();
+      poserCarte(i, nom);
+    },
+  });
 
   const manchesMax = manchesPourGagner(state.format);
   const borne = (n: number, max: number) => Math.max(0, Math.min(max, n));
@@ -1095,13 +1109,25 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             {resultatsCartes.length > 0 && (
               <ul className="mt-2 space-y-1">
                 {resultatsCartes.map((c) => (
-                  <li key={c.name}>
-                    <button
-                      onClick={() => montrerCarteCherchee(c.name)}
-                      className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm hover:bg-surface-raised"
-                    >
-                      {c.imageUrl && <img src={c.imageUrl} alt="" className="h-9 w-7 shrink-0 rounded object-cover" />}
-                      <span className="truncate">{c.name}</span>
+                  // Les deux boutons font tout ce que fait le glisser : au doigt ou au
+                  // clavier, on ne glisse pas. Sur téléphone ils ne gardent que leur
+                  // flèche : avec le mot, chaque résultat prenait deux lignes et huit
+                  // résultats faisaient plus d'un écran.
+                  <li
+                    key={c.name}
+                    draggable
+                    onDragStart={(e) => saisirCarte(e, c.name)}
+                    className="flex cursor-grab items-center gap-2 rounded-lg px-2 py-1 text-sm hover:bg-surface-raised"
+                  >
+                    {c.imageUrl && <img src={c.imageUrl} alt="" draggable={false} className="h-9 w-7 shrink-0 rounded object-cover" />}
+                    <span className="min-w-0 flex-1 truncate">{c.name}</span>
+                    <button type="button" onClick={() => poserCarte(0, c.name)} aria-label={`${t("Montrer à gauche")} : ${c.name}`} title={t("Montrer à gauche")} className={btnVide}>
+                      <ArrowLeft size={15} aria-hidden />
+                      <span className="hidden sm:inline">{t("Gauche")}</span>
+                    </button>
+                    <button type="button" onClick={() => poserCarte(1, c.name)} aria-label={`${t("Montrer à droite")} : ${c.name}`} title={t("Montrer à droite")} className={btnVide}>
+                      <span className="hidden sm:inline">{t("Droite")}</span>
+                      <ArrowRight size={15} aria-hidden />
                     </button>
                   </li>
                 ))}
@@ -1111,7 +1137,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               <p className="mt-2 text-xs text-ink-muted">{t("Aucune carte à ce nom.")}</p>
             )}
             <p className="mt-1 text-xs text-ink-muted">
-              {t("La carte rejoint la liste du joueur 1 et passe à l’écran tout de suite.")}
+              {t("Choisissez le côté, ou glissez la carte vers un joueur. À gauche, le cadre prend la place du chrono et du logo.")}
             </p>
           </div>
 
@@ -1121,7 +1147,11 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               const ignorees = cards.ignored[i];
               const montree = carteMontree(i);
               return (
-                <div key={i} className="space-y-2 rounded-xl border border-hairline bg-surface p-3">
+                <div
+                  key={i}
+                  {...depot(i)}
+                  className={`space-y-2 rounded-xl border bg-surface p-3 transition-colors duration-150 ${survolDepot === i ? "border-arcane ring-2 ring-arcane" : "border-hairline"}`}
+                >
                   <div className="text-xs font-semibold text-ink-muted">{i === 0 ? t("Joueur 1 (gauche)") : t("Joueur 2 (droite)")}</div>
                   <textarea
                     value={brouillonDeck[i]}
@@ -1157,7 +1187,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                       {liste.map((c) => {
                         const exclue = ignorees.includes(c);
                         return (
-                          <div key={c} className="flex min-h-9 items-center gap-2">
+                          <div key={c} draggable onDragStart={(e) => saisirCarte(e, c)} className="flex min-h-9 cursor-grab items-center gap-2">
                             {/* En diapo auto seulement : décocher retire la carte du
                                 défilé. En manuel on clique le nom pour la montrer. */}
                             {cards.auto && (
@@ -1191,6 +1221,15 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                               } ${cards.auto && exclue ? "text-ink-muted line-through" : ""}`}
                             >
                               {c}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => poserCarte(i === 0 ? 1 : 0, c)}
+                              aria-label={`${i === 0 ? t("Passer à droite") : t("Passer à gauche")} : ${c}`}
+                              title={i === 0 ? t("Passer à droite") : t("Passer à gauche")}
+                              className="flex size-9 shrink-0 items-center justify-center rounded text-ink-muted transition-colors duration-150 hover:bg-surface-raised hover:text-ink"
+                            >
+                              {i === 0 ? <ArrowRight size={14} aria-hidden /> : <ArrowLeft size={14} aria-hidden />}
                             </button>
                           </div>
                         );
