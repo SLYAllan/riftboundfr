@@ -243,19 +243,18 @@ function fondColonne(): string {
 }
 
 /**
- * Le socle du compact, dans le coin de l'écran. Sans lui les pièces flottaient sur la
- * vidéo : le panneau dépassait la plaque de 40 px, et l'image passait dans les encoches.
- * La pointe de la bannière et les manches tiennent dedans, rien ne dépasse.
+ * La place du bloc du joueur en compact, dans le coin de l'écran : la pointe de la
+ * bannière et les manches tiennent dedans. Le gabarit Photoshop y garde son calque de
+ * fond et son masque, pour qui veut peindre un socle sous les pièces.
  */
 export const SOCLE_COMPACT = { l: 328, h: 249 };
 
-function fondCompact(): string {
-  const { filet, filetLarge } = COULEURS_DECOR;
-  const { l, h } = SOCLE_COMPACT;
-  return `<rect width="${l}" height="${h}" fill="url(#colonne)"/>
-  ${trait([[l - 6, 0], [l - 6, h - 6], [0, h - 6]], filet, 1.7)}
-  ${trait([[l - 1.25, 0], [l - 1.25, h - 1.25], [0, h - 1.25]], filetLarge, 2.5)}`;
-}
+// Rien sous les pièces du compact : choix d'Allan le 15 novembre 2026, sur trois
+// variantes vues sur une photo (socle opaque, voile à 55 %, rien). Un socle sombre y
+// était dessiné depuis le 8 novembre, pour que les pièces ne flottent pas ; chacune a
+// sa plaque et se lit sans lui, et `decoupeCss` taille déjà le portrait et le terrain à
+// la forme de leur case.
+const fondCompact = (): string => "";
 
 /** Blanc = le fond se voit. Noir = on voit la vidéo ou ce que le code pose dessous. */
 const hexagone = `<polygon points="${points(HEX_PORTRAIT)}" fill="#000"/>`;

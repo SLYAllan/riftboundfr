@@ -78,8 +78,10 @@ capture dans OBS sur une scène d'essai retirée ensuite.
   source du cadre en double taille, ou un cadre redessiné en vectoriel.
 - **« Pas fan du fond sur le compact. »** Le socle sombre des deux coins du haut
   (`fondCompact`, posé le 8 novembre pour que les pièces ne flottent plus). Trois
-  variantes rendues sur une photo, **en attente de son choix** : A socle opaque, B voile
-  à 55 %, C sans fond. Rien n'est changé dans le dépôt.
+  variantes rendues sur une photo : A socle opaque, B voile à 55 %, C sans fond.
+  **Allan a choisi C** : `fondCompact` ne dessine plus rien, décor et gabarit compacts
+  refaits par `gen:decor`, vu dans OBS. Le gabarit garde son calque de fond, vide, et
+  son masque, pour qui veut peindre un socle.
 - **Couleurs des points et des chiffres** : elles passent telles quelles à la nouvelle
   version, c'est le même réglage (`couleurPoint`, `couleurChiffres`), vu sur les deux.
   Ce qui change le 1er décembre pour qui n'a rien choisi : le point marqué passe du bleu
@@ -125,8 +127,8 @@ et la règle des décors dans `overlay-full.tsx`.
    `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
    prévenir. Lecture de la prod pas encore autorisée.
 3. Le cadre de cartes à +15 % : sa source en double taille, ou le redessiner en
-   vectoriel.
-4. Le fond du compact : A, B ou C.
+   vectoriel. La source n'existe pas en plus grand : les calques « Deck_left » et
+   « Deck_right » de `layout.psd` portent le cadre à la même taille que le site.
 
 **Trois pièges d'outillage payés ce jour-là :**
 - Un `next dev` relancé après un arrêt forcé rechargeait chaque page en boucle, sans
