@@ -8,7 +8,7 @@ poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novem
 branche, plus de `git revert` à faire.
 
 **Porte sur la branche** : `tsc` 0, 82 fichiers et 476 tests, `eslint src` 0 erreur.
-`next build` 0, relancé après le dernier commit de code d'avant la taille des cartes.
+`next build` 0 sur le dernier commit de code, les deux versions comprises.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
 `--testTimeout 30000`. Rien à voir avec l'overlay.
