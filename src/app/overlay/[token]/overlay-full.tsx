@@ -4,7 +4,7 @@ import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
 import { decorDuNouveauGabarit } from "@/lib/overlay-version";
-import { CASE_CHRONO, caseOverlay, decoupeCss, type Cote, type NomCase } from "@/lib/overlay-decor";
+import { CASE_CHRONO, caseOverlay, decoupeCss, placementCartes, type Cote, type NomCase } from "@/lib/overlay-decor";
 import { COULEURS_POINTS, echelleOverlay, encreSur, entrelace, manchesPourGagner, nomEtTitre, secondesChrono, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
@@ -25,29 +25,11 @@ const BAS_GAUCHE = {
   ronde: { top: 930, height: 38 },
 } as const;
 
-// Le cadre de cartes est dessiné à demeure dans une image pleine toile : on ne peut que
-// transformer le calque entier, et la carte suit parce qu'elle est dedans. Le centre de
-// chaque dessin est relevé sur son canal alpha (275 x 363 px, de y = 682 à 1044) ;
-// `calqueCartes` amène ce centre où l'on veut, à l'échelle voulue.
-const CENTRE_CADRE = { left: { x: 178, y: 863 }, right: { x: 1741, y: 863 } } as const;
-const DEMI_HAUTEUR_CADRE = 181.5;
-// Allan trouvait les cartes un peu petites à l'écran (222 x 310 px). Sur quatre tailles
-// vues dans OBS, il a choisi +15 % le 15 novembre 2026 : 255 x 356 px, et 15 px d'air de
-// chaque côté du cadre. La colonne fait 346 px entre ses filets et laisse 436 px sous
-// les manches : le cadre y tient jusqu'à 1,2, bord à bord.
-const TAILLE_CARTES = 1.15;
+// Où va le calque d'un cadre de cartes : la règle vit dans `overlay-decor.ts`, que lit
+// aussi le gabarit Photoshop pour dessiner ses repères au même endroit.
 function calqueCartes(side: Cote, compact: boolean): string {
-  const centre = CENTRE_CADRE[side];
-  // Complet : au milieu de la colonne, entre les manches et le bas de l'écran. Compact :
-  // sous le bloc du joueur, le bas du cadre ne bouge pas et il grandit vers le haut.
-  // Le cadre est une image dessinée à taille réelle : toute autre échelle l'étale. À
-  // 0,9775 (0,85 x 1,15) le compact brouillait son trait doré sans rien gagner en taille ;
-  // à 1 tout rond et sur des pixels entiers, il le rend tel qu'il est dessiné.
-  const e = compact ? 1 : TAILLE_CARTES;
-  const cible = compact
-    ? { x: side === "left" ? 167.6 : 1751.55, y: 1049.8 - DEMI_HAUTEUR_CADRE * e }
-    : { x: side === "left" ? 172 : 1747, y: 858 };
-  return `translate(${Math.round(cible.x - e * centre.x)}px, ${Math.round(cible.y - e * centre.y)}px) scale(${e})`;
+  const { e, dx, dy } = placementCartes(side, compact);
+  return `translate(${dx}px, ${dy}px) scale(${e})`;
 }
 const CASE_CARTE = {
   left: { left: 61, top: 708, width: 235, height: 310 },

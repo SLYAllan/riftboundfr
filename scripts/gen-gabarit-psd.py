@@ -35,8 +35,10 @@ def gabarit(suffixe, sortie, avec_chrono):
     psd.create_pixel_layer(calque(f"cadres{suffixe}"), name="Cadres")
     # Ce que le site pose lui-même : caché, ça sert à se repérer. Le compact n'a pas de chrono.
     reperes = [
-        ("Repère : cartes à droite (laisser caché)", Image.open(STREAM / "cartes_droite.webp").convert("RGBA")),
-        ("Repère : cartes à gauche (laisser caché)", Image.open(STREAM / "cartes_gauche.webp").convert("RGBA")),
+        # Posés par `gen-decor-overlay.mts` là où l'overlay les pose, pas à leur place
+        # d'origine dans l'image : le compact les déplace, le complet les agrandit.
+        ("Repère : cartes à droite (laisser caché)", calque(f"cartes_droite{suffixe}")),
+        ("Repère : cartes à gauche (laisser caché)", calque(f"cartes_gauche{suffixe}")),
     ]
     if avec_chrono:
         reperes.append(("Repère : chrono (laisser caché)", calque("chrono")))

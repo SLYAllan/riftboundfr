@@ -73,6 +73,39 @@ export type NomCase = keyof typeof CASES;
 /** La case du chrono, sous le joueur de gauche seulement : elle n'a pas de miroir. */
 export const CASE_CHRONO = { left: 98, top: 968, width: 150, height: 50 } as const;
 
+// Le cadre de cartes est dessiné à demeure dans une image pleine toile
+// (`cartes_gauche.webp`, `cartes_droite.webp`) : on ne peut que transformer le calque
+// entier, et la carte suit parce qu'elle est dedans. Le centre de chaque dessin est relevé
+// sur son canal alpha (275 x 363 px, de y = 682 à 1044).
+const CENTRE_CADRE_CARTES = { left: { x: 178, y: 863 }, right: { x: 1741, y: 863 } } as const;
+const DEMI_HAUTEUR_CADRE_CARTES = 181.5;
+// Allan trouvait les cartes un peu petites à l'écran (222 x 310 px). Sur quatre tailles
+// vues dans OBS, il a choisi +15 % le 15 novembre 2026 : 255 x 356 px, et 15 px d'air de
+// chaque côté du cadre. La colonne fait 346 px entre ses filets et laisse 436 px sous
+// les manches : le cadre y tient jusqu'à 1,2, bord à bord.
+const TAILLE_CARTES = 1.15;
+
+/**
+ * Où l'overlay pose le calque d'un cadre de cartes : son échelle, puis son décalage.
+ *
+ * Ici et pas dans la page : le gabarit Photoshop montre ces cadres en repère, et il les
+ * dessinait à leur place d'origine. Le compact les avait déplacés, puis le +15 % les a
+ * agrandis : un streamer qui dessinait autour du repère tombait jusqu'à 27 px à côté.
+ * La page et `npm run gen:decor` lisent maintenant la même règle.
+ *
+ * Complet : au milieu de la colonne, entre les manches et le bas de l'écran. Compact :
+ * dans le coin du bas, à la taille du dessin. Le cadre est une image : toute échelle
+ * autre que 1 étale son trait doré, et un décalage en demi-pixel aussi, d'où les entiers.
+ */
+export function placementCartes(cote: Cote, compact = false): { e: number; dx: number; dy: number } {
+  const centre = CENTRE_CADRE_CARTES[cote];
+  const e = compact ? 1 : TAILLE_CARTES;
+  const cible = compact
+    ? { x: cote === "left" ? 167.6 : 1751.55, y: 1049.8 - DEMI_HAUTEUR_CADRE_CARTES * e }
+    : { x: cote === "left" ? 172 : 1747, y: 858 };
+  return { e, dx: Math.round(cible.x - e * centre.x), dy: Math.round(cible.y - e * centre.y) };
+}
+
 /**
  * Le compact n'a pas de colonne : il pose le panneau et le bas de colonne l'un sous
  * l'autre dans le coin, réduits. Il part sur un téléphone, où chaque pixel de vidéo
