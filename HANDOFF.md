@@ -24,8 +24,8 @@ de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe av
   dessin a changé sans ses images.
 - Les manches lisent `manchesPourGagner` ; les tests de `nomEtTitre` et `encreSur` sont
   dans `overlay.test.ts`.
-- `psd-tools` manque sur ce poste : pour lancer `gen:decor` en entier, mettre devant
-  le `PATH` un Python qui l'a (un `venv` suffit, le script appelle `python`).
+- `psd-tools` est installé sur le poste d'Allan depuis le 15 novembre au soir :
+  `npm run gen:decor` y passe en entier, sans rien changer aux fichiers committés.
 
 **Audit à l'écran** (demandé par Allan : l'audit du 11 novembre laissait l'overlay, le
 tableau de bord et le compagnon de côté). Compte de test local (`seed-test-user.mts`),
