@@ -811,20 +811,6 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Score et chrono")}</h2>
-        {/* Une liste qui n'a pas chargé se voit et se retente. Muette, elle laissait
-            un menu vide sans dire pourquoi, en plein direct. */}
-        {([
-          [erreursListes.legendes, chargerLegendes] as const,
-          [erreursListes.terrains, chargerTerrains] as const,
-          [erreursListes.champions, rechargerChampions] as const,
-        ]).map(([message, relancer], i) => message && (
-          <p key={i} role="alert" className="flex flex-wrap items-center gap-2 rounded-lg border border-hairline bg-surface p-3 text-sm text-error-light">
-            <span>{message}</span>
-            <button type="button" onClick={relancer} className={`${btnVide} ml-auto`}>
-              <RefreshCw size={15} aria-hidden />{t("Réessayer")}
-            </button>
-          </p>
-        ))}
         {/* Points et manches en tête de page : c'est ce qu'on touche à chaque minute du
             direct. Rangés au bas de la fiche de chaque joueur, ils tombaient sous cinq
             champs qu'on ne remplit qu'une fois, à plus d'un écran du haut. Deux colonnes
@@ -853,18 +839,6 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
                     <button aria-label={`${t("Une manche de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
                   </div>
                 </div>
-                {/* Avec le score et pas avec la Légende : on le change à chaque manche. */}
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
-                  <select
-                    value={p.battlefields[0] ?? ""}
-                    onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
-                    className={inputCls}
-                  >
-                    <option value="">{t("Aucun")}</option>
-                    {battlefields.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}
-                  </select>
-                </label>
               </div>
             );
           })}
@@ -1199,6 +1173,20 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Joueurs")}</h2>
+        {/* Une liste qui n'a pas chargé se voit et se retente. Muette, elle laissait
+            un menu vide sans dire pourquoi, en plein direct. */}
+        {([
+          [erreursListes.legendes, chargerLegendes] as const,
+          [erreursListes.terrains, chargerTerrains] as const,
+          [erreursListes.champions, rechargerChampions] as const,
+        ]).map(([message, relancer], i) => message && (
+          <p key={i} role="alert" className="flex flex-wrap items-center gap-2 rounded-lg border border-hairline bg-surface p-3 text-sm text-error-light">
+            <span>{message}</span>
+            <button type="button" onClick={relancer} className={`${btnVide} ml-auto`}>
+              <RefreshCw size={15} aria-hidden />{t("Réessayer")}
+            </button>
+          </p>
+        ))}
         <div className="grid gap-4 sm:grid-cols-2">
           {([0, 1] as const).map((i) => {
             const p = state.players[i];
@@ -1236,6 +1224,18 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
                   <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
                     <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
                     {champs[i].map((c) => <option key={c} value={c}>{nomsZh(c)}</option>)}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
+                  <select
+                    value={p.battlefields[0] ?? ""}
+                    onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
+                    className={inputCls}
+                  >
+                    <option value="">{t("Aucun")}</option>
+                    {battlefields.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}
                   </select>
                 </label>
 
