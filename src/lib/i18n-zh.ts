@@ -62,6 +62,7 @@ export const ZH: Record<string, string> = {
   "Voir la nouvelle version": "查看新版",
   "Version compacte": "精簡版",
   "Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.": "你自己的背景圖是用舊範本做的：新版不會顯示它。請用新範本重做，12 月 1 日起再上傳。",
+  "Un décor à vous ? Pour la nouvelle version, partez du nouveau gabarit et envoyez-le à partir du 1er décembre : envoyé avant, elle ne l’affichera pas.": "想用自己的背景圖？新版請用新範本製作，12 月 1 日起再上傳：提早上傳的話，新版不會顯示它。",
   "Nouveau gabarit": "新範本",
   "Nouveau gabarit compact": "新的精簡版範本",
   "Reprendre le décor du site": "改回網站預設背景",

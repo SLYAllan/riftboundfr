@@ -543,21 +543,27 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
               {t("Version compacte")}
             </a>
           </div>
-          {(state.event.backgroundUrl || state.event.backgroundNocamUrl || state.event.backgroundCompactUrl) && (
-            <div className="mt-3 border-t border-hairline pt-3">
-              <p className="max-w-3xl text-pretty text-sm text-ink-secondary">{t("Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.")}</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <a href="/stream/gabarit.psd" download className={btnVide}>
-                  <Download size={15} aria-hidden />
-                  {t("Nouveau gabarit")}
-                </a>
-                <a href="/stream/gabarit_compact.psd" download className={btnVide}>
-                  <Download size={15} aria-hidden />
-                  {t("Nouveau gabarit compact")}
-                </a>
-              </div>
+          {/* Pour tout le monde, décor déjà envoyé ou non : plus bas, le bouton « Gabarit
+              Photoshop » donne encore l'ANCIEN gabarit jusqu'à la bascule. Sans ces liens,
+              qui se lançait dans son premier décor en novembre le dessinait sur l'ancien,
+              et la nouvelle version ne l'aurait pas affiché. */}
+          <div className="mt-3 border-t border-hairline pt-3">
+            <p className="max-w-3xl text-pretty text-sm text-ink-secondary">
+              {state.event.backgroundUrl || state.event.backgroundNocamUrl || state.event.backgroundCompactUrl
+                ? t("Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.")
+                : t("Un décor à vous ? Pour la nouvelle version, partez du nouveau gabarit et envoyez-le à partir du 1er décembre : envoyé avant, elle ne l’affichera pas.")}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <a href="/stream/gabarit.psd" download className={btnVide}>
+                <Download size={15} aria-hidden />
+                {t("Nouveau gabarit")}
+              </a>
+              <a href="/stream/gabarit_compact.psd" download className={btnVide}>
+                <Download size={15} aria-hidden />
+                {t("Nouveau gabarit compact")}
+              </a>
             </div>
-          )}
+          </div>
         </section>
       )}
 

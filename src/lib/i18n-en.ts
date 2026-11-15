@@ -231,6 +231,7 @@ export const EN: Record<string, string> = {
   "Voir la nouvelle version": "See the new version",
   "Version compacte": "Compact version",
   "Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.": "Your own overlay art is built on the old template: the new version will not show it. Redo it on the new template, then upload it from December 1.",
+  "Un décor à vous ? Pour la nouvelle version, partez du nouveau gabarit et envoyez-le à partir du 1er décembre : envoyé avant, elle ne l’affichera pas.": "Want your own overlay art? For the new version, start from the new template and upload it from December 1: uploaded earlier, the new version will not show it.",
   "Nouveau gabarit": "New template",
   "Nouveau gabarit compact": "New compact template",
   "Reprendre le décor du site": "Back to the site art",

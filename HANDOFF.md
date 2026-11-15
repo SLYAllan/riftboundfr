@@ -114,8 +114,9 @@ un avertissement, le 1er décembre on passe sur la nouvelle version »). Règle 
   recompressé les icônes d'Ornn et de Draven depuis. Ses images sont revenues à leur
   place ; les trois fichiers de la nouvelle version qui portaient le même nom s'appellent
   `decor_chrono.webp`, `gabarit.psd` et `gabarit_compact.psd`.
-- Le tableau de bord porte un bandeau jusqu'à la bascule : lien d'aperçu à copier, et,
-  pour qui a envoyé un décor, les nouveaux gabarits. Sous « Classement ou score » : ce
+- Le tableau de bord porte un bandeau jusqu'à la bascule : lien d'aperçu à copier, et
+  les nouveaux gabarits, pour tout le monde (les boutons « Gabarit Photoshop » plus bas
+  donnent encore l'ancien jusqu'au 30 novembre, puis le nouveau). Sous « Classement ou score » : ce
   champ n'existe que dans la nouvelle version.
 - **Décors des streamers** : la nouvelle version ne pose pas un décor envoyé avant la
   bascule (son adresse porte l'heure de l'envoi). Limite connue : on ne peut pas essayer
