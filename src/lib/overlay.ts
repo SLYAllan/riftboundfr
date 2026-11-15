@@ -453,6 +453,48 @@ export function echelleOverlay(largeur: number, hauteur: number): number {
   return Math.min(largeur / TOILE.largeur, hauteur / TOILE.hauteur);
 }
 
+/**
+ * De combien réduire un texte pour qu'il tienne en `lignes` lignes de `chars` caractères.
+ *
+ * Sur une ligne, c'est une règle de trois. Sur plusieurs, il faut compter les mots :
+ * « REGIONAL CHAMPIONSHIP EUROPE » fait 28 caractères pour 26 de place, mais aucune
+ * coupe entre deux mots ne le range en deux lignes de 14. Compté en caractères seuls, il
+ * partait sur trois lignes et la dernière finissait en « … ». On cherche donc la plus
+ * petite ligne qui range les mots, et on réduit d'autant.
+ *
+ * Jamais sous 0,45 : en dessous le texte ne se lit plus, mieux vaut le voir coupé.
+ */
+export function echelleTexte(texte: string, chars: number, lignes = 1): number {
+  const mots = texte.trim().split(/\s+/);
+  // Le chinois se coupe entre deux signes : un mot sans espace n'y est pas insécable.
+  const secable = (mot: string) => /[⺀-鿿豈-﫿＀-￯]/.test(mot);
+  const lignesPour = (capacite: number) => {
+    let n = 1;
+    let reste = capacite;
+    for (const mot of mots) {
+      let longueur = mot.length;
+      if (longueur > reste && secable(mot)) {
+        longueur -= Math.max(reste, 0);
+        n += Math.ceil(longueur / capacite);
+        reste = capacite - ((longueur - 1) % capacite) - 2;
+        continue;
+      }
+      if (longueur > capacite) return Infinity;
+      if (longueur > reste) {
+        n++;
+        reste = capacite;
+      }
+      reste -= longueur + 1;
+    }
+    return n;
+  };
+  const total = mots.join(" ").length;
+  for (let capacite = chars; capacite <= total; capacite++) {
+    if (lignesPour(capacite) <= lignes) return Math.max(0.45, chars / capacite);
+  }
+  return 1;
+}
+
 export function makeToken(): string {
   // Token public de l'overlay OBS : aléatoire cryptographique (isomorphe Node 18+/navigateur).
   const bytes = new Uint8Array(16);

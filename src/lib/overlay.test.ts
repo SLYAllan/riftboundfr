@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, secondesChrono, encreSur, nomEtTitre } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, echelleTexte, secondesChrono, encreSur, nomEtTitre } from "./overlay";
 
 describe("nomEtTitre", () => {
   it("coupe à la virgule, chinoise comprise", () => {
@@ -11,6 +11,39 @@ describe("nomEtTitre", () => {
   it("laisse entier un nom sans titre, tiret dans le mot compris", () => {
     expect(nomEtTitre("Légende")).toEqual(["Légende", ""]);
     expect(nomEtTitre("Jarvan-IV")).toEqual(["Jarvan-IV", ""]);
+  });
+});
+
+describe("echelleTexte", () => {
+  it("laisse à pleine taille un texte qui tient", () => {
+    expect(echelleTexte("ROUND 7", 15)).toBe(1);
+    expect(echelleTexte("Riftbound France", 13, 2)).toBe(1);
+    expect(echelleTexte("", 13, 2)).toBe(1);
+  });
+
+  it("réduit une ligne trop longue en proportion", () => {
+    expect(echelleTexte("+02:44", 5)).toBeCloseTo(5 / 6);
+    expect(echelleTexte("LOSERS BRACKET ROUND 4", 15)).toBeCloseTo(15 / 22);
+  });
+
+  it("compte les mots sur deux lignes : aucun ne part sur une troisième", () => {
+    // 28 caractères pour 26 de place : compté en caractères, il gardait presque sa
+    // taille et « EUROPE » partait en « … ».
+    expect(echelleTexte("Regional Championship Europe", 13, 2)).toBeCloseTo(13 / 19);
+    expect(echelleTexte("Regional Championship Europe Stuttgart 2026", 13, 2)).toBeCloseTo(13 / 21);
+  });
+
+  it("réduit un mot plus long que la ligne, même s'il y a de la place en caractères", () => {
+    expect(echelleTexte("Championnatdefrance", 13, 2)).toBeCloseTo(13 / 19);
+  });
+
+  it("coupe le chinois entre deux signes", () => {
+    expect(echelleTexte("武汉区域公开赛第三轮决赛现场直播比赛", 13, 2)).toBe(1);
+    expect(echelleTexte("武汉区域公开赛第三轮决赛现场直播比赛", 13)).toBeCloseTo(13 / 18);
+  });
+
+  it("ne descend jamais sous 0,45", () => {
+    expect(echelleTexte("W".repeat(120), 13)).toBe(0.45);
   });
 });
 

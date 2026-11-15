@@ -493,11 +493,12 @@ function Timer({ endsAt, paused, depassement, monte }: { endsAt?: string | null;
       {/* Encre rouge sombre pour le dépassement : sur la case orange, un rouge clair
           passerait inaperçu. */}
       <div className={`w-full text-[41px] leading-none tabular-nums ${enRetard ? "text-[#5c0b08]" : "text-[#211a29]"}`}>
-        {/* Au-delà de 99 minutes il y a un chiffre de plus, et « +180:00 » débordait
-            de la case. `FitText` réduit alors ce qu'il faut, sans jamais couper. */}
+        {/* Cinq caractères tiennent dans la case (« 88:88 » fait 129 px sur 150). Avec
+            un sixième, « +02:44 » ou « 120:00 » en faisaient 158 et le dernier chiffre
+            était rogné : `FitText` réduit donc dès le sixième, sans jamais couper. */}
         {/* `fondu={false}` : le chrono change chaque seconde, l'apparition en fondu
             le faisait clignoter en continu. */}
-        <FitText chars={6} fondu={false}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
+        <FitText chars={5} fondu={false}>{`${enRetard ? "+" : ""}${mm}:${ss}`}</FitText>
       </div>
     </div>
   );

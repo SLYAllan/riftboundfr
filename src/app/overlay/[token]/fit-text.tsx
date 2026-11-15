@@ -1,4 +1,5 @@
 "use client";
+import { echelleTexte } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 
 /**
@@ -36,9 +37,7 @@ export function FitText({
    *  c'est l'ordre de la feuille de style qui trancherait, pas celui du composant. */
   alignement?: "text-center" | "text-left" | "text-right";
 }) {
-  const n = children.length;
-  const capacite = chars * lines;
-  const k = n > capacite ? Math.max(0.45, capacite / n) : 1;
+  const k = echelleTexte(children, chars, lines);
   const multi = lines > 1;
   return (
     <span className={`block w-full overflow-hidden ${alignement} ${className}`}>
