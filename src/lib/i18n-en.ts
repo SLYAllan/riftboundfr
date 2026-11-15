@@ -202,7 +202,7 @@ export const EN: Record<string, string> = {
   "Une manche de moins": "Remove a game",
   "Une manche de plus": "Add a game",
   joueur: "player",
-  "Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.":
+  "Gardez ce lien pour vous : qui l’a peut voir votre overlay. « Nouveau lien » rend l’ancien inutilisable.":
     "Keep this link private: anyone who has it can see your overlay. “New link” kills the old one.",
   "Pas de caméra ni de cadre ?": "No camera or frame?",
   "Décor": "Overlay art",

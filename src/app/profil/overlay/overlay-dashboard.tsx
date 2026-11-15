@@ -532,10 +532,12 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </div>
       )}
 
-      {/* `open` : ce bloc porte le mode d'emploi de la première fois, le lien à coller
-          dans OBS et le lien du compagnon. Replié d'office, un nouveau venu ouvrait la
-          page et n'y trouvait rien à faire. Il se replie une fois le stream monté. */}
-      <details open className="group rounded-xl border border-hairline bg-surface">
+      {/* Ce bloc porte le mode d'emploi de la première fois, le lien à coller dans OBS
+          et le lien du compagnon. Replié d'office, un nouveau venu ouvrait la page et n'y
+          trouvait rien à faire : il reste donc ouvert tant qu'aucune Légende n'est posée.
+          Ensuite le stream est monté, et ce volet ouvert repoussait les points à 2,4 écrans
+          du haut de la page (3,8 sur téléphone), à chaque ouverture, en plein direct. */}
+      <details open={!initial.players.some((joueur) => joueur.legendName)} className="group rounded-xl border border-hairline bg-surface">
         <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-semibold">
           <span>{t("Liens et affichage OBS")}</span>
           <span className="text-sm font-normal text-ink-muted group-open:hidden">{t("Ouvrir")}</span>
@@ -582,7 +584,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
           />
         </div>
         <p className="mt-2 text-xs text-ink-muted">
-          {t("Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.")}
+          {t("Gardez ce lien pour vous : qui l’a peut voir votre overlay. « Nouveau lien » rend l’ancien inutilisable.")}
         </p>
         {erreurLien && <p role="alert" className="mt-2 text-xs text-error-light">{erreurLien}</p>}
 

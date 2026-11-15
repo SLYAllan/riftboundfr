@@ -43,7 +43,7 @@ export const ZH: Record<string, string> = {
   "Copier": "複製",
   "Nouveau lien": "換新連結",
   "Confirmer ?": "確定嗎？",
-  "Gardez ce lien pour vous : qui l’a peut voir votre habillage. « Nouveau lien » rend l’ancien inutilisable.": "這個連結請自己留著：拿到的人就能看到你的 Overlay。按「換新連結」會讓舊的連結失效。",
+  "Gardez ce lien pour vous : qui l’a peut voir votre overlay. « Nouveau lien » rend l’ancien inutilisable.": "這個連結請自己留著：拿到的人就能看到你的 Overlay。按「換新連結」會讓舊的連結失效。",
   "Décor": "背景圖",
   "Avec cadres caméra": "含攝影機框",
   "Sans cadres caméra": "不含攝影機框",
