@@ -7,7 +7,7 @@ poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novem
 `41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
 branche, plus de `git revert` à faire.
 
-**Porte sur la branche** : `tsc` 0, 82 fichiers et 476 tests, `eslint src` 0 erreur.
+**Porte sur la branche** : `tsc` 0, 82 fichiers et 477 tests, `eslint src` 0 erreur.
 `next build` 0 sur le dernier commit de code, les deux versions comprises.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
@@ -47,6 +47,10 @@ capture dans OBS sur une scène d'essai retirée ensuite.
    Boutons Gauche et Droite sur chaque résultat de recherche, glisser-déposer vers un
    joueur, flèche pour changer de côté. Règle : `montrerCarteDuCote` (`overlay.ts`).
    Essayé dans le vrai tableau de bord, état relu en base après chaque geste.
+   **Vu dans OBS sur les deux versions**, qui partagent le tableau de bord : les quatre
+   gestes s'affichent sur l'ancienne comme sur la nouvelle, compact compris. Quand la
+   gauche perd sa dernière carte, on revient à un seul cadre : resté en deux cadres, le
+   cadre vide gardait la place du chrono et du logo.
 2. **Cartes à l'écran 15 % plus grandes**, choix d'Allan sur quatre tailles vues dans OBS
    (actuelle, +10, +15, +20 %). `TAILLE_CARTES = 1.15` dans `overlay-full.tsx` : carte de
    255 x 356 px au lieu de 222 x 310. Le cadre tient jusqu'à 1,2, bord à bord. Le
@@ -91,7 +95,11 @@ et la règle des décors dans `overlay-full.tsx`.
    prévenir. Lecture de la prod pas encore autorisée.
 3. Remonter points, manches et chrono dans le tableau de bord (proposé, pas fait).
 
-**Deux pièges d'outillage payés ce jour-là :**
+**Trois pièges d'outillage payés ce jour-là :**
+- Un `next dev` relancé après un arrêt forcé rechargeait chaque page en boucle, sans
+  erreur : le serveur envoyait `reloadPage`, « HMR hash mismatch », à chaque chargement
+  (lu sur le WebSocket `/_next/hmr`). Mettre `.next/dev` de côté et relancer. Cause non
+  établie : l'arrêt forcé, ou un `next build` lancé dans le même arbre, serveur allumé.
 - Un serveur `next dev` engorgé (1,4 Go, 15 s pour `/api/health`) rend à OBS une source
   vide, sans erreur : la capture montre le fond seul. Attendre que la source ait des
   pixels avant de capturer, et relancer le serveur s'il traîne.

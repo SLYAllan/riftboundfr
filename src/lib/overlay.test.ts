@@ -38,6 +38,15 @@ describe("montrerCarteDuCote", () => {
     expect(carteAuCadre(c, 1)).toBe("Ahri, Alluring");
   });
 
+  it("revient à un seul cadre quand la gauche perd sa dernière carte", () => {
+    // Resté en deux cadres, le cadre de gauche, vide, gardait la place du chrono et du logo.
+    const c = montrerCarteDuCote(cartes({ lists: [["Jayce, Brilliant Inventor"], ["Ahri, Alluring"]], mode: "split", index: [0, 0] }), 1, "Jayce, Brilliant Inventor");
+    expect(c.mode).toBe("mixed");
+    expect(carteAuCadre(c, 1)).toBe("Jayce, Brilliant Inventor");
+    // Tant qu'il reste une carte à gauche, les deux cadres restent.
+    expect(montrerCarteDuCote(cartes({ lists: [["A", "B"], []], mode: "split", index: [0, -1] }), 1, "A").mode).toBe("split");
+  });
+
   it("laisse à l'autre cadre sa carte, même si sa liste a perdu une ligne", () => {
     const c = montrerCarteDuCote(cartes({ lists: [["A", "B", "C"], ["X"]], mode: "split", index: [2, 0] }), 1, "A");
     expect(c.lists).toEqual([["B", "C"], ["X", "A"]]);

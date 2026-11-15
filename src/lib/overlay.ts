@@ -191,7 +191,9 @@ export function carteAuCadre(cards: OverlayStateData["cards"], cadre: 0 | 1): st
  *
  * À gauche il faut les deux cadres : celui de gauche n'existe que là. À droite on garde
  * l'affichage en cours, ou un seul cadre si rien n'était montré, pour laisser le chrono
- * et le logo à l'écran.
+ * et le logo à l'écran. Un seul cadre aussi quand la gauche vient de perdre sa dernière
+ * carte : glisser à droite la seule carte de gauche laissait un cadre vide à la place
+ * du chrono et du logo (vu dans OBS, dans les deux versions).
  */
 export function montrerCarteDuCote(cards: OverlayStateData["cards"], cote: 0 | 1, nom: string): OverlayStateData["cards"] {
   const autre = cote === 0 ? 1 : 0;
@@ -201,7 +203,7 @@ export function montrerCarteDuCote(cards: OverlayStateData["cards"], cote: 0 | 1
   lists[autre] = lists[autre].filter((c) => c !== nom);
   if (!lists[cote].includes(nom)) lists[cote].push(nom);
   const ignored: [string[], string[]] = [cards.ignored[0].filter((c) => c !== nom), cards.ignored[1].filter((c) => c !== nom)];
-  const mode = cote === 0 ? "split" : cards.mode === "none" ? "mixed" : cards.mode;
+  const mode = cote === 0 ? "split" : cards.mode === "none" || lists[0].length === 0 ? "mixed" : cards.mode;
   const index: [number, number] = [cards.index[0], cards.index[1]];
   if (mode === "mixed") {
     index[1] = entrelace(lists[0], lists[1]).indexOf(nom);
