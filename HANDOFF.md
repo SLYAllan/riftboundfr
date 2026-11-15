@@ -1,19 +1,36 @@
 # HANDOFF — état des lieux
 
-## 15 novembre 2026 — overlay : remis sur une branche, audité (code et écran), cartes et tableau de bord repris
+## 15 et 16 novembre 2026 — overlay : remis sur une branche, audité, repris avec Allan, branche poussée
 
-**L'overlay du 8 novembre vit sur la branche `feat/overlay-retransmission`**, locale, pas
-poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novembre et annule
+**L'overlay du 8 novembre vit sur la branche `feat/overlay-retransmission`, poussée le
+16 novembre** à la demande d'Allan, après l'audit final ci-dessous. `main` ne le porte toujours pas. La branche part du `main` du 13 novembre et annule
 `41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
 branche, plus de `git revert` à faire.
 
 **Porte sur la branche** : `tsc` 0, 82 fichiers et 480 tests, `eslint src` 0 erreur.
-`next build` 0 sur `20be2aea8`, les deux versions comprises. **Pas relancé depuis** :
-les commits du soir (cadres de cartes, fond du compact, repères des gabarits, tuto)
-n'ont que types, tests et lint. À relancer avant de pousser, serveur de dev éteint.
+`next build` 0 sur `280d744ac`, le dernier commit de code, dans une copie à part de la
+branche (le serveur de dev tournait pour Allan).
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
 `--testTimeout 30000`. Rien à voir avec l'overlay.
+
+**Audit final du 16 novembre, avant de pousser :**
+- Overlay, 7 états × 4 vues (complet, compact, `/zh`, 1280x720), nouvelle version puis
+  ancienne : aucune image cassée, aucune erreur console, aucune requête en échec. Seul
+  texte rogné : le pseudo de seize « W », limite déjà connue.
+- Tableau de bord et compagnon, 5 largeurs de 320 à 1440 px : aucun débordement, aucun
+  texte rogné, aucune violation axe-core, aucun champ sous 16 px, aucune erreur console.
+- Compagnon rejoué de bout en bout comme un joueur : 18 contrôles sur 18.
+- Couleurs des points changées depuis le tableau de bord, vues dans OBS sur les deux
+  versions : point seul, point clair (le chiffre passe au sombre), point et chiffres,
+  écu du milieu quand un joueur atteint le maximum, retour aux couleurs d'origine.
+- Diff de la branche relu : pas de reste d'essai. `origin/main` n'a pas bougé depuis la
+  base de la branche.
+
+**Reste à faire, dans l'ordre, avant le tweet :** fusionner la branche dans `main`
+(dans un arbre à part : le dossier `RiftboundFr` porte le travail d'autres sessions),
+pousser `main`, Deploy par Allan dans Coolify, vérifier en prod le bandeau, le lien
+d'aperçu et les quatre gabarits, puis le tweet (`content/tweets/`).
 
 **Audit du code** (revue de la branche, dix constats, chacun vérifié avant correction) :
 - Ronde et classement coupés, mesurés sur les avances de la police : `PX_PAR_CARACTERE`
@@ -146,8 +163,9 @@ classement dans `overlay-dashboard.tsx`, leurs textes dans `i18n-en.ts` et `i18n
 et la règle des décors dans `overlay-full.tsx`.
 
 **Reste à trancher par Allan :**
-1. Pousser la branche, puis la fusionner dans `main` et lancer le Deploy : c'est lui qui
-   décide quand. Le bandeau n'a de sens que si le Deploy part bien avant le 1er décembre.
+1. Fusionner la branche (poussée le 16 novembre) dans `main` et lancer le Deploy : c'est
+   lui qui décide quand. Le bandeau n'a de sens que si le Deploy part bien avant le
+   1er décembre.
 2. Compter en prod les décors déjà envoyés (`backgroundUrl`, `backgroundNocamUrl`,
    `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
    prévenir. Lecture de la prod pas encore autorisée.
