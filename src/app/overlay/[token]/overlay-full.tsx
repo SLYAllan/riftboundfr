@@ -25,14 +25,26 @@ const BAS_GAUCHE = {
 } as const;
 
 // Le cadre de cartes est dessiné à demeure dans une image pleine toile : on ne peut que
-// transformer le calque entier, et la carte suit parce qu'elle est dedans. Ces images
-// sont centrées 6 px à côté de la colonne, d'où le décalage. En compact, elles sont
-// réduites et ramenées sous le bloc du joueur : les deux images sont la même à 1563 px
-// d'écart, et chacune se cale sur le milieu de son bloc.
-const CARTES = {
-  complet: { left: "translateX(-6px)", right: "translateX(6px)" },
-  compact: { left: "translate(16.3px, 162px) scale(0.85)", right: "translate(271.7px, 162px) scale(0.85)" },
-} as const;
+// transformer le calque entier, et la carte suit parce qu'elle est dedans. Le centre de
+// chaque dessin est relevé sur son canal alpha (275 x 363 px, de y = 682 à 1044) ;
+// `calqueCartes` amène ce centre où l'on veut, à l'échelle voulue.
+const CENTRE_CADRE = { left: { x: 178, y: 863 }, right: { x: 1741, y: 863 } } as const;
+const DEMI_HAUTEUR_CADRE = 181.5;
+// Allan trouvait les cartes un peu petites à l'écran (222 x 310 px). La colonne fait
+// 346 px entre ses filets et laisse 436 px sous les manches : le cadre y tient jusqu'à
+// 1,2, bord à bord. À 1,15 la carte fait 255 x 356 px et le cadre garde 15 px d'air de
+// chaque côté. Valeur à l'essai, à confirmer par Allan.
+const TAILLE_CARTES = 1.15;
+function calqueCartes(side: Cote, compact: boolean, taille: number): string {
+  const centre = CENTRE_CADRE[side];
+  // Complet : au milieu de la colonne, entre les manches et le bas de l'écran. Compact :
+  // sous le bloc du joueur, le bas du cadre ne bouge pas et il grandit vers le haut.
+  const e = compact ? 0.85 * taille : taille;
+  const cible = compact
+    ? { x: side === "left" ? 167.6 : 1751.55, y: 1049.8 - DEMI_HAUTEUR_CADRE * e }
+    : { x: side === "left" ? 172 : 1747, y: taille === 1 ? 863 : 858 };
+  return `translate(${cible.x - e * centre.x}px, ${cible.y - e * centre.y}px) scale(${e})`;
+}
 const CASE_CARTE = {
   left: { left: 61, top: 708, width: 235, height: 310 },
   right: { left: 1624, top: 708, width: 235, height: 310 },
@@ -448,11 +460,11 @@ function CarteAffiche({ actives, auto, index, seconds, slot }: { actives: string
 }
 
 /** Un cadre de cartes : le calque du gabarit et sa carte, transformés ensemble. */
-function CadreCartes({ side, visible, cards, actives, compact }: { side: Cote; visible: boolean; cards: OverlayStateData["cards"]; actives: string[]; compact: boolean }) {
+function CadreCartes({ side, visible, cards, actives, compact, taille }: { side: Cote; visible: boolean; cards: OverlayStateData["cards"]; actives: string[]; compact: boolean; taille: number }) {
   return (
     <div
       className="absolute inset-0 z-[11]"
-      style={{ transform: CARTES[compact ? "compact" : "complet"][side], transformOrigin: "0 0" }}
+      style={{ transform: calqueCartes(side, compact, taille), transformOrigin: "0 0" }}
     >
       {/* Le cadre suit le MODE et pas le nombre de cartes : on peut le poser vide, puis
           y charger le deck. */}
@@ -575,7 +587,7 @@ function useEchelle() {
  * chrono ni logo, sur un fond transparent. Pour qui stream depuis un téléphone
  * (Moblin), où l'image tient dans une main : d'où les points plus gros.
  */
-export function OverlayFull({ token, compact = false }: { token: string; compact?: boolean }) {
+export function OverlayFull({ token, compact = false, tailleCartes = TAILLE_CARTES }: { token: string; compact?: boolean; tailleCartes?: number }) {
   useEchelle();
   const state = useOverlayPoll(token);
   if (!state) return <div className={styles.root} />;
@@ -622,8 +634,8 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
       {!compact && <BasGauche event={event} vitrine={vitrine} />}
       {/* Deux cadres, gauche et droite. Le mode a déjà rempli `gauche`/`droite` : un
           deck chacun, ou les deux mêlés à droite. */}
-      <CadreCartes side="left" visible={mode === "split"} cards={cards} actives={gauche} compact={compact} />
-      <CadreCartes side="right" visible={mode === "mixed" || mode === "split"} cards={cards} actives={droite} compact={compact} />
+      <CadreCartes side="left" visible={mode === "split"} cards={cards} actives={gauche} compact={compact} taille={tailleCartes} />
+      <CadreCartes side="right" visible={mode === "mixed" || mode === "split"} cards={cards} actives={droite} compact={compact} taille={tailleCartes} />
     </div>
   );
 }
