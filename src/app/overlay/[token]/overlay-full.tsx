@@ -40,11 +40,14 @@ function calqueCartes(side: Cote, compact: boolean): string {
   const centre = CENTRE_CADRE[side];
   // Complet : au milieu de la colonne, entre les manches et le bas de l'écran. Compact :
   // sous le bloc du joueur, le bas du cadre ne bouge pas et il grandit vers le haut.
-  const e = compact ? 0.85 * TAILLE_CARTES : TAILLE_CARTES;
+  // Le cadre est une image dessinée à taille réelle : toute autre échelle l'étale. À
+  // 0,9775 (0,85 x 1,15) le compact brouillait son trait doré sans rien gagner en taille ;
+  // à 1 tout rond et sur des pixels entiers, il le rend tel qu'il est dessiné.
+  const e = compact ? 1 : TAILLE_CARTES;
   const cible = compact
     ? { x: side === "left" ? 167.6 : 1751.55, y: 1049.8 - DEMI_HAUTEUR_CADRE * e }
     : { x: side === "left" ? 172 : 1747, y: 858 };
-  return `translate(${cible.x - e * centre.x}px, ${cible.y - e * centre.y}px) scale(${e})`;
+  return `translate(${Math.round(cible.x - e * centre.x)}px, ${Math.round(cible.y - e * centre.y)}px) scale(${e})`;
 }
 const CASE_CARTE = {
   left: { left: 61, top: 708, width: 235, height: 310 },
