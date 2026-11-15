@@ -8,7 +8,7 @@ poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novem
 branche, plus de `git revert` à faire.
 
 **Porte sur la branche** : `tsc` 0, 81 fichiers et 469 tests, `eslint src` 0 erreur.
-`next build` 0 après l'audit du code ; à relancer après les derniers commits.
+`next build` 0, relancé après le dernier commit de code d'avant la taille des cartes.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
 `--testTimeout 30000`. Rien à voir avec l'overlay.
@@ -47,10 +47,10 @@ capture dans OBS sur une scène d'essai retirée ensuite.
    Boutons Gauche et Droite sur chaque résultat de recherche, glisser-déposer vers un
    joueur, flèche pour changer de côté. Règle : `montrerCarteDuCote` (`overlay.ts`).
    Essayé dans le vrai tableau de bord, état relu en base après chaque geste.
-2. **Cartes à l'écran plus grandes : À L'ESSAI, à confirmer.** `TAILLE_CARTES = 1.15`
-   dans `overlay-full.tsx` (carte de 255 x 356 px au lieu de 222 x 310). Le cadre tient
-   jusqu'à 1,2. **À retirer une fois la taille choisie** : le paramètre `?cartes=` de
-   `src/app/overlay/[token]/page.tsx`, qui sert à comparer (`?cartes=1`, `1.1`, `1.2`).
+2. **Cartes à l'écran 15 % plus grandes**, choix d'Allan sur quatre tailles vues dans OBS
+   (actuelle, +10, +15, +20 %). `TAILLE_CARTES = 1.15` dans `overlay-full.tsx` : carte de
+   255 x 356 px au lieu de 222 x 310. Le cadre tient jusqu'à 1,2, bord à bord. Le
+   paramètre d'essai `?cartes=` est retiré.
 3. **Tableau de bord** : le volet « Liens et affichage OBS » se replie dès qu'une
    Légende est posée. Points à 0,9 écran du haut au lieu de 2,4 (1440x900), 1,0 au lieu
    de 3,8 (375x812). **Proposé, pas fait** : remonter points, manches et chrono
@@ -64,7 +64,6 @@ capture dans OBS sur une scène d'essai retirée ensuite.
 2. **Deploy pendant un direct** : une source OBS ouverte avant garde l'ancienne page, qui
    demande `/stream/6_full.webp` au premier joueur à 6 points et reçoit un 404. Soit
    remettre les 40 images de pastilles une version de plus, soit accepter.
-3. **La taille des cartes** (point 2 ci-dessus).
 
 **Deux pièges d'outillage payés ce jour-là :**
 - Un serveur `next dev` engorgé (1,4 Go, 15 s pour `/api/health`) rend à OBS une source
