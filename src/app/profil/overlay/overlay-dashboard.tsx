@@ -810,38 +810,210 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
       </details>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Score et chrono")}</h2>
-        {/* Points et manches en tête de page : c'est ce qu'on touche à chaque minute du
-            direct. Rangés au bas de la fiche de chaque joueur, ils tombaient sous cinq
-            champs qu'on ne remplit qu'une fois, à plus d'un écran du haut. Deux colonnes
-            même sur téléphone : les deux scores se lisent d'un coup d'œil. */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Joueurs et score")}</h2>
+        {/* Une liste qui n'a pas chargé se voit et se retente. Muette, elle laissait
+            un menu vide sans dire pourquoi, en plein direct. */}
+        {([
+          [erreursListes.legendes, chargerLegendes] as const,
+          [erreursListes.terrains, chargerTerrains] as const,
+          [erreursListes.champions, rechargerChampions] as const,
+        ]).map(([message, relancer], i) => message && (
+          <p key={i} role="alert" className="flex flex-wrap items-center gap-2 rounded-lg border border-hairline bg-surface p-3 text-sm text-error-light">
+            <span>{message}</span>
+            <button type="button" onClick={relancer} className={`${btnVide} ml-auto`}>
+              <RefreshCw size={15} aria-hidden />{t("Réessayer")}
+            </button>
+          </p>
+        ))}
+        <div className="grid gap-4 sm:grid-cols-2">
           {([0, 1] as const).map((i) => {
             const p = state.players[i];
             const pts = i === 0 ? state.points.a : state.points.b;
             const key = i === 0 ? "a" : "b";
             return (
-              <div key={i} className="min-w-0 space-y-2 rounded-xl border border-hairline bg-surface p-3 sm:p-4">
-                <h3 className="truncate text-sm font-semibold text-ink-secondary">{p.name || `${t("Joueur")} ${i + 1}`}</h3>
-                <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
-                  <span className="text-sm text-ink-secondary">{t("Points")}</span>
-                  <div className="flex items-center gap-2">
-                    <button aria-label={`${t("Un point de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
-                    <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
-                    <button aria-label={`${t("Un point de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
+              <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
+                <h3 className="text-sm font-semibold text-ink-secondary">{t("Joueur")} {i + 1}</h3>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Pseudo")}</span>
+                  <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder={t("Son pseudo")} className={inputCls} />
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
+                  <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} className={inputCls} />
+                  {/* Jusqu'à la bascule, le lien OBS montre l'ancienne version, qui n'a pas de
+                      classement : sans ce mot, on remplit le champ et rien n'apparaît. */}
+                  {avantBascule && <span className="mt-1 block text-xs text-ink-muted">{t("Affiché par la nouvelle version seulement.")}</span>}
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span>
+                  <select
+                    value={p.legendId ?? ""}
+                    onChange={(e) => { const l = legends.find((x) => x.id === e.target.value); setPlayer(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }}
+                    className={inputCls}
+                  >
+                    <option value="">{t("À choisir…")}</option>
+                    {legends.map((l) => <option key={l.id} value={l.id}>{nomsZh(l.name)}</option>)}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span>
+                  <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
+                    <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
+                    {champs[i].map((c) => <option key={c} value={c}>{nomsZh(c)}</option>)}
+                  </select>
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
+                  <select
+                    value={p.battlefields[0] ?? ""}
+                    onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
+                    className={inputCls}
+                  >
+                    <option value="">{t("Aucun")}</option>
+                    {battlefields.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}
+                  </select>
+                </label>
+                <div className="rounded-lg bg-surface-raised/50 p-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm text-ink-secondary">{t("Points")}</span>
+                    <div className="flex items-center gap-2">
+                      <button aria-label={`${t("Un point de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts - 1, state.maxPoints) } } as never)} disabled={pts <= 0} className={btnStep}>−</button>
+                      <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{pts}</span>
+                      <button aria-label={`${t("Un point de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => update({ points: { [key]: borne(pts + 1, state.maxPoints) } } as never)} disabled={pts >= state.maxPoints} className={btnStep}>+</button>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center justify-between gap-2">
+                    <span className="text-sm text-ink-secondary">{t("Manches gagnées")}</span>
+                    <div className="flex items-center gap-2">
+                      <button aria-label={`${t("Une manche de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
+                      <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
+                      <button aria-label={`${t("Une manche de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
+                    </div>
                   </div>
                 </div>
-                <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
-                  <span className="text-sm text-ink-secondary">{t("Manches gagnées")}</span>
-                  <div className="flex items-center gap-2">
-                    <button aria-label={`${t("Une manche de moins")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon - 1, manchesMax) })} disabled={p.gamesWon <= 0} className={btnStep}>−</button>
-                    <span aria-live="polite" aria-atomic="true" className="w-7 text-center text-base font-bold tabular-nums">{p.gamesWon}</span>
-                    <button aria-label={`${t("Une manche de plus")}, ${t("joueur")} ${i + 1}`} onClick={() => setPlayer(i, { gamesWon: borne(p.gamesWon + 1, manchesMax) })} disabled={p.gamesWon >= manchesMax} className={btnStep}>+</button>
+
+                {/* Décor sans cadres : plus rien où poser une caméra. On enlève les
+                    champs plutôt que de les laisser sans effet visible. */}
+                {!sansCam && (
+                <details className="rounded-lg border border-hairline bg-surface-raised/40">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-3 py-2 text-sm text-ink-secondary">
+                    <span>{t("Caméra du joueur")}</span><span className="text-xs text-ink-muted">{t("Optionnel")}</span>
+                  </summary>
+                  <div className="border-t border-hairline p-3">
+                  <span className="mb-1 block text-xs text-ink-muted">{t("Lien VDO.Ninja")}</span>
+                  {/* `flex-wrap` + `min-w-full` : avec une caméra chargée il y a trois
+                      boutons sur la ligne, et sur un téléphone le champ tombait à 26 px.
+                      On ne pouvait plus ni lire ni corriger le lien. Le champ prend
+                      toute la ligne sous 640 px, les boutons passent dessous. */}
+                  <div className="flex flex-wrap gap-2">
+                    <input
+                      value={brouillonCam[i]}
+                      onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
+                      placeholder="https://vdo.ninja/?view=..."
+                      aria-label={`${t("Caméra (lien VDO.Ninja)")}, ${t("joueur")} ${i + 1}`}
+                      className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"}
+                    />
+                    <button
+                      onClick={() => setPlayer(i, { camUrl: normaliserLienCamera(brouillonCam[i]) ?? "" })}
+                      disabled={!normaliserLienCamera(brouillonCam[i])}
+                      className={btnPlein}
+                    >
+                      <Upload size={15} aria-hidden />
+                      {t("Charger")}
+                    </button>
+                    {p.camUrl && (
+                      <>
+                        {/* Un VDO.Ninja qui gèle ne repart pas seul : jusqu'ici il
+                            fallait retirer le lien puis le recoller en direct. */}
+                        <button onClick={() => setPlayer(i, { camNonce: Date.now() })} className={btnVide}>
+                          <RefreshCw size={15} aria-hidden />
+                          {t("Relancer")}
+                        </button>
+                        <button
+                          onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
+                          className={btnDanger}
+                        >
+                          <X size={15} aria-hidden />
+                          {t("Retirer")}
+                        </button>
+                      </>
+                    )}
                   </div>
-                </div>
+                  {brouillonCam[i].trim() && !normaliserLienCamera(brouillonCam[i]) && (
+                    <p role="alert" className="mt-1 text-xs text-error-light">
+                      {t("Utilisez un lien HTTPS fourni par VDO.Ninja.")}
+                    </p>
+                  )}
+                  <p className="mt-1 text-xs text-ink-muted">
+                    {t("Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.")}
+                  </p>
+                  {/* py-1 + size-4 : la case seule faisait 13px, sous le
+                      minimum de 24px de WCAG 2.5.8 même en comptant le libellé. */}
+                  <label className={"mt-2 " + caseCls}>
+                    <input type="checkbox" className="size-4 accent-arcane" checked={p.camBackground ?? false} onChange={(e) => setPlayer(i, { camBackground: e.target.checked })} />
+                    {t("Fond de webcam (sans caméra)")}
+                  </label>
+                  </div>
+                </details>
+                )}
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Match et chrono")}</h2>
+        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
+          <label className="block">
+            <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
+            <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className={selectCls}>
+              <option>BO1</option><option>BO3</option><option>BO5</option>
+            </select>
+          </label>
+          <label className="block">
+            <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
+            <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className={selectCls}>
+              <option value={8}>8</option><option value={9}>9</option><option value={10}>10</option>
+            </select>
+          </label>
+          {/* Cacher les points sans les perdre : hors match (démo, deck tech, pause)
+              le score n'a rien à faire à l'écran, mais il doit revenir tel quel. */}
+          <label className={caseCls}>
+            <input type="checkbox" className="size-4 accent-arcane" checked={state.event.pointsVisible !== false} onChange={(e) => update({ event: { pointsVisible: e.target.checked } })} />
+            {t("Montrer les points")}
+          </label>
+          <label className="block min-w-[180px] flex-1">
+            <span className="mb-1 block text-xs text-ink-muted">{t("Ronde affichée")}</span>
+            <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder={t("TOP 8, Finale…")} className={inputCls} />
+          </label>
+          <button
+            onClick={() =>
+              update({
+                players: [state.players[1], state.players[0]] as never,
+                points: { a: state.points.b, b: state.points.a },
+                // Les decklists sont rangées par joueur : on les permute aussi, sinon
+                // les cartes restent chez l'ancien camp après l'échange.
+                cards: { ...cards, lists: [cards.lists[1], cards.lists[0]], ignored: [cards.ignored[1], cards.ignored[0]], index: [cards.index[1], cards.index[0]] },
+              })
+            }
+            className={btnVide}
+          >
+            <ArrowLeftRight size={15} aria-hidden />
+            {t("Échanger les joueurs")}
+          </button>
+          {/* Points ET manches : le bouton ne servait qu'entre deux manches, alors
+              qu'on s'en sert surtout entre deux matchs. Les manches de la paire
+              précédente restaient à l'écran. */}
+          <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className={btnVide}>
+            <RotateCcw size={15} aria-hidden />
+            {t("Remettre le score à zéro")}
+          </button>
         </div>
 
         <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
@@ -905,59 +1077,9 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
             {t("« Continuer après zéro » empêche le décompte de s’arrêter sur 00:00 : il passe en négatif et affiche le dépassement en rouge, ce qu’il faut pour un tour de mort subite. « Chrono qui monte » part de zéro et ne s’arrête pas, sans durée à saisir.")}
           </p>
         </div>
-
-        <div className="flex flex-wrap items-end gap-3 rounded-xl border border-hairline bg-surface p-4 text-sm">
-          <label className="block">
-            <span className="mb-1 block text-xs text-ink-muted">{t("Format")}</span>
-            <select value={state.format} onChange={(e) => update({ format: e.target.value as OverlayStateData["format"] })} className={selectCls}>
-              <option>BO1</option><option>BO3</option><option>BO5</option>
-            </select>
-          </label>
-          <label className="block">
-            <span className="mb-1 block text-xs text-ink-muted">{t("Points pour gagner")}</span>
-            <select value={state.maxPoints} onChange={(e) => update({ maxPoints: Number(e.target.value) })} className={selectCls}>
-              <option value={8}>8</option><option value={9}>9</option><option value={10}>10</option>
-            </select>
-          </label>
-          {/* Cacher les points sans les perdre : hors match (démo, deck tech, pause)
-              le score n'a rien à faire à l'écran, mais il doit revenir tel quel. */}
-          <label className={caseCls}>
-            <input type="checkbox" className="size-4 accent-arcane" checked={state.event.pointsVisible !== false} onChange={(e) => update({ event: { pointsVisible: e.target.checked } })} />
-            {t("Montrer les points")}
-          </label>
-          <label className="block min-w-[180px] flex-1">
-            <span className="mb-1 block text-xs text-ink-muted">{t("Ronde affichée")}</span>
-            <input value={state.event.round} onChange={(e) => update({ event: { round: e.target.value } })} placeholder={t("TOP 8, Finale…")} className={inputCls} />
-          </label>
-          <button
-            onClick={() =>
-              update({
-                players: [state.players[1], state.players[0]] as never,
-                points: { a: state.points.b, b: state.points.a },
-                // Les decklists sont rangées par joueur : on les permute aussi, sinon
-                // les cartes restent chez l'ancien camp après l'échange.
-                cards: { ...cards, lists: [cards.lists[1], cards.lists[0]], ignored: [cards.ignored[1], cards.ignored[0]], index: [cards.index[1], cards.index[0]] },
-              })
-            }
-            className={btnVide}
-          >
-            <ArrowLeftRight size={15} aria-hidden />
-            {t("Échanger les joueurs")}
-          </button>
-          {/* Points ET manches : le bouton ne servait qu'entre deux manches, alors
-              qu'on s'en sert surtout entre deux matchs. Les manches de la paire
-              précédente restaient à l'écran. */}
-          <button onClick={() => update({ points: { a: 0, b: 0 }, players: [{ gamesWon: 0 }, { gamesWon: 0 }] as never })} className={btnVide}>
-            <RotateCcw size={15} aria-hidden />
-            {t("Remettre le score à zéro")}
-          </button>
-        </div>
       </section>
 
-      {/* Sous le score, avant les fiches des joueurs : on montre des cartes pendant le
-          direct. Rangé tout en bas, le volet tombait à près de deux écrans du haut. Il
-          s'ouvre seul quand des cartes sont déjà chargées. */}
-      <details open={initial.cards.lists.some((liste) => liste.length > 0)} className="group rounded-xl border border-hairline bg-surface">
+      <details className="group rounded-xl border border-hairline bg-surface">
         <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-lg font-semibold">
           <span>{t("Cartes à l’écran")}</span><span className="text-sm font-normal text-ink-muted">{t("Optionnel")}</span>
         </summary>
@@ -1170,144 +1292,6 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
         </div>
       </section>
       </details>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("Joueurs")}</h2>
-        {/* Une liste qui n'a pas chargé se voit et se retente. Muette, elle laissait
-            un menu vide sans dire pourquoi, en plein direct. */}
-        {([
-          [erreursListes.legendes, chargerLegendes] as const,
-          [erreursListes.terrains, chargerTerrains] as const,
-          [erreursListes.champions, rechargerChampions] as const,
-        ]).map(([message, relancer], i) => message && (
-          <p key={i} role="alert" className="flex flex-wrap items-center gap-2 rounded-lg border border-hairline bg-surface p-3 text-sm text-error-light">
-            <span>{message}</span>
-            <button type="button" onClick={relancer} className={`${btnVide} ml-auto`}>
-              <RefreshCw size={15} aria-hidden />{t("Réessayer")}
-            </button>
-          </p>
-        ))}
-        <div className="grid gap-4 sm:grid-cols-2">
-          {([0, 1] as const).map((i) => {
-            const p = state.players[i];
-            return (
-              <div key={i} className="space-y-3 rounded-xl border border-hairline bg-surface p-4">
-                <h3 className="text-sm font-semibold text-ink-secondary">{t("Joueur")} {i + 1}</h3>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Pseudo")}</span>
-                  <input value={p.name} onChange={(e) => setPlayer(i, { name: e.target.value })} placeholder={t("Son pseudo")} className={inputCls} />
-                </label>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
-                  <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} className={inputCls} />
-                  {/* Jusqu'à la bascule, le lien OBS montre l'ancienne version, qui n'a pas de
-                      classement : sans ce mot, on remplit le champ et rien n'apparaît. */}
-                  {avantBascule && <span className="mt-1 block text-xs text-ink-muted">{t("Affiché par la nouvelle version seulement.")}</span>}
-                </label>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Légende")}</span>
-                  <select
-                    value={p.legendId ?? ""}
-                    onChange={(e) => { const l = legends.find((x) => x.id === e.target.value); setPlayer(i, { legendId: l?.id ?? null, legendName: l?.name ?? "", championName: "" }); }}
-                    className={inputCls}
-                  >
-                    <option value="">{t("À choisir…")}</option>
-                    {legends.map((l) => <option key={l.id} value={l.id}>{nomsZh(l.name)}</option>)}
-                  </select>
-                </label>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Champion élu")}</span>
-                  <select value={p.championName} onChange={(e) => setPlayer(i, { championName: e.target.value })} className={inputCls} disabled={!p.legendName}>
-                    <option value="">{p.legendName ? t("À choisir…") : t("Choisissez d’abord une Légende")}</option>
-                    {champs[i].map((c) => <option key={c} value={c}>{nomsZh(c)}</option>)}
-                  </select>
-                </label>
-
-                <label className="block">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Champ de bataille en jeu")}</span>
-                  <select
-                    value={p.battlefields[0] ?? ""}
-                    onChange={(e) => setPlayer(i, { battlefields: e.target.value ? [e.target.value] : [] })}
-                    className={inputCls}
-                  >
-                    <option value="">{t("Aucun")}</option>
-                    {battlefields.map((b) => <option key={b} value={b}>{nomsZh(b)}</option>)}
-                  </select>
-                </label>
-
-                {/* Décor sans cadres : plus rien où poser une caméra. On enlève les
-                    champs plutôt que de les laisser sans effet visible. */}
-                {!sansCam && (
-                <details className="rounded-lg border border-hairline bg-surface-raised/40">
-                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-3 py-2 text-sm text-ink-secondary">
-                    <span>{t("Caméra du joueur")}</span><span className="text-xs text-ink-muted">{t("Optionnel")}</span>
-                  </summary>
-                  <div className="border-t border-hairline p-3">
-                  <span className="mb-1 block text-xs text-ink-muted">{t("Lien VDO.Ninja")}</span>
-                  {/* `flex-wrap` + `min-w-full` : avec une caméra chargée il y a trois
-                      boutons sur la ligne, et sur un téléphone le champ tombait à 26 px.
-                      On ne pouvait plus ni lire ni corriger le lien. Le champ prend
-                      toute la ligne sous 640 px, les boutons passent dessous. */}
-                  <div className="flex flex-wrap gap-2">
-                    <input
-                      value={brouillonCam[i]}
-                      onChange={(e) => setBrouillonCam((b) => (i === 0 ? [e.target.value, b[1]] : [b[0], e.target.value]))}
-                      placeholder="https://vdo.ninja/?view=..."
-                      aria-label={`${t("Caméra (lien VDO.Ninja)")}, ${t("joueur")} ${i + 1}`}
-                      className={inputCls + " min-w-full flex-1 sm:min-w-[12rem]"}
-                    />
-                    <button
-                      onClick={() => setPlayer(i, { camUrl: normaliserLienCamera(brouillonCam[i]) ?? "" })}
-                      disabled={!normaliserLienCamera(brouillonCam[i])}
-                      className={btnPlein}
-                    >
-                      <Upload size={15} aria-hidden />
-                      {t("Charger")}
-                    </button>
-                    {p.camUrl && (
-                      <>
-                        {/* Un VDO.Ninja qui gèle ne repart pas seul : jusqu'ici il
-                            fallait retirer le lien puis le recoller en direct. */}
-                        <button onClick={() => setPlayer(i, { camNonce: Date.now() })} className={btnVide}>
-                          <RefreshCw size={15} aria-hidden />
-                          {t("Relancer")}
-                        </button>
-                        <button
-                          onClick={() => { setPlayer(i, { camUrl: "" }); setBrouillonCam((b) => (i === 0 ? ["", b[1]] : [b[0], ""])); }}
-                          className={btnDanger}
-                        >
-                          <X size={15} aria-hidden />
-                          {t("Retirer")}
-                        </button>
-                      </>
-                    )}
-                  </div>
-                  {brouillonCam[i].trim() && !normaliserLienCamera(brouillonCam[i]) && (
-                    <p role="alert" className="mt-1 text-xs text-error-light">
-                      {t("Utilisez un lien HTTPS fourni par VDO.Ninja.")}
-                    </p>
-                  )}
-                  <p className="mt-1 text-xs text-ink-muted">
-                    {t("Le son est coupé d’office. Laissez vide si vous posez la caméra vous-même dans OBS.")}
-                  </p>
-                  {/* py-1 + size-4 : la case seule faisait 13px, sous le
-                      minimum de 24px de WCAG 2.5.8 même en comptant le libellé. */}
-                  <label className={"mt-2 " + caseCls}>
-                    <input type="checkbox" className="size-4 accent-arcane" checked={p.camBackground ?? false} onChange={(e) => setPlayer(i, { camBackground: e.target.checked })} />
-                    {t("Fond de webcam (sans caméra)")}
-                  </label>
-                  </div>
-                </details>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
 
       <details className="group rounded-xl border border-hairline bg-surface">
         <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-lg font-semibold">
