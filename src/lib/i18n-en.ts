@@ -187,8 +187,10 @@ export const EN: Record<string, string> = {
   "Collez le lien, mettez": "Paste the link, set",
   "de largeur et": "wide and",
   "de hauteur, puis validez.": "tall, then confirm.",
-  "Revenez ici et remplissez les cases. L’écran suit tout seul.":
-    "Come back here and fill in the boxes. The overlay keeps up on its own.",
+  "Revenez ici : choisissez la Légende de chaque joueur, puis comptez les points. L’écran suit tout seul.":
+    "Come back here: pick each player’s Legend, then count the points. The screen follows by itself.",
+  "Gardez cette source au-dessus de votre caméra dans la liste : le milieu de l’overlay est transparent, la table se voit au travers.":
+    "Keep this source above your camera in the list: the middle of the overlay is transparent, so the table shows through.",
   "Si un changement ne s’affiche pas : clic droit sur la source dans OBS →":
     "If a change doesn’t show up: right-click the source in OBS →",
   Actualiser: "Refresh",

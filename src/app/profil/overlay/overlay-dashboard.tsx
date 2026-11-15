@@ -596,9 +596,11 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
           <li>
             <strong className="text-ink">2.</strong> {t("Dans OBS :")} <em>{t("Sources")}</em> → <em>+</em> → <em>{t("Navigateur")}</em>.{" "}
             {t("Collez le lien, mettez")} <strong className="text-ink">1920</strong> {t("de largeur et")}{" "}
-            <strong className="text-ink">1080</strong> {t("de hauteur, puis validez.")}
+            <strong className="text-ink">1080</strong> {t("de hauteur, puis validez.")}{" "}
+            {/* Le piège du premier soir : la source posée sous la caméra, et rien ne s'affiche. */}
+            {t("Gardez cette source au-dessus de votre caméra dans la liste : le milieu de l’overlay est transparent, la table se voit au travers.")}
           </li>
-          <li><strong className="text-ink">3.</strong> {t("Revenez ici et remplissez les cases. L’écran suit tout seul.")}</li>
+          <li><strong className="text-ink">3.</strong> {t("Revenez ici : choisissez la Légende de chaque joueur, puis comptez les points. L’écran suit tout seul.")}</li>
         </ol>
         <p className="mt-2 text-xs text-ink-muted">
           {t("Si un changement ne s’affiche pas : clic droit sur la source dans OBS →")} <em>{t("Actualiser")}</em>.
