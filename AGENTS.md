@@ -64,7 +64,10 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   (`overlay-decor.empreinte.json`) : `overlay-decor.test.ts` échoue tant qu'une case ou
   un trait a changé sans que les images aient été refaites. Ne pas corriger l'empreinte
   à la main. `cartes_gauche.webp` et `cartes_droite.webp` restent
-  les dessins d'Allan. Un décor envoyé par un streamer se pose à la place du nôtre : il
+  les dessins d'Allan, à taille réelle : `placementCartes` (même fichier) dit où
+  l'overlay les pose, et les gabarits les montrent en repère à cette place. Changer
+  la taille des cartes fait donc échouer le test de l'empreinte jusqu'au prochain
+  `gen:decor`. Toute échelle autre que 1 étale le trait doré du cadre. Un décor envoyé par un streamer se pose à la place du nôtre : il
   doit partir du gabarit, et changer une découpe décale ceux déjà en ligne.
 - **Deux versions de l'overlay jusqu'au 1er décembre 2026** → `src/lib/overlay-version.ts`
   (demande d'Allan, 15 novembre 2026). Le lien collé dans OBS garde l'ANCIENNE version ;
@@ -513,7 +516,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **82 fichiers, 477 tests, tous verts** (relevé du 15 novembre 2026). |
+| `npm test` | ✅ | Vitest. **82 fichiers, 480 tests, tous verts** (relevé du 15 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

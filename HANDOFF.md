@@ -7,8 +7,10 @@ poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novem
 `41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
 branche, plus de `git revert` à faire.
 
-**Porte sur la branche** : `tsc` 0, 82 fichiers et 477 tests, `eslint src` 0 erreur.
-`next build` 0 sur le dernier commit de code, les deux versions comprises.
+**Porte sur la branche** : `tsc` 0, 82 fichiers et 480 tests, `eslint src` 0 erreur.
+`next build` 0 sur `20be2aea8`, les deux versions comprises. **Pas relancé depuis** :
+les commits du soir (tableau de bord, cadre du compact, repères des gabarits) n'ont
+que types, tests et lint. À relancer avant de pousser, serveur de dev éteint.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
 `--testTimeout 30000`. Rien à voir avec l'overlay.
@@ -22,8 +24,8 @@ de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe av
   dessin a changé sans ses images.
 - Les manches lisent `manchesPourGagner` ; les tests de `nomEtTitre` et `encreSur` sont
   dans `overlay.test.ts`.
-- `psd-tools` manque sur ce poste : `gen:decor` s'arrête à l'étape Photoshop, les PSD
-  n'ont pas été refaits (le dessin n'a pas bougé).
+- `psd-tools` manque sur ce poste : pour lancer `gen:decor` en entier, mettre devant
+  le `PATH` un Python qui l'a (un `venv` suffit, le script appelle `python`).
 
 **Audit à l'écran** (demandé par Allan : l'audit du 11 novembre laissait l'overlay, le
 tableau de bord et le compagnon de côté). Compte de test local (`seed-test-user.mts`),
@@ -61,6 +63,35 @@ capture dans OBS sur une scène d'essai retirée ensuite.
    au-dessus des champs qu'on ne remplit qu'une fois (encore 1,4 écran pour le chrono) ;
    alléger `/api/cards`, 715 Ko dont la recherche ne lit que deux champs.
 
+**Retours d'Allan devant l'écran, le 15 au soir :**
+- **« Tu es repassé sur le tableau de bord ? »** Non, pas en entier : fait alors. Ordre de
+  la page : score (points, manches, champ de bataille en jeu), chrono, réglages du
+  match, puis le volet des cartes, puis les fiches des joueurs. À 1440x900 le chrono
+  passe de 1,5 écran du haut à 0,8 ; à 375x812, de 3,0 à 1,2. Le volet des cartes
+  s'ouvre seul quand des cartes sont chargées. Déplacements seulement.
+- **« Le cadre de cartes en bas à gauche est flou. »** Mesuré : ni un côté plus que
+  l'autre, ni les cartes (image de 744 px réduite à 255). C'est le cadre doré, une image
+  dessinée à taille réelle : son trait fait 2,6 px dans l'ancienne version et 3,8 px
+  agrandi de 15 %. Compact : rendu à 97,75 %, remis à 100 % sur des pixels entiers, net
+  (vu dans OBS). Complet : 3,5 px une fois calé sur des pixels entiers ; le
+  rééchantillonner à l'avance (Lanczos) ne fait pas mieux. **En attente d'Allan** : la
+  source du cadre en double taille, ou un cadre redessiné en vectoriel.
+- **« Pas fan du fond sur le compact. »** Le socle sombre des deux coins du haut
+  (`fondCompact`, posé le 8 novembre pour que les pièces ne flottent plus). Trois
+  variantes rendues sur une photo, **en attente de son choix** : A socle opaque, B voile
+  à 55 %, C sans fond. Rien n'est changé dans le dépôt.
+- **Couleurs des points et des chiffres** : elles passent telles quelles à la nouvelle
+  version, c'est le même réglage (`couleurPoint`, `couleurChiffres`), vu sur les deux.
+  Ce qui change le 1er décembre pour qui n'a rien choisi : le point marqué passe du bleu
+  `#1c60a6` au doré `#d2a548`.
+- **« Rechecker le PSD pour tous. »** `gen:decor` relancé en entier. Décor des deux
+  nouveaux gabarits : 0 pixel d'écart avec le site. **Leurs repères de cartes étaient
+  faux** : restés à la place d'origine du dessin, jusqu'à 27 px à côté de ce que
+  l'overlay affiche (le compact les déplace, le +15 % les agrandit). La place vit
+  maintenant dans `placementCartes` (`overlay-decor.ts`), lue par la page et par le
+  générateur, et comptée dans l'empreinte. Repère du chrono : juste. Anciens gabarits
+  (`layout.psd`, `layout_compact.psd`) : identiques à `main`, à l'octet.
+
 **Deux versions jusqu'au 1er décembre 2026** (demande d'Allan, le 15 au soir : « on met
 un avertissement, le 1er décembre on passe sur la nouvelle version »). Règle :
 `src/lib/overlay-version.ts`, avec ses tests.
@@ -93,7 +124,9 @@ et la règle des décors dans `overlay-full.tsx`.
 2. Compter en prod les décors déjà envoyés (`backgroundUrl`, `backgroundNocamUrl`,
    `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
    prévenir. Lecture de la prod pas encore autorisée.
-3. Remonter points, manches et chrono dans le tableau de bord (proposé, pas fait).
+3. Le cadre de cartes à +15 % : sa source en double taille, ou le redessiner en
+   vectoriel.
+4. Le fond du compact : A, B ou C.
 
 **Trois pièges d'outillage payés ce jour-là :**
 - Un `next dev` relancé après un arrêt forcé rechargeait chaque page en boucle, sans
