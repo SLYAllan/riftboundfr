@@ -16,13 +16,17 @@
 5. Le lien OBS est privé : aucune capture ne doit le montrer. Les six captures prêtes
    n'en portent pas.
 
-## Le tweet (274 caractères)
+## Le tweet (267 caractères)
 
-> Our Riftbound stream overlay gets a new look on December 1.
+Angle voulu par Allan : pas la liste des nouveautés, mais la raison du changement. Il
+refait l'overlay pour qu'il ressemble aux retransmissions officielles. Le tweet dit
+« matches the look of » : il ne laisse pas croire que le compte est affilié à Riot.
+
+> I'm redoing the Riftbound stream overlay so it matches the look of the official broadcasts.
 >
-> Your OBS link doesn't change: it switches on its own that day. The preview link is in your dashboard, so you can set up early.
+> It goes live on December 1. Your OBS link doesn't change: it switches on its own that day.
 >
-> Bigger cards, a record line under each player, and you pick the side a card shows on.
+> The preview link is already in your dashboard, so you can set up your scene early.
 
 *Média : `4-complet-deux-cartes.png` en premier, puis `2-complet-sans-cadres-camera.png`
 et `6-compact-deux-cartes.png`. Les captures sont hors du dépôt (elles reposent sur une
