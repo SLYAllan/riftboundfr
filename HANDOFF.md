@@ -1,5 +1,49 @@
 # HANDOFF — état des lieux
 
+## 15 novembre 2026 — overlay : remis sur une branche, code audité, écran pas encore vu
+
+**L'overlay du 8 novembre vit sur la branche `feat/overlay-retransmission`**, locale, pas
+poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novembre et annule
+`41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
+branche, plus de `git revert` à faire.
+
+**Audit du code** (revue de la branche, dix constats, chacun vérifié avant correction) :
+- **Ronde et classement coupés à l'écran**, mesurés sur les avances de la police : à 18
+  caractères par ligne, « CHAMPIONSHIP FINAL » faisait 270 px pour 259 ; à 9,2 px par
+  caractère, un classement de plus de 20 lettres dépassait sa pastille. `PX_PAR_CARACTERE`
+  porte maintenant 16,9 (ronde) et 11 (classement). **Pas vu dans OBS.**
+- **Une case, un endroit** : le trou de la caméra lit `CASES.camera`, la case du chrono est
+  `CASE_CHRONO` pour le dessin et pour le composant. Les neuf dessins sont identiques
+  avant et après, à l'octet (empreintes comparées).
+- **Images et dessin tenus d'accord** : `gen:decor` écrit `overlay-decor.empreinte.json`,
+  `overlay-decor.test.ts` échoue si le dessin a changé sans ses images (essayé : une case
+  déplacée d'un pixel le fait tomber).
+- Les manches lisent `manchesPourGagner` ; les tests de `nomEtTitre` et `encreSur` sont
+  dans `overlay.test.ts`.
+
+**Porte sur la branche** : `tsc` 0, 81 fichiers et 457 tests, `eslint src` 0 erreur,
+`next build` 0 (lancé avant les corrections ; après, types, tests et lint seulement).
+`psd-tools` manque sur ce poste : `gen:decor` s'arrête à l'étape Photoshop, les PSD n'ont
+pas été refaits (le dessin n'a pas bougé).
+
+**Laissé tel quel, à dessein** : les décalages du cadre de cartes en compact (`CARTES`,
+16,3 et 271,7 px) restent écrits à la main, leur calcul n'est noté nulle part et les
+changer sans écran déplacerait le cadre ; le dessin SVG reste dans le module que charge le
+navigateur, quelques kilo-octets.
+
+**À trancher par Allan avant le Deploy :**
+1. **Décors envoyés par des streamers** : posés tels quels sur la nouvelle géométrie, ils
+   cacheront portrait et caméra. Le code ne protège rien. D'abord les compter en prod
+   (`backgroundUrl`, `backgroundNocamUrl`, `backgroundCompactUrl` non vides), lecture pas
+   encore autorisée.
+2. **Deploy pendant un direct** : une source OBS ouverte avant garde l'ancienne page, qui
+   demande `/stream/6_full.webp` au premier joueur à 6 points et reçoit un 404. Soit
+   remettre les 40 images de pastilles une version de plus, soit accepter.
+
+**Pas fait** : aucun contrôle à l'écran. OBS et la base locale étaient éteints. L'audit
+d'interface du 11 novembre laissait l'overlay, le tableau de bord et le compagnon hors
+périmètre : ils ne l'ont toujours pas reçu.
+
 ## 13 novembre 2026 — ban du 23 novembre, règles du 9 octobre, best-of du RC Europe, dix propositions appliquées : en local seulement
 
 **Poussé sur `main` le 13 au soir, à la demande d'Allan** (sans la vidéo ni l'overlay, qui

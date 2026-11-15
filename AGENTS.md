@@ -60,7 +60,10 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   **ne jamais les retoucher à la main : `src/lib/overlay-decor.ts` porte le dessin ET
   les cases que le code remplit**, et `npm run gen:decor` en tire les images et les deux
   gabarits Photoshop (demande `pip install psd-tools`). Le script relit les PSD et sort
-  en 1 s'ils s'écartent du décor. `cartes_gauche.webp` et `cartes_droite.webp` restent
+  en 1 s'ils s'écartent du décor. Il écrit aussi l'empreinte du dessin
+  (`overlay-decor.empreinte.json`) : `overlay-decor.test.ts` échoue tant qu'une case ou
+  un trait a changé sans que les images aient été refaites. Ne pas corriger l'empreinte
+  à la main. `cartes_gauche.webp` et `cartes_droite.webp` restent
   les dessins d'Allan. Un décor envoyé par un streamer se pose à la place du nôtre : il
   doit partir du gabarit, et changer une découpe décale ceux déjà en ligne.
 - **Habillage de stream** → **toute vérification passe par OBS, pas par le
@@ -497,7 +500,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **80 fichiers, 448 tests, tous verts** (relevé du 13 novembre 2026). |
+| `npm test` | ✅ | Vitest. **81 fichiers, 457 tests, tous verts** (relevé du 15 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

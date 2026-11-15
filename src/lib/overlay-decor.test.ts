@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { caseOverlay, decoupeCss, SOCLE_COMPACT } from "./overlay-decor";
-import { encreSur, nomEtTitre } from "./overlay";
+import { empreinteDecor } from "./overlay-decor-empreinte";
+import releve from "./overlay-decor.empreinte.json";
 
 describe("caseOverlay", () => {
   it("rend à droite le miroir exact de la case de gauche", () => {
@@ -32,22 +33,8 @@ describe("decoupeCss", () => {
   });
 });
 
-describe("nomEtTitre", () => {
-  it("coupe à la virgule, chinoise comprise", () => {
-    expect(nomEtTitre("Kai'Sa, Daughter of the Void")).toEqual(["Kai'Sa", "Daughter of the Void"]);
-    expect(nomEtTitre("卡莎，虚空之女")).toEqual(["卡莎", "虚空之女"]);
-    expect(nomEtTitre("Annie - Fiery")).toEqual(["Annie", "Fiery"]);
-  });
-
-  it("laisse entier un nom sans titre, tiret dans le mot compris", () => {
-    expect(nomEtTitre("Légende")).toEqual(["Légende", ""]);
-    expect(nomEtTitre("Jarvan-IV")).toEqual(["Jarvan-IV", ""]);
-  });
-});
-
-describe("encreSur", () => {
-  it("garde un chiffre lisible sur le fond choisi", () => {
-    expect(encreSur("#d2a548")).toBe("#211a29");
-    expect(encreSur("#1c60a6")).toBe("#ffffff");
+describe("images de public/stream", () => {
+  it("sortent du dessin actuel", () => {
+    expect(empreinteDecor(), "Le dessin a changé sans ses images : lancer `npm run gen:decor`.").toBe(releve.sha256);
   });
 });

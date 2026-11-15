@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
-import { caseOverlay, decoupeCss, type Cote, type NomCase } from "@/lib/overlay-decor";
-import { COULEURS_POINTS, echelleOverlay, encreSur, entrelace, nomEtTitre, secondesChrono, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
+import { CASE_CHRONO, caseOverlay, decoupeCss, type Cote, type NomCase } from "@/lib/overlay-decor";
+import { COULEURS_POINTS, echelleOverlay, encreSur, entrelace, manchesPourGagner, nomEtTitre, secondesChrono, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
 import { FitText } from "./fit-text";
 import { useLangue, useT } from "@/components/i18n-provider";
@@ -12,7 +12,7 @@ import { useNomsZh } from "@/hooks/use-noms-zh";
 
 // Toile de 1920x1080, que `useEchelle` met ensuite à la taille de la source d'OBS.
 // Le décor et les cases du joueur viennent de `src/lib/overlay-decor.ts`, ce fichier
-// ne garde que ce qui n'existe qu'à gauche, sous le joueur.
+// ne garde que ce qui n'existe qu'à gauche, sous le joueur, et que le décor ne dessine pas.
 const BAS_GAUCHE = {
   x: 36,
   largeur: 275,
@@ -22,7 +22,6 @@ const BAS_GAUCHE = {
   titreSeul: { top: 700, height: 190 },
   logo: { top: 708, height: 184 },
   ronde: { top: 930, height: 38 },
-  chrono: { left: 98, top: 968, width: 150, height: 50 },
 } as const;
 
 // Le cadre de cartes est dessiné à demeure dans une image pleine toile : on ne peut que
@@ -44,10 +43,16 @@ const CASE_CARTE = {
 const FOND = "/stream/decor.webp";
 const FOND_COMPACT = "/stream/decor_compact.webp";
 
-// Combien de caractères tiennent par pixel de largeur, à la taille de chaque texte.
-// `FitText` compte les caractères plutôt que de mesurer (la mesure ment dans le
-// navigateur d'OBS). Relevé sur les noms les plus larges, en majuscules Arpona.
-const PX_PAR_CARACTERE = { nom: 10.2, titre: 8, pseudo: 15.5, terrain: 9, classement: 9.2 };
+// Largeur d'un caractère en pixels, à la taille de chaque texte. `FitText` compte les
+// caractères plutôt que de mesurer (la mesure ment dans le navigateur d'OBS).
+// Noms, titres, pseudo et terrain : relevés sur les noms les plus larges, en majuscules
+// Arpona. Ronde et classement sont du texte libre : c'est l'avance moyenne d'une
+// capitale, lue dans la police (16,85 px en Regular à 25 px, 10,94 px en Bold à 16 px).
+// À 18 caractères par ligne et 9,2 px, « CHAMPIONSHIP FINAL » sortait de 10 px et un
+// classement de plus de 20 lettres était rogné.
+const PX_PAR_CARACTERE = { nom: 10.2, titre: 8, pseudo: 15.5, terrain: 9, classement: 11, ronde: 16.9 };
+// `px-2` de chaque côté de la ronde.
+const MARGE_RONDE = 16;
 
 // Illustrations des champs de bataille : l'état ne transporte que des noms. On les
 // résout une fois par nom via l'aperçu de carte déjà en place, et on garde le
@@ -230,7 +235,8 @@ function Colonne({ p, side, format, sansCam = false, compact = false }: { p: Ove
   const nomsZh = useNomsZh();
   const icone = p.legendName ? getLegendIconUrl(p.legendName) : null;
   const banniere = p.legendName ? getBannerUrl(p.legendName) : null;
-  const manches = format === "BO5" ? 3 : format === "BO3" ? 2 : 0;
+  // Un Bo1 n'a pas de manches à compter : la rangée reste vide.
+  const manches = format === "BO1" ? 0 : manchesPourGagner(format);
   // Un seul champ de bataille : c'est celui en jeu, choisi depuis le tableau de bord.
   const bf = p.battlefields[0] ?? "";
   const art = useBattlefieldArt(bf ? [bf] : []);
@@ -528,14 +534,14 @@ function BasGauche({ event, vitrine }: { event: OverlayStateData["event"]; vitri
           className="absolute z-20 flex flex-col justify-center overflow-hidden px-2 transition-opacity duration-300 ease-out"
           style={{ left: x, width: largeur, ...BAS_GAUCHE.ronde, opacity: vitrine ? 0 : 1 }}
         >
-          <FitText chars={18} className="text-[25px] font-normal uppercase leading-none tracking-[0.5px] text-white">
+          <FitText chars={Math.floor((largeur - MARGE_RONDE) / PX_PAR_CARACTERE.ronde)} className="text-[25px] font-normal uppercase leading-none tracking-[0.5px] text-white">
             {event.round}
           </FitText>
         </div>
       )}
       <div
         className="absolute z-20 transition-opacity duration-300 ease-out"
-        style={{ ...BAS_GAUCHE.chrono, opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
+        style={{ ...CASE_CHRONO, opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}
       >
         <Timer endsAt={event.endsAt} paused={event.paused} depassement={event.timerDepassement} monte={event.timerMonte} />
       </div>

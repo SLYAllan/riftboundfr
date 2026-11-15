@@ -70,6 +70,9 @@ const CASES = {
 
 export type NomCase = keyof typeof CASES;
 
+/** La case du chrono, sous le joueur de gauche seulement : elle n'a pas de miroir. */
+export const CASE_CHRONO = { left: 98, top: 968, width: 150, height: 50 } as const;
+
 /**
  * Le compact n'a pas de colonne : il pose le panneau et le bas de colonne l'un sous
  * l'autre dans le coin, réduits. Il part sur un téléphone, où chaque pixel de vidéo
@@ -224,7 +227,10 @@ function fondCompact(): string {
 /** Blanc = le fond se voit. Noir = on voit la vidéo ou ce que le code pose dessous. */
 const hexagone = `<polygon points="${points(HEX_PORTRAIT)}" fill="#000"/>`;
 const trapeze = `<polygon points="${points(TRAPEZE_TERRAIN)}" fill="#000"/>`;
-const zoneComplet = () => `<rect width="${COLONNE}" height="${HAUTEUR}" fill="#fff"/>${hexagone}<rect x="26" y="187" width="293" height="305" fill="#000"/>${trapeze}`;
+const zoneComplet = () => {
+  const { x, y, l, h } = CASES.camera;
+  return `<rect width="${COLONNE}" height="${HAUTEUR}" fill="#fff"/>${hexagone}<rect x="${x}" y="${y}" width="${l}" height="${h}" fill="#000"/>${trapeze}`;
+};
 const zoneCompact = () => `<rect width="${SOCLE_COMPACT.l}" height="${SOCLE_COMPACT.h}" fill="#fff"/>${reduit("panneau", hexagone)}${reduit("bas", trapeze)}`;
 
 const cadresComplet = () => cadreCamera() + panneau() + bas();
@@ -252,5 +258,14 @@ export function svgChrono(): string {
   const { or, bordChrono } = COULEURS_DECOR;
   const repere = (x: number) => `<rect x="${x - 3}" y="989" width="6" height="6" transform="rotate(45 ${x} 992)" fill="${or}"/>
     <rect x="${x - 0.5}" y="968" width="1" height="14" fill="${or}"/><rect x="${x - 0.5}" y="1002" width="1" height="14" fill="${or}"/>`;
-  return svg(`<rect x="98.5" y="968.5" width="149" height="50" fill="url(#chrono)" stroke="${bordChrono}" stroke-width="1"/>${repere(85)}${repere(261)}`);
+  const { left, top, width, height } = CASE_CHRONO;
+  // Un demi-pixel en dedans : le filet d'un pixel tombe alors net, sans bavure.
+  return svg(`<rect x="${left + 0.5}" y="${top + 0.5}" width="${width - 1}" height="${height}" fill="url(#chrono)" stroke="${bordChrono}" stroke-width="1"/>${repere(85)}${repere(261)}`);
 }
+
+/**
+ * Les images que `npm run gen:decor` écrit dans `public/stream/`, par nom de fichier.
+ * Le script et le test d'empreinte lisent la même liste : une image ajoutée ici est
+ * surveillée sans y penser.
+ */
+export const sourcesDecor = () => ({ decor: svgDecor(), decor_compact: svgDecorCompact(), Chrono: svgChrono() });
