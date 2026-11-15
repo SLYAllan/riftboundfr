@@ -28,20 +28,22 @@ def calque(nom):
 
 
 def gabarit(suffixe, sortie, avec_chrono):
+    # Noms de calques en anglais (demande d'Allan, 16 novembre 2026) : le gabarit sert à
+    # des streamers de partout, et l'ancien `layout.psd` était déjà en anglais.
     decor = calque(f"decor{suffixe}")
     psd = PSDImage.frompil(decor)
-    fond = psd.create_pixel_layer(calque(f"fond{suffixe}"), name="<- FOND A REMPLACER (le masque garde les decoupes)")
+    fond = psd.create_pixel_layer(calque(f"fond{suffixe}"), name="<- REPLACE THIS BACKGROUND (the mask keeps the cut-outs)")
     fond.create_mask(calque(f"masque{suffixe}").convert("L"))
-    psd.create_pixel_layer(calque(f"cadres{suffixe}"), name="Cadres")
+    psd.create_pixel_layer(calque(f"cadres{suffixe}"), name="Frames")
     # Ce que le site pose lui-même : caché, ça sert à se repérer. Le compact n'a pas de chrono.
     reperes = [
         # Posés par `gen-decor-overlay.mts` là où l'overlay les pose, pas à leur place
         # d'origine dans l'image : le compact les déplace, le complet les agrandit.
-        ("Repère : cartes à droite (laisser caché)", calque(f"cartes_droite{suffixe}")),
-        ("Repère : cartes à gauche (laisser caché)", calque(f"cartes_gauche{suffixe}")),
+        ("Guide: cards on the right (keep hidden)", calque(f"cartes_droite{suffixe}")),
+        ("Guide: cards on the left (keep hidden)", calque(f"cartes_gauche{suffixe}")),
     ]
     if avec_chrono:
-        reperes.append(("Repère : chrono (laisser caché)", calque("chrono")))
+        reperes.append(("Guide: timer (keep hidden)", calque("chrono")))
     for nom, img in reperes:
         psd.create_pixel_layer(img, name=nom).visible = False
     psd.save(STREAM / sortie)
