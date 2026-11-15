@@ -2,7 +2,7 @@
  * Tire de `src/lib/overlay-decor.ts` les images de l'overlay. À lancer par
  * `npm run gen:decor`, qui enchaîne avec les gabarits Photoshop.
  *
- * Écrit `public/stream/decor.webp`, `decor_compact.webp` et `Chrono.webp`, plus les
+ * Écrit `public/stream/decor.webp`, `decor_compact.webp` et `decor_chrono.webp`, plus les
  * calques en PNG que lit `gen-gabarit-psd.py`, dans `node_modules/.cache/decor-overlay/`,
  * puis l'empreinte du dessin, que relit `overlay-decor.test.ts`.
  */

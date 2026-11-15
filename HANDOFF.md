@@ -7,7 +7,7 @@ poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novem
 `41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
 branche, plus de `git revert` à faire.
 
-**Porte sur la branche** : `tsc` 0, 81 fichiers et 469 tests, `eslint src` 0 erreur.
+**Porte sur la branche** : `tsc` 0, 82 fichiers et 476 tests, `eslint src` 0 erreur.
 `next build` 0, relancé après le dernier commit de code d'avant la taille des cartes.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
@@ -57,13 +57,39 @@ capture dans OBS sur une scène d'essai retirée ensuite.
    au-dessus des champs qu'on ne remplit qu'une fois (encore 1,4 écran pour le chrono) ;
    alléger `/api/cards`, 715 Ko dont la recherche ne lit que deux champs.
 
-**À trancher par Allan avant le Deploy :**
-1. **Décors envoyés par des streamers** : posés tels quels sur la nouvelle géométrie, ils
-   cacheront portrait et caméra. D'abord les compter en prod (`backgroundUrl`,
-   `backgroundNocamUrl`, `backgroundCompactUrl` non vides), lecture pas encore autorisée.
-2. **Deploy pendant un direct** : une source OBS ouverte avant garde l'ancienne page, qui
-   demande `/stream/6_full.webp` au premier joueur à 6 points et reçoit un 404. Soit
-   remettre les 40 images de pastilles une version de plus, soit accepter.
+**Deux versions jusqu'au 1er décembre 2026** (demande d'Allan, le 15 au soir : « on met
+un avertissement, le 1er décembre on passe sur la nouvelle version »). Règle :
+`src/lib/overlay-version.ts`, avec ses tests.
+- Le lien collé dans OBS garde l'**ancienne** version jusqu'au 30 novembre : rien ne bouge
+  chez personne, décors envoyés compris. `?version=2` montre la nouvelle. Le 1er décembre
+  à minuit, heure de Paris, le même lien passe à la nouvelle.
+- L'ancienne est `overlay-v1.tsx`, copie de `main`. **Comparée au pixel** au build de
+  `main` (5 états, complet et compact) : 0 pixel d'écart, sauf là où `main` a lui-même
+  recompressé les icônes d'Ornn et de Draven depuis. Ses images sont revenues à leur
+  place ; les trois fichiers de la nouvelle version qui portaient le même nom s'appellent
+  `decor_chrono.webp`, `gabarit.psd` et `gabarit_compact.psd`.
+- Le tableau de bord porte un bandeau jusqu'à la bascule : lien d'aperçu à copier, et,
+  pour qui a envoyé un décor, les nouveaux gabarits. Sous « Classement ou score » : ce
+  champ n'existe que dans la nouvelle version.
+- **Décors des streamers** : la nouvelle version ne pose pas un décor envoyé avant la
+  bascule (son adresse porte l'heure de l'envoi). Limite connue : on ne peut pas essayer
+  son décor refait avant le 1er décembre, il s'envoie à partir de cette date.
+- **Deploy pendant un direct** : une source OBS déjà ouverte retrouve toutes ses images.
+- Vu dans OBS : les deux versions, complet et compact, sur le même état.
+
+**Après le 1er décembre, à faire :** supprimer `overlay-v1.tsx`, `fit-text-v1.tsx`,
+`overlay-v1.module.css`, les images de l'ancienne version (liste en tête de
+`overlay-v1.tsx`), `overlay-version.ts` et son test, le bandeau et la mention sous le
+classement dans `overlay-dashboard.tsx`, leurs textes dans `i18n-en.ts` et `i18n-zh.ts`,
+et la règle des décors dans `overlay-full.tsx`.
+
+**Reste à trancher par Allan :**
+1. Pousser la branche, puis la fusionner dans `main` et lancer le Deploy : c'est lui qui
+   décide quand. Le bandeau n'a de sens que si le Deploy part bien avant le 1er décembre.
+2. Compter en prod les décors déjà envoyés (`backgroundUrl`, `backgroundNocamUrl`,
+   `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
+   prévenir. Lecture de la prod pas encore autorisée.
+3. Remonter points, manches et chrono dans le tableau de bord (proposé, pas fait).
 
 **Deux pièges d'outillage payés ce jour-là :**
 - Un serveur `next dev` engorgé (1,4 Go, 15 s pour `/api/health`) rend à OBS une source

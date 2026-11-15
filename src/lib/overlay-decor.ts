@@ -268,4 +268,4 @@ export function svgChrono(): string {
  * Le script et le test d'empreinte lisent la même liste : une image ajoutée ici est
  * surveillée sans y penser.
  */
-export const sourcesDecor = () => ({ decor: svgDecor(), decor_compact: svgDecorCompact(), Chrono: svgChrono() });
+export const sourcesDecor = () => ({ decor: svgDecor(), decor_compact: svgDecorCompact(), decor_chrono: svgChrono() });

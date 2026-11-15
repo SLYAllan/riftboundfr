@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useOverlayPoll } from "@/hooks/use-overlay-poll";
 import { getBannerUrl, getLegendIconUrl } from "@/lib/banners";
 import { normaliserLienCamera } from "@/lib/overlay-cam";
+import { decorDuNouveauGabarit } from "@/lib/overlay-version";
 import { CASE_CHRONO, caseOverlay, decoupeCss, type Cote, type NomCase } from "@/lib/overlay-decor";
 import { COULEURS_POINTS, echelleOverlay, encreSur, entrelace, manchesPourGagner, nomEtTitre, secondesChrono, type OverlayPlayer, type OverlayStateData } from "@/lib/overlay";
 import styles from "./overlay.module.css";
@@ -600,7 +601,10 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   const vitrine = mode === "split";
   const sansCam = event.layout === "nocam";
   const fond = compact ? FOND_COMPACT : FOND;
-  const decorEnvoye = compact ? event.backgroundCompactUrl : sansCam ? event.backgroundNocamUrl : event.backgroundUrl;
+  const envoye = compact ? event.backgroundCompactUrl : sansCam ? event.backgroundNocamUrl : event.backgroundUrl;
+  // Un décor envoyé avant la bascule part de l'ancien gabarit : ses découpes cacheraient
+  // le portrait et la caméra. On garde alors le décor du site.
+  const decorEnvoye = envoye && decorDuNouveauGabarit(envoye) ? envoye : "";
   return (
     <div className={styles.root}>
       {/* Décor : celui du streamer s'il en a envoyé un (gabarit Photoshop), sinon celui
@@ -614,7 +618,7 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
       />
       {!compact && (
         <img
-          src="/stream/Chrono.webp"
+          src="/stream/decor_chrono.webp"
           alt=""
           className="absolute inset-0 z-[11] h-full w-full transition-opacity duration-300 ease-out"
           style={{ opacity: !vitrine && event.timerVisible !== false ? 1 : 0 }}

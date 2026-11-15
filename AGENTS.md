@@ -56,7 +56,7 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
   `content/tweets/README.md`.
-- **Décors de l'overlay** (`public/stream/decor*.webp`, `Chrono.webp`, `layout*.psd`) →
+- **Décors de l'overlay** (`public/stream/decor*.webp`, `gabarit*.psd`) →
   **ne jamais les retoucher à la main : `src/lib/overlay-decor.ts` porte le dessin ET
   les cases que le code remplit**, et `npm run gen:decor` en tire les images et les deux
   gabarits Photoshop (demande `pip install psd-tools`). Le script relit les PSD et sort
@@ -66,6 +66,16 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   à la main. `cartes_gauche.webp` et `cartes_droite.webp` restent
   les dessins d'Allan. Un décor envoyé par un streamer se pose à la place du nôtre : il
   doit partir du gabarit, et changer une découpe décale ceux déjà en ligne.
+- **Deux versions de l'overlay jusqu'au 1er décembre 2026** → `src/lib/overlay-version.ts`
+  (demande d'Allan, 15 novembre 2026). Le lien collé dans OBS garde l'ANCIENNE version ;
+  `?version=2` montre la nouvelle, pour préparer sa scène ; à la date, le même lien
+  bascule tout seul. L'ancienne est `overlay-v1.tsx`, copie de `main` qu'on ne corrige
+  pas, avec son `fit-text-v1.tsx`, sa feuille de style et ses images (pastilles,
+  `points/`, `test.webp`, `layout_sanscam.webp`, `compact.webp`, `Chrono.webp`,
+  `layout*.psd`). **Toute retouche de l'overlay se fait dans la NOUVELLE**
+  (`overlay-full.tsx`). La nouvelle ne pose pas un décor envoyé avant la bascule : il
+  part de l'ancien gabarit, et l'adresse d'un décor porte l'heure de son envoi. Après la
+  bascule : supprimer l'ancienne version, ce module et le bandeau du tableau de bord.
 - **Habillage de stream** → **toute vérification passe par OBS, pas par le
   navigateur, et sans qu'Allan ait à le demander.** C'est le seul endroit où l'on
   voit la transparence composée et le vrai rendu. OBS expose un WebSocket sur
@@ -503,7 +513,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **81 fichiers, 469 tests, tous verts** (relevé du 15 novembre 2026). |
+| `npm test` | ✅ | Vitest. **82 fichiers, 476 tests, tous verts** (relevé du 15 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

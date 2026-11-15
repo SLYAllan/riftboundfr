@@ -54,7 +54,7 @@ def ecart(chemin, attendu):
 
 
 echec = False
-for chemin, attendu in ((STREAM / "layout.psd", gabarit("", "layout.psd", True)), (STREAM / "layout_compact.psd", gabarit("_compact", "layout_compact.psd", False))):
+for chemin, attendu in ((STREAM / "gabarit.psd", gabarit("", "gabarit.psd", True)), (STREAM / "gabarit_compact.psd", gabarit("_compact", "gabarit_compact.psd", False))):
     e = ecart(chemin, attendu)
     faux = int((e > 8).sum())
     print(f"{chemin} : {chemin.stat().st_size // 1024} Ko, {faux} pixels s'écartent du décor (écart max {e.max():.0f})")

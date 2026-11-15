@@ -1,0 +1,64 @@
+/* Arpona en gras, la police de la retransmission officielle. Le woff2 est produit
+   depuis l'OTF fourni par Allan (fontTools) : 42 Ko contre 107, et c'est le seul
+   format que tous les navigateurs chargent vite. L'OTF reste en secours.
+   Elle ne sert QUE sur l'overlay : le reste du site garde ses polices. */
+/* Nom à part : la nouvelle version déclare aussi « Arpona », avec une Regular en plus.
+   Les deux feuilles peuvent se charger sur la même page, et sous le même nom cette
+   Regular serait venue changer les textes de l'ancienne version. */
+@font-face {
+  font-family: "ArponaV1";
+  src: url("/fonts/arpona-bold.woff2") format("woff2"), url("/fonts/arpona-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.root {
+  /* Toile fixe de 1920x1080, centrée puis mise à l'échelle de la source d'OBS
+     (`--echelle-overlay`, posée par `useEchelle`). Avant, elle était ancrée en haut
+     à gauche : une source réglée à 1600x900 coupait le décor à droite et poussait
+     toute l'image du même côté. À 1920x1080 le facteur vaut 1, rien ne bouge. */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--echelle-overlay, 1));
+  width: 1920px;
+  height: 1080px;
+  background: transparent;
+  overflow: hidden;
+  pointer-events: none;
+  color: #fff;
+  font-family: "ArponaV1", var(--font-rubik), "Noto Sans TC", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Ces règles ne s'appliquent QUE sur la page overlay (ce module CSS n'est chargé
+   que par overlay-full.tsx). On rend la page totalement transparente pour OBS et
+   on masque tout le chrome du site (navbar, footer, bannière cookies). */
+:global(html),
+:global(body) {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+:global(nav),
+:global(header),
+:global(footer),
+:global([data-chrome="cookies"]) {
+  display: none !important;
+}
+
+/* Fondu joué à chaque changement de valeur : le texte est remonté avec une nouvelle
+   clé React, l'animation repart donc toute seule. Court et sans mouvement, sinon
+   ça danse à chaque point marqué. */
+.apparait {
+  animation: apparait 260ms cubic-bezier(0.2, 0, 0, 1) both;
+}
+@keyframes apparait {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Fondu d'apparition d'une carte : plus long que le reste pour un cross-fade doux
+   quand la diapo enchaîne les cartes. */
+.fonduCarte {
+  animation: apparait 400ms ease-out both;
+}

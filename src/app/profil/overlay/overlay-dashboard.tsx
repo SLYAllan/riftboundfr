@@ -155,7 +155,7 @@ function ChoixLangue({ t }: { t: (texte: string) => string }) {
   );
 }
 
-export function OverlayDashboard({ token, cleCompagnon, initial }: { token: string; cleCompagnon: string; initial: OverlayStateData }) {
+export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }: { token: string; cleCompagnon: string; initial: OverlayStateData; avantBascule: boolean }) {
   const t = useT();
   // Les listes déroulantes AFFICHENT le nom chinois quand il existe, mais gardent le
   // nom d'origine en valeur : c'est lui qui part dans l'état, retrouve la carte en
@@ -167,6 +167,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
   const lien = useLien();
   const [state, setState] = useState<OverlayStateData>(initial);
   const [copied, setCopied] = useState(false);
+  const [copieApercu, setCopieApercu] = useState(false);
   const [copieCompagnon, setCopieCompagnon] = useState<"repos" | "copie" | "erreur">("repos");
   const [erreurLien, setErreurLien] = useState<string | null>(null);
   const [origin, setOrigin] = useState("");
@@ -517,6 +518,49 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
         </p>
       </header>
 
+      {/* Les deux versions de l'overlay vivent côte à côte jusqu'au 1er décembre 2026
+          (`overlay-version.ts`) : ce bandeau prévient, et donne de quoi préparer sa scène.
+          À retirer avec l'ancienne version. */}
+      {avantBascule && (
+        <section className="rounded-xl border border-arcane/30 bg-arcane/5 p-4">
+          <h2 className="font-semibold text-ink">{t("Nouvelle version de l’overlay le 1er décembre")}</h2>
+          <p className="mt-1 max-w-3xl text-pretty text-sm text-ink-secondary">{t("Votre lien OBS ne change pas : le 1er décembre, il affichera la nouvelle version tout seul. D’ici là, collez ce lien d’aperçu dans une seconde source OBS pour préparer votre scène.")}</p>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => { void navigator.clipboard.writeText(`${overlayUrl}?version=2`); setCopieApercu(true); setTimeout(() => setCopieApercu(false), 1500); }}
+              className={btnPlein}
+            >
+              {copieApercu ? <Check size={15} aria-hidden /> : <Copy size={15} aria-hidden />}
+              {copieApercu ? t("Copié") : t("Copier le lien d’aperçu")}
+            </button>
+            <a href={`${overlayUrl}?version=2`} target="_blank" rel="noopener noreferrer" className={btnVide}>
+              <ExternalLink size={15} aria-hidden />
+              {t("Voir la nouvelle version")}
+            </a>
+            <a href={`${overlayUrl}?compact=1&version=2`} target="_blank" rel="noopener noreferrer" className={btnVide}>
+              <ExternalLink size={15} aria-hidden />
+              {t("Version compacte")}
+            </a>
+          </div>
+          {(state.event.backgroundUrl || state.event.backgroundNocamUrl || state.event.backgroundCompactUrl) && (
+            <div className="mt-3 border-t border-hairline pt-3">
+              <p className="max-w-3xl text-pretty text-sm text-ink-secondary">{t("Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.")}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <a href="/stream/gabarit.psd" download className={btnVide}>
+                  <Download size={15} aria-hidden />
+                  {t("Nouveau gabarit")}
+                </a>
+                <a href="/stream/gabarit_compact.psd" download className={btnVide}>
+                  <Download size={15} aria-hidden />
+                  {t("Nouveau gabarit compact")}
+                </a>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* Fond neutre, texte rouge : la règle d'interface interdit le fond teinté sous
           un texte de la même couleur. */}
       {erreur && (
@@ -623,7 +667,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
               <Upload size={15} aria-hidden />
               {envoi === genreFond ? t("Envoi…") : t("Depuis un fichier")}
             </button>
-            <a href="/stream/layout.psd" download className={btnVide}>
+            <a href={avantBascule ? "/stream/layout.psd" : "/stream/gabarit.psd"} download className={btnVide}>
               <Download size={15} aria-hidden />
               {t("Gabarit Photoshop")}
             </a>
@@ -739,7 +783,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
             <Copy size={15} aria-hidden />
             {t("Copier l’overlay compact")}
           </button>
-          <a href="/stream/layout_compact.psd" download className={btnVide}>
+          <a href={avantBascule ? "/stream/layout_compact.psd" : "/stream/gabarit_compact.psd"} download className={btnVide}>
             <Download size={15} aria-hidden />
             {t("Gabarit Photoshop")}
           </a>
@@ -798,6 +842,9 @@ export function OverlayDashboard({ token, cleCompagnon, initial }: { token: stri
                 <label className="block">
                   <span className="mb-1 block text-xs text-ink-muted">{t("Classement ou score")}</span>
                   <input value={p.classement ?? ""} maxLength={CLASSEMENT_MAX} onChange={(e) => setPlayer(i, { classement: e.target.value })} className={inputCls} />
+                  {/* Jusqu'à la bascule, le lien OBS montre l'ancienne version, qui n'a pas de
+                      classement : sans ce mot, on remplit le champ et rien n'apparaît. */}
+                  {avantBascule && <span className="mt-1 block text-xs text-ink-muted">{t("Affiché par la nouvelle version seulement.")}</span>}
                 </label>
 
                 <label className="block">
