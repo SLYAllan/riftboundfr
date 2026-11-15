@@ -60,9 +60,11 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   **ne jamais les retoucher à la main : `src/lib/overlay-decor.ts` porte le dessin ET
   les cases que le code remplit**, et `npm run gen:decor` en tire les images et les deux
   gabarits Photoshop (demande `pip install psd-tools`). Le script relit les PSD et sort
-  en 1 s'ils s'écartent du décor. Il écrit aussi l'empreinte du dessin
-  (`overlay-decor.empreinte.json`) : `overlay-decor.test.ts` échoue tant qu'une case ou
-  un trait a changé sans que les images aient été refaites. Ne pas corriger l'empreinte
+  en 1 s'ils s'écartent du décor. La routine écrit l'empreinte du dessin
+  (`overlay-decor.empreinte.json`) en dernier, une fois les PSD refaits :
+  `overlay-decor.test.ts` échoue tant qu'une case ou un trait a changé sans que les
+  images ET les gabarits aient été refaits. Sans `psd-tools`, elle s'arrête donc en
+  erreur et le test reste rouge : c'est voulu. Ne pas corriger l'empreinte
   à la main. `cartes_gauche.webp` et `cartes_droite.webp` restent
   les dessins d'Allan, à taille réelle : `placementCartes` (même fichier) dit où
   l'overlay les pose, et les gabarits les montrent en repère à cette place. Changer

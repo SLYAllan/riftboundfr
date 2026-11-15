@@ -9,8 +9,8 @@ branche, plus de `git revert` à faire.
 
 **Porte sur la branche** : `tsc` 0, 82 fichiers et 480 tests, `eslint src` 0 erreur.
 `next build` 0 sur `20be2aea8`, les deux versions comprises. **Pas relancé depuis** :
-les commits du soir (tableau de bord, cadre du compact, repères des gabarits) n'ont
-que types, tests et lint. À relancer avant de pousser, serveur de dev éteint.
+les commits du soir (cadres de cartes, fond du compact, repères des gabarits, tuto)
+n'ont que types, tests et lint. À relancer avant de pousser, serveur de dev éteint.
 `scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
 de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
 `--testTimeout 30000`. Rien à voir avec l'overlay.
@@ -64,11 +64,15 @@ capture dans OBS sur une scène d'essai retirée ensuite.
    alléger `/api/cards`, 715 Ko dont la recherche ne lit que deux champs.
 
 **Retours d'Allan devant l'écran, le 15 au soir :**
-- **« Tu es repassé sur le tableau de bord ? »** Non, pas en entier : fait alors. Ordre de
-  la page : score (points, manches, champ de bataille en jeu), chrono, réglages du
-  match, puis le volet des cartes, puis les fiches des joueurs. À 1440x900 le chrono
-  passe de 1,5 écran du haut à 0,8 ; à 375x812, de 3,0 à 1,2. Le volet des cartes
-  s'ouvre seul quand des cartes sont chargées. Déplacements seulement.
+- **« Tu es repassé sur le tableau de bord ? »** Non, pas en entier. J'ai alors sorti
+  les points, les manches et le champ de bataille des fiches des joueurs pour les
+  mettre en tête avec le chrono, et remonté le volet des cartes. **Refusé par Allan**
+  (« j'aime pas la façon dont tu as séparé les choses, remets comme avant ») : les deux
+  commits sont annulés, le tableau de bord est revenu à l'identique. **Ne pas
+  reproposer de séparer le score des fiches des joueurs.**
+- **Le tuto** (« Première fois ? Trois étapes. »), repris à sa demande, sans rien
+  déplacer : l'étape 2 dit de garder la source au-dessus de la caméra, l'étape 3 dit
+  quoi remplir (la Légende de chaque joueur, puis les points).
 - **« Le cadre de cartes en bas à gauche est flou. »** Mesuré : ni un côté plus que
   l'autre, ni les cartes (image de 744 px réduite à 255). C'est le cadre doré, une image
   dessinée à taille réelle : son trait fait 2,6 px dans l'ancienne version et 3,8 px
@@ -94,7 +98,9 @@ capture dans OBS sur une scène d'essai retirée ensuite.
   faux** : restés à la place d'origine du dessin, jusqu'à 27 px à côté de ce que
   l'overlay affiche (le compact les déplace, le +15 % les agrandit). La place vit
   maintenant dans `placementCartes` (`overlay-decor.ts`), lue par la page et par le
-  générateur, et comptée dans l'empreinte. Repère du chrono : juste. Anciens gabarits
+  générateur, et comptée dans l'empreinte. `gen:decor` écrit maintenant l'empreinte en
+  dernier, après les PSD : écrite avant, elle passait le test au vert quand l'étape
+  Photoshop échouait faute de `psd-tools`. Repère du chrono : juste. Anciens gabarits
   (`layout.psd`, `layout_compact.psd`) : identiques à `main`, à l'octet.
 
 **Deux versions jusqu'au 1er décembre 2026** (demande d'Allan, le 15 au soir : « on met

@@ -6,7 +6,8 @@
  * cadres de cartes du complet (`cadre_cartes_*.webp`, tirés des dessins d'Allan), plus les
  * calques en PNG que lit `gen-gabarit-psd.py`, dans `node_modules/.cache/decor-overlay/`
  * (cadres de cartes compris, posés là où l'overlay les pose),
- * puis l'empreinte du dessin, que relit `overlay-decor.test.ts`.
+ * puis, rappelé avec `--empreinte` après les gabarits, l'empreinte du dessin que relit
+ * `overlay-decor.test.ts`.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import sharp from "sharp";
@@ -17,13 +18,22 @@ const STREAM = "public/stream";
 const CALQUES = "node_modules/.cache/decor-overlay";
 mkdirSync(CALQUES, { recursive: true });
 
+// L'empreinte s'écrit en DERNIER : `npm run gen:decor` rappelle ce script avec
+// `--empreinte` une fois les gabarits Photoshop refaits. Écrite dès la première étape,
+// elle passait le test au vert alors que l'étape Photoshop avait échoué, faute de
+// `psd-tools` : les gabarits restaient ceux d'avant, et rien ne le disait.
+if (process.argv.includes("--empreinte")) {
+  writeFileSync("src/lib/overlay-decor.empreinte.json", `${JSON.stringify({ sha256: empreinteDecor() })}\n`);
+  console.log("src/lib/overlay-decor.empreinte.json");
+  process.exit(0);
+}
+
 const image = (svg: string) => sharp(Buffer.from(svg)).resize(1920, 1080);
 
 for (const [nom, svg] of Object.entries(sourcesDecor())) {
   await image(svg).webp({ lossless: true }).toFile(`${STREAM}/${nom}.webp`);
   console.log(`${STREAM}/${nom}.webp`);
 }
-writeFileSync("src/lib/overlay-decor.empreinte.json", `${JSON.stringify({ sha256: empreinteDecor() })}\n`);
 for (const [nom, svg] of [["fond", svgFond()], ["masque", svgMasqueFond()], ["cadres", svgCadres()], ["decor", svgDecor()], ["fond_compact", svgFondCompact()], ["masque_compact", svgMasqueFondCompact()], ["cadres_compact", svgCadresCompact()], ["decor_compact", svgDecorCompact()], ["chrono", svgChrono()]] as const) {
   await image(svg).png().toFile(`${CALQUES}/${nom}.png`);
 }
