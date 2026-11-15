@@ -11,7 +11,7 @@
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import sharp from "sharp";
-import { placementCartes, sourcesDecor, svgCadres, svgCadresCompact, svgChrono, svgDecor, svgDecorCompact, svgFond, svgFondCompact, svgMasqueFond, svgMasqueFondCompact } from "../src/lib/overlay-decor";
+import { calquesGabarit, placementCartes, sourcesDecor, svgChrono, svgDecor, svgDecorCompact, svgFond, svgFondCompact, svgMasqueFond, svgMasqueFondCompact } from "../src/lib/overlay-decor";
 import { empreinteDecor } from "../src/lib/overlay-decor-empreinte";
 
 const STREAM = "public/stream";
@@ -34,8 +34,21 @@ for (const [nom, svg] of Object.entries(sourcesDecor())) {
   await image(svg).webp({ lossless: true }).toFile(`${STREAM}/${nom}.webp`);
   console.log(`${STREAM}/${nom}.webp`);
 }
-for (const [nom, svg] of [["fond", svgFond()], ["masque", svgMasqueFond()], ["cadres", svgCadres()], ["decor", svgDecor()], ["fond_compact", svgFondCompact()], ["masque_compact", svgMasqueFondCompact()], ["cadres_compact", svgCadresCompact()], ["decor_compact", svgDecorCompact()], ["chrono", svgChrono()]] as const) {
+for (const [nom, svg] of [["fond", svgFond()], ["masque", svgMasqueFond()], ["decor", svgDecor()], ["fond_compact", svgFondCompact()], ["masque_compact", svgMasqueFondCompact()], ["decor_compact", svgDecorCompact()], ["chrono", svgChrono()]] as const) {
   await image(svg).png().toFile(`${CALQUES}/${nom}.png`);
+}
+
+// Une image par pièce dorée, et leur liste de dessous en dessus : le gabarit en fait un
+// calque chacune, pour qu'on puisse en cacher ou en refaire une sans toucher aux autres.
+for (const compact of [false, true]) {
+  const suffixe = compact ? "_compact" : "";
+  const liste: { fichier: string; nom: string }[] = [];
+  for (const { cle, nom, svg } of calquesGabarit(compact)) {
+    const fichier = `piece${suffixe}_${cle}`;
+    await image(svg).png().toFile(`${CALQUES}/${fichier}.png`);
+    liste.push({ fichier, nom });
+  }
+  writeFileSync(`${CALQUES}/pieces${suffixe}.json`, JSON.stringify(liste));
 }
 
 /**

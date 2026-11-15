@@ -12,6 +12,7 @@ premier, et un masque sur un groupe rend le fichier illisible (essayé, version 
 Sort en 1 si le gabarit relu s'écarte du décor du site : un streamer partirait d'un
 dessin faux, et ses découpes tomberaient à côté de ce que le code remplit.
 """
+import json
 import sys
 from pathlib import Path
 
@@ -34,7 +35,10 @@ def gabarit(suffixe, sortie, avec_chrono):
     psd = PSDImage.frompil(decor)
     fond = psd.create_pixel_layer(calque(f"fond{suffixe}"), name="<- REPLACE THIS BACKGROUND (the mask keeps the cut-outs)")
     fond.create_mask(calque(f"masque{suffixe}").convert("L"))
-    psd.create_pixel_layer(calque(f"cadres{suffixe}"), name="Frames")
+    # Un calque par pièce dorée, de dessous en dessus : fondues en un seul, on ne pouvait
+    # ni cacher ni refaire les icônes de Légende et de champion.
+    for piece in json.loads((CALQUES / f"pieces{suffixe}.json").read_text(encoding="utf-8")):
+        psd.create_pixel_layer(calque(piece["fichier"]), name=piece["nom"])
     # Ce que le site pose lui-même : caché, ça sert à se repérer. Le compact n'a pas de chrono.
     reperes = [
         # Posés par `gen-decor-overlay.mts` là où l'overlay les pose, pas à leur place

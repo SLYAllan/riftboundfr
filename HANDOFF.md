@@ -103,6 +103,21 @@ capture dans OBS sur une scène d'essai retirée ensuite.
   Photoshop échouait faute de `psd-tools`. Repère du chrono : juste. Anciens gabarits
   (`layout.psd`, `layout_compact.psd`) : identiques à `main`, à l'octet.
 
+**Retours d'Allan du 16 novembre :**
+- **Captures pour le tweet** : six vues prises dans OBS, hors du dépôt
+  (`Documents/Claude/overlay-tweet-2026-11-16`), textes en anglais. Le complet repose
+  sur une image d'une vidéo Solary Riftbound, le compact sur des photos d'articles.
+  Tweet dans `content/tweets/2026-11-16-overlay-maj-en.md`, à poster après le Deploy.
+- **Gabarits** : le bandeau propose les nouveaux à tout le monde ; leurs calques sont en
+  anglais ; les pièces dorées ont chacune leur calque (cadre caméra, plaque, icônes de
+  Légende et de champion, cadre doré, plaque du pseudo, bande du terrain). Fondues en
+  un seul, on ne pouvait ni cacher ni refaire les icônes. Le décor du site se dessine
+  maintenant à partir de ces mêmes pièces (`piecesComplet`, `piecesCompact`) : une
+  centaine de pixels de bord y changent de 7 niveaux au plus, invisible.
+- **Compagnon** : parcours d'un joueur rejoué de bout en bout sur la branche (lien sans
+  compte, création, points, fins de manche, annulation, match terminé, clé refusée) :
+  18 contrôles sur 18.
+
 **Deux versions jusqu'au 1er décembre 2026** (demande d'Allan, le 15 au soir : « on met
 un avertissement, le 1er décembre on passe sur la nouvelle version »). Règle :
 `src/lib/overlay-version.ts`, avec ses tests.

@@ -159,15 +159,25 @@ const trait = (pts: readonly Point[], couleur: string = COULEURS_DECOR.or, ep = 
   `<polyline points="${points(pts)}" fill="none" stroke="${couleur}" stroke-width="${ep}"/>`;
 const trace = (d: string, couleur: string, ep: number) => `<path d="${d}" fill="none" stroke="${couleur}" stroke-width="${ep}"/>`;
 
-/** Panneau Légende + Champion : le portrait hexagonal et la bannière en flèche. */
-function panneau(avecChevron = true): string {
-  const { or, filigrane, dessusPanneau, chevron, coeurLosange, separateur, socle } = COULEURS_DECOR;
-  return `<g mask="url(#sans-portrait)">
-    <path d="M98 74H320.5${BOUT_BANNIERE}H98Z" fill="url(#panneau)"/>
-    <path fill-rule="evenodd" fill="${filigrane}" opacity=".55" d="M113 79L129 73L146 79V103L129 123L113 103Z M129 81a5 5 0 1 0 .01 0Z M122 92H136L133 110L129 114L125 110Z"/>
-    <path fill-rule="evenodd" fill="${filigrane}" opacity=".55" d="M112 152Q112 138 129 138Q147 138 147 152V168L136 184V166L129 171L122 166V184L112 168Z M117 153H141V158L129 162L117 158Z"/>
-    <polygon points="25,75 98,74 134,131 98,187 24.5,187 11,173 11,89" fill="${socle}"/>
-  </g>
+// Le panneau Légende + Champion (portrait hexagonal, bannière en flèche) en trois pièces.
+// D'un seul bloc, le gabarit Photoshop ne laissait ni cacher ni refaire ses deux icônes.
+// Chaque pièce porte la découpe du portrait.
+const dansPanneau = (dessin: string) => `<g mask="url(#sans-portrait)">${dessin}</g>`;
+
+/** La plaque en flèche, sous les noms. */
+const plaquePanneau = (): string => dansPanneau(`<path d="M98 74H320.5${BOUT_BANNIERE}H98Z" fill="url(#panneau)"/>`);
+
+/** Les deux filigranes de la plaque : l'écu de la Légende en haut, le heaume du champion en bas. */
+function iconesPanneau(): string {
+  const { filigrane } = COULEURS_DECOR;
+  return dansPanneau(`<path fill-rule="evenodd" fill="${filigrane}" opacity=".55" d="M113 79L129 73L146 79V103L129 123L113 103Z M129 81a5 5 0 1 0 .01 0Z M122 92H136L133 110L129 114L125 110Z"/>
+    <path fill-rule="evenodd" fill="${filigrane}" opacity=".55" d="M112 152Q112 138 129 138Q147 138 147 152V168L136 184V166L129 171L122 166V184L112 168Z M117 153H141V158L129 162L117 158Z"/>`);
+}
+
+/** Le socle du portrait et tous les traits dorés du panneau. */
+function cadrePanneau(avecChevron = true): string {
+  const { or, dessusPanneau, chevron, coeurLosange, separateur, socle } = COULEURS_DECOR;
+  return `${dansPanneau(`<polygon points="25,75 98,74 134,131 98,187 24.5,187 11,173 11,89" fill="${socle}"/>`)}
   ${trace("M98 73.5H320.5", dessusPanneau, 1)}
   ${trace(`M320.5 74${BOUT_BANNIERE}`, or, 2.5)}
   ${trace("M24.5 186H321", or, 2.5)}
@@ -194,9 +204,9 @@ function cadreCamera(): string {
   ${trait([[26, 446], [30.5, 452], [30.5, 492]], filetPale, 1)}`);
 }
 
-/** Plaque du pseudo, cadre et bande du champ de bataille, losange de jonction. */
-function bas(): string {
-  const { or, bordPlaque, filetPale, bandeTerrain, socle } = COULEURS_DECOR;
+/** Plaque du pseudo et ses deux compartiments. */
+function plaqueJoueur(): string {
+  const { or, bordPlaque, filetPale } = COULEURS_DECOR;
   const contourPlaque = "52.5,492 69.5,492 75.5,481.5 269.5,481.5 275.5,492 292.5,492 284.5,522 60.5,522";
   return `<polygon points="${contourPlaque}" fill="url(#plaque)"/>
   <polygon points="${contourPlaque}" fill="url(#plaque-centre)"/>
@@ -210,8 +220,13 @@ function bas(): string {
     ${trait([[30.5, 522.5], [81, 522.5], [82.5, 524.5]])}
     ${trait([[44, 523], [44, 527]], filetPale, 1)}
     ${trait([[61, 523], [61, 527]])}
-    ${trait([[113, 524.5], [115, 522.5], [133, 522.5]])}`)}
-  <polygon points="36,549 309,549 301,571 44,571" fill="${bandeTerrain}" opacity=".88"/>
+    ${trait([[113, 524.5], [115, 522.5], [133, 522.5]])}`)}`;
+}
+
+/** Bande et cadre du champ de bataille, losange de jonction. */
+function cadreTerrain(): string {
+  const { or, bandeTerrain, socle } = COULEURS_DECOR;
+  return `<polygon points="36,549 309,549 301,571 44,571" fill="${bandeTerrain}" opacity=".88"/>
   <polygon points="${points(TRAPEZE_TERRAIN)}" fill="none" stroke="${or}" stroke-width="2"/>
   ${trait([[58, 587], [287, 587]], or, 2)}
   <polygon points="172.5,582.75 180,591.25 172.5,599.75 165,591.25" fill="${socle}" stroke="${or}" stroke-width="1.5"/>
@@ -265,9 +280,35 @@ const zoneComplet = () => {
 };
 const zoneCompact = () => `<rect width="${SOCLE_COMPACT.l}" height="${SOCLE_COMPACT.h}" fill="#fff"/>${reduit("panneau", hexagone)}${reduit("bas", trapeze)}`;
 
-const cadresComplet = () => cadreCamera() + panneau() + bas();
-// Pas de chevron : il tombe au bord du socle, et rien ne doit le toucher.
-const cadresCompact = () => reduit("panneau", panneau(false)) + reduit("bas", bas());
+/**
+ * Les pièces dorées du décor, de dessous en dessus. Le site les empile en une image ; le
+ * gabarit Photoshop en fait un calque chacune, nommé en anglais comme le reste du
+ * gabarit. Fondues en un seul calque, un streamer ne pouvait ni cacher ni refaire les
+ * icônes de Légende et de champion (retour d'Allan, 16 novembre 2026).
+ */
+type PieceDecor = { cle: string; nom: string; dessin: string };
+const piecesComplet = (): PieceDecor[] => [
+  { cle: "camera", nom: "Camera frame", dessin: cadreCamera() },
+  { cle: "panneau_plaque", nom: "Legend panel: plate", dessin: plaquePanneau() },
+  { cle: "panneau_icones", nom: "Legend and Champion icons (hide or replace)", dessin: iconesPanneau() },
+  { cle: "panneau_cadre", nom: "Legend panel: gold frame", dessin: cadrePanneau() },
+  { cle: "joueur", nom: "Player name plate", dessin: plaqueJoueur() },
+  { cle: "terrain", nom: "Battlefield strip", dessin: cadreTerrain() },
+];
+// Pas de caméra en compact, et pas de chevron : il tombe au bord du bloc, et rien ne
+// doit le toucher.
+const piecesCompact = (): PieceDecor[] => [
+  { cle: "panneau_plaque", nom: "Legend panel: plate", dessin: reduit("panneau", plaquePanneau()) },
+  { cle: "panneau_icones", nom: "Legend and Champion icons (hide or replace)", dessin: reduit("panneau", iconesPanneau()) },
+  { cle: "panneau_cadre", nom: "Legend panel: gold frame", dessin: reduit("panneau", cadrePanneau(false)) },
+  { cle: "joueur", nom: "Player name plate", dessin: reduit("bas", plaqueJoueur()) },
+  { cle: "terrain", nom: "Battlefield strip", dessin: reduit("bas", cadreTerrain()) },
+];
+const cadresComplet = () => piecesComplet().map((piece) => piece.dessin).join("");
+const cadresCompact = () => piecesCompact().map((piece) => piece.dessin).join("");
+/** Un calque du gabarit par pièce, des deux côtés de l'écran. */
+export const calquesGabarit = (compact = false) =>
+  (compact ? piecesCompact() : piecesComplet()).map(({ cle, nom, dessin }) => ({ cle, nom, svg: svg(deuxCotes(dessin)) }));
 
 const masque = (zone: string) => svg(`<rect width="${LARGEUR}" height="${HAUTEUR}" fill="#000"/>${deuxCotes(zone)}`);
 /** Le décor tel que l'overlay l'affiche : le fond découpé, les cadres dessus. */
@@ -277,12 +318,10 @@ const decor = (zone: string, fond: string, cadres: string) =>
 
 export const svgFond = () => svg(deuxCotes(fondColonne()));
 export const svgMasqueFond = () => masque(zoneComplet());
-export const svgCadres = () => svg(deuxCotes(cadresComplet()));
 export const svgDecor = () => decor(zoneComplet(), fondColonne(), cadresComplet());
 
 export const svgFondCompact = () => svg(deuxCotes(fondCompact()));
 export const svgMasqueFondCompact = () => masque(zoneCompact());
-export const svgCadresCompact = () => svg(deuxCotes(cadresCompact()));
 export const svgDecorCompact = () => decor(zoneCompact(), fondCompact(), cadresCompact());
 
 /** Case du chrono, à part du décor : elle s'éteint avec lui. */

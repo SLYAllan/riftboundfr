@@ -70,7 +70,8 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   l'overlay les pose, et les gabarits les montrent en repère à cette place. Changer
   la taille des cartes fait donc échouer le test de l'empreinte jusqu'au prochain
   `gen:decor`. Toute échelle autre que 1 étale le trait doré du cadre : le complet
-  affiche donc `cadre_cartes_*.webp`, que `gen:decor` reconstruit net à la bonne taille. Un décor envoyé par un streamer se pose à la place du nôtre : il
+  affiche donc `cadre_cartes_*.webp`, que `gen:decor` reconstruit net à la bonne taille.
+  Les gabarits ont des calques nommés en anglais, un par pièce dorée (`calquesGabarit`). Un décor envoyé par un streamer se pose à la place du nôtre : il
   doit partir du gabarit, et changer une découpe décale ceux déjà en ligne.
 - **Deux versions de l'overlay jusqu'au 1er décembre 2026** → `src/lib/overlay-version.ts`
   (demande d'Allan, 15 novembre 2026). Le lien collé dans OBS garde l'ANCIENNE version ;
