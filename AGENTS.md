@@ -421,7 +421,10 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   échec visible) plus l'annulation de la requête en cours quand la Légende change,
   sinon la réponse lente arrive en dernier et affiche le mauvais deck.
 - `overlay.ts` — `secondesChrono` rend les secondes affichées, négatives quand le
-  chrono passe zéro. **Ajouter un champ à `event` demande TROIS retouches** : le
+  chrono passe zéro. `echelleTexte` dit de combien réduire un texte de l'overlay :
+  `FitText` compte les caractères, et sur deux lignes il faut compter les MOTS, sinon le
+  dernier part en « … ». `montrerCarteDuCote` pose une carte à gauche ou à droite et la
+  retire de l'autre liste : boutons, glisser-déposer et flèche du tableau de bord y passent. **Ajouter un champ à `event` demande TROIS retouches** : le
   type dans `overlay.ts`, `normaliserEvent` juste en dessous, et la liste blanche
   de `overlay-validation.ts`. Cette liste refuse les champs inconnus : un champ
   oublié là fait répondre 400 à toute écriture du tableau de bord.
@@ -500,7 +503,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **81 fichiers, 457 tests, tous verts** (relevé du 15 novembre 2026). |
+| `npm test` | ✅ | Vitest. **81 fichiers, 469 tests, tous verts** (relevé du 15 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

@@ -1,48 +1,78 @@
 # HANDOFF — état des lieux
 
-## 15 novembre 2026 — overlay : remis sur une branche, code audité, écran pas encore vu
+## 15 novembre 2026 — overlay : remis sur une branche, audité (code et écran), cartes et tableau de bord repris
 
 **L'overlay du 8 novembre vit sur la branche `feat/overlay-retransmission`**, locale, pas
 poussée. `main` ne le porte toujours pas. La branche part du `main` du 13 novembre et annule
 `41c0004a4` ; un seul conflit, dans ce fichier. Pour le remettre sur `main` : fusionner la
 branche, plus de `git revert` à faire.
 
+**Porte sur la branche** : `tsc` 0, 81 fichiers et 469 tests, `eslint src` 0 erreur.
+`next build` 0 après l'audit du code ; à relancer après les derniers commits.
+`scripts/decklists-index.test.ts` dépasse ses 5 s quand la machine est chargée (serveur
+de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe avec
+`--testTimeout 30000`. Rien à voir avec l'overlay.
+
 **Audit du code** (revue de la branche, dix constats, chacun vérifié avant correction) :
-- **Ronde et classement coupés à l'écran**, mesurés sur les avances de la police : à 18
-  caractères par ligne, « CHAMPIONSHIP FINAL » faisait 270 px pour 259 ; à 9,2 px par
-  caractère, un classement de plus de 20 lettres dépassait sa pastille. `PX_PAR_CARACTERE`
-  porte maintenant 16,9 (ronde) et 11 (classement). **Pas vu dans OBS.**
-- **Une case, un endroit** : le trou de la caméra lit `CASES.camera`, la case du chrono est
-  `CASE_CHRONO` pour le dessin et pour le composant. Les neuf dessins sont identiques
-  avant et après, à l'octet (empreintes comparées).
-- **Images et dessin tenus d'accord** : `gen:decor` écrit `overlay-decor.empreinte.json`,
-  `overlay-decor.test.ts` échoue si le dessin a changé sans ses images (essayé : une case
-  déplacée d'un pixel le fait tomber).
+- Ronde et classement coupés, mesurés sur les avances de la police : `PX_PAR_CARACTERE`
+  porte 16,9 (ronde) et 11 (classement). Vu dans OBS.
+- Une case, un endroit : le trou de la caméra lit `CASES.camera`, la case du chrono est
+  `CASE_CHRONO`. Les neuf dessins sont identiques avant et après, à l'octet.
+- `gen:decor` écrit `overlay-decor.empreinte.json`, `overlay-decor.test.ts` échoue si le
+  dessin a changé sans ses images.
 - Les manches lisent `manchesPourGagner` ; les tests de `nomEtTitre` et `encreSur` sont
   dans `overlay.test.ts`.
+- `psd-tools` manque sur ce poste : `gen:decor` s'arrête à l'étape Photoshop, les PSD
+  n'ont pas été refaits (le dessin n'a pas bougé).
 
-**Porte sur la branche** : `tsc` 0, 81 fichiers et 457 tests, `eslint src` 0 erreur,
-`next build` 0 (lancé avant les corrections ; après, types, tests et lint seulement).
-`psd-tools` manque sur ce poste : `gen:decor` s'arrête à l'étape Photoshop, les PSD n'ont
-pas été refaits (le dessin n'a pas bougé).
+**Audit à l'écran** (demandé par Allan : l'audit du 11 novembre laissait l'overlay, le
+tableau de bord et le compagnon de côté). Compte de test local (`seed-test-user.mts`),
+qui a son propre overlay : celui d'Allan n'a pas été touché. Mesure dans la page, puis
+capture dans OBS sur une scène d'essai retirée ensuite.
+- **Overlay**, 7 états × 4 vues (complet, compact, `/zh`, source en 1280x720) : aucune
+  image cassée, aucune erreur console. Deux défauts, corrigés et revus dans OBS :
+  le chrono perdait son dernier chiffre dès six caractères (« +02:44 », « 120:00 »), et
+  un titre avec logo perdait son dernier mot (« REGIONAL CHAMPIONSHIP… »). La règle du
+  second vit dans `echelleTexte` (`src/lib/overlay.ts`), que lit `FitText`.
+- **Tableau de bord et compagnon**, 5 largeurs de 320 à 1440 px : aucune violation
+  axe-core (WCAG 2.2 AA), aucun débordement, aucun texte rogné, aucun champ sous 16 px
+  sur téléphone, aucune erreur console.
+- **Limites vues, laissées** : un pseudo de seize lettres larges (« WWWW… ») sort de sa
+  plaque, `FitText` compte les caractères sans connaître leur largeur ; le plus long
+  titre de champion tombe à 9,6 px (8,2 en compact) et un classement de 40 caractères à
+  8 px.
 
-**Laissé tel quel, à dessein** : les décalages du cadre de cartes en compact (`CARTES`,
-16,3 et 271,7 px) restent écrits à la main, leur calcul n'est noté nulle part et les
-changer sans écran déplacerait le cadre ; le dessin SVG reste dans le module que charge le
-navigateur, quelques kilo-octets.
+**Demandes d'Allan du 15 novembre :**
+1. **Une carte se pose du côté qu'on choisit.** Elle partait toujours chez le joueur 1.
+   Boutons Gauche et Droite sur chaque résultat de recherche, glisser-déposer vers un
+   joueur, flèche pour changer de côté. Règle : `montrerCarteDuCote` (`overlay.ts`).
+   Essayé dans le vrai tableau de bord, état relu en base après chaque geste.
+2. **Cartes à l'écran plus grandes : À L'ESSAI, à confirmer.** `TAILLE_CARTES = 1.15`
+   dans `overlay-full.tsx` (carte de 255 x 356 px au lieu de 222 x 310). Le cadre tient
+   jusqu'à 1,2. **À retirer une fois la taille choisie** : le paramètre `?cartes=` de
+   `src/app/overlay/[token]/page.tsx`, qui sert à comparer (`?cartes=1`, `1.1`, `1.2`).
+3. **Tableau de bord** : le volet « Liens et affichage OBS » se replie dès qu'une
+   Légende est posée. Points à 0,9 écran du haut au lieu de 2,4 (1440x900), 1,0 au lieu
+   de 3,8 (375x812). **Proposé, pas fait** : remonter points, manches et chrono
+   au-dessus des champs qu'on ne remplit qu'une fois (encore 1,4 écran pour le chrono) ;
+   alléger `/api/cards`, 715 Ko dont la recherche ne lit que deux champs.
 
 **À trancher par Allan avant le Deploy :**
 1. **Décors envoyés par des streamers** : posés tels quels sur la nouvelle géométrie, ils
-   cacheront portrait et caméra. Le code ne protège rien. D'abord les compter en prod
-   (`backgroundUrl`, `backgroundNocamUrl`, `backgroundCompactUrl` non vides), lecture pas
-   encore autorisée.
+   cacheront portrait et caméra. D'abord les compter en prod (`backgroundUrl`,
+   `backgroundNocamUrl`, `backgroundCompactUrl` non vides), lecture pas encore autorisée.
 2. **Deploy pendant un direct** : une source OBS ouverte avant garde l'ancienne page, qui
    demande `/stream/6_full.webp` au premier joueur à 6 points et reçoit un 404. Soit
    remettre les 40 images de pastilles une version de plus, soit accepter.
+3. **La taille des cartes** (point 2 ci-dessus).
 
-**Pas fait** : aucun contrôle à l'écran. OBS et la base locale étaient éteints. L'audit
-d'interface du 11 novembre laissait l'overlay, le tableau de bord et le compagnon hors
-périmètre : ils ne l'ont toujours pas reçu.
+**Deux pièges d'outillage payés ce jour-là :**
+- Un serveur `next dev` engorgé (1,4 Go, 15 s pour `/api/health`) rend à OBS une source
+  vide, sans erreur : la capture montre le fond seul. Attendre que la source ait des
+  pixels avant de capturer, et relancer le serveur s'il traîne.
+- Plusieurs onglets Playwright sur l'overlay : Chromium bride les minuteurs des onglets
+  en arrière-plan, trois vues sur quatre restaient sur l'état d'avant. Lancer avec
+  `--disable-background-timer-throttling`.
 
 ## 13 novembre 2026 — ban du 23 novembre, règles du 9 octobre, best-of du RC Europe, dix propositions appliquées : en local seulement
 
