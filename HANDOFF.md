@@ -4,8 +4,17 @@
 
 **L'overlay est revenu sur `main` le 16 novembre** : la branche
 `feat/overlay-retransmission` y est entrée en avance rapide, à la demande d'Allan, après
-l'audit final ci-dessous. **Pas encore en ligne** : le Deploy est manuel, c'est Allan
-qui le lance. Plus de `git revert` à faire, plus de gel sur les fichiers de l'overlay.
+l'audit final ci-dessous. **En ligne depuis le 16 novembre** : Allan a lancé le Deploy,
+la CI était verte sur `23ef94419`. Plus de `git revert` à faire, plus de gel sur les
+fichiers de l'overlay.
+
+**Vérifié en prod après le Deploy**, par ce qui est public : `/api/health` 200 ; les
+quatre gabarits, les décors et les cadres de cartes servis à l'octet près du commit
+fusionné ; le serveur rend `OverlayV1` sur l'adresse habituelle et sur `?version=1`,
+`OverlayFull` sur `?version=2` (lu dans la page, avec un jeton qui n'existe pas) ; le
+code servi porte le bandeau et ses traductions. **Pas vérifié** : le bandeau tel qu'il
+s'affiche, le tableau de bord étant derrière la connexion Discord, et un vrai overlay
+de streamer. Allan le voit en ouvrant son tableau de bord.
 
 **Porte sur le commit fusionné** : `tsc` 0, 82 fichiers et 480 tests, `eslint src` 0 erreur.
 `next build` 0 sur `280d744ac`, le dernier commit de code, dans une copie à part de la
@@ -27,9 +36,8 @@ de dev, navigateur et OBS ensemble) : il passe seul en 3 s, et la suite passe av
 - Diff de la branche relu : pas de reste d'essai. `origin/main` n'a pas bougé depuis la
   base de la branche.
 
-**Reste à faire, dans l'ordre, avant le tweet :** Deploy par Allan dans Coolify, vérifier
-en prod le bandeau, le lien d'aperçu et les quatre gabarits, puis le tweet
-(`content/tweets/2026-11-16-overlay-maj-en.md`).
+**Reste à faire :** le tweet (`content/tweets/2026-11-16-overlay-maj-en.md`), prévu
+vers 18 h, heure de Paris, avec ses deux réponses.
 
 **Le dossier `RiftboundFr` est en retard sur `origin/main`** : la fusion s'est faite hors
 de lui, parce qu'il porte le travail non committé d'autres sessions. Un seul de ces
@@ -168,8 +176,7 @@ classement dans `overlay-dashboard.tsx`, leurs textes dans `i18n-en.ts` et `i18n
 et la règle des décors dans `overlay-full.tsx`.
 
 **Reste à trancher par Allan :**
-1. Lancer le Deploy (l'overlay est sur `main` depuis le 16 novembre) : c'est lui qui
-   décide quand. Le bandeau n'a de sens que si le Deploy part bien avant le 1er décembre.
+1. Rien pour le Deploy : il est fait (16 novembre).
 2. Compter en prod les décors déjà envoyés (`backgroundUrl`, `backgroundNocamUrl`,
    `backgroundCompactUrl` non vides) : plus pour éviter une casse, pour savoir qui
    prévenir. Lecture de la prod pas encore autorisée.
