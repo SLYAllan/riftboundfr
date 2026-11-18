@@ -20,62 +20,67 @@
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 85 % des listes, 1 exemplaire",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The List",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 84 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Runeblade Anvil",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Amateur Demolitionist",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Acceptable Losses",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Piercing Light",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Acceptable Losses",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Void Seeker",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -83,31 +88,36 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Ziggs, Explosive": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "89 %",
+      "usage": "90 %",
       "role": "2,5 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "70 %",
+      "usage": "74 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Void Gate (81 %)",
-    "Rockfall Path (59 %)",
-    "Sigil of the Storm (56 %)"
+    "Rockfall Path (61 %)",
+    "Sigil of the Storm (58 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 33,
+    "joueursClasses": 37,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 13,
-    "listesPubliees": 27,
+    "tournois": 16,
+    "listesPubliees": 31,
     "bestPlacements": [
+      {
+        "placement": "25th",
+        "player": "NamaYaki生煎",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
       {
         "placement": "47th",
         "player": "怪兽营地.夏洛",
@@ -127,21 +137,16 @@
         "placement": "62th",
         "player": "哈叶叶",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "71th",
-        "player": "Vina",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 33 joueurs classés, 13 tournois, dont 27 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 37 joueurs classés, 16 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements sacrifiés et Bombes",
   "legendAbility": "Pour une énergie et une Puissance, épuisez Ziggs : posez un jeton d'équipement Bombe sur un champ de bataille.",
   "gameplan": {
     "earlyGame": "Seal of Rage, dans toutes les listes, ne coûte rien et s'épuise pour donner une Puissance de Furie, même en réaction. Amateur Demolitionist pose un jeton Bombe en arrivant. Detonate, dans toutes les listes, tue un équipement pour une énergie, et son propriétaire pioche deux cartes.",
-    "midGame": "Shimmering Swimmer, dans 96 % des listes, inflige 2 dégâts si vous tuez une de vos unités ou un de vos équipements pour le jouer. Treasure Trove pioche une carte et canalise une rune épuisée quand il quitte le terrain. Ziggs, Explosive, dans 96 % des listes, pose lui aussi des Bombes, et gagne +2 Puissance en défense en tuant un de vos équipements.",
-    "lateGame": "Fizz, Trickster, dans 89 % des listes, rejoue depuis la défausse un sort de 3 énergie ou moins sans payer son énergie, Falling Star par exemple. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+    "midGame": "Shimmering Swimmer, dans 97 % des listes, inflige 2 dégâts si vous tuez une de vos unités ou un de vos équipements pour le jouer. Treasure Trove pioche une carte et canalise une rune épuisée quand il quitte le terrain. Ziggs, Explosive, dans 97 % des listes, pose lui aussi des Bombes, et gagne +2 Puissance en défense en tuant un de vos équipements.",
+    "lateGame": "Fizz, Trickster, dans 90 % des listes, rejoue depuis la défausse un sort de 3 énergie ou moins sans payer son énergie, Falling Star par exemple. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
     "winCondition": "Sacrifier ses équipements pour piocher et blesser, et garder la main pleine."
   },
   "strengths": [
@@ -149,7 +154,7 @@
     "Detonate et Treasure Trove changent chaque équipement sacrifié en cartes"
   ],
   "weaknesses": [
-    "33 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre",
+    "37 joueurs classés sur 16 tournois, aucun dans les 10 % de tête, aucun titre",
     "Sa meilleure place est une quarante-septième, à la City Challenge de Pékin",
     "Sans équipement à sacrifier, Detonate et Shimmering Swimmer perdent leur intérêt"
   ]

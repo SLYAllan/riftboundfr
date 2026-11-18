@@ -8,7 +8,12 @@
   "set": "Unleashed",
   "keyCards": [
     {
-      "name": "Stalwart Poro",
+      "name": "Mutated Mouser",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Trusty Ramhound",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -18,161 +23,128 @@
       "noyau": true
     },
     {
-      "name": "Mutated Mouser",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Frisky Hunter",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Trusty Ramhound",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Back Off",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
+    },
+    {
+      "name": "Stalwart Poro",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Cœur du deck, 93 % des listes, 1 exemplaire",
-      "noyau": true
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Discipline",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Daisy!",
-      "role": "Standard, 87 % des listes, 1 exemplaire",
+      "name": "Frisky Hunter",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Vilemaw",
-      "role": "Standard, 80 % des listes, 1,5 exemplaire",
+      "name": "Ultrasoft Poro",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Iridescent Avian",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Block",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "name": "Raucous Anthem",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Flurry of Feathers",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Salvage",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Affectionate Poro",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ki Barrier",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "name": "Daisy!",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 40 % des listes, 3 exemplaires",
+      "role": "Souple, 45 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Fallen Feline",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "name": "Not So Fast",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
-  "setDesChiffres": "Vendetta",
+  "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "champions": {
-    "Blitzcrank, Impassive": {
-      "usage": "73 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Ivern, Friend to All": {
-      "usage": "67 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Kennen, Keeper of Balance": {
-      "usage": "60 %",
+    "Ivern, Nurturer": {
+      "usage": "82 %",
       "role": "1 exemplaire en moyenne"
     },
     "Azir, Sovereign": {
-      "usage": "53 %",
-      "role": "2,5 exemplaires en moyenne"
-    },
-    "Vi, Peacekeeper": {
-      "usage": "47 %",
+      "usage": "64 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Ivern, Nurturer": {
-      "usage": "33 %",
+    "Blitzcrank, Impassive": {
+      "usage": "36 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Forbidding Waste (87 %)",
+    "Rockfall Path (82 %)",
     "Vilemaw's Lair (73 %)",
-    "Vaults of Helia (67 %)",
-    "Rockfall Path (40 %)"
+    "Forbidding Waste (55 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 164,
-    "coupe10": 3,
+    "joueursClasses": 19,
+    "coupe10": 0,
     "titres": 0,
-    "conversion": "1.8 %",
-    "tournois": 24,
-    "listesPubliees": 15,
+    "conversion": "0 %",
+    "tournois": 8,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
-        "placement": "34th",
-        "player": "玖离啾啾",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+        "placement": "48th",
+        "player": "Sadnath",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "38th",
-        "player": "拯救周末",
-        "tournament": "S4 Hangzhou City Challenge (2026-08-09)"
+        "placement": "56th",
+        "player": "漏斗蛋糕",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
-        "placement": "39th",
-        "player": "E1egy",
-        "tournament": "S4 Beijing City Challenge (2026-08-15)"
+        "placement": "62th",
+        "player": "chiffon",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
-        "placement": "47th",
-        "player": "叨叨魄罗-doge",
-        "tournament": "S4 Guangzhou City Challenge (2026-08-22)"
+        "placement": "62th",
+        "player": "兔子宝贝",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
       },
       {
-        "placement": "51th",
-        "player": "XXT.FG.NANA",
-        "tournament": "S4 Shanghai City Challenge (2026-09-05)"
+        "placement": "63th",
+        "player": "CBL Lvl1Litwick",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 164 joueurs classés, 24 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 8 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Quatre familles d'animaux et unités défensives",
   "legendAbility": "Quand vous conquérez ou tenez un champ de bataille, vous pouvez épuiser Ivern pour le remplacer par un jeton de champ de bataille Brush.",
   "gameplan": {

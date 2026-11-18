@@ -11,44 +11,39 @@
   "legendAbility": "Une énergie et épuiser Viktor jouent un jeton Recrue de 1 Puissance. Un bloqueur gratuit à chaque tour.",
   "gameplan": {
     "earlyGame": "Bellows Breath, dans toutes les listes, inflige 1 à trois unités au même endroit. Carrion Dredger laisse un Oiseau à Protection en mourant. Chaque tour, la Légende pose un jeton Recrue pour une énergie.",
-    "midGame": "Cull the Weak, dans 93 % des listes, oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité. Hidden Blade et Wages of Pain retirent une unité adverse. Viktor, Leader, dans 89 % des listes, pose une Recrue chaque fois qu'une de vos autres unités meurt, sauf une Recrue.",
+    "midGame": "Cull the Weak, dans 91 % des listes, oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité. Hidden Blade et Wages of Pain retirent une unité adverse. Viktor, Leader, dans 88 % des listes, pose une Recrue chaque fois qu'une de vos autres unités meurt, sauf une Recrue.",
     "lateGame": "Imperial Decree, dans toutes les listes, tue toute unité qui subit des dégâts ce tour-là : avec Bellows Breath, il vide un champ de bataille. Sprite Burst pose deux Esprits de 3 Puissance.",
     "winCondition": "Tout retirer en face, et garder assez de Recrues pour tenir les champs de bataille."
   },
   "keyCards": [
-    {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
     {
       "name": "Hidden Blade",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Imperial Decree",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Cull the Weak",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Wages of Pain",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sprite Fountain",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Shadow's Call",
-      "role": "Standard, 86 % des listes, 2,5 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -57,68 +52,69 @@
       "noyau": false
     },
     {
-      "name": "Sprite Burst",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "name": "Sprite Fountain",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Concert Poster",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "name": "Sprite Burst",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Concert Poster",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Blood Money",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "B.F. Sword",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Viktor, Leader": {
-      "usage": "89 %",
+      "usage": "88 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "43 %",
+      "usage": "38 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "36 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Xin Zhao, Vigilant": {
-      "usage": "32 %",
+      "usage": "35 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Forbidding Waste (79 %)",
-    "Rockfall Path (71 %)",
-    "Ravenbloom Conservatory (43 %)"
+    "Rockfall Path (74 %)",
+    "Ravenbloom Conservatory (44 %)"
   ],
   "strengths": [
     "Deuxième au Showdown de Sacramento",
@@ -126,21 +122,26 @@
     "La Légende pose un jeton chaque tour, à donner à Cull the Weak"
   ],
   "weaknesses": [
-    "32 joueurs classés sur 12 tournois, 1 dans les 10 % de tête : 3,1 % de conversion contre 9,9 % pour le format, aucun titre",
+    "38 joueurs classés sur 15 tournois, 2 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, aucun titre",
     "Peu d'unités qui frappent fort : le deck gagne en retirant celles d'en face"
   ],
   "competitiveResults": {
-    "joueursClasses": 32,
-    "coupe10": 1,
+    "joueursClasses": 38,
+    "coupe10": 2,
     "titres": 0,
-    "conversion": "3.1 %",
-    "tournois": 12,
-    "listesPubliees": 28,
+    "conversion": "5.3 %",
+    "tournois": 15,
+    "listesPubliees": 34,
     "bestPlacements": [
       {
         "placement": "2nd",
         "player": "Calvin Jin",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "13th",
+        "player": "Shan-Uzal",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
         "placement": "13th",
@@ -156,18 +157,13 @@
         "placement": "21th",
         "player": "Liu",
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "26th",
-        "player": "ada",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 32 joueurs classés, 12 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 38 joueurs classés, 15 tournois, dont 34 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

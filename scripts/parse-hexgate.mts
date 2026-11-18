@@ -71,6 +71,11 @@ const NOMS_PARTICULIERS: Record<number, string> = {
   // Cette fois le titre porte la ville.
   287: "S4 Chengdu National Open Side Event A",
   288: "S4 Chengdu National Open Side Event B",
+  // Tournois hors de Chine relayés par hexgate (source topdeck), pris à la demande
+  // d'Allan le 18 novembre. 307 porte le libellé que riftdecks a déjà mis en base :
+  // seules les listes absentes de ce relevé-là entrent.
+  307: "Riftbound Showdown Sacramento",
+  317: "CCS Houston Riftbound Invitational",
 };
 
 interface CarteBrute {

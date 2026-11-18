@@ -10,7 +10,7 @@
       "winCondition": "Tenir des champs de bataille avec une seule unité sur chacun, et marquer tour après tour."
     },
     "strengths": [
-      "149 joueurs classés sur 16 tournois, 15 dans les 10 % de tête : 10,1 % de conversion contre 9,9 % de moyenne, et deux titres, les City Challenge de Shanghai du 1er et du 7 novembre",
+      "174 joueurs classés sur 21 tournois, 15 dans les 10 % de tête : 8,6 % de conversion contre 9,9 % de moyenne, et deux titres, les City Challenge de Shanghai du 1er et du 7 novembre",
       "Neuf cartes dans 90 % des listes ou plus : la construction varie peu d'un joueur à l'autre",
       "Zhonya's Hourglass, dans 98 % des listes, sauve une unité qui allait mourir",
       "Ruin Runner, dans 83 % des listes, échappe aux sorts et aux capacités adverses"
@@ -18,7 +18,7 @@
     "weaknesses": [
       "Tout repose sur une unité isolée : sans elle, la Légende ne donne plus rien",
       "Peu de pioche : Discipline, Scuttle Crab, et Lonely Poro qui ne pioche que si elle meurt seule",
-      "Deux titres sur 16 tournois, mais une conversion à peine au-dessus de la moyenne du format : 149 joueurs classés ne suffisent pas à trancher"
+      "Deux titres sur 21 tournois, mais une conversion sous la moyenne du format (8,6 %) : 174 joueurs classés ne suffisent pas à trancher"
     ]
   },
   "kaisa-daughter-of-the-void.json": {
@@ -31,13 +31,13 @@
       "winCondition": "Enchaîner les tours et les sorts jusqu'à ce que l'adversaire n'ait plus de réponse."
     },
     "strengths": [
-      "264 joueurs classés sur 16 tournois, 28 dans les 10 % de tête : 10,6 % de conversion contre 9,9 % de moyenne",
+      "337 joueurs classés sur 21 tournois, 36 dans les 10 % de tête : 10,7 % de conversion contre 9,9 % de moyenne",
       "Sept cartes à 98 % ou plus, dont Stupefy et Falling Star dans toutes les listes",
       "Time Warp dans 97 % des listes : un tour de plus décide une partie serrée",
       "La Légende paie les sorts sans toucher aux runes du tour"
     ],
     "weaknesses": [
-      "Un seul titre sur 16 tournois, la City Challenge de Pékin du 8 novembre, pour la deuxième Légende la plus jouée du set",
+      "Un seul titre sur 21 tournois, la City Challenge de Pékin du 8 novembre, pour la deuxième Légende la plus jouée du set",
       "Le moteur coûte cher, 6 énergie pour Brynhir Thundersong, 7 pour Thousand-Tailed Watcher et 10 pour Time Warp",
       "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
     ]
@@ -46,7 +46,7 @@
     "archetype": "Tempo et mouvement, une unité préparée deux fois",
     "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab, dans 89 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
+      "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
       "midGame": "Chaque sort qui choisit une de vos unités, comme Discipline ou Defiant Dance, permet à la Légende de la préparer : elle combat ou se déplace une fois de plus. Irelia, Fervent, dans toutes les listes, a Protection et gagne +1 Puissance chaque fois qu'on la choisit ou qu'on la prépare.",
       "lateGame": "Stellacorn Herder pioche à chaque déplacement. Ride The Wind déplace une de vos unités et la prépare. Zhonya's Hourglass sauve une unité qui devait mourir.",
       "winCondition": "Choisir ses unités avec des sorts bon marché pour les préparer, et combattre deux fois par tour."
@@ -57,7 +57,7 @@
       "Irelia, Fervent dans toutes les listes : chaque sort qui la choisit la renforce"
     ],
     "weaknesses": [
-      "69 joueurs classés sur 15 tournois, 4 dans les 10 % de tête : 5,8 % de conversion contre 9,9 % pour le format",
+      "81 joueurs classés sur 19 tournois, 5 dans les 10 % de tête : 6,2 % de conversion contre 9,9 % pour le format",
       "La Légende coûte une Puissance à chaque unité préparée"
     ]
   },
@@ -65,18 +65,18 @@
     "archetype": "Combats gagnés à la réaction",
     "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
     "gameplan": {
-      "earlyGame": "Tideturner, dans 97 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
+      "earlyGame": "Tideturner, dans 98 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
       "midGame": "Diana, Lunari, dans toutes les listes, regarde le dessus du deck au début d'un combat là où elle est, pour une énergie, et pioche la carte si c'est un sort. Moonfall attire une unité adverse sur votre champ de bataille et retire 2 Puissance aux unités adverses là-bas. Avec l'énergie de la Légende, vous jouez un sort de plus pendant le combat.",
-      "lateGame": "Hwei, Brooding Painter, dans 97 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
+      "lateGame": "Hwei, Brooding Painter, dans 98 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
       "winCondition": "Gagner les combats avec un sort d'avance, en réaction."
     },
     "strengths": [
       "Un titre, le Showdown de Melbourne, et une troisième place au même tournoi",
-      "44 joueurs classés sur 14 tournois, 7 dans les 10 % de tête : 15,9 % de conversion contre 9,9 % pour le format",
+      "54 joueurs classés sur 18 tournois, 9 dans les 10 % de tête : 16,7 % de conversion contre 9,9 % pour le format",
       "Gust, Stupefy, Star-Crossed, Eclipse et Hard Bargain répondent pendant le combat"
     ],
     "weaknesses": [
-      "44 joueurs seulement : l'écart ne tient plus le test (p = 0,20)",
+      "54 joueurs seulement : l'écart ne tient plus le test (p = 0,11)",
       "L'énergie de la Légende ne sert que pendant un combat"
     ]
   },
@@ -86,16 +86,16 @@
     "gameplan": {
       "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Carrion Dredger, dans 98 % des listes, laisse un Oiseau à Protection en mourant, Faithful Manufactor pose un jeton Recrue en arrivant.",
       "midGame": "Cull the Weak, dans toutes les listes, oblige chaque joueur à tuer une de ses unités : vous sacrifiez un jeton, l'adversaire perd une vraie unité. Rek'Sai, Breacher, dans toutes les listes, donne Accélération aux unités jouées d'ailleurs que de la main, comme celles que révèle la Légende. Falling Star inflige 3 dégâts deux fois.",
-      "lateGame": "Undertitan, dans 96 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
+      "lateGame": "Undertitan, dans 97 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
       "winCondition": "Conquérir, puis enchaîner sur les cartes que la Légende révèle, avec des unités qui arrivent prêtes."
     },
     "strengths": [
-      "108 joueurs classés sur 16 tournois, 11 dans les 10 % de tête : 10,2 % de conversion contre 9,9 % pour le format",
+      "134 joueurs classés sur 21 tournois, 13 dans les 10 % de tête : 9,7 % de conversion contre 9,9 % pour le format",
       "Six Top 8 en City Challenge : deuxième à Guangzhou le 8 novembre, troisième à Shenyang, sixième à Guangzhou et à Shanghai, septième à Shanghai le 7 novembre, huitième à Shenzhen",
       "Sept cartes dans au moins 95 % des listes, dont Cull the Weak et Falling Star dans toutes"
     ],
     "weaknesses": [
-      "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,87)",
+      "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 1,0)",
       "La Légende ne sert qu'après une conquête"
     ]
   },
@@ -103,9 +103,9 @@
     "archetype": "Duel : une grosse unité, protégée",
     "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
     "gameplan": {
-      "earlyGame": "Pit Rookie, dans 72 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
-      "midGame": "Fiora, Victorious, dans 94 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 94 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
-      "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 72 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+      "earlyGame": "Pit Rookie, dans 68 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
+      "midGame": "Fiora, Victorious, dans 88 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 92 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
+      "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 76 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
       "winCondition": "Rendre une unité Puissante, la protéger, et gagner ses combats un par un."
     },
     "strengths": [
@@ -113,8 +113,8 @@
       "Chaque unité qui devient Puissante rapporte une rune"
     ],
     "weaknesses": [
-      "19 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
-      "Sa meilleure place est une treizième, à la City Challenge de Fuzhou"
+      "27 joueurs classés sur 15 tournois, 1 dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "Sa meilleure place est une neuvième, à la City Challenge de Nanjing du 14 novembre"
     ]
   },
   "draven-glorious-executioner.json": {
@@ -143,7 +143,7 @@
     "legendAbility": "Une énergie et épuiser Viktor jouent un jeton Recrue de 1 Puissance. Un bloqueur gratuit à chaque tour.",
     "gameplan": {
       "earlyGame": "Bellows Breath, dans toutes les listes, inflige 1 à trois unités au même endroit. Carrion Dredger laisse un Oiseau à Protection en mourant. Chaque tour, la Légende pose un jeton Recrue pour une énergie.",
-      "midGame": "Cull the Weak, dans 93 % des listes, oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité. Hidden Blade et Wages of Pain retirent une unité adverse. Viktor, Leader, dans 89 % des listes, pose une Recrue chaque fois qu'une de vos autres unités meurt, sauf une Recrue.",
+      "midGame": "Cull the Weak, dans 91 % des listes, oblige chaque joueur à tuer une de ses unités : vous donnez une Recrue, l'adversaire perd une vraie unité. Hidden Blade et Wages of Pain retirent une unité adverse. Viktor, Leader, dans 88 % des listes, pose une Recrue chaque fois qu'une de vos autres unités meurt, sauf une Recrue.",
       "lateGame": "Imperial Decree, dans toutes les listes, tue toute unité qui subit des dégâts ce tour-là : avec Bellows Breath, il vide un champ de bataille. Sprite Burst pose deux Esprits de 3 Puissance.",
       "winCondition": "Tout retirer en face, et garder assez de Recrues pour tenir les champs de bataille."
     },
@@ -153,7 +153,7 @@
       "La Légende pose un jeton chaque tour, à donner à Cull the Weak"
     ],
     "weaknesses": [
-      "32 joueurs classés sur 12 tournois, 1 dans les 10 % de tête : 3,1 % de conversion contre 9,9 % pour le format, aucun titre",
+      "38 joueurs classés sur 15 tournois, 2 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, aucun titre",
       "Peu d'unités qui frappent fort : le deck gagne en retirant celles d'en face"
     ]
   },
@@ -171,7 +171,7 @@
       "Arise! pose d'un coup autant de Soldats que vous avez d'équipements"
     ],
     "weaknesses": [
-      "48 joueurs classés sur 15 tournois, 3 dans les 10 % de tête : 6,3 % de conversion contre 9,9 % pour le format, aucun titre",
+      "53 joueurs classés sur 19 tournois, 3 dans les 10 % de tête : 5,7 % de conversion contre 9,9 % pour le format, aucun titre",
       "Sa meilleure place est une huitième, à la City Challenge de Hangzhou",
       "Sans équipement joué dans le tour, la Légende ne fait rien"
     ]
@@ -180,8 +180,8 @@
     "archetype": "Jetons temporaires, tempo à répétition",
     "legendAbility": "Quatre énergie et épuiser Lillia posent un jeton Esprit de 3 Puissance, temporaire. La capacité coûte une énergie de moins par unité temporaire déjà en jeu.",
     "gameplan": {
-      "earlyGame": "Sprite Fountain, dans 98 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
-      "midGame": "Sprite Burst, dans 96 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
+      "earlyGame": "Sprite Fountain, dans 99 % des listes, pose un Esprit de 3 Puissance, préparé et temporaire, et en pose un autre quand il meurt. Ravenbloom Student gagne +1 Puissance à chaque sort joué. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+      "midGame": "Sprite Burst, dans 97 % des listes, pose deux Esprits d'un coup. Chaque unité temporaire baisse d'une énergie le coût de la Légende. Lillia, Fae Fawn, dans toutes les listes, laisse un Esprit derrière elle chaque fois qu'elle quitte un endroit. Smoke and Mirrors échange deux de vos unités de place et pioche.",
       "lateGame": "Unchecked Power, dans 86 % des listes, épuise vos unités, puis inflige 12 à toutes les unités sur les champs de bataille : vous y perdez des jetons, l'adversaire de vraies unités.",
       "winCondition": "Couvrir les champs de bataille d'Esprits qui ne coûtent presque rien, et vider le terrain avec Unchecked Power si besoin."
     },
@@ -191,7 +191,7 @@
       "Defy, Discipline, Stupefy, En Garde et Battle Preparations répondent pendant le tour adverse"
     ],
     "weaknesses": [
-      "Aucun titre sur 16 tournois, pour 10,4 % de conversion, la moyenne du format (77 joueurs classés, 8 dans les 10 % de tête)",
+      "Aucun titre sur 20 tournois, pour 9,3 % de conversion, la moyenne du format (97 joueurs classés, 9 dans les 10 % de tête)",
       "Les Esprits sont temporaires : ils ne restent pas d'un tour à l'autre"
     ]
   },
@@ -199,18 +199,18 @@
     "archetype": "Copies et morts rentables",
     "legendAbility": "Quand vous conquérez ou contrôlez, défaussez une carte et épuisez LeBlanc pour poser un jeton Reflet, copie d'une unité présente, temporaire.",
     "gameplan": {
-      "earlyGame": "Soaring Scout, dans 96 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
-      "midGame": "Sacrifice, dans 96 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 92 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 94 % des listes, pose une copie préparée et temporaire d'une unité.",
+      "earlyGame": "Soaring Scout, dans 97 % des listes, canalise une rune épuisée en mourant, Watchful Sentry pioche une carte. Honest Broker laisse un jeton d'or épuisé.",
+      "midGame": "Sacrifice, dans 97 % des listes, tue une de vos unités Puissantes pour piocher deux cartes et canaliser une rune. Karthus, Eternal, dans 93 % des listes, fait déclencher deux fois vos effets d'Agonie. Mirror Image, dans 95 % des listes, pose une copie préparée et temporaire d'une unité.",
       "lateGame": "Glasc Mixologist, en mourant, rejoue gratuitement une unité de 3 énergie ou moins depuis la défausse. Ruined Rex inflige 4 dégâts à une unité adverse en mourant. Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses.",
       "winCondition": "Faire mourir ses propres unités au bon moment, et en tirer le double avec Karthus."
     },
     "strengths": [
-      "64 joueurs classés sur 16 tournois, 8 dans les 10 % de tête : 12,5 % de conversion contre 9,9 % pour le format",
+      "73 joueurs classés sur 20 tournois, 8 dans les 10 % de tête : 11,0 % de conversion contre 9,9 % pour le format",
       "Quatrième à la City Challenge de Pékin, onzième au Showdown de Sacramento",
       "Karthus, Eternal dans 92 % des listes : chaque Agonie compte double"
     ],
     "weaknesses": [
-      "Un seul titre, la City Challenge de Wuhan, et l'écart avec la moyenne du format ne tient pas le test (p = 0,53)",
+      "Un seul titre, la City Challenge de Wuhan, et l'écart avec la moyenne du format ne tient pas le test (p = 0,70)",
       "La Légende demande de défausser une carte à chaque copie"
     ]
   },
@@ -220,7 +220,7 @@
     "gameplan": {
       "earlyGame": "Bellows Breath, Stupefy et Gust, dans toutes les listes, coûtent une énergie et choisissent des unités adverses : deux fois dans le tour, et la Légende pioche. Ezreal, Prodigy, dans toutes les listes, défausse une carte puis en pioche deux en arrivant.",
       "midGame": "Wages of Pain et Deadly Flourish, dans 92 % des listes, infligent 3 dégâts à une unité et laissent un jeton d'or. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
-      "lateGame": "Thousand-Tailed Watcher, dans 92 % des listes, retire 3 Puissance à toutes les unités adverses. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Singularity inflige 6 dégâts à deux unités.",
+      "lateGame": "Thousand-Tailed Watcher, dans 93 % des listes, retire 3 Puissance à toutes les unités adverses. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Singularity inflige 6 dégâts à deux unités.",
       "winCondition": "Répondre deux fois par tour pour piocher, et ne rien laisser en face."
     },
     "strengths": [
@@ -228,7 +228,7 @@
       "Beaucoup de sorts à une énergie : la Légende pioche presque chaque tour"
     ],
     "weaknesses": [
-      "14 joueurs classés sur 8 tournois, 1 dans les 10 % de tête : 7,1 % de conversion, sous la moyenne du format, sur trop peu de joueurs pour conclure",
+      "16 joueurs classés sur 10 tournois, 1 dans les 10 % de tête : 6,3 % de conversion, sous la moyenne du format, sur trop peu de joueurs pour conclure",
       "Sa meilleure place est une dixième, à la City Challenge de Shenzhen"
     ]
   },
@@ -248,7 +248,7 @@
       "La Légende paie les équipements sans dépenser le tour"
     ],
     "weaknesses": [
-      "14 joueurs classés sur 10 tournois, 7,1 % de conversion : sous la moyenne du format (9,9 %), sans que l'écart tienne le test",
+      "19 joueurs classés sur 14 tournois, 7,1 % de conversion : sous la moyenne du format (9,9 %), sans que l'écart tienne le test",
       "Le retrait d'équipement fait s'effondrer le deck entier",
       "Ornn, Blacksmith n'est que dans 74 % des listes : la liste n'est pas fixée"
     ]
@@ -257,9 +257,9 @@
     "archetype": "Retours en main et or",
     "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
     "gameplan": {
-      "earlyGame": "Traveling Merchant défausse puis pioche à chaque déplacement. Tideturner et Bedeviling Stranger se jouent cachés. Pyke, Dockside Butcher, dans 89 % des listes, caché lui aussi, arrive préparé avec +2 Puissance si vous payez une Puissance de Furie en plus.",
-      "midGame": "La Légende renvoie une de vos unités en main et pose un jeton d'or : de quoi sauver une unité condamnée et la rejouer. Falling Star, dans 89 % des listes, inflige 3 dégâts deux fois. Star-Crossed, dans 94 % aussi, renvoie en main une de vos unités et une unité adverse.",
-      "lateGame": "Fizz, Trickster, dans 78 % des listes, rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+      "earlyGame": "Traveling Merchant défausse puis pioche à chaque déplacement. Tideturner et Bedeviling Stranger se jouent cachés. Pyke, Dockside Butcher, dans 90 % des listes, caché lui aussi, arrive préparé avec +2 Puissance si vous payez une Puissance de Furie en plus.",
+      "midGame": "La Légende renvoie une de vos unités en main et pose un jeton d'or : de quoi sauver une unité condamnée et la rejouer. Falling Star, dans 90 % des listes, inflige 3 dégâts deux fois. Star-Crossed, dans 94 % aussi, renvoie en main une de vos unités et une unité adverse.",
+      "lateGame": "Fizz, Trickster, dans 81 % des listes, rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
       "winCondition": "Rejouer ses unités pour en tirer l'effet d'arrivée une fois de plus, et accumuler l'or."
     },
     "strengths": [
@@ -267,7 +267,7 @@
       "La Légende sauve une unité et rend un jeton d'or au passage"
     ],
     "weaknesses": [
-      "27 joueurs classés sur 8 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "30 joueurs classés sur 10 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une vingt-troisième, à la City Challenge de Guangzhou du 8 novembre",
       "Deux cartes seulement au-dessus de 90 % : personne n'a fixé la liste"
     ]
@@ -282,7 +282,7 @@
       "winCondition": "Tenir un champ de bataille, piocher chaque tour, et laisser l'adversaire s'user dessus."
     },
     "strengths": [
-      "104 joueurs classés sur 15 tournois, 12 dans les 10 % de tête : 11,5 % de conversion contre 9,9 % de moyenne, et deux titres",
+      "122 joueurs classés sur 19 tournois, 12 dans les 10 % de tête : 9,8 % de conversion contre 9,9 % de moyenne, et deux titres",
       "Defy et Switcheroo dans 99 % des listes, Discipline et Bedeviling Stranger dans 95 %",
       "Vex, Apathetic dans toutes les listes : elle étourdit les unités que l'adversaire pose",
       "Startipped Peak dans 41 % des listes : tenir ce terrain canalise une rune épuisée"
@@ -308,7 +308,7 @@
       "Inferna, Grim Apothecary, Nidalee, Cat Form et Rengar, Trophy Hunter arrivent en Embuscade"
     ],
     "weaknesses": [
-      "85 joueurs classés sur 16 tournois, 9 dans les 10 % de tête : 10,6 % de conversion, la moyenne du format, et aucun titre",
+      "92 joueurs classés sur 20 tournois, 10 dans les 10 % de tête : 10,9 % de conversion, la moyenne du format, et aucun titre",
       "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
     ]
   },
@@ -318,7 +318,7 @@
     "gameplan": {
       "earlyGame": "Irresistible Faefolk, dans toutes les listes, attire une unité adverse sur le champ de bataille où il se déplace. Void Assault, dans toutes les listes aussi, déplace une de vos unités, puis une unité adverse. Sabotage fait révéler la main adverse.",
       "midGame": "Kha'Zix, Mutating Horror, dans toutes les listes, arrive en Embuscade, et gagne +2 Puissance et 2 XP quand il combat une unité adverse seule. Faefolk et Void Assault servent à isoler cette unité. Punch First donne +5 Puissance pour une énergie.",
-      "lateGame": "Rengar, Trophy Hunter, dans 86 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Fizz, Trickster rejoue un sort depuis la défausse. Star-Crossed renvoie en main une unité de chaque camp.",
+      "lateGame": "Rengar, Trophy Hunter, dans 80 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Fizz, Trickster rejoue un sort depuis la défausse. Star-Crossed renvoie en main une unité de chaque camp.",
       "winCondition": "Isoler les unités adverses, gagner les combats, et dépenser l'XP pour renforcer ou sauver ses unités."
     },
     "strengths": [
@@ -327,7 +327,7 @@
       "Fizz, Trickster et Kha'Zix, Mutating Horror dans toutes les listes"
     ],
     "weaknesses": [
-      "27 joueurs classés sur 11 tournois, 2 dans les 10 % de tête : 7,4 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
+      "36 joueurs classés sur 15 tournois, 3 dans les 10 % de tête : 8,3 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
       "Ses trois meilleures places viennent du même tournoi, Hangzhou : le titre, une quatorzième et une seizième"
     ]
   },
@@ -467,7 +467,7 @@
       "Master Yi, Tempered dans toutes les listes, Master Yi, Unstoppable dans 94 %"
     ],
     "weaknesses": [
-      "30 joueurs classés sur 6 tournois, 1 dans les 10 % de tête : 3,3 % de conversion contre 9,9 % pour le format, aucun titre",
+      "31 joueurs classés sur 7 tournois, 1 dans les 10 % de tête : 3,2 % de conversion contre 9,9 % pour le format, aucun titre",
       "La Légende ne fait rien avant 6 XP"
     ]
   },
@@ -508,18 +508,18 @@
     "archetype": "Unité sauvée par son bonus",
     "legendAbility": "Si une de vos unités améliorée devait mourir, payez une Puissance, épuisez Sett et dépensez le bonus pour la soigner et la rappeler à la base. Sett se prépare aussi quand vous conquérez.",
     "gameplan": {
-      "earlyGame": "Pit Rookie, dans 89 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
-      "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 95 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
-      "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans 89 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
+      "earlyGame": "Pit Rookie, dans 92 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
+      "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 96 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
+      "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans 92 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
       "winCondition": "Donner des bonus partout, et ne perdre aucune unité qui en porte un."
     },
     "strengths": [
-      "20 joueurs classés, 4 dans les 10 % de tête : 20,0 % de conversion contre 9,9 % pour le format",
+      "27 joueurs classés, 5 dans les 10 % de tête : 18,5 % de conversion contre 9,9 % pour le format",
       "Deuxième à la City Challenge de Pékin, septième et huitième à Shanghai",
       "Pillaged Armory, Showstopper et Call to Glory dans toutes les listes, Punch First dans 95 %, Fiora, Victorious dans 89 %"
     ],
     "weaknesses": [
-      "20 joueurs seulement : trop peu pour conclure, malgré la conversion",
+      "27 joueurs seulement : trop peu pour conclure, malgré la conversion",
       "Aucun titre sur Radiance"
     ]
   },
@@ -550,7 +550,7 @@
     "legendAbility": "Quand vous jouez une unité Puissante, cinq Puissance ou plus, épuisez Volibear pour canaliser une rune épuisée.",
     "gameplan": {
       "earlyGame": "Mobilize, dans toutes les listes, canalise une rune épuisée, ou pioche si vous ne pouvez pas. Dragonsoul Sage s'épuise en réaction pour une énergie. Herald of Scales baisse de 2 énergie le coût de vos Dragons.",
-      "midGame": "Blazing Scorcher, 5 Puissance et Accélération, déclenche la Légende dès qu'il arrive. Gentle Gemdragon, dans 78 % des listes, prépare deux runes quand vous jouez un Dragon. Seraphic Wyvern ajoute une rune épuisée chaque fois que vous en canalisez.",
+      "midGame": "Blazing Scorcher, 5 Puissance et Accélération, déclenche la Légende dès qu'il arrive. Gentle Gemdragon, dans 82 % des listes, prépare deux runes quand vous jouez un Dragon. Seraphic Wyvern ajoute une rune épuisée chaque fois que vous en canalisez.",
       "lateGame": "Kadregrin the Infernal, dans toutes les listes, pioche une carte par unité Puissante que vous contrôlez. Elder Dragon, dans toutes les listes aussi, rend mortel le moindre dégât que vous infligez. Sky Splitter inflige 5 dégâts et coûte moins cher selon votre plus grosse unité.",
       "winCondition": "Accélérer les runes avec chaque grosse unité, puis poser les Dragons avant l'adversaire."
     },
@@ -559,7 +559,7 @@
       "Chaque unité de 5 Puissance ou plus rapporte une rune"
     ],
     "weaknesses": [
-      "18 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "22 joueurs classés sur 11 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une treizième, à la City Challenge de Chengdu du 7 novembre",
       "Les premiers tours servent à préparer les runes : peu d'unités tôt"
     ]
@@ -585,7 +585,7 @@
       "winCondition": "Déplacer ses unités pour piocher et frapper, et ne perdre aucune unité dans un combat perdu."
     },
     "strengths": [
-      "74 joueurs classés sur 15 tournois, 7 dans les 10 % de tête : 9,5 % de conversion, au niveau de la moyenne du format (9,9 %)",
+      "87 joueurs classés sur 19 tournois, 8 dans les 10 % de tête : 9,2 % de conversion, au niveau de la moyenne du format (9,9 %)",
       "Sept cartes dans toutes les listes, dont Defy, Shuriken Flip et Falling Star",
       "Akali, Deadly Weapon dans toutes les listes : chaque déplacement inflige des dégâts"
     ],
@@ -605,7 +605,7 @@
       "winCondition": "Une défausse pleine qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
     },
     "strengths": [
-      "259 joueurs classés sur 16 tournois, 36 dans les 10 % de tête : 13,9 % de conversion contre 9,9 % de moyenne, et deux titres, dont le Regional Championship d'Europe",
+      "319 joueurs classés sur 21 tournois, 44 dans les 10 % de tête : 13,8 % de conversion contre 9,9 % de moyenne, et quatre titres, dont le Regional Championship d'Europe",
       "Lightning Rush et Trifarian Captain dans toutes les listes : le deck choisit ce qu'il pioche et ce qu'il envoie dans la défausse",
       "Minefield et Zaun Warrens dans au moins 94 % des listes : les terrains remplissent la défausse et filtrent la main, ils font partie du plan",
       "Gust, Star-Crossed et Switcheroo, peu chers, répondent en plein combat"
@@ -620,14 +620,14 @@
     "archetype": "Tempo et réactions, unités qui arrivent préparées",
     "legendAbility": "Les unités que vous jouez sur un champ de bataille que vous contrôlez arrivent préparées. Une unité posée là peut servir tout de suite, sans attendre le tour suivant.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab, dans 86 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
+      "earlyGame": "Scuttle Crab, dans 84 % des listes, pioche en arrivant et peut conquérir un champ de bataille malgré ses 0 Puissance. Tideturner et Bedeviling Stranger attendent cachés. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie.",
       "midGame": "Riven, Broken Blade, dans toutes les listes, choisit un effet chaque fois qu'elle s'épuise, un effet différent à chaque fois dans le tour : prendre un bonus, le dépenser pour étourdir une unité adverse, ou le dépenser pour se préparer. Blade of the Exile peut s'équiper en épuisant une unité alliée, ce qui déclenche Riven. Stellacorn Herder pioche à chaque déplacement.",
-      "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 58 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
+      "lateGame": "Astral Heron, posé sur un champ de bataille, baisse de 2 énergie et 2 Puissance le coût de la deuxième carte du tour. Baron Nashor, dans 62 % des listes, donne +2 Puissance à toutes vos autres unités et ne peut pas être choisi par les sorts adverses.",
       "winCondition": "Tenir les champs de bataille avec des unités qui arrivent prêtes, et répondre à chaque sort adverse."
     },
     "strengths": [
-      "552 joueurs classés sur 16 tournois, 101 dans les 10 % de tête : 18,3 % de conversion contre 9,9 % pour le format",
-      "Cinq titres : le Showdown de Sacramento et les City Challenge de Pékin, de Guangzhou, de Shenzhen et de Suzhou",
+      "659 joueurs classés sur 21 tournois, 119 dans les 10 % de tête : 18,1 % de conversion contre 9,9 % pour le format",
+      "Huit titres : le Showdown de Sacramento, l'Invitational de Houston et les City Challenge de Pékin, de Suzhou, de Guangzhou (deux fois) et de Shenzhen (deux fois)",
       "Neuf cartes dans au moins 95 % des listes : la liste est fixée",
       "Defy, Discipline, Star-Crossed, Gust et Not So Fast répondent pendant le tour adverse"
     ],
@@ -640,9 +640,9 @@
     "archetype": "Cartes cachées et pioche",
     "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
     "gameplan": {
-      "earlyGame": "Gutter Guardian, dans 75 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
-      "midGame": "Evelynn, Entrancing, dans 99 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 87 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
-      "lateGame": "Rengar, Trophy Hunter, dans 80 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Vex, Apathetic, dans 91 % des listes, étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+      "earlyGame": "Gutter Guardian, dans 74 % des listes, et Bedeviling Stranger se posent cachés. Chaque carte jouée depuis face cachée fait piocher, une fois par tour, grâce à la Légende.",
+      "midGame": "Evelynn, Entrancing, dans 99 % des listes, jouée depuis face cachée pendant votre tour, attire sur son champ de bataille une unité adverse venue d'ailleurs. Edge of Night, dans 84 % des listes, s'attache à une de vos unités quand il sort de face cachée. Punch First donne +5 Puissance pour une énergie.",
+      "lateGame": "Rengar, Trophy Hunter, dans 77 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Vex, Apathetic, dans 88 % des listes, étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
       "winCondition": "Surprendre en combat avec des cartes cachées, et piocher plus que l'adversaire."
     },
     "strengths": [
@@ -651,7 +651,7 @@
       "Gutter Guardian, Bedeviling Stranger, Switcheroo et Edge of Night se jouent cachés : l'adversaire ne sait pas ce qui l'attend"
     ],
     "weaknesses": [
-      "86 joueurs classés sur 16 tournois, 3 dans les 10 % de tête : 3,5 % de conversion contre 9,9 % pour le format, aucun titre",
+      "97 joueurs classés sur 20 tournois, 4 dans les 10 % de tête : 4,1 % de conversion contre 9,9 % pour le format, aucun titre",
       "Sa meilleure place est une sixième, à la City Challenge de Shanghai du 7 novembre",
       "Hors de votre tour, la Légende ne fait que trier la main : elle pioche, puis défausse"
     ]
@@ -662,7 +662,7 @@
     "gameplan": {
       "earlyGame": "Honest Broker et Carrion Dredger laissent quelque chose en mourant : un jeton d'or épuisé pour le premier, un Oiseau de 1 Puissance à Protection pour le second. Trifarian Captain va chercher une unité ou un équipement dans les quatre cartes du dessus.",
       "midGame": "Realm of Death, dans 98 % des listes, retire 2 Puissance à une unité adverse, en donne 2 à une des vôtres, et les fait se blesser l'une l'autre. Chaque unité morte rejoint la défausse, où la Légende la bannit pour payer la suivante.",
-      "lateGame": "Ferrous Forerunner, dans 72 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
+      "lateGame": "Ferrous Forerunner, dans 70 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
       "winCondition": "Échanger des unités qui laissent quelque chose derrière elles, puis finir avec Mordekaiser."
     },
     "strengths": [
@@ -671,7 +671,7 @@
       "La Légende transforme la défausse en Puissance pour les unités et les équipements"
     ],
     "weaknesses": [
-      "73 joueurs classés sur 14 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,001)",
+      "81 joueurs classés sur 18 tournois, 1 dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,004)",
       "Sa meilleure place est une quinzième, à la City Challenge de Chengdu du 7 novembre",
       "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
     ]
@@ -680,9 +680,9 @@
     "archetype": "Équipements qui deviennent des unités",
     "legendAbility": "Au début de votre phase principale, vous pouvez payer une énergie pour choisir un de vos équipements : il devient une unité dont la Puissance égale son coût en énergie, jusqu'à ce que vous en choisissiez un autre.",
     "gameplan": {
-      "earlyGame": "Cloth Armor, dans 78 % des listes, et Mask of Foresight, dans 72 %, se posent pour une ou deux énergie. Defy, dans toutes les listes, et Stupefy répondent pendant le tour adverse.",
-      "midGame": "The Ball, dans 94 % des listes, pioche une carte ou inflige 2 à chaque unité adverse là où il arrive ou se déplace. Avec la Légende, il devient une unité de 5 Puissance. Orianna, Exquisite, dans 82 % des listes, a Bouclier, mais n'inflige de dégâts de combat que si un de vos équipements est avec elle.",
-      "lateGame": "Thousand-Tailed Watcher, dans 82 % des listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Zhonya's Hourglass sauve une unité qui devait mourir.",
+      "earlyGame": "Cloth Armor, dans 81 % des listes, et Mask of Foresight, dans 72 %, se posent pour une ou deux énergie. Defy, dans toutes les listes, et Stupefy répondent pendant le tour adverse.",
+      "midGame": "The Ball, dans 84 % des listes, pioche une carte ou inflige 2 à chaque unité adverse là où il arrive ou se déplace. Avec la Légende, il devient une unité de 5 Puissance. Orianna, Exquisite, dans 84 % des listes, a Bouclier, mais n'inflige de dégâts de combat que si un de vos équipements est avec elle.",
+      "lateGame": "Thousand-Tailed Watcher, dans 76 % des listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Zhonya's Hourglass sauve une unité qui devait mourir.",
       "winCondition": "Faire de The Ball une unité qui pioche ou blesse à chaque déplacement, et tenir le terrain avec des réactions."
     },
     "strengths": [
@@ -691,7 +691,7 @@
       "Troisième à la City Challenge de Shanghai du 1er novembre"
     ],
     "weaknesses": [
-      "62 joueurs classés sur 14 tournois, 2 dans les 10 % de tête : 3,2 % de conversion contre 9,9 % pour le format, aucun titre",
+      "70 joueurs classés sur 18 tournois, 2 dans les 10 % de tête : 2,9 % de conversion contre 9,9 % pour le format, aucun titre",
       "La Légende coûte une énergie à chaque tour où l'on s'en sert",
       "Orianna, Exquisite n'inflige aucun dégât de combat sans équipement à ses côtés"
     ]
@@ -700,9 +700,9 @@
     "archetype": "Jetons Recrue et sorts moins chers",
     "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
     "gameplan": {
-      "earlyGame": "Concert Poster, dans 87 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 95 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
-      "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 71 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
-      "lateGame": "Vanguard Armory, dans 66 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 87 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
+      "earlyGame": "Concert Poster, dans 88 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 95 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
+      "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 68 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
+      "lateGame": "Vanguard Armory, dans 66 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 88 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
       "winCondition": "Remplir le terrain de jetons, et s'en servir pour payer ses sorts moins cher."
     },
     "strengths": [
@@ -711,7 +711,7 @@
       "Imperial Decree, Hidden Blade et Wages of Pain retirent des unités adverses"
     ],
     "weaknesses": [
-      "50 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,008)",
+      "53 joueurs classés sur 12 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,009)",
       "Sa meilleure place est une cinquante et unième, à la City Challenge de Fuzhou",
       "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
     ]
@@ -720,9 +720,9 @@
     "archetype": "Tempo, unités payées moins cher",
     "legendAbility": "Pour une énergie, épuisez Ekko pour l'amplifier, s'il ne l'est pas déjà. Plus tard, désamplifiez-le et épuisez-le : la prochaine unité que vous jouez ce tour coûte 2 énergie et 1 Puissance de moins, mais elle meurt à la fin du tour.",
     "gameplan": {
-      "earlyGame": "Plundering Poro, dans 90 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy, dans 97 % des listes, affaiblit une unité et pioche pour une énergie. Inferna, dans 63 % des listes, arrive en Embuscade avec Assaut 2.",
+      "earlyGame": "Plundering Poro, dans 90 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy, dans 97 % des listes, affaiblit une unité et pioche pour une énergie. Inferna, dans 61 % des listes, arrive en Embuscade avec Assaut 2.",
       "midGame": "Une fois Ekko amplifié, la Légende baisse le coût d'une unité, qui meurt à la fin du tour : mieux vaut la garder pour une unité qui frappe tout de suite, comme Ekko, Revolutionary, qui arrive préparé avec Assaut. Falling Star inflige 3 dégâts deux fois.",
-      "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Brynhir Thundersong empêche l'adversaire de jouer des cartes le tour où elle arrive. Time Warp, dans 63 % des listes, donne un tour de plus.",
+      "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, retire 3 Puissance à toutes les unités adverses pour le tour, sans descendre sous 1. Brynhir Thundersong empêche l'adversaire de jouer des cartes le tour où elle arrive. Time Warp, dans 65 % des listes, donne un tour de plus.",
       "winCondition": "Gagner les combats d'un tour à l'autre avec des unités payées moins cher et des sorts de retrait."
     },
     "strengths": [
@@ -730,7 +730,7 @@
       "Kai'Sa, Survivor, dans 87 % des listes, a Accélération et pioche à chaque conquête"
     ],
     "weaknesses": [
-      "40 joueurs classés sur 11 tournois, 2 dans les 10 % de tête : 5,0 % de conversion contre 9,9 % pour le format, aucun titre",
+      "43 joueurs classés sur 14 tournois, 2 dans les 10 % de tête : 4,7 % de conversion contre 9,9 % pour le format, aucun titre",
       "Sa meilleure place est une quatrième, à la City Challenge de Wuhan du 8 novembre",
       "La Légende demande en général deux tours : un pour l'amplifier, un pour s'en servir",
       "L'unité payée moins cher meurt à la fin du tour"
@@ -740,9 +740,9 @@
     "archetype": "Équipements posés sur les champs de bataille, bonus de combat",
     "legendAbility": "Quand vous jouez un équipement qui se pose sur un champ de bataille, vous pouvez épuiser Jarvan IV et payer une Puissance pour déplacer une de vos unités sur ce champ de bataille.",
     "gameplan": {
-      "earlyGame": "Pillaged Armory, dans 94 % des listes, se pose sur un champ de bataille pour une énergie et donne un bonus à une de vos unités, à son arrivée puis à chaque conquête. Concert Poster, dans 87 % des listes, y pose un jeton Recrue de la même façon.",
+      "earlyGame": "Pillaged Armory, dans 94 % des listes, se pose sur un champ de bataille pour une énergie et donne un bonus à une de vos unités, à son arrivée puis à chaque conquête. Concert Poster, dans 88 % des listes, y pose un jeton Recrue de la même façon.",
       "midGame": "Jarvan IV, Martial Paragon, dans 97 % des listes, permet de jouer ces équipements en Action, et canalise une rune épuisée quand il conquiert un champ de bataille où l'un d'eux se trouve. Avec la Légende, chaque équipement posé amène une unité au combat. Punch First donne +5 Puissance pour une énergie.",
-      "lateGame": "Rengar, Trophy Hunter, dans 77 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Call to Glory donne +3 Puissance en réaction, sans rien coûter si vous dépensez un bonus.",
+      "lateGame": "Rengar, Trophy Hunter, dans 78 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Call to Glory donne +3 Puissance en réaction, sans rien coûter si vous dépensez un bonus.",
       "winCondition": "Poser un équipement là où l'on veut combattre, y amener une unité, et gagner le combat avec les bonus."
     },
     "strengths": [
@@ -750,7 +750,7 @@
       "Punch First, Call to Glory et Demacian Standard donnent de la Puissance en combat, Rampage force un combat"
     ],
     "weaknesses": [
-      "34 joueurs classés sur 12 tournois, aucun dans les 10 % de tête, aucun titre : trop peu de joueurs pour conclure",
+      "35 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre : trop peu de joueurs pour conclure",
       "Sa meilleure place est une vingt-quatrième, à la City Challenge de Shenyang",
       "La Légende ne sert que si l'on joue un équipement qui se pose sur un champ de bataille"
     ]
@@ -760,8 +760,8 @@
     "legendAbility": "Pour une énergie et une Puissance, épuisez Ziggs : posez un jeton d'équipement Bombe sur un champ de bataille.",
     "gameplan": {
       "earlyGame": "Seal of Rage, dans toutes les listes, ne coûte rien et s'épuise pour donner une Puissance de Furie, même en réaction. Amateur Demolitionist pose un jeton Bombe en arrivant. Detonate, dans toutes les listes, tue un équipement pour une énergie, et son propriétaire pioche deux cartes.",
-      "midGame": "Shimmering Swimmer, dans 96 % des listes, inflige 2 dégâts si vous tuez une de vos unités ou un de vos équipements pour le jouer. Treasure Trove pioche une carte et canalise une rune épuisée quand il quitte le terrain. Ziggs, Explosive, dans 96 % des listes, pose lui aussi des Bombes, et gagne +2 Puissance en défense en tuant un de vos équipements.",
-      "lateGame": "Fizz, Trickster, dans 89 % des listes, rejoue depuis la défausse un sort de 3 énergie ou moins sans payer son énergie, Falling Star par exemple. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+      "midGame": "Shimmering Swimmer, dans 97 % des listes, inflige 2 dégâts si vous tuez une de vos unités ou un de vos équipements pour le jouer. Treasure Trove pioche une carte et canalise une rune épuisée quand il quitte le terrain. Ziggs, Explosive, dans 97 % des listes, pose lui aussi des Bombes, et gagne +2 Puissance en défense en tuant un de vos équipements.",
+      "lateGame": "Fizz, Trickster, dans 90 % des listes, rejoue depuis la défausse un sort de 3 énergie ou moins sans payer son énergie, Falling Star par exemple. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
       "winCondition": "Sacrifier ses équipements pour piocher et blesser, et garder la main pleine."
     },
     "strengths": [
@@ -769,7 +769,7 @@
       "Detonate et Treasure Trove changent chaque équipement sacrifié en cartes"
     ],
     "weaknesses": [
-      "33 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre",
+      "37 joueurs classés sur 16 tournois, aucun dans les 10 % de tête, aucun titre",
       "Sa meilleure place est une quarante-septième, à la City Challenge de Pékin",
       "Sans équipement à sacrifier, Detonate et Shimmering Swimmer perdent leur intérêt"
     ]
@@ -778,9 +778,9 @@
     "archetype": "Bouclier qui devient Assaut",
     "legendAbility": "Pour une énergie, épuisez K'Sante : une de vos unités gagne ce tour un Assaut égal à son Bouclier.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab, dans 85 % des listes, pioche en arrivant. Stalwart Poro et Mutated Mouser ont Bouclier. Defy, dans 95 % des listes, contre un sort adverse jusqu'à 4 énergie.",
-      "midGame": "Ntofo Strikes, dans 80 % des listes, donne Bouclier 2 à une de vos unités, puis inflige à une unité adverse autant de dégâts que son Bouclier. Block donne Bouclier 3 et Tank pour le tour. Avec la Légende, ce Bouclier devient aussi de l'Assaut.",
-      "lateGame": "K'Sante, Courageous, dans 60 % des listes, a Accélération et Bouclier 2, et canalise une rune quand il tient un champ de bataille. K'Sante, Dauntless double le Bouclier d'une de vos unités quand il attaque ou défend.",
+      "earlyGame": "Scuttle Crab, dans 86 % des listes, pioche en arrivant. Stalwart Poro et Mutated Mouser ont Bouclier. Defy, dans 95 % des listes, contre un sort adverse jusqu'à 4 énergie.",
+      "midGame": "Ntofo Strikes, dans 76 % des listes, donne Bouclier 2 à une de vos unités, puis inflige à une unité adverse autant de dégâts que son Bouclier. Block donne Bouclier 3 et Tank pour le tour. Avec la Légende, ce Bouclier devient aussi de l'Assaut.",
+      "lateGame": "K'Sante, Courageous, dans 62 % des listes, a Accélération et Bouclier 2, et canalise une rune quand il tient un champ de bataille. K'Sante, Dauntless double le Bouclier d'une de vos unités quand il attaque ou défend.",
       "winCondition": "Empiler du Bouclier sur une unité, puis l'envoyer attaquer avec autant d'Assaut."
     },
     "strengths": [
@@ -788,7 +788,7 @@
       "Ntofo Strikes, Block, Consult the Heavens et K'Sante, Dauntless donnent ou doublent le Bouclier"
     ],
     "weaknesses": [
-      "26 joueurs classés sur 10 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "27 joueurs classés sur 11 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une quarante-cinquième, à la City Challenge de Fuzhou",
       "La Légende coûte une énergie et ne sert que sur une unité qui a déjà du Bouclier"
     ]
@@ -816,7 +816,7 @@
     "archetype": "Sorts à 4 énergie et plus",
     "legendAbility": "Quand vous jouez un sort en dépensant 4 énergie ou plus, vous pouvez le bannir sous Jhin. Au quatrième sort banni, ils retournent tous dans votre défausse, vous canalisez 4 runes et piochez une carte.",
     "gameplan": {
-      "earlyGame": "Plundering Poro, dans 83 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy affaiblit une unité et pioche pour une énergie.",
+      "earlyGame": "Plundering Poro, dans 77 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy affaiblit une unité et pioche pour une énergie.",
       "midGame": "Curtain Call, Deadly Flourish et Sprite Burst, dans toutes les listes, coûtent 4 énergie ou plus et nourrissent la Légende. Jhin, Meticulous Killer, dans 92 % des listes, se joue pour une seule Puissance d'Esprit le tour où vous avez dépensé 4 énergie pour un sort. Consult the Past pioche deux cartes en réaction.",
       "lateGame": "Au quatrième sort banni, la Légende canalise 4 runes d'un coup. Singularity inflige 6 dégâts à deux unités, Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses, Time Warp donne un tour de plus.",
       "winCondition": "Enchaîner les gros sorts jusqu'à ce que la Légende rende quatre runes, puis s'en servir pour les sorts les plus chers."
@@ -826,7 +826,7 @@
       "La Légende rend quatre runes d'un coup, de quoi lancer les sorts les plus chers"
     ],
     "weaknesses": [
-      "18 joueurs classés sur 2 tournois, 1 dans les 10 % de tête : 5,6 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
+      "19 joueurs classés sur 3 tournois, 1 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
       "Sa meilleure place est une vingt-septième, au Showdown de Sacramento",
       "Beaucoup de sorts à 4 énergie ou plus : les premiers tours sont lents"
     ]
@@ -835,8 +835,8 @@
     "archetype": "Défense et réactions",
     "legendAbility": "En Action, épuisez Shen : une de vos unités gagne Tank pour le tour.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab, dans 82 % des listes, pioche en arrivant. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
-      "midGame": "Shen, Kinkou, dans 91 % des listes, se joue en réaction, avec Bouclier 2 et Tank. Mournful Witness s'amplifie à la fin de chaque combat où il était, et gagne alors +2 Puissance. Charm déplace une unité adverse pour une énergie.",
+      "earlyGame": "Scuttle Crab, dans 75 % des listes, pioche en arrivant. Defy et Discipline, dans toutes les listes, répondent pendant le tour adverse.",
+      "midGame": "Shen, Kinkou, dans 83 % des listes, se joue en réaction, avec Bouclier 2 et Tank. Mournful Witness s'amplifie à la fin de chaque combat où il était, et gagne alors +2 Puissance. Charm déplace une unité adverse pour une énergie.",
       "lateGame": "Astral Heron, posé sur un champ de bataille, baisse le coût de la deuxième carte du tour. Ki Barrier empêche les 7 prochains dégâts sur une unité.",
       "winCondition": "Tenir les champs de bataille avec des unités dures à tuer, et répondre à chaque sort."
     },
@@ -845,7 +845,7 @@
       "La Légende donne Tank à une unité, chaque tour"
     ],
     "weaknesses": [
-      "18 joueurs classés sur 2 tournois, aucun dans les 10 % de tête : trop peu pour conclure",
+      "19 joueurs classés sur 3 tournois, aucun dans les 10 % de tête : trop peu pour conclure",
       "Sa meilleure place est une quarante-septième, au Showdown de Melbourne",
       "Seules Defy et Discipline sont dans toutes les listes : personne n'a fixé le reste"
     ]
@@ -892,8 +892,8 @@
     "archetype": "Grosses unités posées plus tôt",
     "legendAbility": "En réaction, payez 2 Puissance et épuisez Renekton : gagnez 2 énergie, à dépenser seulement pour jouer des unités ou activer leurs capacités.",
     "gameplan": {
-      "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Sabotage, dans 71 % des listes, fait révéler la main adverse et recycler une carte qui n'est pas une unité. Irresistible Faefolk attire une unité adverse sur le champ de bataille où il se déplace.",
-      "midGame": "La Légende change 2 Puissance en 2 énergie pour les unités. Renekton, Rage Fueled, dans 86 % des listes, a Accélération et inflige 2 à chaque unité adverse quand il attaque, si vous contrôlez 4 runes ou moins. Punch First donne +5 Puissance pour une énergie.",
+      "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Sabotage, dans 91 % des listes, fait révéler la main adverse et recycler une carte qui n'est pas une unité. Irresistible Faefolk attire une unité adverse sur le champ de bataille où il se déplace.",
+      "midGame": "La Légende change 2 Puissance en 2 énergie pour les unités. Renekton, Rage Fueled, dans 100 % des listes, a Accélération et inflige 2 à chaque unité adverse quand il attaque, si vous contrôlez 4 runes ou moins. Punch First donne +5 Puissance pour une énergie.",
       "lateGame": "Rengar, Trophy Hunter se pose sur un champ de bataille occupé par l'adversaire. Avec Elder Dragon en jeu, le moindre dégât que vous infligez tue une unité adverse. Brynhir Thundersong empêche l'adversaire de jouer des cartes le tour où elle arrive.",
       "winCondition": "Poser ses grosses unités plus tôt grâce à la Légende, et gagner les combats."
     },
@@ -911,9 +911,9 @@
     "archetype": "Grosses unités payées deux fois",
     "legendAbility": "Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, épuisez Nasus pour préparer jusqu'à deux runes. Le gros coup se rembourse.",
     "gameplan": {
-      "earlyGame": "Scuttle Crab, dans 90 % des listes, pioche en arrivant. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie. Bellows Breath inflige 1 à trois unités au même endroit.",
-      "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 69 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
-      "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 96 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
+      "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie. Bellows Breath inflige 1 à trois unités au même endroit.",
+      "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 71 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
+      "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 97 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
       "winCondition": "Payer de gros coûts, se faire rendre deux runes par la Légende, et finir avec Nasus, Ascended."
     },
     "strengths": [
@@ -922,7 +922,7 @@
       "Chaque coût de 7 énergie ou plus rend deux runes"
     ],
     "weaknesses": [
-      "57 joueurs classés sur 15 tournois, 3 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, aucun titre",
+      "63 joueurs classés sur 19 tournois, 3 dans les 10 % de tête : 4,8 % de conversion contre 9,9 % pour le format, aucun titre",
       "Le deck attend ses cartes à 7 énergie : les premiers tours servent surtout à tenir"
     ]
   },
@@ -930,9 +930,9 @@
     "archetype": "Équipements préparés, montée en ressources",
     "legendAbility": "Une énergie et un épuisement préparent un équipement ; amplifié, Jayce en prépare deux. Les équipements qui produisent des ressources servent deux fois par tour.",
     "gameplan": {
-      "earlyGame": "Platewyrm Egg, dans 96 % des listes, arrive épuisé ; amplifié, il donne 2 énergie au lieu d'une. Garbage Grabber, dans 96 % des listes, recycle trois cartes de la défausse pour piocher. Dredge Up pioche, puis se rejoue depuis la défausse grâce à Flux.",
-      "midGame": "Catalyst of Aeons, dans 95 % des listes, canalise deux runes épuisées. La Légende prépare un équipement, et Jayce, Brilliant Inventor, dans 68 % des listes, prépare quelque chose d'épuisé à son arrivée et au premier équipement joué chaque tour : Platewyrm Egg sert alors deux fois. Clairvoyance pioche en réaction.",
-      "lateGame": "Dazzling Aurora, dans 88 % des listes, révèle à chaque fin de tour la première unité du deck et la joue gratuitement. Elder Dragon, dans 96 % des listes, rend mortel le moindre dégât que vous infligez. Gutter Palace gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.",
+      "earlyGame": "Platewyrm Egg, dans 97 % des listes, arrive épuisé ; amplifié, il donne 2 énergie au lieu d'une. Garbage Grabber, dans 95 % des listes, recycle trois cartes de la défausse pour piocher. Dredge Up pioche, puis se rejoue depuis la défausse grâce à Flux.",
+      "midGame": "Catalyst of Aeons, dans 92 % des listes, canalise deux runes épuisées. La Légende prépare un équipement, et Jayce, Brilliant Inventor, dans 68 % des listes, prépare quelque chose d'épuisé à son arrivée et au premier équipement joué chaque tour : Platewyrm Egg sert alors deux fois. Clairvoyance pioche en réaction.",
+      "lateGame": "Dazzling Aurora, dans 87 % des listes, révèle à chaque fin de tour la première unité du deck et la joue gratuitement. Elder Dragon, dans 96 % des listes, rend mortel le moindre dégât que vous infligez. Gutter Palace gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.",
       "winCondition": "Multiplier les ressources avec les équipements, puis poser Elder Dragon ou Dazzling Aurora avant l'adversaire."
     },
     "strengths": [
@@ -941,7 +941,7 @@
       "Gutter Palace donne une seconde façon de gagner"
     ],
     "weaknesses": [
-      "Aucun titre sur 16 tournois, malgré 10,4 % de conversion, la moyenne du format (67 joueurs classés, 7 dans les 10 % de tête)",
+      "Aucun titre sur 21 tournois, malgré 12,5 % de conversion, au-dessus de la moyenne du format (88 joueurs classés, 11 dans les 10 % de tête)",
       "Peu d'unités avant Elder Dragon : le deck tient surtout avec ses sorts"
     ]
   },
@@ -949,9 +949,9 @@
     "archetype": "Bannissement et rotation de main",
     "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
     "gameplan": {
-      "earlyGame": "Traveling Merchant, dans 86 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
-      "midGame": "Ride The Wind, dans 93 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 71 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
-      "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 57 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
+      "earlyGame": "Traveling Merchant, dans 87 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
+      "midGame": "Ride The Wind, dans 93 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 73 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
+      "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 60 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
       "winCondition": "Bannir pour amplifier Zed, trier sa main chaque tour, et frapper là où l'adversaire ne l'attend pas avec les Clones d'Ombre."
     },
     "strengths": [
@@ -959,7 +959,7 @@
       "La Légende trie la main à chaque tour où elle est amplifiée"
     ],
     "weaknesses": [
-      "21 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "22 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une soixantième, au Showdown de Melbourne",
       "Une seule carte au-dessus de 90 % : personne n'a fixé la liste"
     ]
@@ -969,8 +969,8 @@
     "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
     "gameplan": {
       "earlyGame": "Rebuttal, dans toutes les listes, et Stupefy, dans 92 %, coûtent une énergie : le premier prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon ; le second affaiblit une unité et pioche. Traveling Merchant trie la main à chaque déplacement.",
-      "midGame": "Applied Researchers, dans 67 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
-      "lateGame": "Mel, Defiant Soul, dans 58 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 67 % des listes, donne un tour de plus.",
+      "midGame": "Applied Researchers, dans 60 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
+      "lateGame": "Mel, Defiant Soul, dans 60 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 60 % des listes, donne un tour de plus.",
       "winCondition": "Amplifier ses cartes pour charger Mel, répondre à chaque sort adverse, et prendre un tour d'avance avec Time Warp."
     },
     "strengths": [
@@ -978,7 +978,7 @@
       "Chaque carte amplifiée charge aussi la Légende"
     ],
     "weaknesses": [
-      "18 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "21 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une trente-cinquième, à la City Challenge de Pékin du 8 novembre"
     ]
   },
@@ -987,8 +987,8 @@
     "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
     "gameplan": {
       "earlyGame": "Legion Marauder, dans toutes les listes, s'amplifie pour une énergie ou une Puissance de Corps et gagne +1 Puissance : Ambessa s'amplifie avec lui. Noxian Emissary s'amplifie lui aussi, et laisse deux jetons Recrue en mourant une fois amplifié.",
-      "midGame": "Guttural Roar, dans 91 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
-      "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 91 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+      "midGame": "Guttural Roar, dans 92 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
+      "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 92 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
       "winCondition": "Amplifier ses unités pour charger Ambessa, et préparer la meilleure pour un second combat."
     },
     "strengths": [
@@ -996,7 +996,7 @@
       "Chaque amplification charge aussi la Légende"
     ],
     "weaknesses": [
-      "14 joueurs classés sur 2 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+      "15 joueurs classés sur 3 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
       "Sa meilleure place est une soixante-quatrième, au Showdown de Melbourne"
     ]
   }

@@ -15,22 +15,22 @@
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Wages of Pain",
-      "role": "Standard, 66 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -55,22 +55,22 @@
     },
     {
       "name": "Plundering Poro",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
+      "role": "Souple, 59 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Carrion Dredger",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
+      "role": "Souple, 54 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Carrion Dredger",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -78,26 +78,30 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Seraphine, Inspiring": {
-      "usage": "71 %",
+      "usage": "68 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jayce, Man of Progress": {
-      "usage": "55 %",
+      "usage": "56 %",
       "role": "3 exemplaires en moyenne"
+    },
+    "Seraphine, Not Alone": {
+      "usage": "32 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Trifarian War Camp (61 %)",
-    "Forbidding Waste (50 %)",
+    "Forbidding Waste (49 %)",
     "Treasure Hoard (32 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 50,
+    "joueursClasses": 53,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 38,
+    "tournois": 12,
+    "listesPubliees": 41,
     "bestPlacements": [
       {
         "placement": "51th",
@@ -126,13 +130,13 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 50 joueurs classés, 9 tournois, dont 38 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 53 joueurs classés, 12 tournois, dont 41 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Jetons Recrue et sorts moins chers",
   "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
   "gameplan": {
-    "earlyGame": "Concert Poster, dans 87 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 95 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
-    "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 71 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
-    "lateGame": "Vanguard Armory, dans 66 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 87 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
+    "earlyGame": "Concert Poster, dans 88 % des listes, pose un jeton Recrue de 1 Puissance pour une énergie, à son arrivée puis à chaque conquête. Encore, dans 95 % des listes, choisit deux effets parmi quatre : 2 dégâts, deux jetons Recrue, +1 Puissance à deux unités, ou regarder deux cartes et en piocher une.",
+    "midGame": "Avec trois unités à épuiser, la Légende baisse de 2 énergie le coût d'un sort. Seraphine, Inspiring, dans 68 % des listes, pioche une carte, une fois par tour, quand vous épuisez trois unités ou plus en même temps. Bellows Breath inflige 1 à trois unités au même endroit.",
+    "lateGame": "Vanguard Armory, dans 66 % des listes, pose trois jetons Recrue chaque fois qu'on l'épuise. Raucous Anthem prépare toutes vos unités et leur donne +3 Puissance pour le tour. Imperial Decree, dans 88 % des listes, tue toute unité qui subit des dégâts ce tour-là.",
     "winCondition": "Remplir le terrain de jetons, et s'en servir pour payer ses sorts moins cher."
   },
   "strengths": [
@@ -141,7 +145,7 @@
     "Imperial Decree, Hidden Blade et Wages of Pain retirent des unités adverses"
   ],
   "weaknesses": [
-    "50 joueurs classés sur 9 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,008)",
+    "53 joueurs classés sur 12 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,009)",
     "Sa meilleure place est une cinquante et unième, à la City Challenge de Fuzhou",
     "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
   ]

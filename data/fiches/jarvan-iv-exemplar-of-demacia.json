@@ -20,22 +20,22 @@
     },
     {
       "name": "Demacian Standard",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Call to Glory",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -45,42 +45,42 @@
     },
     {
       "name": "Skystrike Squadron",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "role": "Standard, 78 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Standard, 65 % des listes, 2,5 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Overloaded Traveler",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Portable Portal",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "First Mate",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -92,36 +92,36 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "77 %",
+      "usage": "78 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "61 %",
+      "usage": "59 %",
       "role": "2 exemplaires en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "55 %",
+      "usage": "56 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "42 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Monastery of Hirana (81 %)",
-    "Hunters' Circle (58 %)",
-    "Ornn's Forge (35 %)",
-    "Seat of Power (32 %)",
-    "Sunken Temple (32 %)"
+    "Hunters' Circle (59 %)",
+    "Seat of Power (34 %)",
+    "Ornn's Forge (34 %)",
+    "Sunken Temple (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 34,
+    "joueursClasses": 35,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 12,
-    "listesPubliees": 31,
+    "tournois": 13,
+    "listesPubliees": 32,
     "bestPlacements": [
       {
         "placement": "24th",
@@ -134,6 +134,11 @@
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
+        "placement": "36th",
+        "player": "Alex隆",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "37th",
         "player": "浅笑",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
@@ -142,21 +147,16 @@
         "placement": "59th",
         "player": "漂白剂不能喝？",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "77th",
-        "player": "Braden Van't Hof",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 34 joueurs classés, 12 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 35 joueurs classés, 13 tournois, dont 32 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements posés sur les champs de bataille, bonus de combat",
   "legendAbility": "Quand vous jouez un équipement qui se pose sur un champ de bataille, vous pouvez épuiser Jarvan IV et payer une Puissance pour déplacer une de vos unités sur ce champ de bataille.",
   "gameplan": {
-    "earlyGame": "Pillaged Armory, dans 94 % des listes, se pose sur un champ de bataille pour une énergie et donne un bonus à une de vos unités, à son arrivée puis à chaque conquête. Concert Poster, dans 87 % des listes, y pose un jeton Recrue de la même façon.",
+    "earlyGame": "Pillaged Armory, dans 94 % des listes, se pose sur un champ de bataille pour une énergie et donne un bonus à une de vos unités, à son arrivée puis à chaque conquête. Concert Poster, dans 88 % des listes, y pose un jeton Recrue de la même façon.",
     "midGame": "Jarvan IV, Martial Paragon, dans 97 % des listes, permet de jouer ces équipements en Action, et canalise une rune épuisée quand il conquiert un champ de bataille où l'un d'eux se trouve. Avec la Légende, chaque équipement posé amène une unité au combat. Punch First donne +5 Puissance pour une énergie.",
-    "lateGame": "Rengar, Trophy Hunter, dans 77 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Call to Glory donne +3 Puissance en réaction, sans rien coûter si vous dépensez un bonus.",
+    "lateGame": "Rengar, Trophy Hunter, dans 78 % des listes, se pose sur un champ de bataille occupé par l'adversaire. Call to Glory donne +3 Puissance en réaction, sans rien coûter si vous dépensez un bonus.",
     "winCondition": "Poser un équipement là où l'on veut combattre, y amener une unité, et gagner le combat avec les bonus."
   },
   "strengths": [
@@ -164,7 +164,7 @@
     "Punch First, Call to Glory et Demacian Standard donnent de la Puissance en combat, Rampage force un combat"
   ],
   "weaknesses": [
-    "34 joueurs classés sur 12 tournois, aucun dans les 10 % de tête, aucun titre : trop peu de joueurs pour conclure",
+    "35 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre : trop peu de joueurs pour conclure",
     "Sa meilleure place est une vingt-quatrième, à la City Challenge de Shenyang",
     "La Légende ne sert que si l'on joue un équipement qui se pose sur un champ de bataille"
   ]

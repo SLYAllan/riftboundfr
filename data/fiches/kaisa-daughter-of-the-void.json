@@ -29,23 +29,18 @@
       "noyau": true
     },
     {
-      "name": "Bilgewater Tracker",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Temporal Breach",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Time Warp",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "name": "Bilgewater Tracker",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Lecturing Yordle",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "name": "Time Warp",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -55,17 +50,17 @@
     },
     {
       "name": "Hextech Ray",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Lecturing Yordle",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "The Empyrean",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Plundering Poro",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -74,33 +69,43 @@
       "noyau": true
     },
     {
-      "name": "Watchful Sentry",
+      "name": "Plundering Poro",
       "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Watchful Sentry",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lost to the Sands",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 264,
-    "coupe10": 28,
+    "joueursClasses": 337,
+    "coupe10": 36,
     "titres": 1,
-    "conversion": "10.6 %",
-    "tournois": 16,
-    "listesPubliees": 215,
+    "conversion": "10.7 %",
+    "tournois": 21,
+    "listesPubliees": 288,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "泽萱.流浪巫妖",
         "tournament": "S5 Beijing City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "3rd",
+        "player": "ARBD-鬼鬼喵",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
       },
       {
         "placement": "4th",
@@ -109,18 +114,13 @@
       },
       {
         "placement": "4th",
+        "player": "LineKa·不堪七",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
+      },
+      {
+        "placement": "4th",
         "player": "XXT.BING",
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "4th",
-        "player": "Jealous",
-        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "4th",
-        "player": "澄匿梦霞@Ld.sz",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
@@ -136,7 +136,7 @@
     "Frozen Fortress (94 %)",
     "Void Gate (91 %)"
   ],
-  "dataSource": "Classement complet des tournois : 264 joueurs classés, 16 tournois, dont 215 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 337 joueurs classés, 21 tournois, dont 288 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {
@@ -146,13 +146,13 @@
     "winCondition": "Enchaîner les tours et les sorts jusqu'à ce que l'adversaire n'ait plus de réponse."
   },
   "strengths": [
-    "264 joueurs classés sur 16 tournois, 28 dans les 10 % de tête : 10,6 % de conversion contre 9,9 % de moyenne",
+    "337 joueurs classés sur 21 tournois, 36 dans les 10 % de tête : 10,7 % de conversion contre 9,9 % de moyenne",
     "Sept cartes à 98 % ou plus, dont Stupefy et Falling Star dans toutes les listes",
     "Time Warp dans 97 % des listes : un tour de plus décide une partie serrée",
     "La Légende paie les sorts sans toucher aux runes du tour"
   ],
   "weaknesses": [
-    "Un seul titre sur 16 tournois, la City Challenge de Pékin du 8 novembre, pour la deuxième Légende la plus jouée du set",
+    "Un seul titre sur 21 tournois, la City Challenge de Pékin du 8 novembre, pour la deuxième Légende la plus jouée du set",
     "Le moteur coûte cher, 6 énergie pour Brynhir Thundersong, 7 pour Thousand-Tailed Watcher et 10 pour Time Warp",
     "La Puissance de la Légende ne sert qu'aux sorts, jamais à poser une unité"
   ],

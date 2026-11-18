@@ -24,28 +24,8 @@
       "noyau": true
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Consult the Past",
       "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Rocket Barrage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Singularity",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -54,58 +34,63 @@
       "noyau": true
     },
     {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rocket Barrage",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Plundering Poro",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Unchecked Power",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 69 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Frigid Touch",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Downstage Dramatics",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Falling Star",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "name": "Frigid Touch",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Progress Day",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Watchful Sentry",
-      "role": "Souple, 42 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "The Empyrean",
-      "role": "Souple, 33 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Orb of Regret",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "name": "Falling Star",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -118,22 +103,28 @@
     }
   },
   "topBattlefields": [
-    "Rockfall Path (92 %)",
-    "Frozen Fortress (83 %)",
-    "Sigil of the Storm (67 %)"
+    "Frozen Fortress (85 %)",
+    "Rockfall Path (85 %)",
+    "Sigil of the Storm (62 %)",
+    "Void Gate (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 18,
+    "joueursClasses": 19,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "5.6 %",
-    "tournois": 2,
-    "listesPubliees": 12,
+    "conversion": "5.3 %",
+    "tournois": 3,
+    "listesPubliees": 13,
     "bestPlacements": [
       {
         "placement": "27th",
         "player": "Benji302080",
         "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+      },
+      {
+        "placement": "53th",
+        "player": "茶壶",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
         "placement": "81th",
@@ -149,19 +140,14 @@
         "placement": "143th",
         "player": "plum",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "146th",
-        "player": "TheLman19",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 18 joueurs classés, 2 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 3 tournois, dont 13 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts à 4 énergie et plus",
   "legendAbility": "Quand vous jouez un sort en dépensant 4 énergie ou plus, vous pouvez le bannir sous Jhin. Au quatrième sort banni, ils retournent tous dans votre défausse, vous canalisez 4 runes et piochez une carte.",
   "gameplan": {
-    "earlyGame": "Plundering Poro, dans 83 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy affaiblit une unité et pioche pour une énergie.",
+    "earlyGame": "Plundering Poro, dans 77 % des listes, laisse un jeton d'or épuisé à chaque conquête. Stupefy affaiblit une unité et pioche pour une énergie.",
     "midGame": "Curtain Call, Deadly Flourish et Sprite Burst, dans toutes les listes, coûtent 4 énergie ou plus et nourrissent la Légende. Jhin, Meticulous Killer, dans 92 % des listes, se joue pour une seule Puissance d'Esprit le tour où vous avez dépensé 4 énergie pour un sort. Consult the Past pioche deux cartes en réaction.",
     "lateGame": "Au quatrième sort banni, la Légende canalise 4 runes d'un coup. Singularity inflige 6 dégâts à deux unités, Thousand-Tailed Watcher retire 3 Puissance à toutes les unités adverses, Time Warp donne un tour de plus.",
     "winCondition": "Enchaîner les gros sorts jusqu'à ce que la Légende rende quatre runes, puis s'en servir pour les sorts les plus chers."
@@ -171,7 +157,7 @@
     "La Légende rend quatre runes d'un coup, de quoi lancer les sorts les plus chers"
   ],
   "weaknesses": [
-    "18 joueurs classés sur 2 tournois, 1 dans les 10 % de tête : 5,6 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
+    "19 joueurs classés sur 3 tournois, 1 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, trop peu pour conclure",
     "Sa meilleure place est une vingt-septième, au Showdown de Sacramento",
     "Beaucoup de sorts à 4 énergie ou plus : les premiers tours sont lents"
   ]

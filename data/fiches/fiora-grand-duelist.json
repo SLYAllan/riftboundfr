@@ -10,9 +10,9 @@
   "archetype": "Duel : une grosse unité, protégée",
   "legendAbility": "Quand une de vos unités devient Puissante (5 Puissance ou plus), vous pouvez épuiser Fiora pour canaliser une rune épuisée. Grossir rapporte des ressources.",
   "gameplan": {
-    "earlyGame": "Pit Rookie, dans 72 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
-    "midGame": "Fiora, Victorious, dans 94 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 94 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
-    "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 72 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+    "earlyGame": "Pit Rookie, dans 68 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory en donne un à son arrivée puis à chaque conquête.",
+    "midGame": "Fiora, Victorious, dans 88 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante. Punch First, dans 92 % des listes, la rend Puissante pour une énergie, et la Légende canalise une rune au passage. Riposte, dans toutes les listes, contre un sort et donne à votre unité autant de Puissance que le coût du sort.",
+    "lateGame": "Harnessed Dragon tue une unité adverse en arrivant. Rengar, Trophy Hunter, dans 76 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
     "winCondition": "Rendre une unité Puissante, la protéger, et gagner ses combats un par un."
   },
   "keyCards": [
@@ -22,73 +22,73 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Rampage",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
-      "noyau": false
+      "name": "Punch First",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Sea Monkey",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Pillaged Armory",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "name": "Harnessed Dragon",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Call to Glory",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sea Monkey",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pillaged Armory",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rift Herald",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Elder Dragon",
-      "role": "Souple, 33 % des listes, 2,5 exemplaires",
+      "role": "Souple, 40 % des listes, 2,5 exemplaires",
       "noyau": false
     }
   ],
@@ -97,17 +97,22 @@
     "Chaque unité qui devient Puissante rapporte une rune"
   ],
   "weaknesses": [
-    "19 joueurs classés sur 13 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
-    "Sa meilleure place est une treizième, à la City Challenge de Fuzhou"
+    "27 joueurs classés sur 15 tournois, 1 dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "Sa meilleure place est une neuvième, à la City Challenge de Nanjing du 14 novembre"
   ],
   "competitiveResults": {
-    "joueursClasses": 19,
-    "coupe10": 0,
+    "joueursClasses": 27,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 13,
-    "listesPubliees": 18,
+    "conversion": "3.7 %",
+    "tournois": 15,
+    "listesPubliees": 25,
     "bestPlacements": [
+      {
+        "placement": "9th",
+        "player": "nanakusa",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
+      },
       {
         "placement": "13th",
         "player": "Step.NN",
@@ -125,13 +130,8 @@
       },
       {
         "placement": "28th",
-        "player": "遁去的一",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "29th",
-        "player": "QC 81",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
+        "player": "ZL-孝陵公子Silence ",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       }
     ]
   },
@@ -155,31 +155,35 @@
   },
   "champions": {
     "Fiora, Victorious": {
-      "usage": "94 %",
+      "usage": "88 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "72 %",
+      "usage": "76 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "61 %",
+      "usage": "60 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "56 %",
+      "usage": "52 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "50 %",
+      "usage": "48 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Mordekaiser, Dominating": {
+      "usage": "32 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sunken Temple (89 %)",
-    "Monastery of Hirana (33 %)"
+    "Sunken Temple (88 %)",
+    "Monastery of Hirana (40 %)"
   ],
-  "dataSource": "Classement complet des tournois : 19 joueurs classés, 13 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 15 tournois, dont 25 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

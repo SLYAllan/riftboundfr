@@ -27,42 +27,42 @@
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "First Mate",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Rampage",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Rampage",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -74,34 +74,24 @@
       "name": "Repulse",
       "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Portable Portal",
-      "role": "Souple, 32 % des listes, 1 exemplaire",
-      "noyau": false
     }
   ],
   "strengths": [
-    "20 joueurs classés, 4 dans les 10 % de tête : 20,0 % de conversion contre 9,9 % pour le format",
+    "27 joueurs classés, 5 dans les 10 % de tête : 18,5 % de conversion contre 9,9 % pour le format",
     "Deuxième à la City Challenge de Pékin, septième et huitième à Shanghai",
     "Pillaged Armory, Showstopper et Call to Glory dans toutes les listes, Punch First dans 95 %, Fiora, Victorious dans 89 %"
   ],
   "weaknesses": [
-    "20 joueurs seulement : trop peu pour conclure, malgré la conversion",
+    "27 joueurs seulement : trop peu pour conclure, malgré la conversion",
     "Aucun titre sur Radiance"
   ],
   "competitiveResults": {
-    "joueursClasses": 20,
-    "coupe10": 4,
+    "joueursClasses": 27,
+    "coupe10": 5,
     "titres": 0,
-    "conversion": "20 %",
-    "tournois": 12,
-    "listesPubliees": 19,
+    "conversion": "18.5 %",
+    "tournois": 16,
+    "listesPubliees": 25,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -119,14 +109,14 @@
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       },
       {
+        "placement": "11th",
+        "player": "小橘派派",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "23th",
         "player": "Rudi Prangija",
         "tournament": "Europe Regional Championship"
-      },
-      {
-        "placement": "26th",
-        "player": "小黄",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
@@ -149,43 +139,44 @@
   },
   "champions": {
     "Sett, Kingpin": {
-      "usage": "95 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fiora, Victorious": {
-      "usage": "89 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Vi, Peacekeeper": {
-      "usage": "89 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     },
     "Nidalee, Cat Form": {
       "usage": "84 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Vi, Peacekeeper": {
+      "usage": "84 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Lucian, Merciless": {
-      "usage": "47 %",
+      "usage": "44 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "37 %",
+      "usage": "44 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (74 %)",
-    "Valley of Idols (63 %)",
-    "Packed Amphitheater (47 %)",
-    "Sunken Temple (37 %)"
+    "Monastery of Hirana (76 %)",
+    "Valley of Idols (60 %)",
+    "Packed Amphitheater (52 %)",
+    "Sunken Temple (36 %)",
+    "Amateur Recital (32 %)"
   ],
-  "dataSource": "Classement complet des tournois : 20 joueurs classés, 12 tournois, dont 19 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 27 joueurs classés, 16 tournois, dont 25 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "gameplan": {
-    "earlyGame": "Pit Rookie, dans 89 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
-    "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 95 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
-    "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans 89 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
+    "earlyGame": "Pit Rookie, dans 92 % des listes, donne un bonus à une autre unité en arrivant. Pillaged Armory, dans toutes les listes, en donne un à son arrivée puis à chaque conquête. Irresistible Faefolk attire une unité adverse là où il se déplace.",
+    "midGame": "Showstopper, dans toutes les listes, donne un bonus à une unité de votre base et l'envoie sur un champ de bataille, pour une énergie. Sett, Kingpin, dans 96 % des listes, a Tank et gagne +1 Puissance par unité alliée avec un bonus à ses côtés. Une unité avec un bonus qui devait mourir revient à la base grâce à la Légende.",
+    "lateGame": "Call to Glory, dans toutes les listes, donne +3 Puissance, sans rien coûter si vous dépensez un bonus. Fiora, Victorious, dans 92 % des listes, a Protection, Gank et Bouclier tant qu'elle est Puissante.",
     "winCondition": "Donner des bonus partout, et ne perdre aucune unité qui en porte un."
   }
 }

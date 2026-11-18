@@ -27,102 +27,102 @@
     },
     {
       "name": "Sky Splitter",
-      "role": "Cœur du deck, Removal et board control, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, Removal et board control, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Gentle Gemdragon",
-      "role": "Standard, Dragon de mid game, 78 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon de mid game, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Seraphic Wyvern",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Dragonsoul Sage",
-      "role": "Standard, 72 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Blazing Scorcher",
-      "role": "Standard, Dragon d'early game, 72 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon d'early game, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Challenge",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Punch First",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Flurry of Blades",
-      "role": "Standard, Combat trick, 61 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Direwing",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Show of Strength",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Herald of Scales",
-      "role": "Souple, Dragon d'early game, 56 % des listes, 3 exemplaires",
+      "role": "Standard, Dragon d'early game, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Show of Strength",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Direwing",
+      "role": "Souple, 59 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Souple, Disruption, 56 % des listes, 1 exemplaire",
+      "role": "Souple, Disruption, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Falling Star",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "name": "Flurry of Blades",
+      "role": "Souple, Combat trick, 50 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Minotaur Reckoner",
+      "role": "Souple, 41 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Volibear, Furious": {
-      "usage": "94 %",
+      "usage": "95 %",
       "role": "Seul champion du build, 1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "78 %",
+      "usage": "73 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Dragon Roost (83 %)",
-    "Sigil of the Storm (78 %)",
-    "Black Market (39 %)",
-    "Forgotten Monument (39 %)"
+    "Dragon Roost (86 %)",
+    "Sigil of the Storm (82 %)",
+    "Black Market (41 %)",
+    "Forgotten Monument (32 %)"
   ],
   "strengths": [
     "Kadregrin the Infernal, Elder Dragon et Mobilize dans toutes les listes",
     "Chaque unité de 5 Puissance ou plus rapporte une rune"
   ],
   "weaknesses": [
-    "18 joueurs classés sur 9 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "22 joueurs classés sur 11 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une treizième, à la City Challenge de Chengdu du 7 novembre",
     "Les premiers tours servent à préparer les runes : peu d'unités tôt"
   ],
   "competitiveResults": {
-    "joueursClasses": 18,
+    "joueursClasses": 22,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 9,
-    "listesPubliees": 18,
+    "tournois": 11,
+    "listesPubliees": 22,
     "bestPlacements": [
       {
         "placement": "13th",
@@ -135,6 +135,11 @@
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
+        "placement": "41th",
+        "player": "一条咸鱼水中游",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
+      },
+      {
         "placement": "44th",
         "player": "PLRI-路旁的落叶",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
@@ -143,18 +148,13 @@
         "placement": "46th",
         "player": "笙箫渐寒",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "54th",
-        "player": "慌则乱、小江",
-        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 18 joueurs classés, 9 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 22 joueurs classés, 11 tournois, dont 22 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -174,7 +174,7 @@
   "cartesDepuisBan": "2026-09-15",
   "gameplan": {
     "earlyGame": "Mobilize, dans toutes les listes, canalise une rune épuisée, ou pioche si vous ne pouvez pas. Dragonsoul Sage s'épuise en réaction pour une énergie. Herald of Scales baisse de 2 énergie le coût de vos Dragons.",
-    "midGame": "Blazing Scorcher, 5 Puissance et Accélération, déclenche la Légende dès qu'il arrive. Gentle Gemdragon, dans 78 % des listes, prépare deux runes quand vous jouez un Dragon. Seraphic Wyvern ajoute une rune épuisée chaque fois que vous en canalisez.",
+    "midGame": "Blazing Scorcher, 5 Puissance et Accélération, déclenche la Légende dès qu'il arrive. Gentle Gemdragon, dans 82 % des listes, prépare deux runes quand vous jouez un Dragon. Seraphic Wyvern ajoute une rune épuisée chaque fois que vous en canalisez.",
     "lateGame": "Kadregrin the Infernal, dans toutes les listes, pioche une carte par unité Puissante que vous contrôlez. Elder Dragon, dans toutes les listes aussi, rend mortel le moindre dégât que vous infligez. Sky Splitter inflige 5 dégâts et coûte moins cher selon votre plus grosse unité.",
     "winCondition": "Accélérer les runes avec chaque grosse unité, puis poser les Dragons avant l'adversaire."
   }

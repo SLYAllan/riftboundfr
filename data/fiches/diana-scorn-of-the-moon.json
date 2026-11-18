@@ -10,114 +10,114 @@
   "archetype": "Combats gagnés à la réaction",
   "legendAbility": "Épuisez Diana en réaction pour ajouter une énergie, dépensable seulement pendant un combat. Elle donne un sort d'avance à chaque affrontement.",
   "gameplan": {
-    "earlyGame": "Tideturner, dans 97 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
+    "earlyGame": "Tideturner, dans 98 % des listes, se pose caché et échange sa place avec une de vos unités. Stupefy affaiblit une unité et pioche pour une énergie. Ravenbloom Student gagne +1 Puissance à chaque sort joué.",
     "midGame": "Diana, Lunari, dans toutes les listes, regarde le dessus du deck au début d'un combat là où elle est, pour une énergie, et pioche la carte si c'est un sort. Moonfall attire une unité adverse sur votre champ de bataille et retire 2 Puissance aux unités adverses là-bas. Avec l'énergie de la Légende, vous jouez un sort de plus pendant le combat.",
-    "lateGame": "Hwei, Brooding Painter, dans 97 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
+    "lateGame": "Hwei, Brooding Painter, dans 98 % des listes, pioche puis défausse en se déplaçant, et gagne un effet selon la carte défaussée. Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Star-Crossed renvoie en main une de vos unités et une unité adverse.",
     "winCondition": "Gagner les combats avec un sort d'avance, en réaction."
   },
   "keyCards": [
     {
       "name": "Gust",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Ride The Wind",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Moonfall",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
+      "name": "Hard Bargain",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Eclipse",
-      "role": "Standard, 89 % des listes, 1 exemplaire",
+      "role": "Standard, 87 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Flash",
-      "role": "Standard, 89 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Standard, 62 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Smoke Screen",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
+      "role": "Souple, 49 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Acceptable Losses",
-      "role": "Souple, 38 % des listes, 1,5 exemplaire",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "strengths": [
     "Un titre, le Showdown de Melbourne, et une troisième place au même tournoi",
-    "44 joueurs classés sur 14 tournois, 7 dans les 10 % de tête : 15,9 % de conversion contre 9,9 % pour le format",
+    "54 joueurs classés sur 18 tournois, 9 dans les 10 % de tête : 16,7 % de conversion contre 9,9 % pour le format",
     "Gust, Stupefy, Star-Crossed, Eclipse et Hard Bargain répondent pendant le combat"
   ],
   "weaknesses": [
-    "44 joueurs seulement : l'écart ne tient plus le test (p = 0,20)",
+    "54 joueurs seulement : l'écart ne tient plus le test (p = 0,11)",
     "L'énergie de la Légende ne sert que pendant un combat"
   ],
   "competitiveResults": {
-    "joueursClasses": 44,
-    "coupe10": 7,
+    "joueursClasses": 54,
+    "coupe10": 9,
     "titres": 1,
-    "conversion": "15.9 %",
-    "tournois": 14,
-    "listesPubliees": 37,
+    "conversion": "16.7 %",
+    "tournois": 18,
+    "listesPubliees": 47,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -130,19 +130,19 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "8th",
+        "player": "撸蛇@罗比军校",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
+      },
+      {
+        "placement": "9th",
+        "player": "joyspace_pggg",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
+      },
+      {
         "placement": "10th",
         "player": "LineKa·Pokuey",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "11th",
-        "player": "phantom diver",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "11th",
-        "player": "少吃萝卜",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
@@ -172,25 +172,24 @@
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "97 %",
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "89 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "91 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "86 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "89 %",
+      "role": "1,5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Targon's Peak (84 %)",
-    "Abandoned Hall (73 %)",
-    "Seat of Power (35 %)",
+    "Targon's Peak (83 %)",
+    "Abandoned Hall (70 %)",
     "Rockfall Path (32 %)"
   ],
-  "dataSource": "Classement complet des tournois : 44 joueurs classés, 14 tournois, dont 37 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 54 joueurs classés, 18 tournois, dont 47 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

@@ -10,7 +10,7 @@
   "archetype": "Tempo et mouvement, une unité préparée deux fois",
   "legendAbility": "Quand vous choisissez une de vos unités, vous pouvez épuiser Irelia et payer une Puissance pour la préparer. Et quand vous conquérez, une énergie la prépare elle-même.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab, dans 89 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
+    "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Tideturner, caché, échange sa place avec une de vos unités. Defy, Discipline et Defiant Dance, dans toutes les listes, répondent pendant le tour adverse.",
     "midGame": "Chaque sort qui choisit une de vos unités, comme Discipline ou Defiant Dance, permet à la Légende de la préparer : elle combat ou se déplace une fois de plus. Irelia, Fervent, dans toutes les listes, a Protection et gagne +1 Puissance chaque fois qu'on la choisit ou qu'on la prépare.",
     "lateGame": "Stellacorn Herder pioche à chaque déplacement. Ride The Wind déplace une de vos unités et la prépare. Zhonya's Hourglass sauve une unité qui devait mourir.",
     "winCondition": "Choisir ses unités avec des sorts bon marché pour les préparer, et combattre deux fois par tour."
@@ -33,72 +33,72 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ride The Wind",
       "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Tideturner",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Not So Fast",
+      "name": "Star-Crossed",
       "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Star-Crossed",
+      "name": "Not So Fast",
       "role": "Standard, 81 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 68 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Guardian Angel",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Twilight Shroud",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Standard, 69 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Twilight Shroud",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Guardian Angel",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -107,13 +107,18 @@
       "noyau": false
     },
     {
+      "name": "Rebuke",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
       "name": "Edge of Night",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 37 % des listes, 3 exemplaires",
+      "role": "Souple, 36 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -123,7 +128,7 @@
     "Irelia, Fervent dans toutes les listes : chaque sort qui la choisit la renforce"
   ],
   "weaknesses": [
-    "69 joueurs classés sur 15 tournois, 4 dans les 10 % de tête : 5,8 % de conversion contre 9,9 % pour le format",
+    "81 joueurs classés sur 19 tournois, 5 dans les 10 % de tête : 6,2 % de conversion contre 9,9 % pour le format",
     "La Légende coûte une Puissance à chaque unité préparée"
   ],
   "matchups": {
@@ -140,12 +145,12 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 69,
-    "coupe10": 4,
+    "joueursClasses": 81,
+    "coupe10": 5,
     "titres": 1,
-    "conversion": "5.8 %",
-    "tournois": 15,
-    "listesPubliees": 62,
+    "conversion": "6.2 %",
+    "tournois": 19,
+    "listesPubliees": 74,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -158,6 +163,11 @@
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
+        "placement": "9th",
+        "player": "FG.Rapcat ⚜️",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "10th",
         "player": "knt-星时@迪迪小弟",
         "tournament": "S5 Wuhan City Challenge (2026-11-08)"
@@ -166,11 +176,6 @@
         "placement": "12th",
         "player": "PaulK",
         "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
-      },
-      {
-        "placement": "14th",
-        "player": "D.C.粉毛奶龙",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
@@ -212,18 +217,14 @@
     "Vex, Apathetic": {
       "usage": "68 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Pyke, Returned": {
-      "usage": "31 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
-    "Sunken Temple (85 %)",
-    "Targon's Peak (71 %)"
+    "Sunken Temple (84 %)",
+    "Targon's Peak (72 %)"
   ],
-  "dataSource": "Classement complet des tournois : 69 joueurs classés, 15 tournois, dont 62 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 81 joueurs classés, 19 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

@@ -17,11 +17,6 @@
   },
   "keyCards": [
     {
-      "name": "Patched Porobot",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Seal of Focus",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -38,16 +33,31 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Pit Crew",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
+      "name": "Patched Porobot",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Scuttle Crab",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pit Crew",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Defy",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Clockwork Keeper",
       "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
@@ -62,63 +72,39 @@
       "noyau": false
     },
     {
-      "name": "Defy",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Clockwork Keeper",
-      "role": "Standard, 70 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Charm",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Cloth Armor",
-      "role": "Standard, 60 % des listes, 1,5 exemplaire",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Aspiring Engineer",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Shurelya's Requiem",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Forgefire Cape",
       "role": "Souple, 40 % des listes, 1 exemplaire",
       "noyau": false
-    },
-    {
-      "name": "Invigorating Bloom",
-      "role": "Souple, 30 % des listes, 2 exemplaires",
-      "noyau": false
     }
   ],
   "champions": {
     "Ornn, Blacksmith": {
-      "usage": "60 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Ornn, Forge God": {
-      "usage": "40 %",
+      "usage": "73 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ornn's Forge (90 %)",
+    "Ornn's Forge (93 %)",
     "Veiled Temple (80 %)",
     "Seat of Power (40 %)"
   ],
@@ -129,22 +115,32 @@
     "La Légende paie les équipements sans dépenser le tour"
   ],
   "weaknesses": [
-    "14 joueurs classés sur 10 tournois, 7,1 % de conversion : sous la moyenne du format (9,9 %), sans que l'écart tienne le test",
+    "19 joueurs classés sur 14 tournois, 7,1 % de conversion : sous la moyenne du format (9,9 %), sans que l'écart tienne le test",
     "Le retrait d'équipement fait s'effondrer le deck entier",
     "Ornn, Blacksmith n'est que dans 74 % des listes : la liste n'est pas fixée"
   ],
   "competitiveResults": {
-    "joueursClasses": 14,
+    "joueursClasses": 19,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "7.1 %",
-    "tournois": 10,
-    "listesPubliees": 10,
+    "conversion": "5.3 %",
+    "tournois": 14,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "11th",
         "player": "加粗中括号",
         "tournament": "S5 Wuhan City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "16th",
+        "player": "兔角",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
+        "placement": "27th",
+        "player": "ZL-希洛库玛🐻‍❄️",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       },
       {
         "placement": "29th",
@@ -155,23 +151,13 @@
         "placement": "37th",
         "player": "n0000000000o",
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "51th",
-        "player": "泉",
-        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "63th",
-        "player": "PopChase",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois : 14 joueurs classés, 10 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 19 joueurs classés, 14 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [

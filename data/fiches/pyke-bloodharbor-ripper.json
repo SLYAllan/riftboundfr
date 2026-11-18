@@ -10,78 +10,88 @@
   "keyCards": [
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Souple, 56 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tideturner",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Blood Rush",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bedeviling Stranger",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The List",
-      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
-      "name": "Gust",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "name": "Tideturner",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Blood Rush",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Piercing Light",
+      "role": "Souple, 48 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pack of Wonders",
+      "role": "Souple, 38 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 30,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 8,
-    "listesPubliees": 18,
+    "tournois": 10,
+    "listesPubliees": 21,
     "bestPlacements": [
+      {
+        "placement": "12th",
+        "player": "过天星",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
+      },
       {
         "placement": "23th",
         "player": "慕月",
@@ -101,48 +111,40 @@
         "placement": "44th",
         "player": "虫爷",
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "56th",
-        "player": "DD DEXTERREIGNS",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
   "sourceUrl": null,
   "champions": {
     "Pyke, Dockside Butcher": {
-      "usage": "89 %",
+      "usage": "90 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "78 %",
+      "usage": "81 %",
       "role": "2 exemplaires en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "72 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "56 %",
+      "usage": "57 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Rengar, Pouncing": {
-      "usage": "33 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Ripper's Bay (89 %)",
-    "Forbidding Waste (61 %)"
+    "Ripper's Bay (86 %)",
+    "Forbidding Waste (62 %)",
+    "Void Gate (33 %)"
   ],
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 8 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 30 joueurs classés, 10 tournois, dont 21 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Retours en main et or",
   "legendAbility": "Une énergie et épuiser Pyke renvoient une de vos unités en main et posent un jeton Or épuisé. On récupère l'unité et la ressource.",
   "gameplan": {
-    "earlyGame": "Traveling Merchant défausse puis pioche à chaque déplacement. Tideturner et Bedeviling Stranger se jouent cachés. Pyke, Dockside Butcher, dans 89 % des listes, caché lui aussi, arrive préparé avec +2 Puissance si vous payez une Puissance de Furie en plus.",
-    "midGame": "La Légende renvoie une de vos unités en main et pose un jeton d'or : de quoi sauver une unité condamnée et la rejouer. Falling Star, dans 89 % des listes, inflige 3 dégâts deux fois. Star-Crossed, dans 94 % aussi, renvoie en main une de vos unités et une unité adverse.",
-    "lateGame": "Fizz, Trickster, dans 78 % des listes, rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
+    "earlyGame": "Traveling Merchant défausse puis pioche à chaque déplacement. Tideturner et Bedeviling Stranger se jouent cachés. Pyke, Dockside Butcher, dans 90 % des listes, caché lui aussi, arrive préparé avec +2 Puissance si vous payez une Puissance de Furie en plus.",
+    "midGame": "La Légende renvoie une de vos unités en main et pose un jeton d'or : de quoi sauver une unité condamnée et la rejouer. Falling Star, dans 90 % des listes, inflige 3 dégâts deux fois. Star-Crossed, dans 94 % aussi, renvoie en main une de vos unités et une unité adverse.",
+    "lateGame": "Fizz, Trickster, dans 81 % des listes, rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Vex, Apathetic étourdit chaque unité que l'adversaire joue tant qu'elle est sur un champ de bataille.",
     "winCondition": "Rejouer ses unités pour en tirer l'effet d'arrivée une fois de plus, et accumuler l'or."
   },
   "strengths": [
@@ -150,7 +152,7 @@
     "La Légende sauve une unité et rend un jeton d'or au passage"
   ],
   "weaknesses": [
-    "27 joueurs classés sur 8 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "30 joueurs classés sur 10 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une vingt-troisième, à la City Challenge de Guangzhou du 8 novembre",
     "Deux cartes seulement au-dessus de 90 % : personne n'a fixé la liste"
   ],

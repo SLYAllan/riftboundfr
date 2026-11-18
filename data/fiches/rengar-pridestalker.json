@@ -27,11 +27,6 @@
       "noyau": true
     },
     {
-      "name": "Grim Apothecary",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Punch First",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -43,6 +38,11 @@
     },
     {
       "name": "Irresistible Faefolk",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Grim Apothecary",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -68,17 +68,17 @@
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Elnuk Herd",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 73 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -88,16 +88,16 @@
     "Inferna, Grim Apothecary, Nidalee, Cat Form et Rengar, Trophy Hunter arrivent en Embuscade"
   ],
   "weaknesses": [
-    "85 joueurs classés sur 16 tournois, 9 dans les 10 % de tête : 10,6 % de conversion, la moyenne du format, et aucun titre",
+    "92 joueurs classés sur 20 tournois, 10 dans les 10 % de tête : 10,9 % de conversion, la moyenne du format, et aucun titre",
     "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
   ],
   "competitiveResults": {
-    "joueursClasses": 85,
-    "coupe10": 9,
+    "joueursClasses": 92,
+    "coupe10": 10,
     "titres": 0,
-    "conversion": "10.6 %",
-    "tournois": 16,
-    "listesPubliees": 68,
+    "conversion": "10.9 %",
+    "tournois": 20,
+    "listesPubliees": 74,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -120,9 +120,9 @@
         "tournament": "S5 Shanghai City Challenge (2026-11-07)"
       },
       {
-        "placement": "8th",
-        "player": "Daniel Vu",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
+        "placement": "7th",
+        "player": "雷汐",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       }
     ]
   },
@@ -162,16 +162,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "46 %",
+      "usage": "47 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (94 %)",
-    "Star Spring (94 %)",
-    "Seat of Power (90 %)"
+    "Emperor's Dais (95 %)",
+    "Star Spring (95 %)",
+    "Seat of Power (91 %)"
   ],
-  "dataSource": "Classement complet des tournois : 85 joueurs classés, 16 tournois, dont 68 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 92 joueurs classés, 20 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

@@ -30,23 +30,23 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Faithful Manufactor",
       "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Undertitan",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Faithful Manufactor",
       "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Concert Poster",
@@ -55,47 +55,52 @@
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 78 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hunting Dog",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Banner of Conquest",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Blood Rush",
-      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Banner of Conquest",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Cleave",
+      "role": "Souple, 31 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 108,
-    "coupe10": 11,
+    "joueursClasses": 134,
+    "coupe10": 13,
     "titres": 0,
-    "conversion": "10.2 %",
-    "tournois": 16,
-    "listesPubliees": 101,
+    "conversion": "9.7 %",
+    "tournois": 21,
+    "listesPubliees": 127,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -108,6 +113,11 @@
         "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
+        "placement": "4th",
+        "player": "On99白夜",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
+      },
+      {
         "placement": "6th",
         "player": "Irae",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
@@ -116,11 +126,6 @@
         "placement": "6th",
         "player": "酷猫.RK",
         "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "7th",
-        "player": "Nothing",
-        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
       }
     ]
   },
@@ -133,10 +138,6 @@
     "Rengar, Pouncing": {
       "usage": "65 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Vi, Peacekeeper": {
-      "usage": "34 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
@@ -145,22 +146,22 @@
     "Hunters' Circle (45 %)",
     "Ruined Monastery (39 %)"
   ],
-  "dataSource": "Classement complet des tournois : 108 joueurs classés, 16 tournois, dont 101 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 134 joueurs classés, 21 tournois, dont 127 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {
     "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Carrion Dredger, dans 98 % des listes, laisse un Oiseau à Protection en mourant, Faithful Manufactor pose un jeton Recrue en arrivant.",
     "midGame": "Cull the Weak, dans toutes les listes, oblige chaque joueur à tuer une de ses unités : vous sacrifiez un jeton, l'adversaire perd une vraie unité. Rek'Sai, Breacher, dans toutes les listes, donne Accélération aux unités jouées d'ailleurs que de la main, comme celles que révèle la Légende. Falling Star inflige 3 dégâts deux fois.",
-    "lateGame": "Undertitan, dans 96 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
+    "lateGame": "Undertitan, dans 97 % des listes, donne +2 Puissance à vos autres unités pour le tour, et rend 2 énergie quand la Légende le révèle. Noxus Hopeful coûte 2 énergie de moins grâce à Légion.",
     "winCondition": "Conquérir, puis enchaîner sur les cartes que la Légende révèle, avec des unités qui arrivent prêtes."
   },
   "strengths": [
-    "108 joueurs classés sur 16 tournois, 11 dans les 10 % de tête : 10,2 % de conversion contre 9,9 % pour le format",
+    "134 joueurs classés sur 21 tournois, 13 dans les 10 % de tête : 9,7 % de conversion contre 9,9 % pour le format",
     "Six Top 8 en City Challenge : deuxième à Guangzhou le 8 novembre, troisième à Shenyang, sixième à Guangzhou et à Shanghai, septième à Shanghai le 7 novembre, huitième à Shenzhen",
     "Sept cartes dans au moins 95 % des listes, dont Cull the Weak et Falling Star dans toutes"
   ],
   "weaknesses": [
-    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 0,87)",
+    "Aucun titre, et l'écart avec la moyenne du format ne tient pas encore le test (p = 1,0)",
     "La Légende ne sert qu'après une conquête"
   ],
   "cartesDepuisBan": "2026-09-15",

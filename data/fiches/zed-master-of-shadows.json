@@ -10,9 +10,9 @@
   "archetype": "Bannissement et rotation de main",
   "legendAbility": "Chaque carte bannie de votre côté amplifie Zed. Désamplifiez-le et épuisez-le pour défausser une carte puis en piocher une.",
   "gameplan": {
-    "earlyGame": "Traveling Merchant, dans 86 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
-    "midGame": "Ride The Wind, dans 93 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 71 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
-    "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 57 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
+    "earlyGame": "Traveling Merchant, dans 87 % des listes, défausse puis pioche à chaque déplacement. Runeblade Anvil bannit la carte du dessus de votre deck en arrivant et en partant, et vous laisse la jouer : chaque bannissement amplifie Zed. Tideturner se joue caché.",
+    "midGame": "Ride The Wind, dans 93 % des listes, déplace une de vos unités et la prépare. Zed, Without a Sound, dans 73 % des listes, pose un Clone d'Ombre de 0 Puissance à chaque conquête, puis échange sa place avec lui pour une énergie et une Puissance de Chaos.",
+    "lateGame": "Fizz, Trickster rejoue gratuitement depuis la défausse un sort de 3 énergie ou moins. Baron Nashor, dans 60 % des listes, donne +2 Puissance à vos autres unités et ne peut pas être choisi par les sorts adverses.",
     "winCondition": "Bannir pour amplifier Zed, trier sa main chaque tour, et frapper là où l'adversaire ne l'attend pas avec les Clones d'Ombre."
   },
   "strengths": [
@@ -20,7 +20,7 @@
     "La Légende trie la main à chaque tour où elle est amplifiée"
   ],
   "weaknesses": [
-    "21 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "22 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une soixantième, au Showdown de Melbourne",
     "Une seule carte au-dessus de 90 % : personne n'a fixé la liste"
   ],
@@ -34,98 +34,98 @@
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Runeblade Anvil",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 80 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Baron Nashor",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Gust",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Perfect Execution",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Up from the Deep",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Falling Star",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "name": "Gust",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Pack of Wonders",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "name": "The Harrowing",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Treasure Trove",
-      "role": "Souple, 43 % des listes, 2,5 exemplaires",
+      "name": "Bedeviling Stranger",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Switcheroo",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Zed, Without a Sound": {
-      "usage": "71 %",
+      "usage": "73 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "64 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kai'Sa, Survivor": {
-      "usage": "43 %",
+      "usage": "40 %",
       "role": "2,5 exemplaires en moyenne"
     },
     "Vi, Destructive": {
-      "usage": "43 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "36 %",
+      "usage": "33 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (86 %)",
-    "Minefield (71 %)"
+    "Zaun Warrens (87 %)",
+    "Minefield (73 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 21,
+    "joueursClasses": 22,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 6,
-    "listesPubliees": 14,
+    "tournois": 7,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "60th",
@@ -143,18 +143,18 @@
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       },
       {
+        "placement": "116th",
+        "player": "儿童劫",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "118th",
         "player": "赤木·莱·哀奏",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "122th",
-        "player": "TZ",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 21 joueurs classés, 6 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 22 joueurs classés, 7 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

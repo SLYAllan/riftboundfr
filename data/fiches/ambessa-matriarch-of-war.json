@@ -11,8 +11,8 @@
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Ambessa s'amplifie aussi. Désamplifiez-la, payez une Puissance et épuisez-la pour préparer une unité.",
   "gameplan": {
     "earlyGame": "Legion Marauder, dans toutes les listes, s'amplifie pour une énergie ou une Puissance de Corps et gagne +1 Puissance : Ambessa s'amplifie avec lui. Noxian Emissary s'amplifie lui aussi, et laisse deux jetons Recrue en mourant une fois amplifié.",
-    "midGame": "Guttural Roar, dans 91 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
-    "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 91 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
+    "midGame": "Guttural Roar, dans 92 % des listes, donne +2 Puissance, ou +4 à une unité amplifiée. Ambessa, The Wolf, dans toutes les listes, s'amplifie pour 3 énergie et une Puissance de Corps : elle gagne alors +3 Puissance et ne subit de dégâts qu'en combat. La Légende, désamplifiée, prépare une unité qui a déjà combattu.",
+    "lateGame": "Kayle, Justified, dans toutes les listes, s'amplifie jusqu'à trois fois et gagne +2 Puissance à chaque fois ; à trois, elle a Protection 3 et Gank. Rengar, Trophy Hunter, dans 92 % des listes, se pose sur un champ de bataille occupé par l'adversaire.",
     "winCondition": "Amplifier ses unités pour charger Ambessa, et préparer la meilleure pour un second combat."
   },
   "strengths": [
@@ -20,7 +20,7 @@
     "Chaque amplification charge aussi la Légende"
   ],
   "weaknesses": [
-    "14 joueurs classés sur 2 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "15 joueurs classés sur 3 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une soixante-quatrième, au Showdown de Melbourne"
   ],
   "difficulty": "Moyenne",
@@ -38,114 +38,118 @@
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Guttural Roar",
-      "role": "Cœur du deck, 91 % des listes, 2,5 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tactical Retreat",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 82 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Irresistible Faefolk",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxian Emissary",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Onslaught",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Souple, 58 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Souple, 55 % des listes, 1,5 exemplaire",
+      "role": "Souple, 50 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
       "name": "Solari Sunhawk",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Pit Rookie",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Challenge",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "name": "Hidden Blade",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Salvage",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "name": "Portable Portal",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Kayle, Justified": {
       "usage": "100 %",
-      "role": "3 exemplaires en moyenne"
+      "role": "2,5 exemplaires en moyenne"
     },
     "Ambessa, The Wolf": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Vi, Peacekeeper": {
-      "usage": "91 %",
-      "role": "2,5 exemplaires en moyenne"
-    },
     "Rengar, Trophy Hunter": {
-      "usage": "91 %",
+      "usage": "92 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "92 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "73 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "45 %",
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Graves, Blasting Through": {
+      "usage": "33 %",
+      "role": "1,5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Risen Altar (100 %)",
-    "Sandswept Tomb (73 %)",
-    "Sunken Temple (36 %)",
-    "Star Spring (36 %)"
+    "Sandswept Tomb (75 %)",
+    "Sunken Temple (33 %)",
+    "Star Spring (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 14,
+    "joueursClasses": 15,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 2,
-    "listesPubliees": 11,
+    "tournois": 3,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
         "placement": "64th",
@@ -158,6 +162,11 @@
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
+        "placement": "98th",
+        "player": "一包",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "162th",
         "player": "energizer",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
@@ -166,15 +175,10 @@
         "placement": "172th",
         "player": "Archy18",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "204th",
-        "player": "GTPL smaeke",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 14 joueurs classés, 2 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 15 joueurs classés, 3 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

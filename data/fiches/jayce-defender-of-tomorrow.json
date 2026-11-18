@@ -10,9 +10,9 @@
   "archetype": "Équipements préparés, montée en ressources",
   "legendAbility": "Une énergie et un épuisement préparent un équipement ; amplifié, Jayce en prépare deux. Les équipements qui produisent des ressources servent deux fois par tour.",
   "gameplan": {
-    "earlyGame": "Platewyrm Egg, dans 96 % des listes, arrive épuisé ; amplifié, il donne 2 énergie au lieu d'une. Garbage Grabber, dans 96 % des listes, recycle trois cartes de la défausse pour piocher. Dredge Up pioche, puis se rejoue depuis la défausse grâce à Flux.",
-    "midGame": "Catalyst of Aeons, dans 95 % des listes, canalise deux runes épuisées. La Légende prépare un équipement, et Jayce, Brilliant Inventor, dans 68 % des listes, prépare quelque chose d'épuisé à son arrivée et au premier équipement joué chaque tour : Platewyrm Egg sert alors deux fois. Clairvoyance pioche en réaction.",
-    "lateGame": "Dazzling Aurora, dans 88 % des listes, révèle à chaque fin de tour la première unité du deck et la joue gratuitement. Elder Dragon, dans 96 % des listes, rend mortel le moindre dégât que vous infligez. Gutter Palace gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.",
+    "earlyGame": "Platewyrm Egg, dans 97 % des listes, arrive épuisé ; amplifié, il donne 2 énergie au lieu d'une. Garbage Grabber, dans 95 % des listes, recycle trois cartes de la défausse pour piocher. Dredge Up pioche, puis se rejoue depuis la défausse grâce à Flux.",
+    "midGame": "Catalyst of Aeons, dans 92 % des listes, canalise deux runes épuisées. La Légende prépare un équipement, et Jayce, Brilliant Inventor, dans 68 % des listes, prépare quelque chose d'épuisé à son arrivée et au premier équipement joué chaque tour : Platewyrm Egg sert alors deux fois. Clairvoyance pioche en réaction.",
+    "lateGame": "Dazzling Aurora, dans 87 % des listes, révèle à chaque fin de tour la première unité du deck et la joue gratuitement. Elder Dragon, dans 96 % des listes, rend mortel le moindre dégât que vous infligez. Gutter Palace gagne la partie au début de votre tour si vous avez exactement 4 cartes en main et 4 unités sur les champs de bataille.",
     "winCondition": "Multiplier les ressources avec les équipements, puis poser Elder Dragon ou Dazzling Aurora avant l'adversaire."
   },
   "strengths": [
@@ -21,25 +21,20 @@
     "Gutter Palace donne une seconde façon de gagner"
   ],
   "weaknesses": [
-    "Aucun titre sur 16 tournois, malgré 10,4 % de conversion, la moyenne du format (67 joueurs classés, 7 dans les 10 % de tête)",
+    "Aucun titre sur 21 tournois, malgré 12,5 % de conversion, au-dessus de la moyenne du format (88 joueurs classés, 11 dans les 10 % de tête)",
     "Peu d'unités avant Elder Dragon : le deck tient surtout avec ses sorts"
   ],
   "difficulty": "Moyenne",
   "beginnerFriendly": false,
   "keyCards": [
     {
+      "name": "Platewyrm Egg",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Elder Dragon",
       "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Garbage Grabber",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -48,53 +43,53 @@
       "noyau": true
     },
     {
-      "name": "Catalyst of Aeons",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "name": "Garbage Grabber",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Catalyst of Aeons",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Clairvoyance",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Flurry of Blades",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 86 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mobilize",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Flurry of Blades",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Gutter Palace",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Promising Future",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -104,38 +99,48 @@
     },
     {
       "name": "Sprite Burst",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Wages of Pain",
-      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "name": "Promising Future",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Jayce, Brilliant Inventor": {
-      "usage": "68 %",
+      "usage": "72 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (98 %)",
-    "Forgotten Monument (75 %)",
-    "Dragon Roost (72 %)"
+    "Sigil of the Storm (96 %)",
+    "Dragon Roost (77 %)",
+    "Forgotten Monument (77 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 67,
-    "coupe10": 7,
+    "joueursClasses": 88,
+    "coupe10": 11,
     "titres": 0,
-    "conversion": "10.4 %",
-    "tournois": 16,
-    "listesPubliees": 57,
+    "conversion": "12.5 %",
+    "tournois": 21,
+    "listesPubliees": 78,
     "bestPlacements": [
+      {
+        "placement": "2nd",
+        "player": "Ali Aintrazi",
+        "tournament": "CCS Houston Riftbound Invitational (2026-11-14)"
+      },
       {
         "placement": "5th",
         "player": "狙神飞星老练狙神萨勒芬妮",
         "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "5th",
+        "player": "月夜兮",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       },
       {
         "placement": "5th",
@@ -146,20 +151,10 @@
         "placement": "6th",
         "player": "Templar",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "13th",
-        "player": "淘金巢.羽光.从没觉得玩符文战场开心过",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "18th",
-        "player": "团团团团团团长",
-        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 67 joueurs classés, 16 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 88 joueurs classés, 21 tournois, dont 78 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

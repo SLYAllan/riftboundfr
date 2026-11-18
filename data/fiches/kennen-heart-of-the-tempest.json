@@ -16,7 +16,7 @@
     "winCondition": "Une défausse pleine qui paie les grosses unités, plus un Assaut 2 gratuit au moment du combat."
   },
   "strengths": [
-    "259 joueurs classés sur 16 tournois, 36 dans les 10 % de tête : 13,9 % de conversion contre 9,9 % de moyenne, et deux titres, dont le Regional Championship d'Europe",
+    "319 joueurs classés sur 21 tournois, 44 dans les 10 % de tête : 13,8 % de conversion contre 9,9 % de moyenne, et quatre titres, dont le Regional Championship d'Europe",
     "Lightning Rush et Trifarian Captain dans toutes les listes : le deck choisit ce qu'il pioche et ce qu'il envoie dans la défausse",
     "Minefield et Zaun Warrens dans au moins 94 % des listes : les terrains remplissent la défausse et filtrent la main, ils font partie du plan",
     "Gust, Star-Crossed et Switcheroo, peu chers, répondent en plein combat"
@@ -41,12 +41,7 @@
     },
     {
       "name": "Traveling Merchant",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -65,8 +60,13 @@
       "noyau": true
     },
     {
+      "name": "Star-Crossed",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -81,67 +81,62 @@
     },
     {
       "name": "Bedeviling Stranger",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Standard, 66 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Flash",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Reckless Innovator",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "name": "Flash",
+      "role": "Souple, 51 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Rebuke",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Rebuke",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tail-Cloaked Matriarch",
+      "role": "Souple, 37 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Tornado Warrior",
-      "role": "Souple, 36 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shadow Order Disciple",
       "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Nocturne, Horrifying": {
-      "usage": "97 %",
+      "usage": "98 %",
       "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "97 %",
+      "usage": "96 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Storm of Shuriken": {
@@ -149,22 +144,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Ezreal, Prodigy": {
-      "usage": "37 %",
+      "usage": "32 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Minefield (95 %)",
-    "Zaun Warrens (94 %)",
-    "Ruined Monastery (33 %)"
+    "Zaun Warrens (95 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 259,
-    "coupe10": 36,
-    "titres": 2,
-    "conversion": "13.9 %",
-    "tournois": 16,
-    "listesPubliees": 211,
+    "joueursClasses": 319,
+    "coupe10": 44,
+    "titres": 4,
+    "conversion": "13.8 %",
+    "tournois": 21,
+    "listesPubliees": 273,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -177,23 +171,23 @@
         "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
+        "placement": "1st",
+        "player": "BKM.RBmint",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
+      },
+      {
+        "placement": "1st",
+        "player": "HBG.孜然",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+      },
+      {
         "placement": "2nd",
         "player": "猫岛巡礼 赤木柿子",
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "2nd",
-        "player": "酷猫.Leo",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "3rd",
-        "player": "BHM辣根",
-        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 259 joueurs classés, 16 tournois, dont 211 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 319 joueurs classés, 21 tournois, dont 273 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

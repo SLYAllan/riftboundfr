@@ -388,6 +388,15 @@ export const TOURNAMENTS: Record<string, TournamentInfo> = {
   "S5 Guangzhou City Challenge (2026-11-08)": { name: "S5 Guangzhou City Challenge", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-08", set: "Radiance", format: "Standard" },
   "S5 Chengdu City Challenge (2026-11-07)": { name: "S5 Chengdu City Challenge", shortName: "Chengdu CC", countryCode: "CN", city: "Chengdu", location: "Chengdu, Chine", playerCount: 122, type: "city_challenge", date: "2026-11-07", set: "Radiance", format: "Standard" },
   "S5 Wuhan City Challenge (2026-11-08)": { name: "S5 Wuhan City Challenge", shortName: "Wuhan CC", countryCode: "CN", city: "Wuhan", location: "Wuhan, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-08", set: "Radiance", format: "Standard" },
+  // Relevé du 18 novembre : 310, 312, 315, 318. Changsha (311, 75), Pékin (313, 85),
+  // Harbin (314, 65) et Jinan (316, 86) restent dehors.
+  "S5 Nanjing City Challenge (2026-11-14)": { name: "S5 Nanjing City Challenge", shortName: "Nanjing CC", countryCode: "CN", city: "Nanjing", location: "Nanjing, Chine", playerCount: 105, type: "city_challenge", date: "2026-11-14", set: "Radiance", format: "Standard" },
+  "S5 Shanghai City Challenge (2026-11-15)": { name: "S5 Shanghai City Challenge", shortName: "Shanghai CC", countryCode: "CN", city: "Shanghai", location: "Shanghai, Chine", playerCount: 128, type: "city_challenge", date: "2026-11-15", set: "Radiance", format: "Standard" },
+  "S5 Guangzhou City Challenge (2026-11-15)": { name: "S5 Guangzhou City Challenge", shortName: "Guangzhou CC", countryCode: "CN", city: "Guangzhou", location: "Guangzhou, Chine", playerCount: 105, type: "city_challenge", date: "2026-11-15", set: "Radiance", format: "Standard" },
+  "S5 Shenzhen City Challenge (2026-11-14)": { name: "S5 Shenzhen City Challenge", shortName: "Shenzhen CC", countryCode: "CN", city: "Shenzhen", location: "Shenzhen, Chine", playerCount: 124, type: "city_challenge", date: "2026-11-14", set: "Radiance", format: "Standard" },
+  // Relayé par hexgate (317, source topdeck). Tier A, choix d'Allan du 18 novembre :
+  // une invitation à 92 joueurs n'est pas un Regional.
+  "CCS Houston Riftbound Invitational (2026-11-14)": { name: "CCS Houston Riftbound Invitational", shortName: "CCS Houston", countryCode: "US", city: "Houston", location: "Houston, TX, USA", playerCount: 92, type: "other", date: "2026-11-14", set: "Radiance", format: "Standard" },
   // 2 224 inscrits, 2 131 classés : le compte relevé sur la page riftdecks, pas
   // le nombre de listes publiées (118 seulement, dont 88 complètes).
   "Barcelona Regional Qualifier": { name: "Barcelona Regional Qualifier 2026", shortName: "Barcelone RQ", countryCode: "ES", city: "Barcelone", location: "Barcelone, Espagne", playerCount: 2224, type: "regional", date: "2026-08-23", set: "Vendetta", format: "Standard" },

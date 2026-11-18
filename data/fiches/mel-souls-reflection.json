@@ -11,8 +11,8 @@
   "legendAbility": "Chaque fois que vous amplifiez autre chose, Mel s'amplifie aussi. Désamplifiez-la et épuisez-la pour retirer 2 Puissance à une unité au combat.",
   "gameplan": {
     "earlyGame": "Rebuttal, dans toutes les listes, et Stupefy, dans 92 %, coûtent une énergie : le premier prend le contrôle d'un sort adverse de 4 énergie ou moins si vous payez une Puissance, et le contre sinon ; le second affaiblit une unité et pioche. Traveling Merchant trie la main à chaque déplacement.",
-    "midGame": "Applied Researchers, dans 67 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
-    "lateGame": "Mel, Defiant Soul, dans 58 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 67 % des listes, donne un tour de plus.",
+    "midGame": "Applied Researchers, dans 60 % des listes, s'amplifie pour 3 énergie et baisse ensuite le coût de vos sorts : Mel s'amplifie avec lui. Shock Blast inflige 4 à une unité, pour 2 énergie de moins si vous contrôlez quelque chose d'amplifié.",
+    "lateGame": "Mel, Defiant Soul, dans 60 % des listes, s'amplifie en défaussant un sort et bannit alors une unité adverse de 3 Puissance ou moins. Time Warp, dans 60 % des listes, donne un tour de plus.",
     "winCondition": "Amplifier ses cartes pour charger Mel, répondre à chaque sort adverse, et prendre un tour d'avance avec Time Warp."
   },
   "strengths": [
@@ -20,7 +20,7 @@
     "Chaque carte amplifiée charge aussi la Légende"
   ],
   "weaknesses": [
-    "18 joueurs classés sur 6 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
+    "21 joueurs classés sur 7 tournois, aucun dans les 10 % de tête, aucun titre : trop peu pour conclure",
     "Sa meilleure place est une trente-cinquième, à la City Challenge de Pékin du 8 novembre"
   ],
   "difficulty": "Difficile",
@@ -33,67 +33,62 @@
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Traveling Merchant",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Dredge Up",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ravenbloom Student",
       "role": "Standard, 67 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Applied Researchers",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shock Blast",
-      "role": "Standard, 67 % des listes, 2,5 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Standard, 67 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 67 % des listes, 1,5 exemplaire",
+      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Applied Researchers",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shock Blast",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ravenbloom Student",
+      "role": "Souple, 53 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Ride The Wind",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Smoke Screen",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -103,39 +98,44 @@
       "role": "2 exemplaires en moyenne"
     },
     "Mel, Defiant Soul": {
-      "usage": "58 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "58 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Hwei, Brooding Painter": {
-      "usage": "50 %",
+      "usage": "47 %",
       "role": "3 exemplaires en moyenne"
     },
     "Mel, Newly Awakened": {
-      "usage": "42 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (50 %)",
-    "Rockfall Path (42 %)",
-    "Targon's Peak (33 %)"
+    "Frozen Fortress (47 %)",
+    "Rockfall Path (40 %)",
+    "Sigil of the Storm (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 18,
+    "joueursClasses": 21,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 6,
-    "listesPubliees": 12,
+    "tournois": 7,
+    "listesPubliees": 15,
     "bestPlacements": [
       {
         "placement": "35th",
         "player": "叫我糯米就好了",
         "tournament": "S5 Beijing City Challenge (2026-11-08)"
+      },
+      {
+        "placement": "36th",
+        "player": "特特丨自在游戏屋",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
       },
       {
         "placement": "40th",
@@ -151,15 +151,10 @@
         "placement": "55th",
         "player": "No.Soul",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "56th",
-        "player": "xwh",
-        "tournament": "S5 Suzhou City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 18 joueurs classés, 6 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 21 joueurs classés, 7 tournois, dont 15 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

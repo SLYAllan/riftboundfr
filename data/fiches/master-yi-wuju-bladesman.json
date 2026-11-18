@@ -27,13 +27,13 @@
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "name": "Punch First",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "name": "En Garde",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -88,12 +88,12 @@
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 49 % des listes, 1 exemplaire",
+      "role": "Souple, 54 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "strengths": [
-    "149 joueurs classés sur 16 tournois, 15 dans les 10 % de tête : 10,1 % de conversion contre 9,9 % de moyenne, et deux titres, les City Challenge de Shanghai du 1er et du 7 novembre",
+    "174 joueurs classés sur 21 tournois, 15 dans les 10 % de tête : 8,6 % de conversion contre 9,9 % de moyenne, et deux titres, les City Challenge de Shanghai du 1er et du 7 novembre",
     "Neuf cartes dans 90 % des listes ou plus : la construction varie peu d'un joueur à l'autre",
     "Zhonya's Hourglass, dans 98 % des listes, sauve une unité qui allait mourir",
     "Ruin Runner, dans 83 % des listes, échappe aux sorts et aux capacités adverses"
@@ -101,15 +101,15 @@
   "weaknesses": [
     "Tout repose sur une unité isolée : sans elle, la Légende ne donne plus rien",
     "Peu de pioche : Discipline, Scuttle Crab, et Lonely Poro qui ne pioche que si elle meurt seule",
-    "Deux titres sur 16 tournois, mais une conversion à peine au-dessus de la moyenne du format : 149 joueurs classés ne suffisent pas à trancher"
+    "Deux titres sur 21 tournois, mais une conversion sous la moyenne du format (8,6 %) : 174 joueurs classés ne suffisent pas à trancher"
   ],
   "competitiveResults": {
-    "joueursClasses": 149,
+    "joueursClasses": 174,
     "coupe10": 15,
     "titres": 2,
-    "conversion": "10.1 %",
-    "tournois": 16,
-    "listesPubliees": 126,
+    "conversion": "8.6 %",
+    "tournois": 21,
+    "listesPubliees": 151,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -162,16 +162,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "92 %",
+      "usage": "91 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (79 %)",
-    "Star Spring (78 %)",
+    "Emperor's Dais (77 %)",
+    "Star Spring (77 %)",
     "Seat of Power (72 %)"
   ],
-  "dataSource": "Classement complet des tournois : 149 joueurs classés, 16 tournois, dont 126 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 174 joueurs classés, 21 tournois, dont 151 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

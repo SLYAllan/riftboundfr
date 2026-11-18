@@ -8,130 +8,151 @@
   "set": "Vendetta",
   "keyCards": [
     {
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Punch First",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Kinkou Initiate",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 1 exemplaire",
+      "noyau": true
+    },
+    {
+      "name": "Falling Star",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "First Mate",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Elder Dragon",
-      "role": "Souple, 57 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Kinkou Initiate",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Dominus",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Brynhir Thundersong",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Inferna",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Coalesced Energy",
+      "role": "Standard, 73 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Irresistible Faefolk",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Long Sword",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Dominus",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
-  "setDesChiffres": "Vendetta",
+  "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "champions": {
+    "Kai'Sa, Survivor": {
+      "usage": "100 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Renekton, Rage Fueled": {
-      "usage": "86 %",
+      "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
+      "usage": "82 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Nidalee, Cat Form": {
       "usage": "64 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Kai'Sa, Survivor": {
-      "usage": "57 %",
-      "role": "3 exemplaires en moyenne"
+    "Pyke, Dockside Butcher": {
+      "usage": "45 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Protective Sands (43 %)",
-    "Seat of Power (43 %)",
-    "Sigil of the Storm (43 %)",
-    "Star Spring (36 %)",
-    "Dragon Roost (36 %)"
+    "Seat of Power (91 %)",
+    "Black Market (82 %)",
+    "Protective Sands (82 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 97,
-    "coupe10": 2,
+    "joueursClasses": 14,
+    "coupe10": 0,
     "titres": 0,
-    "conversion": "2.1 %",
-    "tournois": 16,
-    "listesPubliees": 14,
+    "conversion": "0 %",
+    "tournois": 4,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
-        "placement": "30th",
-        "player": "FSW.TPQ.老登亚索🤤",
-        "tournament": "S4 Regional Open Side Event A (2026-09-13)"
+        "placement": "49th",
+        "player": "LRDN",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "35th",
-        "player": "小窝-Thierry",
-        "tournament": "S4 Wuhan City Challenge (2026-08-08)"
+        "placement": "62th",
+        "player": "HOGRIDER28",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       },
       {
-        "placement": "59th",
-        "player": "一个单纯的人",
-        "tournament": "S4 Shanghai City Challenge (2026-10-07)"
+        "placement": "113th",
+        "player": "天狼星",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
-        "placement": "61th",
-        "player": "一个单纯的人",
-        "tournament": "S4 Shanghai City Challenge (2026-10-03)"
+        "placement": "128th",
+        "player": "殿子团",
+        "tournament": "S5 Beijing City Challenge (2026-10-31)"
       },
       {
-        "placement": "65th",
-        "player": "ZL-某种蘑菇",
-        "tournament": "S4 Nanjing City Challenge (2026-08-15)"
+        "placement": "134th",
+        "player": "Kaicc",
+        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 97 joueurs classés, 16 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 4 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Grosses unités posées plus tôt",
   "legendAbility": "En réaction, payez 2 Puissance et épuisez Renekton : gagnez 2 énergie, à dépenser seulement pour jouer des unités ou activer leurs capacités.",
   "gameplan": {
-    "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Sabotage, dans 71 % des listes, fait révéler la main adverse et recycler une carte qui n'est pas une unité. Irresistible Faefolk attire une unité adverse sur le champ de bataille où il se déplace.",
-    "midGame": "La Légende change 2 Puissance en 2 énergie pour les unités. Renekton, Rage Fueled, dans 86 % des listes, a Accélération et inflige 2 à chaque unité adverse quand il attaque, si vous contrôlez 4 runes ou moins. Punch First donne +5 Puissance pour une énergie.",
+    "earlyGame": "Inferna arrive en Embuscade avec Assaut 2. Sabotage, dans 91 % des listes, fait révéler la main adverse et recycler une carte qui n'est pas une unité. Irresistible Faefolk attire une unité adverse sur le champ de bataille où il se déplace.",
+    "midGame": "La Légende change 2 Puissance en 2 énergie pour les unités. Renekton, Rage Fueled, dans 100 % des listes, a Accélération et inflige 2 à chaque unité adverse quand il attaque, si vous contrôlez 4 runes ou moins. Punch First donne +5 Puissance pour une énergie.",
     "lateGame": "Rengar, Trophy Hunter se pose sur un champ de bataille occupé par l'adversaire. Avec Elder Dragon en jeu, le moindre dégât que vous infligez tue une unité adverse. Brynhir Thundersong empêche l'adversaire de jouer des cartes le tour où elle arrive.",
     "winCondition": "Poser ses grosses unités plus tôt grâce à la Légende, et gagner les combats."
   },

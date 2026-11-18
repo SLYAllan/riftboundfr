@@ -15,32 +15,32 @@
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "role": "Standard, 70 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "role": "Standard, 69 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Trifarian Captain",
-      "role": "Standard, 63 % des listes, 3 exemplaires",
+      "name": "Hidden Blade",
+      "role": "Standard, 64 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -49,28 +49,28 @@
       "noyau": false
     },
     {
-      "name": "Hidden Blade",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "name": "Trifarian Captain",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Vanguard Captain",
-      "role": "Souple, 47 % des listes, 3 exemplaires",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 42 % des listes, 3 exemplaires",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "role": "Souple, 38 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -78,11 +78,11 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "86 %",
+      "usage": "84 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "74 %",
+      "usage": "75 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
@@ -95,18 +95,23 @@
     }
   },
   "topBattlefields": [
-    "Zaun Warrens (93 %)",
+    "Zaun Warrens (92 %)",
     "Minefield (67 %)",
-    "Ruined Monastery (53 %)"
+    "Ruined Monastery (55 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 73,
-    "coupe10": 0,
+    "joueursClasses": 81,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 14,
-    "listesPubliees": 57,
+    "conversion": "1.2 %",
+    "tournois": 18,
+    "listesPubliees": 64,
     "bestPlacements": [
+      {
+        "placement": "3rd",
+        "player": "BKM-咖喱",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
+      },
       {
         "placement": "15th",
         "player": "Sagiria",
@@ -126,21 +131,16 @@
         "placement": "23th",
         "player": "lilSPARK",
         "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "25th",
-        "player": "3+X丨冰箫茶丶",
-        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 73 joueurs classés, 14 tournois, dont 57 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 81 joueurs classés, 18 tournois, dont 64 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Unités à Agonie et combats forcés",
   "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
   "gameplan": {
     "earlyGame": "Honest Broker et Carrion Dredger laissent quelque chose en mourant : un jeton d'or épuisé pour le premier, un Oiseau de 1 Puissance à Protection pour le second. Trifarian Captain va chercher une unité ou un équipement dans les quatre cartes du dessus.",
     "midGame": "Realm of Death, dans 98 % des listes, retire 2 Puissance à une unité adverse, en donne 2 à une des vôtres, et les fait se blesser l'une l'autre. Chaque unité morte rejoint la défausse, où la Légende la bannit pour payer la suivante.",
-    "lateGame": "Ferrous Forerunner, dans 72 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
+    "lateGame": "Ferrous Forerunner, dans 70 % des listes, laisse deux Mechs de 3 Puissance en mourant. Mordekaiser, Dominating, dans 61 % des listes, peut défausser une carte pour tuer une unité ou un équipement quand il arrive et quand il attaque.",
     "winCondition": "Échanger des unités qui laissent quelque chose derrière elles, puis finir avec Mordekaiser."
   },
   "strengths": [
@@ -149,7 +149,7 @@
     "La Légende transforme la défausse en Puissance pour les unités et les équipements"
   ],
   "weaknesses": [
-    "73 joueurs classés sur 14 tournois, aucun dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,001)",
+    "81 joueurs classés sur 18 tournois, 1 dans les 10 % de tête : l'écart avec la moyenne du format tient le test (p = 0,004)",
     "Sa meilleure place est une quinzième, à la City Challenge de Chengdu du 7 novembre",
     "Une seule carte au-dessus de 90 % : personne n'a encore fixé la liste"
   ]

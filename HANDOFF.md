@@ -1,5 +1,45 @@
 # HANDOFF — état des lieux
 
+## 18 novembre 2026 — hexgate 310, 312, 315, 318, Houston (317) et Sacramento (307)
+
+**Relevé** (`/api/tournaments?season=all`, 208 tournois) : entrent les City Challenge de
+Nanjing (310, 105 joueurs), Shanghai (312, 128), Guangzhou (315, 105) et Shenzhen (318,
+124), 443 listes. Changsha (311, 75), Pékin (313, 85), Harbin (314, 65) et Jinan (316, 86)
+restent dehors. 11 listes écartées pour Champion ambigu, aucun Champion sans titre nouveau.
+
+**Deux tournois hors de Chine, à la demande d'Allan** : l'Invitational CCS de Houston (317,
+92 inscrits, 70 listes, `type: "other"` donc tier A) et Sacramento (307), déjà en base par
+riftdecks. Sur Sacramento, hexgate et riftdecks partagent 645 places : 634 listes identiques
+carte pour carte, 5 Top 8 rangés autrement, 5 petits écarts de cartes (riftdecks gardé).
+**Seules les 11 listes absentes de riftdecks entrent** ; les 644 autres fichiers convertis
+ont été retirés, et `tournoi-307-conversion.json` ne cite plus que les 11 (champ
+`doublonsRiftdecks`). Le classement de Sacramento reste celui de riftdecks, compté une fois
+(`classements-tournois.mts` saute un contexte déjà vu). `parse-hexgate.mts` porte les deux
+noms dans `NOMS_PARTICULIERS`. `tournois-hexgate.mts` écrit « Chine » partout : la fiche de
+Houston a été corrigée à la main. La règle générale pour les tournois en ligne (306, 308)
+reste à poser.
+
+Validateur : 32 678 vérifiées, 0 MISMATCH. **524 listes seedées en local et en prod** (prod
+33 640 → 34 164, `prisma/seed-scraped-decks.ts hexgate-310 … hexgate-307`). `maj:stats`
+sortie 0 : Radiance 3 351 joueurs classés sur 21 tournois. Commentaires de tier list
+réécrits (Radiance et Globale), « les cinq tier lists collent aux chiffres ». **Lettres
+inchangées ; trois lectures pour Allan** : Orianna tient le test en dessous (p = 0,045) et
+reste en C ; Evelynn ne le tient plus (p = 0,060) et reste en D ; Jayce (12,5 %, B) passe
+devant LeBlanc (11,0 %, A). Prose des fiches et guides recalée sur les chiffres,
+`META-KNOWLEDGE` v20, `DECKBUILDING-RULES` v19.
+
+**Page deck** : le bouton « Acheter ce deck » quitte l'en-tête illustré (Allan : il se
+répétait). Restent la colonne de droite sur ordinateur, la barre du bas sur téléphone et le
+panneau de couverture.
+
+**`node_modules/@prisma/client` était vide** (depuis le 16 novembre, 00 h 50) : tous les
+scripts qui touchent la base tombaient sur « Cannot find module ». `npm install` puis
+`npx prisma generate` l'ont réparé.
+
+**Reste** : le Deploy (noms des tournois, fiches, bouton), puis
+`npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts`. Le relevé des listes du RC
+Europe prévu vers le 17 n'est pas fait.
+
 ## 15 et 16 novembre 2026 — overlay : remis sur une branche, audité, repris avec Allan, revenu sur `main`
 
 **L'overlay est revenu sur `main` le 16 novembre** : la branche

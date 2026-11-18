@@ -10,9 +10,9 @@
   "archetype": "Grosses unités payées deux fois",
   "legendAbility": "Quand vous jouez une unité, un équipement ou une capacité qui coûte 7 énergie ou plus, épuisez Nasus pour préparer jusqu'à deux runes. Le gros coup se rembourse.",
   "gameplan": {
-    "earlyGame": "Scuttle Crab, dans 90 % des listes, pioche en arrivant. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie. Bellows Breath inflige 1 à trois unités au même endroit.",
-    "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 69 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
-    "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 96 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
+    "earlyGame": "Scuttle Crab, dans 91 % des listes, pioche en arrivant. Defy, dans toutes les listes, contre un sort adverse jusqu'à 4 énergie. Bellows Breath inflige 1 à trois unités au même endroit.",
+    "midGame": "Find Your Center pioche une carte et canalise une rune, pour 2 énergie de moins quand un adversaire approche de la victoire. Steel Paws, dans 71 % des listes, s'amplifie pour 7 énergie et gagne +7 Puissance : la Légende rend alors deux runes. Temporal Breach, caché, bannit une unité et la rejoue au même endroit.",
+    "lateGame": "Thousand-Tailed Watcher, dans toutes les listes, coûte 7 énergie et déclenche la Légende. Nasus, Ascended, dans 97 % des listes, a Protection 2, s'amplifie pour 8 énergie et marque alors un point à chaque conquête. Time Warp donne un tour de plus.",
     "winCondition": "Payer de gros coûts, se faire rendre deux runes par la Légende, et finir avec Nasus, Ascended."
   },
   "strengths": [
@@ -21,7 +21,7 @@
     "Chaque coût de 7 énergie ou plus rend deux runes"
   ],
   "weaknesses": [
-    "57 joueurs classés sur 15 tournois, 3 dans les 10 % de tête : 5,3 % de conversion contre 9,9 % pour le format, aucun titre",
+    "63 joueurs classés sur 19 tournois, 3 dans les 10 % de tête : 4,8 % de conversion contre 9,9 % pour le format, aucun titre",
     "Le deck attend ses cartes à 7 énergie : les premiers tours servent surtout à tenir"
   ],
   "difficulty": "Moyenne",
@@ -39,99 +39,109 @@
     },
     {
       "name": "Bellows Breath",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Find Your Center",
       "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Find Your Center",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Temporal Breach",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "The Empyrean",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 69 % des listes, 3 exemplaires",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Life from Stone",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "name": "Zhonya's Hourglass",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Life from Stone",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "96 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (83 %)",
-    "The Papertree (35 %)",
-    "Vilemaw's Lair (33 %)",
-    "Ripper's Bay (31 %)"
+    "Rockfall Path (84 %)",
+    "Vilemaw's Lair (36 %)",
+    "Ripper's Bay (34 %)",
+    "The Papertree (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 57,
+    "joueursClasses": 63,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "5.3 %",
-    "tournois": 15,
-    "listesPubliees": 52,
+    "conversion": "4.8 %",
+    "tournois": 19,
+    "listesPubliees": 58,
     "bestPlacements": [
       {
         "placement": "7th",
         "player": "PLRI.伟大封印",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
+      },
+      {
+        "placement": "16th",
+        "player": "铜钥匙-撒旦",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       },
       {
         "placement": "19th",
@@ -147,15 +157,10 @@
         "placement": "27th",
         "player": "Azucar",
         "tournament": "S5 Suzhou City Challenge (2026-10-31)"
-      },
-      {
-        "placement": "34th",
-        "player": "Kenny Tran",
-        "tournament": "Riftbound Showdown Sacramento (2026-10-24)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 57 joueurs classés, 15 tournois, dont 52 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 63 joueurs classés, 19 tournois, dont 58 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

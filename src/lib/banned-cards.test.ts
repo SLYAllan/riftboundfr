@@ -52,6 +52,9 @@ describe("cartes bannies dans les fiches Légendes", () => {
     // jouent ces cartes (`scripts/apres-ban.ts`), et la page les marque « Bannie ».
     // Le premier `maj:stats` lancé à partir du 23 taira les cartes du set en cours :
     // la liste ci-dessous retombera, et c'est le moment de la raccourcir.
+    //
+    // Ivern et Renekton en sortent le 18 novembre : recomptées avec les City
+    // Challenge des 14 et 15 novembre, leurs fiches ne citent plus de carte visée.
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
@@ -62,7 +65,6 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "ekko-boy-who-shattered-time.json",
       "garen-might-of-demacia.json",
       "irelia-blade-dancer.json",
-      "ivern-green-father.json",
       "jayce-defender-of-tomorrow.json",
       "jinx-loose-cannon.json",
       "kaisa-daughter-of-the-void.json",
@@ -79,7 +81,6 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "nasus-curator-of-the-sands.json",
       "orianna-lady-of-clockwork.json",
       "poppy-keeper-of-the-hammer.json",
-      "renekton-butcher-of-the-sands.json",
       "rengar-pridestalker.json",
       "riven-the-exile.json",
       "rumble-mechanized-menace.json",

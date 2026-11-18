@@ -47,13 +47,13 @@
       "noyau": true
     },
     {
-      "name": "Guards!",
+      "name": "Arise!",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Arise!",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "name": "Guards!",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -63,37 +63,37 @@
     },
     {
       "name": "Hand Hammer",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -102,22 +102,27 @@
     "Arise! pose d'un coup autant de Soldats que vous avez d'équipements"
   ],
   "weaknesses": [
-    "48 joueurs classés sur 15 tournois, 3 dans les 10 % de tête : 6,3 % de conversion contre 9,9 % pour le format, aucun titre",
+    "53 joueurs classés sur 19 tournois, 3 dans les 10 % de tête : 5,7 % de conversion contre 9,9 % pour le format, aucun titre",
     "Sa meilleure place est une huitième, à la City Challenge de Hangzhou",
     "Sans équipement joué dans le tour, la Légende ne fait rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 48,
+    "joueursClasses": 53,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "6.3 %",
-    "tournois": 15,
-    "listesPubliees": 45,
+    "conversion": "5.7 %",
+    "tournois": 19,
+    "listesPubliees": 50,
     "bestPlacements": [
       {
         "placement": "8th",
         "player": "JHM· 豆浆",
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
+      {
+        "placement": "18th",
+        "player": "Nephox FL",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
         "placement": "19th",
@@ -133,11 +138,6 @@
         "placement": "30th",
         "player": "Giovanni",
         "tournament": "Europe Regional Championship"
-      },
-      {
-        "placement": "36th",
-        "player": "关水水君",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-08)"
       }
     ]
   },
@@ -164,21 +164,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "71 %",
+      "usage": "74 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "33 %",
+      "usage": "34 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Hall of Legends (100 %)",
-    "Trifarian War Camp (93 %)",
-    "Ornn's Forge (51 %)",
-    "Seat of Power (38 %)"
+    "Hall of Legends (98 %)",
+    "Trifarian War Camp (94 %)",
+    "Ornn's Forge (56 %)",
+    "Seat of Power (34 %)"
   ],
-  "dataSource": "Classement complet des tournois : 48 joueurs classés, 15 tournois, dont 45 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 13 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 53 joueurs classés, 19 tournois, dont 50 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }
