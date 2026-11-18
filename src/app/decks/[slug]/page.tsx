@@ -322,21 +322,9 @@ export default async function DeckDetailPage({ params }: PageProps) {
               </Link>
             </div>
           </div>
-          {/* Le même prix et le même lien que le panneau du bas, remontés : le lien
-              d'achat tombait à 3 ou 4 écrans du haut. Un vrai lien écrit par le
-              serveur, jamais un bouton qui attend une réponse (Safari sur iPhone). */}
-          {achat && (
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
-              <div>
-                <div className="text-xs text-ink-muted">{t("À partir de")}</div>
-                <div className="text-2xl font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix.total)}</div>
-              </div>
-              <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat" className="w-full sm:w-auto">
-                <Image src="/cardnexus/mini-blanc.svg" alt="CardNexus" width={101} height={100} className="h-5 w-5" />
-                <span className="whitespace-nowrap">{t("Acheter ce deck")}</span>
-              </BoutonLien>
-            </div>
-          )}
+          {/* Pas de bouton d'achat dans l'en-tête (Allan, 18 novembre) : il
+              répétait celui de la colonne, juste à côté sur ordinateur, et la barre
+              du bas sur téléphone. */}
         </div>
         <dl className="relative grid grid-cols-2 border-t border-hairline sm:grid-cols-4">
           {chiffres.map(([valeur, libelle]) => (
