@@ -16,7 +16,7 @@ import { findCard } from "@/lib/card-printing";
 import { chiffrerDeck, lienAchatDeck, type Carte } from "@/lib/cardnexus";
 import { encodeDeckBase64 } from "@/lib/deck-codec";
 import { resolveDeckCards } from "@/lib/deck-cards";
-import { contenuDeck, meilleureMontee, type DeckDeDepart } from "@/lib/decks-de-depart";
+import { ancreDeckDeDepart, contenuDeck, meilleureMontee, type DeckDeDepart } from "@/lib/decks-de-depart";
 import { DOMAIN_COLORS, DOMAIN_ICONS, DOMAIN_LABELS_FR } from "@/lib/domains";
 import { metaTraduite, tr } from "@/lib/i18n-server";
 import { legendHref } from "@/lib/legend-fiche";
@@ -31,7 +31,7 @@ const rubik = { fontFamily: "var(--font-rubik), sans-serif" };
 const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 const decks = releve.decks as DeckDeDepart[];
 
-const ancre = (deck: DeckDeDepart) => deck.legende.name.split(",")[0].toLowerCase().replace(/[^a-z]+/g, "-");
+const ancre = (deck: DeckDeDepart) => ancreDeckDeDepart(deck.legende.name);
 const domaines = (deck: DeckDeDepart) => deck.runes.map((r) => r.name.replace(/ Rune$/, ""));
 
 function codeDeckbuilder(deck: DeckDeDepart) {
@@ -94,15 +94,15 @@ const donnees = unstable_cache(
 );
 
 const metadata: Metadata = {
-  title: { absolute: "Decks de départ Riftbound : listes et cartes à ajouter | Riftbound France" },
+  title: { absolute: "Decks préconstruits Riftbound : listes et cartes à ajouter" },
   description:
-    "Le contenu des decks préconstruits de Riftbound (Seraphine, Evelynn, Shen, Zed, Vi, Vex, Fiora, Rumble), et les cartes à acheter pour jouer une liste de tournoi de la même Légende.",
+    "La liste des Champion Decks et Showdown Decks de Riftbound (Vex, Vi, Fiora, Rumble, Shen, Zed, Seraphine, Evelynn) et les cartes à acheter pour le tournoi.",
   alternates: { canonical: "/guides/decks-de-depart" },
   openGraph: {
     type: "article",
     siteName: "Riftbound France",
     locale: "fr_FR",
-    title: "Decks de départ Riftbound : listes et cartes à ajouter",
+    title: "Decks préconstruits Riftbound : listes et cartes à ajouter",
     description: "Ce que contient chaque deck préconstruit, et ce qu'il faut acheter pour l'emmener en tournoi.",
     images: ["/img/og-default.png"],
   },
@@ -132,7 +132,7 @@ export default async function DecksDeDepartPage() {
 
       <div className="mt-4 max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-arcane">{t("Decks préconstruits")}</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl" style={rubik}>{t("Decks de départ Riftbound : listes et cartes à ajouter").replace(" :", " :")}</h1>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl" style={rubik}>{t("Decks préconstruits Riftbound : listes et cartes à ajouter").replace(" :", " :")}</h1>
         <p className="mt-3 text-ink-secondary">
           {`Huit decks prêts à jouer, vendus par paire (Showdown Decks) ou à l'unité (Champion Decks). Pour chacun : son contenu carte par carte, et ce qu'il faut acheter pour jouer une liste de la même Légende qui a fini dans les ${RANG_MAX_PAS_CHER} premiers d'un tournoi ${SET_EN_COURS}.`}
         </p>

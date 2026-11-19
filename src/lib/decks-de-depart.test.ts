@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cartesAAcheter, meilleureMontee, type DeckDeDepart } from "./decks-de-depart";
+import { ancreDeckDeDepart, cartesAAcheter, meilleureMontee, type DeckDeDepart } from "./decks-de-depart";
 import type { ListeClassee } from "./listes-classees";
 
 const deck: DeckDeDepart = {
@@ -55,5 +55,12 @@ describe("meilleureMontee", () => {
   it("rend null quand la Légende n'a aucune liste dans les 16 premiers", () => {
     const listes = [liste("loin", deck.legende.name, "40th", [{ riftboundId: "x", name: "Supernova", quantity: 1 }])];
     expect(meilleureMontee(deck, listes, chiffrer)).toBeNull();
+  });
+});
+
+describe("ancreDeckDeDepart", () => {
+  it("prend le nom avant la virgule, sans apostrophe", () => {
+    expect(ancreDeckDeDepart("Kai'Sa, Survivor")).toBe("kai-sa");
+    expect(ancreDeckDeDepart("Vex, Gloomist")).toBe("vex");
   });
 });

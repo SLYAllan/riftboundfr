@@ -85,6 +85,10 @@ export default async function GuideDebuterPage() {
         <section>
           <h2 className="text-2xl font-semibold text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{t("De quoi est composé un deck ?")}</h2>
           <p className="mt-2 text-sm text-ink-secondary">{t("Pas besoin de tout retenir - les decks de démarrage (Jinx, Viktor, Lee Sin, Fiora, Rumble) sont prêts à jouer. Voici les éléments pour comprendre ce que contient votre deck :")}</p>
+          <p className="mt-2 text-sm text-ink-secondary">
+            {t("La liste de chaque deck préconstruit, et ce qu'il faut ajouter pour le tournoi, est sur la page des")}{" "}
+            <Link href="/guides/decks-de-depart" className="text-arcane hover:underline">{t("decks préconstruits")}</Link>.
+          </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {[
               { name: "Légende", desc: "Votre carte de leader. Elle définit vos 2 couleurs (domaines) et vous donne une capacité spéciale. Elle ne va jamais sur le champ de bataille." },

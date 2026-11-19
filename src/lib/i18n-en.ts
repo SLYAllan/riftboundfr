@@ -1382,4 +1382,38 @@ export const EN: Record<string, string> = {
     "A purchase through this link earns us a commission and does not change your price.",
   "Riftbound France est partenaire de CardNexus. CardNexus compare les vendeurs et retient le total le plus bas, frais de port compris. Un achat passé par ces liens nous verse une commission, sans changer ton prix.":
     "Riftbound France is a CardNexus partner. CardNexus compares sellers and picks the lowest total, shipping included. A purchase through these links earns us a commission and does not change your price.",
+  "Cette Légende a un deck préconstruit :":
+    "This Legend has a preconstructed deck:",
+  "sa liste complète et les cartes à ajouter pour le tournoi":
+    "its full card list and the cards to add for tournaments",
+  "La liste de chaque deck préconstruit, et ce qu'il faut ajouter pour le tournoi, est sur la page des":
+    "Each preconstructed deck's card list, and what to add for tournaments, is on the page about",
+  "decks préconstruits":
+    "preconstructed decks",
+  "Decks préconstruits Riftbound : listes et cartes à ajouter":
+    "Riftbound Precon Decks: Card Lists and Upgrades",
+  "La liste des Champion Decks et Showdown Decks de Riftbound (Vex, Vi, Fiora, Rumble, Shen, Zed, Seraphine, Evelynn) et les cartes à acheter pour le tournoi.":
+    "Card lists for every Riftbound Champion Deck and Showdown Deck (Vex, Vi, Fiora, Rumble, Shen, Zed, Seraphine, Evelynn), and the cards to buy for tournament play.",
+  "Ce que contient chaque deck préconstruit, et ce qu'il faut acheter pour l'emmener en tournoi.":
+    "What each preconstructed deck contains, and what to buy to take it to a tournament.",
+  "Decks préconstruits":
+    "Precon decks",
+  "Dans la boîte":
+    "In the box",
+  "Fiche de la Légende":
+    "Legend page",
+  "Liste officielle chez Riot":
+    "Official list from Riot",
+  "Pour jouer en tournoi":
+    "For tournament play",
+  "cartes à ajouter, réserve comprise":
+    "cards to add, sideboard included",
+  "Acheter les cartes qui manquent":
+    "Buy the missing cards",
+  "Le détail des cartes à acheter":
+    "Cards to buy, one by one",
+  "Pas encore de liste de tournoi":
+    "No tournament list yet",
+  "pour le tournoi":
+    "for tournaments",
 };

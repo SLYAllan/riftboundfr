@@ -43,6 +43,8 @@ import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { jsonLdHtml, langueSchema } from "@/lib/json-ld";
 import { rangSet } from "@/lib/tournament-order";
 import { cache } from "react";
+import { ancreDeckDeDepart } from "@/lib/decks-de-depart";
+import decksDeDepart from "../../../../data/decks-de-depart.json";
 
 const FICHES_DIR = path.join(process.cwd(), "data", "fiches");
 const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
@@ -1053,6 +1055,16 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
             {deckCount > 0 && (
               <p className="mb-3 text-sm text-ink-secondary">
                 {`${deckCount.toLocaleString("fr-FR")} decklist${deckCount > 1 ? "s" : ""} ${name} relevée${deckCount > 1 ? "s" : ""} en tournoi. Les meilleures d'abord : niveau du tournoi, puis classement du joueur.`}
+              </p>
+            )}
+            {/* Les recherches « vex champion deck card list » arrivent ici : la liste du
+                deck préconstruit est sur la page des decks de départ. */}
+            {decksDeDepart.decks.some((d) => d.legende.name === legendName) && (
+              <p className="mb-3 text-sm text-ink-secondary">
+                {t("Cette Légende a un deck préconstruit :")}{" "}
+                <Link href={`/guides/decks-de-depart#${ancreDeckDeDepart(legendName)}`} className="text-arcane hover:underline">
+                  {t("sa liste complète et les cartes à ajouter pour le tournoi")}
+                </Link>.
               </p>
             )}
             {lignesDecks.length === 0 ? (

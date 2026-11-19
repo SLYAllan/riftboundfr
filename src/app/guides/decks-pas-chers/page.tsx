@@ -45,7 +45,7 @@ const donnees = unstable_cache(
 );
 
 const metadata: Metadata = {
-  title: { absolute: "Decks Riftbound pas chers qui gagnent en tournoi | Riftbound France" },
+  title: { absolute: "Decks Riftbound pas chers qui gagnent en tournoi" },
   description:
     "Pour chaque Légende de Riftbound, la liste la moins chère qui a fini dans les 16 premiers d'un tournoi, sans carte interdite. Prix CardNexus du jour.",
   alternates: { canonical: "/guides/decks-pas-chers" },
@@ -125,18 +125,28 @@ export default async function DecksPasChersPage() {
                       <div className="text-[11px] text-ink-muted">{t("Le deck complet")}</div>
                       <div className="text-xl font-bold tabular-nums text-gold" style={rubik}>{euros.format(d.prix)}</div>
                     </div>
-                    {d.lienAchat && (
-                      <a
-                        href={d.lienAchat}
-                        target="_blank"
-                        rel="sponsored nofollow noopener"
-                        aria-label={`${t("Acheter ce deck")} : ${displayLegendName(d.legende)}`}
-                        className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-gold px-3 text-sm font-bold text-canvas transition-colors hover:bg-gold-light sm:min-h-9"
+                    {/* Les deux boutons restent côte à côte : sur téléphone, « Acheter »
+                        passait seul à la ligne, loin de « Voir le deck ». */}
+                    <div className="flex items-center gap-2 max-sm:w-full">
+                      <Link
+                        href={`/decks/${d.slug}`}
+                        className="inline-flex min-h-11 items-center justify-center rounded-lg border border-hairline px-3 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink max-sm:flex-1 sm:min-h-9"
                       >
-                        <ShoppingCart size={15} aria-hidden="true" />
-                        {t("Acheter")}
-                      </a>
-                    )}
+                        {t("Voir le deck")}
+                      </Link>
+                      {d.lienAchat && (
+                        <a
+                          href={d.lienAchat}
+                          target="_blank"
+                          rel="sponsored nofollow noopener"
+                          aria-label={`${t("Acheter ce deck")} : ${displayLegendName(d.legende)}`}
+                          className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg bg-gold px-3 text-sm font-bold text-canvas transition-colors hover:bg-gold-light max-sm:flex-1 sm:min-h-9"
+                        >
+                          <ShoppingCart size={15} aria-hidden="true" />
+                          {t("Acheter")}
+                        </a>
+                      )}
+                    </div>
                   </>
                 }
               >

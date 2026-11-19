@@ -80,7 +80,8 @@ const donnees = unstable_cache(
 );
 
 function titrePage(effet: string) {
-  return `Après le ban du ${formatDate(effet)} : quels decks jouer`;
+  // Sans l'année : le titre passait 60 caractères, et la date du ban suffit.
+  return `Après le ban Riftbound du ${formatDate(effet).replace(/ \d{4}$/, "")} : quels decks jouer`;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -88,7 +89,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = titrePage(effet);
   const description = `Ce que le ban du ${formatDate(effet)} retire à chaque Légende de Riftbound, et les listes qui gagnent en tournoi sans ces cartes. Mis à jour à chaque tournoi.`;
   return metaTraduite({
-    title: { absolute: `${title} | Riftbound France` },
+    title: { absolute: title },
     description,
     alternates: { canonical: "/guides/apres-ban" },
     openGraph: { type: "article", siteName: "Riftbound France", locale: "fr_FR", title, description, images: ["/img/og-default.png"] },

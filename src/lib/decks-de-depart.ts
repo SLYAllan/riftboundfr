@@ -15,6 +15,11 @@ export interface DeckDeDepart {
   inconnues: { nom: string; quantity: number }[];
 }
 
+/** L'ancre de son deck sur `/guides/decks-de-depart`, que la fiche Légende vise aussi. */
+export function ancreDeckDeDepart(legende: string): string {
+  return legende.split(",")[0].toLowerCase().replace(/[^a-z]+/g, "-");
+}
+
 export function contenuDeck(deck: DeckDeDepart): Carte[] {
   return [{ ...deck.legende, quantity: 1 }, ...deck.principal, ...deck.champsDeBataille, ...deck.runes];
 }
