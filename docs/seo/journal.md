@@ -5,6 +5,62 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-19 · semaine 2, le lien d'achat du 2 novembre jugé
+
+**Fait**
+- Relevés du 19 novembre ajoutés dans `etat.json` : Search Console sur deux fenêtres de
+  14 jours (19 octobre au 1er novembre, 2 au 15 novembre), clics d'achat GA4 par famille
+  et par personne, DataForSEO (55 requêtes classées, contre 35 le 23 septembre).
+- Vérifié en ligne le 19 novembre, en Googlebot : les fiches Kai'Sa, Master Yi, Wuju
+  Bladesman et Vex, `/cartes` et les deux ban lists rendent 200, `index, follow`,
+  canonical sur elles-mêmes, texte dans le HTML. Les fiches portent de 46 à 63 liens
+  `af.cardnexus.link`, `/cartes` 36. `/api/health?achat=1` : `"achat":"ok"`.
+
+**Le lien d'achat sur `/legendes/[slug]` (Deploy du 2 novembre) : on le garde.** Fenêtre
+propre, le Deploy suivant date du 16.
+- GA4 : 0 `clic_cardnexus` du 19 octobre au 1er novembre, 87 clics par 28 personnes du 2
+  au 12 novembre. 28,7 clics pour 1 000 vues du 2 au 15, le double de l'hypothèse (14).
+- Search Console : la famille passe de 1 137 à 1 565 clics, de 8 519 à 12 006
+  impressions, position de 4,7 à 4,5. Aucune perte de position.
+- Sur `/decks/[x]`, le taux tombe de 49,7 à 23,6 clics pour 1 000 vues (46 puis 44 clics,
+  vues doublées). Les fiches ont pu prendre des achats aux pages de deck : on ne sait pas
+  le séparer. Le site entier passe de 17 à 46 personnes qui cliquent.
+- **Depuis le 13 novembre, `/legendes/*` ne vend presque plus** : 5 clics par 5 personnes
+  du 13 au 18. La chute commence le 13, jour de l'annonce du ban, avant le Deploy du 16,
+  et les liens sont en place. Lecture probable, non prouvée : un joueur n'achète pas une
+  liste interdite le 23. Le site, lui, garde 32 personnes en 6 jours.
+
+**`/cartes`, lien sous chaque carte : rien à conclure.** 0 puis 64 clics sur la liste,
+mais 8 personnes en tout sur la famille, et aucun clic sur la liste après le 8 novembre.
+Les fiches `/cartes/[x]` passent de 5 à 13 clics : la liste ne leur a rien pris.
+
+**Le lot du 11 au 13 novembre (Deploy du 16) : 3 jours, rien à conclure.** À juger à
+partir du 30 novembre.
+
+**Constat neuf : la ban list anglaise prend les Français.** Du 2 au 17 novembre,
+`/en/guides/ban-list` fait 1 479 clics, dont 1 349 de France en position 1,5 ;
+`/guides/ban-list` en fait 89 de France, en position 6,2. Les requêtes sont en mots
+anglais (« banlist riftbound » 389 clics, « riftbound banlist » 298, « ban list riftbound »
+241). `hreflang` justes des deux côtés. C'est le schéma de l'accueil (`/` contre `/en`),
+cause toujours non établie. La page n'a pas de lien d'achat : elle ne passe pas le premier
+contrôle du brief.
+
+**Pas encore au journal** : le commit du 18 novembre qui retire « Acheter ce deck » de
+l'en-tête de `/decks/[slug]` (`915af98bf`). Il partira avec le prochain Deploy, au milieu
+de la mesure du lot du 16 sur cette famille.
+
+**Recommandation : aucun changement de page cette semaine.** Le volet esthétique touche
+toutes les pages depuis le 16, et le ban du 23 va remuer les achats. Une seule action, hors
+du site, à faire par Allan dans GA4 : déclarer `type_achat` comme dimension personnalisée
+(Admin, Définitions personnalisées, portée événement). Sans elle, GA4 ne sépare pas panier,
+manquantes, produit et boutique, et on ne saura pas lequel des liens d'une fiche sert. Elle
+ne compte qu'à partir de sa création.
+
+**Attend :** le oui d'Allan sur la dimension GA4 ; la prochaine passe, le 30 novembre au
+plus tôt.
+
+---
+
 ## 2026-11-13 · hors passe, les liens d'achat restent sur les listes à carte interdite de `/legendes/[slug]`
 
 Corrige l'entrée du même jour, juste en dessous, avant tout Deploy. Allan, le 13 novembre :

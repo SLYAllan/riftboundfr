@@ -1,5 +1,5 @@
 {
-  "maj": "2026-09-23",
+  "maj": "2026-11-19",
   "note": "Point de départ, AVANT tout changement. Ne pas écraser : ajouter un relevé daté dans `releves`.",
   "releves": [
     {
@@ -1337,6 +1337,547 @@
           "position": 4.7,
           "requete": "deck list riftbound",
           "page": "/en/decks"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "source": "Search Console, sc-domain:riftboundfrance.fr, web, tous pays sauf mention",
+      "note": "Deux fenêtres de 14 jours autour du Deploy du 2 novembre (lien d'achat sur /legendes/[slug] et /cartes). Le lot du 11 au 13 novembre est en ligne depuis le Deploy du 16 : hors de ces fenêtres.",
+      "avant": {
+        "periode": {
+          "start": "2026-10-19",
+          "end": "2026-11-01"
+        },
+        "totaux": {
+          "clicks": 4251,
+          "impressions": 51987,
+          "ctr": 8.18,
+          "position": 0
+        },
+        "familles_de_pages": {
+          "/legendes/[x]": {
+            "clics": 1137,
+            "impressions": 8519,
+            "position": 4.7
+          },
+          "/cartes": {
+            "clics": 386,
+            "impressions": 3808,
+            "position": 5.1
+          },
+          "/": {
+            "clics": 311,
+            "impressions": 2586,
+            "position": 5.5
+          },
+          "/guides/ban-list": {
+            "clics": 294,
+            "impressions": 1079,
+            "position": 3.6
+          },
+          "/en": {
+            "clics": 220,
+            "impressions": 4628,
+            "position": 6.1
+          },
+          "/guides/debuter": {
+            "clics": 212,
+            "impressions": 2792,
+            "position": 4.9
+          },
+          "/guides/jouer-en-ligne": {
+            "clics": 177,
+            "impressions": 1818,
+            "position": 4.7
+          },
+          "/legendes": {
+            "clics": 160,
+            "impressions": 947,
+            "position": 5.5
+          },
+          "/en/tier-list": {
+            "clics": 148,
+            "impressions": 2406,
+            "position": 7.0
+          },
+          "/decks/[x]": {
+            "clics": 145,
+            "impressions": 2616,
+            "position": 7.6
+          },
+          "/en/guides/jouer-en-ligne": {
+            "clics": 116,
+            "impressions": 3705,
+            "position": 5.7
+          },
+          "/guides/deckbuilding": {
+            "clics": 100,
+            "impressions": 1283,
+            "position": 4.8
+          },
+          "/tournois": {
+            "clics": 96,
+            "impressions": 973,
+            "position": 5.1
+          },
+          "/guides/glossaire": {
+            "clics": 85,
+            "impressions": 1341,
+            "position": 4.9
+          },
+          "/decks": {
+            "clics": 84,
+            "impressions": 1944,
+            "position": 5.2
+          },
+          "/en/decks/[x]": {
+            "clics": 76,
+            "impressions": 1910,
+            "position": 9.2
+          },
+          "/en/legendes/[x]": {
+            "clics": 66,
+            "impressions": 656,
+            "position": 5.6
+          },
+          "/tier-list": {
+            "clics": 58,
+            "impressions": 463,
+            "position": 4.9
+          },
+          "/en/decks": {
+            "clics": 54,
+            "impressions": 1142,
+            "position": 8.1
+          },
+          "/en/guides/ban-list": {
+            "clics": 45,
+            "impressions": 498,
+            "position": 6.7
+          },
+          "/meta": {
+            "clics": 37,
+            "impressions": 440,
+            "position": 4.6
+          },
+          "/cartes/[x]": {
+            "clics": 34,
+            "impressions": 1032,
+            "position": 5.4
+          },
+          "/articles/[x]": {
+            "clics": 31,
+            "impressions": 844,
+            "position": 6.4
+          },
+          "/en/meta": {
+            "clics": 24,
+            "impressions": 171,
+            "position": 4.0
+          },
+          "/guides": {
+            "clics": 22,
+            "impressions": 188,
+            "position": 11.6
+          }
+        }
+      },
+      "apres": {
+        "periode": {
+          "start": "2026-11-02",
+          "end": "2026-11-15"
+        },
+        "totaux": {
+          "clicks": 5932,
+          "impressions": 70573,
+          "ctr": 8.41,
+          "position": 0
+        },
+        "familles_de_pages": {
+          "/legendes/[x]": {
+            "clics": 1565,
+            "impressions": 12006,
+            "position": 4.5
+          },
+          "/en/guides/ban-list": {
+            "clics": 1550,
+            "impressions": 16299,
+            "position": 6.4
+          },
+          "/cartes": {
+            "clics": 338,
+            "impressions": 2937,
+            "position": 5.0
+          },
+          "/": {
+            "clics": 274,
+            "impressions": 2153,
+            "position": 5.9
+          },
+          "/guides/ban-list": {
+            "clics": 260,
+            "impressions": 1453,
+            "position": 4.5
+          },
+          "/decks/[x]": {
+            "clics": 191,
+            "impressions": 3829,
+            "position": 7.9
+          },
+          "/en": {
+            "clics": 174,
+            "impressions": 3172,
+            "position": 5.5
+          },
+          "/en/legendes/[x]": {
+            "clics": 166,
+            "impressions": 1331,
+            "position": 4.9
+          },
+          "/guides/debuter": {
+            "clics": 155,
+            "impressions": 2169,
+            "position": 5.1
+          },
+          "/en/tier-list": {
+            "clics": 145,
+            "impressions": 3287,
+            "position": 7.3
+          },
+          "/guides/jouer-en-ligne": {
+            "clics": 139,
+            "impressions": 1149,
+            "position": 4.1
+          },
+          "/en/decks/[x]": {
+            "clics": 122,
+            "impressions": 2839,
+            "position": 8.3
+          },
+          "/legendes": {
+            "clics": 105,
+            "impressions": 779,
+            "position": 5.6
+          },
+          "/en/decks": {
+            "clics": 88,
+            "impressions": 3935,
+            "position": 7.1
+          },
+          "/en/meta": {
+            "clics": 86,
+            "impressions": 1206,
+            "position": 5.3
+          },
+          "/en/guides/jouer-en-ligne": {
+            "clics": 85,
+            "impressions": 2065,
+            "position": 5.1
+          },
+          "/guides/glossaire": {
+            "clics": 79,
+            "impressions": 1126,
+            "position": 4.5
+          },
+          "/guides/deckbuilding": {
+            "clics": 66,
+            "impressions": 885,
+            "position": 4.8
+          },
+          "/decks": {
+            "clics": 55,
+            "impressions": 1326,
+            "position": 5.3
+          },
+          "/tournois": {
+            "clics": 55,
+            "impressions": 925,
+            "position": 5.5
+          },
+          "/cartes/[x]": {
+            "clics": 34,
+            "impressions": 1143,
+            "position": 5.4
+          },
+          "/tier-list": {
+            "clics": 32,
+            "impressions": 194,
+            "position": 4.6
+          },
+          "/en/articles/[x]": {
+            "clics": 31,
+            "impressions": 495,
+            "position": 5.6
+          },
+          "/tournois/[x]": {
+            "clics": 20,
+            "impressions": 274,
+            "position": 6.7
+          },
+          "/articles/[x]": {
+            "clics": 20,
+            "impressions": 456,
+            "position": 6.8
+          }
+        }
+      },
+      "ban_list_par_pays": {
+        "periode": {
+          "start": "2026-11-02",
+          "end": "2026-11-17"
+        },
+        "/en/guides/ban-list": {
+          "clics": 1479,
+          "france": {
+            "clics": 1349,
+            "impressions": 3859,
+            "position": 1.5
+          }
+        },
+        "/guides/ban-list": {
+          "clics": 97,
+          "france": {
+            "clics": 89,
+            "impressions": 473,
+            "position": 6.2
+          }
+        }
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "source": "GA4, propriété 539561452, API Data (eventName, pagePath), visiteurs qui acceptent les cookies",
+      "clic_cardnexus": {
+        "2026-10-19/2026-11-01": {
+          "site": {
+            "clics": 74,
+            "personnes": 17
+          },
+          "/legendes/": {
+            "clics": 0,
+            "personnes": 0
+          },
+          "/cartes (liste et fiches)": {
+            "clics": 5,
+            "personnes": 4
+          },
+          "/decks/": {
+            "clics": 62,
+            "personnes": 12
+          }
+        },
+        "2026-11-02/2026-11-12": {
+          "site": {
+            "clics": 195,
+            "personnes": 46
+          },
+          "/legendes/": {
+            "clics": 87,
+            "personnes": 28
+          },
+          "/cartes (liste et fiches)": {
+            "clics": 72,
+            "personnes": 8
+          },
+          "/decks/": {
+            "clics": 33,
+            "personnes": 15
+          }
+        },
+        "2026-11-13/2026-11-18": {
+          "site": {
+            "clics": 50,
+            "personnes": 32
+          },
+          "/legendes/": {
+            "clics": 5,
+            "personnes": 5
+          },
+          "/cartes (liste et fiches)": {
+            "clics": 15,
+            "personnes": 9
+          },
+          "/decks/": {
+            "clics": 30,
+            "personnes": 19
+          }
+        }
+      },
+      "vues_et_clics_2026-11-02/2026-11-15": {
+        "/legendes/[x]": {
+          "vues": 3030,
+          "clics": 87
+        },
+        "/cartes": {
+          "vues": 3951,
+          "clics": 64
+        },
+        "/decks/[x]": {
+          "vues": 1865,
+          "clics": 44
+        },
+        "/cartes/[x]": {
+          "vues": 1615,
+          "clics": 13
+        }
+      },
+      "note": "type_achat n'est pas déclaré comme dimension personnalisée dans GA4 : on ne sait pas séparer panier, manquantes, produit et boutique."
+    },
+    {
+      "date": "2026-11-19",
+      "source": "DataForSEO Labs, ranked_keywords, Google France, langue fr (estimations, pas Search Console)",
+      "requetes_classees": 55,
+      "top_volume": [
+        {
+          "requete": "piltover archive",
+          "volume": 4400,
+          "rang": 19,
+          "url": "/decks/deck-my-way-237220"
+        },
+        {
+          "requete": "riftbound deck",
+          "volume": 1300,
+          "rang": 4,
+          "url": "/en"
+        },
+        {
+          "requete": "carte riftbound",
+          "volume": 1300,
+          "rang": 7,
+          "url": "/cartes"
+        },
+        {
+          "requete": "deck riftbound",
+          "volume": 1000,
+          "rang": 5,
+          "url": "/en"
+        },
+        {
+          "requete": "riftbound card list",
+          "volume": 1000,
+          "rang": 9,
+          "url": "/en"
+        },
+        {
+          "requete": "twilight 08",
+          "volume": 1000,
+          "rang": 42,
+          "url": "/decks/deck-yang-guang-xiao-nan-hai-228671"
+        },
+        {
+          "requete": "riftbound cards",
+          "volume": 1000,
+          "rang": 78,
+          "url": "/cartes"
+        },
+        {
+          "requete": "riftbound fr",
+          "volume": 720,
+          "rang": 3,
+          "url": "/"
+        },
+        {
+          "requete": "master yi",
+          "volume": 720,
+          "rang": 92,
+          "url": "/decks/s4-hangzhou-city-challenge-2026-09-19-66th-master-yi"
+        },
+        {
+          "requete": "riftbound france",
+          "volume": 590,
+          "rang": 1,
+          "url": "/decks/compare?a=TDpvZ24tMjYxLTI5OHxDOm9nbi0yMzgtMjk4fE06b2duLTIwNy0yOTguMixvZ24"
+        },
+        {
+          "requete": "riftbound cartes",
+          "volume": 590,
+          "rang": 7,
+          "url": "/cartes"
+        },
+        {
+          "requete": "riftbound online",
+          "volume": 590,
+          "rang": 16,
+          "url": "/en/guides/jouer-en-ligne"
+        },
+        {
+          "requete": "riftbound decklist",
+          "volume": 390,
+          "rang": 1,
+          "url": "/articles/best-of-national-open-s3"
+        },
+        {
+          "requete": "tcg arena riftbound",
+          "volume": 390,
+          "rang": 11,
+          "url": "/en/guides/jouer-en-ligne"
+        },
+        {
+          "requete": "proving grounds",
+          "volume": 390,
+          "rang": 15,
+          "url": "/articles/proving-grounds-quel-deck-monter"
+        },
+        {
+          "requete": "riftbound rules",
+          "volume": 390,
+          "rang": 22,
+          "url": "/guides/debuter"
+        },
+        {
+          "requete": "proving ground",
+          "volume": 390,
+          "rang": 76,
+          "url": "/articles/proving-grounds-quel-deck-monter"
+        },
+        {
+          "requete": "banned list",
+          "volume": 260,
+          "rang": 15,
+          "url": "/guides/ban-list"
+        },
+        {
+          "requete": "banlist",
+          "volume": 260,
+          "rang": 20,
+          "url": "/guides/ban-list"
+        },
+        {
+          "requete": "tournoi riftbound",
+          "volume": 210,
+          "rang": 58,
+          "url": "/articles"
+        },
+        {
+          "requete": "riftbound liste des cartes",
+          "volume": 170,
+          "rang": 3,
+          "url": "/cartes"
+        },
+        {
+          "requete": "riftbound tournoi",
+          "volume": 170,
+          "rang": 4,
+          "url": "/tournois"
+        },
+        {
+          "requete": "riftbound deck builder",
+          "volume": 170,
+          "rang": 6,
+          "url": "/guides/deckbuilding"
+        },
+        {
+          "requete": "sett riftbound",
+          "volume": 170,
+          "rang": 6,
+          "url": "/legendes/sett-the-boss"
+        },
+        {
+          "requete": "riftbound deck building",
+          "volume": 170,
+          "rang": 7,
+          "url": "/guides/deckbuilding"
         }
       ]
     }
