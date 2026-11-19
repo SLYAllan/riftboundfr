@@ -57,7 +57,7 @@ export const BANNED_CARD_NAMES = new Set([
  * aux changements de règles, et elle ne peut pas lire un commentaire.
  *
  * `effet` : le jour où l'interdiction entre en vigueur, quand il suit l'annonce de
- * plusieurs jours. La cloche prévient à l'annonce ; les stats (`scripts/apres-ban.ts`)
+ * plusieurs jours. La cloche prévient à l'annonce ; les stats (`src/lib/apres-ban.ts`)
  * ne tiennent compte du ban qu'à partir de ce jour.
  */
 export const DATES_BANS: Array<{ date: string; libelle: string; effet?: string }> = [

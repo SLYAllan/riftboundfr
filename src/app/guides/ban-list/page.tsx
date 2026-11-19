@@ -185,6 +185,10 @@ export default async function BanListPage() {
           <CardThumb key={c.en} card={bestEdition(cards, c.en)} caption={c.en} sub={c.type} />
         ))}
       </div>
+      <p className="mt-4 text-ink-secondary">
+        {t("Ce que le ban retire à chaque Légende, et les listes qui gagnent sans ces cartes :")}{" "}
+        <Link href="/guides/apres-ban" className="text-arcane hover:underline">{t("quels decks jouer après le ban")}</Link>.
+      </p>
       <p className="mt-4 text-ink-secondary">{t("En Corée et dans les régions en chinois traditionnel, les dix cartes restent jouables jusqu’à la sortie de Radiance là-bas. Et à partir de 2027, Riot n’annoncera plus de bans que deux fois par tournoi continental : le vendredi deux semaines avant, et le vendredi deux semaines après.")}</p>
       <p className="mt-3 text-sm text-ink-muted">
         {t("Annonce publiée en anglais :")}{" "}

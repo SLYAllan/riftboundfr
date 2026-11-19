@@ -47,7 +47,9 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   qu'aux anciens liens.
   **Pas de nouvelle fonction bâtie sur le prix** (choix d'Allan, 22 septembre
   2026 : ni valeur de collection, ni historique, ni comparateur d'échange), sauf
-  le prix des cartes manquantes d'un deck, via CardNexus.
+  le prix des cartes manquantes d'un deck, via CardNexus, et `/guides/decks-pas-chers`
+  (demandée par Allan le 19 novembre 2026 : la liste la moins chère de chaque Légende
+  parmi les 16 premiers d'un tournoi du set en cours, sans carte interdite).
 - **Images de deck** → `GET /api/decklist-image?slug=<slug>` (aussi `?code=`,
   `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
   Carré **2000x2000** par défaut, `&format=story` pour le 9:16 **1620x2880**
@@ -406,6 +408,15 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   reste telle qu'elle a été jouée : on la signale, on ne la retouche pas. Un test
   tient `BAN_ENTRIES` et `BANNED_CARD_NAMES` d'accord : une carte bannie s'ajoute
   aux deux.
+- **`listes-classees.ts` — les pages `/guides/apres-ban` et `/guides/decks-pas-chers`.**
+  Règles pures et testées (bilan du ban par Légende, listes d'après le ban, deck le
+  moins cher par Légende) ; le chargement est dans `listes-classees-serveur.ts`.
+  Les deux pages se remplissent seules à chaque tournoi importé et lisent le dernier
+  ban de `DATES_BANS` : rien à réécrire au prochain ban. La règle « tournoi d'après
+  le ban » est celle de `apres-ban.ts` (déplacé de `scripts/` le 19 novembre 2026,
+  `scripts/apres-ban.ts` ne fait plus que le réexporter). La ligne d'une liste
+  (place, prix, « Acheter ») est `src/components/ligne-deck.tsx`, partagée avec la
+  fiche Légende.
 - `tier-list-perso.ts` — la tier list d'un visiteur (`/outils/tier-list`). Le
   classement vit tout entier dans l'adresse, rien en base : partager, c'est
   partager le lien.

@@ -26,11 +26,11 @@ import { getBannerUrl } from "@/lib/banners";
 import { cartesInterdites, isBanned } from "@/lib/banned-cards";
 import { interdictionsCitees } from "@/lib/bans";
 import { PastilleInterdite } from "@/components/pastille-interdite";
+import { LigneDeck } from "@/components/ligne-deck";
 import { dateAnalyseFiche } from "@/lib/fiche-date";
 import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS } from "@/lib/domains";
 import { legendFicheSlug, legendWithDecks } from "@/lib/legend-fiche";
 import { ecartEnPoints, partsDuSet } from "@/lib/parts-classement";
-import { rangPlacement } from "@/lib/card-play";
 import { TIER_BANNER } from "@/lib/tier-colors";
 import { etiquetteLocale } from "@/lib/i18n";
 import { BoutonSuivre } from "@/components/bouton-suivre";
@@ -1063,43 +1063,16 @@ export default async function LegendePage({ params }: { params: Promise<{ slug: 
               <>
                 <div className="divide-y divide-hairline rounded-card border border-hairline bg-surface">
                   {lignesDecks.map(({ deck, prix, lienAchat, interdites }) => (
-                    <div key={deck.id} className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
-                      <span className={cn("inline-flex h-8 min-w-11 shrink-0 items-center justify-center rounded-lg px-2 text-sm font-bold tabular-nums", rangPlacement(deck.placement) === 1 ? "bg-gold text-canvas" : "bg-surface-raised text-ink")}>
-                        {deck.placement ? afficherPlacement(deck.placement, langue) : "·"}
-                      </span>
-                      <div className="min-w-0 flex-1 basis-48">
-                        <Link href={`/decks/${deck.slug}`} className="block truncate text-sm font-bold text-ink transition-colors hover:text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>
-                          {deck.playerName ?? nomDeDeck(deck, legendName) ?? deck.title}
-                        </Link>
-                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-muted">
-                          <span className="truncate">{deck.tournamentContext}</span>
-                          <PastilleInterdite cartes={interdites} className="max-w-[60%]" />
-                        </div>
-                      </div>
-                      {prix > 0 && (
-                        <div className="text-right">
-                          <div className="text-xs text-ink-muted">{t("À partir de")}</div>
-                          <div className="text-sm font-bold tabular-nums text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix)}</div>
-                        </div>
-                      )}
-                      <div className="flex items-center gap-2">
-                        <Link href={`/decks/${deck.slug}`} className="inline-flex min-h-11 items-center rounded-lg border border-hairline px-3 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink sm:min-h-9">
-                          {t("Voir la liste")}
-                        </Link>
-                        {/* Un vrai lien écrit par le serveur. */}
-                        {lienAchat && prix > 0 && (
-                          <a
-                            href={lienAchat}
-                            target="_blank"
-                            rel="sponsored nofollow noopener"
-                            aria-label={`${t("Acheter ce deck")} : ${deck.playerName ?? deck.title}`}
-                            className="inline-flex min-h-11 items-center rounded-lg bg-gold px-3 text-sm font-bold text-canvas transition-colors hover:bg-gold-light sm:min-h-9"
-                          >
-                            {t("Acheter")}
-                          </a>
-                        )}
-                      </div>
-                    </div>
+                    <LigneDeck
+                      key={deck.id}
+                      slug={deck.slug}
+                      placement={deck.placement}
+                      titre={deck.playerName ?? nomDeDeck(deck, legendName) ?? deck.title}
+                      sous={deck.tournamentContext}
+                      interdites={interdites}
+                      prix={prix}
+                      lienAchat={lienAchat}
+                    />
                   ))}
                 </div>
 

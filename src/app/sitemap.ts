@@ -38,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/domaines`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/jouer-en-ligne`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/guides/ban-list`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/guides/apres-ban`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/guides/decks-pas-chers`, changeFrequency: "weekly", priority: 0.7 },
   ];
 
   // Pages Légendes : une par fiche rédigée (data/fiches/*.json, toujours lisible même

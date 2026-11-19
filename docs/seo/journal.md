@@ -5,6 +5,31 @@ entrée passée : c'est elle qui dira dans trois semaines pourquoi un titre a ch
 
 ---
 
+## 2026-11-19 · hors passe, deux pages neuves : `/guides/apres-ban` et `/guides/decks-pas-chers`
+
+Demandées par Allan le 19 novembre, après la passe du jour (pistes 1 et 3). Ce sont des
+pages neuves : elles ne touchent la mesure d'aucune page en cours.
+- **`/guides/apres-ban`** : « Après le ban du 23 novembre 2026 : quels decks jouer ».
+  La part des listes classées Radiance de chaque Légende qui joue une des dix cartes
+  (Riven, Kai'Sa, Akali, Irelia et Rengar à 100 %, Rek'Sai à 5 %, Azir à 0 %, base
+  locale), puis les huit premières listes de chaque tournoi joué sans elles, avec prix
+  et lien d'achat. Vide jusqu'au premier tournoi relevé après le 23. Vise les
+  recherches « tier list après le ban », où le résumé IA de Google ne cite que des
+  vidéos anglaises (SERP DataForSEO du 19 novembre).
+- **`/guides/decks-pas-chers`** : la liste la moins chère de chaque Légende parmi les 16
+  premiers d'un tournoi Radiance, sans carte interdite. 14 Légendes en base locale, de
+  19 à 131 €.
+
+**Changé sur une page en mesure** : `/guides/ban-list` gagne une phrase et un lien vers
+`/guides/apres-ban`, sous le ban du 23 novembre. Titre, chapô et description inchangés.
+
+**À juger** deux semaines après le Deploy : impressions et clics des deux pages, et leurs
+`clic_cardnexus`.
+
+**Attend :** le Deploy dans Coolify.
+
+---
+
 ## 2026-11-19 · semaine 2, le lien d'achat du 2 novembre jugé
 
 **Fait**
