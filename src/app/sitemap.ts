@@ -40,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/guides/ban-list`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/guides/apres-ban`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/guides/decks-pas-chers`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/guides/decks-de-depart`, changeFrequency: "weekly", priority: 0.7 },
   ];
 
   // Pages Légendes : une par fiche rédigée (data/fiches/*.json, toujours lisible même

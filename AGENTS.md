@@ -417,6 +417,16 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   `scripts/apres-ban.ts` ne fait plus que le réexporter). La ligne d'une liste
   (place, prix, « Acheter ») est `src/components/ligne-deck.tsx`, partagée avec la
   fiche Légende.
+- **`decks-de-depart.ts` — la page `/guides/decks-de-depart`.** Les decks préconstruits
+  vivent dans `data/decks-de-depart.json`, écrit par
+  `env -u DATABASE_URL npx tsx --env-file=.env scripts/decks-de-depart.mts` depuis les
+  pages officielles de Riot gardées dans `data/raw-scrapes/decks-de-depart/`. À relancer
+  quand un set apporte ses decks : ajouter la page à `PAGES`. Le script sort en 1 sur une
+  carte introuvable ; une faute de frappe de Riot va dans `CORRECTIONS`, une carte que
+  rien ne permet d'identifier dans `INCONNUES` (« Shadowcloaked Assassin », deck Zed) et
+  s'affiche telle quelle. Les listes d'Origins (Jinx, Viktor, Lee Sin) manquent : aucune
+  page de Riot ne les donne. Le prix affiché est celui des cartes qui MANQUENT pour
+  jouer une liste de tournoi de la même Légende, l'exception de la règle sur le prix.
 - `tier-list-perso.ts` — la tier list d'un visiteur (`/outils/tier-list`). Le
   classement vit tout entier dans l'adresse, rien en base : partager, c'est
   partager le lien.
