@@ -1,5 +1,69 @@
 # HANDOFF — état des lieux
 
+## 21 novembre 2026 — aperçus de lien (Discord, X) : textes et images
+
+**Poussé sur `main` (`251d71529`), pas déployé.** Rien n'est en ligne tant qu'Allan n'a
+pas lancé le Deploy dans Coolify.
+
+**Ce qui n'allait pas, relevé en prod avant de toucher au code** : un lien collé dans
+Discord montrait le logo seul sur 29 pages sur 33 ; l'image d'un deck était le carré de
+2000 px (4,4 Mo, 5 à 7 s par demande) et `robots.txt` fermait `/api/` aux robots
+d'aperçu ; X lisait « Riftbound France » en titre partout où la page n'avait pas de bloc
+`twitter` ; six pages sortaient avec le titre de l'accueil ; la description d'une carte
+gardait ses codes d'icône (`:rb_energy_1:`) et celle d'un tournoi sa date en `2026-11-07`.
+
+**Fait** (détail dans `AGENTS.md`, entrée « `apercu.ts` et `apercu-image.tsx` ») :
+- `metaTraduite` passe par `completerApercu` : toute page a son titre, sa description, le
+  nom du site et la carte large pour X, sans bloc à recopier.
+- Une image 1200x630 par famille : fiche Légende, tournoi, fiche carte, tier list
+  (fichiers `opengraph-image.tsx` et `twitter-image.tsx`), et
+  `/api/decklist-image?…&format=apercu` pour les decks (`/decks/[slug]` et `/d/[code]`).
+  Les maquettes ont été validées par Allan avant le code (deck : illustration de la
+  Légende et quatre cartes clés ; tier list : les vraies Légendes par palier).
+- `robots.ts` ouvre `/api/decklist-image` aux robots d'aperçu, pas aux moteurs.
+- Textes : dates en français, codes d'icône retirés, phrases entières.
+
+**La porte** : `npm run verify` sortie 0 ; `npm test` 85 fichiers, 506 tests ;
+`npx eslint src` 0 erreur, 106 avertissements. `AGENTS.md` en annonce 98 au 28 août :
+l'écart ne vient pas de ce commit, dont les fichiers lintés seuls n'en rendent aucun.
+
+**Pour le revoir en local** : `npm run dev`, puis ouvrir
+`http://localhost:3000/legendes/ahri-nine-tailed-fox/opengraph-image`,
+`/tier-list/opengraph-image`, `/tournois/<slug>/opengraph-image`,
+`/cartes/<id>/opengraph-image` et `/api/decklist-image?slug=<slug>&format=apercu`.
+Mesuré à chaud : 0,23 s pour une Légende ; 0,45 s et 1,2 Mo pour un deck, contre 5,2 s et
+4,7 Mo pour le carré.
+
+**Pas vérifié** :
+- Le rendu dans Discord et dans X eux-mêmes : à faire après le Deploy, un lien de chaque
+  famille. Discord garde l'aperçu d'une adresse déjà collée ; ajouter `?v=2` à la fin
+  pour voir le nouveau.
+- `/d/[code]` avec un vrai code de partage : la base locale n'en a aucun.
+- La limite de 10 images de deck par minute et par adresse vaut aussi pour les robots
+  d'aperçu. La réponse est gardée un jour en cache ; à surveiller si un salon colle
+  beaucoup de liens d'un coup.
+
+**Pas fait** :
+- Les pages sans image propre (guides, liste des bans, deckbuilder, outils) gardent le
+  logo, avec leur vrai titre maintenant. Un gabarit « titre sur fond sombre » reste à
+  dessiner et à montrer à Allan.
+- `/img/og-default.png` pèse 1,6 Mo.
+- Les bannières des Légendes font 700x300 : l'illustration est un peu douce à cette taille.
+- La méta-description des fiches carte (celle de Google) garde ses codes d'icône, et le
+  `<title>` des tournois sa date en chiffres : c'est le terrain de la passe SEO, une page
+  et un changement à la fois.
+
+**Overlay au Stream Deck (Bitfocus Companion), demandé le 21, rien de construit.** Lu
+dans le code : `POST /api/overlay/[token]/compagnon` accepte déjà Companion (en-tête
+`x-cle-compagnon`, et `src/proxy.ts` ne refuse une écriture que si elle porte une
+`Origin` étrangère). Le patch ne prend que des valeurs absolues (score, manches, joueurs,
+format) : un bouton « +1 point » demande une route d'actions relatives, à écrire quand
+Allan aura donné la liste de ses boutons. Le nouvel overlay en avance sur son compte :
+`?version=2` le montre déjà, il n'existe pas de réglage par compte.
+
+**Reste** : le Deploy, puis l'essai des liens dans Discord et X. Les restes du
+18 novembre, plus bas, tiennent toujours.
+
 ## 18 novembre 2026 — hexgate 310, 312, 315, 318, Houston (317) et Sacramento (307)
 
 **Relevé** (`/api/tournaments?season=all`, 208 tournois) : entrent les City Challenge de
