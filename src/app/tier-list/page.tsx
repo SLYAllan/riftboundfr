@@ -48,7 +48,7 @@ const metadata: Metadata = {
     title: "Tier List Riftbound FR - Meilleures Légendes du format",
     description:
       "Classement S/A/B/C/D des Légendes Riftbound par set, fondé sur les résultats de tournois, avec decklists recommandées.",
-    images: ["/img/og-default.png"],
+    // Pas d'image ici : `opengraph-image.tsx` dessine la tier list du moment.
   },
 };
 

@@ -54,6 +54,9 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   `?share=`), publique, serveur dev lancé. C'est **le** visuel de deck.
   Carré **2000x2000** par défaut, `&format=story` pour le 9:16 **1620x2880**
   (dimensions dans `FORMATS`, `src/app/api/decklist-image/route.tsx`).
+  `&format=apercu` rend l'image large **1200x630** des aperçus de lien (Discord, X) :
+  l'illustration de la Légende, la place et quatre cartes clés. C'est elle que les
+  pages de deck posent en `og:image`, pas le carré, qui pèse 4,4 Mo et coûte 5 à 7 s.
   Rendu à plat paysage 2258x1518 = `generateDeckImage` de
   `src/lib/export-image.ts`, déclenché par le bouton « Exporter » d'une page deck.
 - **Visuels de tier list** → `scripts/gen-tierlist-image.mts`, voir
@@ -395,6 +398,20 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   six pages et l'une écrivait `"<"` avec un seul antislash, qui ne remplace
   rien. `urlLangue` et `langueSchema` posent l'adresse et la langue du schéma
   depuis la langue rendue : ils étaient figés en français, y compris sous `/en`.
+- **`apercu.ts` et `apercu-image.tsx` — les aperçus de lien** (ce que Discord et X
+  affichent quand on colle une adresse). `completerApercu`, appelée par `metaTraduite`,
+  complète ce qu'une page n'a pas dit : sans elle, une page qui ne pose que son titre
+  s'affichait avec le titre de l'accueil, et X lisait « Riftbound France » partout.
+  Les images, en 1200x630 et au même gabarit (texte sombre à gauche, visuel à droite),
+  sortent de `apercu-image.tsx` par les fichiers `opengraph-image.tsx` des fiches
+  Légende, des tournois, des fiches carte et de la tier list. Trois pièges déjà payés :
+  une page qui a son fichier `opengraph-image` ne pose PAS `images` dans son
+  `openGraph`, sinon la balise sort en double ; un `twitter-image.tsx` ne réexporte ni
+  `runtime` ni `dynamic`, le build le refuse ; une image sans paramètre dans son adresse
+  (la tier list) est dessinée au build si elle n'est pas `force-dynamic`, quand la base
+  n'est pas joignable dans Docker. `robots.ts` n'ouvre `/api/decklist-image` qu'aux
+  robots d'aperçu, jamais aux moteurs de recherche. Les polices des images sont dans
+  `public/fonts/` (Rubik et Plus Jakarta Sans, en TTF : next/og ne lit pas le WOFF2).
 - **`notifications.ts` — la cloche de la barre.** Elle ne stocke rien : tout se
   recalcule à la lecture depuis les commentaires, les j'aime et les votes. Le seul
   état est `User.notificationsVuesLe`. Elle ne peut PAS vivre dans le panneau
@@ -504,7 +521,8 @@ Tout est dans `src/lib/`. Les points d'entrée qui comptent :
   connecté.
 - **`/api/decklist-image`** — LE visuel de deck, généré par `next/og`.
   Paramètres : `?slug=`, `?code=` ou `?share=`, plus `?format=story`.
-  Carré **2000x2000** par défaut, `story` = **1620x2880** (9:16).
+  Carré **2000x2000** par défaut, `story` = **1620x2880** (9:16),
+  `apercu` = **1200x630** pour les aperçus de lien.
   Ne jamais écrire un autre rendu d'image de deck.
 - `/api/overlay/*` — état de l'habillage de stream, adressé par jeton.
   `/api/overlay/[token]/compagnon` écrit sans session Discord : la clé du lien de
@@ -541,7 +559,7 @@ son travail.
 | `npm run dev` | ✅ | Serveur de développement sur http://localhost:3000. |
 | `npm run build` | ✅ | Build de production. Quelques minutes. |
 | `npx tsc --noEmit` | ✅ | Vérification des types. Sortie 0, aucune erreur. |
-| `npm test` | ✅ | Vitest. **82 fichiers, 480 tests, tous verts** (relevé du 15 novembre 2026). |
+| `npm test` | ✅ | Vitest. **85 fichiers, 506 tests, tous verts** (relevé du 21 novembre 2026). |
 | `npm run verify` | ✅ | `tsc --noEmit && next build`. **La porte avant tout push.** |
 | `npm run maj:stats` | ✅ | **La routine des stats**, six étapes dans l'ordre. `-- --sec` pour un essai à blanc. |
 | `npm run lint` | ✅ | **0 erreur, 98 avertissements.** Les avertissements restent à réduire. |

@@ -323,13 +323,17 @@ export async function generateMetadata({
     title: { absolute: `${title} | Riftbound France` },
     description,
     alternates: { canonical: `/legendes/${slug}` },
+    // L'aperçu de lien n'est pas le résultat Google : la description de recherche,
+    // coupée à 158 caractères, s'arrêtait en plein mot dans Discord (« forces et
+    // faibles »). Ici une phrase entière. L'image vient de `opengraph-image.tsx`.
     openGraph: {
       type: "article",
       siteName: "Riftbound France",
       locale: "fr_FR",
-      title,
-      description,
-      images: ["/img/og-default.png"],
+      title: hasGuide ? `${name} : decks, plan de jeu et cartes clés` : `${name} : decks de tournoi et cartes clés`,
+      description: hasGuide
+        ? "Les listes qui gagnent en tournoi, le plan de jeu, les cartes clés, les forces et les faiblesses."
+        : "Les listes qui gagnent en tournoi, les cartes clés et les résultats mesurés en compétition.",
     },
   });
 }

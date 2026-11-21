@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import type { Metadata } from "next";
 import { traduire, traduireCanonical, type Langue } from "./i18n";
+import { completerApercu } from "./apercu";
 
 /**
  * Fichier separe de `i18n.ts` : `next/headers` n'existe que cote serveur, et
@@ -35,7 +36,9 @@ export async function tr(): Promise<(texte: string) => string> {
  * Usage : `export const generateMetadata = () => metaTraduite(metadata);`
  */
 export async function metaTraduite(m: Metadata): Promise<Metadata> {
-  return traduireMeta(m, await langueCourante());
+  // L'aperçu de lien se complète AVANT la traduction : le titre et la description
+  // qu'il reprend de la page passent ainsi par le même dictionnaire qu'elle.
+  return traduireMeta(completerApercu(m), await langueCourante());
 }
 
 /**

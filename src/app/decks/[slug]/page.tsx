@@ -32,6 +32,7 @@ const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR
 // une description écrite à la main, elle, reste.
 const DESCRIPTION_GENEREE = /^(\d+(st|nd|rd|th|e|er) au |Meilleur classement )/;
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { couperAuMot, datesEnFrancais } from "@/lib/apercu";
 import { cache, type ReactNode } from "react";
 import Image from "next/image";
 import { BoutonLien } from "@/components/bouton";
@@ -63,13 +64,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     deck.description ||
     `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` - ${deck.tournamentContext}` : ""}. Guide complet : gameplan, mulligan et matchups.`;
   const description = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trimEnd()}…` : rawDesc;
-  const image = `/api/decklist-image?slug=${slug}`;
+  // L'aperçu de lien demande le format large de la MÊME route. L'image carrée complète
+  // pesait 4,4 Mo et mettait 5 à 7 secondes à sortir (relevé du 21 novembre 2026).
+  const image = `/api/decklist-image?slug=${slug}&format=apercu`;
+  // Dans l'aperçu, la date s'écrit en toutes lettres, et une liste de tournoi sans
+  // guide ne promet plus de « guide complet ».
+  const titreApercu = datesEnFrancais(title);
+  const descriptionApercu = datesEnFrancais(
+    deck.description ||
+      `Decklist ${legend}${deck.playerName ? ` par ${deck.playerName}` : ""}${deck.tournamentContext ? ` - ${deck.tournamentContext}` : ""}.${deck.guide ? " Guide complet : gameplan, mulligan et matchups." : ""}`,
+  );
   return metaTraduite({
     title,
     description,
     alternates: { canonical: `/decks/${slug}` },
-    openGraph: { type: "article", siteName: "Riftbound France", locale: "fr_FR", title, description, images: [image] },
-    twitter: { card: "summary_large_image", title, description, images: [image] },
+    openGraph: { type: "article", siteName: "Riftbound France", locale: "fr_FR", title: titreApercu, description: couperAuMot(descriptionApercu, 200), images: [image] },
   });
 }
 

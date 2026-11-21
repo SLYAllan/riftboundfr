@@ -47,20 +47,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!deck) return { title: "Deck introuvable" };
   const title = `${deck.title} - ${displayLegendName(deck.legendName)}`;
   const description = deck.description || `Deck ${deck.title} par ${deck.authorName}`;
-  const image = `/api/decklist-image?share=${code}`;
+  // L'aperçu de lien demande le format large de la route de l'image de deck : le carré
+  // complet pesait 4,4 Mo et mettait 5 à 7 secondes à sortir. Le nom du site et le
+  // bloc pour X sont ajoutés par `metaTraduite`.
+  const image = `/api/decklist-image?share=${code}&format=apercu`;
   return metaTraduite({
     title,
     description,
     openGraph: {
       title,
-      description,
+      description: deck.description || `${displayLegendName(deck.legendName)}, un deck de ${deck.authorName} à copier en un clic.`,
       type: "article",
-      images: [image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
       images: [image],
     },
   });

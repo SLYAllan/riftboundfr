@@ -9,6 +9,11 @@ import { allowSvgInSharp } from "@/lib/og-sharp";
 import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers } from "@/lib/deck-cards";
 import { rateLimit, tooMany } from "@/lib/rate-limit";
+import { getTournamentInfo } from "@/lib/tournament-flags";
+import { afficherPlacement } from "@/lib/deck-listing-params";
+import { getBannerUrl } from "@/lib/banners";
+import { cartesCles, couperAuMot, datesEnFrancais } from "@/lib/apercu";
+import { apercuDeck } from "@/lib/apercu-image";
 
 export const runtime = "nodejs";
 
@@ -607,6 +612,34 @@ export async function GET(req: NextRequest) {
   const domainColor2 = DOMAIN_COLORS[domains[1]] ?? domainColor1;
 
   const legendImgUrl = legendCards[0]?.imageUrl || null;
+
+  // ?format=apercu : l'image large des aperçus de lien (Discord, X), en 1200 × 630.
+  // Même route, parce que c'est LE visuel de deck ; autre gabarit, parce que le carré
+  // complet se lit mal en petit, pèse 4,4 Mo et coûte 5 à 7 secondes. Ici l'illustration
+  // de la Légende, la place, et quatre cartes clés.
+  if (searchParams.get("format") === "apercu") {
+    const raretes = new Map(
+      (
+        await prisma.card.findMany({
+          where: { name: { in: mainDisplayCards.map((c) => c.name) } },
+          select: { name: true, rarity: true },
+        })
+      ).map((c) => [c.name, c.rarity] as const),
+    );
+    const info = tournamentContext ? getTournamentInfo(tournamentContext) : null;
+    const place = placement ? afficherPlacement(placement, "fr") : null;
+    const sous = place ? `${place}${info?.playerCount ? ` sur ${info.playerCount} joueurs` : ""}` : couperAuMot(title, 34);
+    const pied = tournamentContext
+      ? [info?.name ?? datesEnFrancais(tournamentContext), info?.date ? datesEnFrancais(info.date) : null].filter((l): l is string => Boolean(l))
+      : ["Deck partagé sur Riftbound France"];
+    return apercuDeck({
+      legende: displayLegendName(legendName),
+      sous,
+      pied,
+      banniere: getBannerUrl(legendName),
+      cartes: cartesCles(mainDisplayCards, raretes).map((c) => c.imageUrl!),
+    });
+  }
 
   // Largest card sizes that still fit the whole deck in the square.
   const { pw, ph, lw, lh, paired, slack } = pickSizes(

@@ -18,6 +18,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import type { Metadata } from "next";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
+import { datesEnFrancais } from "@/lib/apercu";
 import { cache } from "react";
 
 interface PageProps {
@@ -59,13 +60,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: `/tournois/${slug}` },
+    // Dans l'aperçu de lien, la date s'écrit en toutes lettres : Discord affichait
+    // « 2026-11-01 ». L'image vient de `opengraph-image.tsx`.
     openGraph: {
       type: "article",
       siteName: "Riftbound France",
       locale: "fr_FR",
       title,
-      description,
-      images: ["/img/og-default.png"],
+      description: datesEnFrancais(description),
     },
   });
 }

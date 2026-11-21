@@ -6,7 +6,8 @@ import { CardImage } from "@/components/card-image";
 import { CarteInclinable } from "@/components/carte-inclinable";
 import { RarityBadge } from "@/components/rarity-badge";
 import { CardTextRenderer } from "@/components/card-text-renderer";
-import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, RARITY_LABELS_FR, TYPE_ICONS } from "@/lib/domains";
+import { DOMAIN_COLORS, DOMAIN_LABELS_FR, DOMAIN_ICONS, RARITY_LABELS_FR, TYPE_ICONS, TYPE_LABELS_FR } from "@/lib/domains";
+import { couperAuMot, texteSansCodes } from "@/lib/apercu";
 import { isBanned } from "@/lib/banned-cards";
 import { getErrata } from "@/lib/errata";
 import { ErrataDiff } from "@/components/errata-diff";
@@ -22,12 +23,8 @@ import { libelleSection, nomEvenement, placeSection, statsJeuCarte } from "@/lib
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
 import { cache } from "react";
 
-// Partagé par le titre de la page et le bloc « Type » : le bloc affichait « Unit »
-// sous un titre qui disait « Unité ».
-const TYPE_FR: Record<string, string> = {
-  Unit: "Unité", Spell: "Sort", Gear: "Équipement", Rune: "Rune",
-  Battlefield: "Champ de bataille", Legend: "Légende", Token: "Jeton",
-};
+// Les libellés de type vivent dans `domains.ts` : l'image d'aperçu les lit aussi.
+const TYPE_FR = TYPE_LABELS_FR;
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -61,13 +58,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     robots: isVariant ? { index: false, follow: true } : undefined,
     alternates: { canonical: `/cartes/${card.riftboundId}` },
+    // L'image vient de `opengraph-image.tsx` : la carte entière dans une image large,
+    // là où X rognait la carte seule. La description d'aperçu est la même sans les
+    // codes d'icône, que Discord affichait tels quels (« :rb_energy_1: »).
     openGraph: {
       type: "article",
       siteName: "Riftbound France",
       locale: "fr_FR",
       title,
-      description,
-      images: card.imageUrl ? [card.imageUrl] : ["/img/og-default.png"],
+      description: couperAuMot(texteSansCodes(full), 200),
     },
   });
 }

@@ -46,6 +46,9 @@ export const TYPE_LABELS_FR: Record<string, string> = {
   Legend: "Légende",
   Battlefield: "Champ de bataille",
   "Champion Unit": "Unité Champion",
+  // La fiche carte tenait sa propre copie de cette table, la seule à connaître le
+  // jeton. Elle lit maintenant celle-ci, comme son image d'aperçu.
+  Token: "Jeton",
 };
 
 export const RARITY_LABELS_FR: Record<string, string> = {

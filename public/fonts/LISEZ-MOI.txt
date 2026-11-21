@@ -7,3 +7,8 @@ Pour regenerer le woff2 apres un changement de source :
   python -c "from fontTools.ttLib import TTFont; f=TTFont('public/fonts/arpona-bold.otf'); f.flavor='woff2'; f.save('public/fonts/arpona-bold.woff2')"
 
 Police sous licence : elle est ici parce que le site doit la servir a OBS.
+
+Rubik demi-gras et Plus Jakarta Sans medium, en TTF : les deux polices du site,
+utilisees uniquement par les images d apercu de lien (src/lib/apercu-image.tsx).
+next/og ne lit ni le WOFF2 ni les polices variables, d ou ces fichiers statiques.
+Source : Fontsource 5.2.5, sous-ensemble latin. Licence SIL Open Font License.

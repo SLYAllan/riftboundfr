@@ -10,6 +10,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/admin", "/api/"],
       },
+      // L'image d'aperçu d'un deck vit sous /api/. Les robots d'aperçu qui respectent ce
+      // fichier (X, Facebook, LinkedIn) ne la chargeaient donc pas, et le lien d'un deck
+      // s'affichait sans image. Eux seuls y ont droit : un moteur de recherche qui
+      // parcourrait 34 000 images de deck mettrait le serveur à genoux.
+      {
+        userAgent: ["Twitterbot", "facebookexternalhit", "LinkedInBot", "Slackbot", "TelegramBot", "WhatsApp", "Discordbot"],
+        allow: ["/", "/api/decklist-image"],
+        disallow: ["/admin", "/api/"],
+      },
       {
         userAgent: "GPTBot",
         allow: "/",
