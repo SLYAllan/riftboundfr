@@ -2,7 +2,20 @@
 
 ## 22 novembre 2026 — hexgate 330 (Regional Open S5 de Ningbo), Orlando, routine
 
-**En local seulement.** Rien n'est seedé en prod, rien n'est déployé.
+**Seedé en prod le 23 novembre** (à la demande d'Allan), pas déployé : 1 204 listes de
+Ningbo, 43 d'Orlando, les deux listes nouvelles du RC Europe (seedées chacune par son
+préfixe exact : relancer `seed-tournament-decks.ts europe-rc` supprime et recrée les 55
+listes en ligne, et un deck supprimé emporte ses j'aime en cascade), 45 best-of de Ningbo,
+les six tier lists. `--etat` : 35 413 decks publiés, le compte attendu. **Reste le Deploy** :
+d'ici là `/tier-list` est au 22 et `/legendes` au 18.
+
+**Prose recalée le 23** : 56 phrases de 38 fiches (`data/fiches-prose.json`, puis
+`fiches-prose.mts --ecrire`) et 46 passages des guides (`src/lib/legend-guides.ts`), sur
+les chiffres de résultat seulement (joueurs, 10 % de tête, conversion, titres, moyenne à
+10,0 %, meilleure place). Trois meilleures places étaient déjà fausses avant Ningbo :
+Pyke (12e à Nanjing, pas 23e), Ziggs (25e, pas 47e), Mordekaiser (3e à Nanjing, pas 15e).
+Les pourcentages de cartes cités dans les plans de jeu n'ont pas été touchés : le premier
+`maj:stats` d'après le 23 taira les cartes des fiches Radiance.
 
 **Relevé hexgate** (`/api/tournaments?season=all`, 210 tournois) : 319 à 330 sont neufs.
 - **330 entre** : Regional Open S5 de Ningbo, 21 novembre, 1 280 joueurs. 1 280 listes
@@ -43,11 +56,10 @@ seuil de 15 joueurs sans être au tableau.
 `env -u DATABASE_URL` (le `--env-file=.env` ne remplace pas une variable déjà posée).
 
 **Pas fait** :
-- La prose des fiches et des guides (`data/fiches-prose.json`, `src/lib/legend-guides.ts`)
-  n'est pas relue contre les chiffres neufs.
-- Prod : seed de 330, d'Orlando et des deux listes du RC Europe, best-of de Ningbo, tier
-  lists (`npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts`). Puis le Deploy.
-- Un article best-of pour Ningbo, comme celui de Chengdu (`seed-chengdu-bestof.mts`).
+- Le Deploy.
+- Un article best-of pour Ningbo, comme celui de Chengdu (`seed-chengdu-bestof.mts`) :
+  en attente d'Allan. Aucune image de couverture n'existe pour Ningbo, Wuhan et Shenyang
+  n'ont pas eu d'article, et ces listes jouent des cartes interdites depuis le 23.
 
 ## 21 novembre 2026 — aperçus de lien (Discord, X) : textes et images
 
