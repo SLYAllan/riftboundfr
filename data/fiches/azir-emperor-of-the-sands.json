@@ -53,27 +53,27 @@
     },
     {
       "name": "Guards!",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Soul Sword",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Hand Hammer",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -82,17 +82,22 @@
       "noyau": false
     },
     {
+      "name": "Salvage",
+      "role": "Souple, 52 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
       "name": "Battle Preparations",
       "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Salvage",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "name": "En Garde",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "En Garde",
+      "name": "Charm",
       "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
@@ -107,12 +112,12 @@
     "Sans équipement joué dans le tour, la Légende ne fait rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 53,
+    "joueursClasses": 63,
     "coupe10": 3,
     "titres": 0,
-    "conversion": "5.7 %",
-    "tournois": 19,
-    "listesPubliees": 50,
+    "conversion": "4.8 %",
+    "tournois": 20,
+    "listesPubliees": 60,
     "bestPlacements": [
       {
         "placement": "8th",
@@ -164,21 +169,21 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "74 %",
+      "usage": "72 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "34 %",
+      "usage": "35 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Hall of Legends (98 %)",
-    "Trifarian War Camp (94 %)",
-    "Ornn's Forge (56 %)",
-    "Seat of Power (34 %)"
+    "Hall of Legends (97 %)",
+    "Trifarian War Camp (92 %)",
+    "Ornn's Forge (57 %)",
+    "Seat of Power (37 %)"
   ],
-  "dataSource": "Classement complet des tournois : 53 joueurs classés, 19 tournois, dont 50 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 63 joueurs classés, 20 tournois, dont 60 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

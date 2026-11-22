@@ -33,12 +33,12 @@
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -47,63 +47,63 @@
       "noyau": true
     },
     {
-      "name": "Shadow Order Disciple",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Reckless Innovator",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Traveling Merchant",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Up from the Deep",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 73 % des listes, 1 exemplaire",
+      "role": "Standard, 83 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Ride The Wind",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "name": "Traveling Merchant",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "The Good Stuff",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "name": "Up from the Deep",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Order Disciple",
+      "role": "Standard, 72 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gust",
-      "role": "Standard, 60 % des listes, 1 exemplaire",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "The Good Stuff",
+      "role": "Standard, 65 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hard Bargain",
-      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Onslaught",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Grim Resolve",
-      "role": "Souple, 37 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tideturner",
+      "role": "Souple, 41 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -117,17 +117,27 @@
     "Ses trois meilleures places viennent du même tournoi, Hangzhou : le titre, une quatorzième et une seizième"
   ],
   "competitiveResults": {
-    "joueursClasses": 36,
-    "coupe10": 3,
+    "joueursClasses": 64,
+    "coupe10": 7,
     "titres": 1,
-    "conversion": "8.3 %",
-    "tournois": 15,
-    "listesPubliees": 30,
+    "conversion": "10.9 %",
+    "tournois": 17,
+    "listesPubliees": 46,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "梦之星.河道蟹🐦‍🔥",
         "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+      },
+      {
+        "placement": "3rd",
+        "player": "LURK xSimo",
+        "tournament": "Riftbound Showdown Orlando (2026-11-01)"
+      },
+      {
+        "placement": "4th",
+        "player": "信仰.Rui",
+        "tournament": "S5 Ningbo Regional Open (2026-11-21)"
       },
       {
         "placement": "7th",
@@ -138,16 +148,6 @@
         "placement": "11th",
         "player": "Sam Suied",
         "tournament": "CCS Houston Riftbound Invitational (2026-11-14)"
-      },
-      {
-        "placement": "14th",
-        "player": "化作蝴蝶飞舞",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
-      },
-      {
-        "placement": "16th",
-        "player": "电气-eureka",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       }
     ]
   },
@@ -179,28 +179,28 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "93 %",
+      "usage": "96 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "80 %",
+      "usage": "85 %",
       "role": "2 exemplaires en moyenne"
     },
     "Zed, Without a Sound": {
-      "usage": "50 %",
+      "usage": "48 %",
       "role": "2 exemplaires en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "33 %",
-      "role": "1,5 exemplaire en moyenne"
+      "usage": "37 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Sandswept Tomb (90 %)",
-    "Star Spring (87 %)",
-    "Forbidding Waste (63 %)"
+    "Sandswept Tomb (89 %)",
+    "Star Spring (83 %)",
+    "Forbidding Waste (67 %)"
   ],
-  "dataSource": "Classement complet des tournois : 36 joueurs classés, 15 tournois, dont 30 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 64 joueurs classés, 17 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

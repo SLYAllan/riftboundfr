@@ -20,42 +20,42 @@
     },
     {
       "name": "Charm",
-      "role": "Standard, 83 % des listes, 1,5 exemplaire",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Mournful Witness",
-      "role": "Souple, 58 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ki Barrier",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Astral Heron",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shadow Dash",
-      "role": "Souple, 50 % des listes, 2,5 exemplaires",
+      "role": "Standard, 61 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mournful Witness",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ki Barrier",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Back Off",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shadow Dash",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Emperor's Divide",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -64,18 +64,18 @@
       "noyau": false
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Emperor's Divide",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
       "name": "Salvage",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Disciple of Shen",
+      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Vilemaw",
+      "role": "Souple, 39 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -83,38 +83,37 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Shen, Kinkou": {
-      "usage": "83 %",
+      "usage": "89 %",
       "role": "1 exemplaire en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "50 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "50 %",
+      "usage": "67 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Sona, Harmonious": {
+      "usage": "39 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "42 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Sona, Harmonious": {
       "usage": "33 %",
-      "role": "2 exemplaires en moyenne"
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Kinkou Temple (75 %)",
-    "Forgotten Monument (33 %)",
-    "Grove of the God-Willow (33 %)"
+    "Kinkou Temple (83 %)",
+    "Startipped Peak (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 19,
+    "joueursClasses": 29,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 3,
-    "listesPubliees": 12,
+    "tournois": 5,
+    "listesPubliees": 18,
     "bestPlacements": [
       {
         "placement": "47th",
@@ -143,7 +142,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 19 joueurs classés, 3 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 29 joueurs classés, 5 tournois, dont 18 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Défense et réactions",
   "legendAbility": "En Action, épuisez Shen : une de vos unités gagne Tank pour le tour.",
   "gameplan": {

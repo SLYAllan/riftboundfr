@@ -11,43 +11,53 @@
   "legendAbility": "Vous pouvez payer une énergie au lieu d'une Puissance pour cacher une carte. Une énergie et un épuisement ramènent un Teemo en main depuis la zone de Champion ou le terrain.",
   "keyCards": [
     {
-      "name": "Switcheroo",
-      "role": "Standard, Gère les gros attaquants, 86 % des listes, 2 exemplaires",
+      "name": "Tideturner",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Gust",
+      "role": "Standard, 80 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Star-Crossed",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "name": "Switcheroo",
+      "role": "Standard, Gère les gros attaquants, 80 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Temporal Breach",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Consult the Past",
-      "role": "Standard, Refill de main, 71 % des listes, 3 exemplaires",
+      "role": "Standard, Refill de main, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Guerilla Warfare",
-      "role": "Standard, Refill complémentaire, 71 % des listes, 2 exemplaires",
+      "name": "Bedeviling Stranger",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tideturner",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "name": "Reckless Innovator",
+      "role": "Standard, 60 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Edge of Night",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Souple, 57 % des listes, 1,5 exemplaire",
+      "name": "Baron Nashor",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -56,18 +66,18 @@
       "noyau": false
     },
     {
-      "name": "Temporal Breach",
+      "name": "The Good Stuff",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
       "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Wages of Pain",
-      "role": "Souple, 43 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Baron Nashor",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "name": "Ember Monk",
+      "role": "Souple, 50 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -78,36 +88,37 @@
     "14 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
   ],
   "competitiveResults": {
-    "joueursClasses": 739,
-    "coupe10": 51,
+    "joueursClasses": 13,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "6.9 %",
-    "tournois": 104,
+    "conversion": "7.7 %",
+    "tournois": 9,
+    "listesPubliees": 10,
     "bestPlacements": [
       {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-12)"
+        "placement": "6th",
+        "player": "白日梦-果咩捏",
+        "tournament": "S5 Wuhan City Challenge (2026-11-08)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-08)"
+        "placement": "50th",
+        "player": "西洲读曲",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-10-07)"
+        "placement": "57th",
+        "player": "风清云散",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "63th",
+        "player": "福州橙逯·回皂",
+        "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-23)"
+        "placement": "64th",
+        "player": "无悔",
+        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       }
     ]
   },
@@ -129,36 +140,38 @@
     ],
     "note": "Veut tenir un terrain pour poser ses hidden ; Bandle Tree son meilleur battlefield."
   },
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 739 joueurs classés sur 104 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 13 joueurs classés, 9 tournois, dont 10 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
-    "Pyke, Returned": {
-      "usage": "71 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Teemo, Scout": {
-      "usage": "64 %",
+      "usage": "90 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Pyke, Returned": {
+      "usage": "80 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "57 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "80 %",
+      "role": "2 exemplaires en moyenne"
     },
-    "Teemo, Strategist": {
-      "usage": "50 %",
-      "role": "3 exemplaires en moyenne"
+    "Ekko, Ingenious": {
+      "usage": "60 %",
+      "role": "2 exemplaires en moyenne"
     },
-    "Evelynn, Entrancing": {
-      "usage": "43 %",
-      "role": "1 exemplaire en moyenne"
+    "Fizz, Trickster": {
+      "usage": "40 %",
+      "role": "2 exemplaires en moyenne"
     },
     "Kha'Zix, Mutating Horror": {
-      "usage": "36 %",
-      "role": "1 exemplaire en moyenne"
+      "usage": "40 %",
+      "role": "1,5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Tree (57 %)",
-    "Grove of the God-Willow (50 %)",
-    "Startipped Peak (36 %)"
-  ]
+    "Bandle Tree (90 %)",
+    "Bandle Scouts' Academy (70 %)",
+    "Packed Amphitheater (60 %)"
+  ],
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15"
 }

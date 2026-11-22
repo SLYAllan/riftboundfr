@@ -43,6 +43,7 @@ const VILLES: Record<string, string> = {
   "重庆": "Chongqing",
   "南京": "Nanjing",
   "成都": "Chengdu",
+  "宁波": "Ningbo",
 };
 
 // La saison hexgate (`expansion`) donne le set joué. Écrit « Vendetta » en dur

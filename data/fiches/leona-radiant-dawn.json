@@ -11,11 +11,6 @@
   "legendAbility": "Quand vous étourdissez une ou plusieurs unités adverses, améliorez une de vos unités.",
   "keyCards": [
     {
-      "name": "Defy",
-      "role": "Cœur du deck, protection, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Discipline",
       "role": "Cœur du deck, removal/buff, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -27,95 +22,104 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, rally surprise, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, rally surprise, 100 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Defy",
+      "role": "Cœur du deck, protection, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, protection gear, 96 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, protection gear, 83 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, early game, 92 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, early game, 75 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Zenith Blade",
-      "role": "Standard, spell signature, 63 % des listes, 2 exemplaires",
+      "role": "Standard, spell signature, 75 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Ki Burst",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, finisher, 63 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Mournful Witness",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thwonk!",
-      "role": "Souple, 50 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Affectionate Poro",
-      "role": "Souple, 46 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Ki Barrier",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Souple, 42 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Lonely Poro",
-      "role": "Souple, 38 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "role": "Souple, finisher, 50 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Mournful Witness",
+      "role": "Souple, 42 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Storm Raptor",
+      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 33 % des listes, 1,5 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
-    "Vi, Peacekeeper": {
+    "Riven, Broken Blade": {
       "usage": "100 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Kennen, Keeper of Balance": {
-      "usage": "88 %",
+    "Nami, Headstrong": {
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     },
+    "Vi, Peacekeeper": {
+      "usage": "92 %",
+      "role": "3 exemplaires en moyenne"
+    },
+    "Kennen, Keeper of Balance": {
+      "usage": "92 %",
+      "role": "2 exemplaires en moyenne"
+    },
     "Leona, Determined": {
-      "usage": "88 %",
+      "usage": "67 %",
       "role": "Champion principal, 1 exemplaire en moyenne"
     },
-    "Nami, Headstrong": {
-      "usage": "46 %",
+    "Vex, Mocking": {
+      "usage": "42 %",
       "role": "2 exemplaires en moyenne"
     },
-    "Fiora, Victorious": {
-      "usage": "33 %",
-      "role": "2 exemplaires en moyenne"
+    "Leona, Zealot": {
+      "usage": "42 %",
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (96 %)",
-    "Sunken Temple (79 %)",
+    "Monastery of Hirana (92 %)",
+    "Sunken Temple (67 %)",
+    "Grove of the God-Willow (42 %)",
     "Amateur Recital (42 %)"
   ],
   "strengths": [
@@ -125,43 +129,44 @@
     "24 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
   ],
   "competitiveResults": {
-    "joueursClasses": 500,
-    "coupe10": 7,
+    "joueursClasses": 14,
+    "coupe10": 0,
     "titres": 0,
-    "conversion": "1.4 %",
-    "tournois": 87,
+    "conversion": "0 %",
+    "tournois": 8,
+    "listesPubliees": 12,
     "bestPlacements": [
       {
-        "placement": "9th",
-        "player": "公爵",
-        "tournament": "S4 Beijing City Challenge (2026-08-08)"
+        "placement": "35th",
+        "player": "友友@呆鹿",
+        "tournament": "S5 Chengdu City Challenge (2026-11-07)"
       },
       {
-        "placement": "10th",
-        "player": "TDF.忘了",
-        "tournament": "S4 Chongqing City Challenge (2026-09-26)"
+        "placement": "38th",
+        "player": "卷竹",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
       },
       {
-        "placement": "10th",
-        "player": null,
-        "tournament": "S3 Shanghai City Challenge (2026-05-02)"
+        "placement": "43th",
+        "player": "瞳木水杉",
+        "tournament": "S5 Shenzhen City Challenge (2026-10-31)"
       },
       {
-        "placement": "10th",
-        "player": null,
-        "tournament": "Shanghai City Challenge (2025-11-08)"
+        "placement": "73th",
+        "player": "XYZ-心火",
+        "tournament": "S5 Shenyang City Challenge (2026-10-31)"
       },
       {
-        "placement": "11th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "75th",
+        "player": "瞳木水杉",
+        "tournament": "S5 Shenzhen City Challenge (2026-11-14)"
       }
     ]
   },
   "difficulty": "Moyen",
   "beginnerFriendly": true,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 500 joueurs classés sur 87 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 14 joueurs classés, 8 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -175,5 +180,7 @@
       "Back Off (stun)"
     ],
     "note": "Support de stun ; honeyfruit jugée mauvaise (n'aide pas quand on perd le tempo)."
-  }
+  },
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15"
 }

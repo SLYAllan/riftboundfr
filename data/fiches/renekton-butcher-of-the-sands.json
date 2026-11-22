@@ -9,116 +9,101 @@
   "keyCards": [
     {
       "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Kinkou Initiate",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
-      "noyau": true
+      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Cœur du deck, 91 % des listes, 1 exemplaire",
-      "noyau": true
+      "role": "Standard, 88 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Punch First",
+      "role": "Standard, 82 % des listes, 2,5 exemplaires",
+      "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Kinkou Initiate",
+      "role": "Standard, 71 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Inferna",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "name": "Pit Rookie",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Coalesced Energy",
-      "role": "Standard, 73 % des listes, 3 exemplaires",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Irresistible Faefolk",
-      "role": "Standard, 64 % des listes, 3 exemplaires",
+      "name": "Inferna",
+      "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Ferrous Forerunner",
-      "role": "Standard, 64 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Long Sword",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Dominus",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "champions": {
-    "Kai'Sa, Survivor": {
-      "usage": "100 %",
-      "role": "3 exemplaires en moyenne"
-    },
     "Renekton, Rage Fueled": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
+    "Kai'Sa, Survivor": {
+      "usage": "76 %",
+      "role": "3 exemplaires en moyenne"
+    },
     "Rengar, Trophy Hunter": {
-      "usage": "82 %",
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "64 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "45 %",
+      "usage": "35 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Seat of Power (91 %)",
-    "Black Market (82 %)",
-    "Protective Sands (82 %)"
+    "Black Market (71 %)",
+    "Protective Sands (71 %)",
+    "Seat of Power (59 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 14,
+    "joueursClasses": 23,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 4,
-    "listesPubliees": 11,
+    "tournois": 6,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "49th",
@@ -147,7 +132,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 14 joueurs classés, 4 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 23 joueurs classés, 6 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Grosses unités posées plus tôt",
   "legendAbility": "En réaction, payez 2 Puissance et épuisez Renekton : gagnez 2 énergie, à dépenser seulement pour jouer des unités ou activer leurs capacités.",
   "gameplan": {

@@ -15,12 +15,12 @@
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -30,47 +30,47 @@
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 68 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Vanguard Armory",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Wages of Pain",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Raucous Anthem",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Plundering Poro",
-      "role": "Souple, 59 % des listes, 3 exemplaires",
+      "name": "Vanguard Armory",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Wages of Pain",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Cull the Weak",
-      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "role": "Souple, 51 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -78,30 +78,31 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Seraphine, Inspiring": {
-      "usage": "68 %",
+      "usage": "60 %",
       "role": "1 exemplaire en moyenne"
     },
     "Jayce, Man of Progress": {
-      "usage": "56 %",
+      "usage": "53 %",
       "role": "3 exemplaires en moyenne"
     },
     "Seraphine, Not Alone": {
-      "usage": "32 %",
+      "usage": "40 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Trifarian War Camp (61 %)",
-    "Forbidding Waste (49 %)",
-    "Treasure Hoard (32 %)"
+    "Trifarian War Camp (53 %)",
+    "Forbidding Waste (51 %)",
+    "Vilemaw's Lair (31 %)",
+    "Treasure Hoard (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 53,
+    "joueursClasses": 108,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 12,
-    "listesPubliees": 41,
+    "tournois": 14,
+    "listesPubliees": 80,
     "bestPlacements": [
       {
         "placement": "51th",
@@ -130,7 +131,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 53 joueurs classés, 12 tournois, dont 41 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 108 joueurs classés, 14 tournois, dont 80 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Jetons Recrue et sorts moins chers",
   "legendAbility": "Pour jouer un sort, vous pouvez en plus épuiser Seraphine et trois de vos unités : le sort coûte alors 2 énergie de moins.",
   "gameplan": {

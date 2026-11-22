@@ -10,72 +10,67 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Discipline",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Scuttle Crab",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
-      "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ntofo Strikes",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Nazuman Ntofo",
-      "role": "Standard, 76 % des listes, 2,5 exemplaires",
+      "name": "Discipline",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Charm",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
+      "name": "Ntofo Strikes",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Stalwart Poro",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "name": "Scuttle Crab",
+      "role": "Standard, 69 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Consult the Heavens",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "First Mate",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Block",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Mutated Mouser",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "name": "Nazuman Ntofo",
+      "role": "Standard, 67 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 1,5 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Stalwart Poro",
+      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "First Mate",
+      "role": "Souple, 49 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Consult the Heavens",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Mutated Mouser",
+      "role": "Souple, 44 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -83,32 +78,28 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "K'Sante, Courageous": {
-      "usage": "62 %",
+      "usage": "67 %",
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "52 %",
-      "role": "3 exemplaires en moyenne"
+      "usage": "56 %",
+      "role": "2 exemplaires en moyenne"
     },
     "K'Sante, Dauntless": {
-      "usage": "48 %",
-      "role": "1 exemplaire en moyenne"
-    },
-    "Graves, Blasting Through": {
       "usage": "38 %",
-      "role": "2 exemplaires en moyenne"
+      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Grove of the God-Willow (57 %)"
+    "Grove of the God-Willow (51 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 52,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 11,
-    "listesPubliees": 21,
+    "tournois": 13,
+    "listesPubliees": 39,
     "bestPlacements": [
       {
         "placement": "45th",
@@ -137,7 +128,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 11 tournois, dont 21 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 52 joueurs classés, 13 tournois, dont 39 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Bouclier qui devient Assaut",
   "legendAbility": "Pour une énergie, épuisez K'Sante : une de vos unités gagne ce tour un Assaut égal à son Bouclier.",
   "gameplan": {

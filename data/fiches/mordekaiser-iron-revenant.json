@@ -10,26 +10,26 @@
   "keyCards": [
     {
       "name": "Realm of Death",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Long Sword",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Honest Broker",
-      "role": "Standard, 75 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Carrion Dredger",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Honest Broker",
       "role": "Standard, 70 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Ferrous Forerunner",
+      "name": "Bilgewater Tracker",
       "role": "Standard, 70 % des listes, 2 exemplaires",
       "noyau": false
     },
@@ -40,37 +40,37 @@
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 64 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Trifarian Captain",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Vanguard Captain",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Sacrifice",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
+      "name": "Vanguard Captain",
+      "role": "Souple, 46 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Salvage",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Imperial Decree",
+      "role": "Souple, 40 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -78,34 +78,34 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "84 %",
+      "usage": "85 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "75 %",
+      "usage": "74 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
-      "usage": "61 %",
+      "usage": "62 %",
       "role": "1 exemplaire en moyenne"
     },
     "Mordekaiser, Twice Slain": {
-      "usage": "44 %",
+      "usage": "41 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Zaun Warrens (92 %)",
-    "Minefield (67 %)",
-    "Ruined Monastery (55 %)"
+    "Minefield (65 %)",
+    "Ruined Monastery (49 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 81,
+    "joueursClasses": 142,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "1.2 %",
-    "tournois": 18,
-    "listesPubliees": 64,
+    "conversion": "0.7 %",
+    "tournois": 20,
+    "listesPubliees": 99,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -134,7 +134,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 81 joueurs classés, 18 tournois, dont 64 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 142 joueurs classés, 20 tournois, dont 99 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Unités à Agonie et combats forcés",
   "legendAbility": "En réaction, bannissez une unité ou un équipement de votre défausse et épuisez Mordekaiser : vous gagnez une Puissance, à dépenser seulement pour jouer une unité ou un équipement.",
   "gameplan": {

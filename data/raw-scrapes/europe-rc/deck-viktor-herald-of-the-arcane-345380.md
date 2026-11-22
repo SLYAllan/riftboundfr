@@ -6,10 +6,10 @@
 
 "Viktor, Herald of the Arcane" decklist by Jarred L. 277th at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Viktor, Herald of the Arcane](https://riftdecks.com/legends/constructed/viktor-herald-of-the-arcane) [Mind Order](https://riftdecks.com/riftbound-metagame/constructed/mind-order) [Superjаd](https://riftdecks.com/riftbound-decks?player=Superjad&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Viktor, Herald of the Arcane](https://riftdecks.com/legends/constructed/viktor-herald-of-the-arcane) [Mind Order](https://riftdecks.com/riftbound-metagame/constructed/mind-order) [Superjаd](https://riftdecks.com/players/superjad) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)Viktor, Herald of the Arcane**
-**, a deck by [Superjаd](https://riftdecks.com/riftbound-decks?player=Superjad&deck_type=all)**
+**, a deck by [Superjаd](https://riftdecks.com/players/superjad)**
 
 277th at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
@@ -35,31 +35,31 @@ Submit Missing Cards
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Viktor, Herald of the Arcane](https://riftdecks.com/cards/details-viktor-herald-of-the-arcane) | $0.31 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Viktor, Herald of the Arcane](https://riftdecks.com/cards/details-viktor-herald-of-the-arcane) | $0.35 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (16) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Carrion Dredger](https://riftdecks.com/cards/details-carrion-dredger) | $0.12 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Honest Broker](https://riftdecks.com/cards/details-honest-broker) | $0.17 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Trifarian Captain](https://riftdecks.com/cards/details-trifarian-captain) | $0.53 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Xin Zhao, Vigilant](https://riftdecks.com/cards/details-xin-zhao-vigilant) | $0.57 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Honest Broker](https://riftdecks.com/cards/details-honest-broker) | $0.18 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Trifarian Captain](https://riftdecks.com/cards/details-trifarian-captain) | $0.55 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Xin Zhao, Vigilant](https://riftdecks.com/cards/details-xin-zhao-vigilant) | $0.55 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Safety Inspector](https://riftdecks.com/cards/details-safety-inspector) | $0.20 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.17 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Vi, Peacekeeper](https://riftdecks.com/cards/details-vi-peacekeeper) | $3.35 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (3) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sprite Fountain](https://riftdecks.com/cards/details-sprite-fountain) | $3.82 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Sprite Fountain](https://riftdecks.com/cards/details-sprite-fountain) | $6.70 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (20) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.56 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.54 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Stupefy](https://riftdecks.com/cards/details-stupefy) | $0.30 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Cull the Weak](https://riftdecks.com/cards/details-cull-the-weak) | $0.35 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.82 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Dragon Form](https://riftdecks.com/cards/details-dragon-form) | $0.05 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Imperial Decree](https://riftdecks.com/cards/details-imperial-decree) | $1.60 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Raucous Anthem](https://riftdecks.com/cards/details-raucous-anthem) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Cull the Weak](https://riftdecks.com/cards/details-cull-the-weak) | $0.33 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.74 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Dragon Form](https://riftdecks.com/cards/details-dragon-form) | $0.07 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Imperial Decree](https://riftdecks.com/cards/details-imperial-decree) | $4.59 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Raucous Anthem](https://riftdecks.com/cards/details-raucous-anthem) | $0.23 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
 | _Missing / Not available_ |
@@ -69,15 +69,15 @@ Submit Missing Cards
 | ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.07 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.38 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Salvage](https://riftdecks.com/cards/details-salvage) | $5.14 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Burn Away](https://riftdecks.com/cards/details-burn-away) | $0.14 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Pickpocket](https://riftdecks.com/cards/details-pickpocket) | $0.25 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.47 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Salvage](https://riftdecks.com/cards/details-salvage) | $5.16 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Burn Away](https://riftdecks.com/cards/details-burn-away) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Pickpocket](https://riftdecks.com/cards/details-pickpocket) | $0.23 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$65.87
+![](https://riftdecks.com/img/logos/tcg_player.png)$79.61
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -208,20 +208,74 @@ x3
 
 ## Deck Stats
 
-| types |
-| --- |
-| gear | 4.8% (3) | 4.8% |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 43.5% (27) | 43.5% |
-| unit | 30.6% (19) | 30.6% |
-| energy |
-| 0 | 21% (13) | 21% |
-| 1 | 12.9% (8) | 12.9% |
-| 2 | 32.3% (20) | 32.3% |
-| 3 | 19.4% (12) | 19.4% |
-| 5 | 11.3% (7) | 11.3% |
-| 7 | 3.2% (2) | 3.2% |
-| domains |
-| mind | 35.5% (22) | 35.5% |
-| order | 66.1% (41) | 66.1% |
+**39** cards in main deck
+
+**2.8** average energy
+
+**0.7** average power
+
+Energy cost
+
+0
+
+6
+
+1
+
+17
+
+2
+
+7
+
+3
+
+4
+
+7
+
+5
+
+6
+
+2
+
+7
+
+Power cost
+
+No power
+
+16
+
+1 power
+
+20
+
+2 power
+
+3
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_order.png) Order
+
+28
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) Mind
+
+11
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+20
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+16
+
+![](https://riftdecks.com/img/symbols/riftbound/type_gear.png) Gear
+
+3

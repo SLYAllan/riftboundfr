@@ -6,29 +6,26 @@
 
 "Kennen, Heart of the Tempest" decklist by Arya K. 96th at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Kennen, Heart of the Tempest](https://riftdecks.com/legends/constructed/kennen-heart-of-the-tempest) [Chaos Order](https://riftdecks.com/riftbound-metagame/constructed/chaos-order) [Aryа](https://riftdecks.com/riftbound-decks?player=Arya&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Kennen, Heart of the Tempest](https://riftdecks.com/legends/constructed/kennen-heart-of-the-tempest) [Chaos Order](https://riftdecks.com/riftbound-metagame/constructed/chaos-order) [Aryа](https://riftdecks.com/players/arya) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)Kennen, Heart of the Tempest**
-**, a deck by [Aryа](https://riftdecks.com/riftbound-decks?player=Arya&deck_type=all)**
+**, a deck by [Aryа](https://riftdecks.com/players/arya)**
 
 96th at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
 2026-11-08
 
-[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed)
-\|
-62 Cards \|
+[ConstructedConstructed](https://riftdecks.com/riftbound-metagame/constructed) 62 Cards
 
+[Bookmark](https://riftdecks.com/riftbound-metagame/deck-kennen-heart-of-the-tempest-345128#) Similar decks
 
-
-## Text Decklist
-
-[Bookmark](https://riftdecks.com/riftbound-metagame/deck-kennen-heart-of-the-tempest-345128#) Similar Decks
-
-Export this Deck
+Export
 
 
 Submit Missing Cards or Errors
+
+This deck contains banned cards.
+
 
 This deck is **incomplete** — it was reported with missing cards. If you know what's missing, you can help complete it below.
 
@@ -41,35 +38,35 @@ Submit Missing Cards
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Kennen, Heart of the Tempest](https://riftdecks.com/cards/details-kennen-heart-of-the-tempest) | $0.17 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Kennen, Heart of the Tempest](https://riftdecks.com/cards/details-kennen-heart-of-the-tempest) | $0.10 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (18) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bedeviling Stranger](https://riftdecks.com/cards/details-bedeviling-stranger) | $0.84 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Tideturner](https://riftdecks.com/cards/details-tideturner) | $3.45 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Traveling Merchant](https://riftdecks.com/cards/details-traveling-merchant) | $0.27 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Trifarian Captain](https://riftdecks.com/cards/details-trifarian-captain) | $0.54 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster) | $3.40 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Reckless Innovator](https://riftdecks.com/cards/details-reckless-innovator) | $0.21 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Nocturne, Horrifying](https://riftdecks.com/cards/details-nocturne-horrifying) | $2.69 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Rhasa the Sunderer](https://riftdecks.com/cards/details-rhasa-the-sunderer) | $1.17 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bedeviling Stranger](https://riftdecks.com/cards/details-bedeviling-stranger) | $0.76 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Tideturner](https://riftdecks.com/cards/details-tideturner) | $2.73 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Traveling Merchant](https://riftdecks.com/cards/details-traveling-merchant) | $0.23 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Trifarian Captain](https://riftdecks.com/cards/details-trifarian-captain) | $0.55 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster) | $4.61 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Reckless Innovator](https://riftdecks.com/cards/details-reckless-innovator) | $0.26 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Nocturne, Horrifying](https://riftdecks.com/cards/details-nocturne-horrifying) | $0.93 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Rhasa the Sunderer](https://riftdecks.com/cards/details-rhasa-the-sunderer) | $0.87 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (7) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Seal of Discord](https://riftdecks.com/cards/details-seal-of-discord) | $35.18 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $0.49 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Last Rites](https://riftdecks.com/cards/details-last-rites) | $33.54 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Seal of Discord](https://riftdecks.com/cards/details-seal-of-discord) | $28.47 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $1.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Last Rites](https://riftdecks.com/cards/details-last-rites) | $30.71 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (14) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Gust](https://riftdecks.com/cards/details-gust) | $0.28 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Lightning Rush](https://riftdecks.com/cards/details-lightning-rush) | $4.92 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [An Offer You Can't Refuse](https://riftdecks.com/cards/details-an-offer-you-cant-refuse) | $0.29 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Gust](https://riftdecks.com/cards/details-gust) | $0.27 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Lightning Rush](https://riftdecks.com/cards/details-lightning-rush) | $5.06 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [An Offer You Can't Refuse](https://riftdecks.com/cards/details-an-offer-you-cant-refuse) | $0.25 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Hard Bargain](https://riftdecks.com/cards/details-hard-bargain) | $0.80 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.83 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Rebuke](https://riftdecks.com/cards/details-rebuke) | $0.25 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind) | $0.65 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $5.14 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Hidden Blade](https://riftdecks.com/cards/details-hidden-blade) | $0.74 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Rebuke](https://riftdecks.com/cards/details-rebuke) | $0.28 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind) | $0.62 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $5.20 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Star-Crossed](https://riftdecks.com/cards/details-star-crossed) | $0.26 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
@@ -80,19 +77,19 @@ Submit Missing Cards
 | ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Order Rune](https://riftdecks.com/cards/details-order-rune) | $0.07 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Abandon](https://riftdecks.com/cards/details-abandon) | $0.40 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [An Offer You Can't Refuse](https://riftdecks.com/cards/details-an-offer-you-cant-refuse) | $0.29 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Unity](https://riftdecks.com/cards/details-decree-of-unity) | $0.42 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Lacerate](https://riftdecks.com/cards/details-lacerate) | $0.11 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind) | $0.65 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster) | $3.40 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Ravenbloom Prefect](https://riftdecks.com/cards/details-ravenbloom-prefect) | $0.17 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Good Stuff](https://riftdecks.com/cards/details-the-good-stuff) | $0.19 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Abandon](https://riftdecks.com/cards/details-abandon) | $0.44 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [An Offer You Can't Refuse](https://riftdecks.com/cards/details-an-offer-you-cant-refuse) | $0.25 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Unity](https://riftdecks.com/cards/details-decree-of-unity) | $0.51 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Lacerate](https://riftdecks.com/cards/details-lacerate) | $0.09 | ![order](https://riftdecks.com/img/symbols/riftbound/rune_order.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ride the Wind](https://riftdecks.com/cards/details-ride-the-wind) | $0.62 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Fizz, Trickster](https://riftdecks.com/cards/details-fizz-trickster) | $4.61 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Ravenbloom Prefect](https://riftdecks.com/cards/details-ravenbloom-prefect) | $0.15 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Good Stuff](https://riftdecks.com/cards/details-the-good-stuff) | $0.22 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$229.78
+![](https://riftdecks.com/img/logos/tcg_player.png)$206.6
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -259,20 +256,82 @@ x1
 
 ## Deck Stats
 
-| types |
-| --- |
-| gear | 12.9% (8) | 12.9% |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 32.3% (20) | 32.3% |
-| unit | 33.9% (21) | 33.9% |
-| energy |
-| 0 | 25.8% (16) | 25.8% |
-| 1 | 8.1% (5) | 8.1% |
-| 2 | 35.5% (22) | 35.5% |
-| 3 | 21% (13) | 21% |
-| 4 | 4.8% (3) | 4.8% |
-| 10 | 4.8% (3) | 4.8% |
-| domains |
-| chaos | 83.9% (52) | 83.9% |
-| order | 22.6% (14) | 22.6% |
+**39** cards in main deck
+
+**2.7** average energy
+
+**0.5** average power
+
+Energy cost
+
+3
+
+0
+
+5
+
+1
+
+16
+
+2
+
+9
+
+3
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+3
+
+10
+
+Power cost
+
+No power
+
+22
+
+1 power
+
+14
+
+2 power
+
+3
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) Chaos
+
+35
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_order.png) Order
+
+7
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+18
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+14
+
+![](https://riftdecks.com/img/symbols/riftbound/type_gear.png) Gear
+
+7

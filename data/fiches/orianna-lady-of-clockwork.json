@@ -15,67 +15,67 @@
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "The Ball",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Cloth Armor",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Stupefy",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mask of Foresight",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 76 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Standard, 66 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Frigid Jewel",
-      "role": "Souple, 53 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Battle Preparations",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Patched Porobot",
-      "role": "Souple, 50 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Souple, 48 % des listes, 1,5 exemplaire",
+      "role": "Standard, 62 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Sterak's Gage",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "The Ball",
+      "role": "Standard, 60 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Stupefy",
+      "role": "Souple, 56 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Blossoming Dreamroot",
+      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Souple, 49 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brutalizer",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -83,22 +83,22 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Orianna, Exquisite": {
-      "usage": "84 %",
+      "usage": "88 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Veiled Temple (100 %)",
-    "Ornn's Forge (86 %)",
-    "Rockfall Path (47 %)"
+    "Veiled Temple (99 %)",
+    "Ornn's Forge (88 %)",
+    "Rockfall Path (65 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 70,
+    "joueursClasses": 127,
     "coupe10": 2,
     "titres": 0,
-    "conversion": "2.9 %",
-    "tournois": 18,
-    "listesPubliees": 58,
+    "conversion": "1.6 %",
+    "tournois": 20,
+    "listesPubliees": 101,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -127,7 +127,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 70 joueurs classés, 18 tournois, dont 58 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 127 joueurs classés, 20 tournois, dont 101 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements qui deviennent des unités",
   "legendAbility": "Au début de votre phase principale, vous pouvez payer une énergie pour choisir un de vos équipements : il devient une unité dont la Puissance égale son coût en énergie, jusqu'à ce que vous en choisissiez un autre.",
   "gameplan": {

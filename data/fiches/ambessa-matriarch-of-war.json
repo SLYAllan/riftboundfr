@@ -27,129 +27,109 @@
   "beginnerFriendly": false,
   "keyCards": [
     {
-      "name": "Legion Marauder",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
+      "name": "Legion Marauder",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Guttural Roar",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Public Execution",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Tactical Retreat",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Noxian Emissary",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "name": "Guttural Roar",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sabotage",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Irresistible Faefolk",
-      "role": "Standard, 67 % des listes, 3 exemplaires",
+      "name": "Noxian Emissary",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "First Mate",
-      "role": "Standard, 67 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Onslaught",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Repulse",
-      "role": "Souple, 50 % des listes, 1,5 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Solari Sunhawk",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Pit Rookie",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Portable Portal",
-      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "name": "Tactical Retreat",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Irresistible Faefolk",
+      "role": "Souple, 48 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Pit Rookie",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
-    "Kayle, Justified": {
-      "usage": "100 %",
-      "role": "2,5 exemplaires en moyenne"
-    },
     "Ambessa, The Wolf": {
-      "usage": "100 %",
+      "usage": "96 %",
       "role": "1 exemplaire en moyenne"
     },
-    "Rengar, Trophy Hunter": {
-      "usage": "92 %",
+    "Kayle, Justified": {
+      "usage": "87 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "92 %",
+      "usage": "83 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Rengar, Trophy Hunter": {
+      "usage": "65 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "75 %",
+      "usage": "61 %",
       "role": "2 exemplaires en moyenne"
     },
     "Lucian, Merciless": {
-      "usage": "42 %",
+      "usage": "35 %",
       "role": "2 exemplaires en moyenne"
-    },
-    "Graves, Blasting Through": {
-      "usage": "33 %",
-      "role": "1,5 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Risen Altar (100 %)",
-    "Sandswept Tomb (75 %)",
-    "Sunken Temple (33 %)",
-    "Star Spring (33 %)"
+    "Risen Altar (87 %)",
+    "Sandswept Tomb (61 %)",
+    "Sunken Temple (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 15,
+    "joueursClasses": 30,
     "coupe10": 0,
     "titres": 0,
     "conversion": "0 %",
-    "tournois": 3,
-    "listesPubliees": 12,
+    "tournois": 5,
+    "listesPubliees": 23,
     "bestPlacements": [
       {
         "placement": "64th",
@@ -178,7 +158,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 15 joueurs classés, 3 tournois, dont 12 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 30 joueurs classés, 5 tournois, dont 23 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

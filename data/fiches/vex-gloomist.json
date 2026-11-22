@@ -23,7 +23,7 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -32,13 +32,13 @@
       "noyau": true
     },
     {
-      "name": "Discipline",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "name": "Boots of Swiftness",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Boots of Swiftness",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "name": "Discipline",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -48,57 +48,57 @@
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 88 % des listes, 1 exemplaire",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 1 exemplaire",
+      "noyau": true
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Tornado Warrior",
-      "role": "Standard, 82 % des listes, 3 exemplaires",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Standard, 76 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Back Off",
-      "role": "Standard, 71 % des listes, 1 exemplaire",
+      "role": "Standard, 77 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gust",
+      "role": "Standard, 72 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Back Off",
       "role": "Standard, 67 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Tideturner",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
       "name": "Edge of Night",
-      "role": "Souple, 58 % des listes, 1 exemplaire",
+      "role": "Standard, 60 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Scuttle Crab",
-      "role": "Souple, 50 % des listes, 2 exemplaires",
+      "name": "Tideturner",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 47 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Scuttle Crab",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -108,7 +108,12 @@
     },
     {
       "name": "Charm",
-      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Battle Preparations",
+      "role": "Souple, 34 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -124,12 +129,12 @@
     "Sans position tenue, la Légende ne pioche plus rien"
   ],
   "competitiveResults": {
-    "joueursClasses": 122,
-    "coupe10": 12,
+    "joueursClasses": 192,
+    "coupe10": 21,
     "titres": 2,
-    "conversion": "9.8 %",
-    "tournois": 19,
-    "listesPubliees": 113,
+    "conversion": "10.9 %",
+    "tournois": 21,
+    "listesPubliees": 159,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -181,20 +186,20 @@
       "role": "1 exemplaire en moyenne"
     },
     "Evelynn, Entrancing": {
-      "usage": "74 %",
+      "usage": "77 %",
       "role": "2 exemplaires en moyenne"
     },
     "Irelia, Fervent": {
-      "usage": "33 %",
+      "usage": "31 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Bandle Scouts' Academy (79 %)",
-    "Fortified Position (60 %)",
-    "Startipped Peak (45 %)"
+    "Bandle Scouts' Academy (82 %)",
+    "Fortified Position (61 %)",
+    "Startipped Peak (44 %)"
   ],
-  "dataSource": "Classement complet des tournois : 122 joueurs classés, 19 tournois, dont 113 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 192 joueurs classés, 21 tournois, dont 159 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

@@ -11,13 +11,13 @@
   "legendAbility": "Quand une unité adverse attaque un champ de bataille que vous contrôlez, elle perd 1 Puissance pour le tour, sans descendre sous 1.",
   "keyCards": [
     {
-      "name": "Ravenbloom Student",
-      "role": "Cœur du deck, Unité d'early game, 100 % des listes, 3 exemplaires",
+      "name": "Stupefy",
+      "role": "Cœur du deck, Flex de disruption, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Stupefy",
-      "role": "Cœur du deck, Flex de disruption, 100 % des listes, 3 exemplaires",
+      "name": "Defy",
+      "role": "Cœur du deck, Core de protection, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -26,84 +26,84 @@
       "noyau": true
     },
     {
-      "name": "Defy",
-      "role": "Cœur du deck, Core de protection, 91 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Back Off",
-      "role": "Cœur du deck, Bounce et tempo, 91 % des listes, 2 exemplaires",
+      "name": "Ravenbloom Student",
+      "role": "Cœur du deck, Unité d'early game, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Standard, Menace principale, 83 % des listes, 2 exemplaires",
+      "role": "Standard, Menace principale, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, Gear de protection, 65 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard, 61 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Charm",
-      "role": "Souple, CC signature d'Ahri, 57 % des listes, 2 exemplaires",
+      "role": "Standard, Gear de protection, 73 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Souple, 52 % des listes, 2,5 exemplaires",
+      "role": "Standard, 64 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Souple, 52 % des listes, 2 exemplaires",
+      "role": "Souple, 55 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Emperor's Divide",
-      "role": "Souple, Finisher spell, 52 % des listes, 1 exemplaire",
+      "name": "Time Warp",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Eager Apprentice",
-      "role": "Souple, 43 % des listes, 3 exemplaires",
+      "name": "Back Off",
+      "role": "Souple, Bounce et tempo, 45 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Desert's Call",
-      "role": "Souple, 43 % des listes, 2,5 exemplaires",
+      "name": "Life from Stone",
+      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Lecturing Yordle",
+      "role": "Souple, 36 % des listes, 2,5 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Charm",
+      "role": "Souple, CC signature d'Ahri, 36 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Premonition",
-      "role": "Souple, 43 % des listes, 1 exemplaire",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Trevor Snoozebottom",
-      "role": "Souple, 35 % des listes, 3 exemplaires",
+      "name": "Temporal Breach",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
-    "Ahri, Inquisitive": {
-      "usage": "83 %",
-      "role": "Champion principal, 1 exemplaire en moyenne"
+    "Ahri, Confident": {
+      "usage": "55 %",
+      "role": "1 exemplaire en moyenne"
+    },
+    "Riven, Broken Blade": {
+      "usage": "36 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Grove of the God-Willow (43 %)"
+    "Threshold of the Gray (36 %)",
+    "Abandoned Hall (36 %)"
   ],
   "strengths": [
     "Chaque attaque adverse coûte 1 Puissance : tenir une position revient moins cher qu'ailleurs."
@@ -112,43 +112,44 @@
     "23 listes seulement sur les 8 919 du set Vendetta : la Légende n'est presque plus jouée en tournoi."
   ],
   "competitiveResults": {
-    "joueursClasses": 829,
-    "coupe10": 33,
-    "titres": 1,
-    "conversion": "4 %",
-    "tournois": 100,
+    "joueursClasses": 11,
+    "coupe10": 0,
+    "titres": 0,
+    "conversion": "0 %",
+    "tournois": 8,
+    "listesPubliees": 11,
     "bestPlacements": [
       {
-        "placement": "1st",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-10-12)"
+        "placement": "40th",
+        "player": "米缸",
+        "tournament": "S5 Nanjing City Challenge (2026-11-14)"
       },
       {
-        "placement": "2nd",
-        "player": null,
-        "tournament": "Nanjing City Challenge (2025-10-12)"
+        "placement": "41th",
+        "player": "华蓝-N1u包儿",
+        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
       },
       {
-        "placement": "3rd",
-        "player": null,
-        "tournament": "Shenzhen City Challenge (2025-10-07)"
+        "placement": "45th",
+        "player": "烟雨",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
-        "placement": "4th",
-        "player": null,
-        "tournament": "Guangzhou City Challenge (2025-09-27)"
+        "placement": "76th",
+        "player": "烟雨",
+        "tournament": "S5 Shanghai City Challenge (2026-11-07)"
       },
       {
-        "placement": "5th",
-        "player": null,
-        "tournament": "Beijing City Challenge (2025-09-27)"
+        "placement": "85th",
+        "player": "No.失月",
+        "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
       }
     ]
   },
   "difficulty": "Élevé",
   "beginnerFriendly": false,
   "sourceUrl": null,
-  "dataSource": "Classement complet des tournois, TOUTES ÈRES : 829 joueurs classés sur 100 tournois. Cette Légende n'est plus jouée dans le format en cours, ses cartes clés datent donc du dernier set où elle l'était. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 11 joueurs classés, 8 tournois, dont 11 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "vodInsights": {
     "source": "Casts compétitifs (juin 2026) — cf. data/video-insights/. Noms de cartes EN, à recouper au scrape brut. Avis casters pour le tier.",
     "matchups": [
@@ -160,5 +161,7 @@
       "Sona + Jana"
     ],
     "note": "Deck Hold (conquérir 1 fois puis hold/hold). Oublier la capacité légende (-1) coûte des games."
-  }
+  },
+  "setDesChiffres": "Radiance",
+  "cartesDepuisBan": "2026-09-15"
 }

@@ -9,17 +9,12 @@
   "tier": 1,
   "keyCards": [
     {
-      "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Discipline",
+      "name": "Blade of the Exile",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Blade of the Exile",
+      "name": "Defy",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
@@ -29,8 +24,18 @@
       "noyau": true
     },
     {
+      "name": "Discipline",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Zhonya's Hourglass",
       "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -39,18 +44,13 @@
       "noyau": true
     },
     {
-      "name": "Bedeviling Stranger",
-      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Astral Heron",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -60,37 +60,42 @@
     },
     {
       "name": "Rebuke",
-      "role": "Cœur du deck, 90 % des listes, 1 exemplaire",
+      "role": "Cœur du deck, 91 % des listes, 1 exemplaire",
       "noyau": true
     },
     {
       "name": "Gust",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Star-Crossed",
-      "role": "Standard, 80 % des listes, 1 exemplaire",
+      "role": "Standard, 83 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Star-Crossed",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Not So Fast",
-      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Baron Nashor",
-      "role": "Standard, 62 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Traveling Merchant",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -102,28 +107,33 @@
       "role": "1 exemplaire en moyenne"
     },
     "Blitzcrank, Impassive": {
-      "usage": "91 %",
+      "usage": "93 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Star Spring (93 %)",
-    "Emperor's Dais (78 %)",
-    "Hunters' Circle (65 %)",
-    "Rakelstake (44 %)"
+    "Star Spring (94 %)",
+    "Emperor's Dais (79 %)",
+    "Hunters' Circle (66 %)",
+    "Rakelstake (41 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 659,
-    "coupe10": 119,
-    "titres": 8,
-    "conversion": "18.1 %",
-    "tournois": 21,
-    "listesPubliees": 526,
+    "joueursClasses": 983,
+    "coupe10": 180,
+    "titres": 9,
+    "conversion": "18.3 %",
+    "tournois": 23,
+    "listesPubliees": 770,
     "bestPlacements": [
       {
         "placement": "1st",
         "player": "Brandon Blakeborough",
         "tournament": "CCS Houston Riftbound Invitational (2026-11-14)"
+      },
+      {
+        "placement": "1st",
+        "player": "MERC Koopastar",
+        "tournament": "Riftbound Showdown Orlando (2026-11-01)"
       },
       {
         "placement": "1st",
@@ -139,15 +149,10 @@
         "placement": "1st",
         "player": "YYP·今今抽卡",
         "tournament": "S5 Guangzhou City Challenge (2026-11-01)"
-      },
-      {
-        "placement": "1st",
-        "player": "猫岛巡礼-tommy.",
-        "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 659 joueurs classés, 21 tournois, dont 526 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 983 joueurs classés, 23 tournois, dont 770 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Tempo et réactions, unités qui arrivent préparées",
   "legendAbility": "Les unités que vous jouez sur un champ de bataille que vous contrôlez arrivent préparées. Une unité posée là peut servir tout de suite, sans attendre le tour suivant.",
   "gameplan": {

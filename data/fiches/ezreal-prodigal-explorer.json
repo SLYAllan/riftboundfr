@@ -27,58 +27,58 @@
       "noyau": true
     },
     {
-      "name": "Gust",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Star-Crossed",
       "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "name": "Wages of Pain",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Wages of Pain",
-      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Gust",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Deadly Flourish",
-      "role": "Standard, 86 % des listes, 3 exemplaires",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Singularity",
-      "role": "Standard, 86 % des listes, 1 exemplaire",
+      "role": "Standard, 88 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 79 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The List",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 79 % des listes, 2 exemplaires",
+      "role": "Standard, 81 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Fountain",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Souple, 50 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -87,13 +87,13 @@
       "noyau": false
     },
     {
-      "name": "Turn to Dust",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "name": "Temporal Breach",
+      "role": "Souple, 38 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
-      "name": "Temporal Breach",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "name": "Turn to Dust",
+      "role": "Souple, 31 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -106,12 +106,12 @@
     "Sa meilleure place est une dixième, à la City Challenge de Shenzhen"
   ],
   "competitiveResults": {
-    "joueursClasses": 16,
+    "joueursClasses": 18,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "6.3 %",
-    "tournois": 10,
-    "listesPubliees": 14,
+    "conversion": "5.6 %",
+    "tournois": 11,
+    "listesPubliees": 16,
     "bestPlacements": [
       {
         "placement": "10th",
@@ -168,16 +168,17 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "79 %",
-      "role": "2 exemplaires en moyenne"
+      "usage": "75 %",
+      "role": "2,5 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (93 %)",
-    "Sigil of the Storm (57 %)",
-    "Heisho, Shell of the World (36 %)"
+    "Frozen Fortress (94 %)",
+    "Sigil of the Storm (63 %)",
+    "Void Gate (31 %)",
+    "Heisho, Shell of the World (31 %)"
   ],
-  "dataSource": "Classement complet des tournois : 16 joueurs classés, 10 tournois, dont 14 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 18 joueurs classés, 11 tournois, dont 16 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

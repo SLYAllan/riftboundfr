@@ -18,12 +18,17 @@
   "keyCards": [
     {
       "name": "Soaring Scout",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sacrifice",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Glasc Mixologist",
+      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -32,53 +37,48 @@
       "noyau": true
     },
     {
-      "name": "Glasc Mixologist",
+      "name": "Ruined Rex",
       "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 91 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Ruined Rex",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Watchful Sentry",
-      "role": "Standard, 84 % des listes, 3 exemplaires",
-      "noyau": false
     },
     {
       "name": "Honest Broker",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Watchful Sentry",
+      "role": "Standard, 82 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Deathgrip",
-      "role": "Standard, 81 % des listes, 1 exemplaire",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Hidden Blade",
-      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Black Rose Dignitary",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 62 % des listes, 3 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rift Herald",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Harnessed Dragon",
+      "role": "Souple, 59 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -87,8 +87,18 @@
       "noyau": false
     },
     {
+      "name": "Salvage",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
       "name": "Cull the Weak",
-      "role": "Souple, 33 % des listes, 2 exemplaires",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Seal of Unity",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -102,12 +112,12 @@
     "La Légende demande de défausser une carte à chaque copie"
   ],
   "competitiveResults": {
-    "joueursClasses": 73,
-    "coupe10": 8,
+    "joueursClasses": 117,
+    "coupe10": 10,
     "titres": 1,
-    "conversion": "11 %",
-    "tournois": 20,
-    "listesPubliees": 58,
+    "conversion": "8.5 %",
+    "tournois": 22,
+    "listesPubliees": 88,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -157,24 +167,24 @@
   },
   "champions": {
     "Karthus, Eternal": {
-      "usage": "93 %",
+      "usage": "95 %",
       "role": "3 exemplaires en moyenne"
     },
-    "Vi, Peacekeeper": {
-      "usage": "93 %",
-      "role": "2 exemplaires en moyenne"
-    },
     "LeBlanc, Fragmented": {
-      "usage": "93 %",
+      "usage": "94 %",
       "role": "1 exemplaire en moyenne"
+    },
+    "Vi, Peacekeeper": {
+      "usage": "92 %",
+      "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Windswept Hillock (98 %)",
-    "Dusk Rose Lab (74 %)",
-    "Star Spring (55 %)"
+    "Dusk Rose Lab (77 %)",
+    "Star Spring (48 %)"
   ],
-  "dataSource": "Classement complet des tournois : 73 joueurs classés, 20 tournois, dont 58 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 117 joueurs classés, 22 tournois, dont 88 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

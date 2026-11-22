@@ -30,12 +30,12 @@
     },
     {
       "name": "Inferna",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Undertitan",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -45,17 +45,17 @@
     },
     {
       "name": "Bilgewater Tracker",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Concert Poster",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shimmering Swimmer",
-      "role": "Standard, 80 % des listes, 3 exemplaires",
+      "role": "Standard, 81 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -65,42 +65,37 @@
     },
     {
       "name": "Hunting Dog",
-      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "role": "Souple, 58 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Long Sword",
-      "role": "Souple, 36 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Blood Rush",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Imperial Decree",
-      "role": "Souple, 34 % des listes, 2 exemplaires",
+      "role": "Souple, 36 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Blood Rush",
+      "role": "Souple, 32 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Banner of Conquest",
-      "role": "Souple, 33 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Cleave",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 134,
-    "coupe10": 13,
+    "joueursClasses": 172,
+    "coupe10": 18,
     "titres": 0,
-    "conversion": "9.7 %",
-    "tournois": 21,
-    "listesPubliees": 127,
+    "conversion": "10.5 %",
+    "tournois": 23,
+    "listesPubliees": 163,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -136,17 +131,17 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Pouncing": {
-      "usage": "65 %",
+      "usage": "67 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "The Candlelit Sanctum (96 %)",
-    "Forbidding Waste (53 %)",
-    "Hunters' Circle (45 %)",
-    "Ruined Monastery (39 %)"
+    "Hunters' Circle (50 %)",
+    "Forbidding Waste (48 %)",
+    "Ruined Monastery (46 %)"
   ],
-  "dataSource": "Classement complet des tournois : 134 joueurs classés, 21 tournois, dont 127 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 172 joueurs classés, 23 tournois, dont 163 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Agression large, unités qui reviennent du deck",
   "legendAbility": "Quand vous conquérez, épuisez Rek'Sai pour révéler les deux cartes du dessus : vous en bannissez une et la jouez, le reste retourne sous le deck.",
   "gameplan": {

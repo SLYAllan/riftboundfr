@@ -10,82 +10,77 @@
   "keyCards": [
     {
       "name": "Thousand-Tailed Watcher",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stupefy",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Plundering Poro",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 85 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Noxus Hopeful",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 83 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 74 % des listes, 2 exemplaires",
+      "role": "Standard, 78 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Noxus Hopeful",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Brynhir Thundersong",
+      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Shock Blast",
       "role": "Standard, 65 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Time Warp",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Inferna",
-      "role": "Standard, 61 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Shock Blast",
-      "role": "Standard, 61 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Cleave",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "role": "Souple, 52 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Watchful Sentry",
-      "role": "Souple, 45 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Lecturing Yordle",
-      "role": "Souple, 42 % des listes, 2 exemplaires",
+      "name": "Inferna",
+      "role": "Souple, 50 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Bellows Breath",
-      "role": "Souple, 39 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 1,5 exemplaire",
       "noyau": false
     },
     {
-      "name": "Retreat",
-      "role": "Souple, 39 % des listes, 1,5 exemplaire",
+      "name": "The Empyrean",
+      "role": "Souple, 46 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Brittle Steel",
+      "role": "Souple, 46 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -93,40 +88,40 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Kai'Sa, Survivor": {
-      "usage": "87 %",
+      "usage": "78 %",
       "role": "3 exemplaires en moyenne"
     },
     "Ekko, Ingenious": {
-      "usage": "71 %",
+      "usage": "72 %",
       "role": "1 exemplaire en moyenne"
     },
     "Ekko, Revolutionary": {
-      "usage": "65 %",
+      "usage": "52 %",
       "role": "1 exemplaire en moyenne"
     },
     "Vayne, Hunter": {
-      "usage": "55 %",
+      "usage": "43 %",
       "role": "2 exemplaires en moyenne"
     },
     "Pyke, Dockside Butcher": {
-      "usage": "48 %",
+      "usage": "41 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (77 %)",
-    "Ripper's Bay (39 %)",
-    "Seat of Power (39 %)",
-    "Frozen Fortress (32 %)",
-    "Vilemaw's Lair (32 %)"
+    "Rockfall Path (76 %)",
+    "Ripper's Bay (41 %)",
+    "Frozen Fortress (35 %)",
+    "Seat of Power (33 %)",
+    "Vilemaw's Lair (30 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 43,
-    "coupe10": 2,
+    "joueursClasses": 73,
+    "coupe10": 3,
     "titres": 0,
-    "conversion": "4.7 %",
-    "tournois": 14,
-    "listesPubliees": 31,
+    "conversion": "4.1 %",
+    "tournois": 16,
+    "listesPubliees": 46,
     "bestPlacements": [
       {
         "placement": "4th",
@@ -155,7 +150,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 43 joueurs classés, 14 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 73 joueurs classés, 16 tournois, dont 46 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Tempo, unités payées moins cher",
   "legendAbility": "Pour une énergie, épuisez Ekko pour l'amplifier, s'il ne l'est pas déjà. Plus tard, désamplifiez-le et épuisez-le : la prochaine unité que vous jouez ce tour coûte 2 énergie et 1 Puissance de moins, mais elle meurt à la fin du tour.",
   "gameplan": {

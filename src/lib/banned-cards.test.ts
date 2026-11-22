@@ -55,16 +55,20 @@ describe("cartes bannies dans les fiches Légendes", () => {
     //
     // Ivern et Renekton en sortent le 18 novembre : recomptées avec les City
     // Challenge des 14 et 15 novembre, leurs fiches ne citent plus de carte visée.
+    //
+    // Le 22 novembre, avec Ningbo et Orlando, Ivern y revient (Zhonya's Hourglass
+    // entre dans ses cartes), Ambessa et Vi en sortent (Star Spring quitte leurs
+    // terrains), Shen aussi (Zhonya's Hourglass quitte ses cartes).
     const bannies = cartesDesFiches().filter((c) => isBanned(c.nom));
     const fiches = [...new Set(bannies.map((c) => c.fiche))].sort();
     expect(fiches).toEqual([
       "ahri-nine-tailed-fox.json",
       "akali-rogue-assassin.json",
-      "ambessa-matriarch-of-war.json",
       "draven-glorious-executioner.json",
       "ekko-boy-who-shattered-time.json",
       "garen-might-of-demacia.json",
       "irelia-blade-dancer.json",
+      "ivern-green-father.json",
       "jayce-defender-of-tomorrow.json",
       "jinx-loose-cannon.json",
       "kaisa-daughter-of-the-void.json",
@@ -84,10 +88,8 @@ describe("cartes bannies dans les fiches Légendes", () => {
       "rengar-pridestalker.json",
       "riven-the-exile.json",
       "rumble-mechanized-menace.json",
-      "shen-eye-of-twilight.json",
       "sivir-battle-mistress.json",
       "vex-gloomist.json",
-      "vi-piltover-enforcer.json",
       "yasuo-unforgiven.json",
     ]);
   });

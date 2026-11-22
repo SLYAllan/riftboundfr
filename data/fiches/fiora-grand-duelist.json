@@ -18,67 +18,47 @@
   "keyCards": [
     {
       "name": "Riposte",
-      "role": "Cœur du deck, 100 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
-      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Punch First",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Pit Rookie",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "name": "First Mate",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "First Mate",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
+      "name": "Pit Rookie",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Standard, 68 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Harnessed Dragon",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Call to Glory",
-      "role": "Souple, 52 % des listes, 3 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Sea Monkey",
-      "role": "Souple, 48 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Pillaged Armory",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Hidden Blade",
-      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "name": "Harnessed Dragon",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sacrifice",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rift Herald",
-      "role": "Souple, 44 % des listes, 3 exemplaires",
+      "role": "Souple, 47 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
@@ -87,8 +67,28 @@
       "noyau": false
     },
     {
+      "name": "Pillaged Armory",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Hidden Blade",
+      "role": "Souple, 44 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rift Herald",
+      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Elder Dragon",
-      "role": "Souple, 40 % des listes, 2,5 exemplaires",
+      "role": "Souple, 41 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sea Monkey",
+      "role": "Souple, 41 % des listes, 3 exemplaires",
       "noyau": false
     }
   ],
@@ -101,12 +101,12 @@
     "Sa meilleure place est une neuvième, à la City Challenge de Nanjing du 14 novembre"
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 37,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "3.7 %",
-    "tournois": 15,
-    "listesPubliees": 25,
+    "conversion": "2.7 %",
+    "tournois": 17,
+    "listesPubliees": 34,
     "bestPlacements": [
       {
         "placement": "9th",
@@ -159,31 +159,32 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "76 %",
+      "usage": "74 %",
       "role": "3 exemplaires en moyenne"
     },
     "Kayle, Justified": {
-      "usage": "60 %",
+      "usage": "62 %",
       "role": "2 exemplaires en moyenne"
     },
     "Kennen, Keeper of Balance": {
-      "usage": "52 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "48 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "Mordekaiser, Dominating": {
-      "usage": "32 %",
+      "usage": "38 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Sunken Temple (88 %)",
-    "Monastery of Hirana (40 %)"
+    "Monastery of Hirana (41 %)",
+    "Valley of Idols (32 %)"
   ],
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 15 tournois, dont 25 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 37 joueurs classés, 17 tournois, dont 34 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }

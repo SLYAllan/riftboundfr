@@ -6,10 +6,10 @@
 
 "Kai'sa, Daughter of the Void" decklist by Dat N. 289th at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Kai'sa, Daughter of the Void](https://riftdecks.com/legends/constructed/kaisa-daughter-of-the-void) [Fury Mind](https://riftdecks.com/riftbound-metagame/constructed/fury-mind) [Kitzuo](https://riftdecks.com/riftbound-decks?player=Kitzuo&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Kai'sa, Daughter of the Void](https://riftdecks.com/legends/constructed/kaisa-daughter-of-the-void) [Fury Mind](https://riftdecks.com/riftbound-metagame/constructed/fury-mind) [Kitzuo](https://riftdecks.com/players/kitzuo) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)Kai'sa, Daughter of the Void**
-**, a deck by [Kitzuo](https://riftdecks.com/riftbound-decks?player=Kitzuo&deck_type=all)**
+**, a deck by [Kitzuo](https://riftdecks.com/players/kitzuo)**
 
 289th at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
@@ -24,6 +24,9 @@ Export
 
 Submit Missing Cards or Errors
 
+This deck contains banned cards.
+
+
 This deck is **incomplete** — it was reported with missing cards. If you know what's missing, you can help complete it below.
 
 
@@ -35,51 +38,51 @@ Submit Missing Cards
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kai'sa, Daughter of the Void](https://riftdecks.com/cards/details-kaisa-daughter-of-the-void) | $0.27 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kai'sa, Daughter of the Void](https://riftdecks.com/cards/details-kaisa-daughter-of-the-void) | $0.35 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (20) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Plundering Poro](https://riftdecks.com/cards/details-plundering-poro) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Watchful Sentry](https://riftdecks.com/cards/details-watchful-sentry) | $0.19 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Bilgewater Tracker](https://riftdecks.com/cards/details-bilgewater-tracker) | $0.11 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Lecturing Yordle](https://riftdecks.com/cards/details-lecturing-yordle) | $0.19 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Noxus Hopeful](https://riftdecks.com/cards/details-noxus-hopeful) | $0.71 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong) | $5.91 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $23.14 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Empyrean](https://riftdecks.com/cards/details-the-empyrean) | $0.19 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Plundering Poro](https://riftdecks.com/cards/details-plundering-poro) | $0.16 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Watchful Sentry](https://riftdecks.com/cards/details-watchful-sentry) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Bilgewater Tracker](https://riftdecks.com/cards/details-bilgewater-tracker) | $0.15 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Lecturing Yordle](https://riftdecks.com/cards/details-lecturing-yordle) | $0.16 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Noxus Hopeful](https://riftdecks.com/cards/details-noxus-hopeful) | $0.74 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Brynhir Thundersong](https://riftdecks.com/cards/details-brynhir-thundersong) | $0.74 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $24.99 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Empyrean](https://riftdecks.com/cards/details-the-empyrean) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (19) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.56 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hextech Ray](https://riftdecks.com/cards/details-hextech-ray) | $0.19 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.54 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Hextech Ray](https://riftdecks.com/cards/details-hextech-ray) | $0.17 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Stupefy](https://riftdecks.com/cards/details-stupefy) | $0.30 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Brittle Steel](https://riftdecks.com/cards/details-brittle-steel) | $0.13 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Falling Star](https://riftdecks.com/cards/details-falling-star) | $20.96 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Smoke Screen](https://riftdecks.com/cards/details-smoke-screen) | $0.23 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Temporal Breach](https://riftdecks.com/cards/details-temporal-breach) | $0.66 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Time Warp](https://riftdecks.com/cards/details-time-warp) | $64.59 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Falling Star](https://riftdecks.com/cards/details-falling-star) | $24.24 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Smoke Screen](https://riftdecks.com/cards/details-smoke-screen) | $0.20 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Temporal Breach](https://riftdecks.com/cards/details-temporal-breach) | $0.52 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Time Warp](https://riftdecks.com/cards/details-time-warp) | $61.11 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Fury Rune](https://riftdecks.com/cards/details-fury-rune) | $0.06 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Fury Rune](https://riftdecks.com/cards/details-fury-rune) | $0.07 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.38 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Decree of Rage](https://riftdecks.com/cards/details-decree-of-rage) | $0.27 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.47 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Decree of Rage](https://riftdecks.com/cards/details-decree-of-rage) | $0.31 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Brittle Steel](https://riftdecks.com/cards/details-brittle-steel) | $0.13 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Pickpocket](https://riftdecks.com/cards/details-pickpocket) | $0.25 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Ferrous Forerunner](https://riftdecks.com/cards/details-ferrous-forerunner) | $2.68 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Icathian Rain](https://riftdecks.com/cards/details-icathian-rain) | $7.21 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Empyrean](https://riftdecks.com/cards/details-the-empyrean) | $0.19 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Pickpocket](https://riftdecks.com/cards/details-pickpocket) | $0.23 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Ferrous Forerunner](https://riftdecks.com/cards/details-ferrous-forerunner) | $2.88 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Icathian Rain](https://riftdecks.com/cards/details-icathian-rain) | $6.40 | ![fury](https://riftdecks.com/img/symbols/riftbound/rune_fury.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [The Empyrean](https://riftdecks.com/cards/details-the-empyrean) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$307.26
+![](https://riftdecks.com/img/logos/tcg_player.png)$306.22
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -226,22 +229,86 @@ x1
 
 ## Deck Stats
 
-| types |
-| --- |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 40.3% (25) | 40.3% |
-| unit | 38.7% (24) | 38.7% |
-| energy |
-| 0 | 21% (13) | 21% |
-| 1 | 19.4% (12) | 19.4% |
-| 2 | 25.8% (16) | 25.8% |
-| 3 | 8.1% (5) | 8.1% |
-| 4 | 4.8% (3) | 4.8% |
-| 6 | 8.1% (5) | 8.1% |
-| 7 | 6.5% (4) | 6.5% |
-| 8 | 3.2% (2) | 3.2% |
-| 10 | 3.2% (2) | 3.2% |
-| domains |
-| fury | 48.4% (30) | 48.4% |
-| mind | 54.8% (34) | 54.8% |
+**39** cards in main deck
+
+**3.3** average energy
+
+**0.7** average power
+
+Energy cost
+
+0
+
+8
+
+1
+
+15
+
+2
+
+4
+
+3
+
+3
+
+4
+
+5
+
+3
+
+6
+
+3
+
+7
+
+1
+
+8
+
+9
+
+2
+
+10
+
+Power cost
+
+No power
+
+20
+
+1 power
+
+14
+
+2 power
+
+3
+
+4 power
+
+2
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) Mind
+
+24
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_fury.png) Fury
+
+15
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+20
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+19

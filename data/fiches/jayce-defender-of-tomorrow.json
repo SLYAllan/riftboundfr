@@ -29,7 +29,7 @@
   "keyCards": [
     {
       "name": "Platewyrm Egg",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -39,12 +39,12 @@
     },
     {
       "name": "Dredge Up",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Garbage Grabber",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 96 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -54,78 +54,83 @@
     },
     {
       "name": "Catalyst of Aeons",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Dazzling Aurora",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Clairvoyance",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Mobilize",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Sabotage",
-      "role": "Standard, 87 % des listes, 2 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Flurry of Blades",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Sabotage",
+      "role": "Standard, 89 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Gutter Palace",
-      "role": "Standard, 82 % des listes, 2 exemplaires",
+      "role": "Standard, 87 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 67 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Deadly Flourish",
-      "role": "Souple, 58 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Sprite Burst",
-      "role": "Souple, 54 % des listes, 2 exemplaires",
+      "role": "Souple, 57 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Promising Future",
-      "role": "Souple, 51 % des listes, 2 exemplaires",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rocket Barrage",
+      "role": "Souple, 30 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "champions": {
     "Jayce, Brilliant Inventor": {
-      "usage": "72 %",
+      "usage": "75 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Sigil of the Storm (96 %)",
-    "Dragon Roost (77 %)",
-    "Forgotten Monument (77 %)"
+    "Sigil of the Storm (97 %)",
+    "Forgotten Monument (80 %)",
+    "Dragon Roost (80 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 88,
-    "coupe10": 11,
+    "joueursClasses": 140,
+    "coupe10": 17,
     "titres": 0,
-    "conversion": "12.5 %",
-    "tournois": 21,
-    "listesPubliees": 78,
+    "conversion": "12.1 %",
+    "tournois": 23,
+    "listesPubliees": 122,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -154,7 +159,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 88 joueurs classés, 21 tournois, dont 78 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 140 joueurs classés, 23 tournois, dont 122 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

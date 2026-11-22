@@ -44,94 +44,99 @@
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Find Your Center",
-      "role": "Standard, 88 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Temporal Breach",
-      "role": "Standard, 88 % des listes, 2 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "noyau": true
     },
     {
       "name": "Ravenbloom Student",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 83 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Time Warp",
-      "role": "Standard, 74 % des listes, 1 exemplaire",
+      "role": "Standard, 86 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "The Empyrean",
-      "role": "Standard, 72 % des listes, 2 exemplaires",
+      "role": "Standard, 77 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Steel Paws",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 76 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Zhonya's Hourglass",
-      "role": "Standard, 71 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Time Warp",
+      "role": "Standard, 75 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Retreat",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Life from Stone",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Not So Fast",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Souple, 56 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Charm",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Not So Fast",
+      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Tasty Faefolk",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Nasus, Ascended": {
-      "usage": "97 %",
+      "usage": "98 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Rockfall Path (84 %)",
-    "Vilemaw's Lair (36 %)",
-    "Ripper's Bay (34 %)",
+    "Rockfall Path (86 %)",
+    "Ripper's Bay (42 %)",
+    "Vilemaw's Lair (37 %)",
     "The Papertree (33 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 63,
-    "coupe10": 3,
+    "joueursClasses": 106,
+    "coupe10": 8,
     "titres": 0,
-    "conversion": "4.8 %",
-    "tournois": 19,
-    "listesPubliees": 58,
+    "conversion": "7.5 %",
+    "tournois": 21,
+    "listesPubliees": 84,
     "bestPlacements": [
       {
         "placement": "7th",
@@ -160,7 +165,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 63 joueurs classés, 19 tournois, dont 58 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 106 joueurs classés, 21 tournois, dont 84 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

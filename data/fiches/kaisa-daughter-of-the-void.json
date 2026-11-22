@@ -30,12 +30,7 @@
     },
     {
       "name": "Temporal Breach",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Bilgewater Tracker",
-      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -44,12 +39,17 @@
       "noyau": true
     },
     {
-      "name": "Bellows Breath",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "name": "Bilgewater Tracker",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Hextech Ray",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "The Empyrean",
       "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
@@ -59,19 +59,9 @@
       "noyau": true
     },
     {
-      "name": "The Empyrean",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "name": "Bellows Breath",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
-    },
-    {
-      "name": "Smoke Screen",
-      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Plundering Poro",
-      "role": "Standard, 89 % des listes, 3 exemplaires",
-      "noyau": false
     },
     {
       "name": "Noxus Hopeful",
@@ -79,23 +69,43 @@
       "noyau": false
     },
     {
+      "name": "Smoke Screen",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Plundering Poro",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
       "name": "Watchful Sentry",
-      "role": "Standard, 76 % des listes, 3 exemplaires",
+      "role": "Standard, 65 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Lost to the Sands",
-      "role": "Souple, 41 % des listes, 1 exemplaire",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Singularity",
+      "role": "Souple, 36 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Brittle Steel",
+      "role": "Souple, 33 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
   "competitiveResults": {
-    "joueursClasses": 337,
-    "coupe10": 36,
+    "joueursClasses": 466,
+    "coupe10": 52,
     "titres": 1,
-    "conversion": "10.7 %",
-    "tournois": 21,
-    "listesPubliees": 288,
+    "conversion": "11.2 %",
+    "tournois": 23,
+    "listesPubliees": 390,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -109,6 +119,11 @@
       },
       {
         "placement": "4th",
+        "player": "Frosty",
+        "tournament": "Riftbound Showdown Orlando (2026-11-01)"
+      },
+      {
+        "placement": "4th",
         "player": "福州橙禄.蓝",
         "tournament": "S5 Fuzhou City Challenge (2026-10-31)"
       },
@@ -116,11 +131,6 @@
         "placement": "4th",
         "player": "LineKa·不堪七",
         "tournament": "S5 Guangzhou City Challenge (2026-11-15)"
-      },
-      {
-        "placement": "4th",
-        "player": "XXT.BING",
-        "tournament": "S5 Shanghai City Challenge (2026-11-01)"
       }
     ]
   },
@@ -134,9 +144,9 @@
   "topBattlefields": [
     "Rockfall Path (99 %)",
     "Frozen Fortress (94 %)",
-    "Void Gate (91 %)"
+    "Void Gate (90 %)"
   ],
-  "dataSource": "Classement complet des tournois : 337 joueurs classés, 21 tournois, dont 288 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 466 joueurs classés, 23 tournois, dont 390 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts et tempo, pioche massive",
   "legendAbility": "Épuisez Kai'Sa en réaction pour ajouter une Puissance, utilisable seulement pour jouer des sorts. Elle rend les contres et les retraits gratuits d'un tour à l'autre.",
   "gameplan": {

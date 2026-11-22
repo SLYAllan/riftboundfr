@@ -6,10 +6,10 @@
 
 "Jayce, Defender of Tomorrow" decklist by Marc P. 121st at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Jayce, Defender of Tomorrow](https://riftdecks.com/legends/constructed/jayce-defender-of-tomorrow) [Body Mind](https://riftdecks.com/riftbound-metagame/constructed/body-mind) [Crаmo](https://riftdecks.com/riftbound-decks?player=Cramo&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Jayce, Defender of Tomorrow](https://riftdecks.com/legends/constructed/jayce-defender-of-tomorrow) [Body Mind](https://riftdecks.com/riftbound-metagame/constructed/body-mind) [Crаmo](https://riftdecks.com/players/cramo) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)Jayce, Defender of Tomorrow**
-**, a deck by [Crаmo](https://riftdecks.com/riftbound-decks?player=Cramo&deck_type=all)**
+**, a deck by [Crаmo](https://riftdecks.com/players/cramo)**
 
 121st at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
@@ -24,6 +24,9 @@ Export
 
 Submit Missing Cards or Errors
 
+This deck contains banned cards.
+
+
 This deck is **incomplete** — it was reported with missing cards. If you know what's missing, you can help complete it below.
 
 
@@ -35,57 +38,57 @@ Submit Missing Cards
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Jayce, Defender of Tomorrow](https://riftdecks.com/cards/details-jayce-defender-of-tomorrow) | $0.11 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Jayce, Defender of Tomorrow](https://riftdecks.com/cards/details-jayce-defender-of-tomorrow) | $0.12 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (3) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Elder Dragon](https://riftdecks.com/cards/details-elder-dragon) | $18.38 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Elder Dragon](https://riftdecks.com/cards/details-elder-dragon) | $19.93 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (10) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Garbage Grabber](https://riftdecks.com/cards/details-garbage-grabber) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Platewyrm Egg](https://riftdecks.com/cards/details-platewyrm-egg) | $0.07 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Gutter Palace](https://riftdecks.com/cards/details-gutter-palace) | $1.09 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Dazzling Aurora](https://riftdecks.com/cards/details-dazzling-aurora) | $23.81 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Garbage Grabber](https://riftdecks.com/cards/details-garbage-grabber) | $0.19 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Platewyrm Egg](https://riftdecks.com/cards/details-platewyrm-egg) | $0.06 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **2** | [Gutter Palace](https://riftdecks.com/cards/details-gutter-palace) | $0.99 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Dazzling Aurora](https://riftdecks.com/cards/details-dazzling-aurora) | $6.79 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (26) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.56 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Flurry of Blades](https://riftdecks.com/cards/details-flurry-of-blades) | $0.13 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Bellows Breath](https://riftdecks.com/cards/details-bellows-breath) | $4.54 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Flurry of Blades](https://riftdecks.com/cards/details-flurry-of-blades) | $0.12 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Repulse](https://riftdecks.com/cards/details-repulse) | $0.42 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $11.79 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Dredge Up](https://riftdecks.com/cards/details-dredge-up) | $0.09 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Mobilize](https://riftdecks.com/cards/details-mobilize) | $0.13 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Temporal Breach](https://riftdecks.com/cards/details-temporal-breach) | $0.66 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Catalyst of Aeons](https://riftdecks.com/cards/details-catalyst-of-aeons) | $0.28 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Rocket Barrage](https://riftdecks.com/cards/details-rocket-barrage) | $0.20 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Avalanche](https://riftdecks.com/cards/details-avalanche) | $0.11 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Promising Future](https://riftdecks.com/cards/details-promising-future) | $0.33 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Sprite Burst](https://riftdecks.com/cards/details-sprite-burst) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Clairvoyance](https://riftdecks.com/cards/details-clairvoyance) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $11.75 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Dredge Up](https://riftdecks.com/cards/details-dredge-up) | $0.05 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Mobilize](https://riftdecks.com/cards/details-mobilize) | $0.12 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Temporal Breach](https://riftdecks.com/cards/details-temporal-breach) | $0.52 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Wages of Pain](https://riftdecks.com/cards/details-wages-of-pain) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Catalyst of Aeons](https://riftdecks.com/cards/details-catalyst-of-aeons) | $0.26 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Rocket Barrage](https://riftdecks.com/cards/details-rocket-barrage) | $0.17 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Avalanche](https://riftdecks.com/cards/details-avalanche) | $0.10 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Promising Future](https://riftdecks.com/cards/details-promising-future) | $0.27 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Sprite Burst](https://riftdecks.com/cards/details-sprite-burst) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Clairvoyance](https://riftdecks.com/cards/details-clairvoyance) | $0.08 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Body Rune](https://riftdecks.com/cards/details-body-rune) | $0.06 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Body Rune](https://riftdecks.com/cards/details-body-rune) | $0.07 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **5** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Strength](https://riftdecks.com/cards/details-decree-of-strength) | $0.25 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Strength](https://riftdecks.com/cards/details-decree-of-strength) | $0.27 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Repulse](https://riftdecks.com/cards/details-repulse) | $0.42 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $11.79 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Unyielding Spirit](https://riftdecks.com/cards/details-unyielding-spirit) | $0.34 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Turn to Dust](https://riftdecks.com/cards/details-turn-to-dust) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Deadly Flourish](https://riftdecks.com/cards/details-deadly-flourish) | $0.32 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Promising Future](https://riftdecks.com/cards/details-promising-future) | $0.33 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Sprite Burst](https://riftdecks.com/cards/details-sprite-burst) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sabotage](https://riftdecks.com/cards/details-sabotage) | $11.75 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Unyielding Spirit](https://riftdecks.com/cards/details-unyielding-spirit) | $0.50 | ![body](https://riftdecks.com/img/symbols/riftbound/rune_body.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Turn to Dust](https://riftdecks.com/cards/details-turn-to-dust) | $0.12 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Deadly Flourish](https://riftdecks.com/cards/details-deadly-flourish) | $0.35 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Promising Future](https://riftdecks.com/cards/details-promising-future) | $0.27 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Sprite Burst](https://riftdecks.com/cards/details-sprite-burst) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$180.07
+![](https://riftdecks.com/img/logos/tcg_player.png)$138.06
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -248,23 +251,94 @@ x1
 
 ## Deck Stats
 
-| types |
-| --- |
-| gear | 16.1% (10) | 16.1% |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 58.1% (36) | 58.1% |
-| unit | 4.8% (3) | 4.8% |
-| energy |
-| 0 | 21% (13) | 21% |
-| 1 | 21% (13) | 21% |
-| 2 | 16.1% (10) | 16.1% |
-| 3 | 6.5% (4) | 6.5% |
-| 4 | 12.9% (8) | 12.9% |
-| 5 | 8.1% (5) | 8.1% |
-| 7 | 4.8% (3) | 4.8% |
-| 9 | 4.8% (3) | 4.8% |
-| 12 | 4.8% (3) | 4.8% |
-| domains |
-| body | 54.8% (34) | 54.8% |
-| mind | 46.8% (29) | 46.8% |
+**39** cards in main deck
+
+**4.1** average energy
+
+**0.7** average power
+
+Energy cost
+
+0
+
+8
+
+1
+
+9
+
+2
+
+4
+
+3
+
+6
+
+4
+
+3
+
+5
+
+6
+
+3
+
+7
+
+8
+
+3
+
+9
+
+10
+
+11
+
+3
+
+12
+
+Power cost
+
+No power
+
+23
+
+1 power
+
+9
+
+2 power
+
+4
+
+4 power
+
+3
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_body.png) Body
+
+21
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) Mind
+
+18
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+26
+
+![](https://riftdecks.com/img/symbols/riftbound/type_gear.png) Gear
+
+10
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+3

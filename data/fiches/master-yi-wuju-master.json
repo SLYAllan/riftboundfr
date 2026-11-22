@@ -11,98 +11,88 @@
   "legendAbility": "À 6 XP, vos unités gagnent +1 Puissance. À 11 XP, elles arrivent prêtes.",
   "keyCards": [
     {
-      "name": "Gemhand Hunter",
-      "role": "Cœur du deck, Unité early, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Wuju Apprentice",
-      "role": "Cœur du deck, Unité early, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, Protection, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Defy",
       "role": "Cœur du deck, Contresort, 100 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Gemhand Hunter",
+      "role": "Cœur du deck, Unité early, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Wuju Apprentice",
+      "role": "Cœur du deck, Unité early, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, Protection, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Punch First",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Discipline",
-      "role": "Cœur du deck, Buff, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, Buff, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Back Off",
-      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
-      "noyau": true
+      "role": "Standard, 88 % des listes, 2 exemplaires",
+      "noyau": false
     },
     {
       "name": "Grim Resolve",
-      "role": "Standard, Staple buff + XP gain, 88 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Voracious Gromp",
-      "role": "Standard, Alternative en allant second, 75 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rampage",
-      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "role": "Standard, Staple buff + XP gain, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Alpha Strike",
-      "role": "Standard, 75 % des listes, 1 exemplaire",
+      "role": "Standard, 76 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Voracious Gromp",
+      "role": "Standard, Alternative en allant second, 71 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Rampage",
+      "role": "Standard, 71 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Scuttle Crab",
-      "role": "Standard, 63 % des listes, 2,5 exemplaires",
+      "role": "Souple, 59 % des listes, 2,5 exemplaires",
       "noyau": false
     },
     {
       "name": "Emperor's Divide",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Souple, 59 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Portable Portal",
-      "role": "Souple, 56 % des listes, 2 exemplaires",
+      "role": "Souple, 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Concentrate",
-      "role": "Souple, XP spell (mid-late seulement), 56 % des listes, 2 exemplaires",
+      "role": "Souple, XP spell (mid-late seulement), 53 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Arachnoid Horror",
-      "role": "Souple, 56 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Kinkou Initiate",
-      "role": "Souple, 38 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Herald of Spring",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Irresistible Faefolk",
-      "role": "Souple, 31 % des listes, 2 exemplaires",
+      "role": "Souple, 35 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
@@ -115,12 +105,12 @@
     "La Légende ne fait rien avant 6 XP"
   ],
   "competitiveResults": {
-    "joueursClasses": 31,
+    "joueursClasses": 57,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "3.2 %",
-    "tournois": 7,
-    "listesPubliees": 16,
+    "conversion": "1.8 %",
+    "tournois": 9,
+    "listesPubliees": 17,
     "bestPlacements": [
       {
         "placement": "28th",
@@ -168,26 +158,26 @@
     ],
     "note": "Paliers : niveau 6 = +1 à TOUTES les unités en permanence ; niveau 11 = tout entre ready ; niveau 16 = 13/13 untargetable. ⚠️ À NE PAS confondre avec le Master Yi mid-range/'proving grounds' (+2 en défense seul) qui, lui, gagne des events (Régional Suzhou, top cut Win-A-Box via Trophy Hunter + Vilemaw + double Zhonya's) — c'est une autre légende."
   },
-  "dataSource": "Classement complet des tournois : 31 joueurs classés, 7 tournois, dont 16 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 57 joueurs classés, 9 tournois, dont 17 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "champions": {
     "Master Yi, Tempered": {
       "usage": "100 %",
       "role": "1 exemplaire en moyenne"
     },
     "Master Yi, Unstoppable": {
-      "usage": "94 %",
+      "usage": "88 %",
       "role": "2 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "50 %",
+      "usage": "47 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Reckoner's Arena (100 %)",
-    "Gardens of Becoming (88 %)",
-    "Targon's Peak (50 %)",
-    "Amateur Recital (44 %)"
+    "Reckoner's Arena (94 %)",
+    "Gardens of Becoming (82 %)",
+    "Targon's Peak (47 %)",
+    "Amateur Recital (41 %)"
   ],
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",

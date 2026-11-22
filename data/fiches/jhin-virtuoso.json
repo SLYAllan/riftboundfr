@@ -10,87 +10,87 @@
   "keyCards": [
     {
       "name": "Curtain Call",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Deadly Flourish",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Sprite Burst",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Consult the Past",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Time Warp",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Thousand-Tailed Watcher",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Noxus Hopeful",
-      "role": "Standard, 85 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Thousand-Tailed Watcher",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Rocket Barrage",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Singularity",
-      "role": "Standard, 85 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Plundering Poro",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Stupefy",
-      "role": "Standard, 77 % des listes, 3 exemplaires",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Unchecked Power",
-      "role": "Standard, 69 % des listes, 1 exemplaire",
+      "name": "Consult the Past",
+      "role": "Standard, 87 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
+      "name": "Plundering Poro",
+      "role": "Standard, 84 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Downstage Dramatics",
-      "role": "Souple, 54 % des listes, 3 exemplaires",
+      "name": "Rocket Barrage",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
-      "name": "Frigid Touch",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Progress Day",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "name": "Singularity",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Falling Star",
-      "role": "Souple, 46 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Unchecked Power",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Souple, 55 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Downstage Dramatics",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Progress Day",
+      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Orb of Regret",
+      "role": "Souple, 45 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -98,23 +98,23 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Jhin, Meticulous Killer": {
-      "usage": "92 %",
+      "usage": "97 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Frozen Fortress (85 %)",
-    "Rockfall Path (85 %)",
-    "Sigil of the Storm (62 %)",
-    "Void Gate (31 %)"
+    "Frozen Fortress (90 %)",
+    "Rockfall Path (81 %)",
+    "Sigil of the Storm (48 %)",
+    "Void Gate (48 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 19,
+    "joueursClasses": 41,
     "coupe10": 1,
     "titres": 0,
-    "conversion": "5.3 %",
-    "tournois": 3,
-    "listesPubliees": 13,
+    "conversion": "2.4 %",
+    "tournois": 5,
+    "listesPubliees": 31,
     "bestPlacements": [
       {
         "placement": "27th",
@@ -127,6 +127,11 @@
         "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       },
       {
+        "placement": "77th",
+        "player": "VanisHx",
+        "tournament": "Riftbound Showdown Orlando (2026-11-01)"
+      },
+      {
         "placement": "81th",
         "player": "Jonluca",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
@@ -135,15 +140,10 @@
         "placement": "115th",
         "player": "Mayo",
         "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
-      },
-      {
-        "placement": "143th",
-        "player": "plum",
-        "tournament": "Riftbound Showdown Melbourne (2026-10-23)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 19 joueurs classés, 3 tournois, dont 13 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 41 joueurs classés, 5 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Sorts à 4 énergie et plus",
   "legendAbility": "Quand vous jouez un sort en dépensant 4 énergie ou plus, vous pouvez le bannir sous Jhin. Au quatrième sort banni, ils retournent tous dans votre défausse, vous canalisez 4 runes et piochez une carte.",
   "gameplan": {

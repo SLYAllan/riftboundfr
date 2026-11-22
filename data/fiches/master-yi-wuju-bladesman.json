@@ -18,7 +18,7 @@
   "keyCards": [
     {
       "name": "Defy",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
@@ -27,13 +27,13 @@
       "noyau": true
     },
     {
-      "name": "Zhonya's Hourglass",
-      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "name": "Punch First",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Punch First",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Zhonya's Hourglass",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -47,23 +47,23 @@
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "First Mate",
       "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
+      "name": "Rampage",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pit Rookie",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
+      "role": "Standard, 88 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -73,22 +73,22 @@
     },
     {
       "name": "Ruin Runner",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "En Garde",
-      "role": "Standard, 70 % des listes, 2 exemplaires",
+      "role": "Standard, 68 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Onslaught",
-      "role": "Standard, 65 % des listes, 1 exemplaire",
+      "role": "Standard, 63 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tomb-Raider Barbara",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -104,12 +104,12 @@
     "Deux titres sur 21 tournois, mais une conversion sous la moyenne du format (8,6 %) : 174 joueurs classés ne suffisent pas à trancher"
   ],
   "competitiveResults": {
-    "joueursClasses": 174,
-    "coupe10": 15,
+    "joueursClasses": 204,
+    "coupe10": 17,
     "titres": 2,
-    "conversion": "8.6 %",
-    "tournois": 21,
-    "listesPubliees": 151,
+    "conversion": "8.3 %",
+    "tournois": 23,
+    "listesPubliees": 177,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -162,16 +162,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "91 %",
+      "usage": "92 %",
       "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Emperor's Dais (77 %)",
     "Star Spring (77 %)",
-    "Seat of Power (72 %)"
+    "Seat of Power (73 %)"
   ],
-  "dataSource": "Classement complet des tournois : 174 joueurs classés, 21 tournois, dont 151 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 204 joueurs classés, 23 tournois, dont 177 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

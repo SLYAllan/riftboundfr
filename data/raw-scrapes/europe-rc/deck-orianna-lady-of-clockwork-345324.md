@@ -6,10 +6,10 @@
 
 "Orianna, Lady of Clockwork" decklist by Tommaso c. 165th at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Orianna, Lady of Clockwork](https://riftdecks.com/legends/constructed/orianna-lady-of-clockwork) [Calm Mind](https://riftdecks.com/riftbound-metagame/constructed/calm-mind) [ECL KаioKаmpа](https://riftdecks.com/riftbound-decks?player=ECL+KaioKampa&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Orianna, Lady of Clockwork](https://riftdecks.com/legends/constructed/orianna-lady-of-clockwork) [Calm Mind](https://riftdecks.com/riftbound-metagame/constructed/calm-mind) [ECL KаioKаmpа](https://riftdecks.com/players/ecl-kaiokampa) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png)Orianna, Lady of Clockwork**
-**, a deck by [ECL KаioKаmpа](https://riftdecks.com/riftbound-decks?player=ECL+KaioKampa&deck_type=all)**
+**, a deck by [ECL KаioKаmpа](https://riftdecks.com/players/ecl-kaiokampa)**
 
 165th at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
@@ -24,6 +24,9 @@ Export
 
 Submit Missing Cards or Errors
 
+This deck contains banned cards.
+
+
 This deck is **incomplete** — it was reported with missing cards. If you know what's missing, you can help complete it below.
 
 
@@ -35,31 +38,31 @@ Submit Missing Cards
 |     |     |     |     |     |     |
 | --- | --- | --- | --- | --- | --- |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_legend.png)   legend (1) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Orianna, Lady of Clockwork](https://riftdecks.com/cards/details-orianna-lady-of-clockwork) | $0.09 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Orianna, Lady of Clockwork](https://riftdecks.com/cards/details-orianna-lady-of-clockwork) | $0.07 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_champion.png)   champion (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (15) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Apprentice Smith](https://riftdecks.com/cards/details-apprentice-smith) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Apprentice Smith](https://riftdecks.com/cards/details-apprentice-smith) | $0.08 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Patched Porobot](https://riftdecks.com/cards/details-patched-porobot) | $0.18 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Orianna, Exquisite](https://riftdecks.com/cards/details-orianna-exquisite) | $0.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $36.68 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $23.14 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **3** | [Orianna, Exquisite](https://riftdecks.com/cards/details-orianna-exquisite) | $0.22 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $36.72 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Thousand-Tailed Watcher](https://riftdecks.com/cards/details-thousand-tailed-watcher) | $24.99 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (17) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Cloth Armor](https://riftdecks.com/cards/details-cloth-armor) | $0.08 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.70 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $16.77 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.39 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Hunting Blind](https://riftdecks.com/cards/details-hunting-blind) | $0.98 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [The Ball](https://riftdecks.com/cards/details-the-ball) | $6.86 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Cloth Armor](https://riftdecks.com/cards/details-cloth-armor) | $0.14 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Mask of Foresight](https://riftdecks.com/cards/details-mask-of-foresight) | $0.94 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $1.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.45 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Hunting Blind](https://riftdecks.com/cards/details-hunting-blind) | $0.93 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [The Ball](https://riftdecks.com/cards/details-the-ball) | $4.15 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (7) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Defy](https://riftdecks.com/cards/details-defy) | $2.81 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Not So Fast](https://riftdecks.com/cards/details-not-so-fast) | $1.38 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Defy](https://riftdecks.com/cards/details-defy) | $3.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Not So Fast](https://riftdecks.com/cards/details-not-so-fast) | $1.65 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Back Off](https://riftdecks.com/cards/details-back-off) | $0.28 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Eclipse](https://riftdecks.com/cards/details-eclipse) | $0.15 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Eclipse](https://riftdecks.com/cards/details-eclipse) | $0.13 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
 | _Missing / Not available_ |
@@ -69,16 +72,16 @@ Submit Missing Cards
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **4** | [Mind Rune](https://riftdecks.com/cards/details-mind-rune) | $0.10 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.38 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Hush](https://riftdecks.com/cards/details-hush) | $0.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Tomb-Raider Barbara](https://riftdecks.com/cards/details-tomb-raider-barbara) | $0.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Vilemaw](https://riftdecks.com/cards/details-vilemaw) | $12.90 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.49 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Insight](https://riftdecks.com/cards/details-decree-of-insight) | $0.47 | ![mind](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Hush](https://riftdecks.com/cards/details-hush) | $0.27 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Tomb-Raider Barbara](https://riftdecks.com/cards/details-tomb-raider-barbara) | $0.14 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Vilemaw](https://riftdecks.com/cards/details-vilemaw) | $11.65 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$288.47
+![](https://riftdecks.com/img/logos/tcg_player.png)$246.84
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -213,22 +216,76 @@ x1
 
 ## Deck Stats
 
-| types |
-| --- |
-| gear | 27.4% (17) | 27.4% |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 21% (13) | 21% |
-| unit | 30.6% (19) | 30.6% |
-| energy |
-| 0 | 21% (13) | 21% |
-| 1 | 17.7% (11) | 17.7% |
-| 2 | 21% (13) | 21% |
-| 3 | 14.5% (9) | 14.5% |
-| 4 | 9.7% (6) | 9.7% |
-| 5 | 4.8% (3) | 4.8% |
-| 7 | 9.7% (6) | 9.7% |
-| 8 | 1.6% (1) | 1.6% |
-| domains |
-| calm | 74.2% (46) | 74.2% |
-| mind | 32.3% (20) | 32.3% |
+**39** cards in main deck
+
+**3.3** average energy
+
+**0.6** average power
+
+Energy cost
+
+0
+
+5
+
+1
+
+13
+
+2
+
+9
+
+3
+
+3
+
+4
+
+3
+
+5
+
+6
+
+6
+
+7
+
+Power cost
+
+No power
+
+23
+
+1 power
+
+10
+
+2 power
+
+6
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) Calm
+
+29
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_mind.png) Mind
+
+13
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_gear.png) Gear
+
+17
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+15
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+7

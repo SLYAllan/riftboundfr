@@ -10,42 +10,37 @@
   "keyCards": [
     {
       "name": "Edge of Night",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Rampage",
-      "role": "Standard, 83 % des listes, 2 exemplaires",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 81 % des listes, 2 exemplaires",
+      "role": "Standard, 82 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Punch First",
-      "role": "Standard, 77 % des listes, 2 exemplaires",
+      "role": "Standard, 79 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Switcheroo",
-      "role": "Standard, 77 % des listes, 1,5 exemplaire",
+      "role": "Standard, 78 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Gutter Guardian",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 77 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Hold 'Em",
-      "role": "Standard, 69 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Bedeviling Stranger",
-      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "role": "Standard, 74 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -55,12 +50,17 @@
     },
     {
       "name": "Boots of Swiftness",
-      "role": "Souple, 57 % des listes, 2 exemplaires",
+      "role": "Standard, 63 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Bedeviling Stranger",
+      "role": "Standard, 60 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "The Good Stuff",
-      "role": "Souple, 47 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -85,35 +85,34 @@
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "77 %",
+      "usage": "80 %",
       "role": "2 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "48 %",
-      "role": "2 exemplaires en moyenne"
-    },
-    "Ezreal, Prodigy": {
-      "usage": "43 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
     },
     "K'Sante, Courageous": {
-      "usage": "41 %",
+      "usage": "46 %",
+      "role": "2 exemplaires en moyenne"
+    },
+    "Ezreal, Prodigy": {
+      "usage": "37 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
     "Bandle Scouts' Academy (94 %)",
-    "Packed Amphitheater (49 %)",
-    "Rakelstake (36 %)",
-    "Startipped Peak (31 %)"
+    "Packed Amphitheater (55 %)",
+    "Startipped Peak (34 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 97,
-    "coupe10": 4,
+    "joueursClasses": 179,
+    "coupe10": 9,
     "titres": 0,
-    "conversion": "4.1 %",
-    "tournois": 20,
-    "listesPubliees": 86,
+    "conversion": "5 %",
+    "tournois": 22,
+    "listesPubliees": 145,
     "bestPlacements": [
       {
         "placement": "6th",
@@ -142,7 +141,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 97 joueurs classés, 20 tournois, dont 86 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 179 joueurs classés, 22 tournois, dont 145 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Cartes cachées et pioche",
   "legendAbility": "Une fois par tour, quand vous jouez une carte depuis face cachée, piochez une carte. Si ce n'est pas votre tour, défaussez-en une ensuite.",
   "gameplan": {

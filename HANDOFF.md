@@ -1,5 +1,54 @@
 # HANDOFF — état des lieux
 
+## 22 novembre 2026 — hexgate 330 (Regional Open S5 de Ningbo), Orlando, routine
+
+**En local seulement.** Rien n'est seedé en prod, rien n'est déployé.
+
+**Relevé hexgate** (`/api/tournaments?season=all`, 210 tournois) : 319 à 330 sont neufs.
+- **330 entre** : Regional Open S5 de Ningbo, 21 novembre, 1 280 joueurs. 1 280 listes
+  publiées, 1 258 relevées (22 incomplètes à la source), 1 204 converties (54 Champion
+  ambigu), aucun Champion sans titre neuf. `宁波` ajouté à `VILLES` de
+  `parse-hexgate.mts`. Vainqueur Kennen, comme l'annonce hexgate.
+- 329 (JHM Cup de Ningbo, 212 joueurs) est une épreuve de boutique (`rune_competition`) : dehors.
+- **319 à 328 : hexgate relaie après coup des tournois de Vendetta hors de Chine** (sources
+  topdeck et riftwatch). Barcelone, Singapour et Los Angeles (326 à 328) sont déjà en base
+  par riftdecks. Les autres ne sont pas importés, **à trancher par Allan** : CCS Showdown de
+  Houston du 19 septembre (322, 603 joueurs, absent de la base), CCS Qualifier #6 de Stone
+  Mountain (319, 206), Pro-Play Summit d'Orlando (320, 78), CCS Sunday de Houston (321, 96),
+  Valley Forge (325, 67), Convergence #2 et #3 en ligne (324, 323 ; la règle des tournois en
+  ligne n'est toujours pas posée).
+
+**Best-of de Ningbo : 45**, `mark-bestof-tournois.mts` avec `--sauf` pour Mordekaiser,
+Master Yi, Wuju Master et Zed, choix d'Allan du 22 : leur n°1 (132e, 269e, 294e) n'a pas
+de liste convertie. Leurs listes restent comptées partout ailleurs.
+
+**Orlando et RC Europe, travail du 19 novembre jamais committé** : le Showdown d'Orlando
+(43 listes, 526 classés) et deux listes du RC Europe étaient seedés en local, la routine
+lancée, mais rien n'était dans Git ni dans les deux docs. Ils entrent dans ce commit ;
+le détail est dans `data/raw-scrapes/riftbound-gg-2026-11-19/RELEVE.md`.
+
+Validateur : 33 927 vérifiées, 0 MISMATCH. Seed local : 1 204 créées (35 367 decks).
+`maj:stats` sortie 0 : Radiance 5 135 joueurs classés sur 23 tournois, cumul 51 114 sur
+161. 86 commentaires de tier list réécrits (36 Radiance, 50 Globale), « les cinq tier
+lists collent aux chiffres ». `META-KNOWLEDGE` v21, `DECKBUILDING-RULES` v20 (le tableau
+des paires de domaines datait du 10 novembre, il est refait).
+
+**Lettres inchangées. Lectures pour Allan** (Radiance) : LeBlanc en A à 8,5 %, sous la
+moyenne ; Kha'Zix en C à 10,9 % (troisième à Orlando, quatrième à Ningbo) ; Orianna et
+Master Yi, Wuju Master en C avec un écart établi en dessous ; Vi en B à 5,1 % ; Pyke en D
+à 7,0 % ; Poppy (36), Ornn (30), Ambessa (30), Renekton (23) et Ezreal (18) passent le
+seuil de 15 joueurs sans être au tableau.
+
+**Piège** : le `DATABASE_URL` du terminal vise la prod. Tout script de base passe par
+`env -u DATABASE_URL` (le `--env-file=.env` ne remplace pas une variable déjà posée).
+
+**Pas fait** :
+- La prose des fiches et des guides (`data/fiches-prose.json`, `src/lib/legend-guides.ts`)
+  n'est pas relue contre les chiffres neufs.
+- Prod : seed de 330, d'Orlando et des deux listes du RC Europe, best-of de Ningbo, tier
+  lists (`npx tsx scripts/prod-tunnel.mts scripts/seed-tier-lists.ts`). Puis le Deploy.
+- Un article best-of pour Ningbo, comme celui de Chengdu (`seed-chengdu-bestof.mts`).
+
 ## 21 novembre 2026 — aperçus de lien (Discord, X) : textes et images
 
 **Poussé sur `main` (`251d71529`), pas déployé.** Rien n'est en ligne tant qu'Allan n'a

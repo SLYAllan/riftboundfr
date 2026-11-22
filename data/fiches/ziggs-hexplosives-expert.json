@@ -14,73 +14,73 @@
       "noyau": true
     },
     {
-      "name": "Detonate",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "name": "Shimmering Swimmer",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Shimmering Swimmer",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "name": "Detonate",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Falling Star",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Pack of Wonders",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "Treasure Trove",
-      "role": "Standard, 87 % des listes, 3 exemplaires",
-      "noyau": false
+      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
       "name": "The List",
-      "role": "Standard, 84 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Bilgewater Tracker",
+      "role": "Standard, 88 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Star-Crossed",
-      "role": "Standard, 84 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Bilgewater Tracker",
-      "role": "Standard, 81 % des listes, 3 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Runeblade Anvil",
-      "role": "Standard, 74 % des listes, 3 exemplaires",
+      "role": "Standard, 85 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Bewitching Spirit",
-      "role": "Standard, 71 % des listes, 3 exemplaires",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
-      "name": "Amateur Demolitionist",
-      "role": "Souple, 55 % des listes, 3 exemplaires",
+      "name": "Runeblade Anvil",
+      "role": "Standard, 79 % des listes, 3 exemplaires",
       "noyau": false
     },
     {
       "name": "Piercing Light",
-      "role": "Souple, 55 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Acceptable Losses",
-      "role": "Souple, 45 % des listes, 2 exemplaires",
+      "role": "Standard, 67 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Void Seeker",
-      "role": "Souple, 35 % des listes, 2 exemplaires",
+      "role": "Souple, 48 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Amateur Demolitionist",
+      "role": "Souple, 38 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Acceptable Losses",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -88,30 +88,30 @@
   "cartesDepuisBan": "2026-09-15",
   "champions": {
     "Ziggs, Explosive": {
-      "usage": "97 %",
+      "usage": "98 %",
       "role": "1 exemplaire en moyenne"
     },
     "Fizz, Trickster": {
-      "usage": "90 %",
-      "role": "2,5 exemplaires en moyenne"
+      "usage": "92 %",
+      "role": "3 exemplaires en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "74 %",
+      "usage": "77 %",
       "role": "2 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Void Gate (81 %)",
-    "Rockfall Path (61 %)",
-    "Sigil of the Storm (58 %)"
+    "Void Gate (85 %)",
+    "Rockfall Path (71 %)",
+    "Sigil of the Storm (69 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 37,
-    "coupe10": 0,
+    "joueursClasses": 65,
+    "coupe10": 1,
     "titres": 0,
-    "conversion": "0 %",
-    "tournois": 16,
-    "listesPubliees": 31,
+    "conversion": "1.5 %",
+    "tournois": 18,
+    "listesPubliees": 48,
     "bestPlacements": [
       {
         "placement": "25th",
@@ -140,7 +140,7 @@
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 37 joueurs classés, 16 tournois, dont 31 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 65 joueurs classés, 18 tournois, dont 48 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "archetype": "Équipements sacrifiés et Bombes",
   "legendAbility": "Pour une énergie et une Puissance, épuisez Ziggs : posez un jeton d'équipement Bombe sur un champ de bataille.",
   "gameplan": {

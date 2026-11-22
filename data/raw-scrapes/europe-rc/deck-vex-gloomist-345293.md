@@ -6,10 +6,10 @@
 
 "Vex, Gloomist" decklist by Vince T. 210th at Riftbound Regional Championship: Europe - Final Standings by UVS Games Organized Play on 2026-11-08
 
-[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Vex, Gloomist](https://riftdecks.com/legends/constructed/vex-gloomist) [Calm Chaos](https://riftdecks.com/riftbound-metagame/constructed/calm-chaos) [Uncle Iroh](https://riftdecks.com/riftbound-decks?player=Uncle+Iroh&deck_type=all) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
+[![](https://riftdecks.com/img/symbols/riftbound/type_legend.png)   Vex, Gloomist](https://riftdecks.com/legends/constructed/vex-gloomist) [Calm Chaos](https://riftdecks.com/riftbound-metagame/constructed/calm-chaos) [Uncle Iroh](https://riftdecks.com/players/uncle-iroh) [Riftbound Regional Championship: Europe - Final Standings](https://riftdecks.com/riftbound-tournaments/riftbound-regional-championship-europe-final-standings-tournament-decks-18668) [Riftbound Decks](https://riftdecks.com/)
 
 **![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png)![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png)Vex, Gloomist**
-**, a deck by [Uncle Iroh](https://riftdecks.com/riftbound-decks?player=Uncle+Iroh&deck_type=all)**
+**, a deck by [Uncle Iroh](https://riftdecks.com/players/uncle-iroh)**
 
 210th at
 Riftbound Regional Championship: Europe - Final Standings 315 players on
@@ -23,6 +23,9 @@ Export
 
 
 Submit Missing Cards or Errors
+
+This deck contains banned cards.
+
 
 This deck is **incomplete** — it was reported with missing cards. If you know what's missing, you can help complete it below.
 
@@ -42,52 +45,52 @@ Submit Missing Cards
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_unit.png)   unit (21) |  |
 | ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Steel Paws](https://riftdecks.com/cards/details-steel-paws) | $0.25 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bedeviling Stranger](https://riftdecks.com/cards/details-bedeviling-stranger) | $0.72 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Evelynn, Entrancing](https://riftdecks.com/cards/details-evelynn-entrancing) | $0.91 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Mutated Mouser](https://riftdecks.com/cards/details-mutated-mouser) | $0.16 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Gutter Guardian](https://riftdecks.com/cards/details-gutter-guardian) | $0.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Tornado Warrior](https://riftdecks.com/cards/details-tornado-warrior) | $0.07 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Ember Monk](https://riftdecks.com/cards/details-ember-monk) | $0.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kha'Zix, Mutating Horror](https://riftdecks.com/cards/details-khazix-mutating-horror) | $0.23 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Tomb-Raider Barbara](https://riftdecks.com/cards/details-tomb-raider-barbara) | $0.13 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Blitzcrank, Impassive](https://riftdecks.com/cards/details-blitzcrank-impassive) | $3.37 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $36.68 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Bedeviling Stranger](https://riftdecks.com/cards/details-bedeviling-stranger) | $0.76 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Evelynn, Entrancing](https://riftdecks.com/cards/details-evelynn-entrancing) | $0.92 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Mutated Mouser](https://riftdecks.com/cards/details-mutated-mouser) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Gutter Guardian](https://riftdecks.com/cards/details-gutter-guardian) | $0.15 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **3** | [Tornado Warrior](https://riftdecks.com/cards/details-tornado-warrior) | $0.09 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Ember Monk](https://riftdecks.com/cards/details-ember-monk) | $0.17 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kha'Zix, Mutating Horror](https://riftdecks.com/cards/details-khazix-mutating-horror) | $0.26 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **1** | [Tomb-Raider Barbara](https://riftdecks.com/cards/details-tomb-raider-barbara) | $0.14 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Blitzcrank, Impassive](https://riftdecks.com/cards/details-blitzcrank-impassive) | $3.07 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **3** | [Astral Heron](https://riftdecks.com/cards/details-astral-heron) | $36.72 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_gear.png)   gear (9) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Seal of Discord](https://riftdecks.com/cards/details-seal-of-discord) | $37.36 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $16.77 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Boots of Swiftness](https://riftdecks.com/cards/details-boots-of-swiftness) | $0.62 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $0.54 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.39 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **1** | [Seal of Discord](https://riftdecks.com/cards/details-seal-of-discord) | $28.47 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Zhonya's Hourglass](https://riftdecks.com/cards/details-zhonyas-hourglass) | $1.26 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **3** | [Boots of Swiftness](https://riftdecks.com/cards/details-boots-of-swiftness) | $0.75 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $1.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Sterak's Gage](https://riftdecks.com/cards/details-steraks-gage) | $0.45 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_spell.png)   spell (9) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Defy](https://riftdecks.com/cards/details-defy) | $2.81 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Life from Stone](https://riftdecks.com/cards/details-life-from-stone) | $0.12 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Discipline](https://riftdecks.com/cards/details-discipline) | $1.14 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Defy](https://riftdecks.com/cards/details-defy) | $3.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Life from Stone](https://riftdecks.com/cards/details-life-from-stone) | $0.11 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![uncommon](https://riftdecks.com/img/symbols/riftbound/rarity_uncommon.png) | **2** | [Discipline](https://riftdecks.com/cards/details-discipline) | $1.51 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
 | ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Rebuke](https://riftdecks.com/cards/details-rebuke) | $0.28 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $5.58 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **3** | [Switcheroo](https://riftdecks.com/cards/details-switcheroo) | $5.20 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_battlefields.png)   battlefields (0) |  |
 | _Missing / Not available_ |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_runes.png)   runes (12) |  |
 | ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **5** | [Calm Rune](https://riftdecks.com/cards/details-calm-rune) | $0.10 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Chaos Rune](https://riftdecks.com/cards/details-chaos-rune) | $0.09 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![showcase](https://riftdecks.com/img/symbols/riftbound/rarity_showcase.png) | **7** | [Chaos Rune](https://riftdecks.com/cards/details-chaos-rune) | $0.08 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 | ![](https://riftdecks.com/img/symbols/riftbound/group_sideboard.png)   sideboard (10) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.40 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Defy](https://riftdecks.com/cards/details-defy) | $2.81 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $0.54 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ravenbloom Prefect](https://riftdecks.com/cards/details-ravenbloom-prefect) | $0.17 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Star-Crossed](https://riftdecks.com/cards/details-star-crossed) | $0.25 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Hunting Blind](https://riftdecks.com/cards/details-hunting-blind) | $0.98 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
-| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kha'Zix, Mutating Horror](https://riftdecks.com/cards/details-khazix-mutating-horror) | $0.23 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
-| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Baron Nashor](https://riftdecks.com/cards/details-baron-nashor) | $33.93 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **2** | [Decree of Focus](https://riftdecks.com/cards/details-decree-of-focus) | $0.49 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Defy](https://riftdecks.com/cards/details-defy) | $3.29 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Edge of Night](https://riftdecks.com/cards/details-edge-of-night) | $1.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **1** | [Ravenbloom Prefect](https://riftdecks.com/cards/details-ravenbloom-prefect) | $0.15 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![common](https://riftdecks.com/img/symbols/riftbound/rarity_common.png) | **2** | [Star-Crossed](https://riftdecks.com/cards/details-star-crossed) | $0.26 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Hunting Blind](https://riftdecks.com/cards/details-hunting-blind) | $0.93 | ![calm](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) |  |
+| ![rare](https://riftdecks.com/img/symbols/riftbound/rarity_rare.png) | **1** | [Kha'Zix, Mutating Horror](https://riftdecks.com/cards/details-khazix-mutating-horror) | $0.26 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
+| ![epic](https://riftdecks.com/img/symbols/riftbound/rarity_epic.png) | **1** | [Baron Nashor](https://riftdecks.com/cards/details-baron-nashor) | $32.13 | ![chaos](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) |  |
 |  |  |
 
 Buy this deck
 
-![](https://riftdecks.com/img/logos/tcg_player.png)$272.37
+![](https://riftdecks.com/img/logos/tcg_player.png)$226.1
 @TCGPlayer
 
 Affiliate link disclaimer
@@ -258,22 +261,78 @@ x1
 
 ## Deck Stats
 
-| types |
-| --- |
-| gear | 17.7% (11) | 17.7% |
-| legend | 1.6% (1) | 1.6% |
-| rune | 19.4% (12) | 19.4% |
-| spell | 22.6% (14) | 22.6% |
-| unit | 38.7% (24) | 38.7% |
-| energy |
-| 0 | 22.6% (14) | 22.6% |
-| 1 | 12.9% (8) | 12.9% |
-| 2 | 25.8% (16) | 25.8% |
-| 3 | 21% (13) | 21% |
-| 4 | 9.7% (6) | 9.7% |
-| 5 | 1.6% (1) | 1.6% |
-| 7 | 4.8% (3) | 4.8% |
-| 10 | 1.6% (1) | 1.6% |
-| domains |
-| calm | 45.2% (28) | 45.2% |
-| chaos | 56.5% (35) | 56.5% |
+**39** cards in main deck
+
+**2.7** average energy
+
+**0.4** average power
+
+Energy cost
+
+1
+
+0
+
+5
+
+1
+
+16
+
+2
+
+9
+
+3
+
+4
+
+4
+
+1
+
+5
+
+6
+
+3
+
+7
+
+Power cost
+
+No power
+
+29
+
+1 power
+
+4
+
+2 power
+
+6
+
+Domains
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_chaos.png) Chaos
+
+21
+
+![](https://riftdecks.com/img/symbols/riftbound/rune_calm.png) Calm
+
+18
+
+Card types
+
+![](https://riftdecks.com/img/symbols/riftbound/type_unit.png) Unit
+
+21
+
+![](https://riftdecks.com/img/symbols/riftbound/type_gear.png) Gear
+
+9
+
+![](https://riftdecks.com/img/symbols/riftbound/type_spell.png) Spell
+
+9

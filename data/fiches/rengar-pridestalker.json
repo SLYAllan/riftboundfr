@@ -17,11 +17,6 @@
   },
   "keyCards": [
     {
-      "name": "Inferna",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
       "name": "Pit Rookie",
       "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
       "noyau": true
@@ -37,27 +32,27 @@
       "noyau": true
     },
     {
+      "name": "Inferna",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
       "name": "Irresistible Faefolk",
       "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Grim Apothecary",
-      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "First Mate",
-      "role": "Cœur du deck, 99 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Noxus Hopeful",
-      "role": "Cœur du deck, 97 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 98 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Rampage",
+      "role": "Cœur du deck, 98 % des listes, 2 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "First Mate",
       "role": "Cœur du deck, 97 % des listes, 2 exemplaires",
       "noyau": true
     },
@@ -67,18 +62,28 @@
       "noyau": true
     },
     {
-      "name": "Sabotage",
-      "role": "Standard, 89 % des listes, 2 exemplaires",
-      "noyau": false
+      "name": "Noxus Hopeful",
+      "role": "Cœur du deck, 96 % des listes, 3 exemplaires",
+      "noyau": true
     },
     {
-      "name": "Ferrous Forerunner",
-      "role": "Standard, 76 % des listes, 1 exemplaire",
+      "name": "Sabotage",
+      "role": "Standard, 86 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Elnuk Herd",
-      "role": "Standard, 73 % des listes, 2 exemplaires",
+      "role": "Standard, 75 % des listes, 2 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Ferrous Forerunner",
+      "role": "Standard, 70 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Brynhir Thundersong",
+      "role": "Souple, 35 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -92,12 +97,12 @@
     "Le deck veut jouer beaucoup d'unités par tour : une main pauvre en unités le ralentit"
   ],
   "competitiveResults": {
-    "joueursClasses": 92,
-    "coupe10": 10,
+    "joueursClasses": 151,
+    "coupe10": 12,
     "titres": 0,
-    "conversion": "10.9 %",
-    "tournois": 20,
-    "listesPubliees": 74,
+    "conversion": "7.9 %",
+    "tournois": 22,
+    "listesPubliees": 110,
     "bestPlacements": [
       {
         "placement": "3rd",
@@ -162,16 +167,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Darius, Trifarian": {
-      "usage": "47 %",
+      "usage": "48 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Emperor's Dais (95 %)",
     "Star Spring (95 %)",
-    "Seat of Power (91 %)"
+    "Emperor's Dais (91 %)",
+    "Seat of Power (90 %)"
   ],
-  "dataSource": "Classement complet des tournois : 92 joueurs classés, 20 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 151 joueurs classés, 22 tournois, dont 110 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

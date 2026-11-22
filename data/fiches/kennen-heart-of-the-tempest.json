@@ -36,7 +36,12 @@
     },
     {
       "name": "Trifarian Captain",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 99 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Last Rites",
+      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -46,27 +51,22 @@
     },
     {
       "name": "Rhasa the Sunderer",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Last Rites",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
-      "noyau": true
-    },
-    {
-      "name": "Ride The Wind",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Star-Crossed",
-      "role": "Cœur du deck, 95 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Seal of Discord",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
+      "noyau": true
+    },
+    {
+      "name": "Ride The Wind",
+      "role": "Cœur du deck, 94 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
@@ -76,63 +76,58 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
       "name": "Bedeviling Stranger",
-      "role": "Standard, 80 % des listes, 2 exemplaires",
+      "role": "Standard, 84 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "An Offer You Can't Refuse",
-      "role": "Standard, 66 % des listes, 1 exemplaire",
+      "role": "Standard, 71 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tideturner",
-      "role": "Standard, 63 % des listes, 1 exemplaire",
+      "role": "Standard, 68 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Reckless Innovator",
-      "role": "Standard, 62 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Flash",
-      "role": "Souple, 51 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Hard Bargain",
-      "role": "Souple, 48 % des listes, 1 exemplaire",
+      "role": "Standard, 66 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Edge of Night",
-      "role": "Souple, 45 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Hard Bargain",
+      "role": "Souple, 55 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 44 % des listes, 1 exemplaire",
+      "role": "Souple, 53 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Flash",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Tail-Cloaked Matriarch",
-      "role": "Souple, 37 % des listes, 2 exemplaires",
-      "noyau": false
-    },
-    {
-      "name": "Tornado Warrior",
       "role": "Souple, 30 % des listes, 2 exemplaires",
       "noyau": false
     }
   ],
   "champions": {
     "Nocturne, Horrifying": {
-      "usage": "98 %",
+      "usage": "97 %",
       "role": "3 exemplaires en moyenne"
     },
     "Fizz, Trickster": {
@@ -142,23 +137,20 @@
     "Kennen, Storm of Shuriken": {
       "usage": "96 %",
       "role": "1 exemplaire en moyenne"
-    },
-    "Ezreal, Prodigy": {
-      "usage": "32 %",
-      "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
-    "Minefield (95 %)",
-    "Zaun Warrens (95 %)"
+    "Minefield (94 %)",
+    "Zaun Warrens (94 %)",
+    "Veiled Temple (31 %)"
   ],
   "competitiveResults": {
-    "joueursClasses": 319,
-    "coupe10": 44,
-    "titres": 4,
-    "conversion": "13.8 %",
-    "tournois": 21,
-    "listesPubliees": 273,
+    "joueursClasses": 479,
+    "coupe10": 79,
+    "titres": 5,
+    "conversion": "16.5 %",
+    "tournois": 23,
+    "listesPubliees": 390,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -177,17 +169,17 @@
       },
       {
         "placement": "1st",
-        "player": "HBG.孜然",
-        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
+        "player": "沈阳哇谷.山青知",
+        "tournament": "S5 Ningbo Regional Open (2026-11-21)"
       },
       {
-        "placement": "2nd",
-        "player": "猫岛巡礼 赤木柿子",
-        "tournament": "S5 Hangzhou City Challenge (2026-11-07)"
+        "placement": "1st",
+        "player": "HBG.孜然",
+        "tournament": "S5 Shanghai City Challenge (2026-11-15)"
       }
     ]
   },
-  "dataSource": "Classement complet des tournois : 319 joueurs classés, 21 tournois, dont 273 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 479 joueurs classés, 23 tournois, dont 390 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15"
 }

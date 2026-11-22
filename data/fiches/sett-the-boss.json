@@ -22,7 +22,7 @@
     },
     {
       "name": "Call to Glory",
-      "role": "Cœur du deck, 100 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 100 % des listes, 2,5 exemplaires",
       "noyau": true
     },
     {
@@ -41,14 +41,14 @@
       "noyau": true
     },
     {
-      "name": "Pit Rookie",
-      "role": "Cœur du deck, 92 % des listes, 3 exemplaires",
+      "name": "Rampage",
+      "role": "Cœur du deck, 93 % des listes, 2 exemplaires",
       "noyau": true
     },
     {
-      "name": "Rampage",
-      "role": "Cœur du deck, 92 % des listes, 2 exemplaires",
-      "noyau": true
+      "name": "Pit Rookie",
+      "role": "Standard, 89 % des listes, 3 exemplaires",
+      "noyau": false
     },
     {
       "name": "Trifarian Captain",
@@ -57,12 +57,12 @@
     },
     {
       "name": "Sacrifice",
-      "role": "Standard, 60 % des listes, 2 exemplaires",
+      "role": "Standard, 61 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
       "name": "Shepherd's Heirloom",
-      "role": "Souple, 40 % des listes, 2 exemplaires",
+      "role": "Souple, 43 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -72,6 +72,11 @@
     },
     {
       "name": "Repulse",
+      "role": "Souple, 32 % des listes, 1 exemplaire",
+      "noyau": false
+    },
+    {
+      "name": "Portable Portal",
       "role": "Souple, 32 % des listes, 1 exemplaire",
       "noyau": false
     }
@@ -86,12 +91,12 @@
     "Aucun titre sur Radiance"
   ],
   "competitiveResults": {
-    "joueursClasses": 27,
+    "joueursClasses": 32,
     "coupe10": 5,
     "titres": 0,
-    "conversion": "18.5 %",
-    "tournois": 16,
-    "listesPubliees": 25,
+    "conversion": "15.6 %",
+    "tournois": 18,
+    "listesPubliees": 28,
     "bestPlacements": [
       {
         "placement": "2nd",
@@ -143,34 +148,33 @@
       "role": "1 exemplaire en moyenne"
     },
     "Fiora, Victorious": {
-      "usage": "92 %",
+      "usage": "93 %",
       "role": "3 exemplaires en moyenne"
     },
     "Nidalee, Cat Form": {
-      "usage": "84 %",
+      "usage": "86 %",
       "role": "3 exemplaires en moyenne"
     },
     "Vi, Peacekeeper": {
-      "usage": "84 %",
-      "role": "3 exemplaires en moyenne"
-    },
-    "Lucian, Merciless": {
-      "usage": "44 %",
+      "usage": "86 %",
       "role": "3 exemplaires en moyenne"
     },
     "Rengar, Trophy Hunter": {
-      "usage": "44 %",
+      "usage": "50 %",
       "role": "2 exemplaires en moyenne"
+    },
+    "Lucian, Merciless": {
+      "usage": "46 %",
+      "role": "3 exemplaires en moyenne"
     }
   },
   "topBattlefields": [
-    "Monastery of Hirana (76 %)",
-    "Valley of Idols (60 %)",
-    "Packed Amphitheater (52 %)",
-    "Sunken Temple (36 %)",
-    "Amateur Recital (32 %)"
+    "Monastery of Hirana (75 %)",
+    "Valley of Idols (64 %)",
+    "Packed Amphitheater (50 %)",
+    "Sunken Temple (36 %)"
   ],
-  "dataSource": "Classement complet des tournois : 27 joueurs classés, 16 tournois, dont 25 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 32 joueurs classés, 18 tournois, dont 28 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "setDesChiffres": "Radiance",
   "cartesDepuisBan": "2026-09-15",
   "gameplan": {

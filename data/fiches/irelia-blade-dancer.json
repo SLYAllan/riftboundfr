@@ -48,27 +48,27 @@
     },
     {
       "name": "Tideturner",
-      "role": "Cœur du deck, 95 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Stellacorn Herder",
-      "role": "Cœur du deck, 93 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 94 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
       "name": "Scuttle Crab",
-      "role": "Cœur du deck, 91 % des listes, 3 exemplaires",
+      "role": "Cœur du deck, 90 % des listes, 3 exemplaires",
       "noyau": true
     },
     {
-      "name": "Star-Crossed",
+      "name": "Not So Fast",
       "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
-      "name": "Not So Fast",
-      "role": "Standard, 81 % des listes, 1 exemplaire",
+      "name": "Star-Crossed",
+      "role": "Standard, 82 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "name": "Gust",
-      "role": "Souple, 59 % des listes, 1 exemplaire",
+      "role": "Standard, 61 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
@@ -88,12 +88,12 @@
     },
     {
       "name": "Guardian Angel",
-      "role": "Souple, 54 % des listes, 1 exemplaire",
+      "role": "Souple, 57 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Battle Preparations",
-      "role": "Souple, 53 % des listes, 2 exemplaires",
+      "role": "Souple, 51 % des listes, 2 exemplaires",
       "noyau": false
     },
     {
@@ -103,22 +103,22 @@
     },
     {
       "name": "Switcheroo",
-      "role": "Souple, 42 % des listes, 1 exemplaire",
+      "role": "Souple, 43 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Rebuke",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
-      "noyau": false
-    },
-    {
-      "name": "Edge of Night",
-      "role": "Souple, 39 % des listes, 1 exemplaire",
+      "role": "Souple, 42 % des listes, 1 exemplaire",
       "noyau": false
     },
     {
       "name": "Astral Heron",
-      "role": "Souple, 36 % des listes, 3 exemplaires",
+      "role": "Souple, 39 % des listes, 3 exemplaires",
+      "noyau": false
+    },
+    {
+      "name": "Edge of Night",
+      "role": "Souple, 38 % des listes, 1 exemplaire",
       "noyau": false
     }
   ],
@@ -145,12 +145,12 @@
     ]
   },
   "competitiveResults": {
-    "joueursClasses": 81,
-    "coupe10": 5,
+    "joueursClasses": 101,
+    "coupe10": 6,
     "titres": 1,
-    "conversion": "6.2 %",
-    "tournois": 19,
-    "listesPubliees": 74,
+    "conversion": "5.9 %",
+    "tournois": 21,
+    "listesPubliees": 89,
     "bestPlacements": [
       {
         "placement": "1st",
@@ -215,16 +215,16 @@
       "role": "1 exemplaire en moyenne"
     },
     "Vex, Apathetic": {
-      "usage": "68 %",
+      "usage": "70 %",
       "role": "1 exemplaire en moyenne"
     }
   },
   "topBattlefields": [
     "Abandoned Hall (100 %)",
-    "Sunken Temple (84 %)",
-    "Targon's Peak (72 %)"
+    "Sunken Temple (83 %)",
+    "Targon's Peak (70 %)"
   ],
-  "dataSource": "Classement complet des tournois : 81 joueurs classés, 19 tournois, dont 74 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 18 novembre 2026, calcul par scripts/fiches-stats.mts.",
+  "dataSource": "Classement complet des tournois : 101 joueurs classés, 21 tournois, dont 89 listes publiées d’où viennent les cartes, depuis la ban list du 15 septembre 2026. Relevé du 22 novembre 2026, calcul par scripts/fiches-stats.mts.",
   "cartesDepuisBan": "2026-09-15",
   "setDesChiffres": "Radiance"
 }
