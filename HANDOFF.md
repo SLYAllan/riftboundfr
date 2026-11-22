@@ -57,9 +57,11 @@ seuil de 15 joueurs sans être au tableau.
 
 **Pas fait** :
 - Le Deploy.
-- Un article best-of pour Ningbo, comme celui de Chengdu (`seed-chengdu-bestof.mts`) :
-  en attente d'Allan. Aucune image de couverture n'existe pour Ningbo, Wuhan et Shenyang
-  n'ont pas eu d'article, et ces listes jouent des cartes interdites depuis le 23.
+- L'article best-of de Ningbo est écrit et seedé **en local** (`scripts/seed-ningbo-bestof.mts`,
+  `/articles/best-of-regional-open-ningbo`, couverture fournie par Allan le 23 :
+  `public/img/articles/ningbo.webp`). L'intro dit que 24 des 45 listes jouent une carte
+  interdite depuis le 23. Prod : `npx tsx scripts/prod-tunnel.mts scripts/seed-ningbo-bestof.mts`,
+  à lancer sur le oui d'Allan ; l'image, elle, ne part qu'avec le Deploy.
 
 ## 21 novembre 2026 — aperçus de lien (Discord, X) : textes et images
 
