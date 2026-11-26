@@ -85,9 +85,11 @@ besoin : le résultat ne ressemblera pas au reste du site et sera à jeter.
   pas, avec son `fit-text-v1.tsx`, sa feuille de style et ses images (pastilles,
   `points/`, `test.webp`, `layout_sanscam.webp`, `compact.webp`, `Chrono.webp`,
   `layout*.psd`). **Toute retouche de l'overlay se fait dans la NOUVELLE**
-  (`overlay-full.tsx`). La nouvelle ne pose pas un décor envoyé avant la bascule : il
-  part de l'ancien gabarit, et l'adresse d'un décor porte l'heure de son envoi. Après la
-  bascule : supprimer l'ancienne version, ce module et le bandeau du tableau de bord.
+  (`overlay-full.tsx`). La nouvelle a ses propres cases de décor (genres en `2` de
+  `overlay.ts`), remplies depuis le bandeau du tableau de bord : un décor envoyé pour
+  l'ancienne part de l'ancien gabarit et n'y passe pas. Après la bascule, le tableau de
+  bord écrit dans ces cases ; supprimer alors l'ancienne version, ce module, le bandeau
+  et les cases d'origine.
 - **Habillage de stream** → **toute vérification passe par OBS, pas par le
   navigateur, et sans qu'Allan ait à le demander.** C'est le seul endroit où l'on
   voit la transparence composée et le vrai rendu. OBS expose un WebSocket sur

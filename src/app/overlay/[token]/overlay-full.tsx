@@ -599,9 +599,11 @@ export function OverlayFull({ token, compact = false }: { token: string; compact
   const sansCam = event.layout === "nocam";
   const fond = compact ? FOND_COMPACT : FOND;
   const envoye = compact ? event.backgroundCompactUrl : sansCam ? event.backgroundNocamUrl : event.backgroundUrl;
-  // Un décor envoyé avant la bascule part de l'ancien gabarit : ses découpes cacheraient
-  // le portrait et la caméra. On garde alors le décor du site.
-  const decorEnvoye = envoye && decorDuNouveauGabarit(envoye) ? envoye : "";
+  // La case de la nouvelle version d'abord : elle a été remplie pour elle. Un décor de
+  // l'autre case envoyé avant la bascule part de l'ancien gabarit, et ses découpes
+  // cacheraient le portrait et la caméra : on garde alors le décor du site.
+  const envoye2 = compact ? event.backgroundCompact2Url : sansCam ? event.backgroundNocam2Url : event.background2Url;
+  const decorEnvoye = envoye2 || (envoye && decorDuNouveauGabarit(envoye) ? envoye : "");
   return (
     <div className={styles.root}>
       {/* Décor : celui du streamer s'il en a envoyé un (gabarit Photoshop), sinon celui

@@ -11,20 +11,26 @@ export type OverlayLayout = "cams" | "nocam";
 export const TYPES_IMAGE = ["image/png", "image/jpeg", "image/webp", "image/gif"];
 
 /** Les images qu'un streamer peut fournir. Un décor par mode : le compact n'a pas les
- * découpes des deux autres, et avec ou sans caméra on ne veut pas forcément le même. */
-export type GenreMedia = "logo" | "background" | "backgroundNocam" | "backgroundCompact";
+ * découpes des deux autres, et avec ou sans caméra on ne veut pas forcément le même.
+ * Les genres en `2` sont les décors de la nouvelle version (`overlay-version.ts`) : avec
+ * une seule case par mode, envoyer le sien avant la bascule l'aurait posé aussi sur
+ * l'ancienne version, celle du direct. */
+export type GenreMedia = "logo" | "background" | "backgroundNocam" | "backgroundCompact" | "background2" | "backgroundNocam2" | "backgroundCompact2";
 
 /** Où vit l'adresse d'une image envoyée, dans `event`. Partagée par le tableau de
  * bord et par la route qui supprime : les deux doivent viser le même champ. */
-export const CLE_URL_MEDIA: Record<GenreMedia, "logoUrl" | "backgroundUrl" | "backgroundNocamUrl" | "backgroundCompactUrl"> = {
+export const CLE_URL_MEDIA = {
   logo: "logoUrl",
   background: "backgroundUrl",
   backgroundNocam: "backgroundNocamUrl",
   backgroundCompact: "backgroundCompactUrl",
-};
+  background2: "background2Url",
+  backgroundNocam2: "backgroundNocam2Url",
+  backgroundCompact2: "backgroundCompact2Url",
+} as const satisfies Record<GenreMedia, string>;
 
 export function estGenreMedia(v: string): v is GenreMedia {
-  return v === "logo" || v === "background" || v === "backgroundNocam" || v === "backgroundCompact";
+  return Object.hasOwn(CLE_URL_MEDIA, v);
 }
 
 /**
@@ -32,7 +38,7 @@ export function estGenreMedia(v: string): v is GenreMedia {
  * Le décor doit rester en 1920x1080 : il se pose au pixel près sur les découpes du
  * gabarit. Le logo, lui, s'affiche dans une case de 275x184.
  */
-export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920, backgroundNocam: 1920, backgroundCompact: 1920 };
+export const COTE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512, background: 1920, backgroundNocam: 1920, backgroundCompact: 1920, background2: 1920, backgroundNocam2: 1920, backgroundCompact2: 1920 };
 
 /**
  * Le vrai format d'une image, lu dans ses premiers octets.
@@ -54,7 +60,8 @@ export function typeReel(octets: Uint8Array): string | null {
   ) return "image/webp";
   return null;
 }
-export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: 3 * 1024 * 1024, backgroundNocam: 3 * 1024 * 1024, backgroundCompact: 3 * 1024 * 1024 };
+const DECOR_MAX = 3 * 1024 * 1024;
+export const TAILLE_MAX_MEDIA: Record<GenreMedia, number> = { logo: 512 * 1024, background: DECOR_MAX, backgroundNocam: DECOR_MAX, backgroundCompact: DECOR_MAX, background2: DECOR_MAX, backgroundNocam2: DECOR_MAX, backgroundCompact2: DECOR_MAX };
 
 export interface OverlayPlayer {
   name: string;
@@ -101,10 +108,10 @@ export interface OverlayStateData {
   // qu'une caméra plateau : la Légende occupe alors la case de la caméra.
   // `backgroundUrl` / `backgroundNocamUrl` : décor fourni par le streamer, envoyé
   // depuis un fichier à partir du gabarit Photoshop. Un par mode. Vide = le décor du
-  // site.
+  // site. Les mêmes en `2` (`background2Url`…) servent la nouvelle version seule.
   // `couleurPoint` / `couleurChiffres` : fond du point marqué et couleur des chiffres,
   // en `#rrggbb`. Vide = les couleurs de `COULEURS_POINTS`.
-  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string; couleurPoint?: string; couleurChiffres?: string };
+  event: { title: string; round: string; logoUrl?: string; endsAt?: string | null; timerVisible?: boolean; pointsVisible?: boolean; paused?: number | null; timerDepassement?: boolean; timerMonte?: boolean; layout?: OverlayLayout; backgroundUrl?: string; backgroundNocamUrl?: string; backgroundCompactUrl?: string; background2Url?: string; backgroundNocam2Url?: string; backgroundCompact2Url?: string; couleurPoint?: string; couleurChiffres?: string };
   format: OverlayFormat;
   maxPoints: number;
   points: { a: number; b: number };
@@ -151,7 +158,7 @@ export function nomEtTitre(nom: string): [string, string] {
 
 export function defaultOverlayState(): OverlayStateData {
   return {
-    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "", backgroundCompactUrl: "", couleurPoint: "", couleurChiffres: "" },
+    event: { title: "Riftbound France", round: "", logoUrl: "", endsAt: null, timerVisible: true, pointsVisible: true, timerDepassement: false, timerMonte: false, layout: "cams", backgroundUrl: "", backgroundNocamUrl: "", backgroundCompactUrl: "", background2Url: "", backgroundNocam2Url: "", backgroundCompact2Url: "", couleurPoint: "", couleurChiffres: "" },
     format: "BO3",
     maxPoints: 8,
     points: { a: 0, b: 0 },
@@ -411,6 +418,9 @@ function normaliserEvent(v: unknown): OverlayStateData["event"] {
     backgroundUrl: texte(e.backgroundUrl, URL_MAX),
     backgroundNocamUrl: texte(e.backgroundNocamUrl, URL_MAX),
     backgroundCompactUrl: texte(e.backgroundCompactUrl, URL_MAX),
+    background2Url: texte(e.background2Url, URL_MAX),
+    backgroundNocam2Url: texte(e.backgroundNocam2Url, URL_MAX),
+    backgroundCompact2Url: texte(e.backgroundCompact2Url, URL_MAX),
     couleurPoint: couleurHex(e.couleurPoint),
     couleurChiffres: couleurHex(e.couleurChiffres),
   };
@@ -473,7 +483,7 @@ export function applyStateUpdate(base: OverlayStateData, patch: DeepPartial<Over
 export function recalerMedias(event: OverlayStateData["event"], ancien: string, nouveau: string): OverlayStateData["event"] {
   const prefixe = `/api/overlay/${ancien}/media/`;
   const sortie = { ...event };
-  for (const cle of ["logoUrl", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl"] as const) {
+  for (const cle of Object.values(CLE_URL_MEDIA)) {
     const v = sortie[cle];
     if (v && v.startsWith(prefixe)) sortie[cle] = `/api/overlay/${nouveau}/media/${v.slice(prefixe.length)}`;
   }

@@ -1,4 +1,4 @@
-import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, CLASSEMENT_MAX, couleurHex, type PatchOverlay } from "./overlay";
+import { CHAMPS_COMPAGNON, CHAMPS_JOUEUR_COMPAGNON, CLASSEMENT_MAX, CLE_URL_MEDIA, couleurHex, type PatchOverlay } from "./overlay";
 
 // Le type vit dans `overlay.ts`, avec la forme de l'état et la fusion des patchs :
 // il en existait ici une seconde définition, plus plate, et les deux avaient
@@ -95,7 +95,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
 
   if (value.event !== undefined) {
     if (!estObjet(value.event)) return { ok: false, error: "event doit être un objet" };
-    const erreurChamp = champsConnus(value.event, ["title", "round", "logoUrl", "endsAt", "timerVisible", "pointsVisible", "paused", "timerDepassement", "timerMonte", "layout", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl", "couleurPoint", "couleurChiffres"], "event");
+    const erreurChamp = champsConnus(value.event, ["title", "round", "endsAt", "timerVisible", "pointsVisible", "paused", "timerDepassement", "timerMonte", "layout", ...Object.values(CLE_URL_MEDIA), "couleurPoint", "couleurChiffres"], "event");
     if (erreurChamp) return { ok: false, error: erreurChamp };
     for (const cle of ["title", "round"] as const) {
       if (value.event[cle] !== undefined) {
@@ -103,7 +103,7 @@ export function validerPatchOverlay(value: unknown): ValidationOverlay {
         if (erreur) return { ok: false, error: erreur };
       }
     }
-    for (const cle of ["logoUrl", "backgroundUrl", "backgroundNocamUrl", "backgroundCompactUrl"] as const) {
+    for (const cle of Object.values(CLE_URL_MEDIA)) {
       if (value.event[cle] !== undefined) {
         const erreur = chaine(value.event[cle], `event.${cle}`, LIMITES.url);
         if (erreur) return { ok: false, error: erreur };

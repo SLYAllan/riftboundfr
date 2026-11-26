@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState, type DragEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type DragEvent, type ReactNode } from "react";
 import {
   AlertTriangle, ArrowLeft, ArrowLeftRight, ArrowRight, ArrowUp, Check, Copy, Download, Eraser, ExternalLink, KeyRound, Pause, Play, RefreshCw, RotateCcw, Square, Upload, X,
 } from "lucide-react";
-import { applyStateUpdate, carteAuCadre, entrelace, manchesPourGagner, montrerCarteDuCote, CLASSEMENT_MAX, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
+import { applyStateUpdate, carteAuCadre, entrelace, manchesPourGagner, montrerCarteDuCote, CLASSEMENT_MAX, CLE_URL_MEDIA, COTE_MAX_MEDIA, COULEURS_POINTS, TYPES_IMAGE, type GenreMedia, type OverlayStateData } from "@/lib/overlay";
 import { creerFileEnvoi } from "@/lib/overlay-envoi";
 import { adopterChampsPartages, fusionnerPatchs, type PatchOverlay } from "@/lib/overlay";
 import { useListesOverlay } from "@/hooks/use-listes-overlay";
@@ -17,12 +17,6 @@ import { prefixerLien, sansPrefixe, type Langue } from "@/lib/i18n";
 // Un type à nous : le cadre d'un joueur n'accepte que les cartes glissées depuis cette
 // page. Avec `text/plain`, n'importe quel texte lâché là entrait dans la decklist.
 const TYPE_CARTE = "application/x-riftbound-carte";
-
-/** Où vit l'adresse du décor envoyé, selon le mode auquel il sert. */
-function cleFond(genre: Exclude<GenreMedia, "logo">): "backgroundUrl" | "backgroundNocamUrl" | "backgroundCompactUrl" {
-  if (genre === "backgroundCompact") return "backgroundCompactUrl";
-  return genre === "backgroundNocam" ? "backgroundNocamUrl" : "backgroundUrl";
-}
 
 /**
  * Un lien de logo qui ne finit pas par une extension d'image.
@@ -313,10 +307,29 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
   const fichierLogo = useRef<HTMLInputElement | null>(null);
   const fichierFond = useRef<HTMLInputElement | null>(null);
   const fichierFondCompact = useRef<HTMLInputElement | null>(null);
+  const fichierFond2 = useRef<HTMLInputElement | null>(null);
+  const fichierFondCompact2 = useRef<HTMLInputElement | null>(null);
   const [envoi, setEnvoi] = useState<GenreMedia | null>(null);
-  const [erreurMedia, setErreurMedia] = useState<string | null>(null);
+  // Le genre voyage avec l'erreur : le bandeau de la nouvelle version a ses propres
+  // boutons d'envoi, loin du logo où s'affiche le reste.
+  const [erreurMedia, setErreurMedia] = useState<{ genre: GenreMedia; texte: string } | null>(null);
   const sansCam = state.event.layout === "nocam";
-  const genreFond: GenreMedia = sansCam ? "backgroundNocam" : "background";
+  const genreFond2: GenreMedia = sansCam ? "backgroundNocam2" : "background2";
+  // Les réglages du décor visent ce que montre le lien OBS : l'ancienne version jusqu'à
+  // la bascule, la nouvelle ensuite, avec ses propres cases.
+  const genreFond: GenreMedia = avantBascule ? (sansCam ? "backgroundNocam" : "background") : genreFond2;
+  const genreCompact: GenreMedia = avantBascule ? "backgroundCompact" : "backgroundCompact2";
+  const alerteMedia = (dansLeBandeau: boolean) => {
+    if (!erreurMedia) return null;
+    const venueDuBandeau = avantBascule && ["background2", "backgroundNocam2", "backgroundCompact2"].includes(erreurMedia.genre);
+    if (venueDuBandeau !== dansLeBandeau) return null;
+    return (
+      <p role="alert" className="mt-2 flex items-start gap-1.5 text-xs text-error-light">
+        <AlertTriangle size={14} className="mt-px shrink-0" aria-hidden />
+        {erreurMedia.texte}
+      </p>
+    );
+  };
 
   // Envoi d'une image depuis le disque : le logo du tournoi, ou le décor entier. Le
   // fichier est réduit dans le navigateur, puis posé en base ; l'état ne porte que son
@@ -330,22 +343,23 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
       const r = await fetch(`/api/overlay/media?kind=${genre}`, { method: "POST", headers: { "Content-Type": corps.type }, body: corps });
       const corpsReponse = (await r.json().catch(() => ({}))) as { url?: string; error?: string };
       if (!r.ok || !corpsReponse.url) {
-        setErreurMedia(corpsReponse.error ?? `${t("L’envoi de l’image a échoué.")} (${r.status})`);
+        setErreurMedia({ genre, texte: corpsReponse.error ?? `${t("L’envoi de l’image a échoué.")} (${r.status})` });
         return;
       }
-      if (genre === "logo") {
-        setBrouillonLogo("");
-        update({ event: { logoUrl: corpsReponse.url } });
-      } else {
-        update({ event: { [cleFond(genre)]: corpsReponse.url } });
-      }
+      if (genre === "logo") setBrouillonLogo("");
+      update({ event: { [CLE_URL_MEDIA[genre]]: corpsReponse.url } });
     } catch {
-      setErreurMedia(t("L’envoi de l’image a échoué."));
+      setErreurMedia({ genre, texte: t("L’envoi de l’image a échoué.") });
     } finally {
       setEnvoi(null);
-      const champ = genre === "logo" ? fichierLogo : genre === "backgroundCompact" ? fichierFondCompact : fichierFond;
-      if (champ.current) champ.current.value = "";
     }
+  }
+
+  /** Le champ se vide tout de suite : sans ça, renvoyer le même fichier ne déclenche rien. */
+  function surFichier(genre: GenreMedia, e: ChangeEvent<HTMLInputElement>) {
+    const f = e.target.files?.[0];
+    e.target.value = "";
+    if (f) void envoyerMedia(genre, f);
   }
 
   /** Retire une image envoyée. Le serveur efface les octets ET l'adresse d'un bloc :
@@ -355,13 +369,13 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
     try {
       const r = await fetch(`/api/overlay/media?kind=${genre}`, { method: "DELETE" });
       if (!r.ok) {
-        setErreurMedia(t("L’image n’a pas pu être retirée."));
+        setErreurMedia({ genre, texte: t("L’image n’a pas pu être retirée.") });
         return;
       }
-      update({ event: genre === "logo" ? { logoUrl: "" } : { [cleFond(genre)]: "" } });
+      update({ event: { [CLE_URL_MEDIA[genre]]: "" } });
       if (genre === "logo") setBrouillonLogo("");
     } catch {
-      setErreurMedia(t("L’image n’a pas pu être retirée."));
+      setErreurMedia({ genre, texte: t("L’image n’a pas pu être retirée.") });
     }
   }
   const [brouillonDeck, setBrouillonDeck] = useState<[string, string]>(["", ""]);
@@ -546,23 +560,49 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
           {/* Pour tout le monde, décor déjà envoyé ou non : plus bas, le bouton « Gabarit
               Photoshop » donne encore l'ANCIEN gabarit jusqu'à la bascule. Sans ces liens,
               qui se lançait dans son premier décor en novembre le dessinait sur l'ancien,
-              et la nouvelle version ne l'aurait pas affiché. */}
+              et la nouvelle version ne l'aurait pas affiché. Les envois d'ici vont dans
+              les cases de la nouvelle version : le direct garde son décor. */}
           <div className="mt-3 border-t border-hairline pt-3">
             <p className="max-w-3xl text-pretty text-sm text-ink-secondary">
               {state.event.backgroundUrl || state.event.backgroundNocamUrl || state.event.backgroundCompactUrl
-                ? t("Votre décor personnel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit, puis envoyez-le à partir du 1er décembre.")
-                : t("Un décor à vous ? Pour la nouvelle version, partez du nouveau gabarit et envoyez-le à partir du 1er décembre : envoyé avant, elle ne l’affichera pas.")}
+                ? t("Votre décor actuel part de l’ancien gabarit : la nouvelle version ne l’affichera pas. Refaites-le sur le nouveau gabarit et envoyez-le ici : il ne servira qu’à la nouvelle version, votre direct garde l’ancien.")
+                : t("Un décor à vous ? Partez du nouveau gabarit et envoyez-le ici : il ne servira qu’à la nouvelle version, votre direct n’en change pas.")}
             </p>
             <div className="mt-2 flex flex-wrap gap-2">
               <a href="/stream/gabarit.psd" download className={btnVide}>
                 <Download size={15} aria-hidden />
                 {t("Nouveau gabarit")}
               </a>
+              <input ref={fichierFond2} type="file" accept={TYPES_IMAGE.join(",")} className="hidden" onChange={(e) => surFichier(genreFond2, e)} />
+              <button onClick={() => fichierFond2.current?.click()} disabled={envoi !== null} className={btnVide}>
+                <Upload size={15} aria-hidden />
+                {envoi === genreFond2 ? t("Envoi…") : sansCam ? t("Envoyer le décor sans cadres caméra") : t("Envoyer le décor avec cadres caméra")}
+              </button>
+              {state.event[CLE_URL_MEDIA[genreFond2]] && (
+                <button onClick={() => retirerMedia(genreFond2)} className={btnDanger}>
+                  <X size={15} aria-hidden />
+                  {t("Retirer ce décor")}
+                </button>
+              )}
+            </div>
+            <div className="mt-2 flex flex-wrap gap-2">
               <a href="/stream/gabarit_compact.psd" download className={btnVide}>
                 <Download size={15} aria-hidden />
                 {t("Nouveau gabarit compact")}
               </a>
+              <input ref={fichierFondCompact2} type="file" accept={TYPES_IMAGE.join(",")} className="hidden" onChange={(e) => surFichier("backgroundCompact2", e)} />
+              <button onClick={() => fichierFondCompact2.current?.click()} disabled={envoi !== null} className={btnVide}>
+                <Upload size={15} aria-hidden />
+                {envoi === "backgroundCompact2" ? t("Envoi…") : t("Envoyer le décor compact")}
+              </button>
+              {state.event.backgroundCompact2Url && (
+                <button onClick={() => retirerMedia("backgroundCompact2")} className={btnDanger}>
+                  <X size={15} aria-hidden />
+                  {t("Retirer le décor compact")}
+                </button>
+              )}
             </div>
+            {alerteMedia(true)}
           </div>
         </section>
       )}
@@ -669,7 +709,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
               type="file"
               accept={TYPES_IMAGE.join(",")}
               className="hidden"
-              onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia(genreFond, f); }}
+              onChange={(e) => surFichier(genreFond, e)}
             />
             <button onClick={() => fichierFond.current?.click()} disabled={envoi !== null} className={btnVide}>
               <Upload size={15} aria-hidden />
@@ -679,7 +719,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
               <Download size={15} aria-hidden />
               {t("Gabarit Photoshop")}
             </a>
-            {state.event[cleFond(genreFond)] && (
+            {state.event[CLE_URL_MEDIA[genreFond]] && (
               <button onClick={() => retirerMedia(genreFond)} className={btnDanger}>
                 <X size={15} aria-hidden />
                 {t("Reprendre le décor du site")}
@@ -800,14 +840,14 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
             type="file"
             accept={TYPES_IMAGE.join(",")}
             className="hidden"
-            onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("backgroundCompact", f); }}
+            onChange={(e) => surFichier(genreCompact, e)}
           />
           <button onClick={() => fichierFondCompact.current?.click()} disabled={envoi !== null} className={btnVide}>
             <Upload size={15} aria-hidden />
-            {envoi === "backgroundCompact" ? t("Envoi…") : t("Remplacer le décor compact")}
+            {envoi === genreCompact ? t("Envoi…") : t("Remplacer le décor compact")}
           </button>
-          {state.event.backgroundCompactUrl && (
-            <button onClick={() => retirerMedia("backgroundCompact")} className={btnDanger}>
+          {state.event[CLE_URL_MEDIA[genreCompact]] && (
+            <button onClick={() => retirerMedia(genreCompact)} className={btnDanger}>
               <X size={15} aria-hidden />
               {t("Reprendre le décor du site")}
             </button>
@@ -1343,7 +1383,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
                 type="file"
                 accept={TYPES_IMAGE.join(",")}
                 className="hidden"
-                onChange={(e) => { const f = e.target.files?.[0]; if (f) void envoyerMedia("logo", f); }}
+                onChange={(e) => surFichier("logo", e)}
               />
               <button onClick={() => fichierLogo.current?.click()} disabled={envoi !== null} className={btnVide}>
                 <Upload size={15} aria-hidden />
@@ -1360,12 +1400,7 @@ export function OverlayDashboard({ token, cleCompagnon, initial, avantBascule }:
             <p className="mt-1 text-xs text-ink-muted">
               {t("PNG, JPEG, WebP ou GIF, 512 Kio au plus. L’image est réduite dans le navigateur avant l’envoi.")}
             </p>
-            {erreurMedia && (
-              <p role="alert" className="mt-2 flex items-start gap-1.5 text-xs text-error-light">
-                <AlertTriangle size={14} className="mt-px shrink-0" aria-hidden />
-                {erreurMedia}
-              </p>
-            )}
+            {alerteMedia(false)}
             {/* Une adresse de PAGE collée ici ne montre rien à l'écran et rien ne le
                 disait : le cadre du logo restait vide sans un mot. La règle du dépôt
                 est de ne jamais avaler une donnée qui ne passe pas. */}

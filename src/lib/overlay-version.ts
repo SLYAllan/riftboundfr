@@ -5,7 +5,9 @@
  * pour préparer sa scène. À la bascule, le même lien passe tout seul à la nouvelle.
  *
  * Après la bascule : supprimer l'ancienne version (la liste est en tête de
- * `overlay-v1.tsx`), ce module et le bandeau du tableau de bord.
+ * `overlay-v1.tsx`), ce module et le bandeau du tableau de bord. Les décors de la
+ * nouvelle version vivent dans leurs propres cases (genres en `2` de `overlay.ts`) ;
+ * les cases d'origine ne gardent alors que des décors de l'ancien gabarit.
  */
 
 /**

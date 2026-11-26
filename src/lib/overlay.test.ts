@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, echelleOverlay, echelleTexte, secondesChrono, encreSur, nomEtTitre, carteAuCadre, montrerCarteDuCote } from "./overlay";
+import { defaultOverlayState, clampPoints, applyStateUpdate, makeToken, typeReel, recalerMedias, estGenreMedia, echelleOverlay, echelleTexte, secondesChrono, encreSur, nomEtTitre, carteAuCadre, montrerCarteDuCote } from "./overlay";
 
 describe("nomEtTitre", () => {
   it("coupe à la virgule, chinoise comprise", () => {
@@ -190,6 +190,24 @@ describe("overlay logic", () => {
     expect(fonds.event.backgroundUrl).toBe("/a.png");
     expect(fonds.event.backgroundNocamUrl).toBe("/b.png");
     expect(fonds.event.backgroundCompactUrl).toBe("/c.png");
+
+    // Le décor de la nouvelle version a sa propre case : l'écrire ne touche pas celui
+    // du direct.
+    const v2 = applyStateUpdate(fonds, { event: { background2Url: "/d.png", backgroundCompact2Url: "/e.png" } });
+    expect(v2.event.background2Url).toBe("/d.png");
+    expect(v2.event.backgroundCompact2Url).toBe("/e.png");
+    expect(v2.event.backgroundUrl).toBe("/a.png");
+    expect(v2.event.backgroundCompactUrl).toBe("/c.png");
+  });
+
+  // La route d'envoi et celle qui sert l'image ne reconnaissent que ces genres-là. Un nom
+  // hérité de l'objet (`toString`) passait un `in` et devenait une case en base.
+  it("estGenreMedia connaît les décors des deux versions, et rien d'autre", () => {
+    for (const g of ["logo", "background", "backgroundNocam", "backgroundCompact", "background2", "backgroundNocam2", "backgroundCompact2"]) {
+      expect(estGenreMedia(g)).toBe(true);
+    }
+    expect(estGenreMedia("toString")).toBe(false);
+    expect(estGenreMedia("background3")).toBe(false);
   });
 
   // « Nouveau lien » change le jeton, et les images sont servies SOUS le jeton. Sans
@@ -202,8 +220,10 @@ describe("overlay logic", () => {
       backgroundUrl: "/api/overlay/vieux/media/background?v=2",
       backgroundNocamUrl: "https://exemple.test/decor.png",
       backgroundCompactUrl: "/api/overlay/vieux/media/backgroundCompact?v=3",
+      background2Url: "/api/overlay/vieux/media/background2?v=4",
     };
     const apres = recalerMedias(event, "vieux", "neuf");
+    expect(apres.background2Url).toBe("/api/overlay/neuf/media/background2?v=4");
     expect(apres.logoUrl).toBe("/api/overlay/neuf/media/logo?v=1");
     expect(apres.backgroundUrl).toBe("/api/overlay/neuf/media/background?v=2");
     // Une image hébergée ailleurs n'a rien à voir avec le jeton : on n'y touche pas.
