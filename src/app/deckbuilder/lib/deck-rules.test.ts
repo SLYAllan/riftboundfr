@@ -1,5 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { validateDeck, type DeckCardInfo } from "./deck-rules";
+import { dansLesDomaines, validateDeck, type DeckCardInfo } from "./deck-rules";
+
+describe("domaines de la Légende", () => {
+  it("une carte incolore entre dans tous les decks", () => {
+    // Neeko, Blending In (Radiance) : jouée en tournoi par Mordekaiser, Riven, Leona…
+    expect(dansLesDomaines(["Colorless"], ["Fury", "Order"])).toBe(true);
+    expect(dansLesDomaines([], ["Fury", "Order"])).toBe(true);
+  });
+
+  it("une carte d'un autre domaine reste refusée", () => {
+    expect(dansLesDomaines(["Body"], ["Fury", "Order"])).toBe(false);
+    expect(dansLesDomaines(["Fury"], ["Fury", "Order"])).toBe(true);
+    expect(dansLesDomaines(["Fury", "Order"], ["Fury", "Order"])).toBe(true);
+  });
+});
 
 const carte = (name: string): DeckCardInfo => ({ cardId: name, name, type: "Gear", supertype: null, domains: [], quantity: 1 });
 const compte = { legend: false, legendFirstName: null, mainTotal: 0, runeTotal: 0, battlefieldTotal: 0, sideTotal: 0 };

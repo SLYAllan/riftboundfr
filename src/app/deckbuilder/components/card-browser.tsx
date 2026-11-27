@@ -8,6 +8,7 @@ import { CardDetailModal } from "./card-detail-modal";
 import { KeywordFilter } from "@/components/keyword-filter";
 import { SearchBar } from "./search-bar";
 import { parseSearchQuery, getSetCodesFromAlias, type ParsedSearch } from "../lib/search-parser";
+import { dansLesDomaines } from "../lib/deck-rules";
 import { filtrerParMotCle, listerMotsCles } from "@/lib/card-keywords";
 import type { CardData, BuilderTab } from "@/types";
 import { useT } from "@/components/i18n-provider";
@@ -270,8 +271,7 @@ export function CardBrowserV2({ cards, onAddCard, deckCardCounts, legendDomains,
       }
 
       if (hasLegend && legendDomains.length > 0 && (activeTab === "main" || activeTab === "rune")) {
-        const hasDomainMatch = c.domains.length === 0 || c.domains.some((d) => legendDomains.includes(d));
-        if (!hasDomainMatch) return false;
+        if (!dansLesDomaines(c.domains, legendDomains)) return false;
       }
 
       if (c.type === "Rune") {

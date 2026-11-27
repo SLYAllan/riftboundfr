@@ -1,7 +1,7 @@
 /**
  * Lecture du figurier chinois OFFICIEL (playloltcg.com). Partagée par
  * `sync-cartes-zh.mts` (noms et images chinois) et `sync-set-riot.mts` (type d'une
- * carte que la galerie de Riot n'a pas encore rempli).
+ * carte que la galerie de Riot n'a pas encore rempli, et domaine de chaque carte).
  */
 export const API = "https://lol-api.playloltcg.com/xcx/card/searchCardCraftWeb";
 
@@ -14,7 +14,16 @@ export type CarteZh = {
   power: number | null;
   cardCategoryList: string[];
   cardCategoryNameList: string[];
+  cardColorList?: string[];
   frontImage: string;
+};
+
+// Couleur chinoise → domaine. Relevé le 27 novembre 2026 sur les 1 100 cartes
+// mono-domaine d'Origins à Vendetta : aucune exception hors des 30 cartes Radiance
+// que la galerie de Riot range dans le mauvais domaine.
+export const DOMAINE_PAR_COULEUR: Record<string, string> = {
+  red: "Fury", green: "Calm", blue: "Mind", orange: "Body", purple: "Chaos", yellow: "Order",
+  colorless: "Colorless", neutral: "Colorless",
 };
 
 export async function figurierOfficiel(): Promise<CarteZh[]> {

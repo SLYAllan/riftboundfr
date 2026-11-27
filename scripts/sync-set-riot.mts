@@ -5,6 +5,12 @@
  *
  *   npx tsx --env-file=.env scripts/sync-set-riot.mts RAD --sec   # dit ce qui serait écrit
  *   npx tsx --env-file=.env scripts/sync-set-riot.mts RAD         # écrit en base
+ *   npx tsx --env-file=.env scripts/sync-set-riot.mts RAD --domaines  # n'écrit QUE les domaines
+ *
+ * `--domaines` corrige le domaine des cartes déjà en base sans rien toucher d'autre :
+ * un passage complet réécrit aussi le texte et les chiffres que Riot a retouchés
+ * depuis (le 27 novembre 2026 : trois textes et la puissance de Kai'Sa, Rebel du
+ * deck de départ, où Riot et le figurier chinois ne disent pas la même chose).
  *
  * Rejouable : upsert par `riftboundId`, le même identifiant que chez Riftcodex. Un
  * import Riftcodex passé plus tard retrouvera donc les mêmes cartes.
@@ -20,18 +26,24 @@
  *     la règle d'Allan du 24 juillet dit l'inverse) ; seul un surnuméroté passe en
  *     Showcase ;
  *   - une carte dont Riot n'a pas encore rempli le type le prend au figurier chinois
- *     officiel, au même numéro. Sans les deux, elle est écartée et nommée.
+ *     officiel, au même numéro. Sans les deux, elle est écartée et nommée ;
+ *   - le domaine vient du figurier chinois quand il en donne un. Le 27 novembre 2026,
+ *     la galerie de Riot rangeait encore 30 cartes Radiance dans un mauvais domaine
+ *     ou dans aucun (Bilgewater Tracker en Body, jouée dans 764 listes Fury), et le
+ *     deckbuilder les refusait. Le figurier chinois, la plage de numéros du set et
+ *     les listes de tournoi disaient tous les trois l'inverse.
  *
  * La galerie montre le texte IMPRIMÉ, pas l'errata : le 18 octobre 2026, Elnuk Herd,
  * Last Caress, Forbidden Technique et Neeko y gardaient l'ancien texte de Radiance.
  * Relancer ce script défait donc un errata posé en base : le reposer après.
  */
 import { PrismaClient } from "@prisma/client";
-import { figurierOfficiel } from "./figurier-chinois";
+import { DOMAINE_PAR_COULEUR, figurierOfficiel } from "./figurier-chinois";
 
 const GALERIE = "https://playriftbound.com/en-us/card-gallery/";
 const SET = process.argv[2]?.toUpperCase();
 const sec = process.argv.includes("--sec");
+const domainesSeuls = process.argv.includes("--domaines");
 if (!SET || SET.startsWith("-")) throw new Error("Préciser le set : sync-set-riot.mts RAD [--sec]");
 
 type Valeur = { value?: { id: string | number; label: string } };
@@ -152,6 +164,7 @@ async function main() {
     const ids: string[] = [];
     const ecartees: string[] = [];
     const desaccordsZh: string[] = [];
+    const domainesRepris: string[] = [];
     for (const c of duSet) {
       const zh = zhParNumero.get(numero(c.id));
       const type = typeRiot(c) ?? TYPE_CHINOIS[zh?.cardCategoryList?.[0] ?? ""];
@@ -163,6 +176,14 @@ async function main() {
       if (zh && (zh.energy !== ligne.energy || (type === "Unit" && zh.power !== ligne.might))) {
         desaccordsZh.push(`${c.id} ${ligne.name} : Riot ${ligne.energy}/${ligne.might}, Chine ${zh.energy}/${zh.power}`);
       }
+      const couleurs = zh?.cardColorList ?? [];
+      const domainesZh = couleurs.map((x) => DOMAINE_PAR_COULEUR[x]);
+      if (couleurs.length && domainesZh.some((d) => !d)) {
+        desaccordsZh.push(`${c.id} ${ligne.name} : couleur chinoise inconnue ${couleurs.join("+")}, domaine de Riot gardé`);
+      } else if (couleurs.length && [...domainesZh].sort().join() !== [...ligne.domains].sort().join()) {
+        domainesRepris.push(`${c.id} ${ligne.name} : Riot ${ligne.domains.join("+") || "aucun"} → ${domainesZh.join("+")}`);
+        ligne.domains = domainesZh;
+      }
       lignes.push(ligne);
       ids.push(c.id);
     }
@@ -173,10 +194,21 @@ async function main() {
     console.log(`Types repris au figurier chinois : ${duSet.filter((c) => !typeRiot(c)).length - ecartees.length}`);
     console.log("Légendes :", lignes.filter((l) => l.type === "Legend" && !l.overnumbered).map((l) => l.name).join(" · "));
     if (desaccordsZh.length) console.log(`\nÉnergie ou puissance différente du figurier chinois (${desaccordsZh.length}) :\n  ${desaccordsZh.join("\n  ")}`);
+    if (domainesRepris.length) console.log(`\nDomaine repris au figurier chinois (${domainesRepris.length}) :\n  ${domainesRepris.join("\n  ")}`);
     if (ecartees.length) console.log(`\nÉCARTÉES, type inconnu des deux côtés (${ecartees.length}) :\n  ${ecartees.join("\n  ")}`);
 
     if (sec) {
       console.log("\nEssai à blanc : rien n'a été écrit.");
+      return;
+    }
+
+    if (domainesSeuls) {
+      let ecrites = 0;
+      for (const [i, ligne] of lignes.entries()) {
+        const { count } = await prisma.card.updateMany({ where: { riftboundId: ids[i] }, data: { domains: ligne.domains } });
+        ecrites += count;
+      }
+      console.log(`\nDomaines écrits sur ${ecrites} cartes ${SET} déjà en base (les absentes ne sont pas créées).`);
       return;
     }
 

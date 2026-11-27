@@ -29,6 +29,17 @@ export interface DeckCardInfo {
   quantity: number;
 }
 
+/**
+ * Une carte entre dans le deck si l'un de ses domaines est celui de la Légende.
+ * Une carte incolore entre partout : Neeko, Blending In était refusée à tous les
+ * decks, alors que sept listes de tournoi la jouent. La règle vivait aussi dans le
+ * navigateur de cartes, qui la cachait : les deux passent ici.
+ */
+export function dansLesDomaines(domainesCarte: string[], domainesLegende: string[]): boolean {
+  const colores = domainesCarte.filter((d) => d !== "Colorless");
+  return colores.length === 0 || colores.some((d) => domainesLegende.includes(d));
+}
+
 export function validateDeck(
   counts: DeckCounts,
   mainCards: DeckCardInfo[],
@@ -108,7 +119,7 @@ export function validateDeck(
 
   if (legendDomains.length > 0) {
     for (const card of mainCards) {
-      if (card.domains.length > 0 && !card.domains.some((d) => legendDomains.includes(d))) {
+      if (!dansLesDomaines(card.domains, legendDomains)) {
         issues.push({
           id: `domain-${card.cardId}`,
           section: "main",
