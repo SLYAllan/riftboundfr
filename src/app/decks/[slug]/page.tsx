@@ -11,7 +11,6 @@ import { legendHref as legendPageHref } from "@/lib/legend-fiche";
 import Link from "@/components/lien";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getTournamentCountryCode, getTournamentInfo } from "@/lib/tournament-flags";
-import { getBannerUrl } from "@/lib/banners";
 import { energieMoyenne } from "@/lib/deck-chiffres";
 import { DeckStatsPanel } from "@/components/deck-stats-panel";
 import { CountryBadge } from "@/components/country-badge";
@@ -19,13 +18,11 @@ import { DeckLikeButton } from "@/components/deck-like-button";
 import { ShareDecklistButton } from "@/components/share-decklist-button";
 import { DeckCoveragePanel } from "@/components/collection/deck-coverage-panel";
 import { cartesDeck, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
-import { interdictionsParDate } from "@/lib/bans";
+import { AvisInterdictions, BarreAchat, EncartAchat, EnTeteDeck, type MorceauLigne } from "@/components/page-deck";
 import type { Metadata } from "next";
 import type { DecklistCard, DeckSection } from "@/types";
 import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
 import { etiquetteLocale } from "@/lib/i18n";
-
-const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
 
 // Descriptions écrites par les scripts d'import : « 9th au Showdown (date) par X. Calm/Fury. »
 // ou « Meilleur classement … : 65th par X. » Elles répètent la ligne au-dessus du titre ;
@@ -33,9 +30,7 @@ const euros = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR
 const DESCRIPTION_GENEREE = /^(\d+(st|nd|rd|th|e|er) au |Meilleur classement )/;
 import { jsonLdHtml, urlLangue, langueSchema } from "@/lib/json-ld";
 import { couperAuMot, datesEnFrancais } from "@/lib/apercu";
-import { cache, type ReactNode } from "react";
-import Image from "next/image";
-import { BoutonLien } from "@/components/bouton";
+import { cache } from "react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -181,11 +176,6 @@ export default async function DeckDetailPage({ params }: PageProps) {
     side: deck.cards.filter((dc) => dc.section === "side").map((dc) => ({ cardId: dc.card.riftboundId, quantity: dc.quantity })),
   });
 
-  // Chaque carte porte déjà son étiquette « Banni » dans la liste, plus bas. Sans
-  // l'encadré, on lisait le titre, le joueur et le rang d'une liste gagnante, et
-  // on partait la monter sans voir qu'elle ne se jouait plus.
-  const interdictions = interdictionsParDate(deck.cards.map((dc) => dc.card.name));
-
   // JSON-LD d'entité (M14) : deck = CreativeWork citable.
   const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://riftboundfrance.fr";
   const deckJsonLd = {
@@ -219,7 +209,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
   const cc = deck.tournamentContext ? getTournamentCountryCode(deck.tournamentContext) : null;
   // Des objets `{ cle, contenu }` et pas des paires : un élément JSX posé tel quel dans
   // un tableau demande une clé (react/jsx-key), or la clé est donnée au rendu, plus bas.
-  const morceaux: Array<{ cle: string; contenu: ReactNode }> = [
+  const morceaux: MorceauLigne[] = [
     { cle: "legende", contenu: (
       <span>
         {legendHref ? (
@@ -249,9 +239,6 @@ export default async function DeckDetailPage({ params }: PageProps) {
   ) });
   if (deck.sourceUrl) morceaux.push({ cle: "source", contenu: <a href={deck.sourceUrl} target="_blank" rel="noopener noreferrer" className="py-1 text-arcane hover:underline">Source</a> });
 
-  // L'illustration de la Légende en fond d'en-tête, et quatre chiffres lisibles d'un
-  // coup d'œil : ils n'existaient que dans la vue « statistiques » de la liste.
-  const banniere = getBannerUrl(deck.legendName);
   const principal = decklistCards.filter((c) => c.section === "main");
   const moyenne = energieMoyenne(principal);
   const joueursTournoi = deck.tournamentContext ? getTournamentInfo(deck.tournamentContext)?.playerCount ?? null : null;
@@ -262,7 +249,6 @@ export default async function DeckDetailPage({ params }: PageProps) {
     [String(principal.reduce((n, c) => n + c.quantity, 0)), t("cartes au deck principal")],
     ...(moyenne != null ? [[moyenne.toLocaleString(locale, { maximumFractionDigits: 1 }), t("énergie moyenne")] as [string, string]] : []),
   ];
-  const achat = lienAchat && prix.total > 0;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 pb-28 sm:px-6 lg:pb-8">
@@ -273,77 +259,27 @@ export default async function DeckDetailPage({ params }: PageProps) {
           { name: deck.title, href: `/decks/${slug}` },
         ]}
       />
-      <header className="relative mt-6 overflow-clip rounded-card border border-hairline bg-surface">
-        {banniere && (
-          <Image
-            src={banniere}
-            alt=""
-            width={700}
-            height={300}
-            priority
-            sizes="(max-width: 1024px) 100vw, 820px"
-            className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-45 sm:w-2/3 [mask-image:linear-gradient(to_left,black_25%,transparent)]"
+      <EnTeteDeck legendName={deck.legendName} titre={deck.title} ligne={morceaux} chiffres={chiffres}>
+        {deck.description && !DESCRIPTION_GENEREE.test(deck.description) && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
+        <AvisInterdictions noms={deck.cards.map((dc) => dc.card.name)} jouee={Boolean(deck.tournamentContext)} />
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} />
+          <ShareDecklistButton
+            slug={deck.slug}
+            deckTitle={deck.title}
+            legendName={displayLegendName(deck.legendName)}
+            playerName={deck.playerName ?? deck.authorName ?? undefined}
+            tournamentContext={deck.tournamentContext ?? undefined}
           />
-        )}
-        <div className="relative flex flex-col gap-5 p-5 sm:p-7 lg:flex-row lg:items-end lg:justify-between">
-          <div className="min-w-0">
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{deck.title}</h1>
-            {/* Texte courant et pas flex : en flex, un morceau trop long partait seul à
-                la ligne avec son point devant, isolé. */}
-            <p className="mt-2 text-sm leading-7 text-ink-muted">
-              {morceaux.map(({ cle, contenu }, i) => (
-                <span key={cle}>
-                  {i > 0 && <span aria-hidden="true" className="mx-2">&middot;</span>}
-                  {contenu}
-                </span>
-              ))}
-            </p>
-            {deck.description && !DESCRIPTION_GENEREE.test(deck.description) && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
-            {interdictions.length > 0 && (
-              <p className="mt-4 max-w-3xl rounded-lg border border-red-500/30 bg-surface px-4 py-3 text-sm text-ink-secondary">
-                <strong className="text-red-400">{t(interdictions.every((i) => i.aVenir) ? "Liste bientôt injouable." : "Liste injouable aujourd’hui.")}</strong>
-                {interdictions.map(({ date, cartes, aVenir }) => (
-                  <span key={date}>
-                    {" "}{new Intl.ListFormat(etiquetteLocale(langue), { type: "conjunction" }).format(cartes)}{" "}
-                    {aVenir
-                      ? t(cartes.length > 1 ? "seront interdites le" : "sera interdite le")
-                      : t(cartes.length > 1 ? "sont interdites depuis le" : "est interdite depuis le")} {t(date)}.
-                  </span>
-                ))}
-                {deck.tournamentContext && <>{" "}{t("La liste reste affichée telle qu’elle a été jouée.")}</>}
-              </p>
-            )}
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <DeckLikeButton slug={deck.slug} initialLikes={deck.likes} />
-              <ShareDecklistButton
-                slug={deck.slug}
-                deckTitle={deck.title}
-                legendName={displayLegendName(deck.legendName)}
-                playerName={deck.playerName ?? deck.authorName ?? undefined}
-                tournamentContext={deck.tournamentContext ?? undefined}
-              />
-              <Link
-                href={`/decks/compare?a=${encodeURIComponent(deckbuilderCode)}`}
-                rel="nofollow"
-                className="inline-flex min-h-11 items-center rounded-lg border border-hairline bg-surface px-4 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink"
-              >
-                {t("Comparer ce deck")}
-              </Link>
-            </div>
-          </div>
-          {/* Pas de bouton d'achat dans l'en-tête (Allan, 18 novembre) : il
-              répétait celui de la colonne, juste à côté sur ordinateur, et la barre
-              du bas sur téléphone. */}
+          <Link
+            href={`/decks/compare?a=${encodeURIComponent(deckbuilderCode)}`}
+            rel="nofollow"
+            className="inline-flex min-h-11 items-center rounded-lg border border-hairline bg-surface px-4 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink"
+          >
+            {t("Comparer ce deck")}
+          </Link>
         </div>
-        <dl className="relative grid grid-cols-2 border-t border-hairline sm:grid-cols-4">
-          {chiffres.map(([valeur, libelle]) => (
-            <div key={libelle} className="border-hairline px-5 py-3 sm:border-r sm:last:border-r-0">
-              <dd className="text-xl font-bold tabular-nums text-ink" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{valeur}</dd>
-              <dt className="text-xs text-ink-muted">{libelle}</dt>
-            </div>
-          ))}
-        </dl>
-      </header>
+      </EnTeteDeck>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
         <div className="min-w-0">
@@ -383,13 +319,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
             hauteur de la liste, sinon le bloc collant n'aurait nulle part où glisser. */}
         <aside aria-label={t("Résumé du deck")}>
           <div className="grid gap-4 lg:sticky lg:top-22">
-            {achat && (
-              <div className="hidden rounded-card border border-hairline bg-surface p-4 lg:block">
-                <div className="text-xs text-ink-muted">{t("À partir de")}</div>
-                <div className="text-xl font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix.total)}</div>
-                <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat" className="mt-3 w-full">{t("Acheter ce deck")}</BoutonLien>
-              </div>
-            )}
+            <EncartAchat total={prix.total} lien={lienAchat} />
             <DeckStatsPanel cards={decklistCards} />
           </div>
         </aside>
@@ -429,17 +359,7 @@ export default async function DeckDetailPage({ params }: PageProps) {
         </div>
       )}
 
-      {/* Téléphone : le bouton d'achat reste à portée de pouce pendant toute la liste.
-          Un vrai lien, comme en haut. */}
-      {achat && (
-        <div className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-hairline bg-surface-glass px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur lg:hidden">
-          <div>
-            <div className="text-xs text-ink-muted">{t("À partir de")}</div>
-            <div className="text-lg font-bold leading-tight text-arcane" style={{ fontFamily: "var(--font-rubik), sans-serif" }}>{euros.format(prix.total)}</div>
-          </div>
-          <BoutonLien href={lienAchat} target="_blank" rel="sponsored nofollow noopener" variante="achat">{t("Acheter ce deck")}</BoutonLien>
-        </div>
-      )}
+      <BarreAchat total={prix.total} lien={lienAchat} />
     </div>
   );
 }

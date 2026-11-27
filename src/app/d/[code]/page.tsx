@@ -24,7 +24,11 @@ import { findCard } from "@/lib/card-printing";
 import { resolveDeckCards, deckIdentifiers, deckCoverageItems } from "@/lib/deck-cards";
 import { diffDecks, resumerVersion } from "@/lib/deck-diff";
 import { chargerPrix, chiffrerDeck, lienAchatDeck } from "@/lib/cardnexus";
-import { tr, metaTraduite } from "@/lib/i18n-server";
+import { tr, metaTraduite, langueCourante } from "@/lib/i18n-server";
+import { etiquetteLocale } from "@/lib/i18n";
+import { energieMoyenne } from "@/lib/deck-chiffres";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { AvisInterdictions, BarreAchat, EncartAchat, EnTeteDeck, type MorceauLigne } from "@/components/page-deck";
 import { cache } from "react";
 
 interface PageProps {
@@ -65,6 +69,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CommunityDeckPage({ params }: PageProps) {
   const t = await tr();
+  const locale = etiquetteLocale(await langueCourante());
   const { code } = await params;
 
   const deck = await chargerDeckPartage(code);
@@ -156,127 +161,81 @@ export default async function CommunityDeckPage({ params }: PageProps) {
     ? await prisma.abonnement.findMany({ where: { userId: user.id }, select: { genre: true, cible: true } })
     : [];
 
+  function toRiftboundId(id: string) {
+    const c = cardMap.get(id) ?? cardMap.get(id.toLowerCase());
+    return c ? c.riftboundId : id;
+  }
+  const deckbuilderCode = encodeDeckBase64({
+    legend: decoded.legend ? { cardId: toRiftboundId(decoded.legend.cardId), quantity: 1 } : null,
+    champion: decoded.champion ? { cardId: toRiftboundId(decoded.champion.cardId), quantity: decoded.champion.quantity } : null,
+    main: decoded.main.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
+    rune: decoded.rune.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
+    battlefield: decoded.battlefield.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
+    side: decoded.side.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
+  });
+
+  const prix = chiffrerDeck(cartesChiffrables);
+  const lienAchat = lienAchatDeck(cartesChiffrables);
+  const estAuteur = !!user && deck.userId === user.id;
+
+  // Même en-tête que /decks/[slug] : la Légende et l'auteur sur une ligne, puis les
+  // chiffres. Pas de lien vers la fiche Légende : une Légende que personne n'a jouée
+  // en tournoi n'en a pas, et le lien mènerait à une page introuvable.
+  const ligne: MorceauLigne[] = [
+    { cle: "legende", contenu: <span className="text-base font-semibold text-arcane">{displayLegendName(deck.legendName)}</span> },
+    { cle: "auteur", contenu: <span>{t("par")}{" "}<strong className="text-ink-secondary">{deck.authorName}</strong></span> },
+  ];
+  // La date vient de la dernière version, pas de `updatedAt` : le compteur de vues
+  // réécrit ce champ à chaque visite, et la page disait « mis à jour aujourd'hui ».
+  const majLe = deck.history[0]?.createdAt;
+  if (deck.version > 1 && majLe) {
+    ligne.push({ cle: "version", contenu: <span>Version {deck.version}, mis à jour le {majLe.toLocaleDateString(locale)}</span> });
+  }
+  const principal = decklistCards.filter((c) => c.section === "main");
+  const moyenne = energieMoyenne(principal);
+  const chiffres: [string, string][] = [
+    [String(principal.reduce((n, c) => n + c.quantity, 0)), t("cartes au deck principal")],
+    ...(moyenne != null ? [[moyenne.toLocaleString(locale, { maximumFractionDigits: 1 }), t("énergie moyenne")] as [string, string]] : []),
+    [deck.views.toLocaleString(locale), t("vues")],
+  ];
+
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-      <Link href="/decks?cat=community" className="inline-flex min-h-6 items-center text-sm text-ink-muted hover:text-arcane">{t("← Retour aux decks communautaires")}</Link>
-      <div className="mt-6">
-        <h1
-          className="text-3xl font-bold leading-tight sm:text-4xl"
-          style={{ fontFamily: "var(--font-rubik), sans-serif" }}
-        >
-          {deck.title}
-        </h1>
-        <div className="mt-2 flex flex-wrap items-center gap-3">
-          <span className="text-lg text-arcane">
-            {displayLegendName(deck.legendName)}
-          </span>
-          <span className="text-sm text-ink-muted">{t("par")}{" "}<strong className="text-ink-secondary">{deck.authorName}</strong>
-          </span>
-          <LikeButton
-            shareCode={deck.shareCode}
-            initialLikes={deck.likes}
-            isLoggedIn={!!user}
-          />
-          {user && deck.userId === user.id && (
-            <VisibilityToggle
-              shareCode={deck.shareCode}
-              initialIsPublic={deck.isPublic}
-            />
-          )}
-        </div>
-        <div className="mt-3">
+    <div className="mx-auto max-w-7xl px-4 py-8 pb-28 sm:px-6 lg:pb-8">
+      <Breadcrumbs
+        items={[
+          { name: "Decks", href: "/decks" },
+          { name: "Decks communautaires", href: "/decks?cat=community" },
+          { name: deck.title, href: `/d/${code}` },
+        ]}
+      />
+      <EnTeteDeck legendName={deck.legendName} titre={deck.title} ligne={ligne} chiffres={chiffres}>
+        {deck.tags.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {deck.tags.map((tag) => (
+              <span key={tag} className="rounded-full bg-violet-dark px-2.5 py-0.5 text-xs font-semibold text-white">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+        {deck.description && <p className="mt-4 text-ink-secondary">{deck.description}</p>}
+        <AvisInterdictions noms={decklistCards.map((c) => c.name)} jouee={false} />
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <LikeButton shareCode={deck.shareCode} initialLikes={deck.likes} isLoggedIn={!!user} />
+          {estAuteur && <VisibilityToggle shareCode={deck.shareCode} initialIsPublic={deck.isPublic} />}
           <ShareDecklistButton
             shareCode={deck.shareCode}
             deckTitle={deck.title}
             legendName={displayLegendName(deck.legendName)}
             playerName={deck.authorName}
           />
-        </div>
-        {deck.tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {deck.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-violet-dark px-2.5 py-0.5 text-xs font-semibold text-white"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-        {deck.description && (
-          <p className="mt-3 text-ink-secondary">{deck.description}</p>
-        )}
-        {deck.version > 1 && (
-          <p className="mt-2 text-xs text-ink-muted">
-            Version {deck.version} - mis à jour le {new Date(deck.updatedAt).toLocaleDateString("fr-FR")}
-          </p>
-        )}
-      </div>
-
-      {/* Une carte que la base ne reconnaît pas était retirée sans rien dire :
-          la réserve tombait de 10 à 9 et personne ne voyait pourquoi. */}
-      {missing.length > 0 && (
-        <p role="status" className="mt-6 rounded-lg border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-ink">
-          {missing.length === 1
-            ? `Une carte de ce deck n'a pas été reconnue et n'est pas affichée : ${missing[0]}.`
-            : `${missing.length} cartes de ce deck n'ont pas été reconnues et ne sont pas affichées : ${missing.join(", ")}.`}
-        </p>
-      )}
-
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6">
-        <DecklistInteractive
-          cards={decklistCards}
-          deckName={deck.title}
-          legendName={deck.legendName}
-          playerName={deck.authorName}
-          // Même raison que sur /decks/[slug] : le h1 et la sous-ligne au-dessus
-          // disent déjà le titre, la Légende et l'auteur.
-          compact
-          showCopyCode
-          showExportPng
-          deckbuilderCode={(() => {
-            function toRiftboundId(id: string) {
-              const c = cardMap.get(id) ?? cardMap.get(id.toLowerCase());
-              return c ? c.riftboundId : id;
-            }
-            return encodeDeckBase64({
-              legend: decoded.legend ? { cardId: toRiftboundId(decoded.legend.cardId), quantity: 1 } : null,
-              champion: decoded.champion ? { cardId: toRiftboundId(decoded.champion.cardId), quantity: decoded.champion.quantity } : null,
-              main: decoded.main.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
-              rune: decoded.rune.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
-              battlefield: decoded.battlefield.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
-              side: decoded.side.map((e) => ({ cardId: toRiftboundId(e.cardId), quantity: e.quantity })),
-            });
-          })()}
-        />
-        <div className="space-y-4">
-          <DeckStatsPanel cards={decklistCards} />
-          <VersionHistory
-            currentVersion={deck.version}
-            shareCode={deck.shareCode}
-            // Le bouton de retour arrière n'existe que pour l'auteur : la route
-            // refuse déjà les autres (403), mais montrer un bouton qui échoue
-            // n'aide personne.
-            estAuteur={!!user && deck.userId === user.id}
-            history={historique.map(({ ligne, changements }) => ({
-              id: ligne.id,
-              version: ligne.version,
-              changelog: ligne.changelog,
-              createdAt: ligne.createdAt.toISOString(),
-              deckCode: ligne.deckCode,
-              resume: resumerVersion(
-                changements.map((c) => ({ ...c, cardId: findCard(cartesHistorique, c.cardId)?.id ?? c.cardId })),
-                infosCartes,
-              ),
-              changements: changements.map((c) => ({
-                nom: findCard(cartesHistorique, c.cardId)?.name ?? c.cardId,
-                section: c.section,
-                avant: c.avant,
-                apres: c.apres,
-              })),
-            }))}
-          />
+          <Link
+            href={`/decks/compare?a=${encodeURIComponent(deckbuilderCode)}`}
+            rel="nofollow"
+            className="inline-flex min-h-11 items-center rounded-lg border border-hairline bg-surface px-4 text-sm font-semibold text-ink-secondary transition-colors hover:bg-surface-raised hover:text-ink"
+          >
+            {t("Comparer ce deck")}
+          </Link>
           <UpdateDeckButton shareCode={deck.shareCode} ownerId={deck.userId} />
           {deck.userId !== user?.id && (
             <BoutonSuivre
@@ -289,21 +248,85 @@ export default async function CommunityDeckPage({ params }: PageProps) {
             />
           )}
         </div>
-      </div>
+      </EnTeteDeck>
 
-      {/* Pleine largeur, comme sur /decks/[slug] : l'aperçu des cartes manquantes
-          s'empile en colonne dans la barre latérale de 300 px, illisible. */}
-      <div className="mt-6">
-        <DeckCoveragePanel
-          prix={chiffrerDeck(cartesChiffrables)}
-          lienAchat={lienAchatDeck(cartesChiffrables)}
-          items={decklistCards.map((c) => ({
-            cardId: c.cardId,
-            quantity: c.quantity,
-            section: c.section,
-            name: c.name,
-          }))}
-        />
+      {/* Une carte que la base ne reconnaît pas était retirée sans rien dire :
+          la réserve tombait de 10 à 9 et personne ne voyait pourquoi. */}
+      {missing.length > 0 && (
+        <p role="status" className="mt-6 rounded-lg border border-warning/40 bg-warning/10 px-4 py-3 text-sm text-ink">
+          {missing.length === 1
+            ? `Une carte de ce deck n'a pas été reconnue et n'est pas affichée : ${missing[0]}.`
+            : `${missing.length} cartes de ce deck n'ont pas été reconnues et ne sont pas affichées : ${missing.join(", ")}.`}
+        </p>
+      )}
+
+      <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
+        <div className="min-w-0">
+          <DecklistInteractive
+            cards={decklistCards}
+            deckName={deck.title}
+            legendName={deck.legendName}
+            playerName={deck.authorName}
+            // Même raison que sur /decks/[slug] : le h1 et la sous-ligne au-dessus
+            // disent déjà le titre, la Légende et l'auteur.
+            compact
+            pageDeck
+            showCopyCode
+            showExportPng
+            deckbuilderCode={deckbuilderCode}
+          />
+
+          {/* Sous la liste et pas dans la colonne : ouvert, l'historique dépasse la
+              hauteur de l'écran, et la colonne collante en aurait caché le bas. */}
+          <div className="mt-6">
+            <VersionHistory
+              currentVersion={deck.version}
+              shareCode={deck.shareCode}
+              // Le bouton de retour arrière n'existe que pour l'auteur : la route
+              // refuse déjà les autres (403), mais montrer un bouton qui échoue
+              // n'aide personne.
+              estAuteur={estAuteur}
+              history={historique.map(({ ligne: h, changements }) => ({
+                id: h.id,
+                version: h.version,
+                changelog: h.changelog,
+                createdAt: h.createdAt.toISOString(),
+                deckCode: h.deckCode,
+                resume: resumerVersion(
+                  changements.map((c) => ({ ...c, cardId: findCard(cartesHistorique, c.cardId)?.id ?? c.cardId })),
+                  infosCartes,
+                ),
+                changements: changements.map((c) => ({
+                  nom: findCard(cartesHistorique, c.cardId)?.name ?? c.cardId,
+                  section: c.section,
+                  avant: c.avant,
+                  apres: c.apres,
+                })),
+              }))}
+            />
+          </div>
+
+          <div className="mt-6">
+            <DeckCoveragePanel
+              prix={prix}
+              lienAchat={lienAchat}
+              items={decklistCards.map((c) => ({
+                cardId: c.cardId,
+                quantity: c.quantity,
+                section: c.section,
+                name: c.name,
+              }))}
+            />
+          </div>
+        </div>
+
+        {/* Colonne qui suit la lecture sur ordinateur, comme sur /decks/[slug]. */}
+        <aside aria-label={t("Résumé du deck")}>
+          <div className="grid gap-4 lg:sticky lg:top-22">
+            <EncartAchat total={prix.total} lien={lienAchat} />
+            <DeckStatsPanel cards={decklistCards} />
+          </div>
+        </aside>
       </div>
 
       <CommunityDeckGuide
@@ -313,6 +336,8 @@ export default async function CommunityDeckPage({ params }: PageProps) {
       />
 
       <CommentsSection communityDeckId={deck.id} />
+
+      <BarreAchat total={prix.total} lien={lienAchat} />
     </div>
   );
 }

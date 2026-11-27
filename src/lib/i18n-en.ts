@@ -586,7 +586,7 @@ export const EN: Record<string, string> = {
   "Notes de patch": "Patch notes",
 
   // — Passe automatique : textes des guides, du deckbuilder, de la collection —
-  "← Retour aux decks communautaires": "← Back to community decks",
+  "Decks communautaires": "Community decks",
   "← Retour aux guides": "← Back to the guides",
   "(1 copie désignée, jusqu’à 3 copies dans le deck + jusqu’à 3 cartes Signature). La Réserve compte": "(1 named copy, up to 3 copies in the deck + up to 3 Signature cards). The Sideboard holds",
   "(Recycler - la rune va sous le deck de runes). L’Énergie est votre mana pour jouer des cartes, la Puissance amplifie les effets de certaines cartes.": "(Recycle - the rune goes under the rune deck). Energy is your mana for playing cards; Power boosts the effects of certain cards.",
